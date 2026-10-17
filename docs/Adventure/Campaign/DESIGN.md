@@ -27,7 +27,7 @@ color and earn the rest from the Wardens, one at a time. Only **existing art and
 | Ante | Used only in **raider duels** and **optional secret legend duels**. Set per encounter. The global *Play for Ante* setting does not apply to the campaign |
 | Losing a duel | A standard Adventure retry, except ante duels, where losing costs a card (§2.1) |
 | Ending | Open. Keep, reforge or break the Seals. The story does not mark one as correct (§2.3) |
-| Card gain | Steady story rewards (a choice of 3 per Warden, plus a staple commander). Grind pays currency that buys cards in the shop. Only ante hands out cards directly (§6.6) |
+| Card gain | Steady story rewards (a choice of 3 per Warden, plus the Warden's planeswalker card as a bonus). Grind pays currency that buys cards in the shop. Only ante hands out cards directly (§6.6) |
 | Gameplay focus |
 | Presentation | Moderate drama. Wardens, the rival, the raider leaders and the Champion get intros and taunts. Ordinary trainers stay brief |
 | Assets | Existing tilesets, sprites, portraits and music only. Decks and JSON are new data |
@@ -265,7 +265,7 @@ broke the Seals, and they're the one NPC who argues with your choice instead of 
 | **Archivist Pell** | Lore guide | Rebuild the Archive and understand the Seals, both sides of them | Optional sparring: mono-U artifacts | Ch.3, side quests |
 | **Garruk Wildspeaker** | Warden of Green | A hunter to the core. Guards the Green Seal. The whole Multiverse is their hunting ground, and they believe the Seal kept their valley alive | Mono-G ramp and stompy (a green commander with a big-creature plan) | Tier set by your start color (§2.2) |
 | **Jace Beleren** | Warden of Blue | A telepath who reads minds before duels begin. Guards the Blue Seal. Loyal to the Champion, but honest about what the Seals cost | Mono-U control and mind tricks (a different commander from the player's) | Tier set by your start color (§2.2) |
-| **Chandra** | Warden of Red | Impulsive and fiery. Guards the Red Seal. Fought beside the Champion in the wars, and says the Seals are the only reason they're still alive | Mono-R aggro and burn (e.g. Torbran, Thane of Red Fell) | Tier set by your start color (§2.2) |
+| **Chandra Nalaar** | Warden of Red | Impulsive and fiery. Guards the Red Seal. Fought beside the Champion in the wars, and says the Seals are the only reason they're still alive | Mono-R aggro and burn (e.g. Torbran, Thane of Red Fell) | Tier set by your start color (§2.2) |
 | **Gideon Jura** | Warden of White | Wields protective magic in battle. The Champion's strongest believer. Guards the White Seal | Mono-W tokens and protection | Tier set by your start color (§2.2) |
 | **Liliana Vess** | Warden of Black, in the Hollow | Has made dark deals and betrayed allies. Guards the Black Seal from the Hollow, and sees the Seals as a grave. Mordessa's ring is their doing | Mono-B graveyard and sacrifice (ties to Mordessa's ring) | Tier set by your start color (§2.2) |
 | **Captain Hask** | Unsealed captain, mini-boss | Paid muscle who runs the camp's raiders | Mono-B or B/R aggro | Ch.1 (camp on your region's route) |
@@ -481,7 +481,7 @@ Decided with the designer (questionnaire, Oliandor). Items marked *check* are an
 this document, listed in §10.
 
 **The steady path**
-- Each Warden offers a **choice of 3** story cards, plus that Warden's **staple commander** as a bonus.
+- Each Warden offers a **choice of 3** story cards, plus a **bonus**: the planeswalker card with the Warden's name (Garruk Wildspeaker, Jace Beleren, Chandra Nalaar, Gideon Jura or Liliana Vess). Each bonus is in its Warden's color, so it follows the color rules below.
 - Story rewards are curated. Grind rewards come through currency. The two pools stay separate.
 - A regular duel pays currency worth **2–3 cards** at the shop's average price, so the reward tracks what cards cost. Gyms and raiders add curated powerful cards on top.
 
@@ -496,7 +496,7 @@ this document, listed in §10.
 **Shops and smithing**
 - Shops sell every card type, not only unlocked colors.
 - The shop uses the smithing mechanics (the Spellsmith) to let the player generate a semi-targeted pool.
-- Gold buys single cards. Shards reroll the shop's stock. *Check:* off-color stock is dead until its colors unlock (§10, item 13).
+- Gold buys single cards. Shards reroll the shop's stock. *Check:* off-color stock is dead until its colors unlock (§10, item 12).
 
 **Ante and stealing**
 - A stolen card can be won back by defeating the raider who holds it. It can also be found in the shop.
@@ -641,7 +641,7 @@ to move. The three endings (§2.3) are written here, and `endingChoice` drives t
 
 ## 10. Open questions
 
-1. **Warden roster:** the five Wardens are Garruk (G), Jace (U), Chandra (R), Gideon (W) and Liliana (B), the iconic mono-color planeswalkers. Their lore is thin in my search, so each entry needs checking against the Magic wiki. Confirm the roster, and that Liliana holds the Hollow for every starting color.
+1. **Warden roster:** the five Wardens are Garruk Wildspeaker (G), Jace Beleren (U), Chandra Nalaar (R), Gideon Jura (W) and Liliana Vess (B), the iconic mono-color planeswalkers. Their lore is thin in my search, so each entry needs checking against the Magic wiki. Confirm the roster, and that Liliana holds the Hollow for every starting color.
    for every starting color?
 2. **Own Seal:** confirm that your own Seal gives no new color, so the four other Seals give the four new colors. The
    alternative is that the own Seal gives a sixth commander slot instead.
@@ -658,10 +658,8 @@ to move. The three endings (§2.3) are written here, and `endingChoice` drives t
 9. **Gender until Phase 2:** OK to ask the player once in the prologue, until J-Gender makes it automatic?
 10. **Angel choice until Phase 2:** OK to keep the new-game color picker in Phase 1, with the Seal Angels confirming it?
 11. **Plane name:** keep "Concordia"?
-12. **Staple commander:** each Warden's bonus is a staple commander. Which commander goes with each Warden, and should
-    it be a legend already in Forge?
-13. **Off-color shop stock:** shops sell every card type. Should off-color stock be visible before its colors unlock,
+12. **Off-color shop stock:** shops sell every card type. Should off-color stock be visible before its colors unlock,
     or hidden until then?
-14. **Scale:** grind rewards scale with the player's tier. Does the tier mean the Wardens cleared, or the power of the
+13. **Scale:** grind rewards scale with the player's tier. Does the tier mean the Wardens cleared, or the power of the
     player's deck?
-15. **Raider rematches:** should rematching a raider put ante back on the table, or should it stay a flat fight?
+14. **Raider rematches:** should rematching a raider put ante back on the table, or should it stay a flat fight?
