@@ -628,6 +628,11 @@ art. That's out of scope for now anyway (existing assets only).
 7. Color choice 1 with commander rewards.
 8. The copy script. Playtest on Normal.
 
+**Java status (J-Ante and J-Raid):** written in `forge-gui-mobile`. Per-encounter ante is set by `ConfigData.anteByEncounter`
+and `EnemyData.ante`. Raider losses are held in `AdventurePlayer` and saved. The `returnStolenFrom` dialog action returns a
+raider's cards. Shop stolen cards are priced by `stolenCardPriceFactor`. Not yet compiled against the full build, because
+the proxy blocks the jitpack repository that the GUI module needs. Not yet tested in game.
+
 **Exit criteria:** a new Concordia game reaches the end of Chapter 1 in about 3 hours, with no dead ends. The raid
 tutorial teaches the ante loop, the tutorial's stolen card comes back in the next lesson, the color choice works, and the rival has the opposite
 color. The difficulty curve feels right.
