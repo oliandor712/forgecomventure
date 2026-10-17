@@ -116,6 +116,19 @@ at a time, to find out who is pulling legends out of their own stories, and why.
    (`forge-gui-mobile/src/forge/adventure`). See §8.
 6. **Easy to playtest.** Phases 1–3 are data-only, so you can copy a folder into a Windows install and play it.
 
+### 1.1 Creative direction (decided with the user)
+
+| Topic | Decision | What it means for the design |
+|---|---|---|
+| Tone | **A Yu-Gi-Oh-style premise:** the fate of people and the world is decided by card duels | Every turning point in the story is a duel. Dialog treats duels as the thing that matters, not a side activity |
+| Role of duels in the world | **Ancient duel magic** | Everyday life is ordinary, but duels are sacred rituals that bind souls, sparks and power. The Concord is a duel ritual: whoever wins a binding duel takes power over the loser's spark. That's why Jodah needs a champion who wins |
+| Villain | **Keep the Jodah twist** | As written in §2 |
+| Structure | **Linear with hubs** | Acts run in a fixed order. Inside an act, a hub (Waystone, the capitals) lets you take chapters in any order where the story allows (for example, the five castles) |
+| Gameplay focus | **Deckbuilding growth** and **exploration and secrets** | Curated card rewards are the main progression (§5.5). Hand-made maps hide optional rooms, legend hunts and lore pickups (§6.3) |
+| Rival | **One recurring rival** | See "The Rival" in §3.2 |
+| Losing a story duel | **Standard retry** | Uses Adventure's normal life/gold loss. No ante, no permanent loss |
+| Presentation | **Moderate drama** | Bosses and the rival get a `bossIntro` / `bossInsult` and a short pre-duel speech. Regular duels stay quiet |
+
 ### Non-goals
 
 - No new card mechanics, no scripted in-game puzzle states, no custom AI.
@@ -128,8 +141,10 @@ at a time, to find out who is pulling legends out of their own stories, and why.
 
 ### 2.1 Premise
 
-The Realm of Legends is a plane where a great old working, **the Concord**, once kept a balance: legends from across
-the Multiverse came here as echoes, dueled, and returned home with their stories intact. The Concord has been broken.
+The Realm of Legends is a plane where duels are an ancient form of magic. A great old working, **the Concord**, once
+kept a balance: legends from across the Multiverse came here as echoes, dueled, and returned home with their stories
+intact. In the Realm, a duel fought under the Concord is binding. The winner can claim the loser's power, their oath,
+even their spark. The Concord has been broken.
 Someone is *summoning* legends for real, sparks and all, and binding them to the plane's five Color Castles.
 
 You are one of the summoned. You arrive in a sealed library with no way home. The hooded mage who greets you seems
@@ -237,6 +252,7 @@ are tuned in Phase 2.
 | **Sir Donovan** | Employer, later betrays you | Debt and ambition. He believes Jodah will make him a lord of the new order | `kenrith.dck` (politics, "everyone draws") as a 2v1 boss in 3.4. Bound version in 4.6: `teysa.dck` style aristocrats **(new tune)** | P2, 1.1–2.0, 3.4, 4.6 |
 | **Viv** | Archivist, ally, quest-giver for lore | Find out what the Concord really is. Feels guilty for teaching Donovan to read the keys | Not a duelist until Act IV. Then a training partner with an spellslinger deck (`kykar.dck`) | 1.4 onward, the hub in Waystone in Act III |
 | **Sir Kallus** | Captain of the Waystone guard. Gives side quests | Keep Waystone safe. Distrusts Donovan from the start | `sigarda.dck` (white protection). Optional sparring duels | P2, side quests, 4.1 (white capital) |
+| **The Rival: Najeela** (placeholder choice) | A proud summoned duelist who arrived just before you and keeps challenging you | Prove she's the strongest summoned champion and be the one who goes home. Later she learns Jodah plans to bind whoever wins, and turns on him | `najeela.dck` (warrior tokens, aggressive). Her deck gets stronger each time you meet: one deck per encounter via `deckOverride` (`decks/campaign/rival_1..5.dck`) | 1.2 (loses to you, swears revenge), 2.x (waits at the third castle you clear), 3.5 (helps rescue Viv after a duel), 4.6 (final rival duel before the bridge), F.1 (fights beside you in a 2v2) |
 | **The Freed Wardens** | Allies in the finale | Revenge on Jodah, going home | Their Act II decks, used on the player's team in F.1 | Act II, F.1 |
 
 ### 3.3 Antagonists and act bosses
@@ -584,11 +600,11 @@ J2 (hand-authored overworld) and J4 (hard gating). Optional: replace the overwor
 
 1. **Old story chain:** should the existing quests 29–53 be replaced by the new campaign, kept as an alternate path
    chosen in quest 28's dialog, or left alone?
-2. **The Jodah twist:** are you happy with the Mysterious Mage being Jodah and the main villain, or should the villain
-   be someone else (an original character, or a different legend)?
+2. ~~The Jodah twist~~ **Decided:** keep it.
 3. **Separate plane or same plane?** Build the campaign inside `Realm of Legends` (simple, but changes the existing
    plane), or as a copy, e.g. `Realm of Legends Campaign` or a user plane?
-4. **Act II order:** free choice of castle order (as now), or a fixed order for a tighter difficulty curve?
+4. ~~Act II order~~ **Decided:** linear with hubs, so the five castles stay in free order and difficulty scales by
+   completion order.
 5. **Difficulty:** is it fine for Phase 1 to tune only for Normal and rely on the existing life and reward factors,
    with per-difficulty boss decks waiting for J8?
 6. **Endings:** two endings (Restore / Bind), or one canonical ending?
@@ -598,3 +614,5 @@ J2 (hand-authored overworld) and J4 (hard gating). Optional: replace the overwor
 9. **Art:** are new sprites/portraits in scope, or should we reuse existing atlases only?
 10. **Playtest setup:** can you confirm that user planes (`%APPDATA%\Forge\adventure\userplanes\`) load on your
     install? That decides how the copy script works.
+11. **The rival's identity:** Najeela is a placeholder. Which legend (or an original character) should the rival
+    be, and what color(s) should they play against yours?
