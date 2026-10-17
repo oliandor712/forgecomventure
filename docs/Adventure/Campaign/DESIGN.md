@@ -60,9 +60,13 @@ towns, earn the Wardens' Seals, and become a five-color champion before the Seal
 
 Concordia was once a battleground. Planeswalkers from across the Multiverse fought over its mana and its ruins, and
 the wars scorched whole regions. Then **the Champion** arrived. He is the strongest planeswalker ever to walk the
-plane, and he ended the wars by force. He ruled for a generation, and then he did something no conqueror had done
-before: he forged **the five Seals**, one per color, to make the peace last. Each Seal binds its color's mana to the
-land and sanctions the duels fought under it. Duels outside the Seals are outlawed.
+plane, and he ended the wars by force.
+
+He did not think of himself as a tyrant. He believes the strong are responsible for the weak, and that a world left
+to its own wars would be ruled by whoever was cruelest. Ruling, in his view, is a duty he cannot refuse. So he ruled
+for a generation, and then he did something no conqueror had done before: he forged **the five Seals**, one per color,
+to make the peace last. Each Seal binds its color's mana to the land and sanctions the duels fought under it. Duels
+outside the Seals are outlawed.
 
 The Seals are guarded by five **Wardens**, each appointed by the Champion. A Warden decides who may challenge their
 Seal, and each Seal can be claimed only by defeating its Warden.
@@ -72,14 +76,18 @@ masters all five colors and defeats the Champion himself may take his throne and
 been seen in years. Nobody knows whether he's still holding the throne, or whether it's empty.
 
 The peace holds, but it is thin. Beyond the Seals' reach, the **Unsealed** (outlaw duelists) still fight for power,
-run illegal duel rings, and prey on villages. Many people in Concordia have made peace with the Seals. Many more have
-not.
+run illegal duel rings, and prey on villages.
 
-You and your childhood friend grew up in **Emberbrook**, a village at the edge of the wilds. Both of you carry a
-planeswalker's spark, which is rare on Concordia but not unheard of. You've dreamed of the throne since you were
-children, and you've competed for everything else: who would earn the first Seal, who would be the best duelist in
-the village. You want the throne for different reasons. You want to protect the people you grew up with. Your
-rival wants to prove they're the strongest. Only one of you can take it.
+**The central question of the story is whether the Seals are good for Concordia.** They ended the wars, but they also
+froze the world under one ruler's judgment and turned duelists into outlaws. Every chapter gives the question a
+different answer, and the story never settles it for you.
+
+You and your childhood friend were both born in **Emberbrook**, a village at the edge of the wilds. Both of you
+awakened planeswalker sparks as children, a rare thing on Concordia, and you've dreamed of the throne since then. You've
+competed for everything else: who would earn the first Seal, who would be the best duelist in the village. You want the
+throne for different reasons. You want to protect the people you grew up with. Your rival wants to **destroy the
+Seals**, for better or worse. Whoever inherits the throne also inherits the Seals (§2.3), so the throne is the only
+way your rival can do it. Only one of you can take it.
 
 The story opens the day both of you read the Champion's open challenge for the first time. Its message is still
 fresh when Unsealed raiders strike Emberbrook shrine. The raid shows that the peace is thinner than the posters
@@ -108,7 +116,7 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 | Step | Goal | Location | Beats |
 |---|---|---|---|
 | P1 | Read the challenge and visit the shrine | Emberbrook: home, village, shrine (hand-made map) | Both you and the rival read the Champion's posted challenge at the notice board. At the shrine, **Elder Wren** gives you your first commander. It's your starting deck (chosen with the color on the new-game screen). The rival takes a commander of a color *enemy* to yours |
-| P2 | First duel | Emberbrook shrine | **Rival duel 1**: a short duel with a low-power deck. You both agree that the throne is the goal, and that you'll settle who gets it later. Win or lose, the story continues (a loss branch has its own dialog) |
+| P2 | First duel | Emberbrook shrine | **Rival duel 1**: a short duel with a low-power deck. The rival says that when they rule, they'll tear the Seals down. You both agree that the throne is the goal, and that you'll settle who gets it later. Win or lose, the story continues (a loss branch has its own dialog) |
 | P3 | The raid | Emberbrook | Unsealed raiders hit the shrine and try to take the village's Seal fragment. Tutorial duel against a raider grunt. Elder Wren asks you to take the fragment to a Warden in Mossgate. The rival says they'll go ahead alone |
 | P4 | Set out | Route 1 → Mossgate | Route trainers teach the "challenged on sight" mechanic. Reach Mossgate |
 
@@ -119,8 +127,8 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 | 1.1 | Settle into town | Mossgate (town with shop, inn and Commander Hall) | Learn the Commander Hall rules (§6.2). The notice board offers side jobs. The Warden of the Green Seal is taking challengers at the grove |
 | 1.2 | Clear the Thornwood | Route 2 (Thornwood forest map) | Trainers, a hidden grove with an optional legend duel (secret) |
 | 1.3 | Unsealed camp | Thornwood clearing | The Unsealed are poisoning the Green Seal's roots to weaken the Warden. Mini-boss: Unsealed captain **Hask** |
-| 1.4 | The Green Warden | Mossgate Grove (gym map) | Gym puzzle: overgrown paths open after you beat the grove keepers. **Warden Brannoc** (mono-G ramp and stompy). Brannoc says the Seal is only as strong as the one who keeps it |
-| 1.5 | First Seal | Mossgate Grove | **Color choice 1** (§6.1). **Rival duel 2** outside the gym. The rival has already been to the Wardens and wants to know how you did. Elder Wren's messenger reports the Archive in Lumenhold has been attacked |
+| 1.4 | The Green Warden | Mossgate Grove (gym map) | Gym puzzle: overgrown paths open after you beat the grove keepers. **Warden Brannoc** (mono-G ramp and stompy). Brannoc is a believer: "This Seal has kept my valley alive for a hundred years. Don't call it a cage" |
+| 1.5 | First Seal | Mossgate Grove | **Color choice 1** (§6.1). **Rival duel 2** outside the gym. The rival calls the Seals slow and says the Wardens are gatekeepers. Elder Wren's messenger reports the Archive in Lumenhold has been attacked |
 
 #### Chapter 2: Two Roads (any order)
 
@@ -128,30 +136,43 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 |---|---|---|---|
 | 2.0 | The crossroads | Crossroads Inn (hub) | Two routes open: west to Saltreach, east to Cinderpeak. You can do them in either order. The second Warden you fight is a tier stronger (§5.2) |
 | 2A.1 | Saltreach | Route 3 (coast), Saltreach town | The Unsealed are running illegal duels in the tide pools for gold and favors. Secret: a sunken shipwreck with a legend duel |
-| 2A.2 | The Blue Warden | Saltreach Lighthouse (gym) | Gym puzzle: a mirror maze. **Warden Isolde** (mono-U control and flyers). Best-of-3. Isolde asks why you want the throne and tells you that most who ask don't know |
+| 2A.2 | The Blue Warden | Saltreach Lighthouse (gym) | Gym puzzle: a mirror maze. **Warden Isolde** (mono-U control and flyers). Best-of-3. Isolde is loyal to the Champion, but she isn't blind to what the Seals cost. She asks why you want the throne, and tells you most who ask don't know |
 | 2B.1 | Cinderpeak | Route 4 (volcanic path), Cinderpeak town | Miners have gone missing in the forges. Their foreman says the missing men were paid to duel in an Unsealed ring |
-| 2B.2 | The Red Warden | Cinderpeak Forge (gym) | Gym gauntlet: three forge-keepers in a row with no healing. **Warden Tarro** (mono-R aggro). Tarro tells you the Champion once fought beside him |
-| 2.9 | Two Seals | Crossroads Inn | Color choices 2 and 3. **Rival duel 3**: the rival has won gold and a shortcut to a Seal by dueling in the Unsealed ring. They say the Seals are slow and the Wardens are gatekeepers. You both still want the same throne, and this duel is the first time you're really fighting over it |
+| 2B.2 | The Red Warden | Cinderpeak Forge (gym) | Gym gauntlet: three forge-keepers in a row with no healing. **Warden Tarro** (mono-R aggro). Tarro fought beside the Champion in the wars, and says the Seals are the only reason he's still alive |
+| 2.9 | Two Seals | Crossroads Inn | Color choices 2 and 3. **Rival duel 3**: the rival has won gold and a shortcut to a Seal by dueling in the Unsealed ring. They say the Seals are a cage that keeps people weak. You both still want the same throne, and this duel is the first time you're really fighting over it |
 
 #### Chapter 3: The Archive of Seals
 
 | Step | Goal | Location | Beats |
 |---|---|---|---|
-| 3.1 | Lumenhold | Route 5 (plains), Lumenhold city | The Archive is in ruins. Archivist **Pell** explains the Champion's conquest and the Seals' history. The Seals are bound to the Champion's own spark. If he falls, the Seals fall with him, and whoever takes the throne inherits them |
+| 3.1 | Lumenhold | Route 5 (plains), Lumenhold city | The Archive is in ruins. Archivist **Pell** lays out the case on both sides. The Seals ended wars that burned whole regions, and they kept the Champion's duty alive. They also froze the world under one ruler, and made every duel a permission. Pell also reveals that the Seals are bound to the Champion's own spark. If he falls, the Seals fall with him, and whoever takes the throne inherits them |
 | 3.2 | The Unsealed Hideout | Unsealed Hideout (2-floor dungeon) | The rival is here, hired by the Unsealed to win duels for them. The rival duel is a 2v1 against the rival plus a grunt |
-| 3.3 | Mordessa | Hideout depths | Unsealed ringleader **Mordessa** (mono-B reanimator) runs the illegal duels. She tells you the throne is for sale to anyone who can afford it. The rival sees what the ring is doing to the people who lose and walks out |
-| 3.4 | The White Warden | Lumenhold Cathedral (gym) | Gym puzzle: a light-bridge sequence. **Dame Seraphine** (mono-W tokens and lifegain). Two-player pod duel: Seraphine with her squire |
-| 3.5 | The last Seal | Lumenhold | **Color choice 4: you now control all five colors.** The rival is ahead on Seals, and they're heading for Victory Road. They tell you that they'll see you at the top |
+| 3.3 | Mordessa | Hideout depths | Unsealed ringleader **Mordessa** (mono-B reanimator) runs the illegal duels. She says the throne is for sale to anyone who can afford it. The rival sees what the ring does to the people who lose and walks out. It doesn't change their view of the Seals, only their view of how to break them |
+| 3.4 | The White Warden | Lumenhold Cathedral (gym) | Gym puzzle: a light-bridge sequence. **Dame Seraphine** (mono-W tokens and lifegain). She is the Champion's strongest believer: "The strong carry the weak. That is the whole reason for the Seals." Two-player pod duel: Seraphine with her squire |
+| 3.5 | The last Seal | Lumenhold | **Color choice 4: you now control all five colors.** The rival is ahead on Seals, and they're heading for Victory Road. They tell you they'll see you at the top |
 
 #### Finale: The Champion's Throne
 
 | Step | Goal | Location | Beats |
 |---|---|---|---|
 | F.1 | Victory Road | Mountain cave (3 maps) | Your strongest trainer gauntlet. Secrets: two legend duels |
-| F.2 | The Five Paragons | Summit halls (5 rooms, one per color) | The Champion's sworn duelists, one per two-color pair. Each plays a two-color deck (§3.3). No healing between halls, but inns at the entrance |
-| F.3 | The rival at the gate | Summit gate | The rival, now in a five-color deck, has been beaten by the Champion's gatekeepers and now wants to fight you first. The duel is about who deserves the throne |
-| F.4 | The Champion | Throne room | The Champion, the strongest planeswalker on the plane, takes the challenge seriously. Three-phase boss (§5.3) |
-| F.5 | The Throne | Throne room | The Champion yields or falls. The Seals now answer to you, or to no one, depending on the ending. Post-game legend duels open |
+| F.2 | The Five Paragons | Summit halls (5 rooms, one per color) | The Champion's sworn duelists, one per two-color pair. Some believe in his duty, others are paid to keep the Summit. Each plays a two-color deck (§3.3). No healing between halls, but inns at the entrance |
+| F.3 | The rival at the gate | Summit gate | The rival, now in a five-color deck, has been beaten by the Champion's gatekeepers and now wants to fight you first. The duel is an argument about the Seals as much as a contest for the throne |
+| F.4 | The Champion | Throne room | The Champion explains his duty: the strong must carry the weak, even when the weak don't want to be carried. He takes the challenge seriously. Three-phase boss (§5.3) |
+| F.5 | The Throne | Throne room | The Champion yields or falls. The Seals now answer to you. What you do with them is your choice (see *Endings* below). Post-game legend duels open |
+
+#### Endings
+
+The story does not label any ending as correct. Each path has a cost, and the story shows that cost in the epilogue.
+
+| Path | What you do with the Seals | What the epilogue shows |
+|---|---|---|
+| **Keep** | Rule under the Seals as the Champion did, and carry his duty yourself | The peace holds. The Unsealed still exist, and the people who lose to the ring still pay for the Seals' prohibitions |
+| **Reforge** | Rewrite the Seals' terms, for example by letting Wardens be chosen by the people instead of appointed | The peace is more open, but it's harder to hold. Old enemies test the new terms within a year |
+| **Break** | Destroy the Seals, as your rival wanted | Duels are free again. The wars are not, and some of the regions the Seals had protected burn for the first time in a generation |
+
+Whichever path you choose, your rival is still there. Their final line depends on whether you kept, reforged or
+broke the Seals, and they're the one NPC who argues with your choice instead of agreeing with it.
 
 ---
 
