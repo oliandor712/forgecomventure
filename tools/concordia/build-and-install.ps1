@@ -20,7 +20,7 @@ The Forge install folder. Default: C:\Users\olian\Forge
 The repository root. Default: the folder two levels above this script.
 
 .PARAMETER SkipBuild
-Do not run Maven. Use the jar already in forge-gui-mobile\target.
+Do not run Maven. Use the jar already in forge-gui-mobile-dev\target.
 
 .EXAMPLE
 powershell -ExecutionPolicy Bypass -File tools\concordia\build-and-install.ps1
