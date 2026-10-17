@@ -1,139 +1,56 @@
-# Realm of Legends: The Summoned (campaign design document)
+# Concordia: a Commander campaign plane (design document)
 
-Status: **Draft for review.** No code or data has been built yet.
+Status: **Draft v2 for review.** No code or data has been built yet.
 Branch: `campaign-design`. Scope: design only.
 
-This document describes a structured, linear story campaign for Forge's Adventure mode. It is built on the
-**Realm of Legends** plane (Commander format) and is meant to be reviewed before any data or code is written.
+v2 replaces the v1 draft, which extended Realm of Legends. Per the user's direction, the campaign is now an
+**all-new plane with an all-new story and a hand-made overworld.** It plays like a Pokémon game: you start with one
+color and earn the rest from the Wardens, one boss at a time. Only **existing art and audio assets** are used.
 
 ---
 
-## 0. What exists today (research summary)
+## 0. Decisions so far
 
-Everything below was read from this repository, not from a local install.
-
-### 0.1 Realm of Legends is in the repo
-
-`forge-gui/res/adventure/Realm of Legends/` exists and matches the local install the user described:
-
-| Asset | Location | Notes |
-|---|---|---|
-| Plane config | `config.json` | `minDeckSize: 98`, `chaosDeckFormat: "Commander"`, a large `restrictedCards` list (power 9, fast mana, wishes, prison pieces) |
-| Difficulties | `config.json` → `difficulties` | Easy / Normal / Hard / Insane, each with its own `commanderDecks` map per color |
-| Starter decks | `decks/starter/{W,U,B,R,G}_Starter_{Easy,Normal,Hard,Insane}.dck` | 20 decks, plus `decks/starter/commanderprecon/` |
-| Legend decks | `decks/legends/*.dck` | 985 commander decks (for example `jodah.dck`, `urza.dck`, `sheoldred.dck`) |
-| Enemies | `world/enemies.json` | 1019 entries, nearly all named after a legend and pointing at `decks/legends/<name>.dck`. `life` is mostly 20/30/40 (Jodah is 100). 142 enemies use `gamesPerMatch: 3`. None set `boss: true` |
-| Quests | `world/quests.json` | 53 quests. 1–27 are side-quest templates, 34–42 more side quests, **28–33 and 43–53 are the story chain** (`storyQuest: true`) |
-| POIs | `world/points_of_interest.json` | 205 entries, including 5 capitals, a `Spawn` town, 5 `castle` POIs tagged `Chapter1Boss` |
-| Story maps | `maps/map/main_story/` | `spawn.tmx`, `{plains,island,swamp,mountain,forest}_capital.tmx`, `castles/{color}_castle.tmx` + `{color}_castle_f1.tmx`, `castles/wastetown..tmx` |
-| Biomes | `world/biomes/*.json` | `base` (ocean), `colorless` (the wastes, center), and five colored biomes |
-| World | `world/world.json` | 700×700 tiles, noise-generated biome layout, start at the center |
-
-### 0.2 The existing story chain
-
-| ID | Name | What it does |
-|---|---|---|
-| 28 | Entering the Realm of Legends | Intro dialog. You're summoned into a library with a hooded "mysterious mage". Issues 53 |
-| 53 | Welcome to the Realm of Legends | Talk to the mage (`mainQuest` = 1), leave. "You need five keys from the Fallen Color Castles, and five keys from the major strongholds of the wastes." Issues 30 |
-| 30 | Begin Exploring | Tutorial on towns and capitals. Issues 43 |
-| 43 | Your First Job | Complete 1, then 3 side quests. **Sir Donovan** appears. Issues 44 |
-| 44 | Find the Caravan | Missing mana-shard shipment, bandit cave (`Quest_BanditCave`) |
-| 45 | What's Yours Is Mine | Shard mines (`Quest_ShardMines`) |
-| 46 | Busy Work | Side quests while you wait |
-| 47 | Check Out The Library | Library of Varsil: research on the mechanics of summoning |
-| 48 | The Dig Site | Golems connected to the summoning |
-| 49 | Busy Work 2 | New contact **Viv** |
-| 50 | Welcome To The Jungle | Primal Jungle: artifact from the Varsil research |
-| 51 | Flower Fetching | Frostbitten Cavern flower for Viv |
-| 52 | The Enemy of My Enemy... | Find and clear the five colored castles (`Ch1{Color}CastleComplete`), then return to `Spawn` |
-| 29, 31–33 | Disabled or alternate branches of the intro | |
-
-The castles already show the boss pattern this campaign will reuse. Each castle has a `dungeonEffect` map property,
-for example `{"startBattleWithCard": ["Melesse Spirit", "Sphere of Grace"]}` in `black_castle.tmx`. It has a floor
-of five legend guardians plus a "Mysterious Mage" enemy, and a second floor (`_f1`) with a single boss legend
-(Kynaios and Tiro, Saskia, Breya, Atraxa, Yidris).
-
-The story stops after "Chapter 1". The tag is literally `Chapter1Boss`, and nothing exists yet for the "five keys
-from the major strongholds of the wastes".
-
-### 0.3 Engine facts this design relies on
-
-All of these are in `forge-gui-mobile/src/forge/adventure/`.
-
-- **The campaign start is hard-coded.** `NewGameScene` (line ~349) and `SaveLoadScene` (new game plus, line ~325)
-  call `addQuest("28", true)`. Data alone can't add a different start quest, but quest 28's dialog *can* branch into
-  our chain with `issueQuest`.
-- **Quest objectives** (`AdventureQuestController.ObjectiveTypes`): Arena, CharacterFlag, Clear, CompleteQuest,
-  Defeat, Delivery, Escort, EventFinish, EventWin, EventWinMatches, Fetch, Find, Gather, Give, HaveReputation,
-  HaveReputationInCurrentLocation, Hunt, MapFlag, Leave, Patrol, QuestFlag, Rescue, Siege, Travel, Use.
-- **Dialog actions** (`DialogData.ActionData`): add/remove item, addLife/addGold/addShards, deleteMapObject,
-  activateMapObject, battleWithActorID, giveBlessing, setColorIdentity, set/advance Character/Quest/Map flag,
-  setEffect, grantRewards / grantRewardsChoice, issueQuest, addMapReputation.
-  **Conditions:** item, actorID, hasBlessing, hasGold, hasShards, hasLife, hasMapReputation, colorIdentity,
-  getCharacterFlag / getQuestFlag / getMapFlag with an operator.
-- **Flags are `Byte`** (max 127) and are saved per character. `characterFlags` survive new game plus (that's how
-  `newGamePlus` is detected), while `questFlags` are cleared on a new game.
-- **POI placement** (`World.java` ~472): each biome lists POI names. Each POI is placed near the biome center using
-  `radiusFactor` (random radius) and `offsetX/offsetY` (a fraction of the biome size). `count` sets how many copies.
-  `active: false` plus `questFlagsToActivate` hides a POI until a quest flag is set. `allowInactivePOI` on a stage
-  lets a quest target a hidden POI.
-- **Map objects** (`MapStage.java`): `entry` and `portal` use `teleport` (a target .tmx) and `teleportObjectId`
-  (the arrival object) to chain hand-made maps together. `enemy` objects accept `dialog`, `defeatDialog`, `effect`,
-  `ignoreDungeonEffect`, `reward`, `deckOverride`, `waypoints`, `threatRange` / `pursueRange` / `fleeRange`, `hidden`,
-  `inactive` and `displayNameOverride`. There are also `dialog`, `quest`, `dummy` (removable obstacle), `reward`,
-  `shop`, `inn`, `spellsmith`, `shardtrader`, `arena` and `exit` objects.
-- **Map-wide boss effect:** the map property `dungeonEffect` is an `EffectData` JSON. It's applied to every duel on
-  that map unless the enemy has `ignoreDungeonEffect`. An `opponent` sub-effect is applied to the player's side.
-  `EffectData` supports `lifeModifier`, `changeStartCards`, `startBattleWithCard`,
-  `startBattleWithCardInCommandZone`, `extraManaShards`, plus map-only effects.
-- **Multiplayer bosses:** `EnemyData.nextEnemy` chains up to 8 opponents into one duel (`DuelScene` ~388), and
-  `teamNumber` puts them on teams. This gives free-for-all Commander pods or 2-headed bosses **with data only**.
-- **Best-of-N:** `EnemyData.gamesPerMatch`.
-- **Boss behavior:** `boss: true` keeps a defeated enemy from respawning and enables `bossIntro` / `bossInsult` text.
-- **User planes:** `Config.getPlanePath` resolves `<user>Name` to `USER_ADVENTURE_DIR/userplanes/Name/`, and missing
-  files fall back to `common/`. This matters for playtesting (see §7.3).
+| Topic | Decision |
+|---|---|
+| Plane | A new plane, working name **Concordia**, in `forge-gui/res/adventure/Concordia/`. Realm of Legends is not changed |
+| Story | All new. A Yu-Gi-Oh-style premise: duels are **ancient magic**, and fate-deciding moments are settled by duels |
+| Structure | Semi-linear ("linear with hubs"): chapters in a fixed order, with a branch where you choose the order of two Wardens |
+| Map | Hand-made overworld (see §4 for how this is done with data first and Java later) |
+| Format | Commander |
+| Color progression | You start with **one color** and a **mono-color commander**. Each Warden you defeat lets you **choose one new color** to control, until you have all five |
+| Commander swapping | Restricted (see §6.2) |
+| Rival | An ordinary person, the player's **childhood friend**, of the **opposite gender** to the player |
+| Gameplay focus | Deckbuilding growth, plus exploration and secrets |
+| Losing a duel | A standard Adventure retry |
+| Presentation | Moderate drama. Wardens, the rival and the villains get intros and taunts, while ordinary trainers stay brief |
+| Assets | Existing tilesets, sprites, portraits and music only. Decks and JSON are new data |
 
 ---
 
 ## 1. Vision and pillars
 
-**One-line pitch:** *A summoned planeswalker fights through a hand-built Realm of Legends, one curated Commander duel
-at a time, to find out who is pulling legends out of their own stories, and why.*
+**Pitch:** *Leave your home village with one color and one commander, duel your way across Concordia's routes and
+towns, earn the Wardens' Seals, and become a five-color champion before the Sealbreakers tear the Concord apart.*
 
-### Pillars
-
-1. **A linear, authored story.** One main path, with chapters you finish in order. Side content is optional and
-   always labeled. The quest log always tells you exactly where to go next.
-2. **A hand-crafted world.** Every story location is a hand-made Tiled map with a deliberate layout, set dressing and
-   placed encounters. The procedural overworld stays only as connective tissue (Phase 1), and is replaced or pinned
-   later (Phase 4, Java).
-3. **Curated encounters.** Every story duel is chosen on purpose: a specific legend deck, a set power level, a stated
-   `dungeonEffect` and a stated reward. No random mobs are required to finish the story. Random wilderness mobs
-   remain for grinding.
-4. **Commander first.** The 98+1 singleton format, color identity, the command zone and multiplayer pods are the
-   identity of the plane. Bosses use multiplayer (`nextEnemy`) and command-zone effects.
-5. **The rules engine stays untouched.** All novelty lives in content and in the adventure UI layer
-   (`forge-gui-mobile/src/forge/adventure`). See §8.
-6. **Easy to playtest.** Phases 1–3 are data-only, so you can copy a folder into a Windows install and play it.
-
-### 1.1 Creative direction (decided with the user)
-
-| Topic | Decision | What it means for the design |
-|---|---|---|
-| Tone | **A Yu-Gi-Oh-style premise:** the fate of people and the world is decided by card duels | Every turning point in the story is a duel. Dialog treats duels as the thing that matters, not a side activity |
-| Role of duels in the world | **Ancient duel magic** | Everyday life is ordinary, but duels are sacred rituals that bind souls, sparks and power. The Concord is a duel ritual: whoever wins a binding duel takes power over the loser's spark. That's why Jodah needs a champion who wins |
-| Villain | **Keep the Jodah twist** | As written in §2 |
-| Structure | **Linear with hubs** | Acts run in a fixed order. Inside an act, a hub (Waystone, the capitals) lets you take chapters in any order where the story allows (for example, the five castles) |
-| Gameplay focus | **Deckbuilding growth** and **exploration and secrets** | Curated card rewards are the main progression (§5.5). Hand-made maps hide optional rooms, legend hunts and lore pickups (§6.3) |
-| Rival | **One recurring rival** | See "The Rival" in §3.2 |
-| Losing a story duel | **Standard retry** | Uses Adventure's normal life/gold loss. No ante, no permanent loss |
-| Presentation | **Moderate drama** | Bosses and the rival get a `bossIntro` / `bossInsult` and a short pre-duel speech. Regular duels stay quiet |
+1. **The Pokémon loop, in Commander.** Routes with trainers who challenge you on sight, towns with shops and a
+   Commander Hall, a Warden "gym" with a puzzle layout, and a rival who keeps showing up.
+2. **Color is your progression.** Your deck widens one color per Warden. Each new color is a meaningful choice that
+   changes your commander options. This replaces "catching" new team members.
+3. **A hand-made world.** Every town, route and dungeon is a hand-made Tiled map, and the overworld layout is fixed.
+4. **Curated encounters.** Every trainer deck has a known power level and theme. No random spawns are needed to
+   finish the story.
+5. **Exploration pays off.** Hidden areas hold legendary duelists whose commanders you can win, plus rare cards and
+   lore.
+6. **The rules engine stays untouched** (§8). Everything new lives in data or in the adventure UI layer
+   (`forge-gui-mobile/src/forge/adventure`).
 
 ### Non-goals
 
-- No new card mechanics, no scripted in-game puzzle states, no custom AI.
-- No open-world freedom on the main path. Exploration is a reward, not a requirement.
-- No PR to upstream Card-Forge/forge. This lives in `oliandor712/forgecomventure`.
+- Changes to forge-core, forge-game or forge-ai (§8).
+- New art. Sprites and portraits are picked from existing atlases (§7.4).
+- An open world. Exploration is always optional.
+- A PR to upstream Card-Forge/forge.
 
 ---
 
@@ -141,202 +58,221 @@ at a time, to find out who is pulling legends out of their own stories, and why.
 
 ### 2.1 Premise
 
-The Realm of Legends is a plane where duels are an ancient form of magic. A great old working, **the Concord**, once
-kept a balance: legends from across the Multiverse came here as echoes, dueled, and returned home with their stories
-intact. In the Realm, a duel fought under the Concord is binding. The winner can claim the loser's power, their oath,
-even their spark. The Concord has been broken.
-Someone is *summoning* legends for real, sparks and all, and binding them to the plane's five Color Castles.
+Concordia is a quiet plane bound together by **the Concord**: five ancient Seals, one per color, that keep mana from
+tearing the land apart. In Concordia a duel is a ritual. A duel fought under a Seal is *binding*: the winner earns
+the right to channel that Seal's power. For generations, young duelists have made the **Seal Pilgrimage**. They
+challenge the Wardens who guard each Seal, and the few who earn all of them stand before the **High Arbiter** at the
+Concord Summit.
 
-You are one of the summoned. You arrive in a sealed library with no way home. The hooded mage who greets you seems
-helpful. He is **Jodah, the Archmage Eternal**, and he is the one doing the summoning. He believes the Multiverse is
-heading for another Phyrexian-scale catastrophe and that the only defense is a standing army of bound legends. He
-needs one more thing: a summoned planeswalker strong enough to defeat the Color Castles' wardens. That defeat
-transfers their bound power into the Concord's keystone, which completes his ritual.
+You and your childhood friend grew up in **Emberbrook**, a village at the edge of the wilds, dreaming of the
+Pilgrimage. On the day you both receive your first commander, a masked group called the **Sealbreakers** raids the
+village's shrine. They want to break the Seals and take the raw mana for themselves. Their leader is an unknown figure
+called **the Hollow Crown**.
 
-The existing Chapter 1 setup supports this twist without contradiction. Quest 53's "five keys from the Fallen Color
-Castles" are exactly what Jodah wants you to collect.
+The twist: the Hollow Crown is **High Arbiter Valen Sorrow**, the most respected duelist in Concordia and the person
+every pilgrim wants to reach. He believes the Seals are a cage that keeps Concordia weak. Breaking them, he says, will
+make everyone free. The pilgrims who clear the Seals are the keys he needs.
+
+This keeps the shape of the twist approved in v1, a trusted figure who turns out to be the villain, with an original
+character. See open question 1.
 
 ### 2.2 Structure
 
-| Part | Title | Hook | Ends with |
-|---|---|---|---|
-| Prologue | **The Summoning** | You arrive in the library, meet the mage, step into the Wastes | You reach Waystone, the first town |
-| Act I | **Shards in the Wastes** | Mana shards are vanishing. Sir Donovan hires you | You learn that summoning is draining the plane |
-| Act II | **The Five Castles** | Donovan says powerful wizards are held in the Color Castles | Five castles fall and five Concord Keys are taken |
-| Act III | **The Enemy of My Enemy** | The keys open the Waste Strongholds. Donovan's real employer appears | Donovan betrays you, and Viv reveals Jodah |
-| Act IV | **The Unbound** | Free the bound legends and rally the five capitals | The capitals march, and the Spire of Summons opens |
-| Finale | **The Concord** | Climb the Spire, face Jodah | You choose the ending |
+| Part | Title | Region | Warden / main boss | Color unlock |
+|---|---|---|---|---|
+| Prologue | **First Light** | Emberbrook and Route 1 | Rival (first duel) | Your starting color |
+| Chapter 1 | **The Green Seal** | Mossgate and the Thornwood | Warden **Brannoc** (G) | Choose your 2nd color |
+| Chapter 2 | **Two Roads** | Saltreach (U) *and* Cinderpeak (R), in either order | Wardens **Isolde** (U) and **Tarro** (R) | Choose your 3rd, then 4th color |
+| Chapter 3 | **The Broken Archive** | Lumenhold and the Sealbreaker Hideout | Warden **Dame Seraphine** (W). Sealbreaker boss: **Mordessa** | Choose your 5th color |
+| Finale | **The Concord Summit** | Victory Road and the Summit | The Five Paragons, the rival, then the High Arbiter | You have all five |
 
-Expected length: about 25–35 hours on Normal. The prologue and Act I take about 3–4 hours.
+The Wardens have fixed colors (G, U, R, W), but **the color you unlock is your choice, not the Warden's color**. A
+Seal resonates with whatever color you call. Black is the Sealbreakers' color, and the finale is where all five meet.
+
+Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the vertical slice) is about 3 hours.
 
 ### 2.3 Chapter outline
 
-Each chapter maps to one or two quest IDs (see §6). "Location" names are planned maps. Existing maps are marked
-*(existing)*.
+#### Prologue: First Light
 
-#### Prologue: The Summoning (chapters P1–P2)
+| Step | Goal | Location | Beats |
+|---|---|---|---|
+| P1 | Wake up and visit the shrine | Emberbrook: home, village, shrine (hand-made map) | The rival knocks on your door. At the shrine, **Elder Wren** gives you your first commander. It's your starting deck (chosen with the color on the new-game screen). The rival takes a commander of a color that is *enemy* to yours |
+| P2 | First duel | Emberbrook shrine | **Rival duel 1**: a short duel with a low-power deck. Win or lose, the story continues (a loss branch has its own dialog) |
+| P3 | The raid | Emberbrook | Sealbreaker grunts raid the shrine and steal a Seal fragment. Tutorial duel against a grunt |
+| P4 | Set out | Route 1 → Mossgate | Route trainers teach the "challenged on sight" mechanic. Reach Mossgate |
 
-| Ch | Title | Goal | Locations | Beats |
-|---|---|---|---|---|
-| P1 | Called Across | Wake up, talk to the mage, leave the library | Library of Summons (new interior, based on `spawn.tmx` *(existing)*) | Disorientation text (reuse quest 28). The mage gives your starter commander a name and backstory by color. A tutorial duel against an animated archive golem (low-power mono-color deck, Easy) |
-| P2 | First Steps | Reach Waystone, the town at the center of the Wastes | Library exterior → Waystone (new hand-made town) | First overworld walk. Shops, inn and notice board are introduced. Meet **Sir Donovan** at the inn |
+#### Chapter 1: The Green Seal
 
-#### Act I: Shards in the Wastes (chapters 1.1–1.5)
+| Step | Goal | Location | Beats |
+|---|---|---|---|
+| 1.1 | Settle into town | Mossgate (town with shop, inn and Commander Hall) | Learn the Commander Hall rules (§6.2). The notice board offers side jobs |
+| 1.2 | Clear the Thornwood | Route 2 (Thornwood forest map) | Trainers, a hidden grove with an optional legend duel (secret) |
+| 1.3 | Sealbreaker camp | Thornwood clearing | Grunts are trying to poison the Green Seal's roots. Mini-boss: Sealbreaker captain **Hask** |
+| 1.4 | The Green Warden | Mossgate Grove (gym map) | Gym puzzle: overgrown paths open after you beat the grove keepers. **Warden Brannoc** (mono-G ramp and stompy) |
+| 1.5 | First Seal | Mossgate Grove | **Color choice 1** (§6.1). Rival duel 2 outside the gym. Elder Wren sends word that the Sealbreakers struck the Archive in Lumenhold |
 
-The Chapter 1 vertical slice (see §9) is P1–1.5.
+#### Chapter 2: Two Roads (any order)
 
-| Ch | Title | Goal | Locations | Beats |
-|---|---|---|---|---|
-| 1.1 | Your First Job | Finish 2 jobs from the Waystone board | Waystone, 2 nearby side dungeons | Teaches side quests. Donovan watches and approves |
-| 1.2 | The Lost Caravan | Find the overdue shard caravan | Caravan Road (new), Bandit Cave *(existing `Quest_BanditCave`)* | Bandit boss **Grenzo** (rakdos tunnelers) has the shards, but says he found the caravan already drained |
-| 1.3 | What's Yours Is Mine | Investigate the shard mines | Shard Mines *(existing `Quest_ShardMines`)*, 2 floors | The mines are being emptied by a summoning circle. Boss: the mine foreman **Kinnan** (mana engine). He was paid in summoned servants |
-| 1.4 | The Library of Varsil | Research how summoning works | Library of Varsil *(existing)* | Meet **Viv** (archivist). Puzzle duel: a draw-engine deck against a fixed `dungeonEffect` (§5.4). Viv finds the Concord |
-| 1.5 | The Dig Site | Find the golem forge behind the circles | Dig Site *(existing)* → Golem Foundry (new) | Boss: **Urza** (artifact deck) guards the golems. Defeating him shows the golems carry a hooded mage's sigil. Act I ends with Donovan giving you the five castle locations |
+| Step | Goal | Location | Beats |
+|---|---|---|---|
+| 2.0 | The crossroads | Crossroads Inn (hub) | Two routes open: west to Saltreach, east to Cinderpeak. You can do them in either order. The second Warden you fight is a tier stronger (§5.2) |
+| 2A.1 | Saltreach | Route 3 (coast), Saltreach town | Sealbreakers are draining the tide pools. Secret: a sunken shipwreck with a legend duel |
+| 2A.2 | The Blue Warden | Saltreach Lighthouse (gym) | Gym puzzle: a mirror maze. **Warden Isolde** (mono-U control and flyers). Best-of-3 |
+| 2B.1 | Cinderpeak | Route 4 (volcanic path), Cinderpeak town | Miners have gone missing in the forges |
+| 2B.2 | The Red Warden | Cinderpeak Forge (gym) | Gym gauntlet: three forge-keepers in a row with no healing. **Warden Tarro** (mono-R aggro) |
+| 2.9 | Two Seals | Crossroads Inn | Color choices 2 and 3. **Rival duel 3**: your friend is struggling and frustrated, and starts listening to a stranger in a mask |
 
-#### Act II: The Five Castles (chapters 2.0–2.5)
+#### Chapter 3: The Broken Archive
 
-| Ch | Title | Goal | Locations | Beats |
-|---|---|---|---|---|
-| 2.0 | The Enemy of My Enemy | Accept the castle mission | Waystone | Reuses quest 52's framing. The player picks the castle order. All five are open (non-linear inside the act) |
-| 2.1–2.5 | The {Color} Castle | Clear the castle, defeat its warden, take its Concord Key | `{color}_castle.tmx` + `_f1` *(existing)* plus a new approach map per castle | Each castle has a capital to rally at first (the capital maps already exist) and a warden with their own story beat (§3.3). Each warden says "he promised to send us home" |
+| Step | Goal | Location | Beats |
+|---|---|---|---|
+| 3.1 | Lumenhold | Route 5 (plains), Lumenhold city | The Archive is in ruins. Archivist **Pell** explains what the Seals do and what breaking them would do |
+| 3.2 | The Hideout | Sealbreaker Hideout (2-floor dungeon) | **Your rival has joined the Sealbreakers**, convinced that breaking the Seals will make them strong. The rival duel is a 2v1 against the rival plus a grunt |
+| 3.3 | Mordessa | Hideout depths | Sealbreaker commander **Mordessa** (mono-B reanimator). She lets slip that "the Crown sits at the Summit". The rival sees the Sealbreakers' real plan and leaves them |
+| 3.4 | The White Warden | Lumenhold Cathedral (gym) | Gym puzzle: a light-bridge sequence. **Dame Seraphine** (mono-W tokens and lifegain). Two-player pod duel: Seraphine with her squire |
+| 3.5 | The last Seal | Lumenhold | **Color choice 4: you now control all five colors.** The rival apologizes and heads for Victory Road ahead of you |
 
-Rule for Act II: castles after the first get harder in order of completion (§5.2), not by color.
+#### Finale: The Concord Summit
 
-#### Act III: The Enemy of My Enemy (chapters 3.1–3.5)
-
-| Ch | Title | Goal | Locations | Beats |
-|---|---|---|---|---|
-| 3.1 | Keys and Locks | Bring the keys to Waystone | Waystone | The keys resonate. Five Waste Strongholds appear on the overworld (hidden POIs activated by flag) |
-| 3.2 | The Iron Bastion | Clear stronghold 1 | Iron Bastion (new) | Boss: **Mishra**. He mentions "the Archmage" |
-| 3.3 | The Gilded Court | Clear stronghold 2 | Gilded Court (new) | Boss: **Teysa** (orzhov contracts). She has a contract signed by Donovan |
-| 3.4 | Donovan's Bargain | Confront Donovan | Waystone → Donovan's Manor (new) | **Betrayal:** Donovan has been delivering the keys to Jodah for money. Duel: Donovan + a bound legend in a 2v1 (`nextEnemy` + `teamNumber`). Donovan escapes |
-| 3.5 | What Viv Knew | Rescue Viv, learn the truth | Remaining strongholds (Bone Pit, Storm Spire, Thornwall) | Viv reveals the mysterious mage is Jodah. The keys you collected have already been absorbed. You need the capitals' help to reach him |
-
-#### Act IV: The Unbound (chapters 4.1–4.6)
-
-| Ch | Title | Goal | Locations | Beats |
-|---|---|---|---|---|
-| 4.1–4.5 | Rally {Capital} | Earn each capital's support | Five capitals *(existing)* plus one new capital dungeon each | Each capital asks for a different kind of proof: a gauntlet (W), a puzzle duel (U), a bargain (B), a tournament or Arena (R), a hunt (G). Freed legends join you and grant permanent blessings |
-| 4.6 | The Last Bridge | Cross to the Spire of Summons | Concord Bridge (new) | Donovan returns, now bound himself. A sympathetic last duel. Optional mercy choice (sets a character flag for the ending) |
-
-#### Finale: The Concord (chapters F.1–F.3)
-
-| Ch | Title | Goal | Locations | Beats |
-|---|---|---|---|---|
-| F.1 | The Spire | Climb three floors | Spire of Summons F1–F3 (new) | Each floor brings back an Act II warden, now free, who fights *beside* you (2v2 `teamNumber`) against a bound legend |
-| F.2 | The Archmage Eternal | Defeat Jodah | Spire Summit (new) | Three-phase boss (§5.3). Between phases, Jodah argues his case |
-| F.3 | Concord | Choose an ending | Spire Summit | **Restore** (send everyone home, including you) or **Bind** (take Jodah's place and keep the army). The ending sets a character flag that NG+ reads (unlocks a different starting dialog) |
+| Step | Goal | Location | Beats |
+|---|---|---|---|
+| F.1 | Victory Road | Mountain cave (3 maps) | Your strongest trainer gauntlet. Secrets: two legend duels |
+| F.2 | The Five Paragons | Summit halls (5 rooms, one per color) | The Elite Four analog. Each Paragon plays a two-color deck (§3.3). No healing between halls, but inns at the entrance |
+| F.3 | Final rival duel | Summit gate | Your friend at their best: a five-color deck. Afterwards they finally admit what they owe you |
+| F.4 | The High Arbiter | Concord Throne | **Valen Sorrow** congratulates you, then reveals himself as the Hollow Crown. Three-phase boss (§5.3) |
+| F.5 | Epilogue | Emberbrook | The Seals are restored (or reforged, per open question 6). You can keep exploring, and post-game legend duels open |
 
 ---
 
 ## 3. Characters
 
-All decks below exist in `decks/legends/` unless marked **(new)**. "Theme" is the design intent. The actual 99 cards
-are tuned in Phase 2.
-
 ### 3.1 Protagonist
 
-- **Framing:** a summoned planeswalker, unnamed. Dialog uses the existing `$(playerrace)` token. The player's
-  starting color is chosen at new game (existing `commanderDecks` per color). The prologue's mage dialog changes per
-  color (`colorIdentity` condition) to give your commander a reason to be here.
-- **Motivation:** go home, then (from Act III) free the others.
-- **Arc:** a tool in someone else's plan becomes the person who decides what the Concord is for.
-- **Deck:** the color's starter commander deck. It grows through curated rewards (§5.5). Changing commander is
-  allowed and encouraged after Act II (a reward choice offers new commanders).
+- A young duelist from Emberbrook. The player chooses name, gender, race and starting color on the existing new-game
+  screen.
+- **Starting commander:** a mono-color starter deck per color and difficulty. These are new 99+1 decks built from
+  existing cards (`decks/starter/{W,U,B,R,G}_Starter_{Difficulty}.dck`). Candidate commanders are all mono-colored
+  legends that already exist in Forge:
 
-### 3.2 Recurring NPCs
+| Color | Commander (candidate) | Theme |
+|---|---|---|
+| W | Adeline, Resplendent Cathar | Humans and tokens |
+| U | Talrand, Sky Summoner | Spells and drakes |
+| B | Ayara, First of Locthwain | Black devotion |
+| R | Krenko, Mob Boss | Goblins |
+| G | Marwyn, the Nurturer | Elves and +1/+1 counters |
 
-| Character | Role | Motivation | Signature commander / theme | Appears in |
+### 3.2 The rival: your childhood friend
+
+| Field | Design |
+|---|---|
+| Who | An ordinary villager from Emberbrook, your neighbor since you were children. Not a legend and not chosen by fate. Competitive, loyal, and painfully aware they're not the "chosen" one |
+| Gender and name | The opposite gender to the player. **Kael** (he/him) if the player is female, **Lyra** (she/her) if the player is male. Names are placeholders (open question 3) |
+| Sprite | Existing hero atlases: `sprites/heroes/human_m.atlas` / `human_f.atlas` |
+| Colors | Starts with the color *enemy* to the player's (for example W → B), then grows one color per encounter, mirroring you |
+| Arc | Eager friend → frustrated by losing → recruited by the Sealbreakers (Ch.3) → sees their real plan and leaves → your greatest opponent at the Summit → an ally in the epilogue |
+| Duels | P2 (shrine), 1.5 (Mossgate), 2.9 (Crossroads), 3.2 (2v1 at the Hideout), F.3 (Summit gate) |
+| Deck | One deck per encounter: `decks/campaign/rival/<color>_<n>.dck`. 5 starting colors × 5 encounters = 25 decks. These can be cut down by sharing the later decks (open question 4) |
+
+### 3.3 NPCs, Wardens and villains
+
+| Character | Role | Motivation | Commander / deck theme | Appears in |
 |---|---|---|---|---|
-| **The Mysterious Mage** (Jodah in disguise) | Guide, later the main antagonist | Complete the Concord army | Hooded. In disguise, a mono-colorless "archive" deck **(new)**. Revealed: `jodah.dck` | P1, ending of 1.5 (sigil), 3.5 reveal, F.2 |
-| **Sir Donovan** | Employer, later betrays you | Debt and ambition. He believes Jodah will make him a lord of the new order | `kenrith.dck` (politics, "everyone draws") as a 2v1 boss in 3.4. Bound version in 4.6: `teysa.dck` style aristocrats **(new tune)** | P2, 1.1–2.0, 3.4, 4.6 |
-| **Viv** | Archivist, ally, quest-giver for lore | Find out what the Concord really is. Feels guilty for teaching Donovan to read the keys | Not a duelist until Act IV. Then a training partner with an spellslinger deck (`kykar.dck`) | 1.4 onward, the hub in Waystone in Act III |
-| **Sir Kallus** | Captain of the Waystone guard. Gives side quests | Keep Waystone safe. Distrusts Donovan from the start | `sigarda.dck` (white protection). Optional sparring duels | P2, side quests, 4.1 (white capital) |
-| **The Rival: Najeela** (placeholder choice) | A proud summoned duelist who arrived just before you and keeps challenging you | Prove she's the strongest summoned champion and be the one who goes home. Later she learns Jodah plans to bind whoever wins, and turns on him | `najeela.dck` (warrior tokens, aggressive). Her deck gets stronger each time you meet: one deck per encounter via `deckOverride` (`decks/campaign/rival_1..5.dck`) | 1.2 (loses to you, swears revenge), 2.x (waits at the third castle you clear), 3.5 (helps rescue Viv after a duel), 4.6 (final rival duel before the bridge), F.1 (fights beside you in a 2v2) |
-| **The Freed Wardens** | Allies in the finale | Revenge on Jodah, going home | Their Act II decks, used on the player's team in F.1 | Act II, F.1 |
-
-### 3.3 Antagonists and act bosses
-
-| Boss | Act / chapter | Role | Motivation | Deck / theme | Encounter notes |
-|---|---|---|---|---|---|
-| Archive Golem | P1 | Tutorial | None, it's a construct | Mono-color 60-ish life-light deck **(new)** | Easy. No dungeonEffect |
-| **Grenzo** | 1.2 | Bandit lord | Profit. He's found the drained caravan and is selling the husk | `grenzo.dck` (rakdos dungeon-dwellers) | First real boss. One game |
-| **Kinnan** | 1.3 | Mine foreman | Paid in summoned servants | `kinnan.dck` (mana engine) | Map effect: player starts with one fewer card |
-| **Urza** | 1.5 | Golem guardian | Bound. Guards the foundry under compulsion | `urza.dck` (artifacts) | Act I boss. Best-of-1 with extra start-of-game artifacts |
-| Black Castle warden: **Kynaios and Tiro** *(existing `_f1`)* | 2.x | Warden | Bound. Promised a way home | Existing deck | Uses existing castle `dungeonEffect` |
-| Blue Castle warden: **Saskia** *(existing)* | 2.x | Warden | Bound | Existing deck | Existing castle effect |
-| Green Castle warden: **Breya** *(existing)* | 2.x | Warden | Bound | Existing deck | Existing castle effect |
-| Red Castle warden: **Atraxa** *(existing)* | 2.x | Warden | Bound | Existing deck | Existing castle effect |
-| White Castle warden: **Yidris** *(existing)* | 2.x | Warden | Bound | Existing deck | Existing castle effect |
-| **Mishra** | 3.2 | Stronghold lord | Willing ally of Jodah. Wants the golems | `mishra.dck` | Best-of-3 |
-| **Teysa** | 3.3 | Stronghold lord | Holds Donovan's contract | `teysa.dck` | Map effect: both players start with an extra token |
-| **Sir Donovan + bound Krenko** | 3.4 | Betrayer | Money | `kenrith.dck` + `krenko.dck`, teamed (2v1) | Escapes on defeat (dialog) |
-| **Sheoldred / Yawgmoth / Tatyova** | 3.5 strongholds | Bound lords | Bound | Existing decks | One per remaining stronghold |
-| Capital trials | 4.1–4.5 | Varied | Varied | Existing legends chosen per capital (§5) | See §5.4 |
-| **Bound Donovan** | 4.6 | Fallen ally | Bound by Jodah as punishment | New tune of an aristocrats list | Mercy choice afterward |
-| Spire guardians | F.1 | Bound legends | Bound | `kozilek.dck`, `the_ur_dragon` (exists as enemy), `atraxa.dck` style | 2v2 with a freed warden |
-| **Jodah, the Archmage Eternal** | F.2 | Final boss | Save the Multiverse by enslaving its heroes | Phase 1: `jodah.dck`. Phase 2: Jodah + two bound legends in a pod. Phase 3: Jodah alone, high life, command-zone emblem | §5.3 |
+| **Elder Wren** | Mentor, the "professor" | Protect the village. Sends pilgrims out with hope | Not a duelist | Prologue, Ch.1 messages, epilogue |
+| **Archivist Pell** | Lore guide | Rebuild the Archive and understand the Seals | Optional sparring: mono-U artifacts | Ch.3, side quests |
+| **Warden Brannoc** | Warden 1 (G) | Guards the Green Seal. Tests patience | Mono-G ramp and stompy (e.g. Omnath, Locus of Mana) | Ch.1 |
+| **Warden Isolde** | Warden 2/3 (U) | Guards the Blue Seal. Tests cleverness | Mono-U control and flyers (e.g. Talrand-style, a different commander from the player's) | Ch.2 |
+| **Warden Tarro** | Warden 2/3 (R) | Guards the Red Seal. Tests courage | Mono-R aggro (e.g. Torbran, Thane of Red Fell) | Ch.2 |
+| **Dame Seraphine** | Warden 4 (W) | Guards the White Seal. Tests resolve | Mono-W tokens and lifegain | Ch.3 |
+| **Captain Hask** | Sealbreaker mini-boss | Paid muscle | Mono-B or B/R aggro | Ch.1 |
+| **Mordessa** | Sealbreaker commander | True believer in the Crown | Mono-B reanimator | Ch.3 |
+| **The Five Paragons** | Elite Four analog | Guard the Summit, unaware of the Arbiter's plan | One two-color deck each (WU, UB, BR, RG, GW) | Finale |
+| **High Arbiter Valen Sorrow / the Hollow Crown** | Final boss | Thinks the Seals keep Concordia weak, and wants to break them with your Seals | Five-color, three phases (§5.3) | Ch.1 rumor, Ch.3 hints, finale |
+| **Hidden legends** | Optional secret duels | Each is a famous legend sleeping in Concordia | Existing legend decks (Realm of Legends has 985 in `decks/legends/`, which can be copied in) | Secret areas |
 
 ---
 
 ## 4. World
 
-### 4.1 Regions and zones per act
+### 4.1 Overworld layout
 
-| Act | Region | Overworld biome | Hand-made maps (new unless noted) |
-|---|---|---|---|
-| Prologue | The Library and Waystone | Center of the `colorless` (waste) biome | Library of Summons interior, Library exterior, Waystone (town + inn + notice board) |
-| I | The Inner Wastes | `colorless` | Caravan Road, Bandit Cave *(existing)*, Shard Mines F1–F2 *(existing)*, Library of Varsil *(existing)*, Dig Site *(existing)*, Golem Foundry |
-| II | The Five Reaches | One colored biome each | 5 castle approach maps (new), 5 castles + `_f1` *(existing)*, 5 capitals *(existing)* |
-| III | The Outer Wastes | `colorless`, edges | Iron Bastion, Gilded Court, Donovan's Manor, Bone Pit, Storm Spire, Thornwall |
-| IV | The Five Capitals | Colored biomes | One trial dungeon per capital, Concord Bridge |
-| Finale | The Spire of Summons | `colorless`, center (near the start) | Spire F1–F3, Spire Summit |
+```
+                    [Concord Summit]
+                          |
+                    (Victory Road)
+                          |
+   [Saltreach]--Route 3--[Crossroads]--Route 4--[Cinderpeak]
+                          |
+                       Route 5
+                          |
+                     [Lumenhold] --(Hideout)
+                          |
+                    Route 2 (Thornwood)
+                          |
+                      [Mossgate]
+                          |
+                       Route 1
+                          |
+                     [Emberbrook]  (start)
+```
 
-Total new maps for the full campaign: about 25. The Chapter 1 slice needs about 6.
+Every bracket is a town or gym, and every route is a hand-made map. Lumenhold sits south of the Crossroads, at the
+end of Route 5. Its gate is visible from Route 5 but locked until Chapter 3 (see §4.4).
 
-### 4.2 Linking hand-made maps
+### 4.2 Building the hand-made overworld: data first (Phase 1)
 
-Every story location is a **chain of Tiled maps** linked by `entry` and `portal` objects:
+What the code allows today:
 
-- An overworld POI loads the first map of a location (its `map` field in `points_of_interest.json`).
-- Inside, `entry` / `portal` objects carry `teleport` (the target .tmx path) and `teleportObjectId` (the object ID of
-  the arrival spawn point on the target map). This is how the existing castles link `{color}_castle.tmx` to
-  `{color}_castle_f1.tmx`.
-- An `exit` object returns to the overworld.
-- Portals can start inactive and be turned on by an `activateMapObject` dialog action, or hidden behind `dummy`
-  obstacles that are removed with `deleteMapObject`. This is the gating tool *inside* a location.
+- **POI positions can be pinned exactly.** In `World.java`, a POI is placed at its biome's start point plus
+  `offsetX/offsetY` times the biome size, plus a random radius scaled by `radiusFactor`. With `radiusFactor: 0` the
+  position is exact and the same for every save.
+- **The game can only be saved on the overworld or inside town/capital maps** (`StartScene.enter`). So the overworld
+  must remain the layer that connects locations. We can't make the whole region one giant chain of maps, because the
+  player could never save on a route.
 
-Convention: new story maps go under `maps/map/campaign/<act>/<location>/<location>_<n>.tmx`, with one shared
-`campaign.tsx` tileset reference to keep paths short.
+The Phase 1 plan is a **pinned overworld**:
 
-### 4.3 Story POIs on the procedural overworld (Phases 1–3)
-
-The current overworld is generated from noise and biome data and can't be hand-placed (see §7.2 for the Java fix).
-Until then, story locations become **gateway POIs**:
-
-- One POI per story location, with `count: 1`, a unique `questTags` entry (for example `Camp_Ch1_Mines`) and a story
-  sprite.
-- Position: low `radiusFactor` (0.01, like the castles) plus a fixed `offsetX/offsetY`. This puts it at a stable
-  spot *relative to its biome center*. The absolute position still changes with the world seed, but the layout is
-  consistent ("the mines are always north-west of the Wastes' center").
-- Hidden until needed: `active: false` plus `questFlagsToActivate: [{"key": "campAct", "val": 1}]`. Stages target
-  them with `allowInactivePOI: true` where needed.
-- The quest log's navigation arrow already leads to tracked stages' POIs, so "linear and always know where to go"
-  works with data alone.
-
-### 4.4 Act gating
-
-A single quest flag, **`campAct`** (0 = prologue … 5 = finale), drives everything:
-
-| Mechanism | How |
+| Piece | How |
 |---|---|
-| Overworld POIs appear | `questFlagsToActivate` on `campAct` (and on per-chapter flags like `campCh` for finer steps) |
-| Map doors open | `dialog` objects with a `getQuestFlag` condition and an `activateMapObject` / `deleteMapObject` action |
-| NPC dialog changes | Conditions on `campAct` in each NPC's dialog tree |
-| Quests | Each act's last quest sets `campAct` and issues the next act's first quest |
+| World size | Small (about 120×160 tiles) in `world/world.json`, so walking between POIs is short |
+| Biomes | One land biome covering the whole island, surrounded by `base` ocean. One biome guarantees every pinned POI lands in a valid biome. Terrain, trees and decorations stay noise-generated but sparse |
+| Locations | Every town, route, gym and dungeon is a POI with `count: 1`, `radiusFactor: 0` and fixed offsets matching §4.1 |
+| Routes | Each route is a POI whose map is a hand-made route (long, Pokémon-style, with trainers). It has an entry at one end and an exit at the other. The overworld road between towns runs past it |
+| Roads | Auto-generated between towns, as now |
+| Wild encounters | The biome's `enemies` list is kept very short and weak, or empty. Trainers live on route maps |
+| Start | `playerStartPosX/Y` set next to Emberbrook |
 
-Soft gate: biomes stay physically reachable (the overworld is open). Story POIs simply don't exist yet, and wilderness
-enemies in later biomes are tougher. A hard gate (blocking the walk) needs Java (§7.2).
+Limitation: overworld terrain is still noise-generated. The *layout* is hand-made, but the ground between POIs isn't
+painted by hand. A fully hand-painted overworld needs Java (J2, §7.2).
+
+### 4.3 Hand-made maps
+
+- Built in Tiled with existing tilesets from `common/maps/tileset/` (`main.tsx`, `buildings.tsx`,
+  `large_buildings.tsx`, `dungeon.tsx`, `rivers.tsx`, `FarmFood.tsx`, `desertbuildingtiles.tsx`, `buildingsbosses.tsx`)
+  and the existing map templates.
+- Paths: `Concordia/maps/map/<area>/<name>.tmx`.
+- Multi-room places (gyms, the Hideout, Victory Road, the Summit) are chains of maps linked by `entry` / `portal`
+  objects with `teleport` and `teleportObjectId`.
+- **Gym puzzles** use `dummy` objects (removable obstacles) and `dialog` objects whose actions run
+  `deleteMapObject` / `activateMapObject` when a condition (map flag, defeated keeper) is met.
+- **Trainers** are `enemy` objects with `threatRange` / `pursueRange` (they come at you on sight), a `dialog`
+  (challenge line) and a `defeatDialog`. Map enemies don't respawn unless the map sets `respawnEnemies`, so beaten
+  trainers stay beaten.
+- **Healing:** maps whose root POI is of type `town` or `capital` heal you on entry. Inn objects heal elsewhere.
+- **Secrets:** hidden enemies (`hidden: true`) and inactive portals behind breakable walls (`dummy`).
+
+### 4.4 Gating (semi-linear)
+
+| Gate | Data mechanism |
+|---|---|
+| Next location doesn't exist yet | The POI has `active: false` and `questFlagsToActivate: [{"key": "campCh", "val": N}]` |
+| Route blocked halfway | A `dummy` obstacle (a fallen tree, a guard) on the route map, removed by dialog once `campCh` ≥ N |
+| Gym locked | The gym door is a `dialog` object that only opens with the right flag (for example "Come back with the Green Seal") |
+| Branch in Chapter 2 | Both Saltreach and Cinderpeak activate at `campCh` = 2. The Chapter 3 POIs activate when **both** Warden flags are set |
+
+The overworld itself is walkable everywhere (no physical walls between POIs). Story places simply don't exist until
+you're meant to reach them. Hard blocking on the overworld needs Java (J4).
 
 ---
 
@@ -344,138 +280,122 @@ enemies in later biomes are tougher. A hard gate (blocking the walk) needs Java 
 
 ### 5.1 Terms
 
-- **Tier** is the deck power target, on the common Commander 1–10 scale. Roughly: 3 = precon, 5 = upgraded precon,
-  7 = focused/tuned, 9 = near-cEDH. This plane's `restrictedCards` already caps the top end.
-- **Enemy life** is the `life` field. The difficulty's `enemyLifeFactor` (1.0 / 1.0 / 1.3 / 1.5) multiplies it.
-- **Player life** starts at the difficulty's `startingLife` (35 / 30 / 20 / 15) and is raised by story blessings.
-- Rewards are the base value on Normal. `rewardMaxFactor` scales random rewards (1.5 / 1.0 / 0.5 / 0.1).
+- **Power tier** uses the common Commander 1–10 scale: 1–2 = jank, 3–4 = precon, 5–6 = upgraded, 7–8 = tuned.
+- **`life`** is the enemy's starting life in `enemies.json`. The difficulty's `enemyLifeFactor` multiplies it.
+- **Player starting life** comes from the difficulty and grows with life rewards from Wardens.
 
-### 5.2 Per-act table (Normal)
+### 5.2 Per-chapter curve (Normal)
 
-| Act | Wilderness mobs | Story duels | Boss tier | Boss `life` (base) | Boss mechanics | Special duels | Rewards and economy |
-|---|---|---|---|---|---|---|---|
-| Prologue | None required | 1 tutorial | 2 | 20 | None | Tutorial golem | Starter deck, 500 gold, first blessing |
-| I | Tier 2–3 (existing waste mobs with `life` 20) | 6–8 | 3–4 | 30 / 30 / 40 | Kinnan: player `changeStartCards: -1`. Urza: `startBattleWithCard` with 2 artifact blockers | Varsil puzzle duel | ~4k gold total. One rare+ per boss. Commander-staple pack (Sol Ring, Signets) at 1.5. **Permanent +2 life** at the end of the act |
-| II | Tier 4–5 | 5 castles × ~6 duels | 5 → 6 (by completion order: castle 1 tier 5, castle 5 tier 6+) | 40 | Existing castle `dungeonEffect`s (e.g. Melesse Spirit + Sphere of Grace). The warden keeps the map effect | One castle per color gets a gimmick floor (§5.4) | ~10k gold. Each key = a choice of 3 mythics in the castle's color (`grantRewardsChoice`). Option to change commander after castle 3. **+2 life** per 2 castles |
-| III | Tier 5–6 | ~20 | 6–7 | 40–50 | Mishra best-of-3. Teysa: both sides get a token. Donovan 2v1 (`nextEnemy` + `teamNumber`) | Donovan's Manor stealth (enemies with low `threatRange` and `waypoints`) | Lower gold (~6k), more cards. Manor vault = a dual-land package |
-| IV | Tier 6–7 | 5 trials × 3–5 | 7 | 50 | Per-capital `dungeonEffect` themes | Arena trial (R), puzzle (U), gauntlet (W) | Each capital gives a permanent blessing (`giveBlessing`) and a legendary item |
-| Finale | None | 4 floors | 8 | 50 / 60 / 100 | 2v2 with freed warden. Jodah three phases (§5.3) | Ending choice | Ending rewards. NG+ unlock via character flag |
+| Part | Trainers | Rival | Mini/villain boss | Warden | Boss mechanics | Rewards and economy |
+|---|---|---|---|---|---|---|
+| Prologue | Tier 1, `life` 15, mono-color | Tier 1, `life` 15 | Grunt, tier 1 | – | None | Starter deck, 300 gold |
+| Ch.1 | Tier 2, `life` 20 | Tier 2, `life` 20 | Hask, tier 3, `life` 25 | Brannoc, tier 3, `life` 30 | Map `dungeonEffect`: Brannoc starts with a mana dork in play | ~2,000 gold. Seal = new color + a choice of 3 commanders (§6.1) + **+3 max life** |
+| Ch.2 (1st Warden) | Tier 3, `life` 25 | Tier 3, `life` 25 | – | Isolde / Tarro, tier 4, `life` 35 | Isolde: best-of-3. Tarro: gauntlet with no healing, and a `dungeonEffect` giving him a haste enabler | ~3,000 gold |
+| Ch.2 (2nd Warden) | Tier 4 | – | – | Tier 5, `life` 40 | The same mechanics, plus `changeStartCards: +1` for the Warden | Seal + life reward each |
+| Ch.3 | Tier 5, `life` 30 | Tier 5, 2v1 | Mordessa, tier 6, `life` 40 | Seraphine, tier 6, `life` 40, in a pod with her squire | Pod: `nextEnemy`. 2v1: `nextEnemy` + `teamNumber` | ~4,000 gold. Final Seal |
+| Finale | Tier 6–7, `life` 35 | Tier 7, `life` 40, five-color | Paragons: tier 7, `life` 40 each, best-of-1 | High Arbiter: tier 8, 3 phases | §5.3 | Champion reward chest, post-game unlocks |
 
-### 5.3 Boss mechanics catalog (all data-only)
+Pacing targets: the player's deck should be roughly one tier below the next Warden on arrival, and one tier above it
+after clearing the routes in between. Gold buys staples. Seals unlock colors. Exploration finds the best cards.
 
-| Mechanic | How to build it |
+### 5.3 Boss mechanics (all data-only)
+
+| Mechanic | Data used |
 |---|---|
-| Opening advantage | Map `dungeonEffect` → `startBattleWithCard` (for example a Sphere and a flier, as the castles do) |
-| Command-zone emblem | `startBattleWithCardInCommandZone` with an existing emblem-style or always-on card |
-| Hand tax / bonus | `changeStartCards` (+/− on enemy or via `opponent` on the player) |
-| Life spike | `lifeModifier` on the enemy, or a high `life` |
-| Multiplayer pod | `nextEnemy` chain (up to 8). Free-for-all by default |
-| Teams (2v1, 2v2) | `teamNumber` on enemies. Ally-on-your-side needs Java (see §7.2) |
-| Gauntlet | Several enemies in a row on one map. Doors open with `defeatDialog` → `activateMapObject` |
-| Best-of-N | `gamesPerMatch: 3` |
-| Phased boss | Three separate enemy objects on the summit map. Each `defeatDialog` sets a map flag and activates the next phase actor. Life does not carry between phases (that would need engine work) |
-| Deck swap mid-story | `deckOverride` on a map enemy |
-| Exempt one enemy | `ignoreDungeonEffect` |
+| Start-of-game advantage | `dungeonEffect` map property → `startBattleWithCard` |
+| Command-zone emblem | `startBattleWithCardInCommandZone` |
+| Hand size | `changeStartCards` (enemy, or player via `opponent`) |
+| Extra life | Higher `life`, or `lifeModifier` |
+| Multiplayer pod | `nextEnemy` (up to 8 opponents) |
+| Teams (2v1) | `teamNumber` |
+| Best-of-3 | `gamesPerMatch: 3` |
+| Gauntlet | Several enemies in a row with no healing. Doors open via `defeatDialog` |
+| Exempt an enemy from the map effect | `ignoreDungeonEffect` |
 
-**Jodah's three phases (F.2):**
+**High Arbiter, three phases (F.4):** three enemy objects on the throne map, each one activated by the previous one's
+`defeatDialog`.
+1. *The Arbiter*: five-color good-stuff deck, `life` 40, with a "Concord" emblem in the command zone.
+2. *The Hollow Crown*: a pod with two Sealbreaker champions (`nextEnemy`), `life` 30 each.
+3. *Unsealed*: a tuned five-color deck, `life` 60, `changeStartCards: +2`. Life doesn't carry between phases
+   (that would need the engine, §8).
 
-1. *Archmage:* `jodah.dck`, `life` 50, map effect `startBattleWithCardInCommandZone` with a five-color "Concord" card
-   (an existing card). The player gets `extraManaShards` from the freed wardens' blessing.
-2. *The Bound Host:* Jodah + 2 bound legends as a pod (`nextEnemy`), `life` 40 each.
-3. *Eternal:* `jodah.dck` with `deckOverride` to a tuned list, `life` 100, `changeStartCards: +2`.
+### 5.4 Difficulty scaling
 
-### 5.4 Puzzle and special duels
-
-Forge supports scripted puzzle states, but those live in forge-gui / forge-game puzzle code and are **not** exposed
-to Adventure. So "puzzles" here are *constrained duels*, built with data:
-
-- **Varsil Archive (1.4):** the player gets `changeStartCards: +3` and the enemy starts with an "Archive Guardian"
-  wall, but the enemy deck is a mill deck. The puzzle is to win before decking.
-- **Blue capital trial (4.2):** a `deckOverride` forces the player-side opponent's deck. The player must also use a
-  loaned deck. **Loaning the player a deck needs Java** (§7.2). Until then, give the deck as a reward.
-- **Red capital trial (4.4):** an `arena` object (existing Arena system) running 3 fights in a row.
-- **Manor stealth (3.4):** low `threatRange`, patrol `waypoints`. Getting caught means an extra duel, not a loss.
-
-### 5.5 Rewards and economy pacing
-
-- **Gold:** about 20k across the campaign on Normal. That's enough for 1–2 good staples per act, not a full upgrade.
-- **Cards:** curated. Each boss gives a fixed signature card from its deck plus one random card. Act end gives a
-  choice of 3.
-- **Shards:** used for revives and shard traders. ~5 per boss.
-- **Life:** permanent blessings bring Normal from 30 to about 44 by the finale. Easy goes from 35 to about 50 and Hard
-  from 20 to about 34.
-- **Items:** one legendary item per Act IV capital. Commander items (Commander's Sphere, Robes) come from story chests.
-
-### 5.6 Difficulty scaling
-
-Forge already scales via `config.json` difficulties. The campaign adds per-difficulty tuning through the dialog
-conditions it can see (life, gold, items) and through `spawnRank`.
+The plane's `config.json` defines Easy / Normal / Hard / Insane, as Realm of Legends does:
 
 | Lever | Easy | Normal | Hard | Insane |
 |---|---|---|---|---|
-| Starting life (existing) | 35 | 30 | 20 | 15 |
-| `enemyLifeFactor` (existing) | 1.0 | 1.0 | 1.3 | 1.5 |
-| `rewardMaxFactor` (existing) | 1.5 | 1.0 | 0.5 | 0.1 |
-| Starter deck (existing) | `_Easy` | `_Normal` | `_Hard` | `_Insane` |
-| Boss deck tier | −1 | base | base | +1 (tuned variant via a second deck path) |
-| Boss `dungeonEffect` | Weaker (no extra cards) | As listed | As listed | Plus `changeStartCards: +1` on the boss |
-| Story blessings | +3 life each | +2 | +2 | +1 |
+| Player starting life | 30 | 25 | 20 | 15 |
+| `enemyLifeFactor` | 0.8 | 1.0 | 1.3 | 1.5 |
+| `rewardMaxFactor` | 1.5 | 1.0 | 0.6 | 0.3 |
+| Starter deck | `_Easy` | `_Normal` | `_Hard` | `_Insane` |
+| Starting gold | 1,000 | 500 | 200 | 0 |
 
-**Limitation:** the boss's `dungeonEffect` and deck are *not* chosen by difficulty today. Data can only pick one.
-Options: (a) one set of maps tuned for Normal and accept the existing factors (Phase 1), or (b) a small Java hook so
-the duel picks `deck_<Difficulty>` / `dungeonEffect_<Difficulty>` if they exist (§7.2).
+Boss decks and map effects are the same on every difficulty in Phase 1. Per-difficulty boss decks need Java J8.
 
 ---
 
 ## 6. Progression
 
-### 6.1 Quest-chain structure
+### 6.1 Color unlocks (the core system)
 
-- New quest IDs start at **1000**, leaving 54–999 for upstream and existing plane quests.
-- ID blocks by act: Prologue 1000–1009, Act I 1010–1049, Act II 1050–1099, Act III 1100–1149, Act IV 1150–1199,
-  Finale 1200–1219, side content 1300–1499.
-- Each chapter is one quest (`storyQuest: true`, `autoTrack: true`). Stages use `Travel` → `Clear` / `Defeat` /
-  `MapFlag` / `QuestFlag` → `Leave`.
-- **Hand-off pattern:** a quest's epilogue dialog sets flags (`setQuestFlag`) and runs `issueQuest` for the next
-  chapter. Same as the existing 43 → 44 → … chain.
-- **Act II branching:** quest 1050 has five parallel stages (like quest 52) and issues five chapter quests
-  (1051–1055). Quest 1059 "All Keys" uses `CompleteQuest` with `count3: 5`. Alternatively it uses five `QuestFlag`
-  stages (`campKey{Color}`).
-- **Entry point:** quest 28 is hard-coded at new game. Phase 1 changes quest 28's first option to
-  `issueQuest: "1000"` (a data-only change). The old chain (29–53) stays reachable as a "classic" option
-  in quest 28's dialog, or is retired. This is an open question (§10).
+- **Flags:** character flags `colW`, `colU`, `colB`, `colR`, `colG` (0/1) and `colCount`. Character flags are saved
+  with the player.
+- **Start:** the prologue sets the flag for the starting color. Dialog can read the color with the existing
+  `colorIdentity` condition. That condition reads the *current deck's* identity, so the prologue copies it into a
+  flag right away.
+- **The choice after a Warden:** a dialog lists the five colors. Each option has a `getCharacterFlag` condition
+  (`colX` = 0), so only colors you don't have yet appear. Picking one sets `colX` = 1, advances `colCount`, and runs
+  `grantRewardsChoice`.
+- **Commander rewards:** a choice of 3 commanders that **use the new color**. In Phase 1 these are curated lists per
+  new color, mostly mono-color plus one two-color commander paired with the starting color (10 color pairs = 10
+  curated lists, selected via flag conditions).
+- **Card rewards:** reward entries using the existing `colors: ["colorID"]` option give cards in your current deck's
+  colors.
+- **Legend duels (secrets)** drop multi-color commanders. These are only usable once you own their colors (§6.2).
 
-### 6.2 Flag naming
+### 6.2 Commander swap restrictions
 
-| Flag | Type | Purpose |
+The rules for the player:
+
+1. Your commander's color identity must be **within the colors you've unlocked**.
+2. You can change commander only at a **Commander Hall** (one in each town, using an existing inn/building tile).
+3. Your 99 is filtered to the commander's colors at duel start. That already happens today in
+   `DuelScene.applyAdventureDeckRules`.
+
+What data can and can't enforce:
+
+| Rule | Phase 1 (data only) | Full enforcement (Java) |
 |---|---|---|
-| `campAct` | quest | Current act, 0–5 |
-| `campCh` | quest | Chapter within the act, for gating POIs |
-| `campKey{W,U,B,R,G}` | quest | Castle keys |
-| `campCapital{W,U,B,R,G}` | quest | Capital support in Act IV |
-| `campDonovanSpared` | character | Mercy choice, read by the ending |
-| `campEnding` | character | 1 = Restore, 2 = Bind. Survives NG+ |
-| map flags (per map) | map | Doors, phases, one-time chests |
+| Identity within unlocked colors | **Soft:** new commanders only come from curated rewards that match unlocked colors. But commanders you find in random loot or buy could still be used | J-CI: the deck editor refuses commanders outside the unlocked colors, and the duel blocks a deck with an illegal commander |
+| Only change at a Hall | **Not enforceable.** Hall NPCs explain the rule in dialog | J-Hall: the deck editor's commander section is read-only except when opened from a Hall object |
+| Card filtering | Already works | – |
 
-Flags are bytes, so values must stay ≤ 127.
+Because Phase 1 can only partly enforce this, **J-CI and J-Hall are the first Java work** (Phase 2).
 
-### 6.3 Side content
+### 6.3 Quests and flags
 
-- **Notice-board jobs** (reuse quest templates 1–27 with `questSourceTags`), unlocked per act.
-- **Legend hunts:** optional named legends in each biome (the 985 legend decks are the pool). Each hunt drops that
-  legend's commander card. This is how players build new commander decks.
-- **Capital quests:** the existing capitals' side quests remain ("permanent life increases").
-- **Viv's lore entries:** collect Concord fragments (quest items) for an extra ending dialog.
+- The new plane has its own `world/quests.json`. New games always start **quest 28** (hard-coded in
+  `NewGameScene`/`SaveLoadScene`), so in Concordia **quest 28 is the campaign intro**. It hands off with `issueQuest`.
+- Campaign quests use **IDs 1000+**: Prologue 1000–1009, Ch.1 1010–1029, Ch.2 1030–1059, Ch.3 1060–1089,
+  Finale 1090–1109, side quests 1200+. IDs 1–27 are kept free for reusing Forge's side-quest templates.
+- Each step is a `storyQuest` with `autoTrack`. Objectives mostly use `Travel` (to pinned POIs), `Defeat` / `Clear`
+  (on gym and route maps) and `QuestFlag` (set by dialog). Hand-offs use epilogue `issueQuest`.
+- Main flags: `campCh` (chapter, gates POIs), `sealG`, `sealU`, `sealR`, `sealW` (Seals won), `rivalStage`, `colX`
+  and `colCount`. Flags are bytes, so values must stay ≤ 127.
 
-### 6.4 What persists between acts
+### 6.4 Side content
 
-Everything persists, since Adventure is one continuous save: deck, collection, gold, shards, items, blessings, quest
-flags, and map flags. Acts are a story idea, not a save boundary. Specifics:
+- **Notice-board jobs** in each town (Forge's existing side-quest templates).
+- **Legend duels:** about 2 per region, hidden on route and dungeon maps. Each one drops that legend's commander.
+- **Trainer rematches:** post-game, routes re-populate with stronger decks (a `respawnEnemies` copy of each route,
+  activated after the finale).
+- **Lore:** Archive fragments that unlock an extra epilogue dialog.
 
-- Defeated `boss: true` enemies don't respawn. Cleared story maps stay cleared, and their maps show a "cleared" state
-  via map flags.
-- Old story POIs stay visitable (shops in capitals stay useful).
-- Character flags (`campEnding`) are the only state that survives NG+.
+### 6.5 What persists
+
+Everything persists in the save: deck, collection, gold, shards, items, flags and cleared maps. Chapters are story
+units, not save boundaries.
 
 ---
 
@@ -483,136 +403,124 @@ flags, and map flags. Acts are a story idea, not a save boundary. Specifics:
 
 ### 7.1 (a) Data only: JSON, Tiled maps, decks
 
-Everything in this table can be built and playtested without compiling Forge.
-
-| Feature | Files |
+| Feature | Files in `forge-gui/res/adventure/Concordia/` |
 |---|---|
-| Campaign quests 1000+ | `Realm of Legends/world/quests.json` |
-| Entry from quest 28 | `quests.json` (edit quest 28's dialog) |
-| Story POIs, hidden until flagged | `world/points_of_interest.json`, `world/biomes/*.json` (`pointsOfInterest` lists) |
-| Story maps, linked by entry/portal | `maps/map/campaign/**.tmx` |
-| Curated enemies and bosses | `world/enemies.json` (new entries with `boss: true`, `bossIntro`, `nextEnemy`, `teamNumber`, `gamesPerMatch`) |
-| Boss decks and tuned variants | `decks/campaign/*.dck` |
-| Boss mechanics | Map `dungeonEffect`, enemy `effect`, `deckOverride`, `ignoreDungeonEffect` |
-| Dialog, cutscene-like sequences | `dialog` objects and `quest` dialogs, chained `options` |
-| Rewards | Enemy `rewards`, map `reward` objects, `grantRewards` / `grantRewardsChoice` |
-| Blessings (permanent bonuses) | `giveBlessing` with `EffectData` |
-| New items | `world/items.json` |
-| Sprites | `world/sprites/map_sprites.*`, enemy atlases |
+| Plane config: Commander, 98-card minimum, difficulties, mono-color starter decks | `config.json`, `decks/starter/*.dck` |
+| Pinned overworld | `world/world.json`, `world/biomes/*.json`, `world/points_of_interest.json` |
+| Towns, routes, gyms, dungeons | `maps/map/**.tmx` (existing tilesets) |
+| Story and side quests (28 + 1000+) | `world/quests.json` |
+| Trainers, Wardens, rival, villains | `world/enemies.json`, `decks/campaign/**.dck` |
+| Boss mechanics | `dungeonEffect`, `effect`, `nextEnemy`, `teamNumber`, `gamesPerMatch` |
+| Color choice and commander rewards | Dialog conditions and actions, `grantRewardsChoice` |
+| Rival chosen by the player's color | 5 hidden rival actors per scene, with the right one activated by a `colorIdentity` / flag condition |
+| Shops, items | `world/shops.json`, `world/items.json` |
+| Sprites, music | References to existing `common/` assets |
 
-### 7.2 (b) Needs Java changes in `forge-gui-mobile/src/forge/adventure`
+### 7.2 (b) Java changes in `forge-gui-mobile/src/forge/adventure`
 
-All of these stay inside the adventure UI package. None touch forge-core / forge-game / forge-ai.
+| # | Feature | Change | Size | Phase |
+|---|---|---|---|---|
+| **J-Gender** | Rival of the opposite gender, chosen automatically | A dialog condition `isFemale` (in `MapDialog` and `MenuScene`, next to `colorIdentity`). Optionally a `$(rivalname)` token next to `$(playername)` in `AdventureQuestData` | Small | 2 |
+| **J-CI** | Commander limited to unlocked colors | Read the `colX` flags. Enforce in `AdventureDeckEditor` (commander section) and in `DuelScene.applyAdventureDeckRules` | Small–medium | 2 |
+| **J-Hall** | Commander change only at Halls | A `commanderHall` map object type, like `inn`, that opens the deck editor with the commander section editable. Locked elsewhere | Medium | 2 |
+| J8 | Per-difficulty boss decks | `deckByDifficulty` in `EnemyData`, and `dungeonEffect_<Difficulty>` read by `MapStage` | Small | 3 |
+| J7 | Portraits in dialog | A `portrait` field in `DialogData`, shown by `MapDialog` (existing avatar art) | Small | 3 |
+| J5 | Chapter / Seal UI | A Seal case screen (the badge case analog) and chapter title cards | Medium | 3 |
+| J6 | Cutscenes | Scripted sequences: move actors along waypoints, dialog, fades, camera | Medium–large | 4 |
+| **J2** | Hand-painted overworld | A `fixedMap` option in `WorldData`. `World` loads terrain/biomes from a hand-made map and places POIs at fixed tile coordinates instead of generating from noise | Large | 4 |
+| J4 | Hard overworld gating | Blocked regions or roadblocks on the overworld until a flag is set | Medium | 4 |
+| J9 | Ally on your team | Register an AI teammate in `DuelScene` (for the epilogue / post-game 2v2 with your rival) | Medium | 4 |
 
-| # | Feature | Change | Rough size |
-|---|---|---|---|
-| J1 | **Campaign entry point** | Make the starting quest data-driven: a `startQuest` field in `ConfigData`, used by `NewGameScene` and `SaveLoadScene` instead of the literal `"28"` | Small |
-| J2 | **Hand-authored overworld** | A `WorldData.fixedMap` option (a .tmx or PNG biome mask plus a POI placement list). `World.generateNew` reads biome per pixel from the mask instead of noise, and places POIs at fixed coordinates. Roads from a layer or still auto-generated | Large |
-| J3 | **Pinned POI positions** (smaller step before J2) | `PointOfInterestData.fixedX/fixedY` (fraction of the world), used instead of the biome-relative random radius | Small–medium |
-| J4 | **Hard act gating** | Biome or region "locked" flag that blocks movement (collision) until a quest flag is set. Hooks in `WorldStage` movement | Medium |
-| J5 | **Chapter UI** | A chapter screen (title card on act/chapter start, a chapter list in the quest log). New `ChapterScene` or a `QuestLogScene` tab, driven by new optional `chapter`/`act` fields in `AdventureQuestData` | Medium |
-| J6 | **Cutscenes** | A sequence player: a `cutscene` map object or dialog action that plays a list of steps (move actor along waypoints, show portrait dialog, camera pan, fade, wait). Built on `MapStage` actors and Scene2D actions | Medium–large |
-| J7 | **Portraits in dialog** | A `portrait` field in `DialogData`, shown by `MapDialog` | Small |
-| J8 | **Difficulty-specific boss data** | Choose `deck`/`dungeonEffect` per difficulty (for example `deckByDifficulty` in `EnemyData`, `dungeonEffect_<Difficulty>` map property in `MapStage`) | Small |
-| J9 | **Ally on the player's team** | In `DuelScene`, register an AI-controlled teammate on the human's team (the game already supports teams and AI players; this only changes which players the adventure layer registers) | Medium |
-| J10 | **Loaned decks** | A dialog action that swaps the player's active deck for a fixed deck during one duel, then restores it (`AdventurePlayer` deck slots) | Small–medium |
-| J11 | **Ending and credits screen** | A simple scene shown on a dialog action | Small |
-| J12 | **Save-slot chapter label** | Show the act/chapter in the save/load list (`WorldSaveHeader`) | Small |
+Until J-Gender exists (Phase 1), the rival's gender is set by a single dialog choice in the prologue that sets a
+character flag. The design still says the rival is the opposite gender. The player is just asked to confirm it once.
 
-Note on J9: it relies on Forge's existing multiplayer and team support and does not change rules. If an
-implementation turns out to need changes in forge-game, it gets moved to §8.
+### 7.3 Playtesting on your PC (no user planes needed)
 
-### 7.3 Playtesting workflow (Windows install)
+User planes aren't required. The simplest route works with Phase 1 data:
 
-- The plane folder in the install is `<Forge>\res\adventure\Realm of Legends\`. Data changes in Phases 1–3 are
-  copied over that folder (back it up first).
-- A cleaner alternative: ship the campaign as a **user plane**. `Config.getPlanePath` resolves `<user>Name` to
-  `%APPDATA%\Forge\adventure\userplanes\Name\` (the user adventure directory), and anything missing falls back to
-  `common/`. The campaign would be a full copy of Realm of Legends plus the new files, selected in settings. This
-  needs to be verified on the user's install (open question).
-- A `tools/campaign/copy-to-install.ps1` script (Phase 1) copies only the changed files.
-- Java changes (Phase 4+) need a build of `forge-gui-desktop` and a replacement jar in the install.
+1. Copy the `Concordia` folder from this repo into your install's adventure folder, next to `Realm of Legends`
+   (for example `C:\Users\olian\Forge\res\adventure\Concordia\`).
+2. Start Forge Adventure → Settings → **Plane** → Concordia, then restart the game.
+3. Start a new game.
+
+Phase 1 ships a small `tools/concordia/copy-to-install.ps1` that does step 1. Java phases need a rebuilt Forge jar,
+which will get its own instructions when we get there.
+
+### 7.4 Existing assets plan
+
+| Need | Existing asset |
+|---|---|
+| Player and rival sprites | `common/sprites/heroes/human_m|human_f.atlas` (and the other races) |
+| Trainers, grunts, Wardens | `common/sprites/enemy/humanoid/*` (knight, paladin, conjurer, swordsman, elf, merfolk, etc.) |
+| Map tiles | `common/maps/tileset/*.tsx` |
+| POI icons | Existing `world/sprites/map_sprites.atlas` (copied from an existing plane) |
+| Portraits | `common/sprites/heroes/avatar.atlas` |
+| Music | `common/music` |
 
 ---
 
 ## 8. Hard constraint: the rules engine stays untouched
 
-**Not modified:** `forge-core`, `forge-game`, `forge-ai`, and any Magic rules simulation. The campaign uses the engine
-only through what the Adventure layer already exposes: decks, starting life, starting hand size, cards placed on the
-battlefield or in the command zone at the start, player count and teams, and match length.
+**Not modified:** `forge-core`, `forge-game`, `forge-ai`, or any Magic rules simulation. Concordia uses only what the
+Adventure layer already feeds into a duel: decks, starting life, starting hand size, cards placed at game start,
+player count and teams, and match length. Deck legality filtering (`applyAdventureDeckRules`) already happens in the
+adventure package, which is why J-CI is allowed.
 
-**Out of scope, because each would need engine changes:**
+**Out of scope (would require engine changes):**
 
-| Idea | Why it's out of scope |
+| Idea | Why |
 |---|---|
-| Scripted mid-game events ("on turn 5 the boss summons a dragon") | Needs triggers injected into the game state → forge-game |
-| True puzzle duels with a fixed board, hand and library order | The puzzle system builds game state in forge-gui/forge-game. Adventure doesn't reach it. Wiring it up risks engine changes. *Could be reconsidered if it turns out to be reachable with UI-layer code only.* |
-| Boss life carrying across phases (one continuous life total over three duels) | Needs game-state persistence across matches |
-| Custom cards with new rules text or mechanics | New card scripts are content, but new *mechanics* need engine code. **Custom cards using existing scripting keywords are data** (`common/custom_cards`) and allowed |
-| Custom AI personalities and scripted AI choices | forge-ai |
-| Planechase / Archenemy-style boss schemes as new rules | New game variants touch forge-game. Using an *existing* variant through the Adventure layer could be checked later |
-| Changing combat, priority or turn structure for bosses | forge-game |
-| Win conditions other than the normal ones ("survive 8 turns") | forge-game |
+| Scripted mid-duel events ("on turn 5 the Warden summons...") | Game triggers → forge-game |
+| Fixed-state puzzle duels (set board, hand, library) | Puzzle state setup is engine-side |
+| Boss life carrying across phases | Game state across matches |
+| New mechanics or rules for "Seal" powers | forge-game |
+| Custom AI personalities per Warden | forge-ai |
+| Non-standard win conditions ("survive 6 turns") | forge-game |
+| Pokémon-style "type advantage" bonus damage | Changes to combat rules |
+
+Custom cards that use only existing scripting keywords are content, not engine code, but they would need new card
+art. That's out of scope for now anyway (existing assets only).
 
 ---
 
 ## 9. Phased roadmap
 
-### Phase 1: Chapter 1 vertical slice (data only)
+### Phase 1: Vertical slice (data only): Prologue + Chapter 1
 
-Covers the prologue and Act I (P1–1.5). Goal: prove the whole pipeline.
+1. Create the `Concordia` plane folder: config, difficulties, 20 mono-color starter decks.
+2. Pinned overworld: one biome, POIs for Emberbrook, Route 1, Mossgate, Route 2 (Thornwood), Mossgate Grove.
+3. Maps: Emberbrook (village + shrine), Route 1, Mossgate (town + Hall + shop + inn), Thornwood, Grove gym (2–3 rooms).
+4. Quest 28 intro + quests 1000–1029.
+5. Enemies and decks: ~10 trainers, grunts, Hask, Brannoc, rival duels 1–2 (×5 colors).
+6. Color choice 1 with commander rewards.
+7. The copy script. Playtest on Normal.
 
-1. Edit quest 28 to branch into 1000. Write quests 1000–1015.
-2. Build maps: Library of Summons, Library exterior, Waystone, Caravan Road, Golem Foundry. Reuse the existing
-   Bandit Cave, Shard Mines, Library of Varsil and Dig Site maps where they fit.
-3. Add story POIs (hidden by flag), with fixed offsets.
-4. Add curated enemies: archive golem, Grenzo, Kinnan, Urza (with `boss: true` and intros). Add `decks/campaign/`.
-5. Rewards and blessings for Act I.
-6. Copy script for Windows. Playtest on Easy and Normal.
+**Exit criteria:** a new Concordia game reaches the end of Chapter 1 in about 3 hours, with no dead ends, a working
+color choice, and a difficulty curve that feels right.
 
-Exit criteria: a new game reaches the end of Act I with no dead ends, in about 3–4 hours on Normal. The curve feels
-right, and the duels have clear difficulty.
+### Phase 2: Java core rules
 
-### Phase 2: Act II (data only)
+J-CI, J-Hall, J-Gender. These make the Pokémon-style rules real.
 
-Five castles: rework the existing castles into chapters 1050–1059. Add approach maps, key rewards and the commander
-swap reward. Tune the warden decks.
+### Phase 3: Chapter 2 and 3 content (data), plus J8, J7, J5
 
-### Phase 3: Acts III–IV and finale (data only)
+### Phase 4: Finale and post-game (data), plus J6, J2, J4, J9
 
-Strongholds, Donovan's Manor, capital trials, Spire. All endings work with dialog.
-
-### Phase 4: Java, part 1 (small UI changes)
-
-J1 (data-driven start quest), J3 (pinned POIs), J7 (portraits), J8 (difficulty-specific bosses), J12 (save label).
-
-### Phase 5: Java, part 2 (presentation)
-
-J5 (chapter UI), J6 (cutscenes), J11 (ending screen), J10 (loaned decks), J9 (allies).
-
-### Phase 6: Java, part 3 (world)
-
-J2 (hand-authored overworld) and J4 (hard gating). Optional: replace the overworld for the campaign plane only.
+The hand-painted overworld (J2) replaces the pinned overworld here. The map layout stays the same, so no content has
+to move.
 
 ---
 
-## 10. Open questions for the user
+## 10. Open questions
 
-1. **Old story chain:** should the existing quests 29–53 be replaced by the new campaign, kept as an alternate path
-   chosen in quest 28's dialog, or left alone?
-2. ~~The Jodah twist~~ **Decided:** keep it.
-3. **Separate plane or same plane?** Build the campaign inside `Realm of Legends` (simple, but changes the existing
-   plane), or as a copy, e.g. `Realm of Legends Campaign` or a user plane?
-4. ~~Act II order~~ **Decided:** linear with hubs, so the five castles stay in free order and difficulty scales by
-   completion order.
-5. **Difficulty:** is it fine for Phase 1 to tune only for Normal and rely on the existing life and reward factors,
-   with per-difficulty boss decks waiting for J8?
-6. **Endings:** two endings (Restore / Bind), or one canonical ending?
-7. **Commander changes:** should the player be able to swap commanders freely, or only at story beats?
-8. **Overworld:** is a soft-gated procedural overworld acceptable until Phase 6, or is a hand-made overworld a must
-   before release?
-9. **Art:** are new sprites/portraits in scope, or should we reuse existing atlases only?
-10. **Playtest setup:** can you confirm that user planes (`%APPDATA%\Forge\adventure\userplanes\`) load on your
-    install? That decides how the copy script works.
-11. **The rival's identity:** Najeela is a placeholder. Which legend (or an original character) should the rival
-    be, and what color(s) should they play against yours?
+1. **Villain twist:** is the High Arbiter twist (a trusted figure as the villain) right for the new story, or should
+   the Sealbreaker leader be an open villain from the start?
+2. **Number of Wardens:** the design has 4 color-unlocking Wardens (one color at the start + 4 = 5). Do you want more
+   Pokémon-style "gyms" (for example 8, where only some unlock a color and others give life or items)?
+3. **Rival names:** Kael / Lyra are placeholders. Do you have names in mind?
+4. **Rival decks:** a full set (25 decks) mirroring every starting color, or a smaller set (the rival always starts
+   in one fixed color)?
+5. **Starter commanders:** are the five candidates in §3.1 good, or do you have favorites?
+6. **Ending:** restore the Seals as they were, or let the player reforge them (a choice with two endings)?
+7. **Gender until Phase 2:** OK to ask the player once in the prologue, until J-Gender makes it automatic?
+8. **Plane name:** keep "Concordia"?
