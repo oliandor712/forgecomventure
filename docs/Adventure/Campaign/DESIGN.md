@@ -93,7 +93,7 @@ loses, they run and come back later, often with a new deck. Four rules keep the 
 - Your commander is never anted. Raiders take cards from the 99 only.
 - Ante applies only to raiders and rare optional secret bosses. Losing an ante duel is a permanent loss. Every other
   story duel stays a standard retry.
-- Raiders can't be rematched. Only the tutorial raider returns a stolen card. Every other stolen card goes to a special shop section, overpriced.
+- Raiders can't be rematched. The tutorial raider always returns its stolen card. Every other stolen card goes to a special shop section, overpriced.
 - The global **Play for Ante** setting doesn't apply to the campaign. Ante is set per encounter. Basic lands are never
   anted, and rarity matching is off, so raiders can take rare cards.
 
@@ -157,7 +157,7 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 |---|---|---|---|
 | P1 | Awaken | Emberbrook: Seal-day festival at the shrine (hand-made map) | Unsealed raiders strike during the festival. In the chaos both of you awaken your sparks. Seal Angels descend and ask each of you, mystically, to choose a first color. You choose; the rival's color is its opposite (§2.1 color lore) |
 | P2 | Your soul's deck | Emberbrook shrine | A basic commander deck manifests from your soul in the color you chose. The rival's manifests in theirs. **Elder Wren** explains what the decks are, and that the duels to come are your first lessons |
-| P3 | Tutorial raiders | Emberbrook | Each raider you duel is an ante duel and a tutorial battle, one lesson per raider (drawing, combat, the commander, color identity). The first raider takes a starter card from you, and the next lesson teaches you to win it back by defeating the same raider. That is the only place a stolen card returns. Raiders keep coming until the last one flees. **Rival duel 1** comes after the last raider: a short duel with a low-power deck. The rival says that when they rule, they'll tear the Seals down |
+| P3 | Tutorial raiders | Emberbrook | Each raider you duel is an ante duel and a tutorial battle, one lesson per raider (drawing, combat, the commander, color identity). The first raider takes a starter card from you, and the next lesson always returns it, win or lose, so the first loss is a lesson rather than a cost. That is the only place a stolen card returns. Raiders keep coming until the last one flees. **Rival duel 1** comes after the last raider: a short duel with a low-power deck. The rival says that when they rule, they'll tear the Seals down |
 | P4 | Set out | Route 1 → Mossgate | Elder Wren sends you to Mossgate with the village's Seal fragment. Route trainers teach the "challenged on sight" mechanic. At Mossgate's notice board you read the Champion's open challenge for the first time. The rival has already left |
 
 #### Chapter 1: Your Seal
@@ -472,7 +472,7 @@ Grinding is optional, and it's steady. Every grind source pays the same flat rew
 Everything persists in the save: deck, collection, gold, shards, items, flags and cleared maps. Chapters are story
 units, not save boundaries.
 
-Stolen cards persist too. Each raider holds the cards it won from you, recorded in the save (J-Raid, §7.2). Only the tutorial raider returns its card, when the player beats it in the opening lesson. Any other stolen card goes to the shop's stolen-card section, at an inflated price.
+Stolen cards persist too. Each raider holds the cards it won from you, recorded in the save (J-Raid, §7.2). The tutorial raider always returns its card in the next lesson, win or lose. Any other stolen card goes to the shop's stolen-card section, at an inflated price.
 
 ### 6.6 Card gain progression
 
@@ -499,7 +499,7 @@ this document, listed in §10.
 - Gold buys single cards. Shards reroll the shop's stock. *Check:* off-color stock is dead until its colors unlock (§10, item 12).
 
 **Ante and stealing**
-- Only the tutorial raider returns a stolen card. Every other stolen card appears in the shop's stolen-card section, overpriced.
+- The tutorial raider always returns its stolen card. Every other stolen card appears in the shop's stolen-card section, overpriced.
 - Raider rewards come from the raider's own deck, not from a region-wide pool.
 - Only ante, story rewards and gym rewards hand out cards directly. Every other duel pays currency.
 
@@ -540,7 +540,7 @@ this document, listed in §10.
 | # | Feature | Change | Size | Phase |
 |---|---|---|---|---|
 | **J-Ante** | Ante per encounter | `EnemyData.ante` (new boolean). In `DuelScene` (~line 554), `rules.setPlayForAnte` reads the encounter's flag instead of the global `UI_ANTE` preference. Set `setMatchAnteRarity(false)` and `anteIncludeBasicLands` to false for ante encounters. In `RewardData` (~line 121), apply the same per-encounter check to the ante-only card filter. The existing ante result handling (`hostedMatch.getAnteResult`) stays as is | Small | 1 |
-| **J-Raid** | Stolen cards held by raiders | Record each raider's won cards in the save (a per-raider list in `AdventurePlayer`'s saved data). On beating the tutorial raider, return its card to the player. Other stolen cards are listed in the shop's stolen-card section. Uses the existing `anteResult.wonCards` / `lostCards` handling | Medium | 1 |
+| **J-Raid** | Stolen cards held by raiders | Record each raider's won cards in the save (a per-raider list in `AdventurePlayer`'s saved data). In the next lesson after the tutorial raider, always return its card, win or lose. Other stolen cards are listed in the shop's stolen-card section. Uses the existing `anteResult.wonCards` / `lostCards` handling | Medium | 1 |
 | **J-Start** | Seal Angels' color choice | Replace the new-game color picker with the P1 scene. Today `WorldSave.generateNewWorld` takes the starting color at creation, so the starter deck has to be assigned after the choice. Until then, the new-game picker stays, and the angels confirm it | Medium | 2 |
 | **J-Gender** | Rival of the opposite gender, chosen automatically | A dialog condition `isFemale` (in `MapDialog` and `MenuScene`, next to `colorIdentity`). Optionally a `$(rivalname)` token next to `$(playername)` in `AdventureQuestData` | Small | 2 |
 | **J-CI** | Commander limited to unlocked colors | Read the `colX` flags. Enforce in `AdventureDeckEditor` (commander section) and in `DuelScene.applyAdventureDeckRules` | Small–medium | 2 |
@@ -629,7 +629,7 @@ art. That's out of scope for now anyway (existing assets only).
 8. The copy script. Playtest on Normal.
 
 **Exit criteria:** a new Concordia game reaches the end of Chapter 1 in about 3 hours, with no dead ends. The raid
-tutorial teaches the ante loop, a stolen card can be won back, the color choice works, and the rival has the opposite
+tutorial teaches the ante loop, the tutorial's stolen card comes back in the next lesson, the color choice works, and the rival has the opposite
 color. The difficulty curve feels right.
 
 ### Phase 2: Java core rules
