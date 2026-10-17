@@ -465,7 +465,7 @@ Grinding is optional, and it's steady. Every grind source pays a flat reward tha
 - **Rematches:** defeated trainers can be rematched for currency, with no diminishing returns.
 - **Notice-board jobs:** repeatable side jobs in each town.
 - **Arena:** a random tournament that the player can enter for currency.
-- **Currency:** grind pays gold and shards, not cards. Gold buys single cards in the shop. Shards reroll the shop's stock.
+- **Currency:** grind pays gold and shards. A regular duel pays currency worth 2–3 cards at the shop's average price (§6.6). Gold buys single cards in the shop. Shards reroll the shop's stock.
 - **Secret legend duels:** one-time ante duels (§2.1). They're not repeatable.
 - **Lore:** Archive fragments that unlock an extra epilogue dialog.
 
@@ -485,8 +485,7 @@ this document, listed in §10.
 **The steady path**
 - Each Warden offers a **choice of 3** story cards, plus that Warden's **staple commander** as a bonus.
 - Story rewards are curated. Grind rewards come through currency. The two pools stay separate.
-- Target: **2–3 random cards per regular duel**, or the currency equivalent, plus curated powerful cards from gyms and
-  raiders. *Check:* this conflicts with the currency-only rule below (§10, item 12).
+- A regular duel pays currency worth **2–3 cards** at the shop's average price, so the reward tracks what cards cost. Gyms and raiders add curated powerful cards on top.
 
 **Color rules**
 - A Warden's story rewards come only from its color, or from multicolor cards that include that color.
@@ -499,13 +498,12 @@ this document, listed in §10.
 **Shops and smithing**
 - Shops sell every card type, not only unlocked colors.
 - The shop uses the smithing mechanics (the Spellsmith) to let the player generate a semi-targeted pool.
-- Gold buys single cards. Shards reroll the shop's stock. *Check:* off-color stock is dead until its colors unlock (§10,
-  item 14).
+- Gold buys single cards. Shards reroll the shop's stock. *Check:* off-color stock is dead until its colors unlock (§10, item 13).
 
 **Ante and stealing**
 - A stolen card can be won back by defeating the raider who holds it. It can also be found in the shop.
 - Raider rewards come from the raider's own deck, not from a region-wide pool.
-- Only ante hands out cards directly, plus story and gym rewards.
+- Only ante, story rewards and gym rewards hand out cards directly. Every other duel pays currency.
 
 **Difficulty and feedback**
 - One difficulty for now: Normal, with 30 starting life and the standard settings. No Easy mode.
@@ -662,14 +660,12 @@ to move. The three endings (§2.3) are written here, and `endingChoice` drives t
 9. **Gender until Phase 2:** OK to ask the player once in the prologue, until J-Gender makes it automatic?
 10. **Angel choice until Phase 2:** OK to keep the new-game color picker in Phase 1, with the Seal Angels confirming it?
 11. **Plane name:** keep "Concordia"?
-12. **Card rate:** the questionnaire says regular duels give 2–3 random cards, but it also says duels pay currency and
-    only ante hands out cards. Which one should we design for, or do both apply?
-13. **Staple commander:** each Warden's bonus is a staple commander. Which commander goes with each Warden, and should
+12. **Staple commander:** each Warden's bonus is a staple commander. Which commander goes with each Warden, and should
     it be a legend already in Forge?
-14. **Off-color shop stock:** shops sell every card type. Should off-color stock be visible before its colors unlock,
+13. **Off-color shop stock:** shops sell every card type. Should off-color stock be visible before its colors unlock,
     or hidden until then?
-15. **Scale:** grind rewards scale with the player's tier. Does the tier mean the Wardens cleared, or the power of the
+14. **Scale:** grind rewards scale with the player's tier. Does the tier mean the Wardens cleared, or the power of the
     player's deck?
-16. **Raider rematches:** should rematching a raider put ante back on the table, or should it stay a flat fight?
-17. **Difficulty:** §5.4 now has one Normal setting at 30 starting life. Confirm that Easy, Hard and Insane are deferred,
+15. **Raider rematches:** should rematching a raider put ante back on the table, or should it stay a flat fight?
+16. **Difficulty:** §5.4 now has one Normal setting at 30 starting life. Confirm that Easy, Hard and Insane are deferred,
     not removed.
