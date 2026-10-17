@@ -85,6 +85,8 @@ loses, they run and come back later, often with a new deck. Three rules keep the
 - Your commander is never anted. Raiders take cards from the 99 only.
 - Losing a raider duel is the only permanent loss in the campaign. Other story duels stay a standard retry.
 - A stolen card can be won back by defeating the raider who holds it.
+- Raider duels are always ante, whatever the player's **Play for Ante** setting says. Basic lands are never anted, and
+  rarity matching is off, so raiders can take rare cards.
 
 **The central question of the story is whether the Seals are good for Concordia.** They ended the wars, but they also
 froze the world under one ruler's judgment and turned duelists into outlaws. Every chapter gives the question a
