@@ -82,22 +82,30 @@ run illegal duel rings, and prey on villages.
 froze the world under one ruler's judgment and turned duelists into outlaws. Every chapter gives the question a
 different answer, and the story never settles it for you.
 
-You and your childhood friend were both born in **Emberbrook**, a village at the edge of the wilds. Both of you
-awakened planeswalker sparks as children, a rare thing on Concordia, and you've dreamed of the throne since then. You've
+**Color lore.** Concordia uses the same five-color wheel as Magic: White, Blue, Black, Red, Green, in that order
+around the circle. Neighboring colors are allies. Each color has two enemies, the colors two steps away from it:
+White's enemies are Black and Red, Blue's are Red and Green, and so on. Each color's *opposite* is the enemy two steps
+clockwise, which gives one fixed pairing: **White ↔ Black, Blue ↔ Red, Black ↔ Green, Red ↔ White, Green ↔ Blue**.
+Opposed pairs are the colors whose views conflict most sharply, so they're the natural pairing for two rivals.
+Color identity is the Seals' law: a commander's colors decide which cards its deck may hold. The Seal Angels
+read your color identity before they give you a deck.
+
+Sources for the pairings and identity rules: [Enemy color](https://mtg.wiki/page/Enemy),
+[Multicolor](https://mtg.wiki/page/Multicolor), [Color identity](https://mtg.wiki/page/Color_identity).
+
+You and your childhood friend were both born in **Emberbrook**, a village at the edge of the wilds. Both of you carry planeswalker sparks, a rare thing on Concordia, and you've dreamed of the throne since childhood. Neither of you has awakened yet. You've
 competed for everything else: who would earn the first Seal, who would be the best duelist in the village. You want the
 throne for different reasons. You want to protect the people you grew up with. Your rival wants to **destroy the
 Seals**, for better or worse. Whoever inherits the throne also inherits the Seals (§2.3), so the throne is the only
 way your rival can do it. Only one of you can take it.
 
-The story opens the day both of you read the Champion's open challenge for the first time. Its message is still
-fresh when Unsealed raiders strike Emberbrook shrine. The raid shows that the peace is thinner than the posters
-claim, and it gives both of you a reason to start walking.
+The story opens on Seal-day, the village's yearly festival at the shrine. Unsealed raiders strike in the middle of it. In the chaos, both of you awaken your sparks, and Seal Angels appear to ask each of you to choose a first color. The Champion's open challenge is only a poster to you at this point. The raid makes it real.
 
 ### 2.2 Structure
 
 | Part | Title | Region | Warden / main boss | Color unlock |
 |---|---|---|---|---|
-| Prologue | **The Open Challenge** | Emberbrook and Route 1 | Rival (first duel) | Your starting color |
+| Prologue | **The Raid** | Emberbrook and Route 1 | Rival (first duel, after the raider tutorials) | Your starting color |
 | Chapter 1 | **The Green Seal** | Mossgate and the Thornwood | Warden **Brannoc** (G) | Choose your 2nd color |
 | Chapter 2 | **Two Roads** | Saltreach (U) *and* Cinderpeak (R), in either order | Wardens **Isolde** (U) and **Tarro** (R) | Choose your 3rd, then 4th color |
 | Chapter 3 | **The Archive of Seals** | Lumenhold and the Unsealed Hideout | Warden **Dame Seraphine** (W). Unsealed boss: **Mordessa** | Choose your 5th color |
@@ -111,14 +119,14 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 
 ### 2.3 Chapter outline
 
-#### Prologue: The Open Challenge
+#### Prologue: The Raid
 
 | Step | Goal | Location | Beats |
 |---|---|---|---|
-| P1 | Read the challenge and visit the shrine | Emberbrook: home, village, shrine (hand-made map) | Both you and the rival read the Champion's posted challenge at the notice board. At the shrine, **Elder Wren** gives you your first commander. It's your starting deck (chosen with the color on the new-game screen). The rival takes a commander of a color *enemy* to yours |
-| P2 | First duel | Emberbrook shrine | **Rival duel 1**: a short duel with a low-power deck. The rival says that when they rule, they'll tear the Seals down. You both agree that the throne is the goal, and that you'll settle who gets it later. Win or lose, the story continues (a loss branch has its own dialog) |
-| P3 | The raid | Emberbrook | Unsealed raiders hit the shrine and try to take the village's Seal fragment. Tutorial duel against a raider grunt. Elder Wren asks you to take the fragment to a Warden in Mossgate. The rival says they'll go ahead alone |
-| P4 | Set out | Route 1 → Mossgate | Route trainers teach the "challenged on sight" mechanic. Reach Mossgate |
+| P1 | Awaken | Emberbrook: Seal-day festival at the shrine (hand-made map) | Unsealed raiders strike during the festival. In the chaos both of you awaken your sparks. Seal Angels descend and ask each of you, mystically, to choose a first color. You choose; the rival's color is its opposite (§2.1 color lore) |
+| P2 | Your soul's deck | Emberbrook shrine | A basic commander deck manifests from your soul in the color you chose. The rival's manifests in theirs. **Elder Wren** explains what the decks are, and that the duels to come are your first lessons |
+| P3 | Tutorial raiders | Emberbrook | Each raider you duel is a tutorial battle, one lesson per raider (drawing, combat, the commander, color identity). Raiders keep coming until the last one flees. **Rival duel 1** comes after the last raider: a short duel with a low-power deck. The rival says that when they rule, they'll tear the Seals down |
+| P4 | Set out | Route 1 → Mossgate | Elder Wren sends you to Mossgate with the village's Seal fragment. Route trainers teach the "challenged on sight" mechanic. At Mossgate's notice board you read the Champion's open challenge for the first time. The rival has already left |
 
 #### Chapter 1: The Green Seal
 
