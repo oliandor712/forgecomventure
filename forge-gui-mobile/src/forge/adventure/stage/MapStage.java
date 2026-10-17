@@ -946,8 +946,13 @@ public class MapStage extends GameStage {
         for (int i = 0; i < actors.size; i++) {
             if (actors.get(i).getObjectId() == id && id > 0) {
                 if (actors.get(i) instanceof EnemySprite) {
-                    ((EnemySprite)(actors.get(i))).inactive = false;
-                    (actors.get(i)).resetCollisionHeight();
+                    EnemySprite mob = (EnemySprite) actors.get(i);
+                    mob.inactive = false;
+                    if (mob.hidden) {
+                        mob.hidden = false;
+                        mob.setAnimation(CharacterSprite.AnimationTypes.Idle);
+                    }
+                    mob.resetCollisionHeight();
                     return true;
                 }
                 else if (actors.get(i) instanceof PortalActor) {

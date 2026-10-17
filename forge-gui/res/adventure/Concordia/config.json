@@ -222,5 +222,6 @@
     "(All)"
   ],
   "anteByEncounter": true,
-  "stolenCardPriceFactor": 3.0
+  "stolenCardPriceFactor": 3.0,
+  "placeholderStarterColor": "W"
 }

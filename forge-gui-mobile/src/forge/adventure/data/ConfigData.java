@@ -38,5 +38,6 @@ public class ConfigData {
     public boolean usePriceListPrices = true;
     public boolean anteByEncounter = false;        //Duels are for ante only when the enemy says so, ignoring the global Play for Ante setting.
     public float stolenCardPriceFactor = 3f;       //Price multiplier for cards in the shop's stolen-card section.
+    public String placeholderStarterColor = "";     //If set, new games start with this color's deck and the color picker is hidden. A story dialog picks the real color.
 
 }

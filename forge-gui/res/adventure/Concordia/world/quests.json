@@ -3,36 +3,13 @@
     "id": 28,
     "isTemplate": true,
     "name": "The Raid",
-    "description": "Unsealed raiders strike Emberbrook on Seal-day. Find out what is happening to you.",
+    "description": "Seal-day in Emberbrook ends in a raid. Find the Seal Angels at the shrine.",
     "offerDialog": {},
     "prologue": {
       "text": "Seal-day in Emberbrook. Bells ring over the festival, then the shrine's lanterns go out all at once. Unsealed raiders pour between the stalls. In the chaos, something wakes in your chest: a spark you have carried all your life.",
       "options": [
         {
-          "name": "Look up at the shrine.",
-          "text": "Seal Angels descend through the smoke. Their voices are the Seals' own. They ask you to choose a first color, and the choice you make will be yours.",
-          "options": [
-            {
-              "name": "(Continue)",
-              "action": [
-                {
-                  "removeItem": "",
-                  "setColorIdentity": "",
-                  "advanceQuestFlag": "",
-                  "advanceMapFlag": "",
-                  "setQuestFlag": {
-                    "key": "awakened",
-                    "val": 1
-                  },
-                  "setMapFlag": {
-                    "key": ""
-                  },
-                  "issueQuest": "1000",
-                  "POIReference": ""
-                }
-              ]
-            }
-          ]
+          "name": "(Continue)"
         }
       ]
     },
@@ -42,9 +19,62 @@
     "stages": [
       {
         "id": 1,
-        "name": "Awaken",
-        "description": "Follow the Seal Angels' call.",
+        "name": "Return to Emberbrook",
+        "description": "Walk back to Emberbrook.",
+        "anyPOI": true,
+        "POITags": [
+          "Start"
+        ],
+        "objective": "Travel",
+        "prologue": {},
+        "epilogue": {},
+        "POIToken": ""
+      },
+      {
+        "id": 2,
+        "name": "Find the Seal Angels",
+        "description": "Go to the shrine and answer the angels.",
         "mapFlag": "awakened",
+        "mapFlagValue": 1,
+        "objective": "QuestFlag",
+        "prerequisiteIDs": [
+          1
+        ],
+        "prologue": {},
+        "epilogue": {},
+        "POIToken": ""
+      }
+    ],
+    "storyQuest": true
+  },
+  {
+    "id": 1000,
+    "isTemplate": true,
+    "name": "Four Lessons",
+    "description": "The angels gave you a deck. Four raiders and a rival stand between you and the road.",
+    "offerDialog": {},
+    "prologue": {},
+    "epilogue": {
+      "text": "The rival's shouts fade down the road. Elder Wren's message is waiting at the shrine: take the village's Seal fragment to Mossgate.",
+      "options": [
+        {
+          "name": "(Continue)",
+          "action": [
+            {
+              "issueQuest": "1001"
+            }
+          ]
+        }
+      ]
+    },
+    "failureDialog": {},
+    "declinedDialog": {},
+    "stages": [
+      {
+        "id": 1,
+        "name": "Beat the raiders",
+        "description": "Beat the four raiders and the rival in the shrine yard.",
+        "mapFlag": "tutorialDone",
         "mapFlagValue": 1,
         "objective": "QuestFlag",
         "prologue": {},
@@ -55,7 +85,7 @@
     "storyQuest": true
   },
   {
-    "id": 1000,
+    "id": 1001,
     "isTemplate": true,
     "name": "Set Out",
     "description": "Elder Wren sends you to Mossgate with the village's Seal fragment.",

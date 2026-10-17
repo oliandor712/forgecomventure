@@ -979,6 +979,26 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
         getCurrentGameStage().addActor(actor);
     }
 
+    // Swaps the starter deck for the one of the given colors (for example "W") and removes the placeholder deck's cards.
+    public void replaceStarterColor(String colors) {
+        DifficultyData difficulty = Config.instance().getConfigData().difficulties[0];
+        for (DifficultyData candidate : Config.instance().getConfigData().difficulties) {
+            if (candidate.name != null && candidate.name.equals(difficultyData.name)) {
+                difficulty = candidate;
+            }
+        }
+        Deck newDeck = Config.instance().starterDeck(ColorSet.fromNames(colors.toCharArray()), difficulty, AdventureModes.Commander, 0, null);
+        if (newDeck == null)
+            return;
+        for (Map.Entry<PaperCard, Integer> entry : deck.getAllCardsInASinglePool(true, true)) {
+            cards.remove(entry.getKey(), entry.getValue());
+        }
+        decks.set(selectedDeckIndex, newDeck);
+        deck = newDeck;
+        cards.addAllFlat(newDeck.getAllCardsInASinglePool(true, true).toFlatList());
+        setColorIdentity(DeckProxy.getColorIdentity(newDeck));
+    }
+
     public void addStolenCards(String raider, Collection<PaperCard> lost) {
         if (lost == null || lost.isEmpty())
             return;

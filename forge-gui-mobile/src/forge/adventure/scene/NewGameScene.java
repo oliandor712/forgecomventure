@@ -83,6 +83,10 @@ public class NewGameScene extends MenuScene {
         for (String idName : colorIdNames)
             colorNames.add(UIActor.localize(idName));
         colorId.setTextList(colorNames);
+        if (hasPlaceholderStarterColor()) {
+            colorId.setVisible(false);
+            colorLabel.setVisible(false);
+        }
 
         for (DifficultyData diff : Config.instance().getConfigData().difficulties)//check first difficulty if exists
         {
@@ -301,7 +305,14 @@ public class NewGameScene extends MenuScene {
         }
     }
 
+    private static boolean hasPlaceholderStarterColor() {
+        String placeholder = Config.instance().getConfigData().placeholderStarterColor;
+        return placeholder != null && !placeholder.isEmpty();
+    }
+
     private ColorSet getStartingColor() {
+        if (hasPlaceholderStarterColor())
+            return ColorSet.fromNames(Config.instance().getConfigData().placeholderStarterColor.toCharArray());
         AdventureModes currentMode = modes.get(mode.getCurrentIndex());
         if (currentMode.usesFolderDeckPicker() || currentMode == AdventureModes.Chaos) {
             return ColorSet.fromNames("W".toCharArray());

@@ -628,6 +628,15 @@ art. That's out of scope for now anyway (existing assets only).
 7. Color choice 1 with commander rewards.
 8. The copy script. Playtest on Normal.
 
+**Opening section status:** built, not yet run in game. Quest 28 (find the angels) and quest 1000 (four lessons) are in
+`Concordia/world/quests.json`. The Emberbrook map is `Concordia/maps/map/emberbrook.tmx`. The Seal Angels' color choice
+calls `setStarterColor`, which swaps the starter deck and removes the placeholder deck's cards. The new-game picker is
+hidden by `placeholderStarterColor`. Four tutorial raiders ante with Easy starter decks: lands and draw, combat (which
+returns the first raider's card), the commander, and color identity. The last raider's defeat activates the rival of the
+opposite color, using a hidden enemy that `activateMapObject` now unhides. The rival's deck is the opposite color's Normal
+starter deck, and its name is a placeholder. Known gaps: the raiders' and rival's decks are placeholders, the map is a
+copy of a town layout, the stolen-card shop section has no heading, and the opening is untested.
+
 **Java status (J-Ante and J-Raid):** written in `forge-gui-mobile`. Per-encounter ante is set by `ConfigData.anteByEncounter`
 and `EnemyData.ante`. Raider losses are held in `AdventurePlayer` and saved. The `returnStolenFrom` dialog action returns a
 raider's cards. Shop stolen cards are priced by `stolenCardPriceFactor`. Not yet compiled against the full build, because

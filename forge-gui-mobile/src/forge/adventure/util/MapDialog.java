@@ -427,6 +427,9 @@ public class MapDialog {
             if (E.giveBlessing != null) { //Gives a blessing for your next battle.
                 Current.player().addBlessing(E.giveBlessing);
             }
+            if (E.setStarterColor != null && !E.setStarterColor.isEmpty()) { //Replaces the starter deck with one for these colors
+                Current.player().replaceStarterColor(E.setStarterColor);
+            }
             if (E.returnStolenFrom != null && !E.returnStolenFrom.isEmpty()) { //Returns the cards a raider holds
                 for (PaperCard card : Current.player().takeStolenCards(E.returnStolenFrom))
                     Current.player().addCard(card);
