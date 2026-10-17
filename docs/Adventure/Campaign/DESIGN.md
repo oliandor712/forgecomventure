@@ -78,6 +78,14 @@ been seen in years. Nobody knows whether he's still holding the throne, or wheth
 The peace holds, but it is thin. Beyond the Seals' reach, the **Unsealed** (outlaw duelists) still fight for power,
 run illegal duel rings, and prey on villages.
 
+**The raiders** are the Unsealed's field agents, the Team Rocket of Concordia. Their job is to steal, and they have
+the means to do it: every raider duel is an **ante duel**. Each side stakes a card from its deck, and the winner keeps
+the other's card. Raiders go after rare cards, Seal fragments and anyone who looks like an easy prize. When a raider
+loses, they run and come back later, often with a new deck. Three rules keep the raiders fair:
+- Your commander is never anted. Raiders take cards from the 99 only.
+- Losing a raider duel is the only permanent loss in the campaign. Other story duels stay a standard retry.
+- A stolen card can be won back by defeating the raider who holds it.
+
 **The central question of the story is whether the Seals are good for Concordia.** They ended the wars, but they also
 froze the world under one ruler's judgment and turned duelists into outlaws. Every chapter gives the question a
 different answer, and the story never settles it for you.
@@ -125,7 +133,7 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 |---|---|---|---|
 | P1 | Awaken | Emberbrook: Seal-day festival at the shrine (hand-made map) | Unsealed raiders strike during the festival. In the chaos both of you awaken your sparks. Seal Angels descend and ask each of you, mystically, to choose a first color. You choose; the rival's color is its opposite (§2.1 color lore) |
 | P2 | Your soul's deck | Emberbrook shrine | A basic commander deck manifests from your soul in the color you chose. The rival's manifests in theirs. **Elder Wren** explains what the decks are, and that the duels to come are your first lessons |
-| P3 | Tutorial raiders | Emberbrook | Each raider you duel is a tutorial battle, one lesson per raider (drawing, combat, the commander, color identity). Raiders keep coming until the last one flees. **Rival duel 1** comes after the last raider: a short duel with a low-power deck. The rival says that when they rule, they'll tear the Seals down |
+| P3 | Tutorial raiders | Emberbrook | Each raider you duel is an ante duel and a tutorial battle, one lesson per raider (drawing, combat, the commander, color identity). The first raider takes a starter card from you, and the next lesson teaches you to win it back by defeating the same raider. Raiders keep coming until the last one flees. **Rival duel 1** comes after the last raider: a short duel with a low-power deck. The rival says that when they rule, they'll tear the Seals down |
 | P4 | Set out | Route 1 → Mossgate | Elder Wren sends you to Mossgate with the village's Seal fragment. Route trainers teach the "challenged on sight" mechanic. At Mossgate's notice board you read the Champion's open challenge for the first time. The rival has already left |
 
 #### Chapter 1: The Green Seal
@@ -134,7 +142,7 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 |---|---|---|---|
 | 1.1 | Settle into town | Mossgate (town with shop, inn and Commander Hall) | Learn the Commander Hall rules (§6.2). The notice board offers side jobs. The Warden of the Green Seal is taking challengers at the grove |
 | 1.2 | Clear the Thornwood | Route 2 (Thornwood forest map) | Trainers, a hidden grove with an optional legend duel (secret) |
-| 1.3 | Unsealed camp | Thornwood clearing | The Unsealed are poisoning the Green Seal's roots to weaken the Warden. Mini-boss: Unsealed captain **Hask** |
+| 1.3 | Unsealed camp | Thornwood clearing | The Unsealed are poisoning the Green Seal's roots to weaken the Warden. Their raiders ante for cards from every traveler they catch. Mini-boss: Unsealed captain **Hask** (ante duel) |
 | 1.4 | The Green Warden | Mossgate Grove (gym map) | Gym puzzle: overgrown paths open after you beat the grove keepers. **Warden Brannoc** (mono-G ramp and stompy). Brannoc is a believer: "This Seal has kept my valley alive for a hundred years. Don't call it a cage" |
 | 1.5 | First Seal | Mossgate Grove | **Color choice 1** (§6.1). **Rival duel 2** outside the gym. The rival calls the Seals slow and says the Wardens are gatekeepers. Elder Wren's messenger reports the Archive in Lumenhold has been attacked |
 
@@ -154,7 +162,7 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 | Step | Goal | Location | Beats |
 |---|---|---|---|
 | 3.1 | Lumenhold | Route 5 (plains), Lumenhold city | The Archive is in ruins. Archivist **Pell** lays out the case on both sides. The Seals ended wars that burned whole regions, and they kept the Champion's duty alive. They also froze the world under one ruler, and made every duel a permission. Pell also reveals that the Seals are bound to the Champion's own spark. If he falls, the Seals fall with him, and whoever takes the throne inherits them |
-| 3.2 | The Unsealed Hideout | Unsealed Hideout (2-floor dungeon) | The rival is here, hired by the Unsealed to win duels for them. The rival duel is a 2v1 against the rival plus a grunt |
+| 3.2 | The Unsealed Hideout | Unsealed Hideout (2-floor dungeon) | The rival is here as an Unsealed raider, winning ante duels and carrying a bag of stolen cards. The rival duel is a 2v1 ante match against the rival plus a grunt |
 | 3.3 | Mordessa | Hideout depths | Unsealed ringleader **Mordessa** (mono-B reanimator) runs the illegal duels. She says the throne is for sale to anyone who can afford it. The rival sees what the ring does to the people who lose and walks out. It doesn't change their view of the Seals, only their view of how to break them |
 | 3.4 | The White Warden | Lumenhold Cathedral (gym) | Gym puzzle: a light-bridge sequence. **Dame Seraphine** (mono-W tokens and lifegain). She is the Champion's strongest believer: "The strong carry the weak. That is the whole reason for the Seals." Two-player pod duel: Seraphine with her squire |
 | 3.5 | The last Seal | Lumenhold | **Color choice 4: you now control all five colors.** The rival is ahead on Seals, and they're heading for Victory Road. They tell you they'll see you at the top |
