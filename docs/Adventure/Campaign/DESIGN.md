@@ -27,7 +27,8 @@ color and earn the rest from the Wardens, one at a time. Only **existing art and
 | Ante | Used only in **raider duels** and **optional secret legend duels**. Set per encounter. The global *Play for Ante* setting does not apply to the campaign |
 | Losing a duel | A standard Adventure retry, except ante duels, where losing costs a card (§2.1) |
 | Ending | Open. Keep, reforge or break the Seals. The story does not mark one as correct (§2.3) |
-| Gameplay focus | Deckbuilding growth, plus exploration and secrets |
+| Card gain | Steady story rewards (a choice of 3 per Warden, plus a staple commander). Grind pays currency that buys cards in the shop. Only ante hands out cards directly (§6.6) |
+| Gameplay focus |
 | Presentation | Moderate drama. Wardens, the rival, the raider leaders and the Champion get intros and taunts. Ordinary trainers stay brief |
 | Assets | Existing tilesets, sprites, portraits and music only. Decks and JSON are new data |
 
@@ -400,18 +401,10 @@ after clearing the routes in between. Gold buys staples. Seals unlock colors. Ex
 
 ### 5.4 Difficulty scaling
 
-The plane's `config.json` defines Easy / Normal / Hard / Insane, as Realm of Legends does:
-
-| Lever | Easy | Normal | Hard | Insane |
-|---|---|---|---|---|
-| Player starting life | 30 | 25 | 20 | 15 |
-| `enemyLifeFactor` | 0.8 | 1.0 | 1.3 | 1.5 |
-| `rewardMaxFactor` | 1.5 | 1.0 | 0.6 | 0.3 |
-| Starter deck | `_Easy` | `_Normal` | `_Hard` | `_Insane` |
-| Starting gold | 1,000 | 500 | 200 | 0 |
-
-Boss decks and map effects are the same on every difficulty in Phase 1. Per-difficulty boss decks need Java J8.
-Ante stakes don't change with difficulty.
+Concordia ships one difficulty for now: **Normal**, using Normal's settings from `config.json`, with 30 starting life
+and the standard reward factors. Easy, Hard and Insane are deferred, not removed, so their `config.json` entries can
+come back later. Boss decks and map effects stay the same in every phase. Per-difficulty boss decks need Java J8 when
+those difficulties return. Ante stakes don't change with difficulty.
 
 ---
 
@@ -466,13 +459,14 @@ Because Phase 1 can only partly enforce this, **J-CI and J-Hall are the first Ja
 - Main flags: `campCh` (chapter, gates POIs), `colStart` and `colX` (colors), `sealG`, `sealU`, `sealR`, `sealW` (Seals won), `rivalStage`, `endingChoice` (keep / reforge / break, read by the epilogue) and `raidStolen`
   (how many cards raiders hold). Flags are bytes, so values must stay ≤ 127.
 
-### 6.4 Side content
+### 6.4 Side content and grinding
 
-- **Notice-board jobs** in each town (Forge's existing side-quest templates).
-- **Secret legend duels:** about 2 per region, hidden on route and dungeon maps. Each is an ante duel, and each one
-  drops that legend's commander if you win.
-- **Trainer rematches:** post-game, routes re-populate with stronger decks (a `respawnEnemies` copy of each route,
-  activated after the finale).
+Grinding is optional, and it's steady. Every grind source pays a flat reward that scales with the player's current tier.
+- **Rematches:** defeated trainers can be rematched for currency, with no diminishing returns.
+- **Notice-board jobs:** repeatable side jobs in each town.
+- **Arena:** a random tournament that the player can enter for currency.
+- **Currency:** grind pays gold and shards, not cards. Gold buys single cards in the shop. Shards reroll the shop's stock.
+- **Secret legend duels:** one-time ante duels (§2.1). They're not repeatable.
 - **Lore:** Archive fragments that unlock an extra epilogue dialog.
 
 ### 6.5 What persists
@@ -482,6 +476,42 @@ units, not save boundaries.
 
 Stolen cards persist too. Each raider holds the cards it won from you, recorded in the save (J-Raid, §7.2). Defeating
 that raider returns them. A card a raider still holds when you leave the region stays with the raider.
+
+### 6.6 Card gain progression
+
+Decided with the designer (questionnaire, Oliandor). Items marked *check* are answers that conflict with the rest of
+this document, listed in §10.
+
+**The steady path**
+- Each Warden offers a **choice of 3** story cards, plus that Warden's **staple commander** as a bonus.
+- Story rewards are curated. Grind rewards come through currency. The two pools stay separate.
+- Target: **2–3 random cards per regular duel**, or the currency equivalent, plus curated powerful cards from gyms and
+  raiders. *Check:* this conflicts with the currency-only rule below (§10, item 12).
+
+**Color rules**
+- A Warden's story rewards come only from its color, or from multicolor cards that include that color.
+- Rewards from other sources can be off-color. Off-color cards are allowed.
+- No guaranteed fixing at each unlock. Start with a few guaranteed common colorless fixers. Rare dual lands and fixers
+  join the reward pool of the matching Warden.
+- A gold card becomes available once all of its colors are unlocked. It doesn't wait for a commander.
+- Commanders follow the normal commander rules. They are cards to find and acquire like any other.
+
+**Shops and smithing**
+- Shops sell every card type, not only unlocked colors.
+- The shop uses the smithing mechanics (the Spellsmith) to let the player generate a semi-targeted pool.
+- Gold buys single cards. Shards reroll the shop's stock. *Check:* off-color stock is dead until its colors unlock (§10,
+  item 14).
+
+**Ante and stealing**
+- A stolen card can be won back by defeating the raider who holds it. It can also be found in the shop.
+- Raider rewards come from the raider's own deck, not from a region-wide pool.
+- Only ante hands out cards directly, plus story and gym rewards.
+
+**Difficulty and feedback**
+- One difficulty for now: Normal, with 30 starting life and the standard settings. No Easy mode.
+- The quest log does not show the next Warden's colors or cards. Rewards stay a surprise until the player earns them.
+- The player gets a **collection by color** view, so they can see how close they are to a playable deck in each
+  unlocked color.
 
 ---
 
@@ -632,3 +662,14 @@ to move. The three endings (§2.3) are written here, and `endingChoice` drives t
 9. **Gender until Phase 2:** OK to ask the player once in the prologue, until J-Gender makes it automatic?
 10. **Angel choice until Phase 2:** OK to keep the new-game color picker in Phase 1, with the Seal Angels confirming it?
 11. **Plane name:** keep "Concordia"?
+12. **Card rate:** the questionnaire says regular duels give 2–3 random cards, but it also says duels pay currency and
+    only ante hands out cards. Which one should we design for, or do both apply?
+13. **Staple commander:** each Warden's bonus is a staple commander. Which commander goes with each Warden, and should
+    it be a legend already in Forge?
+14. **Off-color shop stock:** shops sell every card type. Should off-color stock be visible before its colors unlock,
+    or hidden until then?
+15. **Scale:** grind rewards scale with the player's tier. Does the tier mean the Wardens cleared, or the power of the
+    player's deck?
+16. **Raider rematches:** should rematching a raider put ante back on the table, or should it stay a flat fight?
+17. **Difficulty:** §5.4 now has one Normal setting at 30 starting life. Confirm that Easy, Hard and Insane are deferred,
+    not removed.
