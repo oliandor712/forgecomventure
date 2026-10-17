@@ -93,7 +93,7 @@ loses, they run and come back later, often with a new deck. Four rules keep the 
 - Your commander is never anted. Raiders take cards from the 99 only.
 - Ante applies only to raiders and rare optional secret bosses. Losing an ante duel is a permanent loss. Every other
   story duel stays a standard retry.
-- Raiders can't be rematched. A stolen card comes back in a scripted raider encounter, or it can be bought in the shop.
+- Raiders can't be rematched. A stolen card comes back in a scripted raider encounter. Otherwise it appears in a special shop section, overpriced.
 - The global **Play for Ante** setting doesn't apply to the campaign. Ante is set per encounter. Basic lands are never
   anted, and rarity matching is off, so raiders can take rare cards.
 
@@ -460,7 +460,7 @@ Because Phase 1 can only partly enforce this, **J-CI and J-Hall are the first Ja
 ### 6.4 Side content and grinding
 
 Grinding is optional, and it's steady. Every grind source pays the same flat reward. Only the opponents change, as described under *Grinding scale* in §6.6.
-- **Rematches:** regular route duelists and Warden gym challengers can be rematched for currency, with no diminishing returns. Raiders can't be rematched.
+- **Rematches:** regular route duelists and Warden gym challengers can be rematched for currency, with no diminishing returns. Raiders and Wardens can't be rematched.
 - **Notice-board jobs:** repeatable side jobs in each town.
 - **Arena:** a random tournament that the player can enter for currency.
 - **Currency:** grind pays gold and shards. A regular duel pays currency worth 2–3 cards at the shop's average price (§6.6). Gold buys single cards in the shop. Shards reroll the shop's stock.
@@ -472,7 +472,7 @@ Grinding is optional, and it's steady. Every grind source pays the same flat rew
 Everything persists in the save: deck, collection, gold, shards, items, flags and cleared maps. Chapters are story
 units, not save boundaries.
 
-Stolen cards persist too. Each raider holds the cards it won from you, recorded in the save (J-Raid, §7.2). Defeating a raider in a scripted encounter returns them. Raiders can't be rematched, so a card a raider still holds after its last scripted encounter can only be bought back in the shop.
+Stolen cards persist too. Each raider holds the cards it won from you, recorded in the save (J-Raid, §7.2). Defeating a raider in a scripted encounter returns them. Raiders can't be rematched, so a card a raider still holds after its last scripted encounter goes to the shop's stolen-card section, at an inflated price.
 
 ### 6.6 Card gain progression
 
@@ -494,11 +494,12 @@ this document, listed in §10.
 
 **Shops and smithing**
 - Shops sell every card type, not only unlocked colors.
+- Stolen cards have their own section, priced above their normal shop value.
 - The shop uses the smithing mechanics (the Spellsmith) to let the player generate a semi-targeted pool.
 - Gold buys single cards. Shards reroll the shop's stock. *Check:* off-color stock is dead until its colors unlock (§10, item 12).
 
 **Ante and stealing**
-- A stolen card comes back in a scripted raider encounter. It can also be bought in the shop.
+- A stolen card comes back in a scripted raider encounter. Otherwise it appears in the shop's stolen-card section, overpriced.
 - Raider rewards come from the raider's own deck, not from a region-wide pool.
 - Only ante, story rewards and gym rewards hand out cards directly. Every other duel pays currency.
 
@@ -506,7 +507,7 @@ this document, listed in §10.
 - Payouts are flat. A rematch or job pays the same at every point in the campaign.
 - Opponent intensity steps up with each Warden the player clears. The first Warden sets the opening level, and the last one sets the top level.
 - The clear order follows the color tiers (§2.2): your own Warden first, then the two allies, then the two enemies. Within a tier, the order is the player's choice, and the level still steps up each time.
-- Rematches and arena opponents use the current level. Raiders are never rematched. Secret legend duels stay at their set strength.
+- Rematches and arena opponents use the current level. Raiders and Wardens are never rematched. Secret legend duels stay at their set strength.
 
 **Difficulty and feedback**
 - One difficulty: Normal, with 30 starting life and the standard settings.
@@ -667,4 +668,3 @@ to move. The three endings (§2.3) are written here, and `endingChoice` drives t
     or hidden until then?
 13. **Stolen cards:** with no raider rematches, a stolen card comes back only in a scripted raider encounter or from the
     shop. Which scripted encounters return stolen cards, and should the tutorial raider's card always come back?
-14. **Warden rematches:** gym challengers can be rematched (§6.4). Can the Warden at the end of the gym be rematched too?
