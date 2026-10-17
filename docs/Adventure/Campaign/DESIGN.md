@@ -459,7 +459,7 @@ Because Phase 1 can only partly enforce this, **J-CI and J-Hall are the first Ja
 
 ### 6.4 Side content and grinding
 
-Grinding is optional, and it's steady. Every grind source pays a flat reward that scales with the player's current tier.
+Grinding is optional, and it's steady. Every grind source pays the same flat reward. Only the opponents change, as described under *Grinding scale* in §6.6.
 - **Rematches:** defeated trainers can be rematched for currency, with no diminishing returns.
 - **Notice-board jobs:** repeatable side jobs in each town.
 - **Arena:** a random tournament that the player can enter for currency.
@@ -502,6 +502,12 @@ this document, listed in §10.
 - A stolen card can be won back by defeating the raider who holds it. It can also be found in the shop.
 - Raider rewards come from the raider's own deck, not from a region-wide pool.
 - Only ante, story rewards and gym rewards hand out cards directly. Every other duel pays currency.
+
+**Grinding scale**
+- Payouts are flat. A rematch or job pays the same at every point in the campaign.
+- Opponent intensity steps up with each Warden the player clears. The first Warden sets the opening level, and the last one sets the top level.
+- The clear order follows the color tiers (§2.2): your own Warden first, then the two allies, then the two enemies. Within a tier, the order is the player's choice, and the level still steps up each time.
+- Rematches and arena opponents use the current level. Secret legend duels stay at their set strength.
 
 **Difficulty and feedback**
 - One difficulty: Normal, with 30 starting life and the standard settings.
@@ -660,6 +666,4 @@ to move. The three endings (§2.3) are written here, and `endingChoice` drives t
 11. **Plane name:** keep "Concordia"?
 12. **Off-color shop stock:** shops sell every card type. Should off-color stock be visible before its colors unlock,
     or hidden until then?
-13. **Scale:** grind rewards scale with the player's tier. Does the tier mean the Wardens cleared, or the power of the
-    player's deck?
-14. **Raider rematches:** should rematching a raider put ante back on the table, or should it stay a flat fight?
+13. **Raider rematches:** should rematching a raider put ante back on the table, or should it stay a flat fight?
