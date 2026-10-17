@@ -3,11 +3,12 @@
 Builds Forge's Adventure code on this PC and installs it, with the Concordia plane, into a Forge install.
 
 .DESCRIPTION
-1. Runs a Maven build of forge-gui-mobile-dev and its dependencies from this repository.
-   Needs JDK 17 or newer and Maven on PATH. Maven downloads dependencies, including the
-   jitpack.io repository, so this must run on a machine with normal internet access.
-2. Replaces the installed forge-gui-mobile jar with the built one. Each installed jar is
-   backed up to <ForgeDir>\adventure-backups first.
+1. Runs a Maven build of forge-gui-mobile-dev from this repository. This produces
+   forge-gui-mobile-dev-<version>-jar-with-dependencies.jar, the bundled Adventure game that
+   the install runs. Needs JDK 17 or newer and Maven on PATH. Maven downloads dependencies,
+   including the jitpack.io repository, so this must run on a machine with normal internet access.
+2. Replaces the installed jar-with-dependencies file with the built one. The installed file is
+   backed up to <ForgeDir>\adventure-backups first, and keeps its name.
 3. Copies the Concordia plane into <ForgeDir>\res\adventure\Concordia (via copy-to-install.ps1).
 
 Nothing in the install is deleted. Backups are kept in <ForgeDir>\adventure-backups.
@@ -31,7 +32,9 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-$jarPattern = '^forge-gui-mobile-\d'
+$builtPattern = 'forge-gui-mobile-dev-.*jar-with-dependencies\.jar$'
+$installedPattern = 'forge-gui-mobile-dev-.*jar-with-dependencies'
+
 
 if (-not $SkipBuild) {
     if (-not (Get-Command mvn -ErrorAction SilentlyContinue)) {
@@ -50,37 +53,36 @@ if (-not $SkipBuild) {
     }
 }
 
-$built = Get-ChildItem -Path (Join-Path $RepoDir "forge-gui-mobile\target") -Filter "*.jar" -File |
-    Where-Object { $_.Name -match $jarPattern } | Select-Object -First 1
+$built = Get-ChildItem -Path (Join-Path $RepoDir "forge-gui-mobile-dev\target") -Filter "*.jar" -File |
+    Where-Object { $_.Name -match $builtPattern } | Select-Object -First 1
 if (-not $built) {
-    throw "No forge-gui-mobile jar in forge-gui-mobile\target. Run without -SkipBuild first."
+    throw "No jar-with-dependencies in forge-gui-mobile-dev\target. Run without -SkipBuild first."
 }
 Write-Host "Built jar: $($built.FullName)"
 
 if (-not (Test-Path $ForgeDir)) {
     throw "Forge folder not found: $ForgeDir. Pass the right folder with -ForgeDir."
 }
-$installed = Get-ChildItem -Path $ForgeDir -Filter "*.jar" -Recurse -File |
-    Where-Object { $_.Name -match $jarPattern -and $_.FullName -notlike "*adventure-backups*" }
+$installed = Get-ChildItem -Path $ForgeDir -Recurse -File |
+    Where-Object { $_.Name -match $installedPattern -and $_.FullName -notlike "*adventure-backups*" }
 if (-not $installed) {
-    throw "No forge-gui-mobile jar found under $ForgeDir. Send the jar list from that folder and this can be matched by hand."
+    throw "No forge-gui-mobile-dev jar-with-dependencies found under $ForgeDir. Check the -ForgeDir path."
 }
 
 $backupRoot = Join-Path $ForgeDir "adventure-backups"
 New-Item -ItemType Directory -Force -Path $backupRoot | Out-Null
 $stamp = Get-Date -Format "yyyyMMdd-HHmmss"
 foreach ($jar in $installed) {
-    $backup = Join-Path $backupRoot ($jar.BaseName + "-" + $stamp + ".jar")
+    $backup = Join-Path $backupRoot ($jar.Name + "-" + $stamp)
     Copy-Item -Path $jar.FullName -Destination $backup
     Copy-Item -Path $built.FullName -Destination $jar.FullName -Force
     Write-Host "Replaced: $($jar.FullName)  (backup: $backup)"
 }
 if ($installed.Count -gt 1) {
-    Write-Host "Note: more than one forge-gui-mobile jar was found. Check the install's lib folder."
+    Write-Host "Note: more than one Adventure jar was found. Each was replaced; check the install folder."
 }
 if ($installed[0].Name -ne $built.Name) {
-    Write-Host "Note: the installed jar is named $($installed[0].Name) and the built one is $($built.Name)."
-    Write-Host "The new jar was copied under the installed name. The other Forge jars must be the same version."
+    Write-Host "Note: the installed file is $($installed[0].Name). The built file is $($built.Name). The built file was copied under the installed name."
 }
 
 & (Join-Path $PSScriptRoot "copy-to-install.ps1") -ForgeDir $ForgeDir -RepoDir $RepoDir
