@@ -18,10 +18,10 @@ color and earn the rest from the Wardens, one at a time. Only **existing art and
 | Story | All new. The Champion conquered Concordia, ended the wars with five Seals, and holds an open challenge for his throne |
 | Leads | Two natives of Emberbrook. Both carry planeswalker sparks that awaken during the raid on Seal-day |
 | Start | The **Seal Angels** ask the player to choose a first color. The rival takes that color's **opposite** (§3.2) |
-| Structure | Semi-linear ("linear with hubs"): chapters in a fixed order, with a branch where you choose the order of two Wardens |
+| Structure | Semi-linear. Five Warden regions around the Mossgate hub. Each tier (own color, allies, enemies) opens only after the one before it. The order inside a tier is yours |
 | Map | Hand-made overworld (§4). Data first, Java later |
 | Format | Commander |
-| Color progression | You start with **one color** and a **mono-color commander**. Each Warden you defeat lets you **choose one new color** until you have all five |
+| Color progression | You start with **one color** and a **mono-color commander**. Each Warden's color is theirs, not chosen. Your own Seal opens the ally tier, the two allies give two colors, and the two enemies give the last two |
 | Commander swapping | Restricted (§6.2) |
 | Rival | Your **childhood friend**, of the **opposite gender** to you, and of the **opposite color** (§3.2). Wants to destroy the Seals |
 | Ante | Used only in **raider duels** and **optional secret legend duels**. Set per encounter. The global *Play for Ante* setting does not apply to the campaign |
@@ -127,15 +127,25 @@ Champion's open challenge is only a poster to you at this point. The raid makes 
 
 | Part | Title | Region | Warden / main boss | Color unlock |
 |---|---|---|---|---|
-| Prologue | **The Raid** | Emberbrook and Route 1 | Rival (first duel, after the raider tutorials) | Your starting color (chosen with the Seal Angels) |
-| Chapter 1 | **The Green Seal** | Mossgate and the Thornwood | Warden **Brannoc** (G) | Choose your 2nd color |
-| Chapter 2 | **Two Roads** | Saltreach (U) *and* Cinderpeak (R), in either order | Wardens **Isolde** (U) and **Tarro** (R) | Choose your 3rd, then 4th color |
-| Chapter 3 | **The Archive of Seals** | Lumenhold and the Unsealed Hideout | Warden **Dame Seraphine** (W). Unsealed boss: **Mordessa** | Choose your 5th color |
+| Prologue | **The Raid** | Emberbrook, Route 1 and the Mossgate hub | Rival (first duel, after the raider tutorials) | Your starting color |
+| Chapter 1 | **Your Seal** | Your own color's Warden region (one of five routes from Mossgate) | Warden of **your color** | None new. Your own Seal gives +3 max life and a commander choice in your color |
+| Chapter 2 | **Two Roads** | The two ally-color Warden regions, in either order | Wardens of your **two ally colors** | One new color per Warden |
+| Chapter 3 | **The Archive of Seals** | The Archive in Lumenhold, the Hollow, then the two enemy-color Warden regions in either order | Wardens of your **two enemy colors**. Unsealed boss: **Mordessa** | One new color per Warden |
 | Finale | **The Champion's Throne** | Victory Road and the Summit | The Five Paragons, the rival, then the Champion | You have all five |
 
-The Wardens have fixed colors (G, U, R, W), but **the color you unlock is your choice, not the Warden's color**. A
-Seal resonates with whichever color you call. The fifth color is the one you hold for last, and the finale is where
-all five meet.
+Each Warden guards the Seal of one color, and the five colors are fixed. Which tier a Warden falls into depends on your
+starting color (§2.1 color lore):
+
+- **Own color (Chapter 1):** the Warden of your starting color. It doesn't add a new color, because you already have
+  it. It's your first Seal, and it opens the ally tier.
+- **Allies (Chapter 2):** the two colors next to yours on the wheel, in any order.
+- **Enemies (Chapter 3):** the two colors across from yours, in any order.
+- **Champion (Finale):** after all five Seals.
+
+You can walk to any of the five Warden regions from the start. Their doors stay locked until their tier is cleared, so
+the route is semi-linear. The color you gain from a Warden is that Warden's color; you don't choose it. Warden regions
+keep a puzzle style by color: green grove paths, a blue mirror maze, a red forge gauntlet, a white light bridge and the
+black ring of the Hollow.
 
 Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the vertical slice) is about 3 hours.
 
@@ -150,36 +160,36 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 | P3 | Tutorial raiders | Emberbrook | Each raider you duel is an ante duel and a tutorial battle, one lesson per raider (drawing, combat, the commander, color identity). The first raider takes a starter card from you, and the next lesson teaches you to win it back by defeating the same raider. Raiders keep coming until the last one flees. **Rival duel 1** comes after the last raider: a short duel with a low-power deck. The rival says that when they rule, they'll tear the Seals down |
 | P4 | Set out | Route 1 → Mossgate | Elder Wren sends you to Mossgate with the village's Seal fragment. Route trainers teach the "challenged on sight" mechanic. At Mossgate's notice board you read the Champion's open challenge for the first time. The rival has already left |
 
-#### Chapter 1: The Green Seal
+#### Chapter 1: Your Seal
 
 | Step | Goal | Location | Beats |
 |---|---|---|---|
-| 1.1 | Settle into town | Mossgate (town with shop, inn and Commander Hall) | Learn the Commander Hall rules (§6.2). The notice board offers side jobs. The Warden of the Green Seal is taking challengers at the grove |
-| 1.2 | Clear the Thornwood | Route 2 (Thornwood forest map) | Trainers, a hidden grove with an optional secret legend duel (ante) |
-| 1.3 | Unsealed camp | Thornwood clearing | The Unsealed are poisoning the Green Seal's roots to weaken the Warden. Their raiders ante for cards from every traveler they catch. Mini-boss: Unsealed captain **Hask** (ante duel) |
-| 1.4 | The Green Warden | Mossgate Grove (gym map) | Gym puzzle: overgrown paths open after you beat the grove keepers. **Warden Brannoc** (mono-G ramp and stompy). Brannoc is a believer: "This Seal has kept my valley alive for a hundred years. Don't call it a cage" |
-| 1.5 | First Seal | Mossgate Grove | **Color choice 1** (§6.1). **Rival duel 2** outside the gym. The rival calls the Seals slow and says the Wardens are gatekeepers. Elder Wren's messenger reports the Archive in Lumenhold has been attacked |
+| 1.1 | Settle into town | Mossgate (hub: shop, inn, Commander Hall) | Learn the Commander Hall rules (§6.2). Five routes lead out of Mossgate, one to each Warden region. The notice board offers side jobs |
+| 1.2 | Your region | The route to your own Warden region | Trainers, and a hidden grove or ruin with an optional secret legend duel (ante) |
+| 1.3 | Unsealed camp | Camp on your region's route | The Unsealed are weakening your color's Seal so they can steal from its travelers. Their raiders ante for cards. Mini-boss: Unsealed captain **Hask** (ante duel) |
+| 1.4 | Your Warden | Your region's gym | Gym puzzle in your region's style. The Warden of your color, tier 3. Their speech is set per color in §3.3 |
+| 1.5 | Your Seal | Your region's gym | **Your own Seal** (no new color): +3 max life, and a commander choice in your color. It opens the ally tier. **Rival duel 2** outside the gym: the rival calls the Seals slow and says the Wardens are gatekeepers. Elder Wren's messenger reports the Archive in Lumenhold has been attacked |
 
 #### Chapter 2: Two Roads (any order)
 
 | Step | Goal | Location | Beats |
 |---|---|---|---|
-| 2.0 | The crossroads | Crossroads Inn (hub) | Two routes open: west to Saltreach, east to Cinderpeak. You can do them in either order. The second Warden you fight is a tier stronger (§5.2) |
-| 2A.1 | Saltreach | Route 3 (coast), Saltreach town | The Unsealed are running illegal duels in the tide pools for gold and favors. Secret: a sunken shipwreck with a legend duel (ante) |
-| 2A.2 | The Blue Warden | Saltreach Lighthouse (gym) | Gym puzzle: a mirror maze. **Warden Isolde** (mono-U control and flyers). Best-of-3. Isolde is loyal to the Champion, but not blind to what the Seals cost. They ask why you want the throne, and tell you most who ask don't know |
-| 2B.1 | Cinderpeak | Route 4 (volcanic path), Cinderpeak town | Miners have gone missing in the forges. Their foreman says the missing men were paid to duel in an Unsealed ring |
-| 2B.2 | The Red Warden | Cinderpeak Forge (gym) | Gym gauntlet: three forge-keepers in a row with no healing. **Warden Tarro** (mono-R aggro). Tarro fought beside the Champion in the wars, and says the Seals are the only reason they're still alive |
-| 2.9 | Two Seals | Crossroads Inn | Color choices 2 and 3. **Rival duel 3**: the rival has won gold and a shortcut to a Seal by dueling in the Unsealed ring. They say the Seals are a cage that keeps people weak. You both still want the same throne, and this duel is the first time you're really fighting over it |
+| 2.0 | The crossroads | Mossgate (hub) | Your Seal opens the two ally regions. You can do them in either order. The second Warden you fight is a tier stronger (§5.2) |
+| 2A.1 | First ally region | Its route | Its Unsealed raiders run illegal ante duels for gold. Secret: a legend duel (ante) |
+| 2A.2 | First ally Warden | Its gym | Gym puzzle in the region's style. The Warden of the first ally color. They ask why you want the throne, and most who ask don't know |
+| 2B.1 | Second ally region | Its route | Locals have gone missing. Their foreman says the missing men were paid to duel in an Unsealed ring |
+| 2B.2 | Second ally Warden | Its gym | Gym gauntlet with no healing, in the region's style. The Warden of the second ally color. They fought beside the Champion in the wars, and say the Seals are the only reason they're still alive |
+| 2.9 | Two Seals | Mossgate (hub) | Two new colors, one per Warden. **Rival duel 3**: the rival has won gold and a shortcut to a Seal by dueling in the Unsealed ring. They say the Seals are a cage that keeps people weak. You both still want the same throne, and this duel is the first time you're really fighting over it |
 
 #### Chapter 3: The Archive of Seals
 
 | Step | Goal | Location | Beats |
 |---|---|---|---|
-| 3.1 | Lumenhold | Route 5 (plains), Lumenhold city | The Archive is in ruins. Archivist **Pell** lays out the case on both sides. The Seals ended wars that burned whole regions, and they kept the Champion's duty alive. They also froze the world under one ruler, and made every duel a permission. Pell also reveals that the Seals are bound to the Champion's own spark. If he falls, the Seals fall with him, and whoever takes the throne inherits them |
-| 3.2 | The Unsealed Hideout | Unsealed Hideout (2-floor dungeon) | The rival is here as an Unsealed raider, winning ante duels and carrying a bag of stolen cards. The rival duel is a 2v1 ante match against the rival plus a grunt |
+| 3.1 | The Archive | Lumenhold (opens when your ally tier is cleared) | Archivist **Pell** lays out the case on both sides. The Seals ended wars that burned whole regions, and they kept the Champion's duty alive. They also froze the world under one ruler, and made every duel a permission. Pell reveals the Seals are bound to the Champion's own spark. If he falls, the Seals fall with him, and whoever takes the throne inherits them |
+| 3.2 | The Unsealed Hideout | The Hollow (Black region, 2-floor dungeon) | The rival is here as an Unsealed raider, winning ante duels and carrying a bag of stolen cards. The rival duel is a 2v1 ante match against the rival plus a grunt. The Hollow's gym is the Black Warden's |
 | 3.3 | Mordessa | Hideout depths | Unsealed ringleader **Mordessa** (mono-B reanimator) runs the illegal duels. They say the throne is for sale to anyone who can afford it. The rival sees what the ring does to the people who lose and walks out. It doesn't change their view of the Seals, only their view of how to break them |
-| 3.4 | The White Warden | Lumenhold Cathedral (gym) | Gym puzzle: a light-bridge sequence. **Dame Seraphine** (mono-W tokens and lifegain). They are the Champion's strongest believer: "The strong carry the weak. That is the whole reason for the Seals." Two-player pod duel: Seraphine with their squire |
-| 3.5 | The last Seal | Lumenhold | **Color choice 4: you now control all five colors.** The rival is ahead on Seals, and they're heading for Victory Road. They tell you they'll see you at the top |
+| 3.4 | First enemy Warden | Its gym | Gym puzzle in the region's style. The Warden of the first enemy color. Where a Warden has a squire, the duel is a two-player pod with the squire |
+| 3.5 | Second enemy Warden | Its gym | The Warden of the second enemy color. The fifth Seal is yours. The rival is ahead on Seals and heads for Victory Road. They tell you they'll see you at the top |
 
 #### Finale: The Champion's Throne
 
@@ -233,9 +243,9 @@ broke the Seals, and they're the one NPC who argues with your choice instead of 
 | Who | A villager from Emberbrook, your neighbor since childhood, with a spark of their own. Competitive and loyal. They want the throne to destroy the Seals |
 | Gender and name | The opposite gender to the player. **Kael** (male) if the player is female, **Lyra** (female) if the player is male. Names are placeholders (open question 3) |
 | Sprite | Existing hero atlases: `sprites/heroes/human_m.atlas` / `human_f.atlas` |
-| Color | **The opposite of the player's color** on the wheel. The rival's color is fixed by the player's choice, so there are five possible rivals |
+| Color | **The opposite of the player's color** on the wheel. The rival's color is fixed by the player's choice, so there are five possible rivals. The rival's own Warden guards one of your enemy-tier regions, so their gym fights are part of your Chapter 3 map |
 | Arc | Eager friend → rival duels as a competitor → takes an Unsealed shortcut through ante duels (Ch.2–3) → sees what the ring does and leaves → your greatest opponent at the Summit → an ally in the epilogue, whatever the ending |
-| Duels | P3 (after the raiders), 1.5 (Mossgate), 2.9 (Crossroads), 3.2 (2v1 ante at the Hideout), F.3 (Summit gate) |
+| Duels | P3 (after the raiders), 1.5 (your region's gym), 2.9 (Mossgate hub), 3.2 (2v1 ante at the Hollow), F.3 (Summit gate) |
 | Deck | One deck per encounter, per opposite color: `decks/campaign/rival/<color>_<n>.dck`. 5 possible rival colors × 5 encounters = 25 decks (open question 4) |
 
 **Opposite color for each player choice:**
@@ -254,11 +264,12 @@ broke the Seals, and they're the one NPC who argues with your choice instead of 
 |---|---|---|---|---|
 | **Elder Wren** | Mentor, the village elder | Protect the village. Sends pilgrims out with hope | Not a duelist | Prologue, Ch.1 messages, epilogue |
 | **Archivist Pell** | Lore guide | Rebuild the Archive and understand the Seals, both sides of them | Optional sparring: mono-U artifacts | Ch.3, side quests |
-| **Warden Brannoc** | Warden 1 (G) | Guards the Green Seal. Believes the Seal kept their valley alive | Mono-G ramp and stompy (e.g. Omnath, Locus of Mana) | Ch.1 |
-| **Warden Isolde** | Warden 2/3 (U) | Guards the Blue Seal. Loyal, but honest about the cost | Mono-U control and flyers (a different commander from the player's) | Ch.2 |
-| **Warden Tarro** | Warden 2/3 (R) | Guards the Red Seal. Fought beside the Champion in the wars | Mono-R aggro (e.g. Torbran, Thane of Red Fell) | Ch.2 |
-| **Dame Seraphine** | Warden 4 (W) | Guards the White Seal. The Champion's strongest believer | Mono-W tokens and lifegain | Ch.3 |
-| **Captain Hask** | Unsealed captain, mini-boss | Paid muscle who runs the camp's raiders | Mono-B or B/R aggro | Ch.1 |
+| **Warden Brannoc** | Warden of Green | Guards the Green Seal. Believes the Seal kept their valley alive | Mono-G ramp and stompy (e.g. Omnath, Locus of Mana) | Tier set by your start color (§2.2) |
+| **Warden Isolde** | Warden of Blue | Guards the Blue Seal. Loyal to the Champion, but honest about the cost | Mono-U control and flyers (a different commander from the player's) | Tier set by your start color (§2.2) |
+| **Warden Tarro** | Warden of Red | Guards the Red Seal. Fought beside the Champion in the wars | Mono-R aggro (e.g. Torbran, Thane of Red Fell) | Tier set by your start color (§2.2) |
+| **Dame Seraphine** | Warden of White | Guards the White Seal. The Champion's strongest believer | Mono-W tokens and lifegain | Tier set by your start color (§2.2) |
+| **Warden of Black** (name TBD) | Warden of Black, in the Hollow | Guards the Black Seal. Placeholder design: sees the Seals as a grave | Mono-B (deck to be chosen; a graveyard theme fits Mordessa's ring) | Tier set by your start color (§2.2) |
+| **Captain Hask** | Unsealed captain, mini-boss | Paid muscle who runs the camp's raiders | Mono-B or B/R aggro | Ch.1 (camp on your region's route) |
 | **Mordessa** | Unsealed ringleader | Runs the illegal duel ring and sells the throne as a fantasy | Mono-B reanimator | Ch.3 |
 | **Raiders** (grunts) | Team Rocket analogs | Steal rare cards and Seal fragments for the Unsealed | Small ante-focused decks, one per tutorial lesson and per raid. Built from `decks/campaign/raiders/*.dck` | Prologue, Ch.1–3 |
 | **The Five Paragons** | The Champion's sworn duelists | Guard the Summit. Some believe the Champion's duty, some are paid | One two-color deck each (WU, UB, BR, RG, GW) | Finale |
@@ -271,28 +282,19 @@ broke the Seals, and they're the one NPC who argues with your choice instead of 
 
 ### 4.1 Overworld layout
 
-```
-                    [Concord Summit]
-                          |
-                    (Victory Road)
-                          |
-   [Saltreach]--Route 3--[Crossroads]--Route 4--[Cinderpeak]
-                          |
-                       Route 5
-                          |
-                     [Lumenhold] --(Hideout)
-                          |
-                    Route 2 (Thornwood)
-                          |
-                      [Mossgate]
-                          |
-                       Route 1
-                          |
-                     [Emberbrook]  (start)
-```
+Mossgate is the hub. Five routes lead out of it, one to each Warden region. The directions are fixed, so every player
+sees the same map, but the tiers change with the starting color.
 
-Every bracket is a town or gym, and every route is a hand-made map. Lumenhold sits south of the Crossroads, at the
-end of Route 5. Its gate is visible from Route 5 but locked until Chapter 3 (see §4.4).
+| Color | Warden region | Direction from Mossgate |
+|---|---|---|
+| Green | The Thornwood and Mossgate Grove | North-west |
+| Blue | Saltreach and its lighthouse | North-east |
+| Red | Cinderpeak and its forge | South-east |
+| White | Lumenhold and its cathedral (the Archive is in the city) | South-west |
+| Black | The Hollow (Unsealed hideout and the Black Warden's ring) | South |
+
+Emberbrook is the start, on Route 1 north of Mossgate. Victory Road and the Summit lie beyond all five regions. There is
+no separate crossroads: Mossgate is the only hub.
 
 ### 4.2 Building the hand-made overworld: data first (Phase 1)
 
@@ -343,7 +345,7 @@ painted by hand. A fully hand-painted overworld needs Java (J2, §7.2).
 | Next location doesn't exist yet | The POI has `active: false` and `questFlagsToActivate: [{"key": "campCh", "val": N}]` |
 | Route blocked halfway | A `dummy` obstacle (a fallen tree, a guard) on the route map, removed by dialog once `campCh` ≥ N |
 | Gym locked | The gym door is a `dialog` object that only opens with the right flag (for example "Come back with the Green Seal") |
-| Branch in Chapter 2 | Both Saltreach and Cinderpeak activate at `campCh` = 2. The Chapter 3 POIs activate when **both** Warden flags are set |
+| Tiers | Ally Warden regions activate at `campCh` = 1 (your Seal set). Enemy Warden regions and the Hollow activate at `campCh` = 2 (both ally Seals set). Victory Road activates at `campCh` = 3 (all five Seals set). Each Seal sets its `sealX` flag |
 
 The overworld itself is walkable everywhere (no physical walls between POIs). Story places simply don't exist until
 you're meant to reach them. Hard blocking on the overworld needs Java (J4).
@@ -364,10 +366,10 @@ you're meant to reach them. Hard blocking on the overworld needs Java (J4).
 | Part | Trainers | Rival | Mini/villain boss | Warden | Boss mechanics | Rewards and economy |
 |---|---|---|---|---|---|---|
 | Prologue | Raiders, tier 1, `life` 15, mono-color, ante | Tier 1, `life` 15 | Raider lead, tier 1, ante | – | None | Starter deck, 300 gold |
-| Ch.1 | Tier 2, `life` 20. Raiders ante | Tier 2, `life` 20 | Hask, tier 3, `life` 25, ante | Brannoc, tier 3, `life` 30 | Map `dungeonEffect`: Brannoc starts with a mana dork in play | ~2,000 gold. Seal = new color + a choice of 3 commanders (§6.1) + **+3 max life** |
-| Ch.2 (1st Warden) | Tier 3, `life` 25 | Tier 3, `life` 25 | – | Isolde / Tarro, tier 4, `life` 35 | Isolde: best-of-3. Tarro: gauntlet with no healing, and a `dungeonEffect` giving them a haste enabler | ~3,000 gold |
-| Ch.2 (2nd Warden) | Tier 4 | – | – | Tier 5, `life` 40 | The same mechanics, plus `changeStartCards: +1` for the Warden | Seal + life reward each |
-| Ch.3 | Tier 5, `life` 30. Raiders ante | Tier 5, 2v1 ante | Mordessa, tier 6, `life` 40, ante | Seraphine, tier 6, `life` 40, in a pod with their squire | Pod: `nextEnemy`. 2v1: `nextEnemy` + `teamNumber` | ~4,000 gold. Final Seal |
+| Ch.1 | Tier 2, `life` 20. Raiders ante | Tier 2, `life` 20 | Hask, tier 3, `life` 25, ante | Your own color, tier 3, `life` 30 | Map `dungeonEffect`: the Warden starts with a mana dork in play | ~2,000 gold. Your own Seal: +3 max life and a commander choice in your color (§6.1) |
+| Ch.2 (1st ally Warden) | Tier 3, `life` 25 | Tier 3, `life` 25 | – | Ally color, tier 4, `life` 35 | Best-of-3 on the blue Warden. A no-healing gauntlet on the red Warden, with a `dungeonEffect` giving a haste enabler (§3.3) | ~3,000 gold |
+| Ch.2 (2nd ally Warden) | Tier 4 | – | – | Ally color, tier 5, `life` 40 | The same mechanics, plus `changeStartCards: +1` | Seal + commander choice |
+| Ch.3 | Tier 5, `life` 30. Raiders ante | Tier 5, 2v1 ante | Mordessa, tier 6, `life` 40, ante | Enemy colors, tier 6, `life` 40. Where a Warden has a squire, a two-player pod | Pod: `nextEnemy`. 2v1: `nextEnemy` + `teamNumber` | ~4,000 gold. Final Seals |
 | Finale | Tier 6–7, `life` 35 | Tier 7, `life` 40, five-color | Paragons: tier 7, `life` 40 each, best-of-1 | The Champion: tier 8, 3 phases | §5.3 | Champion reward chest, post-game unlocks |
 
 Pacing targets: the player's deck should be roughly one tier below the next Warden on arrival, and one tier above it
@@ -418,17 +420,16 @@ Ante stakes don't change with difficulty.
 
 ### 6.1 Color unlocks (the core system)
 
-- **Flags:** character flags `colW`, `colU`, `colB`, `colR`, `colG` (0/1), `colCount`, and `colStart` (the starting color
+- **Flags:** character flags `colW`, `colU`, `colB`, `colR`, `colG` (0/1) and `colStart` (the starting color picked with the Seal Angels). Character flags are saved with the player.
   picked with the Seal Angels). Character flags are saved with the player.
 - **Start:** the prologue scene sets `colStart` and the matching `colX` flag from the Seal Angels' choice. The rival's
   color is the opposite (§3.2), set by a flag condition. Dialog can read the player's color with the existing
   `colorIdentity` condition, but that reads the *current deck's* identity, so the prologue copies it into a flag right away.
-- **The choice after a Warden:** a dialog lists the five colors. Each option has a `getCharacterFlag` condition
-  (`colX` = 0), so only colors you don't have yet appear. Picking one sets `colX` = 1, advances `colCount`, and runs
-  `grantRewardsChoice`.
-- **Commander rewards:** a choice of 3 commanders that **use the new color**. In Phase 1 these are curated lists per
-  new color, mostly mono-color plus one two-color commander paired with the starting color (10 color pairs = 10
-  curated lists, selected via flag conditions).
+- **Warden colors:** defeating a Warden sets its `colX` flag and unlocks that Warden's color. The color is the Warden's,
+  not the player's choice. Your own Seal sets `sealX` only, since you already have that color. Within a tier, the order
+  is the player's choice.
+- **Commander rewards:** each Seal gives a choice of 3 commanders in its color. Lists are curated per color, and
+  two-color commanders pair the new color with the starting color (selected via flag conditions).
 - **Card rewards:** reward entries using the existing `colors: ["colorID"]` option give cards in your current deck's
   colors.
 - **Secret legend duels** drop multi-color commanders. These are ante duels, so the commander is a real stake. They're
@@ -463,8 +464,7 @@ Because Phase 1 can only partly enforce this, **J-CI and J-Hall are the first Ja
   Finale 1090–1109, side quests 1200+. IDs 1–27 are kept free for reusing Forge's side-quest templates.
 - Each step is a `storyQuest` with `autoTrack`. Objectives mostly use `Travel` (to pinned POIs), `Defeat` / `Clear`
   (on gym and route maps) and `QuestFlag` (set by dialog). Hand-offs use epilogue `issueQuest`.
-- Main flags: `campCh` (chapter, gates POIs), `colStart`, `colX` and `colCount` (colors), `sealG`, `sealU`, `sealR`,
-  `sealW` (Seals won), `rivalStage`, `endingChoice` (keep / reforge / break, read by the epilogue) and `raidStolen`
+- Main flags: `campCh` (chapter, gates POIs), `colStart` and `colX` (colors), `sealG`, `sealU`, `sealR`, `sealW` (Seals won), `rivalStage`, `endingChoice` (keep / reforge / break, read by the epilogue) and `raidStolen`
   (how many cards raiders hold). Flags are bytes, so values must stay ≤ 127.
 
 ### 6.4 Side content
@@ -588,7 +588,7 @@ art. That's out of scope for now anyway (existing assets only).
 ### Phase 1: Vertical slice (data plus J-Ante and J-Raid): Prologue + Chapter 1
 
 1. Create the `Concordia` plane folder: config, difficulties, 20 mono-color starter decks.
-2. Pinned overworld: one biome, POIs for Emberbrook, Route 1, Mossgate, Route 2 (Thornwood), Mossgate Grove.
+2. Pinned overworld: one biome, POIs for Emberbrook, Route 1, Mossgate, and the five Warden regions. Phase 1 needs full maps for the Green (Thornwood) and Blue (Saltreach) regions only. The other three are stubs with a gate and a Warden.
 3. Maps: Emberbrook (Seal-day festival and shrine), Route 1, Mossgate (town + Hall + shop + inn), Thornwood, Grove gym
    (2–3 rooms).
 4. Quest 28 raid intro and the Seal Angels' scene (confirmation of the new-game picker, §7.2) + quests 1000–1029.
@@ -616,18 +616,20 @@ to move. The three endings (§2.3) are written here, and `endingChoice` drives t
 
 ## 10. Open questions
 
-1. **Number of Wardens:** the design has 4 color-unlocking Wardens (one color at the start + 4 = 5). Do you want more
-   Pokémon-style "gyms" (for example 8, where only some unlock a color and others give life or items)?
-2. **Rival names:** Kael / Lyra are placeholders. Do you have names in mind?
-3. **Rival decks:** the rival's color is fixed by the player's choice, so there are five rival deck sets. Is that the
+1. **Black Warden:** the name and design are placeholders. What should they be? Should the Hollow be the Black region
+   for every starting color?
+2. **Own Seal:** confirm that your own Seal gives no new color, so the four other Seals give the four new colors. The
+   alternative is that the own Seal gives a sixth commander slot instead.
+3. **Rival names:** Kael / Lyra are placeholders. Do you have names in mind?
+4. **Rival decks:** the rival's color is fixed by the player's choice, so there are five rival deck sets. Is that the
    right size, or should the rival's decks be shared between opposite colors?
-4. **Starter commanders:** are the five candidates in §3.1 good, or do you have favorites?
-5. **Secret ante bosses:** which legends are the secret ante duels? Should the list be fixed, or drawn from the 985
+5. **Starter commanders:** are the five candidates in §3.1 good, or do you have favorites?
+6. **Secret ante bosses:** which legends are the secret ante duels? Should the list be fixed, or drawn from the 985
    legend decks?
-6. **Stolen cards on leaving a region:** should a raider keep the cards it won from you forever (the current design),
+7. **Stolen cards on leaving a region:** should a raider keep the cards it won from you forever (the current design),
    or should they come back when the next act starts?
-7. **The Play for Ante setting:** should the setting be hidden while Concordia is the active plane, since it doesn't
+8. **The Play for Ante setting:** should the setting be hidden while Concordia is the active plane, since it doesn't
    apply to the campaign?
-8. **Gender until Phase 2:** OK to ask the player once in the prologue, until J-Gender makes it automatic?
-9. **Angel choice until Phase 2:** OK to keep the new-game color picker in Phase 1, with the Seal Angels confirming it?
-10. **Plane name:** keep "Concordia"?
+9. **Gender until Phase 2:** OK to ask the player once in the prologue, until J-Gender makes it automatic?
+10. **Angel choice until Phase 2:** OK to keep the new-game color picker in Phase 1, with the Seal Angels confirming it?
+11. **Plane name:** keep "Concordia"?
