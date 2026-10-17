@@ -118,7 +118,7 @@ public class RewardData implements Serializable {
         if (Config.instance().getSettingData().excludeAlchemyVariants)
             filters.add(PaperCardPredicates.IS_REBALANCED.negate());
 
-        if (!FModel.getPreferences().getPrefBoolean(FPref.UI_ANTE))
+        if (Config.instance().getConfigData().anteByEncounter || !FModel.getPreferences().getPrefBoolean(FPref.UI_ANTE))
             filters.add(pc -> !pc.getRules().hasKeyword("Remove CARDNAME from your deck before playing if you're not playing for ante."));
 
         if (!AdventurePlayer.current().isCommanderMode())

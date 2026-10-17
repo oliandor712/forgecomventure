@@ -47,6 +47,8 @@ public class EnemyData implements Serializable {
     public int gamesPerMatch = 1;
     public String bossInsult;
     public String bossIntro;
+    public boolean ante = false;                   //Duel is for ante (only used when ConfigData.anteByEncounter is set).
+    public boolean raider = false;                 //Cards this enemy wins from the player are held and sold back in the shop.
 
     public EnemyData() {
     }
@@ -75,6 +77,8 @@ public class EnemyData implements Serializable {
         questTags       = enemyData.questTags.clone();
         lifetime        = enemyData.lifetime;
         gamesPerMatch   = enemyData.gamesPerMatch;
+        ante            = enemyData.ante;
+        raider          = enemyData.raider;
         if (enemyData.scale == 0.0f) {
             scale = 1.0f;
         }

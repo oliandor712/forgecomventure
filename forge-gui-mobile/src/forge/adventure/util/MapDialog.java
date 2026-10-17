@@ -30,6 +30,7 @@ import forge.adventure.world.WorldSave;
 import forge.card.ColorSet;
 import forge.localinstance.properties.ForgePreferences;
 import forge.model.FModel;
+import forge.item.PaperCard;
 import forge.util.Localizer;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -425,6 +426,10 @@ public class MapDialog {
             }
             if (E.giveBlessing != null) { //Gives a blessing for your next battle.
                 Current.player().addBlessing(E.giveBlessing);
+            }
+            if (E.returnStolenFrom != null && !E.returnStolenFrom.isEmpty()) { //Returns the cards a raider holds
+                for (PaperCard card : Current.player().takeStolenCards(E.returnStolenFrom))
+                    Current.player().addCard(card);
             }
             if (E.setColorIdentity != null && !E.setColorIdentity.isEmpty()) { //Sets color identity (use sparingly)
                 Current.player().setColorIdentity(E.setColorIdentity);

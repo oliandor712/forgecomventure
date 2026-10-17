@@ -177,6 +177,9 @@ public class DuelScene extends ForgeScene {
                     //Could also add the cards to the opponent's pool, but their games aren't simulated and they never edit their decks.
                 }
                 else {
+                    if (enemy.getData().raider) {
+                        Current.player().addStolenCards(enemy.getData().name, anteResult.lostCards);
+                    }
                     for (PaperCard card : anteResult.wonCards) {
                         Current.player().addCard(card);
                     }
@@ -551,9 +554,11 @@ public class DuelScene extends ForgeScene {
             rules = new GameRules(GameType.Adventure);
             rules.setGamesPerMatch(enemy.getData().gamesPerMatch);
         }
-        rules.setPlayForAnte(FModel.getPreferences().getPrefBoolean(ForgePreferences.FPref.UI_ANTE));
-        rules.setMatchAnteRarity(FModel.getPreferences().getPrefBoolean(ForgePreferences.FPref.UI_ANTE_MATCH_RARITY));
-        rules.setAnteIncludeBasicLands(FModel.getPreferences().getPrefBoolean(ForgePreferences.FPref.UI_ANTE_INCLUDE_BASIC_LANDS));
+        boolean anteByEncounter = eventData == null && Config.instance().getConfigData().anteByEncounter;
+        boolean enemyAnte = enemy != null && enemy.getData().ante;
+        rules.setPlayForAnte(anteByEncounter ? enemyAnte : FModel.getPreferences().getPrefBoolean(ForgePreferences.FPref.UI_ANTE));
+        rules.setMatchAnteRarity(!anteByEncounter && FModel.getPreferences().getPrefBoolean(ForgePreferences.FPref.UI_ANTE_MATCH_RARITY));
+        rules.setAnteIncludeBasicLands(!anteByEncounter && FModel.getPreferences().getPrefBoolean(ForgePreferences.FPref.UI_ANTE_INCLUDE_BASIC_LANDS));
         rules.setManaBurn(false);
         rules.setWarnAboutAICards(false);
 

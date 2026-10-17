@@ -36,6 +36,7 @@ import forge.util.ItemPool;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Displays the rewards of a fight or a treasure
@@ -358,7 +359,8 @@ public class RewardScene extends UIScene {
                     totalShards += r.getCount();
                     break;
                 default:
-                    others.add(r);
+                    if (!r.isStolen())
+                        others.add(r);
                     break;
             }
         }
@@ -382,6 +384,13 @@ public class RewardScene extends UIScene {
             // Return a default value or handle the case where rarity is not present
             return Integer.MAX_VALUE; // Assuming higher values mean less priority in sorting
         }));
+        if (type == Type.Shop) {
+            for (Map.Entry<String, List<PaperCard>> entry : AdventurePlayer.current().getStolenCards().entrySet()) {
+                for (PaperCard pc : entry.getValue()) {
+                    newRewards.add(Reward.stolen(pc, entry.getKey()));
+                }
+            }
+        }
         clearSelectable();
         this.type = type;
         doneClicked = false;
@@ -548,7 +557,7 @@ public class RewardScene extends UIScene {
         int i = 0;
         for (Reward reward : new Array.ArrayIterator<>(newRewards)) {
             boolean skipCard = false;
-            if (type == Type.Shop) {
+            if (type == Type.Shop && !reward.isStolen()) {
                 if (changes.wasCardBought(shopActor.getObjectId(), i)) {
                     skipCard = true;
                 }
@@ -652,17 +661,21 @@ public class RewardScene extends UIScene {
             price = CardUtil.getRewardPrice(actor.getReward());
             price *= Current.player().goldModifier();
             price *= shopModifier;
+            if (reward.isStolen())
+                price *= Config.instance().getConfigData().stolenCardPriceFactor;
             setText("[+GoldCoin] " + price);
             updateOwned();
             addListener(new ClickListener() {
                 @Override
                 public void clicked(InputEvent event, float x, float y) {
                     if (Current.player().getGold() >= price) {
-                        if (!shopActor.isUnlimited())
+                        if (!shopActor.isUnlimited() && !reward.isStolen())
                             changes.buyCard(objectID, index);
 
                         Current.player().takeGold(price);
                         Current.player().addReward(rewardActor.getReward());
+                        if (reward.isStolen())
+                            AdventurePlayer.current().removeStolenCard(reward.getStolenFrom(), reward.getCard());
 
                         HapticEngine.vibrate(FPref.UI_VIBRATE_ON_SHOP_ACTION, 5);
                         SoundSystem.instance.play(SoundEffectType.FlipCoin, false);

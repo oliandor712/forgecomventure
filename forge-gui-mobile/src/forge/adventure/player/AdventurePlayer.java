@@ -141,6 +141,7 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
         newCards.clear();
         autoSellCards.clear();
         favoriteCards.clear();
+        stolenCards.clear();
         AdventureEventController.clear();
         AdventureQuestController.clear();
         unsupportedCards.clear();
@@ -155,6 +156,8 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
     public final ItemPool<PaperCard> newCards = new ItemPool<>(PaperCard.class);
     public final ItemPool<PaperCard> autoSellCards = new ItemPool<>(PaperCard.class);
     public final Set<PaperCard> favoriteCards = new HashSet<>();
+    // Cards raiders won from the player, keyed by raider name. Sold back in the shop unless a dialog returns them.
+    private final Map<String, List<PaperCard>> stolenCards = new LinkedHashMap<>();
 
     public void create(String n, Deck startingDeck, boolean male, int race, int avatar, boolean isFantasy,
                        boolean isUsingCustomDeck, DifficultyData difficultyData, AdventureModes adventureMode) {
@@ -769,6 +772,13 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
                     autoSellCards.add(pc);
             }
         }
+        if (data.containsKey("stolenRaiders") && data.containsKey("stolenCardList")) {
+            String[] raiders = (String[]) data.readObject("stolenRaiders");
+            PaperCard[] held = (PaperCard[]) data.readObject("stolenCardList");
+            for (int i = 0; i < raiders.length && i < held.length; i++) {
+                addStolenCards(raiders[i], List.of(held[i]));
+            }
+        }
         if (data.containsKey("favoriteCards")) {
             PaperCard[] items = (PaperCard[]) data.readObject("favoriteCards");
             for (PaperCard pc : items) {
@@ -919,6 +929,17 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
         data.storeObject("autoSellCards", autoSellCards.toFlatList().toArray(new PaperCard[0]));
         data.storeObject("favoriteCards", favoriteCards.toArray(new PaperCard[0]));
 
+        List<String> stolenRaiders = new ArrayList<>();
+        List<PaperCard> stolenCardList = new ArrayList<>();
+        for (Map.Entry<String, List<PaperCard>> entry : stolenCards.entrySet()) {
+            for (PaperCard pc : entry.getValue()) {
+                stolenRaiders.add(entry.getKey());
+                stolenCardList.add(pc);
+            }
+        }
+        data.storeObject("stolenRaiders", stolenRaiders.toArray(new String[0]));
+        data.storeObject("stolenCardList", stolenCardList.toArray(new PaperCard[0]));
+
         return data;
     }
 
@@ -956,6 +977,30 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
                 Actions.removeActor())
         );
         getCurrentGameStage().addActor(actor);
+    }
+
+    public void addStolenCards(String raider, Collection<PaperCard> lost) {
+        if (lost == null || lost.isEmpty())
+            return;
+        stolenCards.computeIfAbsent(raider, k -> new ArrayList<>()).addAll(lost);
+    }
+
+    public List<PaperCard> takeStolenCards(String raider) {
+        List<PaperCard> taken = stolenCards.remove(raider);
+        return taken == null ? new ArrayList<>() : taken;
+    }
+
+    public void removeStolenCard(String raider, PaperCard card) {
+        List<PaperCard> held = stolenCards.get(raider);
+        if (held == null)
+            return;
+        held.remove(card);
+        if (held.isEmpty())
+            stolenCards.remove(raider);
+    }
+
+    public Map<String, List<PaperCard>> getStolenCards() {
+        return Collections.unmodifiableMap(stolenCards);
     }
 
     public void addCard(PaperCard card) {

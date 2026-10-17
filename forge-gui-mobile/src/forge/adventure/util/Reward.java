@@ -29,6 +29,8 @@ public class Reward {
     ItemData item;
     Deck deck;
     boolean isNoSell, isAutoSell;
+    boolean stolen;      // Card a raider holds, sold in the shop's stolen-card section.
+    String stolenFrom;   // Raider that holds the card.
     private final int count;
 
     public Reward(ItemData item) {
@@ -73,6 +75,21 @@ public class Reward {
             deck.getTags().add("noSell");
         //Could go through the deck and replace everything in it with the noSellValue version but the tag should
         //handle that later.
+    }
+
+    public static Reward stolen(PaperCard card, String raider) {
+        Reward reward = new Reward(card);
+        reward.stolen = true;
+        reward.stolenFrom = raider;
+        return reward;
+    }
+
+    public boolean isStolen() {
+        return stolen;
+    }
+
+    public String getStolenFrom() {
+        return stolenFrom;
     }
 
     public PaperCard getCard() {

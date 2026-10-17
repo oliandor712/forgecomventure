@@ -92,6 +92,7 @@ public class DialogData implements Serializable {
 
         public int addMapReputation = 0;  //Gives the player X reputation points in this POI. Negative to take.
         public String POIReference; //used with addMapReputation when a quest step affects reputation in another location
+        public String returnStolenFrom; //Return every card this raider holds to the player, win or lose.
 
         public ActionData(){}
 
@@ -106,6 +107,7 @@ public class DialogData implements Serializable {
             battleWithActorID = other.battleWithActorID;
             giveBlessing = other.giveBlessing;
             setColorIdentity = other.setColorIdentity;
+            returnStolenFrom = other.returnStolenFrom;
             advanceQuestFlag = other.advanceQuestFlag;
             advanceMapFlag = other.advanceMapFlag;
             setEffect = other.setEffect;

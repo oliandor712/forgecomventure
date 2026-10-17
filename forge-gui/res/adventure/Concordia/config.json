@@ -220,5 +220,7 @@
     "Jumpstart 25",
     "The Last Airbender",
     "(All)"
-  ]
+  ],
+  "anteByEncounter": true,
+  "stolenCardPriceFactor": 3.0
 }
