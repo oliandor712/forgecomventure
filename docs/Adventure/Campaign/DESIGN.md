@@ -224,8 +224,7 @@ broke the Seals, and they're the one NPC who argues with your choice instead of 
   chosen on the existing new-game screen.
 - **The first color** is chosen with the Seal Angels in the prologue, not on the new-game screen (§7.2, J-Start). Until
   that Java change lands, the new-game screen keeps its color picker and the angels confirm the choice.
-- **Starting commander:** a mono-color starter deck per color and difficulty. These are new 99+1 decks built from
-  existing cards (`decks/starter/{W,U,B,R,G}_Starter_{Difficulty}.dck`). Candidate commanders are all mono-colored
+- **Starting commander:** one mono-color starter deck per color. These are new 99+1 decks built from existing cards (`decks/starter/{W,U,B,R,G}_Starter_Normal.dck`). Candidate commanders are all mono-colored
   legends that already exist in Forge:
 
 | Color | Commander (candidate) | Theme |
@@ -357,8 +356,8 @@ you're meant to reach them. Hard blocking on the overworld needs Java (J4).
 ### 5.1 Terms
 
 - **Power tier** uses the common Commander 1–10 scale: 1–2 = jank, 3–4 = precon, 5–6 = upgraded, 7–8 = tuned.
-- **`life`** is the enemy's starting life in `enemies.json`. The difficulty's `enemyLifeFactor` multiplies it.
-- **Player starting life** comes from the difficulty and grows with life rewards from Wardens.
+- **`life`** is the enemy's starting life in `enemies.json`. Normal's `enemyLifeFactor` (1.0) multiplies it.
+- **Player starting life** is 30 on Normal, and grows with life rewards from Wardens.
 - **Ante encounters** are raiders and secret bosses. Their stakes are cards, not retries (§2.1).
 
 ### 5.2 Per-chapter curve (Normal)
@@ -401,10 +400,9 @@ after clearing the routes in between. Gold buys staples. Seals unlock colors. Ex
 
 ### 5.4 Difficulty scaling
 
-Concordia ships one difficulty for now: **Normal**, using Normal's settings from `config.json`, with 30 starting life
-and the standard reward factors. Easy, Hard and Insane are deferred, not removed, so their `config.json` entries can
-come back later. Boss decks and map effects stay the same in every phase. Per-difficulty boss decks need Java J8 when
-those difficulties return. Ante stakes don't change with difficulty.
+Concordia has one difficulty: **Normal**, with 30 starting life, Normal's starter decks, and the standard reward
+factors. There are no Easy, Hard or Insane settings, so `config.json` lists only Normal. Boss decks and map effects are
+the same for every player, and ante stakes are fixed.
 
 ---
 
@@ -506,7 +504,7 @@ this document, listed in §10.
 - Only ante, story rewards and gym rewards hand out cards directly. Every other duel pays currency.
 
 **Difficulty and feedback**
-- One difficulty for now: Normal, with 30 starting life and the standard settings. No Easy mode.
+- One difficulty: Normal, with 30 starting life and the standard settings.
 - The quest log does not show the next Warden's colors or cards. Rewards stay a surprise until the player earns them.
 - The player gets a **collection by color** view, so they can see how close they are to a playable deck in each
   unlocked color.
@@ -519,7 +517,7 @@ this document, listed in §10.
 
 | Feature | Files in `forge-gui/res/adventure/Concordia/` |
 |---|---|
-| Plane config: Commander, 98-card minimum, difficulties, mono-color starter decks | `config.json`, `decks/starter/*.dck` |
+| Plane config: Commander, 98-card minimum, one difficulty (Normal), five mono-color starter decks | `config.json`, `decks/starter/*.dck` |
 | Pinned overworld | `world/world.json`, `world/biomes/*.json`, `world/points_of_interest.json` |
 | Towns, routes, gyms, dungeons | `maps/map/**.tmx` (existing tilesets) |
 | Story and side quests (28 + 1000+) | `world/quests.json` |
@@ -541,7 +539,7 @@ this document, listed in §10.
 | **J-Gender** | Rival of the opposite gender, chosen automatically | A dialog condition `isFemale` (in `MapDialog` and `MenuScene`, next to `colorIdentity`). Optionally a `$(rivalname)` token next to `$(playername)` in `AdventureQuestData` | Small | 2 |
 | **J-CI** | Commander limited to unlocked colors | Read the `colX` flags. Enforce in `AdventureDeckEditor` (commander section) and in `DuelScene.applyAdventureDeckRules` | Small–medium | 2 |
 | **J-Hall** | Commander change only at Halls | A `commanderHall` map object type, like `inn`, that opens the deck editor with the commander section editable. Locked elsewhere | Medium | 2 |
-| J8 | Per-difficulty boss decks | `deckByDifficulty` in `EnemyData`, and `dungeonEffect_<Difficulty>` read by `MapStage` | Small | 3 |
+
 | J7 | Portraits in dialog | A `portrait` field in `DialogData`, shown by `MapDialog` (existing avatar art) | Small | 3 |
 | J5 | Chapter / Seal UI | A Seal case screen (the badge case analog) and chapter title cards | Medium | 3 |
 | J6 | Cutscenes | Scripted sequences: move actors along waypoints, dialog, fades, camera. The Seal Angels' arrival and the Champion's entrance use it | Medium–large | 4 |
@@ -614,7 +612,7 @@ art. That's out of scope for now anyway (existing assets only).
 
 ### Phase 1: Vertical slice (data plus J-Ante and J-Raid): Prologue + Chapter 1
 
-1. Create the `Concordia` plane folder: config, difficulties, 20 mono-color starter decks.
+1. Create the `Concordia` plane folder: config (Normal only), five mono-color starter decks.
 2. Pinned overworld: one biome, POIs for Emberbrook, Route 1, Mossgate, and the five Warden regions. Phase 1 needs full maps for the Green (Thornwood) and Blue (Saltreach) regions only. The other three are stubs with a gate and a Warden.
 3. Maps: Emberbrook (Seal-day festival and shrine), Route 1, Mossgate (town + Hall + shop + inn), Thornwood, Grove gym
    (2–3 rooms).
@@ -632,7 +630,7 @@ color. The difficulty curve feels right.
 
 J-Start (automatic Seal Angels choice), J-CI, J-Hall, J-Gender. These make the Pokémon-style rules real.
 
-### Phase 3: Chapter 2 and 3 content (data), plus J8, J7, J5
+### Phase 3: Chapter 2 and 3 content (data), plus J7, J5
 
 ### Phase 4: Finale, endings and post-game (data), plus J6, J2, J4, J9
 
@@ -667,5 +665,3 @@ to move. The three endings (§2.3) are written here, and `endingChoice` drives t
 14. **Scale:** grind rewards scale with the player's tier. Does the tier mean the Wardens cleared, or the power of the
     player's deck?
 15. **Raider rematches:** should rematching a raider put ante back on the table, or should it stay a flat fight?
-16. **Difficulty:** §5.4 now has one Normal setting at 30 starting life. Confirm that Easy, Hard and Insane are deferred,
-    not removed.
