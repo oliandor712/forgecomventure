@@ -83,10 +83,9 @@ the means to do it: every raider duel is an **ante duel**. Each side stakes a ca
 the other's card. Raiders go after rare cards, Seal fragments and anyone who looks like an easy prize. When a raider
 loses, they run and come back later, often with a new deck. Three rules keep the raiders fair:
 - Your commander is never anted. Raiders take cards from the 99 only.
-- Losing a raider duel is the only permanent loss in the campaign. Other story duels stay a standard retry.
+- Losing an ante duel is a permanent loss. Ante applies only to raiders and rare optional secret bosses. Every other story duel stays a standard retry.
 - A stolen card can be won back by defeating the raider who holds it.
-- Raider duels are always ante, whatever the player's **Play for Ante** setting says. Basic lands are never anted, and
-  rarity matching is off, so raiders can take rare cards.
+- The global **Play for Ante** setting doesn't apply to the campaign. Ante is set per encounter: on for raiders and secret bosses, off for everything else. Basic lands are never anted, and rarity matching is off, so raiders can take rare cards.
 
 **The central question of the story is whether the Seals are good for Concordia.** They ended the wars, but they also
 froze the world under one ruler's judgment and turned duelists into outlaws. Every chapter gives the question a
@@ -143,7 +142,7 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 | Step | Goal | Location | Beats |
 |---|---|---|---|
 | 1.1 | Settle into town | Mossgate (town with shop, inn and Commander Hall) | Learn the Commander Hall rules (§6.2). The notice board offers side jobs. The Warden of the Green Seal is taking challengers at the grove |
-| 1.2 | Clear the Thornwood | Route 2 (Thornwood forest map) | Trainers, a hidden grove with an optional legend duel (secret) |
+| 1.2 | Clear the Thornwood | Route 2 (Thornwood forest map) | Trainers, a hidden grove with an optional secret legend duel (ante) |
 | 1.3 | Unsealed camp | Thornwood clearing | The Unsealed are poisoning the Green Seal's roots to weaken the Warden. Their raiders ante for cards from every traveler they catch. Mini-boss: Unsealed captain **Hask** (ante duel) |
 | 1.4 | The Green Warden | Mossgate Grove (gym map) | Gym puzzle: overgrown paths open after you beat the grove keepers. **Warden Brannoc** (mono-G ramp and stompy). Brannoc is a believer: "This Seal has kept my valley alive for a hundred years. Don't call it a cage" |
 | 1.5 | First Seal | Mossgate Grove | **Color choice 1** (§6.1). **Rival duel 2** outside the gym. The rival calls the Seals slow and says the Wardens are gatekeepers. Elder Wren's messenger reports the Archive in Lumenhold has been attacked |
@@ -153,7 +152,7 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 | Step | Goal | Location | Beats |
 |---|---|---|---|
 | 2.0 | The crossroads | Crossroads Inn (hub) | Two routes open: west to Saltreach, east to Cinderpeak. You can do them in either order. The second Warden you fight is a tier stronger (§5.2) |
-| 2A.1 | Saltreach | Route 3 (coast), Saltreach town | The Unsealed are running illegal duels in the tide pools for gold and favors. Secret: a sunken shipwreck with a legend duel |
+| 2A.1 | Saltreach | Route 3 (coast), Saltreach town | The Unsealed are running illegal duels in the tide pools for gold and favors. Secret: a sunken shipwreck with a legend duel (ante) |
 | 2A.2 | The Blue Warden | Saltreach Lighthouse (gym) | Gym puzzle: a mirror maze. **Warden Isolde** (mono-U control and flyers). Best-of-3. Isolde is loyal to the Champion, but she isn't blind to what the Seals cost. She asks why you want the throne, and tells you most who ask don't know |
 | 2B.1 | Cinderpeak | Route 4 (volcanic path), Cinderpeak town | Miners have gone missing in the forges. Their foreman says the missing men were paid to duel in an Unsealed ring |
 | 2B.2 | The Red Warden | Cinderpeak Forge (gym) | Gym gauntlet: three forge-keepers in a row with no healing. **Warden Tarro** (mono-R aggro). Tarro fought beside the Champion in the wars, and says the Seals are the only reason he's still alive |
@@ -173,7 +172,7 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 
 | Step | Goal | Location | Beats |
 |---|---|---|---|
-| F.1 | Victory Road | Mountain cave (3 maps) | Your strongest trainer gauntlet. Secrets: two legend duels |
+| F.1 | Victory Road | Mountain cave (3 maps) | Your strongest trainer gauntlet. Secrets: two legend duels (ante) |
 | F.2 | The Five Paragons | Summit halls (5 rooms, one per color) | The Champion's sworn duelists, one per two-color pair. Some believe in his duty, others are paid to keep the Summit. Each plays a two-color deck (§3.3). No healing between halls, but inns at the entrance |
 | F.3 | The rival at the gate | Summit gate | The rival, now in a five-color deck, has been beaten by the Champion's gatekeepers and now wants to fight you first. The duel is an argument about the Seals as much as a contest for the throne |
 | F.4 | The Champion | Throne room | The Champion explains his duty: the strong must carry the weak, even when the weak don't want to be carried. He takes the challenge seriously. Three-phase boss (§5.3) |
