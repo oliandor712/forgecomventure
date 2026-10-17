@@ -1,0 +1,98 @@
+[
+  {
+    "id": 28,
+    "isTemplate": true,
+    "name": "The Raid",
+    "description": "Unsealed raiders strike Emberbrook on Seal-day. Find out what is happening to you.",
+    "offerDialog": {},
+    "prologue": {
+      "text": "Seal-day in Emberbrook. Bells ring over the festival, then the shrine's lanterns go out all at once. Unsealed raiders pour between the stalls. In the chaos, something wakes in your chest: a spark you have carried all your life.",
+      "options": [
+        {
+          "name": "Look up at the shrine.",
+          "text": "Seal Angels descend through the smoke. Their voices are the Seals' own. They ask you to choose a first color, and the choice you make will be yours.",
+          "options": [
+            {
+              "name": "(Continue)",
+              "action": [
+                {
+                  "removeItem": "",
+                  "setColorIdentity": "",
+                  "advanceQuestFlag": "",
+                  "advanceMapFlag": "",
+                  "setQuestFlag": {
+                    "key": "awakened",
+                    "val": 1
+                  },
+                  "setMapFlag": {
+                    "key": ""
+                  },
+                  "issueQuest": "1000",
+                  "POIReference": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "epilogue": {},
+    "failureDialog": {},
+    "declinedDialog": {},
+    "stages": [
+      {
+        "id": 1,
+        "name": "Awaken",
+        "description": "Follow the Seal Angels' call.",
+        "mapFlag": "awakened",
+        "mapFlagValue": 1,
+        "objective": "QuestFlag",
+        "prologue": {},
+        "epilogue": {},
+        "POIToken": ""
+      }
+    ],
+    "storyQuest": true
+  },
+  {
+    "id": 1000,
+    "isTemplate": true,
+    "name": "Set Out",
+    "description": "Elder Wren sends you to Mossgate with the village's Seal fragment.",
+    "offerDialog": {},
+    "prologue": {
+      "text": "Elder Wren presses a warm stone into your hand. It is a fragment of the Seal that guards Emberbrook. Take it to Mossgate, where a Warden keeps the Seals.",
+      "options": [
+        {
+          "name": "(Continue)"
+        }
+      ]
+    },
+    "epilogue": {
+      "text": "Mossgate's notice board is covered in posters. One of them is the Champion's open challenge.",
+      "options": [
+        {
+          "name": "(Continue)"
+        }
+      ]
+    },
+    "failureDialog": {},
+    "declinedDialog": {},
+    "stages": [
+      {
+        "id": 1,
+        "name": "Travel to Mossgate",
+        "description": "Walk to Mossgate.",
+        "anyPOI": true,
+        "POITags": [
+          "Hub"
+        ],
+        "objective": "Travel",
+        "prologue": {},
+        "epilogue": {},
+        "POIToken": ""
+      }
+    ],
+    "storyQuest": true
+  }
+]
