@@ -76,8 +76,7 @@ for a generation, and then he did something no conqueror had done before: he for
 to make the peace last. Each Seal binds its color's mana to the land and sanctions the duels fought under it. Duels
 outside the Seals are outlawed.
 
-The Seals are guarded by five **Wardens**, each appointed by the Champion. A Warden decides who may challenge their
-Seal, and each Seal can be claimed only by defeating its Warden.
+The Seals are guarded by five **Wardens**: planeswalkers of legend, one for each color, who accepted the Champion's appointment. A Warden decides who may challenge their Seal, and each Seal can be claimed only by defeating its Warden.
 
 The Champion has also posted an **open challenge** in every town: any planeswalker who defeats the five Wardens,
 masters all five colors and defeats the Champion himself may take his throne and rule Concordia. The Champion has not
@@ -186,7 +185,7 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 | Step | Goal | Location | Beats |
 |---|---|---|---|
 | 3.1 | The Archive | Lumenhold (opens when your ally tier is cleared) | Archivist **Pell** lays out the case on both sides. The Seals ended wars that burned whole regions, and they kept the Champion's duty alive. They also froze the world under one ruler, and made every duel a permission. Pell reveals the Seals are bound to the Champion's own spark. If he falls, the Seals fall with him, and whoever takes the throne inherits them |
-| 3.2 | The Unsealed Hideout | The Hollow (Black region, 2-floor dungeon) | The rival is here as an Unsealed raider, winning ante duels and carrying a bag of stolen cards. The rival duel is a 2v1 ante match against the rival plus a grunt. The Hollow's gym is the Black Warden's |
+| 3.2 | The Unsealed Hideout | The Hollow (Black region, 2-floor dungeon) | The rival is here as an Unsealed raider, winning ante duels and carrying a bag of stolen cards. The rival duel is a 2v1 ante match against the rival plus a grunt. The Hollow's gym is Liliana Vess's |
 | 3.3 | Mordessa | Hideout depths | Unsealed ringleader **Mordessa** (mono-B reanimator) runs the illegal duels. They say the throne is for sale to anyone who can afford it. The rival sees what the ring does to the people who lose and walks out. It doesn't change their view of the Seals, only their view of how to break them |
 | 3.4 | First enemy Warden | Its gym | Gym puzzle in the region's style. The Warden of the first enemy color. Where a Warden has a squire, the duel is a two-player pod with the squire |
 | 3.5 | Second enemy Warden | Its gym | The Warden of the second enemy color. The fifth Seal is yours. The rival is ahead on Seals and heads for Victory Road. They tell you they'll see you at the top |
@@ -264,11 +263,11 @@ broke the Seals, and they're the one NPC who argues with your choice instead of 
 |---|---|---|---|---|
 | **Elder Wren** | Mentor, the village elder | Protect the village. Sends pilgrims out with hope | Not a duelist | Prologue, Ch.1 messages, epilogue |
 | **Archivist Pell** | Lore guide | Rebuild the Archive and understand the Seals, both sides of them | Optional sparring: mono-U artifacts | Ch.3, side quests |
-| **Warden Brannoc** | Warden of Green | Guards the Green Seal. Believes the Seal kept their valley alive | Mono-G ramp and stompy (e.g. Omnath, Locus of Mana) | Tier set by your start color (§2.2) |
-| **Warden Isolde** | Warden of Blue | Guards the Blue Seal. Loyal to the Champion, but honest about the cost | Mono-U control and flyers (a different commander from the player's) | Tier set by your start color (§2.2) |
-| **Warden Tarro** | Warden of Red | Guards the Red Seal. Fought beside the Champion in the wars | Mono-R aggro (e.g. Torbran, Thane of Red Fell) | Tier set by your start color (§2.2) |
-| **Dame Seraphine** | Warden of White | Guards the White Seal. The Champion's strongest believer | Mono-W tokens and lifegain | Tier set by your start color (§2.2) |
-| **Warden of Black** (name TBD) | Warden of Black, in the Hollow | Guards the Black Seal. Placeholder design: sees the Seals as a grave | Mono-B (deck to be chosen; a graveyard theme fits Mordessa's ring) | Tier set by your start color (§2.2) |
+| **Garruk Wildspeaker** | Warden of Green | A hunter to the core. Guards the Green Seal. The whole Multiverse is their hunting ground, and they believe the Seal kept their valley alive | Mono-G ramp and stompy (a green commander with a big-creature plan) | Tier set by your start color (§2.2) |
+| **Jace Beleren** | Warden of Blue | A telepath who reads minds before duels begin. Guards the Blue Seal. Loyal to the Champion, but honest about what the Seals cost | Mono-U control and mind tricks (a different commander from the player's) | Tier set by your start color (§2.2) |
+| **Chandra** | Warden of Red | Impulsive and fiery. Guards the Red Seal. Fought beside the Champion in the wars, and says the Seals are the only reason they're still alive | Mono-R aggro and burn (e.g. Torbran, Thane of Red Fell) | Tier set by your start color (§2.2) |
+| **Gideon Jura** | Warden of White | Wields protective magic in battle. The Champion's strongest believer. Guards the White Seal | Mono-W tokens and protection | Tier set by your start color (§2.2) |
+| **Liliana Vess** | Warden of Black, in the Hollow | Has made dark deals and betrayed allies. Guards the Black Seal from the Hollow, and sees the Seals as a grave. Mordessa's ring is their doing | Mono-B graveyard and sacrifice (ties to Mordessa's ring) | Tier set by your start color (§2.2) |
 | **Captain Hask** | Unsealed captain, mini-boss | Paid muscle who runs the camp's raiders | Mono-B or B/R aggro | Ch.1 (camp on your region's route) |
 | **Mordessa** | Unsealed ringleader | Runs the illegal duel ring and sells the throne as a fantasy | Mono-B reanimator | Ch.3 |
 | **Raiders** (grunts) | Team Rocket analogs | Steal rare cards and Seal fragments for the Unsealed | Small ante-focused decks, one per tutorial lesson and per raid. Built from `decks/campaign/raiders/*.dck` | Prologue, Ch.1–3 |
@@ -291,7 +290,7 @@ sees the same map, but the tiers change with the starting color.
 | Blue | Saltreach and its lighthouse | North-east |
 | Red | Cinderpeak and its forge | South-east |
 | White | Lumenhold and its cathedral (the Archive is in the city) | South-west |
-| Black | The Hollow (Unsealed hideout and the Black Warden's ring) | South |
+| Black | The Hollow (Unsealed hideout and Liliana Vess's ring) | South |
 
 Emberbrook is the start, on Route 1 north of Mossgate. Victory Road and the Summit lie beyond all five regions. There is
 no separate crossroads: Mossgate is the only hub.
@@ -592,7 +591,7 @@ art. That's out of scope for now anyway (existing assets only).
 3. Maps: Emberbrook (Seal-day festival and shrine), Route 1, Mossgate (town + Hall + shop + inn), Thornwood, Grove gym
    (2–3 rooms).
 4. Quest 28 raid intro and the Seal Angels' scene (confirmation of the new-game picker, §7.2) + quests 1000–1029.
-5. Enemies and decks: raider tutorial decks (ante), ~10 trainers, Hask, Brannoc, rival duels 1–2 (opposite colors).
+5. Enemies and decks: raider tutorial decks (ante), ~10 trainers, Hask, Garruk (the Green Warden), rival duels 1–2 (opposite colors).
 6. Ante: J-Ante for raider and secret duels. J-Raid for stolen-card tracking and winning cards back.
 7. Color choice 1 with commander rewards.
 8. The copy script. Playtest on Normal.
@@ -616,7 +615,7 @@ to move. The three endings (§2.3) are written here, and `endingChoice` drives t
 
 ## 10. Open questions
 
-1. **Black Warden:** the name and design are placeholders. What should they be? Should the Hollow be the Black region
+1. **Warden roster:** the five Wardens are Garruk (G), Jace (U), Chandra (R), Gideon (W) and Liliana (B), the iconic mono-color planeswalkers. Their lore is thin in my search, so each entry needs checking against the Magic wiki. Confirm the roster, and that Liliana holds the Hollow for every starting color.
    for every starting color?
 2. **Own Seal:** confirm that your own Seal gives no new color, so the four other Seals give the four new colors. The
    alternative is that the own Seal gives a sixth commander slot instead.
