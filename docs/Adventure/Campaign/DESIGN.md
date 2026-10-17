@@ -1,11 +1,12 @@
 # Concordia: a Commander campaign plane (design document)
 
-Status: **Draft v2 for review.** No code or data has been built yet.
+Status: **Draft v3 for review.** No code or data has been built yet.
 Branch: `campaign-design`. Scope: design only.
 
-v2 replaces the v1 draft, which extended Realm of Legends. Per the user's direction, the campaign is now an
+v3 folds in the story decisions made since v2: the Champion premise, native-born leads, the Seal Angels' color choice,
+the opposite-color rival, the raiders as ante-duel Team Rocket analogs, and an open ending. The campaign is an
 **all-new plane with an all-new story and a hand-made overworld.** It plays like a Pokémon game: you start with one
-color and earn the rest from the Wardens, one boss at a time. Only **existing art and audio assets** are used.
+color and earn the rest from the Wardens, one at a time. Only **existing art and audio assets** are used.
 
 ---
 
@@ -14,16 +15,20 @@ color and earn the rest from the Wardens, one boss at a time. Only **existing ar
 | Topic | Decision |
 |---|---|
 | Plane | A new plane, working name **Concordia**, in `forge-gui/res/adventure/Concordia/`. Realm of Legends is not changed |
-| Story | All new. A Yu-Gi-Oh-style premise: duels are **ancient magic**, and fate-deciding moments are settled by duels |
+| Story | All new. The Champion conquered Concordia, ended the wars with five Seals, and holds an open challenge for his throne |
+| Leads | Two natives of Emberbrook. Both carry planeswalker sparks that awaken during the raid on Seal-day |
+| Start | The **Seal Angels** ask the player to choose a first color. The rival takes that color's **opposite** (§3.2) |
 | Structure | Semi-linear ("linear with hubs"): chapters in a fixed order, with a branch where you choose the order of two Wardens |
-| Map | Hand-made overworld (see §4 for how this is done with data first and Java later) |
+| Map | Hand-made overworld (§4). Data first, Java later |
 | Format | Commander |
-| Color progression | You start with **one color** and a **mono-color commander**. Each Warden you defeat lets you **choose one new color** to control, until you have all five |
-| Commander swapping | Restricted (see §6.2) |
-| Rival | An ordinary person, the player's **childhood friend**, of the **opposite gender** to the player |
+| Color progression | You start with **one color** and a **mono-color commander**. Each Warden you defeat lets you **choose one new color** until you have all five |
+| Commander swapping | Restricted (§6.2) |
+| Rival | Your **childhood friend**, of the **opposite gender** to you, and of the **opposite color** (§3.2). Wants to destroy the Seals |
+| Ante | Used only in **raider duels** and **optional secret legend duels**. Set per encounter. The global *Play for Ante* setting does not apply to the campaign |
+| Losing a duel | A standard Adventure retry, except ante duels, where losing costs a card (§2.1) |
+| Ending | Open. Keep, reforge or break the Seals. The story does not mark one as correct (§2.3) |
 | Gameplay focus | Deckbuilding growth, plus exploration and secrets |
-| Losing a duel | A standard Adventure retry |
-| Presentation | Moderate drama. Wardens, the rival and the villains get intros and taunts, while ordinary trainers stay brief |
+| Presentation | Moderate drama. Wardens, the rival, the raider leaders and the Champion get intros and taunts. Ordinary trainers stay brief |
 | Assets | Existing tilesets, sprites, portraits and music only. Decks and JSON are new data |
 
 ---
@@ -31,18 +36,21 @@ color and earn the rest from the Wardens, one boss at a time. Only **existing ar
 ## 1. Vision and pillars
 
 **Pitch:** *Leave your home village with one color and one commander, duel your way across Concordia's routes and
-towns, earn the Wardens' Seals, and become a five-color champion before the Sealbreakers tear the Concord apart.*
+towns, and earn the Seals of the Five Wardens. Then face the Champion, who holds the throne of a peace that is thinner
+than it looks, and decide whether his Seals should stand.*
 
 1. **The Pokémon loop, in Commander.** Routes with trainers who challenge you on sight, towns with shops and a
-   Commander Hall, a Warden "gym" with a puzzle layout, and a rival who keeps showing up.
+   Commander Hall, Warden "gyms" with puzzle layouts, and a rival who keeps showing up.
 2. **Color is your progression.** Your deck widens one color per Warden. Each new color is a meaningful choice that
-   changes your commander options. This replaces "catching" new team members.
+   changes your commander options. Colors come from the wheel, so each one has a known enemy.
 3. **A hand-made world.** Every town, route and dungeon is a hand-made Tiled map, and the overworld layout is fixed.
 4. **Curated encounters.** Every trainer deck has a known power level and theme. No random spawns are needed to
    finish the story.
-5. **Exploration pays off.** Hidden areas hold legendary duelists whose commanders you can win, plus rare cards and
+5. **Stakes where they matter.** Raiders steal cards through ante, and so do a handful of secret bosses. Everywhere
+   else, losing costs you only time.
+6. **Exploration pays off.** Hidden areas hold legendary duelists whose commanders you can win, plus rare cards and
    lore.
-6. **The rules engine stays untouched** (§8). Everything new lives in data or in the adventure UI layer
+7. **The rules engine stays untouched** (§8). Everything new lives in data or in the adventure UI layer
    (`forge-gui-mobile/src/forge/adventure`).
 
 ### Non-goals
@@ -81,11 +89,13 @@ run illegal duel rings, and prey on villages.
 **The raiders** are the Unsealed's field agents, the Team Rocket of Concordia. Their job is to steal, and they have
 the means to do it: every raider duel is an **ante duel**. Each side stakes a card from its deck, and the winner keeps
 the other's card. Raiders go after rare cards, Seal fragments and anyone who looks like an easy prize. When a raider
-loses, they run and come back later, often with a new deck. Three rules keep the raiders fair:
+loses, they run and come back later, often with a new deck. Four rules keep the raiders fair:
 - Your commander is never anted. Raiders take cards from the 99 only.
-- Losing an ante duel is a permanent loss. Ante applies only to raiders and rare optional secret bosses. Every other story duel stays a standard retry.
+- Ante applies only to raiders and rare optional secret bosses. Losing an ante duel is a permanent loss. Every other
+  story duel stays a standard retry.
 - A stolen card can be won back by defeating the raider who holds it.
-- The global **Play for Ante** setting doesn't apply to the campaign. Ante is set per encounter: on for raiders and secret bosses, off for everything else. Basic lands are never anted, and rarity matching is off, so raiders can take rare cards.
+- The global **Play for Ante** setting doesn't apply to the campaign. Ante is set per encounter. Basic lands are never
+  anted, and rarity matching is off, so raiders can take rare cards.
 
 **The central question of the story is whether the Seals are good for Concordia.** They ended the wars, but they also
 froze the world under one ruler's judgment and turned duelists into outlaws. Every chapter gives the question a
@@ -96,25 +106,28 @@ around the circle. Neighboring colors are allies. Each color has two enemies, th
 White's enemies are Black and Red, Blue's are Red and Green, and so on. Each color's *opposite* is the enemy two steps
 clockwise, which gives one fixed pairing: **White ↔ Black, Blue ↔ Red, Black ↔ Green, Red ↔ White, Green ↔ Blue**.
 Opposed pairs are the colors whose views conflict most sharply, so they're the natural pairing for two rivals.
-Color identity is the Seals' law: a commander's colors decide which cards its deck may hold. The Seal Angels
-read your color identity before they give you a deck.
+Color identity is the Seals' law: a commander's colors decide which cards its deck may hold. The Seal Angels read
+your color identity before they give you a deck.
 
 Sources for the pairings and identity rules: [Enemy color](https://mtg.wiki/page/Enemy),
 [Multicolor](https://mtg.wiki/page/Multicolor), [Color identity](https://mtg.wiki/page/Color_identity).
 
-You and your childhood friend were both born in **Emberbrook**, a village at the edge of the wilds. Both of you carry planeswalker sparks, a rare thing on Concordia, and you've dreamed of the throne since childhood. Neither of you has awakened yet. You've
-competed for everything else: who would earn the first Seal, who would be the best duelist in the village. You want the
-throne for different reasons. You want to protect the people you grew up with. Your rival wants to **destroy the
-Seals**, for better or worse. Whoever inherits the throne also inherits the Seals (§2.3), so the throne is the only
-way your rival can do it. Only one of you can take it.
+You and your childhood friend were both born in **Emberbrook**, a village at the edge of the wilds. Both of you carry
+planeswalker sparks, a rare thing on Concordia, and you've dreamed of the throne since childhood. Neither of you has
+awakened yet. You've competed for everything else: who would earn the first Seal, who would be the best duelist in
+the village. You want the throne for different reasons. You want to protect the people you grew up with. Your rival
+wants to **destroy the Seals**, for better or worse. Whoever inherits the throne also inherits the Seals (§2.3), so
+the throne is the only way your rival can do it. Only one of you can take it.
 
-The story opens on Seal-day, the village's yearly festival at the shrine. Unsealed raiders strike in the middle of it. In the chaos, both of you awaken your sparks, and Seal Angels appear to ask each of you to choose a first color. The Champion's open challenge is only a poster to you at this point. The raid makes it real.
+The story opens on Seal-day, the village's yearly festival at the shrine. Unsealed raiders strike in the middle of it.
+In the chaos, both of you awaken your sparks, and Seal Angels appear to ask each of you to choose a first color. The
+Champion's open challenge is only a poster to you at this point. The raid makes it real.
 
 ### 2.2 Structure
 
 | Part | Title | Region | Warden / main boss | Color unlock |
 |---|---|---|---|---|
-| Prologue | **The Raid** | Emberbrook and Route 1 | Rival (first duel, after the raider tutorials) | Your starting color |
+| Prologue | **The Raid** | Emberbrook and Route 1 | Rival (first duel, after the raider tutorials) | Your starting color (chosen with the Seal Angels) |
 | Chapter 1 | **The Green Seal** | Mossgate and the Thornwood | Warden **Brannoc** (G) | Choose your 2nd color |
 | Chapter 2 | **Two Roads** | Saltreach (U) *and* Cinderpeak (R), in either order | Wardens **Isolde** (U) and **Tarro** (R) | Choose your 3rd, then 4th color |
 | Chapter 3 | **The Archive of Seals** | Lumenhold and the Unsealed Hideout | Warden **Dame Seraphine** (W). Unsealed boss: **Mordessa** | Choose your 5th color |
@@ -153,9 +166,9 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 |---|---|---|---|
 | 2.0 | The crossroads | Crossroads Inn (hub) | Two routes open: west to Saltreach, east to Cinderpeak. You can do them in either order. The second Warden you fight is a tier stronger (§5.2) |
 | 2A.1 | Saltreach | Route 3 (coast), Saltreach town | The Unsealed are running illegal duels in the tide pools for gold and favors. Secret: a sunken shipwreck with a legend duel (ante) |
-| 2A.2 | The Blue Warden | Saltreach Lighthouse (gym) | Gym puzzle: a mirror maze. **Warden Isolde** (mono-U control and flyers). Best-of-3. Isolde is loyal to the Champion, but she isn't blind to what the Seals cost. She asks why you want the throne, and tells you most who ask don't know |
+| 2A.2 | The Blue Warden | Saltreach Lighthouse (gym) | Gym puzzle: a mirror maze. **Warden Isolde** (mono-U control and flyers). Best-of-3. Isolde is loyal to the Champion, but not blind to what the Seals cost. They ask why you want the throne, and tell you most who ask don't know |
 | 2B.1 | Cinderpeak | Route 4 (volcanic path), Cinderpeak town | Miners have gone missing in the forges. Their foreman says the missing men were paid to duel in an Unsealed ring |
-| 2B.2 | The Red Warden | Cinderpeak Forge (gym) | Gym gauntlet: three forge-keepers in a row with no healing. **Warden Tarro** (mono-R aggro). Tarro fought beside the Champion in the wars, and says the Seals are the only reason he's still alive |
+| 2B.2 | The Red Warden | Cinderpeak Forge (gym) | Gym gauntlet: three forge-keepers in a row with no healing. **Warden Tarro** (mono-R aggro). Tarro fought beside the Champion in the wars, and says the Seals are the only reason they're still alive |
 | 2.9 | Two Seals | Crossroads Inn | Color choices 2 and 3. **Rival duel 3**: the rival has won gold and a shortcut to a Seal by dueling in the Unsealed ring. They say the Seals are a cage that keeps people weak. You both still want the same throne, and this duel is the first time you're really fighting over it |
 
 #### Chapter 3: The Archive of Seals
@@ -164,8 +177,8 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 |---|---|---|---|
 | 3.1 | Lumenhold | Route 5 (plains), Lumenhold city | The Archive is in ruins. Archivist **Pell** lays out the case on both sides. The Seals ended wars that burned whole regions, and they kept the Champion's duty alive. They also froze the world under one ruler, and made every duel a permission. Pell also reveals that the Seals are bound to the Champion's own spark. If he falls, the Seals fall with him, and whoever takes the throne inherits them |
 | 3.2 | The Unsealed Hideout | Unsealed Hideout (2-floor dungeon) | The rival is here as an Unsealed raider, winning ante duels and carrying a bag of stolen cards. The rival duel is a 2v1 ante match against the rival plus a grunt |
-| 3.3 | Mordessa | Hideout depths | Unsealed ringleader **Mordessa** (mono-B reanimator) runs the illegal duels. She says the throne is for sale to anyone who can afford it. The rival sees what the ring does to the people who lose and walks out. It doesn't change their view of the Seals, only their view of how to break them |
-| 3.4 | The White Warden | Lumenhold Cathedral (gym) | Gym puzzle: a light-bridge sequence. **Dame Seraphine** (mono-W tokens and lifegain). She is the Champion's strongest believer: "The strong carry the weak. That is the whole reason for the Seals." Two-player pod duel: Seraphine with her squire |
+| 3.3 | Mordessa | Hideout depths | Unsealed ringleader **Mordessa** (mono-B reanimator) runs the illegal duels. They say the throne is for sale to anyone who can afford it. The rival sees what the ring does to the people who lose and walks out. It doesn't change their view of the Seals, only their view of how to break them |
+| 3.4 | The White Warden | Lumenhold Cathedral (gym) | Gym puzzle: a light-bridge sequence. **Dame Seraphine** (mono-W tokens and lifegain). They are the Champion's strongest believer: "The strong carry the weak. That is the whole reason for the Seals." Two-player pod duel: Seraphine with their squire |
 | 3.5 | The last Seal | Lumenhold | **Color choice 4: you now control all five colors.** The rival is ahead on Seals, and they're heading for Victory Road. They tell you they'll see you at the top |
 
 #### Finale: The Champion's Throne
@@ -197,8 +210,10 @@ broke the Seals, and they're the one NPC who argues with your choice instead of 
 
 ### 3.1 Protagonist
 
-- A young duelist from Emberbrook. The player chooses name, gender, race and starting color on the existing new-game
-  screen.
+- A young duelist born in Emberbrook, with a planeswalker spark that awakens during the raid. Name, gender and race are
+  chosen on the existing new-game screen.
+- **The first color** is chosen with the Seal Angels in the prologue, not on the new-game screen (§7.2, J-Start). Until
+  that Java change lands, the new-game screen keeps its color picker and the angels confirm the choice.
 - **Starting commander:** a mono-color starter deck per color and difficulty. These are new 99+1 decks built from
   existing cards (`decks/starter/{W,U,B,R,G}_Starter_{Difficulty}.dck`). Candidate commanders are all mono-colored
   legends that already exist in Forge:
@@ -215,29 +230,40 @@ broke the Seals, and they're the one NPC who argues with your choice instead of 
 
 | Field | Design |
 |---|---|
-| Who | An ordinary villager from Emberbrook, your neighbor since you were children. Not a legend and not chosen by fate. Competitive, loyal, and painfully aware they're not the "chosen" one |
-| Gender and name | The opposite gender to the player. **Kael** (he/him) if the player is female, **Lyra** (she/her) if the player is male. Names are placeholders (open question 3) |
+| Who | A villager from Emberbrook, your neighbor since childhood, with a spark of their own. Competitive and loyal. They want the throne to destroy the Seals |
+| Gender and name | The opposite gender to the player. **Kael** (male) if the player is female, **Lyra** (female) if the player is male. Names are placeholders (open question 3) |
 | Sprite | Existing hero atlases: `sprites/heroes/human_m.atlas` / `human_f.atlas` |
-| Colors | Starts with the color *enemy* to the player's (for example W → B), then grows one color per encounter, mirroring you |
-| Arc | Eager friend → frustrated by losing → recruited by the Sealbreakers (Ch.3) → sees their real plan and leaves → your greatest opponent at the Summit → an ally in the epilogue |
-| Duels | P2 (shrine), 1.5 (Mossgate), 2.9 (Crossroads), 3.2 (2v1 at the Hideout), F.3 (Summit gate) |
-| Deck | One deck per encounter: `decks/campaign/rival/<color>_<n>.dck`. 5 starting colors × 5 encounters = 25 decks. These can be cut down by sharing the later decks (open question 4) |
+| Color | **The opposite of the player's color** on the wheel. The rival's color is fixed by the player's choice, so there are five possible rivals |
+| Arc | Eager friend → rival duels as a competitor → takes an Unsealed shortcut through ante duels (Ch.2–3) → sees what the ring does and leaves → your greatest opponent at the Summit → an ally in the epilogue, whatever the ending |
+| Duels | P3 (after the raiders), 1.5 (Mossgate), 2.9 (Crossroads), 3.2 (2v1 ante at the Hideout), F.3 (Summit gate) |
+| Deck | One deck per encounter, per opposite color: `decks/campaign/rival/<color>_<n>.dck`. 5 possible rival colors × 5 encounters = 25 decks (open question 4) |
+
+**Opposite color for each player choice:**
+
+| Player's first color | Rival's color |
+|---|---|
+| White | Black |
+| Blue | Red |
+| Black | Green |
+| Red | White |
+| Green | Blue |
 
 ### 3.3 NPCs, Wardens and villains
 
 | Character | Role | Motivation | Commander / deck theme | Appears in |
 |---|---|---|---|---|
-| **Elder Wren** | Mentor, the "professor" | Protect the village. Sends pilgrims out with hope | Not a duelist | Prologue, Ch.1 messages, epilogue |
-| **Archivist Pell** | Lore guide | Rebuild the Archive and understand the Seals | Optional sparring: mono-U artifacts | Ch.3, side quests |
-| **Warden Brannoc** | Warden 1 (G) | Guards the Green Seal. Tests patience | Mono-G ramp and stompy (e.g. Omnath, Locus of Mana) | Ch.1 |
-| **Warden Isolde** | Warden 2/3 (U) | Guards the Blue Seal. Tests cleverness | Mono-U control and flyers (e.g. Talrand-style, a different commander from the player's) | Ch.2 |
-| **Warden Tarro** | Warden 2/3 (R) | Guards the Red Seal. Tests courage | Mono-R aggro (e.g. Torbran, Thane of Red Fell) | Ch.2 |
-| **Dame Seraphine** | Warden 4 (W) | Guards the White Seal. Tests resolve | Mono-W tokens and lifegain | Ch.3 |
-| **Captain Hask** | Sealbreaker mini-boss | Paid muscle | Mono-B or B/R aggro | Ch.1 |
-| **Mordessa** | Sealbreaker commander | True believer in the Crown | Mono-B reanimator | Ch.3 |
-| **The Five Paragons** | Elite Four analog | Guard the Summit, unaware of the Arbiter's plan | One two-color deck each (WU, UB, BR, RG, GW) | Finale |
-| **High Arbiter Valen Sorrow / the Hollow Crown** | Final boss | Thinks the Seals keep Concordia weak, and wants to break them with your Seals | Five-color, three phases (§5.3) | Ch.1 rumor, Ch.3 hints, finale |
-| **Hidden legends** | Optional secret duels | Each is a famous legend sleeping in Concordia | Existing legend decks (Realm of Legends has 985 in `decks/legends/`, which can be copied in) | Secret areas |
+| **Elder Wren** | Mentor, the village elder | Protect the village. Sends pilgrims out with hope | Not a duelist | Prologue, Ch.1 messages, epilogue |
+| **Archivist Pell** | Lore guide | Rebuild the Archive and understand the Seals, both sides of them | Optional sparring: mono-U artifacts | Ch.3, side quests |
+| **Warden Brannoc** | Warden 1 (G) | Guards the Green Seal. Believes the Seal kept their valley alive | Mono-G ramp and stompy (e.g. Omnath, Locus of Mana) | Ch.1 |
+| **Warden Isolde** | Warden 2/3 (U) | Guards the Blue Seal. Loyal, but honest about the cost | Mono-U control and flyers (a different commander from the player's) | Ch.2 |
+| **Warden Tarro** | Warden 2/3 (R) | Guards the Red Seal. Fought beside the Champion in the wars | Mono-R aggro (e.g. Torbran, Thane of Red Fell) | Ch.2 |
+| **Dame Seraphine** | Warden 4 (W) | Guards the White Seal. The Champion's strongest believer | Mono-W tokens and lifegain | Ch.3 |
+| **Captain Hask** | Unsealed captain, mini-boss | Paid muscle who runs the camp's raiders | Mono-B or B/R aggro | Ch.1 |
+| **Mordessa** | Unsealed ringleader | Runs the illegal duel ring and sells the throne as a fantasy | Mono-B reanimator | Ch.3 |
+| **Raiders** (grunts) | Team Rocket analogs | Steal rare cards and Seal fragments for the Unsealed | Small ante-focused decks, one per tutorial lesson and per raid. Built from `decks/campaign/raiders/*.dck` | Prologue, Ch.1–3 |
+| **The Five Paragons** | The Champion's sworn duelists | Guard the Summit. Some believe the Champion's duty, some are paid | One two-color deck each (WU, UB, BR, RG, GW) | Finale |
+| **The Champion** | Final boss | Believes the strong must carry the weak, and that ruling is a duty he cannot refuse | Five-color, three phases (§5.3) | Ch.1 posters, Ch.3 (Pell), finale |
+| **Hidden legends** | Optional secret duels | Each is a famous legend in Concordia's history | Existing legend decks (Realm of Legends has 985 in `decks/legends/`, which can be copied in). Secret duels are ante | Secret areas |
 
 ---
 
@@ -304,9 +330,9 @@ painted by hand. A fully hand-painted overworld needs Java (J2, §7.2).
   objects with `teleport` and `teleportObjectId`.
 - **Gym puzzles** use `dummy` objects (removable obstacles) and `dialog` objects whose actions run
   `deleteMapObject` / `activateMapObject` when a condition (map flag, defeated keeper) is met.
-- **Trainers** are `enemy` objects with `threatRange` / `pursueRange` (they come at you on sight), a `dialog`
-  (challenge line) and a `defeatDialog`. Map enemies don't respawn unless the map sets `respawnEnemies`, so beaten
-  trainers stay beaten.
+- **Trainers and raiders** are `enemy` objects with `threatRange` / `pursueRange` (they come at you on sight), a `dialog`
+  (challenge line) and a `defeatDialog`. Raiders also carry the ante flag (§7.2, J-Ante). Map enemies don't respawn
+  unless the map sets `respawnEnemies`, so beaten trainers stay beaten.
 - **Healing:** maps whose root POI is of type `town` or `capital` heal you on entry. Inn objects heal elsewhere.
 - **Secrets:** hidden enemies (`hidden: true`) and inactive portals behind breakable walls (`dummy`).
 
@@ -331,22 +357,23 @@ you're meant to reach them. Hard blocking on the overworld needs Java (J4).
 - **Power tier** uses the common Commander 1–10 scale: 1–2 = jank, 3–4 = precon, 5–6 = upgraded, 7–8 = tuned.
 - **`life`** is the enemy's starting life in `enemies.json`. The difficulty's `enemyLifeFactor` multiplies it.
 - **Player starting life** comes from the difficulty and grows with life rewards from Wardens.
+- **Ante encounters** are raiders and secret bosses. Their stakes are cards, not retries (§2.1).
 
 ### 5.2 Per-chapter curve (Normal)
 
 | Part | Trainers | Rival | Mini/villain boss | Warden | Boss mechanics | Rewards and economy |
 |---|---|---|---|---|---|---|
-| Prologue | Tier 1, `life` 15, mono-color | Tier 1, `life` 15 | Grunt, tier 1 | – | None | Starter deck, 300 gold |
-| Ch.1 | Tier 2, `life` 20 | Tier 2, `life` 20 | Hask, tier 3, `life` 25 | Brannoc, tier 3, `life` 30 | Map `dungeonEffect`: Brannoc starts with a mana dork in play | ~2,000 gold. Seal = new color + a choice of 3 commanders (§6.1) + **+3 max life** |
-| Ch.2 (1st Warden) | Tier 3, `life` 25 | Tier 3, `life` 25 | – | Isolde / Tarro, tier 4, `life` 35 | Isolde: best-of-3. Tarro: gauntlet with no healing, and a `dungeonEffect` giving him a haste enabler | ~3,000 gold |
+| Prologue | Raiders, tier 1, `life` 15, mono-color, ante | Tier 1, `life` 15 | Raider lead, tier 1, ante | – | None | Starter deck, 300 gold |
+| Ch.1 | Tier 2, `life` 20. Raiders ante | Tier 2, `life` 20 | Hask, tier 3, `life` 25, ante | Brannoc, tier 3, `life` 30 | Map `dungeonEffect`: Brannoc starts with a mana dork in play | ~2,000 gold. Seal = new color + a choice of 3 commanders (§6.1) + **+3 max life** |
+| Ch.2 (1st Warden) | Tier 3, `life` 25 | Tier 3, `life` 25 | – | Isolde / Tarro, tier 4, `life` 35 | Isolde: best-of-3. Tarro: gauntlet with no healing, and a `dungeonEffect` giving them a haste enabler | ~3,000 gold |
 | Ch.2 (2nd Warden) | Tier 4 | – | – | Tier 5, `life` 40 | The same mechanics, plus `changeStartCards: +1` for the Warden | Seal + life reward each |
-| Ch.3 | Tier 5, `life` 30 | Tier 5, 2v1 | Mordessa, tier 6, `life` 40 | Seraphine, tier 6, `life` 40, in a pod with her squire | Pod: `nextEnemy`. 2v1: `nextEnemy` + `teamNumber` | ~4,000 gold. Final Seal |
-| Finale | Tier 6–7, `life` 35 | Tier 7, `life` 40, five-color | Paragons: tier 7, `life` 40 each, best-of-1 | High Arbiter: tier 8, 3 phases | §5.3 | Champion reward chest, post-game unlocks |
+| Ch.3 | Tier 5, `life` 30. Raiders ante | Tier 5, 2v1 ante | Mordessa, tier 6, `life` 40, ante | Seraphine, tier 6, `life` 40, in a pod with their squire | Pod: `nextEnemy`. 2v1: `nextEnemy` + `teamNumber` | ~4,000 gold. Final Seal |
+| Finale | Tier 6–7, `life` 35 | Tier 7, `life` 40, five-color | Paragons: tier 7, `life` 40 each, best-of-1 | The Champion: tier 8, 3 phases | §5.3 | Champion reward chest, post-game unlocks |
 
 Pacing targets: the player's deck should be roughly one tier below the next Warden on arrival, and one tier above it
 after clearing the routes in between. Gold buys staples. Seals unlock colors. Exploration finds the best cards.
 
-### 5.3 Boss mechanics (all data-only)
+### 5.3 Boss mechanics (all data-only, except ante)
 
 | Mechanic | Data used |
 |---|---|
@@ -359,13 +386,16 @@ after clearing the routes in between. Gold buys staples. Seals unlock colors. Ex
 | Best-of-3 | `gamesPerMatch: 3` |
 | Gauntlet | Several enemies in a row with no healing. Doors open via `defeatDialog` |
 | Exempt an enemy from the map effect | `ignoreDungeonEffect` |
+| Ante duel | Per-enemy ante flag (`EnemyData.ante`, new). Java: J-Ante (§7.2) |
 
-**High Arbiter, three phases (F.4):** three enemy objects on the throne map, each one activated by the previous one's
-`defeatDialog`.
-1. *The Arbiter*: five-color good-stuff deck, `life` 40, with a "Concord" emblem in the command zone.
-2. *The Hollow Crown*: a pod with two Sealbreaker champions (`nextEnemy`), `life` 30 each.
-3. *Unsealed*: a tuned five-color deck, `life` 60, `changeStartCards: +2`. Life doesn't carry between phases
-   (that would need the engine, §8).
+**The Champion, three phases (F.4):** three enemy objects on the throne map, each one activated by the previous one's
+`defeatDialog`. Each phase is a test of the Champion's duty.
+1. *The Duty*: five-color good-stuff deck, `life` 40, with a Seal emblem in the command zone. The Champion explains
+   why they rule.
+2. *The Carried*: the Champion with two Paragons in a pod (`nextEnemy`), `life` 30 each. The Champion fights to protect
+   the Paragons, who are the people they say they carry.
+3. *The Sovereign*: a tuned five-color deck, `life` 60, `changeStartCards: +2`. Life doesn't carry between phases (that
+   would need the engine, §8).
 
 ### 5.4 Difficulty scaling
 
@@ -380,6 +410,7 @@ The plane's `config.json` defines Easy / Normal / Hard / Insane, as Realm of Leg
 | Starting gold | 1,000 | 500 | 200 | 0 |
 
 Boss decks and map effects are the same on every difficulty in Phase 1. Per-difficulty boss decks need Java J8.
+Ante stakes don't change with difficulty.
 
 ---
 
@@ -387,11 +418,11 @@ Boss decks and map effects are the same on every difficulty in Phase 1. Per-diff
 
 ### 6.1 Color unlocks (the core system)
 
-- **Flags:** character flags `colW`, `colU`, `colB`, `colR`, `colG` (0/1) and `colCount`. Character flags are saved
-  with the player.
-- **Start:** the prologue sets the flag for the starting color. Dialog can read the color with the existing
-  `colorIdentity` condition. That condition reads the *current deck's* identity, so the prologue copies it into a
-  flag right away.
+- **Flags:** character flags `colW`, `colU`, `colB`, `colR`, `colG` (0/1), `colCount`, and `colStart` (the starting color
+  picked with the Seal Angels). Character flags are saved with the player.
+- **Start:** the prologue scene sets `colStart` and the matching `colX` flag from the Seal Angels' choice. The rival's
+  color is the opposite (§3.2), set by a flag condition. Dialog can read the player's color with the existing
+  `colorIdentity` condition, but that reads the *current deck's* identity, so the prologue copies it into a flag right away.
 - **The choice after a Warden:** a dialog lists the five colors. Each option has a `getCharacterFlag` condition
   (`colX` = 0), so only colors you don't have yet appear. Picking one sets `colX` = 1, advances `colCount`, and runs
   `grantRewardsChoice`.
@@ -400,7 +431,8 @@ Boss decks and map effects are the same on every difficulty in Phase 1. Per-diff
   curated lists, selected via flag conditions).
 - **Card rewards:** reward entries using the existing `colors: ["colorID"]` option give cards in your current deck's
   colors.
-- **Legend duels (secrets)** drop multi-color commanders. These are only usable once you own their colors (§6.2).
+- **Secret legend duels** drop multi-color commanders. These are ante duels, so the commander is a real stake. They're
+  only usable once you own their colors (§6.2).
 
 ### 6.2 Commander swap restrictions
 
@@ -410,6 +442,7 @@ The rules for the player:
 2. You can change commander only at a **Commander Hall** (one in each town, using an existing inn/building tile).
 3. Your 99 is filtered to the commander's colors at duel start. That already happens today in
    `DuelScene.applyAdventureDeckRules`.
+4. Your commander is never anted, in any duel.
 
 What data can and can't enforce:
 
@@ -419,23 +452,26 @@ What data can and can't enforce:
 | Only change at a Hall | **Not enforceable.** Hall NPCs explain the rule in dialog | J-Hall: the deck editor's commander section is read-only except when opened from a Hall object |
 | Card filtering | Already works | – |
 
-Because Phase 1 can only partly enforce this, **J-CI and J-Hall are the first Java work** (Phase 2).
+Because Phase 1 can only partly enforce this, **J-CI and J-Hall are the first Java work after the Phase 1 slice** (Phase 2).
 
 ### 6.3 Quests and flags
 
 - The new plane has its own `world/quests.json`. New games always start **quest 28** (hard-coded in
-  `NewGameScene`/`SaveLoadScene`), so in Concordia **quest 28 is the campaign intro**. It hands off with `issueQuest`.
+  `NewGameScene`/`SaveLoadScene`), so in Concordia **quest 28 is the raid and the Seal Angels' choice**. It hands off
+  with `issueQuest`.
 - Campaign quests use **IDs 1000+**: Prologue 1000–1009, Ch.1 1010–1029, Ch.2 1030–1059, Ch.3 1060–1089,
   Finale 1090–1109, side quests 1200+. IDs 1–27 are kept free for reusing Forge's side-quest templates.
 - Each step is a `storyQuest` with `autoTrack`. Objectives mostly use `Travel` (to pinned POIs), `Defeat` / `Clear`
   (on gym and route maps) and `QuestFlag` (set by dialog). Hand-offs use epilogue `issueQuest`.
-- Main flags: `campCh` (chapter, gates POIs), `sealG`, `sealU`, `sealR`, `sealW` (Seals won), `rivalStage`, `colX`
-  and `colCount`. Flags are bytes, so values must stay ≤ 127.
+- Main flags: `campCh` (chapter, gates POIs), `colStart`, `colX` and `colCount` (colors), `sealG`, `sealU`, `sealR`,
+  `sealW` (Seals won), `rivalStage`, `endingChoice` (keep / reforge / break, read by the epilogue) and `raidStolen`
+  (how many cards raiders hold). Flags are bytes, so values must stay ≤ 127.
 
 ### 6.4 Side content
 
 - **Notice-board jobs** in each town (Forge's existing side-quest templates).
-- **Legend duels:** about 2 per region, hidden on route and dungeon maps. Each one drops that legend's commander.
+- **Secret legend duels:** about 2 per region, hidden on route and dungeon maps. Each is an ante duel, and each one
+  drops that legend's commander if you win.
 - **Trainer rematches:** post-game, routes re-populate with stronger decks (a `respawnEnemies` copy of each route,
   activated after the finale).
 - **Lore:** Archive fragments that unlock an extra epilogue dialog.
@@ -444,6 +480,9 @@ Because Phase 1 can only partly enforce this, **J-CI and J-Hall are the first Ja
 
 Everything persists in the save: deck, collection, gold, shards, items, flags and cleared maps. Chapters are story
 units, not save boundaries.
+
+Stolen cards persist too. Each raider holds the cards it won from you, recorded in the save (J-Raid, §7.2). Defeating
+that raider returns them. A card a raider still holds when you leave the region stays with the raider.
 
 ---
 
@@ -457,10 +496,11 @@ units, not save boundaries.
 | Pinned overworld | `world/world.json`, `world/biomes/*.json`, `world/points_of_interest.json` |
 | Towns, routes, gyms, dungeons | `maps/map/**.tmx` (existing tilesets) |
 | Story and side quests (28 + 1000+) | `world/quests.json` |
-| Trainers, Wardens, rival, villains | `world/enemies.json`, `decks/campaign/**.dck` |
+| Trainers, raiders, Wardens, rival, villains | `world/enemies.json`, `decks/campaign/**.dck` (raiders in `decks/campaign/raiders/`) |
 | Boss mechanics | `dungeonEffect`, `effect`, `nextEnemy`, `teamNumber`, `gamesPerMatch` |
 | Color choice and commander rewards | Dialog conditions and actions, `grantRewardsChoice` |
-| Rival chosen by the player's color | 5 hidden rival actors per scene, with the right one activated by a `colorIdentity` / flag condition |
+| Rival's color, chosen by the player's color | Five rival actors per scene, each active only when `colStart` matches, plus their decks in `decks/campaign/rival/` |
+| Seal Angels' scene | Dialog on a map object, with the color choice in `options` |
 | Shops, items | `world/shops.json`, `world/items.json` |
 | Sprites, music | References to existing `common/` assets |
 
@@ -468,19 +508,25 @@ units, not save boundaries.
 
 | # | Feature | Change | Size | Phase |
 |---|---|---|---|---|
+| **J-Ante** | Ante per encounter | `EnemyData.ante` (new boolean). In `DuelScene` (~line 554), `rules.setPlayForAnte` reads the encounter's flag instead of the global `UI_ANTE` preference. Set `setMatchAnteRarity(false)` and `anteIncludeBasicLands` to false for ante encounters. In `RewardData` (~line 121), apply the same per-encounter check to the ante-only card filter. The existing ante result handling (`hostedMatch.getAnteResult`) stays as is | Small | 1 |
+| **J-Raid** | Stolen cards held by raiders | Record each raider's won cards in the save (a per-raider list in `AdventurePlayer`'s saved data). On defeating a raider, return its cards to the player. Uses the existing `anteResult.wonCards` / `lostCards` handling | Medium | 1 |
+| **J-Start** | Seal Angels' color choice | Replace the new-game color picker with the P1 scene. Today `WorldSave.generateNewWorld` takes the starting color at creation, so the starter deck has to be assigned after the choice. Until then, the new-game picker stays, and the angels confirm it | Medium | 2 |
 | **J-Gender** | Rival of the opposite gender, chosen automatically | A dialog condition `isFemale` (in `MapDialog` and `MenuScene`, next to `colorIdentity`). Optionally a `$(rivalname)` token next to `$(playername)` in `AdventureQuestData` | Small | 2 |
 | **J-CI** | Commander limited to unlocked colors | Read the `colX` flags. Enforce in `AdventureDeckEditor` (commander section) and in `DuelScene.applyAdventureDeckRules` | Small–medium | 2 |
 | **J-Hall** | Commander change only at Halls | A `commanderHall` map object type, like `inn`, that opens the deck editor with the commander section editable. Locked elsewhere | Medium | 2 |
 | J8 | Per-difficulty boss decks | `deckByDifficulty` in `EnemyData`, and `dungeonEffect_<Difficulty>` read by `MapStage` | Small | 3 |
 | J7 | Portraits in dialog | A `portrait` field in `DialogData`, shown by `MapDialog` (existing avatar art) | Small | 3 |
 | J5 | Chapter / Seal UI | A Seal case screen (the badge case analog) and chapter title cards | Medium | 3 |
-| J6 | Cutscenes | Scripted sequences: move actors along waypoints, dialog, fades, camera | Medium–large | 4 |
+| J6 | Cutscenes | Scripted sequences: move actors along waypoints, dialog, fades, camera. The Seal Angels' arrival and the Champion's entrance use it | Medium–large | 4 |
 | **J2** | Hand-painted overworld | A `fixedMap` option in `WorldData`. `World` loads terrain/biomes from a hand-made map and places POIs at fixed tile coordinates instead of generating from noise | Large | 4 |
 | J4 | Hard overworld gating | Blocked regions or roadblocks on the overworld until a flag is set | Medium | 4 |
 | J9 | Ally on your team | Register an AI teammate in `DuelScene` (for the epilogue / post-game 2v2 with your rival) | Medium | 4 |
 
-Until J-Gender exists (Phase 1), the rival's gender is set by a single dialog choice in the prologue that sets a
+Until J-Gender exists (Phase 2), the rival's gender is set by a single dialog choice in the prologue that sets a
 character flag. The design still says the rival is the opposite gender. The player is just asked to confirm it once.
+
+Until J-Start exists, the angels' choice is a confirmation of the new-game picker. The story reads the same, but the
+player picks the color twice, once in the menu and once in the scene.
 
 ### 7.3 Playtesting on your PC (no user planes needed)
 
@@ -491,15 +537,16 @@ User planes aren't required. The simplest route works with Phase 1 data:
 2. Start Forge Adventure → Settings → **Plane** → Concordia, then restart the game.
 3. Start a new game.
 
-Phase 1 ships a small `tools/concordia/copy-to-install.ps1` that does step 1. Java phases need a rebuilt Forge jar,
-which will get its own instructions when we get there.
+Phase 1 ships a small `tools/concordia/copy-to-install.ps1` that does step 1. Phase 1 also needs the Java changes
+J-Ante and J-Raid, so the first playtest needs a rebuilt Forge jar. Those are the only Java changes in Phase 1.
 
 ### 7.4 Existing assets plan
 
 | Need | Existing asset |
 |---|---|
 | Player and rival sprites | `common/sprites/heroes/human_m|human_f.atlas` (and the other races) |
-| Trainers, grunts, Wardens | `common/sprites/enemy/humanoid/*` (knight, paladin, conjurer, swordsman, elf, merfolk, etc.) |
+| Seal Angels | `common/sprites/enemy/celestial/*` (to choose from) |
+| Trainers, raiders, grunts, Wardens | `common/sprites/enemy/humanoid/*` (knight, paladin, conjurer, swordsman, elf, merfolk, etc.) |
 | Map tiles | `common/maps/tileset/*.tsx` |
 | POI icons | Existing `world/sprites/map_sprites.atlas` (copied from an existing plane) |
 | Portraits | `common/sprites/heroes/avatar.atlas` |
@@ -511,8 +558,11 @@ which will get its own instructions when we get there.
 
 **Not modified:** `forge-core`, `forge-game`, `forge-ai`, or any Magic rules simulation. Concordia uses only what the
 Adventure layer already feeds into a duel: decks, starting life, starting hand size, cards placed at game start,
-player count and teams, and match length. Deck legality filtering (`applyAdventureDeckRules`) already happens in the
-adventure package, which is why J-CI is allowed.
+player count and teams, match length, and the ante flag. Deck legality filtering (`applyAdventureDeckRules`) already
+happens in the adventure package, which is why J-CI is allowed.
+
+Ante is an existing engine feature: `GameRules.playForAnte` and the ante result that the match reports back. The
+campaign only decides when it is on (J-Ante). No engine code changes.
 
 **Out of scope (would require engine changes):**
 
@@ -521,6 +571,8 @@ adventure package, which is why J-CI is allowed.
 | Scripted mid-duel events ("on turn 5 the Warden summons...") | Game triggers → forge-game |
 | Fixed-state puzzle duels (set board, hand, library) | Puzzle state setup is engine-side |
 | Boss life carrying across phases | Game state across matches |
+| Stealing a card mid-duel (for example a raider taking a card from your hand) | Game-state changes → forge-game. Stealing happens only through the ante result |
+| Ante variants that change rules (for example anteing from the command zone) | forge-game |
 | New mechanics or rules for "Seal" powers | forge-game |
 | Custom AI personalities per Warden | forge-ai |
 | Non-standard win conditions ("survive 6 turns") | forge-game |
@@ -533,42 +585,49 @@ art. That's out of scope for now anyway (existing assets only).
 
 ## 9. Phased roadmap
 
-### Phase 1: Vertical slice (data only): Prologue + Chapter 1
+### Phase 1: Vertical slice (data plus J-Ante and J-Raid): Prologue + Chapter 1
 
 1. Create the `Concordia` plane folder: config, difficulties, 20 mono-color starter decks.
 2. Pinned overworld: one biome, POIs for Emberbrook, Route 1, Mossgate, Route 2 (Thornwood), Mossgate Grove.
-3. Maps: Emberbrook (village + shrine), Route 1, Mossgate (town + Hall + shop + inn), Thornwood, Grove gym (2–3 rooms).
-4. Quest 28 intro + quests 1000–1029.
-5. Enemies and decks: ~10 trainers, grunts, Hask, Brannoc, rival duels 1–2 (×5 colors).
-6. Color choice 1 with commander rewards.
-7. The copy script. Playtest on Normal.
+3. Maps: Emberbrook (Seal-day festival and shrine), Route 1, Mossgate (town + Hall + shop + inn), Thornwood, Grove gym
+   (2–3 rooms).
+4. Quest 28 raid intro and the Seal Angels' scene (confirmation of the new-game picker, §7.2) + quests 1000–1029.
+5. Enemies and decks: raider tutorial decks (ante), ~10 trainers, Hask, Brannoc, rival duels 1–2 (opposite colors).
+6. Ante: J-Ante for raider and secret duels. J-Raid for stolen-card tracking and winning cards back.
+7. Color choice 1 with commander rewards.
+8. The copy script. Playtest on Normal.
 
-**Exit criteria:** a new Concordia game reaches the end of Chapter 1 in about 3 hours, with no dead ends, a working
-color choice, and a difficulty curve that feels right.
+**Exit criteria:** a new Concordia game reaches the end of Chapter 1 in about 3 hours, with no dead ends. The raid
+tutorial teaches the ante loop, a stolen card can be won back, the color choice works, and the rival has the opposite
+color. The difficulty curve feels right.
 
 ### Phase 2: Java core rules
 
-J-CI, J-Hall, J-Gender. These make the Pokémon-style rules real.
+J-Start (automatic Seal Angels choice), J-CI, J-Hall, J-Gender. These make the Pokémon-style rules real.
 
 ### Phase 3: Chapter 2 and 3 content (data), plus J8, J7, J5
 
-### Phase 4: Finale and post-game (data), plus J6, J2, J4, J9
+### Phase 4: Finale, endings and post-game (data), plus J6, J2, J4, J9
 
 The hand-painted overworld (J2) replaces the pinned overworld here. The map layout stays the same, so no content has
-to move.
+to move. The three endings (§2.3) are written here, and `endingChoice` drives the epilogue.
 
 ---
 
 ## 10. Open questions
 
-1. **Villain twist:** is the High Arbiter twist (a trusted figure as the villain) right for the new story, or should
-   the Sealbreaker leader be an open villain from the start?
-2. **Number of Wardens:** the design has 4 color-unlocking Wardens (one color at the start + 4 = 5). Do you want more
+1. **Number of Wardens:** the design has 4 color-unlocking Wardens (one color at the start + 4 = 5). Do you want more
    Pokémon-style "gyms" (for example 8, where only some unlock a color and others give life or items)?
-3. **Rival names:** Kael / Lyra are placeholders. Do you have names in mind?
-4. **Rival decks:** a full set (25 decks) mirroring every starting color, or a smaller set (the rival always starts
-   in one fixed color)?
-5. **Starter commanders:** are the five candidates in §3.1 good, or do you have favorites?
-6. **Ending:** restore the Seals as they were, or let the player reforge them (a choice with two endings)?
-7. **Gender until Phase 2:** OK to ask the player once in the prologue, until J-Gender makes it automatic?
-8. **Plane name:** keep "Concordia"?
+2. **Rival names:** Kael / Lyra are placeholders. Do you have names in mind?
+3. **Rival decks:** the rival's color is fixed by the player's choice, so there are five rival deck sets. Is that the
+   right size, or should the rival's decks be shared between opposite colors?
+4. **Starter commanders:** are the five candidates in §3.1 good, or do you have favorites?
+5. **Secret ante bosses:** which legends are the secret ante duels? Should the list be fixed, or drawn from the 985
+   legend decks?
+6. **Stolen cards on leaving a region:** should a raider keep the cards it won from you forever (the current design),
+   or should they come back when the next act starts?
+7. **The Play for Ante setting:** should the setting be hidden while Concordia is the active plane, since it doesn't
+   apply to the campaign?
+8. **Gender until Phase 2:** OK to ask the player once in the prologue, until J-Gender makes it automatic?
+9. **Angel choice until Phase 2:** OK to keep the new-game color picker in Phase 1, with the Seal Angels confirming it?
+10. **Plane name:** keep "Concordia"?
