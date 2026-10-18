@@ -309,6 +309,20 @@ What the code allows today:
   it. That froze the game on "generating world". The hub biome has no structures for now.
 - **New games auto-enter the POI named `Spawn`** (`WorldStage.enter`). Emberbrook is that POI (`name: "Spawn"`,
   `displayName: "Emberbrook"`). Losing on the overworld also sends the player back to `Spawn`.
+- **Dialog quirks (found in the first playtest).**
+  - A dialog node that has text but no options closes before its text shows, so every text node needs at least a
+    `(Continue)` option.
+  - `colorIdentity` conditions are inverted: `{"colorIdentity":"W","not":true}` means "the player is White".
+  - `issueQuest` in a map (TMX) dialog did nothing, because only quest-offer dialogs registered the listener.
+    `MapDialog` now registers one for map dialogs too and skips a quest the player already has.
+- **Woken map objects stay awake only with `persistActivatedObjects`.** Forge rebuilds `inactive` and `hidden` from
+  the TMX on every visit and saves only deletions. With this config flag on (Concordia sets it), `activateMapObject`
+  records `activated.<id>` as a map flag and `loadObjects` restores it. Without it, leaving a town mid-tutorial
+  put the next raider back to sleep and soft-locked the opening.
+- **An empty `enemies: []` list spawns enemies.** It still adds a zero-weight copy of every enemy, and the picker
+  returns the first one. Leave the key out for a biome with no wild encounters.
+- **"Easy" starter decks are the strongest.** The difficulty name describes the player's experience, so Realm of
+  Legends' `_Easy` starters are full Commander precons. Enemy decks must be built weak on purpose (§5).
 - **The game can only be saved on the overworld or inside town/capital maps** (`StartScene.enter`). So the overworld
   must remain the layer that connects locations. We can't make the whole region one giant chain of maps, because the
   player could never save on a route.

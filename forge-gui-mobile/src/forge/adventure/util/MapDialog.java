@@ -76,7 +76,22 @@ public class MapDialog {
     public MapDialog(String S, MapStage stage, int parentID, String sourceMapFile) {
         this.stage = stage;
         this.parentID = parentID;
-        this.signalChangeListener = null;
+        this.signalChangeListener = new ChangeListener() {
+            @Override
+            public void changed(ChangeEvent changeEvent, Actor actor) {
+                //Map dialogs issue quests by ID. Skip a quest the player already has.
+                for (AdventureQuestData quest : Current.player().getQuests()) {
+                    if (String.valueOf(quest.getID()).equals(questAccepted))
+                        return;
+                }
+                try {
+                    Current.player().addQuest(questAccepted, false);
+                } catch (NumberFormatException e) {
+                    System.err.println("Dialog error. issueQuest is not a quest ID: " + questAccepted);
+                }
+            }
+        };
+        addQuestAcceptedListener(signalChangeListener);
         this.skipClickListener = new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {

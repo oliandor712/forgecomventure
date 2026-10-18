@@ -223,5 +223,6 @@
   ],
   "anteByEncounter": true,
   "stolenCardPriceFactor": 3.0,
-  "placeholderStarterColor": "W"
+  "placeholderStarterColor": "W",
+  "persistActivatedObjects": true
 }

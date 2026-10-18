@@ -3,12 +3,12 @@
   "name": "Tutorial Raider",
   "sprite": "sprites/enemy/humanoid/knight.atlas",
   "deck": [
-   "decks/tutorial/B_Starter_Easy.dck"
+   "decks/tutorial/B_Tutorial_1.dck"
   ],
   "ai": "",
   "speed": 40,
   "scale": 1.0,
-  "life": 20,
+  "life": 14,
   "ante": true,
   "raider": true,
   "rewards": [
@@ -22,12 +22,12 @@
   "name": "Raider Scout",
   "sprite": "sprites/enemy/humanoid/swordsman_2.atlas",
   "deck": [
-   "decks/tutorial/R_Starter_Easy.dck"
+   "decks/tutorial/R_Tutorial_2.dck"
   ],
   "ai": "",
   "speed": 40,
   "scale": 1.0,
-  "life": 20,
+  "life": 15,
   "ante": true,
   "raider": true,
   "rewards": [
@@ -41,12 +41,12 @@
   "name": "Raider Brute",
   "sprite": "sprites/enemy/humanoid/swordsman_3.atlas",
   "deck": [
-   "decks/tutorial/G_Starter_Easy.dck"
+   "decks/tutorial/G_Tutorial_3.dck"
   ],
   "ai": "",
   "speed": 40,
   "scale": 1.0,
-  "life": 20,
+  "life": 16,
   "ante": true,
   "raider": true,
   "rewards": [
@@ -60,12 +60,12 @@
   "name": "Raider Smuggler",
   "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
   "deck": [
-   "decks/tutorial/U_Starter_Easy.dck"
+   "decks/tutorial/U_Tutorial_4.dck"
   ],
   "ai": "",
   "speed": 40,
   "scale": 1.0,
-  "life": 20,
+  "life": 16,
   "ante": true,
   "raider": true,
   "rewards": [

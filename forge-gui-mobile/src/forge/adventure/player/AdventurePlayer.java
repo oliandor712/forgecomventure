@@ -775,8 +775,10 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
         if (data.containsKey("stolenRaiders") && data.containsKey("stolenCardList")) {
             String[] raiders = (String[]) data.readObject("stolenRaiders");
             PaperCard[] held = (PaperCard[]) data.readObject("stolenCardList");
-            for (int i = 0; i < raiders.length && i < held.length; i++) {
-                addStolenCards(raiders[i], List.of(held[i]));
+            //readObject returns null for an unreadable entry; skip it rather than fail the whole load
+            for (int i = 0; raiders != null && held != null && i < raiders.length && i < held.length; i++) {
+                if (raiders[i] != null && held[i] != null && !isUnsupported.test(held[i]))
+                    addStolenCards(raiders[i], List.of(held[i]));
             }
         }
         if (data.containsKey("favoriteCards")) {

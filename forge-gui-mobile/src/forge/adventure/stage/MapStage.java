@@ -561,6 +561,12 @@ public class MapStage extends GameStage {
                                 mob.inactive = Boolean.parseBoolean(prop.get("inactive").toString());
                                 if (mob.inactive) mob.clearCollisionHeight();
                             }
+                            if (Config.instance().getConfigData().persistActivatedObjects && changes.getMapFlags().containsKey("activated." + id))
+                            {
+                                mob.inactive = false;
+                                mob.resetCollisionHeight();
+                                hidden = false;
+                            }
                             dialogObject = prop.get("deckOverride");
                             if (dialogObject != null && !dialogObject.toString().isEmpty())
                             {
@@ -948,6 +954,8 @@ public class MapStage extends GameStage {
                 if (actors.get(i) instanceof EnemySprite) {
                     EnemySprite mob = (EnemySprite) actors.get(i);
                     mob.inactive = false;
+                    if (Config.instance().getConfigData().persistActivatedObjects)
+                        changes.getMapFlags().put("activated." + id, (byte) 1); //restored by loadObjects on the next visit
                     if (mob.hidden) {
                         mob.hidden = false;
                         mob.setAnimation(CharacterSprite.AnimationTypes.Idle);
