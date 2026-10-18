@@ -23,7 +23,7 @@ The GitHub repository to download from. Default: oliandor712/forgecomventure
 The branch to download from. Default: campaign-design
 
 .EXAMPLE
-powershell -ExecutionPolicy Bypass -Command "& ([scriptblock]::Create((irm https://raw.githubusercontent.com/oliandor712/forgecomventure/campaign-design/tools/concordia/update-concordia.ps1)))"
+powershell -ExecutionPolicy Bypass -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor 3072; & ([scriptblock]::Create((irm https://raw.githubusercontent.com/oliandor712/forgecomventure/campaign-design/tools/concordia/update-concordia.ps1)))"
 
 .EXAMPLE
 powershell -ExecutionPolicy Bypass -File tools\concordia\update-concordia.ps1 -ForgeDir "D:\Games\Forge"
@@ -37,7 +37,8 @@ param(
 $ErrorActionPreference = "Stop"
 # The download progress bar makes Invoke-WebRequest very slow in Windows PowerShell.
 $ProgressPreference = "SilentlyContinue"
-# Windows PowerShell 5.1 may default to TLS 1.0, which GitHub refuses.
+# Windows PowerShell 5.1 may default to TLS 1.0, which GitHub refuses. The one-line command in the
+# first example sets this itself, because it downloads this script before this line can run.
 [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
 
 if (-not (Test-Path -LiteralPath $ForgeDir -PathType Container)) {
@@ -77,6 +78,26 @@ function Get-GitBlobSha([string]$Path) {
     }
 }
 
+# Downloads one file, trying again twice after a dropped connection or a damaged download.
+function Save-GitHubFile([string]$Uri, [string]$OutFile, [string]$Sha) {
+    $problem = ""
+    for ($attempt = 1; $attempt -le 3; $attempt++) {
+        try {
+            Invoke-WebRequest -UseBasicParsing -Uri $Uri -OutFile $OutFile
+            if ((Get-GitBlobSha $OutFile) -eq $Sha) {
+                return
+            }
+            $problem = "the download came through damaged"
+        } catch {
+            $problem = $_.Exception.Message
+        }
+        if ($attempt -lt 3) {
+            Start-Sleep -Seconds (2 * $attempt)
+        }
+    }
+    throw "Could not download $Uri ($problem). Check your internet connection and run the update again."
+}
+
 Write-Host "Checking $Repo ($Branch) for Concordia changes..."
 $commit = Invoke-GitHubApi "$api/commits/$Branch"
 $parent = Invoke-GitHubApi "$api/contents/forge-gui/res/adventure?ref=$($commit.sha)"
@@ -114,10 +135,7 @@ try {
             continue
         }
         $encoded = ($file.path -split "/" | ForEach-Object { [Uri]::EscapeDataString($_) }) -join "/"
-        Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/$Repo/$($commit.sha)/$sourcePath/$encoded" -OutFile $staged
-        if ((Get-GitBlobSha $staged) -ne $file.sha) {
-            throw "The download of $($file.path) came through damaged. Run the update again."
-        }
+        Save-GitHubFile "https://raw.githubusercontent.com/$Repo/$($commit.sha)/$sourcePath/$encoded" $staged $file.sha
         Write-Host "  downloaded $($file.path)"
         $downloaded++
     }
@@ -128,7 +146,7 @@ try {
 
 $removed = @()
 if (Test-Path -LiteralPath $target) {
-    $prefixLength = (Resolve-Path -LiteralPath $target).Path.TrimEnd($separator).Length + 1
+    $prefixLength = (Get-Item -LiteralPath $target).FullName.TrimEnd($separator).Length + 1
     foreach ($item in Get-ChildItem -LiteralPath $target -Recurse -File) {
         $relative = $item.FullName.Substring($prefixLength)
         if (-not $wanted.ContainsKey($relative.ToLowerInvariant())) {

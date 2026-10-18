@@ -99,7 +99,7 @@ public class SaveLoadScene extends UIScene {
         ui.onButtonPress("save", SaveLoadScene.this::loadSave);
         back = ui.findActor("return");
         ui.onButtonPress("return", SaveLoadScene.this::back);
-        difficulty.setSelectedIndex(1);
+        difficulty.setSelectedIndex(Math.min(1, diffList.length - 1));//a plane may define a single difficulty
         difficulty.setAlignment(Align.center);
         difficulty.setX(scrollPane.getWidth() - difficulty.getWidth() + 5);
         difficulty.setY(scrollPane.getTop() - difficulty.getHeight() - 5);
@@ -439,7 +439,7 @@ public class SaveLoadScene extends UIScene {
         if (mode == Modes.NewGamePlus) {
             if (difficulty != null) {
                 difficulty.setVisible(true);
-                difficulty.setSelectedIndex(1);
+                difficulty.setSelectedIndex(Math.min(1, Config.instance().getConfigData().difficulties.length - 1));
             }
         } else {
             if (difficulty != null) {
