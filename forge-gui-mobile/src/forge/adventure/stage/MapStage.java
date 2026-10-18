@@ -783,6 +783,10 @@ public class MapStage extends GameStage {
     }
 
     public boolean exitDungeon(boolean defeated, boolean defeatedByBoss) {
+        return exitDungeon(defeated, defeatedByBoss, false);
+    }
+
+    public boolean exitDungeon(boolean defeated, boolean defeatedByBoss, boolean respawnHome) {
         if (mustClearOnExit) {
             mustClearOnExit = false;
 
@@ -794,7 +798,9 @@ public class MapStage extends GameStage {
         AdventureQuestController.instance().showQuestDialogs(this);
         isLoadingMatch = false;
         effect = null; //Reset dungeon effects.
-        if (defeated)
+        if (respawnHome)
+            WorldStage.getInstance().respawnAtHome(defeated, defeatedByBoss);
+        else if (defeated)
             WorldStage.getInstance().resetPlayerLocation();
         else if (defeatedByBoss)
             WorldStage.getInstance().defeatedFromBoss();
@@ -890,11 +896,17 @@ public class MapStage extends GameStage {
                 AdventureQuestController.instance().updateQuestsLose(currentMob);
                 AdventureQuestController.instance().showQuestDialogs(MapStage.this);
                 boolean defeated = Current.player().defeated();
+                boolean bossLoss = currentMob.getData().boss && !isArena;
                 //If hardcore mode is added, check and redirect to game over screen here
-                if (canFailDungeon && !defeated)
-                    dungeonFailedDialog(true, currentMob.getData().boss && !isArena);
+                if (!isArena && hasRespawnMap()) {
+                    if (isInSpawnPOI())
+                        WorldStage.getInstance().respawnAtHome(defeated, bossLoss); //already in the Spawn town or its house: stay in the map
+                    else
+                        exitDungeon(defeated, bossLoss, true);
+                } else if (canFailDungeon && !defeated)
+                    dungeonFailedDialog(true, bossLoss);
                 else
-                    exitDungeon(defeated, currentMob.getData().boss && !isArena);
+                    exitDungeon(defeated, bossLoss);
                 MapStage.this.stop();
                 currentMob = null;
             });

@@ -207,7 +207,9 @@ public class WorldStage extends GameStage implements SaveFileContent {
                 boolean defeatedFromBoss = currentMob.getData().boss && !isArena;
                 WorldStage.this.removeEnemy(currentMob);
                 currentMob = null;
-                if (defeated) {
+                if (!isArena && hasRespawnMap()) {
+                    respawnAtHome(defeated, defeatedFromBoss);
+                } else if (defeated) {
                     WorldStage.getInstance().resetPlayerLocation();
                 } else if (defeatedFromBoss) {
                     WorldStage.getInstance().defeatedFromBoss();
@@ -248,10 +250,17 @@ public class WorldStage extends GameStage implements SaveFileContent {
     }
 
     public void loadPOI(PointOfInterest poi) {
+        loadPOI(poi, null, 0);
+    }
+
+    public void loadPOI(PointOfInterest poi, String subMap, int spawnTargetId) {
         try {
             stop();
             TileMapScene.instance().load(poi);
-            TileMapScene.instance().setFromWorldMap(true);
+            if (subMap != null && !subMap.isEmpty())
+                TileMapScene.instance().loadSubMap(subMap, spawnTargetId);
+            else
+                TileMapScene.instance().setFromWorldMap(true);
             Forge.switchScene(TileMapScene.instance());
         } catch (Exception e) {
             System.err.println("Error loading map...");

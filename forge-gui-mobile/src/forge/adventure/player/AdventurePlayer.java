@@ -992,8 +992,24 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
         Deck newDeck = Config.instance().starterDeck(ColorSet.fromNames(colors.toCharArray()), difficulty, AdventureModes.Commander, 0, null);
         if (newDeck == null)
             return;
-        for (Map.Entry<PaperCard, Integer> entry : deck.getAllCardsInASinglePool(true, true)) {
-            cards.remove(entry.getKey(), entry.getValue());
+        //Take back the cards the placeholder starter gave, matched by name, so cards the player bought stay owned.
+        String placeholderColor = Config.instance().getConfigData().placeholderStarterColor;
+        Deck placeholder = placeholderColor == null || placeholderColor.isEmpty() ? null
+                : Config.instance().starterDeck(ColorSet.fromNames(placeholderColor.toCharArray()), difficulty, AdventureModes.Commander, 0, null);
+        for (Map.Entry<PaperCard, Integer> given : (placeholder != null ? placeholder : deck).getAllCardsInASinglePool(true, true)) {
+            int left = given.getValue();
+            List<Map.Entry<PaperCard, Integer>> owned = new ArrayList<>();
+            for (Map.Entry<PaperCard, Integer> entry : cards) {
+                if (entry.getKey().getName().equals(given.getKey().getName()))
+                    owned.add(new AbstractMap.SimpleEntry<>(entry.getKey(), entry.getValue()));
+            }
+            for (Map.Entry<PaperCard, Integer> entry : owned) {
+                int take = Math.min(left, entry.getValue());
+                cards.remove(entry.getKey(), take);
+                left -= take;
+                if (left <= 0)
+                    break;
+            }
         }
         decks.set(selectedDeckIndex, newDeck);
         deck = newDeck;

@@ -192,6 +192,16 @@ public class TileMapScene extends HudScene {
         stage.getPlayerSprite().stop();
     }
 
+    /** Loads a sub-map of rootPoint right away (an entry's loadNext waits for the next act()). Keeps the current map if it can't be loaded. */
+    public void loadSubMap(String targetMap, int spawnTargetId) {
+        try {
+            load(targetMap, spawnTargetId);
+        } catch (Exception e) {
+            System.err.println("Error loading map " + targetMap + "...");
+            e.printStackTrace();
+        }
+    }
+
     public PointOfInterestChanges getPointOfInterestChanges() {
         return WorldSave.getCurrentSave().getPointOfInterestChanges(rootPoint.getID());
     }

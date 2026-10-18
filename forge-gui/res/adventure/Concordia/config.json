@@ -224,5 +224,8 @@
   "anteByEncounter": true,
   "stolenCardPriceFactor": 3.0,
   "placeholderStarterColor": "W",
-  "persistActivatedObjects": true
+  "persistActivatedObjects": true,
+  "stripAiUnplayableCards": true,
+  "respawnMap": "../Concordia/maps/map/emberbrook_house.tmx",
+  "respawnObjectId": 0
 }

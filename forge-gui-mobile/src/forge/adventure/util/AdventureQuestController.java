@@ -612,6 +612,17 @@ public class AdventureQuestController implements Serializable {
             ret.offerDialog = response;
             return ret;
         }
+        if (allSideQuests.isEmpty()) {
+            //This plane defines no side quests: show a message instead of picking from an empty list
+            DialogData response = new DialogData();
+            response.text = localizer.getMessage("advQuestComeBackTomorrow");
+            DialogData dismiss = new DialogData();
+            dismiss.name = localizer.getMessage("advOkayLeave");
+            response.options = new DialogData[]{dismiss};
+            ret = new AdventureQuestData();
+            ret.offerDialog = response;
+            return ret;
+        }
         //todo - Should quest availability be weighted instead of uniform?
         nextQuestDate.put(pointID, LocalDate.now().toEpochDay());
 

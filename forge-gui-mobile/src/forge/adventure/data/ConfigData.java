@@ -40,5 +40,8 @@ public class ConfigData {
     public float stolenCardPriceFactor = 3f;       //Price multiplier for cards in the shop's stolen-card section.
     public String placeholderStarterColor = "";     //If set, new games start with this color's deck and the color picker is hidden. A story dialog picks the real color.
     public boolean persistActivatedObjects = false; //Map objects woken by activateMapObject stay awake when the player comes back to the map.
+    public boolean stripAiUnplayableCards = false;  //AI decks lose cards flagged AI:RemoveDeck (All or Random) before a duel; basics of the commander's colors fill the gap.
+    public String respawnMap = "";                  //If set, losing a duel (not in events or arenas) wakes the player in this sub-map of the "Spawn" POI, fully healed. Same path string the town's door uses.
+    public int respawnObjectId = 0;                 //Entry object in respawnMap to wake up at; 0 = the map's spawn=true entry.
 
 }

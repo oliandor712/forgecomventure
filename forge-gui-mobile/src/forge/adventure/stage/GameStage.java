@@ -729,6 +729,60 @@ public abstract class GameStage extends Stage {
         }//Spawn shouldn't be null
     }
 
+    /** True when the plane's config names a respawn sub-map of the Spawn POI (ConfigData.respawnMap). */
+    public static boolean hasRespawnMap() {
+        String map = Config.instance().getConfigData().respawnMap;
+        return map != null && !map.isEmpty();
+    }
+
+    /** True while the player is inside the Spawn POI's maps. */
+    public static boolean isInSpawnPOI() {
+        PointOfInterest root = TileMapScene.instance().rootPoint;
+        return MapStage.getInstance().isInMap() && root != null && "Spawn".equals(root.getData().name);
+    }
+
+    /** After a lost duel with ConfigData.respawnMap set: black out and wake up in that sub-map of Spawn, fully healed.
+     *  An equipped item still cracks only where vanilla cracks one: out of life, or lost to a boss. Call it on WorldStage. */
+    public void respawnAtHome(boolean died, boolean bossLoss) {
+        PointOfInterest poi = Current.world().findPointsOfInterest("Spawn");
+        if (poi == null) { //Spawn shouldn't be null; keep the vanilla outcome
+            if (died)
+                resetPlayerLocation();
+            else if (bossLoss)
+                defeatedFromBoss();
+            return;
+        }
+        Forge.advFreezePlayerControls = true;
+        PlayerSprite playerSprite = MapStage.getInstance().isInMap() ? MapStage.getInstance().getPlayerSprite() : getPlayerSprite();
+        playerSprite.setAnimation(CharacterSprite.AnimationTypes.Death);
+        playerSprite.playEffect(Paths.EFFECT_BLOOD, 0.5f);
+        float deathDuration = playerSprite.getActionAnimationDuration(CharacterSprite.AnimationTypes.Death, 1f);
+        Timer.schedule(new Timer.Task() {
+            @Override
+            public void run() {
+                String message = (died || bossLoss) ? Current.generateDefeatMessage(died) + "\n" : "";
+                message += Forge.getLocalizer().getMessageorUseDefault("lblWakeUpAtHome", "You black out, and wake up at home.");
+                showImageDialog(message, getDefeatBadge(), () -> FThreads.invokeInEdtNowOrLater(() -> Forge.setTransitionScreen(new CoverScreen(() -> {
+                    Forge.advFreezePlayerControls = false;
+                    String map = Config.instance().getConfigData().respawnMap;
+                    int spawnId = Config.instance().getConfigData().respawnObjectId;
+                    if (isInSpawnPOI()) {
+                        //lost inside the town or the house: swap the sub-map only; the stored world position is still the town's
+                        TileMapScene.instance().loadSubMap(map, spawnId);
+                        if (Current.player().fullHeal())
+                            MapStage.getInstance().getPlayerSprite().playEffect(Paths.EFFECT_HEAL, 2);
+                    } else {
+                        WorldStage.getInstance().setPosition(new Vector2(poi.getPosition().x - 16f, poi.getPosition().y + 16f));
+                        WorldStage.getInstance().loadPOI(poi, map, spawnId); //leaving the world map stores this position; entering a town heals
+                        Current.player().fullHeal();
+                    }
+                    WorldSave.getCurrentSave().autoSave(); //after the position is stored and the player is healed
+                    Forge.clearTransitionScreen();
+                }, ScreenUtil.getInstance().takeScreenshot()))));
+            }
+        }, deathDuration);
+    }
+
     public void defeatedFromBoss() {
         if (!Current.player().hasEquippedItem())
             return;

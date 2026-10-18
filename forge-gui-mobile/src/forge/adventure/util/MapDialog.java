@@ -28,6 +28,7 @@ import forge.adventure.scene.RewardScene;
 import forge.adventure.stage.MapStage;
 import forge.adventure.world.WorldSave;
 import forge.card.ColorSet;
+import forge.deck.Deck;
 import forge.localinstance.properties.ForgePreferences;
 import forge.model.FModel;
 import forge.item.PaperCard;
@@ -446,8 +447,13 @@ public class MapDialog {
                 Current.player().replaceStarterColor(E.setStarterColor);
             }
             if (E.returnStolenFrom != null && !E.returnStolenFrom.isEmpty()) { //Returns the cards a raider holds
-                for (PaperCard card : Current.player().takeStolenCards(E.returnStolenFrom))
+                for (PaperCard card : Current.player().takeStolenCards(E.returnStolenFrom)) {
                     Current.player().addCard(card);
+                    //the duel took it out of the deck too, so put it back where it was
+                    Deck selected = Current.player().getSelectedDeck();
+                    if (selected != null && selected.getMain().count(card) == 0)
+                        selected.getMain().add(card);
+                }
             }
             if (E.setColorIdentity != null && !E.setColorIdentity.isEmpty()) { //Sets color identity (use sparingly)
                 Current.player().setColorIdentity(E.setColorIdentity);

@@ -24,6 +24,7 @@ import forge.adventure.util.Current;
 import forge.assets.FBufferedImage;
 import forge.assets.FSkin;
 import forge.card.ColorSet;
+import forge.card.MagicColor;
 import forge.deck.*;
 import forge.game.card.CardView;
 import forge.game.GameRules;
@@ -490,6 +491,8 @@ public class DuelScene extends ForgeScene {
                 System.err.println(isDeckMissingMsg);
                 deck = this.eventData == null && canUseGeneticAI ? Aggregates.random(DeckProxy.getAllGeneticAIDecks()).getDeck() : this.playerDeck;
             }
+            if (Config.instance().getConfigData().stripAiUnplayableCards)
+                deck = withoutAiUnplayableCards(deck, mainGameType.getDeckFormat());
             RegisteredPlayer aiPlayer = RegisteredPlayer.forVariants(playerCount, appliedVariants, deck, null, false, null, null);
 
             LobbyPlayer enemyPlayer = GamePlayerUtil.createAiPlayer(currentEnemy.getName(), selectAI(currentEnemy.ai));
@@ -601,6 +604,69 @@ public class DuelScene extends ForgeScene {
     }
 
     private static final String PLACEHOLDER_MAIN = "Wastes";
+
+    private static boolean isAiUnplayable(PaperCard card) {
+        return card.getRules() != null && (card.getRules().getAiHints().getRemAIDecks() || card.getRules().getAiHints().getRemRandomDecks());
+    }
+
+    /** A copy of an AI deck without cards the AI can't play (AI:RemoveDeck), so shared decks such as the player's are untouched. */
+    private static Deck withoutAiUnplayableCards(Deck source, DeckFormat format) {
+        Deck deck = (Deck) source.copyTo(source.getName());
+        CardPool main = deck.getMain();
+        int colors = 0; //identity for filler lands, taken before anything is removed
+        for (PaperCard commander : deck.getCommanders())
+            colors |= commander.getRules().getColorIdentity().getColor();
+        if (deck.getCommanders().isEmpty()) {
+            for (Map.Entry<PaperCard, Integer> entry : main) {
+                if (!entry.getKey().getRules().getType().isLand())
+                    colors |= entry.getKey().getRules().getColorIdentity().getColor();
+            }
+        }
+        int removed = 0;
+        CardPool command = deck.get(DeckSection.Commander);
+        if (command != null && !command.isEmpty()) {
+            List<PaperCard> flagged = new ArrayList<>();
+            for (PaperCard card : command.toFlatList()) {
+                if (isAiUnplayable(card))
+                    flagged.add(card);
+            }
+            for (PaperCard card : flagged)
+                command.remove(card);
+            removed += flagged.size();
+            if (!flagged.isEmpty() && command.isEmpty() && format.hasCommander()) {
+                //promote the legal commander from the main deck whose cost is closest to the old one
+                int cmc = flagged.get(0).getRules().getManaCost().getCMC();
+                PaperCard heir = null;
+                for (Map.Entry<PaperCard, Integer> entry : main) {
+                    PaperCard card = entry.getKey();
+                    if (isAiUnplayable(card) || !format.isLegalCommander(card.getRules()) || !card.getRules().getColorIdentity().hasNoColorsExcept(colors))
+                        continue;
+                    if (heir == null || Math.abs(card.getRules().getManaCost().getCMC() - cmc) < Math.abs(heir.getRules().getManaCost().getCMC() - cmc))
+                        heir = card;
+                }
+                if (heir != null) {
+                    main.remove(heir);
+                    command.add(heir);
+                }
+            }
+        }
+        removed += main.countAll(DuelScene::isAiUnplayable);
+        main.removeIf(DuelScene::isAiUnplayable);
+        CardPool sideboard = deck.get(DeckSection.Sideboard);
+        if (sideboard != null)
+            sideboard.removeIf(DuelScene::isAiUnplayable);
+        if (removed == 0)
+            return source;
+        System.out.println("Removed " + removed + " card(s) the AI can't play from " + deck.getName() + ".");
+        List<String> basics = new ArrayList<>();
+        for (int i = 0; i < MagicColor.WUBRG.length; i++) {
+            if ((colors & MagicColor.WUBRG[i]) != 0)
+                basics.add(MagicColor.Constant.BASIC_LANDS.get(i));
+        }
+        for (int i = 0; i < removed; i++)
+            main.add(basics.isEmpty() ? PLACEHOLDER_MAIN : basics.get(i % basics.size()), 1);
+        return deck;
+    }
     private static final String PLACEHOLDER_COMMANDER = "Atogatog";
     private static final String PLACEHOLDER_ATTRACTION = "Coin-Operated Pony";
     private static final String PLACEHOLDER_CONTRAPTION = "Automatic Fidget Spinner";
