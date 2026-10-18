@@ -415,15 +415,11 @@ public class World implements Disposable, SaveFileContent {
                                 terrainMap[x][y] |= collisionBit;
                             if (biome.structures != null) {
                                 for (BiomeStructureData data : biome.structures) {
-                                    while (!structureDataMap.containsKey(data)) {
-                                        try {
-                                            Thread.sleep(10);
-                                        } catch (InterruptedException e) {
-                                            throw new RuntimeException(e);
-                                        }
-                                    }
-
                                     BiomeStructure structure = structureDataMap.get(data);
+                                    if (structure == null) {//wavefunctioncollapse failed, leave the structure out
+                                        terrainCounter += data.mappingInfo.length;
+                                        continue;
+                                    }
                                     int structureXStart = x - (biomeXStart - biomeWidth / 2) - (int) ((data.x * biomeWidth) - (data.width * biomeWidth / 2));
                                     int structureYStart = y - (biomeYStart - biomeHeight / 2) - (int) ((data.y * biomeHeight) - (data.height * biomeHeight / 2));
 

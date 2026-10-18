@@ -19,8 +19,8 @@
     "stages": [
       {
         "id": 1,
-        "name": "Return to Emberbrook",
-        "description": "Walk back to Emberbrook.",
+        "name": "Seal-day",
+        "description": "Be in Emberbrook for the Seal-day festival.",
         "anyPOI": true,
         "POITags": [
           "Start"

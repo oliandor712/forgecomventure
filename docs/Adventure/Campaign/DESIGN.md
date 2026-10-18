@@ -302,6 +302,13 @@ What the code allows today:
 - **POI positions can be pinned exactly.** In `World.java`, a POI is placed at its biome's start point plus
   `offsetX/offsetY` times the biome size, plus a random radius scaled by `radiusFactor`. With `radiusFactor: 0` the
   position is exact and the same for every save.
+- **The world must be square.** The sprite map is sized from `width` only (`World.java`), so a non-square world
+  loses trees and rocks in its extra rows. Every shipped plane is square.
+- **WFC `structures` need care on small worlds.** A structure is collapsed in 10×10 blocks; before the fix in
+  `BiomeStructure.initialize`, a leftover strip narrower than `N` threw, and `World.generateNew` waited forever for
+  it. That froze the game on "generating world". The hub biome has no structures for now.
+- **New games auto-enter the POI named `Spawn`** (`WorldStage.enter`). Emberbrook is that POI (`name: "Spawn"`,
+  `displayName: "Emberbrook"`). Losing on the overworld also sends the player back to `Spawn`.
 - **The game can only be saved on the overworld or inside town/capital maps** (`StartScene.enter`). So the overworld
   must remain the layer that connects locations. We can't make the whole region one giant chain of maps, because the
   player could never save on a route.
@@ -310,13 +317,13 @@ The Phase 1 plan is a **pinned overworld**:
 
 | Piece | How |
 |---|---|
-| World size | Small (about 120×160 tiles) in `world/world.json`, so walking between POIs is short |
+| World size | Small and square (160×160 tiles) in `world/world.json`, so walking between POIs is short |
 | Biomes | One land biome covering the whole island, surrounded by `base` ocean. One biome guarantees every pinned POI lands in a valid biome. Terrain, trees and decorations stay noise-generated but sparse |
 | Locations | Every town, route, gym and dungeon is a POI with `count: 1`, `radiusFactor: 0` and fixed offsets matching §4.1 |
 | Routes | Each route is a POI whose map is a hand-made route (long, Pokémon-style, with trainers). It has an entry at one end and an exit at the other. The overworld road between towns runs past it |
 | Roads | Auto-generated between towns, as now |
 | Wild encounters | The biome's `enemies` list is kept very short and weak, or empty. Trainers live on route maps |
-| Start | `playerStartPosX/Y` set next to Emberbrook |
+| Start | `playerStartPosX/Y` set on Emberbrook (0.5, 0.245); the game enters it on a new game because it is the `Spawn` POI |
 
 Limitation: overworld terrain is still noise-generated. The *layout* is hand-made, but the ground between POIs isn't
 painted by hand. A fully hand-painted overworld needs Java (J2, §7.2).

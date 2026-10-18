@@ -66,17 +66,20 @@ public class BiomeStructure {
             colorIdMap.put(Integer.parseInt(data.mappingInfo[i].color, 16), i);
         }
         for (int mx = 0; mx < targetWidth; mx += Math.min(targetWidth - mx, MAXIMUM_WAVEFUNCTIONSIZE)) {
-            for (int my = 0; my < targetWidth; my += Math.min(targetHeight - my, MAXIMUM_WAVEFUNCTIONSIZE)) {
-                OverlappingModel model = new OverlappingModel(sourceImage, data.N, Math.min(targetWidth - mx, MAXIMUM_WAVEFUNCTIONSIZE), Math.min(targetHeight - my, MAXIMUM_WAVEFUNCTIONSIZE), data.periodicInput, data.periodicOutput, data.symmetry, data.ground);
+            for (int my = 0; my < targetHeight; my += Math.min(targetHeight - my, MAXIMUM_WAVEFUNCTIONSIZE)) {
+                int blockWidth = Math.min(targetWidth - mx, MAXIMUM_WAVEFUNCTIONSIZE);
+                int blockHeight = Math.min(targetHeight - my, MAXIMUM_WAVEFUNCTIONSIZE);
+                OverlappingModel model = new OverlappingModel(sourceImage, data.N, blockWidth, blockHeight, data.periodicInput, data.periodicOutput, data.symmetry, data.ground);
 
                 boolean suc = false;
-                for (int i = 0; i < 10 && !suc; i++)
+                //a block smaller than the pattern size can not be collapsed
+                for (int i = 0; i < 10 && !suc && blockWidth >= data.N && blockHeight >= data.N; i++)
                     suc = model.run((int) seed + (i * 5355) + mx * my, 0);
                 if (!suc) {
-                    for (int x = 0; x < dataMap.length; x++)
-                        for (int y = 0; y < dataMap[x].length; y++)
+                    for (int x = 0; x < blockWidth; x++)
+                        for (int y = 0; y < blockHeight; y++)
                             dataMap[mx + x][my + y] = -1;
-                    return;
+                    continue;
                 }
                 image = model.graphics();
                 for (int x = 0; x < image.getWidth(); x++) {
