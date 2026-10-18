@@ -578,6 +578,11 @@ User planes aren't required. The simplest route works with Phase 1 data:
 Phase 1 ships a small `tools/concordia/copy-to-install.ps1` that does step 1. Phase 1 also needs the Java changes
 J-Ante and J-Raid, so the first playtest needs a rebuilt Forge jar. Those are the only Java changes in Phase 1.
 
+Data-only updates don't need the repository at all. `tools/concordia/update-concordia.ps1` reads the Concordia
+file list from the GitHub API, downloads only the files whose git hash differs from the installed copy, and swaps
+the folder in, keeping the old one in `adventure-backups`. A change that touches Java still needs the full
+repository and `build-and-install.ps1`.
+
 ### 7.4 Existing assets plan
 
 | Need | Existing asset |
