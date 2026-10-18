@@ -44,6 +44,8 @@ $ProgressPreference = "SilentlyContinue"
 if (-not (Test-Path -LiteralPath $ForgeDir -PathType Container)) {
     throw "Forge folder not found: '$ForgeDir'. Pass the Forge install folder with -ForgeDir."
 }
+# .NET file calls below resolve relative paths against a different folder than PowerShell does.
+$ForgeDir = (Resolve-Path -LiteralPath $ForgeDir).Path
 
 $sourcePath = "forge-gui/res/adventure/Concordia"
 $api = "https://api.github.com/repos/$Repo"
