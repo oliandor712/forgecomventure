@@ -992,12 +992,20 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
         Deck newDeck = Config.instance().starterDeck(ColorSet.fromNames(colors.toCharArray()), difficulty, AdventureModes.Commander, 0, null);
         if (newDeck == null)
             return;
-        //Take back the cards the placeholder starter gave, matched by name, so cards the player bought stay owned.
+        //Take back the cards the placeholder starter gave (only a Commander game started from it), so cards the player bought stay owned.
         String placeholderColor = Config.instance().getConfigData().placeholderStarterColor;
-        Deck placeholder = placeholderColor == null || placeholderColor.isEmpty() ? null
+        Deck placeholder = placeholderColor == null || placeholderColor.isEmpty() || getAdventureMode() != AdventureModes.Commander ? null
                 : Config.instance().starterDeck(ColorSet.fromNames(placeholderColor.toCharArray()), difficulty, AdventureModes.Commander, 0, null);
         for (Map.Entry<PaperCard, Integer> given : (placeholder != null ? placeholder : deck).getAllCardsInASinglePool(true, true)) {
+            //the starter's own printing first, then other printings of the same name
             int left = given.getValue();
+            int exact = Math.min(left, cards.count(given.getKey()));
+            if (exact > 0) {
+                cards.remove(given.getKey(), exact);
+                left -= exact;
+            }
+            if (left <= 0)
+                continue;
             List<Map.Entry<PaperCard, Integer>> owned = new ArrayList<>();
             for (Map.Entry<PaperCard, Integer> entry : cards) {
                 if (entry.getKey().getName().equals(given.getKey().getName()))
@@ -1011,7 +1019,20 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
                     break;
             }
         }
-        decks.set(selectedDeckIndex, newDeck);
+        //Replace the slot holding the placeholder starter, not whatever slot the player selected.
+        int slot = selectedDeckIndex;
+        if (placeholder != null && !placeholder.getCommanders().isEmpty()) {
+            String commanderName = placeholder.getCommanders().get(0).getName();
+            for (int i = 0; i < decks.size(); i++) {
+                Deck candidate = decks.get(i);
+                if (candidate != null && !candidate.getCommanders().isEmpty() && candidate.getCommanders().get(0).getName().equals(commanderName)) {
+                    slot = i;
+                    break;
+                }
+            }
+        }
+        decks.set(slot, newDeck);
+        selectedDeckIndex = slot;
         deck = newDeck;
         cards.addAllFlat(newDeck.getAllCardsInASinglePool(true, true).toFlatList());
         setColorIdentity(DeckProxy.getColorIdentity(newDeck));

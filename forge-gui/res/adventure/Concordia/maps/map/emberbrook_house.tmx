@@ -28,7 +28,7 @@
    <property name="spriteLayer" type="bool" value="true"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJxz42RgcMOCKQXYzKSFuYyiDAxMQJwoycCQBMTJQJyCBTOLIsx4J0bY3PlA9VxSDAz/gXoZgDQjEDNhwQuRzO0RJ85cYsAcqL9AGGQuiEb2A6nmJotAaJA6s0oGBvNKCN+oEtUPuMyF6ccFDrowMGwDmrUdau4mIs0lxr3ogJC5b7HELzJgU0MNXxi2R9KHbq4tVM5ODDUeQOCGGEQ/SG4eAX/hyhfIYaIkgKqnRRzVz9QyFwSobe4/YH5RkaCte/HpHUhzDwggyiNlFwg9j0Jzt0tAMHJ4wtIDtc2lRjggm6smQT1zYWxqmgvK03ZQbI3EBmFQWYBPLwA77nR2
+   eJxz42RgcMOCKQXYzKSFuYyiDAxMQJwoycCQBMTJQJyCBTOLIsx4J0bY3PlA9VxSDAz/gXoZgDQjEDNhwQuRzO0RJ85cYsAcqL9AGGQuiEb2A6nmJotAaGR1ZpUMDOaVqH7AZS5MPy5w0AXB3gY0czuR5pLiXhggZO5bLPGLDNjUUMMXhu2R9KGbawuVsxNDjQcQuCEG0Q+Sm0fAX7jyBXKYKAmg6mkRR/UztcwFAWqb+w+YX1QkaOtefHoH0twDAojySNkFQs+j0NztEhCMHJ6w9EBtc6kRDsjmqklQz1wYm5rmgvK0HRRbI7FBGFQW4NMLAPBScqA=
   </data>
  </layer>
  <objectgroup id="12" name="Objects" opacity="0.9">
@@ -39,14 +39,13 @@
     <property name="teleportObjectId" value="60"/>
    </properties>
   </object>
-  <object id="177" name="bed" template="../../../common/maps/obj/entry_down.tx" x="256" y="112" width="16" height="16">
+  <object id="177" name="bed" template="../../../common/maps/obj/entry_down.tx" x="272" y="112" width="16" height="16">
    <properties>
-    <property name="direction" value="left"/>
+    <property name="direction" value="right"/>
     <property name="noExit" type="bool" value="true"/>
     <property name="spawn" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="178" name="bed collision" template="../../../common/maps/obj/collision.tx" x="240" y="82" width="32" height="28"/>
-  <object id="179" name="wardrobe collision" template="../../../common/maps/obj/collision.tx" x="290" y="82" width="12" height="28"/>
+  <object id="178" name="bed collision" template="../../../common/maps/obj/collision.tx" x="272" y="82" width="32" height="28"/>
  </objectgroup>
 </map>
