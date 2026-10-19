@@ -32,6 +32,7 @@ SPEC = {
 }
 TARGET_POWER = {2: 25, 3: 34, 4: 39, 5: 46}  # card power the builder aims for at each tier
 # Per deck in decks.json, for balancing after simulations: "target" overrides TARGET_POWER (tiers 2-5), and
+# "seed_bonus" (default 25) how strongly the seed deck's cards are preferred (lower lets "target" steer more), and
 # "weakness" (default 1.0) scales how hard a tier 1 deck avoids strong cards (lower = stronger deck).
 ROLE = {'removal': {'removal', 'counter'}, 'draw': {'draw'}, 'ramp': {'ramp'}, 'wipe': {'wipe'}, 'tutor': {'tutor'}, 'fast': {'fast'}}
 SKIP_TEXT = re.compile(r'sticker|attraction|contraption|\bvote\b|ante\b|initiative|day and night|ring tempts|the monarch|venture into|speed|your speed|start your engines|planechase|scheme|you may cast .* from your graveyard', re.I)
@@ -89,7 +90,7 @@ def build(d):
         else:
             s = -0.6 * abs(pw - d.get('target', TARGET_POWER[tier])) + 4 * min(pop, 20) / 20
         if theme_match(p, theme): s += 12
-        if p['name'].lower() in seed: s += 25 if tier > 1 else 0
+        if p['name'].lower() in seed: s += d.get('seed_bonus', 25) if tier > 1 else 0
         return s
     cands = []
     for k, p in pool.items():

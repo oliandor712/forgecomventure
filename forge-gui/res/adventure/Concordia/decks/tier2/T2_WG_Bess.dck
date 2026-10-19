@@ -4,8 +4,8 @@ Description=Tier 2 (Bracket 2). white-green Bess, Soul Nourisher deck. Built dow
 [Commander]
 1 Bess, Soul Nourisher|NCC
 [Main]
-12 Plains|FDN
-22 Forest|FDN
+13 Plains|FDN
+21 Forest|FDN
 1 Blossoming Sands|BLB
 1 Botanical Plaza|SNC
 1 Cabaretti Courtyard|SNC
@@ -16,7 +16,6 @@ Description=Tier 2 (Bracket 2). white-green Bess, Soul Nourisher deck. Built dow
 1 Haazda Marshal|GRN
 1 Llanowar Mentor|FUT
 1 Secure the Wastes|DTK
-1 Backup Agent|SNC
 1 Batterbone|MH2
 1 Elvish Visionary|ORI
 1 Gemhide Sliver|TSP
@@ -25,49 +24,50 @@ Description=Tier 2 (Bracket 2). white-green Bess, Soul Nourisher deck. Built dow
 1 Ilysian Caryatid|THB
 1 Keleth, Sunmane Familiar|CMM
 1 Life from the Loam|RAV
-1 Prosperous Innkeeper|AFR
+1 Merfolk Branchwalker|XLN
+1 Metastatic Evangel|MH3
+1 Mistmeadow Skulk|SHM
 1 Resolute Reinforcements|FDN
 1 Sky Crier|SNC
 1 Sun Droplet|MRD
-1 Sunset Revelry|MID
-1 Thaumatic Compass|XLN
+1 Urdnan, Dromoka Warrior|J25
 1 Banishing Light|EOE
 1 Cat Collector|FDN
 1 Caustic Wasps|MMQ
 1 Fade into Antiquity|NEO
-1 Ferropede|5DN
 1 Fyndhorn Elder|8ED
 1 Harrow|ZEN
-1 Iron Bully|WAR
 1 Kami of Whispered Hopes|MOM
 1 Khalni Ambush|PIO
+1 Losheel, Clockwork Scholar|CMM
 1 Natural Connection|BFZ
-1 Noble Quarry|BNG
-1 Peregrin Took|LTR
+1 Oath of Gideon|PIO
+1 Presence of Gond|SHM
 1 Skyscanner|M21
+1 Spectral Procession|SHM
 1 Unquestioned Authority|JUD
+1 Armorcraft Judge|KLD
 1 Cast Out|AKH
-1 Crush Contraband|GRN
-1 Darling of the Masses|SNC
-1 Greenbelt Radical|MKM
+1 Crackdown Construct|AER
 1 Growing Ranks|PIO
-1 Harmonize|TMC
 1 Helm of the Host|BRR
 1 Irregular Cohort|CLB
 1 Kor Cartographer|ZEN
+1 Lion Heart|FIN
+1 Renata, Called to the Hunt|THB
 1 Sage's Reverie|FRF
 1 Teshar, Ancestor's Apostle|CMM
 1 Voice of Many|SCD
+1 Auspicious Starrix|IKO
 1 Farsight Mask|MRD
 1 Honden of Life's Web|CHK
 1 Overrun|FDN
 1 Soul's Majesty|CFX
-1 Sphere of Safety|RTR
 1 Thickest in the Thicket|FDC
 1 Zendikar's Roil|ORI
+1 Camaraderie|GRN
 1 Endbringer|OGW
 1 Kogla, the Titan Ape|IKO
 1 Whiptongue Hydra|FDC
 1 Foe-Razer Regent|DTK
 1 Terastodon|WWK
-1 Pathrazer of Ulamog|ROE

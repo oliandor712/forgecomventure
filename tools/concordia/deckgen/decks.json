@@ -277,7 +277,9 @@
    "/trample|forestwalk"
   ],
   "desc": "Tier 2 (Bracket 2). Mono-green cats and stompers, built from the Tempest old-border green precon.",
-  "sprite": "sprites/enemy/humanoid/swordsman_3.atlas"
+  "sprite": "sprites/enemy/humanoid/swordsman_3.atlas",
+  "target": 21,
+  "seed_bonus": 6
  },
  {
   "tier": 2,
@@ -307,7 +309,8 @@
    "/flying"
   ],
   "desc": "Tier 3 (Bracket 3). Mono-white angels, from the Realm of Legends Lyra deck.",
-  "sprite": "sprites/enemy/celestial/cromat_angel.atlas"
+  "sprite": "sprites/enemy/celestial/cromat_angel.atlas",
+  "target": 30
  },
  {
   "tier": 3,
@@ -323,7 +326,8 @@
    "/artifact"
   ],
   "desc": "Tier 3 (Bracket 3). Mono-blue big artifacts, from the Realm of Legends Muzzio deck.",
-  "sprite": "sprites/enemy/humanoid/human/artificer/esper_artificer.atlas"
+  "sprite": "sprites/enemy/humanoid/human/artificer/esper_artificer.atlas",
+  "target": 39
  },
  {
   "tier": 3,
@@ -432,7 +436,8 @@
    "Beast"
   ],
   "desc": "Tier 3 (Bracket 3). Gruul big creatures, from the Realm of Legends Zilortha deck.",
-  "sprite": "sprites/enemy/beast/dinosaur/ancient.atlas"
+  "sprite": "sprites/enemy/beast/dinosaur/ancient.atlas",
+  "target": 39
  },
  {
   "tier": 3,
@@ -448,7 +453,8 @@
    "/Aura|Equipment"
   ],
   "desc": "Tier 3 (Bracket 3). Selesnya angels and humans, from the Realm of Legends Sigarda deck.",
-  "sprite": "sprites/enemy/celestial/fallen_angel.atlas"
+  "sprite": "sprites/enemy/celestial/fallen_angel.atlas",
+  "target": 30
  },
  {
   "tier": 1,
@@ -462,7 +468,8 @@
   "file": "T1_B_Yahenni.dck",
   "name": "Yahenni's Band",
   "desc": "Tier 1 (Bracket 1). Mono-black Yahenni, Undying Partisan deck.",
-  "sprite": "sprites/enemy/undead/vampire_4.atlas"
+  "sprite": "sprites/enemy/undead/vampire_4.atlas",
+  "weakness": 0.6
  },
  {
   "tier": 1,
@@ -648,13 +655,13 @@
   "colors": "UG",
   "life": 18,
   "seed": "adventure/Realm of Legends/decks/legends/moritte.dck",
-  "theme": [
-   "Shapeshifter"
-  ],
+  "theme": [],
   "file": "T2_UG_Moritte.dck",
   "name": "Moritte's Crew",
   "desc": "Tier 2 (Bracket 2). blue-green Moritte of the Frost deck. Built down from Forge's Moritte of the Frost deck.",
-  "sprite": "sprites/enemy/undead/doppelganger.atlas"
+  "sprite": "sprites/enemy/undead/doppelganger.atlas",
+  "target": 30,
+  "seed_bonus": 6
  },
  {
   "tier": 2,
@@ -683,7 +690,9 @@
   "file": "T2_WB_Orah.dck",
   "name": "Orah's Crew",
   "desc": "Tier 2 (Bracket 2). white-black Orah, Skyclave Hierophant deck. Built down from Forge's Orah, Skyclave Hierophant deck.",
-  "sprite": "sprites/enemy/humanoid/kor/kor_blue.atlas"
+  "sprite": "sprites/enemy/humanoid/kor/kor_blue.atlas",
+  "target": 21,
+  "seed_bonus": 6
  },
  {
   "tier": 2,
@@ -691,13 +700,13 @@
   "colors": "WG",
   "life": 18,
   "seed": "adventure/Realm of Legends/decks/legends/bess.dck",
-  "theme": [
-   "Citizen"
-  ],
+  "theme": [],
   "file": "T2_WG_Bess.dck",
   "name": "Bess's Crew",
   "desc": "Tier 2 (Bracket 2). white-green Bess, Soul Nourisher deck. Built down from Forge's Bess, Soul Nourisher deck.",
-  "sprite": "sprites/enemy/humanoid/human/peasant/farmer.atlas"
+  "sprite": "sprites/enemy/humanoid/human/peasant/farmer.atlas",
+  "target": 30,
+  "seed_bonus": 6
  },
  {
   "tier": 2,
@@ -773,7 +782,8 @@
   "file": "T3_UR_Dalakos.dck",
   "name": "Dalakos's Circle",
   "desc": "Tier 3 (Bracket 3). blue-red Dalakos, Crafter of Wonders deck. Built down from Forge's Dalakos, Crafter of Wonders deck.",
-  "sprite": "sprites/enemy/humanoid/merfolk/merfolk.atlas"
+  "sprite": "sprites/enemy/humanoid/merfolk/merfolk.atlas",
+  "target": 39
  },
  {
   "tier": 3,
@@ -817,7 +827,8 @@
   "file": "T3_BRG_Coram.dck",
   "name": "Coram's Circle",
   "desc": "Tier 3 (Bracket 3). black-red-green Coram, the Undertaker deck. Built down from Forge's Coram, the Undertaker deck.",
-  "sprite": "sprites/enemy/humanoid/human/warrior/gladiator.atlas"
+  "sprite": "sprites/enemy/humanoid/human/warrior/gladiator.atlas",
+  "target": 39
  },
  {
   "tier": 3,
@@ -891,7 +902,8 @@
   "file": "T4_B_Sheoldred.dck",
   "name": "Sheoldred's Vanguard",
   "desc": "Tier 4 (Bracket 4). Mono-black Sheoldred, the Apocalypse deck. Built down from Forge's Sheoldred, the Apocalypse deck.",
-  "sprite": "sprites/enemy/aberration/phyrexian/drossgladiator.atlas"
+  "sprite": "sprites/enemy/aberration/phyrexian/drossgladiator.atlas",
+  "target": 35
  },
  {
   "tier": 4,
@@ -1054,7 +1066,8 @@
   "file": "T4_WB_Tomik.dck",
   "name": "Tomik's Vanguard",
   "desc": "Tier 4 (Bracket 4). white-black Tomik, Wielder of Law deck. Built down from Forge's Tomik, Wielder of Law deck.",
-  "sprite": "sprites/enemy/humanoid/human/artificer/archaeologist.atlas"
+  "sprite": "sprites/enemy/humanoid/human/artificer/archaeologist.atlas",
+  "target": 37
  },
  {
   "tier": 4,
@@ -1112,7 +1125,8 @@
   "file": "T4_UBG_Damia.dck",
   "name": "Damia's Vanguard",
   "desc": "Tier 4 (Bracket 4). blue-black-green Damia, Sage of Stone deck. Built down from Forge's Damia, Sage of Stone deck.",
-  "sprite": "sprites/enemy/humanoid/human/wizard/dimir_wiz.atlas"
+  "sprite": "sprites/enemy/humanoid/human/wizard/dimir_wiz.atlas",
+  "target": 42
  },
  {
   "tier": 4,
@@ -1259,7 +1273,8 @@
   "file": "T5_BG_Vraska.dck",
   "name": "Vraska's Court",
   "desc": "Tier 5 (Bracket 5). black-green Vraska, the Silencer deck. Built down from Forge's Vraska, the Silencer deck.",
-  "sprite": "sprites/enemy/humanoid/human/rogue/pirate2.atlas"
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate2.atlas",
+  "target": 44
  },
  {
   "tier": 5,
@@ -1389,7 +1404,8 @@
   "file": "T5_WU_Medomai.dck",
   "name": "Medomai's Court",
   "desc": "Tier 5 (Bracket 5). white-blue Medomai the Ageless deck. Built down from Forge's Medomai the Ageless deck.",
-  "sprite": "sprites/enemy/monstrosity/androsphinx.atlas"
+  "sprite": "sprites/enemy/monstrosity/androsphinx.atlas",
+  "target": 51
  },
  {
   "tier": 5,
