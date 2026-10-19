@@ -169,7 +169,7 @@
   "name": "Wild Hidden Bush",
   "sprite": "sprites/enemy/plant/hiddenbush.atlas",
   "deck": [
-   "decks/tutorial/G_Tutorial_3.dck"
+   "decks/tier1/T1_G_Ruxa.dck"
   ],
   "ai": "",
   "speed": 45,
@@ -193,7 +193,7 @@
   "name": "Wild Thicket Pixie",
   "sprite": "sprites/enemy/fey/pixie.atlas",
   "deck": [
-   "decks/tutorial/U_Tutorial_4.dck"
+   "decks/tier1/T1_U_Siani.dck"
   ],
   "ai": "",
   "speed": 50,
@@ -217,7 +217,8 @@
   "name": "Wild Mossfungus",
   "sprite": "sprites/enemy/plant/fungus.atlas",
   "deck": [
-   "decks/tutorial/B_Tutorial_1.dck"
+   "decks/tier1/T1_B_Ozox.dck",
+   "decks/tier1/T1_B_Skitter.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -241,7 +242,7 @@
   "name": "Wild Briar Satyr",
   "sprite": "sprites/enemy/fey/satyr.atlas",
   "deck": [
-   "decks/tutorial/R_Tutorial_2.dck"
+   "decks/tier1/T1_R_Dori.dck"
   ],
   "ai": "",
   "speed": 50,
@@ -265,7 +266,7 @@
   "name": "Cave Kavu",
   "sprite": "sprites/enemy/monstrosity/kavu.atlas",
   "deck": [
-   "decks/tutorial/G_Tutorial_3.dck"
+   "decks/tier1/T1_R_Kreat.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -290,7 +291,7 @@
   "name": "Cave Fungus",
   "sprite": "sprites/enemy/plant/fungus_golgari.atlas",
   "deck": [
-   "decks/tutorial/B_Tutorial_1.dck"
+   "decks/tier1/T1_G_Dwynen.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -315,7 +316,8 @@
   "name": "Cave Harpy",
   "sprite": "sprites/enemy/monstrosity/harpy.atlas",
   "deck": [
-   "decks/tutorial/R_Tutorial_2.dck"
+   "decks/tier1/T1_W_Anafenza.dck",
+   "decks/tier1/T1_W_Pianna.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -340,7 +342,7 @@
   "name": "Cave Pixie",
   "sprite": "sprites/enemy/fey/pixie_dimir.atlas",
   "deck": [
-   "decks/tutorial/U_Tutorial_4.dck"
+   "decks/tier1/T1_U_Malcolm.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -365,7 +367,7 @@
   "name": "Mossback Treant",
   "sprite": "sprites/enemy/plant/treant_large.atlas",
   "deck": [
-   "decks/starter/G_Starter_Normal.dck"
+   "decks/tier2/T2_G_Rishkar.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -392,7 +394,7 @@
   "name": "Hollow Shade",
   "sprite": "sprites/enemy/undead/shade.atlas",
   "deck": [
-   "decks/starter/B_Starter_Normal.dck"
+   "decks/tier2/T2_B_Sengir.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -419,7 +421,7 @@
   "name": "Deepcave Yeti",
   "sprite": "sprites/enemy/monstrosity/yeti.atlas",
   "deck": [
-   "decks/starter/R_Starter_Normal.dck"
+   "decks/tier2/T2_R_Tahngarth.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -446,7 +448,8 @@
   "name": "Duelist Bram",
   "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
   "deck": [
-   "decks/starter/W_Starter_Normal.dck"
+   "decks/tier2/T2_W_Danitha.dck",
+   "decks/tier2/T2_W_Gerrard.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -467,12 +470,13 @@
   "name": "Duelist Mira",
   "sprite": "sprites/enemy/humanoid/conjurer.atlas",
   "deck": [
-   "decks/starter/U_Starter_Normal.dck"
+   "decks/tier2/T2_U_Sai.dck",
+   "decks/tier2/T2_U_Ertai.dck"
   ],
   "ai": "",
   "speed": 40,
   "scale": 1.0,
-  "life": 20,
+  "life": 18,
   "rewards": [
    {
     "type": "gold",
@@ -488,7 +492,7 @@
   "name": "Duelist Corvin",
   "sprite": "sprites/enemy/humanoid/knight.atlas",
   "deck": [
-   "decks/starter/B_Starter_Normal.dck"
+   "decks/tier2/T2_B_Fumulus.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -509,7 +513,7 @@
   "name": "Duelist Sela",
   "sprite": "sprites/enemy/humanoid/swordsman_2.atlas",
   "deck": [
-   "decks/starter/R_Starter_Normal.dck"
+   "decks/tier2/T2_R_Eron.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -530,7 +534,7 @@
   "name": "Duelist Fenn",
   "sprite": "sprites/enemy/humanoid/swordsman_3.atlas",
   "deck": [
-   "decks/starter/G_Starter_Normal.dck"
+   "decks/tier2/T2_G_Mirri.dck"
   ],
   "ai": "",
   "speed": 40,

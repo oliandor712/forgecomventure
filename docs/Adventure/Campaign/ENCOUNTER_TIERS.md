@@ -198,6 +198,31 @@ as the tier allows. Tier 1 decks are built from commons around a creature type. 
 | 2 | two per colour | Danitha (W knights), Gerrard (W, Tempest precon), Ertai (U, Tempest precon), Sai (U thopters), Fumulus (B sacrifice), Grandmother Sengir (B), Tahngarth (R, Tempest precon), Eron (R haste), Mirri (G, Tempest precon), Rishkar (G counters) |
 | 3 | one per colour, plus the five allied pairs | Lyra (W angels), Muzzio (U artifacts), Hythonia (B), Dragonhawk (R dragons), Gargos (G hydras), Isperia (WU fliers), Gyruda (UB), Exava (BR), Zilortha (RG), Sigarda (GW) |
 
+**Who uses them on the Mossgate route** (`world/enemies.json`; a second deck is the rematch deck, used after the
+player's net wins against that enemy pass 3):
+
+| Enemy | Tier | Life | Deck(s) |
+|---|---|---|---|
+| Wild Hidden Bush | 1 | 10 | Ruxa |
+| Wild Thicket Pixie | 1 | 10 | Siani |
+| Wild Mossfungus | 1 | 10 | Ozox, then Skitter |
+| Wild Briar Satyr | 1 | 10 | Dori |
+| Cave Kavu | 1 | 11 | Kreat |
+| Cave Fungus | 1 | 11 | Dwynen |
+| Cave Harpy | 1 | 11 | Anafenza, then Pianna |
+| Cave Pixie | 1 | 11 | Malcolm |
+| Mossback Treant (Thornroot Hollow boss) | 2 | 18 | Rishkar |
+| Hollow Shade (Whisperstone Cave boss) | 2 | 18 | Sengir |
+| Deepcave Yeti (Emberdeep Grotto boss) | 2 | 18 | Tahngarth |
+| Duelist Bram (W) | 2 | 20 | Danitha, then Gerrard |
+| Duelist Mira (U) | 2 | 18 | Sai, then Ertai (Sai was the strongest Tier 2 deck, so less life) |
+| Duelist Corvin (B) | 2 | 20 | Fumulus |
+| Duelist Sela (R) | 2 | 20 | Eron |
+| Duelist Fenn (G) | 2 | 20 | Mirri |
+
+The two weakest Tier 1 decks (Ozox, Dori) went to the wild encounters, the weakest fights on the route. The Tier 3
+decks are kept for the Wardens and later fights.
+
 ## 6. Verifying a deck
 
 1. **Rate it:** `python3 tools/concordia/deck_tier.py DECK.dck --tier N --life L`. Every line must be PASS.
