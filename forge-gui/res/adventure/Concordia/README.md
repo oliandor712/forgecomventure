@@ -1,8 +1,23 @@
 # Concordia plane: where the data lives
 
-Concordia is a Forge Adventure plane. This folder holds everything that is Concordia's own. Files copied unchanged
-from another plane are marked **Forge copy**; edit those only when Concordia needs something different. Design notes
-and the reasons behind each system are in `docs/Adventure/Campaign/DESIGN.md` and `ENCOUNTER_TIERS.md`.
+Concordia is a Forge Adventure plane. This folder holds only what is Concordia's own; everything else comes from
+Forge's shared `res/adventure/common` folder. Design notes and the reasons behind each system are in
+`docs/Adventure/Campaign/DESIGN.md` and `ENCOUNTER_TIERS.md`.
+
+## How Forge finds a file
+
+Forge looks for every data file here first, then in `common`. So:
+
+- **To use Forge's version**, leave the file out of this folder. Sprites, tilesets, structures, `heroes.json`, the
+  base biome and the reward decks (`decks/rewards/`, e.g. the fancy basics the basic land shop sells) all come from
+  `common` this way.
+- **To change something**, copy the file from `common` to the same path here and edit the copy. It replaces
+  Forge's whole file, so copy only what you need to change.
+- **Items are merged instead** (`mergeCommonItems` in `config.json`): `world/items.json` lists only Concordia's own
+  items, and an item with the same name as one in `common` replaces it.
+- **Maps don't fall back.** Map paths are always inside this folder; their tilesets point at `../../../common/maps/`.
+- **Town name lists** (`world/town_names_*.txt`) must stay here: Forge reads them from the plane only, and `common`
+  has none.
 
 ## Settings: `config.json`
 
@@ -19,6 +34,7 @@ Forge's plane settings plus Concordia's own switches:
 | `worldSpeedModifier` | Walking speed on the world map (1.5 = 50% faster) |
 | `commanderHall` | The Commander Hall roster file (`world/commanders.json`) |
 | `uniquePrintings` | One findable printing per card, and Change art in the deck editor |
+| `mergeCommonItems` | `world/items.json` adds to Forge's item list instead of replacing it |
 | `tournament` | Inn tournaments: entry fee, prizes, life, opponents |
 | `restrictedCards`, `restrictedEditions`, `restrictedEvents` | Cards and sets Concordia never uses |
 
@@ -53,7 +69,6 @@ Shop names must not contain spaces.
 | `world/world.json` | `placedEnemies`: where duelists and wild encounters stand on the route, how close they notice you, when they give up |
 | `decks/tier1`, `decks/tier2`, `decks/tier3` | The 30 generated encounter decks (10 per tier); rebuild with `tools/concordia/deckgen` |
 | `decks/starter`, `decks/tutorial` | The player's starter decks and the four tutorial raider decks |
-| `decks/rewards` | **Forge copy**: reward decks, including the fancy basic lands the basic land shop sells |
 
 ## Campaign content
 
@@ -61,12 +76,7 @@ Shop names must not contain spaces.
 |---|---|
 | `world/commanders.json` | Commander Hall roster: 30 per color in three bands, which are open from the start |
 | `world/quests.json` | Story quests (28 is the opening, 1000+ the campaign) |
-| `world/items.json` | **Forge copy** plus the Emberbrook Waystone |
+| `world/items.json` | Concordia's own items: the Emberbrook Waystone, and the Chromatic Sphere start item (not in `common`) |
 | `world/points_of_interest.json` | Emberbrook (`Spawn`), Mossgate, the three caves |
 | `world/biomes/concordia.json`, `world/structures/models/mossgate_maze.png` | The Mossgate route maze |
 | `maps/map/` | Emberbrook, the house, Mossgate, `caves/` |
-
-## Forge copies kept as they are
-
-`world/heroes.json`, `world/sprites/`, `world/structures/` (except `models/mossgate_maze.png`), `world/tilesets/`,
-`world/biomes/base.json` and the `town_names_*.txt` lists come from Forge's own planes unchanged.

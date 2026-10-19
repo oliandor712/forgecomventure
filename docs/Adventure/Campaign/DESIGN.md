@@ -311,11 +311,9 @@ What the code allows today:
   `displayName: "Emberbrook"`). Losing on the overworld also sends the player back to `Spawn`. With `startMap` in
   `config.json` (Concordia sets it to the house), a new game starts in that sub-map of `Spawn` instead of its main
   map; `startObjectId` picks the entry, and 0 means the entry marked `spawn`.
-- **`autoStart` dialog objects open by themselves.** A `dialog` object with the property `autoStart` set to true
-  opens on the first free frame after its map loads, if one of its nodes' conditions passes, and after any queued
-  quest dialogs. Nothing uses it right now: the Seal Angel stands in the passage out of the bedroom instead (a
-  visible angel and two hidden triggers fill the 3-tile gap, so it can't be walked past), and all three are deleted
-  once the color is chosen. The new game's first box is the main quest's prologue (the Seal-day raid).
+- **The Seal Angel can't be walked past.** It stands in the passage out of the bedroom (a visible angel and two
+  hidden triggers fill the 3-tile gap), and all three are deleted once the color is chosen. The new game's first box
+  is the main quest's prologue (the Seal-day raid).
 - **Dialog nodes are checked in order, and each node's actions run as it loads.** A later node's condition sees the
   earlier node's changes. Put the narrower condition first, as the raiders' defeat dialogs do: "this was the last
   raider" (counter = 4) comes before "raiders are still loose" (counter < 4), whose action raises the counter.
@@ -503,7 +501,7 @@ is later sold. Enemies don't unlock commanders by being beaten.
 - The Hall has one page per color and band you can see (the `colX` character flags), and opens on your current
   commander's page. The **Next page** button (the shop's restock button) turns the page. The header names the page
   and counts the commanders found on it.
-- Each card has a button: **Choose**, **Your commander**, or the hint for finding a locked one (the card is faded).
+- Each card has a button: **Available** (green when it is your commander) or **Locked** (the card is faded).
 - Choosing makes that card the selected deck's commander and keeps the 99 (the duel still cuts off-color cards).
   If you don't own the card, the Hall gives you one. A copy in the 99 is taken out, to keep the deck singleton.
 - Unlocks are the character flag `hall.<card name>`, set (with a notice) when a card reward of a roster commander is
@@ -655,7 +653,7 @@ this document, listed in §10.
 | Color choice and commander rewards | Dialog conditions and actions, `grantRewardsChoice` |
 | Rival's color, chosen by the player's color | Five rival actors per scene, each active only when `colStart` matches, plus their decks in `decks/campaign/rival/` |
 | Seal Angels' scene | Dialog on a map object, with the color choice in `options` |
-| Shops, items | `world/shops.json`, `world/items.json` |
+| Shops, items | `world/shops.json`, `world/items.json` (only Concordia's items; `mergeCommonItems` adds Forge's `common` list) |
 | Sprites, music | References to existing `common/` assets |
 
 ### 7.2 (b) Java changes in `forge-gui-mobile/src/forge/adventure`
@@ -707,7 +705,7 @@ repository and `build-and-install.ps1`.
 | Seal Angels | `common/sprites/enemy/celestial/*` (to choose from) |
 | Trainers, raiders, grunts, Wardens | `common/sprites/enemy/humanoid/*` (knight, paladin, conjurer, swordsman, elf, merfolk, etc.) |
 | Map tiles | `common/maps/tileset/*.tsx` |
-| POI icons | Existing `world/sprites/map_sprites.atlas` (copied from an existing plane) |
+| POI icons | Existing `world/sprites/map_sprites.atlas` (from `common`) |
 | Portraits | `common/sprites/heroes/avatar.atlas` |
 | Music | `common/music` |
 

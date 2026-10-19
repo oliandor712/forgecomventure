@@ -692,7 +692,7 @@ public class RewardScene extends UIScene {
         }
     }
 
-    /** Under each Hall card: pick it as the commander, or the hint for finding it while it's locked. */
+    /** Under each Hall card: pick it as the commander, or "Locked". */
     private class HallButton extends TextraButton {
         private final RewardActor rewardActor;
         private final CommanderHallData entry;

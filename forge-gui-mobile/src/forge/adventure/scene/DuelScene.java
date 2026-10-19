@@ -611,6 +611,9 @@ public class DuelScene extends ForgeScene {
 
     /** A copy of an AI deck without cards the AI can't play (AI:RemoveDeck), so shared decks such as the player's are untouched. */
     private static Deck withoutAiUnplayableCards(Deck source, DeckFormat format) {
+        CardPool sourceCommand = source.get(DeckSection.Commander);
+        if (source.getMain().countAll(DuelScene::isAiUnplayable) == 0 && (sourceCommand == null || sourceCommand.countAll(DuelScene::isAiUnplayable) == 0))
+            return source; //nothing to strip, so no copy
         Deck deck = (Deck) source.copyTo(source.getName());
         CardPool main = deck.getMain();
         int colors = 0; //identity for filler lands, taken before anything is removed

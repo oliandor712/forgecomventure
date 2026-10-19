@@ -14,6 +14,21 @@ public class ItemListData {
         if (handle.exists()) {
             itemList = json.fromJson(Array.class, ItemData.class, handle);
         }
+        if (itemList != null && Config.instance().getConfigData().mergeCommonItems) {
+            //The plane's items.json only lists its own items and overrides; everything else comes from common.
+            FileHandle common = new FileHandle(Config.instance().getCommonFilePath(Paths.ITEMS));
+            if (common.exists() && !common.path().equals(handle.path())) {
+                Array<ItemData> merged = json.fromJson(Array.class, ItemData.class, common);
+                for (ItemData own : new Array.ArrayIterator<>(itemList)) {
+                    for (int i = merged.size - 1; i >= 0; i--) {
+                        if (merged.get(i).name.equalsIgnoreCase(own.name))
+                            merged.removeIndex(i);
+                    }
+                    merged.add(own);
+                }
+                itemList = merged;
+            }
+        }
     }
     public static ItemData getItem(String name) {
         if (itemList == null)

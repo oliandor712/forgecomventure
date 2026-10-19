@@ -235,7 +235,6 @@ public class MapStage extends GameStage {
         actors.clear();
         collisionRect.clear();
         waypoints.clear();
-        autoStartDialogs.clear();
 
         if (collisionGroup != null)
             collisionGroup.remove();
@@ -671,8 +670,6 @@ public class MapStage extends GameStage {
                             {
                                 dialog.setVisible(false);
                             }
-                            if (prop.containsKey("autoStart") && Boolean.parseBoolean(prop.get("autoStart").toString()))
-                                autoStartDialogs.add(dialog); //opens by itself once the map is ready, if a node's condition passes
                             addMapActor(obj, dialog);
                         }
                         break;
@@ -1106,7 +1103,6 @@ public class MapStage extends GameStage {
         for (Integer i : idsToRemove) deleteObject(i);
     }
 
-    private final ArrayList<DialogActor> autoStartDialogs = new ArrayList<>(); //dialog objects with autoStart=true, opened on the first free frame after loading
     private final ArrayList<NavigationVertex> navVerticesList = new ArrayList<>(256);
     private final ProgressableGraphPath<NavigationVertex> emptyFallbackNavPath = new ProgressableGraphPath<>(0);
 
@@ -1114,10 +1110,6 @@ public class MapStage extends GameStage {
     protected void onActing(float delta) {
         if (isPaused() || isDialogOnlyInput() || Forge.advFreezePlayerControls || isPlayerLeavingDungeon)
             return;
-        if (!autoStartDialogs.isEmpty() && !AdventureQuestController.instance().hasPendingDialogs()) { //quest dialogs go first
-            autoStartDialogs.remove(0).startAutoDialog();
-            return;
-        }
 
         if (freezeAllEnemyBehaviors) {
             if (!positions.contains(player.pos())) {
