@@ -1,0 +1,151 @@
+{
+  "width": 270,
+  "height": 480,
+  "yDown": true,
+  "elements": [
+    {
+      "type": "Image",
+      "name": "lastScreen",
+      "width": 270,
+      "height": 480
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "fW",
+      "text": "[+W]",
+      "x": 8,
+      "y": 8,
+      "width": 26,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "fU",
+      "text": "[+U]",
+      "x": 36,
+      "y": 8,
+      "width": 26,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "fB",
+      "text": "[+B]",
+      "x": 64,
+      "y": 8,
+      "width": 26,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "fR",
+      "text": "[+R]",
+      "x": 92,
+      "y": 8,
+      "width": 26,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "fG",
+      "text": "[+G]",
+      "x": 120,
+      "y": 8,
+      "width": 26,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "fM",
+      "text": "Multi",
+      "x": 148,
+      "y": 8,
+      "width": 34,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "b1",
+      "text": "I",
+      "x": 186,
+      "y": 8,
+      "width": 25,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "b2",
+      "text": "II",
+      "x": 213,
+      "y": 8,
+      "width": 25,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "b3",
+      "text": "III",
+      "x": 240,
+      "y": 8,
+      "width": 25,
+      "height": 20
+    },
+    {
+      "type": "Window",
+      "name": "hallList",
+      "x": 8,
+      "y": 34,
+      "width": 254,
+      "height": 260
+    },
+    {
+      "type": "Scroll",
+      "name": "preview",
+      "text": "Image",
+      "style": "nobg",
+      "x": 10,
+      "y": 302,
+      "width": 110,
+      "height": 150
+    },
+    {
+      "type": "Label",
+      "name": "status",
+      "x": 128,
+      "y": 302,
+      "width": 136,
+      "height": 60
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "choose",
+      "text": "Choose",
+      "x": 130,
+      "y": 380,
+      "width": 130,
+      "height": 28,
+      "binding": "Use"
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "return",
+      "text": "tr(lblBack)",
+      "x": 130,
+      "y": 420,
+      "width": 130,
+      "height": 28,
+      "binding": "Back"
+    }
+  ]
+}

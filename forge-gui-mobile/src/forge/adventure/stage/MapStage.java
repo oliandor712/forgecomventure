@@ -644,8 +644,8 @@ public class MapStage extends GameStage {
                         break;
                     case "commanderhall":
                         MapActor hallActor = new OnCollide(() -> {
-                            RewardScene.instance().loadCommanderHall(prop.containsKey("hallName") ? prop.get("hallName").toString() : "Commander Hall");
-                            Forge.switchScene(RewardScene.instance());
+                            CommanderHallScene.instance().load(prop.containsKey("hallName") ? prop.get("hallName").toString() : "Commander Hall");
+                            Forge.switchScene(CommanderHallScene.instance());
                         });
                         addMapActor(obj, hallActor);
                         if (prop.containsKey("signAtlas") && prop.containsKey("signSprite")) {

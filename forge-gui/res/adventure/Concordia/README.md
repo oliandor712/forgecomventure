@@ -55,7 +55,7 @@ its door tile, sign and shop list.
 | `shop_colorless.tx` | One Size Fits All: colorless cards | `ConcordiaColorless` |
 | `shop_basic_lands.tx` | Basics for Every Color | `ConcordiaBasicLands` |
 | `shop_boosters.tx` | Pack To Basics: booster packs | `ConcordiaBoosters` |
-| `commanderhall.tx` | The Commander Hall | roster in `world/commanders.json` |
+| `commanderhall.tx` | The Commander Hall | roster in `world/commanders.json`; the list screen's layouts in `ui/commander_hall*.json` |
 | `inn.tx` | Inn: tournaments, temporary life, card selling | tournament settings in `config.json` |
 | `shardtrader.tx` | Shard trader | Forge's built-in trader |
 

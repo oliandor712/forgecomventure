@@ -1,0 +1,151 @@
+{
+  "width": 480,
+  "height": 270,
+  "yDown": true,
+  "elements": [
+    {
+      "type": "Image",
+      "name": "lastScreen",
+      "width": 480,
+      "height": 270
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "fW",
+      "text": "[+W]",
+      "x": 10,
+      "y": 8,
+      "width": 28,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "fU",
+      "text": "[+U]",
+      "x": 40,
+      "y": 8,
+      "width": 28,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "fB",
+      "text": "[+B]",
+      "x": 70,
+      "y": 8,
+      "width": 28,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "fR",
+      "text": "[+R]",
+      "x": 100,
+      "y": 8,
+      "width": 28,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "fG",
+      "text": "[+G]",
+      "x": 130,
+      "y": 8,
+      "width": 28,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "fM",
+      "text": "Multi",
+      "x": 160,
+      "y": 8,
+      "width": 36,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "b1",
+      "text": "Med.",
+      "x": 204,
+      "y": 8,
+      "width": 42,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "b2",
+      "text": "Seas.",
+      "x": 248,
+      "y": 8,
+      "width": 42,
+      "height": 20
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "b3",
+      "text": "Leg.",
+      "x": 292,
+      "y": 8,
+      "width": 42,
+      "height": 20
+    },
+    {
+      "type": "Window",
+      "name": "hallList",
+      "x": 10,
+      "y": 34,
+      "width": 306,
+      "height": 226
+    },
+    {
+      "type": "Scroll",
+      "name": "preview",
+      "text": "Image",
+      "style": "nobg",
+      "x": 345,
+      "y": 30,
+      "width": 100,
+      "height": 138
+    },
+    {
+      "type": "Label",
+      "name": "status",
+      "x": 322,
+      "y": 172,
+      "width": 152,
+      "height": 30
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "choose",
+      "text": "Choose",
+      "x": 335,
+      "y": 208,
+      "width": 120,
+      "height": 24,
+      "binding": "Use"
+    },
+    {
+      "type": "TextButton",
+      "selectable": true,
+      "name": "return",
+      "text": "tr(lblBack)",
+      "x": 335,
+      "y": 238,
+      "width": 120,
+      "height": 24,
+      "binding": "Back"
+    }
+  ]
+}

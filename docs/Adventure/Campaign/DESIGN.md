@@ -499,18 +499,23 @@ was, with the `LegendShop` sign). It reads the roster in `world/commanders.json`
 
 | Band | Per color | Unlocked from the start | The rest |
 |---|---|---|---|
-| Mediocre | 10 | the two Tier 1 deck commanders of that color, plus one more | unlock when found |
-| Seasoned | 10 | your starter | unlock when found |
-| Legendary | 10 | none | unlock when found |
+| Mediocre | 10, plus the tier 1 deck commanders | the two original Tier 1 deck commanders of that color, plus one more | unlock when found |
+| Seasoned | 10, plus the tier 2 deck commanders | your starter | unlock when found |
+| Legendary | 10, plus the tier 3-5 deck commanders | none | unlock when found |
+
+Every encounter deck's commander is on the roster (214 commanders in all); two- and three-color commanders sit in
+their own color group and show once all their colors are unlocked.
 
 A roster commander unlocks when its **card** comes to the player: as a reward (loot, a deck card from an enemy, a
 quest reward, a booster pack) or bought in a shop. Owning the card is enough, and the unlock stays even if the card
 is later sold. Enemies don't unlock commanders by being beaten.
 
-- The Hall has one page per color and band you can see (the `colX` character flags), and opens on your current
-  commander's page. The **Next page** button (the shop's restock button) turns the page. The header names the page
-  and counts the commanders found on it.
-- Each card has a button: **Available** (green when it is your commander) or **Locked** (the card is faded).
+- The Hall is a **list screen** (`CommanderHallScene`, layouts in `Concordia/ui/commander_hall*.json`): one scrolling
+  row per commander you can see (all its colors unlocked, the `colX` character flags), with its colors, band and
+  status (**Current**, **Available** or **Locked**, faded). Selecting a row shows the card large beside the list.
+  Toggles above the list filter by color (W, U, B, R, G; a commander shows if it has any selected color), **Multi**
+  (two or more colors) and band. The header counts the commanders found. It opens on your current commander.
+- **Choose** makes the selected available commander yours.
 - Choosing makes that card the selected deck's commander and keeps the 99 (the duel still cuts off-color cards).
   If you don't own the card, the Hall gives you one. A copy in the 99 is taken out, to keep the deck singleton.
 - Unlocks are the character flag `hall.<card name>`, set (with a notice) when a card reward of a roster commander is
@@ -674,7 +679,7 @@ this document, listed in §10.
 | **J-Start** | Seal Angels' color choice | Replace the new-game color picker with the P1 scene. Today `WorldSave.generateNewWorld` takes the starting color at creation, so the starter deck has to be assigned after the choice. Until then, the new-game picker stays, and the angels confirm it | Medium | 2 |
 | **J-Gender** | Rival of the opposite gender, chosen automatically | A dialog condition `isFemale` (in `MapDialog` and `MenuScene`, next to `colorIdentity`). Optionally a `$(rivalname)` token next to `$(playername)` in `AdventureQuestData` | Small | 2 |
 | **J-CI** | Commander limited to unlocked colors | Read the `colX` flags. Enforce in `AdventureDeckEditor` (commander section) and in `DuelScene.applyAdventureDeckRules` | Small–medium | 2 |
-| **J-Hall** | Commander change only at Halls | **Built** (§6.2a): a `commanderhall` map object opens the Commander Hall shop; the deck editor's commander slot is locked | Medium | 2 |
+| **J-Hall** | Commander change only at Halls | **Built** (§6.2a): a `commanderhall` map object opens the Commander Hall list screen; the deck editor's commander slot is locked | Medium | 2 |
 
 | J7 | Portraits in dialog | A `portrait` field in `DialogData`, shown by `MapDialog` (existing avatar art) | Small | 3 |
 | J5 | Chapter / Seal UI | A Seal case screen (the badge case analog) and chapter title cards | Medium | 3 |
