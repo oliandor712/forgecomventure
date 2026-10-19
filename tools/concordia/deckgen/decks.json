@@ -1,0 +1,423 @@
+[
+ {
+  "tier": 1,
+  "file": "T1_W_Pianna.dck",
+  "name": "Nomad Patrol",
+  "commander": "Pianna, Nomad Captain",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Soldier",
+   "Nomad"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white human soldiers that swarm in together."
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Anafenza.dck",
+  "name": "Kin-Tree Spirits",
+  "commander": "Anafenza, Kin-Tree Spirit",
+  "colors": "W",
+  "life": 10,
+  "theme": [
+   "Spirit",
+   "/bolster",
+   "/\\+1/\\+1 counter"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white spirits that bolster as they arrive."
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Siani.dck",
+  "name": "Stormwing Flock",
+  "commander": "Siani, Eye of the Storm",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Bird",
+   "Drake",
+   "/Flying"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue birds and drakes that peck from the air."
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Malcolm.dck",
+  "name": "Reef Pirates",
+  "commander": "Malcolm, Keen-Eyed Navigator",
+  "colors": "U",
+  "life": 10,
+  "theme": [
+   "Pirate",
+   "Siren",
+   "Merfolk"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue pirates and sirens."
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Ozox.dck",
+  "name": "Clattering Bones",
+  "commander": "Ozox, the Clattering King",
+  "colors": "B",
+  "life": 10,
+  "theme": [
+   "Skeleton",
+   "Zombie"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black skeletons and zombies that keep coming back."
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Skitter.dck",
+  "name": "Sewer Rats",
+  "commander": "Lord Skitter, Sewer King",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Rat"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black rat swarm."
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Kreat.dck",
+  "name": "Goblin Mob",
+  "commander": "General Kreat, the Boltbringer",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Goblin"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red goblin mob."
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Dori.dck",
+  "name": "Delvers' Hall",
+  "commander": "Dori, Bearer of Friends",
+  "colors": "R",
+  "life": 10,
+  "theme": [
+   "Dwarf",
+   "/Treasure"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red dwarves with a little treasure."
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Dwynen.dck",
+  "name": "Gilt-Leaf Elves",
+  "commander": "Dwynen, Gilt-Leaf Daen",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Elf"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green elves."
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Ruxa.dck",
+  "name": "Plain Beasts",
+  "commander": "Ruxa, Patient Professor",
+  "colors": "G",
+  "life": 10,
+  "theme": [
+   "noabil",
+   "Bear",
+   "Beast"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green vanilla beasts and bears."
+ },
+ {
+  "tier": 2,
+  "file": "T2_W_Danitha.dck",
+  "name": "Paragon's Order",
+  "commander": "Danitha Capashen, Paragon",
+  "colors": "W",
+  "life": 17,
+  "seed": "adventure/Realm of Legends/decks/legends/danitha.dck",
+  "theme": [
+   "Knight",
+   "/Aura|Equipment|first strike"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-white knights with auras and equipment, built from the Realm of Legends Danitha deck."
+ },
+ {
+  "tier": 2,
+  "file": "T2_W_Gerrard.dck",
+  "name": "Weatherlight Crew",
+  "commander": "Gerrard Capashen",
+  "colors": "W",
+  "life": 16,
+  "seed": "adventure/Realm of Legends/decks/starter/commanderprecon/TMP - Old Border White.dck",
+  "theme": [
+   "Human",
+   "/gain .* life"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-white defenders, built from the Tempest old-border white precon."
+ },
+ {
+  "tier": 2,
+  "file": "T2_U_Ertai.dck",
+  "name": "Ertai's Academy",
+  "commander": "Ertai, Wizard Adept",
+  "colors": "U",
+  "life": 16,
+  "seed": "adventure/Realm of Legends/decks/starter/commanderprecon/TMP - Old Border Blue.dck",
+  "theme": [
+   "Wizard",
+   "/Counter target"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-blue wizards and counters, built from the Tempest old-border blue precon."
+ },
+ {
+  "tier": 2,
+  "file": "T2_U_Sai.dck",
+  "name": "Thopter Workshop",
+  "commander": "Sai, Master Thopterist",
+  "colors": "U",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/sai.dck",
+  "theme": [
+   "Artifact",
+   "Thopter",
+   "/artifact"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-blue artifacts and thopters, built from the Realm of Legends Sai deck."
+ },
+ {
+  "tier": 2,
+  "file": "T2_B_Fumulus.dck",
+  "name": "Infestation",
+  "commander": "Fumulus, the Infestation",
+  "colors": "B",
+  "life": 17,
+  "seed": "adventure/Realm of Legends/decks/legends/fumulus.dck",
+  "theme": [
+   "Insect",
+   "/sacrifice",
+   "/dies"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-black sacrifice, built from the Realm of Legends Fumulus deck."
+ },
+ {
+  "tier": 2,
+  "file": "T2_B_Sengir.dck",
+  "name": "Sengir Curses",
+  "commander": "Grandmother Sengir",
+  "colors": "B",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/grandmother_sengir.dck",
+  "theme": [
+   "/-1/-1|gets -",
+   "Horror"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-black shrinking and attrition, built from the Realm of Legends Grandmother Sengir deck."
+ },
+ {
+  "tier": 2,
+  "file": "T2_R_Tahngarth.dck",
+  "name": "Talruum Charge",
+  "commander": "Tahngarth, Talruum Hero",
+  "colors": "R",
+  "life": 16,
+  "seed": "adventure/Realm of Legends/decks/starter/commanderprecon/TMP - Old Border Red.dck",
+  "theme": [
+   "Minotaur",
+   "/haste|deals .* damage"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-red minotaurs and burn, built from the Tempest old-border red precon."
+ },
+ {
+  "tier": 2,
+  "file": "T2_R_Eron.dck",
+  "name": "Relentless Riot",
+  "commander": "Eron the Relentless",
+  "colors": "R",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/eron.dck",
+  "theme": [
+   "/haste",
+   "Berserker",
+   "Warrior"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-red haste aggro, built from the Realm of Legends Eron deck."
+ },
+ {
+  "tier": 2,
+  "file": "T2_G_Mirri.dck",
+  "name": "Rath Wildcats",
+  "commander": "Mirri, Cat Warrior",
+  "colors": "G",
+  "life": 16,
+  "seed": "adventure/Realm of Legends/decks/starter/commanderprecon/TMP - Old Border Green.dck",
+  "theme": [
+   "Cat",
+   "/trample|forestwalk"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-green cats and stompers, built from the Tempest old-border green precon."
+ },
+ {
+  "tier": 2,
+  "file": "T2_G_Rishkar.dck",
+  "name": "Peema Renegades",
+  "commander": "Rishkar, Peema Renegade",
+  "colors": "G",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/rishkar.dck",
+  "theme": [
+   "/\\+1/\\+1 counter",
+   "Elf"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-green +1/+1 counters, built from the Realm of Legends Rishkar deck."
+ },
+ {
+  "tier": 3,
+  "file": "T3_W_Lyra.dck",
+  "name": "Dawnbringer Host",
+  "commander": "Lyra Dawnbringer",
+  "colors": "W",
+  "life": 30,
+  "seed": "adventure/Realm of Legends/decks/legends/lyra.dck",
+  "theme": [
+   "Angel",
+   "/flying"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-white angels, from the Realm of Legends Lyra deck."
+ },
+ {
+  "tier": 3,
+  "file": "T3_U_Muzzio.dck",
+  "name": "Visionary Foundry",
+  "commander": "Muzzio, Visionary Architect",
+  "colors": "U",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/muzzio.dck",
+  "theme": [
+   "Artifact",
+   "Construct",
+   "/artifact"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-blue big artifacts, from the Realm of Legends Muzzio deck."
+ },
+ {
+  "tier": 3,
+  "file": "T3_B_Hythonia.dck",
+  "name": "Gorgon's Gaze",
+  "commander": "Hythonia the Cruel",
+  "colors": "B",
+  "life": 30,
+  "seed": "adventure/Realm of Legends/decks/legends/hythonia.dck",
+  "theme": [
+   "Gorgon",
+   "/deathtouch|destroy"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-black deathtouch control, from the Realm of Legends Hythonia deck."
+ },
+ {
+  "tier": 3,
+  "file": "T3_R_Dragonhawk.dck",
+  "name": "Tempest Roost",
+  "commander": "Dragonhawk, Fate's Tempest",
+  "colors": "R",
+  "life": 30,
+  "seed": "adventure/Realm of Legends/decks/legends/dragonhawk.dck",
+  "theme": [
+   "Dragon",
+   "/flying"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-red dragons, from the Realm of Legends Dragonhawk deck."
+ },
+ {
+  "tier": 3,
+  "file": "T3_G_Gargos.dck",
+  "name": "Hydra Den",
+  "commander": "Gargos, Vicious Watcher",
+  "colors": "G",
+  "life": 30,
+  "seed": "adventure/Realm of Legends/decks/legends/gargos.dck",
+  "theme": [
+   "Hydra",
+   "/fight|\\+1/\\+1 counter"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-green hydras, from the Realm of Legends Gargos deck."
+ },
+ {
+  "tier": 3,
+  "file": "T3_WU_Isperia.dck",
+  "name": "Inscrutable Skies",
+  "commander": "Isperia the Inscrutable",
+  "colors": "WU",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/isperia.dck",
+  "theme": [
+   "/flying",
+   "Sphinx",
+   "Bird"
+  ],
+  "desc": "Tier 3 (Bracket 3). Azorius fliers, from the Realm of Legends Isperia deck."
+ },
+ {
+  "tier": 3,
+  "file": "T3_UB_Gyruda.dck",
+  "name": "Doom of the Depths",
+  "commander": "Gyruda, Doom of Depths",
+  "colors": "UB",
+  "life": 30,
+  "seed": "adventure/Realm of Legends/decks/legends/gyruda.dck",
+  "theme": [
+   "/mill|graveyard",
+   "Kraken",
+   "Horror"
+  ],
+  "desc": "Tier 3 (Bracket 3). Dimir mill-and-steal, from the Realm of Legends Gyruda deck."
+ },
+ {
+  "tier": 3,
+  "file": "T3_BR_Exava.dck",
+  "name": "Blood Witch Revue",
+  "commander": "Exava, Rakdos Blood Witch",
+  "colors": "BR",
+  "life": 30,
+  "seed": "adventure/Realm of Legends/decks/legends/exava.dck",
+  "theme": [
+   "/unleash|\\+1/\\+1 counter",
+   "Devil",
+   "Vampire"
+  ],
+  "desc": "Tier 3 (Bracket 3). Rakdos unleash aggro, from the Realm of Legends Exava deck."
+ },
+ {
+  "tier": 3,
+  "file": "T3_RG_Zilortha.dck",
+  "name": "Strength Incarnate",
+  "commander": "Zilortha, Strength Incarnate",
+  "colors": "RG",
+  "life": 32,
+  "seed": "adventure/Realm of Legends/decks/legends/zilortha.dck",
+  "theme": [
+   "/trample",
+   "Dinosaur",
+   "Beast"
+  ],
+  "desc": "Tier 3 (Bracket 3). Gruul big creatures, from the Realm of Legends Zilortha deck."
+ },
+ {
+  "tier": 3,
+  "file": "T3_GW_Sigarda.dck",
+  "name": "Host of Herons",
+  "commander": "Sigarda, Host of Herons",
+  "colors": "WG",
+  "life": 30,
+  "seed": "adventure/Realm of Legends/decks/legends/sigarda.dck",
+  "theme": [
+   "Angel",
+   "Human",
+   "/Aura|Equipment"
+  ],
+  "desc": "Tier 3 (Bracket 3). Selesnya angels and humans, from the Realm of Legends Sigarda deck."
+ }
+]

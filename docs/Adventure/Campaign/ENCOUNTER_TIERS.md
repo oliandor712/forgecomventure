@@ -14,9 +14,10 @@ Tools:
 |---|---|---|---|
 | Used for | Wild encounters, raiders, route trainers early on, tutorials | Route trainers, gym trainers, the rival's early fights | Wardens, the Champion's Paragons, secret legends, late rival fights |
 | Enemy life | 10-12 | 15-20 | 25-35 |
-| Reference point | Below Commander Bracket 1: deliberately under-built | Bracket 2: Concordia's own starters, about a stock precon | Bracket 3: Forge's Realm of Legends enemy decks, minus anything the AI can't play |
+| Commander Bracket | **Bracket 1 (Exhibition)**: themed, deliberately under-built | **Bracket 2 (Core)**: Concordia's own starters, about a stock precon | **Bracket 3 (Upgraded)**: Forge's Realm of Legends enemy decks, minus anything the AI can't play |
 | Commander | Common or uncommon, mana value 2-4, simple text | Common, uncommon or rare, mana value 3-5, useful every game | Uncommon, rare or mythic, mana value 3-7, the deck's engine |
 | Lands | 40-46, all basic | 36-39, mostly basic | 33-38, with good nonbasics |
+| Land count check (Karsten, §2 step 3) | not checked: Tier 1 is over-landed on purpose | within ±3 | within ±3 |
 | Ramp | 0-3 | 2-8 | 8-16 |
 | Fast mana (Sol Ring, moxen, rituals) | 0 | 0-1 | 0-3 |
 | Card draw | 0-3 | 2-10 | 6-14 |
@@ -25,8 +26,9 @@ Tools:
 | Tutors | 0 | 0-1 | 0-3 |
 | Average mana value (nonland) | 2.5-3.4 | 2.6-3.6 | 2.8-3.9 |
 | Creatures | 35-60 | 26-36 | 16-40 |
-| Average card power (§3) | 18 or less | 18-30 | 26 or more |
-| Rares / mythics | 2 or fewer / 0 | 10 or fewer / 1 or fewer | No real limit |
+| Average card power (§3a) | 18 or less | 18-30 | 26 or more |
+| Rarity | Commons, plus up to 15 uncommons. No rares or mythics | 10 rares or fewer, 1 mythic or fewer | No real limit |
+| Card types (Moxfield grouping) | at least 6 noncreature cards, 4 of them instants or sorceries; creatures at most 85% | at least 4 instants, 3 sorceries, 4 artifacts, 2 enchantments; no type above 60% | as Tier 2 |
 | Game Changers | 0 | 0 | 3 or fewer |
 | Mass land denial, chained extra turns | none | none | none |
 | Two-card combos | none | none | late-game only |
@@ -60,16 +62,21 @@ Work in this order. Each step narrows the next.
    - Tier 1 has none of these on purpose.
    - Tier 2 uses mostly single-target, sorcery-speed answers.
    - Tier 3 adds instant-speed answers and 1-4 wipes.
-5. **Fill the creatures to the tier's count**, along the curve below. These are rough counts of nonland cards by
-   mana value, rocks included.
+5. **Fill the creatures to the tier's count**, along the curve below. These are counts of nonland cards by mana
+   value, rocks included, and `deck_tier.py` warns outside them. The Tier 2 and 3 ranges are the 10th-90th
+   percentiles of the 180 Commander precons and the 901 complete Realm of Legends decks (§7).
 
-   | Mana value | 1 | 2 | 3 | 4 | 5 | 6+ |
+   | Mana value | 0-1 | 2 | 3 | 4 | 5 | 6+ |
    |---|---|---|---|---|---|---|
    | Tier 1 (below-rate bodies, e.g. a 2/2 for 3) | 5-8 | 15-21 | 11-16 | 5-8 | 3-10 | 0-2 |
-   | Tier 2 (fair bodies, one keyword) | 2-4 | 9-11 | 8-10 | 6-8 | 3-5 | 2-3 |
-   | Tier 3 (efficient bodies, value engines) | 4-8 | 10-14 | 10-14 | 8-12 | 4-7 | 3-6 |
+   | Tier 2 (fair bodies, one keyword) | 2-7 | 8-18 | 10-21 | 7-15 | 4-11 | 3-12 |
+   | Tier 3 (efficient bodies, value engines) | 3-12 | 9-22 | 10-21 | 5-15 | 3-11 | 2-10 |
 
-6. **Spend the power budget.** The deck's average card power must land in the tier's band (§3).
+   Mix the card types as Moxfield groups them (creature first, then planeswalker, battle, instant, sorcery, artifact,
+   enchantment), to the tier's card-type row. In a two-colour deck, each colour needs at least 14 sources and a
+   share of the lands near its share of the coloured pips.
+
+6. **Spend the power budget.** The deck's average card power must land in the tier's band (§3a).
    - To go up, swap filler for higher-power cards in the same role, for example a stronger 3-drop for a weaker one.
    - To go down, do the reverse.
    - Never raise power by adding a card outside the tier's lists in §4.
@@ -87,7 +94,20 @@ Work in this order. Each step narrows the next.
   6. Only then add up to 3 Game Changers.
 - **Tier 2 → 1:** the reverse. Strip ramp, draw and removal, then swap efficient bodies for below-rate ones.
 
-## 3. Card power score
+## 3. Brackets
+
+Each tier is one official Commander Bracket. The bracket's rules are hard checks in `deck_tier.py`:
+
+| | Bracket 1 (Tier 1) | Bracket 2 (Tier 2) | Bracket 3 (Tier 3) |
+|---|---|---|---|
+| Game Changers | none | none | up to 3 |
+| Tutors | none | 1 or fewer | 3 or fewer |
+| Mass land denial | none | none | none |
+| Extra turns | none | none | 1, never chained |
+| Two-card combos | none | none | late-game only |
+| Feel | a theme first, power second | a stock precon | an upgraded deck with a plan |
+
+## 3a. Card power score
 
 `deck_tier.py` gives every nonland card a power score from 0 to 100, using only data in this repository:
 
@@ -157,6 +177,26 @@ These change difficulty without a new decklist. Use them to fine-tune within a t
 | Starting handicap | Map object `effect` property (EffectData) | `{"changeStartCards": -1}` or a `lifeModifier` for one specific fight. |
 | A starting board | `effect` with `startBattleWithCard` | A boss's signature permanent on turn 0. Count it against the power budget. |
 | Spawn gating | `enemies.json` `difficulty` against the player's win rank | Keeps tougher wild encounters away until the player has won enough. |
+
+## 5a. The generated decks
+
+`tools/concordia/deckgen/` builds 10 decks per tier into `forge-gui/res/adventure/Concordia/decks/tier1..3/`:
+
+```
+cd tools/concordia/deckgen
+python3 mine.py && python3 pool.py && python3 build.py decks.json
+```
+
+`decks.json` lists each deck's commander, colours, theme and seed. Tier 2 and 3 decks start from an existing Forge
+list (a Tempest old-border precon, a Realm of Legends starter or a Realm of Legends enemy deck) and keep as much of it
+as the tier allows. Tier 1 decks are built from commons around a creature type. The builder only picks cards with no
+`AI:RemoveDeck` flag, legal in Commander and outside Concordia's restrictions. Its output is deterministic.
+
+| Tier | Colours | Decks |
+|---|---|---|
+| 1 | two per colour | Pianna (W soldiers), Anafenza (W spirits), Siani (U birds), Malcolm (U pirates), Ozox (B skeletons), Lord Skitter (B rats), General Kreat (R goblins), Dori (R dwarves), Dwynen (G elves), Ruxa (G vanilla beasts) |
+| 2 | two per colour | Danitha (W knights), Gerrard (W, Tempest precon), Ertai (U, Tempest precon), Sai (U thopters), Fumulus (B sacrifice), Grandmother Sengir (B), Tahngarth (R, Tempest precon), Eron (R haste), Mirri (G, Tempest precon), Rishkar (G counters) |
+| 3 | one per colour, plus the five allied pairs | Lyra (W angels), Muzzio (U artifacts), Hythonia (B), Dragonhawk (R dragons), Gargos (G hydras), Isperia (WU fliers), Gyruda (UB), Exava (BR), Zilortha (RG), Sigarda (GW) |
 
 ## 6. Verifying a deck
 

@@ -37,15 +37,21 @@ TIERS = {
     1: {"name": "Tier 1 - Weak / wild", "life": (10, 12), "commander_rarity": {"C", "U"}, "commander_mv": (2, 4),
         "lands": (40, 46), "ramp": (0, 3), "fast": (0, 0), "draw": (0, 3), "removal": (0, 3), "wipe": (0, 0),
         "tutor": (0, 0), "avg_mv": (2.5, 3.4), "creatures": (35, 60), "power": (None, 18),
-        "max_rare": 2, "max_mythic": 0, "game_changers": 0, "mld": 0, "extra_turns": 0, "combos": "none"},
+        "max_rare": 0, "max_mythic": 0, "max_uncommon": 15, "game_changers": 0, "mld": 0, "extra_turns": 0, "combos": "none",
+        "bracket": 1, "curve": {1: (5, 8), 2: (15, 21), 3: (11, 16), 4: (5, 8), 5: (3, 10), 6: (0, 2)},
+        "types": {"noncreature": 6, "Instant+Sorcery": 4}, "max_type_share": 0.85, "karsten": None},
     2: {"name": "Tier 2 - Moderate", "life": (15, 20), "commander_rarity": {"C", "U", "R"}, "commander_mv": (3, 5),
         "lands": (36, 39), "ramp": (2, 8), "fast": (0, 1), "draw": (2, 10), "removal": (4, 14), "wipe": (0, 2),
         "tutor": (0, 1), "avg_mv": (2.6, 3.6), "creatures": (26, 36), "power": (18, 30),
-        "max_rare": 10, "max_mythic": 1, "game_changers": 0, "mld": 0, "extra_turns": 0, "combos": "none"},
+        "max_rare": 10, "max_mythic": 1, "game_changers": 0, "mld": 0, "extra_turns": 0, "combos": "none",
+        "bracket": 2, "curve": {1: (2, 7), 2: (8, 18), 3: (10, 21), 4: (7, 15), 5: (4, 11), 6: (3, 12)},
+        "types": {"Instant": 4, "Sorcery": 3, "Artifact": 4, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
     3: {"name": "Tier 3 - Challenging", "life": (25, 35), "commander_rarity": {"U", "R", "M"}, "commander_mv": (3, 7),
         "lands": (33, 38), "ramp": (8, 16), "fast": (0, 3), "draw": (6, 14), "removal": (7, 16), "wipe": (1, 4),
         "tutor": (0, 3), "avg_mv": (2.8, 3.9), "creatures": (16, 40), "power": (26, None),
-        "max_rare": 60, "max_mythic": 15, "game_changers": 3, "mld": 0, "extra_turns": 1, "combos": "late"},
+        "max_rare": 60, "max_mythic": 15, "game_changers": 3, "mld": 0, "extra_turns": 1, "combos": "late",
+        "bracket": 3, "curve": {1: (3, 12), 2: (9, 22), 3: (10, 21), 4: (5, 15), 5: (3, 11), 6: (2, 10)},
+        "types": {"Instant": 4, "Sorcery": 3, "Artifact": 4, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
 }
 
 
@@ -199,6 +205,38 @@ def classify(c):
     return tags
 
 
+PRIMARY = ("Creature", "Planeswalker", "Battle", "Instant", "Sorcery", "Artifact", "Enchantment")
+
+
+def primary_type(c):
+    """The type Moxfield groups a card under: creature first, then planeswalker, battle, instant, sorcery, artifact."""
+    types = c["types"].split()
+    return next((t for t in PRIMARY if t in types), "Other")
+
+
+def source_colors(c):
+    """Colours a land can make, from its mana abilities, basic land types and fetch targets."""
+    cols = set()
+    types = c["types"].split()
+    for col, basic in zip("WUBRG", ("Plains", "Island", "Swamp", "Mountain", "Forest")):
+        if basic in types or c["name"] == basic:
+            cols.add(col)
+    for kind, eff, rest in c["abil"]:
+        if eff == "Mana":
+            m = re.search(r"Produced\$\s*([^|]+)", rest)
+            prod = m.group(1) if m else ""
+            if "Any" in prod or "Combo" in prod and "Any" in rest:
+                cols |= set("WUBRG")
+            cols |= set(re.findall(r"[WUBRG]", prod.replace("Combo", "")))
+        if eff == "ChangeZone" and "Origin$ Library" in rest:
+            for col, basic in zip("WUBRG", ("Plains", "Island", "Swamp", "Mountain", "Forest")):
+                if basic in rest or "Basic" in rest or "Land" in rest.split("ChangeType$")[-1][:12]:
+                    cols.add(col)
+    if "Command Tower" == c["name"] or "Exotic Orchard" == c["name"]:
+        cols |= set("WUBRG")
+    return cols
+
+
 def rarity_of(data, name, ed):
     eds = data["eds"]
     n = name.lower()
@@ -242,6 +280,10 @@ def rate(path, data, config):
     rarity = collections.Counter()
     mvs, powers, names = [], [], collections.Counter()
     flagged, unknown = [], []
+    ptypes = collections.Counter()
+    pips = collections.Counter()
+    sources = collections.Counter()
+    cheap_ramp_draw = 0
     restricted = {x.lower() for x in config.get("restrictedCards", [])}
     banned_sets = set(config.get("restrictedEditions", []))
     for section in ("commander", "main"):
@@ -261,7 +303,15 @@ def rate(path, data, config):
             r = rarity_of(data, c["name"], ed)
             for t in tags:
                 counts[t] += n
+            if "land" in tags:
+                for col in source_colors(c):
+                    sources[col] += n
             if "land" not in tags:
+                ptypes[primary_type(c)] += n
+                for col in "WUBRG":
+                    pips[col] += c["mc"].count(col) * n
+                if tags & {"ramp", "draw"} and c["cmc"] <= 3:
+                    cheap_ramp_draw += n
                 rarity[r] += n
                 mvs += [c["cmc"]] * n
                 curve[min(c["cmc"], 7)] += n
@@ -305,6 +355,8 @@ def rate(path, data, config):
         "top_power": sorted(powers, reverse=True)[:10],
         "game_changers": gc, "mass_land_denial": mld, "extra_turns": extra, "chained_extra_turns": chained,
         "combos": combos, "problems": problems,
+        "types": dict(ptypes), "pips": {k: v for k, v in pips.items() if v}, "sources": dict(sources),
+        "karsten_lands": round(31.4 + 3.13 * (statistics.mean(mvs) if mvs else 0) - 0.28 * cheap_ramp_draw, 1),
     }
 
 
@@ -327,6 +379,34 @@ def check_tier(r, tier, life=None):
         rng("commander mana value", c["mv"], spec["commander_mv"])
     for key in ("lands", "creatures", "ramp", "fast", "draw", "removal", "wipe", "tutor", "avg_mv", "power"):
         rng(key, r[key], spec[key], hard=key in ("fast",))
+    if "max_uncommon" in spec:
+        out.append(("PASS" if r["rarity"].get("U", 0) <= spec["max_uncommon"] else "FAIL", "uncommons %d (max %d)" % (r["rarity"].get("U", 0), spec["max_uncommon"])))
+    curve = r["curve"]
+    buckets = {1: curve[0] + curve[1], 2: curve[2], 3: curve[3], 4: curve[4], 5: curve[5], 6: curve[6] + curve[7]}
+    off = ["%s%s: %d (%d-%d)" % (k, "+" if k == 6 else "", buckets[k], lo, hi) for k, (lo, hi) in spec["curve"].items() if not lo <= buckets[k] <= hi]
+    out.append(("PASS" if not off else "WARN", "mana curve by mana value %s" % ("in range" if not off else ", ".join(off))))
+    t = r["types"]
+    nonland = sum(t.values()) or 1
+    need = []
+    for key, n in spec["types"].items():
+        have = nonland - t.get("Creature", 0) if key == "noncreature" else sum(t.get(x, 0) for x in key.split("+"))
+        if have < n:
+            need.append("%s %d (min %d)" % (key, have, n))
+    top, share = max(t.items(), key=lambda kv: kv[1]) if t else ("-", 0)
+    if share / nonland > spec["max_type_share"]:
+        need.append("%s is %d%% of nonland cards (max %d%%)" % (top, round(100 * share / nonland), round(100 * spec["max_type_share"])))
+    out.append(("PASS" if not need else "WARN", "card types %s%s" % (" ".join("%s %d" % kv for kv in sorted(t.items(), key=lambda kv: -kv[1])), "" if not need else " - " + "; ".join(need))))
+    if spec["karsten"] is not None:
+        diff = r["lands"] - r["karsten_lands"]
+        out.append(("PASS" if abs(diff) <= spec["karsten"] else "WARN", "lands %d vs Karsten estimate %.1f (allowed +/-%d)" % (r["lands"], r["karsten_lands"], spec["karsten"])))
+    pips_total = sum(r["pips"].values())
+    if len(r["pips"]) > 1:
+        low = []
+        for col, n in r["pips"].items():
+            src = r["sources"].get(col, 0)
+            if src < 14 or src / max(1, r["lands"]) < 0.8 * n / pips_total:
+                low.append("%s %d sources for %d%% of pips" % (col, src, round(100 * n / pips_total)))
+        out.append(("PASS" if not low else "WARN", "colour sources %s%s" % (r["sources"], "" if not low else " - low: " + "; ".join(low))))
     out.append(("PASS" if r["rarity"].get("R", 0) <= spec["max_rare"] else "WARN", "rares %d (max %d)" % (r["rarity"].get("R", 0), spec["max_rare"])))
     out.append(("PASS" if r["rarity"].get("M", 0) <= spec["max_mythic"] else "FAIL", "mythics %d (max %d)" % (r["rarity"].get("M", 0), spec["max_mythic"])))
     out.append(("PASS" if len(r["game_changers"]) <= spec["game_changers"] else "FAIL", "Game Changers %d (max %d) %s" % (len(r["game_changers"]), spec["game_changers"], r["game_changers"] or "")))
@@ -386,9 +466,10 @@ def main(argv):
         print("  Game Changers %s  mass land denial %s  extra turns %s  combos early %d / late %d" % (
             r["game_changers"] or "none", r["mass_land_denial"] or "none", r["extra_turns"] or "none",
             len(r["combos"]["early_game"]), len(r["combos"]["late_game"])))
+        print("  card types %s   colour pips %s   sources %s   Karsten lands %.1f" % (r["types"], r["pips"], r["sources"], r["karsten_lands"]))
         print("  best fit: %s   (fails/warnings per tier: %s)" % (TIERS[fit]["name"], {t: s for t, s in scores.items()}))
         if tier:
-            print("  checks for %s:" % TIERS[tier]["name"])
+            print("  checks for %s (Commander Bracket %d):" % (TIERS[tier]["name"], TIERS[tier]["bracket"]))
             for status, text in r["checks"]:
                 print("    %-4s %s" % (status, text))
     return 1 if failed else 0
