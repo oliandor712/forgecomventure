@@ -26,7 +26,7 @@ beats), on foot through a zone's gate or by Waystone.
 | Champion | Victory Road → Summit | 5 | Gauntlet | Paragons, Champion |
 
 Tiers above 3 don't have decks yet (`ENCOUNTER_TIERS.md` covers 1-3); the table follows `DESIGN.md` §5.2. Every color
-zone has the same dungeon count, whatever step it is for the player (§2, and the open question in §10).
+zone has the same dungeons: a gate pass, two inner passes and optional dungeons, whatever step it is for the player (§2).
 
 ## 2. The key constraint: every zone is played at every tier
 
@@ -45,14 +45,14 @@ does Black first and White last. So **the White zone is zone 1 for one player an
 
 ```
                  ┌─────────┐
-     ┌───────┐   │   RED   │   ┌───────┐
-     │ BLACK │   └────┬────┘   │ GREEN │
+     ┌───────┐   │  WHITE  │   ┌───────┐
+     │ GREEN │   └────┬────┘   │ BLUE  │
      └───┬───┘   ╔════╧════╗   └───┬───┘
          └───────╢ CENTRAL ╟───────┘
                  ║ starter ║
          ┌───────╢ +champ. ╟───────┐
      ┌───┴───┐   ╚═════════╝   ┌───┴───┐
-     │ WHITE │                 │ BLUE  │
+     │  RED  │                 │ BLACK │
      └───────┘                 └───────┘
 ```
 
@@ -63,11 +63,11 @@ connect to each other.
   and the **champion area**, with its own gate. Impassable terrain separates them from each other and from the color
   zones; there's no open hub ground beyond what's needed. Mossgate's plaza is the hub: the five zone gates and the
   champion gate open off it, or off a short corridor around the starter zone's edge if a gate can't reach the plaza.
-- **Each color zone is fully enclosed by impassable tiles.** The only ways in are its gate (§6) and its Waystone (§4.2).
+- **Each color zone is fully enclosed by impassable tiles.** The only ways in are its gate (§6) and the Waystone (§4.2).
   Ocean (`base.json`, collision) fills the space between zones.
-- **Geography is flavor.** Since zones only connect through the centre, the ring order doesn't change play. The sketch
-  goes Red, Green, Blue, White, Black clockwise from the top. Putting them in color-wheel order (White, Blue, Black,
-  Red, Green) would make every pair of neighbours allies, if that's wanted for the look of the map.
+- **Ring order is Forge's color wheel**: White at the top, then Blue, Black, Red and Green clockwise, as on the back of
+  a card. Every pair of neighbours is an ally pair, and each zone's two enemies are across the ring. Since zones only
+  connect through the centre, the order is for the look of the map, not for play.
 - **Size**, scaled from the sketch, where the starter zone is the existing 60×90-tile Route 1 area (about 0.6 tiles
   per sketch pixel):
 
@@ -76,7 +76,7 @@ connect to each other.
 | Starter zone (built) | 60 × 90 | 1× |
 | Central area (starter zone, champion area, the walls between) | about 140 × 100, kept as small as the walls allow | about 2.5× the area |
 | Champion area | 60 across | about 0.5× |
-| Each color zone | 170-200 across (Black and White the widest, Red the tallest) | about 5-6× the area |
+| Each color zone | 170-200 across | about 5-6× the area |
 | Whole world, with an ocean margin | about **480 × 460** | – |
 
   That's more than today's 160×160, but under Shandalar's 700×700, so world generation can handle it. A color zone
@@ -99,23 +99,23 @@ connect to each other.
 Every zone uses the same grammar, so the player learns it once:
 
 ```
-Central area ─► GATE PASS ─► Gate town ─► Route A ─► INNER PASS ─► Route B ─► Warden's gym
-               (dungeon,     (all services,  (maze)    (dungeon)      (maze)
-                tier guard)   Waystone)        │                         │
-                                          optional dungeon        optional dungeon
+Central area ─► GATE PASS ─► Gate town ─► Route A ─► INNER PASS 1 ─► Route B ─► INNER PASS 2 ─► Route C ─► Warden's gym
+               (dungeon,     (all services,  (maze)    (dungeon)        (maze)    (dungeon)        (maze)
+                tier guard)   Waystone stop)   │                           │                          │
+                                          optional dungeon          optional dungeon          optional dungeon
 ```
 
 | Piece | What it is | Notes |
 |---|---|---|
 | Gate pass | A dungeon set into the wall between the central area and the zone | The zone's only entrance on foot. Holds the tier guard (§5). Two-way (§6) |
-| Gate town | The zone's town, right inside the gate | All services (§4.1) and the zone's Waystone (§4.2). The only place in the zone to heal |
-| Routes A, B | Maze sections, like Route 1 but more complex | Duelists stand at corridor edges (`placedEnemies`); wild encounters roam |
-| Inner pass | A mandatory dungeon splitting the zone in two | Route B and the gym can only be reached through it. Two-way |
+| Gate town | The zone's town, right inside the gate | All services (§4.1). The first visit adds it to the Waystone (§4.2). The only place in the zone to heal |
+| Routes A, B, C | Maze sections, like Route 1 but more complex | Duelists stand at corridor edges (`placedEnemies`); wild encounters roam |
+| Inner passes 1 and 2 | Mandatory dungeons splitting the zone into three sections | Each section can only be reached through the pass before it. Two-way |
 | Optional dungeons | Caves at dead ends | Treasure, a mini-boss, sometimes a legend duel |
 | Warden's gym | The zone's boss building | Gym puzzle and Warden (`DESIGN.md` §3.3, §5.3) |
 
-**No healers in passes.** The gate town is the last place to heal before the inner pass. The player walks back to it
-(the inner pass is two-way) or uses the Waystone.
+**No healers in passes.** The gate town is the only place in the zone to heal. Deeper in, the player walks back
+through the passes (they're two-way) or uses the Waystone, which grows more useful the further into a zone they get.
 
 **Maze rules**, compared with Route 1:
 
@@ -147,20 +147,19 @@ Each color-focused shop is a new entry in `world/shops.json` (for example `White
 a per-zone copy or a property that overrides `commonShopList`. Five zones by five focused shops is 25 shop entries,
 written once by a script.
 
-### 4.2 Waystones
+### 4.2 The Waystone
 
-Each gate town gives the player its Waystone on the first visit (a dialog with the town's elder or a sign at the
-entrance): a teleport to that town for 1 shard, built like the Emberbrook Waystone (`commandOnUse: "teleport to poi
-<Town>"`). Since color zones are enclosed, a Waystone is the only way back into a zone apart from walking through its
-gate.
+**One Waystone item, with destinations added as they're acquired.** The player gets it from the rival in the prologue
+(today's Emberbrook Waystone becomes this item) with one destination, Emberbrook. Each gate town adds its own
+destination on the player's first visit (a dialog with the town's elder or a sign at the entrance). Using the
+Waystone lists the destinations unlocked so far; picking one teleports there for 1 shard.
 
-**One problem to solve before building them:** the Emberbrook Waystone uses the `Ability2` equipment slot. With six
-Waystones (Emberbrook plus five gate towns) and only two ability slots, the player would have to re-equip one each time
-they travel. The two options:
-
-- **One Waystone with a destination list** (small Java, §8): using it lists every town whose Waystone flag is set.
-  Each gate town's dialog sets a flag instead of giving an item. Recommended.
-- **Separate items, no Java**: six items, and the player swaps the equipped one in the inventory before using it.
+- **Destinations** are character flags, for example `waystone.Spawn`, `waystone.GreenGate`. Mossgate is a destination
+  too, unlocked on the first visit.
+- **Since color zones are enclosed**, the Waystone is the only way back into a zone other than walking through its
+  gate. Gate towns are the only destinations inside zones, so the Waystone never skips a pass.
+- **Needs a small Java change** (§8): today's teleport items go to one fixed POI (`commandOnUse: "teleport to poi
+  Spawn"`). The new item opens a list of the unlocked destinations instead. It stays in one ability slot.
 
 ## 5. Tier gates: which zone opens when
 
@@ -184,7 +183,9 @@ visible guard plus hidden triggers filling the corridor, so it can't be walked p
 - **Your own Warden** opens the two ally zones. The Warden's defeat dialog has five nodes, one per `col<X>` character
   flag, each opening that color's two allies.
 - **The second ally Warden** (`seals` reaches 3) opens the two enemy zones the same way.
-- **Five Seals** open the champion area's gate.
+- **Five Seals** open the **sixth gate**, the champion area's, off Mossgate's plaza. It works like the zone gates: a
+  gate pass with a guard whose dialog checks `seals` = 5 ("Every Warden has fallen. The Summit is open."). Victory Road
+  and the Summit are inside the champion area, past this gate.
 
 Color pairs for the defeat dialogs:
 
@@ -258,7 +259,7 @@ change can add an arrival offset per POI (§8).
 - **Flying.** Flying ignores world collision. Forge's shared item list (which Concordia merges in) has an item whose
   use is `fly 10`. No Concordia shop or reward gives it today; keep it out of every reward and shop list, or override
   it in Concordia's `items.json`.
-- **Teleports.** Waystones go only to gate towns the player has already reached on foot. Nothing teleports to the far
+- **Teleports.** The Waystone goes only to towns the player has already reached on foot. Nothing teleports to the far
   side of an inner pass.
 - **Gaps in the wall.** A single walkable tile breaks it. The maze tool should flood-fill from each side and fail if
   one side reaches the other.
@@ -287,7 +288,7 @@ writes out everything the zone needs:
 | Change | Why | Needed for |
 |---|---|---|
 | **Linked POI doors** (`linkTo`, `linkEntry` on a POI) | Both doors of a pass open the same dungeon | Two-way passes (§6.1). Required |
-| **Waystone destination list** | One item travels to every unlocked town | §4.2. Recommended |
+| **Waystone destination list** | One item travels to every unlocked town | §4.2. Required |
 | `enemyByTier` map enemy property | One object per encounter slot instead of three | §5. Recommended |
 | Arrival offset per POI (`arrivalX`, `arrivalY` in tiles) | Free choice of which side of a door the player lands | §6.3. If walls get tight |
 | Dialog condition comparing one flag to another | Fewer per-color dialog nodes | §5. Optional |
@@ -296,36 +297,30 @@ writes out everything the zone needs:
 
 1. **Linked POI doors** (Java), tested with a throwaway two-door pass in the starter area.
 2. **World resize and the central area.** About 480×460 tiles, the starter zone and Mossgate in the centre, the
-   champion area walled off next to it, five gate positions reached from Mossgate's plaza. Retest the starter flow end to end.
+   champion area walled off next to it, six gate positions (five zones and the champion area) reached from Mossgate's plaza. Retest the starter flow end to end.
 3. **Flags.** `zoneTier.<C>` and `zoneOpen.<C>` from the color choice; `seals` on Warden defeats.
 4. **One complete zone as the template** (suggest Green, since its tileset and trees are what Route 1 already uses):
-   gate pass with tier guard, gate town with all services and its Waystone, two routes, inner pass, gym placeholder,
-   two optional dungeons.
+   gate pass with tier guard, gate town with all services and its Waystone stop, three routes, two inner passes, gym
+   placeholder, three optional dungeons.
 5. **`make_zone_maze.py`**, built from what the first zone needed; redraw the first zone with it to prove the tool.
-6. **Waystone destination list** and **`enemyByTier`** (Java), once the template zone shows how many slots there are.
+6. **Waystone destination list** (Java; the Emberbrook Waystone becomes this item) and **`enemyByTier`** (Java), once
+   the template zone shows how many slots there are.
 7. **Tiered encounter decks.** Tier 4-6 decks with the deck generator, then the encounter slots in the template zone.
 8. **The other four zones**, one at a time, each playtested at tier 1 and tier 3.
-9. **Victory Road and the Summit.**
+9. **The sixth gate, Victory Road and the Summit.**
 
-## 10. Decisions and open questions
+## 10. Decisions
 
-**Decided:**
-- Gate towns have all of Mossgate's services, with stock focused on the zone's color, except the artifact shop. Each
-  gives its Waystone.
-- No healers in passes; the gate town is the only rest stop in a zone.
-- Passes are two-way: one dungeon, entered from either end. No separate shortcuts.
-- Every color zone is enclosed by impassable tiles. The only ways in are its gate and its Waystone.
-
-**Open:**
-- **How many inner passes per zone?** The first draft gave the enemy zones (zones 4-5) a second pass. That can't
-  work as written: whether a zone is a player's zone 1 or zone 5 depends on their color (§2), so a zone can't have
-  more passes for some players than for others. The real choice is one count for all five zones:
-  - **One inner pass** (gate pass + 1). Shorter zones; difficulty comes from the encounter tiers. Recommended for
-    the first zone, since it's quicker to build and test.
-  - **Two inner passes** (gate pass + 2). Every zone is longer and has three sections, for everyone, including a
-    player's first zone.
-- **Waystones:** one item with a destination list (Java), or six separate items (§4.2)?
-- **Ring order:** keep the sketch's order (Red, Green, Blue, White, Black clockwise from the top), or use color-wheel
-  order so neighbours are allies?
-- **Champion area gate:** is Victory Road the champion area's gate pass (the 3-map gauntlet as the bottleneck), or
-  a separate gate in front of it?
+- **Gate towns** have all of Mossgate's services, with stock focused on the zone's color, except the artifact shop.
+  Each adds itself to the Waystone on the first visit.
+- **No healers in passes**; the gate town is the only rest stop in a zone.
+- **Passes are two-way**: one dungeon, entered from either end. No separate shortcuts.
+- **Every color zone is enclosed** by impassable tiles. The only ways in are its gate and the Waystone.
+- **Two inner passes per zone**, so every zone has three sections after its gate town (§4). Every zone has the same
+  count, whatever step it is for the player (§2).
+- **One Waystone item**, with destinations added as they're acquired (§4.2).
+- **Ring order is Forge's color wheel**: White, Blue, Black, Red, Green clockwise from the top (§3).
+- **The champion area is behind a sixth gate** off Mossgate's plaza, which opens only when all five Wardens are
+  beaten. Victory Road and the Summit are inside (§5).
+- **The central area** is just the starter zone and the champion area, walled off from each other; Mossgate's plaza
+  is the hub (§3).
