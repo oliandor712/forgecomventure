@@ -539,13 +539,19 @@ Alpha, Command Tower from Commander 2011, Evolving Wilds from Rise of the Eldraz
   auto-sell list, favorites and all decks; foil, no-sell and marked colors carry over. It's purely cosmetic.
 - Decks Concordia hands out (starters, rewards decks) keep the printings they list.
 
-### 6.2c Mossgate shops
+### 6.2c Town services and shops
 
-Mossgate sells cards by type (Creature, Artifact, Instant & Sorcery, Land, Enchantment, Colorless), basic lands and
-**booster packs** (Forge's general "Pack To Basics" shop, 8 random packs), plus the shard trader and the Commander
-Hall. The Equipment-card shop became the Hall, and the gear-item shop (boots, blessings and other equippable items)
-became the booster shop while Concordia's item system is redesigned. Cards opened from packs are changed to their
-original printing like every other card reward.
+Concordia's shops are its own: `world/shops.json` lists only them (Forge's standard shop list isn't used), and each
+town service has a Tiled template in `Concordia/maps/obj/` that carries its door tile, sign and shop list:
+`shop_creatures`, `shop_artifacts`, `shop_spells`, `shop_lands`, `shop_enchantments`, `shop_colorless`,
+`shop_basic_lands`, `shop_boosters`, `commanderhall`, `inn` and `shardtrader`. Mossgate is built from them. A new town
+gets the same services by dropping the templates onto its map. `Concordia/README.md` lists every Concordia data file
+and what to edit where.
+
+Mossgate sells cards by type (creatures, artifacts, instants and sorceries, nonbasic lands, enchantments, colorless),
+basic lands and booster packs (8 random packs), and has the shard trader, the Commander Hall and an inn. The
+Equipment-card shop became the Hall, and the gear-item shop became the booster shop while Concordia's item system is
+redesigned. Cards opened from packs are changed to their original printing like every other card reward.
 
 ### 6.2d Inn tournaments (built)
 

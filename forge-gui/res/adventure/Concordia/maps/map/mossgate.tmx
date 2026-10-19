@@ -31,77 +31,21 @@
  </layer>
  <objectgroup id="4" name="Objects">
   <object id="38" template="../../../common/maps/obj/entry_up.tx" x="240" y="272"/>
-  <object id="41" template="../../../common/maps/obj/shop.tx" x="129" y="82">
-   <properties>
-    <property name="commonShopList" value="Creature"/>
-    <property name="mythicShopList" value=""/>
-    <property name="rareShopList" value=""/>
-    <property name="uncommonShopList" value=""/>
-   </properties>
-  </object>
-  <object id="42" template="../../../common/maps/obj/shop.tx" x="304" y="114">
-   <properties>
-    <property name="commonShopList" value="Artifact"/>
-    <property name="mythicShopList" value=""/>
-    <property name="rareShopList" value=""/>
-    <property name="uncommonShopList" value=""/>
-   </properties>
-  </object>
-  <object id="43" template="../../../common/maps/obj/shop.tx" x="352" y="162">
-   <properties>
-    <property name="commonShopList" value="Instant"/>
-    <property name="mythicShopList" value=""/>
-    <property name="rareShopList" value=""/>
-    <property name="uncommonShopList" value=""/>
-   </properties>
-  </object>
-  <object id="44" template="../../../common/maps/obj/shop.tx" x="177" y="81">
-   <properties>
-    <property name="commonShopList" value="Land"/>
-    <property name="mythicShopList" value=""/>
-    <property name="rareShopList" value=""/>
-    <property name="uncommonShopList" value=""/>
-   </properties>
-  </object>
-  <object id="45" template="../../../common/maps/obj/shop.tx" x="240" y="129">
-   <properties>
-    <property name="commonShopList" value="Enchantment"/>
-    <property name="mythicShopList" value=""/>
-    <property name="rareShopList" value=""/>
-    <property name="uncommonShopList" value=""/>
-   </properties>
-  </object>
-  <object id="46" template="../../../common/maps/obj/shop.tx" x="368" y="226">
-   <properties>
-    <property name="commonShopList" value="BasicLands"/>
-    <property name="mythicShopList" value=""/>
-    <property name="rareShopList" value=""/>
-    <property name="uncommonShopList" value=""/>
-   </properties>
-  </object>
-  <object id="47" template="../../../common/maps/obj/inn.tx" x="137" y="162"/>
+  <object id="41" template="../obj/shop_creatures.tx" x="129" y="82"/>
+  <object id="42" template="../obj/shop_artifacts.tx" x="304" y="114"/>
+  <object id="43" template="../obj/shop_spells.tx" x="352" y="162"/>
+  <object id="44" template="../obj/shop_lands.tx" x="177" y="81"/>
+  <object id="45" template="../obj/shop_enchantments.tx" x="240" y="129"/>
+  <object id="46" template="../obj/shop_basic_lands.tx" x="368" y="226"/>
+  <object id="47" template="../obj/inn.tx" x="137" y="162"/>
   <object id="53" name="Commander Hall" template="../obj/commanderhall.tx" x="304" y="48"/>
   <object id="49" template="../../../common/maps/obj/quest.tx" x="80" y="162" width="34" height="16">
    <properties>
     <property name="questtype" value="forest_town_generic"/>
    </properties>
   </object>
-  <object id="50" template="../../../common/maps/obj/shardtrader.tx" x="98" y="98"/>
-  <object id="51" template="../../../common/maps/obj/shop.tx" x="272" y="98">
-   <properties>
-    <property name="commonShopList" value="BoosterPackShop"/>
-    <property name="mythicShopList" value=""/>
-    <property name="rareShopList" value=""/>
-    <property name="uncommonShopList" value=""/>
-   </properties>
-  </object>
-  <object id="52" template="../../../common/maps/obj/shop.tx" x="208" y="50">
-   <properties>
-    <property name="commonShopList" value="Colorless"/>
-    <property name="mythicShopList" value=""/>
-    <property name="rareShopList" value=""/>
-    <property name="uncommonShopList" value=""/>
-   </properties>
-  </object>
+  <object id="50" template="../obj/shardtrader.tx" x="98" y="98"/>
+  <object id="51" template="../obj/shop_boosters.tx" x="272" y="98"/>
+  <object id="52" template="../obj/shop_colorless.tx" x="208" y="50"/>
  </objectgroup>
 </map>
