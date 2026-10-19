@@ -56,15 +56,14 @@ does Black first and White last. So **the White zone is zone 1 for one player an
      └───────┘                 └───────┘
 ```
 
-Five color zones in a ring around a **central area**. Every connection runs through the centre: the zones don't
-connect to each other.
+Five color zones in a ring around a **central area**. Nothing on the world map connects them: every way in and out
+runs through the **Gate Temple** in Mossgate (§3.1) or the Waystone (§4.2).
 
 - **The central area** holds just two things: the starter zone (Emberbrook, the Route 1 maze and Mossgate, as built)
-  and the **champion area**, with its own gate. Impassable terrain separates them from each other and from the color
-  zones; there's no open hub ground beyond what's needed. Mossgate's plaza is the hub: the five zone gates and the
-  champion gate open off it, or off a short corridor around the starter zone's edge if a gate can't reach the plaza.
-- **Each color zone is fully enclosed by impassable tiles.** The only ways in are its gate (§6) and the Waystone (§4.2).
-  Ocean (`base.json`, collision) fills the space between zones.
+  and the **champion area**. Impassable terrain separates them from each other and from the color zones, and there's
+  no open hub ground: the hub is Mossgate itself.
+- **Each color zone is fully enclosed by impassable tiles.** Ocean (`base.json`, collision) fills the space between
+  regions, so the world map needs no gates of its own.
 - **Ring order is Forge's color wheel**: White at the top, then Blue, Black, Red and Green clockwise, as on the back of
   a card. Every pair of neighbours is an ally pair, and each zone's two enemies are across the ring. Since zones only
   connect through the centre, the order is for the look of the map, not for play.
@@ -94,20 +93,53 @@ connect to each other.
 | Red | `red_structures.atlas` | mountains, lava, dead trees |
 | Green | `green_structures.atlas` | trees, rocks, bushes (as Route 1) |
 
+### 3.1 The Gate Temple
+
+A temple building in Mossgate whose interior holds **all six gates**: one for each color zone and one for the champion
+area. It's the hub of the whole map: the player walks in, picks a gate, and steps through.
+
+```
+                    ┌────────────────────────────┐
+                    │          ( W )             │
+                    │   ( G )           ( U )    │
+                    │           [ C ]            │   C = champion gate, at the back
+                    │     ( R )       ( B )      │   W U B R G = zone gates, in color-wheel order
+                    │                            │
+                    │         entrance           │
+                    └────────────┬───────────────┘
+                              Mossgate
+```
+
+- **Building:** a temple sprite on `mossgate.tmx` with an `entry` object leading into the interior, a sub-map of
+  Mossgate (`maps/map/mossgate_temple.tmx`), the way the Emberbrook house works. The interior can start from one of
+  Forge's existing temple maps (`common/maps/map/main_story/temple_of_gideon`, `templeofchandra.tmx`).
+- **Gates:** six `portal` objects with Forge's portal sprites (`sprites/portal.atlas`, `sprites/portal3.atlas`), the
+  five zone gates in a ring in color-wheel order and the champion gate at the back.
+- **Guards:** each gate has its tier guard in front of it (§5): a guard plus hidden triggers, as in the Seal Angel's
+  passage. All six guards are in one room, so the player can see at a glance which gates are open and which are still
+  sealed.
+- **Where a gate leads:** stepping into a zone's gate starts its **gate pass** (§4) at the temple end. Walking out the
+  other end comes out by the zone's gate town. Walking back through the gate pass from the zone side comes out in the
+  temple, in front of that gate. The champion gate leads into Victory Road.
+- **What this needs:** a gate that lands at a chosen entry of another map, rather than at that map's default spawn. Today
+  `gateTo` only lands next to or in a POI's main map. The extension (§8) lets a gate name an entry object, and a
+  sub-map, so the temple gates can land at the gate pass's temple end, and the gate pass's temple end can land back in
+  the temple.
+
 ## 4. Inside a color zone
 
 Every zone uses the same grammar, so the player learns it once:
 
 ```
-Central area ─► GATE PASS ─► Gate town ─► Route A ─► INNER PASS 1 ─► Route B ─► INNER PASS 2 ─► Route C ─► Warden's gym
+Gate Temple ─► GATE PASS ─► Gate town ─► Route A ─► INNER PASS 1 ─► Route B ─► INNER PASS 2 ─► Route C ─► Warden's gym
                (dungeon,     (all services,  (maze)    (dungeon)        (maze)    (dungeon)        (maze)
-                tier guard)   Waystone stop)   │                           │                          │
+                temple end)   Waystone stop)   │                           │                          │
                                           optional dungeon          optional dungeon          optional dungeon
 ```
 
 | Piece | What it is | Notes |
 |---|---|---|
-| Gate pass | A dungeon set into the wall between the central area and the zone | The zone's only entrance on foot. Holds the tier guard (§5). Two-way (§6) |
+| Gate pass | A dungeon between the Gate Temple and the zone | The zone's only entrance on foot. Entered from its temple gate (§3.1); its far end comes out by the gate town. Two-way (§6) |
 | Gate town | The zone's town, right inside the gate | All services (§4.1). The first visit adds it to the Waystone (§4.2). The only place in the zone to heal |
 | Routes A, B, C | Maze sections, like Route 1 but more complex | Duelists stand at corridor edges (`placedEnemies`); wild encounters roam |
 | Inner passes 1 and 2 | Mandatory dungeons splitting the zone into three sections | Each section can only be reached through the pass before it. Two-way |
@@ -163,8 +195,9 @@ Waystone lists the destinations unlocked so far; picking one teleports there for
 
 ## 5. Tier gates: which zone opens when
 
-The tier guard stands inside each zone's gate pass, built like the Seal Angel's passage in the Emberbrook house: one
-visible guard plus hidden triggers filling the corridor, so it can't be walked past. Its dialog checks a flag:
+Each gate in the Gate Temple (§3.1) has a tier guard in front of it, built like the Seal Angel's passage in the
+Emberbrook house: one visible guard plus hidden triggers filling the space before the portal, so it can't be walked
+past. Its dialog checks a flag:
 
 - **Open:** "The Warden expects you." `(Pass)` deletes the guard and triggers (`deleteMapObject`, which stays deleted
   on later visits).
@@ -183,9 +216,8 @@ visible guard plus hidden triggers filling the corridor, so it can't be walked p
 - **Your own Warden** opens the two ally zones. The Warden's defeat dialog has five nodes, one per `col<X>` character
   flag, each opening that color's two allies.
 - **The second ally Warden** (`seals` reaches 3) opens the two enemy zones the same way.
-- **Five Seals** open the **sixth gate**, the champion area's, off Mossgate's plaza. It works like the zone gates: a
-  gate pass with a guard whose dialog checks `seals` = 5 ("Every Warden has fallen. The Summit is open."). Victory Road
-  and the Summit are inside the champion area, past this gate.
+- **Five Seals** open the **sixth gate**, the champion area's, at the back of the Gate Temple. Its guard checks
+  `seals` = 5 ("Every Warden has fallen. The Summit is open."). Victory Road and the Summit are past this gate.
 
 Color pairs for the defeat dialogs:
 
@@ -209,6 +241,9 @@ A wall of impassable tiles splits the overworld, and the only way across is a du
 **one dungeon entered from either end**: walking in from the near side starts at its near end, walking in from the
 far side starts at its far end, and whatever you've cleared inside stays cleared both ways. There are no separate
 shortcuts.
+
+This is how the **inner passes** work. A zone's **gate pass** is the same idea with one difference: its near end
+opens from the Gate Temple (§3.1) instead of from a door on the world map.
 
 ```
             impassable wall (structure tiles with collision)
@@ -244,8 +279,8 @@ The far end sits behind the dungeon's boss:
 - **For a wider room:** blocker objects (hidden dialog triggers, as in the Seal Angel's passage) fill the doorway, and
   the boss's `defeatDialog` deletes them with `deleteMapObject`. The deletions persist with the map's changes.
 - **A lost duel** sends the player out (or to the respawn point) to try again; the boss is still there.
-- **The gate pass's tier guard** (§5) sits between the near end and the boss, so a closed zone stops the player before
-  the fight.
+- **The tier guard** (§5) stands in the Gate Temple in front of the gate, so a closed zone stops the player before the
+  gate pass begins.
 
 ### 6.3 Where the player appears
 
@@ -287,7 +322,8 @@ writes out everything the zone needs:
 
 | Change | Why | Needed for |
 |---|---|---|
-| **Linked POI doors** (`linkTo`, `linkEntry` on a POI) | Both doors of a pass open the same dungeon | Two-way passes (§6.1). Required |
+| **Gates to a chosen entry** (`gateTo` with `gateMap` and `gateEntry`) | A gate lands at a named entry object, in a sub-map if needed | The Gate Temple (§3.1). Required |
+| **Linked POI doors** (`linkTo`, `linkEntry` on a POI) | Both doors of an inner pass open the same dungeon | Two-way passes (§6.1). Required |
 | **Waystone destination list** | One item travels to every unlocked town | §4.2. Required |
 | `enemyByTier` map enemy property | One object per encounter slot instead of three | §5. Recommended |
 | Arrival offset per POI (`arrivalX`, `arrivalY` in tiles) | Free choice of which side of a door the player lands | §6.3. If walls get tight |
@@ -295,19 +331,21 @@ writes out everything the zone needs:
 
 ## 9. Build order
 
-1. **Linked POI doors** (Java), tested with a throwaway two-door pass in the starter area.
-2. **World resize and the central area.** About 480×460 tiles, the starter zone and Mossgate in the centre, the
-   champion area walled off next to it, six gate positions (five zones and the champion area) reached from Mossgate's plaza. Retest the starter flow end to end.
-3. **Flags.** `zoneTier.<C>` and `zoneOpen.<C>` from the color choice; `seals` on Warden defeats.
-4. **One complete zone as the template** (suggest Green, since its tileset and trees are what Route 1 already uses):
+1. **Gates to a chosen entry and linked POI doors** (Java; both use Forge's existing
+   `WorldStage.loadPOI(poi, subMap, spawnTargetId)`), tested with a throwaway two-door pass in the starter area.
+2. **The Gate Temple** in Mossgate: the building, the interior with six gates and their guards (all sealed for now).
+3. **World resize and the central area.** About 480×460 tiles, the starter zone and Mossgate in the centre, the
+   champion area walled off next to it. Retest the starter flow end to end.
+4. **Flags.** `zoneTier.<C>` and `zoneOpen.<C>` from the color choice; `seals` on Warden defeats.
+5. **One complete zone as the template** (suggest Green, since its tileset and trees are what Route 1 already uses):
    gate pass with tier guard, gate town with all services and its Waystone stop, three routes, two inner passes, gym
    placeholder, three optional dungeons.
-5. **`make_zone_maze.py`**, built from what the first zone needed; redraw the first zone with it to prove the tool.
-6. **Waystone destination list** (Java; the Emberbrook Waystone becomes this item) and **`enemyByTier`** (Java), once
+6. **`make_zone_maze.py`**, built from what the first zone needed; redraw the first zone with it to prove the tool.
+7. **Waystone destination list** (Java; the Emberbrook Waystone becomes this item) and **`enemyByTier`** (Java), once
    the template zone shows how many slots there are.
-7. **Tiered encounter decks.** Tier 4-6 decks with the deck generator, then the encounter slots in the template zone.
-8. **The other four zones**, one at a time, each playtested at tier 1 and tier 3.
-9. **The sixth gate, Victory Road and the Summit.**
+8. **Tiered encounter decks.** Tier 4-6 decks with the deck generator, then the encounter slots in the template zone.
+9. **The other four zones**, one at a time, each playtested at tier 1 and tier 3.
+10. **The champion gate, Victory Road and the Summit.**
 
 ## 10. Decisions
 
@@ -315,12 +353,13 @@ writes out everything the zone needs:
   Each adds itself to the Waystone on the first visit.
 - **No healers in passes**; the gate town is the only rest stop in a zone.
 - **Passes are two-way**: one dungeon, entered from either end. No separate shortcuts.
-- **Every color zone is enclosed** by impassable tiles. The only ways in are its gate and the Waystone.
+- **Every color zone is enclosed** by impassable tiles. The only ways in are its gate in the Gate Temple and the Waystone.
 - **Two inner passes per zone**, so every zone has three sections after its gate town (§4). Every zone has the same
   count, whatever step it is for the player (§2).
 - **One Waystone item**, with destinations added as they're acquired (§4.2).
 - **Ring order is Forge's color wheel**: White, Blue, Black, Red, Green clockwise from the top (§3).
-- **The champion area is behind a sixth gate** off Mossgate's plaza, which opens only when all five Wardens are
-  beaten. Victory Road and the Summit are inside (§5).
-- **The central area** is just the starter zone and the champion area, walled off from each other; Mossgate's plaza
-  is the hub (§3).
+- **All six gates are in the Gate Temple**, a building in Mossgate (§3.1). Nothing connects the regions on the world
+  map.
+- **The champion area is behind the sixth gate**, which opens only when all five Wardens are beaten. Victory Road and
+  the Summit are past it (§5).
+- **The central area** is just the starter zone and the champion area, walled off from each other (§3).
