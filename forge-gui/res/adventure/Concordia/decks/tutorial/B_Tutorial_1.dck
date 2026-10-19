@@ -3,64 +3,59 @@ Name=Tutorial Raider - Grave Rabble
 [Commander]
 1 Whisper, Blood Liturgist|DOM
 [Main]
+23 Swamp|FDN|[276]
+22 Swamp|FDN|[277]
 1 Muck Rats|POR
-1 Grasping Scoundrel|RIX
-1 Banehound|WAR
-1 Nightshade Stinger|JMP
-1 Cabal Evangel|DOM
-1 Walking Corpse|M21
+1 Grasping Scoundrel|M19
+1 Cutthroat Contender|SNC
+1 Duty-Bound Dead|M13
+1 Nezumi Linkbreaker|OTJ
+1 Warehouse Tabby|WOE
 1 Dakmor Scorpion|S99
-1 Queen's Bay Soldier|XLN
-1 Child of Night|M19
-1 Dune Beetle|AKH
-1 Shambling Ghoul|ORI
-1 Spineless Thug|10E
-1 Crooked Custodian|SNC
-1 Vampire Interloper|MID
 1 Skeletal Snake|POR
-1 Craven Knight|POR
-1 Wei Infantry|PTK
-1 Young Wei Recruits|PTK
-1 Barony Vampire|M20
+1 Doomed Dissenter|M19
+1 Discordant Piper|THB
+1 Butcher Ghoul|AVR
+1 Bojuka Brigand|WWK
+1 Grim Roustabout|RTR
+1 Lazotep Reaver|WAR
+1 Masked Blackguard|M21
+1 Rat Colony|DOM
+1 Ruthless Cullblade|WWK
+1 Thriving Rats|KLD
+1 Walking Corpse|M13
+1 Bloodcrazed Hoplite|JOU
+1 Wretched Camel|HOU
+1 Child of Night|M10
+1 Smitten Swordmaster|ELD
+1 Cyclopean Mummy|4ED
 1 Scathe Zombies|10E
-1 Undead Minotaur|M14
-1 Warpath Ghoul|M12
-1 Witch's Familiar|M15
-1 Python|POR
-1 Dusk Imp|10E
-1 Feral Shadow|POR
-1 Kelinore Bat|M10
-1 Gloom Pangolin|IKO
-1 Alley Strangler|AER
-1 Looming Shade|M10
-1 Veiled Shade|GRN
-1 Giant Cockroach|9ED
-1 Highborn Vampire|ZNR
-1 Nether Horror|M11
-1 Prakhata Club Security|KLD
-1 Dross Crocodile|10E
-1 Skeletal Crocodile|POR
-1 Carrion Screecher|HOU
-1 Vampire Revenant|RIX
-1 Wandering Tombshell|DTK
-1 Charity Extractor|WAR
-1 Zof Shade|M15
-1 Drifting Shade|M12
-1 Canal Monitor|RIX
-1 Zombie Goliath|M13
-1 Mass of Ghouls|10E
-1 Douser of Lights|GRN
-1 Lazotep Behemoth|WAR
-1 Catacomb Slug|ORI
-1 Rotting Mastodon|KTK
-1 Bogstomper|M19
-1 Minotaur Abomination|M14
-1 Toxic Abomination|DMU
-1 Rotting Legion|M11
-1 Raise Dead|9ED
-1 Disentomb|M13
-1 Recover|10E
-1 Unholy Strength|10E
-1 Dark Favor|M14
-20 Swamp|FDN|[276]
-20 Swamp|FDN|[277]
+1 Bloodrage Vampire|M12
+1 Servant of Nefarox|M13
+1 Necromancer's Assistant|M15
+1 Eerie Soultender|DMU
+1 Deepwood Ghoul|8ED
+1 Mindless Null|ZEN
+1 Dutiful Attendant|JMP
+1 Ghoulraiser|JMP
+1 Voracious Vermin|WOE
+1 Markov Patrician|ISD
+1 Murk Dwellers|5ED
+1 Sightless Ghoul|DKA
+1 Herald of the Dreadhorde|WAR
+1 Undead Servant|ORI
+1 Nimana Sell-Sword|ZEN
+1 Ravenous Gigamole|BRO
+1 Consuming Aetherborn|MOM
+1 Gravedigger|M10
+1 Zombie Goliath|M10
+1 Hollow Dogs|9ED
+1 Stromkirk Patrol|ISD
+1 Eyeblight Cullers|CMR
+1 Anointed Deacon|XLN
+1 Ambitious Aetherborn|KLD
+1 Scrounger of Souls|HOU
+1 Midnight Scavengers|EMN
+1 Barrow Witches|ELD
+1 Boneclad Necromancer|M20
+1 Maalfeld Twins|CMR

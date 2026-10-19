@@ -8,7 +8,7 @@
   "ai": "",
   "speed": 40,
   "scale": 1.0,
-  "life": 14,
+  "life": 10,
   "ante": true,
   "raider": true,
   "rewards": [
@@ -27,7 +27,7 @@
   "ai": "",
   "speed": 40,
   "scale": 1.0,
-  "life": 15,
+  "life": 10,
   "ante": true,
   "raider": true,
   "rewards": [
@@ -46,7 +46,7 @@
   "ai": "",
   "speed": 40,
   "scale": 1.0,
-  "life": 16,
+  "life": 12,
   "ante": true,
   "raider": true,
   "rewards": [
@@ -65,7 +65,7 @@
   "ai": "",
   "speed": 40,
   "scale": 1.0,
-  "life": 16,
+  "life": 12,
   "ante": true,
   "raider": true,
   "rewards": [
@@ -85,7 +85,7 @@
   "ai": "",
   "speed": 45,
   "scale": 1.0,
-  "life": 25,
+  "life": 20,
   "rewards": [
    {
     "type": "gold",
@@ -103,7 +103,7 @@
   "ai": "",
   "speed": 45,
   "scale": 1.0,
-  "life": 25,
+  "life": 30,
   "rewards": [
    {
     "type": "gold",
@@ -139,7 +139,7 @@
   "ai": "",
   "speed": 45,
   "scale": 1.0,
-  "life": 25,
+  "life": 18,
   "rewards": [
    {
     "type": "gold",
@@ -157,7 +157,7 @@
   "ai": "",
   "speed": 45,
   "scale": 1.0,
-  "life": 25,
+  "life": 22,
   "rewards": [
    {
     "type": "gold",

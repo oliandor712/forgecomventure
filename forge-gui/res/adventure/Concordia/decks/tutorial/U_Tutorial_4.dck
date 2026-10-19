@@ -1,66 +1,61 @@
 [metadata]
-Name=Raider Smuggler - Tidecallers
+Name=Raider Smuggler - Tidecutters
 [Commander]
-1 Malcolm, Keen-Eyed Navigator|CMR
+1 Esior, Wardwing Familiar|CMR
 [Main]
+23 Island|FDN|[274]
+22 Island|FDN|[275]
 1 Zephyr Sprite|M10
+1 Sea Eagle|8ED
+1 Cloud Pirates|POR
+1 Zephyr Falcon|5ED
+1 Sage Owl|M10
 1 Fugitive Wizard|M15
 1 Merfolk of the Pearl Trident|M13
-1 Kraken Hatchling|M13
-1 Faerie Seer|J22
-1 Coral Merfolk|M14
+1 Triton Shorethief|THS
+1 Gearsmith Prodigy|M19
+1 Proven Combatant|HOU
+1 Expendable Lackey|SNC
 1 Coral Eel|9ED
+1 Coral Merfolk|M10
 1 Curio Vendor|KLD
 1 Wetland Sambar|KTK
-1 Sea Eagle|8ED
-1 Seacoast Drake|M14
-1 Maritime Guard|M11
+1 Vodalian Soldiers|6ED
 1 Lumengrid Warden|10E
+1 Maritime Guard|M11
 1 Sworn Guardian|RIX
-1 Moat Piranhas|M20
-1 Wall of Mist|M19
-1 Shorecomber Crab|J25
-1 Wind Drake|M13
-1 Soaring Drake|DMU
-1 Tolarian Scholar|M19
+1 Seagraf Skaab|SOI
+1 Giant Tortoise|4ED
+1 Merfolk Observer|ROE
+1 Brokers Veteran|SNC
+1 Sage's Row Savant|JMP
+1 Screeching Skaab|ORI
+1 Sultai Skullkeeper|FRF
+1 Tah-Crop Skirmisher|AKH
+1 Sigiled Starfish|JOU
+1 Oculus|MBS
 1 Horned Turtle|M10
-1 Coral Commando|RNA
+1 Tolarian Scholar|M19
+1 Jwari Scuttler|ROE
 1 Naga Eternal|WAR
-1 River Darter|RIX
-1 Watercourser|M13
-1 Updraft Elemental|DTK
-1 Cloud Elemental|M11
-1 Skywinder Drake|M12
-1 Ancient Crab|AKH
-1 Aether Adept|M12
-1 Wanderlight Spirit|VOW
-1 Giant Octopus|9ED
-1 Azure Drake|M11
-1 Amphin Cutthroat|M12
-1 Headwater Sentries|XLN
-1 Wishcoin Crab|M21
-1 Fortress Crab|M20
-1 Nyxborn Seaguard|THB
-1 Armored Cancrix|M14
-1 Ancient Carp|DTK
-1 Vigilant Drake|7ED
-1 Wind Strider|XLN
-1 Sea Monster|10E
-1 Frilled Sea Serpent|M20
-1 Unsummon|10E
-1 Vapor Snag|NPH
-1 Into the Roil|ZNR
-1 Repulse|INV
-1 Time Ebb|M14
-1 Griptide|THS
-1 Divination|M19
-1 Opt|DOM
-1 Inspiration|8ED
-1 Messenger Drake|M14
-1 Retrieval Agent|BRO
-1 Shimmerscale Drake|AKH
+1 Telepathic Spies|7ED
+1 Naiad of Hidden Coves|THB
+1 Coral Barrier|M15
 1 Horseshoe Crab|10E
-1 Mist-Cloaked Herald|RIX
-1 Metropolis Sprite|M20
-20 Island|FDN|[274]
-20 Island|FDN|[275]
+1 Hekma Sentinels|AKH
+1 Tunnel Surveyor|DSK
+1 Watchful Automaton|AER
+1 Exultant Cultist|EMN
+1 Merchant of Secrets|8ED
+1 Amphin Cutthroat|M12
+1 Giant Octopus|9ED
+1 Enlightened Maniac|EMN
+1 Littjara Kinseekers|KHM
+1 Labyrinth Minotaur|5ED
+1 Ancient Carp|DTK
+1 Armored Cancrix|M11
+1 Wanderguard Sentry|9ED
+1 Soliton|SOM
+1 Rotcrown Ghoul|AVR
+1 Benthic Giant|THS
+1 Cold-Water Snapper|DOM

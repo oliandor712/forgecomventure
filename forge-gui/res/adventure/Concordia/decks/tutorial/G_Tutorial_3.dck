@@ -1,67 +1,61 @@
 [metadata]
-Name=Raider Brute - Heavy Roots
+Name=Raider Brute - Bramble Gang
 [Commander]
-1 Gilanra, Caller of Wirewood|CMR
+1 Syr Faren, the Hengehammer|ELD
 [Main]
-1 Llanowar Elves|DOM
-1 Elvish Mystic|M15
-1 Druid of the Cowl|M19
-1 Leaf Gilder|ORI
-1 Vine Trellis|8ED
-1 Centaur Nurturer|WAR
-1 Llanowar Visionary|M21
-1 Rampant Growth|M12
-1 Lay of the Land|M14
-1 Wood Elves|9ED
-1 Gift of Paradise|M20
-1 Explore|JMP
+23 Forest|FDN|[280]
+22 Forest|FDN|[281]
 1 Norwood Ranger|9ED
+1 Willow Elf|S99
+1 Tarpan|5ED
+1 Healer of the Glade|M20
+1 Jungle Lion|POR
+1 Elvish Berserker|10E
 1 Grizzly Bears|10E
-1 Runeclaw Bear|M15
-1 Forest Bear|PTK
-1 Elvish Warrior|9ED
-1 Canopy Spider|10E
-1 Greenwood Sentinel|M20
+1 Runeclaw Bear|M10
+1 Curious Pair|ELD
+1 Highland Game|M19
+1 Greenwood Sentinel|M19
+1 Deeproot Warrior|XLN
+1 Jukai Trainee|NEO
 1 Hardy Veteran|RIX
-1 Centaur Courser|M20
-1 Trained Armodon|9ED
-1 Harrier Naga|HOU
-1 Murasa Brute|ZNR
-1 Alpine Grizzly|KTK
-1 Colossodon Yearling|DTK
-1 Mosscoat Goriak|IKO
+1 Timberpack Wolf|M13
+1 Sage of Shaila's Claim|KLD
+1 Kraul Warrior|DGM
+1 Ursine Champion|M19
+1 Dauntless Survivor|ZNR
+1 Ironshell Beetle|JMP
+1 Kujar Seedsculptor|KLD
+1 Satyr Grovedancer|JOU
+1 Timberland Guide|MID
+1 Verdant Automaton|AER
+1 Gorilla Warrior|POR
 1 Hitchclaw Recluse|ORI
-1 Sporecap Spider|ELD
-1 Axebane Beast|RNA
-1 Order of the Sacred Bell|9ED
-1 Rowan Treefolk|POR
-1 Southern Elephant|S99
-1 Wild Ceratok|GRN
-1 Rumbling Baloth|M14
-1 Giant Spider|M19
-1 Magnigoth Sentry|DMU
-1 Stalking Tiger|10E
-1 Spined Wurm|M11
-1 Colossapede|AKH
+1 Tajuru Snarecaster|ZNR
+1 Chub Toad|5ED
+1 Giant Badger|8ED
+1 Woodland Patrol|EMN
+1 Springmane Cervin|STX
+1 Sylvan Brushstrider|JMP
+1 Stoic Builder|SOI
+1 Social Climber|SNC
+1 Brindle Boar|M11
+1 Grazing Gladehart|ZEN
+1 Penumbra Bobcat|JMP
+1 Yavimaya Sapherd|DOM
+1 Trufflesnout|M21
+1 Ferocious Pup|M20
+1 Swift Spinner|EMN
+1 Woodland Sleuth|ISD
+1 Knight of the Stampede|RIX
+1 Saruli Gatekeepers|DGM
+1 Mist Leopard|M10
+1 Elderleaf Mentor|KHM
+1 Ironroot Treefolk|5ED
+1 Nema Siltlurker|ROE
+1 Wildwood Escort|MOM
 1 Durkwood Boars|S99
-1 Redwood Treefolk|7ED
-1 Meng Huo's Horde|PTK
-1 Thornhide Wolves|M19
-1 Moss Monster|8ED
-1 Mammoth Spider|M20
+1 Spike-Tailed Ceratops|XLN
 1 Sentinel Spider|M13
-1 Craw Wurm|M10
-1 Vastwood Gorger|M13
-1 Tusked Colossodon|KTK
-1 Cowl Prowler|KLD
-1 Barbtooth Wurm|S99
-1 Primordial Wurm|DOM
-1 Ancient Brontodon|XLN
-1 Scaled Wurm|9ED
-1 Giant Growth|10E
-1 Titanic Growth|M19
-1 Fog|M10
-1 Tree Monkey|9ED
-1 Wall of Wood|10E
-20 Forest|FDN|[280]
-19 Forest|FDN|[281]
+1 Sandsteppe Scavenger|DTK
+1 Apothecary Stomper|FDN

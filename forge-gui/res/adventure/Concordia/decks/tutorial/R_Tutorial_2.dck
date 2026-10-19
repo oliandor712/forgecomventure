@@ -1,66 +1,61 @@
 [metadata]
-Name=Raider Scout - Sparks and Tricks
+Name=Raider Scout - Ash Skirmishers
 [Commander]
-1 Squee, Goblin Nabob|10E
+1 Squee, Goblin Nabob|CMM
 [Main]
-1 Bellows Lizard|ORI
-1 Weaselback Redcap|ELD
-1 Lavastep Raider|J22
-1 Defiant Khenra|HOU
-1 Feral Maaka|RNA
-1 Goblin Assailant|WAR
-1 Goblin Piker|M12
+23 Mountain|FDN|[278]
+22 Mountain|FDN|[279]
+1 Mons's Goblin Raiders|5ED
+1 Raging Goblin|M10
+1 Satyr Hoplite|JOU
+1 Akroan Crusader|THS
+1 Foundry Street Denizen|M15
+1 Grim Initiate|WAR
+1 Goblin Bully|POR
+1 Goblin Piker|M10
+1 Dwarven Soldier|5ED
+1 Innocent Bystander|MKM
+1 Illustrious Historian|STX
+1 Goblin Instigator|M19
+1 Thriving Grubs|KLD
+1 Rogue Kavu|9ED
+1 Sigiled Skink|JOU
+1 Viashino Sandscout|10E
+1 Riot Piker|DGM
 1 Goblin Raider|9ED
-1 Nest Robber|XLN
-1 Borderland Marauder|M15
-1 Igneous Cur|M21
-1 Fathom Fleet Firebrand|XLN
-1 Valley Dasher|KTK
-1 Roc Hunter|BRO
+1 Hulking Goblin|POR
+1 Goblin Elite Infantry|10E
+1 Ironclaw Orcs|5ED
+1 Goblin Brigand|9ED
+1 Goblin Shortcutter|M14
+1 Goblin Assailant|M20
+1 Swab Goblin|FDN
+1 Defiant Khenra|HOU
+1 Falkenrath Reaver|EMN
+1 Gray Ogre|4ED
+1 Goblin Hero|6ED
+1 Raging Cougar|POR
+1 Sabretooth Tiger|8ED
+1 Viashino Spearhunter|M10
+1 Conscripted Infantry|BRO
+1 Swaggering Corsair|RIX
+1 Riot Ringleader|AVR
+1 Prickly Pair|OTJ
+1 Brassclaw Orcs|5ED
+1 Hurloon Minotaur|5ED
+1 Pensive Minotaur|JOU
+1 Lavafume Invoker|ROE
 1 Balduvian Barbarians|9ED
-1 Bloodrock Cyclops|10E
-1 Breakneck Berserker|KHM
-1 Fearless Halberdier|GRN
 1 Goblin Roughrider|M15
-1 Onakke Ogre|M21
-1 Frenzied Raptor|XLN
-1 Regathan Firecat|M14
-1 Fiery Hellhound|M12
-1 Gore Swine|FRF
+1 Minotaur Warrior|POR
+1 Anaba Bodyguard|10E
+1 Redcap Heelslasher|MOM
 1 Hill Giant|10E
-1 Canyon Minotaur|M14
-1 Cobblebrute|ORI
-1 Hyena Pack|AKH
-1 Orazca Raptor|RIX
-1 Summit Prowler|KTK
-1 Bonebreaker Giant|M12
-1 Fire Elemental|M20
-1 Lathnu Sailback|AER
-1 Shock|M21
-1 Kindled Fury|M13
-1 Fervent Strike|DOM
-1 Brute Strength|AKH
-1 Fists of the Anvil|10E
-1 Infuriate|M20
-1 Rush of Adrenaline|J22
-1 Samut's Sprint|WAR
-1 Stun|10E
-1 Magma Spray|AKH
-1 Scorchmark|RNA
-1 Dual Shot|XLN
-1 Blindblast|WAR
-1 Sizzling Barrage|ZNR
-1 Hearts on Fire|J25
-1 Scorching Spear|POR
-1 Mugging|JMP
-1 Renegade Tactics|KLD
-1 Warlord's Fury|DOM
-1 Tormenting Voice|M19
-1 Dragon Fodder|ORI
-1 Krenko's Command|M13
-1 Burn Bright|M21
-1 Coming In Hot|MOM
-1 Sizzle|8ED
-1 Lava Axe|M19
-20 Mountain|FDN|[278]
-20 Mountain|FDN|[279]
+1 Canyon Minotaur|M10
+1 Goblin Battle Jester|M13
+1 Ambush Party|5ED
+1 Swarming Goblins|AFR
+1 Nearheath Stalker|DKA
+1 Cragsmasher Yeti|MOM
+1 Bull Rush|WWK
+1 Heightened Reflexes|IKO
