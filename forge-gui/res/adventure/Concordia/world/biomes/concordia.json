@@ -30,7 +30,9 @@
     "Mossgate",
     "ThornrootHollow",
     "WhisperstoneCave",
-    "EmberdeepGrotto"
+    "EmberdeepGrotto",
+    "TestCaveWest",
+    "TestCaveEast"
   ],
   "structures": [
     {
