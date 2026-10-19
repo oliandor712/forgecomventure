@@ -133,6 +133,17 @@ public class RewardData implements Serializable {
         allCards = CardUtil.getFullCardPool(false).stream()
                 .filter(IterableUtil.and(filters))
                 .collect(Collectors.toList());
+        if (Printings.enabled()) {
+            //one printing per card, so a card with many reprints is no likelier to turn up than any other
+            Map<String, PaperCard> one = new LinkedHashMap<>();
+            for (PaperCard pc : allCards) {
+                PaperCard original = Printings.originalOf(pc.getName());
+                boolean isOriginal = original != null && original.getEdition().equals(pc.getEdition()) && original.getArtIndex() == pc.getArtIndex();
+                if (isOriginal || !one.containsKey(pc.getName()))
+                    one.put(pc.getName(), pc);
+            }
+            allCards = new ArrayList<>(one.values());
+        }
 
         //Filter AI cards for enemies.
         allEnemyCards = IterableUtil.filter(allCards, input -> {

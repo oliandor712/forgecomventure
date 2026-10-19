@@ -50,7 +50,7 @@ public class Reward {
 
     public Reward(PaperCard card, boolean isNoSell) {
         type = Type.Card;
-        this.card = card;
+        this.card = Printings.original(card); //with ConfigData.uniquePrintings, every card found is its original printing
         count = 0;
         this.isNoSell = isNoSell;
         if(isNoSell)
@@ -79,6 +79,7 @@ public class Reward {
 
     public static Reward stolen(PaperCard card, String raider) {
         Reward reward = new Reward(card);
+        reward.card = card; //a stolen card comes back as the printing the player had
         reward.stolen = true;
         reward.stolenFrom = raider;
         return reward;

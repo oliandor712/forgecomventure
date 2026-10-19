@@ -514,6 +514,22 @@ was, with the `LegendShop` sign). It reads the roster in `world/commanders.json`
 - The roster leaves out Game Changers, restricted cards and cards printed only in Universes Beyond sets. A few
   cEDH-level legends were swapped for fair ones. AI flags don't matter here: only the player uses these.
 
+### 6.2b One printing per card, and Change art (built)
+
+With `uniquePrintings` in `config.json` (Concordia sets it), each card has one findable printing: its **original
+printing**, the earliest release in a regular product (core set, expansion, reprint set, Commander or other
+preconstructed product; never a promo, online-only or restricted edition). Lightning Bolt and Sol Ring come from
+Alpha, Command Tower from Commander 2011, Evolving Wilds from Rise of the Eldrazi.
+
+- **The card pool** used for random rewards and shops keeps only that printing, so a card with 100 reprints is no
+  likelier to turn up than a card with one.
+- **Every card reward** (shops, loot, a deck card from an enemy, a named card) is changed to its original printing,
+  keeping foil and no-sell. A stolen card comes back as the printing the player had.
+- **Change art** in the deck editor (on a card in the collection or in a deck) lists every printing of that card,
+  oldest first, whether or not you own it. Choosing one swaps every copy of that printing in your collection,
+  auto-sell list, favorites and all decks; foil, no-sell and marked colors carry over. It's purely cosmetic.
+- Decks Concordia hands out (starters, rewards decks) keep the printings they list.
+
 ### 6.3 Quests and flags
 
 - The new plane has its own `world/quests.json`. New games always start **quest 28** (hard-coded in

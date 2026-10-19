@@ -44,6 +44,7 @@ public class ConfigData {
     public boolean stripAiUnplayableCards = false;  //AI decks lose cards flagged AI:RemoveDeck (All or Random) before a duel; basics of the commander's colors fill the gap.
     public String respawnMap = "";                  //If set, losing a duel (not in events or arenas) wakes the player in this sub-map of the "Spawn" POI, fully healed. Same path string the town's door uses.
     public int respawnObjectId = 0;                 //Entry object in respawnMap to wake up at; 0 = the map's spawn=true entry.
+    public boolean uniquePrintings = false;         //One findable printing per card: rewards, shops and loot use the original printing, and the deck editor gets "Change art" to swap to any printing.
     public String commanderHall = "";               //If set, a Commander Hall roster (CommanderHallData[]); the deck editor's commander slot is then locked and commanders change only at a commanderhall map object.
     public String startMap = "";                    //If set, a new game starts in this sub-map of the "Spawn" POI instead of its main map. Same path string the town's door uses.
     public int startObjectId = 0;                   //Entry object in startMap to start at; 0 = the map's spawn=true entry.

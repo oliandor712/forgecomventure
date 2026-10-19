@@ -11,6 +11,7 @@ import forge.adventure.data.ItemData;
 import forge.adventure.player.AdventurePlayer;
 import forge.adventure.util.AdventureEventController;
 import forge.adventure.util.CommanderHall;
+import forge.adventure.util.Printings;
 import forge.adventure.util.Config;
 import forge.adventure.util.Current;
 import forge.assets.FImage;
@@ -460,6 +461,7 @@ public class AdventureDeckEditor extends FDeckEditor {
         @Override
         protected void buildMenu(final FDropDownMenu menu, final PaperCard card) {
             super.buildMenu(menu, card);
+            addChangeArtItem(menu, card, parentScreen);
 
             if (!(parentScreen instanceof AdventureDeckEditor adventureEditor) || adventureEditor.getAutoSellPage() == null)
                 return;
@@ -1126,10 +1128,58 @@ public class AdventureDeckEditor extends FDeckEditor {
         }
     }
 
+    /** "Change art" (ConfigData.uniquePrintings): swap every copy of this printing, in the collection and all decks, for any other printing of the card. */
+    private static void addChangeArtItem(FDropDownMenu menu, PaperCard card, FDeckEditor screen) {
+        if (!Printings.enabled() || !(screen instanceof AdventureDeckEditor editor))
+            return;
+        List<PaperCard> options = Printings.artOptions(card);
+        if (options.size() < 2)
+            return;
+        Localizer localizer = Forge.getLocalizer();
+        menu.addItem(new FMenuItem(localizer.getMessageorUseDefault("lblChangeArt", "Change art"), Forge.hdbuttons ? FSkinImage.HDCHOICE : FSkinImage.DECKLIST, e ->
+                GuiChoose.oneOrNone(localizer.getMessageorUseDefault("lblChooseArtFor", "Choose the art for") + " " + card.getName(), options, chosen -> {
+                    if (chosen == null)
+                        return;
+                    PaperCard to = Printings.withFlagsOf(chosen, card);
+                    if (!to.equals(card))
+                        editor.swapPrinting(card, to);
+                })));
+    }
+
+    private void swapPrinting(PaperCard from, PaperCard to) {
+        Deck deck = getDeck();
+        Printings.swapOutside(from, to, deck);
+        if (deck != null) {
+            for (DeckSection section : DeckSection.values()) {
+                if (!deck.has(section))
+                    continue;
+                int n = deck.get(section).count(from);
+                if (n == 0)
+                    continue;
+                DeckSectionPage page = getPageForSection(section);
+                if (page != null) { //through the page, so the editor shows the change
+                    page.removeCard(from, n);
+                    page.addCard(to, n);
+                } else {
+                    Printings.swapIn(deck.get(section), from, to);
+                }
+            }
+        }
+        CatalogPage catalog = getCatalogPage();
+        if (catalog != null)
+            catalog.refresh();
+    }
+
     protected static class AdventureDeckSectionPage extends DeckSectionPage {
         protected AdventureDeckSectionPage(DeckSection deckSection, ItemManagerConfig config) {
             super(new AdventureCardManager(), deckSection, config, deckSection.getLocalizedShortName(), iconFromDeckSection(deckSection));
             cardManager.setBtnAdvancedSearchOptions(deckSection == DeckSection.Main);
+        }
+
+        @Override
+        protected void buildMenu(final FDropDownMenu menu, final PaperCard card) {
+            super.buildMenu(menu, card);
+            addChangeArtItem(menu, card, parentScreen);
         }
 
         @Override
