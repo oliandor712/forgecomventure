@@ -4,7 +4,7 @@ package forge.adventure.data;
  * One commander on the Commander Hall roster (ConfigData.commanderHall, for example world/commanders.json).
  * The Hall shows the commanders whose colors the player has unlocked; picking an unlocked one makes it the
  * commander of the selected deck. A commander is unlocked from the start, or by the character flag
- * "hall.<card>" (set by beating an enemy whose unlockCommander names it, or by any dialog's setCharacterFlag).
+ * "hall.<card>" (set when the player gains the card as a reward or buys it, or by any dialog's setCharacterFlag).
  */
 public class CommanderHallData {
     public String card;            //card name

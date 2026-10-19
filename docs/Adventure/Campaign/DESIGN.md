@@ -490,11 +490,15 @@ The Hall is a shop of its own type (map object `commanderhall`; Mossgate's stand
 was, with the `LegendShop` sign). It reads the roster in `world/commanders.json` (`commanderHall` in `config.json`):
 **30 commanders per color, 10 in each band**, 150 in all.
 
-| Band | Per color | Unlocked from the start | Found |
+| Band | Per color | Unlocked from the start | The rest |
 |---|---|---|---|
-| Mediocre | 10 | the two Tier 1 deck commanders of that color, plus one more | the route's wild and cave encounters unlock one each (8 in all); the rest beyond Mossgate |
-| Seasoned | 10 | your starter | the route's duelists and cave bosses unlock the commander of the deck they play (8 in all); the rest beyond Mossgate |
-| Legendary | 10 | none | the Tier 3 deck commander and one more are the Warden's; the rest are legends found later |
+| Mediocre | 10 | the two Tier 1 deck commanders of that color, plus one more | unlock when found |
+| Seasoned | 10 | your starter | unlock when found |
+| Legendary | 10 | none | unlock when found |
+
+A roster commander unlocks when its **card** comes to the player: as a reward (loot, a deck card from an enemy, a
+quest reward, a booster pack) or bought in a shop. Owning the card is enough, and the unlock stays even if the card
+is later sold. Enemies don't unlock commanders by being beaten.
 
 - The Hall has one page per color and band you can see (the `colX` character flags), and opens on your current
   commander's page. The **Next page** button (the shop's restock button) turns the page. The header names the page
@@ -502,8 +506,8 @@ was, with the `LegendShop` sign). It reads the roster in `world/commanders.json`
 - Each card has a button: **Choose**, **Your commander**, or the hint for finding a locked one (the card is faded).
 - Choosing makes that card the selected deck's commander and keeps the 99 (the duel still cuts off-color cards).
   If you don't own the card, the Hall gives you one. A copy in the 99 is taken out, to keep the deck singleton.
-- Unlocks are the character flag `hall.<card name>`. Beating an enemy whose `enemies.json` entry has
-  `unlockCommander` sets it and shows a notice; any dialog can set it with `setCharacterFlag`.
+- Unlocks are the character flag `hall.<card name>`, set (with a notice) when a card reward of a roster commander is
+  added to the collection; any dialog can also set it with `setCharacterFlag`.
 - While a roster is configured, the deck editor can't set, move or remove a commander (J-Hall); the Hall is the only
   place to change it. Color identity is enforced by the Hall offering only unlocked colors.
 - A commander is anything Forge's `CardRules.canBeCommander()` accepts: a legendary creature (double-faced cards

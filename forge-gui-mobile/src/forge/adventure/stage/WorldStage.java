@@ -185,7 +185,6 @@ public class WorldStage extends GameStage implements SaveFileContent {
                         WorldStage.this.removeEnemy(currentMob);
                         AdventureQuestController.instance().updateQuestsWin(currentMob);
                         AdventureQuestController.instance().showQuestDialogs(MapStage.getInstance());
-                        CommanderHall.unlock(currentMob.getData().unlockCommander);
                         Forge.switchScene(RewardScene.instance());
                         currentMob = null;
                     });

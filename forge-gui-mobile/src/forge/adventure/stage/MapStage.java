@@ -926,7 +926,6 @@ public class MapStage extends GameStage {
                     currentMob.resetCollisionHeight();
                     float deathDuration = currentMob.getActionAnimationDuration(CharacterSprite.AnimationTypes.Death, 0.3f);
                     startPause(deathDuration, () -> {
-                        CommanderHall.unlock(currentMob.getData().unlockCommander);
                         MapStage.this.getReward();
                         AdventureQuestController.instance().updateQuestsWin(currentMob,enemies);
                         AdventureQuestController.instance().showQuestDialogs(MapStage.this);

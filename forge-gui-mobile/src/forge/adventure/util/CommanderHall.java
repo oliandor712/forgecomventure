@@ -46,8 +46,11 @@ public class CommanderHall {
         return "hall." + card;
     }
 
+    /** Unlocked from the start, once found (the flag, set when the card is gained as a reward or bought), or already owned. */
     public static boolean isUnlocked(CommanderHallData entry) {
-        return entry.start || AdventurePlayer.current().checkCharacterFlag(flag(entry.card));
+        AdventurePlayer player = AdventurePlayer.current();
+        return entry.start || player.checkCharacterFlag(flag(entry.card))
+                || player.getCards().countAll(c -> c.getName().equalsIgnoreCase(entry.card)) > 0;
     }
 
     /** True when every color of the entry is one the player has unlocked (character flags colW..colG). */
@@ -113,7 +116,7 @@ public class CommanderHall {
         return null;
     }
 
-    /** Unlocks a roster commander, with a notice the first time. Does nothing for a card not on the roster. */
+    /** Unlocks a roster commander, with a notice the first time. Does nothing for a card not on the roster or without a Hall. */
     public static void unlock(String card) {
         CommanderHallData entry = find(card);
         if (entry == null || isUnlocked(entry))

@@ -1081,6 +1081,7 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
             case Card:
                 cards.add(reward.getCard());
                 newCards.add(reward.getCard());
+                CommanderHall.unlock(reward.getCard().getName()); //a roster commander unlocks once its card is found or bought
                 if (reward.isAutoSell()) {
                     autoSellCards.add(reward.getCard());
                     refreshEditor();

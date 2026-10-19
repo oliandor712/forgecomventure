@@ -85,7 +85,7 @@
   "ai": "",
   "speed": 45,
   "scale": 1.0,
-  "life": 20,
+  "life": 25,
   "rewards": [
    {
     "type": "gold",
@@ -103,7 +103,7 @@
   "ai": "",
   "speed": 45,
   "scale": 1.0,
-  "life": 30,
+  "life": 25,
   "rewards": [
    {
     "type": "gold",
@@ -139,7 +139,7 @@
   "ai": "",
   "speed": 45,
   "scale": 1.0,
-  "life": 18,
+  "life": 25,
   "rewards": [
    {
     "type": "gold",
@@ -157,7 +157,7 @@
   "ai": "",
   "speed": 45,
   "scale": 1.0,
-  "life": 22,
+  "life": 25,
   "rewards": [
    {
     "type": "gold",
@@ -167,7 +167,6 @@
  },
 {
   "name": "Wild Hidden Bush",
-  "unlockCommander": "Yedora, Grave Gardener",
   "sprite": "sprites/enemy/plant/hiddenbush.atlas",
   "deck": [
    "decks/tier1/T1_G_Ruxa.dck"
@@ -192,7 +191,6 @@
  },
 {
   "name": "Wild Thicket Pixie",
-  "unlockCommander": "Esior, Wardwing Familiar",
   "sprite": "sprites/enemy/fey/pixie.atlas",
   "deck": [
    "decks/tier1/T1_U_Siani.dck"
@@ -217,7 +215,6 @@
  },
 {
   "name": "Wild Mossfungus",
-  "unlockCommander": "Tormod, the Desecrator",
   "sprite": "sprites/enemy/plant/fungus.atlas",
   "deck": [
    "decks/tier1/T1_B_Ozox.dck",
@@ -243,7 +240,6 @@
  },
 {
   "name": "Wild Briar Satyr",
-  "unlockCommander": "Anax, Hardened in the Forge",
   "sprite": "sprites/enemy/fey/satyr.atlas",
   "deck": [
    "decks/tier1/T1_R_Dori.dck"
@@ -268,7 +264,6 @@
  },
 {
   "name": "Cave Kavu",
-  "unlockCommander": "Kazuul, Tyrant of the Cliffs",
   "sprite": "sprites/enemy/monstrosity/kavu.atlas",
   "deck": [
    "decks/tier1/T1_R_Kreat.dck"
@@ -294,7 +289,6 @@
  },
 {
   "name": "Cave Fungus",
-  "unlockCommander": "Renata, Called to the Hunt",
   "sprite": "sprites/enemy/plant/fungus_golgari.atlas",
   "deck": [
    "decks/tier1/T1_G_Dwynen.dck"
@@ -320,7 +314,6 @@
  },
 {
   "name": "Cave Harpy",
-  "unlockCommander": "Daxos, Blessed by the Sun",
   "sprite": "sprites/enemy/monstrosity/harpy.atlas",
   "deck": [
    "decks/tier1/T1_W_Anafenza.dck",
@@ -347,7 +340,6 @@
  },
 {
   "name": "Cave Pixie",
-  "unlockCommander": "Thryx, the Sudden Storm",
   "sprite": "sprites/enemy/fey/pixie_dimir.atlas",
   "deck": [
    "decks/tier1/T1_U_Malcolm.dck"
@@ -373,7 +365,6 @@
  },
 {
   "name": "Mossback Treant",
-  "unlockCommander": "Rishkar, Peema Renegade",
   "sprite": "sprites/enemy/plant/treant_large.atlas",
   "deck": [
    "decks/tier2/T2_G_Rishkar.dck"
@@ -401,7 +392,6 @@
  },
 {
   "name": "Hollow Shade",
-  "unlockCommander": "Grandmother Sengir",
   "sprite": "sprites/enemy/undead/shade.atlas",
   "deck": [
    "decks/tier2/T2_B_Sengir.dck"
@@ -429,7 +419,6 @@
  },
 {
   "name": "Deepcave Yeti",
-  "unlockCommander": "Tahngarth, Talruum Hero",
   "sprite": "sprites/enemy/monstrosity/yeti.atlas",
   "deck": [
    "decks/tier2/T2_R_Tahngarth.dck"
@@ -457,7 +446,6 @@
  },
 {
   "name": "Duelist Bram",
-  "unlockCommander": "Danitha Capashen, Paragon",
   "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
   "deck": [
    "decks/tier2/T2_W_Danitha.dck",
@@ -480,7 +468,6 @@
  },
 {
   "name": "Duelist Mira",
-  "unlockCommander": "Sai, Master Thopterist",
   "sprite": "sprites/enemy/humanoid/conjurer.atlas",
   "deck": [
    "decks/tier2/T2_U_Sai.dck",
@@ -503,7 +490,6 @@
  },
 {
   "name": "Duelist Corvin",
-  "unlockCommander": "Fumulus, the Infestation",
   "sprite": "sprites/enemy/humanoid/knight.atlas",
   "deck": [
    "decks/tier2/T2_B_Fumulus.dck"
@@ -525,7 +511,6 @@
  },
 {
   "name": "Duelist Sela",
-  "unlockCommander": "Eron the Relentless",
   "sprite": "sprites/enemy/humanoid/swordsman_2.atlas",
   "deck": [
    "decks/tier2/T2_R_Eron.dck"
@@ -547,7 +532,6 @@
  },
 {
   "name": "Duelist Fenn",
-  "unlockCommander": "Mirri, Cat Warrior",
   "sprite": "sprites/enemy/humanoid/swordsman_3.atlas",
   "deck": [
    "decks/tier2/T2_G_Mirri.dck"
