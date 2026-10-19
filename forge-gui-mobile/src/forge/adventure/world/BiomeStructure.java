@@ -65,6 +65,20 @@ public class BiomeStructure {
         for (int i = 0; i < data.mappingInfo.length; i++) {
             colorIdMap.put(Integer.parseInt(data.mappingInfo[i].color, 16), i);
         }
+        if (data.fixed) {
+            //hand-drawn layout: each pixel's color picks the mapped object, any other color is empty ground
+            for (int x = 0; x < targetWidth; x++) {
+                for (int y = 0; y < targetHeight; y++) {
+                    Color color = sourceImage.getColor(x * sourceImage.getWidth() / targetWidth, y * sourceImage.getHeight() / targetHeight);
+                    Integer objectId = colorIdMap.get(Color.rgb888(color));
+                    dataMap[x][y] = objectId == null ? -1 : objectId;
+                    collisionMap[x][y] = objectId != null && data.mappingInfo[objectId].collision;
+                    finalImage.setColor(x, y, color);
+                }
+            }
+            image = finalImage;
+            return;
+        }
         for (int mx = 0; mx < targetWidth; mx += Math.min(targetWidth - mx, MAXIMUM_WAVEFUNCTIONSIZE)) {
             for (int my = 0; my < targetHeight; my += Math.min(targetHeight - my, MAXIMUM_WAVEFUNCTIONSIZE)) {
                 int blockWidth = Math.min(targetWidth - mx, MAXIMUM_WAVEFUNCTIONSIZE);

@@ -9,7 +9,7 @@
     "map": "../Concordia/maps/map/emberbrook.tmx",
     "radiusFactor": 0,
     "offsetX": 0.0,
-    "offsetY": -0.3,
+    "offsetY": -0.4222,
     "questTags": [
       "Story",
       "Start",
@@ -26,7 +26,7 @@
     "map": "../Concordia/maps/map/mossgate.tmx",
     "radiusFactor": 0,
     "offsetX": 0.0,
-    "offsetY": 0.0,
+    "offsetY": 0.4222,
     "questTags": [
       "Story",
       "Hub",

@@ -1,8 +1,8 @@
 {
   "startPointX": 0.5,
   "startPointY": 0.5,
-  "noiseWeight": 0.3,
-  "distWeight": 1,
+  "noiseWeight": 0.0,
+  "distWeight": 0.6,
   "name": "concordia_hub",
   "tilesetAtlas": "world/tilesets/terrain.atlas",
   "tilesetName": "Colorless",
@@ -19,8 +19,8 @@
       "resolution": 5
     }
   ],
-  "width": 0.85,
-  "height": 0.85,
+  "width": 0.375,
+  "height": 0.5625,
   "color": "aeaeae",
   "spriteNames": [
     "Stone"
@@ -28,5 +28,45 @@
   "pointsOfInterest": [
     "Spawn",
     "Mossgate"
+  ],
+  "structures": [
+    {
+      "fixed": true,
+      "x": 0.5,
+      "y": 0.5,
+      "width": 1.0,
+      "height": 1.0,
+      "N": 2,
+      "sourcePath": "world/structures/models/mossgate_maze.png",
+      "maskPath": "world/structures/masks/fill.png",
+      "structureAtlasPath": "world/structures/green_structures.atlas",
+      "mappingInfo": [
+        {
+          "name": "tree",
+          "color": "008000",
+          "collision": true
+        },
+        {
+          "name": "tree3",
+          "color": "00c000",
+          "collision": true
+        },
+        {
+          "name": "tree5",
+          "color": "006000",
+          "collision": true
+        },
+        {
+          "name": "rock",
+          "color": "808080",
+          "collision": true
+        },
+        {
+          "name": "bush",
+          "color": "ff8080",
+          "collision": true
+        }
+      ]
+    }
   ]
 }

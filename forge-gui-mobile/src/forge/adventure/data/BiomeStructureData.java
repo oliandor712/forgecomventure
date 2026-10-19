@@ -36,6 +36,7 @@ public class BiomeStructureData {
     public int ground;
     public int symmetry=2;
     public boolean periodicOutput=true;
+    public boolean fixed=false; //use sourcePath as drawn (one pixel per tile, stretched to the structure size) instead of wave function collapse
     public BiomeStructureDataMapping[] mappingInfo;
 
     public BiomeStructureData( ) {
@@ -54,6 +55,7 @@ public class BiomeStructureData {
         this.symmetry=biomeStructureData.symmetry;
         this.ground=biomeStructureData.ground;
         this.randomPosition=biomeStructureData.randomPosition;
+        this.fixed=biomeStructureData.fixed;
         if(biomeStructureData.mappingInfo!=null)
         {
             this.mappingInfo=new BiomeStructureDataMapping[  biomeStructureData.mappingInfo.length];
