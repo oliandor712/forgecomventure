@@ -155,9 +155,9 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 
 | Step | Goal | Location | Beats |
 |---|---|---|---|
-| P1 | Awaken | Emberbrook: Seal-day festival at the shrine (hand-made map) | Unsealed raiders strike during the festival. In the chaos both of you awaken your sparks. Seal Angels descend and ask each of you, mystically, to choose a first color. You choose; the rival's color is its opposite (§2.1 color lore) |
+| P1 | Awaken | Emberbrook: your room in the family house (a new game starts here) | Unsealed raiders strike during the Seal-day festival. You wake to the noise, and the Seal Angels appear in your room the moment the game loads, asking you to choose a first color. You choose; the rival's color is its opposite (§2.1 color lore) |
 | P2 | Your soul's deck | Emberbrook shrine | A basic commander deck manifests from your soul in the color you chose. The rival's manifests in theirs. **Elder Wren** explains what the decks are, and that the duels to come are your first lessons |
-| P3 | Tutorial raiders | Emberbrook | Each raider you duel is an ante duel and a tutorial battle, one lesson per raider (drawing, combat, the commander, color identity). The first raider takes a starter card from you, and the next lesson always returns it, win or lose, so the first loss is a lesson rather than a cost. That is the only place a stolen card returns. Raiders keep coming until the last one flees. **Rival duel 1** comes after the last raider: a short duel with a low-power deck. The rival says that when they rule, they'll tear the Seals down |
+| P3 | Tutorial raiders | Emberbrook square | All four raiders are in the square when you step out of the house, and you can take them in any order. Each is an ante duel and a tutorial battle with one lesson (drawing, combat, the commander, color identity). Any card a raider wins from you comes back before your next tutorial duel, win or lose, so a loss here is a lesson rather than a cost. That is the only place a stolen card returns. When the last raider flees, the rival appears in the village gate and comes at you when you get close: **Rival duel 1**, a short duel with a low-power deck. The rival says that when they rule, they'll tear the Seals down |
 | P4 | Set out | Route 1 → Mossgate | Elder Wren sends you to Mossgate with the village's Seal fragment. Route trainers teach the "challenged on sight" mechanic. At Mossgate's notice board you read the Champion's open challenge for the first time. The rival has already left |
 
 #### Chapter 1: Your Seal
@@ -308,7 +308,17 @@ What the code allows today:
   `BiomeStructure.initialize`, a leftover strip narrower than `N` threw, and `World.generateNew` waited forever for
   it. That froze the game on "generating world". The hub biome has no structures for now.
 - **New games auto-enter the POI named `Spawn`** (`WorldStage.enter`). Emberbrook is that POI (`name: "Spawn"`,
-  `displayName: "Emberbrook"`). Losing on the overworld also sends the player back to `Spawn`.
+  `displayName: "Emberbrook"`). Losing on the overworld also sends the player back to `Spawn`. With `startMap` in
+  `config.json` (Concordia sets it to the house), a new game starts in that sub-map of `Spawn` instead of its main
+  map; `startObjectId` picks the entry, and 0 means the entry marked `spawn`.
+- **`autoStart` dialog objects open by themselves.** A `dialog` object with the property `autoStart` set to true
+  opens on the first free frame after its map loads, if one of its nodes' conditions passes. The Seal Angels in the
+  house use it: they ask for the first color as soon as a new game loads, and say nothing on later visits.
+- **Dialog nodes are checked in order, and each node's actions run as it loads.** A later node's condition sees the
+  earlier node's changes. Put the narrower condition first, as the raiders' defeat dialogs do: "this was the last
+  raider" (counter = 4) comes before "raiders are still loose" (counter < 4), whose action raises the counter.
+  `getQuestFlag` fails for a flag that was never set, and `setQuestFlag` with 0 deletes the flag, so the counter
+  starts at 1.
 - **Dialog quirks (found in the first playtest).**
   - A dialog node that has text but no options closes before its text shows, so every text node needs at least a
     `(Continue)` option.

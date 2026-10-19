@@ -52,6 +52,14 @@ public class DialogActor extends CharacterSprite {
         dialog = null;
     }
 
+    /** Opens this actor's dialog without the player touching it, for an object with autoStart=true. */
+    public void startAutoDialog() {
+        if (dialog == null && lazyDialogText != null)
+            dialog = new MapDialog(lazyDialogText, stage, objectId, lazySourceMapFile);
+        if (dialog != null && dialog.activate())
+            stage.showDialog();
+    }
+
     @Override
     public void onPlayerCollide() {
         if (dialog == null && lazyDialogText != null) {

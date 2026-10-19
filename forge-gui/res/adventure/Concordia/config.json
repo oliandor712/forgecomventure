@@ -227,5 +227,7 @@
   "persistActivatedObjects": true,
   "stripAiUnplayableCards": true,
   "respawnMap": "../Concordia/maps/map/emberbrook_house.tmx",
-  "respawnObjectId": 0
+  "respawnObjectId": 0,
+  "startMap": "../Concordia/maps/map/emberbrook_house.tmx",
+  "startObjectId": 0
 }

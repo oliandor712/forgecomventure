@@ -493,7 +493,8 @@ public class WorldStage extends GameStage implements SaveFileContent {
             enterSpawnPOI = false;
             PointOfInterest poi = Current.world().findPointsOfInterest("Spawn");
             if (poi != null) { //shouldn't be null
-                WorldStage.getInstance().loadPOI(poi);
+                ConfigData config = Config.instance().getConfigData();
+                WorldStage.getInstance().loadPOI(poi, config.startMap, config.startObjectId);
                 // adjust player sprite to prevent triggering the poi collision point when leaving the spawn on New Game
                 WorldStage.getInstance().getPlayerSprite().storePos(poi.getPosition().x, poi.getPosition().y + 18f);
             }

@@ -234,6 +234,15 @@ better. Treat the targets as a floor for Tier 1 and a centre point for Tiers 2 a
   - Lesson decks vs starters: 117 of 120 wins.
   - The old Realm of Legends "Easy" precons as lesson decks: the starter won only 82%.
   - Rivals: 15-15 overall.
+  - The 30 generated decks, AI vs AI inside each tier, 10 games per deck (each tier's life totals):
+    - Tier 1: Kreat 8-2, Dwynen 8-2, Malcolm 7-3, Ruxa 6-4, Pianna, Anafenza and Siani 5-5, Skitter 4-6, Ozox 1-9,
+      Dori 1-9. About 15.5 turns a game.
+    - Tier 2: Sai 7-3, Gerrard 6-3, Ertai 6-4, Tahngarth 6-4, Danitha, Fumulus and Sengir 5-5, Eron 3-6, Mirri 3-7,
+      Rishkar 3-7. About 19 turns; one Eron vs Gerrard game hit the 240-second limit.
+    - Tier 3: Lyra 9-1, Gargos 7-3, Isperia, Gyruda, Exava and Zilortha 5-5, Hythonia, Dragonhawk and Sigarda 4-6,
+      Muzzio 2-8. About 19 turns.
+    - Ten games per deck is a rough read (±20%). The outliers to watch are Ozox and Dori (weak for Tier 1),
+      Lyra (strong) and Muzzio (weak) for Tier 3.
 
 **Published guidance**
 - The Commander Brackets (Feb 2025, updated Apr and Oct 2025 and Feb 2026). The official pages are linked from
