@@ -5,25 +5,18 @@ Name=Raider Brute - Bramble Gang
 [Main]
 23 Forest|FDN|[280]
 22 Forest|FDN|[281]
-1 Norwood Ranger|9ED
 1 Willow Elf|S99
 1 Tarpan|5ED
-1 Healer of the Glade|M20
-1 Jungle Lion|POR
-1 Elvish Berserker|10E
 1 Grizzly Bears|10E
 1 Runeclaw Bear|M10
-1 Curious Pair|ELD
 1 Highland Game|M19
 1 Greenwood Sentinel|M19
-1 Deeproot Warrior|XLN
 1 Jukai Trainee|NEO
 1 Hardy Veteran|RIX
 1 Timberpack Wolf|M13
 1 Sage of Shaila's Claim|KLD
 1 Kraul Warrior|DGM
 1 Ursine Champion|M19
-1 Dauntless Survivor|ZNR
 1 Ironshell Beetle|JMP
 1 Kujar Seedsculptor|KLD
 1 Satyr Grovedancer|JOU
@@ -32,19 +25,16 @@ Name=Raider Brute - Bramble Gang
 1 Gorilla Warrior|POR
 1 Hitchclaw Recluse|ORI
 1 Tajuru Snarecaster|ZNR
-1 Chub Toad|5ED
 1 Giant Badger|8ED
 1 Woodland Patrol|EMN
 1 Springmane Cervin|STX
 1 Sylvan Brushstrider|JMP
 1 Stoic Builder|SOI
 1 Social Climber|SNC
-1 Brindle Boar|M11
 1 Grazing Gladehart|ZEN
 1 Penumbra Bobcat|JMP
 1 Yavimaya Sapherd|DOM
 1 Trufflesnout|M21
-1 Ferocious Pup|M20
 1 Swift Spinner|EMN
 1 Woodland Sleuth|ISD
 1 Knight of the Stampede|RIX
@@ -59,3 +49,13 @@ Name=Raider Brute - Bramble Gang
 1 Sentinel Spider|M13
 1 Sandsteppe Scavenger|DTK
 1 Apothecary Stomper|FDN
+1 Rampant Growth|M12
+1 Cultivate|TMC
+1 Prey Upon|GRN
+1 Giant Growth|MSH
+1 Titanic Growth|WOE
+1 Ram Through|IKO
+1 Rancor|GVL
+1 Snake Umbra|ROE
+1 Gift of Paradise|M20
+1 Short Sword|M21

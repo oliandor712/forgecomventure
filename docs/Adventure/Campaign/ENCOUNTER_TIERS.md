@@ -203,6 +203,10 @@ player's net wins against that enemy pass 3):
 
 | Enemy | Tier | Life | Deck(s) |
 |---|---|---|---|
+| Tutorial Raider (B) | 1 | 10 | `decks/tutorial/B_Tutorial_1` (12 non-creature spells) |
+| Raider Scout (R) | 1 | 10 | `decks/tutorial/R_Tutorial_2` (13 non-creature spells) |
+| Raider Brute (G) | 1 | 12 | `decks/tutorial/G_Tutorial_3` (10 non-creature spells) |
+| Raider Smuggler (U) | 1 | 12 | `decks/tutorial/U_Tutorial_4` (15 non-creature spells) |
 | Wild Hidden Bush | 1 | 10 | Ruxa |
 | Wild Thicket Pixie | 1 | 10 | Siani |
 | Wild Mossfungus | 1 | 10 | Ozox, then Skitter |
@@ -219,6 +223,11 @@ player's net wins against that enemy pass 3):
 | Duelist Corvin (B) | 2 | 20 | Fumulus |
 | Duelist Sela (R) | 2 | 20 | Eron |
 | Duelist Fenn (G) | 2 | 20 | Mirri |
+
+The tutorial raider decks were all creatures, so they swap 10-15 creatures (by color: Green 10, Black 12, Red 13,
+Blue 15) for hand-picked commons the AI plays well: burn and pump spells, auras, equipment, token makers, plain card
+draw, mana rocks. They stay inside Tier 1's removal, draw and ramp caps (lockdown auras count as removal), and power
+went from about 11 to 13-16.5, under the cap of 18.
 
 The two weakest Tier 1 decks (Ozox, Dori) went to the wild encounters, the weakest fights on the route. The inn
 tournament champions also use the ten Tier 2 decks, one each, at 30 life. The Tier 3 decks are kept for the Wardens

@@ -5,18 +5,10 @@ Name=Tutorial Raider - Grave Rabble
 [Main]
 23 Swamp|FDN|[276]
 22 Swamp|FDN|[277]
-1 Muck Rats|POR
-1 Grasping Scoundrel|M19
-1 Cutthroat Contender|SNC
-1 Duty-Bound Dead|M13
 1 Nezumi Linkbreaker|OTJ
 1 Warehouse Tabby|WOE
-1 Dakmor Scorpion|S99
 1 Skeletal Snake|POR
 1 Doomed Dissenter|M19
-1 Discordant Piper|THB
-1 Butcher Ghoul|AVR
-1 Bojuka Brigand|WWK
 1 Grim Roustabout|RTR
 1 Lazotep Reaver|WAR
 1 Masked Blackguard|M21
@@ -24,17 +16,13 @@ Name=Tutorial Raider - Grave Rabble
 1 Ruthless Cullblade|WWK
 1 Thriving Rats|KLD
 1 Walking Corpse|M13
-1 Bloodcrazed Hoplite|JOU
 1 Wretched Camel|HOU
-1 Child of Night|M10
 1 Smitten Swordmaster|ELD
 1 Cyclopean Mummy|4ED
 1 Scathe Zombies|10E
-1 Bloodrage Vampire|M12
 1 Servant of Nefarox|M13
 1 Necromancer's Assistant|M15
 1 Eerie Soultender|DMU
-1 Deepwood Ghoul|8ED
 1 Mindless Null|ZEN
 1 Dutiful Attendant|JMP
 1 Ghoulraiser|JMP
@@ -59,3 +47,15 @@ Name=Tutorial Raider - Grave Rabble
 1 Barrow Witches|ELD
 1 Boneclad Necromancer|M20
 1 Maalfeld Twins|CMR
+1 Murder|DSK
+1 Supernatural Stamina|AKH
+1 Raise the Draugr|KHM
+1 Sign in Blood|M15
+1 Night's Whisper|J25
+1 Raise Dead|9ED
+1 Feed the Swarm|TLE
+1 Mind Rot|M21
+1 Sinister Strength|PLS
+1 Vampiric Link|PLC
+1 Arcane Signet|ELD
+1 Bonesplitter|MRD

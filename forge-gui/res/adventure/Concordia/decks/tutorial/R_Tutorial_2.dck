@@ -5,15 +5,9 @@ Name=Raider Scout - Ash Skirmishers
 [Main]
 23 Mountain|FDN|[278]
 22 Mountain|FDN|[279]
-1 Mons's Goblin Raiders|5ED
 1 Raging Goblin|M10
 1 Satyr Hoplite|JOU
-1 Akroan Crusader|THS
-1 Foundry Street Denizen|M15
-1 Grim Initiate|WAR
-1 Goblin Bully|POR
 1 Goblin Piker|M10
-1 Dwarven Soldier|5ED
 1 Innocent Bystander|MKM
 1 Illustrious Historian|STX
 1 Goblin Instigator|M19
@@ -24,14 +18,9 @@ Name=Raider Scout - Ash Skirmishers
 1 Riot Piker|DGM
 1 Goblin Raider|9ED
 1 Hulking Goblin|POR
-1 Goblin Elite Infantry|10E
 1 Ironclaw Orcs|5ED
-1 Goblin Brigand|9ED
 1 Goblin Shortcutter|M14
-1 Goblin Assailant|M20
 1 Swab Goblin|FDN
-1 Defiant Khenra|HOU
-1 Falkenrath Reaver|EMN
 1 Gray Ogre|4ED
 1 Goblin Hero|6ED
 1 Raging Cougar|POR
@@ -41,11 +30,9 @@ Name=Raider Scout - Ash Skirmishers
 1 Swaggering Corsair|RIX
 1 Riot Ringleader|AVR
 1 Prickly Pair|OTJ
-1 Brassclaw Orcs|5ED
 1 Hurloon Minotaur|5ED
 1 Pensive Minotaur|JOU
 1 Lavafume Invoker|ROE
-1 Balduvian Barbarians|9ED
 1 Goblin Roughrider|M15
 1 Minotaur Warrior|POR
 1 Anaba Bodyguard|10E
@@ -59,3 +46,16 @@ Name=Raider Scout - Ash Skirmishers
 1 Cragsmasher Yeti|MOM
 1 Bull Rush|WWK
 1 Heightened Reflexes|IKO
+1 Lightning Bolt|M11
+1 Lightning Strike|MSH
+1 Brute Force|PLC
+1 Titan's Strength|ORI
+1 Thrill of Possibility|FDN
+1 Dragon Fodder|FDN
+1 Hordeling Outburst|PLST
+1 Krenko's Command|M13
+1 Tormenting Voice|ZNR
+1 Goblin War Drums|5ED
+1 Madcap Skills|GTC
+1 Arcane Signet|ELD
+1 Short Sword|M21
