@@ -59,9 +59,10 @@ does Black first and White last. So **the White zone is zone 1 for one player an
 Five color zones in a ring around a **central area**. Every connection runs through the centre: the zones don't
 connect to each other.
 
-- **The central area** holds the starter zone (Emberbrook, the Route 1 maze and Mossgate, as built) and the
-  **champion area**, an enclosed region inside the centre with its own gate. Around them is open hub ground with the
-  five zone gates on its edge, one facing each zone.
+- **The central area** holds just two things: the starter zone (Emberbrook, the Route 1 maze and Mossgate, as built)
+  and the **champion area**, with its own gate. Impassable terrain separates them from each other and from the color
+  zones; there's no open hub ground beyond what's needed. Mossgate's plaza is the hub: the five zone gates and the
+  champion gate open off it, or off a short corridor around the starter zone's edge if a gate can't reach the plaza.
 - **Each color zone is fully enclosed by impassable tiles.** The only ways in are its gate (§6) and its Waystone (§4.2).
   Ocean (`base.json`, collision) fills the space between zones.
 - **Geography is flavor.** Since zones only connect through the centre, the ring order doesn't change play. The sketch
@@ -73,10 +74,10 @@ connect to each other.
 | Region | Size in tiles (approx.) | Compared with Route 1 |
 |---|---|---|
 | Starter zone (built) | 60 × 90 | 1× |
-| Central area (starter, hub ground, champion area) | 200 across | about 6× the area |
+| Central area (starter zone, champion area, the walls between) | about 140 × 100, kept as small as the walls allow | about 2.5× the area |
 | Champion area | 60 across | about 0.5× |
 | Each color zone | 170-200 across (Black and White the widest, Red the tallest) | about 5-6× the area |
-| Whole world, with an ocean margin | about **560 × 520** | – |
+| Whole world, with an ocean margin | about **480 × 460** | – |
 
   That's more than today's 160×160, but under Shandalar's 700×700, so world generation can handle it. A color zone
   holds about five Route 1s' worth of maze, which is room for a gate town, two or three route sections, an inner pass,
@@ -294,8 +295,8 @@ writes out everything the zone needs:
 ## 9. Build order
 
 1. **Linked POI doors** (Java), tested with a throwaway two-door pass in the starter area.
-2. **World resize and the central area.** About 560×520 tiles, the starter zone and Mossgate in the centre, the hub
-   ground around them with five gate positions, the champion area enclosed. Retest the starter flow end to end.
+2. **World resize and the central area.** About 480×460 tiles, the starter zone and Mossgate in the centre, the
+   champion area walled off next to it, five gate positions reached from Mossgate's plaza. Retest the starter flow end to end.
 3. **Flags.** `zoneTier.<C>` and `zoneOpen.<C>` from the color choice; `seals` on Warden defeats.
 4. **One complete zone as the template** (suggest Green, since its tileset and trees are what Route 1 already uses):
    gate pass with tier guard, gate town with all services and its Waystone, two routes, inner pass, gym placeholder,
