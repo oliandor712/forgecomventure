@@ -50,6 +50,7 @@ public class ConfigData {
     public String startMap = "";                    //If set, a new game starts in this sub-map of the "Spawn" POI instead of its main map. Same path string the town's door uses.
     public int startObjectId = 0;                   //Entry object in startMap to start at; 0 = the map's spawn=true entry.
     public TutorialLessonsData tutorialLessons;     //If set, duels with an enemy marked tutorialLesson open with the next lesson (see TutorialLessonsData).
+    public String[] waystoneStops = new String[0];  //POI names the "waystone" command can travel to, each unlocked the first time the player enters it.
     public boolean mergeCommonItems = false;        //The plane's items.json adds to (and overrides by name) common's items.json instead of replacing it.
 
 }

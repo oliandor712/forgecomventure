@@ -141,6 +141,30 @@ public abstract class GameStage extends Stage {
         dialogOnlyInput = isShowing;
     }
 
+    /** A dialog with one button per choice and a Cancel button; onPick gets the choice's index, or -1 for Cancel. */
+    public void choiceDialog(String message, java.util.List<String> choices, java.util.function.IntConsumer onPick) {
+        dialog.getButtonTable().clear();
+        dialog.getContentTable().clear();
+        dialog.clearListeners();
+        TypingLabel L = Controls.newTypingLabel(message);
+        L.setWrap(true);
+        L.skipToTheEnd();
+        dialog.getContentTable().add(L).width(250f);
+        for (int i = 0; i < choices.size(); i++) {
+            final int index = i;
+            dialog.getButtonTable().add(Controls.newTextButton(choices.get(i), () -> {
+                hideDialog();
+                onPick.accept(index);
+            })).width(240f).row();
+        }
+        dialog.getButtonTable().add(Controls.newTextButton(Forge.getLocalizer().getMessage("lblCancel"), () -> {
+            hideDialog();
+            onPick.accept(-1);
+        })).width(240f);
+        dialog.setKeepWithinStage(true);
+        showDialog();
+    }
+
     public void effectDialog(EffectData effectData) {
         dialog.getButtonTable().clear();
         dialog.getContentTable().clear();

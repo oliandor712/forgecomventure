@@ -15,6 +15,7 @@ import forge.adventure.util.CardUtil;
 import forge.adventure.util.Config;
 import forge.adventure.util.Current;
 import forge.adventure.util.Paths;
+import forge.adventure.util.Waystone;
 import forge.adventure.world.WorldSave;
 import forge.card.CardEdition;
 import forge.card.ColorSet;
@@ -161,11 +162,19 @@ public class ConsoleCommandInterpreter {
             Forge.advFreezePlayerControls = true;
             FThreads.invokeInEdtNowOrLater(() -> Forge.setTransitionScreen(new CoverScreen(() -> {
                 Forge.advFreezePlayerControls = false;
-                WorldStage.getInstance().setPosition(new Vector2(poi.getPosition().x - 16f, poi.getPosition().y + 16f));
+                WorldStage.getInstance().setPosition(WorldStage.arrivalPosition(poi));
                 WorldStage.getInstance().loadPOI(poi);
                 Forge.clearTransitionScreen();
             }, ScreenUtil.getInstance().takeScreenshot())));
             return "Teleported to " + s[0] + "(" + poi.getPosition() + ")";
+        });
+        registerCommand(new String[]{"waystone"}, s -> { //the Waystone item: "waystone <shards it cost>", refunded if the player cancels
+            int cost = 0;
+            try {
+                if (s.length > 0) cost = Integer.parseInt(s[0]);
+            } catch (NumberFormatException ignored) {}
+            Waystone.open(cost);
+            return "Waystone";
         });
         registerCommand(new String[]{"spawn", "enemy"}, s -> {
             if (s.length < 1) return "Command needs 1 parameter: enemy name.";

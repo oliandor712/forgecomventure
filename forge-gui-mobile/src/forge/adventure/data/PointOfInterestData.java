@@ -27,6 +27,11 @@ public class PointOfInterestData implements Serializable {
     public String[] questTags = new String[0];
     public DialogData.ActionData.QuestFlag[] questFlagsToActivate = new DialogData.ActionData.QuestFlag[0];
     public String displayName;
+    public String linkTo = "";      //Name of another POI: walking into this one enters that POI's dungeon instead (the far door of a two-way pass).
+    public String linkMap = "";     //With linkTo: the map of that POI to enter (default: its main map).
+    public int linkEntry = 0;       //With linkTo: the entry object to start at (0 = the map's spawn entry).
+    public int arrivalX = -1;       //Where a gate or teleport to this POI leaves the player, in tiles from the POI (default: one tile left, one up).
+    public int arrivalY = 1;
 
 
 
@@ -68,6 +73,11 @@ public class PointOfInterestData implements Serializable {
         questTags = other.questTags.clone();
         displayName= other.displayName;
         questFlagsToActivate = other.questFlagsToActivate;
+        linkTo=other.linkTo;
+        linkMap=other.linkMap;
+        linkEntry=other.linkEntry;
+        arrivalX=other.arrivalX;
+        arrivalY=other.arrivalY;
     }
 
     public String getDisplayName() {

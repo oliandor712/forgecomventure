@@ -94,6 +94,9 @@ public class DialogData implements Serializable {
         public String POIReference; //used with addMapReputation when a quest step affects reputation in another location
         public String returnStolenFrom; //Return every card this raider holds to the player, win or lose.
         public String gateTo;           //Name of a POI: leave the map and enter that POI (a gate, like a map entry's gateTo).
+        public boolean gateEnter = true; //With gateTo: false = come out on the world map next to that POI instead of entering it.
+        public String gateMap;          //With gateTo: the map of that POI to enter (default: its main map).
+        public int gateEntry = 0;       //With gateTo: the entry object to start at (0 = the map's spawn entry).
         public String setStarterColor; //Replace the starter deck with the one for these colors (for example "W").
 
         public ActionData(){}
@@ -111,6 +114,9 @@ public class DialogData implements Serializable {
             setColorIdentity = other.setColorIdentity;
             returnStolenFrom = other.returnStolenFrom;
             gateTo = other.gateTo;
+            gateEnter = other.gateEnter;
+            gateMap = other.gateMap;
+            gateEntry = other.gateEntry;
             setStarterColor = other.setStarterColor;
             advanceQuestFlag = other.advanceQuestFlag;
             advanceMapFlag = other.advanceMapFlag;

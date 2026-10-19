@@ -232,7 +232,7 @@ public class WorldStage extends GameStage implements SaveFileContent {
                     OverlayText.getInstance().update("[%240]" + GameScene.instance().getLocationColorID() + "{CAROUSEL} A U T O S A V E ");
                     startPause(1f, ()-> {
                         WorldSave.getCurrentSave().autoSave();
-                        loadPOI(point.getPointOfInterest());
+                        enterPOI(point.getPointOfInterest());
                         point.getMapSprite().checkOut();
                         WorldSave.getCurrentSave().getPointOfInterestChanges(point.getPointOfInterest().getID()).visit();
                     });
@@ -251,7 +251,29 @@ public class WorldStage extends GameStage implements SaveFileContent {
         loadPOI(poi, null, 0);
     }
 
+    /** Enters a POI the player walked into. A linked POI (linkTo) is the far door of a pass: it enters the linked POI's dungeon at linkEntry. */
+    public void enterPOI(PointOfInterest poi) {
+        String link = poi.getData().linkTo;
+        if (link != null && !link.isEmpty()) {
+            PointOfInterest target = Current.world().findPointsOfInterest(link);
+            if (target != null) {
+                String map = poi.getData().linkMap == null || poi.getData().linkMap.isEmpty() ? target.getData().map : poi.getData().linkMap;
+                loadPOI(target, map, poi.getData().linkEntry);
+                return;
+            }
+            System.err.println("Linked POI not found: " + link + ", entering " + poi.getData().name + " itself.");
+        }
+        loadPOI(poi);
+    }
+
+    /** Where a gate or a teleport to this POI leaves the player on the world map: arrivalX/arrivalY tiles from it. */
+    public static Vector2 arrivalPosition(PointOfInterest poi) {
+        float tile = Current.world().getTileSize();
+        return new Vector2(poi.getPosition().x + poi.getData().arrivalX * tile, poi.getPosition().y + poi.getData().arrivalY * tile);
+    }
+
     public void loadPOI(PointOfInterest poi, String subMap, int spawnTargetId) {
+        Waystone.unlock(poi);
         try {
             stop();
             respawnPlacedEnemiesForTown(poi);

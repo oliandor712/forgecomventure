@@ -1,10 +1,20 @@
 [
   {
+    "name": "Waystone",
+    "usableOnWorldMap": true,
+    "equipmentSlot": "Ability2",
+    "description": "A warm stone from your rival's pocket. Travels to any town you've reached that has a Waystone stop.",
+    "commandOnUse": "waystone 1",
+    "iconName": "ColorlessRune",
+    "questItem": true,
+    "shardsNeeded": 1
+  },
+  {
     "name": "Emberbrook Waystone",
     "usableOnWorldMap": true,
     "equipmentSlot": "Ability2",
-    "description": "A warm stone from your rival's pocket. Teleports you home to Emberbrook.",
-    "commandOnUse": "teleport to poi Spawn",
+    "description": "An old name for the Waystone. Travels to any Waystone stop you've reached.",
+    "commandOnUse": "waystone 1",
     "iconName": "ColorlessRune",
     "questItem": true,
     "shardsNeeded": 1
@@ -20,5 +30,35 @@
         "Chromatic Sphere|MRD"
       ]
     }
+  },
+  {
+    "name": "Summit Key Fragment (White-Blue)",
+    "description": "One of five pieces of the key to the Summit, taken from the White-Blue Paragon. The Gate Temple's champion gate opens with all five.",
+    "iconName": "WhiteKey",
+    "questItem": true
+  },
+  {
+    "name": "Summit Key Fragment (Blue-Black)",
+    "description": "One of five pieces of the key to the Summit, taken from the Blue-Black Paragon. The Gate Temple's champion gate opens with all five.",
+    "iconName": "BlueKey",
+    "questItem": true
+  },
+  {
+    "name": "Summit Key Fragment (Black-Red)",
+    "description": "One of five pieces of the key to the Summit, taken from the Black-Red Paragon. The Gate Temple's champion gate opens with all five.",
+    "iconName": "BlackKey",
+    "questItem": true
+  },
+  {
+    "name": "Summit Key Fragment (Red-Green)",
+    "description": "One of five pieces of the key to the Summit, taken from the Red-Green Paragon. The Gate Temple's champion gate opens with all five.",
+    "iconName": "RedKey",
+    "questItem": true
+  },
+  {
+    "name": "Summit Key Fragment (Green-White)",
+    "description": "One of five pieces of the key to the Summit, taken from the Green-White Paragon. The Gate Temple's champion gate opens with all five.",
+    "iconName": "GreenKey",
+    "questItem": true
   }
 ]

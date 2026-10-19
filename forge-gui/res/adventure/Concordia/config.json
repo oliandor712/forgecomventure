@@ -228,6 +228,10 @@
   "commanderHall": "world/commanders.json",
   "uniquePrintings": true,
   "mergeCommonItems": true,
+  "waystoneStops": [
+    "Spawn",
+    "Mossgate"
+  ],
   "tutorialLessons": {
     "flag": "raidersBeaten",
     "firstValue": 1,

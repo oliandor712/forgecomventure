@@ -373,6 +373,20 @@ public class MapStage extends GameStage {
         }
     }
 
+    /**
+     * The enemy for an enemy object. With enemyByTier ("tier 1 enemy, tier 2 enemy, ...") and tierFlag (a quest flag),
+     * the flag's value picks the enemy (1 = the first; out-of-range values use the nearest end of the list).
+     */
+    private static Object tieredEnemy(MapProperties prop) {
+        Object tiers = prop.get("enemyByTier");
+        Object flag = prop.get("tierFlag");
+        if (tiers == null || tiers.toString().isEmpty() || flag == null || flag.toString().isEmpty())
+            return prop.get("enemy");
+        String[] names = tiers.toString().split(",");
+        int tier = Math.max(1, Math.min(names.length, Current.player().getQuestFlag(flag.toString())));
+        return names[tier - 1].trim();
+    }
+
     private boolean canSpawn(MapProperties prop) {
         DifficultyData difficultyData = Current.player().getDifficulty();
         boolean spawnEasy = prop.get("spawn.Easy", Boolean.class);
@@ -430,8 +444,7 @@ public class MapStage extends GameStage {
                         int entryTargetId = (!prop.containsKey("teleportObjectId") || prop.get("teleportObjectId") ==null || prop.get("teleportObjectId").toString().isEmpty())? 0: Integer.parseInt(prop.get("teleportObjectId").toString());
 
                         EntryActor entry = new EntryActor(this, id, targetMap, x, y, w, h, direction, currentMap, entryTargetId);
-                        if (prop.containsKey("gateTo"))
-                            entry.setGate(prop.get("gateTo").toString(), !prop.containsKey("gateEnter") || !prop.get("gateEnter").toString().equals("false"));
+                        readGate(prop, entry);
                         if (prop.containsKey("spawn") && prop.get("spawn").toString().equals("true")) {
                             spawnClassified.add(entry);
                         } else if (canStillSpawnPlayerThere) {
@@ -462,8 +475,7 @@ public class MapStage extends GameStage {
                         int portalTargetId = (!prop.containsKey("teleportObjectId") || prop.get("teleportObjectId") ==null || prop.get("teleportObjectId").toString().isEmpty())? 0: Integer.parseInt(prop.get("teleportObjectId").toString());
 
                         PortalActor portal = new PortalActor(this, id, prop.get("teleport").toString(), px, py, pw, ph, prop.get("direction").toString(), currentMap, portalTargetId, portalSpriteToUse);
-                        if (prop.containsKey("gateTo"))
-                            portal.setGate(prop.get("gateTo").toString(), !prop.containsKey("gateEnter") || !prop.get("gateEnter").toString().equals("false"));
+                        readGate(prop, portal);
 
                         if (prop.containsKey("activeQuestFlag") && Current.player().checkQuestFlag(prop.get("activeQuestFlag").toString())){
                             portal.setAnimation("active");
@@ -503,7 +515,7 @@ public class MapStage extends GameStage {
                         break;
                     case "enemy":
                         if (!canSpawn(prop)) break;
-                        Object enemy = prop.get("enemy");
+                        Object enemy = tieredEnemy(prop);
                         if (enemy != null && !enemy.toString().isEmpty()) {
                             EnemyData EN = WorldData.getEnemy(enemy.toString());
                             if (EN == null) {
@@ -811,8 +823,28 @@ public class MapStage extends GameStage {
 
     private boolean gateInProgress = false;
 
-    /** Gate: leave this map and come out at another POI on the world map, entering it unless enter is false. */
+    /** An entry or portal's gate properties: gateTo (POI), gateEnter (default true), gateMap and gateEntry (where inside that POI to start). */
+    private static void readGate(MapProperties prop, EntryActor entry) {
+        if (!prop.containsKey("gateTo"))
+            return;
+        boolean enter = !prop.containsKey("gateEnter") || !prop.get("gateEnter").toString().equals("false");
+        String map = prop.containsKey("gateMap") ? prop.get("gateMap").toString() : "";
+        int entryId = 0;
+        if (prop.containsKey("gateEntry") && !prop.get("gateEntry").toString().isEmpty())
+            entryId = Integer.parseInt(prop.get("gateEntry").toString());
+        entry.setGate(prop.get("gateTo").toString(), enter, map, entryId);
+    }
+
     public void gateTo(String poiName, boolean enter) {
+        gateTo(poiName, enter, "", 0);
+    }
+
+    /**
+     * Gate: leave this map and come out at another POI on the world map, entering it unless enter is false. With a map
+     * or an entry id, the player starts at that entry of that map of the POI; without, the POI is entered as if walked
+     * into (a linked POI leads into its linked dungeon).
+     */
+    public void gateTo(String poiName, boolean enter, String map, int entryId) {
         if (gateInProgress)
             return;
         PointOfInterest target = Current.world().findPointsOfInterest(poiName);
@@ -828,10 +860,11 @@ public class MapStage extends GameStage {
             Forge.advFreezePlayerControls = false;
             gateInProgress = false;
             exitDungeon(false, false);
-            //next to the POI, the offset vanilla uses so the player does not stand on it
-            WorldStage.getInstance().setPosition(new Vector2(target.getPosition().x - 16f, target.getPosition().y + 16f));
-            if (enter)
-                WorldStage.getInstance().loadPOI(target); //leaving the world map stores this position
+            WorldStage.getInstance().setPosition(WorldStage.arrivalPosition(target)); //next to the POI, so the player does not stand on it
+            if (enter && (!map.isEmpty() || entryId != 0))
+                WorldStage.getInstance().loadPOI(target, map.isEmpty() ? target.getData().map : map, entryId);
+            else if (enter)
+                WorldStage.getInstance().enterPOI(target); //leaving the world map stores this position
             else
                 WorldStage.getInstance().getPlayerSprite().storePos();
             WorldSave.getCurrentSave().autoSave();

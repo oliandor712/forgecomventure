@@ -394,21 +394,25 @@ writes out everything the zone needs:
 - Every dead end has a marker.
 - Every pass door has a walkable tile at its upper-left.
 
-## 8. Java changes worth making (all small, none in forge-core, forge-game or forge-ai)
+## 8. Java changes (all small, none in forge-core, forge-game or forge-ai)
 
-| Change | Why | Needed for |
+| Change | Status | How to use it |
 |---|---|---|
-| **Gates to a chosen entry** (`gateTo` with `gateMap` and `gateEntry`) | A gate lands at a named entry object, in a sub-map if needed | The Gate Temple (§3.1). Required |
-| **Linked POI doors** (`linkTo`, `linkEntry` on a POI) | Both doors of an inner pass open the same dungeon | Two-way passes (§6.1). Required |
-| **Waystone destination list** | One item travels to every unlocked town | §4.2. Required |
-| `enemyByTier` map enemy property | One object per encounter slot instead of three | §5. Recommended |
-| Arrival offset per POI (`arrivalX`, `arrivalY` in tiles) | Free choice of which side of a door the player lands | §6.3. If walls get tight |
-| Dialog condition comparing one flag to another | Fewer per-color dialog nodes | §5. Optional |
+| **Gates to a chosen entry** | Built | On an `entry` or `portal` object: `gateTo` (POI name), `gateEnter` (default `true`), `gateMap` (a map of that POI, default its main map), `gateEntry` (entry object id, default its spawn entry). The dialog `gateTo` action takes the same three extras: `gateEnter`, `gateMap`, `gateEntry` |
+| **Linked POI doors** | Built | On a POI in `points_of_interest.json`: `linkTo` (the POI whose dungeon this door opens), `linkMap` (default that POI's main map), `linkEntry` (entry object id to start at). The dungeon's map changes are the linked POI's, so both doors share one dungeon |
+| **Arrival offset per POI** | Built | On a POI: `arrivalX`, `arrivalY`, in tiles from the POI (default -1, 1: one tile left, one up). Used by gates with `gateEnter: false`, `teleport to poi` and the Waystone |
+| **Waystone destination list** | Built | `waystoneStops` in `config.json` lists the POIs the Waystone can reach. Each unlocks the first time the player enters it (character flag `waystone.<POI name>`). The item's `commandOnUse` is `waystone <cost>`; the cost is refunded if the player cancels |
+| **`enemyByTier`** | Built | On a map `enemy` object: `enemyByTier` ("tier 1 enemy, tier 2 enemy, tier 3 enemy") and `tierFlag` (a quest flag such as `zoneTier.G`). The flag's value picks the enemy; out-of-range values use the nearest end of the list. Without them, `enemy` is used as before |
+| Dialog condition comparing one flag to another | Not built | Optional: fewer per-color dialog nodes (§5). The per-color nodes work without it |
+
+**New items** (`world/items.json`): the **Waystone** (ability slot, 1 shard per trip; the rival now gives this
+instead of the Emberbrook Waystone, which stays as an old-save alias with the same command) and the five **Summit Key
+Fragments** (quest items, one per Paragon, named "Summit Key Fragment (White-Blue)" and so on).
 
 ## 9. Build order
 
-1. **Gates to a chosen entry and linked POI doors** (Java; both use Forge's existing
-   `WorldStage.loadPOI(poi, subMap, spawnTargetId)`), tested with a throwaway two-door pass in the starter area.
+1. **Gates to a chosen entry and linked POI doors** (Java). Built; next is a throwaway two-door pass in the starter
+   area to test them in game.
 2. **The Gate Temple** in Mossgate: the building, the interior with six gates and their guards (all sealed for now).
 3. **World resize and the central area.** About 480×460 tiles, the starter zone and Mossgate in the centre, the
    champion area walled off next to it. Retest the starter flow end to end.

@@ -447,7 +447,7 @@ public class MapDialog {
                 Current.player().replaceStarterColor(E.setStarterColor);
             }
             if (E.gateTo != null && !E.gateTo.isEmpty()) { //Leave the map and enter another POI
-                stage.gateTo(E.gateTo, true);
+                stage.gateTo(E.gateTo, E.gateEnter, E.gateMap == null ? "" : E.gateMap, E.gateEntry);
             }
             if (E.returnStolenFrom != null && !E.returnStolenFrom.isEmpty()) { //Returns the cards a raider holds
                 for (PaperCard card : Current.player().takeStolenCards(E.returnStolenFrom)) {

@@ -48,7 +48,7 @@ public class PortalActor extends EntryActor {
         if (currentAnimationType == PortalAnimationTypes.Active) {
             if (!gateTo.isEmpty()) {
                 stage.getPlayerSprite().playEffect(Paths.EFFECT_TELEPORT, 0.5f);
-                stage.gateTo(gateTo, gateEnter);
+                stage.gateTo(gateTo, gateEnter, gateMap, gateEntry);
             } else if (targetMap == null || targetMap.isEmpty()) {
                 stage.exitDungeon(false, false);
             } else {

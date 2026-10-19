@@ -36,6 +36,7 @@ Forge's plane settings plus Concordia's own switches:
 | `uniquePrintings` | One findable printing per card, and Change art in the deck editor |
 | `mergeCommonItems` | `world/items.json` adds to Forge's item list instead of replacing it |
 | `tournament` | Inn tournaments: entry fee, prizes, life, opponents |
+| `waystoneStops` | The towns the Waystone can travel to, each unlocked on the player's first visit |
 | `tutorialLessons` | The five tutorial pop-ups (raider duels, then after the rival), in order by the `raidersBeaten` flag |
 | `restrictedCards`, `restrictedEditions`, `restrictedEvents` | Cards and sets Concordia never uses |
 
@@ -77,7 +78,7 @@ Shop names must not contain spaces.
 |---|---|
 | `world/commanders.json` | Commander Hall roster: 30 per color in three bands, which are open from the start |
 | `world/quests.json` | Story quests (28 is the opening, 1000+ the campaign) |
-| `world/items.json` | Concordia's own items: the Emberbrook Waystone, and the Chromatic Sphere start item (not in `common`) |
+| `world/items.json` | Concordia's own items: the Waystone (and its old name, the Emberbrook Waystone), the five Summit Key Fragments, and the Chromatic Sphere start item (not in `common`) |
 | `world/points_of_interest.json` | Emberbrook (`Spawn`), Mossgate, the three caves |
 | `world/biomes/concordia.json`, `world/structures/models/mossgate_maze.png` | The Mossgate route maze |
 | `maps/map/` | Emberbrook, the house, Mossgate, `caves/` |
