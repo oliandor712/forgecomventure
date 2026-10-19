@@ -700,13 +700,8 @@ public class RewardScene extends UIScene {
         void update() {
             boolean unlocked = CommanderHall.isUnlocked(entry);
             boolean current = CommanderHall.isCurrent(entry);
-            String band = CommanderHall.bandName(entry.band);
-            if (current)
-                setText("[%75]" + band + "\n[GREEN]Your commander");
-            else if (unlocked)
-                setText("[%75]" + band + "\nChoose");
-            else
-                setText("[%60]" + band + " - locked\n" + (entry.hint == null || entry.hint.isEmpty() ? "Not found yet." : entry.hint));
+            //short labels: the button is narrow. The current commander's button is greyed out (nothing to choose)
+            setText(unlocked ? (current ? "[GREEN]Available" : "Available") : "Locked");
             setDisabled(!unlocked || current);
             rewardActor.getColor().a = unlocked ? 1f : 0.45f;
         }
