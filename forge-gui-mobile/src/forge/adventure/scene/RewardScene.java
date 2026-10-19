@@ -353,10 +353,13 @@ public class RewardScene extends UIScene {
 
     /** Shows the Commander Hall: the roster commanders in the player's colors, to pick the deck's commander. */
     public void loadCommanderHall(String name) {
-        hallName = name;
         hallEntries.clear();
         Array<Reward> rewards = new Array<>();
+        int found = 0, shown = 0;
         for (CommanderHallData entry : CommanderHall.visibleEntries()) {
+            shown++;
+            if (CommanderHall.isUnlocked(entry))
+                found++;
             PaperCard card = CommanderHall.card(entry);
             if (card == null) {
                 System.err.println("Commander Hall: card not found: " + entry.card);
@@ -366,6 +369,7 @@ public class RewardScene extends UIScene {
             hallEntries.put(reward, entry);
             rewards.add(reward);
         }
+        hallName = name + " - " + found + " of " + shown + " found";
         loadRewards(rewards, Type.CommanderHall, null);
     }
 
