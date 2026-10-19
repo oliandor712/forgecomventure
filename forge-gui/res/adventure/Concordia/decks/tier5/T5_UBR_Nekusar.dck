@@ -4,9 +4,10 @@ Description=Tier 5 (Bracket 5). blue-black-red Nekusar, the Mindrazer deck. Buil
 [Commander]
 1 Nekusar, the Mindrazer|CMM
 [Main]
-8 Island|FDN
+7 Island|FDN
 5 Swamp|FDN
-3 Mountain|FDN
+4 Mountain|FDN
+1 Ancient Tomb|TMP
 1 Blighted Cataract|BFZ
 1 Blood Crypt|TRK
 1 Bloodstained Mire|KTK
@@ -24,27 +25,25 @@ Description=Tier 5 (Bracket 5). blue-black-red Nekusar, the Mindrazer deck. Buil
 1 Reflecting Pool|SHM
 1 Seat of the Synod|MRD
 1 Shivan Reef|DMU
-1 Steam Vents|TRK
 1 Dark Ritual|MMQ
 1 Demon's Herald|ALA
 1 Grim Lavamancer|M12
 1 Ingenious Prodigy|WOE
-1 Lavaspur Boots|OTJ
 1 Ponder|M12
 1 Preordain|M11
 1 Siren Stormtamer|XLN
 1 Sol Ring|TMC
 1 Soul-Guide Lantern|SLZ
+1 Vindictive Flamestoker|ONE
 1 Arcane Denial|ALL
 1 Arcane Signet|ELD
-1 Bitterblossom|MOR
 1 Counterspell|7ED
 1 Cyclonic Rift|RTR
 1 Dark Confidant|RAV
-1 Deranged Assistant|ISD
-1 Impact Tremors|FDN
 1 Izzet Signet|GPT
+1 Lightning Greaves|MRD
 1 Nightscape Familiar|PLS
+1 Qarsi Deceiver|DTK
 1 Spellstutter Sprite|LRW
 1 Talisman of Creativity|CMM
 1 Talisman of Dominance|MRD
@@ -52,30 +51,31 @@ Description=Tier 5 (Bracket 5). blue-black-red Nekusar, the Mindrazer deck. Buil
 1 The Emperor of Palamecia|FIN
 1 Triskaidekaphile|MID
 1 Vodalian Hexcatcher|DMU
+1 Waste Not|M15
 1 Aether Channeler|DMU
 1 Barrin, Tolarian Archmage|M21
-1 Black Market Connections|ACR
 1 Burnished Hart|FDN
 1 Chaos Warp|MBC
+1 Maralen of the Mornsong|MOR
+1 Master of Etherium|ALA
 1 Molten Psyche|SOM
 1 Oracle of the Alpha|MBC
+1 Phyrexian Tyranny|PLS
 1 Reiterate|TSP
 1 Rotlung Reanimator|ONS
 1 Scrawling Crawler|FDN
-1 Spellseeker|BBD
 1 Temple Bell|M11
-1 Underworld Dreams|THB
 1 Unshakable Tail|MKC
 1 Vendilion Clique|MOR
 1 Warren Soultrader|MH3
 1 Damnation|PLC
 1 Gisa, Glorious Resurrector|MID
 1 Korlash, Heir to Blackblade|FUT
-1 Notion Thief|DGM
-1 Refurbished Familiar|MH3
 1 Sheoldred, the Apocalypse|DMU
 1 Sower of Temptation|LRW
+1 Spiteful Visions|SHM
 1 Talrand, Sky Summoner|M13
+1 Teferi's Puzzle Box|9ED
 1 Venser, Shaper Savant|FUT
 1 Vindictive Lich|CMM
 1 Wheel and Deal|ONS

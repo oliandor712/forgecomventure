@@ -5,7 +5,7 @@ Description=Tier 5 (Bracket 5). white-red The Jolly Balloon Man deck. Built down
 1 The Jolly Balloon Man|SLZ
 [Main]
 8 Plains|FDN
-12 Mountain|FDN
+11 Mountain|FDN
 1 Battlefield Forge|BRO
 1 Boros Garrison|RAV
 1 Clifftop Retreat|DOM
@@ -18,6 +18,7 @@ Description=Tier 5 (Bracket 5). white-red The Jolly Balloon Man deck. Built down
 1 Path of Ancestry|TMC
 1 Sunbaked Canyon|ACR
 1 Sundown Pass|SOS
+1 Temple of the False God|SCG
 1 Terramorphic Expanse|SOS
 1 Valgavoth's Lair|DSK
 1 Commander's Plate|TMC
@@ -25,7 +26,6 @@ Description=Tier 5 (Bracket 5). white-red The Jolly Balloon Man deck. Built down
 1 Lavaspur Boots|OTJ
 1 Mother of Runes|CLB
 1 Path to Exile|CFX
-1 Shadowspear|THB
 1 Skullclamp|DST
 1 Sol Ring|TMC
 1 Soul-Guide Lantern|SLZ
@@ -38,7 +38,7 @@ Description=Tier 5 (Bracket 5). white-red The Jolly Balloon Man deck. Built down
 1 Chainsaw|DSK
 1 Charming Scoundrel|WOE
 1 Coldsteel Heart|CSP
-1 Dawn of Hope|GRN
+1 Determined Iteration|SOC
 1 Humble Defector|FRF
 1 Idol of Oblivion|M3C
 1 Irreverent Gremlin|DSK
@@ -53,6 +53,7 @@ Description=Tier 5 (Bracket 5). white-red The Jolly Balloon Man deck. Built down
 1 Dragon's Hoard|M19
 1 Enduring Innocence|DSK
 1 Generous Gift|CMM
+1 Loran of the Third Path|BRO
 1 Mentor of the Meek|J25
 1 Oblivion Ring|ALA
 1 Professional Face-Breaker|SNC

@@ -15,15 +15,15 @@ Description=Tier 1 (Bracket 1). Mono-black skeletons and zombies that keep comin
 1 Butcher Ghoul|AVR
 1 Drudge Skeletons|M10
 1 Grim Roustabout|RTR
-1 Highborn Ghoul|DKA
-1 Khenra Eternal|HOU
 1 Lazotep Reaver|WAR
 1 Manor Skeleton|ISD
+1 Miasmic Mummy|AKH
 1 Mire Triton|CMM
 1 Nightscape Familiar|PLS
 1 Rancid Rats|SOI
 1 Returned Reveler|JOU
 1 Sepulcher Ghoul|AFR
+1 Shepherd of Rot|ONS
 1 Tattered Mummy|M19
 1 Undead Butler|PIO
 1 Wailing Ghoul|EMN
@@ -31,7 +31,6 @@ Description=Tier 1 (Bracket 1). Mono-black skeletons and zombies that keep comin
 1 Wight of Precinct Six|JMP
 1 Wretched Camel|HOU
 1 Blighted Bat|AKH
-1 Cinderbones|SHM
 1 Crow of Dark Tidings|FDN
 1 Cursed Minotaur|AKH
 1 Dead Reveler|RTR
@@ -44,6 +43,7 @@ Description=Tier 1 (Bracket 1). Mono-black skeletons and zombies that keep comin
 1 Mindless Null|ZEN
 1 Nantuko Husk|ORI
 1 Phyrexian Ghoul|MOC
+1 Spark Reaper|WAR
 1 Vesper Ghoul|DIS
 1 Voracious Null|BFZ
 1 Brass Knuckles|CMM

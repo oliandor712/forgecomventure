@@ -12,7 +12,6 @@ Description=Tier 1 (Bracket 1). Mono-blue pirates and sirens.
 1 Triton Shorestalker|JOU
 1 Augur of Bolas|PLST
 1 Coralhelm Guide|BFZ
-1 Daring Saboteur|CMR
 1 Deeptread Merrow|LRW
 1 Gray Harbor Merfolk|CLB
 1 Halimar Wavewatch|ROE
@@ -21,6 +20,7 @@ Description=Tier 1 (Bracket 1). Mono-blue pirates and sirens.
 1 Merfolk Observer|ROE
 1 Merfolk Raiders|MIR
 1 Merfolk Traders|WTH
+1 Merrow Commerce|LRW
 1 Sahagin|FIN
 1 Shaper Apprentice|XLN
 1 Silvergill Adept|RIX
@@ -32,11 +32,11 @@ Description=Tier 1 (Bracket 1). Mono-blue pirates and sirens.
 1 Vodalian Arcanist|M21
 1 Burdened Aerialist|MH2
 1 Enclave Elite|WWK
-1 Haunted Cloak|CMM
 1 Iguana Parrot|TLA
 1 Library Larcenist|M21
 1 Merrow Reejerey|LRW
 1 Rishadan Airship|MMQ
+1 Rishadan Cutpurse|MMQ
 1 Rootwater Commando|10E
 1 Sailor of Means|RIX
 1 Scroll Thief|M14

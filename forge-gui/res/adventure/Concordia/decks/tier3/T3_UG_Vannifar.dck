@@ -4,8 +4,8 @@ Description=Tier 3 (Bracket 3). blue-green Vannifar, Evolved Enigma deck. Built 
 [Commander]
 1 Vannifar, Evolved Enigma|MKM
 [Main]
-13 Island|FDN
-12 Forest|FDN
+12 Island|FDN
+13 Forest|FDN
 1 Branch of Vitu-Ghazi|MKM
 1 Breeding Pool|TRK
 1 Command Tower|TMC
@@ -26,8 +26,8 @@ Description=Tier 3 (Bracket 3). blue-green Vannifar, Evolved Enigma deck. Built 
 1 Siren Stormtamer|XLN
 1 Valgavoth's Onslaught|DSK
 1 Aggressive Biomancy|M3C
-1 Arcane Signet|ELD
 1 Azure Mage|M12
+1 Bloodline Shaman|ONS
 1 Exit Specialist|MKM
 1 Growth Spiral|RNA
 1 Hydroid Krasis|SOC
@@ -41,21 +41,21 @@ Description=Tier 3 (Bracket 3). blue-green Vannifar, Evolved Enigma deck. Built 
 1 Zameck Guildmage|GTC
 1 Zimone, Quandrix Prodigy|STX
 1 Abhorrent Oculus|DSK
-1 Blue Sun's Zenith|MBS
-1 Champion of Wits|HOU
 1 Cryptic Coat|MKM
+1 Diviner's Wand|MOR
 1 Evolution Sage|WAR
 1 Gadwick, the Wizened|ELD
 1 Glitch Interpreter|DSC
 1 Lyra, Tolarian Archangel|FRA
 1 Marwyn, the Nurturer|DOM
 1 Nimble Obstructionist|HOU
+1 Sage's Dousing|MOR
 1 Scuttling Sentinel|CLU
 1 Skittering Cicada|CMM
 1 Springbloom Druid|FDN
 1 Tireless Provisioner|J25
 1 Voidslime|DIS
-1 Archivist|9ED
+1 Experiment Twelve|MKC
 1 Glen Elendra Archmage|EVE
 1 Guardian Project|RNA
 1 Hide in Plain Sight|MKM
@@ -66,17 +66,17 @@ Description=Tier 3 (Bracket 3). blue-green Vannifar, Evolved Enigma deck. Built 
 1 Wave Goodbye|TMC
 1 Zegana, Utopian Speaker|RNA
 1 Zimone, Mystery Unraveler|DSC
+1 Banner of Kinship|FDN
 1 Biogenic Ooze|TMC
 1 Garruk, Primal Hunter|M13
 1 Ixidron|TSP
 1 Nissa, Who Shakes the World|WAR
 1 They Came from the Pipes|DSC
-1 Wrenn and Seven|MID
 1 Yedora, Grave Gardener|CMM
 1 Chimil, the Inner Sun|LCI
 1 Extravagant Replication|FDN
 1 March of the World Ooze|DFT
-1 River's Rebuke|FDN
+1 Titania's Command|BRO
 1 Ugin, the Ineffable|WAR
 1 Nissa, Genesis Mage|HOU
 1 Reshape the Earth|CMR

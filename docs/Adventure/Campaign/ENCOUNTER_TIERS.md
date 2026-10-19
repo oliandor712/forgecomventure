@@ -49,7 +49,7 @@ Work in this order. Each step narrows the next.
    - Opponent intensity rises with each Warden cleared (DESIGN.md §6.4). Do that inside a tier: use more life, a
      better commander, or the next deck in the `deck` array. Don't jump tiers.
 2. **Choose the commander** within the tier's rarity and mana value limits, and in the encounter's colours.
-   - It must be a legendary creature the AI casts. Check its script has no `AI:RemoveDeck` line.
+   - It must be a legendary creature the AI casts. Check its script has no `AI:RemoveDeck:All` line.
    - The commander sets the deck's plan. Every later slot either supports that plan or fills a required role.
 3. **Lay down the mana base:** the tier's land count, then ramp to the tier's range.
    - Tier 1: basics only.
@@ -141,7 +141,7 @@ power = 35 × cube rank       (1 − (rank − 1)/4000 from forge-gui/res/draft/
 
 ## 4. What no tier may contain
 
-- **Cards the AI can't play.** Any card whose script has `AI:RemoveDeck:All` or `AI:RemoveDeck:Random`.
+- **Cards the AI can't play.** Any card whose script has `AI:RemoveDeck:All` (the AI won't cast or activate it). `AI:RemoveDeck:Random` is allowed: it only keeps a card out of Forge's random deck generators, and the AI plays those cards normally.
   - Forge's AI never casts `All` cards. `Random` cards are ones Forge's own deck generators leave out.
   - `DuelScene` strips both from AI decks at runtime (`stripAiUnplayableCards`), but a deck that relies on that is a
     weaker deck than it looks. `deck_tier.py` fails it.
@@ -190,7 +190,7 @@ python3 mine.py && python3 pool.py && python3 build.py decks.json
 `decks.json` lists each deck's commander, colours, theme and seed. Tier 2 and 3 decks start from an existing Forge
 list (a Tempest old-border precon, a Realm of Legends starter or a Realm of Legends enemy deck) and keep as much of it
 as the tier allows. Tier 1 decks are built from commons around a creature type. The builder only picks cards with no
-`AI:RemoveDeck` flag, legal in Commander and outside Concordia's restrictions. Its output is deterministic.
+`AI:RemoveDeck:All` flag, legal in Commander and outside Concordia's restrictions. Its output is deterministic.
 
 | Tier | Colours | Decks |
 |---|---|---|

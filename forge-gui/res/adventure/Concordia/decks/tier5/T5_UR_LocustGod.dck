@@ -5,9 +5,10 @@ Description=Tier 5 (Bracket 5). blue-red The Locust God deck. Built down from Fo
 1 The Locust God|HOU
 [Main]
 13 Island|FDN
-8 Mountain|FDN
+7 Mountain|FDN
 1 Boseiju, Who Shelters All|CHK
 1 Command Tower|TMC
+1 Desolate Lighthouse|AVR
 1 Frostboil Snarl|STX
 1 Izzet Boilerworks|GPT
 1 Mystic Sanctuary|ELD
@@ -36,15 +37,16 @@ Description=Tier 5 (Bracket 5). blue-red The Locust God deck. Built down from Fo
 1 Goblin Electromancer|GRN
 1 Impact Tremors|FDN
 1 Izzet Signet|GPT
+1 Lightning Greaves|MRD
 1 Mind Spring|BLB
 1 Negate|TMT
 1 Pull from Tomorrow|AKH
 1 Resculpt|STX
 1 Snap|WOC
-1 Starstorm|ONS
 1 Talisman of Creativity|CMM
 1 Thought Vessel|FIC
 1 Ashnod's Altar|CHR
+1 Burnished Hart|FDN
 1 Chaos Warp|MBC
 1 Commander's Sphere|CMM
 1 Cosima, God of the Voyage|KHM
@@ -54,7 +56,6 @@ Description=Tier 5 (Bracket 5). blue-red The Locust God deck. Built down from Fo
 1 Seething Song|9ED
 1 Sink into Stupor|MH3
 1 Spellseeker|BBD
-1 Stroke of Genius|SOC
 1 Svyelun of Sea and Sky|J22
 1 Thassa, God of the Sea|THS
 1 The Warring Triad|FIC
@@ -63,6 +64,7 @@ Description=Tier 5 (Bracket 5). blue-red The Locust God deck. Built down from Fo
 1 Bident of Thassa|THS
 1 Big Score|SNC
 1 Curiosity Crafter|SOC
+1 Distant Melody|MOR
 1 Enduring Curiosity|DSK
 1 Ojer Pakpatiq, Deepest Epoch|LCI
 1 Purphoros, God of the Forge|THS
@@ -70,7 +72,6 @@ Description=Tier 5 (Bracket 5). blue-red The Locust God deck. Built down from Fo
 1 Storm-Kiln Artist|STX
 1 Teferi's Ageless Insight|M21
 1 Thassa, Deep-Dwelling|THB
-1 Toralf, God of Fury|KHM
 1 Emeritus of Ideation|SOS
 1 Goldspan Dragon|KHM
 1 Lier, Disciple of the Drowned|MID
@@ -80,7 +81,7 @@ Description=Tier 5 (Bracket 5). blue-red The Locust God deck. Built down from Fo
 1 Ultima, Origin of Oblivion|FIN
 1 Niv-Mizzet, Parun|GRN
 1 Niv-Mizzet, Visionary|FDN
-1 Season of Weaving|BLB
 1 Steel Hellkite|FDN
 1 Dig Through Time|SLZ
 1 Ugin, the Spirit Dragon|M21
+1 Blasphemous Act|TMC

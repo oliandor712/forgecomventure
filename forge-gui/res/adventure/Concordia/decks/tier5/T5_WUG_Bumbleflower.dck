@@ -4,9 +4,9 @@ Description=Tier 5 (Bracket 5). white-blue-green Ms. Bumbleflower deck. Built do
 [Commander]
 1 Ms. Bumbleflower|BLC
 [Main]
-7 Plains|FDN
+6 Plains|FDN
 4 Island|FDN
-5 Forest|FDN
+6 Forest|FDN
 1 Adarkar Wastes|DMU
 1 Brushland|BRO
 1 Canopy Vista|BFZ
@@ -27,16 +27,17 @@ Description=Tier 5 (Bracket 5). white-blue-green Ms. Bumbleflower deck. Built do
 1 Temple of Mystery|FDN
 1 An Offer You Can't Refuse|SLZ
 1 Crumb and Get It|BLB
+1 Hardened Scales|KTK
 1 Into the Flood Maw|BLB
 1 Longstalk Brawl|BLB
 1 Nature's Claim|WWK
 1 Path to Exile|CFX
-1 Pawpatch Recruit|BLB
 1 Sol Ring|TMC
 1 Soul-Guide Lantern|SLZ
 1 Swords to Plowshares|ICE
 1 Animal Attendant|TLE
 1 Arcane Signet|ELD
+1 Farseek|M13
 1 Finale of Devastation|WAR
 1 Jacked Rabbit|BLC
 1 Jolly Gerbils|BLB
@@ -47,7 +48,6 @@ Description=Tier 5 (Bracket 5). white-blue-green Ms. Bumbleflower deck. Built do
 1 O'aka, Traveling Merchant|FIC
 1 Parting Gust|BLB
 1 Pull from Tomorrow|AKH
-1 Regal Bunnicorn|WOE
 1 Tender Wildguide|BLB
 1 Thought Vessel|FIC
 1 Unlucky Cabbage Merchant|TLA
@@ -68,6 +68,7 @@ Description=Tier 5 (Bracket 5). white-blue-green Ms. Bumbleflower deck. Built do
 1 Steelburr Champion|BLC
 1 Stroke of Genius|SOC
 1 Tempt with Bunnies|BLC
+1 Door of Destinies|M14
 1 Felidar Retreat|FDN
 1 Forgotten Ancient|SCG
 1 Mangara, the Diplomat|CMM
@@ -76,7 +77,6 @@ Description=Tier 5 (Bracket 5). white-blue-green Ms. Bumbleflower deck. Built do
 1 Smothering Tithe|RNA
 1 Talrand, Sky Summoner|M13
 1 Tempt with Discovery|LTC
-1 Thran Dynamo|CMM
 1 Twenty-Toed Toad|BLC
 1 Wave Goodbye|TMC
 1 Kalonian Hydra|M14

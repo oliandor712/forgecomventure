@@ -14,13 +14,13 @@ Description=Tier 3 (Bracket 3). Mono-green hydras, from the Realm of Legends Gar
 1 Wren's Run Hydra|MH2
 1 Benevolent Hydra|J22
 1 Genesis Hydra|M15
-1 Heroic Intervention|M21
 1 Hooded Hydra|KTK
 1 Inscription of Abundance|ZNR
 1 Nature's Lore|5ED
 1 Primordial Hydra|M13
 1 Ram Through|IKO
 1 Rampant Growth|M12
+1 Scavenging Ooze|FDN
 1 Solidarity of Heroes|JOU
 1 Steelbane Hydra|TMC
 1 Swiftfoot Boots|FDN
@@ -30,8 +30,10 @@ Description=Tier 3 (Bracket 3). Mono-green hydras, from the Realm of Legends Gar
 1 Bow of Nylea|THS
 1 Branching Evolution|MH3
 1 Bridgeworks Battle|MH3
+1 Deathmist Raptor|DTK
 1 Elementalist's Palette|SOC
 1 Fractal Harness|SOC
+1 Inspiring Call|TLE
 1 Kami of Whispered Hopes|MOM
 1 Khalni Ambush|PIO
 1 Knockout Maneuver|TDM
@@ -39,8 +41,6 @@ Description=Tier 3 (Bracket 3). Mono-green hydras, from the Realm of Legends Gar
 1 Managorger Hydra|ORI
 1 Marwyn, the Nurturer|DOM
 1 Mossborn Hydra|FDN
-1 Peema Trailblazer|DRC
-1 Scurry Oak|MH2
 1 Terrasymbiosis|EOE
 1 Blessing of Frost|KHM
 1 Frontier Siege|FRF
@@ -54,9 +54,9 @@ Description=Tier 3 (Bracket 3). Mono-green hydras, from the Realm of Legends Gar
 1 Territorial Allosaurus|DOM
 1 Tributary Instructor|LCC
 1 Garruk, Primal Hunter|M13
-1 Grothama, All-Devouring|BBD
 1 Kalonian Hydra|M14
 1 Nissa, Who Shakes the World|WAR
+1 Rampaging Aetherhood|DRC
 1 Return of the Wildspeaker|ELD
 1 Thickest in the Thicket|FDC
 1 Traverse the Outlands|CLB

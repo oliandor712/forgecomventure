@@ -4,8 +4,8 @@ Description=Tier 4 (Bracket 4). white-red Firesong and Sunspeaker deck. Built do
 [Commander]
 1 Firesong and Sunspeaker|DOM
 [Main]
-11 Plains|FDN
-19 Mountain|FDN
+12 Plains|FDN
+18 Mountain|FDN
 1 Boros Garrison|RAV
 1 Command Tower|TMC
 1 Evolving Wilds|TMC
@@ -53,7 +53,7 @@ Description=Tier 4 (Bracket 4). white-red Firesong and Sunspeaker deck. Built do
 1 Treasure Chest|AFR
 1 Chandra's Outrage|M20
 1 Chandra, Torch of Defiance|FRA
-1 Fanatic of Mogis|THS
+1 False Prophet|CMD
 1 Felidar Retreat|FDN
 1 Lord of Shatterskull Pass|ROE
 1 Mangara, the Diplomat|CMM
@@ -63,10 +63,10 @@ Description=Tier 4 (Bracket 4). white-red Firesong and Sunspeaker deck. Built do
 1 Thran Dynamo|CMM
 1 Twinblade Paladin|FDN
 1 Balefire Liege|EVE
-1 Eldrazi Monument|ZEN
+1 Banner of Kinship|FDN
 1 Gilded Lotus|FDN
-1 Karn, Legacy Reforged|MAT
 1 Neheb, the Eternal|HOU
+1 Resplendent Mentor|SHM
 1 Venerated Loxodon|GRN
 1 Noble Templar|SCG
 1 Rite of the Dragoncaller|FDN

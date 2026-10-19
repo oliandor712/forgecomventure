@@ -8,6 +8,7 @@ Description=Tier 5 (Bracket 5). Mono-blue Hakim, Loreweaver deck. Built down fro
 1 An Offer You Can't Refuse|SLZ
 1 Ingenious Prodigy|WOE
 1 Mockingbird|BLB
+1 Mystic Remora|ICE
 1 Ponder|M12
 1 Pongify|PLC
 1 Rapid Hybridization|GTC
@@ -26,18 +27,19 @@ Description=Tier 5 (Bracket 5). Mono-blue Hakim, Loreweaver deck. Built down fro
 1 Negate|TMT
 1 Phantasmal Image|M12
 1 Pollywog Prodigy|BLC
+1 Qarsi Deceiver|DTK
 1 Reality Shift|FRF
 1 Snap|WOC
 1 Swiftfoot Boots|FDN
-1 Vodalian Arcanist|M21
 1 Vodalian Hexcatcher|DMU
 1 Barrin, Tolarian Archmage|M21
 1 Burnished Hart|FDN
 1 Chasm Skulker|M15
 1 Dragon's Hoard|M19
 1 Glasspool Mimic|ZNR
-1 Hydroelectric Specimen|MH3
 1 Imprisoned in the Moon|INR
+1 Master of Etherium|ALA
+1 Midnight Clock|ELD
 1 Mirrormade|ELD
 1 Oracle of the Alpha|MBC
 1 Propaganda|TMP
@@ -45,10 +47,10 @@ Description=Tier 5 (Bracket 5). Mono-blue Hakim, Loreweaver deck. Built down fro
 1 Sink into Stupor|MH3
 1 Spellseeker|BBD
 1 Trophy Mage|AER
-1 Valley Floodcaller|BLB
 1 Vendilion Clique|MOR
 1 Aetherize|FDN
 1 Archmage Emeritus|STX
+1 Clever Impersonator|KTK
 1 Control Magic|CMA
 1 Enduring Curiosity|DSK
 1 Engulf the Shore|SOI
@@ -56,7 +58,6 @@ Description=Tier 5 (Bracket 5). Mono-blue Hakim, Loreweaver deck. Built down fro
 1 Spark Double|WAR
 1 Talrand, Sky Summoner|M13
 1 Teferi's Ageless Insight|M21
-1 Thran Dynamo|CMM
 1 Urza, Lord High Artificer|CMM
 1 Archmage of Runes|FDN
 1 Corrupted Conscience|MBS
@@ -68,5 +69,4 @@ Description=Tier 5 (Bracket 5). Mono-blue Hakim, Loreweaver deck. Built down fro
 1 Hullbreaker Horror|VOW
 1 Nezahal, Primal Tide|RIX
 1 Sea Gate Restoration|ZNR
-1 Eldrazi Conscription|ROE
 1 Treasure Cruise|KTK

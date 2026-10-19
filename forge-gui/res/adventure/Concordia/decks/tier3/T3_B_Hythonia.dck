@@ -4,11 +4,12 @@ Description=Tier 3 (Bracket 3). Mono-black deathtouch control, from the Realm of
 [Commander]
 1 Hythonia the Cruel|THS
 [Main]
-32 Swamp|FDN
+31 Swamp|FDN
 1 Bojuka Bog|WWK
 1 Castle Locthwain|ELD
 1 Myriad Landscape|CMM
 1 Rogue's Passage|FDN
+1 Temple of the False God|SCG
 1 War Room|CMM
 1 Basilisk Collar|FDN
 1 Defile|MH1
@@ -18,13 +19,13 @@ Description=Tier 3 (Bracket 3). Mono-black deathtouch control, from the Realm of
 1 Vampire of the Dire Moon|M20
 1 Wayfarer's Bauble|5DN
 1 Arcane Signet|ELD
-1 Bebop, Skull & Crossbones|TMC
 1 Blood Artist|AVR
 1 Do or Die|INV
 1 Exsanguinate|FDN
 1 Feed the Swarm|TLE
 1 Go for the Throat|40K
 1 Heartless Act|TLA
+1 Jet Medallion|TMP
 1 Mind Stone|WTH
 1 Night's Whisper|J25
 1 Orzhov Enforcer|RNA
@@ -38,9 +39,9 @@ Description=Tier 3 (Bracket 3). Mono-black deathtouch control, from the Realm of
 1 Hero's Downfall|FDN
 1 Hooded Blightfang|M21
 1 Infernal Idol|J22
+1 Necroplasm|RAV
 1 Qarsi Revenant|TDM
 1 Read the Bones|ORI
-1 Retreat to Hagra|BFZ
 1 Staff of Compleation|ONE
 1 Underworld Connections|RTR
 1 Underworld Dreams|THB
@@ -68,7 +69,7 @@ Description=Tier 3 (Bracket 3). Mono-black deathtouch control, from the Realm of
 1 Archetype of Finality|BNG
 1 Harvester of Souls|AVR
 1 Nirkana Revenant|ROE
-1 Steel Hellkite|FDN
 1 Visara the Dreadful|ONS
 1 Wurmcoil Engine|SOM
 1 Xathrid Gorgon|M13
+1 Rise of the Dark Realms|FDN

@@ -31,7 +31,6 @@ Description=Tier 3 (Bracket 3). Gruul big creatures, from the Realm of Legends Z
 1 Gaea's Gift|BRO
 1 Go for Blood|IKO
 1 Herd Heirloom|TDM
-1 Ivora, Insatiable Heir|J25
 1 Otepec Huntmaster|XLN
 1 Plummet|MID
 1 Pounce|XLN
@@ -40,6 +39,7 @@ Description=Tier 3 (Bracket 3). Gruul big creatures, from the Realm of Legends Z
 1 Shredded Sails|IKO
 1 Thunderherd Migration|RIX
 1 Voracious Hydra|TMC
+1 Winds of Qal Sisma|FRF
 1 Chaos Warp|MBC
 1 Commander's Sphere|CMM
 1 Cultivate|TMC
@@ -48,10 +48,10 @@ Description=Tier 3 (Bracket 3). Gruul big creatures, from the Realm of Legends Z
 1 Fervor|M13
 1 Garruk's Uprising|FDN
 1 Lifeblood Hydra|CMM
+1 Lifecrafter's Bestiary|AER
 1 Loxodon Warhammer|MRD
 1 Peema Trailblazer|DRC
 1 Poetic Ingenuity|LCI
-1 Polygoyf|M3C
 1 Pugnacious Hammerskull|LCI
 1 The Warring Triad|FIC
 1 Topiary Stomper|SNC
@@ -76,7 +76,7 @@ Description=Tier 3 (Bracket 3). Gruul big creatures, from the Realm of Legends Z
 1 Earthshaker Dreadmaw|LCI
 1 Etali, Primal Storm|FDN
 1 Kogla and Yidaro|MOM
-1 Season of Gathering|BLB
-1 Kaldra Compleat|CMM
 1 Star of Extinction|CMM
+1 Yidaro, Wandering Monster|IKO
 1 Blasphemous Act|TMC
+1 Titanoth Rex|IKO

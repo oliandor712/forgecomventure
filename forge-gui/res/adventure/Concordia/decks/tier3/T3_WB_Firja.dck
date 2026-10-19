@@ -4,7 +4,7 @@ Description=Tier 3 (Bracket 3). white-black Firja, Judge of Valor deck. Built do
 [Commander]
 1 Firja, Judge of Valor|KHM
 [Main]
-19 Plains|FDN
+18 Plains|FDN
 11 Swamp|FDN
 1 Caves of Koilos|DMU
 1 Command Tower|TMC
@@ -13,36 +13,36 @@ Description=Tier 3 (Bracket 3). white-black Firja, Judge of Valor deck. Built do
 1 Path of Ancestry|TMC
 1 Seraph Sanctuary|AVR
 1 Temple of Silence|FDN
+1 Temple of the False God|SCG
+1 Dark Ritual|MMQ
 1 Giver of Runes|H1R
 1 Lightstall Inquisitor|EOE
 1 Master of Dark Rites|LCC
 1 Mother of Runes|CLB
 1 Path to Exile|CFX
 1 Sol Ring|TMC
-1 Village Rites|KHM
 1 Animate Dead|5ED
 1 Arcane Signet|ELD
 1 Bishop of Wings|M20
 1 Blackblade Reforged|DOM
-1 Conqueror's Flail|FIC
 1 Damn|MH2
 1 Despark|WAR
 1 Fellwar Stone|9ED
 1 Giada, Font of Hope|FDN
+1 Grand Abolisher|M12
 1 Lightning Greaves|MRD
-1 Mind Stone|WTH
 1 Sejiri Shelter|PIO
+1 Shaile, Dean of Radiance|STX
 1 Starfield Mystic|M20
 1 Talisman of Hierarchy|CLB
 1 Vanishing Verse|STX
 1 Agadeem's Awakening|ZNR
+1 Ayara, First of Locthwain|ELD
 1 Claim Jumper|OTJ
 1 Cultivator's Caravan|FDN
 1 Flawless Maneuver|TLE
 1 Frontline Medic|GTC
 1 Markov Purifier|VOW
-1 Mask of Griselbrand|MID
-1 Moon-Blessed Cleric|AFR
 1 Moonlit Lamenter|ECL
 1 Necromancy|VIS
 1 Painful Truths|BFZ
@@ -50,16 +50,17 @@ Description=Tier 3 (Bracket 3). white-black Firja, Judge of Valor deck. Built do
 1 Righteous Valkyrie|KHM
 1 Starnheim Aspirant|KHM
 1 Tymna the Weaver|C16
-1 Archangel of Tithes|OTJ
+1 Urza's Incubator|MH3
+1 Clever Concealment|MSC
 1 Deadly Rollick|TLE
 1 Eumidian Wastewaker|EOC
 1 Fell the Profane|MH3
 1 Firemane Commando|SOC
 1 Firja's Retribution|KHM
 1 Gisela, the Broken Blade|EMN
-1 Serra Paragon|DMU
 1 Solemn Simulacrum|FDN
 1 Thran Dynamo|CMM
+1 Well of Lost Dreams|DST
 1 Witch Enchanter|MH3
 1 Angelic Sell-Sword|OTC
 1 Incarnation Technique|C21
@@ -74,4 +75,4 @@ Description=Tier 3 (Bracket 3). white-black Firja, Judge of Valor deck. Built do
 1 Angel of Serenity|RTR
 1 Angel of the Ruins|MH3
 1 Bruna, the Fading Light|EMN
-1 Sephara, Sky's Blade|M20
+1 Avacyn, Angel of Hope|AVR

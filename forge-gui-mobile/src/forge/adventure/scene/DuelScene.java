@@ -621,11 +621,12 @@ public class DuelScene extends ForgeScene {
 
     private static final String PLACEHOLDER_MAIN = "Wastes";
 
+    /** AI:RemoveDeck:All, the cards the AI won't play. (AI:RemoveDeck:Random only keeps cards out of random deck generators.) */
     private static boolean isAiUnplayable(PaperCard card) {
-        return card.getRules() != null && (card.getRules().getAiHints().getRemAIDecks() || card.getRules().getAiHints().getRemRandomDecks());
+        return card.getRules() != null && card.getRules().getAiHints().getRemAIDecks();
     }
 
-    /** A copy of an AI deck without cards the AI can't play (AI:RemoveDeck), so shared decks such as the player's are untouched. */
+    /** A copy of an AI deck without cards the AI can't play (AI:RemoveDeck:All), so shared decks such as the player's are untouched. */
     private static Deck withoutAiUnplayableCards(Deck source, DeckFormat format) {
         CardPool sourceCommand = source.get(DeckSection.Commander);
         if (source.getMain().countAll(DuelScene::isAiUnplayable) == 0 && (sourceCommand == null || sourceCommand.countAll(DuelScene::isAiUnplayable) == 0))

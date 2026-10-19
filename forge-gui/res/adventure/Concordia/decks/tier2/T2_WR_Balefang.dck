@@ -4,12 +4,12 @@ Description=Tier 2 (Bracket 2). white-red Balefang the Unslayable deck. Built do
 [Commander]
 1 Balefang the Unslayable|MBC
 [Main]
-8 Plains|FDN
-30 Mountain|FDN
+9 Plains|FDN
+29 Mountain|FDN
 1 Barrow-Blade|LTR
 1 Curse of Opulence|CLB
 1 Flayer Husk|MBS
-1 O-Naginata|SOK
+1 Relic of Progenitus|ALA
 1 Secure the Wastes|DTK
 1 Soul Warden|M10
 1 Batterbone|MH2
@@ -17,13 +17,13 @@ Description=Tier 2 (Bracket 2). white-red Balefang the Unslayable deck. Built do
 1 Dragon Fodder|FDN
 1 Dragon Hatchling|M14
 1 Frenzied Raider|KHM
+1 Genesis Chamber|DST
 1 Helpful Hunter|FDN
 1 Hero's Blade|FRF
 1 Ingenious Smith|AFR
 1 Krenko's Command|M13
 1 Metastatic Evangel|MH3
 1 Resolute Reinforcements|FDN
-1 Star Compass|IMA
 1 Sun Droplet|MRD
 1 TARDIS|WHO
 1 Thrill of Possibility|FDN
@@ -55,10 +55,10 @@ Description=Tier 2 (Bracket 2). white-red Balefang the Unslayable deck. Built do
 1 Seeker of Slaanesh|40K
 1 Traxos, Scourge Eternal|FRA
 1 Farsight Mask|MRD
-1 Hoarding Dragon|FDN
 1 Lorehold, the Historian|SOS
 1 Plundering Predator|J22
 1 Rapacious Dragon|FDN
+1 Resplendent Mentor|SHM
 1 Scalelord Reckoner|C17
 1 Voracious Dragon|CFX
 1 Flameblast Dragon|M12

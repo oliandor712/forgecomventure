@@ -4,7 +4,7 @@ Description=Tier 5 (Bracket 5). blue-black Nymris, Oona's Trickster deck. Built 
 [Commander]
 1 Nymris, Oona's Trickster|CMR
 [Main]
-18 Island|FDN
+17 Island|FDN
 8 Swamp|FDN
 1 Choked Estuary|SOI
 1 Drowned Catacomb|XLN
@@ -12,6 +12,7 @@ Description=Tier 5 (Bracket 5). blue-black Nymris, Oona's Trickster deck. Built 
 1 Fabled Passage|TMC
 1 Reliquary Tower|M19
 1 Restless Reef|LCI
+1 River of Tears|FUT
 1 Sunken Hollow|TMC
 1 War Room|CMM
 1 Inevitable Betrayal|MH2
@@ -30,6 +31,7 @@ Description=Tier 5 (Bracket 5). blue-black Nymris, Oona's Trickster deck. Built 
 1 Faerie Mastermind|MOM
 1 Finale of Revelation|FDN
 1 Go for the Throat|40K
+1 Impulse|DMU
 1 Infernal Grasp|MID
 1 Into the Roil|FDN
 1 Likeness Looter|WOE
@@ -38,7 +40,6 @@ Description=Tier 5 (Bracket 5). blue-black Nymris, Oona's Trickster deck. Built 
 1 Narset's Reversal|WAR
 1 Planar Atlas|J22
 1 Reality Shift|FRF
-1 Syr Ginger, the Meal Ender|WOE
 1 Talisman of Dominance|MRD
 1 Thought Vessel|FIC
 1 Brazen Borrower|ELD
@@ -52,16 +53,16 @@ Description=Tier 5 (Bracket 5). blue-black Nymris, Oona's Trickster deck. Built 
 1 Liliana's Standard Bearer|M21
 1 Nimble Obstructionist|HOU
 1 Sink into Stupor|MH3
+1 Slitherwisp|IKO
 1 Supreme Will|HOU
-1 Tezzeret, Cruel Captain|EOE
 1 Theoretical Duplication|WOC
 1 Vendilion Clique|MOR
 1 Voracious Tome-Skimmer|ECL
 1 Aetherize|FDN
 1 Alela, Cunning Conqueror|WOC
-1 Baleful Mastery|STX
 1 Damnation|PLC
 1 Ertai Resurrected|DMU
+1 Faerie Harbinger|LRW
 1 High Fae Trickster|FDN
 1 Malleable Impostor|WOC
 1 Sower of Temptation|LRW

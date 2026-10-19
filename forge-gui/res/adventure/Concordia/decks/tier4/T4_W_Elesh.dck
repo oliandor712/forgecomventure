@@ -4,10 +4,11 @@ Description=Tier 4 (Bracket 4). Mono-white Elesh Norn, Mother of Machines deck. 
 [Commander]
 1 Elesh Norn, Mother of Machines|ONE
 [Main]
-27 Plains|FDN
+26 Plains|FDN
 1 Castle Ardenvale|ELD
 1 Eiganjo, Seat of the Empire|NEO
 1 Emeria, the Sky Ruin|ZEN
+1 Field of Ruin|MID
 1 Hall of Heliod's Generosity|H1R
 1 Kor Haven|NMS
 1 Nykthos, Shrine to Nyx|THS
@@ -32,7 +33,7 @@ Description=Tier 4 (Bracket 4). Mono-white Elesh Norn, Mother of Machines deck. 
 1 Mazemind Tome|FDN
 1 Ossification|ONE
 1 Plague Myr|MBS
-1 Reckoner Bankbuster|NEO
+1 Spirited Companion|NEO
 1 Sword of the Animist|ORI
 1 Thought Vessel|FIC
 1 White Orchid Phantom|MH3
@@ -45,8 +46,8 @@ Description=Tier 4 (Bracket 4). Mono-white Elesh Norn, Mother of Machines deck. 
 1 Generous Gift|CMM
 1 Halo Fountain|SNC
 1 Lapse of Certainty|CFX
+1 Loran of the Third Path|BRO
 1 Mentor of the Meek|J25
-1 Skyclave Apparition|ZNR
 1 Split Up|DSK
 1 Staff of Compleation|ONE
 1 Sword of Hearth and Home|TMC
@@ -64,8 +65,8 @@ Description=Tier 4 (Bracket 4). Mono-white Elesh Norn, Mother of Machines deck. 
 1 Smothering Tithe|RNA
 1 Solemn Simulacrum|FDN
 1 Witch Enchanter|MH3
+1 Banner of Kinship|FDN
 1 Defiler of Faith|DMU
-1 Gilded Lotus|FDN
 1 Karmic Guide|MH2
 1 Reveillark|MOR
 1 Reverent Hoplite|THB

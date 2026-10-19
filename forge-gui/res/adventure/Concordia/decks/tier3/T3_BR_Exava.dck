@@ -4,8 +4,8 @@ Description=Tier 3 (Bracket 3). Rakdos unleash aggro, from the Realm of Legends 
 [Commander]
 1 Exava, Rakdos Blood Witch|DGM
 [Main]
-16 Swamp|FDN
-9 Mountain|FDN
+14 Swamp|FDN
+11 Mountain|FDN
 1 Blazemire Verge|DSK
 1 Blightstep Pathway|KHM
 1 Blood Crypt|TRK
@@ -18,12 +18,12 @@ Description=Tier 3 (Bracket 3). Rakdos unleash aggro, from the Realm of Legends 
 1 Haunted Ridge|FRA
 1 Karn's Bastion|WAR
 1 Rakdos Carnarium|DIS
-1 Cryptic Trilobite|C20
 1 Hangarback Walker|ORI
+1 Omarthis, Ghostfire Initiate|CMM
 1 Knight of the Ebon Legion|M20
 1 Kumano Faces Kakkazan|NEO
-1 Master of Dark Rites|LCC
 1 Rakdos Cackler|RTR
+1 Scorn-Blade Berserker|MOM
 1 Vandalblast|SLZ
 1 Arcane Signet|ELD
 1 Contagion Clasp|SOM
@@ -40,7 +40,6 @@ Description=Tier 3 (Bracket 3). Rakdos unleash aggro, from the Realm of Legends 
 1 Talisman of Indulgence|MRD
 1 Terminate|ARB
 1 Thrill-Kill Assassin|RVR
-1 Alesha, Who Laughs at Fate|FDN
 1 Bedevil|RNA
 1 Chaos Warp|MBC
 1 Dragonstorm Globe|TDM
@@ -49,8 +48,9 @@ Description=Tier 3 (Bracket 3). Rakdos unleash aggro, from the Realm of Legends 
 1 Hazoret's Monument|AKH
 1 Hellhole Flailer|RTR
 1 Moria Scavenger|LTC
+1 Rakdos Keyrune|RTR
+1 Rakdos Locket|RNA
 1 Read the Bones|ORI
-1 Sanguine Spy|SNC
 1 Solar Array|EOC
 1 Strength Bobblehead|PIP
 1 Theater of Horrors|RNA
@@ -60,15 +60,15 @@ Description=Tier 3 (Bracket 3). Rakdos unleash aggro, from the Realm of Legends 
 1 Bloodtracker|J22
 1 Crystalline Crawler|EOC
 1 Mer-Ek Nightblade|KTK
+1 Redcap Gutter-Dweller|FDN
 1 Rooftop Assassin|OTJ
 1 Skyclave Shadowcat|ZNR
 1 Tesak, Judith's Hellhound|MKC
 1 Thundering Raiju|NEO
 1 Towashi Guide-Bot|NEO
-1 Wrecking Ball|DIS
-1 Archpriest of Shadows|MOM
 1 Junji, the Midnight Sky|NEO
 1 Kami of Celebration|NEC
+1 Skarrgan Hellkite|RNA
 1 Spawn of Rix Maadi|RTR
 1 Tenured Inkcaster|STX
 1 Uncivil Unrest|MOC
@@ -76,7 +76,7 @@ Description=Tier 3 (Bracket 3). Rakdos unleash aggro, from the Realm of Legends 
 1 Akki Battle Squad|NEC
 1 Carnival Hellsteed|RTR
 1 Coveted Jewel|MSC
+1 Fiendish Duo|J25
 1 Threefold Thunderhulk|LCI
-1 Virtue of Persistence|WOE
 1 Blasphemous Act|TMC
 1 Rise of the Dark Realms|FDN

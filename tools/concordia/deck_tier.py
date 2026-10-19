@@ -308,7 +308,7 @@ def rate(path, data, config):
                 unknown.append(name)
                 continue
             names[c["name"].lower()] += n
-            if any(f in ("all", "random") for f in c["flags"]):
+            if "all" in c["flags"]:  # AI:RemoveDeck:All (Random only affects random deck generators)
                 flagged.append(c["name"])
             if c["name"].lower() in restricted or ed in banned_sets:
                 problems.append("restricted in Concordia: " + c["name"])

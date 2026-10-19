@@ -6,7 +6,7 @@ Run: python3 mine.py && python3 pool.py && python3 build.py decks.json [FILE.dck
 Each entry names a commander, colours, a theme (creature types, or /regex/ on rules text, or "noabil" for vanilla
 creatures) and optionally a seed deck from Forge whose cards are preferred. The builder fills, in order: the tier's
 role quotas (removal, draw, ramp, wipes), the card-type quotas, the creature count, then the rest, inside the tier's
-mana curve, rarity and role caps. Only Commander-legal cards without AI:RemoveDeck flags, outside Concordia's
+mana curve, rarity and role caps. Only Commander-legal cards without an AI:RemoveDeck:All flag, outside Concordia's
 restrictions, are used. Tier 1 aims low on power, Tier 2 at about 25, Tier 3 at about 34 (deck_tier.py power score).
 """
 import sys, os, re, json, pickle, collections, math

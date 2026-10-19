@@ -4,8 +4,8 @@ Description=Tier 4 (Bracket 4). blue-black-green Damia, Sage of Stone deck. Buil
 [Commander]
 1 Damia, Sage of Stone|CM2
 [Main]
-8 Island|FDN
-8 Swamp|FDN
+7 Island|FDN
+9 Swamp|FDN
 4 Forest|FDN
 1 Ash Barrens|TMC
 1 Bloodstained Mire|KTK
@@ -23,10 +23,10 @@ Description=Tier 4 (Bracket 4). blue-black-green Damia, Sage of Stone deck. Buil
 1 Lotus Field|M20
 1 Lotus Vale|WTH
 1 Burgeoning|STH
+1 Cryptbreaker|EMN
 1 Exploration|DMR
 1 Ingenious Prodigy|WOE
 1 Mind Twist|SPG
-1 Preordain|M11
 1 Siren Stormtamer|XLN
 1 Sol Ring|TMC
 1 Thoughtseize|THS
@@ -36,15 +36,15 @@ Description=Tier 4 (Bracket 4). blue-black-green Damia, Sage of Stone deck. Buil
 1 Counterspell|7ED
 1 Cyclonic Rift|RTR
 1 Dark Confidant|RAV
-1 Deranged Assistant|ISD
 1 Hymn to Tourach|FEM
 1 Jadar, Ghoulcaller of Nephalia|MID
-1 Jushi Apprentice|CHK
 1 Life from the Loam|RAV
-1 Pain Seer|BNG
+1 Lluwen, Imperfect Naturalist|ECL
+1 Magus of the Library|PLC
 1 Spellstutter Sprite|LRW
 1 Triskaidekaphile|MID
 1 Vodalian Hexcatcher|DMU
+1 Waste Not|M15
 1 Wonderscape Sage|M3C
 1 Arcane Artisan|BBD
 1 Azusa, Lost but Seeking|M21

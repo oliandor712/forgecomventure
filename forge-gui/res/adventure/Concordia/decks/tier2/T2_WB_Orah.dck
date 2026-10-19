@@ -4,12 +4,12 @@ Description=Tier 2 (Bracket 2). white-black Orah, Skyclave Hierophant deck. Buil
 [Commander]
 1 Orah, Skyclave Hierophant|ZNR
 [Main]
-17 Plains|FDN
-17 Swamp|FDN
+19 Plains|FDN
+15 Swamp|FDN
 1 Bojuka Bog|WWK
+1 Demolition Field|FDN
 1 Orzhov Basilica|GPT
 1 Path of Ancestry|TMC
-1 Tainted Field|TOR
 1 Eldritch Immunity|M3C
 1 Master of Dark Rites|LCC
 1 Secure the Wastes|DTK
@@ -20,17 +20,17 @@ Description=Tier 2 (Bracket 2). white-black Orah, Skyclave Hierophant deck. Buil
 1 Beloved Chaplain|ODY
 1 Cliffside Rescuer|C19
 1 Dawnbringer Cleric|AFR
-1 Disciple of Griselbrand|ISD
 1 Elas il-Kor, Sadistic Pilgrim|DMU
+1 Fellwar Stone|9ED
 1 High Priest of Penance|GTC
-1 Kor Bladewhirl|BFZ
 1 Metastatic Evangel|MH3
+1 Ondu Cleric|ZEN
+1 Serene Steward|BFZ
 1 Skyclave Cleric|ZNR
 1 Suture Priest|NPH
 1 Talisman of Hierarchy|CLB
 1 Umbral Collar Zealot|EOE
 1 Underworld Coinsmith|JOU
-1 Withered Wretch|LGN
 1 Edgewalker|SCG
 1 Firdoch Core|ECL
 1 Infectious Inquiry|ONE
@@ -40,8 +40,8 @@ Description=Tier 2 (Bracket 2). white-black Orah, Skyclave Hierophant deck. Buil
 1 Magnifying Glass|MKM
 1 Markov Purifier|VOW
 1 Moonlit Lamenter|ECL
+1 Orzhov Cluestone|DGM
 1 Priest of Gix|J25
-1 Pristine Talisman|NPH
 1 Read the Bones|ORI
 1 Relic Vial|ZNR
 1 Soltari Visionary|EXO
@@ -62,9 +62,9 @@ Description=Tier 2 (Bracket 2). white-black Orah, Skyclave Hierophant deck. Buil
 1 Farsight Mask|MRD
 1 Glasswing Grace|MH3
 1 Incarnation Technique|C21
+1 Resplendent Mentor|SHM
 1 Starfall Invocation|BLB
 1 The Eldest Reborn|DOM
-1 Three Tragedies|BOK
 1 Enslave|NPH
 1 Noble Templar|SCG
 1 Cruel Reality|SLZ

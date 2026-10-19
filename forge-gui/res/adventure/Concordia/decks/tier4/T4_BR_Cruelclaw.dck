@@ -4,8 +4,8 @@ Description=Tier 4 (Bracket 4). black-red The Infamous Cruelclaw deck. Built dow
 [Commander]
 1 The Infamous Cruelclaw|BLB
 [Main]
-18 Swamp|FDN
-11 Mountain|FDN
+17 Swamp|FDN
+12 Mountain|FDN
 1 Access Tunnel|STX
 1 Command Tower|TMC
 1 Raucous Theater|MKM
@@ -52,8 +52,8 @@ Description=Tier 4 (Bracket 4). black-red The Infamous Cruelclaw deck. Built dow
 1 Whispersilk Cloak|DST
 1 Big Score|SNC
 1 Chandra, Torch of Defiance|FRA
-1 Crippling Fear|KHM
 1 Grave Scrabbler|FUT
+1 Moggcatcher|NMS
 1 Pile On|MOM
 1 Price of Fame|GRN
 1 Purphoros, God of the Forge|THS
@@ -65,10 +65,10 @@ Description=Tier 4 (Bracket 4). black-red The Infamous Cruelclaw deck. Built dow
 1 Coiling Rebirth|BLB
 1 Doom Whisperer|GRN
 1 Dragonhawk, Fate's Tempest|BLB
+1 Hexplate Wallbreaker|ONC
 1 Maha, Its Feathers Night|BLB
 1 Season of Loss|BLB
 1 Season of the Bold|BLB
-1 Terror of the Peaks|OTJ
 1 Fiery Emancipation|WOT
 1 Rakdos, Patron of Chaos|MKM
 1 Rottenmouth Viper|BLB

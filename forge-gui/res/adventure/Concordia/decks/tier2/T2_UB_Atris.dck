@@ -4,15 +4,15 @@ Description=Tier 2 (Bracket 2). blue-black Atris, Oracle of Half-Truths deck. Bu
 [Commander]
 1 Atris, Oracle of Half-Truths|THB
 [Main]
-16 Island|FDN
-19 Swamp|FDN
+15 Island|FDN
+20 Swamp|FDN
 1 Myriad Landscape|CMM
 1 Tainted Isle|TOR
 1 Terrain Generator|NMS
 1 Flayer Husk|MBS
 1 Malakir Rebirth|ZNR
 1 Omen Hawker|MOM
-1 Ruin Crab|ZNR
+1 Relic of Progenitus|ALA
 1 Slip Out the Back|SNC
 1 Vat of Rebirth|ONE
 1 Baleful Strix|SLZ
@@ -40,7 +40,7 @@ Description=Tier 2 (Bracket 2). blue-black Atris, Oracle of Half-Truths deck. Bu
 1 Junk Diver|MH3
 1 Lord Skitter, Sewer King|SLZ
 1 Nadier's Nightblade|CMM
-1 Pilfered Plans|DGM
+1 Retreat to Hagra|BFZ
 1 Seal of Doom|DIS
 1 Skyscanner|M21
 1 The Creation of Avacyn|MH3
@@ -53,9 +53,9 @@ Description=Tier 2 (Bracket 2). blue-black Atris, Oracle of Half-Truths deck. Bu
 1 Fortune's Favor|EMN
 1 Gonti, Lord of Luxury|CMM
 1 Greed|MH2
+1 Ingenious Infiltrator|H1R
 1 Mindless Automaton|CMR
 1 Solemn Simulacrum|FDN
-1 Tendrils of Agony|SCG
 1 Thran Dynamo|CMM
 1 Covenant of Minds|ALA
 1 Diviner Spirit|CMA
@@ -67,6 +67,6 @@ Description=Tier 2 (Bracket 2). blue-black Atris, Oracle of Half-Truths deck. Bu
 1 Hammerhead Tyrant|TDC
 1 Hex|RAV
 1 Novijen Sages|MM2
-1 Patron of the Vein|LCC
 1 Overseer of the Damned|MKC
 1 Sea Gate Restoration|ZNR
+1 Vilis, Broker of Blood|M20

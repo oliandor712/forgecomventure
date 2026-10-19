@@ -49,7 +49,7 @@ def identity(c):
 pool = {}
 for key, c in data['cards'].items():
     if key in banned or key in restricted: continue
-    if any(f in ('all', 'random') for f in c['flags']): continue
+    if 'all' in c['flags']: continue  # AI:RemoveDeck:All; RemoveDeck:Random only affects random deck generators
     if 'Conspiracy' in c['types'] or 'Scheme' in c['types'] or 'Plane' in c['types'].split() or 'Phenomenon' in c['types'] or 'Vanguard' in c['types'] or 'Dungeon' in c['types'] or 'Attraction' in c['types'] or 'Contraption' in c['types'] or 'Stickers' in c['types']:
         continue
     if re.search(r'\bA-|^A-', c['name']) or c['name'].startswith('A-'): continue

@@ -4,7 +4,7 @@ Description=Tier 3 (Bracket 3). Mono-blue big artifacts, from the Realm of Legen
 [Commander]
 1 Muzzio, Visionary Architect|BRC
 [Main]
-28 Island|FDN
+27 Island|FDN
 1 Academy Ruins|TSP
 1 Archway of Innovation|MH3
 1 Buried Ruin|M12
@@ -14,17 +14,19 @@ Description=Tier 3 (Bracket 3). Mono-blue big artifacts, from the Realm of Legen
 1 Seat of the Synod|MRD
 1 Secluded Starforge|EOE
 1 Urza's Cave|MH3
+1 Uthros, Titanic Godcore|EOE
 1 Memnite|SOM
 1 An Offer You Can't Refuse|SLZ
 1 Bloodforged Battle-Axe|PIP
 1 Brainstorm|TLE
 1 Commander's Plate|TMC
-1 Shuko|BOK
 1 The Millennium Calendar|LCI
+1 Voltaic Key|M11
 1 Arcane Denial|ALL
 1 Endless Atlas|CMM
 1 Etherium Sculptor|ALA
 1 Guidelight Optimizer|DFT
+1 Lightning Greaves|MRD
 1 Metallic Mimic|AER
 1 Mind Stone|WTH
 1 Monoskelion|MH2
@@ -32,16 +34,16 @@ Description=Tier 3 (Bracket 3). Mono-blue big artifacts, from the Realm of Legen
 1 Resculpt|STX
 1 Silver Myr|SOM
 1 Sky Diamond|CLB
-1 Surge Engine|BRO
+1 Swiftfoot Boots|FDN
 1 The Reality Chip|NEO
 1 Water Whip|TLE
-1 Zenith Chronicler|ONE
 1 Emry, Lurker of the Loch|ELD
 1 Hydroelectric Specimen|MH3
 1 Malcolm, Keen-Eyed Navigator|CMR
+1 Master of Etherium|ALA
 1 Myr Galvanizer|SOM
-1 Nettlecyst|MH2
 1 Sai, Master Thopterist|M19
+1 Scrapyard Recombiner|MH1
 1 Sculpting Steel|10E
 1 Sink into Stupor|MH3
 1 Staff of Compleation|ONE
@@ -49,7 +51,6 @@ Description=Tier 3 (Bracket 3). Mono-blue big artifacts, from the Realm of Legen
 1 The Warring Triad|FIC
 1 Ugin's Binding|MH3
 1 Unstoppable Plan|DFT
-1 Uthros Research Craft|EOC
 1 Workshop Assistant|KLD
 1 Frogmite|MRD
 1 Hedron Archive|FDN
@@ -62,12 +63,12 @@ Description=Tier 3 (Bracket 3). Mono-blue big artifacts, from the Realm of Legen
 1 Rewind|PLST
 1 Solemn Simulacrum|FDN
 1 Thopter Spy Network|ORI
+1 Banner of Kinship|FDN
 1 Eldrazi Monument|ZEN
 1 Gilded Lotus|FDN
 1 Karn, Legacy Reforged|MAT
 1 Mirrorworks|MBS
 1 Mm'menon, the Right Hand|EOE
-1 Tamiyo's Journal|SOI
 1 Thoughtcast|MRD
 1 Duplicant|MRD
 1 Ugin, the Ineffable|WAR
