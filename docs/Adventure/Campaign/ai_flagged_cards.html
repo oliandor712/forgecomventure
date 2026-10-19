@@ -1,0 +1,347 @@
+<title>Forge AI Flagged Cards</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a long technical report in one reading column, wide tables scroll inside their own frames */
+:root {
+  --bg: #f5f6f4; --surface: #ffffff; --fg: #1f2524; --muted: #5f6b68; --line: #d8ddda; --accent: #2f6f62; --code: #e8edea; --band: #eaf0ed;
+  --display: "Source Serif 4", Georgia, serif; --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif; --mono: "IBM Plex Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121615; --surface: #1a201e; --fg: #e2e8e5; --muted: #9aa8a3; --line: #2c3532; --accent: #7cc4b1; --code: #232c29; --band: #1f2a27; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121615; --surface: #1a201e; --fg: #e2e8e5; --muted: #9aa8a3; --line: #2c3532; --accent: #7cc4b1; --code: #232c29; --band: #1f2a27; color-scheme: dark }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 15px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 64px; }
+main { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--display); font-size: 2.1rem; line-height: 1.15; margin: 0 0 4px; text-wrap: balance; }
+h2 { font-family: var(--display); font-size: 1.45rem; margin: 26px 0 0; padding-top: 14px; border-top: 1px solid var(--line); text-wrap: balance; }
+h3 { font-family: var(--display); font-size: 1.15rem; margin: 14px 0 0; text-wrap: balance; }
+p, li { max-width: 74ch; }
+p { margin: 0; }
+ul, ol { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 4px; }
+li > ul, li > ol { margin-top: 4px; }
+code { font-family: var(--mono); font-size: 12.5px; background: var(--code); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+b { font-weight: 600; }
+.tablewrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; margin: 4px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; vertical-align: top; padding: 7px 10px; border-bottom: 1px solid var(--line); }
+th { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 600; background: var(--band); white-space: nowrap; }
+td { min-width: 70px; }
+tr:last-child td { border-bottom: none; }
+td:nth-child(2), td:nth-child(3) { font-variant-numeric: tabular-nums; }
+#audit + ul { background: var(--band); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px 12px 32px; }
+</style>
+<main>
+<span class="eyebrow">Concordia · Forge AI research · audited</span>
+<h1 id="cards-forge-flags-as-unplayable-for-the-ai-cluster">Cards Forge flags as unplayable for the AI: clusters, gaps, fixes</h1>
+<p>Paths are relative to the repository root. The analysis was a read-only pass over the card scripts and the AI code; the one-off scripts it used aren't kept in the repository.</p>
+<h2 id="audit">Audit</h2>
+<p>This report was re-checked after it was written:</p>
+<ul>
+<li><b>Counts verified exactly</b> against the card scripts: 34,088 scripts, 2,479 <code>All</code>, 2,382 <code>Random</code>, 250 both, 2,132 <code>Random</code> only, 70 <code>NonCommander</code>.
+</li>
+<li><b>Code references verified</b> at the cited lines: <code>EffectAi</code> (521-523, 598-599), <code>PumpAi</code> (348-352), <code>AnimateAi</code> (472-476), <code>AnimateAllAi</code> (27-29), <code>ChangeTargetsAi</code> (25-35), <code>RepeatEachAi</code> (101-103), the Choose* AIs, <code>ComputerUtilAbility</code> (362-363), <code>SpellApiToAi</code> (71, 100, 126, 161), <code>OnePlaySafetyChecker</code> and its single use at <code>AiController.java:988</code>, and <code>SACRIFICE_DEFAULT_PREF_ENABLE</code> in <code>Default.ai</code>/<code>Experimental.ai</code>.
+</li>
+<li><b>Corrections made:</b>
+<ul>
+<li>The Choose* breakdown under improvement 2 listed ChoosePlayer among the cards the fix would free. ChoosePlayer is the opposite problem (it always plays), so it's removed; the 87 are ChooseType/Color/Number 55, NameCard 23 and GenericChoice 9.
+</li>
+<li>Improvement 3's heading said "200+"; its own estimate, 100-200, is now used throughout.
+</li>
+<li>Improvement 7 gave RepeatEach as 69 cards and the dead-default table as 38: 69 flagged cards use RepeatEach somewhere, and about 40 use it as their main ability. Both numbers are now named.
+</li>
+<li><code>ChangeTargetsAi</code> does play mandatory activations (triggers); it refuses only optional ones. Noted below.
+</li>
+<li>Rhystic Shield appeared both as an opponent's-choice punisher and as "looks playable". Its main ability is a plain <code>PumpAll</code>, so it stays in the stale list; the punisher cluster now uses other examples.
+</li></ul>
+</li>
+<li><b>Done since:</b> improvement 0 (Adventure strips only <code>RemoveDeck:All</code>) is in, with the deck pool and all 100 tier decks rebuilt.
+</li></ul>
+<h2 id="summary">Summary</h2>
+<div class="tablewrap"><table><thead><tr><th></th><th>Cards</th></tr></thead><tbody><tr><td>Card scripts scanned (<code>forge-gui/res/cardsfolder/<i>*/</i>.txt</code>)</td><td>34,088</td></tr><tr><td><code>AI:RemoveDeck:All</code></td><td><b>2,479</b> (7.3%)</td></tr><tr><td><code>AI:RemoveDeck:Random</code></td><td><b>2,382</b> (7.0%)</td></tr><tr><td>Both flags</td><td>250</td></tr><tr><td>Either flag</td><td>4,611</td></tr><tr><td><code>Random</code> only</td><td>2,132</td></tr><tr><td>(<code>AI:RemoveDeck:NonCommander</code>, not in scope)</td><td>70</td></tr></tbody></table></div>
+<p>The two flags do different jobs. <b>That difference is the biggest finding.</b></p>
+<ul>
+<li><b><code>All</code> changes how the AI plays.</b> <code>AiController.getSpellAbilityToPlay</code> drops every spell ability whose host card has <code>RemoveDeck:All</code> (<code>forge-ai/src/main/java/forge/ai/AiController.java:1647-1651</code>, which carries a "TODO allow when experimental profile?" note), and <code>ComputerUtilAbility.java:362-363</code> gives such cards -10 priority. In game, an <code>All</code> card is a dead card.
+</li>
+<li><b><code>Random</code> never changes in-game play.</b> It is read only by deck builders and generators: <code>CardThemedDeckBuilder.java:592,806</code>, <code>LimitedDeckBuilder.java:599</code>, <code>CardRulesPredicates.java:26</code>, the Vanguard pickers, and a tutor filter at <code>ChangeZoneAi.java:1586</code>. The AI plays these cards normally. They are build-around, tribal or snow cards, situational cards and drawback cards, and 467 of the 2,132 <code>Random</code>-only cards carry <code>DeckHints</code>/<code>DeckNeeds</code>.
+</li>
+<li><b>Adventure used to strip both flags.</b> <code>DuelScene.isAiUnplayable</code> checked <code>getRemAIDecks() || getRemRandomDecks()</code>, and Concordia turns stripping on (<code>stripAiUnplayableCards</code> in <code>forge-gui/res/adventure/Concordia/config.json</code>), so 2,132 cards the AI can play were removed from AI decks for no AI reason. <b>Fixed:</b> it now checks only <code>getRemAIDecks()</code> (improvement 0).
+</li></ul>
+<p>About the <code>All</code> flags:</p>
+<ul>
+<li><b>They are mostly legacy.</b> The flag rate falls with the year a card was first printed (taken from <code>forge-gui/res/editions</code>):
+<div class="tablewrap"><table><thead><tr><th>First printed</th><th><code>All</code></th><th><code>Random</code></th></tr></thead><tbody><tr><td>2003 or earlier</td><td>14.8%</td><td>13.2%</td></tr><tr><td>2004-2012</td><td>12.3%</td><td>11.2%</td></tr><tr><td>2013-2019</td><td>5.1%</td><td>5.2%</td></tr><tr><td>2020 or later</td><td>0.8%</td><td>1.6%</td></tr></tbody></table></div>
+</li>
+<li><b>There are three kinds of <code>All</code> flag:</b>
+<ol>
+<li><b>A real "dead default" in an AI class (424 cards, 17%).</b> The card's main ability uses an API whose AI returns <code>CantPlayAi</code> or <code>MissingLogic</code> whenever there is no <code>AILogic$</code>. The biggest of these are <code>EffectAi</code> (148), <code>PumpAi</code> used as a target carrier (71), Choose\<i>/NameCard/GenericChoice heads (87), targeted non-creature Animate (43) and <code>AnimateAll</code> (24). The same dead defaults also silently disable 560 *unflagged</i> cards' abilities.
+</li>
+<li><b>Strategic or build-around cards (about 45%).</b> These are static- or trigger-only permanents with drawbacks or symmetric effects, combat-step tricks, odd non-mana costs, and library or graveyard shuffling with no immediate value. The AI would cast them, but it doesn't know they are bad for it, so the flag acts as a quality filter. These are hard to fix in general.
+</li>
+<li><b>Probably stale flags.</b>
+<ul>
+<li>117 <code>All</code> cards already have an <code>AILogic$</code> on their main ability.
+</li>
+<li>In a hand-checked sample of 34 simple scripts, <b>about half (17)</b> look playable with today's AI.
+</li>
+<li>Flagging is inconsistent: Samite Healer is unflagged, but Barrenton Medic and Martyrs' Tomb, which use the same <code>PreventDamage</code> AI, are flagged.
+</li>
+<li>The estimate is <b>300-450 stale <code>All</code> flags</b>.
+</li></ul>
+</li></ol>
+</li></ul>
+<h2 id="method">Method</h2>
+<ol>
+<li><b>Parsing.</b> Every card script was parsed, recording:
+<ul>
+<li>ApiTypes from <code>AB$</code>/<code>SP$</code>/<code>DB$</code> on <code>A:</code>, <code>T:</code> and <code>SVar:</code> lines
+</li>
+<li>trigger modes (<code>T:</code> and trigger SVars)
+</li>
+<li>static modes (<code>S:</code>)
+</li>
+<li>replacement events (<code>R:</code> and <code>Event$</code> SVars)
+</li>
+<li>keywords (<code>K:</code>), types and <code>AILogic$</code> values
+</li>
+<li>about 50 Oracle-text regex patterns (choose, vote, each player, X, sacrifice, copy, exchange control, coin, monarch, and others)
+<p>Each flagged card's <code>A:</code> lines with their cost string, <code>AILogic</code> and parameters were then extracted. Those lines are the abilities the AI actually decides to play.</p>
+</li></ul>
+</li>
+<li><b>Feature rates.</b> For every feature: the count of <code>All</code> cards, the count of <code>Random</code> cards, the total number of cards with the feature, and the flag rate. The rate shows which features are over-represented.
+</li>
+<li><b>Feature clusters.</b> Each flagged card was assigned to every feature cluster it matches (multi-label).
+</li>
+<li><b>Dead defaults.</b> Code-confirmed dead defaults were tagged: the API plus the missing <code>AILogic</code> maps to a <code>return CantPlayAi/MissingLogic</code> in the AI class. It covers all 34k cards, not only flagged ones.
+</li>
+<li><b>Reading the code.</b> The relevant classes were read in <code>forge-ai/src/main/java/forge/ai/</code> (<code>SpellApiToAi</code>, <code>EffectAi</code>, <code>PumpAi</code>/<code>PumpAiBase</code>, the Choose* AIs, <code>AnimateAi</code>/<code>AnimateAllAi</code>, <code>ChangeTargetsAi</code>, <code>UntapAllAi</code>, <code>RepeatEachAi</code>, <code>ChoosePlayerAi</code>, <code>DamagePreventAi</code>, <code>ChooseSourceAi</code>, <code>ComputerUtilCost</code>/<code>ComputerUtil.getCardPreference</code>, <code>AiCostDecision</code>, <code>OnePlaySafetyChecker</code>).
+</li>
+<li><b>Stale-flag sample.</b> 34 sampled <code>All</code> cards with a single simple <code>A:</code> ability (from a pool of 627) were judged by hand against the code.
+</li></ol>
+<p>The clusters come from regex heuristics. Treat the counts as accurate to about ±15%.</p>
+<h2 id="clusters-removedeck-all-n-2-479-multi-label">Clusters (<code>RemoveDeck:All</code>, n = 2,479; multi-label)</h2>
+<p>84% of <code>All</code> cards fall into at least one cluster below.</p>
+<div class="tablewrap"><table><thead><tr><th>Cluster</th><th>Cards</th><th>% of All</th><th>Example cards</th><th>Root cause</th></tr></thead><tbody><tr><td>No <code>A:</code> line (static- or trigger-only permanent)</td><td>452</td><td>18.2</td><td>Bulwark, Steel Golem, Standstill, Pangosaur, Masumaro</td><td>The AI casts these through <code>PermanentAi</code> by creature or card value and never checks a drawback static or trigger (self-bounce, "you can't…", P/T = hand size, symmetric). The flag is a quality filter.</td></tr><tr><td>X / variable amounts</td><td>289</td><td>11.7</td><td>Corpseweft, Panacea, Black Sun's Zenith, Weight of Spires</td><td><code>setMaxXValue</code> (<code>ComputerUtilCost.java:680</code>) handles mana X. X that comes from targets or from non-mana costs (Sac/Discard/RemoveCounter X; <code>AiCostDecision.java:757</code> "TODO … Ooze Flux") is evaluated weakly.</td></tr><tr><td>Non-mana costs (sacrifice or return lands/creatures, discard, reveal, tapXType)</td><td>279</td><td>11.3</td><td>Sandstone Deadfall, Orcish Mechanics, Bloodflow Connoisseur, Dark Heart of the Wood</td><td>The cost AI is conservative but works (<code>ComputerUtilCost.checkSacrificeCost</code> :351, <code>getCardPreference</code> <code>ComputerUtil.java:280-470</code>). <code>SACRIFICE_DEFAULT_PREF_ENABLE=false</code> in <code>forge-gui/res/ai/Default.ai:304</code>. Many of these flags are stale.</td></tr><tr><td>Animate / type, color or text change</td><td>215</td><td>8.7</td><td>Moonlace, Incite, Tundra Kavu, Myr Landshaper, Bone Shaman</td><td><code>AnimateAi.animateTgtAI</code> only values "becomes a creature" and P/T-only changes. Everything else returns <code>CantPlayAi</code> (<code>AnimateAi.java:472-476</code>; the comment says "Those can just use AI:RemoveDeck:All"). <code>AnimateAllAi</code> needs <code>AILogic</code> (<code>AnimateAllAi.java:16-29</code>).</td></tr><tr><td>Choose* head (type, color, name, card, number, player, source)</td><td>211</td><td>8.5</td><td>Blood Oath, Brain Pry, Blind Seer, Barbarian Guides, Whim of Volrath</td><td>Without <code>AILogic</code> these return <code>MissingLogic</code> (<code>ChooseTypeAi.java:25-27</code>, <code>ChooseColorAi.java:23-24</code>, <code>ChooseNumberAi.java:14-15</code>) or <code>CantPlayAi</code> (<code>ChooseCardNameAi.java:48</code>, <code>ChooseGenericAi.java:41-47</code>).</td></tr><tr><td>Combat-step tricks (attacking or blocking targets, lure, must attack)</td><td>176</td><td>7.1</td><td>Alluring Scent, Wake the Dead, Defiant Stand, Imps' Taunt</td><td>These need combat planning (setting up blocks before declaring them). Partly covered by Pump/Effect logic.</td></tr><tr><td>Mana oddities (rituals with costs, storage, mana replacement)</td><td>171</td><td>6.9</td><td>City of Shadows, Overeager Apprentice, Reality Twist, Wild Growth</td><td><code>ManaReflected</code> maps to <code>CannotPlayAi</code> (<code>SpellApiToAi.java:126</code>). Storage and charge counters, <code>ReplaceMana</code> and mana-trigger auras have no planning.</td></tr><tr><td>Damage prevention / redirection</td><td>166</td><td>6.7</td><td>Blinding Fog, Benalish Missionary, Beacon of Destiny, Bolt Bend</td><td>Prevention scripted as <code>Effect</code> + <code>ReplacementEffects</code> and without <code>AILogic</code> hits <code>EffectAi.java:598</code>. Redirection ("dealt to X instead") has almost no AI. The plain <code>PreventDamage</code> API does have AI (<code>DamagePreventAi</code>).</td></tr><tr><td>Effect API without AILogic (<code>A:</code>/<code>SP:</code>)</td><td>148</td><td>6.0</td><td>Blinding Fog, Words of Worship, Quicken, Instigator, Gaze of Pain</td><td><code>EffectAi.checkApiLogic</code>: without <code>AILogic</code>, only the "remembered target can't attack/block/activate" generic branch exists (<code>:446-597</code>). Everything else returns <code>CantPlayAi</code> (<code>:521-523</code>, <code>:598-599</code>).</td></tr><tr><td>Symmetric / each-player effects</td><td>144</td><td>5.8</td><td>Winds of Change, Balancing Act, Day's Undoing</td><td><code>RepeatEachAi</code> defaults to <b>WillPlay</b> with no evaluation (<code>RepeatEachAi.java:101-103</code>). The flag guards against the AI casting these blindly.</td></tr><tr><td>Built-in drawback (cumulative upkeep, delayed self-sacrifice, no untap)</td><td>111</td><td>4.5</td><td>Pyric Salamander, Crazed Armodon, Black Carriage</td><td>No future-cost or tempo model.</td></tr><tr><td>Stack interaction (retarget, copy, counter variants)</td><td>97</td><td>3.9</td><td>Misdirection, Bolt Bend, Wild Ricochet, Imp's Mischief</td><td><code>ChangeTargetsAi</code> only supports Spellskite-style magnets and mandatory activations; optional ones return <code>CantPlayAi</code> (<code>ChangeTargetsAi.java:25-35</code>).</td></tr><tr><td>Self-drawback / build-around permanent</td><td>92</td><td>3.7</td><td>Cache Raiders, Reclusive Wight, Island Sanctuary</td><td>Strategic.</td></tr><tr><td>Tap/untap utility</td><td>88</td><td>3.5</td><td>Aphetto Alchemist, Hyperion Blacksmith, Breaking Wave</td><td><code>UntapAllAi</code> returns <code>CantPlay</code> unless it has a sub-ability (<code>UntapAllAi.java:22-38</code>). <code>UntapAi</code> and <code>TapOrUntapAi</code> are fine, so many of these flags are stale.</td></tr><tr><td>Modal (Charm, Entwine, Splice)</td><td>71</td><td>2.9</td><td>Dimir Charm, Ivory Charm, Into the Fray</td><td><code>CharmAi</code> now picks modes with <code>canPlayWithSubs</code> (<code>CharmAi.java:119-124</code>). Flagged charms are flagged for their modes; some flags are stale (Dimir Charm).</td></tr><tr><td>Pump used as a target holder</td><td>71</td><td>2.9</td><td>Pack Hunt, Dwell on the Past, Legerdemain, Carom, Grim Contest</td><td>A <code>Pump</code> with no <code>NumAtt</code>/<code>NumDef</code>/<code>KW</code> and no <code>AILogic</code> only carries targets for its sub-abilities. <code>PumpAiBase.getPumpCreatures</code> (<code>:373-378</code>) finds nothing worth pumping, so the result is <code>TargetingFailed</code> (<code>PumpAi.java:348-352</code>).</td></tr><tr><td>Control change (exchange, donate, temporary steal)</td><td>68</td><td>2.7</td><td>Legerdemain, Shrewd Negotiation, Bazaar Trader</td><td><code>ExchangeControlVariant</code> and <code>ControlPlayer</code> map to <code>CannotPlayAi</code> (<code>SpellApiToAi.java:71,100</code>). Exchange evaluation exists (<code>ControlExchangeAi</code>) but is narrow.</td></tr><tr><td>Depends on opponent's choice / punisher</td><td>62</td><td>2.5</td><td>Cuombajj Witches, Questing Phelddagrif</td><td>The opponent's answer isn't modeled.</td></tr><tr><td>Library peeking, reshuffle, tutor-to-top</td><td>110</td><td>4.4</td><td>Misinformation, Soldevi Digger, Scouting Trek</td><td>No immediate board value, so the AI can't value them. Mostly legitimate flags.</td></tr><tr><td>Coin / random / dice</td><td>55</td><td>2.2</td><td>Mana Clash, Fiery Gambit</td><td>Gambles.</td></tr><tr><td>Counter manipulation (move/remove, charge-up artifacts)</td><td>53</td><td>2.1</td><td>Ooze Flux, Fate Transfer, Essence Bottle</td><td><code>RemoveCounterAll</code> maps to <code>CannotPlayAi</code> (<code>SpellApiToAi.java:161</code>). The cost-side TODOs are in <code>AiCostDecision.java:750-795</code>.</td></tr><tr><td>Loot / rummage / wheel</td><td>42</td><td>1.7</td><td>Faithless Looting, Windfall, Unfulfilled Desires</td><td><code>DrawAi</code> + Discard. These flags are mostly a card-quality judgment and largely stale.</td></tr><tr><td>Turn/phase manipulation</td><td>47</td><td>1.9</td><td>Time Stop, Discontinuity, False Peace</td><td><code>EndTurnAi</code> never plays (<code>EndTurnAi.java:20</code>).</td></tr><tr><td>Face-down / transform</td><td>39</td><td>1.6</td><td>Fatal Mutation, Backslide</td><td>Niche.</td></tr><tr><td>Ante / Vanguard / Plane</td><td>25</td><td>1.0</td><td>Jeweled Bird, Bosh avatar</td><td>Legitimate flags.</td></tr><tr><td>Not matched by any rule</td><td>389</td><td>15.7</td><td>Run Away Together, Errand of Duty, Killing Glare</td><td>Mixed. Many are simple and likely stale (see below).</td></tr></tbody></table></div>
+<p>The <code>Random</code> clusters look different. 49% are static- or trigger-only permanents, and the top features are self-drawback or build-around (197), symmetric (174) and synergy hints (467 with <code>DeckHints</code>/<code>DeckNeeds</code>). They are deck-building judgments, not AI gaps.</p>
+<h3 id="code-confirmed-dead-defaults-all-34k-cards-by-flag">Code-confirmed dead defaults (all 34k cards, by flag)</h3>
+<p>A card is counted when its <code>A:</code> line hits the path shown.</p>
+<div class="tablewrap"><table><thead><tr><th>Dead default (file:line)</th><th>All</th><th>Random</th><th>Unflagged</th></tr></thead><tbody><tr><td><code>EffectAi</code> with no <code>AILogic</code> returns <code>CantPlayAi</code> (<code>EffectAi.java:521-523</code>, <code>:598-599</code>)</td><td>148</td><td>13</td><td>204</td></tr><tr><td><code>PumpAi</code> with no NumAtt/NumDef/KW (target carrier) (<code>PumpAi.java:348-352</code>)</td><td>71</td><td>11</td><td>206*</td></tr><tr><td><code>ChooseType</code>/<code>ChooseColor</code>/<code>ChooseNumber</code> with no <code>AILogic</code> returns <code>MissingLogic</code></td><td>55</td><td>2</td><td>20</td></tr><tr><td><code>AnimateAi</code>, targeted non-creature animate (<code>AnimateAi.java:472-476</code>)</td><td>43</td><td>6</td><td>31</td></tr><tr><td><code>AnimateAllAi</code> with no <code>AILogic</code> (<code>AnimateAllAi.java:27-29</code>)</td><td>24</td><td>4</td><td>29</td></tr><tr><td><code>ChooseCardNameAi</code> with no <code>AILogic</code> (<code>:48</code>)</td><td>23</td><td>0</td><td>11</td></tr><tr><td><code>ChangeTargetsAi</code>, non-magnet (<code>:35</code>)</td><td>18</td><td>0</td><td>4</td></tr><tr><td><code>CannotPlayAi</code> mappings (<code>SpellApiToAi.java:71,72,100,111,126,132,145,161</code>)</td><td>11</td><td>0</td><td>22</td></tr><tr><td><code>UntapAllAi</code> without a sub-ability (<code>:38</code>)</td><td>10</td><td>1</td><td>19</td></tr><tr><td><code>ChooseGenericAi</code> with no <code>AILogic</code> (<code>:47</code>)</td><td>9</td><td>0</td><td>19</td></tr><tr><td><code>PumpAi</code>, switch P/T without <code>AILogic</code> (the <code>SwitchPT</code> logic exists at <code>PumpAi.java:55,81</code>)</td><td>7</td><td>1</td><td>0</td></tr><tr><td><code>EndTurnAi</code> (<code>:20</code>)</td><td>5</td><td>0</td><td>0</td></tr><tr><td><b>Cards with at least one of these</b></td><td><b>424</b></td><td>38</td><td><b>560</b></td></tr><tr><td>Too permissive: <code>RepeatEachAi</code> defaults to WillPlay (<code>:101-103</code>)</td><td>38</td><td>6</td><td>44</td></tr><tr><td>Too permissive: <code>ChoosePlayerAi</code> always WillPlay (<code>:19-20</code>)</td><td>9</td><td>0</td><td>4</td></tr></tbody></table></div>
+<p>*Many unflagged target-carrier Pumps have <code>AILogic$ Fight/PowerDmg/Destroy</code>, so they work. The unflagged count is an upper bound.</p>
+<h2 id="top-gaps-and-proposed-improvements-ranked-by-flagg">Top gaps and proposed improvements (ranked by flagged cards affected)</h2>
+<h3 id="0-adventure-stop-stripping-random-cards-2-132-card">0. Adventure: stop stripping <code>Random</code> cards (2,132 cards, trivial, fork-only code) — done</h3>
+<ul>
+<li><b>Status.</b> Done. <code>DuelScene.isAiUnplayable</code>, the deck generator's pool (<code>tools/concordia/deckgen/pool.py</code>) and <code>deck_tier.py</code> now drop only <code>RemoveDeck:All</code> cards. The pool grew from 26,974 to 28,945 cards, and the rebuilt tier decks use 160 cards that were excluded before.
+</li>
+<li><b>What was wrong.</b> <code>DuelScene.isAiUnplayable</code> (<code>forge-gui-mobile/src/forge/adventure/scene/DuelScene.java</code>) treated <code>Random</code> like <code>All</code>.
+</li>
+<li><b>Why that's wrong.</b> <code>Random</code> has no in-game effect: no <code>forge-ai</code> code path blocks those cards except one tutor filter (<code>ChangeZoneAi.java:1586</code>).
+</li>
+<li><b>Fix.</b> Use only <code>getRemAIDecks()</code>. Optionally make it a <code>ConfigData</code> option such as <code>stripAiRandomCards</code> for tuned decks.
+</li>
+<li><b>Effort / risk.</b> 1 line. Low risk: AI decks keep some situational cards that the AI plays normally.
+</li>
+<li><b>Un-flags.</b> All 2,132 <code>Random</code>-only cards for Adventure. This touches neither the AI nor upstream data.
+</li></ul>
+<h3 id="1-effectai-infer-a-logic-from-the-effect-s-content">1. EffectAi: infer a logic from the effect's contents (148 All, plus 204 unflagged)</h3>
+<ul>
+<li><b>What's missing.</b> Without <code>AILogic</code>, <code>EffectAi.checkApiLogic</code> only handles the <code>RememberObjects + StaticAbilities</code> CantAttack/CantBlock/CantBeActivated case (<code>EffectAi.java:446-597</code>). It returns <code>CantPlayAi</code> otherwise (<code>:521-523</code>, <code>:598-599</code>). The logic needed already exists under <code>AILogic</code> names in the same method: <code>Fog</code> (<code>:112</code>), <code>Prevent</code> (<code>:232</code>), <code>RedirectSpellDamageFromPlayer</code> (<code>:214</code>), <code>Evasion</code> (<code>:186</code>), <code>RestrictBlocking</code> (<code>:68</code>), <code>Pump</code> (<code>:302</code>).
+</li>
+<li><b>What the flagged no-AILogic Effects contain</b> (main ability):
+<div class="tablewrap"><table><thead><tr><th>Content</th><th>Cards</th></tr></thead><tbody><tr><td><code>R:DamageDone</code> with <code>Prevent</code></td><td>26</td></tr><tr><td><code>R:DamageDone</code> redirect</td><td>25</td></tr><tr><td><code>S:Continuous</code> (not pump)</td><td>17</td></tr><tr><td><code>S:CantBlockBy</code> (evasion)</td><td>10</td></tr><tr><td><code>R:Draw</code> (Words of …)</td><td>9</td></tr><tr><td><code>S:MustAttack</code></td><td>8</td></tr><tr><td><code>S:CastWithFlash</code></td><td>7</td></tr><tr><td><code>S:MustBlock</code></td><td>3</td></tr><tr><td><code>S:Continuous</code> pump or keyword</td><td>3</td></tr><tr><td>Other</td><td>~40</td></tr></tbody></table></div>
+</li>
+<li><b>Fix.</b> Add <code>inferLogic(sa)</code> to <code>EffectAi</code>, used when there is no <code>AILogic</code>:
+<ul>
+<li>Prevent-replacement whose <code>ValidTarget</code> covers You or your creatures, and that is combat-related, maps to <code>Fog</code> (or to the <code>DamagePreventAi</code> threat checks).
+</li>
+<li>Prevent on spell damage maps to <code>Prevent</code>.
+</li>
+<li><code>CantBlockBy</code> on your own creature maps to <code>Evasion</code>.
+</li>
+<li><code>MustAttack</code>/<code>MustBlock</code>/<code>CantBlock</code> on opposing creatures go to the existing generic restriction branch.
+</li>
+<li>A <code>Continuous</code> pump or keyword on your creatures runs <code>PumpAllAi</code> on an equivalent <code>PumpAll</code>.
+</li>
+<li>Everything else stays <code>CantPlayAi</code>.
+</li></ul>
+</li>
+<li><b>Effort / risk.</b> Medium (about 150-250 lines, one file). Low-medium risk: only abilities the AI never used before change. Prevention timing needs care: the AI must only cast it during combat or in response.
+</li>
+<li><b>Un-flags.</b> About 50-70 <code>All</code> cards (prevention, evasion, must-attack/block, pump statics). It also makes about 100 unflagged cards' abilities usable.
+</li></ul>
+<h3 id="2-choose-heads-treat-the-choice-as-transparent-and">2. Choose* heads: treat the choice as transparent and score the follow-up (87 All, plus about 50 unflagged)</h3>
+<ul>
+<li><b>What's missing.</b> <code>ChooseTypeAi.java:25-27</code>, <code>ChooseColorAi.java:23-24</code> and <code>ChooseNumberAi.java:14-15</code> return <code>MissingLogic</code> when there is no <code>AILogic</code>. <code>ChooseCardNameAi.java:22-48</code> returns <code>CantPlayAi</code>, and <code>ChooseGenericAi.java:41-47</code> returns <code>CantPlayAi</code>.
+</li>
+<li><b>What already exists.</b> Default choosers are there (<code>ChooseTypeAi.chooseType</code> and the default card-name or color pickers). <code>ChooseGenericAi</code> even contains the generic helper: <code>BestOption</code> (<code>:28-33</code>, <code>:267-271</code>) accepts if any choice's <code>canPlayWithSubs</code> is willing.
+</li>
+<li><b>Fix.</b>
+<ol>
+<li>In <code>ChooseGenericAi</code>, default to the <code>BestOption</code> evaluation when <code>AILogic</code> is absent. This is a few lines.
+</li>
+<li>In ChooseType, ChooseColor, ChooseNumber and NameCard, when <code>AILogic</code> is absent:
+<ul>
+<li>Pre-compute the choice with the existing heuristic. Use "most prominent among my permanents" when the sub-ability helps its controller, and the opponent's when it is a curse (<code>isCurse</code>/<code>IsCurse$</code>).
+</li>
+<li>Return the sub-ability's <code>chkDrawbackWithSubs</code> decision instead of <code>MissingLogic</code>.
+</li>
+<li>For NameCard with a hidden-information sub (Brain Pry, Memoricide), name the highest-CMC nonland card in the opponent's known or revealed cards or library, or the "most prominent in human deck" heuristic that already exists.
+</li></ul>
+</li></ol>
+</li>
+<li><b>Effort / risk.</b> Small for GenericChoice, medium for the rest (about 100-200 lines across 4 files). Medium risk: the AI may pick sub-optimal types, but these abilities were unused before.
+</li>
+<li><b>Un-flags.</b> About 40-60 of the 87 (ChooseType/Color/Number 55, NameCard 23, GenericChoice 9).
+</li></ul>
+<h3 id="3-simulation-fallback-for-no-logic-decisions-a-gen">3. Simulation fallback for "no logic" decisions (a general helper; plausibly 100-200 of the 424)</h3>
+<ul>
+<li><b>What's there.</b> Forge already has a one-ply "simulate and compare score" checker: <code>OnePlaySafetyChecker.isAcceptable</code> (<code>forge-ai/src/main/java/forge/ai/simulation/OnePlaySafetyChecker.java:12-35</code>). It runs <code>GameSimulator.simulateSpellAbility</code> and compares <code>GameStateEvaluator</code> scores.
+</li>
+<li><b>Why it doesn't help today.</b> It is only used in hybrid-simulation mode (<code>AiController.java:987-988</code>), which only the desktop lobby can enable (<code>forge-gui-desktop/.../PlayerPanel.java:426</code>). Adventure never uses it.
+</li>
+<li><b>Fix.</b> In <code>SpellAbilityAi.canPlayWithoutRestrict</code> (or <code>AiController.canPlaySa</code> around <code>:924</code>), when the API AI returns <code>MissingLogic</code>, or <code>CantPlayAi</code> from a known dead default, and the ability is a main-phase sorcery-speed action, run <code>OnePlaySafetyChecker</code>-style simulation. Accept if the score improves by a margin. Add an <code>AiProps</code> switch (for example <code>SIM_FALLBACK_FOR_MISSING_LOGIC</code>) and an activation budget per turn.
+</li>
+<li><b>Limits.</b> The simulator scores the board right after resolution. It values permanent changes (AnimateAll, ChooseType then put counters, NameCard then exile, exchange of control, <code>RemoveCounterAll</code>, <code>UntapAll</code>). It does <b>not</b> value "until end of turn" prevention or combat tricks, so #1 is still needed for those.
+</li>
+<li><b>Effort / risk.</b> Medium (about 150 lines, plus tuning). Medium risk for CPU time on mobile, so cap it and gate it behind the profile switch.
+</li>
+<li><b>Un-flags.</b> Plausibly 100-200 cards across the Choose*, AnimateAll, targeted Animate, control, counter and untap clusters. It is the most general lever.
+</li></ul>
+<h3 id="4-pump-as-target-carrier-delegate-to-the-sub-chain">4. Pump as target carrier: delegate to the sub-chain (71 All)</h3>
+<ul>
+<li><b>What's missing.</b> A targeting-only <code>Pump</code> (no <code>NumAtt</code>/<code>NumDef</code>/<code>KW</code>/<code>AILogic</code>) fails in <code>PumpAiBase.getPumpCreatures</code> (<code>:373-378</code>), which leads to <code>TargetingFailed</code> (<code>PumpAi.java:348-352</code>). Examples: Pack Hunt, Dwell on the Past, Grim Contest, Carom, Legerdemain, Soul's Grace. The sub-abilities read <code>Targeted</code>/<code>ParentTarget</code>, so their own AIs never choose targets.
+</li>
+<li><b>Fix (pick one).</b>
+<ul>
+<li>(a) Code: when the Pump is "empty" and has a <code>SubAbility</code>, iterate the legal targets (bounded to the top N by <code>evaluateCreature</code>/<code>getBestAI</code>). For each target, set it and evaluate <code>chkDrawbackWithSubs</code>, or the #3 simulation, and keep the best.
+</li>
+<li>(b) Data: rewrite the worst offenders so targeting lives on the real effect. Upstream has done this for some cards: <code>AILogic$ Fight/PowerDmg/Destroy</code> on 79 unflagged carriers shows the pattern.
+</li></ul>
+</li>
+<li><b>Effort / risk.</b> (a) Medium, (b) per card. Medium risk.
+</li>
+<li><b>Un-flags.</b> About 30-40.
+</li></ul>
+<h3 id="5-animateall-and-targeted-non-creature-animate-24-">5. AnimateAll and targeted non-creature Animate (24 + 43 All)</h3>
+<ul>
+<li><b>What's missing.</b> <code>AnimateAllAi.canPlay</code> only knows <code>CreatureAdvantage</code>/<code>Always</code> (<code>AnimateAllAi.java:16-29</code>). <code>animateTgtAI</code> gives up on color, land-type and ability-loss changes (<code>AnimateAi.java:472-476</code>).
+</li>
+<li><b>Fix.</b> Give <code>AnimateAll</code> a default using the existing <code>AnimateAi.becomeAnimated(card, sa)</code> LKI copy (<code>AnimateAi.java:478</code>). Sum <code>evaluateCreature</code> deltas for your side minus the opponent's side and play if the net is positive. That handles Biomass Mutation, Sylvan Awakening, Inkfathom Witch and Brawl. Leave color and land-type changes flagged: their value depends on protection or landwalk interactions the AI can't see.
+</li>
+<li><b>Effort / risk.</b> Small-medium. Low risk.
+</li>
+<li><b>Un-flags.</b> About 20 (mostly <code>AnimateAll</code>).
+</li></ul>
+<h3 id="6-non-mana-costs-and-charge-up-artifacts-279-all-m">6. Non-mana costs and charge-up artifacts (279 All, many stale)</h3>
+<ul>
+<li><b>What's there.</b> The cost AI already refuses to pay unless it has fodder: <code>checkSacrificeCost</code> (<code>ComputerUtilCost.java:351-425</code>) and <code>getCardPreference</code> (<code>ComputerUtil.java:280-470</code>) with <code>SacMe</code>/<code>DiscardMe</code>, surplus lands and the life-in-danger rules. The worst outcome of un-flagging is that the AI rarely activates the ability. The real gaps are the X-amount costs (<code>RemoveAnyCounter&lt;X&gt;</code>, <code>AiCostDecision.java:750-795</code> TODOs) and storage counters.
+</li>
+<li><b>Fix.</b>
+<ul>
+<li>Data first: re-check flags on cards whose only oddity is the cost (Orcish Mechanics, Bloodflow Connoisseur, Dark Heart of the Wood, Spawnbinder Mage, Slobad).
+</li>
+<li>Code: consider <code>SACRIFICE_DEFAULT_PREF_ENABLE=true</code> for the profiles Adventure uses (currently <code>false</code> in <code>Default.ai:304</code>, <code>true</code> in <code>Experimental.ai:304</code>).
+</li></ul>
+</li>
+<li><b>Effort / risk.</b> Low. Low risk.
+</li>
+<li><b>Un-flags.</b> About 80-120 (from the sample).
+</li></ul>
+<h3 id="7-changetargets-18-all-and-repeateach-too-permissi">7. ChangeTargets (18 All) and RepeatEach (too permissive: 69 All cards use it, about 40 as their main ability)</h3>
+<ul>
+<li><b>ChangeTargets.</b> <code>ChangeTargetsAi.java:25-35</code> only handles <code>DefinedMagnet$ Self</code>. Add "opponent's top-of-stack spell targets my permanent or me: retarget it to an opposing legal target" (Misdirection, Bolt Bend, Imp's Mischief, Meddle). Medium effort; about 12 cards.
+</li>
+<li><b>RepeatEach.</b> This is the opposite problem. <code>RepeatEachAi</code> returns WillPlay with no evaluation (<code>RepeatEachAi.java:101-103</code>), so un-flagging symmetric cards would be harmful. Make the default <code>CantPlayAi</code>, or the #3 simulation, before touching those flags.
+</li></ul>
+<h3 id="not-worth-a-general-fix">Not worth a general fix</h3>
+<p>These are legitimate flags and should stay:</p>
+<ul>
+<li>static/trigger-only permanents with drawbacks (452)
+</li>
+<li>combat-step setup tricks (176)
+</li>
+<li>library ordering and peeking (110)
+</li>
+<li>coin flips and ante
+</li>
+<li>turn skipping and ending the turn
+</li>
+<li>opponent-choice punishers
+</li></ul>
+<p>Rather than AI work, a smaller lever for them is to move the ones that are merely weak from <code>All</code> to <code>Random</code>, so the AI can at least use them when they appear.</p>
+<h2 id="possibly-stale-flags">Possibly stale flags</h2>
+<h3 id="sample-of-34-simple-all-scripts">Sample of 34 simple <code>All</code> scripts</h3>
+<p>The pool was 627 cards with one simple <code>A:</code> ability, a standard API, and no static, trigger or replacement. Each sampled card was judged by hand against the AI code.</p>
+<ul>
+<li><b>Look playable today (17).</b>
+<ul>
+<li>Spawnbinder Mage (<code>TapAi</code> with <code>checkTapTypeCost</code>)
+</li>
+<li>Aphetto Alchemist (<code>UntapAi.untapPrefTargeting</code>)
+</li>
+<li>Saproling Cluster, Orcish Mechanics, Bloodflow Connoisseur, Dark Heart of the Wood, Slobad, Sandstone Deadfall (sacrifice or discard costs go through <code>getCardPreference</code>, so the AI is merely conservative)
+</li>
+<li>Surreal Memoir (hidden graveyard to hand)
+</li>
+<li>Jamuraan Lion ("can't block" curse keyword handled at <code>PumpAiBase.java:121</code>)
+</li>
+<li>Rhystic Shield (<code>PumpAll</code>)
+</li>
+<li>Dream Salvage (<code>DrawAi</code> refuses 0 cards, <code>DrawAi.java:327</code>)
+</li>
+<li>Errand of Duty (<code>TokenAi</code>)
+</li>
+<li>Turtleshell Changeling (<b>already has <code>AILogic$ SwitchPT</code></b>, <code>PumpAi.java:55</code>)
+</li>
+<li>Irresistible Prey (<b>has <code>AILogic$ Pump</code></b>)
+</li>
+<li>Blood Celebrant (mana with life cost)
+</li>
+<li>Overeager Apprentice (ritual sacrifice used only when paying)
+</li></ul>
+</li>
+<li><b>Uncertain (3).</b> Run Away Together and Aether Tradewinds (bouncing one of your own permanents is a mandatory target), Burden of Guilt (attach-as-curse).
+</li>
+<li><b>Flag still justified (14).</b> Soldevi Digger, Aura Barbs, Dwell on the Past and Pack Hunt (target-carrier Pump), Oboro Breezecaller, Ooze Flux (<code>RemoveAnyCounter X</code> TODO), Misinformation, Morgue Thrull, Inside Out and Dwarven Thaumaturgist (switch P/T without <code>AILogic</code>), Weight of Spires (X from the target's controller), Hallowed Ground, Calming Verse (the sub destroys your own enchantments), Sanguine Praetor.
+</li></ul>
+<p>So <b>about 50% of simple flagged scripts look stale</b>. That is roughly 250-320 of the 627-card pool.</p>
+<h3 id="other-stale-signals">Other stale signals</h3>
+<ul>
+<li><b>117 <code>All</code> cards have <code>AILogic$</code> on their main ability.</b> The values are <code>NeedsPrevention</code> 27, <code>Evasion</code> 8, <code>Pump</code> 6, <code>Fog</code> 5, <code>SwitchPT</code> 4, <code>MostProminent*</code>, <code>BoneManCantRegenerate</code> and others. Someone wrote AI for these and left the flag. Excluding <code>AILogic$ Never</code> (5), these are prime re-test candidates.
+</li>
+<li><b>Inconsistency.</b> Samite Healer (<code>PreventDamage</code>, unflagged) and Barrenton Medic, Martyrs' Tomb and Remedy (same API, flagged). 106 <code>PreventDamage</code> cards are unflagged.
+</li></ul>
+<h3 id="overall-estimate">Overall estimate</h3>
+<p>Roughly <b>300-450 of the 2,479 <code>All</code> flags</b> (12-18%) could be removed with no code change, after a smoke test.</p>
+<h2 id="recommendation">Recommendation</h2>
+<ol>
+<li><b>Done.</b> Adventure strips only <code>RemoveDeck:All</code>, freeing 2,132 cards with zero AI risk.
+</li>
+<li><b>Cheap AI wins (days).</b>
+<ul>
+<li><code>ChooseGenericAi</code>: default to <code>BestOption</code>.
+</li>
+<li><code>EffectAi</code>: infer <code>Fog</code>/<code>Prevent</code>/<code>Evasion</code>/restriction logic from the effect's contents.
+</li>
+<li><code>AnimateAllAi</code>: net-evaluation default.
+</li>
+<li><code>RepeatEachAi</code>: change the permissive default <i>before</i> un-flagging symmetric cards.
+<p>Together these address about 120 <code>All</code> cards, plus many unflagged abilities that are silently disabled today.</p>
+</li></ul>
+</li>
+<li><b>One general lever (about a week).</b> A gated simulation fallback for <code>MissingLogic</code>/dead-default decisions, reusing <code>OnePlaySafetyChecker</code>/<code>GameSimulator</code>, behind an <code>AiProps</code> switch. It covers the long tail of Choose*, Animate, control and counter effects without per-card logic.
+</li>
+<li><b>Flag audit (ongoing).</b> Do not edit upstream card data by hand yet.
+<ul>
+<li>Add an AI-profile switch that ignores the <code>RemoveDeck:All</code> play block at <code>AiController.java:1647-1651</code> (the TODO there already suggests it).
+</li>
+<li>Run <code>forge-gui-desktop/src/main/java/forge/view/SimulateMatch.java</code> or <code>tools/concordia/sim</code> AI-vs-AI batches with decks seeded with the 117 cards that have <code>AILogic</code> and the 627 simple-script candidates.
+</li>
+<li>Keep the cards that are cast without errors or obviously bad plays. Downgrade merely weak cards from <code>All</code> to <code>Random</code>.
+</li></ul>
+</li>
+<li><b>Leave alone.</b> The static-/trigger-only drawback permanents, combat-setup tricks, library ordering, coin and ante cards. They are a legitimate quality filter.
+</li></ol>
+
+</main>
