@@ -1097,7 +1097,7 @@ public class MapStage extends GameStage {
     protected void onActing(float delta) {
         if (isPaused() || isDialogOnlyInput() || Forge.advFreezePlayerControls || isPlayerLeavingDungeon)
             return;
-        if (!autoStartDialogs.isEmpty()) {
+        if (!autoStartDialogs.isEmpty() && !AdventureQuestController.instance().hasPendingDialogs()) { //quest dialogs go first
             autoStartDialogs.remove(0).startAutoDialog();
             return;
         }

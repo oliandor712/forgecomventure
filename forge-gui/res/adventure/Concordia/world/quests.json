@@ -3,16 +3,9 @@
     "id": 28,
     "isTemplate": true,
     "name": "The Raid",
-    "description": "Seal-day in Emberbrook ends in a raid. Find the Seal Angels at the shrine.",
+    "description": "Seal-day in Emberbrook ends in a raid. Answer the Seal Angels.",
     "offerDialog": {},
-    "prologue": {
-      "text": "Seal-day in Emberbrook. Bells ring over the festival, then the shrine's lanterns go out all at once. Unsealed raiders pour between the stalls. In the chaos, something wakes in your chest: a spark you have carried all your life.",
-      "options": [
-        {
-          "name": "(Continue)"
-        }
-      ]
-    },
+    "prologue": {},
     "epilogue": {},
     "failureDialog": {},
     "declinedDialog": {},
@@ -33,7 +26,7 @@
       {
         "id": 2,
         "name": "Find the Seal Angels",
-        "description": "Go to the shrine and answer the angels.",
+        "description": "Choose your first color.",
         "mapFlag": "awakened",
         "mapFlagValue": 1,
         "objective": "QuestFlag",

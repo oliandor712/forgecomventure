@@ -220,6 +220,11 @@ public class AdventureQuestController implements Serializable {
         //todo: make values configurable
         return new Random().nextFloat() <= 0.85f;
     }
+    /** True while a quest dialog is showing or waiting to be shown. */
+    public boolean hasPendingDialogs() {
+        return activeDialog != null || !dialogQueue.isEmpty();
+    }
+
     public void displayNextDialog(MapStage stage){
         if (dialogQueue.peek() == null) {
             activeDialog = null;
