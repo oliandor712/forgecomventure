@@ -467,8 +467,8 @@ Fragments** (quest items, one per Paragon, named "Summit Key Fragment (White-Blu
 
 ## 9. Build order
 
-1. **Gates to a chosen entry and linked POI doors** (Java). Built; next is a throwaway two-door pass in the starter
-   area to test them in game.
+1. **Gates to a chosen entry and linked POI doors** (Java). **Done**: built, and a two-door test cave next to
+   Emberbrook worked both ways in game (since removed).
 2. **The Gate Temple** in Mossgate: the building, the interior with six gates and their guards (all sealed for now).
 3. **World resize and the central area.** About 480×460 tiles, the starter zone and Mossgate in the centre, the
    champion area walled off next to it. Retest the starter flow end to end.
@@ -477,9 +477,10 @@ Fragments** (quest items, one per Paragon, named "Summit Key Fragment (White-Blu
    route A maze, inner pass 1, the route B corridor with its clearings and four random dungeons, inner pass 2, the
    route C field with random spawns, the zone town, a Warden's dungeon placeholder.
 6. **`make_zone_maze.py`**, built from what the first zone needed; redraw the first zone with it to prove the tool.
-7. **Waystone destination list** (Java; the Emberbrook Waystone becomes this item) and **`enemyByTier`** (Java), once
-   the template zone shows how many slots there are.
-8. **Tiered encounter decks.** Tier 4-6 decks with the deck generator, then the encounter slots in the template zone.
+7. **Waystone destination list** and **`enemyByTier`** (Java). **Done** (built ahead of schedule); the template
+   zone is their first real use.
+8. **Tiered encounter decks.** **Mostly done**: tiers 1-5 have 20 decks each, balanced in tier (see the deck balance
+   report). Left: tier 6 for the last Wardens and Paragons, then the encounter slots in the template zone.
 9. **The other four zones**, one at a time, each playtested at tier 1 and tier 3.
 10. **The five border zones**, each once both its neighbours exist: border passes, the two-color town, the small maze,
     its Paragon and its enemy-pair boss.
