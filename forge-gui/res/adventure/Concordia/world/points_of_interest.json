@@ -32,5 +32,8 @@
       "Hub",
       "BiomeConcordia"
     ]
-  }
+  },
+  {"name": "ThornrootHollow", "displayName": "Thornroot Hollow", "type": "cave", "count": 1, "spriteAtlas": "../common/maps/tileset/buildings.atlas", "sprite": "Cave", "map": "../Concordia/maps/map/caves/thornroot_hollow.tmx", "radiusFactor": 0, "offsetX": -0.35, "offsetY": 0.3, "questTags": ["Cave", "BiomeConcordia"]},
+  {"name": "WhisperstoneCave", "displayName": "Whisperstone Cave", "type": "cave", "count": 1, "spriteAtlas": "../common/maps/tileset/buildings.atlas", "sprite": "Cave", "map": "../Concordia/maps/map/caves/whisperstone_cave.tmx", "radiusFactor": 0, "offsetX": 0.2333, "offsetY": 0.2333, "questTags": ["Cave", "BiomeConcordia"]},
+  {"name": "EmberdeepGrotto", "displayName": "Emberdeep Grotto", "type": "cave", "count": 1, "spriteAtlas": "../common/maps/tileset/buildings.atlas", "sprite": "Cave", "map": "../Concordia/maps/map/caves/emberdeep_grotto.tmx", "radiusFactor": 0, "offsetX": -0.0333, "offsetY": 0.0667, "questTags": ["Cave", "BiomeConcordia"]}
 ]

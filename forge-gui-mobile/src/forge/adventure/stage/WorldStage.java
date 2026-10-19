@@ -86,7 +86,7 @@ public class WorldStage extends GameStage implements SaveFileContent {
 
             for (int i = 0; i < enemies.size(); i++) {
                 Pair<Float, EnemySprite> pair = enemies.get(i);
-                if (globalTimer >= pair.getKey() + pair.getValue().getLifetime()) {
+                if (pair.getValue().placedIndex < 0 && globalTimer >= pair.getKey() + pair.getValue().getLifetime()) {
                     AdventureQuestController.instance().updateDespawn(pair.getValue());
                     AdventureQuestController.instance().showQuestDialogs(MapStage.getInstance());
                     foregroundSprites.removeActor(pair.getValue());
@@ -96,7 +96,12 @@ public class WorldStage extends GameStage implements SaveFileContent {
                 }
                 EnemySprite mob = pair.getValue();
 
-                if (!currentModifications.containsKey(PlayerModification.Hide)) {
+                if (mob.placedIndex >= 0 && !mob.aggro) {
+                    //placed enemies stand still until the player comes within their threat range
+                    if (enemyMoveVector.set(player.getX(), player.getY()).sub(mob.pos()).len() <= mob.threatRange)
+                        mob.aggro = true;
+                }
+                if (!currentModifications.containsKey(PlayerModification.Hide) && (mob.placedIndex < 0 || mob.aggro)) {
                     enemyMoveVector.set(player.getX(), player.getY()).sub(mob.pos());
                     enemyMoveVector.setLength(mob.speed() * delta);
                     tempBoundingRect.set(mob.getX() + enemyMoveVector.x, mob.getY() + enemyMoveVector.y, mob.getWidth(), mob.getHeight() * mob.getCollisionHeight());
@@ -184,6 +189,8 @@ public class WorldStage extends GameStage implements SaveFileContent {
                     float deathDuration = currentMob.getActionAnimationDuration(CharacterSprite.AnimationTypes.Death, 0.3f);
                     startPause(deathDuration, () -> {
                         RewardScene.instance().loadRewards(currentMob.getRewards(), RewardScene.Type.Loot, null);
+                        if (currentMob.placedIndex >= 0)
+                            placedDefeated.add(currentMob.placedIndex);
                         WorldStage.this.removeEnemy(currentMob);
                         AdventureQuestController.instance().updateQuestsWin(currentMob);
                         AdventureQuestController.instance().showQuestDialogs(MapStage.getInstance());
@@ -256,6 +263,7 @@ public class WorldStage extends GameStage implements SaveFileContent {
     public void loadPOI(PointOfInterest poi, String subMap, int spawnTargetId) {
         try {
             stop();
+            respawnPlacedEnemiesForTown(poi);
             TileMapScene.instance().load(poi);
             if (subMap != null && !subMap.isEmpty())
                 TileMapScene.instance().loadSubMap(subMap, spawnTargetId);
@@ -286,7 +294,51 @@ public class WorldStage extends GameStage implements SaveFileContent {
         return spawn(WorldData.getEnemy(enemy));
     }
 
+    private final Set<Integer> placedDefeated = new HashSet<>();
+
+    /** Puts every placed enemy that is not beaten and not on the map at its spot. */
+    private void spawnPlacedEnemies() {
+        World world = WorldSave.getCurrentSave().getWorld();
+        PlacedEnemyData[] placed = world.getData().placedEnemies;
+        if (placed == null)
+            return;
+        for (int i = 0; i < placed.length; i++) {
+            if (placedDefeated.contains(i))
+                continue;
+            boolean present = false;
+            for (Pair<Float, EnemySprite> pair : enemies) {
+                if (pair.getValue().placedIndex == i) {
+                    present = true;
+                    break;
+                }
+            }
+            if (present)
+                continue;
+            EnemyData data = WorldData.getEnemy(placed[i].enemy);
+            if (data == null) {
+                System.err.println("Placed enemy not found in enemies.json: " + placed[i].enemy);
+                placedDefeated.add(i); //don't look it up every frame
+                continue;
+            }
+            EnemySprite sprite = new EnemySprite(data);
+            sprite.placedIndex = i;
+            sprite.threatRange = placed[i].threatRange * world.getTileSize();
+            sprite.setPosition(placed[i].x * world.getTileSize(), placed[i].y * world.getTileSize());
+            enemies.add(Pair.of(globalTimer, sprite));
+            foregroundSprites.addActor(sprite);
+        }
+    }
+
+    /** Placed enemies with respawn "town" come back once the player enters a town. */
+    private void respawnPlacedEnemiesForTown(PointOfInterest poi) {
+        PlacedEnemyData[] placed = WorldSave.getCurrentSave().getWorld().getData().placedEnemies;
+        if (placed == null || poi.getData().type == null || !(poi.getData().type.equals("town") || poi.getData().type.equals("capital")))
+            return;
+        placedDefeated.removeIf(i -> i < placed.length && "town".equals(placed[i].respawn));
+    }
+
     private void handleMonsterSpawn(float delta) {
+        spawnPlacedEnemies();
         for (EnemySprite questSprite : AdventureQuestController.instance().getQuestSprites()) {
             if (!foregroundSprites.getChildren().contains(questSprite, true)) {
                 spawnQuestSprite(questSprite,2.5f);
@@ -468,6 +520,12 @@ public class WorldStage extends GameStage implements SaveFileContent {
                 foregroundSprites.addActor(sprite);
             }
             globalTimer = data.readFloat("globalTimer");
+            placedDefeated.clear();
+            if (data.containsKey("placedDefeated")) {
+                List<Integer> beaten = (List<Integer>) data.readObject("placedDefeated");
+                if (beaten != null)
+                    placedDefeated.addAll(beaten);
+            }
         } catch (Exception e) {
 
         }
@@ -493,6 +551,8 @@ public class WorldStage extends GameStage implements SaveFileContent {
 
         for (int i = 0; i < enemies.size(); i++) {
             Pair<Float, EnemySprite> enemy = enemies.get(i);
+            if (enemy.getValue().placedIndex >= 0)
+                continue; //rebuilt from world.json
             cachedSaveTimeouts.add(enemy.getKey());
             cachedSaveNames.add(enemy.getValue().getData().getName());
             cachedSaveXCoords.add(enemy.getValue().getX());
@@ -506,6 +566,7 @@ public class WorldStage extends GameStage implements SaveFileContent {
         data.storeObject("y", cachedSaveYCoords);
         data.storeObject("questStageIDs", cachedSaveQuestIDs);
         data.store("globalTimer", globalTimer);
+        data.storeObject("placedDefeated", new ArrayList<>(placedDefeated));
         return data;
     }
 

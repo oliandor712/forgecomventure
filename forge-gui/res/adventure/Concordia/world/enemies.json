@@ -164,5 +164,387 @@
     "count": 100
    }
   ]
+ },
+{
+  "name": "Wild Hidden Bush",
+  "sprite": "sprites/enemy/plant/hiddenbush.atlas",
+  "deck": [
+   "decks/tutorial/G_Tutorial_3.dck"
+  ],
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 10,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1,
+    "addMaxCount": 1
+   }
+  ],
+  "flying": true
+ },
+{
+  "name": "Wild Thicket Pixie",
+  "sprite": "sprites/enemy/fey/pixie.atlas",
+  "deck": [
+   "decks/tutorial/U_Tutorial_4.dck"
+  ],
+  "ai": "",
+  "speed": 50,
+  "scale": 1.0,
+  "life": 10,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1,
+    "addMaxCount": 1
+   }
+  ],
+  "flying": true
+ },
+{
+  "name": "Wild Mossfungus",
+  "sprite": "sprites/enemy/plant/fungus.atlas",
+  "deck": [
+   "decks/tutorial/B_Tutorial_1.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 10,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1,
+    "addMaxCount": 1
+   }
+  ],
+  "flying": true
+ },
+{
+  "name": "Wild Briar Satyr",
+  "sprite": "sprites/enemy/fey/satyr.atlas",
+  "deck": [
+   "decks/tutorial/R_Tutorial_2.dck"
+  ],
+  "ai": "",
+  "speed": 50,
+  "scale": 1.0,
+  "life": 10,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1,
+    "addMaxCount": 1
+   }
+  ],
+  "flying": true
+ },
+{
+  "name": "Cave Kavu",
+  "sprite": "sprites/enemy/monstrosity/kavu.atlas",
+  "deck": [
+   "decks/tutorial/G_Tutorial_3.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 11,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 30
+   },
+   {
+    "type": "shards",
+    "count": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+{
+  "name": "Cave Fungus",
+  "sprite": "sprites/enemy/plant/fungus_golgari.atlas",
+  "deck": [
+   "decks/tutorial/B_Tutorial_1.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 11,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 30
+   },
+   {
+    "type": "shards",
+    "count": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+{
+  "name": "Cave Harpy",
+  "sprite": "sprites/enemy/monstrosity/harpy.atlas",
+  "deck": [
+   "decks/tutorial/R_Tutorial_2.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 11,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 30
+   },
+   {
+    "type": "shards",
+    "count": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+{
+  "name": "Cave Pixie",
+  "sprite": "sprites/enemy/fey/pixie_dimir.atlas",
+  "deck": [
+   "decks/tutorial/U_Tutorial_4.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 11,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 30
+   },
+   {
+    "type": "shards",
+    "count": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+{
+  "name": "Mossback Treant",
+  "sprite": "sprites/enemy/plant/treant_large.atlas",
+  "deck": [
+   "decks/starter/G_Starter_Normal.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 18,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 150
+   },
+   {
+    "type": "shards",
+    "count": 5
+   },
+   {
+    "type": "deckCard",
+    "count": 2,
+    "addMaxCount": 1
+   }
+  ],
+  "boss": true
+ },
+{
+  "name": "Hollow Shade",
+  "sprite": "sprites/enemy/undead/shade.atlas",
+  "deck": [
+   "decks/starter/B_Starter_Normal.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 18,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 150
+   },
+   {
+    "type": "shards",
+    "count": 5
+   },
+   {
+    "type": "deckCard",
+    "count": 2,
+    "addMaxCount": 1
+   }
+  ],
+  "boss": true
+ },
+{
+  "name": "Deepcave Yeti",
+  "sprite": "sprites/enemy/monstrosity/yeti.atlas",
+  "deck": [
+   "decks/starter/R_Starter_Normal.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 18,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 150
+   },
+   {
+    "type": "shards",
+    "count": 5
+   },
+   {
+    "type": "deckCard",
+    "count": 2,
+    "addMaxCount": 1
+   }
+  ],
+  "boss": true
+ },
+{
+  "name": "Duelist Bram",
+  "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
+  "deck": [
+   "decks/starter/W_Starter_Normal.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 20,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 120
+   },
+   {
+    "type": "shards",
+    "count": 3
+   }
+  ]
+ },
+{
+  "name": "Duelist Mira",
+  "sprite": "sprites/enemy/humanoid/conjurer.atlas",
+  "deck": [
+   "decks/starter/U_Starter_Normal.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 20,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 120
+   },
+   {
+    "type": "shards",
+    "count": 3
+   }
+  ]
+ },
+{
+  "name": "Duelist Corvin",
+  "sprite": "sprites/enemy/humanoid/knight.atlas",
+  "deck": [
+   "decks/starter/B_Starter_Normal.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 20,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 120
+   },
+   {
+    "type": "shards",
+    "count": 3
+   }
+  ]
+ },
+{
+  "name": "Duelist Sela",
+  "sprite": "sprites/enemy/humanoid/swordsman_2.atlas",
+  "deck": [
+   "decks/starter/R_Starter_Normal.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 20,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 120
+   },
+   {
+    "type": "shards",
+    "count": 3
+   }
+  ]
+ },
+{
+  "name": "Duelist Fenn",
+  "sprite": "sprites/enemy/humanoid/swordsman_3.atlas",
+  "deck": [
+   "decks/starter/G_Starter_Normal.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 20,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 120
+   },
+   {
+    "type": "shards",
+    "count": 3
+   }
+  ]
  }
 ]

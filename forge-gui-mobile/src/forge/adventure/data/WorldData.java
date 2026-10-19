@@ -30,6 +30,7 @@ public class WorldData implements Serializable {
     public String biomesSprites;
     public float maxRoadDistance;
     public String[] biomesNames;
+    public PlacedEnemyData[] placedEnemies; //enemies at fixed spots on the world map
 
 
     private BiomeSprites sprites;

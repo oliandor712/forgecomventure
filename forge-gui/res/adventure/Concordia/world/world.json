@@ -16,5 +16,91 @@
   "biomesNames": [
     "world/biomes/base.json",
     "world/biomes/concordia.json"
+  ],
+  "placedEnemies": [
+    {
+      "enemy": "Duelist Sela",
+      "x": 86,
+      "y": 61,
+      "threatRange": 4,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Duelist Corvin",
+      "x": 96,
+      "y": 68,
+      "threatRange": 4,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Duelist Bram",
+      "x": 72,
+      "y": 74,
+      "threatRange": 4,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Duelist Fenn",
+      "x": 59,
+      "y": 86,
+      "threatRange": 4,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Duelist Mira",
+      "x": 80,
+      "y": 110,
+      "threatRange": 4,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Wild Hidden Bush",
+      "x": 52,
+      "y": 99,
+      "threatRange": 5,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Wild Mossfungus",
+      "x": 52,
+      "y": 80,
+      "threatRange": 5,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Wild Thicket Pixie",
+      "x": 101,
+      "y": 102,
+      "threatRange": 5,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Wild Briar Satyr",
+      "x": 103,
+      "y": 67,
+      "threatRange": 5,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Wild Hidden Bush",
+      "x": 56,
+      "y": 50,
+      "threatRange": 5,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Wild Thicket Pixie",
+      "x": 102,
+      "y": 78,
+      "threatRange": 5,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Wild Mossfungus",
+      "x": 53,
+      "y": 112,
+      "threatRange": 5,
+      "respawn": "town"
+    }
   ]
 }
