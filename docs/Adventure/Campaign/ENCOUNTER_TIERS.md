@@ -82,7 +82,7 @@ Work in this order. Each step narrows the next.
    - Never raise power by adding a card outside the tier's lists in §4.
 7. **Check it** with `deck_tier.py --tier N --life L`. Every line must be PASS; a WARN needs a reason written in the
    deck's `[metadata]` `Description=`.
-8. **Measure it** with the simulator against the matching starter (§6), and adjust life within the tier's range.
+8. **Measure it** with the simulator against its own tier at equal life (§6), and adjust its power within the tier.
 
 **Upgrade path between tiers** (from the precon-upgrade guides in §7):
 - **Tier 2 → 3:**
@@ -236,13 +236,14 @@ and later fights.
 ## 6. Verifying a deck
 
 1. **Rate it:** `python3 tools/concordia/deck_tier.py DECK.dck --tier N --life L`. Every line must be PASS.
-2. **Simulate it:** play the deck against each starter it will realistically face, with the starter at 30 life and the
-   enemy at its `life`. Use 10 games per pairing at least; 6 games swing ±20%. Forge AI plays both sides.
-   - Tier 1: the starter wins 95%+ and games average about 15 turns or fewer.
-   - Tier 2: the starter wins about 60-75%.
-   - Tier 3: the starter wins about 35-55%, since an upgraded player deck is expected by then.
-3. **Adjust** life inside the tier's range first, then the deck's power within its band. Don't change tier to fix a
-   win rate.
+2. **Simulate it** against other decks of the same tier, **with both sides at the same life** (the tier's standard
+   life: 11, 18, 28, 35 and 40 for tiers 1-5). Simulations never use different life totals for the two sides: a life
+   gap swamps the difference between decks, so the results say nothing about the decks themselves. Use 10 games per
+   deck at least; 6 games swing ±20%. Forge AI plays both sides. A balanced tier has every deck between about 30% and
+   70% wins.
+3. **Adjust** the deck's power within its tier (the builder's per-deck `target`, or `weakness` for tier 1), not its
+   life. Don't change tier to fix a win rate. Each enemy's `life` in the game is set by where it's fought, not by
+   simulations.
 
 The simulator is headless and needs the built classes (see the file header for the classpath). Example:
 
