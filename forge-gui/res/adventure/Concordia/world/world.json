@@ -21,36 +21,41 @@
     {
       "enemy": "Duelist Sela",
       "x": 86,
-      "y": 61,
-      "threatRange": 4,
+      "y": 59,
+      "threatRange": 5,
+      "pursueRange": 9,
       "respawn": "town"
     },
     {
       "enemy": "Duelist Corvin",
-      "x": 96,
+      "x": 98,
       "y": 68,
-      "threatRange": 4,
+      "threatRange": 5,
+      "pursueRange": 9,
       "respawn": "town"
     },
     {
       "enemy": "Duelist Bram",
       "x": 72,
-      "y": 74,
-      "threatRange": 4,
+      "y": 72,
+      "threatRange": 5,
+      "pursueRange": 9,
       "respawn": "town"
     },
     {
       "enemy": "Duelist Fenn",
-      "x": 59,
+      "x": 56,
       "y": 86,
-      "threatRange": 4,
+      "threatRange": 5,
+      "pursueRange": 9,
       "respawn": "town"
     },
     {
       "enemy": "Duelist Mira",
       "x": 80,
-      "y": 110,
-      "threatRange": 4,
+      "y": 105,
+      "threatRange": 5,
+      "pursueRange": 9,
       "respawn": "town"
     },
     {

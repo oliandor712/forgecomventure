@@ -96,30 +96,21 @@ public class WorldStage extends GameStage implements SaveFileContent {
                 }
                 EnemySprite mob = pair.getValue();
 
-                if (mob.placedIndex >= 0 && !mob.aggro) {
-                    //placed enemies stand still until the player comes within their threat range
-                    if (enemyMoveVector.set(player.getX(), player.getY()).sub(mob.pos()).len() <= mob.threatRange)
+                boolean chase = mob.placedIndex < 0;
+                if (mob.placedIndex >= 0) {
+                    //placed enemies stand at their spot until the player comes within their threat range,
+                    //give up once the player gets past their pursue range, and then walk back to their spot
+                    float toPlayer = enemyMoveVector.set(player.getX(), player.getY()).sub(mob.pos()).len();
+                    if (!mob.aggro && toPlayer <= mob.threatRange)
                         mob.aggro = true;
+                    else if (mob.aggro && toPlayer > mob.pursueRange)
+                        mob.aggro = false;
+                    chase = mob.aggro;
+                    if (!chase)
+                        moveEnemyToward(mob, mob.homeX, mob.homeY, delta, true);
                 }
-                if (!currentModifications.containsKey(PlayerModification.Hide) && (mob.placedIndex < 0 || mob.aggro)) {
-                    enemyMoveVector.set(player.getX(), player.getY()).sub(mob.pos());
-                    enemyMoveVector.setLength(mob.speed() * delta);
-                    tempBoundingRect.set(mob.getX() + enemyMoveVector.x, mob.getY() + enemyMoveVector.y, mob.getWidth(), mob.getHeight() * mob.getCollisionHeight());
-
-                    if (!mob.getData().flying && WorldSave.getCurrentSave().getWorld().collidingTile(tempBoundingRect)) {
-                        tempBoundingRect.set(mob.getX() + enemyMoveVector.x, mob.getY(), mob.getWidth(), mob.getHeight());
-                        if (WorldSave.getCurrentSave().getWorld().collidingTile(tempBoundingRect)) {
-                            tempBoundingRect.set(mob.getX(), mob.getY() + enemyMoveVector.y, mob.getWidth(), mob.getHeight());
-                            if (!WorldSave.getCurrentSave().getWorld().collidingTile(tempBoundingRect)) {
-                                mob.moveBy(0, enemyMoveVector.y);
-                            }
-                        } else {
-                            mob.moveBy(enemyMoveVector.x, 0);
-                        }
-                    } else {
-                        mob.moveBy(enemyMoveVector.x, enemyMoveVector.y);
-                    }
-                }
+                if (chase && !currentModifications.containsKey(PlayerModification.Hide))
+                    moveEnemyToward(mob, player.getX(), player.getY(), delta, false);
 
                 if (player.collideWith(mob)) {
                     if (collided)
@@ -294,6 +285,34 @@ public class WorldStage extends GameStage implements SaveFileContent {
         return spawn(WorldData.getEnemy(enemy));
     }
 
+    /** Moves an overworld enemy one step toward a spot, sliding along walls unless it flies. */
+    private void moveEnemyToward(EnemySprite mob, float targetX, float targetY, float delta, boolean stopAtTarget) {
+        enemyMoveVector.set(targetX, targetY).sub(mob.pos());
+        float step = mob.speed() * delta;
+        if (stopAtTarget) {
+            float distance = enemyMoveVector.len();
+            if (distance < 0.5f)
+                return;
+            step = Math.min(step, distance);
+        }
+        enemyMoveVector.setLength(step);
+        tempBoundingRect.set(mob.getX() + enemyMoveVector.x, mob.getY() + enemyMoveVector.y, mob.getWidth(), mob.getHeight() * mob.getCollisionHeight());
+
+        if (!mob.getData().flying && WorldSave.getCurrentSave().getWorld().collidingTile(tempBoundingRect)) {
+            tempBoundingRect.set(mob.getX() + enemyMoveVector.x, mob.getY(), mob.getWidth(), mob.getHeight());
+            if (WorldSave.getCurrentSave().getWorld().collidingTile(tempBoundingRect)) {
+                tempBoundingRect.set(mob.getX(), mob.getY() + enemyMoveVector.y, mob.getWidth(), mob.getHeight());
+                if (!WorldSave.getCurrentSave().getWorld().collidingTile(tempBoundingRect)) {
+                    mob.moveBy(0, enemyMoveVector.y);
+                }
+            } else {
+                mob.moveBy(enemyMoveVector.x, 0);
+            }
+        } else {
+            mob.moveBy(enemyMoveVector.x, enemyMoveVector.y);
+        }
+    }
+
     private final Set<Integer> placedDefeated = new HashSet<>();
 
     /** Puts every placed enemy that is not beaten and not on the map at its spot. */
@@ -323,7 +342,10 @@ public class WorldStage extends GameStage implements SaveFileContent {
             EnemySprite sprite = new EnemySprite(data);
             sprite.placedIndex = i;
             sprite.threatRange = placed[i].threatRange * world.getTileSize();
-            sprite.setPosition(placed[i].x * world.getTileSize(), placed[i].y * world.getTileSize());
+            sprite.pursueRange = Math.max(placed[i].pursueRange, placed[i].threatRange) * world.getTileSize();
+            sprite.homeX = placed[i].x * world.getTileSize();
+            sprite.homeY = placed[i].y * world.getTileSize();
+            sprite.setPosition(sprite.homeX, sprite.homeY);
             enemies.add(Pair.of(globalTimer, sprite));
             foregroundSprites.addActor(sprite);
         }

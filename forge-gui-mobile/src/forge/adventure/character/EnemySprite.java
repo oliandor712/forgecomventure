@@ -85,6 +85,7 @@ public class EnemySprite extends CharacterSprite implements Steerable<Vector2> {
     public float speedModifier = 0.0f; // Increase or decrease default speed
     public boolean aggro = false;
     public int placedIndex = -1; //index into WorldData.placedEnemies for an enemy placed at a fixed world spot, else -1
+    public float homeX, homeY; //spot a placed enemy returns to after giving up pursuit
     public boolean ignoreDungeonEffect = false;
     public String questStageID;
     private ProgressableGraphPath<NavigationVertex> navPath;
