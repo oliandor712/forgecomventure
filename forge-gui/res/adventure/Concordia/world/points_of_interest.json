@@ -23,7 +23,7 @@
     "count": 1,
     "spriteAtlas": "../common/maps/tileset/buildings.atlas",
     "sprite": "ForestTown",
-    "map": "../common/maps/map/towns/forest_town_generic.tmx",
+    "map": "../Concordia/maps/map/mossgate.tmx",
     "radiusFactor": 0,
     "offsetX": 0.0,
     "offsetY": 0.0,
