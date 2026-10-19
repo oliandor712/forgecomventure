@@ -162,6 +162,19 @@ public class RewardData implements Serializable {
         allCards = null;
     }
 
+    private static int rarityRank(PaperCard card) {
+        return switch (card.getRarity()) {
+            case MythicRare -> 4;
+            case Rare, Special -> 3;
+            case Uncommon -> 2;
+            case Common -> 1;
+            default -> 0;
+        };
+    }
+    private static final Comparator<PaperCard> rarestFirst = Comparator.comparingInt(RewardData::rarityRank).reversed()
+            .thenComparing(Comparator.comparingInt((PaperCard c) -> c.getRules().getManaCost().getCMC()).reversed())
+            .thenComparing(PaperCard::getName);
+
     public Array<Reward> generate(boolean isForEnemy, boolean useSeedlessRandom) {
         return generate(isForEnemy, null, useSeedlessRandom);
     }
@@ -345,6 +358,17 @@ public class RewardData implements Serializable {
                         if (card != null)
                             ret.add(new Reward(card, isNoSell));
                     }
+                    break;
+                case "rarestDeckCard": //The enemy deck's rarest card (main deck, no basics); ties go to the highest mana value, then name
+                    if (cards == null)
+                        break;
+                    PaperCard rarest = null;
+                    for (PaperCard card : cards) {
+                        if (rarest == null || rarestFirst.compare(card, rarest) < 0)
+                            rarest = card;
+                    }
+                    if (rarest != null)
+                        ret.add(new Reward(rarest, isNoSell));
                     break;
                 case "gold":
                     ret.add(new Reward(count + addedCount));

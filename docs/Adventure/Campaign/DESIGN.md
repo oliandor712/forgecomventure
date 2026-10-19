@@ -96,6 +96,8 @@ loses, they run and come back later, often with a new deck. Four rules keep the 
 - Raiders can't be rematched. The tutorial raider always returns its stolen card. Every other stolen card goes to a special shop section, overpriced.
 - The global **Play for Ante** setting doesn't apply to the campaign. Ante is set per encounter. Basic lands are never
   anted, and rarity matching is off, so raiders can take rare cards.
+- **For now the tutorial raiders don't ante.** It was too much to learn in the first duels. Each one instead gives its
+  rarest non-commander card (reward type `rarestDeckCard`; ties go to the highest mana value) plus 50 gold.
 
 **The central question of the story is whether the Seals are good for Concordia.** They ended the wars, but they also
 froze the world under one ruler's judgment and turned duelists into outlaws. Every chapter gives the question a
@@ -157,7 +159,7 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 |---|---|---|---|
 | P1 | Awaken | Emberbrook: your room in the family house (a new game starts here) | Unsealed raiders strike during the Seal-day festival (the opening box). A Seal Angel blocks the passage out of your room and asks you to choose a first color, then fades. The rival's color is its opposite (§2.1 color lore) |
 | P2 | Your soul's deck | Emberbrook shrine | A basic commander deck manifests from your soul in the color you chose. The rival's manifests in theirs. **Elder Wren** explains what the decks are, and that the duels to come are your first lessons |
-| P3 | Tutorial raiders | Emberbrook square | All four raiders are in the square when you step out of the house, and you can take them in any order. Each is an ante duel and a tutorial battle with one lesson (drawing, combat, the commander, color identity). Any card a raider wins from you comes back before your next tutorial duel, win or lose, so a loss here is a lesson rather than a cost. That is the only place a stolen card returns. When the last raider flees, the rival appears in the village gate and comes at you when you get close: **Rival duel 1**, a short duel with a low-power deck. The rival says that when they rule, they'll tear the Seals down |
+| P3 | Tutorial raiders | Emberbrook square | All four raiders are in the square when you step out of the house, and you can take them in any order. Each is a tutorial battle with one lesson (drawing, combat, the commander, color identity), with no ante for now. Beating one gives its rarest non-commander card and 50 gold. When the last raider flees, the rival appears in the village gate and comes at you when you get close: **Rival duel 1**, a short duel with a low-power deck. The rival says that when they rule, they'll tear the Seals down |
 | P4 | Set out | Route 1 → Mossgate | Elder Wren sends you to Mossgate with the village's Seal fragment. Route trainers teach the "challenged on sight" mechanic. At Mossgate's notice board you read the Champion's open challenge for the first time. The rival has already left |
 
 #### Chapter 1: Your Seal
@@ -369,7 +371,7 @@ painted by hand. A fully hand-painted overworld needs Java (J2, §7.2).
 - **Gym puzzles** use `dummy` objects (removable obstacles) and `dialog` objects whose actions run
   `deleteMapObject` / `activateMapObject` when a condition (map flag, defeated keeper) is met.
 - **Trainers and raiders** are `enemy` objects with `threatRange` / `pursueRange` (they come at you on sight), a `dialog`
-  (challenge line) and a `defeatDialog`. Raiders also carry the ante flag (§7.2, J-Ante). Map enemies don't respawn
+  (challenge line) and a `defeatDialog`. Later raiders carry the ante flag (§7.2, J-Ante); the tutorial raiders don't. Map enemies don't respawn
   unless the map sets `respawnEnemies`, so beaten trainers stay beaten.
 - **Healing:** maps whose root POI is of type `town` or `capital` heal you on entry. Inn objects heal elsewhere.
 - **Secrets:** hidden enemies (`hidden: true`) and inactive portals behind breakable walls (`dummy`).
@@ -401,7 +403,7 @@ you're meant to reach them. Hard blocking on the overworld needs Java (J4).
 
 | Part | Trainers | Rival | Mini/villain boss | Warden | Boss mechanics | Rewards and economy |
 |---|---|---|---|---|---|---|
-| Prologue | Raiders, tier 1, `life` 15, mono-color, ante | Tier 1, `life` 15 | Raider lead, tier 1, ante | – | None | Starter deck, 300 gold |
+| Prologue | Raiders, tier 1, `life` 10-12, mono-color, no ante for now | Tier 1, `life` 15 | Raider lead, tier 1, ante | – | None | Starter deck, 300 gold |
 | Ch.1 | Tier 2, `life` 20. Raiders ante | Tier 2, `life` 20 | Hask, tier 3, `life` 25, ante | Your own color, tier 3, `life` 30 | Map `dungeonEffect`: the Warden starts with a mana dork in play | ~2,000 gold. Your own Seal: +3 max life and a commander choice in your color (§6.1) |
 | Ch.2 (1st ally Warden) | Tier 3, `life` 25 | Tier 3, `life` 25 | – | Ally color, tier 4, `life` 35 | Best-of-3 on the blue Warden. A no-healing gauntlet on the red Warden, with a `dungeonEffect` giving a haste enabler (§3.3) | ~3,000 gold |
 | Ch.2 (2nd ally Warden) | Tier 4 | – | – | Ally color, tier 5, `life` 40 | The same mechanics, plus `changeStartCards: +1` | Seal + commander choice |
@@ -557,9 +559,9 @@ With `tournament` in `config.json`, inns run a **tournament with your own deck**
 events (`TournamentData`):
 
 - 8 players, single elimination (3 rounds), one game per match, Commander rules; **everyone starts at 30 life**.
-- Opponents are 7 of the 10 tournament champions in `enemies.json`, one per Tier 3 deck (Dawnbringer Host, Visionary
-  Foundry, Gorgon's Gaze, Tempest Roost, Hydra Den, Inscrutable Skies, Doom of the Depths, Blood Witch Revue,
-  Strength Incarnate, Host of Herons). Each plays its own deck.
+- Opponents are 7 of the 10 tournament champions in `enemies.json`, one per Tier 2 deck (Capashen Paragon,
+  Weatherlight Captain, Visionary Foundry, Tolarian Adept, The Infestation, Grandmother's Court, The Relentless,
+  Talruum Stampede, Cat Warrior Pride, Peema Renegades). Each plays its own deck. Tier 3 was too strong this early.
 - Entry: **100 gold**. "Select Deck" registers a copy of your current deck.
 - Prizes: **50 gold per round won**; the champion also gets **3 booster packs**, each in a random color you've
   unlocked.

@@ -9,9 +9,10 @@
   "speed": 40,
   "scale": 1.0,
   "life": 10,
-  "ante": true,
-  "raider": true,
   "rewards": [
+   {
+    "type": "rarestDeckCard"
+   },
    {
     "type": "gold",
     "count": 50
@@ -28,9 +29,10 @@
   "speed": 40,
   "scale": 1.0,
   "life": 10,
-  "ante": true,
-  "raider": true,
   "rewards": [
+   {
+    "type": "rarestDeckCard"
+   },
    {
     "type": "gold",
     "count": 50
@@ -47,9 +49,10 @@
   "speed": 40,
   "scale": 1.0,
   "life": 12,
-  "ante": true,
-  "raider": true,
   "rewards": [
+   {
+    "type": "rarestDeckCard"
+   },
    {
     "type": "gold",
     "count": 50
@@ -66,9 +69,10 @@
   "speed": 40,
   "scale": 1.0,
   "life": 12,
-  "ante": true,
-  "raider": true,
   "rewards": [
+   {
+    "type": "rarestDeckCard"
+   },
    {
     "type": "gold",
     "count": 50
@@ -190,7 +194,7 @@
    }
   ]
  },
-{
+ {
   "name": "Wild Hidden Bush",
   "sprite": "sprites/enemy/plant/hiddenbush.atlas",
   "deck": [
@@ -214,7 +218,7 @@
   ],
   "flying": true
  },
-{
+ {
   "name": "Wild Thicket Pixie",
   "sprite": "sprites/enemy/fey/pixie.atlas",
   "deck": [
@@ -238,7 +242,7 @@
   ],
   "flying": true
  },
-{
+ {
   "name": "Wild Mossfungus",
   "sprite": "sprites/enemy/plant/fungus.atlas",
   "deck": [
@@ -263,7 +267,7 @@
   ],
   "flying": true
  },
-{
+ {
   "name": "Wild Briar Satyr",
   "sprite": "sprites/enemy/fey/satyr.atlas",
   "deck": [
@@ -287,7 +291,7 @@
   ],
   "flying": true
  },
-{
+ {
   "name": "Cave Kavu",
   "sprite": "sprites/enemy/monstrosity/kavu.atlas",
   "deck": [
@@ -312,7 +316,7 @@
    }
   ]
  },
-{
+ {
   "name": "Cave Fungus",
   "sprite": "sprites/enemy/plant/fungus_golgari.atlas",
   "deck": [
@@ -337,7 +341,7 @@
    }
   ]
  },
-{
+ {
   "name": "Cave Harpy",
   "sprite": "sprites/enemy/monstrosity/harpy.atlas",
   "deck": [
@@ -363,7 +367,7 @@
    }
   ]
  },
-{
+ {
   "name": "Cave Pixie",
   "sprite": "sprites/enemy/fey/pixie_dimir.atlas",
   "deck": [
@@ -388,7 +392,7 @@
    }
   ]
  },
-{
+ {
   "name": "Mossback Treant",
   "sprite": "sprites/enemy/plant/treant_large.atlas",
   "deck": [
@@ -415,7 +419,7 @@
   ],
   "boss": true
  },
-{
+ {
   "name": "Hollow Shade",
   "sprite": "sprites/enemy/undead/shade.atlas",
   "deck": [
@@ -442,7 +446,7 @@
   ],
   "boss": true
  },
-{
+ {
   "name": "Deepcave Yeti",
   "sprite": "sprites/enemy/monstrosity/yeti.atlas",
   "deck": [
@@ -469,7 +473,7 @@
   ],
   "boss": true
  },
-{
+ {
   "name": "Duelist Bram",
   "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
   "deck": [
@@ -491,7 +495,7 @@
    }
   ]
  },
-{
+ {
   "name": "Duelist Mira",
   "sprite": "sprites/enemy/humanoid/conjurer.atlas",
   "deck": [
@@ -513,7 +517,7 @@
    }
   ]
  },
-{
+ {
   "name": "Duelist Corvin",
   "sprite": "sprites/enemy/humanoid/knight.atlas",
   "deck": [
@@ -534,7 +538,7 @@
    }
   ]
  },
-{
+ {
   "name": "Duelist Sela",
   "sprite": "sprites/enemy/humanoid/swordsman_2.atlas",
   "deck": [
@@ -555,7 +559,7 @@
    }
   ]
  },
-{
+ {
   "name": "Duelist Fenn",
   "sprite": "sprites/enemy/humanoid/swordsman_3.atlas",
   "deck": [
@@ -577,10 +581,10 @@
   ]
  },
  {
-  "name": "Dawnbringer Host",
-  "sprite": "sprites/enemy/celestial/angel_2.atlas",
+  "name": "Capashen Paragon",
+  "sprite": "sprites/enemy/humanoid/human/knight/braveknight.atlas",
   "deck": [
-   "decks/tier3/T3_W_Lyra.dck"
+   "decks/tier2/T2_W_Danitha.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -592,7 +596,7 @@
   "name": "Visionary Foundry",
   "sprite": "sprites/enemy/construct/arcane_golem.atlas",
   "deck": [
-   "decks/tier3/T3_U_Muzzio.dck"
+   "decks/tier2/T2_U_Sai.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -601,10 +605,10 @@
   "rewards": []
  },
  {
-  "name": "Gorgon's Gaze",
-  "sprite": "sprites/enemy/monstrosity/gorgone.atlas",
+  "name": "The Infestation",
+  "sprite": "sprites/enemy/beast/insect/giantfly.atlas",
   "deck": [
-   "decks/tier3/T3_B_Hythonia.dck"
+   "decks/tier2/T2_B_Fumulus.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -613,10 +617,10 @@
   "rewards": []
  },
  {
-  "name": "Tempest Roost",
-  "sprite": "sprites/enemy/dragon/dragon.atlas",
+  "name": "Talruum Stampede",
+  "sprite": "sprites/enemy/humanoid/minotaur/minotaurlarge.atlas",
   "deck": [
-   "decks/tier3/T3_R_Dragonhawk.dck"
+   "decks/tier2/T2_R_Tahngarth.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -625,10 +629,10 @@
   "rewards": []
  },
  {
-  "name": "Hydra Den",
-  "sprite": "sprites/enemy/monstrosity/hydra.atlas",
+  "name": "Cat Warrior Pride",
+  "sprite": "sprites/enemy/beast/cat/jaguar.atlas",
   "deck": [
-   "decks/tier3/T3_G_Gargos.dck"
+   "decks/tier2/T2_G_Mirri.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -637,10 +641,10 @@
   "rewards": []
  },
  {
-  "name": "Inscrutable Skies",
-  "sprite": "sprites/enemy/monstrosity/androsphinx.atlas",
+  "name": "Tolarian Adept",
+  "sprite": "sprites/enemy/humanoid/human/wizard/wizard.atlas",
   "deck": [
-   "decks/tier3/T3_WU_Isperia.dck"
+   "decks/tier2/T2_U_Ertai.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -649,10 +653,10 @@
   "rewards": []
  },
  {
-  "name": "Doom of the Depths",
-  "sprite": "sprites/enemy/monstrosity/homarid.atlas",
+  "name": "Grandmother's Court",
+  "sprite": "sprites/enemy/undead/vampire_2.atlas",
   "deck": [
-   "decks/tier3/T3_UB_Gyruda.dck"
+   "decks/tier2/T2_B_Sengir.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -661,10 +665,10 @@
   "rewards": []
  },
  {
-  "name": "Blood Witch Revue",
-  "sprite": "sprites/enemy/fiend/devil.atlas",
+  "name": "The Relentless",
+  "sprite": "sprites/enemy/humanoid/human/soldier/legionite.atlas",
   "deck": [
-   "decks/tier3/T3_BR_Exava.dck"
+   "decks/tier2/T2_R_Eron.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -673,10 +677,10 @@
   "rewards": []
  },
  {
-  "name": "Strength Incarnate",
-  "sprite": "sprites/enemy/monstrosity/wurm.atlas",
+  "name": "Peema Renegades",
+  "sprite": "sprites/enemy/humanoid/elf/druid.atlas",
   "deck": [
-   "decks/tier3/T3_RG_Zilortha.dck"
+   "decks/tier2/T2_G_Rishkar.dck"
   ],
   "ai": "",
   "speed": 40,
@@ -685,10 +689,10 @@
   "rewards": []
  },
  {
-  "name": "Host of Herons",
-  "sprite": "sprites/enemy/celestial/angel_1.atlas",
+  "name": "Weatherlight Captain",
+  "sprite": "sprites/enemy/humanoid/human/knight/cavalier.atlas",
   "deck": [
-   "decks/tier3/T3_GW_Sigarda.dck"
+   "decks/tier2/T2_W_Gerrard.dck"
   ],
   "ai": "",
   "speed": 40,

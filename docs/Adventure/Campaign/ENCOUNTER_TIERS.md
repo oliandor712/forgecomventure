@@ -220,8 +220,9 @@ player's net wins against that enemy pass 3):
 | Duelist Sela (R) | 2 | 20 | Eron |
 | Duelist Fenn (G) | 2 | 20 | Mirri |
 
-The two weakest Tier 1 decks (Ozox, Dori) went to the wild encounters, the weakest fights on the route. The Tier 3
-decks are kept for the Wardens and later fights.
+The two weakest Tier 1 decks (Ozox, Dori) went to the wild encounters, the weakest fights on the route. The inn
+tournament champions also use the ten Tier 2 decks, one each, at 30 life. The Tier 3 decks are kept for the Wardens
+and later fights.
 
 ## 6. Verifying a deck
 
