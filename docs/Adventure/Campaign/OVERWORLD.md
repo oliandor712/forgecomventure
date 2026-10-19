@@ -86,7 +86,7 @@ runs through the **Gate Temple** in Mossgate (§3.1) or the Waystone (§4.2).
 
   That's more than today's 160×160, but under Shandalar's 700×700, so world generation can handle it. A color zone
   holds about five Route 1s' worth of maze, which is room for a gate town, two or three route sections, an inner pass,
-  the gym and several optional dungeons.
+  the zone town, the Warden's dungeon and several random dungeons.
 - **Each color zone is its own biome** (`world/biomes/<color>.json`) with `noiseWeight` 0 and a fixed position, its own
   tileset (`White`, `Blue`, `Black`, `Red`, `Green` in `world/tilesets/terrain.atlas`) and its own maze image
   (`world/structures/models/<color>_maze.png`), drawn with that color's structure atlas:
@@ -197,26 +197,31 @@ passes), so the border zone is a reward for getting deep into a zone, not a way 
 
 ## 4. Inside a color zone
 
-Every zone uses the same grammar, so the player learns it once:
+Every zone uses the same grammar, so the player learns it once (§4.3 has the Green zone as the worked example):
 
 ```
-Gate Temple ─► GATE PASS ─► Gate town ─► Route A ─► INNER PASS 1 ─► Route B ─► INNER PASS 2 ─► Route C ─► Warden's gym
-               (dungeon,     (all services,  (maze)    (dungeon)        (maze)    (dungeon)        (maze)
-                temple end)   Waystone stop)   │                           │                          │
-                                          optional dungeon          optional dungeon          optional dungeon
+Gate Temple ─► GATE PASS ─► Gate town ─► Route A ─► INNER PASS 1 ─► Route B ──────► INNER PASS 2 ─► Route C ─► Zone town ─► Warden's dungeon
+               (dungeon,     (all services,  (maze)    (dungeon)        (corridor with   (dungeon)        (open     (a few      (entered from
+                temple end)   Waystone stop)                             side clearings,                   field,     services,    the zone town)
+                                                                         random dungeons)                  random     inn, heal)
+                                                                                                           spawns)
 ```
 
 | Piece | What it is | Notes |
 |---|---|---|
 | Gate pass | A dungeon between the Gate Temple and the zone | The zone's only entrance on foot. Entered from its temple gate (§3.1); its far end comes out by the gate town. Two-way (§6) |
-| Gate town | The zone's town, right inside the gate | All services (§4.1). The first visit adds it to the Waystone (§4.2). The only place in the zone to heal |
-| Routes A, B, C | Maze sections, like Route 1 but more complex | Duelists stand at corridor edges (`placedEnemies`); wild encounters roam |
-| Inner passes 1 and 2 | Mandatory dungeons splitting the zone into three sections | Each section can only be reached through the pass before it. Two-way |
-| Optional dungeons | Caves at dead ends | Treasure, a mini-boss, sometimes a legend duel |
-| Warden's gym | The zone's boss building | Gym puzzle and Warden (`DESIGN.md` §3.3, §5.3) |
+| Gate town | The zone's first town, right inside the gate | All services (§4.1). The first visit adds it to the Waystone (§4.2). Heals |
+| Route A | A maze | One winding forced path from the gate town to inner pass 1 |
+| Inner pass 1 | A mandatory dungeon | Its two doors are at the end of route A and the start of route B. Two-way |
+| Route B | A long corridor with side paths | Each side path leads to a clearing; some clearings hold a random dungeon (§4.4), others duelists or treasure |
+| Inner pass 2 | A mandatory dungeon | Its two doors are at the end of route B and the start of route C. Two-way |
+| Route C | An open field | Random spawns (wild encounters) instead of placed duelists |
+| Zone town | A small town at the far end of the field | A few services, including an inn. Heals. **Not** a Waystone stop |
+| Warden's dungeon | The zone's boss dungeon | Entered from the zone town. Dungeon puzzle and Warden (`DESIGN.md` §3.3, §5.3) |
 
-**No healers in passes.** The gate town is the only place in the zone to heal. Deeper in, the player walks back
-through the passes (they're two-way) or uses the Waystone, which grows more useful the further into a zone they get.
+**Healing only in towns.** The gate town and the zone town are the only places in the zone to heal; there are no
+healers in passes or dungeons. Since the zone town isn't a Waystone stop, reaching it the first time means walking the
+whole zone, and coming back later means the Waystone to the gate town and the walk again (the passes stay cleared).
 
 **Maze rules**, compared with Route 1:
 
@@ -227,7 +232,7 @@ through the passes (they're two-way) or uses the Waystone, which grows more usef
   duelists do. They give up and walk back, so the player can retreat.
 - 2-3 landmarks per zone (a lake, a ruin, a big tree) visible on the minimap, so the maze can be read.
 - At 170-200 tiles across, a zone is too big to hand-draw tile by tile in one go. Draw it as a few sections (gate
-  town area, each route, the gym approach) and let the maze tool (§7) stitch them, so each section stays about the size
+  town area, each route, the field) and let the maze tool (§7) stitch them, so each section stays about the size
   of Route 1.
 
 ### 4.1 Gate town services
@@ -261,6 +266,58 @@ Waystone lists the destinations unlocked so far; picking one teleports there for
   gate. Gate towns are the only destinations inside zones, so the Waystone never skips a pass.
 - **Needs a small Java change** (§8): today's teleport items go to one fixed POI (`commandOnUse: "teleport to poi
   Spawn"`). The new item opens a list of the unlocked destinations instead. It stays in one ability slot.
+
+### 4.3 Worked example: the Green zone
+
+From the layout sketch. The zone is about 190 tiles across; north is up, and the player enters at the bottom.
+
+```
+                         ( WARDEN'S DUNGEON )
+          ┌──────────────────── ZONE TOWN ───────────────────┐
+          │   ⚡                                       ⚡     │  Route C: open field,
+          │            ⚡                      ⚡             │  random spawns (⚡)
+          │                     [pass 2, far door]           │
+          └──────────────────────────────────────────────────┘
+   ┌────────────────────────────────────────────────────────────────┐
+   │             ◇                            ◇                     │  Route B: corridor with five
+   │   │       │       │        │        │                          │  side paths (│) to clearings;
+   │ [p1]──────┼───────┼────────┼────────┼──────[pass 2, near door] │  ◇ = random dungeon
+   │   │       │       │        │        │                          │  [p1] = pass 1, far door
+   │   ◇                                 ◇                          │
+   └────────────────────────────────────────────────────────────────┘
+          ┌──────────────────────────────────────────────────┐
+          │ ┌────────────────────────────────────────────┐   │  Route A: one winding
+          │ │      ┌──────────────────[pass 1, near door] │   │  maze path
+          │ └──────┘      ┌────────────────────────────┘   │
+          └───────────────┤ ├────────────────────────────────┘
+                     ┌────┘ └────┐
+                     │ GATE TOWN │  ← from the Gate Temple, through the gate pass
+                     └───────────┘
+```
+
+| Section | About (tiles) | Contents |
+|---|---|---|
+| Gate town pocket | 30 × 25 | The gate town; the gate pass's zone door |
+| Route A, the maze | 120 × 35, corridors 8-10 wide | One forced path that winds up the middle, east, north, west, south and east again to inner pass 1 |
+| Route B, the corridor | 170 × 40 | The spine runs west to east from pass 1's far door to pass 2's near door. Five side paths branch north and south to clearings; four clearings hold random dungeons |
+| Route C, the field | 115 × 55 | Open ground with random spawns, pass 2's far door at the south edge, the zone town at the north edge |
+| Warden's dungeon | – | North of the zone town, entered from it |
+
+**Random spawns only in the field.** Forge spawns roaming enemies by biome, anywhere the player is inside that biome.
+So the field is its own small biome with an `enemies` list (Green wild encounters), and routes A and B are in a biome
+with none, using placed duelists only. Data only.
+
+### 4.4 Random dungeons
+
+The dungeons in route B's clearings (and the equivalent spots in other zones) are **random**:
+
+- **Opponents come from Concordia's deck pools.** Each enemy in a random dungeon uses `randomizeDeck: true` (built into
+  Forge: a random deck from its list each duel) with its deck list set to a tier's pool (the ten `decks/tier<N>` decks).
+  With `enemyByTier` (§8), the zone's tier picks which pool. So every visit can bring a different deck.
+- **Rewards** are the usual random loot (`rewards` with card and gold entries), scaled by tier.
+- **Layouts:** each spot can also draw its map from a set of cave layouts, picked per world, so two playthroughs get
+  different dungeons there. That needs a small Java change (§8). Without it, each spot has a fixed layout with random
+  opponents and loot.
 
 ## 5. Tier gates: which zone opens when
 
@@ -403,6 +460,7 @@ writes out everything the zone needs:
 | **Arrival offset per POI** | Built | On a POI: `arrivalX`, `arrivalY`, in tiles from the POI (default -1, 1: one tile left, one up). Used by gates with `gateEnter: false`, `teleport to poi` and the Waystone |
 | **Waystone destination list** | Built | `waystoneStops` in `config.json` lists the POIs the Waystone can reach. Each unlocks the first time the player enters it (character flag `waystone.<POI name>`). The item's `commandOnUse` is `waystone <cost>`; the cost is refunded if the player cancels |
 | **`enemyByTier`** | Built | On a map `enemy` object: `enemyByTier` ("tier 1 enemy, tier 2 enemy, tier 3 enemy") and `tierFlag` (a quest flag such as `zoneTier.G`). The flag's value picks the enemy; out-of-range values use the nearest end of the list. Without them, `enemy` is used as before |
+| **Random dungeon layouts** (`maps` on a POI: a list of cave maps, one picked per world from the POI's seed) | Not built | §4.4. Random opponents and loot already work without it (`randomizeDeck`, `enemyByTier`) |
 | Dialog condition comparing one flag to another | Not built | Optional: fewer per-color dialog nodes (§5). The per-color nodes work without it |
 
 **New items** (`world/items.json`): the **Waystone** (ability slot, 1 shard per trip; the rival now gives this
@@ -417,9 +475,9 @@ Fragments** (quest items, one per Paragon, named "Summit Key Fragment (White-Blu
 3. **World resize and the central area.** About 480×460 tiles, the starter zone and Mossgate in the centre, the
    champion area walled off next to it. Retest the starter flow end to end.
 4. **Flags.** `zoneTier.<C>` and `zoneOpen.<C>` from the color choice; `seals` on Warden defeats.
-5. **One complete zone as the template** (suggest Green, since its tileset and trees are what Route 1 already uses):
-   gate pass with tier guard, gate town with all services and its Waystone stop, three routes, two inner passes, gym
-   placeholder, three optional dungeons.
+5. **The Green zone as the template** (§4.3): gate pass, gate town with all services and its Waystone stop, the
+   route A maze, inner pass 1, the route B corridor with its clearings and four random dungeons, inner pass 2, the
+   route C field with random spawns, the zone town, a Warden's dungeon placeholder.
 6. **`make_zone_maze.py`**, built from what the first zone needed; redraw the first zone with it to prove the tool.
 7. **Waystone destination list** (Java; the Emberbrook Waystone becomes this item) and **`enemyByTier`** (Java), once
    the template zone shows how many slots there are.
@@ -451,3 +509,8 @@ Fragments** (quest items, one per Paragon, named "Summit Key Fragment (White-Blu
   fragment of the Summit Key, and the champion gate opens only with all five (§3.2, §5).
 - **The five enemy pairs** appear as optional bosses, each in the border town that shares no color with it, after that
   town's Paragon is beaten (§3.2).
+- **Each zone has two towns**: the gate town (all services, Waystone stop) and a zone town before the Warden (a few
+  services including an inn, heals, not a Waystone stop). The Warden's dungeon is entered from the zone town (§4).
+- **Routes have three styles**: route A a maze, route B a corridor with side paths to clearings, route C an open field
+  with random spawns (§4, §4.3).
+- **Random dungeons** draw their opponents from Concordia's tier deck pools (§4.4).
