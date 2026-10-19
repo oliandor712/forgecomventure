@@ -318,6 +318,9 @@ What the code allows today:
 - **The Seal Angel can't be walked past.** It stands in the passage out of the bedroom (a visible angel and two
   hidden triggers fill the 3-tile gap), and all three are deleted once the color is chosen. The new game's first box
   is the main quest's prologue (the Seal-day raid).
+- **A defeat dialog loads while the reward screen is opening.** Its node actions run right away, so an action that
+  completes a quest (like the rival's `tutorialDone`) goes on the node's Continue option instead. Otherwise the
+  quest's epilogue box opens over the rewards and the reward screen closes without flipping the cards.
 - **Dialog nodes are checked in order, and each node's actions run as it loads.** A later node's condition sees the
   earlier node's changes. Put the narrower condition first, as the raiders' defeat dialogs do: "this was the last
   raider" (counter = 4) comes before "raiders are still loose" (counter < 4), whose action raises the counter.

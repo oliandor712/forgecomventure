@@ -79,7 +79,7 @@
   <properties>
    <property name="enemy" value="Rival Black"/>
    <property name="dialog" value='[{"text": "Your rival blocks the village gate, their deck chosen by the angels. \"I want to beat you in front of the whole village.\"", "options": [{"name": "(Duel)", "action": [{"battleWithActorID": -1}]}]}]'/>
-   <property name="defeatDialog" value='[{"action": [{"deleteMapObject": -1}, {"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]'/>
+   <property name="defeatDialog" value='[{"text": "Your rival lowers their cards and laughs. \"Not bad. This isn&apos;t over.\"", "action": [{"deleteMapObject": -1}], "options": [{"name": "(Continue)", "action": [{"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]}]'/>
    <property name="hidden" type="bool" value="True"/>
    <property name="inactive" type="bool" value="True"/>
    <property name="threatRange" type="int" value="56"/>
@@ -90,7 +90,7 @@
   <properties>
    <property name="enemy" value="Rival Red"/>
    <property name="dialog" value='[{"text": "Your rival blocks the village gate, their deck chosen by the angels. \"I want to beat you in front of the whole village.\"", "options": [{"name": "(Duel)", "action": [{"battleWithActorID": -1}]}]}]'/>
-   <property name="defeatDialog" value='[{"action": [{"deleteMapObject": -1}, {"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]'/>
+   <property name="defeatDialog" value='[{"text": "Your rival lowers their cards and laughs. \"Not bad. This isn&apos;t over.\"", "action": [{"deleteMapObject": -1}], "options": [{"name": "(Continue)", "action": [{"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]}]'/>
    <property name="hidden" type="bool" value="True"/>
    <property name="inactive" type="bool" value="True"/>
    <property name="threatRange" type="int" value="56"/>
@@ -101,7 +101,7 @@
   <properties>
    <property name="enemy" value="Rival Green"/>
    <property name="dialog" value='[{"text": "Your rival blocks the village gate, their deck chosen by the angels. \"I want to beat you in front of the whole village.\"", "options": [{"name": "(Duel)", "action": [{"battleWithActorID": -1}]}]}]'/>
-   <property name="defeatDialog" value='[{"action": [{"deleteMapObject": -1}, {"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]'/>
+   <property name="defeatDialog" value='[{"text": "Your rival lowers their cards and laughs. \"Not bad. This isn&apos;t over.\"", "action": [{"deleteMapObject": -1}], "options": [{"name": "(Continue)", "action": [{"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]}]'/>
    <property name="hidden" type="bool" value="True"/>
    <property name="inactive" type="bool" value="True"/>
    <property name="threatRange" type="int" value="56"/>
@@ -112,7 +112,7 @@
   <properties>
    <property name="enemy" value="Rival White"/>
    <property name="dialog" value='[{"text": "Your rival blocks the village gate, their deck chosen by the angels. \"I want to beat you in front of the whole village.\"", "options": [{"name": "(Duel)", "action": [{"battleWithActorID": -1}]}]}]'/>
-   <property name="defeatDialog" value='[{"action": [{"deleteMapObject": -1}, {"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]'/>
+   <property name="defeatDialog" value='[{"text": "Your rival lowers their cards and laughs. \"Not bad. This isn&apos;t over.\"", "action": [{"deleteMapObject": -1}], "options": [{"name": "(Continue)", "action": [{"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]}]'/>
    <property name="hidden" type="bool" value="True"/>
    <property name="inactive" type="bool" value="True"/>
    <property name="threatRange" type="int" value="56"/>
@@ -123,7 +123,7 @@
   <properties>
    <property name="enemy" value="Rival Blue"/>
    <property name="dialog" value='[{"text": "Your rival blocks the village gate, their deck chosen by the angels. \"I want to beat you in front of the whole village.\"", "options": [{"name": "(Duel)", "action": [{"battleWithActorID": -1}]}]}]'/>
-   <property name="defeatDialog" value='[{"action": [{"deleteMapObject": -1}, {"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]'/>
+   <property name="defeatDialog" value='[{"text": "Your rival lowers their cards and laughs. \"Not bad. This isn&apos;t over.\"", "action": [{"deleteMapObject": -1}], "options": [{"name": "(Continue)", "action": [{"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]}]'/>
    <property name="hidden" type="bool" value="True"/>
    <property name="inactive" type="bool" value="True"/>
    <property name="threatRange" type="int" value="56"/>
