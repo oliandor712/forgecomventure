@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+ <tileset firstgid="1" source="../../../common/maps/tileset/buildings.tsx"/>
+ <object name="Commander Hall" class="commanderhall" gid="1251" width="16" height="16">
+  <properties>
+   <property name="hallName" value="Commander Hall"/>
+   <property name="signAtlas" value="maps/tileset/buildings.atlas"/>
+   <property name="signSprite" value="LegendShop"/>
+   <property name="signXOffset" type="float" value="16"/>
+   <property name="signYOffset" type="float" value="-16"/>
+   <property name="type" value="commanderhall"/>
+  </properties>
+ </object>
+</template>

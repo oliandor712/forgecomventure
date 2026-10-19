@@ -482,6 +482,28 @@ What data can and can't enforce:
 
 Because Phase 1 can only partly enforce this, **J-CI and J-Hall are the first Java work after the Phase 1 slice** (Phase 2).
 
+### 6.2a The Commander Hall (built)
+
+The Hall is a shop of its own type (map object `commanderhall`; Mossgate's stands where the Equipment-card shop
+was, with the `LegendShop` sign). It reads the roster in `world/commanders.json` (`commanderHall` in `config.json`):
+10 commanders per color in three bands.
+
+| Band | Per color | Unlocked | Who |
+|---|---|---|---|
+| Mediocre | 3 | from the start | the two Tier 1 deck commanders of that color, plus one more |
+| Seasoned | 5 | your starter from the start; the rest when found | the starter, the Tier 2 commanders the route's duelists and cave bosses play, and two found beyond Mossgate |
+| Legendary | 2 | Wardens | the Tier 3 deck commander and one more |
+
+- The Hall shows only the commanders of colors you've unlocked (the `colX` character flags), in band order. Each
+  card has a button: **Choose**, **Your commander**, or the hint for finding a locked one.
+- Choosing makes that card the selected deck's commander and keeps the 99 (the duel still cuts off-color cards).
+  If you don't own the card, the Hall gives you one. A copy in the 99 is taken out, to keep the deck singleton.
+- Unlocks are the character flag `hall.<card name>`. Beating an enemy whose `enemies.json` entry has
+  `unlockCommander` sets it and shows a notice; any dialog can set it with `setCharacterFlag`. On the Mossgate
+  route each duelist and cave boss unlocks the commander of the deck it plays.
+- While a roster is configured, the deck editor can't set, move or remove a commander (J-Hall); the Hall is the only
+  place to change it. Color identity is enforced by the Hall offering only unlocked colors.
+
 ### 6.3 Quests and flags
 
 - The new plane has its own `world/quests.json`. New games always start **quest 28** (hard-coded in
@@ -581,7 +603,7 @@ this document, listed in §10.
 | **J-Start** | Seal Angels' color choice | Replace the new-game color picker with the P1 scene. Today `WorldSave.generateNewWorld` takes the starting color at creation, so the starter deck has to be assigned after the choice. Until then, the new-game picker stays, and the angels confirm it | Medium | 2 |
 | **J-Gender** | Rival of the opposite gender, chosen automatically | A dialog condition `isFemale` (in `MapDialog` and `MenuScene`, next to `colorIdentity`). Optionally a `$(rivalname)` token next to `$(playername)` in `AdventureQuestData` | Small | 2 |
 | **J-CI** | Commander limited to unlocked colors | Read the `colX` flags. Enforce in `AdventureDeckEditor` (commander section) and in `DuelScene.applyAdventureDeckRules` | Small–medium | 2 |
-| **J-Hall** | Commander change only at Halls | A `commanderHall` map object type, like `inn`, that opens the deck editor with the commander section editable. Locked elsewhere | Medium | 2 |
+| **J-Hall** | Commander change only at Halls | **Built** (§6.2a): a `commanderhall` map object opens the Commander Hall shop; the deck editor's commander slot is locked | Medium | 2 |
 
 | J7 | Portraits in dialog | A `portrait` field in `DialogData`, shown by `MapDialog` (existing avatar art) | Small | 3 |
 | J5 | Chapter / Seal UI | A Seal case screen (the badge case analog) and chapter title cards | Medium | 3 |

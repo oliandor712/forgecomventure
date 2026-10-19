@@ -631,6 +631,23 @@ public class MapStage extends GameStage {
                             }
                         }
                         break;
+                    case "commanderhall":
+                        MapActor hallActor = new OnCollide(() -> {
+                            RewardScene.instance().loadCommanderHall(prop.containsKey("hallName") ? prop.get("hallName").toString() : "Commander Hall");
+                            Forge.switchScene(RewardScene.instance());
+                        });
+                        addMapActor(obj, hallActor);
+                        if (prop.containsKey("signAtlas") && prop.containsKey("signSprite")) {
+                            try {
+                                TextureSprite sprite = new TextureSprite(Config.instance().getAtlasSprite(prop.get("signAtlas").toString(), prop.get("signSprite").toString()));
+                                sprite.setX(hallActor.getX() + Float.parseFloat(prop.containsKey("signXOffset") ? prop.get("signXOffset").toString() : "0"));
+                                sprite.setY(hallActor.getY() + Float.parseFloat(prop.containsKey("signYOffset") ? prop.get("signYOffset").toString() : "0"));
+                                addMapActor(sprite);
+                            } catch (Exception e) {
+                                System.err.print("Can not create Texture for the Commander Hall sign");
+                            }
+                        }
+                        break;
                     case "arena":
                         addMapActor(obj, new OnCollide(() -> {
                             ArenaData arenaData = JSONStringLoader.parse(ArenaData.class, prop.get("arena").toString(), "");
@@ -909,6 +926,7 @@ public class MapStage extends GameStage {
                     currentMob.resetCollisionHeight();
                     float deathDuration = currentMob.getActionAnimationDuration(CharacterSprite.AnimationTypes.Death, 0.3f);
                     startPause(deathDuration, () -> {
+                        CommanderHall.unlock(currentMob.getData().unlockCommander);
                         MapStage.this.getReward();
                         AdventureQuestController.instance().updateQuestsWin(currentMob,enemies);
                         AdventureQuestController.instance().showQuestDialogs(MapStage.this);

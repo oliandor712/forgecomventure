@@ -10,6 +10,7 @@ import forge.adventure.data.AdventureEventData;
 import forge.adventure.data.ItemData;
 import forge.adventure.player.AdventurePlayer;
 import forge.adventure.util.AdventureEventController;
+import forge.adventure.util.CommanderHall;
 import forge.adventure.util.Config;
 import forge.adventure.util.Current;
 import forge.assets.FImage;
@@ -437,6 +438,16 @@ public class AdventureDeckEditor extends FDeckEditor {
             super.initialize();
             cardManager.setBtnAdvancedSearchOptions(true);
             scheduleRefresh();
+        }
+
+        @Override
+        protected boolean canEditMainCommander() {
+            return !CommanderHall.enabled() && super.canEditMainCommander(); //commanders change only at a Commander Hall
+        }
+
+        @Override
+        protected boolean canBePartnerCommander(final PaperCard card) {
+            return !CommanderHall.enabled() && super.canBePartnerCommander(card);
         }
 
         @Override
@@ -1119,6 +1130,16 @@ public class AdventureDeckEditor extends FDeckEditor {
         protected AdventureDeckSectionPage(DeckSection deckSection, ItemManagerConfig config) {
             super(new AdventureCardManager(), deckSection, config, deckSection.getLocalizedShortName(), iconFromDeckSection(deckSection));
             cardManager.setBtnAdvancedSearchOptions(deckSection == DeckSection.Main);
+        }
+
+        @Override
+        protected boolean canEditMainCommander() {
+            return !CommanderHall.enabled() && super.canEditMainCommander(); //commanders change only at a Commander Hall
+        }
+
+        @Override
+        protected boolean canBePartnerCommander(final PaperCard card) {
+            return !CommanderHall.enabled() && super.canBePartnerCommander(card);
         }
 
         @Override

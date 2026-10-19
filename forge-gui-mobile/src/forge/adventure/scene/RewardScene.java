@@ -19,6 +19,7 @@ import forge.Forge;
 import forge.adventure.character.ShopActor;
 import forge.haptic.HapticEngine;
 import forge.localinstance.properties.ForgePreferences.FPref;
+import forge.adventure.data.CommanderHallData;
 import forge.adventure.data.RewardData;
 import forge.adventure.data.ShopData;
 import forge.adventure.player.AdventurePlayer;
@@ -35,6 +36,7 @@ import forge.util.ItemPool;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -64,7 +66,8 @@ public class RewardScene extends UIScene {
         Loot,
         QuestReward,
         RewardChoice,
-        EventReward
+        EventReward,
+        CommanderHall
     }
 
     Type type;
@@ -345,6 +348,27 @@ public class RewardScene extends UIScene {
         this.collectionPool.addAllFlat(AdventurePlayer.current().getCollectionCards(true).toFlatList());
     }
 
+    private final Map<Reward, CommanderHallData> hallEntries = new HashMap<>();
+    private String hallName = "";
+
+    /** Shows the Commander Hall: the roster commanders in the player's colors, to pick the deck's commander. */
+    public void loadCommanderHall(String name) {
+        hallName = name;
+        hallEntries.clear();
+        Array<Reward> rewards = new Array<>();
+        for (CommanderHallData entry : CommanderHall.visibleEntries()) {
+            PaperCard card = CommanderHall.card(entry);
+            if (card == null) {
+                System.err.println("Commander Hall: card not found: " + entry.card);
+                continue;
+            }
+            Reward reward = new Reward(card);
+            hallEntries.put(reward, entry);
+            rewards.add(reward);
+        }
+        loadRewards(rewards, Type.CommanderHall, null);
+    }
+
     public void loadRewards(Array<Reward> newRewards, Type type, ShopActor shopActor) {
         // Merge Gold and Shards rewards into single entries
         int totalGold = 0;
@@ -377,7 +401,7 @@ public class RewardScene extends UIScene {
 
         headerLabel.clearListeners();
         // Sort the rewards based on the rarity of the card inside the reward/ lets give items rarity
-        newRewards.sort(Comparator.comparing(reward -> {
+        if (type != Type.CommanderHall) newRewards.sort(Comparator.comparing(reward -> {
             if (reward.getCard() != null && reward.getCard().getRarity() != null) {
                 return reward.getCard().getRarity().ordinal();
             }
@@ -442,6 +466,13 @@ public class RewardScene extends UIScene {
             if (this.marketBackgroundImg != null) {
                 this.marketBackgroundImg.setVisible(true);
             }
+        } else if (type == Type.CommanderHall) {
+            headerLabel.setVisible(true);
+            headerLabel.setText("[%?SHINY]{GRADIENT}" + hallName + "{ENDGRADIENT}");
+            headerLabel.skipToTheEnd();
+            if (this.marketBackgroundImg != null) {
+                this.marketBackgroundImg.setVisible(true);
+            }
         } else {
             headerLabel.setVisible(false);
             headerLabel.setText("");
@@ -490,6 +521,10 @@ public class RewardScene extends UIScene {
                 headerLabel.skipToTheEnd();
                 restockButton.setVisible(false);
                 break;
+            case CommanderHall:
+                restockButton.setVisible(false);
+                restockButton.setDisabled(true);
+                break;
             case RewardChoice:
                 restockButton.setVisible(false);
                 headerLabel.setVisible(remainingSelections > 0);
@@ -498,7 +533,7 @@ public class RewardScene extends UIScene {
         }
         for (int h = 1; h < targetHeight; h++) {
             cardHeight = h;
-            if (type == Type.Shop || type == Type.RewardChoice) {
+            if (type == Type.Shop || type == Type.RewardChoice || type == Type.CommanderHall) {
                 cardHeight += doneButton.getHeight();
             }
             //cardHeight=targetHeight/i;
@@ -571,7 +606,7 @@ public class RewardScene extends UIScene {
                     lastRowXAdjust = ((numberOfColumns * cardWidth) - (lastRowCount * cardWidth)) / 2;
             }
 
-            RewardActor actor = new RewardActor(reward, type == Type.EventReward || type == Type.Loot || type == Type.QuestReward, type, type == Type.Shop && (numberOfRows > 2 || numberOfColumns > 2));
+            RewardActor actor = new RewardActor(reward, type == Type.EventReward || type == Type.Loot || type == Type.QuestReward, type, (type == Type.Shop || type == Type.CommanderHall) && (numberOfRows > 2 || numberOfColumns > 2));
 
             actor.setBounds(lastRowXAdjust + xOff + cardWidth * (i % numberOfColumns) + spacing, yOff + cardHeight * currentRow + spacing, cardWidth - spacing * 2, cardHeight - spacing * 2);
 
@@ -585,6 +620,13 @@ public class RewardScene extends UIScene {
                     stage.addActor(buyCardButton);
                     addToSelectable(buyCardButton);
                 }
+            } else if (type == Type.CommanderHall) {
+                if (currentRow != ((i + 1) / numberOfColumns))
+                    yOff += doneButton.getHeight();
+                HallButton hallButton = new HallButton(actor, hallEntries.get(reward), doneButton);
+                generated.add(hallButton);
+                stage.addActor(hallButton);
+                addToSelectable(hallButton);
             } else if (type == Type.RewardChoice) {
                 if (currentRow != ((i + 1) / numberOfColumns))
                     yOff += doneButton.getHeight();
@@ -604,6 +646,59 @@ public class RewardScene extends UIScene {
         if (type == Type.Shop) {
             updateBuyButtons();
             updateRestockButton();
+        }
+        if (type == Type.CommanderHall)
+            updateHallButtons();
+    }
+
+    private void updateHallButtons() {
+        for (Actor actor : new Array.ArrayIterator<>(generated)) {
+            if (actor instanceof HallButton hallButton) {
+                hallButton.update();
+            }
+        }
+    }
+
+    /** Under each Hall card: pick it as the commander, or the hint for finding it while it's locked. */
+    private class HallButton extends TextraButton {
+        private final RewardActor rewardActor;
+        private final CommanderHallData entry;
+
+        void update() {
+            boolean unlocked = CommanderHall.isUnlocked(entry);
+            boolean current = CommanderHall.isCurrent(entry);
+            String band = entry.band >= 3 ? "Legendary" : entry.band == 2 ? "Seasoned" : "Mediocre";
+            if (current)
+                setText("[%75]" + band + "\n[GREEN]Your commander");
+            else if (unlocked)
+                setText("[%75]" + band + "\nChoose");
+            else
+                setText("[%60]" + band + " - locked\n" + (entry.hint == null || entry.hint.isEmpty() ? "Not found yet." : entry.hint));
+            setDisabled(!unlocked || current);
+            rewardActor.getColor().a = unlocked ? 1f : 0.45f;
+        }
+
+        HallButton(RewardActor actor, CommanderHallData entry, TextraButton style) {
+            super("", style.getStyle(), Controls.getTextraFont());
+            this.rewardActor = actor;
+            this.entry = entry;
+            setHeight(style.getHeight());
+            setWidth(actor.getWidth());
+            setX(actor.getX());
+            setY(actor.getY() - getHeight());
+            addListener(new ClickListener() {
+                @Override
+                public void clicked(InputEvent event, float x, float y) {
+                    if (isDisabled())
+                        return;
+                    if (CommanderHall.choose(entry)) {
+                        SoundSystem.instance.play(SoundEffectType.FlipCoin, false);
+                        HapticEngine.vibrate(FPref.UI_VIBRATE_ON_SHOP_ACTION, 5);
+                        updateHallButtons();
+                    }
+                }
+            });
+            update();
         }
     }
 

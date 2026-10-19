@@ -49,6 +49,7 @@ public class EnemyData implements Serializable {
     public String bossIntro;
     public boolean ante = false;                   //Duel is for ante (only used when ConfigData.anteByEncounter is set).
     public boolean raider = false;                 //Cards this enemy wins from the player are held and sold back in the shop.
+    public String unlockCommander;                 //Beating this enemy unlocks this Commander Hall commander (CommanderHallData.card).
 
     public EnemyData() {
     }
@@ -72,6 +73,7 @@ public class EnemyData implements Serializable {
         teamNumber      = enemyData.teamNumber;
         bossInsult      = enemyData.bossInsult;
         bossIntro       = enemyData.bossIntro;
+        unlockCommander = enemyData.unlockCommander;
         nextEnemy       = enemyData.nextEnemy == null ? null : new EnemyData(enemyData.nextEnemy);
         nameOverride    = enemyData.nameOverride == null ? "" : enemyData.nameOverride;
         questTags       = enemyData.questTags.clone();

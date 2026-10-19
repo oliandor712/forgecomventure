@@ -365,6 +365,7 @@
  },
 {
   "name": "Mossback Treant",
+  "unlockCommander": "Rishkar, Peema Renegade",
   "sprite": "sprites/enemy/plant/treant_large.atlas",
   "deck": [
    "decks/tier2/T2_G_Rishkar.dck"
@@ -392,6 +393,7 @@
  },
 {
   "name": "Hollow Shade",
+  "unlockCommander": "Grandmother Sengir",
   "sprite": "sprites/enemy/undead/shade.atlas",
   "deck": [
    "decks/tier2/T2_B_Sengir.dck"
@@ -419,6 +421,7 @@
  },
 {
   "name": "Deepcave Yeti",
+  "unlockCommander": "Tahngarth, Talruum Hero",
   "sprite": "sprites/enemy/monstrosity/yeti.atlas",
   "deck": [
    "decks/tier2/T2_R_Tahngarth.dck"
@@ -446,6 +449,7 @@
  },
 {
   "name": "Duelist Bram",
+  "unlockCommander": "Danitha Capashen, Paragon",
   "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
   "deck": [
    "decks/tier2/T2_W_Danitha.dck",
@@ -468,6 +472,7 @@
  },
 {
   "name": "Duelist Mira",
+  "unlockCommander": "Sai, Master Thopterist",
   "sprite": "sprites/enemy/humanoid/conjurer.atlas",
   "deck": [
    "decks/tier2/T2_U_Sai.dck",
@@ -490,6 +495,7 @@
  },
 {
   "name": "Duelist Corvin",
+  "unlockCommander": "Fumulus, the Infestation",
   "sprite": "sprites/enemy/humanoid/knight.atlas",
   "deck": [
    "decks/tier2/T2_B_Fumulus.dck"
@@ -511,6 +517,7 @@
  },
 {
   "name": "Duelist Sela",
+  "unlockCommander": "Eron the Relentless",
   "sprite": "sprites/enemy/humanoid/swordsman_2.atlas",
   "deck": [
    "decks/tier2/T2_R_Eron.dck"
@@ -532,6 +539,7 @@
  },
 {
   "name": "Duelist Fenn",
+  "unlockCommander": "Mirri, Cat Warrior",
   "sprite": "sprites/enemy/humanoid/swordsman_3.atlas",
   "deck": [
    "decks/tier2/T2_G_Mirri.dck"

@@ -230,5 +230,6 @@
   "respawnMap": "../Concordia/maps/map/emberbrook_house.tmx",
   "respawnObjectId": 0,
   "startMap": "../Concordia/maps/map/emberbrook_house.tmx",
-  "startObjectId": 0
+  "startObjectId": 0,
+  "commanderHall": "world/commanders.json"
 }
