@@ -504,8 +504,13 @@ was, with the `LegendShop` sign). It reads the roster in `world/commanders.json`
   `unlockCommander` sets it and shows a notice; any dialog can set it with `setCharacterFlag`.
 - While a roster is configured, the deck editor can't set, move or remove a commander (J-Hall); the Hall is the only
   place to change it. Color identity is enforced by the Hall offering only unlocked colors.
-- The roster leaves out Game Changers, AI-flagged and restricted cards, and cards printed only in Universes Beyond
-  sets. A few cEDH-level legends were swapped for fair ones.
+- A commander is anything Forge's `CardRules.canBeCommander()` accepts: a legendary creature (double-faced cards
+  that can be one included), a legendary Vehicle, a Spacecraft with printed power and toughness, or a card that says
+  it "can be your commander" (planeswalkers such as Teferi, Temporal Archmage or Daretti, Scrap Savant). Backgrounds
+  don't count on their own. `tools/concordia/deckgen/CommanderScan.java` lists every such card with its color
+  identity; the roster has 130 legendary creatures, 10 enchantment creatures, 8 planeswalkers and 2 Vehicles.
+- The roster leaves out Game Changers, restricted cards and cards printed only in Universes Beyond sets. A few
+  cEDH-level legends were swapped for fair ones. AI flags don't matter here: only the player uses these.
 
 ### 6.3 Quests and flags
 
