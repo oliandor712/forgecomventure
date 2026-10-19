@@ -93,6 +93,7 @@ public class DialogData implements Serializable {
         public int addMapReputation = 0;  //Gives the player X reputation points in this POI. Negative to take.
         public String POIReference; //used with addMapReputation when a quest step affects reputation in another location
         public String returnStolenFrom; //Return every card this raider holds to the player, win or lose.
+        public String gateTo;           //Name of a POI: leave the map and enter that POI (a gate, like a map entry's gateTo).
         public String setStarterColor; //Replace the starter deck with the one for these colors (for example "W").
 
         public ActionData(){}
@@ -109,6 +110,7 @@ public class DialogData implements Serializable {
             giveBlessing = other.giveBlessing;
             setColorIdentity = other.setColorIdentity;
             returnStolenFrom = other.returnStolenFrom;
+            gateTo = other.gateTo;
             setStarterColor = other.setStarterColor;
             advanceQuestFlag = other.advanceQuestFlag;
             advanceMapFlag = other.advanceMapFlag;

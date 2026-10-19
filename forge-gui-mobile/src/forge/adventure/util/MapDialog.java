@@ -446,6 +446,9 @@ public class MapDialog {
             if (E.setStarterColor != null && !E.setStarterColor.isEmpty()) { //Replaces the starter deck with one for these colors
                 Current.player().replaceStarterColor(E.setStarterColor);
             }
+            if (E.gateTo != null && !E.gateTo.isEmpty()) { //Leave the map and enter another POI
+                stage.gateTo(E.gateTo, true);
+            }
             if (E.returnStolenFrom != null && !E.returnStolenFrom.isEmpty()) { //Returns the cards a raider holds
                 for (PaperCard card : Current.player().takeStolenCards(E.returnStolenFrom)) {
                     Current.player().addCard(card);

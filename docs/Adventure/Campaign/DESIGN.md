@@ -323,6 +323,12 @@ What the code allows today:
   returns the first one. Leave the key out for a biome with no wild encounters.
 - **"Easy" starter decks are the strongest.** The difficulty name describes the player's experience, so Realm of
   Legends' `_Easy` starters are full Commander precons. Enemy decks must be built weak on purpose (§5).
+- **Regions are joined by gates** (one overworld per save; Forge can't hold several). A gate is a map `entry` or
+  `portal` with a `gateTo` property naming a POI (its `name` in `points_of_interest.json`, not its display name).
+  Walking into it leaves the map, puts the player on the world map next to that POI and enters it; with
+  `gateEnter` set to `false` the player is left standing outside instead. A dialog action `{"gateTo": "<POI>"}` does
+  the same from an NPC (a ferryman, a Warden's portal). The move autosaves. Wall regions off from each other with
+  ocean or impassable terrain so gates are the only way between them.
 - **The game can only be saved on the overworld or inside town/capital maps** (`StartScene.enter`). So the overworld
   must remain the layer that connects locations. We can't make the whole region one giant chain of maps, because the
   player could never save on a route.

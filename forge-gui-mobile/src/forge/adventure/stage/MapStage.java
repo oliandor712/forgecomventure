@@ -26,6 +26,7 @@ import forge.Forge;
 import forge.adventure.character.*;
 import forge.adventure.data.*;
 import forge.adventure.player.AdventurePlayer;
+import forge.adventure.pointofintrest.PointOfInterest;
 import forge.adventure.pointofintrest.PointOfInterestChanges;
 import forge.adventure.scene.*;
 import forge.adventure.util.*;
@@ -36,6 +37,7 @@ import forge.adventure.world.WorldSave;
 import forge.gui.FThreads;
 import forge.haptic.HapticEngine;
 import forge.localinstance.properties.ForgePreferences.FPref;
+import forge.screens.CoverScreen;
 import forge.screens.TransitionScreen;
 import forge.sound.SoundEffectType;
 import forge.sound.SoundSystem;
@@ -428,6 +430,8 @@ public class MapStage extends GameStage {
                         int entryTargetId = (!prop.containsKey("teleportObjectId") || prop.get("teleportObjectId") ==null || prop.get("teleportObjectId").toString().isEmpty())? 0: Integer.parseInt(prop.get("teleportObjectId").toString());
 
                         EntryActor entry = new EntryActor(this, id, targetMap, x, y, w, h, direction, currentMap, entryTargetId);
+                        if (prop.containsKey("gateTo"))
+                            entry.setGate(prop.get("gateTo").toString(), !prop.containsKey("gateEnter") || !prop.get("gateEnter").toString().equals("false"));
                         if (prop.containsKey("spawn") && prop.get("spawn").toString().equals("true")) {
                             spawnClassified.add(entry);
                         } else if (canStillSpawnPlayerThere) {
@@ -458,6 +462,8 @@ public class MapStage extends GameStage {
                         int portalTargetId = (!prop.containsKey("teleportObjectId") || prop.get("teleportObjectId") ==null || prop.get("teleportObjectId").toString().isEmpty())? 0: Integer.parseInt(prop.get("teleportObjectId").toString());
 
                         PortalActor portal = new PortalActor(this, id, prop.get("teleport").toString(), px, py, pw, ph, prop.get("direction").toString(), currentMap, portalTargetId, portalSpriteToUse);
+                        if (prop.containsKey("gateTo"))
+                            portal.setGate(prop.get("gateTo").toString(), !prop.containsKey("gateEnter") || !prop.get("gateEnter").toString().equals("false"));
 
                         if (prop.containsKey("activeQuestFlag") && Current.player().checkQuestFlag(prop.get("activeQuestFlag").toString())){
                             portal.setAnimation("active");
@@ -784,6 +790,36 @@ public class MapStage extends GameStage {
 
     public boolean exitDungeon(boolean defeated, boolean defeatedByBoss) {
         return exitDungeon(defeated, defeatedByBoss, false);
+    }
+
+    private boolean gateInProgress = false;
+
+    /** Gate: leave this map and come out at another POI on the world map, entering it unless enter is false. */
+    public void gateTo(String poiName, boolean enter) {
+        if (gateInProgress)
+            return;
+        PointOfInterest target = Current.world().findPointsOfInterest(poiName);
+        if (target == null) {
+            System.err.println("Gate target not found: no POI named " + poiName + ", leaving to the world map instead.");
+            exitDungeon(false, false);
+            return;
+        }
+        gateInProgress = true;
+        Forge.advFreezePlayerControls = true;
+        stop();
+        FThreads.invokeInEdtNowOrLater(() -> Forge.setTransitionScreen(new CoverScreen(() -> {
+            Forge.advFreezePlayerControls = false;
+            gateInProgress = false;
+            exitDungeon(false, false);
+            //next to the POI, the offset vanilla uses so the player does not stand on it
+            WorldStage.getInstance().setPosition(new Vector2(target.getPosition().x - 16f, target.getPosition().y + 16f));
+            if (enter)
+                WorldStage.getInstance().loadPOI(target); //leaving the world map stores this position
+            else
+                WorldStage.getInstance().getPlayerSprite().storePos();
+            WorldSave.getCurrentSave().autoSave();
+            Forge.clearTransitionScreen();
+        }, ScreenUtil.getInstance().takeScreenshot())));
     }
 
     public boolean exitDungeon(boolean defeated, boolean defeatedByBoss, boolean respawnHome) {

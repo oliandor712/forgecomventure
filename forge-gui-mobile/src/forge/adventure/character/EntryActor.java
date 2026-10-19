@@ -17,6 +17,8 @@ public class EntryActor extends MapActor {
     protected final String direction;
     protected final int entryTargetObject;
     protected String currentMap;
+    protected String gateTo = "";    //name of a POI: walking in comes out at that POI on the world map
+    protected boolean gateEnter = true; //with gateTo, also enter that POI
 
     public EntryActor(MapStage stage, int id, String targetMap, float x, float y, float w, float h, String direction, String currentMap, int entryTargetObject) {
         super(id);
@@ -35,8 +37,17 @@ public class EntryActor extends MapActor {
         return stage;
     }
 
+    public void setGate(String poiName, boolean enter) {
+        gateTo = poiName == null ? "" : poiName;
+        gateEnter = enter;
+    }
+
     @Override
     public void onPlayerCollide() {
+        if (!gateTo.isEmpty()) {
+            stage.gateTo(gateTo, gateEnter);
+            return;
+        }
         if (targetMap == null || targetMap.isEmpty()) {
             stage.exitDungeon(false, false);
         } else {
