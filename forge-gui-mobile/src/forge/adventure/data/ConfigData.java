@@ -16,6 +16,7 @@ public class ConfigData {
     public int minDeckSize;
     public int maxNumberOfDecks;
     public float playerBaseSpeed;
+    public float worldSpeedModifier = 1f;           //Multiplies the player's walking speed on the world map only (towns and dungeons keep playerBaseSpeed).
     public String[] colorIds;
     public String[] colorIdNames;
     public String[] starterEditions;

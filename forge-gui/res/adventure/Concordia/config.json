@@ -3,6 +3,7 @@
   "screenHeight": 270,
   "skin": "skin/ui_skin.json",
   "playerBaseSpeed": 60,
+  "worldSpeedModifier": 1.5,
   "minDeckSize": 98,
   "colorIds": [
     "W",

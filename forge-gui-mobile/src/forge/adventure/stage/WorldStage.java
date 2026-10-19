@@ -370,7 +370,8 @@ public class WorldStage extends GameStage implements SaveFileContent {
         World world = WorldSave.getCurrentSave().getWorld();
         int currentBiome = World.highestBiome(world.getBiome((int) ((player.getX() + player.getWidth() / 2f) / world.getTileSize()), (int) (player.getY() / world.getTileSize())));
         List<BiomeData> biomeData = WorldSave.getCurrentSave().getWorld().getData().GetBiomes();
-        float sprintingMod = currentModifications.containsKey(PlayerModification.Sprint) ? 2 : 1;
+        float sprintingMod = (currentModifications.containsKey(PlayerModification.Sprint) ? 2 : 1)
+                * Config.instance().getConfigData().worldSpeedModifier;
         if (biomeData.size() <= currentBiome) {// "if isOnRoad
             player.setMoveModifier(1.5f * sprintingMod);
             return;
