@@ -64,14 +64,44 @@ public class CommanderHall {
         return true;
     }
 
-    /** The roster entries the Hall shows: the player's colors, in band order. */
-    public static List<CommanderHallData> visibleEntries() {
-        List<CommanderHallData> out = new ArrayList<>();
-        for (int band = 1; band <= 3; band++)
-            for (CommanderHallData entry : roster())
-                if (entry.band == band && colorsUnlocked(entry))
-                    out.add(entry);
+    /** The Hall's pages, one per color and band the player can see, as "<color>:<band>", in roster order. */
+    public static List<String> pages() {
+        List<String> out = new ArrayList<>();
+        for (CommanderHallData entry : roster()) {
+            String key = entry.color + ":" + entry.band;
+            if (colorsUnlocked(entry) && !out.contains(key))
+                out.add(key);
+        }
         return out;
+    }
+
+    /** The roster entries on one page ("<color>:<band>"). */
+    public static List<CommanderHallData> page(String key) {
+        List<CommanderHallData> out = new ArrayList<>();
+        for (CommanderHallData entry : roster())
+            if (key.equals(entry.color + ":" + entry.band) && colorsUnlocked(entry))
+                out.add(entry);
+        return out;
+    }
+
+    /** The page the current commander is on, or -1. */
+    public static int pageOfCurrent(List<String> pages) {
+        CommanderHallData current = find(currentCommander());
+        return current == null ? -1 : pages.indexOf(current.color + ":" + current.band);
+    }
+
+    public static String bandName(int band) {
+        return band >= 3 ? "Legendary" : band == 2 ? "Seasoned" : "Mediocre";
+    }
+
+    public static String colorName(String color) {
+        StringBuilder out = new StringBuilder();
+        for (char c : color.toCharArray()) {
+            if (out.length() > 0)
+                out.append("-");
+            out.append(switch (c) { case 'W' -> "White"; case 'U' -> "Blue"; case 'B' -> "Black"; case 'R' -> "Red"; case 'G' -> "Green"; default -> String.valueOf(c); });
+        }
+        return out.toString();
     }
 
     public static CommanderHallData find(String card) {

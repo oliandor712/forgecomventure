@@ -167,6 +167,7 @@
  },
 {
   "name": "Wild Hidden Bush",
+  "unlockCommander": "Yedora, Grave Gardener",
   "sprite": "sprites/enemy/plant/hiddenbush.atlas",
   "deck": [
    "decks/tier1/T1_G_Ruxa.dck"
@@ -191,6 +192,7 @@
  },
 {
   "name": "Wild Thicket Pixie",
+  "unlockCommander": "Esior, Wardwing Familiar",
   "sprite": "sprites/enemy/fey/pixie.atlas",
   "deck": [
    "decks/tier1/T1_U_Siani.dck"
@@ -215,6 +217,7 @@
  },
 {
   "name": "Wild Mossfungus",
+  "unlockCommander": "Tormod, the Desecrator",
   "sprite": "sprites/enemy/plant/fungus.atlas",
   "deck": [
    "decks/tier1/T1_B_Ozox.dck",
@@ -240,6 +243,7 @@
  },
 {
   "name": "Wild Briar Satyr",
+  "unlockCommander": "Anax, Hardened in the Forge",
   "sprite": "sprites/enemy/fey/satyr.atlas",
   "deck": [
    "decks/tier1/T1_R_Dori.dck"
@@ -264,6 +268,7 @@
  },
 {
   "name": "Cave Kavu",
+  "unlockCommander": "Kazuul, Tyrant of the Cliffs",
   "sprite": "sprites/enemy/monstrosity/kavu.atlas",
   "deck": [
    "decks/tier1/T1_R_Kreat.dck"
@@ -289,6 +294,7 @@
  },
 {
   "name": "Cave Fungus",
+  "unlockCommander": "Renata, Called to the Hunt",
   "sprite": "sprites/enemy/plant/fungus_golgari.atlas",
   "deck": [
    "decks/tier1/T1_G_Dwynen.dck"
@@ -314,6 +320,7 @@
  },
 {
   "name": "Cave Harpy",
+  "unlockCommander": "Daxos, Blessed by the Sun",
   "sprite": "sprites/enemy/monstrosity/harpy.atlas",
   "deck": [
    "decks/tier1/T1_W_Anafenza.dck",
@@ -340,6 +347,7 @@
  },
 {
   "name": "Cave Pixie",
+  "unlockCommander": "Thryx, the Sudden Storm",
   "sprite": "sprites/enemy/fey/pixie_dimir.atlas",
   "deck": [
    "decks/tier1/T1_U_Malcolm.dck"

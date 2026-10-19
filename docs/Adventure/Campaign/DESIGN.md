@@ -486,23 +486,26 @@ Because Phase 1 can only partly enforce this, **J-CI and J-Hall are the first Ja
 
 The Hall is a shop of its own type (map object `commanderhall`; Mossgate's stands where the Equipment-card shop
 was, with the `LegendShop` sign). It reads the roster in `world/commanders.json` (`commanderHall` in `config.json`):
-10 commanders per color in three bands.
+**30 commanders per color, 10 in each band**, 150 in all.
 
-| Band | Per color | Unlocked | Who |
+| Band | Per color | Unlocked from the start | Found |
 |---|---|---|---|
-| Mediocre | 3 | from the start | the two Tier 1 deck commanders of that color, plus one more |
-| Seasoned | 5 | your starter from the start; the rest when found | the starter, the Tier 2 commanders the route's duelists and cave bosses play, and two found beyond Mossgate |
-| Legendary | 2 | Wardens | the Tier 3 deck commander and one more |
+| Mediocre | 10 | the two Tier 1 deck commanders of that color, plus one more | the route's wild and cave encounters unlock one each (8 in all); the rest beyond Mossgate |
+| Seasoned | 10 | your starter | the route's duelists and cave bosses unlock the commander of the deck they play (8 in all); the rest beyond Mossgate |
+| Legendary | 10 | none | the Tier 3 deck commander and one more are the Warden's; the rest are legends found later |
 
-- The Hall shows only the commanders of colors you've unlocked (the `colX` character flags), in band order. Each
-  card has a button: **Choose**, **Your commander**, or the hint for finding a locked one.
+- The Hall has one page per color and band you can see (the `colX` character flags), and opens on your current
+  commander's page. The **Next page** button (the shop's restock button) turns the page. The header names the page
+  and counts the commanders found on it.
+- Each card has a button: **Choose**, **Your commander**, or the hint for finding a locked one (the card is faded).
 - Choosing makes that card the selected deck's commander and keeps the 99 (the duel still cuts off-color cards).
   If you don't own the card, the Hall gives you one. A copy in the 99 is taken out, to keep the deck singleton.
 - Unlocks are the character flag `hall.<card name>`. Beating an enemy whose `enemies.json` entry has
-  `unlockCommander` sets it and shows a notice; any dialog can set it with `setCharacterFlag`. On the Mossgate
-  route each duelist and cave boss unlocks the commander of the deck it plays.
+  `unlockCommander` sets it and shows a notice; any dialog can set it with `setCharacterFlag`.
 - While a roster is configured, the deck editor can't set, move or remove a commander (J-Hall); the Hall is the only
   place to change it. Color identity is enforced by the Hall offering only unlocked colors.
+- The roster leaves out Game Changers, AI-flagged and restricted cards, and cards printed only in Universes Beyond
+  sets. A few cEDH-level legends were swapped for fair ones.
 
 ### 6.3 Quests and flags
 

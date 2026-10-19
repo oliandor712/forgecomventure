@@ -293,6 +293,10 @@ public class RewardScene extends UIScene {
     }
 
     void restockShop() {
+        if (type == Type.CommanderHall) { //in the Hall this button turns the page
+            nextHallPage();
+            return;
+        }
         if (!shopActor.canRestock())
             return;
         int price = shopActor.getRestockPrice();
@@ -350,13 +354,24 @@ public class RewardScene extends UIScene {
 
     private final Map<Reward, CommanderHallData> hallEntries = new HashMap<>();
     private String hallName = "";
+    private String hallBaseName = "";
+    private List<String> hallPages = new ArrayList<>();
+    private int hallPage = 0;
 
-    /** Shows the Commander Hall: the roster commanders in the player's colors, to pick the deck's commander. */
+    /** Shows the Commander Hall: one page per color and band, opening on the current commander's page. */
     public void loadCommanderHall(String name) {
+        hallBaseName = name;
+        hallPages = CommanderHall.pages();
+        hallPage = Math.max(0, CommanderHall.pageOfCurrent(hallPages));
+        showHallPage();
+    }
+
+    private void showHallPage() {
         hallEntries.clear();
         Array<Reward> rewards = new Array<>();
         int found = 0, shown = 0;
-        for (CommanderHallData entry : CommanderHall.visibleEntries()) {
+        String key = hallPages.isEmpty() ? "" : hallPages.get(hallPage);
+        for (CommanderHallData entry : CommanderHall.page(key)) {
             shown++;
             if (CommanderHall.isUnlocked(entry))
                 found++;
@@ -369,8 +384,21 @@ public class RewardScene extends UIScene {
             hallEntries.put(reward, entry);
             rewards.add(reward);
         }
-        hallName = name + " - " + found + " of " + shown + " found";
+        hallName = hallBaseName;
+        if (!key.isEmpty()) {
+            String[] parts = key.split(":");
+            hallName += " - " + CommanderHall.colorName(parts[0]) + " " + CommanderHall.bandName(Integer.parseInt(parts[1]))
+                    + " - " + found + " of " + shown + " found";
+        }
         loadRewards(rewards, Type.CommanderHall, null);
+    }
+
+    private void nextHallPage() {
+        if (hallPages.size() < 2)
+            return;
+        hallPage = (hallPage + 1) % hallPages.size();
+        SoundSystem.instance.play(SoundEffectType.Shuffle, false);
+        showHallPage();
     }
 
     public void loadRewards(Array<Reward> newRewards, Type type, ShopActor shopActor) {
@@ -526,8 +554,9 @@ public class RewardScene extends UIScene {
                 restockButton.setVisible(false);
                 break;
             case CommanderHall:
-                restockButton.setVisible(false);
-                restockButton.setDisabled(true);
+                restockButton.setVisible(hallPages.size() > 1);
+                restockButton.setDisabled(hallPages.size() < 2);
+                restockButton.setText("[%80]Next page " + (hallPage + 1) + "/" + hallPages.size());
                 break;
             case RewardChoice:
                 restockButton.setVisible(false);
@@ -671,7 +700,7 @@ public class RewardScene extends UIScene {
         void update() {
             boolean unlocked = CommanderHall.isUnlocked(entry);
             boolean current = CommanderHall.isCurrent(entry);
-            String band = entry.band >= 3 ? "Legendary" : entry.band == 2 ? "Seasoned" : "Mediocre";
+            String band = CommanderHall.bandName(entry.band);
             if (current)
                 setText("[%75]" + band + "\n[GREEN]Your commander");
             else if (unlocked)
