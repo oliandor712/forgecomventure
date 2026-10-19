@@ -27,7 +27,7 @@ for p in paths:
         continue
     if not r['commanders']: continue
     res = {}
-    for t in (1, 2, 3):
+    for t in sorted(dt.TIERS):
         chk = dt.check_tier(r, t)
         fails = [x for s, x in chk if s == 'FAIL' and not x.startswith("cards the AI can't play")]
         warns = [x for s, x in chk if s == 'WARN']

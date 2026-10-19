@@ -48,10 +48,25 @@ TIERS = {
         "types": {"Instant": 4, "Sorcery": 3, "Artifact": 4, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
     3: {"name": "Tier 3 - Challenging", "life": (25, 35), "commander_rarity": {"U", "R", "M"}, "commander_mv": (3, 7),
         "lands": (33, 38), "ramp": (8, 16), "fast": (0, 3), "draw": (6, 14), "removal": (7, 16), "wipe": (1, 4),
-        "tutor": (0, 3), "avg_mv": (2.8, 3.9), "creatures": (16, 40), "power": (26, None),
+        "tutor": (0, 3), "avg_mv": (2.8, 3.9), "creatures": (16, 40), "power": (26, 36),
         "max_rare": 60, "max_mythic": 15, "game_changers": 3, "mld": 0, "extra_turns": 1, "combos": "late",
         "bracket": 3, "curve": {1: (3, 12), 2: (9, 22), 3: (10, 21), 4: (5, 15), 5: (3, 11), 6: (2, 10)},
         "types": {"Instant": 4, "Sorcery": 3, "Artifact": 4, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
+    # Bracket 4 (optimized), kept to what the Forge AI can pilot: no mass land denial, no early two-card combos.
+    4: {"name": "Tier 4 - Hard", "life": (30, 40), "commander_rarity": {"U", "R", "M"}, "commander_mv": (2, 7),
+        "lands": (33, 37), "ramp": (9, 18), "fast": (0, 4), "draw": (8, 16), "removal": (8, 18), "wipe": (1, 5),
+        "tutor": (0, 4), "avg_mv": (2.7, 3.8), "creatures": (14, 38), "power": (33, 41),
+        "max_rare": 70, "max_mythic": 20, "game_changers": 5, "mld": 0, "extra_turns": 1, "combos": "late",
+        "bracket": 4, "curve": {1: (4, 13), 2: (10, 22), 3: (10, 21), 4: (5, 15), 5: (3, 11), 6: (2, 10)},
+        "types": {"Instant": 5, "Sorcery": 3, "Artifact": 5, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
+    # The AI's ceiling: bracket 4 at full card quality (fast mana, tutors, Game Changers), still no mass land denial
+    # and no early two-card combos, which the AI can't assemble and players don't enjoy facing.
+    5: {"name": "Tier 5 - Elite", "life": (35, 45), "commander_rarity": {"U", "R", "M"}, "commander_mv": (2, 7),
+        "lands": (31, 37), "ramp": (10, 20), "fast": (0, 6), "draw": (9, 18), "removal": (9, 20), "wipe": (1, 5),
+        "tutor": (0, 6), "avg_mv": (2.5, 3.8), "creatures": (12, 38), "power": (38, None),
+        "max_rare": 80, "max_mythic": 30, "game_changers": 10, "mld": 0, "extra_turns": 2, "combos": "late",
+        "bracket": 5, "curve": {1: (5, 15), 2: (10, 23), 3: (9, 21), 4: (4, 15), 5: (2, 11), 6: (2, 10)},
+        "types": {"Instant": 5, "Sorcery": 3, "Artifact": 5, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
 }
 
 

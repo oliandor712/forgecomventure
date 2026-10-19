@@ -25,7 +25,14 @@ SPEC = {
          creatures=30, cmax=34, types={'Instant': 5, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 4}, curve={1: 6, 2: 15, 3: 15, 4: 12, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 10, 'M': 1}, gc=0),
  3: dict(lands=37, quota={'wipe': 2, 'removal': 10, 'ramp': 10, 'draw': 9}, cap={'ramp': 12, 'draw': 11, 'removal': 13, 'wipe': 3, 'tutor': 2, 'fast': 3},
          creatures=28, cmax=34, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 3}, curve={1: 7, 2: 15, 3: 15, 4: 11, 5: 7, 6: 7}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 8}, gc=3),
+ 4: dict(lands=35, quota={'wipe': 2, 'removal': 11, 'ramp': 11, 'draw': 10}, cap={'ramp': 15, 'draw': 14, 'removal': 16, 'wipe': 4, 'tutor': 3, 'fast': 3},
+         creatures=26, cmax=33, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 8, 2: 16, 3: 16, 4: 11, 5: 8, 6: 7}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 15}, gc=4),
+ 5: dict(lands=34, quota={'wipe': 2, 'removal': 12, 'ramp': 12, 'draw': 11, 'tutor': 2}, cap={'ramp': 17, 'draw': 16, 'removal': 18, 'wipe': 4, 'tutor': 5, 'fast': 5},
+         creatures=24, cmax=32, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 10, 2: 17, 3: 16, 4: 11, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 25}, gc=8),
 }
+TARGET_POWER = {2: 25, 3: 34, 4: 39, 5: 46}  # card power the builder aims for at each tier
+# Per deck in decks.json, for balancing after simulations: "target" overrides TARGET_POWER (tiers 2-5), and
+# "weakness" (default 1.0) scales how hard a tier 1 deck avoids strong cards (lower = stronger deck).
 ROLE = {'removal': {'removal', 'counter'}, 'draw': {'draw'}, 'ramp': {'ramp'}, 'wipe': {'wipe'}, 'tutor': {'tutor'}, 'fast': {'fast'}}
 SKIP_TEXT = re.compile(r'sticker|attraction|contraption|\bvote\b|ante\b|initiative|day and night|ring tempts|the monarch|venture into|speed|your speed|start your engines|planechase|scheme|you may cast .* from your graveyard', re.I)
 
@@ -72,7 +79,7 @@ def build(d):
         pop = p['pop']
         s = 0
         if tier == 1:
-            s = -pw + 4 * min(pop, 5) / 5 - 0.8 * max(0, p['nabil'] - 2)
+            s = -pw * d.get('weakness', 1.0) + 4 * min(pop, 5) / 5 - 0.8 * max(0, p['nabil'] - 2)
             if 'Creature' in p['types'] and p['pt']:
                 try:
                     if int(p['pt'][0]) + int(p['pt'][1]) > 2 * p['cmc'] + 1: s -= 6  # above-rate body
@@ -80,7 +87,7 @@ def build(d):
         elif tier == 2:
             s = -0.7 * abs(pw - 25) + 3 * min(pop, 10) / 10
         else:
-            s = -0.6 * abs(pw - 34) + 4 * min(pop, 20) / 20
+            s = -0.6 * abs(pw - d.get('target', TARGET_POWER[tier])) + 4 * min(pop, 20) / 20
         if theme_match(p, theme): s += 12
         if p['name'].lower() in seed: s += 25 if tier > 1 else 0
         return s
@@ -151,9 +158,9 @@ def build(d):
             if p and 'Land' in p['types'].split() and 'Basic' not in p['types'] and p['id'] <= ident and not p['mld'] and k not in banned \
                     and not (p['gc'] and spec['gc'] == 0):
                 r = pick_rarity(p, tier, rcount, spec)
-                if r and (tier == 3 or r in 'CU'):
+                if r and (tier >= 3 or r in 'CU'):
                     nb.append(p['name'])
-    nb = list(dict.fromkeys(nb))[: (12 if tier == 3 else 4)]
+    nb = list(dict.fromkeys(nb))[: {2: 4, 3: 12, 4: 15, 5: 18}.get(tier, 4)]
     lands = [(pool[n.lower()], pick_rarity(pool[n.lower()], tier, rcount, spec) or pool[n.lower()]['minr']) for n in nb]
     for _, r in lands: rcount[r] += 1
     nbasic = spec['lands'] - len(lands)

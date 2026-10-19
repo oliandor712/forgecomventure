@@ -419,5 +419,948 @@
    "/Aura|Equipment"
   ],
   "desc": "Tier 3 (Bracket 3). Selesnya angels and humans, from the Realm of Legends Sigarda deck."
+ },
+ {
+  "tier": 1,
+  "commander": "Yahenni, Undying Partisan",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Aetherborn",
+   "Vampire"
+  ],
+  "file": "T1_B_Yahenni.dck",
+  "name": "Yahenni's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-black Yahenni, Undying Partisan deck."
+ },
+ {
+  "tier": 1,
+  "commander": "Gonti, Lord of Luxury",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Aetherborn",
+   "Rogue"
+  ],
+  "file": "T1_B_Gonti.dck",
+  "name": "Gonti's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-black Gonti, Lord of Luxury deck."
+ },
+ {
+  "tier": 1,
+  "commander": "Goreclaw, Terror of Qal Sisma",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Bear"
+  ],
+  "file": "T1_G_Goreclaw.dck",
+  "name": "Goreclaw's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-green Goreclaw, Terror of Qal Sisma deck."
+ },
+ {
+  "tier": 1,
+  "commander": "Renata, Called to the Hunt",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Demigod"
+  ],
+  "file": "T1_G_Renata.dck",
+  "name": "Renata's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-green Renata, Called to the Hunt deck."
+ },
+ {
+  "tier": 1,
+  "commander": "Captain Lannery Storm",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Pirate"
+  ],
+  "file": "T1_R_Lannery.dck",
+  "name": "Lannery's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-red Captain Lannery Storm deck."
+ },
+ {
+  "tier": 1,
+  "commander": "Anax, Hardened in the Forge",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Demigod"
+  ],
+  "file": "T1_R_Anax.dck",
+  "name": "Anax's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-red Anax, Hardened in the Forge deck."
+ },
+ {
+  "tier": 1,
+  "commander": "Tetsuko Umezawa, Fugitive",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Rogue"
+  ],
+  "file": "T1_U_Tetsuko.dck",
+  "name": "Tetsuko's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-blue Tetsuko Umezawa, Fugitive deck."
+ },
+ {
+  "tier": 1,
+  "commander": "Padeem, Consul of Innovation",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Vedalken",
+   "Artificer"
+  ],
+  "file": "T1_U_Padeem.dck",
+  "name": "Padeem's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-blue Padeem, Consul of Innovation deck."
+ },
+ {
+  "tier": 1,
+  "commander": "Teshar, Ancestor's Apostle",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Bird",
+   "Cleric"
+  ],
+  "file": "T1_W_Teshar.dck",
+  "name": "Teshar's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-white Teshar, Ancestor's Apostle deck."
+ },
+ {
+  "tier": 1,
+  "commander": "Baird, Steward of Argive",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Soldier"
+  ],
+  "file": "T1_W_Baird.dck",
+  "name": "Baird's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-white Baird, Steward of Argive deck."
+ },
+ {
+  "tier": 2,
+  "commander": "Grakmaw, Skyclave Ravager",
+  "colors": "BG",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/grakmaw.dck",
+  "theme": [
+   "Hydra",
+   "Horror"
+  ],
+  "file": "T2_BG_Grakmaw.dck",
+  "name": "Grakmaw's Crew",
+  "desc": "Tier 2 (Bracket 2). black-green Grakmaw, Skyclave Ravager deck. Built down from Forge's Grakmaw, Skyclave Ravager deck."
+ },
+ {
+  "tier": 2,
+  "commander": "Obosh, the Preypiercer",
+  "colors": "BR",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/obosh.dck",
+  "theme": [
+   "Hellion",
+   "Horror"
+  ],
+  "file": "T2_BR_Obosh.dck",
+  "name": "Obosh's Crew",
+  "desc": "Tier 2 (Bracket 2). black-red Obosh, the Preypiercer deck. Built down from Forge's Obosh, the Preypiercer deck."
+ },
+ {
+  "tier": 2,
+  "commander": "Halana and Alena, Partners",
+  "colors": "RG",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/halana_and_alena.dck",
+  "theme": [
+   "Ranger"
+  ],
+  "file": "T2_RG_Halana.dck",
+  "name": "Halana's Crew",
+  "desc": "Tier 2 (Bracket 2). red-green Halana and Alena, Partners deck. Built down from Forge's Halana and Alena, Partners deck."
+ },
+ {
+  "tier": 2,
+  "commander": "Atris, Oracle of Half-Truths",
+  "colors": "UB",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/atris.dck",
+  "theme": [
+   "Advisor"
+  ],
+  "file": "T2_UB_Atris.dck",
+  "name": "Atris's Crew",
+  "desc": "Tier 2 (Bracket 2). blue-black Atris, Oracle of Half-Truths deck. Built down from Forge's Atris, Oracle of Half-Truths deck."
+ },
+ {
+  "tier": 2,
+  "commander": "Moritte of the Frost",
+  "colors": "UG",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/moritte.dck",
+  "theme": [
+   "Shapeshifter"
+  ],
+  "file": "T2_UG_Moritte.dck",
+  "name": "Moritte's Crew",
+  "desc": "Tier 2 (Bracket 2). blue-green Moritte of the Frost deck. Built down from Forge's Moritte of the Frost deck."
+ },
+ {
+  "tier": 2,
+  "commander": "Vadrik, Astral Archmage",
+  "colors": "UR",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/vadrik.dck",
+  "theme": [
+   "Wizard"
+  ],
+  "file": "T2_UR_Vadrik.dck",
+  "name": "Vadrik's Crew",
+  "desc": "Tier 2 (Bracket 2). blue-red Vadrik, Astral Archmage deck. Built down from Forge's Vadrik, Astral Archmage deck."
+ },
+ {
+  "tier": 2,
+  "commander": "Orah, Skyclave Hierophant",
+  "colors": "WB",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/orah.dck",
+  "theme": [
+   "Kor",
+   "Cleric"
+  ],
+  "file": "T2_WB_Orah.dck",
+  "name": "Orah's Crew",
+  "desc": "Tier 2 (Bracket 2). white-black Orah, Skyclave Hierophant deck. Built down from Forge's Orah, Skyclave Hierophant deck."
+ },
+ {
+  "tier": 2,
+  "commander": "Bess, Soul Nourisher",
+  "colors": "WG",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/bess.dck",
+  "theme": [
+   "Citizen"
+  ],
+  "file": "T2_WG_Bess.dck",
+  "name": "Bess's Crew",
+  "desc": "Tier 2 (Bracket 2). white-green Bess, Soul Nourisher deck. Built down from Forge's Bess, Soul Nourisher deck."
+ },
+ {
+  "tier": 2,
+  "commander": "Balefang the Unslayable",
+  "colors": "WR",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/balefang.dck",
+  "theme": [
+   "Demon",
+   "Dragon"
+  ],
+  "file": "T2_WR_Balefang.dck",
+  "name": "Balefang's Crew",
+  "desc": "Tier 2 (Bracket 2). white-red Balefang the Unslayable deck. Built down from Forge's Balefang the Unslayable deck."
+ },
+ {
+  "tier": 2,
+  "commander": "Denry Klin, Editor in Chief",
+  "colors": "WU",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/denry_klin.dck",
+  "theme": [
+   "Cat",
+   "Advisor"
+  ],
+  "file": "T2_WU_Denry.dck",
+  "name": "Denry's Crew",
+  "desc": "Tier 2 (Bracket 2). white-blue Denry Klin, Editor in Chief deck. Built down from Forge's Denry Klin, Editor in Chief deck."
+ },
+ {
+  "tier": 3,
+  "commander": "The Gitrog Monster",
+  "colors": "BG",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/the_gitrog_monster.dck",
+  "theme": [
+   "Frog",
+   "Horror"
+  ],
+  "file": "T3_BG_Gitrog.dck",
+  "name": "Gitrog's Circle",
+  "desc": "Tier 3 (Bracket 3). black-green The Gitrog Monster deck. Built down from Forge's The Gitrog Monster deck."
+ },
+ {
+  "tier": 3,
+  "commander": "Vannifar, Evolved Enigma",
+  "colors": "UG",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/vannifar.dck",
+  "theme": [
+   "Elf",
+   "Ooze",
+   "Wizard"
+  ],
+  "file": "T3_UG_Vannifar.dck",
+  "name": "Vannifar's Circle",
+  "desc": "Tier 3 (Bracket 3). blue-green Vannifar, Evolved Enigma deck. Built down from Forge's Vannifar, Evolved Enigma deck."
+ },
+ {
+  "tier": 3,
+  "commander": "Dalakos, Crafter of Wonders",
+  "colors": "UR",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/dalakos.dck",
+  "theme": [
+   "Merfolk",
+   "Artificer"
+  ],
+  "file": "T3_UR_Dalakos.dck",
+  "name": "Dalakos's Circle",
+  "desc": "Tier 3 (Bracket 3). blue-red Dalakos, Crafter of Wonders deck. Built down from Forge's Dalakos, Crafter of Wonders deck."
+ },
+ {
+  "tier": 3,
+  "commander": "Firja, Judge of Valor",
+  "colors": "WB",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/firja.dck",
+  "theme": [
+   "Angel",
+   "Cleric"
+  ],
+  "file": "T3_WB_Firja.dck",
+  "name": "Firja's Circle",
+  "desc": "Tier 3 (Bracket 3). white-black Firja, Judge of Valor deck. Built down from Forge's Firja, Judge of Valor deck."
+ },
+ {
+  "tier": 3,
+  "commander": "Tamiyo, Upriser Crowned",
+  "colors": "WR",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/echo_tamiyo.dck",
+  "theme": [
+   "Moonfolk",
+   "Warrior"
+  ],
+  "file": "T3_WR_Tamiyo.dck",
+  "name": "Tamiyo's Circle",
+  "desc": "Tier 3 (Bracket 3). white-red Tamiyo, Upriser Crowned deck. Built down from Forge's Tamiyo, Upriser Crowned deck."
+ },
+ {
+  "tier": 3,
+  "commander": "Coram, the Undertaker",
+  "colors": "BRG",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/coram.dck",
+  "theme": [
+   "Warrior"
+  ],
+  "file": "T3_BRG_Coram.dck",
+  "name": "Coram's Circle",
+  "desc": "Tier 3 (Bracket 3). black-red-green Coram, the Undertaker deck. Built down from Forge's Coram, the Undertaker deck."
+ },
+ {
+  "tier": 3,
+  "commander": "Wick, the Whorled Mind",
+  "colors": "UBR",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/wick.dck",
+  "theme": [
+   "Rat",
+   "Warlock"
+  ],
+  "file": "T3_UBR_Wick.dck",
+  "name": "Wick's Circle",
+  "desc": "Tier 3 (Bracket 3). blue-black-red Wick, the Whorled Mind deck. Built down from Forge's Wick, the Whorled Mind deck."
+ },
+ {
+  "tier": 3,
+  "commander": "Rith, Liberated Primeval",
+  "colors": "WRG",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/rith.dck",
+  "theme": [
+   "Dragon"
+  ],
+  "file": "T3_WRG_Rith.dck",
+  "name": "Rith's Circle",
+  "desc": "Tier 3 (Bracket 3). white-red-green Rith, Liberated Primeval deck. Built down from Forge's Rith, Liberated Primeval deck."
+ },
+ {
+  "tier": 3,
+  "commander": "Y'shtola, Night's Blessed",
+  "colors": "WUB",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/starter/commanderprecon/FIC - Scions & Spellcraft.dck",
+  "theme": [
+   "Cat",
+   "Warlock"
+  ],
+  "file": "T3_WUB_Yshtola.dck",
+  "name": "Y'shtola's Circle",
+  "desc": "Tier 3 (Bracket 3). white-blue-black Y'shtola, Night's Blessed deck. Built down from Forge's Y'shtola, Night's Blessed deck."
+ },
+ {
+  "tier": 3,
+  "commander": "Falco Spara, Pactweaver",
+  "colors": "WUG",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/falco_spara.dck",
+  "theme": [
+   "Bird",
+   "Demon"
+  ],
+  "file": "T3_WUG_Falco.dck",
+  "name": "Falco's Circle",
+  "desc": "Tier 3 (Bracket 3). white-blue-green Falco Spara, Pactweaver deck. Built down from Forge's Falco Spara, Pactweaver deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Sheoldred, the Apocalypse",
+  "colors": "B",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/sheoldred.dck",
+  "theme": [
+   "Phyrexian",
+   "Praetor"
+  ],
+  "file": "T4_B_Sheoldred.dck",
+  "name": "Sheoldred's Vanguard",
+  "desc": "Tier 4 (Bracket 4). Mono-black Sheoldred, the Apocalypse deck. Built down from Forge's Sheoldred, the Apocalypse deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Kaysa",
+  "colors": "G",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/kaysa.dck",
+  "theme": [
+   "Elf",
+   "Druid"
+  ],
+  "file": "T4_G_Kaysa.dck",
+  "name": "Kaysa's Vanguard",
+  "desc": "Tier 4 (Bracket 4). Mono-green Kaysa deck. Built down from Forge's Kaysa deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Chandra, Fire of Kaladesh",
+  "colors": "R",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/chandra.dck",
+  "theme": [
+   "Shaman"
+  ],
+  "file": "T4_R_Chandra.dck",
+  "name": "Chandra's Vanguard",
+  "desc": "Tier 4 (Bracket 4). Mono-red Chandra, Fire of Kaladesh deck. Built down from Forge's Chandra, Fire of Kaladesh deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Lyra, Tolarian Archangel",
+  "colors": "U",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/echo_lyra.dck",
+  "theme": [
+   "Angel",
+   "Wizard"
+  ],
+  "file": "T4_U_Lyra.dck",
+  "name": "Lyra's Vanguard",
+  "desc": "Tier 4 (Bracket 4). Mono-blue Lyra, Tolarian Archangel deck. Built down from Forge's Lyra, Tolarian Archangel deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Elesh Norn, Mother of Machines",
+  "colors": "W",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/elesh_norn.dck",
+  "theme": [
+   "Phyrexian",
+   "Praetor"
+  ],
+  "file": "T4_W_Elesh.dck",
+  "name": "Elesh's Vanguard",
+  "desc": "Tier 4 (Bracket 4). Mono-white Elesh Norn, Mother of Machines deck. Built down from Forge's Elesh Norn, Mother of Machines deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Ygra, Eater of All",
+  "colors": "BG",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/ygra.dck",
+  "theme": [
+   "Elemental",
+   "Cat"
+  ],
+  "file": "T4_BG_Ygra.dck",
+  "name": "Ygra's Vanguard",
+  "desc": "Tier 4 (Bracket 4). black-green Ygra, Eater of All deck. Built down from Forge's Ygra, Eater of All deck."
+ },
+ {
+  "tier": 4,
+  "commander": "The Infamous Cruelclaw",
+  "colors": "BR",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/the_infamous_cruelclaw.dck",
+  "theme": [
+   "Weasel",
+   "Mercenary"
+  ],
+  "file": "T4_BR_Cruelclaw.dck",
+  "name": "Cruelclaw's Vanguard",
+  "desc": "Tier 4 (Bracket 4). black-red The Infamous Cruelclaw deck. Built down from Forge's The Infamous Cruelclaw deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Anzrag, the Quake-Mole",
+  "colors": "RG",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/anzrag.dck",
+  "theme": [
+   "Mole",
+   "God"
+  ],
+  "file": "T4_RG_Anzrag.dck",
+  "name": "Anzrag's Vanguard",
+  "desc": "Tier 4 (Bracket 4). red-green Anzrag, the Quake-Mole deck. Built down from Forge's Anzrag, the Quake-Mole deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Runo Stromkirk",
+  "colors": "UB",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/runo_stromkirk.dck",
+  "theme": [
+   "Vampire",
+   "Cleric"
+  ],
+  "file": "T4_UB_Runo.dck",
+  "name": "Runo's Vanguard",
+  "desc": "Tier 4 (Bracket 4). blue-black Runo Stromkirk deck. Built down from Forge's Runo Stromkirk deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Uro, Titan of Nature's Wrath",
+  "colors": "UG",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/uro.dck",
+  "theme": [
+   "Elder",
+   "Giant"
+  ],
+  "file": "T4_UG_Uro.dck",
+  "name": "Uro's Vanguard",
+  "desc": "Tier 4 (Bracket 4). blue-green Uro, Titan of Nature's Wrath deck. Built down from Forge's Uro, Titan of Nature's Wrath deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Niv-Mizzet, Visionary",
+  "colors": "UR",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/niv-mizzet.dck",
+  "theme": [
+   "Dragon",
+   "Wizard"
+  ],
+  "file": "T4_UR_NivMizzet.dck",
+  "name": "Niv-Mizzet's Vanguard",
+  "desc": "Tier 4 (Bracket 4). blue-red Niv-Mizzet, Visionary deck. Built down from Forge's Niv-Mizzet, Visionary deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Tomik, Wielder of Law",
+  "colors": "WB",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/tomik.dck",
+  "theme": [
+   "Advisor"
+  ],
+  "file": "T4_WB_Tomik.dck",
+  "name": "Tomik's Vanguard",
+  "desc": "Tier 4 (Bracket 4). white-black Tomik, Wielder of Law deck. Built down from Forge's Tomik, Wielder of Law deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Karametra, God of Harvests",
+  "colors": "WG",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/karametra.dck",
+  "theme": [
+   "God"
+  ],
+  "file": "T4_WG_Karametra.dck",
+  "name": "Karametra's Vanguard",
+  "desc": "Tier 4 (Bracket 4). white-green Karametra, God of Harvests deck. Built down from Forge's Karametra, God of Harvests deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Firesong and Sunspeaker",
+  "colors": "WR",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/firesong_and_sunspeaker.dck",
+  "theme": [
+   "Minotaur",
+   "Cleric"
+  ],
+  "file": "T4_WR_Firesong.dck",
+  "name": "Firesong's Vanguard",
+  "desc": "Tier 4 (Bracket 4). white-red Firesong and Sunspeaker deck. Built down from Forge's Firesong and Sunspeaker deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Azor, the Lawbringer",
+  "colors": "WU",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/azor.dck",
+  "theme": [
+   "Sphinx"
+  ],
+  "file": "T4_WU_Azor.dck",
+  "name": "Azor's Vanguard",
+  "desc": "Tier 4 (Bracket 4). white-blue Azor, the Lawbringer deck. Built down from Forge's Azor, the Lawbringer deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Damia, Sage of Stone",
+  "colors": "UBG",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/damia.dck",
+  "theme": [
+   "Gorgon",
+   "Wizard"
+  ],
+  "file": "T4_UBG_Damia.dck",
+  "name": "Damia's Vanguard",
+  "desc": "Tier 4 (Bracket 4). blue-black-green Damia, Sage of Stone deck. Built down from Forge's Damia, Sage of Stone deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Flubs, the Fool",
+  "colors": "URG",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/flubs.dck",
+  "theme": [
+   "Frog",
+   "Scout"
+  ],
+  "file": "T4_URG_Flubs.dck",
+  "name": "Flubs's Vanguard",
+  "desc": "Tier 4 (Bracket 4). blue-red-green Flubs, the Fool deck. Built down from Forge's Flubs, the Fool deck."
+ },
+ {
+  "tier": 4,
+  "commander": "The Necrobloom",
+  "colors": "WBG",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/the_necrobloom.dck",
+  "theme": [
+   "Plant"
+  ],
+  "file": "T4_WBG_Necrobloom.dck",
+  "name": "Necrobloom's Vanguard",
+  "desc": "Tier 4 (Bracket 4). white-black-green The Necrobloom deck. Built down from Forge's The Necrobloom deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Queen Marchesa",
+  "colors": "WBR",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/marchesa.dck",
+  "theme": [
+   "Assassin"
+  ],
+  "file": "T4_WBR_Marchesa.dck",
+  "name": "Marchesa's Vanguard",
+  "desc": "Tier 4 (Bracket 4). white-black-red Queen Marchesa deck. Built down from Forge's Queen Marchesa deck."
+ },
+ {
+  "tier": 4,
+  "commander": "Vraska, Soul of Stone",
+  "colors": "WUR",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/echo_vraska.dck",
+  "theme": [
+   "Gorgon",
+   "Wizard"
+  ],
+  "file": "T4_WUR_Vraska.dck",
+  "name": "Vraska's Vanguard",
+  "desc": "Tier 4 (Bracket 4). white-blue-red Vraska, Soul of Stone deck. Built down from Forge's Vraska, Soul of Stone deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Ihsan's Shade",
+  "colors": "B",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/ihsans_shade.dck",
+  "theme": [
+   "Shade",
+   "Knight"
+  ],
+  "file": "T5_B_Ihsan.dck",
+  "name": "Ihsan's Court",
+  "desc": "Tier 5 (Bracket 5). Mono-black Ihsan's Shade deck. Built down from Forge's Ihsan's Shade deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Vorinclex, Monstrous Raider",
+  "colors": "G",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/vorinclex.dck",
+  "theme": [
+   "Phyrexian",
+   "Praetor"
+  ],
+  "file": "T5_G_Vorinclex.dck",
+  "name": "Vorinclex's Court",
+  "desc": "Tier 5 (Bracket 5). Mono-green Vorinclex, Monstrous Raider deck. Built down from Forge's Vorinclex, Monstrous Raider deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Urabrask",
+  "colors": "R",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/urabrask.dck",
+  "theme": [
+   "Phyrexian",
+   "Praetor"
+  ],
+  "file": "T5_R_Urabrask.dck",
+  "name": "Urabrask's Court",
+  "desc": "Tier 5 (Bracket 5). Mono-red Urabrask deck. Built down from Forge's Urabrask deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Hakim, Loreweaver",
+  "colors": "U",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/hakim.dck",
+  "theme": [
+   "Wizard"
+  ],
+  "file": "T5_U_Hakim.dck",
+  "name": "Hakim's Court",
+  "desc": "Tier 5 (Bracket 5). Mono-blue Hakim, Loreweaver deck. Built down from Forge's Hakim, Loreweaver deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Beza, the Bounding Spring",
+  "colors": "W",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/beza.dck",
+  "theme": [
+   "Elemental",
+   "Elk"
+  ],
+  "file": "T5_W_Beza.dck",
+  "name": "Beza's Court",
+  "desc": "Tier 5 (Bracket 5). Mono-white Beza, the Bounding Spring deck. Built down from Forge's Beza, the Bounding Spring deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Vraska, the Silencer",
+  "colors": "BG",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/vraska.dck",
+  "theme": [
+   "Gorgon",
+   "Assassin"
+  ],
+  "file": "T5_BG_Vraska.dck",
+  "name": "Vraska's Court",
+  "desc": "Tier 5 (Bracket 5). black-green Vraska, the Silencer deck. Built down from Forge's Vraska, the Silencer deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Olivia, Crimson Bride",
+  "colors": "BR",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/olivia.dck",
+  "theme": [
+   "Vampire",
+   "Noble"
+  ],
+  "file": "T5_BR_Olivia.dck",
+  "name": "Olivia's Court",
+  "desc": "Tier 5 (Bracket 5). black-red Olivia, Crimson Bride deck. Built down from Forge's Olivia, Crimson Bride deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Mina and Denn, Wildborn",
+  "colors": "RG",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/mina_and_denn.dck",
+  "theme": [
+   "Elf",
+   "Ally"
+  ],
+  "file": "T5_RG_Mina.dck",
+  "name": "Mina's Court",
+  "desc": "Tier 5 (Bracket 5). red-green Mina and Denn, Wildborn deck. Built down from Forge's Mina and Denn, Wildborn deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Nymris, Oona's Trickster",
+  "colors": "UB",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/nymris.dck",
+  "theme": [
+   "Faerie",
+   "Knight"
+  ],
+  "file": "T5_UB_Nymris.dck",
+  "name": "Nymris's Court",
+  "desc": "Tier 5 (Bracket 5). blue-black Nymris, Oona's Trickster deck. Built down from Forge's Nymris, Oona's Trickster deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Kruphix, God of Horizons",
+  "colors": "UG",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/kruphix.dck",
+  "theme": [
+   "God"
+  ],
+  "file": "T5_UG_Kruphix.dck",
+  "name": "Kruphix's Court",
+  "desc": "Tier 5 (Bracket 5). blue-green Kruphix, God of Horizons deck. Built down from Forge's Kruphix, God of Horizons deck."
+ },
+ {
+  "tier": 5,
+  "commander": "The Locust God",
+  "colors": "UR",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/the_locust_god.dck",
+  "theme": [
+   "God"
+  ],
+  "file": "T5_UR_LocustGod.dck",
+  "name": "Locust God's Court",
+  "desc": "Tier 5 (Bracket 5). blue-red The Locust God deck. Built down from Forge's The Locust God deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Carmen, Cruel Skymarcher",
+  "colors": "WB",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/carmen.dck",
+  "theme": [
+   "Vampire",
+   "Soldier"
+  ],
+  "file": "T5_WB_Carmen.dck",
+  "name": "Carmen's Court",
+  "desc": "Tier 5 (Bracket 5). white-black Carmen, Cruel Skymarcher deck. Built down from Forge's Carmen, Cruel Skymarcher deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Trostani, Selesnya's Voice",
+  "colors": "WG",
+  "life": 40,
+  "seed": "quest/commanderprecons/Hatsune Miku [SLD] [2026].dck",
+  "theme": [
+   "Dryad"
+  ],
+  "file": "T5_WG_Trostani.dck",
+  "name": "Trostani's Court",
+  "desc": "Tier 5 (Bracket 5). white-green Trostani, Selesnya's Voice deck. Built down from Forge's Trostani, Selesnya's Voice deck."
+ },
+ {
+  "tier": 5,
+  "commander": "The Jolly Balloon Man",
+  "colors": "WR",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/the_jolly_balloon_man.dck",
+  "theme": [
+   "Clown"
+  ],
+  "file": "T5_WR_BalloonMan.dck",
+  "name": "Balloon Man's Court",
+  "desc": "Tier 5 (Bracket 5). white-red The Jolly Balloon Man deck. Built down from Forge's The Jolly Balloon Man deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Medomai the Ageless",
+  "colors": "WU",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/medomai.dck",
+  "theme": [
+   "Sphinx"
+  ],
+  "file": "T5_WU_Medomai.dck",
+  "name": "Medomai's Court",
+  "desc": "Tier 5 (Bracket 5). white-blue Medomai the Ageless deck. Built down from Forge's Medomai the Ageless deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Disa the Restless",
+  "colors": "BRG",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/starter/commanderprecon/M3C - Graveyard Overdrive.dck",
+  "theme": [
+   "Scout"
+  ],
+  "file": "T5_BRG_Disa.dck",
+  "name": "Disa's Court",
+  "desc": "Tier 5 (Bracket 5). black-red-green Disa the Restless deck. Built down from Forge's Disa the Restless deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Nekusar, the Mindrazer",
+  "colors": "UBR",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/nekusar.dck",
+  "theme": [
+   "Zombie",
+   "Wizard"
+  ],
+  "file": "T5_UBR_Nekusar.dck",
+  "name": "Nekusar's Court",
+  "desc": "Tier 5 (Bracket 5). blue-black-red Nekusar, the Mindrazer deck. Built down from Forge's Nekusar, the Mindrazer deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Gahiji, Honored One",
+  "colors": "WRG",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/gahiji.dck",
+  "theme": [
+   "Beast"
+  ],
+  "file": "T5_WRG_Gahiji.dck",
+  "name": "Gahiji's Court",
+  "desc": "Tier 5 (Bracket 5). white-red-green Gahiji, Honored One deck. Built down from Forge's Gahiji, Honored One deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Yennett, Cryptic Sovereign",
+  "colors": "WUB",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/yennett.dck",
+  "theme": [
+   "Sphinx"
+  ],
+  "file": "T5_WUB_Yennett.dck",
+  "name": "Yennett's Court",
+  "desc": "Tier 5 (Bracket 5). white-blue-black Yennett, Cryptic Sovereign deck. Built down from Forge's Yennett, Cryptic Sovereign deck."
+ },
+ {
+  "tier": 5,
+  "commander": "Ms. Bumbleflower",
+  "colors": "WUG",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/ms_bumbleflower.dck",
+  "theme": [
+   "Rabbit",
+   "Citizen"
+  ],
+  "file": "T5_WUG_Bumbleflower.dck",
+  "name": "Bumbleflower's Court",
+  "desc": "Tier 5 (Bracket 5). white-blue-green Ms. Bumbleflower deck. Built down from Forge's Ms. Bumbleflower deck."
  }
 ]
