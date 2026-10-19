@@ -216,7 +216,7 @@ Gate Temple ─► GATE PASS ─► Gate town ─► Route A ─► INNER PASS 1
 | Route B | A long corridor with side paths | Each side path leads to a clearing; some clearings hold a random dungeon (§4.4), others duelists or treasure |
 | Inner pass 2 | A mandatory dungeon | Its two doors are at the end of route B and the start of route C. Two-way |
 | Route C | An open field | Random spawns (wild encounters) instead of placed duelists |
-| Zone town | A small town at the far end of the field | A few services, including an inn. Heals. **Not** a Waystone stop |
+| Zone town | A small town at the far end of the field | Inn, shard trader, booster shop and the zone color's two specialty shops (Green: creatures and enchantments), stocked in the zone's color. Heals. **Not** a Waystone stop |
 | Warden's dungeon | The zone's boss dungeon | Entered from the zone town. Dungeon puzzle and Warden (`DESIGN.md` §3.3, §5.3) |
 
 **Healing only in towns.** The gate town and the zone town are the only places in the zone to heal; there are no
@@ -301,6 +301,7 @@ From the layout sketch. The zone is about 190 tiles across; north is up, and the
 | Route A, the maze | 120 × 35, corridors 8-10 wide | One forced path that winds up the middle, east, north, west, south and east again to inner pass 1 |
 | Route B, the corridor | 170 × 40 | The spine runs west to east from pass 1's far door to pass 2's near door. Five side paths branch north and south to clearings; four clearings hold random dungeons |
 | Route C, the field | 115 × 55 | Open ground with random spawns, pass 2's far door at the south edge, the zone town at the north edge |
+| Zone town | – | Inn, shard trader, booster shop (Green packs), creature shop and enchantment shop (Green's specialties) |
 | Warden's dungeon | – | North of the zone town, entered from it |
 
 **Random spawns only in the field.** Forge spawns roaming enemies by biome, anywhere the player is inside that biome.
@@ -315,9 +316,7 @@ The dungeons in route B's clearings (and the equivalent spots in other zones) ar
   Forge: a random deck from its list each duel) with its deck list set to a tier's pool (the ten `decks/tier<N>` decks).
   With `enemyByTier` (§8), the zone's tier picks which pool. So every visit can bring a different deck.
 - **Rewards** are the usual random loot (`rewards` with card and gold entries), scaled by tier.
-- **Layouts:** each spot can also draw its map from a set of cave layouts, picked per world, so two playthroughs get
-  different dungeons there. That needs a small Java change (§8). Without it, each spot has a fixed layout with random
-  opponents and loot.
+- **Layouts are fixed:** each spot has one hand-made dungeon map; what's random is who's inside and what they drop.
 
 ## 5. Tier gates: which zone opens when
 
@@ -460,7 +459,6 @@ writes out everything the zone needs:
 | **Arrival offset per POI** | Built | On a POI: `arrivalX`, `arrivalY`, in tiles from the POI (default -1, 1: one tile left, one up). Used by gates with `gateEnter: false`, `teleport to poi` and the Waystone |
 | **Waystone destination list** | Built | `waystoneStops` in `config.json` lists the POIs the Waystone can reach. Each unlocks the first time the player enters it (character flag `waystone.<POI name>`). The item's `commandOnUse` is `waystone <cost>`; the cost is refunded if the player cancels |
 | **`enemyByTier`** | Built | On a map `enemy` object: `enemyByTier` ("tier 1 enemy, tier 2 enemy, tier 3 enemy") and `tierFlag` (a quest flag such as `zoneTier.G`). The flag's value picks the enemy; out-of-range values use the nearest end of the list. Without them, `enemy` is used as before |
-| **Random dungeon layouts** (`maps` on a POI: a list of cave maps, one picked per world from the POI's seed) | Not built | §4.4. Random opponents and loot already work without it (`randomizeDeck`, `enemyByTier`) |
 | Dialog condition comparing one flag to another | Not built | Optional: fewer per-color dialog nodes (§5). The per-color nodes work without it |
 
 **New items** (`world/items.json`): the **Waystone** (ability slot, 1 shard per trip; the rival now gives this
@@ -509,8 +507,10 @@ Fragments** (quest items, one per Paragon, named "Summit Key Fragment (White-Blu
   fragment of the Summit Key, and the champion gate opens only with all five (§3.2, §5).
 - **The five enemy pairs** appear as optional bosses, each in the border town that shares no color with it, after that
   town's Paragon is beaten (§3.2).
-- **Each zone has two towns**: the gate town (all services, Waystone stop) and a zone town before the Warden (a few
-  services including an inn, heals, not a Waystone stop). The Warden's dungeon is entered from the zone town (§4).
+- **Each zone has two towns**: the gate town (all services, Waystone stop) and a zone town before the Warden (heals,
+  not a Waystone stop). The Warden's dungeon is entered from the zone town (§4).
 - **Routes have three styles**: route A a maze, route B a corridor with side paths to clearings, route C an open field
   with random spawns (§4, §4.3).
-- **Random dungeons** draw their opponents from Concordia's tier deck pools (§4.4).
+- **Random dungeons** have fixed layouts with random opponents, drawn from Concordia's tier deck pools, and random loot (§4.4).
+- **Zone towns** have an inn, a shard trader, a booster shop and the zone color's two specialty shops (Green: creatures and
+  enchantments).
