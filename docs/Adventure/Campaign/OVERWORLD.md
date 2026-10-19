@@ -44,16 +44,20 @@ does Black first and White last. So **the White zone is zone 1 for one player an
 ## 3. World layout
 
 ```
-                 ┌─────────┐
-     ┌───────┐   │  WHITE  │   ┌───────┐
-     │ GREEN │   └────┬────┘   │ BLUE  │
-     └───┬───┘   ╔════╧════╗   └───┬───┘
-         └───────╢ CENTRAL ╟───────┘
-                 ║ starter ║
-         ┌───────╢ +champ. ╟───────┐
-     ┌───┴───┐   ╚═════════╝   ┌───┴───┐
-     │  RED  │                 │ BLACK │
-     └───────┘                 └───────┘
+                  ┌──────────┐
+        ┌──────┐GW│  WHITE   │WU┌──────┐
+        │GREEN ├──┤          ├──┤ BLUE │
+        │      │  └──────────┘  │      │
+        │    RG│   ╔════════╗   │UB    │
+        └──┬───┘   ║CENTRAL ║   └───┬──┘
+        ┌──┴───┐   ║starter ║   ┌───┴──┐
+        │ RED  │   ║+champ. ║   │BLACK │
+        │      │   ╚════════╝   │      │
+        └───┬──┘                └──┬───┘
+            └──────── BR ──────────┘
+
+   WU, UB, BR, RG, GW = border zones where neighbouring color zones overlap (§3.2).
+   The central area touches nothing: it's reached only from Mossgate, the zones only through the Gate Temple.
 ```
 
 Five color zones in a ring around a **central area**. Nothing on the world map connects them: every way in and out
@@ -63,7 +67,8 @@ runs through the **Gate Temple** in Mossgate (§3.1) or the Waystone (§4.2).
   and the **champion area**. Impassable terrain separates them from each other and from the color zones, and there's
   no open hub ground: the hub is Mossgate itself.
 - **Each color zone is fully enclosed by impassable tiles.** Ocean (`base.json`, collision) fills the space between
-  regions, so the world map needs no gates of its own.
+  regions, so the world map needs no gates of its own. The one exception is the border zones where neighbouring zones
+  overlap (§3.2), which connect two zones through border passes.
 - **Ring order is Forge's color wheel**: White at the top, then Blue, Black, Red and Green clockwise, as on the back of
   a card. Every pair of neighbours is an ally pair, and each zone's two enemies are across the ring. Since zones only
   connect through the centre, the order is for the look of the map, not for play.
@@ -125,6 +130,47 @@ area. It's the hub of the whole map: the player walks in, picks a gate, and step
   `gateTo` only lands next to or in a POI's main map. The extension (§8) lets a gate name an entry object, and a
   sub-map, so the temple gates can land at the gate pass's temple end, and the gate pass's temple end can land back in
   the temple.
+
+### 3.2 Border zones
+
+Neighbouring color zones **overlap at their edges**. Each overlap is a small **border zone** of its own, with a
+**two-color town**. Since the ring is in color-wheel order, the five overlaps are the five allied pairs:
+
+| Border zone | Between | Town flavor |
+|---|---|---|
+| WU | White and Blue | Law and learning: a court-library |
+| UB | Blue and Black | Secrets: a canal town of informants |
+| BR | Black and Red | Excess: a carnival or fighting-pit town |
+| RG | Red and Green | The wild: a raider camp at a forest's edge |
+| GW | Green and White | Community: a harvest village around a great tree |
+
+**What a border zone has:**
+- **A two-color town** with all services, stock focused on its two colors (artifacts general, as in the gate towns), an
+  inn whose tournaments use two-color decks, and its own Waystone stop.
+- **A small maze** between the two zones (about 60-80 tiles across, smaller than a color zone), with one or two optional
+  dungeons. A natural home for the legend duels of two-color legends.
+- **Mixed terrain:** the border zone is its own biome, using one zone's tileset with the other's structure atlas (for
+  example WU: White ground, Blue's water and dunes as walls), so it reads as the place where the two meet.
+
+**How it's reached.** A border zone is still enclosed: impassable terrain separates it from both neighbouring zones,
+and a **border pass** (a two-way inner-pass-style dungeon, §6) connects it to each side. So a border zone also links the
+two color zones to each other, as a second road between them besides going back through the Gate Temple.
+
+**When it opens.** A border pass's guard checks that **both** colors' zones are open (`zoneOpen.<C1>` and
+`zoneOpen.<C2>`). Otherwise a player could walk from an open zone into one that's still sealed for them. For a White
+player, for example:
+
+| Step | Open color zones | Open border zones |
+|---|---|---|
+| Zone 1 | White | none (each border needs a second color) |
+| Zones 2-3 | White, Blue, Green | WU, GW |
+| Zones 4-5 | all five | all five (UB, BR and RG join) |
+
+Every player opens their two border zones next to their own color with the ally tier, and the other three with the
+enemy tier. A border zone plays at the higher tier of its two colors.
+
+**Where the doors are.** Each border pass has its zone-side door in that zone's last section (route C, past both inner
+passes), so the border zone is a reward for getting deep into a zone, not a way around its passes.
 
 ## 4. Inside a color zone
 
@@ -345,7 +391,8 @@ writes out everything the zone needs:
    the template zone shows how many slots there are.
 8. **Tiered encounter decks.** Tier 4-6 decks with the deck generator, then the encounter slots in the template zone.
 9. **The other four zones**, one at a time, each playtested at tier 1 and tier 3.
-10. **The champion gate, Victory Road and the Summit.**
+10. **The five border zones**, each once both its neighbours exist: border passes, the two-color town, the small maze.
+11. **The champion gate, Victory Road and the Summit.**
 
 ## 10. Decisions
 
@@ -363,3 +410,10 @@ writes out everything the zone needs:
 - **The champion area is behind the sixth gate**, which opens only when all five Wardens are beaten. Victory Road and
   the Summit are past it (§5).
 - **The central area** is just the starter zone and the champion area, walled off from each other (§3).
+- **Neighbouring color zones overlap** in five border zones, the allied pairs, each with a two-color town (§3.2). A
+  border zone opens when both its colors' zones are open.
+
+**Open:**
+- **The Paragons and the border zones.** `DESIGN.md` gives the Five Paragons the same five allied pairs (WU, UB, BR, RG,
+  GW). Either each Paragon comes from its border town (a story hook, and a reason to visit), or the Paragons switch to
+  the five enemy pairs (WB, UR, BG, RW, GU), so all ten two-color pairs appear somewhere in the game.
