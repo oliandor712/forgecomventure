@@ -232,5 +232,6 @@
   "startMap": "../Concordia/maps/map/emberbrook_house.tmx",
   "startObjectId": 0,
   "commanderHall": "world/commanders.json",
-  "uniquePrintings": true
+  "uniquePrintings": true,
+  "tournament": {"enemies": ["Dawnbringer Host", "Visionary Foundry", "Gorgon's Gaze", "Tempest Roost", "Hydra Den", "Inscrutable Skies", "Doom of the Depths", "Blood Witch Revue", "Strength Incarnate", "Host of Herons"], "players": 8, "entryGold": 100, "rewinShards": 25, "goldPerWin": 50, "championPacks": 3, "startingLife": 30, "gamesPerMatch": 1}
 }

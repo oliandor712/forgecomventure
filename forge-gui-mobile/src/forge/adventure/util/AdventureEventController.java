@@ -43,7 +43,7 @@ public class AdventureEventController implements Serializable {
                 case Sealed -> "Sealed Deck";
                 case Jumpstart -> "Jumpstart";
                 case Draft -> "Draft";
-                case Constructed -> "Constructed";
+                case Constructed -> Config.instance().getConfigData().tournament != null ? "Tournament" : "Constructed";
                 default -> name();
             };
         }
@@ -89,6 +89,8 @@ public class AdventureEventController implements Serializable {
     }
 
     public AdventureEventData createEvent(String pointID) {
+        if (Config.instance().getConfigData().tournament != null) //inns run tournaments, always available
+            return new AdventureEventData(getEventSeed(pointID), EventFormat.Constructed, EventStyle.Bracket, null);
         if (nextEventDate.containsKey(pointID) && nextEventDate.get(pointID) >= LocalDate.now().toEpochDay()) {
             // No event currently available here
             return null;
@@ -151,6 +153,13 @@ public class AdventureEventController implements Serializable {
             pairingStyle = AdventureEventData.PairingStyle.SingleElimination;
         }
 
+        if (e.isTournament()) {
+            e.setupTournament(Config.instance().getConfigData().tournament,
+                    AdventurePlayer.current().checkCharacterFlag(AdventureEventData.tournamentWonFlag(pointID, eventOrigin)));
+            e.generateParticipants();
+            AdventurePlayer.current().addEvent(e);
+            return; //no waiting days: a tournament is open again as soon as the last one is over
+        }
         e.eventRules = new AdventureEventData.AdventureEventRules(e.format, pairingStyle, changes == null ? 1f : changes.getTownPriceModifier());
 
         e.generateParticipants();

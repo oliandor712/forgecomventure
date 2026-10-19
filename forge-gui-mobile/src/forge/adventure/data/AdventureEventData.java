@@ -4,6 +4,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Array;
 import forge.Forge;
 import forge.adventure.character.EnemySprite;
+import forge.adventure.player.AdventurePlayer;
 import forge.adventure.pointofintrest.PointOfInterestChanges;
 import forge.adventure.scene.RewardScene;
 import forge.adventure.util.AdventureEventController;
@@ -117,8 +118,10 @@ public class AdventureEventData implements Serializable {
         registeredDeck = new Deck();
         format = selectedFormat;
         this.cardBlock = cardBlock;
-        if (cardBlock == null)
+        if (cardBlock == null) {
+            this.style = style; //a tournament: no card block, set up by setupTournament
             return;
+        }
         cardBlockName = cardBlock.getName();
         if (format == AdventureEventController.EventFormat.Draft) {
             setupDraftRewards();
@@ -512,6 +515,83 @@ public class AdventureEventData implements Serializable {
         return ret;
     }
 
+    /** True for an inn tournament (ConfigData.tournament): a constructed event played with the player's own deck. */
+    public boolean isTournament() {
+        return format == AdventureEventController.EventFormat.Constructed && Config.instance().getConfigData().tournament != null;
+    }
+
+    /** Character flag that records the player won the tournament at this inn. */
+    public static String tournamentWonFlag(String pointID, int eventOrigin) {
+        return "tourneyWon." + pointID + "." + eventOrigin;
+    }
+
+    /** Entry fee, life and rewards of an inn tournament. Gold until the player has won at this inn, then shards only. */
+    public void setupTournament(TournamentData t, boolean alreadyWon) {
+        eventRules = new AdventureEventRules(AdventureEventController.EventFormat.Constructed, PairingStyle.SingleElimination, 1f);
+        eventRules.acceptsSilverChallengeCoin = false;
+        eventRules.goldToEnter = alreadyWon ? 99999999 : t.entryGold; //an unpayable fee hides that option
+        eventRules.shardsToEnter = alreadyWon ? t.rewinShards : 99999999;
+        eventRules.startingLife = t.startingLife;
+        eventRules.gamesPerMatch = t.gamesPerMatch;
+        eventRules.gameType = AdventurePlayer.current().isCommanderMode() ? GameType.Commander : GameType.Constructed;
+        eventRules.allowsAddBasicLands = false;
+        int roundCount = Integer.numberOfTrailingZeros(Integer.highestOneBit(Math.max(2, t.players))); //8 players: 3 rounds
+        rewards = new AdventureEventReward[roundCount];
+        for (int wins = 1; wins <= roundCount; wins++) {
+            AdventureEventReward r = new AdventureEventReward();
+            r.minWins = wins;
+            r.maxWins = wins;
+            RewardData gold = new RewardData();
+            gold.type = "gold";
+            gold.count = wins * t.goldPerWin;
+            r.rewards = new RewardData[]{gold};
+            rewards[wins - 1] = r; //the champion's packs are added when the rewards are given, in the colors unlocked by then
+        }
+    }
+
+    private void generateTournamentParticipants(TournamentData t) {
+        int opponents = Math.max(1, t.players - 1);
+        List<EnemyData> pool = new ArrayList<>();
+        for (String name : t.enemies) {
+            EnemyData data = WorldData.getEnemy(name);
+            if (data != null)
+                pool.add(data);
+        }
+        if (pool.isEmpty())
+            pool.addAll(Arrays.asList(WorldData.getAllEnemies().toArray(EnemyData.class)));
+        List<EnemyData> picked = new ArrayList<>();
+        Random rnd = getEventRandom();
+        List<EnemyData> bag = new ArrayList<>();
+        while (picked.size() < opponents) { //each opponent once, repeating only if there are more seats than enemies
+            if (bag.isEmpty())
+                bag.addAll(pool);
+            picked.add(bag.remove(rnd.nextInt(bag.size())));
+        }
+        participants = new AdventureEventParticipant[opponents + 1];
+        for (int i = 0; i < opponents; i++) {
+            participants[i] = new AdventureEventParticipant().generate(picked.get(i));
+            participants[i].setDeck(picked.get(i).generateDeck(false, false));
+        }
+        participants[opponents] = getHumanPlayer();
+        rounds = rewards == null ? 3 : rewards.length;
+    }
+
+    /** The champion's booster packs, each in a random color the player has unlocked. */
+    private Deck[] tournamentPacks(int count) {
+        List<String> colors = new ArrayList<>();
+        String[][] all = {{"W", "White"}, {"U", "Blue"}, {"B", "Black"}, {"R", "Red"}, {"G", "Green"}};
+        for (String[] c : all)
+            if (AdventurePlayer.current().checkCharacterFlag("col" + c[0]))
+                colors.add(c[1]);
+        if (colors.isEmpty())
+            for (String[] c : all)
+                colors.add(c[1]);
+        Deck[] packs = new Deck[count];
+        for (int i = 0; i < count; i++)
+            packs[i] = AdventureEventController.instance().generateBoosterByColor(colors.get(getEventRandom().nextInt(colors.size())));
+        return packs;
+    }
+
     public void startEvent() {
         if (eventStatus == AdventureEventController.EventStatus.Ready) {
             currentRound = 1;
@@ -520,6 +600,10 @@ public class AdventureEventData implements Serializable {
     }
 
     public void generateParticipants() {
+        if (isTournament()) {
+            generateTournamentParticipants(Config.instance().getConfigData().tournament);
+            return;
+        }
         this.generateParticipants(getRecommendedPodSize(this.cardBlock) - 1); //-1 to account for the player
     }
 
@@ -755,6 +839,11 @@ public class AdventureEventData implements Serializable {
             rewardDeck.setComment(Forge.getLocalizer().getMessage("advPrizeSealedFirst"));
             rewards[3].cardRewards = new Deck[]{rewardDeck};
 
+        } else if (isTournament() && rewards.length > 0) {
+
+            AdventureEventReward champion = rewards[rewards.length - 1];
+            champion.cardRewards = tournamentPacks(Config.instance().getConfigData().tournament.championPacks);
+
         } else if (format == AdventureEventController.EventFormat.Jumpstart) {
 
             rewards[3] = new AdventureEventReward();
@@ -849,12 +938,33 @@ public class AdventureEventData implements Serializable {
             playerWon = false;
         }
 
+        if (playerWon && isTournament())
+            AdventurePlayer.current().setCharacterFlag(tournamentWonFlag(sourceID, eventOrigin), 1); //from now on this inn's tournament costs shards
+
         eventStatus = AdventureEventController.EventStatus.Awarded;
     }
 
     public String getDescription(PointOfInterestChanges changes) {
         Localizer localizer = Forge.getLocalizer();
         float townPriceModifier = changes == null ? 1f : changes.getTownPriceModifier();
+        if (isTournament()) {
+            TournamentData t = Config.instance().getConfigData().tournament;
+            boolean rewin = eventRules.goldToEnter >= 99999999;
+            description = "Event Type: Tournament\n";
+            description += "Bring your own deck. " + participants.length + " players, single elimination, "
+                    + (eventRules.gamesPerMatch == 1 ? "one game per match" : "best of " + eventRules.gamesPerMatch)
+                    + ", everyone starts at " + eventRules.startingLife + " life.\n\n";
+            if (eventStatus == AdventureEventController.EventStatus.Available) {
+                if (rewin)
+                    description += String.format("You have won here before.\nEntry Fee: %d[][+Shards][BLACK]\n\n", Math.round(eventRules.shardsToEnter * townPriceModifier));
+                else
+                    description += String.format("Entry Fee: %d[][+Gold][BLACK]\n\n", Math.round(eventRules.goldToEnter * townPriceModifier));
+            }
+            description += "Prizes\n";
+            description += String.format("%d[][+Gold][BLACK] for each round won\n", t.goldPerWin);
+            description += String.format("Champion: %d booster packs in your colors", t.championPacks);
+            return description;
+        }
         if (format == AdventureEventController.EventFormat.Draft) {
             description = localizer.getMessage("advEventTypeBoosterDraft");
             description += "Block: " + getCardBlock() + "\n";

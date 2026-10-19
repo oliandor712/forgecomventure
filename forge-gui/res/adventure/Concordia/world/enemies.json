@@ -575,5 +575,125 @@
     "count": 3
    }
   ]
+ },
+ {
+  "name": "Dawnbringer Host",
+  "sprite": "sprites/enemy/celestial/angel_2.atlas",
+  "deck": [
+   "decks/tier3/T3_W_Lyra.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Visionary Foundry",
+  "sprite": "sprites/enemy/construct/arcane_golem.atlas",
+  "deck": [
+   "decks/tier3/T3_U_Muzzio.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Gorgon's Gaze",
+  "sprite": "sprites/enemy/monstrosity/gorgone.atlas",
+  "deck": [
+   "decks/tier3/T3_B_Hythonia.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Tempest Roost",
+  "sprite": "sprites/enemy/dragon/dragon.atlas",
+  "deck": [
+   "decks/tier3/T3_R_Dragonhawk.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Hydra Den",
+  "sprite": "sprites/enemy/monstrosity/hydra.atlas",
+  "deck": [
+   "decks/tier3/T3_G_Gargos.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Inscrutable Skies",
+  "sprite": "sprites/enemy/monstrosity/androsphinx.atlas",
+  "deck": [
+   "decks/tier3/T3_WU_Isperia.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Doom of the Depths",
+  "sprite": "sprites/enemy/monstrosity/homarid.atlas",
+  "deck": [
+   "decks/tier3/T3_UB_Gyruda.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Blood Witch Revue",
+  "sprite": "sprites/enemy/fiend/devil.atlas",
+  "deck": [
+   "decks/tier3/T3_BR_Exava.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Strength Incarnate",
+  "sprite": "sprites/enemy/monstrosity/wurm.atlas",
+  "deck": [
+   "decks/tier3/T3_RG_Zilortha.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Host of Herons",
+  "sprite": "sprites/enemy/celestial/angel_1.atlas",
+  "deck": [
+   "decks/tier3/T3_GW_Sigarda.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
  }
 ]

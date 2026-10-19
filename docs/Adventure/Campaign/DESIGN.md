@@ -547,6 +547,21 @@ Hall. The Equipment-card shop became the Hall, and the gear-item shop (boots, bl
 became the booster shop while Concordia's item system is redesigned. Cards opened from packs are changed to their
 original printing like every other card reward.
 
+### 6.2d Inn tournaments (built)
+
+With `tournament` in `config.json`, inns run a **tournament with your own deck** instead of Forge's drafts and sealed
+events (`TournamentData`):
+
+- 8 players, single elimination (3 rounds), one game per match, Commander rules; **everyone starts at 30 life**.
+- Opponents are 7 of the 10 tournament champions in `enemies.json`, one per Tier 3 deck (Dawnbringer Host, Visionary
+  Foundry, Gorgon's Gaze, Tempest Roost, Hydra Den, Inscrutable Skies, Doom of the Depths, Blood Witch Revue,
+  Strength Incarnate, Host of Herons). Each plays its own deck.
+- Entry: **100 gold**. "Select Deck" registers a copy of your current deck.
+- Prizes: **50 gold per round won**; the champion also gets **3 booster packs**, each in a random color you've
+  unlocked.
+- Always open again as soon as the last one ends, until you win at that inn (character flag
+  `tourneyWon.<poi>.<inn>`). After that, entering costs **25 shards** and gold isn't accepted.
+
 ### 6.3 Quests and flags
 
 - The new plane has its own `world/quests.json`. New games always start **quest 28** (hard-coded in

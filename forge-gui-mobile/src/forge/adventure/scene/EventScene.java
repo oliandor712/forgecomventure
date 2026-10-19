@@ -346,16 +346,16 @@ public class EventScene extends MenuScene implements IAfterMatch {
             case Ready:
                 advance.setText("Start Event");
                 advance.setVisible(true);
-                editDeck.setDisabled(false);
-                editDeck.setVisible(true);
+                editDeck.setDisabled(currentEvent.isTournament()); //a tournament uses the deck as registered
+                editDeck.setVisible(!currentEvent.isTournament());
                 nextPage.setDisabled(false);
                 previousPage.setDisabled(false);
                 break;
             case Started:
                 advance.setText("Play round " + currentEvent.currentRound);
                 advance.setVisible(true);
-                editDeck.setDisabled(false);
-                editDeck.setVisible(true);
+                editDeck.setDisabled(currentEvent.isTournament());
+                editDeck.setVisible(!currentEvent.isTournament());
                 nextPage.setDisabled(false);
                 previousPage.setDisabled(false);
                 break;
@@ -457,6 +457,12 @@ public class EventScene extends MenuScene implements IAfterMatch {
                         break;
                     case Jumpstart:
                         loadMetaDraft();
+                        break;
+                    case Constructed: //a tournament: register a copy of the player's current deck
+                        currentEvent.registeredDeck = (Deck) Current.player().getSelectedDeck().copyTo(Current.player().getSelectedDeck().getName());
+                        currentEvent.eventStatus = Ready;
+                        refresh();
+                        break;
                 }
                 break;
             case Ready: //Commit to selected deck
@@ -634,6 +640,8 @@ public class EventScene extends MenuScene implements IAfterMatch {
     }
 
     private boolean validateDeck() {
+        if (currentEvent.isTournament())
+            return true; //the player's own deck; the duel applies the usual commander color rules
         String deckError = currentEvent.format.getDeckFormat().getDeckConformanceProblem(currentEvent.registeredDeck);
 
         if(deckError != null) {
