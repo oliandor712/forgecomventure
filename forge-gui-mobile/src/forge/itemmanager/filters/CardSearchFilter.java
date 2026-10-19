@@ -4,6 +4,7 @@ import forge.item.InventoryItem;
 import forge.item.PaperCard;
 import forge.itemmanager.ItemManager;
 import forge.itemmanager.SFilterUtil;
+import forge.model.FModel;
 
 import java.util.function.Predicate;
 
@@ -33,13 +34,18 @@ public class CardSearchFilter extends TextSearchFilter<PaperCard> {
 
     @Override
     protected Predicate<PaperCard> buildPredicate() {
-        return SFilterUtil.buildTextFilter(
+        Predicate<PaperCard> text = SFilterUtil.buildTextFilter(
                 txtSearch.getText(),
                 false,
                 inName,
                 inType,
                 inText,
                 inCost);
+        //a set code on its own ("LEA", "m21") also finds the cards printed in that set
+        String code = txtSearch.getText().trim();
+        if (code.matches("[A-Za-z0-9]{2,6}") && FModel.getMagicDb().getEditions().get(code.toUpperCase()) != null)
+            return text.or(pc -> pc.getEdition().equalsIgnoreCase(code));
+        return text;
     }
 
     @Override

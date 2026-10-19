@@ -89,7 +89,7 @@
   <object id="50" template="../../../common/maps/obj/shardtrader.tx" x="98" y="98"/>
   <object id="51" template="../../../common/maps/obj/shop.tx" x="272" y="98">
    <properties>
-    <property name="commonShopList" value="Equipment"/>
+    <property name="commonShopList" value="BoosterPackShop"/>
     <property name="mythicShopList" value=""/>
     <property name="rareShopList" value=""/>
     <property name="uncommonShopList" value=""/>

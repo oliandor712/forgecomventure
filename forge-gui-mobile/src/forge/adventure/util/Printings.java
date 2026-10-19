@@ -81,20 +81,46 @@ public class Printings {
         return out;
     }
 
-    /** Every printing of the card the art can be changed to, oldest first, one entry per edition and art. */
+    /**
+     * The printings the art can be changed to, oldest first, one per illustration. Forge has no artwork id, so the
+     * artist stands in for it: later printings by the same artist (the same art in a new frame or set) are dropped,
+     * while several arts in one set (basic lands, for example) are all kept.
+     */
     public static List<PaperCard> artOptions(PaperCard card) {
         Predicate<PaperCard> allowed = allowedEdition();
-        Map<String, PaperCard> byArt = new LinkedHashMap<>();
+        CardEdition.Collection editions = FModel.getMagicDb().getEditions();
+        List<PaperCard> all = new ArrayList<>();
         for (PaperCard pc : FModel.getMagicDb().getCommonCards().getAllCards(card.getName()))
             if (allowed.test(pc))
-                byArt.putIfAbsent(pc.getEdition() + "#" + pc.getArtIndex(), pc);
-        List<PaperCard> out = new ArrayList<>(byArt.values());
-        CardEdition.Collection editions = FModel.getMagicDb().getEditions();
-        out.sort(Comparator.comparing((PaperCard pc) -> {
+                all.add(pc);
+        all.sort(Comparator.comparing((PaperCard pc) -> {
             CardEdition ed = editions.get(pc.getEdition());
             return ed == null || ed.getDate() == null ? new Date(Long.MAX_VALUE) : ed.getDate();
-        }).thenComparingInt(PaperCard::getArtIndex));
+        }).thenComparing(PaperCard::getEdition).thenComparingInt(PaperCard::getArtIndex));
+        Map<String, String> editionOfArtist = new HashMap<>();
+        Set<String> seen = new HashSet<>();
+        List<PaperCard> out = new ArrayList<>();
+        for (PaperCard pc : all) {
+            if (!seen.add(pc.getEdition() + "#" + pc.getArtIndex()))
+                continue;
+            String artist = pc.getArtist();
+            if (artist != null && !artist.isEmpty()) {
+                String firstEdition = editionOfArtist.putIfAbsent(artist.toLowerCase(), pc.getEdition());
+                if (firstEdition != null && !firstEdition.equals(pc.getEdition()))
+                    continue; //same art as an older printing
+            }
+            out.add(pc);
+        }
         return out;
+    }
+
+    /** How the art picker lists a printing, so its search matches the set code and set name. */
+    public static String describe(PaperCard pc) {
+        CardEdition ed = FModel.getMagicDb().getEditions().get(pc.getEdition());
+        String text = pc.getName() + " - " + pc.getEdition() + (ed == null ? "" : " " + ed.getName());
+        if (pc.getArtist() != null && !pc.getArtist().isEmpty())
+            text += " - " + pc.getArtist();
+        return text;
     }
 
     /** Swaps every copy of from for to in a pool. Returns how many were swapped. */

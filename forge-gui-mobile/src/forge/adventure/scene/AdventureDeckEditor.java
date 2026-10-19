@@ -1137,9 +1137,10 @@ public class AdventureDeckEditor extends FDeckEditor {
             return;
         Localizer localizer = Forge.getLocalizer();
         menu.addItem(new FMenuItem(localizer.getMessageorUseDefault("lblChangeArt", "Change art"), Forge.hdbuttons ? FSkinImage.HDCHOICE : FSkinImage.DECKLIST, e ->
-                GuiChoose.oneOrNone(localizer.getMessageorUseDefault("lblChooseArtFor", "Choose the art for") + " " + card.getName(), options, chosen -> {
-                    if (chosen == null)
+                GuiChoose.getChoices(localizer.getMessageorUseDefault("lblChooseArtFor", "Choose the art for") + " " + card.getName(), 0, 1, options, null, Printings::describe, result -> {
+                    if (result == null || result.isEmpty())
                         return;
+                    PaperCard chosen = result.get(0);
                     PaperCard to = Printings.withFlagsOf(chosen, card);
                     if (!to.equals(card))
                         editor.swapPrinting(card, to);

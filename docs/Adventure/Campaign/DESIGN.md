@@ -525,10 +525,23 @@ Alpha, Command Tower from Commander 2011, Evolving Wilds from Rise of the Eldraz
   likelier to turn up than a card with one.
 - **Every card reward** (shops, loot, a deck card from an enemy, a named card) is changed to its original printing,
   keeping foil and no-sell. A stolen card comes back as the printing the player had.
-- **Change art** in the deck editor (on a card in the collection or in a deck) lists every printing of that card,
-  oldest first, whether or not you own it. Choosing one swaps every copy of that printing in your collection,
+- **Change art** in the deck editor (on a card in the collection or in a deck) lists the printings of that card,
+  oldest first, whether or not you own it, **one per illustration**. Forge has no artwork id, so the artist stands
+  in for it: a later printing by the same artist is the same art in a new frame and is left out (Lightning Bolt
+  goes from 71 printings to 37 arts). Several arts in one set (basic lands) are all kept. The list's search box
+  matches the set code, set name and artist.
+- **Set codes in the deck editor's search bar:** typing a set code on its own (`LEA`, `m21`) also finds every card
+  you have in that printing. Choosing one swaps every copy of that printing in your collection,
   auto-sell list, favorites and all decks; foil, no-sell and marked colors carry over. It's purely cosmetic.
 - Decks Concordia hands out (starters, rewards decks) keep the printings they list.
+
+### 6.2c Mossgate shops
+
+Mossgate sells cards by type (Creature, Artifact, Instant & Sorcery, Land, Enchantment, Colorless), basic lands and
+**booster packs** (Forge's general "Pack To Basics" shop, 8 random packs), plus the shard trader and the Commander
+Hall. The Equipment-card shop became the Hall, and the gear-item shop (boots, blessings and other equippable items)
+became the booster shop while Concordia's item system is redesigned. Cards opened from packs are changed to their
+original printing like every other card reward.
 
 ### 6.3 Quests and flags
 
