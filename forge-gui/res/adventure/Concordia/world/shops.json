@@ -6391,5 +6391,20 @@
       "count":8,
       "rarity": [ "mythic rare" ]
     }]
-}
+},
+ {
+  "name": "BasicLands",
+  "description": "Basics for Every Color",
+  "spriteAtlas": "maps/tileset/buildings.atlas",
+  "sprite": "LandShop",
+  "unlimited": true,
+  "rewards": [
+   {"count": 2, "cardName": "Plains", "sourceDeck": "decks/rewards/Fancy_Basics.dck"},
+   {"count": 2, "cardName": "Island", "sourceDeck": "decks/rewards/Fancy_Basics.dck"},
+   {"count": 2, "cardName": "Swamp", "sourceDeck": "decks/rewards/Fancy_Basics.dck"},
+   {"count": 2, "cardName": "Mountain", "sourceDeck": "decks/rewards/Fancy_Basics.dck"},
+   {"count": 2, "cardName": "Forest", "sourceDeck": "decks/rewards/Fancy_Basics.dck"},
+   {"count": 1, "cardName": "Wastes"}
+  ]
+ }
 ]
