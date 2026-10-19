@@ -203,18 +203,23 @@ public class DuelScene extends ForgeScene {
         boolean finalWinner = winner;
         boolean isBossLoss = (chaosBattle || showMessages) && !finalWinner;
         boolean hasAnteResults = !anteWonCards.isEmpty() || !anteLostCards.isEmpty();
+        TutorialLessonsData.Lesson winLesson = finalWinner && enemy.getData().tutorialLessonAfterWin ? nextTutorialLesson() : null;
 
         // No popups needed, preserve original behavior
-        if (!hasAnteResults && !isBossLoss) {
+        if (!hasAnteResults && !isBossLoss && winLesson == null) {
             afterGameEnd(enemyName, finalWinner);
             return;
         }
 
-        // Build popup chain: ante results -> boss dialogue -> exit
+        // Build popup chain: ante results -> boss dialogue or tutorial lesson -> exit
         callbackExit = true;
-        Runnable exitChain = () -> {
+        Runnable leave = () -> {
             afterGameEnd(enemyName, finalWinner);
             exitDuelScene();
+        };
+        Runnable exitChain = winLesson == null ? leave : () -> {
+            bossDialogue = createFOption(winLesson.text, winLesson.title, getFBEnemyAvatar(), leave);
+            FThreads.invokeInEdtNowOrLater(() -> bossDialogue.show());
         };
 
         Runnable afterAnte;
@@ -266,6 +271,14 @@ public class DuelScene extends ForgeScene {
         transitionScreen.afterMatch = !isArena;
         transitionScreen.afterEvent = eventData != null;
         Forge.setTransitionScreen(transitionScreen);
+    }
+
+    /** The player's next tutorial lesson (ConfigData.tutorialLessons), or null outside the lessons. */
+    private TutorialLessonsData.Lesson nextTutorialLesson() {
+        TutorialLessonsData lessons = Config.instance().getConfigData().tutorialLessons;
+        if (lessons == null || eventData != null)
+            return null;
+        return lessons.lessonFor(Current.player().getQuestFlag(lessons.flag));
     }
 
     private FOptionPane createFOption(String message, String title, FBufferedImage icon, Runnable runnable) {
@@ -566,18 +579,21 @@ public class DuelScene extends ForgeScene {
         rules.setWarnAboutAICards(false);
 
         //hostedMatch.setEndGameHook(() -> DuelScene.this.GameEnd());
-        final boolean showIntro = chaosBattle || isDeckMissing || enemy.getData().boss
+        final TutorialLessonsData.Lesson lesson = enemy.getData().tutorialLesson ? nextTutorialLesson() : null;
+        final boolean showIntro = lesson != null || chaosBattle || isDeckMissing || enemy.getData().boss
             || (enemy.getData().copyPlayerDeck && Current.player().isUsingCustomDeck());
         MatchController.setIntroShowing(showIntro);
         hostedMatch.startMatch(rules, appliedVariants, players, guiMap, bossBattle ? MusicPlaylist.BOSS : MusicPlaylist.MATCH);
         MatchController.instance.setGameView(hostedMatch.getGameView());
         boolean showMessages = enemy.getData().boss || (enemy.getData().copyPlayerDeck && Current.player().isUsingCustomDeck());
         LoadingOverlay matchOverlay;
-        if (chaosBattle || showMessages || isDeckMissing) {
+        if (lesson != null || chaosBattle || showMessages || isDeckMissing) {
             final FBufferedImage fb = getFBEnemyAvatar();
             final Runnable introDone = () -> MatchController.setIntroShowing(false);
             String Intro = enemy.getBossIntro();
-            if (Intro != null) {
+            if (lesson != null) {
+                bossDialogue = createFOption(lesson.text, lesson.title, fb, introDone);
+            } else if (Intro != null) {
                 bossDialogue = createFOption((Intro), enemy.getName(), fb, introDone);
             } else {
                 int randomKey = Aggregates.randomInt(1, 35);

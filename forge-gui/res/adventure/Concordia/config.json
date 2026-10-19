@@ -234,5 +234,31 @@
   "commanderHall": "world/commanders.json",
   "uniquePrintings": true,
   "mergeCommonItems": true,
+  "tutorialLessons": {
+    "flag": "raidersBeaten",
+    "firstValue": 1,
+    "lessons": [
+      {
+        "title": "Lesson 1 of 5: Lands and mana",
+        "text": "You may play one land per turn, on your own turn. Tap a land to make one mana of its color.\n\nTo cast a spell, tap lands for mana equal to its mana cost. A number in the cost can be paid with mana of any color; each colored symbol needs mana of that color."
+      },
+      {
+        "title": "Lesson 2 of 5: Permanents and spells",
+        "text": "Creatures, artifacts, enchantments, planeswalkers and lands are permanents. Once they resolve, they stay on the battlefield until something removes them.\n\nInstants and sorceries do their effect once, then go to your graveyard. Cast sorceries on your own turn when nothing else is happening; instants can be cast at almost any time, even on your opponent's turn."
+      },
+      {
+        "title": "Lesson 3 of 5: Your commander",
+        "text": "Your commander starts in the command zone, not your library. Cast it from there like any other spell.\n\nCommander tax: each time you cast it from the command zone, it costs 2 more. If it would die or be exiled, you may put it back in the command zone instead.\n\nColor identity: every card in your deck must use only the colors in your commander's mana cost and rules text."
+      },
+      {
+        "title": "Lesson 4 of 5: Singleton",
+        "text": "A Commander deck is exactly 100 cards: your commander plus 99 others.\n\nExcept for basic lands, you may have only one copy of each card. Basic lands can be played in any number."
+      },
+      {
+        "title": "Lesson 5 of 5: The Commander Hall",
+        "text": "You can't change your commander in the deck editor. Visit the Commander Hall in Mossgate to choose one.\n\nThe Hall lists 30 commanders for each of your colors. A few are open from the start; the rest unlock when you find that card as a reward or buy it in a shop. Pick an available commander and it replaces your current one."
+      }
+    ]
+  },
   "tournament": {"enemies": ["Capashen Paragon", "Visionary Foundry", "The Infestation", "Talruum Stampede", "Cat Warrior Pride", "Tolarian Adept", "Grandmother's Court", "The Relentless", "Peema Renegades", "Weatherlight Captain"], "players": 8, "entryGold": 100, "rewinShards": 25, "goldPerWin": 50, "championPacks": 3, "startingLife": 30, "gamesPerMatch": 1}
 }

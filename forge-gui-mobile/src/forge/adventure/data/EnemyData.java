@@ -49,6 +49,8 @@ public class EnemyData implements Serializable {
     public String bossIntro;
     public boolean ante = false;                   //Duel is for ante (only used when ConfigData.anteByEncounter is set).
     public boolean raider = false;                 //Cards this enemy wins from the player are held and sold back in the shop.
+    public boolean tutorialLesson = false;         //The duel opens with the player's next tutorial lesson (ConfigData.tutorialLessons).
+    public boolean tutorialLessonAfterWin = false; //Beating this enemy shows the player's next tutorial lesson, after the duel.
 
     public EnemyData() {
     }
@@ -79,6 +81,8 @@ public class EnemyData implements Serializable {
         gamesPerMatch   = enemyData.gamesPerMatch;
         ante            = enemyData.ante;
         raider          = enemyData.raider;
+        tutorialLesson  = enemyData.tutorialLesson;
+        tutorialLessonAfterWin = enemyData.tutorialLessonAfterWin;
         if (enemyData.scale == 0.0f) {
             scale = 1.0f;
         }

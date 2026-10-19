@@ -17,7 +17,8 @@
     "type": "gold",
     "count": 50
    }
-  ]
+  ],
+  "tutorialLesson": true
  },
  {
   "name": "Raider Scout",
@@ -37,7 +38,8 @@
     "type": "gold",
     "count": 50
    }
-  ]
+  ],
+  "tutorialLesson": true
  },
  {
   "name": "Raider Brute",
@@ -57,7 +59,8 @@
     "type": "gold",
     "count": 50
    }
-  ]
+  ],
+  "tutorialLesson": true
  },
  {
   "name": "Raider Smuggler",
@@ -77,7 +80,8 @@
     "type": "gold",
     "count": 50
    }
-  ]
+  ],
+  "tutorialLesson": true
  },
  {
   "name": "Rival Black",
@@ -100,7 +104,8 @@
     "type": "gold",
     "count": 100
    }
-  ]
+  ],
+  "tutorialLessonAfterWin": true
  },
  {
   "name": "Rival Red",
@@ -123,7 +128,8 @@
     "type": "gold",
     "count": 100
    }
-  ]
+  ],
+  "tutorialLessonAfterWin": true
  },
  {
   "name": "Rival Green",
@@ -146,7 +152,8 @@
     "type": "gold",
     "count": 100
    }
-  ]
+  ],
+  "tutorialLessonAfterWin": true
  },
  {
   "name": "Rival Blue",
@@ -169,7 +176,8 @@
     "type": "gold",
     "count": 100
    }
-  ]
+  ],
+  "tutorialLessonAfterWin": true
  },
  {
   "name": "Rival White",
@@ -192,7 +200,8 @@
     "type": "gold",
     "count": 100
    }
-  ]
+  ],
+  "tutorialLessonAfterWin": true
  },
  {
   "name": "Wild Hidden Bush",

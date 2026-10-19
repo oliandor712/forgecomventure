@@ -36,6 +36,7 @@ Forge's plane settings plus Concordia's own switches:
 | `uniquePrintings` | One findable printing per card, and Change art in the deck editor |
 | `mergeCommonItems` | `world/items.json` adds to Forge's item list instead of replacing it |
 | `tournament` | Inn tournaments: entry fee, prizes, life, opponents |
+| `tutorialLessons` | The five tutorial pop-ups (raider duels, then after the rival), in order by the `raidersBeaten` flag |
 | `restrictedCards`, `restrictedEditions`, `restrictedEvents` | Cards and sets Concordia never uses |
 
 ## Town services: shops, Hall, inn, shard trader

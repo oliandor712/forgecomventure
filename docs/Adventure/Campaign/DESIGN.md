@@ -159,7 +159,7 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 |---|---|---|---|
 | P1 | Awaken | Emberbrook: your room in the family house (a new game starts here) | Unsealed raiders strike during the Seal-day festival (the opening box). A Seal Angel blocks the passage out of your room and asks you to choose a first color, then fades. The rival's color is its opposite (§2.1 color lore) |
 | P2 | Your soul's deck | Emberbrook shrine | A basic commander deck manifests from your soul in the color you chose. The rival's manifests in theirs. **Elder Wren** explains what the decks are, and that the duels to come are your first lessons |
-| P3 | Tutorial raiders | Emberbrook square | All four raiders are in the square when you step out of the house, and you can take them in any order. Each is a tutorial battle with one lesson (drawing, combat, the commander, color identity), with no ante for now. Beating one gives its rarest non-commander card and 50 gold. When the last raider flees, the rival appears in the village gate and comes at you when you get close: **Rival duel 1**, a short duel with a low-power deck. The rival says that when they rule, they'll tear the Seals down |
+| P3 | Tutorial raiders | Emberbrook square | All four raiders are in the square when you step out of the house, and you can take them in any order. Each is a tutorial battle with no ante for now. Each duel opens with the next lesson in a pop-up (lands and mana, permanents and spells, the commander, singleton), in that order whichever raider you fight; the order follows the `raidersBeaten` counter, so losing repeats the same lesson. Beating the rival shows lesson 5, the Commander Hall, after the duel (`tutorialLessons` in `config.json`, `tutorialLesson` / `tutorialLessonAfterWin` on the enemy). Beating one gives its rarest non-commander card and 50 gold. When the last raider flees, the rival appears in the village gate and comes at you when you get close: **Rival duel 1**, a short duel with a low-power deck. The rival says that when they rule, they'll tear the Seals down |
 | P4 | Set out | Route 1 → Mossgate | Elder Wren sends you to Mossgate with the village's Seal fragment. Route trainers teach the "challenged on sight" mechanic. At Mossgate's notice board you read the Champion's open challenge for the first time. The rival has already left |
 
 #### Chapter 1: Your Seal
@@ -313,6 +313,8 @@ What the code allows today:
   `displayName: "Emberbrook"`). Losing on the overworld also sends the player back to `Spawn`. With `startMap` in
   `config.json` (Concordia sets it to the house), a new game starts in that sub-map of `Spawn` instead of its main
   map; `startObjectId` picks the entry, and 0 means the entry marked `spawn`.
+- **The Seal Angel speaks in two boxes**: the full speech with OK, then a short "Pick your color." with the five
+  colors, so neither box overflows the screen.
 - **The Seal Angel can't be walked past.** It stands in the passage out of the bedroom (a visible angel and two
   hidden triggers fill the 3-tile gap), and all three are deleted once the color is chosen. The new game's first box
   is the main quest's prologue (the Seal-day raid).
