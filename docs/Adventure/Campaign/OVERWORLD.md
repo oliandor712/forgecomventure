@@ -7,10 +7,10 @@ geography: where things are, how the player moves through them, and what stops t
 ## 1. The rhythm
 
 ```
-Starter area ──► Color zone 1 ──► Color zones 2-3 ──► Color zones 4-5 ──► Champion area
-(Emberbrook,     (your own        (your two ally      (your two enemy      (Victory Road,
- Route 1 maze,    color, 1 Seal)   colors, any order,  colors, any order,   Summit, Throne)
- Mossgate hub)                     2 Seals)            2 Seals)
+Starter area ──► Color zone 1 ──► Color zones 2-3 ──► Color zones 4-5 ──► Paragons ──────► Champion area
+(Emberbrook,     (your own        (your two ally      (your two enemy      (one in each     (Victory Road,
+ Route 1 maze,    color, 1 Seal)   colors, any order,  colors, any order,   border town,     Summit, Throne)
+ Mossgate hub)                     2 Seals)            2 Seals)             any order)
 ```
 
 Each step is **semi-linear**: one or two zones open at a time, and inside a zone the main path is fixed but has side
@@ -23,7 +23,8 @@ beats), on foot through a zone's gate or by Waystone.
 | Zone 1 | Your color | 0 | Tier 2 / 20 | Tier 3 / 30 |
 | Zones 2-3 | Your two ally colors | 1 | Tier 3-4 / 25 | Tier 4-5 / 35-40 |
 | Zones 4-5 | Your two enemy colors | 3 | Tier 5 / 30 | Tier 6 / 40 |
-| Champion | Victory Road → Summit | 5 | Gauntlet | Paragons, Champion |
+| Paragons | The five border towns | 5 | – | Five Paragons, tier 7 / 40, any order; each gives a Summit Key fragment |
+| Champion | Victory Road → Summit | 5 Summit Key fragments | Gauntlet | Rival, Champion |
 
 Tiers above 3 don't have decks yet (`ENCOUNTER_TIERS.md` covers 1-3); the table follows `DESIGN.md` §5.2. Every color
 zone has the same dungeons: a gate pass, two inner passes and optional dungeons, whatever step it is for the player (§2).
@@ -169,6 +170,28 @@ player, for example:
 Every player opens their two border zones next to their own color with the ally tier, and the other three with the
 enemy tier. A border zone plays at the higher tier of its two colors.
 
+**The Paragons.** Each border town is home to one of the Champion's **Five Paragons**, in that town's two colors
+(`DESIGN.md` §3.3). The Paragon is in town from the moment the border zone opens, but only accepts a challenge once the
+player holds all five Seals ("Come back when every Warden has fallen"), so they stay tier 7 (`life` 40) whenever the
+player first meets them. Each Paragon carries a **fragment of the Summit Key**, the key to the champion gate, and gives
+it up when beaten. All five fragments, won in any order, are needed to open the gate (§5).
+
+**The enemy-pair bosses.** Once a town's Paragon is beaten, an **optional boss** in an enemy color pair arrives in that
+town. Each town gets the one enemy pair that shares no color with it, which is also the pair across the ring from it:
+
+| Border town | Paragon | Optional boss afterwards |
+|---|---|---|
+| WU | White-Blue | Black-Green |
+| UB | Blue-Black | Red-White |
+| BR | Black-Red | Green-Blue |
+| RG | Red-Green | White-Black |
+| GW | Green-White | Blue-Red |
+
+So all ten two-color pairs appear: the allied pairs as the Paragons on the main path, the enemy pairs as optional
+bosses. The enemy-pair bosses are as strong as the Paragons or stronger (tier 7-8), aren't needed for the champion gate,
+and give their own rewards. Story-wise they're rivals of the Paragon they replace, drawn to the town once its guardian
+has fallen.
+
 **Where the doors are.** Each border pass has its zone-side door in that zone's last section (route C, past both inner
 passes), so the border zone is a reward for getting deep into a zone, not a way around its passes.
 
@@ -256,14 +279,21 @@ past. Its dialog checks a flag:
 | `zoneOpen.<C>` = 1 | The zone of color C opens for this player | See below |
 | `zoneTier.<C>` = 1/2/3 | The tier the zone plays at for this player (own = 1, allies = 2, enemies = 3) | The color choice |
 | `seals` | +1 per Warden beaten | Each Warden's defeat dialog |
+| `paragon.<pair>` = 1 | That border town's Paragon is beaten | The Paragon's defeat dialog, which also gives the town's Summit Key fragment and wakes its enemy-pair boss |
 
 - **The color choice** (the Seal Angel) sets `zoneOpen.<own>` and all five `zoneTier.<C>` values. Each of its five
   color options already runs its own actions, so this is five more flag lists in the existing dialog.
 - **Your own Warden** opens the two ally zones. The Warden's defeat dialog has five nodes, one per `col<X>` character
   flag, each opening that color's two allies.
 - **The second ally Warden** (`seals` reaches 3) opens the two enemy zones the same way.
-- **Five Seals** open the **sixth gate**, the champion area's, at the back of the Gate Temple. Its guard checks
-  `seals` = 5 ("Every Warden has fallen. The Summit is open."). Victory Road and the Summit are past this gate.
+- **Five Seals** let the player challenge the Paragons in the border towns (§3.2). Each beaten Paragon gives one
+  **Summit Key fragment**: five quest items, one per Paragon (for example "Summit Key Fragment (White-Blue)"), in
+  `world/items.json`.
+- **All five fragments** open the **sixth gate**, the champion area's, at the back of the Gate Temple. Its guard's
+  dialog checks for the five items (the dialog `item` condition, one per fragment, all required). With all five, the
+  `(Unlock)` option takes the fragments (`removeItem`) and opens the gate for good ("The fragments fit together. The
+  Summit is open."). Without them, the guard says how many are still missing. Victory Road and the Summit are past
+  this gate.
 
 Color pairs for the defeat dialogs:
 
@@ -391,7 +421,8 @@ writes out everything the zone needs:
    the template zone shows how many slots there are.
 8. **Tiered encounter decks.** Tier 4-6 decks with the deck generator, then the encounter slots in the template zone.
 9. **The other four zones**, one at a time, each playtested at tier 1 and tier 3.
-10. **The five border zones**, each once both its neighbours exist: border passes, the two-color town, the small maze.
+10. **The five border zones**, each once both its neighbours exist: border passes, the two-color town, the small maze,
+    its Paragon and its enemy-pair boss.
 11. **The champion gate, Victory Road and the Summit.**
 
 ## 10. Decisions
@@ -412,8 +443,7 @@ writes out everything the zone needs:
 - **The central area** is just the starter zone and the champion area, walled off from each other (§3).
 - **Neighbouring color zones overlap** in five border zones, the allied pairs, each with a two-color town (§3.2). A
   border zone opens when both its colors' zones are open.
-
-**Open:**
-- **The Paragons and the border zones.** `DESIGN.md` gives the Five Paragons the same five allied pairs (WU, UB, BR, RG,
-  GW). Either each Paragon comes from its border town (a story hook, and a reason to visit), or the Paragons switch to
-  the five enemy pairs (WB, UR, BG, RW, GU), so all ten two-color pairs appear somewhere in the game.
+- **The Paragons are fought in their border towns**, in any order, once the player holds all five Seals. Each gives a
+  fragment of the Summit Key, and the champion gate opens only with all five (§3.2, §5).
+- **The five enemy pairs** appear as optional bosses, each in the border town that shares no color with it, after that
+  town's Paragon is beaten (§3.2).

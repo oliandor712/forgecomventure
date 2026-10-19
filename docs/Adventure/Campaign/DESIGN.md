@@ -134,7 +134,7 @@ Champion's open challenge is only a poster to you at this point. The raid makes 
 | Chapter 1 | **Your Seal** | Your own color's Warden region (one of five routes from Mossgate) | Warden of **your color** | None new. Your own Seal gives +3 max life and a commander choice in your color |
 | Chapter 2 | **Two Roads** | The two ally-color Warden regions, in either order | Wardens of your **two ally colors** | One new color per Warden |
 | Chapter 3 | **The Archive of Seals** | The Archive in Lumenhold, the Hollow, then the two enemy-color Warden regions in either order | Wardens of your **two enemy colors**. Unsealed boss: **Mordessa** | One new color per Warden |
-| Finale | **The Champion's Throne** | Victory Road and the Summit | The Five Paragons, the rival, then the Champion | You have all five |
+| Finale | **The Champion's Throne** | The border towns, then Victory Road and the Summit | The Five Paragons, the rival, then the Champion | You have all five |
 
 Each Warden guards the Seal of one color, and the five colors are fixed. Which tier a Warden falls into depends on your
 starting color (§2.1 color lore):
@@ -198,8 +198,8 @@ Expected length: about 18–25 hours on Normal. Prologue plus Chapter 1 (the ver
 
 | Step | Goal | Location | Beats |
 |---|---|---|---|
-| F.1 | Victory Road | Mountain cave (3 maps) | Your strongest trainer gauntlet. Secrets: two legend duels (ante) |
-| F.2 | The Five Paragons | Summit halls (5 rooms, one per color) | The Champion's sworn duelists, one per two-color pair. Some believe in his duty, others are paid to keep the Summit. Each plays a two-color deck (§3.3). No healing between halls, but inns at the entrance |
+| F.1 | The Five Paragons | The five border towns (`OVERWORLD.md` §3.2), any order | The Champion's sworn duelists, one per allied color pair, each living in the border town of their colors. Some believe in his duty, others are paid to keep the Summit. Each plays a two-color deck (§3.3). They accept a challenge only once you hold all five Seals. Each carries a fragment of the Summit Key, and the Gate Temple's champion gate opens only with all five. Each beaten Paragon is replaced in its town by an optional boss of the enemy pair that shares no color with that town |
+| F.2 | Victory Road | Mountain cave (3 maps) | Your strongest trainer gauntlet. Secrets: two legend duels (ante) |
 | F.3 | The rival at the gate | Summit gate | The rival, now in a five-color deck, has been beaten by the Champion's gatekeepers and now wants to fight you first. The duel is an argument about the Seals as much as a contest for the throne |
 | F.4 | The Champion | Throne room | The Champion explains his duty: the strong must carry the weak, even when the weak don't want to be carried. He takes the challenge seriously. Three-phase boss (§5.3) |
 | F.5 | The Throne | Throne room | The Champion yields or falls. The Seals now answer to you. What you do with them is your choice (see *Endings* below). Post-game legend duels open |
@@ -274,7 +274,8 @@ broke the Seals, and they're the one NPC who argues with your choice instead of 
 | **Captain Hask** | Unsealed captain, mini-boss | Paid muscle who runs the camp's raiders | Mono-B or B/R aggro | Ch.1 (camp on your region's route) |
 | **Mordessa** | Unsealed ringleader | Runs the illegal duel ring and sells the throne as a fantasy | Mono-B reanimator | Ch.3 |
 | **Raiders** (grunts) | Team Rocket analogs | Steal rare cards and Seal fragments for the Unsealed | Small ante-focused decks, one per tutorial lesson and per raid. Built from `decks/campaign/raiders/*.dck` | Prologue, Ch.1–3 |
-| **The Five Paragons** | The Champion's sworn duelists | Guard the Summit. Some believe the Champion's duty, some are paid | One two-color deck each (WU, UB, BR, RG, GW) | Finale |
+| **The Five Paragons** | The Champion's sworn duelists | Each holds a border town (`OVERWORLD.md` §3.2). Some believe the Champion's duty, some are paid | One two-color deck each (WU, UB, BR, RG, GW) | Finale |
+| **Enemy-pair bosses** | Optional bosses | Arrive in a border town once its Paragon falls, one per enemy pair (WB, UR, BG, RW, GU) | One two-color deck each | Finale, optional |
 | **The Champion** | Final boss | Believes the strong must carry the weak, and that ruling is a duty he cannot refuse | Five-color, three phases (§5.3) | Ch.1 posters, Ch.3 (Pell), finale |
 | **Hidden legends** | Optional secret duels | Each is a famous legend in Concordia's history | Existing legend decks (Realm of Legends has 985 in `decks/legends/`, which can be copied in). Secret duels are ante | Secret areas |
 
