@@ -678,6 +678,16 @@
     "questItem": true
   },
   {
+    "name": "Emberbrook Waystone",
+    "usableOnWorldMap": true,
+    "equipmentSlot": "Ability2",
+    "description": "A warm stone from your rival's pocket. Teleports you home to Emberbrook.",
+    "commandOnUse": "teleport to poi Spawn",
+    "iconName": "ColorlessRune",
+    "questItem": true,
+    "shardsNeeded": 1
+  },
+  {
     "name": "Colorless rune",
     "usableOnWorldMap": true,
     "equipmentSlot": "Ability2",

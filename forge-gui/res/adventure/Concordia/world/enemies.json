@@ -88,6 +88,11 @@
   "life": 25,
   "rewards": [
    {
+    "type": "item",
+    "count": 1,
+    "itemName": "Emberbrook Waystone"
+   },
+   {
     "type": "gold",
     "count": 100
    }
@@ -105,6 +110,11 @@
   "scale": 1.0,
   "life": 25,
   "rewards": [
+   {
+    "type": "item",
+    "count": 1,
+    "itemName": "Emberbrook Waystone"
+   },
    {
     "type": "gold",
     "count": 100
@@ -124,6 +134,11 @@
   "life": 25,
   "rewards": [
    {
+    "type": "item",
+    "count": 1,
+    "itemName": "Emberbrook Waystone"
+   },
+   {
     "type": "gold",
     "count": 100
    }
@@ -142,6 +157,11 @@
   "life": 25,
   "rewards": [
    {
+    "type": "item",
+    "count": 1,
+    "itemName": "Emberbrook Waystone"
+   },
+   {
     "type": "gold",
     "count": 100
    }
@@ -159,6 +179,11 @@
   "scale": 1.0,
   "life": 25,
   "rewards": [
+   {
+    "type": "item",
+    "count": 1,
+    "itemName": "Emberbrook Waystone"
+   },
    {
     "type": "gold",
     "count": 100
