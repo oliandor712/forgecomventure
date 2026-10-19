@@ -67,8 +67,20 @@ connect to each other.
 - **Geography is flavor.** Since zones only connect through the centre, the ring order doesn't change play. The sketch
   goes Red, Green, Blue, White, Black clockwise from the top. Putting them in color-wheel order (White, Blue, Black,
   Red, Green) would make every pair of neighbours allies, if that's wanted for the look of the map.
-- **Size.** Each region is about 120 tiles across (Route 1 is 60×90). With the ring around the centre, the world is
-  about **400×400 tiles**. That's more than today's 160×160, but well under Shandalar's 700×700.
+- **Size**, scaled from the sketch, where the starter zone is the existing 60×90-tile Route 1 area (about 0.6 tiles
+  per sketch pixel):
+
+| Region | Size in tiles (approx.) | Compared with Route 1 |
+|---|---|---|
+| Starter zone (built) | 60 × 90 | 1× |
+| Central area (starter, hub ground, champion area) | 200 across | about 6× the area |
+| Champion area | 60 across | about 0.5× |
+| Each color zone | 170-200 across (Black and White the widest, Red the tallest) | about 5-6× the area |
+| Whole world, with an ocean margin | about **560 × 520** | – |
+
+  That's more than today's 160×160, but under Shandalar's 700×700, so world generation can handle it. A color zone
+  holds about five Route 1s' worth of maze, which is room for a gate town, two or three route sections, an inner pass,
+  the gym and several optional dungeons.
 - **Each color zone is its own biome** (`world/biomes/<color>.json`) with `noiseWeight` 0 and a fixed position, its own
   tileset (`White`, `Blue`, `Black`, `Red`, `Green` in `world/tilesets/terrain.atlas`) and its own maze image
   (`world/structures/models/<color>_maze.png`), drawn with that color's structure atlas:
@@ -112,6 +124,9 @@ Central area ─► GATE PASS ─► Gate town ─► Route A ─► INNER PASS 
 - Duelists stand at corridor edges with clear sightlines (`threatRange` 4-5 tiles, `pursueRange` 8-9), as the Route 1
   duelists do. They give up and walk back, so the player can retreat.
 - 2-3 landmarks per zone (a lake, a ruin, a big tree) visible on the minimap, so the maze can be read.
+- At 170-200 tiles across, a zone is too big to hand-draw tile by tile in one go. Draw it as a few sections (gate
+  town area, each route, the gym approach) and let the maze tool (§7) stitch them, so each section stays about the size
+  of Route 1.
 
 ### 4.1 Gate town services
 
@@ -279,7 +294,7 @@ writes out everything the zone needs:
 ## 9. Build order
 
 1. **Linked POI doors** (Java), tested with a throwaway two-door pass in the starter area.
-2. **World resize and the central area.** About 400×400 tiles, the starter zone and Mossgate in the centre, the hub
+2. **World resize and the central area.** About 560×520 tiles, the starter zone and Mossgate in the centre, the hub
    ground around them with five gate positions, the champion area enclosed. Retest the starter flow end to end.
 3. **Flags.** `zoneTier.<C>` and `zoneOpen.<C>` from the color choice; `seals` on Warden defeats.
 4. **One complete zone as the template** (suggest Green, since its tileset and trees are what Route 1 already uses):
