@@ -11,7 +11,8 @@
    "Soldier",
    "Nomad"
   ],
-  "desc": "Tier 1 (Bracket 1). Mono-white human soldiers that swarm in together."
+  "desc": "Tier 1 (Bracket 1). Mono-white human soldiers that swarm in together.",
+  "sprite": "sprites/enemy/monstrosity/harpy.atlas"
  },
  {
   "tier": 1,
@@ -25,7 +26,8 @@
    "/bolster",
    "/\\+1/\\+1 counter"
   ],
-  "desc": "Tier 1 (Bracket 1). Mono-white spirits that bolster as they arrive."
+  "desc": "Tier 1 (Bracket 1). Mono-white spirits that bolster as they arrive.",
+  "sprite": "sprites/enemy/monstrosity/harpy.atlas"
  },
  {
   "tier": 1,
@@ -39,7 +41,8 @@
    "Drake",
    "/Flying"
   ],
-  "desc": "Tier 1 (Bracket 1). Mono-blue birds and drakes that peck from the air."
+  "desc": "Tier 1 (Bracket 1). Mono-blue birds and drakes that peck from the air.",
+  "sprite": "sprites/enemy/fey/pixie.atlas"
  },
  {
   "tier": 1,
@@ -53,7 +56,8 @@
    "Siren",
    "Merfolk"
   ],
-  "desc": "Tier 1 (Bracket 1). Mono-blue pirates and sirens."
+  "desc": "Tier 1 (Bracket 1). Mono-blue pirates and sirens.",
+  "sprite": "sprites/enemy/fey/pixie_dimir.atlas"
  },
  {
   "tier": 1,
@@ -66,7 +70,8 @@
    "Skeleton",
    "Zombie"
   ],
-  "desc": "Tier 1 (Bracket 1). Mono-black skeletons and zombies that keep coming back."
+  "desc": "Tier 1 (Bracket 1). Mono-black skeletons and zombies that keep coming back.",
+  "sprite": "sprites/enemy/plant/fungus.atlas"
  },
  {
   "tier": 1,
@@ -78,7 +83,8 @@
   "theme": [
    "Rat"
   ],
-  "desc": "Tier 1 (Bracket 1). Mono-black rat swarm."
+  "desc": "Tier 1 (Bracket 1). Mono-black rat swarm.",
+  "sprite": "sprites/enemy/plant/fungus.atlas"
  },
  {
   "tier": 1,
@@ -90,7 +96,8 @@
   "theme": [
    "Goblin"
   ],
-  "desc": "Tier 1 (Bracket 1). Mono-red goblin mob."
+  "desc": "Tier 1 (Bracket 1). Mono-red goblin mob.",
+  "sprite": "sprites/enemy/monstrosity/kavu.atlas"
  },
  {
   "tier": 1,
@@ -103,7 +110,8 @@
    "Dwarf",
    "/Treasure"
   ],
-  "desc": "Tier 1 (Bracket 1). Mono-red dwarves with a little treasure."
+  "desc": "Tier 1 (Bracket 1). Mono-red dwarves with a little treasure.",
+  "sprite": "sprites/enemy/fey/satyr.atlas"
  },
  {
   "tier": 1,
@@ -115,7 +123,8 @@
   "theme": [
    "Elf"
   ],
-  "desc": "Tier 1 (Bracket 1). Mono-green elves."
+  "desc": "Tier 1 (Bracket 1). Mono-green elves.",
+  "sprite": "sprites/enemy/plant/fungus_golgari.atlas"
  },
  {
   "tier": 1,
@@ -129,7 +138,8 @@
    "Bear",
    "Beast"
   ],
-  "desc": "Tier 1 (Bracket 1). Mono-green vanilla beasts and bears."
+  "desc": "Tier 1 (Bracket 1). Mono-green vanilla beasts and bears.",
+  "sprite": "sprites/enemy/plant/hiddenbush.atlas"
  },
  {
   "tier": 2,
@@ -143,7 +153,8 @@
    "Knight",
    "/Aura|Equipment|first strike"
   ],
-  "desc": "Tier 2 (Bracket 2). Mono-white knights with auras and equipment, built from the Realm of Legends Danitha deck."
+  "desc": "Tier 2 (Bracket 2). Mono-white knights with auras and equipment, built from the Realm of Legends Danitha deck.",
+  "sprite": "sprites/enemy/humanoid/paladin_2.atlas"
  },
  {
   "tier": 2,
@@ -157,7 +168,8 @@
    "Human",
    "/gain .* life"
   ],
-  "desc": "Tier 2 (Bracket 2). Mono-white defenders, built from the Tempest old-border white precon."
+  "desc": "Tier 2 (Bracket 2). Mono-white defenders, built from the Tempest old-border white precon.",
+  "sprite": "sprites/enemy/humanoid/paladin_2.atlas"
  },
  {
   "tier": 2,
@@ -171,7 +183,8 @@
    "Wizard",
    "/Counter target"
   ],
-  "desc": "Tier 2 (Bracket 2). Mono-blue wizards and counters, built from the Tempest old-border blue precon."
+  "desc": "Tier 2 (Bracket 2). Mono-blue wizards and counters, built from the Tempest old-border blue precon.",
+  "sprite": "sprites/enemy/humanoid/conjurer.atlas"
  },
  {
   "tier": 2,
@@ -186,7 +199,8 @@
    "Thopter",
    "/artifact"
   ],
-  "desc": "Tier 2 (Bracket 2). Mono-blue artifacts and thopters, built from the Realm of Legends Sai deck."
+  "desc": "Tier 2 (Bracket 2). Mono-blue artifacts and thopters, built from the Realm of Legends Sai deck.",
+  "sprite": "sprites/enemy/humanoid/conjurer.atlas"
  },
  {
   "tier": 2,
@@ -201,7 +215,8 @@
    "/sacrifice",
    "/dies"
   ],
-  "desc": "Tier 2 (Bracket 2). Mono-black sacrifice, built from the Realm of Legends Fumulus deck."
+  "desc": "Tier 2 (Bracket 2). Mono-black sacrifice, built from the Realm of Legends Fumulus deck.",
+  "sprite": "sprites/enemy/humanoid/knight.atlas"
  },
  {
   "tier": 2,
@@ -215,7 +230,8 @@
    "/-1/-1|gets -",
    "Horror"
   ],
-  "desc": "Tier 2 (Bracket 2). Mono-black shrinking and attrition, built from the Realm of Legends Grandmother Sengir deck."
+  "desc": "Tier 2 (Bracket 2). Mono-black shrinking and attrition, built from the Realm of Legends Grandmother Sengir deck.",
+  "sprite": "sprites/enemy/undead/shade.atlas"
  },
  {
   "tier": 2,
@@ -229,7 +245,8 @@
    "Minotaur",
    "/haste|deals .* damage"
   ],
-  "desc": "Tier 2 (Bracket 2). Mono-red minotaurs and burn, built from the Tempest old-border red precon."
+  "desc": "Tier 2 (Bracket 2). Mono-red minotaurs and burn, built from the Tempest old-border red precon.",
+  "sprite": "sprites/enemy/monstrosity/yeti.atlas"
  },
  {
   "tier": 2,
@@ -244,7 +261,8 @@
    "Berserker",
    "Warrior"
   ],
-  "desc": "Tier 2 (Bracket 2). Mono-red haste aggro, built from the Realm of Legends Eron deck."
+  "desc": "Tier 2 (Bracket 2). Mono-red haste aggro, built from the Realm of Legends Eron deck.",
+  "sprite": "sprites/enemy/humanoid/swordsman_2.atlas"
  },
  {
   "tier": 2,
@@ -258,7 +276,8 @@
    "Cat",
    "/trample|forestwalk"
   ],
-  "desc": "Tier 2 (Bracket 2). Mono-green cats and stompers, built from the Tempest old-border green precon."
+  "desc": "Tier 2 (Bracket 2). Mono-green cats and stompers, built from the Tempest old-border green precon.",
+  "sprite": "sprites/enemy/humanoid/swordsman_3.atlas"
  },
  {
   "tier": 2,
@@ -272,7 +291,8 @@
    "/\\+1/\\+1 counter",
    "Elf"
   ],
-  "desc": "Tier 2 (Bracket 2). Mono-green +1/+1 counters, built from the Realm of Legends Rishkar deck."
+  "desc": "Tier 2 (Bracket 2). Mono-green +1/+1 counters, built from the Realm of Legends Rishkar deck.",
+  "sprite": "sprites/enemy/plant/treant_large.atlas"
  },
  {
   "tier": 3,
@@ -286,7 +306,8 @@
    "Angel",
    "/flying"
   ],
-  "desc": "Tier 3 (Bracket 3). Mono-white angels, from the Realm of Legends Lyra deck."
+  "desc": "Tier 3 (Bracket 3). Mono-white angels, from the Realm of Legends Lyra deck.",
+  "sprite": "sprites/enemy/celestial/cromat_angel.atlas"
  },
  {
   "tier": 3,
@@ -301,7 +322,8 @@
    "Construct",
    "/artifact"
   ],
-  "desc": "Tier 3 (Bracket 3). Mono-blue big artifacts, from the Realm of Legends Muzzio deck."
+  "desc": "Tier 3 (Bracket 3). Mono-blue big artifacts, from the Realm of Legends Muzzio deck.",
+  "sprite": "sprites/enemy/humanoid/human/artificer/esper_artificer.atlas"
  },
  {
   "tier": 3,
@@ -315,7 +337,8 @@
    "Gorgon",
    "/deathtouch|destroy"
   ],
-  "desc": "Tier 3 (Bracket 3). Mono-black deathtouch control, from the Realm of Legends Hythonia deck."
+  "desc": "Tier 3 (Bracket 3). Mono-black deathtouch control, from the Realm of Legends Hythonia deck.",
+  "sprite": "sprites/enemy/monstrosity/gorgonen.atlas"
  },
  {
   "tier": 3,
@@ -329,7 +352,8 @@
    "Dragon",
    "/flying"
   ],
-  "desc": "Tier 3 (Bracket 3). Mono-red dragons, from the Realm of Legends Dragonhawk deck."
+  "desc": "Tier 3 (Bracket 3). Mono-red dragons, from the Realm of Legends Dragonhawk deck.",
+  "sprite": "sprites/enemy/beast/bird/parrot.atlas"
  },
  {
   "tier": 3,
@@ -343,7 +367,8 @@
    "Hydra",
    "/fight|\\+1/\\+1 counter"
   ],
-  "desc": "Tier 3 (Bracket 3). Mono-green hydras, from the Realm of Legends Gargos deck."
+  "desc": "Tier 3 (Bracket 3). Mono-green hydras, from the Realm of Legends Gargos deck.",
+  "sprite": "sprites/enemy/monstrosity/hydra.atlas"
  },
  {
   "tier": 3,
@@ -358,7 +383,8 @@
    "Sphinx",
    "Bird"
   ],
-  "desc": "Tier 3 (Bracket 3). Azorius fliers, from the Realm of Legends Isperia deck."
+  "desc": "Tier 3 (Bracket 3). Azorius fliers, from the Realm of Legends Isperia deck.",
+  "sprite": "sprites/enemy/monstrosity/criosphinx.atlas"
  },
  {
   "tier": 3,
@@ -373,7 +399,8 @@
    "Kraken",
    "Horror"
   ],
-  "desc": "Tier 3 (Bracket 3). Dimir mill-and-steal, from the Realm of Legends Gyruda deck."
+  "desc": "Tier 3 (Bracket 3). Dimir mill-and-steal, from the Realm of Legends Gyruda deck.",
+  "sprite": "sprites/enemy/fiend/demon_5.atlas"
  },
  {
   "tier": 3,
@@ -388,7 +415,8 @@
    "Devil",
    "Vampire"
   ],
-  "desc": "Tier 3 (Bracket 3). Rakdos unleash aggro, from the Realm of Legends Exava deck."
+  "desc": "Tier 3 (Bracket 3). Rakdos unleash aggro, from the Realm of Legends Exava deck.",
+  "sprite": "sprites/enemy/humanoid/human/cleric/monk.atlas"
  },
  {
   "tier": 3,
@@ -403,7 +431,8 @@
    "Dinosaur",
    "Beast"
   ],
-  "desc": "Tier 3 (Bracket 3). Gruul big creatures, from the Realm of Legends Zilortha deck."
+  "desc": "Tier 3 (Bracket 3). Gruul big creatures, from the Realm of Legends Zilortha deck.",
+  "sprite": "sprites/enemy/beast/dinosaur/ancient.atlas"
  },
  {
   "tier": 3,
@@ -418,7 +447,8 @@
    "Human",
    "/Aura|Equipment"
   ],
-  "desc": "Tier 3 (Bracket 3). Selesnya angels and humans, from the Realm of Legends Sigarda deck."
+  "desc": "Tier 3 (Bracket 3). Selesnya angels and humans, from the Realm of Legends Sigarda deck.",
+  "sprite": "sprites/enemy/celestial/fallen_angel.atlas"
  },
  {
   "tier": 1,
@@ -431,7 +461,8 @@
   ],
   "file": "T1_B_Yahenni.dck",
   "name": "Yahenni's Band",
-  "desc": "Tier 1 (Bracket 1). Mono-black Yahenni, Undying Partisan deck."
+  "desc": "Tier 1 (Bracket 1). Mono-black Yahenni, Undying Partisan deck.",
+  "sprite": "sprites/enemy/undead/vampire_4.atlas"
  },
  {
   "tier": 1,
@@ -444,7 +475,8 @@
   ],
   "file": "T1_B_Gonti.dck",
   "name": "Gonti's Band",
-  "desc": "Tier 1 (Bracket 1). Mono-black Gonti, Lord of Luxury deck."
+  "desc": "Tier 1 (Bracket 1). Mono-black Gonti, Lord of Luxury deck.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate_captain.atlas"
  },
  {
   "tier": 1,
@@ -456,7 +488,8 @@
   ],
   "file": "T1_G_Goreclaw.dck",
   "name": "Goreclaw's Band",
-  "desc": "Tier 1 (Bracket 1). Mono-green Goreclaw, Terror of Qal Sisma deck."
+  "desc": "Tier 1 (Bracket 1). Mono-green Goreclaw, Terror of Qal Sisma deck.",
+  "sprite": "sprites/enemy/beast/bear/bear.atlas"
  },
  {
   "tier": 1,
@@ -468,7 +501,8 @@
   ],
   "file": "T1_G_Renata.dck",
   "name": "Renata's Band",
-  "desc": "Tier 1 (Bracket 1). Mono-green Renata, Called to the Hunt deck."
+  "desc": "Tier 1 (Bracket 1). Mono-green Renata, Called to the Hunt deck.",
+  "sprite": "sprites/enemy/fey/satyr_2.atlas"
  },
  {
   "tier": 1,
@@ -480,7 +514,8 @@
   ],
   "file": "T1_R_Lannery.dck",
   "name": "Lannery's Band",
-  "desc": "Tier 1 (Bracket 1). Mono-red Captain Lannery Storm deck."
+  "desc": "Tier 1 (Bracket 1). Mono-red Captain Lannery Storm deck.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate2.atlas"
  },
  {
   "tier": 1,
@@ -492,7 +527,8 @@
   ],
   "file": "T1_R_Anax.dck",
   "name": "Anax's Band",
-  "desc": "Tier 1 (Bracket 1). Mono-red Anax, Hardened in the Forge deck."
+  "desc": "Tier 1 (Bracket 1). Mono-red Anax, Hardened in the Forge deck.",
+  "sprite": "sprites/enemy/fey/satyr.atlas"
  },
  {
   "tier": 1,
@@ -504,7 +540,8 @@
   ],
   "file": "T1_U_Tetsuko.dck",
   "name": "Tetsuko's Band",
-  "desc": "Tier 1 (Bracket 1). Mono-blue Tetsuko Umezawa, Fugitive deck."
+  "desc": "Tier 1 (Bracket 1). Mono-blue Tetsuko Umezawa, Fugitive deck.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate.atlas"
  },
  {
   "tier": 1,
@@ -517,7 +554,8 @@
   ],
   "file": "T1_U_Padeem.dck",
   "name": "Padeem's Band",
-  "desc": "Tier 1 (Bracket 1). Mono-blue Padeem, Consul of Innovation deck."
+  "desc": "Tier 1 (Bracket 1). Mono-blue Padeem, Consul of Innovation deck.",
+  "sprite": "sprites/enemy/humanoid/elf/deftsorceress.atlas"
  },
  {
   "tier": 1,
@@ -530,7 +568,8 @@
   ],
   "file": "T1_W_Teshar.dck",
   "name": "Teshar's Band",
-  "desc": "Tier 1 (Bracket 1). Mono-white Teshar, Ancestor's Apostle deck."
+  "desc": "Tier 1 (Bracket 1). Mono-white Teshar, Ancestor's Apostle deck.",
+  "sprite": "sprites/enemy/beast/bird/falcon.atlas"
  },
  {
   "tier": 1,
@@ -542,7 +581,8 @@
   ],
   "file": "T1_W_Baird.dck",
   "name": "Baird's Band",
-  "desc": "Tier 1 (Bracket 1). Mono-white Baird, Steward of Argive deck."
+  "desc": "Tier 1 (Bracket 1). Mono-white Baird, Steward of Argive deck.",
+  "sprite": "sprites/enemy/humanoid/human/soldier/cathar.atlas"
  },
  {
   "tier": 2,
@@ -556,7 +596,8 @@
   ],
   "file": "T2_BG_Grakmaw.dck",
   "name": "Grakmaw's Crew",
-  "desc": "Tier 2 (Bracket 2). black-green Grakmaw, Skyclave Ravager deck. Built down from Forge's Grakmaw, Skyclave Ravager deck."
+  "desc": "Tier 2 (Bracket 2). black-green Grakmaw, Skyclave Ravager deck. Built down from Forge's Grakmaw, Skyclave Ravager deck.",
+  "sprite": "sprites/enemy/monstrosity/hydra_large.atlas"
  },
  {
   "tier": 2,
@@ -570,7 +611,8 @@
   ],
   "file": "T2_BR_Obosh.dck",
   "name": "Obosh's Crew",
-  "desc": "Tier 2 (Bracket 2). black-red Obosh, the Preypiercer deck. Built down from Forge's Obosh, the Preypiercer deck."
+  "desc": "Tier 2 (Bracket 2). black-red Obosh, the Preypiercer deck. Built down from Forge's Obosh, the Preypiercer deck.",
+  "sprite": "sprites/enemy/monstrosity/sandwurm.atlas"
  },
  {
   "tier": 2,
@@ -583,7 +625,8 @@
   ],
   "file": "T2_RG_Halana.dck",
   "name": "Halana's Crew",
-  "desc": "Tier 2 (Bracket 2). red-green Halana and Alena, Partners deck. Built down from Forge's Halana and Alena, Partners deck."
+  "desc": "Tier 2 (Bracket 2). red-green Halana and Alena, Partners deck. Built down from Forge's Halana and Alena, Partners deck.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate.atlas"
  },
  {
   "tier": 2,
@@ -596,7 +639,8 @@
   ],
   "file": "T2_UB_Atris.dck",
   "name": "Atris's Crew",
-  "desc": "Tier 2 (Bracket 2). blue-black Atris, Oracle of Half-Truths deck. Built down from Forge's Atris, Oracle of Half-Truths deck."
+  "desc": "Tier 2 (Bracket 2). blue-black Atris, Oracle of Half-Truths deck. Built down from Forge's Atris, Oracle of Half-Truths deck.",
+  "sprite": "sprites/enemy/humanoid/human/wizard/archivist.atlas"
  },
  {
   "tier": 2,
@@ -609,7 +653,8 @@
   ],
   "file": "T2_UG_Moritte.dck",
   "name": "Moritte's Crew",
-  "desc": "Tier 2 (Bracket 2). blue-green Moritte of the Frost deck. Built down from Forge's Moritte of the Frost deck."
+  "desc": "Tier 2 (Bracket 2). blue-green Moritte of the Frost deck. Built down from Forge's Moritte of the Frost deck.",
+  "sprite": "sprites/enemy/undead/doppelganger.atlas"
  },
  {
   "tier": 2,
@@ -622,7 +667,8 @@
   ],
   "file": "T2_UR_Vadrik.dck",
   "name": "Vadrik's Crew",
-  "desc": "Tier 2 (Bracket 2). blue-red Vadrik, Astral Archmage deck. Built down from Forge's Vadrik, Astral Archmage deck."
+  "desc": "Tier 2 (Bracket 2). blue-red Vadrik, Astral Archmage deck. Built down from Forge's Vadrik, Astral Archmage deck.",
+  "sprite": "sprites/enemy/humanoid/human/wizard/mage.atlas"
  },
  {
   "tier": 2,
@@ -636,7 +682,8 @@
   ],
   "file": "T2_WB_Orah.dck",
   "name": "Orah's Crew",
-  "desc": "Tier 2 (Bracket 2). white-black Orah, Skyclave Hierophant deck. Built down from Forge's Orah, Skyclave Hierophant deck."
+  "desc": "Tier 2 (Bracket 2). white-black Orah, Skyclave Hierophant deck. Built down from Forge's Orah, Skyclave Hierophant deck.",
+  "sprite": "sprites/enemy/humanoid/kor/kor_blue.atlas"
  },
  {
   "tier": 2,
@@ -649,7 +696,8 @@
   ],
   "file": "T2_WG_Bess.dck",
   "name": "Bess's Crew",
-  "desc": "Tier 2 (Bracket 2). white-green Bess, Soul Nourisher deck. Built down from Forge's Bess, Soul Nourisher deck."
+  "desc": "Tier 2 (Bracket 2). white-green Bess, Soul Nourisher deck. Built down from Forge's Bess, Soul Nourisher deck.",
+  "sprite": "sprites/enemy/humanoid/human/peasant/farmer.atlas"
  },
  {
   "tier": 2,
@@ -663,7 +711,8 @@
   ],
   "file": "T2_WR_Balefang.dck",
   "name": "Balefang's Crew",
-  "desc": "Tier 2 (Bracket 2). white-red Balefang the Unslayable deck. Built down from Forge's Balefang the Unslayable deck."
+  "desc": "Tier 2 (Bracket 2). white-red Balefang the Unslayable deck. Built down from Forge's Balefang the Unslayable deck.",
+  "sprite": "sprites/enemy/fiend/demon.atlas"
  },
  {
   "tier": 2,
@@ -677,7 +726,8 @@
   ],
   "file": "T2_WU_Denry.dck",
   "name": "Denry's Crew",
-  "desc": "Tier 2 (Bracket 2). white-blue Denry Klin, Editor in Chief deck. Built down from Forge's Denry Klin, Editor in Chief deck."
+  "desc": "Tier 2 (Bracket 2). white-blue Denry Klin, Editor in Chief deck. Built down from Forge's Denry Klin, Editor in Chief deck.",
+  "sprite": "sprites/enemy/humanoid/leonin/lion_2.atlas"
  },
  {
   "tier": 3,
@@ -691,7 +741,8 @@
   ],
   "file": "T3_BG_Gitrog.dck",
   "name": "Gitrog's Circle",
-  "desc": "Tier 3 (Bracket 3). black-green The Gitrog Monster deck. Built down from Forge's The Gitrog Monster deck."
+  "desc": "Tier 3 (Bracket 3). black-green The Gitrog Monster deck. Built down from Forge's The Gitrog Monster deck.",
+  "sprite": "sprites/enemy/beast/amphibian/frog.atlas"
  },
  {
   "tier": 3,
@@ -706,7 +757,8 @@
   ],
   "file": "T3_UG_Vannifar.dck",
   "name": "Vannifar's Circle",
-  "desc": "Tier 3 (Bracket 3). blue-green Vannifar, Evolved Enigma deck. Built down from Forge's Vannifar, Evolved Enigma deck."
+  "desc": "Tier 3 (Bracket 3). blue-green Vannifar, Evolved Enigma deck. Built down from Forge's Vannifar, Evolved Enigma deck.",
+  "sprite": "sprites/enemy/humanoid/elf/green_wiz3.atlas"
  },
  {
   "tier": 3,
@@ -720,7 +772,8 @@
   ],
   "file": "T3_UR_Dalakos.dck",
   "name": "Dalakos's Circle",
-  "desc": "Tier 3 (Bracket 3). blue-red Dalakos, Crafter of Wonders deck. Built down from Forge's Dalakos, Crafter of Wonders deck."
+  "desc": "Tier 3 (Bracket 3). blue-red Dalakos, Crafter of Wonders deck. Built down from Forge's Dalakos, Crafter of Wonders deck.",
+  "sprite": "sprites/enemy/humanoid/merfolk/merfolk.atlas"
  },
  {
   "tier": 3,
@@ -734,7 +787,8 @@
   ],
   "file": "T3_WB_Firja.dck",
   "name": "Firja's Circle",
-  "desc": "Tier 3 (Bracket 3). white-black Firja, Judge of Valor deck. Built down from Forge's Firja, Judge of Valor deck."
+  "desc": "Tier 3 (Bracket 3). white-black Firja, Judge of Valor deck. Built down from Forge's Firja, Judge of Valor deck.",
+  "sprite": "sprites/enemy/celestial/angel_1.atlas"
  },
  {
   "tier": 3,
@@ -748,7 +802,8 @@
   ],
   "file": "T3_WR_Tamiyo.dck",
   "name": "Tamiyo's Circle",
-  "desc": "Tier 3 (Bracket 3). white-red Tamiyo, Upriser Crowned deck. Built down from Forge's Tamiyo, Upriser Crowned deck."
+  "desc": "Tier 3 (Bracket 3). white-red Tamiyo, Upriser Crowned deck. Built down from Forge's Tamiyo, Upriser Crowned deck.",
+  "sprite": "sprites/enemy/humanoid/human/warrior/gladiator.atlas"
  },
  {
   "tier": 3,
@@ -761,7 +816,8 @@
   ],
   "file": "T3_BRG_Coram.dck",
   "name": "Coram's Circle",
-  "desc": "Tier 3 (Bracket 3). black-red-green Coram, the Undertaker deck. Built down from Forge's Coram, the Undertaker deck."
+  "desc": "Tier 3 (Bracket 3). black-red-green Coram, the Undertaker deck. Built down from Forge's Coram, the Undertaker deck.",
+  "sprite": "sprites/enemy/humanoid/human/warrior/gladiator.atlas"
  },
  {
   "tier": 3,
@@ -775,7 +831,8 @@
   ],
   "file": "T3_UBR_Wick.dck",
   "name": "Wick's Circle",
-  "desc": "Tier 3 (Bracket 3). blue-black-red Wick, the Whorled Mind deck. Built down from Forge's Wick, the Whorled Mind deck."
+  "desc": "Tier 3 (Bracket 3). blue-black-red Wick, the Whorled Mind deck. Built down from Forge's Wick, the Whorled Mind deck.",
+  "sprite": "sprites/enemy/humanoid/nezumi/nezumi_berserker.atlas"
  },
  {
   "tier": 3,
@@ -788,7 +845,8 @@
   ],
   "file": "T3_WRG_Rith.dck",
   "name": "Rith's Circle",
-  "desc": "Tier 3 (Bracket 3). white-red-green Rith, Liberated Primeval deck. Built down from Forge's Rith, Liberated Primeval deck."
+  "desc": "Tier 3 (Bracket 3). white-red-green Rith, Liberated Primeval deck. Built down from Forge's Rith, Liberated Primeval deck.",
+  "sprite": "sprites/enemy/dragon/dragonlarge.atlas"
  },
  {
   "tier": 3,
@@ -802,7 +860,8 @@
   ],
   "file": "T3_WUB_Yshtola.dck",
   "name": "Y'shtola's Circle",
-  "desc": "Tier 3 (Bracket 3). white-blue-black Y'shtola, Night's Blessed deck. Built down from Forge's Y'shtola, Night's Blessed deck."
+  "desc": "Tier 3 (Bracket 3). white-blue-black Y'shtola, Night's Blessed deck. Built down from Forge's Y'shtola, Night's Blessed deck.",
+  "sprite": "sprites/enemy/humanoid/leonin/lion.atlas"
  },
  {
   "tier": 3,
@@ -816,7 +875,8 @@
   ],
   "file": "T3_WUG_Falco.dck",
   "name": "Falco's Circle",
-  "desc": "Tier 3 (Bracket 3). white-blue-green Falco Spara, Pactweaver deck. Built down from Forge's Falco Spara, Pactweaver deck."
+  "desc": "Tier 3 (Bracket 3). white-blue-green Falco Spara, Pactweaver deck. Built down from Forge's Falco Spara, Pactweaver deck.",
+  "sprite": "sprites/enemy/beast/bird/ibis.atlas"
  },
  {
   "tier": 4,
@@ -830,7 +890,8 @@
   ],
   "file": "T4_B_Sheoldred.dck",
   "name": "Sheoldred's Vanguard",
-  "desc": "Tier 4 (Bracket 4). Mono-black Sheoldred, the Apocalypse deck. Built down from Forge's Sheoldred, the Apocalypse deck."
+  "desc": "Tier 4 (Bracket 4). Mono-black Sheoldred, the Apocalypse deck. Built down from Forge's Sheoldred, the Apocalypse deck.",
+  "sprite": "sprites/enemy/aberration/phyrexian/drossgladiator.atlas"
  },
  {
   "tier": 4,
@@ -844,7 +905,8 @@
   ],
   "file": "T4_G_Kaysa.dck",
   "name": "Kaysa's Vanguard",
-  "desc": "Tier 4 (Bracket 4). Mono-green Kaysa deck. Built down from Forge's Kaysa deck."
+  "desc": "Tier 4 (Bracket 4). Mono-green Kaysa deck. Built down from Forge's Kaysa deck.",
+  "sprite": "sprites/enemy/humanoid/elf/druid.atlas"
  },
  {
   "tier": 4,
@@ -857,7 +919,8 @@
   ],
   "file": "T4_R_Chandra.dck",
   "name": "Chandra's Vanguard",
-  "desc": "Tier 4 (Bracket 4). Mono-red Chandra, Fire of Kaladesh deck. Built down from Forge's Chandra, Fire of Kaladesh deck."
+  "desc": "Tier 4 (Bracket 4). Mono-red Chandra, Fire of Kaladesh deck. Built down from Forge's Chandra, Fire of Kaladesh deck.",
+  "sprite": "sprites/enemy/humanoid/human/shaman/pyromancer.atlas"
  },
  {
   "tier": 4,
@@ -871,7 +934,8 @@
   ],
   "file": "T4_U_Lyra.dck",
   "name": "Lyra's Vanguard",
-  "desc": "Tier 4 (Bracket 4). Mono-blue Lyra, Tolarian Archangel deck. Built down from Forge's Lyra, Tolarian Archangel deck."
+  "desc": "Tier 4 (Bracket 4). Mono-blue Lyra, Tolarian Archangel deck. Built down from Forge's Lyra, Tolarian Archangel deck.",
+  "sprite": "sprites/enemy/celestial/angel_2.atlas"
  },
  {
   "tier": 4,
@@ -885,7 +949,8 @@
   ],
   "file": "T4_W_Elesh.dck",
   "name": "Elesh's Vanguard",
-  "desc": "Tier 4 (Bracket 4). Mono-white Elesh Norn, Mother of Machines deck. Built down from Forge's Elesh Norn, Mother of Machines deck."
+  "desc": "Tier 4 (Bracket 4). Mono-white Elesh Norn, Mother of Machines deck. Built down from Forge's Elesh Norn, Mother of Machines deck.",
+  "sprite": "sprites/enemy/aberration/phyrexian/eleshnorn.atlas"
  },
  {
   "tier": 4,
@@ -899,7 +964,8 @@
   ],
   "file": "T4_BG_Ygra.dck",
   "name": "Ygra's Vanguard",
-  "desc": "Tier 4 (Bracket 4). black-green Ygra, Eater of All deck. Built down from Forge's Ygra, Eater of All deck."
+  "desc": "Tier 4 (Bracket 4). black-green Ygra, Eater of All deck. Built down from Forge's Ygra, Eater of All deck.",
+  "sprite": "sprites/enemy/elemental/earthelemental.atlas"
  },
  {
   "tier": 4,
@@ -913,7 +979,8 @@
   ],
   "file": "T4_BR_Cruelclaw.dck",
   "name": "Cruelclaw's Vanguard",
-  "desc": "Tier 4 (Bracket 4). black-red The Infamous Cruelclaw deck. Built down from Forge's The Infamous Cruelclaw deck."
+  "desc": "Tier 4 (Bracket 4). black-red The Infamous Cruelclaw deck. Built down from Forge's The Infamous Cruelclaw deck.",
+  "sprite": "sprites/enemy/beast/smallmammals/weasel.atlas"
  },
  {
   "tier": 4,
@@ -927,7 +994,8 @@
   ],
   "file": "T4_RG_Anzrag.dck",
   "name": "Anzrag's Vanguard",
-  "desc": "Tier 4 (Bracket 4). red-green Anzrag, the Quake-Mole deck. Built down from Forge's Anzrag, the Quake-Mole deck."
+  "desc": "Tier 4 (Bracket 4). red-green Anzrag, the Quake-Mole deck. Built down from Forge's Anzrag, the Quake-Mole deck.",
+  "sprite": "sprites/enemy/beast/smallmammals/nakedmolerat.atlas"
  },
  {
   "tier": 4,
@@ -941,7 +1009,8 @@
   ],
   "file": "T4_UB_Runo.dck",
   "name": "Runo's Vanguard",
-  "desc": "Tier 4 (Bracket 4). blue-black Runo Stromkirk deck. Built down from Forge's Runo Stromkirk deck."
+  "desc": "Tier 4 (Bracket 4). blue-black Runo Stromkirk deck. Built down from Forge's Runo Stromkirk deck.",
+  "sprite": "sprites/enemy/undead/vampire_3.atlas"
  },
  {
   "tier": 4,
@@ -955,7 +1024,8 @@
   ],
   "file": "T4_UG_Uro.dck",
   "name": "Uro's Vanguard",
-  "desc": "Tier 4 (Bracket 4). blue-green Uro, Titan of Nature's Wrath deck. Built down from Forge's Uro, Titan of Nature's Wrath deck."
+  "desc": "Tier 4 (Bracket 4). blue-green Uro, Titan of Nature's Wrath deck. Built down from Forge's Uro, Titan of Nature's Wrath deck.",
+  "sprite": "sprites/enemy/giant/titan_2.atlas"
  },
  {
   "tier": 4,
@@ -969,7 +1039,8 @@
   ],
   "file": "T4_UR_NivMizzet.dck",
   "name": "Niv-Mizzet's Vanguard",
-  "desc": "Tier 4 (Bracket 4). blue-red Niv-Mizzet, Visionary deck. Built down from Forge's Niv-Mizzet, Visionary deck."
+  "desc": "Tier 4 (Bracket 4). blue-red Niv-Mizzet, Visionary deck. Built down from Forge's Niv-Mizzet, Visionary deck.",
+  "sprite": "sprites/enemy/dragon/dragon.atlas"
  },
  {
   "tier": 4,
@@ -982,7 +1053,8 @@
   ],
   "file": "T4_WB_Tomik.dck",
   "name": "Tomik's Vanguard",
-  "desc": "Tier 4 (Bracket 4). white-black Tomik, Wielder of Law deck. Built down from Forge's Tomik, Wielder of Law deck."
+  "desc": "Tier 4 (Bracket 4). white-black Tomik, Wielder of Law deck. Built down from Forge's Tomik, Wielder of Law deck.",
+  "sprite": "sprites/enemy/humanoid/human/artificer/archaeologist.atlas"
  },
  {
   "tier": 4,
@@ -995,7 +1067,8 @@
   ],
   "file": "T4_WG_Karametra.dck",
   "name": "Karametra's Vanguard",
-  "desc": "Tier 4 (Bracket 4). white-green Karametra, God of Harvests deck. Built down from Forge's Karametra, God of Harvests deck."
+  "desc": "Tier 4 (Bracket 4). white-green Karametra, God of Harvests deck. Built down from Forge's Karametra, God of Harvests deck.",
+  "sprite": "sprites/enemy/celestial/maelstrom_angel.atlas"
  },
  {
   "tier": 4,
@@ -1009,7 +1082,8 @@
   ],
   "file": "T4_WR_Firesong.dck",
   "name": "Firesong's Vanguard",
-  "desc": "Tier 4 (Bracket 4). white-red Firesong and Sunspeaker deck. Built down from Forge's Firesong and Sunspeaker deck."
+  "desc": "Tier 4 (Bracket 4). white-red Firesong and Sunspeaker deck. Built down from Forge's Firesong and Sunspeaker deck.",
+  "sprite": "sprites/enemy/humanoid/minotaur/zedru.atlas"
  },
  {
   "tier": 4,
@@ -1022,7 +1096,8 @@
   ],
   "file": "T4_WU_Azor.dck",
   "name": "Azor's Vanguard",
-  "desc": "Tier 4 (Bracket 4). white-blue Azor, the Lawbringer deck. Built down from Forge's Azor, the Lawbringer deck."
+  "desc": "Tier 4 (Bracket 4). white-blue Azor, the Lawbringer deck. Built down from Forge's Azor, the Lawbringer deck.",
+  "sprite": "sprites/enemy/monstrosity/androsphinx.atlas"
  },
  {
   "tier": 4,
@@ -1036,7 +1111,8 @@
   ],
   "file": "T4_UBG_Damia.dck",
   "name": "Damia's Vanguard",
-  "desc": "Tier 4 (Bracket 4). blue-black-green Damia, Sage of Stone deck. Built down from Forge's Damia, Sage of Stone deck."
+  "desc": "Tier 4 (Bracket 4). blue-black-green Damia, Sage of Stone deck. Built down from Forge's Damia, Sage of Stone deck.",
+  "sprite": "sprites/enemy/humanoid/human/wizard/dimir_wiz.atlas"
  },
  {
   "tier": 4,
@@ -1050,7 +1126,8 @@
   ],
   "file": "T4_URG_Flubs.dck",
   "name": "Flubs's Vanguard",
-  "desc": "Tier 4 (Bracket 4). blue-red-green Flubs, the Fool deck. Built down from Forge's Flubs, the Fool deck."
+  "desc": "Tier 4 (Bracket 4). blue-red-green Flubs, the Fool deck. Built down from Forge's Flubs, the Fool deck.",
+  "sprite": "sprites/enemy/beast/amphibian/frog.atlas"
  },
  {
   "tier": 4,
@@ -1063,7 +1140,8 @@
   ],
   "file": "T4_WBG_Necrobloom.dck",
   "name": "Necrobloom's Vanguard",
-  "desc": "Tier 4 (Bracket 4). white-black-green The Necrobloom deck. Built down from Forge's The Necrobloom deck."
+  "desc": "Tier 4 (Bracket 4). white-black-green The Necrobloom deck. Built down from Forge's The Necrobloom deck.",
+  "sprite": "sprites/enemy/plant/slimefoot.atlas"
  },
  {
   "tier": 4,
@@ -1076,7 +1154,8 @@
   ],
   "file": "T4_WBR_Marchesa.dck",
   "name": "Marchesa's Vanguard",
-  "desc": "Tier 4 (Bracket 4). white-black-red Queen Marchesa deck. Built down from Forge's Queen Marchesa deck."
+  "desc": "Tier 4 (Bracket 4). white-black-red Queen Marchesa deck. Built down from Forge's Queen Marchesa deck.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate3.atlas"
  },
  {
   "tier": 4,
@@ -1090,7 +1169,8 @@
   ],
   "file": "T4_WUR_Vraska.dck",
   "name": "Vraska's Vanguard",
-  "desc": "Tier 4 (Bracket 4). white-blue-red Vraska, Soul of Stone deck. Built down from Forge's Vraska, Soul of Stone deck."
+  "desc": "Tier 4 (Bracket 4). white-blue-red Vraska, Soul of Stone deck. Built down from Forge's Vraska, Soul of Stone deck.",
+  "sprite": "sprites/enemy/humanoid/human/wizard/blue_wiz2.atlas"
  },
  {
   "tier": 5,
@@ -1104,7 +1184,8 @@
   ],
   "file": "T5_B_Ihsan.dck",
   "name": "Ihsan's Court",
-  "desc": "Tier 5 (Bracket 5). Mono-black Ihsan's Shade deck. Built down from Forge's Ihsan's Shade deck."
+  "desc": "Tier 5 (Bracket 5). Mono-black Ihsan's Shade deck. Built down from Forge's Ihsan's Shade deck.",
+  "sprite": "sprites/enemy/undead/shade.atlas"
  },
  {
   "tier": 5,
@@ -1118,7 +1199,8 @@
   ],
   "file": "T5_G_Vorinclex.dck",
   "name": "Vorinclex's Court",
-  "desc": "Tier 5 (Bracket 5). Mono-green Vorinclex, Monstrous Raider deck. Built down from Forge's Vorinclex, Monstrous Raider deck."
+  "desc": "Tier 5 (Bracket 5). Mono-green Vorinclex, Monstrous Raider deck. Built down from Forge's Vorinclex, Monstrous Raider deck.",
+  "sprite": "sprites/enemy/aberration/phyrexian/copperhostbrutalizer.atlas"
  },
  {
   "tier": 5,
@@ -1132,7 +1214,8 @@
   ],
   "file": "T5_R_Urabrask.dck",
   "name": "Urabrask's Court",
-  "desc": "Tier 5 (Bracket 5). Mono-red Urabrask deck. Built down from Forge's Urabrask deck."
+  "desc": "Tier 5 (Bracket 5). Mono-red Urabrask deck. Built down from Forge's Urabrask deck.",
+  "sprite": "sprites/enemy/aberration/phyrexian/furnacegoblin.atlas"
  },
  {
   "tier": 5,
@@ -1145,7 +1228,8 @@
   ],
   "file": "T5_U_Hakim.dck",
   "name": "Hakim's Court",
-  "desc": "Tier 5 (Bracket 5). Mono-blue Hakim, Loreweaver deck. Built down from Forge's Hakim, Loreweaver deck."
+  "desc": "Tier 5 (Bracket 5). Mono-blue Hakim, Loreweaver deck. Built down from Forge's Hakim, Loreweaver deck.",
+  "sprite": "sprites/enemy/humanoid/human/wizard/red_wiz2.atlas"
  },
  {
   "tier": 5,
@@ -1159,7 +1243,8 @@
   ],
   "file": "T5_W_Beza.dck",
   "name": "Beza's Court",
-  "desc": "Tier 5 (Bracket 5). Mono-white Beza, the Bounding Spring deck. Built down from Forge's Beza, the Bounding Spring deck."
+  "desc": "Tier 5 (Bracket 5). Mono-white Beza, the Bounding Spring deck. Built down from Forge's Beza, the Bounding Spring deck.",
+  "sprite": "sprites/enemy/elemental/sandelemental.atlas"
  },
  {
   "tier": 5,
@@ -1173,7 +1258,8 @@
   ],
   "file": "T5_BG_Vraska.dck",
   "name": "Vraska's Court",
-  "desc": "Tier 5 (Bracket 5). black-green Vraska, the Silencer deck. Built down from Forge's Vraska, the Silencer deck."
+  "desc": "Tier 5 (Bracket 5). black-green Vraska, the Silencer deck. Built down from Forge's Vraska, the Silencer deck.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate2.atlas"
  },
  {
   "tier": 5,
@@ -1187,7 +1273,8 @@
   ],
   "file": "T5_BR_Olivia.dck",
   "name": "Olivia's Court",
-  "desc": "Tier 5 (Bracket 5). black-red Olivia, Crimson Bride deck. Built down from Forge's Olivia, Crimson Bride deck."
+  "desc": "Tier 5 (Bracket 5). black-red Olivia, Crimson Bride deck. Built down from Forge's Olivia, Crimson Bride deck.",
+  "sprite": "sprites/enemy/undead/vampire.atlas"
  },
  {
   "tier": 5,
@@ -1201,7 +1288,8 @@
   ],
   "file": "T5_RG_Mina.dck",
   "name": "Mina's Court",
-  "desc": "Tier 5 (Bracket 5). red-green Mina and Denn, Wildborn deck. Built down from Forge's Mina and Denn, Wildborn deck."
+  "desc": "Tier 5 (Bracket 5). red-green Mina and Denn, Wildborn deck. Built down from Forge's Mina and Denn, Wildborn deck.",
+  "sprite": "sprites/enemy/humanoid/elf/shaman.atlas"
  },
  {
   "tier": 5,
@@ -1215,7 +1303,8 @@
   ],
   "file": "T5_UB_Nymris.dck",
   "name": "Nymris's Court",
-  "desc": "Tier 5 (Bracket 5). blue-black Nymris, Oona's Trickster deck. Built down from Forge's Nymris, Oona's Trickster deck."
+  "desc": "Tier 5 (Bracket 5). blue-black Nymris, Oona's Trickster deck. Built down from Forge's Nymris, Oona's Trickster deck.",
+  "sprite": "sprites/enemy/fey/faerie_dragon.atlas"
  },
  {
   "tier": 5,
@@ -1228,7 +1317,8 @@
   ],
   "file": "T5_UG_Kruphix.dck",
   "name": "Kruphix's Court",
-  "desc": "Tier 5 (Bracket 5). blue-green Kruphix, God of Horizons deck. Built down from Forge's Kruphix, God of Horizons deck."
+  "desc": "Tier 5 (Bracket 5). blue-green Kruphix, God of Horizons deck. Built down from Forge's Kruphix, God of Horizons deck.",
+  "sprite": "sprites/enemy/celestial/angel_1.atlas"
  },
  {
   "tier": 5,
@@ -1241,7 +1331,8 @@
   ],
   "file": "T5_UR_LocustGod.dck",
   "name": "Locust God's Court",
-  "desc": "Tier 5 (Bracket 5). blue-red The Locust God deck. Built down from Forge's The Locust God deck."
+  "desc": "Tier 5 (Bracket 5). blue-red The Locust God deck. Built down from Forge's The Locust God deck.",
+  "sprite": "sprites/enemy/celestial/angel_2.atlas"
  },
  {
   "tier": 5,
@@ -1255,7 +1346,8 @@
   ],
   "file": "T5_WB_Carmen.dck",
   "name": "Carmen's Court",
-  "desc": "Tier 5 (Bracket 5). white-black Carmen, Cruel Skymarcher deck. Built down from Forge's Carmen, Cruel Skymarcher deck."
+  "desc": "Tier 5 (Bracket 5). white-black Carmen, Cruel Skymarcher deck. Built down from Forge's Carmen, Cruel Skymarcher deck.",
+  "sprite": "sprites/enemy/undead/vampire_2.atlas"
  },
  {
   "tier": 5,
@@ -1268,7 +1360,8 @@
   ],
   "file": "T5_WG_Trostani.dck",
   "name": "Trostani's Court",
-  "desc": "Tier 5 (Bracket 5). white-green Trostani, Selesnya's Voice deck. Built down from Forge's Trostani, Selesnya's Voice deck."
+  "desc": "Tier 5 (Bracket 5). white-green Trostani, Selesnya's Voice deck. Built down from Forge's Trostani, Selesnya's Voice deck.",
+  "sprite": "sprites/enemy/plant/plant.atlas"
  },
  {
   "tier": 5,
@@ -1281,7 +1374,8 @@
   ],
   "file": "T5_WR_BalloonMan.dck",
   "name": "Balloon Man's Court",
-  "desc": "Tier 5 (Bracket 5). white-red The Jolly Balloon Man deck. Built down from Forge's The Jolly Balloon Man deck."
+  "desc": "Tier 5 (Bracket 5). white-red The Jolly Balloon Man deck. Built down from Forge's The Jolly Balloon Man deck.",
+  "sprite": "sprites/enemy/aberration/challenger.atlas"
  },
  {
   "tier": 5,
@@ -1294,7 +1388,8 @@
   ],
   "file": "T5_WU_Medomai.dck",
   "name": "Medomai's Court",
-  "desc": "Tier 5 (Bracket 5). white-blue Medomai the Ageless deck. Built down from Forge's Medomai the Ageless deck."
+  "desc": "Tier 5 (Bracket 5). white-blue Medomai the Ageless deck. Built down from Forge's Medomai the Ageless deck.",
+  "sprite": "sprites/enemy/monstrosity/androsphinx.atlas"
  },
  {
   "tier": 5,
@@ -1307,7 +1402,8 @@
   ],
   "file": "T5_BRG_Disa.dck",
   "name": "Disa's Court",
-  "desc": "Tier 5 (Bracket 5). black-red-green Disa the Restless deck. Built down from Forge's Disa the Restless deck."
+  "desc": "Tier 5 (Bracket 5). black-red-green Disa the Restless deck. Built down from Forge's Disa the Restless deck.",
+  "sprite": "sprites/enemy/humanoid/viashino/scout.atlas"
  },
  {
   "tier": 5,
@@ -1321,7 +1417,8 @@
   ],
   "file": "T5_UBR_Nekusar.dck",
   "name": "Nekusar's Court",
-  "desc": "Tier 5 (Bracket 5). blue-black-red Nekusar, the Mindrazer deck. Built down from Forge's Nekusar, the Mindrazer deck."
+  "desc": "Tier 5 (Bracket 5). blue-black-red Nekusar, the Mindrazer deck. Built down from Forge's Nekusar, the Mindrazer deck.",
+  "sprite": "sprites/enemy/undead/royalsentinel.atlas"
  },
  {
   "tier": 5,
@@ -1334,7 +1431,8 @@
   ],
   "file": "T5_WRG_Gahiji.dck",
   "name": "Gahiji's Court",
-  "desc": "Tier 5 (Bracket 5). white-red-green Gahiji, Honored One deck. Built down from Forge's Gahiji, Honored One deck."
+  "desc": "Tier 5 (Bracket 5). white-red-green Gahiji, Honored One deck. Built down from Forge's Gahiji, Honored One deck.",
+  "sprite": "sprites/enemy/beast/arachnid/spider_cave.atlas"
  },
  {
   "tier": 5,
@@ -1347,7 +1445,8 @@
   ],
   "file": "T5_WUB_Yennett.dck",
   "name": "Yennett's Court",
-  "desc": "Tier 5 (Bracket 5). white-blue-black Yennett, Cryptic Sovereign deck. Built down from Forge's Yennett, Cryptic Sovereign deck."
+  "desc": "Tier 5 (Bracket 5). white-blue-black Yennett, Cryptic Sovereign deck. Built down from Forge's Yennett, Cryptic Sovereign deck.",
+  "sprite": "sprites/enemy/monstrosity/criosphinx.atlas"
  },
  {
   "tier": 5,
@@ -1361,6 +1460,7 @@
   ],
   "file": "T5_WUG_Bumbleflower.dck",
   "name": "Bumbleflower's Court",
-  "desc": "Tier 5 (Bracket 5). white-blue-green Ms. Bumbleflower deck. Built down from Forge's Ms. Bumbleflower deck."
+  "desc": "Tier 5 (Bracket 5). white-blue-green Ms. Bumbleflower deck. Built down from Forge's Ms. Bumbleflower deck.",
+  "sprite": "sprites/enemy/beast/smallmammals/rabbit.atlas"
  }
 ]

@@ -205,6 +205,12 @@ public class NewGameScene extends MenuScene {
         });
         race.addListener(event -> NewGameScene.this.updateAvatar());
         race.setTextList(HeroListData.instance().getRaces());
+        if (HeroListData.instance().getRaces().size <= 1) { //a plane with one race (its own heroes.json): no race choice
+            race.setVisible(false);
+            Actor raceLabel = ui.findActor("raceL");
+            if (raceLabel != null)
+                raceLabel.setVisible(false);
+        }
         difficulty = ui.findActor("difficulty");
         difficultyHelp = ui.findActor("difficultyHelp");
 

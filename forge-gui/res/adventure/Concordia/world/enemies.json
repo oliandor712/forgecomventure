@@ -126,7 +126,7 @@
  {
   "name": "Rival Black",
   "nameOverride": "Rival",
-  "sprite": "sprites/enemy/humanoid/conjurer.atlas",
+  "sprite": "sprites/enemy/humanoid/human/knight/cavalier.atlas",
   "deck": [
    "decks/starter/B_Starter_Normal.dck"
   ],
@@ -150,7 +150,7 @@
  {
   "name": "Rival Red",
   "nameOverride": "Rival",
-  "sprite": "sprites/enemy/humanoid/conjurer.atlas",
+  "sprite": "sprites/enemy/humanoid/human/knight/cavalier.atlas",
   "deck": [
    "decks/starter/R_Starter_Normal.dck"
   ],
@@ -174,7 +174,7 @@
  {
   "name": "Rival Green",
   "nameOverride": "Rival",
-  "sprite": "sprites/enemy/humanoid/conjurer.atlas",
+  "sprite": "sprites/enemy/humanoid/human/knight/cavalier.atlas",
   "deck": [
    "decks/starter/G_Starter_Normal.dck"
   ],
@@ -198,7 +198,7 @@
  {
   "name": "Rival Blue",
   "nameOverride": "Rival",
-  "sprite": "sprites/enemy/humanoid/conjurer.atlas",
+  "sprite": "sprites/enemy/humanoid/human/knight/cavalier.atlas",
   "deck": [
    "decks/starter/U_Starter_Normal.dck"
   ],
@@ -222,7 +222,7 @@
  {
   "name": "Rival White",
   "nameOverride": "Rival",
-  "sprite": "sprites/enemy/humanoid/conjurer.atlas",
+  "sprite": "sprites/enemy/humanoid/human/knight/cavalier.atlas",
   "deck": [
    "decks/starter/W_Starter_Normal.dck"
   ],

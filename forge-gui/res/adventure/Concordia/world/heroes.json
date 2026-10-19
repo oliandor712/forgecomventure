@@ -1,0 +1,12 @@
+{
+  "avatar": "sprites/heroes/avatar.atlas",
+  "heroes": [
+    {
+      "name": "Human",
+      "female": "sprites/heroes/human_f.atlas",
+      "male": "sprites/heroes/human_f.atlas",
+      "femaleAvatar": "Human_f",
+      "maleAvatar": "Human_m"
+    }
+  ]
+}

@@ -8,7 +8,7 @@ Forge's shared `res/adventure/common` folder. Design notes and the reasons behin
 
 Forge looks for every data file here first, then in `common`. So:
 
-- **To use Forge's version**, leave the file out of this folder. Sprites, tilesets, structures, `heroes.json`, the
+- **To use Forge's version**, leave the file out of this folder. Sprites, tilesets, structures, the
   base biome and the reward decks (`decks/rewards/`, e.g. the fancy basics the basic land shop sells) all come from
   `common` this way.
 - **To change something**, copy the file from `common` to the same path here and edit the copy. It replaces
@@ -79,6 +79,7 @@ Shop names must not contain spaces.
 | `world/commanders.json` | Commander Hall roster: 30 per color in three bands, which are open from the start |
 | `world/quests.json` | Story quests (28 is the opening, 1000+ the campaign) |
 | `world/items.json` | Concordia's own items: the Waystone (and its old name, the Emberbrook Waystone), the five Summit Key Fragments, and the Chromatic Sphere start item (not in `common`) |
+| `world/heroes.json` | The player's look: Human only (no race choice at new game), the blue-robed hero sprite for both genders |
 | `world/points_of_interest.json` | Emberbrook (`Spawn`), Mossgate, the three caves |
 | `world/biomes/concordia.json`, `world/structures/models/mossgate_maze.png` | The Mossgate route maze |
 | `maps/map/` | Emberbrook, the house, Mossgate, `caves/` |
