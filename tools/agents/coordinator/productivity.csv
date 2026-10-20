@@ -4,3 +4,5 @@ utc,agent,scheduled_runs_24h,completed_runs_24h,last_result_utc,status,note
 2026-10-20T17:53Z,forge-ai-lab,4,4,2026-10-20T17:49Z,over_budget,"extra non-scheduled turns driven by analysis loop: 17:45 turn 220s and 17:49 turn 201s (box ~300s) fit; but earlier 17:14 turn 1193s (~20 min) exceeded 5-min box; session cost $6.5 in ~3.8h; also one accidental pkill -f (rule 9) at ~17:45"
 2026-10-20T17:55Z,forge-ai-lab,5,5,2026-10-20T17:49Z,on_schedule,"day: observe only; latest turn 201s (box 5 min, flag >10 min); no turn over 2x box since 17:14 (1193s); main told it to batch requests 17:55"
 2026-10-20T17:55Z,deck-balance-lab,4,4,2026-10-20T17:23Z,on_schedule,"day: observe only; 17:10 batch turn 522s (box 10 min, flag >20 min); admin turns 6s/35s; next batch 18:10"
+2026-10-20T17:58Z,forge-ai-lab,5,5,2026-10-20T17:49Z,held,"user pause until 21:00Z via main session; triggers disabled; not overriding"
+2026-10-20T17:58Z,deck-balance-lab,4,4,2026-10-20T17:23Z,held,"user pause until 21:00Z via main session; triggers disabled; not overriding"

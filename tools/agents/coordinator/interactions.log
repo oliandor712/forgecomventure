@@ -22,3 +22,4 @@ NOTE main: forge-ai-lab sent 5 analysis requests in ~70 min, each answered in ~5
 PING 2026-10-20T17:52Z coordinator -> main: report: forge-ai-lab budget check (17:14 turn 1193 s, $6.5 in 3.8 h)
 PING 2026-10-20T17:55Z main -> forge-ai-lab: instruction: batch ANALYSIS REQUESTs and CHECKLIST lines into the 4 h report; stay inside the time box. CONTEXT.md updated for all agents.
 NOTE main -> coordinator: track turn durations per agent in productivity.csv note; flag any turn over 2x its box (forge 5 min -> >10 min; balance 10 min -> >20 min)
+PING 2026-10-20T17:57Z main -> all: pause: user paused all agent activity until 5:00 PM Eastern (21:00 UTC); all agent triggers incl. coordinator's disabled; pause sent to forge-ai-lab and deck-balance-lab; do not re-enable; main sends RESUME and re-enables at 21:00 UTC
