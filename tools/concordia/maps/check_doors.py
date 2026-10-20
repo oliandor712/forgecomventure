@@ -8,7 +8,10 @@ from the left, 10 px wide, the bottom 40% of the 16 px sprite) is tested against
   - the target map's edges,
   - tile collision (every tile layer, using the tilesets' collision boxes) and collision objects,
   - the target entry itself and other entries (arriving on one sends the player straight through it).
-It also checks that the target object exists, that it is an entry, and that the return trip leads back.
+It also checks that the target object exists, that it is an entry, and that the return trip leads back, and that
+each door's trigger is a thin strip (at most MAX_DEPTH px) flush against the wall it is set in, on the side away
+from its "direction": a full-tile trigger fires a tile before the player reaches the door, and one standing off the
+wall fires out in the open.
 
   python3 tools/concordia/maps/check_doors.py            # every .tmx under Concordia/maps
   python3 tools/concordia/maps/check_doors.py a.tmx ...   # just these maps (and the maps they lead to)
@@ -23,6 +26,7 @@ RES = os.path.abspath(os.path.join(HERE, '..', '..', '..', 'forge-gui', 'res', '
 CONCORDIA = os.path.join(RES, 'Concordia')
 FLIP = 0x1FFFFFFF
 PLAYER = 16  # sprite size
+MAX_DEPTH = 6  # px: how deep a door trigger may be
 
 
 def game_path(path):
@@ -144,10 +148,42 @@ def load(f):
     return _maps[f]
 
 
+def trigger_problem(m, e):
+    """A door's trigger should be a thin strip flush against its wall (the wall is opposite its direction)."""
+    d = e['props'].get('direction', '')
+    x0, x1, y0, y1 = e['gx'], e['gx'] + e['w'], e['gy'], e['gy'] + e['h']
+    if d in ('down', 'up'):
+        span = [r for r in m.solid if r[0] < x1 and r[0] + r[2] > x0]
+        if d == 'down':
+            gaps = [r[1] - y1 for r in span if r[1] >= y1 - 0.5]
+        else:
+            gaps = [y0 - (r[1] + r[3]) for r in span if r[1] + r[3] <= y0 + 0.5]
+        depth = e['h']
+    else:
+        span = [r for r in m.solid if r[1] < y1 and r[1] + r[3] > y0]
+        if d == 'right':   # arrives on the left: wall to the right
+            gaps = [r[0] - x1 for r in span if r[0] >= x1 - 0.5]
+        else:
+            gaps = [x0 - (r[0] + r[2]) for r in span if r[0] + r[2] <= x0 + 0.5]
+        depth = e['w']
+    gap = min(gaps) if gaps else None
+    out = []
+    if gap is None:
+        out.append('has no wall behind it (on the side opposite "%s")' % d)
+    elif gap > 1:
+        out.append('stands %g px off its wall: move it flush against the wall' % gap)
+    if depth > MAX_DEPTH:
+        out.append('is %g px deep: make it a strip of at most %d px so it fires at the door, not a tile early' % (depth, MAX_DEPTH))
+    return out
+
+
 def check(src_path):
     problems = []
     src = load(src_path)
     for e in src.entries():
+        if e['type'] == 'entry' and (e['props'].get('teleport') or e['props'].get('gateTo')):
+            for p in trigger_problem(src, e):
+                problems.append('%s: entry %d "%s" %s' % (os.path.relpath(src_path, CONCORDIA), e['id'], e['name'], p))
         tp = e['props'].get('teleport') or ''
         if not tp or e['props'].get('gateTo'):
             continue

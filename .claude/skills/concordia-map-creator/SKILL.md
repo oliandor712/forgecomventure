@@ -61,7 +61,11 @@ area (largest remainder). Each encounter gets its zone's tiles as `spots` and th
 the game re-rolls both every time it spawns (each load, and after entering a town). Pin hand-picked areas with
 `"areas"` (Route 1 does: the user marked them).
 
-**Doors and buildings.** A door's arrival spot (next to the target entry, on its `direction` side) needs at least one
+**Doors and buildings.** A door's trigger (the `entry` object) is a thin strip, 4 px deep (at most 6), flush against
+the wall or building it is set in, on the side opposite its `direction`. A full-tile trigger fires a tile before the
+player reaches the door; one standing off the wall fires out in the open. Tile objects hang from their bottom edge,
+so for a door in a building's bottom row the strip's Tiled `y` is the building's bottom edge + 4 and `height` 4. A
+door's arrival spot (next to the target entry, on its `direction` side) needs at least one
 free tile, clear of collision and inside the map, and must not overlap another entry. Keep a building's door clear of
 hedges and map edges below it. The game also moves a blocked arrival to the nearest free spot and reloads the previous
 map if a map fails to load, but the checker is the real guard.
