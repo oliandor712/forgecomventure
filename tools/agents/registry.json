@@ -101,6 +101,10 @@
    [
     "2026-10-20",
     "Make sure agents have relevant context; keep an agent management tool that updates agent context along with previous requests."
+   ],
+   [
+    "2026-10-20",
+    "Whenever an agent sends an analysis request, store the results in an agent-specific file and send them back to that agent as training data."
    ]
   ]
  }

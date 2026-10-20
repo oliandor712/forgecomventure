@@ -29,6 +29,12 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
 7. **Processes:** never `pkill -f` a pattern that can match your own shell. Kill java by pid
    (`pgrep -a java | grep Sim`). Never leave a sim or build running when you stop.
 
+## Asking the main session for analysis
+Put a line starting `ANALYSIS REQUEST:` in your run report: the question, the files it concerns, and what you need
+back. The main session reads your reports at its 4-hour check-ins. It files the answer in
+`tools/agents/analysis/<your name>.md` and sends it to you. That file is your training data: read it with this one,
+build on its findings, and cite entries by date and title.
+
 ## Tools
 - **Simulator:** run `tools/concordia/sim/setup.sh` once per container. It takes about 1.5 minutes from an empty cache:
   it fetches from Maven Central and leaves out the jitpack-only TenPatch dependency, which is blocked by the network
@@ -58,9 +64,10 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
   mono-color; tiers 2-5 mix one to three colors) plus 20 new mono-color decks, 4 per color, built by
   `tools/concordia/deckgen/gen_mono.py` and seeded from public GitHub decklists that are kept local only. Five starter
   decks for the player.
-- **Card power** (`deck_tier.card_power`) = 35·raw + 15·efficiency + 15·role + 15·rarity + 10·Game Changer + 5·fast
-  mana + 5·tutor. Raw power is the higher of the cube rank and the Spellbinder cEDH inclusion rate.
-- **Deck power by tier** (deck average card power): T1 12-13, T2 20-26, T3 29-36, T4 33-41, T5 39-46. Starters 24-29.
+- **Card power** (`deck_tier.card_power`) = 35·raw + 15·efficiency + 15·role + 10·rarity + 5·EDHREC popularity +
+  10·Game Changer + 5·fast mana + 5·tutor. Raw power is the highest of the cube rank, the Spellbinder cEDH inclusion
+  rate and 0.6 × EDHREC popularity (Scryfall's EDHREC rank, log-scaled).
+- **Deck power by tier** (deck average card power): T1 13-15, T2 21-28, T3 30-38, T4 34-41, T5 40-46. Starters 26-31.
 - **Difficulty curve** (OVERWORLD.md §5.1): a zone's stage locks at the player's first fight there, from the Seals held:
   seals 0-1 stage 1, 2-3 stage 2, 4-5 stage 3 (`util/TierLock.java`, config `tierLock`).
   - Wild creatures, random-dungeon enemies, pass keepers, grove guardians and the Warden are mono-color, picked by deck
@@ -81,6 +88,7 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
 The main session checks on both every 4 hours (at :20) and fixes blockers.
 
 ## Recent updates
+- 2026-10-20: EDHREC popularity (Scryfall) added to card power; deck power rose about 1.5 at T1-T3; zone power windows shifted to match. New: ANALYSIS REQUEST lines in your reports get answered into tools/agents/analysis/<you>.md (your training data).
 - 2026-10-20: Scryfall card data downloaded: deckgen/scryfall/cards.json.gz (35k cards: EDHREC rank, Game Changer, legality, identity; no prices), read with scryfall_bulk.load(). Bulk refresh at most every 12 h.
 - 2026-10-20: Card data roster: Scryfall (tools/concordia/deckgen/scryfall_bulk.py, bulk oracle_cards, at most one check per 12 h; /cards/collection lookups throttled). Blocked by the network policy until the user allows api.scryfall.com and data.scryfall.io.
 - 2026-10-20: The first piloted test match was discarded at the user's request (too many problems); don't use its data. PilotSim now has a no-token rules mode (-Dpilot.A=rules).

@@ -14,7 +14,7 @@ forge-gui/res/editions, Forge's bracket lists in forge-gui/res/lists and the cub
 forge-gui/res/draft/rankings_cubecobra.txt. The first run builds a cache next to this script (.deck_tier_cache).
 Card classification is heuristic (see classify()); treat counts as close, not exact.
 """
-import collections, glob, json, os, pickle, re, statistics, sys
+import collections, glob, json, math, os, pickle, re, statistics, sys
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 RES = os.path.join(REPO, "forge-gui", "res")
@@ -292,18 +292,41 @@ def cedh_strength(c):
     return min(1.0, _signals["cards"].get(c["name"].lower().split(" // ")[0], {}).get("cedh", 0.0) / CEDH_FULL)
 
 
+SCRYFALL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deckgen", "scryfall", "cards.json")
+EDH_LIFT = 0.6     # raw power an EDHREC rank alone can lift a card to (popularity is not pure strength)
+_edh = None
+
+
+def edhrec(c):
+    """0-1 popularity from the card's EDHREC rank in Scryfall's data (deckgen/scryfall_bulk.py): 1 for rank 1, about
+    0.65 for rank 35, 0.3 for rank 1500, 0 past rank 30000 or with no data."""
+    global _edh
+    if _edh is None:
+        import gzip
+        _edh = {}
+        for p in (SCRYFALL, SCRYFALL + ".gz"):
+            if os.path.exists(p):
+                d = json.load(gzip.open(p, "rt") if p.endswith(".gz") else open(p))
+                _edh = {k: v.get("edhrec_rank") for k, v in d.items() if v.get("edhrec_rank")}
+                break
+    r = _edh.get(c["name"].lower().split(" // ")[0])
+    return max(0.0, 1 - math.log10(r) / math.log10(30000)) if r else 0.0
+
+
 def card_power(data, c, tags, rarity):
-    """0-100 power estimate: raw power, mana efficiency, role, rarity, Game Changer, fast mana, tutor.
-    Raw power is the cube rank, lifted by the cEDH inclusion rate when that is higher: the cube list misses some
-    staples (Birds of Paradise isn't in it). Absence from the cEDH sample doesn't lower a card, since 64 decks say
-    little about cards built for casual tables. Prices are not used."""
+    """0-100 power estimate: raw power, mana efficiency, role, rarity, EDHREC popularity, Game Changer, fast mana, tutor.
+    35 raw + 15 efficiency + 15 role + 10 rarity + 5 EDHREC + 10 Game Changer + 5 fast + 5 tutor.
+    Raw power is the cube rank, lifted by the cEDH inclusion rate or by EDHREC popularity (up to EDH_LIFT) when those
+    are higher: the cube list misses most casual cards (Birds of Paradise isn't in it). A missing signal never lowers a
+    card. Prices are not used (docs/Adventure/Campaign/DECK_REVIEW_SPELLBINDER.md)."""
     name = c["name"].lower()
     rank = data["cube"].get(name)
     cube = 1 - (rank - 1) / 4000 if rank else 0.0
-    cube = max(cube, cedh_strength(c) or 0.0)
+    pop = edhrec(c)
+    cube = max(cube, cedh_strength(c) or 0.0, EDH_LIFT * pop)
     eff = max(0.0, min(1.0, (6 - c["cmc"]) / 5))
     role = 1.0 if tags & {"ramp", "draw", "removal", "wipe", "counter", "tutor"} else 0.0
-    p = 35 * cube + 15 * eff + 15 * role + 15 * RARITY_WEIGHT.get(rarity, 0.3)
+    p = 35 * cube + 15 * eff + 15 * role + 10 * RARITY_WEIGHT.get(rarity, 0.3) + 5 * pop
     p += 10 * (name in data["lists"]["gc"]) + 5 * ("fast" in tags) + 5 * ("tutor" in tags)
     return round(min(100.0, p), 1)
 

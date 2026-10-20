@@ -97,3 +97,30 @@ real strength in cards that had no cube rank.
   new scoring. The decks themselves are unchanged.
 - When collection finishes, re-run `spellbinder_signals.py`. More cEDH decks will firm up the multicolour rates; some
   colour identities currently have only 1-4 decks.
+
+## Update 2026-10-20: EDHREC popularity from Scryfall (applied)
+
+Scryfall's Oracle Cards bulk data (`tools/concordia/deckgen/scryfall_bulk.py`; 35,330 cards, 33,810 of Forge's
+34,086 matched) gives each card's EDHREC rank, which is now scored as popularity:
+`pop = 1 - log10(rank) / log10(30000)`. For example, rank 1 scores 1.0, rank 35 about 0.65, and rank 1500 about 0.3.
+
+- **New formula:** 35·raw + 15·efficiency + 15·role + 10·rarity (was 15) + 5·popularity + 10·Game Changer + 5·fast +
+  5·tutor.
+- **Raw power:** now the highest of the cube rank, the cEDH rate, and 0.6·popularity. Popularity alone can't make a
+  card top power.
+- **Variants compared on all 200 decks:**
+
+| Variant | Tier fit | Adjacent-tier ordering |
+|---|---|---|
+| Before | 177/200 | 97.2% |
+| Popularity term only | 170/200 | 97.2% |
+| Popularity term + lift to 0.6 (applied) | 182/200 | 97.3% |
+| Popularity term + lift to 0.8 | 178/200 | 97.3% |
+
+- **Effect on decks:**
+  - Deck power rose about 1.6 at T1-T3, 0.9 at T4 and 0.4 at T5. Starters went from 26.3 to 28.2.
+  - Five T3 decks now sit just above the band's 36 ceiling: Muzzio 37.5, Gitrog 36.4, Firja 36.3, Y'shtola 36.3,
+    Falco 36.1. Each gets a warning, not a failure.
+  - The zone power windows (OVERWORLD.md §5.1) moved up by each tier's shift.
+  - The stage-2 Green grove guardian and Warden now draw the same three decks: mono-green T4 decks between 37 and 40
+    are scarce, so one or two more would help.

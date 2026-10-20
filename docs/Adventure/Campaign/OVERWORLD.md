@@ -391,11 +391,14 @@ include the zone's color.
 
 | Role | Stage 1 | Stage 2 | Stage 3 | Colors |
 |---|---|---|---|---|
-| Wild creatures (also random dungeons, pass sentries, hall acolytes) | T1 · any · 12 | T2 · 24-27 · 18 | T4 · 33-36 · 22 | mono |
-| Trainers (duelists) | T2 · 20-24 · 20 | T3/T4 · 32-37 · 25 | T4/T5 · 38-42 · 30 | 1-2, then 2-3 |
-| Pass keepers | T2 · 23-26 · 22 | T4 · 33-36 · 28 | T5 · 39-41 · 32 | mono |
-| Grove guardians | T3 · 28-31 · 24 | T4 · 36-38 · 30 | T5 · 41-43 · 35 | mono |
-| Warden | T3 · 30-33 · 30 | T4 · 37-40 · 35 | T5 · 42-45 · 40 | mono |
+| Wild creatures (also random dungeons, pass sentries, hall acolytes) | T1 · any · 12 | T2 · 25-28 · 18 | T4 · 34-37 · 22 | mono |
+| Trainers (duelists) | T2 · 21-25 · 20 | T3/T4 · 33-38 · 25 | T4/T5 · 39-43 · 30 | 1-2, then 2-3 |
+| Pass keepers | T2 · 24-27 · 22 | T4 · 34-37 · 28 | T5 · 40-42 · 32 | mono |
+| Grove guardians | T3 · 29-32 · 24 | T4 · 37-39 · 30 | T5 · 41-44 · 35 | mono |
+| Warden | T3 · 32-35 · 30 | T4 · 38-41 · 35 | T5 · 43-46 · 40 | mono |
+
+Windows are in `deck_tier.py` deck power, which counts EDHREC popularity since 2026-10-20 (the windows moved up by
+each tier's average shift: +1.5 at T2-T3, +1 at T4, +0.5 at T5).
 
 After the zones, colors keep widening: the Paragons play their border pair's two colors at the top of tier 5 (43+,
 life 40), and the champion area's gauntlet, Rival and Champion play three to five colors (tier 5/6, 45+).

@@ -34,19 +34,30 @@ to CONTEXT.md (the Tools or Current state section, plus an `update` line), then 
 fix is in a script, verify it the way the agent will meet it: from a fresh clone and an empty cache. The agents run
 in their own fresh containers, with nothing from this one.
 
+## Analysis requests from agents
+When an agent asks for analysis (an `ANALYSIS REQUEST:` line in a run report, a message, or a request relayed by the
+user), do the analysis. Then:
+1. Write the result to a scratch file: question, method, data used, numbers, and takeaways phrased as rules the agent
+   can apply.
+2. Run `agentctl.py analysis <agent> "<title>" <file> "<the request>"`. It appends the result to
+   `tools/agents/analysis/<agent>.md`, the agent's training data, and prints the message to send.
+3. Commit and push, then send that message to the agent's session with `send_message`.
+4. If the user discards a result, add a new entry saying which result is withdrawn, and tell the agent.
+
 ## Check-ins (every 4 hours, trigger in registry `manager.checkin_trigger`)
 For each agent:
 1. Read its last results with `list_events` (`kinds: ["result"]`; add `"assistant"` to see what it ran), and its
    status with `get_session`.
 2. Pull and look at its folder.
-3. Look for blockers:
+3. Collect any `ANALYSIS REQUEST:` lines and answer them, following "Analysis requests from agents".
+4. Look for blockers:
    - build or network failures, or a tool it lacks;
    - runs over budget, or a loop that repeats the same failing step;
    - sims at unequal life;
    - files written outside its folders, or a modified `forge-gui-mobile/pom.xml`;
    - failed pushes.
-4. Fix what you can: scripts, briefs, CONTEXT.md. Then follow "When a fix or project change affects the agents".
-5. Report to the user in 5 lines or fewer, or in one line if all is well.
+5. Fix what you can: scripts, briefs, CONTEXT.md. Then follow "When a fix or project change affects the agents".
+6. Report to the user in 5 lines or fewer, or in one line if all is well.
 
 Also run `agentctl.py status`. If an agent shows `context NOT SENT`, send it its update.
 

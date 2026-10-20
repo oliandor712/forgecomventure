@@ -7,6 +7,10 @@
     python3 tools/agents/agentctl.py update "text"               # add a dated line to CONTEXT.md "Recent updates"
     python3 tools/agents/agentctl.py message <agent|all>         # print the context-update message to send
     python3 tools/agents/agentctl.py sent <agent|all>            # record that the current context was sent
+    python3 tools/agents/agentctl.py analysis <agent> "title" RESULT.md ["request text"]
+                                                                 # file an analysis done at the agent's request in
+                                                                 # tools/agents/analysis/<agent>.md and print the
+                                                                 # message that sends it back to the agent
 
 The registry (tools/agents/registry.json) keeps each agent's brief, session, folders, triggers and every request the
 user made about it. CONTEXT.md is the shared context all agents read first. Messages are sent from the main session
@@ -133,6 +137,18 @@ def message(reg, name):
         print('- %s: %s' % (d, r))
 
 
+def analysis(reg, name, title, path, request=''):
+    out = os.path.join(ROOT, 'tools', 'agents', 'analysis', name + '.md')
+    body = open(path).read().strip()
+    entry = '\n## %s: %s\n\n%s%s\n' % (today(), title, ('Request: %s\n\n' % request) if request else '', body)
+    open(out, 'a').write(entry)
+    reg['agents'][name].setdefault('analyses', []).append([today(), title])
+    save(reg)
+    print('Analysis result from the main session, for your training data (no reply needed). Pull campaign-design; it '
+          'is filed in tools/agents/analysis/%s.md under "%s: %s".\n' % (name, today(), title))
+    print(body)
+
+
 def sent(reg, name):
     reg.setdefault('context_sent', {})[name] = dict({f: last_commit(f) for f in files_of(reg, name)}, date=today())
 
@@ -159,6 +175,8 @@ def main(argv):
             if argv[1] == 'all':
                 print('===== %s (%s)' % (n, reg['agents'][n]['session']))
             message(reg, n)
+    elif cmd == 'analysis':
+        analysis(reg, names(reg, argv[1])[0], argv[2], argv[3], ' '.join(argv[4:]))
     elif cmd == 'sent':
         for n in names(reg, argv[1]):
             sent(reg, n)

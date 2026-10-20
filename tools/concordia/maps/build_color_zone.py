@@ -50,15 +50,16 @@ ZONES = {
 # The difficulty curve (OVERWORLD.md §5.1). Stage = zoneTier.<C>: 1 for seals 0-1, 2 for seals 2-3, 3 for seals 4-5,
 # locked at the first fight in the zone. Per role and stage: (deck tier, deck power window, life, colors).
 # Colors: 'mono' = the zone's color only; '1-2' / '2-3' = that many colors, one of them the zone's.
-# Power is deck_tier.py's average card power; the tiers' bands are T1 12-13, T2 20-26, T3 29-36, T4 33-41, T5 39-46.
+# Power is deck_tier.py's average card power (with EDHREC popularity since 2026-10-20); the decks span T1 13-15,
+# T2 21-28, T3 30-38, T4 34-41, T5 40-46.
 # Wild creatures take the lowest band of the stage and also fill the random dungeons, pass sentries and hall acolytes.
-WILD = {1: (1, (0, 99), 12, 'mono'), 2: (2, (24, 27), 18, 'mono'), 3: (4, (33, 36), 22, 'mono')}
-TRAINER = {1: [(2, (20, 24), 20, '1-2')],
-           2: [(3, (32, 36), 25, '2-3'), (4, (34, 37), 25, '2-3')],
-           3: [(4, (38, 41), 30, '2-3'), (5, (39, 42), 30, '2-3')]}
-KEEPER = {1: (2, (23, 26), 22, 'mono'), 2: (4, (33, 36), 28, 'mono'), 3: (5, (39, 41), 32, 'mono')}
-GUARDIAN = {1: (3, (28, 31), 24, 'mono'), 2: (4, (36, 38), 30, 'mono'), 3: (5, (41, 43), 35, 'mono')}
-WARDEN = {1: (3, (30, 33), 30, 'mono'), 2: (4, (37, 40), 35, 'mono'), 3: (5, (42, 45), 40, 'mono')}
+WILD = {1: (1, (0, 99), 12, 'mono'), 2: (2, (25, 28), 18, 'mono'), 3: (4, (34, 37), 22, 'mono')}
+TRAINER = {1: [(2, (21, 25), 20, '1-2')],
+           2: [(3, (33, 37), 25, '2-3'), (4, (35, 38), 25, '2-3')],
+           3: [(4, (39, 42), 30, '2-3'), (5, (40, 43), 30, '2-3')]}
+KEEPER = {1: (2, (24, 27), 22, 'mono'), 2: (4, (34, 37), 28, 'mono'), 3: (5, (40, 42), 32, 'mono')}
+GUARDIAN = {1: (3, (29, 32), 24, 'mono'), 2: (4, (37, 39), 30, 'mono'), 3: (5, (41, 44), 35, 'mono')}
+WARDEN = {1: (3, (32, 35), 30, 'mono'), 2: (4, (38, 41), 35, 'mono'), 3: (5, (43, 46), 40, 'mono')}
 MIN_POOL = 3  # decks per pool; a thin window takes the nearest decks by power from the same and neighbouring tiers
 
 
