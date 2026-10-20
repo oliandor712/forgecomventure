@@ -1,0 +1,39 @@
+16	A's Cleanup step	TURN	Turn 16 (B)
+16	B's Untap step	PHASE	B's Untap step
+16	B's Upkeep step	PHASE	B's Upkeep step
+16	B's Draw step	PHASE	B's Draw step
+16	B's Main phase, precombat	PHASE	B's Main phase, precombat
+16	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+16	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+16	B's Declare Attackers Step	COMBAT	B assigned Gunner Conscript (42), Aloe Alchemist (73), Mirri, Cat Warrior (81), Bramblewood Paragon (47) and Unseen Walker (45) to attack A.
+16	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+16	B's Declare Blockers Step	COMBAT	A assigned Arasta of the Endless Web (40) to block Gunner Conscript (42). A didn't block Aloe Alchemist (73). A didn't block Mirri, Cat Warrior (81). A assigned Aquastrand Spider (6) to block Bramblewood Paragon (47). A didn't block Unseen Walker (45).
+16	B's Declare Blockers Step	STACK_ADD*	A cast Thwart the Enemy
+16	B's Declare Blockers Step	STACK_RESOLVE*	Thwart the Enemy (13) - Prevent all damage that would be dealt this turn by creatures your opponents control.
+16	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+16	B's Combat Damage Step	PHASE	B's Combat Damage Step
+16	B's Combat Damage Step	DAMAGE	Aquastrand Spider (6) deals 1 damage to Bramblewood Paragon (47).
+16	B's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 6 damage to Gunner Conscript (42).
+16	B's End of Combat Step	PHASE	B's End of Combat Step
+16	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+16	B's End step	PHASE	B's End step
+16	B's Cleanup step	PHASE	B's Cleanup step
+18	A's Cleanup step	TURN	Turn 18 (B)
+18	B's Untap step	PHASE	B's Untap step
+18	B's Upkeep step	PHASE	B's Upkeep step
+18	B's Draw step	PHASE	B's Draw step
+18	B's Main phase, precombat	PHASE	B's Main phase, precombat
+18	B's Main phase, precombat	DAMAGE	Mirri, Cat Warrior (81) deals 3 damage to Aquastrand Spider (6).
+18	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+18	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+18	B's Declare Attackers Step	COMBAT	B assigned Aloe Alchemist (73), Mirri, Cat Warrior (81), Bramblewood Paragon (47) and Unseen Walker (45) to attack A.
+18	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+18	B's Declare Blockers Step	COMBAT	A didn't block Aloe Alchemist (73). A didn't block Mirri, Cat Warrior (81). A assigned Spider Token (91) to block Bramblewood Paragon (47). A didn't block Unseen Walker (45).
+18	B's Declare Blockers Step	STACK_ADD*	A cast Vine Snare
+18	B's Declare Blockers Step	STACK_RESOLVE*	Vine Snare (9) - Prevent all combat damage that would be dealt this turn by creatures with power 4 or less.
+18	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+18	B's Combat Damage Step	PHASE	B's Combat Damage Step
+18	B's End of Combat Step	PHASE	B's End of Combat Step
+18	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+18	B's End step	PHASE	B's End step
+18	B's Cleanup step	PHASE	B's Cleanup step

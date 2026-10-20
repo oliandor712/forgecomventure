@@ -1,0 +1,73 @@
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned Aloe Alchemist (73) and Mirri, Cat Warrior (81) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A assigned Deadly Recluse (15) to block Aloe Alchemist (73). A didn't block Mirri, Cat Warrior (81).
+14	B's Declare Blockers Step	STACK_ADD*	A cast Thwart the Enemy
+14	B's Declare Blockers Step	STACK_RESOLVE*	Thwart the Enemy (12) - Prevent all damage that would be dealt this turn by creatures your opponents control.
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 1 damage (Deathtouch) to Aloe Alchemist (73).
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's End step	PHASE	B's End step
+14	B's Cleanup step	PHASE	B's Cleanup step
+22	A's Cleanup step	TURN	Turn 22 (B)
+22	B's Untap step	PHASE	B's Untap step
+22	B's Upkeep step	PHASE	B's Upkeep step
+22	B's Draw step	PHASE	B's Draw step
+22	B's Main phase, precombat	PHASE	B's Main phase, precombat
+22	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+22	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+22	B's Declare Attackers Step	COMBAT	B assigned Mirri, Cat Warrior (81) to attack A.
+22	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+22	B's Declare Blockers Step	COMBAT	A didn't block Mirri, Cat Warrior (81).
+22	B's Declare Blockers Step	STACK_ADD*	A cast Thwart the Enemy
+22	B's Declare Blockers Step	STACK_RESOLVE*	Thwart the Enemy (11) - Prevent all damage that would be dealt this turn by creatures your opponents control.
+22	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+22	B's Combat Damage Step	PHASE	B's Combat Damage Step
+22	B's End of Combat Step	PHASE	B's End of Combat Step
+22	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+22	B's End step	PHASE	B's End step
+22	B's Cleanup step	PHASE	B's Cleanup step
+24	A's Cleanup step	TURN	Turn 24 (B)
+24	B's Untap step	PHASE	B's Untap step
+24	B's Upkeep step	PHASE	B's Upkeep step
+24	B's Draw step	PHASE	B's Draw step
+24	B's Main phase, precombat	PHASE	B's Main phase, precombat
+24	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+24	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+24	B's Declare Attackers Step	COMBAT	B assigned Mirri, Cat Warrior (81) to attack A.
+24	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+24	B's Declare Blockers Step	COMBAT	A didn't block Mirri, Cat Warrior (81).
+24	B's Declare Blockers Step	STACK_ADD*	A cast Vine Snare
+24	B's Declare Blockers Step	STACK_RESOLVE*	Vine Snare (9) - Prevent all combat damage that would be dealt this turn by creatures with power 4 or less.
+24	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+24	B's Combat Damage Step	PHASE	B's Combat Damage Step
+24	B's End of Combat Step	PHASE	B's End of Combat Step
+24	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+24	B's End step	PHASE	B's End step
+24	B's Cleanup step	PHASE	B's Cleanup step
+26	A's Cleanup step	TURN	Turn 26 (B)
+26	B's Untap step	PHASE	B's Untap step
+26	B's Upkeep step	PHASE	B's Upkeep step
+26	B's Draw step	PHASE	B's Draw step
+26	B's Main phase, precombat	PHASE	B's Main phase, precombat
+26	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+26	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+26	B's Declare Attackers Step	COMBAT	B assigned Mirri, Cat Warrior (81) to attack A.
+26	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+26	B's Declare Blockers Step	COMBAT	A didn't block Mirri, Cat Warrior (81).
+26	B's Declare Blockers Step	STACK_ADD*	A cast Thwart the Enemy
+26	B's Declare Blockers Step	STACK_RESOLVE*	Thwart the Enemy (13) - Prevent all damage that would be dealt this turn by creatures your opponents control.
+26	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+26	B's Combat Damage Step	PHASE	B's Combat Damage Step
+26	B's End of Combat Step	PHASE	B's End of Combat Step
+26	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+26	B's End step	PHASE	B's End step
+26	B's Cleanup step	PHASE	B's Cleanup step

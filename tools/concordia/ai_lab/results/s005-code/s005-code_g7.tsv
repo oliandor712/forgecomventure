@@ -1,0 +1,122 @@
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+5	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+9	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+11	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Attackers Step	COMBAT	A assigned Alandra, Sky Dreamer (40) to attack B.
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's Declare Blockers Step	COMBAT	B didn't block Alandra, Sky Dreamer (40).
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 combat damage to B.
+17	A's Combat Damage Step	LIFE	Life: B 16 > 14
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+17	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+17	A's End step	PHASE	A's End step
+17	A's Cleanup step	PHASE	A's Cleanup step
+21	B's Cleanup step	TURN	Turn 21 (A)
+21	A's Untap step	PHASE	A's Untap step
+21	A's Upkeep step	PHASE	A's Upkeep step
+21	A's Upkeep step	LIFE	Life: B 13 > 14
+21	A's Draw step	PHASE	A's Draw step
+21	A's Main phase, precombat	PHASE	A's Main phase, precombat
+21	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+21	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+21	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+21	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+21	A's Combat Damage Step	PHASE	A's Combat Damage Step
+21	A's End of Combat Step	PHASE	A's End of Combat Step
+21	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+21	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+21	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+21	A's End step	PHASE	A's End step
+21	A's Cleanup step	PHASE	A's Cleanup step
+22	A's Cleanup step	TURN	Turn 22 (B)
+22	B's Untap step	PHASE	B's Untap step
+22	B's Upkeep step	PHASE	B's Upkeep step
+22	B's Draw step	PHASE	B's Draw step
+22	B's Main phase, precombat	PHASE	B's Main phase, precombat
+22	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+22	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+22	B's Declare Attackers Step	COMBAT	B assigned Thopter Mechanic (74), Aetherjacket (45), Thopter Token (94), Thopter Token (139), Hope of Ghirapur (50), Thopter Token (142), Thopter Token (152), Thopter Token (162), Thopter Token (179), Thopter Token (182), Etherium Sculptor (76), Phyrexian Germ Token (88), Sai, Master Thopterist (81), Ornithopter (69) and Signal Pest (79) to attack A.
+22	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+22	B's Declare Blockers Step	COMBAT*	A assigned Drake Token (91) to block Thopter Mechanic (74). A assigned Drake Token (125) to block Aetherjacket (45). A assigned Drake Token (165) to block Thopter Token (94). A didn't block Thopter Token (139). A assigned Drake Token (146) to block Hope of Ghirapur (50). A didn't block Thopter Token (142). A didn't block Thopter Token (152). A didn't block Thopter Token (162). A didn't block Thopter Token (179). A didn't block Thopter Token (182). A assigned Aquamoeba (16) and Alandra, Sky Dreamer (40) to block Etherium Sculptor (76). A assigned Aquamoeba (14) to block Phyrexian Germ Token (88). A assigned Lord of Atlantis (18) and Vodalian Arcanist (10) to block Sai, Master Thopterist (81). A didn't block Ornithopter (69). A didn't block Signal Pest (79).
+22	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+22	B's Combat Damage Step	PHASE	B's Combat Damage Step
+22	B's Combat Damage Step	DAMAGE	Thopter Mechanic (74) deals 10 damage to Drake Token (91).
+22	B's Combat Damage Step	DAMAGE	Aetherjacket (45) deals 4 damage to Drake Token (125).
+22	B's Combat Damage Step	DAMAGE	Thopter Token (94) deals 3 damage to Drake Token (165).
+22	B's Combat Damage Step	DAMAGE	Thopter Token (139) deals 3 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Hope of Ghirapur (50) deals 3 damage to Drake Token (146).
+22	B's Combat Damage Step	DAMAGE	Thopter Token (142) deals 3 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Thopter Token (152) deals 3 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Thopter Token (162) deals 3 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Thopter Token (179) deals 3 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Thopter Token (182) deals 3 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Etherium Sculptor (76) deals 2 damage to Alandra, Sky Dreamer (40).
+22	B's Combat Damage Step	DAMAGE*	Phyrexian Germ Token (88) deals 2 damage to Aquamoeba (14).
+22	B's Combat Damage Step	LIFE	Life: B 14 > 16
+22	B's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 2 damage to Lord of Atlantis (18).
+22	B's Combat Damage Step	DAMAGE	Ornithopter (69) deals 2 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Drake Token (91) deals 2 damage to Thopter Mechanic (74).
+22	B's Combat Damage Step	DAMAGE	Drake Token (125) deals 2 damage to Aetherjacket (45).
+22	B's Combat Damage Step	DAMAGE	Drake Token (146) deals 2 damage to Hope of Ghirapur (50).
+22	B's Combat Damage Step	DAMAGE	Drake Token (165) deals 2 damage to Thopter Token (94).
+22	B's Combat Damage Step	DAMAGE	Lord of Atlantis (18) deals 2 damage to Sai, Master Thopterist (81).
+22	B's Combat Damage Step	DAMAGE	Vodalian Arcanist (10) deals 2 damage to Sai, Master Thopterist (81).
+22	B's Combat Damage Step	DAMAGE*	Aquamoeba (16) deals 1 damage to Etherium Sculptor (76).
+22	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 3 damage to Etherium Sculptor (76).
+22	B's Combat Damage Step	DAMAGE*	Aquamoeba (14) deals 1 damage to Phyrexian Germ Token (88).
+22	B's Combat Damage Step	LIFE	Life: A 5 > -15

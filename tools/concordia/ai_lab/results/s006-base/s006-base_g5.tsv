@@ -1,0 +1,56 @@
+16	A's Cleanup step	TURN	Turn 16 (B)
+16	B's Untap step	PHASE	B's Untap step
+16	B's Upkeep step	PHASE	B's Upkeep step
+16	B's Draw step	PHASE	B's Draw step
+16	B's Main phase, precombat	PHASE	B's Main phase, precombat
+16	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+16	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+16	B's Declare Attackers Step	COMBAT	B assigned Mirri, Cat Warrior (81) to attack A.
+16	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+16	B's Declare Blockers Step	COMBAT	A didn't block Mirri, Cat Warrior (81).
+16	B's Declare Blockers Step	STACK_ADD*	A cast Thwart the Enemy
+16	B's Declare Blockers Step	STACK_RESOLVE*	Thwart the Enemy (12) - Prevent all damage that would be dealt this turn by creatures your opponents control.
+16	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+16	B's Combat Damage Step	PHASE	B's Combat Damage Step
+16	B's End of Combat Step	PHASE	B's End of Combat Step
+16	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+16	B's End step	PHASE	B's End step
+16	B's Cleanup step	PHASE	B's Cleanup step
+18	A's Cleanup step	TURN	Turn 18 (B)
+18	B's Untap step	PHASE	B's Untap step
+18	B's Upkeep step	PHASE	B's Upkeep step
+18	B's Draw step	PHASE	B's Draw step
+18	B's Main phase, precombat	PHASE	B's Main phase, precombat
+18	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+18	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+18	B's Declare Attackers Step	COMBAT	B assigned Mirri, Cat Warrior (81) to attack A.
+18	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+18	B's Declare Blockers Step	COMBAT	A didn't block Mirri, Cat Warrior (81).
+18	B's Declare Blockers Step	STACK_ADD*	A cast Vine Snare
+18	B's Declare Blockers Step	STACK_RESOLVE*	Vine Snare (7) - Prevent all combat damage that would be dealt this turn by creatures with power 4 or less.
+18	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+18	B's Combat Damage Step	PHASE	B's Combat Damage Step
+18	B's End of Combat Step	PHASE	B's End of Combat Step
+18	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+18	B's End step	PHASE	B's End step
+18	B's Cleanup step	PHASE	B's Cleanup step
+20	A's Cleanup step	TURN	Turn 20 (B)
+20	B's Untap step	PHASE	B's Untap step
+20	B's Upkeep step	PHASE	B's Upkeep step
+20	B's Draw step	PHASE	B's Draw step
+20	B's Main phase, precombat	PHASE	B's Main phase, precombat
+20	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+20	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+20	B's Declare Attackers Step	COMBAT	B assigned Destiny Spinner (44), Avatar of the Resolute (76), Mirri, Cat Warrior (81), Gunner Conscript (42), Honored Dreyleader (46) and Scythe Leopard (43) to attack A.
+20	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+20	B's Declare Blockers Step	COMBAT	A assigned Spider Token (85) to block Destiny Spinner (44). A assigned Spider Token (88) to block Avatar of the Resolute (76). A didn't block Mirri, Cat Warrior (81). A assigned Arasta of the Endless Web (40) to block Gunner Conscript (42). A didn't block Honored Dreyleader (46). A assigned Grappler Spider (17) to block Scythe Leopard (43).
+20	B's Declare Blockers Step	STACK_ADD*	A cast Vine Snare
+20	B's Declare Blockers Step	STACK_RESOLVE*	Vine Snare (9) - Prevent all combat damage that would be dealt this turn by creatures with power 4 or less.
+20	B's Declare Blockers Step	STACK_ADD*	A cast Vine Snare
+20	B's Declare Blockers Step	STACK_RESOLVE*	Vine Snare (8) - Prevent all combat damage that would be dealt this turn by creatures with power 4 or less.
+20	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+20	B's Combat Damage Step	PHASE	B's Combat Damage Step
+20	B's End of Combat Step	PHASE	B's End of Combat Step
+20	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+20	B's End step	PHASE	B's End step
+20	B's Cleanup step	PHASE	B's Cleanup step

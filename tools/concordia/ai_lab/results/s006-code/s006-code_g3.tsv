@@ -1,0 +1,19 @@
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Draw step	PHASE	B's Draw step
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Main phase, precombat	DAMAGE	Avatar of the Resolute (76) deals 3 damage to Arbor Elf (1).
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Attackers Step	COMBAT	B assigned Avatar of the Resolute (76), Destiny Spinner (44), Wose Pathfinder (80) and Nishoba Brawler (74) to attack A.
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's Declare Blockers Step	COMBAT	A didn't block Avatar of the Resolute (76). A assigned Spider Token (85) to block Destiny Spinner (44). A didn't block Wose Pathfinder (80). A didn't block Nishoba Brawler (74).
+15	B's Declare Blockers Step	STACK_ADD*	A cast Vine Snare
+15	B's Declare Blockers Step	STACK_RESOLVE*	Vine Snare (9) - Prevent all combat damage that would be dealt this turn by creatures with power 4 or less.
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's End of Combat Step	PHASE	B's End of Combat Step
+15	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+15	B's End step	PHASE	B's End step
+15	B's Cleanup step	PHASE	B's Cleanup step

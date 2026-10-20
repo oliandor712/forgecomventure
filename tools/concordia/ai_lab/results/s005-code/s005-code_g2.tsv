@@ -1,0 +1,129 @@
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Deranged Assistant (3) to attack B.
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B didn't block Deranged Assistant (3).
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Deranged Assistant (3) deals 1 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: B 19 > 18
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+7	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT*	A assigned Deranged Assistant (3) and Turtleshell Changeling (7) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT*	B didn't block Deranged Assistant (3). B didn't block Turtleshell Changeling (7).
+9	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+9	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Deranged Assistant (3) deals 1 combat damage to B.
+9	A's Combat Damage Step	DAMAGE*	Turtleshell Changeling (7) deals 4 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 18 > 13
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Main phase, precombat	STACK_ADD*	A cast Aqueous Form targeting [Turtleshell Changeling (7)]
+11	A's Main phase, precombat	STACK_RESOLVE*	Aqueous Form (6) -  Attach to Turtleshell Changeling (7)
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT*	A assigned Turtleshell Changeling (7) to attack B.
+11	A's Declare Attackers Step	STACK_RESOLVE*	Whenever enchanted creature attacks, scry 1. (Look at the top card of your library. You may put that card on the bottom.) [Attacker: Turtleshell Changeling (7)]
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT*	B didn't block Turtleshell Changeling (7).
+11	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+11	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE*	Turtleshell Changeling (7) deals 4 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 13 > 9
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned Sai, Master Thopterist (81) and Thopter Token (85) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A didn't block Sai, Master Thopterist (81). A didn't block Thopter Token (85).
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 4 combat damage to A.
+12	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 2 combat damage to A.
+12	B's Combat Damage Step	LIFE	Life: A 14 > 8
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's End step	PHASE	B's End step
+12	B's End step	STACK_ADD*	A cast Slip Out the Back targeting [Turtleshell Changeling (7)]
+12	B's End step	STACK_RESOLVE*	Slip Out the Back (17) - A puts a +1/+1 counter on Turtleshell Changeling (7). Turtleshell Changeling (7) phases out.
+12	B's Cleanup step	PHASE	B's Cleanup step
+13	B's Cleanup step	TURN	Turn 13 (A)
+13	A's Untap step	PHASE	A's Untap step
+13	A's Upkeep step	PHASE	A's Upkeep step
+13	A's Draw step	PHASE	A's Draw step
+13	A's Main phase, precombat	PHASE	A's Main phase, precombat
+13	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+13	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+13	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+13	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+13	A's Combat Damage Step	PHASE	A's Combat Damage Step
+13	A's End of Combat Step	PHASE	A's End of Combat Step
+13	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+13	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+13	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+13	A's End step	PHASE	A's End step
+13	A's Cleanup step	PHASE	A's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned Hero's Blade (75), Mycosynth Wellspring (78), Thopter Token (85), Thopter Mechanic (74), Thopter Token (88), Thopter Token (91), Spectrum Sentinel (47), Sai, Master Thopterist (81) and Brass Man (48) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT*	A assigned Deranged Assistant (3) to block Hero's Blade (75). A assigned Vodalian Arcanist (10) to block Mycosynth Wellspring (78). A didn't block Thopter Token (85). A assigned Turtleshell Changeling (8) to block Thopter Mechanic (74). A didn't block Thopter Token (88). A didn't block Thopter Token (91). A didn't block Spectrum Sentinel (47). A assigned Turtleshell Changeling (7) to block Sai, Master Thopterist (81). A didn't block Brass Man (48).
+14	B's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+14	B's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	Hero's Blade (75) deals 4 damage to Deranged Assistant (3).
+14	B's Combat Damage Step	DAMAGE	Mycosynth Wellspring (78) deals 4 damage to Vodalian Arcanist (10).
+14	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 2 combat damage to A.
+14	B's Combat Damage Step	DAMAGE*	Thopter Mechanic (74) deals 2 damage to Turtleshell Changeling (8).
+14	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 2 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Thopter Token (91) deals 2 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Spectrum Sentinel (47) deals 1 combat damage to A.
+14	B's Combat Damage Step	DAMAGE*	Sai, Master Thopterist (81) deals 1 damage to Turtleshell Changeling (7).
+14	B's Combat Damage Step	DAMAGE	Brass Man (48) deals 1 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Deranged Assistant (3) deals 1 damage to Hero's Blade (75).
+14	B's Combat Damage Step	DAMAGE	Vodalian Arcanist (10) deals 1 damage to Mycosynth Wellspring (78).
+14	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (8) deals 1 damage to Thopter Mechanic (74).
+14	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (7) deals 5 damage to Sai, Master Thopterist (81).
+14	B's Combat Damage Step	LIFE	Life: A 8 > 0
