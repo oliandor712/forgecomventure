@@ -81,3 +81,11 @@ Setup: both arms use the scratch assets (card flags removed); "base" = unpatched
 
 ## 008: shouldPumpCard counts gang-block co-blockers (code patch; main-session gap A)
 `ComputerUtilCard.shouldPumpCard` (blocker branch, ~line 1665) built `pumpedCombat` with only the pumped blocker, dropping co-blockers' damage. `patches/008-pump-gang-block.patch` adds them. Test s008 (switch-heavy deck, 10 games, equal life 20, logs `results/s008-code/`, which now also include zone changes so kills are visible): 3 switch activations, all declare blockers; 8 of 12 activation turns had a creature go to the graveyard (all creatures, not attributed). Inconclusive: needs a controlled gang-block scenario (several blockers vs Sai) and per-activation kill attribution. Also logged: AiLabSim context now includes ZONE_CHANGE and STACK_ADD lines; still missing: mana available and hand size at activation.
+
+## Regression sim for patch 008 (and the whole scratch build: 005 v3 + 006 + 008), per main-session request
+Two pairings of 40-card tier 2-3 decks with pump instants (`minideck.py --size 40`, no forced cards): r008a Shroofus (T3 G) vs Kiki-Jiki (T2 R); r008b Legolas (T2 G) vs Zilortha (T3 RG). 10 games per arm, equal life 20, base = unpatched jars, code = scratch worktree jars. Watched cards: the pump instants of both decks (counts are both sides together). Logs in `results/r008{a,b}-{base,code}/`.
+| Pairing | Base pump casts (cards seen) | Code pump casts (cards seen) | Wins A: base -> code |
+|---|---|---|---|
+| r008a | 11 (15 draws) | 16 (20) | 4-6 -> 9-1 |
+| r008b | 9 (15) | 14 (21) | 3-7 -> 5-5 |
+Casts per card drawn: 0.73 -> 0.80 (a), 0.60 -> 0.67 (b): no red flag (the raw cast increase comes from drawing more of the watched cards, which is run-to-run variance in 10 games). Wins moved toward side A in both pairings (7 -> 14 of 20) but that is not attributable to the patch with these counts (both sides run the same code); I would not read it as a result. Combat kills and blocker losses are not yet compared: the log lacks per-combat kill attribution. Verdict: no sign that 008 (or the rest of the scratch build) distorts pump use; still needs the controlled gang-block scenario and a larger regression (more decks, 20+ games) before it is proposed.

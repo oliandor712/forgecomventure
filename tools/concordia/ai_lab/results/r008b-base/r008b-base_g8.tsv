@@ -1,0 +1,24 @@
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Upkeep step	STACK_ADD*	B cast Bite Down targeting [Zilortha, Strength Incarnate (81)] [Legolas, Master Archer (40)]
+9	B's Upkeep step	DAMAGE	Zilortha, Strength Incarnate (81) deals 7 damage to Legolas, Master Archer (40).
+9	B's Upkeep step	STACK_RESOLVE*	Bite Down (65) -  Zilortha, Strength Incarnate (81) deals 7 damage to Legolas, Master Archer (40).
+9	B's Upkeep step	ZONE_CHANGE	Legolas, Master Archer (40) was put into Graveyard from Battlefield.
+9	B's Upkeep step	STACK_ADD	B cast Trash the Town
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Attackers Step	COMBAT	B assigned Zilortha, Strength Incarnate (81) to attack A.
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's Declare Blockers Step	COMBAT	A didn't block Zilortha, Strength Incarnate (81).
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 9 combat damage to A.
+9	B's Combat Damage Step	LIFE	Life: A 20 > 11
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's Main phase, postcombat	STACK_ADD	B cast Stonecoil Serpent
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step

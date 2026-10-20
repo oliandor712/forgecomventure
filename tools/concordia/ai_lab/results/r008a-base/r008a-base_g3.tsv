@@ -1,0 +1,47 @@
+10	A's Cleanup step	TURN	Turn 10 (B)
+10	B's Untap step	PHASE	B's Untap step
+10	B's Upkeep step	PHASE	B's Upkeep step
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	ZONE_CHANGE	B milled Mountain (60).
+10	B's Upkeep step	ZONE_CHANGE	B milled Mountain (50).
+10	B's Upkeep step	ZONE_CHANGE	B milled Roar of Resistance (70).
+10	B's Upkeep step	ZONE_CHANGE	B milled Mountain (54).
+10	B's Upkeep step	ZONE_CHANGE	B milled Crash Through (64).
+10	B's Upkeep step	ZONE_CHANGE	B milled Mountain (58).
+10	B's Upkeep step	ZONE_CHANGE	B milled Skirk Prospector (66).
+10	B's Upkeep step	ZONE_CHANGE	B milled Thermo-Alchemist (42).
+10	B's Draw step	PHASE	B's Draw step
+10	B's Main phase, precombat	PHASE	B's Main phase, precombat
+10	B's Main phase, precombat	STACK_ADD	B activated Kiki-Jiki, Mirror Breaker targeting [Exuberant Firestoker (76)]
+10	B's Main phase, precombat	STACK_ADD	B cast Dragonspeaker Shaman
+10	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+10	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+10	B's Declare Attackers Step	COMBAT	B assigned Exuberant Firestoker (89), Akki Scrapchomper (67), Dragonlord's Servant (44) and Exuberant Firestoker (76) to attack A.
+10	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+10	B's Declare Blockers Step	COMBAT	A didn't block Exuberant Firestoker (89). A didn't block Akki Scrapchomper (67). A didn't block Dragonlord's Servant (44). A assigned Saproling Token (87) to block Exuberant Firestoker (76).
+10	B's Declare Blockers Step	STACK_ADD*	B cast Monstrous Rage targeting [Akki Scrapchomper (67)]
+10	B's Declare Blockers Step	STACK_RESOLVE*	Monstrous Rage (65) - Akki Scrapchomper (67) gets +2/+0  until end of turn. 
+10	B's Declare Blockers Step	STACK_ADD*	A cast Echoing Courage targeting [Saproling Token (87)]
+10	B's Declare Blockers Step	STACK_RESOLVE*	Echoing Courage (5) - Saproling Token (87) gets +2/+2  until end of turn. 
+10	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+10	B's Combat Damage Step	PHASE	B's Combat Damage Step
+10	B's Combat Damage Step	DAMAGE	Exuberant Firestoker (89) deals 1 combat damage to A.
+10	B's Combat Damage Step	DAMAGE	Akki Scrapchomper (67) deals 4 combat damage to A.
+10	B's Combat Damage Step	DAMAGE	Dragonlord's Servant (44) deals 1 combat damage to A.
+10	B's Combat Damage Step	DAMAGE	Exuberant Firestoker (76) deals 1 damage to Saproling Token (87).
+10	B's Combat Damage Step	DAMAGE	Saproling Token (87) deals 3 damage to Exuberant Firestoker (76).
+10	B's Combat Damage Step	LIFE	Life: A 14 > 8
+10	B's Combat Damage Step	ZONE_CHANGE	Exuberant Firestoker (76) was put into Graveyard from Battlefield.
+10	B's End of Combat Step	PHASE	B's End of Combat Step
+10	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+10	B's End step	PHASE	B's End step
+10	B's End step	STACK_ADD	B triggered Kiki-Jiki, Mirror Breaker
+10	B's End step	ZONE_CHANGE	Exuberant Firestoker (89) was put into Graveyard from Battlefield.
+10	B's Cleanup step	PHASE	B's Cleanup step

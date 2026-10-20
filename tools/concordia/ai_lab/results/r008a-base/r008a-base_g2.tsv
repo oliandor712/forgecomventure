@@ -1,0 +1,23 @@
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Llanowar Elves (9) to attack B.
+9	A's Declare Attackers Step	STACK_ADD	B triggered Roar of Resistance
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B assigned Skirk Prospector (66) to block Llanowar Elves (9).
+9	A's Declare Blockers Step	STACK_ADD*	A cast Echoing Courage targeting [Llanowar Elves (9)]
+9	A's Declare Blockers Step	STACK_RESOLVE*	Echoing Courage (5) - Llanowar Elves (9) gets +2/+2  until end of turn. 
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Llanowar Elves (9) deals 3 damage to Skirk Prospector (66).
+9	A's Combat Damage Step	DAMAGE	Skirk Prospector (66) deals 1 damage to Llanowar Elves (9).
+9	A's Combat Damage Step	ZONE_CHANGE	Skirk Prospector (66) was put into Graveyard from Battlefield.
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Champion of Lambholt
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step

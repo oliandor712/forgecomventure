@@ -1,0 +1,31 @@
+10	A's Cleanup step	TURN	Turn 10 (B)
+10	B's Untap step	PHASE	B's Untap step
+10	B's Upkeep step	PHASE	B's Upkeep step
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	B cast Shredded Sails
+10	B's Upkeep step	ZONE_CHANGE	Mesmeric Orb (35) was put into Graveyard from Battlefield.
+10	B's Upkeep step	ZONE_CHANGE	B milled Forest (63).
+10	B's Upkeep step	ZONE_CHANGE	B milled Shadowspear (71).
+10	B's Upkeep step	ZONE_CHANGE	B milled Forest (60).
+10	B's Upkeep step	ZONE_CHANGE	B milled Trash the Town (77).
+10	B's Upkeep step	ZONE_CHANGE*	B milled Bite Down (65).
+10	B's Draw step	PHASE	B's Draw step
+10	B's Main phase, precombat	PHASE	B's Main phase, precombat
+10	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+10	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+10	B's Declare Attackers Step	COMBAT	B assigned Zilortha, Strength Incarnate (81) to attack A.
+10	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+10	B's Declare Blockers Step	COMBAT	A didn't block Zilortha, Strength Incarnate (81).
+10	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+10	B's Combat Damage Step	PHASE	B's Combat Damage Step
+10	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 7 combat damage to A.
+10	B's Combat Damage Step	LIFE	Life: A 20 > 13
+10	B's End of Combat Step	PHASE	B's End of Combat Step
+10	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+10	B's Main phase, postcombat	STACK_ADD	B cast Lifeblood Hydra
+10	B's End step	PHASE	B's End step
+10	B's Cleanup step	PHASE	B's Cleanup step

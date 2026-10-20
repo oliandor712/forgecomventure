@@ -1,0 +1,129 @@
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Upkeep step	STACK_ADD	A triggered Utopia Mycon
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Llanowar Elves (9) to attack B.
+8	A's Declare Attackers Step	STACK_ADD	B triggered Roar of Resistance
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B assigned Akki Ronin (62) to block Llanowar Elves (9).
+8	A's Declare Blockers Step	STACK_ADD*	A cast Echoing Courage targeting [Llanowar Elves (9)]
+8	A's Declare Blockers Step	STACK_RESOLVE*	Echoing Courage (5) - Llanowar Elves (9) gets +2/+2  until end of turn. 
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Llanowar Elves (9) deals 3 damage to Akki Ronin (62).
+8	A's Combat Damage Step	DAMAGE	Akki Ronin (62) deals 1 damage to Llanowar Elves (9).
+8	A's Combat Damage Step	ZONE_CHANGE	Akki Ronin (62) was put into Graveyard from Battlefield.
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Idol of Oblivion
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Main phase, precombat	STACK_ADD	B cast Dragonlord's Servant
+11	B's Main phase, precombat	STACK_ADD	B activated Kiki-Jiki, Mirror Breaker targeting [Dragonlord's Servant (44)]
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Beginning of Combat Step	STACK_ADD*	B cast Expedite targeting [Dragonlord's Servant (44)]
+11	B's Beginning of Combat Step	STACK_RESOLVE*	Expedite (71) - Dragonlord's Servant (44) gains haste until end of turn. B draws a card.
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Attackers Step	COMBAT	B assigned Dragonlord's Servant (141) and Dragonlord's Servant (44) to attack A.
+11	B's Declare Attackers Step	STACK_ADD	B triggered Roar of Resistance
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's Declare Blockers Step	COMBAT	A didn't block Dragonlord's Servant (141). A didn't block Dragonlord's Servant (44).
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's Combat Damage Step	DAMAGE	Dragonlord's Servant (141) deals 1 combat damage to A.
+11	B's Combat Damage Step	DAMAGE	Dragonlord's Servant (44) deals 1 combat damage to A.
+11	B's Combat Damage Step	LIFE	Life: A 18 > 16
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	STACK_ADD	B cast Exuberant Firestoker
+11	B's End step	PHASE	B's End step
+11	B's End step	STACK_ADD	B triggered Kiki-Jiki, Mirror Breaker
+11	B's End step	ZONE_CHANGE	Dragonlord's Servant (141) was put into Graveyard from Battlefield.
+11	B's Cleanup step	PHASE	B's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	ZONE_CHANGE	B milled Mountain (49).
+13	B's Upkeep step	ZONE_CHANGE	B milled Thermo-Alchemist (42).
+13	B's Upkeep step	ZONE_CHANGE	B milled Otepec Huntmaster (43).
+13	B's Upkeep step	ZONE_CHANGE*	B milled Unleash Fury (69).
+13	B's Upkeep step	ZONE_CHANGE	B milled Mask of Memory (68).
+13	B's Upkeep step	ZONE_CHANGE	B milled Mountain (61).
+13	B's Upkeep step	ZONE_CHANGE	B milled Mountain (52).
+13	B's Upkeep step	ZONE_CHANGE	B milled Skirk Prospector (66).
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Main phase, precombat	STACK_ADD	B activated Kiki-Jiki, Mirror Breaker targeting [Exuberant Firestoker (76)]
+13	B's Main phase, precombat	STACK_ADD	B cast Dragonspeaker Shaman
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Exuberant Firestoker (186), Dragonlord's Servant (44) and Exuberant Firestoker (76) to attack A.
+13	B's Declare Attackers Step	STACK_ADD	B triggered Roar of Resistance
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A didn't block Exuberant Firestoker (186). A didn't block Dragonlord's Servant (44). A didn't block Exuberant Firestoker (76).
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Exuberant Firestoker (186) deals 1 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Dragonlord's Servant (44) deals 1 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Exuberant Firestoker (76) deals 1 combat damage to A.
+13	B's Combat Damage Step	LIFE	Life: A 16 > 13
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's End step	PHASE	B's End step
+13	B's End step	STACK_ADD	B triggered Kiki-Jiki, Mirror Breaker
+13	B's End step	ZONE_CHANGE	Exuberant Firestoker (186) was put into Graveyard from Battlefield.
+13	B's Cleanup step	PHASE	B's Cleanup step
+18	B's Cleanup step	TURN	Turn 18 (A)
+18	A's Untap step	PHASE	A's Untap step
+18	A's Upkeep step	PHASE	A's Upkeep step
+18	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+18	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+18	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+18	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+18	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+18	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+18	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+18	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+18	A's Upkeep step	STACK_ADD	A triggered Utopia Mycon
+18	A's Upkeep step	ZONE_CHANGE	A milled Trash the Town (37).
+18	A's Upkeep step	ZONE_CHANGE*	A milled Overprotect (34).
+18	A's Upkeep step	ZONE_CHANGE	A milled Explore (10).
+18	A's Upkeep step	ZONE_CHANGE	A milled Champion of Lambholt (3).
+18	A's Upkeep step	ZONE_CHANGE	A milled Forest (13).
+18	A's Upkeep step	ZONE_CHANGE	A milled Swiftfoot Boots (2).
+18	A's Upkeep step	ZONE_CHANGE	A milled Forest (27).
+18	A's Upkeep step	ZONE_CHANGE	A milled Season of Growth (32).
+18	A's Draw step	PHASE	A's Draw step
+18	A's Main phase, precombat	PHASE	A's Main phase, precombat
+18	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+18	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+18	A's Declare Attackers Step	COMBAT	A assigned Eldrazi Token (273) to attack B.
+18	A's Declare Attackers Step	STACK_ADD	B triggered Roar of Resistance
+18	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+18	A's Declare Blockers Step	COMBAT	B assigned Dragonlord's Servant (44) to block Eldrazi Token (273).
+18	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+18	A's Combat Damage Step	PHASE	A's Combat Damage Step
+18	A's Combat Damage Step	DAMAGE	Eldrazi Token (273) deals 10 damage to Dragonlord's Servant (44).
+18	A's Combat Damage Step	DAMAGE	Dragonlord's Servant (44) deals 1 damage to Eldrazi Token (273).
+18	A's Combat Damage Step	ZONE_CHANGE	Dragonlord's Servant (44) was put into Graveyard from Battlefield.
+18	A's End of Combat Step	PHASE	A's End of Combat Step
+18	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+18	A's End step	PHASE	A's End step
+18	A's Cleanup step	PHASE	A's Cleanup step
