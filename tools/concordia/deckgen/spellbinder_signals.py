@@ -77,7 +77,9 @@ def main():
             eligible = sum(v for ident, v in by_ident.items() if ci <= ident)
             if eligible >= MIN_ELIGIBLE:
                 out[name][key] = round(min(1.0, n / eligible), 4)
-        summary[key] = {'decks': len(deck_ids), 'cards': len(counts), 'unknown_names': unknown}
+        # Decks per commander identity, so a reader can tell "no deck plays it" (0) from "too few decks could" (unknown).
+        summary[key] = {'decks': len(deck_ids), 'cards': len(counts), 'unknown_names': unknown,
+                        'identities': {''.join(c for c in 'WUBRG' if c in i): v for i, v in sorted(by_ident.items(), key=lambda kv: -kv[1])}}
     json.dump({'built': datetime.date.today().isoformat(), 'sources': summary, 'min_eligible': MIN_ELIGIBLE,
                'cards': dict(sorted(out.items()))}, open(os.path.join(DIR, 'signals.json'), 'w'), indent=0)
     print(json.dumps(summary), len(out), 'cards with a signal')

@@ -261,11 +261,46 @@ def rarity_of(data, name, ed):
     return collections.Counter(found).most_common(1)[0][0] if found else "?"
 
 
+SIGNALS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deckgen", "spellbinder", "signals.json")
+CEDH_FULL = 0.4  # a card in 40% of the cEDH decks that could play it counts as top raw power
+_signals = None
+
+
+def color_identity(c):
+    """Colours in the mana cost and in mana symbols of the rules text (reminder text skipped)."""
+    s = set(re.findall(r"[WUBRG]", c["mc"]))
+    for sym in re.findall(r"\{([^}]*)\}", re.sub(r"\([^)]*\)", "", c["oracle"])):
+        s |= set(re.findall(r"[WUBRG]", sym))
+    return frozenset(s)
+
+
+def cedh_strength(c):
+    """0-1 from the card's Spellbinder cEDH inclusion rate (deckgen/spellbinder_signals.py), or None when there's no
+    signals file or too few cEDH decks could play the card's colours to say."""
+    global _signals
+    if _signals is None:
+        _signals = {}
+        if os.path.exists(SIGNALS):
+            s = json.load(open(SIGNALS))
+            _signals = {"cards": s["cards"], "min": s.get("min_eligible", 5),
+                        "ids": [(frozenset(i), n) for i, n in s["sources"].get("cedh", {}).get("identities", {}).items()]}
+    if not _signals or not _signals["ids"]:
+        return None
+    ci = color_identity(c)
+    if sum(n for i, n in _signals["ids"] if ci <= i) < _signals["min"]:
+        return None
+    return min(1.0, _signals["cards"].get(c["name"].lower().split(" // ")[0], {}).get("cedh", 0.0) / CEDH_FULL)
+
+
 def card_power(data, c, tags, rarity):
-    """0-100 power estimate: cube rank (raw power), mana efficiency, role, rarity, Game Changer, fast mana, tutor."""
+    """0-100 power estimate: raw power, mana efficiency, role, rarity, Game Changer, fast mana, tutor.
+    Raw power is the cube rank, lifted by the cEDH inclusion rate when that is higher: the cube list misses some
+    staples (Birds of Paradise isn't in it). Absence from the cEDH sample doesn't lower a card, since 64 decks say
+    little about cards built for casual tables. Prices are not used."""
     name = c["name"].lower()
     rank = data["cube"].get(name)
     cube = 1 - (rank - 1) / 4000 if rank else 0.0
+    cube = max(cube, cedh_strength(c) or 0.0)
     eff = max(0.0, min(1.0, (6 - c["cmc"]) / 5))
     role = 1.0 if tags & {"ramp", "draw", "removal", "wipe", "counter", "tutor"} else 0.0
     p = 35 * cube + 15 * eff + 15 * role + 15 * RARITY_WEIGHT.get(rarity, 0.3)

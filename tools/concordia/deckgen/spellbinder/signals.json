@@ -1,0 +1,11578 @@
+{
+"built": "2026-10-20",
+"sources": {
+"cedh": {
+"decks": 64,
+"cards": 1064,
+"unknown_names": 0,
+"identities": {
+"UG": 10,
+"WUBR": 9,
+"UB": 6,
+"WUBRG": 4,
+"WUBG": 4,
+"B": 4,
+"WUG": 4,
+"WBG": 3,
+"R": 3,
+"URG": 3,
+"G": 2,
+"UBG": 2,
+"RG": 2,
+"U": 1,
+"WR": 1,
+"UR": 1,
+"BR": 1,
+"WURG": 1,
+"WUB": 1,
+"WU": 1,
+"UBR": 1
+}
+},
+"precon": {
+"decks": 70,
+"cards": 2915,
+"unknown_names": 2,
+"identities": {
+"WUR": 8,
+"WUBRG": 6,
+"WRG": 5,
+"WBR": 5,
+"UG": 4,
+"BRG": 4,
+"WUG": 4,
+"WUB": 4,
+"WG": 3,
+"BG": 3,
+"UBG": 3,
+"R": 2,
+"UBR": 2,
+"WURG": 2,
+"WR": 2,
+"UR": 2,
+"URG": 2,
+"WUBR": 1,
+"W": 1,
+"U": 1,
+"G": 1,
+"B": 1,
+"WB": 1,
+"WBG": 1,
+"BR": 1,
+"RG": 1
+}
+}
+},
+"min_eligible": 5,
+"cards": {
+"\"name sticker\" goblin": {
+"cedh": 0.0385
+},
+"_____ goblin": {
+"cedh": 0.0769
+},
+"abandon attachments": {
+"cedh": 0.0526
+},
+"aberrant return": {
+"precon": 0.0312
+},
+"abomination, world ravager": {
+"precon": 0.0465
+},
+"abrade": {
+"cedh": 0.0769,
+"precon": 0.1163
+},
+"abraded bluffs": {
+"precon": 0.0345
+},
+"abrupt decay": {
+"cedh": 0.3846
+},
+"abstergo entertainment": {
+"cedh": 0.0156
+},
+"abstract performance": {
+"precon": 0.0256
+},
+"abundant countryside": {
+"precon": 0.0143
+},
+"abundant growth": {
+"precon": 0.0513
+},
+"academy manufactor": {
+"precon": 0.0429
+},
+"academy rector": {
+"cedh": 0.0714
+},
+"academy ruins": {
+"cedh": 0.0208,
+"precon": 0.0256
+},
+"access tunnel": {
+"precon": 0.0429
+},
+"accursed duneyard": {
+"precon": 0.0143
+},
+"accursed marauder": {
+"precon": 0.0625
+},
+"acererak the archlich": {
+"cedh": 0.0286
+},
+"acidic slime": {
+"precon": 0.0769
+},
+"acquired mutation": {
+"precon": 0.0233
+},
+"activated sleeper": {
+"cedh": 0.0286
+},
+"ad nauseam": {
+"cedh": 0.4571
+},
+"adaptive automaton": {
+"cedh": 0.0156
+},
+"adaptive omnitool": {
+"precon": 0.0286
+},
+"adaptive training post": {
+"precon": 0.0256
+},
+"adarkar wastes": {
+"cedh": 0.0417,
+"precon": 0.44
+},
+"adeline, resplendent cathar": {
+"precon": 0.0233
+},
+"adrix and nev, twincasters": {
+"precon": 0.0476
+},
+"advanced reconstruction": {
+"precon": 0.0233
+},
+"aerial extortionist": {
+"precon": 0.0233
+},
+"aerith, last ancient": {
+"precon": 0.0952
+},
+"aesi, tyrant of gyre strait": {
+"precon": 0.0476
+},
+"aether channeler": {
+"precon": 0.0256
+},
+"aether gale": {
+"precon": 0.0513
+},
+"aether hub": {
+"precon": 0.0429
+},
+"aether refinery": {
+"precon": 0.0465
+},
+"aether spellbomb": {
+"precon": 0.0256
+},
+"aetherborn marauder": {
+"precon": 0.0312
+},
+"aetherflux conduit": {
+"precon": 0.0143
+},
+"aetherflux reservoir": {
+"cedh": 0.0312,
+"precon": 0.0143
+},
+"aethergeode miner": {
+"precon": 0.0465
+},
+"aetheric amplifier": {
+"precon": 0.0143
+},
+"aetherize": {
+"precon": 0.0513
+},
+"aethersphere harvester": {
+"precon": 0.0286
+},
+"aethersquall ancient": {
+"precon": 0.0769
+},
+"aetherstorm roc": {
+"precon": 0.0465
+},
+"aethertide whale": {
+"precon": 0.0769
+},
+"aetherwind basker": {
+"precon": 0.0256
+},
+"aetherworks marvel": {
+"precon": 0.0429
+},
+"afterlife from the loam": {
+"precon": 0.0312
+},
+"aftermath analyst": {
+"cedh": 0.0286,
+"precon": 0.0256
+},
+"agadeem's awakening": {
+"cedh": 0.0286
+},
+"agate instigator": {
+"precon": 0.0233
+},
+"agatha of the vile cauldron": {
+"cedh": 0.1
+},
+"agatha's soul cauldron": {
+"cedh": 0.1094
+},
+"age of ultron": {
+"precon": 0.0625
+},
+"agent frank horrigan": {
+"precon": 0.0588
+},
+"aggravated assault": {
+"cedh": 0.0385
+},
+"aggressive biomancy": {
+"precon": 0.0952
+},
+"agility bobblehead": {
+"precon": 0.0143
+},
+"agitator ant": {
+"precon": 0.0233
+},
+"ainok strike leader": {
+"precon": 0.0233
+},
+"ainok survivalist": {
+"precon": 0.0256
+},
+"ajani's chosen": {
+"precon": 0.0233
+},
+"ajani's pridemate": {
+"precon": 0.0233
+},
+"akroma's will": {
+"precon": 0.0465
+},
+"akroma, angel of fury": {
+"precon": 0.0465
+},
+"alandra, sky dreamer": {
+"precon": 0.0256
+},
+"alchemist's refuge": {
+"cedh": 0.0357,
+"precon": 0.0476
+},
+"alchemist's talent": {
+"precon": 0.0233
+},
+"alibou, ancient witness": {
+"precon": 0.0345
+},
+"alicia masters, skilled sculptor": {
+"cedh": 0.0385,
+"precon": 0.0465
+},
+"aligned heart": {
+"precon": 0.0233
+},
+"alisaie leveilleur": {
+"precon": 0.0465
+},
+"all is dust": {
+"precon": 0.0429
+},
+"all that glitters": {
+"precon": 0.0233
+},
+"allosaurus shepherd": {
+"cedh": 0.1714
+},
+"almost perfect": {
+"precon": 0.0476
+},
+"alpha deathclaw": {
+"precon": 0.0588
+},
+"alphinaud leveilleur": {
+"precon": 0.0513
+},
+"alseid of life's bounty": {
+"precon": 0.0233
+},
+"altar of the goyf": {
+"precon": 0.0286
+},
+"altered ego": {
+"cedh": 0.0357,
+"precon": 0.1429
+},
+"aluren": {
+"cedh": 0.0286
+},
+"always watching": {
+"precon": 0.0233
+},
+"ambition's cost": {
+"precon": 0.0312
+},
+"aminatou's augury": {
+"precon": 0.0256
+},
+"aminatou, veil piercer": {
+"precon": 0.0909
+},
+"amoeboid changeling": {
+"precon": 0.0256
+},
+"amped raptor": {
+"precon": 0.0465
+},
+"amphibian downpour": {
+"cedh": 0.0208
+},
+"amphin mutineer": {
+"precon": 0.0256
+},
+"an offer you can't refuse": {
+"cedh": 0.6458,
+"precon": 0.0769
+},
+"ancestors' aid": {
+"precon": 0.0233
+},
+"ancestral communion": {
+"precon": 0.0513
+},
+"ancestral statue": {
+"cedh": 0.0156
+},
+"ancestral vision": {
+"precon": 0.0256
+},
+"ancient amphitheater": {
+"precon": 0.0345
+},
+"ancient cellarspawn": {
+"precon": 0.0312
+},
+"ancient cornucopia": {
+"precon": 0.0256
+},
+"ancient den": {
+"cedh": 0.0357,
+"precon": 0.0233
+},
+"ancient greenwarden": {
+"precon": 0.0256
+},
+"ancient stirrings": {
+"precon": 0.0513
+},
+"ancient stone idol": {
+"precon": 0.0143
+},
+"ancient tomb": {
+"cedh": 0.9688
+},
+"ancient ziggurat": {
+"precon": 0.0143
+},
+"angel of finality": {
+"precon": 0.0233
+},
+"angel of indemnity": {
+"precon": 0.0698
+},
+"angel of invention": {
+"precon": 0.0698
+},
+"angel of sanctions": {
+"precon": 0.0233
+},
+"angel of the ruins": {
+"precon": 0.1628
+},
+"angel of vitality": {
+"precon": 0.0233
+},
+"angel's grace": {
+"cedh": 0.0357
+},
+"angelic aberration": {
+"precon": 0.0465
+},
+"angelic chorus": {
+"precon": 0.0233
+},
+"angelic destiny": {
+"precon": 0.0465
+},
+"angelic field marshal": {
+"precon": 0.0233
+},
+"angelic sell-sword": {
+"precon": 0.0233
+},
+"angelic sleuth": {
+"precon": 0.0233
+},
+"anger": {
+"precon": 0.1395
+},
+"angrath's marauders": {
+"precon": 0.0233
+},
+"anguished unmaking": {
+"precon": 0.1667
+},
+"animal friend": {
+"precon": 0.0256
+},
+"animar, soul of elements": {
+"cedh": 0.125
+},
+"animate dead": {
+"cedh": 0.1143,
+"precon": 0.0312
+},
+"animist's awakening": {
+"precon": 0.0256
+},
+"annie joins up": {
+"precon": 0.1538
+},
+"ant-man, elusive avenger": {
+"precon": 0.087
+},
+"anya, merciless angel": {
+"precon": 0.0345
+},
+"ao, the dawn sky": {
+"precon": 0.0233
+},
+"apex devastator": {
+"precon": 0.0513
+},
+"approach of the second sun": {
+"precon": 0.0233
+},
+"april o'neil, live on the scene": {
+"precon": 0.0256
+},
+"arachnogenesis": {
+"precon": 0.0513
+},
+"aradesh, the founder": {
+"precon": 0.0233
+},
+"arasta of the endless web": {
+"precon": 0.1026
+},
+"arbor adherent": {
+"precon": 0.0256
+},
+"arbor elf": {
+"cedh": 0.1143
+},
+"arboreal grazer": {
+"precon": 0.0256
+},
+"arcade cabinet": {
+"precon": 0.0143
+},
+"arcade gannon": {
+"precon": 0.04
+},
+"arcane adaptation": {
+"precon": 0.0256
+},
+"arcane bombardment": {
+"precon": 0.0233
+},
+"arcane denial": {
+"precon": 0.2308
+},
+"arcane heist": {
+"precon": 0.0256
+},
+"arcane laboratory": {
+"cedh": 0.0208
+},
+"arcane lighthouse": {
+"precon": 0.0143
+},
+"arcane sanctum": {
+"precon": 0.4545
+},
+"arcane signet": {
+"cedh": 0.6094,
+"precon": 0.9571
+},
+"archaeomancer's map": {
+"precon": 0.0698
+},
+"archangel of thune": {
+"precon": 0.0233
+},
+"archangel of tithes": {
+"precon": 0.0233
+},
+"archdruid's charm": {
+"cedh": 0.0571
+},
+"archetype of imagination": {
+"precon": 0.0256
+},
+"archfiend of depravity": {
+"precon": 0.0625
+},
+"archfiend of despair": {
+"precon": 0.0312
+},
+"archfiend of ifnir": {
+"precon": 0.0625
+},
+"architect of the untamed": {
+"precon": 0.0256
+},
+"archivist of oghma": {
+"cedh": 0.2143
+},
+"archmage emeritus": {
+"precon": 0.1282
+},
+"archnemesis": {
+"precon": 0.125
+},
+"archon of cruelty": {
+"precon": 0.0938
+},
+"archon of emeria": {
+"cedh": 0.0714
+},
+"archon of sun's grace": {
+"precon": 0.0233
+},
+"arcum dagsson": {
+"cedh": 0.0208
+},
+"ardbert, warrior of darkness": {
+"precon": 0.1111
+},
+"arena of glory": {
+"cedh": 0.0385,
+"precon": 0.0233
+},
+"argothian elder": {
+"cedh": 0.0286
+},
+"arid mesa": {
+"cedh": 0.4688
+},
+"arixmethes, slumbering isle": {
+"precon": 0.0476
+},
+"armed with proof": {
+"precon": 0.0233
+},
+"armored scrapgorger": {
+"cedh": 0.0286
+},
+"armored skyhunter": {
+"precon": 0.0233
+},
+"armory automaton": {
+"precon": 0.0286
+},
+"armory paladin": {
+"precon": 0.0345
+},
+"army of the damned": {
+"precon": 0.0312
+},
+"aron, benalia's ruin": {
+"precon": 0.0556
+},
+"arthur, marigold knight": {
+"precon": 0.0588
+},
+"artisan of kozilek": {
+"precon": 0.0286
+},
+"ash barrens": {
+"precon": 0.3143
+},
+"ashaya, soul of the wild": {
+"cedh": 0.0571,
+"precon": 0.0256
+},
+"ashcloud phoenix": {
+"precon": 0.0233
+},
+"ashling, the limitless": {
+"precon": 0.1667
+},
+"asmodeus the archfiend": {
+"cedh": 0.0857
+},
+"assassin's trophy": {
+"cedh": 0.0769,
+"precon": 0.1765
+},
+"assault formation": {
+"precon": 0.0256
+},
+"assaultron dominator": {
+"precon": 0.0233
+},
+"assemble the legion": {
+"precon": 0.0345
+},
+"astral cornucopia": {
+"precon": 0.0286
+},
+"astrologian's planisphere": {
+"precon": 0.0513
+},
+"atarka, world render": {
+"precon": 0.05
+},
+"athreos, shroud-veiled": {
+"precon": 0.0556
+},
+"atla palani, nest tender": {
+"precon": 0.0769
+},
+"atomize": {
+"precon": 0.0588
+},
+"atsushi, the blazing sky": {
+"precon": 0.0698
+},
+"attune with aether": {
+"precon": 0.0256
+},
+"augur of autumn": {
+"precon": 0.0769
+},
+"augusta, order returned": {
+"precon": 0.0233
+},
+"auntie ool, cursewretch": {
+"precon": 0.1
+},
+"auramancer": {
+"precon": 0.0233
+},
+"auriok champion": {
+"precon": 0.0233
+},
+"auron, venerated guardian": {
+"precon": 0.0465
+},
+"aurora awakener": {
+"cedh": 0.0286
+},
+"aurora shifter": {
+"precon": 0.0513
+},
+"austere command": {
+"precon": 0.2326
+},
+"authority of the consuls": {
+"precon": 0.0465
+},
+"automated assembly line": {
+"precon": 0.0233
+},
+"auton soldier": {
+"cedh": 0.0208
+},
+"avacyn's pilgrim": {
+"cedh": 0.4375,
+"precon": 0.0476
+},
+"avacyn, angel of horror": {
+"precon": 0.0312
+},
+"avalanche of sector 7": {
+"precon": 0.0465
+},
+"avarice totem": {
+"cedh": 0.0156
+},
+"avatar's wrath": {
+"cedh": 0.0357
+},
+"aven mindcensor": {
+"cedh": 0.0357
+},
+"avenge": {
+"precon": 0.0465
+},
+"avenger of zendikar": {
+"precon": 0.1538
+},
+"avengers quinjet": {
+"precon": 0.0286
+},
+"avengers tower": {
+"precon": 0.0286
+},
+"awakening zone": {
+"precon": 0.0769
+},
+"axebane guardian": {
+"precon": 0.0256
+},
+"axgard cavalry": {
+"cedh": 0.0769
+},
+"ayara, first of locthwain": {
+"precon": 0.0312
+},
+"azlask, the swelling scourge": {
+"precon": 0.3333
+},
+"azorius chancery": {
+"precon": 0.16
+},
+"azorius guildgate": {
+"precon": 0.04
+},
+"azorius signet": {
+"precon": 0.2
+},
+"back in town": {
+"precon": 0.0312
+},
+"bad moon": {
+"precon": 0.0312
+},
+"badgermole cub": {
+"cedh": 0.5714
+},
+"badlands": {
+"cedh": 0.2969
+},
+"baird, steward of argive": {
+"precon": 0.0233
+},
+"baldur's gate": {
+"precon": 0.0143
+},
+"balefire liege": {
+"precon": 0.0345
+},
+"baleful mastery": {
+"precon": 0.0312
+},
+"baleful strix": {
+"precon": 0.1875
+},
+"baloth prime": {
+"precon": 0.0256
+},
+"balthor the defiled": {
+"cedh": 0.0571
+},
+"bandit's haul": {
+"precon": 0.0143
+},
+"bane of progress": {
+"precon": 0.0769
+},
+"banishing knack": {
+"cedh": 0.0208
+},
+"banon, the returners' leader": {
+"precon": 0.069
+},
+"baral and kari zev": {
+"precon": 0.0435
+},
+"baral's expertise": {
+"precon": 0.0513
+},
+"barbarian ring": {
+"cedh": 0.0769
+},
+"barbflare gremlin": {
+"precon": 0.0233
+},
+"barkchannel pathway": {
+"cedh": 0.0571
+},
+"barkform harvester": {
+"cedh": 0.0312
+},
+"baron helmut zemo": {
+"cedh": 0.0286
+},
+"baron strucker, hydra overlord": {
+"precon": 0.0625
+},
+"barren moor": {
+"precon": 0.0938
+},
+"barret wallace": {
+"precon": 0.0465
+},
+"barret, avalanche leader": {
+"precon": 0.1
+},
+"barrowgoyf": {
+"precon": 0.0625
+},
+"basal thrull": {
+"cedh": 0.0286
+},
+"basalt monolith": {
+"cedh": 0.0625
+},
+"basilisk collar": {
+"precon": 0.0429
+},
+"basilisk gate": {
+"precon": 0.0286
+},
+"basking broodscale": {
+"cedh": 0.0286
+},
+"bast, panther goddess": {
+"precon": 0.0952
+},
+"bastion of remembrance": {
+"precon": 0.1875
+},
+"bastion protector": {
+"precon": 0.093
+},
+"batroc the leaper": {
+"precon": 0.0465
+},
+"battered golem": {
+"cedh": 0.0312
+},
+"battle hymn": {
+"precon": 0.0233
+},
+"battle of hoover dam": {
+"precon": 0.0233
+},
+"battlefield forge": {
+"cedh": 0.0667,
+"precon": 0.5172
+},
+"baxter building": {
+"precon": 0.0286
+},
+"baxter, fly in the ointment": {
+"precon": 0.0256
+},
+"bayou": {
+"cedh": 0.1875
+},
+"bazaar of baghdad": {
+"cedh": 0.0312
+},
+"beanstalk giant": {
+"precon": 0.0256
+},
+"beast whisperer": {
+"cedh": 0.0286,
+"precon": 0.0513
+},
+"beast within": {
+"cedh": 0.0571,
+"precon": 0.2821
+},
+"beastmaster ascension": {
+"precon": 0.0256
+},
+"beastrider vanguard": {
+"cedh": 0.0286
+},
+"bebop, skull & crossbones": {
+"precon": 0.0312
+},
+"become the avalanche": {
+"precon": 0.0256
+},
+"bedevil": {
+"precon": 0.2632
+},
+"beetleback chief": {
+"precon": 0.0233
+},
+"behemoth of vault 0": {
+"precon": 0.0143
+},
+"behemoth sledge": {
+"precon": 0.1429
+},
+"behind the scenes": {
+"precon": 0.0556
+},
+"beledros witherbloom": {
+"precon": 0.1176
+},
+"bello, bard of the brambles": {
+"precon": 0.05
+},
+"belonging": {
+"precon": 0.0233
+},
+"benevolent hydra": {
+"precon": 0.0256
+},
+"bennie bracks, zoologist": {
+"precon": 0.0233
+},
+"benthic anomaly": {
+"precon": 0.0513
+},
+"berserkers' onslaught": {
+"precon": 0.0233
+},
+"beseech the mirror": {
+"cedh": 0.6286
+},
+"beseech the queen": {
+"cedh": 0.0857
+},
+"bespoke battlewagon": {
+"precon": 0.0769
+},
+"betor, ancestor's voice": {
+"precon": 0.1429
+},
+"biblioplex assistant": {
+"cedh": 0.0156
+},
+"bident of thassa": {
+"precon": 0.0769
+},
+"big apple, 3 a.m.": {
+"precon": 0.0143
+},
+"big mother mouser": {
+"precon": 0.0143
+},
+"big score": {
+"precon": 0.1395
+},
+"bighorner rancher": {
+"precon": 0.0256
+},
+"bilbo, thief in the night": {
+"cedh": 0.0208
+},
+"binding mummy": {
+"precon": 0.0233
+},
+"binding the old gods": {
+"precon": 0.2353
+},
+"biogenic ooze": {
+"precon": 0.0256
+},
+"biomancer's familiar": {
+"cedh": 0.4286
+},
+"biomass mutation": {
+"precon": 0.1429
+},
+"biovisionary": {
+"precon": 0.0476
+},
+"birds of paradise": {
+"cedh": 0.9429,
+"precon": 0.0769
+},
+"birgi, god of storytelling": {
+"cedh": 0.5385
+},
+"birthing pod": {
+"cedh": 0.0857
+},
+"bishop of wings": {
+"precon": 0.0233
+},
+"bismuth mindrender": {
+"precon": 0.0625
+},
+"bite down": {
+"precon": 0.0256
+},
+"bitter reunion": {
+"precon": 0.0465
+},
+"bitter triumph": {
+"cedh": 0.0286,
+"precon": 0.0312
+},
+"bitterblossom": {
+"precon": 0.0312
+},
+"bitterthorn, nissa's animus": {
+"precon": 0.0143
+},
+"bituminous blast": {
+"precon": 0.1053
+},
+"black bolt, inhuman king": {
+"precon": 0.08
+},
+"black dragon gate": {
+"precon": 0.0312
+},
+"black mage's rod": {
+"cedh": 0.0286
+},
+"black market": {
+"precon": 0.0312
+},
+"black market connections": {
+"cedh": 0.0286,
+"precon": 0.0938
+},
+"black sun's zenith": {
+"precon": 0.0312
+},
+"black widow, agile avenger": {
+"precon": 0.069
+},
+"blackcleave cliffs": {
+"precon": 0.1053
+},
+"blade of selves": {
+"precon": 0.0143
+},
+"blade splicer": {
+"precon": 0.0233
+},
+"bladegriff prototype": {
+"precon": 0.0143
+},
+"blasphemous act": {
+"precon": 0.3023
+},
+"blast zone": {
+"precon": 0.0286
+},
+"blaster hulk": {
+"precon": 0.0465
+},
+"blasting station": {
+"cedh": 0.0156
+},
+"blazemire verge": {
+"cedh": 0.0667
+},
+"blight mound": {
+"precon": 0.0312
+},
+"blight pile": {
+"precon": 0.0312
+},
+"blightsteel colossus": {
+"cedh": 0.0156
+},
+"blinkmoth nexus": {
+"cedh": 0.0312
+},
+"blitzball stadium": {
+"precon": 0.0513
+},
+"bloatfly swarm": {
+"precon": 0.0312
+},
+"blood artist": {
+"precon": 0.0625
+},
+"blood celebrant": {
+"cedh": 0.0571
+},
+"blood crypt": {
+"cedh": 0.125
+},
+"blood pact": {
+"precon": 0.0312
+},
+"blood pet": {
+"cedh": 0.1143
+},
+"blood seeker": {
+"precon": 0.0312
+},
+"bloodbraid challenger": {
+"precon": 0.1
+},
+"bloodbraid elf": {
+"precon": 0.1
+},
+"bloodfell caves": {
+"precon": 0.0526
+},
+"bloodfire dwarf": {
+"cedh": 0.0769
+},
+"bloodforged battle-axe": {
+"precon": 0.0143
+},
+"bloodghast": {
+"precon": 0.0312
+},
+"bloodline pretender": {
+"precon": 0.0143
+},
+"bloodroot apothecary": {
+"precon": 0.0256
+},
+"bloodstained mire": {
+"cedh": 0.6094
+},
+"bloodthirsty adversary": {
+"precon": 0.0233
+},
+"bloodthirsty blade": {
+"precon": 0.0143
+},
+"bloodthirsty conqueror": {
+"cedh": 0.0286
+},
+"bloom tender": {
+"cedh": 0.3714
+},
+"blossoming bogbeast": {
+"precon": 0.0513
+},
+"blossoming sands": {
+"precon": 0.0476
+},
+"blowfly infestation": {
+"precon": 0.0312
+},
+"blue mage's cane": {
+"precon": 0.0513
+},
+"body of knowledge": {
+"precon": 0.0513
+},
+"body snatcher": {
+"cedh": 0.0286
+},
+"boggart shenanigans": {
+"precon": 0.0233
+},
+"boggart trawler": {
+"cedh": 0.0571
+},
+"bojuka bog": {
+"precon": 0.3125
+},
+"bolas's citadel": {
+"cedh": 0.1429
+},
+"bolt bend": {
+"cedh": 0.0385
+},
+"boltbender": {
+"precon": 0.0233
+},
+"bond beetle": {
+"cedh": 0.0286
+},
+"bonders' enclave": {
+"precon": 0.1143
+},
+"bone devourer": {
+"precon": 0.0312
+},
+"bontu's monument": {
+"precon": 0.0286
+},
+"boomer scrapper": {
+"precon": 0.0526
+},
+"boon reflection": {
+"precon": 0.0233
+},
+"bootleggers' stash": {
+"precon": 0.0513
+},
+"boreal druid": {
+"cedh": 0.1143
+},
+"borne upon a wind": {
+"cedh": 0.7083
+},
+"boros charm": {
+"precon": 0.0345
+},
+"boros garrison": {
+"precon": 0.069
+},
+"boros guildgate": {
+"precon": 0.0345
+},
+"boros reckoner": {
+"precon": 0.0345
+},
+"boros signet": {
+"precon": 0.069
+},
+"boseiju, who endures": {
+"cedh": 0.9714
+},
+"boseiju, who shelters all": {
+"cedh": 0.0156
+},
+"boss's chauffeur": {
+"precon": 0.0233
+},
+"botanical sanctum": {
+"cedh": 0.0714
+},
+"bottle-cap blast": {
+"cedh": 0.0769,
+"precon": 0.0233
+},
+"bottomless pool": {
+"precon": 0.0256
+},
+"bouncer's beatdown": {
+"cedh": 0.0286
+},
+"bounding krasis": {
+"cedh": 0.0357
+},
+"bountiful landscape": {
+"precon": 0.1
+},
+"bountiful promenade": {
+"cedh": 0.125,
+"precon": 0.1905
+},
+"bounty board": {
+"precon": 0.0143
+},
+"bovine intervention": {
+"precon": 0.0698
+},
+"braids, arisen nightmare": {
+"cedh": 0.0286,
+"precon": 0.0625
+},
+"brain freeze": {
+"cedh": 0.5208
+},
+"brainstealer dragon": {
+"precon": 0.0312
+},
+"brainstone": {
+"precon": 0.0143
+},
+"brainstorm": {
+"cedh": 0.0208,
+"precon": 0.0513
+},
+"brainsurge": {
+"precon": 0.0256
+},
+"bramble sovereign": {
+"precon": 0.0256
+},
+"branch of vitu-ghazi": {
+"precon": 0.0143
+},
+"branching evolution": {
+"precon": 0.0256
+},
+"brash taunter": {
+"precon": 0.0465
+},
+"brass infiniscope": {
+"precon": 0.0143
+},
+"brass knuckles": {
+"precon": 0.0143
+},
+"brawn": {
+"precon": 0.0513
+},
+"brazen borrower": {
+"precon": 0.0256
+},
+"breaching dragonstorm": {
+"precon": 0.0465
+},
+"break down": {
+"precon": 0.0513
+},
+"breath weapon": {
+"precon": 0.0233
+},
+"bred for the hunt": {
+"precon": 0.0952
+},
+"breeding pool": {
+"cedh": 0.3438
+},
+"breena, the demagogue": {
+"precon": 0.1111
+},
+"brenard, ginger sculptor": {
+"precon": 0.0833
+},
+"bridgeworks battle": {
+"cedh": 0.0571
+},
+"brightcap badger": {
+"precon": 0.0256
+},
+"brightglass gearhulk": {
+"cedh": 0.0625
+},
+"brightstone ritual": {
+"precon": 0.0233
+},
+"brigid, clachan's heart": {
+"cedh": 0.0625
+},
+"bristlebane battler": {
+"cedh": 0.0286
+},
+"bristling backwoods": {
+"precon": 0.05
+},
+"bristly bill, spine sower": {
+"cedh": 0.0286
+},
+"broadside bombardiers": {
+"precon": 0.0233
+},
+"broken wings": {
+"precon": 0.0256
+},
+"brokers hideout": {
+"precon": 0.0143
+},
+"bronze guardian": {
+"precon": 0.0465
+},
+"broodcaller scourge": {
+"precon": 0.0256
+},
+"broodhatch nantuko": {
+"precon": 0.0256
+},
+"broodmate tyrant": {
+"precon": 0.2
+},
+"broodstar": {
+"precon": 0.0256
+},
+"brotherhood outcast": {
+"precon": 0.0233
+},
+"brotherhood scribe": {
+"precon": 0.0233
+},
+"brotherhood vertibird": {
+"precon": 0.0143
+},
+"bruce banner": {
+"cedh": 0.125
+},
+"brudiclad, telchor engineer": {
+"precon": 0.1304
+},
+"bruse tarl, roving rancher": {
+"precon": 0.0345
+},
+"brushland": {
+"precon": 0.4286
+},
+"brutalizer exarch": {
+"cedh": 0.0286
+},
+"bugenhagen, wise elder": {
+"precon": 0.0513
+},
+"buried alive": {
+"cedh": 0.0857
+},
+"buried ruin": {
+"precon": 0.0571
+},
+"burning curiosity": {
+"precon": 0.0233
+},
+"burnished hart": {
+"precon": 0.1
+},
+"butch deloria, tunnel snake": {
+"precon": 0.0312
+},
+"c.a.m.p.": {
+"precon": 0.0143
+},
+"cabal ritual": {
+"cedh": 0.6
+},
+"cabaretti courtyard": {
+"precon": 0.0143
+},
+"cache grab": {
+"precon": 0.0256
+},
+"cackling counterpart": {
+"precon": 0.0256
+},
+"cactus preserve": {
+"precon": 0.0143
+},
+"caesar, legion's emperor": {
+"precon": 0.0833
+},
+"cait sith, fortune teller": {
+"precon": 0.0465
+},
+"cait, cage brawler": {
+"precon": 0.05
+},
+"calamity of cinders": {
+"precon": 0.0233
+},
+"caldera pyremaw": {
+"precon": 0.0233
+},
+"caltrops": {
+"cedh": 0.0156
+},
+"camaraderie": {
+"precon": 0.0476
+},
+"candelabra of tawnos": {
+"cedh": 0.125
+},
+"cankerbloom": {
+"cedh": 0.0286
+},
+"canopy gargantuan": {
+"precon": 0.0256
+},
+"canopy vista": {
+"precon": 0.2
+},
+"canyon slough": {
+"precon": 0.1429
+},
+"captain america, living legend": {
+"cedh": 0.0417,
+"precon": 0.08
+},
+"captain america, team leader": {
+"precon": 0.1176
+},
+"captain lannery storm": {
+"precon": 0.0233
+},
+"captain mar-vell, space-born": {
+"precon": 0.0465
+},
+"captain marvel, apex avenger": {
+"precon": 0.069
+},
+"captain of the watch": {
+"precon": 0.0233
+},
+"captivating crew": {
+"precon": 0.0233
+},
+"capture of jingzhou": {
+"cedh": 0.0208
+},
+"carnage tyrant": {
+"precon": 0.0256
+},
+"carnelian orb of dragonkind": {
+"precon": 0.0233
+},
+"carnifex demon": {
+"precon": 0.0312
+},
+"carnivorous cultivator": {
+"cedh": 0.0286
+},
+"carpet of flowers": {
+"cedh": 0.2
+},
+"carrion feeder": {
+"cedh": 0.0571,
+"precon": 0.0312
+},
+"carrion grub": {
+"precon": 0.0312
+},
+"carven caryatid": {
+"precon": 0.0256
+},
+"cascade bluffs": {
+"precon": 0.2174
+},
+"cascading cataracts": {
+"precon": 0.0286
+},
+"casey jones, back alley brute": {
+"cedh": 0.0385,
+"precon": 0.0233
+},
+"cass, hand of vengeance": {
+"precon": 0.0345
+},
+"cast out": {
+"precon": 0.0465
+},
+"castle ardenvale": {
+"precon": 0.0698
+},
+"castle embereth": {
+"precon": 0.0465
+},
+"castle garenbrig": {
+"cedh": 0.0286
+},
+"castle locthwain": {
+"precon": 0.0312
+},
+"castle vantress": {
+"precon": 0.0769
+},
+"casualties of war": {
+"precon": 0.2353
+},
+"cataclysmic prospecting": {
+"precon": 0.0233
+},
+"cathartic pyre": {
+"precon": 0.0233
+},
+"cathartic reunion": {
+"precon": 0.0233
+},
+"cathedral acolyte": {
+"precon": 0.0256
+},
+"cauldron familiar": {
+"cedh": 0.0286
+},
+"cavalier of thorns": {
+"precon": 0.0256
+},
+"cave-in": {
+"cedh": 0.0385
+},
+"cavern of souls": {
+"cedh": 0.3281
+},
+"caves of koilos": {
+"precon": 0.4444
+},
+"cayth, famed mechanist": {
+"precon": 0.1176
+},
+"cazur, ruthless stalker": {
+"precon": 0.0256
+},
+"ceaseless conflict": {
+"precon": 0.0233
+},
+"celes, rune knight": {
+"precon": 0.1667
+},
+"cemetery reaper": {
+"precon": 0.0625
+},
+"cemetery recruitment": {
+"precon": 0.0312
+},
+"cemetery tampering": {
+"precon": 0.0312
+},
+"centaur vinecrasher": {
+"precon": 0.0256
+},
+"cephalid coliseum": {
+"cedh": 0.0833,
+"precon": 0.0256
+},
+"cerulean wisps": {
+"cedh": 0.0208
+},
+"chain of smog": {
+"cedh": 0.0286
+},
+"chain of vapor": {
+"cedh": 0.5
+},
+"chain reaction": {
+"precon": 0.1163
+},
+"chain stasis": {
+"cedh": 0.0208
+},
+"chainer, dementia master": {
+"cedh": 0.0857
+},
+"chains of custody": {
+"precon": 0.0233
+},
+"chains of mephistopheles": {
+"cedh": 0.0286
+},
+"challenger troll": {
+"precon": 0.0256
+},
+"chameleon colossus": {
+"precon": 0.0256
+},
+"chameleon, master of disguise": {
+"precon": 0.0513
+},
+"champion of the perished": {
+"precon": 0.0312
+},
+"champion of wits": {
+"precon": 0.0256
+},
+"champion's helm": {
+"precon": 0.0429
+},
+"champions from beyond": {
+"precon": 0.0465
+},
+"chandra's ignition": {
+"precon": 0.0698
+},
+"chandra, flameshaper": {
+"cedh": 0.0385
+},
+"changeling outcast": {
+"precon": 0.0312
+},
+"changing loyalty": {
+"precon": 0.0312
+},
+"channeler initiate": {
+"precon": 0.0256
+},
+"chaos wand": {
+"precon": 0.0143
+},
+"chaos warp": {
+"cedh": 0.0385,
+"precon": 0.3488
+},
+"charcoal diamond": {
+"precon": 0.0312
+},
+"charisma bobblehead": {
+"precon": 0.0143
+},
+"charismatic conqueror": {
+"cedh": 0.0357
+},
+"charming scoundrel": {
+"cedh": 0.0385
+},
+"charred graverobber": {
+"precon": 0.0312
+},
+"chart a course": {
+"precon": 0.0256
+},
+"chasm skulker": {
+"precon": 0.0769
+},
+"chatterfang, squirrel general": {
+"cedh": 0.0769,
+"precon": 0.0588
+},
+"chatterstorm": {
+"cedh": 0.1143,
+"precon": 0.0256
+},
+"chief of the foundry": {
+"precon": 0.0143
+},
+"chimil, the inner sun": {
+"precon": 0.0143
+},
+"chittering dispatcher": {
+"precon": 0.0513
+},
+"chittering witch": {
+"precon": 0.0625
+},
+"chitterspitter": {
+"precon": 0.0256
+},
+"chocobo knights": {
+"precon": 0.0465
+},
+"choked estuary": {
+"precon": 0.25
+},
+"chomping changeling": {
+"cedh": 0.0571
+},
+"chord of calling": {
+"cedh": 0.7143
+},
+"chromatic lantern": {
+"precon": 0.1429
+},
+"chromatic orrery": {
+"cedh": 0.0312
+},
+"chromatic star": {
+"cedh": 0.0469
+},
+"chrome dome": {
+"cedh": 0.0156
+},
+"chrome host seedshark": {
+"precon": 0.0256
+},
+"chrome mox": {
+"cedh": 0.9844
+},
+"chthonian nightmare": {
+"cedh": 0.0286
+},
+"chulane, teller of tales": {
+"precon": 0.0833
+},
+"cid, freeflier pilot": {
+"precon": 0.0465
+},
+"cinder glade": {
+"precon": 0.1857
+},
+"circle of dreams druid": {
+"cedh": 0.1429
+},
+"circle of power": {
+"precon": 0.0625
+},
+"circuit mender": {
+"precon": 0.0143
+},
+"circuitous route": {
+"precon": 0.0256
+},
+"citadel gate": {
+"precon": 0.0233
+},
+"citanul flute": {
+"cedh": 0.0156
+},
+"citanul hierophants": {
+"precon": 0.0256
+},
+"citanul stalwart": {
+"cedh": 0.0571
+},
+"city of brass": {
+"cedh": 0.7656,
+"precon": 0.0143
+},
+"city of traitors": {
+"cedh": 0.4219
+},
+"claim jumper": {
+"precon": 0.0233
+},
+"claim the firstborn": {
+"cedh": 0.0385
+},
+"cleansing nova": {
+"precon": 0.1163
+},
+"cleric class": {
+"precon": 0.0233
+},
+"clever concealment": {
+"precon": 0.1163
+},
+"clever impersonator": {
+"cedh": 0.2083
+},
+"cliffgate": {
+"precon": 0.0233
+},
+"clifftop lookout": {
+"precon": 0.0256
+},
+"clifftop retreat": {
+"precon": 0.6207
+},
+"clock of omens": {
+"cedh": 0.0469
+},
+"cloud key": {
+"precon": 0.0143
+},
+"cloud of faeries": {
+"cedh": 0.1875
+},
+"cloud's limit break": {
+"precon": 0.0465
+},
+"cloud, ex-soldier": {
+"precon": 0.1538
+},
+"cloudblazer": {
+"precon": 0.04
+},
+"cloudpost": {
+"precon": 0.0286
+},
+"cloudshredder sliver": {
+"precon": 0.0345
+},
+"cloudstone curio": {
+"cedh": 0.0156
+},
+"clown car": {
+"cedh": 0.0312
+},
+"coalition relic": {
+"precon": 0.0286
+},
+"coastal peak": {
+"precon": 0.0714
+},
+"coat of arms": {
+"precon": 0.0143
+},
+"codex shredder": {
+"cedh": 0.0156
+},
+"codsworth, handy helper": {
+"precon": 0.0233
+},
+"coercive impetus": {
+"precon": 0.0312
+},
+"cogwork assembler": {
+"cedh": 0.0156
+},
+"coiling oracle": {
+"precon": 0.0476
+},
+"coin of fate": {
+"precon": 0.0465
+},
+"coin of mastery": {
+"precon": 0.0143
+},
+"cold-eyed selkie": {
+"precon": 0.0476
+},
+"colfenor's urn": {
+"precon": 0.0143
+},
+"collective effort": {
+"precon": 0.093
+},
+"collective resistance": {
+"precon": 0.0256
+},
+"collector ouphe": {
+"cedh": 0.2571
+},
+"colonel autumn": {
+"precon": 0.0556
+},
+"colossal grave-reaver": {
+"precon": 0.0588
+},
+"colossal majesty": {
+"precon": 0.0256
+},
+"colossal skyturtle": {
+"cedh": 0.2143
+},
+"colossus hammer": {
+"precon": 0.0286
+},
+"combat calligrapher": {
+"precon": 0.0233
+},
+"combat celebrant": {
+"precon": 0.0233
+},
+"combat courier": {
+"cedh": 0.0208
+},
+"combustible gearhulk": {
+"precon": 0.1395
+},
+"comeuppance": {
+"precon": 0.0233
+},
+"command beacon": {
+"cedh": 0.0625,
+"precon": 0.0286
+},
+"command tower": {
+"cedh": 0.8594,
+"precon": 0.9143
+},
+"commandeer": {
+"cedh": 0.2708
+},
+"commander sofia daguerre": {
+"precon": 0.0233
+},
+"commander's insight": {
+"precon": 0.0256
+},
+"commander's insignia": {
+"precon": 0.0233
+},
+"commander's sphere": {
+"precon": 0.1571
+},
+"commence the endgame": {
+"precon": 0.0256
+},
+"commercial district": {
+"cedh": 0.0312
+},
+"communal brewing": {
+"precon": 0.0256
+},
+"compulsive research": {
+"precon": 0.0256
+},
+"conclave evangelist": {
+"precon": 0.0476
+},
+"concordant crossroads": {
+"cedh": 0.0286
+},
+"conduit of worlds": {
+"precon": 0.0769
+},
+"conduit pylons": {
+"precon": 0.0143
+},
+"confirm suspicions": {
+"precon": 0.0256
+},
+"confiscation coup": {
+"precon": 0.0769
+},
+"conformer shuriken": {
+"precon": 0.0286
+},
+"congregate": {
+"precon": 0.0233
+},
+"conjurer's closet": {
+"precon": 0.0143
+},
+"conqueror's flail": {
+"precon": 0.0286
+},
+"consecrated sphinx": {
+"cedh": 0.0417
+},
+"consider": {
+"precon": 0.0256
+},
+"conspicuous snoop": {
+"precon": 0.0233
+},
+"conspiracy theorist": {
+"precon": 0.0233
+},
+"consumed by greed": {
+"precon": 0.0312
+},
+"consuming aberration": {
+"precon": 0.0625
+},
+"consuming corruption": {
+"precon": 0.0312
+},
+"contagion clasp": {
+"precon": 0.0286
+},
+"containment construct": {
+"precon": 0.0429
+},
+"contaminated aquifer": {
+"precon": 0.0429
+},
+"contaminated drink": {
+"precon": 0.0625
+},
+"contaminated landscape": {
+"precon": 0.0909
+},
+"continue?": {
+"precon": 0.0233
+},
+"conversion apparatus": {
+"precon": 0.0286
+},
+"convert to slime": {
+"precon": 0.0588
+},
+"copperline gorge": {
+"precon": 0.05
+},
+"copy artifact": {
+"cedh": 0.0208
+},
+"copy enchantment": {
+"cedh": 0.2292
+},
+"copy land": {
+"precon": 0.0513
+},
+"coram, the undertaker": {
+"precon": 0.2
+},
+"coretapper": {
+"precon": 0.0143
+},
+"corpse augur": {
+"precon": 0.0312
+},
+"corpse dance": {
+"cedh": 0.0571
+},
+"corpse knight": {
+"precon": 0.0556
+},
+"corpsejack menace": {
+"precon": 0.1176
+},
+"corridor monitor": {
+"cedh": 0.0208
+},
+"corrupted crossroads": {
+"precon": 0.0286
+},
+"coruscation mage": {
+"cedh": 0.0385
+},
+"cosmic crucible": {
+"precon": 0.0952
+},
+"council of reeds": {
+"precon": 0.0513
+},
+"council's judgment": {
+"precon": 0.0233
+},
+"count on luck": {
+"precon": 0.0233
+},
+"counterbalance": {
+"cedh": 0.0208
+},
+"counterspell": {
+"precon": 0.0513
+},
+"court of grace": {
+"precon": 0.0233
+},
+"coveted jewel": {
+"precon": 0.1
+},
+"crackling doom": {
+"precon": 0.1667
+},
+"crackling spellslinger": {
+"precon": 0.0233
+},
+"craig boone, novac guard": {
+"precon": 0.0345
+},
+"cramped vents": {
+"precon": 0.0312
+},
+"crashing drawbridge": {
+"cedh": 0.0312,
+"precon": 0.0143
+},
+"craterhoof behemoth": {
+"cedh": 0.0286
+},
+"crawling sensation": {
+"precon": 0.0769
+},
+"creakwood liege": {
+"precon": 0.0588
+},
+"cream of the crop": {
+"precon": 0.0256
+},
+"creative technique": {
+"precon": 0.0233
+},
+"creosote heath": {
+"precon": 0.0476
+},
+"crested sunmare": {
+"precon": 0.0233
+},
+"crib swap": {
+"precon": 0.1163
+},
+"crimson caravaneer": {
+"precon": 0.0233
+},
+"crimson wisps": {
+"precon": 0.0233
+},
+"croaking counterpart": {
+"cedh": 0.0714
+},
+"crop rotation": {
+"cedh": 0.8571
+},
+"crowded crypt": {
+"precon": 0.0312
+},
+"crucible of fire": {
+"precon": 0.0233
+},
+"cruel tutor": {
+"cedh": 0.0286
+},
+"cruelclaw's heist": {
+"cedh": 0.0571
+},
+"crumbling necropolis": {
+"precon": 0.2222
+},
+"crumbling vestige": {
+"cedh": 0.0156
+},
+"crush contraband": {
+"precon": 0.0233
+},
+"crux of fate": {
+"precon": 0.0625
+},
+"crypt of agadeem": {
+"precon": 0.0312
+},
+"cryptbreaker": {
+"precon": 0.0625
+},
+"cryptolith rite": {
+"cedh": 0.3143
+},
+"crystal vein": {
+"cedh": 0.125
+},
+"crystal, inhuman princess": {
+"cedh": 0.2,
+"precon": 0.25
+},
+"crystalline crawler": {
+"precon": 0.0143
+},
+"culling ritual": {
+"cedh": 0.3846,
+"precon": 0.1765
+},
+"culling the weak": {
+"cedh": 0.6571
+},
+"cultivate": {
+"precon": 0.3846
+},
+"cultivator's caravan": {
+"precon": 0.0286
+},
+"cunning rhetoric": {
+"precon": 0.0312
+},
+"curator beastie": {
+"precon": 0.0256
+},
+"curie, emergent intelligence": {
+"precon": 0.0256
+},
+"curiosity": {
+"cedh": 0.0208
+},
+"curiosity crafter": {
+"precon": 0.0513
+},
+"curious altisaur": {
+"precon": 0.0256
+},
+"currency converter": {
+"precon": 0.0571
+},
+"curse of opulence": {
+"cedh": 0.0385,
+"precon": 0.0465
+},
+"curse of the swine": {
+"precon": 0.1538
+},
+"cursed mirror": {
+"cedh": 0.0769,
+"precon": 0.093
+},
+"cursed totem": {
+"cedh": 0.0625
+},
+"curtains' call": {
+"precon": 0.0312
+},
+"cut a deal": {
+"precon": 0.1395
+},
+"cut down": {
+"cedh": 0.0286
+},
+"cyan, vengeful samurai": {
+"precon": 0.0465
+},
+"cyberdrive awakener": {
+"precon": 0.0256
+},
+"cyclonic rift": {
+"cedh": 0.1875
+},
+"dack fayden, helping hand": {
+"precon": 0.0233
+},
+"dakmor salvage": {
+"cedh": 0.0286,
+"precon": 0.0938
+},
+"damn": {
+"precon": 0.0556
+},
+"damning verdict": {
+"precon": 0.0465
+},
+"damocles base, sword of kang": {
+"precon": 0.0625
+},
+"damping sphere": {
+"cedh": 0.0781
+},
+"dance of the dead": {
+"cedh": 0.0571
+},
+"dance with calamity": {
+"precon": 0.0233
+},
+"dancer's chakrams": {
+"precon": 0.0465
+},
+"darien, king of kjeldor": {
+"precon": 0.0233
+},
+"daring discovery": {
+"precon": 0.0233
+},
+"dark depths": {
+"precon": 0.0286
+},
+"dark petition": {
+"cedh": 0.0286
+},
+"dark ritual": {
+"cedh": 0.8571
+},
+"darkblast": {
+"cedh": 0.0286
+},
+"darkmoss bridge": {
+"precon": 0.0588
+},
+"darkslick shores": {
+"precon": 0.0625
+},
+"darksteel angel": {
+"precon": 0.0143
+},
+"darksteel citadel": {
+"precon": 0.0286
+},
+"darksteel ingot": {
+"precon": 0.0143
+},
+"darksteel juggernaut": {
+"precon": 0.0143
+},
+"darksteel mutation": {
+"precon": 0.0465
+},
+"darksteel plate": {
+"precon": 0.0286
+},
+"darksteel reactor": {
+"precon": 0.0143
+},
+"darkwater catacombs": {
+"precon": 0.375
+},
+"dauthi voidwalker": {
+"cedh": 0.1143,
+"precon": 0.0312
+},
+"day of judgment": {
+"precon": 0.0233
+},
+"daydream": {
+"cedh": 0.0357
+},
+"daze": {
+"cedh": 0.1458
+},
+"dazzling angel": {
+"precon": 0.0233
+},
+"dazzling sphinx": {
+"precon": 0.0256
+},
+"dazzling theater": {
+"precon": 0.0233
+},
+"dead before sunrise": {
+"precon": 0.0233
+},
+"deadbridge chant": {
+"precon": 0.1765
+},
+"deadeye navigator": {
+"cedh": 0.0417
+},
+"deadly brew": {
+"precon": 0.0588
+},
+"deadly dispute": {
+"precon": 0.125
+},
+"deadly rollick": {
+"cedh": 0.3429
+},
+"deadpool, trading card": {
+"cedh": 0.1333
+},
+"deafening silence": {
+"cedh": 0.1071
+},
+"death baron": {
+"precon": 0.0312
+},
+"death cultist": {
+"cedh": 0.0286
+},
+"deathcap cultivator": {
+"precon": 0.0588
+},
+"deathmist raptor": {
+"precon": 0.0513
+},
+"deathreap ritual": {
+"precon": 0.1765
+},
+"deathrite shaman": {
+"cedh": 0.9231
+},
+"deceptive frostkite": {
+"precon": 0.0256
+},
+"deceptive landscape": {
+"precon": 0.1429
+},
+"decimate": {
+"precon": 0.25
+},
+"decisive denial": {
+"precon": 0.0476
+},
+"decoction module": {
+"precon": 0.0429
+},
+"decree of pain": {
+"precon": 0.0625
+},
+"deekah, fractal theorist": {
+"precon": 0.0256
+},
+"deep analysis": {
+"precon": 0.1282
+},
+"deep forest hermit": {
+"precon": 0.0256
+},
+"deepfathom skulker": {
+"precon": 0.0513
+},
+"deepglow skate": {
+"precon": 0.0256
+},
+"defacing duskmage": {
+"precon": 0.0556
+},
+"defend the rider": {
+"cedh": 0.0286
+},
+"defense grid": {
+"cedh": 0.125
+},
+"defiling daemogoth": {
+"precon": 0.0312
+},
+"deflecting palm": {
+"precon": 0.0345
+},
+"deflecting swat": {
+"cedh": 1.0
+},
+"defy death": {
+"precon": 0.0233
+},
+"delay": {
+"cedh": 0.0208
+},
+"delayed blast fireball": {
+"cedh": 0.0385
+},
+"delighted halfling": {
+"cedh": 0.7429
+},
+"delivery moogle": {
+"cedh": 0.0357
+},
+"delney, streetwise lookout": {
+"cedh": 0.1429
+},
+"deluge of doom": {
+"precon": 0.0312
+},
+"demand answers": {
+"cedh": 0.0385
+},
+"demolisher spawn": {
+"precon": 0.0256
+},
+"demolition field": {
+"precon": 0.1286
+},
+"demon of fate's design": {
+"precon": 0.0312
+},
+"demonic consultation": {
+"cedh": 0.7429
+},
+"demonic counsel": {
+"cedh": 0.2
+},
+"demonic covenant": {
+"precon": 0.0312
+},
+"demonic tutor": {
+"cedh": 0.9429
+},
+"den of the bugbear": {
+"precon": 0.0233
+},
+"den protector": {
+"precon": 0.0256
+},
+"depthshaker titan": {
+"precon": 0.0233
+},
+"derevi, empyrial tactician": {
+"cedh": 0.4615
+},
+"descend upon the sinful": {
+"precon": 0.0233
+},
+"descendants' fury": {
+"precon": 0.0233
+},
+"desdemona, freedom's edge": {
+"precon": 0.0345
+},
+"desert": {
+"cedh": 0.0156
+},
+"desert of the fervent": {
+"precon": 0.0233
+},
+"desert of the glorified": {
+"precon": 0.0312
+},
+"desert of the indomitable": {
+"precon": 0.0769
+},
+"desert of the mindful": {
+"precon": 0.0769
+},
+"desert of the true": {
+"precon": 0.0465
+},
+"desert warfare": {
+"precon": 0.0513
+},
+"deserted temple": {
+"cedh": 0.1719
+},
+"desolate mire": {
+"precon": 0.3889
+},
+"despark": {
+"precon": 0.1667
+},
+"desperate ritual": {
+"cedh": 0.1923
+},
+"destiny spinner": {
+"cedh": 0.0286
+},
+"destroy evil": {
+"precon": 0.1163
+},
+"detective of the month": {
+"precon": 0.0256
+},
+"determined iteration": {
+"precon": 0.0233
+},
+"devilish valet": {
+"precon": 0.0233
+},
+"devoted druid": {
+"cedh": 0.3143,
+"precon": 0.0256
+},
+"diabolic intent": {
+"cedh": 0.5714
+},
+"diabolic tutor": {
+"cedh": 0.0571
+},
+"diabolic vision": {
+"precon": 0.0625
+},
+"diamond city": {
+"precon": 0.0143
+},
+"diamond lion": {
+"cedh": 0.0156
+},
+"dig through time": {
+"precon": 0.1282
+},
+"diluvian primordial": {
+"precon": 0.0256
+},
+"dimension x pizzasaur": {
+"precon": 0.0312
+},
+"dimir aqueduct": {
+"cedh": 0.037,
+"precon": 0.125
+},
+"dimir guildgate": {
+"precon": 0.0625
+},
+"dimir signet": {
+"precon": 0.125
+},
+"dina's guidance": {
+"cedh": 0.0769
+},
+"dina, essence brewer": {
+"precon": 0.0588
+},
+"dina, soul steeper": {
+"precon": 0.0588
+},
+"dire fleet daredevil": {
+"precon": 0.0233
+},
+"dire fleet ravager": {
+"precon": 0.0312
+},
+"director nick fury": {
+"precon": 0.1176
+},
+"diregraf colossus": {
+"precon": 0.0312
+},
+"dirgur focusmage": {
+"precon": 0.0256
+},
+"disa the restless": {
+"precon": 0.2
+},
+"disallow": {
+"precon": 0.0256
+},
+"disciple of bolas": {
+"precon": 0.0312
+},
+"disciple of freyalise": {
+"cedh": 0.0857
+},
+"discreet retreat": {
+"precon": 0.0312
+},
+"dismantling wave": {
+"precon": 0.0698
+},
+"dismember": {
+"cedh": 0.1714
+},
+"disorder in the court": {
+"precon": 0.04
+},
+"disorienting choice": {
+"precon": 0.0256
+},
+"dispatch": {
+"precon": 0.1395
+},
+"dispel": {
+"cedh": 0.0625
+},
+"disrupt decorum": {
+"precon": 0.0233
+},
+"disrupting shoal": {
+"cedh": 0.0625
+},
+"disruptor flute": {
+"cedh": 0.0312
+},
+"distant melody": {
+"precon": 0.0513
+},
+"divine visitation": {
+"precon": 0.0698
+},
+"diviner of mist": {
+"precon": 0.0256
+},
+"diviner's wand": {
+"cedh": 0.0156
+},
+"dizzy spell": {
+"cedh": 0.0208
+},
+"doc aurlock, grizzled genius": {
+"precon": 0.0476
+},
+"doctor doom, king of latveria": {
+"precon": 0.2222
+},
+"doctor doom, unrivaled": {
+"cedh": 0.0571
+},
+"dogmeat, ever loyal": {
+"precon": 0.0769
+},
+"domri, anarch of bolas": {
+"precon": 0.05
+},
+"donatello, the brains": {
+"precon": 0.0256
+},
+"doom whisperer": {
+"cedh": 0.0571
+},
+"doom's time platform": {
+"precon": 0.0286
+},
+"doomsday": {
+"cedh": 0.0286
+},
+"doomsday excruciator": {
+"cedh": 0.0286
+},
+"doomwake giant": {
+"precon": 0.0625
+},
+"door of destinies": {
+"precon": 0.0286
+},
+"dora milaje elite": {
+"precon": 0.0465
+},
+"dori, bearer of friends": {
+"cedh": 0.0385
+},
+"dosan the falling leaf": {
+"cedh": 0.0286
+},
+"double down": {
+"precon": 0.0256
+},
+"double jump": {
+"precon": 0.0256
+},
+"dovin's veto": {
+"cedh": 0.0417
+},
+"dr. madison li": {
+"precon": 0.0588
+},
+"draconic lore": {
+"precon": 0.0256
+},
+"dragon fodder": {
+"precon": 0.0233
+},
+"dragon man, reformed robot": {
+"precon": 0.08
+},
+"dragon tempest": {
+"precon": 0.0465
+},
+"dragon's hoard": {
+"precon": 0.0286
+},
+"dragon's rage channeler": {
+"cedh": 0.1538
+},
+"dragon-cursed halls": {
+"cedh": 0.0156
+},
+"dragonhawk, fate's tempest": {
+"precon": 0.0233
+},
+"dragonlord atarka": {
+"precon": 0.05
+},
+"dragonlord dromoka": {
+"precon": 0.0476
+},
+"dragonlord's servant": {
+"precon": 0.0465
+},
+"dragonmaster outcast": {
+"precon": 0.0465
+},
+"dragonskull summit": {
+"precon": 0.5263
+},
+"dragonspeaker shaman": {
+"precon": 0.0233
+},
+"dragonstorm globe": {
+"precon": 0.0143
+},
+"drakuseth, maw of flames": {
+"precon": 0.0233
+},
+"dramatic reversal": {
+"cedh": 0.125
+},
+"drana and linvala": {
+"cedh": 0.0476
+},
+"drannith magistrate": {
+"cedh": 0.2143
+},
+"dread summons": {
+"precon": 0.0312
+},
+"dread tiller": {
+"precon": 0.0588
+},
+"dreadhorde invasion": {
+"precon": 0.0625
+},
+"dream eater": {
+"precon": 0.0256
+},
+"dream-thief's bandana": {
+"precon": 0.0143
+},
+"dreamroot cascade": {
+"precon": 0.1429
+},
+"dreamstone hedron": {
+"precon": 0.0286
+},
+"dress down": {
+"cedh": 0.0208
+},
+"drift of phantasms": {
+"cedh": 0.0417
+},
+"drown in dreams": {
+"precon": 0.0769
+},
+"drowned catacomb": {
+"precon": 0.5
+},
+"drowner of hope": {
+"precon": 0.0513
+},
+"drownyard temple": {
+"precon": 0.0286
+},
+"druid of purification": {
+"precon": 0.0256
+},
+"drumbellower": {
+"precon": 0.0233
+},
+"dryad arbor": {
+"cedh": 0.1094,
+"precon": 0.0143
+},
+"dryad of the ilysian grove": {
+"precon": 0.0769
+},
+"dualcaster mage": {
+"cedh": 0.0769
+},
+"duchess, wayward tavernkeep": {
+"precon": 0.0233
+},
+"duelist's heritage": {
+"precon": 0.0233
+},
+"dundoolin weaver": {
+"cedh": 0.0286
+},
+"dune chanter": {
+"precon": 0.0256
+},
+"dunes of the dead": {
+"precon": 0.0143
+},
+"dungrove elder": {
+"precon": 0.0256
+},
+"duplicant": {
+"precon": 0.0286
+},
+"dusk": {
+"precon": 0.0698
+},
+"dusk urchins": {
+"precon": 0.0312
+},
+"duskana, the rage mother": {
+"precon": 0.0769
+},
+"duskshell crawler": {
+"precon": 0.0513
+},
+"duskwatch recruiter": {
+"cedh": 0.0571
+},
+"dwarven armorer": {
+"cedh": 0.0769
+},
+"dwarven bloodboiler": {
+"cedh": 0.0769
+},
+"dwarven grunt": {
+"cedh": 0.0769
+},
+"dwarven mauler": {
+"cedh": 0.0769
+},
+"dwarven mine": {
+"precon": 0.0143
+},
+"dwarven scorcher": {
+"cedh": 0.0769
+},
+"dwarven trader": {
+"cedh": 0.0769
+},
+"earthcraft": {
+"cedh": 0.2857
+},
+"ebon stronghold": {
+"cedh": 0.0571
+},
+"eccentric farmer": {
+"precon": 0.0256
+},
+"eccentric pestfinder": {
+"precon": 0.0588
+},
+"echo of eons": {
+"cedh": 0.0208
+},
+"echoing assault": {
+"precon": 0.0233
+},
+"echoing deeps": {
+"cedh": 0.0156
+},
+"eclipsed flamekin": {
+"precon": 0.0435
+},
+"eclipsed steppe": {
+"precon": 0.0143
+},
+"ed-e, lonesome eyebot": {
+"precon": 0.0143
+},
+"edgar, master machinist": {
+"precon": 0.069
+},
+"edric, spymaster of trest": {
+"precon": 0.0476
+},
+"eerie ultimatum": {
+"precon": 0.1429
+},
+"eidolon of countless battles": {
+"precon": 0.0233
+},
+"eidolon of rhetoric": {
+"cedh": 0.0357
+},
+"eiganjo dynastorian": {
+"precon": 0.0233
+},
+"eladamri's call": {
+"cedh": 0.25
+},
+"elder arthur maxson": {
+"precon": 0.0556
+},
+"elder deep-fiend": {
+"precon": 0.0513
+},
+"elder gargaroth": {
+"precon": 0.0513
+},
+"elder owyn lyons": {
+"precon": 0.04
+},
+"eldrazi confluence": {
+"cedh": 0.0156,
+"precon": 0.0286
+},
+"eldrazi conscription": {
+"precon": 0.0429
+},
+"eldrazi displacer": {
+"cedh": 0.0357,
+"precon": 0.0465
+},
+"eldrazi monument": {
+"precon": 0.0286
+},
+"eldrazi temple": {
+"precon": 0.0286
+},
+"eldritch evolution": {
+"cedh": 0.3714
+},
+"eldritch immunity": {
+"precon": 0.0286
+},
+"electric revelation": {
+"precon": 0.0233
+},
+"electric seaweed": {
+"precon": 0.0233
+},
+"electro, assaulting battery": {
+"cedh": 0.0385
+},
+"electrodominance": {
+"precon": 0.0233
+},
+"electroduplicate": {
+"cedh": 0.0385
+},
+"electrosiphon": {
+"precon": 0.0435
+},
+"electrostatic field": {
+"precon": 0.0233
+},
+"elemental bond": {
+"precon": 0.0513
+},
+"elemental eruption": {
+"precon": 0.0233
+},
+"elemental spectacle": {
+"precon": 0.0256
+},
+"elementalist's palette": {
+"precon": 0.0143
+},
+"elena, turk recruit": {
+"precon": 0.0465
+},
+"elenda's hierophant": {
+"precon": 0.0233
+},
+"eliminate the competition": {
+"precon": 0.0312
+},
+"elsha, threefold master": {
+"precon": 0.0588
+},
+"elspeth, sun's champion": {
+"precon": 0.0698
+},
+"elusive otter": {
+"precon": 0.0256
+},
+"elves of deep shadow": {
+"cedh": 0.3846
+},
+"elvish mystic": {
+"cedh": 0.3429,
+"precon": 0.0513
+},
+"elvish reclaimer": {
+"cedh": 0.0571
+},
+"elvish rejuvenator": {
+"precon": 0.0769
+},
+"elvish spirit guide": {
+"cedh": 0.7429
+},
+"embrace the unknown": {
+"precon": 0.0233
+},
+"emerald charm": {
+"cedh": 0.0571
+},
+"emergence zone": {
+"cedh": 0.3594
+},
+"emeria angel": {
+"precon": 0.0233
+},
+"emeria shepherd": {
+"precon": 0.0233
+},
+"emeria, the sky ruin": {
+"precon": 0.0233
+},
+"emet-selch of the third seat": {
+"precon": 0.125
+},
+"emiel the blessed": {
+"cedh": 0.375
+},
+"empowered autogenerator": {
+"precon": 0.0143
+},
+"empty the warrens": {
+"precon": 0.0233
+},
+"emry, lurker of the loch": {
+"precon": 0.0256
+},
+"enchanter's bane": {
+"precon": 0.0233
+},
+"encroaching dragonstorm": {
+"precon": 0.0256
+},
+"encroaching mycosynth": {
+"cedh": 0.0208
+},
+"end the festivities": {
+"cedh": 0.0385
+},
+"end-raze forerunners": {
+"precon": 0.0256
+},
+"endbringer": {
+"precon": 0.0286
+},
+"endless atlas": {
+"precon": 0.0143
+},
+"endless detour": {
+"precon": 0.1667
+},
+"endless foot assault": {
+"precon": 0.0233
+},
+"endless ranks of hydra": {
+"precon": 0.0625
+},
+"endless ranks of the dead": {
+"precon": 0.0312
+},
+"endurance": {
+"cedh": 0.3143,
+"precon": 0.0256
+},
+"endurance bobblehead": {
+"precon": 0.0143
+},
+"enduring tenacity": {
+"cedh": 0.0286
+},
+"enduring vitality": {
+"cedh": 0.5429
+},
+"enlightened tutor": {
+"cedh": 0.8929
+},
+"enslaved dwarf": {
+"cedh": 0.0769
+},
+"enthusiastic mechanaut": {
+"precon": 0.0435
+},
+"entomb": {
+"cedh": 0.1714
+},
+"entrancing melody": {
+"precon": 0.0256
+},
+"entrapment maneuver": {
+"precon": 0.0233
+},
+"entreat the angels": {
+"precon": 0.0233
+},
+"ephemerate": {
+"cedh": 0.0357
+},
+"epic experiment": {
+"precon": 0.0435
+},
+"era of innovation": {
+"precon": 0.0769
+},
+"erdwal illuminator": {
+"precon": 0.0256
+},
+"eriette of the charmed apple": {
+"precon": 0.0556
+},
+"eris, roar of the storm": {
+"precon": 0.0435
+},
+"ertai resurrected": {
+"cedh": 0.037
+},
+"escape to the wilds": {
+"precon": 0.1
+},
+"escape tunnel": {
+"precon": 0.0429
+},
+"eshki, temur's roar": {
+"precon": 0.1
+},
+"esika's chariot": {
+"precon": 0.0256
+},
+"esix, fractal bloom": {
+"precon": 0.0476
+},
+"esper sentinel": {
+"cedh": 0.9286
+},
+"espers to magicite": {
+"precon": 0.0625
+},
+"essence anchor": {
+"precon": 0.0256
+},
+"estinien varlineau": {
+"precon": 0.1111
+},
+"etali, primal conqueror": {
+"cedh": 0.1
+},
+"etali, primal storm": {
+"precon": 0.0465
+},
+"etched oracle": {
+"precon": 0.0143
+},
+"eternal skylord": {
+"precon": 0.0256
+},
+"eternal taskmaster": {
+"precon": 0.0312
+},
+"eternal witness": {
+"cedh": 0.4,
+"precon": 0.0513
+},
+"ethereal investigator": {
+"precon": 0.0256
+},
+"etherium sculptor": {
+"precon": 0.0513
+},
+"ethersworn canonist": {
+"cedh": 0.0714
+},
+"eumidian hatchery": {
+"precon": 0.0312
+},
+"eumidian wastewaker": {
+"precon": 0.0312
+},
+"eureka moment": {
+"precon": 0.1905
+},
+"evacuation": {
+"precon": 0.0513
+},
+"evendo brushrazer": {
+"precon": 0.0233
+},
+"eventide's shadow": {
+"precon": 0.0312
+},
+"evercoat ursine": {
+"precon": 0.0256
+},
+"everett k. ross, hapless attach\u00e9": {
+"precon": 0.0465
+},
+"everflowing chalice": {
+"precon": 0.0857
+},
+"everlasting torment": {
+"precon": 0.0526
+},
+"everything pizza": {
+"precon": 0.1667
+},
+"evolution sage": {
+"cedh": 0.0286,
+"precon": 0.0256
+},
+"evolving wilds": {
+"precon": 0.5143
+},
+"exalted angel": {
+"precon": 0.0233
+},
+"excava, the risen past": {
+"precon": 0.0345
+},
+"excavation technique": {
+"precon": 0.0233
+},
+"exemplar of light": {
+"precon": 0.0233
+},
+"exhume": {
+"cedh": 0.0286
+},
+"exorcise": {
+"precon": 0.0233
+},
+"exotic orchard": {
+"cedh": 0.375,
+"precon": 0.7429
+},
+"expansion": {
+"precon": 0.0435
+},
+"expansion algorithm": {
+"precon": 0.0256
+},
+"expedite": {
+"precon": 0.0233
+},
+"expedition map": {
+"cedh": 0.1406,
+"precon": 0.0286
+},
+"expel the interlopers": {
+"precon": 0.0233
+},
+"experiment twelve": {
+"precon": 0.0256
+},
+"experimental augury": {
+"precon": 0.0256
+},
+"experimental lab": {
+"precon": 0.0256
+},
+"expert-level safe": {
+"precon": 0.0143
+},
+"exploding barrel": {
+"precon": 0.0143
+},
+"exploration": {
+"cedh": 0.0286
+},
+"exploration broodship": {
+"precon": 0.0256
+},
+"explore": {
+"precon": 0.0769
+},
+"explorer's scope": {
+"precon": 0.0429
+},
+"explosive vegetation": {
+"precon": 0.0513
+},
+"expressive iteration": {
+"precon": 0.2174
+},
+"exquisite blood": {
+"cedh": 0.0286
+},
+"exsanguinate": {
+"precon": 0.0625
+},
+"exterminator magmarch": {
+"precon": 0.1053
+},
+"extract brain": {
+"precon": 0.0625
+},
+"extract power": {
+"precon": 0.0513
+},
+"extravagant replication": {
+"precon": 0.0256
+},
+"eye of nidhogg": {
+"precon": 0.0625
+},
+"ezuri's predation": {
+"precon": 0.0513
+},
+"fabled passage": {
+"precon": 0.1571
+},
+"fabricate": {
+"cedh": 0.0208
+},
+"face yourself": {
+"cedh": 0.0385
+},
+"fact or fiction": {
+"precon": 0.0256
+},
+"faeburrow elder": {
+"cedh": 0.3125,
+"precon": 0.1905
+},
+"faerie mastermind": {
+"cedh": 0.625,
+"precon": 0.0256
+},
+"fain, the broker": {
+"precon": 0.0312
+},
+"faithless looting": {
+"precon": 0.1395
+},
+"falcon and redwing": {
+"precon": 0.0465
+},
+"falkenrath noble": {
+"precon": 0.0312
+},
+"fall from favor": {
+"precon": 0.0256
+},
+"fallen ideal": {
+"precon": 0.0312
+},
+"fallen shinobi": {
+"precon": 0.0625
+},
+"fanatic of rhonas": {
+"cedh": 0.0571,
+"precon": 0.0256
+},
+"fandaniel, telophoroi ascian": {
+"precon": 0.0625
+},
+"fantastic elasticity": {
+"precon": 0.0513
+},
+"farewell": {
+"precon": 0.1163
+},
+"farseek": {
+"precon": 0.3077
+},
+"fast forward": {
+"precon": 0.0233
+},
+"fate unraveler": {
+"precon": 0.0312
+},
+"fateful absence": {
+"precon": 0.0233
+},
+"fateful tempest": {
+"precon": 0.0233
+},
+"fatehold charm": {
+"precon": 0.04
+},
+"fathom mage": {
+"precon": 0.0952
+},
+"fauna shaman": {
+"cedh": 0.0571
+},
+"fblthp, impossibly lost": {
+"cedh": 0.0208
+},
+"fear of burning alive": {
+"precon": 0.0233
+},
+"fear of sleep paralysis": {
+"precon": 0.0256
+},
+"fearless fledgling": {
+"cedh": 0.0357
+},
+"feather, radiant arbiter": {
+"precon": 0.0345
+},
+"feed the swarm": {
+"precon": 0.125
+},
+"felidar guardian": {
+"cedh": 0.0357
+},
+"felidar sovereign": {
+"precon": 0.0233
+},
+"feline sovereign": {
+"precon": 0.0256
+},
+"felix five-boots": {
+"precon": 0.1111
+},
+"fell the mighty": {
+"precon": 0.0233
+},
+"fell the profane": {
+"cedh": 0.0571
+},
+"fellwar stone": {
+"cedh": 0.2812,
+"precon": 0.2286
+},
+"felothar the steadfast": {
+"precon": 0.1429
+},
+"feral appetite": {
+"precon": 0.0256
+},
+"feral ghoul": {
+"precon": 0.0312
+},
+"ferrafor, young yew": {
+"precon": 0.0256
+},
+"ferrous lake": {
+"precon": 0.2174
+},
+"fertile ground": {
+"precon": 0.0769
+},
+"fervent charge": {
+"precon": 0.0833
+},
+"festering thicket": {
+"precon": 0.0429
+},
+"fetid heath": {
+"precon": 0.4444
+},
+"fetid pools": {
+"precon": 0.0857
+},
+"fields of strife": {
+"precon": 0.0345
+},
+"fiendish duo": {
+"precon": 0.0233
+},
+"fierce empath": {
+"cedh": 0.0286
+},
+"fierce guardianship": {
+"cedh": 0.9792
+},
+"fiery islet": {
+"cedh": 0.1579
+},
+"fight for the throne": {
+"precon": 0.0513
+},
+"fight rigging": {
+"precon": 0.0513
+},
+"filigree racer": {
+"precon": 0.0465
+},
+"filigree sages": {
+"cedh": 0.0208
+},
+"final act": {
+"precon": 0.0938
+},
+"final fortune": {
+"cedh": 0.6923
+},
+"final judgment": {
+"precon": 0.0465
+},
+"final parting": {
+"cedh": 0.0571
+},
+"finale of devastation": {
+"cedh": 0.6571,
+"precon": 0.0256
+},
+"finale of promise": {
+"cedh": 0.0385,
+"precon": 0.0233
+},
+"finale of revelation": {
+"precon": 0.1026
+},
+"find": {
+"precon": 0.1765
+},
+"firdoch core": {
+"cedh": 0.0312
+},
+"fire covenant": {
+"cedh": 0.0667,
+"precon": 0.0526
+},
+"fire diamond": {
+"precon": 0.0233
+},
+"fire-belly changeling": {
+"precon": 0.0233
+},
+"fire-lit thicket": {
+"precon": 0.1
+},
+"firebird, blazing ranger": {
+"precon": 0.0465
+},
+"firebrand archer": {
+"cedh": 0.0385
+},
+"firemane commando": {
+"precon": 0.0465
+},
+"fireshrieker": {
+"precon": 0.0143
+},
+"firespitter whelp": {
+"precon": 0.0233
+},
+"firespout": {
+"cedh": 0.1
+},
+"firestorm": {
+"cedh": 0.0769
+},
+"first family": {
+"precon": 0.0952
+},
+"fisher's talent": {
+"precon": 0.0476
+},
+"fists of flame": {
+"precon": 0.0233
+},
+"flame on!": {
+"precon": 0.0465
+},
+"flamebraider": {
+"precon": 0.0233
+},
+"flamekin village": {
+"precon": 0.0233
+},
+"flare of denial": {
+"cedh": 0.125
+},
+"flare of duplication": {
+"cedh": 0.7308
+},
+"flare of malice": {
+"cedh": 0.0286
+},
+"flash photography": {
+"cedh": 0.2292
+},
+"flashback": {
+"cedh": 0.1154
+},
+"flawless maneuver": {
+"precon": 0.0233
+},
+"flayer of the hatebound": {
+"precon": 0.0465
+},
+"fleecemane lion": {
+"precon": 0.0952
+},
+"flesh duplicate": {
+"cedh": 0.2708
+},
+"fleshbag marauder": {
+"precon": 0.0625
+},
+"fleshwrither": {
+"cedh": 0.0571
+},
+"flickering ward": {
+"precon": 0.0233
+},
+"flooded grove": {
+"precon": 0.4286
+},
+"flooded strand": {
+"cedh": 0.7656
+},
+"floral evoker": {
+"precon": 0.0256
+},
+"florian, voldaren scion": {
+"precon": 0.0526
+},
+"floriferous vinewall": {
+"precon": 0.0513
+},
+"flourishing defenses": {
+"precon": 0.0256
+},
+"flow state": {
+"cedh": 0.0208
+},
+"flusterstorm": {
+"cedh": 0.9375
+},
+"flywheel racer": {
+"cedh": 0.0312
+},
+"fog bank": {
+"precon": 0.0513
+},
+"fogwell's gym": {
+"cedh": 0.0385
+},
+"folk hero": {
+"precon": 0.0465
+},
+"follow the bodies": {
+"precon": 0.0256
+},
+"fomori vault": {
+"cedh": 0.0312
+},
+"food chain": {
+"cedh": 0.0286
+},
+"foot chopper": {
+"precon": 0.0312
+},
+"forbidden alchemy": {
+"precon": 0.0625
+},
+"forbidden orchard": {
+"cedh": 0.0781,
+"precon": 0.0143
+},
+"force of negation": {
+"cedh": 0.7083
+},
+"force of vigor": {
+"cedh": 0.2
+},
+"force of will": {
+"cedh": 0.9583
+},
+"foreboding landscape": {
+"precon": 0.1111
+},
+"foreboding ruins": {
+"precon": 0.2632
+},
+"forge of heroes": {
+"precon": 0.0286
+},
+"forger's foundry": {
+"precon": 0.0256
+},
+"forgotten ancient": {
+"precon": 0.1282
+},
+"forgotten cave": {
+"precon": 0.1163
+},
+"forgotten creation": {
+"precon": 0.0256
+},
+"formidable speaker": {
+"cedh": 0.5143
+},
+"formless genesis": {
+"precon": 0.0513
+},
+"forsaken miner": {
+"cedh": 0.0286
+},
+"forsaken monument": {
+"precon": 0.0429
+},
+"fortified village": {
+"precon": 0.381
+},
+"fortune teller's talent": {
+"precon": 0.0256
+},
+"forum filibuster": {
+"precon": 0.0233
+},
+"forum of amity": {
+"precon": 0.0556
+},
+"foundation breaker": {
+"precon": 0.0256
+},
+"foundry inspector": {
+"precon": 0.0143
+},
+"foundry of the consuls": {
+"precon": 0.0143
+},
+"fountainport": {
+"precon": 0.0143
+},
+"fractal harness": {
+"precon": 0.0256
+},
+"fracture": {
+"precon": 0.0556
+},
+"francisco, fowl marauder": {
+"cedh": 0.0286
+},
+"franklin richards, ascendant": {
+"precon": 0.0465
+},
+"frantic search": {
+"cedh": 0.0625,
+"precon": 0.0256
+},
+"fraying sanity": {
+"precon": 0.0256
+},
+"freed from the real": {
+"cedh": 0.0417
+},
+"frontier bivouac": {
+"precon": 0.4
+},
+"frontier siege": {
+"precon": 0.0256
+},
+"frontier warmonger": {
+"precon": 0.0233
+},
+"frontline heroism": {
+"precon": 0.0233
+},
+"frostboil snarl": {
+"precon": 0.3913
+},
+"full throttle": {
+"cedh": 0.0385
+},
+"fumigate": {
+"precon": 0.0465
+},
+"furious rise": {
+"precon": 0.0465
+},
+"fury": {
+"cedh": 0.0385,
+"precon": 0.0233
+},
+"furycalm snarl": {
+"precon": 0.3793
+},
+"furygale flocking": {
+"precon": 0.0233
+},
+"fyndhorn elves": {
+"cedh": 0.4,
+"precon": 0.0256
+},
+"g'raha tia, scion reborn": {
+"precon": 0.1818
+},
+"gadrak, the crown-scourge": {
+"precon": 0.0233
+},
+"gaea's cradle": {
+"cedh": 0.8286
+},
+"galactus, devourer of worlds": {
+"precon": 0.0286
+},
+"galazeth prismari": {
+"precon": 0.0435
+},
+"galvanic blast": {
+"cedh": 0.0769
+},
+"galvanic iteration": {
+"precon": 0.1304
+},
+"gamble": {
+"cedh": 1.0
+},
+"game over": {
+"precon": 0.0312
+},
+"game trail": {
+"precon": 0.2
+},
+"gandalf, goblins' bane": {
+"cedh": 0.0385
+},
+"garruk's packleader": {
+"precon": 0.0513
+},
+"garruk's uprising": {
+"precon": 0.1282
+},
+"garruk, apex predator": {
+"precon": 0.1176
+},
+"garruk, cursed huntsman": {
+"precon": 0.0588
+},
+"gary clone": {
+"precon": 0.0233
+},
+"gate to the afterlife": {
+"precon": 0.0143
+},
+"gateway plaza": {
+"precon": 0.0143
+},
+"gatta and luzzu": {
+"precon": 0.0465
+},
+"gau, feral youth": {
+"precon": 0.0465
+},
+"gavel of the righteous": {
+"precon": 0.0143
+},
+"gavony township": {
+"precon": 0.0476
+},
+"gaze of granite": {
+"precon": 0.0588
+},
+"geier reach sanitarium": {
+"precon": 0.0143
+},
+"geist of saint thalia": {
+"cedh": 0.0833
+},
+"gemhide sliver": {
+"precon": 0.0256
+},
+"gempalm incinerator": {
+"precon": 0.0233
+},
+"gempalm polluter": {
+"precon": 0.0312
+},
+"gemstone caverns": {
+"cedh": 0.9531
+},
+"gemstone mine": {
+"cedh": 0.0312
+},
+"gene pollinator": {
+"cedh": 0.2571
+},
+"general kreat, the boltbringer": {
+"precon": 0.0233
+},
+"general leo cristophe": {
+"precon": 0.0465
+},
+"general's enforcer": {
+"precon": 0.0556
+},
+"generous gift": {
+"precon": 0.0698
+},
+"generous patron": {
+"precon": 0.0513
+},
+"genesis hydra": {
+"precon": 0.0256
+},
+"genesis ultimatum": {
+"precon": 0.2
+},
+"geosurge": {
+"cedh": 0.0769
+},
+"geothermal bog": {
+"precon": 0.0429
+},
+"gerrard's hourglass pendant": {
+"cedh": 0.0156
+},
+"ghalta and mavren": {
+"precon": 0.0476
+},
+"ghalta, primal hunger": {
+"precon": 0.0513
+},
+"ghirapur orrery": {
+"precon": 0.0143
+},
+"ghostly flicker": {
+"cedh": 0.0208
+},
+"ghostly pilferer": {
+"cedh": 0.0208,
+"precon": 0.0256
+},
+"ghostly prison": {
+"precon": 0.093
+},
+"ghoulcaller gisa": {
+"precon": 0.0312
+},
+"ghoulish impetus": {
+"precon": 0.0625
+},
+"giada, font of hope": {
+"precon": 0.0233
+},
+"giant adephage": {
+"precon": 0.0256
+},
+"gideon's sacrifice": {
+"precon": 0.0233
+},
+"gift of immortality": {
+"precon": 0.0698
+},
+"gifts ungiven": {
+"cedh": 0.0208
+},
+"gigantoplasm": {
+"cedh": 0.0417
+},
+"gigantosaurus": {
+"precon": 0.0256
+},
+"giggling skitterspike": {
+"precon": 0.0143
+},
+"gilded drake": {
+"cedh": 0.1042
+},
+"gilded goose": {
+"precon": 0.0513
+},
+"gilded lotus": {
+"precon": 0.0429
+},
+"gilt-leaf palace": {
+"precon": 0.0588
+},
+"ginger, queen of sweets": {
+"precon": 0.0143
+},
+"gisela, blade of goldnight": {
+"precon": 0.0345
+},
+"gitaxian probe": {
+"cedh": 0.2083
+},
+"gix, yawgmoth praetor": {
+"precon": 0.0312
+},
+"glacial fortress": {
+"precon": 0.6
+},
+"glaring fleshraker": {
+"precon": 0.0286
+},
+"glasspool mimic": {
+"cedh": 0.0208
+},
+"gleaming overseer": {
+"precon": 0.0625
+},
+"gleaming splendor": {
+"cedh": 0.6429
+},
+"gleeful arsonist": {
+"precon": 0.0233
+},
+"glimmer of genius": {
+"precon": 0.1026
+},
+"glimmerpost": {
+"precon": 0.0286
+},
+"glimmervoid": {
+"cedh": 0.0156
+},
+"glimpse the impossible": {
+"cedh": 0.0769,
+"precon": 0.0233
+},
+"glissa sunslayer": {
+"precon": 0.0588
+},
+"glitch interpreter": {
+"precon": 0.0256
+},
+"glittering massif": {
+"precon": 0.0571
+},
+"glittering stockpile": {
+"precon": 0.0233
+},
+"gloomlake verge": {
+"cedh": 0.037
+},
+"glorious purpose": {
+"precon": 0.0513
+},
+"glorybringer": {
+"precon": 0.0233
+},
+"glowing one": {
+"precon": 0.0256
+},
+"gluttonous hellkite": {
+"precon": 0.2
+},
+"glyph elemental": {
+"cedh": 0.0357
+},
+"gnarlwood dryad": {
+"precon": 0.0256
+},
+"go for the throat": {
+"precon": 0.0312
+},
+"go-shintai of life's origin": {
+"precon": 0.1667
+},
+"goblin bombardment": {
+"precon": 0.0233
+},
+"goblin burrows": {
+"precon": 0.0233
+},
+"goblin bushwhacker": {
+"precon": 0.0233
+},
+"goblin cannon": {
+"cedh": 0.0156
+},
+"goblin chieftain": {
+"precon": 0.0233
+},
+"goblin dark-dwellers": {
+"precon": 0.0233
+},
+"goblin electromancer": {
+"precon": 0.087
+},
+"goblin engineer": {
+"cedh": 0.1154
+},
+"goblin lackey": {
+"precon": 0.0233
+},
+"goblin matron": {
+"precon": 0.0233
+},
+"goblin negotiation": {
+"precon": 0.0233
+},
+"goblin trashmaster": {
+"precon": 0.0233
+},
+"goblin warchief": {
+"precon": 0.0233
+},
+"goblin welder": {
+"cedh": 0.0385
+},
+"god-eternal bontu": {
+"precon": 0.0625
+},
+"god-eternal oketra": {
+"precon": 0.0233
+},
+"god-pharaoh's gift": {
+"precon": 0.0143
+},
+"god-pharaoh's statue": {
+"cedh": 0.0312
+},
+"goddric, cloaked reveler": {
+"precon": 0.0233
+},
+"godless shrine": {
+"cedh": 0.0625
+},
+"gogo, mysterious mime": {
+"cedh": 0.0769,
+"precon": 0.0465
+},
+"goldlust triad": {
+"precon": 0.0465
+},
+"goldnight commander": {
+"precon": 0.0233
+},
+"goldspan dragon": {
+"precon": 0.0698
+},
+"goldvein hydra": {
+"precon": 0.0256
+},
+"golem foundry": {
+"precon": 0.0143
+},
+"golgari guildgate": {
+"precon": 0.0588
+},
+"golgari rot farm": {
+"cedh": 0.0769,
+"precon": 0.2353
+},
+"golgari signet": {
+"precon": 0.1176
+},
+"golgari thug": {
+"cedh": 0.0286
+},
+"gond gate": {
+"precon": 0.0143
+},
+"gonti's aether heart": {
+"precon": 0.0286
+},
+"gonti, canny acquisitor": {
+"precon": 0.1111
+},
+"gonti, lord of luxury": {
+"precon": 0.0312
+},
+"goreclaw, terror of qal sisma": {
+"precon": 0.0513
+},
+"gorma, the gullet": {
+"precon": 0.0588
+},
+"goryo's vengeance": {
+"cedh": 0.0571
+},
+"gourmand's talent": {
+"precon": 0.0256
+},
+"graaz, unstoppable juggernaut": {
+"precon": 0.0143
+},
+"grab the prize": {
+"precon": 0.0233
+},
+"graf mole": {
+"precon": 0.0256
+},
+"grafdigger's cage": {
+"cedh": 0.0469
+},
+"grand abolisher": {
+"cedh": 0.6071
+},
+"grand coliseum": {
+"precon": 0.0143
+},
+"grand crescendo": {
+"precon": 0.0698
+},
+"grapeshot": {
+"precon": 0.0233
+},
+"grapple with the past": {
+"precon": 0.1026
+},
+"grasp of fate": {
+"precon": 0.0233
+},
+"grateful apparition": {
+"precon": 0.0465
+},
+"gratuitous violence": {
+"precon": 0.0233
+},
+"grave titan": {
+"precon": 0.0938
+},
+"grave venerations": {
+"precon": 0.0312
+},
+"graveborn muse": {
+"precon": 0.0312
+},
+"gravecrawler": {
+"precon": 0.0938
+},
+"graven cairns": {
+"precon": 0.1579
+},
+"graveshifter": {
+"precon": 0.0938
+},
+"gray merchant of asphodel": {
+"cedh": 0.1143,
+"precon": 0.0625
+},
+"graypelt refuge": {
+"precon": 0.0476
+},
+"graywater's fixer": {
+"precon": 0.0526
+},
+"great furnace": {
+"cedh": 0.2308,
+"precon": 0.0233
+},
+"great oak guardian": {
+"cedh": 0.0571
+},
+"great train heist": {
+"cedh": 0.0769,
+"precon": 0.0233
+},
+"greater good": {
+"precon": 0.0769
+},
+"greater tanuki": {
+"precon": 0.0256
+},
+"green sun's zenith": {
+"cedh": 0.5143
+},
+"greenwarden of murasa": {
+"precon": 0.0256
+},
+"grenzo, havoc raiser": {
+"precon": 0.1163
+},
+"grim backwoods": {
+"precon": 0.1765
+},
+"grim flayer": {
+"precon": 0.0588
+},
+"grim monolith": {
+"cedh": 0.2969
+},
+"grim poppet": {
+"precon": 0.0143
+},
+"grim reaper's sprint": {
+"cedh": 0.0385,
+"precon": 0.0233
+},
+"grim servant": {
+"cedh": 0.0571
+},
+"grim tutor": {
+"cedh": 0.1143
+},
+"grinding station": {
+"cedh": 0.1406
+},
+"grisly salvage": {
+"precon": 0.2353
+},
+"grist, the hunger tide": {
+"precon": 0.1765
+},
+"grothama, all-devouring": {
+"precon": 0.0256
+},
+"groundskeeper": {
+"precon": 0.0256
+},
+"grove of the burnwillows": {
+"cedh": 0.2
+},
+"grove of the guardian": {
+"precon": 0.0476
+},
+"growing dread": {
+"precon": 0.0476
+},
+"growing ranks": {
+"precon": 0.0476
+},
+"growing rites of itlimoc": {
+"cedh": 0.1714
+},
+"growth spiral": {
+"precon": 0.1429
+},
+"gruff triplets": {
+"precon": 0.0256
+},
+"grumgully, the generous": {
+"precon": 0.05
+},
+"gruul guildgate": {
+"precon": 0.05
+},
+"gruul signet": {
+"precon": 0.05
+},
+"gruul turf": {
+"precon": 0.15
+},
+"guardian augmenter": {
+"precon": 0.0256
+},
+"guardian gladewalker": {
+"precon": 0.0256
+},
+"guardian of faith": {
+"precon": 0.0233
+},
+"guardian project": {
+"precon": 0.0256
+},
+"guardian scalelord": {
+"precon": 0.0233
+},
+"gunner conscript": {
+"precon": 0.0256
+},
+"gut shot": {
+"cedh": 0.1538
+},
+"guttersnipe": {
+"precon": 0.0465
+},
+"guttural response": {
+"cedh": 0.1
+},
+"gwenom, remorseless": {
+"cedh": 0.0286
+},
+"gyome, master chef": {
+"precon": 0.0588
+},
+"gyre sage": {
+"precon": 0.0513
+},
+"h.e.r.b.i.e., lovable robot": {
+"cedh": 0.0156,
+"precon": 0.0286
+},
+"halana, kessig ranger": {
+"cedh": 0.0286
+},
+"haldan, avid arcanist": {
+"cedh": 0.0208
+},
+"halimar depths": {
+"precon": 0.0256
+},
+"hall of echoes": {
+"cedh": 0.0156
+},
+"hall of heliod's generosity": {
+"precon": 0.0233
+},
+"hall of oracles": {
+"precon": 0.0143
+},
+"hall of the bandit lord": {
+"cedh": 0.0312
+},
+"hallowed fountain": {
+"cedh": 0.0938
+},
+"halo fountain": {
+"precon": 0.0465
+},
+"hammer of nazahn": {
+"precon": 0.0286
+},
+"hammer of purphoros": {
+"precon": 0.0233
+},
+"hammerhead tyrant": {
+"precon": 0.0256
+},
+"hammerheim": {
+"cedh": 0.0769
+},
+"hancock, ghoulish mayor": {
+"precon": 0.0312
+},
+"hangarback walker": {
+"cedh": 0.0156,
+"precon": 0.0429
+},
+"hanged executioner": {
+"precon": 0.0233
+},
+"hapatra, vizier of poisons": {
+"precon": 0.0588
+},
+"happily ever after": {
+"precon": 0.0233
+},
+"harabaz druid": {
+"precon": 0.0256
+},
+"harbinger of the hunt": {
+"precon": 0.05
+},
+"hardened scales": {
+"precon": 0.1026
+},
+"harmonic prodigy": {
+"precon": 0.0233
+},
+"harmonize": {
+"precon": 0.3077
+},
+"harold and bob, first numens": {
+"precon": 0.0256
+},
+"harper recruiter": {
+"precon": 0.0233
+},
+"harrow": {
+"precon": 0.1026
+},
+"harsh mentor": {
+"precon": 0.0233
+},
+"hashaton, scarab's fist": {
+"precon": 0.0909
+},
+"hashep oasis": {
+"precon": 0.0769
+},
+"hateful eidolon": {
+"precon": 0.0312
+},
+"hatut zeraze strike force": {
+"precon": 0.0465
+},
+"haughty djinn": {
+"precon": 0.0513
+},
+"haunted mire": {
+"precon": 0.0429
+},
+"haunting voyage": {
+"precon": 0.0312
+},
+"haven of the spirit dragon": {
+"precon": 0.0286
+},
+"havoc eater": {
+"precon": 0.0233
+},
+"hawkeye, avenging archer": {
+"precon": 0.087
+},
+"haywire mite": {
+"cedh": 0.0571,
+"precon": 0.0769
+},
+"haze of rage": {
+"precon": 0.0233
+},
+"hazel of the rootbloom": {
+"precon": 0.0588
+},
+"hazel's brewmaster": {
+"cedh": 0.1714,
+"precon": 0.0312
+},
+"hazezon, shaper of sand": {
+"precon": 0.0769
+},
+"hazoret's monument": {
+"precon": 0.0143
+},
+"headless rider": {
+"precon": 0.0312
+},
+"healing technique": {
+"precon": 0.0256
+},
+"heap gate": {
+"precon": 0.0143
+},
+"heart-shaped herb": {
+"precon": 0.0286
+},
+"hearthhull, the worldseed": {
+"precon": 0.1
+},
+"heartless conscription": {
+"precon": 0.0312
+},
+"heartless summoning": {
+"cedh": 0.0571
+},
+"heartwood storyteller": {
+"cedh": 0.0286
+},
+"heat shimmer": {
+"cedh": 0.0385
+},
+"heaven": {
+"precon": 0.0256
+},
+"hedge maze": {
+"cedh": 0.0156
+},
+"hedron archive": {
+"precon": 0.0571
+},
+"hedron crab": {
+"cedh": 0.0417,
+"precon": 0.0256
+},
+"heidegger, shinra executive": {
+"precon": 0.0465
+},
+"heliod's intervention": {
+"precon": 0.0465
+},
+"heliod, sun-crowned": {
+"precon": 0.0233
+},
+"helios one": {
+"precon": 0.0143
+},
+"helitrooper": {
+"precon": 0.0465
+},
+"helix pinnacle": {
+"precon": 0.0256
+},
+"hellkite charger": {
+"cedh": 0.0385,
+"precon": 0.0233
+},
+"hellkite courser": {
+"cedh": 0.0385,
+"precon": 0.0233
+},
+"hellkite tyrant": {
+"precon": 0.0698
+},
+"helm of the host": {
+"precon": 0.0429
+},
+"helmut zemo, mastermind": {
+"precon": 0.0513
+},
+"herald of amity": {
+"precon": 0.0233
+},
+"herald of eternal dawn": {
+"precon": 0.0233
+},
+"herald of war": {
+"precon": 0.0233
+},
+"herald's horn": {
+"precon": 0.0714
+},
+"heraldic banner": {
+"precon": 0.0143
+},
+"hercules, olympian hero": {
+"precon": 0.0465
+},
+"here comes a new hero!": {
+"precon": 0.0256
+},
+"herigast, erupting nullkite": {
+"cedh": 0.0385
+},
+"hermes, overseer of elpis": {
+"precon": 0.0513
+},
+"hero of bladehold": {
+"precon": 0.0233
+},
+"hero's blade": {
+"precon": 0.0571
+},
+"hero's heirloom": {
+"precon": 0.0286
+},
+"heroes in a half shell": {
+"precon": 0.1667
+},
+"heroic intervention": {
+"precon": 0.0256
+},
+"heroic reinforcements": {
+"precon": 0.0345
+},
+"heroic return": {
+"precon": 0.0465
+},
+"heroic sacrifice": {
+"precon": 0.0465
+},
+"hex": {
+"precon": 0.0312
+},
+"hex magic": {
+"cedh": 0.1538
+},
+"hexing squelcher": {
+"cedh": 1.0
+},
+"hickory woodlot": {
+"cedh": 0.0286
+},
+"hidden cataract": {
+"precon": 0.0513
+},
+"hidden dragonslayer": {
+"precon": 0.0233
+},
+"hidden hideout": {
+"precon": 0.0143
+},
+"hidden nursery": {
+"precon": 0.0513
+},
+"hidden strings": {
+"cedh": 0.125
+},
+"hidden volcano": {
+"precon": 0.0233
+},
+"hideous taskmaster": {
+"precon": 0.0465
+},
+"high fae trickster": {
+"cedh": 0.125
+},
+"high market": {
+"precon": 0.0429
+},
+"high score": {
+"precon": 0.0256
+},
+"high-speed hoverbike": {
+"cedh": 0.0312
+},
+"highway robbery": {
+"cedh": 0.0385
+},
+"hildibrand manderville": {
+"precon": 0.0465
+},
+"hinterland harbor": {
+"precon": 0.619
+},
+"hit the mother lode": {
+"precon": 0.0233
+},
+"hoarder's greed": {
+"precon": 0.0312
+},
+"hoarding broodlord": {
+"cedh": 0.1143
+},
+"hofri ghostforge": {
+"precon": 0.0345
+},
+"holdout settlement": {
+"cedh": 0.0312
+},
+"homeward path": {
+"cedh": 0.0469,
+"precon": 0.0143
+},
+"honored dreyleader": {
+"precon": 0.0256
+},
+"hooded hydra": {
+"precon": 0.0256
+},
+"hoofprints of the stag": {
+"precon": 0.0465
+},
+"hope of ghirapur": {
+"cedh": 0.0156
+},
+"hope tender": {
+"cedh": 0.0286
+},
+"horde of notions": {
+"precon": 0.1667
+},
+"horizon explorer": {
+"precon": 0.0256
+},
+"horizon of progress": {
+"precon": 0.0286
+},
+"hornet nest": {
+"precon": 0.0256
+},
+"hornet queen": {
+"precon": 0.0513
+},
+"hostage taker": {
+"precon": 0.0625
+},
+"hot pursuit": {
+"precon": 0.0233
+},
+"hour of promise": {
+"precon": 0.0769
+},
+"hour of reckoning": {
+"precon": 0.0698
+},
+"hourglass of the lost": {
+"precon": 0.0465
+},
+"howlsquad heavy": {
+"precon": 0.0233
+},
+"hraesvelgr of the first brood": {
+"precon": 0.0513
+},
+"hulkbuster armor": {
+"precon": 0.0286
+},
+"hulking raptor": {
+"precon": 0.0256
+},
+"hull breach": {
+"precon": 0.1
+},
+"hullbreaker horror": {
+"cedh": 0.1042
+},
+"human torch": {
+"precon": 0.25
+},
+"humble defector": {
+"precon": 0.0233
+},
+"hunting velociraptor": {
+"cedh": 0.0385
+},
+"hydra broodmaster": {
+"precon": 0.0513
+},
+"hydra omnivore": {
+"precon": 0.0256
+},
+"hydroelectric specimen": {
+"cedh": 0.0625
+},
+"hydroid krasis": {
+"precon": 0.1905
+},
+"hypnotic sprite": {
+"precon": 0.0513
+},
+"hyrax tower scout": {
+"cedh": 0.0571
+},
+"ian the reckless": {
+"precon": 0.0233
+},
+"icatian moneychanger": {
+"cedh": 0.0357
+},
+"icetill explorer": {
+"cedh": 0.0286
+},
+"ichor wellspring": {
+"precon": 0.0143
+},
+"idol of oblivion": {
+"precon": 0.1143
+},
+"idolized": {
+"precon": 0.0233
+},
+"idyllic beachfront": {
+"precon": 0.0571
+},
+"idyllic tutor": {
+"cedh": 0.0357
+},
+"ifnir deadlands": {
+"precon": 0.0312
+},
+"ignoble hierarch": {
+"precon": 0.3
+},
+"ikra shidiqi, the usurper": {
+"precon": 0.0588
+},
+"illusionist's gambit": {
+"precon": 0.0256
+},
+"illusory ambusher": {
+"precon": 0.0256
+},
+"ilysian caryatid": {
+"precon": 0.0256
+},
+"immoral bargain": {
+"precon": 0.0588
+},
+"immortal obligation": {
+"precon": 0.0233
+},
+"imp's mischief": {
+"cedh": 0.0571
+},
+"impact tremors": {
+"precon": 0.0233
+},
+"impassioned orator": {
+"precon": 0.0233
+},
+"imperial hellkite": {
+"precon": 0.0233
+},
+"imperial recruiter": {
+"cedh": 0.1154
+},
+"imperial seal": {
+"cedh": 0.8571
+},
+"imposter mech": {
+"cedh": 0.0625
+},
+"impostor of the sixth pride": {
+"precon": 0.0233
+},
+"imprisoned in the moon": {
+"precon": 0.0513
+},
+"improvisation capstone": {
+"cedh": 0.0385
+},
+"impulsive pilferer": {
+"precon": 0.0465
+},
+"impulsivity": {
+"precon": 0.0233
+},
+"incandescent soulstoke": {
+"precon": 0.0233
+},
+"incremental blight": {
+"precon": 0.0312
+},
+"incubation druid": {
+"cedh": 0.0571,
+"precon": 0.0513
+},
+"indomitable ancients": {
+"precon": 0.0233
+},
+"indulging patrician": {
+"precon": 0.0556
+},
+"inexorable tide": {
+"precon": 0.0769
+},
+"infantry shield": {
+"precon": 0.0233
+},
+"infectious bite": {
+"cedh": 0.0571
+},
+"infernal grasp": {
+"precon": 0.1562
+},
+"infernal idol": {
+"precon": 0.0312
+},
+"infernal plunge": {
+"cedh": 0.3077
+},
+"inferno titan": {
+"precon": 0.0233
+},
+"infested thrinax": {
+"precon": 0.1176
+},
+"infesting radroach": {
+"precon": 0.0312
+},
+"ingenious prodigy": {
+"precon": 0.0256
+},
+"ingenious smith": {
+"precon": 0.0465
+},
+"ingot chewer": {
+"precon": 0.0233
+},
+"inkmoth nexus": {
+"cedh": 0.0156
+},
+"inkshield": {
+"precon": 0.1111
+},
+"innocuous researcher": {
+"precon": 0.0256
+},
+"insatiable frugivore": {
+"precon": 0.0312
+},
+"inscription of abundance": {
+"precon": 0.0256
+},
+"insidious dreams": {
+"cedh": 0.0286
+},
+"insidious fungus": {
+"cedh": 0.0286
+},
+"insight engine": {
+"precon": 0.0256
+},
+"inspired skypainter": {
+"precon": 0.0435
+},
+"inspiring call": {
+"precon": 0.0769
+},
+"inspiring overseer": {
+"precon": 0.0465
+},
+"inspiring statuary": {
+"precon": 0.0429
+},
+"inspirit, flagship vessel": {
+"precon": 0.0588
+},
+"intangible virtue": {
+"precon": 0.0233
+},
+"intellectual offering": {
+"precon": 0.0256
+},
+"intelligence bobblehead": {
+"precon": 0.0143
+},
+"interceptor, shadow's hound": {
+"precon": 0.0625
+},
+"intermediate chirography": {
+"precon": 0.0312
+},
+"into the flood maw": {
+"cedh": 0.5625
+},
+"into the pit": {
+"precon": 0.0312
+},
+"into the story": {
+"precon": 0.0513
+},
+"into the time vortex": {
+"precon": 0.0465
+},
+"intuition": {
+"cedh": 0.2083
+},
+"invasion of ikoria": {
+"cedh": 0.2
+},
+"invasion submersible": {
+"cedh": 0.0208
+},
+"inventors' fair": {
+"cedh": 0.0156
+},
+"inventory management": {
+"precon": 0.0345
+},
+"inversion behemoth": {
+"precon": 0.0286
+},
+"invincible hymn": {
+"precon": 0.0233
+},
+"invisible force field": {
+"precon": 0.0465
+},
+"invisible woman": {
+"precon": 0.25
+},
+"invoke calamity": {
+"cedh": 0.0385
+},
+"invoke the divine": {
+"precon": 0.0233
+},
+"ioreth of the healing house": {
+"cedh": 0.0208
+},
+"irencrag feat": {
+"cedh": 0.0385
+},
+"irma, part-time mutant": {
+"precon": 0.0256
+},
+"iron man, armored avenger": {
+"precon": 0.0513
+},
+"iron monger, sadistic tycoon": {
+"precon": 0.0625
+},
+"ironwill forger": {
+"precon": 0.0233
+},
+"irrigated farmland": {
+"precon": 0.1
+},
+"ishai, ojutai dragonspeaker": {
+"cedh": 0.0417
+},
+"ishkanah, grafwidow": {
+"precon": 0.0588
+},
+"isochron scepter": {
+"cedh": 0.0156
+},
+"isolated chapel": {
+"precon": 0.6111
+},
+"it's clobberin' time!": {
+"precon": 0.0513
+},
+"izoni, thousand-eyed": {
+"precon": 0.1176
+},
+"izzet boilerworks": {
+"precon": 0.1304
+},
+"izzet generatorium": {
+"precon": 0.087
+},
+"izzet guildgate": {
+"precon": 0.0435
+},
+"izzet signet": {
+"cedh": 0.0526,
+"precon": 0.1739
+},
+"jace, multiverse architect": {
+"precon": 0.1429
+},
+"jacked rabbit": {
+"precon": 0.0233
+},
+"jadar, ghoulcaller of nephalia": {
+"precon": 0.0312
+},
+"jaddi offshoot": {
+"precon": 0.0256
+},
+"james, wandering dad": {
+"precon": 0.0256
+},
+"jarad, golgari lich lord": {
+"precon": 0.0588
+},
+"jarvis, earth's mightiest butler": {
+"precon": 0.0513
+},
+"jason bright, glowing prophet": {
+"precon": 0.0256
+},
+"jaspera sentinel": {
+"cedh": 0.0571
+},
+"jaws of defeat": {
+"precon": 0.0312
+},
+"jaxis, the troublemaker": {
+"cedh": 0.0385
+},
+"jazal goldmane": {
+"precon": 0.0233
+},
+"jegantha, the wellspring": {
+"precon": 0.1667
+},
+"jennifer walters": {
+"cedh": 0.4375
+},
+"jeska's will": {
+"cedh": 0.8077,
+"precon": 0.0233
+},
+"jeskai ascendancy": {
+"cedh": 0.0714
+},
+"jet medallion": {
+"cedh": 0.0469
+},
+"jeweled amulet": {
+"cedh": 0.0625
+},
+"jhoira, weatherlight captain": {
+"precon": 0.0435
+},
+"jhoira, weatherlight corsair": {
+"precon": 0.0312
+},
+"jocasta, automaton avenger": {
+"precon": 0.0286
+},
+"jolly gerbils": {
+"precon": 0.0233
+},
+"jolrael, mwonvuli recluse": {
+"precon": 0.0513
+},
+"jolted awake": {
+"precon": 0.0465
+},
+"joraga treespeaker": {
+"cedh": 0.0286
+},
+"josu vess, lich knight": {
+"precon": 0.0312
+},
+"jubilation": {
+"precon": 0.0256
+},
+"jungle hollow": {
+"precon": 0.1176
+},
+"jungle shrine": {
+"precon": 0.5385
+},
+"junji, the midnight sky": {
+"precon": 0.0938
+},
+"junk jet": {
+"precon": 0.0233
+},
+"junk winder": {
+"precon": 0.0513
+},
+"junktown": {
+"precon": 0.0233
+},
+"juri, master of the revue": {
+"precon": 0.0526
+},
+"jyoti, moag ancient": {
+"precon": 0.0952
+},
+"k'rrik, son of yawgmoth": {
+"cedh": 0.0857
+},
+"kaervek the merciless": {
+"precon": 0.0526
+},
+"kalitas, traitor of ghet": {
+"precon": 0.0312
+},
+"kalonian hydra": {
+"precon": 0.0256
+},
+"kamber, the plunderer": {
+"precon": 0.0312
+},
+"kami of ancient law": {
+"precon": 0.0233
+},
+"kami of whispered hopes": {
+"precon": 0.0256
+},
+"kang dynasty": {
+"precon": 0.0513
+},
+"kang prime": {
+"precon": 0.125
+},
+"kang, temporal tyrant": {
+"precon": 0.125
+},
+"kappa cannoneer": {
+"precon": 0.0769
+},
+"kardur, doomscourge": {
+"precon": 0.0526
+},
+"karmic guide": {
+"cedh": 0.0357,
+"precon": 0.0233
+},
+"karn's bastion": {
+"precon": 0.0143
+},
+"karn, argent defender": {
+"cedh": 0.0156
+},
+"karplusan forest": {
+"cedh": 0.2,
+"precon": 0.35
+},
+"kaust, eyes of the glade": {
+"precon": 0.0769
+},
+"kavaron, memorial world": {
+"cedh": 0.0769
+},
+"kaya, geist hunter": {
+"precon": 0.0556
+},
+"kaza, roil chaser": {
+"precon": 0.0435
+},
+"kazuul, tyrant of the cliffs": {
+"precon": 0.0233
+},
+"kederekt parasite": {
+"cedh": 0.0286,
+"precon": 0.0312
+},
+"keen duelist": {
+"precon": 0.0312
+},
+"keen sense": {
+"cedh": 0.0286
+},
+"keeper of the accord": {
+"precon": 0.0465
+},
+"kefka, dancing mad": {
+"precon": 0.1053
+},
+"kefnet the mindful": {
+"precon": 0.0256
+},
+"keiga, the tide star": {
+"precon": 0.0256
+},
+"kellan, the fae-blooded": {
+"cedh": 0.0385
+},
+"kellogg, dangerous mind": {
+"precon": 0.0526
+},
+"kenrith's transformation": {
+"precon": 0.0256
+},
+"kessig flamebreather": {
+"cedh": 0.0385
+},
+"kessig wolf run": {
+"precon": 0.2
+},
+"key to the city": {
+"precon": 0.0286
+},
+"kher keep": {
+"precon": 0.0698
+},
+"kheru spellsnatcher": {
+"precon": 0.0256
+},
+"kianne, corrupted memory": {
+"precon": 0.0476
+},
+"killer service": {
+"precon": 0.0256
+},
+"killian, decisive mentor": {
+"precon": 0.0556
+},
+"killian, ink duelist": {
+"precon": 0.0556
+},
+"killmonger, ruthless usurper": {
+"precon": 0.0465
+},
+"kilo, apogee mind": {
+"precon": 0.0588
+},
+"kimahri, valiant guardian": {
+"precon": 0.0952
+},
+"kimoyo beads": {
+"precon": 0.0286
+},
+"kindle the inner flame": {
+"cedh": 0.0385
+},
+"kindred discovery": {
+"precon": 0.0769
+},
+"kindred dominance": {
+"precon": 0.0938
+},
+"kindred summons": {
+"precon": 0.0513
+},
+"kinetic ooze": {
+"precon": 0.0256
+},
+"king solomon's frogs": {
+"precon": 0.0465
+},
+"king t'challa": {
+"cedh": 0.25
+},
+"kinnan, bonder prodigy": {
+"cedh": 0.6429
+},
+"kinsbaile cavalier": {
+"precon": 0.0233
+},
+"kirol, history buff": {
+"precon": 0.0345
+},
+"kirri, talented sprout": {
+"precon": 0.1538
+},
+"kishla skimmer": {
+"precon": 0.0476
+},
+"klaw, master of sound": {
+"precon": 0.0625
+},
+"knacksaw clique": {
+"cedh": 0.0417
+},
+"knight of the reliquary": {
+"cedh": 0.0625
+},
+"knowledge is power": {
+"precon": 0.04
+},
+"knuckles the echidna": {
+"cedh": 0.0769
+},
+"kodama of the east tree": {
+"cedh": 0.0286,
+"precon": 0.0256
+},
+"kodama's reach": {
+"precon": 0.1026
+},
+"kogla, the titan ape": {
+"cedh": 0.0571
+},
+"kolaghan's command": {
+"precon": 0.1053
+},
+"koma, cosmos serpent": {
+"precon": 0.0476
+},
+"kor spiritdancer": {
+"precon": 0.0233
+},
+"korvold, fae-cursed king": {
+"precon": 0.1
+},
+"kotis, sibsig champion": {
+"precon": 0.1111
+},
+"kozilek's command": {
+"cedh": 0.0156
+},
+"kozilek's return": {
+"precon": 0.0465
+},
+"krang, the all-powerful": {
+"precon": 0.0256
+},
+"krark-clan ironworks": {
+"cedh": 0.0156
+},
+"kraum, ludevic's opus": {
+"cedh": 0.4737
+},
+"krenko's command": {
+"precon": 0.0233
+},
+"krenko, mob boss": {
+"precon": 0.0233
+},
+"krile baldesion": {
+"precon": 0.08
+},
+"krosan cloudscraper": {
+"precon": 0.0256
+},
+"krosan colossus": {
+"precon": 0.0256
+},
+"krosan verge": {
+"precon": 0.0571
+},
+"krosan wayfarer": {
+"cedh": 0.0286
+},
+"kulrath knight": {
+"precon": 0.0526
+},
+"kutzil, malamet exemplar": {
+"cedh": 0.125
+},
+"kwain, itinerant meddler": {
+"precon": 0.04
+},
+"kynaios and tiro of meletis": {
+"precon": 0.125
+},
+"labyrinth of skophos": {
+"precon": 0.0143
+},
+"lady loki, agent of chaos": {
+"precon": 0.0465
+},
+"laelia, the blade reforged": {
+"precon": 0.0233
+},
+"lair of the hydra": {
+"precon": 0.0513
+},
+"lake of the dead": {
+"cedh": 0.0857
+},
+"lamentation": {
+"precon": 0.0312
+},
+"land tax": {
+"precon": 0.0233
+},
+"last chance": {
+"cedh": 0.3077
+},
+"last night together": {
+"cedh": 0.1
+},
+"lasting tarfire": {
+"precon": 0.0233
+},
+"lathiel, the bounteous dawn": {
+"precon": 0.0476
+},
+"lathliss, dragon queen": {
+"precon": 0.0465
+},
+"lattice library": {
+"precon": 0.0256
+},
+"laughing mad": {
+"precon": 0.0465
+},
+"launch mishap": {
+"precon": 0.0256
+},
+"laurine, the diversion": {
+"precon": 0.0233
+},
+"lava dart": {
+"cedh": 0.0385
+},
+"lavaspur boots": {
+"cedh": 0.0312
+},
+"lavinia, azorius renegade": {
+"cedh": 0.0833
+},
+"lazotep chancellor": {
+"precon": 0.0625
+},
+"lazotep quarry": {
+"cedh": 0.0156,
+"precon": 0.0429
+},
+"leatherhead, iron gator": {
+"precon": 0.0256
+},
+"leech bonder": {
+"cedh": 0.0208
+},
+"leechridden swamp": {
+"precon": 0.0312
+},
+"legate lanius, caesar's ace": {
+"precon": 0.0526
+},
+"legion loyalty": {
+"precon": 0.0698
+},
+"legion warboss": {
+"precon": 0.0233
+},
+"legions to ashes": {
+"precon": 0.1111
+},
+"legolas's quick reflexes": {
+"cedh": 0.3143
+},
+"leitmotif composer": {
+"precon": 0.0256
+},
+"leonardo, the balance": {
+"precon": 0.1667
+},
+"lessons from life": {
+"precon": 0.0476
+},
+"lethal scheme": {
+"precon": 0.1875
+},
+"level up": {
+"precon": 0.0256
+},
+"leyline dowser": {
+"precon": 0.0143
+},
+"leyline of abundance": {
+"cedh": 0.0286
+},
+"leyline of anticipation": {
+"cedh": 0.0208
+},
+"leyline tyrant": {
+"precon": 0.0465
+},
+"lhurgoyf": {
+"precon": 0.0513
+},
+"liberated dwarf": {
+"cedh": 0.0769
+},
+"liberator, urza's battlethopter": {
+"cedh": 0.0312
+},
+"liberty prime, recharged": {
+"precon": 0.0588
+},
+"lier, disciple of the drowned": {
+"precon": 0.0256
+},
+"life from the loam": {
+"precon": 0.0256
+},
+"life insurance": {
+"precon": 0.1111
+},
+"lifeblood hydra": {
+"precon": 0.0256
+},
+"lifecraft engine": {
+"cedh": 0.0312
+},
+"lifecrafter's bestiary": {
+"precon": 0.0256
+},
+"lifestream's blessing": {
+"precon": 0.0513
+},
+"light up the stage": {
+"precon": 0.0233
+},
+"lightning bolt": {
+"cedh": 0.2692,
+"precon": 0.0233
+},
+"lightning greaves": {
+"cedh": 0.0312,
+"precon": 0.1857
+},
+"lightning runner": {
+"precon": 0.0698
+},
+"lignify": {
+"precon": 0.0256
+},
+"liliana's contract": {
+"precon": 0.0312
+},
+"liliana's mastery": {
+"precon": 0.0312
+},
+"liliana's reaver": {
+"precon": 0.0312
+},
+"liliana, death wielder": {
+"precon": 0.0312
+},
+"liliana, death's majesty": {
+"precon": 0.0938
+},
+"lily bowen, raging grandma": {
+"precon": 0.0256
+},
+"lim-d\u00fbl's vault": {
+"cedh": 0.037
+},
+"lingering souls": {
+"precon": 0.2222
+},
+"linvala, the preserver": {
+"precon": 0.0233
+},
+"lion's eye diamond": {
+"cedh": 0.5625
+},
+"liquimetal torque": {
+"cedh": 0.0156
+},
+"lita, little orphan amphibian": {
+"precon": 0.0233
+},
+"lively dirge": {
+"cedh": 0.0571
+},
+"living death": {
+"precon": 0.0312
+},
+"living laser": {
+"precon": 0.0465
+},
+"llanowar elves": {
+"cedh": 0.3429,
+"precon": 0.0513
+},
+"llanowar loamspeaker": {
+"precon": 0.0256
+},
+"llanowar tribe": {
+"precon": 0.0256
+},
+"llanowar wastes": {
+"precon": 0.5294
+},
+"loam dryad": {
+"cedh": 0.0286
+},
+"loamcrafter faun": {
+"precon": 0.0256
+},
+"localized destruction": {
+"precon": 0.0465
+},
+"lock and load": {
+"precon": 0.0256
+},
+"locke, treasure hunter": {
+"precon": 0.1053
+},
+"lockjaw, slobbering teleporter": {
+"precon": 0.0513
+},
+"loki's scepter": {
+"cedh": 0.1154,
+"precon": 0.0465
+},
+"loki, the deceiver": {
+"precon": 0.2222
+},
+"lonely sandbar": {
+"precon": 0.0769
+},
+"long river's pull": {
+"precon": 0.0256
+},
+"long-range sensor": {
+"precon": 0.0233
+},
+"long-term plans": {
+"cedh": 0.0208
+},
+"lonis, cryptozoologist": {
+"precon": 0.0476
+},
+"loot, exuberant explorer": {
+"precon": 0.0256
+},
+"loran of the third path": {
+"precon": 0.0465
+},
+"lord jyscal guado": {
+"precon": 0.0465
+},
+"lord of extinction": {
+"precon": 0.0588
+},
+"lord of the accursed": {
+"precon": 0.0625
+},
+"lord of the forsaken": {
+"precon": 0.0312
+},
+"lord of the undead": {
+"precon": 0.0312
+},
+"lorehold archivist": {
+"precon": 0.0345
+},
+"lorehold campus": {
+"precon": 0.0345
+},
+"lorehold charm": {
+"precon": 0.0345
+},
+"lost monarch of ifnir": {
+"precon": 0.0312
+},
+"lotho, corrupt shirriff": {
+"cedh": 0.8571
+},
+"lotus cobra": {
+"cedh": 0.0571,
+"precon": 0.0256
+},
+"lotus field": {
+"cedh": 0.0156,
+"precon": 0.0143
+},
+"lotus petal": {
+"cedh": 0.9531
+},
+"louisoix's sacrifice": {
+"cedh": 0.0208
+},
+"love on the battlefield": {
+"precon": 0.087
+},
+"loyal apprentice": {
+"precon": 0.0698
+},
+"loyal guardian": {
+"precon": 0.0513
+},
+"loyal retainers": {
+"precon": 0.0465
+},
+"loyal warhound": {
+"precon": 0.0233
+},
+"luck bobblehead": {
+"precon": 0.0143
+},
+"lulu, stern guardian": {
+"precon": 0.0513
+},
+"lumbering falls": {
+"precon": 0.0952
+},
+"lumbering megasloth": {
+"precon": 0.0256
+},
+"luminous broodmoth": {
+"cedh": 0.0357,
+"precon": 0.0698
+},
+"lumra, bellow of the woods": {
+"cedh": 0.0286
+},
+"lush oasis": {
+"precon": 0.0952
+},
+"lux artillery": {
+"precon": 0.0143
+},
+"lux cannon": {
+"precon": 0.0143
+},
+"luxury suite": {
+"cedh": 0.0667,
+"precon": 0.1053
+},
+"lyra dawnbringer": {
+"precon": 0.0233
+},
+"lyse hext": {
+"precon": 0.08
+},
+"m'baku, jabari chieftain": {
+"precon": 0.0513
+},
+"m.o.d.o.k.": {
+"cedh": 0.0571
+},
+"maccready, lamplight mayor": {
+"precon": 0.0556
+},
+"machine god's effigy": {
+"cedh": 0.1042
+},
+"madame hydra": {
+"precon": 0.1053
+},
+"maelstrom pulse": {
+"precon": 0.1765
+},
+"maelstrom wanderer": {
+"precon": 0.1
+},
+"maester seymour": {
+"precon": 0.0513
+},
+"maestros theater": {
+"precon": 0.0143
+},
+"magda, brazen outlaw": {
+"cedh": 0.1154,
+"precon": 0.0233
+},
+"magda, the hoardmaster": {
+"cedh": 0.0769
+},
+"magic damper": {
+"cedh": 0.0208
+},
+"magma opus": {
+"precon": 0.087
+},
+"magmaquake": {
+"precon": 0.0233
+},
+"magmatic insight": {
+"precon": 0.0233
+},
+"magnifying glass": {
+"precon": 0.0143
+},
+"magus of the candelabra": {
+"cedh": 0.2571,
+"precon": 0.0513
+},
+"magus of the moon": {
+"cedh": 0.0385
+},
+"make your move": {
+"precon": 0.0465
+},
+"malevolent rumble": {
+"cedh": 0.0286
+},
+"mana bloom": {
+"precon": 0.0256
+},
+"mana confluence": {
+"cedh": 0.7188
+},
+"mana drain": {
+"cedh": 0.0417
+},
+"mana geyser": {
+"precon": 0.093
+},
+"mana reflection": {
+"precon": 0.0513
+},
+"mana vault": {
+"cedh": 0.8594
+},
+"manaform hellkite": {
+"precon": 0.0465
+},
+"managorger hydra": {
+"precon": 0.0513
+},
+"manamorphose": {
+"cedh": 0.2
+},
+"manaweft sliver": {
+"precon": 0.0256
+},
+"mangara, the diplomat": {
+"precon": 0.093
+},
+"manglehorn": {
+"cedh": 0.0286
+},
+"manifold key": {
+"cedh": 0.0469
+},
+"manor gate": {
+"precon": 0.0256
+},
+"mantle of the ancients": {
+"precon": 0.0233
+},
+"map the frontier": {
+"precon": 0.0256
+},
+"marble diamond": {
+"precon": 0.0233
+},
+"march from velis vel": {
+"precon": 0.0513
+},
+"marchesa's decree": {
+"precon": 0.0312
+},
+"marcus, mutant mayor": {
+"precon": 0.0476
+},
+"mari, the killing quill": {
+"precon": 0.0312
+},
+"mariposa military base": {
+"precon": 0.0143
+},
+"marsh flats": {
+"cedh": 0.5
+},
+"marshal's anthem": {
+"precon": 0.0465
+},
+"marshland bloodcaster": {
+"precon": 0.0312
+},
+"martial coup": {
+"precon": 0.1163
+},
+"martial impetus": {
+"precon": 0.0698
+},
+"marvin, murderous mimic": {
+"cedh": 0.0938
+},
+"marwyn, the preserver": {
+"cedh": 0.0857
+},
+"mask of griselbrand": {
+"precon": 0.0312
+},
+"mask of memory": {
+"precon": 0.0286
+},
+"masked vandal": {
+"precon": 0.0256
+},
+"maskwood nexus": {
+"cedh": 0.0312,
+"precon": 0.0857
+},
+"mass mutiny": {
+"precon": 0.0233
+},
+"mass of mysteries": {
+"precon": 0.1667
+},
+"mass polymorph": {
+"precon": 0.0256
+},
+"massacre": {
+"cedh": 0.0286
+},
+"massacre girl": {
+"precon": 0.0625
+},
+"massacre girl, known killer": {
+"precon": 0.0312
+},
+"massacre wurm": {
+"cedh": 0.0286,
+"precon": 0.0312
+},
+"master of etherium": {
+"precon": 0.0256
+},
+"master of pearls": {
+"precon": 0.0233
+},
+"master transmuter": {
+"precon": 0.0256
+},
+"mastermind's acquisition": {
+"cedh": 0.0286
+},
+"masterwork of ingenuity": {
+"precon": 0.0143
+},
+"mastery of the unseen": {
+"precon": 0.0233
+},
+"mausoleum secrets": {
+"cedh": 0.0571
+},
+"mayael's aria": {
+"precon": 0.0769
+},
+"mayhem devil": {
+"cedh": 0.0667,
+"precon": 0.1053
+},
+"maze's end": {
+"precon": 0.0143
+},
+"mazemind tome": {
+"precon": 0.0143
+},
+"mazirek, kraul death priest": {
+"precon": 0.1176
+},
+"mechanized production": {
+"precon": 0.0769
+},
+"medusa, inhuman queen": {
+"precon": 0.0513
+},
+"megaton's fate": {
+"precon": 0.0233
+},
+"memnarch, the warden": {
+"precon": 0.0143
+},
+"memnite": {
+"cedh": 0.0312
+},
+"memorial to folly": {
+"precon": 0.0625
+},
+"memorial to glory": {
+"precon": 0.0233
+},
+"memory guardian": {
+"precon": 0.0256
+},
+"mental misstep": {
+"cedh": 0.9792
+},
+"merchant of truth": {
+"precon": 0.0465
+},
+"merchant of venom": {
+"precon": 0.0312
+},
+"merchant scroll": {
+"cedh": 0.0208
+},
+"meren of clan nel toth": {
+"precon": 0.0588
+},
+"mesa enchantress": {
+"precon": 0.0233
+},
+"metallic mimic": {
+"cedh": 0.0312,
+"precon": 0.0429
+},
+"metalwork colossus": {
+"precon": 0.0286
+},
+"metalworker": {
+"cedh": 0.0312
+},
+"metamorphosis": {
+"cedh": 0.0286
+},
+"metamorphosis fanatic": {
+"precon": 0.0312
+},
+"meteor golem": {
+"precon": 0.0714
+},
+"meteor sword": {
+"cedh": 0.0156
+},
+"methods of the mighty": {
+"precon": 0.0465
+},
+"metropolis reformer": {
+"precon": 0.0233
+},
+"michelangelo, the heart": {
+"precon": 0.0256
+},
+"midnight angel armor": {
+"precon": 0.0465
+},
+"midnight banshee": {
+"precon": 0.0312
+},
+"midnight clock": {
+"precon": 0.1026
+},
+"midnight reaper": {
+"precon": 0.0625
+},
+"migration path": {
+"precon": 0.0256
+},
+"mikokoro, center of the sea": {
+"cedh": 0.0312
+},
+"millikin": {
+"precon": 0.0571
+},
+"minamo, school at water's edge": {
+"cedh": 0.25
+},
+"mind over matter": {
+"cedh": 0.0208
+},
+"mind stone": {
+"precon": 0.2
+},
+"mind's desire": {
+"cedh": 0.0208
+},
+"mind's dilation": {
+"precon": 0.0769
+},
+"mind's eye": {
+"precon": 0.0429
+},
+"mindblade render": {
+"precon": 0.0312
+},
+"mindbreak trap": {
+"cedh": 0.8542
+},
+"mindless automaton": {
+"precon": 0.0143
+},
+"minion of the mighty": {
+"precon": 0.0233
+},
+"mirage mesa": {
+"precon": 0.0143
+},
+"mirage mirror": {
+"cedh": 0.0625,
+"precon": 0.0571
+},
+"mirari's wake": {
+"precon": 0.0476
+},
+"mire triton": {
+"precon": 0.0312
+},
+"mirelurk queen": {
+"precon": 0.0256
+},
+"mirrex": {
+"cedh": 0.0156
+},
+"mirror entity": {
+"precon": 0.0698
+},
+"mirror image": {
+"cedh": 0.0208
+},
+"mirrormade": {
+"cedh": 0.125,
+"precon": 0.0256
+},
+"mirrorpool": {
+"cedh": 0.0156
+},
+"mirrorwing dragon": {
+"precon": 0.0233
+},
+"miscast": {
+"cedh": 0.0208
+},
+"misdirection": {
+"cedh": 0.4167
+},
+"misfortune teller": {
+"precon": 0.0312
+},
+"mishra's factory": {
+"cedh": 0.0312
+},
+"mishra's workshop": {
+"cedh": 0.0625
+},
+"misleading signpost": {
+"precon": 0.0256
+},
+"mister fantastic": {
+"precon": 0.25
+},
+"mister fantastic, reed richards": {
+"precon": 0.0513
+},
+"mister gutsy": {
+"precon": 0.0143
+},
+"mistmeadow skulk": {
+"precon": 0.0233
+},
+"mistrise village": {
+"cedh": 0.0417
+},
+"mistveil plains": {
+"precon": 0.0233
+},
+"misty rainforest": {
+"cedh": 0.7969
+},
+"mizzix's mastery": {
+"precon": 0.0233
+},
+"mnemonic betrayal": {
+"cedh": 0.5185
+},
+"moan of the unhallowed": {
+"precon": 0.0312
+},
+"mob verdict": {
+"precon": 0.0233
+},
+"mobilize": {
+"cedh": 0.0286
+},
+"mockingbird": {
+"cedh": 0.6875
+},
+"mog, moogle warrior": {
+"precon": 0.069
+},
+"mogg war marshal": {
+"precon": 0.0233
+},
+"mogis, god of slaughter": {
+"precon": 0.0526
+},
+"moira brown, guide author": {
+"precon": 0.0345
+},
+"mold adder": {
+"cedh": 0.0286
+},
+"moldervine reclamation": {
+"precon": 0.1176
+},
+"moldgraf millipede": {
+"precon": 0.0256
+},
+"moldgraf monstrosity": {
+"precon": 0.0256
+},
+"mole man, moloid master": {
+"cedh": 0.0286
+},
+"mole module": {
+"precon": 0.0143
+},
+"molecule man": {
+"precon": 0.0286
+},
+"molten duplication": {
+"cedh": 0.0769
+},
+"molten tributary": {
+"precon": 0.0143
+},
+"mona lisa, science geek": {
+"precon": 0.0256
+},
+"monastery mentor": {
+"precon": 0.0233
+},
+"monologue tax": {
+"precon": 0.1163
+},
+"monstrous onslaught": {
+"precon": 0.0256
+},
+"moon-blessed cleric": {
+"precon": 0.0233
+},
+"moonmist": {
+"cedh": 0.0286
+},
+"moonshadow": {
+"cedh": 0.0286
+},
+"moonshaker cavalry": {
+"precon": 0.0233
+},
+"moonsilver key": {
+"cedh": 0.0312
+},
+"moonsnare prototype": {
+"cedh": 0.0208
+},
+"moonstone eulogist": {
+"precon": 0.0312
+},
+"moonstone, harsh mistress": {
+"precon": 0.0625
+},
+"moraug, fury of akoum": {
+"precon": 0.0233
+},
+"morbid opportunist": {
+"precon": 0.2812
+},
+"moritte of the frost": {
+"precon": 0.0476
+},
+"morophon, the boundless": {
+"precon": 0.5
+},
+"morphic pool": {
+"cedh": 0.037
+},
+"morska, undersea sleuth": {
+"precon": 0.0833
+},
+"mortality spear": {
+"precon": 0.0588
+},
+"mortify": {
+"precon": 0.1111
+},
+"mortivore": {
+"precon": 0.0625
+},
+"mortuary": {
+"cedh": 0.0286
+},
+"mortuary mire": {
+"precon": 0.0312
+},
+"mossborn hydra": {
+"cedh": 0.0286
+},
+"mossfire valley": {
+"precon": 0.45
+},
+"mosswort bridge": {
+"precon": 0.1282
+},
+"mothdust changeling": {
+"precon": 0.0256
+},
+"mount doom": {
+"cedh": 0.1333
+},
+"mountain valley": {
+"precon": 0.0143
+},
+"mox amber": {
+"cedh": 0.7812
+},
+"mox diamond": {
+"cedh": 0.9062
+},
+"mox opal": {
+"cedh": 0.5
+},
+"moxite refinery": {
+"precon": 0.0143
+},
+"mr. foxglove": {
+"precon": 0.0833
+},
+"mr. house, president and ceo": {
+"precon": 0.0833
+},
+"ms. bumbleflower": {
+"precon": 0.0833
+},
+"muddle the mixture": {
+"cedh": 0.0208
+},
+"muddle, the ever-changing": {
+"precon": 0.0435
+},
+"mulch": {
+"precon": 0.0256
+},
+"muldrotha, the gravetide": {
+"precon": 0.1111
+},
+"mulldrifter": {
+"precon": 0.0256
+},
+"multani, yavimaya's avatar": {
+"precon": 0.0769
+},
+"murderous rider": {
+"precon": 0.0938
+},
+"murkfiend liege": {
+"cedh": 0.0714
+},
+"murmuration": {
+"precon": 0.0233
+},
+"murmuring bosk": {
+"precon": 0.0556
+},
+"murmuring mystic": {
+"precon": 0.0256
+},
+"mutated cultist": {
+"precon": 0.0625
+},
+"mutational advantage": {
+"precon": 0.0476
+},
+"mutavault": {
+"cedh": 0.0469,
+"precon": 0.0143
+},
+"mutilate": {
+"precon": 0.0312
+},
+"mycoloth": {
+"precon": 0.0256
+},
+"myr battlesphere": {
+"precon": 0.0571
+},
+"myr convert": {
+"cedh": 0.0156
+},
+"myr retriever": {
+"precon": 0.0143
+},
+"myr scrapling": {
+"cedh": 0.0156
+},
+"myrel, shield of argive": {
+"cedh": 0.0357
+},
+"myriad landscape": {
+"precon": 0.1143
+},
+"mysterious stranger": {
+"precon": 0.0233
+},
+"mystic forge": {
+"precon": 0.0429
+},
+"mystic gate": {
+"precon": 0.12
+},
+"mystic monastery": {
+"precon": 0.4706
+},
+"mystic remora": {
+"cedh": 0.9792,
+"precon": 0.0256
+},
+"mystic sanctuary": {
+"cedh": 0.0156,
+"precon": 0.0143
+},
+"mystical tutor": {
+"cedh": 0.5417
+},
+"n'yami-class mother ship": {
+"precon": 0.0286
+},
+"nadier's nightblade": {
+"precon": 0.0312
+},
+"nadir kraken": {
+"precon": 0.0256
+},
+"nakia, wakandan operative": {
+"precon": 0.0513
+},
+"naktamun lorespinner": {
+"precon": 0.0233
+},
+"nameless inversion": {
+"precon": 0.0312
+},
+"namor, atlantean king": {
+"precon": 0.08
+},
+"nantuko cultivator": {
+"precon": 0.0256
+},
+"nantuko vigilante": {
+"precon": 0.0256
+},
+"narset's reversal": {
+"precon": 0.0256
+},
+"nashi, moon sage's scion": {
+"precon": 0.0312
+},
+"natural order": {
+"cedh": 0.0857
+},
+"nature's chosen": {
+"cedh": 0.0571
+},
+"nature's claim": {
+"cedh": 0.0857
+},
+"nature's lore": {
+"precon": 0.2051
+},
+"nature's rhythm": {
+"cedh": 0.6571
+},
+"necroblossom snarl": {
+"precon": 0.1765
+},
+"necrodominance": {
+"cedh": 0.1429
+},
+"necrogoyf": {
+"precon": 0.0625
+},
+"necromancy": {
+"cedh": 0.1143
+},
+"necromantic selection": {
+"precon": 0.0312
+},
+"necropolis fiend": {
+"precon": 0.0312
+},
+"necropotence": {
+"cedh": 0.5429
+},
+"necroskitter": {
+"precon": 0.0312
+},
+"necrotic hex": {
+"precon": 0.0312
+},
+"necrotic ooze": {
+"cedh": 0.0857
+},
+"need for speed": {
+"cedh": 0.0385
+},
+"needle spires": {
+"precon": 0.0345
+},
+"negate": {
+"precon": 0.0256
+},
+"negative zone portal": {
+"precon": 0.0286
+},
+"neheb, the eternal": {
+"precon": 0.0233
+},
+"nelly borca, impulsive accuser": {
+"precon": 0.0345
+},
+"neoform": {
+"cedh": 0.1786
+},
+"nerd rage": {
+"precon": 0.0256
+},
+"neriv, crackling vanguard": {
+"precon": 0.0833
+},
+"nervous gardener": {
+"precon": 0.0256
+},
+"nested shambler": {
+"precon": 0.0312
+},
+"nesting dragon": {
+"precon": 0.0465
+},
+"nesting grounds": {
+"precon": 0.0571
+},
+"nether traitor": {
+"precon": 0.0312
+},
+"nettlecyst": {
+"precon": 0.0286
+},
+"nev, the practical dean": {
+"precon": 0.0256
+},
+"never": {
+"precon": 0.0312
+},
+"nevinyrral's disk": {
+"precon": 0.0143
+},
+"nexus mentality": {
+"precon": 0.0256
+},
+"nexus of becoming": {
+"cedh": 0.0312
+},
+"nezahal, primal tide": {
+"cedh": 0.0417
+},
+"nick valentine, private eye": {
+"precon": 0.0256
+},
+"night scythe": {
+"cedh": 0.0156
+},
+"night's whisper": {
+"precon": 0.2812
+},
+"nighthawk scavenger": {
+"precon": 0.0312
+},
+"nightkin ambusher": {
+"precon": 0.0625
+},
+"nightmare shepherd": {
+"precon": 0.0312
+},
+"nightshade harvester": {
+"precon": 0.0312
+},
+"nils, discipline enforcer": {
+"precon": 0.0233
+},
+"ninja pizza": {
+"precon": 0.0256
+},
+"nissa, leyline tamer": {
+"precon": 0.1429
+},
+"nissa, resurgent animist": {
+"cedh": 0.0571
+},
+"nissa, steward of elements": {
+"precon": 0.0952
+},
+"nissa, worldsoul speaker": {
+"precon": 0.0256
+},
+"niv-mizzet, ghost counsel": {
+"precon": 0.0556
+},
+"niv-mizzet, parun": {
+"precon": 0.0435
+},
+"noble hierarch": {
+"cedh": 0.8462
+},
+"nogi, draco-zealot": {
+"precon": 0.0465
+},
+"nomad outpost": {
+"precon": 0.4167
+},
+"norman osborn": {
+"cedh": 0.0714
+},
+"norn's choirmaster": {
+"precon": 0.0233
+},
+"not dead after all": {
+"cedh": 0.0286
+},
+"not of this world": {
+"cedh": 0.0156
+},
+"nova flame": {
+"precon": 0.0465
+},
+"noxious gearhulk": {
+"precon": 0.0625
+},
+"noxious ghoul": {
+"precon": 0.0312
+},
+"noxious revival": {
+"cedh": 0.2571
+},
+"nuclear fallout": {
+"precon": 0.0312
+},
+"nuka-cola vending machine": {
+"precon": 0.0143
+},
+"nuka-nuke launcher": {
+"precon": 0.0143
+},
+"null rod": {
+"cedh": 0.0312
+},
+"nurturing peatland": {
+"cedh": 0.0769
+},
+"nykthos paragon": {
+"precon": 0.0233
+},
+"nykthos, shrine to nyx": {
+"cedh": 0.125
+},
+"nyx weaver": {
+"precon": 0.1176
+},
+"nyx-fleece ram": {
+"precon": 0.0233
+},
+"nyxbloom ancient": {
+"cedh": 0.0571
+},
+"o'aka, traveling merchant": {
+"precon": 0.0513
+},
+"ob nixilis reignited": {
+"precon": 0.0312
+},
+"ob nixilis, captive kingpin": {
+"cedh": 0.0667
+},
+"ob nixilis, the ascended": {
+"precon": 0.0233
+},
+"ob nixilis, the fallen": {
+"precon": 0.0312
+},
+"oblivion sower": {
+"precon": 0.0429
+},
+"oblivion stone": {
+"precon": 0.0286
+},
+"oboro breezecaller": {
+"cedh": 0.1875
+},
+"obscura storefront": {
+"precon": 0.0143
+},
+"obscuring aether": {
+"precon": 0.0256
+},
+"observed stasis": {
+"precon": 0.0513
+},
+"obsessive skinner": {
+"precon": 0.0256
+},
+"occult epiphany": {
+"precon": 0.0256
+},
+"octavia, living thesis": {
+"precon": 0.0256
+},
+"octomancer": {
+"precon": 0.0476
+},
+"oft-nabbed goat": {
+"precon": 0.0312
+},
+"ogre battledriver": {
+"precon": 0.0233
+},
+"ogre slumlord": {
+"precon": 0.0625
+},
+"ohran frostfang": {
+"precon": 0.0769
+},
+"okoye, mighty and adored": {
+"precon": 0.0952
+},
+"old gnawbone": {
+"cedh": 0.0286
+},
+"old stickfingers": {
+"precon": 0.0588
+},
+"olivia, opulent outlaw": {
+"precon": 0.0833
+},
+"ominous cemetery": {
+"cedh": 0.0312
+},
+"ominous harvest": {
+"precon": 0.0312
+},
+"omnath, locus of rage": {
+"precon": 0.15
+},
+"omnath, locus of the roil": {
+"precon": 0.1
+},
+"omnath, locus of the void": {
+"precon": 0.0143
+},
+"omo, queen of vesuva": {
+"precon": 0.0952
+},
+"on the trail": {
+"precon": 0.0256
+},
+"on wings of gold": {
+"precon": 0.0233
+},
+"ondu spiritdancer": {
+"precon": 0.0233
+},
+"one with the machine": {
+"precon": 0.0513
+},
+"one with the multiverse": {
+"precon": 0.0256
+},
+"ongoing investigation": {
+"precon": 0.0476
+},
+"opal palace": {
+"precon": 0.0571
+},
+"open the armory": {
+"cedh": 0.0357
+},
+"open the graves": {
+"precon": 0.0312
+},
+"open the omenpaths": {
+"cedh": 0.0385
+},
+"open the vaults": {
+"precon": 0.0233
+},
+"open the way": {
+"precon": 0.0256
+},
+"opera love song": {
+"cedh": 0.0385
+},
+"ophidian eye": {
+"cedh": 0.0208
+},
+"ophiomancer": {
+"precon": 0.0625
+},
+"opportunistic dragon": {
+"precon": 0.0233
+},
+"opposition agent": {
+"cedh": 0.3429
+},
+"opt": {
+"precon": 0.0513
+},
+"opulent palace": {
+"precon": 0.5556
+},
+"oracle of mul daya": {
+"precon": 0.0513
+},
+"oran-rief, the vastwood": {
+"precon": 0.0513
+},
+"orb of dragonkind": {
+"precon": 0.0233
+},
+"orcish bowmasters": {
+"cedh": 0.6286
+},
+"orcish lumberjack": {
+"cedh": 0.3
+},
+"organic extinction": {
+"precon": 0.0465
+},
+"orim's chant": {
+"cedh": 0.4643
+},
+"ornithopter": {
+"cedh": 0.0312
+},
+"ornithopter of paradise": {
+"cedh": 0.0156,
+"precon": 0.0429
+},
+"orochi leafcaller": {
+"cedh": 0.1429
+},
+"orochi soul-reaver": {
+"precon": 0.0312
+},
+"orzhov advokist": {
+"precon": 0.0233
+},
+"orzhov basilica": {
+"precon": 0.1111
+},
+"orzhov guildgate": {
+"precon": 0.0556
+},
+"orzhov signet": {
+"precon": 0.2222
+},
+"oswald fiddlebender": {
+"cedh": 0.0357
+},
+"otawara, soaring city": {
+"cedh": 0.9792
+},
+"otherworldly escort": {
+"precon": 0.0233
+},
+"otherworldly gaze": {
+"precon": 0.0256
+},
+"outpost siege": {
+"precon": 0.0465
+},
+"overclocked electromancer": {
+"precon": 0.0465
+},
+"overeager apprentice": {
+"cedh": 0.0286
+},
+"overencumbered": {
+"precon": 0.0233
+},
+"overflowing basin": {
+"precon": 0.5238
+},
+"overgrown battlement": {
+"precon": 0.0256
+},
+"overgrown farmland": {
+"precon": 0.1429
+},
+"overgrown tomb": {
+"cedh": 0.0781
+},
+"overgrown zealot": {
+"precon": 0.0256
+},
+"overlord of the mistmoors": {
+"precon": 0.0233
+},
+"overmaster": {
+"cedh": 0.0385
+},
+"overpowering attack": {
+"cedh": 0.0385
+},
+"overseer of vault 76": {
+"precon": 0.0233
+},
+"oversimplify": {
+"precon": 0.0952
+},
+"oversold cemetery": {
+"precon": 0.0312
+},
+"overwhelming stampede": {
+"precon": 0.1026
+},
+"owlin spiralmancer": {
+"precon": 0.0256
+},
+"ozolith, the shattered spire": {
+"precon": 0.0256
+},
+"pact of negation": {
+"cedh": 0.9792
+},
+"padeem, consul of innovation": {
+"precon": 0.0256
+},
+"painful truths": {
+"precon": 0.0625
+},
+"painted bluffs": {
+"precon": 0.0143
+},
+"pako, arcane retriever": {
+"cedh": 0.1
+},
+"palace jailer": {
+"precon": 0.093
+},
+"paladin danse, steel maverick": {
+"precon": 0.0233
+},
+"paladin elizabeth taggerdy": {
+"precon": 0.0345
+},
+"palladium myr": {
+"precon": 0.0143
+},
+"panharmonicon": {
+"precon": 0.0286
+},
+"panoptic projektor": {
+"precon": 0.0143
+},
+"panther habit": {
+"precon": 0.0286
+},
+"panther robot": {
+"precon": 0.0286
+},
+"papalymo totolymo": {
+"precon": 0.1111
+},
+"paradise druid": {
+"precon": 0.0256
+},
+"paradise mantle": {
+"cedh": 0.0938
+},
+"paradox gardens": {
+"precon": 0.0476
+},
+"parapet thrasher": {
+"precon": 0.0465
+},
+"parasitic impetus": {
+"precon": 0.0312
+},
+"pariah": {
+"precon": 0.0233
+},
+"party thrasher": {
+"cedh": 0.0385
+},
+"pashalik mons": {
+"precon": 0.0233
+},
+"past in flames": {
+"cedh": 0.0385,
+"precon": 0.0233
+},
+"patchwork banner": {
+"precon": 0.0714
+},
+"path of ancestry": {
+"precon": 0.6429
+},
+"path of discovery": {
+"precon": 0.1282
+},
+"path to exile": {
+"cedh": 0.0714,
+"precon": 0.2791
+},
+"patriot, shield wielder": {
+"precon": 0.0465
+},
+"patrolling peacemaker": {
+"precon": 0.0233
+},
+"pattern of rebirth": {
+"cedh": 0.0571
+},
+"pawn of ulamog": {
+"precon": 0.0312
+},
+"pearl-ear, imperial advisor": {
+"precon": 0.0233
+},
+"peat bog": {
+"cedh": 0.1143
+},
+"peema aether-seer": {
+"precon": 0.0256
+},
+"peema trailblazer": {
+"precon": 0.0256
+},
+"peer into the abyss": {
+"cedh": 0.0857
+},
+"peerless recycling": {
+"precon": 0.0256
+},
+"pemmin's aura": {
+"cedh": 0.0208
+},
+"pentad prism": {
+"precon": 0.0143
+},
+"perception bobblehead": {
+"precon": 0.0143
+},
+"perch protection": {
+"precon": 0.0233
+},
+"peregrine drake": {
+"cedh": 0.0208
+},
+"perennial behemoth": {
+"precon": 0.0256
+},
+"perilous landscape": {
+"precon": 0.1176
+},
+"permission denied": {
+"cedh": 0.0417
+},
+"perpetual timepiece": {
+"precon": 0.0286
+},
+"perplexing test": {
+"precon": 0.0513
+},
+"persist": {
+"precon": 0.0312
+},
+"persistent constrictor": {
+"precon": 0.0312
+},
+"pest infestation": {
+"precon": 0.0769
+},
+"pest rescuer": {
+"precon": 0.0256
+},
+"pestilence": {
+"cedh": 0.0286
+},
+"peter parker's camera": {
+"cedh": 0.0312
+},
+"phantasmal image": {
+"cedh": 0.1875
+},
+"phenomenon investigators": {
+"precon": 0.0625
+},
+"phoenix down": {
+"precon": 0.0465
+},
+"photon, mighty marvel": {
+"precon": 0.0465
+},
+"phyrexian altar": {
+"cedh": 0.0156
+},
+"phyrexian arena": {
+"precon": 0.0312
+},
+"phyrexian metamorph": {
+"cedh": 0.1875,
+"precon": 0.0256
+},
+"phyrexian processor": {
+"precon": 0.0143
+},
+"phyrexian reclamation": {
+"precon": 0.0312
+},
+"phyrexian revoker": {
+"cedh": 0.0156
+},
+"phyrexian tower": {
+"cedh": 0.2286
+},
+"phyrexian walker": {
+"cedh": 0.0312
+},
+"pia and kiran nalaar": {
+"precon": 0.0233
+},
+"pia nalaar, chief mechanic": {
+"precon": 0.1
+},
+"pia, aether ascetic": {
+"cedh": 0.2857
+},
+"pili-pala": {
+"cedh": 0.0625
+},
+"pinnacle monk": {
+"cedh": 0.1538
+},
+"pip-boy 3000": {
+"cedh": 0.0156,
+"precon": 0.0143
+},
+"piper wright, publick reporter": {
+"precon": 0.0256
+},
+"pitiless plunderer": {
+"precon": 0.0938
+},
+"plague belcher": {
+"precon": 0.0312
+},
+"plaguecrafter": {
+"precon": 0.0312
+},
+"plan for all outcomes": {
+"precon": 0.0256
+},
+"planar nexus": {
+"precon": 0.0286
+},
+"planetary annihilation": {
+"precon": 0.0233
+},
+"plargg and nassari": {
+"precon": 0.0233
+},
+"plasm capture": {
+"precon": 0.0476
+},
+"plasma caster": {
+"precon": 0.0233
+},
+"plateau": {
+"cedh": 0.2188
+},
+"plaza of harmony": {
+"precon": 0.0143
+},
+"plaza of heroes": {
+"precon": 0.0286
+},
+"plumb the forbidden": {
+"precon": 0.0625
+},
+"plumecreed escort": {
+"precon": 0.0256
+},
+"plundering barbarian": {
+"cedh": 0.0769
+},
+"poison dart frog": {
+"precon": 0.0513
+},
+"poison-tip archer": {
+"precon": 0.0588
+},
+"polluted cistern": {
+"precon": 0.0312
+},
+"polluted delta": {
+"cedh": 0.7656
+},
+"pollywog prodigy": {
+"cedh": 0.0417,
+"precon": 0.0256
+},
+"polygoyf": {
+"precon": 0.0513
+},
+"ponder": {
+"precon": 0.0769
+},
+"pongify": {
+"cedh": 0.0208,
+"precon": 0.1282
+},
+"port razer": {
+"cedh": 0.0385
+},
+"port town": {
+"precon": 0.32
+},
+"portable hole": {
+"cedh": 0.0357
+},
+"portal to phyrexia": {
+"cedh": 0.0469
+},
+"portent": {
+"precon": 0.0256
+},
+"powder ganger": {
+"precon": 0.0233
+},
+"power fist": {
+"precon": 0.0256
+},
+"power pack": {
+"precon": 0.25
+},
+"praetor's grasp": {
+"cedh": 0.2857
+},
+"prairie stream": {
+"precon": 0.2286
+},
+"pre-war formalwear": {
+"precon": 0.0233
+},
+"predators' hour": {
+"precon": 0.0312
+},
+"preordain": {
+"precon": 0.0513
+},
+"preston garvey, minuteman": {
+"precon": 0.0769
+},
+"preston, the vanisher": {
+"cedh": 0.0357
+},
+"priest of fell rites": {
+"precon": 0.1111
+},
+"priest of forgotten gods": {
+"precon": 0.0312
+},
+"priest of the crossing": {
+"precon": 0.0233
+},
+"priest of titania": {
+"cedh": 0.1143
+},
+"primal beyond": {
+"precon": 0.0143
+},
+"primal might": {
+"precon": 0.0256
+},
+"primary research": {
+"precon": 0.0233
+},
+"prime speaker vannifar": {
+"cedh": 0.0357
+},
+"primeval bounty": {
+"precon": 0.0256
+},
+"primo, the unbounded": {
+"precon": 0.0476
+},
+"primordial hydra": {
+"precon": 0.0256
+},
+"primordial mist": {
+"precon": 0.0256
+},
+"printlifter ooze": {
+"precon": 0.0256
+},
+"prismari campus": {
+"precon": 0.0435
+},
+"prismari charm": {
+"precon": 0.0435
+},
+"prismari command": {
+"precon": 0.087
+},
+"prismari pianist": {
+"precon": 0.0233
+},
+"prismatic lens": {
+"precon": 0.0143
+},
+"prismatic vista": {
+"cedh": 0.1562
+},
+"prisoner's dilemma": {
+"precon": 0.0233
+},
+"profane tutor": {
+"cedh": 0.0286
+},
+"professional face-breaker": {
+"cedh": 0.3077,
+"precon": 0.093
+},
+"professor hojo": {
+"precon": 0.0513
+},
+"professor hulk": {
+"precon": 0.0513
+},
+"professor onyx": {
+"cedh": 0.0286,
+"precon": 0.0312
+},
+"progenitor's icon": {
+"precon": 0.0286
+},
+"prognostic sphinx": {
+"precon": 0.0256
+},
+"promise of loyalty": {
+"precon": 0.1628
+},
+"propaganda": {
+"precon": 0.2051
+},
+"prophet of the scarab": {
+"precon": 0.0256
+},
+"prosper, tome-bound": {
+"cedh": 0.0667
+},
+"prosperous bandit": {
+"precon": 0.0233
+},
+"prosperous innkeeper": {
+"precon": 0.0513
+},
+"protean hulk": {
+"cedh": 0.0571
+},
+"protection magic": {
+"precon": 0.0465
+},
+"protector of the wastes": {
+"precon": 0.0233
+},
+"proteus staff": {
+"precon": 0.0256
+},
+"prowler, clawed thief": {
+"precon": 0.125
+},
+"psychic frog": {
+"cedh": 0.037
+},
+"psychosis crawler": {
+"precon": 0.0429
+},
+"pteramander": {
+"precon": 0.0256
+},
+"puca's covenant": {
+"precon": 0.0256
+},
+"pugnacious hammerskull": {
+"precon": 0.0256
+},
+"pull from tomorrow": {
+"precon": 0.1795
+},
+"puppet master, string puller": {
+"precon": 0.0465
+},
+"puppeteer clique": {
+"precon": 0.0312
+},
+"puresteel paladin": {
+"precon": 0.0698
+},
+"putrefy": {
+"precon": 0.4118
+},
+"putrid imp": {
+"cedh": 0.0571
+},
+"pyreswipe hawk": {
+"precon": 0.0233
+},
+"pyretic charge": {
+"precon": 0.0233
+},
+"pyretic ritual": {
+"cedh": 0.1923
+},
+"pyroblast": {
+"cedh": 0.7692
+},
+"pyroclasm": {
+"cedh": 0.0769
+},
+"pyrogoyf": {
+"precon": 0.0465
+},
+"pyrokinesis": {
+"cedh": 0.2308
+},
+"pyxis of pandemonium": {
+"cedh": 0.0156
+},
+"quandrix apprentice": {
+"precon": 0.0476
+},
+"quandrix campus": {
+"precon": 0.1905
+},
+"quandrix charm": {
+"precon": 0.0476
+},
+"quandrix command": {
+"precon": 0.0476
+},
+"quantum misalignment": {
+"precon": 0.0513
+},
+"queen marchesa": {
+"precon": 0.0833
+},
+"queen mother ramonda": {
+"precon": 0.0465
+},
+"quest for the goblin lord": {
+"precon": 0.0233
+},
+"quicksilver, speedster": {
+"precon": 0.087
+},
+"quiet speculation": {
+"cedh": 0.0208
+},
+"quintorius, field historian": {
+"precon": 0.0345
+},
+"quintorius, history chaser": {
+"precon": 0.0345
+},
+"quintorius, loremaster": {
+"precon": 0.0345
+},
+"quirion ranger": {
+"cedh": 0.0857
+},
+"radagast the brown": {
+"cedh": 0.0286
+},
+"radiant fountain": {
+"precon": 0.0286
+},
+"radiant grove": {
+"precon": 0.0714
+},
+"radiant summit": {
+"precon": 0.1
+},
+"radical idea": {
+"precon": 0.0256
+},
+"radstorm": {
+"precon": 0.0256
+},
+"raffine's guidance": {
+"precon": 0.0233
+},
+"ragavan, nimble pilferer": {
+"cedh": 1.0
+},
+"raging ravine": {
+"precon": 0.2
+},
+"rain of filth": {
+"cedh": 0.4286
+},
+"rain of riches": {
+"precon": 0.0465
+},
+"rain-slicked copse": {
+"precon": 0.0429
+},
+"raise the palisade": {
+"precon": 0.0769
+},
+"rakdos carnarium": {
+"precon": 0.0526
+},
+"rakdos charm": {
+"precon": 0.1053
+},
+"rakdos guildgate": {
+"precon": 0.0526
+},
+"rakdos signet": {
+"precon": 0.1579
+},
+"rakdos, lord of riots": {
+"precon": 0.0526
+},
+"ral, monsoon mage": {
+"cedh": 0.0385
+},
+"ram through": {
+"precon": 0.0256
+},
+"rampaging aetherhood": {
+"precon": 0.0256
+},
+"rampaging baloths": {
+"precon": 0.1026
+},
+"rampaging ferocidon": {
+"precon": 0.0233
+},
+"rampaging yao guai": {
+"precon": 0.0256
+},
+"rampant frogantua": {
+"precon": 0.0513
+},
+"rampant growth": {
+"precon": 0.2564
+},
+"rampant rejuvenator": {
+"precon": 0.0513
+},
+"rampart architect": {
+"precon": 0.0256
+},
+"ramunap excavator": {
+"precon": 0.0769
+},
+"ramunap ruins": {
+"precon": 0.0233
+},
+"rancor": {
+"precon": 0.0256
+},
+"ranger-captain of eos": {
+"cedh": 0.8929
+},
+"rankle, master of pranks": {
+"precon": 0.0312
+},
+"ransom note": {
+"precon": 0.0429
+},
+"rapacious dragon": {
+"precon": 0.0465
+},
+"raph & mikey, troublemakers": {
+"cedh": 0.1
+},
+"raphael, tag team tough": {
+"cedh": 0.0385
+},
+"raphael, the muscle": {
+"precon": 0.0233
+},
+"rapid augmenter": {
+"precon": 0.0435
+},
+"rapid hybridization": {
+"cedh": 0.0417,
+"precon": 0.0769
+},
+"rashmi, eternities crafter": {
+"precon": 0.0476
+},
+"rat king, pale piper": {
+"precon": 0.0312
+},
+"rath's edge": {
+"cedh": 0.0156
+},
+"raul, trouble shooter": {
+"precon": 0.0625
+},
+"ravenous squirrel": {
+"precon": 0.0588
+},
+"ray fillet, wave warrior": {
+"precon": 0.0256
+},
+"razaketh, the foulblooded": {
+"cedh": 0.0857
+},
+"razorfield ripper": {
+"precon": 0.0465
+},
+"razorkin needlehead": {
+"cedh": 0.0385
+},
+"razorlash transmogrant": {
+"precon": 0.0312
+},
+"razortide bridge": {
+"precon": 0.08
+},
+"razorverge thicket": {
+"precon": 0.1905
+},
+"read the bones": {
+"precon": 0.0312
+},
+"reality shift": {
+"precon": 0.1282
+},
+"realm-cloaked giant": {
+"precon": 0.0233
+},
+"realmbreaker, the invasion tree": {
+"precon": 0.0143
+},
+"realmwalker": {
+"precon": 0.0513
+},
+"reanimate": {
+"cedh": 0.2,
+"precon": 0.0938
+},
+"reaper's scythe": {
+"precon": 0.0625
+},
+"reassembling skeleton": {
+"precon": 0.0312
+},
+"reckless barbarian": {
+"cedh": 0.0385
+},
+"reckless fireweaver": {
+"precon": 0.0233
+},
+"reckless handling": {
+"cedh": 0.0385
+},
+"reckless impulse": {
+"cedh": 0.0385
+},
+"recon craft theta": {
+"precon": 0.0143
+},
+"reconnaissance mission": {
+"precon": 0.0513
+},
+"recurring insight": {
+"precon": 0.0513
+},
+"red death, shipwrecker": {
+"precon": 0.0435
+},
+"red elemental blast": {
+"cedh": 0.8077
+},
+"red ghost, intangible genius": {
+"precon": 0.087
+},
+"red xiii, proud warrior": {
+"precon": 0.1
+},
+"redcap gutter-dweller": {
+"precon": 0.0233
+},
+"redemption arc": {
+"precon": 0.0465
+},
+"redirect lightning": {
+"cedh": 0.5385
+},
+"redoubled stormsinger": {
+"precon": 0.0465
+},
+"redress fate": {
+"precon": 0.0233
+},
+"reflecting pool": {
+"precon": 0.0286
+},
+"reflections of littjara": {
+"precon": 0.0256
+},
+"refocus": {
+"cedh": 0.0208
+},
+"regal force": {
+"cedh": 0.0571
+},
+"regal imperiosaur": {
+"precon": 0.0256
+},
+"reiterate": {
+"cedh": 0.0385
+},
+"rejoin the fight": {
+"precon": 0.0625
+},
+"rejuvenating springs": {
+"cedh": 0.2143,
+"precon": 0.0952
+},
+"release the dogs": {
+"precon": 0.0233
+},
+"relentless assault": {
+"cedh": 0.0385
+},
+"relic of legends": {
+"cedh": 0.0625,
+"precon": 0.0571
+},
+"relic of sauron": {
+"cedh": 0.0714
+},
+"relic retriever": {
+"precon": 0.0233
+},
+"reliquary tower": {
+"cedh": 0.0156,
+"precon": 0.2
+},
+"remorseful cleric": {
+"precon": 0.0233
+},
+"remote farm": {
+"cedh": 0.0357
+},
+"remote isle": {
+"precon": 0.0256
+},
+"rending volley": {
+"cedh": 0.0385
+},
+"rendmaw, creaking nest": {
+"precon": 0.0588
+},
+"renegade bull": {
+"precon": 0.0233
+},
+"renegade tactics": {
+"precon": 0.0233
+},
+"renewed solidarity": {
+"precon": 0.0233
+},
+"replication technique": {
+"precon": 0.0769
+},
+"repurposing bay": {
+"cedh": 0.0208
+},
+"requisition raid": {
+"precon": 0.0465
+},
+"rescue, pepper potts": {
+"precon": 0.0513
+},
+"resculpt": {
+"cedh": 0.0208,
+"precon": 0.0256
+},
+"research thief": {
+"precon": 0.0256
+},
+"reshape": {
+"cedh": 0.0208
+},
+"resourceful defense": {
+"precon": 0.0698
+},
+"resplendent angel": {
+"precon": 0.0233
+},
+"restless anchorage": {
+"precon": 0.04
+},
+"restless prairie": {
+"precon": 0.0476
+},
+"restless spire": {
+"precon": 0.087
+},
+"restoration angel": {
+"cedh": 0.0357,
+"precon": 0.0233
+},
+"retraction helix": {
+"cedh": 0.0208
+},
+"retreat to coralhelm": {
+"precon": 0.0256
+},
+"retrofitter foundry": {
+"precon": 0.0143
+},
+"return of the wildspeaker": {
+"precon": 0.1282
+},
+"return the favor": {
+"cedh": 0.0769
+},
+"return to dust": {
+"precon": 0.0233
+},
+"reunion of the house": {
+"precon": 0.0233
+},
+"revel in riches": {
+"precon": 0.0312
+},
+"rex, cyber-hound": {
+"precon": 0.04
+},
+"reya dawnbringer": {
+"precon": 0.0233
+},
+"rhet-tomb mystic": {
+"precon": 0.0256
+},
+"rhonas the indomitable": {
+"precon": 0.0256
+},
+"rhonas's monument": {
+"precon": 0.0143
+},
+"rhox faithmender": {
+"precon": 0.0233
+},
+"rhys the redeemed": {
+"precon": 0.0476
+},
+"rhystic study": {
+"cedh": 0.9375
+},
+"rhythm of the wild": {
+"cedh": 0.1
+},
+"ribtruss roaster": {
+"precon": 0.0256
+},
+"righteous valkyrie": {
+"precon": 0.0233
+},
+"rikku, resourceful guardian": {
+"precon": 0.0513
+},
+"rin and seri, inseparable": {
+"precon": 0.0769
+},
+"rionya, fire dancer": {
+"cedh": 0.0385,
+"precon": 0.0233
+},
+"riot control": {
+"precon": 0.0233
+},
+"rip apart": {
+"precon": 0.1034
+},
+"ripjaw raptor": {
+"precon": 0.0256
+},
+"ripples of potential": {
+"precon": 0.0256
+},
+"riptide shapeshifter": {
+"cedh": 0.0417
+},
+"rise of the dark realms": {
+"precon": 0.0625
+},
+"risen reef": {
+"precon": 0.0952
+},
+"rishkar's expertise": {
+"precon": 0.0769
+},
+"rishkar, peema renegade": {
+"cedh": 0.0286,
+"precon": 0.0513
+},
+"rite of flame": {
+"cedh": 1.0
+},
+"rite of replication": {
+"precon": 0.1282
+},
+"rite of the raging storm": {
+"precon": 0.0233
+},
+"rites of flourishing": {
+"precon": 0.0256
+},
+"river kelpie": {
+"precon": 0.0256
+},
+"riveteers charm": {
+"precon": 0.2
+},
+"riveteers overlook": {
+"precon": 0.0571
+},
+"roadkill rodney": {
+"precon": 0.0143
+},
+"roadside reliquary": {
+"precon": 0.0143
+},
+"roaming throne": {
+"cedh": 0.0312,
+"precon": 0.0143
+},
+"robobrain war mind": {
+"precon": 0.0256
+},
+"rockfall vale": {
+"precon": 0.05
+},
+"rocksteady, mutant marauder": {
+"precon": 0.0256
+},
+"rocky tar pit": {
+"precon": 0.0143
+},
+"rograkh, son of rohgahh": {
+"cedh": 0.25
+},
+"rogue refiner": {
+"precon": 0.0476
+},
+"rogue's passage": {
+"precon": 0.1143
+},
+"roil cartographer": {
+"precon": 0.0513
+},
+"roiling regrowth": {
+"precon": 0.0256
+},
+"rolling hamsphere": {
+"precon": 0.0143
+},
+"romantic rendezvous": {
+"cedh": 0.0385
+},
+"root elemental": {
+"precon": 0.0256
+},
+"root maze": {
+"cedh": 0.0286
+},
+"rootborn defenses": {
+"precon": 0.0233
+},
+"rootbound crag": {
+"precon": 0.5
+},
+"rootcast apprenticeship": {
+"precon": 0.0256
+},
+"rootha, mastering the moment": {
+"precon": 0.0435
+},
+"rootha, mercurial artist": {
+"precon": 0.0435
+},
+"rose room treasurer": {
+"precon": 0.0233
+},
+"rose, cutthroat raider": {
+"precon": 0.0233
+},
+"rot hulk": {
+"precon": 0.0312
+},
+"rousing refrain": {
+"precon": 0.0465
+},
+"rowdy research": {
+"precon": 0.0256
+},
+"royal talon fighter jet": {
+"precon": 0.0465
+},
+"royal treatment": {
+"cedh": 0.0286
+},
+"ruby medallion": {
+"cedh": 0.0312,
+"precon": 0.0143
+},
+"rugged prairie": {
+"cedh": 0.0667,
+"precon": 0.3103
+},
+"ruin grinder": {
+"precon": 0.0465
+},
+"ruinous ultimatum": {
+"precon": 0.25
+},
+"ruins of oran-rief": {
+"precon": 0.0286
+},
+"rukarumel, biologist": {
+"precon": 0.1667
+},
+"rumbleweed": {
+"precon": 0.0256
+},
+"rundvelt hordemaster": {
+"precon": 0.0233
+},
+"runic armasaur": {
+"cedh": 0.0286
+},
+"rustvale bridge": {
+"precon": 0.069
+},
+"ruthless radrat": {
+"precon": 0.0312
+},
+"sabin, master monk": {
+"precon": 0.0465
+},
+"sacred foundry": {
+"cedh": 0.0156
+},
+"sacred peaks": {
+"precon": 0.0857
+},
+"sacrifice": {
+"cedh": 0.1429
+},
+"sadistic shell game": {
+"precon": 0.0312
+},
+"sage of the beyond": {
+"precon": 0.0256
+},
+"sage of the maze": {
+"precon": 0.0513
+},
+"sage's nouliths": {
+"precon": 0.0513
+},
+"sage's reverie": {
+"precon": 0.0233
+},
+"saheeli, radiant creator": {
+"precon": 0.1
+},
+"saheeli, sublime artificer": {
+"precon": 0.0435
+},
+"sai, master thopterist": {
+"precon": 0.0513
+},
+"sakashima the impostor": {
+"cedh": 0.0208
+},
+"sakura-tribe elder": {
+"precon": 0.2051
+},
+"salt road ambushers": {
+"precon": 0.0256
+},
+"salvation colossus": {
+"precon": 0.0465
+},
+"samut, hazoret's champion": {
+"cedh": 0.1154
+},
+"samut, tyrant of naktamun": {
+"cedh": 0.25
+},
+"samwise gamgee": {
+"cedh": 0.0625
+},
+"sanctum weaver": {
+"cedh": 0.0571,
+"precon": 0.0256
+},
+"sand scout": {
+"precon": 0.0233
+},
+"sandsteppe citadel": {
+"precon": 0.2857
+},
+"sandstone needle": {
+"cedh": 0.0385
+},
+"sandwurm convergence": {
+"precon": 0.0256
+},
+"sanguine bond": {
+"cedh": 0.0286
+},
+"saprazzan skerry": {
+"cedh": 0.0208
+},
+"sapseep forest": {
+"precon": 0.0256
+},
+"sarkhan, dragon ascendant": {
+"precon": 0.0233
+},
+"sarkhan, soul aflame": {
+"precon": 0.0435
+},
+"saruli caretaker": {
+"cedh": 0.0571
+},
+"saryth, the viper's fang": {
+"cedh": 0.0286,
+"precon": 0.0256
+},
+"satya, aetherflux genius": {
+"precon": 0.1176
+},
+"satyr wayfinder": {
+"precon": 0.1282
+},
+"savage beating": {
+"cedh": 0.0385
+},
+"savage lands": {
+"precon": 0.4
+},
+"savannah": {
+"cedh": 0.2344
+},
+"savvy trader": {
+"precon": 0.0256
+},
+"saw in half": {
+"cedh": 0.1143,
+"precon": 0.0312
+},
+"sawhorn nemesis": {
+"precon": 0.0465
+},
+"sazacap's brew": {
+"precon": 0.0233
+},
+"sazh's chocobo": {
+"cedh": 0.0286
+},
+"scalding tarn": {
+"cedh": 0.75
+},
+"scapeshift": {
+"cedh": 0.0286
+},
+"scaretiller": {
+"precon": 0.0143
+},
+"scarlet witch, chaotic avenger": {
+"precon": 0.087
+},
+"scattered groves": {
+"precon": 0.0857
+},
+"scavenger grounds": {
+"precon": 0.2
+},
+"scavenging ooze": {
+"precon": 0.0513
+},
+"scheming symmetry": {
+"cedh": 0.0857
+},
+"scholar of new horizons": {
+"precon": 0.0465
+},
+"scholar of the lost trove": {
+"cedh": 0.0208
+},
+"scorched geyser": {
+"precon": 0.1
+},
+"scour for scrap": {
+"cedh": 0.0208
+},
+"scourge of the throne": {
+"precon": 0.0698
+},
+"scourge of valkas": {
+"precon": 0.0233
+},
+"scourglass": {
+"precon": 0.0465
+},
+"scouring swarm": {
+"precon": 0.0588
+},
+"scrapshooter": {
+"precon": 0.0256
+},
+"scrawling crawler": {
+"cedh": 0.0156,
+"precon": 0.0143
+},
+"screams from within": {
+"precon": 0.0312
+},
+"screeching scorchbeast": {
+"precon": 0.0312
+},
+"scriv, the obligator": {
+"precon": 0.0556
+},
+"scroll of fate": {
+"precon": 0.0286
+},
+"scroll rack": {
+"cedh": 0.0469
+},
+"scrubland": {
+"cedh": 0.3125
+},
+"scryb ranger": {
+"cedh": 0.0857
+},
+"sculpting steel": {
+"cedh": 0.0469
+},
+"scurry of gremlins": {
+"precon": 0.069
+},
+"scurry of squirrels": {
+"precon": 0.0256
+},
+"scute swarm": {
+"cedh": 0.0571,
+"precon": 0.1026
+},
+"scythecat cub": {
+"cedh": 0.0286
+},
+"sea gate": {
+"precon": 0.0256
+},
+"sea gate restoration": {
+"cedh": 0.0417
+},
+"sea of clouds": {
+"cedh": 0.0833
+},
+"seachrome coast": {
+"precon": 0.08
+},
+"seal of cleansing": {
+"precon": 0.0233
+},
+"seal of primordium": {
+"cedh": 0.0286
+},
+"search the premises": {
+"precon": 0.0465
+},
+"searslicer goblin": {
+"precon": 0.0233
+},
+"seaside citadel": {
+"precon": 0.5
+},
+"seat of the synod": {
+"cedh": 0.0417,
+"precon": 0.0256
+},
+"secluded courtyard": {
+"precon": 0.1
+},
+"secluded glen": {
+"precon": 0.0625
+},
+"secluded steppe": {
+"precon": 0.0698
+},
+"second harvest": {
+"precon": 0.0256
+},
+"secret arcade": {
+"precon": 0.0233
+},
+"secret rendezvous": {
+"precon": 0.1395
+},
+"secure the wastes": {
+"precon": 0.0465
+},
+"securitron squadron": {
+"precon": 0.0233
+},
+"seedborn muse": {
+"cedh": 0.2571,
+"precon": 0.0769
+},
+"seedtime": {
+"cedh": 0.0286
+},
+"seer's sundial": {
+"precon": 0.0286
+},
+"seething song": {
+"cedh": 0.1154,
+"precon": 0.0233
+},
+"segovian angel": {
+"precon": 0.0233
+},
+"seize the day": {
+"cedh": 0.0769,
+"precon": 0.0465
+},
+"seize the spoils": {
+"precon": 0.0233
+},
+"seize the spotlight": {
+"precon": 0.0233
+},
+"selective obliteration": {
+"precon": 0.0286
+},
+"selesnya guildgate": {
+"precon": 0.0476
+},
+"selesnya sanctuary": {
+"precon": 0.1429
+},
+"selesnya signet": {
+"precon": 0.0952
+},
+"selfless spirit": {
+"precon": 0.0698
+},
+"selfless squire": {
+"precon": 0.0233
+},
+"selvala's stampede": {
+"precon": 0.0256
+},
+"selvala, explorer returned": {
+"precon": 0.0952
+},
+"selvala, heart of the wilds": {
+"cedh": 0.0571,
+"precon": 0.0769
+},
+"sensei's divining top": {
+"cedh": 0.0938
+},
+"sentinel sarah lyons": {
+"precon": 0.0345
+},
+"sentinel's eyes": {
+"precon": 0.0233
+},
+"sentry bot": {
+"precon": 0.0233
+},
+"sephara, sky's blade": {
+"precon": 0.0233
+},
+"sephiroth, fallen hero": {
+"precon": 0.069
+},
+"sepulchral primordial": {
+"precon": 0.0625
+},
+"seraph of the sword": {
+"precon": 0.0233
+},
+"seraph sanctuary": {
+"precon": 0.0286
+},
+"serene sleuth": {
+"precon": 0.0233
+},
+"serra avenger": {
+"precon": 0.0233
+},
+"serra paragon": {
+"precon": 0.0233
+},
+"serra's emissary": {
+"precon": 0.0233
+},
+"serum visions": {
+"precon": 0.0256
+},
+"servant of the conduit": {
+"precon": 0.0256
+},
+"setzer, wandering gambler": {
+"precon": 0.1053
+},
+"sevinne's reclamation": {
+"cedh": 0.5,
+"precon": 0.0698
+},
+"sewer-veillance cam": {
+"cedh": 0.0208
+},
+"shadow of the goblin": {
+"cedh": 0.0385
+},
+"shadow summoning": {
+"precon": 0.0556
+},
+"shadow, mysterious assassin": {
+"precon": 0.0625
+},
+"shadowblood ridge": {
+"precon": 0.3684
+},
+"shadowmage infiltrator": {
+"precon": 0.0625
+},
+"shadrix silverquill": {
+"precon": 0.1111
+},
+"shalai, voice of plenty": {
+"precon": 0.1429
+},
+"shallow grave": {
+"cedh": 0.0571
+},
+"shamanic revelation": {
+"precon": 0.0769
+},
+"shang-chi and the ten rings": {
+"precon": 0.08
+},
+"shang-chi, master of kung fu": {
+"cedh": 0.5714
+},
+"shapesharer": {
+"precon": 0.0256
+},
+"shard of the nightbringer": {
+"cedh": 0.0286
+},
+"shark typhoon": {
+"precon": 0.0769
+},
+"shatter the sky": {
+"precon": 0.0233
+},
+"shattered landscape": {
+"precon": 0.0833
+},
+"shattered sanctum": {
+"precon": 0.0556
+},
+"shatterskull smashing": {
+"cedh": 0.1154
+},
+"shaun, father of synths": {
+"precon": 0.0435
+},
+"she-hulk, wallbreaker": {
+"precon": 0.0465
+},
+"shefet dunes": {
+"precon": 0.0233
+},
+"shelinda, yevon acolyte": {
+"precon": 0.0952
+},
+"shellshock": {
+"precon": 0.0233
+},
+"sheltered by ghosts": {
+"precon": 0.0233
+},
+"sheltered thicket": {
+"precon": 0.1429
+},
+"sheoldred, the apocalypse": {
+"cedh": 0.1143
+},
+"shield broker": {
+"precon": 0.0256
+},
+"shield sphere": {
+"cedh": 0.0312
+},
+"shielded by faith": {
+"precon": 0.0233
+},
+"shields of velis vel": {
+"precon": 0.0233
+},
+"shifting woodland": {
+"cedh": 0.3429
+},
+"shigeki, jukai visionary": {
+"precon": 0.0513
+},
+"shiko and narset, unified": {
+"precon": 0.0588
+},
+"shimmer dragon": {
+"precon": 0.0513
+},
+"shimmer myr": {
+"precon": 0.0143
+},
+"shimmercreep": {
+"precon": 0.0312
+},
+"shineshadow snarl": {
+"precon": 0.2778
+},
+"shinka, the bloodsoaked keep": {
+"cedh": 0.0769,
+"precon": 0.0233
+},
+"shiny impetus": {
+"precon": 0.093
+},
+"shivan devastator": {
+"precon": 0.0233
+},
+"shivan gorge": {
+"precon": 0.0233
+},
+"shivan reef": {
+"cedh": 0.1053,
+"precon": 0.5217
+},
+"shoot the sheriff": {
+"precon": 0.0312
+},
+"shore up": {
+"cedh": 0.0417
+},
+"showstopping surprise": {
+"precon": 0.0233
+},
+"shredder, shadow master": {
+"precon": 0.0312
+},
+"shriekmaw": {
+"precon": 0.0312
+},
+"shriekwood devourer": {
+"precon": 0.0256
+},
+"shrine of the forsaken gods": {
+"precon": 0.0429
+},
+"shuri's fabricator": {
+"precon": 0.0286
+},
+"shuri, the black panther": {
+"precon": 0.0952
+},
+"sidar kondo of jamuraa": {
+"precon": 0.0952
+},
+"sidisi, undead vizier": {
+"cedh": 0.0571
+},
+"siege smash": {
+"cedh": 0.0769
+},
+"siege-gang commander": {
+"precon": 0.0698
+},
+"siege-gang lieutenant": {
+"precon": 0.0698
+},
+"siegfried, famed swordsman": {
+"precon": 0.0625
+},
+"sierra, nuka's biggest fan": {
+"precon": 0.0233
+},
+"sifter of skulls": {
+"precon": 0.0625
+},
+"sigil of the empty throne": {
+"precon": 0.0233
+},
+"sign in blood": {
+"cedh": 0.0286,
+"precon": 0.0625
+},
+"silas renn, seeker adept": {
+"cedh": 0.2222
+},
+"silence": {
+"cedh": 0.9643
+},
+"silent-blade oni": {
+"precon": 0.0625
+},
+"silhana ledgewalker": {
+"precon": 0.0256
+},
+"silkguard": {
+"precon": 0.0256
+},
+"silver myr": {
+"cedh": 0.0208,
+"precon": 0.0256
+},
+"silver shroud costume": {
+"cedh": 0.0156,
+"precon": 0.0143
+},
+"silver surfer, galactus's herald": {
+"precon": 0.0286
+},
+"silverbluff bridge": {
+"precon": 0.087
+},
+"silverquill campus": {
+"precon": 0.0556
+},
+"silverquill lecturer": {
+"precon": 0.0698
+},
+"simian spirit guide": {
+"cedh": 1.0
+},
+"simic ascendancy": {
+"precon": 0.0952
+},
+"simic growth chamber": {
+"precon": 0.1905
+},
+"simic guildgate": {
+"precon": 0.1429
+},
+"simic signet": {
+"precon": 0.0952
+},
+"simulacrum synthesizer": {
+"cedh": 0.0208
+},
+"sin, unending cataclysm": {
+"precon": 0.0952
+},
+"single combat": {
+"precon": 0.0233
+},
+"sinister gnarlbark": {
+"precon": 0.0312
+},
+"sink into stupor": {
+"cedh": 0.2083
+},
+"siphon insight": {
+"precon": 0.0625
+},
+"sire of stagnation": {
+"precon": 0.125
+},
+"six": {
+"cedh": 0.0857
+},
+"skaab ruinator": {
+"precon": 0.0256
+},
+"skarrgan hellkite": {
+"precon": 0.0233
+},
+"skateboard": {
+"cedh": 0.0312
+},
+"skeletal changeling": {
+"precon": 0.0312
+},
+"skinrender": {
+"precon": 0.0312
+},
+"skirge familiar": {
+"cedh": 0.0857
+},
+"skirk prospector": {
+"precon": 0.0233
+},
+"skittering invasion": {
+"precon": 0.0286
+},
+"skola grovedancer": {
+"precon": 0.0256
+},
+"skrelv's hive": {
+"precon": 0.0233
+},
+"skrelv, defector mite": {
+"cedh": 0.0357
+},
+"skull prophet": {
+"precon": 0.0588
+},
+"skullclamp": {
+"precon": 0.1286
+},
+"skullwinder": {
+"cedh": 0.0286,
+"precon": 0.0769
+},
+"skyclave apparition": {
+"precon": 0.093
+},
+"skycloud expanse": {
+"precon": 0.4
+},
+"skyfisher spider": {
+"precon": 0.0588
+},
+"skyline despot": {
+"precon": 0.0233
+},
+"skyshroud claim": {
+"precon": 0.0256
+},
+"skysovereign, consul flagship": {
+"precon": 0.0143
+},
+"slagwoods bridge": {
+"precon": 0.05
+},
+"slaughter pact": {
+"cedh": 0.0286
+},
+"slaughter the strong": {
+"precon": 0.0233
+},
+"slayers' stronghold": {
+"precon": 0.1034
+},
+"slippery bogbonder": {
+"cedh": 0.0286
+},
+"slither blade": {
+"precon": 0.0256
+},
+"slithermuse": {
+"precon": 0.0256
+},
+"smirking spelljacker": {
+"precon": 0.0256
+},
+"smokebraider": {
+"precon": 0.0233
+},
+"smoldering crater": {
+"precon": 0.0233
+},
+"smoldering marsh": {
+"precon": 0.1857
+},
+"smoldering stagecoach": {
+"precon": 0.0233
+},
+"smothering abomination": {
+"precon": 0.0312
+},
+"smothering tithe": {
+"cedh": 0.8571
+},
+"smuggler's copter": {
+"cedh": 0.0312
+},
+"smuggler's share": {
+"precon": 0.0233
+},
+"snake umbra": {
+"cedh": 0.0286
+},
+"snap": {
+"cedh": 0.3333
+},
+"snapback": {
+"cedh": 0.2708
+},
+"snapcaster mage": {
+"cedh": 0.0208
+},
+"snapping voidcraw": {
+"precon": 0.0952
+},
+"snort": {
+"precon": 0.0465
+},
+"snuff out": {
+"cedh": 0.1429,
+"precon": 0.0625
+},
+"soaring lightbringer": {
+"precon": 0.0233
+},
+"sodden verdure": {
+"precon": 0.0714
+},
+"sokenzan, crucible of defiance": {
+"cedh": 0.1538
+},
+"sol ring": {
+"cedh": 0.9844,
+"precon": 1.0
+},
+"solar array": {
+"precon": 0.0143
+},
+"solar transformer": {
+"precon": 0.0429
+},
+"soldier military program": {
+"precon": 0.0465
+},
+"solemn simulacrum": {
+"precon": 0.2143
+},
+"solitude": {
+"cedh": 0.1071
+},
+"solve the equation": {
+"cedh": 0.0417
+},
+"song of freyalise": {
+"precon": 0.0256
+},
+"song of the worldsoul": {
+"precon": 0.0233
+},
+"songbirds' blessing": {
+"precon": 0.0233
+},
+"songs of the damned": {
+"cedh": 0.0286
+},
+"sophia, dogged detective": {
+"precon": 0.1667
+},
+"soul of eternity": {
+"precon": 0.0233
+},
+"soul of windgrace": {
+"precon": 0.1
+},
+"soul snare": {
+"precon": 0.0233
+},
+"soul snuffers": {
+"precon": 0.0312
+},
+"soul warden": {
+"precon": 0.0233
+},
+"soul's attendant": {
+"precon": 0.0233
+},
+"soul-guide lantern": {
+"precon": 0.0429
+},
+"soulless jailer": {
+"cedh": 0.0156
+},
+"soulless one": {
+"precon": 0.0312
+},
+"sowing mycospawn": {
+"cedh": 0.3143
+},
+"spark double": {
+"cedh": 0.0208,
+"precon": 0.0513
+},
+"spark mage": {
+"cedh": 0.0769
+},
+"spawnbed protector": {
+"precon": 0.0286
+},
+"spawning bed": {
+"precon": 0.0286
+},
+"speaker of the heavens": {
+"precon": 0.0465
+},
+"special move": {
+"precon": 0.0233
+},
+"spectacle summit": {
+"precon": 0.0435
+},
+"spectacular showdown": {
+"precon": 0.0233
+},
+"spectacular spider-man": {
+"cedh": 0.0357
+},
+"spectator seating": {
+"cedh": 0.0667,
+"precon": 0.069
+},
+"speed, young avenger": {
+"precon": 0.0465
+},
+"spell pierce": {
+"cedh": 0.0417
+},
+"spellseeker": {
+"cedh": 0.2917
+},
+"spellskite": {
+"cedh": 0.1042
+},
+"sphere grid": {
+"precon": 0.0513
+},
+"sphere of resistance": {
+"cedh": 0.0156
+},
+"sphere of safety": {
+"precon": 0.0233
+},
+"sphinx of enlightenment": {
+"precon": 0.0256
+},
+"sphinx of the revelation": {
+"precon": 0.08
+},
+"sphinx of the second sun": {
+"cedh": 0.0208
+},
+"sphinx's revelation": {
+"precon": 0.04
+},
+"spider-sense": {
+"cedh": 0.0208
+},
+"spike weaver": {
+"cedh": 0.0286
+},
+"spiked corridor": {
+"precon": 0.0233
+},
+"spine of ish sah": {
+"precon": 0.0143
+},
+"spinerock knoll": {
+"precon": 0.0698
+},
+"spire garden": {
+"cedh": 0.2,
+"precon": 0.05
+},
+"spire golem": {
+"precon": 0.0143
+},
+"spire of industry": {
+"cedh": 0.0312,
+"precon": 0.0857
+},
+"spirit mantle": {
+"precon": 0.0233
+},
+"spirit of resilience": {
+"precon": 0.0233
+},
+"spirit-sister's call": {
+"precon": 0.0556
+},
+"spirited companion": {
+"precon": 0.0233
+},
+"spit flame": {
+"precon": 0.0465
+},
+"spiteful visions": {
+"precon": 0.0526
+},
+"splendid reclamation": {
+"cedh": 0.0286,
+"precon": 0.0256
+},
+"splinter, the mentor": {
+"precon": 0.0312
+},
+"spoils of adventure": {
+"precon": 0.04
+},
+"spore frog": {
+"precon": 0.0256
+},
+"spreading insurrection": {
+"precon": 0.0233
+},
+"springbloom druid": {
+"precon": 0.1026
+},
+"springheart nantuko": {
+"cedh": 0.2571
+},
+"springleaf drum": {
+"cedh": 0.3438,
+"precon": 0.0143
+},
+"springleaf parade": {
+"precon": 0.0256
+},
+"sprouting goblin": {
+"precon": 0.05
+},
+"squandered resources": {
+"cedh": 0.1538
+},
+"squee, goblin nabob": {
+"precon": 0.0233
+},
+"squee, the immortal": {
+"cedh": 0.0385
+},
+"squirrel nest": {
+"precon": 0.0513
+},
+"squirrel sovereign": {
+"precon": 0.0256
+},
+"sram, senior edificer": {
+"precon": 0.0233
+},
+"staff of compleation": {
+"cedh": 0.0312,
+"precon": 0.0143
+},
+"staff of domination": {
+"cedh": 0.0312
+},
+"staff of the storyteller": {
+"precon": 0.0465
+},
+"stalactite dagger": {
+"cedh": 0.0312
+},
+"stalking leonin": {
+"precon": 0.0233
+},
+"star athlete": {
+"precon": 0.0233
+},
+"starfield mystic": {
+"precon": 0.0465
+},
+"starnheim aspirant": {
+"precon": 0.0233
+},
+"starscape cleric": {
+"cedh": 0.0286
+},
+"starstorm": {
+"precon": 0.0233
+},
+"starting town": {
+"cedh": 0.4375
+},
+"steal enchantment": {
+"cedh": 0.0625
+},
+"steam vents": {
+"cedh": 0.1719
+},
+"steel hellkite": {
+"precon": 0.0429
+},
+"steel leaf champion": {
+"precon": 0.0256
+},
+"steel overseer": {
+"precon": 0.0429
+},
+"steelbane hydra": {
+"precon": 0.0513
+},
+"steelburr champion": {
+"precon": 0.0233
+},
+"stella lee, wild card": {
+"cedh": 0.0526,
+"precon": 0.0435
+},
+"stensian sanguinist": {
+"precon": 0.0312
+},
+"step through": {
+"cedh": 0.0417
+},
+"steward of the harvest": {
+"precon": 0.0256
+},
+"stick together": {
+"precon": 0.0233
+},
+"sticky fingers": {
+"precon": 0.0233
+},
+"stifle": {
+"cedh": 0.0208
+},
+"stilt-man, towering terror": {
+"precon": 0.0465
+},
+"stinkweed imp": {
+"cedh": 0.0286
+},
+"stitch together": {
+"cedh": 0.0286,
+"precon": 0.0625
+},
+"stitcher's supplier": {
+"cedh": 0.0286,
+"precon": 0.1875
+},
+"stock up": {
+"cedh": 0.0208
+},
+"stolen by the fae": {
+"precon": 0.0256
+},
+"stolen goods": {
+"precon": 0.0256
+},
+"stolen strategy": {
+"precon": 0.0233
+},
+"stomping ground": {
+"cedh": 0.0781
+},
+"stone idol generator": {
+"precon": 0.0286
+},
+"stone-seeder hierophant": {
+"cedh": 0.0286
+},
+"stonecoil serpent": {
+"precon": 0.0143
+},
+"stony silence": {
+"cedh": 0.0357
+},
+"storm herd": {
+"precon": 0.0233
+},
+"storm of memories": {
+"cedh": 0.0385
+},
+"storm of souls": {
+"precon": 0.0233
+},
+"storm's wrath": {
+"precon": 0.0233
+},
+"storm, queen of wakanda": {
+"precon": 0.0952
+},
+"storm-kiln artist": {
+"cedh": 0.1538,
+"precon": 0.093
+},
+"stormbreath dragon": {
+"precon": 0.0233
+},
+"stormcatch mentor": {
+"precon": 0.0435
+},
+"stormfist crusader": {
+"precon": 0.0526
+},
+"stormshriek feral": {
+"precon": 0.0233
+},
+"strago and relm": {
+"precon": 0.0465
+},
+"street wraith": {
+"cedh": 0.0286
+},
+"strength bobblehead": {
+"precon": 0.0143
+},
+"stridehangar automaton": {
+"cedh": 0.0156,
+"precon": 0.0143
+},
+"striding shotcaller": {
+"precon": 0.0476
+},
+"strike it rich": {
+"cedh": 0.3077
+},
+"strix serenade": {
+"cedh": 0.0208
+},
+"stroke of genius": {
+"precon": 0.0256
+},
+"stroke of midnight": {
+"precon": 0.0465
+},
+"strong back": {
+"precon": 0.0256
+},
+"strong, the brutish thespian": {
+"precon": 0.0256
+},
+"struggle for project purity": {
+"precon": 0.0256
+},
+"study hall": {
+"precon": 0.0714
+},
+"stunt double": {
+"cedh": 0.0208
+},
+"sublime epiphany": {
+"precon": 0.0769
+},
+"subterfuge": {
+"precon": 0.0256
+},
+"subtlety": {
+"cedh": 0.0833
+},
+"sudden shock": {
+"cedh": 0.0769
+},
+"suffer the past": {
+"precon": 0.0625
+},
+"sulfur falls": {
+"precon": 0.6522
+},
+"sulfurous springs": {
+"cedh": 0.0667,
+"precon": 0.4211
+},
+"summary dismissal": {
+"precon": 0.0513
+},
+"summer bloom": {
+"cedh": 0.0286
+},
+"summon: esper valigarmanda": {
+"precon": 0.0465
+},
+"summon: good king mog xii": {
+"precon": 0.0465
+},
+"summon: ixion": {
+"precon": 0.0465
+},
+"summon: kujata": {
+"precon": 0.0465
+},
+"summon: magus sisters": {
+"precon": 0.0513
+},
+"summon: valefor": {
+"precon": 0.0513
+},
+"summon: yojimbo": {
+"precon": 0.0465
+},
+"summoner's pact": {
+"cedh": 0.2571
+},
+"summoner's sending": {
+"precon": 0.0465
+},
+"summoning materia": {
+"precon": 0.0513
+},
+"sun titan": {
+"precon": 0.186
+},
+"sunbaked canyon": {
+"cedh": 0.0667
+},
+"sunbird's invocation": {
+"precon": 0.0233
+},
+"sunblast angel": {
+"precon": 0.0233
+},
+"sundering eruption": {
+"cedh": 0.0769
+},
+"sundering growth": {
+"precon": 0.0476
+},
+"sunfall": {
+"precon": 0.0233
+},
+"sungrass prairie": {
+"precon": 0.619
+},
+"sunhome, fortress of the legion": {
+"precon": 0.069
+},
+"sunken hollow": {
+"precon": 0.1286
+},
+"sunken palace": {
+"precon": 0.0513
+},
+"sunken ruins": {
+"precon": 0.1875
+},
+"sunlit marsh": {
+"precon": 0.0714
+},
+"sunpetal grove": {
+"precon": 0.5714
+},
+"sunscorch regent": {
+"precon": 0.093
+},
+"sunscorched divide": {
+"precon": 0.2759
+},
+"sunshower druid": {
+"cedh": 0.0286
+},
+"super combo": {
+"precon": 0.0256
+},
+"super mutant scavenger": {
+"precon": 0.0256
+},
+"superior foes of spider-man": {
+"precon": 0.0465
+},
+"supportive parents": {
+"cedh": 0.0286
+},
+"supreme verdict": {
+"cedh": 0.0417,
+"precon": 0.04
+},
+"surge conductor": {
+"precon": 0.0143
+},
+"surge to victory": {
+"precon": 0.0233
+},
+"surrak and goreclaw": {
+"precon": 0.0256
+},
+"surrak, the hunt caller": {
+"precon": 0.0256
+},
+"survival of the fittest": {
+"cedh": 0.1714
+},
+"survivor's med kit": {
+"precon": 0.0143
+},
+"survivors' encampment": {
+"cedh": 0.0312
+},
+"suspended sentence": {
+"precon": 0.0312
+},
+"suspicious bookcase": {
+"precon": 0.0143
+},
+"suture priest": {
+"precon": 0.0233
+},
+"swan song": {
+"cedh": 0.7708,
+"precon": 0.0256
+},
+"swarmyard": {
+"precon": 0.0143
+},
+"swarmyard massacre": {
+"precon": 0.0312
+},
+"swift demise": {
+"precon": 0.0312
+},
+"swift reconfiguration": {
+"cedh": 0.1786
+},
+"swiftfoot boots": {
+"precon": 0.1714
+},
+"sword of the animist": {
+"precon": 0.0571
+},
+"sword of the squeak": {
+"precon": 0.0143
+},
+"swords to plowshares": {
+"cedh": 0.4643,
+"precon": 0.4419
+},
+"sylvan caryatid": {
+"precon": 0.0256
+},
+"sylvan library": {
+"cedh": 0.1714
+},
+"sylvan safekeeper": {
+"cedh": 0.1714
+},
+"sylvan scrying": {
+"cedh": 0.2286,
+"precon": 0.0513
+},
+"sylvan tutor": {
+"cedh": 0.0286
+},
+"synth eradicator": {
+"precon": 0.0233
+},
+"synth infiltrator": {
+"precon": 0.0256
+},
+"synthetic destiny": {
+"precon": 0.0256
+},
+"syphon flesh": {
+"precon": 0.0312
+},
+"syphon mind": {
+"precon": 0.1875
+},
+"syr konrad, the grim": {
+"precon": 0.0938
+},
+"szarel, genesis shepherd": {
+"precon": 0.1
+},
+"s\u00e9ance board": {
+"precon": 0.0143
+},
+"t'chaka, venerable king": {
+"precon": 0.0952
+},
+"t'challa, the black panther": {
+"precon": 0.0952
+},
+"t-45 power armor": {
+"precon": 0.0143
+},
+"taiga": {
+"cedh": 0.2031
+},
+"tail swipe": {
+"cedh": 0.0286
+},
+"tainted field": {
+"precon": 0.1111
+},
+"tainted isle": {
+"precon": 0.125
+},
+"tainted pact": {
+"cedh": 0.7429
+},
+"tainted peak": {
+"precon": 0.2632
+},
+"tainted wood": {
+"precon": 0.2941
+},
+"take the bait": {
+"precon": 0.0345
+},
+"takenuma, abandoned mire": {
+"cedh": 0.0857
+},
+"talion, the kindly lord": {
+"cedh": 0.0741
+},
+"talisman of conviction": {
+"cedh": 0.0667,
+"precon": 0.3448
+},
+"talisman of creativity": {
+"cedh": 0.1579,
+"precon": 0.3478
+},
+"talisman of curiosity": {
+"cedh": 0.1429,
+"precon": 0.2381
+},
+"talisman of dominance": {
+"cedh": 0.3704,
+"precon": 0.5625
+},
+"talisman of hierarchy": {
+"cedh": 0.0476,
+"precon": 0.3333
+},
+"talisman of impulse": {
+"cedh": 0.1,
+"precon": 0.3
+},
+"talisman of indulgence": {
+"cedh": 0.2667,
+"precon": 0.4737
+},
+"talisman of progress": {
+"cedh": 0.0833,
+"precon": 0.4
+},
+"talisman of resilience": {
+"cedh": 0.0769,
+"precon": 0.4118
+},
+"talisman of unity": {
+"precon": 0.0476
+},
+"talon gates of madara": {
+"cedh": 0.4531,
+"precon": 0.0286
+},
+"talrand, sky summoner": {
+"precon": 0.0256
+},
+"tam, mindful first-year": {
+"cedh": 0.0357
+},
+"tamiyo's logbook": {
+"precon": 0.0256
+},
+"tamiyo's safekeeping": {
+"precon": 0.0256
+},
+"tamiyo, field researcher": {
+"precon": 0.0833
+},
+"tamiyo, upriser crowned": {
+"precon": 0.0345
+},
+"tanazir quandrix": {
+"precon": 0.0476
+},
+"tandem lookout": {
+"cedh": 0.0208
+},
+"tangle wire": {
+"cedh": 0.0156
+},
+"tangled islet": {
+"precon": 0.0571
+},
+"tanglepool bridge": {
+"precon": 0.0476
+},
+"tangletrove kelp": {
+"precon": 0.0256
+},
+"tangleweave armor": {
+"precon": 0.0256
+},
+"tarmogoyf nest": {
+"precon": 0.0513
+},
+"tarnished citadel": {
+"cedh": 0.2031
+},
+"tasigur, the golden fang": {
+"cedh": 0.1,
+"precon": 0.1111
+},
+"tataru taru": {
+"cedh": 0.6071,
+"precon": 0.0465
+},
+"tato farmer": {
+"precon": 0.0256
+},
+"tatyova, benthic druid": {
+"precon": 0.1429
+},
+"taunt from the rampart": {
+"precon": 0.069
+},
+"taurean mauler": {
+"precon": 0.093
+},
+"tavern scoundrel": {
+"cedh": 0.0385
+},
+"tayam, luminous enigma": {
+"cedh": 0.0909
+},
+"tazri, beacon of unity": {
+"precon": 0.1667
+},
+"teacher's pest": {
+"precon": 0.0588
+},
+"team tactics": {
+"cedh": 0.0385
+},
+"teapot slinger": {
+"precon": 0.0233
+},
+"tear asunder": {
+"precon": 0.1765
+},
+"teardrop kami": {
+"cedh": 0.0208
+},
+"tectonic edge": {
+"precon": 0.0286
+},
+"tectonic giant": {
+"precon": 0.0233
+},
+"teferi's ageless insight": {
+"precon": 0.0256
+},
+"teferi's reproach": {
+"precon": 0.0233
+},
+"teferi, mage of zhalfir": {
+"cedh": 0.0417
+},
+"teferi, time raveler": {
+"cedh": 0.125
+},
+"tekuthal, inquiry dominus": {
+"precon": 0.0256
+},
+"tel-jilad stylus": {
+"cedh": 0.0156
+},
+"telling time": {
+"precon": 0.0256
+},
+"temmet, naktamun's will": {
+"precon": 0.0909
+},
+"tempest technique": {
+"precon": 0.0233
+},
+"tempestra, dame of games": {
+"precon": 0.0233
+},
+"temple garden": {
+"cedh": 0.0938
+},
+"temple of abandon": {
+"precon": 0.3
+},
+"temple of deceit": {
+"precon": 0.25
+},
+"temple of enlightenment": {
+"precon": 0.44
+},
+"temple of epiphany": {
+"precon": 0.3913
+},
+"temple of malady": {
+"precon": 0.6471
+},
+"temple of malice": {
+"precon": 0.2632
+},
+"temple of mystery": {
+"precon": 0.5238
+},
+"temple of plenty": {
+"precon": 0.381
+},
+"temple of silence": {
+"precon": 0.5
+},
+"temple of the dragon queen": {
+"precon": 0.0143
+},
+"temple of the false god": {
+"precon": 0.2571
+},
+"temple of triumph": {
+"precon": 0.4138
+},
+"temporal manipulation": {
+"cedh": 0.0208
+},
+"tempt with bunnies": {
+"precon": 0.0233
+},
+"tempt with discovery": {
+"precon": 0.0256
+},
+"tempt with mayhem": {
+"precon": 0.0465
+},
+"tempt with vengeance": {
+"precon": 0.0233
+},
+"temur ascendancy": {
+"precon": 0.1
+},
+"temur battle rage": {
+"cedh": 0.0385
+},
+"temur sabertooth": {
+"cedh": 0.0571
+},
+"temur war shaman": {
+"precon": 0.0513
+},
+"tendershoot dryad": {
+"precon": 0.0769
+},
+"tendo ice bridge": {
+"precon": 0.0286
+},
+"tendrils of agony": {
+"cedh": 0.0286
+},
+"tendrils of corruption": {
+"precon": 0.0312
+},
+"tenuous truce": {
+"precon": 0.0233
+},
+"tenured inkcaster": {
+"precon": 0.0312
+},
+"terastodon": {
+"precon": 0.0513
+},
+"terminate": {
+"precon": 0.2632
+},
+"terminus": {
+"precon": 0.0233
+},
+"terra, herald of hope": {
+"precon": 0.1667
+},
+"terramorph": {
+"precon": 0.0513
+},
+"terramorphic expanse": {
+"precon": 0.4429
+},
+"terrian, world tyrant": {
+"precon": 0.0256
+},
+"territorial aetherkite": {
+"precon": 0.0233
+},
+"territorial hellkite": {
+"precon": 0.0233
+},
+"terror of mount velus": {
+"precon": 0.0233
+},
+"tesak, judith's hellhound": {
+"precon": 0.0233
+},
+"teshar, ancestor's apostle": {
+"precon": 0.0233
+},
+"test of endurance": {
+"precon": 0.0233
+},
+"tetsuko umezawa, fugitive": {
+"precon": 0.0256
+},
+"teval's judgment": {
+"precon": 0.0312
+},
+"teval, the balanced scale": {
+"precon": 0.1111
+},
+"tezzeret the seeker": {
+"cedh": 0.0625
+},
+"tezzeret's gambit": {
+"precon": 0.1026
+},
+"tezzeret, betrayer of flesh": {
+"precon": 0.0256
+},
+"tezzeret, cruel captain": {
+"cedh": 0.125
+},
+"thalisse, reverent medium": {
+"precon": 0.0556
+},
+"thancred waters": {
+"precon": 0.0465
+},
+"thassa's oracle": {
+"cedh": 0.5417
+},
+"the bears of littjara": {
+"precon": 0.0476
+},
+"the cabbage merchant": {
+"cedh": 0.3429
+},
+"the elder dragon war": {
+"precon": 0.0233
+},
+"the eldest reborn": {
+"precon": 0.0312
+},
+"the eternal wanderer": {
+"precon": 0.0233
+},
+"the falcon, airship restored": {
+"precon": 0.0625
+},
+"the fantasticar": {
+"precon": 0.0286
+},
+"the frightful four": {
+"precon": 0.0625
+},
+"the gitrog monster": {
+"precon": 0.0588
+},
+"the goose mother": {
+"precon": 0.0476
+},
+"the great mound": {
+"precon": 0.0286
+},
+"the last agni kai": {
+"cedh": 0.0385
+},
+"the lord of pain": {
+"precon": 0.0526
+},
+"the mana rig": {
+"cedh": 0.0156
+},
+"the master of keys": {
+"precon": 0.0909
+},
+"the master, transcendent": {
+"precon": 0.1111
+},
+"the meathook massacre": {
+"cedh": 0.0286
+},
+"the mending of dominaria": {
+"precon": 0.0256
+},
+"the mimeoplasm": {
+"precon": 0.1111
+},
+"the motherlode, excavator": {
+"precon": 0.0233
+},
+"the mycosynth gardens": {
+"cedh": 0.0156,
+"precon": 0.0143
+},
+"the nipton lottery": {
+"precon": 0.0526
+},
+"the odd acorn gang": {
+"precon": 0.0588
+},
+"the one ring": {
+"cedh": 0.1875
+},
+"the prydwen, steel flagship": {
+"precon": 0.0233
+},
+"the queen of dale": {
+"cedh": 0.5714
+},
+"the reaper, king no more": {
+"precon": 0.1
+},
+"the reaver cleaver": {
+"precon": 0.0465
+},
+"the scarab god": {
+"precon": 0.0625
+},
+"the scorpion god": {
+"precon": 0.0526
+},
+"the soul stone": {
+"cedh": 0.0571
+},
+"the spear of bashenga": {
+"precon": 0.0465
+},
+"the squadron sinister": {
+"precon": 0.087
+},
+"the ten rings": {
+"cedh": 0.0156
+},
+"the theorist, jace beleren": {
+"cedh": 0.0417
+},
+"the thing": {
+"precon": 0.25
+},
+"the unagi of kyoshi island": {
+"cedh": 0.0208
+},
+"the unbeatable squirrel girl": {
+"cedh": 0.1429
+},
+"the ur-sphinx": {
+"precon": 0.0909
+},
+"the warring triad": {
+"precon": 0.0286
+},
+"the wasp, winsome avenger": {
+"precon": 0.0513
+},
+"the wise mothman": {
+"precon": 0.1111
+},
+"the world tree": {
+"precon": 0.3333
+},
+"theater of horrors": {
+"precon": 0.0526
+},
+"thelonite hermit": {
+"precon": 0.0256
+},
+"thespian's stage": {
+"precon": 0.0286
+},
+"they came from the pipes": {
+"precon": 0.0256
+},
+"thickest in the thicket": {
+"precon": 0.0513
+},
+"thief of sanity": {
+"precon": 0.0625
+},
+"thieving amalgam": {
+"precon": 0.0312
+},
+"thieving skydiver": {
+"precon": 0.0256
+},
+"thieving varmint": {
+"precon": 0.0312
+},
+"think twice": {
+"precon": 0.0513
+},
+"third path iconoclast": {
+"precon": 0.087
+},
+"thirst for knowledge": {
+"precon": 0.0769
+},
+"thirst for meaning": {
+"precon": 0.0256
+},
+"this town ain't big enough": {
+"cedh": 0.0417
+},
+"thopter engineer": {
+"precon": 0.0233
+},
+"thopter fabricator": {
+"precon": 0.0256
+},
+"thopter spy network": {
+"precon": 0.0513
+},
+"thor, asgard's avenger": {
+"precon": 0.0465
+},
+"thorn of amethyst": {
+"cedh": 0.0156
+},
+"thornglint bridge": {
+"precon": 0.0476
+},
+"thornspire verge": {
+"cedh": 0.1
+},
+"thornwood falls": {
+"precon": 0.1429
+},
+"thought monitor": {
+"precon": 0.0769
+},
+"thought vessel": {
+"precon": 0.1429
+},
+"thoughtcast": {
+"precon": 0.0256
+},
+"thousand-year elixir": {
+"cedh": 0.0156
+},
+"thraben charm": {
+"cedh": 0.0357
+},
+"thraben watcher": {
+"precon": 0.0233
+},
+"thran dynamo": {
+"cedh": 0.0156,
+"precon": 0.0429
+},
+"thran spider": {
+"cedh": 0.0156
+},
+"thrashing brontodon": {
+"precon": 0.0256
+},
+"thrasios, triton hero": {
+"cedh": 0.5357
+},
+"three dog, galaxy news dj": {
+"precon": 0.0345
+},
+"three tree mascot": {
+"cedh": 0.0156
+},
+"three visits": {
+"precon": 0.1795
+},
+"threefold thunderhulk": {
+"precon": 0.0143
+},
+"thrill of possibility": {
+"cedh": 0.0385,
+"precon": 0.0233
+},
+"thrill-kill disciple": {
+"precon": 0.0233
+},
+"thrilling discovery": {
+"precon": 0.0345
+},
+"thriving bluff": {
+"precon": 0.0465
+},
+"thriving grove": {
+"precon": 0.0769
+},
+"thriving heath": {
+"precon": 0.093
+},
+"thriving isle": {
+"precon": 0.1282
+},
+"thriving moor": {
+"precon": 0.0938
+},
+"throes of chaos": {
+"precon": 0.0233
+},
+"throne of eldraine": {
+"precon": 0.0143
+},
+"throne of the high city": {
+"precon": 0.0429
+},
+"thrummingbird": {
+"precon": 0.0256
+},
+"thunderbreak regent": {
+"precon": 0.0465
+},
+"thunderclap drake": {
+"precon": 0.0513
+},
+"thunderfoot baloth": {
+"precon": 0.0256
+},
+"thundering falls": {
+"cedh": 0.0312
+},
+"thundermane dragon": {
+"precon": 0.0465
+},
+"tibalt's trickery": {
+"cedh": 0.1538
+},
+"tidal bore": {
+"cedh": 0.0625
+},
+"tidus, yuna's guardian": {
+"precon": 0.1667
+},
+"tifa, martial artist": {
+"precon": 0.1538
+},
+"time sieve": {
+"cedh": 0.037
+},
+"time wipe": {
+"precon": 0.12
+},
+"timeless dragon": {
+"precon": 0.0233
+},
+"timeless lotus": {
+"precon": 0.1667
+},
+"timeless witness": {
+"precon": 0.0256
+},
+"timely ward": {
+"precon": 0.0233
+},
+"timetwister": {
+"cedh": 0.0833
+},
+"tinder wall": {
+"cedh": 0.4
+},
+"tinybones joins up": {
+"cedh": 0.0286
+},
+"tip the scales": {
+"precon": 0.0312
+},
+"tireless provisioner": {
+"cedh": 0.0286,
+"precon": 0.0256
+},
+"tireless tracker": {
+"precon": 0.1538
+},
+"tishana's tidebinder": {
+"cedh": 0.0208
+},
+"titan forge": {
+"precon": 0.0143
+},
+"titan of industry": {
+"precon": 0.0256
+},
+"titan of littjara": {
+"precon": 0.0513
+},
+"titan's grave": {
+"precon": 0.0588
+},
+"titania, nature's force": {
+"precon": 0.0256
+},
+"titania, protector of argoth": {
+"precon": 0.0513
+},
+"titania, proud pummeler": {
+"precon": 0.0465
+},
+"titans' vanguard": {
+"precon": 0.1
+},
+"tivit, seller of secrets": {
+"cedh": 0.0556
+},
+"tocasia's welcome": {
+"precon": 0.0465
+},
+"together forever": {
+"precon": 0.0698
+},
+"tokka & rahzar, unsupervised": {
+"precon": 0.0233
+},
+"tolaria west": {
+"cedh": 0.0208
+},
+"tomb of the spirit dragon": {
+"precon": 0.0286
+},
+"tomb trawler": {
+"cedh": 0.0156
+},
+"tombstone, career criminal": {
+"precon": 0.0625
+},
+"tome of legends": {
+"precon": 0.0857
+},
+"tomik, wielder of law": {
+"precon": 0.0556
+},
+"torpor orb": {
+"cedh": 0.0156
+},
+"torrential gearhulk": {
+"precon": 0.0513
+},
+"toski, bearer of secrets": {
+"precon": 0.0513
+},
+"touch the spirit realm": {
+"cedh": 0.1071
+},
+"tower defense": {
+"precon": 0.0256
+},
+"tower winder": {
+"precon": 0.0256
+},
+"towering titan": {
+"precon": 0.0256
+},
+"toxic deluge": {
+"cedh": 0.0571,
+"precon": 0.0938
+},
+"trace of abundance": {
+"precon": 0.0769
+},
+"trading post": {
+"precon": 0.0286
+},
+"tragic arrogance": {
+"precon": 0.1395
+},
+"trail of mystery": {
+"precon": 0.0513
+},
+"trailblazer's boots": {
+"precon": 0.0429
+},
+"trailtracker scout": {
+"precon": 0.0256
+},
+"training center": {
+"cedh": 0.1053
+},
+"training grounds": {
+"cedh": 0.25
+},
+"tranquil landscape": {
+"precon": 0.1667
+},
+"tranquil thicket": {
+"precon": 0.1795
+},
+"transcendent dragon": {
+"precon": 0.0256
+},
+"transcendent envoy": {
+"precon": 0.0233
+},
+"transforming flourish": {
+"precon": 0.0233
+},
+"transit mage": {
+"cedh": 0.0208
+},
+"transmute artifact": {
+"cedh": 0.125
+},
+"transpose": {
+"precon": 0.0625
+},
+"treasonous ogre": {
+"cedh": 0.1538
+},
+"treasure cruise": {
+"precon": 0.1282
+},
+"treasure vault": {
+"cedh": 0.0625,
+"precon": 0.0286
+},
+"tree of perdition": {
+"precon": 0.0312
+},
+"tree of redemption": {
+"precon": 0.0256
+},
+"tree of tales": {
+"cedh": 0.0286,
+"precon": 0.0256
+},
+"trenchpost": {
+"precon": 0.0286
+},
+"tri-sentinel, act of vengeance": {
+"precon": 0.0286
+},
+"trickbind": {
+"cedh": 0.0208
+},
+"trickster's elk": {
+"cedh": 0.0286
+},
+"trinisphere": {
+"cedh": 0.0156
+},
+"triplicate titan": {
+"precon": 0.0143
+},
+"triskaidekaphile": {
+"precon": 0.0513
+},
+"triton shorestalker": {
+"precon": 0.0256
+},
+"troll of khazad-d\u00fbm": {
+"cedh": 0.0286
+},
+"tromell, seymour's butler": {
+"precon": 0.0513
+},
+"trophy mage": {
+"cedh": 0.0625
+},
+"tropical island": {
+"cedh": 0.4219
+},
+"trostani, selesnya's voice": {
+"precon": 0.0476
+},
+"trouble in pairs": {
+"cedh": 0.0357,
+"precon": 0.0233
+},
+"troyan, gutsy explorer": {
+"precon": 0.0476
+},
+"trudge garden": {
+"precon": 0.0256
+},
+"true identity": {
+"precon": 0.0233
+},
+"trygon predator": {
+"precon": 0.0952
+},
+"tundra": {
+"cedh": 0.375
+},
+"turbulent crater": {
+"precon": 0.0143
+},
+"turbulent fen": {
+"precon": 0.0143
+},
+"turbulent moor": {
+"precon": 0.0143
+},
+"turbulent shore": {
+"precon": 0.0143
+},
+"turbulent springs": {
+"precon": 0.0143
+},
+"turbulent steppe": {
+"precon": 0.0143
+},
+"turbulent wetlands": {
+"precon": 0.0143
+},
+"turbulent wilderness": {
+"precon": 0.0143
+},
+"turntimber sower": {
+"precon": 0.0256
+},
+"turntimber symbiosis": {
+"cedh": 0.0286
+},
+"turtle lair": {
+"precon": 0.0143
+},
+"twenty-toed toad": {
+"precon": 0.0513
+},
+"twiddle": {
+"cedh": 0.0208
+},
+"twilight drover": {
+"precon": 0.0233
+},
+"twilight mire": {
+"precon": 0.3529
+},
+"twinflame": {
+"cedh": 0.0769,
+"precon": 0.0233
+},
+"twins of discord": {
+"precon": 0.0286
+},
+"twinshot sniper": {
+"cedh": 0.0769
+},
+"twisted abomination": {
+"precon": 0.0312
+},
+"twisted fealty": {
+"cedh": 0.0385
+},
+"twisted landscape": {
+"precon": 0.4
+},
+"tymna the weaver": {
+"cedh": 0.7143
+},
+"typhoid mary, fractured": {
+"precon": 0.1053
+},
+"tyrant's familiar": {
+"precon": 0.0233
+},
+"tyvar's stand": {
+"precon": 0.0256
+},
+"tyvar, jubilant brawler": {
+"cedh": 0.2308
+},
+"ugin's insight": {
+"precon": 0.0513
+},
+"ugin's mastery": {
+"precon": 0.0143
+},
+"ugin, the ineffable": {
+"precon": 0.0286
+},
+"ukkima, stalking shadow": {
+"precon": 0.0625
+},
+"ulalek, fused atrocity": {
+"precon": 0.3333
+},
+"ulamog's crusher": {
+"precon": 0.0286
+},
+"ulamog's dreadsire": {
+"precon": 0.0286
+},
+"ulamog's nullifier": {
+"precon": 0.125
+},
+"ultimate magic: holy": {
+"precon": 0.0465
+},
+"ultimate magic: meteor": {
+"precon": 0.0465
+},
+"ultimate nullification": {
+"precon": 0.0465
+},
+"ultron, unlimited": {
+"precon": 0.125
+},
+"ulvenwald hydra": {
+"precon": 0.0513
+},
+"ulvenwald mysteries": {
+"precon": 0.0256
+},
+"umaro, raging yeti": {
+"precon": 0.0465
+},
+"umbral collar zealot": {
+"cedh": 0.0286,
+"precon": 0.0312
+},
+"umbral expanse": {
+"precon": 0.0143
+},
+"unbound flourishing": {
+"precon": 0.0256
+},
+"unclaimed territory": {
+"precon": 0.1
+},
+"undead augur": {
+"precon": 0.0625
+},
+"undead butler": {
+"precon": 0.0312
+},
+"undead warchief": {
+"precon": 0.0312
+},
+"undercity sewers": {
+"cedh": 0.0312
+},
+"underground mortuary": {
+"cedh": 0.0156
+},
+"underground river": {
+"cedh": 0.037,
+"precon": 0.5
+},
+"underground sea": {
+"cedh": 0.4219
+},
+"undergrowth stadium": {
+"cedh": 0.1538,
+"precon": 0.0588
+},
+"underworld breach": {
+"cedh": 1.0
+},
+"unexpected windfall": {
+"precon": 0.0465
+},
+"unexplained absence": {
+"precon": 0.0233
+},
+"unfinished business": {
+"precon": 0.0465
+},
+"unholy grotto": {
+"precon": 0.0312
+},
+"unholy heat": {
+"precon": 0.0233
+},
+"universal automaton": {
+"cedh": 0.0312,
+"precon": 0.0143
+},
+"universal surveillance": {
+"precon": 0.0256
+},
+"unlicensed hearse": {
+"cedh": 0.0312
+},
+"unmarked grave": {
+"cedh": 0.0857
+},
+"unnatural growth": {
+"precon": 0.0513
+},
+"unsettled mariner": {
+"precon": 0.04
+},
+"unstable amulet": {
+"cedh": 0.0385,
+"precon": 0.0465
+},
+"unstable molecule suit": {
+"precon": 0.0286
+},
+"untimely malfunction": {
+"cedh": 0.2308
+},
+"unwanted remake": {
+"cedh": 0.0357
+},
+"urban burgeoning": {
+"cedh": 0.0286
+},
+"urban evolution": {
+"precon": 0.0952
+},
+"urborg, tomb of yawgmoth": {
+"cedh": 0.0469
+},
+"ureni of the unwritten": {
+"precon": 0.1
+},
+"urianger augurelt": {
+"precon": 0.08
+},
+"uro, titan of nature's wrath": {
+"precon": 0.0952
+},
+"ursine monstrosity": {
+"precon": 0.0256
+},
+"urza's cave": {
+"cedh": 0.0156
+},
+"urza's mine": {
+"precon": 0.0286
+},
+"urza's power plant": {
+"precon": 0.0286
+},
+"urza's saga": {
+"cedh": 0.25
+},
+"urza's tower": {
+"precon": 0.0286
+},
+"uthros research craft": {
+"precon": 0.0256
+},
+"utopia sprawl": {
+"cedh": 0.1143
+},
+"utter end": {
+"precon": 0.0556
+},
+"utvara hellkite": {
+"precon": 0.0233
+},
+"uurg, spawn of turg": {
+"precon": 0.0588
+},
+"v.a.t.s.": {
+"precon": 0.0312
+},
+"valeria richards, precocious": {
+"precon": 0.0513
+},
+"valgavoth, harrower of souls": {
+"precon": 0.0526
+},
+"valgavoth, terror eater": {
+"cedh": 0.0286
+},
+"valley floodcaller": {
+"cedh": 0.6667
+},
+"valorous stance": {
+"precon": 0.1163
+},
+"vampiric tutor": {
+"cedh": 0.9429
+},
+"vandalblast": {
+"precon": 0.1395
+},
+"vanguard of the restless": {
+"precon": 0.0233
+},
+"vanguard seraph": {
+"precon": 0.0233
+},
+"vanishing verse": {
+"precon": 0.0556
+},
+"vanquish the horde": {
+"precon": 0.1395
+},
+"vanquisher's banner": {
+"precon": 0.0143
+},
+"vault 101: birthday party": {
+"precon": 0.0233
+},
+"vault 112: sadistic simulation": {
+"precon": 0.0435
+},
+"vault 11: voter's dilemma": {
+"precon": 0.0556
+},
+"vault 12: the necropolis": {
+"precon": 0.0312
+},
+"vault 13: dweller's journey": {
+"precon": 0.0233
+},
+"vault 21: house gambit": {
+"precon": 0.0233
+},
+"vault 75: middle school": {
+"precon": 0.0233
+},
+"vault 87: forced evolution": {
+"precon": 0.0476
+},
+"vault of champions": {
+"cedh": 0.0952
+},
+"vault of the archangel": {
+"precon": 0.1111
+},
+"vault of whispers": {
+"cedh": 0.0571,
+"precon": 0.0312
+},
+"vedalken archmage": {
+"precon": 0.0256
+},
+"veil of summer": {
+"cedh": 0.6571
+},
+"veiled ascension": {
+"precon": 0.0233
+},
+"veinwitch coven": {
+"precon": 0.0625
+},
+"velomachus lorehold": {
+"precon": 0.0345
+},
+"venerable warsinger": {
+"precon": 0.0345
+},
+"vengeful ancestor": {
+"precon": 0.0465
+},
+"vengeful bloodwitch": {
+"cedh": 0.0286
+},
+"vengeful dead": {
+"precon": 0.0312
+},
+"vengeful regrowth": {
+"precon": 0.0256
+},
+"venser, fervent forger": {
+"precon": 0.0233
+},
+"verdant catacombs": {
+"cedh": 0.7656
+},
+"verdant sun's avatar": {
+"precon": 0.0256
+},
+"verge rangers": {
+"precon": 0.0233
+},
+"verix bladewing": {
+"precon": 0.0233
+},
+"vernal fen": {
+"precon": 0.0571
+},
+"vernal sovereign": {
+"precon": 0.0476
+},
+"veronica, dissident scribe": {
+"precon": 0.0233
+},
+"vessel of volatility": {
+"cedh": 0.0385
+},
+"vesuva": {
+"precon": 0.0286
+},
+"vexing bauble": {
+"cedh": 0.2344
+},
+"vexing radgull": {
+"precon": 0.0256
+},
+"veyran, voice of duality": {
+"precon": 0.1304
+},
+"vial smasher the fierce": {
+"precon": 0.0526
+},
+"vibrance": {
+"cedh": 0.5
+},
+"vibranium mining mech": {
+"precon": 0.0286
+},
+"vibranium strike gauntlets": {
+"precon": 0.0286
+},
+"vibrant cityscape": {
+"precon": 0.0143
+},
+"victimize": {
+"precon": 0.0312
+},
+"vigor": {
+"precon": 0.0256
+},
+"vihaan, goldwaker": {
+"precon": 0.0833
+},
+"vile entomber": {
+"cedh": 0.0571
+},
+"vile mutilator": {
+"precon": 0.0312
+},
+"vile redeemer": {
+"precon": 0.0513
+},
+"vilis, broker of blood": {
+"cedh": 0.0857
+},
+"village pillagers": {
+"precon": 0.0233
+},
+"villainous hideout": {
+"precon": 0.0286
+},
+"villainous wealth": {
+"precon": 0.1111
+},
+"vincent, vengeful atoner": {
+"precon": 0.0465
+},
+"vindicate": {
+"precon": 0.1111
+},
+"vineglimmer snarl": {
+"precon": 0.3333
+},
+"vinelasher kudzu": {
+"cedh": 0.0286
+},
+"viridescent bog": {
+"precon": 0.4706
+},
+"viscera seer": {
+"cedh": 0.0857,
+"precon": 0.0625
+},
+"vision of love": {
+"cedh": 0.0385
+},
+"vision, synthezoid avenger": {
+"precon": 0.0286
+},
+"vitalize": {
+"cedh": 0.0286
+},
+"vivi's persistence": {
+"cedh": 0.0385
+},
+"vivien reid": {
+"precon": 0.0513
+},
+"vizier of many faces": {
+"precon": 0.0256
+},
+"voice of resurgence": {
+"precon": 0.0476
+},
+"voice of the blessed": {
+"precon": 0.0233
+},
+"voice of victory": {
+"cedh": 0.6429
+},
+"void attendant": {
+"precon": 0.0256
+},
+"void mirror": {
+"cedh": 0.0156
+},
+"void rend": {
+"precon": 0.1818
+},
+"volatile fault": {
+"cedh": 0.0312,
+"precon": 0.0286
+},
+"volatile stormdrake": {
+"cedh": 0.1667
+},
+"volcanic island": {
+"cedh": 0.4688
+},
+"volcanic salvo": {
+"precon": 0.0233
+},
+"volcanic torrent": {
+"precon": 0.0465
+},
+"voltaic key": {
+"cedh": 0.0469
+},
+"voracious bibliophile": {
+"precon": 0.0256
+},
+"voracious hydra": {
+"precon": 0.0256
+},
+"vorinclex, voice of hunger": {
+"precon": 0.0256
+},
+"vow of duty": {
+"precon": 0.0233
+},
+"vow of lightning": {
+"precon": 0.0233
+},
+"vraska, betrayal's sting": {
+"precon": 0.0312
+},
+"w'kabi, shield of the nation": {
+"precon": 0.0513
+},
+"wakanda forever!": {
+"precon": 0.0513
+},
+"wake the past": {
+"precon": 0.069
+},
+"wakestone gargoyle": {
+"precon": 0.0233
+},
+"wakka, devoted guardian": {
+"precon": 0.0952
+},
+"walking ballista": {
+"cedh": 0.0938,
+"precon": 0.0286
+},
+"walking bulwark": {
+"precon": 0.0143
+},
+"wall of blossoms": {
+"precon": 0.0256
+},
+"wall of limbs": {
+"precon": 0.0312
+},
+"wall of omens": {
+"precon": 0.0465
+},
+"wall of reverence": {
+"precon": 0.0233
+},
+"wall of roots": {
+"cedh": 0.0286,
+"precon": 0.0256
+},
+"wan shi tong, librarian": {
+"cedh": 0.2708
+},
+"wandering archaic": {
+"cedh": 0.0469
+},
+"wandertale mentor": {
+"precon": 0.05
+},
+"wanderwine hub": {
+"precon": 0.04
+},
+"war machine, avenging arsenal": {
+"precon": 0.0465
+},
+"war room": {
+"cedh": 0.0156,
+"precon": 0.1
+},
+"wargate": {
+"cedh": 0.2308
+},
+"warping wail": {
+"cedh": 0.0156,
+"precon": 0.0286
+},
+"warren soultrader": {
+"cedh": 0.0286
+},
+"warrior's oath": {
+"cedh": 0.1923
+},
+"warstorm surge": {
+"precon": 0.0465
+},
+"wasteland raider": {
+"precon": 0.0312
+},
+"wastescape battlemage": {
+"precon": 0.0952
+},
+"watchful radstag": {
+"precon": 0.0256
+},
+"water tribe rallier": {
+"cedh": 0.0357
+},
+"waterlogged grove": {
+"cedh": 0.1786
+},
+"watery grave": {
+"cedh": 0.2344
+},
+"wave goodbye": {
+"precon": 0.0256
+},
+"wave of reckoning": {
+"precon": 0.0233
+},
+"wavesifter": {
+"precon": 0.0476
+},
+"wayfarer's bauble": {
+"precon": 0.0857
+},
+"wayward servant": {
+"precon": 0.0556
+},
+"we ride at dawn": {
+"precon": 0.0233
+},
+"wear": {
+"precon": 0.0233
+},
+"wear down": {
+"precon": 0.0256
+},
+"weathered sentinels": {
+"precon": 0.0143
+},
+"weathered wayfarer": {
+"cedh": 0.0357
+},
+"welcome the dead": {
+"precon": 0.0312
+},
+"welcoming vampire": {
+"precon": 0.0465
+},
+"well rested": {
+"precon": 0.0256
+},
+"west coast expansion": {
+"precon": 0.0513
+},
+"wheel of fortune": {
+"cedh": 0.5
+},
+"wheel of misfortune": {
+"cedh": 0.0385
+},
+"whip of erebos": {
+"precon": 0.0312
+},
+"whiptongue hydra": {
+"precon": 0.0256
+},
+"whir of invention": {
+"cedh": 0.0417
+},
+"whirler rogue": {
+"precon": 0.1282
+},
+"whirler virtuoso": {
+"precon": 0.1304
+},
+"whirlwind of thought": {
+"precon": 0.2353
+},
+"whirlwing stormbrood": {
+"precon": 0.0256
+},
+"whisperer of the wilds": {
+"precon": 0.0256
+},
+"whispersilk cloak": {
+"precon": 0.0429
+},
+"whisperwood elemental": {
+"precon": 0.0513
+},
+"white auracite": {
+"precon": 0.0465
+},
+"white glove gourmand": {
+"precon": 0.0556
+},
+"white orchid phantom": {
+"precon": 0.0233
+},
+"white sun's twilight": {
+"precon": 0.0233
+},
+"wickerbough elder": {
+"precon": 0.0256
+},
+"wickersmith's tools": {
+"precon": 0.0143
+},
+"wight of precinct six": {
+"precon": 0.0312
+},
+"wight of the reliquary": {
+"precon": 0.0588
+},
+"wild cantor": {
+"cedh": 0.1
+},
+"wild growth": {
+"cedh": 0.3714,
+"precon": 0.0513
+},
+"wild ride": {
+"precon": 0.0233
+},
+"wild wasteland": {
+"precon": 0.0233
+},
+"wilderness reclamation": {
+"precon": 0.0513
+},
+"wildsear, scouring maw": {
+"precon": 0.05
+},
+"will of the abzan": {
+"precon": 0.0312
+},
+"will of the jeskai": {
+"cedh": 0.0385,
+"precon": 0.0233
+},
+"will of the mardu": {
+"precon": 0.0233
+},
+"will of the sultai": {
+"precon": 0.0256
+},
+"will of the temur": {
+"precon": 0.0256
+},
+"willie lumpkin, postman": {
+"precon": 0.08
+},
+"windborn muse": {
+"precon": 0.0233
+},
+"windbrisk heights": {
+"precon": 0.0465
+},
+"windcrag siege": {
+"precon": 0.0345
+},
+"windfall": {
+"cedh": 0.125,
+"precon": 0.0256
+},
+"windgrace's judgment": {
+"precon": 0.1176
+},
+"winding constrictor": {
+"precon": 0.0588
+},
+"winding way": {
+"precon": 0.0256
+},
+"winds of rath": {
+"precon": 0.0465
+},
+"windswept heath": {
+"cedh": 0.5625
+},
+"winged boots": {
+"precon": 0.0256
+},
+"wingmantle chaplain": {
+"precon": 0.0233
+},
+"winter soldier, reborn avenger": {
+"precon": 0.0465
+},
+"winter, cynical opportunist": {
+"precon": 0.0588
+},
+"wirewood symbiote": {
+"cedh": 0.0286
+},
+"wishclaw talisman": {
+"cedh": 0.6286
+},
+"witch enchanter": {
+"cedh": 0.0714
+},
+"witch of the moors": {
+"precon": 0.0625
+},
+"witch's clinic": {
+"precon": 0.0286
+},
+"witch's cottage": {
+"precon": 0.0143
+},
+"witch's mark": {
+"cedh": 0.0385,
+"precon": 0.0233
+},
+"witherbloom campus": {
+"precon": 0.0588
+},
+"witherbloom charm": {
+"precon": 0.0588
+},
+"witherbloom command": {
+"precon": 0.0588
+},
+"withering torment": {
+"precon": 0.0938
+},
+"within range": {
+"precon": 0.0312
+},
+"wizard class": {
+"precon": 0.0256
+},
+"wizened mentor": {
+"precon": 0.0233
+},
+"woe strider": {
+"precon": 0.0938
+},
+"wojek investigator": {
+"precon": 0.0233
+},
+"wolfwillow haven": {
+"precon": 0.0256
+},
+"wonder": {
+"precon": 0.0256
+},
+"wonderscape sage": {
+"precon": 0.0513
+},
+"wooded bastion": {
+"precon": 0.0476
+},
+"wooded foothills": {
+"cedh": 0.5781
+},
+"wooded ridgeline": {
+"precon": 0.0429
+},
+"woodland bellower": {
+"cedh": 0.1429
+},
+"woodland cemetery": {
+"precon": 0.4706
+},
+"word of command": {
+"cedh": 0.0286
+},
+"world breaker": {
+"precon": 0.0769
+},
+"world shaper": {
+"precon": 0.0256
+},
+"world war hulk": {
+"cedh": 0.0286
+},
+"worldly tutor": {
+"cedh": 0.4286
+},
+"worldsoul's rage": {
+"precon": 0.05
+},
+"worldspine wurm": {
+"precon": 0.0256
+},
+"wreck and rebuild": {
+"precon": 0.05
+},
+"wrecking ball arm": {
+"precon": 0.0286
+},
+"wrenn and seven": {
+"precon": 0.0256
+},
+"wrenn's resolve": {
+"cedh": 0.0385
+},
+"wurmwall sweeper": {
+"cedh": 0.0156
+},
+"xorn": {
+"cedh": 0.0769
+},
+"y'shtola, night's blessed": {
+"precon": 0.1818
+},
+"yahenni, undying partisan": {
+"precon": 0.0938
+},
+"yarok, the desecrated": {
+"precon": 0.1111
+},
+"yavimaya bloomsage": {
+"precon": 0.0256
+},
+"yavimaya coast": {
+"cedh": 0.1429,
+"precon": 0.5238
+},
+"yavimaya elder": {
+"precon": 0.0769
+},
+"yavimaya, cradle of growth": {
+"cedh": 0.0781,
+"precon": 0.0286
+},
+"yawgmoth's will": {
+"cedh": 0.2571
+},
+"yedora, grave gardener": {
+"precon": 0.0513
+},
+"yes man, personal securitron": {
+"precon": 0.0233
+},
+"yeva, nature's herald": {
+"cedh": 0.0571,
+"precon": 0.0256
+},
+"yisan, the wanderer bard": {
+"cedh": 0.0857
+},
+"yoshimaru, ever faithful": {
+"cedh": 0.0714
+},
+"young deathclaws": {
+"precon": 0.0588
+},
+"young pyromancer": {
+"precon": 0.0465
+},
+"youthful valkyrie": {
+"precon": 0.0233
+},
+"yuffie, materia hunter": {
+"precon": 0.0465
+},
+"yuma, proud protector": {
+"precon": 0.0769
+},
+"yuna's decision": {
+"precon": 0.0513
+},
+"yuna's whistle": {
+"precon": 0.0513
+},
+"yuna, grand summoner": {
+"precon": 0.1667
+},
+"zack fair": {
+"precon": 0.0465
+},
+"zada, hedron grinder": {
+"precon": 0.0233
+},
+"zenith festival": {
+"precon": 0.0233
+},
+"zetalpa, primal dawn": {
+"precon": 0.0233
+},
+"ziatora, the incinerator": {
+"precon": 0.2
+},
+"zimone's hypothesis": {
+"precon": 0.0513
+},
+"zimone, all-questioning": {
+"precon": 0.0476
+},
+"zimone, infinite analyst": {
+"precon": 0.0476
+},
+"zimone, mystery unraveler": {
+"precon": 0.0476
+},
+"zimone, quandrix prodigy": {
+"precon": 0.0476
+},
+"zinnia, valley's voice": {
+"precon": 0.0588
+},
+"zirda, the dawnwaker": {
+"cedh": 0.0667
+},
+"zoetic cavern": {
+"precon": 0.0143
+},
+"zombie master": {
+"precon": 0.0312
+},
+"zul ashur, lich lord": {
+"precon": 0.0312
+},
+"zulaport cutthroat": {
+"precon": 0.0625
+},
+"zurgo stormrender": {
+"precon": 0.0833
+},
+"zuri, warrior of wakanda": {
+"precon": 0.0513
+},
+"\u00f3in the brave": {
+"cedh": 0.0769
+}
+}
+}
