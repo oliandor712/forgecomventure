@@ -53,6 +53,10 @@
     [
      "2026-10-20",
      "User standing request (relayed by the agent): every test's results go to the main session with an analysis request."
+    ],
+    [
+     "2026-10-20",
+     "Test updates the agents could use are automatically approved, with old versions backed up; AI changes go on a checkbox list for the user's final approval."
     ]
    ],
    "analyses": [
@@ -101,6 +105,10 @@
     [
      "2026-10-20",
      "User standing request (relayed by the agent): send results to the main session after every test, with an analysis request; main session asked to batch these with the 4-hour report."
+    ],
+    [
+     "2026-10-20",
+     "Test updates the agents could use are automatically approved, with old versions backed up; AI changes go on a checkbox list for the user's final approval."
     ]
    ],
    "analyses": [
@@ -129,6 +137,10 @@
    [
     "2026-10-20",
     "Whenever an agent sends an analysis request, store the results in an agent-specific file and send them back to that agent as training data."
+   ],
+   [
+    "2026-10-20",
+    "Automatically approve test updates the agents could use (backups of old versions); generate and keep updated a bullet list of AI changes with checkboxes for final approval."
    ]
   ]
  }

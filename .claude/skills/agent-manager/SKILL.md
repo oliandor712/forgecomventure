@@ -44,12 +44,24 @@ user), do the analysis. Then:
 3. Commit and push, then send that message to the agent's session with `send_message`.
 4. If the user discards a result, add a new entry saying which result is withdrawn, and tell the agent.
 
+## AI changes checklist and test approvals
+- **Test-side updates are pre-approved by the user** (CONTEXT.md rule 7): sims, logging, test decks, scratch patched
+  copies. When an agent proposes one, or you make one for it, approve it. Make sure the old version is backed up in
+  `tools/concordia/backups/<date>_<what>/`, or that its commit is named.
+- **Keep `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md` current.** It holds one checkbox per proposed AI change
+  (card-script unflags and forge-ai code), with the patch path, the file and line, what it does, the test numbers and
+  a status (ready / needs work / planned).
+  - Update it at every check-in from the agents' `CHECKLIST:` report lines and from your own analyses.
+  - Never tick a box yourself; only the user approves.
+  - When the user approves one: back up the files it replaces in `tools/concordia/backups/`, apply the patch, re-run
+    the checks (doors, decks, a smoke sim), and mark the item applied, with its commit.
+
 ## Check-ins (every 4 hours, trigger in registry `manager.checkin_trigger`)
 For each agent:
 1. Read its last results with `list_events` (`kinds: ["result"]`; add `"assistant"` to see what it ran), and its
    status with `get_session`.
 2. Pull and look at its folder.
-3. Collect any `ANALYSIS REQUEST:` lines and answer them, following "Analysis requests from agents".
+3. Collect any `CHECKLIST:` lines into AI_CHANGES_APPROVAL.md, then any `ANALYSIS REQUEST:` lines and answer them, following "Analysis requests from agents".
 4. Look for blockers:
    - build or network failures, or a tool it lacks;
    - runs over budget, or a loop that repeats the same failing step;

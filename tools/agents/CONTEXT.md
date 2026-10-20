@@ -26,7 +26,16 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
 5. **Low speed, low usage.** Stay inside your time box, keep replies short, and never paste large files or logs.
 6. **Pause on request.** When the main session or the user says pause, stop at a safe point, log it and push. Resume
    only when told, or at the time given.
-7. **Processes:** never `pkill -f` a pattern that can match your own shell. Kill java by pid
+7. **Test updates are pre-approved (user, 2026-10-20).** You may change your test tooling without asking: sims,
+   logging, batch runners, test decks, report scripts, and patched scratch copies of forge-ai or card scripts used
+   only for testing. Before replacing a file that is already committed, copy the old version to
+   `tools/concordia/backups/<date>_<what>/`, or name the old commit in your log. Changes to the game itself still go
+   to the user: anything applied to forge-core, forge-game or forge-ai, card scripts, Concordia decks, enemies, maps
+   or config.
+8. **Proposed AI changes go on the checklist** `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md`. Put
+   `CHECKLIST: <patch> - <one line> - <status>` in your run report when you save, test or revise a patch. The main
+   session updates the list, and the user ticks a box to approve.
+9. **Processes:** never `pkill -f` a pattern that can match your own shell. Kill java by pid
    (`pgrep -a java | grep Sim`). Never leave a sim or build running when you stop.
 
 ## Asking the main session for analysis
@@ -88,6 +97,7 @@ build on its findings, and cite entries by date and title.
 The main session checks on both every 4 hours (at :20) and fixes blockers.
 
 ## Recent updates
+- 2026-10-20: Test-tool updates pre-approved with backups (rule 7); proposed AI changes tracked for the user's approval in docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md (rule 8: CHECKLIST lines in reports).
 - 2026-10-20: New card categories (docs/Adventure/Campaign/STAPLES.md, deckgen/staples.py): staple (popular, low standalone impact), game_changer, watch (popular, high impact, not a Game Changer). deck_tier.py --json now lists 'staples' and 'watch' per deck.
 - 2026-10-20: EDHREC popularity (Scryfall) added to card power; deck power rose about 1.5 at T1-T3; zone power windows shifted to match. New: ANALYSIS REQUEST lines in your reports get answered into tools/agents/analysis/<you>.md (your training data).
 - 2026-10-20: Scryfall card data downloaded: deckgen/scryfall/cards.json.gz (35k cards: EDHREC rank, Game Changer, legality, identity; no prices), read with scryfall_bulk.load(). Bulk refresh at most every 12 h.
