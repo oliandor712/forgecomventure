@@ -1,0 +1,89 @@
+7	A's Cleanup step	TURN	Turn 7 (B)
+7	B's Untap step	PHASE	B's Untap step
+7	B's Upkeep step	PHASE	B's Upkeep step
+7	B's Upkeep step	STACK_ADD*	B cast Bite Down targeting [Zilortha, Strength Incarnate (81)] [Marwyn, the Preserver (37)]
+7	B's Upkeep step	DAMAGE	Zilortha, Strength Incarnate (81) deals 7 damage to Marwyn, the Preserver (37).
+7	B's Upkeep step	STACK_RESOLVE*	Bite Down (65) -  Zilortha, Strength Incarnate (81) deals 7 damage to Marwyn, the Preserver (37).
+7	B's Upkeep step	ZONE_CHANGE	Marwyn, the Preserver (37) was put into Graveyard from Battlefield.
+7	B's Draw step	PHASE	B's Draw step
+7	B's Main phase, precombat	PHASE	B's Main phase, precombat
+7	B's Main phase, precombat	STACK_ADD	B cast Thunderherd Migration
+7	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+7	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+7	B's Declare Attackers Step	COMBAT	B assigned Zilortha, Strength Incarnate (81) to attack A.
+7	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+7	B's Declare Blockers Step	COMBAT	A didn't block Zilortha, Strength Incarnate (81).
+7	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+7	B's Combat Damage Step	PHASE	B's Combat Damage Step
+7	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 7 combat damage to A.
+7	B's Combat Damage Step	LIFE	Life: A 20 > 13
+7	B's End of Combat Step	PHASE	B's End of Combat Step
+7	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+7	B's End step	PHASE	B's End step
+7	B's Cleanup step	PHASE	B's Cleanup step
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+9	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+9	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+9	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+9	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+9	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+9	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+9	B's Upkeep step	ZONE_CHANGE	B milled Shadowspear (71).
+9	B's Upkeep step	ZONE_CHANGE*	B milled Ram Through (79).
+9	B's Upkeep step	ZONE_CHANGE	B milled Forest (64).
+9	B's Upkeep step	ZONE_CHANGE	B milled Winds of Qal Sisma (73).
+9	B's Upkeep step	ZONE_CHANGE	B milled Gaea's Gift (68).
+9	B's Upkeep step	ZONE_CHANGE	B milled Rampant Growth (72).
+9	B's Upkeep step	ZONE_CHANGE	B milled Rograkh, Son of Rohgahh (75).
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Main phase, precombat	STACK_ADD	B cast Go for Blood targeting [Zilortha, Strength Incarnate (81)] [Deepwood Denizen (3)]
+9	B's Main phase, precombat	DAMAGE	Zilortha, Strength Incarnate (81) deals 7 damage to Deepwood Denizen (3).
+9	B's Main phase, precombat	DAMAGE	Deepwood Denizen (3) deals 3 damage to Zilortha, Strength Incarnate (81).
+9	B's Main phase, precombat	ZONE_CHANGE	Deepwood Denizen (3) was put into Graveyard from Battlefield.
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Attackers Step	COMBAT	B assigned Zilortha, Strength Incarnate (81) to attack A.
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's Declare Blockers Step	COMBAT	A didn't block Zilortha, Strength Incarnate (81).
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 7 combat damage to A.
+9	B's Combat Damage Step	LIFE	Life: A 13 > 6
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's Main phase, postcombat	STACK_ADD	B cast Go-Shintai of Boundless Vigor
+9	B's Main phase, postcombat	STACK_ADD	B cast Herd Heirloom
+9	B's End step	PHASE	B's End step
+9	B's End step	STACK_ADD	B triggered Go-Shintai of Boundless Vigor
+9	B's Cleanup step	PHASE	B's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	ZONE_CHANGE	B milled Forest (59).
+13	B's Upkeep step	ZONE_CHANGE	B milled Mountain (45).
+13	B's Upkeep step	ZONE_CHANGE	B milled Mountain (46).
+13	B's Upkeep step	ZONE_CHANGE	B milled Evolving Wilds (50).
+13	B's Draw step	PHASE	B's Draw step
+13	B's Draw step	STACK_ADD*	B cast Tail Swipe targeting [Zilortha, Strength Incarnate (81)] [Bramblewood Paragon (7)]
+13	B's Draw step	DAMAGE	Zilortha, Strength Incarnate (81) deals 7 damage to Bramblewood Paragon (7).
+13	B's Draw step	DAMAGE	Bramblewood Paragon (7) deals 4 damage to Zilortha, Strength Incarnate (81).
+13	B's Draw step	STACK_RESOLVE*	Tail Swipe (54) - Zilortha, Strength Incarnate (81) gets +1/+1  until end of turn. Then the chosen creatures fight each other. (They each deal damage equal to their power to the other.)
+13	B's Draw step	ZONE_CHANGE	Bramblewood Paragon (7) was put into Graveyard from Battlefield.
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Zilortha, Strength Incarnate (81) to attack A.
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A didn't block Zilortha, Strength Incarnate (81).
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 7 combat damage to A.
+13	B's Combat Damage Step	LIFE	Life: A 4 > -3

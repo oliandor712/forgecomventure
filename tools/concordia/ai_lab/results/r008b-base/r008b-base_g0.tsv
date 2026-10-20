@@ -1,0 +1,37 @@
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	B's Upkeep step	ZONE_CHANGE	B milled Evolving Wilds (50).
+14	B's Upkeep step	ZONE_CHANGE	B milled Rampant Growth (72).
+14	B's Upkeep step	ZONE_CHANGE	B milled Hidden Nursery (67).
+14	B's Upkeep step	ZONE_CHANGE	B milled Crash Through (49).
+14	B's Upkeep step	ZONE_CHANGE*	B milled Ram Through (79).
+14	B's Upkeep step	ZONE_CHANGE*	B milled Tail Swipe (54).
+14	B's Upkeep step	ZONE_CHANGE	B milled Otepec Huntmaster (43).
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned Zilortha, Strength Incarnate (81), Belligerent Yearling (56) and Aggro Amalgam (52) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A assigned Elvish Visionary (31) and Legolas, Master Archer (40) to block Zilortha, Strength Incarnate (81). A assigned District Guide (8) to block Belligerent Yearling (56). A assigned Sylvan Ranger (12) to block Aggro Amalgam (52).
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 6 damage to Legolas, Master Archer (40).
+14	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 1 damage to Elvish Visionary (31).
+14	B's Combat Damage Step	DAMAGE	Belligerent Yearling (56) deals 2 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Belligerent Yearling (56) deals 2 damage to District Guide (8).
+14	B's Combat Damage Step	DAMAGE	Aggro Amalgam (52) deals 3 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Aggro Amalgam (52) deals 1 damage to Sylvan Ranger (12).
+14	B's Combat Damage Step	DAMAGE	Elvish Visionary (31) deals 1 damage to Zilortha, Strength Incarnate (81).
+14	B's Combat Damage Step	DAMAGE	Legolas, Master Archer (40) deals 7 damage to Zilortha, Strength Incarnate (81).
+14	B's Combat Damage Step	DAMAGE	Sylvan Ranger (12) deals 1 damage to Aggro Amalgam (52).
+14	B's Combat Damage Step	DAMAGE	District Guide (8) deals 2 damage to Belligerent Yearling (56).
+14	B's Combat Damage Step	LIFE	Life: A 4 > -1

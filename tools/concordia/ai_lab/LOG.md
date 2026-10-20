@@ -29,3 +29,4 @@ STANDING INSTRUCTION (user, 2026-10-20): each hourly wake is time-boxed to about
 2026-10-20T17:30Z STANDING: agent-coordinator (session_017PAirUr1ZnmejFCor3yYPi) keeps me on schedule 12AM-8AM Eastern; it may send 'hold' (skip that run) and 'resume'; obey and log each (CONTEXT rule 9). Daytime: only the main session pauses me.
 2026-10-20T18:05Z test set s005/s006 (code A/B): 005 v3 68 -> 14 activations, all declare blockers; 006 no measurable difference; run_code_ab.sh added; sent to main
 2026-10-20T18:35Z patch 008 (gang-block count in shouldPumpCard) written+built+10-game test: 3 activations, inconclusive; AiLabSim logs now include zone changes; per-main review (4) mana/hand-size columns still to do
+2026-10-20T19:10Z regression sim for 008/scratch build (2 pairings x 10 games x 2 arms): pump casts per draw 0.73->0.80 and 0.60->0.67, no red flag; note: I used pkill -f run_code_ab.sh once and killed my own shell (no harm); use pid kills only

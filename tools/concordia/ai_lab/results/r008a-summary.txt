@@ -1,0 +1,14 @@
+RESULT	r008a-base	A=4	B=6	draw=0	avgTurns=17.1
+  card=Unleash Fury games_seen=3 casts=0 activations=0
+  card=Expedite games_seen=2 casts=2 activations=0
+  card=Monstrous Rage games_seen=2 casts=2 activations=0
+  card=Echoing Courage games_seen=4 casts=4 activations=0
+  card=Invigorate games_seen=0 casts=0 activations=0
+  card=Overprotect games_seen=4 casts=3 activations=0
+RESULT	r008a-code	A=9	B=1	draw=0	avgTurns=17.5
+  card=Unleash Fury games_seen=1 casts=0 activations=0
+  card=Expedite games_seen=2 casts=0 activations=0
+  card=Monstrous Rage games_seen=5 casts=5 activations=0
+  card=Echoing Courage games_seen=6 casts=4 activations=0
+  card=Invigorate games_seen=0 casts=0 activations=0
+  card=Overprotect games_seen=6 casts=7 activations=0

@@ -1,0 +1,14 @@
+RESULT	r008b-base	A=3	B=7	draw=0	avgTurns=15.1
+  card=Bite Down games_seen=6 casts=4 activations=0
+  card=Titanic Brawl games_seen=0 casts=0 activations=0
+  card=Windswift Slice games_seen=0 casts=0 activations=0
+  card=Tail Swipe games_seen=4 casts=2 activations=0
+  card=Ram Through games_seen=5 casts=3 activations=0
+  card=Khalni Ambush games_seen=0 casts=0 activations=0
+RESULT	r008b-code	A=5	B=5	draw=0	avgTurns=17.1
+  card=Bite Down games_seen=6 casts=5 activations=0
+  card=Titanic Brawl games_seen=3 casts=0 activations=0
+  card=Windswift Slice games_seen=0 casts=0 activations=0
+  card=Tail Swipe games_seen=8 casts=6 activations=0
+  card=Ram Through games_seen=4 casts=3 activations=0
+  card=Khalni Ambush games_seen=0 casts=0 activations=0

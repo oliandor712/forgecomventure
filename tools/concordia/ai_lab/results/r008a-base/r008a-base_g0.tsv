@@ -1,0 +1,82 @@
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+15	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+15	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+15	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+15	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+15	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+15	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+15	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+15	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+15	A's Upkeep step	ZONE_CHANGE	A milled Champion of Lambholt (3).
+15	A's Upkeep step	ZONE_CHANGE	A milled Sylvan Anthem (29).
+15	A's Upkeep step	ZONE_CHANGE	A milled Trash the Town (37).
+15	A's Upkeep step	ZONE_CHANGE	A milled Trailblazer's Boots (8).
+15	A's Upkeep step	ZONE_CHANGE	A milled Forest (27).
+15	A's Upkeep step	ZONE_CHANGE	A milled Forest (18).
+15	A's Upkeep step	ZONE_CHANGE	A milled Forest (26).
+15	A's Upkeep step	ZONE_CHANGE	A milled Forest (17).
+15	A's Upkeep step	ZONE_CHANGE	A milled Forest (25).
+15	A's Draw step	PHASE	A's Draw step
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Attackers Step	COMBAT	A assigned Shroofus Sproutsire (40) to attack B.
+15	A's Declare Attackers Step	STACK_ADD	B triggered Roar of Resistance
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's Declare Blockers Step	COMBAT	B assigned Kessig Flamebreather (72) to block Shroofus Sproutsire (40).
+15	A's Declare Blockers Step	STACK_ADD	A cast Gaea's Gift targeting [Shroofus Sproutsire (40)]
+15	A's Declare Blockers Step	STACK_ADD	Return the Favor (73) - [Couldn't add to stack, failed to target] - + {1} — Copy target instant spell, sorcery spell, activated ability, or triggered ability. You may choose new targets for the copy. + {1} — Change the target of target spell or ability with a single target.  
+15	A's Declare Blockers Step	STACK_ADD*	A cast Overprotect targeting [Shroofus Sproutsire (40)]
+15	A's Declare Blockers Step	STACK_RESOLVE*	Overprotect (34) - Shroofus Sproutsire (40) gets +3/+3 and gains trample, hexproof, and indestructible until end of turn.
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's Combat Damage Step	DAMAGE	Shroofus Sproutsire (40) deals 2 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Shroofus Sproutsire (40) deals 3 damage to Kessig Flamebreather (72).
+15	A's Combat Damage Step	DAMAGE	Kessig Flamebreather (72) deals 1 damage to Shroofus Sproutsire (40).
+15	A's Combat Damage Step	LIFE	Life: B 16 > 14
+15	A's Combat Damage Step	ZONE_CHANGE	Kessig Flamebreather (72) was put into Graveyard from Battlefield.
+15	A's Combat Damage Step	STACK_ADD	A triggered Shroofus Sproutsire
+15	A's End of Combat Step	PHASE	A's End of Combat Step
+15	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+15	A's Main phase, postcombat	STACK_ADD	A cast Birds of Paradise
+15	A's End step	PHASE	A's End step
+15	A's Cleanup step	PHASE	A's Cleanup step
+16	A's Cleanup step	TURN	Turn 16 (B)
+16	B's Untap step	PHASE	B's Untap step
+16	B's Upkeep step	PHASE	B's Upkeep step
+16	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	B's Upkeep step	ZONE_CHANGE	B milled Mountain (46).
+16	B's Upkeep step	ZONE_CHANGE	B milled Spectacular Showdown (45).
+16	B's Upkeep step	ZONE_CHANGE*	B milled Unleash Fury (69).
+16	B's Upkeep step	ZONE_CHANGE	B milled Mountain (53).
+16	B's Upkeep step	ZONE_CHANGE	B milled Thermo-Alchemist (42).
+16	B's Upkeep step	ZONE_CHANGE	B milled Mountain (60).
+16	B's Draw step	PHASE	B's Draw step
+16	B's Main phase, precombat	PHASE	B's Main phase, precombat
+16	B's Main phase, precombat	STACK_ADD	B activated Kiki-Jiki, Mirror Breaker targeting [Exuberant Firestoker (76)]
+16	B's Main phase, precombat	STACK_ADD	B cast Dragonlord's Servant
+16	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+16	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+16	B's Declare Attackers Step	COMBAT	B assigned Exuberant Firestoker (306) to attack A.
+16	B's Declare Attackers Step	STACK_ADD	B triggered Roar of Resistance
+16	B's Declare Attackers Step	STACK_ADD	A activated Fungal Plots
+16	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+16	B's Declare Blockers Step	COMBAT	A didn't block Exuberant Firestoker (306).
+16	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+16	B's Combat Damage Step	PHASE	B's Combat Damage Step
+16	B's Combat Damage Step	DAMAGE	Exuberant Firestoker (306) deals 1 combat damage to A.
+16	B's Combat Damage Step	LIFE	Life: A 17 > 16
+16	B's End of Combat Step	PHASE	B's End of Combat Step
+16	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+16	B's End step	PHASE	B's End step
+16	B's End step	STACK_ADD	B triggered Kiki-Jiki, Mirror Breaker
+16	B's End step	ZONE_CHANGE	Exuberant Firestoker (306) was put into Graveyard from Battlefield.
+16	B's Cleanup step	PHASE	B's Cleanup step

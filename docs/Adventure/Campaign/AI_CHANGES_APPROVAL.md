@@ -46,6 +46,11 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
   - Shared by every pump spell and ability, so it needs a regression sim on ordinary decks with pump spells, plus a
     controlled gang-block test.
   - The 10-game test was inconclusive: no gang block came up.
+  - First regression (2 pairings, 10 games each): no red flag, but not evidence either.
+    - The test arms combined 005, 006 and 008.
+    - The decks had few real pump tricks.
+    - Kills weren't attributed.
+  - Next: a controlled gang-block test, then 20 games per arm with 008 alone on decks built around pump tricks.
   - Kept separate from 005, which works without it. 005 gets better with it.
 - [ ] **006, Fog count includes Effect-based Fogs**: Tested, no effect; parked.
   - Where: `FogAi.java:116-133`. In the A/B test it changed nothing measurable.

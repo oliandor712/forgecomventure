@@ -409,3 +409,53 @@ stack lines.
    among the blockers.
 2. A change to shared helpers like `shouldPumpCard` needs a regression sim on ordinary decks before it's proposed.
 3. Keep separate patches separate when their reach differs, so each can be approved on its own evidence.
+
+## 2026-10-20: Regression for 008: not enough yet
+
+Request: Is the r008 regression (2 pairings x 10 games) enough for 008, or 20+ games, real pump-trick decks, or the gang-block scenario first; which pump events to log for kill attribution.
+
+**Data.** `results/r008{a,b}-{base,code}` and the EXPERIMENTS.md section "Regression sim for patch 008".
+
+### Verdict: not enough yet
+
+Three problems, in order:
+1. **The arms change three things at once.** Code ran 005 v3, 006 and 008 together, so nothing is attributable to
+   008. A regression for 008 must be base against 008 only (a scratch build with just that patch).
+2. **The decks barely reach 008's code.** 008 changes the blocker branch of `shouldPumpCard`. Only 2 of the watched
+   cards are real combat pumps; most "pump instants" in these decks are removal or bite spells, which use other AI
+   paths. Casts per card drawn (0.73 to 0.80, 0.60 to 0.67) are within noise for these counts, so no red flag, but no
+   evidence either.
+3. **No kill attribution,** so the question 008 asks ("did my pump plus the other blockers kill the attacker?") isn't
+   measured.
+
+### Next, in this order
+
+1. **The controlled gang block (c) first.** It proves the benefit and tells you what to log.
+   - The Alandra switch deck defends with 3 or more small blockers. Force switch cards and 2 Giant Growth-style
+     instants with `minideck --test ... --copies 2`.
+   - The opponent attacks with 1-2 big creatures (a tier 3-4 green fatty deck).
+   - 10 games, base against 008 only.
+2. **Then the regression (a + b): 20 games per arm, base against 008 only, on decks with real pump tricks.**
+   - Make two pump-trick test decks with minideck: green with Giant Growth, Titanic Growth and Blossoming Defense, and
+     white with Brute Force-type tricks or Moment of Heroism. Two copies each, 40 cards.
+   - Play them against ordinary tier 2-3 decks.
+   - What would be a red flag: pump casts per drawn trick changing by more than about 15 percentage points, or more
+     pumps cast while not in combat.
+
+### Logging for kill attribution, per pump or switch event
+
+| Column | What it holds |
+|---|---|
+| `pumped_id` | The pumped creature's object id and controller |
+| `role` | Attacker or blocker, plus the ids of every creature in that combat group (an attacker and all its blockers) |
+| `pred` | The predicted outcome from shouldPumpCard: kills which ids, loses which ids |
+| `actual` | After combat damage: the ids of every creature from that group put into a graveyard this step (from your ZONE_CHANGE lines, matched by id) |
+| `useful` | 1 if `actual` matches the pump's purpose: an opposing creature died that wouldn't have without the pump, or the pumped creature survived when it otherwise wouldn't. Judge "otherwise" by simple math on the logged P/T |
+
+Also, a note about pkill: you used `pkill -f` once and it killed your own shell. Good that you've switched to killing
+by pid; it's standing rule 10 in CONTEXT.md.
+
+**Rules to apply:**
+1. Test one patch at a time against base.
+2. Pick decks that reach the changed code path.
+3. Measure the decision's purpose (kills, survival) by object id, not only casts and wins.

@@ -1,0 +1,51 @@
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Bramblewood Paragon (7) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Bramblewood Paragon (7).
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Bramblewood Paragon (7) deals 4 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 20 > 16
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD	A cast Llanowar Elves
+11	A's Main phase, postcombat	STACK_ADD	A triggered Season of Growth
+11	A's End step	PHASE	A's End step
+11	A's End step	ZONE_CHANGE	Racers' Ring (74) was put into Graveyard from Battlefield.
+11	A's End step	STACK_ADD	B activated Racers' Ring
+11	A's End step	STACK_ADD*	B cast Bite Down targeting [Zilortha, Strength Incarnate (81)] [Bramblewood Paragon (7)]
+11	A's End step	DAMAGE	Zilortha, Strength Incarnate (81) deals 7 damage to Bramblewood Paragon (7).
+11	A's End step	STACK_RESOLVE*	Bite Down (65) -  Zilortha, Strength Incarnate (81) deals 7 damage to Bramblewood Paragon (7).
+11	A's End step	ZONE_CHANGE	Bramblewood Paragon (7) was put into Graveyard from Battlefield.
+11	A's End step	ZONE_CHANGE	Rancor (13) was put into Graveyard from Battlefield.
+11	A's End step	STACK_ADD	A triggered Rancor
+11	A's Cleanup step	PHASE	A's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Draw step	STACK_ADD*	B cast Tail Swipe targeting [Zilortha, Strength Incarnate (81)] [Llanowar Elves (9)]
+14	B's Draw step	DAMAGE	Zilortha, Strength Incarnate (81) deals 10 damage to Llanowar Elves (9).
+14	B's Draw step	LIFE	Life: B 26 > 36
+14	B's Draw step	DAMAGE	Llanowar Elves (9) deals 3 damage to Zilortha, Strength Incarnate (81).
+14	B's Draw step	STACK_RESOLVE*	Tail Swipe (54) - Zilortha, Strength Incarnate (81) gets +1/+1  until end of turn. Then the chosen creatures fight each other. (They each deal damage equal to their power to the other.)
+14	B's Draw step	ZONE_CHANGE	Llanowar Elves (9) was put into Graveyard from Battlefield.
+14	B's Draw step	ZONE_CHANGE	Rancor (13) was put into Graveyard from Battlefield.
+14	B's Draw step	STACK_ADD	A triggered Rancor
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned Zilortha, Strength Incarnate (81) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A didn't block Zilortha, Strength Incarnate (81).
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 10 combat damage to A.
+14	B's Combat Damage Step	LIFE	Life: B 36 > 46
+14	B's Combat Damage Step	LIFE	Life: A 4 > -6

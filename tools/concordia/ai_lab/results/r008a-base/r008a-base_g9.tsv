@@ -1,0 +1,22 @@
+8	A's Cleanup step	TURN	Turn 8 (B)
+8	B's Untap step	PHASE	B's Untap step
+8	B's Upkeep step	PHASE	B's Upkeep step
+8	B's Draw step	PHASE	B's Draw step
+8	B's Main phase, precombat	PHASE	B's Main phase, precombat
+8	B's Main phase, precombat	STACK_ADD	B cast Dragonlord's Servant
+8	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+8	B's Beginning of Combat Step	STACK_ADD*	B cast Expedite targeting [Dragonlord's Servant (44)]
+8	B's Beginning of Combat Step	STACK_RESOLVE*	Expedite (71) - Dragonlord's Servant (44) gains haste until end of turn. B draws a card.
+8	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+8	B's Declare Attackers Step	COMBAT	B assigned Dragonspeaker Shaman (74) and Dragonlord's Servant (44) to attack A.
+8	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+8	B's Declare Blockers Step	COMBAT	A didn't block Dragonspeaker Shaman (74). A didn't block Dragonlord's Servant (44).
+8	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+8	B's Combat Damage Step	PHASE	B's Combat Damage Step
+8	B's Combat Damage Step	DAMAGE	Dragonspeaker Shaman (74) deals 2 combat damage to A.
+8	B's Combat Damage Step	DAMAGE	Dragonlord's Servant (44) deals 1 combat damage to A.
+8	B's Combat Damage Step	LIFE	Life: A 20 > 17
+8	B's End of Combat Step	PHASE	B's End of Combat Step
+8	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+8	B's End step	PHASE	B's End step
+8	B's Cleanup step	PHASE	B's Cleanup step
