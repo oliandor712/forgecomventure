@@ -1,0 +1,58 @@
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Deranged Assistant (24) to attack B.
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B didn't block Deranged Assistant (24).
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Deranged Assistant (24) deals 1 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: B 20 > 19
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+7	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Beginning of Combat Step	STACK_ADD*	A activated Turtleshell Changeling
+12	B's Beginning of Combat Step	STACK_RESOLVE*	Turtleshell Changeling (3) - Turtleshell Changeling (3) gains hidden cardname's power and toughness are switched until end of turn.
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned Signal Pest (79), Ornithopter (69) and Aetherjacket (45) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A didn't block Signal Pest (79). A didn't block Ornithopter (69). A didn't block Aetherjacket (45).
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE	Ornithopter (69) deals 2 combat damage to A.
+12	B's Combat Damage Step	DAMAGE	Aetherjacket (45) deals 4 combat damage to A.
+12	B's Combat Damage Step	LIFE	Life: A 11 > 5
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Beginning of Combat Step	STACK_ADD*	A activated Turtleshell Changeling
+14	B's Beginning of Combat Step	STACK_RESOLVE*	Turtleshell Changeling (3) - Turtleshell Changeling (3) gains hidden cardname's power and toughness are switched until end of turn.
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned Signal Pest (79), Ornithopter (69) and Aetherjacket (45) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A didn't block Signal Pest (79). A didn't block Ornithopter (69). A didn't block Aetherjacket (45).
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	Ornithopter (69) deals 2 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Aetherjacket (45) deals 4 combat damage to A.
+14	B's Combat Damage Step	LIFE	Life: A 5 > -1

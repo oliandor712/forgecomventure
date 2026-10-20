@@ -1,0 +1,8 @@
+RESULT	n003-baseline	A=9	B=1	draw=0	avgTurns=18.2
+  card=Shield Dancer games_seen=0 casts=0 activations=0
+  card=Harsh Justice games_seen=0 casts=0 activations=0
+  card=Endure games_seen=0 casts=0 activations=0
+RESULT	n003-patched	A=8	B=2	draw=0	avgTurns=23.9
+  card=Shield Dancer games_seen=4 casts=9 activations=6
+  card=Harsh Justice games_seen=0 casts=0 activations=0
+  card=Endure games_seen=2 casts=2 activations=0

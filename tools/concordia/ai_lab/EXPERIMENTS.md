@@ -45,3 +45,14 @@ Same decks (30 cards), 4 games each, equal life 20. Baseline (flag kept): 0 cast
 - **Result:** baseline 0 casts. Patched: Endure 15 casts, Shield Dancer 11 casts and 19 activations; Harsh Justice 0 casts although it was still in hand at game end in 4 of 10 games. Wins 6-4 vs 4-6, avg turns 17.1 vs 24.1 (the AI survives longer).
 - **Open question (Harsh Justice):** it is not a plain fog (it reflects combat damage) and has `ActivationPhases$ Declare Attackers` and `CheckSVar$ Y` (`HasPropertyBeenAttackedThisCombat`). With the flag gone the AI still never casts it; likely `FogAi` (`ability/FogAi.java`) never sees a damage threat that justifies it, or the SVar check fails. Needs a read of `FogAi.canPlay` and a targeted test; not part of the patch.
 - **Verdict:** Endure and Shield Dancer: worth proposing. Still to check: cast timing in the logs.
+
+## Re-run of 001-003 with natural card density (n001, n002, n003; user request 2026-10-20)
+Change from the first runs: 1 copy of each test card (not 2) in 40-card decks built with `minideck.py --size 40`, so the flagged cards are about as likely to be drawn as any other card; 10 games per condition, equal life 20, baseline (flag kept) and patched (flag removed) in parallel via `run_exp.sh`, phase-annotated logs in `results/n00X-{baseline,patched}/`, summaries `results/n00X-summary.txt`. Same 8 card patches as 001-003; opponents Sai (blue), Mirri (green), red 40-card deck.
+
+| Test | Cards | Baseline casts | Patched casts / activations | Wins A (baseline -> patched) | Games card seen (patched) |
+|---|---|---|---|---|---|
+| n001 SwitchPT | Aquamoeba / Turtleshell / Myr Quadropod | 0 / 0 / 0 | 3 / 5 / 7; 6 / 32 / 54 | 0-10 -> 0-10 | 4 / 6 / 7 |
+| n002 Fog | Thwart the Enemy / Vine Snare | 0 / 0 | 4 / 4 | 0-10 -> 0-10 | 4 / 4 |
+| n003 white Fog | Shield Dancer / Harsh Justice / Endure | 0 / 0 / 0 | 9 casts (6 act.) / 0 / 2 | 9-1 -> 8-2 | 4 / 0 / 2 |
+
+Findings: (1) with natural density the flag is still the whole difference: baseline never casts any of the 8 cards, patched casts every card it draws (except Harsh Justice, never seen). (2) Phases of the patched activations (n001): 70 log lines in B's beginning-of-combat, 20 in declare blockers, 15 postcombat main (casts), 2 in declare attackers; so the SwitchPT cards are used in combat, not idly, but activation counts are high (Myr Quadropod 54 over 7 games). (3) Fogs are cast rarely (4 each in 10 games) which fits "only when threatened". (4) Win rates do not move; the opponents are stronger than these decks in n001/n002.

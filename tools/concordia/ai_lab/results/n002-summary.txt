@@ -1,0 +1,6 @@
+RESULT	n002-baseline	A=0	B=10	draw=0	avgTurns=18.4
+  card=Vine Snare games_seen=0 casts=0 activations=0
+  card=Thwart the Enemy games_seen=0 casts=0 activations=0
+RESULT	n002-patched	A=0	B=10	draw=0	avgTurns=16.1
+  card=Vine Snare games_seen=4 casts=4 activations=0
+  card=Thwart the Enemy games_seen=4 casts=4 activations=0

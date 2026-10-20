@@ -1,0 +1,8 @@
+RESULT	n001-baseline	A=0	B=10	draw=0	avgTurns=20.8
+  card=Aquamoeba games_seen=1 casts=0 activations=0
+  card=Turtleshell Changeling games_seen=0 casts=0 activations=0
+  card=Myr Quadropod games_seen=1 casts=0 activations=0
+RESULT	n001-patched	A=0	B=10	draw=0	avgTurns=20.3
+  card=Aquamoeba games_seen=4 casts=3 activations=6
+  card=Turtleshell Changeling games_seen=6 casts=5 activations=32
+  card=Myr Quadropod games_seen=7 casts=7 activations=54

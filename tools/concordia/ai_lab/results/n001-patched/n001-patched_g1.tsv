@@ -1,0 +1,85 @@
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+7	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+18	A's Cleanup step	TURN	Turn 18 (B)
+18	B's Untap step	PHASE	B's Untap step
+18	B's Upkeep step	PHASE	B's Upkeep step
+18	B's Draw step	PHASE	B's Draw step
+18	B's Main phase, precombat	PHASE	B's Main phase, precombat
+18	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+18	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+18	B's Declare Attackers Step	COMBAT	B assigned Barkform Harvester (49) to attack A.
+18	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+18	B's Declare Blockers Step	COMBAT*	A assigned Merfolk Trickster (38), Turtleshell Changeling (3) and Alandra, Sky Dreamer (40) to block Barkform Harvester (49).
+18	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+18	B's Combat Damage Step	PHASE	B's Combat Damage Step
+18	B's Combat Damage Step	DAMAGE*	Barkform Harvester (49) deals 1 damage to Turtleshell Changeling (3).
+18	B's Combat Damage Step	DAMAGE	Barkform Harvester (49) deals 4 damage to Alandra, Sky Dreamer (40).
+18	B's Combat Damage Step	DAMAGE	Merfolk Trickster (38) deals 2 damage to Barkform Harvester (49).
+18	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (3) deals 1 damage to Barkform Harvester (49).
+18	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Barkform Harvester (49).
+18	B's End of Combat Step	PHASE	B's End of Combat Step
+18	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+18	B's End step	PHASE	B's End step
+18	B's Cleanup step	PHASE	B's Cleanup step
+19	B's Cleanup step	TURN	Turn 19 (A)
+19	A's Untap step	PHASE	A's Untap step
+19	A's Upkeep step	PHASE	A's Upkeep step
+19	A's Draw step	PHASE	A's Draw step
+19	A's Main phase, precombat	PHASE	A's Main phase, precombat
+19	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+19	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+19	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+19	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+19	A's Combat Damage Step	PHASE	A's Combat Damage Step
+19	A's End of Combat Step	PHASE	A's End of Combat Step
+19	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+19	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+19	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+19	A's End step	PHASE	A's End step
+19	A's Cleanup step	PHASE	A's Cleanup step
+22	A's Cleanup step	TURN	Turn 22 (B)
+22	B's Untap step	PHASE	B's Untap step
+22	B's Upkeep step	PHASE	B's Upkeep step
+22	B's Draw step	PHASE	B's Draw step
+22	B's Main phase, precombat	PHASE	B's Main phase, precombat
+22	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+22	B's Beginning of Combat Step	STACK_ADD*	A activated Myr Quadropod
+22	B's Beginning of Combat Step	STACK_RESOLVE*	Myr Quadropod (4) - Myr Quadropod (4) gains hidden cardname's power and toughness are switched until end of turn.
+22	B's Beginning of Combat Step	STACK_ADD*	A activated Turtleshell Changeling
+22	B's Beginning of Combat Step	STACK_RESOLVE*	Turtleshell Changeling (3) - Turtleshell Changeling (3) gains hidden cardname's power and toughness are switched until end of turn.
+22	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+22	B's Declare Attackers Step	COMBAT	B assigned Aetherjacket (45), Thopter Token (98), Thopter Token (101), Thopter Token (106), Ornithopter (69), Spectrum Sentinel (47), Ornithopter of Paradise (80), Sai, Master Thopterist (81) and Etherium Sculptor (76) to attack A.
+22	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+22	B's Declare Blockers Step	COMBAT	A assigned Drake Token (85) to block Aetherjacket (45). A didn't block Thopter Token (98). A didn't block Thopter Token (101). A didn't block Thopter Token (106). A didn't block Ornithopter (69). A assigned Deranged Assistant (24) and Merfolk Trickster (38) to block Spectrum Sentinel (47). A didn't block Ornithopter of Paradise (80). A assigned Silvergill Adept (26) and Face-down card (H4) to block Sai, Master Thopterist (81). A assigned Watcher for Tomorrow (28) to block Etherium Sculptor (76).
+22	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+22	B's Combat Damage Step	PHASE	B's Combat Damage Step
+22	B's Combat Damage Step	DAMAGE	Aetherjacket (45) deals 6 damage to Drake Token (85).
+22	B's Combat Damage Step	DAMAGE	Thopter Token (98) deals 2 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Thopter Token (101) deals 2 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Thopter Token (106) deals 2 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Ornithopter (69) deals 1 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Spectrum Sentinel (47) deals 1 damage to Deranged Assistant (24).
+22	B's Combat Damage Step	DAMAGE	Ornithopter of Paradise (80) deals 1 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 1 damage to Silvergill Adept (26).
+22	B's Combat Damage Step	DAMAGE	Etherium Sculptor (76) deals 1 damage to Watcher for Tomorrow (28).
+22	B's Combat Damage Step	DAMAGE	Drake Token (85) deals 2 damage to Aetherjacket (45).
+22	B's Combat Damage Step	DAMAGE	Deranged Assistant (24) deals 1 damage to Spectrum Sentinel (47).
+22	B's Combat Damage Step	DAMAGE	Merfolk Trickster (38) deals 2 damage to Spectrum Sentinel (47).
+22	B's Combat Damage Step	DAMAGE	Silvergill Adept (26) deals 2 damage to Sai, Master Thopterist (81).
+22	B's Combat Damage Step	DAMAGE	Face-down card (H4) deals 2 damage to Sai, Master Thopterist (81).
+22	B's Combat Damage Step	DAMAGE	Watcher for Tomorrow (28) deals 2 damage to Etherium Sculptor (76).
+22	B's Combat Damage Step	LIFE	Life: A 7 > -1

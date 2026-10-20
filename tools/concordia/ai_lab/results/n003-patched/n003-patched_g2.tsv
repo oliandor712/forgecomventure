@@ -1,0 +1,112 @@
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD*	A cast Shield Dancer
+8	A's Main phase, postcombat	STACK_RESOLVE*	Shield Dancer - Creature 1 / 3
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+25	A's Cleanup step	TURN	Turn 25 (B)
+25	B's Untap step	PHASE	B's Untap step
+25	B's Upkeep step	PHASE	B's Upkeep step
+25	B's Draw step	PHASE	B's Draw step
+25	B's Main phase, precombat	PHASE	B's Main phase, precombat
+25	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+25	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+25	B's Declare Attackers Step	COMBAT	B assigned Gempalm Incinerator (44) and Academy Raider (63) to attack A.
+25	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+25	B's Declare Blockers Step	COMBAT	A assigned Human Token (114) to block Gempalm Incinerator (44). A didn't block Academy Raider (63).
+25	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+25	B's Combat Damage Step	PHASE	B's Combat Damage Step
+25	B's Combat Damage Step	DAMAGE	Gempalm Incinerator (44) deals 4 damage to Human Token (114).
+25	B's Combat Damage Step	DAMAGE	Academy Raider (63) deals 1 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Human Token (114) deals 1 damage to Gempalm Incinerator (44).
+25	B's Combat Damage Step	LIFE	Life: A 6 > 5
+25	B's Combat Damage Step	STACK_ADD*	A cast Shardmage's Rescue targeting [Shield Dancer (6)]
+25	B's Combat Damage Step	STACK_RESOLVE*	Shardmage's Rescue (11) -  Attach to Shield Dancer (6)
+25	B's End of Combat Step	PHASE	B's End of Combat Step
+25	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+25	B's End step	PHASE	B's End step
+25	B's Cleanup step	PHASE	B's Cleanup step
+29	A's Cleanup step	TURN	Turn 29 (B)
+29	B's Untap step	PHASE	B's Untap step
+29	B's Upkeep step	PHASE	B's Upkeep step
+29	B's Draw step	PHASE	B's Draw step
+29	B's Main phase, precombat	PHASE	B's Main phase, precombat
+29	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+29	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+29	B's Declare Attackers Step	COMBAT	B assigned Gempalm Incinerator (44), Academy Raider (63) and Goblin Balloon Brigade (75) to attack A.
+29	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+29	B's Declare Blockers Step	COMBAT	A assigned Soul Warden (2) to block Gempalm Incinerator (44). A didn't block Academy Raider (63). A didn't block Goblin Balloon Brigade (75).
+29	B's Declare Blockers Step	STACK_ADD*	A cast Endure
+29	B's Declare Blockers Step	STACK_RESOLVE*	Endure (1) - Prevent all damage that would be dealt to you and permanents you control this turn.
+29	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+29	B's Combat Damage Step	PHASE	B's Combat Damage Step
+29	B's Combat Damage Step	DAMAGE	Soul Warden (2) deals 1 damage to Gempalm Incinerator (44).
+29	B's End of Combat Step	PHASE	B's End of Combat Step
+29	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+29	B's End step	PHASE	B's End step
+29	B's Cleanup step	PHASE	B's Cleanup step
+33	A's Cleanup step	TURN	Turn 33 (B)
+33	B's Untap step	PHASE	B's Untap step
+33	B's Upkeep step	PHASE	B's Upkeep step
+33	B's Draw step	PHASE	B's Draw step
+33	B's Main phase, precombat	PHASE	B's Main phase, precombat
+33	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+33	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+33	B's Declare Attackers Step	COMBAT	B assigned Gempalm Incinerator (44), Academy Raider (63), Skirk Prospector (69), Goblin Balloon Brigade (75) and Sparksmith (71) to attack A.
+33	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+33	B's Declare Blockers Step	COMBAT*	A assigned Dawnbringer Cleric (15) to block Gempalm Incinerator (44). A didn't block Academy Raider (63). A assigned Shield Dancer (6) to block Skirk Prospector (69). A didn't block Goblin Balloon Brigade (75). A didn't block Sparksmith (71).
+33	B's Declare Blockers Step	STACK_ADD*	A activated Shield Dancer targeting [Gempalm Incinerator (44)]
+33	B's Declare Blockers Step	STACK_RESOLVE*	Shield Dancer (6) - {2}{W}: The next time target attacking creature would deal combat damage to Shield Dancer this turn, that creature deals that damage to itself instead.
+33	B's Declare Blockers Step	STACK_ADD*	A activated Shield Dancer targeting [Gempalm Incinerator (44)]
+33	B's Declare Blockers Step	STACK_RESOLVE*	Shield Dancer (6) - {2}{W}: The next time target attacking creature would deal combat damage to Shield Dancer this turn, that creature deals that damage to itself instead.
+33	B's Declare Blockers Step	STACK_ADD*	A activated Shield Dancer targeting [Gempalm Incinerator (44)]
+33	B's Declare Blockers Step	STACK_RESOLVE*	Shield Dancer (6) - {2}{W}: The next time target attacking creature would deal combat damage to Shield Dancer this turn, that creature deals that damage to itself instead.
+33	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+33	B's Combat Damage Step	PHASE	B's Combat Damage Step
+33	B's Combat Damage Step	DAMAGE	Gempalm Incinerator (44) deals 4 damage to Dawnbringer Cleric (15).
+33	B's Combat Damage Step	DAMAGE	Academy Raider (63) deals 1 combat damage to A.
+33	B's Combat Damage Step	DAMAGE*	Skirk Prospector (69) deals 1 damage to Shield Dancer (6).
+33	B's Combat Damage Step	DAMAGE	Sparksmith (71) deals 1 combat damage to A.
+33	B's Combat Damage Step	DAMAGE	Dawnbringer Cleric (15) deals 1 damage to Gempalm Incinerator (44).
+33	B's Combat Damage Step	DAMAGE*	Shield Dancer (6) deals 2 damage to Skirk Prospector (69).
+33	B's Combat Damage Step	LIFE	Life: A 4 > 2
+33	B's End of Combat Step	PHASE	B's End of Combat Step
+33	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+33	B's Main phase, postcombat	STACK_ADD*	A cast Protection Magic targeting [Shield Dancer (6)]
+33	B's Main phase, postcombat	STACK_RESOLVE*	Protection Magic (4) - A puts a shield counter on Shield Dancer (6).
+33	B's End step	PHASE	B's End step
+33	B's Cleanup step	PHASE	B's Cleanup step
+35	A's Cleanup step	TURN	Turn 35 (B)
+35	B's Untap step	PHASE	B's Untap step
+35	B's Upkeep step	PHASE	B's Upkeep step
+35	B's Draw step	PHASE	B's Draw step
+35	B's Main phase, precombat	PHASE	B's Main phase, precombat
+35	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+35	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+35	B's Declare Attackers Step	COMBAT	B assigned Gempalm Incinerator (44), Scrapwork Mutt (80), Academy Raider (63), Skirk Prospector (69) and Sparksmith (71) to attack A.
+35	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+35	B's Declare Blockers Step	COMBAT*	A assigned Ingenious Smith (14) to block Gempalm Incinerator (44). A assigned Shield Dancer (6) to block Scrapwork Mutt (80). A didn't block Academy Raider (63). A didn't block Skirk Prospector (69). A didn't block Sparksmith (71).
+35	B's Declare Blockers Step	STACK_ADD*	A activated Shield Dancer targeting [Gempalm Incinerator (44)]
+35	B's Declare Blockers Step	STACK_RESOLVE*	Shield Dancer (6) - {2}{W}: The next time target attacking creature would deal combat damage to Shield Dancer this turn, that creature deals that damage to itself instead.
+35	B's Declare Blockers Step	STACK_ADD*	A activated Shield Dancer targeting [Gempalm Incinerator (44)]
+35	B's Declare Blockers Step	STACK_RESOLVE*	Shield Dancer (6) - {2}{W}: The next time target attacking creature would deal combat damage to Shield Dancer this turn, that creature deals that damage to itself instead.
+35	B's Declare Blockers Step	STACK_ADD*	A activated Shield Dancer targeting [Gempalm Incinerator (44)]
+35	B's Declare Blockers Step	STACK_RESOLVE*	Shield Dancer (6) - {2}{W}: The next time target attacking creature would deal combat damage to Shield Dancer this turn, that creature deals that damage to itself instead.
+35	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+35	B's Combat Damage Step	PHASE	B's Combat Damage Step
+35	B's Combat Damage Step	DAMAGE	Gempalm Incinerator (44) deals 4 damage to Ingenious Smith (14).
+35	B's Combat Damage Step	DAMAGE	Academy Raider (63) deals 1 combat damage to A.
+35	B's Combat Damage Step	DAMAGE	Sparksmith (71) deals 1 combat damage to A.
+35	B's Combat Damage Step	DAMAGE	Ingenious Smith (14) deals 1 damage to Gempalm Incinerator (44).
+35	B's Combat Damage Step	DAMAGE*	Shield Dancer (6) deals 2 damage to Scrapwork Mutt (80).
+35	B's Combat Damage Step	LIFE	Life: A 2 > 0

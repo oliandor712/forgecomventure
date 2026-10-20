@@ -1,0 +1,30 @@
+[metadata]
+Name=Arasta's Company (40)
+Description=Test deck shrunk to 40 cards by ai_lab/minideck.py from T2_G_Arasta.dck; test cards: Thwart the Enemy, Vine Snare
+[Commander]
+1 Arasta of the Endless Web|THB
+[Main]
+16 Forest
+1 Thwart the Enemy
+1 Vine Snare
+1 Shield Sphere|ALL
+1 Arbor Elf|M13
+1 Arboreal Grazer|WAR
+1 Mirkwood Spider|LTR
+1 Eldritch Immunity|M3C
+1 Oath of Nissa|OGW
+1 Aquastrand Spider|DIS
+1 Canopy Spider|M20
+1 Copper Longlegs|ONE
+1 Deadly Recluse|M14
+1 Grappler Spider|WWK
+1 Merfolk Branchwalker|XLN
+1 Ruins Recluse|MOM
+1 Sylvan Ranger|M11
+1 Chatterstorm|MH2
+1 Hero's Blade|FRF
+1 Regrowth|MH1
+1 Restore|CMA
+1 Star Compass|IMA
+1 Sun Droplet|MRD
+1 TARDIS|WHO

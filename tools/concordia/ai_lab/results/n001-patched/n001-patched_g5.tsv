@@ -1,0 +1,93 @@
+20	B's Cleanup step	TURN	Turn 20 (A)
+20	A's Untap step	PHASE	A's Untap step
+20	A's Upkeep step	PHASE	A's Upkeep step
+20	A's Draw step	PHASE	A's Draw step
+20	A's Main phase, precombat	PHASE	A's Main phase, precombat
+20	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+20	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+20	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+20	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+20	A's Combat Damage Step	PHASE	A's Combat Damage Step
+20	A's End of Combat Step	PHASE	A's End of Combat Step
+20	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+20	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+20	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+20	A's End step	PHASE	A's End step
+20	A's Cleanup step	PHASE	A's Cleanup step
+21	A's Cleanup step	TURN	Turn 21 (B)
+21	B's Untap step	PHASE	B's Untap step
+21	B's Upkeep step	PHASE	B's Upkeep step
+21	B's Draw step	PHASE	B's Draw step
+21	B's Main phase, precombat	PHASE	B's Main phase, precombat
+21	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+21	B's Beginning of Combat Step	STACK_ADD*	A activated Myr Quadropod
+21	B's Beginning of Combat Step	STACK_RESOLVE*	Myr Quadropod (4) - Myr Quadropod (4) gains hidden cardname's power and toughness are switched until end of turn.
+21	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+21	B's Declare Attackers Step	COMBAT	B assigned Thopter Mechanic (74) to attack A.
+21	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+21	B's Declare Blockers Step	COMBAT	A didn't block Thopter Mechanic (74).
+21	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+21	B's Combat Damage Step	PHASE	B's Combat Damage Step
+21	B's Combat Damage Step	DAMAGE	Thopter Mechanic (74) deals 2 combat damage to A.
+21	B's Combat Damage Step	LIFE	Life: A 6 > 4
+21	B's End of Combat Step	PHASE	B's End of Combat Step
+21	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+21	B's End step	PHASE	B's End step
+21	B's Cleanup step	PHASE	B's Cleanup step
+23	A's Cleanup step	TURN	Turn 23 (B)
+23	B's Untap step	PHASE	B's Untap step
+23	B's Upkeep step	PHASE	B's Upkeep step
+23	B's Draw step	PHASE	B's Draw step
+23	B's Main phase, precombat	PHASE	B's Main phase, precombat
+23	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+23	B's Beginning of Combat Step	STACK_ADD*	A activated Myr Quadropod
+23	B's Beginning of Combat Step	STACK_RESOLVE*	Myr Quadropod (4) - Myr Quadropod (4) gains hidden cardname's power and toughness are switched until end of turn.
+23	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+23	B's Declare Attackers Step	COMBAT	B assigned Thopter Mechanic (74) to attack A.
+23	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+23	B's Declare Blockers Step	COMBAT	A assigned Drake Token (98) to block Thopter Mechanic (74).
+23	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+23	B's Combat Damage Step	PHASE	B's Combat Damage Step
+23	B's Combat Damage Step	DAMAGE	Thopter Mechanic (74) deals 2 damage to Drake Token (98).
+23	B's Combat Damage Step	DAMAGE	Drake Token (98) deals 2 damage to Thopter Mechanic (74).
+23	B's End of Combat Step	PHASE	B's End of Combat Step
+23	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+23	B's End step	PHASE	B's End step
+23	B's Cleanup step	PHASE	B's Cleanup step
+24	B's Cleanup step	TURN	Turn 24 (A)
+24	A's Untap step	PHASE	A's Untap step
+24	A's Upkeep step	PHASE	A's Upkeep step
+24	A's Draw step	PHASE	A's Draw step
+24	A's Main phase, precombat	PHASE	A's Main phase, precombat
+24	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+24	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+24	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+24	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+24	A's Combat Damage Step	PHASE	A's Combat Damage Step
+24	A's End of Combat Step	PHASE	A's End of Combat Step
+24	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+24	A's Main phase, postcombat	DISCARD*	A discards Turtleshell Changeling (3).
+24	A's End step	PHASE	A's End step
+24	A's Cleanup step	PHASE	A's Cleanup step
+25	A's Cleanup step	TURN	Turn 25 (B)
+25	B's Untap step	PHASE	B's Untap step
+25	B's Upkeep step	PHASE	B's Upkeep step
+25	B's Draw step	PHASE	B's Draw step
+25	B's Main phase, precombat	PHASE	B's Main phase, precombat
+25	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+25	B's Beginning of Combat Step	STACK_ADD*	A activated Myr Quadropod
+25	B's Beginning of Combat Step	STACK_RESOLVE*	Myr Quadropod (4) - Myr Quadropod (4) gains hidden cardname's power and toughness are switched until end of turn.
+25	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+25	B's Declare Attackers Step	COMBAT	B assigned Etherium Sculptor (76), Thopter Token (85), Thopter Token (88), Thopter Token (91), Thopter Token (95) and Thopter Token (101) to attack A.
+25	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+25	B's Declare Blockers Step	COMBAT	A assigned Merfolk Trickster (38) to block Etherium Sculptor (76). A didn't block Thopter Token (85). A didn't block Thopter Token (88). A didn't block Thopter Token (91). A didn't block Thopter Token (95). A didn't block Thopter Token (101).
+25	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+25	B's Combat Damage Step	PHASE	B's Combat Damage Step
+25	B's Combat Damage Step	DAMAGE	Etherium Sculptor (76) deals 1 damage to Merfolk Trickster (38).
+25	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 1 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 1 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Thopter Token (91) deals 1 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Thopter Token (95) deals 1 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Thopter Token (101) deals 1 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Merfolk Trickster (38) deals 2 damage to Etherium Sculptor (76).
+25	B's Combat Damage Step	LIFE	Life: A 4 > -1

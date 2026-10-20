@@ -1,0 +1,21 @@
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Upkeep step	LIFE	Life: A 6 > 7
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Attackers Step	COMBAT	A assigned Drake Token (101) to attack B.
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's Declare Blockers Step	COMBAT	B assigned Thopter Token (89), Thopter Token (86) and Ornithopter of Paradise (80) to block Drake Token (101).
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's Combat Damage Step	DAMAGE	Drake Token (101) deals 2 damage to Ornithopter of Paradise (80).
+16	A's Combat Damage Step	DAMAGE	Thopter Token (89) deals 1 damage to Drake Token (101).
+16	A's Combat Damage Step	DAMAGE	Thopter Token (86) deals 1 damage to Drake Token (101).
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	DISCARD*	A discards Aquamoeba (33).
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step

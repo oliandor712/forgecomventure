@@ -1,0 +1,38 @@
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Upkeep step	DAMAGE	Mirri, Cat Warrior (81) deals 2 damage to Grappler Spider (9).
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Attackers Step	COMBAT	B assigned Aloe Alchemist (73), Longtusk Cub (65), Mirri, Cat Warrior (81) and Destiny Spinner (44) to attack A.
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's Declare Blockers Step	COMBAT	A didn't block Aloe Alchemist (73). A didn't block Longtusk Cub (65). A didn't block Mirri, Cat Warrior (81). A didn't block Destiny Spinner (44).
+11	B's Declare Blockers Step	STACK_ADD*	A cast Vine Snare
+11	B's Declare Blockers Step	STACK_RESOLVE*	Vine Snare (3) - Prevent all combat damage that would be dealt this turn by creatures with power 4 or less.
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Aloe Alchemist (73), Longtusk Cub (65), Mirri, Cat Warrior (81), Destiny Spinner (44) and Scythe Leopard (43) to attack A.
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A assigned Copper Longlegs (2) to block Aloe Alchemist (73). A didn't block Longtusk Cub (65). A didn't block Mirri, Cat Warrior (81). A didn't block Destiny Spinner (44). A didn't block Scythe Leopard (43).
+13	B's Declare Blockers Step	STACK_ADD*	A cast Thwart the Enemy
+13	B's Declare Blockers Step	STACK_RESOLVE*	Thwart the Enemy (34) - Prevent all damage that would be dealt this turn by creatures your opponents control.
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 4 damage to Aloe Alchemist (73).
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's End step	PHASE	B's End step
+13	B's Cleanup step	PHASE	B's Cleanup step

@@ -1,0 +1,38 @@
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned Avatar of the Resolute (76), Mirri, Cat Warrior (81), Bramblewood Paragon (47) and Unseen Walker (45) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A didn't block Avatar of the Resolute (76). A didn't block Mirri, Cat Warrior (81). A didn't block Bramblewood Paragon (47). A didn't block Unseen Walker (45).
+12	B's Declare Blockers Step	STACK_ADD*	A cast Thwart the Enemy
+12	B's Declare Blockers Step	STACK_RESOLVE*	Thwart the Enemy (34) - Prevent all damage that would be dealt this turn by creatures your opponents control.
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned Mirri, Cat Warrior (81), Avatar of the Resolute (76), Bramblewood Paragon (47) and Unseen Walker (45) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A didn't block Mirri, Cat Warrior (81). A didn't block Avatar of the Resolute (76). A assigned Shield Sphere (33), Copper Longlegs (2) and Arasta of the Endless Web (40) to block Bramblewood Paragon (47). A didn't block Unseen Walker (45).
+14	B's Declare Blockers Step	STACK_ADD*	A cast Vine Snare
+14	B's Declare Blockers Step	STACK_RESOLVE*	Vine Snare (3) - Prevent all combat damage that would be dealt this turn by creatures with power 4 or less.
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's First Strike Damage Step	DAMAGE	Mirri, Cat Warrior (81) deals 5 combat damage to A.
+14	B's First Strike Damage Step	LIFE	Life: A 9 > 4
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's End step	PHASE	B's End step
+14	B's Cleanup step	PHASE	B's Cleanup step

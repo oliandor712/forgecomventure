@@ -1,0 +1,62 @@
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's Main phase, postcombat	STACK_ADD*	A cast Shield Dancer
+17	A's Main phase, postcombat	STACK_RESOLVE*	Shield Dancer - Creature 1 / 3
+17	A's Main phase, postcombat	LIFE	Life: A 34 > 35
+17	A's Main phase, postcombat	STACK_RESOLVE*	Whenever another creature enters, you gain 1 life. [Zone Changer: Shield Dancer (6)]
+17	A's End step	PHASE	A's End step
+17	A's Cleanup step	PHASE	A's Cleanup step
+30	A's Cleanup step	TURN	Turn 30 (B)
+30	B's Untap step	PHASE	B's Untap step
+30	B's Upkeep step	PHASE	B's Upkeep step
+30	B's Draw step	PHASE	B's Draw step
+30	B's Main phase, precombat	PHASE	B's Main phase, precombat
+30	B's Main phase, precombat	DAMAGE	Boiling Earth (65) deals 1 damage to Adeline, Resplendent Cathar (40).
+30	B's Main phase, precombat	DAMAGE*	Boiling Earth (65) deals 1 damage to Shield Dancer (6).
+30	B's Main phase, precombat	DAMAGE	Boiling Earth (65) deals 1 damage to Metastatic Evangel (10).
+30	B's Main phase, precombat	DAMAGE	Boiling Earth (65) deals 1 damage to Knight of Dawn's Light (13).
+30	B's Main phase, precombat	DAMAGE	Boiling Earth (65) deals 1 damage to Dauntless Dismantler (8).
+30	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+30	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+30	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+30	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+30	B's Combat Damage Step	PHASE	B's Combat Damage Step
+30	B's End of Combat Step	PHASE	B's End of Combat Step
+30	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+30	B's End step	PHASE	B's End step
+30	B's Cleanup step	PHASE	B's Cleanup step
+37	B's Cleanup step	TURN	Turn 37 (A)
+37	A's Untap step	PHASE	A's Untap step
+37	A's Upkeep step	PHASE	A's Upkeep step
+37	A's Draw step	PHASE	A's Draw step
+37	A's Main phase, precombat	PHASE	A's Main phase, precombat
+37	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+37	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+37	A's Declare Attackers Step	COMBAT*	A assigned Soul Warden (2), Phalanx Leader (5), Knight of Dawn's Light (13), Shield Dancer (6), Dauntless Dismantler (8), Ingenious Smith (14), Resolute Reinforcements (21), Soldier Token (99) and Adeline, Resplendent Cathar (40) to attack B.
+37	A's Declare Attackers Step	STACK_RESOLVE*	Whenever you attack, for each opponent, create a 1/1 white Human creature token that's tapped and attacking that player or a planeswalker they control. [Number Attackers: [Soul Warden (2), Phalanx Leader (5), Knight of Dawn's Light (13), Shield Dancer (6), Dauntless Dismantler (8), Ingenious Smith (14), Resolute Reinforcements (21), Soldier Token (99), Adeline, Resplendent Cathar (40)]]
+37	A's Declare Attackers Step	LIFE	Life: A 57 > 59
+37	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+37	A's Declare Blockers Step	COMBAT*	B assigned Battle Cry Goblin (76) to block Soul Warden (2). B assigned Gempalm Incinerator (44) to block Phalanx Leader (5). B assigned Óin the Brave (78) to block Knight of Dawn's Light (13). B assigned Mountain (60) to block Shield Dancer (6). B assigned Eron the Relentless (81) to block Dauntless Dismantler (8). B didn't block Ingenious Smith (14). B didn't block Resolute Reinforcements (21). B didn't block Soldier Token (99). B assigned Goblin Chirurgeon (72) to block Adeline, Resplendent Cathar (40). B didn't block Human Token (101).
+37	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+37	A's First Strike Damage Step	DAMAGE	Knight of Dawn's Light (13) deals 3 damage to Óin the Brave (78).
+37	A's Combat Damage Step	PHASE	A's Combat Damage Step
+37	A's Combat Damage Step	DAMAGE	Phalanx Leader (5) deals 4 damage to Gempalm Incinerator (44).
+37	A's Combat Damage Step	DAMAGE*	Shield Dancer (6) deals 1 damage to Mountain (60).
+37	A's Combat Damage Step	DAMAGE	Dauntless Dismantler (8) deals 1 damage to Eron the Relentless (81).
+37	A's Combat Damage Step	DAMAGE	Ingenious Smith (14) deals 1 combat damage to B.
+37	A's Combat Damage Step	DAMAGE	Resolute Reinforcements (21) deals 1 combat damage to B.
+37	A's Combat Damage Step	DAMAGE	Soldier Token (99) deals 1 combat damage to B.
+37	A's Combat Damage Step	DAMAGE	Human Token (101) deals 1 combat damage to B.
+37	A's Combat Damage Step	DAMAGE*	Mountain (60) deals 4 damage to Shield Dancer (6).
+37	A's Combat Damage Step	DAMAGE	Eron the Relentless (81) deals 5 damage to Dauntless Dismantler (8).
+37	A's Combat Damage Step	LIFE	Life: B 4 > 0

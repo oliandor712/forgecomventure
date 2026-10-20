@@ -1,0 +1,131 @@
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+7	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Beginning of Combat Step	STACK_ADD*	A activated Turtleshell Changeling
+12	B's Beginning of Combat Step	STACK_RESOLVE*	Turtleshell Changeling (3) - Turtleshell Changeling (3) gains hidden cardname's power and toughness are switched until end of turn.
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned Ornithopter (69) and Aetherjacket (45) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A didn't block Ornithopter (69). A didn't block Aetherjacket (45).
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE	Ornithopter (69) deals 1 combat damage to A.
+12	B's Combat Damage Step	DAMAGE	Aetherjacket (45) deals 3 combat damage to A.
+12	B's Combat Damage Step	LIFE	Life: A 19 > 15
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Beginning of Combat Step	STACK_ADD*	A activated Turtleshell Changeling
+14	B's Beginning of Combat Step	STACK_RESOLVE*	Turtleshell Changeling (3) - Turtleshell Changeling (3) gains hidden cardname's power and toughness are switched until end of turn.
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned Ornithopter (69) and Aetherjacket (45) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A didn't block Ornithopter (69). A didn't block Aetherjacket (45).
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	Ornithopter (69) deals 1 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Aetherjacket (45) deals 3 combat damage to A.
+14	B's Combat Damage Step	LIFE	Life: A 15 > 11
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's End step	PHASE	B's End step
+14	B's Cleanup step	PHASE	B's Cleanup step
+16	A's Cleanup step	TURN	Turn 16 (B)
+16	B's Untap step	PHASE	B's Untap step
+16	B's Upkeep step	PHASE	B's Upkeep step
+16	B's Draw step	PHASE	B's Draw step
+16	B's Main phase, precombat	PHASE	B's Main phase, precombat
+16	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+16	B's Beginning of Combat Step	STACK_ADD*	A activated Turtleshell Changeling
+16	B's Beginning of Combat Step	STACK_RESOLVE*	Turtleshell Changeling (3) - Turtleshell Changeling (3) gains hidden cardname's power and toughness are switched until end of turn.
+16	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+16	B's Declare Attackers Step	COMBAT	B assigned Ornithopter (69) and Aetherjacket (45) to attack A.
+16	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+16	B's Declare Blockers Step	COMBAT	A didn't block Ornithopter (69). A didn't block Aetherjacket (45).
+16	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+16	B's Combat Damage Step	PHASE	B's Combat Damage Step
+16	B's Combat Damage Step	DAMAGE	Ornithopter (69) deals 1 combat damage to A.
+16	B's Combat Damage Step	DAMAGE	Aetherjacket (45) deals 3 combat damage to A.
+16	B's Combat Damage Step	LIFE	Life: A 11 > 7
+16	B's End of Combat Step	PHASE	B's End of Combat Step
+16	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+16	B's End step	PHASE	B's End step
+16	B's Cleanup step	PHASE	B's Cleanup step
+18	A's Cleanup step	TURN	Turn 18 (B)
+18	B's Untap step	PHASE	B's Untap step
+18	B's Upkeep step	PHASE	B's Upkeep step
+18	B's Draw step	PHASE	B's Draw step
+18	B's Main phase, precombat	PHASE	B's Main phase, precombat
+18	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+18	B's Beginning of Combat Step	STACK_ADD*	A activated Turtleshell Changeling
+18	B's Beginning of Combat Step	STACK_RESOLVE*	Turtleshell Changeling (3) - Turtleshell Changeling (3) gains hidden cardname's power and toughness are switched until end of turn.
+18	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+18	B's Declare Attackers Step	COMBAT	B assigned Thopter Token (241), Ornithopter (69) and Aetherjacket (45) to attack A.
+18	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+18	B's Declare Blockers Step	COMBAT	A didn't block Thopter Token (241). A didn't block Ornithopter (69). A assigned Mistway Spy (1) to block Aetherjacket (45).
+18	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+18	B's Combat Damage Step	PHASE	B's Combat Damage Step
+18	B's Combat Damage Step	DAMAGE	Thopter Token (241) deals 2 combat damage to A.
+18	B's Combat Damage Step	DAMAGE	Ornithopter (69) deals 1 combat damage to A.
+18	B's Combat Damage Step	DAMAGE	Aetherjacket (45) deals 3 damage to Mistway Spy (1).
+18	B's Combat Damage Step	DAMAGE	Mistway Spy (1) deals 1 damage to Aetherjacket (45).
+18	B's Combat Damage Step	LIFE	Life: A 7 > 4
+18	B's End of Combat Step	PHASE	B's End of Combat Step
+18	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+18	B's End step	PHASE	B's End step
+18	B's Cleanup step	PHASE	B's Cleanup step
+20	A's Cleanup step	TURN	Turn 20 (B)
+20	B's Untap step	PHASE	B's Untap step
+20	B's Upkeep step	PHASE	B's Upkeep step
+20	B's Draw step	PHASE	B's Draw step
+20	B's Main phase, precombat	PHASE	B's Main phase, precombat
+20	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+20	B's Beginning of Combat Step	STACK_ADD*	A activated Turtleshell Changeling
+20	B's Beginning of Combat Step	STACK_RESOLVE*	Turtleshell Changeling (3) - Turtleshell Changeling (3) gains hidden cardname's power and toughness are switched until end of turn.
+20	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+20	B's Declare Attackers Step	COMBAT	B assigned Eldrazi Token (263), Aetherjacket (45), Thopter Mechanic (74), Barkform Harvester (49), Thopter Token (241), Ornithopter (69), Sai, Master Thopterist (81) and Signal Pest (79) to attack A.
+20	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+20	B's Declare Blockers Step	COMBAT	A assigned Deranged Assistant (24) to block Eldrazi Token (263). A didn't block Aetherjacket (45). A assigned Tide Shaper (37) to block Thopter Mechanic (74). A assigned Merfolk Trickster (38) and Alandra, Sky Dreamer (40) to block Barkform Harvester (49). A didn't block Thopter Token (241). A didn't block Ornithopter (69). A assigned Volshe Tideturner (39) and Karfell Harbinger (2) to block Sai, Master Thopterist (81). A didn't block Signal Pest (79).
+20	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+20	B's Combat Damage Step	PHASE	B's Combat Damage Step
+20	B's Combat Damage Step	DAMAGE	Eldrazi Token (263) deals 11 damage to Deranged Assistant (24).
+20	B's Combat Damage Step	DAMAGE	Aetherjacket (45) deals 4 combat damage to A.
+20	B's Combat Damage Step	DAMAGE	Thopter Mechanic (74) deals 4 damage to Tide Shaper (37).
+20	B's Combat Damage Step	DAMAGE	Barkform Harvester (49) deals 2 damage to Merfolk Trickster (38).
+20	B's Combat Damage Step	DAMAGE	Barkform Harvester (49) deals 1 damage to Alandra, Sky Dreamer (40).
+20	B's Combat Damage Step	DAMAGE	Thopter Token (241) deals 3 combat damage to A.
+20	B's Combat Damage Step	DAMAGE	Ornithopter (69) deals 2 combat damage to A.
+20	B's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 2 damage to Volshe Tideturner (39).
+20	B's Combat Damage Step	DAMAGE	Deranged Assistant (24) deals 1 damage to Eldrazi Token (263).
+20	B's Combat Damage Step	DAMAGE	Tide Shaper (37) deals 2 damage to Thopter Mechanic (74).
+20	B's Combat Damage Step	DAMAGE	Merfolk Trickster (38) deals 2 damage to Barkform Harvester (49).
+20	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Barkform Harvester (49).
+20	B's Combat Damage Step	DAMAGE	Volshe Tideturner (39) deals 1 damage to Sai, Master Thopterist (81).
+20	B's Combat Damage Step	DAMAGE	Karfell Harbinger (2) deals 1 damage to Sai, Master Thopterist (81).
+20	B's Combat Damage Step	LIFE	Life: A 4 > -5
