@@ -1,0 +1,3 @@
+RESULT	shadow1	A=6	B=4	draw=0	avgTurns=21.2
+RESULT	shadow2	A=7	B=3	draw=0	avgTurns=21.7
+SHADOWREACH lines (blocker-branch evaluations): 406; with co-blockers>0: 37; SHADOW disagreements base vs 008: 0

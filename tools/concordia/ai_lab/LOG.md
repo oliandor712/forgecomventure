@@ -1,3 +1,5 @@
+PAUSED until 21:00Z (user, via main session, 2026-10-20): hourly wakes before then only append a log line and do nothing else. Resume when the main session sends RESUME.
+STANDING (main session, budget): stay inside the 5-minute box every turn, split long work (builds, shadow logging) across hourly steps; put ANALYSIS REQUESTs and CHECKLIST lines in the 4-hour report, not after every test (urgent blockers only at once).
 STANDING INSTRUCTION (user, 2026-10-20): after every test, send results to the main session (session_01SmNeweiyRBavDSUetnsUjF via send_message) and request analysis of the AI decisions, logic and results by match phase and situation for the flagged cards. Use AiLabSim -Dlogdir=tools/concordia/ai_lab/results/<test> so it has phase-annotated logs.
 STANDING INSTRUCTION (user, 2026-10-20): from the next test on, shrunk test decks are 40 cards (minideck.py --size 40) to limit decking; still 10 games per condition, equal life 20. Experiments 001-002 used 30 cards.
 STANDING INSTRUCTION (user, 2026-10-20): each test runs 10 games per condition (was 4), 150 s cap per game, equal life 20 for 30-card decks.
@@ -31,3 +33,5 @@ STANDING INSTRUCTION (user, 2026-10-20): each hourly wake is time-boxed to about
 2026-10-20T18:35Z patch 008 (gang-block count in shouldPumpCard) written+built+10-game test: 3 activations, inconclusive; AiLabSim logs now include zone changes; per-main review (4) mana/hand-size columns still to do
 2026-10-20T19:10Z regression sim for 008/scratch build (2 pairings x 10 games x 2 arms): pump casts per draw 0.73->0.80 and 0.60->0.67, no red flag; note: I used pkill -f run_code_ab.sh once and killed my own shell (no harm); use pid kills only
 2026-10-20T19:50Z g008 gang-block test (base vs 008 only): casts per draw 1.41 -> 1.25, no non-combat pumps, 4 gang-block turns per arm; need per-event pred/actual log + 20 games
+2026-10-20T20:05Z shadow-mode test of 008: 37 blocker evaluations with co-blockers, 0 disagreements base vs 008. paused until 21:00Z (user, via main session); nothing running
+2026-10-20T20:10Z logged budget rule from main session; still paused until 21:00Z

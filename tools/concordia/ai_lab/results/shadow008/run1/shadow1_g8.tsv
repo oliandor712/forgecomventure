@@ -1,0 +1,82 @@
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (14) to attack B.
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B assigned Boreal Druid (46) to block Mirkwood Spider (14).
+8	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Mirkwood Spider (14)]
+8	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (10) - Mirkwood Spider (14) gets +4/+4  until end of turn.
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Mirkwood Spider (14) deals 5 damage (Deathtouch) to Boreal Druid (46).
+8	A's Combat Damage Step	DAMAGE	Boreal Druid (46) deals 1 damage to Mirkwood Spider (14).
+8	A's Combat Damage Step	ZONE_CHANGE	Boreal Druid (46) was put into Graveyard from Battlefield.
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Sylvan Ranger
+8	A's Main phase, postcombat	STACK_ADD	A triggered Sylvan Ranger
+8	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+8	A's End step	PHASE	A's End step
+8	A's End step	STACK_ADD	B cast Return to Nature
+8	A's End step	STACK_RESOLVE*	Return to Nature (78) -  Exile target card fom a graveyard. (Targeting: Titanic Growth (10))
+8	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Grappler Spider (15), Mirkwood Spider (14) and Arasta of the Endless Web (40) to attack B.
+12	A's Declare Attackers Step	STACK_ADD	A triggered Mirkwood Spider targeting [Arasta of the Endless Web (40)]
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Grappler Spider (15). B didn't block Mirkwood Spider (14). B didn't block Arasta of the Endless Web (40).
+12	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Grappler Spider (15)]
+12	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Grappler Spider (15) gets +4/+4  until end of turn.
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Grappler Spider (15) deals 6 damage to Selvala, Heart of the Wilds (81).
+12	A's Combat Damage Step	DAMAGE	Mirkwood Spider (14) deals 1 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Grappler Spider (15).
+12	A's Combat Damage Step	LIFE	Life: B 20 > 16
+12	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Arbor Elf
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Beginning of Combat Step	STACK_ADD	A activated Destiny Spinner targeting [Forest (34)]
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40), Forest (34), Grappler Spider (15), Canopy Spider (19), Destiny Spinner (5), Sylvan Ranger (22), Arbor Elf (1) and Spider Token (86) to attack B.
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's Declare Blockers Step	COMBAT	B assigned Duskwatch Recruiter (50) to block Arasta of the Endless Web (40). B didn't block Forest (34). B assigned Leaf Gilder (74) to block Grappler Spider (15). B assigned Elvish Skysweeper (51) to block Canopy Spider (19). B assigned Collector Ouphe (48) to block Destiny Spinner (5). B didn't block Sylvan Ranger (22). B assigned H.E.R.B.I.E., Lovable Robot (80) to block Arbor Elf (1). B didn't block Spider Token (86).
+16	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Grappler Spider (15)]
+16	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Grappler Spider (15) gets +2/+2 and gains hexproof until end of turn.
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 combat damage to B.
+16	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 2 damage to Duskwatch Recruiter (50).
+16	A's Combat Damage Step	DAMAGE	Forest (34) deals 3 combat damage to B.
+16	A's Combat Damage Step	DAMAGE	Grappler Spider (15) deals 4 damage to Leaf Gilder (74).
+16	A's Combat Damage Step	DAMAGE	Canopy Spider (19) deals 2 damage to Elvish Skysweeper (51).
+16	A's Combat Damage Step	DAMAGE	Destiny Spinner (5) deals 2 damage to Collector Ouphe (48).
+16	A's Combat Damage Step	DAMAGE	Sylvan Ranger (22) deals 1 combat damage to B.
+16	A's Combat Damage Step	DAMAGE	Arbor Elf (1) deals 1 damage to H.E.R.B.I.E., Lovable Robot (80).
+16	A's Combat Damage Step	DAMAGE	Spider Token (86) deals 1 combat damage to B.
+16	A's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 1 damage to Canopy Spider (19).
+16	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Destiny Spinner (5).
+16	A's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 2 damage to Grappler Spider (15).
+16	A's Combat Damage Step	DAMAGE	Duskwatch Recruiter (50) deals 2 damage to Arasta of the Endless Web (40).
+16	A's Combat Damage Step	DAMAGE	H.E.R.B.I.E., Lovable Robot (80) deals 1 damage to Arbor Elf (1).
+16	A's Combat Damage Step	LIFE	Life: B 4 > -4
