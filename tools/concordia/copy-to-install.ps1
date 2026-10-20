@@ -6,7 +6,9 @@ Copies the Concordia adventure plane from this repository into a Forge install.
 Copies forge-gui\res\adventure\Concordia into <ForgeDir>\res\adventure\Concordia.
 An existing Concordia folder in the install is moved to <ForgeDir>\adventure-backups
 first, so nothing you changed by hand is lost. The Realm of Legends plane and the
-rest of the install are not touched.
+rest of the install are not touched, except the few shared files Concordia adds outside its
+folder (listed in $sharedFiles, such as the debug menu's token script), which are copied
+into their own place under <ForgeDir>\res.
 
 .PARAMETER ForgeDir
 The Forge install folder, the one that contains res\adventure.
@@ -52,6 +54,18 @@ Copy-Item -Path $source -Destination $target -Recurse -Force
 
 $count = (Get-ChildItem -Path $target -Recurse -File).Count
 Write-Host "Copied $count files to: $target"
+
+# Files Concordia needs outside its own folder, relative to forge-gui\res.
+$sharedFiles = @(
+    "tokenscripts\c_0_1_a_debug_wand_haste.txt"   # Debug Wand, the debug menu's instant win token
+)
+foreach ($file in $sharedFiles) {
+    $from = Join-Path $RepoDir (Join-Path "forge-gui\res" $file)
+    $to = Join-Path $ForgeDir (Join-Path "res" $file)
+    New-Item -ItemType Directory -Force -Path (Split-Path $to) | Out-Null
+    Copy-Item -Path $from -Destination $to -Force
+    Write-Host "Copied: res\$file"
+}
 Write-Host ""
 Write-Host "Next: start Forge, open Adventure > Settings > Plane, choose Concordia, then start a new game."
 Write-Host "Note: the opening's color choice and tutorial raiders need the rebuilt Forge jar (J-Start, J-Ante, J-Raid)."
