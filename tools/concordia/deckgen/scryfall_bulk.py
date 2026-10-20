@@ -73,8 +73,13 @@ def refresh():
         json.dump(meta, open(meta_p, 'w'))
         print('bulk file unchanged (%s)' % entry['updated_at'])
         return
-    print('downloading %s (%.0f MB)' % (entry['download_uri'], entry.get('size', 0) / 1e6))
-    cards = json.loads(get(entry['download_uri'], raw=True))
+    url = entry.get('download_uri') or entry['jsonl_download_uri']   # newer index entries offer only JSON Lines
+    print('downloading %s (%.0f MB)' % (url, (entry.get('size') or entry.get('compressed_size') or 0) / 1e6))
+    body = get(url, raw=True)
+    if body[:2] == b'\x1f\x8b':
+        body = gzip.decompress(body)
+    text = body.decode('utf-8')
+    cards = json.loads(text) if text.lstrip().startswith('[') else [json.loads(l) for l in text.splitlines() if l.strip()]
     out = {}
     for c in cards:
         if c.get('layout') in ('token', 'emblem', 'art_series', 'double_faced_token'):

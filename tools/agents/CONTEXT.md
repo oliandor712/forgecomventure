@@ -51,7 +51,7 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
   GitHub decklists (`deckgen/external/`, local only); Scryfall (`deckgen/scryfall_bulk.py`: the bulk file, not
   per-card API calls, at most one check per 12 h; throttled lookups with back-off on 429). Prices are never used.
 - **Network:** Maven Central, PyPI, raw.githubusercontent.com and `git clone` of public GitHub repos work. Most other
-  sites (jitpack, EDHREC, MTGJSON, Archidekt, Scryfall for now) are blocked.
+  sites (jitpack, EDHREC, MTGJSON, Archidekt) are blocked; Scryfall is allowed.
 
 ## Current state
 - **Decks:** 200 AI decks, 40 per tier, all passing their tier checks. Each tier has 20 original decks (tier 1 is
@@ -81,6 +81,7 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
 The main session checks on both every 4 hours (at :20) and fixes blockers.
 
 ## Recent updates
+- 2026-10-20: Scryfall card data downloaded: deckgen/scryfall/cards.json.gz (35k cards: EDHREC rank, Game Changer, legality, identity; no prices), read with scryfall_bulk.load(). Bulk refresh at most every 12 h.
 - 2026-10-20: Card data roster: Scryfall (tools/concordia/deckgen/scryfall_bulk.py, bulk oracle_cards, at most one check per 12 h; /cards/collection lookups throttled). Blocked by the network policy until the user allows api.scryfall.com and data.scryfall.io.
 - 2026-10-20: The first piloted test match was discarded at the user's request (too many problems); don't use its data. PilotSim now has a no-token rules mode (-Dpilot.A=rules).
 - 2026-10-20: ai_lab/minideck.py shrinks a deck to a 30-card test deck (commander + test cards + 12 lands + the source deck's cheapest cards); Forge sims accept 30-card Commander decks, verified. setup.sh now also compiles tools/concordia/ai_lab/*.java (AiLabSim was missing).
