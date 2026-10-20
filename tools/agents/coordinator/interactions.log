@@ -1,0 +1,10 @@
+PING 2026-10-20T16:42Z forge-ai-lab -> main: analysis_request: exp 001-003 timing and logic fit
+PING 2026-10-20T16:44Z main -> forge-ai-lab: analysis: "Flagged-card timing and logic fit (exp 001-003)" filed and sent
+PING 2026-10-20T16:45Z deck-balance-lab -> main: analysis_request: seat edge, power vs wins, match length (74 games)
+PING 2026-10-20T16:47Z main -> deck-balance-lab: analysis: filed and sent; asked to batch requests with the 4 h report
+PING 2026-10-20T16:52Z forge-ai-lab -> main: analysis_request: natural-density re-run n001-n003
+PING 2026-10-20T16:55Z main -> forge-ai-lab: analysis: "Quality of use at natural density" filed and sent
+PING 2026-10-20T17:05Z main -> all: context: deck rebuild (200 decks), test updates pre-approved (rule 7), AI changes checklist (rule 8)
+PING 2026-10-20T17:14Z forge-ai-lab -> main: analysis_request: patch 005 two-version SwitchPT
+PING 2026-10-20T17:18Z main -> forge-ai-lab: analysis: "Patch 005 two-version SwitchPT review" filed and sent; checklist updated
+PING 2026-10-20T17:22Z main -> all: context: agent-coordinator added; CONTEXT rule 9 tells agents to obey coordinator holds
