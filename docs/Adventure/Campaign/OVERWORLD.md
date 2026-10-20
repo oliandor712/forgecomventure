@@ -441,12 +441,20 @@ change can add an arrival offset per POI (§8).
 
 ## 7. Tooling
 
+`tools/concordia/maps/check_doors.py` checks every door in the Concordia maps: the target map and entry exist, the
+return trip leads back, and the spot where the game puts the arriving player is inside the map, clear of collision and
+not on another door. Run it after adding a building, a door or a sub-map. In game, a player who still arrives in a
+blocked spot is moved to the nearest free one, and a map that fails to load sends them back to the map they came
+from.
+
 `tools/concordia/maps/make_mossgate_maze.py` draws Route 1 from hand-placed corridor lines, and the champion area's
 placeholder. Its woods are layered by distance from the path: bright green trees for the first 2-3 tiles, darker green
 for the next 2-3, then bare dead trees in the cores and along the zone's outer edge, with band edges wobbled by smooth
 noise. The green and dead layers are two PNGs, one structure each (`green_structures` and `black_structures` atlases),
-since a structure draws from a single atlas. It also picks the wild encounter spots on the path's centre line, away
-from the duelists and the cave and town entrances. Zones should use the same layering. The zones need a general
+since a structure draws from a single atlas. It also lists the wild encounter areas: Route 1 has 7 wild encounters, each
+with its own area of tree tiles at most 2 from the path (`spots` in `world.json`) and a pool of the four wild types
+(`enemies`). Every time one spawns, it picks a random spot of its area and a random type; the wild types fly, so they
+come out of the trees after the player. Zones should use the same layering. The zones need a general
 version, `make_zone_maze.py`, that reads one hand-drawn PNG per zone (one pixel per tile) with marker colors and
 writes out everything the zone needs:
 

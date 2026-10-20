@@ -229,6 +229,7 @@
   "uniquePrintings": true,
   "mergeCommonItems": true,
   "debugMenu": true,
+  "hideItemSlot": true,
   "waystoneStops": [
     "Spawn",
     "Mossgate"

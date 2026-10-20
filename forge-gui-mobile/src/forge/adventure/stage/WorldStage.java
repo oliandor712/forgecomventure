@@ -355,9 +355,10 @@ public class WorldStage extends GameStage implements SaveFileContent {
             }
             if (present)
                 continue;
-            EnemyData data = WorldData.getEnemy(placed[i].enemy);
+            String name = placed[i].pickEnemy();
+            EnemyData data = WorldData.getEnemy(name);
             if (data == null) {
-                System.err.println("Placed enemy not found in enemies.json: " + placed[i].enemy);
+                System.err.println("Placed enemy not found in enemies.json: " + name);
                 placedDefeated.add(i); //don't look it up every frame
                 continue;
             }
@@ -365,8 +366,9 @@ public class WorldStage extends GameStage implements SaveFileContent {
             sprite.placedIndex = i;
             sprite.threatRange = placed[i].threatRange * world.getTileSize();
             sprite.pursueRange = Math.max(placed[i].pursueRange, placed[i].threatRange) * world.getTileSize();
-            sprite.homeX = placed[i].x * world.getTileSize();
-            sprite.homeY = placed[i].y * world.getTileSize();
+            float[] spot = placed[i].pickSpot();
+            sprite.homeX = spot[0] * world.getTileSize();
+            sprite.homeY = spot[1] * world.getTileSize();
             sprite.setPosition(sprite.homeX, sprite.homeY);
             enemies.add(Pair.of(globalTimer, sprite));
             foregroundSprites.addActor(sprite);

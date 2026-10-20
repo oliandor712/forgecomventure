@@ -179,6 +179,13 @@ public class MapStage extends GameStage {
     public void prepareCollision(Vector2 pos, Vector2 direction, Rectangle boundingRect) {
     }
 
+    @Override
+    public Vector2 adjustMovement(Vector2 direction, Rectangle boundingRect) {
+        if (isColliding(boundingRect)) //already inside collision (say after a bad arrival): let the player walk out, as on the world map
+            return direction;
+        return super.adjustMovement(direction, boundingRect);
+    }
+
     Group collisionGroup;
 
     @Override
@@ -245,6 +252,8 @@ public class MapStage extends GameStage {
         float tileHeight = Float.parseFloat(map.getProperties().get("tileheight").toString());
         float tileWidth = Float.parseFloat(map.getProperties().get("tilewidth").toString());
         setBounds(width * tileWidth, height * tileHeight);
+        mapPixelWidth = width * tileWidth;
+        mapPixelHeight = height * tileHeight;
         //collision = new Array[(int) width][(int) height];
 
         //Load dungeon effects.
@@ -326,6 +335,44 @@ public class MapStage extends GameStage {
         getPlayerSprite().stop();
     }
 
+    private float mapPixelWidth, mapPixelHeight;
+
+    /** True if the player could stand at x, y: inside the map and clear of collision. */
+    private boolean isFreeSpot(float x, float y) {
+        PlayerSprite p = getPlayerSprite();
+        if (x < 0 || y < 0 || x + p.getWidth() > mapPixelWidth || y + p.getHeight() > mapPixelHeight)
+            return false;
+        p.setPosition(x, y);
+        return !isColliding(p.boundingRect());
+    }
+
+    /**
+     * After an arrival, makes sure the player isn't stuck: if the spot is off the map or inside collision (a door
+     * placed too close to a wall, or no entry found at all), moves them to the nearest free spot, searching outward
+     * in half-tile steps.
+     */
+    private void moveToFreeSpot() {
+        PlayerSprite p = getPlayerSprite();
+        float x0 = p.getX(), y0 = p.getY();
+        if (isFreeSpot(x0, y0))
+            return;
+        float step = 8f;
+        for (int r = 1; r <= 40; r++) {
+            for (int dx = -r; dx <= r; dx++) {
+                for (int dy = -r; dy <= r; dy++) {
+                    if (Math.max(Math.abs(dx), Math.abs(dy)) != r)
+                        continue;
+                    if (isFreeSpot(x0 + dx * step, y0 + dy * step)) {
+                        System.err.println("Arrival spot " + x0 + "," + y0 + " is blocked; moved the player to " + p.getX() + "," + p.getY());
+                        return;
+                    }
+                }
+            }
+        }
+        p.setPosition(x0, y0);
+        System.err.println("Arrival spot " + x0 + "," + y0 + " is blocked and no free spot was found nearby.");
+    }
+
     public void spawn(int targetId){
         stop(); //Prevent player from unintentionally going back through entrance again when holding input
         boolean hasSpawned = false;
@@ -346,7 +393,10 @@ public class MapStage extends GameStage {
                 sourceMapMatch.first().spawn();
             else if (!otherEntries.isEmpty())
                 otherEntries.first().spawn();
+            else
+                getPlayerSprite().setPosition(mapPixelWidth / 2f, mapPixelHeight / 2f); //no entries at all: start in the middle
         }
+        moveToFreeSpot();
     }
 
     static public boolean containsOrEquals(Rectangle r1, Rectangle r2) {

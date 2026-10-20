@@ -1,0 +1,17 @@
+# Into the Gate Temple and back out to Mossgate; the player must be able to walk away from the door.
+newgame
+report start
+poi Mossgate
+report mossgate
+shot 1_mossgate
+entry 54
+report temple
+shot 2_temple
+expect-free
+entry 1
+report back_in_mossgate
+shot 3_back
+expect-free
+move 0 -1 1.5
+report walked_down
+shot 4_walked

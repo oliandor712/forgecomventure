@@ -122,14 +122,20 @@ for x in range(CW):
             champ.putpixel((x, y), DEAD3 if noise(x, y, 9, 4) > 0.62 else DEAD)
 champ.save(os.path.join(MODELS, 'champion_area.png'))
 
-# Wild encounter spots: on the path's centre line, away from the duelists, spread out (farthest point first).
-DUELISTS = [(86, 59), (98, 68), (72, 72), (56, 86), (80, 105)]   # old 160x160 world tiles
-duelists = [(x - 50, 124 - y) for (x, y) in DUELISTS]            # -> maze tiles
-POIS = [(10, 17), (29, 38), (45, 23), (31, 82), (31, 6)]          # caves, Emberbrook, Mossgate entrances (maze tiles)
-cand = [c for c in sorted(centre) if all(math.dist(c, d) >= 7 for d in duelists) and all(math.dist(c, q) >= 6 for q in POIS)]
-picks = [min(cand, key=lambda c: (c[1] - 70) ** 2 + (c[0] - 36) ** 2)]  # start near the bottom of the route
-while len(picks) < 11:
-    picks.append(max(cand, key=lambda c: min(math.dist(c, p) for p in picks)))
+# Wild encounters: 7 placed enemies, each spawning at a random tile of its area and as a random wild type, re-rolled
+# every time it spawns (PlacedEnemyData spots/enemies). The areas are the tree walls the user marked, kept to tiles at
+# most 2 from the path so the (flying) wild ones reach the player quickly. Maze tiles, inclusive.
+WILD_AREAS = [
+    ((14, 20), (27, 25)), ((28, 20), (41, 25)),   # the top wall between the middle corridors, in two halves
+    ((12, 33), (24, 45)),                         # around the dead core on the left
+    ((22, 54), (31, 60)), ((32, 54), (41, 60)),   # the lower wall between the corridors, in two halves
+    ((16, 70), (22, 77)), ((28, 70), (33, 77)),   # either side of the corridor out of Emberbrook
+]
+areas = []
+for (x0, y0), (x1, y1) in WILD_AREAS:
+    areas.append([(x, y) for x in range(x0, x1 + 1) for y in range(y0, y1 + 1)
+                  if (x, y) not in open_cells and dist[(x, y)] <= 2 and min(x, y, W - 1 - x, H - 1 - y) > 1])
+picks = [c for a in areas for c in a]
 
 preview = Image.new('RGB', (W, H))
 for x in range(W):
@@ -137,9 +143,12 @@ for x in range(W):
         g, dd = green.getpixel((x, y)), dead.getpixel((x, y))
         preview.putpixel((x, y), {TREE: (40, 170, 40), TREE5: (20, 100, 30), DEAD: (110, 80, 50), DEAD3: (140, 110, 80)}.get(
             g if g != OPEN else dd, (230, 225, 180)))
-for (x, y) in duelists:
-    preview.putpixel((x, y), (0, 0, 255))
+for (x, y) in [(x - 50, 124 - y) for (x, y) in [(86, 59), (98, 68), (72, 72), (56, 86), (80, 105)]]:
+    preview.putpixel((x, y), (0, 0, 255))   # duelists
 for (x, y) in picks:
     preview.putpixel((x, y), (255, 0, 0))
 preview.resize((W * 8, H * 8), Image.NEAREST).save(os.path.join(PREVIEW, 'mossgate_maze_preview.png'))
-print('wild encounter spots (world x, y):', [(WORLD_X0 + x, WORLD_Y0 - y) for (x, y) in picks])
+import json
+with open(os.path.join(PREVIEW, 'wild_spots.json'), 'w') as f:
+    json.dump([[{'x': WORLD_X0 + x, 'y': WORLD_Y0 - y} for (x, y) in a] for a in areas], f)
+print('wild areas (spots each):', [len(a) for a in areas], '-> wild_spots.json')

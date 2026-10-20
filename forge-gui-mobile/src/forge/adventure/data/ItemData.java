@@ -62,7 +62,7 @@ public class ItemData implements Serializable, Cloneable {
         String baseDescription = !translatedDescription.isEmpty() ? translatedDescription : this.description;
         if(baseDescription != null && !baseDescription.isEmpty())
             result += baseDescription + "\n";
-        if(this.equipmentSlot != null && !this.equipmentSlot.isEmpty())
+        if(this.equipmentSlot != null && !this.equipmentSlot.isEmpty() && !forge.adventure.util.Config.instance().getConfigData().hideItemSlot)
             result += "Slot: " + this.equipmentSlot + "\n";
         if(effect != null)
             result += effect.getDescription();

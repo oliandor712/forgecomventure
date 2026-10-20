@@ -67,12 +67,20 @@ public class TileMapScene extends HudScene {
             int spawn = nextSpawnPoint;
             nextMap = null;
             nextSpawnPoint = 0;
+            String previous = oldMap;
             try {
                 load(target, spawn);
             } catch (Exception e) {
                 System.err.println("Error loading map " + target + "...");
                 e.printStackTrace();
-                MapStage.getInstance().exitDungeon(false, false);
+                //a half-loaded map leaves the player parked at its corner, unable to move: go back to the map they came from
+                try {
+                    load(previous, 0);
+                } catch (Exception e2) {
+                    System.err.println("Error reloading map " + previous + "...");
+                    e2.printStackTrace();
+                    MapStage.getInstance().exitDungeon(false, false);
+                }
             }
         }
         stage.act(Gdx.graphics.getDeltaTime());
