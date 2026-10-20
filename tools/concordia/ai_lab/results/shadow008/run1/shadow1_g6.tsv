@@ -1,0 +1,23 @@
+17	A's Cleanup step	TURN	Turn 17 (B)
+17	B's Untap step	PHASE	B's Untap step
+17	B's Upkeep step	PHASE	B's Upkeep step
+17	B's Draw step	PHASE	B's Draw step
+17	B's Main phase, precombat	PHASE	B's Main phase, precombat
+17	B's Main phase, precombat	STACK_ADD	B activated Ozolith, the Shattered Spire targeting [Phyrexian Dreadnought (42)]
+17	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+17	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+17	B's Declare Attackers Step	COMBAT	B assigned Phyrexian Dreadnought (42) and Viridian Zealot (73) to attack A.
+17	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+17	B's Declare Blockers Step	COMBAT	A assigned Deadly Recluse (13) to block Phyrexian Dreadnought (42). A assigned Ruins Recluse (12) to block Viridian Zealot (73).
+17	B's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Deadly Recluse (13)]
+17	B's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (10) - Deadly Recluse (13) gets +4/+4  until end of turn.
+17	B's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Deadly Recluse (13)]
+17	B's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (16) - Deadly Recluse (13) gets +3/+3  until end of turn.
+17	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+17	B's Combat Damage Step	PHASE	B's Combat Damage Step
+17	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 6 combat damage to A.
+17	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 10 damage to Deadly Recluse (13).
+17	B's Combat Damage Step	DAMAGE	Viridian Zealot (73) deals 2 damage to Ruins Recluse (12).
+17	B's Combat Damage Step	DAMAGE	Ruins Recluse (12) deals 1 damage (Deathtouch) to Viridian Zealot (73).
+17	B's Combat Damage Step	DAMAGE	Deadly Recluse (13) deals 11 damage (Deathtouch) to Phyrexian Dreadnought (42).
+17	B's Combat Damage Step	LIFE	Life: A 4 > -2

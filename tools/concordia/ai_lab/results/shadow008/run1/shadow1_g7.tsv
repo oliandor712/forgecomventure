@@ -1,0 +1,64 @@
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Beginning of Combat Step	STACK_ADD*	A cast Titanic Growth targeting [Destiny Spinner (5)]
+14	A's Beginning of Combat Step	STACK_RESOLVE*	Titanic Growth (10) - Destiny Spinner (5) gets +4/+4  until end of turn.
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (14), Destiny Spinner (5) and Ruins Recluse (12) to attack B.
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B assigned Boreal Druid (46) to block Mirkwood Spider (14). B assigned Leaf Gilder (74) to block Destiny Spinner (5). B assigned Collector Ouphe (48) to block Ruins Recluse (12).
+14	A's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Mirkwood Spider (14) deals 1 damage (Deathtouch) to Boreal Druid (46).
+14	A's Combat Damage Step	DAMAGE	Destiny Spinner (5) deals 6 damage to Leaf Gilder (74).
+14	A's Combat Damage Step	DAMAGE	Ruins Recluse (12) deals 1 damage (Deathtouch) to Collector Ouphe (48).
+14	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Ruins Recluse (12).
+14	A's Combat Damage Step	DAMAGE	Boreal Druid (46) deals 1 damage to Mirkwood Spider (14).
+14	A's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 2 damage to Destiny Spinner (5).
+14	A's Combat Damage Step	ZONE_CHANGE	Mirkwood Spider (14) was put into Graveyard from Battlefield.
+14	A's Combat Damage Step	ZONE_CHANGE	Ruins Recluse (12) was put into Graveyard from Battlefield.
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+18	B's Cleanup step	TURN	Turn 18 (A)
+18	A's Untap step	PHASE	A's Untap step
+18	A's Upkeep step	PHASE	A's Upkeep step
+18	A's Draw step	PHASE	A's Draw step
+18	A's Main phase, precombat	PHASE	A's Main phase, precombat
+18	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+18	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+18	A's Declare Attackers Step	COMBAT	A assigned Grappler Spider (15) to attack B.
+18	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+18	A's Declare Blockers Step	COMBAT	B didn't block Grappler Spider (15).
+18	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Grappler Spider (15)]
+18	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Grappler Spider (15) gets +2/+2 and gains hexproof until end of turn.
+18	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+18	A's Combat Damage Step	PHASE	A's Combat Damage Step
+18	A's Combat Damage Step	DAMAGE	Grappler Spider (15) deals 4 combat damage to B.
+18	A's Combat Damage Step	LIFE	Life: B 8 > 4
+18	A's End of Combat Step	PHASE	A's End of Combat Step
+18	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+18	A's End step	PHASE	A's End step
+18	A's Cleanup step	PHASE	A's Cleanup step
+20	B's Cleanup step	TURN	Turn 20 (A)
+20	A's Untap step	PHASE	A's Untap step
+20	A's Upkeep step	PHASE	A's Upkeep step
+20	A's Draw step	PHASE	A's Draw step
+20	A's Main phase, precombat	PHASE	A's Main phase, precombat
+20	A's Main phase, precombat	STACK_ADD	A cast Explore
+20	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+20	A's Beginning of Combat Step	STACK_ADD*	A cast Giant Growth targeting [Grappler Spider (15)]
+20	A's Beginning of Combat Step	STACK_RESOLVE*	Giant Growth (17) - Grappler Spider (15) gets +3/+3  until end of turn.
+20	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+20	A's Declare Attackers Step	COMBAT	A assigned Grappler Spider (15) to attack B.
+20	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+20	A's Declare Blockers Step	COMBAT	B didn't block Grappler Spider (15).
+20	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+20	A's Combat Damage Step	PHASE	A's Combat Damage Step
+20	A's Combat Damage Step	DAMAGE	Grappler Spider (15) deals 5 combat damage to B.
+20	A's Combat Damage Step	LIFE	Life: B 4 > -1

@@ -1,0 +1,64 @@
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Ruins Recluse (12) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Ruins Recluse (12).
+12	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Ruins Recluse (12)]
+12	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (10) - Ruins Recluse (12) gets +4/+4  until end of turn.
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Ruins Recluse (12) deals 5 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 18 > 13
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Copper Longlegs
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Beginning of Combat Step	STACK_ADD*	A cast Titanic Growth targeting [Copper Longlegs (2)]
+16	A's Beginning of Combat Step	STACK_RESOLVE*	Titanic Growth (11) - Copper Longlegs (2) gets +4/+4  until end of turn.
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (19) and Copper Longlegs (2) to attack B.
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's Declare Blockers Step	COMBAT	B assigned Elvish Skysweeper (51) and Leaf-Crowned Visionary (52) to block Canopy Spider (19). B didn't block Copper Longlegs (2).
+16	A's Declare Blockers Step	STACK_ADD	A cast Tyvar's Stand targeting [Canopy Spider (19)]
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's Combat Damage Step	DAMAGE	Canopy Spider (19) deals 2 damage to Elvish Skysweeper (51).
+16	A's Combat Damage Step	DAMAGE	Canopy Spider (19) deals 1 damage to Leaf-Crowned Visionary (52).
+16	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 5 combat damage to B.
+16	A's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 2 damage to Canopy Spider (19).
+16	A's Combat Damage Step	DAMAGE	Leaf-Crowned Visionary (52) deals 1 damage to Canopy Spider (19).
+16	A's Combat Damage Step	LIFE	Life: B 13 > 8
+16	A's Combat Damage Step	ZONE_CHANGE	Elvish Skysweeper (51) was put into Graveyard from Battlefield.
+16	A's Combat Damage Step	ZONE_CHANGE	Leaf-Crowned Visionary (52) was put into Graveyard from Battlefield.
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step
+24	B's Cleanup step	TURN	Turn 24 (A)
+24	A's Untap step	PHASE	A's Untap step
+24	A's Upkeep step	PHASE	A's Upkeep step
+24	A's Draw step	PHASE	A's Draw step
+24	A's Main phase, precombat	PHASE	A's Main phase, precombat
+24	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+24	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+24	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+24	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+24	A's Combat Damage Step	PHASE	A's Combat Damage Step
+24	A's End of Combat Step	PHASE	A's End of Combat Step
+24	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+24	A's End step	PHASE	A's End step
+24	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Titanic Growth (11)]
+24	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Titanic Growth (11) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+24	A's Cleanup step	PHASE	A's Cleanup step

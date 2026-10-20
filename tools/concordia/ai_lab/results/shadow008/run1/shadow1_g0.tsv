@@ -1,0 +1,54 @@
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Upkeep step	STACK_ADD	B cast Ram Through targeting [Selvala, Heart of the Wilds (81)] [Aquastrand Spider (6)]
+11	B's Upkeep step	STACK_ADD	A triggered Arasta of the Endless Web
+11	B's Upkeep step	STACK_ADD	B triggered Selvala, Heart of the Wilds
+11	B's Upkeep step	STACK_ADD	A triggered Aquastrand Spider
+11	B's Upkeep step	STACK_ADD*	A cast Titanic Growth targeting [Aquastrand Spider (6)]
+11	B's Upkeep step	STACK_RESOLVE*	Titanic Growth (11) - Aquastrand Spider (6) gets +4/+4  until end of turn.
+11	B's Upkeep step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Aquastrand Spider (6).
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Main phase, precombat	STACK_ADD	B cast H.E.R.B.I.E., Lovable Robot
+11	B's Main phase, precombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+11	B's Main phase, precombat	STACK_ADD	A triggered Aquastrand Spider
+11	B's Main phase, precombat	STACK_ADD	B activated Ozolith, the Shattered Spire targeting [Selvala, Heart of the Wilds (81)]
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Beginning of Combat Step	STACK_ADD	B triggered H.E.R.B.I.E., Lovable Robot
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Beginning of Combat Step	STACK_ADD*	A cast Giant Growth targeting [Arasta of the Endless Web (40)]
+12	A's Beginning of Combat Step	STACK_RESOLVE*	Giant Growth (16) - Arasta of the Endless Web (40) gets +3/+3  until end of turn.
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Spider Token (85) and Arasta of the Endless Web (40) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Spider Token (85). B didn't block Arasta of the Endless Web (40).
+12	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Arasta of the Endless Web (40)]
+12	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (10) - Arasta of the Endless Web (40) gets +4/+4  until end of turn.
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 2 damage to Selvala, Heart of the Wilds (81).
+12	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 10 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 4 damage to Spider Token (85).
+12	A's Combat Damage Step	LIFE	Life: B 17 > 7
+12	A's Combat Damage Step	ZONE_CHANGE	Spider Token (85) was put into Graveyard from Battlefield.
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Grappler Spider
+12	A's Main phase, postcombat	STACK_ADD	A triggered Aquastrand Spider
+12	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step

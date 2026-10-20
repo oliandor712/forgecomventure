@@ -1,0 +1,31 @@
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Upkeep step	STACK_ADD	B triggered Duskwatch Recruiter
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Spider Token (89)]
+12	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (8) - Spider Token (89) gets +2/+2 and gains hexproof until end of turn.
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Spider Token (89) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B assigned Krallenhorde Howler (50) and Selvala, Heart of the Wilds (81) to block Spider Token (89).
+12	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Spider Token (89)]
+12	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (16) - Spider Token (89) gets +3/+3  until end of turn.
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Spider Token (89) deals 2 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Spider Token (89) deals 3 damage to Selvala, Heart of the Wilds (81).
+12	A's Combat Damage Step	DAMAGE	Spider Token (89) deals 3 damage to Krallenhorde Howler (50).
+12	A's Combat Damage Step	DAMAGE	Krallenhorde Howler (50) deals 3 damage to Spider Token (89).
+12	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Spider Token (89).
+12	A's Combat Damage Step	LIFE	Life: B 10 > 8
+12	A's Combat Damage Step	ZONE_CHANGE	Krallenhorde Howler (50) was put into Graveyard from Battlefield.
+12	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Deadly Recluse
+12	A's Main phase, postcombat	STACK_ADD	A cast Arbor Elf
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
