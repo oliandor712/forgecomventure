@@ -1,4 +1,5 @@
 STANDING (main session, budget): stay inside the 5-minute box every turn, split long work (builds, shadow logging) across hourly steps; put ANALYSIS REQUESTs and CHECKLIST lines in the 4-hour report, not after every test (urgent blockers only at once).
+STANDING (main session, 2026-10-20 23:42Z): the test decks in ai_lab/decks were regenerated from the current tier decks (backups in tools/concordia/backups/2026-10-20_ai_lab_test_decks_pre_regen/). Do NOT pool results from before and after; keep both arms of any A/B on the same deck version. All experiments so far (001-003, n00X, s005/s006, r008, g008, shadow008) used the OLD decks.
 STANDING INSTRUCTION (user, 2026-10-20): after every test, send results to the main session (session_01SmNeweiyRBavDSUetnsUjF via send_message) and request analysis of the AI decisions, logic and results by match phase and situation for the flagged cards. Use AiLabSim -Dlogdir=tools/concordia/ai_lab/results/<test> so it has phase-annotated logs.
 STANDING INSTRUCTION (user, 2026-10-20): from the next test on, shrunk test decks are 40 cards (minideck.py --size 40) to limit decking; still 10 games per condition, equal life 20. Experiments 001-002 used 30 cards.
 STANDING INSTRUCTION (user, 2026-10-20): each test runs 10 games per condition (was 4), 150 s cap per game, equal life 20 for 30-card decks.
@@ -38,3 +39,4 @@ STANDING INSTRUCTION (user, 2026-10-20): each hourly wake is time-boxed to about
 2026-10-20T20:50Z 008: code reading done (co-blocker damage enters via combat.getBlockers in attackerWouldBeDestroyed, ComputerUtilCombat:696-714; window narrow); hand-built case still to build
 2026-10-20T22:12Z added AI_TAGS_REFERENCE section 5 (Fog/SwitchPT/shouldPumpCard behaviour from sims); REPORTED (4h report due)
 2026-10-20T23:06Z coordinator removed (main session); only main session pauses/resumes me
+2026-10-20T23:43Z noted deck regeneration; earlier results are tagged old-deck; new tests use the new decks
