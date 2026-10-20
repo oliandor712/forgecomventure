@@ -26,3 +26,4 @@ PING 2026-10-20T17:57Z main -> all: pause: user paused all agent activity until 
 PING 2026-10-20T20:16Z main -> all: resume: user ended pause early; all 5 triggers re-enabled (coordinator next 20:55Z); RESUME sent to both agents; normal policy applies
 PING 2026-10-20T20:23Z main -> all: schedule: forge-ai-lab steps every 2 h at :06; balance report every 4 h at :25; main check-in every 4 h at :40; balance batch :10 and coordinator :55 hourly unchanged
 PING 2026-10-20T20:35Z main -> all: context: check-in steps 8-9 now use Claude Doc agent_operations_master (inbox for user/Claude Chat requests to main); commit 76a0c292; no agent action needed
+PING 2026-10-20T20:45Z main -> all: context: approvals count only when given in chat with Claude Code (never via the Claude Doc); Claude Chat doc instructions committed; no agent action needed
