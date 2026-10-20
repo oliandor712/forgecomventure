@@ -36,10 +36,13 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
   `tools/concordia/sim/run.sh <Class> <args>`, for example
   `run.sh DeckSim forge-gui/ <games> <timeoutSec> deckA lifeA deckB lifeB label`. Re-run `setup.sh` after adding a sim
   class. For a patched build, use a scratch worktree and `SIM_CACHE=<scratch> SIM_REBUILD=1`.
-- **Small test decks:** `python3 tools/concordia/ai_lab/minideck.py SRC.dck OUT.dck --size 30 --test "A;B;C"` keeps the
+- **Small test decks:** `python3 tools/concordia/ai_lab/minideck.py SRC.dck OUT.dck --size 40 --test "A;B;C"` (the AI lab uses 40 cards at 20 life each since 2026-10-20; 30 decked too often) keeps the
   commander and the test cards, adds 12 lands and fills with the source deck's cheapest cards. Shrink the opponent the
   same way (no `--test`). Forge sims accept 30-card Commander decks (verified). Games run about 22-25 turns, so a few
   end by decking: compare casts rather than wins.
+- **Piloted games:** `tools/concordia/sim/PilotSim.java` plays two decks where outside pilots decide the flagged-card
+  plays and Forge AI does the rest (protocol in its header; `pilot_wait.sh` waits for a side's next prompt). Logs of
+  each run go to `tools/concordia/ai_lab/pilot/<date>_<name>/`.
 - **Deck stats:** `python3 tools/concordia/deck_tier.py <deck.dck> [--tier N] --json` gives counts, deck power (the
   average card power) and tier checks.
 - **Network:** Maven Central, PyPI, raw.githubusercontent.com and `git clone` of public GitHub repos work. Most other
@@ -73,6 +76,7 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
 The main session checks on both every 4 hours (at :20) and fixes blockers.
 
 ## Recent updates
+- 2026-10-20: Piloted test match (PilotSim) for exp 001 cards: logs and takeaways in tools/concordia/ai_lab/pilot/2026-10-20_exp001_mirror/ for the AI lab's data pool. AI lab test decks are now 40 cards (minideck.py --size 40) at 20 life each.
 - 2026-10-20: ai_lab/minideck.py shrinks a deck to a 30-card test deck (commander + test cards + 12 lands + the source deck's cheapest cards); Forge sims accept 30-card Commander decks, verified. setup.sh now also compiles tools/concordia/ai_lab/*.java (AiLabSim was missing).
 - 2026-10-20: Agent manager added: this file is the shared context (read first every run); tools/agents/registry.json logs your standing requests. Briefs now point here.
 - 2026-10-20: `tools/concordia/sim/setup.sh` and `run.sh` added. They fix the "no Maven repository" blocker and were
