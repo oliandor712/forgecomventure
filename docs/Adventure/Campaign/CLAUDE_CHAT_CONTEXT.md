@@ -126,7 +126,9 @@ Good instructions are concrete: which agent, what goal, budget (minutes per run)
 off limits.
 
 ## 5. Current state and open decisions
-- **Paused:** all agent activity is paused until 5:00 PM Eastern on 2026-10-20, with an automatic resume scheduled.
+- **Not paused:** the 5 PM pause was lifted early; all schedules are on.
+- **Shared doc:** the Claude Doc `agent_operations_master` (https://claude.ai/code/artifact/0e47b3f5-e601-4bc8-9868-fa3b3abb0a0b)
+  has an inbox table. Write requests there for the main session; it acts on them every 4 hours and replies in the doc.
 - **AI change checklist** (`docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md`):
   - **Ready to approve (card-script only):** 002, unflag Thwart the Enemy and Vine Snare (0 casts before, 19 after,
     well timed); 003, unflag Endure.
