@@ -29,12 +29,23 @@ beneficial thing the card's text describes, so AI decks make more plays and win 
   `campaign-design`, with a clear message and the session's attribution lines, then `git push -u origin campaign-design`.
   Don't commit worktrees, build output or `forge-gui/data/`.
 
-## What already exists (read before redoing)
+## Required reading: the main session's AI review
+Read these before your first experiment and keep them as your primary materials. They are the main session's audited
+review of the Forge AI and the flagged cards; build on them, don't redo them. If you find something that contradicts
+them, note it in your log (with file:line) rather than silently diverging.
 - `docs/Adventure/Campaign/AI_RESEARCH.md`: how the AI is structured (AiController, SpellApiToAi/SpellAbilityAi,
-  combat, AiProps, AI:RemoveDeck), the Odric case study.
-- `docs/Adventure/Campaign/AI_FLAGGED_CARDS.md`: the 2,479 `RemoveDeck:All` cards in clusters, the ranked proposed
-  improvements (EffectAi inference, Choose* heads, simulation fallback, Pump as carrier, Animate, non-mana costs,
-  ChangeTargets/RepeatEach), and a sample of stale flags. Start from its ranked list.
+  combat, AiProps, AI:RemoveDeck), the Odric case study and the options to fix it (card script, forge-ai blocks,
+  attack AI), and the recommendation.
+- `docs/Adventure/Campaign/AI_FLAGGED_CARDS.md`: the audited analysis of the 2,479 `RemoveDeck:All` cards: clusters,
+  code-confirmed dead defaults, the ranked proposed improvements (0 done; 1 EffectAi inference, 2 Choose* heads,
+  3 simulation fallback, 4 Pump as carrier, 5 Animate, 6 non-mana costs, 7 ChangeTargets/RepeatEach), what's not worth
+  a general fix, and the sample of possibly stale flags. Its Audit section lists the verified code lines and the
+  corrections; trust it over older notes. Start your experiments from its ranked list.
+- `docs/Adventure/Campaign/ai_flagged_cards.html`: the same review as a page with the per-cluster card lists (useful
+  for picking test cards); it is also published for the user as an artifact.
+- `docs/Adventure/Campaign/AI_TAGS_REFERENCE.md`: your own reference, continued run by run.
+
+## Other materials
 - `tools/concordia/sim/DeckSim.java`: headless AI-vs-AI Commander games
   (`DeckSim <assetsDir> <games> <timeoutSec> deckA lifeA deckB lifeB label ...`). The main session's compile setup
   compiles the reactor offline with the jitpack-only TenPatch dependency removed from `forge-gui-mobile/pom.xml` for
