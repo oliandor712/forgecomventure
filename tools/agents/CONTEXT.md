@@ -1,0 +1,76 @@
+# Shared context for the Concordia background agents
+
+Read this first on every run, then your own brief (`.claude/agents/<name>.md`). The main session keeps it current
+through the agent manager (`.claude/skills/agent-manager/`). The newest changes are listed under "Recent updates" at the
+bottom. When this file and your brief disagree, this file wins, because it is newer.
+
+## The project
+- Concordia is a Pokémon-like Commander campaign plane for Forge Adventure, in the fork `oliandor712/forgecomventure`.
+  All work goes to branch `campaign-design`. No PRs.
+- The plane's data lives in `forge-gui/res/adventure/Concordia/`: decks in `decks/tier1..5`, `starter`, `tutorial`;
+  `world/enemies.json`; `maps/`; `config.json`.
+- The design docs are in `docs/Adventure/Campaign/`: `OVERWORLD.md` (zones, flags, §5.1 the difficulty curve),
+  `ENCOUNTER_TIERS.md`, `DECK_REVIEW_SPELLBINDER.md`, `AI_RESEARCH.md`, `AI_FLAGGED_CARDS.md`, `AI_TAGS_REFERENCE.md`.
+- The user tests on Windows. The user decides what goes into the game; agents propose.
+
+## Standing rules (all agents)
+1. **Equal life on both sides in every simulation.** The one exception is a test of a life bonus itself, and the record
+   must say so.
+2. **Don't change `forge-core`, `forge-game` or `forge-ai`** on the branch: the user hasn't approved AI-module changes.
+   Code ideas go in patch files in your own folder.
+3. **Write only in your own folder**, plus your listed docs. Never commit build output, classpaths, `forge-gui/data/`,
+   or a modified `forge-gui-mobile/pom.xml`.
+4. **Pushing:** pull with `git pull --no-rebase origin campaign-design` before you push. If a push is rejected, pull
+   again and retry. On a network error, back off 2/4/8/16 s. Never force-push. If the push still fails, report it and
+   push first thing next run.
+5. **Low speed, low usage.** Stay inside your time box, keep replies short, and never paste large files or logs.
+6. **Pause on request.** When the main session or the user says pause, stop at a safe point, log it and push. Resume
+   only when told, or at the time given.
+7. **Processes:** never `pkill -f` a pattern that can match your own shell. Kill java by pid
+   (`pgrep -a java | grep Sim`). Never leave a sim or build running when you stop.
+
+## Tools
+- **Simulator:** run `tools/concordia/sim/setup.sh` once per container. It takes about 1.5 minutes from an empty cache:
+  it fetches from Maven Central and leaves out the jitpack-only TenPatch dependency, which is blocked by the network
+  policy. It compiles every `.java` in `tools/concordia/sim/` and `tools/concordia/balance_lab/`. Run sims with
+  `tools/concordia/sim/run.sh <Class> <args>`, for example
+  `run.sh DeckSim forge-gui/ <games> <timeoutSec> deckA lifeA deckB lifeB label`. Re-run `setup.sh` after adding a sim
+  class. For a patched build, use a scratch worktree and `SIM_CACHE=<scratch> SIM_REBUILD=1`.
+- **Deck stats:** `python3 tools/concordia/deck_tier.py <deck.dck> [--tier N] --json` gives counts, deck power (the
+  average card power) and tier checks.
+- **Network:** Maven Central, PyPI, raw.githubusercontent.com and `git clone` of public GitHub repos work. Most other
+  sites (jitpack, EDHREC, MTGJSON, Archidekt) are blocked.
+
+## Current state
+- **Decks:** 200 AI decks, 40 per tier, all passing their tier checks. Each tier has 20 original decks (tier 1 is
+  mono-color; tiers 2-5 mix one to three colors) plus 20 new mono-color decks, 4 per color, built by
+  `tools/concordia/deckgen/gen_mono.py` and seeded from public GitHub decklists that are kept local only. Five starter
+  decks for the player.
+- **Card power** (`deck_tier.card_power`) = 35·raw + 15·efficiency + 15·role + 15·rarity + 10·Game Changer + 5·fast
+  mana + 5·tutor. Raw power is the higher of the cube rank and the Spellbinder cEDH inclusion rate.
+- **Deck power by tier** (deck average card power): T1 12-13, T2 20-26, T3 29-36, T4 33-41, T5 39-46. Starters 24-29.
+- **Difficulty curve** (OVERWORLD.md §5.1): a zone's stage locks at the player's first fight there, from the Seals held:
+  seals 0-1 stage 1, 2-3 stage 2, 4-5 stage 3 (`util/TierLock.java`, config `tierLock`).
+  - Wild creatures, random-dungeon enemies, pass keepers, grove guardians and the Warden are mono-color, picked by deck
+    power window.
+  - Trainers are 1-2 colors at stage 1 and 2-3 after that.
+  - The Green zone is the built template. The other four color zones aren't built yet.
+- **Enemy start bonuses:** Forge can give an enemy cards on the battlefield at the start of a duel, through an
+  `EffectData` with `startBattleWithCard`, `lifeModifier` or `changeStartCards` (`scene/DuelScene.java` ~360). The user
+  thinks Forge's own bonuses are too heavy-handed and wants smaller ones, such as a land or a 1-drop, measured against
+  no bonus.
+
+## Agents
+| Agent | Brief | Session | Schedule |
+|---|---|---|---|
+| forge-ai-lab | `.claude/agents/forge-ai-lab.md` | session_01SdzhYuPRVSAtP7QLaagBxk | hourly step, about 5 min, at :06; report every 4 h |
+| deck-balance-lab | `.claude/agents/deck-balance-lab.md` | session_011UrsiVw1s1nsvYUSkv2iLy | hourly batch, at most 10 min, at :10; report every 4 h at :40 |
+
+The main session checks on both every 4 hours (at :20) and fixes blockers.
+
+## Recent updates
+- 2026-10-20: Agent manager added: this file is the shared context (read first every run); tools/agents/registry.json logs your standing requests. Briefs now point here.
+- 2026-10-20: `tools/concordia/sim/setup.sh` and `run.sh` added. They fix the "no Maven repository" blocker and were
+  verified from an empty cache. Don't edit `forge-gui-mobile/pom.xml` by hand.
+- 2026-10-20: added the push-retry rule (standing rule 4).
+- 2026-10-20: decks doubled to 200, and the difficulty curve built into the Green zone.
