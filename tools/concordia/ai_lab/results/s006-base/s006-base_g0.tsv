@@ -1,0 +1,20 @@
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Mirri, Cat Warrior (81) and Undergrowth Leopard (48) to attack A.
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A didn't block Mirri, Cat Warrior (81). A assigned Canopy Spider (19) to block Undergrowth Leopard (48).
+13	B's Declare Blockers Step	STACK_ADD*	A cast Vine Snare
+13	B's Declare Blockers Step	STACK_RESOLVE*	Vine Snare (9) - Prevent all combat damage that would be dealt this turn by creatures with power 4 or less.
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's First Strike Damage Step	DAMAGE	Mirri, Cat Warrior (81) deals 7 combat damage to A.
+13	B's First Strike Damage Step	LIFE	Life: A 10 > 3
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's End step	PHASE	B's End step
+13	B's Cleanup step	PHASE	B's Cleanup step

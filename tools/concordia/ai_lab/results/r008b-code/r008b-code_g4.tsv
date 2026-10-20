@@ -1,0 +1,19 @@
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Upkeep step	STACK_ADD*	B cast Tail Swipe targeting [Belligerent Yearling (56)] [Aftermath Analyst (4)]
+11	B's Upkeep step	DAMAGE	Belligerent Yearling (56) deals 3 damage to Aftermath Analyst (4).
+11	B's Upkeep step	DAMAGE	Aftermath Analyst (4) deals 1 damage to Belligerent Yearling (56).
+11	B's Upkeep step	STACK_RESOLVE*	Tail Swipe (54) - Belligerent Yearling (56) gets +1/+1  until end of turn. Then the chosen creatures fight each other. (They each deal damage equal to their power to the other.)
+11	B's Upkeep step	ZONE_CHANGE	Aftermath Analyst (4) was put into Graveyard from Battlefield.
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step

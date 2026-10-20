@@ -1,0 +1,154 @@
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (14) to attack B.
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's Declare Blockers Step	COMBAT	B didn't block Mirkwood Spider (14).
+4	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Mirkwood Spider (14)]
+4	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (17) - Mirkwood Spider (14) gets +3/+3  until end of turn.
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's Combat Damage Step	DAMAGE	Mirkwood Spider (14) deals 4 combat damage to B.
+4	A's Combat Damage Step	LIFE	Life: B 20 > 16
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's Main phase, postcombat	STACK_ADD	A cast Arbor Elf
+4	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+4	A's End step	PHASE	A's End step
+4	A's Cleanup step	PHASE	A's Cleanup step
+7	A's Cleanup step	TURN	Turn 7 (B)
+7	B's Untap step	PHASE	B's Untap step
+7	B's Upkeep step	PHASE	B's Upkeep step
+7	B's Draw step	PHASE	B's Draw step
+7	B's Main phase, precombat	PHASE	B's Main phase, precombat
+7	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+7	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+7	B's Declare Attackers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81), Duskwatch Recruiter (50) and Boreal Druid (46) to attack A.
+7	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+7	B's Declare Blockers Step	COMBAT	A assigned Mirkwood Spider (14) to block Selvala, Heart of the Wilds (81). A didn't block Duskwatch Recruiter (50). A didn't block Boreal Druid (46).
+7	B's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Mirkwood Spider (14)]
+7	B's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (8) - Mirkwood Spider (14) gets +2/+2 and gains hexproof until end of turn.
+7	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+7	B's Combat Damage Step	PHASE	B's Combat Damage Step
+7	B's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Mirkwood Spider (14).
+7	B's Combat Damage Step	DAMAGE	Duskwatch Recruiter (50) deals 2 combat damage to A.
+7	B's Combat Damage Step	DAMAGE	Boreal Druid (46) deals 1 combat damage to A.
+7	B's Combat Damage Step	DAMAGE	Mirkwood Spider (14) deals 3 damage (Deathtouch) to Selvala, Heart of the Wilds (81).
+7	B's Combat Damage Step	LIFE	Life: A 17 > 14
+7	B's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+7	B's End of Combat Step	PHASE	B's End of Combat Step
+7	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+7	B's Main phase, postcombat	STACK_ADD	B cast Bloodline Shaman
+7	B's End step	PHASE	B's End step
+7	B's Cleanup step	PHASE	B's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (14) to attack B.
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B assigned Bloodline Shaman (45) to block Mirkwood Spider (14).
+8	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Mirkwood Spider (14)]
+8	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (10) - Mirkwood Spider (14) gets +4/+4  until end of turn.
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Mirkwood Spider (14) deals 5 damage (Deathtouch) to Bloodline Shaman (45).
+8	A's Combat Damage Step	DAMAGE	Bloodline Shaman (45) deals 1 damage to Mirkwood Spider (14).
+8	A's Combat Damage Step	ZONE_CHANGE	Bloodline Shaman (45) was put into Graveyard from Battlefield.
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Beginning of Combat Step	STACK_ADD	A cast Tamiyo's Safekeeping targeting [Sylvan Ranger (22)]
+16	A's Beginning of Combat Step	LIFE	Life: A 7 > 9
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Attackers Step	COMBAT	A assigned Sylvan Ranger (22) to attack B.
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's Declare Blockers Step	COMBAT	B didn't block Sylvan Ranger (22).
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's Combat Damage Step	DAMAGE	Sylvan Ranger (22) deals 1 combat damage to B.
+16	A's Combat Damage Step	LIFE	Life: B 12 > 11
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's End step	PHASE	A's End step
+16	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Titanic Growth (10)]
+16	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Titanic Growth (10) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+16	A's End step	STACK_ADD	B activated Duskwatch Recruiter
+16	A's Cleanup step	PHASE	A's Cleanup step
+18	B's Cleanup step	TURN	Turn 18 (A)
+18	A's Untap step	PHASE	A's Untap step
+18	A's Upkeep step	PHASE	A's Upkeep step
+18	A's Draw step	PHASE	A's Draw step
+18	A's Main phase, precombat	PHASE	A's Main phase, precombat
+18	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+18	A's Beginning of Combat Step	STACK_ADD*	A cast Titanic Growth targeting [Spider Token (85)]
+18	A's Beginning of Combat Step	STACK_RESOLVE*	Titanic Growth (11) - Spider Token (85) gets +4/+4  until end of turn.
+18	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+18	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (14) and Spider Token (85) to attack B.
+18	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+18	A's Declare Blockers Step	COMBAT	B didn't block Mirkwood Spider (14). B didn't block Spider Token (85).
+18	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+18	A's Combat Damage Step	PHASE	A's Combat Damage Step
+18	A's Combat Damage Step	DAMAGE	Mirkwood Spider (14) deals 2 combat damage to B.
+18	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 5 combat damage to B.
+18	A's Combat Damage Step	LIFE	Life: B 11 > 4
+18	A's End of Combat Step	PHASE	A's End of Combat Step
+18	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+18	A's End step	PHASE	A's End step
+18	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Titanic Growth (11)]
+18	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Titanic Growth (11) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+18	A's End step	STACK_ADD	B activated Duskwatch Recruiter
+18	A's Cleanup step	PHASE	A's Cleanup step
+27	A's Cleanup step	TURN	Turn 27 (B)
+27	B's Untap step	PHASE	B's Untap step
+27	B's Upkeep step	PHASE	B's Upkeep step
+27	B's Draw step	PHASE	B's Draw step
+27	B's Main phase, precombat	PHASE	B's Main phase, precombat
+27	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+27	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+27	B's Declare Attackers Step	COMBAT	B assigned Collector Ouphe (48) to attack A.
+27	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+27	B's Declare Blockers Step	COMBAT	A assigned Spider Token (85) and Sylvan Ranger (22) to block Collector Ouphe (48).
+27	B's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Sylvan Ranger (22)]
+27	B's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Sylvan Ranger (22) gets +2/+2 and gains hexproof until end of turn.
+27	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+27	B's Combat Damage Step	PHASE	B's Combat Damage Step
+27	B's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Spider Token (85).
+27	B's Combat Damage Step	DAMAGE	Spider Token (85) deals 1 damage to Collector Ouphe (48).
+27	B's Combat Damage Step	DAMAGE	Sylvan Ranger (22) deals 3 damage to Collector Ouphe (48).
+27	B's Combat Damage Step	ZONE_CHANGE	Collector Ouphe (48) was put into Graveyard from Battlefield.
+27	B's Combat Damage Step	ZONE_CHANGE	Spider Token (85) was put into Graveyard from Battlefield.
+27	B's End of Combat Step	PHASE	B's End of Combat Step
+27	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+27	B's End step	PHASE	B's End step
+27	B's Cleanup step	PHASE	B's Cleanup step
+28	B's Cleanup step	TURN	Turn 28 (A)
+28	A's Untap step	PHASE	A's Untap step
+28	A's Upkeep step	PHASE	A's Upkeep step
+28	A's Draw step	PHASE	A's Draw step
+28	A's Main phase, precombat	PHASE	A's Main phase, precombat
+28	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+28	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+28	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+28	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+28	A's Combat Damage Step	PHASE	A's Combat Damage Step
+28	A's End of Combat Step	PHASE	A's End of Combat Step
+28	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+28	A's End step	PHASE	A's End step
+28	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Blossoming Defense (9)]
+28	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Blossoming Defense (9) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+28	A's Cleanup step	PHASE	A's Cleanup step

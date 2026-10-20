@@ -1,0 +1,53 @@
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Draw step	STACK_ADD*	B cast Bite Down targeting [Zilortha, Strength Incarnate (81)] [Deepwood Denizen (3)]
+14	B's Draw step	DAMAGE	Zilortha, Strength Incarnate (81) deals 7 damage to Deepwood Denizen (3).
+14	B's Draw step	STACK_RESOLVE*	Bite Down (65) -  Zilortha, Strength Incarnate (81) deals 7 damage to Deepwood Denizen (3).
+14	B's Draw step	ZONE_CHANGE	Deepwood Denizen (3) was put into Graveyard from Battlefield.
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned Zilortha, Strength Incarnate (81) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A assigned Elvish Visionary (31) to block Zilortha, Strength Incarnate (81).
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 6 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 1 damage to Elvish Visionary (31).
+14	B's Combat Damage Step	DAMAGE	Elvish Visionary (31) deals 1 damage to Zilortha, Strength Incarnate (81).
+14	B's Combat Damage Step	LIFE	Life: A 10 > 4
+14	B's Combat Damage Step	ZONE_CHANGE	Elvish Visionary (31) was put into Graveyard from Battlefield.
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's End step	PHASE	B's End step
+14	B's Cleanup step	PHASE	B's Cleanup step
+16	A's Cleanup step	TURN	Turn 16 (B)
+16	B's Untap step	PHASE	B's Untap step
+16	B's Upkeep step	PHASE	B's Upkeep step
+16	B's Draw step	PHASE	B's Draw step
+16	B's Draw step	STACK_ADD*	B cast Tail Swipe targeting [Zilortha, Strength Incarnate (81)] [Legolas, Master Archer (40)]
+16	B's Draw step	DAMAGE	Zilortha, Strength Incarnate (81) deals 7 damage to Legolas, Master Archer (40).
+16	B's Draw step	DAMAGE	Legolas, Master Archer (40) deals 4 damage to Zilortha, Strength Incarnate (81).
+16	B's Draw step	STACK_RESOLVE*	Tail Swipe (54) - Zilortha, Strength Incarnate (81) gets +1/+1  until end of turn. Then the chosen creatures fight each other. (They each deal damage equal to their power to the other.)
+16	B's Draw step	ZONE_CHANGE	Legolas, Master Archer (40) was put into Graveyard from Battlefield.
+16	B's Draw step	ZONE_CHANGE	Rancor (13) was put into Graveyard from Battlefield.
+16	B's Draw step	STACK_ADD	A triggered Rancor
+16	B's Main phase, precombat	PHASE	B's Main phase, precombat
+16	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+16	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+16	B's Declare Attackers Step	COMBAT	B assigned Zilortha, Strength Incarnate (81), Lifeblood Hydra (70), Stonecoil Serpent (78) and Otepec Huntmaster (43) to attack A.
+16	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+16	B's Declare Blockers Step	COMBAT	A assigned Llanowar Elves (9) to block Zilortha, Strength Incarnate (81). A assigned Bramblewood Paragon (7) to block Lifeblood Hydra (70). A didn't block Stonecoil Serpent (78). A assigned Wellwisher (5) to block Otepec Huntmaster (43).
+16	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+16	B's Combat Damage Step	PHASE	B's Combat Damage Step
+16	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 6 combat damage to A.
+16	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 1 damage to Llanowar Elves (9).
+16	B's Combat Damage Step	DAMAGE	Lifeblood Hydra (70) deals 2 damage to Bramblewood Paragon (7).
+16	B's Combat Damage Step	DAMAGE	Stonecoil Serpent (78) deals 1 combat damage to A.
+16	B's Combat Damage Step	DAMAGE	Otepec Huntmaster (43) deals 1 damage to Wellwisher (5).
+16	B's Combat Damage Step	DAMAGE	Wellwisher (5) deals 1 damage to Otepec Huntmaster (43).
+16	B's Combat Damage Step	DAMAGE	Llanowar Elves (9) deals 1 damage to Zilortha, Strength Incarnate (81).
+16	B's Combat Damage Step	DAMAGE	Bramblewood Paragon (7) deals 2 damage to Lifeblood Hydra (70).
+16	B's Combat Damage Step	LIFE	Life: A 4 > -3

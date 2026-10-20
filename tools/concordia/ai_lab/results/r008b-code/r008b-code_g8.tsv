@@ -1,0 +1,96 @@
+5	A's Cleanup step	TURN	Turn 5 (B)
+5	B's Untap step	PHASE	B's Untap step
+5	B's Upkeep step	PHASE	B's Upkeep step
+5	B's Upkeep step	STACK_ADD*	B cast Bite Down targeting [Go-Shintai of Boundless Vigor (76)] [Elvish Mystic (38)]
+5	B's Upkeep step	DAMAGE	Go-Shintai of Boundless Vigor (76) deals 1 damage to Elvish Mystic (38).
+5	B's Upkeep step	STACK_RESOLVE*	Bite Down (65) -  Go-Shintai of Boundless Vigor (76) deals 1 damage to Elvish Mystic (38).
+5	B's Upkeep step	ZONE_CHANGE	Elvish Mystic (38) was put into Graveyard from Battlefield.
+5	B's Draw step	PHASE	B's Draw step
+5	B's Main phase, precombat	PHASE	B's Main phase, precombat
+5	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+5	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+5	B's Declare Attackers Step	COMBAT	B assigned Go-Shintai of Boundless Vigor (76) to attack A.
+5	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+5	B's Declare Blockers Step	COMBAT	A didn't block Go-Shintai of Boundless Vigor (76).
+5	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+5	B's Combat Damage Step	PHASE	B's Combat Damage Step
+5	B's Combat Damage Step	DAMAGE	Go-Shintai of Boundless Vigor (76) deals 1 combat damage to A.
+5	B's Combat Damage Step	LIFE	Life: A 20 > 19
+5	B's End of Combat Step	PHASE	B's End of Combat Step
+5	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+5	B's End step	PHASE	B's End step
+5	B's End step	STACK_ADD	B triggered Go-Shintai of Boundless Vigor
+5	B's End step	STACK_ADD	B triggered Go-Shintai of Boundless Vigor targeting [Go-Shintai of Boundless Vigor (76)]
+5	B's Cleanup step	PHASE	B's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	A's Upkeep step	ZONE_CHANGE	A milled Sixth Sense (39).
+16	A's Upkeep step	ZONE_CHANGE	A milled Marwyn, the Preserver (37).
+16	A's Upkeep step	ZONE_CHANGE	A milled Colossus Hammer (30).
+16	A's Upkeep step	ZONE_CHANGE	A milled Forest (29).
+16	A's Upkeep step	ZONE_CHANGE	A milled Forest (26).
+16	A's Upkeep step	ZONE_CHANGE*	A milled Titanic Brawl (33).
+16	A's Upkeep step	ZONE_CHANGE	A milled Forest (18).
+16	A's Upkeep step	ZONE_CHANGE	A milled Rancor (13).
+16	A's Upkeep step	ZONE_CHANGE	Aftermath Analyst (4) was put into Graveyard from Battlefield.
+16	A's Upkeep step	STACK_ADD	A activated Aftermath Analyst
+16	A's Upkeep step	STACK_ADD	A cast Inscription of Abundance
+16	A's Upkeep step	DAMAGE	Bramblewood Paragon (7) deals 2 damage to Otepec Huntmaster (43).
+16	A's Upkeep step	DAMAGE	Otepec Huntmaster (43) deals 1 damage to Bramblewood Paragon (7).
+16	A's Upkeep step	ZONE_CHANGE	Otepec Huntmaster (43) was put into Graveyard from Battlefield.
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	STACK_ADD	A cast Wellwisher
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step
+17	A's Cleanup step	TURN	Turn 17 (B)
+17	B's Untap step	PHASE	B's Untap step
+17	B's Upkeep step	PHASE	B's Upkeep step
+17	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+17	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+17	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+17	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+17	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+17	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+17	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+17	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+17	B's Upkeep step	ZONE_CHANGE*	B milled Tail Swipe (54).
+17	B's Upkeep step	ZONE_CHANGE	B milled Go for Blood (55).
+17	B's Upkeep step	ZONE_CHANGE	B milled Mountain (46).
+17	B's Upkeep step	ZONE_CHANGE	B milled Thunderherd Migration (53).
+17	B's Upkeep step	ZONE_CHANGE	B milled Sol Ring (42).
+17	B's Upkeep step	ZONE_CHANGE	B milled Evolving Wilds (50).
+17	B's Upkeep step	ZONE_CHANGE	B milled Command Tower (69).
+17	B's Upkeep step	ZONE_CHANGE	B milled Forest (62).
+17	B's Draw step	PHASE	B's Draw step
+17	B's Main phase, precombat	PHASE	B's Main phase, precombat
+17	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+17	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+17	B's Declare Attackers Step	COMBAT	B assigned Zilortha, Strength Incarnate (81) and Aggro Amalgam (52) to attack A.
+17	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+17	B's Declare Blockers Step	COMBAT	A assigned Wellwisher (5) to block Zilortha, Strength Incarnate (81). A assigned Bramblewood Paragon (7) to block Aggro Amalgam (52).
+17	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+17	B's Combat Damage Step	PHASE	B's Combat Damage Step
+17	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 7 combat damage to A.
+17	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 1 damage to Wellwisher (5).
+17	B's Combat Damage Step	DAMAGE	Aggro Amalgam (52) deals 3 combat damage to A.
+17	B's Combat Damage Step	DAMAGE	Aggro Amalgam (52) deals 2 damage to Bramblewood Paragon (7).
+17	B's Combat Damage Step	DAMAGE	Wellwisher (5) deals 1 damage to Zilortha, Strength Incarnate (81).
+17	B's Combat Damage Step	DAMAGE	Bramblewood Paragon (7) deals 2 damage to Aggro Amalgam (52).
+17	B's Combat Damage Step	LIFE	Life: A 5 > -5

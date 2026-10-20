@@ -29,26 +29,42 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
 
 ## forge-ai code changes (the AI's own logic; none approved yet)
 
-- [ ] **005, switch as "two versions"**: Tested, needs work.
+- [ ] **005, switch as "two versions"**: Tested (v3), close to ready.
   - Where: `forge-ai/.../ability/PumpAi.java`. Patch: `tools/concordia/ai_lab/patches/005-switchpt-two-versions.patch`.
-  - What it does: switch only in declare blockers of a combat the creature is in. Compare the creature as it is with
-    it switched, and switch only if the switched version does better. At most one switch and one switch back per
-    turn.
-  - Tested in 10 games: activations went from about 92 to 8, all well timed.
-    - Good: an unblocked Myr Quadropod switched to hit for 4.
-    - Fair: an Aquamoeba switched to trade with its blocker.
-  - Still to fix (main-session review):
-    - Use Forge's own combat predictor (`ComputerUtilCard.shouldPumpCard`, line 1470), which handles first strike,
-      deathtouch and similar.
-    - Subtract the activation cost: Aquamoeba discards a card.
-    - Tell the rest of the AI when a switch is chosen to trade. Today another routine then bounced the creature with
-      Echoing Truth.
-    - Allow the switch that saves it from damage.
-  - Wins are unchanged: 1-9 in all versions.
-- [ ] **006, Fog count includes Effect-based Fogs**: Planned.
-  - Where: `FogAi.java:116-133` (`countAvailableFogs`).
-  - Count spells with `AILogic$ Fog` as Fogs, so the AI's "3 or more Fogs in hand" play works for decks built on those
-    cards.
+  - Switch only after blocks, for a creature in this combat, when Forge's combat predictor (`shouldPumpCard`) says the
+    switched version does better, net of the activation cost.
+  - Code A/B (3 copies each, 10 games): activations went from 68 to 14, all in declare blockers. About 5-6 of the 7
+    activation lines reviewed were clearly useful (unblocked switches for +3/+4 damage; a doomed Aquamoeba taking a
+    blocker with it), compared with about 0 at baseline.
+  - Left to check: gang blocks. A switch that completes a group block was not taken, possibly a kill of the enemy
+    commander. Also more logging (object ids, mana, kills).
+- [ ] **008, gang blocks in pump decisions**: Written, needs testing.
+  - Where: `ComputerUtilCard.shouldPumpCard`, the blocker branch (around line 1663-1675). Patch:
+    `patches/008-pump-gang-block.patch`.
+  - When deciding whether to pump (or switch) a blocker, count the other blockers' damage too, so "my pump completes a
+    group block's kill" is seen.
+  - Shared by every pump spell and ability, so it needs a regression sim on ordinary decks with pump spells, plus a
+    controlled gang-block test.
+  - The 10-game test was inconclusive: no gang block came up.
+  - First regression (2 pairings, 10 games each): no red flag, but not evidence either.
+    - The test arms combined 005, 006 and 008.
+    - The decks had few real pump tricks.
+    - Kills weren't attributed.
+  - Controlled gang-block test (008 alone, 10 games): no red flag, and nothing pumped outside combat. But only 4
+    gang-block turns per arm, so 008's own decision isn't isolated.
+  - Next: a shadow mode that logs every decision where 008 and the unpatched AI disagree, in the same game state. Then
+    the 20-game totals check.
+  - Kept separate from 005, which works without it. 005 gets better with it.
+- [ ] **009, don't over-pump (candidate)**: Found in testing; no patch yet.
+  - Where: PumpAi and `ComputerUtilCard.shouldPumpCard`.
+  - In an unpatched game the AI cast 4 tricks (2 Titanic Growth, 2 Blossoming Defense) on one deathtouch blocker in
+    a single combat, then lost 4 creatures.
+  - The fix: stop pumping once the predicted outcome is secured, and don't count extra power on a creature with
+    deathtouch.
+- [ ] **006, Fog count includes Effect-based Fogs**: Tested, no effect; parked.
+  - Where: `FogAi.java:116-133`. In the A/B test it changed nothing measurable.
+  - It only matters when the AI holds 3 or more Fogs and isn't in danger, which only a deck built around Fogs would
+    see. Low priority unless such an encounter deck is planned.
 - [ ] **007, attacker curses aimed through the blocker (Shield Dancer and similar)**: Planned.
   - Where: `EffectAi.java:136-140`.
   - Target only an attacker this creature is blocking, and only when the redirected damage kills it. Otherwise don't

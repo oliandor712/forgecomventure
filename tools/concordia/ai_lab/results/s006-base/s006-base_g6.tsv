@@ -1,0 +1,54 @@
+10	A's Cleanup step	TURN	Turn 10 (B)
+10	B's Untap step	PHASE	B's Untap step
+10	B's Upkeep step	PHASE	B's Upkeep step
+10	B's Draw step	PHASE	B's Draw step
+10	B's Main phase, precombat	PHASE	B's Main phase, precombat
+10	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+10	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+10	B's Declare Attackers Step	COMBAT	B assigned Mirri, Cat Warrior (81) and Avatar of the Resolute (76) to attack A.
+10	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+10	B's Declare Blockers Step	COMBAT	A didn't block Mirri, Cat Warrior (81). A didn't block Avatar of the Resolute (76).
+10	B's Declare Blockers Step	STACK_ADD*	A cast Vine Snare
+10	B's Declare Blockers Step	STACK_RESOLVE*	Vine Snare (9) - Prevent all combat damage that would be dealt this turn by creatures with power 4 or less.
+10	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+10	B's Combat Damage Step	PHASE	B's Combat Damage Step
+10	B's End of Combat Step	PHASE	B's End of Combat Step
+10	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+10	B's End step	PHASE	B's End step
+10	B's Cleanup step	PHASE	B's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned Mirri, Cat Warrior (81), Undergrowth Leopard (48), Avatar of the Resolute (76) and Scythe Leopard (43) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A didn't block Mirri, Cat Warrior (81). A didn't block Undergrowth Leopard (48). A didn't block Avatar of the Resolute (76). A didn't block Scythe Leopard (43).
+12	B's Declare Blockers Step	STACK_ADD*	A cast Thwart the Enemy
+12	B's Declare Blockers Step	STACK_RESOLVE*	Thwart the Enemy (11) - Prevent all damage that would be dealt this turn by creatures your opponents control.
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned Mirri, Cat Warrior (81), Undergrowth Leopard (48), Avatar of the Resolute (76), Scythe Leopard (43) and Honored Dreyleader (46) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A didn't block Mirri, Cat Warrior (81). A didn't block Undergrowth Leopard (48). A didn't block Avatar of the Resolute (76). A didn't block Scythe Leopard (43). A didn't block Honored Dreyleader (46).
+14	B's Declare Blockers Step	STACK_ADD*	A cast Thwart the Enemy
+14	B's Declare Blockers Step	STACK_RESOLVE*	Thwart the Enemy (13) - Prevent all damage that would be dealt this turn by creatures your opponents control.
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's End step	PHASE	B's End step
+14	B's Cleanup step	PHASE	B's Cleanup step

@@ -42,7 +42,8 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
    (`pgrep -a java | grep Sim`). Never leave a sim or build running when you stop.
 
 ## Asking the main session for analysis
-Put a line starting `ANALYSIS REQUEST:` in your run report: the question, the files it concerns, and what you need
+Put a line starting `ANALYSIS REQUEST:` in your **4-hour report** (not after every test; batch them, to keep the
+request-and-answer loop slow and cheap; an urgent blocker may go at once). Give the question, the files it concerns, and what you need
 back. The main session reads your reports at its 4-hour check-ins. It files the answer in
 `tools/agents/analysis/<your name>.md` and sends it to you. That file is your training data: read it with this one,
 build on its findings, and cite entries by date and title.
@@ -103,6 +104,7 @@ build on its findings, and cite entries by date and title.
 The main session checks on both every 4 hours (at :20) and fixes blockers.
 
 ## Recent updates
+- 2026-10-20: Analysis requests are batched into each agent's 4-hour report (coordinator budget check: AI lab turns over the time box from the request loop). Each answer turn stays within the time box.
 - 2026-10-20: Agent coordinator added (session_017PAirUr1ZnmejFCor3yYPi): logs every main-session/agent interaction, tracks productivity, and from 12-8 AM Eastern holds you while the main session is active (rule 9).
 - 2026-10-20: All 200 AI decks rebuilt with the new deck-building rules (staple preference, watch caps, EDHREC-scale bands); old decks backed up in tools/concordia/backups/2026-10-20_decks_pre_rebuild/. Balance records before this commit are on the old decks.
 - 2026-10-20: Test-tool updates pre-approved with backups (rule 7); proposed AI changes tracked for the user's approval in docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md (rule 8: CHECKLIST lines in reports).
@@ -115,4 +117,3 @@ The main session checks on both every 4 hours (at :20) and fixes blockers.
 - 2026-10-20: Agent manager added: this file is the shared context (read first every run); tools/agents/registry.json logs your standing requests. Briefs now point here.
 - 2026-10-20: `tools/concordia/sim/setup.sh` and `run.sh` added. They fix the "no Maven repository" blocker and were
   verified from an empty cache. Don't edit `forge-gui-mobile/pom.xml` by hand.
-- 2026-10-20: added the push-retry rule (standing rule 4).

@@ -76,6 +76,22 @@
     [
      "2026-10-20",
      "Patch 005 two-version SwitchPT review"
+    ],
+    [
+     "2026-10-20",
+     "s005/s006 code A/B review"
+    ],
+    [
+     "2026-10-20",
+     "s008 gang-block patch review"
+    ],
+    [
+     "2026-10-20",
+     "Regression for 008: not enough yet"
+    ],
+    [
+     "2026-10-20",
+     "g008 gang-block test review; shadow-mode logging"
     ]
    ]
   },

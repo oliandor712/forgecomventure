@@ -288,3 +288,228 @@ Then subtract the cost and act only if the gain is clear. Two extra checks for t
 3. When a version is chosen to trade, tell the rest of the AI, so another routine doesn't pay to undo it.
 4. Two versions is the general pattern for any "becomes X until end of turn" card: compare now against transformed,
    then subtract the cost and the exposure.
+
+## 2026-10-20: s005/s006 code A/B review
+
+Request: (1) judge the s005-code activations and what shouldPumpCard still misses; (2) is 14 vs 68 too conservative; (3) what scenario would show 006's effect; (4) which log columns first.
+
+**Data.** `results/s005-code/*.tsv`. For each turn I parsed the declare attackers and blockers lines and the damage
+lines. My parser finds 7 activation lines, not 14; the log may write one line per activation or one per resolution.
+Keep object ids on activation lines so they can be matched (logging list below).
+
+### (1) The activations
+
+| Game, turn | What happened | Verdict |
+|---|---|---|
+| g0 T12, g2 T9, g2 T11 | Turtleshell attacking, unblocked, switched, hit for 5, 4 and 4 | Useful (+3 to +4 damage each) |
+| g4 T9, g5 T11 | Myr Quadropod attacking, unblocked, switched, hit for 4 and 5 | Useful |
+| g9 T18 | Aquamoeba triple-blocked (Thopter Token, Spectrum Sentinel, Thopter Mechanic), switched to 3/1 | Right call: it dies either way and the switch lets it kill a blocker. The damage lines are missing, so the kill can't be confirmed |
+| g2 T14 | Turtleshell blocking Thopter Mechanic (2 power) | Unclear |
+
+On g2 T14: the damage lines show Turtleshell #8 dealing 1, meaning not switched at damage, and #7 taking 1 from Sai.
+Either the activated Turtleshell was the other copy, or it switched and switched back. Probably 2 mana for nothing.
+Object ids on the activation line will settle it.
+
+**Score:** 5 to 6 clearly useful out of 7, against about 0 of 68 at baseline. A large real improvement.
+
+### (2) Too conservative? Mostly right, with two gaps
+
+18 combats had a flagged creature attacking or blocking with no switch. Most declines were correct:
+- Turtleshell blocking Etherium Sculptor (g5 T16) or Brass Man (g8 T19), and Myr blocking Spectrum Sentinel
+  (g3 T21). Switching kills the attacker but the 4/1 dies, trading a 4-drop for a 2-drop.
+
+**Gap A: gang blocks.**
+- Several turns have 2-4 of A's creatures blocking Sai, Master Thopterist, B's commander: g1 T20, g4 T14, g5 T16,
+  g6 T13.
+- In g5 T16, Aquamoeba and Myr block Sai. A switched Myr adds +3 damage, likely enough to kill the commander. Sai deals
+  its damage to the creature of B's choice, so the Myr risk is small. No switch happened.
+- **Check whether `shouldPumpCard` for a blocker counts the other blockers' damage.** It should use the combined
+  damage (`ComputerUtilCombat.totalDamageOfBlockers` or `attackerWouldBeDestroyed(ai, attacker, combat)` with the pump
+  applied). If it judges the pumped blocker alone, it misses every "my switch completes a gang block" kill.
+
+**Gap B: unblocked attackers left unswitched.**
+- g3 T6: Aquamoeba unblocked dealt 1. A switch would have dealt 3, at the cost of a discard.
+- g5 T9: Myr unblocked dealt 1.
+- These are probably mana or cost choices, Myr's {3} being unavailable or the discard judged too costly. That's
+  fine, but they can't be verified without mana available and hand size in the log.
+
+### (3) Patch 006 needs a scenario where life is NOT in danger
+
+- FogAi's count only matters in the `fogs > 2 && dmg > 2` branch (FogAi.java, before the `lifeInDanger` check). With
+  the patch, a hand of 3 or more Effect Fogs makes the AI fog an attack of 3 or more damage even at a safe life total.
+  Without it, the AI only fogs when in danger.
+- **The test:**
+  - The AI's deck holds 3-4 copies each of Thwart the Enemy, Vine Snare and Endure.
+  - Both sides at 40 life (equal), against a go-wide deck that attacks every turn for 3-8.
+  - Measure casts made while not in danger, damage prevented, and whether those Fogs were missing later when the AI
+    was in danger.
+- **I expect 006 to make the AI spend Fogs earlier,** which helps only a deck built around Fogs. Concordia has no such
+  deck, so **park 006** (low priority) unless a Fog-themed encounter deck is planned.
+
+### (4) Log columns, in this order
+
+1. **Object id and controller** on every activation and damage line, plus mana available and hand size when a flagged
+   ability was playable.
+2. **Zone changes for every creature in a combat** that has a flagged card, so kills are counted.
+3. **role** (attacker unblocked, attacker blocked, blocker) and the opposing creatures' power, toughness and keywords.
+4. **score_now / score_switched**, or the `shouldPumpCard` verdict, and the activation **cost**.
+5. **outcome**, and a **useful** flag (did the switch beat the unswitched result).
+
+**Rules to apply:**
+1. A switch on an unblocked attacker is the reliable win, and v3 takes those.
+2. The remaining upside is gang blocks: evaluate a blocker's pump with the whole block's damage.
+3. Don't pay for a patch with no scenario: 006 only matters for decks built around Fogs.
+
+## 2026-10-20: s008 gang-block patch review
+
+Request: Check whether 008 shows up in s008-code (g0 T13, g7 T37); is a controlled gang-block scenario the right next test; merge 008 into 005 or keep separate.
+
+**Data.** `patches/008-pump-gang-block.patch`; `results/s008-code` g0 T13 and g7 T37, with the new zone-change and
+stack lines.
+
+### Does 008 show up? No: neither activation reaches the changed code
+
+- **g0 T13:** Myr Quadropod was attacking, unblocked. It switched and hit for 4 (B 18 to 11). Useful, but this is
+  005's unblocked-attacker case.
+- **g7 T37:** Turtleshell was attacking, and A activated it twice in declare blockers.
+  - In between, B sacrificed a run of artifacts to Sai's ability: Thopters, Hope of Ghirapur and equipment, all shown
+    as zone changes. That changed the combat.
+  - The second activation reads as a switch back after the blocks changed. That's legal under 005's "one switch and
+    one switch back" rule and plausibly correct, but the log doesn't show Turtleshell's own blocks or damage, so it
+    can't be judged.
+- **Why 008 never ran:** it changes `shouldPumpCard`'s blocker branch, so it only runs when the AI's creature is one
+  of several blockers on the same attacker. Neither activation was a block.
+
+### Next test: yes, a controlled gang-block scenario, plus a regression sim
+
+1. **Gang block (what 008 is for):**
+   - The Alandra deck defends with several 1-power and 4-toughness blockers, switch cards included.
+   - The opponent deck attacks with one or two big creatures: 5/5 to 7/7 green or red fatties from `decks/tier3`,
+     with mono-green T3 and T4 decks as opponents.
+   - Both sides at 20 life, 10 games per arm, same seeds where possible.
+   - Measure the gang-block combats where a switched blocker completes a kill, base against code. The code arm should
+     kill the big attacker more often, without losing more blockers.
+2. **Regression, because 008 changes every Pump decision while blocking:**
+   - Pick 4 ordinary decks with pump instants, such as Giant Growth or Brute Force, from tiers 2-4 (search for
+     `Pump` + `NumAtt$` instants in their lists).
+   - Play 10 games each, base against code, at equal life.
+   - Report pump casts, combat kills and win rate. Any big change in pump casts is a red flag to investigate before
+     proposing.
+
+### Merge into 005 or keep separate? Keep 008 separate
+
+- **005** changes only SwitchPT handling in PumpAi.
+- **008** changes the shared `ComputerUtilCard.shouldPumpCard` that every pump spell and ability uses. It needs its own
+  regression result and its own approval box.
+- **005 works without 008.** 008 only adds the gang-block cases. On the checklist: 008 is a separate item, and 005's
+  note says "better with 008".
+
+**Rules to apply:**
+1. Check that a test reaches the changed code before reading its results. Here, a gang block with a flagged card
+   among the blockers.
+2. A change to shared helpers like `shouldPumpCard` needs a regression sim on ordinary decks before it's proposed.
+3. Keep separate patches separate when their reach differs, so each can be approved on its own evidence.
+
+## 2026-10-20: Regression for 008: not enough yet
+
+Request: Is the r008 regression (2 pairings x 10 games) enough for 008, or 20+ games, real pump-trick decks, or the gang-block scenario first; which pump events to log for kill attribution.
+
+**Data.** `results/r008{a,b}-{base,code}` and the EXPERIMENTS.md section "Regression sim for patch 008".
+
+### Verdict: not enough yet
+
+Three problems, in order:
+1. **The arms change three things at once.** Code ran 005 v3, 006 and 008 together, so nothing is attributable to
+   008. A regression for 008 must be base against 008 only (a scratch build with just that patch).
+2. **The decks barely reach 008's code.** 008 changes the blocker branch of `shouldPumpCard`. Only 2 of the watched
+   cards are real combat pumps; most "pump instants" in these decks are removal or bite spells, which use other AI
+   paths. Casts per card drawn (0.73 to 0.80, 0.60 to 0.67) are within noise for these counts, so no red flag, but no
+   evidence either.
+3. **No kill attribution,** so the question 008 asks ("did my pump plus the other blockers kill the attacker?") isn't
+   measured.
+
+### Next, in this order
+
+1. **The controlled gang block (c) first.** It proves the benefit and tells you what to log.
+   - The Alandra switch deck defends with 3 or more small blockers. Force switch cards and 2 Giant Growth-style
+     instants with `minideck --test ... --copies 2`.
+   - The opponent attacks with 1-2 big creatures (a tier 3-4 green fatty deck).
+   - 10 games, base against 008 only.
+2. **Then the regression (a + b): 20 games per arm, base against 008 only, on decks with real pump tricks.**
+   - Make two pump-trick test decks with minideck: green with Giant Growth, Titanic Growth and Blossoming Defense, and
+     white with Brute Force-type tricks or Moment of Heroism. Two copies each, 40 cards.
+   - Play them against ordinary tier 2-3 decks.
+   - What would be a red flag: pump casts per drawn trick changing by more than about 15 percentage points, or more
+     pumps cast while not in combat.
+
+### Logging for kill attribution, per pump or switch event
+
+| Column | What it holds |
+|---|---|
+| `pumped_id` | The pumped creature's object id and controller |
+| `role` | Attacker or blocker, plus the ids of every creature in that combat group (an attacker and all its blockers) |
+| `pred` | The predicted outcome from shouldPumpCard: kills which ids, loses which ids |
+| `actual` | After combat damage: the ids of every creature from that group put into a graveyard this step (from your ZONE_CHANGE lines, matched by id) |
+| `useful` | 1 if `actual` matches the pump's purpose: an opposing creature died that wouldn't have without the pump, or the pumped creature survived when it otherwise wouldn't. Judge "otherwise" by simple math on the logged P/T |
+
+Also, a note about pkill: you used `pkill -f` once and it killed your own shell. Good that you've switched to killing
+by pid; it's standing rule 10 in CONTEXT.md.
+
+**Rules to apply:**
+1. Test one patch at a time against base.
+2. Pick decks that reach the changed code path.
+3. Measure the decision's purpose (kills, survival) by object id, not only casts and wins.
+
+## 2026-10-20: g008 gang-block test review; shadow-mode logging
+
+Request: Parse g008 base/code gang-block combats (blockers, trick, deaths); is any code cast a decision base would not make; per-event log before or after the 20-game run.
+
+**Data.** `results/g008-{base,code}/*.tsv`. I parsed every turn with a trick cast (Giant Growth, Titanic Growth,
+Blossoming Defense), its declare-blockers lines and its graveyard zone changes.
+
+**A parsing note.** The log line reads "<blockers> to block <attacker>". Selvala's name has a comma in it, so a naive
+"X and Y" test counts single blocks by Selvala as gang blocks. The real gang blocks are below.
+
+### The real gang blocks
+
+| Arm, game, turn | Who blocked whom | Trick cast | Graveyard that combat | Reading |
+|---|---|---|---|---|
+| base g0 T26 | B's Collector Ouphe and Leaf Gilder block A's Deadly Recluse | Blossoming Defense on the Recluse (the attacker) | Recluse, Gilder, Ouphe (+1) | Attacker-side pump: not 008's path |
+| base g4 T36 | 5 of A's creatures block B's Phyrexian Dreadnought | Titanic Growth ×2 + Blossoming Defense ×2, all on Deadly Recluse | 4 of A's blockers died; Dreadnought not in the list | Over-pumping (below) |
+| base g8 T27 | A's Spider Token and Sylvan Ranger block B's Collector Ouphe | Blossoming Defense on Sylvan Ranger | Ouphe, Spider Token | Fine |
+| code g4 T15 | A's Grappler Spider and Canopy Spider block B's Krallenhorde Howler | Blossoming Defense on Canopy Spider | Howler, Grappler Spider | Fine; the same shape as base g8 T27 |
+| code g2 T15 | B's Leaf Gilder and Selvala block A's Arasta | Giant Growth on Deadly Recluse (another creature) | none | No gang-block decision |
+
+**The over-pumping in base g4 T36:**
+- Four tricks went on one blocker in one combat, and that blocker has deathtouch.
+- Deathtouch already kills whatever it damages, so extra power does nothing. Only toughness (surviving) matters.
+- A lost 4 creatures and 4 cards, and the Dreadnought apparently survived.
+- **This is a bug in the unpatched AI, not in 008.** The pump logic doesn't stop once an earlier pump this combat
+  already secured the outcome, and it values power on a deathtouch creature.
+- I'm adding it as a candidate checklist item, **009**: don't stack pumps past what the predicted outcome needs, and
+  don't count power for a creature with deathtouch.
+
+### Is any code cast a decision the base wouldn't make?
+
+- **Can't tell from these runs.** The arms are different games, so no decision lines up with a counterpart.
+- The two comparable gang blocks (code g4 T15 and base g8 T27) got the same kind of decision.
+- With 4 gang-block turns per arm, a game-level A/B won't isolate 008's path even at 20 games.
+
+### Log first, then run. And make the log a shadow mode
+
+- **Build per-event logging before the 20-game run,** as you suggest. Best of all, add a shadow evaluation.
+- **How it works:** at every `shouldPumpCard` call, compute both answers, the unpatched blocker-branch result and the
+  008 result. Act on one of them (the arm's), and log `SHADOW pumped_id role group_ids base=<y/n> 008=<y/n>`
+  whenever they differ.
+- **Why it wins:** each disagreement is exactly a decision 008 changes, in the same game state. Then judge each with
+  `pred`, `actual` and `useful`.
+- **It's cheap:** 10 games of the pump-trick decks in the code arm give every disagreement with its outcome, and no
+  game-level noise.
+- **Then the 20-game regression only checks the totals:** casts per drawn trick, and pumps outside combat.
+
+**Rules to apply:**
+1. To isolate a decision change, evaluate both versions on the same game state (a shadow mode) instead of comparing
+   different games.
+2. Read gang-block logs carefully. Card names contain commas; parse by object id, not by "and".
+3. Watch for over-pumping: several tricks on one creature in one combat, or power on deathtouch. It's a separate
+   problem (candidate 009).

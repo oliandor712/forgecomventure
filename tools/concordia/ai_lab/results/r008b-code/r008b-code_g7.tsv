@@ -1,0 +1,80 @@
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	B's Upkeep step	STACK_ADD*	B cast Bite Down targeting [Go-Shintai of Boundless Vigor (76)] [Marwyn, the Preserver (37)]
+11	B's Upkeep step	DAMAGE	Go-Shintai of Boundless Vigor (76) deals 2 damage to Marwyn, the Preserver (37).
+11	B's Upkeep step	STACK_RESOLVE*	Bite Down (65) -  Go-Shintai of Boundless Vigor (76) deals 2 damage to Marwyn, the Preserver (37).
+11	B's Upkeep step	ZONE_CHANGE	Marwyn, the Preserver (37) was put into Graveyard from Battlefield.
+11	B's Upkeep step	ZONE_CHANGE	B milled Forest (57).
+11	B's Upkeep step	ZONE_CHANGE	B milled Aggro Amalgam (52).
+11	B's Upkeep step	ZONE_CHANGE	B milled Forest (61).
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's End step	PHASE	B's End step
+11	B's End step	STACK_ADD	B triggered Go-Shintai of Boundless Vigor
+11	B's End step	STACK_ADD	B triggered Go-Shintai of Boundless Vigor targeting [Go-Shintai of Boundless Vigor (76)]
+11	B's Cleanup step	PHASE	B's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	ZONE_CHANGE	B milled Herd Heirloom (51).
+13	B's Upkeep step	ZONE_CHANGE	B milled Forest (62).
+13	B's Upkeep step	ZONE_CHANGE	B milled Shadowspear (71).
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Go-Shintai of Boundless Vigor (76) to attack A.
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A didn't block Go-Shintai of Boundless Vigor (76).
+13	B's Declare Blockers Step	STACK_ADD*	B cast Tail Swipe targeting [Go-Shintai of Boundless Vigor (76)] [District Guide (8)]
+13	B's Declare Blockers Step	DAMAGE	Go-Shintai of Boundless Vigor (76) deals 3 damage to District Guide (8).
+13	B's Declare Blockers Step	DAMAGE	District Guide (8) deals 2 damage to Go-Shintai of Boundless Vigor (76).
+13	B's Declare Blockers Step	STACK_RESOLVE*	Tail Swipe (54) - Go-Shintai of Boundless Vigor (76) gets +1/+1  until end of turn. Then the chosen creatures fight each other. (They each deal damage equal to their power to the other.)
+13	B's Declare Blockers Step	ZONE_CHANGE	District Guide (8) was put into Graveyard from Battlefield.
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Go-Shintai of Boundless Vigor (76) deals 3 combat damage to A.
+13	B's Combat Damage Step	LIFE	Life: A 20 > 17
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's End step	PHASE	B's End step
+13	B's End step	STACK_ADD	B triggered Go-Shintai of Boundless Vigor
+13	B's End step	STACK_ADD	B triggered Go-Shintai of Boundless Vigor targeting [Go-Shintai of Boundless Vigor (76)]
+13	B's Cleanup step	PHASE	B's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+16	A's Upkeep step	ZONE_CHANGE	A milled Hardened Scales (1).
+16	A's Upkeep step	ZONE_CHANGE*	A milled Titanic Brawl (33).
+16	A's Upkeep step	ZONE_CHANGE	A milled Season of Growth (34).
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Attackers Step	COMBAT	A assigned Legolas, Master Archer (40) and Sylvan Ranger (12) to attack B.
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's Declare Blockers Step	COMBAT	B didn't block Legolas, Master Archer (40). B didn't block Sylvan Ranger (12).
+16	A's Declare Blockers Step	STACK_ADD	B cast Winds of Qal Sisma
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step

@@ -10,3 +10,16 @@ PING 2026-10-20T17:18Z main -> forge-ai-lab: analysis: "Patch 005 two-version Sw
 PING 2026-10-20T17:22Z main -> all: context: agent-coordinator added; CONTEXT rule 9 tells agents to obey coordinator holds
 PING 2026-10-20T17:19Z deck-balance-lab -> main: report: hourly batch, 40 games (123 rows total, 1 timeout), asked what next
 PING 2026-10-20T17:23Z main -> deck-balance-lab: instruction: no pause; split REPORT.md at rebuild commit 440176a2; test mix = Green-pool decks to 10+ games, top-vs-bottom power, 5+ matched sets per bonus
+PING 2026-10-20T17:36Z forge-ai-lab -> main: analysis_request: s005/s006 code A/B, with CHECKLIST lines for 001-007
+PING 2026-10-20T17:41Z main -> forge-ai-lab: analysis: "s005/s006 code A/B review" filed and sent; checklist: 005 close to ready, 006 parked
+PING 2026-10-20T17:41Z forge-ai-lab -> main: analysis_request: s008 gang-block patch (CHECKLIST 008 added)
+PING 2026-10-20T17:44Z main -> forge-ai-lab: analysis: "s008 gang-block patch review" filed and sent; checklist item 008 added
+PING 2026-10-20T17:45Z forge-ai-lab -> main: analysis_request: 008 regression sim (r008a/b); agent reported one accidental pkill -f of its own shell (no damage)
+PING 2026-10-20T17:48Z main -> forge-ai-lab: analysis: "Regression for 008: not enough yet" filed and sent; next = gang-block scenario, then 20-game single-patch regression
+PING 2026-10-20T17:49Z forge-ai-lab -> main: analysis_request: g008 controlled gang-block test
+PING 2026-10-20T17:53Z main -> forge-ai-lab: analysis: "g008 gang-block test review; shadow-mode logging" filed and sent; checklist adds candidate 009 (over-pumping)
+NOTE main: forge-ai-lab sent 5 analysis requests in ~70 min, each answered in ~5 min; asked coordinator to check budget fit
+PING 2026-10-20T17:52Z coordinator -> main: report: forge-ai-lab budget check (17:14 turn 1193 s, $6.5 in 3.8 h)
+PING 2026-10-20T17:55Z main -> forge-ai-lab: instruction: batch ANALYSIS REQUESTs and CHECKLIST lines into the 4 h report; stay inside the time box. CONTEXT.md updated for all agents.
+NOTE main -> coordinator: track turn durations per agent in productivity.csv note; flag any turn over 2x its box (forge 5 min -> >10 min; balance 10 min -> >20 min)
+PING 2026-10-20T17:57Z main -> all: pause: user paused all agent activity until 5:00 PM Eastern (21:00 UTC); all agent triggers incl. coordinator's disabled; pause sent to forge-ai-lab and deck-balance-lab; do not re-enable; main sends RESUME and re-enables at 21:00 UTC

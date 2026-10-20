@@ -1,0 +1,6 @@
+RESULT	s006-base	A=5	B=5	draw=0	avgTurns=17.5
+  card=Vine Snare games_seen=9 casts=12 activations=0
+  card=Thwart the Enemy games_seen=5 casts=6 activations=0
+RESULT	s006-code	A=2	B=8	draw=0	avgTurns=19.7
+  card=Vine Snare games_seen=7 casts=9 activations=0
+  card=Thwart the Enemy games_seen=4 casts=8 activations=0

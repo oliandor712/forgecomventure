@@ -1,0 +1,48 @@
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Beginning of Combat Step	STACK_ADD*	A cast Overprotect targeting [Llanowar Elves (9)]
+8	A's Beginning of Combat Step	STACK_RESOLVE*	Overprotect (34) - Llanowar Elves (9) gets +3/+3 and gains trample, hexproof, and indestructible until end of turn.
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Llanowar Elves (9) to attack B.
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B didn't block Llanowar Elves (9).
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Llanowar Elves (9) deals 4 combat damage to B.
+8	A's Combat Damage Step	LIFE	Life: B 20 > 16
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Fungal Plots
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Draw step	PHASE	B's Draw step
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Main phase, precombat	STACK_ADD	B activated Kiki-Jiki, Mirror Breaker targeting [Akki Ronin (62)]
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Attackers Step	COMBAT	B assigned Akki Ronin (99) to attack A.
+15	B's Declare Attackers Step	STACK_ADD	B triggered Akki Ronin
+15	B's Declare Attackers Step	STACK_ADD	B triggered Akki Ronin
+15	B's Declare Attackers Step	DISCARD*	B discards Expedite (71).
+15	B's Declare Attackers Step	DISCARD*	B discards Monstrous Rage (65).
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's Declare Blockers Step	COMBAT	A assigned Llanowar Elves (9) to block Akki Ronin (99).
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's Combat Damage Step	DAMAGE	Akki Ronin (99) deals 1 damage to Llanowar Elves (9).
+15	B's Combat Damage Step	DAMAGE	Llanowar Elves (9) deals 2 damage to Akki Ronin (99).
+15	B's End of Combat Step	PHASE	B's End of Combat Step
+15	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+15	B's Main phase, postcombat	STACK_ADD	B cast Krenko's Command
+15	B's Main phase, postcombat	STACK_ADD	B triggered Thermo-Alchemist
+15	B's End step	PHASE	B's End step
+15	B's End step	STACK_ADD	B triggered Kiki-Jiki, Mirror Breaker
+15	B's End step	ZONE_CHANGE	Akki Ronin (99) was put into Graveyard from Battlefield.
+15	B's Cleanup step	PHASE	B's Cleanup step
