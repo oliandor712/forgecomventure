@@ -101,6 +101,29 @@ for b, s, p1, p0, df, ci, t1, t0 in sorted(res, key=lambda x: -x[4]):
 L += ["", "(a set = 2 games with the bonus + 2 without, seats swapped. Differences use a normal approximation, so +/-0 at 0% or 100% means too few games. Each bonus has only a few games so far; the intervals are wide.)", ""]
 heavy = [x for x in res if x[4] >= .25]
 small = [x for x in res if abs(x[4]) < .25]
+STARTER_TUNE = "90b337c5"  # starters tuned to deck power 27; earlier starter games are old starters
+_st = {}
+
+
+def st_new(r):
+    if r["commit"] not in _st:
+        _st[r["commit"]] = subprocess.run(["git", "merge-base", "--is-ancestor", STARTER_TUNE, r["commit"]], cwd=ROOT).returncode == 0
+    return _st[r["commit"]]
+
+
+L += ["## Starter opponents in bonus sets (tuned starters only, Normal and Alt separate)", "",
+      "Enemy win rate against each starter file, split by with and without bonus. Games before the tune (%s) are on old starters and are left out: %d of %d starter games." % (
+          STARTER_TUNE, sum(1 for r in bonus if "/starter/" in r["deck_b"] and not st_new(r)), sum(1 for r in bonus if "/starter/" in r["deck_b"])), "",
+      "| starter | games without bonus | enemy win | games with bonus | enemy win |", "|---|---|---|---|---|"]
+sg = collections.defaultdict(lambda: [[0, 0.0], [0, 0.0]])
+for r in bonus:
+    if "/starter/" in r["deck_b"] and st_new(r):
+        k = 1 if r["bonus_a"] else 0
+        sg[os.path.basename(r["deck_b"])][k][0] += 1; sg[os.path.basename(r["deck_b"])][k][1] += score(r, "a")
+for d, ((n0, w0), (n1, w1)) in sorted(sg.items()):
+    L.append("| %s | %d | %s | %d | %s |" % (d, n0, "%.0f%%" % (100 * w0 / n0) if n0 else "-", n1, "%.0f%%" % (100 * w1 / n1) if n1 else "-"))
+if not sg: L.append("| none yet | | | | |")
+L += [""]
 L += ["## Coverage", "", "Decks with fewer than 4 games: %d of %d seen. Games per deck: min %d, median %d, max %d." % (
     sum(1 for v in allgames.values() if v < 4), len(allgames), min(allgames.values()), sorted(allgames.values())[len(allgames) // 2], max(allgames.values())),
     "Not yet in the record: " + ", ".join(sorted(set(["land", "onedrop", "land+onedrop", "arena", "staff", "legion", "market", "bedlam", "hornet"]) - set(by))) + ".", ""]

@@ -1,6 +1,6 @@
 # Deck balance report
 
-Generated 2026-10-20 23:19Z from 222 games (106 inner-tier, 116 bonus). Intervals are 90% Wilson; draws count half.
+Generated 2026-10-20 23:35Z from 222 games (106 inner-tier, 116 bonus). Intervals are 90% Wilson; draws count half.
 
 Inner-tier tables below use only the **new decks** (rows at or after the rebuild commit: 440176a2 for tiers 3-5, 58aa312f for tiers 1-2): 26 inner games; 80 inner games on the old decks are left out. Bonus impact pools old and new rows, since a matched set compares the same pairing.
 
@@ -66,6 +66,14 @@ None yet: with only a few games per deck no interval clears 50%.
 | legion | 1 | 0% | 50% | -50 pts (+/-58) | 15.5 | 13.0 |
 
 (a set = 2 games with the bonus + 2 without, seats swapped. Differences use a normal approximation, so +/-0 at 0% or 100% means too few games. Each bonus has only a few games so far; the intervals are wide.)
+
+## Starter opponents in bonus sets (tuned starters only, Normal and Alt separate)
+
+Enemy win rate against each starter file, split by with and without bonus. Games before the tune (90b337c5) are on old starters and are left out: 96 of 96 starter games.
+
+| starter | games without bonus | enemy win | games with bonus | enemy win |
+|---|---|---|---|---|
+| none yet | | | | |
 
 ## Coverage
 
