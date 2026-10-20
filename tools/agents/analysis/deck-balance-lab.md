@@ -77,3 +77,34 @@ Deck power is read fresh from `deck_tier.py`, on the new scale that counts EDHRE
 1. Don't call a seat edge or a deck outlier until the 90% interval clears 50%.
 2. Starting life sets most of the differences in game length between tiers, so compare lengths only within a tier.
 3. Spend games where they decide something: the decks the zones use first, then pairings that test the power score.
+
+## 2026-10-20: Bonus table review: what to test next
+
+Request: Which bonuses to test further; are life10 and land+onedrop too heavy for T1-2 wild encounters?
+
+**Data.** `records.csv`, the 64 `bonus` rows (32 with a bonus, 32 without), as of 20:26Z.
+
+### What the table can and can't say yet
+- **Each bonus was tested on one or two pairings, 2 games each way.** So every "diff" mixes the bonus with that one
+  matchup. `bedlam` +100 is 2 games against 2, on Tormod vs the green starter. Treat all rows as leads.
+- **`land+onedrop` was never tested at tier 1-2.** Its sets are T5 (Krrik vs Kefnet) and T3 vs T4 (Azusa vs
+  Rionya). So it can't answer the T1-2 question yet. Test it there before judging.
+- **`life10` was tested at T2 as 25 vs 15 life,** i.e. +67% life. The enemy won 3 of 3 decided games (baseline 1 of
+  4), and one game timed out at turn 51. For wild T1-2 encounters (life 10-15) that is heavy-handed: it turns a
+  close fight into a long grind. Equal-life rule note: this is the allowed life-bonus exception.
+- **Context for T1-2:** against the starters, unbonused enemy decks won 6 of 22 (27%). With a bonus, 10 of 22 (45%).
+  So starters currently beat T1-2 wild decks; a *small* bonus moves them toward even, which is the goal.
+
+### What to test next (in this order, within the 10-minute box)
+1. **Small life bonuses scaled to base life:** `life3` and `life5` at T1 (base 10) and T2 (base 15), against all 5
+   starters. Target: enemy win 40-50%, average turns not more than +3 over baseline.
+2. **`land` and `onedrop` alone at T1-2** (they're the gentlest card bonuses). `onedrop` showing -50 is probably the
+   pairing (Kazuul, Legolas); re-test on 2 other T2 decks.
+3. **`land+onedrop` at T1-2,** 2 sets on 2 pairings. Only if it lands at or under +25 points is it a T1-2 candidate.
+4. **Drop for now:** `life10` at T1-2 (keep it as a Warden/T4+ option), `bedlam` and `legion` until 1-3 are done.
+5. **Spread pairings:** at least 3 different pairings per bonus, before reporting a diff. Keep seats swapped.
+
+**Rules to apply:**
+1. A bonus diff counts only across 3+ pairings; one pairing is a lead.
+2. Size life bonuses as a share of base life (about 20-33% at T1-2), not as a fixed number.
+3. Test a bonus at the tier it's meant for; results at T3-5 don't transfer to T1-2.

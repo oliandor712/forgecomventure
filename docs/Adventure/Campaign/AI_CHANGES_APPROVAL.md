@@ -52,8 +52,10 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
     - Kills weren't attributed.
   - Controlled gang-block test (008 alone, 10 games): no red flag, and nothing pumped outside combat. But only 4
     gang-block turns per arm, so 008's own decision isn't isolated.
-  - Next: a shadow mode that logs every decision where 008 and the unpatched AI disagree, in the same game state. Then
-    the 20-game totals check.
+  - Shadow-mode test (20 games, same game state, both answers computed): 406 blocker evaluations, 37 with
+    co-blockers, **0 disagreements**. 008 never changed a decision in these games. No harm shown, no effect shown.
+  - Next: one hand-built case where only the pump completes a group kill (e.g. a 1/1 and a 2/2 blocking a 4/4, Giant
+    Growth on the 1/1). If 008 still agrees with base there, its code path is wrong and it gets parked.
   - Kept separate from 005, which works without it. 005 gets better with it.
 - [ ] **009, don't over-pump (candidate)**: Found in testing; no patch yet.
   - Where: PumpAi and `ComputerUtilCard.shouldPumpCard`.
