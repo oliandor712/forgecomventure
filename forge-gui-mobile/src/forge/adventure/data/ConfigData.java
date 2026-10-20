@@ -55,5 +55,13 @@ public class ConfigData {
     public boolean poiPaths = true;                 //World generation clears a straight path from every POI to its nearest town. False keeps walls whole.
     public boolean hideItemSlot = false;            //Item descriptions leave out the "Slot: ..." line.
     public boolean debugMenu = false;               //Shows a Debug button under the minimap: fast movement, walking through walls, a win token in every duel (util/DebugMode).        //The plane's items.json adds to (and overrides by name) common's items.json instead of replacing it.
+    public TierLock tierLock;                       //Locks a zone's difficulty at its first fight (util/TierLock); null = off.
+
+    /** A tier flag starting with prefix that is still unset when a duel starts gets stages[value of flag from]. */
+    public static class TierLock {
+        public String prefix = "zoneTier.";        //which tier flags lock, for example zoneTier.G
+        public String from = "seals";             //the quest flag whose value picks the stage
+        public int[] stages;                      //stage for from = 0, 1, 2, ...; values past the end use the last
+    }
 
 }

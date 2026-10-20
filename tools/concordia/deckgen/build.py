@@ -72,7 +72,8 @@ def build(d):
     tier = d['tier']; spec = json.loads(json.dumps(SPEC[tier])); spec['curve'] = {int(k): v for k, v in spec['curve'].items()}
     ident = frozenset(d['colors'])
     cmd = pool[d['commander'].lower()]
-    seed = set(parse(os.path.join(RES, d['seed']))) if d.get('seed') else set()
+    # external seeds (deckgen/external/seeds, not committed) are skipped when missing; the deck then builds unseeded
+    seed = set(parse(os.path.join(RES, d['seed']))) if d.get('seed') and os.path.exists(os.path.join(RES, d['seed'])) else set()
     banned = set(x.lower() for x in d.get('ban', []))
     theme = d.get('theme', [])
     def score(p, r):
@@ -86,7 +87,7 @@ def build(d):
                     if int(p['pt'][0]) + int(p['pt'][1]) > 2 * p['cmc'] + 1: s -= 6  # above-rate body
                 except ValueError: pass
         elif tier == 2:
-            s = -0.7 * abs(pw - 25) + 3 * min(pop, 10) / 10
+            s = -0.7 * abs(pw - d.get('target', TARGET_POWER[2])) + 3 * min(pop, 10) / 10
         else:
             s = -0.6 * abs(pw - d.get('target', TARGET_POWER[tier])) + 4 * min(pop, 20) / 20
         if theme_match(p, theme): s += 12

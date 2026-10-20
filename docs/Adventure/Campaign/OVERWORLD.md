@@ -17,17 +17,18 @@ Each step is **semi-linear**: one or two zones open at a time, and inside a zone
 branches. The player comes back to the central area between steps (Mossgate's shops, inn, Commander Hall, story
 beats), on foot through a zone's gate or by Waystone.
 
-| Step | Zones open | Seals needed to enter | Trainer tier / `life` | Warden |
-|---|---|---|---|---|
-| Starter | Emberbrook, Route 1, Mossgate | – | Tier 1 / 10-12 | – |
-| Zone 1 | Your color | 0 | Tier 2 / 20 | Tier 3 / 30 |
-| Zones 2-3 | Your two ally colors | 1 | Tier 3-4 / 25 | Tier 4-5 / 35-40 |
-| Zones 4-5 | Your two enemy colors | 3 | Tier 5 / 30 | Tier 6 / 40 |
-| Paragons | The five border towns | 5 | – | Five Paragons, tier 7 / 40, any order; each gives a Summit Key fragment |
-| Champion | Victory Road → Summit | 5 Summit Key fragments | Gauntlet | Rival, Champion |
+| Step | Zones open | Seals needed to enter | Usual stage (§5.1) | Trainers | Warden |
+|---|---|---|---|---|---|
+| Starter | Emberbrook, Route 1, Mossgate | – | – | Tier 1 / 10-12 | – |
+| Zone 1 | Your color | 0 | 1 | Tier 2, 1-2 colors / 20 | Tier 3 mono / 30 |
+| Zones 2-3 | Your two ally colors | 1 | 1, then 2 | Tier 2-4 / 20-25 | Tier 3-4 mono / 30-35 |
+| Zones 4-5 | Your two enemy colors | 3 | 2, then 3 | Tier 3-5, 2-3 colors / 25-30 | Tier 4-5 mono / 35-40 |
+| Paragons | The five border towns | 5 | – | – | Five Paragons, top of tier 5, their pair's two colors / 40, any order; each gives a Summit Key fragment |
+| Champion | Victory Road → Summit | 5 Summit Key fragments | – | Gauntlet, 3-5 colors | Rival, Champion: 4-5 colors |
 
-Tiers above 3 don't have decks yet (`ENCOUNTER_TIERS.md` covers 1-3); the table follows `DESIGN.md` §5.2. Every color
-zone has the same dungeons: a gate pass, two inner passes and optional dungeons, whatever step it is for the player (§2).
+A zone's stage comes from the Seals held at the player's first fight there and never changes (§5.1), so the order the
+player takes the zones in sets their difficulty. Every color zone has the same dungeons: a gate pass, two inner passes
+and optional dungeons, whatever step it is for the player (§2).
 
 ## 2. The key constraint: every zone is played at every tier
 
@@ -36,11 +37,8 @@ does Black first and White last. So **the White zone is zone 1 for one player an
 
 - **Geometry can't scale with the step.** A zone's maze, size and dungeons are the same for everyone. All five zones
   are built to one footprint and one level of maze complexity: clearly harder than Route 1, the same as each other.
-- **Encounters scale instead.** The trainers, duelists and dungeon bosses in a zone change with the zone's tier for
-  this player. Each encounter slot has three variants (tier 1-2, 3-4, 5-6), and the active one depends on a quest flag
-  set when the player picks a color (§5).
-- **The Warden** already has per-tier decks and mechanics in `DESIGN.md` §5.2, chosen by how many Seals the player holds
-  when they arrive.
+- **Encounters scale instead.** Every enemy in a zone has one variant per stage, and the active one is the zone's
+  stage, locked at the player's first fight there from the Seals held (§5.1).
 
 ## 3. World layout
 
@@ -341,11 +339,12 @@ past. Its dialog checks a flag:
 | Flag | Set when | By |
 |---|---|---|
 | `zoneOpen.<C>` = 1 | The zone of color C opens for this player | See below |
-| `zoneTier.<C>` = 1/2/3 | The tier the zone plays at for this player (own = 1, allies = 2, enemies = 3) | The color choice |
+| `zoneRel.<C>` = 1/2/3 | The zone's relation to the player's color (own = 1, allies = 2, enemies = 3), for the gate guards' "come back with N Seals" lines | The color choice |
+| `zoneTier.<C>` = 1/2/3 | The zone's difficulty stage (§5.1), locked at the player's first fight there | The game, at that fight (config `tierLock`) |
 | `seals` | +1 per Warden beaten | Each Warden's defeat dialog |
 | `paragon.<pair>` = 1 | That border town's Paragon is beaten | The Paragon's defeat dialog, which also gives the town's Summit Key fragment and wakes its enemy-pair boss |
 
-- **The color choice** (the Seal Angel) sets `zoneOpen.<own>` and all five `zoneTier.<C>` values. Each of its five
+- **The color choice** (the Seal Angel) sets `zoneOpen.<own>` and all five `zoneRel.<C>` values. Each of its five
   color options already runs its own actions, so this is five more flag lists in the existing dialog.
 - **Your own Warden** opens the two ally zones. The Warden's defeat dialog has five nodes, one per `col<X>` character
   flag, each opening that color's two allies.
@@ -369,11 +368,43 @@ Color pairs for the defeat dialogs:
 | Red | Black, Green | White, Blue |
 | Green | Red, White | Blue, Black |
 
-**Encounters by tier.** Each encounter slot in a zone has three map enemy objects, one per tier, and only the one
-matching `zoneTier.<C>` is active. Done with data only, the gate town would wake the right set on entry
-(`activateMapObject`, the way the rival per color works today); that gets heavy at ~20 slots per zone. A small Java
-helper would be cleaner (§8): a map enemy property `enemyByTier` ("tier 1 enemy, tier 2 enemy, tier 3 enemy") read
-against `zoneTier.<C>` when the map loads.
+**Encounters by stage.** Every enemy in a zone has an entry per stage (`enemyByTier` with `tierFlag` `zoneTier.<C>`,
+§8). The duel uses the entry for the zone's stage at the moment it starts, so enemies already on the map when the stage
+locks fight at the locked stage.
+
+### 5.1 The difficulty curve
+
+Difficulty follows the Seals the player holds, not the zone's color: a zone is played at the stage it had when the
+player **first fought there**, and keeps it for good. If Green comes first, Green stays the easiest zone after the
+player has moved on. In the game, the first duel against any of a zone's enemies sets `zoneTier.<C>` from `seals`
+(config `tierLock`, `util/TierLock.java`). In practice that is the gate pass keeper, the one fight every player must
+take to get in. Walking into a zone without fighting locks nothing.
+
+| Stage | Seals at the first fight | Deck tiers | Zones that usually land here |
+|---|---|---|---|
+| 1 | 0-1 | 1-3 | your own zone; the first ally zone |
+| 2 | 2-3 | 2-4 | the second ally zone; the first enemy zone |
+| 3 | 4-5 | 4-5 | the second enemy zone |
+
+Per role and stage: deck tier, deck power window (`deck_tier.py` average card power), life and colors. Colors always
+include the zone's color.
+
+| Role | Stage 1 | Stage 2 | Stage 3 | Colors |
+|---|---|---|---|---|
+| Wild creatures (also random dungeons, pass sentries, hall acolytes) | T1 · any · 12 | T2 · 24-27 · 18 | T4 · 33-36 · 22 | mono |
+| Trainers (duelists) | T2 · 20-24 · 20 | T3/T4 · 32-37 · 25 | T4/T5 · 38-42 · 30 | 1-2, then 2-3 |
+| Pass keepers | T2 · 23-26 · 22 | T4 · 33-36 · 28 | T5 · 39-41 · 32 | mono |
+| Grove guardians | T3 · 28-31 · 24 | T4 · 36-38 · 30 | T5 · 41-43 · 35 | mono |
+| Warden | T3 · 30-33 · 30 | T4 · 37-40 · 35 | T5 · 42-45 · 40 | mono |
+
+After the zones, colors keep widening: the Paragons play their border pair's two colors at the top of tier 5 (43+,
+life 40), and the champion area's gauntlet, Rival and Champion play three to five colors (tier 5/6, 45+).
+
+- **Wild creatures take the stage's lowest band.** Stage 2 uses the top of tier 2 rather than the bottom of tier 3,
+  which would jump from about 12 to about 29 power in one step.
+- **Thin windows:** each enemy's deck pool is the decks inside its window. If fewer than 3 decks are inside, the
+  nearest decks by power are added: first from the same tier, then from the tiers next to it. The tables live in
+  `tools/concordia/maps/build_color_zone.py` (`WILD`, `TRAINER`, `KEEPER`, `GUARDIAN`, `WARDEN`).
 
 ## 6. Passes: dungeons you must go through
 
@@ -526,8 +557,9 @@ Fragments** (quest items, one per Paragon, named "Summit Key Fragment (White-Blu
    - The gate pass (Briar Pass) runs from the temple's Green gate to Rootgate's pocket; inner passes Rootway and
      Thornway are one dungeon with two doors each. Each pass is a hall with its keeper behind a row of blockers
      (touching one starts the duel; beating the keeper clears them both ways).
-   - Encounters follow `zoneTier.G`: trainers T2 / T3-4 / T5, wild creatures T1 / T2 / T4, keepers, dungeon enemies
-     and the Warden, all with random decks from their tier's pool. The Warden's defeat dialog gives the Seal and
+   - Encounters follow `zoneTier.G`, the zone's stage locked at the first fight (§5.1): mono-color wild creatures
+     (also in the random dungeons), keepers, grove guardians and Warden; 1-2 then 2-3 color trainers; each with a
+     random deck from its power window each duel. The Warden's defeat dialog gives the Seal and
      opens zones (step 4).
    - Differences from the plan: route C's encounters are roaming placed enemies (random spot in a region, random
      type) rather than biome spawns, so they follow the zone's tier; the passes and the Warden's hall reuse the Gate

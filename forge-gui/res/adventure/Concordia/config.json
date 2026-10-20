@@ -231,6 +231,7 @@
   "debugMenu": true,
   "hideItemSlot": true,
   "poiPaths": false,
+  "tierLock": {"prefix": "zoneTier.", "from": "seals", "stages": [1, 1, 2, 2, 3, 3]},
   "waystoneStops": ["Spawn", "Mossgate", "GreenGateTown"],
   "tutorialLessons": {
     "flag": "raidersBeaten",

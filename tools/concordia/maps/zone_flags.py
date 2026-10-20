@@ -3,8 +3,11 @@
 
     python3 tools/concordia/maps/zone_flags.py
 
-- The Seal Angel's five color choices (emberbrook_house.tmx) also set zoneOpen.<own color> = 1 and zoneTier.<C> for
-  all five colors: 1 for your own, 2 for its two allies, 3 for its two enemies.
+- The Seal Angel's five color choices (emberbrook_house.tmx) also set zoneOpen.<own color> = 1 and zoneRel.<C> for
+  all five colors: 1 for your own, 2 for its two allies, 3 for its two enemies (the gate guards' "come back with N
+  Seals" lines use it). The difficulty flag zoneTier.<C> is not set here: the game sets it at the player's first fight
+  in the zone, from the Seals held then (config tierLock: seals 0-1 stage 1, 2-3 stage 2, 4-5 stage 3), and it never
+  changes after that.
 - The Gate Temple (mossgate_temple.tmx) gets a guard in front of each gate. A zone gate's guard says how many Seals
   it needs while sealed, and lets the player through once zoneOpen.<C> is set. The champion gate's guard unlocks it
   with all five Summit Key fragments (summitOpen).
@@ -28,7 +31,7 @@ READY = {'G': 'GreenGatePass'}   # zones that exist: color -> the POI its gate l
 PORTAL_GATE_ENTRY = {'G': 1}     # the entry of that POI's map the gate lands at (its gate pass's near end)
 FRAGMENTS = ['Summit Key Fragment (White-Blue)', 'Summit Key Fragment (Blue-Black)', 'Summit Key Fragment (Black-Red)',
              'Summit Key Fragment (Red-Green)', 'Summit Key Fragment (Green-White)']
-FLAG_KEYS = re.compile(r'^(zoneOpen|zoneTier)\.')
+FLAG_KEYS = re.compile(r'^(zoneOpen|zoneTier|zoneRel)\.')
 
 
 def flag(key, val):
@@ -38,7 +41,7 @@ def flag(key, val):
 def color_choice_flags(own):
     acts = [flag('zoneOpen.' + own, 1)]
     for c in C:
-        acts.append(flag('zoneTier.' + c, 1 if c == own else 2 if c in ALLIES[own] else 3))
+        acts.append(flag('zoneRel.' + c, 1 if c == own else 2 if c in ALLIES[own] else 3))
     return acts
 
 
@@ -95,10 +98,10 @@ def gate_guard(c):
                       'options': [{'name': '(Leave)'}]})
     for tier, seals in ((2, '1 Seal'), (3, '3 Seals')):
         nodes.append({'condition': [{'checkQuestFlag': 'zoneOpen.' + c, 'not': True},
-                                    {'getQuestFlag': {'key': 'zoneTier.' + c, 'op': '=', 'val': tier}}],
+                                    {'getQuestFlag': {'key': 'zoneRel.' + c, 'op': '=', 'val': tier}}],
                       'text': '"The %s gate is sealed. Come back with %s."' % (n, seals),
                       'options': [{'name': '(Leave)'}]})
-    nodes.append({'condition': [{'checkQuestFlag': 'zoneOpen.' + c, 'not': True}, {'checkQuestFlag': 'zoneTier.' + c, 'not': True}],
+    nodes.append({'condition': [{'checkQuestFlag': 'zoneOpen.' + c, 'not': True}, {'checkQuestFlag': 'zoneRel.' + c, 'not': True}],
                   'text': '"The %s gate is sealed."' % n, 'options': [{'name': '(Leave)'}]})
     return nodes
 

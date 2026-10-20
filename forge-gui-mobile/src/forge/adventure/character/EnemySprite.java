@@ -60,6 +60,9 @@ public class EnemySprite extends CharacterSprite implements Steerable<Vector2> {
     boolean tagged;
 
     EnemyData data;
+    public String tierFlag;        //set with tierNames: the quest flag that picks this enemy's tier (util/TierLock)
+    public String[] tierNames;     //the enemy for each tier ("|" separates a pool), from enemyByTier
+    public int tierSlot;           //this enemy's place in its tier's pool, kept when the tier changes
     public MapDialog dialog; //Dialog to show on contact. Overrides standard battle (can be started as an action)
     public MapDialog defeatDialog; //Dialog to show on defeat. Overrides standard death (can be removed as an action)
     public EffectData effect; //Battle effect for this enemy. Similar to a player's blessing.
@@ -453,6 +456,10 @@ public class EnemySprite extends CharacterSprite implements Steerable<Vector2> {
 
     public EnemyData getData() {
         return data;
+    }
+
+    public void setData(EnemyData enemyData) {
+        data = enemyData;
     }
 
     public void overrideDeck(String deckPath) {

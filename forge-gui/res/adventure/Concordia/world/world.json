@@ -432,73 +432,73 @@
       "respawn": "town"
     },
     {
-      "enemy": "Green Trainer T2",
+      "enemy": "Green Trainer 1",
       "zone": "green_a",
       "x": 121,
       "y": 301,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town",
-      "enemyByTier": ["Green Trainer T2", "Green Trainer T3|Green Trainer T4", "Green Trainer T5"],
+      "enemyByTier": ["Green Trainer 1", "Green Trainer 2a|Green Trainer 2b", "Green Trainer 3a|Green Trainer 3b"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Trainer T2",
+      "enemy": "Green Trainer 1",
       "zone": "green_a",
       "x": 138,
       "y": 322,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town",
-      "enemyByTier": ["Green Trainer T2", "Green Trainer T3|Green Trainer T4", "Green Trainer T5"],
+      "enemyByTier": ["Green Trainer 1", "Green Trainer 2a|Green Trainer 2b", "Green Trainer 3a|Green Trainer 3b"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Trainer T2",
+      "enemy": "Green Trainer 1",
       "zone": "green_a",
       "x": 108,
       "y": 331,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town",
-      "enemyByTier": ["Green Trainer T2", "Green Trainer T3|Green Trainer T4", "Green Trainer T5"],
+      "enemyByTier": ["Green Trainer 1", "Green Trainer 2a|Green Trainer 2b", "Green Trainer 3a|Green Trainer 3b"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Trainer T2",
+      "enemy": "Green Trainer 1",
       "zone": "green_a",
       "x": 71,
       "y": 331,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town",
-      "enemyByTier": ["Green Trainer T2", "Green Trainer T3|Green Trainer T4", "Green Trainer T5"],
+      "enemyByTier": ["Green Trainer 1", "Green Trainer 2a|Green Trainer 2b", "Green Trainer 3a|Green Trainer 3b"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Trainer T2",
+      "enemy": "Green Trainer 1",
       "zone": "green_a",
       "x": 42,
       "y": 321,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town",
-      "enemyByTier": ["Green Trainer T2", "Green Trainer T3|Green Trainer T4", "Green Trainer T5"],
+      "enemyByTier": ["Green Trainer 1", "Green Trainer 2a|Green Trainer 2b", "Green Trainer 3a|Green Trainer 3b"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Trainer T2",
+      "enemy": "Green Trainer 1",
       "zone": "green_a",
       "x": 76,
       "y": 317,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town",
-      "enemyByTier": ["Green Trainer T2", "Green Trainer T3|Green Trainer T4", "Green Trainer T5"],
+      "enemyByTier": ["Green Trainer 1", "Green Trainer 2a|Green Trainer 2b", "Green Trainer 3a|Green Trainer 3b"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_a",
       "x": 46,
       "y": 327,
@@ -522,11 +522,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_a",
       "x": 49,
       "y": 327,
@@ -550,11 +550,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_a",
       "x": 55,
       "y": 326,
@@ -578,11 +578,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_a",
       "x": 63,
       "y": 326,
@@ -606,11 +606,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_a",
       "x": 71,
       "y": 326,
@@ -650,11 +650,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_a",
       "x": 87,
       "y": 326,
@@ -694,11 +694,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_a",
       "x": 103,
       "y": 326,
@@ -736,11 +736,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_a",
       "x": 81,
       "y": 297,
@@ -768,11 +768,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_a",
       "x": 94,
       "y": 297,
@@ -798,11 +798,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_a",
       "x": 98,
       "y": 295,
@@ -828,11 +828,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_a",
       "x": 103,
       "y": 297,
@@ -858,11 +858,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_a",
       "x": 129,
       "y": 327,
@@ -886,11 +886,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_a",
       "x": 129,
       "y": 307,
@@ -914,66 +914,66 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Trainer T2",
+      "enemy": "Green Trainer 1",
       "zone": "green_b",
       "x": 43,
       "y": 367,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town",
-      "enemyByTier": ["Green Trainer T2", "Green Trainer T3|Green Trainer T4", "Green Trainer T5"],
+      "enemyByTier": ["Green Trainer 1", "Green Trainer 2a|Green Trainer 2b", "Green Trainer 3a|Green Trainer 3b"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Trainer T2",
+      "enemy": "Green Trainer 1",
       "zone": "green_b",
       "x": 69,
       "y": 367,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town",
-      "enemyByTier": ["Green Trainer T2", "Green Trainer T3|Green Trainer T4", "Green Trainer T5"],
+      "enemyByTier": ["Green Trainer 1", "Green Trainer 2a|Green Trainer 2b", "Green Trainer 3a|Green Trainer 3b"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Trainer T2",
+      "enemy": "Green Trainer 1",
       "zone": "green_b",
       "x": 95,
       "y": 367,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town",
-      "enemyByTier": ["Green Trainer T2", "Green Trainer T3|Green Trainer T4", "Green Trainer T5"],
+      "enemyByTier": ["Green Trainer 1", "Green Trainer 2a|Green Trainer 2b", "Green Trainer 3a|Green Trainer 3b"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Trainer T2",
+      "enemy": "Green Trainer 1",
       "zone": "green_b",
       "x": 120,
       "y": 367,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town",
-      "enemyByTier": ["Green Trainer T2", "Green Trainer T3|Green Trainer T4", "Green Trainer T5"],
+      "enemyByTier": ["Green Trainer 1", "Green Trainer 2a|Green Trainer 2b", "Green Trainer 3a|Green Trainer 3b"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Trainer T2",
+      "enemy": "Green Trainer 1",
       "zone": "green_b",
       "x": 106,
       "y": 383,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town",
-      "enemyByTier": ["Green Trainer T2", "Green Trainer T3|Green Trainer T4", "Green Trainer T5"],
+      "enemyByTier": ["Green Trainer 1", "Green Trainer 2a|Green Trainer 2b", "Green Trainer 3a|Green Trainer 3b"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_b",
       "x": 37,
       "y": 376,
@@ -1000,11 +1000,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_b",
       "x": 50,
       "y": 376,
@@ -1030,11 +1030,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_b",
       "x": 67,
       "y": 363,
@@ -1058,11 +1058,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_b",
       "x": 80,
       "y": 363,
@@ -1086,11 +1086,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_b",
       "x": 127,
       "y": 363,
@@ -1114,11 +1114,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_b",
       "x": 140,
       "y": 363,
@@ -1142,11 +1142,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_b",
       "x": 151,
       "y": 376,
@@ -1173,11 +1173,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_b",
       "x": 164,
       "y": 376,
@@ -1203,11 +1203,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_c",
       "x": 43,
       "y": 441,
@@ -1289,11 +1289,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_c",
       "x": 43,
       "y": 421,
@@ -1406,11 +1406,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_c",
       "x": 63,
       "y": 419,
@@ -1494,11 +1494,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_c",
       "x": 65,
       "y": 441,
@@ -1612,11 +1612,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_c",
       "x": 81,
       "y": 421,
@@ -1738,11 +1738,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_c",
       "x": 99,
       "y": 409,
@@ -1830,11 +1830,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_c",
       "x": 99,
       "y": 433,
@@ -1928,11 +1928,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_c",
       "x": 125,
       "y": 441,
@@ -2054,11 +2054,11 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     },
     {
-      "enemy": "Green Thornling T1",
+      "enemy": "Green Thornling 1",
       "zone": "green_c",
       "x": 125,
       "y": 407,
@@ -2155,7 +2155,7 @@
       ],
       "threatRange": 5,
       "respawn": "town",
-      "enemyByTier": ["Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1", "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2", "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"],
+      "enemyByTier": ["Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1", "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2", "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"],
       "tierFlag": "zoneTier.G"
     }
   ]

@@ -38,16 +38,16 @@
   <object id="51" template="../../../../common/maps/obj/treasure.tx" x="213.75" y="27.75"/>
   <object id="58" template="../../../../common/maps/obj/enemy.tx" x="217.794" y="66.2717">
    <properties>
-    <property name="enemy" value="Green Grove Denizen 1"/>
-    <property name="enemyByTier" value="Green Grove Denizen 1, Green Grove Denizen 2, Green Grove Denizen 3"/>
+    <property name="enemy" value="Green Thornling 1"/>
+    <property name="enemyByTier" value="Green Thornling 1, Green Thornling 2, Green Thornling 3"/>
     <property name="tierFlag" value="zoneTier.G"/>
     <property name="threatRange" type="int" value="40"/>
    </properties>
   </object>
   <object id="63" template="../../../../common/maps/obj/enemy.tx" x="252.705" y="162.45">
    <properties>
-    <property name="enemy" value="Green Grove Denizen 1"/>
-    <property name="enemyByTier" value="Green Grove Denizen 1, Green Grove Denizen 2, Green Grove Denizen 3"/>
+    <property name="enemy" value="Green Grove Sprite 1"/>
+    <property name="enemyByTier" value="Green Grove Sprite 1, Green Grove Sprite 2, Green Grove Sprite 3"/>
     <property name="tierFlag" value="zoneTier.G"/>
     <property name="threatRange" type="int" value="30"/>
     <property name="waypoints" value="68,77,68,69"/>
@@ -92,8 +92,8 @@
   <object id="77" template="../../../../common/maps/obj/waypoint.tx" x="134.395" y="226.236"/>
   <object id="78" template="../../../../common/maps/obj/enemy.tx" x="193.682" y="40.9647">
    <properties>
-    <property name="enemy" value="Green Grove Denizen 1"/>
-    <property name="enemyByTier" value="Green Grove Denizen 1, Green Grove Denizen 2, Green Grove Denizen 3"/>
+    <property name="enemy" value="Green Moss Bear 1"/>
+    <property name="enemyByTier" value="Green Moss Bear 1, Green Moss Bear 2, Green Moss Bear 3"/>
     <property name="tierFlag" value="zoneTier.G"/>
     <property name="threatRange" type="int" value="30"/>
    </properties>

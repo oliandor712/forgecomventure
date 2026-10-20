@@ -576,6 +576,11 @@ public class MapStage extends GameStage {
                                 EN = world.getData().GetBiomes().get(currentBiome).getEnemy(1.0f);
                             }
                             EnemySprite mob = new EnemySprite(id, EN);
+                            Object tiers = prop.get("enemyByTier"), tierFlag = prop.get("tierFlag");
+                            if (tiers != null && !tiers.toString().isEmpty() && tierFlag != null && !tierFlag.toString().isEmpty()) {
+                                mob.tierFlag = tierFlag.toString();
+                                mob.tierNames = tiers.toString().split(",");
+                            }
                             Object dialogObject = prop.get("dialog"); //Check if the enemy has a dialogue attached to it.
                             if (dialogObject != null && !dialogObject.toString().isEmpty()) {
                                 mob.dialog = new MapDialog(dialogObject.toString(), this, mob.getId(), currentMap);
@@ -1343,6 +1348,7 @@ public class MapStage extends GameStage {
     
     public void beginDuel(EnemySprite mob) {
         if (mob == null) return;
+        TierLock.beforeDuel(mob);
         mob.clearCollisionHeight();
         currentMob = mob;
         player.setAnimation(CharacterSprite.AnimationTypes.Attack);

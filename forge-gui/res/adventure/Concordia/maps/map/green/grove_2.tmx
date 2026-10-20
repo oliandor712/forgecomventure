@@ -64,16 +64,16 @@
   <object id="49" template="../../../../common/maps/obj/gold.tx" x="144.327" y="139.568"/>
   <object id="50" template="../../../../common/maps/obj/enemy.tx" x="109.994" y="43.33">
    <properties>
-    <property name="enemy" value="Green Grove Denizen 1"/>
-    <property name="enemyByTier" value="Green Grove Denizen 1, Green Grove Denizen 2, Green Grove Denizen 3"/>
+    <property name="enemy" value="Green Thornling 1"/>
+    <property name="enemyByTier" value="Green Thornling 1, Green Thornling 2, Green Thornling 3"/>
     <property name="tierFlag" value="zoneTier.G"/>
     <property name="threatRange" type="int" value="20"/>
    </properties>
   </object>
   <object id="53" template="../../../../common/maps/obj/enemy.tx" x="228.619" y="199.505">
    <properties>
-    <property name="enemy" value="Green Grove Denizen 1"/>
-    <property name="enemyByTier" value="Green Grove Denizen 1, Green Grove Denizen 2, Green Grove Denizen 3"/>
+    <property name="enemy" value="Green Grove Sprite 1"/>
+    <property name="enemyByTier" value="Green Grove Sprite 1, Green Grove Sprite 2, Green Grove Sprite 3"/>
     <property name="tierFlag" value="zoneTier.G"/>
     <property name="threatRange" type="int" value="30"/>
     <property name="waypoints" value="62,61,60,59,58,65,64,63"/>
@@ -81,8 +81,8 @@
   </object>
   <object id="54" template="../../../../common/maps/obj/enemy.tx" x="199.504" y="63.9914">
    <properties>
-    <property name="enemy" value="Green Grove Denizen 1"/>
-    <property name="enemyByTier" value="Green Grove Denizen 1, Green Grove Denizen 2, Green Grove Denizen 3"/>
+    <property name="enemy" value="Green Moss Bear 1"/>
+    <property name="enemyByTier" value="Green Moss Bear 1, Green Moss Bear 2, Green Moss Bear 3"/>
     <property name="tierFlag" value="zoneTier.G"/>
     <property name="threatRange" type="int" value="20"/>
    </properties>

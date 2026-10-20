@@ -4,8 +4,10 @@
     python3 tools/concordia/maps/build_color_zone.py green
 
 Writes, for the zone:
-- enemies.json: its tiered trainers, wild creatures, pass keepers, dungeon enemies and Warden ("<Color> ... T<n>"),
-  picked in game by zoneTier.<C> through enemyByTier (world: PlacedEnemyData; maps: enemy objects).
+- enemies.json: its trainers, wild creatures, pass keepers, grove guardians and Warden, one entry per stage
+  ("<Color> ... <stage>"), picked in game by zoneTier.<C> through enemyByTier (world: PlacedEnemyData; maps: enemy
+  objects). zoneTier.<C> is the zone's stage, locked at the player's first fight there from the Seals held (config
+  tierLock; OVERWORLD.md §5.1). Each entry's deck pool is chosen by color rule and a deck-power window (STAGES below).
 - shops.json: its color-focused shops; the gate town also keeps Mossgate's artifact, land and colorless shops.
 - maps/map/<color>/: the gate town and zone town (from Mossgate's layout), the gate pass and two inner passes and the
   Warden's hall (from the Gate Temple's room), and the random dungeons (from the Concordia caves).
@@ -45,24 +47,63 @@ ZONES = {
     },
 }
 
-# deck tier and life per zoneTier (1 = your own color, 2 = an ally, 3 = an enemy), from OVERWORLD.md §1
-TRAINER = {1: [(2, 20)], 2: [(3, 25), (4, 25)], 3: [(5, 30)]}
-WILD = {1: (1, 10), 2: (2, 15), 3: (4, 20)}
-KEEPER = {1: (2, 22), 2: (4, 28), 3: (5, 32)}
-DENIZEN = {1: (2, 18), 2: (3, 24), 3: (5, 28)}
-GUARDIAN = {1: (3, 24), 2: (4, 30), 3: (5, 35)}
-WARDEN = {1: (3, 30), 2: (5, 35), 3: (5, 40)}   # tier 6 decks don't exist yet: the last Wardens use tier 5 and more life
+# The difficulty curve (OVERWORLD.md §5.1). Stage = zoneTier.<C>: 1 for seals 0-1, 2 for seals 2-3, 3 for seals 4-5,
+# locked at the first fight in the zone. Per role and stage: (deck tier, deck power window, life, colors).
+# Colors: 'mono' = the zone's color only; '1-2' / '2-3' = that many colors, one of them the zone's.
+# Power is deck_tier.py's average card power; the tiers' bands are T1 12-13, T2 20-26, T3 29-36, T4 33-41, T5 39-46.
+# Wild creatures take the lowest band of the stage and also fill the random dungeons, pass sentries and hall acolytes.
+WILD = {1: (1, (0, 99), 12, 'mono'), 2: (2, (24, 27), 18, 'mono'), 3: (4, (33, 36), 22, 'mono')}
+TRAINER = {1: [(2, (20, 24), 20, '1-2')],
+           2: [(3, (32, 36), 25, '2-3'), (4, (34, 37), 25, '2-3')],
+           3: [(4, (38, 41), 30, '2-3'), (5, (39, 42), 30, '2-3')]}
+KEEPER = {1: (2, (23, 26), 22, 'mono'), 2: (4, (33, 36), 28, 'mono'), 3: (5, (39, 41), 32, 'mono')}
+GUARDIAN = {1: (3, (28, 31), 24, 'mono'), 2: (4, (36, 38), 30, 'mono'), 3: (5, (41, 43), 35, 'mono')}
+WARDEN = {1: (3, (30, 33), 30, 'mono'), 2: (4, (37, 40), 35, 'mono'), 3: (5, (42, 45), 40, 'mono')}
+MIN_POOL = 3  # decks per pool; a thin window takes the nearest decks by power from the same and neighbouring tiers
 
 
 def esc(v):
     return html.escape(v if isinstance(v, str) else json.dumps(v, ensure_ascii=False), quote=True)
 
 
-def decks(tier, c):
-    d = os.path.join(CONC, 'decks', 'tier%d' % tier)
-    names = sorted(f for f in os.listdir(d) if f.endswith('.dck'))
-    own = [f for f in names if c in f.split('_')[1]]
-    return ['decks/tier%d/%s' % (tier, f) for f in (own if len(own) >= 3 else names)]
+_power = {}
+
+
+def deck_power(rel):
+    if rel not in _power:
+        sys.path.insert(0, os.path.dirname(HERE))
+        import deck_tier as dt
+        if 'data' not in _power:
+            _power['data'] = (dt.build_cache(), json.load(open(dt.CONFIG)))
+        _power[rel] = dt.rate(os.path.join(CONC, rel), *_power['data'])['power']
+    return _power[rel]
+
+
+def colors_ok(cols, c, rule):
+    if c not in cols:
+        return False
+    return {'mono': len(cols) == 1, '1-2': len(cols) <= 2, '2-3': 2 <= len(cols) <= 3}[rule]
+
+
+def decks(tier, c, window=(0, 99), rule='mono'):
+    """The deck pool for one enemy: decks of `tier` that pass the color rule (colors from the file name,
+    T<n>_<colors>_<name>.dck) inside the power window. Under MIN_POOL decks, the nearest by power are added, from this
+    tier first and then the tiers next to it."""
+    def cands(t):
+        d = os.path.join(CONC, 'decks', 'tier%d' % t)
+        if not os.path.isdir(d):
+            return []
+        return ['decks/tier%d/%s' % (t, f) for f in sorted(os.listdir(d))
+                if f.endswith('.dck') and colors_ok(f.split('_')[1], c, rule)]
+    lo, hi = window
+    dist = lambda r: max(lo - deck_power(r), deck_power(r) - hi, 0)
+    pool = [r for r in cands(tier) if dist(r) == 0]
+    for group in (cands(tier), cands(tier - 1) + cands(tier + 1)):
+        rest = sorted((r for r in group if r not in pool), key=dist)
+        pool += rest[:max(0, MIN_POOL - len(pool))]
+    if not pool:
+        raise SystemExit('no %s decks for %s in tier %d' % (rule, c, tier))
+    return pool
 
 
 # ---------------- enemies ----------------
@@ -70,8 +111,9 @@ def enemies(z):
     c, col = z['C'], z['Color']
     out = []
 
-    def enemy(name, sprite, tier, life, rewards, **extra):
-        e = {'name': name, 'sprite': sprite, 'deck': decks(tier, c), 'randomizeDeck': True, 'ai': '', 'speed': 40,
+    def enemy(name, sprite, spec, rewards, **extra):
+        tier, window, life, rule = spec
+        e = {'name': name, 'sprite': sprite, 'deck': decks(tier, c, window, rule), 'randomizeDeck': True, 'ai': '', 'speed': 40,
              'scale': 1.0, 'life': life, 'rewards': rewards}
         e.update(extra)
         out.append(e)
@@ -81,26 +123,28 @@ def enemies(z):
     names['trainer'] = []
     for zt, opts in TRAINER.items():
         group = []
-        for i, (tier, life) in enumerate(opts):
+        for i, spec in enumerate(opts):
+            tier = spec[0]
             sprite = z['sprites']['trainer'][(zt + i) % len(z['sprites']['trainer'])]
-            group.append(enemy('%s Trainer T%d' % (col, tier), sprite, tier, life,
+            group.append(enemy('%s Trainer %d%s' % (col, zt, 'ab'[i] if len(opts) > 1 else ''), sprite, spec,
                                [{'type': 'gold', 'count': 60 + 40 * tier}, {'type': 'shards', 'count': tier + 1},
                                 {'type': 'deckCard', 'count': 1}]))
         names['trainer'].append('|'.join(group))
     names['wild'] = []
-    for zt, (tier, life) in WILD.items():
-        group = [enemy('%s %s T%d' % (col, species, tier), sprite, tier, life,
+    for zt, spec in WILD.items():
+        group = [enemy('%s %s %d' % (col, species, zt), sprite, spec,
                        [{'type': 'shards', 'count': 2, 'addMaxCount': 2}, {'type': 'deckCard', 'count': 1}], flying=True, speed=45)
                  for species, sprite in z['wild']]
         names['wild'].append('|'.join(group))
     for role, table, sprite, rewards in (
             ('keeper', KEEPER, z['sprites']['keeper'], lambda t: [{'type': 'gold', 'count': 100 + 50 * t}, {'type': 'deckCard', 'count': 2}]),
-            ('denizen', DENIZEN, z['sprites']['denizen'], lambda t: [{'type': 'gold', 'count': 40 + 20 * t}, {'type': 'deckCard', 'count': 1}]),
             ('guardian', GUARDIAN, z['sprites']['guardian'], lambda t: [{'type': 'gold', 'count': 100 + 40 * t}, {'type': 'shards', 'count': 3 + t}, {'type': 'deckCard', 'count': 2}]),
             ('warden', WARDEN, z['sprites']['warden'], lambda t: [{'type': 'gold', 'count': 400}, {'type': 'shards', 'count': 10}, {'type': 'deckCard', 'count': 3}])):
-        label = {'keeper': 'Pass Keeper', 'denizen': 'Grove Denizen', 'guardian': 'Grove Guardian', 'warden': 'Warden'}[role]
-        names[role] = [enemy('%s %s %d' % (col, label, zt), sprite, tier, life, rewards(tier), **({'boss': True} if role == 'warden' else {}))
-                       for zt, (tier, life) in table.items()]
+        label = {'keeper': 'Pass Keeper', 'guardian': 'Grove Guardian', 'warden': 'Warden'}[role]
+        names[role] = [enemy('%s %s %d' % (col, label, zt), sprite, spec, rewards(spec[0]), **({'boss': True} if role == 'warden' else {}))
+                       for zt, spec in table.items()]
+    # random dungeons and hall acolytes pull from the wild encounters: one species per spot, by tier
+    names['denizen'] = [[g.split('|')[k] for g in names['wild']] for k in range(len(z['wild']))]
     p = os.path.join(CONC, 'world', 'enemies.json')
     data = json.load(open(p))
     prefix = col + ' '
@@ -253,7 +297,7 @@ def warden_map(path, names, z, town_map, town_door):
                 'defeatDialog': zone_flags.warden_defeat(z['C'], -1)}, typ='enemy')]
     for k, (tx, ty) in enumerate([(9, 15), (18, 15), (9, 10), (18, 10)]):
         objs.append(obj(3 + k, 'acolyte', OBJ + 'enemy.tx', tx * 16, (ty + 1) * 16, props={
-            'enemy': names['denizen'][0], 'enemyByTier': tiered(names['denizen']), 'tierFlag': cflag}, typ='enemy'))
+            'enemy': names['denizen'][k % len(names['denizen'])][0], 'enemyByTier': tiered(names['denizen'][k % len(names['denizen'])]), 'tierFlag': cflag}, typ='enemy'))
     room_map(path, objs)
     flush(path, [1])
 
@@ -266,10 +310,16 @@ def grove_map(path, base, names, z):
     s = s.replace('../../../../common/', '../../../../common/')
     boss_names = ('Mossback Treant', 'Deepcave Yeti', 'Hollow Shade')
 
+    spot = [0]
+
     def fix(m):
         block = m.group(0)
         name = re.search(r'<property name="enemy" value="([^"]*)"', block).group(1)
-        group = names['guardian'] if name in boss_names else names['denizen']
+        if name in boss_names:
+            group = names['guardian']
+        else:
+            group = names['denizen'][spot[0] % len(names['denizen'])]
+            spot[0] += 1
         block = re.sub(r'<property name="enemy" value="[^"]*"/>',
                        '<property name="enemy" value="%s"/>\n    <property name="enemyByTier" value="%s"/>\n    <property name="tierFlag" value="%s"/>'
                        % (group[0], esc(tiered(group)), cflag), block)
@@ -335,6 +385,10 @@ def build(color):
     # world sections
     for sec in 'abc':
         spec = os.path.join(HERE, 'zones', '%s_%s.json' % (color, sec))
+        sd = json.load(open(spec))
+        sd['duelist_default']['enemyByTier'] = names['trainer']
+        sd['wild_by_tier'] = names['wild']
+        open(spec, 'w').write(json.dumps(sd, indent=2) + '\n')
         subprocess.run([sys.executable, os.path.join(HERE, 'mapsuite.py'), spec, '--write',
                         '--preview', os.environ.get('PREVIEW', HERE)], check=True)
     # Waystone stop

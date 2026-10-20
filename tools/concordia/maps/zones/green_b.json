@@ -6,15 +6,15 @@
   "tier_flag": "zoneTier.G",
   "duelist_default": {
     "enemyByTier": [
-      "Green Trainer T2",
-      "Green Trainer T3|Green Trainer T4",
-      "Green Trainer T5"
+      "Green Trainer 1",
+      "Green Trainer 2a|Green Trainer 2b",
+      "Green Trainer 3a|Green Trainer 3b"
     ]
   },
   "wild_by_tier": [
-    "Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1",
-    "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2",
-    "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"
+    "Green Thornling 1|Green Grove Sprite 1|Green Moss Bear 1",
+    "Green Thornling 2|Green Grove Sprite 2|Green Moss Bear 2",
+    "Green Thornling 3|Green Grove Sprite 3|Green Moss Bear 3"
   ],
   "minimap_color": "3f8f3f",
   "zone": "green_b",

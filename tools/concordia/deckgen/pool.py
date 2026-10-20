@@ -41,6 +41,12 @@ for x in mined:
         m = re.match(r'^\s*\d+\s+([^|]+)', line)
         if m: seen.add(m.group(1).strip().lower())
     for s in seen: pop[s] += 1
+# Commander decklists gathered from public GitHub repositories (external/decks.json, built outside this repo's tools
+# and not committed) count toward popularity too, so cards real players run become candidates.
+ext = os.path.join(HERE, 'external', 'decks.json')
+if os.path.exists(ext):
+    for x in json.load(open(ext))['decks']:
+        for s in set(n.lower() for n in list(x['cards']) + x['commanders']): pop[s] += 1
 def identity(c):
     s = set(re.findall(r'[WUBRG]', c['mc']))
     for sym in re.findall(r'\{([^}]*)\}', re.sub(r'\([^)]*\)', '', c['oracle'])):

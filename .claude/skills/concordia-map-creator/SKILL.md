@@ -80,6 +80,12 @@ area (largest remainder). Each encounter gets its zone's tiles as `spots` and th
 the game re-rolls both every time it spawns (each load, and after entering a town). Pin hand-picked areas with
 `"areas"` (Route 1 does: the user marked them).
 
+**Encounter difficulty** (OVERWORLD.md §5.1). Every enemy in a color zone takes `enemyByTier` + `tierFlag`
+`zoneTier.<C>`: one entry per stage. The stage locks at the player's first fight in the zone, from the Seals held
+(config `tierLock`). Wild creatures, random-dungeon enemies, pass keepers, grove guardians and the Warden are mono-color
+in the zone's color; trainers are 1-2 colors at stage 1 and 2-3 after that. Pools are picked by deck power window in
+`build_color_zone.py` (`WILD`, `TRAINER`, `KEEPER`, `GUARDIAN`, `WARDEN`); don't hand-pick decks by tier alone.
+
 **Doors and buildings.** A door's trigger (the `entry` object) is a thin strip, 4 px deep (at most 6), flush against
 the wall or building it is set in, on the side opposite its `direction`. A full-tile trigger fires a tile before the
 player reaches the door; one standing off the wall fires out in the open. Tile objects hang from their bottom edge,

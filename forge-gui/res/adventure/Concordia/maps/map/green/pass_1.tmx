@@ -137,22 +137,22 @@
   </object>
   <object id="4" name="sentry" template="../../../../common/maps/obj/enemy.tx" type="enemy" x="144" y="272" width="16" height="16">
    <properties>
-    <property name="enemy" value="Green Thornling T1"/>
-    <property name="enemyByTier" value="Green Thornling T1, Green Thornling T2, Green Thornling T4"/>
+    <property name="enemy" value="Green Thornling 1"/>
+    <property name="enemyByTier" value="Green Thornling 1, Green Thornling 2, Green Thornling 3"/>
     <property name="tierFlag" value="zoneTier.G"/>
    </properties>
   </object>
   <object id="5" name="sentry" template="../../../../common/maps/obj/enemy.tx" type="enemy" x="288" y="272" width="16" height="16">
    <properties>
-    <property name="enemy" value="Green Thornling T1"/>
-    <property name="enemyByTier" value="Green Grove Sprite T1, Green Grove Sprite T2, Green Grove Sprite T4"/>
+    <property name="enemy" value="Green Thornling 1"/>
+    <property name="enemyByTier" value="Green Grove Sprite 1, Green Grove Sprite 2, Green Grove Sprite 3"/>
     <property name="tierFlag" value="zoneTier.G"/>
    </properties>
   </object>
   <object id="6" name="sentry" template="../../../../common/maps/obj/enemy.tx" type="enemy" x="160" y="160" width="16" height="16">
    <properties>
-    <property name="enemy" value="Green Thornling T1"/>
-    <property name="enemyByTier" value="Green Moss Bear T1, Green Moss Bear T2, Green Moss Bear T4"/>
+    <property name="enemy" value="Green Thornling 1"/>
+    <property name="enemyByTier" value="Green Moss Bear 1, Green Moss Bear 2, Green Moss Bear 3"/>
     <property name="tierFlag" value="zoneTier.G"/>
    </properties>
   </object>

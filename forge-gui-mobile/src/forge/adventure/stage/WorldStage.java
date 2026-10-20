@@ -116,6 +116,7 @@ public class WorldStage extends GameStage implements SaveFileContent {
                     if (collided)
                         return;
                     collided = true;
+                    TierLock.beforeDuel(mob);
                     player.setAnimation(CharacterSprite.AnimationTypes.Attack);
                     player.playEffect(Paths.EFFECT_SPARKS, 0.5f);
                     mob.setAnimation(CharacterSprite.AnimationTypes.Attack);
@@ -364,6 +365,16 @@ public class WorldStage extends GameStage implements SaveFileContent {
             }
             EnemySprite sprite = new EnemySprite(data);
             sprite.placedIndex = i;
+            if (placed[i].enemyByTier != null && placed[i].enemyByTier.length > 0 && placed[i].tierFlag != null) {
+                sprite.tierFlag = placed[i].tierFlag;
+                sprite.tierNames = placed[i].enemyByTier;
+                for (String pool : placed[i].enemyByTier) {
+                    String[] names = pool.split("\\|");
+                    for (int k = 0; k < names.length; k++)
+                        if (names[k].trim().equals(name))
+                            sprite.tierSlot = k;
+                }
+            }
             sprite.threatRange = placed[i].threatRange * world.getTileSize();
             sprite.pursueRange = Math.max(placed[i].pursueRange, placed[i].threatRange) * world.getTileSize();
             float[] spot = placed[i].pickSpot();
