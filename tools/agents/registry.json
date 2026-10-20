@@ -158,6 +158,10 @@
     [
      "2026-10-20",
      "Starter tests: split runs 50/50 between each colour's Normal and Alt starter; report them separately."
+    ],
+    [
+     "2026-10-20",
+     "200 variant decks added (80 per tier); bring them up to the median game count."
     ]
    ],
    "analyses": [

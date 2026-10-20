@@ -755,6 +755,9 @@
   "deck": [
    "decks/tier2/T2_G_Arasta.dck",
    "decks/tier2/T2_G_Mirri.dck",
+   "decks/tier2/T2_G_SpiderMan.dck",
+   "decks/tier2/T2_G_The.dck",
+   "decks/tier2/T2_G_The2.dck",
    "decks/tier2/T2_G_Toski.dck"
   ],
   "randomizeDeck": true,
@@ -781,10 +784,15 @@
   "name": "Green Trainer 2a",
   "sprite": "sprites/enemy/humanoid/elf/shaman.atlas",
   "deck": [
+   "decks/tier3/T3_BG_Abomination.dck",
    "decks/tier3/T3_BG_Gitrog.dck",
+   "decks/tier3/T3_RG_Etali.dck",
    "decks/tier3/T3_RG_Zilortha.dck",
+   "decks/tier3/T3_UG_Adrix.dck",
    "decks/tier3/T3_UG_Vannifar.dck",
    "decks/tier3/T3_WRG_Rith.dck",
+   "decks/tier3/T3_WRG_Rith2.dck",
+   "decks/tier3/T3_WUG_Derevi.dck",
    "decks/tier3/T3_WUG_Falco.dck"
   ],
   "randomizeDeck": true,
@@ -811,9 +819,9 @@
   "name": "Green Trainer 2b",
   "sprite": "sprites/enemy/humanoid/elf/hunter_2.atlas",
   "deck": [
+   "decks/tier4/T4_WBG_Felothar.dck",
    "decks/tier4/T4_WBG_Necrobloom.dck",
-   "decks/tier4/T4_RG_Anzrag.dck",
-   "decks/tier4/T4_BG_Ygra.dck"
+   "decks/tier4/T4_RG_Anzrag.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -841,9 +849,13 @@
   "deck": [
    "decks/tier4/T4_BG_Ygra.dck",
    "decks/tier4/T4_UBG_Damia.dck",
+   "decks/tier4/T4_UBG_Glarb.dck",
+   "decks/tier4/T4_UG_Hakbal.dck",
    "decks/tier4/T4_UG_Uro.dck",
    "decks/tier4/T4_URG_Flubs.dck",
-   "decks/tier4/T4_WG_Karametra.dck"
+   "decks/tier4/T4_URG_Magus.dck",
+   "decks/tier4/T4_WG_Karametra.dck",
+   "decks/tier4/T4_WG_Miriam.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -870,8 +882,11 @@
   "sprite": "sprites/enemy/humanoid/elf/hunter.atlas",
   "deck": [
    "decks/tier5/T5_BRG_Disa.dck",
+   "decks/tier5/T5_BRG_Winter.dck",
+   "decks/tier5/T5_RG_General.dck",
    "decks/tier5/T5_RG_Mina.dck",
-   "decks/tier5/T5_WUG_Bumbleflower.dck"
+   "decks/tier5/T5_WUG_Bumbleflower.dck",
+   "decks/tier5/T5_WUG_Lagrella.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -898,13 +913,21 @@
   "sprite": "sprites/enemy/plant/hiddenbush.atlas",
   "deck": [
    "decks/tier1/T1_G_Anara.dck",
+   "decks/tier1/T1_G_Bushmaster.dck",
+   "decks/tier1/T1_G_Dionus.dck",
    "decks/tier1/T1_G_Dwynen.dck",
+   "decks/tier1/T1_G_Fynn.dck",
    "decks/tier1/T1_G_Goreclaw.dck",
+   "decks/tier1/T1_G_Halana.dck",
+   "decks/tier1/T1_G_Jiang.dck",
+   "decks/tier1/T1_G_Loot.dck",
+   "decks/tier1/T1_G_Numa.dck",
    "decks/tier1/T1_G_Peregrin.dck",
    "decks/tier1/T1_G_Renata.dck",
    "decks/tier1/T1_G_Ruxa.dck",
    "decks/tier1/T1_G_Surrak.dck",
-   "decks/tier1/T1_G_Toph.dck"
+   "decks/tier1/T1_G_Toph.dck",
+   "decks/tier1/T1_G_Wilson.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -929,13 +952,21 @@
   "sprite": "sprites/enemy/fey/pixie_2.atlas",
   "deck": [
    "decks/tier1/T1_G_Anara.dck",
+   "decks/tier1/T1_G_Bushmaster.dck",
+   "decks/tier1/T1_G_Dionus.dck",
    "decks/tier1/T1_G_Dwynen.dck",
+   "decks/tier1/T1_G_Fynn.dck",
    "decks/tier1/T1_G_Goreclaw.dck",
+   "decks/tier1/T1_G_Halana.dck",
+   "decks/tier1/T1_G_Jiang.dck",
+   "decks/tier1/T1_G_Loot.dck",
+   "decks/tier1/T1_G_Numa.dck",
    "decks/tier1/T1_G_Peregrin.dck",
    "decks/tier1/T1_G_Renata.dck",
    "decks/tier1/T1_G_Ruxa.dck",
    "decks/tier1/T1_G_Surrak.dck",
-   "decks/tier1/T1_G_Toph.dck"
+   "decks/tier1/T1_G_Toph.dck",
+   "decks/tier1/T1_G_Wilson.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -960,13 +991,21 @@
   "sprite": "sprites/enemy/beast/bear/bear.atlas",
   "deck": [
    "decks/tier1/T1_G_Anara.dck",
+   "decks/tier1/T1_G_Bushmaster.dck",
+   "decks/tier1/T1_G_Dionus.dck",
    "decks/tier1/T1_G_Dwynen.dck",
+   "decks/tier1/T1_G_Fynn.dck",
    "decks/tier1/T1_G_Goreclaw.dck",
+   "decks/tier1/T1_G_Halana.dck",
+   "decks/tier1/T1_G_Jiang.dck",
+   "decks/tier1/T1_G_Loot.dck",
+   "decks/tier1/T1_G_Numa.dck",
    "decks/tier1/T1_G_Peregrin.dck",
    "decks/tier1/T1_G_Renata.dck",
    "decks/tier1/T1_G_Ruxa.dck",
    "decks/tier1/T1_G_Surrak.dck",
-   "decks/tier1/T1_G_Toph.dck"
+   "decks/tier1/T1_G_Toph.dck",
+   "decks/tier1/T1_G_Wilson.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -991,7 +1030,10 @@
   "sprite": "sprites/enemy/plant/hiddenbush.atlas",
   "deck": [
    "decks/tier2/T2_G_Arasta.dck",
+   "decks/tier2/T2_G_Jaheira.dck",
    "decks/tier2/T2_G_Rishkar.dck",
+   "decks/tier2/T2_G_SpiderMan.dck",
+   "decks/tier2/T2_G_The2.dck",
    "decks/tier2/T2_G_Toski.dck"
   ],
   "randomizeDeck": true,
@@ -1017,7 +1059,10 @@
   "sprite": "sprites/enemy/fey/pixie_2.atlas",
   "deck": [
    "decks/tier2/T2_G_Arasta.dck",
+   "decks/tier2/T2_G_Jaheira.dck",
    "decks/tier2/T2_G_Rishkar.dck",
+   "decks/tier2/T2_G_SpiderMan.dck",
+   "decks/tier2/T2_G_The2.dck",
    "decks/tier2/T2_G_Toski.dck"
   ],
   "randomizeDeck": true,
@@ -1043,7 +1088,10 @@
   "sprite": "sprites/enemy/beast/bear/bear.atlas",
   "deck": [
    "decks/tier2/T2_G_Arasta.dck",
+   "decks/tier2/T2_G_Jaheira.dck",
    "decks/tier2/T2_G_Rishkar.dck",
+   "decks/tier2/T2_G_SpiderMan.dck",
+   "decks/tier2/T2_G_The2.dck",
    "decks/tier2/T2_G_Toski.dck"
   ],
   "randomizeDeck": true,
@@ -1069,8 +1117,8 @@
   "sprite": "sprites/enemy/plant/hiddenbush.atlas",
   "deck": [
    "decks/tier4/T4_G_Esika.dck",
-   "decks/tier4/T4_G_Yisan.dck",
-   "decks/tier4/T4_G_Selvala.dck"
+   "decks/tier4/T4_G_Haru.dck",
+   "decks/tier4/T4_G_Marwyn2.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1095,8 +1143,8 @@
   "sprite": "sprites/enemy/fey/pixie_2.atlas",
   "deck": [
    "decks/tier4/T4_G_Esika.dck",
-   "decks/tier4/T4_G_Yisan.dck",
-   "decks/tier4/T4_G_Selvala.dck"
+   "decks/tier4/T4_G_Haru.dck",
+   "decks/tier4/T4_G_Marwyn2.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1121,8 +1169,8 @@
   "sprite": "sprites/enemy/beast/bear/bear.atlas",
   "deck": [
    "decks/tier4/T4_G_Esika.dck",
-   "decks/tier4/T4_G_Yisan.dck",
-   "decks/tier4/T4_G_Selvala.dck"
+   "decks/tier4/T4_G_Haru.dck",
+   "decks/tier4/T4_G_Marwyn2.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1147,7 +1195,11 @@
   "sprite": "sprites/enemy/humanoid/elf/druid_2.atlas",
   "deck": [
    "decks/tier2/T2_G_Arasta.dck",
+   "decks/tier2/T2_G_Arwen.dck",
+   "decks/tier2/T2_G_Jaheira.dck",
    "decks/tier2/T2_G_Rishkar.dck",
+   "decks/tier2/T2_G_SpiderMan.dck",
+   "decks/tier2/T2_G_The2.dck",
    "decks/tier2/T2_G_Thrun.dck",
    "decks/tier2/T2_G_Toski.dck"
   ],
@@ -1172,8 +1224,8 @@
   "sprite": "sprites/enemy/humanoid/elf/druid_2.atlas",
   "deck": [
    "decks/tier4/T4_G_Esika.dck",
-   "decks/tier4/T4_G_Yisan.dck",
-   "decks/tier4/T4_G_Selvala.dck"
+   "decks/tier4/T4_G_Haru.dck",
+   "decks/tier4/T4_G_Marwyn2.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1195,9 +1247,9 @@
   "name": "Green Pass Keeper 3",
   "sprite": "sprites/enemy/humanoid/elf/druid_2.atlas",
   "deck": [
+   "decks/tier5/T5_G_Sutina.dck",
    "decks/tier5/T5_G_Yeva.dck",
-   "decks/tier5/T5_G_Vorinclex.dck",
-   "decks/tier5/T5_G_Ashaya.dck"
+   "decks/tier5/T5_G_Halsin.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1219,9 +1271,9 @@
   "name": "Green Grove Guardian 1",
   "sprite": "sprites/enemy/beast/bear/bear_large.atlas",
   "deck": [
+   "decks/tier3/T3_G_Nissa.dck",
    "decks/tier3/T3_G_Shroofus.dck",
-   "decks/tier3/T3_G_Azusa.dck",
-   "decks/tier3/T3_G_Kona.dck"
+   "decks/tier3/T3_G_Pia.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1247,9 +1299,11 @@
   "name": "Green Grove Guardian 2",
   "sprite": "sprites/enemy/beast/bear/bear_large.atlas",
   "deck": [
+   "decks/tier4/T4_G_Celeborn.dck",
+   "decks/tier4/T4_G_Emil.dck",
+   "decks/tier4/T4_G_Haru.dck",
    "decks/tier4/T4_G_Selvala.dck",
-   "decks/tier4/T4_G_Yisan.dck",
-   "decks/tier4/T4_G_Kaysa.dck"
+   "decks/tier4/T4_G_Yisan.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1276,8 +1330,13 @@
   "sprite": "sprites/enemy/beast/bear/bear_large.atlas",
   "deck": [
    "decks/tier5/T5_G_Ashaya.dck",
+   "decks/tier5/T5_G_Ezuri.dck",
+   "decks/tier5/T5_G_Halsin.dck",
    "decks/tier5/T5_G_Jorn.dck",
    "decks/tier5/T5_G_Lumra.dck",
+   "decks/tier5/T5_G_Molimo.dck",
+   "decks/tier5/T5_G_Shigeki.dck",
+   "decks/tier5/T5_G_Sutina.dck",
    "decks/tier5/T5_G_Vorinclex.dck",
    "decks/tier5/T5_G_Yeva.dck"
   ],
@@ -1306,7 +1365,11 @@
   "sprite": "sprites/enemy/humanoid/elf/nissa.atlas",
   "deck": [
    "decks/tier3/T3_G_Azusa.dck",
+   "decks/tier3/T3_G_Gilanra.dck",
    "decks/tier3/T3_G_Kona.dck",
+   "decks/tier3/T3_G_Loot.dck",
+   "decks/tier3/T3_G_Maester.dck",
+   "decks/tier3/T3_G_Pia.dck",
    "decks/tier3/T3_G_Reki.dck"
   ],
   "randomizeDeck": true,
@@ -1334,9 +1397,10 @@
   "name": "Green Warden 2",
   "sprite": "sprites/enemy/humanoid/elf/nissa.atlas",
   "deck": [
+   "decks/tier4/T4_G_Emil.dck",
+   "decks/tier4/T4_G_Glorfindel.dck",
    "decks/tier4/T4_G_Kaysa.dck",
-   "decks/tier4/T4_G_Marwyn.dck",
-   "decks/tier4/T4_G_Selvala.dck"
+   "decks/tier4/T4_G_Marwyn.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1364,8 +1428,8 @@
   "sprite": "sprites/enemy/humanoid/elf/nissa.atlas",
   "deck": [
    "decks/tier5/T5_G_Lumra.dck",
-   "decks/tier5/T5_G_Ashaya.dck",
-   "decks/tier5/T5_G_Jorn.dck"
+   "decks/tier5/T5_G_Molimo.dck",
+   "decks/tier5/T5_G_Ashaya.dck"
   ],
   "randomizeDeck": true,
   "ai": "",

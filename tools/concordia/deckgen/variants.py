@@ -207,7 +207,7 @@ if __name__ == '__main__':
         if not os.path.exists(base): continue
         _, cards, _ = parse(base)
         ok = False
-        for cmd in candidates(d, cards, used)[:4]:
+        for cmd in candidates(d, cards, used)[:int(os.environ.get('VARIANT_TRIES', 4))]:
             fname, lines, swaps = variant(d, cmd)
             if not 5 <= len(swaps) <= 8: continue
             path = os.path.join(B.OUT, 'tier%d' % d['tier'], fname)

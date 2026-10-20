@@ -72,10 +72,12 @@ build on its findings, and cite entries by date and title.
   sites (jitpack, EDHREC, MTGJSON, Archidekt) are blocked; Scryfall is allowed.
 
 ## Current state
-- **Decks:** 200 AI decks, 40 per tier, all passing their tier checks. Each tier has 20 original decks (tier 1 is
+- **Decks:** 400 AI decks, 80 per tier, all passing their tier checks: the 200 below plus one variant each
+  (`deckgen/variants.py`, variants.json): an alternate commander of the same colors, budget-leaning, sharing the
+  deck's creature types, with 5-8 cards changed. The base 200: Each tier has 20 original decks (tier 1 is
   mono-color; tiers 2-5 mix one to three colors) plus 20 new mono-color decks, 4 per color, built by
   `tools/concordia/deckgen/gen_mono.py` and seeded from public GitHub decklists that are kept local only. Five starter
-  decks for the player.
+  decks for the player, each with an _Alt version (alternate commander, 5-8 cards changed; power 27).
 - **Card power** (`deck_tier.card_power`) = 35·raw + 15·efficiency + 15·role + 10·rarity + 5·EDHREC popularity +
   10·Game Changer + 5·fast mana + 5·tutor. Raw power is the highest of the cube rank, the Spellbinder cEDH inclusion
   rate and 0.6 × EDHREC popularity (Scryfall's EDHREC rank, log-scaled).
@@ -103,6 +105,8 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
 - 2026-10-20: 
+- 2026-10-20: 200 variant decks added (one per AI deck: alternate commander, 5-8 cards changed), so each tier folder now holds 80 decks; pools and random picks include them. Starters: power 27, blue rerolled to Gadwick wizards, and each colour has a _Normal and _Alt starter (split starter games 50/50). deck-balance-lab: weight coverage toward the new variants until they reach the median game count.
+- 2026-10-20: 
 - 2026-10-20: forge-ai-lab's shrunk test decks (ai_lab/decks/*_30/_40, all from minideck.py) were regenerated from the current tier decks (T1-2 floor raise, T1 creature loosening), same size, lands and test-card copies. Old copies in tools/concordia/backups/2026-10-20_ai_lab_test_decks_pre_regen/. Results before this commit used the old test decks; don't pool them with new runs. lab001_switchpt and opp_sai_30 (not minideck builds) are unchanged.
 - 2026-10-20: 
 - 2026-10-20: Each starter colour gets a second version, decks/starter/<C>_Starter_Alt.dck (alternate commander, 5-8 cards changed). In every starter test, split games 50/50 between the _Normal and _Alt version (user); run_batch.py does this.
@@ -112,5 +116,3 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-20: Agent coordinator removed at the user's request (token cost). No more coordinator pings, CYCLE NOW messages or night holds; only the main session pauses you. Its old files stay in tools/agents/coordinator/ as history.
 - 2026-10-20: 
 - 2026-10-20: Life bonuses (life5, life10) eliminated as an option by the user. No life-bonus tests; every sim at equal life. Old life rows stay in records.csv but are left out of the report.
-- 2026-10-20: The user and Claude Chat now leave requests for the main session in the Claude Doc agent_operations_master (inbox table); the main session works them at its 4-hour check-in. Agents don't write to it.
-- 2026-10-20: Schedules: AI lab step every 2 h at :06 (was hourly); balance report every 4 h at :25; main check-in every 4 h at :40; balance batch :10 and coordinator :55 hourly, unchanged.

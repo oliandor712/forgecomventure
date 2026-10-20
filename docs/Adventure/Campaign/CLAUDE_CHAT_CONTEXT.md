@@ -59,7 +59,10 @@ tests on Windows at C:\Users\Teddy\Documents\Forge, deploying either with a full
   - Wild creatures, random-dungeon enemies, pass keepers, grove guardians and Wardens are mono-color. Trainers are 1-2
     colors at stage 1, then 2-3.
   - Each enemy's deck pool is picked by a deck-power window.
-- **Decks:** 200 AI decks, 40 per tier from T1 to T5, plus 5 player starters and 4 tutorial decks. Built by
+- **Decks:** 400 AI decks, 80 per tier from T1 to T5 (200 built decks plus one variant each: an alternate,
+  budget-leaning commander of the same colors with 5-8 cards changed), plus 5 player starters (power 27; each with an
+  alternate-commander version the player can pick at the Seal Angel; both commanders start unlocked at the Commander
+  Hall) and 4 tutorial decks. Blue's starter is Gadwick wizards (spells-heavy). Built by
   `tools/concordia/deckgen/` (build.py, gen_mono.py, pool.py).
   - **Card power:** 35 raw + 15 efficiency + 15 role + 10 rarity + 5 EDHREC popularity + 10 Game Changer + 5 fast mana
     + 5 tutor. Raw power is the highest of the cube rank, the cEDH inclusion rate and 0.6 × popularity. Prices are

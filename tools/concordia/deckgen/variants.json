@@ -1,0 +1,7106 @@
+[
+ {
+  "file": "T1_W_Adelbert.dck",
+  "tier": 1,
+  "colors": "W",
+  "variant_of": "T1_W_Pianna.dck",
+  "commander": "Adelbert Steiner",
+  "life": 11,
+  "power": 18.0,
+  "swaps": [
+   [
+    "Veteran's Armaments",
+    "Armillary Sphere"
+   ],
+   [
+    "Aven Squire",
+    "Mesa Enchantress"
+   ],
+   [
+    "Ballyrush Banneret",
+    "Soul's Attendant"
+   ],
+   [
+    "Kangee's Lieutenant",
+    "Orzhov Advokist"
+   ],
+   [
+    "Constable of the Realm",
+    "Witch Enchanter"
+   ],
+   [
+    "Sunspear Shikari",
+    "Soul Warden"
+   ]
+  ]
+ },
+ {
+  "file": "T1_W_Thalia.dck",
+  "tier": 1,
+  "colors": "W",
+  "variant_of": "T1_W_Anafenza.dck",
+  "commander": "Thalia, the Survivor",
+  "life": 10,
+  "power": 17.6,
+  "swaps": [
+   [
+    "Shoulder to Shoulder",
+    "Armillary Sphere"
+   ],
+   [
+    "Return Triumphant",
+    "Rootborn Defenses"
+   ],
+   [
+    "Farmstead Gleaner",
+    "Mesa Enchantress"
+   ],
+   [
+    "Ashnod's Transmogrant",
+    "Mycosynth Wellspring"
+   ],
+   [
+    "Lantern Kami",
+    "Soul's Attendant"
+   ],
+   [
+    "Angelic Intervention",
+    "Whispersilk Cloak"
+   ],
+   [
+    "Ironpaw Aspirant",
+    "Village Bell-Ringer"
+   ],
+   [
+    "Enduring Victory",
+    "Return to Dust"
+   ]
+  ]
+ },
+ {
+  "file": "T1_U_Quistis.dck",
+  "tier": 1,
+  "colors": "U",
+  "variant_of": "T1_U_Siani.dck",
+  "commander": "Quistis Trepe",
+  "life": 11,
+  "power": 17.8,
+  "swaps": [
+   [
+    "Skywarp Skaab",
+    "Gandalf, Wandering Wizard"
+   ],
+   [
+    "Wind Sail",
+    "Stream of Unconsciousness"
+   ],
+   [
+    "Into the Fae Court",
+    "Geyser Leaper"
+   ],
+   [
+    "Geistcatcher's Rig",
+    "Academy Journeymage"
+   ],
+   [
+    "Aerial Formation",
+    "Armillary Sphere"
+   ],
+   [
+    "Aeronaut's Wings",
+    "Heirloom Blade"
+   ],
+   [
+    "Mordenkainen's Polymorph",
+    "Mycosynth Wellspring"
+   ],
+   [
+    "Narcomoeba",
+    "Sea Gate Oracle"
+   ]
+  ]
+ },
+ {
+  "file": "T1_U_Attuma.dck",
+  "tier": 1,
+  "colors": "U",
+  "variant_of": "T1_U_Malcolm.dck",
+  "commander": "Attuma, Atlantean Warlord",
+  "life": 10,
+  "power": 17.3,
+  "swaps": [
+   [
+    "Talas Scout",
+    "Ink Dissolver"
+   ],
+   [
+    "Storm Fleet Aerialist",
+    "Triton Shorestalker"
+   ],
+   [
+    "Talas Explorer",
+    "Seasinger"
+   ],
+   [
+    "Cloud Pirates",
+    "Mist-Cloaked Herald"
+   ],
+   [
+    "Ghost of Ramirez DePietro",
+    "Labyrinth Guardian"
+   ],
+   [
+    "Iguana Parrot",
+    "Streambed Aquitects"
+   ]
+  ]
+ },
+ {
+  "file": "T1_B_Gallia.dck",
+  "tier": 1,
+  "colors": "B",
+  "variant_of": "T1_B_Ozox.dck",
+  "commander": "Gallia, Tragic Host",
+  "life": 10,
+  "power": 18.2,
+  "swaps": [
+   [
+    "Duty-Bound Dead",
+    "Accursed Marauder"
+   ],
+   [
+    "Grim Roustabout",
+    "Fleshbag Marauder"
+   ],
+   [
+    "Drudge Skeletons",
+    "Loyal Subordinate"
+   ],
+   [
+    "Persistent Specimen",
+    "Carrion Feeder"
+   ],
+   [
+    "Dimir House Guard",
+    "Gray Merchant of Asphodel"
+   ],
+   [
+    "Sanitarium Skeleton",
+    "Nightscape Familiar"
+   ]
+  ]
+ },
+ {
+  "file": "T1_B_Splinter.dck",
+  "tier": 1,
+  "colors": "B",
+  "variant_of": "T1_B_Skitter.dck",
+  "commander": "Splinter, Hamato Yoshi",
+  "life": 11,
+  "power": 18.4,
+  "swaps": [
+   [
+    "Sewer Rats",
+    "Myr Retriever"
+   ],
+   [
+    "Graf Rats",
+    "Throatseeker"
+   ],
+   [
+    "Nezumi Cutthroat",
+    "Pilgrim's Eye"
+   ],
+   [
+    "Undercity Dire Rat",
+    "Fleshbag Marauder"
+   ],
+   [
+    "Chittering Skitterling",
+    "Ambition's Cost"
+   ],
+   [
+    "Kuro's Taken",
+    "Foundry Inspector"
+   ],
+   [
+    "Rancid Rats",
+    "Accursed Marauder"
+   ],
+   [
+    "Ossuary Rats",
+    "Scour from Existence"
+   ]
+  ]
+ },
+ {
+  "file": "T1_R_Gut.dck",
+  "tier": 1,
+  "colors": "R",
+  "variant_of": "T1_R_Kreat.dck",
+  "commander": "Gut, True Soul Zealot",
+  "life": 11,
+  "power": 17.7,
+  "swaps": [
+   [
+    "Aradara Express",
+    "Brass Knuckles"
+   ],
+   [
+    "Flurry of Horns",
+    "Fierce Invocation"
+   ],
+   [
+    "Ecologist's Terrarium",
+    "Armillary Sphere"
+   ],
+   [
+    "Goblin Offensive",
+    "Heirloom Blade"
+   ],
+   [
+    "How to Start a Riot",
+    "Shiny Impetus"
+   ]
+  ]
+ },
+ {
+  "file": "T1_R_in.dck",
+  "tier": 1,
+  "colors": "R",
+  "variant_of": "T1_R_Dori.dck",
+  "commander": "\u00d3in the Brave",
+  "life": 10,
+  "power": 18.2,
+  "swaps": [
+   [
+    "Stark Industries Executive",
+    "Mogg War Marshal"
+   ],
+   [
+    "Mine Raider",
+    "Frontier Warmonger"
+   ],
+   [
+    "Heroes for Hire",
+    "Mana Geyser"
+   ],
+   [
+    "Gilded Ghoda",
+    "Goblin Warchief"
+   ],
+   [
+    "Reckless Ransacking",
+    "Obsidian Battle-Axe"
+   ],
+   [
+    "You've Been Caught Stealing",
+    "Armillary Sphere"
+   ],
+   [
+    "Redcap Thief",
+    "Storm-Kiln Artist"
+   ],
+   [
+    "Involuntary Employment",
+    "Heirloom Blade"
+   ]
+  ]
+ },
+ {
+  "file": "T1_G_Dionus.dck",
+  "tier": 1,
+  "colors": "G",
+  "variant_of": "T1_G_Dwynen.dck",
+  "commander": "Dionus, Elvish Archdruid",
+  "life": 11,
+  "power": 17.6,
+  "swaps": [
+   [
+    "Might of Alara",
+    "Armillary Sphere"
+   ],
+   [
+    "Chocobo Racetrack",
+    "Brass Knuckles"
+   ],
+   [
+    "Greataxe",
+    "Tablet of the Guilds"
+   ],
+   [
+    "Gift of Growth",
+    "Mycosynth Wellspring"
+   ],
+   [
+    "Mortal's Resolve",
+    "Overgrowth"
+   ]
+  ]
+ },
+ {
+  "file": "T1_G_Wilson.dck",
+  "tier": 1,
+  "colors": "G",
+  "variant_of": "T1_G_Ruxa.dck",
+  "commander": "Wilson, Refined Grizzly",
+  "life": 10,
+  "power": 17.9,
+  "swaps": [
+   [
+    "Excavating Anurid",
+    "Dreamstone Hedron"
+   ],
+   [
+    "Woodland Druid",
+    "Dwynen's Elite"
+   ],
+   [
+    "Curious Pair",
+    "Tuskguard Captain"
+   ],
+   [
+    "Brushstrider",
+    "Imperious Perfect"
+   ],
+   [
+    "Gnarlid Pack",
+    "Civic Wayfinder"
+   ],
+   [
+    "Gristleback",
+    "Lys Alana Huntmaster"
+   ],
+   [
+    "Field Creeper",
+    "Numa, Joraga Chieftain"
+   ],
+   [
+    "Stubborn Burrowfiend",
+    "Duskwatch Recruiter"
+   ]
+  ]
+ },
+ {
+  "file": "T2_W_Thalia.dck",
+  "tier": 2,
+  "colors": "W",
+  "variant_of": "T2_W_Danitha.dck",
+  "commander": "Thalia, Heretic Cathar",
+  "life": 17,
+  "power": 25.1,
+  "swaps": [
+   [
+    "Strength of Arms",
+    "Armillary Sphere"
+   ],
+   [
+    "Thunder Totem",
+    "Sunseed Nurturer"
+   ],
+   [
+    "Swordsman's Steel",
+    "Mentor of the Meek"
+   ],
+   [
+    "Kemba, Kha Enduring",
+    "Soul's Attendant"
+   ],
+   [
+    "One Last Job",
+    "Tablet of the Guilds"
+   ],
+   [
+    "Strandwalker",
+    "Caged Sun"
+   ],
+   [
+    "Indebted Spirit",
+    "Soul Warden"
+   ],
+   [
+    "Codsworth, Handy Helper",
+    "Keeper of the Accord"
+   ]
+  ]
+ },
+ {
+  "file": "T2_W_Kwende.dck",
+  "tier": 2,
+  "colors": "W",
+  "variant_of": "T2_W_Gerrard.dck",
+  "commander": "Kwende, Pride of Femeref",
+  "life": 16,
+  "power": 25.1,
+  "swaps": [
+   [
+    "Angel of Mercy",
+    "Evangel of Heliod"
+   ],
+   [
+    "Changeling Hero",
+    "Baird, Steward of Argive"
+   ],
+   [
+    "Wall of Essence",
+    "Mesa Enchantress"
+   ],
+   [
+    "Resplendent Mentor",
+    "Goldnight Commander"
+   ],
+   [
+    "Righteous Confluence",
+    "Witch Enchanter"
+   ],
+   [
+    "Relic Vial",
+    "Mentor of the Meek"
+   ],
+   [
+    "Righteous Cause",
+    "Caged Sun"
+   ]
+  ]
+ },
+ {
+  "file": "T2_U_Cynette.dck",
+  "tier": 2,
+  "colors": "U",
+  "variant_of": "T2_U_Ertai.dck",
+  "commander": "Cynette, Jelly Drover",
+  "life": 16,
+  "power": 26.4,
+  "swaps": [
+   [
+    "Dissipate",
+    "Mistblade Shinobi"
+   ],
+   [
+    "Confirm Suspicions",
+    "Glen Elendra Archmage"
+   ],
+   [
+    "Dismiss",
+    "Razorfin Abolisher"
+   ],
+   [
+    "Arcane Denial",
+    "Siren Stormtamer"
+   ],
+   [
+    "Storm Crow",
+    "Sea Gate Oracle"
+   ]
+  ]
+ },
+ {
+  "file": "T2_U_Traxos.dck",
+  "tier": 2,
+  "colors": "U",
+  "variant_of": "T2_U_Sai.dck",
+  "commander": "Traxos, Academy Guardian",
+  "life": 18,
+  "power": 28.7,
+  "swaps": [
+   [
+    "Wicker Warcrawler",
+    "Runaway Carriage"
+   ],
+   [
+    "Intrude on the Mind",
+    "Reconnaissance Mission"
+   ],
+   [
+    "Etherium Spinner",
+    "Cathodion"
+   ],
+   [
+    "Wall of Junk",
+    "Walking Atlas"
+   ],
+   [
+    "Aetherjacket",
+    "Grapeshot Catapult"
+   ],
+   [
+    "Launch Mishap",
+    "Monoskelion"
+   ],
+   [
+    "Lion Heart",
+    "Unstable Obelisk"
+   ],
+   [
+    "Waterbending Lesson",
+    "Mindless Automaton"
+   ]
+  ]
+ },
+ {
+  "file": "T2_B_Gollum.dck",
+  "tier": 2,
+  "colors": "B",
+  "variant_of": "T2_B_Fumulus.dck",
+  "commander": "Gollum, Silent Slinker",
+  "life": 17,
+  "power": 25.1,
+  "swaps": [
+   [
+    "Dune Beetle",
+    "Phyrexian Rager"
+   ],
+   [
+    "Giant Cockroach",
+    "Hooded Horror"
+   ],
+   [
+    "Perilous Shadow",
+    "Eater of the Dead"
+   ],
+   [
+    "Caustic Crawler",
+    "Ravenous Chupacabra"
+   ],
+   [
+    "Ambush Gigapede",
+    "Dark Hatchling"
+   ],
+   [
+    "Devouring Swarm",
+    "Nighthowler"
+   ],
+   [
+    "Kraul Swarm",
+    "Summon: Anima"
+   ],
+   [
+    "Battlefly Swarm",
+    "Phyrexian Revoker"
+   ]
+  ]
+ },
+ {
+  "file": "T2_B_Sarevok.dck",
+  "tier": 2,
+  "colors": "B",
+  "variant_of": "T2_B_Sengir.dck",
+  "commander": "Sarevok, Deathbringer",
+  "life": 18,
+  "power": 24.6,
+  "swaps": [
+   [
+    "Ahriman",
+    "Gilt-Blade Prowler"
+   ],
+   [
+    "Wicker Warcrawler",
+    "Pitiless Plunderer"
+   ],
+   [
+    "Lockjaw Snapper",
+    "Plaguecrafter"
+   ],
+   [
+    "Elder Brain",
+    "Dreamstone Hedron"
+   ],
+   [
+    "Suffocating Fumes",
+    "Hero's Blade"
+   ],
+   [
+    "Putrid Goblin",
+    "Midnight Reaper"
+   ],
+   [
+    "Serrated Arrows",
+    "Heirloom Blade"
+   ],
+   [
+    "Eater of the Dead",
+    "Syr Konrad, the Grim"
+   ]
+  ]
+ },
+ {
+  "file": "T2_R_Alexios.dck",
+  "tier": 2,
+  "colors": "R",
+  "variant_of": "T2_R_Tahngarth.dck",
+  "commander": "Alexios, Deimos of Kosmos",
+  "life": 16,
+  "power": 25.5,
+  "swaps": [
+   [
+    "First Day of Class",
+    "Hero's Blade"
+   ],
+   [
+    "Vivi's Persistence",
+    "Mimic Vat"
+   ],
+   [
+    "Hurloon Minotaur",
+    "Dragonspeaker Shaman"
+   ],
+   [
+    "Barbed Shocker",
+    "Kinetic Augur"
+   ],
+   [
+    "Blaze",
+    "Sunset Strikemaster"
+   ],
+   [
+    "Scrapwork Mutt",
+    "Humble Defector"
+   ],
+   [
+    "Ball Lightning",
+    "Captivating Crew"
+   ],
+   [
+    "Ahn-Crop Crasher",
+    "Young Pyromancer"
+   ]
+  ]
+ },
+ {
+  "file": "T2_R_Toggo.dck",
+  "tier": 2,
+  "colors": "R",
+  "variant_of": "T2_R_Eron.dck",
+  "commander": "Toggo, Goblin Weaponsmith",
+  "life": 18,
+  "power": 26.0,
+  "swaps": [
+   [
+    "Ambush Party",
+    "Goblin Freerunner"
+   ],
+   [
+    "Necropouncer",
+    "Mana Geyser"
+   ],
+   [
+    "Push the Limit",
+    "Skittering Invasion"
+   ],
+   [
+    "First Day of Class",
+    "Hero's Blade"
+   ],
+   [
+    "Barbed Shocker",
+    "Rummaging Goblin"
+   ],
+   [
+    "Ian the Reckless",
+    "Loyal Apprentice"
+   ],
+   [
+    "Scrapwork Mutt",
+    "Quicksmith Genius"
+   ],
+   [
+    "Sontaran General",
+    "Beetleback Chief"
+   ]
+  ]
+ },
+ {
+  "file": "T2_G_The.dck",
+  "tier": 2,
+  "colors": "G",
+  "variant_of": "T2_G_Mirri.dck",
+  "commander": "The Boulder, Ready to Rumble",
+  "life": 16,
+  "power": 24.6,
+  "swaps": [
+   [
+    "Curse of the Werefox",
+    "Halana, Kessig Ranger"
+   ],
+   [
+    "Runaway Carriage",
+    "Timeless Witness"
+   ],
+   [
+    "She-Hulk, Jade Defender",
+    "Damage Control Crew"
+   ],
+   [
+    "Arrogant Wurm",
+    "Lys Alana Huntmaster"
+   ],
+   [
+    "Wild Shape",
+    "Mycosynth Wellspring"
+   ],
+   [
+    "Longtusk Cub",
+    "Yavimaya Elder"
+   ],
+   [
+    "Ring of Kalonia",
+    "Obsidian Battle-Axe"
+   ],
+   [
+    "Gaea's Embrace",
+    "Heirloom Blade"
+   ]
+  ]
+ },
+ {
+  "file": "T2_G_Jaheira.dck",
+  "tier": 2,
+  "colors": "G",
+  "variant_of": "T2_G_Rishkar.dck",
+  "commander": "Jaheira, Friend of the Forest",
+  "life": 18,
+  "power": 27.9,
+  "swaps": [
+   [
+    "Vine Gecko",
+    "Arbor Elf"
+   ],
+   [
+    "She-Hulk, Jade Defender",
+    "Reclamation Sage"
+   ],
+   [
+    "Hazard of the Dunes",
+    "Imperious Perfect"
+   ],
+   [
+    "Overwhelming Encounter",
+    "Hunting Triad"
+   ],
+   [
+    "Strength of the Pack",
+    "Overrun"
+   ],
+   [
+    "Durable Handicraft",
+    "Morcant's Eyes"
+   ],
+   [
+    "Arlinn, Voice of the Pack",
+    "Skittering Invasion"
+   ],
+   [
+    "Herd Baloth",
+    "Lys Alana Huntmaster"
+   ]
+  ]
+ },
+ {
+  "file": "T3_W_Lulu.dck",
+  "tier": 3,
+  "colors": "W",
+  "variant_of": "T3_W_Lyra.dck",
+  "commander": "Lulu, Loyal Hollyphant",
+  "life": 30,
+  "power": 31.8,
+  "swaps": [
+   [
+    "Survey Mechan",
+    "Angel of Condemnation"
+   ],
+   [
+    "Angelic Ascension",
+    "Unyielding Gatekeeper"
+   ],
+   [
+    "Sky Crier",
+    "Secret Rendezvous"
+   ],
+   [
+    "Enter the Avatar State",
+    "Mask of Memory"
+   ],
+   [
+    "Diviner's Wand",
+    "Hedron Archive"
+   ],
+   [
+    "ED-E, Lonesome Eyebot",
+    "Well of Lost Dreams"
+   ],
+   [
+    "Starnheim Unleashed",
+    "Urza's Incubator"
+   ],
+   [
+    "Ebony Fly",
+    "Pristine Talisman"
+   ]
+  ]
+ },
+ {
+  "file": "T3_U_Unctus.dck",
+  "tier": 3,
+  "colors": "U",
+  "variant_of": "T3_U_Muzzio.dck",
+  "commander": "Unctus, Grand Metatect",
+  "life": 28,
+  "power": 38.0,
+  "swaps": [
+   [
+    "The Millennium Calendar",
+    "Pearl Medallion"
+   ],
+   [
+    "Frogmite",
+    "Defiler of Dreams"
+   ],
+   [
+    "Golden Guardian",
+    "Aetherflux Reservoir"
+   ],
+   [
+    "Mm'menon, the Right Hand",
+    "Ichor Elixir"
+   ],
+   [
+    "Curie, Emergent Intelligence",
+    "Ghostly Pilferer"
+   ],
+   [
+    "Extinguisher Battleship",
+    "Phyrexian Ingester"
+   ],
+   [
+    "Vronos, Masked Inquisitor",
+    "Glen Elendra Archmage"
+   ],
+   [
+    "Workshop Assistant",
+    "Thrummingbird"
+   ]
+  ]
+ },
+ {
+  "file": "T3_B_Fang.dck",
+  "tier": 3,
+  "colors": "B",
+  "variant_of": "T3_B_Hythonia.dck",
+  "commander": "Fang, Fearless l'Cie",
+  "life": 30,
+  "power": 34.9,
+  "swaps": [
+   [
+    "Vraska's Finisher",
+    "Blightcaster"
+   ],
+   [
+    "Venomous Hierophant",
+    "Syr Konrad, the Grim"
+   ],
+   [
+    "Loathsome Curator",
+    "Lurking Deadeye"
+   ],
+   [
+    "Xathrid Gorgon",
+    "Butcher of Malakir"
+   ],
+   [
+    "Drag to the Underworld",
+    "Primaris Eliminator"
+   ],
+   [
+    "Keepsake Gorgon",
+    "Fathom Fleet Cutthroat"
+   ],
+   [
+    "Archetype of Finality",
+    "Marionette Master"
+   ],
+   [
+    "Hooded Blightfang",
+    "Fleshbag Marauder"
+   ]
+  ]
+ },
+ {
+  "file": "T3_R_Ganax.dck",
+  "tier": 3,
+  "colors": "R",
+  "variant_of": "T3_R_Dragonhawk.dck",
+  "commander": "Ganax, Astral Hunter",
+  "life": 30,
+  "power": 35.3,
+  "swaps": [
+   [
+    "Multiclass Baldric",
+    "Trailblazer's Boots"
+   ],
+   [
+    "ED-E, Lonesome Eyebot",
+    "Phyrexian Dragon Engine"
+   ],
+   [
+    "Night Scythe",
+    "Blackblade Reforged"
+   ],
+   [
+    "Eater of Virtue",
+    "Mask of Memory"
+   ],
+   [
+    "Ghost Vacuum",
+    "Curse of Opulence"
+   ],
+   [
+    "Sarkhan, Fireblood",
+    "Endless Atlas"
+   ],
+   [
+    "The Warring Triad",
+    "Fire Diamond"
+   ],
+   [
+    "Ebony Fly",
+    "Pristine Talisman"
+   ]
+  ]
+ },
+ {
+  "file": "T3_G_Gilanra.dck",
+  "tier": 3,
+  "colors": "G",
+  "variant_of": "T3_G_Gargos.dck",
+  "commander": "Gilanra, Caller of Wirewood",
+  "life": 30,
+  "power": 35.0,
+  "swaps": [
+   [
+    "Protean Hydra",
+    "Aftermath Analyst"
+   ],
+   [
+    "Nyxborn Hydra",
+    "Arbor Elf"
+   ],
+   [
+    "Tributary Instructor",
+    "Evolution Sage"
+   ],
+   [
+    "Mistcutter Hydra",
+    "Shigeki, Jukai Visionary"
+   ],
+   [
+    "Rootcast Apprenticeship",
+    "Reclamation Sage"
+   ],
+   [
+    "Vastwood Hydra",
+    "Augur of Autumn"
+   ],
+   [
+    "Mossborn Hydra",
+    "Elvish Visionary"
+   ],
+   [
+    "Summon: Magus Sisters",
+    "Viridian Scout"
+   ]
+  ]
+ },
+ {
+  "file": "T3_WU_Kangee.dck",
+  "tier": 3,
+  "colors": "WU",
+  "variant_of": "T3_WU_Isperia.dck",
+  "commander": "Kangee, Sky Warden",
+  "life": 28,
+  "power": 30.8,
+  "swaps": [
+   [
+    "Azorius First-Wing",
+    "Aven Mindcensor"
+   ],
+   [
+    "Mascot Exhibition",
+    "Ondu Inversion"
+   ],
+   [
+    "Lofty Denial",
+    "Mistmeadow Witch"
+   ],
+   [
+    "Dovin, Grand Arbiter",
+    "Gadwick, the Wizened"
+   ],
+   [
+    "Wispmare",
+    "Prodigal Sorcerer"
+   ],
+   [
+    "Rally of Wings",
+    "Stream of Unconsciousness"
+   ],
+   [
+    "Tide Skimmer",
+    "Archaeomancer"
+   ],
+   [
+    "Will of the Temur",
+    "Arcanis the Omnipotent"
+   ]
+  ]
+ },
+ {
+  "file": "T3_UB_Adwal.dck",
+  "tier": 3,
+  "colors": "UB",
+  "variant_of": "T3_UB_Gyruda.dck",
+  "commander": "Ad\u00e9wal\u00e9, Breaker of Chains",
+  "life": 30,
+  "power": 34.7,
+  "swaps": [
+   [
+    "Infernal Genesis",
+    "Caged Sun"
+   ],
+   [
+    "The Everflowing Well",
+    "Sai, Master Thopterist"
+   ],
+   [
+    "Gate to the Afterlife",
+    "Nevinyrral's Disk"
+   ],
+   [
+    "Charnel Serenade",
+    "Black Market"
+   ],
+   [
+    "Forger's Foundry",
+    "Dreamscape Artist"
+   ],
+   [
+    "Diabolic Servitude",
+    "Evacuation"
+   ],
+   [
+    "Overlord of the Floodpits",
+    "Azami, Lady of Scrolls"
+   ],
+   [
+    "Snarling Gorehound",
+    "Jadar, Ghoulcaller of Nephalia"
+   ]
+  ]
+ },
+ {
+  "file": "T3_BR_Kardur.dck",
+  "tier": 3,
+  "colors": "BR",
+  "variant_of": "T3_BR_Exava.dck",
+  "commander": "Kardur, Doomscourge",
+  "life": 30,
+  "power": 30.6,
+  "swaps": [
+   [
+    "Rooftop Assassin",
+    "Halo Hunter"
+   ],
+   [
+    "Skyclave Shadowcat",
+    "Archfiend of Ifnir"
+   ],
+   [
+    "Dreadhorde Butcher",
+    "Blood Aspirant"
+   ],
+   [
+    "Grim Roustabout",
+    "Baleful Ammit"
+   ],
+   [
+    "Bloodfray Giant",
+    "Indulgent Tormentor"
+   ],
+   [
+    "Mer-Ek Nightblade",
+    "Demon of Wailing Agonies"
+   ],
+   [
+    "Thrill-Kill Assassin",
+    "Herald of Torment"
+   ],
+   [
+    "Strength Bobblehead",
+    "Pristine Talisman"
+   ]
+  ]
+ },
+ {
+  "file": "T3_RG_Etali.dck",
+  "tier": 3,
+  "colors": "RG",
+  "variant_of": "T3_RG_Zilortha.dck",
+  "commander": "Etali, Primal Conqueror",
+  "life": 32,
+  "power": 33.4,
+  "swaps": [
+   [
+    "Proud Wildbonder",
+    "Gigantosaurus"
+   ],
+   [
+    "Go-Shintai of Boundless Vigor",
+    "Dinosaur Egg"
+   ],
+   [
+    "Dinosaur Stampede",
+    "Armillary Sphere"
+   ],
+   [
+    "Trash the Town",
+    "Endless Atlas"
+   ],
+   [
+    "Cactusfolk Sureshot",
+    "Regisaur Alpha"
+   ],
+   [
+    "Glorious Sunrise",
+    "Explosive Vegetation"
+   ],
+   [
+    "Gaea's Gift",
+    "Fireshrieker"
+   ],
+   [
+    "Season of Gathering",
+    "Cloudpiercer"
+   ]
+  ]
+ },
+ {
+  "file": "T3_WG_Maja.dck",
+  "tier": 3,
+  "colors": "WG",
+  "variant_of": "T3_GW_Sigarda.dck",
+  "commander": "Maja, Bretagard Protector",
+  "life": 30,
+  "power": 32.5,
+  "swaps": [
+   [
+    "Swordsman's Steel",
+    "Peema Trailblazer"
+   ],
+   [
+    "Sigarda, Champion of Light",
+    "Jazal Goldmane"
+   ],
+   [
+    "Holy Cow",
+    "Yavimaya Elder"
+   ],
+   [
+    "Summoning Materia",
+    "Keeper of the Accord"
+   ],
+   [
+    "Sigarda, Heron's Grace",
+    "Selfless Squire"
+   ],
+   [
+    "Sanctuary Warden",
+    "Disciple of Freyalise"
+   ],
+   [
+    "Towashi Guide-Bot",
+    "Deepwood Denizen"
+   ],
+   [
+    "Sigarda, Font of Blessings",
+    "Mesa Enchantress"
+   ]
+  ]
+ },
+ {
+  "file": "T1_B_Arnyn.dck",
+  "tier": 1,
+  "colors": "B",
+  "variant_of": "T1_B_Yahenni.dck",
+  "commander": "Arnyn, Deathbloom Botanist",
+  "life": 11,
+  "power": 18.3,
+  "swaps": [
+   [
+    "Weaponcraft Enthusiast",
+    "Yahenni, Undying Partisan"
+   ],
+   [
+    "Aetherborn Marauder",
+    "Pawn of Ulamog"
+   ],
+   [
+    "Aradara Express",
+    "Brass Knuckles"
+   ],
+   [
+    "Cruel Feeding",
+    "Armillary Sphere"
+   ],
+   [
+    "Unlikely Aid",
+    "Mycosynth Wellspring"
+   ]
+  ]
+ },
+ {
+  "file": "T1_B_Butch.dck",
+  "tier": 1,
+  "colors": "B",
+  "variant_of": "T1_B_Gonti.dck",
+  "commander": "Butch DeLoria, Tunnel Snake",
+  "life": 11,
+  "power": 18.0,
+  "swaps": [
+   [
+    "Weaponcraft Enthusiast",
+    "Plaguecrafter"
+   ],
+   [
+    "Gifted Aetherborn",
+    "Demon's Disciple"
+   ],
+   [
+    "Yahenni, Undying Partisan",
+    "Gonti, Lord of Luxury"
+   ],
+   [
+    "Aradara Express",
+    "Syphon Flesh"
+   ],
+   [
+    "Rise Again",
+    "Brass Knuckles"
+   ]
+  ]
+ },
+ {
+  "file": "T1_G_Fynn.dck",
+  "tier": 1,
+  "colors": "G",
+  "variant_of": "T1_G_Goreclaw.dck",
+  "commander": "Fynn, the Fangbearer",
+  "life": 11,
+  "power": 17.9,
+  "swaps": [
+   [
+    "Little Bear",
+    "Yavimaya Elder"
+   ],
+   [
+    "Studious First-Year",
+    "Duskwatch Recruiter"
+   ],
+   [
+    "River Bear",
+    "Lys Alana Huntmaster"
+   ],
+   [
+    "Friendly Teddy",
+    "Imperious Perfect"
+   ],
+   [
+    "Spectral Bears",
+    "Jade Mage"
+   ],
+   [
+    "Drover Grizzly",
+    "Ivy Lane Denizen"
+   ],
+   [
+    "Vivien's Grizzly",
+    "Yavimaya Enchantress"
+   ],
+   [
+    "Druid's Familiar",
+    "Oakhame Adversary"
+   ]
+  ]
+ },
+ {
+  "file": "T1_G_Numa.dck",
+  "tier": 1,
+  "colors": "G",
+  "variant_of": "T1_G_Renata.dck",
+  "commander": "Numa, Joraga Chieftain",
+  "life": 11,
+  "power": 17.5,
+  "swaps": [
+   [
+    "Charging Badger",
+    "Essence Warden"
+   ],
+   [
+    "Jibbirik Omnivore",
+    "Timberwatch Elf"
+   ],
+   [
+    "Regeneration",
+    "Gilt-Leaf Ambush"
+   ],
+   [
+    "The Art of Tea",
+    "Armillary Sphere"
+   ],
+   [
+    "Greataxe",
+    "Mycosynth Wellspring"
+   ]
+  ]
+ },
+ {
+  "file": "T1_R_Hobgoblin.dck",
+  "tier": 1,
+  "colors": "R",
+  "variant_of": "T1_R_Lannery.dck",
+  "commander": "Hobgoblin, Mantled Marauder",
+  "life": 11,
+  "power": 18.1,
+  "swaps": [
+   [
+    "Gorehorn Raider",
+    "Boilerbilges Ripper"
+   ],
+   [
+    "Headstrong Brute",
+    "Guttersnipe"
+   ],
+   [
+    "Fathom Fleet Swordjack",
+    "Dragonspeaker Shaman"
+   ],
+   [
+    "Strongbox Raider",
+    "Thopter Engineer"
+   ],
+   [
+    "Thunderhead Gunner",
+    "Keldon Raider"
+   ],
+   [
+    "Plundering Pirate",
+    "Dragonlord's Servant"
+   ]
+  ]
+ },
+ {
+  "file": "T1_R_Tomik.dck",
+  "tier": 1,
+  "colors": "R",
+  "variant_of": "T1_R_Anax.dck",
+  "commander": "Tomik, Izzet Sparkmage",
+  "life": 11,
+  "power": 18.1,
+  "swaps": [
+   [
+    "Akki Rockspeaker",
+    "Thopter Engineer"
+   ],
+   [
+    "Field Creeper",
+    "Reckless Fireweaver"
+   ],
+   [
+    "Hobgoblin Captain",
+    "Thermo-Alchemist"
+   ],
+   [
+    "Jousting Dummy",
+    "Kessig Flamebreather"
+   ],
+   [
+    "Bull Rush",
+    "Armillary Sphere"
+   ]
+  ]
+ },
+ {
+  "file": "T1_U_Bilbo.dck",
+  "tier": 1,
+  "colors": "U",
+  "variant_of": "T1_U_Tetsuko.dck",
+  "commander": "Bilbo, Luckwearer",
+  "life": 11,
+  "power": 17.5,
+  "swaps": [
+   [
+    "Aradara Express",
+    "Brass Knuckles"
+   ],
+   [
+    "Ojutai's Summons",
+    "Meldweb Strider"
+   ],
+   [
+    "Runed Stalactite",
+    "Armillary Sphere"
+   ],
+   [
+    "Greataxe",
+    "Mycosynth Wellspring"
+   ],
+   [
+    "Call to Mind",
+    "Heirloom Blade"
+   ]
+  ]
+ },
+ {
+  "file": "T1_U_Shuri.dck",
+  "tier": 1,
+  "colors": "U",
+  "variant_of": "T1_U_Padeem.dck",
+  "commander": "Shuri, Wakandan Inventor",
+  "life": 11,
+  "power": 17.5,
+  "swaps": [
+   [
+    "Vedalken Certarch",
+    "Moon-Circuit Hacker"
+   ],
+   [
+    "Curio Vendor",
+    "Sea Gate Oracle"
+   ],
+   [
+    "Sage's Row Savant",
+    "Tandem Lookout"
+   ],
+   [
+    "Vedalken Mesmerist",
+    "First-Time Flyer"
+   ],
+   [
+    "Janjeet Sentry",
+    "Archaeomancer"
+   ],
+   [
+    "Crystal Seer",
+    "Archetype of Imagination"
+   ],
+   [
+    "Hotshot Investigators",
+    "Academy Journeymage"
+   ]
+  ]
+ },
+ {
+  "file": "T1_W_Ennis.dck",
+  "tier": 1,
+  "colors": "W",
+  "variant_of": "T1_W_Teshar.dck",
+  "commander": "Ennis, Debate Moderator",
+  "life": 11,
+  "power": 17.9,
+  "swaps": [
+   [
+    "Aven Skirmisher",
+    "Suture Priest"
+   ],
+   [
+    "Lifecreed Duo",
+    "Inspiring Overseer"
+   ],
+   [
+    "Suntail Hawk",
+    "Soul's Attendant"
+   ],
+   [
+    "Aven Squire",
+    "Village Bell-Ringer"
+   ],
+   [
+    "Kangee's Lieutenant",
+    "Mesa Enchantress"
+   ],
+   [
+    "Battlefield Raptor",
+    "Soul Warden"
+   ]
+  ]
+ },
+ {
+  "file": "T1_W_Bucky.dck",
+  "tier": 1,
+  "colors": "W",
+  "variant_of": "T1_W_Baird.dck",
+  "commander": "Bucky Barnes, Eager Ally",
+  "life": 11,
+  "power": 17.5,
+  "swaps": [
+   [
+    "Gather the Townsfolk",
+    "Armillary Sphere"
+   ],
+   [
+    "Kaya's Onslaught",
+    "Heirloom Blade"
+   ],
+   [
+    "Rally for the Throne",
+    "Rootborn Defenses"
+   ],
+   [
+    "Ephemeral Shields",
+    "Tablet of the Guilds"
+   ],
+   [
+    "Feat of Resistance",
+    "Mycosynth Wellspring"
+   ]
+  ]
+ },
+ {
+  "file": "T2_BG_Meren.dck",
+  "tier": 2,
+  "colors": "BG",
+  "variant_of": "T2_BG_Grakmaw.dck",
+  "commander": "Meren of Clan Nel Toth",
+  "life": 18,
+  "power": 28.1,
+  "swaps": [
+   [
+    "Feral Hydra",
+    "Destiny Spinner"
+   ],
+   [
+    "Ahriman",
+    "Savvy Hunter"
+   ],
+   [
+    "Elder Brain",
+    "Dreamstone Hedron"
+   ],
+   [
+    "Wren's Run Hydra",
+    "Essence Warden"
+   ],
+   [
+    "Faceless Butcher",
+    "Wickerbough Elder"
+   ],
+   [
+    "Fleshwrither",
+    "Yavimaya Elder"
+   ],
+   [
+    "Doom Weaver",
+    "Beetle-Headed Merchants"
+   ],
+   [
+    "Gnarlwood Dryad",
+    "Elvish Visionary"
+   ]
+  ]
+ },
+ {
+  "file": "T2_BR_Garna.dck",
+  "tier": 2,
+  "colors": "BR",
+  "variant_of": "T2_BR_Obosh.dck",
+  "commander": "Garna, Bloodfist of Keld",
+  "life": 18,
+  "power": 28.3,
+  "swaps": [
+   [
+    "Mesmeric Fiend",
+    "Dragon's Rage Channeler"
+   ],
+   [
+    "Vile Manifestation",
+    "Plaguecrafter"
+   ],
+   [
+    "Ahriman",
+    "Humble Defector"
+   ],
+   [
+    "Hecteyes",
+    "Dragonspeaker Shaman"
+   ],
+   [
+    "Elder Brain",
+    "Dreamstone Hedron"
+   ],
+   [
+    "Fume Spitter",
+    "Young Pyromancer"
+   ],
+   [
+    "Fleshwrither",
+    "Syr Konrad, the Grim"
+   ]
+  ]
+ },
+ {
+  "file": "T2_RG_Strider.dck",
+  "tier": 2,
+  "colors": "RG",
+  "variant_of": "T2_RG_Halana.dck",
+  "commander": "Strider, Ranger of the North",
+  "life": 18,
+  "power": 27.7,
+  "swaps": [
+   [
+    "Samut, Tyrant Smasher",
+    "Overrun"
+   ],
+   [
+    "Falkenrath Celebrants",
+    "Bumi, King of Three Trials"
+   ],
+   [
+    "Inspired Tinkering",
+    "Mana Geyser"
+   ],
+   [
+    "Huatli's Final Strike",
+    "Prodigal Pyromancer"
+   ],
+   [
+    "Ral and the Implicit Maze",
+    "Wilderness Reclamation"
+   ]
+  ]
+ },
+ {
+  "file": "T2_UB_The.dck",
+  "tier": 2,
+  "colors": "UB",
+  "variant_of": "T2_UB_Atris.dck",
+  "commander": "The Mouth of Sauron",
+  "life": 18,
+  "power": 28.1,
+  "swaps": [
+   [
+    "Barrin's Spite",
+    "Mirrormade"
+   ],
+   [
+    "Covenant of Minds",
+    "Azami, Lady of Scrolls"
+   ],
+   [
+    "Fortune's Favor",
+    "Extract from Darkness"
+   ],
+   [
+    "Overwhelming Remorse",
+    "Lurking Deadeye"
+   ],
+   [
+    "Do or Die",
+    "Whispersilk Cloak"
+   ]
+  ]
+ },
+ {
+  "file": "T2_UG_Eutropia.dck",
+  "tier": 2,
+  "colors": "UG",
+  "variant_of": "T2_UG_Moritte.dck",
+  "commander": "Eutropia the Twice-Favored",
+  "life": 18,
+  "power": 28.8,
+  "swaps": [
+   [
+    "Nyxborn Hydra",
+    "Tetsuko Umezawa, Fugitive"
+   ],
+   [
+    "Communal Brewing",
+    "Whispersilk Cloak"
+   ],
+   [
+    "Brotherhood Regalia",
+    "Stream of Unconsciousness"
+   ],
+   [
+    "Kishla Skimmer",
+    "Pollywog Prodigy"
+   ],
+   [
+    "Confirm Suspicions",
+    "Glen Elendra Archmage"
+   ]
+  ]
+ },
+ {
+  "file": "T2_UR_Mizzix.dck",
+  "tier": 2,
+  "colors": "UR",
+  "variant_of": "T2_UR_Vadrik.dck",
+  "commander": "Mizzix of the Izmagnus",
+  "life": 18,
+  "power": 28.8,
+  "swaps": [
+   [
+    "Biting Tether",
+    "Reconnaissance Mission"
+   ],
+   [
+    "Inspired Tinkering",
+    "Mana Geyser"
+   ],
+   [
+    "Inner Fire",
+    "Heirloom Blade"
+   ],
+   [
+    "Psychic Spiral",
+    "Coastal Piracy"
+   ],
+   [
+    "Irenicus's Vile Duplication",
+    "Shiny Impetus"
+   ]
+  ]
+ },
+ {
+  "file": "T2_WB_Thalisse.dck",
+  "tier": 2,
+  "colors": "WB",
+  "variant_of": "T2_WB_Orah.dck",
+  "commander": "Thalisse, Reverent Medium",
+  "life": 18,
+  "power": 26.2,
+  "swaps": [
+   [
+    "Soul Enervation",
+    "Witch Enchanter"
+   ],
+   [
+    "God-Pharaoh's Statue",
+    "Syphon Flesh"
+   ],
+   [
+    "Restoration Magic",
+    "Ephemerate"
+   ],
+   [
+    "Gathering Stone",
+    "Heirloom Blade"
+   ],
+   [
+    "Relic Vial",
+    "Mentor of the Meek"
+   ]
+  ]
+ },
+ {
+  "file": "T2_WG_Jasmine.dck",
+  "tier": 2,
+  "colors": "WG",
+  "variant_of": "T2_WG_Bess.dck",
+  "commander": "Jasmine Boreal of the Seven",
+  "life": 18,
+  "power": 29.9,
+  "swaps": [
+   [
+    "Jodah's Codex",
+    "Voice of Many"
+   ],
+   [
+    "Sky Crier",
+    "Mentor of the Meek"
+   ],
+   [
+    "Caustic Wasps",
+    "Cathar Commando"
+   ],
+   [
+    "Honden of Life's Web",
+    "Overrun"
+   ],
+   [
+    "Restoration Magic",
+    "Regrowth"
+   ]
+  ]
+ },
+ {
+  "file": "T2_WR_Tori.dck",
+  "tier": 2,
+  "colors": "WR",
+  "variant_of": "T2_WR_Balefang.dck",
+  "commander": "Tori D'Avenant, Fury Rider",
+  "life": 18,
+  "power": 28.4,
+  "swaps": [
+   [
+    "Frenzied Raider",
+    "Mesa Enchantress"
+   ],
+   [
+    "Summon: G.F. Ifrit",
+    "Mentor of the Meek"
+   ],
+   [
+    "Runescale Stormbrood",
+    "Goldnight Commander"
+   ],
+   [
+    "Plundering Predator",
+    "Keldon Raider"
+   ],
+   [
+    "Crimson Hellkite",
+    "Magmatic Force"
+   ],
+   [
+    "Patron of the Arts",
+    "Loyal Apprentice"
+   ],
+   [
+    "Seeker of Slaanesh",
+    "Elite Scaleguard"
+   ],
+   [
+    "Dragon Hatchling",
+    "Thopter Engineer"
+   ]
+  ]
+ },
+ {
+  "file": "T2_WU_Captain.dck",
+  "tier": 2,
+  "colors": "WU",
+  "variant_of": "T2_WU_Denry.dck",
+  "commander": "Captain America, Living Legend",
+  "life": 18,
+  "power": 28.8,
+  "swaps": [
+   [
+    "Enlightened Ascetic",
+    "Cathar Commando"
+   ],
+   [
+    "Skyboon Evangelist",
+    "Whirler Rogue"
+   ],
+   [
+    "King of the Pride",
+    "Archaeomancer"
+   ],
+   [
+    "Angelic Sleuth",
+    "Mangara, the Diplomat"
+   ],
+   [
+    "Helpful Hunter",
+    "Soul Warden"
+   ],
+   [
+    "Illusory Ambusher",
+    "Azami, Lady of Scrolls"
+   ]
+  ]
+ },
+ {
+  "file": "T3_BG_Abomination.dck",
+  "tier": 3,
+  "colors": "BG",
+  "variant_of": "T3_BG_Gitrog.dck",
+  "commander": "Abomination of Llanowar",
+  "life": 28,
+  "power": 35.4,
+  "swaps": [
+   [
+    "Frog Butler",
+    "Priest of Titania"
+   ],
+   [
+    "Poison Dart Frog",
+    "Farhaven Elf"
+   ],
+   [
+    "Clifftop Lookout",
+    "Elvish Visionary"
+   ],
+   [
+    "Polukranos, Unchained",
+    "Reclamation Sage"
+   ],
+   [
+    "Overwhelming Remorse",
+    "Dark Hatchling"
+   ]
+  ]
+ },
+ {
+  "file": "T3_UG_Adrix.dck",
+  "tier": 3,
+  "colors": "UG",
+  "variant_of": "T3_UG_Vannifar.dck",
+  "commander": "Adrix and Nev, Twincasters",
+  "life": 28,
+  "power": 35.6,
+  "swaps": [
+   [
+    "Scuttling Sentinel",
+    "Archaeomancer"
+   ],
+   [
+    "Biogenic Ooze",
+    "Tatyova, Benthic Druid"
+   ],
+   [
+    "Llanowar Tribe",
+    "Deranged Assistant"
+   ],
+   [
+    "Armorcraft Judge",
+    "Cold-Eyed Selkie"
+   ],
+   [
+    "Fyndhorn Elves",
+    "Bloom Tender"
+   ],
+   [
+    "Llanowar Elves",
+    "Biophagus"
+   ]
+  ]
+ },
+ {
+  "file": "T3_UR_Jori.dck",
+  "tier": 3,
+  "colors": "UR",
+  "variant_of": "T3_UR_Dalakos.dck",
+  "commander": "Jori En, Ruin Diver",
+  "life": 28,
+  "power": 36.2,
+  "swaps": [
+   [
+    "Leonardo da Vinci",
+    "Triskaidekaphile"
+   ],
+   [
+    "Arcum Dagsson",
+    "Trinket Mage"
+   ],
+   [
+    "Quicksmith Genius",
+    "Nivix Guildmage"
+   ],
+   [
+    "Faerie Artisans",
+    "Archmage Emeritus"
+   ],
+   [
+    "Vedalken Engineer",
+    "Deranged Assistant"
+   ],
+   [
+    "Pia and Kiran Nalaar",
+    "Glen Elendra Archmage"
+   ]
+  ]
+ },
+ {
+  "file": "T3_WB_Drana.dck",
+  "tier": 3,
+  "colors": "WB",
+  "variant_of": "T3_WB_Firja.dck",
+  "commander": "Drana and Linvala",
+  "life": 28,
+  "power": 34.8,
+  "swaps": [
+   [
+    "Moonlit Lamenter",
+    "Bloodtracker"
+   ],
+   [
+    "Shadowheart, Dark Justiciar",
+    "Champion of Dusk"
+   ],
+   [
+    "Shaile, Dean of Radiance",
+    "Welcoming Vampire"
+   ],
+   [
+    "Eumidian Wastewaker",
+    "Baron Bertram Graywater"
+   ],
+   [
+    "Skirsdag High Priest",
+    "Vampire Nighthawk"
+   ],
+   [
+    "Starnheim Aspirant",
+    "Yahenni, Undying Partisan"
+   ]
+  ]
+ },
+ {
+  "file": "T3_WR_Bruenor.dck",
+  "tier": 3,
+  "colors": "WR",
+  "variant_of": "T3_WR_Tamiyo.dck",
+  "commander": "Bruenor Battlehammer",
+  "life": 28,
+  "power": 35.7,
+  "swaps": [
+   [
+    "Raiyuu, Storm's Edge",
+    "Kazuul, Tyrant of the Cliffs"
+   ],
+   [
+    "Havoc Eater",
+    "Hamletback Goliath"
+   ],
+   [
+    "Chainsaw",
+    "Pashalik Mons"
+   ],
+   [
+    "Thrilling Discovery",
+    "Depala, Pilot Exemplar"
+   ],
+   [
+    "Dragonfire Blade",
+    "Grafdigger's Cage"
+   ]
+  ]
+ },
+ {
+  "file": "T3_BRG_Kresh.dck",
+  "tier": 3,
+  "colors": "BRG",
+  "variant_of": "T3_BRG_Coram.dck",
+  "commander": "Kresh the Bloodbraided",
+  "life": 28,
+  "power": 37.2,
+  "swaps": [
+   [
+    "Garruk, Apex Predator",
+    "Kaervek the Merciless"
+   ],
+   [
+    "Tarmogoyf Nest",
+    "Obsidian Battle-Axe"
+   ],
+   [
+    "Pyrogoyf",
+    "Pashalik Mons"
+   ],
+   [
+    "Final Act",
+    "Liliana, Death's Majesty"
+   ],
+   [
+    "Mortivore",
+    "Yavimaya Elder"
+   ]
+  ]
+ },
+ {
+  "file": "T3_UBR_Edea.dck",
+  "tier": 3,
+  "colors": "UBR",
+  "variant_of": "T3_UBR_Wick.dck",
+  "commander": "Edea, Possessed Sorceress",
+  "life": 28,
+  "power": 36.2,
+  "swaps": [
+   [
+    "Gnawing Vermin",
+    "Juri, Master of the Revue"
+   ],
+   [
+    "Vren, the Relentless",
+    "Grim Haruspex"
+   ],
+   [
+    "Mindwhisker",
+    "Whirler Rogue"
+   ],
+   [
+    "Refurbished Familiar",
+    "Sai, Master Thopterist"
+   ],
+   [
+    "Freya Crescent",
+    "Deranged Assistant"
+   ],
+   [
+    "Rat King, Pale Piper",
+    "Azami, Lady of Scrolls"
+   ],
+   [
+    "Karumonix, the Rat King",
+    "Plaguecrafter"
+   ]
+  ]
+ },
+ {
+  "file": "T3_WRG_Rith2.dck",
+  "tier": 3,
+  "colors": "WRG",
+  "variant_of": "T3_WRG_Rith.dck",
+  "commander": "Rith, the Awakener",
+  "life": 28,
+  "power": 34.3,
+  "swaps": [
+   [
+    "Neyith of the Dire Hunt",
+    "Traxos, Scourge of Kroog"
+   ],
+   [
+    "Amulet of Vigor",
+    "Magmaquake"
+   ],
+   [
+    "Domri, Anarch of Bolas",
+    "Parapet Thrasher"
+   ],
+   [
+    "Carnelian Orb of Dragonkind",
+    "Scaled Nurturer"
+   ],
+   [
+    "Outcaster Trailblazer",
+    "Vengeful Ancestor"
+   ]
+  ]
+ },
+ {
+  "file": "T3_WUB_Zur.dck",
+  "tier": 3,
+  "colors": "WUB",
+  "variant_of": "T3_WUB_Yshtola.dck",
+  "commander": "Zur the Enchanter",
+  "life": 28,
+  "power": 36.8,
+  "swaps": [
+   [
+    "Bonecache Overseer",
+    "Dark Confidant"
+   ],
+   [
+    "Dawnhand Dissident",
+    "Soul Warden"
+   ],
+   [
+    "Darkstar Augur",
+    "Sai, Master Thopterist"
+   ],
+   [
+    "Herald of the Forgotten",
+    "Ardyn, the Usurper"
+   ],
+   [
+    "Valentin, Dean of the Vein",
+    "Soul's Attendant"
+   ],
+   [
+    "Regal Caracal",
+    "Talrand, Sky Summoner"
+   ]
+  ]
+ },
+ {
+  "file": "T3_WUG_Derevi.dck",
+  "tier": 3,
+  "colors": "WUG",
+  "variant_of": "T3_WUG_Falco.dck",
+  "commander": "Derevi, Empyrial Tactician",
+  "life": 28,
+  "power": 36.5,
+  "swaps": [
+   [
+    "Hopeful Initiate",
+    "Siren Stormtamer"
+   ],
+   [
+    "Endless Detour",
+    "Glen Elendra Archmage"
+   ],
+   [
+    "Brokers Confluence",
+    "Frilled Mystic"
+   ],
+   [
+    "Sanctuary Warden",
+    "Prime Speaker Zegana"
+   ],
+   [
+    "Brokers Charm",
+    "Qasali Pridemage"
+   ]
+  ]
+ },
+ {
+  "file": "T4_B_Karumonix.dck",
+  "tier": 4,
+  "colors": "B",
+  "variant_of": "T4_B_Sheoldred.dck",
+  "commander": "Karumonix, the Rat King",
+  "life": 35,
+  "power": 37.9,
+  "swaps": [
+   [
+    "Evolved Sleeper",
+    "Phyrexian Walker"
+   ],
+   [
+    "Soul Transfer",
+    "Ravenous Chupacabra"
+   ],
+   [
+    "Ob Nixilis, the Hate-Twisted",
+    "Throat Slitter"
+   ],
+   [
+    "Wretched Confluence",
+    "Ugin, the Ineffable"
+   ],
+   [
+    "Anvil of Bogardan",
+    "Vexing Bauble"
+   ]
+  ]
+ },
+ {
+  "file": "T4_G_Emil.dck",
+  "tier": 4,
+  "colors": "G",
+  "variant_of": "T4_G_Kaysa.dck",
+  "commander": "Emil, Vastlands Roamer",
+  "life": 35,
+  "power": 38.4,
+  "swaps": [
+   [
+    "Mossborn Hydra",
+    "Elvish Visionary"
+   ],
+   [
+    "Awaken the Woods",
+    "Morcant's Eyes"
+   ],
+   [
+    "Wrenn and Seven",
+    "Elvish Promenade"
+   ],
+   [
+    "Triumph of the Hordes",
+    "Hunting Triad"
+   ],
+   [
+    "Khalni Ambush",
+    "Jagged-Scar Archers"
+   ]
+  ]
+ },
+ {
+  "file": "T4_R_Valduk.dck",
+  "tier": 4,
+  "colors": "R",
+  "variant_of": "T4_R_Chandra.dck",
+  "commander": "Valduk, Keeper of the Flame",
+  "life": 35,
+  "power": 34.3,
+  "swaps": [
+   [
+    "Chandra's Regulator",
+    "Humble Defector"
+   ],
+   [
+    "Chandra's Triumph",
+    "Thornbite Staff"
+   ],
+   [
+    "Flames of the Firebrand",
+    "Avalanche Riders"
+   ],
+   [
+    "Chandra, Novice Pyromancer",
+    "Pia and Kiran Nalaar"
+   ],
+   [
+    "Chandra, the Firebrand",
+    "Chandra, Fire of Kaladesh"
+   ]
+  ]
+ },
+ {
+  "file": "T4_U_Saruman.dck",
+  "tier": 4,
+  "colors": "U",
+  "variant_of": "T4_U_Lyra.dck",
+  "commander": "Saruman the White",
+  "life": 35,
+  "power": 38.9,
+  "swaps": [
+   [
+    "Illusory Angel",
+    "Archaeomancer"
+   ],
+   [
+    "Darksteel Angel",
+    "Artisan of Kozilek"
+   ],
+   [
+    "Platinum Angel",
+    "Diluvian Primordial"
+   ],
+   [
+    "Surge Engine",
+    "Triskaidekaphile"
+   ],
+   [
+    "Concentrate",
+    "Gadwick, the Wizened"
+   ]
+  ]
+ },
+ {
+  "file": "T4_W_Rebbec.dck",
+  "tier": 4,
+  "colors": "W",
+  "variant_of": "T4_W_Elesh.dck",
+  "commander": "Rebbec, Architect of Ascension",
+  "life": 35,
+  "power": 38.3,
+  "swaps": [
+   [
+    "Elesh Norn",
+    "Adeline, Resplendent Cathar"
+   ],
+   [
+    "Chancellor of the Annex",
+    "Clara Oswald"
+   ],
+   [
+    "Plague Myr",
+    "Automated Artificer"
+   ],
+   [
+    "Skrelv, Defector Mite",
+    "Esper Sentinel"
+   ],
+   [
+    "Mondrak, Glory Dominus",
+    "Odric, Lunarch Marshal"
+   ],
+   [
+    "Suture Priest",
+    "Mesa Enchantress"
+   ]
+  ]
+ },
+ {
+  "file": "T4_BG_Yargle.dck",
+  "tier": 4,
+  "colors": "BG",
+  "variant_of": "T4_BG_Ygra.dck",
+  "commander": "Yargle and Multani",
+  "life": 35,
+  "power": 38.7,
+  "swaps": [
+   [
+    "Ashling, the Extinguisher",
+    "Junji, the Midnight Sky"
+   ],
+   [
+    "Grief",
+    "Kura, the Boundless Sky"
+   ],
+   [
+    "Cauldron Familiar",
+    "Loam Dweller"
+   ],
+   [
+    "Cavalier of Night",
+    "Chupacabra Echo"
+   ],
+   [
+    "Rottenmouth Viper",
+    "Kokusho, the Evening Star"
+   ],
+   [
+    "Regal Force",
+    "Disciple of Freyalise"
+   ],
+   [
+    "Foundation Breaker",
+    "Arashi, the Sky Asunder"
+   ]
+  ]
+ },
+ {
+  "file": "T4_BR_Juri.dck",
+  "tier": 4,
+  "colors": "BR",
+  "variant_of": "T4_BR_Cruelclaw.dck",
+  "commander": "Juri, Master of the Revue",
+  "life": 35,
+  "power": 38.5,
+  "swaps": [
+   [
+    "Baneful Omen",
+    "Caged Sun"
+   ],
+   [
+    "Twinferno",
+    "Bontu's Monument"
+   ],
+   [
+    "Coiling Rebirth",
+    "The Eldest Reborn"
+   ],
+   [
+    "Season of Loss",
+    "Clive, Ifrit's Dominant"
+   ],
+   [
+    "Season of the Bold",
+    "Pia and Kiran Nalaar"
+   ]
+  ]
+ },
+ {
+  "file": "T4_RG_Radha.dck",
+  "tier": 4,
+  "colors": "RG",
+  "variant_of": "T4_RG_Anzrag.dck",
+  "commander": "Radha, Heir to Keld",
+  "life": 35,
+  "power": 34.7,
+  "swaps": [
+   [
+    "Toralf, God of Fury",
+    "Rose Room Treasurer"
+   ],
+   [
+    "Ultima, Origin of Oblivion",
+    "Mina and Denn, Wildborn"
+   ],
+   [
+    "Klothys, God of Destiny",
+    "Setessan Champion"
+   ],
+   [
+    "Esika, God of the Tree",
+    "Priest of Titania"
+   ],
+   [
+    "Nylea, Keen-Eyed",
+    "Neheb, Dreadhorde Champion"
+   ],
+   [
+    "Xenagos, God of Revels",
+    "Beast Whisperer"
+   ]
+  ]
+ },
+ {
+  "file": "T4_UB_Morbius.dck",
+  "tier": 4,
+  "colors": "UB",
+  "variant_of": "T4_UB_Runo.dck",
+  "commander": "Morbius the Living Vampire",
+  "life": 35,
+  "power": 40.3,
+  "swaps": [
+   [
+    "Shadowheart, Dark Justiciar",
+    "Duskmantle Seer"
+   ],
+   [
+    "Draugr Necromancer",
+    "Vito, Thorn of the Dusk Rose"
+   ],
+   [
+    "Eumidian Wastewaker",
+    "Nyssa of Traken"
+   ],
+   [
+    "Liliana, Heretical Healer",
+    "Blood Artist"
+   ],
+   [
+    "Dream Devourer",
+    "Bloodghast"
+   ],
+   [
+    "Skirsdag High Priest",
+    "Drana, Liberator of Malakir"
+   ]
+  ]
+ },
+ {
+  "file": "T4_UG_Hakbal.dck",
+  "tier": 4,
+  "colors": "UG",
+  "variant_of": "T4_UG_Uro.dck",
+  "commander": "Hakbal of the Surging Soul",
+  "life": 35,
+  "power": 40.8,
+  "swaps": [
+   [
+    "Hermes, Overseer of Elpis",
+    "Emry, Lurker of the Loch"
+   ],
+   [
+    "Arbor Colossus",
+    "Disruptor of Currents"
+   ],
+   [
+    "Ancient Silver Dragon",
+    "Tishana, Voice of Thunder"
+   ],
+   [
+    "Scythecat Cub",
+    "Thieving Skydiver"
+   ],
+   [
+    "Mossborn Hydra",
+    "Talrand, Sky Summoner"
+   ]
+  ]
+ },
+ {
+  "file": "T4_UR_Adeliz.dck",
+  "tier": 4,
+  "colors": "UR",
+  "variant_of": "T4_UR_NivMizzet.dck",
+  "commander": "Adeliz, the Cinder Wind",
+  "life": 35,
+  "power": 37.3,
+  "swaps": [
+   [
+    "Magmatic Hellkite",
+    "Glen Elendra Archmage"
+   ],
+   [
+    "Voracious Bibliophile",
+    "Sai, Master Thopterist"
+   ],
+   [
+    "Hypersonic Dragon",
+    "Archetype of Imagination"
+   ],
+   [
+    "Goldlust Triad",
+    "Zealous Conscripts"
+   ],
+   [
+    "Ancient Copper Dragon",
+    "Godo, Bandit Warlord"
+   ],
+   [
+    "Parapet Thrasher",
+    "Venser, Shaper Savant"
+   ]
+  ]
+ },
+ {
+  "file": "T4_WB_Judge.dck",
+  "tier": 4,
+  "colors": "WB",
+  "variant_of": "T4_WB_Tomik.dck",
+  "commander": "Judge Magister Gabranth",
+  "life": 35,
+  "power": 35.5,
+  "swaps": [
+   [
+    "Kaya, Orzhov Usurper",
+    "Cathar Commando"
+   ],
+   [
+    "Oath of Kaya",
+    "Big Game Hunter"
+   ],
+   [
+    "The Elderspell",
+    "Frontline Medic"
+   ],
+   [
+    "Kaya's Guile",
+    "Mycosynth Wellspring"
+   ],
+   [
+    "Kaya, Spirits' Justice",
+    "Royal Assassin"
+   ]
+  ]
+ },
+ {
+  "file": "T4_WG_Miriam.dck",
+  "tier": 4,
+  "colors": "WG",
+  "variant_of": "T4_WG_Karametra.dck",
+  "commander": "Miriam, Herd Whisperer",
+  "life": 35,
+  "power": 39.9,
+  "swaps": [
+   [
+    "Esika, God of the Tree",
+    "Priest of Titania"
+   ],
+   [
+    "Nylea, Keen-Eyed",
+    "Mentor of the Meek"
+   ],
+   [
+    "God-Eternal Oketra",
+    "Mangara, the Diplomat"
+   ],
+   [
+    "Selvala, Eager Trailblazer",
+    "Springbloom Druid"
+   ],
+   [
+    "Tiller Engine",
+    "Augur of Autumn"
+   ]
+  ]
+ },
+ {
+  "file": "T4_WR_Winota.dck",
+  "tier": 4,
+  "colors": "WR",
+  "variant_of": "T4_WR_Firesong.dck",
+  "commander": "Winota, Joiner of Forces",
+  "life": 35,
+  "power": 37.0,
+  "swaps": [
+   [
+    "Moonlit Lamenter",
+    "Mentor of the Meek"
+   ],
+   [
+    "Resplendent Mentor",
+    "Hero of Bladehold"
+   ],
+   [
+    "Lord of Shatterskull Pass",
+    "Odric, Lunarch Marshal"
+   ],
+   [
+    "Fanatic of Mogis",
+    "Delney, Streetwise Lookout"
+   ],
+   [
+    "Boros Reckoner",
+    "Cathar Commando"
+   ],
+   [
+    "Bygone Bishop",
+    "Puresteel Paladin"
+   ]
+  ]
+ },
+ {
+  "file": "T4_WU_Raff.dck",
+  "tier": 4,
+  "colors": "WU",
+  "variant_of": "T4_WU_Azor.dck",
+  "commander": "Raff, Weatherlight Stalwart",
+  "life": 35,
+  "power": 38.4,
+  "swaps": [
+   [
+    "Vexing Sphinx",
+    "Sai, Master Thopterist"
+   ],
+   [
+    "Quantum Riddler",
+    "Cloudblazer"
+   ],
+   [
+    "Enigma Thief",
+    "Galecaster Colossus"
+   ],
+   [
+    "Inspired Sphinx",
+    "Arcanis the Omnipotent"
+   ],
+   [
+    "Sphinx Ambassador",
+    "Clara Oswald"
+   ],
+   [
+    "Sphinx of the Revelation",
+    "Azami, Lady of Scrolls"
+   ]
+  ]
+ },
+ {
+  "file": "T4_UBG_Glarb.dck",
+  "tier": 4,
+  "colors": "UBG",
+  "variant_of": "T4_UBG_Damia.dck",
+  "commander": "Glarb, Calamity's Augur",
+  "life": 35,
+  "power": 41.4,
+  "swaps": [
+   [
+    "Vraska, the Silencer",
+    "Poison Dart Frog"
+   ],
+   [
+    "Visara the Dreadful",
+    "Galecaster Colossus"
+   ],
+   [
+    "Dying to Serve",
+    "Blackblade Reforged"
+   ],
+   [
+    "Liliana, Waker of the Dead",
+    "Venser, Shaper Savant"
+   ],
+   [
+    "Soul Manipulation",
+    "Glen Elendra Archmage"
+   ]
+  ]
+ },
+ {
+  "file": "T4_URG_Magus.dck",
+  "tier": 4,
+  "colors": "URG",
+  "variant_of": "T4_URG_Flubs.dck",
+  "commander": "Magus Lucea Kane",
+  "life": 35,
+  "power": 41.7,
+  "swaps": [
+   [
+    "Sentinel of the Nameless City",
+    "Loyal Apprentice"
+   ],
+   [
+    "Dreamdew Entrancer",
+    "Sai, Master Thopterist"
+   ],
+   [
+    "Troyan, Gutsy Explorer",
+    "Humble Defector"
+   ],
+   [
+    "Hakbal of the Surging Soul",
+    "Dragonspeaker Shaman"
+   ],
+   [
+    "Sakura-Tribe Scout",
+    "Destiny Spinner"
+   ],
+   [
+    "Nissa, Resurgent Animist",
+    "Eternal Witness"
+   ]
+  ]
+ },
+ {
+  "file": "T4_WBG_Felothar.dck",
+  "tier": 4,
+  "colors": "WBG",
+  "variant_of": "T4_WBG_Necrobloom.dck",
+  "commander": "Felothar the Steadfast",
+  "life": 35,
+  "power": 35.2,
+  "swaps": [
+   [
+    "Portcullis Vine",
+    "Dark Confidant"
+   ],
+   [
+    "Dune Chanter",
+    "Azusa, Lost but Seeking"
+   ],
+   [
+    "Bristlebud Farmer",
+    "Tireless Tracker"
+   ],
+   [
+    "Vine Trellis",
+    "Skull Prophet"
+   ],
+   [
+    "Rumbleweed",
+    "Ghalta, Primal Hunger"
+   ],
+   [
+    "Ilysian Caryatid",
+    "Heronblade Elite"
+   ]
+  ]
+ },
+ {
+  "file": "T4_WBR_Altar.dck",
+  "tier": 4,
+  "colors": "WBR",
+  "variant_of": "T4_WBR_Marchesa.dck",
+  "commander": "Alta\u00efr Ibn-La'Ahad",
+  "life": 35,
+  "power": 39.6,
+  "swaps": [
+   [
+    "Invasion of Fiora",
+    "Merciless Eviction"
+   ],
+   [
+    "Skrelv's Hive",
+    "Sculpting Steel"
+   ],
+   [
+    "Staff of Domination",
+    "Mentor of the Meek"
+   ],
+   [
+    "Corrupted Conviction",
+    "Dark Confidant"
+   ],
+   [
+    "Blasphemous Edict",
+    "Door of Destinies"
+   ]
+  ]
+ },
+ {
+  "file": "T4_WUR_Sevinne.dck",
+  "tier": 4,
+  "colors": "WUR",
+  "variant_of": "T4_WUR_Vraska.dck",
+  "commander": "Sevinne, the Chronoclasm",
+  "life": 35,
+  "power": 38.0,
+  "swaps": [
+   [
+    "Gideon's Memorial",
+    "Cathar Commando"
+   ],
+   [
+    "Fatehold Charm",
+    "Mistmeadow Witch"
+   ],
+   [
+    "Improvisation Capstone",
+    "Caged Sun"
+   ],
+   [
+    "Voyage Home",
+    "Dragon Mage"
+   ],
+   [
+    "The Theorist, Jace Beleren",
+    "Frontline Medic"
+   ]
+  ]
+ },
+ {
+  "file": "T5_B_Danitha.dck",
+  "tier": 5,
+  "colors": "B",
+  "variant_of": "T5_B_Ihsan.dck",
+  "commander": "Danitha, Spear of Agony",
+  "life": 40,
+  "power": 43.2,
+  "swaps": [
+   [
+    "Patriar's Seal",
+    "Solemn Simulacrum"
+   ],
+   [
+    "The Soul Stone",
+    "Ornithopter of Paradise"
+   ],
+   [
+    "Ancient Craving",
+    "Sephiroth, Fabled SOLDIER"
+   ],
+   [
+    "Master of Dark Rites",
+    "Everflowing Chalice"
+   ],
+   [
+    "Bloodletter of Aclazotz",
+    "Midnight Reaper"
+   ]
+  ]
+ },
+ {
+  "file": "T5_G_Halsin.dck",
+  "tier": 5,
+  "colors": "G",
+  "variant_of": "T5_G_Vorinclex.dck",
+  "commander": "Halsin, Emerald Archdruid",
+  "life": 40,
+  "power": 42.4,
+  "swaps": [
+   [
+    "Phyrexian Dreadnought",
+    "Elvish Visionary"
+   ],
+   [
+    "Perilous Myr",
+    "Reclamation Sage"
+   ],
+   [
+    "Scrawling Crawler",
+    "Fauna Shaman"
+   ],
+   [
+    "Plague Myr",
+    "Fanatic of Rhonas"
+   ],
+   [
+    "Cankerbloom",
+    "Viridian Zealot"
+   ]
+  ]
+ },
+ {
+  "file": "T5_U_Baral.dck",
+  "tier": 5,
+  "colors": "U",
+  "variant_of": "T5_U_Hakim.dck",
+  "commander": "Baral, Chief of Compliance",
+  "life": 40,
+  "power": 44.0,
+  "swaps": [
+   [
+    "Corrupted Conscience",
+    "Reflections of Littjara"
+   ],
+   [
+    "Octopus Umbra",
+    "Caged Sun"
+   ],
+   [
+    "Overlord of the Floodpits",
+    "Azami, Lady of Scrolls"
+   ],
+   [
+    "Engulf the Shore",
+    "Evacuation"
+   ],
+   [
+    "Stock Up",
+    "Swiftfoot Boots"
+   ]
+  ]
+ },
+ {
+  "file": "T5_W_Dion.dck",
+  "tier": 5,
+  "colors": "W",
+  "variant_of": "T5_W_Beza.dck",
+  "commander": "Dion, Bahamut's Dominant",
+  "life": 40,
+  "power": 42.4,
+  "swaps": [
+   [
+    "Cavalier of Dawn",
+    "Auron, Venerated Guardian"
+   ],
+   [
+    "Flickerwisp",
+    "Cathar Commando"
+   ],
+   [
+    "Solitude",
+    "Skysovereign, Consul Flagship"
+   ],
+   [
+    "Burnished Hart",
+    "Keeper of the Accord"
+   ],
+   [
+    "Warren Warleader",
+    "Mesa Enchantress"
+   ]
+  ]
+ },
+ {
+  "file": "T5_BG_Shessra.dck",
+  "tier": 5,
+  "colors": "BG",
+  "variant_of": "T5_BG_Vraska.dck",
+  "commander": "Shessra, Death's Whisper",
+  "life": 40,
+  "power": 38.7,
+  "swaps": [
+   [
+    "Aphelia, Viper Whisperer",
+    "Champion of Lambholt"
+   ],
+   [
+    "Vraska, the Cutting Glare",
+    "Reclamation Sage"
+   ],
+   [
+    "Reaper of the Wilds",
+    "Yavimaya Elder"
+   ],
+   [
+    "Iridescent Vinelasher",
+    "Marionette Apprentice"
+   ],
+   [
+    "Guul Draz Assassin",
+    "Ulvenwald Tracker"
+   ],
+   [
+    "Visara the Dreadful",
+    "Gilt-Leaf Winnower"
+   ]
+  ]
+ },
+ {
+  "file": "T5_BR_Strefan.dck",
+  "tier": 5,
+  "colors": "BR",
+  "variant_of": "T5_BR_Olivia.dck",
+  "commander": "Strefan, Maurer Progenitor",
+  "life": 40,
+  "power": 39.7,
+  "swaps": [
+   [
+    "Highway Robbery",
+    "Anje Falkenrath"
+   ],
+   [
+    "Purphoros, Bronze-Blooded",
+    "Sangromancer"
+   ],
+   [
+    "Burning-Rune Demon",
+    "Butcher of Malakir"
+   ],
+   [
+    "Sazacap's Brew",
+    "Vampire Gourmand"
+   ],
+   [
+    "The Soul Stone",
+    "Phyrexian Altar"
+   ]
+  ]
+ },
+ {
+  "file": "T5_RG_General.dck",
+  "tier": 5,
+  "colors": "RG",
+  "variant_of": "T5_RG_Mina.dck",
+  "commander": "General Marhault Elsdragon",
+  "life": 40,
+  "power": 41.1,
+  "swaps": [
+   [
+    "Seismic Assault",
+    "Reclamation Sage"
+   ],
+   [
+    "Living Twister",
+    "Rose Room Treasurer"
+   ],
+   [
+    "Borborygmos Enraged",
+    "Meteor Golem"
+   ],
+   [
+    "Destructive Revelry",
+    "Viridian Corrupter"
+   ],
+   [
+    "Perennial Behemoth",
+    "Kazuul, Tyrant of the Cliffs"
+   ]
+  ]
+ },
+ {
+  "file": "T5_UB_Oona.dck",
+  "tier": 5,
+  "colors": "UB",
+  "variant_of": "T5_UB_Nymris.dck",
+  "commander": "Oona, Queen of the Fae",
+  "life": 40,
+  "power": 41.5,
+  "swaps": [
+   [
+    "Kain, Traitorous Dragoon",
+    "Dark Confidant"
+   ],
+   [
+    "Summon: Primal Odin",
+    "Noxious Gearhulk"
+   ],
+   [
+    "Cavalier of Gales",
+    "Bloodtracker"
+   ],
+   [
+    "Liliana's Standard Bearer",
+    "Gadwick, the Wizened"
+   ],
+   [
+    "Knight of the Ebon Legion",
+    "Cloud of Faeries"
+   ],
+   [
+    "Champion of Dusk",
+    "Azami, Lady of Scrolls"
+   ]
+  ]
+ },
+ {
+  "file": "T5_UG_Tatyova.dck",
+  "tier": 5,
+  "colors": "UG",
+  "variant_of": "T5_UG_Kruphix.dck",
+  "commander": "Tatyova, Benthic Druid",
+  "life": 40,
+  "power": 43.5,
+  "swaps": [
+   [
+    "Ultima, Origin of Oblivion",
+    "Karametra's Acolyte"
+   ],
+   [
+    "Ojer Pakpatiq, Deepest Epoch",
+    "Talrand, Sky Summoner"
+   ],
+   [
+    "Inga and Esika",
+    "Springbloom Druid"
+   ],
+   [
+    "Nylea, Keen-Eyed",
+    "Cold-Eyed Selkie"
+   ],
+   [
+    "Thassa, Deep-Dwelling",
+    "Druid of Purification"
+   ]
+  ]
+ },
+ {
+  "file": "T5_UR_The.dck",
+  "tier": 5,
+  "colors": "UR",
+  "variant_of": "T5_UR_LocustGod.dck",
+  "commander": "The Emperor of Palamecia",
+  "life": 40,
+  "power": 43.1,
+  "swaps": [
+   [
+    "Ultima, Origin of Oblivion",
+    "Osgood, Operation Double"
+   ],
+   [
+    "Ojer Pakpatiq, Deepest Epoch",
+    "Captain Lannery Storm"
+   ],
+   [
+    "Keranos, God of Storms",
+    "Pia and Kiran Nalaar"
+   ],
+   [
+    "The Warring Triad",
+    "Deranged Assistant"
+   ],
+   [
+    "Cosima, God of the Voyage",
+    "Sai, Master Thopterist"
+   ],
+   [
+    "Svyelun of Sea and Sky",
+    "Trinket Mage"
+   ]
+  ]
+ },
+ {
+  "file": "T5_WB_Bartolom.dck",
+  "tier": 5,
+  "colors": "WB",
+  "variant_of": "T5_WB_Carmen.dck",
+  "commander": "Bartolom\u00e9 del Presidio",
+  "life": 40,
+  "power": 43.3,
+  "swaps": [
+   [
+    "Brigone, Soldier of Meletis",
+    "Liliana's Standard Bearer"
+   ],
+   [
+    "General Kudro of Drannith",
+    "Aryel, Knight of Windgrace"
+   ],
+   [
+    "Cloud, Midgar Mercenary",
+    "Adeline, Resplendent Cathar"
+   ],
+   [
+    "Bounty Agent",
+    "Werefox Bodyguard"
+   ],
+   [
+    "Sephiroth, Fabled SOLDIER",
+    "Kain, Traitorous Dragoon"
+   ],
+   [
+    "Recruiter of the Guard",
+    "Vampire Nighthawk"
+   ]
+  ]
+ },
+ {
+  "file": "T5_WG_Garnet.dck",
+  "tier": 5,
+  "colors": "WG",
+  "variant_of": "T5_WG_Trostani.dck",
+  "commander": "Garnet, Princess of Alexandria",
+  "life": 40,
+  "power": 39.6,
+  "swaps": [
+   [
+    "Bramble Sovereign",
+    "Mesa Enchantress"
+   ],
+   [
+    "Knight of Autumn",
+    "Cathar Commando"
+   ],
+   [
+    "Yavimaya Dryad",
+    "Keeper of the Accord"
+   ],
+   [
+    "Dryad of the Ilysian Grove",
+    "Azusa, Lost but Seeking"
+   ],
+   [
+    "Ancient Cornucopia",
+    "The Cabbage Merchant"
+   ]
+  ]
+ },
+ {
+  "file": "T5_WR_Craig.dck",
+  "tier": 5,
+  "colors": "WR",
+  "variant_of": "T5_WR_BalloonMan.dck",
+  "commander": "Craig Boone, Novac Guard",
+  "life": 40,
+  "power": 41.9,
+  "swaps": [
+   [
+    "Irreverent Gremlin",
+    "Veronica, Dissident Scribe"
+   ],
+   [
+    "Trapped in the Screen",
+    "Cathar Commando"
+   ],
+   [
+    "Dissection Tools",
+    "Fell the Mighty"
+   ],
+   [
+    "Arabella, Abandoned Doll",
+    "Puresteel Paladin"
+   ],
+   [
+    "Overlord of the Boilerbilges",
+    "Aerial Extortionist"
+   ]
+  ]
+ },
+ {
+  "file": "T5_WU_Prince.dck",
+  "tier": 5,
+  "colors": "WU",
+  "variant_of": "T5_WU_Medomai.dck",
+  "commander": "Prince Imrahil the Fair",
+  "life": 40,
+  "power": 45.1,
+  "swaps": [
+   [
+    "Curator of Mysteries",
+    "Mangara, the Diplomat"
+   ],
+   [
+    "Consecrated Sphinx",
+    "Agent of Treachery"
+   ],
+   [
+    "Consign to Memory",
+    "Cathar Commando"
+   ],
+   [
+    "Temporary Lockdown",
+    "Whispersilk Cloak"
+   ],
+   [
+    "Epiphany at the Drownyard",
+    "Mask of Memory"
+   ]
+  ]
+ },
+ {
+  "file": "T5_BRG_Winter.dck",
+  "tier": 5,
+  "colors": "BRG",
+  "variant_of": "T5_BRG_Disa.dck",
+  "commander": "Winter, Misanthropic Guide",
+  "life": 40,
+  "power": 41.0,
+  "swaps": [
+   [
+    "Miara, Thorn of the Glade",
+    "Humble Defector"
+   ],
+   [
+    "Trailtracker Scout",
+    "Azusa, Lost but Seeking"
+   ],
+   [
+    "Nissa, Resurgent Animist",
+    "Ophiomancer"
+   ],
+   [
+    "Icetill Explorer",
+    "Heronblade Elite"
+   ],
+   [
+    "Selvala, Heart of the Wilds",
+    "The Cabbage Merchant"
+   ],
+   [
+    "Wood Elves",
+    "Professional Face-Breaker"
+   ]
+  ]
+ },
+ {
+  "file": "T5_UBR_Inalla.dck",
+  "tier": 5,
+  "colors": "UBR",
+  "variant_of": "T5_UBR_Nekusar.dck",
+  "commander": "Inalla, Archmage Ritualist",
+  "life": 40,
+  "power": 43.8,
+  "swaps": [
+   [
+    "Kraum, Ludevic's Opus",
+    "Zealous Conscripts"
+   ],
+   [
+    "Sidisi, Undead Vizier",
+    "Pitiless Plunderer"
+   ],
+   [
+    "Stitcher's Supplier",
+    "Dragonmaster Outcast"
+   ],
+   [
+    "Time Reversal",
+    "Bloodtracker"
+   ],
+   [
+    "Phyrexian Tyranny",
+    "Fact or Fiction"
+   ]
+  ]
+ },
+ {
+  "file": "T5_WRG_Rocco.dck",
+  "tier": 5,
+  "colors": "WRG",
+  "variant_of": "T5_WRG_Gahiji.dck",
+  "commander": "Rocco, Cabaretti Caterer",
+  "life": 40,
+  "power": 43.3,
+  "swaps": [
+   [
+    "Migloz, Maze Crusher",
+    "Reclamation Sage"
+   ],
+   [
+    "Woodland Bellower",
+    "Galadriel, Gift-Giver"
+   ],
+   [
+    "Armored Scrapgorger",
+    "Selvala, Heart of the Wilds"
+   ],
+   [
+    "Questing Beast",
+    "Viridian Corrupter"
+   ],
+   [
+    "Gemrazer",
+    "Jagged-Scar Archers"
+   ],
+   [
+    "Migratory Greathorn",
+    "Farhaven Elf"
+   ]
+  ]
+ },
+ {
+  "file": "T5_WUB_Raffine.dck",
+  "tier": 5,
+  "colors": "WUB",
+  "variant_of": "T5_WUB_Yennett.dck",
+  "commander": "Raffine, Scheming Seer",
+  "life": 40,
+  "power": 47.0,
+  "swaps": [
+   [
+    "Dakkon, Shadow Slayer",
+    "Delay"
+   ],
+   [
+    "Emergency Powers",
+    "Sandstone Oracle"
+   ],
+   [
+    "Sphinx's Tutelage",
+    "Idol of Oblivion"
+   ],
+   [
+    "Esper Charm",
+    "Banishing Light"
+   ],
+   [
+    "Extinction Event",
+    "Mnemonic Betrayal"
+   ]
+  ]
+ },
+ {
+  "file": "T5_WUG_Lagrella.dck",
+  "tier": 5,
+  "colors": "WUG",
+  "variant_of": "T5_WUG_Bumbleflower.dck",
+  "commander": "Lagrella, the Magpie",
+  "life": 40,
+  "power": 42.0,
+  "swaps": [
+   [
+    "Jolly Gerbils",
+    "Yavimaya Elder"
+   ],
+   [
+    "Preston, the Vanisher",
+    "Witch Enchanter"
+   ],
+   [
+    "Kwain, Itinerant Meddler",
+    "Mentor of the Meek"
+   ],
+   [
+    "Peregrin Took",
+    "Sai, Master Thopterist"
+   ],
+   [
+    "Jacked Rabbit",
+    "Tireless Tracker"
+   ],
+   [
+    "Claim Jumper",
+    "Keeper of the Accord"
+   ]
+  ]
+ },
+ {
+  "file": "T5_W_Sephara.dck",
+  "tier": 5,
+  "colors": "W",
+  "variant_of": "T5_W_Bruna.dck",
+  "commander": "Sephara, Sky's Blade",
+  "life": 40,
+  "power": 40.3,
+  "swaps": [
+   [
+    "Phyrexian Vindicator",
+    "Angel of Sanctions"
+   ],
+   [
+    "Relic Seeker",
+    "Righteous Valkyrie"
+   ],
+   [
+    "Faith's Reward",
+    "Heirloom Blade"
+   ],
+   [
+    "Leonin Shikari",
+    "Inspiring Overseer"
+   ],
+   [
+    "Umezawa's Jitte",
+    "Skyclave Apparition"
+   ]
+  ]
+ },
+ {
+  "file": "T5_W_owyn.dck",
+  "tier": 5,
+  "colors": "W",
+  "variant_of": "T5_W_Delney.dck",
+  "commander": "\u00c9owyn, Lady of Rohan",
+  "life": 40,
+  "power": 41.1,
+  "swaps": [
+   [
+    "H.E.R.B.I.E., Lovable Robot",
+    "Sunseed Nurturer"
+   ],
+   [
+    "Space Marine Scout",
+    "Darksteel Ingot"
+   ],
+   [
+    "Kor Cartographer",
+    "Delney, Streetwise Lookout"
+   ],
+   [
+    "Splinter, Aging Champion",
+    "Cathar Commando"
+   ],
+   [
+    "Scouting Hawk",
+    "Pristine Talisman"
+   ]
+  ]
+ },
+ {
+  "file": "T5_W_Aerith.dck",
+  "tier": 5,
+  "colors": "W",
+  "variant_of": "T5_W_Heliod.dck",
+  "commander": "Aerith Gainsborough",
+  "life": 40,
+  "power": 43.3,
+  "swaps": [
+   [
+    "Ultima, Origin of Oblivion",
+    "Keeper of the Accord"
+   ],
+   [
+    "The Warring Triad",
+    "Scholarship Sponsor"
+   ],
+   [
+    "Ojer Taq, Deepest Foundation",
+    "Celestine, the Living Saint"
+   ],
+   [
+    "God-Eternal Oketra",
+    "Mangara, the Diplomat"
+   ],
+   [
+    "Rebuff the Wicked",
+    "Charming Prince"
+   ]
+  ]
+ },
+ {
+  "file": "T5_W_Toby.dck",
+  "tier": 5,
+  "colors": "W",
+  "variant_of": "T5_W_Gandalf.dck",
+  "commander": "Toby, Beastie Befriender",
+  "life": 40,
+  "power": 43.6,
+  "swaps": [
+   [
+    "Wandering Archaic",
+    "Odric, Lunarch Marshal"
+   ],
+   [
+    "Energy Refractor",
+    "Sunseed Nurturer"
+   ],
+   [
+    "Golden Egg",
+    "Darksteel Ingot"
+   ],
+   [
+    "Scrapyard Recombiner",
+    "Mangara, the Diplomat"
+   ],
+   [
+    "Lodestone Golem",
+    "Rumor Gatherer"
+   ]
+  ]
+ },
+ {
+  "file": "T4_W_Radiant.dck",
+  "tier": 4,
+  "colors": "W",
+  "variant_of": "T4_W_Giada.dck",
+  "commander": "Radiant, Serra Archangel",
+  "life": 35,
+  "power": 34.7,
+  "swaps": [
+   [
+    "Rally of Wings",
+    "Tablet of the Guilds"
+   ],
+   [
+    "Bender's Waterskin",
+    "Giada, Font of Hope"
+   ],
+   [
+    "Halo Fountain",
+    "Mentor of the Meek"
+   ],
+   [
+    "Dauntless Dismantler",
+    "Wojek Investigator"
+   ],
+   [
+    "Oblation",
+    "Touch the Spirit Realm"
+   ]
+  ]
+ },
+ {
+  "file": "T4_W_Teyo.dck",
+  "tier": 4,
+  "colors": "W",
+  "variant_of": "T4_W_Thurid.dck",
+  "commander": "Teyo, Lightshield Expert",
+  "life": 35,
+  "power": 35.9,
+  "swaps": [
+   [
+    "Pegasus Guardian",
+    "Evangel of Heliod"
+   ],
+   [
+    "Sungrace Pegasus",
+    "Inspiring Overseer"
+   ],
+   [
+    "Shepherd of the Clouds",
+    "Silverwing Squadron"
+   ],
+   [
+    "Starnheim Courser",
+    "Mesa Enchantress"
+   ],
+   [
+    "Boreas Charger",
+    "Keeper of the Accord"
+   ]
+  ]
+ },
+ {
+  "file": "T4_W_Tomik.dck",
+  "tier": 4,
+  "colors": "W",
+  "variant_of": "T4_W_Sram.dck",
+  "commander": "Tomik, Orzhov Lawmage",
+  "life": 35,
+  "power": 38.7,
+  "swaps": [
+   [
+    "Ori, Plate Stacker",
+    "Noble Templar"
+   ],
+   [
+    "Fairgrounds Warden",
+    "Cathar Commando"
+   ],
+   [
+    "Mighty Servant of Leuk-o",
+    "Mentor of the Meek"
+   ],
+   [
+    "Hotshot Mechanic",
+    "Soul's Attendant"
+   ],
+   [
+    "Knight Paladin",
+    "Mystic Forge"
+   ]
+  ]
+ },
+ {
+  "file": "T4_W_Urdnan.dck",
+  "tier": 4,
+  "colors": "W",
+  "variant_of": "T4_W_Abdel.dck",
+  "commander": "Urdnan, Dromoka Warrior",
+  "life": 35,
+  "power": 40.1,
+  "swaps": [
+   [
+    "Conductive Machete",
+    "Obsidian Battle-Axe"
+   ],
+   [
+    "Case of the Gateway Express",
+    "Armillary Sphere"
+   ],
+   [
+    "The Princess Takes Flight",
+    "Cathar Commando"
+   ],
+   [
+    "Unidentified Hovership",
+    "Frontline Medic"
+   ],
+   [
+    "Scampering Surveyor",
+    "Worn Powerstone"
+   ]
+  ]
+ },
+ {
+  "file": "T3_W_Aang.dck",
+  "tier": 3,
+  "colors": "W",
+  "variant_of": "T3_W_Loran.dck",
+  "commander": "Aang, the Last Airbender",
+  "life": 28,
+  "power": 30.6,
+  "swaps": [
+   [
+    "Automated Artificer",
+    "Darksteel Ingot"
+   ],
+   [
+    "Tome of the Guildpact",
+    "Gilded Lotus"
+   ],
+   [
+    "The Deck of Many Things",
+    "Well of Lost Dreams"
+   ],
+   [
+    "Mindless Automaton",
+    "Sage's Reverie"
+   ],
+   [
+    "Finale of Glory",
+    "Urza's Incubator"
+   ]
+  ]
+ },
+ {
+  "file": "T3_W_Master.dck",
+  "tier": 3,
+  "colors": "W",
+  "variant_of": "T3_W_Mangara.dck",
+  "commander": "Master Piandao",
+  "life": 28,
+  "power": 32.5,
+  "swaps": [
+   [
+    "Moonlit Lamenter",
+    "Kellan, Daring Traveler"
+   ],
+   [
+    "Leonin Relic-Warder",
+    "Bounty Agent"
+   ],
+   [
+    "Suture Priest",
+    "Mesa Enchantress"
+   ],
+   [
+    "Teshar, Ancestor's Apostle",
+    "Danitha Capashen, Paragon"
+   ],
+   [
+    "Giver of Runes",
+    "Weathered Wayfarer"
+   ],
+   [
+    "Selfless Spirit",
+    "Delney, Streetwise Lookout"
+   ]
+  ]
+ },
+ {
+  "file": "T3_W_Ekthi.dck",
+  "tier": 3,
+  "colors": "W",
+  "variant_of": "T3_W_Elesh.dck",
+  "commander": "Ekthi, Contaminator Priest",
+  "life": 28,
+  "power": 34.3,
+  "swaps": [
+   [
+    "Reprieve",
+    "Basilisk Collar"
+   ],
+   [
+    "Stonehewer Giant",
+    "Mangara, the Diplomat"
+   ],
+   [
+    "Bender's Waterskin",
+    "Myr Convert"
+   ],
+   [
+    "Decanter of Endless Water",
+    "Cultivator's Caravan"
+   ],
+   [
+    "Summon: Good King Mog XII",
+    "Teshar, Ancestor's Apostle"
+   ]
+  ]
+ },
+ {
+  "file": "T3_W_SpiderUK.dck",
+  "tier": 3,
+  "colors": "W",
+  "variant_of": "T3_W_Monk.dck",
+  "commander": "Spider-UK",
+  "life": 28,
+  "power": 33.9,
+  "swaps": [
+   [
+    "Salt Road Packbeast",
+    "Evangel of Heliod"
+   ],
+   [
+    "Inquisitive Puppet",
+    "Weathered Wayfarer"
+   ],
+   [
+    "Long Road Home",
+    "Mangara of Corondor"
+   ],
+   [
+    "Otherworldly Journey",
+    "Dawnbringer Cleric"
+   ],
+   [
+    "Grafted Wargear",
+    "Ruby Medallion"
+   ]
+  ]
+ },
+ {
+  "file": "T2_W_Ashe.dck",
+  "tier": 2,
+  "colors": "W",
+  "variant_of": "T2_W_Adeline.dck",
+  "commander": "Ashe, Princess of Dalmasca",
+  "life": 18,
+  "power": 26.5,
+  "swaps": [
+   [
+    "Farsight Mask",
+    "Decree of Justice"
+   ],
+   [
+    "Jodah's Codex",
+    "Sage's Reverie"
+   ],
+   [
+    "Tapestry of the Ages",
+    "Secret Rendezvous"
+   ],
+   [
+    "Restoration Magic",
+    "Ephemerate"
+   ],
+   [
+    "Bond of Discipline",
+    "Brass Knuckles"
+   ]
+  ]
+ },
+ {
+  "file": "T2_W_Katara.dck",
+  "tier": 2,
+  "colors": "W",
+  "variant_of": "T2_W_Jazal.dck",
+  "commander": "Katara, Heroic Healer",
+  "life": 18,
+  "power": 28.4,
+  "swaps": [
+   [
+    "Gloryheath Lynx",
+    "Soul Warden"
+   ],
+   [
+    "Enlightened Ascetic",
+    "Cathar Commando"
+   ],
+   [
+    "Highcliff Felidar",
+    "Auratouched Mage"
+   ],
+   [
+    "Leonin Elder",
+    "Soul's Attendant"
+   ],
+   [
+    "Mage's Attendant",
+    "Jazal Goldmane"
+   ],
+   [
+    "Taj-Nar Swordsmith",
+    "Mesa Enchantress"
+   ],
+   [
+    "King of the Pride",
+    "Orzhov Advokist"
+   ]
+  ]
+ },
+ {
+  "file": "T2_W_SpiderMan.dck",
+  "tier": 2,
+  "colors": "W",
+  "variant_of": "T2_W_Odric.dck",
+  "commander": "Spider-Man, Web-Slinger",
+  "life": 18,
+  "power": 27.8,
+  "swaps": [
+   [
+    "Fairgrounds Warden",
+    "Cathar Commando"
+   ],
+   [
+    "Constable of the Realm",
+    "Return to Dust"
+   ],
+   [
+    "Eagles of the North",
+    "Elite Scaleguard"
+   ],
+   [
+    "Sanctuary Warden",
+    "Sandstone Oracle"
+   ],
+   [
+    "Taj-Nar Swordsmith",
+    "Delney, Streetwise Lookout"
+   ],
+   [
+    "Anafenza, Kin-Tree Spirit",
+    "Mesa Enchantress"
+   ]
+  ]
+ },
+ {
+  "file": "T2_W_Silver.dck",
+  "tier": 2,
+  "colors": "W",
+  "variant_of": "T2_W_Boromir.dck",
+  "commander": "Silver Sable, Mercenary Leader",
+  "life": 18,
+  "power": 28.8,
+  "swaps": [
+   [
+    "Fairgrounds Warden",
+    "Cathar Commando"
+   ],
+   [
+    "Eagles of the North",
+    "Elite Scaleguard"
+   ],
+   [
+    "Sanctuary Warden",
+    "Dreamstone Hedron"
+   ],
+   [
+    "Aerial Extortionist",
+    "Auron, Venerated Guardian"
+   ],
+   [
+    "Farsight Mask",
+    "Caged Sun"
+   ]
+  ]
+ },
+ {
+  "file": "T1_W_Rescue.dck",
+  "tier": 1,
+  "colors": "W",
+  "variant_of": "T1_W_Losheel.dck",
+  "commander": "Rescue Girl, First Responder",
+  "life": 11,
+  "power": 16.6,
+  "swaps": [
+   [
+    "Stoneforge Acolyte",
+    "Suture Priest"
+   ],
+   [
+    "Countless Gears Renegade",
+    "Inspiring Overseer"
+   ],
+   [
+    "Iron Hills Blacksmith",
+    "Mesa Enchantress"
+   ],
+   [
+    "Inventive Wingsmith",
+    "Goldnight Commander"
+   ],
+   [
+    "Loxodon Line Breaker",
+    "Village Bell-Ringer"
+   ],
+   [
+    "Loxodon Wayfarer",
+    "Auramancer"
+   ],
+   [
+    "Guidelight Synergist",
+    "Elite Scaleguard"
+   ]
+  ]
+ },
+ {
+  "file": "T1_W_Sokka.dck",
+  "tier": 1,
+  "colors": "W",
+  "variant_of": "T1_W_Ardenn.dck",
+  "commander": "Sokka, Wolf Cove's Protector",
+  "life": 11,
+  "power": 17.4,
+  "swaps": [
+   [
+    "Kor Firewalker",
+    "Mesa Enchantress"
+   ],
+   [
+    "Lone Missionary",
+    "Soul's Attendant"
+   ],
+   [
+    "Spider-Bot",
+    "Soul Warden"
+   ],
+   [
+    "Stone Haven Pilgrim",
+    "Orzhov Advokist"
+   ],
+   [
+    "Attentive Skywarden",
+    "Auramancer"
+   ],
+   [
+    "Lawbringer",
+    "Cathar Commando"
+   ],
+   [
+    "Meanders Guide",
+    "Goldnight Commander"
+   ],
+   [
+    "Cliffside Lookout",
+    "Benevolent Bodyguard"
+   ]
+  ]
+ },
+ {
+  "file": "T1_W_Prava.dck",
+  "tier": 1,
+  "colors": "W",
+  "variant_of": "T1_W_Kemba.dck",
+  "commander": "Prava of the Steel Legion",
+  "life": 11,
+  "power": 17.4,
+  "swaps": [
+   [
+    "Moonlit Lamenter",
+    "Mentor of the Meek"
+   ],
+   [
+    "Apothecary Initiate",
+    "Martyr of Dusk"
+   ],
+   [
+    "Syndic of Tithes",
+    "Fencing Ace"
+   ],
+   [
+    "Warren Elder",
+    "Court Street Denizen"
+   ],
+   [
+    "Woodland Acolyte",
+    "Baird, Steward of Argive"
+   ],
+   [
+    "Beloved Chaplain",
+    "Abzan Falconer"
+   ],
+   [
+    "Forbidding Spirit",
+    "Kemba, Kha Regent"
+   ],
+   [
+    "Pious Evangel",
+    "Aerial Responder"
+   ]
+  ]
+ },
+ {
+  "file": "T1_W_Commander.dck",
+  "tier": 1,
+  "colors": "W",
+  "variant_of": "T1_W_Rosie.dck",
+  "commander": "Commander Sofia Daguerre",
+  "life": 11,
+  "power": 17.8,
+  "swaps": [
+   [
+    "Nimble Hobbit",
+    "Soul's Attendant"
+   ],
+   [
+    "Eastfarthing Farmer",
+    "Crusader of Odric"
+   ],
+   [
+    "Farsight Mask",
+    "Brass Knuckles"
+   ],
+   [
+    "Benediction of Moons",
+    "Armillary Sphere"
+   ],
+   [
+    "Gather the Townsfolk",
+    "Heirloom Blade"
+   ]
+  ]
+ },
+ {
+  "file": "T5_U_Arni.dck",
+  "tier": 5,
+  "colors": "U",
+  "variant_of": "T5_U_Emry.dck",
+  "commander": "Arni, Humble Scribe",
+  "life": 40,
+  "power": 41.4,
+  "swaps": [
+   [
+    "Roil Cartographer",
+    "Sai, Master Thopterist"
+   ],
+   [
+    "Svyelun of Sea and Sky",
+    "Trinket Mage"
+   ],
+   [
+    "Merfolk Looter",
+    "Sage of Fables"
+   ],
+   [
+    "Sewer-veillance Cam",
+    "Lore Broker"
+   ],
+   [
+    "Jack-o'-Lantern",
+    "Dreamscape Artist"
+   ]
+  ]
+ },
+ {
+  "file": "T5_U_Loki.dck",
+  "tier": 5,
+  "colors": "U",
+  "variant_of": "T5_U_Kefnet.dck",
+  "commander": "Loki, God of Mischief",
+  "life": 40,
+  "power": 41.9,
+  "swaps": [
+   [
+    "Vedalken Shackles",
+    "Urza's Incubator"
+   ],
+   [
+    "Baral, Chief of Compliance",
+    "Serendib Sorcerer"
+   ],
+   [
+    "Merfolk Looter",
+    "Kefnet the Mindful"
+   ],
+   [
+    "Jin-Gitaxias, Core Augur",
+    "Kozilek, the Broken Reality"
+   ],
+   [
+    "Chromatic Orrery",
+    "Thought Monitor"
+   ]
+  ]
+ },
+ {
+  "file": "T5_U_Mister.dck",
+  "tier": 5,
+  "colors": "U",
+  "variant_of": "T5_U_Lier.dck",
+  "commander": "Mister Fantastic, Reed Richards",
+  "life": 40,
+  "power": 44.6,
+  "swaps": [
+   [
+    "Qarsi Deceiver",
+    "Apprentice Wizard"
+   ],
+   [
+    "Thalakos Deceiver",
+    "Sakashima of a Thousand Faces"
+   ],
+   [
+    "Vendilion Clique",
+    "Mischievous Mystic"
+   ],
+   [
+    "Sower of Temptation",
+    "Tribute Mage"
+   ],
+   [
+    "High Fae Trickster",
+    "Transit Mage"
+   ],
+   [
+    "Siren Stormtamer",
+    "Sinister Concierge"
+   ]
+  ]
+ },
+ {
+  "file": "T5_U_Hapatra.dck",
+  "tier": 5,
+  "colors": "U",
+  "variant_of": "T5_U_Uvilda.dck",
+  "commander": "Hapatra, the Desert Frost",
+  "life": 40,
+  "power": 44.0,
+  "swaps": [
+   [
+    "Paradox Haze",
+    "Reconnaissance Mission"
+   ],
+   [
+    "Pentad Prism",
+    "Dreamscape Artist"
+   ],
+   [
+    "Staff of Compleation",
+    "Nimble Obstructionist"
+   ],
+   [
+    "Fabricate",
+    "Fellwar Stone"
+   ],
+   [
+    "Finale of Revelation",
+    "Sai, Master Thopterist"
+   ]
+  ]
+ },
+ {
+  "file": "T4_U_Ruric.dck",
+  "tier": 4,
+  "colors": "U",
+  "variant_of": "T4_U_Memnarch.dck",
+  "commander": "Ruric Thar, Biomagus",
+  "life": 35,
+  "power": 36.0,
+  "swaps": [
+   [
+    "Qarsi Deceiver",
+    "Pristine Talisman"
+   ],
+   [
+    "Sidisi's Faithful",
+    "Delay"
+   ],
+   [
+    "Ertai, Wizard Adept",
+    "Unstable Obelisk"
+   ],
+   [
+    "Disruptor of Currents",
+    "Duplicant"
+   ],
+   [
+    "Cursecatcher",
+    "Muddle the Mixture"
+   ],
+   [
+    "Azure Mage",
+    "Frantic Search"
+   ],
+   [
+    "Vedalken Aethermage",
+    "Ruin Crab"
+   ],
+   [
+    "Benthic Biomancer",
+    "Canyon Crab"
+   ]
+  ]
+ },
+ {
+  "file": "T4_U_Impossible.dck",
+  "tier": 4,
+  "colors": "U",
+  "variant_of": "T4_U_Orvar.dck",
+  "commander": "Impossible Man",
+  "life": 35,
+  "power": 37.2,
+  "swaps": [
+   [
+    "Hydroblast",
+    "Delay"
+   ],
+   [
+    "Infuse",
+    "Armillary Sphere"
+   ],
+   [
+    "Vedalken Aethermage",
+    "Jwari Shapeshifter"
+   ],
+   [
+    "Fear of Impostors",
+    "Ravenform"
+   ],
+   [
+    "Clockspinning",
+    "Mycosynth Wellspring"
+   ]
+  ]
+ },
+ {
+  "file": "T4_U_Hermes.dck",
+  "tier": 4,
+  "colors": "U",
+  "variant_of": "T4_U_Azami.dck",
+  "commander": "Hermes, Overseer of Elpis",
+  "life": 35,
+  "power": 38.2,
+  "swaps": [
+   [
+    "Katara, Bending Prodigy",
+    "Triskaidekaphile"
+   ],
+   [
+    "Pelargir Survivor",
+    "Apprentice Wizard"
+   ],
+   [
+    "Renowned Weaponsmith",
+    "Palladium Myr"
+   ],
+   [
+    "James, Wandering Dad",
+    "Darksteel Ingot"
+   ],
+   [
+    "Osgood, Operation Double",
+    "Ichor Elixir"
+   ],
+   [
+    "Lore Broker",
+    "Enclave Cryptologist"
+   ]
+  ]
+ },
+ {
+  "file": "T4_U_Katara.dck",
+  "tier": 4,
+  "colors": "U",
+  "variant_of": "T4_U_Urza.dck",
+  "commander": "Katara, Bending Prodigy",
+  "life": 35,
+  "power": 41.5,
+  "swaps": [
+   [
+    "Automated Artificer",
+    "Apprentice Wizard"
+   ],
+   [
+    "Grand Architect",
+    "Osgood, Operation Double"
+   ],
+   [
+    "Faerie Artisans",
+    "Archmage Emeritus"
+   ],
+   [
+    "Vedalken Engineer",
+    "Pelargir Survivor"
+   ],
+   [
+    "Forensic Gadgeteer",
+    "Tetsuko Umezawa, Fugitive"
+   ],
+   [
+    "Etherium Sculptor",
+    "Flux Channeler"
+   ]
+  ]
+ },
+ {
+  "file": "T3_U_Atemsis.dck",
+  "tier": 3,
+  "colors": "U",
+  "variant_of": "T3_U_Unesh.dck",
+  "commander": "Atemsis, All-Seeing",
+  "life": 28,
+  "power": 29.9,
+  "swaps": [
+   [
+    "Jacob Hauken, Inspector",
+    "Vexing Sphinx"
+   ],
+   [
+    "Void Stalker",
+    "Muddle the Mixture"
+   ],
+   [
+    "Wall of Deceit",
+    "Pilgrim's Eye"
+   ],
+   [
+    "Medomai's Prophecy",
+    "Frantic Search"
+   ],
+   [
+    "Riddleform",
+    "Armillary Sphere"
+   ]
+  ]
+ },
+ {
+  "file": "T3_U_Lulu.dck",
+  "tier": 3,
+  "colors": "U",
+  "variant_of": "T3_U_Talrand.dck",
+  "commander": "Lulu, Stern Guardian",
+  "life": 28,
+  "power": 33.1,
+  "swaps": [
+   [
+    "Roil Cartographer",
+    "Sai, Master Thopterist"
+   ],
+   [
+    "Svyelun of Sea and Sky",
+    "Pollywog Prodigy"
+   ],
+   [
+    "Merfolk Looter",
+    "Sage of Fables"
+   ],
+   [
+    "Cast Through Time",
+    "Caged Sun"
+   ],
+   [
+    "Golem's Heart",
+    "Stream of Unconsciousness"
+   ]
+  ]
+ },
+ {
+  "file": "T3_U_Kopala.dck",
+  "tier": 3,
+  "colors": "U",
+  "variant_of": "T3_U_Thassa.dck",
+  "commander": "Kopala, Warden of Waves",
+  "life": 28,
+  "power": 32.3,
+  "swaps": [
+   [
+    "Ultima, Origin of Oblivion",
+    "Gilded Lotus"
+   ],
+   [
+    "The Warring Triad",
+    "Deranged Assistant"
+   ],
+   [
+    "Cosima, God of the Voyage",
+    "Merfolk Looter"
+   ],
+   [
+    "Floodgate",
+    "Archmage Emeritus"
+   ],
+   [
+    "Inundate",
+    "Forsaken Monument"
+   ]
+  ]
+ },
+ {
+  "file": "T3_U_Arcanis.dck",
+  "tier": 3,
+  "colors": "U",
+  "variant_of": "T3_U_Minn.dck",
+  "commander": "Arcanis the Omnipotent",
+  "life": 28,
+  "power": 35.3,
+  "swaps": [
+   [
+    "Threefold Thunderhulk",
+    "Archetype of Imagination"
+   ],
+   [
+    "Pulse of the Grid",
+    "Gadwick, the Wizened"
+   ],
+   [
+    "Riftwing Cloudskate",
+    "Venser, Shaper Savant"
+   ],
+   [
+    "Mnemonic Sphere",
+    "Sage of Fables"
+   ],
+   [
+    "Vedalken Orrery",
+    "Fireshrieker"
+   ]
+  ]
+ },
+ {
+  "file": "T2_U_Echo.dck",
+  "tier": 2,
+  "colors": "U",
+  "variant_of": "T2_U_Venser.dck",
+  "commander": "Echo, Perceptive Prodigy",
+  "life": 18,
+  "power": 25.3,
+  "swaps": [
+   [
+    "Stream of Unconsciousness",
+    "Armillary Sphere"
+   ],
+   [
+    "Sage's Dousing",
+    "Mistblade Shinobi"
+   ],
+   [
+    "Soratami Mirror-Mage",
+    "Zuran Spellcaster"
+   ],
+   [
+    "Saruman the White",
+    "Whirler Rogue"
+   ],
+   [
+    "Vodalian Arcanist",
+    "Deranged Assistant"
+   ],
+   [
+    "Riverwise Augur",
+    "Captain of Umbar"
+   ],
+   [
+    "Soratami Savant",
+    "Aether Adept"
+   ]
+  ]
+ },
+ {
+  "file": "T2_U_Gandalf.dck",
+  "tier": 2,
+  "colors": "U",
+  "variant_of": "T2_U_Alandra.dck",
+  "commander": "Gandalf, Wandering Wizard",
+  "life": 18,
+  "power": 26.8,
+  "swaps": [
+   [
+    "Rootwater Hunter",
+    "Aether Adept"
+   ],
+   [
+    "Wanderwine Farewell",
+    "Meteor Golem"
+   ],
+   [
+    "Merrow Commerce",
+    "Mycosynth Wellspring"
+   ],
+   [
+    "Merrow Reejerey",
+    "Archaeomancer"
+   ],
+   [
+    "Triton Shorestalker",
+    "Faerie Seer"
+   ],
+   [
+    "Thieving Skydiver",
+    "Champion of Wits"
+   ]
+  ]
+ },
+ {
+  "file": "T2_U_Teferi.dck",
+  "tier": 2,
+  "colors": "U",
+  "variant_of": "T2_U_Grazilaxx.dck",
+  "commander": "Teferi, Mage of Zhalfir",
+  "life": 18,
+  "power": 27.7,
+  "swaps": [
+   [
+    "Renegade Silent",
+    "Archaeomancer"
+   ],
+   [
+    "Core Prowler",
+    "Whirler Rogue"
+   ],
+   [
+    "Forgotten Creation",
+    "Sai, Master Thopterist"
+   ],
+   [
+    "Overlord of the Floodpits",
+    "Arcanis the Omnipotent"
+   ],
+   [
+    "Thrummingbird",
+    "Faerie Seer"
+   ],
+   [
+    "Hullbreaker Horror",
+    "Galecaster Colossus"
+   ]
+  ]
+ },
+ {
+  "file": "T2_U_Thryx.dck",
+  "tier": 2,
+  "colors": "U",
+  "variant_of": "T2_U_Charix.dck",
+  "commander": "Thryx, the Sudden Storm",
+  "life": 18,
+  "power": 28.7,
+  "swaps": [
+   [
+    "Ancient Crab",
+    "Cloudkin Seer"
+   ],
+   [
+    "Skittering Crustacean",
+    "Frost Lynx"
+   ],
+   [
+    "Fortress Crab",
+    "Dreamtail Heron"
+   ],
+   [
+    "Skitter Eel",
+    "Air Elemental"
+   ],
+   [
+    "Wishcoin Crab",
+    "Snowmelt Stag"
+   ],
+   [
+    "Hightide Hermit",
+    "Willow-Wind"
+   ],
+   [
+    "Purple-Crystal Crab",
+    "Aquatic Alchemist"
+   ]
+  ]
+ },
+ {
+  "file": "T1_U_Iron.dck",
+  "tier": 1,
+  "colors": "U",
+  "variant_of": "T1_U_Master.dck",
+  "commander": "Iron Lad, Diverging Destiny",
+  "life": 11,
+  "power": 18.0,
+  "swaps": [
+   [
+    "Bellowing Crier",
+    "Tandem Lookout"
+   ],
+   [
+    "Aradara Express",
+    "Brass Knuckles"
+   ],
+   [
+    "Runed Stalactite",
+    "Armillary Sphere"
+   ],
+   [
+    "Rush of Ice",
+    "Mycosynth Wellspring"
+   ],
+   [
+    "Greataxe",
+    "Serum Visions"
+   ]
+  ]
+ },
+ {
+  "file": "T1_U_Urza.dck",
+  "tier": 1,
+  "colors": "U",
+  "variant_of": "T1_U_Ioreth.dck",
+  "commander": "Urza, Powerstone Prodigy",
+  "life": 11,
+  "power": 18.1,
+  "swaps": [
+   [
+    "Aradara Express",
+    "Brass Knuckles"
+   ],
+   [
+    "Runed Stalactite",
+    "Armillary Sphere"
+   ],
+   [
+    "Rush of Ice",
+    "Mycosynth Wellspring"
+   ],
+   [
+    "Greataxe",
+    "Serum Visions"
+   ],
+   [
+    "Winter's Rest",
+    "Whispersilk Cloak"
+   ]
+  ]
+ },
+ {
+  "file": "T1_U_Meneldor.dck",
+  "tier": 1,
+  "colors": "U",
+  "variant_of": "T1_U_Esior.dck",
+  "commander": "Meneldor, Swift Savior",
+  "life": 11,
+  "power": 17.8,
+  "swaps": [
+   [
+    "Farsight Mask",
+    "Reconnaissance Mission"
+   ],
+   [
+    "Greataxe",
+    "Tablet of the Guilds"
+   ],
+   [
+    "Winter's Rest",
+    "Armillary Sphere"
+   ],
+   [
+    "Call to Mind",
+    "Heirloom Blade"
+   ],
+   [
+    "Deluge",
+    "Mycosynth Wellspring"
+   ]
+  ]
+ },
+ {
+  "file": "T1_U_Princess.dck",
+  "tier": 1,
+  "colors": "U",
+  "variant_of": "T1_U_Elrond.dck",
+  "commander": "Princess Yue",
+  "life": 11,
+  "power": 17.5,
+  "swaps": [
+   [
+    "Elvenking's Harper",
+    "Sea Gate Oracle"
+   ],
+   [
+    "Muse Seeker",
+    "Tetsuko Umezawa, Fugitive"
+   ],
+   [
+    "Elven Raft-Steerer",
+    "Archaeomancer"
+   ],
+   [
+    "Mirkwood Meditator",
+    "Murmuring Mystic"
+   ],
+   [
+    "Arcane Investigator",
+    "Tandem Lookout"
+   ],
+   [
+    "Nimrodel Watcher",
+    "Wingspan Mentor"
+   ]
+  ]
+ },
+ {
+  "file": "T5_B_Gothmog.dck",
+  "tier": 5,
+  "colors": "B",
+  "variant_of": "T5_B_Yawgmoth.dck",
+  "commander": "Gothmog, Morgul Lieutenant",
+  "life": 40,
+  "power": 41.5,
+  "swaps": [
+   [
+    "Draugr Necromancer",
+    "Pitiless Plunderer"
+   ],
+   [
+    "Master of Dark Rites",
+    "Everflowing Chalice"
+   ],
+   [
+    "Bridge from Below",
+    "Heirloom Blade"
+   ],
+   [
+    "Mausoleum Secrets",
+    "Bitterblossom"
+   ],
+   [
+    "Shambling Ghast",
+    "Sorcerer of the Fang"
+   ]
+  ]
+ },
+ {
+  "file": "T5_B_Tinybones2.dck",
+  "tier": 5,
+  "colors": "B",
+  "variant_of": "T5_B_Tinybones.dck",
+  "commander": "Tinybones, Pocket Nuisance",
+  "life": 40,
+  "power": 41.4,
+  "swaps": [
+   [
+    "Tinybones Joins Up",
+    "Lightning Greaves"
+   ],
+   [
+    "Asmodeus the Archfiend",
+    "Hollow Marauder"
+   ],
+   [
+    "Virus Beetle",
+    "Reassembling Skeleton"
+   ],
+   [
+    "Cut Down",
+    "Warping Wail"
+   ],
+   [
+    "Necrotic Ooze",
+    "Rankle, Master of Pranks"
+   ]
+  ]
+ },
+ {
+  "file": "T5_B_Gaius.dck",
+  "tier": 5,
+  "colors": "B",
+  "variant_of": "T5_B_Sephiroth.dck",
+  "commander": "Gaius van Baelsar",
+  "life": 40,
+  "power": 43.0,
+  "swaps": [
+   [
+    "Sauron, the Necromancer",
+    "Pitiless Plunderer"
+   ],
+   [
+    "Overlord of the Balemurk",
+    "Massacre Girl"
+   ],
+   [
+    "Wandering Archaic",
+    "Yawgmoth, Thran Physician"
+   ],
+   [
+    "Gate to Phyrexia",
+    "Big Game Hunter"
+   ],
+   [
+    "Shambling Ghast",
+    "Dokuchi Silencer"
+   ]
+  ]
+ },
+ {
+  "file": "T5_B_Gix.dck",
+  "tier": 5,
+  "colors": "B",
+  "variant_of": "T5_B_Krrik.dck",
+  "commander": "Gix, Yawgmoth Praetor",
+  "life": 40,
+  "power": 42.7,
+  "swaps": [
+   [
+    "Starving Revenant",
+    "Chittering Skitterling"
+   ],
+   [
+    "Fleshwrither",
+    "Phyrexian Rager"
+   ],
+   [
+    "Vashta Nerada",
+    "Vraan, Executioner Thane"
+   ],
+   [
+    "Ravenous Chupacabra",
+    "Eastern Paladin"
+   ],
+   [
+    "Dark Petition",
+    "Nevinyrral's Disk"
+   ]
+  ]
+ },
+ {
+  "file": "T4_B_Taborax.dck",
+  "tier": 4,
+  "colors": "B",
+  "variant_of": "T4_B_Ob.dck",
+  "commander": "Taborax, Hope's Demise",
+  "life": 35,
+  "power": 35.5,
+  "swaps": [
+   [
+    "Ravenous Trap",
+    "Heirloom Blade"
+   ],
+   [
+    "Xiahou Dun, the One-Eyed",
+    "Demon's Disciple"
+   ],
+   [
+    "Consume Spirit",
+    "Priest of the Haunted Edge"
+   ],
+   [
+    "Drain Life",
+    "Armillary Sphere"
+   ],
+   [
+    "Vampire Hexmage",
+    "Vito, Thorn of the Dusk Rose"
+   ]
+  ]
+ },
+ {
+  "file": "T4_B_Jadar.dck",
+  "tier": 4,
+  "colors": "B",
+  "variant_of": "T4_B_Massacre.dck",
+  "commander": "Jadar, Ghoulcaller of Nephalia",
+  "life": 35,
+  "power": 35.7,
+  "swaps": [
+   [
+    "Vein Ripper",
+    "Puppeteer Clique"
+   ],
+   [
+    "Join the Dead",
+    "Banewhip Punisher"
+   ],
+   [
+    "Night of Souls' Betrayal",
+    "Heirloom Blade"
+   ],
+   [
+    "Slice from the Shadows",
+    "Dokuchi Silencer"
+   ],
+   [
+    "Crumbling Ashes",
+    "Big Game Hunter"
+   ]
+  ]
+ },
+ {
+  "file": "T4_B_Isareth.dck",
+  "tier": 4,
+  "colors": "B",
+  "variant_of": "T4_B_Gisa.dck",
+  "commander": "Isareth the Awakener",
+  "life": 35,
+  "power": 39.3,
+  "swaps": [
+   [
+    "Darkstar Augur",
+    "Bloodtracker"
+   ],
+   [
+    "Withered Wretch",
+    "Plaguecrafter"
+   ],
+   [
+    "Noxious Ghoul",
+    "Syr Konrad, the Grim"
+   ],
+   [
+    "Undead Warchief",
+    "Puppeteer Clique"
+   ],
+   [
+    "Bringer of the Last Gift",
+    "Ardyn, the Usurper"
+   ]
+  ]
+ },
+ {
+  "file": "T4_B_Tombstone.dck",
+  "tier": 4,
+  "colors": "B",
+  "variant_of": "T4_B_Toshiro.dck",
+  "commander": "Tombstone, Career Criminal",
+  "life": 35,
+  "power": 39.3,
+  "swaps": [
+   [
+    "Withering Boon",
+    "Big Game Hunter"
+   ],
+   [
+    "Power Word Kill",
+    "Dokuchi Silencer"
+   ],
+   [
+    "Heartless Act",
+    "Silumgar Assassin"
+   ],
+   [
+    "Meathook Massacre II",
+    "Nevinyrral's Disk"
+   ],
+   [
+    "Cut Down",
+    "Fourth Bridge Prowler"
+   ]
+  ]
+ },
+ {
+  "file": "T3_B_Anrakyr.dck",
+  "tier": 3,
+  "colors": "B",
+  "variant_of": "T3_B_Imotekh.dck",
+  "commander": "Anrakyr the Traveller",
+  "life": 28,
+  "power": 30.5,
+  "swaps": [
+   [
+    "Terror Ballista",
+    "Duplicant"
+   ],
+   [
+    "Atrocious Experiment",
+    "Ambition's Cost"
+   ],
+   [
+    "Discerning Taste",
+    "Armillary Sphere"
+   ],
+   [
+    "Monumental Corruption",
+    "Dreamstone Hedron"
+   ],
+   [
+    "Pointed Discussion",
+    "Hedron Archive"
+   ]
+  ]
+ },
+ {
+  "file": "T3_B_Roshan.dck",
+  "tier": 3,
+  "colors": "B",
+  "variant_of": "T3_B_XuIfit.dck",
+  "commander": "Roshan, Hidden Magister",
+  "life": 28,
+  "power": 32.7,
+  "swaps": [
+   [
+    "Bone Miser",
+    "Massacre Girl, Known Killer"
+   ],
+   [
+    "Bloodtracker",
+    "Shadowheart, Dark Justiciar"
+   ],
+   [
+    "Death Baron",
+    "Plaguecrafter"
+   ],
+   [
+    "Corpses of the Lost",
+    "Blackblade Reforged"
+   ],
+   [
+    "Entropic Battlecruiser",
+    "Heirloom Blade"
+   ]
+  ]
+ },
+ {
+  "file": "T3_B_Yargle.dck",
+  "tier": 3,
+  "colors": "B",
+  "variant_of": "T3_B_Shirei.dck",
+  "commander": "Yargle, Glutton of Urborg",
+  "life": 28,
+  "power": 33.6,
+  "swaps": [
+   [
+    "Disciple of Perdition",
+    "Bloodghast"
+   ],
+   [
+    "Phoenix Fleet Airship",
+    "Heirloom Blade"
+   ],
+   [
+    "Skullport Merchant",
+    "Deadly Dispute"
+   ],
+   [
+    "Scorn-Blade Berserker",
+    "Hateful Eidolon"
+   ],
+   [
+    "Sinister Gnarlbark",
+    "Urborg Scavengers"
+   ]
+  ]
+ },
+ {
+  "file": "T3_B_Shredder.dck",
+  "tier": 3,
+  "colors": "B",
+  "variant_of": "T3_B_Chainer.dck",
+  "commander": "Shredder, Unrelenting",
+  "life": 28,
+  "power": 35.2,
+  "swaps": [
+   [
+    "Bone Shredder",
+    "Banewhip Punisher"
+   ],
+   [
+    "Krav, the Unredeemed",
+    "Shadowheart, Dark Justiciar"
+   ],
+   [
+    "Anvil of Bogardan",
+    "Vexing Bauble"
+   ],
+   [
+    "Triskelion",
+    "Throat Slitter"
+   ],
+   [
+    "Graveborn Muse",
+    "Sephiroth, Fabled SOLDIER"
+   ]
+  ]
+ },
+ {
+  "file": "T2_B_Loot.dck",
+  "tier": 2,
+  "colors": "B",
+  "variant_of": "T2_B_Braids.dck",
+  "commander": "Loot, the Anomaly",
+  "life": 18,
+  "power": 25.0,
+  "swaps": [
+   [
+    "Wicked Visitor",
+    "Phyrexian Rager"
+   ],
+   [
+    "Plague Mare",
+    "Phyrexian Revoker"
+   ],
+   [
+    "Fear of Lost Teeth",
+    "Wasp of the Bitter End"
+   ],
+   [
+    "Hunted Nightmare",
+    "Nighthowler"
+   ],
+   [
+    "Banehound",
+    "Plague Stinger"
+   ],
+   [
+    "Ashiok's Reaper",
+    "Ravenous Rotbelly"
+   ],
+   [
+    "Cruel Somnophage",
+    "Kederekt Parasite"
+   ]
+  ]
+ },
+ {
+  "file": "T2_B_Mari.dck",
+  "tier": 2,
+  "colors": "B",
+  "variant_of": "T2_B_Vito.dck",
+  "commander": "Mari, the Killing Quill",
+  "life": 18,
+  "power": 26.9,
+  "swaps": [
+   [
+    "Priest of the Haunted Edge",
+    "Big Game Hunter"
+   ],
+   [
+    "Sanguinary Priest",
+    "Hagra Sharpshooter"
+   ],
+   [
+    "Venerated Stormsinger",
+    "Bloodline Necromancer"
+   ],
+   [
+    "Taborax, Hope's Demise",
+    "Bloodthrone Vampire"
+   ],
+   [
+    "Priest of Gix",
+    "Bloodhusk Ritualist"
+   ],
+   [
+    "Umbral Collar Zealot",
+    "Vampire of the Dire Moon"
+   ]
+  ]
+ },
+ {
+  "file": "T2_B_Rev.dck",
+  "tier": 2,
+  "colors": "B",
+  "variant_of": "T2_B_MarrowGnawer.dck",
+  "commander": "Rev, Tithe Extractor",
+  "life": 18,
+  "power": 28.7,
+  "swaps": [
+   [
+    "Chittering Skitterling",
+    "Ambition's Cost"
+   ],
+   [
+    "Ossuary Rats",
+    "Shriekmaw"
+   ],
+   [
+    "Wick's Patrol",
+    "Scour from Existence"
+   ],
+   [
+    "Swarm of Rats",
+    "Demon's Disciple"
+   ],
+   [
+    "Rat Colony",
+    "Nezumi Graverobber"
+   ],
+   [
+    "Karumonix, the Rat King",
+    "Rankle, Master of Pranks"
+   ],
+   [
+    "Lord Skitter's Butcher",
+    "Golgari Thug"
+   ]
+  ]
+ },
+ {
+  "file": "T2_B_Baron.dck",
+  "tier": 2,
+  "colors": "B",
+  "variant_of": "T2_B_Syr.dck",
+  "commander": "Baron Strucker, HYDRA Overlord",
+  "life": 18,
+  "power": 29.9,
+  "swaps": [
+   [
+    "Cavalier of Night",
+    "Nekrataal"
+   ],
+   [
+    "Murderous Rider",
+    "Yawgmoth, Thran Physician"
+   ],
+   [
+    "Midnight Reaper",
+    "Doomed Necromancer"
+   ],
+   [
+    "Exquisite Huntmaster",
+    "Syr Konrad, the Grim"
+   ],
+   [
+    "Thwart the Grave",
+    "Caged Sun"
+   ]
+  ]
+ },
+ {
+  "file": "T1_B_Sivriss.dck",
+  "tier": 1,
+  "colors": "B",
+  "variant_of": "T1_B_Tormod.dck",
+  "commander": "Sivriss, Nightmare Speaker",
+  "life": 11,
+  "power": 17.7,
+  "swaps": [
+   [
+    "Polluted Dead",
+    "Serpent Assassin"
+   ],
+   [
+    "Silumgar Butcher",
+    "Dark Withering"
+   ],
+   [
+    "Novice Occultist",
+    "Demon's Disciple"
+   ],
+   [
+    "Rancid Rats",
+    "Marauding Blight-Priest"
+   ],
+   [
+    "Returned Reveler",
+    "Kalastria Healer"
+   ],
+   [
+    "Sultai Emissary",
+    "Elderfang Disciple"
+   ],
+   [
+    "Walking Corpse",
+    "Malakir Blood-Priest"
+   ],
+   [
+    "Eternal Taskmaster",
+    "Priest of Gix"
+   ]
+  ]
+ },
+ {
+  "file": "T1_B_Grma.dck",
+  "tier": 1,
+  "colors": "B",
+  "variant_of": "T1_B_Whisper.dck",
+  "commander": "Gr\u00edma Wormtongue",
+  "life": 11,
+  "power": 18.2,
+  "swaps": [
+   [
+    "Kalastria Healer",
+    "Plaguecrafter"
+   ],
+   [
+    "Malakir Blood-Priest",
+    "Demon's Disciple"
+   ],
+   [
+    "Sivriss, Nightmare Speaker",
+    "Whisper, Blood Liturgist"
+   ],
+   [
+    "Shepherd of Rot",
+    "Zulaport Cutthroat"
+   ],
+   [
+    "Withered Wretch",
+    "Golgari Thug"
+   ],
+   [
+    "Elderfang Disciple",
+    "Greedy Freebooter"
+   ]
+  ]
+ },
+ {
+  "file": "T1_B_Moonstone.dck",
+  "tier": 1,
+  "colors": "B",
+  "variant_of": "T1_B_Keskit.dck",
+  "commander": "Moonstone, Harsh Mistress",
+  "life": 11,
+  "power": 18.3,
+  "swaps": [
+   [
+    "Phyrexian Bloodstock",
+    "Fathom Fleet Cutthroat"
+   ],
+   [
+    "Dross Hopper",
+    "Demon's Disciple"
+   ],
+   [
+    "Viseling",
+    "Keskit, the Flesh Sculptor"
+   ],
+   [
+    "Flesh-Eater Imp",
+    "Audacious Thief"
+   ],
+   [
+    "Compleated Huntmaster",
+    "Zulaport Cutthroat"
+   ],
+   [
+    "Core Prowler",
+    "Liliana's Devotee"
+   ],
+   [
+    "Necropede",
+    "Golgari Thug"
+   ]
+  ]
+ },
+ {
+  "file": "T1_B_Hammerhead.dck",
+  "tier": 1,
+  "colors": "B",
+  "variant_of": "T1_B_Falthis.dck",
+  "commander": "Hammerhead, Maggia Boss",
+  "life": 11,
+  "power": 17.7,
+  "swaps": [
+   [
+    "Dream Beavers",
+    "Zulaport Cutthroat"
+   ],
+   [
+    "Warehouse Tabby",
+    "Nezumi Informant"
+   ],
+   [
+    "Watchers of the Dead",
+    "Plaguecrafter"
+   ],
+   [
+    "Chrome Cat",
+    "Demon's Disciple"
+   ],
+   [
+    "Faceless Devourer",
+    "Banewhip Punisher"
+   ],
+   [
+    "Gloom Pangolin",
+    "Balustrade Spy"
+   ],
+   [
+    "Venomized Cat",
+    "Audacious Thief"
+   ],
+   [
+    "Stallion of Ashmouth",
+    "Foggy Swamp Hunters"
+   ]
+  ]
+ },
+ {
+  "file": "T5_R_Longshot.dck",
+  "tier": 5,
+  "colors": "R",
+  "variant_of": "T5_R_Birgi.dck",
+  "commander": "Longshot, Rebel Bowman",
+  "life": 40,
+  "power": 41.2,
+  "swaps": [
+   [
+    "Toralf, God of Fury",
+    "Pia and Kiran Nalaar"
+   ],
+   [
+    "Ultima, Origin of Oblivion",
+    "Alena, Kessig Trapper"
+   ],
+   [
+    "The Warring Triad",
+    "Sisters of the Flame"
+   ],
+   [
+    "Purphoros, Bronze-Blooded",
+    "Captivating Crew"
+   ],
+   [
+    "Ojer Axonil, Deepest Might",
+    "Feldon of the Third Path"
+   ],
+   [
+    "Purphoros, God of the Forge",
+    "Zealous Conscripts"
+   ]
+  ]
+ },
+ {
+  "file": "T5_R_Zuko.dck",
+  "tier": 5,
+  "colors": "R",
+  "variant_of": "T5_R_Godo.dck",
+  "commander": "Zuko, Exiled Prince",
+  "life": 40,
+  "power": 42.4,
+  "swaps": [
+   [
+    "Plundering Barbarian",
+    "Powder Ganger"
+   ],
+   [
+    "Wild Slash",
+    "Batroc the Leaper"
+   ],
+   [
+    "Diviner's Wand",
+    "Discerning Peddler"
+   ],
+   [
+    "Kuldotha Forgemaster",
+    "Muxus, Goblin Grandee"
+   ],
+   [
+    "Devastating Onslaught",
+    "Pearl Medallion"
+   ]
+  ]
+ },
+ {
+  "file": "T5_R_Queen.dck",
+  "tier": 5,
+  "colors": "R",
+  "variant_of": "T5_R_Ral.dck",
+  "commander": "Queen Brahne",
+  "life": 40,
+  "power": 43.8,
+  "swaps": [
+   [
+    "Vindictive Flamestoker",
+    "Reinforced Ronin"
+   ],
+   [
+    "Spark Mage",
+    "Grim Lavamancer"
+   ],
+   [
+    "Tersa Lightshatter",
+    "Quicksmith Genius"
+   ],
+   [
+    "Dragon Mage",
+    "Dreamstone Hedron"
+   ],
+   [
+    "Romantic Rendezvous",
+    "Discerning Peddler"
+   ]
+  ]
+ },
+ {
+  "file": "T5_R_Mishra.dck",
+  "tier": 5,
+  "colors": "R",
+  "variant_of": "T5_R_Rose.dck",
+  "commander": "Mishra, Excavation Prodigy",
+  "life": 40,
+  "power": 45.2,
+  "swaps": [
+   [
+    "Rust Harvester",
+    "Grim Lavamancer"
+   ],
+   [
+    "Zookeeper Mechan",
+    "Slobad, Iron Goblin"
+   ],
+   [
+    "H.E.R.B.I.E., Lovable Robot",
+    "Automated Artificer"
+   ],
+   [
+    "ED-E, Lonesome Eyebot",
+    "Humble Defector"
+   ],
+   [
+    "The Motherlode, Excavator",
+    "Pia and Kiran Nalaar"
+   ]
+  ]
+ },
+ {
+  "file": "T4_R_Tyrox.dck",
+  "tier": 4,
+  "colors": "R",
+  "variant_of": "T4_R_Etali.dck",
+  "commander": "Tyrox, Saurid Tyrant",
+  "life": 35,
+  "power": 36.1,
+  "swaps": [
+   [
+    "World at War",
+    "Mana Geyser"
+   ],
+   [
+    "Otepec Huntmaster",
+    "Goblin Warchief"
+   ],
+   [
+    "Hammer of Purphoros",
+    "Obsidian Battle-Axe"
+   ],
+   [
+    "Bloodsworn Steward",
+    "Kazuul, Tyrant of the Cliffs"
+   ],
+   [
+    "Stolen Strategy",
+    "Caged Sun"
+   ]
+  ]
+ },
+ {
+  "file": "T4_R_Koth.dck",
+  "tier": 4,
+  "colors": "R",
+  "variant_of": "T4_R_Ojer.dck",
+  "commander": "Koth, the Geomancer",
+  "life": 35,
+  "power": 35.9,
+  "swaps": [
+   [
+    "Hazoret the Fervent",
+    "Feldon of the Third Path"
+   ],
+   [
+    "Toralf, God of Fury",
+    "Rose Room Treasurer"
+   ],
+   [
+    "Lady Loki, Agent of Chaos",
+    "Kazuul, Tyrant of the Cliffs"
+   ],
+   [
+    "Ultima, Origin of Oblivion",
+    "Alena, Kessig Trapper"
+   ],
+   [
+    "The Warring Triad",
+    "Evendo Brushrazer"
+   ],
+   [
+    "Purphoros, Bronze-Blooded",
+    "Krenko, Mob Boss"
+   ]
+  ]
+ },
+ {
+  "file": "T4_R_Gimli.dck",
+  "tier": 4,
+  "colors": "R",
+  "variant_of": "T4_R_Magda.dck",
+  "commander": "Gimli, Counter of Kills",
+  "life": 35,
+  "power": 37.8,
+  "swaps": [
+   [
+    "She-Hulk, Jennifer Walters",
+    "Neheb, Dreadhorde Champion"
+   ],
+   [
+    "Umaro, Raging Yeti",
+    "Noise Marine"
+   ],
+   [
+    "Kh\u00e2rn the Betrayer",
+    "Academy Raider"
+   ],
+   [
+    "Flywheel Racer",
+    "Evendo Brushrazer"
+   ],
+   [
+    "Twinshot Sniper",
+    "Pashalik Mons"
+   ]
+  ]
+ },
+ {
+  "file": "T4_R_Combustion.dck",
+  "tier": 4,
+  "colors": "R",
+  "variant_of": "T4_R_Rionya.dck",
+  "commander": "Combustion Man",
+  "life": 35,
+  "power": 40.3,
+  "swaps": [
+   [
+    "Vindictive Flamestoker",
+    "Reinforced Ronin"
+   ],
+   [
+    "Spark Mage",
+    "Grim Lavamancer"
+   ],
+   [
+    "Tersa Lightshatter",
+    "Discerning Peddler"
+   ],
+   [
+    "Etched Oracle",
+    "Merchant of the Vale"
+   ],
+   [
+    "Redoubled Stormsinger",
+    "Dragonspeaker Shaman"
+   ],
+   [
+    "Party Thrasher",
+    "Loyal Apprentice"
+   ]
+  ]
+ },
+ {
+  "file": "T3_R_Livaan.dck",
+  "tier": 3,
+  "colors": "R",
+  "variant_of": "T3_R_Lathliss.dck",
+  "commander": "Livaan, Cultist of Tiamat",
+  "life": 28,
+  "power": 32.1,
+  "swaps": [
+   [
+    "Goddric, Cloaked Reveler",
+    "Storm-Kiln Artist"
+   ],
+   [
+    "Minion of the Mighty",
+    "Young Pyromancer"
+   ],
+   [
+    "Sarkhan, Dragon Ascendant",
+    "Guttersnipe"
+   ],
+   [
+    "The Elder Dragon War",
+    "Sensation Gorger"
+   ],
+   [
+    "Orb of Dragonkind",
+    "Smokebraider"
+   ]
+  ]
+ },
+ {
+  "file": "T3_R_Pashalik.dck",
+  "tier": 3,
+  "colors": "R",
+  "variant_of": "T3_R_Zada.dck",
+  "commander": "Pashalik Mons",
+  "life": 28,
+  "power": 31.6,
+  "swaps": [
+   [
+    "Gleeful Demolition",
+    "Stadium Headliner"
+   ],
+   [
+    "Nahiri's Warcrafting",
+    "Goblin Sharpshooter"
+   ],
+   [
+    "Inner Fire",
+    "Obsidian Battle-Axe"
+   ],
+   [
+    "Seasoned Pyromancer",
+    "Neheb, Dreadhorde Champion"
+   ],
+   [
+    "Ardent Elementalist",
+    "Kazuul, Tyrant of the Cliffs"
+   ]
+  ]
+ },
+ {
+  "file": "T3_R_Laelia.dck",
+  "tier": 3,
+  "colors": "R",
+  "variant_of": "T3_R_Auntie.dck",
+  "commander": "Laelia, the Blade Reforged",
+  "life": 28,
+  "power": 33.7,
+  "swaps": [
+   [
+    "Forge Devil",
+    "Goblin Cratermaker"
+   ],
+   [
+    "Festival Crasher",
+    "Devilish Valet"
+   ],
+   [
+    "Reckless Detective",
+    "Professional Face-Breaker"
+   ],
+   [
+    "Vexing Devil",
+    "Rograkh, Son of Rohgahh"
+   ],
+   [
+    "Sin Prodder",
+    "Neheb, Dreadhorde Champion"
+   ],
+   [
+    "Clara Oswald",
+    "Neheb, the Eternal"
+   ]
+  ]
+ },
+ {
+  "file": "T2_R_Rakka.dck",
+  "tier": 2,
+  "colors": "R",
+  "variant_of": "T2_R_KikiJiki.dck",
+  "commander": "Rakka Mar",
+  "life": 18,
+  "power": 25.2,
+  "swaps": [
+   [
+    "Akki Scrapchomper",
+    "Humble Defector"
+   ],
+   [
+    "Akki Ronin",
+    "Quicksmith Genius"
+   ],
+   [
+    "Goblin Gardener",
+    "Syr Carah, the Bold"
+   ],
+   [
+    "Tarfire",
+    "Goblin Arsonist"
+   ],
+   [
+    "Hatchet Bully",
+    "Mardu Heart-Piercer"
+   ],
+   [
+    "Spawn-Gang Commander",
+    "Thundering Sparkmage"
+   ],
+   [
+    "Rummaging Goblin",
+    "Merchant of the Vale"
+   ]
+  ]
+ },
+ {
+  "file": "T2_R_Iraxxa.dck",
+  "tier": 2,
+  "colors": "R",
+  "variant_of": "T2_R_Kazuul.dck",
+  "commander": "Iraxxa, Empress of Mars",
+  "life": 18,
+  "power": 27.9,
+  "swaps": [
+   [
+    "Inspired Tinkering",
+    "Mana Geyser"
+   ],
+   [
+    "Ingenuity Engine",
+    "Meteoric Mace"
+   ],
+   [
+    "Oliphaunt",
+    "Kazuul, Tyrant of the Cliffs"
+   ],
+   [
+    "God-Pharaoh's Statue",
+    "Song-Mad Treachery"
+   ],
+   [
+    "Ganax, Astral Hunter",
+    "Frontier Warmonger"
+   ]
+  ]
+ },
+ {
+  "file": "T2_R_Delina.dck",
+  "tier": 2,
+  "colors": "R",
+  "variant_of": "T2_R_Zirilan.dck",
+  "commander": "Delina, Wild Mage",
+  "life": 18,
+  "power": 29.4,
+  "swaps": [
+   [
+    "Blazing Rootwalla",
+    "Brazen Dwarf"
+   ],
+   [
+    "Magebane Lizard",
+    "Dark-Dweller Oracle"
+   ],
+   [
+    "Spitfire Lagac",
+    "Rakka Mar"
+   ],
+   [
+    "Viashino Pyromancer",
+    "Goblin Ruinblaster"
+   ],
+   [
+    "Viashino Heretic",
+    "Cunning Sparkmage"
+   ]
+  ]
+ },
+ {
+  "file": "T1_R_Ivora.dck",
+  "tier": 1,
+  "colors": "R",
+  "variant_of": "T1_R_Squee.dck",
+  "commander": "Ivora, Insatiable Heir",
+  "life": 11,
+  "power": 18.0,
+  "swaps": [
+   [
+    "Skoa, Embermage",
+    "Scour from Existence"
+   ],
+   [
+    "Goblin Shortcutter",
+    "Lobber Crew"
+   ],
+   [
+    "Mardu Scout",
+    "Keldon Warcaller"
+   ],
+   [
+    "Outrage Shaman",
+    "Noise Marine"
+   ],
+   [
+    "Raging Goblin",
+    "Insolent Neonate"
+   ],
+   [
+    "Weaselback Redcap",
+    "Brighthearth Banneret"
+   ],
+   [
+    "Akki Rockspeaker",
+    "Gore-House Chainwalker"
+   ],
+   [
+    "Courageous Goblin",
+    "Champion of the Flame"
+   ]
+  ]
+ },
+ {
+  "file": "T1_R_Ian.dck",
+  "tier": 1,
+  "colors": "R",
+  "variant_of": "T1_R_Breeches.dck",
+  "commander": "Ian the Reckless",
+  "life": 11,
+  "power": 18.0,
+  "swaps": [
+   [
+    "Skoa, Embermage",
+    "Akoum Boulderfoot"
+   ],
+   [
+    "Akki Blizzard-Herder",
+    "Dragonspeaker Shaman"
+   ],
+   [
+    "Thunderhead Gunner",
+    "Keldon Raider"
+   ],
+   [
+    "Goblin Shortcutter",
+    "Thopter Engineer"
+   ],
+   [
+    "Goblin Striker",
+    "Reckless Fireweaver"
+   ],
+   [
+    "Mardu Scout",
+    "Thermo-Alchemist"
+   ],
+   [
+    "Riot Piker",
+    "Kessig Flamebreather"
+   ],
+   [
+    "Utvara Scalper",
+    "Lobber Crew"
+   ]
+  ]
+ },
+ {
+  "file": "T1_R_Molten.dck",
+  "tier": 1,
+  "colors": "R",
+  "variant_of": "T1_R_Kediss.dck",
+  "commander": "Molten Man, Inferno Incarnate",
+  "life": 11,
+  "power": 17.2,
+  "swaps": [
+   [
+    "Bellows Lizard",
+    "Spark Elemental"
+   ],
+   [
+    "Viashino Lashclaw",
+    "Enraged Flamecaster"
+   ],
+   [
+    "Viashino Racketeer",
+    "Big Score"
+   ],
+   [
+    "Horned Stoneseeker",
+    "Hellspark Elemental"
+   ],
+   [
+    "Riveteers Requisitioner",
+    "Flamekin Bladewhirl"
+   ],
+   [
+    "Sigiled Skink",
+    "Arc Runner"
+   ],
+   [
+    "Steampath Charger",
+    "Inner-Flame Acolyte"
+   ]
+  ]
+ },
+ {
+  "file": "T1_R_Cleon.dck",
+  "tier": 1,
+  "colors": "R",
+  "variant_of": "T1_R_Grishnkh.dck",
+  "commander": "Cleon, Merry Champion",
+  "life": 11,
+  "power": 18.4,
+  "swaps": [
+   [
+    "Skoa, Embermage",
+    "Joven"
+   ],
+   [
+    "Goblin Shortcutter",
+    "Reckless Fireweaver"
+   ],
+   [
+    "Outrage Shaman",
+    "Tiger-Tribe Hunter"
+   ],
+   [
+    "Weaselback Redcap",
+    "Thermo-Alchemist"
+   ],
+   [
+    "Akki Rockspeaker",
+    "Kessig Flamebreather"
+   ],
+   [
+    "Courageous Goblin",
+    "Burning Prophet"
+   ],
+   [
+    "Goblin Tunneler",
+    "Tavern Scoundrel"
+   ],
+   [
+    "Hobgoblin Captain",
+    "Ghitu Chronicler"
+   ]
+  ]
+ },
+ {
+  "file": "T5_G_Sutina.dck",
+  "tier": 5,
+  "colors": "G",
+  "variant_of": "T5_G_Yeva.dck",
+  "commander": "Sutina, Speaker of the Tajuru",
+  "life": 40,
+  "power": 41.2,
+  "swaps": [
+   [
+    "Fa'adiyah Seer",
+    "Lifecrafter's Bestiary"
+   ],
+   [
+    "Thornbite Staff",
+    "Jagged-Scar Archers"
+   ],
+   [
+    "Ulvenwald Tracker",
+    "Elvish Lyrist"
+   ],
+   [
+    "Silverback Elder",
+    "Viridian Scout"
+   ],
+   [
+    "Shared Summons",
+    "Elvish Promenade"
+   ]
+  ]
+ },
+ {
+  "file": "T5_G_Molimo.dck",
+  "tier": 5,
+  "colors": "G",
+  "variant_of": "T5_G_Lumra.dck",
+  "commander": "Molimo, Maro-Sorcerer",
+  "life": 40,
+  "power": 43.9,
+  "swaps": [
+   [
+    "Ayula, Queen Among Bears",
+    "Haywire Mite"
+   ],
+   [
+    "Rampaging Yao Guai",
+    "Krosan Grip"
+   ],
+   [
+    "Werebear",
+    "Darksteel Ingot"
+   ],
+   [
+    "Tiller Engine",
+    "Undergrowth Champion"
+   ],
+   [
+    "Blossoming Tortoise",
+    "Endurance"
+   ]
+  ]
+ },
+ {
+  "file": "T4_G_Marwyn2.dck",
+  "tier": 4,
+  "colors": "G",
+  "variant_of": "T4_G_Esika.dck",
+  "commander": "Marwyn, the Preserver",
+  "life": 35,
+  "power": 34.4,
+  "swaps": [
+   [
+    "Jorn, God of Winter",
+    "Yavimaya Elder"
+   ],
+   [
+    "Ultima, Origin of Oblivion",
+    "Karametra's Acolyte"
+   ],
+   [
+    "The Warring Triad",
+    "Springbloom Druid"
+   ],
+   [
+    "Rhonas the Indomitable",
+    "Fauna Shaman"
+   ],
+   [
+    "Nylea, Keen-Eyed",
+    "Armorcraft Judge"
+   ],
+   [
+    "God-Eternal Rhonas",
+    "Beast Whisperer"
+   ]
+  ]
+ },
+ {
+  "file": "T4_G_Celeborn.dck",
+  "tier": 4,
+  "colors": "G",
+  "variant_of": "T4_G_Selvala.dck",
+  "commander": "Celeborn the Wise",
+  "life": 35,
+  "power": 37.4,
+  "swaps": [
+   [
+    "H.E.R.B.I.E., Lovable Robot",
+    "Priest of Titania"
+   ],
+   [
+    "Hyrax Tower Scout",
+    "Aftermath Analyst"
+   ],
+   [
+    "Icetill Explorer",
+    "Marwyn, the Nurturer"
+   ],
+   [
+    "Phyrexian Dreadnought",
+    "Elvish Visionary"
+   ],
+   [
+    "Last March of the Ents",
+    "Chromatic Orrery"
+   ]
+  ]
+ },
+ {
+  "file": "T4_G_Haru.dck",
+  "tier": 4,
+  "colors": "G",
+  "variant_of": "T4_G_Yisan.dck",
+  "commander": "Haru, Hidden Talent",
+  "life": 35,
+  "power": 37.0,
+  "swaps": [
+   [
+    "Bouncer's Beatdown",
+    "Halana, Kessig Ranger"
+   ],
+   [
+    "Tail Swipe",
+    "Outland Liberator"
+   ],
+   [
+    "Infectious Bite",
+    "Flaxen Intruder"
+   ],
+   [
+    "Nylea's Intervention",
+    "Agatha's Soul Cauldron"
+   ],
+   [
+    "Woodland Bellower",
+    "Clara Oswald"
+   ]
+  ]
+ },
+ {
+  "file": "T4_G_Glorfindel.dck",
+  "tier": 4,
+  "colors": "G",
+  "variant_of": "T4_G_Marwyn.dck",
+  "commander": "Glorfindel, Dauntless Rescuer",
+  "life": 35,
+  "power": 40.2,
+  "swaps": [
+   [
+    "Harabaz Druid",
+    "Priest of Titania"
+   ],
+   [
+    "Humble Naturalist",
+    "Gyre Sage"
+   ],
+   [
+    "Bristly Bill, Spine Sower",
+    "Tireless Provisioner"
+   ],
+   [
+    "Fanatic of Rhonas",
+    "Paradise Druid"
+   ],
+   [
+    "Boon of Boseiju",
+    "Morcant's Eyes"
+   ]
+  ]
+ },
+ {
+  "file": "T3_G_Nissa.dck",
+  "tier": 3,
+  "colors": "G",
+  "variant_of": "T3_G_Shroofus.dck",
+  "commander": "Nissa, Worldsoul Speaker",
+  "life": 28,
+  "power": 31.7,
+  "swaps": [
+   [
+    "Echoing Courage",
+    "Morcant's Eyes"
+   ],
+   [
+    "Trash the Town",
+    "Leaf-Crowned Visionary"
+   ],
+   [
+    "Mortal's Resolve",
+    "Gilt-Leaf Ambush"
+   ],
+   [
+    "Utopia Mycon",
+    "Priest of Titania"
+   ],
+   [
+    "Overprotect",
+    "Elemental Bond"
+   ]
+  ]
+ },
+ {
+  "file": "T3_G_Pia.dck",
+  "tier": 3,
+  "colors": "G",
+  "variant_of": "T3_G_Azusa.dck",
+  "commander": "Pia, Aether Ascetic",
+  "life": 28,
+  "power": 33.5,
+  "swaps": [
+   [
+    "Springheart Nantuko",
+    "Evolution Sage"
+   ],
+   [
+    "Gelatinous Genesis",
+    "Mask of Memory"
+   ],
+   [
+    "Journeyer's Kite",
+    "Fireshrieker"
+   ],
+   [
+    "Vernal Bloom",
+    "Heirloom Blade"
+   ],
+   [
+    "Gaea's Touch",
+    "Springbloom Druid"
+   ]
+  ]
+ },
+ {
+  "file": "T3_G_Loot.dck",
+  "tier": 3,
+  "colors": "G",
+  "variant_of": "T3_G_Kona.dck",
+  "commander": "Loot, Exuberant Explorer",
+  "life": 28,
+  "power": 33.6,
+  "swaps": [
+   [
+    "Glimpse the Core",
+    "Armored Scrapgorger"
+   ],
+   [
+    "Unlicensed Hearse",
+    "Grafdigger's Cage"
+   ],
+   [
+    "Titan of Industry",
+    "Sawtusk Demolisher"
+   ],
+   [
+    "Outcaster Trailblazer",
+    "Squirrel Sovereign"
+   ],
+   [
+    "Esika's Chariot",
+    "Bala Ged Recovery"
+   ]
+  ]
+ },
+ {
+  "file": "T3_G_Maester.dck",
+  "tier": 3,
+  "colors": "G",
+  "variant_of": "T3_G_Reki.dck",
+  "commander": "Maester Seymour",
+  "life": 28,
+  "power": 33.9,
+  "swaps": [
+   [
+    "Sakura-Tribe Scout",
+    "Destiny Spinner"
+   ],
+   [
+    "Thornbite Staff",
+    "Viridian Zealot"
+   ],
+   [
+    "Silverback Elder",
+    "Master of the Wild Hunt"
+   ],
+   [
+    "Sakura-Tribe Elder",
+    "Gyre Sage"
+   ],
+   [
+    "Doric, Nature's Warden",
+    "Springbloom Druid"
+   ]
+  ]
+ },
+ {
+  "file": "T2_G_The2.dck",
+  "tier": 2,
+  "colors": "G",
+  "variant_of": "T2_G_Toski.dck",
+  "commander": "The Unbeatable Squirrel Girl",
+  "life": 18,
+  "power": 26.4,
+  "swaps": [
+   [
+    "Hivespine Wolverine",
+    "Halana, Kessig Ranger"
+   ],
+   [
+    "Cloudthresher",
+    "Surrak and Goreclaw"
+   ],
+   [
+    "Mold Shambler",
+    "Damage Control Crew"
+   ],
+   [
+    "Brotherhood Regalia",
+    "Herald's Horn"
+   ],
+   [
+    "Zuko's Exile",
+    "Cleanup Crew"
+   ]
+  ]
+ },
+ {
+  "file": "T2_G_SpiderMan.dck",
+  "tier": 2,
+  "colors": "G",
+  "variant_of": "T2_G_Arasta.dck",
+  "commander": "Spider-Man, Brooklyn Visionary",
+  "life": 18,
+  "power": 26.7,
+  "swaps": [
+   [
+    "Jodah's Codex",
+    "Dreamstone Hedron"
+   ],
+   [
+    "Rootless Yew",
+    "Surrak, the Hunt Caller"
+   ],
+   [
+    "Brotherhood Regalia",
+    "Herald's Horn"
+   ],
+   [
+    "Monstrous Onslaught",
+    "Halana, Kessig Ranger"
+   ],
+   [
+    "Fade into Antiquity",
+    "Damage Control Crew"
+   ]
+  ]
+ },
+ {
+  "file": "T2_G_Kianne.dck",
+  "tier": 2,
+  "colors": "G",
+  "variant_of": "T2_G_Thrun.dck",
+  "commander": "Kianne, Dean of Substance",
+  "life": 18,
+  "power": 29.3,
+  "swaps": [
+   [
+    "Fa'adiyah Seer",
+    "Deepwood Denizen"
+   ],
+   [
+    "Thrun, the Last Troll",
+    "Fierce Empath"
+   ],
+   [
+    "Sachi, Daughter of Seshiro",
+    "Springbloom Druid"
+   ],
+   [
+    "Wose Pathfinder",
+    "Priest of Titania"
+   ],
+   [
+    "Loaming Shaman",
+    "Yavimaya Elder"
+   ],
+   [
+    "Ainok Survivalist",
+    "Elvish Skysweeper"
+   ]
+  ]
+ },
+ {
+  "file": "T2_G_Arwen.dck",
+  "tier": 2,
+  "colors": "G",
+  "variant_of": "T2_G_Legolas.dck",
+  "commander": "Arwen, Weaver of Hope",
+  "life": 18,
+  "power": 29.0,
+  "swaps": [
+   [
+    "Halana, Kessig Ranger",
+    "Viridian Corrupter"
+   ],
+   [
+    "Over the Edge",
+    "Jagged-Scar Archers"
+   ],
+   [
+    "Titanic Brawl",
+    "Elvish Skysweeper"
+   ],
+   [
+    "Animist's Might",
+    "Sharpshooter Elf"
+   ],
+   [
+    "Sixth Sense",
+    "Morcant's Eyes"
+   ]
+  ]
+ },
+ {
+  "file": "T1_G_Jiang.dck",
+  "tier": 1,
+  "colors": "G",
+  "variant_of": "T1_G_Peregrin.dck",
+  "commander": "Jiang Yanggu, Never Alone",
+  "life": 11,
+  "power": 17.9,
+  "swaps": [
+   [
+    "Streetwise Negotiator",
+    "Yavimaya Elder"
+   ],
+   [
+    "Surly Farrier",
+    "Destiny Spinner"
+   ],
+   [
+    "High-Rise Sawjack",
+    "Yavimaya Enchantress"
+   ],
+   [
+    "Brandywine Farmer",
+    "Civic Wayfinder"
+   ],
+   [
+    "Greenbelt Radical",
+    "Yedora, Grave Gardener"
+   ],
+   [
+    "Intrepid Tenderfoot",
+    "Arbor Elf"
+   ]
+  ]
+ },
+ {
+  "file": "T1_G_Halana.dck",
+  "tier": 1,
+  "colors": "G",
+  "variant_of": "T1_G_Surrak.dck",
+  "commander": "Halana, Kessig Ranger",
+  "life": 11,
+  "power": 18.0,
+  "swaps": [
+   [
+    "Marshdrinker Giant",
+    "Cleanup Crew"
+   ],
+   [
+    "Nissa's Chosen",
+    "Yavimaya Enchantress"
+   ],
+   [
+    "Pheres-Band Brawler",
+    "Meteor Golem"
+   ],
+   [
+    "Obsidian Battle-Axe",
+    "Armillary Sphere"
+   ],
+   [
+    "Elvish Vanguard",
+    "Titania's Chosen"
+   ],
+   [
+    "Elvish Warrior",
+    "Thornweald Archer"
+   ]
+  ]
+ },
+ {
+  "file": "T1_G_Loot.dck",
+  "tier": 1,
+  "colors": "G",
+  "variant_of": "T1_G_Anara.dck",
+  "commander": "Loot, the Nexus",
+  "life": 11,
+  "power": 17.2,
+  "swaps": [
+   [
+    "Wargling",
+    "Contagious Vorrac"
+   ],
+   [
+    "Snarling Wolf",
+    "Arboreal Grazer"
+   ],
+   [
+    "Darkthicket Wolf",
+    "Battering Krasis"
+   ],
+   [
+    "Pestilent Wolf",
+    "Slaughterhorn"
+   ],
+   [
+    "Sporeback Wolf",
+    "Mosscoat Goriak"
+   ],
+   [
+    "Wandering Wolf",
+    "Yavimaya Elder"
+   ],
+   [
+    "Wyluli Wolf",
+    "Pilgrim's Eye"
+   ]
+  ]
+ },
+ {
+  "file": "T1_G_Bushmaster.dck",
+  "tier": 1,
+  "colors": "G",
+  "variant_of": "T1_G_Toph.dck",
+  "commander": "Bushmaster, Coiled Henchman",
+  "life": 11,
+  "power": 18.1,
+  "swaps": [
+   [
+    "Marshdrinker Giant",
+    "Cleanup Crew"
+   ],
+   [
+    "Nissa's Chosen",
+    "Yavimaya Enchantress"
+   ],
+   [
+    "Pheres-Band Brawler",
+    "Meteor Golem"
+   ],
+   [
+    "Obsidian Battle-Axe",
+    "Armillary Sphere"
+   ],
+   [
+    "Elvish Vanguard",
+    "Skullwinder"
+   ],
+   [
+    "Elvish Warrior",
+    "Blight Mamba"
+   ]
+  ]
+ },
+ {
+  "file": "T5_R_Glin.dck",
+  "tier": 5,
+  "colors": "R",
+  "variant_of": "T5_R_Urabrask.dck",
+  "commander": "Gl\u00f3in the Mighty",
+  "life": 40,
+  "power": 41.3,
+  "swaps": [
+   [
+    "Akki Scrapchomper",
+    "\u00d3in the Brave"
+   ],
+   [
+    "Urabrask, Heretic Praetor",
+    "Storm-Kiln Artist"
+   ],
+   [
+    "Vindictive Flamestoker",
+    "Falkenrath Pit Fighter"
+   ],
+   [
+    "Phyrexian Dragon Engine",
+    "Neheb, Dreadhorde Champion"
+   ],
+   [
+    "Slobad, Iron Goblin",
+    "Evendo Brushrazer"
+   ],
+   [
+    "Defiler of Instinct",
+    "Plundering Barbarian"
+   ],
+   [
+    "Solphim, Mayhem Dominus",
+    "Krenko, Mob Boss"
+   ]
+  ]
+ },
+ {
+  "file": "T3_R_Iron.dck",
+  "tier": 3,
+  "colors": "R",
+  "variant_of": "T3_R_Krenko.dck",
+  "commander": "Iron Fist, Living Weapon",
+  "life": 28,
+  "power": 35.6,
+  "swaps": [
+   [
+    "Sarpadian Simulacrum",
+    "Goblin Javelineer"
+   ],
+   [
+    "Akki Ronin",
+    "Humble Defector"
+   ],
+   [
+    "Sensation Gorger",
+    "Quicksmith Genius"
+   ],
+   [
+    "Hobgoblin Bandit Lord",
+    "Rose Room Treasurer"
+   ],
+   [
+    "Rummaging Goblin",
+    "Merchant of the Vale"
+   ],
+   [
+    "Slobad, Iron Goblin",
+    "Sisters of the Flame"
+   ],
+   [
+    "Muxus, Goblin Grandee",
+    "Godo, Bandit Warlord"
+   ]
+  ]
+ },
+ {
+  "file": "T2_R_Jaxis.dck",
+  "tier": 2,
+  "colors": "R",
+  "variant_of": "T2_R_Krenko.dck",
+  "commander": "Jaxis, the Troublemaker",
+  "life": 18,
+  "power": 29.7,
+  "swaps": [
+   [
+    "Akki Scrapchomper",
+    "Humble Defector"
+   ],
+   [
+    "Akki Ronin",
+    "Quicksmith Genius"
+   ],
+   [
+    "Sensation Gorger",
+    "Neheb, Dreadhorde Champion"
+   ],
+   [
+    "Tarfire",
+    "Goblin Javelineer"
+   ],
+   [
+    "Rummaging Goblin",
+    "Merchant of the Vale"
+   ],
+   [
+    "Slobad, Iron Goblin",
+    "Evendo Brushrazer"
+   ],
+   [
+    "Battle Cry Goblin",
+    "Dragonspeaker Shaman"
+   ],
+   [
+    "Enterprising Scallywag",
+    "Young Pyromancer"
+   ]
+  ]
+ },
+ {
+  "file": "T5_G_Shigeki.dck",
+  "tier": 5,
+  "colors": "G",
+  "variant_of": "T5_G_Ashaya.dck",
+  "commander": "Shigeki, Jukai Visionary",
+  "life": 40,
+  "power": 42.8,
+  "swaps": [
+   [
+    "Vengevine",
+    "Ramunap Excavator"
+   ],
+   [
+    "Titan of Industry",
+    "Terastodon"
+   ],
+   [
+    "Regal Force",
+    "Dreamstone Hedron"
+   ],
+   [
+    "Foundation Breaker",
+    "Unstable Obelisk"
+   ],
+   [
+    "Tangled Florahedron",
+    "Sakura-Tribe Elder"
+   ],
+   [
+    "Endurance",
+    "Druid of Purification"
+   ]
+  ]
+ },
+ {
+  "file": "T5_G_Ezuri.dck",
+  "tier": 5,
+  "colors": "G",
+  "variant_of": "T5_G_Jorn.dck",
+  "commander": "Ezuri, Renegade Leader",
+  "life": 40,
+  "power": 42.8,
+  "swaps": [
+   [
+    "Ultima, Origin of Oblivion",
+    "Canopy Tactician"
+   ],
+   [
+    "The Warring Triad",
+    "Springbloom Druid"
+   ],
+   [
+    "Esika, God of the Tree",
+    "Priest of Titania"
+   ],
+   [
+    "Nylea, Keen-Eyed",
+    "Armorcraft Judge"
+   ],
+   [
+    "Ojer Kaslem, Deepest Growth",
+    "Beast Whisperer"
+   ],
+   [
+    "Nylea, God of the Hunt",
+    "Evolution Sage"
+   ]
+  ]
+ },
+ {
+  "file": "W_Starter_Alt.dck",
+  "tier": 2,
+  "colors": "W",
+  "variant_of": "W_Starter_Normal.dck",
+  "commander": "Haliya, Guided by Light",
+  "starter": true,
+  "base_commander": "Syr Alin, the Lion's Claw",
+  "power": 27.2,
+  "swaps": [
+   [
+    "Leonin Skyhunter",
+    "Orzhov Advokist"
+   ],
+   [
+    "Knight of Meadowgrain",
+    "Soul's Attendant"
+   ],
+   [
+    "Skyhunter Skirmisher",
+    "Ajani's Chosen"
+   ],
+   [
+    "Moment of Heroism",
+    "Armillary Sphere"
+   ],
+   [
+    "Sheltering Light",
+    "Sejiri Shelter"
+   ]
+  ]
+ },
+ {
+  "file": "U_Starter_Alt.dck",
+  "tier": 2,
+  "colors": "U",
+  "variant_of": "U_Starter_Normal.dck",
+  "commander": "Inga Rune-Eyes",
+  "starter": true,
+  "base_commander": "Gadwick, the Wizened",
+  "power": 26.7,
+  "swaps": [
+   [
+    "Expanded Anatomy",
+    "Dramatic Reversal"
+   ],
+   [
+    "Exhaustion",
+    "Ichor Wellspring"
+   ],
+   [
+    "Psychic Spiral",
+    "Reconnaissance Mission"
+   ],
+   [
+    "Contentious Plan",
+    "Mycosynth Wellspring"
+   ],
+   [
+    "Time of Ice",
+    "Whispersilk Cloak"
+   ]
+  ]
+ },
+ {
+  "file": "B_Starter_Alt.dck",
+  "tier": 2,
+  "colors": "B",
+  "variant_of": "B_Starter_Normal.dck",
+  "commander": "Nazar, the Velvet Fang",
+  "starter": true,
+  "base_commander": "Syr Konrad, the Grim",
+  "power": 27.4,
+  "swaps": [
+   [
+    "Dutiful Attendant",
+    "Yahenni, Undying Partisan"
+   ],
+   [
+    "Sengir Autocrat",
+    "Bloodline Necromancer"
+   ],
+   [
+    "Nekrataal",
+    "Chittering Witch"
+   ],
+   [
+    "Josu Vess, Lich Knight",
+    "Pawn of Ulamog"
+   ],
+   [
+    "Zulaport Cutthroat",
+    "Vito, Thorn of the Dusk Rose"
+   ],
+   [
+    "Morbid Opportunist",
+    "Piper of the Swarm"
+   ]
+  ]
+ },
+ {
+  "file": "R_Starter_Alt.dck",
+  "tier": 2,
+  "colors": "R",
+  "variant_of": "R_Starter_Normal.dck",
+  "commander": "Ben-Ben, Akki Hermit",
+  "starter": true,
+  "base_commander": "Tarox Bladewing",
+  "power": 27.3,
+  "swaps": [
+   [
+    "Rorix Bladewing",
+    "Sokenzan Spellblade"
+   ],
+   [
+    "Firespitter Whelp",
+    "Dragonspeaker Shaman"
+   ],
+   [
+    "Furnace Whelp",
+    "Goblin Freerunner"
+   ],
+   [
+    "Shivan Dragon",
+    "Swarming Goblins"
+   ],
+   [
+    "Rapacious Dragon",
+    "Krenko, Mob Boss"
+   ]
+  ]
+ },
+ {
+  "file": "G_Starter_Alt.dck",
+  "tier": 2,
+  "colors": "G",
+  "variant_of": "G_Starter_Normal.dck",
+  "commander": "Gwenna, Eyes of Gaea",
+  "starter": true,
+  "base_commander": "Goreclaw, Terror of Qal Sisma",
+  "power": 27.4,
+  "swaps": [
+   [
+    "Garruk's Companion",
+    "Augur of Autumn"
+   ],
+   [
+    "Crushing Canopy",
+    "Viridian Corrupter"
+   ],
+   [
+    "Centaur Courser",
+    "Evolution Sage"
+   ],
+   [
+    "Magnigoth Sentry",
+    "Lys Alana Huntmaster"
+   ],
+   [
+    "Briarpack Alpha",
+    "Yedora, Grave Gardener"
+   ]
+  ]
+ }
+]

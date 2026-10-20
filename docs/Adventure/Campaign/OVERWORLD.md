@@ -346,6 +346,12 @@ past. Its dialog checks a flag:
 
 - **The color choice** (the Seal Angel) sets `zoneOpen.<own>` and all five `zoneRel.<C>` values. Each of its five
   color options already runs its own actions, so this is five more flag lists in the existing dialog.
+- **The commander choice** follows the color pick: "Lead with <starter commander>" keeps `decks/starter/<C>_Starter_Normal.dck`
+  (`setStarterColor`), "Lead with <alternate>" swaps in `<C>_Starter_Alt.dck` (`setStarterDeck`, new dialog action).
+  Both set `hall.<card>` for the two commanders, so the player starts with exactly these two unlocked at the
+  Commander Hall (no roster entry is `start: true` any more). Each version carries the other's 5-8 swap cards in its
+  sideboard, so a switch at the Hall can swap the cards too. Built by `deckgen/variants.py --starters` and
+  `deckgen/hall_roster.py`; the dialog by `zone_flags.py`.
 - **Your own Warden** opens the two ally zones. The Warden's defeat dialog has five nodes, one per `col<X>` character
   flag, each opening that color's two allies.
 - **The second ally Warden** (`seals` reaches 3) opens the two enemy zones the same way.
