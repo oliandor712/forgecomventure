@@ -4,7 +4,16 @@ import csv, glob, json, math, os, subprocess, collections, datetime
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 LAB = os.path.join(ROOT, "tools/concordia/balance_lab")
-rows = list(csv.DictReader(open(os.path.join(LAB, "records.csv"))))
+rows = list(csv.DictReader(open(os.path.join(LAB, "records.csv"), newline="")))
+REBUILD = "440176a2"  # deck rebuild (main session, 2026-10-20): rows at or after this commit are on the new decks
+_new = {}
+
+
+def is_new(r):
+    c = r["commit"]
+    if c not in _new:
+        _new[c] = subprocess.run(["git", "merge-base", "--is-ancestor", REBUILD, c], cwd=ROOT).returncode == 0
+    return _new[c]
 Z = 1.645
 
 
@@ -30,14 +39,19 @@ def power(deck):
         return None
 
 
-inner = [r for r in rows if r["kind"] == "inner"]
+inner_all = [r for r in rows if r["kind"] == "inner"]
+inner = [r for r in inner_all if is_new(r)]  # current balance: new decks only
 bonus = [r for r in rows if r["kind"] == "bonus"]
 L = ["# Deck balance report", "", "Generated %s from %d games (%d inner-tier, %d bonus). Intervals are 90%% Wilson; draws count half."
-     % (datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%MZ"), len(rows), len(inner), len(bonus)), ""]
+     % (datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%MZ"), len(rows), len(inner_all), len(bonus)), "",
+     "Inner-tier tables below use only the **new decks** (rows at or after the rebuild commit %s): %d inner games; %d inner games on the old decks are left out. Bonus impact pools old and new rows, since a matched set compares the same pairing." % (REBUILD, len(inner), len(inner_all) - len(inner)), ""]
+to_rows = [r for r in rows if int(r["timeout"])]
+L += ["Timeouts: %d. %s" % (len(to_rows), "; ".join("%s vs %s, %s, turn %s (bonus %s, life %s/%s)" % (os.path.basename(r["deck_a"]), os.path.basename(r["deck_b"]), r["kind"], r["turns"], r["bonus_a"] or "none", r["life_a"], r["life_b"]) for r in to_rows) or "none"), ""]
 allgames = collections.Counter()
 for r in rows:
     allgames[r["deck_a"]] += 1; allgames[r["deck_b"]] += 1
-L += ["## Inner-tier results by tier", ""]
+L += ["## Inner-tier results by tier (new decks)", ""]
+if not inner: L += ["No inner-tier games on the new decks yet.", ""]
 outliers = []
 for t in "12345":
     g = [r for r in inner if r["tier"] == t]
