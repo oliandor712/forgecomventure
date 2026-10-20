@@ -3,7 +3,7 @@
 Reference of the card-script tags the AI reads and what it does with them. Built one section per run by the forge-ai-lab agent.
 Paths are relative to `forge-ai/src/main/java/forge/ai/` unless they start with `forge-`. Line numbers are valid for the commit noted per section.
 
-Sections: 1. SpellApiToAi mapping, 2. AI:RemoveDeck flags, 3. Common SVar hints. Still to do: `AILogic$` values per API, AiProps profile keys, remaining SVars.
+Sections: 1. SpellApiToAi mapping, 2. AI:RemoveDeck flags, 3. Common SVar hints, 4. `AILogic$` values per API. Still to do: AiProps profile keys, remaining SVars, per-value semantics for big classes.
 
 ## 1. How SpellApiToAi maps ApiType to an AI class
 _Checked against commit 6ee57276._
@@ -196,3 +196,77 @@ _Checked against commit 6ee57276. SVars are set in the card script as `SVar:<Nam
 | `MaxQuestEffect` | Cap for counter-removal costs (quest-style cards) | `AiCostDecision.java:727,736` |
 | `AIPaymentPreference` | `AvoidPayingWithAttachTarget`: don't tap the equipped/enchanted creature for mana | `ComputerUtilMana.java:386` |
 | `FreeSpellAI` | Sorts free spells ahead when ordering plays | `ComputerUtilAbility.java:316` |
+
+## 4. AILogic$ values per AI class
+_Checked against commit 469416d1. Mechanically extracted from `forge-ai/src/main/java/forge/ai/ability/*.java`: every string literal compared against the ability's `AILogic` param (`aiLogic.equals/startsWith/contains`, `switch`/`case`) in that class. Line numbers are in `ability/<Class>.java`; where a value is checked in several places all lines are listed. A card selects a value with `AILogic$ <Value>` on the ability line (or `SVar`-referenced sub-ability). Values with a trailing `.` are prefix checks (the number/arg follows, e.g. `MinLoyalty.3`). Many classes also read `AILogic` through shared helpers (`ComputerUtil*`, `SpellAbilityAi.checkAiLogic`), which are not listed here. Meanings are only noted where the name is not obvious; read the cited line before relying on one._
+
+An `AILogic` value that no branch matches is ignored: the class falls through to its default heuristics (it does not make the card unplayable). `Always` / `Never` are honoured only in classes that list them below; elsewhere they do nothing. Frequent cross-class values: `Always` (skip the usual timing/target checks), `Never` (don't play), `Main1` / `Main2` / `AnyPhase` (phase restriction), `UnlessAI` (the AI pays/chooses for the `Unless` cost side), `Pump` / `Curse` (is the effect a buff for own side or a debuff for the opponent's).
+
+| Class | Values (line numbers) |
+|---|---|
+| `AnimateAi` | `Attacking` (50), `EOT` (62), `BoneManCantRegenerate` (65), `Permanent` (138), `Duration` (138), `Worst` (455), `PTByCMC` (495,502) |
+| `AssignGroupAi` | `FriendOrFoe` (25) |
+| `AttachAi` | `Curse` (420), `AIValid` (680), `MoveTgtAura` (1313), `Unenchanted` (1318), `InstantReequipPowerBuff` (1356), `Pump` (1458), `Move` (1458) |
+| `BranchAi` | `GrislySigil` (28), `BranchCounter` (31), `TgtAttacker` (34) |
+| `ChangeCombatantsAi` | `WeakestOppExceptCtrl` (40) |
+| `ChangeZoneAi` | `SurpriseBlock` (94), `PriorityOptionalCost` (98), `NoSameCreatureType` (111), `Pongify` (134,166), `Always` (146,223,1370), `SacAndUpgrade` (148), `SacAndRetFromGrave` (150), `Necropotence` (152), `ReanimateAll` (154), `TheScarabGod` (156), `SorinVengefulBloodlord` (158), `Intuition` (160), `MazesEnd` (164), `ReturnCastable` (173), `IfNotBuffed` (225), `SaviorOfOllenbock` (241), `AnyMainPhase` (421), `DelayedBlink` (716,998), `SurvivalOfTheFittest` (773), `Main1` (775), `BeforeCombat` (777), `MimicVat` (835), `Polymorph` (939), `Remembered` (998), `BounceOnce` (1003), `Pump` (1085), `AttachAILogic` (1085), `ExilePreference` (1551), `BounceOwnTrigger` (1553), `ConsiderRamp` (1555), `Attach` (1735), `SacWorst` (1792), `Curse` (1944), `OwnOnly` (1945), `Worst` (1946), `Random` (1947), `MostProminent` (1951), `NonLand` (1964), `NonExiled` (1968) |
+| `ChangeZoneAllAi` | `DiscardAll` (39), `LivingDeath` (69), `Timetwister` (71), `RetDiscardedThisTurn` (73), `ExileGraveyards` (76), `ManifestCreatsFromGraveyard` (85), `Main1` (171), `DiscardAllAndRetExiled` (196), `.minAdv` (199,199), `.noDiscard` (200) |
+| `CharmAi` | `Good` (284) |
+| `ChooseCardAi` | `AtLeast1` (64), `OppPreferred` (64), `AtLeast2` (66), `BestBlocker` (66), `Clone` (68), `Never` (72), `NeedsPrevention` (74), `Ashiok` (87), `RandomNonLand` (99), `Duneblast` (101), `OwnCard` (118), `GoodCreature` (124), `NotSelf` (152) |
+| `ChooseCardNameAi` | `CursedScroll` (30), `PithingNeedle` (54) |
+| `ChooseColorAi` | `MostExcessOpponentControls` (53), `MostProminentInComputerDeck` (64), `HighestDevotionToColor` (77) |
+| `ChooseGenericAi` | `Khans` (26), `Dragons` (26), `Pump` (28), `BestOption` (28), `Always` (34), `CombustibleGearhulk` (67), `SoulEcho` (67) |
+| `ChooseNumberAi` | `SweepCreatures` (16) |
+| `ChoosePlayerAi` | `Curse` (39), `Pump` (49), `BestAllyBoardPosition` (52), `MostCardsInHand` (62), `LeastCreatures` (71) |
+| `ChooseSourceAi` | `NeedsPrevention` (49,102) |
+| `ChooseTypeAi` | `MostProminentComputerControls` (28), `MostProminentComputerControlsOrOwns` (43), `MostProminentOppControls` (47) |
+| `CloneAi` | `CloneBestCreature` (133,159), `IfDefinedCreatureIsBetter` (161) |
+| `ControlExchangeAi` | `PowerStruggle` (77), `TrigTwoTargets` (82,114) |
+| `ControlGainAi` | `DonateTargetPerm` (293) |
+| `CopyPermanentAi` | `MomirAvatar` (30), `MimicVat` (32), `AtEOT` (34), `DuplicatePerms` (47), `Different` (129) |
+| `CopySpellAbilityAi` | `CopyActivatedAbilities` (93), `Always` (118), `ChainOfSmog` (127), `ChainOfAcid` (130,153), `UnlessAI` (162), `Never` (163), `ChainOfVapor` (167) |
+| `CounterAi` | `MinCMC.` (134), `NullBrooch` (214) |
+| `CountersMoveAi` | `DontMoveCounterIfLethal` (193) |
+| `CountersProliferateAi` | `Always` (123) |
+| `CountersPutAi` | `MoveCounter` (59,284), `CrawlingBarrens` (118,286), `MarkOppCreature` (263), `CheckDFC` (279), `ChargeToBestCMC` (296,758), `ChargeToBestOppControlledCMC` (298), `TheOneRing` (300), `FromDiceRoll` (330), `NoCounterOfType` (460), `Fight` (798), `PowerDmg` (798), `TributeAILogic` (912,913), `Always` (914), `Never` (916), `CanBlockThisTurn` (918), `DontControlCreatures` (926), `OppHasCardsInHand` (928), `IsCounterUser` (1110) |
+| `CountersPutAllAi` | `AtEOTOrBlock` (47) |
+| `DamageAiBase` | `SelfDamage` (37), `OpponentGainLife` (69) |
+| `DamageAllAi` | `DmgAllCreaturesAndPlayers` (135) |
+| `DamageDealAi` | `PayEnergy` (60), `ProcRaid.` (155), `DiscardLands` (245), `DiscardCMCX` (299), `AssumeAtLeastOneTarget` (515) |
+| `DelayedTriggerAi` | `Always` (19), `SpellCopy` (65,78), `NarsetRebound` (104), `SaveCreature` (140) |
+| `DestroyAi` | `MinLoyalty.` (34), `.` (35), `Polymorph` (39), `Pongify` (59), `GainControl` (259) |
+| `DestroyAllAi` | `FellTheMighty` (45), `Always` (59), `RaidingParty` (91) |
+| `DigAi` | `PayX` (63), `PayXButSaveMana` (67,117), `MadSarkhanDigDmg` (89), `AlwaysConfirm` (195) |
+| `DiscardAi` | `VolrathsShapeshifter` (42), `DiscardUncastableAndExcess` (88), `ActivationPhases` (118), `AnyPhase` (118), `AnyPhaseIfFavored` (122), `AtLeast2` (177), `UnlessAI` (220), `Never` (221) |
+| `DrawAi` | `VeilOfSummer` (188), `LifeLessThan.` (190,408), `RespondToOwnActivation` (194), `ConsiderPrimary` (257), `UnlessAI` (587), `LowPriority` (589) |
+| `EffectAi` | `BeginningOfOppTurn` (48,615), `KeepOppCreatsLandsTapped` (53), `RestrictBlocking` (68), `Fog` (112), `ChainVeil` (148), `SecretTunnel` (153), `WillCastCreature` (170), `Always` (174), `Main1` (176), `Main2` (181), `Evasion` (186), `RedirectSpellDamageFromPlayer` (214), `Prevent` (232), `NoGain` (249), `NonCastCreature` (284), `Fight` (300), `Pump` (302), `MakeUnblockable` (314), `Burn` (355), `YawgmothsWill` (358), `NeedCreatures` (360), `PeaceTalks` (371), `Bribe` (386), `CantRegenerate` (396), `UnlessAI` (843), `WillAttack` (844) |
+| `FightAi` | `ChosenAsTgt` (49), `Always` (108), `Grothama` (118), `PowerDmg` (222) |
+| `FlipCoinAi` | `PhaseOut` (21), `Bangchuckers` (25), `KillOrcs` (43) |
+| `FogAi` | `SeriousDamage` (71) |
+| `ImmediateTriggerAi` | `Always` (15,59), `WeakerCreature` (68) |
+| `LifeGainAi` | `CriticalOnly` (39), `AnyPhase` (108) |
+| `LifeLoseAi` | `AnyPhase` (133) |
+| `ManaAi` | `ManaRitual` (38,74,122), `BlackLotus` (38), `Always` (40), `ManaRitualBattery.` (167), `ManaRitualBattery` (245), `ActivateOnce` (258) |
+| `MillAi` | `LilianaMill` (27), `ExileAndPlayUntilEOT` (37), `ExileAndPlayOrDealDamage` (39), `TimmerianFiends` (182) |
+| `MustBlockAi` | `AllowNonLethal` (26) |
+| `PeekAndRevealAi` | `InstantOrSorcery` (81) |
+| `PermanentAi` | `SacToReduceCost` (104) |
+| `PhasesAi` | `DontPhaseOut` (139) |
+| `PlayAi` | `NeedsChosenCard` (68), `ReplaySpell` (130) |
+| `PumpAi` | `MoveCounter` (30,70,139), `Aristocrat` (51,76), `AristocratCounters` (53,134), `SwitchPT` (55,81), `Main1IfAble` (110), `Fight` (129,361), `PowerDmg` (129,361), `Berserk` (130), `Pummeler` (132), `GideonBlackblade` (137), `Donate` (242), `InfernoOfTheStarMounts` (245), `AnyPhase` (367), `ReplaySpell` (371,514), `PowerStruggle` (379), `HighestPower` (394), `ContinuousBonus` (394,418), `SameName` (429), `SacOneEach` (431), `Destroy` (435), `BetterCreatureThanSource` (508), `PayEnergy` (667) |
+| `PumpAllAi` | `UntapCombatTrick` (36) |
+| `RemoveFromCombatAi` | `RemoveBestAttacker` (19) |
+| `RepeatAi` | `CopyBestCreature` (55) |
+| `RevealAi` | `Kefnet` (82) |
+| `RollDiceAi` | `Combat` (26), `CombatEarly` (29), `Main2` (32) |
+| `SacrificeAi` | `Lethal` (140) |
+| `SacrificeAllAi` | `HellionEruption` (17), `MadSarkhanDragon` (21), `ShapeAnew` (23) |
+| `ScryAi` | `BrainJar` (136), `MultipleChoice` (138) |
+| `ShuffleAi` | `Always` (19), `OwnMain2` (22) |
+| `SkipTurnAi` | `Always` (15) |
+| `TapAi` | `GoblinPolkaBand` (50), `Arena` (52) |
+| `TapAllAi` | `AtLeast` (52) |
+| `TokenAi` | `RandomPT` (94), `OnlyOnAlliedAttack` (298), `Curse` (367,367), `AttachAILogic` (367) |
+| `UntapAi` | `PoolExtraMana` (40,427), `PreventCombatDamage` (43,404), `Never` (86), `RemoveBestAttacker` (164), `Always` (232) |
+
+Not extracted (to do in later runs): values consumed outside `ability/` (`AiPlayDecision`/`ComputerUtil*`/`PlayerControllerAi` choice methods such as `chooseSingleCardForEffect`), and per-value semantics for the biggest classes (`ChangeZoneAi`, `PumpAi`, `EffectAi`, `CountersPutAi`).
