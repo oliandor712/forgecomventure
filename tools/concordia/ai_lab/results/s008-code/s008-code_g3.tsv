@@ -1,0 +1,97 @@
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+8	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+10	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+12	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+12	A's Main phase, postcombat	STACK_ADD	A cast Stonybrook Banneret
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+14	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+14	A's Main phase, postcombat	STACK_ADD	A cast Alandra, Sky Dreamer
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Upkeep step	STACK_ADD	B triggered Brass Man
+15	B's Draw step	PHASE	B's Draw step
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Attackers Step	COMBAT	B assigned Thopter Token (85), Thopter Token (88), Thopter Token (91), Thopter Token (94), Brass Man (48), Ornithopter of Paradise (80), Sai, Master Thopterist (81) and Etherium Sculptor (76) to attack A.
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's Declare Blockers Step	COMBAT*	A didn't block Thopter Token (85). A didn't block Thopter Token (88). A didn't block Thopter Token (91). A didn't block Thopter Token (94). A assigned Myr Quadropod (13), Turtleshell Changeling (9) and Alandra, Sky Dreamer (40) to block Brass Man (48). A didn't block Ornithopter of Paradise (80). A assigned Stonybrook Banneret (21), Karfell Harbinger (4) and Turtleshell Changeling (8) to block Sai, Master Thopterist (81). A assigned Deranged Assistant (3) and Turtleshell Changeling (7) to block Etherium Sculptor (76).
+15	B's Declare Blockers Step	ZONE_CHANGE	Mycosynth Wellspring (78) was put into Graveyard from Battlefield.
+15	B's Declare Blockers Step	ZONE_CHANGE	Brass Man (48) was put into Graveyard from Battlefield.
+15	B's Declare Blockers Step	STACK_ADD	B activated Sai, Master Thopterist
+15	B's Declare Blockers Step	STACK_ADD	B triggered Mycosynth Wellspring
+15	B's Declare Blockers Step	STACK_ADD	B cast Alexi's Cloak targeting [Ornithopter of Paradise (80)]
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 2 combat damage to A.
+15	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 2 combat damage to A.
+15	B's Combat Damage Step	DAMAGE	Thopter Token (91) deals 2 combat damage to A.
+15	B's Combat Damage Step	DAMAGE	Thopter Token (94) deals 2 combat damage to A.
+15	B's Combat Damage Step	DAMAGE	Ornithopter of Paradise (80) deals 1 combat damage to A.
+15	B's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 1 damage to Stonybrook Banneret (21).
+15	B's Combat Damage Step	DAMAGE	Etherium Sculptor (76) deals 1 damage to Deranged Assistant (3).
+15	B's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 damage to Sai, Master Thopterist (81).
+15	B's Combat Damage Step	DAMAGE	Karfell Harbinger (4) deals 2 damage to Sai, Master Thopterist (81).
+15	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (8) deals 1 damage to Sai, Master Thopterist (81).
+15	B's Combat Damage Step	DAMAGE	Deranged Assistant (3) deals 1 damage to Etherium Sculptor (76).
+15	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (7) deals 1 damage to Etherium Sculptor (76).
+15	B's Combat Damage Step	LIFE	Life: A 7 > -2

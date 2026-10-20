@@ -1,0 +1,4 @@
+  card=Aquamoeba games_seen=8 casts=15 activations=0
+  card=Turtleshell Changeling games_seen=5 casts=8 activations=4
+  card=Myr Quadropod games_seen=9 casts=15 activations=2
+RESULT	s008-code	A=1	B=9	draw=0	avgTurns=17.1

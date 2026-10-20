@@ -38,6 +38,15 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
     blocker with it), compared with about 0 at baseline.
   - Left to check: gang blocks. A switch that completes a group block was not taken, possibly a kill of the enemy
     commander. Also more logging (object ids, mana, kills).
+- [ ] **008, gang blocks in pump decisions**: Written, needs testing.
+  - Where: `ComputerUtilCard.shouldPumpCard`, the blocker branch (around line 1663-1675). Patch:
+    `patches/008-pump-gang-block.patch`.
+  - When deciding whether to pump (or switch) a blocker, count the other blockers' damage too, so "my pump completes a
+    group block's kill" is seen.
+  - Shared by every pump spell and ability, so it needs a regression sim on ordinary decks with pump spells, plus a
+    controlled gang-block test.
+  - The 10-game test was inconclusive: no gang block came up.
+  - Kept separate from 005, which works without it. 005 gets better with it.
 - [ ] **006, Fog count includes Effect-based Fogs**: Tested, no effect; parked.
   - Where: `FogAi.java:116-133`. In the A/B test it changed nothing measurable.
   - It only matters when the AI holds 3 or more Fogs and isn't in danger, which only a deck built around Fogs would

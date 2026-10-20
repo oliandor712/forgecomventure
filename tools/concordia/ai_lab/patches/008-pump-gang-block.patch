@@ -1,0 +1,26 @@
+# 008-pump-gang-block: ComputerUtilCard.shouldPumpCard counts the other blockers of a gang block (forge-ai CODE patch, NOT applied)
+# Why (main-session review of s005, gap A): when the pumped creature is a BLOCKER, the simulated "pumpedCombat" contained
+# only the pumped blocker per attacker, so the co-blockers' damage was dropped and shouldPumpCard never saw that
+# "my pumped blocker + the other blockers kill the attacker" (e.g. a switched Myr Quadropod in a 3-creature block on Sai).
+# Change: ComputerUtilCard.java, blocker branch of the "combat trickery" simulation: add combat.getBlockers(a) (except the
+# pumped creature) to pumpedCombat. Generic: helps every Pump/PumpAll/CountersPut user of shouldPumpCard (wider blast radius
+# than 005; needs a regression sim before it is proposed).
+# Test (s008, same switch-heavy deck as s005, 10 games, equal life 20): 3 switch activations, all declare blockers (vs 7 for
+# 005 v3 in s005); casts 38. Not conclusive: too few activations, no controlled gang-block scenario yet.
+diff --git a/forge-ai/src/main/java/forge/ai/ComputerUtilCard.java b/forge-ai/src/main/java/forge/ai/ComputerUtilCard.java
+index 4b0d9914..6be220f2 100644
+--- a/forge-ai/src/main/java/forge/ai/ComputerUtilCard.java
++++ b/forge-ai/src/main/java/forge/ai/ComputerUtilCard.java
+@@ -1668,6 +1668,12 @@ public class ComputerUtilCard {
+                 for (Card a : opposing) {
+                     pumpedCombat.addAttacker(a, ai);
+                     pumpedCombat.addBlocker(a, pumped);
++                    // gang block: the other blockers of this attacker still deal their damage
++                    for (Card other : combat.getBlockers(a)) {
++                        if (!other.equals(c)) {
++                            pumpedCombat.addBlocker(a, other);
++                        }
++                    }
+                 }
+                 if (ComputerUtilCombat.blockerWouldBeDestroyed(ai, pumped, pumpedCombat)) {
+                     pumpedWillDie = true;

@@ -38,7 +38,8 @@ public class AiLabSim {
                 if (e.type() == forge.game.GameLogEntryType.PHASE) phase = m;
                 boolean mention = false; for (String w : ws) if (m.contains(w)) mention = true;
                 boolean ctx = hot.contains(turn) && (e.type() == forge.game.GameLogEntryType.PHASE || e.type() == forge.game.GameLogEntryType.TURN
-                    || e.type() == forge.game.GameLogEntryType.COMBAT || e.type() == forge.game.GameLogEntryType.DAMAGE || e.type() == forge.game.GameLogEntryType.LIFE);
+                    || e.type() == forge.game.GameLogEntryType.COMBAT || e.type() == forge.game.GameLogEntryType.DAMAGE || e.type() == forge.game.GameLogEntryType.LIFE
+                    || e.type() == forge.game.GameLogEntryType.ZONE_CHANGE || e.type() == forge.game.GameLogEntryType.STACK_ADD);
                 if (mention || ctx) sb.append(turn).append('\t').append(phase.replace('\t', ' ')).append('\t').append(e.type()).append(mention ? "*" : "").append('\t').append(m.replace('\n', ' ')).append('\n');
             }
             java.nio.file.Files.createDirectories(java.nio.file.Paths.get(dir));
