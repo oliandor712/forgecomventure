@@ -35,3 +35,4 @@ STANDING INSTRUCTION (user, 2026-10-20): each hourly wake is time-boxed to about
 2026-10-20T20:05Z shadow-mode test of 008: 37 blocker evaluations with co-blockers, 0 disagreements base vs 008. paused until 21:00Z (user, via main session); nothing running
 2026-10-20T20:10Z logged budget rule from main session; still paused until 21:00Z
 2026-10-20T20:17Z RESUME from main session (pause ended early); next wake 21:06Z; next step: per-event shadow/useful logging for switch+pump, then hand-built gang-block case for 008
+2026-10-20T20:50Z 008: code reading done (co-blocker damage enters via combat.getBlockers in attackerWouldBeDestroyed, ComputerUtilCombat:696-714; window narrow); hand-built case still to build
