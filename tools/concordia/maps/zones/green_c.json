@@ -1,0 +1,140 @@
+{
+  "color": "green",
+  "seed": 31,
+  "place": true,
+  "half_width": 4,
+  "tier_flag": "zoneTier.G",
+  "duelist_default": {
+    "enemyByTier": [
+      "Green Trainer T2",
+      "Green Trainer T3|Green Trainer T4",
+      "Green Trainer T5"
+    ]
+  },
+  "wild_by_tier": [
+    "Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1",
+    "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2",
+    "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"
+  ],
+  "minimap_color": "3f8f3f",
+  "zone": "green_c",
+  "about": "Green zone, section C: route C, an open field with roaming encounters, from inner pass 2 (south) to the zone town (north).",
+  "size": [
+    116,
+    56
+  ],
+  "world_x0": 37,
+  "world_y0": 449,
+  "centre_rows": [
+    0,
+    56
+  ],
+  "segments": [
+    [
+      [
+        58,
+        48
+      ],
+      [
+        58,
+        9
+      ]
+    ]
+  ],
+  "plazas": [
+    [
+      [
+        4,
+        6
+      ],
+      [
+        112,
+        52
+      ]
+    ]
+  ],
+  "obstacles": [
+    [
+      [
+        18,
+        18
+      ],
+      [
+        30,
+        27
+      ]
+    ],
+    [
+      [
+        80,
+        30
+      ],
+      [
+        93,
+        39
+      ]
+    ],
+    [
+      [
+        36,
+        36
+      ],
+      [
+        45,
+        43
+      ]
+    ],
+    [
+      [
+        72,
+        12
+      ],
+      [
+        80,
+        18
+      ]
+    ]
+  ],
+  "doors": {
+    "GreenPass2Far": {
+      "displayName": "Thornway",
+      "type": "cave",
+      "sprite": "Cave",
+      "map": "../Concordia/maps/map/green/pass_2.tmx",
+      "questTags": [
+        "Cave",
+        "BiomeGreen"
+      ],
+      "linkTo": "GreenPass2",
+      "linkEntry": 2,
+      "at": [
+        58,
+        48
+      ]
+    },
+    "GreenZoneTown": {
+      "displayName": "Elderbloom",
+      "type": "town",
+      "sprite": "ForestTown",
+      "map": "../Concordia/maps/map/green/zone_town.tmx",
+      "questTags": [
+        "Town",
+        "BiomeGreen"
+      ],
+      "at": [
+        58,
+        9
+      ]
+    }
+  },
+  "entrance": "GreenPass2Far",
+  "exit": "GreenZoneTown",
+  "duelists": [],
+  "tiles_per_duelist": 0,
+  "wild_mode": "field",
+  "wild_per_1000_tiles": 2.0,
+  "biome": "world/biomes/green_c.json",
+  "pngs": {
+    "world/structures/green_structures.atlas": "green_c.png"
+  }
+}

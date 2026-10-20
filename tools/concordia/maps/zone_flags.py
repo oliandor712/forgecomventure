@@ -25,6 +25,7 @@ NAME = {'W': 'White', 'U': 'Blue', 'B': 'Black', 'R': 'Red', 'G': 'Green'}
 ALLIES = {'W': 'UG', 'U': 'WB', 'B': 'UR', 'R': 'BG', 'G': 'RW'}
 ENEMIES = {'W': 'BR', 'U': 'RG', 'B': 'GW', 'R': 'WU', 'G': 'UB'}
 READY = {'G': 'GreenGatePass'}   # zones that exist: color -> the POI its gate leads into
+PORTAL_GATE_ENTRY = {'G': 1}     # the entry of that POI's map the gate lands at (its gate pass's near end)
 FRAGMENTS = ['Summit Key Fragment (White-Blue)', 'Summit Key Fragment (Blue-Black)', 'Summit Key Fragment (Black-Red)',
              'Summit Key Fragment (Red-Green)', 'Summit Key Fragment (Green-White)']
 FLAG_KEYS = re.compile(r'^(zoneOpen|zoneTier)\.')
@@ -147,9 +148,12 @@ def temple():
         block = m.group(1)
         new = re.sub(r'<property name="activeQuestFlag" value="[^"]*"/>',
                      '<property name="activeQuestFlag" value="%s"/>' % ('zoneOpen.' + c if c in READY else 'zoneReady.' + c), block)
-        new = re.sub(r'\n    <property name="gateTo" value="[^"]*"/>', '', new)
+        new = re.sub(r'\n    <property name="gate(To|Entry)" value="[^"]*"/>', '', new)
         if c in READY:
-            new = new.replace('<property name="sprite"', '<property name="gateTo" value="%s"/>\n    <property name="sprite"' % READY[c])
+            extra = '<property name="gateTo" value="%s"/>\n    ' % READY[c]
+            if c in PORTAL_GATE_ENTRY:
+                extra += '<property name="gateEntry" value="%d"/>\n    ' % PORTAL_GATE_ENTRY[c]
+            new = new.replace('<property name="sprite"', extra + '<property name="sprite"')
         s = s.replace(block, new)
     guards = ''
     for c, (x, y) in GUARDS.items():

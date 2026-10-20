@@ -1,0 +1,252 @@
+{
+  "color": "green",
+  "seed": 31,
+  "place": true,
+  "half_width": 4,
+  "tier_flag": "zoneTier.G",
+  "duelist_default": {
+    "enemyByTier": [
+      "Green Trainer T2",
+      "Green Trainer T3|Green Trainer T4",
+      "Green Trainer T5"
+    ]
+  },
+  "wild_by_tier": [
+    "Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1",
+    "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2",
+    "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"
+  ],
+  "minimap_color": "3f8f3f",
+  "zone": "green_b",
+  "about": "Green zone, section B: route B, a corridor west to east with five side paths to clearings; four clearings hold random dungeons.",
+  "size": [
+    170,
+    40
+  ],
+  "world_x0": 10,
+  "world_y0": 387,
+  "centre_rows": [
+    0,
+    40
+  ],
+  "segments": [
+    [
+      [
+        8,
+        20
+      ],
+      [
+        162,
+        20
+      ]
+    ],
+    [
+      [
+        36,
+        20
+      ],
+      [
+        36,
+        6
+      ]
+    ],
+    [
+      [
+        66,
+        20
+      ],
+      [
+        66,
+        34
+      ]
+    ],
+    [
+      [
+        96,
+        20
+      ],
+      [
+        96,
+        6
+      ]
+    ],
+    [
+      [
+        126,
+        20
+      ],
+      [
+        126,
+        34
+      ]
+    ],
+    [
+      [
+        150,
+        20
+      ],
+      [
+        150,
+        6
+      ]
+    ]
+  ],
+  "plazas": [
+    [
+      [
+        28,
+        2
+      ],
+      [
+        45,
+        10
+      ]
+    ],
+    [
+      [
+        58,
+        31
+      ],
+      [
+        75,
+        38
+      ]
+    ],
+    [
+      [
+        88,
+        2
+      ],
+      [
+        105,
+        10
+      ]
+    ],
+    [
+      [
+        118,
+        31
+      ],
+      [
+        135,
+        38
+      ]
+    ],
+    [
+      [
+        142,
+        2
+      ],
+      [
+        159,
+        10
+      ]
+    ]
+  ],
+  "doors": {
+    "GreenPass1Far": {
+      "displayName": "Rootway",
+      "type": "cave",
+      "sprite": "Cave",
+      "map": "../Concordia/maps/map/green/pass_1.tmx",
+      "questTags": [
+        "Cave",
+        "BiomeGreen"
+      ],
+      "linkTo": "GreenPass1",
+      "linkEntry": 2,
+      "at": [
+        8,
+        20
+      ]
+    },
+    "GreenPass2": {
+      "displayName": "Thornway",
+      "type": "cave",
+      "sprite": "Cave",
+      "map": "../Concordia/maps/map/green/pass_2.tmx",
+      "questTags": [
+        "Cave",
+        "BiomeGreen"
+      ],
+      "at": [
+        162,
+        20
+      ]
+    },
+    "GreenGrove1": {
+      "displayName": "Fernhollow",
+      "type": "cave",
+      "sprite": "Cave",
+      "map": "../Concordia/maps/map/green/grove_1.tmx",
+      "questTags": [
+        "Cave",
+        "BiomeGreen"
+      ],
+      "at": [
+        36,
+        4
+      ]
+    },
+    "GreenGrove2": {
+      "displayName": "Mossden",
+      "type": "cave",
+      "sprite": "Cave",
+      "map": "../Concordia/maps/map/green/grove_2.tmx",
+      "questTags": [
+        "Cave",
+        "BiomeGreen"
+      ],
+      "at": [
+        66,
+        36
+      ]
+    },
+    "GreenGrove3": {
+      "displayName": "Bramblecrypt",
+      "type": "cave",
+      "sprite": "Cave",
+      "map": "../Concordia/maps/map/green/grove_3.tmx",
+      "questTags": [
+        "Cave",
+        "BiomeGreen"
+      ],
+      "at": [
+        126,
+        36
+      ]
+    },
+    "GreenGrove4": {
+      "displayName": "Oakhollow",
+      "type": "cave",
+      "sprite": "Cave",
+      "map": "../Concordia/maps/map/green/grove_4.tmx",
+      "questTags": [
+        "Cave",
+        "BiomeGreen"
+      ],
+      "at": [
+        150,
+        4
+      ]
+    }
+  },
+  "entrance": "GreenPass1Far",
+  "exit": "GreenPass2",
+  "duelists": [
+    {},
+    {},
+    {},
+    {},
+    {
+      "at": [
+        106,
+        383
+      ]
+    }
+  ],
+  "biome": "world/biomes/green_b.json",
+  "pngs": {
+    "world/structures/green_structures.atlas": "green_b.png"
+  }
+}

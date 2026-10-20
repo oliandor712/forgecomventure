@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="200">
+ <properties>
+  <property name="preventEscape" type="bool" value="false"/>
+ </properties>
+ <tileset firstgid="1" source="../../../../common/maps/tileset/main.tsx"/>
+ <tileset firstgid="10113" source="../../../../common/maps/tileset/buildings.tsx"/>
+ <layer id="1" name="Background" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt1DEOwCAIBVAHt17YS/WODl2MEQWET9Iw/MQ4+ASM7SmlZTLCvPVLhDnG41zOnpVL1eXhnmo83UM6m5WHdrWJcne2pxnpUna6ODfiTY/7CI/b85v7aP9kar1ztKbFHG5NTh9my9pdnY+oV+J69DrCRb8rZB//lA7OBA8n
+  </data>
+ </layer>
+ <layer id="2" name="Ground" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztlUEOwiAQRUfbhbBpE92r52hFr+JR1HsYL6KuPJcyKZNMKVhAF8bwk5/GannMHzoCZGX9np4zgK3sDKJvfm8iwtY7i6H5WsTaSfdvp9qt/q7Q11JbyTD2Y+5eL9RKDvfmY1NmWI+vjkMFcDQ+VeH7oPo3smPx3Hws7mUNsDJe1/H1U71lZH42d7/oHPr8xXBDagzhcr/LmnKOPS+pOfNaUdjrmKxTuFin611qItgpXMXOLK8Z35/QPn+SM+fGML/JJaY913zz6lMu9Rh5yKLzTf32ca+adTO+J3CJraw5T/MLubZTGD4XLF+82i7ZHsf+62jW0rOF6JvfH1Pj2Etrrc0/835lZWX9p16o1tqQ
+  </data>
+ </layer>
+ <layer id="3" name="Walls" width="30" height="30">
+  <properties>
+   <property name="spriteLayer" type="bool" value="true"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztk8ENgkAQReeICReDiRfbsAVirMTj2oPViD1YhD2oLchJJjJhWEYiuzN6cH/yskAIL5+dLWcAZeItu/zFL5zktfZzH3dJz6yckkPTfcwAqkBOWXjHTbOuiw63ANi3uJZL0b8nthH/Fr34DT+PeR8/Vl5KzZznvFs1vGOpha7f7svnABPqRaZ4tfqSl+ZY8mt76fyP9UUnodmX768E99KeWp9f7rTqy+eU8L3SOxpzNbVvrPfacBM4LOVrzj3C+wluNcTSl0gk/psnsoctEA==
+  </data>
+ </layer>
+ <objectgroup id="4" name="Objects">
+  <object id="1" name="way out" template="../../../../common/maps/obj/entry_down.tx" x="208" y="316" width="32" height="4">
+   <properties>
+    <property name="direction" value="up"/>
+    <property name="teleport" value="../Concordia/maps/map/green/zone_town.tmx"/>
+    <property name="teleportObjectId" value="60"/>
+    <property name="spawn" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="2" name="Green Warden" template="../../../../common/maps/obj/enemy.tx" type="enemy" x="216" y="144" width="16" height="16">
+   <properties>
+    <property name="enemy" value="Green Warden 1"/>
+    <property name="enemyByTier" value="Green Warden 1, Green Warden 2, Green Warden 3"/>
+    <property name="tierFlag" value="zoneTier.G"/>
+    <property name="dialog" value="[{&quot;text&quot;: &quot;The Green Warden waits at the head of the hall. \&quot;Show me what your colors can do.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Duel)&quot;, &quot;action&quot;: [{&quot;battleWithActorID&quot;: -1}]}, {&quot;name&quot;: &quot;(Not yet)&quot;}]}]"/>
+    <property name="defeatDialog" value="[{&quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colG&quot;}], &quot;text&quot;: &quot;The Warden kneels. \&quot;The Green Seal is yours. The gates of Red and White will open for you.\&quot;&quot;, &quot;action&quot;: [{&quot;advanceQuestFlag&quot;: &quot;seals&quot;}, {&quot;setQuestFlag&quot;: {&quot;key&quot;: &quot;zoneOpen.R&quot;, &quot;val&quot;: 1}}, {&quot;setQuestFlag&quot;: {&quot;key&quot;: &quot;zoneOpen.W&quot;, &quot;val&quot;: 1}}, {&quot;deleteMapObject&quot;: -1}], &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colW&quot;}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;seals&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 2}}], &quot;text&quot;: &quot;The Warden kneels. \&quot;The Green Seal is yours. That is three. The gates of Black and Red open now.\&quot;&quot;, &quot;action&quot;: [{&quot;advanceQuestFlag&quot;: &quot;seals&quot;}, {&quot;setQuestFlag&quot;: {&quot;key&quot;: &quot;zoneOpen.B&quot;, &quot;val&quot;: 1}}, {&quot;setQuestFlag&quot;: {&quot;key&quot;: &quot;zoneOpen.R&quot;, &quot;val&quot;: 1}}, {&quot;deleteMapObject&quot;: -1}], &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colU&quot;}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;seals&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 2}}], &quot;text&quot;: &quot;The Warden kneels. \&quot;The Green Seal is yours. That is three. The gates of Red and Green open now.\&quot;&quot;, &quot;action&quot;: [{&quot;advanceQuestFlag&quot;: &quot;seals&quot;}, {&quot;setQuestFlag&quot;: {&quot;key&quot;: &quot;zoneOpen.R&quot;, &quot;val&quot;: 1}}, {&quot;setQuestFlag&quot;: {&quot;key&quot;: &quot;zoneOpen.G&quot;, &quot;val&quot;: 1}}, {&quot;deleteMapObject&quot;: -1}], &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colB&quot;}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;seals&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 2}}], &quot;text&quot;: &quot;The Warden kneels. \&quot;The Green Seal is yours. That is three. The gates of Green and White open now.\&quot;&quot;, &quot;action&quot;: [{&quot;advanceQuestFlag&quot;: &quot;seals&quot;}, {&quot;setQuestFlag&quot;: {&quot;key&quot;: &quot;zoneOpen.G&quot;, &quot;val&quot;: 1}}, {&quot;setQuestFlag&quot;: {&quot;key&quot;: &quot;zoneOpen.W&quot;, &quot;val&quot;: 1}}, {&quot;deleteMapObject&quot;: -1}], &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colR&quot;}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;seals&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 2}}], &quot;text&quot;: &quot;The Warden kneels. \&quot;The Green Seal is yours. That is three. The gates of White and Blue open now.\&quot;&quot;, &quot;action&quot;: [{&quot;advanceQuestFlag&quot;: &quot;seals&quot;}, {&quot;setQuestFlag&quot;: {&quot;key&quot;: &quot;zoneOpen.W&quot;, &quot;val&quot;: 1}}, {&quot;setQuestFlag&quot;: {&quot;key&quot;: &quot;zoneOpen.U&quot;, &quot;val&quot;: 1}}, {&quot;deleteMapObject&quot;: -1}], &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colG&quot;, &quot;not&quot;: true}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;seals&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 2}, &quot;not&quot;: true}], &quot;text&quot;: &quot;The Warden kneels. \&quot;The Green Seal is yours.\&quot;&quot;, &quot;action&quot;: [{&quot;advanceQuestFlag&quot;: &quot;seals&quot;}, {&quot;deleteMapObject&quot;: -1}], &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}]"/>
+   </properties>
+  </object>
+  <object id="3" name="acolyte" template="../../../../common/maps/obj/enemy.tx" type="enemy" x="144" y="256" width="16" height="16">
+   <properties>
+    <property name="enemy" value="Green Grove Denizen 1"/>
+    <property name="enemyByTier" value="Green Grove Denizen 1, Green Grove Denizen 2, Green Grove Denizen 3"/>
+    <property name="tierFlag" value="zoneTier.G"/>
+   </properties>
+  </object>
+  <object id="4" name="acolyte" template="../../../../common/maps/obj/enemy.tx" type="enemy" x="288" y="256" width="16" height="16">
+   <properties>
+    <property name="enemy" value="Green Grove Denizen 1"/>
+    <property name="enemyByTier" value="Green Grove Denizen 1, Green Grove Denizen 2, Green Grove Denizen 3"/>
+    <property name="tierFlag" value="zoneTier.G"/>
+   </properties>
+  </object>
+  <object id="5" name="acolyte" template="../../../../common/maps/obj/enemy.tx" type="enemy" x="144" y="176" width="16" height="16">
+   <properties>
+    <property name="enemy" value="Green Grove Denizen 1"/>
+    <property name="enemyByTier" value="Green Grove Denizen 1, Green Grove Denizen 2, Green Grove Denizen 3"/>
+    <property name="tierFlag" value="zoneTier.G"/>
+   </properties>
+  </object>
+  <object id="6" name="acolyte" template="../../../../common/maps/obj/enemy.tx" type="enemy" x="288" y="176" width="16" height="16">
+   <properties>
+    <property name="enemy" value="Green Grove Denizen 1"/>
+    <property name="enemyByTier" value="Green Grove Denizen 1, Green Grove Denizen 2, Green Grove Denizen 3"/>
+    <property name="tierFlag" value="zoneTier.G"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

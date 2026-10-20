@@ -230,10 +230,8 @@
   "mergeCommonItems": true,
   "debugMenu": true,
   "hideItemSlot": true,
-  "waystoneStops": [
-    "Spawn",
-    "Mossgate"
-  ],
+  "poiPaths": false,
+  "waystoneStops": ["Spawn", "Mossgate", "GreenGateTown"],
   "tutorialLessons": {
     "flag": "raidersBeaten",
     "firstValue": 1,

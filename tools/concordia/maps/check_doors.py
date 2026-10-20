@@ -18,7 +18,7 @@ wall fires out in the open.
 
 Exit code 1 if any door has a problem. Run it after adding or moving a building, a door or a sub-map.
 """
-import base64, glob, os, struct, sys, zlib
+import base64, glob, json, os, struct, sys, zlib
 import xml.etree.ElementTree as ET
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -228,11 +228,71 @@ def check(src_path):
     return problems
 
 
+def pois():
+    return {p['name']: p for p in json.load(open(os.path.join(CONCORDIA, 'world', 'points_of_interest.json')))}
+
+
+def arrival_problems(dst_path, target, label):
+    dst = load(dst_path)
+    pos = arrival(target)
+    if pos is None:
+        return ['%s: entry %d has no direction' % (label, target['id'])]
+    box = (pos[0] + 4, pos[1], PLAYER - 6, PLAYER * 0.4)
+    out = []
+    if box[0] < 0 or box[1] < 0 or box[0] + box[2] > dst.w or box[1] + box[3] > dst.h:
+        out.append('%s: arrival next to entry %d is off the map' % (label, target['id']))
+    if any(overlap(box, r) for r in dst.solid):
+        out.append('%s: arrival next to entry %d is inside collision' % (label, target['id']))
+    return out
+
+
+def gate_problems(maps):
+    """gateTo doors and portals, and linked POIs: the POI exists, the map and entry they land at exist, and the spot
+    is free. gateEnter false lands on the world map (checked by mapsuite's door check instead)."""
+    out, data = [], pois()
+
+    def landing(poi, gmap, entry, label):
+        p = data.get(poi)
+        if p is None:
+            return ['%s: no POI named %s' % (label, poi)]
+        f = game_path(gmap or p['map'])
+        if not os.path.exists(f):
+            return ['%s: map %s not found' % (label, gmap or p['map'])]
+        m = load(f)
+        if entry:
+            t = m.objects.get(entry)
+            if t is None or t['type'] not in ('entry', 'portal'):
+                return ['%s: entry %d not found in %s' % (label, entry, os.path.basename(f))]
+        else:
+            spawns = [o for o in m.entries() if o['props'].get('spawn') == 'true'] or m.entries()
+            if not spawns:
+                return ['%s: %s has no entry to start at' % (label, os.path.basename(f))]
+            t = spawns[0]
+        return arrival_problems(f, t, label)
+    for f in maps:
+        m = load(f)
+        for e in m.entries():
+            g = e['props'].get('gateTo')
+            if not g:
+                continue
+            label = '%s: %s %d gateTo %s' % (os.path.relpath(f, CONCORDIA), e['type'], e['id'], g)
+            if e['props'].get('gateEnter') == 'false':
+                if g not in data:
+                    out.append('%s: no POI named %s' % (label, g))
+                continue
+            out += landing(g, e['props'].get('gateMap'), int(e['props'].get('gateEntry') or 0), label)
+    for name, p in data.items():
+        if p.get('linkTo'):
+            out += landing(p['linkTo'], p.get('linkMap'), int(p.get('linkEntry') or 0), 'POI %s linkTo %s' % (name, p['linkTo']))
+    return out
+
+
 def main():
     maps = [os.path.abspath(a) for a in sys.argv[1:]] or sorted(glob.glob(os.path.join(CONCORDIA, 'maps', '**', '*.tmx'), recursive=True))
     problems = []
     for m in maps:
         problems += check(m)
+    problems += gate_problems(maps)
     for p in problems:
         print('PROBLEM', p)
     print('%d maps checked, %d problems' % (len(maps), len(problems)))

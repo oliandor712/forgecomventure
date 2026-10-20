@@ -131,5 +131,106 @@
         "count": 8
       }
     ]
+  },
+  {
+    "name": "GreenCreatures",
+    "description": "Green Menagerie",
+    "spriteAtlas": "maps/tileset/buildings.atlas",
+    "sprite": "CreatureShop",
+    "rewards": [
+      {
+        "count": 8,
+        "cardTypes": [
+          "Creature"
+        ],
+        "colors": [
+          "green"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "GreenSpells",
+    "description": "Green Spells",
+    "spriteAtlas": "maps/tileset/buildings.atlas",
+    "sprite": "InstantShop",
+    "rewards": [
+      {
+        "count": 8,
+        "cardTypes": [
+          "Instant",
+          "Sorcery"
+        ],
+        "colors": [
+          "green"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "GreenEnchantments",
+    "description": "Green Charms",
+    "spriteAtlas": "maps/tileset/buildings.atlas",
+    "sprite": "EnchantmentShop",
+    "rewards": [
+      {
+        "count": 8,
+        "cardTypes": [
+          "Enchantment"
+        ],
+        "colors": [
+          "green"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "GreenBoosters",
+    "description": "Green Packs",
+    "spriteAtlas": "maps/tileset/buildings.atlas",
+    "sprite": "BoosterShop",
+    "rewards": [
+      {
+        "type": "cardPackShop",
+        "count": 8,
+        "colors": [
+          "green"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "GreenBasicLands",
+    "description": "Forest and Friends",
+    "spriteAtlas": "maps/tileset/buildings.atlas",
+    "sprite": "LandShop",
+    "unlimited": true,
+    "rewards": [
+      {
+        "count": 4,
+        "cardName": "Forest",
+        "sourceDeck": "decks/rewards/Fancy_Basics.dck"
+      },
+      {
+        "count": 1,
+        "cardName": "Plains",
+        "sourceDeck": "decks/rewards/Fancy_Basics.dck"
+      },
+      {
+        "count": 1,
+        "cardName": "Island",
+        "sourceDeck": "decks/rewards/Fancy_Basics.dck"
+      },
+      {
+        "count": 1,
+        "cardName": "Swamp",
+        "sourceDeck": "decks/rewards/Fancy_Basics.dck"
+      },
+      {
+        "count": 1,
+        "cardName": "Mountain",
+        "sourceDeck": "decks/rewards/Fancy_Basics.dck"
+      }
+    ]
   }
 ]

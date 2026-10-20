@@ -1,0 +1,65 @@
+{
+  "startPointX": 0.197917,
+  "startPointY": 0.082609,
+  "noiseWeight": 0.0,
+  "distWeight": 0.6,
+  "name": "green_c",
+  "width": 0.241667,
+  "height": 0.121739,
+  "color": "3f8f3f",
+  "spriteNames": [],
+  "pointsOfInterest": [
+    "GreenPass2Far",
+    "GreenZoneTown"
+  ],
+  "structures": [
+    {
+      "fixed": true,
+      "x": 0.5,
+      "y": 0.5,
+      "width": 1.0,
+      "height": 1.0,
+      "N": 2,
+      "sourcePath": "world/structures/models/green_c.png",
+      "maskPath": "world/structures/masks/fill.png",
+      "structureAtlasPath": "world/structures/green_structures.atlas",
+      "mappingInfo": [
+        {
+          "name": "tree",
+          "color": "008000",
+          "collision": true
+        },
+        {
+          "name": "tree5",
+          "color": "006000",
+          "collision": true
+        },
+        {
+          "name": "tree3",
+          "color": "604020",
+          "collision": true
+        },
+        {
+          "name": "tree4",
+          "color": "806040",
+          "collision": true
+        }
+      ]
+    }
+  ],
+  "tilesetAtlas": "world/tilesets/terrain.atlas",
+  "tilesetName": "Green",
+  "terrain": [
+    {
+      "spriteName": "Green_1",
+      "max": 0.2,
+      "resolution": 10
+    },
+    {
+      "spriteName": "Green_2",
+      "min": 0.8,
+      "max": 1,
+      "resolution": 10
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "color": "green",
+  "seed": 31,
+  "place": true,
+  "half_width": 4,
+  "tier_flag": "zoneTier.G",
+  "duelist_default": {
+    "enemyByTier": [
+      "Green Trainer T2",
+      "Green Trainer T3|Green Trainer T4",
+      "Green Trainer T5"
+    ]
+  },
+  "wild_by_tier": [
+    "Green Thornling T1|Green Grove Sprite T1|Green Moss Bear T1",
+    "Green Thornling T2|Green Grove Sprite T2|Green Moss Bear T2",
+    "Green Thornling T4|Green Grove Sprite T4|Green Moss Bear T4"
+  ],
+  "minimap_color": "3f8f3f",
+  "zone": "green_a",
+  "about": "Green zone, section A: the gate town's pocket and route A, one winding maze path to inner pass 1 (OVERWORLD.md \u00a74.3).",
+  "size": [
+    120,
+    60
+  ],
+  "world_x0": 30,
+  "world_y0": 339,
+  "centre_rows": [
+    0,
+    46
+  ],
+  "segments": [
+    [
+      [
+        60,
+        46
+      ],
+      [
+        60,
+        38
+      ]
+    ],
+    [
+      [
+        60,
+        38
+      ],
+      [
+        108,
+        38
+      ]
+    ],
+    [
+      [
+        108,
+        38
+      ],
+      [
+        108,
+        8
+      ]
+    ],
+    [
+      [
+        108,
+        8
+      ],
+      [
+        12,
+        8
+      ]
+    ],
+    [
+      [
+        12,
+        8
+      ],
+      [
+        12,
+        22
+      ]
+    ],
+    [
+      [
+        12,
+        22
+      ],
+      [
+        84,
+        22
+      ]
+    ],
+    [
+      [
+        60,
+        38
+      ],
+      [
+        24,
+        38
+      ]
+    ]
+  ],
+  "plazas": [
+    [
+      [
+        44,
+        46
+      ],
+      [
+        77,
+        58
+      ]
+    ]
+  ],
+  "doors": {
+    "GreenGateTown": {
+      "displayName": "Rootgate",
+      "type": "town",
+      "sprite": "ForestTown",
+      "map": "../Concordia/maps/map/green/gate_town.tmx",
+      "questTags": [
+        "Town",
+        "BiomeGreen"
+      ],
+      "at": [
+        58,
+        53
+      ]
+    },
+    "GreenGatePass": {
+      "displayName": "Briar Pass",
+      "type": "cave",
+      "sprite": "Cave",
+      "map": "../Concordia/maps/map/green/gate_pass.tmx",
+      "questTags": [
+        "Cave",
+        "BiomeGreen"
+      ],
+      "at": [
+        70,
+        51
+      ]
+    },
+    "GreenPass1": {
+      "displayName": "Rootway",
+      "type": "cave",
+      "sprite": "Cave",
+      "map": "../Concordia/maps/map/green/pass_1.tmx",
+      "questTags": [
+        "Cave",
+        "BiomeGreen"
+      ],
+      "at": [
+        86,
+        22
+      ]
+    }
+  },
+  "entrance": "GreenGateTown",
+  "exit": "GreenPass1",
+  "duelists": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ],
+  "biome": "world/biomes/green_a.json",
+  "pngs": {
+    "world/structures/green_structures.atlas": "green_a.png"
+  }
+}

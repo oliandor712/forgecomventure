@@ -21,9 +21,19 @@ public class PlacedEnemyData {
         public float y;
     }
 
-    /** The enemy name for this spawn: a random pick from enemies, else enemy. */
+    public String[] enemyByTier;    //if set with tierFlag: the entry for the flag's value (1 = first; out of range = nearest end),
+                                    //each entry one name or several separated by "|" (a random one each spawn)
+    public String tierFlag;         //quest flag that picks the tier, for example zoneTier.G
+
+    /** The enemy name for this spawn: by tier (enemyByTier + tierFlag), else a random pick from enemies, else enemy. */
     public String pickEnemy() {
-        return enemies != null && enemies.length > 0 ? enemies[forge.util.MyRandom.getRandom().nextInt(enemies.length)] : enemy;
+        java.util.Random random = forge.util.MyRandom.getRandom();
+        if (enemyByTier != null && enemyByTier.length > 0 && tierFlag != null && !tierFlag.isEmpty()) {
+            int tier = Math.max(1, Math.min(enemyByTier.length, forge.adventure.util.Current.player().getQuestFlag(tierFlag)));
+            String[] names = enemyByTier[tier - 1].split("\\|");
+            return names[random.nextInt(names.length)].trim();
+        }
+        return enemies != null && enemies.length > 0 ? enemies[random.nextInt(enemies.length)] : enemy;
     }
 
     /** The spot for this spawn, in world tiles: a random pick from spots, else x, y. */

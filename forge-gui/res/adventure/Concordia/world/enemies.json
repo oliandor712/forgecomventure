@@ -748,5 +748,767 @@
   "scale": 1.0,
   "life": 30,
   "rewards": []
+ },
+ {
+  "name": "Green Trainer T2",
+  "sprite": "sprites/enemy/humanoid/elf/druid.atlas",
+  "deck": [
+   "decks/tier2/T2_BG_Grakmaw.dck",
+   "decks/tier2/T2_G_Mirri.dck",
+   "decks/tier2/T2_G_Rishkar.dck",
+   "decks/tier2/T2_RG_Halana.dck",
+   "decks/tier2/T2_UG_Moritte.dck",
+   "decks/tier2/T2_WG_Bess.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 20,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 140
+   },
+   {
+    "type": "shards",
+    "count": 3
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Green Trainer T3",
+  "sprite": "sprites/enemy/humanoid/elf/shaman.atlas",
+  "deck": [
+   "decks/tier3/T3_BG_Gitrog.dck",
+   "decks/tier3/T3_BRG_Coram.dck",
+   "decks/tier3/T3_GW_Sigarda.dck",
+   "decks/tier3/T3_G_Gargos.dck",
+   "decks/tier3/T3_RG_Zilortha.dck",
+   "decks/tier3/T3_UG_Vannifar.dck",
+   "decks/tier3/T3_WRG_Rith.dck",
+   "decks/tier3/T3_WUG_Falco.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 25,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 180
+   },
+   {
+    "type": "shards",
+    "count": 4
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Green Trainer T4",
+  "sprite": "sprites/enemy/humanoid/elf/hunter_2.atlas",
+  "deck": [
+   "decks/tier4/T4_BG_Ygra.dck",
+   "decks/tier4/T4_G_Kaysa.dck",
+   "decks/tier4/T4_RG_Anzrag.dck",
+   "decks/tier4/T4_UBG_Damia.dck",
+   "decks/tier4/T4_UG_Uro.dck",
+   "decks/tier4/T4_URG_Flubs.dck",
+   "decks/tier4/T4_WBG_Necrobloom.dck",
+   "decks/tier4/T4_WG_Karametra.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 25,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 220
+   },
+   {
+    "type": "shards",
+    "count": 5
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Green Trainer T5",
+  "sprite": "sprites/enemy/humanoid/elf/hunter_2.atlas",
+  "deck": [
+   "decks/tier5/T5_BG_Vraska.dck",
+   "decks/tier5/T5_BRG_Disa.dck",
+   "decks/tier5/T5_G_Vorinclex.dck",
+   "decks/tier5/T5_RG_Mina.dck",
+   "decks/tier5/T5_UG_Kruphix.dck",
+   "decks/tier5/T5_WG_Trostani.dck",
+   "decks/tier5/T5_WRG_Gahiji.dck",
+   "decks/tier5/T5_WUG_Bumbleflower.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 260
+   },
+   {
+    "type": "shards",
+    "count": 6
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Green Thornling T1",
+  "sprite": "sprites/enemy/plant/hiddenbush.atlas",
+  "deck": [
+   "decks/tier1/T1_G_Dwynen.dck",
+   "decks/tier1/T1_G_Goreclaw.dck",
+   "decks/tier1/T1_G_Renata.dck",
+   "decks/tier1/T1_G_Ruxa.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 10,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Grove Sprite T1",
+  "sprite": "sprites/enemy/fey/pixie_2.atlas",
+  "deck": [
+   "decks/tier1/T1_G_Dwynen.dck",
+   "decks/tier1/T1_G_Goreclaw.dck",
+   "decks/tier1/T1_G_Renata.dck",
+   "decks/tier1/T1_G_Ruxa.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 10,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Moss Bear T1",
+  "sprite": "sprites/enemy/beast/bear/bear.atlas",
+  "deck": [
+   "decks/tier1/T1_G_Dwynen.dck",
+   "decks/tier1/T1_G_Goreclaw.dck",
+   "decks/tier1/T1_G_Renata.dck",
+   "decks/tier1/T1_G_Ruxa.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 10,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Thornling T2",
+  "sprite": "sprites/enemy/plant/hiddenbush.atlas",
+  "deck": [
+   "decks/tier2/T2_BG_Grakmaw.dck",
+   "decks/tier2/T2_G_Mirri.dck",
+   "decks/tier2/T2_G_Rishkar.dck",
+   "decks/tier2/T2_RG_Halana.dck",
+   "decks/tier2/T2_UG_Moritte.dck",
+   "decks/tier2/T2_WG_Bess.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 15,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Grove Sprite T2",
+  "sprite": "sprites/enemy/fey/pixie_2.atlas",
+  "deck": [
+   "decks/tier2/T2_BG_Grakmaw.dck",
+   "decks/tier2/T2_G_Mirri.dck",
+   "decks/tier2/T2_G_Rishkar.dck",
+   "decks/tier2/T2_RG_Halana.dck",
+   "decks/tier2/T2_UG_Moritte.dck",
+   "decks/tier2/T2_WG_Bess.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 15,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Moss Bear T2",
+  "sprite": "sprites/enemy/beast/bear/bear.atlas",
+  "deck": [
+   "decks/tier2/T2_BG_Grakmaw.dck",
+   "decks/tier2/T2_G_Mirri.dck",
+   "decks/tier2/T2_G_Rishkar.dck",
+   "decks/tier2/T2_RG_Halana.dck",
+   "decks/tier2/T2_UG_Moritte.dck",
+   "decks/tier2/T2_WG_Bess.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 15,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Thornling T4",
+  "sprite": "sprites/enemy/plant/hiddenbush.atlas",
+  "deck": [
+   "decks/tier4/T4_BG_Ygra.dck",
+   "decks/tier4/T4_G_Kaysa.dck",
+   "decks/tier4/T4_RG_Anzrag.dck",
+   "decks/tier4/T4_UBG_Damia.dck",
+   "decks/tier4/T4_UG_Uro.dck",
+   "decks/tier4/T4_URG_Flubs.dck",
+   "decks/tier4/T4_WBG_Necrobloom.dck",
+   "decks/tier4/T4_WG_Karametra.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 20,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Grove Sprite T4",
+  "sprite": "sprites/enemy/fey/pixie_2.atlas",
+  "deck": [
+   "decks/tier4/T4_BG_Ygra.dck",
+   "decks/tier4/T4_G_Kaysa.dck",
+   "decks/tier4/T4_RG_Anzrag.dck",
+   "decks/tier4/T4_UBG_Damia.dck",
+   "decks/tier4/T4_UG_Uro.dck",
+   "decks/tier4/T4_URG_Flubs.dck",
+   "decks/tier4/T4_WBG_Necrobloom.dck",
+   "decks/tier4/T4_WG_Karametra.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 20,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Moss Bear T4",
+  "sprite": "sprites/enemy/beast/bear/bear.atlas",
+  "deck": [
+   "decks/tier4/T4_BG_Ygra.dck",
+   "decks/tier4/T4_G_Kaysa.dck",
+   "decks/tier4/T4_RG_Anzrag.dck",
+   "decks/tier4/T4_UBG_Damia.dck",
+   "decks/tier4/T4_UG_Uro.dck",
+   "decks/tier4/T4_URG_Flubs.dck",
+   "decks/tier4/T4_WBG_Necrobloom.dck",
+   "decks/tier4/T4_WG_Karametra.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 20,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Pass Keeper 1",
+  "sprite": "sprites/enemy/humanoid/elf/druid_2.atlas",
+  "deck": [
+   "decks/tier2/T2_BG_Grakmaw.dck",
+   "decks/tier2/T2_G_Mirri.dck",
+   "decks/tier2/T2_G_Rishkar.dck",
+   "decks/tier2/T2_RG_Halana.dck",
+   "decks/tier2/T2_UG_Moritte.dck",
+   "decks/tier2/T2_WG_Bess.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 22,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 200
+   },
+   {
+    "type": "deckCard",
+    "count": 2
+   }
+  ]
+ },
+ {
+  "name": "Green Pass Keeper 2",
+  "sprite": "sprites/enemy/humanoid/elf/druid_2.atlas",
+  "deck": [
+   "decks/tier4/T4_BG_Ygra.dck",
+   "decks/tier4/T4_G_Kaysa.dck",
+   "decks/tier4/T4_RG_Anzrag.dck",
+   "decks/tier4/T4_UBG_Damia.dck",
+   "decks/tier4/T4_UG_Uro.dck",
+   "decks/tier4/T4_URG_Flubs.dck",
+   "decks/tier4/T4_WBG_Necrobloom.dck",
+   "decks/tier4/T4_WG_Karametra.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 28,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 300
+   },
+   {
+    "type": "deckCard",
+    "count": 2
+   }
+  ]
+ },
+ {
+  "name": "Green Pass Keeper 3",
+  "sprite": "sprites/enemy/humanoid/elf/druid_2.atlas",
+  "deck": [
+   "decks/tier5/T5_BG_Vraska.dck",
+   "decks/tier5/T5_BRG_Disa.dck",
+   "decks/tier5/T5_G_Vorinclex.dck",
+   "decks/tier5/T5_RG_Mina.dck",
+   "decks/tier5/T5_UG_Kruphix.dck",
+   "decks/tier5/T5_WG_Trostani.dck",
+   "decks/tier5/T5_WRG_Gahiji.dck",
+   "decks/tier5/T5_WUG_Bumbleflower.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 32,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 350
+   },
+   {
+    "type": "deckCard",
+    "count": 2
+   }
+  ]
+ },
+ {
+  "name": "Green Grove Denizen 1",
+  "sprite": "sprites/enemy/humanoid/elf/elf_golgari.atlas",
+  "deck": [
+   "decks/tier2/T2_BG_Grakmaw.dck",
+   "decks/tier2/T2_G_Mirri.dck",
+   "decks/tier2/T2_G_Rishkar.dck",
+   "decks/tier2/T2_RG_Halana.dck",
+   "decks/tier2/T2_UG_Moritte.dck",
+   "decks/tier2/T2_WG_Bess.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 18,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 80
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Green Grove Denizen 2",
+  "sprite": "sprites/enemy/humanoid/elf/elf_golgari.atlas",
+  "deck": [
+   "decks/tier3/T3_BG_Gitrog.dck",
+   "decks/tier3/T3_BRG_Coram.dck",
+   "decks/tier3/T3_GW_Sigarda.dck",
+   "decks/tier3/T3_G_Gargos.dck",
+   "decks/tier3/T3_RG_Zilortha.dck",
+   "decks/tier3/T3_UG_Vannifar.dck",
+   "decks/tier3/T3_WRG_Rith.dck",
+   "decks/tier3/T3_WUG_Falco.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 24,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 100
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Green Grove Denizen 3",
+  "sprite": "sprites/enemy/humanoid/elf/elf_golgari.atlas",
+  "deck": [
+   "decks/tier5/T5_BG_Vraska.dck",
+   "decks/tier5/T5_BRG_Disa.dck",
+   "decks/tier5/T5_G_Vorinclex.dck",
+   "decks/tier5/T5_RG_Mina.dck",
+   "decks/tier5/T5_UG_Kruphix.dck",
+   "decks/tier5/T5_WG_Trostani.dck",
+   "decks/tier5/T5_WRG_Gahiji.dck",
+   "decks/tier5/T5_WUG_Bumbleflower.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 28,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 140
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Green Grove Guardian 1",
+  "sprite": "sprites/enemy/beast/bear/bear_large.atlas",
+  "deck": [
+   "decks/tier3/T3_BG_Gitrog.dck",
+   "decks/tier3/T3_BRG_Coram.dck",
+   "decks/tier3/T3_GW_Sigarda.dck",
+   "decks/tier3/T3_G_Gargos.dck",
+   "decks/tier3/T3_RG_Zilortha.dck",
+   "decks/tier3/T3_UG_Vannifar.dck",
+   "decks/tier3/T3_WRG_Rith.dck",
+   "decks/tier3/T3_WUG_Falco.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 24,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 220
+   },
+   {
+    "type": "shards",
+    "count": 6
+   },
+   {
+    "type": "deckCard",
+    "count": 2
+   }
+  ]
+ },
+ {
+  "name": "Green Grove Guardian 2",
+  "sprite": "sprites/enemy/beast/bear/bear_large.atlas",
+  "deck": [
+   "decks/tier4/T4_BG_Ygra.dck",
+   "decks/tier4/T4_G_Kaysa.dck",
+   "decks/tier4/T4_RG_Anzrag.dck",
+   "decks/tier4/T4_UBG_Damia.dck",
+   "decks/tier4/T4_UG_Uro.dck",
+   "decks/tier4/T4_URG_Flubs.dck",
+   "decks/tier4/T4_WBG_Necrobloom.dck",
+   "decks/tier4/T4_WG_Karametra.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 260
+   },
+   {
+    "type": "shards",
+    "count": 7
+   },
+   {
+    "type": "deckCard",
+    "count": 2
+   }
+  ]
+ },
+ {
+  "name": "Green Grove Guardian 3",
+  "sprite": "sprites/enemy/beast/bear/bear_large.atlas",
+  "deck": [
+   "decks/tier5/T5_BG_Vraska.dck",
+   "decks/tier5/T5_BRG_Disa.dck",
+   "decks/tier5/T5_G_Vorinclex.dck",
+   "decks/tier5/T5_RG_Mina.dck",
+   "decks/tier5/T5_UG_Kruphix.dck",
+   "decks/tier5/T5_WG_Trostani.dck",
+   "decks/tier5/T5_WRG_Gahiji.dck",
+   "decks/tier5/T5_WUG_Bumbleflower.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 35,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 300
+   },
+   {
+    "type": "shards",
+    "count": 8
+   },
+   {
+    "type": "deckCard",
+    "count": 2
+   }
+  ]
+ },
+ {
+  "name": "Green Warden 1",
+  "sprite": "sprites/enemy/humanoid/elf/nissa.atlas",
+  "deck": [
+   "decks/tier3/T3_BG_Gitrog.dck",
+   "decks/tier3/T3_BRG_Coram.dck",
+   "decks/tier3/T3_GW_Sigarda.dck",
+   "decks/tier3/T3_G_Gargos.dck",
+   "decks/tier3/T3_RG_Zilortha.dck",
+   "decks/tier3/T3_UG_Vannifar.dck",
+   "decks/tier3/T3_WRG_Rith.dck",
+   "decks/tier3/T3_WUG_Falco.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 400
+   },
+   {
+    "type": "shards",
+    "count": 10
+   },
+   {
+    "type": "deckCard",
+    "count": 3
+   }
+  ],
+  "boss": true
+ },
+ {
+  "name": "Green Warden 2",
+  "sprite": "sprites/enemy/humanoid/elf/nissa.atlas",
+  "deck": [
+   "decks/tier5/T5_BG_Vraska.dck",
+   "decks/tier5/T5_BRG_Disa.dck",
+   "decks/tier5/T5_G_Vorinclex.dck",
+   "decks/tier5/T5_RG_Mina.dck",
+   "decks/tier5/T5_UG_Kruphix.dck",
+   "decks/tier5/T5_WG_Trostani.dck",
+   "decks/tier5/T5_WRG_Gahiji.dck",
+   "decks/tier5/T5_WUG_Bumbleflower.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 35,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 400
+   },
+   {
+    "type": "shards",
+    "count": 10
+   },
+   {
+    "type": "deckCard",
+    "count": 3
+   }
+  ],
+  "boss": true
+ },
+ {
+  "name": "Green Warden 3",
+  "sprite": "sprites/enemy/humanoid/elf/nissa.atlas",
+  "deck": [
+   "decks/tier5/T5_BG_Vraska.dck",
+   "decks/tier5/T5_BRG_Disa.dck",
+   "decks/tier5/T5_G_Vorinclex.dck",
+   "decks/tier5/T5_RG_Mina.dck",
+   "decks/tier5/T5_UG_Kruphix.dck",
+   "decks/tier5/T5_WG_Trostani.dck",
+   "decks/tier5/T5_WRG_Gahiji.dck",
+   "decks/tier5/T5_WUG_Bumbleflower.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 40,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 400
+   },
+   {
+    "type": "shards",
+    "count": 10
+   },
+   {
+    "type": "deckCard",
+    "count": 3
+   }
+  ],
+  "boss": true
  }
 ]

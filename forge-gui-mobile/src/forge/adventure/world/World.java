@@ -626,7 +626,10 @@ public class World implements Disposable, SaveFileContent {
             }
             biomeIndex[0]++;
 
-            //reset terrain path to the next town
+            //reset terrain path to the next town (a plane with walled-off zones turns this off: the straight line would cut
+            //through walls and water, see ConfigData.poiPaths)
+            if (!Config.instance().getConfigData().poiPaths)
+                allPOIPathsToNextTown.clear();
             for (Pair<PointOfInterest, PointOfInterest> poiToTown : allPOIPathsToNextTown) {
                 futures.add(CompletableFuture.supplyAsync(()-> {
                     int startX = (int) poiToTown.getKey().getTilePosition(data.tileSize).x;

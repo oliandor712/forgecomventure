@@ -71,6 +71,7 @@
    <properties>
     <property name="activeQuestFlag" value="zoneOpen.G"/>
     <property name="gateTo" value="GreenGatePass"/>
+    <property name="gateEntry" value="1"/>
     <property name="sprite" value="sprites/portal.atlas"/>
     <property name="teleport" value=""/>
    </properties>

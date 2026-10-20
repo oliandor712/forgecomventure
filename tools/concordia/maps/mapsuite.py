@@ -26,7 +26,7 @@ What it does, in order:
     encounters, shared out by zone area, each with that zone's tiles as random spots and the wild pool as random
     types (PlacedEnemyData spots/enemies, re-rolled on every spawn). Zones can be pinned with "areas".
 """
-import json, math, os, random, sys
+import json, math, os, random, re, sys
 from collections import deque
 from PIL import Image
 
@@ -137,6 +137,11 @@ class Zone:
             for x in range(x0, x1):
                 for y in range(y0, y1):
                     self.open.add((x, y))
+        for (x0, y0), (x1, y1) in self.spec.get('obstacles', []):  # tree clumps left standing (landmarks in a field)
+            for x in range(x0, x1):
+                for y in range(y0, y1):
+                    self.open.discard((x, y))
+                    self.centre.discard((x, y))
         self.dist = {c: 0 for c in self.open}
         frontier = list(self.open)
         while frontier:
@@ -229,12 +234,25 @@ class Zone:
         return (w[0] - self.spec['world_x0'], self.spec['world_y0'] - w[1])
 
     def pois(self):
-        """POI doors in zone tiles, from points_of_interest.json offsets (relative to the biome, y up)."""
-        data = {p['name']: p for p in json.load(open(os.path.join(CONCORDIA, 'world', 'points_of_interest.json')))}
-        out = {}
-        for name in self.spec['pois']:
-            p = data[name]
-            out[name] = (round(self.W / 2 + p.get('offsetX', 0) * self.W), round(self.H / 2 - p.get('offsetY', 0) * self.H))
+        """POI doors in zone tiles: the spec's own "doors" (placed by this suite), and "pois" already in
+        points_of_interest.json (from their offsets, relative to the biome, y up)."""
+        out = {name: tuple(d['at']) for name, d in self.spec.get('doors', {}).items()}
+        if self.spec.get('pois'):
+            data = {p['name']: p for p in json.load(open(os.path.join(CONCORDIA, 'world', 'points_of_interest.json')))}
+            for name in self.spec['pois']:
+                p = data[name]
+                out[name] = (round(self.W / 2 + p.get('offsetX', 0) * self.W), round(self.H / 2 - p.get('offsetY', 0) * self.H))
+        return out
+
+    def door_problems(self):
+        """Each door needs open ground under it, and at its upper-left: leaving a dungeon with gateEnter false puts the
+        player one tile left and one up from the POI."""
+        out = []
+        for name, (x, y) in self.pois().items():
+            if (x, y) not in self.open:
+                out.append('%s at %s is not on open ground' % (name, (x, y)))
+            if (x - 1, y - 1) not in self.open:
+                out.append('%s at %s: the arrival tile up-left of it is not open' % (name, (x, y)))
         return out
 
     # ---------- 3. player pathing ----------
@@ -287,10 +305,12 @@ class Zone:
     def duelists(self):
         pois = list(self.pois().values())
         spec = self.spec.get('duelists', [])
-        n = len(spec) if spec else round(len(self.main) / self.spec.get('tiles_per_duelist', 34))
+        tpd = self.spec.get('tiles_per_duelist', 34)
+        n = len(spec) if spec else (round(len(self.main) / tpd) if tpd else 0)
         placed = []
         for i in range(n):
-            d = spec[i] if i < len(spec) else {}
+            d = dict(self.spec.get('duelist_default', {}))
+            d.update(spec[i] if i < len(spec) else {})
             if 'at' in d:
                 placed.append((d, self.to_zone(d['at'])))
                 continue
@@ -306,6 +326,8 @@ class Zone:
         threat = self.spec.get('wild_threat_range', 5)
         pois = list(self.pois().values())
         W, H = self.W, self.H
+        if self.spec.get('wild_mode') == 'field':
+            return self.field_wild()
         if self.spec.get('areas'):  # pinned areas: tiles at most 2 from the path inside each rectangle
             zones = []
             for (x0, y0), (x1, y1) in self.spec['areas']:
@@ -382,6 +404,44 @@ class Zone:
                 self.wild.append(part)
         return self.wild
 
+    def field_wild(self):
+        """Open-field encounters (a field section): every open tile away from the doors and the field's edge can be a
+        spot; the field is cut into as many regions as encounters (about wild_per_1000_tiles per 1000 open tiles), each
+        encounter roaming its own region."""
+        pois = list(self.pois().values())
+        cand = [c for c in sorted(self.open) if self.dist_to_wall(c) >= 3 and all(math.dist(c, p) >= 8 for p in pois)
+                and c[0] % 2 == 0 and c[1] % 2 == 0]  # every other tile is plenty of spots for a roaming encounter
+        k = self.spec.get('wild_count') or max(1, round(len(self.open) * self.spec.get('wild_per_1000_tiles', 2.0) / 1000))
+        k = min(k, len(cand))
+        # k-means from evenly spread starting points: compact regions of similar size
+        centres = [cand[int((i + 0.5) * len(cand) / k)] for i in range(k)]
+        for _ in range(12):
+            groups = [[] for _ in range(k)]
+            for c in cand:
+                groups[min(range(k), key=lambda i: (c[0] - centres[i][0]) ** 2 + (c[1] - centres[i][1]) ** 2)].append(c)
+            centres = [(sum(c[0] for c in g) / len(g), sum(c[1] for c in g) / len(g)) if g else centres[i]
+                       for i, g in enumerate(groups)]
+        self.zones = [g for g in groups if g]
+        self.wild = self.zones
+        return self.wild
+
+    def dist_to_wall(self, c):
+        """Steps from an open tile to the nearest wall (for field spots, away from the trees)."""
+        if not hasattr(self, '_wall_dist'):
+            self._wall_dist = {}
+            walls = [(x, y) for x in range(self.W) for y in range(self.H) if (x, y) not in self.open]
+            q = deque(walls)
+            for w in walls:
+                self._wall_dist[w] = 0
+            while q:
+                a = q.popleft()
+                for dx, dy in N8:
+                    n = (a[0] + dx, a[1] + dy)
+                    if 0 <= n[0] < self.W and 0 <= n[1] < self.H and n not in self._wall_dist:
+                        self._wall_dist[n] = self._wall_dist[a] + 1
+                        q.append(n)
+        return self._wall_dist.get(c, 0)
+
     @staticmethod
     def split(comp, max_len):
         xs, ys = [c[0] for c in comp], [c[1] for c in comp]
@@ -403,15 +463,26 @@ class Zone:
     def placed_enemies(self):
         tag = self.spec['zone']
         out = []
+        flag = self.spec.get('tier_flag')
         for d, c in self.placed_duelists:
             x, y = self.to_world(c)
-            out.append({'enemy': d['name'], 'zone': tag, 'x': x, 'y': y,
-                        'threatRange': d.get('threatRange', 5), 'pursueRange': d.get('pursueRange', 9), 'respawn': 'town'})
-        pool = self.spec['wild_pool']
+            e = {'enemy': d.get('name') or d['enemyByTier'][0].split('|')[0], 'zone': tag, 'x': x, 'y': y,
+                 'threatRange': d.get('threatRange', 5), 'pursueRange': d.get('pursueRange', 9), 'respawn': 'town'}
+            if d.get('enemyByTier'):
+                e['enemyByTier'], e['tierFlag'] = d['enemyByTier'], flag
+            out.append(e)
+        pool = self.spec.get('wild_pool', [])
+        by_tier = self.spec.get('wild_by_tier')
         for i, z in enumerate(self.wild):
             spots = [dict(zip(('x', 'y'), self.to_world(c))) for c in z]
-            out.append({'enemy': pool[i % len(pool)], 'enemies': pool, 'zone': tag, 'x': spots[0]['x'], 'y': spots[0]['y'],
-                        'spots': spots, 'threatRange': self.spec.get('wild_threat_range', 5), 'respawn': 'town'})
+            e = {'enemy': pool[i % len(pool)] if pool else by_tier[0].split('|')[0]}
+            if pool:
+                e['enemies'] = pool
+            e.update({'zone': tag, 'x': spots[0]['x'], 'y': spots[0]['y'], 'spots': spots,
+                      'threatRange': self.spec.get('wild_threat_range', 5), 'respawn': 'town'})
+            if by_tier:
+                e['enemyByTier'], e['tierFlag'] = by_tier, flag
+            out.append(e)
         return out
 
     def preview(self, path):
@@ -439,7 +510,7 @@ def write_world(zone, enemies):
     p = os.path.join(CONCORDIA, 'world', 'world.json')
     s = open(p).read()
     d = json.loads(s)
-    names = {e['name'] for e in zone.spec.get('duelists', [])} | set(zone.spec['wild_pool'])
+    names = {e['name'] for e in zone.spec.get('duelists', []) if 'name' in e} | set(zone.spec.get('wild_pool', []))
     keep = [e for e in d['placedEnemies'] if e.get('zone') != zone.spec['zone'] and e['enemy'] not in names]
 
     def fmt(e):
@@ -474,17 +545,66 @@ def ground(colors):
                {'spriteName': b + '_1', 'min': 0.9, 'max': 1, 'resolution': 10}]
 
 
+def world_size():
+    d = json.load(open(os.path.join(CONCORDIA, 'world', 'world.json')))
+    return d['width'], d['height']
+
+
 def write_biome(zone):
     """Replaces the "structures" block of the zone's biome file with the one for its layers, and for a color or
-    border zone also its ground (tilesetName and terrain). The colorless hub keeps its hand-set ground."""
+    border zone also its ground (tilesetName and terrain). The colorless hub keeps its hand-set ground.
+    With "place": true the suite owns the biome's placement too: it creates the file if needed, sets its position and
+    size from world_x0/world_y0 and the zone size, lists its doors as its POIs and adds it to world.json."""
     p = os.path.join(CONCORDIA, zone.spec['biome'])
-    d = json.load(open(p))
+    d = json.load(open(p)) if os.path.exists(p) else {}
+    if zone.spec.get('place'):
+        ww, wh = world_size()
+        top_row = (wh - 1) - zone.spec['world_y0']   # biomes are placed in array rows, top down
+        d.update({'startPointX': round((zone.spec['world_x0'] + zone.W / 2) / ww, 6),
+                  'startPointY': round((top_row + zone.H / 2) / wh, 6),
+                  'noiseWeight': 0.0, 'distWeight': 0.6, 'name': zone.spec['zone'],
+                  'width': round(zone.W / ww, 6), 'height': round(zone.H / wh, 6),
+                  'color': zone.spec.get('minimap_color', d.get('color', 'aeaeae')), 'spriteNames': d.get('spriteNames', []),
+                  'pointsOfInterest': list(zone.spec.get('doors', {}))})
+        wp = os.path.join(CONCORDIA, 'world', 'world.json')
+        s = open(wp).read()
+        if '"%s"' % zone.spec['biome'] not in s:
+            i = s.index('"biomesNames": [')
+            j = s.index('\n  ]', i)
+            s = s[:j] + ',\n    "%s"' % zone.spec['biome'] + s[j:]
+            json.loads(s)
+            open(wp, 'w').write(s)
     d['structures'] = zone.structures()
     colors = zone.colors()
     if all(c in COLORED for c in colors):
         d['tilesetAtlas'] = 'world/tilesets/terrain.atlas'
         d['tilesetName'], d['terrain'] = ground(colors)
     open(p, 'w').write(json.dumps(d, indent=2) + '\n')
+
+
+def write_pois(zone):
+    """Adds or replaces the zone's doors in points_of_interest.json, one line each, offsets from their tiles."""
+    p = os.path.join(CONCORDIA, 'world', 'points_of_interest.json')
+    s = open(p).read()
+    for name, d in zone.spec.get('doors', {}).items():
+        x, y = d['at']
+        e = {'name': name}
+        e.update({k: v for k, v in d.items() if k != 'at'})
+        e.setdefault('count', 1)
+        e.setdefault('spriteAtlas', '../common/maps/tileset/buildings.atlas')
+        e.setdefault('radiusFactor', 0)
+        e['offsetX'] = round((x - zone.W / 2) / zone.W, 4)
+        e['offsetY'] = round((zone.H / 2 - y) / zone.H, 4)
+        line = '  ' + json.dumps(e, ensure_ascii=False)
+        m = re.search(r'^  \{"name": "%s".*$' % re.escape(name), s, re.M)
+        if m:
+            s = s[:m.start()] + line.rstrip(',') + (',' if s[m.end() - 1] == ',' else '') + s[m.end():]
+        else:
+            s = s.rstrip()
+            assert s.endswith('}\n]') or s.endswith('}]'), 'unexpected end of points_of_interest.json'
+            s = s[:s.rindex('}') + 1] + ',\n' + line + '\n]\n'
+        json.loads(s)
+    open(p, 'w').write(s)
 
 
 def main():
@@ -505,6 +625,8 @@ def main():
     print('%s: %dx%d, %d open tiles, main route %d tiles' % (spec['zone'], z.W, z.H, len(z.open), len(route)))
     print('  duelists: ' + ', '.join('%s at %s' % (d.get('name', '?'), z.to_world(c)) for d, c in z.placed_duelists))
     print('  wild encounters: %d, spots each %s' % (len(z.wild), [len(w) for w in z.wild]))
+    for problem in z.door_problems():
+        print('  PROBLEM ' + problem)
     prev = os.path.join(preview_dir, spec['zone'] + '_preview.png')
     z.preview(prev)
     print('  preview: ' + prev)
@@ -512,6 +634,8 @@ def main():
         models = os.path.join(CONCORDIA, 'world', 'structures', 'models')
         for atlas, img in z.layers.items():
             img.save(os.path.join(models, spec['pngs'][atlas]))
+        if spec.get('doors'):
+            write_pois(z)
         if spec.get('entrance'):
             write_world(z, z.placed_enemies())
         write_biome(z)
