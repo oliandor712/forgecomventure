@@ -1,0 +1,3 @@
+# 003 white Fog timing run (patched only)
+Deck lab003_whitefog_40 (Adeline, 40 cards, 2 copies each of Endure, Harsh Justice, Shield Dancer; flags removed in a scratch assets copy) vs opp_red_40, equal life 20, 10 games, 150 s cap. Per-game `*.tsv`: turn, phase, entry type (`*` = line mentions a watched card), message; for turns with a watched-card line, the turn's phase/combat/damage/life lines are included as context.
+Result: A=10 B=0, avg 15.0 turns. Endure 0 casts, Shield Dancer 5 casts (all as a creature, postcombat main), Harsh Justice 0 casts. Earlier run of the same setup (no logs): A=4 B=6, avg 24.1 turns, Endure 15 casts, Shield Dancer 11 casts + 19 activations. The two runs differ a lot: here the AI was far ahead and never needed Endure.

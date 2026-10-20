@@ -1,3 +1,4 @@
+STANDING INSTRUCTION (user, 2026-10-20): after every test, send results to the main session (session_01SmNeweiyRBavDSUetnsUjF via send_message) and request analysis of the AI decisions, logic and results by match phase and situation for the flagged cards. Use AiLabSim -Dlogdir=tools/concordia/ai_lab/results/<test> so it has phase-annotated logs.
 STANDING INSTRUCTION (user, 2026-10-20): from the next test on, shrunk test decks are 40 cards (minideck.py --size 40) to limit decking; still 10 games per condition, equal life 20. Experiments 001-002 used 30 cards.
 STANDING INSTRUCTION (user, 2026-10-20): each test runs 10 games per condition (was 4), 150 s cap per game, equal life 20 for 30-card decks.
 STANDING INSTRUCTION (user, 2026-10-20): 30-card test games use 20 life, equal on both sides (not 40 or 15). Applies to all AI lab sims with shrunk decks.
@@ -18,3 +19,4 @@ STANDING INSTRUCTION (user, 2026-10-20): each hourly wake is time-boxed to about
 2026-10-20T16:30Z recorded rule: 40-card test decks from the next test on
 2026-10-20T16:48Z exp 003 (white Fog, 40-card decks, 10 games): Endure 15 casts, Shield Dancer 11 casts/19 act, Harsh Justice 0 (never cast); patch 003 saved without Harsh Justice; next: read FogAi.canPlay for Harsh Justice, check cast timing
 2026-10-20T16:50Z read pilot data (pilot/2026-10-20_exp001_mirror): next check for patch 001 = were Turtleshell/Quadropod activations in combat only (pilot rule: never switch outside combat; my runs saw up to 12 activations/game) [DISCARDED (user): pilot data deleted; the in-combat-only check stays as my own idea, not from the pilot]
+2026-10-20T17:20Z STANDING (user): after every test, send results to the main session and ask it to analyse the AI's decisions/logic/results by match phase and situation for flagged cards. AiLabSim -Dlogdir writes per-game phase-annotated logs to ai_lab/results/. Sent for exp 001-003 + 003-timing.

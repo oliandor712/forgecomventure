@@ -16,6 +16,35 @@ import java.util.concurrent.*;
 // Prints "RESULT label A=wins B=wins draw=timeouts avgTurns=...". Build with javac against the classpath of a compiled
 // forge-gui-mobile reactor (mvn dependency:build-classpath) plus gdx-backend-headless and gdx-platform natives-desktop.
 public class AiLabSim {
+    // -Dlogdir=DIR: per game, write DIR/<label>_g<N>.tsv with every watched-card log line plus, for each turn where one
+    // occurred, that turn's phase/combat/damage/life lines. Columns: turn, phase, type, message. For analysis of when and
+    // why the AI used a flagged card.
+    static void writeCtx(Game game, String watch, String dir, String label, int g) {
+        if (dir.isEmpty() || watch.isEmpty()) return;
+        try {
+            String[] ws = watch.split(",");
+            List<forge.game.GameLogEntry> es = game.getGameLog().getAllEntries();
+            Set<Integer> hot = new HashSet<>();
+            int turn = 0;
+            for (forge.game.GameLogEntry e : es) {
+                if (e.type() == forge.game.GameLogEntryType.TURN) { java.util.regex.Matcher m = java.util.regex.Pattern.compile("Turn:? ?(\\d+)|Turn (\\d+)").matcher(e.message()); if (m.find()) turn = Integer.parseInt(m.group(1) != null ? m.group(1) : m.group(2)); }
+                for (String w : ws) if (e.message().contains(w)) hot.add(turn);
+            }
+            StringBuilder sb = new StringBuilder();
+            String phase = ""; turn = 0;
+            for (forge.game.GameLogEntry e : es) {
+                String m = e.message();
+                if (e.type() == forge.game.GameLogEntryType.TURN) { java.util.regex.Matcher mm = java.util.regex.Pattern.compile("Turn:? ?(\\d+)|Turn (\\d+)").matcher(m); if (mm.find()) turn = Integer.parseInt(mm.group(1) != null ? mm.group(1) : mm.group(2)); }
+                if (e.type() == forge.game.GameLogEntryType.PHASE) phase = m;
+                boolean mention = false; for (String w : ws) if (m.contains(w)) mention = true;
+                boolean ctx = hot.contains(turn) && (e.type() == forge.game.GameLogEntryType.PHASE || e.type() == forge.game.GameLogEntryType.TURN
+                    || e.type() == forge.game.GameLogEntryType.COMBAT || e.type() == forge.game.GameLogEntryType.DAMAGE || e.type() == forge.game.GameLogEntryType.LIFE);
+                if (mention || ctx) sb.append(turn).append('\t').append(phase.replace('\t', ' ')).append('\t').append(e.type()).append(mention ? "*" : "").append('\t').append(m.replace('\n', ' ')).append('\n');
+            }
+            java.nio.file.Files.createDirectories(java.nio.file.Paths.get(dir));
+            java.nio.file.Files.writeString(java.nio.file.Paths.get(dir, label + "_g" + g + ".tsv"), sb.toString());
+        } catch (Exception ex) { ex.printStackTrace(); }
+    }
     // -Dhand=NameA,NameB: move these cards from player A's library to hand before turn 1 (start-of-game hook)
     static void forceHand(Game game) {
         String hand = System.getProperty("hand", "");
@@ -77,6 +106,7 @@ public class AiLabSim {
                 catch (Exception e) { e.printStackTrace(); }
                 ex.shutdownNow();
                 GameOutcome o = game.getOutcome();
+                writeCtx(game, System.getProperty("watch", ""), System.getProperty("logdir", ""), label, g);
                 String watch = System.getProperty("watch", "");
                 if (!watch.isEmpty()) {
                     for (String w : watch.split(",")) {
