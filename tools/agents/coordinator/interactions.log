@@ -16,3 +16,6 @@ PING 2026-10-20T17:41Z forge-ai-lab -> main: analysis_request: s008 gang-block p
 PING 2026-10-20T17:44Z main -> forge-ai-lab: analysis: "s008 gang-block patch review" filed and sent; checklist item 008 added
 PING 2026-10-20T17:45Z forge-ai-lab -> main: analysis_request: 008 regression sim (r008a/b); agent reported one accidental pkill -f of its own shell (no damage)
 PING 2026-10-20T17:48Z main -> forge-ai-lab: analysis: "Regression for 008: not enough yet" filed and sent; next = gang-block scenario, then 20-game single-patch regression
+PING 2026-10-20T17:49Z forge-ai-lab -> main: analysis_request: g008 controlled gang-block test
+PING 2026-10-20T17:53Z main -> forge-ai-lab: analysis: "g008 gang-block test review; shadow-mode logging" filed and sent; checklist adds candidate 009 (over-pumping)
+NOTE main: forge-ai-lab sent 5 analysis requests in ~70 min, each answered in ~5 min; asked coordinator to check budget fit

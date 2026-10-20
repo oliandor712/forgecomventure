@@ -1,3 +1,4 @@
 utc,agent,scheduled_runs_24h,completed_runs_24h,last_result_utc,status,note
 2026-10-20T17:21Z,forge-ai-lab,4,4,2026-10-20T17:15Z,on_schedule,"first snapshot; counts since trigger created 14:02Z, estimated from trigger last_fired and 2 newest results; patch 005 tested, 006 written; working now; main session idle-day so observe only"
 2026-10-20T17:21Z,deck-balance-lab,3,3,2026-10-20T17:19Z,on_schedule,"first snapshot; hourly batches 15:10-17:10 fired; 17:10 batch 40 games (122 total) pushed; 4h report fired 16:40; deferring to main session"
+2026-10-20T17:53Z,forge-ai-lab,4,4,2026-10-20T17:49Z,over_budget,"extra non-scheduled turns driven by analysis loop: 17:45 turn 220s and 17:49 turn 201s (box ~300s) fit; but earlier 17:14 turn 1193s (~20 min) exceeded 5-min box; session cost $6.5 in ~3.8h; also one accidental pkill -f (rule 9) at ~17:45"
