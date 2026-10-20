@@ -13,14 +13,13 @@ Description=Tier 3 (Bracket 3). Mono-black deathtouch control, from the Realm of
 1 War Room|CMM
 1 Basilisk Collar|FDN
 1 Defile|MH1
-1 Eater of Virtue|NEO
 1 Knight of the Ebon Legion|M20
 1 Pharika's Chosen|JOU
 1 Vampire of the Dire Moon|M20
+1 Vorpal Sword|AFR
 1 Wayfarer's Bauble|5DN
 1 Arcane Signet|ELD
 1 Blood Artist|AVR
-1 Do or Die|INV
 1 Exsanguinate|FDN
 1 Feed the Swarm|TLE
 1 Go for the Throat|40K
@@ -29,23 +28,24 @@ Description=Tier 3 (Bracket 3). Mono-black deathtouch control, from the Realm of
 1 Mind Stone|WTH
 1 Night's Whisper|J25
 1 Orzhov Enforcer|RNA
+1 Reassembling Skeleton|FDN
+1 Ripples of Undeath|MH3
 1 Servant of the Stinger|OTJ
 1 Sign in Blood|M15
-1 Stensian Sanguinist|SOC
 1 Thieving Varmint|OTC
+1 Avenger of the Fallen|TDM
 1 Black Market Connections|ACR
 1 Burnished Hart|FDN
-1 Crystalline Giant|IKO
+1 Fell Stinger|VOW
+1 Force of Despair|MH1
 1 Hero's Downfall|FDN
 1 Hooded Blightfang|M21
 1 Infernal Idol|J22
-1 Necroplasm|RAV
-1 Qarsi Revenant|TDM
+1 Poxwalkers|40K
 1 Read the Bones|ORI
 1 Staff of Compleation|ONE
 1 Underworld Connections|RTR
-1 Underworld Dreams|THB
-1 Unstoppable Slasher|DSK
+1 Unstable Obelisk|CMM
 1 Vraska's Finisher|WAR
 1 Worn Powerstone|MH3
 1 Ancient Craving|J22
@@ -54,12 +54,12 @@ Description=Tier 3 (Bracket 3). Mono-black deathtouch control, from the Realm of
 1 Drag to the Underworld|THB
 1 Erebos, God of the Dead|THS
 1 Fate Unraveler|BNG
+1 Graveshifter|ECL
 1 Nevinyrral's Disk|5ED
 1 Solemn Simulacrum|FDN
 1 Thran Dynamo|CMM
 1 Venomous Hierophant|THB
-1 Vraska's Contempt|XLN
-1 Archpriest of Shadows|MOM
+1 Bloodthirsty Conqueror|FDN
 1 Gorgon Recluse|TSP
 1 Gray Merchant of Asphodel|THS
 1 Keepsake Gorgon|THS
@@ -67,7 +67,7 @@ Description=Tier 3 (Bracket 3). Mono-black deathtouch control, from the Realm of
 1 Ob Nixilis Reignited|BFZ
 1 Sidisi, Undead Vizier|DTK
 1 Archetype of Finality|BNG
-1 Harvester of Souls|AVR
+1 Bolas's Citadel|WAR
 1 Nirkana Revenant|ROE
 1 Visara the Dreadful|ONS
 1 Wurmcoil Engine|SOM

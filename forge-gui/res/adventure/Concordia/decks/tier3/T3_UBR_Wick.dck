@@ -5,8 +5,8 @@ Description=Tier 3 (Bracket 3). blue-black-red Wick, the Whorled Mind deck. Buil
 1 Wick, the Whorled Mind|BLB
 [Main]
 6 Island|FDN
-14 Swamp|FDN
-5 Mountain|FDN
+15 Swamp|FDN
+4 Mountain|FDN
 1 Command Tower|TMC
 1 Crumbling Necropolis|ALA
 1 Dragonskull Summit|TMC
@@ -20,7 +20,7 @@ Description=Tier 3 (Bracket 3). blue-black-red Wick, the Whorled Mind deck. Buil
 1 Seething Landscape|MH3
 1 Smoldering Marsh|TMC
 1 An Offer You Can't Refuse|SLZ
-1 Faerie Dreamthief|WOE
+1 Bonecache Overseer|BLB
 1 Freya Crescent|FIN
 1 Gnawing Vermin|BRO
 1 Rapid Hybridization|GTC
@@ -29,39 +29,39 @@ Description=Tier 3 (Bracket 3). blue-black-red Wick, the Whorled Mind deck. Buil
 1 Arcane Denial|ALL
 1 Arcane Signet|ELD
 1 Azure Beastbinder|BLB
+1 Burglar Rat|FDN
 1 Chainsaw|DSK
 1 Flamecache Gecko|BLB
 1 Impact Tremors|FDN
-1 Nashi, Searcher in the Dark|DSK
+1 Iron Myr|SOM
 1 Negate|TMT
 1 Pack Rat|RTR
 1 Piper of the Swarm|ELD
 1 Talisman of Dominance|MRD
 1 Talisman of Indulgence|MRD
-1 Tangled Colony|WOE
 1 Thought Vessel|FIC
 1 Valley Rotcaller|BLB
+1 Abyssal Harvester|FDN
 1 Arcane Adaptation|XLN
-1 Chittering Skitterling|ONE
-1 Cultivator's Caravan|FDN
-1 Cursed Mirror|MH3
+1 Bloodline Pretender|KHM
 1 Darkstar Augur|BLB
+1 Dismember|NPH
 1 Gnawing Crescendo|WOE
-1 Gumdrop Poisoner|WOE
 1 Karumonix, the Rat King|ONE
 1 Lord Skitter's Butcher|WOE
 1 Lord Skitter, Sewer King|SLZ
 1 Mindwhisker|BLB
 1 Phyrexian Arena|FDN
+1 Read the Bones|ORI
 1 Sundering Eruption|MH3
 1 Taurean Mauler|FDN
 1 Voracious Vermin|WOE
 1 Chittering Witch|ELD
 1 Fell the Profane|MH3
+1 Grim Servant|MH3
+1 Hedron Archive|FDN
 1 Kels, Fight Fixer|JMP
 1 Lynde, Cheerful Tormentor|MIC
-1 Mad Ratter|ELD
-1 Misfortune Teller|OTC
 1 Panharmonicon|KLD
 1 Rat King, Pale Piper|TMC
 1 Refurbished Familiar|MH3
@@ -74,10 +74,10 @@ Description=Tier 3 (Bracket 3). blue-black-red Wick, the Whorled Mind deck. Buil
 1 Swarmyard Massacre|BLC
 1 Throat Slitter|BOK
 1 Virtue of Knowledge|WOE
-1 Chandra, Awakened Inferno|M20
-1 Extravagant Replication|FDN
-1 Malevolent Witchkite|WOE
+1 Kappa Cannoneer|MH3
+1 Lathliss, Dragon Queen|FDN
 1 Ogre Chitterlord|WOE
-1 Opportunity|M14
+1 Warstorm Surge|M12
+1 Sea Gate Restoration|ZNR
 1 Blasphemous Act|TMC
 1 Rise of the Dark Realms|FDN

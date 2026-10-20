@@ -4,8 +4,8 @@ Description=Tier 3 (Bracket 3). Selesnya angels and humans, from the Realm of Le
 [Commander]
 1 Sigarda, Host of Herons|AVR
 [Main]
-15 Plains|FDN
-10 Forest|FDN
+14 Plains|FDN
+11 Forest|FDN
 1 Arctic Treeline|KHM
 1 Blighted Woodland|BFZ
 1 Branchloft Pathway|ZNR
@@ -19,30 +19,30 @@ Description=Tier 3 (Bracket 3). Selesnya angels and humans, from the Realm of Le
 1 Fortified Village|SOI
 1 Gavony Township|ISD
 1 Avacyn's Pilgrim|ISD
-1 Crystal Fragments|FIN
-1 Flayer Husk|MBS
 1 Masterwork of Ingenuity|PIP
 1 Path to Exile|CFX
+1 Serra Ascendant|M11
 1 Sigarda's Aid|EMN
 1 Silkguard|SOC
-1 Cathar Commando|FDN
+1 Soul Warden|M10
 1 Dromoka's Command|DTK
 1 Duskwatch Recruiter|SOI
+1 Fa'adiyah Seer|PLC
+1 Farseek|M13
 1 Intrepid Adversary|MID
-1 Magus of the Library|PLC
 1 Nature's Lore|5ED
+1 Puresteel Paladin|NPH
 1 Sakura-Tribe Elder|CHK
 1 Scavenging Ooze|FDN
 1 Selesnya Charm|PIO
 1 Sigardian Priest|EMN
-1 Slash of Light|FIN
 1 Springheart Nantuko|MH3
 1 Starfield Mystic|M20
 1 Swiftfoot Boots|FDN
 1 Winds of Abandon|MH1
 1 Archetype of Courage|BNG
 1 Aura of Silence|10E
-1 Blade Splicer|NPH
+1 Bastion Protector|MSC
 1 Bridgeworks Battle|MH3
 1 Cloud Key|SLZ
 1 Danitha Capashen, Paragon|DOM
@@ -50,33 +50,33 @@ Description=Tier 3 (Bracket 3). Selesnya angels and humans, from the Realm of Le
 1 Heronblade Elite|MIC
 1 Holy Cow|OTJ
 1 King Darien XLVIII|DMU
-1 Loran of the Third Path|BRO
 1 Mentor of the Meek|J25
 1 Nettlecyst|MH2
 1 Sergeant John Benton|WHO
 1 Sigarda's Imprisonment|VOW
-1 Citanul Hierophants|DSC
+1 Summoning Materia|FIC
 1 Karametra's Acolyte|THS
-1 Keeper of the Accord|CMR
 1 Odric, Lunarch Marshal|SOI
 1 Return to Dust|SLZ
 1 Sage's Reverie|FRF
 1 Saryth, the Viper's Fang|MID
 1 Shalai, Voice of Plenty|DOM
 1 Sigarda, Champion of Light|MID
+1 Sigarda, Font of Blessings|MAT
 1 Skyshroud Claim|NMS
+1 Swordsman's Steel|MSC
 1 Towashi Guide-Bot|NEO
+1 Angel of Sanctions|AKH
 1 Fracturing Gust|SHM
-1 Ohran Frostfang|CMM
+1 Mirari's Wake|JUD
 1 Return of the Wildspeaker|ELD
 1 Shamanic Revelation|FRF
-1 Sigarda's Vanguard|MIC
 1 Sigarda, Heron's Grace|SOI
 1 Vivien Reid|FDN
 1 Angelic Skirmisher|GTC
 1 Farewell|NEO
 1 Sanctuary Warden|SNC
-1 Angel of Serenity|RTR
+1 Angel of the Ruins|MH3
+1 Beanstalk Giant|ELD
 1 Avacyn, Angel of Hope|AVR
-1 Vanquish the Horde|TMC
 1 The Great Henge|TLE

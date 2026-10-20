@@ -1,0 +1,1392 @@
+[
+ {
+  "name": "Tutorial Raider",
+  "sprite": "sprites/enemy/humanoid/knight.atlas",
+  "deck": [
+   "decks/tutorial/B_Tutorial_1.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 10,
+  "rewards": [
+   {
+    "type": "deckCard",
+    "count": 1,
+    "cardTypes": [
+     "Creature",
+     "Artifact",
+     "Enchantment",
+     "Instant",
+     "Sorcery",
+     "Planeswalker",
+     "Battle"
+    ]
+   },
+   {
+    "type": "gold",
+    "count": 50
+   }
+  ],
+  "tutorialLesson": true
+ },
+ {
+  "name": "Raider Scout",
+  "sprite": "sprites/enemy/humanoid/swordsman_2.atlas",
+  "deck": [
+   "decks/tutorial/R_Tutorial_2.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 10,
+  "rewards": [
+   {
+    "type": "deckCard",
+    "count": 1,
+    "cardTypes": [
+     "Creature",
+     "Artifact",
+     "Enchantment",
+     "Instant",
+     "Sorcery",
+     "Planeswalker",
+     "Battle"
+    ]
+   },
+   {
+    "type": "gold",
+    "count": 50
+   }
+  ],
+  "tutorialLesson": true
+ },
+ {
+  "name": "Raider Brute",
+  "sprite": "sprites/enemy/humanoid/swordsman_3.atlas",
+  "deck": [
+   "decks/tutorial/G_Tutorial_3.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 12,
+  "rewards": [
+   {
+    "type": "deckCard",
+    "count": 1,
+    "cardTypes": [
+     "Creature",
+     "Artifact",
+     "Enchantment",
+     "Instant",
+     "Sorcery",
+     "Planeswalker",
+     "Battle"
+    ]
+   },
+   {
+    "type": "gold",
+    "count": 50
+   }
+  ],
+  "tutorialLesson": true
+ },
+ {
+  "name": "Raider Smuggler",
+  "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
+  "deck": [
+   "decks/tutorial/U_Tutorial_4.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 12,
+  "rewards": [
+   {
+    "type": "deckCard",
+    "count": 1,
+    "cardTypes": [
+     "Creature",
+     "Artifact",
+     "Enchantment",
+     "Instant",
+     "Sorcery",
+     "Planeswalker",
+     "Battle"
+    ]
+   },
+   {
+    "type": "gold",
+    "count": 50
+   }
+  ],
+  "tutorialLesson": true
+ },
+ {
+  "name": "Rival Black",
+  "nameOverride": "Rival",
+  "sprite": "sprites/enemy/humanoid/human/knight/cavalier.atlas",
+  "deck": [
+   "decks/starter/B_Starter_Normal.dck"
+  ],
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 25,
+  "rewards": [
+   {
+    "type": "item",
+    "count": 1,
+    "itemName": "Waystone"
+   },
+   {
+    "type": "gold",
+    "count": 100
+   }
+  ],
+  "tutorialLessonAfterWin": true
+ },
+ {
+  "name": "Rival Red",
+  "nameOverride": "Rival",
+  "sprite": "sprites/enemy/humanoid/human/knight/cavalier.atlas",
+  "deck": [
+   "decks/starter/R_Starter_Normal.dck"
+  ],
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 25,
+  "rewards": [
+   {
+    "type": "item",
+    "count": 1,
+    "itemName": "Waystone"
+   },
+   {
+    "type": "gold",
+    "count": 100
+   }
+  ],
+  "tutorialLessonAfterWin": true
+ },
+ {
+  "name": "Rival Green",
+  "nameOverride": "Rival",
+  "sprite": "sprites/enemy/humanoid/human/knight/cavalier.atlas",
+  "deck": [
+   "decks/starter/G_Starter_Normal.dck"
+  ],
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 25,
+  "rewards": [
+   {
+    "type": "item",
+    "count": 1,
+    "itemName": "Waystone"
+   },
+   {
+    "type": "gold",
+    "count": 100
+   }
+  ],
+  "tutorialLessonAfterWin": true
+ },
+ {
+  "name": "Rival Blue",
+  "nameOverride": "Rival",
+  "sprite": "sprites/enemy/humanoid/human/knight/cavalier.atlas",
+  "deck": [
+   "decks/starter/U_Starter_Normal.dck"
+  ],
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 25,
+  "rewards": [
+   {
+    "type": "item",
+    "count": 1,
+    "itemName": "Waystone"
+   },
+   {
+    "type": "gold",
+    "count": 100
+   }
+  ],
+  "tutorialLessonAfterWin": true
+ },
+ {
+  "name": "Rival White",
+  "nameOverride": "Rival",
+  "sprite": "sprites/enemy/humanoid/human/knight/cavalier.atlas",
+  "deck": [
+   "decks/starter/W_Starter_Normal.dck"
+  ],
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 25,
+  "rewards": [
+   {
+    "type": "item",
+    "count": 1,
+    "itemName": "Waystone"
+   },
+   {
+    "type": "gold",
+    "count": 100
+   }
+  ],
+  "tutorialLessonAfterWin": true
+ },
+ {
+  "name": "Wild Hidden Bush",
+  "sprite": "sprites/enemy/plant/hiddenbush.atlas",
+  "deck": [
+   "decks/tier1/T1_G_Ruxa.dck"
+  ],
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 10,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1,
+    "addMaxCount": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Wild Thicket Pixie",
+  "sprite": "sprites/enemy/fey/pixie.atlas",
+  "deck": [
+   "decks/tier1/T1_U_Siani.dck"
+  ],
+  "ai": "",
+  "speed": 50,
+  "scale": 1.0,
+  "life": 10,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1,
+    "addMaxCount": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Wild Mossfungus",
+  "sprite": "sprites/enemy/plant/fungus.atlas",
+  "deck": [
+   "decks/tier1/T1_B_Ozox.dck",
+   "decks/tier1/T1_B_Skitter.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 10,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1,
+    "addMaxCount": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Wild Briar Satyr",
+  "sprite": "sprites/enemy/fey/satyr.atlas",
+  "deck": [
+   "decks/tier1/T1_R_Dori.dck"
+  ],
+  "ai": "",
+  "speed": 50,
+  "scale": 1.0,
+  "life": 10,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1,
+    "addMaxCount": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Cave Kavu",
+  "sprite": "sprites/enemy/monstrosity/kavu.atlas",
+  "deck": [
+   "decks/tier1/T1_R_Kreat.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 11,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 30
+   },
+   {
+    "type": "shards",
+    "count": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Cave Fungus",
+  "sprite": "sprites/enemy/plant/fungus_golgari.atlas",
+  "deck": [
+   "decks/tier1/T1_G_Dwynen.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 11,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 30
+   },
+   {
+    "type": "shards",
+    "count": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Cave Harpy",
+  "sprite": "sprites/enemy/monstrosity/harpy.atlas",
+  "deck": [
+   "decks/tier1/T1_W_Anafenza.dck",
+   "decks/tier1/T1_W_Pianna.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 11,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 30
+   },
+   {
+    "type": "shards",
+    "count": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Cave Pixie",
+  "sprite": "sprites/enemy/fey/pixie_dimir.atlas",
+  "deck": [
+   "decks/tier1/T1_U_Malcolm.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 11,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 30
+   },
+   {
+    "type": "shards",
+    "count": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Mossback Treant",
+  "sprite": "sprites/enemy/plant/treant_large.atlas",
+  "deck": [
+   "decks/tier2/T2_G_Rishkar.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 18,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 150
+   },
+   {
+    "type": "shards",
+    "count": 5
+   },
+   {
+    "type": "deckCard",
+    "count": 2,
+    "addMaxCount": 1
+   }
+  ],
+  "boss": true
+ },
+ {
+  "name": "Hollow Shade",
+  "sprite": "sprites/enemy/undead/shade.atlas",
+  "deck": [
+   "decks/tier2/T2_B_Sengir.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 18,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 150
+   },
+   {
+    "type": "shards",
+    "count": 5
+   },
+   {
+    "type": "deckCard",
+    "count": 2,
+    "addMaxCount": 1
+   }
+  ],
+  "boss": true
+ },
+ {
+  "name": "Deepcave Yeti",
+  "sprite": "sprites/enemy/monstrosity/yeti.atlas",
+  "deck": [
+   "decks/tier2/T2_R_Tahngarth.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 18,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 150
+   },
+   {
+    "type": "shards",
+    "count": 5
+   },
+   {
+    "type": "deckCard",
+    "count": 2,
+    "addMaxCount": 1
+   }
+  ],
+  "boss": true
+ },
+ {
+  "name": "Duelist Bram",
+  "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
+  "deck": [
+   "decks/tier2/T2_W_Danitha.dck",
+   "decks/tier2/T2_W_Gerrard.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 20,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 120
+   },
+   {
+    "type": "shards",
+    "count": 3
+   }
+  ]
+ },
+ {
+  "name": "Duelist Mira",
+  "sprite": "sprites/enemy/humanoid/conjurer.atlas",
+  "deck": [
+   "decks/tier2/T2_U_Sai.dck",
+   "decks/tier2/T2_U_Ertai.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 18,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 120
+   },
+   {
+    "type": "shards",
+    "count": 3
+   }
+  ]
+ },
+ {
+  "name": "Duelist Corvin",
+  "sprite": "sprites/enemy/humanoid/knight.atlas",
+  "deck": [
+   "decks/tier2/T2_B_Fumulus.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 20,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 120
+   },
+   {
+    "type": "shards",
+    "count": 3
+   }
+  ]
+ },
+ {
+  "name": "Duelist Sela",
+  "sprite": "sprites/enemy/humanoid/swordsman_2.atlas",
+  "deck": [
+   "decks/tier2/T2_R_Eron.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 20,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 120
+   },
+   {
+    "type": "shards",
+    "count": 3
+   }
+  ]
+ },
+ {
+  "name": "Duelist Fenn",
+  "sprite": "sprites/enemy/humanoid/swordsman_3.atlas",
+  "deck": [
+   "decks/tier2/T2_G_Mirri.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 20,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 120
+   },
+   {
+    "type": "shards",
+    "count": 3
+   }
+  ]
+ },
+ {
+  "name": "Capashen Paragon",
+  "sprite": "sprites/enemy/humanoid/human/knight/braveknight.atlas",
+  "deck": [
+   "decks/tier2/T2_W_Danitha.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Visionary Foundry",
+  "sprite": "sprites/enemy/construct/arcane_golem.atlas",
+  "deck": [
+   "decks/tier2/T2_U_Sai.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "The Infestation",
+  "sprite": "sprites/enemy/beast/insect/giantfly.atlas",
+  "deck": [
+   "decks/tier2/T2_B_Fumulus.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Talruum Stampede",
+  "sprite": "sprites/enemy/humanoid/minotaur/minotaurlarge.atlas",
+  "deck": [
+   "decks/tier2/T2_R_Tahngarth.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Cat Warrior Pride",
+  "sprite": "sprites/enemy/beast/cat/jaguar.atlas",
+  "deck": [
+   "decks/tier2/T2_G_Mirri.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Tolarian Adept",
+  "sprite": "sprites/enemy/humanoid/human/wizard/wizard.atlas",
+  "deck": [
+   "decks/tier2/T2_U_Ertai.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Grandmother's Court",
+  "sprite": "sprites/enemy/undead/vampire_2.atlas",
+  "deck": [
+   "decks/tier2/T2_B_Sengir.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "The Relentless",
+  "sprite": "sprites/enemy/humanoid/human/soldier/legionite.atlas",
+  "deck": [
+   "decks/tier2/T2_R_Eron.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Peema Renegades",
+  "sprite": "sprites/enemy/humanoid/elf/druid.atlas",
+  "deck": [
+   "decks/tier2/T2_G_Rishkar.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Weatherlight Captain",
+  "sprite": "sprites/enemy/humanoid/human/knight/cavalier.atlas",
+  "deck": [
+   "decks/tier2/T2_W_Gerrard.dck"
+  ],
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": []
+ },
+ {
+  "name": "Green Trainer 1",
+  "sprite": "sprites/enemy/humanoid/elf/druid.atlas",
+  "deck": [
+   "decks/tier2/T2_BG_Grakmaw.dck",
+   "decks/tier2/T2_G_Arasta.dck",
+   "decks/tier2/T2_G_Mirri.dck",
+   "decks/tier2/T2_G_Toski.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 20,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 140
+   },
+   {
+    "type": "shards",
+    "count": 3
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Green Trainer 2a",
+  "sprite": "sprites/enemy/humanoid/elf/shaman.atlas",
+  "deck": [
+   "decks/tier3/T3_BG_Gitrog.dck",
+   "decks/tier3/T3_BRG_Coram.dck",
+   "decks/tier3/T3_UG_Vannifar.dck",
+   "decks/tier3/T3_WRG_Rith.dck",
+   "decks/tier3/T3_WUG_Falco.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 25,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 180
+   },
+   {
+    "type": "shards",
+    "count": 4
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Green Trainer 2b",
+  "sprite": "sprites/enemy/humanoid/elf/hunter_2.atlas",
+  "deck": [
+   "decks/tier4/T4_RG_Anzrag.dck",
+   "decks/tier4/T4_WBG_Necrobloom.dck",
+   "decks/tier4/T4_BG_Ygra.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 25,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 220
+   },
+   {
+    "type": "shards",
+    "count": 5
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Green Trainer 3a",
+  "sprite": "sprites/enemy/humanoid/elf/hunter_2.atlas",
+  "deck": [
+   "decks/tier4/T4_BG_Ygra.dck",
+   "decks/tier4/T4_UBG_Damia.dck",
+   "decks/tier4/T4_UG_Uro.dck",
+   "decks/tier4/T4_URG_Flubs.dck",
+   "decks/tier4/T4_WG_Karametra.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 220
+   },
+   {
+    "type": "shards",
+    "count": 5
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Green Trainer 3b",
+  "sprite": "sprites/enemy/humanoid/elf/hunter.atlas",
+  "deck": [
+   "decks/tier5/T5_BG_Vraska.dck",
+   "decks/tier5/T5_BRG_Disa.dck",
+   "decks/tier5/T5_RG_Mina.dck",
+   "decks/tier5/T5_WRG_Gahiji.dck",
+   "decks/tier5/T5_WUG_Bumbleflower.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 260
+   },
+   {
+    "type": "shards",
+    "count": 6
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ]
+ },
+ {
+  "name": "Green Thornling 1",
+  "sprite": "sprites/enemy/plant/hiddenbush.atlas",
+  "deck": [
+   "decks/tier1/T1_G_Anara.dck",
+   "decks/tier1/T1_G_Dwynen.dck",
+   "decks/tier1/T1_G_Goreclaw.dck",
+   "decks/tier1/T1_G_Peregrin.dck",
+   "decks/tier1/T1_G_Renata.dck",
+   "decks/tier1/T1_G_Ruxa.dck",
+   "decks/tier1/T1_G_Surrak.dck",
+   "decks/tier1/T1_G_Toph.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 12,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Grove Sprite 1",
+  "sprite": "sprites/enemy/fey/pixie_2.atlas",
+  "deck": [
+   "decks/tier1/T1_G_Anara.dck",
+   "decks/tier1/T1_G_Dwynen.dck",
+   "decks/tier1/T1_G_Goreclaw.dck",
+   "decks/tier1/T1_G_Peregrin.dck",
+   "decks/tier1/T1_G_Renata.dck",
+   "decks/tier1/T1_G_Ruxa.dck",
+   "decks/tier1/T1_G_Surrak.dck",
+   "decks/tier1/T1_G_Toph.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 12,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Moss Bear 1",
+  "sprite": "sprites/enemy/beast/bear/bear.atlas",
+  "deck": [
+   "decks/tier1/T1_G_Anara.dck",
+   "decks/tier1/T1_G_Dwynen.dck",
+   "decks/tier1/T1_G_Goreclaw.dck",
+   "decks/tier1/T1_G_Peregrin.dck",
+   "decks/tier1/T1_G_Renata.dck",
+   "decks/tier1/T1_G_Ruxa.dck",
+   "decks/tier1/T1_G_Surrak.dck",
+   "decks/tier1/T1_G_Toph.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 12,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Thornling 2",
+  "sprite": "sprites/enemy/plant/hiddenbush.atlas",
+  "deck": [
+   "decks/tier2/T2_G_Rishkar.dck",
+   "decks/tier2/T2_G_Thrun.dck",
+   "decks/tier2/T2_G_Legolas.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 18,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Grove Sprite 2",
+  "sprite": "sprites/enemy/fey/pixie_2.atlas",
+  "deck": [
+   "decks/tier2/T2_G_Rishkar.dck",
+   "decks/tier2/T2_G_Thrun.dck",
+   "decks/tier2/T2_G_Legolas.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 18,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Moss Bear 2",
+  "sprite": "sprites/enemy/beast/bear/bear.atlas",
+  "deck": [
+   "decks/tier2/T2_G_Rishkar.dck",
+   "decks/tier2/T2_G_Thrun.dck",
+   "decks/tier2/T2_G_Legolas.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 18,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Thornling 3",
+  "sprite": "sprites/enemy/plant/hiddenbush.atlas",
+  "deck": [
+   "decks/tier4/T4_G_Selvala.dck",
+   "decks/tier4/T4_G_Yisan.dck",
+   "decks/tier4/T4_G_Esika.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 22,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Grove Sprite 3",
+  "sprite": "sprites/enemy/fey/pixie_2.atlas",
+  "deck": [
+   "decks/tier4/T4_G_Selvala.dck",
+   "decks/tier4/T4_G_Yisan.dck",
+   "decks/tier4/T4_G_Esika.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 22,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Moss Bear 3",
+  "sprite": "sprites/enemy/beast/bear/bear.atlas",
+  "deck": [
+   "decks/tier4/T4_G_Selvala.dck",
+   "decks/tier4/T4_G_Yisan.dck",
+   "decks/tier4/T4_G_Esika.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 45,
+  "scale": 1.0,
+  "life": 22,
+  "rewards": [
+   {
+    "type": "shards",
+    "count": 2,
+    "addMaxCount": 2
+   },
+   {
+    "type": "deckCard",
+    "count": 1
+   }
+  ],
+  "flying": true
+ },
+ {
+  "name": "Green Pass Keeper 1",
+  "sprite": "sprites/enemy/humanoid/elf/druid_2.atlas",
+  "deck": [
+   "decks/tier2/T2_G_Arasta.dck",
+   "decks/tier2/T2_G_Rishkar.dck",
+   "decks/tier2/T2_G_Thrun.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 22,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 200
+   },
+   {
+    "type": "deckCard",
+    "count": 2
+   }
+  ]
+ },
+ {
+  "name": "Green Pass Keeper 2",
+  "sprite": "sprites/enemy/humanoid/elf/druid_2.atlas",
+  "deck": [
+   "decks/tier4/T4_G_Selvala.dck",
+   "decks/tier4/T4_G_Yisan.dck",
+   "decks/tier4/T4_G_Esika.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 28,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 300
+   },
+   {
+    "type": "deckCard",
+    "count": 2
+   }
+  ]
+ },
+ {
+  "name": "Green Pass Keeper 3",
+  "sprite": "sprites/enemy/humanoid/elf/druid_2.atlas",
+  "deck": [
+   "decks/tier5/T5_G_Ashaya.dck",
+   "decks/tier5/T5_G_Yeva.dck",
+   "decks/tier5/T5_G_Lumra.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 32,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 350
+   },
+   {
+    "type": "deckCard",
+    "count": 2
+   }
+  ]
+ },
+ {
+  "name": "Green Grove Guardian 1",
+  "sprite": "sprites/enemy/beast/bear/bear_large.atlas",
+  "deck": [
+   "decks/tier3/T3_G_Azusa.dck",
+   "decks/tier3/T3_G_Shroofus.dck",
+   "decks/tier3/T3_G_Kona.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 24,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 220
+   },
+   {
+    "type": "shards",
+    "count": 6
+   },
+   {
+    "type": "deckCard",
+    "count": 2
+   }
+  ]
+ },
+ {
+  "name": "Green Grove Guardian 2",
+  "sprite": "sprites/enemy/beast/bear/bear_large.atlas",
+  "deck": [
+   "decks/tier4/T4_G_Marwyn.dck",
+   "decks/tier4/T4_G_Yisan.dck",
+   "decks/tier4/T4_G_Kaysa.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 260
+   },
+   {
+    "type": "shards",
+    "count": 7
+   },
+   {
+    "type": "deckCard",
+    "count": 2
+   }
+  ]
+ },
+ {
+  "name": "Green Grove Guardian 3",
+  "sprite": "sprites/enemy/beast/bear/bear_large.atlas",
+  "deck": [
+   "decks/tier5/T5_G_Ashaya.dck",
+   "decks/tier5/T5_G_Jorn.dck",
+   "decks/tier5/T5_G_Lumra.dck",
+   "decks/tier5/T5_G_Vorinclex.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 35,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 300
+   },
+   {
+    "type": "shards",
+    "count": 8
+   },
+   {
+    "type": "deckCard",
+    "count": 2
+   }
+  ]
+ },
+ {
+  "name": "Green Warden 1",
+  "sprite": "sprites/enemy/humanoid/elf/nissa.atlas",
+  "deck": [
+   "decks/tier3/T3_G_Gargos.dck",
+   "decks/tier3/T3_G_Kona.dck",
+   "decks/tier3/T3_G_Reki.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 30,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 400
+   },
+   {
+    "type": "shards",
+    "count": 10
+   },
+   {
+    "type": "deckCard",
+    "count": 3
+   }
+  ],
+  "boss": true
+ },
+ {
+  "name": "Green Warden 2",
+  "sprite": "sprites/enemy/humanoid/elf/nissa.atlas",
+  "deck": [
+   "decks/tier4/T4_G_Kaysa.dck",
+   "decks/tier4/T4_G_Marwyn.dck",
+   "decks/tier4/T4_G_Yisan.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 35,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 400
+   },
+   {
+    "type": "shards",
+    "count": 10
+   },
+   {
+    "type": "deckCard",
+    "count": 3
+   }
+  ],
+  "boss": true
+ },
+ {
+  "name": "Green Warden 3",
+  "sprite": "sprites/enemy/humanoid/elf/nissa.atlas",
+  "deck": [
+   "decks/tier5/T5_G_Jorn.dck",
+   "decks/tier5/T5_G_Vorinclex.dck",
+   "decks/tier5/T5_G_Lumra.dck"
+  ],
+  "randomizeDeck": true,
+  "ai": "",
+  "speed": 40,
+  "scale": 1.0,
+  "life": 40,
+  "rewards": [
+   {
+    "type": "gold",
+    "count": 400
+   },
+   {
+    "type": "shards",
+    "count": 10
+   },
+   {
+    "type": "deckCard",
+    "count": 3
+   }
+  ],
+  "boss": true
+ }
+]

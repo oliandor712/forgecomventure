@@ -6,12 +6,13 @@ Description=Tier 2 (Bracket 2). Mono-blue wizards and counters, built from the T
 [Main]
 38 Island|FDN
 1 Ornithopter|M15
+1 Benthic Biomancer|RNA
 1 Brass Man|ARN
 1 Curiosity|ISD
 1 Flying Men|ARN
-1 Frost Augur|KHM
 1 Unsummon|FRA
 1 Arcane Denial|ALL
+1 Baral, Chief of Compliance|AER
 1 Boomerang|10E
 1 Cloud of Faeries|WOC
 1 Counterspell|7ED
@@ -19,7 +20,6 @@ Description=Tier 2 (Bracket 2). Mono-blue wizards and counters, built from the T
 1 Fog Bank|FDN
 1 Merfolk Looter|M12
 1 Mind Stone|WTH
-1 Pollywog Prodigy|BLC
 1 Sage Owl|M10
 1 Sky Diamond|CLB
 1 Storm Crow|9ED
@@ -28,41 +28,41 @@ Description=Tier 2 (Bracket 2). Mono-blue wizards and counters, built from the T
 1 Vodalian Arcanist|M21
 1 Apprentice Wizard|2XM
 1 Bottle Gnomes|10E
-1 Cancel|FDN
+1 Deny Entry|TLE
 1 Dissipate|MID
 1 Diviner's Wand|MOR
 1 Emry, Lurker of the Loch|ELD
 1 Exhaustion|9ED
+1 Flux Channeler|WAR
 1 Gaseous Form|6ED
-1 Poppet Stitcher|MID
+1 Laboratory Maniac|INR
 1 Prodigal Sorcerer|7ED
+1 Serum Visionary|MH3
 1 Theft of Dreams|EXO
 1 Time Ebb|M14
-1 Unwind|DOM
 1 Wall of Air|10E
-1 Worn Powerstone|MH3
 1 Archivist|9ED
+1 Archmage Emeritus|STX
 1 Clone|SLZ
 1 Concentrate|8ED
 1 Dancing Scimitar|9ED
-1 Fact or Fiction|INV
+1 Etched Oracle|5DN
 1 Juggernaut|DMR
 1 Mistform Ultimus|LGN
-1 Phantom Monster|IMA
+1 Null Brooch|EXO
 1 Rewind|PLST
 1 Skyship Weatherlight|PLS
-1 Twenty-Toed Toad|BLC
 1 Zephid's Embrace|PLST
 1 Air Elemental|M20
-1 Archmage of Echoes|WOC
 1 Biting Tether|SHM
 1 Evacuation|10E
+1 Lier, Disciple of the Drowned|MID
+1 Psychic Spiral|RTR
 1 Saruman the White|LTR
 1 Shipwreck Dowser|J25
-1 Talas Researcher|PLST
 1 Arcanis the Omnipotent|FDN
+1 God-Pharaoh's Statue|WAR
 1 Mahamoti Djinn|PLST
-1 Mist Dragon|MIR
 1 Rise from the Tides|SOI
 1 Skittering Invasion|ROE
 1 Dig Through Time|SLZ

@@ -58,8 +58,30 @@ either a candidate for Concordia's own Game Changer rules or a miss in the impac
 The staples count climbs with tier, so it's a useful second measure of deck quality. The starters' 14 staples sit
 above tier 2's 9, which matches their deck power (about the top of tier 2).
 
-## Not applied (proposals)
+## Applied (2026-10-20): deck building and tier rules
 
-1. **Tier rules:** cap the watch-list cards like Game Changers: T1 0, T2 1, T3 2, T4 4, T5 8.
-2. **Staple counts per tier as a soft check:** T1 0-4, T2 4-14, T3 15-30, T4 20-40, T5 25-45.
-3. **Deck builder:** let tier 2-3 builds prefer staples (consistency without swingy cards), and keep them out of tier 1.
+All 200 tier decks were rebuilt with these rules. The old decks, `decks.json` and `enemies.json` are backed up in
+`tools/concordia/backups/2026-10-20_decks_pre_rebuild/`.
+
+| Rule | Where | Setting |
+|---|---|---|
+| Staple preference | `deckgen/build.py` `STAPLE_BONUS` | T1 -4, T2 and T3 +3, T4 and T5 +1.5 |
+| Precon playability bonus | `PRECON_BONUS` | +2 at T2-T3, scaled by precon inclusion |
+| Watch-list cap (builder hard cap; tier check WARN) | `WATCH_CAP`, `deck_tier.TIERS` | T1 0, T2 1, T3 2, T4 4, T5 8 |
+| Staples per deck (soft check, WARN) | `deck_tier.TIERS` | T1 0-2, T2 5-31, T3 22-39, T4 22-46, T5 28-48 |
+| Power bands (EDHREC scale) | `deck_tier.TIERS` | T1 19 or less, T2 19-31, T3 27-38, T4 34-42, T5 39 or more |
+| Build targets | `TARGET_POWER`, per-deck targets in `decks.json` | +1.5 at T2-T3, +1 at T4, +0.5 at T5 |
+
+The staples ranges cover the 10th to 90th percentile of the rebuilt decks, plus or minus 2.
+
+| Tier | Deck power | Staples per deck | Watch | Game Changers | Tier fit |
+|---|---|---|---|---|---|
+| T1 | 13.7 to 12.5 | 1.6 to 0.1 | 0 | 0 | 40/40 |
+| T2 | 25.1 to 25.4 | 8.8 to 18.7 | 0.6 to 0.4 | 0 | 40/40 |
+| T3 | 33.2 to 33.8 | 23.0 to 29.9 | 1.6 to 1.3 | 0.3 to 0.2 | 32/40 |
+| T4 | 37.6 to 38.0 | 28.4 to 34.4 | 2.4 to 2.1 | 1.0 | 30 to 31/40 |
+| T5 | 42.3 to 42.6 | 32.6 to 37.6 | 3.6 to 3.7 | 1.4 to 1.6 | 34 to 31/40 |
+
+- **No deck fails a hard check.**
+- **3 decks sit just outside their power band** (warnings only).
+- **171 of the 200 decks changed cards.** The Green zone's pools were re-picked, and they still ramp by stage.

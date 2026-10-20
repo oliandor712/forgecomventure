@@ -16,6 +16,8 @@ Description=Tier 4 (Bracket 4). Mono-blue Memnarch deck. Seeded from a public Co
 1 Tolaria West|FUT
 1 Astral Cornucopia|BNG
 1 Everflowing Chalice|2XM
+1 Benthic Biomancer|RNA
+1 Cursecatcher|SHM
 1 Expedition Map|FDN
 1 Mystic Remora|ICE
 1 Sidisi's Faithful|DTK
@@ -27,15 +29,15 @@ Description=Tier 4 (Bracket 4). Mono-blue Memnarch deck. Seeded from a public Co
 1 Endless Atlas|CMM
 1 Lightning Greaves|MRD
 1 Mind Stone|WTH
-1 Naban, Dean of Iteration|DOM
 1 Pollywog Prodigy|BLC
 1 Pull from Tomorrow|AKH
+1 Qarsi Deceiver|DTK
 1 Sky Diamond|CLB
 1 Star Compass|IMA
 1 Swiftfoot Boots|FDN
 1 Thaumatic Compass|XLN
-1 Thought Vessel|FIC
-1 Triskaidekaphile|MID
+1 Thundertrap Trainer|BLB
+1 Vedalken Aethermage|FUT
 1 Archmage's Charm|H1R
 1 Blue Sun's Zenith|MBS
 1 Burnished Hart|FDN
@@ -43,17 +45,19 @@ Description=Tier 4 (Bracket 4). Mono-blue Memnarch deck. Seeded from a public Co
 1 Champion of Wits|HOU
 1 Darksteel Ingot|DST
 1 Emry, Lurker of the Loch|ELD
+1 Ertai, Wizard Adept|EXO
 1 Gadwick, the Wizened|ELD
 1 Laboratory Maniac|INR
-1 Lullmage Mentor|ZEN
+1 Midnight Clock|ELD
 1 Nimble Obstructionist|HOU
 1 Propaganda|TMP
-1 Sage of Fables|MOR
+1 Ravenform|KHM
 1 Shimmer Myr|CMM
-1 Trinket Mage|5DN
 1 Whir of Invention|AER
+1 Distant Melody|MOR
 1 Glen Elendra Archmage|EVE
 1 Hedron Archive|FDN
+1 High Fae Trickster|FDN
 1 Insidious Will|KLD
 1 One with the Machine|M19
 1 Padeem, Consul of Innovation|CMM
@@ -61,12 +65,8 @@ Description=Tier 4 (Bracket 4). Mono-blue Memnarch deck. Seeded from a public Co
 1 Surgespanner|LRW
 1 The Antiquities War|DOM
 1 Thran Dynamo|CMM
-1 Wave Goodbye|TMC
-1 Whelming Wave|BNG
-1 Archmage of Echoes|WOC
 1 Azami, Lady of Scrolls|CHK
 1 Blinkmoth Urn|MRD
-1 Disciple of the Ring|2X2
 1 Disruptor of Currents|ECL
 1 Gauntlet of Power|TSP
 1 Gilded Lotus|FDN
