@@ -20,7 +20,7 @@ OUT = os.path.join(RES, 'adventure', 'Concordia', 'decks')
 BASIC = {'W': 'Plains', 'U': 'Island', 'B': 'Swamp', 'R': 'Mountain', 'G': 'Forest'}
 SPEC = {
  1: dict(lands=42, quota={'removal': 2, 'draw': 1, 'ramp': 1}, cap={'ramp': 2, 'draw': 2, 'removal': 3, 'wipe': 0, 'tutor': 0, 'fast': 0},
-         creatures=42, cmax=46, types={'Instant|Sorcery': 6, 'Artifact|Enchantment': 4}, curve={1: 7, 2: 20, 3: 16, 4: 8, 5: 6, 6: 2}, rar={'C': 99, 'U': 25}, gc=0),
+         creatures=30, cmax=34, types={'Instant|Sorcery': 10, 'Artifact|Enchantment': 6}, curve={1: 7, 2: 20, 3: 16, 4: 8, 5: 6, 6: 2}, rar={'C': 99, 'U': 25}, gc=0),
  2: dict(lands=38, quota={'wipe': 1, 'removal': 8, 'ramp': 5, 'draw': 5}, cap={'ramp': 7, 'draw': 8, 'removal': 10, 'wipe': 2, 'tutor': 1, 'fast': 1},
          creatures=30, cmax=34, types={'Instant': 5, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 4}, curve={1: 6, 2: 15, 3: 15, 4: 12, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 10, 'M': 1}, gc=0),
  3: dict(lands=37, quota={'wipe': 2, 'removal': 10, 'ramp': 10, 'draw': 9}, cap={'ramp': 12, 'draw': 11, 'removal': 13, 'wipe': 3, 'tutor': 2, 'fast': 3},
