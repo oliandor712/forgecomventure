@@ -228,6 +228,7 @@
   "commanderHall": "world/commanders.json",
   "uniquePrintings": true,
   "mergeCommonItems": true,
+  "debugMenu": true,
   "waystoneStops": [
     "Spawn",
     "Mossgate"

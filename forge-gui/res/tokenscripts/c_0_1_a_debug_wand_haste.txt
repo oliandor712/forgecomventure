@@ -1,0 +1,10 @@
+Name:Debug Wand
+ManaCost:no cost
+Colors:colorless
+Types:Artifact Creature Construct
+PT:0/1
+K:Haste
+K:Hexproof
+K:Indestructible
+A:AB$ DealDamage | Cost$ T | ValidTgts$ Any | NumDmg$ 99 | SpellDescription$ CARDNAME deals 99 damage to any target.
+Oracle:Haste, hexproof, indestructible\n{T}: Debug Wand deals 99 damage to any target.

@@ -7,6 +7,7 @@ import forge.adventure.scene.Scene;
 import forge.adventure.stage.GameStage;
 import forge.adventure.util.Config;
 import forge.adventure.util.Current;
+import forge.adventure.util.DebugMode;
 
 /**
  * Class that will represent the player sprite on the map
@@ -59,7 +60,7 @@ public class PlayerSprite extends CharacterSprite {
     }
 
     public void setMoveModifier(float speed) {
-        playerSpeedModifier = speed;
+        playerSpeedModifier = speed * DebugMode.speedModifier();
     }
 
     @Override

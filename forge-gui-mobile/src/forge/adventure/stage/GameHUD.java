@@ -55,6 +55,7 @@ import forge.adventure.util.AdventureQuestController;
 import forge.adventure.util.Config;
 import forge.adventure.util.Controls;
 import forge.adventure.util.Current;
+import forge.adventure.util.DebugMode;
 import forge.adventure.util.KeyBinding;
 import forge.adventure.util.NavArrowActor;
 import forge.adventure.util.UIActor;
@@ -81,6 +82,7 @@ public class GameHUD extends Stage {
     private final TextraLabel notificationText = Controls.newTextraLabel("");
     private final Image miniMap, gamehud, mapborder, avatarborder, blank;
     private final InputEvent eventTouchDown, eventTouchUp;
+    private TextraButton debugActor;
     private final TextraButton deckActor, openMapActor, menuActor, logbookActor, inventoryActor, exitToWorldMapActor, bookmarkActor;
     public final UIActor ui;
     private final Touchpad touchpad;
@@ -237,6 +239,11 @@ public class GameHUD extends Stage {
         mapGroup.addActor(miniMap);
         mapGroup.addActor(mapborder);
         mapGroup.addActor(openMapActor);
+        if (Config.instance().getConfigData().debugMenu) { //Debug button just below the Zoom button
+            debugActor = Controls.newTextButton("[%80]Debug", this::debugMenu);
+            debugActor.setBounds(openMapActor.getX(), openMapActor.getY() - openMapActor.getHeight(), openMapActor.getWidth(), openMapActor.getHeight());
+            mapGroup.addActor(debugActor);
+        }
         mapGroup.addActor(miniMapPlayer);
         ui.addActor(mapGroup);
         //HUD
@@ -259,6 +266,31 @@ public class GameHUD extends Stage {
         avatarGroup.addActor(avatar);
         avatarGroup.addActor(avatarborder);
         ui.addActor(avatarGroup);
+    }
+
+    /** The debug menu: each pick flips one DebugMode toggle and reopens the menu. */
+    private void debugMenu() {
+        if (console.isVisible() || Forge.advFreezePlayerControls)
+            return;
+        java.util.List<String> choices = java.util.Arrays.asList(
+                "Fast movement: " + onOff(DebugMode.fast),
+                "Walk through walls: " + onOff(DebugMode.noclip),
+                "Instant win token: " + onOff(DebugMode.instantWin));
+        gameStage.choiceDialog("Debug mode. Lasts until you close the game.\nThe win token (haste, hexproof, indestructible) taps to deal 99 damage to any target.", choices, pick -> {
+            if (pick < 0)
+                return;
+            if (pick == 0)
+                DebugMode.fast = !DebugMode.fast;
+            else if (pick == 1)
+                DebugMode.noclip = !DebugMode.noclip;
+            else
+                DebugMode.instantWin = !DebugMode.instantWin;
+            debugMenu();
+        });
+    }
+
+    private static String onOff(boolean on) {
+        return on ? "[GREEN]ON[]" : "OFF";
     }
 
     private void openMap() {
@@ -343,6 +375,7 @@ public class GameHUD extends Stage {
                     && !(Controls.actorContainsVector(menuActor, touchDownCoords)) //not inside menu button
                     && !(Controls.actorContainsVector(deckActor, touchDownCoords)) //not inside deck button
                     && !(Controls.actorContainsVector(openMapActor, touchDownCoords)) //not inside openmap button
+                    && !(debugActor != null && Controls.actorContainsVector(debugActor, touchDownCoords)) //not inside debug button
                     && !(Controls.actorContainsVector(logbookActor, touchDownCoords)) //not inside stats button
                     && !(Controls.actorContainsVector(inventoryActor, touchDownCoords)) //not inside inventory button
                     && !(Controls.actorContainsVector(exitToWorldMapActor, touchDownCoords)) //not inside exit button

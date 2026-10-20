@@ -20,6 +20,7 @@ import forge.adventure.stage.GameHUD;
 import forge.adventure.stage.IAfterMatch;
 import forge.adventure.util.AdventureEventController;
 import forge.adventure.util.Config;
+import forge.adventure.util.DebugMode;
 import forge.adventure.util.Current;
 import forge.assets.FBufferedImage;
 import forge.assets.FSkin;
@@ -467,6 +468,9 @@ public class DuelScene extends ForgeScene {
                 playerEffects.add(dungeonEffect.opponent);
         }
 
+        EffectData debugEffect = DebugMode.duelEffect();
+        if (debugEffect != null)
+            playerEffects.add(debugEffect);
         addEffects(humanPlayer, playerEffects);
 
         currentEnemy = enemy.getData();

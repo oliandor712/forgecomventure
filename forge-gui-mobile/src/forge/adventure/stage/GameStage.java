@@ -39,6 +39,7 @@ import forge.adventure.scene.TileMapScene;
 import forge.adventure.util.Config;
 import forge.adventure.util.Controls;
 import forge.adventure.util.Current;
+import forge.adventure.util.DebugMode;
 import forge.adventure.util.KeyBinding;
 import forge.adventure.util.MapDialog;
 import forge.adventure.util.Paths;
@@ -672,6 +673,8 @@ public abstract class GameStage extends Stage {
     }
 
     public Vector2 adjustMovement(Vector2 direction, Rectangle boundingRect) {
+        if (DebugMode.noclip)
+            return direction;
         // populate our local cars in-place via .set() instead of .cpy()
         collisionAdjX.set(direction);
         collisionAdjY.set(direction);
