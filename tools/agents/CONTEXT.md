@@ -42,7 +42,8 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
   end by decking: compare casts rather than wins.
 - **Piloted games:** `tools/concordia/sim/PilotSim.java` plays two decks where outside pilots decide the flagged-card
   plays and Forge AI does the rest (protocol in its header; `pilot_wait.sh` waits for a side's next prompt). Logs of
-  each run go to `tools/concordia/ai_lab/pilot/<date>_<name>/`.
+  each run go to `tools/concordia/ai_lab/pilot/<date>_<name>/`. `-Dpilot.A=rules` plays built-in pilot rules with no
+  tokens spent; `ask` uses the file protocol; `ai` is plain Forge AI.
 - **Deck stats:** `python3 tools/concordia/deck_tier.py <deck.dck> [--tier N] --json` gives counts, deck power (the
   average card power) and tier checks.
 - **Network:** Maven Central, PyPI, raw.githubusercontent.com and `git clone` of public GitHub repos work. Most other
@@ -76,7 +77,7 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
 The main session checks on both every 4 hours (at :20) and fixes blockers.
 
 ## Recent updates
-- 2026-10-20: Piloted test match (PilotSim) for exp 001 cards: logs and takeaways in tools/concordia/ai_lab/pilot/2026-10-20_exp001_mirror/ for the AI lab's data pool. AI lab test decks are now 40 cards (minideck.py --size 40) at 20 life each.
+- 2026-10-20: The first piloted test match was discarded at the user's request (too many problems); don't use its data. PilotSim now has a no-token rules mode (-Dpilot.A=rules).
 - 2026-10-20: ai_lab/minideck.py shrinks a deck to a 30-card test deck (commander + test cards + 12 lands + the source deck's cheapest cards); Forge sims accept 30-card Commander decks, verified. setup.sh now also compiles tools/concordia/ai_lab/*.java (AiLabSim was missing).
 - 2026-10-20: Agent manager added: this file is the shared context (read first every run); tools/agents/registry.json logs your standing requests. Briefs now point here.
 - 2026-10-20: `tools/concordia/sim/setup.sh` and `run.sh` added. They fix the "no Maven repository" blocker and were

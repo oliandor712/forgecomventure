@@ -6,6 +6,7 @@ import forge.deck.Deck;
 import forge.deck.io.DeckSerializer;
 import forge.game.*;
 import forge.game.card.Card;
+import forge.game.card.CardCollection;
 import forge.game.combat.Combat;
 import forge.game.combat.CombatUtil;
 import forge.game.phase.PhaseType;
@@ -29,6 +30,10 @@ import java.util.concurrent.*;
 // Usage: PilotSim <assetsDir> <games> <timeoutSec> <pilotDir> deckA lifeA deckB lifeB
 //   -Dflagged="Card A,Card B"  the cards whose plays the pilots decide
 //   -Dwait=600                 seconds to wait for an answer before falling back to Forge AI
+//   -Dpilot.A=ask|rules|ai     how side A decides (same for pilot.B; default ask). "rules" plays the pilot rules
+//                              written below (the main session's and the AI lab's takeaways) inside the engine and
+//                              asks nobody, so a run costs no tokens; a pilot then reads decisions.log and edits the
+//                              rules between runs. "ask" uses the file protocol; "ai" leaves everything to Forge AI.
 // Protocol, per decision: the game writes <pilotDir>/req_<A|B>_<n>.txt (state plus numbered options; option 0 is
 // Forge AI's own choice) and waits for <pilotDir>/ans_<A|B>_<n>.txt: first line the option number (attacks: "0" or a
 // comma list of creature numbers), the following lines the pilot's reasoning, which goes into decisions.log. Each game
@@ -106,7 +111,49 @@ public class PilotSim {
     static class Pilot extends PlayerControllerAi {
         final String side;
         String lastAsked = "";
-        Pilot(Game g, Player p, LobbyPlayer lp, String side) { super(g, p, lp); this.side = side; }
+        final String mode;
+        Pilot(Game g, Player p, LobbyPlayer lp, String side) {
+            super(g, p, lp); this.side = side; mode = System.getProperty("pilot." + side, "ask");
+        }
+
+        /** The pilot rules for one priority window: an option index (1-based) and why, or 0 for Forge AI. */
+        Object[] rulePick(List<SpellAbility> opts) {
+            Game g = player.getGame();
+            PhaseType ph = g.getPhaseHandler().getPhase();
+            boolean mine = g.getPhaseHandler().getPlayerTurn() == player;
+            Combat cb = g.getPhaseHandler().getCombat();
+            for (int i = 0; i < opts.size(); i++) {
+                SpellAbility sa = opts.get(i);
+                Card c = sa.getHostCard();
+                if (sa.isSpell()) {   // rule 1: cast the flagged creature on curve, in my main phase
+                    if (mine && (ph == PhaseType.MAIN1 || ph == PhaseType.MAIN2))
+                        return new Object[]{i + 1, "[rule 1] cast " + c.getName() + " now: mana is open and it is a body on the board"};
+                    continue;
+                }
+                if (!sa.toString().contains("Switch") || cb == null || ph != PhaseType.COMBAT_DECLARE_BLOCKERS) continue;
+                int p = c.getNetPower(), t = c.getNetToughness();
+                if (cb.isAttacking(c)) {
+                    CardCollection bl = cb.getBlockers(c);
+                    if (bl.isEmpty()) {   // rule 2: unblocked attacker switches when that adds damage
+                        if (t > p) return new Object[]{i + 1, "[rule 2] " + c.getName() + " is unblocked: switch for " + t + " damage instead of " + p};
+                        continue;
+                    }
+                    int in = 0, minT = 99;
+                    for (Card b : bl) { in += Math.max(0, b.getNetPower()); minT = Math.min(minT, b.getNetToughness()); }
+                    // rule 3: blocked, dies anyway, and the switched power kills a blocker
+                    if (in >= t && t >= minT && p < minT)
+                        return new Object[]{i + 1, "[rule 3] " + c.getName() + " dies to " + in + " damage anyway; switched it hits for " + t + " and kills a blocker"};
+                    continue;
+                }
+                CardCollection att = cb.getAttackersBlockedBy(c);
+                if (!att.isEmpty()) {   // rule 4: a blocker switches only if it then kills the attacker and survives
+                    Card a0 = att.get(0);
+                    if (t >= a0.getNetToughness() && p > a0.getNetPower() && p < a0.getNetToughness())
+                        return new Object[]{i + 1, "[rule 4] blocking " + a0.getName() + ": switched " + c.getName() + " kills it and survives"};
+                }
+            }
+            return new Object[]{0, "[rule 0] no rule fits: Forge AI decides (never switch outside combat or into a bad trade)"};
+        }
 
         List<SpellAbility> flaggedOptions() {
             List<SpellAbility> out = new ArrayList<>();
@@ -142,7 +189,13 @@ public class PilotSim {
             q.append("0: let Forge AI choose (it would play: ").append(ai == null || ai.isEmpty() ? "nothing" : ai.get(0).getHostCard().getName() + " - " + ai.get(0)).append(")\n");
             for (int i = 0; i < opts.size(); i++)
                 q.append(i + 1).append(": ").append(opts.get(i).getHostCard().getName()).append(" - ").append(opts.get(i)).append("\n");
-            String pick = ask(side, q.toString());
+            if (mode.equals("ai")) return ai;
+            String pick;
+            if (mode.equals("rules")) {
+                Object[] r = rulePick(opts);
+                pick = String.valueOf(r[0]);
+                log(side, ++seq, q.toString(), pick, (String) r[1]);
+            } else pick = ask(side, q.toString());
             int k;
             try { k = Integer.parseInt(pick.split("[ ,]")[0]); } catch (Exception e) { k = 0; }
             if (k < 1 || k > opts.size()) return ai;
@@ -165,7 +218,21 @@ public class PilotSim {
             for (Card c : player.getCreaturesInPlay()) {
                 if (CombatUtil.canAttack(c, def)) { able.add(c); anyFlagged |= flagged.contains(c.getName()); }
             }
-            if (!anyFlagged) return;
+            if (!anyFlagged || mode.equals("ai")) return;
+            if (mode.equals("rules")) {   // rule 5: add flagged attackers that no untapped enemy creature can kill
+                int maxP = 0, sum = 0;
+                for (Card o : player.getOpponents().get(0).getCreaturesInPlay())
+                    if (!o.isTapped()) { maxP = Math.max(maxP, o.getNetPower()); sum += Math.max(0, o.getNetPower()); }
+                List<String> added = new ArrayList<>();
+                for (Card c : able)
+                    if (flagged.contains(c.getName()) && !combat.isAttacking(c) && c.getNetToughness() > Math.min(sum, maxP * 2)) {
+                        combat.addAttacker(c, def); added.add(c.getName());
+                    }
+                log(side, ++seq, state(player), added.isEmpty() ? "0" : String.join(", ", added),
+                        added.isEmpty() ? "[rule 5] keep Forge AI's attack: a flagged attacker could die to a (double) block"
+                                : "[rule 5] add " + added + ": toughness above any one or two untapped blockers' power");
+                return;
+            }
             StringBuilder q = new StringBuilder(state(player));
             List<String> plan = new ArrayList<>();
             for (Card c : combat.getAttackers()) plan.add(c.getName());
