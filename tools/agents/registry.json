@@ -28,7 +28,7 @@
     "docs/Adventure/Campaign/AI_TAGS_REFERENCE.md"
    ],
    "triggers": {
-    "trig_015jBtSHs5hQ5jH2BnEcvj3X": "hourly step at :06 (about 5 min), user report when 4 h have passed since the last"
+    "trig_015jBtSHs5hQ5jH2BnEcvj3X": "step every 2 h at :06 (about 5 min; changed from hourly at the user's request), user report when 4 h have passed since the last"
    },
    "requests": [
     [
@@ -62,6 +62,10 @@
     [
      "2026-10-20",
      "Test updates the agents could use are automatically approved, with old versions backed up; AI changes go on a checkbox list for the user's final approval."
+    ],
+    [
+     "2026-10-20",
+     "Step every 2 hours at :06 instead of hourly."
     ]
    ],
    "analyses": [
@@ -104,7 +108,7 @@
    ],
    "triggers": {
     "trig_01SiErYtjtSNVc6dvi7L737a": "hourly batch at :10, at most 10 min of compute",
-    "trig_01FxuH3rS9RFY5TdiZZN5P7M": "4-hour report at :40"
+    "trig_01FxuH3rS9RFY5TdiZZN5P7M": "4-hour report at :25"
    },
    "requests": [
     [
@@ -187,7 +191,12 @@
    [
     "2026-10-20",
     "Set up an agent-coordinator agent; ping it on every interaction with sub agents; night policy 12-8 AM with main-session priority."
+   ],
+   [
+    "2026-10-20",
+    "Check-in steps 7-8: keep the schedule notes current (check-in :40/4h, balance report :25/4h, balance batch :10 hourly, coordinator :55 hourly, AI lab every 2 h at :06); refresh the project doc agent_operations_master.md in the project MTG Forge Adventure Mode+ with project_write."
    ]
-  ]
+  ],
+  "checkin": "trig_013wq1jHysGSQBbB9e6daKd5 at :40 every 4 h"
  }
 }
