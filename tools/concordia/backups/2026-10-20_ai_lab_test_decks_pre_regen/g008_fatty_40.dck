@@ -1,0 +1,30 @@
+[metadata]
+Name=Selvala's Vanguard (40)
+Description=Test deck shrunk to 40 cards by ai_lab/minideck.py from T4_G_Selvala.dck; test cards: none
+[Commander]
+1 Selvala, Heart of the Wilds|CMM
+[Main]
+16 Forest
+1 Boreal Druid|CSP
+1 Elvish Lyrist|8ED
+1 Elvish Mystic|M15
+1 Elvish Skysweeper|RAV
+1 Phyrexian Dreadnought|MIR
+1 Legolas's Quick Reflexes|LTC
+1 Nature's Claim|WWK
+1 Tail Swipe|DMU
+1 Bloodline Shaman|ONS
+1 Collector Ouphe|MH1
+1 Duskwatch Recruiter|SOI
+1 H.E.R.B.I.E., Lovable Robot|MSC
+1 Leaf Gilder|ORI
+1 Leaf-Crowned Visionary|DMU
+1 Viridian Zealot|DST
+1 Agatha's Soul Cauldron|WOE
+1 Collective Resistance|MH3
+1 Heroic Intervention|M21
+1 Infectious Bite|ONE
+1 Ozolith, the Shattered Spire|MOM
+1 Ram Through|IKO
+1 Return to Nature|MID
+1 Sylvan Scrying|BFZ

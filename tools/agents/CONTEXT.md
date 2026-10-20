@@ -103,6 +103,8 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
 - 2026-10-20: 
+- 2026-10-20: forge-ai-lab's shrunk test decks (ai_lab/decks/*_30/_40, all from minideck.py) were regenerated from the current tier decks (T1-2 floor raise, T1 creature loosening), same size, lands and test-card copies. Old copies in tools/concordia/backups/2026-10-20_ai_lab_test_decks_pre_regen/. Results before this commit used the old test decks; don't pool them with new runs. lab001_switchpt and opp_sai_30 (not minideck builds) are unchanged.
+- 2026-10-20: 
 - 2026-10-20: Each starter colour gets a second version, decks/starter/<C>_Starter_Alt.dck (alternate commander, 5-8 cards changed). In every starter test, split games 50/50 between the _Normal and _Alt version (user); run_batch.py does this.
 - 2026-10-20: 
 - 2026-10-20: Tier 1-2 decks rebuilt with a raised floor (user): uncommon staples pushed, budget lands and cheap mana rocks added; T1 power now 16-18 (was 12-14), T2 25-30 (was 21-31). Green-zone stage-1 trainer/keeper windows moved up. deck-balance-lab: T1-2 games before this commit are on the old T1-2 decks; split them out like the earlier rebuild.
@@ -112,5 +114,3 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-20: Life bonuses (life5, life10) eliminated as an option by the user. No life-bonus tests; every sim at equal life. Old life rows stay in records.csv but are left out of the report.
 - 2026-10-20: The user and Claude Chat now leave requests for the main session in the Claude Doc agent_operations_master (inbox table); the main session works them at its 4-hour check-in. Agents don't write to it.
 - 2026-10-20: Schedules: AI lab step every 2 h at :06 (was hourly); balance report every 4 h at :25; main check-in every 4 h at :40; balance batch :10 and coordinator :55 hourly, unchanged.
-- 2026-10-20: Paused 17:57-20:16 UTC by the user, then resumed early; all schedules back on.
-- 2026-10-20: Analysis requests are batched into each agent's 4-hour report (coordinator budget check: AI lab turns over the time box from the request loop). Each answer turn stays within the time box.

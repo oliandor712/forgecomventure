@@ -66,6 +66,10 @@
     [
      "2026-10-20",
      "Step every 2 hours at :06 instead of hourly."
+    ],
+    [
+     "2026-10-20",
+     "Test decks regenerated from the current tier decks; don't pool results across the regeneration."
     ]
    ],
    "analyses": [
