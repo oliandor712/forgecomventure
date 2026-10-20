@@ -28,6 +28,10 @@ beneficial thing the card's text describes, so AI decks make more plays and win 
 - Commit only your own files (`docs/Adventure/Campaign/AI_TAGS_REFERENCE.md`, `tools/concordia/ai_lab/**`) to
   `campaign-design`, with a clear message and the session's attribution lines, then `git push -u origin campaign-design`.
   Don't commit worktrees, build output or `forge-gui/data/`.
+- **Pushing:** if `git push` fails, retry. On a rejection (another session pushed first), run
+  `git pull --no-rebase origin campaign-design`, resolve any conflict in your own files only, and push again. On a
+  network error, wait 2 s, 4 s, 8 s, 16 s between tries. Never force-push. If it still fails after 4 tries, keep the
+  commit, say so in your run report, and push it first thing next run.
 
 ## Required reading: the main session's AI review
 Read these before your first experiment and keep them as your primary materials. They are the main session's audited

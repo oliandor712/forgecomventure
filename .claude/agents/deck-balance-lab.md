@@ -26,6 +26,10 @@ rewritten. Work in small steps and keep your replies short.
 - Commit only `tools/concordia/balance_lab/**` with a clear message and the session's attribution lines. Then
   `git pull --no-rebase origin campaign-design` and `git push -u origin campaign-design`; other sessions push to this
   branch too. Don't commit build output, classpaths or `forge-gui/data/`.
+- **Pushing:** if `git push` fails, retry. On a rejection (another session pushed first), run
+  `git pull --no-rebase origin campaign-design`, resolve any conflict in your own files only, and push again. On a
+  network error, wait 2 s, 4 s, 8 s, 16 s between tries. Never force-push. If it still fails after 4 tries, keep the
+  commit, say so in your run report, and push it first thing next run.
 
 ## Setup (first run; reuse afterwards)
 - **Build with `tools/concordia/sim/setup.sh`** (fresh containers have no Maven cache; Maven Central is reachable and
