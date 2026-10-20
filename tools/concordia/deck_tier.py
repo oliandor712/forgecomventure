@@ -292,6 +292,18 @@ def cedh_strength(c):
     return min(1.0, _signals["cards"].get(c["name"].lower().split(" // ")[0], {}).get("cedh", 0.0) / CEDH_FULL)
 
 
+STAPLES = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deckgen", "staples.json")
+_cat = None
+
+
+def category(name):
+    """'staple', 'game_changer', 'watch' or '' from deckgen/staples.py's output (deckgen/staples.json)."""
+    global _cat
+    if _cat is None:
+        _cat = {k: v["category"] for k, v in json.load(open(STAPLES)).items()} if os.path.exists(STAPLES) else {}
+    return _cat.get(name.lower(), "")
+
+
 SCRYFALL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deckgen", "scryfall", "cards.json")
 EDH_LIFT = 0.6     # raw power an EDHREC rank alone can lift a card to (popularity is not pure strength)
 _edh = None
@@ -399,6 +411,8 @@ def rate(path, data, config):
     total = sum(n for n, _, _ in entries["main"]) + sum(n for n, _, _ in entries["commander"])
     deck_names = set(names)
     gc = sorted(x for x in deck_names if x in data["lists"]["gc"])
+    staples = sorted(x for x in deck_names if category(x) == "staple")
+    watch = sorted(x for x in deck_names if category(x) == "watch")
     mld = sorted(x for x in deck_names if x in data["lists"]["mld"])
     extra = sorted(x for x in deck_names if x in data["lists"]["extra"])
     chained = sorted(x for x in deck_names if x in data["lists"]["chained"])
@@ -426,7 +440,7 @@ def rate(path, data, config):
         "curve": [curve[i] for i in range(8)], "rarity": {k: rarity[k] for k in "CURMS?" if rarity[k]},
         "power": round(statistics.mean(powers), 1) if powers else 0.0,
         "top_power": sorted(powers, reverse=True)[:10],
-        "game_changers": gc, "mass_land_denial": mld, "extra_turns": extra, "chained_extra_turns": chained,
+        "game_changers": gc, "staples": staples, "watch": watch, "mass_land_denial": mld, "extra_turns": extra, "chained_extra_turns": chained,
         "combos": combos, "problems": problems,
         "types": dict(ptypes), "pips": {k: v for k, v in pips.items() if v}, "sources": dict(sources),
         "karsten_lands": round(31.4 + 3.13 * (statistics.mean(mvs) if mvs else 0) - 0.28 * cheap_ramp_draw, 1),
@@ -536,6 +550,7 @@ def main(argv):
             r["lands"], r["basic"], r["creatures"], r["ramp"], r["fast"], r["draw"], r["removal"], r["wipe"], r["tutor"]))
         print("  avg mana value %.2f  curve 0-7+: %s  rarity %s" % (r["avg_mv"], "-".join(map(str, r["curve"])), r["rarity"]))
         print("  power %.1f (top ten %s)" % (r["power"], r["top_power"]))
+        print("  staples %d  watch-list cards %s" % (len(r["staples"]), r["watch"] or "none"))
         print("  Game Changers %s  mass land denial %s  extra turns %s  combos early %d / late %d" % (
             r["game_changers"] or "none", r["mass_land_denial"] or "none", r["extra_turns"] or "none",
             len(r["combos"]["early_game"]), len(r["combos"]["late_game"])))
