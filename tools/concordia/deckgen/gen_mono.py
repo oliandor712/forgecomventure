@@ -60,7 +60,8 @@ def build_to(d, want):
             r = dt.rate(path, data, cfg)
             early, late = r['combos']['early_game'], r['combos']['late_game']
             if early or (d['tier'] < 3 and late):
-                d.setdefault('ban', []).append(sorted((early + late)[0].split(' + '))[0])
+                pieces = [x for x in (early + late)[0].split(' + ') if x != d['commander'].lower()]
+                d.setdefault('ban', []).extend(x for x in pieces if x not in d.get('ban', []))
                 continue
             break
         if best is None or (want and abs(r['power'] - want) < abs(best[0] - want)):
