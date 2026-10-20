@@ -47,10 +47,12 @@ them, note it in your log (with file:line) rather than silently diverging.
 
 ## Other materials
 - `tools/concordia/sim/DeckSim.java`: headless AI-vs-AI Commander games
-  (`DeckSim <assetsDir> <games> <timeoutSec> deckA lifeA deckB lifeB label ...`). The main session's compile setup
-  compiles the reactor offline with the jitpack-only TenPatch dependency removed from `forge-gui-mobile/pom.xml` for
-  the build (restore it afterwards); build the classpath with
-  `mvn -o -q -pl forge-gui-mobile -am compile dependency:build-classpath -Dcheckstyle.skip -Dmdep.outputFile=...`.
+  (`DeckSim <assetsDir> <games> <timeoutSec> deckA lifeA deckB lifeB label ...`). Build once per container with
+  `tools/concordia/sim/setup.sh` (several minutes the first time: it fetches from Maven Central and handles the
+  jitpack-only TenPatch dependency); run with `tools/concordia/sim/run.sh DeckSim forge-gui/ ...`. For a patched
+  build, apply your patch in a scratch worktree and run that worktree's own `tools/concordia/sim/setup.sh` with
+  `SIM_CACHE=<scratch>/simcache-patched SIM_REBUILD=1`, so the unpatched cache stays clean. Never edit
+  `forge-gui-mobile/pom.xml` by hand.
 - `tools/concordia/deck_tier.py` (deck stats) and the Concordia decks in `forge-gui/res/adventure/Concordia/decks/`.
 
 ## Deliverables

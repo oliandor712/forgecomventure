@@ -28,12 +28,12 @@ rewritten. Work in small steps and keep your replies short.
   branch too. Don't commit build output, classpaths or `forge-gui/data/`.
 
 ## Setup (first run; reuse afterwards)
-- The sim tool is `tools/concordia/sim/DeckSim.java`: headless Forge Commander games (see its usage line). Build the
-  classpath as the main session does:
-  1. Remove the jitpack-only TenPatch dependency from `forge-gui-mobile/pom.xml` for the build, and restore it after.
-  2. Run `mvn -o -q -pl forge-gui-mobile -am compile dependency:build-classpath -Dcheckstyle.skip -Dmdep.outputFile=<scratch>/cp.txt`.
-  3. Add `gdx-backend-headless` and the `gdx-platform` desktop natives.
-  4. Keep the classpath file outside the repo.
+- **Build with `tools/concordia/sim/setup.sh`** (fresh containers have no Maven cache; Maven Central is reachable and
+  jitpack is not, which the script handles). The first run takes several minutes and doesn't count toward the 10-minute
+  batch; later runs reuse `~/.cache/forge-sim`. Run sims with `tools/concordia/sim/run.sh <Class> <args>`. It
+  compiles every `.java` in `tools/concordia/sim/` and `tools/concordia/balance_lab/` onto the classpath, so your
+  BonusSim is picked up after you save it (re-run setup.sh). The usage line is in `DeckSim.java`. Never edit
+  `forge-gui-mobile/pom.xml` yourself; the script swaps it and restores it.
 - Write **`tools/concordia/balance_lab/BonusSim.java`**: a copy of DeckSim that also takes, per side, an optional
   comma-separated list of cards to start on the battlefield, as Forge's `startBattleWithCard` does
   (`RegisteredPlayer.addExtraCardsOnBattlefield`; see `forge-gui-mobile/.../scene/DuelScene.java` around line 360). It
