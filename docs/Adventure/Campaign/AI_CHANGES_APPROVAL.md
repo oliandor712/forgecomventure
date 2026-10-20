@@ -29,13 +29,22 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
 
 ## forge-ai code changes (the AI's own logic; none approved yet)
 
-- [ ] **005, switch / self-pump guard**: Planned.
-  - Where: `forge-ai/.../ability/PumpAi.java:55-61` and `:81-85`.
-  - Activate only after blocks, and only for a creature that is attacking or blocking (or to survive damage aimed at
-    it).
-  - Simulate the combat with and without the switch (`ComputerUtilCombat.combatantWouldBeDestroyed`, line 675).
-    Switch only if it adds unblocked damage, kills while surviving, or kills when the creature dies anyway.
-  - Covers every switch and "+X/-X to itself" card.
+- [ ] **005, switch as "two versions"**: Tested, needs work.
+  - Where: `forge-ai/.../ability/PumpAi.java`. Patch: `tools/concordia/ai_lab/patches/005-switchpt-two-versions.patch`.
+  - What it does: switch only in declare blockers of a combat the creature is in. Compare the creature as it is with
+    it switched, and switch only if the switched version does better. At most one switch and one switch back per
+    turn.
+  - Tested in 10 games: activations went from about 92 to 8, all well timed.
+    - Good: an unblocked Myr Quadropod switched to hit for 4.
+    - Fair: an Aquamoeba switched to trade with its blocker.
+  - Still to fix (main-session review):
+    - Use Forge's own combat predictor (`ComputerUtilCard.shouldPumpCard`, line 1470), which handles first strike,
+      deathtouch and similar.
+    - Subtract the activation cost: Aquamoeba discards a card.
+    - Tell the rest of the AI when a switch is chosen to trade. Today another routine then bounced the creature with
+      Echoing Truth.
+    - Allow the switch that saves it from damage.
+  - Wins are unchanged: 1-9 in all versions.
 - [ ] **006, Fog count includes Effect-based Fogs**: Planned.
   - Where: `FogAi.java:116-133` (`countAvailableFogs`).
   - Count spells with `AILogic$ Fog` as Fogs, so the AI's "3 or more Fogs in hand" play works for decks built on those

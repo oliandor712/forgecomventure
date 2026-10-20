@@ -202,3 +202,89 @@ From those, compute a **useful** flag per play, using the rules in (d).
 2. Prevent effects need a real threat (the opponent's declare blockers, life in danger), and FogAi already does that.
 3. Self-pump and redirect effects need a combat simulation with and without the effect, plus a target the host itself
    is fighting.
+
+## 2026-10-20: Patch 005 two-version SwitchPT review
+
+Request: Judge each activation in n001-twoversions (g4, g6, g9): better version or not, missed alternatives (first strike, deathtouch, tricks, double blocks), soundness of versionScore's value model; is two versions the general pattern for 'become X temporarily' cards; concrete PumpAi corrections with patch lines and extra log columns.
+
+**Data.** `patches/005-switchpt-two-versions.patch` and `results/n001-twoversions/` g4, g6 and g9 (the activations,
+with that turn's combat, damage and life lines).
+
+### Each activation
+
+| Game, turn | What happened | Verdict |
+|---|---|---|
+| g6 T14 | Myr Quadropod attacking, unblocked, switched to 4/1, hit for 4 (B 15 to 7) | Right: the better version |
+| g9 T17 | Aquamoeba attacking, blocked by Thopter Mechanic, switched to 3/1, killed the Mechanic, died | Defensible trade, but the score ignored the cost. Aquamoeba's switch costs a card from hand, so it traded a creature plus a card for one creature |
+| g4 T23 | On B's attack, Myr Quadropod and Turtleshell Changeling both switched while blocking | Mixed (below) |
+
+On g4:
+- **Turtleshell (4/1) took 1 damage from Barkform Harvester and died.** If its 4 damage killed the 3-toughness
+  Harvester, it's a fair trade. Confirm with the damage lines.
+- **Myr was then bounced by A's own Echoing Truth in the same step.** The switch made Myr a 4/1 that would die, so a
+  second part of the AI (its "save my creature" logic) spent a card bouncing it.
+- **That sequence is a loss:** mana for the switch, a spell, and Myr gone from the board, to avoid a trade the switch
+  logic had just chosen.
+
+### Corrections to the patch (line numbers are the patch's `+` lines)
+
+1. **Score with Forge's own combat predictor, not hand-written damage math** (lines 54-85, `versionScore`).
+   - Today's math misses first strike and double strike, deathtouch, indestructible, prevention, trample, lifelink,
+     and damage the creature already took this turn. Line 81 compares to full toughness; it should use toughness
+     minus damage already marked.
+   - `ComputerUtilCard.shouldPumpCard(ai, sa, host, p - t, t - p, emptyList)` (ComputerUtilCard.java:1470) already
+     simulates a pumped creature in the current combat, all of those included. A switch is a pump of +(t-p)/+(p-t).
+   - Use it as the decision. Keep the two-version idea for what it does well, picking between versions: call
+     `shouldPumpCard` for the switch, and for the switch back while switched.
+2. **Subtract the activation cost** (add it to line 50's comparison).
+   - Aquamoeba's "Discard a card" costs card value. A cheap estimate: `evaluateCreature`-scale 60 for a spare land
+     (more lands than turns left), 120 for any other card.
+   - Mana costs (Turtleshell {1}{U}, Myr {3}): subtract 10 per mana that a spell in hand could have used this turn.
+   - Then switch only if the gain beats the cost.
+3. **Don't choose a trade that another AI routine will then pay to undo** (lines 76-83).
+   - When the chosen version dies (`toHost >= toughness`), put the host in `AiCardMemory`, using a new memory set or
+     `MemorySet.HELD_MANA_SOURCES_FOR_ENEMY_DECLBLK`'s pattern, so the "save my creature" logic skips it this turn
+     (the g4 Echoing Truth).
+   - Or require that the kill be worth clearly more: value(kills) > 1.25 × value(host).
+4. **Keep the per-turn cap** (line 25: at most a switch and a switch back). Keep the phase gate (lines 96-97: declare
+   blockers, in combat).
+   - Also allow the save-from-damage case: switch in response to damage aimed at the host when the new toughness
+     survives it. Today's gate blocks that useful case.
+5. **Value model** (line 67): power × 10 versus kills by `evaluateCreature`. It's fine as long as the two scales
+   never meet in one comparison, and today each branch compares like with like, as you say. With correction 1 they
+   stop mattering anyway.
+   - Keep the lethal shortcut at 10000. Count planeswalker defenders too: power at least its loyalty.
+
+### Is two versions the right general pattern? Yes, for "becomes X temporarily" cards
+
+This covers switches, pumping itself, Animate or BecomeCreature (manlands, vehicles, awakening), and turning a morph
+face up. The rule: compare the card as it is now with the card as it would become, in the current combat and board,
+using Forge's existing predictors on a copy with the change applied:
+- **Building the copy:** `CardCopyService` LKI copy + `addChangedCardTypes` / `addPTBoost`;
+- **Predicting the outcome:** `ComputerUtilCombat.attackerWouldBeDestroyed` / `blockerWouldBeDestroyed`,
+  `ComputerUtilCard.evaluateCreature`.
+
+Then subtract the cost and act only if the gain is clear. Two extra checks for things that last until end of turn:
+- **Exposure:** an animated land can be killed by sorcery-speed or instant removal. Subtract a risk term when the
+  opponent has open mana.
+- **Timing:** for animating to attack, decide before declare attackers. Use the version's attack value against the
+  expected blocks (the existing `AiAttackController` evaluation of the copy).
+
+### Logging to add for every switch or "become X" activation
+
+| Column | What it holds |
+|---|---|
+| `score_now` / `score_switched` | The predictor's outcome per version: survives or dies, what it kills, and the damage to the player |
+| `cost` | The card discarded (and its value), or the mana spent |
+| `role` | Attacker unblocked, attacker blocked, or blocker, and the opposing P/T plus keywords (first strike, deathtouch) |
+| `followups` | Any other spell or ability the AI aimed at the host later that turn (catches the g4 bounce) |
+| `outcome` | After damage: host survived or died, kills, damage dealt |
+| `useful` | 1 if the outcome beat the unswitched version, judged from the outcome after the game |
+
+**Rules to apply:**
+1. Pick between versions with Forge's combat predictor, including first strike and deathtouch, never with
+   hand-written damage math.
+2. Count the activation cost, cards above all, before choosing a version.
+3. When a version is chosen to trade, tell the rest of the AI, so another routine doesn't pay to undo it.
+4. Two versions is the general pattern for any "becomes X until end of turn" card: compare now against transformed,
+   then subtract the cost and the exposure.
