@@ -992,6 +992,24 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
         Deck newDeck = Config.instance().starterDeck(ColorSet.fromNames(colors.toCharArray()), difficulty, AdventureModes.Commander, 0, null);
         if (newDeck == null)
             return;
+        replaceStarter(newDeck, difficulty);
+    }
+
+    /** Replaces the starter deck with the deck file at this plane-relative path (for example a starter variant). */
+    public void replaceStarterDeck(String path) {
+        Deck newDeck = CardUtil.getDeck(path, false, false, "", false, false);
+        if (newDeck == null || newDeck.isEmpty())
+            return;
+        DifficultyData difficulty = Config.instance().getConfigData().difficulties[0];
+        for (DifficultyData candidate : Config.instance().getConfigData().difficulties) {
+            if (candidate.name != null && candidate.name.equals(difficultyData.name)) {
+                difficulty = candidate;
+            }
+        }
+        replaceStarter(newDeck, difficulty);
+    }
+
+    private void replaceStarter(Deck newDeck, DifficultyData difficulty) {
         //Take back the cards the placeholder starter gave (only a Commander game started from it), so cards the player bought stay owned.
         String placeholderColor = Config.instance().getConfigData().placeholderStarterColor;
         Deck placeholder = placeholderColor == null || placeholderColor.isEmpty() || getAdventureMode() != AdventureModes.Commander ? null

@@ -110,6 +110,32 @@ def esc(obj):
     return html.escape(json.dumps(obj, ensure_ascii=False), quote=True)
 
 
+VARIANTS = os.path.join(os.path.dirname(HERE), 'deckgen', 'variants.json')
+STARTERS = os.path.join(os.path.dirname(HERE), '..', '..', 'forge-gui', 'res', 'adventure', 'Concordia', 'decks', 'starter')
+
+
+def commander_choice(c):
+    """After the colour pick: lead with the starter's commander or its variant's (decks/starter/<C>_Starter_Alt.dck).
+    Both commanders are unlocked at the Commander Hall either way (flags hall.<card>)."""
+    base = None
+    for l in open(os.path.join(STARTERS, '%s_Starter_Normal.dck' % c)):
+        if base == '': base = re.match(r'^\d+\s+([^|]+)', l).group(1).strip(); break
+        if l.strip() == '[Commander]': base = ''
+    alt = next((v for v in (json.load(open(VARIANTS)) if os.path.exists(VARIANTS) else []) if v.get('starter') and v['colors'] == c), None)
+    if not alt:
+        return [{'name': '(Get up)', 'action': [{'setStarterColor': c}]}]
+    unlock = [{'setCharacterFlag': {'key': 'hall.' + base, 'val': 1}}, {'setCharacterFlag': {'key': 'hall.' + alt['commander'], 'val': 1}}]
+    short = lambda n: n.split(',')[0]
+    return [
+        {'name': 'Lead with %s' % short(base), 'action': [{'setStarterColor': c}] + unlock,
+         'text': '%s steps out of the light to lead your deck. %s bows and waits at the Commander Hall, if you ever want a change.' % (short(base), short(alt['commander'])),
+         'options': [{'name': '(Get up)'}]},
+        {'name': 'Lead with %s' % short(alt['commander']), 'action': [{'setStarterDeck': 'decks/starter/' + alt['file']}] + unlock,
+         'text': '%s steps out of the light to lead your deck. %s bows and waits at the Commander Hall, if you ever want a change.' % (short(alt['commander']), short(base)),
+         'options': [{'name': '(Get up)'}]},
+    ]
+
+
 def seal_angel():
     p = os.path.join(MAPS, 'emberbrook_house.tmx')
     s = open(p).read()
@@ -119,17 +145,20 @@ def seal_angel():
 
         def walk(node):
             for opt in node.get('options', []):
-                for act in opt.get('action', []):
-                    if 'setStarterColor' in act:
-                        own = act['setStarterColor']
-                        opt['action'] = [a for a in opt['action']
-                                         if not FLAG_KEYS.match(a.get('setQuestFlag', {}).get('key', ''))] + color_choice_flags(own)
-                        break
+                own = next((a['setCharacterFlag']['key'][3:] for a in opt.get('action', [])
+                            if re.fullmatch(r'col[WUBRG]', a.get('setCharacterFlag', {}).get('key', ''))), None)
+                if own:  # the colour pick
+                    for a in opt['action']:
+                        a.pop('setStarterColor', None)
+                    opt['action'] = [a for a in opt['action'] if a
+                                     and not FLAG_KEYS.match(a.get('setQuestFlag', {}).get('key', ''))] + color_choice_flags(own)
+                    opt['options'] = commander_choice(own)
+                    continue
                 walk(opt)
         for n in nodes:
             walk(n)
         return m.group(1) + esc(nodes) + m.group(3)
-    s2, n = re.subn(r'(<property name="dialog" value=")([^"]*setStarterColor[^"]*)("/>)', fix, s)
+    s2, n = re.subn(r'(<property name="dialog" value=")([^"]*(?:setStarterColor|colW)[^"]*)("/>)', fix, s)
     open(p, 'w').write(s2)
     print('Seal Angel: %d dialogs updated' % n)
 

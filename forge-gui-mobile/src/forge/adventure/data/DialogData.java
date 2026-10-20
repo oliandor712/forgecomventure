@@ -98,6 +98,7 @@ public class DialogData implements Serializable {
         public String gateMap;          //With gateTo: the map of that POI to enter (default: its main map).
         public int gateEntry = 0;       //With gateTo: the entry object to start at (0 = the map's spawn entry).
         public String setStarterColor; //Replace the starter deck with the one for these colors (for example "W").
+        public String setStarterDeck;  //Replace the starter deck with this deck file (plane-relative, for example a starter variant).
 
         public ActionData(){}
 
@@ -118,6 +119,7 @@ public class DialogData implements Serializable {
             gateMap = other.gateMap;
             gateEntry = other.gateEntry;
             setStarterColor = other.setStarterColor;
+            setStarterDeck = other.setStarterDeck;
             advanceQuestFlag = other.advanceQuestFlag;
             advanceMapFlag = other.advanceMapFlag;
             setEffect = other.setEffect;
