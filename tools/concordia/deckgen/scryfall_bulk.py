@@ -15,7 +15,8 @@ Staying inside Scryfall's rules, so the tools don't get rate-limited or blocked:
 - Single-card lookups use /cards/collection (up to 75 names per request), with at least 0.15 s between requests
   (Scryfall asks for 50-100 ms) and a back-off on HTTP 429.
 - Every request sends the User-Agent and Accept headers Scryfall requires.
-The raw bulk file (~150 MB) and cards.json stay local (deckgen/scryfall/ is git-ignored).
+The raw bulk file is never stored; cards.json stays local, and a gzip of it (cards.json.gz) is committed so every
+container has the data without calling Scryfall. load() reads either.
 """
 import gzip, json, os, sys, time, urllib.error, urllib.request
 
@@ -84,6 +85,17 @@ def refresh():
     meta['updated_at'] = entry['updated_at']
     json.dump(meta, open(meta_p, 'w'))
     print('%d cards written to scryfall/cards.json' % len(out))
+
+
+def load():
+    """The slimmed card data: scryfall/cards.json, else the committed cards.json.gz (a container whose network policy
+    blocks Scryfall can still read it), else {}."""
+    p = os.path.join(DIR, 'cards.json')
+    if os.path.exists(p):
+        return json.load(open(p))
+    if os.path.exists(p + '.gz'):
+        return json.load(gzip.open(p + '.gz', 'rt'))
+    return {}
 
 
 def lookup(names):
