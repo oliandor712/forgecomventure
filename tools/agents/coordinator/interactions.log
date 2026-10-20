@@ -36,3 +36,4 @@ PING 2026-10-20T20:55Z main -> deck-balance-lab: context: bonus mix (small vs ar
 PING 2026-10-20T20:55Z main -> forge-ai-lab: context: 008 hand-built case confirmed as next step (sent 20:50Z)
 PING 2026-10-20T20:51Z deck-balance-lab -> coordinator: CYCLE NOW: balance report pushed 53ef7b36
 PING 2026-10-20T21:20Z deck-balance-lab -> main: result: 21:10 batch pushed (ca163290), 36 games, 7.4 min, equal life, 16 inner on new decks, 5 bonus sets, no life bonuses; inbox #4 resolved
+PING 2026-10-20T22:20Z deck-balance-lab -> main: result: 22:10 batch pushed (46977272), 28 games in 8 min, equal life, no life bonuses, 186 rows
