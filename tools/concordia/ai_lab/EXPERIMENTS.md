@@ -2,6 +2,7 @@
 
 
 **Convention (user, 2026-10-20): 30-card test games start at 20 life each (equal; changed from 15).** Experiment 001 was run before this rule at 40/40; re-run it at 20/20 when convenient.
+**Update (user, 2026-10-20): 10 games per condition, and from the next test on decks are 40 cards (`minideck.py --size 40`) to limit decking; life stays 20 each.** Experiments 001-002 used 30 cards.
 One entry per experiment (see `.claude/agents/forge-ai-lab.md`). Newest last.
 
 ## Candidate list (not yet tested)
