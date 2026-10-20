@@ -49,6 +49,10 @@
     [
      "2026-10-20",
      "Shrink test decks to 30 cards so flagged cards are drawn more often (if a restriction blocks it, pad with Wastes removed at match start)."
+    ],
+    [
+     "2026-10-20",
+     "User standing request (relayed by the agent): every test's results go to the main session with an analysis request."
     ]
    ],
    "analyses": [
@@ -89,6 +93,10 @@
     [
      "2026-10-20",
      "Retry failed pushes."
+    ],
+    [
+     "2026-10-20",
+     "User standing request (relayed by the agent): send results to the main session after every test, with an analysis request; main session asked to batch these with the 4-hour report."
     ]
    ],
    "analyses": [
