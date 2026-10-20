@@ -14,3 +14,5 @@ PING 2026-10-20T17:36Z forge-ai-lab -> main: analysis_request: s005/s006 code A/
 PING 2026-10-20T17:41Z main -> forge-ai-lab: analysis: "s005/s006 code A/B review" filed and sent; checklist: 005 close to ready, 006 parked
 PING 2026-10-20T17:41Z forge-ai-lab -> main: analysis_request: s008 gang-block patch (CHECKLIST 008 added)
 PING 2026-10-20T17:44Z main -> forge-ai-lab: analysis: "s008 gang-block patch review" filed and sent; checklist item 008 added
+PING 2026-10-20T17:45Z forge-ai-lab -> main: analysis_request: 008 regression sim (r008a/b); agent reported one accidental pkill -f of its own shell (no damage)
+PING 2026-10-20T17:48Z main -> forge-ai-lab: analysis: "Regression for 008: not enough yet" filed and sent; next = gang-block scenario, then 20-game single-patch regression
