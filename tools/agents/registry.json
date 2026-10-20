@@ -3,13 +3,18 @@
  "shared_context": "tools/agents/CONTEXT.md",
  "context_sent": {
   "forge-ai-lab": {
-   "tools/agents/CONTEXT.md": "26195074",
+   "tools/agents/CONTEXT.md": "c021274c",
    ".claude/agents/forge-ai-lab.md": "d191cb5a",
    "date": "2026-10-20"
   },
   "deck-balance-lab": {
-   "tools/agents/CONTEXT.md": "26195074",
+   "tools/agents/CONTEXT.md": "c021274c",
    ".claude/agents/deck-balance-lab.md": "d191cb5a",
+   "date": "2026-10-20"
+  },
+  "agent-coordinator": {
+   "tools/agents/CONTEXT.md": "c021274c",
+   ".claude/agents/agent-coordinator.md": "eabfd3b5",
    "date": "2026-10-20"
   }
  },
