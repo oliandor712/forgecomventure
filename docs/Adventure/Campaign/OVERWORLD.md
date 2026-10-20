@@ -513,8 +513,9 @@ Fragments** (quest items, one per Paragon, named "Summit Key Fragment (White-Blu
    opens the allies, the third Seal opens the enemies). A gate's portal turns on only once its zone exists (`READY`),
    so an open gate to an unbuilt zone stays sealed with a "still waking" line instead of dropping the player on the
    world map. Paragon gating (five Seals) comes with the border towns.
-5. **The Green zone as the template** (§4.3). **Built** with `tools/concordia/maps/build_color_zone.py green`
-   (safe to re-run; the other zones get their own entry in its `ZONES`). Not yet playtested:
+5. **The Green zone as the template** (§4.3). **Done**: built with `tools/concordia/maps/build_color_zone.py green`
+   (safe to re-run; the other zones get their own entry in its `ZONES`) and playtested: the player reached and beat
+   the Warden, every gate and door worked, and enemy placement and aggro behaved.
    - Three world sections, each its own biome closed off by Green woods and ocean, so the passes are the only way
      on: A (`zones/green_a.json`, 120×60) the gate town Rootgate's pocket and the route A maze; B (170×40) the route B
      corridor with five clearings, four with random dungeons and one with a duelist; C (116×56) the open field and
