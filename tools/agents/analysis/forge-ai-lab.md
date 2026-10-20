@@ -459,3 +459,57 @@ by pid; it's standing rule 10 in CONTEXT.md.
 1. Test one patch at a time against base.
 2. Pick decks that reach the changed code path.
 3. Measure the decision's purpose (kills, survival) by object id, not only casts and wins.
+
+## 2026-10-20: g008 gang-block test review; shadow-mode logging
+
+Request: Parse g008 base/code gang-block combats (blockers, trick, deaths); is any code cast a decision base would not make; per-event log before or after the 20-game run.
+
+**Data.** `results/g008-{base,code}/*.tsv`. I parsed every turn with a trick cast (Giant Growth, Titanic Growth,
+Blossoming Defense), its declare-blockers lines and its graveyard zone changes.
+
+**A parsing note.** The log line reads "<blockers> to block <attacker>". Selvala's name has a comma in it, so a naive
+"X and Y" test counts single blocks by Selvala as gang blocks. The real gang blocks are below.
+
+### The real gang blocks
+
+| Arm, game, turn | Who blocked whom | Trick cast | Graveyard that combat | Reading |
+|---|---|---|---|---|
+| base g0 T26 | B's Collector Ouphe and Leaf Gilder block A's Deadly Recluse | Blossoming Defense on the Recluse (the attacker) | Recluse, Gilder, Ouphe (+1) | Attacker-side pump: not 008's path |
+| base g4 T36 | 5 of A's creatures block B's Phyrexian Dreadnought | Titanic Growth ×2 + Blossoming Defense ×2, all on Deadly Recluse | 4 of A's blockers died; Dreadnought not in the list | Over-pumping (below) |
+| base g8 T27 | A's Spider Token and Sylvan Ranger block B's Collector Ouphe | Blossoming Defense on Sylvan Ranger | Ouphe, Spider Token | Fine |
+| code g4 T15 | A's Grappler Spider and Canopy Spider block B's Krallenhorde Howler | Blossoming Defense on Canopy Spider | Howler, Grappler Spider | Fine; the same shape as base g8 T27 |
+| code g2 T15 | B's Leaf Gilder and Selvala block A's Arasta | Giant Growth on Deadly Recluse (another creature) | none | No gang-block decision |
+
+**The over-pumping in base g4 T36:**
+- Four tricks went on one blocker in one combat, and that blocker has deathtouch.
+- Deathtouch already kills whatever it damages, so extra power does nothing. Only toughness (surviving) matters.
+- A lost 4 creatures and 4 cards, and the Dreadnought apparently survived.
+- **This is a bug in the unpatched AI, not in 008.** The pump logic doesn't stop once an earlier pump this combat
+  already secured the outcome, and it values power on a deathtouch creature.
+- I'm adding it as a candidate checklist item, **009**: don't stack pumps past what the predicted outcome needs, and
+  don't count power for a creature with deathtouch.
+
+### Is any code cast a decision the base wouldn't make?
+
+- **Can't tell from these runs.** The arms are different games, so no decision lines up with a counterpart.
+- The two comparable gang blocks (code g4 T15 and base g8 T27) got the same kind of decision.
+- With 4 gang-block turns per arm, a game-level A/B won't isolate 008's path even at 20 games.
+
+### Log first, then run. And make the log a shadow mode
+
+- **Build per-event logging before the 20-game run,** as you suggest. Best of all, add a shadow evaluation.
+- **How it works:** at every `shouldPumpCard` call, compute both answers, the unpatched blocker-branch result and the
+  008 result. Act on one of them (the arm's), and log `SHADOW pumped_id role group_ids base=<y/n> 008=<y/n>`
+  whenever they differ.
+- **Why it wins:** each disagreement is exactly a decision 008 changes, in the same game state. Then judge each with
+  `pred`, `actual` and `useful`.
+- **It's cheap:** 10 games of the pump-trick decks in the code arm give every disagreement with its outcome, and no
+  game-level noise.
+- **Then the 20-game regression only checks the totals:** casts per drawn trick, and pumps outside combat.
+
+**Rules to apply:**
+1. To isolate a decision change, evaluate both versions on the same game state (a shadow mode) instead of comparing
+   different games.
+2. Read gang-block logs carefully. Card names contain commas; parse by object id, not by "and".
+3. Watch for over-pumping: several tricks on one creature in one combat, or power on deathtouch. It's a separate
+   problem (candidate 009).
