@@ -1,0 +1,28 @@
+# 002-fog-unflag: drop stale `AI:RemoveDeck:All` from Fog-logic instants (card-script proposal, NOT applied)
+# Cards tested: Thwart the Enemy, Vine Snare (both `A:SP$ Effect ... AILogic$ Fog`, EffectAi.java:112 handles Fog).
+# Same flag/logic pattern, untested: Endure, Harsh Justice, Shield Dancer (white; to test next).
+# Test (AiLabSim, equal life 20/20, 10 games each, 150 s cap): Arasta mono-green 30-card deck with 2 copies of each card
+# vs Rath Wildcats (Mirri) 30-card deck.
+#   baseline (flag present): casts 0
+#   patched (flag removed):  casts 19 (Thwart 11, Vine Snare 8); wins A=2 B=8 vs baseline A=0 B=10; avg turns 22.7 vs 19.2
+# Apply from the repo root with: git apply tools/concordia/ai_lab/patches/002-fog-unflag.patch
+diff --git a/forge-gui/res/cardsfolder/t/thwart_the_enemy.txt b/forge-gui/res/cardsfolder/t/thwart_the_enemy.txt
+index 861e71b0..27b9bfd1 100644
+--- a/forge-gui/res/cardsfolder/t/thwart_the_enemy.txt
++++ b/forge-gui/res/cardsfolder/t/thwart_the_enemy.txt
+@@ -3,5 +3,4 @@ ManaCost:2 G
+ Types:Instant
+ A:SP$ Effect | ReplacementEffects$ RPrevent | AILogic$ Fog | SpellDescription$ Prevent all damage that would be dealt this turn by creatures your opponents control.
+ SVar:RPrevent:Event$ DamageDone | Prevent$ True | ActiveZones$ Command | ValidSource$ Creature.OppCtrl+inZoneBattlefield | Description$ Prevent all damage that would be dealt this turn by creatures your opponents control.
+-AI:RemoveDeck:All
+ Oracle:Prevent all damage that would be dealt this turn by creatures your opponents control.
+diff --git a/forge-gui/res/cardsfolder/v/vine_snare.txt b/forge-gui/res/cardsfolder/v/vine_snare.txt
+index 7c9a7fad..b5ef2784 100644
+--- a/forge-gui/res/cardsfolder/v/vine_snare.txt
++++ b/forge-gui/res/cardsfolder/v/vine_snare.txt
+@@ -3,5 +3,4 @@ ManaCost:2 G
+ Types:Instant
+ A:SP$ Effect | ReplacementEffects$ RPrevent | AILogic$ Fog | SpellDescription$ Prevent all combat damage that would be dealt this turn by creatures with power 4 or less.
+ SVar:RPrevent:Event$ DamageDone | Prevent$ True | ValidSource$ Creature.powerLE4 | IsCombat$ True | ActiveZones$ Command | Description$ Prevent all combat damage that would be dealt this turn by creatures with power 4 or less.
+-AI:RemoveDeck:All
+ Oracle:Prevent all combat damage that would be dealt this turn by creatures with power 4 or less.
