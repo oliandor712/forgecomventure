@@ -92,7 +92,8 @@ def pick_rarity(p, tier, rcount, spec):
 def bucket(cmc): return max(1, min(6, cmc))
 
 def build(d):
-    tier = d['tier']; spec = json.loads(json.dumps(SPEC[tier])); spec['curve'] = {int(k): v for k, v in spec['curve'].items()}
+    tier = d['tier']; spec = json.loads(json.dumps(SPEC[tier])); spec.update(d.get('spec', {}))  # per-deck overrides (e.g. a spells deck)
+    spec['curve'] = {int(k): v for k, v in spec['curve'].items()}
     ident = frozenset(d['colors'])
     cmd = pool[d['commander'].lower()]
     # external seeds (deckgen/external/seeds, not committed) are skipped when missing; the deck then builds unseeded

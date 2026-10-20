@@ -42,8 +42,13 @@ def role(p):
     return 'creature' if 'Creature' in p['types'] else 'other'
 
 
+CARD_TYPES = {'Legendary', 'Creature', 'Artifact', 'Enchantment', 'Land', 'Planeswalker', 'Instant', 'Sorcery', 'Basic',
+              'Snow', 'World', 'Kindred', 'Tribal', 'Battle', '-', '—', 'Token'}
+
+
 def subtypes(p):
-    return set(p['types'].split('—')[-1].split()) - G.NOT_THEMES if '—' in p['types'] else set()
+    """Creature types (the pool's type line has no dash: 'Legendary Creature Human Soldier')."""
+    return set(p['types'].replace('—', ' ').split()) - CARD_TYPES - G.NOT_THEMES
 
 
 def parse(path):
@@ -72,6 +77,7 @@ def candidates(d, cards, used):
     for k, p in pool.items():
         if k in used or not G.commander_ok(p, tier) or p['id'] != ident: continue
         if set(data['cards'][k]['flags']) & {'random', 'all'} or B.SKIP_TEXT.search(p['oracle']): continue
+        if (SC.get(k) or {}).get('game_changer'): continue  # Scryfall's list (the pool misses some double-faced names)
         fit = sum(deck_types[t] for t in subtypes(p))
         rank = (SC.get(k) or {}).get('edhrec_rank') or 40000
         popular = max(0.0, 1 - math.log10(rank) / math.log10(40000)) * 10
@@ -126,6 +132,15 @@ def variant(d, newcmd, folder=None):
 
 TAKEN = set()
 COLOR = {'W': 'White', 'U': 'Blue', 'B': 'Black', 'R': 'Red', 'G': 'Green'}
+# Universes Beyond / crossover sets: starters lead with Magic's own characters
+CROSSOVER = set('40K ACR BOT FCA FIC FIN LMAR LTC LTR MAR MDC MDD MSC MSH PIP PLTC PMOA PZA REX RFIN SPE SPM TLA TLE TMC TMT WHO'.split())
+
+
+def starter_ok(p, cards, need=3):
+    """A starter's alternate commander: from a Magic set (not a crossover) and sharing creature types with 3+ of the deck's creatures."""
+    if set(p['best'].values()) <= CROSSOVER: return False
+    deck_types = collections.Counter(t for _, q, _ in cards if 'Creature' in q['types'] for t in subtypes(q))
+    return sum(deck_types[t] for t in subtypes(p)) >= need
 
 
 def set_sideboard(path, entries):
@@ -145,7 +160,10 @@ def starters(prev, used):
         cmdname = re.match(r'^\d+\s+([^|]+)', lines[ci]).group(1).strip()
         d = {'tier': 2, 'colors': c, 'file': os.path.basename(base), 'name': 'Starter_%s' % COLOR[c], 'life': 20,
              'theme': G.theme_of(pool[cmdname.lower()]) or [], 'alt_file': '%s_Starter_Alt.dck' % c, 'word': 'Starter.'}
-        for cmd in candidates(d, cards, used)[:8]:
+        cand = candidates(d, cards, used)
+        tries = [x for need in (3, 1, 0) for x in [y for y in cand if starter_ok(y, cards, need)][:8]]  # loosen fit if needed
+        seen = set(); tries = [x for x in tries if not (x['name'] in seen or seen.add(x['name']))]
+        for cmd in tries:
             fname, lines2, swaps = variant(d, cmd, folder)
             if not 5 <= len(swaps) <= 8: continue
             path = os.path.join(folder, fname)
@@ -173,12 +191,12 @@ if __name__ == '__main__':
     decks = json.load(open(os.path.join(HERE, 'decks.json')))
     prev = json.load(open(OUT)) if os.path.exists(OUT) else []
     done = {v['variant_of'] for v in prev}
-    used = {x['commander'].lower() for x in decks} | {v['commander'].lower() for v in prev}
+    used = {x['commander'].lower() for x in decks} | {v['commander'].lower() for v in prev if not ('--starters' in sys.argv and v.get('starter'))}
     TAKEN |= {v['file'] for v in prev}
+    for c in 'WUBRG':  # the starters' own commanders are never reused
+        _, _, sl = parse(os.path.join(B.OUT, 'starter', '%s_Starter_Normal.dck' % c))
+        used |= {re.match(r'^\d+\s+([^|]+)', sl[i + 1]).group(1).strip().lower() for i, l in enumerate(sl) if l == '[Commander]'}
     if '--starters' in sys.argv:
-        for c in 'WUBRG':  # the starters' own commanders
-            _, _, sl = parse(os.path.join(B.OUT, 'starter', '%s_Starter_Normal.dck' % c))
-            used |= {re.match(r'^\d+\s+([^|]+)', sl[i + 1]).group(1).strip().lower() for i, l in enumerate(sl) if l == '[Commander]'}
         res = starters(prev, used)
         if not DRY: json.dump(res, open(OUT, 'w'), indent=1)
         sys.exit(0)
