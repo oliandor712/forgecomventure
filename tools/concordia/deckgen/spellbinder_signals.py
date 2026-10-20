@@ -6,7 +6,6 @@
 Reads the decklists cached in deckgen/spellbinder/ (collected through the Spellbinder MCP connector, which only an
 assistant session can call; re-collect them there to refresh):
   cedh.json       top-4 decks from recent competitive Commander tournaments  -> "cedh"
-  community.json  the most-liked public Commander decks                    -> "community"
   precons.json    every official Commander precon                          -> "precon"
 and writes deckgen/spellbinder/signals.json: for every card, the share of decks in each source that play it, counted
 only over decks whose commanders' color identity allows the card (an off-color deck can't play it, so it isn't a
@@ -19,7 +18,9 @@ sys.path.insert(0, os.path.dirname(HERE))
 import deck_tier as dt  # noqa: E402
 
 DIR = os.path.join(HERE, 'spellbinder')
-SOURCES = {'cedh': 'cedh.json', 'community': 'community.json', 'precon': 'precons.json'}
+# Community decks were tried and dropped: Spellbinder had only 17 public Commander decks, none liked, most from one
+# user's proxy builds, too few and too skewed to say anything about a card.
+SOURCES = {'cedh': 'cedh.json', 'precon': 'precons.json'}
 MIN_ELIGIBLE = 5
 BASICS = dt.BASICS | {'snow-covered ' + b for b in dt.BASICS}
 
