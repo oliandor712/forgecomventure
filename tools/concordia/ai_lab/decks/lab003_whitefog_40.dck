@@ -1,0 +1,27 @@
+[metadata]
+Name=Adeline's Company (40)
+Description=Test deck shrunk to 40 cards by ai_lab/minideck.py from T2_W_Adeline.dck; test cards: Endure, Harsh Justice, Shield Dancer
+[Commander]
+1 Adeline, Resplendent Cathar|MID
+[Main]
+16 Plains
+2 Endure
+2 Harsh Justice
+2 Shield Dancer
+1 Dauntless Bodyguard|DOM
+1 Favored Hoplite|THS
+1 Haazda Marshal|GRN
+1 Soul Warden|M10
+1 Gryff's Boon|SOI
+1 Shardmage's Rescue|DSK
+1 Brigone, Soldier of Meletis|J25
+1 Cathar Commando|FDN
+1 Dauntless Dismantler|LCI
+1 Dawnbringer Cleric|AFR
+1 Ingenious Smith|AFR
+1 Knight of Dawn's Light|DMU
+1 Metastatic Evangel|MH3
+1 Phalanx Leader|THS
+1 Resolute Reinforcements|FDN
+1 Sightless Brawler|JOU
+1 Blind Obedience|GTC

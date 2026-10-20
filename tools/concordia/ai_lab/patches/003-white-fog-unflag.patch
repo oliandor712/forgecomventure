@@ -1,0 +1,29 @@
+# 003-white-fog-unflag: drop stale `AI:RemoveDeck:All` from Endure and Shield Dancer (card-script proposal, NOT applied)
+# Both use `AILogic$ Fog` (EffectAi.java:112 -> FogAi). Harsh Justice (same logic, needs ActivationPhases Declare Attackers
+# + CheckSVar) is deliberately NOT in this patch: it was never cast even with the flag removed (see EXPERIMENTS.md 003).
+# Test (AiLabSim, equal life 20/20, 10 games each, 150 s cap): Adeline mono-white 40-card deck, 2 copies of each test card,
+# vs a mono-red 40-card deck.
+#   baseline (flag present): casts 0
+#   patched (flag removed):  Endure 15 casts, Shield Dancer 11 casts + 19 activations; wins A=4 B=6 vs baseline A=6 B=4,
+#                            avg turns 24.1 vs 17.1
+# Apply from the repo root with: git apply tools/concordia/ai_lab/patches/003-white-fog-unflag.patch
+diff --git a/forge-gui/res/cardsfolder/e/endure.txt b/forge-gui/res/cardsfolder/e/endure.txt
+index 415d7d10..b45fd148 100644
+--- a/forge-gui/res/cardsfolder/e/endure.txt
++++ b/forge-gui/res/cardsfolder/e/endure.txt
+@@ -3,5 +3,4 @@ ManaCost:3 W W
+ Types:Instant
+ A:SP$ Effect | ReplacementEffects$ RPrevent | AILogic$ Fog | SpellDescription$ Prevent all damage that would be dealt to you and permanents you control this turn.
+ SVar:RPrevent:Event$ DamageDone | Prevent$ True | ActiveZones$ Command | ValidTarget$ You,Permanent.YouCtrl | Description$ Prevent all damage that would be dealt to you and permanents you control this turn.
+-AI:RemoveDeck:All
+ Oracle:Prevent all damage that would be dealt to you and permanents you control this turn.
+diff --git a/forge-gui/res/cardsfolder/s/shield_dancer.txt b/forge-gui/res/cardsfolder/s/shield_dancer.txt
+index 681f25b3..53a9a474 100644
+--- a/forge-gui/res/cardsfolder/s/shield_dancer.txt
++++ b/forge-gui/res/cardsfolder/s/shield_dancer.txt
+@@ -6,5 +6,4 @@ A:AB$ Effect | Cost$ 2 W | ValidTgts$ Creature.attacking | TgtPrompt$ Select tar
+ SVar:DamageShielded:Event$ DamageDone | IsCombat$ True | ValidSource$ Card.IsRemembered | ValidTarget$ Card.EffectSource | ReplaceWith$ DmgSelf | DamageTarget$ Remembered | Description$ The next time the targeted attacking creature would deal combat damage to EFFECTSOURCE this turn, that creature deals that damage to itself instead.
+ SVar:DmgSelf:DB$ ReplaceEffect | VarName$ Affected | VarValue$ Remembered | VarType$ Card | SubAbility$ ExileEffect
+ SVar:ExileEffect:DB$ ChangeZone | Defined$ Self | Origin$ Command | Destination$ Exile
+-AI:RemoveDeck:All
+ Oracle:{2}{W}: The next time target attacking creature would deal combat damage to Shield Dancer this turn, that creature deals that damage to itself instead.

@@ -38,3 +38,10 @@ Same decks (30 cards), 4 games each, equal life 20. Baseline (flag kept): 0 cast
 - **Result:** baseline 0 casts. Patched 19 casts (Thwart 11, Vine Snare 8), in games they were drawn. Wins 0-10 vs 2-8, avg turns 19.2 vs 22.7: the AI is surviving longer, consistent with the fogs working. A quick 4-game pilot gave the same casts-vs-none picture.
 - **Not yet checked:** that each cast came at a sensible time (during an attack), and Endure / Harsh Justice / Shield Dancer.
 - **Verdict:** worth proposing; next, read the game log for cast timing on a few casts.
+
+## 003: unflag white Fog-logic cards (Endure, Shield Dancer; Harsh Justice tested but excluded)
+- **Change:** `patches/003-white-fog-unflag.patch` (Endure, Shield Dancer). Scratch assets copy had all three unflagged.
+- **Test:** `lab003_whitefog_40.dck` (Adeline, 40 cards, 2 copies of each test card) vs `opp_red_40.dck`, equal life 20, 10 games per condition (first run with the 40-card rule).
+- **Result:** baseline 0 casts. Patched: Endure 15 casts, Shield Dancer 11 casts and 19 activations; Harsh Justice 0 casts although it was still in hand at game end in 4 of 10 games. Wins 6-4 vs 4-6, avg turns 17.1 vs 24.1 (the AI survives longer).
+- **Open question (Harsh Justice):** it is not a plain fog (it reflects combat damage) and has `ActivationPhases$ Declare Attackers` and `CheckSVar$ Y` (`HasPropertyBeenAttackedThisCombat`). With the flag gone the AI still never casts it; likely `FogAi` (`ability/FogAi.java`) never sees a damage threat that justifies it, or the SVar check fails. Needs a read of `FogAi.canPlay` and a targeted test; not part of the patch.
+- **Verdict:** Endure and Shield Dancer: worth proposing. Still to check: cast timing in the logs.
