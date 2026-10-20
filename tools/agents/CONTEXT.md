@@ -35,7 +35,10 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
 8. **Proposed AI changes go on the checklist** `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md`. Put
    `CHECKLIST: <patch> - <one line> - <status>` in your run report when you save, test or revise a patch. The main
    session updates the list, and the user ticks a box to approve.
-9. **Processes:** never `pkill -f` a pattern that can match your own shell. Kill java by pid
+9. **The agent coordinator's holds.** From 12 AM to 8 AM Eastern the coordinator keeps you on schedule. When the main
+   session is active it may send "hold" (skip that run) and later "resume". Obey both, and log them. By day only the
+   main session pauses you.
+10. **Processes:** never `pkill -f` a pattern that can match your own shell. Kill java by pid
    (`pgrep -a java | grep Sim`). Never leave a sim or build running when you stop.
 
 ## Asking the main session for analysis
@@ -95,10 +98,12 @@ build on its findings, and cite entries by date and title.
 |---|---|---|---|
 | forge-ai-lab | `.claude/agents/forge-ai-lab.md` | session_01SdzhYuPRVSAtP7QLaagBxk | hourly step, about 5 min, at :06; report every 4 h |
 | deck-balance-lab | `.claude/agents/deck-balance-lab.md` | session_011UrsiVw1s1nsvYUSkv2iLy | hourly batch, at most 10 min, at :10; report every 4 h at :40 |
+| agent-coordinator | `.claude/agents/agent-coordinator.md` | session_017PAirUr1ZnmejFCor3yYPi | hourly at :55; logs every main-session/agent interaction, tracks productivity, applies the night policy |
 
 The main session checks on both every 4 hours (at :20) and fixes blockers.
 
 ## Recent updates
+- 2026-10-20: Agent coordinator added (session_017PAirUr1ZnmejFCor3yYPi): logs every main-session/agent interaction, tracks productivity, and from 12-8 AM Eastern holds you while the main session is active (rule 9).
 - 2026-10-20: All 200 AI decks rebuilt with the new deck-building rules (staple preference, watch caps, EDHREC-scale bands); old decks backed up in tools/concordia/backups/2026-10-20_decks_pre_rebuild/. Balance records before this commit are on the old decks.
 - 2026-10-20: Test-tool updates pre-approved with backups (rule 7); proposed AI changes tracked for the user's approval in docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md (rule 8: CHECKLIST lines in reports).
 - 2026-10-20: New card categories (docs/Adventure/Campaign/STAPLES.md, deckgen/staples.py): staple (popular, low standalone impact), game_changer, watch (popular, high impact, not a Game Changer). deck_tier.py --json now lists 'staples' and 'watch' per deck.
@@ -111,4 +116,3 @@ The main session checks on both every 4 hours (at :20) and fixes blockers.
 - 2026-10-20: `tools/concordia/sim/setup.sh` and `run.sh` added. They fix the "no Maven repository" blocker and were
   verified from an empty cache. Don't edit `forge-gui-mobile/pom.xml` by hand.
 - 2026-10-20: added the push-retry rule (standing rule 4).
-- 2026-10-20: decks doubled to 200, and the difficulty curve built into the Green zone.
