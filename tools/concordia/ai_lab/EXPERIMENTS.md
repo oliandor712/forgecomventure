@@ -14,3 +14,6 @@ Plan for experiment 001: card-script-only patch (drop the stale flag) on 2-3 `Sw
 
 ## Pause (2026-10-20 14:47Z)
 Main session asked for a pause during a large deck-generation job. State: no experiment started; experiment 001 (drop stale flag on Turtleshell Changeling, Myr Quadropod, Aquamoeba) is planned only. No scratch worktree, build or sim exists; nothing is running.
+
+## Resumed (2026-10-20 14:57Z)
+Main session finished its deck job. Normal hourly schedule; next step is experiment 001 setup.
