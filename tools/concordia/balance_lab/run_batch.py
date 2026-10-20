@@ -168,7 +168,14 @@ def main():
             col = colors(enemy)[0]
             if t <= 2:
                 used = collections.Counter(r["deck_b"] for r in rows if r["kind"] == "bonus" and r["bonus_a"] == bonus)
-                opp = min(decks("starter"), key=lambda d: (used.get(rel(d), 0), rng.random()))
+                # starters split 50/50 between each colour's two versions (Normal and Alt; user, 2026-10-20):
+                # least-used colour first, then that colour's less-played version over all starter games
+                allst = collections.Counter(r[k] for r in rows for k in ("deck_a", "deck_b") if "/starter/" in r[k])
+                st = decks("starter")
+                byc = collections.defaultdict(list)
+                for d in st: byc[os.path.basename(d)[0]].append(d)
+                cpick = min(byc, key=lambda c: (sum(used.get(rel(d), 0) for d in byc[c]), rng.random()))
+                opp = min(byc[cpick], key=lambda d: (allst.get(rel(d), 0), rng.random()))
             else: opp = pick(decks("tier%d" % (t + 1)) if t < 5 else decks("tier5"), c, rng)[0]
             # equal life: the higher tier's low end (opponent stands one tier above for t>=3; starter ~ tier of enemy)
             life = LIFE[min(t + 1, 5)] if t > 2 else LIFE[t]

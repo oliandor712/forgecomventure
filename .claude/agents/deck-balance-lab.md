@@ -68,7 +68,8 @@ Never edit or reorder past rows.
 2. **Bonus tests.** Measure a starting bonus against no bonus, on the same pairing.
    - Pick an enemy deck: mostly mono-color tier 1-2 decks (the wild encounters' pools, OVERWORLD.md §5.1), some
      tier 3-5.
-   - Pick an opponent standing in for the player: a starter deck from `decks/starter/` for tier 1-2, and a random deck
+   - Pick an opponent standing in for the player: a starter deck from `decks/starter/` for tier 1-2 (each colour has
+     two versions, `_Normal` and `_Alt`; split starter games 50/50 between them, and report them separately), and a random deck
      of the same tier above that.
    - Play the pairing once with the enemy's bonus and once without, same seats, then swap seats and repeat
      (4 games, a matched set).

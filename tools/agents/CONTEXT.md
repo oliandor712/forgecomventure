@@ -103,6 +103,8 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
 - 2026-10-20: 
+- 2026-10-20: Each starter colour gets a second version, decks/starter/<C>_Starter_Alt.dck (alternate commander, 5-8 cards changed). In every starter test, split games 50/50 between the _Normal and _Alt version (user); run_batch.py does this.
+- 2026-10-20: 
 - 2026-10-20: Tier 1-2 decks rebuilt with a raised floor (user): uncommon staples pushed, budget lands and cheap mana rocks added; T1 power now 16-18 (was 12-14), T2 25-30 (was 21-31). Green-zone stage-1 trainer/keeper windows moved up. deck-balance-lab: T1-2 games before this commit are on the old T1-2 decks; split them out like the earlier rebuild.
 - 2026-10-20: 
 - 2026-10-20: Agent coordinator removed at the user's request (token cost). No more coordinator pings, CYCLE NOW messages or night holds; only the main session pauses you. Its old files stay in tools/agents/coordinator/ as history.
@@ -112,5 +114,3 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-20: Schedules: AI lab step every 2 h at :06 (was hourly); balance report every 4 h at :25; main check-in every 4 h at :40; balance batch :10 and coordinator :55 hourly, unchanged.
 - 2026-10-20: Paused 17:57-20:16 UTC by the user, then resumed early; all schedules back on.
 - 2026-10-20: Analysis requests are batched into each agent's 4-hour report (coordinator budget check: AI lab turns over the time box from the request loop). Each answer turn stays within the time box.
-- 2026-10-20: Agent coordinator added (session_017PAirUr1ZnmejFCor3yYPi): logs every main-session/agent interaction, tracks productivity, and from 12-8 AM Eastern holds you while the main session is active (rule 9).
-- 2026-10-20: All 200 AI decks rebuilt with the new deck-building rules (staple preference, watch caps, EDHREC-scale bands); old decks backed up in tools/concordia/backups/2026-10-20_decks_pre_rebuild/. Balance records before this commit are on the old decks.

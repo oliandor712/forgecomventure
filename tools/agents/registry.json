@@ -150,6 +150,10 @@
     [
      "2026-10-20",
      "Split tier 1-2 results at the floor-raise commit (T1-2 decks rebuilt); old T1-2 rows are on old decks."
+    ],
+    [
+     "2026-10-20",
+     "Starter tests: split runs 50/50 between each colour's Normal and Alt starter; report them separately."
     ]
    ],
    "analyses": [
