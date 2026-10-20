@@ -24,3 +24,4 @@ STANDING INSTRUCTION (user, 2026-10-20): each hourly wake is time-boxed to about
 2026-10-20T17:55Z re-ran 001-003 at natural density (1 copy, 40 cards, 10 games, logs): baseline 0 casts everywhere; patched casts all drawn cards; results in ai_lab/results/n00X-*; sent to main session
 2026-10-20T18:05Z read main-session analysis; narrowed patch 003 to Endure, caveated patch 001; planned patch 004 (Harsh Justice ReflectCombatDamage) and 005 (SwitchPT guard); next: needs forge-ai scratch worktree + build (own wakes)
 2026-10-20T18:40Z patch 005 (SwitchPT two-versions, user's idea) built+tested in scratch worktree: 92 -> 8 activations, all declare blockers; results in ai_lab/results/n001-{guard,twoversions}; sent to main
+2026-10-20T17:20Z pre-approval for scratch tests read (CONTEXT rules 7-8); wrote patch 006 (Fog counts Effect fogs), untested; next: build+test 006, then 004/007 + per-activation logging
