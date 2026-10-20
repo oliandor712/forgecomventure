@@ -29,3 +29,11 @@ Main session finished its deck job. Normal hourly schedule; next step is experim
 
 ### 001 re-run at 20/20 life (2026-10-20, per the 20-life convention)
 Same decks (30 cards), 4 games each, equal life 20. Baseline (flag kept): 0 casts, 0 activations, wins 1-3, avg 20.3 turns. Patched: 7 casts (Turtleshell 3, Aquamoeba 2, Myr Quadropod 2), 30 activations, wins 1-3, avg 19.8 turns. Same picture as the 40/40 run: the flag alone keeps the three cards unplayed; removing it makes the AI cast and use them. Wins are noise at 4 games. Verdict unchanged: worth proposing.
+
+## 002: unflag Fog-logic instants (Thwart the Enemy, Vine Snare)
+- **Hypothesis:** `AILogic$ Fog` is already handled (`EffectAi.java:112`), so the flag is stale and the AI will cast them when under attack.
+- **Change:** `patches/002-fog-unflag.patch` (card scripts only, tested from a scratch assets copy).
+- **Test:** `lab002_fog_30.dck` (Arasta, 30 cards, 2 copies of each test card) vs `opp_mirri_30.dck`, equal life 20, 10 games per condition (new user rule: 10 games).
+- **Result:** baseline 0 casts. Patched 19 casts (Thwart 11, Vine Snare 8), in games they were drawn. Wins 0-10 vs 2-8, avg turns 19.2 vs 22.7: the AI is surviving longer, consistent with the fogs working. A quick 4-game pilot gave the same casts-vs-none picture.
+- **Not yet checked:** that each cast came at a sensible time (during an attack), and Endure / Harsh Justice / Shield Dancer.
+- **Verdict:** worth proposing; next, read the game log for cast timing on a few casts.
