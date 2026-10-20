@@ -11,3 +11,6 @@ Source: `AI_FLAGGED_CARDS.md` "Other stale signals" (117 `RemoveDeck:All` cards 
 - `AILogic$ Pump`: irresistible_prey, kjeldoran_pride, shapesharer, satyr_piper
 
 Plan for experiment 001: card-script-only patch (drop the stale flag) on 2-3 `SwitchPT` cards (Turtleshell Changeling, Myr Quadropod, Aquamoeba; `PumpAi.java:55`), test deck plus a tier2 opponent, equal life, up to 4 games, detect casts/activations in the log.
+
+## Pause (2026-10-20 14:47Z)
+Main session asked for a pause during a large deck-generation job. State: no experiment started; experiment 001 (drop stale flag on Turtleshell Changeling, Myr Quadropod, Aquamoeba) is planned only. No scratch worktree, build or sim exists; nothing is running.
