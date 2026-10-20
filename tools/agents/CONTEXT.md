@@ -43,7 +43,7 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
 
 ## Asking the main session for analysis
 Put a line starting `ANALYSIS REQUEST:` in your **4-hour report** (not after every test; batch them, to keep the
-request-and-answer loop slow and cheap; an urgent blocker may go at once). Put it: the question, the files it concerns, and what you need
+request-and-answer loop slow and cheap; an urgent blocker may go at once). Give the question, the files it concerns, and what you need
 back. The main session reads your reports at its 4-hour check-ins. It files the answer in
 `tools/agents/analysis/<your name>.md` and sends it to you. That file is your training data: read it with this one,
 build on its findings, and cite entries by date and title.
