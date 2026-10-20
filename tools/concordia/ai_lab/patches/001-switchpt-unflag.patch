@@ -1,0 +1,40 @@
+# 001-switchpt-unflag: drop stale `AI:RemoveDeck:All` from three SwitchPT cards (card-script proposal, NOT applied)
+# Cards: Aquamoeba, Turtleshell Changeling, Myr Quadropod. Each is a single `A:AB$ Pump ... AILogic$ SwitchPT` ability;
+# PumpAi.java:54-60 already handles that logic (blocks only a second activation per turn).
+# Test (AiLabSim, equal life 40/40, 4 games each, 150 s cap): Commander deck Lab001 Alandra (mono-blue) vs Thopter Workshop,
+# both shrunk to commander + 29 cards (shrink_deck.py) so the flagged cards get drawn.
+#   baseline (flag present): casts 0, activations 0 (Turtleshell sat in hand uncast; Aquamoeba only discarded)
+#   patched (flag removed):  casts 7 (Turtleshell 4/4 games, Aquamoeba 2, Myr Quadropod 1), activations 26;
+#                            wins A=2 B=2 vs baseline A=1 B=3 (4 games: noise only)
+# Caveat: Turtleshell activated up to 12 times in one game; the AI uses the switch freely, not always usefully.
+# Apply from the repo root with: git apply tools/concordia/ai_lab/patches/001-switchpt-unflag.patch
+diff --git a/forge-gui/res/cardsfolder/t/turtleshell_changeling.txt b/forge-gui/res/cardsfolder/t/turtleshell_changeling.txt
+index 36e0838c..2f0b06b8 100644
+--- a/forge-gui/res/cardsfolder/t/turtleshell_changeling.txt
++++ b/forge-gui/res/cardsfolder/t/turtleshell_changeling.txt
+@@ -4,5 +4,4 @@ Types:Creature Shapeshifter
+ PT:1/4
+ K:Changeling
+ A:AB$ Pump | Cost$ 1 U | Defined$ Self | AILogic$ SwitchPT | KW$ HIDDEN CARDNAME's power and toughness are switched | SpellDescription$ Switch CARDNAME's power and toughness until end of turn.
+-AI:RemoveDeck:All
+ Oracle:Changeling (This card is every creature type.)\n{1}{U}: Switch Turtleshell Changeling's power and toughness until end of turn.
+diff --git a/forge-gui/res/cardsfolder/m/myr_quadropod.txt b/forge-gui/res/cardsfolder/m/myr_quadropod.txt
+index 0863dbef..211640fb 100644
+--- a/forge-gui/res/cardsfolder/m/myr_quadropod.txt
++++ b/forge-gui/res/cardsfolder/m/myr_quadropod.txt
+@@ -3,5 +3,4 @@ ManaCost:4
+ Types:Artifact Creature Myr
+ PT:1/4
+ A:AB$ Pump | Cost$ 3 | Defined$ Self | AILogic$ SwitchPT | KW$ HIDDEN CARDNAME's power and toughness are switched | SpellDescription$ Switch CARDNAME's power and toughness until end of turn.
+-AI:RemoveDeck:All
+ Oracle:{3}: Switch Myr Quadropod's power and toughness until end of turn.
+diff --git a/forge-gui/res/cardsfolder/a/aquamoeba.txt b/forge-gui/res/cardsfolder/a/aquamoeba.txt
+index d0980e28..a4d9379b 100644
+--- a/forge-gui/res/cardsfolder/a/aquamoeba.txt
++++ b/forge-gui/res/cardsfolder/a/aquamoeba.txt
+@@ -3,5 +3,4 @@ ManaCost:1 U
+ Types:Creature Elemental Beast
+ PT:1/3
+ A:AB$ Pump | Cost$ Discard<1/Card> | Defined$ Self | AILogic$ SwitchPT | KW$ HIDDEN CARDNAME's power and toughness are switched | SpellDescription$ Switch CARDNAME's power and toughness until end of turn.
+-AI:RemoveDeck:All
+ Oracle:Discard a card: Switch Aquamoeba's power and toughness until end of turn.
