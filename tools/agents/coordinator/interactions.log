@@ -30,3 +30,4 @@ PING 2026-10-20T20:45Z main -> all: context: approvals count only when given in 
 PING 2026-10-20T20:50Z main -> deck-balance-lab: analysis: bonus table review delivered (commit 8667c25c)
 PING 2026-10-20T20:50Z main -> forge-ai-lab: context: update sent, plus guidance on the 008 hand-built case
 NOTE main -> coordinator: context update: user and Claude Chat leave requests for main in a Claude Doc; agents don't write to it; re-read CONTEXT.md
+PING 2026-10-20T21:00Z main -> deck-balance-lab: context: user eliminated life bonuses; equal life in every sim, no exceptions (commit b1ced90f)
