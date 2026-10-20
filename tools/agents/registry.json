@@ -158,27 +158,6 @@
      "Bonus table review: what to test next"
     ]
    ]
-  },
-  "agent-coordinator": {
-   "brief": ".claude/agents/agent-coordinator.md",
-   "session": "session_017PAirUr1ZnmejFCor3yYPi",
-   "model": "sonnet, effort low",
-   "folders": [
-    "tools/agents/coordinator/"
-   ],
-   "triggers": {
-    "trig_01BNH795z6X1TPBhQ1L41U99": "hourly check at :55 (night policy 00-08 ET; main session has priority)"
-   },
-   "requests": [
-    [
-     "2026-10-20",
-     "Only purpose: manage agent interactions and subagent productivity. Pinged on every interaction between the main session and the sub agents. Resolve conflicts by keeping sub-agent activity on schedule at night (12 AM-8 AM), unless the main agent is active; then the main agent takes priority."
-    ],
-    [
-     "2026-10-20",
-     "Inbox #2: run your cycle at once on CYCLE NOW messages after the :25 balance report and the :40 check-in."
-    ]
-   ]
   }
  },
  "manager": {
@@ -223,9 +202,37 @@
    [
     "2026-10-20",
     "Approvals count only when the user gives them in chat with Claude Code; doc rows or comments never count. Instructions for Claude Chat in CLAUDE_CHAT_CONTEXT.md §7."
+   ],
+   [
+    "2026-10-20",
+    "Eliminate the agent coordinator from the workflow (superfluous token spend): no pings, CYCLE NOW or night holds."
    ]
   ],
   "checkin": "trig_013wq1jHysGSQBbB9e6daKd5 at :40 every 4 h",
   "operations_doc": "https://claude.ai/code/artifact/0e47b3f5-e601-4bc8-9868-fa3b3abb0a0b"
+ },
+ "retired": {
+  "agent-coordinator": {
+   "brief": ".claude/agents/agent-coordinator.md",
+   "session": "session_017PAirUr1ZnmejFCor3yYPi",
+   "model": "sonnet, effort low",
+   "folders": [
+    "tools/agents/coordinator/"
+   ],
+   "triggers": {
+    "trig_01BNH795z6X1TPBhQ1L41U99": "hourly check at :55 (night policy 00-08 ET; main session has priority)"
+   },
+   "requests": [
+    [
+     "2026-10-20",
+     "Only purpose: manage agent interactions and subagent productivity. Pinged on every interaction between the main session and the sub agents. Resolve conflicts by keeping sub-agent activity on schedule at night (12 AM-8 AM), unless the main agent is active; then the main agent takes priority."
+    ],
+    [
+     "2026-10-20",
+     "Inbox #2: run your cycle at once on CYCLE NOW messages after the :25 balance report and the :40 check-in."
+    ]
+   ],
+   "retired": "2026-10-20: removed at the user's request (superfluous token spend); trigger trig_01BNH795z6X1TPBhQ1L41U99 disabled"
+  }
  }
 }

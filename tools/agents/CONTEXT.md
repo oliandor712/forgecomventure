@@ -35,9 +35,8 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
 8. **Proposed AI changes go on the checklist** `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md`. Put
    `CHECKLIST: <patch> - <one line> - <status>` in your run report when you save, test or revise a patch. The main
    session updates the list, and the user ticks a box to approve.
-9. **The agent coordinator's holds.** From 12 AM to 8 AM Eastern the coordinator keeps you on schedule. When the main
-   session is active it may send "hold" (skip that run) and later "resume". Obey both, and log them. By day only the
-   main session pauses you.
+9. **Pauses come only from the main session** (day or night). The agent coordinator was removed on 2026-10-20; ignore
+   any earlier "hold"/"resume" rule tied to it.
 10. **Processes:** never `pkill -f` a pattern that can match your own shell. Kill java by pid
    (`pgrep -a java | grep Sim`). Never leave a sim or build running when you stop.
 
@@ -99,11 +98,12 @@ build on its findings, and cite entries by date and title.
 |---|---|---|---|
 | forge-ai-lab | `.claude/agents/forge-ai-lab.md` | session_01SdzhYuPRVSAtP7QLaagBxk | step every 2 h at :06 (was hourly; changed at the user's request), about 5 min; report every 4 h |
 | deck-balance-lab | `.claude/agents/deck-balance-lab.md` | session_011UrsiVw1s1nsvYUSkv2iLy | hourly batch, at most 10 min, at :10; report every 4 h at :25 |
-| agent-coordinator | `.claude/agents/agent-coordinator.md` | session_017PAirUr1ZnmejFCor3yYPi | hourly at :55; logs every main-session/agent interaction, tracks productivity, applies the night policy |
 
 The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
+- 2026-10-20: 
+- 2026-10-20: Agent coordinator removed at the user's request (token cost). No more coordinator pings, CYCLE NOW messages or night holds; only the main session pauses you. Its old files stay in tools/agents/coordinator/ as history.
 - 2026-10-20: 
 - 2026-10-20: Life bonuses (life5, life10) eliminated as an option by the user. No life-bonus tests; every sim at equal life. Old life rows stay in records.csv but are left out of the report.
 - 2026-10-20: The user and Claude Chat now leave requests for the main session in the Claude Doc agent_operations_master (inbox table); the main session works them at its 4-hour check-in. Agents don't write to it.
@@ -114,5 +114,3 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-20: All 200 AI decks rebuilt with the new deck-building rules (staple preference, watch caps, EDHREC-scale bands); old decks backed up in tools/concordia/backups/2026-10-20_decks_pre_rebuild/. Balance records before this commit are on the old decks.
 - 2026-10-20: Test-tool updates pre-approved with backups (rule 7); proposed AI changes tracked for the user's approval in docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md (rule 8: CHECKLIST lines in reports).
 - 2026-10-20: New card categories (docs/Adventure/Campaign/STAPLES.md, deckgen/staples.py): staple (popular, low standalone impact), game_changer, watch (popular, high impact, not a Game Changer). deck_tier.py --json now lists 'staples' and 'watch' per deck.
-- 2026-10-20: EDHREC popularity (Scryfall) added to card power; deck power rose about 1.5 at T1-T3; zone power windows shifted to match. New: ANALYSIS REQUEST lines in your reports get answered into tools/agents/analysis/<you>.md (your training data).
-- 2026-10-20: Scryfall card data downloaded: deckgen/scryfall/cards.json.gz (35k cards: EDHREC rank, Game Changer, legality, identity; no prices), read with scryfall_bulk.load(). Bulk refresh at most every 12 h.

@@ -17,13 +17,6 @@ Everything the agents know comes from three files, and this skill keeps them tru
 messages. Sending uses the remote session tools: `send_message` to the agent's session, plus `create_trigger` /
 `update_trigger` / `list_triggers` for schedules, and `list_events` / `get_session` to see what an agent did.
 
-## Ping the coordinator on every agent interaction
-The user asked for this. Every time you send to or receive from a sub agent, also send the agent-coordinator
-(registry `agent-coordinator`) one line built with `agentctl.py ping <from> <to> <kind> "<line>"`. That covers
-messages, context updates, analyses, pauses and resumes. Use `send_message` with priority `later`. Batch the pings
-from one turn into one message. At night (12 AM-8 AM Eastern), the coordinator holds the sub agents while you're
-active and resumes them when you go idle. You have priority, so you don't need to pause them yourself at night.
-
 ## Whenever the user asks for something about an agent
 1. **Log it**: `agentctl.py request <agent|all|manager> "<the request, in the user's words, condensed>"`. Every later
    brief edit must still honor all of the agent's logged requests; re-read them before you change a brief.
@@ -80,8 +73,7 @@ For each agent:
    container kind "project", same id) with the Claude Docs tools: Status, checklist summary, analysis notes. Act on its
    open inbox rows (approval-needing rows become NEEDS USER) and reply under "Replies from Claude Code". Skip if the
    tools are unavailable and say so.
-7. Send the agent coordinator `CYCLE NOW: check-in done <commit>` so it runs its cycle at once (inbox #2).
-8. Report to the user in 5 lines or fewer, or in one line if all is well.
+7. Report to the user in 5 lines or fewer, or in one line if all is well.
 
 Also run `agentctl.py status`. If an agent shows `context NOT SENT`, send it its update.
 
