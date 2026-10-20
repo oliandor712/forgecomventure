@@ -73,3 +73,11 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-20T16:20:28Z,7e4f4645,bonus,2,decks/tier2/T2_B_Sengir.dck,decks/starter/R_Starter_Normal.dck,15,15,legion,,b,b,17,0
 2026-10-20T16:20:28Z,7e4f4645,bonus,2,decks/tier2/T2_B_Sengir.dck,decks/starter/R_Starter_Normal.dck,15,15,,,a,b,10,0
 2026-10-20T16:20:28Z,7e4f4645,bonus,2,decks/tier2/T2_B_Sengir.dck,decks/starter/R_Starter_Normal.dck,15,15,,,b,a,16,0
+2026-10-20T16:47:14Z,348b9640,inner,5,decks/tier5/T5_G_Lumra.dck,decks/tier5/T5_G_Vorinclex.dck,35,35,,,a,b,18,0
+2026-10-20T16:47:14Z,348b9640,inner,5,decks/tier5/T5_G_Lumra.dck,decks/tier5/T5_G_Vorinclex.dck,35,35,,,b,b,19,0
+2026-10-20T16:47:45Z,348b9640,inner,5,decks/tier5/T5_BG_Vraska.dck,decks/tier5/T5_G_Yeva.dck,35,35,,,a,b,24,0
+2026-10-20T16:47:45Z,348b9640,inner,5,decks/tier5/T5_BG_Vraska.dck,decks/tier5/T5_G_Yeva.dck,35,35,,,b,a,18,0
+2026-10-20T16:49:10Z,348b9640,bonus,2,decks/tier2/T2_G_Arasta.dck,decks/starter/R_Starter_Normal.dck,25,15,life10,,a,a,17,0
+2026-10-20T16:49:10Z,348b9640,bonus,2,decks/tier2/T2_G_Arasta.dck,decks/starter/R_Starter_Normal.dck,25,15,life10,,b,a,14,0
+2026-10-20T16:49:10Z,348b9640,bonus,2,decks/tier2/T2_G_Arasta.dck,decks/starter/R_Starter_Normal.dck,15,15,,,a,a,15,0
+2026-10-20T16:49:10Z,348b9640,bonus,2,decks/tier2/T2_G_Arasta.dck,decks/starter/R_Starter_Normal.dck,15,15,,,b,b,15,0

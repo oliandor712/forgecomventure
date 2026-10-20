@@ -2,7 +2,7 @@
 """One batch of the deck balance lab: inner-tier pairings and bonus matched sets, appended to records.csv.
 Usage: python3 tools/concordia/balance_lab/run_batch.py [--budget 600] [--seed N]
 Plays via tools/concordia/sim/run.sh BonusSim; no new game starts after minute 8 of the batch."""
-import argparse, csv, glob, os, random, re, subprocess, sys, time, datetime
+import argparse, csv, glob, json, os, random, re, subprocess, sys, time, datetime
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 DECKS = "forge-gui/res/adventure/Concordia/"
@@ -16,13 +16,29 @@ STAFF = {"W": "Staff of the Sun Magus", "U": "Staff of the Mind Magus", "B": "St
 GENERIC_1DROP = {"W": "Adanto Vanguard", "U": "Faerie Miscreant", "B": "Dark Confidant", "R": "Goblin Guide", "G": "Llanowar Elves"}
 PREMADE = {"arena": "Phyrexian Arena", "legion": "Legion's Landing", "market": "Black Market",
            "bedlam": "Bedlam", "hornet": "Hornet Nest"}
-BONUSES = ["land", "onedrop", "land+onedrop", "life5", "arena", "staff", "legion", "market", "bedlam", "hornet", "life10"]
+ALL_BONUSES = ["land", "onedrop", "land+onedrop", "life5", "arena", "staff", "legion", "market", "bedlam", "hornet", "life10"]
+# main session, 2026-10-20: land, onedrop, land+onedrop, life5 against arena, staff, life10 first; the rest later
+BONUSES = ["land", "onedrop", "land+onedrop", "life5", "arena", "staff", "life10"]
+
+
+def green_pool():
+    """Decks of the Green zone's enemies (world/enemies.json entries named Green ...): the priority pool for inner games."""
+    en = json.load(open(ROOT + "/" + DECKS + "world/enemies.json"))
+    out = set()
+    for e in en:
+        if str(e.get("name", "")).startswith("Green"):
+            out.update(ROOT + "/" + DECKS + d for d in e.get("deck", []))
+    return sorted(p for p in out if os.path.exists(p))
 
 
 def rel(p): return os.path.relpath(p, ROOT + "/" + DECKS) if os.path.isabs(p) else p[len(DECKS):] if p.startswith(DECKS) else p
 
 
-def decks(sub): return sorted(glob.glob(os.path.join(ROOT, DECKS, "decks", sub, "*.dck")))
+def decks(sub, pool=None):
+    all_ = sorted(glob.glob(os.path.join(ROOT, DECKS, "decks", sub, "*.dck")))
+    if pool is None: return all_
+    sel = [d for d in all_ if d in pool]
+    return sel if len(sel) >= 2 else all_
 
 
 def colors(deck):
@@ -98,9 +114,11 @@ def main():
     ap.add_argument("--budget", type=int, default=600)
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--pairings", type=int, default=4)
+    ap.add_argument("--pool", default="green", help="green (priority) or all")
     ap.add_argument("--sets", type=int, default=2)
     o = ap.parse_args()
     rng = random.Random(o.seed)
+    pool = None if o.pool == "all" else set(green_pool())
     start = time.time(); stop_new = start + 480; end = start + o.budget
     commit = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     rows = load(); c = counts(rows)
@@ -117,8 +135,9 @@ def main():
         utc = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         games, meta = [], {}
         if step[0] == "inner":
-            t = rng.randint(1, 5)
-            a, b = pick(decks("tier%d" % t), c, rng, 2)
+            ts = [x for x in range(1, 6) if pool is None or len(decks("tier%d" % x, pool)) >= 2 and any(d in pool for d in decks("tier%d" % x))]
+            t = rng.choice(ts or [1, 2, 3, 4, 5])
+            a, b = pick(decks("tier%d" % t, pool), c, rng, 2)
             for i, first in enumerate(["a", "b"]):
                 lab = "i%d" % i
                 games.append(dict(da=a, la=LIFE[t], xa="-", db=b, lb=LIFE[t], xb="-", first=first, label=lab))
@@ -126,7 +145,7 @@ def main():
         else:
             bonus = min(BONUSES, key=lambda b: (nbonus_done.get(b, 0), rng.random()))
             t = rng.choice([1, 1, 2, 2, 2, 3, 4, 5])
-            mono = [d for d in decks("tier%d" % t) if len(colors(d)) == 1] or decks("tier%d" % t)
+            mono = [d for d in decks("tier%d" % t, pool) if len(colors(d)) == 1] or decks("tier%d" % t)
             enemy = pick(mono, c, rng)[0]
             col = colors(enemy)[0]
             if t <= 2: opp = rng.choice([d for d in decks("starter") if colors(d) != col] or decks("starter"))

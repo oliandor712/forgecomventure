@@ -45,14 +45,14 @@ for t in "12345":
     s1 = sum(1 for r in g if r["winner"] == r["first"]); to = sum(int(r["timeout"]) for r in g)
     lo, hi = wilson(s1, len(g))
     L.append("### Tier %s: %d games, seat-one win rate %.0f%% (%.0f-%.0f%%), timeouts %d%%" % (t, len(g), 100 * s1 / len(g), 100 * lo, 100 * hi, 100 * to // len(g)))
-    st = collections.defaultdict(lambda: [0.0, 0])
+    st = collections.defaultdict(lambda: [0.0, 0]); tn = collections.defaultdict(list)
     for r in g:
         for side, k in (("a", "deck_a"), ("b", "deck_b")):
-            st[r[k]][0] += score(r, side); st[r[k]][1] += 1
-    L += ["", "| deck | games | win rate | 90% interval |", "|---|---|---|---|"]
+            st[r[k]][0] += score(r, side); st[r[k]][1] += 1; tn[r[k]].append(int(r["turns"]))
+    L += ["", "| deck | games | win rate | 90% interval | mean turns | power |", "|---|---|---|---|---|---|"]
     for d, (w, n) in sorted(st.items(), key=lambda x: -x[1][0] / x[1][1]):
         lo, hi = wilson(w, n)
-        L.append("| %s | %d | %.0f%% | %.0f-%.0f%% |" % (os.path.basename(d), n, 100 * w / n, 100 * lo, 100 * hi))
+        L.append("| %s | %d | %.0f%% | %.0f-%.0f%% | %.1f | %s |" % (os.path.basename(d), n, 100 * w / n, 100 * lo, 100 * hi, sum(tn[d]) / n, power(d)))
         if lo > .5 or hi < .5: outliers.append((t, d, n, w / n, lo, hi))
     L.append("")
 L += ["## Outliers (interval clear of 50%)", "", "Deck power is read fresh from deck_tier.py. The card-power scale changed on 2026-10-20 at 16:45 UTC (EDHREC popularity added); power values from before then are not comparable.", ""]
