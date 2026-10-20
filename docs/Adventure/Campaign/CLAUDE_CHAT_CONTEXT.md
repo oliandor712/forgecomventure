@@ -95,9 +95,9 @@ tests on Windows at C:\Users\Teddy\Documents\Forge, deploying either with a full
 ## 4. The sessions and how to steer them
 | Session | Role | Schedule |
 |---|---|---|
-| Main session (Claude Code, Opus) | Does all real work: builds, maps, decks, analysis, approvals bookkeeping; manages the agents through the agent-manager skill | On demand. A check-in every 4 h (:20) reads agent reports, answers ANALYSIS REQUESTs, fixes blockers |
-| forge-ai-lab (Sonnet, low effort), session_01SdzhYuPRVSAtP7QLaagBxk | Finds why the AI skips flagged cards; tests card-script and forge-ai patches in scratch copies; keeps AI_TAGS_REFERENCE.md | Hourly step of about 5 min (:06); report every 4 h |
-| deck-balance-lab (Sonnet, low effort), session_011UrsiVw1s1nsvYUSkv2iLy | Headless AI-vs-AI games: same-tier balance records (`balance_lab/records.csv`), start-of-duel bonus tests (small bonuses against Forge's premade ones) | Hourly batch of at most 10 min (:10); REPORT.md every 4 h (:40) |
+| Main session (Claude Code, Opus) | Does all real work: builds, maps, decks, analysis, approvals bookkeeping; manages the agents through the agent-manager skill | On demand. A check-in every 4 h (:40) reads agent reports, answers ANALYSIS REQUESTs, fixes blockers |
+| forge-ai-lab (Sonnet, low effort), session_01SdzhYuPRVSAtP7QLaagBxk | Finds why the AI skips flagged cards; tests card-script and forge-ai patches in scratch copies; keeps AI_TAGS_REFERENCE.md | Step every 2 h of about 5 min (:06); report every 4 h |
+| deck-balance-lab (Sonnet, low effort), session_011UrsiVw1s1nsvYUSkv2iLy | Headless AI-vs-AI games: same-tier balance records (`balance_lab/records.csv`), start-of-duel bonus tests (small bonuses against Forge's premade ones) | Hourly batch of at most 10 min (:10); REPORT.md every 4 h (:25) |
 | agent-coordinator (Sonnet, low effort), session_017PAirUr1ZnmejFCor3yYPi | Logs every main-session/agent interaction, tracks productivity, applies the night policy, flags budget overruns | Hourly (:55) |
 
 **Shared machinery:**

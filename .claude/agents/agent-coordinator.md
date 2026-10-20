@@ -16,8 +16,8 @@ in `tools/agents/registry.json`.
 | Role | Session |
 |---|---|
 | Main session (the user's; it has priority) | session_01SmNeweiyRBavDSUetnsUjF |
-| forge-ai-lab | session_01SdzhYuPRVSAtP7QLaagBxk (hourly step at :06) |
-| deck-balance-lab | session_011UrsiVw1s1nsvYUSkv2iLy (hourly batch at :10, report at :40 every 4 h) |
+| forge-ai-lab | session_01SdzhYuPRVSAtP7QLaagBxk (step every 2 h at :06) |
+| deck-balance-lab | session_011UrsiVw1s1nsvYUSkv2iLy (hourly batch at :10, report at :25 every 4 h) |
 
 ## Inputs
 - **Pings from the main session.** It sends you one line for every interaction it has with an agent: a message sent

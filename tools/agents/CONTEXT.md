@@ -97,13 +97,14 @@ build on its findings, and cite entries by date and title.
 ## Agents
 | Agent | Brief | Session | Schedule |
 |---|---|---|---|
-| forge-ai-lab | `.claude/agents/forge-ai-lab.md` | session_01SdzhYuPRVSAtP7QLaagBxk | hourly step, about 5 min, at :06; report every 4 h |
-| deck-balance-lab | `.claude/agents/deck-balance-lab.md` | session_011UrsiVw1s1nsvYUSkv2iLy | hourly batch, at most 10 min, at :10; report every 4 h at :40 |
+| forge-ai-lab | `.claude/agents/forge-ai-lab.md` | session_01SdzhYuPRVSAtP7QLaagBxk | step every 2 h at :06 (was hourly; changed at the user's request), about 5 min; report every 4 h |
+| deck-balance-lab | `.claude/agents/deck-balance-lab.md` | session_011UrsiVw1s1nsvYUSkv2iLy | hourly batch, at most 10 min, at :10; report every 4 h at :25 |
 | agent-coordinator | `.claude/agents/agent-coordinator.md` | session_017PAirUr1ZnmejFCor3yYPi | hourly at :55; logs every main-session/agent interaction, tracks productivity, applies the night policy |
 
-The main session checks on both every 4 hours (at :20) and fixes blockers.
+The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
+- 2026-10-20: Schedules: AI lab step every 2 h at :06 (was hourly); balance report every 4 h at :25; main check-in every 4 h at :40; balance batch :10 and coordinator :55 hourly, unchanged.
 - 2026-10-20: Paused 17:57-20:16 UTC by the user, then resumed early; all schedules back on.
 - 2026-10-20: Analysis requests are batched into each agent's 4-hour report (coordinator budget check: AI lab turns over the time box from the request loop). Each answer turn stays within the time box.
 - 2026-10-20: Agent coordinator added (session_017PAirUr1ZnmejFCor3yYPi): logs every main-session/agent interaction, tracks productivity, and from 12-8 AM Eastern holds you while the main session is active (rule 9).
@@ -115,4 +116,3 @@ The main session checks on both every 4 hours (at :20) and fixes blockers.
 - 2026-10-20: Card data roster: Scryfall (tools/concordia/deckgen/scryfall_bulk.py, bulk oracle_cards, at most one check per 12 h; /cards/collection lookups throttled). Blocked by the network policy until the user allows api.scryfall.com and data.scryfall.io.
 - 2026-10-20: The first piloted test match was discarded at the user's request (too many problems); don't use its data. PilotSim now has a no-token rules mode (-Dpilot.A=rules).
 - 2026-10-20: ai_lab/minideck.py shrinks a deck to a 30-card test deck (commander + test cards + 12 lands + the source deck's cheapest cards); Forge sims accept 30-card Commander decks, verified. setup.sh now also compiles tools/concordia/ai_lab/*.java (AiLabSim was missing).
-- 2026-10-20: Agent manager added: this file is the shared context (read first every run); tools/agents/registry.json logs your standing requests. Briefs now point here.
