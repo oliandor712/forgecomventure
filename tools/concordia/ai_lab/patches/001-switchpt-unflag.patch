@@ -7,6 +7,7 @@
 #   patched (flag removed):  casts 7 (Turtleshell 4/4 games, Aquamoeba 2, Myr Quadropod 1), activations 26;
 #                            wins A=2 B=2 vs baseline A=1 B=3 (4 games: noise only)
 # Re-run at 20/20 life: baseline 0 casts; patched 7 casts, 30 activations (same result).
+# CAVEAT (main-session analysis): PumpAi SwitchPT only checks "in combat" and "not already used this turn" (PumpAi:57,:83), so activations are mostly waste. Pair this flag removal with the 0b PumpAi guard (patch 005, planned) before proposing.
 # Caveat: Turtleshell activated up to 12 times in one game; the AI uses the switch freely, not always usefully.
 # Apply from the repo root with: git apply tools/concordia/ai_lab/patches/001-switchpt-unflag.patch
 diff --git a/forge-gui/res/cardsfolder/t/turtleshell_changeling.txt b/forge-gui/res/cardsfolder/t/turtleshell_changeling.txt
