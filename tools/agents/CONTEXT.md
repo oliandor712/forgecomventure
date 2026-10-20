@@ -104,6 +104,7 @@ build on its findings, and cite entries by date and title.
 The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
+- 2026-10-20: The user and Claude Chat now leave requests for the main session in the Claude Doc agent_operations_master (inbox table); the main session works them at its 4-hour check-in. Agents don't write to it.
 - 2026-10-20: Schedules: AI lab step every 2 h at :06 (was hourly); balance report every 4 h at :25; main check-in every 4 h at :40; balance batch :10 and coordinator :55 hourly, unchanged.
 - 2026-10-20: Paused 17:57-20:16 UTC by the user, then resumed early; all schedules back on.
 - 2026-10-20: Analysis requests are batched into each agent's 4-hour report (coordinator budget check: AI lab turns over the time box from the request loop). Each answer turn stays within the time box.

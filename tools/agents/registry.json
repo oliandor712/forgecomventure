@@ -195,8 +195,17 @@
    [
     "2026-10-20",
     "Check-in steps 7-8: keep the schedule notes current (check-in :40/4h, balance report :25/4h, balance batch :10 hourly, coordinator :55 hourly, AI lab every 2 h at :06); refresh the project doc agent_operations_master.md in the project MTG Forge Adventure Mode+ with project_write."
+   ],
+   [
+    "2026-10-20",
+    "Check-in step 9: read the inbox section of agent_operations_master.md (MTG Forge Adventure Mode+), act on open items, mark DONE with commit and date, reply under 'Replies from Claude Code' via project_write (with guardrails: items needing approval are marked NEEDS USER)."
+   ],
+   [
+    "2026-10-20",
+    "project_write isn't available; the user chose a Claude Doc. Check-in steps 8-9 now read/update the Claude Doc agent_operations_master (https://claude.ai/code/artifact/0e47b3f5-e601-4bc8-9868-fa3b3abb0a0b) with the Claude Docs tools; same guardrails."
    ]
   ],
-  "checkin": "trig_013wq1jHysGSQBbB9e6daKd5 at :40 every 4 h"
+  "checkin": "trig_013wq1jHysGSQBbB9e6daKd5 at :40 every 4 h",
+  "operations_doc": "https://claude.ai/code/artifact/0e47b3f5-e601-4bc8-9868-fa3b3abb0a0b"
  }
 }
