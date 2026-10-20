@@ -138,6 +138,10 @@
     [
      "2026-10-20",
      "Test updates the agents could use are automatically approved, with old versions backed up; AI changes go on a checkbox list for the user's final approval."
+    ],
+    [
+     "2026-10-20",
+     "Eliminate life bonuses (life5, life10) as an option: no life-bonus tests, every sim at equal life."
     ]
    ],
    "analyses": [

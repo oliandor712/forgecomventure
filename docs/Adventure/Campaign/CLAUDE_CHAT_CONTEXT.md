@@ -78,7 +78,7 @@ tests on Windows at C:\Users\Teddy\Documents\Forge, deploying either with a full
   similar.
 
 ## 3. Standing rules (the user's; enforce them)
-1. Every simulation uses equal life on both sides. The only exception is a test of a life bonus itself.
+1. Every simulation uses equal life on both sides, no exceptions. Life bonuses are eliminated as an encounter option.
 2. No changes to forge-core, forge-game or forge-ai on the branch without the user's explicit approval. AI ideas become
    patch files.
 3. Test-side updates are pre-approved for the agents (sims, logging, test decks, scratch patched copies), as long as

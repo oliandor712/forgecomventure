@@ -44,7 +44,7 @@ tools, the project's current state and recent updates. Where it and this brief d
 - Write **`tools/concordia/balance_lab/BonusSim.java`**: a copy of DeckSim that also takes, per side, an optional
   comma-separated list of cards to start on the battlefield, as Forge's `startBattleWithCard` does
   (`RegisteredPlayer.addExtraCardsOnBattlefield`; see `forge-gui-mobile/.../scene/DuelScene.java` around line 360). It
-  should also take an optional life bonus and print one machine-readable line per game: winner, turns, and whether the
+  should print one machine-readable line per game: winner, turns, and whether the
   game timed out.
   - **Verify a bonus actually lands** once: one game with a log check, e.g. a bonus land shows on turn 1.
   - **Seats:** alternate who plays first by swapping seats each game, and record the seat.
@@ -79,14 +79,15 @@ Never edit or reorder past rows.
 | `land` | one basic land of the enemy deck's color | small |
 | `onedrop` | one 1-mana creature from the enemy's own deck (else a generic one in its color) | small |
 | `land+onedrop` | both | small |
-| `life5` | +5 starting life | small |
 | `arena` | Phyrexian Arena | Forge premade |
 | `staff` | the Staff of the <color> Magus for its color | Forge premade |
 | `legion` | Legion's Landing | Forge premade |
 | `market` | Black Market | Forge premade |
 | `bedlam` | Bedlam | Forge premade |
 | `hornet` | Hornet Nest | Forge premade |
-| `life10` | +10 starting life (Forge's usual dungeon bonus) | Forge premade |
+
+   - **No life bonuses** (user, 2026-10-20): `life5`/`life10` are eliminated as an option. Don't test them; both
+     sides always start at equal life. Their old rows stay in the record but are left out of the report.
 
    - Cycle through the bonuses so each gets matched sets regularly. The premade ones come from Forge's own dungeon
      maps (`grep -rh startBattleWithCard forge-gui/res/adventure/common/maps`); add others from there if useful, and

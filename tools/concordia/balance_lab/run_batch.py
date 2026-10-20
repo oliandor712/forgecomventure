@@ -16,9 +16,10 @@ STAFF = {"W": "Staff of the Sun Magus", "U": "Staff of the Mind Magus", "B": "St
 GENERIC_1DROP = {"W": "Adanto Vanguard", "U": "Faerie Miscreant", "B": "Dark Confidant", "R": "Goblin Guide", "G": "Llanowar Elves"}
 PREMADE = {"arena": "Phyrexian Arena", "legion": "Legion's Landing", "market": "Black Market",
            "bedlam": "Bedlam", "hornet": "Hornet Nest"}
-ALL_BONUSES = ["land", "onedrop", "land+onedrop", "life5", "arena", "staff", "legion", "market", "bedlam", "hornet", "life10"]
+ALL_BONUSES = ["land", "onedrop", "land+onedrop", "arena", "staff", "legion", "market", "bedlam", "hornet"]
 # main session, 2026-10-20: land, onedrop, land+onedrop, life5 against arena, staff, life10 first; the rest later
-BONUSES = ["land", "onedrop", "land+onedrop", "life5", "arena", "staff", "life10"]
+# user, 2026-10-20: life bonuses eliminated as an option; no life5/life10 tests
+BONUSES = ["land", "onedrop", "land+onedrop", "arena", "staff"]
 
 
 def green_pool():
@@ -164,8 +165,7 @@ def main():
             # equal life: the higher tier's low end (opponent stands one tier above for t>=3; starter ~ tier of enemy)
             life = LIFE[min(t + 1, 5)] if t > 2 else LIFE[t]
             xe = bonus_cards(bonus, enemy, col)
-            lb_extra = 5 if bonus == "life5" else 10 if bonus == "life10" else 0
-            if bonus.startswith("life"): xe = "-"
+            lb_extra = 0  # life bonuses eliminated (user, 2026-10-20): both sides at equal life
             n = 0
             for with_bonus in (True, False):
                 for first in ("a", "b"):

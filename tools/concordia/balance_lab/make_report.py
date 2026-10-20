@@ -84,7 +84,7 @@ for r in bonus:
 base = collections.defaultdict(list)
 res = []
 for b, sets in by.items():
-    if b == "none": continue
+    if b == "none" or b.startswith("life"): continue  # life bonuses eliminated by the user, 2026-10-20
     # pair each bonus set with the no-bonus games of the same pairing and timestamp
     wi = [r for s in sets.values() for r in s]
     wo = [r for r in bonus if not r["bonus_a"] and any((r["deck_a"], r["deck_b"], r["utc"]) == (k[0], k[1], k[3]) for k in sets)]
@@ -101,7 +101,7 @@ heavy = [x for x in res if x[4] >= .25]
 small = [x for x in res if abs(x[4]) < .25]
 L += ["## Coverage", "", "Decks with fewer than 4 games: %d of %d seen. Games per deck: min %d, median %d, max %d." % (
     sum(1 for v in allgames.values() if v < 4), len(allgames), min(allgames.values()), sorted(allgames.values())[len(allgames) // 2], max(allgames.values())),
-    "Not yet in the record: " + ", ".join(sorted(set(["land", "onedrop", "land+onedrop", "life5", "arena", "staff", "legion", "market", "bedlam", "hornet", "life10"]) - set(by))) + ".", ""]
+    "Not yet in the record: " + ", ".join(sorted(set(["land", "onedrop", "land+onedrop", "arena", "staff", "legion", "market", "bedlam", "hornet"]) - set(by))) + ".", ""]
 L += ["## What this suggests", ""]
 L.append("- Bonuses with a large swing so far (>=25 points, few games, treat as a lead only): " + (", ".join("%s (%+.0f)" % (x[0], 100 * x[4]) for x in heavy) or "none") + ".")
 L.append("- Bonuses within +/-25 points: " + (", ".join("%s (%+.0f)" % (x[0], 100 * x[4]) for x in small) or "none") + ".")
