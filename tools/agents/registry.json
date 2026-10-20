@@ -50,6 +50,12 @@
      "2026-10-20",
      "Shrink test decks to 30 cards so flagged cards are drawn more often (if a restriction blocks it, pad with Wastes removed at match start)."
     ]
+   ],
+   "analyses": [
+    [
+     "2026-10-20",
+     "Flagged-card timing and logic fit (exp 001-003)"
+    ]
    ]
   },
   "deck-balance-lab": {
