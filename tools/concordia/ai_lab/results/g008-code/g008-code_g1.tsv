@@ -1,0 +1,21 @@
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Grappler Spider (15) and Spider Token (85) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B assigned Leaf-Crowned Visionary (52) to block Grappler Spider (15). B didn't block Spider Token (85).
+11	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Spider Token (85)]
+11	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (16) - Spider Token (85) gets +3/+3  until end of turn.
+11	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Spider Token (85)]
+11	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Spider Token (85) gets +2/+2 and gains hexproof until end of turn.
+11	A's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Grappler Spider (15) deals 3 damage to Leaf-Crowned Visionary (52).
+11	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 6 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Leaf-Crowned Visionary (52) deals 1 damage to Grappler Spider (15).
+11	A's Combat Damage Step	LIFE	Life: B 6 > 0

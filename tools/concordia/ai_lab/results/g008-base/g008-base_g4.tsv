@@ -1,0 +1,91 @@
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Beginning of Combat Step	STACK_ADD*	A cast Giant Growth targeting [Deadly Recluse (13)]
+11	A's Beginning of Combat Step	STACK_RESOLVE*	Giant Growth (17) - Deadly Recluse (13) gets +3/+3  until end of turn.
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Deadly Recluse (13) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Deadly Recluse (13).
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Deadly Recluse (13) deals 6 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 15 > 9
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD	A cast Arasta of the Endless Web
+11	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+11	A's Main phase, postcombat	STACK_ADD	B cast Nature's Claim targeting [Arasta of the Endless Web (40)]
+11	A's Main phase, postcombat	STACK_ADD	A triggered Arasta of the Endless Web
+11	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+11	A's Main phase, postcombat	ZONE_CHANGE	Arasta of the Endless Web (40) was put into Graveyard from Battlefield.
+11	A's Main phase, postcombat	LIFE	Life: A 10 > 14
+11	A's End step	PHASE	A's End step
+11	A's End step	STACK_ADD	B activated Agatha's Soul Cauldron targeting [Arasta of the Endless Web (40)]
+11	A's End step	STACK_ADD	B triggered Agatha's Soul Cauldron targeting [Selvala, Heart of the Wilds (81)]
+11	A's Cleanup step	PHASE	A's Cleanup step
+13	B's Cleanup step	TURN	Turn 13 (A)
+13	A's Untap step	PHASE	A's Untap step
+13	A's Upkeep step	PHASE	A's Upkeep step
+13	A's Draw step	PHASE	A's Draw step
+13	A's Main phase, precombat	PHASE	A's Main phase, precombat
+13	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+13	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+13	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+13	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+13	A's Combat Damage Step	PHASE	A's Combat Damage Step
+13	A's End of Combat Step	PHASE	A's End of Combat Step
+13	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+13	A's Main phase, postcombat	STACK_ADD	A cast Aquastrand Spider
+13	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+13	A's End step	PHASE	A's End step
+13	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Giant Growth (17)]
+13	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Giant Growth (17) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+13	A's Cleanup step	PHASE	A's Cleanup step
+36	A's Cleanup step	TURN	Turn 36 (B)
+36	B's Untap step	PHASE	B's Untap step
+36	B's Upkeep step	PHASE	B's Upkeep step
+36	B's Draw step	PHASE	B's Draw step
+36	B's Draw step	STACK_ADD	B cast Heroic Intervention
+36	B's Main phase, precombat	PHASE	B's Main phase, precombat
+36	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+36	B's Beginning of Combat Step	STACK_ADD	B triggered H.E.R.B.I.E., Lovable Robot
+36	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+36	B's Declare Attackers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) and Phyrexian Dreadnought (42) to attack A.
+36	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+36	B's Declare Blockers Step	COMBAT	A assigned Sylvan Ranger (22) to block Selvala, Heart of the Wilds (81). A assigned Aftermath Analyst (7), Deadly Recluse (13), Copper Longlegs (2), Aquastrand Spider (6) and Canopy Spider (19) to block Phyrexian Dreadnought (42).
+36	B's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Deadly Recluse (13)]
+36	B's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Deadly Recluse (13) gets +4/+4  until end of turn.
+36	B's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Deadly Recluse (13)]
+36	B's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (10) - Deadly Recluse (13) gets +4/+4  until end of turn.
+36	B's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Deadly Recluse (13)]
+36	B's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (8) - Deadly Recluse (13) gets +2/+2 and gains hexproof until end of turn.
+36	B's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Deadly Recluse (13)]
+36	B's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Deadly Recluse (13) gets +2/+2 and gains hexproof until end of turn.
+36	B's Declare Blockers Step	STACK_ADD	A cast Snakeskin Veil targeting [Deadly Recluse (13)]
+36	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+36	B's Combat Damage Step	PHASE	B's Combat Damage Step
+36	B's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 32 damage to Sylvan Ranger (22).
+36	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 3 damage to Copper Longlegs (2).
+36	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 4 damage to Canopy Spider (19).
+36	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 1 damage to Aquastrand Spider (6).
+36	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 3 damage to Aftermath Analyst (7).
+36	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 1 damage to Deadly Recluse (13).
+36	B's Combat Damage Step	DAMAGE	Sylvan Ranger (22) deals 1 damage to Selvala, Heart of the Wilds (81).
+36	B's Combat Damage Step	DAMAGE	Aftermath Analyst (7) deals 1 damage to Phyrexian Dreadnought (42).
+36	B's Combat Damage Step	DAMAGE	Deadly Recluse (13) deals 16 damage (Deathtouch) to Phyrexian Dreadnought (42).
+36	B's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 1 damage to Phyrexian Dreadnought (42).
+36	B's Combat Damage Step	DAMAGE	Aquastrand Spider (6) deals 1 damage to Phyrexian Dreadnought (42).
+36	B's Combat Damage Step	DAMAGE	Canopy Spider (19) deals 2 damage to Phyrexian Dreadnought (42).
+36	B's Combat Damage Step	ZONE_CHANGE	Aftermath Analyst (7) was put into Graveyard from Battlefield.
+36	B's Combat Damage Step	ZONE_CHANGE	Copper Longlegs (2) was put into Graveyard from Battlefield.
+36	B's Combat Damage Step	ZONE_CHANGE	Aquastrand Spider (6) was put into Graveyard from Battlefield.
+36	B's Combat Damage Step	ZONE_CHANGE	Canopy Spider (19) was put into Graveyard from Battlefield.
+36	B's Combat Damage Step	ZONE_CHANGE	Sylvan Ranger (22) was put into Graveyard from Battlefield.
+36	B's End of Combat Step	PHASE	B's End of Combat Step
+36	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+36	B's End step	PHASE	B's End step
+36	B's Cleanup step	PHASE	B's Cleanup step

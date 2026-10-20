@@ -1,0 +1,22 @@
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Draw step	PHASE	A's Draw step
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Attackers Step	COMBAT	A assigned Deadly Recluse (13), Arasta of the Endless Web (40) and Spider Token (85) to attack B.
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's Declare Blockers Step	COMBAT	B didn't block Deadly Recluse (13). B assigned Leaf Gilder (74) and Selvala, Heart of the Wilds (81) to block Arasta of the Endless Web (40). B assigned H.E.R.B.I.E., Lovable Robot (80) to block Spider Token (85).
+15	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Deadly Recluse (13)]
+15	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (16) - Deadly Recluse (13) gets +3/+3  until end of turn.
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's Combat Damage Step	DAMAGE	Deadly Recluse (13) deals 6 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 2 damage to Selvala, Heart of the Wilds (81).
+15	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 1 damage to Leaf Gilder (74).
+15	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 1 damage to H.E.R.B.I.E., Lovable Robot (80).
+15	A's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 2 damage to Arasta of the Endless Web (40).
+15	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 4 damage to Arasta of the Endless Web (40).
+15	A's Combat Damage Step	DAMAGE	H.E.R.B.I.E., Lovable Robot (80) deals 1 damage to Spider Token (85).
+15	A's Combat Damage Step	LIFE	Life: B 3 > -3

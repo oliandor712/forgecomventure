@@ -50,8 +50,17 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
     - The test arms combined 005, 006 and 008.
     - The decks had few real pump tricks.
     - Kills weren't attributed.
-  - Next: a controlled gang-block test, then 20 games per arm with 008 alone on decks built around pump tricks.
+  - Controlled gang-block test (008 alone, 10 games): no red flag, and nothing pumped outside combat. But only 4
+    gang-block turns per arm, so 008's own decision isn't isolated.
+  - Next: a shadow mode that logs every decision where 008 and the unpatched AI disagree, in the same game state. Then
+    the 20-game totals check.
   - Kept separate from 005, which works without it. 005 gets better with it.
+- [ ] **009, don't over-pump (candidate)**: Found in testing; no patch yet.
+  - Where: PumpAi and `ComputerUtilCard.shouldPumpCard`.
+  - In an unpatched game the AI cast 4 tricks (2 Titanic Growth, 2 Blossoming Defense) on one deathtouch blocker in
+    a single combat, then lost 4 creatures.
+  - The fix: stop pumping once the predicted outcome is secured, and don't count extra power on a creature with
+    deathtouch.
 - [ ] **006, Fog count includes Effect-based Fogs**: Tested, no effect; parked.
   - Where: `FogAi.java:116-133`. In the A/B test it changed nothing measurable.
   - It only matters when the AI holds 3 or more Fogs and isn't in danger, which only a deck built around Fogs would

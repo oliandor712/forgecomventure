@@ -1,0 +1,65 @@
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Spider Token (88) and Canopy Spider (19) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Spider Token (88). B didn't block Canopy Spider (19).
+9	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Canopy Spider (19)]
+9	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Canopy Spider (19) gets +4/+4  until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Spider Token (88) deals 1 combat damage to B.
+9	A's Combat Damage Step	DAMAGE	Canopy Spider (19) deals 5 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 19 > 13
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Mirkwood Spider
+9	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (19) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Canopy Spider (19).
+11	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Canopy Spider (19)]
+11	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (10) - Canopy Spider (19) gets +4/+4  until end of turn.
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Canopy Spider (19) deals 5 damage to Selvala, Heart of the Wilds (81).
+11	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 4 damage to Canopy Spider (19).
+11	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+27	B's Cleanup step	TURN	Turn 27 (A)
+27	A's Untap step	PHASE	A's Untap step
+27	A's Upkeep step	PHASE	A's Upkeep step
+27	A's Draw step	PHASE	A's Draw step
+27	A's Main phase, precombat	PHASE	A's Main phase, precombat
+27	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+27	A's Beginning of Combat Step	STACK_ADD	A activated Aquastrand Spider targeting [Aquastrand Spider (6)]
+27	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Aquastrand Spider (6)]
+27	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (8) - Aquastrand Spider (6) gets +2/+2 and gains hexproof until end of turn.
+27	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+27	A's Declare Attackers Step	COMBAT	A assigned Aquastrand Spider (6) to attack B.
+27	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+27	A's Declare Blockers Step	COMBAT	B didn't block Aquastrand Spider (6).
+27	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+27	A's Combat Damage Step	PHASE	A's Combat Damage Step
+27	A's Combat Damage Step	DAMAGE	Aquastrand Spider (6) deals 3 combat damage to B.
+27	A's Combat Damage Step	LIFE	Life: B 5 > 2
+27	A's End of Combat Step	PHASE	A's End of Combat Step
+27	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+27	A's End step	PHASE	A's End step
+27	A's Cleanup step	PHASE	A's Cleanup step

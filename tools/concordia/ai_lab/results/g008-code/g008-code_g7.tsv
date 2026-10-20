@@ -1,0 +1,69 @@
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Main phase, precombat	STACK_ADD	A cast Rancor targeting [Mirkwood Spider (14)]
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Mirkwood Spider (14)]
+4	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (8) - Mirkwood Spider (14) gets +2/+2 and gains hexproof until end of turn.
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (14) to attack B.
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's Declare Blockers Step	COMBAT	B didn't block Mirkwood Spider (14).
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's Combat Damage Step	DAMAGE	Mirkwood Spider (14) deals 5 combat damage to B.
+4	A's Combat Damage Step	LIFE	Life: B 20 > 15
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's End step	PHASE	A's End step
+4	A's Cleanup step	PHASE	A's Cleanup step
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (14) to attack B.
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's Declare Blockers Step	COMBAT	B assigned Duskwatch Recruiter (50) to block Mirkwood Spider (14).
+6	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Mirkwood Spider (14)]
+6	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (10) - Mirkwood Spider (14) gets +4/+4  until end of turn.
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's Combat Damage Step	DAMAGE	Mirkwood Spider (14) deals 6 combat damage to B.
+6	A's Combat Damage Step	DAMAGE	Mirkwood Spider (14) deals 1 damage (Deathtouch) to Duskwatch Recruiter (50).
+6	A's Combat Damage Step	DAMAGE	Duskwatch Recruiter (50) deals 2 damage to Mirkwood Spider (14).
+6	A's Combat Damage Step	LIFE	Life: B 15 > 9
+6	A's Combat Damage Step	ZONE_CHANGE	Duskwatch Recruiter (50) was put into Graveyard from Battlefield.
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (14) to attack B.
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B assigned Elvish Skysweeper (51) to block Mirkwood Spider (14).
+8	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Mirkwood Spider (14)]
+8	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (16) - Mirkwood Spider (14) gets +3/+3  until end of turn.
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Mirkwood Spider (14) deals 5 combat damage to B.
+8	A's Combat Damage Step	DAMAGE	Mirkwood Spider (14) deals 1 damage (Deathtouch) to Elvish Skysweeper (51).
+8	A's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 1 damage to Mirkwood Spider (14).
+8	A's Combat Damage Step	LIFE	Life: B 9 > 4
+8	A's Combat Damage Step	ZONE_CHANGE	Elvish Skysweeper (51) was put into Graveyard from Battlefield.
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Copper Longlegs
+8	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step

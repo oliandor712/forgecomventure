@@ -7,7 +7,7 @@ cd "$(dirname "$0")/../../.."
 L=$1; W=$2; A=$3; B=$4; R=tools/concordia/ai_lab/results
 SC=${SCRATCH:?set SCRATCH to the scratchpad dir containing assets/ and simcache-patched/}
 for c in base code; do
-  CPF=~/.cache/forge-sim/labcp.txt; [ $c = code ] && CPF=$SC/simcache-patched/cp.txt
+  CPF=~/.cache/forge-sim/labcp.txt; [ $c = code ] && CPF=${CODE_CP:-$SC/simcache-patched/cp.txt}
   ( java -Xmx3g -Djava.awt.headless=true "-Dwatch=$W" -Dlogdir=$R/$L-$c -cp "$(cat $CPF)" AiLabSim $SC/assets/ 10 150 $A 20 $B 20 $L-$c 2>&1 | grep -E 'RESULT|PLAYS|rror' > $R/$L-$c.raw ) &
 done
 wait

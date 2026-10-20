@@ -88,6 +88,10 @@
     [
      "2026-10-20",
      "Regression for 008: not enough yet"
+    ],
+    [
+     "2026-10-20",
+     "g008 gang-block test review; shadow-mode logging"
     ]
    ]
   },
