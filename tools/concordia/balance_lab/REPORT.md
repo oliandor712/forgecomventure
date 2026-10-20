@@ -1,6 +1,6 @@
 # Deck balance report
 
-Generated 2026-10-20 20:26Z from 122 games (58 inner-tier, 64 bonus). Intervals are 90% Wilson; draws count half.
+Generated 2026-10-20 20:43Z from 122 games (58 inner-tier, 64 bonus). Intervals are 90% Wilson; draws count half.
 
 Inner-tier tables below use only the **new decks** (rows at or after the rebuild commit 440176a2): 0 inner games; 58 inner games on the old decks are left out. Bonus impact pools old and new rows, since a matched set compares the same pairing.
 
@@ -22,8 +22,6 @@ None yet: with only a few games per deck no interval clears 50%.
 |---|---|---|---|---|---|---|
 | bedlam | 1 | 100% | 0% | +100 pts (+/-0) | 9.5 | 11.5 |
 | land+onedrop | 2 | 100% | 25% | +75 pts (+/-36) | 20.5 | 19.2 |
-| life10 | 2 | 88% | 25% | +62 pts (+/-45) | 26.0 | 14.8 |
-| life5 | 1 | 50% | 0% | +50 pts (+/-58) | 14.0 | 11.5 |
 | staff | 1 | 50% | 0% | +50 pts (+/-58) | 18.0 | 18.5 |
 | hornet | 1 | 50% | 0% | +50 pts (+/-58) | 15.0 | 14.5 |
 | land | 2 | 100% | 75% | +25 pts (+/-36) | 12.5 | 15.8 |
@@ -41,6 +39,6 @@ Not yet in the record: .
 
 ## What this suggests
 
-- Bonuses with a large swing so far (>=25 points, few games, treat as a lead only): land (+25), life5 (+50), arena (+25), staff (+50), hornet (+50), bedlam (+100), land+onedrop (+75), life10 (+62).
+- Bonuses with a large swing so far (>=25 points, few games, treat as a lead only): land (+25), arena (+25), staff (+50), hornet (+50), bedlam (+100), land+onedrop (+75).
 - Bonuses within +/-25 points: market (+0).
 - More matched sets per bonus are needed before proposing a change; the hourly batches keep adding them, least-tested bonus first.

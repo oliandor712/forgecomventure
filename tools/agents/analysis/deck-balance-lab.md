@@ -108,3 +108,7 @@ Request: Which bonuses to test further; are life10 and land+onedrop too heavy fo
 1. A bonus diff counts only across 3+ pairings; one pairing is a lead.
 2. Size life bonuses as a share of base life (about 20-33% at T1-2), not as a fixed number.
 3. Test a bonus at the tier it's meant for; results at T3-5 don't transfer to T1-2.
+
+**Correction (user, 2026-10-20, later the same day):** life bonuses are eliminated as an option. Drop step 1 of
+"What to test next" (life3/life5) and the life10 notes. The order is now: `land` and `onedrop` alone at T1-2, then
+`land+onedrop` at T1-2, each on 3+ pairings. Every sim at equal life.

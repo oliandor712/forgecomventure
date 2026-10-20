@@ -2,7 +2,7 @@
 """One batch of the deck balance lab: inner-tier pairings and bonus matched sets, appended to records.csv.
 Usage: python3 tools/concordia/balance_lab/run_batch.py [--budget 600] [--seed N]
 Plays via tools/concordia/sim/run.sh BonusSim; no new game starts after minute 8 of the batch."""
-import argparse, csv, glob, json, os, random, re, subprocess, sys, time, datetime
+import argparse, collections, csv, glob, json, os, random, re, subprocess, sys, time, datetime
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 DECKS = "forge-gui/res/adventure/Concordia/"
@@ -16,9 +16,11 @@ STAFF = {"W": "Staff of the Sun Magus", "U": "Staff of the Mind Magus", "B": "St
 GENERIC_1DROP = {"W": "Adanto Vanguard", "U": "Faerie Miscreant", "B": "Dark Confidant", "R": "Goblin Guide", "G": "Llanowar Elves"}
 PREMADE = {"arena": "Phyrexian Arena", "legion": "Legion's Landing", "market": "Black Market",
            "bedlam": "Bedlam", "hornet": "Hornet Nest"}
-ALL_BONUSES = ["land", "onedrop", "land+onedrop", "life5", "arena", "staff", "legion", "market", "bedlam", "hornet", "life10"]
+ALL_BONUSES = ["land", "onedrop", "land+onedrop", "arena", "staff", "legion", "market", "bedlam", "hornet"]
 # main session, 2026-10-20: land, onedrop, land+onedrop, life5 against arena, staff, life10 first; the rest later
-BONUSES = ["land", "onedrop", "land+onedrop", "life5", "arena", "staff", "life10"]
+# user, 2026-10-20: life bonuses eliminated as an option; T1-2 order from the bonus review: land and onedrop alone,
+# then land+onedrop, 3+ pairings each against all five starters
+BONUSES = ["land", "onedrop", "land+onedrop"]
 
 
 def green_pool():
@@ -155,17 +157,18 @@ def main():
                 meta[lab] = ("inner", t, a, b, LIFE[t], LIFE[t], "", "")
         else:
             bonus = min(BONUSES, key=lambda b: (nbonus_done.get(b, 0), rng.random()))
-            t = rng.choice([1, 1, 2, 2, 2, 3, 4, 5])
+            t = rng.choice([1, 2])
             mono = [d for d in decks("tier%d" % t, pool) if len(colors(d)) == 1] or decks("tier%d" % t)
             enemy = pick(mono, c, rng)[0]
             col = colors(enemy)[0]
-            if t <= 2: opp = rng.choice([d for d in decks("starter") if colors(d) != col] or decks("starter"))
+            if t <= 2:
+                used = collections.Counter(r["deck_b"] for r in rows if r["kind"] == "bonus" and r["bonus_a"] == bonus)
+                opp = min(decks("starter"), key=lambda d: (used.get(rel(d), 0), rng.random()))
             else: opp = pick(decks("tier%d" % (t + 1)) if t < 5 else decks("tier5"), c, rng)[0]
             # equal life: the higher tier's low end (opponent stands one tier above for t>=3; starter ~ tier of enemy)
             life = LIFE[min(t + 1, 5)] if t > 2 else LIFE[t]
             xe = bonus_cards(bonus, enemy, col)
-            lb_extra = 5 if bonus == "life5" else 10 if bonus == "life10" else 0
-            if bonus.startswith("life"): xe = "-"
+            lb_extra = 0  # life bonuses eliminated (user, 2026-10-20): both sides at equal life
             n = 0
             for with_bonus in (True, False):
                 for first in ("a", "b"):

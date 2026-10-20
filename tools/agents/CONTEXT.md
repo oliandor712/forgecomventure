@@ -14,8 +14,8 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
 - The user tests on Windows. The user decides what goes into the game; agents propose.
 
 ## Standing rules (all agents)
-1. **Equal life on both sides in every simulation.** The one exception is a test of a life bonus itself, and the record
-   must say so.
+1. **Equal life on both sides in every simulation, no exceptions.** Life bonuses are eliminated as an option (user,
+   2026-10-20); don't test them.
 2. **Don't change `forge-core`, `forge-game` or `forge-ai`** on the branch: the user hasn't approved AI-module changes.
    Code ideas go in patch files in your own folder.
 3. **Write only in your own folder**, plus your listed docs. Never commit build output, classpaths, `forge-gui/data/`,
@@ -104,6 +104,7 @@ build on its findings, and cite entries by date and title.
 The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
+- 2026-10-20: Life bonuses (life5, life10) eliminated as an option by the user. No life-bonus tests; every sim at equal life. Old life rows stay in records.csv but are left out of the report.
 - 2026-10-20: The user and Claude Chat now leave requests for the main session in the Claude Doc agent_operations_master (inbox table); the main session works them at its 4-hour check-in. Agents don't write to it.
 - 2026-10-20: Schedules: AI lab step every 2 h at :06 (was hourly); balance report every 4 h at :25; main check-in every 4 h at :40; balance batch :10 and coordinator :55 hourly, unchanged.
 - 2026-10-20: Paused 17:57-20:16 UTC by the user, then resumed early; all schedules back on.
