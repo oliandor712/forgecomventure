@@ -7,13 +7,15 @@ LAB = os.path.join(ROOT, "tools/concordia/balance_lab")
 rows = list(csv.DictReader(open(os.path.join(LAB, "records.csv"), newline="")))
 REBUILD = "440176a2"  # deck rebuild (main session, 2026-10-20): rows at or after this commit are on the new decks
 _new = {}
+REBUILD2 = "58aa312f"  # tier 1-2 decks rebuilt again with a raised floor: T1-2 rows before it are old decks
 
 
 def is_new(r):
-    c = r["commit"]
-    if c not in _new:
-        _new[c] = subprocess.run(["git", "merge-base", "--is-ancestor", REBUILD, c], cwd=ROOT).returncode == 0
-    return _new[c]
+    base = REBUILD2 if r["tier"] in ("1", "2") else REBUILD
+    k = (r["commit"], base)
+    if k not in _new:
+        _new[k] = subprocess.run(["git", "merge-base", "--is-ancestor", base, r["commit"]], cwd=ROOT).returncode == 0
+    return _new[k]
 Z = 1.645
 
 
@@ -44,7 +46,7 @@ inner = [r for r in inner_all if is_new(r)]  # current balance: new decks only
 bonus = [r for r in rows if r["kind"] == "bonus"]
 L = ["# Deck balance report", "", "Generated %s from %d games (%d inner-tier, %d bonus). Intervals are 90%% Wilson; draws count half."
      % (datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%MZ"), len(rows), len(inner_all), len(bonus)), "",
-     "Inner-tier tables below use only the **new decks** (rows at or after the rebuild commit %s): %d inner games; %d inner games on the old decks are left out. Bonus impact pools old and new rows, since a matched set compares the same pairing." % (REBUILD, len(inner), len(inner_all) - len(inner)), ""]
+     "Inner-tier tables below use only the **new decks** (rows at or after the rebuild commit: %s for tiers 3-5, %s for tiers 1-2): %d inner games; %d inner games on the old decks are left out. Bonus impact pools old and new rows, since a matched set compares the same pairing." % (REBUILD, REBUILD2, len(inner), len(inner_all) - len(inner)), ""]
 to_rows = [r for r in rows if int(r["timeout"])]
 L += ["Timeouts: %d. %s" % (len(to_rows), "; ".join("%s vs %s, %s, turn %s (bonus %s, life %s/%s)" % (os.path.basename(r["deck_a"]), os.path.basename(r["deck_b"]), r["kind"], r["turns"], r["bonus_a"] or "none", r["life_a"], r["life_b"]) for r in to_rows) or "none"), ""]
 allgames = collections.Counter()
