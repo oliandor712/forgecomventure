@@ -1,0 +1,48 @@
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+7	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+11	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+27	B's Cleanup step	TURN	Turn 27 (A)
+27	A's Untap step	PHASE	A's Untap step
+27	A's Upkeep step	PHASE	A's Upkeep step
+27	A's Draw step	PHASE	A's Draw step
+27	A's Main phase, precombat	PHASE	A's Main phase, precombat
+27	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+27	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+27	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+27	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+27	A's Combat Damage Step	PHASE	A's Combat Damage Step
+27	A's End of Combat Step	PHASE	A's End of Combat Step
+27	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+27	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+27	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+27	A's End step	PHASE	A's End step
+27	A's Cleanup step	PHASE	A's Cleanup step

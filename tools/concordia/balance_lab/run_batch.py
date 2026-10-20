@@ -77,9 +77,20 @@ def load():
     return list(csv.DictReader(open(REC)))
 
 
+REBUILD = "440176a2"  # deck rebuild: coverage counts only games on the new decks
+_new = {}
+
+
+def is_new(r):
+    if r["commit"] not in _new:
+        _new[r["commit"]] = subprocess.run(["git", "merge-base", "--is-ancestor", REBUILD, r["commit"]], cwd=ROOT).returncode == 0
+    return _new[r["commit"]]
+
+
 def counts(rows):
     c = {}
     for r in rows:
+        if not is_new(r): continue
         for k in ("deck_a", "deck_b"): c[r[k]] = c.get(r[k], 0) + 1
     return c
 

@@ -1,0 +1,22 @@
+The card A-Hullbreaker Horror was not assigned to any set. Adding it to UNKNOWN set... to fix see res/editions/ folder. 
+PLAYS	s006-base	game=0	card=Thwart the Enemy	mentions=0	cast=0	activated=0	finalZone=
+PLAYS	s006-base	game=0	card=Vine Snare	mentions=2	cast=1	activated=0	finalZone=
+PLAYS	s006-base	game=1	card=Thwart the Enemy	mentions=0	cast=0	activated=0	finalZone=Library Hand Hand
+PLAYS	s006-base	game=1	card=Vine Snare	mentions=1	cast=0	activated=0	finalZone=Library Library Graveyard
+PLAYS	s006-base	game=2	card=Thwart the Enemy	mentions=2	cast=1	activated=0	finalZone=
+PLAYS	s006-base	game=2	card=Vine Snare	mentions=2	cast=1	activated=0	finalZone=
+PLAYS	s006-base	game=3	card=Thwart the Enemy	mentions=2	cast=1	activated=0	finalZone=Library Library Graveyard
+PLAYS	s006-base	game=3	card=Vine Snare	mentions=6	cast=3	activated=0	finalZone=Graveyard Graveyard Graveyard
+PLAYS	s006-base	game=4	card=Thwart the Enemy	mentions=0	cast=0	activated=0	finalZone=
+PLAYS	s006-base	game=4	card=Vine Snare	mentions=2	cast=1	activated=0	finalZone=
+PLAYS	s006-base	game=5	card=Thwart the Enemy	mentions=2	cast=1	activated=0	finalZone=
+PLAYS	s006-base	game=5	card=Vine Snare	mentions=6	cast=3	activated=0	finalZone=
+PLAYS	s006-base	game=6	card=Thwart the Enemy	mentions=4	cast=2	activated=0	finalZone=Library Graveyard Graveyard
+PLAYS	s006-base	game=6	card=Vine Snare	mentions=2	cast=1	activated=0	finalZone=Library Graveyard Hand
+PLAYS	s006-base	game=7	card=Thwart the Enemy	mentions=0	cast=0	activated=0	finalZone=Library Library Library
+PLAYS	s006-base	game=7	card=Vine Snare	mentions=0	cast=0	activated=0	finalZone=Library Library Hand
+PLAYS	s006-base	game=8	card=Thwart the Enemy	mentions=0	cast=0	activated=0	finalZone=
+PLAYS	s006-base	game=8	card=Vine Snare	mentions=2	cast=1	activated=0	finalZone=
+PLAYS	s006-base	game=9	card=Thwart the Enemy	mentions=2	cast=1	activated=0	finalZone=Library Graveyard Hand
+PLAYS	s006-base	game=9	card=Vine Snare	mentions=2	cast=1	activated=0	finalZone=Library Library Graveyard
+RESULT	s006-base	A=5	B=5	draw=0	avgTurns=17.5

@@ -1,0 +1,15 @@
+3	B's Cleanup step	TURN	Turn 3 (A)
+3	A's Untap step	PHASE	A's Untap step
+3	A's Upkeep step	PHASE	A's Upkeep step
+3	A's Draw step	PHASE	A's Draw step
+3	A's Main phase, precombat	PHASE	A's Main phase, precombat
+3	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+3	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+3	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+3	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+3	A's Combat Damage Step	PHASE	A's Combat Damage Step
+3	A's End of Combat Step	PHASE	A's End of Combat Step
+3	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+3	A's Main phase, postcombat	ZONE_CHANGE*	A milled Forest (34), Grappler Spider (17) and Vine Snare (7).
+3	A's End step	PHASE	A's End step
+3	A's Cleanup step	PHASE	A's Cleanup step

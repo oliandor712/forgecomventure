@@ -29,26 +29,19 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
 
 ## forge-ai code changes (the AI's own logic; none approved yet)
 
-- [ ] **005, switch as "two versions"**: Tested, needs work.
+- [ ] **005, switch as "two versions"**: Tested (v3), close to ready.
   - Where: `forge-ai/.../ability/PumpAi.java`. Patch: `tools/concordia/ai_lab/patches/005-switchpt-two-versions.patch`.
-  - What it does: switch only in declare blockers of a combat the creature is in. Compare the creature as it is with
-    it switched, and switch only if the switched version does better. At most one switch and one switch back per
-    turn.
-  - Tested in 10 games: activations went from about 92 to 8, all well timed.
-    - Good: an unblocked Myr Quadropod switched to hit for 4.
-    - Fair: an Aquamoeba switched to trade with its blocker.
-  - Still to fix (main-session review):
-    - Use Forge's own combat predictor (`ComputerUtilCard.shouldPumpCard`, line 1470), which handles first strike,
-      deathtouch and similar.
-    - Subtract the activation cost: Aquamoeba discards a card.
-    - Tell the rest of the AI when a switch is chosen to trade. Today another routine then bounced the creature with
-      Echoing Truth.
-    - Allow the switch that saves it from damage.
-  - Wins are unchanged: 1-9 in all versions.
-- [ ] **006, Fog count includes Effect-based Fogs**: Planned.
-  - Where: `FogAi.java:116-133` (`countAvailableFogs`).
-  - Count spells with `AILogic$ Fog` as Fogs, so the AI's "3 or more Fogs in hand" play works for decks built on those
-    cards.
+  - Switch only after blocks, for a creature in this combat, when Forge's combat predictor (`shouldPumpCard`) says the
+    switched version does better, net of the activation cost.
+  - Code A/B (3 copies each, 10 games): activations went from 68 to 14, all in declare blockers. About 5-6 of the 7
+    activation lines reviewed were clearly useful (unblocked switches for +3/+4 damage; a doomed Aquamoeba taking a
+    blocker with it), compared with about 0 at baseline.
+  - Left to check: gang blocks. A switch that completes a group block was not taken, possibly a kill of the enemy
+    commander. Also more logging (object ids, mana, kills).
+- [ ] **006, Fog count includes Effect-based Fogs**: Tested, no effect; parked.
+  - Where: `FogAi.java:116-133`. In the A/B test it changed nothing measurable.
+  - It only matters when the AI holds 3 or more Fogs and isn't in danger, which only a deck built around Fogs would
+    see. Low priority unless such an encounter deck is planned.
 - [ ] **007, attacker curses aimed through the blocker (Shield Dancer and similar)**: Planned.
   - Where: `EffectAi.java:136-140`.
   - Target only an attacker this creature is blocking, and only when the redirected damage kills it. Otherwise don't

@@ -1,19 +1,19 @@
-# 005-switchpt-two-versions: PumpAi SwitchPT scores the host as two creatures (forge-ai CODE patch, NOT applied; needs approval)
-# What: for `AILogic$ SwitchPT` on the host itself (PumpAi.checkAiLogic) the AI now (1) only considers it in declare blockers
-# of a combat the host is in (checkPhaseRestrictions), (2) scores the host "as it is now" (P/T) and "switched" (T/P) in this
-# combat (unblocked attacker: damage, lethal = 10000; blocked attacker / blocker: value of the opposing creatures it kills,
-# cheapest first, minus its own value if it dies) and switches only if the other version scores higher, (3) allows at most
-# one switch and one switch back per turn. Idea from the user: view the switch as a temporary second creature and pick the
-# more useful version for the rest of the turn.
-# Cards affected: Aquamoeba, Turtleshell Changeling, Myr Quadropod, and any other self SwitchPT card (needs patch 001 for the
-# flags). Test (AiLabSim, n001 deck 40 cards, equal life 20, 10 games, vs Sai deck):
-#   001 flag removal only:   casts 20ish, ~92 activations/10 games (58 with the creature not in combat; none helped)
-#   guard v1 (simple rules): casts 20, 4 activations, all in declare blockers
-#   this patch (two-version scoring): casts 13, 8 activations, all in declare blockers; sample: unblocked Myr Quadropod
-#   switched to 4 power (+2 damage); Aquamoeba traded with a Thopter Mechanic.
-# Not modelled: first strike/deathtouch, combat tricks, switching a blocker before blocks. Apply: git apply this file on forge-ai.
+# 005-switchpt-two-versions (v3): PumpAi SwitchPT treats the host as two creatures (forge-ai CODE patch, NOT applied)
+# v3 revises v2 after the main-session review (analysis "Patch 005 two-version SwitchPT review"; v2 backed up in
+# tools/concordia/backups/2026-10-20_005-v2-patch/):
+#  - which version is better is decided by ComputerUtilCard.shouldPumpCard(ai, sa, host, p-t, t-p, []) (simulates first
+#    strike, deathtouch, indestructible, prevention, trample, marked damage) instead of hand-written damage math;
+#  - a discard cost must be beaten by the gain (versionScore difference > 60 for a spare land, else 120);
+#  - planeswalker loyalty counts as lethal; phase gate (declare blockers of a combat the host is in) and the 1 switch +
+#    1 switch back cap are kept.
+# Not done yet from the review: costs of mana that could have cast a spell, removal exposure, AiCardMemory marker so the
+# save-my-creature logic doesn't bounce a switched-to-die creature (Echoing Truth case in game g4).
+# Test (AiLabSim n001, 40-card deck, flags removed, equal life 20, 10 games vs Sai; this build also contains patch 006):
+#   flag removal only 92 activations; v1 simple guard 4; v2 8; v3 2 activations (all declare blockers), 20 casts, wins A 1-9.
+# v3 is very conservative: the AI switches rarely; the test deck has few opportunities. Next: a deck with more switch cards
+# and the per-activation log columns (score_now/score_switched, cost, role, outcome, useful).
 diff --git a/forge-ai/src/main/java/forge/ai/ability/PumpAi.java b/forge-ai/src/main/java/forge/ai/ability/PumpAi.java
-index cc8e6881..e415381b 100644
+index cc8e6881..5113bf5a 100644
 --- a/forge-ai/src/main/java/forge/ai/ability/PumpAi.java
 +++ b/forge-ai/src/main/java/forge/ai/ability/PumpAi.java
 @@ -54,8 +54,11 @@ public class PumpAi extends PumpAiBase {
@@ -26,28 +26,37 @@ index cc8e6881..e415381b 100644
 +                // at most one switch and one switch back per turn
 +                return false;
 +            }
-+            if (sa.isActivatedAbility() && !sa.usesTargeting() && !switchPTHelps(ai, sa.getHostCard())) {
++            if (sa.isActivatedAbility() && !sa.usesTargeting() && !switchPTHelps(ai, sa)) {
                  return false;
              }
          }
-@@ -63,6 +66,56 @@ public class PumpAi extends PumpAiBase {
+@@ -63,6 +66,66 @@ public class PumpAi extends PumpAiBase {
          return super.checkAiLogic(ai, sa, aiLogic);
      }
  
 +    /**
-+     * SwitchPT on the host itself: treat the host as two creatures, "as it is now" (P/T) and "switched" (T/P), score
-+     * what each would do in the rest of this combat, and switch only if the other version scores higher. The switched
-+     * version is a temporary extra option: the current one is not lost, so after switching the roles are reversed and
-+     * the same comparison decides whether to switch back (it won't unless the situation changed).
++     * SwitchPT on the host itself: the host is two creatures, "as it is now" (P/T) and "switched" (T/P). Forge's own pump
++     * predictor (ComputerUtilCard.shouldPumpCard: first strike, deathtouch, indestructible, prevention, trample, marked
++     * damage) decides if the switched version is better in this combat; when the ability has a discard cost the gain must
++     * also beat what the card is worth (about 60 for a spare land, else 120).
 +     */
-+    private static boolean switchPTHelps(final Player ai, final Card host) {
++    private static boolean switchPTHelps(final Player ai, final SpellAbility sa) {
++        final Card host = sa.getHostCard();
 +        final forge.game.combat.Combat combat = host.getGame().getCombat();
-+        if (combat == null || host.getNetPower() == host.getNetToughness()) {
++        if (combat == null || host.getNetPower() == host.getNetToughness()
++                || !(combat.isAttacking(host) || combat.isBlocking(host))) {
 +            return false;
 +        }
 +        final int p = host.getNetPower();
 +        final int t = host.getNetToughness();
-+        return versionScore(ai, host, combat, t, p) > versionScore(ai, host, combat, p, t);
++        if (!ComputerUtilCard.shouldPumpCard(ai, sa, host, p - t, t - p, java.util.Collections.<String>emptyList())) {
++            return false;
++        }
++        if (sa.getPayCosts() != null && sa.getPayCosts().hasSpecificCostType(forge.game.cost.CostDiscard.class)) {
++            final int cardValue = !CardLists.filter(ai.getCardsIn(ZoneType.Hand), Card::isLand).isEmpty() ? 60 : 120;
++            return versionScore(ai, host, combat, t, p) - versionScore(ai, host, combat, p, t) > cardValue;
++        }
++        return true;
 +    }
 +
 +    // value of the host being a creature with this power/toughness in the current combat (higher = better for the AI)
@@ -63,7 +72,8 @@ index cc8e6881..e415381b 100644
 +        int score = 0;
 +        if (attacking && opp.isEmpty()) {
 +            final forge.game.GameEntity def = combat.getDefenderByAttacker(host);
-+            final boolean lethal = def instanceof Player && power >= ((Player) def).getLife();
++            final boolean lethal = (def instanceof Player && power >= ((Player) def).getLife())
++                    || (def instanceof Card && power >= ((Card) def).getCounters(forge.game.card.CounterEnumType.LOYALTY));
 +            return lethal ? 10000 : power * 10; // unblocked: damage to the defender
 +        }
 +        // blocked attacker or blocker: damage assignment to the opposing creatures, cheapest kills first
@@ -87,7 +97,7 @@ index cc8e6881..e415381b 100644
      @Override
      protected boolean checkPhaseRestrictions(final Player ai, final SpellAbility sa, final PhaseHandler ph,
                                               final String logic) {
-@@ -79,8 +132,8 @@ public class PumpAi extends PumpAiBase {
+@@ -79,8 +142,8 @@ public class PumpAi extends PumpAiBase {
                  return false;
              }
          } else if (logic.equals("SwitchPT")) {

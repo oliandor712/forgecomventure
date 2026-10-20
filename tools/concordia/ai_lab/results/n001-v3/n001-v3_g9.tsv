@@ -1,0 +1,52 @@
+27	B's Cleanup step	TURN	Turn 27 (A)
+27	A's Untap step	PHASE	A's Untap step
+27	A's Upkeep step	PHASE	A's Upkeep step
+27	A's Draw step	PHASE	A's Draw step
+27	A's Main phase, precombat	PHASE	A's Main phase, precombat
+27	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+27	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+27	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+27	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+27	A's Combat Damage Step	PHASE	A's Combat Damage Step
+27	A's End of Combat Step	PHASE	A's End of Combat Step
+27	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+27	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+27	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+27	A's End step	PHASE	A's End step
+27	A's Cleanup step	PHASE	A's Cleanup step
+32	A's Cleanup step	TURN	Turn 32 (B)
+32	B's Untap step	PHASE	B's Untap step
+32	B's Upkeep step	PHASE	B's Upkeep step
+32	B's Draw step	PHASE	B's Draw step
+32	B's Main phase, precombat	PHASE	B's Main phase, precombat
+32	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+32	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+32	B's Declare Attackers Step	COMBAT	B assigned Signal Pest (79), Barkform Harvester (49), Spectrum Sentinel (47), Sai, Master Thopterist (81), Thopter Token (88), Thopter Token (91), Thopter Token (94), Thopter Token (98), Thopter Token (104), Thopter Token (107), Thopter Token (122), Thopter Token (125), Thopter Token (128), Hope of Ghirapur (50), Thopter Token (131), Thopter Token (134), Hedron Crawler (77) and Ornithopter of Paradise (80) to attack A.
+32	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+32	B's Declare Blockers Step	COMBAT*	A didn't block Signal Pest (79). A assigned Mistway Spy (1) to block Barkform Harvester (49). A assigned Silvergill Adept (26) to block Spectrum Sentinel (47). A assigned Drake Token (110), Karfell Harbinger (2) and Turtleshell Changeling (3) to block Sai, Master Thopterist (81). A didn't block Thopter Token (88). A didn't block Thopter Token (91). A didn't block Thopter Token (94). A didn't block Thopter Token (98). A didn't block Thopter Token (104). A didn't block Thopter Token (107). A didn't block Thopter Token (122). A didn't block Thopter Token (125). A didn't block Thopter Token (128). A didn't block Hope of Ghirapur (50). A didn't block Thopter Token (131). A didn't block Thopter Token (134). A assigned Tide Shaper (37) to block Hedron Crawler (77). A didn't block Ornithopter of Paradise (80).
+32	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+32	B's Combat Damage Step	PHASE	B's Combat Damage Step
+32	B's Combat Damage Step	DAMAGE	Barkform Harvester (49) deals 6 damage to Mistway Spy (1).
+32	B's Combat Damage Step	DAMAGE	Spectrum Sentinel (47) deals 2 damage to Silvergill Adept (26).
+32	B's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 2 damage to Drake Token (110).
+32	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 2 combat damage to A.
+32	B's Combat Damage Step	DAMAGE	Thopter Token (91) deals 2 combat damage to A.
+32	B's Combat Damage Step	DAMAGE	Thopter Token (94) deals 2 combat damage to A.
+32	B's Combat Damage Step	DAMAGE	Thopter Token (98) deals 2 combat damage to A.
+32	B's Combat Damage Step	DAMAGE	Thopter Token (104) deals 2 combat damage to A.
+32	B's Combat Damage Step	DAMAGE	Thopter Token (107) deals 2 combat damage to A.
+32	B's Combat Damage Step	DAMAGE	Thopter Token (122) deals 2 combat damage to A.
+32	B's Combat Damage Step	DAMAGE	Thopter Token (125) deals 2 combat damage to A.
+32	B's Combat Damage Step	DAMAGE	Thopter Token (128) deals 2 combat damage to A.
+32	B's Combat Damage Step	DAMAGE	Hope of Ghirapur (50) deals 2 combat damage to A.
+32	B's Combat Damage Step	DAMAGE	Thopter Token (131) deals 2 combat damage to A.
+32	B's Combat Damage Step	DAMAGE	Thopter Token (134) deals 2 combat damage to A.
+32	B's Combat Damage Step	DAMAGE	Hedron Crawler (77) deals 1 damage to Tide Shaper (37).
+32	B's Combat Damage Step	DAMAGE	Ornithopter of Paradise (80) deals 1 combat damage to A.
+32	B's Combat Damage Step	DAMAGE	Mistway Spy (1) deals 1 damage to Barkform Harvester (49).
+32	B's Combat Damage Step	DAMAGE	Silvergill Adept (26) deals 2 damage to Spectrum Sentinel (47).
+32	B's Combat Damage Step	DAMAGE	Drake Token (110) deals 2 damage to Sai, Master Thopterist (81).
+32	B's Combat Damage Step	DAMAGE	Karfell Harbinger (2) deals 1 damage to Sai, Master Thopterist (81).
+32	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (3) deals 1 damage to Sai, Master Thopterist (81).
+32	B's Combat Damage Step	DAMAGE	Tide Shaper (37) deals 2 damage to Hedron Crawler (77).
+32	B's Combat Damage Step	LIFE	Life: A 12 > -13
