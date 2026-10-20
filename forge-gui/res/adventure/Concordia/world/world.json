@@ -1,8 +1,8 @@
 {
-  "width": 160,
-  "height": 160,
-  "playerStartPosX": 0.5,
-  "playerStartPosY": 0.2625,
+  "width": 480,
+  "height": 460,
+  "playerStartPosX": 0.416667,
+  "playerStartPosY": 0.417391,
   "noiseZoomBiome": 30,
   "miniMapTileSize": 4,
   "tileSize": 16,
@@ -15,95 +15,124 @@
   "maxRoadDistance": 1,
   "biomesNames": [
     "world/biomes/base.json",
-    "world/biomes/concordia.json"
+    "world/biomes/concordia.json",
+    "world/biomes/concordia_champion.json"
   ],
   "placedEnemies": [
     {
       "enemy": "Duelist Sela",
-      "x": 86,
-      "y": 59,
+      "x": 206,
+      "y": 209,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town"
     },
     {
       "enemy": "Duelist Corvin",
-      "x": 98,
-      "y": 68,
+      "x": 218,
+      "y": 218,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town"
     },
     {
       "enemy": "Duelist Bram",
-      "x": 72,
-      "y": 72,
+      "x": 192,
+      "y": 222,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town"
     },
     {
       "enemy": "Duelist Fenn",
-      "x": 56,
-      "y": 86,
+      "x": 176,
+      "y": 236,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town"
     },
     {
       "enemy": "Duelist Mira",
-      "x": 80,
-      "y": 105,
+      "x": 200,
+      "y": 255,
       "threatRange": 5,
       "pursueRange": 9,
       "respawn": "town"
     },
     {
       "enemy": "Wild Hidden Bush",
-      "x": 52,
-      "y": 99,
+      "x": 199,
+      "y": 211,
       "threatRange": 5,
       "respawn": "town"
     },
     {
       "enemy": "Wild Mossfungus",
-      "x": 52,
-      "y": 80,
+      "x": 200,
+      "y": 262,
       "threatRange": 5,
       "respawn": "town"
     },
     {
       "enemy": "Wild Thicket Pixie",
-      "x": 101,
-      "y": 102,
+      "x": 179,
+      "y": 243,
       "threatRange": 5,
       "respawn": "town"
     },
     {
       "enemy": "Wild Briar Satyr",
-      "x": 103,
-      "y": 67,
+      "x": 214,
+      "y": 245,
       "threatRange": 5,
       "respawn": "town"
     },
     {
       "enemy": "Wild Hidden Bush",
-      "x": 56,
-      "y": 50,
+      "x": 214,
+      "y": 224,
       "threatRange": 5,
       "respawn": "town"
     },
     {
       "enemy": "Wild Thicket Pixie",
-      "x": 102,
-      "y": 78,
+      "x": 184,
+      "y": 224,
       "threatRange": 5,
       "respawn": "town"
     },
     {
       "enemy": "Wild Mossfungus",
-      "x": 53,
-      "y": 112,
+      "x": 196,
+      "y": 245,
+      "threatRange": 5,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Wild Briar Satyr",
+      "x": 186,
+      "y": 257,
+      "threatRange": 5,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Wild Hidden Bush",
+      "x": 195,
+      "y": 197,
+      "threatRange": 5,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Wild Mossfungus",
+      "x": 216,
+      "y": 211,
+      "threatRange": 5,
+      "respawn": "town"
+    },
+    {
+      "enemy": "Wild Thicket Pixie",
+      "x": 200,
+      "y": 224,
       "threatRange": 5,
       "respawn": "town"
     }

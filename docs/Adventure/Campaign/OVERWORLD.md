@@ -441,7 +441,12 @@ change can add an arrival offset per POI (§8).
 
 ## 7. Tooling
 
-`tools/concordia/maps/make_mossgate_maze.py` draws Route 1 from hand-placed corridor lines. The zones need a general
+`tools/concordia/maps/make_mossgate_maze.py` draws Route 1 from hand-placed corridor lines, and the champion area's
+placeholder. Its woods are layered by distance from the path: bright green trees for the first 2-3 tiles, darker green
+for the next 2-3, then bare dead trees in the cores and along the zone's outer edge, with band edges wobbled by smooth
+noise. The green and dead layers are two PNGs, one structure each (`green_structures` and `black_structures` atlases),
+since a structure draws from a single atlas. It also picks the wild encounter spots on the path's centre line, away
+from the duelists and the cave and town entrances. Zones should use the same layering. The zones need a general
 version, `make_zone_maze.py`, that reads one hand-drawn PNG per zone (one pixel per tile) with marker colors and
 writes out everything the zone needs:
 
@@ -479,8 +484,11 @@ Fragments** (quest items, one per Paragon, named "Summit Key Fragment (White-Blu
    Emberbrook worked both ways in game (since removed).
 2. **The Gate Temple** in Mossgate. **Done**: the building, the interior and six gates, each sealed by its
    `zoneOpen`/`summitOpen` flag. Guards and gate targets come with steps 4 and 5.
-3. **World resize and the central area.** About 480×460 tiles, the starter zone and Mossgate in the centre, the
-   champion area walled off next to it. Retest the starter flow end to end.
+3. **World resize and the central area.** **Done**: the world is 480×460 tiles. The starter zone (biome
+   `concordia_hub`, 60×90) is centred on tile 200,230 and the champion area (biome `concordia_champion`, 60×60,
+   walled in by dead trees, empty for now) on 280,230, with 20 tiles of ocean between them. POI offsets are relative
+   to their biome, so they didn't change; the duelists in `world.json` moved by +120,+150 tiles. The starter flow
+   still needs a retest in game.
 4. **Flags.** `zoneTier.<C>` and `zoneOpen.<C>` from the color choice; `seals` on Warden defeats.
 5. **The Green zone as the template** (§4.3): gate pass, gate town with all services and its Waystone stop, the
    route A maze, inner pass 1, the route B corridor with its clearings and four random dungeons, inner pass 2, the

@@ -1,0 +1,54 @@
+{
+  "startPointX": 0.583333,
+  "startPointY": 0.5,
+  "noiseWeight": 0.0,
+  "distWeight": 0.6,
+  "name": "concordia_champion",
+  "tilesetAtlas": "world/tilesets/terrain.atlas",
+  "tilesetName": "Colorless",
+  "terrain": [
+    {
+      "spriteName": "Colorless_1",
+      "max": 0.2,
+      "resolution": 5
+    },
+    {
+      "spriteName": "Colorless_2",
+      "min": 0.8,
+      "max": 1,
+      "resolution": 5
+    }
+  ],
+  "width": 0.125,
+  "height": 0.130435,
+  "color": "aeaeae",
+  "spriteNames": [
+    "Stone"
+  ],
+  "pointsOfInterest": [],
+  "structures": [
+    {
+      "fixed": true,
+      "x": 0.5,
+      "y": 0.5,
+      "width": 1.0,
+      "height": 1.0,
+      "N": 2,
+      "sourcePath": "world/structures/models/champion_area.png",
+      "maskPath": "world/structures/masks/fill.png",
+      "structureAtlasPath": "world/structures/black_structures.atlas",
+      "mappingInfo": [
+        {
+          "name": "dead_tree2",
+          "color": "604020",
+          "collision": true
+        },
+        {
+          "name": "dead_tree3",
+          "color": "806040",
+          "collision": true
+        }
+      ]
+    }
+  ]
+}

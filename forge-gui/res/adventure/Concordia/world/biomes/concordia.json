@@ -1,5 +1,5 @@
 {
-  "startPointX": 0.5,
+  "startPointX": 0.416667,
   "startPointY": 0.5,
   "noiseWeight": 0.0,
   "distWeight": 0.6,
@@ -19,8 +19,8 @@
       "resolution": 5
     }
   ],
-  "width": 0.375,
-  "height": 0.5625,
+  "width": 0.125,
+  "height": 0.195652,
   "color": "aeaeae",
   "spriteNames": [
     "Stone"
@@ -50,23 +50,31 @@
           "collision": true
         },
         {
-          "name": "tree3",
-          "color": "00c000",
-          "collision": true
-        },
-        {
           "name": "tree5",
           "color": "006000",
           "collision": true
-        },
+        }
+      ]
+    },
+    {
+      "fixed": true,
+      "x": 0.5,
+      "y": 0.5,
+      "width": 1.0,
+      "height": 1.0,
+      "N": 2,
+      "sourcePath": "world/structures/models/mossgate_maze_dead.png",
+      "maskPath": "world/structures/masks/fill.png",
+      "structureAtlasPath": "world/structures/black_structures.atlas",
+      "mappingInfo": [
         {
-          "name": "rock",
-          "color": "808080",
+          "name": "dead_tree2",
+          "color": "604020",
           "collision": true
         },
         {
-          "name": "bush",
-          "color": "ff8080",
+          "name": "dead_tree3",
+          "color": "806040",
           "collision": true
         }
       ]
