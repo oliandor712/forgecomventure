@@ -14,6 +14,16 @@ Tools live in `tools/concordia/maps/`. Design background: `docs/Adventure/Campai
 | `check_doors.py [maps...]` | Every door's target, return trip and arrival spot (collision, map edge, other doors). Exit 1 on a problem |
 | `test_assets.py list / deploy <kit> / purge` | Temporary test POIs and maps (names start with `Test`, maps in `maps/map/test/`) |
 
+## Building a whole color zone
+
+`python3 tools/concordia/maps/build_color_zone.py <color>` builds a color zone from its entry in `ZONES` (Green is the
+worked example): tiered enemies (`enemies.json`), color shops (`shops.json`), its towns, passes, Warden's hall and
+random dungeons (`maps/map/<color>/`), its three world sections (`zones/<color>_a|b|c.json` through the suite), its
+Waystone stop and its temple gate (`zone_flags.py`). For a new color: add its `ZONES` entry (sprites, wild species,
+basic land, specialties), copy the three Green section specs with new positions and door names, add it to
+`zone_flags.READY`/`PORTAL_GATE_ENTRY`, run it, then `check_doors.py` and a world generation. Sections must be
+separate biomes with ocean between them so only the passes join them; keep `poiPaths` false in the config.
+
 ## Workflow for a zone
 
 1. **Write the spec** in `tools/concordia/maps/zones/<zone>.json`. Copy `route1.json` (a route) or `champion.json` (an

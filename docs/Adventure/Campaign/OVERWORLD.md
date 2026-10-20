@@ -513,9 +513,27 @@ Fragments** (quest items, one per Paragon, named "Summit Key Fragment (White-Blu
    opens the allies, the third Seal opens the enemies). A gate's portal turns on only once its zone exists (`READY`),
    so an open gate to an unbuilt zone stays sealed with a "still waking" line instead of dropping the player on the
    world map. Paragon gating (five Seals) comes with the border towns.
-5. **The Green zone as the template** (§4.3): gate pass, gate town with all services and its Waystone stop, the
-   route A maze, inner pass 1, the route B corridor with its clearings and four random dungeons, inner pass 2, the
-   route C field with random spawns, the zone town, a Warden's dungeon placeholder.
+5. **The Green zone as the template** (§4.3). **Built** with `tools/concordia/maps/build_color_zone.py green`
+   (safe to re-run; the other zones get their own entry in its `ZONES`). Not yet playtested:
+   - Three world sections, each its own biome closed off by Green woods and ocean, so the passes are the only way
+     on: A (`zones/green_a.json`, 120×60) the gate town Rootgate's pocket and the route A maze; B (170×40) the route B
+     corridor with five clearings, four with random dungeons and one with a duelist; C (116×56) the open field and
+     the zone town Elderbloom. Placed top-left of the world, clear of the central area.
+   - Rootgate has all of Mossgate's services with Green stock (artifacts, lands and colorless stay general) and is a
+     Waystone stop. Elderbloom has the inn, shard trader, Green boosters, creatures and enchantments, and the Warden's
+     hall behind its top house.
+   - The gate pass (Briar Pass) runs from the temple's Green gate to Rootgate's pocket; inner passes Rootway and
+     Thornway are one dungeon with two doors each. Each pass is a hall with its keeper behind a row of blockers
+     (touching one starts the duel; beating the keeper clears them both ways).
+   - Encounters follow `zoneTier.G`: trainers T2 / T3-4 / T5, wild creatures T1 / T2 / T4, keepers, dungeon enemies
+     and the Warden, all with random decks from their tier's pool. The Warden's defeat dialog gives the Seal and
+     opens zones (step 4).
+   - Differences from the plan: route C's encounters are roaming placed enemies (random spot in a region, random
+     type) rather than biome spawns, so they follow the zone's tier; the passes and the Warden's hall reuse the Gate
+     Temple's room and the random dungeons reuse the Concordia caves, until they get their own maps; landmarks are
+     tree clumps in the field; the last Wardens need tier 6 decks (they use tier 5 with more life for now).
+   - World generation no longer cuts straight paths from POIs to towns (`poiPaths: false`): they crossed the ocean
+     between sections and the hub maze's walls.
 6. **The map creator suite** (`mapsuite.py`). **Started**: layered woods in each color's own tilesets, two-color
    border zones, pathing, duelists and wild encounters work, and Route 1 is rebuilt with it unchanged. Left: PNG
    layouts with markers and the checks in §7.
