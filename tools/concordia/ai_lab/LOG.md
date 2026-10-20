@@ -27,7 +27,7 @@ STANDING INSTRUCTION (user, 2026-10-20): each hourly wake is time-boxed to about
 2026-10-20T18:40Z patch 005 (SwitchPT two-versions, user's idea) built+tested in scratch worktree: 92 -> 8 activations, all declare blockers; results in ai_lab/results/n001-{guard,twoversions}; sent to main
 2026-10-20T17:20Z pre-approval for scratch tests read (CONTEXT rules 7-8); wrote patch 006 (Fog counts Effect fogs), untested; next: build+test 006, then 004/007 + per-activation logging
 2026-10-20T17:50Z patch 005 v3 (shouldPumpCard + cost) built/tested: 2 activations/10 games; v2 backed up in tools/concordia/backups/2026-10-20_005-v2-patch; next: switch-heavy deck + extra log columns, then 006/004/007 tests
-2026-10-20T17:30Z STANDING: agent-coordinator (session_017PAirUr1ZnmejFCor3yYPi) keeps me on schedule 12AM-8AM Eastern; it may send 'hold' (skip that run) and 'resume'; obey and log each (CONTEXT rule 9). Daytime: only the main session pauses me.
+2026-10-20T17:30Z STANDING: agent-coordinator (session_017PAirUr1ZnmejFCor3yYPi) keeps me on schedule 12AM-8AM Eastern; it may send 'hold' (skip that run) and 'resume'; obey and log each (CONTEXT rule 9). Daytime: only the main session pauses me. [SUPERSEDED 2026-10-20 23:05Z: coordinator removed by the user; only the main session pauses or resumes me, day or night]
 2026-10-20T18:05Z test set s005/s006 (code A/B): 005 v3 68 -> 14 activations, all declare blockers; 006 no measurable difference; run_code_ab.sh added; sent to main
 2026-10-20T18:35Z patch 008 (gang-block count in shouldPumpCard) written+built+10-game test: 3 activations, inconclusive; AiLabSim logs now include zone changes; per-main review (4) mana/hand-size columns still to do
 2026-10-20T19:10Z regression sim for 008/scratch build (2 pairings x 10 games x 2 arms): pump casts per draw 0.73->0.80 and 0.60->0.67, no red flag; note: I used pkill -f run_code_ab.sh once and killed my own shell (no harm); use pid kills only
@@ -37,3 +37,4 @@ STANDING INSTRUCTION (user, 2026-10-20): each hourly wake is time-boxed to about
 2026-10-20T20:17Z RESUME from main session (pause ended early); next wake 21:06Z; next step: per-event shadow/useful logging for switch+pump, then hand-built gang-block case for 008
 2026-10-20T20:50Z 008: code reading done (co-blocker damage enters via combat.getBlockers in attackerWouldBeDestroyed, ComputerUtilCombat:696-714; window narrow); hand-built case still to build
 2026-10-20T22:12Z added AI_TAGS_REFERENCE section 5 (Fog/SwitchPT/shouldPumpCard behaviour from sims); REPORTED (4h report due)
+2026-10-20T23:06Z coordinator removed (main session); only main session pauses/resumes me
