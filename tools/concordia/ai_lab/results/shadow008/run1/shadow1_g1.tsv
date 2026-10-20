@@ -1,0 +1,96 @@
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Aquastrand Spider (6) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B didn't block Aquastrand Spider (6).
+10	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Aquastrand Spider (6)]
+10	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Aquastrand Spider (6) gets +4/+4  until end of turn.
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Aquastrand Spider (6) deals 6 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 18 > 12
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A cast Aftermath Analyst
+10	A's Main phase, postcombat	STACK_ADD	A triggered Aquastrand Spider
+10	A's Main phase, postcombat	STACK_ADD	A triggered Aftermath Analyst
+10	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+10	A's Main phase, postcombat	ZONE_CHANGE*	A milled Blossoming Defense (9), Arbor Elf (1) and Forest (31).
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Upkeep step	STACK_ADD	B triggered Duskwatch Recruiter
+15	B's Draw step	PHASE	B's Draw step
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's End of Combat Step	PHASE	B's End of Combat Step
+15	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+15	B's Main phase, postcombat	STACK_ADD	B cast Leaf Gilder
+15	B's Main phase, postcombat	STACK_ADD	B triggered Leaf-Crowned Visionary
+15	B's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+15	B's Main phase, postcombat	STACK_ADD	A triggered Aquastrand Spider
+15	B's Main phase, postcombat	STACK_ADD	B cast Ram Through targeting [Selvala, Heart of the Wilds (81)] [Aquastrand Spider (6)]
+15	B's Main phase, postcombat	STACK_ADD	A triggered Arasta of the Endless Web
+15	B's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+15	B's Main phase, postcombat	STACK_ADD	A triggered Aquastrand Spider
+15	B's Main phase, postcombat	STACK_ADD*	A cast Giant Growth targeting [Aquastrand Spider (6)]
+15	B's Main phase, postcombat	STACK_RESOLVE*	Giant Growth (16) - Aquastrand Spider (6) gets +3/+3  until end of turn.
+15	B's Main phase, postcombat	DAMAGE	Selvala, Heart of the Wilds (81) deals 3 damage to Aquastrand Spider (6).
+15	B's End step	PHASE	B's End step
+15	B's Cleanup step	PHASE	B's Cleanup step
+23	A's Cleanup step	TURN	Turn 23 (B)
+23	B's Untap step	PHASE	B's Untap step
+23	B's Upkeep step	PHASE	B's Upkeep step
+23	B's Upkeep step	STACK_ADD	B activated Bloodline Shaman
+23	B's Draw step	PHASE	B's Draw step
+23	B's Main phase, precombat	PHASE	B's Main phase, precombat
+23	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+23	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+23	B's Declare Attackers Step	COMBAT	B assigned Krallenhorde Howler (50), Selvala, Heart of the Wilds (81), Leaf Gilder (74) and Elvish Skysweeper (51) to attack A.
+23	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+23	B's Declare Blockers Step	COMBAT	A assigned Aftermath Analyst (7) to block Krallenhorde Howler (50). A didn't block Selvala, Heart of the Wilds (81). A didn't block Leaf Gilder (74). A didn't block Elvish Skysweeper (51).
+23	B's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Aftermath Analyst (7)]
+23	B's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (8) - Aftermath Analyst (7) gets +2/+2 and gains hexproof until end of turn.
+23	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+23	B's Combat Damage Step	PHASE	B's Combat Damage Step
+23	B's Combat Damage Step	DAMAGE	Krallenhorde Howler (50) deals 3 damage to Aftermath Analyst (7).
+23	B's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 combat damage to A.
+23	B's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 2 combat damage to A.
+23	B's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 1 combat damage to A.
+23	B's Combat Damage Step	DAMAGE	Aftermath Analyst (7) deals 4 damage to Krallenhorde Howler (50).
+23	B's Combat Damage Step	LIFE	Life: A 9 > 4
+23	B's Combat Damage Step	ZONE_CHANGE	Krallenhorde Howler (50) was put into Graveyard from Battlefield.
+23	B's End of Combat Step	PHASE	B's End of Combat Step
+23	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+23	B's End step	PHASE	B's End step
+23	B's Cleanup step	PHASE	B's Cleanup step
+27	A's Cleanup step	TURN	Turn 27 (B)
+27	B's Untap step	PHASE	B's Untap step
+27	B's Upkeep step	PHASE	B's Upkeep step
+27	B's Draw step	PHASE	B's Draw step
+27	B's Main phase, precombat	PHASE	B's Main phase, precombat
+27	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+27	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+27	B's Declare Attackers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81), Bloodline Shaman (45) and Elvish Skysweeper (51) to attack A.
+27	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+27	B's Declare Blockers Step	COMBAT	A assigned Aftermath Analyst (7) to block Selvala, Heart of the Wilds (81). A didn't block Bloodline Shaman (45). A didn't block Elvish Skysweeper (51).
+27	B's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Aftermath Analyst (7)]
+27	B's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (17) - Aftermath Analyst (7) gets +3/+3  until end of turn.
+27	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+27	B's Combat Damage Step	PHASE	B's Combat Damage Step
+27	B's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Aftermath Analyst (7).
+27	B's Combat Damage Step	DAMAGE	Bloodline Shaman (45) deals 1 combat damage to A.
+27	B's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 1 combat damage to A.
+27	B's Combat Damage Step	DAMAGE	Aftermath Analyst (7) deals 5 damage to Selvala, Heart of the Wilds (81).
+27	B's Combat Damage Step	LIFE	Life: A 1 > -1

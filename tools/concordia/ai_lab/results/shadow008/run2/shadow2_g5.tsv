@@ -1,0 +1,115 @@
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	COMBAT	A assigned Arbor Elf (1) to attack B.
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Arbor Elf (1).
+6	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Arbor Elf (1)]
+6	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (10) - Arbor Elf (1) gets +4/+4  until end of turn.
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's Combat Damage Step	DAMAGE	Arbor Elf (1) deals 6 damage to Selvala, Heart of the Wilds (81).
+6	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Arbor Elf (1).
+6	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Upkeep step	STACK_ADD	B cast Ram Through targeting [Collector Ouphe (48)] [Arbor Elf (1)]
+9	B's Upkeep step	STACK_ADD*	A cast Blossoming Defense targeting [Arbor Elf (1)]
+9	B's Upkeep step	STACK_RESOLVE*	Blossoming Defense (9) - Arbor Elf (1) gets +2/+2 and gains hexproof until end of turn.
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Beginning of Combat Step	STACK_ADD	B triggered H.E.R.B.I.E., Lovable Robot
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Attackers Step	COMBAT	B assigned H.E.R.B.I.E., Lovable Robot (80) to attack A.
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's Declare Blockers Step	COMBAT	A didn't block H.E.R.B.I.E., Lovable Robot (80).
+9	B's Declare Blockers Step	STACK_ADD	A activated Arbor Elf targeting [Forest (28)]
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's Combat Damage Step	DAMAGE	H.E.R.B.I.E., Lovable Robot (80) deals 1 combat damage to A.
+9	B's Combat Damage Step	LIFE	Life: A 16 > 15
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Arbor Elf (1) and Destiny Spinner (5) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B assigned Collector Ouphe (48) to block Arbor Elf (1). B didn't block Destiny Spinner (5).
+12	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Arbor Elf (1)]
+12	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (8) - Arbor Elf (1) gets +2/+2 and gains hexproof until end of turn.
+12	A's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Arbor Elf (1) deals 4 damage to Collector Ouphe (48).
+12	A's Combat Damage Step	DAMAGE	Destiny Spinner (5) deals 2 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Arbor Elf (1).
+12	A's Combat Damage Step	LIFE	Life: B 17 > 15
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+18	B's Cleanup step	TURN	Turn 18 (A)
+18	A's Untap step	PHASE	A's Untap step
+18	A's Upkeep step	PHASE	A's Upkeep step
+18	A's Draw step	PHASE	A's Draw step
+18	A's Main phase, precombat	PHASE	A's Main phase, precombat
+18	A's Main phase, precombat	STACK_ADD	A cast Brotherhood Regalia
+18	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+18	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+18	A's Declare Attackers Step	COMBAT	A assigned Arbor Elf (1) and Arasta of the Endless Web (40) to attack B.
+18	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+18	A's Declare Blockers Step	COMBAT	B assigned Collector Ouphe (48) to block Arbor Elf (1). B assigned Elvish Skysweeper (51) to block Arasta of the Endless Web (40).
+18	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Arbor Elf (1)]
+18	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (16) - Arbor Elf (1) gets +3/+3  until end of turn.
+18	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+18	A's Combat Damage Step	PHASE	A's Combat Damage Step
+18	A's Combat Damage Step	DAMAGE	Arbor Elf (1) deals 5 damage to Collector Ouphe (48).
+18	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 damage to Elvish Skysweeper (51).
+18	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Arbor Elf (1).
+18	A's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 1 damage to Arasta of the Endless Web (40).
+18	A's Combat Damage Step	ZONE_CHANGE	Collector Ouphe (48) was put into Graveyard from Battlefield.
+18	A's Combat Damage Step	ZONE_CHANGE	Elvish Skysweeper (51) was put into Graveyard from Battlefield.
+18	A's End of Combat Step	PHASE	A's End of Combat Step
+18	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+18	A's Main phase, postcombat	STACK_ADD	A activated Brotherhood Regalia targeting [Arasta of the Endless Web (40)]
+18	A's End step	PHASE	A's End step
+18	A's Cleanup step	PHASE	A's Cleanup step
+20	B's Cleanup step	TURN	Turn 20 (A)
+20	A's Untap step	PHASE	A's Untap step
+20	A's Upkeep step	PHASE	A's Upkeep step
+20	A's Draw step	PHASE	A's Draw step
+20	A's Main phase, precombat	PHASE	A's Main phase, precombat
+20	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+20	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+20	A's Declare Attackers Step	COMBAT	A assigned Arbor Elf (1) to attack B.
+20	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+20	A's Declare Blockers Step	COMBAT	B assigned Leaf Gilder (74) to block Arbor Elf (1).
+20	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Arbor Elf (1)]
+20	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (17) - Arbor Elf (1) gets +3/+3  until end of turn.
+20	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+20	A's Combat Damage Step	PHASE	A's Combat Damage Step
+20	A's Combat Damage Step	DAMAGE	Arbor Elf (1) deals 5 damage to Leaf Gilder (74).
+20	A's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 2 damage to Arbor Elf (1).
+20	A's Combat Damage Step	ZONE_CHANGE	Leaf Gilder (74) was put into Graveyard from Battlefield.
+20	A's End of Combat Step	PHASE	A's End of Combat Step
+20	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+20	A's Main phase, postcombat	STACK_ADD	A cast Deadly Recluse
+20	A's End step	PHASE	A's End step
+20	A's Cleanup step	PHASE	A's Cleanup step

@@ -1,0 +1,63 @@
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (14), Sylvan Ranger (22) and Spider Token (85) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Mirkwood Spider (14). B didn't block Sylvan Ranger (22). B didn't block Spider Token (85).
+9	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Sylvan Ranger (22)]
+9	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Sylvan Ranger (22) gets +4/+4  until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Mirkwood Spider (14) deals 1 combat damage to B.
+9	A's Combat Damage Step	DAMAGE	Sylvan Ranger (22) deals 5 combat damage to B.
+9	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 1 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 15 > 8
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Aquastrand Spider
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+13	B's Cleanup step	TURN	Turn 13 (A)
+13	A's Untap step	PHASE	A's Untap step
+13	A's Upkeep step	PHASE	A's Upkeep step
+13	A's Draw step	PHASE	A's Draw step
+13	A's Main phase, precombat	PHASE	A's Main phase, precombat
+13	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+13	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+13	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+13	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+13	A's Combat Damage Step	PHASE	A's Combat Damage Step
+13	A's End of Combat Step	PHASE	A's End of Combat Step
+13	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+13	A's End step	PHASE	A's End step
+13	A's End step	STACK_ADD	B activated Agatha's Soul Cauldron targeting [Arasta of the Endless Web (40)]
+13	A's End step	STACK_ADD	B triggered Agatha's Soul Cauldron targeting [Selvala, Heart of the Wilds (81)]
+13	A's End step	STACK_ADD	B cast Return to Nature
+13	A's End step	STACK_RESOLVE*	Return to Nature (78) -  Exile target card fom a graveyard. (Targeting: Titanic Growth (11))
+13	A's Cleanup step	PHASE	A's Cleanup step
+26	A's Cleanup step	TURN	Turn 26 (B)
+26	B's Untap step	PHASE	B's Untap step
+26	B's Upkeep step	PHASE	B's Upkeep step
+26	B's Draw step	PHASE	B's Draw step
+26	B's Main phase, precombat	PHASE	B's Main phase, precombat
+26	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+26	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+26	B's Declare Attackers Step	COMBAT	B assigned Phyrexian Dreadnought (42) to attack A.
+26	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+26	B's Declare Blockers Step	COMBAT	A assigned Spider Token (85), Mirkwood Spider (14) and Aquastrand Spider (6) to block Phyrexian Dreadnought (42).
+26	B's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Mirkwood Spider (14)]
+26	B's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Mirkwood Spider (14) gets +2/+2 and gains hexproof until end of turn.
+26	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+26	B's Combat Damage Step	PHASE	B's Combat Damage Step
+26	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 7 combat damage to A.
+26	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 2 damage to Spider Token (85).
+26	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 1 damage to Aquastrand Spider (6).
+26	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 4 damage to Mirkwood Spider (14).
+26	B's Combat Damage Step	DAMAGE	Spider Token (85) deals 1 damage to Phyrexian Dreadnought (42).
+26	B's Combat Damage Step	DAMAGE	Mirkwood Spider (14) deals 4 damage (Deathtouch) to Phyrexian Dreadnought (42).
+26	B's Combat Damage Step	DAMAGE	Aquastrand Spider (6) deals 1 damage to Phyrexian Dreadnought (42).
+26	B's Combat Damage Step	LIFE	Life: A 6 > -1

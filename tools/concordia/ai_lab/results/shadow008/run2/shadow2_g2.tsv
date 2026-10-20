@@ -1,0 +1,49 @@
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Arbor Elf (1), Ruins Recluse (12) and Deadly Recluse (13) to attack B.
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Arbor Elf (1). B didn't block Ruins Recluse (12). B didn't block Deadly Recluse (13).
+7	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Deadly Recluse (13)]
+7	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (8) - Deadly Recluse (13) gets +2/+2 and gains hexproof until end of turn.
+7	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Ruins Recluse (12)]
+7	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (17) - Ruins Recluse (12) gets +3/+3  until end of turn.
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Arbor Elf (1) deals 1 damage to Selvala, Heart of the Wilds (81).
+7	A's Combat Damage Step	DAMAGE	Ruins Recluse (12) deals 4 combat damage to B.
+7	A's Combat Damage Step	DAMAGE	Deadly Recluse (13) deals 3 combat damage to B.
+7	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Arbor Elf (1).
+7	A's Combat Damage Step	LIFE	Life: B 17 > 10
+7	A's Combat Damage Step	ZONE_CHANGE	Arbor Elf (1) was put into Graveyard from Battlefield.
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Draw step	PHASE	A's Draw step
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Attackers Step	COMBAT	A assigned Aquastrand Spider (6), Arasta of the Endless Web (40), Deadly Recluse (13) and Copper Longlegs (2) to attack B.
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's Declare Blockers Step	COMBAT	B didn't block Aquastrand Spider (6). B assigned H.E.R.B.I.E., Lovable Robot (80) to block Arasta of the Endless Web (40). B didn't block Deadly Recluse (13). B didn't block Copper Longlegs (2).
+15	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Deadly Recluse (13)]
+15	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (16) - Deadly Recluse (13) gets +3/+3  until end of turn.
+15	A's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+15	A's Declare Blockers Step	STACK_ADD	A triggered Arasta of the Endless Web
+15	A's Declare Blockers Step	STACK_ADD	A triggered Aquastrand Spider
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's Combat Damage Step	DAMAGE	Aquastrand Spider (6) deals 1 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 damage to H.E.R.B.I.E., Lovable Robot (80).
+15	A's Combat Damage Step	DAMAGE	Deadly Recluse (13) deals 4 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 1 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	H.E.R.B.I.E., Lovable Robot (80) deals 3 damage to Arasta of the Endless Web (40).
+15	A's Combat Damage Step	LIFE	Life: B 5 > -1

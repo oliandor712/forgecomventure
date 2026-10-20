@@ -1,0 +1,71 @@
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Beginning of Combat Step	STACK_ADD	A cast Tamiyo's Safekeeping targeting [Grappler Spider (15)]
+5	A's Beginning of Combat Step	LIFE	Life: A 20 > 22
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Attackers Step	COMBAT	A assigned Grappler Spider (15) to attack B.
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's Declare Blockers Step	COMBAT	B didn't block Grappler Spider (15).
+5	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Grappler Spider (15)]
+5	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (10) - Grappler Spider (15) gets +4/+4  until end of turn.
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's Combat Damage Step	DAMAGE	Grappler Spider (15) deals 6 combat damage to B.
+5	A's Combat Damage Step	LIFE	Life: B 20 > 14
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Beginning of Combat Step	STACK_ADD*	A cast Giant Growth targeting [Grappler Spider (15)]
+17	A's Beginning of Combat Step	STACK_RESOLVE*	Giant Growth (17) - Grappler Spider (15) gets +3/+3  until end of turn.
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Attackers Step	COMBAT	A assigned Copper Longlegs (2) and Grappler Spider (15) to attack B.
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's Declare Blockers Step	COMBAT	B assigned Viridian Zealot (73) to block Copper Longlegs (2). B assigned Leaf-Crowned Visionary (52) to block Grappler Spider (15).
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 1 damage to Viridian Zealot (73).
+17	A's Combat Damage Step	DAMAGE	Grappler Spider (15) deals 5 damage to Leaf-Crowned Visionary (52).
+17	A's Combat Damage Step	DAMAGE	Viridian Zealot (73) deals 3 damage to Copper Longlegs (2).
+17	A's Combat Damage Step	DAMAGE	Leaf-Crowned Visionary (52) deals 1 damage to Grappler Spider (15).
+17	A's Combat Damage Step	ZONE_CHANGE	Copper Longlegs (2) was put into Graveyard from Battlefield.
+17	A's Combat Damage Step	ZONE_CHANGE	Leaf-Crowned Visionary (52) was put into Graveyard from Battlefield.
+17	A's Combat Damage Step	ZONE_CHANGE	Viridian Zealot (73) was put into Graveyard from Battlefield.
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's Main phase, postcombat	STACK_ADD	A cast Aftermath Analyst
+17	A's Main phase, postcombat	STACK_ADD	A triggered Aftermath Analyst
+17	A's Main phase, postcombat	ZONE_CHANGE	A milled Destiny Spinner (5), Canopy Spider (19) and Forest (33).
+17	A's End step	PHASE	A's End step
+17	A's Cleanup step	PHASE	A's Cleanup step
+23	B's Cleanup step	TURN	Turn 23 (A)
+23	A's Untap step	PHASE	A's Untap step
+23	A's Upkeep step	PHASE	A's Upkeep step
+23	A's Draw step	PHASE	A's Draw step
+23	A's Main phase, precombat	PHASE	A's Main phase, precombat
+23	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+23	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Aftermath Analyst (7)]
+23	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (8) - Aftermath Analyst (7) gets +2/+2 and gains hexproof until end of turn.
+23	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+23	A's Declare Attackers Step	COMBAT	A assigned Aftermath Analyst (7) to attack B.
+23	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+23	A's Declare Blockers Step	COMBAT	B assigned Elvish Skysweeper (51) to block Aftermath Analyst (7).
+23	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+23	A's Combat Damage Step	PHASE	A's Combat Damage Step
+23	A's Combat Damage Step	DAMAGE	Aftermath Analyst (7) deals 3 damage to Elvish Skysweeper (51).
+23	A's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 1 damage to Aftermath Analyst (7).
+23	A's Combat Damage Step	ZONE_CHANGE	Elvish Skysweeper (51) was put into Graveyard from Battlefield.
+23	A's End of Combat Step	PHASE	A's End of Combat Step
+23	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+23	A's End step	PHASE	A's End step
+23	A's Cleanup step	PHASE	A's Cleanup step
