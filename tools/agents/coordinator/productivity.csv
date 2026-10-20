@@ -12,3 +12,5 @@ utc,agent,scheduled_runs_24h,completed_runs_24h,last_result_utc,status,note
 2026-10-20T21:56Z,forge-ai-lab,0,0,2026-10-20T20:42Z,on_schedule,"day: observe only; cron 6 */2 fires at even UTC hours so next wake is 22:06Z (its LOG says 21:06Z next wake, but 21:06 was not scheduled; no miss); idle since 20:42; LOG last line 20:50Z"
 2026-10-20T21:56Z,deck-balance-lab,1,1,2026-10-20T21:20Z,on_schedule,"day: observe only; 21:10 batch 7.4 min; records.csv 158 rows; next batch 22:10Z"
 2026-10-20T22:20Z,deck-balance-lab,1,1,2026-10-20T22:20Z,on_schedule,"22:10 batch: 28 games, 8 min (box 10), equal life; 186 rows"
+2026-10-20T22:56Z,forge-ai-lab,1,1,2026-10-20T22:12Z,on_schedule,"day: observe only; 22:06 wake done (LOG 22:12Z: AI_TAGS_REFERENCE section 5 added, REPORTED); activity ended 22:08; no turn over 2x box; session cost $9.7"
+2026-10-20T22:56Z,deck-balance-lab,1,1,2026-10-20T22:20Z,on_schedule,"day: observe only; 22:10 batch 8 min; records.csv 186 rows; next batch 23:10Z"
