@@ -505,13 +505,14 @@ Fragments** (quest items, one per Paragon, named "Summit Key Fragment (White-Blu
    `concordia_hub`, 60×90) is centred on tile 200,230 and the champion area (biome `concordia_champion`, 60×60,
    walled in by dead trees, empty for now) on 280,230, with 20 tiles of ocean between them. POI offsets are relative
    to their biome, so they didn't change; the duelists in `world.json` moved by +120,+150 tiles. The starter flow
-   still needs a retest in game.
+   was retested in game after the resize.
 4. **Flags.** `zoneTier.<C>` and `zoneOpen.<C>` from the color choice; `seals` on Warden defeats.
 5. **The Green zone as the template** (§4.3): gate pass, gate town with all services and its Waystone stop, the
    route A maze, inner pass 1, the route B corridor with its clearings and four random dungeons, inner pass 2, the
    route C field with random spawns, the zone town, a Warden's dungeon placeholder.
-6. **The map creator suite** (`mapsuite.py`). **Started**: layered woods, pathing, duelists and wild encounters work
-   and Route 1 is rebuilt with it unchanged. Left: PNG layouts with markers and the checks in §7.
+6. **The map creator suite** (`mapsuite.py`). **Started**: layered woods in each color's own tilesets, two-color
+   border zones, pathing, duelists and wild encounters work, and Route 1 is rebuilt with it unchanged. Left: PNG
+   layouts with markers and the checks in §7.
 7. **Waystone destination list** and **`enemyByTier`** (Java). **Done** (built ahead of schedule); the template
    zone is their first real use.
 8. **Tiered encounter decks.** **Mostly done**: tiers 1-5 have 20 decks each, balanced in tier (see the deck balance
