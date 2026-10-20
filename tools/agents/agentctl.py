@@ -7,6 +7,7 @@
     python3 tools/agents/agentctl.py update "text"               # add a dated line to CONTEXT.md "Recent updates"
     python3 tools/agents/agentctl.py message <agent|all>         # print the context-update message to send
     python3 tools/agents/agentctl.py sent <agent|all>            # record that the current context was sent
+    python3 tools/agents/agentctl.py ping <from> <to> <kind> "one line"   # print the coordinator ping to send
     python3 tools/agents/agentctl.py analysis <agent> "title" RESULT.md ["request text"]
                                                                  # file an analysis done at the agent's request in
                                                                  # tools/agents/analysis/<agent>.md and print the
@@ -175,6 +176,9 @@ def main(argv):
             if argv[1] == 'all':
                 print('===== %s (%s)' % (n, reg['agents'][n]['session']))
             message(reg, n)
+    elif cmd == 'ping':
+        import datetime as _d
+        print('PING %s %s -> %s: %s: %s' % (_d.datetime.now(_d.timezone.utc).strftime('%Y-%m-%dT%H:%MZ'), argv[1], argv[2], argv[3], ' '.join(argv[4:])))
     elif cmd == 'analysis':
         analysis(reg, names(reg, argv[1])[0], argv[2], argv[3], ' '.join(argv[4:]))
     elif cmd == 'sent':

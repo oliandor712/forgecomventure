@@ -124,12 +124,14 @@
   },
   "agent-coordinator": {
    "brief": ".claude/agents/agent-coordinator.md",
-   "session": "PENDING",
+   "session": "session_017PAirUr1ZnmejFCor3yYPi",
    "model": "sonnet, effort low",
    "folders": [
     "tools/agents/coordinator/"
    ],
-   "triggers": {},
+   "triggers": {
+    "trig_01BNH795z6X1TPBhQ1L41U99": "hourly check at :55 (night policy 00-08 ET; main session has priority)"
+   },
    "requests": [
     [
      "2026-10-20",

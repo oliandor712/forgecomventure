@@ -17,6 +17,13 @@ Everything the agents know comes from three files, and this skill keeps them tru
 messages. Sending uses the remote session tools: `send_message` to the agent's session, plus `create_trigger` /
 `update_trigger` / `list_triggers` for schedules, and `list_events` / `get_session` to see what an agent did.
 
+## Ping the coordinator on every agent interaction
+The user asked for this. Every time you send to or receive from a sub agent, also send the agent-coordinator
+(registry `agent-coordinator`) one line built with `agentctl.py ping <from> <to> <kind> "<line>"`. That covers
+messages, context updates, analyses, pauses and resumes. Use `send_message` with priority `later`. Batch the pings
+from one turn into one message. At night (12 AM-8 AM Eastern), the coordinator holds the sub agents while you're
+active and resumes them when you go idle. You have priority, so you don't need to pause them yourself at night.
+
 ## Whenever the user asks for something about an agent
 1. **Log it**: `agentctl.py request <agent|all|manager> "<the request, in the user's words, condensed>"`. Every later
    brief edit must still honor all of the agent's logged requests; re-read them before you change a brief.
