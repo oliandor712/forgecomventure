@@ -1,0 +1,4 @@
+  card=Aquamoeba games_seen=9 casts=9 activations=2
+  card=Turtleshell Changeling games_seen=6 casts=6 activations=0
+  card=Myr Quadropod games_seen=5 casts=5 activations=2
+RESULT	n001-guard	A=1	B=9	draw=0	avgTurns=21.4

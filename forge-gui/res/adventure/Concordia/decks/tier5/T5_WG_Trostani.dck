@@ -4,8 +4,8 @@ Description=Tier 5 (Bracket 5). white-green Trostani, Selesnya's Voice deck. Bui
 [Commander]
 1 Trostani, Selesnya's Voice|RTR
 [Main]
-9 Plains|FDN
-7 Forest|FDN
+8 Plains|FDN
+8 Forest|FDN
 1 Blossoming Sands|BLB
 1 Bountiful Promenade|CLB
 1 Brokers Hideout|SNC
@@ -41,7 +41,7 @@ Description=Tier 5 (Bracket 5). white-green Trostani, Selesnya's Voice deck. Bui
 1 Finale of Devastation|WAR
 1 Grand Crescendo|FRC
 1 Idol of Oblivion|M3C
-1 Knight of the White Orchid|ORI
+1 Key to the City|KLD
 1 Nature's Lore|5ED
 1 Parting Gust|BLB
 1 Prosperous Innkeeper|AFR
@@ -52,6 +52,7 @@ Description=Tier 5 (Bracket 5). white-green Trostani, Selesnya's Voice deck. Bui
 1 Voice of Resurgence|PLST
 1 Voice of the Blessed|VOW
 1 Ancient Cornucopia|BIG
+1 Archdruid's Charm|MKM
 1 Break Down|PIP
 1 Cultivate|TMC
 1 Dragon's Hoard|M19
@@ -61,17 +62,16 @@ Description=Tier 5 (Bracket 5). white-green Trostani, Selesnya's Voice deck. Bui
 1 Halo Fountain|SNC
 1 Knight of Autumn|GRN
 1 Loran of the Third Path|BRO
-1 Nissa, Voice of Zendikar|OGW
-1 Oblivion Ring|ALA
 1 Resplendent Angel|LCI
 1 Rootborn Defenses|RTR
-1 Six|MH3
+1 Staff of Compleation|ONE
 1 Yavimaya Dryad|TSP
 1 Aetherflux Reservoir|KLD
 1 Arasta of the Endless Web|THB
 1 Bramble Sovereign|CLB
 1 Congregate|CMA
 1 Excavation Technique|C21
+1 Force of Vigor|H1R
 1 Growing Ranks|PIO
 1 Healing Technique|C21
 1 Lathiel, the Bounteous Dawn|CMR
@@ -79,13 +79,13 @@ Description=Tier 5 (Bracket 5). white-green Trostani, Selesnya's Voice deck. Bui
 1 Alhammarret's Archive|ORI
 1 Angelic Chorus|10E
 1 Archangel of Thune|M14
+1 Blossoming Bogbeast|SOC
 1 Crested Sunmare|HOU
 1 Mirari's Wake|JUD
 1 Shamanic Revelation|FRF
-1 Throne of Eldraine|WOC
 1 Angel of Indemnity|SOC
-1 Austere Command|LRW
 1 Camaraderie|GRN
+1 Farewell|NEO
 1 Gruff Triplets|WOE
 1 Hour of Reckoning|RAV
-1 Ugin, the Spirit Dragon|M21
+1 Kozilek, Butcher of Truth|ROE

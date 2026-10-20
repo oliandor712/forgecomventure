@@ -67,6 +67,10 @@
     [
      "2026-10-20",
      "Quality of use at natural density (n001-n003)"
+    ],
+    [
+     "2026-10-20",
+     "Patch 005 two-version SwitchPT review"
     ]
    ]
   },
@@ -117,6 +121,21 @@
      "Seat edge, power vs wins, match length (74 games)"
     ]
    ]
+  },
+  "agent-coordinator": {
+   "brief": ".claude/agents/agent-coordinator.md",
+   "session": "PENDING",
+   "model": "sonnet, effort low",
+   "folders": [
+    "tools/agents/coordinator/"
+   ],
+   "triggers": {},
+   "requests": [
+    [
+     "2026-10-20",
+     "Only purpose: manage agent interactions and subagent productivity. Pinged on every interaction between the main session and the sub agents. Resolve conflicts by keeping sub-agent activity on schedule at night (12 AM-8 AM), unless the main agent is active; then the main agent takes priority."
+    ]
+   ]
   }
  },
  "manager": {
@@ -141,6 +160,10 @@
    [
     "2026-10-20",
     "Automatically approve test updates the agents could use (backups of old versions); generate and keep updated a bullet list of AI changes with checkboxes for final approval."
+   ],
+   [
+    "2026-10-20",
+    "Set up an agent-coordinator agent; ping it on every interaction with sub agents; night policy 12-8 AM with main-session priority."
    ]
   ]
  }

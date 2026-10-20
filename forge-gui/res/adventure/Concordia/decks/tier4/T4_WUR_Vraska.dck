@@ -4,8 +4,8 @@ Description=Tier 4 (Bracket 4). white-blue-red Vraska, Soul of Stone deck. Built
 [Commander]
 1 Vraska, Soul of Stone|FRA
 [Main]
-5 Plains|FDN
-9 Island|FDN
+4 Plains|FDN
+10 Island|FDN
 6 Mountain|FDN
 1 Adarkar Wastes|DMU
 1 Battlefield Forge|BRO
@@ -33,54 +33,54 @@ Description=Tier 4 (Bracket 4). white-blue-red Vraska, Soul of Stone deck. Built
 1 Abrade|LCI
 1 Arcane Signet|ELD
 1 Boros Charm|FDN
+1 Deranged Assistant|ISD
 1 Dovin's Veto|WAR
-1 Faerie Mastermind|MOM
 1 Fatehold Charm|FRA
 1 Gideon's Memorial|FRA
+1 Harmonic Prodigy|MH2
+1 Impact Tremors|FDN
 1 Kwain, Itinerant Meddler|CMR
 1 Negate|TMT
-1 Nin, the Pain Artist|C17
-1 Qarsi Deceiver|DTK
 1 Talisman of Conviction|CMM
 1 Talisman of Creativity|CMM
 1 Talisman of Progress|MRD
 1 The Emperor of Palamecia|FIN
 1 Triskaidekaphile|MID
 1 Academy Manufactor|MH2
-1 Arcane Artisan|BBD
 1 Flawless Maneuver|TLE
 1 Frantic Search|TLE
 1 Frostcliff Siege|TDM
-1 Gleeful Arsonist|DSC
+1 Guttersnipe|CMM
 1 Jeskai Ascendancy|KTK
 1 Master of Etherium|ALA
 1 Professional Face-Breaker|SNC
-1 Rasputin, the Oneiromancer|DMC
-1 Rielle, the Everwise|IKO
-1 Seasoned Cryomancer|FRA
 1 Sink into Stupor|MH3
 1 Sundering Eruption|MH3
+1 Tempest Angler|BLB
+1 Tersa Lightshatter|TDM
+1 Trinket Mage|5DN
+1 Trophy Mage|AER
 1 Veyran, Voice of Duality|SOC
 1 Warleader's Call|MKM
-1 Cynette, Jelly Drover|J25
+1 Glen Elendra Archmage|EVE
 1 High Fae Trickster|FDN
 1 Kykar, Wind's Fury|CMM
 1 Kykar, Zephyr Awakener|FDN
 1 Narset, Enlightened Exile|MAT
-1 Preston, the Vanisher|J22
 1 Storm-Kiln Artist|STX
 1 Talrand, Sky Summoner|M13
 1 The Theorist, Jace Beleren|FRA
+1 Urza, Lord High Artificer|CMM
 1 Whirlwind of Thought|IKO
 1 Witch Enchanter|MH3
-1 Aether Gale|CMM
 1 Alibou, Ancient Witness|EOC
-1 Archmage of Echoes|WOC
-1 Damning Verdict|FIC
+1 Azami, Lady of Scrolls|CHK
+1 Mercurial Chemister|RTR
 1 Pinnacle Monk|MH3
+1 Tezzeret the Seeker|ALA
 1 Thoughtcast|MRD
 1 Brudiclad, Telchor Engineer|BRC
-1 Craterclaw Colossus|FRA
+1 Niv-Mizzet, Parun|GRN
 1 Improvisation Capstone|SOS
 1 Thought Monitor|J25
 1 Voyage Home|DFT

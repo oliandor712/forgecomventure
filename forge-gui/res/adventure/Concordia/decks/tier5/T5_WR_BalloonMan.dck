@@ -4,8 +4,8 @@ Description=Tier 5 (Bracket 5). white-red The Jolly Balloon Man deck. Built down
 [Commander]
 1 The Jolly Balloon Man|SLZ
 [Main]
-8 Plains|FDN
-11 Mountain|FDN
+7 Plains|FDN
+12 Mountain|FDN
 1 Battlefield Forge|BRO
 1 Boros Garrison|RAV
 1 Clifftop Retreat|DOM
@@ -21,45 +21,45 @@ Description=Tier 5 (Bracket 5). white-red The Jolly Balloon Man deck. Built down
 1 Temple of the False God|SCG
 1 Terramorphic Expanse|SOS
 1 Valgavoth's Lair|DSK
-1 Commander's Plate|TMC
-1 Fireball|5ED
-1 Lavaspur Boots|OTJ
+1 Expedition Map|FDN
 1 Mother of Runes|CLB
 1 Path to Exile|CFX
+1 Shadowspear|THB
 1 Skullclamp|DST
 1 Sol Ring|TMC
 1 Soul-Guide Lantern|SLZ
+1 Steelshaper's Gift|5DN
 1 Swords to Plowshares|ICE
 1 Arabella, Abandoned Doll|DSK
 1 Arcane Signet|ELD
 1 Boros Charm|FDN
 1 Boros Signet|RAV
-1 Cartographer's Hawk|CMM
 1 Chainsaw|DSK
-1 Charming Scoundrel|WOE
-1 Coldsteel Heart|CSP
 1 Determined Iteration|SOC
 1 Humble Defector|FRF
 1 Idol of Oblivion|M3C
 1 Irreverent Gremlin|DSK
-1 Knight of the White Orchid|ORI
+1 Key to the City|KLD
+1 Loyal Warhound|AFR
+1 Mind Stone|WTH
+1 Open the Armory|SOI
 1 Parting Gust|BLB
-1 Spirited Companion|NEO
+1 Sword of the Animist|ORI
 1 Talisman of Conviction|CMM
 1 Untimely Malfunction|DSK
+1 Adeline, Resplendent Cathar|MID
 1 Burnished Hart|FDN
+1 Champion's Helm|CMM
 1 Cursed Mirror|MH3
 1 Delney, Streetwise Lookout|MKM
-1 Dragon's Hoard|M19
 1 Enduring Innocence|DSK
 1 Generous Gift|CMM
+1 Heraldic Banner|FDN
 1 Loran of the Third Path|BRO
 1 Mentor of the Meek|J25
-1 Oblivion Ring|ALA
 1 Professional Face-Breaker|SNC
 1 Split Up|DSK
 1 Star Athlete|DSC
-1 Tocasia's Welcome|BRO
 1 Trapped in the Screen|DSK
 1 Welcoming Vampire|VOW
 1 Atsushi, the Blazing Sky|NEO
@@ -71,18 +71,18 @@ Description=Tier 5 (Bracket 5). white-red The Jolly Balloon Man deck. Built down
 1 Orthion, Hero of Lavabrink|MOM
 1 Purphoros, God of the Forge|THS
 1 Sunspine Lynx|BLB
+1 Unexpected Windfall|AFR
 1 Vengeful Ancestor|CLB
-1 Wrath of God|10E
 1 Alhammarret's Archive|ORI
+1 Ao, the Dawn Sky|NEO
 1 Dissection Tools|DSK
+1 Echoing Assault|BLC
 1 Fury|H2R
-1 Gilded Lotus|FDN
 1 Goldspan Dragon|KHM
 1 Kiki-Jiki, Mirror Breaker|CHK
-1 Throne of Eldraine|WOC
 1 Combustible Gearhulk|KLD
 1 Inferno Titan|CMM
 1 Overlord of the Boilerbilges|DSK
 1 Trumpeting Carnosaur|LCI
 1 Calamity of Cinders|BLC
-1 Ugin, the Spirit Dragon|M21
+1 Kozilek, Butcher of Truth|ROE

@@ -1,0 +1,57 @@
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+10	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+12	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Sai, Master Thopterist (81), Hope of Ghirapur (50), Thopter Token (91), Thopter Token (97), Thopter Token (100), Thopter Token (103), Phyrexian Germ Token (94) and Spectrum Sentinel (47) to attack A.
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT*	A assigned Vodalian Arcanist (29) to block Sai, Master Thopterist (81). A didn't block Hope of Ghirapur (50). A didn't block Thopter Token (91). A didn't block Thopter Token (97). A didn't block Thopter Token (100). A didn't block Thopter Token (103). A assigned Myr Quadropod (4) to block Phyrexian Germ Token (94). A assigned Turtleshell Changeling (3) to block Spectrum Sentinel (47).
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 4 damage to Vodalian Arcanist (29).
+13	B's Combat Damage Step	DAMAGE	Hope of Ghirapur (50) deals 2 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Thopter Token (91) deals 2 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Thopter Token (97) deals 2 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Thopter Token (100) deals 2 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Thopter Token (103) deals 2 combat damage to A.
+13	B's Combat Damage Step	DAMAGE*	Phyrexian Germ Token (94) deals 1 damage to Myr Quadropod (4).
+13	B's Combat Damage Step	LIFE	Life: B 20 > 21
+13	B's Combat Damage Step	DAMAGE*	Spectrum Sentinel (47) deals 1 damage to Turtleshell Changeling (3).
+13	B's Combat Damage Step	DAMAGE	Vodalian Arcanist (29) deals 1 damage to Sai, Master Thopterist (81).
+13	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (3) deals 1 damage to Spectrum Sentinel (47).
+13	B's Combat Damage Step	DAMAGE*	Myr Quadropod (4) deals 1 damage to Phyrexian Germ Token (94).
+13	B's Combat Damage Step	LIFE	Life: A 3 > -7

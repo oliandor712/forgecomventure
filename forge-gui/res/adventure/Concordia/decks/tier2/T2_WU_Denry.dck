@@ -4,8 +4,8 @@ Description=Tier 2 (Bracket 2). white-blue Denry Klin, Editor in Chief deck. Bui
 [Commander]
 1 Denry Klin, Editor in Chief|NCC
 [Main]
-18 Plains|FDN
-17 Island|FDN
+22 Plains|FDN
+13 Island|FDN
 1 Command Tower|TMC
 1 Idyllic Grange|ELD
 1 Tranquil Cove|MOM
@@ -13,9 +13,9 @@ Description=Tier 2 (Bracket 2). white-blue Denry Klin, Editor in Chief deck. Bui
 1 Alseid of Life's Bounty|THB
 1 Boon of Safety|SNC
 1 Hopeful Initiate|VOW
-1 Leonin Vanguard|FDN
+1 Leonin Elder|MRD
 1 Slip Out the Back|SNC
-1 Change of Plans|NCC
+1 Counterspell|7ED
 1 Enlightened Ascetic|ORI
 1 Feat of Resistance|M21
 1 Gold Myr|SOM
@@ -31,16 +31,16 @@ Description=Tier 2 (Bracket 2). white-blue Denry Klin, Editor in Chief deck. Bui
 1 Urdnan, Dromoka Warrior|J25
 1 Wing It|MH3
 1 Abzan Falconer|KTK
-1 Banishing Light|EOE
-1 Cancel|FDN
-1 Contractual Safeguard|NCC
+1 Bontu's Monument|AKH
+1 Cloud Key|SLZ
+1 Dismantling Blow|INV
+1 Ghostly Prison|CHK
+1 Herald's Horn|CMM
 1 Keensight Mentor|IKO
-1 Kemba, Kha Regent|CMM
-1 King of the Pride|J25
 1 Orzhov Advokist|CMR
 1 Prava of the Steel Legion|CMR
 1 Proud Pack-Rhino|MH3
-1 Ravenform|KHM
+1 Seer's Lantern|OGW
 1 Splendor Mare|IKO
 1 Stalking Leonin|MKC
 1 Whispersilk Cloak|DST
@@ -49,24 +49,24 @@ Description=Tier 2 (Bracket 2). white-blue Denry Klin, Editor in Chief deck. Bui
 1 Avian Oddity|IKO
 1 Copycrook|MH3
 1 Fact or Fiction|INV
-1 Mechanized Production|AER
+1 Felidar Retreat|FDN
 1 Metropolis Angel|SNC
 1 Reconnaissance Mission|IKO
-1 Sage's Reverie|FRF
 1 Scholarship Sponsor|C21
+1 Taj-Nar Swordsmith|MRD
 1 Tezzeret's Gambit|NPH
 1 Towashi Guide-Bot|NEO
 1 Wave Goodbye|TMC
-1 Biting Tether|SHM
+1 Cathars' Crusade|AVR
 1 Damning Verdict|FIC
 1 Elite Scaleguard|FRF
-1 Flow of Knowledge|BRO
+1 Elspeth Resplendent|SNC
 1 Illusory Ambusher|BLC
 1 Mm'menon, the Right Hand|EOE
-1 Psychic Spiral|RTR
-1 Dreamstone Hedron|ROE
-1 Endbringer|OGW
-1 Guidelight Pathmaker|DFT
-1 Hammerhead Tyrant|TDC
+1 Skyboon Evangelist|NCC
 1 Novijen Sages|MM2
+1 Sigarda's Summons|VOW
+1 Angel of the Ruins|MH3
+1 Meteor Golem|FDN
 1 Dig Through Time|SLZ
+1 Treasure Cruise|KTK

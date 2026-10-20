@@ -1,0 +1,106 @@
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+6	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+10	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+17	A's Cleanup step	TURN	Turn 17 (B)
+17	B's Untap step	PHASE	B's Untap step
+17	B's Upkeep step	PHASE	B's Upkeep step
+17	B's Upkeep step	LIFE	Life: A 8 > 9
+17	B's Draw step	PHASE	B's Draw step
+17	B's Main phase, precombat	PHASE	B's Main phase, precombat
+17	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+17	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+17	B's Declare Attackers Step	COMBAT	B assigned Mycosynth Wellspring (78) to attack A.
+17	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+17	B's Declare Blockers Step	COMBAT*	A assigned Myr Quadropod (4), Alandra, Sky Dreamer (40), TARDIS (35) and Aquamoeba (33) to block Mycosynth Wellspring (78).
+17	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+17	B's Combat Damage Step	PHASE	B's Combat Damage Step
+17	B's Combat Damage Step	DAMAGE*	Mycosynth Wellspring (78) deals 3 damage to Aquamoeba (33).
+17	B's Combat Damage Step	DAMAGE*	Myr Quadropod (4) deals 1 damage to Mycosynth Wellspring (78).
+17	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Mycosynth Wellspring (78).
+17	B's Combat Damage Step	DAMAGE	TARDIS (35) deals 2 damage to Mycosynth Wellspring (78).
+17	B's Combat Damage Step	DAMAGE*	Aquamoeba (33) deals 1 damage to Mycosynth Wellspring (78).
+17	B's Combat Damage Step	ZONE_CHANGE*	Aquamoeba (33) was put into Graveyard from Battlefield.
+17	B's End of Combat Step	PHASE	B's End of Combat Step
+17	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+17	B's End step	PHASE	B's End step
+17	B's Cleanup step	PHASE	B's Cleanup step
+19	A's Cleanup step	TURN	Turn 19 (B)
+19	B's Untap step	PHASE	B's Untap step
+19	B's Upkeep step	PHASE	B's Upkeep step
+19	B's Draw step	PHASE	B's Draw step
+19	B's Main phase, precombat	PHASE	B's Main phase, precombat
+19	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+19	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+19	B's Declare Attackers Step	COMBAT	B assigned Barkform Harvester (49) to attack A.
+19	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+19	B's Declare Blockers Step	COMBAT*	A assigned Alandra, Sky Dreamer (40), Myr Quadropod (4) and TARDIS (35) to block Barkform Harvester (49).
+19	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+19	B's Combat Damage Step	PHASE	B's Combat Damage Step
+19	B's Combat Damage Step	DAMAGE	Barkform Harvester (49) deals 4 damage to TARDIS (35).
+19	B's Combat Damage Step	DAMAGE	Barkform Harvester (49) deals 1 damage to Alandra, Sky Dreamer (40).
+19	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Barkform Harvester (49).
+19	B's Combat Damage Step	DAMAGE*	Myr Quadropod (4) deals 1 damage to Barkform Harvester (49).
+19	B's Combat Damage Step	DAMAGE	TARDIS (35) deals 2 damage to Barkform Harvester (49).
+19	B's End of Combat Step	PHASE	B's End of Combat Step
+19	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+19	B's End step	PHASE	B's End step
+19	B's Cleanup step	PHASE	B's Cleanup step
+25	A's Cleanup step	TURN	Turn 25 (B)
+25	B's Untap step	PHASE	B's Untap step
+25	B's Upkeep step	PHASE	B's Upkeep step
+25	B's Upkeep step	LIFE	Life: A 8 > 9
+25	B's Draw step	PHASE	B's Draw step
+25	B's Main phase, precombat	PHASE	B's Main phase, precombat
+25	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+25	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+25	B's Declare Attackers Step	COMBAT	B assigned Sai, Master Thopterist (81), Thopter Mechanic (74), Thopter Token (86), Thopter Token (89), Thopter Token (92), Spectrum Sentinel (47), Thopter Token (95), Thopter Token (101) and Hope of Ghirapur (50) to attack A.
+25	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+25	B's Declare Blockers Step	COMBAT*	A assigned Myr Quadropod (4) to block Sai, Master Thopterist (81). A assigned Alandra, Sky Dreamer (40) to block Thopter Mechanic (74). A didn't block Thopter Token (86). A didn't block Thopter Token (89). A didn't block Thopter Token (92). A didn't block Spectrum Sentinel (47). A didn't block Thopter Token (95). A didn't block Thopter Token (101). A didn't block Hope of Ghirapur (50).
+25	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+25	B's Combat Damage Step	PHASE	B's Combat Damage Step
+25	B's Combat Damage Step	DAMAGE*	Sai, Master Thopterist (81) deals 4 damage to Myr Quadropod (4).
+25	B's Combat Damage Step	DAMAGE	Thopter Mechanic (74) deals 2 damage to Alandra, Sky Dreamer (40).
+25	B's Combat Damage Step	DAMAGE	Thopter Token (86) deals 1 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Thopter Token (89) deals 1 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Thopter Token (92) deals 1 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Spectrum Sentinel (47) deals 1 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Thopter Token (95) deals 1 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Thopter Token (101) deals 1 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Hope of Ghirapur (50) deals 1 combat damage to A.
+25	B's Combat Damage Step	DAMAGE*	Myr Quadropod (4) deals 1 damage to Sai, Master Thopterist (81).
+25	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Thopter Mechanic (74).
+25	B's Combat Damage Step	LIFE	Life: A 9 > 2
+25	B's Combat Damage Step	ZONE_CHANGE*	Myr Quadropod (4) was put into Graveyard from Battlefield.
+25	B's End of Combat Step	PHASE	B's End of Combat Step
+25	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+25	B's End step	PHASE	B's End step
+25	B's Cleanup step	PHASE	B's Cleanup step

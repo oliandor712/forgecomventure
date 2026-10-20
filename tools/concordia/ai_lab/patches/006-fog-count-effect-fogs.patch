@@ -1,0 +1,37 @@
+# 006-fog-count-effect-fogs: FogAi.countAvailableFogs also counts Effect spells with AILogic$ Fog (forge-ai CODE patch, NOT applied)
+# Why: countAvailableFogs (FogAi.java:116-133) only counted spells whose API is Fog, so Thwart the Enemy, Vine Snare, Endure
+# and other Effect-based fogs were invisible to the "life in danger: reserve mana for a Fog" logic (FogAi.java:105-112).
+# Status: written, not yet built or tested (test: a deck with only Effect fogs, check the mana-reserve decision / casts).
+# Credit: main-session analysis "Flagged-card timing and logic fit" (item 006).
+diff --git a/forge-ai/src/main/java/forge/ai/ability/FogAi.java b/forge-ai/src/main/java/forge/ai/ability/FogAi.java
+index b2446624..90a85853 100644
+--- a/forge-ai/src/main/java/forge/ai/ability/FogAi.java
++++ b/forge-ai/src/main/java/forge/ai/ability/FogAi.java
+@@ -113,11 +113,17 @@ public class FogAi extends SpellAbilityAi {
+         return false;
+     }
+ 
++    // a real Fog, or an Effect card (Thwart the Enemy, Endure, ...) scripted with AILogic$ Fog
++    private static boolean isFog(SpellAbility ability) {
++        return ApiType.Fog.equals(ability.getApi())
++                || (ApiType.Effect.equals(ability.getApi()) && "Fog".equals(ability.getParam("AILogic")));
++    }
++
+     private int countAvailableFogs(Player ai) {
+         int fogs = 0;
+         for (Card c : ai.getCardsActivatableInExternalZones(false)) {
+             for (SpellAbility ability : c.getSpellAbilities()) {
+-                if (ApiType.Fog.equals(ability.getApi())) {
++                if (isFog(ability)) {
+                     fogs++;
+                     break;
+                 }
+@@ -126,7 +132,7 @@ public class FogAi extends SpellAbilityAi {
+ 
+         for (Card c : ai.getCardsIn(ZoneType.Hand)) {
+             for (SpellAbility ability : c.getSpellAbilities()) {
+-                if (ApiType.Fog.equals(ability.getApi())) {
++                if (isFog(ability)) {
+                     fogs++;
+                     break;
+                 }

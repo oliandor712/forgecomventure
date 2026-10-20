@@ -5,7 +5,6 @@ Description=Tier 4 (Bracket 4). Mono-green Kaysa deck. Built down from Forge's K
 1 Kaysa|ALL
 [Main]
 35 Forest|FDN
-1 Birds of Paradise|M12
 1 Elvish Lyrist|8ED
 1 Elvish Mystic|M15
 1 Elvish Scrapper|8ED
@@ -13,12 +12,13 @@ Description=Tier 4 (Bracket 4). Mono-green Kaysa deck. Built down from Forge's K
 1 Fyndhorn Elves|ICE
 1 Llanowar Elves|FDN
 1 Nature's Claim|WWK
+1 Sol Ring|TMC
 1 Arcane Signet|ELD
 1 Awaken the Woods|BRO
 1 Bloodline Shaman|ONS
+1 Bristly Bill, Spine Sower|OTJ
 1 Fanatic of Rhonas|MH3
 1 Farseek|M13
-1 Finale of Devastation|WAR
 1 Heroic Intervention|M21
 1 Leaf-Crowned Visionary|DMU
 1 Lightning Greaves|MRD
@@ -26,22 +26,21 @@ Description=Tier 4 (Bracket 4). Mono-green Kaysa deck. Built down from Forge's K
 1 Rampant Growth|M12
 1 Sakura-Tribe Elder|CHK
 1 Springheart Nantuko|MH3
-1 Sword of the Animist|ORI
 1 Three Visits|PTK
 1 Viridian Zealot|DST
 1 Archdruid's Charm|MKM
+1 Bala Ged Recovery|ZNR
 1 Beastmaster Ascension|ZEN
 1 Champion of Lambholt|AVR
 1 Eternal Witness|5DN
+1 Garruk's Uprising|FDN
 1 Khalni Ambush|PIO
 1 Legolas, Master Archer|LTR
 1 Mossborn Hydra|FDN
-1 Nettlecyst|MH2
-1 Obscuring Haze|TLE
+1 Patchwork Banner|BLB
 1 Reclamation Sage|FDN
 1 Scute Swarm|ZNR
 1 Six|MH3
-1 Song of the Dryads|CMM
 1 Tireless Provisioner|J25
 1 Tribute to the World Tree|MOM
 1 Viridian Corrupter|MBS
@@ -49,7 +48,7 @@ Description=Tier 4 (Bracket 4). Mono-green Kaysa deck. Built down from Forge's K
 1 Bear Umbra|ROE
 1 Beast Whisperer|GRN
 1 Force of Vigor|H1R
-1 Goreclaw, Terror of Qal Sisma|CMM
+1 Forgotten Ancient|SCG
 1 Guardian Project|RNA
 1 Harmonize|TMC
 1 Skyshroud Claim|NMS
@@ -61,6 +60,7 @@ Description=Tier 4 (Bracket 4). Mono-green Kaysa deck. Built down from Forge's K
 1 Overwhelming Stampede|M11
 1 Return of the Wildspeaker|ELD
 1 Shamanic Revelation|FRF
+1 Unnatural Growth|MID
 1 Wrenn and Seven|MID
 1 Bane of Progress|ECC
 1 Disciple of Freyalise|MH3

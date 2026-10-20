@@ -76,7 +76,9 @@ build on its findings, and cite entries by date and title.
 - **Card power** (`deck_tier.card_power`) = 35·raw + 15·efficiency + 15·role + 10·rarity + 5·EDHREC popularity +
   10·Game Changer + 5·fast mana + 5·tutor. Raw power is the highest of the cube rank, the Spellbinder cEDH inclusion
   rate and 0.6 × EDHREC popularity (Scryfall's EDHREC rank, log-scaled).
-- **Deck power by tier** (deck average card power): T1 13-15, T2 21-28, T3 30-38, T4 34-41, T5 40-46. Starters 26-31.
+- **Deck power by tier** (deck average card power, rebuilt 2026-10-20): T1 12-13, T2 21-28, T3 30-38, T4 34-42,
+  T5 40-46. Bands: T1 <=19, T2 19-31, T3 27-38, T4 34-42, T5 >=39. Staples per deck: T1 0, T2 19, T3 30, T4 34,
+  T5 38 on average; watch-list cards capped T1 0 / T2 1 / T3 2 / T4 4 / T5 8.
 - **Difficulty curve** (OVERWORLD.md §5.1): a zone's stage locks at the player's first fight there, from the Seals held:
   seals 0-1 stage 1, 2-3 stage 2, 4-5 stage 3 (`util/TierLock.java`, config `tierLock`).
   - Wild creatures, random-dungeon enemies, pass keepers, grove guardians and the Warden are mono-color, picked by deck
@@ -97,6 +99,7 @@ build on its findings, and cite entries by date and title.
 The main session checks on both every 4 hours (at :20) and fixes blockers.
 
 ## Recent updates
+- 2026-10-20: All 200 AI decks rebuilt with the new deck-building rules (staple preference, watch caps, EDHREC-scale bands); old decks backed up in tools/concordia/backups/2026-10-20_decks_pre_rebuild/. Balance records before this commit are on the old decks.
 - 2026-10-20: Test-tool updates pre-approved with backups (rule 7); proposed AI changes tracked for the user's approval in docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md (rule 8: CHECKLIST lines in reports).
 - 2026-10-20: New card categories (docs/Adventure/Campaign/STAPLES.md, deckgen/staples.py): staple (popular, low standalone impact), game_changer, watch (popular, high impact, not a Game Changer). deck_tier.py --json now lists 'staples' and 'watch' per deck.
 - 2026-10-20: EDHREC popularity (Scryfall) added to card power; deck power rose about 1.5 at T1-T3; zone power windows shifted to match. New: ANALYSIS REQUEST lines in your reports get answered into tools/agents/analysis/<you>.md (your training data).

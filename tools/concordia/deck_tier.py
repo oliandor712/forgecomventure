@@ -34,36 +34,36 @@ ABIL_RE = re.compile(r"^(?:A:|SVar:[^:]+:)\s*(AB|SP|DB)\$\s*([A-Za-z]+)(.*)$")
 
 # Tier rules. Ranges are inclusive [min, max]; None means no bound. "hard" rules FAIL, the rest WARN.
 TIERS = {
-    1: {"name": "Tier 1 - Weak / wild", "life": (10, 12), "commander_rarity": {"C", "U"}, "commander_mv": (2, 4),
+    1: {"name": "Tier 1 - Weak / wild", "life": (10, 12), "watch": 0, "staples": (0, 2), "commander_rarity": {"C", "U"}, "commander_mv": (2, 4),
         "lands": (40, 46), "ramp": (0, 3), "fast": (0, 0), "draw": (0, 3), "removal": (0, 3), "wipe": (0, 0),
-        "tutor": (0, 0), "avg_mv": (2.5, 3.4), "creatures": (35, 60), "power": (None, 18),
+        "tutor": (0, 0), "avg_mv": (2.5, 3.4), "creatures": (35, 60), "power": (None, 19),
         "max_rare": 0, "max_mythic": 0, "max_uncommon": 15, "game_changers": 0, "mld": 0, "extra_turns": 0, "combos": "none",
         "bracket": 1, "curve": {1: (5, 8), 2: (15, 21), 3: (11, 16), 4: (5, 8), 5: (3, 10), 6: (0, 2)},
         "types": {"noncreature": 6, "Instant+Sorcery": 4}, "max_type_share": 0.85, "karsten": None},
-    2: {"name": "Tier 2 - Moderate", "life": (15, 20), "commander_rarity": {"C", "U", "R"}, "commander_mv": (3, 5),
+    2: {"name": "Tier 2 - Moderate", "life": (15, 20), "watch": 1, "staples": (5, 31), "commander_rarity": {"C", "U", "R"}, "commander_mv": (3, 5),
         "lands": (36, 39), "ramp": (2, 8), "fast": (0, 1), "draw": (2, 10), "removal": (4, 14), "wipe": (0, 2),
-        "tutor": (0, 1), "avg_mv": (2.6, 3.6), "creatures": (26, 36), "power": (18, 30),
+        "tutor": (0, 1), "avg_mv": (2.6, 3.6), "creatures": (26, 36), "power": (19, 31),
         "max_rare": 10, "max_mythic": 1, "game_changers": 0, "mld": 0, "extra_turns": 0, "combos": "none",
         "bracket": 2, "curve": {1: (2, 7), 2: (8, 18), 3: (10, 21), 4: (7, 15), 5: (4, 11), 6: (3, 12)},
         "types": {"Instant": 4, "Sorcery": 3, "Artifact": 4, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
-    3: {"name": "Tier 3 - Challenging", "life": (25, 35), "commander_rarity": {"U", "R", "M"}, "commander_mv": (3, 7),
+    3: {"name": "Tier 3 - Challenging", "life": (25, 35), "watch": 2, "staples": (22, 39), "commander_rarity": {"U", "R", "M"}, "commander_mv": (3, 7),
         "lands": (33, 38), "ramp": (8, 16), "fast": (0, 3), "draw": (6, 14), "removal": (7, 16), "wipe": (1, 4),
-        "tutor": (0, 3), "avg_mv": (2.8, 3.9), "creatures": (16, 40), "power": (26, 36),
+        "tutor": (0, 3), "avg_mv": (2.8, 3.9), "creatures": (16, 40), "power": (27, 38),
         "max_rare": 60, "max_mythic": 15, "game_changers": 3, "mld": 0, "extra_turns": 1, "combos": "late",
         "bracket": 3, "curve": {1: (3, 12), 2: (9, 22), 3: (10, 21), 4: (5, 15), 5: (3, 11), 6: (2, 10)},
         "types": {"Instant": 4, "Sorcery": 3, "Artifact": 4, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
     # Bracket 4 (optimized), kept to what the Forge AI can pilot: no mass land denial, no early two-card combos.
-    4: {"name": "Tier 4 - Hard", "life": (30, 40), "commander_rarity": {"U", "R", "M"}, "commander_mv": (2, 7),
+    4: {"name": "Tier 4 - Hard", "life": (30, 40), "watch": 4, "staples": (22, 46), "commander_rarity": {"U", "R", "M"}, "commander_mv": (2, 7),
         "lands": (33, 37), "ramp": (9, 18), "fast": (0, 4), "draw": (8, 16), "removal": (8, 18), "wipe": (1, 5),
-        "tutor": (0, 4), "avg_mv": (2.7, 3.8), "creatures": (14, 38), "power": (33, 41),
+        "tutor": (0, 4), "avg_mv": (2.7, 3.8), "creatures": (14, 38), "power": (34, 42),
         "max_rare": 70, "max_mythic": 20, "game_changers": 5, "mld": 0, "extra_turns": 1, "combos": "late",
         "bracket": 4, "curve": {1: (4, 13), 2: (10, 22), 3: (10, 21), 4: (5, 15), 5: (3, 11), 6: (2, 10)},
         "types": {"Instant": 5, "Sorcery": 3, "Artifact": 5, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
     # The AI's ceiling: bracket 4 at full card quality (fast mana, tutors, Game Changers), still no mass land denial
     # and no early two-card combos, which the AI can't assemble and players don't enjoy facing.
-    5: {"name": "Tier 5 - Elite", "life": (35, 45), "commander_rarity": {"U", "R", "M"}, "commander_mv": (2, 7),
+    5: {"name": "Tier 5 - Elite", "life": (35, 45), "watch": 8, "staples": (28, 48), "commander_rarity": {"U", "R", "M"}, "commander_mv": (2, 7),
         "lands": (31, 37), "ramp": (10, 20), "fast": (0, 6), "draw": (9, 18), "removal": (9, 20), "wipe": (1, 5),
-        "tutor": (0, 6), "avg_mv": (2.5, 3.8), "creatures": (12, 38), "power": (38, None),
+        "tutor": (0, 6), "avg_mv": (2.5, 3.8), "creatures": (12, 38), "power": (39, None),
         "max_rare": 80, "max_mythic": 30, "game_changers": 10, "mld": 0, "extra_turns": 2, "combos": "late",
         "bracket": 5, "curve": {1: (5, 15), 2: (10, 23), 3: (9, 21), 4: (4, 15), 5: (2, 11), 6: (2, 10)},
         "types": {"Instant": 5, "Sorcery": 3, "Artifact": 5, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
@@ -496,6 +496,8 @@ def check_tier(r, tier, life=None):
         out.append(("PASS" if not low else "WARN", "colour sources %s%s" % (r["sources"], "" if not low else " - low: " + "; ".join(low))))
     out.append(("PASS" if r["rarity"].get("R", 0) <= spec["max_rare"] else "WARN", "rares %d (max %d)" % (r["rarity"].get("R", 0), spec["max_rare"])))
     out.append(("PASS" if r["rarity"].get("M", 0) <= spec["max_mythic"] else "FAIL", "mythics %d (max %d)" % (r["rarity"].get("M", 0), spec["max_mythic"])))
+    out.append(("PASS" if len(r["watch"]) <= spec["watch"] else "WARN", "watch-list cards %d (max %d) %s" % (len(r["watch"]), spec["watch"], r["watch"] or "")))
+    rng("staples", len(r["staples"]), spec["staples"])
     out.append(("PASS" if len(r["game_changers"]) <= spec["game_changers"] else "FAIL", "Game Changers %d (max %d) %s" % (len(r["game_changers"]), spec["game_changers"], r["game_changers"] or "")))
     out.append(("PASS" if len(r["mass_land_denial"]) <= spec["mld"] else "FAIL", "mass land denial %s" % (r["mass_land_denial"] or "none")))
     out.append(("PASS" if len(r["extra_turns"]) <= spec["extra_turns"] and not r["chained_extra_turns"] else "FAIL", "extra turns %s" % (r["extra_turns"] or "none")))

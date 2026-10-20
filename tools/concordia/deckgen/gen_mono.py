@@ -16,7 +16,7 @@ import build as B  # noqa: E402  (loads the pool and deck_tier)
 dt, data, cfg, pool = B.dt, B.data, B.cfg, B.pool
 
 # deck power goals per tier for the new decks (deck_tier average card power), low to high
-TARGETS = {1: [None] * 4, 2: [22, 24, 25, 26], 3: [28, 30, 31, 33], 4: [34, 35, 37, 39], 5: [40, 41, 43, 44]}
+TARGETS = {1: [None] * 4, 2: [23.5, 25.5, 26.5, 27.5], 3: [29.5, 31.5, 32.5, 34.5], 4: [35, 36, 38, 40], 5: [40.5, 41.5, 43.5, 44.5]}  # EDHREC scale
 LIFE = {1: 11, 2: 18, 3: 28, 4: 35, 5: 40}
 WORD = {1: 'Tier 1 (Bracket 1)', 2: 'Tier 2 (Bracket 2)', 3: 'Tier 3 (Bracket 3)', 4: 'Tier 4 (Bracket 4)', 5: 'Tier 5 (Bracket 4, elite)'}
 COLOR = {'W': 'white', 'U': 'blue', 'B': 'black', 'R': 'red', 'G': 'green'}

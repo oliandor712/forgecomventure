@@ -753,7 +753,6 @@
   "name": "Green Trainer 1",
   "sprite": "sprites/enemy/humanoid/elf/druid.atlas",
   "deck": [
-   "decks/tier2/T2_BG_Grakmaw.dck",
    "decks/tier2/T2_G_Arasta.dck",
    "decks/tier2/T2_G_Mirri.dck",
    "decks/tier2/T2_G_Toski.dck"
@@ -783,7 +782,7 @@
   "sprite": "sprites/enemy/humanoid/elf/shaman.atlas",
   "deck": [
    "decks/tier3/T3_BG_Gitrog.dck",
-   "decks/tier3/T3_BRG_Coram.dck",
+   "decks/tier3/T3_RG_Zilortha.dck",
    "decks/tier3/T3_UG_Vannifar.dck",
    "decks/tier3/T3_WRG_Rith.dck",
    "decks/tier3/T3_WUG_Falco.dck"
@@ -812,8 +811,8 @@
   "name": "Green Trainer 2b",
   "sprite": "sprites/enemy/humanoid/elf/hunter_2.atlas",
   "deck": [
-   "decks/tier4/T4_RG_Anzrag.dck",
    "decks/tier4/T4_WBG_Necrobloom.dck",
+   "decks/tier4/T4_RG_Anzrag.dck",
    "decks/tier4/T4_BG_Ygra.dck"
   ],
   "randomizeDeck": true,
@@ -870,10 +869,8 @@
   "name": "Green Trainer 3b",
   "sprite": "sprites/enemy/humanoid/elf/hunter.atlas",
   "deck": [
-   "decks/tier5/T5_BG_Vraska.dck",
    "decks/tier5/T5_BRG_Disa.dck",
    "decks/tier5/T5_RG_Mina.dck",
-   "decks/tier5/T5_WRG_Gahiji.dck",
    "decks/tier5/T5_WUG_Bumbleflower.dck"
   ],
   "randomizeDeck": true,
@@ -1071,9 +1068,9 @@
   "name": "Green Thornling 3",
   "sprite": "sprites/enemy/plant/hiddenbush.atlas",
   "deck": [
-   "decks/tier4/T4_G_Selvala.dck",
+   "decks/tier4/T4_G_Esika.dck",
    "decks/tier4/T4_G_Yisan.dck",
-   "decks/tier4/T4_G_Esika.dck"
+   "decks/tier4/T4_G_Selvala.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1097,9 +1094,9 @@
   "name": "Green Grove Sprite 3",
   "sprite": "sprites/enemy/fey/pixie_2.atlas",
   "deck": [
-   "decks/tier4/T4_G_Selvala.dck",
+   "decks/tier4/T4_G_Esika.dck",
    "decks/tier4/T4_G_Yisan.dck",
-   "decks/tier4/T4_G_Esika.dck"
+   "decks/tier4/T4_G_Selvala.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1123,9 +1120,9 @@
   "name": "Green Moss Bear 3",
   "sprite": "sprites/enemy/beast/bear/bear.atlas",
   "deck": [
-   "decks/tier4/T4_G_Selvala.dck",
+   "decks/tier4/T4_G_Esika.dck",
    "decks/tier4/T4_G_Yisan.dck",
-   "decks/tier4/T4_G_Esika.dck"
+   "decks/tier4/T4_G_Selvala.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1173,9 +1170,9 @@
   "name": "Green Pass Keeper 2",
   "sprite": "sprites/enemy/humanoid/elf/druid_2.atlas",
   "deck": [
-   "decks/tier4/T4_G_Selvala.dck",
+   "decks/tier4/T4_G_Esika.dck",
    "decks/tier4/T4_G_Yisan.dck",
-   "decks/tier4/T4_G_Esika.dck"
+   "decks/tier4/T4_G_Selvala.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1197,9 +1194,9 @@
   "name": "Green Pass Keeper 3",
   "sprite": "sprites/enemy/humanoid/elf/druid_2.atlas",
   "deck": [
-   "decks/tier5/T5_G_Ashaya.dck",
    "decks/tier5/T5_G_Yeva.dck",
-   "decks/tier5/T5_G_Lumra.dck"
+   "decks/tier5/T5_G_Vorinclex.dck",
+   "decks/tier5/T5_G_Ashaya.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1221,8 +1218,8 @@
   "name": "Green Grove Guardian 1",
   "sprite": "sprites/enemy/beast/bear/bear_large.atlas",
   "deck": [
-   "decks/tier3/T3_G_Azusa.dck",
    "decks/tier3/T3_G_Shroofus.dck",
+   "decks/tier3/T3_G_Azusa.dck",
    "decks/tier3/T3_G_Kona.dck"
   ],
   "randomizeDeck": true,
@@ -1249,7 +1246,7 @@
   "name": "Green Grove Guardian 2",
   "sprite": "sprites/enemy/beast/bear/bear_large.atlas",
   "deck": [
-   "decks/tier4/T4_G_Marwyn.dck",
+   "decks/tier4/T4_G_Selvala.dck",
    "decks/tier4/T4_G_Yisan.dck",
    "decks/tier4/T4_G_Kaysa.dck"
   ],
@@ -1280,7 +1277,8 @@
    "decks/tier5/T5_G_Ashaya.dck",
    "decks/tier5/T5_G_Jorn.dck",
    "decks/tier5/T5_G_Lumra.dck",
-   "decks/tier5/T5_G_Vorinclex.dck"
+   "decks/tier5/T5_G_Vorinclex.dck",
+   "decks/tier5/T5_G_Yeva.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1306,7 +1304,7 @@
   "name": "Green Warden 1",
   "sprite": "sprites/enemy/humanoid/elf/nissa.atlas",
   "deck": [
-   "decks/tier3/T3_G_Gargos.dck",
+   "decks/tier3/T3_G_Azusa.dck",
    "decks/tier3/T3_G_Kona.dck",
    "decks/tier3/T3_G_Reki.dck"
   ],
@@ -1337,7 +1335,7 @@
   "deck": [
    "decks/tier4/T4_G_Kaysa.dck",
    "decks/tier4/T4_G_Marwyn.dck",
-   "decks/tier4/T4_G_Yisan.dck"
+   "decks/tier4/T4_G_Selvala.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1364,9 +1362,9 @@
   "name": "Green Warden 3",
   "sprite": "sprites/enemy/humanoid/elf/nissa.atlas",
   "deck": [
-   "decks/tier5/T5_G_Jorn.dck",
-   "decks/tier5/T5_G_Vorinclex.dck",
-   "decks/tier5/T5_G_Lumra.dck"
+   "decks/tier5/T5_G_Lumra.dck",
+   "decks/tier5/T5_G_Ashaya.dck",
+   "decks/tier5/T5_G_Jorn.dck"
   ],
   "randomizeDeck": true,
   "ai": "",

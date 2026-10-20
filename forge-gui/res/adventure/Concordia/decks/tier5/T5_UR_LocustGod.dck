@@ -4,8 +4,8 @@ Description=Tier 5 (Bracket 5). blue-red The Locust God deck. Built down from Fo
 [Commander]
 1 The Locust God|HOU
 [Main]
-13 Island|FDN
-7 Mountain|FDN
+12 Island|FDN
+8 Mountain|FDN
 1 Boseiju, Who Shelters All|CHK
 1 Command Tower|TMC
 1 Desolate Lighthouse|AVR
@@ -20,40 +20,40 @@ Description=Tier 5 (Bracket 5). blue-red The Locust God deck. Built down from Fo
 1 Stormcarved Coast|SOS
 1 Sulfur Falls|DOM
 1 Temple of Epiphany|FDN
-1 Inevitable Betrayal|MH2
-1 Commander's Plate|TMC
-1 Lavaspur Boots|OTJ
+1 Expedition Map|FDN
 1 Rapid Hybridization|GTC
+1 Shadowspear|THB
 1 Skullclamp|DST
 1 Sol Ring|TMC
 1 Soul-Guide Lantern|SLZ
+1 Three Steps Ahead|OTJ
+1 Training Grounds|MAT
 1 Vandalblast|SLZ
 1 Abrade|LCI
 1 Agate Instigator|BLC
 1 Arcane Signet|ELD
-1 Balmor, Battlemage Captain|FDN
 1 Counterspell|7ED
 1 Cyclonic Rift|RTR
 1 Goblin Electromancer|GRN
 1 Impact Tremors|FDN
 1 Izzet Signet|GPT
-1 Lightning Greaves|MRD
 1 Mind Spring|BLB
 1 Negate|TMT
 1 Pull from Tomorrow|AKH
 1 Resculpt|STX
 1 Snap|WOC
+1 Starstorm|ONS
+1 Sword of the Animist|ORI
 1 Talisman of Creativity|CMM
 1 Thought Vessel|FIC
 1 Ashnod's Altar|CHR
-1 Burnished Hart|FDN
+1 Birgi, God of Storytelling|KHM
 1 Chaos Warp|MBC
 1 Commander's Sphere|CMM
 1 Cosima, God of the Voyage|KHM
 1 Force of Negation|H1R
 1 Imprisoned in the Moon|INR
 1 Professional Face-Breaker|SNC
-1 Seething Song|9ED
 1 Sink into Stupor|MH3
 1 Spellseeker|BBD
 1 Svyelun of Sea and Sky|J22
@@ -61,7 +61,7 @@ Description=Tier 5 (Bracket 5). blue-red The Locust God deck. Built down from Fo
 1 The Warring Triad|FIC
 1 Valakut Awakening|PIO
 1 Weftstalker Ardent|EOE
-1 Bident of Thassa|THS
+1 Whir of Invention|AER
 1 Big Score|SNC
 1 Curiosity Crafter|SOC
 1 Distant Melody|MOR
@@ -72,16 +72,16 @@ Description=Tier 5 (Bracket 5). blue-red The Locust God deck. Built down from Fo
 1 Storm-Kiln Artist|STX
 1 Teferi's Ageless Insight|M21
 1 Thassa, Deep-Dwelling|THB
+1 Unexpected Windfall|AFR
 1 Emeritus of Ideation|SOS
-1 Goldspan Dragon|KHM
+1 Keranos, God of Storms|JOU
 1 Lier, Disciple of the Drowned|MID
 1 Mana Geyser|5DN
 1 Pinnacle Monk|MH3
-1 Throne of Eldraine|WOC
 1 Ultima, Origin of Oblivion|FIN
+1 Full Throttle|DFT
 1 Niv-Mizzet, Parun|GRN
 1 Niv-Mizzet, Visionary|FDN
-1 Steel Hellkite|FDN
+1 Season of Weaving|BLB
 1 Dig Through Time|SLZ
-1 Ugin, the Spirit Dragon|M21
 1 Blasphemous Act|TMC

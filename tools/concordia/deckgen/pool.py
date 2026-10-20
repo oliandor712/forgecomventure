@@ -47,6 +47,8 @@ ext = os.path.join(HERE, 'external', 'decks.json')
 if os.path.exists(ext):
     for x in json.load(open(ext))['decks']:
         for s in set(n.lower() for n in list(x['cards']) + x['commanders']): pop[s] += 1
+_sig = os.path.join(HERE, 'spellbinder', 'signals.json')
+PRECON = {k: v['precon'] for k, v in json.load(open(_sig))['cards'].items() if 'precon' in v} if os.path.exists(_sig) else {}
 def identity(c):
     s = set(re.findall(r'[WUBRG]', c['mc']))
     for sym in re.findall(r'\{([^}]*)\}', re.sub(r'\([^)]*\)', '', c['oracle'])):
@@ -80,5 +82,7 @@ for key, c in data['cards'].items():
                  'nabil': len(c['abil']) + len(c['static']) + len(c['kw']), 'oracle': c['oracle'],
                  'cube': data['cube'].get(key)}
     pool[key]['power'] = {r: dt.card_power(data, c, tags, r) for r in best}
+    pool[key]['cat'] = dt.category(key)  # staple / game_changer / watch (deckgen/staples.py)
+    pool[key]['precon'] = PRECON.get(key, 0.0)
 pickle.dump(pool, open(os.path.join(HERE, 'pool.pkl'), 'wb'))
 print(len(pool))

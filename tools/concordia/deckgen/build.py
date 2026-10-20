@@ -30,7 +30,13 @@ SPEC = {
  5: dict(lands=34, quota={'wipe': 2, 'removal': 12, 'ramp': 12, 'draw': 11, 'tutor': 2}, cap={'ramp': 17, 'draw': 16, 'removal': 18, 'wipe': 4, 'tutor': 5, 'fast': 5},
          creatures=24, cmax=32, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 10, 2: 17, 3: 16, 4: 11, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 25}, gc=8),
 }
-TARGET_POWER = {2: 25, 3: 34, 4: 39, 5: 46}  # card power the builder aims for at each tier
+TARGET_POWER = {2: 26.5, 3: 35.5, 4: 40, 5: 46.5}  # card power the builder aims for at each tier (EDHREC scale)
+# Staples (deckgen/staples.py: popular, low standalone impact) make decks consistent without swinging games: tiers 2-3
+# prefer them, 4-5 mildly, tier 1 avoids them so wild encounters stay rough. Watch-list cards (popular and high
+# impact, not Game Changers) are capped like Game Changers. Precon inclusion counts as casual playability at 2-3.
+STAPLE_BONUS = {1: -4, 2: 3, 3: 3, 4: 1.5, 5: 1.5}
+WATCH_CAP = {1: 0, 2: 1, 3: 2, 4: 4, 5: 8}
+PRECON_BONUS = {2: 2, 3: 2}
 # Per deck in decks.json, for balancing after simulations: "target" overrides TARGET_POWER (tiers 2-5), and
 # "seed_bonus" (default 25) how strongly the seed deck's cards are preferred (lower lets "target" steer more), and
 # "weakness" (default 1.0) scales how hard a tier 1 deck avoids strong cards (lower = stronger deck).
@@ -90,6 +96,8 @@ def build(d):
             s = -0.7 * abs(pw - d.get('target', TARGET_POWER[2])) + 3 * min(pop, 10) / 10
         else:
             s = -0.6 * abs(pw - d.get('target', TARGET_POWER[tier])) + 4 * min(pop, 20) / 20
+        if p.get('cat') == 'staple': s += STAPLE_BONUS[tier]
+        s += PRECON_BONUS.get(tier, 0) * min(1.0, p.get('precon', 0.0) / 0.25)
         if theme_match(p, theme): s += 12
         if p['name'].lower() in seed: s += d.get('seed_bonus', 25) if tier > 1 else 0
         return s
@@ -98,13 +106,13 @@ def build(d):
         if k == cmd['name'].lower() or k in banned: continue
         if not p['id'] <= ident: continue
         if 'Land' in p['types'].split(): continue
-        if p['mld'] or (p['gc'] and spec['gc'] == 0): continue
+        if p['mld'] or (p['gc'] and spec['gc'] == 0) or (p.get('cat') == 'watch' and WATCH_CAP[tier] == 0): continue
         if SKIP_TEXT.search(p['oracle']): continue
         if 'Legendary' in p['types'] and 'Creature' not in p['types'] and tier == 1: continue
         if p['pop'] == 0 and tier > 1 and k not in seed: continue
         if tier == 1 and p['minr'] not in 'CU': continue
         cands.append(p)
-    chosen = []; rcount = collections.Counter(); roles = collections.Counter(); curve = collections.Counter(); ncreat = 0; ngc = 0
+    chosen = []; rcount = collections.Counter(); roles = collections.Counter(); curve = collections.Counter(); ncreat = 0; ngc = 0; nwatch = 0
     nonland = 99 - spec['lands']
     def can_add(p):
         tags = p['tags']
@@ -112,14 +120,16 @@ def build(d):
             if tags & tg and roles[role] + 1 > spec['cap'][role]: return None
         if curve[bucket(p['cmc'])] >= spec['curve'][bucket(p['cmc'])]: return None
         if p['gc'] and ngc >= spec['gc']: return None
+        if p.get('cat') == 'watch' and nwatch >= WATCH_CAP[tier]: return None
         return pick_rarity(p, tier, rcount, spec)
     def add(p, r):
-        nonlocal ncreat, ngc
+        nonlocal ncreat, ngc, nwatch
         chosen.append((p, r)); rcount[r] += 1; curve[bucket(p['cmc'])] += 1
         for role, tg in ROLE.items():
             if p['tags'] & tg: roles[role] += 1
         if 'Creature' in p['types']: ncreat += 1
         if p['gc']: ngc += 1
+        if p.get('cat') == 'watch': nwatch += 1
         cands.remove(p)
     def best(filt):
         bestp = None

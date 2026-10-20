@@ -1,0 +1,71 @@
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+12	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+14	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+19	A's Cleanup step	TURN	Turn 19 (B)
+19	B's Untap step	PHASE	B's Untap step
+19	B's Upkeep step	PHASE	B's Upkeep step
+19	B's Draw step	PHASE	B's Draw step
+19	B's Main phase, precombat	PHASE	B's Main phase, precombat
+19	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+19	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+19	B's Declare Attackers Step	COMBAT	B assigned Aetherjacket (45), Thopter Mechanic (74), Hope of Ghirapur (50), Thopter Token (93), Thopter Token (99), Thopter Token (102), Thopter Token (118), Thopter Token (134), Thopter Token (137), Ornithopter (69), Phyrexian Germ Token (90), Sai, Master Thopterist (81), Etherium Sculptor (76) and Spectrum Sentinel (47) to attack A.
+19	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+19	B's Declare Blockers Step	COMBAT*	A assigned Drake Token (96) to block Aetherjacket (45). A assigned Frost Augur (5) and Alandra, Sky Dreamer (40) to block Thopter Mechanic (74). A assigned Drake Token (105) to block Hope of Ghirapur (50). A assigned Drake Token (121) to block Thopter Token (93). A assigned Drake Token (140) to block Thopter Token (99). A didn't block Thopter Token (102). A didn't block Thopter Token (118). A didn't block Thopter Token (134). A didn't block Thopter Token (137). A didn't block Ornithopter (69). A assigned Myr Quadropod (4) to block Phyrexian Germ Token (90). A assigned Aquamoeba (33) to block Sai, Master Thopterist (81). A assigned Volshe Tideturner (39) to block Etherium Sculptor (76). A assigned Vodalian Arcanist (29) to block Spectrum Sentinel (47).
+19	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+19	B's Combat Damage Step	PHASE	B's Combat Damage Step
+19	B's Combat Damage Step	DAMAGE	Aetherjacket (45) deals 6 damage to Drake Token (96).
+19	B's Combat Damage Step	DAMAGE	Thopter Mechanic (74) deals 2 damage to Frost Augur (5).
+19	B's Combat Damage Step	DAMAGE	Thopter Mechanic (74) deals 1 damage to Alandra, Sky Dreamer (40).
+19	B's Combat Damage Step	DAMAGE	Hope of Ghirapur (50) deals 2 damage to Drake Token (105).
+19	B's Combat Damage Step	DAMAGE	Thopter Token (93) deals 2 damage to Drake Token (121).
+19	B's Combat Damage Step	DAMAGE	Thopter Token (99) deals 2 damage to Drake Token (140).
+19	B's Combat Damage Step	DAMAGE	Thopter Token (102) deals 2 combat damage to A.
+19	B's Combat Damage Step	DAMAGE	Thopter Token (118) deals 2 combat damage to A.
+19	B's Combat Damage Step	DAMAGE	Thopter Token (134) deals 2 combat damage to A.
+19	B's Combat Damage Step	DAMAGE	Thopter Token (137) deals 2 combat damage to A.
+19	B's Combat Damage Step	DAMAGE	Ornithopter (69) deals 1 combat damage to A.
+19	B's Combat Damage Step	DAMAGE*	Phyrexian Germ Token (90) deals 1 damage to Myr Quadropod (4).
+19	B's Combat Damage Step	LIFE	Life: B 12 > 13
+19	B's Combat Damage Step	DAMAGE*	Sai, Master Thopterist (81) deals 1 damage to Aquamoeba (33).
+19	B's Combat Damage Step	DAMAGE	Etherium Sculptor (76) deals 1 damage to Volshe Tideturner (39).
+19	B's Combat Damage Step	DAMAGE	Spectrum Sentinel (47) deals 1 damage to Vodalian Arcanist (29).
+19	B's Combat Damage Step	DAMAGE	Drake Token (96) deals 2 damage to Aetherjacket (45).
+19	B's Combat Damage Step	DAMAGE	Frost Augur (5) deals 1 damage to Thopter Mechanic (74).
+19	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Thopter Mechanic (74).
+19	B's Combat Damage Step	DAMAGE	Drake Token (105) deals 2 damage to Hope of Ghirapur (50).
+19	B's Combat Damage Step	DAMAGE	Drake Token (121) deals 2 damage to Thopter Token (93).
+19	B's Combat Damage Step	DAMAGE	Drake Token (140) deals 2 damage to Thopter Token (99).
+19	B's Combat Damage Step	DAMAGE*	Aquamoeba (33) deals 1 damage to Sai, Master Thopterist (81).
+19	B's Combat Damage Step	DAMAGE	Vodalian Arcanist (29) deals 1 damage to Spectrum Sentinel (47).
+19	B's Combat Damage Step	DAMAGE	Volshe Tideturner (39) deals 1 damage to Etherium Sculptor (76).
+19	B's Combat Damage Step	DAMAGE*	Myr Quadropod (4) deals 1 damage to Phyrexian Germ Token (90).
+19	B's Combat Damage Step	LIFE	Life: A 9 > 0

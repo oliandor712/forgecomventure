@@ -4,9 +4,9 @@ Description=Tier 4 (Bracket 4). white-black-green The Necrobloom deck. Built dow
 [Commander]
 1 The Necrobloom|MH3
 [Main]
-6 Plains|FDN
-5 Swamp|FDN
-9 Forest|FDN
+5 Plains|FDN
+4 Swamp|FDN
+11 Forest|FDN
 1 Ash Barrens|TMC
 1 Canopy Vista|BFZ
 1 Command Tower|TMC
@@ -24,58 +24,58 @@ Description=Tier 4 (Bracket 4). white-black-green The Necrobloom deck. Built dow
 1 Secluded Steppe|ONS
 1 Corrupted Conviction|OTJ
 1 Eaten Alive|FDN
-1 Loran's Escape|BRO
 1 Path to Exile|CFX
+1 Portcullis Vine|M21
 1 Revitalizing Repast|MH3
 1 Snakeskin Veil|TDM
 1 Snarling Gorehound|MKM
 1 Swords to Plowshares|ICE
 1 Bristly Bill, Spine Sower|OTJ
-1 Deadly Dispute|AFR
 1 Despark|WAR
-1 Disenchant|FDN
-1 Endless Atlas|CMM
 1 Finneas, Ace Archer|BLB
 1 Idol of Oblivion|M3C
+1 Ilysian Caryatid|THB
+1 Intangible Virtue|ISD
 1 Lluwen, Imperfect Naturalist|ECL
 1 Nature's Lore|5ED
 1 Rampant Growth|M12
 1 Sakura-Tribe Elder|CHK
 1 Selfless Spirit|EMN
+1 Sign in Blood|M15
 1 Swiftfoot Boots|FDN
-1 Utopia Tree|9ED
 1 Vine Trellis|8ED
+1 Wall of Roots|MIR
 1 Wight of the Reliquary|MH3
 1 Abzan Charm|KTK
-1 Archaeomancer's Map|SOC
+1 Ayara, First of Locthwain|ELD
 1 Bastion of Remembrance|TLE
+1 Bridgeworks Battle|MH3
 1 Cultivate|TMC
 1 Dune Chanter|OTC
-1 Eternal Witness|5DN
+1 Inspiring Call|TLE
+1 Loxodon Warhammer|MRD
 1 Mentor of the Meek|J25
 1 Mortify|FDN
 1 Mythos of Nethroi|IKO
-1 Nettlecyst|MH2
-1 Phyrexian Arena|FDN
+1 Patchwork Banner|BLB
 1 Putrefy|DGM
 1 Search for Tomorrow|TSP
-1 Staff of Compleation|ONE
 1 Topiary Stomper|SNC
 1 Uktabi Orangutan|6ED
+1 Aetherflux Reservoir|KLD
 1 Bristlebud Farmer|BIG
-1 Crippling Fear|KHM
+1 Conduit of Worlds|ONE
 1 Emeria Angel|ZEN
 1 Felidar Retreat|FDN
 1 Harmonize|TMC
-1 Loyal Unicorn|CMM
-1 Mangara, the Diplomat|CMM
+1 Maskwood Nexus|KHM
+1 Rampant Rejuvenator|FIC
 1 Retreat to Emeria|BFZ
 1 Witch Enchanter|MH3
 1 Elfsworn Giant|FDN
 1 Embodiment of Insight|OGW
 1 Fell the Mighty|MKC
 1 Maja, Bretagard Protector|KHM
-1 Ob Nixilis Reignited|BFZ
 1 Return of the Wildspeaker|ELD
 1 Territory Culler|MH3
 1 Zendikar's Roil|ORI
