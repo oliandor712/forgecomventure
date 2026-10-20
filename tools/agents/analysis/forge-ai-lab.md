@@ -359,3 +359,53 @@ Object ids on the activation line will settle it.
 1. A switch on an unblocked attacker is the reliable win, and v3 takes those.
 2. The remaining upside is gang blocks: evaluate a blocker's pump with the whole block's damage.
 3. Don't pay for a patch with no scenario: 006 only matters for decks built around Fogs.
+
+## 2026-10-20: s008 gang-block patch review
+
+Request: Check whether 008 shows up in s008-code (g0 T13, g7 T37); is a controlled gang-block scenario the right next test; merge 008 into 005 or keep separate.
+
+**Data.** `patches/008-pump-gang-block.patch`; `results/s008-code` g0 T13 and g7 T37, with the new zone-change and
+stack lines.
+
+### Does 008 show up? No: neither activation reaches the changed code
+
+- **g0 T13:** Myr Quadropod was attacking, unblocked. It switched and hit for 4 (B 18 to 11). Useful, but this is
+  005's unblocked-attacker case.
+- **g7 T37:** Turtleshell was attacking, and A activated it twice in declare blockers.
+  - In between, B sacrificed a run of artifacts to Sai's ability: Thopters, Hope of Ghirapur and equipment, all shown
+    as zone changes. That changed the combat.
+  - The second activation reads as a switch back after the blocks changed. That's legal under 005's "one switch and
+    one switch back" rule and plausibly correct, but the log doesn't show Turtleshell's own blocks or damage, so it
+    can't be judged.
+- **Why 008 never ran:** it changes `shouldPumpCard`'s blocker branch, so it only runs when the AI's creature is one
+  of several blockers on the same attacker. Neither activation was a block.
+
+### Next test: yes, a controlled gang-block scenario, plus a regression sim
+
+1. **Gang block (what 008 is for):**
+   - The Alandra deck defends with several 1-power and 4-toughness blockers, switch cards included.
+   - The opponent deck attacks with one or two big creatures: 5/5 to 7/7 green or red fatties from `decks/tier3`,
+     with mono-green T3 and T4 decks as opponents.
+   - Both sides at 20 life, 10 games per arm, same seeds where possible.
+   - Measure the gang-block combats where a switched blocker completes a kill, base against code. The code arm should
+     kill the big attacker more often, without losing more blockers.
+2. **Regression, because 008 changes every Pump decision while blocking:**
+   - Pick 4 ordinary decks with pump instants, such as Giant Growth or Brute Force, from tiers 2-4 (search for
+     `Pump` + `NumAtt$` instants in their lists).
+   - Play 10 games each, base against code, at equal life.
+   - Report pump casts, combat kills and win rate. Any big change in pump casts is a red flag to investigate before
+     proposing.
+
+### Merge into 005 or keep separate? Keep 008 separate
+
+- **005** changes only SwitchPT handling in PumpAi.
+- **008** changes the shared `ComputerUtilCard.shouldPumpCard` that every pump spell and ability uses. It needs its own
+  regression result and its own approval box.
+- **005 works without 008.** 008 only adds the gang-block cases. On the checklist: 008 is a separate item, and 005's
+  note says "better with 008".
+
+**Rules to apply:**
+1. Check that a test reaches the changed code before reading its results. Here, a gang block with a flagged card
+   among the blockers.
+2. A change to shared helpers like `shouldPumpCard` needs a regression sim on ordinary decks before it's proposed.
+3. Keep separate patches separate when their reach differs, so each can be approved on its own evidence.
