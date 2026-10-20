@@ -1,0 +1,101 @@
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	B's Upkeep step	ZONE_CHANGE	B milled Otepec Huntmaster (43).
+11	B's Upkeep step	ZONE_CHANGE*	B milled Expedite (71).
+11	B's Upkeep step	ZONE_CHANGE	B milled Kessig Flamebreather (72).
+11	B's Upkeep step	ZONE_CHANGE	B milled Mountain (57).
+11	B's Upkeep step	ZONE_CHANGE	B milled Mountain (47).
+11	B's Upkeep step	ZONE_CHANGE	B milled Mountain (48).
+11	B's Upkeep step	ZONE_CHANGE	B milled Mountain (55).
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Main phase, precombat	STACK_ADD	B activated Kiki-Jiki, Mirror Breaker targeting [Young Pyromancer (79)]
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Attackers Step	COMBAT	B assigned Young Pyromancer (178), Young Pyromancer (79) and Akki Scrapchomper (67) to attack A.
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's Declare Blockers Step	COMBAT	A didn't block Young Pyromancer (178). A didn't block Young Pyromancer (79). A assigned Utopia Mycon (11) to block Akki Scrapchomper (67).
+11	B's Declare Blockers Step	STACK_ADD*	B cast Monstrous Rage targeting [Akki Scrapchomper (67)]
+11	B's Declare Blockers Step	STACK_ADD	B triggered Young Pyromancer
+11	B's Declare Blockers Step	STACK_ADD	B triggered Young Pyromancer
+11	B's Declare Blockers Step	STACK_RESOLVE*	Whenever you cast an instant or sorcery spell, create a 1/1 red Elemental creature token. [Card: Monstrous Rage (65), Activator: B, SpellAbility: Target creature gets +2/+0 until end of turn. Create a Monster Role token attached to it. (If you control another Role on it, put that one into the graveyard. Enchanted creature gets +1/+1 and has trample.) ]
+11	B's Declare Blockers Step	STACK_RESOLVE*	Whenever you cast an instant or sorcery spell, create a 1/1 red Elemental creature token. [Card: Monstrous Rage (65), Activator: B, SpellAbility: Target creature gets +2/+0 until end of turn. Create a Monster Role token attached to it. (If you control another Role on it, put that one into the graveyard. Enchanted creature gets +1/+1 and has trample.) ]
+11	B's Declare Blockers Step	STACK_RESOLVE*	Monstrous Rage (65) - Akki Scrapchomper (67) gets +2/+0  until end of turn. 
+11	B's Declare Blockers Step	STACK_ADD*	A cast Echoing Courage targeting [Utopia Mycon (11)]
+11	B's Declare Blockers Step	STACK_RESOLVE*	Echoing Courage (5) - Utopia Mycon (11) gets +2/+2  until end of turn. 
+11	B's Declare Blockers Step	ZONE_CHANGE	Shroofus Sproutsire (40) was put into Graveyard from Battlefield.
+11	B's Declare Blockers Step	STACK_ADD	A cast Gaea's Gift targeting [Utopia Mycon (11)]
+11	B's Declare Blockers Step	STACK_ADD	B cast Return the Favor
+11	B's Declare Blockers Step	STACK_ADD	B triggered Young Pyromancer
+11	B's Declare Blockers Step	STACK_ADD	B triggered Young Pyromancer
+11	B's Declare Blockers Step	STACK_ADD	B cast Gaea's Gift targeting [Akki Scrapchomper (67)]
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's First Strike Damage Step	DAMAGE	Young Pyromancer (79) deals 2 combat damage to A.
+11	B's First Strike Damage Step	LIFE	Life: A 14 > 12
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's Combat Damage Step	DAMAGE	Young Pyromancer (178) deals 2 combat damage to A.
+11	B's Combat Damage Step	DAMAGE	Young Pyromancer (79) deals 2 combat damage to A.
+11	B's Combat Damage Step	DAMAGE	Akki Scrapchomper (67) deals 5 damage to Utopia Mycon (11).
+11	B's Combat Damage Step	DAMAGE	Utopia Mycon (11) deals 3 damage to Akki Scrapchomper (67).
+11	B's Combat Damage Step	LIFE	Life: A 12 > 8
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's End step	PHASE	B's End step
+11	B's End step	STACK_ADD	B triggered Kiki-Jiki, Mirror Breaker
+11	B's End step	ZONE_CHANGE	Young Pyromancer (178) was put into Graveyard from Battlefield.
+11	B's Cleanup step	PHASE	B's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+13	B's Upkeep step	ZONE_CHANGE	B milled Exuberant Firestoker (76).
+13	B's Upkeep step	ZONE_CHANGE	B milled Mountain (50).
+13	B's Upkeep step	ZONE_CHANGE	B milled Mountain (58).
+13	B's Upkeep step	ZONE_CHANGE	B milled Smokebraider (63).
+13	B's Upkeep step	ZONE_CHANGE*	B milled Unleash Fury (69).
+13	B's Upkeep step	ZONE_CHANGE	B milled Mountain (51).
+13	B's Upkeep step	ZONE_CHANGE	B milled Thermo-Alchemist (42).
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Main phase, precombat	STACK_ADD	B activated Kiki-Jiki, Mirror Breaker targeting [Akki Scrapchomper (67)]
+13	B's Main phase, precombat	STACK_ADD	B cast Mask of Memory
+13	B's Main phase, precombat	ZONE_CHANGE	Mask of Memory (68) was put into Graveyard from Battlefield.
+13	B's Main phase, precombat	STACK_ADD	B activated Akki Scrapchomper
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Akki Scrapchomper (67), Young Pyromancer (79), Elemental Token (188), Elemental Token (192), Elemental Token (206) and Elemental Token (210) to attack A.
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A didn't block Akki Scrapchomper (67). A assigned Utopia Mycon (11) to block Young Pyromancer (79). A didn't block Elemental Token (188). A didn't block Elemental Token (192). A didn't block Elemental Token (206). A didn't block Elemental Token (210).
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's First Strike Damage Step	DAMAGE	Young Pyromancer (79) deals 2 damage to Utopia Mycon (11).
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Akki Scrapchomper (67) deals 3 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Young Pyromancer (79) deals 2 damage to Utopia Mycon (11).
+13	B's Combat Damage Step	DAMAGE	Elemental Token (188) deals 1 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Elemental Token (192) deals 1 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Elemental Token (206) deals 1 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Elemental Token (210) deals 1 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Utopia Mycon (11) deals 1 damage to Young Pyromancer (79).
+13	B's Combat Damage Step	LIFE	Life: A 8 > 1
+13	B's Combat Damage Step	ZONE_CHANGE	Young Pyromancer (79) was put into Graveyard from Battlefield.
+13	B's Combat Damage Step	ZONE_CHANGE	Utopia Mycon (11) was put into Graveyard from Battlefield.
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's End step	PHASE	B's End step
+13	B's End step	STACK_ADD	B triggered Kiki-Jiki, Mirror Breaker
+13	B's End step	ZONE_CHANGE	Akki Scrapchomper (242) was put into Graveyard from Battlefield.
+13	B's Cleanup step	PHASE	B's Cleanup step

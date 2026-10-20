@@ -1,0 +1,34 @@
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Main phase, precombat	STACK_ADD	B activated Kiki-Jiki, Mirror Breaker targeting [Dragonspeaker Shaman (74)]
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Beginning of Combat Step	STACK_ADD*	A cast Overprotect targeting [Shroofus Sproutsire (40)]
+10	A's Beginning of Combat Step	STACK_ADD	A triggered Season of Growth
+10	A's Beginning of Combat Step	STACK_RESOLVE*	Whenever you cast a spell that targets a creature you control, draw a card. [Card: Overprotect (34), Activator: A, SpellAbility: Target creature you control gets +3/+3 and gains trample, hexproof, and indestructible until end of turn.]
+10	A's Beginning of Combat Step	STACK_RESOLVE*	Overprotect (34) - Shroofus Sproutsire (40) gets +3/+3 and gains trample, hexproof, and indestructible until end of turn.
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Shroofus Sproutsire (40) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B assigned Dragonspeaker Shaman (101) to block Shroofus Sproutsire (40).
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Shroofus Sproutsire (40) deals 2 combat damage to B.
+10	A's Combat Damage Step	DAMAGE	Shroofus Sproutsire (40) deals 2 damage to Dragonspeaker Shaman (101).
+10	A's Combat Damage Step	DAMAGE	Dragonspeaker Shaman (101) deals 2 damage to Shroofus Sproutsire (40).
+10	A's Combat Damage Step	LIFE	Life: B 20 > 18
+10	A's Combat Damage Step	ZONE_CHANGE	Dragonspeaker Shaman (101) was put into Graveyard from Battlefield.
+10	A's Combat Damage Step	STACK_ADD	A triggered Shroofus Sproutsire
+10	A's Combat Damage Step	STACK_ADD	A triggered Season of Growth
+10	A's Combat Damage Step	STACK_ADD	A triggered Season of Growth
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A cast Aftermath Analyst
+10	A's Main phase, postcombat	STACK_ADD	A triggered Season of Growth
+10	A's Main phase, postcombat	STACK_ADD	A triggered Aftermath Analyst
+10	A's Main phase, postcombat	ZONE_CHANGE*	A milled Echoing Courage (5), Birds of Paradise (38) and Forest (16).
+10	A's End step	PHASE	A's End step
+10	A's End step	STACK_ADD	B triggered Kiki-Jiki, Mirror Breaker
+10	A's Cleanup step	PHASE	A's Cleanup step

@@ -1,0 +1,90 @@
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Main phase, precombat	STACK_ADD	A cast Explore
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	COMBAT	A assigned Fyndhorn Elves (30) and Shroofus Sproutsire (40) to attack B.
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's Declare Blockers Step	COMBAT	B didn't block Fyndhorn Elves (30). B didn't block Shroofus Sproutsire (40).
+6	A's Declare Blockers Step	STACK_ADD*	A cast Overprotect targeting [Fyndhorn Elves (30)]
+6	A's Declare Blockers Step	STACK_RESOLVE*	Overprotect (34) - Fyndhorn Elves (30) gets +3/+3 and gains trample, hexproof, and indestructible until end of turn.
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's Combat Damage Step	DAMAGE	Fyndhorn Elves (30) deals 4 combat damage to B.
+6	A's Combat Damage Step	DAMAGE	Shroofus Sproutsire (40) deals 1 combat damage to B.
+6	A's Combat Damage Step	LIFE	Life: B 20 > 15
+6	A's Combat Damage Step	STACK_ADD	A triggered Shroofus Sproutsire
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+7	A's Cleanup step	TURN	Turn 7 (B)
+7	B's Untap step	PHASE	B's Untap step
+7	B's Upkeep step	PHASE	B's Upkeep step
+7	B's Draw step	PHASE	B's Draw step
+7	B's Main phase, precombat	PHASE	B's Main phase, precombat
+7	B's Main phase, precombat	STACK_ADD	B activated Mask of Memory targeting [Akki Ronin (62)]
+7	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+7	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+7	B's Declare Attackers Step	COMBAT	B assigned Akki Ronin (62) to attack A.
+7	B's Declare Attackers Step	STACK_ADD	B triggered Akki Ronin
+7	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+7	B's Declare Blockers Step	COMBAT	A didn't block Akki Ronin (62).
+7	B's Declare Blockers Step	STACK_ADD*	B cast Monstrous Rage targeting [Akki Ronin (62)]
+7	B's Declare Blockers Step	STACK_RESOLVE*	Monstrous Rage (65) - Akki Ronin (62) gets +2/+0  until end of turn. 
+7	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+7	B's Combat Damage Step	PHASE	B's Combat Damage Step
+7	B's Combat Damage Step	DAMAGE	Akki Ronin (62) deals 4 combat damage to A.
+7	B's Combat Damage Step	LIFE	Life: A 19 > 15
+7	B's Combat Damage Step	STACK_ADD	B triggered Mask of Memory
+7	B's End of Combat Step	PHASE	B's End of Combat Step
+7	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+7	B's End step	PHASE	B's End step
+7	B's Cleanup step	PHASE	B's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+14	A's Upkeep step	ZONE_CHANGE	A milled Forest (27).
+14	A's Upkeep step	ZONE_CHANGE*	A milled Echoing Courage (5).
+14	A's Upkeep step	ZONE_CHANGE	A milled Fungal Plots (6).
+14	A's Upkeep step	ZONE_CHANGE	A milled Forest (18).
+14	A's Upkeep step	ZONE_CHANGE	A milled Boreal Druid (7).
+14	A's Upkeep step	ZONE_CHANGE	A milled Utopia Mycon (11).
+14	A's Upkeep step	ZONE_CHANGE	A milled Forest (21).
+14	A's Upkeep step	ZONE_CHANGE	A milled Forest (16).
+14	A's Upkeep step	ZONE_CHANGE	A milled Forest (24).
+14	A's Upkeep step	ZONE_CHANGE	A milled Llanowar Elves (9).
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Champion of Lambholt (3), Fyndhorn Elves (30), Shroofus Sproutsire (40), Saproling Token (86), Saproling Token (92), Saproling Token (94), Saproling Token (105), Saproling Token (107), Saproling Token (109), Saproling Token (111) and Saproling Token (112) to attack B.
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B didn't block Champion of Lambholt (3). B didn't block Fyndhorn Elves (30). B didn't block Shroofus Sproutsire (40). B didn't block Saproling Token (86). B didn't block Saproling Token (92). B didn't block Saproling Token (94). B didn't block Saproling Token (105). B didn't block Saproling Token (107). B didn't block Saproling Token (109). B didn't block Saproling Token (111). B didn't block Saproling Token (112).
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Champion of Lambholt (3) deals 7 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Fyndhorn Elves (30) deals 1 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Shroofus Sproutsire (40) deals 1 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Saproling Token (86) deals 1 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Saproling Token (92) deals 1 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Saproling Token (94) deals 1 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Saproling Token (105) deals 1 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Saproling Token (107) deals 1 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Saproling Token (109) deals 1 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Saproling Token (111) deals 1 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Saproling Token (112) deals 1 combat damage to B.
+14	A's Combat Damage Step	LIFE	Life: B 2 > -15

@@ -1,0 +1,128 @@
+8	A's Cleanup step	TURN	Turn 8 (B)
+8	B's Untap step	PHASE	B's Untap step
+8	B's Upkeep step	PHASE	B's Upkeep step
+8	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+8	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+8	B's Upkeep step	ZONE_CHANGE	B milled Racers' Ring (74).
+8	B's Upkeep step	ZONE_CHANGE*	B milled Bite Down (65).
+8	B's Draw step	PHASE	B's Draw step
+8	B's Main phase, precombat	PHASE	B's Main phase, precombat
+8	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+8	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+8	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+8	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+8	B's Combat Damage Step	PHASE	B's Combat Damage Step
+8	B's End of Combat Step	PHASE	B's End of Combat Step
+8	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+8	B's Main phase, postcombat	STACK_ADD	B cast Go-Shintai of Boundless Vigor
+8	B's Main phase, postcombat	STACK_ADD	B cast Arcane Signet
+8	B's End step	PHASE	B's End step
+8	B's End step	STACK_ADD	B triggered Go-Shintai of Boundless Vigor
+8	B's End step	STACK_ADD	B triggered Go-Shintai of Boundless Vigor targeting [Go-Shintai of Boundless Vigor (76)]
+8	B's Cleanup step	PHASE	B's Cleanup step
+10	A's Cleanup step	TURN	Turn 10 (B)
+10	B's Untap step	PHASE	B's Untap step
+10	B's Upkeep step	PHASE	B's Upkeep step
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+10	B's Upkeep step	ZONE_CHANGE	B milled Forest (64).
+10	B's Upkeep step	ZONE_CHANGE	B milled Trash the Town (77).
+10	B's Upkeep step	ZONE_CHANGE	B milled Gaea's Gift (68).
+10	B's Upkeep step	ZONE_CHANGE	B milled Rograkh, Son of Rohgahh (75).
+10	B's Upkeep step	ZONE_CHANGE	B milled Sol Ring (42).
+10	B's Draw step	PHASE	B's Draw step
+10	B's Main phase, precombat	PHASE	B's Main phase, precombat
+10	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+10	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+10	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+10	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+10	B's Combat Damage Step	PHASE	B's Combat Damage Step
+10	B's End of Combat Step	PHASE	B's End of Combat Step
+10	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+10	B's Main phase, postcombat	STACK_ADD	B cast Zilortha, Strength Incarnate
+10	B's Main phase, postcombat	STACK_ADD*	B cast Tail Swipe targeting [Zilortha, Strength Incarnate (81)] [Marwyn, the Preserver (37)]
+10	B's Main phase, postcombat	DAMAGE	Zilortha, Strength Incarnate (81) deals 8 damage to Marwyn, the Preserver (37).
+10	B's Main phase, postcombat	DAMAGE	Marwyn, the Preserver (37) deals 5 damage to Zilortha, Strength Incarnate (81).
+10	B's Main phase, postcombat	STACK_RESOLVE*	Tail Swipe (54) - Zilortha, Strength Incarnate (81) gets +1/+1  until end of turn. Then the chosen creatures fight each other. (They each deal damage equal to their power to the other.)
+10	B's Main phase, postcombat	ZONE_CHANGE	Marwyn, the Preserver (37) was put into Graveyard from Battlefield.
+10	B's Main phase, postcombat	ZONE_CHANGE	Rancor (13) was put into Graveyard from Battlefield.
+10	B's Main phase, postcombat	STACK_ADD	A triggered Rancor
+10	B's End step	PHASE	B's End step
+10	B's End step	STACK_ADD	B triggered Go-Shintai of Boundless Vigor
+10	B's Cleanup step	PHASE	B's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	A's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+11	A's Upkeep step	ZONE_CHANGE	A milled Forest (17).
+11	A's Upkeep step	ZONE_CHANGE	A milled Wellwisher (5).
+11	A's Upkeep step	ZONE_CHANGE*	A milled Titanic Brawl (33).
+11	A's Upkeep step	ZONE_CHANGE	A milled Sylvan Ranger (12).
+11	A's Upkeep step	ZONE_CHANGE	A milled Over the Edge (36).
+11	A's Upkeep step	ZONE_CHANGE	A milled Forest (23).
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Main phase, precombat	STACK_ADD	A cast Rancor targeting [Legolas, Master Archer (40)]
+11	A's Main phase, precombat	STACK_ADD	A triggered Legolas, Master Archer
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD	A cast Elvish Visionary
+11	A's Main phase, postcombat	STACK_ADD	A triggered Elvish Visionary
+11	A's Main phase, postcombat	STACK_ADD	A cast Season of Growth
+11	A's Main phase, postcombat	STACK_ADD	A cast Hardened Scales
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+12	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+12	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+12	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+12	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+12	B's Upkeep step	STACK_ADD	A triggered Mesmeric Orb
+12	B's Upkeep step	ZONE_CHANGE*	B milled Ram Through (79).
+12	B's Upkeep step	ZONE_CHANGE	B milled Mountain (46).
+12	B's Upkeep step	ZONE_CHANGE	B milled Hidden Nursery (67).
+12	B's Upkeep step	ZONE_CHANGE	B milled Rampant Growth (72).
+12	B's Upkeep step	ZONE_CHANGE	B milled Forest (61).
+12	B's Upkeep step	ZONE_CHANGE	B milled Herd Heirloom (51).
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Main phase, precombat	STACK_ADD	B cast Go for Blood targeting [Zilortha, Strength Incarnate (81)] [Legolas, Master Archer (40)]
+12	B's Main phase, precombat	DAMAGE	Zilortha, Strength Incarnate (81) deals 7 damage to Legolas, Master Archer (40).
+12	B's Main phase, precombat	DAMAGE	Legolas, Master Archer (40) deals 4 damage to Zilortha, Strength Incarnate (81).
+12	B's Main phase, precombat	ZONE_CHANGE	Legolas, Master Archer (40) was put into Graveyard from Battlefield.
+12	B's Main phase, precombat	ZONE_CHANGE	Rancor (13) was put into Graveyard from Battlefield.
+12	B's Main phase, precombat	STACK_ADD	A triggered Rancor
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned Zilortha, Strength Incarnate (81), Stonecoil Serpent (78) and Go-Shintai of Boundless Vigor (76) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A didn't block Zilortha, Strength Incarnate (81). A didn't block Stonecoil Serpent (78). A didn't block Go-Shintai of Boundless Vigor (76).
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE	Zilortha, Strength Incarnate (81) deals 7 combat damage to A.
+12	B's Combat Damage Step	DAMAGE	Stonecoil Serpent (78) deals 2 combat damage to A.
+12	B's Combat Damage Step	LIFE	Life: B 20 > 22
+12	B's Combat Damage Step	DAMAGE	Go-Shintai of Boundless Vigor (76) deals 2 combat damage to A.
+12	B's Combat Damage Step	LIFE	Life: A 19 > 8
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's Main phase, postcombat	STACK_ADD	B cast Lifeblood Hydra
+12	B's End step	PHASE	B's End step
+12	B's End step	STACK_ADD	B triggered Go-Shintai of Boundless Vigor
+12	B's Cleanup step	PHASE	B's Cleanup step

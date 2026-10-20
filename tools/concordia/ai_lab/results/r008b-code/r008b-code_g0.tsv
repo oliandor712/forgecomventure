@@ -1,0 +1,54 @@
+8	A's Cleanup step	TURN	Turn 8 (B)
+8	B's Untap step	PHASE	B's Untap step
+8	B's Upkeep step	PHASE	B's Upkeep step
+8	B's Upkeep step	STACK_ADD	B cast Gaea's Gift targeting [Rograkh, Son of Rohgahh (75)]
+8	B's Draw step	PHASE	B's Draw step
+8	B's Main phase, precombat	PHASE	B's Main phase, precombat
+8	B's Main phase, precombat	STACK_ADD*	B cast Bite Down targeting [Rograkh, Son of Rohgahh (75)] [Llanowar Elves (9)]
+8	B's Main phase, precombat	DAMAGE	Rograkh, Son of Rohgahh (75) deals 1 damage to Llanowar Elves (9).
+8	B's Main phase, precombat	STACK_RESOLVE*	Bite Down (65) -  Rograkh, Son of Rohgahh (75) deals 1 damage to Llanowar Elves (9).
+8	B's Main phase, precombat	ZONE_CHANGE	Llanowar Elves (9) was put into Graveyard from Battlefield.
+8	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+8	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+8	B's Declare Attackers Step	COMBAT	B assigned Rograkh, Son of Rohgahh (75) to attack A.
+8	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+8	B's Declare Blockers Step	COMBAT	A didn't block Rograkh, Son of Rohgahh (75).
+8	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+8	B's First Strike Damage Step	DAMAGE	Rograkh, Son of Rohgahh (75) deals 1 combat damage to A.
+8	B's First Strike Damage Step	LIFE	Life: A 20 > 19
+8	B's Combat Damage Step	PHASE	B's Combat Damage Step
+8	B's End of Combat Step	PHASE	B's End of Combat Step
+8	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+8	B's End step	PHASE	B's End step
+8	B's Cleanup step	PHASE	B's Cleanup step
+24	A's Cleanup step	TURN	Turn 24 (B)
+24	B's Untap step	PHASE	B's Untap step
+24	B's Upkeep step	PHASE	B's Upkeep step
+24	B's Draw step	PHASE	B's Draw step
+24	B's Draw step	STACK_ADD*	B cast Tail Swipe targeting [Stonecoil Serpent (78)] [Wellwisher (5)]
+24	B's Draw step	DAMAGE	Stonecoil Serpent (78) deals 9 damage to Wellwisher (5).
+24	B's Draw step	DAMAGE	Wellwisher (5) deals 1 damage to Stonecoil Serpent (78).
+24	B's Draw step	STACK_RESOLVE*	Tail Swipe (54) - Stonecoil Serpent (78) gets +1/+1  until end of turn. Then the chosen creatures fight each other. (They each deal damage equal to their power to the other.)
+24	B's Draw step	ZONE_CHANGE	Wellwisher (5) was put into Graveyard from Battlefield.
+24	B's Main phase, precombat	PHASE	B's Main phase, precombat
+24	B's Main phase, precombat	STACK_ADD	B cast Go for Blood targeting [Stonecoil Serpent (78)] [Sylvan Ranger (12)]
+24	B's Main phase, precombat	DAMAGE	Stonecoil Serpent (78) deals 9 damage to Sylvan Ranger (12).
+24	B's Main phase, precombat	DAMAGE	Sylvan Ranger (12) deals 1 damage to Stonecoil Serpent (78).
+24	B's Main phase, precombat	ZONE_CHANGE	Sylvan Ranger (12) was put into Graveyard from Battlefield.
+24	B's Main phase, precombat	STACK_ADD	B activated Shadowspear targeting [Stonecoil Serpent (78)]
+24	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+24	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+24	B's Declare Attackers Step	COMBAT	B assigned Stonecoil Serpent (78), Go-Shintai of Boundless Vigor (76) and Otepec Huntmaster (43) to attack A.
+24	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+24	B's Declare Blockers Step	COMBAT	A assigned Aftermath Analyst (4) to block Stonecoil Serpent (78). A assigned Marwyn, the Preserver (37) to block Go-Shintai of Boundless Vigor (76). A didn't block Otepec Huntmaster (43).
+24	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+24	B's Combat Damage Step	PHASE	B's Combat Damage Step
+24	B's Combat Damage Step	DAMAGE	Stonecoil Serpent (78) deals 7 combat damage to A.
+24	B's Combat Damage Step	DAMAGE	Stonecoil Serpent (78) deals 3 damage to Aftermath Analyst (4).
+24	B's Combat Damage Step	LIFE	Life: B 23 > 33
+24	B's Combat Damage Step	DAMAGE	Go-Shintai of Boundless Vigor (76) deals 4 combat damage to A.
+24	B's Combat Damage Step	DAMAGE	Go-Shintai of Boundless Vigor (76) deals 2 damage to Marwyn, the Preserver (37).
+24	B's Combat Damage Step	DAMAGE	Otepec Huntmaster (43) deals 1 combat damage to A.
+24	B's Combat Damage Step	DAMAGE	Aftermath Analyst (4) deals 1 damage to Stonecoil Serpent (78).
+24	B's Combat Damage Step	DAMAGE	Marwyn, the Preserver (37) deals 5 damage to Go-Shintai of Boundless Vigor (76).
+24	B's Combat Damage Step	LIFE	Life: A 11 > -1
