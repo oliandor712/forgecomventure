@@ -4,61 +4,64 @@ Description=Tier 1 (Bracket 1). Mono-black Falthis, Shadowcat Familiar deck.
 [Commander]
 1 Falthis, Shadowcat Familiar|CMR
 [Main]
-42 Swamp|FDN
+39 Swamp|FDN
+1 Bojuka Bog|WWK
+1 Barren Moor|ONS
+1 Temple of the False God|SCG
 1 Banehound|WAR
 1 Dreadmalkin|WAR
 1 Dream Beavers|TMT
 1 Haunt of the Dead Marshes|LTR
 1 Warehouse Tabby|WOE
-1 Baleful Eidolon|THS
+1 Abyssal Gatekeeper|WTH
+1 Arcane Signet|TMC
 1 Black Cat|M15
-1 Boot Nipper|IKO
-1 Claim of Erebos|BNG
-1 Dai Li Censor|TLE
-1 Drudge Skeletons|M10
-1 Durable Coilbug|IKO
+1 Dire Fleet Hoarder|XLN
 1 Easterling Vanguard|LTR
-1 Felhide Brawler|BNG
-1 Grim Roustabout|RTR
-1 Jousting Lance|DOM
 1 Kalastria Healer|BFZ
 1 Lampad of Death's Vigil|THB
+1 Lazotep Reaver|WAR
 1 Malakir Blood-Priest|ZNR
+1 Mask of Memory|MRD
 1 Miasmic Mummy|AKH
+1 Mind Stone|10E
+1 Mindcrank|NPH
+1 Ransack the Lab|MH1
 1 Tattered Mummy|M19
 1 Thrill-Kill Assassin|RVR
-1 Walking Corpse|M21
+1 Umbral Collar Zealot|EOE
+1 Unlikely Aid|IKO
 1 Watchers of the Dead|AKH
 1 Wicked Visitor|WOE
+1 Buried Alive|ODY
 1 Chrome Cat|SNC
-1 Cursed Minotaur|AKH
-1 Dead Reveler|RTR
+1 Essence Harvest|AVR
+1 Faceless Devourer|TSP
+1 Footsteps of the Goryo|SOK
 1 Gibbering Barricade|DMU
 1 Gloom Pangolin|IKO
 1 Gravegouger|TOR
+1 Grim Affliction|NPH
 1 Grimdancer|IKO
-1 Guardians of Meletis|ORI
-1 Marauding Boneslasher|HOU
 1 Myrkul's Invoker|CLB
-1 Nirkana Assassin|BFZ
-1 Rakdos Drake|DGM
-1 Servant of Nefarox|M13
-1 Spark Reaper|WAR
+1 Nuka-Cola Vending Machine|PIP
+1 Shimmer Myr|CMM
 1 Stonework Puma|ZEN
 1 Venomized Cat|SPM
-1 Brink of Disaster|M12
+1 Yahenni, Undying Partisan|CMM
+1 Ashiok's Reaper|WOE
 1 Faceless Butcher|TOR
+1 Graveshifter|ECL
 1 Hell Mongrel|MH2
 1 Insatiable Hemophage|IKO
-1 Jade Idol|CHK
-1 Serrated Arrows|HML
+1 Jhoira's Familiar|DOM
 1 Skyclave Shadowcat|ZNR
 1 Stallion of Ashmouth|SOI
-1 Death of a Thousand Stings|SOK
-1 Join the Maestros|SNC
-1 Meteorite|DMU
-1 Rise Again|M21
-1 Unbreakable Bond|IKO
-1 Urborg Uprising|APC
-1 Corrupt|7ED
+1 Cavern Whisperer|IKO
+1 Fear of the Dark|DSK
+1 Sanguine Bond|IMA
+1 Soul Scourge|TOR
+1 Syr Konrad, the Grim|ELD
+1 Windgrace Acolyte|DOM
+1 Chittering Harvester|IKO
 1 Phyrexian Gargantua|CMM

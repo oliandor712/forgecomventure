@@ -4,63 +4,65 @@ Description=Tier 2 (Bracket 2). white-green Bess, Soul Nourisher deck. Built dow
 [Commander]
 1 Bess, Soul Nourisher|NCC
 [Main]
-14 Plains|FDN
+12 Plains|FDN
 20 Forest|FDN
 1 Blossoming Sands|BLB
 1 Botanical Plaza|SNC
 1 Cabaretti Courtyard|SNC
 1 Command Tower|TMC
-1 Arbor Elf|M13
-1 Elvish Skysweeper|RAV
-1 Secure the Wastes|DTK
-1 Sigarda's Aid|EMN
-1 Soul Warden|M10
+1 Vivid Grove|LRW
+1 Selesnya Sanctuary|RAV
+1 Colossus Hammer|M20
+1 Gods Willing|THS
+1 Relic of Progenitus|ALA
+1 Restoration Magic|FIN
+1 Sol Ring|TMC
 1 Tyvar's Stand|ONE
-1 Ainok Survivalist|C19
-1 Blackblade Reforged|DOM
-1 Destroy Evil|DMU
+1 Aftermath Analyst|MKM
+1 Arcane Signet|TMC
+1 Destiny Spinner|THB
 1 Elvish Visionary|ORI
 1 Gemhide Sliver|TSP
 1 Helpful Hunter|FDN
-1 Ichor Wellspring|MBS
 1 Ilysian Caryatid|THB
-1 Reprieve|LTR
+1 Incubation Druid|RNA
+1 Intangible Virtue|ISD
+1 Katilda, Dawnhart Prime|MID
+1 Mind Stone|10E
 1 Resolute Reinforcements|FDN
-1 Ruby Medallion|TMP
+1 Selfless Spirit|EMN
 1 Sky Crier|SNC
-1 Spirited Companion|NEO
 1 Urdnan, Dromoka Warrior|J25
-1 Wall of Blossoms|STH
-1 Banishing Light|EOE
+1 Afterlife|MMQ
+1 Aven Mindcensor|FUT
 1 Caustic Wasps|MMQ
-1 Crib Swap|CLB
+1 Champion of Lambholt|AVR
 1 Danitha Capashen, Paragon|DOM
-1 Elvish Rejuvenator|M19
+1 Deathmist Raptor|DTK
 1 Evolution Sage|WAR
 1 Fyndhorn Elder|8ED
 1 Ghostly Prison|CHK
-1 Heronblade Elite|MIC
-1 Kami of Whispered Hopes|MOM
+1 Invoke the Divine|KHM
+1 Krosan Grip|TSP
 1 Peregrin Took|LTR
-1 Pristine Talisman|NPH
-1 Secret Rendezvous|STX
+1 Scute Swarm|ZNR
+1 Shimmer Myr|CMM
 1 Skyscanner|M21
-1 Viridian Corrupter|MBS
-1 Armorcraft Judge|KLD
-1 Clever Concealment|MSC
+1 Cast Out|AKH
+1 Crush Contraband|GRN
 1 Explosive Vegetation|DTK
 1 Growing Ranks|PIO
 1 Harmonize|TMC
-1 Irregular Cohort|CLB
-1 Release the Dogs|FDN
+1 Mindless Automaton|CMR
 1 Renata, Called to the Hunt|THB
-1 Taj-Nar Swordsmith|MRD
+1 Shalai, Voice of Plenty|DOM
 1 Teshar, Ancestor's Apostle|CMM
 1 Timeless Witness|MH2
+1 Toski, Bearer of Secrets|KHM
 1 Triumph of the Hordes|NPH
+1 Acidic Slime|TMC
 1 Honden of Life's Web|CHK
-1 Mirari's Wake|JUD
-1 Overrun|FDN
+1 Jodah's Codex|DMU
 1 Soul's Majesty|CFX
 1 Sphere of Safety|RTR
 1 Thickest in the Thicket|FDC
@@ -69,5 +71,5 @@ Description=Tier 2 (Bracket 2). white-green Bess, Soul Nourisher deck. Built dow
 1 Generous Ent|LTR
 1 Angel of the Ruins|MH3
 1 Meteor Golem|FDN
-1 Titan of Industry|SNC
-1 Vanquish the Horde|TMC
+1 Not of This World|ROE
+1 Ondu Inversion|ZNR

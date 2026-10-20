@@ -1,0 +1,410 @@
+{
+ "budget_decks": 310,
+ "min_decks": 15,
+ "lands": {
+  "Command Tower": {
+   "decks": 280,
+   "colors": "",
+   "any_color": true
+  },
+  "Path of Ancestry": {
+   "decks": 145,
+   "colors": "",
+   "any_color": true
+  },
+  "Myriad Landscape": {
+   "decks": 126,
+   "colors": "",
+   "any_color": false
+  },
+  "Temple of the False God": {
+   "decks": 114,
+   "colors": "",
+   "any_color": false
+  },
+  "Rogue's Passage": {
+   "decks": 68,
+   "colors": "",
+   "any_color": false
+  },
+  "Reliquary Tower": {
+   "decks": 62,
+   "colors": "",
+   "any_color": false
+  },
+  "Bojuka Bog": {
+   "decks": 48,
+   "colors": "B",
+   "any_color": false
+  },
+  "Azorius Chancery": {
+   "decks": 37,
+   "colors": "UW",
+   "any_color": false
+  },
+  "Simic Growth Chamber": {
+   "decks": 34,
+   "colors": "GU",
+   "any_color": false
+  },
+  "Orzhov Basilica": {
+   "decks": 33,
+   "colors": "BW",
+   "any_color": false
+  },
+  "Forgotten Cave": {
+   "decks": 32,
+   "colors": "R",
+   "any_color": false
+  },
+  "Jungle Shrine": {
+   "decks": 32,
+   "colors": "GRW",
+   "any_color": false
+  },
+  "Seaside Citadel": {
+   "decks": 31,
+   "colors": "GUW",
+   "any_color": false
+  },
+  "Dimir Aqueduct": {
+   "decks": 30,
+   "colors": "BU",
+   "any_color": false
+  },
+  "Boros Garrison": {
+   "decks": 30,
+   "colors": "RW",
+   "any_color": false
+  },
+  "Barren Moor": {
+   "decks": 30,
+   "colors": "B",
+   "any_color": false
+  },
+  "Izzet Boilerworks": {
+   "decks": 29,
+   "colors": "RU",
+   "any_color": false
+  },
+  "Rakdos Carnarium": {
+   "decks": 29,
+   "colors": "BR",
+   "any_color": false
+  },
+  "Arcane Sanctum": {
+   "decks": 29,
+   "colors": "BUW",
+   "any_color": false
+  },
+  "Mystic Monastery": {
+   "decks": 29,
+   "colors": "RUW",
+   "any_color": false
+  },
+  "Tranquil Thicket": {
+   "decks": 28,
+   "colors": "G",
+   "any_color": false
+  },
+  "Secluded Steppe": {
+   "decks": 28,
+   "colors": "W",
+   "any_color": false
+  },
+  "Unclaimed Territory": {
+   "decks": 27,
+   "colors": "",
+   "any_color": true
+  },
+  "Gruul Turf": {
+   "decks": 27,
+   "colors": "GR",
+   "any_color": false
+  },
+  "Golgari Rot Farm": {
+   "decks": 27,
+   "colors": "BG",
+   "any_color": false
+  },
+  "Opal Palace": {
+   "decks": 27,
+   "colors": "",
+   "any_color": true
+  },
+  "Selesnya Sanctuary": {
+   "decks": 26,
+   "colors": "GW",
+   "any_color": false
+  },
+  "Crumbling Necropolis": {
+   "decks": 25,
+   "colors": "BRU",
+   "any_color": false
+  },
+  "Frontier Bivouac": {
+   "decks": 24,
+   "colors": "GRU",
+   "any_color": false
+  },
+  "Rupture Spire": {
+   "decks": 24,
+   "colors": "",
+   "any_color": true
+  },
+  "Savage Lands": {
+   "decks": 23,
+   "colors": "BGR",
+   "any_color": false
+  },
+  "Opulent Palace": {
+   "decks": 22,
+   "colors": "BGU",
+   "any_color": false
+  },
+  "Blighted Woodland": {
+   "decks": 22,
+   "colors": "",
+   "any_color": false
+  },
+  "Nomad Outpost": {
+   "decks": 22,
+   "colors": "BRW",
+   "any_color": false
+  },
+  "Sandsteppe Citadel": {
+   "decks": 21,
+   "colors": "BGW",
+   "any_color": false
+  },
+  "Thornwood Falls": {
+   "decks": 21,
+   "colors": "GU",
+   "any_color": false
+  },
+  "Thriving Isle": {
+   "decks": 21,
+   "colors": "U",
+   "any_color": true
+  },
+  "Thriving Heath": {
+   "decks": 21,
+   "colors": "W",
+   "any_color": true
+  },
+  "Lonely Sandbar": {
+   "decks": 21,
+   "colors": "U",
+   "any_color": false
+  },
+  "Secluded Courtyard": {
+   "decks": 19,
+   "colors": "",
+   "any_color": true
+  },
+  "Jungle Hollow": {
+   "decks": 19,
+   "colors": "BG",
+   "any_color": false
+  },
+  "Thriving Moor": {
+   "decks": 18,
+   "colors": "B",
+   "any_color": true
+  },
+  "Tainted Field": {
+   "decks": 18,
+   "colors": "BW",
+   "any_color": false
+  },
+  "Buried Ruin": {
+   "decks": 18,
+   "colors": "",
+   "any_color": false
+  },
+  "Dismal Backwater": {
+   "decks": 16,
+   "colors": "BU",
+   "any_color": false
+  },
+  "Vivid Creek": {
+   "decks": 16,
+   "colors": "U",
+   "any_color": true
+  },
+  "Thriving Grove": {
+   "decks": 16,
+   "colors": "G",
+   "any_color": true
+  },
+  "Vivid Grove": {
+   "decks": 16,
+   "colors": "G",
+   "any_color": true
+  },
+  "Ghost Quarter": {
+   "decks": 16,
+   "colors": "",
+   "any_color": false
+  },
+  "Scoured Barrens": {
+   "decks": 16,
+   "colors": "BW",
+   "any_color": false
+  },
+  "Thriving Bluff": {
+   "decks": 15,
+   "colors": "R",
+   "any_color": true
+  },
+  "Swiftwater Cliffs": {
+   "decks": 15,
+   "colors": "RU",
+   "any_color": false
+  },
+  "Tainted Wood": {
+   "decks": 15,
+   "colors": "BG",
+   "any_color": false
+  },
+  "Study Hall": {
+   "decks": 15,
+   "colors": "",
+   "any_color": true
+  }
+ },
+ "rocks": {
+  "Sol Ring": {
+   "decks": 298,
+   "cmc": 1,
+   "colors": "",
+   "any_color": false
+  },
+  "Arcane Signet": {
+   "decks": 223,
+   "cmc": 2,
+   "colors": "",
+   "any_color": true
+  },
+  "Commander's Sphere": {
+   "decks": 122,
+   "cmc": 3,
+   "colors": "",
+   "any_color": true
+  },
+  "Mind Stone": {
+   "decks": 80,
+   "cmc": 2,
+   "colors": "",
+   "any_color": false
+  },
+  "Fellwar Stone": {
+   "decks": 75,
+   "cmc": 2,
+   "colors": "",
+   "any_color": true
+  },
+  "Thought Vessel": {
+   "decks": 46,
+   "cmc": 2,
+   "colors": "",
+   "any_color": false
+  },
+  "Orzhov Signet": {
+   "decks": 32,
+   "cmc": 2,
+   "colors": "BW",
+   "any_color": false
+  },
+  "Izzet Signet": {
+   "decks": 28,
+   "cmc": 2,
+   "colors": "RU",
+   "any_color": false
+  },
+  "Azorius Signet": {
+   "decks": 28,
+   "cmc": 2,
+   "colors": "UW",
+   "any_color": false
+  },
+  "Dimir Signet": {
+   "decks": 27,
+   "cmc": 2,
+   "colors": "BU",
+   "any_color": false
+  },
+  "Everflowing Chalice": {
+   "decks": 27,
+   "cmc": 0,
+   "colors": "",
+   "any_color": false
+  },
+  "Rakdos Signet": {
+   "decks": 25,
+   "cmc": 2,
+   "colors": "BR",
+   "any_color": false
+  },
+  "Simic Signet": {
+   "decks": 24,
+   "cmc": 2,
+   "colors": "GU",
+   "any_color": false
+  },
+  "Talisman of Dominance": {
+   "decks": 23,
+   "cmc": 2,
+   "colors": "BU",
+   "any_color": false
+  },
+  "Worn Powerstone": {
+   "decks": 22,
+   "cmc": 3,
+   "colors": "",
+   "any_color": false
+  },
+  "Unstable Obelisk": {
+   "decks": 21,
+   "cmc": 3,
+   "colors": "",
+   "any_color": false
+  },
+  "Talisman of Progress": {
+   "decks": 21,
+   "cmc": 2,
+   "colors": "UW",
+   "any_color": false
+  },
+  "Talisman of Creativity": {
+   "decks": 21,
+   "cmc": 2,
+   "colors": "RU",
+   "any_color": false
+  },
+  "Talisman of Conviction": {
+   "decks": 19,
+   "cmc": 2,
+   "colors": "RW",
+   "any_color": false
+  },
+  "Talisman of Indulgence": {
+   "decks": 17,
+   "cmc": 2,
+   "colors": "BR",
+   "any_color": false
+  },
+  "Boros Signet": {
+   "decks": 16,
+   "cmc": 2,
+   "colors": "RW",
+   "any_color": false
+  },
+  "Talisman of Hierarchy": {
+   "decks": 15,
+   "cmc": 2,
+   "colors": "BW",
+   "any_color": false
+  }
+ }
+}

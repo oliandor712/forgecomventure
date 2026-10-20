@@ -990,9 +990,9 @@
   "name": "Green Thornling 2",
   "sprite": "sprites/enemy/plant/hiddenbush.atlas",
   "deck": [
+   "decks/tier2/T2_G_Arasta.dck",
    "decks/tier2/T2_G_Rishkar.dck",
-   "decks/tier2/T2_G_Thrun.dck",
-   "decks/tier2/T2_G_Legolas.dck"
+   "decks/tier2/T2_G_Toski.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1016,9 +1016,9 @@
   "name": "Green Grove Sprite 2",
   "sprite": "sprites/enemy/fey/pixie_2.atlas",
   "deck": [
+   "decks/tier2/T2_G_Arasta.dck",
    "decks/tier2/T2_G_Rishkar.dck",
-   "decks/tier2/T2_G_Thrun.dck",
-   "decks/tier2/T2_G_Legolas.dck"
+   "decks/tier2/T2_G_Toski.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1042,9 +1042,9 @@
   "name": "Green Moss Bear 2",
   "sprite": "sprites/enemy/beast/bear/bear.atlas",
   "deck": [
+   "decks/tier2/T2_G_Arasta.dck",
    "decks/tier2/T2_G_Rishkar.dck",
-   "decks/tier2/T2_G_Thrun.dck",
-   "decks/tier2/T2_G_Legolas.dck"
+   "decks/tier2/T2_G_Toski.dck"
   ],
   "randomizeDeck": true,
   "ai": "",
@@ -1148,7 +1148,8 @@
   "deck": [
    "decks/tier2/T2_G_Arasta.dck",
    "decks/tier2/T2_G_Rishkar.dck",
-   "decks/tier2/T2_G_Thrun.dck"
+   "decks/tier2/T2_G_Thrun.dck",
+   "decks/tier2/T2_G_Toski.dck"
   ],
   "randomizeDeck": true,
   "ai": "",

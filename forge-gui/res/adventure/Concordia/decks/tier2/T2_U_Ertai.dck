@@ -4,33 +4,38 @@ Description=Tier 2 (Bracket 2). Mono-blue wizards and counters, built from the T
 [Commander]
 1 Ertai, Wizard Adept|EXO
 [Main]
-38 Island|FDN
+32 Island|FDN
+1 Lonely Sandbar|ONS
+1 Myriad Landscape|CMM
+1 Temple of the False God|SCG
+1 Rogue's Passage|FDN
+1 Reliquary Tower|M19
+1 Blighted Woodland|BFZ
 1 Ornithopter|M15
-1 Benthic Biomancer|RNA
 1 Brass Man|ARN
 1 Curiosity|ISD
 1 Flying Men|ARN
+1 Sol Ring|TMC
 1 Unsummon|FRA
 1 Arcane Denial|ALL
-1 Baral, Chief of Compliance|AER
+1 Arcane Signet|TMC
 1 Boomerang|10E
 1 Cloud of Faeries|WOC
-1 Counterspell|7ED
-1 Deranged Assistant|ISD
 1 Fog Bank|FDN
 1 Merfolk Looter|M12
 1 Mind Stone|WTH
+1 Naban, Dean of Iteration|DOM
+1 Pollywog Prodigy|BLC
 1 Sage Owl|M10
 1 Sky Diamond|CLB
+1 Stonybrook Banneret|MOR
 1 Storm Crow|9ED
 1 Sunken City|DRK
 1 Thalakos Seer|TMP
-1 Vodalian Arcanist|M21
 1 Apprentice Wizard|2XM
 1 Bottle Gnomes|10E
-1 Deny Entry|TLE
+1 Commander's Sphere|CMM
 1 Dissipate|MID
-1 Diviner's Wand|MOR
 1 Emry, Lurker of the Loch|ELD
 1 Exhaustion|9ED
 1 Flux Channeler|WAR
@@ -41,28 +46,29 @@ Description=Tier 2 (Bracket 2). Mono-blue wizards and counters, built from the T
 1 Theft of Dreams|EXO
 1 Time Ebb|M14
 1 Wall of Air|10E
+1 Worn Powerstone|MH3
 1 Archivist|9ED
 1 Archmage Emeritus|STX
 1 Clone|SLZ
 1 Concentrate|8ED
 1 Dancing Scimitar|9ED
+1 Dismiss|TMP
 1 Etched Oracle|5DN
+1 Fact or Fiction|INV
 1 Juggernaut|DMR
 1 Mistform Ultimus|LGN
-1 Null Brooch|EXO
-1 Rewind|PLST
-1 Skyship Weatherlight|PLS
+1 Soratami Savant|CHK
 1 Zephid's Embrace|PLST
 1 Air Elemental|M20
 1 Biting Tether|SHM
+1 Confirm Suspicions|SOI
 1 Evacuation|10E
-1 Lier, Disciple of the Drowned|MID
 1 Psychic Spiral|RTR
 1 Saruman the White|LTR
-1 Shipwreck Dowser|J25
+1 Sister of Silence|40K
 1 Arcanis the Omnipotent|FDN
 1 God-Pharaoh's Statue|WAR
 1 Mahamoti Djinn|PLST
-1 Rise from the Tides|SOI
+1 Pol Jamaar, Illusionist|J25
 1 Skittering Invasion|ROE
 1 Dig Through Time|SLZ

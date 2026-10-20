@@ -1,0 +1,3192 @@
+[
+ {
+  "tier": 1,
+  "file": "T1_W_Pianna.dck",
+  "name": "Nomad Patrol",
+  "commander": "Pianna, Nomad Captain",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Soldier",
+   "Nomad"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white human soldiers that swarm in together.",
+  "sprite": "sprites/enemy/monstrosity/harpy.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Anafenza.dck",
+  "name": "Kin-Tree Spirits",
+  "commander": "Anafenza, Kin-Tree Spirit",
+  "colors": "W",
+  "life": 10,
+  "theme": [
+   "Spirit",
+   "/bolster",
+   "/\\+1/\\+1 counter"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white spirits that bolster as they arrive.",
+  "sprite": "sprites/enemy/monstrosity/harpy.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Siani.dck",
+  "name": "Stormwing Flock",
+  "commander": "Siani, Eye of the Storm",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Bird",
+   "Drake",
+   "/Flying"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue birds and drakes that peck from the air.",
+  "sprite": "sprites/enemy/fey/pixie.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Malcolm.dck",
+  "name": "Reef Pirates",
+  "commander": "Malcolm, Keen-Eyed Navigator",
+  "colors": "U",
+  "life": 10,
+  "theme": [
+   "Pirate",
+   "Siren",
+   "Merfolk"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue pirates and sirens.",
+  "sprite": "sprites/enemy/fey/pixie_dimir.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Ozox.dck",
+  "name": "Clattering Bones",
+  "commander": "Ozox, the Clattering King",
+  "colors": "B",
+  "life": 10,
+  "theme": [
+   "Skeleton",
+   "Zombie"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black skeletons and zombies that keep coming back.",
+  "sprite": "sprites/enemy/plant/fungus.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Skitter.dck",
+  "name": "Sewer Rats",
+  "commander": "Lord Skitter, Sewer King",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Rat"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black rat swarm.",
+  "sprite": "sprites/enemy/plant/fungus.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Kreat.dck",
+  "name": "Goblin Mob",
+  "commander": "General Kreat, the Boltbringer",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Goblin"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red goblin mob.",
+  "sprite": "sprites/enemy/monstrosity/kavu.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Dori.dck",
+  "name": "Delvers' Hall",
+  "commander": "Dori, Bearer of Friends",
+  "colors": "R",
+  "life": 10,
+  "theme": [
+   "Dwarf",
+   "/Treasure"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red dwarves with a little treasure.",
+  "sprite": "sprites/enemy/fey/satyr.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Dwynen.dck",
+  "name": "Gilt-Leaf Elves",
+  "commander": "Dwynen, Gilt-Leaf Daen",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Elf"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green elves.",
+  "sprite": "sprites/enemy/plant/fungus_golgari.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Ruxa.dck",
+  "name": "Plain Beasts",
+  "commander": "Ruxa, Patient Professor",
+  "colors": "G",
+  "life": 10,
+  "theme": [
+   "noabil",
+   "Bear",
+   "Beast"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green vanilla beasts and bears.",
+  "sprite": "sprites/enemy/plant/hiddenbush.atlas"
+ },
+ {
+  "tier": 2,
+  "file": "T2_W_Danitha.dck",
+  "name": "Paragon's Order",
+  "commander": "Danitha Capashen, Paragon",
+  "colors": "W",
+  "life": 17,
+  "seed": "adventure/Realm of Legends/decks/legends/danitha.dck",
+  "theme": [
+   "Knight",
+   "/Aura|Equipment|first strike"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-white knights with auras and equipment, built from the Realm of Legends Danitha deck.",
+  "sprite": "sprites/enemy/humanoid/paladin_2.atlas"
+ },
+ {
+  "tier": 2,
+  "file": "T2_W_Gerrard.dck",
+  "name": "Weatherlight Crew",
+  "commander": "Gerrard Capashen",
+  "colors": "W",
+  "life": 16,
+  "seed": "adventure/Realm of Legends/decks/starter/commanderprecon/TMP - Old Border White.dck",
+  "theme": [
+   "Human",
+   "/gain .* life"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-white defenders, built from the Tempest old-border white precon.",
+  "sprite": "sprites/enemy/humanoid/paladin_2.atlas"
+ },
+ {
+  "tier": 2,
+  "file": "T2_U_Ertai.dck",
+  "name": "Ertai's Academy",
+  "commander": "Ertai, Wizard Adept",
+  "colors": "U",
+  "life": 16,
+  "seed": "adventure/Realm of Legends/decks/starter/commanderprecon/TMP - Old Border Blue.dck",
+  "theme": [
+   "Wizard",
+   "/Counter target"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-blue wizards and counters, built from the Tempest old-border blue precon.",
+  "sprite": "sprites/enemy/humanoid/conjurer.atlas"
+ },
+ {
+  "tier": 2,
+  "file": "T2_U_Sai.dck",
+  "name": "Thopter Workshop",
+  "commander": "Sai, Master Thopterist",
+  "colors": "U",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/sai.dck",
+  "theme": [
+   "Artifact",
+   "Thopter",
+   "/artifact"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-blue artifacts and thopters, built from the Realm of Legends Sai deck.",
+  "sprite": "sprites/enemy/humanoid/conjurer.atlas"
+ },
+ {
+  "tier": 2,
+  "file": "T2_B_Fumulus.dck",
+  "name": "Infestation",
+  "commander": "Fumulus, the Infestation",
+  "colors": "B",
+  "life": 17,
+  "seed": "adventure/Realm of Legends/decks/legends/fumulus.dck",
+  "theme": [
+   "Insect",
+   "/sacrifice",
+   "/dies"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-black sacrifice, built from the Realm of Legends Fumulus deck.",
+  "sprite": "sprites/enemy/humanoid/knight.atlas"
+ },
+ {
+  "tier": 2,
+  "file": "T2_B_Sengir.dck",
+  "name": "Sengir Curses",
+  "commander": "Grandmother Sengir",
+  "colors": "B",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/grandmother_sengir.dck",
+  "theme": [
+   "/-1/-1|gets -",
+   "Horror"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-black shrinking and attrition, built from the Realm of Legends Grandmother Sengir deck.",
+  "sprite": "sprites/enemy/undead/shade.atlas"
+ },
+ {
+  "tier": 2,
+  "file": "T2_R_Tahngarth.dck",
+  "name": "Talruum Charge",
+  "commander": "Tahngarth, Talruum Hero",
+  "colors": "R",
+  "life": 16,
+  "seed": "adventure/Realm of Legends/decks/starter/commanderprecon/TMP - Old Border Red.dck",
+  "theme": [
+   "Minotaur",
+   "/haste|deals .* damage"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-red minotaurs and burn, built from the Tempest old-border red precon.",
+  "sprite": "sprites/enemy/monstrosity/yeti.atlas"
+ },
+ {
+  "tier": 2,
+  "file": "T2_R_Eron.dck",
+  "name": "Relentless Riot",
+  "commander": "Eron the Relentless",
+  "colors": "R",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/eron.dck",
+  "theme": [
+   "/haste",
+   "Berserker",
+   "Warrior"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-red haste aggro, built from the Realm of Legends Eron deck.",
+  "sprite": "sprites/enemy/humanoid/swordsman_2.atlas"
+ },
+ {
+  "tier": 2,
+  "file": "T2_G_Mirri.dck",
+  "name": "Rath Wildcats",
+  "commander": "Mirri, Cat Warrior",
+  "colors": "G",
+  "life": 16,
+  "seed": "adventure/Realm of Legends/decks/starter/commanderprecon/TMP - Old Border Green.dck",
+  "theme": [
+   "Cat",
+   "/trample|forestwalk"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-green cats and stompers, built from the Tempest old-border green precon.",
+  "sprite": "sprites/enemy/humanoid/swordsman_3.atlas",
+  "target": 22.5,
+  "seed_bonus": 6,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_G_Rishkar.dck",
+  "name": "Peema Renegades",
+  "commander": "Rishkar, Peema Renegade",
+  "colors": "G",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/rishkar.dck",
+  "theme": [
+   "/\\+1/\\+1 counter",
+   "Elf"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-green +1/+1 counters, built from the Realm of Legends Rishkar deck.",
+  "sprite": "sprites/enemy/plant/treant_large.atlas"
+ },
+ {
+  "tier": 3,
+  "file": "T3_W_Lyra.dck",
+  "name": "Dawnbringer Host",
+  "commander": "Lyra Dawnbringer",
+  "colors": "W",
+  "life": 30,
+  "seed": "adventure/Realm of Legends/decks/legends/lyra.dck",
+  "theme": [
+   "Angel",
+   "/flying"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-white angels, from the Realm of Legends Lyra deck.",
+  "sprite": "sprites/enemy/celestial/cromat_angel.atlas",
+  "target": 31.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_U_Muzzio.dck",
+  "name": "Visionary Foundry",
+  "commander": "Muzzio, Visionary Architect",
+  "colors": "U",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/muzzio.dck",
+  "theme": [
+   "Artifact",
+   "Construct",
+   "/artifact"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-blue big artifacts, from the Realm of Legends Muzzio deck.",
+  "sprite": "sprites/enemy/humanoid/human/artificer/esper_artificer.atlas",
+  "target": 40.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_B_Hythonia.dck",
+  "name": "Gorgon's Gaze",
+  "commander": "Hythonia the Cruel",
+  "colors": "B",
+  "life": 30,
+  "seed": "adventure/Realm of Legends/decks/legends/hythonia.dck",
+  "theme": [
+   "Gorgon",
+   "/deathtouch|destroy"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-black deathtouch control, from the Realm of Legends Hythonia deck.",
+  "sprite": "sprites/enemy/monstrosity/gorgonen.atlas"
+ },
+ {
+  "tier": 3,
+  "file": "T3_R_Dragonhawk.dck",
+  "name": "Tempest Roost",
+  "commander": "Dragonhawk, Fate's Tempest",
+  "colors": "R",
+  "life": 30,
+  "seed": "adventure/Realm of Legends/decks/legends/dragonhawk.dck",
+  "theme": [
+   "Dragon",
+   "/flying"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-red dragons, from the Realm of Legends Dragonhawk deck.",
+  "sprite": "sprites/enemy/beast/bird/parrot.atlas"
+ },
+ {
+  "tier": 3,
+  "file": "T3_G_Gargos.dck",
+  "name": "Hydra Den",
+  "commander": "Gargos, Vicious Watcher",
+  "colors": "G",
+  "life": 30,
+  "seed": "adventure/Realm of Legends/decks/legends/gargos.dck",
+  "theme": [
+   "Hydra",
+   "/fight|\\+1/\\+1 counter"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-green hydras, from the Realm of Legends Gargos deck.",
+  "sprite": "sprites/enemy/monstrosity/hydra.atlas"
+ },
+ {
+  "tier": 3,
+  "file": "T3_WU_Isperia.dck",
+  "name": "Inscrutable Skies",
+  "commander": "Isperia the Inscrutable",
+  "colors": "WU",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/isperia.dck",
+  "theme": [
+   "/flying",
+   "Sphinx",
+   "Bird"
+  ],
+  "desc": "Tier 3 (Bracket 3). Azorius fliers, from the Realm of Legends Isperia deck.",
+  "sprite": "sprites/enemy/monstrosity/criosphinx.atlas"
+ },
+ {
+  "tier": 3,
+  "file": "T3_UB_Gyruda.dck",
+  "name": "Doom of the Depths",
+  "commander": "Gyruda, Doom of Depths",
+  "colors": "UB",
+  "life": 30,
+  "seed": "adventure/Realm of Legends/decks/legends/gyruda.dck",
+  "theme": [
+   "/mill|graveyard",
+   "Kraken",
+   "Horror"
+  ],
+  "desc": "Tier 3 (Bracket 3). Dimir mill-and-steal, from the Realm of Legends Gyruda deck.",
+  "sprite": "sprites/enemy/fiend/demon_5.atlas"
+ },
+ {
+  "tier": 3,
+  "file": "T3_BR_Exava.dck",
+  "name": "Blood Witch Revue",
+  "commander": "Exava, Rakdos Blood Witch",
+  "colors": "BR",
+  "life": 30,
+  "seed": "adventure/Realm of Legends/decks/legends/exava.dck",
+  "theme": [
+   "/unleash|\\+1/\\+1 counter",
+   "Devil",
+   "Vampire"
+  ],
+  "desc": "Tier 3 (Bracket 3). Rakdos unleash aggro, from the Realm of Legends Exava deck.",
+  "sprite": "sprites/enemy/humanoid/human/cleric/monk.atlas"
+ },
+ {
+  "tier": 3,
+  "file": "T3_RG_Zilortha.dck",
+  "name": "Strength Incarnate",
+  "commander": "Zilortha, Strength Incarnate",
+  "colors": "RG",
+  "life": 32,
+  "seed": "adventure/Realm of Legends/decks/legends/zilortha.dck",
+  "theme": [
+   "/trample",
+   "Dinosaur",
+   "Beast"
+  ],
+  "desc": "Tier 3 (Bracket 3). Gruul big creatures, from the Realm of Legends Zilortha deck.",
+  "sprite": "sprites/enemy/beast/dinosaur/ancient.atlas",
+  "target": 40.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_GW_Sigarda.dck",
+  "name": "Host of Herons",
+  "commander": "Sigarda, Host of Herons",
+  "colors": "WG",
+  "life": 30,
+  "seed": "adventure/Realm of Legends/decks/legends/sigarda.dck",
+  "theme": [
+   "Angel",
+   "Human",
+   "/Aura|Equipment"
+  ],
+  "desc": "Tier 3 (Bracket 3). Selesnya angels and humans, from the Realm of Legends Sigarda deck.",
+  "sprite": "sprites/enemy/celestial/fallen_angel.atlas",
+  "target": 31.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 1,
+  "commander": "Yahenni, Undying Partisan",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Aetherborn",
+   "Vampire"
+  ],
+  "file": "T1_B_Yahenni.dck",
+  "name": "Yahenni's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-black Yahenni, Undying Partisan deck.",
+  "sprite": "sprites/enemy/undead/vampire_4.atlas",
+  "weakness": 0.6
+ },
+ {
+  "tier": 1,
+  "commander": "Gonti, Lord of Luxury",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Aetherborn",
+   "Rogue"
+  ],
+  "file": "T1_B_Gonti.dck",
+  "name": "Gonti's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-black Gonti, Lord of Luxury deck.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate_captain.atlas"
+ },
+ {
+  "tier": 1,
+  "commander": "Goreclaw, Terror of Qal Sisma",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Bear"
+  ],
+  "file": "T1_G_Goreclaw.dck",
+  "name": "Goreclaw's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-green Goreclaw, Terror of Qal Sisma deck.",
+  "sprite": "sprites/enemy/beast/bear/bear.atlas"
+ },
+ {
+  "tier": 1,
+  "commander": "Renata, Called to the Hunt",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Demigod"
+  ],
+  "file": "T1_G_Renata.dck",
+  "name": "Renata's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-green Renata, Called to the Hunt deck.",
+  "sprite": "sprites/enemy/fey/satyr_2.atlas"
+ },
+ {
+  "tier": 1,
+  "commander": "Captain Lannery Storm",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Pirate"
+  ],
+  "file": "T1_R_Lannery.dck",
+  "name": "Lannery's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-red Captain Lannery Storm deck.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate2.atlas"
+ },
+ {
+  "tier": 1,
+  "commander": "Anax, Hardened in the Forge",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Demigod"
+  ],
+  "file": "T1_R_Anax.dck",
+  "name": "Anax's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-red Anax, Hardened in the Forge deck.",
+  "sprite": "sprites/enemy/fey/satyr.atlas"
+ },
+ {
+  "tier": 1,
+  "commander": "Tetsuko Umezawa, Fugitive",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Rogue"
+  ],
+  "file": "T1_U_Tetsuko.dck",
+  "name": "Tetsuko's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-blue Tetsuko Umezawa, Fugitive deck.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate.atlas"
+ },
+ {
+  "tier": 1,
+  "commander": "Padeem, Consul of Innovation",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Vedalken",
+   "Artificer"
+  ],
+  "file": "T1_U_Padeem.dck",
+  "name": "Padeem's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-blue Padeem, Consul of Innovation deck.",
+  "sprite": "sprites/enemy/humanoid/elf/deftsorceress.atlas"
+ },
+ {
+  "tier": 1,
+  "commander": "Teshar, Ancestor's Apostle",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Bird",
+   "Cleric"
+  ],
+  "file": "T1_W_Teshar.dck",
+  "name": "Teshar's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-white Teshar, Ancestor's Apostle deck.",
+  "sprite": "sprites/enemy/beast/bird/falcon.atlas"
+ },
+ {
+  "tier": 1,
+  "commander": "Baird, Steward of Argive",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Soldier"
+  ],
+  "file": "T1_W_Baird.dck",
+  "name": "Baird's Band",
+  "desc": "Tier 1 (Bracket 1). Mono-white Baird, Steward of Argive deck.",
+  "sprite": "sprites/enemy/humanoid/human/soldier/cathar.atlas"
+ },
+ {
+  "tier": 2,
+  "commander": "Grakmaw, Skyclave Ravager",
+  "colors": "BG",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/grakmaw.dck",
+  "theme": [
+   "Hydra",
+   "Horror"
+  ],
+  "file": "T2_BG_Grakmaw.dck",
+  "name": "Grakmaw's Crew",
+  "desc": "Tier 2 (Bracket 2). black-green Grakmaw, Skyclave Ravager deck. Built down from Forge's Grakmaw, Skyclave Ravager deck.",
+  "sprite": "sprites/enemy/monstrosity/hydra_large.atlas"
+ },
+ {
+  "tier": 2,
+  "commander": "Obosh, the Preypiercer",
+  "colors": "BR",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/obosh.dck",
+  "theme": [
+   "Hellion",
+   "Horror"
+  ],
+  "file": "T2_BR_Obosh.dck",
+  "name": "Obosh's Crew",
+  "desc": "Tier 2 (Bracket 2). black-red Obosh, the Preypiercer deck. Built down from Forge's Obosh, the Preypiercer deck.",
+  "sprite": "sprites/enemy/monstrosity/sandwurm.atlas"
+ },
+ {
+  "tier": 2,
+  "commander": "Halana and Alena, Partners",
+  "colors": "RG",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/halana_and_alena.dck",
+  "theme": [
+   "Ranger"
+  ],
+  "file": "T2_RG_Halana.dck",
+  "name": "Halana's Crew",
+  "desc": "Tier 2 (Bracket 2). red-green Halana and Alena, Partners deck. Built down from Forge's Halana and Alena, Partners deck.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate.atlas"
+ },
+ {
+  "tier": 2,
+  "commander": "Atris, Oracle of Half-Truths",
+  "colors": "UB",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/atris.dck",
+  "theme": [
+   "Advisor"
+  ],
+  "file": "T2_UB_Atris.dck",
+  "name": "Atris's Crew",
+  "desc": "Tier 2 (Bracket 2). blue-black Atris, Oracle of Half-Truths deck. Built down from Forge's Atris, Oracle of Half-Truths deck.",
+  "sprite": "sprites/enemy/humanoid/human/wizard/archivist.atlas"
+ },
+ {
+  "tier": 2,
+  "commander": "Moritte of the Frost",
+  "colors": "UG",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/moritte.dck",
+  "theme": [],
+  "file": "T2_UG_Moritte.dck",
+  "name": "Moritte's Crew",
+  "desc": "Tier 2 (Bracket 2). blue-green Moritte of the Frost deck. Built down from Forge's Moritte of the Frost deck.",
+  "sprite": "sprites/enemy/undead/doppelganger.atlas",
+  "target": 31.5,
+  "seed_bonus": 6,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "commander": "Vadrik, Astral Archmage",
+  "colors": "UR",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/vadrik.dck",
+  "theme": [
+   "Wizard"
+  ],
+  "file": "T2_UR_Vadrik.dck",
+  "name": "Vadrik's Crew",
+  "desc": "Tier 2 (Bracket 2). blue-red Vadrik, Astral Archmage deck. Built down from Forge's Vadrik, Astral Archmage deck.",
+  "sprite": "sprites/enemy/humanoid/human/wizard/mage.atlas"
+ },
+ {
+  "tier": 2,
+  "commander": "Orah, Skyclave Hierophant",
+  "colors": "WB",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/orah.dck",
+  "theme": [
+   "Kor",
+   "Cleric"
+  ],
+  "file": "T2_WB_Orah.dck",
+  "name": "Orah's Crew",
+  "desc": "Tier 2 (Bracket 2). white-black Orah, Skyclave Hierophant deck. Built down from Forge's Orah, Skyclave Hierophant deck.",
+  "sprite": "sprites/enemy/humanoid/kor/kor_blue.atlas",
+  "target": 22.5,
+  "seed_bonus": 6,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "commander": "Bess, Soul Nourisher",
+  "colors": "WG",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/bess.dck",
+  "theme": [],
+  "file": "T2_WG_Bess.dck",
+  "name": "Bess's Crew",
+  "desc": "Tier 2 (Bracket 2). white-green Bess, Soul Nourisher deck. Built down from Forge's Bess, Soul Nourisher deck.",
+  "sprite": "sprites/enemy/humanoid/human/peasant/farmer.atlas",
+  "target": 31.5,
+  "seed_bonus": 6,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "commander": "Balefang the Unslayable",
+  "colors": "WR",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/balefang.dck",
+  "theme": [
+   "Demon",
+   "Dragon"
+  ],
+  "file": "T2_WR_Balefang.dck",
+  "name": "Balefang's Crew",
+  "desc": "Tier 2 (Bracket 2). white-red Balefang the Unslayable deck. Built down from Forge's Balefang the Unslayable deck.",
+  "sprite": "sprites/enemy/fiend/demon.atlas"
+ },
+ {
+  "tier": 2,
+  "commander": "Denry Klin, Editor in Chief",
+  "colors": "WU",
+  "life": 18,
+  "seed": "adventure/Realm of Legends/decks/legends/denry_klin.dck",
+  "theme": [
+   "Cat",
+   "Advisor"
+  ],
+  "file": "T2_WU_Denry.dck",
+  "name": "Denry's Crew",
+  "desc": "Tier 2 (Bracket 2). white-blue Denry Klin, Editor in Chief deck. Built down from Forge's Denry Klin, Editor in Chief deck.",
+  "sprite": "sprites/enemy/humanoid/leonin/lion_2.atlas"
+ },
+ {
+  "tier": 3,
+  "commander": "The Gitrog Monster",
+  "colors": "BG",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/the_gitrog_monster.dck",
+  "theme": [
+   "Frog",
+   "Horror"
+  ],
+  "file": "T3_BG_Gitrog.dck",
+  "name": "Gitrog's Circle",
+  "desc": "Tier 3 (Bracket 3). black-green The Gitrog Monster deck. Built down from Forge's The Gitrog Monster deck.",
+  "sprite": "sprites/enemy/beast/amphibian/frog.atlas"
+ },
+ {
+  "tier": 3,
+  "commander": "Vannifar, Evolved Enigma",
+  "colors": "UG",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/vannifar.dck",
+  "theme": [
+   "Elf",
+   "Ooze",
+   "Wizard"
+  ],
+  "file": "T3_UG_Vannifar.dck",
+  "name": "Vannifar's Circle",
+  "desc": "Tier 3 (Bracket 3). blue-green Vannifar, Evolved Enigma deck. Built down from Forge's Vannifar, Evolved Enigma deck.",
+  "sprite": "sprites/enemy/humanoid/elf/green_wiz3.atlas"
+ },
+ {
+  "tier": 3,
+  "commander": "Dalakos, Crafter of Wonders",
+  "colors": "UR",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/dalakos.dck",
+  "theme": [
+   "Merfolk",
+   "Artificer"
+  ],
+  "file": "T3_UR_Dalakos.dck",
+  "name": "Dalakos's Circle",
+  "desc": "Tier 3 (Bracket 3). blue-red Dalakos, Crafter of Wonders deck. Built down from Forge's Dalakos, Crafter of Wonders deck.",
+  "sprite": "sprites/enemy/humanoid/merfolk/merfolk.atlas",
+  "target": 40.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "commander": "Firja, Judge of Valor",
+  "colors": "WB",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/firja.dck",
+  "theme": [
+   "Angel",
+   "Cleric"
+  ],
+  "file": "T3_WB_Firja.dck",
+  "name": "Firja's Circle",
+  "desc": "Tier 3 (Bracket 3). white-black Firja, Judge of Valor deck. Built down from Forge's Firja, Judge of Valor deck.",
+  "sprite": "sprites/enemy/celestial/angel_1.atlas"
+ },
+ {
+  "tier": 3,
+  "commander": "Tamiyo, Upriser Crowned",
+  "colors": "WR",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/echo_tamiyo.dck",
+  "theme": [
+   "Moonfolk",
+   "Warrior"
+  ],
+  "file": "T3_WR_Tamiyo.dck",
+  "name": "Tamiyo's Circle",
+  "desc": "Tier 3 (Bracket 3). white-red Tamiyo, Upriser Crowned deck. Built down from Forge's Tamiyo, Upriser Crowned deck.",
+  "sprite": "sprites/enemy/humanoid/human/warrior/gladiator.atlas"
+ },
+ {
+  "tier": 3,
+  "commander": "Coram, the Undertaker",
+  "colors": "BRG",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/coram.dck",
+  "theme": [
+   "Warrior"
+  ],
+  "file": "T3_BRG_Coram.dck",
+  "name": "Coram's Circle",
+  "desc": "Tier 3 (Bracket 3). black-red-green Coram, the Undertaker deck. Built down from Forge's Coram, the Undertaker deck.",
+  "sprite": "sprites/enemy/humanoid/human/warrior/gladiator.atlas",
+  "target": 40.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "commander": "Wick, the Whorled Mind",
+  "colors": "UBR",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/wick.dck",
+  "theme": [
+   "Rat",
+   "Warlock"
+  ],
+  "file": "T3_UBR_Wick.dck",
+  "name": "Wick's Circle",
+  "desc": "Tier 3 (Bracket 3). blue-black-red Wick, the Whorled Mind deck. Built down from Forge's Wick, the Whorled Mind deck.",
+  "sprite": "sprites/enemy/humanoid/nezumi/nezumi_berserker.atlas"
+ },
+ {
+  "tier": 3,
+  "commander": "Rith, Liberated Primeval",
+  "colors": "WRG",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/rith.dck",
+  "theme": [
+   "Dragon"
+  ],
+  "file": "T3_WRG_Rith.dck",
+  "name": "Rith's Circle",
+  "desc": "Tier 3 (Bracket 3). white-red-green Rith, Liberated Primeval deck. Built down from Forge's Rith, Liberated Primeval deck.",
+  "sprite": "sprites/enemy/dragon/dragonlarge.atlas"
+ },
+ {
+  "tier": 3,
+  "commander": "Y'shtola, Night's Blessed",
+  "colors": "WUB",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/starter/commanderprecon/FIC - Scions & Spellcraft.dck",
+  "theme": [
+   "Cat",
+   "Warlock"
+  ],
+  "file": "T3_WUB_Yshtola.dck",
+  "name": "Y'shtola's Circle",
+  "desc": "Tier 3 (Bracket 3). white-blue-black Y'shtola, Night's Blessed deck. Built down from Forge's Y'shtola, Night's Blessed deck.",
+  "sprite": "sprites/enemy/humanoid/leonin/lion.atlas"
+ },
+ {
+  "tier": 3,
+  "commander": "Falco Spara, Pactweaver",
+  "colors": "WUG",
+  "life": 28,
+  "seed": "adventure/Realm of Legends/decks/legends/falco_spara.dck",
+  "theme": [
+   "Bird",
+   "Demon"
+  ],
+  "file": "T3_WUG_Falco.dck",
+  "name": "Falco's Circle",
+  "desc": "Tier 3 (Bracket 3). white-blue-green Falco Spara, Pactweaver deck. Built down from Forge's Falco Spara, Pactweaver deck.",
+  "sprite": "sprites/enemy/beast/bird/ibis.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Sheoldred, the Apocalypse",
+  "colors": "B",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/sheoldred.dck",
+  "theme": [
+   "Phyrexian",
+   "Praetor"
+  ],
+  "file": "T4_B_Sheoldred.dck",
+  "name": "Sheoldred's Vanguard",
+  "desc": "Tier 4 (Bracket 4). Mono-black Sheoldred, the Apocalypse deck. Built down from Forge's Sheoldred, the Apocalypse deck.",
+  "sprite": "sprites/enemy/aberration/phyrexian/drossgladiator.atlas",
+  "target": 36.0,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "commander": "Kaysa",
+  "colors": "G",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/kaysa.dck",
+  "theme": [
+   "Elf",
+   "Druid"
+  ],
+  "file": "T4_G_Kaysa.dck",
+  "name": "Kaysa's Vanguard",
+  "desc": "Tier 4 (Bracket 4). Mono-green Kaysa deck. Built down from Forge's Kaysa deck.",
+  "sprite": "sprites/enemy/humanoid/elf/druid.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Chandra, Fire of Kaladesh",
+  "colors": "R",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/chandra.dck",
+  "theme": [
+   "Shaman"
+  ],
+  "file": "T4_R_Chandra.dck",
+  "name": "Chandra's Vanguard",
+  "desc": "Tier 4 (Bracket 4). Mono-red Chandra, Fire of Kaladesh deck. Built down from Forge's Chandra, Fire of Kaladesh deck.",
+  "sprite": "sprites/enemy/humanoid/human/shaman/pyromancer.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Lyra, Tolarian Archangel",
+  "colors": "U",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/echo_lyra.dck",
+  "theme": [
+   "Angel",
+   "Wizard"
+  ],
+  "file": "T4_U_Lyra.dck",
+  "name": "Lyra's Vanguard",
+  "desc": "Tier 4 (Bracket 4). Mono-blue Lyra, Tolarian Archangel deck. Built down from Forge's Lyra, Tolarian Archangel deck.",
+  "sprite": "sprites/enemy/celestial/angel_2.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Elesh Norn, Mother of Machines",
+  "colors": "W",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/elesh_norn.dck",
+  "theme": [
+   "Phyrexian",
+   "Praetor"
+  ],
+  "file": "T4_W_Elesh.dck",
+  "name": "Elesh's Vanguard",
+  "desc": "Tier 4 (Bracket 4). Mono-white Elesh Norn, Mother of Machines deck. Built down from Forge's Elesh Norn, Mother of Machines deck.",
+  "sprite": "sprites/enemy/aberration/phyrexian/eleshnorn.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Ygra, Eater of All",
+  "colors": "BG",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/ygra.dck",
+  "theme": [
+   "Elemental",
+   "Cat"
+  ],
+  "file": "T4_BG_Ygra.dck",
+  "name": "Ygra's Vanguard",
+  "desc": "Tier 4 (Bracket 4). black-green Ygra, Eater of All deck. Built down from Forge's Ygra, Eater of All deck.",
+  "sprite": "sprites/enemy/elemental/earthelemental.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "The Infamous Cruelclaw",
+  "colors": "BR",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/the_infamous_cruelclaw.dck",
+  "theme": [
+   "Weasel",
+   "Mercenary"
+  ],
+  "file": "T4_BR_Cruelclaw.dck",
+  "name": "Cruelclaw's Vanguard",
+  "desc": "Tier 4 (Bracket 4). black-red The Infamous Cruelclaw deck. Built down from Forge's The Infamous Cruelclaw deck.",
+  "sprite": "sprites/enemy/beast/smallmammals/weasel.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Anzrag, the Quake-Mole",
+  "colors": "RG",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/anzrag.dck",
+  "theme": [
+   "Mole",
+   "God"
+  ],
+  "file": "T4_RG_Anzrag.dck",
+  "name": "Anzrag's Vanguard",
+  "desc": "Tier 4 (Bracket 4). red-green Anzrag, the Quake-Mole deck. Built down from Forge's Anzrag, the Quake-Mole deck.",
+  "sprite": "sprites/enemy/beast/smallmammals/nakedmolerat.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Runo Stromkirk",
+  "colors": "UB",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/runo_stromkirk.dck",
+  "theme": [
+   "Vampire",
+   "Cleric"
+  ],
+  "file": "T4_UB_Runo.dck",
+  "name": "Runo's Vanguard",
+  "desc": "Tier 4 (Bracket 4). blue-black Runo Stromkirk deck. Built down from Forge's Runo Stromkirk deck.",
+  "sprite": "sprites/enemy/undead/vampire_3.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Uro, Titan of Nature's Wrath",
+  "colors": "UG",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/uro.dck",
+  "theme": [
+   "Elder",
+   "Giant"
+  ],
+  "file": "T4_UG_Uro.dck",
+  "name": "Uro's Vanguard",
+  "desc": "Tier 4 (Bracket 4). blue-green Uro, Titan of Nature's Wrath deck. Built down from Forge's Uro, Titan of Nature's Wrath deck.",
+  "sprite": "sprites/enemy/giant/titan_2.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Niv-Mizzet, Visionary",
+  "colors": "UR",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/niv-mizzet.dck",
+  "theme": [
+   "Dragon",
+   "Wizard"
+  ],
+  "file": "T4_UR_NivMizzet.dck",
+  "name": "Niv-Mizzet's Vanguard",
+  "desc": "Tier 4 (Bracket 4). blue-red Niv-Mizzet, Visionary deck. Built down from Forge's Niv-Mizzet, Visionary deck.",
+  "sprite": "sprites/enemy/dragon/dragon.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Tomik, Wielder of Law",
+  "colors": "WB",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/tomik.dck",
+  "theme": [
+   "Advisor"
+  ],
+  "file": "T4_WB_Tomik.dck",
+  "name": "Tomik's Vanguard",
+  "desc": "Tier 4 (Bracket 4). white-black Tomik, Wielder of Law deck. Built down from Forge's Tomik, Wielder of Law deck.",
+  "sprite": "sprites/enemy/humanoid/human/artificer/archaeologist.atlas",
+  "target": 38.0,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "commander": "Karametra, God of Harvests",
+  "colors": "WG",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/karametra.dck",
+  "theme": [
+   "God"
+  ],
+  "file": "T4_WG_Karametra.dck",
+  "name": "Karametra's Vanguard",
+  "desc": "Tier 4 (Bracket 4). white-green Karametra, God of Harvests deck. Built down from Forge's Karametra, God of Harvests deck.",
+  "sprite": "sprites/enemy/celestial/maelstrom_angel.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Firesong and Sunspeaker",
+  "colors": "WR",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/firesong_and_sunspeaker.dck",
+  "theme": [
+   "Minotaur",
+   "Cleric"
+  ],
+  "file": "T4_WR_Firesong.dck",
+  "name": "Firesong's Vanguard",
+  "desc": "Tier 4 (Bracket 4). white-red Firesong and Sunspeaker deck. Built down from Forge's Firesong and Sunspeaker deck.",
+  "sprite": "sprites/enemy/humanoid/minotaur/zedru.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Azor, the Lawbringer",
+  "colors": "WU",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/azor.dck",
+  "theme": [
+   "Sphinx"
+  ],
+  "file": "T4_WU_Azor.dck",
+  "name": "Azor's Vanguard",
+  "desc": "Tier 4 (Bracket 4). white-blue Azor, the Lawbringer deck. Built down from Forge's Azor, the Lawbringer deck.",
+  "sprite": "sprites/enemy/monstrosity/androsphinx.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Damia, Sage of Stone",
+  "colors": "UBG",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/damia.dck",
+  "theme": [
+   "Gorgon",
+   "Wizard"
+  ],
+  "file": "T4_UBG_Damia.dck",
+  "name": "Damia's Vanguard",
+  "desc": "Tier 4 (Bracket 4). blue-black-green Damia, Sage of Stone deck. Built down from Forge's Damia, Sage of Stone deck.",
+  "sprite": "sprites/enemy/humanoid/human/wizard/dimir_wiz.atlas",
+  "target": 43.0,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "commander": "Flubs, the Fool",
+  "colors": "URG",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/flubs.dck",
+  "theme": [
+   "Frog",
+   "Scout"
+  ],
+  "file": "T4_URG_Flubs.dck",
+  "name": "Flubs's Vanguard",
+  "desc": "Tier 4 (Bracket 4). blue-red-green Flubs, the Fool deck. Built down from Forge's Flubs, the Fool deck.",
+  "sprite": "sprites/enemy/beast/amphibian/frog.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "The Necrobloom",
+  "colors": "WBG",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/the_necrobloom.dck",
+  "theme": [
+   "Plant"
+  ],
+  "file": "T4_WBG_Necrobloom.dck",
+  "name": "Necrobloom's Vanguard",
+  "desc": "Tier 4 (Bracket 4). white-black-green The Necrobloom deck. Built down from Forge's The Necrobloom deck.",
+  "sprite": "sprites/enemy/plant/slimefoot.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Queen Marchesa",
+  "colors": "WBR",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/marchesa.dck",
+  "theme": [
+   "Assassin"
+  ],
+  "file": "T4_WBR_Marchesa.dck",
+  "name": "Marchesa's Vanguard",
+  "desc": "Tier 4 (Bracket 4). white-black-red Queen Marchesa deck. Built down from Forge's Queen Marchesa deck.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate3.atlas"
+ },
+ {
+  "tier": 4,
+  "commander": "Vraska, Soul of Stone",
+  "colors": "WUR",
+  "life": 35,
+  "seed": "adventure/Realm of Legends/decks/legends/echo_vraska.dck",
+  "theme": [
+   "Gorgon",
+   "Wizard"
+  ],
+  "file": "T4_WUR_Vraska.dck",
+  "name": "Vraska's Vanguard",
+  "desc": "Tier 4 (Bracket 4). white-blue-red Vraska, Soul of Stone deck. Built down from Forge's Vraska, Soul of Stone deck.",
+  "sprite": "sprites/enemy/humanoid/human/wizard/blue_wiz2.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Ihsan's Shade",
+  "colors": "B",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/ihsans_shade.dck",
+  "theme": [
+   "Shade",
+   "Knight"
+  ],
+  "file": "T5_B_Ihsan.dck",
+  "name": "Ihsan's Court",
+  "desc": "Tier 5 (Bracket 5). Mono-black Ihsan's Shade deck. Built down from Forge's Ihsan's Shade deck.",
+  "sprite": "sprites/enemy/undead/shade.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Vorinclex, Monstrous Raider",
+  "colors": "G",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/vorinclex.dck",
+  "theme": [
+   "Phyrexian",
+   "Praetor"
+  ],
+  "file": "T5_G_Vorinclex.dck",
+  "name": "Vorinclex's Court",
+  "desc": "Tier 5 (Bracket 5). Mono-green Vorinclex, Monstrous Raider deck. Built down from Forge's Vorinclex, Monstrous Raider deck.",
+  "sprite": "sprites/enemy/aberration/phyrexian/copperhostbrutalizer.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Urabrask",
+  "colors": "R",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/urabrask.dck",
+  "theme": [
+   "Phyrexian",
+   "Praetor"
+  ],
+  "file": "T5_R_Urabrask.dck",
+  "name": "Urabrask's Court",
+  "desc": "Tier 5 (Bracket 5). Mono-red Urabrask deck. Built down from Forge's Urabrask deck.",
+  "sprite": "sprites/enemy/aberration/phyrexian/furnacegoblin.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Hakim, Loreweaver",
+  "colors": "U",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/hakim.dck",
+  "theme": [
+   "Wizard"
+  ],
+  "file": "T5_U_Hakim.dck",
+  "name": "Hakim's Court",
+  "desc": "Tier 5 (Bracket 5). Mono-blue Hakim, Loreweaver deck. Built down from Forge's Hakim, Loreweaver deck.",
+  "sprite": "sprites/enemy/humanoid/human/wizard/red_wiz2.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Beza, the Bounding Spring",
+  "colors": "W",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/beza.dck",
+  "theme": [
+   "Elemental",
+   "Elk"
+  ],
+  "file": "T5_W_Beza.dck",
+  "name": "Beza's Court",
+  "desc": "Tier 5 (Bracket 5). Mono-white Beza, the Bounding Spring deck. Built down from Forge's Beza, the Bounding Spring deck.",
+  "sprite": "sprites/enemy/elemental/sandelemental.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Vraska, the Silencer",
+  "colors": "BG",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/vraska.dck",
+  "theme": [
+   "Gorgon",
+   "Assassin"
+  ],
+  "file": "T5_BG_Vraska.dck",
+  "name": "Vraska's Court",
+  "desc": "Tier 5 (Bracket 5). black-green Vraska, the Silencer deck. Built down from Forge's Vraska, the Silencer deck.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate2.atlas",
+  "target": 44.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "commander": "Olivia, Crimson Bride",
+  "colors": "BR",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/olivia.dck",
+  "theme": [
+   "Vampire",
+   "Noble"
+  ],
+  "file": "T5_BR_Olivia.dck",
+  "name": "Olivia's Court",
+  "desc": "Tier 5 (Bracket 5). black-red Olivia, Crimson Bride deck. Built down from Forge's Olivia, Crimson Bride deck.",
+  "sprite": "sprites/enemy/undead/vampire.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Mina and Denn, Wildborn",
+  "colors": "RG",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/mina_and_denn.dck",
+  "theme": [
+   "Elf",
+   "Ally"
+  ],
+  "file": "T5_RG_Mina.dck",
+  "name": "Mina's Court",
+  "desc": "Tier 5 (Bracket 5). red-green Mina and Denn, Wildborn deck. Built down from Forge's Mina and Denn, Wildborn deck.",
+  "sprite": "sprites/enemy/humanoid/elf/shaman.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Nymris, Oona's Trickster",
+  "colors": "UB",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/nymris.dck",
+  "theme": [
+   "Faerie",
+   "Knight"
+  ],
+  "file": "T5_UB_Nymris.dck",
+  "name": "Nymris's Court",
+  "desc": "Tier 5 (Bracket 5). blue-black Nymris, Oona's Trickster deck. Built down from Forge's Nymris, Oona's Trickster deck.",
+  "sprite": "sprites/enemy/fey/faerie_dragon.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Kruphix, God of Horizons",
+  "colors": "UG",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/kruphix.dck",
+  "theme": [
+   "God"
+  ],
+  "file": "T5_UG_Kruphix.dck",
+  "name": "Kruphix's Court",
+  "desc": "Tier 5 (Bracket 5). blue-green Kruphix, God of Horizons deck. Built down from Forge's Kruphix, God of Horizons deck.",
+  "sprite": "sprites/enemy/celestial/angel_1.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "The Locust God",
+  "colors": "UR",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/the_locust_god.dck",
+  "theme": [
+   "God"
+  ],
+  "file": "T5_UR_LocustGod.dck",
+  "name": "Locust God's Court",
+  "desc": "Tier 5 (Bracket 5). blue-red The Locust God deck. Built down from Forge's The Locust God deck.",
+  "sprite": "sprites/enemy/celestial/angel_2.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Carmen, Cruel Skymarcher",
+  "colors": "WB",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/carmen.dck",
+  "theme": [
+   "Vampire",
+   "Soldier"
+  ],
+  "file": "T5_WB_Carmen.dck",
+  "name": "Carmen's Court",
+  "desc": "Tier 5 (Bracket 5). white-black Carmen, Cruel Skymarcher deck. Built down from Forge's Carmen, Cruel Skymarcher deck.",
+  "sprite": "sprites/enemy/undead/vampire_2.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Trostani, Selesnya's Voice",
+  "colors": "WG",
+  "life": 40,
+  "seed": "quest/commanderprecons/Hatsune Miku [SLD] [2026].dck",
+  "theme": [
+   "Dryad"
+  ],
+  "file": "T5_WG_Trostani.dck",
+  "name": "Trostani's Court",
+  "desc": "Tier 5 (Bracket 5). white-green Trostani, Selesnya's Voice deck. Built down from Forge's Trostani, Selesnya's Voice deck.",
+  "sprite": "sprites/enemy/plant/plant.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "The Jolly Balloon Man",
+  "colors": "WR",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/the_jolly_balloon_man.dck",
+  "theme": [
+   "Clown"
+  ],
+  "file": "T5_WR_BalloonMan.dck",
+  "name": "Balloon Man's Court",
+  "desc": "Tier 5 (Bracket 5). white-red The Jolly Balloon Man deck. Built down from Forge's The Jolly Balloon Man deck.",
+  "sprite": "sprites/enemy/aberration/challenger.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Medomai the Ageless",
+  "colors": "WU",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/medomai.dck",
+  "theme": [
+   "Sphinx"
+  ],
+  "file": "T5_WU_Medomai.dck",
+  "name": "Medomai's Court",
+  "desc": "Tier 5 (Bracket 5). white-blue Medomai the Ageless deck. Built down from Forge's Medomai the Ageless deck.",
+  "sprite": "sprites/enemy/monstrosity/androsphinx.atlas",
+  "target": 51.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "commander": "Disa the Restless",
+  "colors": "BRG",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/starter/commanderprecon/M3C - Graveyard Overdrive.dck",
+  "theme": [
+   "Scout"
+  ],
+  "file": "T5_BRG_Disa.dck",
+  "name": "Disa's Court",
+  "desc": "Tier 5 (Bracket 5). black-red-green Disa the Restless deck. Built down from Forge's Disa the Restless deck.",
+  "sprite": "sprites/enemy/humanoid/viashino/scout.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Nekusar, the Mindrazer",
+  "colors": "UBR",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/nekusar.dck",
+  "theme": [
+   "Zombie",
+   "Wizard"
+  ],
+  "file": "T5_UBR_Nekusar.dck",
+  "name": "Nekusar's Court",
+  "desc": "Tier 5 (Bracket 5). blue-black-red Nekusar, the Mindrazer deck. Built down from Forge's Nekusar, the Mindrazer deck.",
+  "sprite": "sprites/enemy/undead/royalsentinel.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Gahiji, Honored One",
+  "colors": "WRG",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/gahiji.dck",
+  "theme": [
+   "Beast"
+  ],
+  "file": "T5_WRG_Gahiji.dck",
+  "name": "Gahiji's Court",
+  "desc": "Tier 5 (Bracket 5). white-red-green Gahiji, Honored One deck. Built down from Forge's Gahiji, Honored One deck.",
+  "sprite": "sprites/enemy/beast/arachnid/spider_cave.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Yennett, Cryptic Sovereign",
+  "colors": "WUB",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/yennett.dck",
+  "theme": [
+   "Sphinx"
+  ],
+  "file": "T5_WUB_Yennett.dck",
+  "name": "Yennett's Court",
+  "desc": "Tier 5 (Bracket 5). white-blue-black Yennett, Cryptic Sovereign deck. Built down from Forge's Yennett, Cryptic Sovereign deck.",
+  "sprite": "sprites/enemy/monstrosity/criosphinx.atlas"
+ },
+ {
+  "tier": 5,
+  "commander": "Ms. Bumbleflower",
+  "colors": "WUG",
+  "life": 40,
+  "seed": "adventure/Realm of Legends/decks/legends/ms_bumbleflower.dck",
+  "theme": [
+   "Rabbit",
+   "Citizen"
+  ],
+  "file": "T5_WUG_Bumbleflower.dck",
+  "name": "Bumbleflower's Court",
+  "desc": "Tier 5 (Bracket 5). white-blue-green Ms. Bumbleflower deck. Built down from Forge's Ms. Bumbleflower deck.",
+  "sprite": "sprites/enemy/beast/smallmammals/rabbit.atlas"
+ },
+ {
+  "tier": 5,
+  "file": "T5_W_Bruna.dck",
+  "name": "Bruna's Court",
+  "commander": "Bruna, the Fading Light",
+  "colors": "W",
+  "life": 40,
+  "theme": [
+   "Angel",
+   "Horror"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-white Bruna, the Fading Light deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/monstrosity/harpy.atlas",
+  "target": 53.8,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_W_Bruna.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_W_Delney.dck",
+  "name": "Delney's Court",
+  "commander": "Delney, Streetwise Lookout",
+  "colors": "W",
+  "life": 40,
+  "theme": [
+   "Human",
+   "Scout"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-white Delney, Streetwise Lookout deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/monstrosity/harpy.atlas",
+  "target": 41.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_W_Delney.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_W_Heliod.dck",
+  "name": "Heliod's Court",
+  "commander": "Heliod, Sun-Crowned",
+  "colors": "W",
+  "life": 40,
+  "theme": [
+   "God"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-white Heliod, Sun-Crowned deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
+  "target": 43.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_W_Heliod.dck",
+  "ban": [
+   "walking ballista",
+   "triskelion"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_W_Gandalf.dck",
+  "name": "Gandalf's Court",
+  "commander": "Gandalf the White",
+  "colors": "W",
+  "life": 40,
+  "theme": [
+   "Avatar",
+   "Wizard"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-white Gandalf the White deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
+  "target": 48.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_W_Gandalf.dck",
+  "ban": [
+   "heliod, sun-crowned"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_W_Giada.dck",
+  "name": "Giada's Vanguard",
+  "commander": "Giada, Font of Hope",
+  "colors": "W",
+  "life": 35,
+  "theme": [
+   "Angel"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-white Giada, Font of Hope deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/celestial/cromat_angel.atlas",
+  "target": 35.0,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_W_Giada.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_W_Thurid.dck",
+  "name": "Thurid's Vanguard",
+  "commander": "Thurid, Mare of Destiny",
+  "colors": "W",
+  "life": 35,
+  "theme": [
+   "Pegasus"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-white Thurid, Mare of Destiny deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/beast/bird/falcon.atlas",
+  "target": 47.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_W_Thurid.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_W_Sram.dck",
+  "name": "Sram's Vanguard",
+  "commander": "Sram, Senior Edificer",
+  "colors": "W",
+  "life": 35,
+  "theme": [
+   "Dwarf",
+   "Advisor"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-white Sram, Senior Edificer deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/human/soldier/cathar.atlas",
+  "target": 39.0,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_W_Sram.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_W_Abdel.dck",
+  "name": "Abdel's Vanguard",
+  "commander": "Abdel Adrian, Gorion's Ward",
+  "colors": "W",
+  "life": 35,
+  "theme": [
+   "Human",
+   "Warrior"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-white Abdel Adrian, Gorion's Ward deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/aberration/phyrexian/eleshnorn.atlas",
+  "target": 43.2,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_W_Abdel.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_W_Loran.dck",
+  "name": "Loran's Host",
+  "commander": "Loran of the Third Path",
+  "colors": "W",
+  "life": 28,
+  "theme": [
+   "Human",
+   "Artificer"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-white Loran of the Third Path deck.",
+  "sprite": "sprites/enemy/elemental/sandelemental.atlas",
+  "target": 29.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_W_Mangara.dck",
+  "name": "Mangara's Host",
+  "commander": "Mangara, the Diplomat",
+  "colors": "W",
+  "life": 28,
+  "theme": [
+   "Human",
+   "Cleric"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-white Mangara, the Diplomat deck.",
+  "sprite": "sprites/enemy/monstrosity/harpy.atlas",
+  "target": 31.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_W_Elesh.dck",
+  "name": "Elesh's Host",
+  "commander": "Elesh Norn, Grand Cenobite",
+  "colors": "W",
+  "life": 28,
+  "theme": [
+   "Phyrexian",
+   "Praetor"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-white Elesh Norn, Grand Cenobite deck.",
+  "sprite": "sprites/enemy/monstrosity/harpy.atlas",
+  "target": 35.2,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_W_Monk.dck",
+  "name": "Monk's Host",
+  "commander": "Monk Gyatso",
+  "colors": "W",
+  "life": 28,
+  "theme": [
+   "Human",
+   "Monk"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-white Monk Gyatso deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
+  "target": 34.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_W_Monk.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_W_Adeline.dck",
+  "name": "Adeline's Company",
+  "commander": "Adeline, Resplendent Cathar",
+  "colors": "W",
+  "life": 18,
+  "theme": [
+   "Human",
+   "Knight"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-white Adeline, Resplendent Cathar deck.",
+  "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
+  "target": 23.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_W_Jazal.dck",
+  "name": "Jazal's Company",
+  "commander": "Jazal Goldmane",
+  "colors": "W",
+  "life": 18,
+  "theme": [
+   "Cat",
+   "Warrior"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-white Jazal Goldmane deck.",
+  "sprite": "sprites/enemy/celestial/cromat_angel.atlas",
+  "target": 30.3,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_W_Odric.dck",
+  "name": "Odric's Company",
+  "commander": "Odric, Lunarch Marshal",
+  "colors": "W",
+  "life": 18,
+  "theme": [
+   "Human",
+   "Soldier"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-white Odric, Lunarch Marshal deck.",
+  "sprite": "sprites/enemy/beast/bird/falcon.atlas",
+  "target": 26.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_W_Boromir.dck",
+  "name": "Boromir's Company",
+  "commander": "Boromir, Warden of the Tower",
+  "colors": "W",
+  "life": 18,
+  "theme": [
+   "Human",
+   "Soldier"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-white Boromir, Warden of the Tower deck.",
+  "sprite": "sprites/enemy/humanoid/human/soldier/cathar.atlas",
+  "target": 29.7,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Losheel.dck",
+  "name": "Losheel's Band",
+  "commander": "Losheel, Clockwork Scholar",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Elephant",
+   "Artificer"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white Losheel, Clockwork Scholar deck.",
+  "sprite": "sprites/enemy/aberration/phyrexian/eleshnorn.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Ardenn.dck",
+  "name": "Ardenn's Band",
+  "commander": "Ardenn, Intrepid Archaeologist",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Kor",
+   "Scout"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white Ardenn, Intrepid Archaeologist deck.",
+  "sprite": "sprites/enemy/elemental/sandelemental.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Kemba.dck",
+  "name": "Kemba's Band",
+  "commander": "Kemba, Kha Regent",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Cat",
+   "Cleric"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white Kemba, Kha Regent deck.",
+  "sprite": "sprites/enemy/monstrosity/harpy.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Rosie.dck",
+  "name": "Rosie's Band",
+  "commander": "Rosie Cotton of South Lane",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Halfling",
+   "Peasant"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white Rosie Cotton of South Lane deck.",
+  "sprite": "sprites/enemy/monstrosity/harpy.atlas"
+ },
+ {
+  "tier": 5,
+  "file": "T5_U_Emry.dck",
+  "name": "Emry's Court",
+  "commander": "Emry, Lurker of the Loch",
+  "colors": "U",
+  "life": 40,
+  "theme": [
+   "Merfolk",
+   "Wizard"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-blue Emry, Lurker of the Loch deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/conjurer.atlas",
+  "target": 38.4,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_U_Emry.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_U_Kefnet.dck",
+  "name": "Kefnet's Court",
+  "commander": "Kefnet the Mindful",
+  "colors": "U",
+  "life": 40,
+  "theme": [
+   "God"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-blue Kefnet the Mindful deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/conjurer.atlas",
+  "target": 32.1,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_U_Kefnet.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_U_Lier.dck",
+  "name": "Lier's Court",
+  "commander": "Lier, Disciple of the Drowned",
+  "colors": "U",
+  "life": 40,
+  "theme": [
+   "Human",
+   "Wizard"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-blue Lier, Disciple of the Drowned deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/human/artificer/esper_artificer.atlas",
+  "target": 43.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_U_Lier.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_U_Uvilda.dck",
+  "name": "Uvilda's Court",
+  "commander": "Uvilda, Dean of Perfection",
+  "colors": "U",
+  "life": 40,
+  "theme": [
+   "Djinn",
+   "Wizard"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-blue Uvilda, Dean of Perfection deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate.atlas",
+  "target": 42.8,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_U_Uvilda.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_U_Memnarch.dck",
+  "name": "Memnarch's Vanguard",
+  "commander": "Memnarch",
+  "colors": "U",
+  "life": 35,
+  "theme": [
+   "Wizard"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-blue Memnarch deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/elf/deftsorceress.atlas",
+  "target": 32.2,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_U_Memnarch.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_U_Orvar.dck",
+  "name": "Orvar's Vanguard",
+  "commander": "Orvar, the All-Form",
+  "colors": "U",
+  "life": 35,
+  "theme": [
+   "Shapeshifter"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-blue Orvar, the All-Form deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/celestial/angel_2.atlas",
+  "target": 31.3,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_U_Orvar.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_U_Azami.dck",
+  "name": "Azami's Vanguard",
+  "commander": "Azami, Lady of Scrolls",
+  "colors": "U",
+  "life": 35,
+  "theme": [
+   "Human",
+   "Wizard"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-blue Azami, Lady of Scrolls deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/human/wizard/red_wiz2.atlas",
+  "target": 32.4,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_U_Azami.dck",
+  "ban": [
+   "dramatic reversal"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_U_Urza.dck",
+  "name": "Urza's Vanguard",
+  "commander": "Urza, Lord High Artificer",
+  "colors": "U",
+  "life": 35,
+  "theme": [
+   "Human",
+   "Artificer"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-blue Urza, Lord High Artificer deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/fey/pixie.atlas",
+  "target": 40.0,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_U_Urza.dck",
+  "ban": [
+   "basalt monolith"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_U_Unesh.dck",
+  "name": "Unesh's Host",
+  "commander": "Unesh, Criosphinx Sovereign",
+  "colors": "U",
+  "life": 28,
+  "theme": [
+   "Sphinx"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-blue Unesh, Criosphinx Sovereign deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/fey/pixie_dimir.atlas",
+  "target": 27.1,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_U_Unesh.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_U_Talrand.dck",
+  "name": "Talrand's Host",
+  "commander": "Talrand, Sky Summoner",
+  "colors": "U",
+  "life": 28,
+  "theme": [
+   "Merfolk",
+   "Wizard"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-blue Talrand, Sky Summoner deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/conjurer.atlas",
+  "target": 34.0,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_U_Talrand.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_U_Thassa.dck",
+  "name": "Thassa's Host",
+  "commander": "Thassa, Deep-Dwelling",
+  "colors": "U",
+  "life": 28,
+  "theme": [
+   "God"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-blue Thassa, Deep-Dwelling deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/conjurer.atlas",
+  "target": 32.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_U_Thassa.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_U_Minn.dck",
+  "name": "Minn's Host",
+  "commander": "Minn, Wily Illusionist",
+  "colors": "U",
+  "life": 28,
+  "theme": [
+   "Gnome",
+   "Wizard"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-blue Minn, Wily Illusionist deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/human/artificer/esper_artificer.atlas",
+  "target": 34.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_U_Minn.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_U_Venser.dck",
+  "name": "Venser's Company",
+  "commander": "Venser, Shaper Savant",
+  "colors": "U",
+  "life": 18,
+  "theme": [
+   "Human",
+   "Wizard"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-blue Venser, Shaper Savant deck.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate.atlas",
+  "target": 23.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_U_Alandra.dck",
+  "name": "Alandra's Company",
+  "commander": "Alandra, Sky Dreamer",
+  "colors": "U",
+  "life": 18,
+  "theme": [
+   "Merfolk",
+   "Wizard"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-blue Alandra, Sky Dreamer deck.",
+  "sprite": "sprites/enemy/humanoid/elf/deftsorceress.atlas",
+  "target": 25.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_U_Grazilaxx.dck",
+  "name": "Grazilaxx's Company",
+  "commander": "Grazilaxx, Illithid Scholar",
+  "colors": "U",
+  "life": 18,
+  "theme": [
+   "Horror"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-blue Grazilaxx, Illithid Scholar deck.",
+  "sprite": "sprites/enemy/celestial/angel_2.atlas",
+  "target": 26.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_U_Charix.dck",
+  "name": "Charix's Company",
+  "commander": "Charix, the Raging Isle",
+  "colors": "U",
+  "life": 18,
+  "theme": [
+   "Leviathan",
+   "Crab"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-blue Charix, the Raging Isle deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/human/wizard/red_wiz2.atlas",
+  "target": 31.1,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T2_U_Charix.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Master.dck",
+  "name": "Master's Band",
+  "commander": "Master Pakku",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Advisor"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue Master Pakku deck.",
+  "sprite": "sprites/enemy/fey/pixie.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Ioreth.dck",
+  "name": "Ioreth's Band",
+  "commander": "Ioreth of the Healing House",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Cleric"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue Ioreth of the Healing House deck.",
+  "sprite": "sprites/enemy/fey/pixie_dimir.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Esior.dck",
+  "name": "Esior's Band",
+  "commander": "Esior, Wardwing Familiar",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Bird"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue Esior, Wardwing Familiar deck.",
+  "sprite": "sprites/enemy/humanoid/conjurer.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Elrond.dck",
+  "name": "Elrond's Band",
+  "commander": "Elrond, Lord of Rivendell",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Elf",
+   "Noble"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue Elrond, Lord of Rivendell deck.",
+  "sprite": "sprites/enemy/humanoid/conjurer.atlas"
+ },
+ {
+  "tier": 5,
+  "file": "T5_B_Yawgmoth.dck",
+  "name": "Yawgmoth's Court",
+  "commander": "Yawgmoth, Thran Physician",
+  "colors": "B",
+  "life": 40,
+  "theme": [
+   "Human",
+   "Cleric"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-black Yawgmoth, Thran Physician deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/monstrosity/gorgonen.atlas",
+  "target": 40.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_B_Yawgmoth.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_B_Tinybones.dck",
+  "name": "Tinybones's Court",
+  "commander": "Tinybones, Trinket Thief",
+  "colors": "B",
+  "life": 40,
+  "theme": [
+   "Skeleton",
+   "Rogue"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-black Tinybones, Trinket Thief deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/undead/vampire_4.atlas",
+  "target": 41.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_B_Tinybones.dck",
+  "ban": [
+   "orcish bowmasters",
+   "chain of smog"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_B_Sephiroth.dck",
+  "name": "Sephiroth's Court",
+  "commander": "Sephiroth, Fabled SOLDIER",
+  "colors": "B",
+  "life": 40,
+  "theme": [
+   "Human",
+   "Avatar"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-black Sephiroth, Fabled SOLDIER deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate_captain.atlas",
+  "target": 43.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_B_Sephiroth.dck",
+  "ban": [
+   "mikaeus, the unhallowed"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_B_Krrik.dck",
+  "name": "Krrik's Court",
+  "commander": "K'rrik, Son of Yawgmoth",
+  "colors": "B",
+  "life": 40,
+  "theme": [
+   "Phyrexian",
+   "Horror"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-black K'rrik, Son of Yawgmoth deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/aberration/phyrexian/drossgladiator.atlas",
+  "target": 44.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_B_Krrik.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_B_Ob.dck",
+  "name": "Ob's Vanguard",
+  "commander": "Ob Nixilis, the Fallen",
+  "colors": "B",
+  "life": 35,
+  "theme": [
+   "Demon"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-black Ob Nixilis, the Fallen deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/undead/shade.atlas",
+  "target": 38.9,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_B_Ob.dck",
+  "ban": [
+   "bloodletter of aclazotz"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_B_Massacre.dck",
+  "name": "Massacre's Vanguard",
+  "commander": "Massacre Girl, Known Killer",
+  "colors": "B",
+  "life": 35,
+  "theme": [
+   "Human",
+   "Assassin"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-black Massacre Girl, Known Killer deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/plant/fungus.atlas",
+  "target": 39.3,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_B_Massacre.dck",
+  "ban": [
+   "maha, its feathers night"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_B_Gisa.dck",
+  "name": "Gisa's Vanguard",
+  "commander": "Gisa, the Hellraiser",
+  "colors": "B",
+  "life": 35,
+  "theme": [
+   "Human",
+   "Warlock"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-black Gisa, the Hellraiser deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/plant/fungus.atlas",
+  "target": 40.1,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_B_Gisa.dck",
+  "ban": [
+   "magus of the coffers"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_B_Toshiro.dck",
+  "name": "Toshiro's Vanguard",
+  "commander": "Toshiro Umezawa",
+  "colors": "B",
+  "life": 35,
+  "theme": [
+   "Human",
+   "Samurai"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-black Toshiro Umezawa deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/knight.atlas",
+  "target": 40.0,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_B_Toshiro.dck",
+  "ban": [
+   "chain of smog",
+   "maralen of the mornsong"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_B_Imotekh.dck",
+  "name": "Imotekh's Host",
+  "commander": "Imotekh the Stormlord",
+  "colors": "B",
+  "life": 28,
+  "theme": [
+   "Necron"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-black Imotekh the Stormlord deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/undead/shade.atlas",
+  "target": 29.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_B_Imotekh.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_B_XuIfit.dck",
+  "name": "XuIfit's Host",
+  "commander": "Xu-Ifit, Osteoharmonist",
+  "colors": "B",
+  "life": 28,
+  "theme": [
+   "Human",
+   "Wizard"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-black Xu-Ifit, Osteoharmonist deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/monstrosity/gorgonen.atlas",
+  "target": 31.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_B_XuIfit.dck",
+  "ban": [
+   "magus of the coffers"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_B_Shirei.dck",
+  "name": "Shirei's Host",
+  "commander": "Shirei, Shizo's Caretaker",
+  "colors": "B",
+  "life": 28,
+  "theme": [
+   "Spirit"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-black Shirei, Shizo's Caretaker deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/undead/vampire_4.atlas",
+  "target": 29.2,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_B_Shirei.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_B_Chainer.dck",
+  "name": "Chainer's Host",
+  "commander": "Chainer, Dementia Master",
+  "colors": "B",
+  "life": 28,
+  "theme": [
+   "Human",
+   "Minion"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-black Chainer, Dementia Master deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate_captain.atlas",
+  "target": 34.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_B_Chainer.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_B_Braids.dck",
+  "name": "Braids's Company",
+  "commander": "Braids, Arisen Nightmare",
+  "colors": "B",
+  "life": 18,
+  "theme": [
+   "Nightmare"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-black Braids, Arisen Nightmare deck.",
+  "sprite": "sprites/enemy/aberration/phyrexian/drossgladiator.atlas",
+  "target": 23.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_B_Vito.dck",
+  "name": "Vito's Company",
+  "commander": "Vito, Thorn of the Dusk Rose",
+  "colors": "B",
+  "life": 18,
+  "theme": [
+   "Vampire",
+   "Cleric"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-black Vito, Thorn of the Dusk Rose deck.",
+  "sprite": "sprites/enemy/undead/shade.atlas",
+  "target": 25.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_B_MarrowGnawer.dck",
+  "name": "MarrowGnawer's Company",
+  "commander": "Marrow-Gnawer",
+  "colors": "B",
+  "life": 18,
+  "theme": [
+   "Rat",
+   "Rogue"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-black Marrow-Gnawer deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/plant/fungus.atlas",
+  "target": 26.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T2_B_MarrowGnawer.dck",
+  "ban": [
+   "thornbite staff"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_B_Syr.dck",
+  "name": "Syr's Company",
+  "commander": "Syr Konrad, the Grim",
+  "colors": "B",
+  "life": 18,
+  "theme": [
+   "Human",
+   "Knight"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-black Syr Konrad, the Grim deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/plant/fungus.atlas",
+  "target": 30.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T2_B_Syr.dck",
+  "ban": [
+   "bloodchief ascension"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Tormod.dck",
+  "name": "Tormod's Band",
+  "commander": "Tormod, the Desecrator",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Zombie",
+   "Wizard"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black Tormod, the Desecrator deck.",
+  "sprite": "sprites/enemy/humanoid/knight.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Whisper.dck",
+  "name": "Whisper's Band",
+  "commander": "Whisper, Blood Liturgist",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Cleric"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black Whisper, Blood Liturgist deck.",
+  "sprite": "sprites/enemy/undead/shade.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Keskit.dck",
+  "name": "Keskit's Band",
+  "commander": "Keskit, the Flesh Sculptor",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Phyrexian",
+   "Human"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black Keskit, the Flesh Sculptor deck.",
+  "sprite": "sprites/enemy/monstrosity/gorgonen.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Falthis.dck",
+  "name": "Falthis's Band",
+  "commander": "Falthis, Shadowcat Familiar",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Nightmare",
+   "Cat"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black Falthis, Shadowcat Familiar deck.",
+  "sprite": "sprites/enemy/undead/vampire_4.atlas"
+ },
+ {
+  "tier": 5,
+  "file": "T5_R_Birgi.dck",
+  "name": "Birgi's Court",
+  "commander": "Birgi, God of Storytelling",
+  "colors": "R",
+  "life": 40,
+  "theme": [
+   "God"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-red Birgi, God of Storytelling deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/fey/satyr.atlas",
+  "target": 44.4,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_R_Birgi.dck",
+  "ban": [
+   "kiki-jiki, mirror breaker",
+   "blasphemous act"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_R_Godo.dck",
+  "name": "Godo's Court",
+  "commander": "Godo, Bandit Warlord",
+  "colors": "R",
+  "life": 40,
+  "theme": [
+   "Human",
+   "Barbarian"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-red Godo, Bandit Warlord deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/human/shaman/pyromancer.atlas",
+  "target": 41.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_R_Godo.dck",
+  "ban": [
+   "basalt monolith",
+   "helm of the host"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_R_Ral.dck",
+  "name": "Ral's Court",
+  "commander": "Ral, Monsoon Mage",
+  "colors": "R",
+  "life": 40,
+  "theme": [
+   "Human",
+   "Wizard"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-red Ral, Monsoon Mage deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/aberration/phyrexian/furnacegoblin.atlas",
+  "target": 45.6,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_R_Ral.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_R_Rose.dck",
+  "name": "Rose's Court",
+  "commander": "Rose, Cutthroat Raider",
+  "colors": "R",
+  "life": 40,
+  "theme": [
+   "Robot"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-red Rose, Cutthroat Raider deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/monstrosity/kavu.atlas",
+  "target": 46.4,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_R_Rose.dck",
+  "ban": [
+   "godo, bandit warlord"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_R_Etali.dck",
+  "name": "Etali's Vanguard",
+  "commander": "Etali, Primal Storm",
+  "colors": "R",
+  "life": 35,
+  "theme": [
+   "Elder",
+   "Dinosaur"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-red Etali, Primal Storm deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/fey/satyr.atlas",
+  "target": 35.0,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_R_Etali.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_R_Ojer.dck",
+  "name": "Ojer's Vanguard",
+  "commander": "Ojer Axonil, Deepest Might",
+  "colors": "R",
+  "life": 35,
+  "theme": [
+   "God"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-red Ojer Axonil, Deepest Might deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/monstrosity/yeti.atlas",
+  "target": 30.4,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_R_Ojer.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_R_Magda.dck",
+  "name": "Magda's Vanguard",
+  "commander": "Magda, Brazen Outlaw",
+  "colors": "R",
+  "life": 35,
+  "theme": [
+   "Dwarf",
+   "Berserker"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-red Magda, Brazen Outlaw deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/swordsman_2.atlas",
+  "target": 38.0,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_R_Magda.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_R_Rionya.dck",
+  "name": "Rionya's Vanguard",
+  "commander": "Rionya, Fire Dancer",
+  "colors": "R",
+  "life": 35,
+  "theme": [
+   "Human",
+   "Wizard"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-red Rionya, Fire Dancer deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/beast/bird/parrot.atlas",
+  "target": 41.7,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_R_Rionya.dck",
+  "ban": [
+   "godo, bandit warlord"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_R_Lathliss.dck",
+  "name": "Lathliss's Host",
+  "commander": "Lathliss, Dragon Queen",
+  "colors": "R",
+  "life": 28,
+  "theme": [
+   "Dragon"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-red Lathliss, Dragon Queen deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate2.atlas",
+  "target": 19.0,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_R_Lathliss.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_R_Zada.dck",
+  "name": "Zada's Host",
+  "commander": "Zada, Hedron Grinder",
+  "colors": "R",
+  "life": 28,
+  "theme": [
+   "Goblin",
+   "Ally"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-red Zada, Hedron Grinder deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/fey/satyr.atlas",
+  "target": 27.3,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_R_Zada.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_R_Auntie.dck",
+  "name": "Auntie's Host",
+  "commander": "Auntie Blyte, Bad Influence",
+  "colors": "R",
+  "life": 28,
+  "theme": [
+   "Devil",
+   "Advisor"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-red Auntie Blyte, Bad Influence deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/human/shaman/pyromancer.atlas",
+  "target": 32.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_R_Auntie.dck",
+  "ban": [
+   "heartless hidetsugu"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_R_Krenko.dck",
+  "name": "Krenko's Host",
+  "commander": "Krenko, Mob Boss",
+  "colors": "R",
+  "life": 28,
+  "theme": [
+   "Goblin",
+   "Warrior"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-red Krenko, Mob Boss deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/aberration/phyrexian/furnacegoblin.atlas",
+  "target": 34.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_R_Krenko.dck",
+  "ban": [
+   "kiki-jiki, mirror breaker",
+   "pyromancer's goggles"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_R_KikiJiki.dck",
+  "name": "KikiJiki's Company",
+  "commander": "Kiki-Jiki, Mirror Breaker",
+  "colors": "R",
+  "life": 18,
+  "theme": [
+   "Goblin",
+   "Shaman"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-red Kiki-Jiki, Mirror Breaker deck.",
+  "sprite": "sprites/enemy/monstrosity/kavu.atlas",
+  "target": 23.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_R_Kazuul.dck",
+  "name": "Kazuul's Company",
+  "commander": "Kazuul, Tyrant of the Cliffs",
+  "colors": "R",
+  "life": 18,
+  "theme": [
+   "Ogre",
+   "Warrior"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-red Kazuul, Tyrant of the Cliffs deck.",
+  "sprite": "sprites/enemy/fey/satyr.atlas",
+  "target": 30.3,
+  "ban": [
+   "aggravated assault",
+   "mana geyser"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_R_Krenko.dck",
+  "name": "Krenko's Company",
+  "commander": "Krenko, Tin Street Kingpin",
+  "colors": "R",
+  "life": 18,
+  "theme": [
+   "Goblin"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-red Krenko, Tin Street Kingpin deck.",
+  "sprite": "sprites/enemy/monstrosity/yeti.atlas",
+  "target": 32.0,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_R_Zirilan.dck",
+  "name": "Zirilan's Company",
+  "commander": "Zirilan of the Claw",
+  "colors": "R",
+  "life": 18,
+  "theme": [
+   "Lizard",
+   "Shaman"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-red Zirilan of the Claw deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/swordsman_2.atlas",
+  "target": 30.8,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T2_R_Zirilan.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Squee.dck",
+  "name": "Squee's Band",
+  "commander": "Squee, Goblin Nabob",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Goblin"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red Squee, Goblin Nabob deck.",
+  "sprite": "sprites/enemy/beast/bird/parrot.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Breeches.dck",
+  "name": "Breeches's Band",
+  "commander": "Breeches, Brazen Plunderer",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Goblin",
+   "Pirate"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red Breeches, Brazen Plunderer deck.",
+  "sprite": "sprites/enemy/humanoid/human/rogue/pirate2.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Kediss.dck",
+  "name": "Kediss's Band",
+  "commander": "Kediss, Emberclaw Familiar",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Elemental",
+   "Lizard"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red Kediss, Emberclaw Familiar deck.",
+  "sprite": "sprites/enemy/fey/satyr.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Grishnkh.dck",
+  "name": "Grishnkh's Band",
+  "commander": "Grishnákh, Brash Instigator",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Goblin",
+   "Soldier"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red Grishnákh, Brash Instigator deck.",
+  "sprite": "sprites/enemy/humanoid/human/shaman/pyromancer.atlas"
+ },
+ {
+  "tier": 5,
+  "file": "T5_G_Yeva.dck",
+  "name": "Yeva's Court",
+  "commander": "Yeva, Nature's Herald",
+  "colors": "G",
+  "life": 40,
+  "theme": [
+   "Elf",
+   "Shaman"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-green Yeva, Nature's Herald deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/aberration/phyrexian/copperhostbrutalizer.atlas",
+  "target": 36.9,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_G_Yeva.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_G_Ashaya.dck",
+  "name": "Ashaya's Court",
+  "commander": "Ashaya, Soul of the Wild",
+  "colors": "G",
+  "life": 40,
+  "theme": [
+   "Elemental"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-green Ashaya, Soul of the Wild deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/plant/fungus_golgari.atlas",
+  "target": 41.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_G_Ashaya.dck",
+  "ban": [
+   "argothian elder",
+   "ley weaver",
+   "maze of ith"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_G_Lumra.dck",
+  "name": "Lumra's Court",
+  "commander": "Lumra, Bellow of the Woods",
+  "colors": "G",
+  "life": 40,
+  "theme": [
+   "Elemental",
+   "Bear"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-green Lumra, Bellow of the Woods deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/plant/hiddenbush.atlas",
+  "target": 39.9,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_G_Lumra.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 5,
+  "file": "T5_G_Jorn.dck",
+  "name": "Jorn's Court",
+  "commander": "Jorn, God of Winter",
+  "colors": "G",
+  "life": 40,
+  "theme": [
+   "God"
+  ],
+  "desc": "Tier 5 (Bracket 4, elite). Mono-green Jorn, God of Winter deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/swordsman_3.atlas",
+  "target": 39.7,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T5_G_Jorn.dck",
+  "ban": [
+   "gyre sage"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_G_Esika.dck",
+  "name": "Esika's Vanguard",
+  "commander": "Esika, God of the Tree",
+  "colors": "G",
+  "life": 35,
+  "theme": [
+   "God"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-green Esika, God of the Tree deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/plant/treant_large.atlas",
+  "target": 32.4,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_G_Esika.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_G_Selvala.dck",
+  "name": "Selvala's Vanguard",
+  "commander": "Selvala, Heart of the Wilds",
+  "colors": "G",
+  "life": 35,
+  "theme": [
+   "Elf",
+   "Scout"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-green Selvala, Heart of the Wilds deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/monstrosity/hydra.atlas",
+  "target": 37.9,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_G_Selvala.dck",
+  "ban": [
+   "marwyn, the nurturer",
+   "staff of domination",
+   "priest of titania",
+   "umbral mantle",
+   "gyre sage",
+   "fanatic of rhonas"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_G_Yisan.dck",
+  "name": "Yisan's Vanguard",
+  "commander": "Yisan, the Wanderer Bard",
+  "colors": "G",
+  "life": 35,
+  "theme": [
+   "Human",
+   "Rogue"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-green Yisan, the Wanderer Bard deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/beast/bear/bear.atlas",
+  "target": 38.0,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_G_Yisan.dck",
+  "ban": [
+   "circle of dreams druid",
+   "heronblade elite"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 4,
+  "file": "T4_G_Marwyn.dck",
+  "name": "Marwyn's Vanguard",
+  "commander": "Marwyn, the Nurturer",
+  "colors": "G",
+  "life": 35,
+  "theme": [
+   "Elf",
+   "Druid"
+  ],
+  "desc": "Tier 4 (Bracket 4). Mono-green Marwyn, the Nurturer deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/fey/satyr_2.atlas",
+  "target": 40.0,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T4_G_Marwyn.dck",
+  "ban": [
+   "staff of domination",
+   "circle of dreams druid",
+   "priest of titania",
+   "umbral mantle",
+   "elvish archdruid",
+   "gyre sage"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_G_Shroofus.dck",
+  "name": "Shroofus's Host",
+  "commander": "Shroofus Sproutsire",
+  "colors": "G",
+  "life": 28,
+  "theme": [
+   "Saproling"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-green Shroofus Sproutsire deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/humanoid/elf/druid.atlas",
+  "target": 26.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_G_Shroofus.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_G_Azusa.dck",
+  "name": "Azusa's Host",
+  "commander": "Azusa, Lost but Seeking",
+  "colors": "G",
+  "life": 28,
+  "theme": [
+   "Human",
+   "Monk"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-green Azusa, Lost but Seeking deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/aberration/phyrexian/copperhostbrutalizer.atlas",
+  "target": 33.6,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_G_Azusa.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_G_Kona.dck",
+  "name": "Kona's Host",
+  "commander": "Kona, Rescue Beastie",
+  "colors": "G",
+  "life": 28,
+  "theme": [
+   "Beast",
+   "Survivor"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-green Kona, Rescue Beastie deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/plant/fungus_golgari.atlas",
+  "target": 32.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_G_Kona.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 3,
+  "file": "T3_G_Reki.dck",
+  "name": "Reki's Host",
+  "commander": "Reki, the History of Kamigawa",
+  "colors": "G",
+  "life": 28,
+  "theme": [
+   "Human",
+   "Shaman"
+  ],
+  "desc": "Tier 3 (Bracket 3). Mono-green Reki, the History of Kamigawa deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/plant/hiddenbush.atlas",
+  "target": 34.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T3_G_Reki.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_G_Toski.dck",
+  "name": "Toski's Company",
+  "commander": "Toski, Bearer of Secrets",
+  "colors": "G",
+  "life": 18,
+  "theme": [
+   "Squirrel"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-green Toski, Bearer of Secrets deck.",
+  "sprite": "sprites/enemy/humanoid/swordsman_3.atlas",
+  "target": 23.5,
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_G_Arasta.dck",
+  "name": "Arasta's Company",
+  "commander": "Arasta of the Endless Web",
+  "colors": "G",
+  "life": 18,
+  "theme": [
+   "Spider"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-green Arasta of the Endless Web deck.",
+  "sprite": "sprites/enemy/plant/treant_large.atlas",
+  "target": 26.9,
+  "ban": [
+   "umbral mantle"
+  ],
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_G_Thrun.dck",
+  "name": "Thrun's Company",
+  "commander": "Thrun, Breaker of Silence",
+  "colors": "G",
+  "life": 18,
+  "theme": [
+   "Troll",
+   "Shaman"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-green Thrun, Breaker of Silence deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/monstrosity/hydra.atlas",
+  "target": 30.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T2_G_Thrun.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 2,
+  "file": "T2_G_Legolas.dck",
+  "name": "Legolas's Company",
+  "commander": "Legolas, Master Archer",
+  "colors": "G",
+  "life": 18,
+  "theme": [
+   "Elf",
+   "Archer"
+  ],
+  "desc": "Tier 2 (Bracket 2). Mono-green Legolas, Master Archer deck. Seeded from a public Commander decklist.",
+  "sprite": "sprites/enemy/beast/bear/bear.atlas",
+  "target": 27.5,
+  "seed": "../../tools/concordia/deckgen/external/seeds/T2_G_Legolas.dck",
+  "target_scale": "edhrec"
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Peregrin.dck",
+  "name": "Peregrin's Band",
+  "commander": "Peregrin Took",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Halfling",
+   "Citizen"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green Peregrin Took deck.",
+  "sprite": "sprites/enemy/fey/satyr_2.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Surrak.dck",
+  "name": "Surrak's Band",
+  "commander": "Surrak, the Hunt Caller",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Warrior"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green Surrak, the Hunt Caller deck.",
+  "sprite": "sprites/enemy/humanoid/elf/druid.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Anara.dck",
+  "name": "Anara's Band",
+  "commander": "Anara, Wolvid Familiar",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Wolf",
+   "Beast"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green Anara, Wolvid Familiar deck.",
+  "sprite": "sprites/enemy/aberration/phyrexian/copperhostbrutalizer.atlas"
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Toph.dck",
+  "name": "Toph's Band",
+  "commander": "Toph, the Blind Bandit",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Warrior"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green Toph, the Blind Bandit deck.",
+  "sprite": "sprites/enemy/plant/fungus_golgari.atlas"
+ }
+]

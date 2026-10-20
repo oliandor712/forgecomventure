@@ -392,19 +392,21 @@ include the zone's color.
 | Role | Stage 1 | Stage 2 | Stage 3 | Colors |
 |---|---|---|---|---|
 | Wild creatures (also random dungeons, pass sentries, hall acolytes) | T1 · any · 12 | T2 · 25-28 · 18 | T4 · 34-37 · 22 | mono |
-| Trainers (duelists) | T2 · 21-25 · 20 | T3/T4 · 33-38 · 25 | T4/T5 · 39-43 · 30 | 1-2, then 2-3 |
-| Pass keepers | T2 · 24-27 · 22 | T4 · 34-37 · 28 | T5 · 40-42 · 32 | mono |
+| Trainers (duelists) | T2 · 24-27 · 20 | T3/T4 · 33-38 · 25 | T4/T5 · 39-43 · 30 | 1-2, then 2-3 |
+| Pass keepers | T2 · 26-29 · 22 | T4 · 34-37 · 28 | T5 · 40-42 · 32 | mono |
 | Grove guardians | T3 · 29-32 · 24 | T4 · 37-39 · 30 | T5 · 41-44 · 35 | mono |
 | Warden | T3 · 32-35 · 30 | T4 · 38-41 · 35 | T5 · 43-46 · 40 | mono |
 
 Windows are in `deck_tier.py` deck power, which counts EDHREC popularity since 2026-10-20 (the windows moved up by
-each tier's average shift: +1.5 at T2-T3, +1 at T4, +0.5 at T5).
+each tier's average shift: +1.5 at T2-T3, +1 at T4, +0.5 at T5). The same day the tier 1-2 floor was raised (T1 decks
+now 16-18 instead of 12-14, T2 25-30 instead of 21-31), so the stage-1 trainer and pass-keeper windows moved up to
+24-27 and 26-29.
 
 After the zones, colors keep widening: the Paragons play their border pair's two colors at the top of tier 5 (43+,
 life 40), and the champion area's gauntlet, Rival and Champion play three to five colors (tier 5/6, 45+).
 
 - **Wild creatures take the stage's lowest band.** Stage 2 uses the top of tier 2 rather than the bottom of tier 3,
-  which would jump from about 12 to about 29 power in one step.
+  which would jump from about 17 to about 29 power in one step.
 - **Thin windows:** each enemy's deck pool is the decks inside its window. If fewer than 3 decks are inside, the
   nearest decks by power are added: first from the same tier, then from the tiers next to it. The tables live in
   `tools/concordia/maps/build_color_zone.py` (`WILD`, `TRAINER`, `KEEPER`, `GUARDIAN`, `WARDEN`).

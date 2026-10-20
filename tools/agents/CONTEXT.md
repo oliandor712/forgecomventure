@@ -103,6 +103,8 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
 - 2026-10-20: 
+- 2026-10-20: Tier 1-2 decks rebuilt with a raised floor (user): uncommon staples pushed, budget lands and cheap mana rocks added; T1 power now 16-18 (was 12-14), T2 25-30 (was 21-31). Green-zone stage-1 trainer/keeper windows moved up. deck-balance-lab: T1-2 games before this commit are on the old T1-2 decks; split them out like the earlier rebuild.
+- 2026-10-20: 
 - 2026-10-20: Agent coordinator removed at the user's request (token cost). No more coordinator pings, CYCLE NOW messages or night holds; only the main session pauses you. Its old files stay in tools/agents/coordinator/ as history.
 - 2026-10-20: 
 - 2026-10-20: Life bonuses (life5, life10) eliminated as an option by the user. No life-bonus tests; every sim at equal life. Old life rows stay in records.csv but are left out of the report.
@@ -112,5 +114,3 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-20: Analysis requests are batched into each agent's 4-hour report (coordinator budget check: AI lab turns over the time box from the request loop). Each answer turn stays within the time box.
 - 2026-10-20: Agent coordinator added (session_017PAirUr1ZnmejFCor3yYPi): logs every main-session/agent interaction, tracks productivity, and from 12-8 AM Eastern holds you while the main session is active (rule 9).
 - 2026-10-20: All 200 AI decks rebuilt with the new deck-building rules (staple preference, watch caps, EDHREC-scale bands); old decks backed up in tools/concordia/backups/2026-10-20_decks_pre_rebuild/. Balance records before this commit are on the old decks.
-- 2026-10-20: Test-tool updates pre-approved with backups (rule 7); proposed AI changes tracked for the user's approval in docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md (rule 8: CHECKLIST lines in reports).
-- 2026-10-20: New card categories (docs/Adventure/Campaign/STAPLES.md, deckgen/staples.py): staple (popular, low standalone impact), game_changer, watch (popular, high impact, not a Game Changer). deck_tier.py --json now lists 'staples' and 'watch' per deck.

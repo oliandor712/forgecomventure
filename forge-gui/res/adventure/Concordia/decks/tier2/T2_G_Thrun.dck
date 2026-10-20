@@ -4,31 +4,34 @@ Description=Tier 2 (Bracket 2). Mono-green Thrun, Breaker of Silence deck. Seede
 [Commander]
 1 Thrun, Breaker of Silence|ONE
 [Main]
-36 Forest|FDN
+32 Forest|FDN
 1 Myriad Landscape|CMM
 1 Rogue's Passage|FDN
+1 Tranquil Thicket|ONS
+1 Temple of the False God|SCG
+1 Reliquary Tower|M19
+1 Blighted Woodland|BFZ
 1 Arbor Elf|M13
 1 Essence Warden|PLC
 1 Primal Bellow|ZEN
 1 Primal Might|FDN
-1 Sakura-Tribe Scout|SOK
 1 Silkguard|SOC
+1 Sol Ring|TMC
 1 Ainok Survivalist|C19
 1 Ancient Animus|DOM
+1 Arcane Signet|TMC
 1 Blackblade Reforged|DOM
 1 Bloodline Shaman|ONS
 1 Elvish Visionary|ORI
 1 Fa'adiyah Seer|PLC
+1 Kami of Transience|NEO
+1 Mind Stone|10E
 1 Ordeal of Nylea|FDN
-1 Orochi Sustainer|CHK
 1 Ram Through|IKO
-1 Sakura-Tribe Elder|CHK
 1 Scavenging Ooze|FDN
 1 Seal of Primordium|PLC
-1 Thornbite Staff|MOR
-1 Thran Power Suit|BRO
+1 Shigeki, Jukai Visionary|NEO
 1 Wose Pathfinder|LTR
-1 Abzan Beastmaster|FRF
 1 Cartouche of Strength|AKH
 1 Elvish Rejuvenator|M19
 1 Eternal Witness|5DN
@@ -38,13 +41,15 @@ Description=Tier 2 (Bracket 2). Mono-green Thrun, Breaker of Silence deck. Seede
 1 Gift of Paradise|M20
 1 Krosan Grip|TSP
 1 Loaming Shaman|M20
-1 Mul Daya Channelers|ROE
+1 Peregrin Took|LTR
+1 Reclamation Sage|FDN
 1 Setessan Champion|THB
-1 Strata Scythe|SOM
+1 Tireless Provisioner|J25
 1 Viridian Corrupter|MBS
 1 Yavimaya Enchantress|C18
 1 Armorcraft Judge|KLD
 1 Forgotten Ancient|SCG
+1 Goreclaw, Terror of Qal Sisma|CMM
 1 Harmonize|TMC
 1 Masked Admirers|PLST
 1 Mindless Automaton|CMR
@@ -53,7 +58,6 @@ Description=Tier 2 (Bracket 2). Mono-green Thrun, Breaker of Silence deck. Seede
 1 Shard Convergence|CFX
 1 Thrun, the Last Troll|MBS
 1 Timeless Witness|MH2
-1 Towashi Guide-Bot|NEO
 1 Triumph of the Hordes|NPH
 1 Acidic Slime|TMC
 1 Bellowing Tanglewurm|SOM

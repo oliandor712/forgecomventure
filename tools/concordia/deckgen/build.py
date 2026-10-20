@@ -20,7 +20,7 @@ OUT = os.path.join(RES, 'adventure', 'Concordia', 'decks')
 BASIC = {'W': 'Plains', 'U': 'Island', 'B': 'Swamp', 'R': 'Mountain', 'G': 'Forest'}
 SPEC = {
  1: dict(lands=42, quota={'removal': 2, 'draw': 1, 'ramp': 1}, cap={'ramp': 2, 'draw': 2, 'removal': 3, 'wipe': 0, 'tutor': 0, 'fast': 0},
-         creatures=42, cmax=46, types={'Instant|Sorcery': 6, 'Artifact|Enchantment': 4}, curve={1: 7, 2: 20, 3: 16, 4: 8, 5: 6, 6: 2}, rar={'C': 99, 'U': 15}, gc=0),
+         creatures=42, cmax=46, types={'Instant|Sorcery': 6, 'Artifact|Enchantment': 4}, curve={1: 7, 2: 20, 3: 16, 4: 8, 5: 6, 6: 2}, rar={'C': 99, 'U': 25}, gc=0),
  2: dict(lands=38, quota={'wipe': 1, 'removal': 8, 'ramp': 5, 'draw': 5}, cap={'ramp': 7, 'draw': 8, 'removal': 10, 'wipe': 2, 'tutor': 1, 'fast': 1},
          creatures=30, cmax=34, types={'Instant': 5, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 4}, curve={1: 6, 2: 15, 3: 15, 4: 12, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 10, 'M': 1}, gc=0),
  3: dict(lands=37, quota={'wipe': 2, 'removal': 10, 'ramp': 10, 'draw': 9}, cap={'ramp': 12, 'draw': 11, 'removal': 13, 'wipe': 3, 'tutor': 2, 'fast': 3},
@@ -34,7 +34,24 @@ TARGET_POWER = {2: 26.5, 3: 35.5, 4: 40, 5: 46.5}  # card power the builder aims
 # Staples (deckgen/staples.py: popular, low standalone impact) make decks consistent without swinging games: tiers 2-3
 # prefer them, 4-5 mildly, tier 1 avoids them so wild encounters stay rough. Watch-list cards (popular and high
 # impact, not Game Changers) are capped like Game Changers. Precon inclusion counts as casual playability at 2-3.
-STAPLE_BONUS = {1: -4, 2: 3, 3: 3, 4: 1.5, 5: 1.5}
+STAPLE_BONUS = {1: -4, 2: 0, 3: 3, 4: 1.5, 5: 1.5}
+# Raise the tier 1-2 floor (user, 2026-10-20): push staples at tiers 1-2, uncommon printings only (other staples keep
+# STAPLE_BONUS), give tier 1 a power target instead of building it as weak as possible, and rebuild any tier 1-2 deck
+# whose power lands under FLOOR with a raised target. Near-staple budget lands (budget_lands.json) fill BUDGET_LANDS.
+UNCOMMON_STAPLE_BONUS = {1: 6, 2: 6}
+T1_TARGET = 15.0
+FLOOR = {1: 15.0, 2: 24.5}
+CEILING = {1: 18.0, 2: 30.0}  # pushed staples lift the top too; keep tier 1-2 decks inside their bands
+BUDGET_LANDS = {1: 3, 2: 5}
+BUDGET_ROCKS = {1: 2, 2: 3}  # cheap mana rocks from budget decks, inside the tier's ramp/fast caps
+_bl = os.path.join(HERE, 'budget_lands.json')
+BUDGET = json.load(open(_bl))['lands'] if os.path.exists(_bl) else {}
+ROCKS = json.load(open(_bl)).get('rocks', {}) if os.path.exists(_bl) else {}
+import hashlib
+def spread(items, key):
+    """Order budget picks by popularity times a stable per-deck jitter, so decks don't all get the same few cards."""
+    h = lambda n: int(hashlib.md5((key + n).encode()).hexdigest()[:8], 16) / 0xffffffff
+    return sorted(items, key=lambda kv: -kv[1]['decks'] * (0.5 + h(kv[0])) - (1000 if kv[1]['colors'] else 0))
 WATCH_CAP = {1: 0, 2: 1, 3: 2, 4: 4, 5: 8}
 PRECON_BONUS = {2: 2, 3: 2}
 # Per deck in decks.json, for balancing after simulations: "target" overrides TARGET_POWER (tiers 2-5), and
@@ -87,7 +104,7 @@ def build(d):
         pop = p['pop']
         s = 0
         if tier == 1:
-            s = -pw * d.get('weakness', 1.0) + 4 * min(pop, 5) / 5 - 0.8 * max(0, p['nabil'] - 2)
+            s = -0.7 * abs(pw - d.get('target', T1_TARGET)) + 4 * min(pop, 5) / 5 - 0.8 * max(0, p['nabil'] - 2)
             if 'Creature' in p['types'] and p['pt']:
                 try:
                     if int(p['pt'][0]) + int(p['pt'][1]) > 2 * p['cmc'] + 1: s -= 6  # above-rate body
@@ -96,7 +113,7 @@ def build(d):
             s = -0.7 * abs(pw - d.get('target', TARGET_POWER[2])) + 3 * min(pop, 10) / 10
         else:
             s = -0.6 * abs(pw - d.get('target', TARGET_POWER[tier])) + 4 * min(pop, 20) / 20
-        if p.get('cat') == 'staple': s += STAPLE_BONUS[tier]
+        if p.get('cat') == 'staple': s += UNCOMMON_STAPLE_BONUS[tier] if tier in UNCOMMON_STAPLE_BONUS and r == 'U' else STAPLE_BONUS[tier]
         s += PRECON_BONUS.get(tier, 0) * min(1.0, p.get('precon', 0.0) / 0.25)
         if theme_match(p, theme): s += 12
         if p['name'].lower() in seed: s += d.get('seed_bonus', 25) if tier > 1 else 0
@@ -140,6 +157,15 @@ def build(d):
             s = score(p, r)
             if bestp is None or s > bestp[0]: bestp = (s, p, r)
         return bestp
+    if tier in BUDGET_ROCKS:
+        nrock = 0
+        for name, b in sorted(ROCKS.items(), key=lambda kv: -kv[1]['decks'] * (0.5 + int(hashlib.md5((d['file'] + kv[0]).encode()).hexdigest()[:8], 16) / 0xffffffff)):
+            if nrock >= BUDGET_ROCKS[tier]: break
+            p = pool.get(name.lower())
+            if not p or p not in cands or not set(b['colors']) <= ident: continue
+            r = can_add(p)
+            if not r: continue
+            add(p, 'U' if 'U' in p['best'] and r != 'U' and rcount['U'] < spec['rar'].get('U', 0) else r); nrock += 1
     for role in spec['quota']:
         while roles[role] < spec['quota'][role] and len(chosen) < nonland:
             b = best(lambda p: p['tags'] & ROLE[role])
@@ -173,6 +199,16 @@ def build(d):
                 if r and (tier >= 3 or r in 'CU'):
                     nb.append(p['name'])
     nb = list(dict.fromkeys(nb))[: {2: 4, 3: 12, 4: 15, 5: 18}.get(tier, 4)]
+    if tier in BUDGET_LANDS:
+        mono = len(ident) == 1
+        for name, b in spread(BUDGET.items(), d['file']):  # colour-specific first, then by popularity with jitter
+            if len(nb) >= BUDGET_LANDS[tier] + (1 if tier == 2 else 0): break
+            k = name.lower(); p = pool.get(k)
+            if not p or k in banned or name in nb: continue
+            if not set(b['colors']) <= ident or (mono and b['any_color']): continue
+            if not ('C' in p['best'] or 'U' in p['best']): continue
+            nb.append(name)
+        nb = nb[: BUDGET_LANDS[tier] + (1 if tier == 2 else 0)]
     lands = [(pool[n.lower()], pick_rarity(pool[n.lower()], tier, rcount, spec) or pool[n.lower()]['minr']) for n in nb]
     for _, r in lands: rcount[r] += 1
     nbasic = spec['lands'] - len(lands)
@@ -218,6 +254,12 @@ if __name__ == '__main__':
             if combo and (r['combos']['early_game'] or (d['tier'] < 3 and r['combos']['late_game'])):
                 piece = sorted((r['combos']['early_game'] + r['combos']['late_game'])[0].split(' + '))[0]
                 d.setdefault('ban', []).append(piece); continue
+            if d['tier'] in FLOOR and r['power'] < FLOOR[d['tier']] and attempt < 5:
+                base = d.get('target', T1_TARGET if d['tier'] == 1 else TARGET_POWER[2])
+                d['target'] = round(base + FLOOR[d['tier']] - r['power'] + 0.5, 1); continue
+            if d['tier'] in CEILING and r['power'] > CEILING[d['tier']] and attempt < 5:
+                base = d.get('target', T1_TARGET if d['tier'] == 1 else TARGET_POWER[2])
+                d['target'] = round(base - (r['power'] - CEILING[d['tier']]) - 0.5, 1); continue
             break
         fails = [x for s, x in chk if s == 'FAIL']; warns = [x for s, x in chk if s == 'WARN']
         print('%-28s T%d pow %.1f lands %d cr %d ramp %d draw %d rem %d wipe %d mv %.2f rar %s' % (d['file'], d['tier'], r['power'], r['lands'], r['creatures'], r['ramp'], r['draw'], r['removal'], r['wipe'], r['avg_mv'], r['rarity']))

@@ -4,34 +4,39 @@ Description=Tier 2 (Bracket 2). Mono-black Marrow-Gnawer deck. Seeded from a pub
 [Commander]
 1 Marrow-Gnawer|CHK
 [Main]
-35 Swamp|FDN
+32 Swamp|FDN
 1 Bojuka Bog|WWK
 1 Mudflat Village|BLB
 1 Witch's Cottage|ELD
-1 Dark Ritual|MMQ
+1 Barren Moor|ONS
+1 Myriad Landscape|CMM
+1 Temple of the False God|SCG
 1 Echoing Return|MH2
 1 Fourth Bridge Prowler|AER
-1 Kaya's Ghostform|WAR
-1 Not Dead After All|WOE
+1 Malakir Rebirth|ZNR
+1 Sol Ring|TMC
 1 Vampire Cutthroat|EMN
-1 Frogtosser Banneret|MOR
+1 Vampiric Rites|FDN
+1 Arcane Signet|TMC
+1 Cover of Darkness|ONS
+1 Exsanguinate|FDN
 1 Go for the Throat|40K
 1 Hoard Robber|AFR
-1 Persist|MH2
 1 Persistent Marshstalker|BLB
 1 Plumb the Forbidden|STX
 1 Rat Colony|DOM
 1 Rotting Rats|CFX
+1 Sheoldred's Edict|ONE
 1 Sign in Blood|M15
 1 Swarm of Rats|PO2
 1 Tangled Colony|WOE
 1 The Soul Stone|SPM
-1 Waste Not|M15
-1 Zhentarim Bandit|CLB
 1 Zulaport Cutthroat|BFZ
 1 Ayara, First of Locthwain|ELD
 1 Bloodthirsty Aerialist|M20
+1 Boggart Trawler|MH3
 1 Chittering Skitterling|ONE
+1 Commander's Sphere|CMM
 1 Crypt Rats|VIS
 1 Gilt-Blade Prowler|MH2
 1 Hero's Downfall|FDN
@@ -39,27 +44,25 @@ Description=Tier 2 (Bracket 2). Mono-black Marrow-Gnawer deck. Seeded from a pub
 1 Karumonix, the Rat King|ONE
 1 Lord Skitter's Butcher|WOE
 1 Lord Skitter, Sewer King|SLZ
-1 Magnifying Glass|MKM
 1 Phyrexian Arena|FDN
-1 Seer's Lantern|OGW
+1 Plaguecrafter|GRN
 1 Stronghold Rats|FUT
-1 Vessel of Endless Rest|UMA
-1 Aetherborn Marauder|KLD
 1 Balustrade Spy|GTC
-1 Clay Golem|AFC
+1 Diabolic Servitude|CMA
 1 Gonti, Lord of Luxury|CMM
 1 Grave Pact|10E
 1 Grim Hireling|CLB
-1 Locust Miser|SOK
+1 Hedron Archive|FDN
+1 Morsel Theft|MOR
 1 Noggin Whack|MOR
 1 Paradise Plume|TSP
-1 Symmetry Matrix|BRO
+1 Ravenous Chupacabra|RIX
 1 Syphon Mind|ONS
-1 Ur-Golem's Eye|DST
-1 Farsight Mask|MRD
-1 Incremental Blight|SHM
+1 Zombify|FDN
+1 Ogre Slumlord|GTC
 1 Sanguine Bond|IMA
 1 Swarmyard Massacre|BLC
+1 Syr Konrad, the Grim|ELD
 1 The Eldest Reborn|DOM
 1 Thornmantle Striker|KHM
 1 Throat Slitter|BOK

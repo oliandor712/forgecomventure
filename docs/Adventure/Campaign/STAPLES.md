@@ -65,10 +65,12 @@ All 200 tier decks were rebuilt with these rules. The old decks, `decks.json` an
 
 | Rule | Where | Setting |
 |---|---|---|
-| Staple preference | `deckgen/build.py` `STAPLE_BONUS` | T1 -4, T2 and T3 +3, T4 and T5 +1.5 |
+| Staple preference | `deckgen/build.py` `STAPLE_BONUS`, `UNCOMMON_STAPLE_BONUS` | T1-T2: +6 for staples taken at uncommon, otherwise T1 -4 and T2 0; T3 +3, T4 and T5 +1.5 |
+| Tier 1-2 floor and ceiling (builder rebuilds outside them) | `FLOOR`, `CEILING`, `T1_TARGET` | T1 15-18 (target 15), T2 24.5-30 |
+| Budget lands and mana rocks (most-played in precons and low-rarity decks, C/U printings; `deckgen/budget_lands.py`) | `BUDGET_LANDS`, `BUDGET_ROCKS` | T1 3 lands and 2 rocks, T2 up to 6 nonbasics and 3 rocks; mono decks skip lands and rocks for other colors and "any colour" lands |
 | Precon playability bonus | `PRECON_BONUS` | +2 at T2-T3, scaled by precon inclusion |
 | Watch-list cap (builder hard cap; tier check WARN) | `WATCH_CAP`, `deck_tier.TIERS` | T1 0, T2 1, T3 2, T4 4, T5 8 |
-| Staples per deck (soft check, WARN) | `deck_tier.TIERS` | T1 0-2, T2 5-31, T3 22-39, T4 22-46, T5 28-48 |
+| Staples per deck (soft check, WARN) | `deck_tier.TIERS` | T1 2-15, T2 12-41, T3 22-39, T4 22-46, T5 28-48 |
 | Power bands (EDHREC scale) | `deck_tier.TIERS` | T1 19 or less, T2 19-31, T3 27-38, T4 34-42, T5 39 or more |
 | Build targets | `TARGET_POWER`, per-deck targets in `decks.json` | +1.5 at T2-T3, +1 at T4, +0.5 at T5 |
 

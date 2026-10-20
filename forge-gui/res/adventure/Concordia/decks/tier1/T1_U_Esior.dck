@@ -4,17 +4,20 @@ Description=Tier 1 (Bracket 1). Mono-blue Esior, Wardwing Familiar deck.
 [Commander]
 1 Esior, Wardwing Familiar|CMR
 [Main]
-42 Island|FDN
+39 Island|FDN
+1 Lonely Sandbar|ONS
+1 Myriad Landscape|CMM
+1 Reliquary Tower|M19
 1 Artificer's Assistant|DOM
 1 Aven Envoy|LGN
 1 Cloudfin Raptor|GTC
 1 Short Sword|M21
 1 Silver Raven|AFR
+1 Arcane Signet|TMC
 1 Augury Owl|M11
 1 Bay Falcon|MIR
 1 Coast Watcher|SCG
-1 Foul Watcher|MH2
-1 Giant Albatross|HML
+1 Glint-Nest Crane|KLD
 1 Neurok Familiar|MRD
 1 Old Thrush|HOB
 1 Otter-Penguin|TLA
@@ -27,38 +30,38 @@ Description=Tier 1 (Bracket 1). Mono-blue Esior, Wardwing Familiar deck.
 1 Skyshroud Condor|TMP
 1 Storm Crow|9ED
 1 Stormscape Familiar|PLS
-1 Tempest Owl|ZEN
+1 Treasure Hunt|WWK
 1 Welkin Tern|M15
 1 Zephyr Falcon|5ED
 1 Aesthir Glider|DOM
-1 Aven Eternal|WAR
 1 Aven Wind Mage|M19
-1 Frost Raptor|CSP
-1 Frost Trickster|STX
+1 Call to Mind|M11
+1 Commander's Sphere|CMM
+1 Deluge|10E
+1 Encouraging Aviator|SOS
+1 Fireshrieker|FDN
+1 Fleeting Aven|ONS
 1 Iguana Parrot|TLA
 1 Ithilien Kingfisher|LTR
-1 Jeskai Windscout|KTK
-1 Kathari Screecher|ALA
-1 Parasitic Strix|CFX
-1 Preening Champion|MOM
+1 Nuka-Cola Vending Machine|PIP
 1 Raven Familiar|C13
-1 Skywing Aven|TOR
-1 Trained Condor|M14
+1 Sanctuary Raptor|MH2
+1 Steady Progress|SOM
 1 Umara Raptor|ZEN
-1 Vexing Gull|THB
+1 Warden of Evos Isle|PLST
 1 Augury Raven|KHM
 1 Aven Augur|FUT
-1 Aven Fogbringer|JUD
-1 Aven Initiate|AKH
-1 Futurist Sentinel|NEO
-1 Jade Idol|CHK
-1 Ray of Command|5ED
-1 Serrated Arrows|HML
+1 Clinquant Skymage|FDN
+1 Fact or Fiction|INV
+1 Irenicus's Vile Duplication|CLB
+1 Jhoira's Familiar|DOM
+1 Ravenhill Flock|HOB
+1 Zenith Seeker|AKH
 1 Aven Surveyor|FRF
-1 Frostveil Ambush|IKO
-1 Meteorite|DMU
-1 Muse's Encouragement|SOS
-1 Ojutai's Summons|DTK
-1 Switcheroo|M19
+1 Blizzard Strix|MH1
+1 Coveted Peacock|CMM
+1 Dreamtail Heron|IKO
+1 Knightfisher|BLB
+1 Murder of Crows|ISD
 1 Crookclaw Elder|LGN
-1 Will of the Naga|FRF
+1 Shoreline Ranger|SCG

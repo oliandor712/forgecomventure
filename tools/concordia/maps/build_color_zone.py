@@ -54,10 +54,10 @@ ZONES = {
 # T2 21-28, T3 30-38, T4 34-41, T5 40-46.
 # Wild creatures take the lowest band of the stage and also fill the random dungeons, pass sentries and hall acolytes.
 WILD = {1: (1, (0, 99), 12, 'mono'), 2: (2, (25, 28), 18, 'mono'), 3: (4, (34, 37), 22, 'mono')}
-TRAINER = {1: [(2, (21, 25), 20, '1-2')],
+TRAINER = {1: [(2, (24, 27), 20, '1-2')],
            2: [(3, (33, 37), 25, '2-3'), (4, (35, 38), 25, '2-3')],
            3: [(4, (39, 42), 30, '2-3'), (5, (40, 43), 30, '2-3')]}
-KEEPER = {1: (2, (24, 27), 22, 'mono'), 2: (4, (34, 37), 28, 'mono'), 3: (5, (40, 42), 32, 'mono')}
+KEEPER = {1: (2, (26, 29), 22, 'mono'), 2: (4, (34, 37), 28, 'mono'), 3: (5, (40, 42), 32, 'mono')}
 GUARDIAN = {1: (3, (29, 32), 24, 'mono'), 2: (4, (37, 39), 30, 'mono'), 3: (5, (41, 44), 35, 'mono')}
 WARDEN = {1: (3, (32, 35), 30, 'mono'), 2: (4, (38, 41), 35, 'mono'), 3: (5, (43, 46), 40, 'mono')}
 MIN_POOL = 3  # decks per pool; a thin window takes the nearest decks by power from the same and neighbouring tiers

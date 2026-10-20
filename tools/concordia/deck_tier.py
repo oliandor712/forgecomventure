@@ -34,13 +34,13 @@ ABIL_RE = re.compile(r"^(?:A:|SVar:[^:]+:)\s*(AB|SP|DB)\$\s*([A-Za-z]+)(.*)$")
 
 # Tier rules. Ranges are inclusive [min, max]; None means no bound. "hard" rules FAIL, the rest WARN.
 TIERS = {
-    1: {"name": "Tier 1 - Weak / wild", "life": (10, 12), "watch": 0, "staples": (0, 2), "commander_rarity": {"C", "U"}, "commander_mv": (2, 4),
+    1: {"name": "Tier 1 - Weak / wild", "life": (10, 12), "watch": 0, "staples": (2, 15), "commander_rarity": {"C", "U"}, "commander_mv": (2, 4),
         "lands": (40, 46), "ramp": (0, 3), "fast": (0, 0), "draw": (0, 3), "removal": (0, 3), "wipe": (0, 0),
         "tutor": (0, 0), "avg_mv": (2.5, 3.4), "creatures": (35, 60), "power": (None, 19),
-        "max_rare": 0, "max_mythic": 0, "max_uncommon": 15, "game_changers": 0, "mld": 0, "extra_turns": 0, "combos": "none",
+        "max_rare": 0, "max_mythic": 0, "max_uncommon": 25, "game_changers": 0, "mld": 0, "extra_turns": 0, "combos": "none",
         "bracket": 1, "curve": {1: (5, 8), 2: (15, 21), 3: (11, 16), 4: (5, 8), 5: (3, 10), 6: (0, 2)},
         "types": {"noncreature": 6, "Instant+Sorcery": 4}, "max_type_share": 0.85, "karsten": None},
-    2: {"name": "Tier 2 - Moderate", "life": (15, 20), "watch": 1, "staples": (5, 31), "commander_rarity": {"C", "U", "R"}, "commander_mv": (3, 5),
+    2: {"name": "Tier 2 - Moderate", "life": (15, 20), "watch": 1, "staples": (12, 41), "commander_rarity": {"C", "U", "R"}, "commander_mv": (3, 5),
         "lands": (36, 39), "ramp": (2, 8), "fast": (0, 1), "draw": (2, 10), "removal": (4, 14), "wipe": (0, 2),
         "tutor": (0, 1), "avg_mv": (2.6, 3.6), "creatures": (26, 36), "power": (19, 31),
         "max_rare": 10, "max_mythic": 1, "game_changers": 0, "mld": 0, "extra_turns": 0, "combos": "none",

@@ -4,21 +4,27 @@ Description=Tier 2 (Bracket 2). Mono-blue Venser, Shaper Savant deck.
 [Commander]
 1 Venser, Shaper Savant|FUT
 [Main]
-38 Island|FDN
+32 Island|FDN
+1 Lonely Sandbar|ONS
+1 Myriad Landscape|CMM
+1 Temple of the False God|SCG
+1 Reliquary Tower|M19
+1 Rogue's Passage|FDN
+1 Blighted Woodland|BFZ
 1 Aqueous Form|THS
 1 Combat Research|DMU
 1 Enter the Enigma|DSK
-1 Essence Flux|INR
-1 Serum Visions|5DN
+1 Slip Out the Back|SNC
+1 Sol Ring|TMC
 1 Stream of Unconsciousness|MOR
+1 Arcane Signet|TMC
+1 Blighted Agent|NPH
 1 Daring Saboteur|CMR
-1 Dreamscape Artist|PLC
-1 Experimental Augury|ONE
+1 Fellwar Stone|9ED
 1 Invisible Stalker|ISD
 1 Mask of Memory|MRD
 1 Mindcrank|NPH
 1 Moon-Circuit Hacker|NEO
-1 Pelargir Survivor|LTR
 1 Riddlesmith|SOM
 1 Stonybrook Banneret|MOR
 1 Tetsuko Umezawa, Fugitive|FRA
@@ -29,9 +35,9 @@ Description=Tier 2 (Bracket 2). Mono-blue Venser, Shaper Savant deck.
 1 Apprentice Wizard|2XM
 1 Bontu's Monument|AKH
 1 Cloud Key|SLZ
-1 Diviner's Wand|MOR
 1 Fireshrieker|FDN
 1 Flux Channeler|WAR
+1 Frontline Sage|CFX
 1 Herald's Horn|CMM
 1 Ioreth of the Healing House|LTR
 1 Laboratory Maniac|INR
@@ -41,9 +47,10 @@ Description=Tier 2 (Bracket 2). Mono-blue Venser, Shaper Savant deck.
 1 Prosperous Thief|NEO
 1 Sage's Dousing|MOR
 1 Whispersilk Cloak|DST
-1 Archaeomancer|M14
-1 Control Magic|CMA
+1 Bident of Thassa|THS
 1 Etched Oracle|5DN
+1 Fact or Fiction|INV
+1 Irenicus's Vile Duplication|CLB
 1 Lore Weaver|BBD
 1 Moonsnare Specialist|NEO
 1 Osgood, Operation Double|WHO
@@ -52,17 +59,16 @@ Description=Tier 2 (Bracket 2). Mono-blue Venser, Shaper Savant deck.
 1 Riverwise Augur|RIX
 1 Soratami Mirror-Mage|CHK
 1 Soratami Savant|CHK
-1 Unwinding Clock|NPH
-1 Biting Tether|SHM
 1 Hakim, Loreweaver|MIR
 1 Introduction to Annihilation|STX
 1 Kindred Discovery|WOT
 1 Pirate Ship|5ED
 1 Saruman the White|LTR
 1 Sister of Silence|40K
+1 Talas Researcher|PLST
 1 Arcanis the Omnipotent|FDN
 1 Edgar, King of Figaro|FIN
 1 Galecaster Colossus|C17
+1 Skittering Invasion|ROE
 1 Dig Through Time|SLZ
-1 Treasure Cruise|KTK
 1 Memnarch, the Warden|FRC

@@ -4,61 +4,64 @@ Description=Tier 1 (Bracket 1). Mono-black Gonti, Lord of Luxury deck.
 [Commander]
 1 Gonti, Lord of Luxury|CMM
 [Main]
-42 Swamp|FDN
-1 Cry of Contrition|GPT
+39 Swamp|FDN
+1 Bojuka Bog|WWK
+1 Barren Moor|ONS
+1 Myriad Landscape|CMM
 1 Guul Draz Vampire|ZEN
+1 Merrow Bonegnawer|EVE
+1 Night Market Lookout|KLD
 1 Pulse Tracker|FDN
+1 Quag Vampires|WWK
 1 Rag Dealer|CHK
 1 Shadow Alley Denizen|GTC
-1 Bane Alley Blackguard|DGM
+1 Arcane Signet|TMC
 1 Blood Burglar|M20
 1 Cloak and Dagger|MOR
+1 Common Crook|SPM
 1 Corpse Hauler|M14
-1 Crooked Custodian|SNC
-1 Dhund Operative|KLD
+1 Dunerider Outlaw|PLC
 1 Duskmantle Operative|WAR
-1 Exiled Boggart|LRW
 1 Expedition Skulker|ZNR
-1 Ghoulcaller's Accomplice|SOI
+1 Gifted Aetherborn|AER
 1 Guildsworn Prowler|CLB
-1 Krovikan Scoundrel|CSP
+1 Lightfoot Rogue|AFR
 1 Masked Blackguard|M21
 1 Nath's Buffoon|LRW
 1 Nezumi Graverobber|CHK
 1 Nezumi Informant|MOM
+1 Oona's Blackguard|MOR
+1 Ransack the Lab|MH1
 1 Rathi Trapper|PLC
-1 Salvage Slasher|CFX
-1 Temple Thief|THB
-1 Void Extrapolator|FRA
-1 Alley Strangler|AER
+1 Squeaking Pie Sneak|LRW
+1 Zulaport Cutthroat|BFZ
 1 Audacious Thief|M20
+1 Auntie's Snitch|MMA
+1 Blackbloom Rogue|ZNR
+1 Bloodthirsty Aerialist|M20
+1 Buried Alive|ODY
+1 Commander's Sphere|CMM
 1 Corrosive Mentor|SHM
-1 Defiant Salvager|AER
+1 Footsteps of the Goryo|SOK
 1 Gilt-Blade Prowler|MH2
-1 Hired Torturer|DGM
+1 Grim Affliction|NPH
 1 Lawless Broker|KLD
-1 Myrkul's Invoker|CLB
-1 Nimana Skydancer|ZNR
-1 Nocturnal Feeder|JMP
-1 Ronin, Shadow Stalker|MSH
-1 Thieving Sprite|LRW
-1 Trespasser il-Vec|TSP
+1 Stromkirk Bloodthief|FDN
+1 Tinybones, Pocket Nuisance|FRA
 1 Undercity Informer|GTC
-1 Vampire Aristocrat|M10
-1 Vault Plunderer|OTJ
-1 Brink of Disaster|M12
-1 Moonglove Winnower|LRW
-1 Moriok Scavenger|MRD
+1 Weaponcraft Enthusiast|KLD
+1 Yahenni, Undying Partisan|CMM
+1 Aetherborn Marauder|KLD
+1 Balustrade Spy|GTC
+1 Dream Seizer|ECL
 1 Morsel Theft|MOR
-1 Night Market Aeronaut|AER
 1 Noggin Whack|MOR
-1 Prakhata Club Security|KLD
+1 Stinkdrinker Bandit|MOR
 1 Syndicate Enforcer|GTC
-1 Aradara Express|KLD
-1 Death of a Thousand Stings|SOK
-1 Failed Conversion|MOM
-1 Join the Maestros|SNC
+1 Thornplate Intimidator|BLB
+1 Ambitious Aetherborn|KLD
+1 Midnight Scavengers|EMN
+1 Sanguine Bond|IMA
 1 Thornmantle Striker|KHM
-1 Urborg Uprising|APC
+1 Corrupt|7ED
 1 Drana's Silencer|ZNR
-1 Tasigur's Cruelty|FRF
