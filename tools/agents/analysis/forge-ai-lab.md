@@ -100,3 +100,105 @@ experiment a useful-play rate as well as the cast count.
 2. Remove a flag on its own only when the card's AILogic models what the card does.
 3. When the card's legal window and its logic's window don't overlap, the card can never be cast: fix the logic,
    not the flag.
+
+## 2026-10-20: Quality of use at natural density (n001-n003)
+
+Request: Judge from the phase-annotated n001-n003 patched logs whether each flagged card's use was sensible (SwitchPT spam and beginning-of-combat activations; Fog timing; Shield Dancer targeting), and give general logic changes with file:line plus extra log columns.
+
+**Data.** The phase-annotated logs `results/n001|n002|n003-patched/*.tsv`. I classified every cast or activation of a
+flagged card by:
+- whose turn it was;
+- the phase;
+- whether the card's own creature appears in that turn's combat lines (attacking or blocking).
+
+### (a) SwitchPT is spam: every activation in n001 was pointless
+
+| Activations | When | Combat |
+|---|---|---|
+| 34 | Opponent's beginning of combat | creature not in combat |
+| 15 | Own postcombat main | creature not in combat |
+| 9 | Own declare blockers step | creature not in combat |
+| 2 | Opponent's turn | creature in combat (both Aquamoeba) |
+
+- **No switch improved a combat result.** Of the two in-combat activations, 1 came at the opponent's beginning of
+  combat (before blocks) and 1 at declare blockers, where it did nothing useful.
+- **Beginning-of-combat switches on the opponent's turn are worse than pointless.**
+  - No blocks exist yet.
+  - A 1/4 that becomes a 4/1 before blocks dies to any 1-power attacker it then blocks.
+- **Why it happens:** PumpAi only checks "in combat, before first-strike damage" (`PumpAi.java:81-85`) and "not
+  already used this turn" (`PumpAi.java:55-61`).
+  - So it fires once in every combat that has any creature in it, on both players' turns.
+  - The 15 postcombat activations are not explained by that phase rule. Check `AiPlayDecision` for them: they may come
+    through the "save it from damage" pump path (a response to burn), which can be a valid use. Log the stack when it
+    activates (see the logging list).
+
+### (b) The Fogs were well timed
+
+- **All 8 Thwart the Enemy and Vine Snare casts came in the opponent's declare blockers step,** with 1-5 unblocked
+  attackers.
+- **At least one stopped a near-lethal attack:** A went 9 to 4 through first strike, and the Fog covered the rest.
+- **The weakest cast** was Thwart the Enemy against a single unblocked Mirri, Cat Warrior with A at 5-6 life.
+  Defensible, since the AI was low.
+- **Both Endure casts were in declare blockers against 3 unblocked attackers.** Fine.
+- **Keep FogAi's timing.** Its rule (opponent's declare blockers, life in danger) is the right model for prevent
+  effects.
+
+### (c) Shield Dancer's activation is mis-targeted
+
+- In n003 game 2, turn 33, Shield Dancer blocked Skirk Prospector. The AI activated it twice that step, targeting
+  Gempalm Incinerator, which Dawnbringer Cleric was blocking.
+- **The ability only works on an attacker that deals damage to Shield Dancer,** so both activations were wasted mana
+  at 4 life.
+- **The cause:** EffectAi's Fog branch targets `ComputerUtilCard.getBestCreatureAI` among all attackers (`EffectAi.java:136-140`).
+- **Casting it as a creature** (6 casts in main phases) is fine.
+
+### (d) General rules: reusable logic changes
+
+1. **Pump-self that changes stats, like SwitchPT** (`PumpAi.java:55-61` and `81-85`).
+   - Activate only in your declare blockers step or your opponent's, after blocks, and only if the host is attacking
+     or blocking. (The one exception: responding on the stack to damage aimed at the host, when the new toughness
+     survives it.)
+   - Decide by simulating: compare `ComputerUtilCombat.combatantWouldBeDestroyed(ai, host, combat)`
+     (`ComputerUtilCombat.java:675`) and the damage the host deals, with and without the switch. Activate only if the
+     switch:
+     - adds damage to an unblocked attacker;
+     - kills a blocker or attacker while the host still survives;
+     - or kills one when the host dies either way.
+   - This one guard covers every "switch" and "+X/-X self" card. It is the same rule set the pilot sim's `rules` mode
+     plays.
+2. **Prevent effects** (FogAi, which is already sound).
+   - `FogAi.countAvailableFogs` (`FogAi.java:116-133`) counts only `ApiType.Fog`. Count Effect spells with
+     `AILogic$ Fog` too, so the "3 or more Fogs in hand" branch works for those decks.
+   - If a card's `ActivationPhases` excludes declare blockers (Harsh Justice), FogAi can never say yes. Route such
+     cards to their own logic (the `ReflectCombatDamage` proposal from the first analysis), not to Fog.
+3. **Effects aimed at an attacker that the effect's own source must face, like Shield Dancer** (`EffectAi.java:136-140`).
+   - When the replacement effect names the effect's source as its target (Shield Dancer's
+     `ValidTarget$ Card.EffectSource`), narrow the candidates to attackers that the host itself blocks:
+     `combat.getBlockers(attacker).contains(host)`.
+   - Then pick the one whose redirected damage kills it, i.e. power at least its own toughness.
+   - With no such attacker, don't activate.
+   - Reuse this rule for any curse on an attacker that only works through the blocker.
+
+All three are forge-ai changes, so save them as patch files only: `patches/005-switchpt-combat-sim.patch`,
+`006-fog-count-effect-fogs.patch`, `007-curse-blocked-attacker.patch`. They need the user's approval before going in.
+
+**Log columns to add for each flagged activation:**
+
+| Column | What it holds |
+|---|---|
+| `host_role` | attacking, blocking or none |
+| Host stats | the host's power/toughness before and after |
+| Opposing creatures | for the host, or for the target: whether it's blocked, and by what |
+| `pred_life` | `ComputerUtilCombat.lifeThatWouldRemain` for the AI |
+| `on_stack` | what was on the stack when it activated (separates responses from spam) |
+| `decision` | the `AiPlayDecision` for declined windows |
+| `result` | after damage: did the host survive, and what died |
+
+From those, compute a **useful** flag per play, using the rules in (d).
+
+**Rules to apply:**
+1. Judge a flagged card by its useful-play rate, not its cast count. At natural density, removing the flag alone
+   raises casts but not wins (0-10 both ways in n001 and n002).
+2. Prevent effects need a real threat (the opponent's declare blockers, life in danger), and FogAi already does that.
+3. Self-pump and redirect effects need a combat simulation with and without the effect, plus a target the host itself
+   is fighting.
