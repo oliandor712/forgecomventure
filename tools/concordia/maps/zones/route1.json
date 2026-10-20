@@ -1,0 +1,45 @@
+{
+  "zone": "route1",
+  "about": "Route 1: the maze from Emberbrook (bottom) to Mossgate (top), drawn from the user's sketch.",
+  "size": [60, 90],
+  "seed": 7,
+  "world_x0": 170,
+  "world_y0": 274,
+  "sketch": {"x0": 335, "w": 493, "y0": 38, "h": 579, "ty": 12, "th": 64},
+  "half_width": 3,
+  "centre_rows": [11, 78],
+  "segments": [
+    [[538, 640], [538, 503]],
+    [[538, 503], [715, 503]], [[715, 503], [715, 383]], [[715, 383], [408, 383]],
+    [[408, 383], [408, 82]],
+    [[408, 82], [695, 82]],
+    [[695, 82], [695, 193]],
+    [[408, 193], [695, 193]],
+    [[563, 193], [563, 268]],
+    [[578, 82], [578, -10]]
+  ],
+  "plazas": [[[2, 2], [58, 11]], [[2, 78], [58, 88]]],
+  "pois": ["Spawn", "Mossgate", "ThornrootHollow", "WhisperstoneCave", "EmberdeepGrotto"],
+  "entrance": "Spawn",
+  "exit": "Mossgate",
+  "color": "hub",
+  "biome": "world/biomes/concordia.json",
+  "pngs": {"world/structures/green_structures.atlas": "mossgate_maze.png",
+           "world/structures/black_structures.atlas": "mossgate_maze_dead.png"},
+  "duelists": [
+    {"name": "Duelist Sela", "at": [206, 209]},
+    {"name": "Duelist Corvin", "at": [218, 218]},
+    {"name": "Duelist Bram", "at": [192, 222]},
+    {"name": "Duelist Fenn", "at": [176, 236]},
+    {"name": "Duelist Mira", "at": [200, 255]}
+  ],
+  "wild_pool": ["Wild Hidden Bush", "Wild Mossfungus", "Wild Thicket Pixie", "Wild Briar Satyr"],
+  "wild_threat_range": 5,
+  "areas_note": "Route 1 keeps the areas the user marked; drop \"areas\" to let the suite pick them.",
+  "areas": [
+    [[14, 20], [27, 25]], [[28, 20], [41, 25]],
+    [[12, 33], [24, 45]],
+    [[22, 54], [31, 60]], [[32, 54], [41, 60]],
+    [[16, 70], [22, 77]], [[28, 70], [33, 77]]
+  ]
+}

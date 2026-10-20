@@ -36,6 +36,29 @@
       "N": 2,
       "sourcePath": "world/structures/models/champion_area.png",
       "maskPath": "world/structures/masks/fill.png",
+      "structureAtlasPath": "world/structures/green_structures.atlas",
+      "mappingInfo": [
+        {
+          "name": "tree",
+          "color": "008000",
+          "collision": true
+        },
+        {
+          "name": "tree5",
+          "color": "006000",
+          "collision": true
+        }
+      ]
+    },
+    {
+      "fixed": true,
+      "x": 0.5,
+      "y": 0.5,
+      "width": 1.0,
+      "height": 1.0,
+      "N": 2,
+      "sourcePath": "world/structures/models/champion_area_dead.png",
+      "maskPath": "world/structures/masks/fill.png",
       "structureAtlasPath": "world/structures/black_structures.atlas",
       "mappingInfo": [
         {

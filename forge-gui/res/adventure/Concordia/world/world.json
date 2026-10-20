@@ -21,6 +21,7 @@
   "placedEnemies": [
     {
       "enemy": "Duelist Sela",
+      "zone": "route1",
       "x": 206,
       "y": 209,
       "threatRange": 5,
@@ -29,6 +30,7 @@
     },
     {
       "enemy": "Duelist Corvin",
+      "zone": "route1",
       "x": 218,
       "y": 218,
       "threatRange": 5,
@@ -37,6 +39,7 @@
     },
     {
       "enemy": "Duelist Bram",
+      "zone": "route1",
       "x": 192,
       "y": 222,
       "threatRange": 5,
@@ -45,6 +48,7 @@
     },
     {
       "enemy": "Duelist Fenn",
+      "zone": "route1",
       "x": 176,
       "y": 236,
       "threatRange": 5,
@@ -53,6 +57,7 @@
     },
     {
       "enemy": "Duelist Mira",
+      "zone": "route1",
       "x": 200,
       "y": 255,
       "threatRange": 5,
@@ -62,6 +67,7 @@
     {
       "enemy": "Wild Hidden Bush",
       "enemies": ["Wild Hidden Bush", "Wild Mossfungus", "Wild Thicket Pixie", "Wild Briar Satyr"],
+      "zone": "route1",
       "x": 184,
       "y": 254,
       "spots": [
@@ -128,6 +134,7 @@
     {
       "enemy": "Wild Mossfungus",
       "enemies": ["Wild Hidden Bush", "Wild Mossfungus", "Wild Thicket Pixie", "Wild Briar Satyr"],
+      "zone": "route1",
       "x": 198,
       "y": 254,
       "spots": [
@@ -194,6 +201,7 @@
     {
       "enemy": "Wild Thicket Pixie",
       "enemies": ["Wild Hidden Bush", "Wild Mossfungus", "Wild Thicket Pixie", "Wild Briar Satyr"],
+      "zone": "route1",
       "x": 182,
       "y": 241,
       "spots": [
@@ -268,6 +276,7 @@
     {
       "enemy": "Wild Briar Satyr",
       "enemies": ["Wild Hidden Bush", "Wild Mossfungus", "Wild Thicket Pixie", "Wild Briar Satyr"],
+      "zone": "route1",
       "x": 192,
       "y": 220,
       "spots": [
@@ -308,6 +317,7 @@
     {
       "enemy": "Wild Hidden Bush",
       "enemies": ["Wild Hidden Bush", "Wild Mossfungus", "Wild Thicket Pixie", "Wild Briar Satyr"],
+      "zone": "route1",
       "x": 202,
       "y": 220,
       "spots": [
@@ -351,6 +361,7 @@
     {
       "enemy": "Wild Mossfungus",
       "enemies": ["Wild Hidden Bush", "Wild Mossfungus", "Wild Thicket Pixie", "Wild Briar Satyr"],
+      "zone": "route1",
       "x": 186,
       "y": 198,
       "spots": [
@@ -385,6 +396,7 @@
     {
       "enemy": "Wild Thicket Pixie",
       "enemies": ["Wild Hidden Bush", "Wild Mossfungus", "Wild Thicket Pixie", "Wild Briar Satyr"],
+      "zone": "route1",
       "x": 198,
       "y": 204,
       "spots": [

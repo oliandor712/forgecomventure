@@ -1,0 +1,15 @@
+{
+  "zone": "champion",
+  "about": "The champion area's placeholder: an empty clearing walled in by woods, nothing in it yet (OVERWORLD.md step 11).",
+  "size": [60, 60],
+  "seed": 11,
+  "world_x0": 250,
+  "world_y0": 259,
+  "segments": [],
+  "plazas": [[[6, 6], [54, 54]]],
+  "pois": [],
+  "color": "hub",
+  "biome": "world/biomes/concordia_champion.json",
+  "pngs": {"world/structures/green_structures.atlas": "champion_area.png",
+           "world/structures/black_structures.atlas": "champion_area_dead.png"}
+}

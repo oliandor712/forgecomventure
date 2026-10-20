@@ -12,6 +12,7 @@ public class PlacedEnemyData {
     public float threatRange = 4f;  //in tiles: the enemy starts pursuing when the player is this close
     public float pursueRange = 8f;  //in tiles: the enemy stops pursuing and returns to its spot past this distance
     public String respawn = "town"; //"town": back after the player enters a town; "never": gone once beaten
+    public String zone = "";        //the map creator suite's zone tag (tools/concordia/maps/mapsuite.py); not used in game
     public String[] enemies;        //if set: each time it spawns, a random one of these instead of enemy
     public Spot[] spots;            //if set: each time it spawns, at a random one of these instead of x, y
 

@@ -447,16 +447,23 @@ not on another door. Run it after adding a building, a door or a sub-map. In gam
 blocked spot is moved to the nearest free one, and a map that fails to load sends them back to the map they came
 from.
 
-`tools/concordia/maps/make_mossgate_maze.py` draws Route 1 from hand-placed corridor lines, and the champion area's
-placeholder. Its woods are layered by distance from the path: bright green trees for the first 2-3 tiles, darker green
-for the next 2-3, then bare dead trees in the cores and along the zone's outer edge, with band edges wobbled by smooth
-noise. The green and dead layers are two PNGs, one structure each (`green_structures` and `black_structures` atlases),
-since a structure draws from a single atlas. It also lists the wild encounter areas: Route 1 has 7 wild encounters, each
-with its own area of tree tiles at most 2 from the path (`spots` in `world.json`) and a pool of the four wild types
-(`enemies`). Every time one spawns, it picks a random spot of its area and a random type; the wild types fly, so they
-come out of the trees after the player. Zones should use the same layering. The zones need a general
-version, `make_zone_maze.py`, that reads one hand-drawn PNG per zone (one pixel per tile) with marker colors and
-writes out everything the zone needs:
+**The map creator suite**, `tools/concordia/maps/mapsuite.py`, builds a world-map zone from a spec in
+`tools/concordia/maps/zones/` (`route1.json`, `champion.json`); the skill `.claude/skills/concordia-map-creator`
+walks through it. From one spec it writes the zone's structure PNGs, its biome's `structures` block and its placed
+enemies in `world.json`:
+- **Layered woods** by distance from the path: a bright band at the path (2-3 tiles), a darker band behind it (2-3
+  more), then the core and the zone's outer edge, with patches, band edges wobbled by smooth noise. Each layer's
+  sprite comes from the zone color's palette, all from **that color's own structure atlas** (the hub is the only
+  mixed one), so a zone's woods match its terrain tileset.
+- **Player pathing**: the main route is the shortest walk from the entrance POI to the exit POI (traffic 1); side
+  branches to a POI get 0.6, other dead ends 0.3.
+- **Duelists**: one per 34 tiles of main route, spaced along it and kept off POI doors, unless pinned.
+- **Wild encounters**: wall tiles at most 2 from the path, scored by the walked path they see in four directions
+  within the threat range; walls with route on two sides win. About 5 per 100 tiles of route, shared out by zone
+  area, each with random spots and random types. Route 1 pins the areas the user marked.
+
+Still to add for the color zones: a hand-drawn PNG as the layout source (instead of centre-line segments) with marker
+colors, and the checks below:
 
 | Marker color | Becomes |
 |---|---|
@@ -501,7 +508,8 @@ Fragments** (quest items, one per Paragon, named "Summit Key Fragment (White-Blu
 5. **The Green zone as the template** (§4.3): gate pass, gate town with all services and its Waystone stop, the
    route A maze, inner pass 1, the route B corridor with its clearings and four random dungeons, inner pass 2, the
    route C field with random spawns, the zone town, a Warden's dungeon placeholder.
-6. **`make_zone_maze.py`**, built from what the first zone needed; redraw the first zone with it to prove the tool.
+6. **The map creator suite** (`mapsuite.py`). **Started**: layered woods, pathing, duelists and wild encounters work
+   and Route 1 is rebuilt with it unchanged. Left: PNG layouts with markers and the checks in §7.
 7. **Waystone destination list** and **`enemyByTier`** (Java). **Done** (built ahead of schedule); the template
    zone is their first real use.
 8. **Tiered encounter decks.** **Mostly done**: tiers 1-5 have 20 decks each, balanced in tier (see the deck balance
