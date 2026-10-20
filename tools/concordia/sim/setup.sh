@@ -56,7 +56,7 @@ CP="${CP#:}:$(tr -d '\n' < "$CACHE/deps.txt"):$CACHE/lib/gdx-backend-headless-$G
 
 # the sim tools themselves
 mkdir -p "$CACHE/classes"
-SRC=$(ls "$ROOT"/tools/concordia/sim/*.java "$ROOT"/tools/concordia/balance_lab/*.java 2>/dev/null || true)
+SRC=$(ls "$ROOT"/tools/concordia/sim/*.java "$ROOT"/tools/concordia/balance_lab/*.java "$ROOT"/tools/concordia/ai_lab/*.java 2>/dev/null || true)
 if [ -n "$SRC" ]; then
     javac -nowarn -d "$CACHE/classes" -cp "$CP" $SRC 2>&1 | grep -v "^Note:\|JAVA_TOOL_OPTIONS" >&2 || true
 fi

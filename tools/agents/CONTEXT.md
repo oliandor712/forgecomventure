@@ -32,10 +32,14 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
 ## Tools
 - **Simulator:** run `tools/concordia/sim/setup.sh` once per container. It takes about 1.5 minutes from an empty cache:
   it fetches from Maven Central and leaves out the jitpack-only TenPatch dependency, which is blocked by the network
-  policy. It compiles every `.java` in `tools/concordia/sim/` and `tools/concordia/balance_lab/`. Run sims with
+  policy. It compiles every `.java` in `tools/concordia/sim/`, `tools/concordia/balance_lab/` and `tools/concordia/ai_lab/`. Run sims with
   `tools/concordia/sim/run.sh <Class> <args>`, for example
   `run.sh DeckSim forge-gui/ <games> <timeoutSec> deckA lifeA deckB lifeB label`. Re-run `setup.sh` after adding a sim
   class. For a patched build, use a scratch worktree and `SIM_CACHE=<scratch> SIM_REBUILD=1`.
+- **Small test decks:** `python3 tools/concordia/ai_lab/minideck.py SRC.dck OUT.dck --size 30 --test "A;B;C"` keeps the
+  commander and the test cards, adds 12 lands and fills with the source deck's cheapest cards. Shrink the opponent the
+  same way (no `--test`). Forge sims accept 30-card Commander decks (verified). Games run about 22-25 turns, so a few
+  end by decking: compare casts rather than wins.
 - **Deck stats:** `python3 tools/concordia/deck_tier.py <deck.dck> [--tier N] --json` gives counts, deck power (the
   average card power) and tier checks.
 - **Network:** Maven Central, PyPI, raw.githubusercontent.com and `git clone` of public GitHub repos work. Most other
@@ -69,6 +73,7 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
 The main session checks on both every 4 hours (at :20) and fixes blockers.
 
 ## Recent updates
+- 2026-10-20: ai_lab/minideck.py shrinks a deck to a 30-card test deck (commander + test cards + 12 lands + the source deck's cheapest cards); Forge sims accept 30-card Commander decks, verified. setup.sh now also compiles tools/concordia/ai_lab/*.java (AiLabSim was missing).
 - 2026-10-20: Agent manager added: this file is the shared context (read first every run); tools/agents/registry.json logs your standing requests. Briefs now point here.
 - 2026-10-20: `tools/concordia/sim/setup.sh` and `run.sh` added. They fix the "no Maven repository" blocker and were
   verified from an empty cache. Don't edit `forge-gui-mobile/pom.xml` by hand.
