@@ -1,5 +1,7 @@
 # Forge AI lab experiments
 
+
+**Convention (user, 2026-10-20): 30-card test games start at 15 life each (equal).** Experiment 001 was run before this rule at 40/40; re-run it at 15/15 when convenient.
 One entry per experiment (see `.claude/agents/forge-ai-lab.md`). Newest last.
 
 ## Candidate list (not yet tested)
