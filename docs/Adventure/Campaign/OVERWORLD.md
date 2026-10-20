@@ -506,7 +506,13 @@ Fragments** (quest items, one per Paragon, named "Summit Key Fragment (White-Blu
    walled in by dead trees, empty for now) on 280,230, with 20 tiles of ocean between them. POI offsets are relative
    to their biome, so they didn't change; the duelists in `world.json` moved by +120,+150 tiles. The starter flow
    was retested in game after the resize.
-4. **Flags.** `zoneTier.<C>` and `zoneOpen.<C>` from the color choice; `seals` on Warden defeats.
+4. **Flags.** **Done** (`tools/concordia/maps/zone_flags.py`, safe to re-run): the Seal Angel's color choice sets
+   `zoneOpen.<own>` and all five `zoneTier.<C>`; the Gate Temple has a guard in front of each gate (sealed: "come back
+   with 1 Seal / 3 Seals"; open: "(Pass)"; the champion gate's angel takes the five Summit Key fragments, sets
+   `summitOpen` and opens the gate). `warden_defeat(color)` builds a Warden's defeat dialog (+1 `seals`, own Warden
+   opens the allies, the third Seal opens the enemies). A gate's portal turns on only once its zone exists (`READY`),
+   so an open gate to an unbuilt zone stays sealed with a "still waking" line instead of dropping the player on the
+   world map. Paragon gating (five Seals) comes with the border towns.
 5. **The Green zone as the template** (§4.3): gate pass, gate town with all services and its Waystone stop, the
    route A maze, inner pass 1, the route B corridor with its clearings and four random dungeons, inner pass 2, the
    route C field with random spawns, the zone town, a Warden's dungeon placeholder.

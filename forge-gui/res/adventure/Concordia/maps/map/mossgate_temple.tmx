@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="8">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="14">
  <properties>
   <property name="preventEscape" type="bool" value="false"/>
  </properties>
@@ -41,28 +41,28 @@
   </object>
   <object id="3" name="White Gate" template="../../../common/maps/obj/portal.tx" type="portal" x="216" y="176">
    <properties>
-    <property name="activeQuestFlag" value="zoneOpen.W"/>
+    <property name="activeQuestFlag" value="zoneReady.W"/>
     <property name="sprite" value="sprites/portal.atlas"/>
     <property name="teleport" value=""/>
    </properties>
   </object>
   <object id="4" name="Blue Gate" template="../../../common/maps/obj/portal.tx" type="portal" x="288" y="208">
    <properties>
-    <property name="activeQuestFlag" value="zoneOpen.U"/>
+    <property name="activeQuestFlag" value="zoneReady.U"/>
     <property name="sprite" value="sprites/portal.atlas"/>
     <property name="teleport" value=""/>
    </properties>
   </object>
   <object id="5" name="Black Gate" template="../../../common/maps/obj/portal.tx" type="portal" x="264" y="272">
    <properties>
-    <property name="activeQuestFlag" value="zoneOpen.B"/>
+    <property name="activeQuestFlag" value="zoneReady.B"/>
     <property name="sprite" value="sprites/portal.atlas"/>
     <property name="teleport" value=""/>
    </properties>
   </object>
   <object id="6" name="Red Gate" template="../../../common/maps/obj/portal.tx" type="portal" x="168" y="272">
    <properties>
-    <property name="activeQuestFlag" value="zoneOpen.R"/>
+    <property name="activeQuestFlag" value="zoneReady.R"/>
     <property name="sprite" value="sprites/portal.atlas"/>
     <property name="teleport" value=""/>
    </properties>
@@ -70,8 +70,45 @@
   <object id="7" name="Green Gate" template="../../../common/maps/obj/portal.tx" type="portal" x="144" y="208">
    <properties>
     <property name="activeQuestFlag" value="zoneOpen.G"/>
+    <property name="gateTo" value="GreenGatePass"/>
     <property name="sprite" value="sprites/portal.atlas"/>
     <property name="teleport" value=""/>
+   </properties>
+  </object>
+  <object id="8" name="Champion gate guard" template="../../../common/maps/obj/dialog.tx" x="216" y="160" width="16" height="16">
+   <properties>
+    <property name="dialog" value="[{&quot;text&quot;: &quot;An angel bars the last gate. \&quot;Five fragments of the Summit Key, one from each Paragon. Bring them all and the Summit opens.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Unlock)&quot;, &quot;condition&quot;: [{&quot;item&quot;: &quot;Summit Key Fragment (White-Blue)&quot;}, {&quot;item&quot;: &quot;Summit Key Fragment (Blue-Black)&quot;}, {&quot;item&quot;: &quot;Summit Key Fragment (Black-Red)&quot;}, {&quot;item&quot;: &quot;Summit Key Fragment (Red-Green)&quot;}, {&quot;item&quot;: &quot;Summit Key Fragment (Green-White)&quot;}], &quot;text&quot;: &quot;The fragments fit together. The Summit is open.&quot;, &quot;action&quot;: [{&quot;removeItem&quot;: &quot;Summit Key Fragment (White-Blue)&quot;}, {&quot;removeItem&quot;: &quot;Summit Key Fragment (Blue-Black)&quot;}, {&quot;removeItem&quot;: &quot;Summit Key Fragment (Black-Red)&quot;}, {&quot;removeItem&quot;: &quot;Summit Key Fragment (Red-Green)&quot;}, {&quot;removeItem&quot;: &quot;Summit Key Fragment (Green-White)&quot;}, {&quot;setQuestFlag&quot;: {&quot;key&quot;: &quot;summitOpen&quot;, &quot;val&quot;: 1}}, {&quot;activateMapObject&quot;: 2}, {&quot;deleteMapObject&quot;: -1}], &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Leave)&quot;}]}]"/>
+    <property name="sprite" value="sprites/enemy/celestial/angel_1.atlas"/>
+   </properties>
+  </object>
+  <object id="9" name="White gate guard" template="../../../common/maps/obj/dialog.tx" x="216" y="192" width="16" height="16">
+   <properties>
+    <property name="dialog" value="[{&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.W&quot;}], &quot;text&quot;: &quot;\&quot;The White gate answers you, but the land beyond is still waking. Come back later.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.W&quot;, &quot;not&quot;: true}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;zoneTier.W&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 2}}], &quot;text&quot;: &quot;\&quot;The White gate is sealed. Come back with 1 Seal.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.W&quot;, &quot;not&quot;: true}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;zoneTier.W&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 3}}], &quot;text&quot;: &quot;\&quot;The White gate is sealed. Come back with 3 Seals.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.W&quot;, &quot;not&quot;: true}, {&quot;checkQuestFlag&quot;: &quot;zoneTier.W&quot;, &quot;not&quot;: true}], &quot;text&quot;: &quot;\&quot;The White gate is sealed.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}]"/>
+    <property name="sprite" value="sprites/enemy/humanoid/paladin_2.atlas"/>
+   </properties>
+  </object>
+  <object id="10" name="Blue gate guard" template="../../../common/maps/obj/dialog.tx" x="272" y="208" width="16" height="16">
+   <properties>
+    <property name="dialog" value="[{&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.U&quot;}], &quot;text&quot;: &quot;\&quot;The Blue gate answers you, but the land beyond is still waking. Come back later.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.U&quot;, &quot;not&quot;: true}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;zoneTier.U&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 2}}], &quot;text&quot;: &quot;\&quot;The Blue gate is sealed. Come back with 1 Seal.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.U&quot;, &quot;not&quot;: true}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;zoneTier.U&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 3}}], &quot;text&quot;: &quot;\&quot;The Blue gate is sealed. Come back with 3 Seals.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.U&quot;, &quot;not&quot;: true}, {&quot;checkQuestFlag&quot;: &quot;zoneTier.U&quot;, &quot;not&quot;: true}], &quot;text&quot;: &quot;\&quot;The Blue gate is sealed.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}]"/>
+    <property name="sprite" value="sprites/enemy/humanoid/paladin_2.atlas"/>
+   </properties>
+  </object>
+  <object id="11" name="Black gate guard" template="../../../common/maps/obj/dialog.tx" x="248" y="256" width="16" height="16">
+   <properties>
+    <property name="dialog" value="[{&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.B&quot;}], &quot;text&quot;: &quot;\&quot;The Black gate answers you, but the land beyond is still waking. Come back later.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.B&quot;, &quot;not&quot;: true}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;zoneTier.B&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 2}}], &quot;text&quot;: &quot;\&quot;The Black gate is sealed. Come back with 1 Seal.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.B&quot;, &quot;not&quot;: true}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;zoneTier.B&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 3}}], &quot;text&quot;: &quot;\&quot;The Black gate is sealed. Come back with 3 Seals.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.B&quot;, &quot;not&quot;: true}, {&quot;checkQuestFlag&quot;: &quot;zoneTier.B&quot;, &quot;not&quot;: true}], &quot;text&quot;: &quot;\&quot;The Black gate is sealed.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}]"/>
+    <property name="sprite" value="sprites/enemy/humanoid/paladin_2.atlas"/>
+   </properties>
+  </object>
+  <object id="12" name="Red gate guard" template="../../../common/maps/obj/dialog.tx" x="184" y="256" width="16" height="16">
+   <properties>
+    <property name="dialog" value="[{&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.R&quot;}], &quot;text&quot;: &quot;\&quot;The Red gate answers you, but the land beyond is still waking. Come back later.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.R&quot;, &quot;not&quot;: true}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;zoneTier.R&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 2}}], &quot;text&quot;: &quot;\&quot;The Red gate is sealed. Come back with 1 Seal.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.R&quot;, &quot;not&quot;: true}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;zoneTier.R&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 3}}], &quot;text&quot;: &quot;\&quot;The Red gate is sealed. Come back with 3 Seals.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.R&quot;, &quot;not&quot;: true}, {&quot;checkQuestFlag&quot;: &quot;zoneTier.R&quot;, &quot;not&quot;: true}], &quot;text&quot;: &quot;\&quot;The Red gate is sealed.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}]"/>
+    <property name="sprite" value="sprites/enemy/humanoid/paladin_2.atlas"/>
+   </properties>
+  </object>
+  <object id="13" name="Green gate guard" template="../../../common/maps/obj/dialog.tx" x="160" y="208" width="16" height="16">
+   <properties>
+    <property name="dialog" value="[{&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.G&quot;}], &quot;text&quot;: &quot;The guard steps aside. \&quot;The Green Warden expects you.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Pass)&quot;, &quot;action&quot;: [{&quot;deleteMapObject&quot;: -1}]}, {&quot;name&quot;: &quot;(Not yet)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.G&quot;, &quot;not&quot;: true}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;zoneTier.G&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 2}}], &quot;text&quot;: &quot;\&quot;The Green gate is sealed. Come back with 1 Seal.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.G&quot;, &quot;not&quot;: true}, {&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;zoneTier.G&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 3}}], &quot;text&quot;: &quot;\&quot;The Green gate is sealed. Come back with 3 Seals.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}, {&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;zoneOpen.G&quot;, &quot;not&quot;: true}, {&quot;checkQuestFlag&quot;: &quot;zoneTier.G&quot;, &quot;not&quot;: true}], &quot;text&quot;: &quot;\&quot;The Green gate is sealed.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Leave)&quot;}]}]"/>
+    <property name="sprite" value="sprites/enemy/humanoid/paladin_2.atlas"/>
    </properties>
   </object>
  </objectgroup>
