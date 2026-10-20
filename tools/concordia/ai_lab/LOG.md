@@ -11,3 +11,4 @@ STANDING INSTRUCTION (user, 2026-10-20): each hourly wake is time-boxed to about
 2026-10-20T15:45Z exp 001 done: baseline 0 casts vs patched 7 casts/26 activations (30-card decks, 4 games each, equal life); patch 001 saved; next: exp 002 Fog/Evasion cards
 2026-10-20T15:40Z recorded rule: 30-card games at 15 life each
 2026-10-20T15:45Z rule changed: 30-card games at 20 life each (was 15)
+2026-10-20T15:55Z exp 001 re-run at 20/20: baseline 0 casts vs patched 7 casts/30 activations; result confirmed

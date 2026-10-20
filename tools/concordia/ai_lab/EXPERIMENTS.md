@@ -26,3 +26,6 @@ Main session finished its deck job. Normal hourly schedule; next step is experim
 - **Test:** `AiLabSim` (`tools/concordia/ai_lab/`), deck `Lab001 Alandra` vs `Thopter Workshop` (T2_U_Sai), both shrunk to commander + 29 with `shrink_deck.py` (full 99-card decks rarely drew the cards: 8 games, 0 casts), equal life 40, 4 games each, 150 s cap.
 - **Result:** baseline 0 casts / 0 activations. Patched: 7 casts (Turtleshell in 4/4 games), 26 activations, effect matches the text (P/T switched). Wins 1-3 vs 2-2 (noise). Turtleshell sometimes activated many times a turn-cycle (max 12 in one game).
 - **Verdict:** worth proposing; scale the same check to the other 114 `All` cards that already carry an `AILogic$` (Fog, Evasion, NeedsPrevention, Pump). Note: with 30-card decks the games end by decking around turn 24.
+
+### 001 re-run at 20/20 life (2026-10-20, per the 20-life convention)
+Same decks (30 cards), 4 games each, equal life 20. Baseline (flag kept): 0 casts, 0 activations, wins 1-3, avg 20.3 turns. Patched: 7 casts (Turtleshell 3, Aquamoeba 2, Myr Quadropod 2), 30 activations, wins 1-3, avg 19.8 turns. Same picture as the 40/40 run: the flag alone keeps the three cards unplayed; removing it makes the AI cast and use them. Wins are noise at 4 games. Verdict unchanged: worth proposing.
