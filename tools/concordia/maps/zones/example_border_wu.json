@@ -1,0 +1,21 @@
+{
+  "zone": "example_border_wu",
+  "about": "Example border zone, White-Blue (WU), where the White and Blue zones overlap: White woods on the left, Blue on the right, growing into each other in the middle. A template to copy for the real border zones (OVERWORLD.md §3.2).",
+  "size": [70, 50],
+  "seed": 21,
+  "world_x0": 0,
+  "world_y0": 0,
+  "half_width": 3,
+  "centre_rows": [0, 50],
+  "segments": [
+    [[4, 25], [24, 25]], [[24, 25], [24, 12]], [[24, 12], [46, 12]], [[46, 12], [46, 38]], [[46, 38], [66, 38]],
+    [[24, 25], [24, 40]]
+  ],
+  "plazas": [],
+  "pois": [],
+  "colors": ["white", "blue"],
+  "blend": {"axis": "x", "wobble": 0.3, "scale": 8},
+  "biome": "world/biomes/example_border_wu.json",
+  "pngs": {"world/structures/white_structures.atlas": "border_wu_white.png",
+           "world/structures/blue_structures.atlas": "border_wu_blue.png"}
+}

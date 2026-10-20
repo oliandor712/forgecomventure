@@ -455,6 +455,8 @@ enemies in `world.json`:
   more), then the core and the zone's outer edge, with patches, band edges wobbled by smooth noise. Each layer's
   sprite comes from the zone color's palette, all from **that color's own structure atlas** (the hub is the only
   mixed one), so a zone's woods match its terrain tileset.
+- **Border zones mix both colors**: each color's own woods on its side, blending across a noise-wobbled line, and the
+  first color's ground with patches of the second (`"colors": [a, b]`; template `zones/example_border_wu.json`).
 - **Player pathing**: the main route is the shortest walk from the entrance POI to the exit POI (traffic 1); side
   branches to a POI get 0.6, other dead ends 0.3.
 - **Duelists**: one per 34 tiles of main route, spaced along it and kept off POI doors, unless pinned.

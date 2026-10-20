@@ -10,7 +10,7 @@ Tools live in `tools/concordia/maps/`. Design background: `docs/Adventure/Campai
 | Tool | Does |
 |---|---|
 | `mapsuite.py <spec> [--write] [--preview DIR]` | Builds a zone from `zones/<zone>.json`: layout, layered woods, player route, duelists, wild encounters. `--write` writes the structure PNGs, the biome's `structures` block and the zone's `placedEnemies` in `world.json` |
-| `render_woods.py <spec> <out.png>` | The zone's woods drawn with the real sprites (after `--write`) |
+| `render_woods.py <spec> <out.png>` | The zone's woods drawn with the real sprites, straight from the spec |
 | `check_doors.py [maps...]` | Every door's target, return trip and arrival spot (collision, map edge, other doors). Exit 1 on a problem |
 | `test_assets.py list / deploy <kit> / purge` | Temporary test POIs and maps (names start with `Test`, maps in `maps/map/test/`) |
 
@@ -38,6 +38,15 @@ structure atlas (`world/structures/<color>_structures.atlas`) and its ground fro
 (`White`, `Blue`, `Black`, `Red`, `Green` in `world/tilesets/terrain.atlas`). The suite's `PALETTES` holds one per color
 and warns when a color zone borrows another color's atlas. Only the colorless hub (Route 1, the champion area) mixes
 atlases (green trees, black dead trees). Check a new palette's look with `render_woods.py` before using it.
+
+**Border zones mix both colors' tilesets.** Where two neighbouring color zones overlap (WU, UB, BR, RG, GW;
+OVERWORLD.md §3.2) the spec names both: `"colors": ["white", "blue"]`. Each color keeps its own layered woods from
+its own atlas, on its own side of the zone: the first color on the low side of `blend.axis` ("x" or "y"), the second
+on the high side, with the line between them wobbled by noise (`blend.wobble`, default 0.3; `blend.scale` 8) so the
+two forests grow into each other. `"blend": {"mode": "blotch"}` mixes them in patches instead. The ground is the
+first color's terrain tileset with large patches of the second's (the suite writes `tilesetName` and `terrain`; ground
+is picked by world noise, so it mixes in blotches). `pngs` needs one entry per atlas (two). A border zone may use only
+its two colors' atlases. `zones/example_border_wu.json` is the template.
 
 **Layered woods.** Walls are never a patchwork of mixed tree types (that reads as a grid). By distance from the
 path: `bright` 2-3 tiles, `darker` 2-3 more, then `core` (with `patch` blotches) for the deep insides and the zone's
@@ -72,6 +81,8 @@ map if a map fails to load, but the checker is the real guard.
 
 ## Gotchas
 
+- For a color or border zone, `--write` also replaces the biome's ground (`tilesetName`, `terrain`); the colorless hub
+  keeps its hand-set ground.
 - `world.json` `placedEnemies` entries carry a `zone` tag; the suite replaces only its own zone's entries (and,
   untagged, those named in the spec). Hand-added entries elsewhere are kept.
 - POI positions come from `offsetX`/`offsetY` in `points_of_interest.json`, relative to the biome (y up). The suite

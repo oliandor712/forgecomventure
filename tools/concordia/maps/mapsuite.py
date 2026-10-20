@@ -12,7 +12,9 @@ What it does, in order:
  2. Layered woods: every wall tile gets a tree by its distance from the path: a bright band at the path (2-3 tiles),
     a darker band behind it (2-3 more), then dead trees in the cores and along the zone's outer 2 tiles. Band edges
     wobble with smooth noise. Each layer's sprite comes from the zone color's palette (PALETTES): a color zone uses
-    its own color's structure atlas throughout. One PNG per atlas, since a structure draws from a single atlas.
+    its own color's structure atlas throughout. A border zone ("colors": [a, b], where two color zones overlap)
+    mixes both: each color's own layered woods on its side, blending across a noise-wobbled line ("blend"), and
+    the first color's ground with patches of the second. One PNG per atlas, since a structure draws from one atlas.
  3. Player pathing: the main route is the shortest walk along the corridor centre lines from the entrance POI to the
     exit POI; everyone walks it (traffic 1). Side branches that end at a POI get traffic 0.6 (players go and look),
     other dead ends 0.3.
@@ -57,6 +59,47 @@ PALETTES = {
                   'core': (S % 'colorless', 'tree4'), 'patch': (S % 'colorless', 'tree3')},
 }
 N8 = [(dx, dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1) if dx or dy]
+
+
+def palettes_for(spec):
+    """The zone's sprites per layer, one palette per color (two for a border zone), with "palette" overrides (for a
+    border zone, "palette" is a list of two). Each color's woods should come from its own atlas: a color zone that
+    borrows another color's atlas gets a warning, and a border zone may use only its two colors' atlases."""
+    c = spec.get('colors') or spec.get('color', 'hub')
+    colors = c if isinstance(c, list) else [c]
+    overrides = spec.get('palette', {})
+    if not isinstance(overrides, list):
+        overrides = [overrides] * len(colors)
+    out = []
+    for color, over in zip(colors, overrides):
+        pal = dict(PALETTES[color])
+        pal.update({role: tuple(v) for role, v in over.items()})
+        if color in ('white', 'blue', 'black', 'red', 'green'):
+            for role, (atlas, _) in pal.items():
+                if ('/%s_structures' % color) not in atlas:
+                    print('WARNING: %s woods use %s for the %s layer; use the %s atlas' % (color, atlas, role, color))
+        for role, (atlas, sprite) in pal.items():
+            names = [n.strip() for n in open(os.path.join(CONCORDIA, '..', 'common', atlas)).read().split('\n')]
+            if sprite not in names:
+                raise SystemExit('%s has no sprite %s (layer %s)' % (atlas, sprite, role))
+        out.append(pal)
+    return out
+
+
+def atlas_mappings(palettes):
+    """atlas -> [(layer, sprite)]: what each structure PNG's marker colors stand for. Two palettes may share an atlas
+    only if they agree on its sprites (the markers are per layer)."""
+    out = {}
+    for pal in palettes:
+        for role in ROLES:
+            atlas, sprite = pal[role]
+            m = out.setdefault(atlas, [])
+            have = dict(m)
+            if role in have and have[role] != sprite:
+                raise SystemExit('%s: layer %s is %s in one palette and %s in the other' % (atlas, role, have[role], sprite))
+            if role not in have:
+                m.append((role, sprite))
+    return out
 
 
 class Zone:
@@ -122,13 +165,32 @@ class Zone:
         bot = v(x0, y0 + 1) * (1 - fx) + v(x0 + 1, y0 + 1) * fx
         return top * (1 - fy) + bot * fy
 
+    def colors(self):
+        """The zone's color, or its two colors for a border zone (where two color zones overlap)."""
+        c = self.spec.get('colors') or self.spec.get('color', 'hub')
+        return c if isinstance(c, list) else [c]
+
+    def side(self, x, y):
+        """Border zones: which of the two colors a tile belongs to. "blend" {"axis": "x" or "y", "wobble", "scale"}:
+        the first color on the low side of the axis, the second on the high side, the line between them wobbled by
+        smooth noise so it reads as two forests growing into each other. "mode": "blotch" mixes them in patches."""
+        b = self.spec.get('blend', {})
+        n = self.noise(x, y, b.get('scale', 8), 5)
+        if b.get('mode') == 'blotch':
+            return 1 if n > 0.5 else 0
+        t = x / (self.W - 1) if b.get('axis', 'x') == 'x' else y / (self.H - 1)
+        return 1 if t + (n - 0.5) * 2 * b.get('wobble', 0.3) >= 0.5 else 0
+
     def woods(self):
         W, H = self.W, self.H
-        self.palette = self.palette_for()
+        self.palettes = palettes_for(self.spec)
+        self.palette = self.palettes[0]
         self.layers = {}  # atlas -> image
-        for role in ROLES:
-            self.layers.setdefault(self.palette[role][0], Image.new('RGB', (W, H), OPEN))
+        for pal in self.palettes:
+            for role in ROLES:
+                self.layers.setdefault(pal[role][0], Image.new('RGB', (W, H), OPEN))
         self.role_at = {}
+        self.side_at = {}
         for x in range(W):
             for y in range(H):
                 if (x, y) in self.open:
@@ -143,35 +205,20 @@ class Zone:
                     role = 'darker'
                 else:
                     role = 'patch' if self.noise(x, y, 9, 3) > 0.62 else 'core'
+                pal = self.palettes[self.side(x, y)] if len(self.palettes) > 1 else self.palette
                 self.role_at[(x, y)] = role
-                self.layers[self.palette[role][0]].putpixel((x, y), ROLE_COLOR[role])
-
-    def palette_for(self):
-        """The zone's sprites per layer: the palette named by "color", with "palette" overrides. A color zone that
-        borrows another color's atlas gets a warning: each color's woods should come from its own atlas."""
-        color = self.spec.get('color', 'hub')
-        pal = dict(PALETTES[color])
-        for role, v in self.spec.get('palette', {}).items():
-            pal[role] = tuple(v)
-        if color in ('white', 'blue', 'black', 'red', 'green'):
-            for role, (atlas, _) in pal.items():
-                if ('/%s_structures' % color) not in atlas:
-                    print('WARNING: %s zone uses %s for its %s layer; use the %s atlas' % (color, atlas, role, color))
-        for role, (atlas, sprite) in pal.items():
-            names = open(os.path.join(CONCORDIA, '..', 'common', atlas)).read().split('\n')
-            if sprite not in [n.strip() for n in names]:
-                raise SystemExit('%s has no sprite %s (layer %s)' % (atlas, sprite, role))
-        return pal
+                self.side_at[(x, y)] = self.palettes.index(pal)
+                self.layers[pal[role][0]].putpixel((x, y), ROLE_COLOR[role])
 
     def structures(self):
         """The biome's "structures" block: one fixed structure per atlas, each with its layers' sprites."""
         out = []
-        for atlas in self.layers:
+        for atlas, mapping in atlas_mappings(self.palettes).items():
             out.append({'fixed': True, 'x': 0.5, 'y': 0.5, 'width': 1.0, 'height': 1.0, 'N': 2,
                         'sourcePath': 'world/structures/models/' + self.spec['pngs'][atlas],
                         'maskPath': 'world/structures/masks/fill.png', 'structureAtlasPath': atlas,
-                        'mappingInfo': [{'name': self.palette[r][1], 'color': '%02x%02x%02x' % ROLE_COLOR[r], 'collision': True}
-                                        for r in ROLES if self.palette[r][0] == atlas]})
+                        'mappingInfo': [{'name': sprite, 'color': '%02x%02x%02x' % ROLE_COLOR[r], 'collision': True}
+                                        for r, sprite in mapping]})
         return out
 
     # ---------- world coordinates and POIs ----------
@@ -410,11 +457,33 @@ def write_world(zone, enemies):
     open(p, 'w').write(s)
 
 
+COLORED = ('white', 'blue', 'black', 'red', 'green')
+
+
+def ground(colors):
+    """The biome's ground for a color zone: its color's terrain tileset (world/tilesets/terrain.atlas) with the
+    _1/_2 variants. A border zone takes the first color's tileset with large patches of the second color's ground
+    (terrain is picked by world noise, so it mixes in blotches; the woods carry the side-to-side blend)."""
+    a = colors[0].capitalize()
+    if len(colors) == 1:
+        return a, [{'spriteName': a + '_1', 'max': 0.2, 'resolution': 10},
+                   {'spriteName': a + '_2', 'min': 0.8, 'max': 1, 'resolution': 10}]
+    b = colors[1].capitalize()
+    return a, [{'spriteName': a + '_1', 'max': 0.15, 'resolution': 10},
+               {'spriteName': b, 'min': 0.45, 'max': 1, 'resolution': 4},
+               {'spriteName': b + '_1', 'min': 0.9, 'max': 1, 'resolution': 10}]
+
+
 def write_biome(zone):
-    """Replaces the "structures" block of the zone's biome file with the one for its layers."""
+    """Replaces the "structures" block of the zone's biome file with the one for its layers, and for a color or
+    border zone also its ground (tilesetName and terrain). The colorless hub keeps its hand-set ground."""
     p = os.path.join(CONCORDIA, zone.spec['biome'])
     d = json.load(open(p))
     d['structures'] = zone.structures()
+    colors = zone.colors()
+    if all(c in COLORED for c in colors):
+        d['tilesetAtlas'] = 'world/tilesets/terrain.atlas'
+        d['tilesetName'], d['terrain'] = ground(colors)
     open(p, 'w').write(json.dumps(d, indent=2) + '\n')
 
 

@@ -3,12 +3,12 @@
 
     python3 tools/concordia/maps/render_woods.py tools/concordia/maps/zones/route1.json out.png
 
-Run mapsuite.py --write first: this reads the structure PNGs it wrote. The ground is a flat stand-in color.
+It builds the zone from the spec itself, so nothing needs writing first. The ground is a flat stand-in color.
 """
 import json, os, re, sys
 from PIL import Image
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from mapsuite import CONCORDIA, ROLE_COLOR, PALETTES  # noqa: E402
+from mapsuite import CONCORDIA, ROLE_COLOR, Zone, atlas_mappings  # noqa: E402
 
 COMMON = os.path.join(CONCORDIA, '..', 'common')
 
@@ -30,14 +30,15 @@ def atlas(path):
 
 def main():
     spec = json.load(open(sys.argv[1]))
-    pal = dict(PALETTES[spec.get('color', 'hub')])
-    pal.update({k: tuple(v) for k, v in spec.get('palette', {}).items()})
+    zone = Zone(spec)
+    zone.layout()
+    zone.woods()
+    mappings = atlas_mappings(zone.palettes)
     W, H = spec['size']
     canvas = Image.new('RGBA', (W * 16, H * 16), (150, 140, 110, 255))
-    for atlas_path, png in spec['pngs'].items():
-        im = Image.open(os.path.join(CONCORDIA, 'world', 'structures', 'models', png)).convert('RGB')
+    for atlas_path, im in zone.layers.items():
         aimg, regs = atlas(atlas_path)
-        names = {ROLE_COLOR[r]: s for r, (a, s) in pal.items() if a == atlas_path}
+        names = {ROLE_COLOR[r]: sprite for r, sprite in mappings[atlas_path]}
         t = {(x, y): names.get(im.getpixel((x, y))) for x in range(W) for y in range(H)}
 
         def same(x, y, n):
