@@ -55,7 +55,7 @@ for t in "12345":
         L.append("| %s | %d | %.0f%% | %.0f-%.0f%% |" % (os.path.basename(d), n, 100 * w / n, 100 * lo, 100 * hi))
         if lo > .5 or hi < .5: outliers.append((t, d, n, w / n, lo, hi))
     L.append("")
-L += ["## Outliers (interval clear of 50%)", ""]
+L += ["## Outliers (interval clear of 50%)", "", "Deck power is read fresh from deck_tier.py. The card-power scale changed on 2026-10-20 at 16:45 UTC (EDHREC popularity added); power values from before then are not comparable.", ""]
 if outliers:
     L += ["| tier | deck | games | win rate | power |", "|---|---|---|---|---|"]
     for t, d, n, p, lo, hi in outliers:

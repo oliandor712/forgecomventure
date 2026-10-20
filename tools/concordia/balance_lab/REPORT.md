@@ -65,6 +65,8 @@ Generated 2026-10-20 16:41Z from 74 games (34 inner-tier, 40 bonus). Intervals a
 
 ## Outliers (interval clear of 50%)
 
+Deck power is read fresh from deck_tier.py. The card-power scale changed on 2026-10-20 at 16:45 UTC (EDHREC popularity added); power values from before then are not comparable.
+
 None yet: with only a few games per deck no interval clears 50%.
 
 ## Bonus impact (enemy = side a; matched sets of 4 games, same pairing and seats)
