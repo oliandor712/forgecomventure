@@ -17,3 +17,4 @@ STANDING INSTRUCTION (user, 2026-10-20): each hourly wake is time-boxed to about
 2026-10-20T16:25Z exp 002 (Fog: Thwart the Enemy, Vine Snare) 10 games each at 20/20: baseline 0 casts vs patched 19 casts; patch 002 saved; next: check cast timing, test Endure/Harsh Justice/Shield Dancer
 2026-10-20T16:30Z recorded rule: 40-card test decks from the next test on
 2026-10-20T16:48Z exp 003 (white Fog, 40-card decks, 10 games): Endure 15 casts, Shield Dancer 11 casts/19 act, Harsh Justice 0 (never cast); patch 003 saved without Harsh Justice; next: read FogAi.canPlay for Harsh Justice, check cast timing
+2026-10-20T16:50Z read pilot data (pilot/2026-10-20_exp001_mirror): next check for patch 001 = were Turtleshell/Quadropod activations in combat only (pilot rule: never switch outside combat; my runs saw up to 12 activations/game)
