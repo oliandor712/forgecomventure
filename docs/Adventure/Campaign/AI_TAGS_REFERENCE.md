@@ -3,7 +3,7 @@
 Reference of the card-script tags the AI reads and what it does with them. Built one section per run by the forge-ai-lab agent.
 Paths are relative to `forge-ai/src/main/java/forge/ai/` unless they start with `forge-`. Line numbers are valid for the commit noted per section.
 
-Sections: 1. SpellApiToAi mapping, 2. AI:RemoveDeck flags, 3. Common SVar hints, 4. `AILogic$` values per API. Still to do: AiProps profile keys, remaining SVars, per-value semantics for big classes.
+Sections: 1. SpellApiToAi mapping, 2. AI:RemoveDeck flags, 3. Common SVar hints, 4. `AILogic$` values per API, 5. Fog/SwitchPT/pump behaviour from sims. Still to do: AiProps profile keys, remaining SVars, per-value semantics for big classes.
 
 ## 1. How SpellApiToAi maps ApiType to an AI class
 _Checked against commit 6ee57276._
@@ -270,3 +270,15 @@ An `AILogic` value that no branch matches is ignored: the class falls through to
 | `UntapAi` | `PoolExtraMana` (40,427), `PreventCombatDamage` (43,404), `Never` (86), `RemoveBestAttacker` (164), `Always` (232) |
 
 Not extracted (to do in later runs): values consumed outside `ability/` (`AiPlayDecision`/`ComputerUtil*`/`PlayerControllerAi` choice methods such as `chooseSingleCardForEffect`), and per-value semantics for the biggest classes (`ChangeZoneAi`, `PumpAi`, `EffectAi`, `CountersPutAi`).
+
+## 5. What the AI actually does with `AILogic$ Fog`, `SwitchPT` and pump decisions
+_Checked against the lab's sims (results in `tools/concordia/ai_lab/`), commit 251a07a8 and later; line numbers from the unpatched sources._
+
+| Logic | Where | Behaviour (verified in sims) |
+|---|---|---|
+| `AILogic$ Fog` on an `Effect` (Thwart the Enemy, Vine Snare, Endure) | `EffectAi.java:112` delegates to `FogAi.canPlay` | Cast only in the opponent's declare blockers step when the AI's life is in danger; `FogAi.countAvailableFogs` (`:116-133`) counts only real `Fog` API spells, so Effect-based fogs are not counted when the AI reserves mana (patch 006, no measurable effect yet). |
+| `AILogic$ Fog` borrowed by a non-fog (Harsh Justice, Shield Dancer) | same | Harsh Justice is legal only in declare attackers but FogAi only says yes in declare blockers: never cast. Shield Dancer's target is the best attacker among all (`EffectAi.java:136-140`), not the creature it blocks. Removing `RemoveDeck:All` is not enough for these. |
+| `AILogic$ SwitchPT` (self) | `PumpAi.java:54-61` (`checkAiLogic`), `:81-85` (`checkPhaseRestrictions`) | Unpatched: any combat phase, only "not already used this turn". Sims: ~68-92 activations per 10 games, none useful (mostly in the opponent's beginning of combat). Patch 005 v3 gates on declare blockers and `ComputerUtilCard.shouldPumpCard`, giving 2-14 activations per 10 games. |
+| `ComputerUtilCard.shouldPumpCard` (pump decisions generally) | `ComputerUtilCard.java:1474-1720` | Combat trickery section builds a simulated combat with the pumped creature. In the blocker branch it dropped co-blockers (patch 008); the kill check calls `ComputerUtilCombat.attackerWouldBeDestroyed` (`ComputerUtilCombat.java:696-714`), which sums the damage of the blockers present in the combat it receives. The window in which the co-blocker fix changes an answer is narrow (0 of 37 evaluations). |
+
+Lab method note: flags removed in a scratch assets copy, equal life, 40-card decks, 10 games per arm; a cast count proves play, not good play.

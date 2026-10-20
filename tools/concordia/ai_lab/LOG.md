@@ -36,3 +36,4 @@ STANDING INSTRUCTION (user, 2026-10-20): each hourly wake is time-boxed to about
 2026-10-20T20:10Z logged budget rule from main session; still paused until 21:00Z
 2026-10-20T20:17Z RESUME from main session (pause ended early); next wake 21:06Z; next step: per-event shadow/useful logging for switch+pump, then hand-built gang-block case for 008
 2026-10-20T20:50Z 008: code reading done (co-blocker damage enters via combat.getBlockers in attackerWouldBeDestroyed, ComputerUtilCombat:696-714; window narrow); hand-built case still to build
+2026-10-20T22:12Z added AI_TAGS_REFERENCE section 5 (Fog/SwitchPT/shouldPumpCard behaviour from sims); REPORTED (4h report due)
