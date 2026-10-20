@@ -116,14 +116,22 @@ area. It's the hub of the whole map: the player walks in, picks a gate, and step
                               Mossgate
 ```
 
-- **Building:** a temple sprite on `mossgate.tmx` with an `entry` object leading into the interior, a sub-map of
-  Mossgate (`maps/map/mossgate_temple.tmx`), the way the Emberbrook house works. The interior can start from one of
-  Forge's existing temple maps (`common/maps/map/main_story/temple_of_gideon`, `templeofchandra.tmx`).
-- **Gates:** six `portal` objects with Forge's portal sprites (`sprites/portal.atlas`, `sprites/portal3.atlas`), the
-  five zone gates in a ring in color-wheel order and the champion gate at the back.
-- **Guards:** each gate has its tier guard in front of it (§5): a guard plus hidden triggers, as in the Seal Angel's
-  passage. All six guards are in one room, so the player can see at a glance which gates are open and which are still
-  sealed.
+- **Building:** Forge's columned temple (buildings tileset, 3×2 tiles) on `mossgate.tmx`, just south of the main
+  road on the west side. The `entry` object below its door (id 54) leads into the interior, a sub-map of Mossgate
+  (`maps/map/mossgate_temple.tmx`), the way the Emberbrook house works.
+- **Interior:** Realm of Legends' start room (`main_story/spawn.tmx`) emptied out: no bookcases, boosters, treasure
+  or signs, only the red carpet and the two braziers by the door. The exit (id 1, between the braziers) leads back
+  out to Mossgate and is the room's spawn point.
+- **Gates:** six `portal` objects, the five zone gates in a ring in color-wheel order (White at the top of the carpet,
+  Blue right, Black lower right, Red lower left, Green left) and the champion gate at the back of the carpet with
+  `sprites/portal3.atlas`. Each is sealed by its flag: a portal is active only if `activeQuestFlag` exists when the
+  room loads (`zoneOpen.W/U/B/R/G`, `summitOpen` for the champion gate) and an inactive portal does nothing, so the
+  flag must never be set at all for a closed gate (setting it to 0 still counts as open). Their `gateTo` targets are
+  empty until the gate passes exist.
+- **Guards:** each gate can also get its tier guard in front of it (§5): a guard plus hidden triggers, as in the Seal
+  Angel's passage. All six guards are in one room, so the player can see at a glance which gates are open and which
+  are still sealed. The sealed portals already stop the player, so the guards are for the dialog ("come back with N
+  Seals"), not for blocking.
 - **Where a gate leads:** stepping into a zone's gate starts its **gate pass** (§4) at the temple end. Walking out the
   other end comes out by the zone's gate town. Walking back through the gate pass from the zone side comes out in the
   temple, in front of that gate. The champion gate leads into Victory Road.
@@ -469,7 +477,8 @@ Fragments** (quest items, one per Paragon, named "Summit Key Fragment (White-Blu
 
 1. **Gates to a chosen entry and linked POI doors** (Java). **Done**: built, and a two-door test cave next to
    Emberbrook worked both ways in game (since removed).
-2. **The Gate Temple** in Mossgate: the building, the interior with six gates and their guards (all sealed for now).
+2. **The Gate Temple** in Mossgate. **Done**: the building, the interior and six gates, each sealed by its
+   `zoneOpen`/`summitOpen` flag. Guards and gate targets come with steps 4 and 5.
 3. **World resize and the central area.** About 480×460 tiles, the starter zone and Mossgate in the centre, the
    champion area walled off next to it. Retest the starter flow end to end.
 4. **Flags.** `zoneTier.<C>` and `zoneOpen.<C>` from the color choice; `seals` on Warden defeats.

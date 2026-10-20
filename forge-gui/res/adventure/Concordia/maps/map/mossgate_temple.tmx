@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="8">
+ <properties>
+  <property name="preventEscape" type="bool" value="false"/>
+ </properties>
+ <tileset firstgid="1" source="../../../common/maps/tileset/main.tsx"/>
+ <tileset firstgid="10113" source="../../../common/maps/tileset/buildings.tsx"/>
+ <layer id="1" name="Background" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzt1DEOwCAIBVAHt17YS/WODl2MEQWET9Iw/MQ4+ASM7SmlZTLCvPVLhDnG41zOnpVL1eXhnmo83UM6m5WHdrWJcne2pxnpUna6ODfiTY/7CI/b85v7aP9kar1ztKbFHG5NTh9my9pdnY+oV+J69DrCRb8rZB//lA7OBA8n
+  </data>
+ </layer>
+ <layer id="2" name="Ground" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztlUEOwiAQRUfbhbBpE92r52hFr+JR1HsYL6KuPJcyKZNMKVhAF8bwk5/GannMHzoCZGX9np4zgK3sDKJvfm8iwtY7i6H5WsTaSfdvp9qt/q7Q11JbyTD2Y+5eL9RKDvfmY1NmWI+vjkMFcDQ+VeH7oPo3smPx3Hws7mUNsDJe1/H1U71lZH42d7/oHPr8xXBDagzhcr/LmnKOPS+pOfNaUdjrmKxTuFin611qItgpXMXOLK8Z35/QPn+SM+fGML/JJaY913zz6lMu9Rh5yKLzTf32ca+adTO+J3CJraw5T/MLubZTGD4XLF+82i7ZHsf+62jW0rOF6JvfH1Pj2Etrrc0/835lZWX9p16o1tqQ
+  </data>
+ </layer>
+ <layer id="3" name="Walls" width="30" height="30">
+  <properties>
+   <property name="spriteLayer" type="bool" value="true"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztk8ENgkAQReeICReDiRfbsAVirMTj2oPViD1YhD2oLchJJjJhWEYiuzN6cH/yskAIL5+dLWcAZeItu/zFL5zktfZzH3dJz6yckkPTfcwAqkBOWXjHTbOuiw63ANi3uJZL0b8nthH/Fr34DT+PeR8/Vl5KzZznvFs1vGOpha7f7svnABPqRaZ4tfqSl+ZY8mt76fyP9UUnodmX768E99KeWp9f7rTqy+eU8L3SOxpzNbVvrPfacBM4LOVrzj3C+wluNcTSl0gk/psnsoctEA==
+  </data>
+ </layer>
+ <objectgroup id="4" name="Objects">
+  <object id="1" name="temple exit" template="../../../common/maps/obj/entry_down.tx" x="208" y="304" width="32" height="16">
+   <properties>
+    <property name="direction" value="up"/>
+    <property name="spawn" type="bool" value="true"/>
+    <property name="teleport" value="../Concordia/maps/map/mossgate.tmx"/>
+    <property name="teleportObjectId" value="54"/>
+   </properties>
+  </object>
+  <object id="2" name="Champion Gate" template="../../../common/maps/obj/portal.tx" type="portal" x="216" y="144">
+   <properties>
+    <property name="activeQuestFlag" value="summitOpen"/>
+    <property name="sprite" value="sprites/portal3.atlas"/>
+    <property name="teleport" value=""/>
+   </properties>
+  </object>
+  <object id="3" name="White Gate" template="../../../common/maps/obj/portal.tx" type="portal" x="216" y="176">
+   <properties>
+    <property name="activeQuestFlag" value="zoneOpen.W"/>
+    <property name="sprite" value="sprites/portal.atlas"/>
+    <property name="teleport" value=""/>
+   </properties>
+  </object>
+  <object id="4" name="Blue Gate" template="../../../common/maps/obj/portal.tx" type="portal" x="288" y="208">
+   <properties>
+    <property name="activeQuestFlag" value="zoneOpen.U"/>
+    <property name="sprite" value="sprites/portal.atlas"/>
+    <property name="teleport" value=""/>
+   </properties>
+  </object>
+  <object id="5" name="Black Gate" template="../../../common/maps/obj/portal.tx" type="portal" x="264" y="272">
+   <properties>
+    <property name="activeQuestFlag" value="zoneOpen.B"/>
+    <property name="sprite" value="sprites/portal.atlas"/>
+    <property name="teleport" value=""/>
+   </properties>
+  </object>
+  <object id="6" name="Red Gate" template="../../../common/maps/obj/portal.tx" type="portal" x="168" y="272">
+   <properties>
+    <property name="activeQuestFlag" value="zoneOpen.R"/>
+    <property name="sprite" value="sprites/portal.atlas"/>
+    <property name="teleport" value=""/>
+   </properties>
+  </object>
+  <object id="7" name="Green Gate" template="../../../common/maps/obj/portal.tx" type="portal" x="144" y="208">
+   <properties>
+    <property name="activeQuestFlag" value="zoneOpen.G"/>
+    <property name="sprite" value="sprites/portal.atlas"/>
+    <property name="teleport" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
