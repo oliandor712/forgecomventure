@@ -1,0 +1,118 @@
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (19) to attack B.
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's Declare Blockers Step	COMBAT	B assigned Duskwatch Recruiter (50) and Selvala, Heart of the Wilds (81) to block Canopy Spider (19).
+6	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Canopy Spider (19)]
+6	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (16) - Canopy Spider (19) gets +3/+3  until end of turn.
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's Combat Damage Step	DAMAGE	Canopy Spider (19) deals 3 damage to Selvala, Heart of the Wilds (81).
+6	A's Combat Damage Step	DAMAGE	Canopy Spider (19) deals 1 damage to Duskwatch Recruiter (50).
+6	A's Combat Damage Step	DAMAGE	Duskwatch Recruiter (50) deals 2 damage to Canopy Spider (19).
+6	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Canopy Spider (19).
+6	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD	A cast Grappler Spider
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Upkeep step	STACK_ADD	B triggered Duskwatch Recruiter
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Aftermath Analyst (7) and Grappler Spider (15) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Aftermath Analyst (7). B didn't block Grappler Spider (15).
+12	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Aftermath Analyst (7)]
+12	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (17) - Aftermath Analyst (7) gets +3/+3  until end of turn.
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Aftermath Analyst (7) deals 4 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Grappler Spider (15) deals 2 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 12 > 6
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Sylvan Ranger
+12	A's Main phase, postcombat	STACK_ADD	A triggered Sylvan Ranger
+12	A's End step	PHASE	A's End step
+12	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Giant Growth (17)]
+12	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Giant Growth (17) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+12	A's End step	STACK_ADD	B cast Return to Nature
+12	A's Cleanup step	PHASE	A's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Grappler Spider (15)]
+14	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (8) - Grappler Spider (15) gets +2/+2 and gains hexproof until end of turn.
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Grappler Spider (15) to attack B.
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B assigned Collector Ouphe (48) to block Grappler Spider (15).
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Grappler Spider (15) deals 4 damage to Collector Ouphe (48).
+14	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Grappler Spider (15).
+14	A's Combat Damage Step	ZONE_CHANGE	Collector Ouphe (48) was put into Graveyard from Battlefield.
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD	A cast Arasta of the Endless Web
+14	A's End step	PHASE	A's End step
+14	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Blossoming Defense (8)]
+14	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Blossoming Defense (8) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+14	A's Cleanup step	PHASE	A's Cleanup step
+20	B's Cleanup step	TURN	Turn 20 (A)
+20	A's Untap step	PHASE	A's Untap step
+20	A's Upkeep step	PHASE	A's Upkeep step
+20	A's Draw step	PHASE	A's Draw step
+20	A's Main phase, precombat	PHASE	A's Main phase, precombat
+20	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+20	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+20	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+20	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+20	A's Combat Damage Step	PHASE	A's Combat Damage Step
+20	A's End of Combat Step	PHASE	A's End of Combat Step
+20	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+20	A's End step	PHASE	A's End step
+20	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Giant Growth (16)]
+20	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Giant Growth (16) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+20	A's Cleanup step	PHASE	A's Cleanup step
+26	B's Cleanup step	TURN	Turn 26 (A)
+26	A's Untap step	PHASE	A's Untap step
+26	A's Upkeep step	PHASE	A's Upkeep step
+26	A's Draw step	PHASE	A's Draw step
+26	A's Main phase, precombat	PHASE	A's Main phase, precombat
+26	A's Main phase, precombat	STACK_ADD	A cast Brotherhood Regalia
+26	A's Main phase, precombat	STACK_ADD	A activated Brotherhood Regalia targeting [Ruins Recluse (12)]
+26	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+26	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+26	A's Declare Attackers Step	COMBAT	A assigned Ruins Recluse (12), Destiny Spinner (5), Grappler Spider (15), Canopy Spider (19), Aftermath Analyst (7), Sylvan Ranger (22) and Aquastrand Spider (6) to attack B.
+26	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+26	A's Declare Blockers Step	COMBAT	B didn't block Ruins Recluse (12). B assigned Elvish Skysweeper (51) to block Destiny Spinner (5). B assigned Elvish Mystic (77) to block Grappler Spider (15). B assigned Phyrexian Dreadnought (42) to block Canopy Spider (19). B didn't block Aftermath Analyst (7). B didn't block Sylvan Ranger (22). B didn't block Aquastrand Spider (6).
+26	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Ruins Recluse (12)]
+26	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Ruins Recluse (12) gets +2/+2 and gains hexproof until end of turn.
+26	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+26	A's Combat Damage Step	PHASE	A's Combat Damage Step
+26	A's Combat Damage Step	DAMAGE	Ruins Recluse (12) deals 7 combat damage to B.
+26	A's Combat Damage Step	DAMAGE	Destiny Spinner (5) deals 3 damage to Elvish Skysweeper (51).
+26	A's Combat Damage Step	DAMAGE	Grappler Spider (15) deals 2 damage to Elvish Mystic (77).
+26	A's Combat Damage Step	DAMAGE	Canopy Spider (19) deals 1 damage to Phyrexian Dreadnought (42).
+26	A's Combat Damage Step	DAMAGE	Aftermath Analyst (7) deals 1 combat damage to B.
+26	A's Combat Damage Step	DAMAGE	Sylvan Ranger (22) deals 1 combat damage to B.
+26	A's Combat Damage Step	DAMAGE	Aquastrand Spider (6) deals 1 combat damage to B.
+26	A's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 1 damage to Destiny Spinner (5).
+26	A's Combat Damage Step	DAMAGE	Elvish Mystic (77) deals 1 damage to Grappler Spider (15).
+26	A's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 24 damage to Canopy Spider (19).
+26	A's Combat Damage Step	LIFE	Life: B 6 > -4

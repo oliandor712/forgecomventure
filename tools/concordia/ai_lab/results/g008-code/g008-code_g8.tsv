@@ -1,0 +1,22 @@
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Main phase, precombat	STACK_ADD	A cast Brotherhood Regalia
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Attackers Step	COMBAT	A assigned Grappler Spider (15) to attack B.
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Grappler Spider (15).
+5	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Grappler Spider (15)]
+5	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (16) - Grappler Spider (15) gets +3/+3  until end of turn.
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's Combat Damage Step	DAMAGE	Grappler Spider (15) deals 5 damage to Selvala, Heart of the Wilds (81).
+5	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Grappler Spider (15).
+5	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
