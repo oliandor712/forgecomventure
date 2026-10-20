@@ -1,0 +1,8 @@
+{
+  "about": "Two caves either side of Emberbrook opening one hallway from opposite ends (linked doors + gates).",
+  "maps": ["test_hallway.tmx"],
+  "pois": [
+    {"name": "TestCaveWest", "displayName": "Test Cave (west)", "type": "cave", "count": 1, "spriteAtlas": "../common/maps/tileset/buildings.atlas", "sprite": "Cave", "map": "../Concordia/maps/map/test/test_hallway.tmx", "radiusFactor": 0, "offsetX": -0.25, "offsetY": -0.4222, "questTags": ["Cave", "BiomeConcordia"]},
+    {"name": "TestCaveEast", "displayName": "Test Cave (east)", "type": "cave", "count": 1, "spriteAtlas": "../common/maps/tileset/buildings.atlas", "sprite": "Cave", "map": "../Concordia/maps/map/test/test_hallway.tmx", "radiusFactor": 0, "offsetX": 0.25, "offsetY": -0.4222, "linkTo": "TestCaveWest", "linkEntry": 2, "questTags": ["Cave", "BiomeConcordia"]}
+  ]
+}
