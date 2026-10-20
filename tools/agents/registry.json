@@ -90,6 +90,12 @@
      "2026-10-20",
      "Retry failed pushes."
     ]
+   ],
+   "analyses": [
+    [
+     "2026-10-20",
+     "Seat edge, power vs wins, match length (74 games)"
+    ]
    ]
   }
  },
