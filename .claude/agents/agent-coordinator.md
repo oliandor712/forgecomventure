@@ -26,6 +26,9 @@ in `tools/agents/registry.json`.
   - Append each ping to `tools/agents/coordinator/interactions.log`.
   - Never answer a ping unless it shows a conflict.
 - **Your hourly run** (scheduled at :55, before the agents' runs).
+- **`CYCLE NOW` messages** from the balance lab (after its :25 report) and the main session (after its :40 check-in):
+  run your cycle at once: confirm each lab is live (`get_session`, latest `result`), log a productivity.csv line per
+  agent, and flag any stall to the main session. Keep it brief.
 - **What you can see:** `get_session` and `list_events` for each session, `list_triggers`, and the agents' folders and
   logs on the branch.
 

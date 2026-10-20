@@ -80,7 +80,8 @@ For each agent:
    container kind "project", same id) with the Claude Docs tools: Status, checklist summary, analysis notes. Act on its
    open inbox rows (approval-needing rows become NEEDS USER) and reply under "Replies from Claude Code". Skip if the
    tools are unavailable and say so.
-7. Report to the user in 5 lines or fewer, or in one line if all is well.
+7. Send the agent coordinator `CYCLE NOW: check-in done <commit>` so it runs its cycle at once (inbox #2).
+8. Report to the user in 5 lines or fewer, or in one line if all is well.
 
 Also run `agentctl.py status`. If an agent shows `context NOT SENT`, send it its update.
 

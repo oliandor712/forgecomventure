@@ -104,6 +104,7 @@ build on its findings, and cite entries by date and title.
 The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
+- 2026-10-20: 
 - 2026-10-20: Life bonuses (life5, life10) eliminated as an option by the user. No life-bonus tests; every sim at equal life. Old life rows stay in records.csv but are left out of the report.
 - 2026-10-20: The user and Claude Chat now leave requests for the main session in the Claude Doc agent_operations_master (inbox table); the main session works them at its 4-hour check-in. Agents don't write to it.
 - 2026-10-20: Schedules: AI lab step every 2 h at :06 (was hourly); balance report every 4 h at :25; main check-in every 4 h at :40; balance batch :10 and coordinator :55 hourly, unchanged.
@@ -115,6 +116,3 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-20: New card categories (docs/Adventure/Campaign/STAPLES.md, deckgen/staples.py): staple (popular, low standalone impact), game_changer, watch (popular, high impact, not a Game Changer). deck_tier.py --json now lists 'staples' and 'watch' per deck.
 - 2026-10-20: EDHREC popularity (Scryfall) added to card power; deck power rose about 1.5 at T1-T3; zone power windows shifted to match. New: ANALYSIS REQUEST lines in your reports get answered into tools/agents/analysis/<you>.md (your training data).
 - 2026-10-20: Scryfall card data downloaded: deckgen/scryfall/cards.json.gz (35k cards: EDHREC rank, Game Changer, legality, identity; no prices), read with scryfall_bulk.load(). Bulk refresh at most every 12 h.
-- 2026-10-20: Card data roster: Scryfall (tools/concordia/deckgen/scryfall_bulk.py, bulk oracle_cards, at most one check per 12 h; /cards/collection lookups throttled). Blocked by the network policy until the user allows api.scryfall.com and data.scryfall.io.
-- 2026-10-20: The first piloted test match was discarded at the user's request (too many problems); don't use its data. PilotSim now has a no-token rules mode (-Dpilot.A=rules).
-- 2026-10-20: ai_lab/minideck.py shrinks a deck to a 30-card test deck (commander + test cards + 12 lands + the source deck's cheapest cards); Forge sims accept 30-card Commander decks, verified. setup.sh now also compiles tools/concordia/ai_lab/*.java (AiLabSim was missing).

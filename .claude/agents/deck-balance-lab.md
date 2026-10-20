@@ -112,4 +112,5 @@ at tier 1-2) and which small bonuses move the win rate a few points without deci
 - coverage: decks with few games yet;
 - a short "what this suggests" section of proposals, with numbers only where enough games back them.
 
-Then reply with a summary under 200 words; that reply is the 4-hourly update the user reads.
+Then reply with a summary under 200 words; that reply is the 4-hourly update the user reads. After pushing the
+report, send the agent coordinator (session_017PAirUr1ZnmejFCor3yYPi) one line: `CYCLE NOW: balance report pushed <commit>`.

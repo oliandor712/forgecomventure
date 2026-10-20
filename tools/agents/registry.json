@@ -142,6 +142,10 @@
     [
      "2026-10-20",
      "Eliminate life bonuses (life5, life10) as an option: no life-bonus tests, every sim at equal life."
+    ],
+    [
+     "2026-10-20",
+     "Inbox #2-#3: ping the coordinator after each 4-hour report; bonus sets land, onedrop, land+onedrop against arena and staff, 5 sets each, no life bonuses; bedlam, hornet, market, legion wait."
     ]
    ],
    "analyses": [
@@ -169,6 +173,10 @@
     [
      "2026-10-20",
      "Only purpose: manage agent interactions and subagent productivity. Pinged on every interaction between the main session and the sub agents. Resolve conflicts by keeping sub-agent activity on schedule at night (12 AM-8 AM), unless the main agent is active; then the main agent takes priority."
+    ],
+    [
+     "2026-10-20",
+     "Inbox #2: run your cycle at once on CYCLE NOW messages after the :25 balance report and the :40 check-in."
     ]
    ]
   }
