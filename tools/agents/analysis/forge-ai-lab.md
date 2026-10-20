@@ -288,3 +288,74 @@ Then subtract the cost and act only if the gain is clear. Two extra checks for t
 3. When a version is chosen to trade, tell the rest of the AI, so another routine doesn't pay to undo it.
 4. Two versions is the general pattern for any "becomes X until end of turn" card: compare now against transformed,
    then subtract the cost and the exposure.
+
+## 2026-10-20: s005/s006 code A/B review
+
+Request: (1) judge the s005-code activations and what shouldPumpCard still misses; (2) is 14 vs 68 too conservative; (3) what scenario would show 006's effect; (4) which log columns first.
+
+**Data.** `results/s005-code/*.tsv`. For each turn I parsed the declare attackers and blockers lines and the damage
+lines. My parser finds 7 activation lines, not 14; the log may write one line per activation or one per resolution.
+Keep object ids on activation lines so they can be matched (logging list below).
+
+### (1) The activations
+
+| Game, turn | What happened | Verdict |
+|---|---|---|
+| g0 T12, g2 T9, g2 T11 | Turtleshell attacking, unblocked, switched, hit for 5, 4 and 4 | Useful (+3 to +4 damage each) |
+| g4 T9, g5 T11 | Myr Quadropod attacking, unblocked, switched, hit for 4 and 5 | Useful |
+| g9 T18 | Aquamoeba triple-blocked (Thopter Token, Spectrum Sentinel, Thopter Mechanic), switched to 3/1 | Right call: it dies either way and the switch lets it kill a blocker. The damage lines are missing, so the kill can't be confirmed |
+| g2 T14 | Turtleshell blocking Thopter Mechanic (2 power) | Unclear |
+
+On g2 T14: the damage lines show Turtleshell #8 dealing 1, meaning not switched at damage, and #7 taking 1 from Sai.
+Either the activated Turtleshell was the other copy, or it switched and switched back. Probably 2 mana for nothing.
+Object ids on the activation line will settle it.
+
+**Score:** 5 to 6 clearly useful out of 7, against about 0 of 68 at baseline. A large real improvement.
+
+### (2) Too conservative? Mostly right, with two gaps
+
+18 combats had a flagged creature attacking or blocking with no switch. Most declines were correct:
+- Turtleshell blocking Etherium Sculptor (g5 T16) or Brass Man (g8 T19), and Myr blocking Spectrum Sentinel
+  (g3 T21). Switching kills the attacker but the 4/1 dies, trading a 4-drop for a 2-drop.
+
+**Gap A: gang blocks.**
+- Several turns have 2-4 of A's creatures blocking Sai, Master Thopterist, B's commander: g1 T20, g4 T14, g5 T16,
+  g6 T13.
+- In g5 T16, Aquamoeba and Myr block Sai. A switched Myr adds +3 damage, likely enough to kill the commander. Sai deals
+  its damage to the creature of B's choice, so the Myr risk is small. No switch happened.
+- **Check whether `shouldPumpCard` for a blocker counts the other blockers' damage.** It should use the combined
+  damage (`ComputerUtilCombat.totalDamageOfBlockers` or `attackerWouldBeDestroyed(ai, attacker, combat)` with the pump
+  applied). If it judges the pumped blocker alone, it misses every "my switch completes a gang block" kill.
+
+**Gap B: unblocked attackers left unswitched.**
+- g3 T6: Aquamoeba unblocked dealt 1. A switch would have dealt 3, at the cost of a discard.
+- g5 T9: Myr unblocked dealt 1.
+- These are probably mana or cost choices, Myr's {3} being unavailable or the discard judged too costly. That's
+  fine, but they can't be verified without mana available and hand size in the log.
+
+### (3) Patch 006 needs a scenario where life is NOT in danger
+
+- FogAi's count only matters in the `fogs > 2 && dmg > 2` branch (FogAi.java, before the `lifeInDanger` check). With
+  the patch, a hand of 3 or more Effect Fogs makes the AI fog an attack of 3 or more damage even at a safe life total.
+  Without it, the AI only fogs when in danger.
+- **The test:**
+  - The AI's deck holds 3-4 copies each of Thwart the Enemy, Vine Snare and Endure.
+  - Both sides at 40 life (equal), against a go-wide deck that attacks every turn for 3-8.
+  - Measure casts made while not in danger, damage prevented, and whether those Fogs were missing later when the AI
+    was in danger.
+- **I expect 006 to make the AI spend Fogs earlier,** which helps only a deck built around Fogs. Concordia has no such
+  deck, so **park 006** (low priority) unless a Fog-themed encounter deck is planned.
+
+### (4) Log columns, in this order
+
+1. **Object id and controller** on every activation and damage line, plus mana available and hand size when a flagged
+   ability was playable.
+2. **Zone changes for every creature in a combat** that has a flagged card, so kills are counted.
+3. **role** (attacker unblocked, attacker blocked, blocker) and the opposing creatures' power, toughness and keywords.
+4. **score_now / score_switched**, or the `shouldPumpCard` verdict, and the activation **cost**.
+5. **outcome**, and a **useful** flag (did the switch beat the unswitched result).
+
+**Rules to apply:**
+1. A switch on an unblocked attacker is the reliable win, and v3 takes those.
+2. The remaining upside is gang blocks: evaluate a blocker's pump with the whole block's damage.
+3. Don't pay for a patch with no scenario: 006 only matters for decks built around Fogs.
