@@ -1,0 +1,100 @@
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Attackers Step	COMBAT	A assigned Merfolk Windrobber (36) to attack B.
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's Declare Blockers Step	COMBAT	B didn't block Merfolk Windrobber (36).
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's Combat Damage Step	DAMAGE	Merfolk Windrobber (36) deals 1 combat damage to B.
+5	A's Combat Damage Step	LIFE	Life: B 19 > 18
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+5	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT*	A assigned Frost Augur (5), Merfolk Windrobber (36) and Aquamoeba (33) to attack B.
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT*	B didn't block Frost Augur (5). B didn't block Merfolk Windrobber (36). B didn't block Aquamoeba (33).
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Frost Augur (5) deals 1 combat damage to B.
+7	A's Combat Damage Step	DAMAGE	Merfolk Windrobber (36) deals 1 combat damage to B.
+7	A's Combat Damage Step	DAMAGE*	Aquamoeba (33) deals 1 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: B 18 > 15
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+7	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+21	B's Cleanup step	TURN	Turn 21 (A)
+21	A's Untap step	PHASE	A's Untap step
+21	A's Upkeep step	PHASE	A's Upkeep step
+21	A's Draw step	PHASE	A's Draw step
+21	A's Main phase, precombat	PHASE	A's Main phase, precombat
+21	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+21	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+21	A's Declare Attackers Step	COMBAT*	A assigned Alandra, Sky Dreamer (40), Drake Token (91), Watcher for Tomorrow (28), Drake Token (95), Silvergill Adept (26), Merfolk Trickster (38), Drake Token (101), Drake Token (104), Frost Augur (5), Merfolk Windrobber (36), Aquamoeba (33), Myr Quadropod (4), Merfolk Looter (22), Mistway Spy (1) and Karfell Harbinger (2) to attack B.
+21	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+21	A's Declare Blockers Step	COMBAT*	B assigned Signal Pest (79) to block Alandra, Sky Dreamer (40). B assigned Thopter Token (88) to block Drake Token (91). B assigned Thopter Token (98) to block Watcher for Tomorrow (28). B assigned Aetherjacket (45) to block Drake Token (95). B assigned Thopter Mechanic (74) to block Silvergill Adept (26). B assigned Thopter Token (85) to block Merfolk Trickster (38). B didn't block Drake Token (101). B didn't block Drake Token (104). B didn't block Frost Augur (5). B didn't block Merfolk Windrobber (36). B didn't block Aquamoeba (33). B assigned Hedron Crawler (77) to block Myr Quadropod (4). B assigned Sai, Master Thopterist (81) to block Merfolk Looter (22). B didn't block Mistway Spy (1). B didn't block Karfell Harbinger (2).
+21	A's Declare Blockers Step	STACK_ADD*	A activated Myr Quadropod
+21	A's Declare Blockers Step	STACK_RESOLVE*	Myr Quadropod (4) - Myr Quadropod (4) gains hidden cardname's power and toughness are switched until end of turn.
+21	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+21	A's Combat Damage Step	PHASE	A's Combat Damage Step
+21	A's Combat Damage Step	DAMAGE	Drake Token (95) deals 2 damage to Aetherjacket (45).
+21	A's Combat Damage Step	DAMAGE	Silvergill Adept (26) deals 2 damage to Thopter Mechanic (74).
+21	A's Combat Damage Step	DAMAGE	Drake Token (101) deals 2 combat damage to B.
+21	A's Combat Damage Step	DAMAGE	Drake Token (104) deals 2 combat damage to B.
+21	A's Combat Damage Step	DAMAGE	Frost Augur (5) deals 1 combat damage to B.
+21	A's Combat Damage Step	DAMAGE	Merfolk Windrobber (36) deals 1 combat damage to B.
+21	A's Combat Damage Step	DAMAGE*	Aquamoeba (33) deals 1 combat damage to B.
+21	A's Combat Damage Step	DAMAGE	Merfolk Looter (22) deals 1 damage to Sai, Master Thopterist (81).
+21	A's Combat Damage Step	DAMAGE	Mistway Spy (1) deals 1 combat damage to B.
+21	A's Combat Damage Step	DAMAGE	Karfell Harbinger (2) deals 1 combat damage to B.
+21	A's Combat Damage Step	DAMAGE	Aetherjacket (45) deals 3 damage to Drake Token (95).
+21	A's Combat Damage Step	DAMAGE	Thopter Mechanic (74) deals 3 damage to Silvergill Adept (26).
+21	A's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 1 damage to Merfolk Looter (22).
+21	A's Combat Damage Step	LIFE	Life: B 12 > 3
+21	A's End of Combat Step	PHASE	A's End of Combat Step
+21	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+21	A's End step	PHASE	A's End step
+21	A's Cleanup step	PHASE	A's Cleanup step
+23	B's Cleanup step	TURN	Turn 23 (A)
+23	A's Untap step	PHASE	A's Untap step
+23	A's Upkeep step	PHASE	A's Upkeep step
+23	A's Draw step	PHASE	A's Draw step
+23	A's Main phase, precombat	PHASE	A's Main phase, precombat
+23	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+23	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+23	A's Declare Attackers Step	COMBAT*	A assigned Alandra, Sky Dreamer (40), Drake Token (91), Watcher for Tomorrow (28), Merfolk Trickster (38), Drake Token (101), Drake Token (104), Drake Token (110), Frost Augur (5), Merfolk Windrobber (36), Aquamoeba (33), Myr Quadropod (4), Mistway Spy (1) and Karfell Harbinger (2) to attack B.
+23	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+23	A's Declare Blockers Step	COMBAT*	B assigned Wall of Junk (72) to block Alandra, Sky Dreamer (40). B assigned Thopter Token (113) to block Drake Token (91). B assigned Thopter Token (116) to block Watcher for Tomorrow (28). B assigned Thopter Token (107) to block Merfolk Trickster (38). B didn't block Drake Token (101). B didn't block Drake Token (104). B didn't block Drake Token (110). B didn't block Frost Augur (5). B didn't block Merfolk Windrobber (36). B didn't block Aquamoeba (33). B assigned Sai, Master Thopterist (81) to block Myr Quadropod (4). B didn't block Mistway Spy (1). B didn't block Karfell Harbinger (2).
+23	A's Declare Blockers Step	STACK_ADD*	A activated Aquamoeba
+23	A's Declare Blockers Step	STACK_RESOLVE*	Aquamoeba (33) - Aquamoeba (33) gains hidden cardname's power and toughness are switched until end of turn.
+23	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+23	A's Combat Damage Step	PHASE	A's Combat Damage Step
+23	A's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Wall of Junk (72).
+23	A's Combat Damage Step	DAMAGE	Drake Token (101) deals 2 combat damage to B.
+23	A's Combat Damage Step	DAMAGE	Drake Token (104) deals 2 combat damage to B.
+23	A's Combat Damage Step	DAMAGE	Drake Token (110) deals 2 combat damage to B.
+23	A's Combat Damage Step	DAMAGE	Frost Augur (5) deals 1 combat damage to B.
+23	A's Combat Damage Step	DAMAGE	Merfolk Windrobber (36) deals 1 combat damage to B.
+23	A's Combat Damage Step	DAMAGE*	Aquamoeba (33) deals 3 combat damage to B.
+23	A's Combat Damage Step	DAMAGE*	Myr Quadropod (4) deals 1 damage to Sai, Master Thopterist (81).
+23	A's Combat Damage Step	DAMAGE	Mistway Spy (1) deals 1 combat damage to B.
+23	A's Combat Damage Step	DAMAGE	Karfell Harbinger (2) deals 1 combat damage to B.
+23	A's Combat Damage Step	DAMAGE*	Sai, Master Thopterist (81) deals 1 damage to Myr Quadropod (4).
+23	A's Combat Damage Step	LIFE	Life: B 3 > -10

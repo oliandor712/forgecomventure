@@ -1,0 +1,81 @@
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Merfolk Windrobber (36) and Mistway Spy (1) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Merfolk Windrobber (36). B didn't block Mistway Spy (1).
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Merfolk Windrobber (36) deals 1 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Mistway Spy (1) deals 1 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 17 > 15
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+12	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+14	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+23	A's Cleanup step	TURN	Turn 23 (B)
+23	B's Untap step	PHASE	B's Untap step
+23	B's Upkeep step	PHASE	B's Upkeep step
+23	B's Draw step	PHASE	B's Draw step
+23	B's Main phase, precombat	PHASE	B's Main phase, precombat
+23	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+23	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+23	B's Declare Attackers Step	COMBAT	B assigned Thopter Mechanic (74), Aetherjacket (45), Hope of Ghirapur (50), Barkform Harvester (49), Thopter Token (91), Thopter Token (94), Thopter Token (97), Thopter Token (100), Thopter Token (113), Thopter Token (116), Phyrexian Germ Token (88), Sai, Master Thopterist (81), Ornithopter of Paradise (80), Ornithopter (69) and Signal Pest (79) to attack A.
+23	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+23	B's Declare Blockers Step	COMBAT*	A assigned Merfolk Windrobber (36) and Alandra, Sky Dreamer (40) to block Thopter Mechanic (74). A assigned Mistway Spy (1) to block Aetherjacket (45). A assigned Drake Token (103) to block Hope of Ghirapur (50). A assigned Frost Augur (5), Myr Quadropod (4) and Turtleshell Changeling (3) to block Barkform Harvester (49). A assigned TARDIS (35) to block Thopter Token (91). A didn't block Thopter Token (94). A didn't block Thopter Token (97). A didn't block Thopter Token (100). A didn't block Thopter Token (113). A didn't block Thopter Token (116). A assigned Vodalian Arcanist (29) to block Phyrexian Germ Token (88). A assigned Tide Shaper (37) and Volshe Tideturner (39) to block Sai, Master Thopterist (81). A didn't block Ornithopter of Paradise (80). A didn't block Ornithopter (69). A didn't block Signal Pest (79).
+23	B's Declare Blockers Step	STACK_ADD*	A activated Myr Quadropod
+23	B's Declare Blockers Step	STACK_RESOLVE*	Myr Quadropod (4) - Myr Quadropod (4) gains hidden cardname's power and toughness are switched until end of turn.
+23	B's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+23	B's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (3) - Turtleshell Changeling (3) gains hidden cardname's power and toughness are switched until end of turn.
+23	B's Declare Blockers Step	STACK_ADD*	A cast Echoing Truth targeting [Myr Quadropod (4)]
+23	B's Declare Blockers Step	STACK_RESOLVE*	Echoing Truth (30) - Myr Quadropod (4)  until end of turn. 
+23	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+23	B's Combat Damage Step	PHASE	B's Combat Damage Step
+23	B's Combat Damage Step	DAMAGE	Thopter Mechanic (74) deals 2 damage to Merfolk Windrobber (36).
+23	B's Combat Damage Step	DAMAGE	Thopter Mechanic (74) deals 4 damage to Alandra, Sky Dreamer (40).
+23	B's Combat Damage Step	DAMAGE	Aetherjacket (45) deals 4 damage to Mistway Spy (1).
+23	B's Combat Damage Step	DAMAGE	Hope of Ghirapur (50) deals 3 damage to Drake Token (103).
+23	B's Combat Damage Step	DAMAGE*	Barkform Harvester (49) deals 1 damage to Turtleshell Changeling (3).
+23	B's Combat Damage Step	DAMAGE	Barkform Harvester (49) deals 2 damage to Frost Augur (5).
+23	B's Combat Damage Step	DAMAGE	Thopter Token (94) deals 3 combat damage to A.
+23	B's Combat Damage Step	DAMAGE	Thopter Token (97) deals 3 combat damage to A.
+23	B's Combat Damage Step	DAMAGE	Thopter Token (100) deals 3 combat damage to A.
+23	B's Combat Damage Step	DAMAGE	Thopter Token (113) deals 3 combat damage to A.
+23	B's Combat Damage Step	DAMAGE	Thopter Token (116) deals 3 combat damage to A.
+23	B's Combat Damage Step	DAMAGE	Phyrexian Germ Token (88) deals 2 damage to Vodalian Arcanist (29).
+23	B's Combat Damage Step	LIFE	Life: B 15 > 17
+23	B's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 2 damage to Tide Shaper (37).
+23	B's Combat Damage Step	DAMAGE	Ornithopter of Paradise (80) deals 2 combat damage to A.
+23	B's Combat Damage Step	DAMAGE	Ornithopter (69) deals 2 combat damage to A.
+23	B's Combat Damage Step	DAMAGE	Merfolk Windrobber (36) deals 1 damage to Thopter Mechanic (74).
+23	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Thopter Mechanic (74).
+23	B's Combat Damage Step	DAMAGE	Mistway Spy (1) deals 1 damage to Aetherjacket (45).
+23	B's Combat Damage Step	DAMAGE	Drake Token (103) deals 2 damage to Hope of Ghirapur (50).
+23	B's Combat Damage Step	DAMAGE	Frost Augur (5) deals 1 damage to Barkform Harvester (49).
+23	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (3) deals 4 damage to Barkform Harvester (49).
+23	B's Combat Damage Step	DAMAGE	Tide Shaper (37) deals 2 damage to Sai, Master Thopterist (81).
+23	B's Combat Damage Step	DAMAGE	Volshe Tideturner (39) deals 1 damage to Sai, Master Thopterist (81).
+23	B's Combat Damage Step	DAMAGE	Vodalian Arcanist (29) deals 1 damage to Phyrexian Germ Token (88).
+23	B's Combat Damage Step	LIFE	Life: A 10 > -9
