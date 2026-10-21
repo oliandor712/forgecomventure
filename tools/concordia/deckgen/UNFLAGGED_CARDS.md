@@ -23,3 +23,5 @@ Note: a broad text search also matches "Boseiju, Who Endures" in 26 decks. That 
 | Endure | yes | Instant | 5 | none | 0 | 0.0 | U 6.7 |
 
 Popularity 0 and no tags: none of the three appears in mined.json (the mined decklists), in the external decklists, or in a precon. Tags empty (cause not checked). Endure is listed at uncommon only, as printed.
+
+Re-check after the deck_tier cache fix (c9aea5063e1, 2026-10-21): pool.py gives 28,948 cards, and all three are present with the same powers. Popularity stays 0 and no role tags, so popularity-driven builds will not pick them. A deck gets one of these three only by an explicit order.
