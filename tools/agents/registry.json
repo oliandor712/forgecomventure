@@ -8,9 +8,9 @@
    "date": "2026-10-20"
   },
   "deck-balance-lab": {
-   "tools/agents/CONTEXT.md": "1b90afbd",
+   "tools/agents/CONTEXT.md": "a6f4a50c",
    ".claude/agents/deck-balance-lab.md": "5450adc4",
-   "date": "2026-10-20"
+   "date": "2026-10-21"
   },
   "agent-coordinator": {
    "tools/agents/CONTEXT.md": "42a270be",
