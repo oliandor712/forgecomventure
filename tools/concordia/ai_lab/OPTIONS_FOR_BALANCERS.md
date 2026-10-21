@@ -16,3 +16,11 @@ Notes for the balancers:
 - Options 2, 3 and 4 are the AI-side changes with a measured decision effect. Option 1 is data only.
 - The Commander phase-log digests (100 games, due at the threshold) will be used to check options 2–4 in 100-card decks once they are in.
 - Win-rate claims for any option need about 40 games per arm (H28).
+
+## Update, 100-game digest analysis (376 games, 2026-10-21)
+| # | Option | Measured effect | Cost | Needs |
+|---|---|---|---|---|
+| 8 | Data only: starters and tier 5 decks sit above the field, tier 1-2 black decks below (balance records, see BALANCE_ANALYSIS.md) | not an AI change; a 40-game check is needed before any deck change | none | data only |
+| 9 | AI decision log (patch 010, test overlay only) | makes AI_DECISION rows in the digests; results-unchanged check still open | none on the shipped game | test overlay only (SIM_ACTIVE.txt); forge-ai/src needs the user's chat approval |
+
+Note: the 376-game digest shows the AI chump-blocks more as its life falls (5%, 15%, 35% of decisions by life band). This is the behaviour the balancers should expect when they test life-based pressure.

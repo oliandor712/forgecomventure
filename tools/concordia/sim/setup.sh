@@ -54,6 +54,28 @@ CP=""
 for m in forge-gui-mobile forge-gui forge-ai forge-game forge-core; do CP="$CP:$ROOT/$m/target/classes"; done
 CP="${CP#:}:$(tr -d '\n' < "$CACHE/deps.txt"):$CACHE/lib/gdx-backend-headless-$GDX.jar:$CACHE/lib/gdx-platform-$GDX-natives-desktop.jar"
 
+# Test-only forge-ai patches (user, 2026-10-21): the patches listed in tools/concordia/ai_lab/patches/SIM_ACTIVE.txt are applied to a
+# scratch copy of the affected forge-ai sources and compiled into $CACHE/aipatch/classes, which goes FIRST on the sim classpath.
+# forge-ai/src and the shipped game are never changed. Delete SIM_ACTIVE.txt (or empty it) to run the sims on the stock AI.
+ACTIVE="$ROOT/tools/concordia/ai_lab/patches/SIM_ACTIVE.txt"
+if [ -s "$ACTIVE" ]; then
+    PATCHES=$(grep -v '^#' "$ACTIVE" | grep -v '^$' | tr '\n' ' ')
+    STAMP=$(cat "$ROOT"/tools/concordia/ai_lab/patches/*.patch 2>/dev/null >/dev/null; for p in $PATCHES; do cat "$ROOT/tools/concordia/ai_lab/patches/$p"; done | cksum | cut -d' ' -f1)
+    if [ "$(cat "$CACHE/aipatch/stamp" 2>/dev/null)" != "$STAMP" ]; then
+        log "compiling test-only AI patches: $PATCHES"
+        rm -rf "$CACHE/aipatch"; mkdir -p "$CACHE/aipatch/src" "$CACHE/aipatch/classes"
+        for p in $PATCHES; do
+            for f in $(grep '^--- a/' "$ROOT/tools/concordia/ai_lab/patches/$p" | sed 's#^--- a/##'); do
+                [ -f "$CACHE/aipatch/src/$f" ] || { mkdir -p "$CACHE/aipatch/src/$(dirname "$f")"; cp "$ROOT/$f" "$CACHE/aipatch/src/$f"; }
+            done
+            (cd "$CACHE/aipatch/src" && patch -p1 -s < "$ROOT/tools/concordia/ai_lab/patches/$p") || { log "patch $p failed"; exit 1; }
+        done
+        javac -nowarn -d "$CACHE/aipatch/classes" -cp "$CP" $(find "$CACHE/aipatch/src" -name '*.java') 2>&1 | grep -v "^Note:\|JAVA_TOOL_OPTIONS" >&2 || true
+        echo "$STAMP" > "$CACHE/aipatch/stamp"
+    fi
+    CP="$CACHE/aipatch/classes:$CP"
+fi
+
 # the sim tools themselves
 mkdir -p "$CACHE/classes"
 SRC=$(ls "$ROOT"/tools/concordia/sim/*.java "$ROOT"/tools/concordia/balance_lab/*.java "$ROOT"/tools/concordia/ai_lab/*.java 2>/dev/null || true)

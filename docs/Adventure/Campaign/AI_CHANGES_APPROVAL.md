@@ -78,7 +78,7 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
   - Without it, Harsh Justice can never be cast.
 - [ ] **Shield Dancer unflag**: Needs work. It waits for 007.
 
-- [ ] **010, AI decision log (log-only)**: Planned (agreed by main session, AI lab and balance lab in the 2026-10-21 agent review, S1).
+- [x] **010, AI decision log (log-only)**: Approved by the user in chat on 2026-10-21 **for testing only**. In use on the sim classpath (`tools/concordia/sim/setup.sh`, list in `ai_lab/patches/SIM_ACTIVE.txt`); NOT in `forge-ai/src` or the shipped game (forge-ai backed up in `tools/concordia/backups/2026-10-21_forge_ai_pre_010`; an accidental source commit was reverted). Still open: per-line turn stamp, results-unchanged check.
   - Where: forge-ai, at the points where the AI picks an attack, block, spell or removal target. Patch (to be written):
     `tools/concordia/ai_lab/patches/010-decision-log.patch`.
   - Writes the chosen play and the reason (the predictor's numbers or the card score) as one game-log line per decision, so the

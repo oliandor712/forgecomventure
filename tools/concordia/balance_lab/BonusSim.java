@@ -52,6 +52,12 @@ public class BonusSim {
                     || ty == forge.game.GameLogEntryType.STACK_ADD)
                     sb.append(turn).append('\t').append(phase.replace('\t', ' ')).append('\t').append(ty).append('\t').append(msg.replace('\n', ' ').replace('\t', ' ')).append('\n');
             }
+            // test-only patch 010: the AI's own decision lines (present only when the sim classpath carries forge.ai.AiDecisionLog)
+            try {
+                @SuppressWarnings("unchecked")
+                java.util.List<String> dec = (java.util.List<String>) Class.forName("forge.ai.AiDecisionLog").getMethod("drain").invoke(null);
+                for (String d : dec) sb.append(turn).append('\t').append("").append('\t').append("AI_DECISION").append('\t').append(d.replace('\n', ' ').replace('\t', ' ')).append('\n');
+            } catch (ClassNotFoundException cnf) { /* stock AI: no decision log */ }
             java.nio.file.Files.createDirectories(java.nio.file.Paths.get(dir));
             java.nio.file.Files.writeString(java.nio.file.Paths.get(dir, label + ".tsv"), sb.toString());
         } catch (Exception ex) { ex.printStackTrace(); }

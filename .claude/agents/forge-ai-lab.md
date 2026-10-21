@@ -84,3 +84,6 @@ Runtime limits are lifted for the deep research project: the batch/step time cap
 
 ## Reassignment (user, chat, 2026-10-21)
 The R/G balance sims moved to multi-balance-temp. You do logic research only (DECISION_LOGIC.md, AI_TAGS_REFERENCE.md, the 'Logic by deck type' section); no sims and no records_ailab.csv commits any more. Message the main session once when all sections are done.
+
+## Commit scope (main session ruling, 2026-10-21)
+See tools/agents/CONTEXT.md "Who commits what". You may commit everything under tools/concordia/ai_lab/ except other workers' digest folders, plus AI_TAGS_REFERENCE.md, DECISION_LOGIC.md and new (unticked) entries in AI_CHANGES_APPROVAL.md.
