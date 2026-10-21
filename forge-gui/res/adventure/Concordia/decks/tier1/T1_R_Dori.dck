@@ -4,31 +4,31 @@ Description=Tier 1 (Bracket 1). Mono-red dwarves with a little treasure.
 [Commander]
 1 Dori, Bearer of Friends|HOB
 [Main]
-39 Mountain|FDN
+38 Mountain|FDN
 1 Forgotten Cave|ONS
 1 Myriad Landscape|CMM
 1 Temple of the False God|SCG
-1 Beamtown Beatstick|MOM
 1 Dwarven Grunt|ODY
+1 Enslaved Dwarf|TOR
 1 Impulsive Pilferer|CMM
-1 Prying Blade|XLN
+1 Liberated Dwarf|JUD
 1 Reckless Lackey|OTJ
-1 Spiked Pit Trap|AFR
 1 Stark Industries Executive|MSH
+1 Sticky Fingers|SNC
 1 Ancestors' Aid|LCI
-1 Arcane Signet|TMC
-1 Axgard Cavalry|FDN
+1 Axgard Artisan|MOM
 1 Brazen Dwarf|AFR
-1 Dwarven Berserker|WTH
-1 Dwarven Forge-Chanter|BRO
+1 Daily Bugle Newspaper|MSC
 1 Enterprising Scallywag|LCI
 1 Erebor Flamesmith|LTR
-1 Gilded Ghoda|DFT
-1 Gilded Pinions|SNC
+1 Fearless Liberator|KHM
+1 Fellwar Stone|9ED
 1 Gleaming Barrier|FDN
 1 Halo Scarab|SNC
+1 Prompto Argentum|FIN
+1 Razortip Whip|GTC
 1 Reckless Ransacking|ECL
-1 Rimrock Knight|ELD
+1 Riveteers Requisitioner|SNC
 1 Sudden Breakthrough|STX
 1 Tavern Scoundrel|MH2
 1 Ticket Tortoise|DFT
@@ -36,12 +36,10 @@ Description=Tier 1 (Bracket 1). Mono-red dwarves with a little treasure.
 1 Wily Goblin|XLN
 1 You've Been Caught Stealing|CLB
 1 Blazing Firesinger|SOS
-1 Breakneck Berserker|KHM
 1 Careening Mine Cart|LCI
-1 Commander's Sphere|CMM
-1 Dwarven Nomad|MIR
-1 Dwarven Patrol|APC
-1 Dwarven Warriors|5ED
+1 Crossover Collaboration|MSC
+1 Furnace Reins|MOM
+1 Gilded Assault Cart|KHM
 1 Improvised Weaponry|AFR
 1 Magic Pot|FIN
 1 Mine Raider|OTJ
@@ -51,17 +49,20 @@ Description=Tier 1 (Bracket 1). Mono-red dwarves with a little treasure.
 1 Redcap Thief|WOE
 1 Shiny Impetus|CLU
 1 Swarming of Moria|LTR
+1 Twisted Fealty|WOE
+1 Unstable Obelisk|JMP
+1 Geosurge|NPH
 1 Gimli, Counter of Kills|LTR
-1 Glóin the Mighty|HOB
 1 Hoarding Ogre|AFR
 1 Involuntary Employment|FDN
-1 Jaded Sell-Sword|AFR
+1 Korvold and the Noble Thief|WOE
 1 Pirate's Pillage|2X2
-1 Treasure Keeper|AER
+1 Storm-Kiln Artist|STX
 1 Trove of Temptation|XLN
-1 Bottle-Cap Blast|PIP
-1 Fearless Skald|MOM
+1 Dwarven Strike Force|ODY
+1 Ganax, Astral Hunter|CLB
 1 Heroes for Hire|MSC
 1 Inspired Tinkering|CLB
 1 Luxurious Locomotive|OTJ
 1 Rapacious Dragon|FDN
+1 Thundersteel Colossus|NEO

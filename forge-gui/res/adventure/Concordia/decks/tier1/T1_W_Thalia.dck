@@ -1,67 +1,68 @@
 [metadata]
-Name=Kin-Tree Spirits (Thalia)
-Description=Tier 1 (Bracket 1) Variant of T1_W_Anafenza led by Thalia, the Survivor; 8 cards changed.
+Name=T1_W_Thalia
+Description=variant of T1_W_Anafenza.dck
 [Commander]
 1 Thalia, the Survivor|FRA
 [Main]
-39 Plains|FDN
+38 Plains|FDN
 1 Secluded Steppe|ONS
-1 Temple of the False God|SCG
 1 Myriad Landscape|CMM
-1 Mycosynth Wellspring|NPH
+1 Reliquary Tower|M19
+1 Arcbound Javelineer|MH2
 1 Favored Hoplite|THS
+1 Gird for Battle|GRN
 1 Hopeful Eidolon|THS
 1 Kami of False Hope|BOK
-1 Soul's Attendant|ROE
-1 Mosquito Guard|MOR
+1 Myr Scrapling|MH2
 1 Mysterious Egg|IKO
 1 Ainok Bond-Kin|KTK
-1 Akroan Skyguard|BNG
 1 Angelic Curator|MH2
-1 Whispersilk Cloak|DST
-1 Angelic Page|8ED
-1 Arcane Signet|TMC
+1 Angelic Intervention|MOM
 1 Armory of Iroas|CMR
-1 Ecologist's Terrarium|NEO
+1 Dual-Sun Technique|EOE
+1 Duty Beyond Death|TDM
 1 Feat of Resistance|M21
-1 Hero of Iroas|PIO
-1 Village Bell-Ringer|ISD
-1 Jeong Jeong's Deserters|TLA
+1 Fellwar Stone|9ED
+1 Keleth, Sunmane Familiar|CMM
+1 Lightfoot Technique|TDM
+1 Monoskelion|MH2
 1 Niblis of the Urn|DKA
-1 Nyxborn Unicorn|MH3
 1 Ondu Rising|BFZ
+1 Papercraft Decoy|NEO
 1 Phalanx Leader|THS
 1 Recommission|BRO
-1 Rootborn Defenses|RTR
 1 Take Up the Shield|MSH
-1 Unruly Mob|MID
+1 That's Rough Buddy|TLE
+1 Triumph of Gerrard|DOM
+1 Unbounded Potential|CMM
 1 Abzan Falconer|KTK
 1 Avatar Enthusiasts|TLA
+1 Camera Launcher|DFT
 1 Celestial Unicorn|AFR
-1 Commander's Sphere|CMM
 1 Eidolon of Rhetoric|JOU
 1 Encircling Fissure|BFZ
 1 Envoy of the Ancestors|MH3
-1 Fabrication Module|KLD
-1 Mesa Enchantress|DMR
-1 Forbidding Spirit|RNA
 1 Ghostblade Eidolon|PIO
-1 Honor's Reward|FRF
+1 Kabuto Moth|CHK
 1 Keensight Mentor|IKO
+1 Knighted Myr|CMM
+1 Orzhov Advokist|CMR
+1 Rosie Cotton of South Lane|LTR
 1 Scout for Survivors|EOE
-1 Armillary Sphere|CFX
 1 Wingsteed Rider|THS
+1 Worn Powerstone|MH3
 1 Abzan Battle Priest|KTK
-1 Arcbound Crusher|DST
-1 Etched Oracle|5DN
-1 Goliath Truck|40K
-1 Phantom General|RTR
+1 Felidar Savior|FDN
+1 Guardian of the Guildpact|DIS
+1 Prowling Felidar|ZNR
 1 Qala, Ajani's Pridemate|J25
-1 Twinblade Paladin|FDN
-1 Untethered Express|AER
+1 Sanctum Spirit|2XM
+1 Silverflame Ritual|ELD
+1 Vulpikeet|IKO
 1 Aradara Express|KLD
-1 Constable of the Realm|MH2
-1 Return to Dust|SLZ
+1 Coordinated Charge|IKO
+1 Enduring Victory|DTK
+1 Knight Watch|GTC
 1 Knightly Valor|RTR
 1 Warhorn Blast|KHM
-1 Trostani's Judgment|RTR
+1 Triplicate Spirits|M15
