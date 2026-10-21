@@ -35,6 +35,27 @@ public class BonusSim {
         return out;
     }
 
+    // -Dlogdir=DIR: per game, write DIR/<label>.tsv with the phase log: turn, phase, type, message (same columns as ai_lab/results).
+    static void writePhaseLog(Game game, String dir, String label) {
+        if (dir.isEmpty()) return;
+        try {
+            StringBuilder sb = new StringBuilder();
+            String phase = ""; int turn = 0;
+            java.util.regex.Pattern tp = java.util.regex.Pattern.compile("Turn:? ?(\\d+)|Turn (\\d+)");
+            for (forge.game.GameLogEntry e : game.getGameLog().getAllEntries()) {
+                String msg = e.message();
+                if (e.type() == forge.game.GameLogEntryType.TURN) { java.util.regex.Matcher mm = tp.matcher(msg); if (mm.find()) turn = Integer.parseInt(mm.group(1) != null ? mm.group(1) : mm.group(2)); }
+                if (e.type() == forge.game.GameLogEntryType.PHASE) phase = msg;
+                forge.game.GameLogEntryType ty = e.type();
+                if (ty == forge.game.GameLogEntryType.PHASE || ty == forge.game.GameLogEntryType.TURN || ty == forge.game.GameLogEntryType.COMBAT
+                    || ty == forge.game.GameLogEntryType.DAMAGE || ty == forge.game.GameLogEntryType.LIFE || ty == forge.game.GameLogEntryType.ZONE_CHANGE
+                    || ty == forge.game.GameLogEntryType.STACK_ADD)
+                    sb.append(turn).append('\t').append(phase.replace('\t', ' ')).append('\t').append(ty).append('\t').append(msg.replace('\n', ' ').replace('\t', ' ')).append('\n');
+            }
+            java.nio.file.Files.createDirectories(java.nio.file.Paths.get(dir));
+            java.nio.file.Files.writeString(java.nio.file.Paths.get(dir, label + ".tsv"), sb.toString());
+        } catch (Exception ex) { ex.printStackTrace(); }
+    }
     public static void main(String[] a) throws Exception {
         String assets = a[0];
         boolean verify = System.getenv("VERIFY") != null;
@@ -106,6 +127,7 @@ public class BonusSim {
             String w = "draw";
             if (o != null && !o.isDraw() && timedOut == 0) w = o.getWinningLobbyPlayer().getName().equals("A") ? "a" : "b";
             int turns = o == null ? 0 : o.getLastTurnNumber();
+            writePhaseLog(game, System.getProperty("logdir", ""), label);
             System.out.printf("GAME\t%s\t%s\t%s\t%d\t%d%n", label, aFirst ? "a" : "b", w, turns, timedOut);
             System.out.flush();
         }
