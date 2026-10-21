@@ -197,7 +197,7 @@
     },
     "multi-balance-temp": {
       "brief": ".claude/agents/multi-balance-temp.md",
-      "session": "TBD",
+      "session": "session_01Xf8fcEAkTmjYqjkqjprkzB",
       "model": "sonnet, effort low",
       "folders": [
         "tools/concordia/balance_lab/records_multitemp.csv"
