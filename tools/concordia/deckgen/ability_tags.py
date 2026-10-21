@@ -15,6 +15,7 @@ import os, re, sys, json, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "../../.."))
 CARDS = os.path.join(ROOT, "forge-gui/res/cardsfolder")
+ELIGIBLE_POWER_CAP = 19.0  # tier 1 eligible: card power at its common/uncommon print (user tightened it from 25.4, 2026-10-21; tier 1 decks average at most 19)
 STRIP = re.compile(r"\| *(SpellDescription|StackDescription|TriggerDescription|Description|TgtPrompt|PrecostDesc|CostDesc|AIPreference|SubAbility|Execute)\$[^|]*")
 
 # ---- ability rules: (tag, regex on the normalised signature). Signature example: "AB Mana | Cost$ T | Produced$ Combo ColorIdentity"
@@ -229,7 +230,7 @@ def eligible_pool():
         t = c["types"].split()
         if "Land" in t or not (set(c["best"]) & {"C", "U"}) or c["gc"] or c["mld"] or c["tags"] & {"fast", "tutor", "wipe"}: continue
         w = pw(c)
-        if w is not None and w <= 25.4: yield k, c
+        if w is not None and w <= ELIGIBLE_POWER_CAP: yield k, c
 
 
 def card_text(name):
