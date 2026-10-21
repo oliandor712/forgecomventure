@@ -295,3 +295,9 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:13:00Z,225ec115,inner,1,decks/tier1/T1_B_Falthis.dck,decks/tier1/T1_B_Gallia.dck,10,10,,,b,a,24,0
 2026-10-21T02:13:31Z,225ec115,inner,5,decks/tier5/T5_B_Danitha.dck,decks/tier5/T5_B_Ihsan.dck,35,35,,,a,b,18,0
 2026-10-21T02:13:31Z,225ec115,inner,5,decks/tier5/T5_B_Danitha.dck,decks/tier5/T5_B_Ihsan.dck,35,35,,,b,a,22,0
+2026-10-21T02:13:58Z,225ec115,inner,4,decks/tier4/T4_B_Sheoldred.dck,decks/tier4/T4_B_Gisa.dck,30,30,,,a,a,16,0
+2026-10-21T02:13:58Z,225ec115,inner,4,decks/tier4/T4_B_Sheoldred.dck,decks/tier4/T4_B_Gisa.dck,30,30,,,b,b,13,0
+2026-10-21T02:14:24Z,225ec115,inner,1,decks/tier1/T1_B_Yahenni.dck,decks/tier1/T1_B_Grma.dck,10,10,,,a,a,9,0
+2026-10-21T02:14:24Z,225ec115,inner,1,decks/tier1/T1_B_Yahenni.dck,decks/tier1/T1_B_Grma.dck,10,10,,,b,b,19,0
+2026-10-21T02:14:46Z,225ec115,inner,5,decks/tier5/T5_B_Tinybones2.dck,decks/tier5/T5_B_Gix.dck,35,35,,,a,b,16,0
+2026-10-21T02:14:46Z,225ec115,inner,5,decks/tier5/T5_B_Tinybones2.dck,decks/tier5/T5_B_Gix.dck,35,35,,,b,b,15,0
