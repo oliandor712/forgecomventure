@@ -8,10 +8,10 @@ Description=Tier 1 (Bracket 1). Mono-green tribal deck led by White Tiger, Ava A
 1 Tranquil Thicket|ONS
 1 Temple of the False God|SCG
 1 Reliquary Tower|M19
-1 Greataxe|AFR
 1 Horizon Spellbomb|SOM
 1 Jungle Lion|POR
 1 Scythe Leopard|BFZ
+1 Scythe Tiger|ZEN
 1 Short Sword|M21
 1 Wild Nacatl|ALA
 1 Wily Bandar|KLD
@@ -19,6 +19,7 @@ Description=Tier 1 (Bracket 1). Mono-green tribal deck led by White Tiger, Ava A
 1 Destiny Spinner|THB
 1 Druid's Deliverance|RTR
 1 Fellwar Stone|9ED
+1 Gunner Conscript|PIP
 1 Infirmary Healer|SOS
 1 Initiate's Companion|AKH
 1 Jade Mage|M12
@@ -33,7 +34,6 @@ Description=Tier 1 (Bracket 1). Mono-green tribal deck led by White Tiger, Ava A
 1 Syr Faren, the Hengehammer|ELD
 1 Tigra, Feline Fury|MSH
 1 Titanic Growth|WOE
-1 Venom Connoisseur|FDN
 1 Watchers of the Dead|AKH
 1 Bala Ged Recovery|ZNR
 1 Earthbending Student|TLE
@@ -51,9 +51,9 @@ Description=Tier 1 (Bracket 1). Mono-green tribal deck led by White Tiger, Ava A
 1 Worn Powerstone|MH3
 1 X-23, Deadly Weapon|MSC
 1 Yavimaya Elder|CMR
+1 Brass Knuckles|CMM
 1 Earthbending Lesson|TLA
 1 Ferocious Zheng|GS1
-1 Pet Avengers|MSH
 1 Sabertooth Mauler|M21
 1 Stalking Tiger|10E
 1 Temur Sabertooth|FRF

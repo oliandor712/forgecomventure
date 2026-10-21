@@ -37,7 +37,7 @@ CREATURES = {
 INSTANT_SORCERY = {1: {"tokens": 12, "aggro": 10, "tribal": 8}, 2: {"control": 13, "tokens": 11, "aggro": 9, "tribal": 7},
                    3: {"control": 14, "tokens": 12, "aggro": 10, "tribal": 8}, 4: {"control": 14, "tokens": 12, "aggro": 10, "tribal": 8},
                    5: {"control": 14, "tokens": 12, "aggro": 10, "tribal": 8}}
-ENCHANTMENT = {1: {"tokens": 4, "tribal": 2, "aggro": 1}, 2: {"tokens": 6, "control": 5, "tribal": 4, "aggro": 3},
+ENCHANTMENT = {1: {"tokens": 3, "tribal": 2, "aggro": 1}, 2: {"tokens": 6, "control": 5, "tribal": 4, "aggro": 3},
                3: {"tokens": 5, "control": 4, "tribal": 3, "aggro": 2}, 4: {"tokens": 5, "control": 4, "tribal": 3, "aggro": 2},
                5: {"tokens": 5, "control": 4, "tribal": 3, "aggro": 2}}
 CREATURE_FLOOR = {1: 26, 2: 26, 3: 16, 4: 14, 5: 12}  # deck_tier.py hard minimum per tier

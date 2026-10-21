@@ -222,7 +222,7 @@ def landtype_tags(text):
 
 # ---- H46: potential stat from board state (user, 2026-10-21): never read 0/0, X/0, 0/X or * as printed
 DEFAULT_BOARD = {"Land": 17, "Creature": 12, "Token": 4, "Artifact": 5, "Enchantment": 5, "Equipment": 2, "Aura": 1, "counters": 3, "devotion": 5, "graveyard": 5, "hand": 3, "x": 4}
-GENERIC_KEYS = ("Land", "Creature", "graveyard", "hand", "devotion", "counters", "x")   # missing from a deck's traits early in a build: fall back to the typical board
+GENERIC_KEYS = ("Land", "Creature", "devotion", "counters", "x")   # graveyard and hand are exact (H48: mill/discard/draw cards only)   # missing from a deck's traits early in a build: fall back to the typical board
 NOT_A_TYPE = {"Card", "Permanent", "YouCtrl", "YouOwn", "Other", "Self", "Attached", "Enchanted", "Equipped", "Opp", "OppCtrl", "YouDontCtrl", "Basic", "Nonbasic",
               "Legendary", "Snow", "Tribal", "Kindred", "Cmc", "Power", "Toughness", "Tapped", "Untapped", "attacking", "Active"}
 

@@ -149,7 +149,10 @@ def deck_traits(main, cards):
         for lt in at.LANDTYPES:
             if re.search(r"\b" + lt + r"\b", m.group(1)): tr["landtype:" + lt] += q
     for n, t, tg, ty in cards:
-        for x in ty.split(): tr[x] += 1   # every card type and subtype (H47)
+        if not ({'Instant', 'Sorcery'} & set(ty.split())):
+            for x in ty.split(): tr[x] += 1   # every permanent's card types and subtypes (H47, H48: instants and sorceries are not on the field)
+        if tg & {'self_mill', 'mill', 'discard', 'dies_trigger', 'sacrifice_outlet'}: tr['graveyard'] += 1
+        if 'draw' in tg: tr['hand'] += 1
         for k, trait in (("Creature", "creatures"), ("Artifact", "artifacts"), ("Enchantment", "enchantments"), ("Equipment", "equipment")):
             if k in ty.split(): tr[trait] += 1
         if "token_make" in tg: tr["tokens"] += 1; tr["Token"] += 1
