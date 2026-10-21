@@ -1,0 +1,7 @@
+Results-unchanged check, 2026-10-21 14:23-14:29Z (forge-ai-lab)
+Arms: stock classpath (no overlay) vs overlay with patches/ai-test-instrumentation.patch (= 010+011+012), -Daidecisionlog=1.
+Games: 40 per arm = 20 tier-2 deck pairs x both seats, seed 91 (BonusSim -Dseed), equal life 40, no bonuses.
+Compared per game: winner, turns, timeout flag (GAME line) and every phase-log line except AI_DECISION rows (the MULLIGAN keep line has its " hand: ..." suffix stripped, since 011 adds it by design).
+Result: 40 of 40 games identical, 0 result differences, 0 log differences. No hook changed a decision.
+Per-game instrumentation (consolidated arm, 40 games): BLOCK_REASON 318 lines / 30.3 KB (48% are pass=clear), BLOCK_START 139 / 9.5 KB, MANA_SOURCE 69 / 5.9 KB, ATTACK_REASON 28 / 3.4 KB, ATTACK_LEVEL_CHOSEN 29 / 2.7 KB, SPELL_CHOICE 39 / 2.8 KB, ATTACK_LEVEL 29 / 2.3 KB, MULLIGAN 2 / 0.3 KB. Raw logs: stock 976 KB for 40 games, consolidated 3,262 KB.
+Scripts: run.sh (4 parallel java: arm x part), cmp.py. Files: stock.res, cons.res.

@@ -1,0 +1,355 @@
+--- a/forge-ai/src/main/java/forge/ai/AiAttackController.java
++++ b/forge-ai/src/main/java/forge/ai/AiAttackController.java
+@@ -77,6 +77,7 @@
+     private final Player ai;
+     private Player defendingOpponent;
+ 
++    private String lastAttackReason = "";
+     private int aiAggression = 0; // how aggressive the ai is attack will be depending on circumstances
+     private final boolean nextTurn; // include creature that can only attack/block next turn
+ 
+@@ -1257,6 +1258,9 @@
+             // end see how long until unblockable attackers will be fatal
+             // *****************
+ 
++            if (AiDecisionLog.enabled()) {
++                AiDecisionLog.add("ATTACK_LEVEL\t" + ai.getName() + "\tturn=" + ai.getGame().getPhaseHandler().getTurn() + "\tratioDiff=" + String.format("%.2f", ratioDiff) + "\toutNumber=" + outNumber + "\tattackers=" + this.attackers.size());
++            }
+             // decide on attack aggression based on a comparison of forces, life
+             // totals and other considerations some bad "magic numbers" here
+             // TODO replace with nice descriptive variable names
+@@ -1296,6 +1300,11 @@
+                 aiAggression = 0;
+             } // stay at home to block
+ 
++            if (AiDecisionLog.enabled()) {
++                AiDecisionLog.add("ATTACK_LEVEL_CHOSEN\t" + ai.getName() + "\tturn=" + ai.getGame().getPhaseHandler().getTurn() + "\tlevel=" + aiAggression
++                        + "\tratioDiff=" + String.format("%.2f", ratioDiff) + "\toutNumber=" + outNumber + "\tattackers=" + this.attackers.size());
++            }
++
+             if ( LOG_AI_ATTACKS )
+                 System.out.println(aiAggression + " = ai aggression");
+ 
+@@ -1330,8 +1339,14 @@
+ 
+                     // TODO logic for Questing Beast to prefer players
+ 
++                    lastAttackReason = "";
+                     if (shouldAttack(attacker, this.blockers, combat, defender) && canAttackWrapper(attacker, defender)) {
+                         combat.addAttacker(attacker, defender);
++                        if (AiDecisionLog.enabled()) {
++                            AiDecisionLog.add("ATTACK_REASON\t" + ai.getName() + "\tturn=" + ai.getGame().getPhaseHandler().getTurn()
++                                    + "\tphase=" + ai.getGame().getPhaseHandler().getPhase() + "\tlevel=" + aiAggression + "\tbranch="
++                                    + (lastAttackReason.isEmpty() ? "other" : lastAttackReason) + "\tattacker=" + attacker.getName().replace(' ', '_'));
++                        }
+                         attackersAssigned.add(attacker);
+ 
+                         // check if attackers are enough to finish the attacked planeswalker
+@@ -1551,11 +1566,13 @@
+         if (saf.canKillAll && saf.isWorthLessThanAllKillers && !CombatUtil.canBlock(attacker)) {
+             if (LOG_AI_ATTACKS)
+                 System.out.println(attacker.getName() + " = attacking because they can't block, expecting to kill or damage player");
++                lastAttackReason = "cannot_block_can_kill";
+             return true;
+         }
+         if (!saf.canBeKilled && !saf.dangerousBlockersPresent && saf.canTrampleOverDefenders) {
+             if (LOG_AI_ATTACKS)
+                 System.out.println(attacker.getName() + " = expecting to survive and get some Trample damage through");
++                lastAttackReason = "trample_safe";
+             return true;
+         }
+ 
+@@ -1565,18 +1582,21 @@
+                 if ((saf.canKillAll && saf.isWorthLessThanAllKillers) || !saf.canBeBlocked()) {
+                     if (LOG_AI_ATTACKS)
+                         System.out.println(attacker.getName() + " = attacking expecting to kill creature, or is unblockable");
++                lastAttackReason = "L6_kill_or_unblockable";
+                     return true;
+                 }
+                 break;
+             case 5: // all out attacking
+                 if (LOG_AI_ATTACKS)
+                     System.out.println(attacker.getName() + " = all out attacking");
++                lastAttackReason = "L5_all_out";
+                 return true;
+             case 4: // expecting to at least trade with something, or can attack "for free", expecting no counterattack
+                 if (saf.canKillAll || (saf.dangerousBlockersPresent && saf.canKillAllDangerous && !saf.canBeKilledByOne) || !saf.canBeBlocked()
+                         || saf.defPower == 0) {
+                     if (LOG_AI_ATTACKS)
+                         System.out.println(attacker.getName() + " = attacking expecting to at least trade with something");
++                lastAttackReason = "L4_trade_or_free";
+                     return true;
+                 }
+                 break;
+@@ -1586,6 +1606,7 @@
+                         || !saf.canBeBlocked()) {
+                     if (LOG_AI_ATTACKS)
+                         System.out.println(attacker.getName() + " = attacking expecting to kill creature or cause damage, or is unblockable");
++                lastAttackReason = "L3_kill_or_effect";
+                     return true;
+                 }
+                 break;
+@@ -1594,6 +1615,7 @@
+                         ((saf.dangerousBlockersPresent && saf.canKillAllDangerous) || !saf.canBeKilled))) {
+                     if (LOG_AI_ATTACKS)
+                         System.out.println(attacker.getName() + " = attacking expecting to survive or attract group block");
++                lastAttackReason = "L2_survive_or_group_block";
+                     return true;
+                 }
+                 break;
+@@ -1601,6 +1623,7 @@
+                 if (!saf.canBeBlocked() || (saf.numberOfPossibleBlockers == 1 && saf.canKillAll && !saf.canBeKilledByOne)) {
+                     if (LOG_AI_ATTACKS)
+                         System.out.println(attacker.getName() + " = attacking expecting not to be blocked");
++                lastAttackReason = "L1_unblockable";
+                     return true;
+                 }
+                 break;
+--- a/forge-ai/src/main/java/forge/ai/AiBlockController.java
++++ b/forge-ai/src/main/java/forge/ai/AiBlockController.java
+@@ -1107,17 +1107,45 @@
+         assignBlockers(combat, possibleBlockers);
+     }
+ 
++    /** Log-only (patch 012): runs one blocking pass and logs the blocks it added, with the pass name. */
++    private void logPass(final String pass, final Combat combat, final Runnable body) {
++        if (!AiDecisionLog.enabled()) {
++            body.run();
++            return;
++        }
++        final java.util.Set<String> before = new java.util.HashSet<>();
++        for (Card bl : combat.getAllBlockers()) {
++            for (Card at : combat.getAttackersBlockedBy(bl)) {
++                before.add(bl.getId() + ">" + at.getId());
++            }
++        }
++        body.run();
++        for (Card bl : combat.getAllBlockers()) {
++            for (Card at : combat.getAttackersBlockedBy(bl)) {
++                if (!before.contains(bl.getId() + ">" + at.getId())) {
++                    AiDecisionLog.add("BLOCK_REASON\t" + ai.getName() + "\tturn=" + ai.getGame().getPhaseHandler().getTurn()
++                            + "\tphase=" + ai.getGame().getPhaseHandler().getPhase() + "\tpass=" + pass + "\tblocker=" + bl.getName().replace(' ', '_')
++                            + "\tattacker=" + at.getName().replace(' ', '_') + "\tlife=" + ai.getLife());
++                }
++            }
++        }
++    }
++
+     /**
+      * Core blocker assignment algorithm.
+      * @param combat combat instance
+      * @param possibleBlockers list of blockers to be considered
+      */
+     private void assignBlockers(final Combat combat, List<Card> possibleBlockers) {
++        if (AiDecisionLog.enabled()) {
++            AiDecisionLog.add("BLOCK_START\t" + ai.getName() + "\tturn=" + ai.getGame().getPhaseHandler().getTurn() + "\tlife=" + ai.getLife() + "\tattackers=" + attackers.size() + "\tblockers=" + blockersLeft.size());
++        }
+         if (attackers.isEmpty()) {
+             return;
+         }
+ 
+-        clearBlockers(combat, possibleBlockers);
++        if (AiDecisionLog.enabled()) { AiDecisionLog.add("BLOCK_REASON\t" + ai.getName() + "\tturn=" + ai.getGame().getPhaseHandler().getTurn() + "\tpass=clear\tlife=" + ai.getLife()); }
++                clearBlockers(combat, possibleBlockers);
+ 
+         diff = (ai.getLife() * 2) - 5; // This is the minimal gain for an unnecessary trade
+         if (diff > 0 && AiProfileUtil.getBoolProperty(ai, AiProps.PLAY_AGGRO)) {
+@@ -1146,28 +1174,28 @@
+         CardLists.sortByPowerAsc(blockersLeft);
+ 
+         // == 1. choose best blocks first ==
+-        makeGoodBlocks(combat);
+-        makeGangBlocks(combat);
++        logPass("good", combat, () -> makeGoodBlocks(combat));
++        logPass("gang", combat, () -> makeGangBlocks(combat));
+ 
+         // When the AI holds some Fog effect, don't bother about lifeInDanger
+         if (!ComputerUtil.hasAFogEffect(ai, ai, checkingOther)) {
+             lifeInDanger = ComputerUtilCombat.lifeInDanger(ai, combat);
+-            makeTradeBlocks(combat);
++            logPass("trade", combat, () -> makeTradeBlocks(combat));
+ 
+             if (lifeInDanger) {
+-                makeChumpBlocks(combat);
++                logPass("chump", combat, () -> makeChumpBlocks(combat));
+             }
+ 
+             // Reinforce blockers blocking attackers with trample if life is still in danger
+             if (lifeInDanger && ComputerUtilCombat.lifeInDanger(ai, combat)) {
+-                reinforceBlockersAgainstTrample(combat);
++                logPass("reinforce_trample", combat, () -> reinforceBlockersAgainstTrample(combat));
+             } else {
+                 lifeInDanger = false;
+             }
+             // Support blockers not destroying the attacker with more blockers
+             // to try to kill the attacker
+             if (!lifeInDanger) {
+-                reinforceBlockersToKill(combat);
++                logPass("reinforce_kill", combat, () -> reinforceBlockersToKill(combat));
+             }
+ 
+             // TODO could be made more accurate if this would be inside each blocker choosing loop instead
+@@ -1177,62 +1205,64 @@
+ 
+             // == 2. If the AI life would still be in danger make a safer approach ==
+             if (lifeInDanger) {
++                if (AiDecisionLog.enabled()) { AiDecisionLog.add("BLOCK_REASON\t" + ai.getName() + "\tturn=" + ai.getGame().getPhaseHandler().getTurn() + "\tpass=clear\tlife=" + ai.getLife()); }
+                 clearBlockers(combat, possibleBlockers); // reset every block assignment
+-                makeTradeBlocks(combat);
+-                makeGoodBlocks(combat);
++                logPass("trade", combat, () -> makeTradeBlocks(combat));
++                logPass("good", combat, () -> makeGoodBlocks(combat));
+                 // choose necessary chump blocks if life is still in danger
+-                makeChumpBlocks(combat);
++                logPass("chump", combat, () -> makeChumpBlocks(combat));
+ 
+                 // Reinforce blockers blocking attackers with trample if life is still in danger
+                 if (lifeInDanger && ComputerUtilCombat.lifeInDanger(ai, combat)) {
+-                    reinforceBlockersAgainstTrample(combat);
++                    logPass("reinforce_trample", combat, () -> reinforceBlockersAgainstTrample(combat));
+                 } else {
+                     lifeInDanger = false;
+                 }
+ 
+-                makeGangBlocks(combat);
+-                reinforceBlockersToKill(combat);
++                logPass("gang", combat, () -> makeGangBlocks(combat));
++                logPass("reinforce_kill", combat, () -> reinforceBlockersToKill(combat));
+             }
+ 
+             // == 3. If the AI life would be in serious danger make an even safer approach ==
+             if (lifeInDanger && ComputerUtilCombat.lifeInSeriousDanger(ai, combat)) {
++                if (AiDecisionLog.enabled()) { AiDecisionLog.add("BLOCK_REASON\t" + ai.getName() + "\tturn=" + ai.getGame().getPhaseHandler().getTurn() + "\tpass=clear\tlife=" + ai.getLife()); }
+                 clearBlockers(combat, possibleBlockers);
+-                makeChumpBlocks(combat);
++                logPass("chump", combat, () -> makeChumpBlocks(combat));
+ 
+                 if (lifeInDanger && ComputerUtilCombat.lifeInDanger(ai, combat)) {
+-                    makeTradeBlocks(combat);
++                    logPass("trade", combat, () -> makeTradeBlocks(combat));
+                 } else {
+                     lifeInDanger = false;
+                 }
+ 
+                 if (lifeInDanger && ComputerUtilCombat.lifeInDanger(ai, combat)) {
+-                    reinforceBlockersAgainstTrample(combat);
++                    logPass("reinforce_trample", combat, () -> reinforceBlockersAgainstTrample(combat));
+                 } else {
+                     lifeInDanger = false;
+                 }
+ 
+                 if (!lifeInDanger) {
+-                    makeGoodBlocks(combat);
++                    logPass("good", combat, () -> makeGoodBlocks(combat));
+                 }
+ 
+-                makeGangBlocks(combat);
+-                reinforceBlockersToKill(combat);
++                logPass("gang", combat, () -> makeGangBlocks(combat));
++                logPass("reinforce_kill", combat, () -> reinforceBlockersToKill(combat));
+             }
+         }
+ 
+         // block requirements
+         // TODO because this isn't done earlier, sometimes a good block will enforce a restriction that prevents another for the requirement
+-        makeRequiredBlocks(combat);
++        logPass("required", combat, () -> makeRequiredBlocks(combat));
+ 
+         // check to see if it's possible to defend a Planeswalker under attack with a chump block,
+         // unless life is low enough to be more worried about saving preserving the life total
+         if (ai.getController().isAI()) {
+-            makeChumpBlocksToSavePW(combat);
++            logPass("chump_save_pw", combat, () -> makeChumpBlocksToSavePW(combat));
+         }
+ 
+         // if there are still blockers left, see if it's possible to block Menace creatures with
+         // non-lethal blockers that won't kill the attacker but won't die to it as well
+-        makeGangNonLethalBlocks(combat);
++        logPass("gang_nonlethal", combat, () -> makeGangNonLethalBlocks(combat));
+ 
+         //Check for validity of blocks in case something slipped through
+         for (Card attacker : attackers) {
+--- a/forge-ai/src/main/java/forge/ai/AiController.java
++++ b/forge-ai/src/main/java/forge/ai/AiController.java
+@@ -1669,6 +1669,13 @@
+         if (all == null || all.isEmpty())
+             return null;
+ 
++        if (AiDecisionLog.enabled() && AiDecisionLog.firstThisTurn(player, player.getGame().getPhaseHandler().getTurn())) {
++            // once per turn per player: the top candidate only (candidate scores are not exposed here)
++            List<SpellAbility> top = new ArrayList<>(all);
++            top.sort(ComputerUtilAbility.saEvaluator);
++            AiDecisionLog.add("SPELL_CHOICE " + player.getName() + " turn=" + player.getGame().getPhaseHandler().getTurn()
++                    + " candidates=" + all.size() + " top=" + (top.get(0).getHostCard() == null ? "?" : top.get(0).getHostCard().getName()));
++        }
+         try {
+             all.sort(ComputerUtilAbility.saEvaluator); // put best spells first
+             ComputerUtilAbility.sortCreatureSpells(all);
+--- /dev/null
++++ b/forge-ai/src/main/java/forge/ai/AiDecisionLog.java
+@@ -0,0 +1,35 @@
++package forge.ai;
++
++import java.util.ArrayList;
++import java.util.List;
++
++/** Log-only: records AI decisions for the phase digest. Never read by the AI, so it cannot change a decision. Enabled by -Daidecisionlog. */
++public final class AiDecisionLog {
++    private static final List<String> ENTRIES = new ArrayList<>();
++
++    private AiDecisionLog() {
++    }
++
++    public static boolean enabled() {
++        return System.getProperty("aidecisionlog") != null;
++    }
++
++    public static synchronized void add(final String entry) {
++        ENTRIES.add(entry);
++    }
++
++    private static final java.util.Map<String, Integer> LAST_TURN = new java.util.HashMap<>();
++
++    /** True the first time this player is asked in this turn; keeps SPELL_CHOICE to one line per player per turn. */
++    public static synchronized boolean firstThisTurn(final forge.game.player.Player p, final int turn) {
++        Integer last = LAST_TURN.put(p.getName(), turn);
++        return last == null || last != turn;
++    }
++
++    /** Returns and clears the entries recorded since the last call. */
++    public static synchronized List<String> drain() {
++        List<String> out = new ArrayList<>(ENTRIES);
++        ENTRIES.clear();
++        return out;
++    }
++}
+--- a/forge-ai/src/main/java/forge/ai/ComputerUtilMana.java
++++ b/forge-ai/src/main/java/forge/ai/ComputerUtilMana.java
+@@ -722,6 +722,11 @@
+             }
+ 
+             SpellAbility saPayment = saList.isEmpty() ? null : chooseManaAbility(cost, sa, ai, toPay, saList, checkPlayable || !test);
++            if (AiDecisionLog.enabled() && !test && saPayment != null) {
++                // log-only (patch 011): which source paid for which spell (actual payments, not test passes)
++                AiDecisionLog.add("MANA_SOURCE " + ai.getName() + " turn=" + ai.getGame().getPhaseHandler().getTurn() + " shard=" + toPay
++                        + " source=" + saPayment.getHostCard().getName() + " for=" + sa.getHostCard().getName());
++            }
+ 
+             if (saPayment != null && ComputerUtilCost.isSacrificeSelfCost(saPayment.getPayCosts()) && sa.isTargeting(saPayment.getHostCard())) {
+                 // not a good idea to sac a card that you're targeting with the SA you're paying for
+--- a/forge-game/src/main/java/forge/game/mulligan/AbstractMulligan.java
++++ b/forge-game/src/main/java/forge/game/mulligan/AbstractMulligan.java
+@@ -62,6 +62,11 @@
+     }
+ 
+     public void afterMulligan() {
+-        player.getGame().fireEvent(new GameEventAddLog(GameLogEntryType.MULLIGAN, Localizer.getInstance().getMessage("lblPlayerKeepNCardsHand", player.getName(), String.valueOf(player.getZone(ZoneType.Hand).size()))));
++        // log-only (patch 011): the kept hand's card names, so the digest can read opening hands
++        StringBuilder hand = new StringBuilder();
++        for (Card c : player.getZone(ZoneType.Hand).getCards()) {
++            hand.append(hand.length() > 0 ? "; " : "").append(c.getName());
++        }
++        player.getGame().fireEvent(new GameEventAddLog(GameLogEntryType.MULLIGAN, Localizer.getInstance().getMessage("lblPlayerKeepNCardsHand", player.getName(), String.valueOf(player.getZone(ZoneType.Hand).size())) + " hand: " + hand));
+     }
+ }
+\ No newline at end of file

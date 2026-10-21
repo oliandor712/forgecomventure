@@ -2,3 +2,4 @@
 # One patch file name per line. Empty or delete this file to run the sims on the stock AI.
 010-decision-log.patch
 011-more-log-lines.patch
+012-decision-reasons.patch
