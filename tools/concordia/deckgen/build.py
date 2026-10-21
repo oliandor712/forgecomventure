@@ -377,9 +377,15 @@ def build(d):
     mana = sum(1 for p, _ in chosen if p['tags'] & {'ramp', 'fast'})
     lo_land, hi_land = LAND_CLAMP.get(tier, ar.LAND_RANGE[tier])
     total = min(max(round(spec['lands'] + 4 * (avg - ref) - mana / 2), lo_land), hi_land)
+    bumps = 0
     while len(chosen) < 99 - total:
         b = best(lambda p: ncreat < spec['cmax'] or 'Creature' not in p['types'])
-        if not b: break
+        if not b:
+            if bumps < 8:   # the curve caps ran out for this colour: widen them, as the main fill does
+                bumps += 1
+                for k in spec['curve']: spec['curve'][k] += 1
+                continue
+            total = 99 - len(chosen); break   # pool exhausted (colour + archetype caps): the deck must still be 100 cards, so the shortfall becomes basic lands
         add(b[1], b[2])
     if len(chosen) > 99 - total:
         gone = {id(p) for p, _ in sorted(chosen, key=lambda pr: score(*pr))[: len(chosen) - (99 - total)]}
@@ -475,6 +481,10 @@ if __name__ == '__main__':
         for attempt in range(8):
             cmd, chosen, lands, basics = build(d)
             path = write(d, cmd, chosen, lands, basics)
+            ncards = 1 + len(chosen) + len(lands) + sum(basics.values())
+            if ncards != 100:   # every deck is exactly commander + 99: rebuild once, then fail loudly
+                if d.get('_n100_try'): raise SystemExit('%s: %d cards, expected 100' % (d['file'], ncards))
+                d['_n100_try'] = 1; continue
             r = dt.rate(path, data, cfg)
             chk = dt.check_tier(r, d['tier'], d['life'])
             combo = [x for s, x in chk if s == 'FAIL' and x.startswith('two-card')]
