@@ -22,3 +22,15 @@ Sample-size rule (H28): a win-rate claim needs about 40 games per arm; smaller g
 ## ANALYSIS REQUEST
 - Is the land-bonus lead real enough to change starter balance, or does it need the 40-game check first?
 - Is the first-player advantage (55%) large enough to need a mulligan or play/draw rule note in the balance report?
+
+## First-player balanced, no bonuses (2026-10-21, same records)
+Only games with no bonus on either side (853 decided). For deck A, "balanced" = (A's win rate on the play + A's win rate on the draw) / 2, so the first-player effect cancels.
+- Overall: A on the play 51.4% (n=426), A on the draw 41.5% (n=427), balanced 46.4%.
+- By tier (balanced A win rate, games per tier about 140-175 in total, so roughly ±7 points):
+  - tier 1: 43.1% (first 54.0%, second 32.2%)
+  - tier 2: 42.7% (first 50.0%, second 35.4%)
+  - tier 3: 48.9% (first 48.6%, second 49.3%)
+  - tier 4: 48.5% (first 46.2%, second 50.8%)
+  - tier 5: 52.7% (first 58.1%, second 47.3%)
+- Reading: once the play order is balanced, the tier 1 and 2 pairings still lean toward deck B (about 57% for B), while tiers 3-4 are even and tier 5 leans toward A. The tier 1-2 lean is the one to check; the others are within noise.
+- The side-to-deck assignment is not randomised in these records, so the lean may reflect which deck is listed as A. Check before drawing a balance conclusion.
