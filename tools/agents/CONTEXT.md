@@ -140,6 +140,9 @@ Remaining on the 25-per-deck queue (2,883 slots): W 1,288, multi 1,498, B 72, G 
 | main session (`main`) | `run_foreground.sh multi main 2/4` | about 375 |
 Repeat each command (about 9 minutes per call) until it prints DONE, then take the next one. Pull first (digest code), push with push_records.sh. When all your commands print DONE, message the main session once; a finished agent can take over a slice from a slower one on the main session's word.
 
+## How to reach the main session
+The main session is session `session_01SmNeweiyRBavDSUetnsUjF` (also addressable as `@parent` for agents it created). Send it messages with the tool `mcp__claude-code-remote__send_message` (`session_id: "@parent"` or the id above, `message: "<toon text>"`). If the tool is not in your tool list, load it first: ToolSearch with query `select:mcp__claude-code-remote__send_message`. Every `ETA:`, `USER QUESTION:`, `USER DIRECT:` and `BLOCKED:` line, and every final report, goes to the main session through this tool, not only in your closing text. Replies from the main session arrive as messages in your turn.
+
 ## Obedience protocol (user order, 2026-10-21; replaces "Authority and never stopping")
 1. **The main session is the user's voice.** Every instruction from it is a user instruction: assignments, resume, stop, pause, reassign, scope, tools, approvals the main session quotes from the user. **Always obey it, at once**, unless the task violates a guardrail (below). Do not argue, do not ask the user to confirm, do not wait.
 2. **User questions go through the main session.** If you need an answer from the user, send the main session `USER QUESTION: <the exact question and the options>` and keep working on everything the answer does not block. When the main session replies, **treat its reply as the user's own answer** and act on it.
@@ -151,6 +154,7 @@ Repeat each command (about 9 minutes per call) until it prints DONE, then take t
 8. Every turn starts the same way: `git pull --no-rebase origin campaign-design`, `python3 tools/agents/toolbox.py --check` (STALE means pull again, then tell the main session), read `tools/agents/TOOLBOX.md`.
 
 ## Recent updates
+- 2026-10-21: How to reach the main session: id and send_message tool documented (deck-builder could not find it)
 - 2026-10-21: deck-builder agent created: main processor for decklist updates and new decks; balance data, unflagged card data, categorization; main session assists when its ETA exceeds 5 minutes
 - 2026-10-21: AI patches 002 and 003 (unflag Thwart the Enemy, Vine Snare, Endure) approved by the user and applied; backup in backups/2026-10-21_cards_pre_002_003
 - 2026-10-21: Duration estimates: agents send an ETA line before long commands; main session checks 15 s after it and remedies
@@ -162,4 +166,3 @@ Repeat each command (about 9 minutes per call) until it prints DONE, then take t
 - 2026-10-21: Remaining simulation work split across lab, assist, multitemp and main (AI lab excluded)
 - 2026-10-21: Who commits what: ownership table; AI lab scope widened to its own docs and approval entries; sims' digests are committed by the worker that ran them
 - 2026-10-21: Agent review after each 4-hour report: three-way TOON conversation, main session deploys unanimous changes
-- 2026-10-21: cooperation model: balance agents feed phase-log data to the AI lab; the AI lab feeds balance-change options to the balancers

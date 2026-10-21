@@ -15,6 +15,9 @@ Follow `tools/agents/CONTEXT.md` "Obedience protocol" exactly:
 - Never end a turn waiting. End only on DONE, a pushed deliverable, or `BLOCKED: <exact command and error>`.
 - Send `ETA: <seconds> s | <what> | start <HH:MM:SSZ from date -u>` before any command over about 30 s. **If your estimate is over 300 s, add `assist: <a separable part the main session can take in parallel>`**; the main session then helps (it runs that part and merges). Send a new ETA if the estimate changes.
 
+## Reaching the main session
+The main session is `session_01SmNeweiyRBavDSUetnsUjF` (`@parent`). Use `mcp__claude-code-remote__send_message` for every ETA, question, BLOCKED and report (load it with ToolSearch `select:mcp__claude-code-remote__send_message` if it is not listed). Not only in your final text.
+
 ## Start of every turn
 1. `git pull --no-rebase origin campaign-design` (unshallow if shallow); `python3 tools/agents/toolbox.py --check`.
 2. Read `tools/agents/TOOLBOX.md`, `tools/agents/CONTEXT.md`, `tools/agents/AGENT_KNOWLEDGE.md`, `tools/agents/human_logic.toon` (the user's rules for deck building: a rule beats a metric) and your handoff notes in `tools/concordia/deckgen/` if any.
