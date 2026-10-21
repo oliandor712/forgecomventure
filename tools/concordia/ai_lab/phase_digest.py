@@ -63,6 +63,16 @@ def parse_game(path, label):
         except ValueError:
             continue
         phase, typ, msg = r[1], r[2].rstrip("*"), r[3]
+        if typ == "AI_DECISION":
+            # log-only AI decision rows (patch 010): "<KIND> <player> turn=<n> key=value ..."
+            # the row's own turn column is the game's last turn, so the turn comes from the turn= field
+            parts = msg.split()
+            kind = parts[0] if parts else "?"
+            t = next((int(p[5:]) for p in parts if p.startswith("turn=") and p[5:].isdigit()), turn)
+            side = parts[1] if len(parts) > 1 and parts[1] in ("A", "B") else ""
+            detail = " ".join(parts[2:])
+            rows.append((t, "AI", "AI_" + kind, side, detail, life["A"], life["B"], 1))
+            continue
         ph = short_phase(phase)
         def lk():
             return (life["A"], life["B"])
