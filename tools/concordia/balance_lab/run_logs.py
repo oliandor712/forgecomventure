@@ -55,6 +55,7 @@ def run_batch(rng, writer, f, commit):
         p = fn(rng, c)
         if not p: continue
         tag, t, a, b = p
+        tag = "T%d-%s" % (t, tag)  # label by the real tier (the pairing's decks can be tier 1-5)
         games = []
         for i in range(10):
             games.append(dict(da=a, la=rb.LIFE[t], xa="-", db=b, lb=rb.LIFE[t], xb="-", first="a" if i % 2 == 0 else "b", label="%s_%02d" % (tag, i)))
@@ -82,8 +83,12 @@ def main():
     for _ in range(batches):
         folder, played = run_batch(rng, w, f, commit)
         print("batch: %d games, logs in %s" % (played, os.path.relpath(folder, ROOT)))
+        # standard step (AI lab request): digest the batch's phase logs; the digest folder is pushed with the logs
+        dg = subprocess.run([sys.executable, os.path.join(ROOT, "tools/concordia/ai_lab/phase_digest.py"), os.path.relpath(folder, ROOT)], cwd=ROOT, capture_output=True, text=True)
+        print(dg.stdout.strip().splitlines()[-1] if dg.stdout.strip() else dg.stderr.strip()[-200:])
         if "--no-push" not in sys.argv:
-            print(subprocess.run([os.path.join(HERE, "push_records.sh"), os.path.relpath(rb.REC, ROOT), os.path.relpath(folder, ROOT)], cwd=ROOT, capture_output=True, text=True).stdout.strip())
+            digests = os.path.join(ROOT, "tools/concordia/ai_lab/digests")
+            print(subprocess.run([os.path.join(HERE, "push_records.sh"), os.path.relpath(rb.REC, ROOT), os.path.relpath(folder, ROOT), os.path.relpath(digests, ROOT)], cwd=ROOT, capture_output=True, text=True).stdout.strip())
     f.close()
 
 
