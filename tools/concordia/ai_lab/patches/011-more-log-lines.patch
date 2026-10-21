@@ -1,0 +1,18 @@
+diff --git a/forge-game/src/main/java/forge/game/mulligan/AbstractMulligan.java b/forge-game/src/main/java/forge/game/mulligan/AbstractMulligan.java
+index 4f50baee..0abc05c1 100644
+--- a/forge-game/src/main/java/forge/game/mulligan/AbstractMulligan.java
++++ b/forge-game/src/main/java/forge/game/mulligan/AbstractMulligan.java
+@@ -62,6 +62,11 @@ public abstract class AbstractMulligan {
+     }
+ 
+     public void afterMulligan() {
+-        player.getGame().fireEvent(new GameEventAddLog(GameLogEntryType.MULLIGAN, Localizer.getInstance().getMessage("lblPlayerKeepNCardsHand", player.getName(), String.valueOf(player.getZone(ZoneType.Hand).size()))));
++        // log-only (patch 011): the kept hand's card names, so the digest can read opening hands
++        StringBuilder hand = new StringBuilder();
++        for (Card c : player.getZone(ZoneType.Hand).getCards()) {
++            hand.append(hand.length() > 0 ? "; " : "").append(c.getName());
++        }
++        player.getGame().fireEvent(new GameEventAddLog(GameLogEntryType.MULLIGAN, Localizer.getInstance().getMessage("lblPlayerKeepNCardsHand", player.getName(), String.valueOf(player.getZone(ZoneType.Hand).size())) + " hand: " + hand));
+     }
+ }
+\ No newline at end of file

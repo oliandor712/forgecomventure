@@ -1,0 +1,11 @@
+--- a/tools/concordia/balance_lab/BonusSim.java
++++ b/tools/concordia/balance_lab/BonusSim.java
+@@ -56,7 +56,7 @@
+                 forge.game.GameLogEntryType ty = e.type();
+                 if (ty == forge.game.GameLogEntryType.PHASE || ty == forge.game.GameLogEntryType.TURN || ty == forge.game.GameLogEntryType.COMBAT
+                     || ty == forge.game.GameLogEntryType.DAMAGE || ty == forge.game.GameLogEntryType.LIFE || ty == forge.game.GameLogEntryType.ZONE_CHANGE
+-                    || ty == forge.game.GameLogEntryType.STACK_ADD)
++                    || ty == forge.game.GameLogEntryType.STACK_ADD || ty == forge.game.GameLogEntryType.MULLIGAN)
+                     sb.append(turn).append('\t').append(phase.replace('\t', ' ')).append('\t').append(ty).append('\t').append(msg.replace('\n', ' ').replace('\t', ' ')).append('\n');
+             }
+             // test-only patch 010: the AI's own decision lines (present only when the sim classpath carries forge.ai.AiDecisionLog)
