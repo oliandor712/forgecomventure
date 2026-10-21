@@ -15,3 +15,7 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:07:01Z,fe89afda,bonus,1,decks/tier1/T1_R_Dori.dck,decks/starter/G_Starter_Alt.dck,10,10,arena,,b,b,9,0
 2026-10-21T02:07:01Z,fe89afda,bonus,1,decks/tier1/T1_R_Dori.dck,decks/starter/G_Starter_Alt.dck,10,10,,,a,b,20,0
 2026-10-21T02:07:01Z,fe89afda,bonus,1,decks/tier1/T1_R_Dori.dck,decks/starter/G_Starter_Alt.dck,10,10,,,b,b,15,0
+2026-10-21T02:12:02Z,c69a0758,inner,4,decks/tier4/T4_WBR_Altar.dck,decks/tier4/T4_WB_Judge.dck,30,30,,,a,b,26,0
+2026-10-21T02:12:02Z,c69a0758,inner,4,decks/tier4/T4_WBR_Altar.dck,decks/tier4/T4_WB_Judge.dck,30,30,,,b,a,20,0
+2026-10-21T02:12:25Z,c69a0758,inner,3,decks/tier3/T3_UB_Gyruda.dck,decks/tier3/T3_WG_Maja.dck,25,25,,,a,b,18,0
+2026-10-21T02:12:25Z,c69a0758,inner,3,decks/tier3/T3_UB_Gyruda.dck,decks/tier3/T3_WG_Maja.dck,25,25,,,b,b,13,0
