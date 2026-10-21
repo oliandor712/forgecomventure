@@ -13,8 +13,8 @@ rewritten. Work in small steps and keep your replies short.
 tools, the project's current state and recent updates. Where it and this brief disagree, it wins.
 
 ## Budget
-- **One batch per run, at most 30 minutes of compute** (wall clock, timed from the batch's start). Don't start a new
-  game after minute 8. Per game: a timeout of 150 s; a timed-out game is recorded as a draw.
+- **No time cap on a run** (user, 2026-10-21): use `--until-done`; the run goes on until every deck in the shard has its
+  target. Per game: a timeout of 150 s; a timed-out game is recorded as a draw.
 - Prefer `grep`/`sed -n` ranges over reading whole files. Never paste decklists or logs into your reply.
 - If the main session or the user asks you to pause, stop at the next safe point, note it in the log and push.
 - End every run with a report under 120 words: games played, anything odd, the files written.
