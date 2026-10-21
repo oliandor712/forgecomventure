@@ -125,3 +125,5 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-21 MASS RESEARCH PROJECT (user): balance lab runs 40 games per AI deck in colour shards via QUEUE.toon; AI lab documents Forge AI decision logic by deck type; main session merges both into one combined report (balance by tier/colour/archetype + AI logic by deck type).
 
 - 2026-10-21 Deep research project: runtime limits lifted for both labs (user, chat). One run at a time per agent.
+
+- 2026-10-21 All scheduled tasks disabled (user) until the deep research project completes: check-in, balance batch, balance report, AI lab wake, Spellbinder resume. Labs run --until-done by themselves; re-enable with update_trigger enabled=true after the project.
