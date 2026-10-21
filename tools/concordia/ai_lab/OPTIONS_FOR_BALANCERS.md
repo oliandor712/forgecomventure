@@ -35,3 +35,14 @@ Balance options measured so far, with game counts (10 games per arm unless state
 - Option 7, patch 006: no measurable effect. Parked.
 - Option 8, balance data: starters and tier 5 above the field, tier 1-2 black decks below, from 3,442 Commander records (20 to 40 games per deck). Needs 40 games before any deck change.
 - Option 9, patch 010 AI decision log: test overlay only, 3,094 digested games with AI_DECISION rows. Its results-unchanged check is not completed.
+
+## Completion pass (3,146 digested games, 2026-10-21)
+Ranked by how much evidence each option has and how cheap it is to test. Game counts are the ones stated above; no new sims.
+1. Option 1, land bonus (40 and 34 games): strongest measured lead; needs the 40-game check before any change.
+2. Option 8, balance data (3,442 Commander records): starters and tier 5 above the field, tier 1 and 2 black decks below; needs 40 games per deck.
+3. Option 2 and 3, SwitchPT and patch 005 (10-game runs): switch decisions cut sharply; patch 005 needs approval.
+4. Option 4, Fog and Endure flags (10-game runs): cast in the right window; card script, awaiting approval.
+5. Option 9, patch 010 decision log (3,146 games with AI_DECISION rows in 2,670): test overlay only.
+6. Option 5, patch 004 (Harsh Justice): planned, not written.
+7. Options 6 and 7, patches 008 and 006: no measurable effect; not recommended.
+Note for all options: the digests cannot yet split results by deck or colour, so deck-specific effects are not measured.
