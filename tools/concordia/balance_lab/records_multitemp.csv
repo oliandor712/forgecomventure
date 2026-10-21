@@ -1763,3 +1763,7 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T07:15:38Z,2f9f3aa6f78,inner,3,decks/tier3/T3_G_Loot.dck,decks/tier3/T3_G_Shroofus.dck,25,25,,,b,a,20,0
 2026-10-21T07:16:01Z,2f9f3aa6f78,inner,4,decks/tier4/T4_G_Selvala.dck,decks/tier4/T4_G_Celeborn.dck,30,30,,,a,b,18,0
 2026-10-21T07:16:01Z,2f9f3aa6f78,inner,4,decks/tier4/T4_G_Selvala.dck,decks/tier4/T4_G_Celeborn.dck,30,30,,,b,b,23,0
+2026-10-21T07:17:15Z,3c7c5ab48a6,inner,1,decks/tier1/T1_G_Dionus.dck,decks/tier1/T1_G_Goreclaw.dck,10,10,,,a,a,17,0
+2026-10-21T07:17:15Z,3c7c5ab48a6,inner,1,decks/tier1/T1_G_Dionus.dck,decks/tier1/T1_G_Goreclaw.dck,10,10,,,b,b,29,0
+2026-10-21T07:17:46Z,3c7c5ab48a6,inner,1,decks/tier1/T1_G_Jiang.dck,decks/tier1/T1_G_Dwynen.dck,10,10,,,a,b,12,0
+2026-10-21T07:17:46Z,3c7c5ab48a6,inner,1,decks/tier1/T1_G_Jiang.dck,decks/tier1/T1_G_Dwynen.dck,10,10,,,b,a,8,0
