@@ -539,3 +539,9 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:58:45Z,8dd48a92d20,inner,4,decks/tier4/T4_B_Tombstone.dck,decks/tier4/T4_B_Toshiro.dck,30,30,,,b,b,21,0
 2026-10-21T02:59:08Z,8dd48a92d20,inner,4,decks/tier4/T4_B_Tombstone.dck,decks/tier4/T4_B_Toshiro.dck,30,30,,,a,a,15,0
 2026-10-21T02:59:08Z,8dd48a92d20,inner,4,decks/tier4/T4_B_Tombstone.dck,decks/tier4/T4_B_Toshiro.dck,30,30,,,b,b,15,0
+2026-10-21T02:59:34Z,8dd48a92d20,inner,3,decks/tier3/T3_B_Shredder.dck,decks/tier3/T3_B_Chainer.dck,25,25,,,a,b,16,0
+2026-10-21T02:59:34Z,8dd48a92d20,inner,3,decks/tier3/T3_B_Shredder.dck,decks/tier3/T3_B_Chainer.dck,25,25,,,b,b,13,0
+2026-10-21T03:00:03Z,8dd48a92d20,inner,2,decks/tier2/T2_B_MarrowGnawer.dck,decks/tier2/T2_B_Vito.dck,15,15,,,a,b,16,0
+2026-10-21T03:00:03Z,8dd48a92d20,inner,2,decks/tier2/T2_B_MarrowGnawer.dck,decks/tier2/T2_B_Vito.dck,15,15,,,b,b,21,0
+2026-10-21T03:00:28Z,8dd48a92d20,inner,1,decks/tier1/T1_B_Falthis.dck,decks/tier1/T1_B_Keskit.dck,10,10,,,a,a,11,0
+2026-10-21T03:00:28Z,8dd48a92d20,inner,1,decks/tier1/T1_B_Falthis.dck,decks/tier1/T1_B_Keskit.dck,10,10,,,b,a,18,0
