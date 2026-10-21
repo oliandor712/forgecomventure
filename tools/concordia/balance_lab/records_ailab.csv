@@ -1,0 +1,5 @@
+utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,turns,timeout
+2026-10-21T02:02:00Z,abd3cdad,inner,3,decks/tier3/T3_R_Livaan.dck,decks/tier3/T3_R_Laelia.dck,25,25,,,a,b,18,0
+2026-10-21T02:02:00Z,abd3cdad,inner,3,decks/tier3/T3_R_Livaan.dck,decks/tier3/T3_R_Laelia.dck,25,25,,,b,b,13,0
+2026-10-21T02:02:28Z,abd3cdad,inner,2,decks/tier2/T2_R_Jaxis.dck,decks/tier2/T2_R_Tahngarth.dck,15,15,,,a,a,13,0
+2026-10-21T02:02:28Z,abd3cdad,inner,2,decks/tier2/T2_R_Jaxis.dck,decks/tier2/T2_R_Tahngarth.dck,15,15,,,b,a,12,0
