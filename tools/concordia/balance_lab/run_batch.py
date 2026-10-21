@@ -22,6 +22,7 @@ ALL_BONUSES = ["land", "onedrop", "land+onedrop", "arena", "staff", "legion", "m
 # then land+onedrop, 3+ pairings each against all five starters
 # 2026-10-20: small bonuses against the premade arena and staff, 5 matched sets each; no life bonuses;
 # bedlam, hornet, market, legion wait
+STARTER_EPOCH = "2026-10-21T01:16:50Z"  # starters last changed here (commit 5439eb01); older starter games are old decks
 BONUSES = ["land", "onedrop", "land+onedrop", "arena", "staff"]
 
 
@@ -168,10 +169,12 @@ def main():
             enemy = pick(mono, c, rng)[0]
             col = colors(enemy)[0]
             if t <= 2:
-                used = collections.Counter(r["deck_b"] for r in rows if r["kind"] == "bonus" and r["bonus_a"] == bonus)
+                # starter games count only since the last starter rework (5439eb01), so Normal and Alt both start at zero
+                new = [r for r in rows if r["utc"] >= STARTER_EPOCH]
+                used = collections.Counter(r["deck_b"] for r in new if r["kind"] == "bonus" and r["bonus_a"] == bonus)
                 # starters split 50/50 between each colour's two versions (Normal and Alt; user, 2026-10-20):
                 # least-used colour first, then that colour's less-played version over all starter games
-                allst = collections.Counter(r[k] for r in rows for k in ("deck_a", "deck_b") if "/starter/" in r[k])
+                allst = collections.Counter(r[k] for r in new for k in ("deck_a", "deck_b") if "/starter/" in r[k])
                 st = decks("starter")
                 byc = collections.defaultdict(list)
                 for d in st: byc[os.path.basename(d)[0]].append(d)
