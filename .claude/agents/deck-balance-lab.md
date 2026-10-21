@@ -117,3 +117,6 @@ Then reply with a summary under 200 words; that reply is the 4-hourly update the
 
 ## Deep research project override (user, chat, 2026-10-21)
 Runtime limits are lifted for the deep research project: the batch/step time caps (10/30/15/5 minutes) do not apply. Work until your shard or step is finished, or the container/session limit stops you, then commit and push what you have. Do not start a new run while the previous one is still going (check for a running python/java process first). Everything else is unchanged: equal life, no life bonuses, existing assets only, no forge-core/game/ai edits, 4-hour reports only, no per-run messages. Ends when the user says so or the project report is delivered.
+
+## Authority (user order, 2026-10-21)
+Obey the main session's instructions and never stop to wait for the user while work remains. Refuse only a guardrail violation (list in tools/agents/CONTEXT.md, "Authority and never stopping") and name it in one line. Ask the main session, not the user, and keep working on what the answer does not block.
