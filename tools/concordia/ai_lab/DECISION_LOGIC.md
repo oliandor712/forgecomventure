@@ -288,3 +288,24 @@ Ended on the main session's order. Blocking results are final for the digests so
 
 Sections reached: 1 blocking (done), 2 attacking (done), 3 removal targeting (done), 4 spell order (done), 5 mana use (done).
 Sections not completed (research ended early): commander, combat tricks, ETB/tokens, mulligan, "Logic by deck type". What remains: the same log-based checks as sections 1 to 5, applied to these areas, plus the deck-type table once the balance lab publishes its archetype tags.
+
+## Completion pass over every digested game (3,146 games, 2026-10-21)
+Digests: 3,146 games. AI_DECISION rows (patch 010 overlay) are in 2,670 games (84.9%). Digest rows carry no deck identity except the 20 Commander games labelled T2/T5, so results below are by situation, not by deck.
+
+Blocking, final (blocker's own life): 15+ life 8% (14,026 decisions); 8 to 14 life 19% (12,842); under 8 life 39% (15,803). Median game 16 turns.
+
+Combat tricks (CAST rows in a combat step, phases Declare Attackers / Declare Blockers / Combat Damage):
+- 1,823 casts in 1,196 of 3,146 games (38.0%). Most are in declare-blockers steps (B 486, A 382), then declare attackers (B 246, A 227).
+- Most used: Invigorate 87, Mortal's Resolve 60, Aspect of Hydra 60, Tyvar's Stand 45, Might of Alara 42, Hindervines 40, Legolas's Quick Reflexes 39, Heroic Intervention 37, Respite 36, Titan's Strength 33.
+- Reading: the AI does use instant-speed tricks in combat, in the window the rules allow. It is a count of casts, not of wins; the logs cannot say whether a trick changed a combat.
+
+ETB and tokens:
+- Attack declarations naming a token: 2,451 of 20,549 (11.9%). Zone moves naming a token: 2,946 of 19,997.
+- The digest has no TRIGGER rows for enter-the-battlefield triggers in these games, so ETB effects cannot be read from the logs. Tokens are visible only by name.
+
+Attack situation (AI_ATTACK_LEVEL rows, by ratioDiff): ahead (ratioDiff 1 or more) 20,084 rows; even 21,937; behind 19,182. The rows show the AI's level input, not whether it attacked; the attack-per-level rate needs ATTACK rows joined to the same turn, which is not done here.
+
+Not completed from the logs:
+- Commander play (cast timing, commander tax, command-zone use): the digest records no command-zone moves and no tax costs. Needed: ZONE rows for "from Command zone" and the cast cost per commander cast.
+- Mulligan and opening hands: no mulligan or hand-size lines are in the digest. Needed: the opening hand and each mulligan decision.
+- Logic by deck type and by colour: needs a deck name or archetype on each digest row. Only the 20 Commander games carry a tier. Needed: deck id per game in the digest, then a join to the balance records.
