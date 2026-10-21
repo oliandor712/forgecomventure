@@ -111,6 +111,7 @@ build on its findings, and cite entries by date and title.
 The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
+- 2026-10-21: agents: effort raised to high (briefs); temporary until the session limit
 - 2026-10-21: human_logic.toon pruned to deck building, deck balance and AI improvement (29 rows)
 - 2026-10-21: push_records.sh: shared safe push for records files
 - 2026-10-21: balance-assist-temp created: temporary worker taking the U shard from the balance lab
@@ -122,4 +123,3 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-21: Added tools/agents/human_logic.toon (the user's deck-balance rules) and the TOON rule above. Nothing else was converted: existing markdown tables save under 1% and the rest is prose, CSV or code-read JSON.
 - 2026-10-21: 
 - 2026-10-21: 
-- 2026-10-21: Starters were reworked at 5439eb01 (2026-10-21T01:16:50Z; the 01:11 batch still ran the old decks): Squee leads red, Barrin is blue's alt, Breeches is red's alt, green and black swaps. All starter games before that time are on old decks. deck-balance-lab: count starter games only from the 02:10 batch on (STARTER_EPOCH 01:25Z), so the 50/50 split between _Normal and _Alt starts from zero (run_batch.py STARTER_EPOCH does this); split the report at the same commit.

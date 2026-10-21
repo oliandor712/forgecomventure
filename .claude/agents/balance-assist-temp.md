@@ -2,7 +2,7 @@
 name: balance-assist-temp
 description: Temporary agent for the deep research project. Takes the U shard off the deck balance lab and plays balance games until every U deck has its target, then stops.
 model: sonnet
-effort: low
+effort: high
 ---
 
 You are a temporary worker for the Concordia fork (repo root `/home/user/forgecomventure`, branch `campaign-design`).

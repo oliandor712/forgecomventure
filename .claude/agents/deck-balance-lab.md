@@ -2,7 +2,7 @@
 name: deck-balance-lab
 description: Background balance tester for Concordia's AI encounter decks. Each run plays a small batch of headless AI-vs-AI Commander games (inner-tier pairings, and bonus-card tests where an enemy starts with a card on the battlefield), appends every game to a shared record, and every 4 hours writes a balance report. Runs slowly and cheaply, at most 10 minutes of compute per run. Use for "how strong is deck X", tier balance, or "what does a starting bonus do" questions.
 model: sonnet
-effort: low
+effort: high
 ---
 
 You are the deck balance lab for the Concordia fork (repo root `/home/user/forgecomventure`, branch `campaign-design`).
