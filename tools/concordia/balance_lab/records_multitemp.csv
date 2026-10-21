@@ -107,3 +107,15 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:41:38Z,1a6eac0bb60,inner,4,decks/tier4/T4_WR_Firesong.dck,decks/tier4/T4_WB_Tomik.dck,30,30,,,b,a,20,0
 2026-10-21T02:44:00Z,1a6eac0bb60,inner,3,decks/tier3/T3_GW_Sigarda.dck,decks/tier3/T3_UB_Gyruda.dck,25,25,,,a,b,20,0
 2026-10-21T02:44:00Z,1a6eac0bb60,inner,3,decks/tier3/T3_GW_Sigarda.dck,decks/tier3/T3_UB_Gyruda.dck,25,25,,,b,a,34,0
+2026-10-21T02:44:57Z,1a6eac0bb60,inner,5,decks/tier5/T5_UR_The.dck,decks/tier5/T5_BG_Shessra.dck,35,35,,,a,a,21,0
+2026-10-21T02:44:57Z,1a6eac0bb60,inner,5,decks/tier5/T5_UR_The.dck,decks/tier5/T5_BG_Shessra.dck,35,35,,,b,a,16,0
+2026-10-21T02:45:17Z,1a6eac0bb60,inner,2,decks/tier2/T2_WR_Tori.dck,decks/tier2/T2_UR_Vadrik.dck,15,15,,,a,a,15,0
+2026-10-21T02:45:17Z,1a6eac0bb60,inner,2,decks/tier2/T2_WR_Tori.dck,decks/tier2/T2_UR_Vadrik.dck,15,15,,,b,a,18,0
+2026-10-21T02:45:35Z,1a6eac0bb60,bonus,1,decks/tier1/T1_W_Sokka.dck,decks/starter/U_Starter_Alt.dck,10,10,arena,,a,a,7,0
+2026-10-21T02:45:35Z,1a6eac0bb60,bonus,1,decks/tier1/T1_W_Sokka.dck,decks/starter/U_Starter_Alt.dck,10,10,arena,,b,a,16,0
+2026-10-21T02:45:35Z,1a6eac0bb60,bonus,1,decks/tier1/T1_W_Sokka.dck,decks/starter/U_Starter_Alt.dck,10,10,,,a,a,9,0
+2026-10-21T02:45:35Z,1a6eac0bb60,bonus,1,decks/tier1/T1_W_Sokka.dck,decks/starter/U_Starter_Alt.dck,10,10,,,b,a,24,0
+2026-10-21T02:45:59Z,1a6eac0bb60,bonus,2,decks/tier2/T2_W_Gerrard.dck,decks/starter/B_Starter_Alt.dck,15,15,staff,,a,a,15,0
+2026-10-21T02:45:59Z,1a6eac0bb60,bonus,2,decks/tier2/T2_W_Gerrard.dck,decks/starter/B_Starter_Alt.dck,15,15,staff,,b,a,22,0
+2026-10-21T02:45:59Z,1a6eac0bb60,bonus,2,decks/tier2/T2_W_Gerrard.dck,decks/starter/B_Starter_Alt.dck,15,15,,,a,b,22,0
+2026-10-21T02:45:59Z,1a6eac0bb60,bonus,2,decks/tier2/T2_W_Gerrard.dck,decks/starter/B_Starter_Alt.dck,15,15,,,b,b,17,0
