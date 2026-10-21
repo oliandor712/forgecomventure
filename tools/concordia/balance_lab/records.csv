@@ -285,3 +285,13 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T01:19:43Z,d77973ae,bonus,2,decks/tier2/T2_G_Rishkar.dck,decks/starter/G_Starter_Alt.dck,15,15,onedrop,,b,a,14,0
 2026-10-21T01:19:43Z,d77973ae,bonus,2,decks/tier2/T2_G_Rishkar.dck,decks/starter/G_Starter_Alt.dck,15,15,,,a,a,15,0
 2026-10-21T01:19:43Z,d77973ae,bonus,2,decks/tier2/T2_G_Rishkar.dck,decks/starter/G_Starter_Alt.dck,15,15,,,b,a,20,0
+2026-10-21T02:11:22Z,225ec115,inner,1,decks/tier1/T1_B_Skitter.dck,decks/tier1/T1_B_Sivriss.dck,10,10,,,a,a,7,0
+2026-10-21T02:11:22Z,225ec115,inner,1,decks/tier1/T1_B_Skitter.dck,decks/tier1/T1_B_Sivriss.dck,10,10,,,b,a,12,0
+2026-10-21T02:11:46Z,225ec115,inner,5,decks/tier5/T5_B_Gaius.dck,decks/tier5/T5_B_Tinybones.dck,35,35,,,a,a,27,0
+2026-10-21T02:11:46Z,225ec115,inner,5,decks/tier5/T5_B_Gaius.dck,decks/tier5/T5_B_Tinybones.dck,35,35,,,b,a,18,0
+2026-10-21T02:12:32Z,225ec115,inner,4,decks/tier4/T4_B_Jadar.dck,decks/tier4/T4_B_Taborax.dck,30,30,,,a,b,22,0
+2026-10-21T02:12:32Z,225ec115,inner,4,decks/tier4/T4_B_Jadar.dck,decks/tier4/T4_B_Taborax.dck,30,30,,,b,a,16,0
+2026-10-21T02:13:00Z,225ec115,inner,1,decks/tier1/T1_B_Falthis.dck,decks/tier1/T1_B_Gallia.dck,10,10,,,a,b,12,0
+2026-10-21T02:13:00Z,225ec115,inner,1,decks/tier1/T1_B_Falthis.dck,decks/tier1/T1_B_Gallia.dck,10,10,,,b,a,24,0
+2026-10-21T02:13:31Z,225ec115,inner,5,decks/tier5/T5_B_Danitha.dck,decks/tier5/T5_B_Ihsan.dck,35,35,,,a,b,18,0
+2026-10-21T02:13:31Z,225ec115,inner,5,decks/tier5/T5_B_Danitha.dck,decks/tier5/T5_B_Ihsan.dck,35,35,,,b,a,22,0
