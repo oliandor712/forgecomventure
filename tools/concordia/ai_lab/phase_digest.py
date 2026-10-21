@@ -50,10 +50,15 @@ def starting_life(lines):
     return {"A": start.get("A", 40), "B": start.get("B", 40)}
 
 
+META_KEYS = ("deck_a", "deck_b", "tier", "archetype", "colour")
+
+
 def parse_game(path, label):
+    """Return (rows, meta). meta comes from GAME header rows written by BonusSim (deck ids, tier,
+    archetype, colour); it is empty for logs written before the header existed."""
     lines = open(path, errors="ignore").read().splitlines()
     life = starting_life(lines)
-    rows, turn = [], 0
+    rows, turn, meta = [], 0, {}
     for line in lines:
         r = line.rstrip("\n").split("\t")
         if len(r) < 4:
@@ -63,6 +68,9 @@ def parse_game(path, label):
         except ValueError:
             continue
         phase, typ, msg = r[1], r[2].rstrip("*"), r[3]
+        if typ == "GAME":
+            meta.update(dict(kv.split("=", 1) for kv in msg.split() if "=" in kv))
+            continue
         if typ == "AI_DECISION":
             # log-only AI decision rows (patch 010): "<KIND> <player> turn=<n> key=value ..."
             # the row's own turn column is the game's last turn, so the turn comes from the turn= field
@@ -101,11 +109,14 @@ def parse_game(path, label):
             m = DAMAGE.search(msg)
             if m:
                 rows.append((turn, ph, "DAMAGE", m.group(3), f"{names(m.group(1))[0]} {m.group(2)}", *lk(), int(m.group(2))))
-        elif typ == "ZONE_CHANGE" and "from Battlefield" in msg:
-            dest = re.search(r"into (\w+) from Battlefield", msg)
-            nm = names(msg.split(" was put ", 1)[0])[0] if " was put " in msg else msg[:40]
-            rows.append((turn, ph, "ZONE", "", f"{nm} -> {dest.group(1) if dest else '?'}", *lk(), 1))
-    return rows
+        elif typ == "ZONE_CHANGE" and " was put into " in msg:
+            # every zone move, not only battlefield exits: command zone, hand, library, exile, stack
+            m = re.search(r"was put into (\w+) from (\w+)", msg)
+            nm = names(msg.split(" was put ", 1)[0])[0]
+            dest, src = (m.group(1), m.group(2)) if m else ("?", "?")
+            detail = f"{nm} -> {dest}" if src == "Battlefield" else f"{nm} -> {dest} from {src}"
+            rows.append((turn, ph, "ZONE", "", detail, *lk(), 1))
+    return rows, meta
 
 
 def write_batch(folder, into=None):
@@ -122,6 +133,7 @@ def write_batch(folder, into=None):
         return 0
     prefix = f"{batch}/" if into else ""
     games = []
+    metas = []
     mode = "at" if into else "wt"
     dec_path = os.path.join(outdir, "decisions.tsv.gz")
     games_path = os.path.join(outdir, "games.tsv")
@@ -134,7 +146,8 @@ def write_batch(folder, into=None):
             label = os.path.basename(path)[:-4]
             if label == "INDEX":
                 continue
-            rows = parse_game(path, label)
+            rows, meta = parse_game(path, label)
+            metas.append([prefix + label] + [meta.get(k, "") for k in META_KEYS])
             cnt = {"A": {"ATTACK": 0, "BLOCK": 0, "CAST": 0}, "B": {"ATTACK": 0, "BLOCK": 0, "CAST": 0}}
             for r in rows:
                 w.writerow([prefix + label, *r])
@@ -152,6 +165,13 @@ def write_batch(folder, into=None):
         if not into or new_games:
             w.writerow(header)
         w.writerows(games)
+    meta_path = os.path.join(outdir, "games_meta.tsv")
+    new_meta = not os.path.exists(meta_path)
+    with open(meta_path, "a" if into else "w", newline="") as f:
+        w = csv.writer(f, delimiter="\t")
+        if not into or new_meta:
+            w.writerow(["game", *META_KEYS])
+        w.writerows(metas)
     if into:
         with open(done_path, "a") as f:
             f.write(batch + "\n")
