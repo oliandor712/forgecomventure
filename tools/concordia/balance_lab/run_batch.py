@@ -155,6 +155,10 @@ def play(games, budget_end):
     return res
 
 
+def target_for(d):  # games per deck (user, 2026-10-21): 25 for AI decks, 40 for the starters
+    return 40 if "starter" in d else 25
+
+
 def run():
     ap = argparse.ArgumentParser()
     ap.add_argument("--budget", type=int, default=1800)  # no new game starts in the last 2 minutes of the budget (runtime limits lifted 2026-10-21)
@@ -163,7 +167,7 @@ def run():
     ap.add_argument("--pool", default="shard", help="shard (this hour's colour shard, default), green (priority) or all")
     ap.add_argument("--shard", default=None, help="W, U, B, R, G or multi; default is the hour's shard in the round-robin")
     ap.add_argument("--sets", type=int, default=2)
-    ap.add_argument("--until-done", action="store_true", help="no time caps (user, 2026-10-21): keep batching until every deck in the shard has 40 games")
+    ap.add_argument("--until-done", action="store_true", help="no time caps (user, 2026-10-21): keep batching until every deck in the shard has its target games (25 AI decks, 40 starters)")
     o = ap.parse_args()
     rng = random.Random(o.seed)
     if o.pool == "shard":
@@ -187,7 +191,7 @@ def run():
         if r["kind"] == "bonus": nbonus_done[r["bonus_a"] or r["bonus_b"] or "?"] = nbonus_done.get(r["bonus_a"] or r["bonus_b"], 0) + 1
     def underfilled():  # live counts: keep going while a deck in the shard is below 40 games (H28)
         ds = pool if pool is not None else [d for t in range(1, 6) for d in decks("tier%d" % t)]
-        return any(c.get(rel(d), 0) < 40 for d in ds)
+        return any(c.get(rel(d), 0) < target_for(d) for d in ds)
 
     def plan_steps():
         if not o.until_done:
