@@ -7,7 +7,8 @@ import argparse, collections, csv, glob, json, os, random, re, subprocess, sys, 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 DECKS = "forge-gui/res/adventure/Concordia/"
 LAB = os.path.join(ROOT, "tools/concordia/balance_lab")
-REC = os.path.join(LAB, "records.csv")
+WORKER = os.environ.get("BALANCE_WORKER", "")  # a second agent sets e.g. ailab: it appends to records_ailab.csv, everyone reads records*.csv
+REC = os.path.join(LAB, "records_%s.csv" % WORKER if WORKER else "records.csv")
 HEADER = "utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,turns,timeout".split(",")
 LIFE = {1: 10, 2: 15, 3: 25, 4: 30, 5: 35}
 BASIC = {"W": "Plains", "U": "Island", "B": "Swamp", "R": "Mountain", "G": "Forest"}
@@ -102,8 +103,9 @@ def bonus_cards(bonus, deck, color):
 
 
 def load():
-    if not os.path.exists(REC): return []
-    return list(csv.DictReader(open(REC)))
+    rows = []
+    for p in sorted(glob.glob(os.path.join(LAB, "records*.csv"))): rows += list(csv.DictReader(open(p)))
+    return rows
 
 
 REBUILD = "440176a2"  # deck rebuild: coverage counts only games on the new decks

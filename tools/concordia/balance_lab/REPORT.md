@@ -1,6 +1,6 @@
 # Deck balance report
 
-Generated 2026-10-21 01:59Z from 286 games (138 inner-tier, 148 bonus). Intervals are 90% Wilson; draws count half.
+Generated 2026-10-21 02:00Z from 286 games (138 inner-tier, 148 bonus). Intervals are 90% Wilson; draws count half.
 
 Inner-tier tables below use only the **new decks** (rows at or after the rebuild commit: 440176a2 for tiers 3-5, 58aa312f for tier 2, f1139925 for tier 1): 58 inner games; 80 inner games on the old decks are left out. Bonus impact pools old and new rows, since a matched set compares the same pairing.
 

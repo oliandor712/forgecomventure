@@ -4,7 +4,7 @@ import csv, glob, json, math, os, subprocess, collections, datetime
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 LAB = os.path.join(ROOT, "tools/concordia/balance_lab")
-rows = list(csv.DictReader(open(os.path.join(LAB, "records.csv"), newline="")))
+rows = [r for p in sorted(glob.glob(os.path.join(LAB, "records*.csv"))) for r in csv.DictReader(open(p, newline=""))]
 REBUILD = "440176a2"  # deck rebuild (main session, 2026-10-20): rows at or after this commit are on the new decks
 _new = {}
 REBUILD_T1 = "f1139925"  # tier 1 regenerated with 30-34 creatures: T1 rows before it are old T1 decks
