@@ -264,8 +264,8 @@ written once by a script.
 - **Commander Hall is mandatory in every town except Emberbrook**: Mossgate, every gate town and every zone town has one
   (`commanderhall.tx`, §4.1). Emberbrook has none; the starter commanders are chosen at the Seal Angels and then reached
   at Mossgate's hall.
-- **A quest building is optional** in Mossgate, the gate towns and the Warden (zone) towns. A town can have one, but none
-  is required, so a town may ship without it.
+- **A quest building is optional, and only in those town types**: Mossgate, the gate towns and the Warden (zone) towns
+  may have one, but none is required. No other town gets a quest building (not Emberbrook, not any other settlement).
 
 ### 4.2 The Waystone
 
