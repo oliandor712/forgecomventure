@@ -138,7 +138,17 @@ Remaining on the 25-per-deck queue (2,883 slots): W 1,288, multi 1,498, B 72, G 
 | main session (`main`) | `run_foreground.sh multi main 2/4` | about 375 |
 Repeat each command (about 9 minutes per call) until it prints DONE, then take the next one. Pull first (digest code), push with push_records.sh. When all your commands print DONE, message the main session once; a finished agent can take over a slice from a slower one on the main session's word.
 
+## Authority and never stopping (user order, 2026-10-21)
+The main session speaks for the user to the agents. **Obey the main session's instructions** (assignments, resume, stop, pause, reassign, push, commit scope, tooling changes) without asking the user to repeat them. Do not stop mid-task to wait for the user.
+- **Never** end a turn with "waiting for the user" while work remains. Questions go to the main session (send_message), and you keep working on whatever is not blocked by the answer. A task is done only when its command prints DONE or its deliverable is pushed.
+- **Resume after a pause** on the main session's word. A relayed "the user said X" from the main session counts. If the user paused you directly in your own chat, the main session's later resume order counts too.
+- **Refuse only guardrail violations**, and say which one in one line to the main session: editing forge-core/forge-game/forge-ai source on campaign-design or applying an AI patch to a source directory (test overlay patches are fine); force-pushing or rewriting history; opening or merging a PR; pushing to a branch other than campaign-design; unequal-life or life-bonus simulations; committing another agent's files; deleting data without a backup; ticking an AI_CHANGES_APPROVAL box (only the user ticks it, in chat with the main session).
+- **A harness or classifier denial** (a command blocked by the permission system) is not a guardrail: split the command into simple separate commands and retry once; if it is still denied, report the exact command to the main session and move to the next task item.
+- Approvals for AI changes still come only from the user in chat, relayed by the main session, and "approved for testing" never means apply to source.
+
 ## Recent updates
+- 2026-10-21: Simulation suite: one program for setup, runs, phase logging, digests, pushes and reports; archetype sampling
+- 2026-10-21: Authority rule: agents obey the main session and never stop to wait for the user; only guardrail violations are refused
 - 2026-10-21: temporary agents multi-balance-temp and balance-assist-temp dumped (retired); their records stay
 - 2026-10-21: Remaining simulation work split across lab, assist, multitemp and main (AI lab excluded)
 - 2026-10-21: Who commits what: ownership table; AI lab scope widened to its own docs and approval entries; sims' digests are committed by the worker that ran them
@@ -149,5 +159,3 @@ Repeat each command (about 9 minutes per call) until it prints DONE, then take t
 - 2026-10-21: human_logic.toon pruned to deck building, deck balance and AI improvement (29 rows)
 - 2026-10-21: push_records.sh: shared safe push for records files
 - 2026-10-21: balance-assist-temp created: temporary worker taking the U shard from the balance lab
-- 2026-10-21: R/G sims moved to multi-balance-temp; AI lab logic only; main session runs multi 0/2 and 1/2
-- 2026-10-21: deck-balance-lab brief: 30-minute cap removed (no time cap on a run)

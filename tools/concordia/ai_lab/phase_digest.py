@@ -50,10 +50,32 @@ def starting_life(lines):
     return {"A": start.get("A", 40), "B": start.get("B", 40)}
 
 
+META_KEYS = ("deck_a", "deck_b", "tier", "archetype", "colour")
+
+
+def queue_tags():
+    """deck path -> (archetype, colour) from the balance lab's QUEUE.toon (empty if missing)."""
+    tags = {}
+    path = os.path.join(HERE, "..", "balance_lab", "QUEUE.toon")
+    try:
+        for line in open(path):
+            m = re.match(r"\s+(decks/\S+?\.dck)\|\d+\|\d+\|(\w+)\|\w+\|(\w+)", line)
+            if m:
+                tags[m.group(1)] = (m.group(3), m.group(2))
+    except OSError:
+        pass
+    return tags
+
+
+TAGS = queue_tags()
+
+
 def parse_game(path, label):
+    """Return (rows, meta). meta comes from GAME header rows written by BonusSim (deck ids, tier,
+    archetype, colour); it is empty for logs written before the header existed."""
     lines = open(path, errors="ignore").read().splitlines()
     life = starting_life(lines)
-    rows, turn = [], 0
+    rows, turn, meta = [], 0, {}
     for line in lines:
         r = line.rstrip("\n").split("\t")
         if len(r) < 4:
@@ -63,6 +85,9 @@ def parse_game(path, label):
         except ValueError:
             continue
         phase, typ, msg = r[1], r[2].rstrip("*"), r[3]
+        if typ == "GAME":
+            meta.update(dict(kv.split("=", 1) for kv in msg.split() if "=" in kv))
+            continue
         if typ == "AI_DECISION":
             # log-only AI decision rows (patch 010): "<KIND> <player> turn=<n> key=value ..."
             # the row's own turn column is the game's last turn, so the turn comes from the turn= field
@@ -95,17 +120,29 @@ def parse_game(path, label):
             m = re.match(r"(A|B) cast (.+)", msg)
             if m:
                 rows.append((turn, ph, "CAST", m.group(1), m.group(2).split(" (")[0], *lk(), 1))
-            elif msg.startswith("triggered"):
-                rows.append((turn, ph, "TRIGGER", "", msg[len("triggered "):].split(" (")[0], *lk(), 1))
+            elif re.match(r"(A|B) triggered ", msg):
+                # the game log writes triggers as "A triggered <source>" (ETB and other triggers)
+                rows.append((turn, ph, "TRIGGER", msg[0], msg.split(" triggered ", 1)[1].split(" (")[0], *lk(), 1))
         elif typ == "DAMAGE":
             m = DAMAGE.search(msg)
             if m:
                 rows.append((turn, ph, "DAMAGE", m.group(3), f"{names(m.group(1))[0]} {m.group(2)}", *lk(), int(m.group(2))))
-        elif typ == "ZONE_CHANGE" and "from Battlefield" in msg:
-            dest = re.search(r"into (\w+) from Battlefield", msg)
-            nm = names(msg.split(" was put ", 1)[0])[0] if " was put " in msg else msg[:40]
-            rows.append((turn, ph, "ZONE", "", f"{nm} -> {dest.group(1) if dest else '?'}", *lk(), 1))
-    return rows
+        elif typ == "MULLIGAN":
+            # "A has kept a hand of 7 cards hand: Island; Mockingbird; ..." (patch 011) gives the opening hand
+            m = re.match(r"(A|B) has kept a hand of (\d+) cards hand: (.*)", msg)
+            if m:
+                rows.append((0, "Mulligan", "HAND", m.group(1), f"{m.group(2)} cards: {m.group(3)}", *lk(), int(m.group(2))))
+            elif " mulliganed down to " in msg:
+                side = msg[0] if msg[:1] in ("A", "B") else ""
+                rows.append((turn, ph, "MULLIGAN", side, msg, *lk(), 1))
+        elif typ == "ZONE_CHANGE" and " was put into " in msg:
+            # every zone move, not only battlefield exits: command zone, hand, library, exile, stack
+            m = re.search(r"was put into (\w+) from (\w+)", msg)
+            nm = names(msg.split(" was put ", 1)[0])[0]
+            dest, src = (m.group(1), m.group(2)) if m else ("?", "?")
+            detail = f"{nm} -> {dest}" if src == "Battlefield" else f"{nm} -> {dest} from {src}"
+            rows.append((turn, ph, "ZONE", "", detail, *lk(), 1))
+    return rows, meta
 
 
 def write_batch(folder, into=None):
@@ -122,6 +159,7 @@ def write_batch(folder, into=None):
         return 0
     prefix = f"{batch}/" if into else ""
     games = []
+    metas = []
     mode = "at" if into else "wt"
     dec_path = os.path.join(outdir, "decisions.tsv.gz")
     games_path = os.path.join(outdir, "games.tsv")
@@ -134,7 +172,11 @@ def write_batch(folder, into=None):
             label = os.path.basename(path)[:-4]
             if label == "INDEX":
                 continue
-            rows = parse_game(path, label)
+            rows, meta = parse_game(path, label)
+            arch, colour = TAGS.get(meta.get("deck_a", ""), ("", ""))
+            meta.setdefault("archetype", arch)
+            meta.setdefault("colour", colour)
+            metas.append([prefix + label] + [meta.get(k, "") for k in META_KEYS])
             cnt = {"A": {"ATTACK": 0, "BLOCK": 0, "CAST": 0}, "B": {"ATTACK": 0, "BLOCK": 0, "CAST": 0}}
             for r in rows:
                 w.writerow([prefix + label, *r])
@@ -152,6 +194,13 @@ def write_batch(folder, into=None):
         if not into or new_games:
             w.writerow(header)
         w.writerows(games)
+    meta_path = os.path.join(outdir, "games_meta.tsv")
+    new_meta = not os.path.exists(meta_path)
+    with open(meta_path, "a" if into else "w", newline="") as f:
+        w = csv.writer(f, delimiter="\t")
+        if not into or new_meta:
+            w.writerow(["game", *META_KEYS])
+        w.writerows(metas)
     if into:
         with open(done_path, "a") as f:
             f.write(batch + "\n")

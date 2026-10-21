@@ -36,10 +36,23 @@ public class BonusSim {
     }
 
     // -Dlogdir=DIR: per game, write DIR/<label>.tsv with the phase log: turn, phase, type, message (same columns as ai_lab/results).
-    static void writePhaseLog(Game game, String dir, String label) {
+    // repo-relative deck name (decks/tier3/T3_W_Mangara.dck) whatever absolute path the caller passed
+    static String rel(String deckPath) {
+        int k = deckPath.indexOf("decks/");
+        return k >= 0 ? deckPath.substring(k) : deckPath;
+    }
+
+    static String tierOf(String deckPath) {
+        java.util.regex.Matcher m = java.util.regex.Pattern.compile("tier(\\d)").matcher(deckPath);
+        return m.find() ? m.group(1) : (deckPath.contains("starter") ? "S" : "?");
+    }
+
+    static void writePhaseLog(Game game, String dir, String label, String meta) {
         if (dir.isEmpty()) return;
         try {
             StringBuilder sb = new StringBuilder();
+            // game header row (011 / digest): deck ids and tier, read by phase_digest.py as type GAME
+            sb.append("0\t\tGAME\t").append(meta).append('\n');
             String phase = ""; int turn = 0;
             java.util.regex.Pattern tp = java.util.regex.Pattern.compile("Turn:? ?(\\d+)|Turn (\\d+)");
             for (forge.game.GameLogEntry e : game.getGameLog().getAllEntries()) {
@@ -49,7 +62,7 @@ public class BonusSim {
                 forge.game.GameLogEntryType ty = e.type();
                 if (ty == forge.game.GameLogEntryType.PHASE || ty == forge.game.GameLogEntryType.TURN || ty == forge.game.GameLogEntryType.COMBAT
                     || ty == forge.game.GameLogEntryType.DAMAGE || ty == forge.game.GameLogEntryType.LIFE || ty == forge.game.GameLogEntryType.ZONE_CHANGE
-                    || ty == forge.game.GameLogEntryType.STACK_ADD)
+                    || ty == forge.game.GameLogEntryType.STACK_ADD || ty == forge.game.GameLogEntryType.MULLIGAN)
                     sb.append(turn).append('\t').append(phase.replace('\t', ' ')).append('\t').append(ty).append('\t').append(msg.replace('\n', ' ').replace('\t', ' ')).append('\n');
             }
             // test-only patch 010: the AI's own decision lines (present only when the sim classpath carries forge.ai.AiDecisionLog)
@@ -133,7 +146,8 @@ public class BonusSim {
             String w = "draw";
             if (o != null && !o.isDraw() && timedOut == 0) w = o.getWinningLobbyPlayer().getName().equals("A") ? "a" : "b";
             int turns = o == null ? 0 : o.getLastTurnNumber();
-            writePhaseLog(game, System.getProperty("logdir", ""), label);
+            String meta = "deck_a=" + rel(a[i]) + " deck_b=" + rel(a[i + 3]) + " tier=" + tierOf(a[i]) + "/" + tierOf(a[i + 3]) + " ";
+            writePhaseLog(game, System.getProperty("logdir", ""), label, meta);
             System.out.printf("GAME\t%s\t%s\t%s\t%d\t%d%n", label, aFirst ? "a" : "b", w, turns, timedOut);
             System.out.flush();
         }

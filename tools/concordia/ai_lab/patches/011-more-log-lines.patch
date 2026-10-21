@@ -1,0 +1,34 @@
+diff --git a/forge-ai/src/main/java/forge/ai/ComputerUtilMana.java b/forge-ai/src/main/java/forge/ai/ComputerUtilMana.java
+index a9bc4f08..574abb81 100644
+--- a/forge-ai/src/main/java/forge/ai/ComputerUtilMana.java
++++ b/forge-ai/src/main/java/forge/ai/ComputerUtilMana.java
+@@ -722,6 +722,11 @@ public class ComputerUtilMana {
+             }
+ 
+             SpellAbility saPayment = saList.isEmpty() ? null : chooseManaAbility(cost, sa, ai, toPay, saList, checkPlayable || !test);
++            if (AiDecisionLog.enabled() && !test && saPayment != null) {
++                // log-only (patch 011): which source paid for which spell (actual payments, not test passes)
++                AiDecisionLog.add("MANA_SOURCE " + ai.getName() + " turn=" + ai.getGame().getPhaseHandler().getTurn() + " shard=" + toPay
++                        + " source=" + saPayment.getHostCard().getName() + " for=" + sa.getHostCard().getName());
++            }
+ 
+             if (saPayment != null && ComputerUtilCost.isSacrificeSelfCost(saPayment.getPayCosts()) && sa.isTargeting(saPayment.getHostCard())) {
+                 // not a good idea to sac a card that you're targeting with the SA you're paying for
+diff --git a/forge-game/src/main/java/forge/game/mulligan/AbstractMulligan.java b/forge-game/src/main/java/forge/game/mulligan/AbstractMulligan.java
+index 4f50baee..0abc05c1 100644
+--- a/forge-game/src/main/java/forge/game/mulligan/AbstractMulligan.java
++++ b/forge-game/src/main/java/forge/game/mulligan/AbstractMulligan.java
+@@ -62,6 +62,11 @@ public abstract class AbstractMulligan {
+     }
+ 
+     public void afterMulligan() {
+-        player.getGame().fireEvent(new GameEventAddLog(GameLogEntryType.MULLIGAN, Localizer.getInstance().getMessage("lblPlayerKeepNCardsHand", player.getName(), String.valueOf(player.getZone(ZoneType.Hand).size()))));
++        // log-only (patch 011): the kept hand's card names, so the digest can read opening hands
++        StringBuilder hand = new StringBuilder();
++        for (Card c : player.getZone(ZoneType.Hand).getCards()) {
++            hand.append(hand.length() > 0 ? "; " : "").append(c.getName());
++        }
++        player.getGame().fireEvent(new GameEventAddLog(GameLogEntryType.MULLIGAN, Localizer.getInstance().getMessage("lblPlayerKeepNCardsHand", player.getName(), String.valueOf(player.getZone(ZoneType.Hand).size())) + " hand: " + hand));
+     }
+ }
+\ No newline at end of file

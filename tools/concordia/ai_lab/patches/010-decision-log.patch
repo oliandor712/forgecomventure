@@ -1,5 +1,5 @@
 diff --git a/forge-ai/src/main/java/forge/ai/AiAttackController.java b/forge-ai/src/main/java/forge/ai/AiAttackController.java
-index bfc470fc99a..269cf91106b 100644
+index bfc470fc..269cf911 100644
 --- a/forge-ai/src/main/java/forge/ai/AiAttackController.java
 +++ b/forge-ai/src/main/java/forge/ai/AiAttackController.java
 @@ -1257,6 +1257,9 @@ public class AiAttackController {
@@ -13,7 +13,7 @@ index bfc470fc99a..269cf91106b 100644
              // totals and other considerations some bad "magic numbers" here
              // TODO replace with nice descriptive variable names
 diff --git a/forge-ai/src/main/java/forge/ai/AiBlockController.java b/forge-ai/src/main/java/forge/ai/AiBlockController.java
-index 8b145f0a763..9c1fa62c980 100644
+index 8b145f0a..9c1fa62c 100644
 --- a/forge-ai/src/main/java/forge/ai/AiBlockController.java
 +++ b/forge-ai/src/main/java/forge/ai/AiBlockController.java
 @@ -1113,6 +1113,9 @@ public class AiBlockController {
@@ -27,31 +27,29 @@ index 8b145f0a763..9c1fa62c980 100644
              return;
          }
 diff --git a/forge-ai/src/main/java/forge/ai/AiController.java b/forge-ai/src/main/java/forge/ai/AiController.java
-index 2e6e88f6c9c..daf63db64bf 100644
+index 2e6e88f6..4ea43275 100644
 --- a/forge-ai/src/main/java/forge/ai/AiController.java
 +++ b/forge-ai/src/main/java/forge/ai/AiController.java
-@@ -1669,6 +1669,15 @@ public class AiController {
+@@ -1669,6 +1669,13 @@ public class AiController {
          if (all == null || all.isEmpty())
              return null;
  
-+        if (AiDecisionLog.enabled()) {
++        if (AiDecisionLog.enabled() && AiDecisionLog.firstThisTurn(player, player.getGame().getPhaseHandler().getTurn())) {
++            // once per turn per player: the top candidate only (candidate scores are not exposed here)
 +            List<SpellAbility> top = new ArrayList<>(all);
 +            top.sort(ComputerUtilAbility.saEvaluator);
-+            StringBuilder names = new StringBuilder();
-+            for (int i = 0; i < Math.min(3, top.size()); i++) {
-+                names.append(i > 0 ? "|" : "").append(top.get(i).getHostCard() == null ? "?" : top.get(i).getHostCard().getName());
-+            }
-+            AiDecisionLog.add("SPELL_CHOICE\t" + player.getName() + "\tturn=" + player.getGame().getPhaseHandler().getTurn() + "\tcandidates=" + all.size() + "\ttop=" + names);
++            AiDecisionLog.add("SPELL_CHOICE " + player.getName() + " turn=" + player.getGame().getPhaseHandler().getTurn()
++                    + " candidates=" + all.size() + " top=" + (top.get(0).getHostCard() == null ? "?" : top.get(0).getHostCard().getName()));
 +        }
          try {
              all.sort(ComputerUtilAbility.saEvaluator); // put best spells first
              ComputerUtilAbility.sortCreatureSpells(all);
 diff --git a/forge-ai/src/main/java/forge/ai/AiDecisionLog.java b/forge-ai/src/main/java/forge/ai/AiDecisionLog.java
 new file mode 100644
-index 00000000000..2042c63e80f
+index 00000000..e90c5609
 --- /dev/null
 +++ b/forge-ai/src/main/java/forge/ai/AiDecisionLog.java
-@@ -0,0 +1,27 @@
+@@ -0,0 +1,35 @@
 +package forge.ai;
 +
 +import java.util.ArrayList;
@@ -70,6 +68,14 @@ index 00000000000..2042c63e80f
 +
 +    public static synchronized void add(final String entry) {
 +        ENTRIES.add(entry);
++    }
++
++    private static final java.util.Map<String, Integer> LAST_TURN = new java.util.HashMap<>();
++
++    /** True the first time this player is asked in this turn; keeps SPELL_CHOICE to one line per player per turn. */
++    public static synchronized boolean firstThisTurn(final forge.game.player.Player p, final int turn) {
++        Integer last = LAST_TURN.put(p.getName(), turn);
++        return last == null || last != turn;
 +    }
 +
 +    /** Returns and clears the entries recorded since the last call. */
