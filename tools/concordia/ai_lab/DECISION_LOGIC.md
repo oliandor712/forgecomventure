@@ -348,3 +348,6 @@ Still missing: the chosen aggression level (patch 012), block and attack reasons
 - **Mana and cast timing:** non-basic sources 29% n=8,210 (white 17% n=688, control 38% n=1,791). Mean cast turn 12.9 over 2,402 casts; white 10.1 (n=202 casts), multicolour 13.2, control 14.0.
 - **Commander and triggers:** 11 command-zone moves in 120 games (still too few); 2,510 triggers.
 - Nothing here changes `OPTIONS_FOR_BALANCERS.md`.
+
+## Deck-building tags and human logic (2026-10-21)
+The deck builder's ability-led tags (`tools/concordia/deckgen/ability_tags.py`, `ABILITY_TAGS.toon`) and archetype rules (`tools/concordia/archetype_rules.py`, `tier1_rules.py`) do not reach the in-game AI. The only deck-level input is `PlayerControllerAi.setupAutoProfile` (name contains "Control" or average CMC > 3). Human-logic rules H31-H49 are builder rules; their AI counterparts and the gap list are in `DECK_LOGIC_TO_AI_DECISIONS.md`. Proposals DL-1 to DL-5 are unticked in `AI_CHANGES_APPROVAL.md`.
