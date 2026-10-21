@@ -13,3 +13,13 @@ Backup of the card scripts before the change: `tools/concordia/backups/2026-10-2
 Approval: `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md`, entries 002 and 003 (ticked by the user in chat 2026-10-21).
 
 Note: a broad text search also matches "Boseiju, Who Endures" in 26 decks. That is a different card and is not an unflagged card.
+
+## Pool check (pool.py, 2026-10-21, after mined.json was committed)
+
+| Card | In pool | Types | MV | Tags | Popularity | Precon | Best-rarity power |
+|---|---|---|---|---|---|---|---|
+| Thwart the Enemy | yes | Instant | 3 | none | 0 | 0.0 | C 11.8 |
+| Vine Snare | yes | Instant | 3 | none | 0 | 0.0 | C 10.2 |
+| Endure | yes | Instant | 5 | none | 0 | 0.0 | U 6.7 |
+
+Popularity 0 and no tags: none of the three appears in mined.json (the mined decklists), in the external decklists, or in a precon. Tags empty (cause not checked). Endure is listed at uncommon only, as printed.
