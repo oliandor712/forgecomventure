@@ -41,3 +41,5 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:31:23Z,1a6eac0bb60,bonus,1,decks/tier1/T1_U_Iron.dck,decks/starter/B_Starter_Alt.dck,10,10,,,b,b,17,0
 2026-10-21T02:31:45Z,1a6eac0bb60,inner,3,decks/tier3/T3_BRG_Kresh.dck,decks/tier3/T3_WUB_Yshtola.dck,25,25,,,a,a,15,0
 2026-10-21T02:31:45Z,1a6eac0bb60,inner,3,decks/tier3/T3_BRG_Kresh.dck,decks/tier3/T3_WUB_Yshtola.dck,25,25,,,b,b,21,0
+2026-10-21T02:32:06Z,1a6eac0bb60,inner,2,decks/tier2/T2_WR_Tori.dck,decks/tier2/T2_RG_Strider.dck,15,15,,,a,a,9,0
+2026-10-21T02:32:06Z,1a6eac0bb60,inner,2,decks/tier2/T2_WR_Tori.dck,decks/tier2/T2_RG_Strider.dck,15,15,,,b,b,13,0
