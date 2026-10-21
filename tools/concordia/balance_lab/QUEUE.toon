@@ -12,12 +12,12 @@ queue[410|]{deck|games_done|target|color|tier|archetype}:
   decks/starter/W_Starter_Normal.dck|24|40|W|S|starter
   decks/tier1/T1_B_Arnyn.dck|6|25|B|1|aggro
   decks/tier1/T1_B_Butch.dck|6|25|B|1|aggro
-  decks/tier1/T1_B_Falthis.dck|4|25|B|1|aggro
+  decks/tier1/T1_B_Falthis.dck|6|25|B|1|aggro
   decks/tier1/T1_B_Gallia.dck|12|25|B|1|aggro
   decks/tier1/T1_B_Gonti.dck|4|25|B|1|aggro
   decks/tier1/T1_B_Grma.dck|4|25|B|1|aggro
   decks/tier1/T1_B_Hammerhead.dck|8|25|B|1|aggro
-  decks/tier1/T1_B_Keskit.dck|2|25|B|1|aggro
+  decks/tier1/T1_B_Keskit.dck|4|25|B|1|aggro
   decks/tier1/T1_B_Moonstone.dck|6|25|B|1|aggro
   decks/tier1/T1_B_Ozox.dck|4|25|B|1|aggro
   decks/tier1/T1_B_Sivriss.dck|8|25|B|1|aggro
@@ -100,12 +100,12 @@ queue[410|]{deck|games_done|target|color|tier|archetype}:
   decks/tier2/T2_B_Gollum.dck|8|25|B|2|midrange
   decks/tier2/T2_B_Loot.dck|12|25|B|2|midrange
   decks/tier2/T2_B_Mari.dck|8|25|B|2|midrange
-  decks/tier2/T2_B_MarrowGnawer.dck|10|25|B|2|midrange
+  decks/tier2/T2_B_MarrowGnawer.dck|12|25|B|2|midrange
   decks/tier2/T2_B_Rev.dck|10|25|B|2|midrange
   decks/tier2/T2_B_Sarevok.dck|12|25|B|2|midrange
   decks/tier2/T2_B_Sengir.dck|12|25|B|2|midrange
   decks/tier2/T2_B_Syr.dck|6|25|B|2|midrange
-  decks/tier2/T2_B_Vito.dck|10|25|B|2|midrange
+  decks/tier2/T2_B_Vito.dck|12|25|B|2|midrange
   decks/tier2/T2_G_Arasta.dck|4|25|G|2|midrange
   decks/tier2/T2_G_Arwen.dck|4|25|G|2|midrange
   decks/tier2/T2_G_Jaheira.dck|2|25|G|2|aggro
@@ -177,13 +177,13 @@ queue[410|]{deck|games_done|target|color|tier|archetype}:
   decks/tier3/T3_BR_Exava.dck|8|25|BR|3|ramp
   decks/tier3/T3_BR_Kardur.dck|2|25|BR|3|ramp
   decks/tier3/T3_B_Anrakyr.dck|4|25|B|3|ramp
-  decks/tier3/T3_B_Chainer.dck|2|25|B|3|ramp
+  decks/tier3/T3_B_Chainer.dck|4|25|B|3|ramp
   decks/tier3/T3_B_Fang.dck|4|25|B|3|midrange
   decks/tier3/T3_B_Hythonia.dck|6|25|B|3|midrange
   decks/tier3/T3_B_Imotekh.dck|12|25|B|3|ramp
   decks/tier3/T3_B_Roshan.dck|4|25|B|3|ramp
   decks/tier3/T3_B_Shirei.dck|4|25|B|3|ramp
-  decks/tier3/T3_B_Shredder.dck|4|25|B|3|ramp
+  decks/tier3/T3_B_Shredder.dck|6|25|B|3|ramp
   decks/tier3/T3_B_XuIfit.dck|4|25|B|3|ramp
   decks/tier3/T3_B_Yargle.dck|4|25|B|3|ramp
   decks/tier3/T3_GW_Sigarda.dck|6|25|GW|3|midrange
