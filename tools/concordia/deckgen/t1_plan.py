@@ -44,7 +44,7 @@ def main():
     cands = {w: [] for w in "WUBRG"}
     for k, c in pool.items():
         ty = c["types"].split()
-        if "Legendary" not in ty or "Creature" not in ty or len(c["id"]) != 1 or not (2 <= c["cmc"] <= 4): continue
+        if "Legendary" not in ty or "Creature" not in ty or len(c["id"]) != 1: continue
         if not (set(c["best"]) & {"C", "U"}) or k in taken or c["gc"] or c["mld"]: continue
         col = next(iter(c["id"]))
         prof = cs.profile(c["oracle"], c["types"], c["name"])

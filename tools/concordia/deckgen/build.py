@@ -98,8 +98,7 @@ def human_pass1(d, ident, rules):
     return {'target': t1.POWER['target'] if 'H08' in rules else T1_TARGET,  # H08: tier 1 power 16-18
             'bonus': d.get('_boost', {}).get('bonus', 1.0),  # ability_tags weight; raised once on a retry
             'cwin': creature_band(d) if 'H11' in rules and d['tier'] == 1 else None,  # H11 wins: the band from archetype_rules.creature_check
-            'spells': 'H12' in rules and 'U' in ident,  # H12: a blue deck carries spells, so fewer creatures
-            'uncommon': 'H09' in rules and d['tier'] == 1}  # H09: tier 1 staples only in uncommon printings
+            'spells': 'H12' in rules and 'U' in ident}  # H12: a blue deck carries spells, so fewer creatures
 
 def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     """Pass 2, after the deck is built and its lands are sized: check the finished deck against each rule.
@@ -111,8 +110,9 @@ def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     isor = sum(1 for p, _ in chosen if {'Instant', 'Sorcery'} & set(p['types'].split()))
     check('H06', True, 'every card from the pool (existing assets only)')
     check('H08', 16 <= power <= 18, 'tier 1 power %.1f (16-18)' % power, d['tier'] == 1)
-    bad = [p['name'] for p, r in chosen if p.get('cat') == 'staple' and r != 'U']
-    check('H09', not bad, 'staples outside uncommon printings: %s' % (', '.join(bad) or 'none'))
+    printings = t1.STAPLE_PRINTINGS if d['tier'] == 1 else ('U',)  # H09: tier 1 commons or uncommons; other tiers uncommon only
+    bad = [p['name'] for p, r in chosen if p.get('cat') == 'staple' and r not in printings]
+    check('H09', not bad, 'staples outside %s printings: %s' % ('/'.join(printings), ', '.join(bad) or 'none'))
     budget = {k.lower() for k in BUDGET} | {k.lower() for k in ROCKS}
     check('H10', any(p['name'].lower() in budget for p, _ in chosen + lands), 'budget lands or rocks present')
     band = creature_band(d)
@@ -303,7 +303,6 @@ def build(d):
             rc = rclass(p)
             if rc is None or ('creature' in (rclasses | rc) and len(rclasses | rc) > 1): return None
         r = pick_rarity(p, tier, rcount, spec)
-        if p1['uncommon'] and p.get('cat') == 'staple' and r != 'U': return None  # H09: tier 1 staples only as uncommon
         return r
     def add(p, r):
         nonlocal ncreat, ngc, nwatch

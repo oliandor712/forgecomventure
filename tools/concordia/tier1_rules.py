@@ -11,7 +11,7 @@ DECK = {
     "watch": 0,
     "staples": (2, 15),
     "commander_rarity": {"C", "U"},
-    "commander_mv": (2, 4),
+    "commander_mv": (None, None),  # was (2, 4): tier 1 commanders have no mana value requirement (user, 2026-10-21)
     "lands": (41, 42),  # was (40, 46): lands are decided last from the curve
     "ramp": (0, 3), "fast": (0, 0), "draw": (0, 3), "removal": (0, 3), "wipe": (0, 0), "tutor": (0, 0),
     "avg_mv": (2.5, 3.4),
@@ -61,5 +61,6 @@ BUILD_SPEC = {
 STAPLE_BONUS = -4
 UNCOMMON_STAPLE_BONUS = 6
 WATCH_CAP = 0
+STAPLE_PRINTINGS = ("C", "U")  # tier 1 staples: commons or uncommons, no rares or mythics (user, 2026-10-21; was uncommon only)
 BUDGET_LANDS = 3
 BUDGET_ROCKS = 2
