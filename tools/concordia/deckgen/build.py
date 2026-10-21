@@ -13,10 +13,33 @@ import sys, os, re, json, pickle, collections, math
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 import deck_tier as dt
+import archetype_rules as ar  # archetype windows and sub-archetype classification (tools/concordia)
+import ability_tags as at  # ability-led tags and the deck-building bonus (deckgen)
 data = dt.build_cache(); cfg = json.load(open(dt.CONFIG))
 pool = pickle.load(open(os.path.join(HERE, 'pool.pkl'), 'rb'))
 RES = dt.RES
 OUT = os.path.join(RES, 'adventure', 'Concordia', 'decks')
+LAND_CLAMP = {1: (41, 42)}  # land step only: tier 1 decks keep 41-42 lands (user, 2026-10-21); other tiers use archetype_rules.LAND_RANGE
+ABILITY = {}  # card name -> ability tags, computed once per card (ability_tags.tags_of)
+def ability_tags(p):
+    if p['name'] not in ABILITY: ABILITY[p['name']] = at.tags_of(at.card_text(p['name']))
+    return ABILITY[p['name']]
+def card_traits(p):
+    """Deck traits one card adds (counted per deck as it fills; ability_tags.bonus reads them)."""
+    t, ox, tags = p['types'].split(), p['oracle'], ability_tags(p)
+    out = []
+    if re.search(r'\bflying\b', ox, re.I): out.append('flying')
+    if re.search(r'\b(menace|unblockable|fear|intimidate|shadow)\b', ox, re.I): out.append('evasion')
+    if 'token_make' in tags: out.append('tokens')
+    if tags & {'counters_plus', 'proliferate'}: out.append('counters')
+    if tags & {'reanimate', 'recursion'}: out.append('reanimation')
+    if 'Creature' in t and p['pt'] and p['pt'][0].isdigit() and int(p['pt'][0]) >= 4: out.append('high_power')
+    if p['cmc'] >= 5: out.append('high_curve')
+    if 'Legendary' in t: out.append('legendary')
+    for kind, trait in (('Artifact', 'artifacts'), ('Enchantment', 'enchantments'), ('Instant', 'instants'), ('Creature', 'creatures')):
+        if kind in t: out.append(trait)
+    if 'sacrifice_outlet' in tags: out.append('sacrifice')
+    return out
 BASIC = {'W': 'Plains', 'U': 'Island', 'B': 'Swamp', 'R': 'Mountain', 'G': 'Forest'}
 SPEC = {
  1: dict(lands=42, quota={'removal': 2, 'draw': 1, 'ramp': 1}, cap={'ramp': 2, 'draw': 2, 'removal': 3, 'wipe': 0, 'tutor': 0, 'fast': 0},
@@ -95,6 +118,15 @@ def build(d):
     tier = d['tier']; spec = json.loads(json.dumps(SPEC[tier])); spec.update(d.get('spec', {}))  # per-deck overrides (e.g. a spells deck)
     spec['curve'] = {int(k): v for k, v in spec['curve'].items()}
     ident = frozenset(d['colors'])
+    arch, sub, reach = d.get('archetype'), d.get('sub'), d.get('reach', 2)
+    if arch:  # archetype windows (archetype_rules.py): creature window, instant+sorcery and enchantment quotas
+        lo, hi, isx, ench, _ = ar.windows(tier, arch, sub, reach)
+        spec['creatures'], spec['cmax'] = lo, hi
+        spec['types'] = {k: v for k, v in spec['types'].items() if k not in ('Instant', 'Sorcery', 'Enchantment')}
+        spec['types']['Instant|Sorcery'] = isx
+        spec['types']['Enchantment'] = ench
+    mono = len(ident) == 1; colours = ''.join(sorted(ident))
+    traits = collections.Counter()
     cmd = pool[d['commander'].lower()]
     # external seeds (deckgen/external/seeds, not committed) are skipped when missing; the deck then builds unseeded
     seed = set(parse(os.path.join(RES, d['seed']))) if d.get('seed') and os.path.exists(os.path.join(RES, d['seed'])) else set()
@@ -118,6 +150,7 @@ def build(d):
         s += PRECON_BONUS.get(tier, 0) * min(1.0, p.get('precon', 0.0) / 0.25)
         if theme_match(p, theme): s += 12
         if p['name'].lower() in seed: s += d.get('seed_bonus', 25) if tier > 1 else 0
+        if arch: s += at.bonus(ability_tags(p), arch, sub, traits, mono, colours)  # ability-led tags (ability_tags.py)
         return s
     cands = []
     for k, p in pool.items():
@@ -148,6 +181,7 @@ def build(d):
         if 'Creature' in p['types']: ncreat += 1
         if p['gc']: ngc += 1
         if p.get('cat') == 'watch': nwatch += 1
+        traits.update(card_traits(p))
         cands.remove(p)
     def best(filt):
         bestp = None
@@ -169,7 +203,8 @@ def build(d):
             add(p, 'U' if 'U' in p['best'] and r != 'U' and rcount['U'] < spec['rar'].get('U', 0) else r); nrock += 1
     for role in spec['quota']:
         while roles[role] < spec['quota'][role] and len(chosen) < nonland:
-            b = best(lambda p: p['tags'] & ROLE[role])
+            b = best(lambda p: p['tags'] & ROLE[role] and 'Artifact' in p['types'].split() and p['cmc'] <= 2) if arch and role in ('removal', 'draw', 'ramp') else None
+            b = b or best(lambda p: p['tags'] & ROLE[role])  # cheap artifacts are tried first as alternates (archetype decks)
             if not b: break
             add(b[1], b[2])
     def ntype(alts): return sum(1 for p, _ in chosen if any(a in p['types'].split() for a in alts.split('|')))
@@ -188,6 +223,20 @@ def build(d):
             for k in spec['curve']: spec['curve'][k] += 1
             continue
         add(b[1], b[2])
+    # lands last: about 4 lands per 1.0 of average mana value above the tier's reference curve, minus 1 per 2 mana
+    # creatures or rocks, clamped to LAND_RANGE; then add or trim the lowest-scoring nonland cards to match
+    avg = sum(p['cmc'] for p, _ in chosen) / max(1, len(chosen))
+    ref = sum(k * v for k, v in SPEC[tier]['curve'].items()) / sum(SPEC[tier]['curve'].values())
+    mana = sum(1 for p, _ in chosen if p['tags'] & {'ramp', 'fast'})
+    lo_land, hi_land = LAND_CLAMP.get(tier, ar.LAND_RANGE[tier])
+    total = min(max(round(spec['lands'] + 4 * (avg - ref) - mana / 2), lo_land), hi_land)
+    while len(chosen) < 99 - total:
+        b = best(lambda p: ncreat < spec['cmax'] or 'Creature' not in p['types'])
+        if not b: break
+        add(b[1], b[2])
+    if len(chosen) > 99 - total:
+        gone = {id(p) for p, _ in sorted(chosen, key=lambda pr: score(*pr))[: len(chosen) - (99 - total)]}
+        chosen[:] = [pr for pr in chosen if id(pr[0]) not in gone]
     # lands
     lands = []
     nb = d.get('nonbasic', [])
@@ -212,7 +261,7 @@ def build(d):
         nb = nb[: BUDGET_LANDS[tier] + (1 if tier == 2 else 0)]
     lands = [(pool[n.lower()], pick_rarity(pool[n.lower()], tier, rcount, spec) or pool[n.lower()]['minr']) for n in nb]
     for _, r in lands: rcount[r] += 1
-    nbasic = spec['lands'] - len(lands)
+    nbasic = total - len(lands)
     cols = [c for c in 'WUBRG' if c in ident]
     # basics split by colour pips among chosen cards
     pips = collections.Counter()
@@ -224,6 +273,8 @@ def build(d):
     for i, c in enumerate(cols):
         n = left if i == len(cols) - 1 else round(nbasic * pips[c] / tot)
         basics[c] = n; left -= n
+    d['_info'] = dict(total_lands=total, traits=dict(traits), archetype=arch, sub=sub, window=(spec['creatures'], spec['cmax'], spec['types'].get('Instant|Sorcery', 0), spec['types'].get('Enchantment', 0)),
+                      mean_bonus=(sum(at.bonus(ability_tags(p), arch, sub, traits, mono, colours) for p, _ in chosen) / max(1, len(chosen))) if arch else None)
     return cmd, chosen, lands, basics
 
 def write(d, cmd, chosen, lands, basics):
@@ -241,11 +292,38 @@ def write(d, cmd, chosen, lands, basics):
     open(path, 'w').write('\n'.join(L) + '\n')
     return path
 
+def summary(d, cmd, chosen, lands, basics):
+    """One dry-run line: creatures, instants+sorceries, enchantments, lands and power against the tier band."""
+    cr = sum(1 for p, _ in chosen if 'Creature' in p['types'].split())
+    isor = sum(1 for p, _ in chosen if {'Instant', 'Sorcery'} & set(p['types'].split()))
+    ench = sum(1 for p, _ in chosen if 'Enchantment' in p['types'].split())
+    nland = len(lands) + sum(basics.values())
+    return cr, isor, ench, nland
+
 if __name__ == '__main__':
-    decks = json.load(open(sys.argv[1]))
-    only = sys.argv[2:] 
+    DRY = '--dry' in sys.argv
+    CLASSIFY = '--classify' in sys.argv  # dry run: take archetype, sub and reach from each committed deck (archetype_rules.classify)
+    VARIANTS = '--variants' in sys.argv  # dry run: also build the variant decks in variants.json (not in decks.json)
+    argv = [a for a in sys.argv if a not in ('--dry', '--classify', '--variants')]
+    REAL_OUT = OUT
+    dry_rows = []
+    if DRY:
+        OUT = os.path.join(os.environ.get('BUILD_DRY_DIR', '/tmp/claude-0/-home-user-forgecomventure/00de60c9-7439-58b4-9ebf-e9518a668b3a/scratchpad/build_dry'), 'decks')
+        os.makedirs(OUT, exist_ok=True)
+        print('dry run: writing to %s (decks/ untouched)' % OUT)
+    decks = json.load(open(argv[1]))
+    only = argv[2:]
+    if VARIANTS:
+        have = {x['file'] for x in decks}
+        for v in json.load(open(os.path.join(HERE, 'variants.json'))):
+            if v['file'] not in have and (not only or v['file'] in only):
+                base = next((x for x in decks if x['file'] == v['variant_of']), {})  # a variant keeps its base deck's theme
+                decks.append(dict(v, name=v['file'][:-4], desc='variant of ' + v['variant_of'], theme=base.get('theme', [])))
     for d in decks:
         if only and d['file'] not in only: continue
+        if CLASSIFY and not d.get('archetype'):
+            c = ar.classify(os.path.join(REAL_OUT, 'tier%d' % d['tier'], d['file']), d['tier'])
+            d['archetype'], d['sub'], d['reach'] = c['archetype'], c['sub'], c['reach']
         for attempt in range(6):
             cmd, chosen, lands, basics = build(d)
             path = write(d, cmd, chosen, lands, basics)
@@ -266,3 +344,30 @@ if __name__ == '__main__':
         print('%-28s T%d pow %.1f lands %d cr %d ramp %d draw %d rem %d wipe %d mv %.2f rar %s' % (d['file'], d['tier'], r['power'], r['lands'], r['creatures'], r['ramp'], r['draw'], r['removal'], r['wipe'], r['avg_mv'], r['rarity']))
         for f in fails: print('    FAIL', f)
         for w in warns: print('    WARN', w)
+        if DRY:
+            info = d['_info']
+            cr_n, isor, ench, nland = summary(d, cmd, chosen, lands, basics)
+            lo, hi = {1: (FLOOR[1], 19), 2: (19, 31), 3: (27, 38), 4: (34, 42), 5: (39, 99)}[d['tier']]
+            band = 'in' if lo <= r['power'] <= hi else 'OUT'
+            why = []
+            if d.get('archetype'):
+                clo, chi, isx_min, ench_min = info['window']
+                if not clo <= cr_n <= chi: why.append('creatures %d not in %d-%d' % (cr_n, clo, chi))
+                if isor < isx_min: why.append('inst+sorc %d<%d' % (isor, isx_min))
+                if ench < ench_min: why.append('ench %d<%d' % (ench, ench_min))
+            reached = not why and d.get('archetype') is not None
+            dry_rows.append((d['file'], d.get('archetype') or '-', d.get('sub') or '-', info['mean_bonus'], band, reached, r['power'], why))
+            print('    DRY %s %s/%s creatures %d inst+sorc %d ench %d lands %d power %.1f band %s bonus %s %s' % (
+                d['file'], d.get('archetype') or '-', d.get('sub') or '-', cr_n, isor, ench, nland, r['power'], band,
+                '-' if info['mean_bonus'] is None else '%.2f' % info['mean_bonus'], '; '.join(why)))
+    if DRY and dry_rows:
+        n_in = sum(1 for row in dry_rows if row[4] == 'in')
+        n_win = sum(1 for row in dry_rows if row[5])
+        print('dry summary: %d decks; reach window %d; power in band %d; in both %d' % (len(dry_rows), n_win, n_in, sum(1 for row in dry_rows if row[5] and row[4] == 'in')))
+        print('mean tag bonus of chosen nonland cards per archetype:')
+        for a in sorted(set(row[1] for row in dry_rows)):
+            vals = [row[3] for row in dry_rows if row[1] == a and row[3] is not None]
+            if vals: print('  %s %.2f (%d decks)' % (a, sum(vals) / len(vals), len(vals)))
+        print('decks outside the window or band:')
+        for row in dry_rows:
+            if not (row[5] and row[4] == 'in'): print('  %s %s/%s power %.1f %s' % (row[0], row[1], row[2], row[6], '; '.join(row[7]) or ('band ' + row[4])))
