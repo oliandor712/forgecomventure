@@ -102,7 +102,7 @@ for b, s, p1, p0, df, ci, t1, t0 in sorted(res, key=lambda x: -x[4]):
 L += ["", "(a set = 2 games with the bonus + 2 without, seats swapped. Differences use a normal approximation, so +/-0 at 0% or 100% means too few games. Each bonus has only a few games so far; the intervals are wide.)", ""]
 heavy = [x for x in res if x[4] >= .25]
 small = [x for x in res if abs(x[4]) < .25]
-STARTER_TUNE = "90b337c5"  # starters tuned to deck power 27; earlier starter games are old starters
+STARTER_TUNE = "5439eb01"  # starters reworked (Squee, Barrin and Breeches alts): earlier starter games are old starters
 _st = {}
 
 
