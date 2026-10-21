@@ -1,5 +1,5 @@
 diff --git a/forge-ai/src/main/java/forge/ai/AiAttackController.java b/forge-ai/src/main/java/forge/ai/AiAttackController.java
-index bfc470fc99a..153e550aa11 100644
+index bfc470fc99a..269cf91106b 100644
 --- a/forge-ai/src/main/java/forge/ai/AiAttackController.java
 +++ b/forge-ai/src/main/java/forge/ai/AiAttackController.java
 @@ -1257,6 +1257,9 @@ public class AiAttackController {
@@ -7,13 +7,13 @@ index bfc470fc99a..153e550aa11 100644
              // *****************
  
 +            if (AiDecisionLog.enabled()) {
-+                AiDecisionLog.add("ATTACK_LEVEL\t" + ai.getName() + "\tratioDiff=" + String.format("%.2f", ratioDiff) + "\toutNumber=" + outNumber + "\tattackers=" + this.attackers.size());
++                AiDecisionLog.add("ATTACK_LEVEL\t" + ai.getName() + "\tturn=" + ai.getGame().getPhaseHandler().getTurn() + "\tratioDiff=" + String.format("%.2f", ratioDiff) + "\toutNumber=" + outNumber + "\tattackers=" + this.attackers.size());
 +            }
              // decide on attack aggression based on a comparison of forces, life
              // totals and other considerations some bad "magic numbers" here
              // TODO replace with nice descriptive variable names
 diff --git a/forge-ai/src/main/java/forge/ai/AiBlockController.java b/forge-ai/src/main/java/forge/ai/AiBlockController.java
-index 8b145f0a763..9b78423b113 100644
+index 8b145f0a763..9c1fa62c980 100644
 --- a/forge-ai/src/main/java/forge/ai/AiBlockController.java
 +++ b/forge-ai/src/main/java/forge/ai/AiBlockController.java
 @@ -1113,6 +1113,9 @@ public class AiBlockController {
@@ -21,13 +21,13 @@ index 8b145f0a763..9b78423b113 100644
       */
      private void assignBlockers(final Combat combat, List<Card> possibleBlockers) {
 +        if (AiDecisionLog.enabled()) {
-+            AiDecisionLog.add("BLOCK_START\t" + ai.getName() + "\tlife=" + ai.getLife() + "\tattackers=" + attackers.size() + "\tblockers=" + blockersLeft.size());
++            AiDecisionLog.add("BLOCK_START\t" + ai.getName() + "\tturn=" + ai.getGame().getPhaseHandler().getTurn() + "\tlife=" + ai.getLife() + "\tattackers=" + attackers.size() + "\tblockers=" + blockersLeft.size());
 +        }
          if (attackers.isEmpty()) {
              return;
          }
 diff --git a/forge-ai/src/main/java/forge/ai/AiController.java b/forge-ai/src/main/java/forge/ai/AiController.java
-index 2e6e88f6c9c..6f710e3a434 100644
+index 2e6e88f6c9c..daf63db64bf 100644
 --- a/forge-ai/src/main/java/forge/ai/AiController.java
 +++ b/forge-ai/src/main/java/forge/ai/AiController.java
 @@ -1669,6 +1669,15 @@ public class AiController {
@@ -41,7 +41,7 @@ index 2e6e88f6c9c..6f710e3a434 100644
 +            for (int i = 0; i < Math.min(3, top.size()); i++) {
 +                names.append(i > 0 ? "|" : "").append(top.get(i).getHostCard() == null ? "?" : top.get(i).getHostCard().getName());
 +            }
-+            AiDecisionLog.add("SPELL_CHOICE\t" + player.getName() + "\tcandidates=" + all.size() + "\ttop=" + names);
++            AiDecisionLog.add("SPELL_CHOICE\t" + player.getName() + "\tturn=" + player.getGame().getPhaseHandler().getTurn() + "\tcandidates=" + all.size() + "\ttop=" + names);
 +        }
          try {
              all.sort(ComputerUtilAbility.saEvaluator); // put best spells first
