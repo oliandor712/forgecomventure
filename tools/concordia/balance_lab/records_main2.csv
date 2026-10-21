@@ -27,3 +27,11 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:25:09Z,a2f67786,bonus,2,decks/tier2/T2_W_Boromir.dck,decks/starter/W_Starter_Normal.dck,15,15,arena,,b,a,26,0
 2026-10-21T02:25:09Z,a2f67786,bonus,2,decks/tier2/T2_W_Boromir.dck,decks/starter/W_Starter_Normal.dck,15,15,,,a,b,22,0
 2026-10-21T02:25:09Z,a2f67786,bonus,2,decks/tier2/T2_W_Boromir.dck,decks/starter/W_Starter_Normal.dck,15,15,,,b,b,21,0
+2026-10-21T02:26:07Z,a2f67786,bonus,1,decks/tier1/T1_G_Jiang.dck,decks/starter/W_Starter_Normal.dck,10,10,onedrop,,a,a,7,0
+2026-10-21T02:26:07Z,a2f67786,bonus,1,decks/tier1/T1_G_Jiang.dck,decks/starter/W_Starter_Normal.dck,10,10,onedrop,,b,b,15,0
+2026-10-21T02:26:07Z,a2f67786,bonus,1,decks/tier1/T1_G_Jiang.dck,decks/starter/W_Starter_Normal.dck,10,10,,,a,b,10,0
+2026-10-21T02:26:07Z,a2f67786,bonus,1,decks/tier1/T1_G_Jiang.dck,decks/starter/W_Starter_Normal.dck,10,10,,,b,b,19,0
+2026-10-21T02:26:44Z,a2f67786,inner,3,decks/tier3/T3_WB_Drana.dck,decks/tier3/T3_RG_Zilortha.dck,25,25,,,a,a,13,0
+2026-10-21T02:26:44Z,a2f67786,inner,3,decks/tier3/T3_WB_Drana.dck,decks/tier3/T3_RG_Zilortha.dck,25,25,,,b,a,18,0
+2026-10-21T02:27:11Z,a2f67786,inner,2,decks/tier2/T2_BG_Meren.dck,decks/tier2/T2_WU_Denry.dck,15,15,,,a,a,19,0
+2026-10-21T02:27:11Z,a2f67786,inner,2,decks/tier2/T2_BG_Meren.dck,decks/tier2/T2_WU_Denry.dck,15,15,,,b,a,30,0

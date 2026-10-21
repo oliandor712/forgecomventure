@@ -30,6 +30,6 @@ rules[30|]{id|area|rule|since|status|where}:
   H25|testing|Shrink test decks to 30-40 cards so tested cards are drawn. Use 40 to limit decking and fill with basic lands when a restriction applies|2026-10-20|applied|minideck.py
   H26|testing|Regenerate the shrunk test decks whenever the tier decks change|2026-10-21|applied|ai_lab/decks
   H27|testing|Split starter tests 50/50 between each color's two versions|2026-10-21|applied|run_batch.py STARTER_EPOCH
-  H28|testing|Clear results need about 40 games per deck for a 70-30 deck and about 25 matched sets per bonus for a 25-point effect and about 600 games for a seat edge|2026-10-21|applied|balance lab brief
+  H28|testing|Target is 25 games per AI deck and 40 per starter deck (user, 2026-10-21). Clear results need about 40 games per deck for a 70-30 deck and about 25 matched sets per bonus for a 25-point effect and about 600 games for a seat edge|2026-10-21|applied|balance lab brief
   H29|pc-npc|The player's win rate against NPC enemies: tiers 1-2 target 70%, tiers 3-5 target 50% (user, pc_win_rate, 2026-10-21; replaces the earlier flat 70% at every stage)|2026-10-21|partly|make_report.py PC_TARGET; balance lab reports each stage against its target
   H30|pc-npc|Starting bonuses for enemies stay small and never touch life. Judge them by measured win rate against the starters|2026-10-20|applied|balance lab
