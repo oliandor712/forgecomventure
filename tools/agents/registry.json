@@ -3,12 +3,12 @@
  "shared_context": "tools/agents/CONTEXT.md",
  "context_sent": {
   "forge-ai-lab": {
-   "tools/agents/CONTEXT.md": "ed8350db",
+   "tools/agents/CONTEXT.md": "a79d8f46",
    ".claude/agents/forge-ai-lab.md": "d191cb5a",
-   "date": "2026-10-20"
+   "date": "2026-10-21"
   },
   "deck-balance-lab": {
-   "tools/agents/CONTEXT.md": "a6f4a50c",
+   "tools/agents/CONTEXT.md": "a79d8f46",
    ".claude/agents/deck-balance-lab.md": "5450adc4",
    "date": "2026-10-21"
   },
