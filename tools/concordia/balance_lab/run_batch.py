@@ -27,7 +27,7 @@ STARTER_EPOCH = "2026-10-21T01:25:00Z"  # first batch after the starter rework 5
 BONUSES = ["land", "onedrop", "land+onedrop", "arena", "staff"]
 
 
-LOCK = "/tmp/claude-0/-home-user-forgecomventure/df4f5a99-d818-5913-95ec-ecc9b6e060fd/scratchpad/balance_lab.lock"  # one batch at a time: hourly and mass runs
+LOCK = "/tmp/claude-0/-home-user-forgecomventure/df4f5a99-d818-5913-95ec-ecc9b6e060fd/scratchpad/balance_lab" + os.environ.get("BALANCE_WORKER", "") + os.environ.get("BALANCE_SLICE", "").replace("/", "of") + ".lock"  # one batch at a time: hourly and mass runs
 
 
 def lock_held():
@@ -168,7 +168,11 @@ def run():
     rng = random.Random(o.seed)
     if o.pool == "shard":
         shard = o.shard or SHARDS[datetime.datetime.now(datetime.timezone.utc).hour % len(SHARDS)]
-        pool = set(shard_decks(shard)); print("shard", shard, len(pool), "decks")
+        pool = set(shard_decks(shard))
+        sl = os.environ.get("BALANCE_SLICE")  # "k/n": this process takes every n-th deck of the sorted shard, so n processes never share a deck
+        if sl:
+            k, n = map(int, sl.split("/")); pool = set(d for i, d in enumerate(sorted(pool)) if i % n == k)
+        print("shard", shard, len(pool), "decks")
     else:
         pool = None if o.pool == "all" else set(green_pool())
     start = time.time()
