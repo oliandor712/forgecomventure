@@ -116,7 +116,15 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - The AI lab's current option table is `tools/concordia/ai_lab/OPTIONS_FOR_BALANCERS.md` (effect, cost, what each needs); the balancers read it before proposing deck changes.
 - The main session routes both directions: it keeps the digest step running, answers analysis requests, and records approved options.
 
+## Agent review after each 4-hour report (user, 2026-10-21)
+After every 4-hour report the main session runs a short three-way conversation (main session, AI lab, deck balance lab), fully in TOON, using this prompt: "describe my own workflow, tools and desired results; ask for mutually beneficial suggestions to improve and streamline output."
+1. **Round 1.** The main session sends each lab the prompt and its own description. Each replies in TOON: `workflow`, `tools[]`, `desired_results[]`, `suggestions[N]{to,suggestion,benefit,cost}`.
+2. **Round 2.** The main session merges the suggestions into one TOON table with ids and sends it to both labs; each answers `votes[N]{id,vote,note}` (agree, change or disagree).
+3. **Deploy.** The main session deploys only the changes all three (main session and both labs) agree with, then reports them to the user in 5 lines or fewer. Standing limits stay: no forge-core/forge-game/forge-ai edits, approvals only from the user in chat, equal-life sims, no PRs.
+Keep each message short; no per-message reports to the user.
+
 ## Recent updates
+- 2026-10-21: Agent review after each 4-hour report: three-way TOON conversation, main session deploys unanimous changes
 - 2026-10-21: cooperation model: balance agents feed phase-log data to the AI lab; the AI lab feeds balance-change options to the balancers
 - 2026-10-21: Phase logging is standard for all simulations (user): run_batch.play writes phase logs, runs ai_lab/phase_digest.py and deletes the raw logs; digests under ai_lab/digests are pushed with the records (run_foreground.sh does it)
 - 2026-10-21: agents: effort raised to high (briefs); temporary until the session limit
@@ -128,4 +136,3 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-21: multi-balance-temp created: temporary worker, multicolor slice 2/3
 - 2026-10-21: 
 - 2026-10-21: 
-- 2026-10-21: Added tools/agents/human_logic.toon (the user's deck-balance rules) and the TOON rule above. Nothing else was converted: existing markdown tables save under 1% and the rest is prose, CSV or code-read JSON.
