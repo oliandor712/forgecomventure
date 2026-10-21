@@ -159,3 +159,5 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:43:31Z,1a6eac0bb60,inner,3,decks/tier3/T3_UR_Jori.dck,decks/tier3/T3_UG_Adrix.dck,25,25,,,b,b,21,0
 2026-10-21T02:44:04Z,1a6eac0bb60,inner,3,decks/tier3/T3_WU_Isperia.dck,decks/tier3/T3_UR_Jori.dck,25,25,,,a,a,15,0
 2026-10-21T02:44:04Z,1a6eac0bb60,inner,3,decks/tier3/T3_WU_Isperia.dck,decks/tier3/T3_UR_Jori.dck,25,25,,,b,a,18,0
+2026-10-21T02:44:31Z,1a6eac0bb60,inner,5,decks/tier5/T5_WU_Medomai.dck,decks/tier5/T5_UB_Nymris.dck,35,35,,,a,b,18,0
+2026-10-21T02:44:31Z,1a6eac0bb60,inner,5,decks/tier5/T5_WU_Medomai.dck,decks/tier5/T5_UB_Nymris.dck,35,35,,,b,a,23,0
