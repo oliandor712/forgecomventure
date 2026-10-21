@@ -21,7 +21,7 @@ commanders[80|]{deck|commander|profile|works|per_test|partner}:
   G_Dionus|Dionus, Elvish Archdruid|counters|7|counters=7|
   G_Dwynen|Dwynen, Gilt-Leaf Daen|attack;flying_hate;lifegain;tribe:Elf|32|attack=3;flying_hate=2;lifegain=1;tribe:Elf=30|
   G_Fynn|Fynn, the Fangbearer|control|5|control=5|
-  G_Goreclaw|Goreclaw, Terror of Qal Sisma|attack;high_power|12|attack=7;high_power=6|
+  G_Goreclaw|Goreclaw, Terror of Qal Sisma|attack;high_power|11|attack=7;high_power=5|
   G_Halana|Halana, Kessig Ranger|dmg_power;etb_other;flying_hate|10|dmg_power=2;etb_other=8;flying_hate=0|partner
   G_Jiang|Jiang Yanggu, Never Alone|etb_self;scales:Legendary;token;tribe:Dog|16|etb_self=6;scales:Legendary=3;token=9;tribe:Dog=1|
   G_Loot|Loot, the Nexus|high_power|11|high_power=11|

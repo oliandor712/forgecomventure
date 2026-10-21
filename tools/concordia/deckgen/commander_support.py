@@ -149,11 +149,12 @@ def deck_traits(main, cards):
         for lt in at.LANDTYPES:
             if re.search(r"\b" + lt + r"\b", m.group(1)): tr["landtype:" + lt] += q
     for n, t, tg, ty in cards:
-        ty = ty.split()
+        for x in ty.split(): tr[x] += 1   # every card type and subtype (H47)
         for k, trait in (("Creature", "creatures"), ("Artifact", "artifacts"), ("Enchantment", "enchantments"), ("Equipment", "equipment")):
-            if k in ty: tr[trait] += 1
-        if "token_make" in tg: tr["tokens"] += 1
+            if k in ty.split(): tr[trait] += 1
+        if "token_make" in tg: tr["tokens"] += 1; tr["Token"] += 1
         if tg & {"counters_plus", "proliferate"}: tr["counters"] += 1
+    tr["Land"] = tr["lands"]
     return dict(tr)
 
 

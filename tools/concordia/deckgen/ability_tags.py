@@ -221,26 +221,40 @@ def landtype_tags(text):
 
 
 # ---- H46: potential stat from board state (user, 2026-10-21): never read 0/0, X/0, 0/X or * as printed
-DEFAULT_BOARD = dict(lands=17, creatures=12, tokens=4, artifacts=5, enchantments=5, equipment=2, counters=3, devotion=5, graveyard=5, hand=3, x=4)
+DEFAULT_BOARD = {"Land": 17, "Creature": 12, "Token": 4, "Artifact": 5, "Enchantment": 5, "Equipment": 2, "Aura": 1, "counters": 3, "devotion": 5, "graveyard": 5, "hand": 3, "x": 4}
+GENERIC_KEYS = ("Land", "Creature", "graveyard", "hand", "devotion", "counters", "x")   # missing from a deck's traits early in a build: fall back to the typical board
+NOT_A_TYPE = {"Card", "Permanent", "YouCtrl", "YouOwn", "Other", "Self", "Attached", "Enchanted", "Equipped", "Opp", "OppCtrl", "YouDontCtrl", "Basic", "Nonbasic",
+              "Legendary", "Snow", "Tribal", "Kindred", "Cmc", "Power", "Toughness", "Tapped", "Untapped", "attacking", "Active"}
 
 
 def _board(traits, key):
+    """Board count for a trait key (Type names as in the tags: Equipment, Aura, Artifact, Enchantment, Creature, Land, Token, creature types, graveyard, landtype:X)."""
     if traits is None: return DEFAULT_BOARD.get(key, 3)
-    if key.startswith("landtype:"): return traits.get(key, 0)
-    return traits.get(key) or DEFAULT_BOARD.get(key, 3)
+    v = traits.get(key)
+    if v is None and key == "Land": v = traits.get("lands")
+    if not v and key in GENERIC_KEYS: return DEFAULT_BOARD.get(key, 3)
+    return v or 0
+
+
+def filter_key(filt):
+    """Trait key a Forge filter ('Elf.Other+YouCtrl', 'Creature.token', 'Mountain.YouCtrl', 'Equipment.Attached') counts, or None (opponent's cards, self only)."""
+    f = filt.strip()
+    if re.search(r"OppCtrl|Opp\b|YouDontCtrl|DefenderCtrl", f): return None
+    if re.search(r"inZoneGraveyard|YourYard|Graveyard", f): return "graveyard"
+    if re.search(r"inZoneHand|Hand", f): return "hand"
+    parts = [x for x in re.split(r"[.+,]", f) if x]
+    for x in parts:
+        if x in LANDTYPES: return "landtype:" + x
+    if any(x.lower() in ("token", "tokens") for x in parts): return "Token"
+    named = [x for x in parts if x[:1].isupper() and x not in NOT_A_TYPE]
+    return named[-1] if named else None   # the most specific type name: Creature.Elf -> Elf
 
 
 def _count_valid(filt, traits):
-    parts = re.split(r"[.+,]", filt.strip())
-    if any(x.startswith("Opp") or x in ("OppCtrl", "YouDontCtrl") for x in parts) or "inZoneGraveyard" in filt or "InYourYard" in filt:
-        return _board(traits, "graveyard") if "Graveyard" in filt or "inZoneGraveyard" in filt or "YourYard" in filt else _board(traits, "creatures")
-    if "Hand" in filt: return _board(traits, "hand")
-    for x in parts:
-        if x in LANDTYPES: return _board(traits, "landtype:" + x)
-    if "token" in filt.lower(): return _board(traits, "tokens")
-    for x, k in (("Land", "lands"), ("Creature", "creatures"), ("Artifact", "artifacts"), ("Enchantment", "enchantments"), ("Equipment", "equipment"), ("Aura", "enchantments")):
-        if x in parts: return _board(traits, k)
-    return max(2, _board(traits, "creatures") // 3)   # a tribe or other subset of the creatures
+    k = filter_key(filt)
+    if k is None: return _board(traits, "Creature") if "Opp" in filt else 1
+    if k == "Aura": return max(_board(traits, "Aura"), 0)
+    return _board(traits, k)
 
 
 def _eval(expr, svars, traits, depth=0):
@@ -253,7 +267,8 @@ def _eval(expr, svars, traits, depth=0):
     base, *ops = m.group(1).split("/")
     base = base.strip()
     if re.fullmatch(r"-?\d+", base): v = int(base)
-    elif base.startswith(("Valid ", "ValidAll ", "ValidGraveyard ", "ValidHand ")): v = _count_valid(base.split(" ", 1)[1], traits)
+    elif base.startswith(("ValidGraveyard ", "ValidHand ")): v = _board(traits, "graveyard" if base.startswith("ValidGraveyard") else "hand")
+    elif base.startswith(("Valid ", "ValidAll ")): v = _count_valid(base.split(" ", 1)[1], traits)
     elif base.startswith("Domain"): v = max(1, sum(1 for x in LANDTYPES if _board(traits, "landtype:" + x) > 0))
     elif base.startswith("Devotion"): v = _board(traits, "devotion")
     elif base.startswith(("CardCounters", "Counters")): v = _board(traits, "counters")
@@ -289,7 +304,7 @@ def potential_pt(text, traits=None):
         return int(mm.group(1)) if mm else 0   # '*' and '*+N' start from 0 and take the defining ability
     pw, tg = base(m.group(1)), base(m.group(2))
     for ln in face.splitlines():
-        if ln.startswith("S:") and "Mode$ Continuous" in ln and re.search(r"AffectedDefined\$ Self|Affected\$ (Card|Creature)\.Self\b", ln):
+        if ln.startswith("S:") and "Mode$ Continuous" in ln and re.search(r"AffectedDefined\$ Self|Affected\$ (Card|Creature)\.Self\b|CharacteristicDefining\$ True", ln):
             f = dict(re.findall(r"(\w+)\$ ([^|]*?)\s*(?:\||$)", ln))
             if "SetPower" in f: pw = _eval(f["SetPower"], svars, traits) + (base(m.group(1)) if "+*" in m.group(1) else 0)
             if "SetToughness" in f: tg = _eval(f["SetToughness"], svars, traits) + (base(m.group(2)) if "+*" in m.group(2) else 0)
@@ -300,6 +315,28 @@ def potential_pt(text, traits=None):
         elif ln.startswith("K:ETBReplacement") or ln.startswith("K:Modular"):
             pass
     return pw, tg
+
+
+# ---- H47: general scaling tags (any ability text that scales with a board count) and tribal lords
+SCALE_SKIP = {"Creature", "Land", "Card", "Permanent"}   # too generic to be a synergy
+
+
+def scale_tags(text):
+    """scales:Y for every board count Y an ability counts (Count$Valid Y, 'for each Y you control'), lord:Y for 'other Y creatures you control get +N/+N'.
+    Y is the trait key (Equipment, Aura, Artifact, Enchantment, Token, graveyard, a creature type ...); the land types keep their landtype:X tag."""
+    face = text.split("\nALTERNATE")[0]
+    out = set()
+    for m in re.finditer(r"Count\$Valid(?:Graveyard)? ([^/\n|]+)", face):
+        k = filter_key(m.group(0).split(" ", 1)[1]) if not m.group(0).startswith("Count$ValidGraveyard") else "graveyard"
+        if k and not k.startswith("landtype:") and k not in SCALE_SKIP and "Self" not in m.group(1) and re.fullmatch(r"[A-Z][a-z]+|graveyard|hand|Token", k) and k not in ("Colors", "Different", "Greatest", "White", "Blue", "Black", "Red", "Green", "Colorless", "Multicolored", "Monocolored"): out.add("scales:" + k)
+    if re.search(r"Count\$(CardCounters|Counters)", face): out.add("scales:counters")
+    for ln in face.splitlines():
+        if ln.startswith("S:") and "Mode$ Continuous" in ln and re.search(r"AddPower\$|AddToughness\$", ln):
+            m = re.search(r"Affected\$ ([^|]+)", ln)
+            if not m or "Self" in m.group(1) or "Other" not in m.group(1) or "YouCtrl" not in m.group(1): continue
+            k = filter_key(m.group(1))
+            if k and k not in SCALE_SKIP and k != "Token": out.add("lord:" + k)
+    return out
 
 
 def tags_of(text):
@@ -315,9 +352,18 @@ def tags_of(text):
     for n in needs: tags.add("needs:" + n.replace("Ability$", "").replace("Type$", "type:").replace("$", ":"))
     for n in hints: tags.add("hint:" + n.replace("Ability$", "").replace("Type$", "type:").replace("$", ":"))
     tags |= landtype_tags(text)
+    tags |= scale_tags(text)
     if "Equipment" in types: tags.add("equip")
     if "Vehicle" in types: tags.add("crew")
     return tags
+
+
+def dynamic_policy(tag):
+    """H47: scales:Y and lord:Y score a flat bonus when the deck holds LANDTYPE_NEED+ of Y (trait Y), like the land types."""
+    if tag.startswith(("scales:", "lord:")):
+        y = tag.split(":", 1)[1]
+        return dict(need={y: LANDTYPE_NEED}, flat=1.0)
+    return None
 
 
 def bonus(tags, archetype, sub=None, traits=None, mono=False, colours=""):
@@ -325,7 +371,7 @@ def bonus(tags, archetype, sub=None, traits=None, mono=False, colours=""):
     traits = traits or {}
     b = 0.0
     for t in tags:
-        p = POLICY.get(t)
+        p = POLICY.get(t) or dynamic_policy(t)
         if not p: continue
         need = p.get("need")
         if need and any(traits.get(k, 0) < n for k, n in need.items()): continue
@@ -369,7 +415,8 @@ def build():
     rows = []
     for t, n in count.most_common():
         if t.startswith(("has:", "needs:", "hint:")): continue
-        p = POLICY.get(t, {})
+        if t.startswith(("scales:", "lord:")) and n < 5: continue
+        p = POLICY.get(t) or dynamic_policy(t) or {}
         rows.append((t, p.get("group", ""), n, ",".join("%s%+g" % kv for kv in sorted(p.get("arch", {}).items())), ";".join(p.get("syn", [])),
                      ";".join("%s>=%s" % kv for kv in sorted(p.get("need", {}).items())), "yes" if p.get("staple") else "", p.get("note", "")))
     L = ["# Ability tags (generated by deckgen/ability_tags.py; the rules and policy live in that file). cards = tier 1 eligible cards with the tag. %d cards, %d distinct ability signatures (tagged once each)." % (len(out), len(sigs_seen)),

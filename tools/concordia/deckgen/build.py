@@ -41,12 +41,17 @@ def land_traits(basics, lands):
     for p, _ in lands:
         for x in at.LANDTYPES:
             if x in p['types'].split(): tr['landtype:' + x] += 1
-    tr['lands'] = sum(basics.values()) + len(lands)
+    tr['lands'] = tr['Land'] = sum(basics.values()) + len(lands)
     return tr
 def card_traits(p, traits=None):
     """Deck traits one card adds (counted per deck as it fills; ability_tags.bonus reads them)."""
     t, ox, tags = p['types'].split(), p['oracle'], ability_tags(p)
-    out = []
+    out = list(t)   # H47: every card type and subtype is a board count (Equipment, Aura, Artifact, Elf ...) that potential_pt and the scales:/lord: tags read
+    txt = card_text(p)
+    if 'token_make' in tags: out.append('Token')
+    for sc in re.findall(r'TokenScript\$ ?([\w,]+)', txt):   # the creature types of the tokens a card makes count as that type on the board
+        for part in sc.split(',')[0].split('_')[1:]:
+            if part and not part.isdigit() and not re.fullmatch(r'[wubrgc]+', part): out.append(part.capitalize())
     if re.search(r'\bflying\b', ox, re.I): out.append('flying')
     if re.search(r'\b(menace|unblockable|fear|intimidate|shadow)\b', ox, re.I): out.append('evasion')
     if 'token_make' in tags: out.append('tokens')
@@ -216,7 +221,7 @@ def build(d):
     traits = collections.Counter()
     nland_est = max(0, spec['lands'] - 6)   # H45: expected basics (the land base is sized after the fill); split evenly over the deck's colours
     for c in ident: traits['landtype:' + BASIC_TYPE[c]] = nland_est // max(1, len(ident))
-    traits['lands'] = spec['lands']
+    traits['lands'] = traits['Land'] = spec['lands']
     cmd = pool[d['commander'].lower()]
     # external seeds (deckgen/external/seeds, not committed) are skipped when missing; the deck then builds unseeded
     seed = set(parse(os.path.join(RES, d['seed']))) if d.get('seed') and os.path.exists(os.path.join(RES, d['seed'])) else set()
