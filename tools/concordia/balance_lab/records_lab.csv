@@ -495,3 +495,7 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T06:17:38Z,556bbb582a9,bonus,2,decks/tier2/T2_B_Syr.dck,decks/starter/B_Starter_Normal.dck,15,15,land+onedrop,,b,b,19,0
 2026-10-21T06:17:38Z,556bbb582a9,bonus,2,decks/tier2/T2_B_Syr.dck,decks/starter/B_Starter_Normal.dck,15,15,,,a,b,20,0
 2026-10-21T06:17:38Z,556bbb582a9,bonus,2,decks/tier2/T2_B_Syr.dck,decks/starter/B_Starter_Normal.dck,15,15,,,b,b,13,0
+2026-10-21T06:26:06Z,5a19dc67da3,inner,4,decks/tier4/T4_B_Isareth.dck,decks/tier4/T4_B_Taborax.dck,30,30,,,a,a,27,0
+2026-10-21T06:26:06Z,5a19dc67da3,inner,4,decks/tier4/T4_B_Isareth.dck,decks/tier4/T4_B_Taborax.dck,30,30,,,b,b,19,0
+2026-10-21T06:26:41Z,5a19dc67da3,inner,2,decks/tier2/T2_B_Rev.dck,decks/tier2/T2_B_Loot.dck,15,15,,,a,b,18,0
+2026-10-21T06:26:41Z,5a19dc67da3,inner,2,decks/tier2/T2_B_Rev.dck,decks/tier2/T2_B_Loot.dck,15,15,,,b,b,11,0

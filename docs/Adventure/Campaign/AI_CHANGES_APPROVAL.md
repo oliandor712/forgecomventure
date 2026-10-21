@@ -78,6 +78,14 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
   - Without it, Harsh Justice can never be cast.
 - [ ] **Shield Dancer unflag**: Needs work. It waits for 007.
 
+- [ ] **010, AI decision log (log-only)**: Planned (agreed by main session, AI lab and balance lab in the 2026-10-21 agent review, S1).
+  - Where: forge-ai, at the points where the AI picks an attack, block, spell or removal target. Patch (to be written):
+    `tools/concordia/ai_lab/patches/010-decision-log.patch`.
+  - Writes the chosen play and the reason (the predictor's numbers or the card score) as one game-log line per decision, so the
+    phase-log digests can check decision claims from the logs instead of inferring them from code.
+  - Changes no AI behaviour: log lines only. The AI lab tests it in a scratch worktree and confirms the games' results are
+    unchanged and the digest picks up the reason field.
+
 ## How a box gets ticked
 
 1. The AI lab tests the change in a scratch copy (pre-approved) and records the "useful play" rate as well as casts
