@@ -19,10 +19,10 @@ commanders[80|]{deck|commander|profile|works|per_test|partner}:
   G_Anara|Anara, Wolvid Familiar|protection|3|protection=3|partner
   G_Bushmaster|Bushmaster, Coiled Henchman|control;counters|11|control=6;counters=5|
   G_Dionus|Dionus, Elvish Archdruid|counters|9|counters=9|
-  G_Dwynen|Dwynen, Gilt-Leaf Daen|attack;flying_hate;lifegain;tribe:Elf|39|attack=8;flying_hate=2;lifegain=1;tribe:Elf=32|
+  G_Dwynen|Dwynen, Gilt-Leaf Daen|attack;flying_hate;lifegain;tribe:Elf|39|attack=8;flying_hate=3;lifegain=1;tribe:Elf=32|
   G_Fynn|Fynn, the Fangbearer|control|5|control=5|
   G_Goreclaw|Goreclaw, Terror of Qal Sisma|attack;high_power|11|attack=7;high_power=5|
-  G_Halana|Halana, Kessig Ranger|etb_other;flying_hate|11|etb_other=8;flying_hate=3|partner
+  G_Halana|Halana, Kessig Ranger|dmg_power;etb_other;flying_hate|10|dmg_power=2;etb_other=8;flying_hate=0|partner
   G_Jiang|Jiang Yanggu, Never Alone|etb_self;scales:Legendary;token;tribe:Dog|16|etb_self=6;scales:Legendary=3;token=9;tribe:Dog=1|
   G_Loot|Loot, the Nexus|high_power|5|high_power=5|
   G_Numa|Numa, Joraga Chieftain|counters|5|counters=5|partner
@@ -31,7 +31,7 @@ commanders[80|]{deck|commander|profile|works|per_test|partner}:
   G_Ruxa|Ruxa, Patient Professor|attack;etb_self;sacrifice;scales:Creature|41|attack=8;etb_self=1;sacrifice=4;scales:Creature=33|
   G_Surrak|Surrak, the Hunt Caller|high_power|3|high_power=3|
   G_Toph|Toph, the Blind Bandit|counters;etb_self;sacrifice|11|counters=6;etb_self=3;sacrifice=5|
-  G_Wilson|Wilson, Refined Grizzly|attack;control;flying_hate|13|attack=8;control=5;flying_hate=2|
+  G_Wilson|Wilson, Refined Grizzly|attack;control;flying_hate|13|attack=8;control=5;flying_hate=0|
   R_Anax|Anax, Hardened in the Forge|control;devotion:R;high_power;sacrifice;tribe:Satyr|42|control=3;devotion:R=39;high_power=6;sacrifice=4;tribe:Satyr=2|
   R_Breeches|Breeches, Brazen Plunderer|evasion;play_exile;tribe:Pirate|14|evasion=7;play_exile=5;tribe:Pirate=4|partner
   R_Cleon|Cleon, Merry Champion|double_strike;play_exile|14|double_strike=8;play_exile=7|

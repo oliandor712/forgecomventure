@@ -61,7 +61,7 @@ def profile(oracle, types, name=""):
     for kw, tag in (("flying", "evasion"), ("menace", "evasion"), ("haste", "attack"), ("double strike", "double_strike")):
         if re.search(r"(^|\n|, )" + kw, t): out.add(tag)
     if re.search(r"cards? leaves? your graveyard|leave your graveyard", t): out.add("graveyard_leave")   # Tormod
-    if re.search(r"(^|\n|, )reach\b", t): out.add("flying_hate")   # H39: reach = flying hate, low creature removal
+    if re.search(r"(^|\n|, )reach\b", t): out.add("flying_hate")   # H39: reach = flying hate only
     if re.search(r"exile (up to one )?(other )?(another )?target creature you control.{0,90}return|flicker", t): out.add("flicker")   # H39: potential loop with etb
     if "ring tempts" in t or "the ring" in t: out.add("ring")   # H43
     if re.search(r"\bscry\b", t): out.add("scry")   # H43: scry counts as draw synergy
@@ -69,6 +69,7 @@ def profile(oracle, types, name=""):
     for m in re.finditer(r"(?i:create[s]?) [^.]*?\b([A-Z][a-z]+)(?: [A-Z][a-z]+)? creature tokens?", oracle.replace("\\n", "\n")):
         if m.group(1) not in ("Creature", "White", "Blue", "Black", "Red", "Green", "Colorless"): out.add("tribe:" + m.group(1))   # token type is the tribe (H40)
     if re.search(r"(creature )?tokens? you control", t): out.add("token")   # Prava, Jiang: token makers and token pump
+    if re.search(r"deals damage equal to its power to target creature", t): out.add("dmg_power")   # Halana's own trigger is the low creature removal
     if re.search(r"sacrifice (a|another|an?) land", t):   # H41: sacrificing a land is a cost
         out.discard("sacrifice"); out.add("protection")
     return sorted(out)
@@ -94,7 +95,8 @@ def supports(item, name, text, tags, types):
     if item == "etb_self": return bool(tags & {"bounce", "clone", "recursion", "reanimate"}) or bool(re.search(r"exile target creature you control, then return|flicker", text.lower()))
     if item == "graveyard_leave": return bool(tags & {"recursion", "reanimate", "grave_hate", "self_mill", "discard", "token_make", "temp_reanimate"})
     if item == "token": return bool(tags & {"token_make", "pump_team", "artifact_token"})
-    if item == "flying_hate": return "removal" in tags or "shrink" in tags
+    if item == "flying_hate": return bool(re.search(r"with flying|have flying|\breach\b|Creature\.withFlying", text))   # H39: cards that answer flyers, not generic removal
+    if item == "dmg_power": return (crea and bool(re.search(r"^PT:([4-9]|\d{2,})/", text, re.M))) or "etb_trigger" in tags
     if item == "flicker": return bool(re.search(r"exile target creature you control, then return|flicker", text.lower())) or (crea and "etb_trigger" in tags)
     if item == "ring": return "ringtempts" in text.lower() or "the ring tempts" in text.lower()
     if item == "scry": return bool(tags & {"selection", "draw"})
