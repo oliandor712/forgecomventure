@@ -228,3 +228,22 @@ Decision-logic reads (hypotheses to test, not findings):
 - Starters are the outlier at 65.7%. Their 14-turn games may reflect the AI playing its own deck well in a matchup it can read, or weaker opponents (pairing mix, same caveat as the balance analysis).
 
 What the records cannot show: which attacks, blocks, casts or removal targets produced these results. Testing any of the reads above needs phase logs for a sample of these games (for example a DeckSim run with -Dlogdir on an aggro vs ramp pairing), then the same decision counts as the results analysis.
+
+## Phase logs from the Commander batch (balance_logs/logs-20261021T053135Z, 20 games, 2026-10-21)
+Source: tools/concordia/ai_lab/results/balance_logs/logs-20261021T053135Z/ (per-game TSV plus INDEX.tsv), sent by the main session. Two pairings, 10 games each:
+- AGGRO-RAMP label: T5 Baral (A) vs T5 Sephara (B). Both decks are tier 5, so the label does not match the pairing; treat it as tier 5 vs tier 5.
+- STARTER-MID: B_Starter_Alt (A) vs T2 Eutropia, a midrange deck (B).
+
+Blocking, per blocker decision (one row per attacker the blocker faces), by the blocker's own life at that moment:
+- Life 15 or more: 13 of 181 blocked (7%).
+- Life 8 to 14: 14 of 93 blocked (15%).
+- Life under 8: 29 of 84 blocked (35%).
+Reading: this matches section 1. Chump blocks rise as the blocker's life falls. Note the unit: this is per attacker, and the earlier log check (s005 set) was per step, so the two rates are not comparable as numbers, only as direction.
+
+Attacks: AGGRO-RAMP side A declared 41 attack steps (mean 2.7 attackers), side B 55 (mean 1.9). STARTER-MID: starter 52 steps (mean 1.9), midrange 25 (mean 1.6).
+
+Blocks by side: in STARTER-MID, the midrange blocker blocked 19 times and the starter 4 times. The midrange AI blocks much more than the starter AI in the same games. Possible causes, not yet checked: the starter's board is smaller (fewer blockers to commit), or midrange's trade logic (section 1, makeTradeBlocks) fires more often.
+
+Casts: median cast turn 13 in tier 5 vs tier 5, 10 in starter vs midrange; both sides cast about equally in each pairing.
+
+Caveats: 20 games in total, so these are direction only. The AGGRO-RAMP label is wrong (both sides are tier 5). Per-game TSVs show the decision inputs (attackers, blockers, life), but not AI scores, so the reasons behind each block are still inferred from the code.
