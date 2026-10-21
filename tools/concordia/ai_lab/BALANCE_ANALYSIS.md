@@ -34,3 +34,13 @@ Only games with no bonus on either side (853 decided). For deck A, "balanced" = 
   - tier 5: 52.7% (first 58.1%, second 47.3%)
 - Reading: once the play order is balanced, the tier 1 and 2 pairings still lean toward deck B (about 57% for B), while tiers 3-4 are even and tier 5 leans toward A. The tier 1-2 lean is the one to check; the others are within noise.
 - The side-to-deck assignment is not randomised in these records, so the lean may reflect which deck is listed as A. Check before drawing a balance conclusion.
+
+## Current records, first-player compensated, no bonuses (2026-10-21, 7 record files, 3,283 decided games)
+- Play order: the first player wins 55.3% of all decided games. Bonus-free games (2,496): on the play side A wins 50.2%, on the draw 40.1%, balanced 45.1%.
+- By tier, balanced side-A win rate (±4 to ±6 points): tier 1 44.1, tier 2 40.0, tier 3 50.7, tier 4 47.4, tier 5 50.0. Tier 2 is the one furthest from 50, and it is the only tier outside its interval.
+- Per deck (≥8 games each play slot, 120 decks), balanced win rate, on-play and on-draw:
+  - Highest: R_Starter_Normal 82.9% (n=76), R_Starter_Alt 81.9% (n=72), W_Starter_Alt 80.6% (n=62), T5_R_Urabrask 76.9% (n=26), T5_R_Glin 75.0% (n=36), G_Starter_Normal 75.0% (n=104).
+  - Lowest: T2_UG_Eutropia 6.2% (n=16), T1_B_Sivriss 11.1% (n=18), T3_R_Auntie 16.7% (n=24), T2_B_Baron 20.0% (n=30), T2_B_Sengir 21.4% (n=28), T1_B_Keskit 22.2% (n=18).
+- Reading: the starters and the tier 5 decks sit far above the field. The black tier 1-2 decks sit far below it. Per-deck samples are 16-100 games, so each rate has roughly ±10 to ±25 points of noise; only the extremes are worth acting on, and only after the 40-game check.
+- Caveats: pairing structure is not balanced (starters may meet weaker opponents), so a deck's rate partly measures its opponents. Compensation removes play order but not matchup mix.
+- ANALYSIS REQUEST: is the black tier 1-2 gap a real starter-to-tier gap, or a pairing artefact? Re-check after the 40-game target is reached on those decks.
