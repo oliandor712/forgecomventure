@@ -70,6 +70,10 @@
     [
      "2026-10-20",
      "Test decks regenerated from the current tier decks; don't pool results across the regeneration."
+    ],
+    [
+     "2026-10-21",
+     "Read tools/agents/human_logic.toon (the user's deck-balance rules); write new Claude-only data files in TOON where it saves tokens."
     ]
    ],
    "analyses": [
@@ -166,6 +170,10 @@
     [
      "2026-10-21",
      "Starter games count only since 5439eb01 (01:16:50Z); keep the Normal/Alt split 50/50 from there."
+    ],
+    [
+     "2026-10-21",
+     "Read tools/agents/human_logic.toon before judging decks; write new Claude-only data files in TOON where it saves tokens."
     ]
    ],
    "analyses": [

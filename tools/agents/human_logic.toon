@@ -1,0 +1,35 @@
+# Human logic: the user's own rules for deck balance and PC vs NPC balancing. Read before building, judging or testing decks.
+# Claude-only file in TOON (pipe-delimited table; # lines are comments). When a rule conflicts with a metric, the rule wins.
+# status: applied = in code or decks now, partly = some of it done, open = not done or not decided. since = date the user said it.
+# Add a row whenever the user gives deck-balance input in chat; never delete a row, set its status instead.
+rules[30|]{id|area|rule|since|status|where}:
+  H01|curve|A zone's stage locks at the player's first fight there from Seals held (0-1 stage 1, 2-3 stage 2, 4-5 stage 3)|2026-10-20|applied|TierLock.java and config tierLock
+  H02|curve|Wild creatures, random-dungeon enemies, pass keepers, grove guardians and Wardens are mono-color. Trainers are 1-2 colors at stage 1 then 2-3|2026-10-20|applied|build_color_zone.py
+  H03|curve|Random dungeons draw from the wild encounter pool, never from keepers or guardians|2026-10-20|applied|build_color_zone.py
+  H04|curve|Wild creatures sit in the lowest band of their stage. Stage 2 wild uses the top of tier 2 and does not jump to tier 3|2026-10-20|applied|WILD table
+  H05|curve|Deck power rises in order wild then trainer then keeper then guardian then Warden at every stage|2026-10-20|applied|build_color_zone.py windows
+  H06|data|Use existing assets only. Ignore prices everywhere|2026-10-20|applied|all tools
+  H07|power|Card power counts EDHREC popularity. Staples are a category (popular, low standalone impact) and are tracked apart from Game Changers|2026-10-20|applied|deck_tier.py and staples.py
+  H08|builder|Raise the tier 1-2 floor. T1 decks 16-18 power and T2 25-30 rather than as weak as the builder can make them|2026-10-21|applied|build.py FLOOR CEILING T1_TARGET
+  H09|builder|Push staples at tiers 1-2 but only in uncommon printings|2026-10-21|applied|build.py UNCOMMON_STAPLE_BONUS
+  H10|builder|Add near-staple nonbasic lands and cheap mana rocks from budget decks (precons and low-rarity lists) inside the tier's ramp caps|2026-10-21|applied|budget_lands.py
+  H11|builder|Loosen tier 1 creature requirements: 30-34 creatures with more instants, sorceries, artifacts and enchantments|2026-10-21|applied|build.py SPEC 1
+  H12|builder|Card type mix follows the color's nature. A blue spells deck should not run 37 creatures|2026-10-21|partly|blue starter fixed, AI decks not yet audited by color
+  H13|builder|Synergy beats score. A low-scoring card that works with the commander's ability is rated slightly above a stronger card that does not|2026-10-21|partly|starter alternates only (variants.py SYN), not the 200 AI decks
+  H14|builder|Cost-reduction commanders such as Goreclaw want low-score creatures with enter-the-battlefield abilities at the reduced power threshold|2026-10-21|partly|SYN counts power 4+ creatures and gives a bonus for enter-the-battlefield text
+  H15|builder|Commanders with a power threshold such as Gwenna need more creatures at that power. Add power 5 options|2026-10-21|partly|SYN for Gwenna, 11 fitting cards
+  H16|builder|Life gain commanders such as Nazar want X damage and gain X life effects counted as alternate removal|2026-10-21|open|SYN counts life gain cards as synergy, not as removal
+  H17|commanders|A commander must use its own ability in its deck. Judge by how many deck cards work with it and change the ones that do not|2026-10-21|applied|review of the ten starters (Tarox, Ben-Ben, Inga replaced)
+  H18|commanders|Double the deck pool with variants led by alternate or budget commanders. Change 5-8 cards plus the commander|2026-10-21|applied|variants.py and variants.json
+  H19|starters|Starters aim for deck power 27, the middle of tier 2|2026-10-21|applied|starter_tune.py
+  H20|starters|Each color has two starters with different commanders and 5-8 different cards. Both commanders start unlocked|2026-10-21|applied|variants.py --starters and hall_roster.py
+  H21|starters|The player picks which commander leads at the Seal Angel after the color pick and can switch at the Commander Hall|2026-10-21|applied|zone_flags.py and setStarterDeck action
+  H22|starters|Each starter version holds the other's swap cards in its sideboard|2026-10-21|applied|variants.py set_sideboard
+  H23|testing|Every simulation uses equal life on both sides with no exceptions|2026-10-20|applied|run_batch.py
+  H24|testing|Life bonuses are eliminated as an encounter bonus. Test only small card bonuses such as a free land or one-drop against the premade ones|2026-10-20|applied|run_batch.py BONUSES
+  H25|testing|Shrink test decks to 30-40 cards so tested cards are drawn. Use 40 to limit decking and fill with basic lands when a restriction applies|2026-10-20|applied|minideck.py
+  H26|testing|Regenerate the shrunk test decks whenever the tier decks change|2026-10-21|applied|ai_lab/decks
+  H27|testing|Split starter tests 50/50 between each color's two versions|2026-10-21|applied|run_batch.py STARTER_EPOCH
+  H28|testing|Clear results need about 40 games per deck for a 70-30 deck and about 25 matched sets per bonus for a 25-point effect and about 600 games for a seat edge|2026-10-21|applied|balance lab brief
+  H29|pc-npc|The player starts at power 27 against stage 1 enemies at 16-27 and the gap should close as stages rise. The exact PC vs NPC win target is not set|2026-10-21|open|needs a target win rate per stage from the user
+  H30|pc-npc|Starting bonuses for enemies stay small and never touch life. Judge them by measured win rate against the starters|2026-10-20|applied|balance lab
