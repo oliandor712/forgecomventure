@@ -99,3 +99,11 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:30:48Z,1a6eac0bb60,inner,5,decks/tier5/T5_WB_Bartolom.dck,decks/tier5/T5_BG_Vraska.dck,35,35,,,b,a,26,0
 2026-10-21T02:31:48Z,1a6eac0bb60,inner,3,decks/tier3/T3_WG_Maja.dck,decks/tier3/T3_BR_Exava.dck,25,25,,,a,a,15,0
 2026-10-21T02:31:48Z,1a6eac0bb60,inner,3,decks/tier3/T3_WG_Maja.dck,decks/tier3/T3_BR_Exava.dck,25,25,,,b,b,17,0
+2026-10-21T02:32:16Z,1a6eac0bb60,bonus,1,decks/tier1/T1_U_Bilbo.dck,decks/starter/U_Starter_Alt.dck,10,10,arena,,a,a,9,0
+2026-10-21T02:32:16Z,1a6eac0bb60,bonus,1,decks/tier1/T1_U_Bilbo.dck,decks/starter/U_Starter_Alt.dck,10,10,arena,,b,b,12,0
+2026-10-21T02:32:16Z,1a6eac0bb60,bonus,1,decks/tier1/T1_U_Bilbo.dck,decks/starter/U_Starter_Alt.dck,10,10,,,a,a,9,0
+2026-10-21T02:32:16Z,1a6eac0bb60,bonus,1,decks/tier1/T1_U_Bilbo.dck,decks/starter/U_Starter_Alt.dck,10,10,,,b,a,14,0
+2026-10-21T02:32:49Z,1a6eac0bb60,bonus,1,decks/tier1/T1_W_Rescue.dck,decks/starter/B_Starter_Alt.dck,10,10,arena,,a,b,12,0
+2026-10-21T02:32:49Z,1a6eac0bb60,bonus,1,decks/tier1/T1_W_Rescue.dck,decks/starter/B_Starter_Alt.dck,10,10,arena,,b,b,11,0
+2026-10-21T02:32:49Z,1a6eac0bb60,bonus,1,decks/tier1/T1_W_Rescue.dck,decks/starter/B_Starter_Alt.dck,10,10,,,a,b,12,0
+2026-10-21T02:32:49Z,1a6eac0bb60,bonus,1,decks/tier1/T1_W_Rescue.dck,decks/starter/B_Starter_Alt.dck,10,10,,,b,b,11,0
