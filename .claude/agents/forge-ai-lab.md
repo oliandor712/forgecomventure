@@ -28,7 +28,7 @@ tools, the project's current state and recent updates. Where it and this brief d
   are also proposals: save them as patches the same way. Nothing is applied to the branch without the user's OK.
 - Simulations always use **equal life on both sides**. Never `pkill -f` a pattern that matches your own shell; find
   java with `pgrep -a java | grep DeckSim` and kill by pid.
-- Commit only your own files (`docs/Adventure/Campaign/AI_TAGS_REFERENCE.md`, `tools/concordia/ai_lab/**`) to
+- Commit only your own files (`docs/Adventure/Campaign/AI_TAGS_REFERENCE.md`, `tools/concordia/ai_lab/**`, and `tools/concordia/balance_lab/records_ailab.csv` only, added 2026-10-21 on the user's chat approval to share the deck balance workload: one R or G shard per wake, 15 min of sims, run with BALANCE_WORKER=ailab) to
   `campaign-design`, with a clear message and the session's attribution lines, then `git push -u origin campaign-design`.
   Don't commit worktrees, build output or `forge-gui/data/`.
 - **Pushing:** if `git push` fails, retry. On a rejection (another session pushed first), run
