@@ -1,354 +1,371 @@
 {
- "about": "Background agents of the Concordia project, kept by the agent manager (.claude/skills/agent-manager, tools/agents/agentctl.py). 'requests' is every instruction the user gave about the agent, in order; briefs and CONTEXT.md must agree with them.",
- "shared_context": "tools/agents/CONTEXT.md",
- "context_sent": {
-  "forge-ai-lab": {
-   "tools/agents/CONTEXT.md": "ca20f406",
-   ".claude/agents/forge-ai-lab.md": "d191cb5a",
-   "date": "2026-10-21"
+  "about": "Background agents of the Concordia project, kept by the agent manager (.claude/skills/agent-manager, tools/agents/agentctl.py). 'requests' is every instruction the user gave about the agent, in order; briefs and CONTEXT.md must agree with them.",
+  "shared_context": "tools/agents/CONTEXT.md",
+  "context_sent": {
+    "forge-ai-lab": {
+      "tools/agents/CONTEXT.md": "ca20f406",
+      ".claude/agents/forge-ai-lab.md": "d191cb5a",
+      "date": "2026-10-21"
+    },
+    "deck-balance-lab": {
+      "tools/agents/CONTEXT.md": "ca20f406",
+      ".claude/agents/deck-balance-lab.md": "5450adc4",
+      "date": "2026-10-21"
+    },
+    "agent-coordinator": {
+      "tools/agents/CONTEXT.md": "42a270be",
+      ".claude/agents/agent-coordinator.md": "42a270be",
+      "date": "2026-10-20"
+    }
   },
-  "deck-balance-lab": {
-   "tools/agents/CONTEXT.md": "ca20f406",
-   ".claude/agents/deck-balance-lab.md": "5450adc4",
-   "date": "2026-10-21"
+  "agents": {
+    "forge-ai-lab": {
+      "brief": ".claude/agents/forge-ai-lab.md",
+      "session": "session_018TohPY7UPn5mh9b7aJ4at5",
+      "model": "sonnet, effort high",
+      "folders": [
+        "tools/concordia/ai_lab/",
+        "docs/Adventure/Campaign/AI_TAGS_REFERENCE.md"
+      ],
+      "triggers": {},
+      "requests": [
+        [
+          "2026-10-20",
+          "Analyse the Forge AI and experiment with the proposed low-risk improvements; build an easy reference for all AI tags and their logic; run small simulations testing fixes to unplayable cards, so the AI plays formerly unplayable cards with effects matching their text (more card plays and wins)."
+        ],
+        [
+          "2026-10-20",
+          "Low speed and low session usage, background work; the main session may pause it during big requests."
+        ],
+        [
+          "2026-10-20",
+          "Side chat with updates every 6 hours (later: hourly steps, report every 4 hours)."
+        ],
+        [
+          "2026-10-20",
+          "Give it the main session's AI review as materials (AI_RESEARCH.md, AI_FLAGGED_CARDS.md, ai_flagged_cards.html)."
+        ],
+        [
+          "2026-10-20",
+          "Retry failed pushes."
+        ],
+        [
+          "2026-10-20",
+          "Shrink test decks to 30 cards so flagged cards are drawn more often (if a restriction blocks it, pad with Wastes removed at match start)."
+        ],
+        [
+          "2026-10-20",
+          "User standing request (relayed by the agent): every test's results go to the main session with an analysis request."
+        ],
+        [
+          "2026-10-20",
+          "Test updates the agents could use are automatically approved, with old versions backed up; AI changes go on a checkbox list for the user's final approval."
+        ],
+        [
+          "2026-10-20",
+          "Step every 2 hours at :06 instead of hourly."
+        ],
+        [
+          "2026-10-20",
+          "Test decks regenerated from the current tier decks; don't pool results across the regeneration."
+        ],
+        [
+          "2026-10-21",
+          "Read tools/agents/human_logic.toon (the user's deck-balance rules); write new Claude-only data files in TOON where it saves tokens."
+        ],
+        [
+          "2026-10-21",
+          "Don't message the main session after each run; results go in the 4-hour report, messages only for blockers."
+        ],
+        [
+          "2026-10-21",
+          "R/G sims moved to the temp agent: logic research only"
+        ],
+        [
+          "2026-10-21",
+          "Temporarily raise effort to high and keep it until the session limit is hit"
+        ],
+        [
+          "2026-10-21",
+          "Cooperation: the AI lab collects balance-change data from bonuses and feeds the deck balancers options to empower AI decks vs player decks"
+        ],
+        [
+          "2026-10-21",
+          "After each 4-hour report: three-way TOON conversation (main, AI lab, deck balance lab) to describe workflows and agree mutually beneficial improvements; main session deploys what all three agree with"
+        ],
+        [
+          "2026-10-21",
+          "Agents must obey the main session unless a task violates the guardrails, and must not stop mid-task waiting for the user"
+        ],
+        [
+          "2026-10-21",
+          "Archive, compile context, remake with stricter obedience: always obey the main session, pass user questions to it and accept its replies as user input; give full tools and a shared TOOLBOX"
+        ],
+        [
+          "2026-10-21",
+          "Command duration: send an ETA line before any command over about 30 s; the main session checks 15 s after the estimate and remedies (replaces the keep-commands-under-5-minutes and timing-breakdown requests)"
+        ]
+      ],
+      "analyses": [
+        [
+          "2026-10-20",
+          "Flagged-card timing and logic fit (exp 001-003)"
+        ],
+        [
+          "2026-10-20",
+          "Quality of use at natural density (n001-n003)"
+        ],
+        [
+          "2026-10-20",
+          "Patch 005 two-version SwitchPT review"
+        ],
+        [
+          "2026-10-20",
+          "s005/s006 code A/B review"
+        ],
+        [
+          "2026-10-20",
+          "s008 gang-block patch review"
+        ],
+        [
+          "2026-10-20",
+          "Regression for 008: not enough yet"
+        ],
+        [
+          "2026-10-20",
+          "g008 gang-block test review; shadow-mode logging"
+        ]
+      ]
+    },
+    "deck-balance-lab": {
+      "brief": ".claude/agents/deck-balance-lab.md",
+      "session": "session_01PwU5ft7yoiwonjyndwCVv9",
+      "model": "sonnet, effort high",
+      "folders": [
+        "tools/concordia/balance_lab/"
+      ],
+      "triggers": {},
+      "requests": [
+        [
+          "2026-10-20",
+          "Low speed, low usage; runs every hour and reports every 4 hours; focused on deck balance for AI encounters."
+        ],
+        [
+          "2026-10-20",
+          "Run random inner-tier simulations to build a record for the main session to analyse."
+        ],
+        [
+          "2026-10-20",
+          "Test Forge's start-of-combat bonus cards in areas: Forge is too heavy-handed, so test some of the premade ones and smaller bonuses (a free relevant land or a 1-drop for wild encounters), each against no bonus to measure impact."
+        ],
+        [
+          "2026-10-20",
+          "One batch of tests every hour, with no time cap per session (user, 2026-10-21)."
+        ],
+        [
+          "2026-10-20",
+          "Retry failed pushes."
+        ],
+        [
+          "2026-10-20",
+          "User standing request (relayed by the agent): send results to the main session after every test, with an analysis request; main session asked to batch these with the 4-hour report."
+        ],
+        [
+          "2026-10-20",
+          "Test updates the agents could use are automatically approved, with old versions backed up; AI changes go on a checkbox list for the user's final approval."
+        ],
+        [
+          "2026-10-20",
+          "Eliminate life bonuses (life5, life10) as an option: no life-bonus tests, every sim at equal life."
+        ],
+        [
+          "2026-10-20",
+          "Inbox #2-#3: ping the coordinator after each 4-hour report; bonus sets land, onedrop, land+onedrop against arena and staff, 5 sets each, no life bonuses; bedlam, hornet, market, legion wait."
+        ],
+        [
+          "2026-10-20",
+          "Split tier 1-2 results at the floor-raise commit (T1-2 decks rebuilt); old T1-2 rows are on old decks."
+        ],
+        [
+          "2026-10-20",
+          "Starter tests: split runs 50/50 between each colour's Normal and Alt starter; report them separately."
+        ],
+        [
+          "2026-10-20",
+          "200 variant decks added (80 per tier); bring them up to the median game count."
+        ],
+        [
+          "2026-10-21",
+          "Starter games count only since 5439eb01 (01:16:50Z); keep the Normal/Alt split 50/50 from there."
+        ],
+        [
+          "2026-10-21",
+          "Read tools/agents/human_logic.toon before judging decks; write new Claude-only data files in TOON where it saves tokens."
+        ],
+        [
+          "2026-10-21",
+          "Don't message the main session after each hourly batch; results go in the 4-hour report, messages only for blockers."
+        ],
+        [
+          "2026-10-21",
+          "Remove the 30-minute cap from the brief"
+        ],
+        [
+          "2026-10-21",
+          "Temporarily raise effort to high and keep it until the session limit is hit"
+        ],
+        [
+          "2026-10-21",
+          "Cooperation: balance agents collect AI behaviour data via phase logs and feed it to the AI lab"
+        ],
+        [
+          "2026-10-21",
+          "After each 4-hour report: three-way TOON conversation (main, AI lab, deck balance lab) to describe workflows and agree mutually beneficial improvements; main session deploys what all three agree with"
+        ],
+        [
+          "2026-10-21",
+          "Agents must obey the main session unless a task violates the guardrails, and must not stop mid-task waiting for the user"
+        ],
+        [
+          "2026-10-21",
+          "Archive, compile context, remake with stricter obedience: always obey the main session, pass user questions to it and accept its replies as user input; give full tools and a shared TOOLBOX"
+        ],
+        [
+          "2026-10-21",
+          "Command duration: send an ETA line before any command over about 30 s; the main session checks 15 s after the estimate and remedies (replaces the keep-commands-under-5-minutes and timing-breakdown requests)"
+        ]
+      ],
+      "analyses": [
+        [
+          "2026-10-20",
+          "Seat edge, power vs wins, match length (74 games)"
+        ],
+        [
+          "2026-10-20",
+          "Bonus table review: what to test next"
+        ]
+      ]
+    },
+    "deck-builder": {
+      "brief": ".claude/agents/deck-builder.md",
+      "session": "TBD",
+      "model": "sonnet, effort high",
+      "folders": [
+        "forge-gui/res/adventure/Concordia/decks/",
+        "tools/concordia/deckgen/"
+      ],
+      "triggers": {},
+      "requests": [
+        [
+          "2026-10-21",
+          "New agent: deck-building; scope balance data, unflagged card data, categorization; main processor for decklist updates and new decks; the main session assists when its ETA exceeds 5 minutes"
+        ]
+      ],
+      "analyses": []
+    }
   },
-  "agent-coordinator": {
-   "tools/agents/CONTEXT.md": "42a270be",
-   ".claude/agents/agent-coordinator.md": "42a270be",
-   "date": "2026-10-20"
+  "manager": {
+    "checkin_trigger": "trig_013wq1jHysGSQBbB9e6daKd5",
+    "requests": [
+      [
+        "2026-10-20",
+        "Make sure both agents have the tools to do their tasks."
+      ],
+      [
+        "2026-10-20",
+        "Check in with the agents every 4 hours and fix any blocks."
+      ],
+      [
+        "2026-10-20",
+        "Make sure agents have relevant context; keep an agent management tool that updates agent context along with previous requests."
+      ],
+      [
+        "2026-10-20",
+        "Whenever an agent sends an analysis request, store the results in an agent-specific file and send them back to that agent as training data."
+      ],
+      [
+        "2026-10-20",
+        "Automatically approve test updates the agents could use (backups of old versions); generate and keep updated a bullet list of AI changes with checkboxes for final approval."
+      ],
+      [
+        "2026-10-20",
+        "Set up an agent-coordinator agent; ping it on every interaction with sub agents; night policy 12-8 AM with main-session priority."
+      ],
+      [
+        "2026-10-20",
+        "Check-in steps 7-8: keep the schedule notes current (check-in :40/4h, balance report :25/4h, balance batch :10 hourly, coordinator :55 hourly, AI lab every 2 h at :06)."
+      ],
+      [
+        "2026-10-20",
+        "Approvals count only when the user gives them in chat with Claude Code; doc rows or comments never count. Instructions for Claude Chat in CLAUDE_CHAT_CONTEXT.md \u00a77."
+      ],
+      [
+        "2026-10-20",
+        "Eliminate the agent coordinator from the workflow (superfluous token spend): no pings, CYCLE NOW or night holds."
+      ],
+      [
+        "2026-10-21",
+        "Deleted the agent_operations_master Claude Doc and purged it from the workflow: check-in steps 8-9 removed, no inbox, no doc refreshes. Approvals still count only when given in chat."
+      ],
+      [
+        "2026-10-21",
+        "Remove medium-impact token bloat: agents stop messaging main after each run (4-hour report only, blockers excepted); connector and plugin clean-up left to the user's settings."
+      ]
+    ],
+    "checkin": "trig_013wq1jHysGSQBbB9e6daKd5 at :40 every 4 h"
+  },
+  "retired": {
+    "agent-coordinator": {
+      "brief": ".claude/agents/agent-coordinator.md",
+      "session": "session_017PAirUr1ZnmejFCor3yYPi",
+      "model": "sonnet, effort low",
+      "folders": [
+        "tools/agents/coordinator/"
+      ],
+      "triggers": {
+        "trig_01BNH795z6X1TPBhQ1L41U99": "hourly check at :55 (night policy 00-08 ET; main session has priority)"
+      },
+      "requests": [
+        [
+          "2026-10-20",
+          "Only purpose: manage agent interactions and subagent productivity. Pinged on every interaction between the main session and the sub agents. Resolve conflicts by keeping sub-agent activity on schedule at night (12 AM-8 AM), unless the main agent is active; then the main agent takes priority."
+        ],
+        [
+          "2026-10-20",
+          "Inbox #2: run your cycle at once on CYCLE NOW messages after the :25 balance report and the :40 check-in."
+        ]
+      ],
+      "retired": "2026-10-20: removed at the user's request (superfluous token spend); trigger trig_01BNH795z6X1TPBhQ1L41U99 disabled"
+    },
+    "multi-balance-temp": {
+      "retired": "2026-10-21",
+      "reason": "temporary agent; research concluded early (user: dump temp agents)",
+      "session": "session_01Xf8fcEAkTmjYqjkqjprkzB",
+      "records": [
+        "tools/concordia/balance_lab/records_multitemp.csv"
+      ]
+    },
+    "balance-assist-temp": {
+      "retired": "2026-10-21",
+      "reason": "temporary agent; research concluded early (user: dump temp agents)",
+      "session": "session_013BsiDe1jUJVyjo7fDgKnNq",
+      "records": [
+        "tools/concordia/balance_lab/records_assist.csv"
+      ]
+    },
+    "forge-ai-lab-gen1": {
+      "retired": "2026-10-21",
+      "reason": "remade with stricter obedience instructions (user order)",
+      "session": "session_01SdzhYuPRVSAtP7QLaagBxk",
+      "handoff": "tools/concordia/ai_lab/HANDOFF.md",
+      "brief": "tools/agents/retired_briefs/forge-ai-lab.2026-10-21.md"
+    },
+    "deck-balance-lab-gen1": {
+      "retired": "2026-10-21",
+      "reason": "remade with stricter obedience instructions (user order)",
+      "session": "session_011UrsiVw1s1nsvYUSkv2iLy",
+      "handoff": "tools/concordia/balance_lab/HANDOFF.md",
+      "brief": "tools/agents/retired_briefs/deck-balance-lab.2026-10-21.md"
+    }
   }
- },
- "agents": {
-  "forge-ai-lab": {
-   "brief": ".claude/agents/forge-ai-lab.md",
-   "session": "session_018TohPY7UPn5mh9b7aJ4at5",
-   "model": "sonnet, effort high",
-   "folders": [
-    "tools/concordia/ai_lab/",
-    "docs/Adventure/Campaign/AI_TAGS_REFERENCE.md"
-   ],
-   "triggers": {},
-   "requests": [
-    [
-     "2026-10-20",
-     "Analyse the Forge AI and experiment with the proposed low-risk improvements; build an easy reference for all AI tags and their logic; run small simulations testing fixes to unplayable cards, so the AI plays formerly unplayable cards with effects matching their text (more card plays and wins)."
-    ],
-    [
-     "2026-10-20",
-     "Low speed and low session usage, background work; the main session may pause it during big requests."
-    ],
-    [
-     "2026-10-20",
-     "Side chat with updates every 6 hours (later: hourly steps, report every 4 hours)."
-    ],
-    [
-     "2026-10-20",
-     "Give it the main session's AI review as materials (AI_RESEARCH.md, AI_FLAGGED_CARDS.md, ai_flagged_cards.html)."
-    ],
-    [
-     "2026-10-20",
-     "Retry failed pushes."
-    ],
-    [
-     "2026-10-20",
-     "Shrink test decks to 30 cards so flagged cards are drawn more often (if a restriction blocks it, pad with Wastes removed at match start)."
-    ],
-    [
-     "2026-10-20",
-     "User standing request (relayed by the agent): every test's results go to the main session with an analysis request."
-    ],
-    [
-     "2026-10-20",
-     "Test updates the agents could use are automatically approved, with old versions backed up; AI changes go on a checkbox list for the user's final approval."
-    ],
-    [
-     "2026-10-20",
-     "Step every 2 hours at :06 instead of hourly."
-    ],
-    [
-     "2026-10-20",
-     "Test decks regenerated from the current tier decks; don't pool results across the regeneration."
-    ],
-    [
-     "2026-10-21",
-     "Read tools/agents/human_logic.toon (the user's deck-balance rules); write new Claude-only data files in TOON where it saves tokens."
-    ],
-    [
-     "2026-10-21",
-     "Don't message the main session after each run; results go in the 4-hour report, messages only for blockers."
-    ],
-    [
-     "2026-10-21",
-     "R/G sims moved to the temp agent: logic research only"
-    ],
-    [
-     "2026-10-21",
-     "Temporarily raise effort to high and keep it until the session limit is hit"
-    ],
-    [
-     "2026-10-21",
-     "Cooperation: the AI lab collects balance-change data from bonuses and feeds the deck balancers options to empower AI decks vs player decks"
-    ],
-    [
-     "2026-10-21",
-     "After each 4-hour report: three-way TOON conversation (main, AI lab, deck balance lab) to describe workflows and agree mutually beneficial improvements; main session deploys what all three agree with"
-    ],
-    [
-     "2026-10-21",
-     "Agents must obey the main session unless a task violates the guardrails, and must not stop mid-task waiting for the user"
-    ],
-    [
-     "2026-10-21",
-     "Archive, compile context, remake with stricter obedience: always obey the main session, pass user questions to it and accept its replies as user input; give full tools and a shared TOOLBOX"
-    ],
-    [
-     "2026-10-21",
-     "Command duration: send an ETA line before any command over about 30 s; the main session checks 15 s after the estimate and remedies (replaces the keep-commands-under-5-minutes and timing-breakdown requests)"
-    ]
-   ],
-   "analyses": [
-    [
-     "2026-10-20",
-     "Flagged-card timing and logic fit (exp 001-003)"
-    ],
-    [
-     "2026-10-20",
-     "Quality of use at natural density (n001-n003)"
-    ],
-    [
-     "2026-10-20",
-     "Patch 005 two-version SwitchPT review"
-    ],
-    [
-     "2026-10-20",
-     "s005/s006 code A/B review"
-    ],
-    [
-     "2026-10-20",
-     "s008 gang-block patch review"
-    ],
-    [
-     "2026-10-20",
-     "Regression for 008: not enough yet"
-    ],
-    [
-     "2026-10-20",
-     "g008 gang-block test review; shadow-mode logging"
-    ]
-   ]
-  },
-  "deck-balance-lab": {
-   "brief": ".claude/agents/deck-balance-lab.md",
-   "session": "session_01PwU5ft7yoiwonjyndwCVv9",
-   "model": "sonnet, effort high",
-   "folders": [
-    "tools/concordia/balance_lab/"
-   ],
-   "triggers": {},
-   "requests": [
-    [
-     "2026-10-20",
-     "Low speed, low usage; runs every hour and reports every 4 hours; focused on deck balance for AI encounters."
-    ],
-    [
-     "2026-10-20",
-     "Run random inner-tier simulations to build a record for the main session to analyse."
-    ],
-    [
-     "2026-10-20",
-     "Test Forge's start-of-combat bonus cards in areas: Forge is too heavy-handed, so test some of the premade ones and smaller bonuses (a free relevant land or a 1-drop for wild encounters), each against no bonus to measure impact."
-    ],
-    [
-     "2026-10-20",
-     "One batch of tests every hour, with no time cap per session (user, 2026-10-21)."
-    ],
-    [
-     "2026-10-20",
-     "Retry failed pushes."
-    ],
-    [
-     "2026-10-20",
-     "User standing request (relayed by the agent): send results to the main session after every test, with an analysis request; main session asked to batch these with the 4-hour report."
-    ],
-    [
-     "2026-10-20",
-     "Test updates the agents could use are automatically approved, with old versions backed up; AI changes go on a checkbox list for the user's final approval."
-    ],
-    [
-     "2026-10-20",
-     "Eliminate life bonuses (life5, life10) as an option: no life-bonus tests, every sim at equal life."
-    ],
-    [
-     "2026-10-20",
-     "Inbox #2-#3: ping the coordinator after each 4-hour report; bonus sets land, onedrop, land+onedrop against arena and staff, 5 sets each, no life bonuses; bedlam, hornet, market, legion wait."
-    ],
-    [
-     "2026-10-20",
-     "Split tier 1-2 results at the floor-raise commit (T1-2 decks rebuilt); old T1-2 rows are on old decks."
-    ],
-    [
-     "2026-10-20",
-     "Starter tests: split runs 50/50 between each colour's Normal and Alt starter; report them separately."
-    ],
-    [
-     "2026-10-20",
-     "200 variant decks added (80 per tier); bring them up to the median game count."
-    ],
-    [
-     "2026-10-21",
-     "Starter games count only since 5439eb01 (01:16:50Z); keep the Normal/Alt split 50/50 from there."
-    ],
-    [
-     "2026-10-21",
-     "Read tools/agents/human_logic.toon before judging decks; write new Claude-only data files in TOON where it saves tokens."
-    ],
-    [
-     "2026-10-21",
-     "Don't message the main session after each hourly batch; results go in the 4-hour report, messages only for blockers."
-    ],
-    [
-     "2026-10-21",
-     "Remove the 30-minute cap from the brief"
-    ],
-    [
-     "2026-10-21",
-     "Temporarily raise effort to high and keep it until the session limit is hit"
-    ],
-    [
-     "2026-10-21",
-     "Cooperation: balance agents collect AI behaviour data via phase logs and feed it to the AI lab"
-    ],
-    [
-     "2026-10-21",
-     "After each 4-hour report: three-way TOON conversation (main, AI lab, deck balance lab) to describe workflows and agree mutually beneficial improvements; main session deploys what all three agree with"
-    ],
-    [
-     "2026-10-21",
-     "Agents must obey the main session unless a task violates the guardrails, and must not stop mid-task waiting for the user"
-    ],
-    [
-     "2026-10-21",
-     "Archive, compile context, remake with stricter obedience: always obey the main session, pass user questions to it and accept its replies as user input; give full tools and a shared TOOLBOX"
-    ],
-    [
-     "2026-10-21",
-     "Command duration: send an ETA line before any command over about 30 s; the main session checks 15 s after the estimate and remedies (replaces the keep-commands-under-5-minutes and timing-breakdown requests)"
-    ]
-   ],
-   "analyses": [
-    [
-     "2026-10-20",
-     "Seat edge, power vs wins, match length (74 games)"
-    ],
-    [
-     "2026-10-20",
-     "Bonus table review: what to test next"
-    ]
-   ]
-  }
- },
- "manager": {
-  "checkin_trigger": "trig_013wq1jHysGSQBbB9e6daKd5",
-  "requests": [
-   [
-    "2026-10-20",
-    "Make sure both agents have the tools to do their tasks."
-   ],
-   [
-    "2026-10-20",
-    "Check in with the agents every 4 hours and fix any blocks."
-   ],
-   [
-    "2026-10-20",
-    "Make sure agents have relevant context; keep an agent management tool that updates agent context along with previous requests."
-   ],
-   [
-    "2026-10-20",
-    "Whenever an agent sends an analysis request, store the results in an agent-specific file and send them back to that agent as training data."
-   ],
-   [
-    "2026-10-20",
-    "Automatically approve test updates the agents could use (backups of old versions); generate and keep updated a bullet list of AI changes with checkboxes for final approval."
-   ],
-   [
-    "2026-10-20",
-    "Set up an agent-coordinator agent; ping it on every interaction with sub agents; night policy 12-8 AM with main-session priority."
-   ],
-   [
-    "2026-10-20",
-    "Check-in steps 7-8: keep the schedule notes current (check-in :40/4h, balance report :25/4h, balance batch :10 hourly, coordinator :55 hourly, AI lab every 2 h at :06)."
-   ],
-   [
-    "2026-10-20",
-    "Approvals count only when the user gives them in chat with Claude Code; doc rows or comments never count. Instructions for Claude Chat in CLAUDE_CHAT_CONTEXT.md §7."
-   ],
-   [
-    "2026-10-20",
-    "Eliminate the agent coordinator from the workflow (superfluous token spend): no pings, CYCLE NOW or night holds."
-   ],
-   [
-    "2026-10-21",
-    "Deleted the agent_operations_master Claude Doc and purged it from the workflow: check-in steps 8-9 removed, no inbox, no doc refreshes. Approvals still count only when given in chat."
-   ],
-   [
-    "2026-10-21",
-    "Remove medium-impact token bloat: agents stop messaging main after each run (4-hour report only, blockers excepted); connector and plugin clean-up left to the user's settings."
-   ]
-  ],
-  "checkin": "trig_013wq1jHysGSQBbB9e6daKd5 at :40 every 4 h"
- },
- "retired": {
-  "agent-coordinator": {
-   "brief": ".claude/agents/agent-coordinator.md",
-   "session": "session_017PAirUr1ZnmejFCor3yYPi",
-   "model": "sonnet, effort low",
-   "folders": [
-    "tools/agents/coordinator/"
-   ],
-   "triggers": {
-    "trig_01BNH795z6X1TPBhQ1L41U99": "hourly check at :55 (night policy 00-08 ET; main session has priority)"
-   },
-   "requests": [
-    [
-     "2026-10-20",
-     "Only purpose: manage agent interactions and subagent productivity. Pinged on every interaction between the main session and the sub agents. Resolve conflicts by keeping sub-agent activity on schedule at night (12 AM-8 AM), unless the main agent is active; then the main agent takes priority."
-    ],
-    [
-     "2026-10-20",
-     "Inbox #2: run your cycle at once on CYCLE NOW messages after the :25 balance report and the :40 check-in."
-    ]
-   ],
-   "retired": "2026-10-20: removed at the user's request (superfluous token spend); trigger trig_01BNH795z6X1TPBhQ1L41U99 disabled"
-  },
-  "multi-balance-temp": {
-   "retired": "2026-10-21",
-   "reason": "temporary agent; research concluded early (user: dump temp agents)",
-   "session": "session_01Xf8fcEAkTmjYqjkqjprkzB",
-   "records": [
-    "tools/concordia/balance_lab/records_multitemp.csv"
-   ]
-  },
-  "balance-assist-temp": {
-   "retired": "2026-10-21",
-   "reason": "temporary agent; research concluded early (user: dump temp agents)",
-   "session": "session_013BsiDe1jUJVyjo7fDgKnNq",
-   "records": [
-    "tools/concordia/balance_lab/records_assist.csv"
-   ]
-  },
-  "forge-ai-lab-gen1": {
-   "retired": "2026-10-21",
-   "reason": "remade with stricter obedience instructions (user order)",
-   "session": "session_01SdzhYuPRVSAtP7QLaagBxk",
-   "handoff": "tools/concordia/ai_lab/HANDOFF.md",
-   "brief": "tools/agents/retired_briefs/forge-ai-lab.2026-10-21.md"
-  },
-  "deck-balance-lab-gen1": {
-   "retired": "2026-10-21",
-   "reason": "remade with stricter obedience instructions (user order)",
-   "session": "session_011UrsiVw1s1nsvYUSkv2iLy",
-   "handoff": "tools/concordia/balance_lab/HANDOFF.md",
-   "brief": "tools/agents/retired_briefs/deck-balance-lab.2026-10-21.md"
-  }
- }
 }
