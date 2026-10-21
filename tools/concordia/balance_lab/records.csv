@@ -467,3 +467,13 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:46:47Z,8dd48a92d20,inner,4,decks/tier4/T4_B_Massacre.dck,decks/tier4/T4_B_Taborax.dck,30,30,,,b,a,20,0
 2026-10-21T02:47:17Z,8dd48a92d20,inner,3,decks/tier3/T3_B_Fang.dck,decks/tier3/T3_B_Hythonia.dck,25,25,,,a,b,18,0
 2026-10-21T02:47:17Z,8dd48a92d20,inner,3,decks/tier3/T3_B_Fang.dck,decks/tier3/T3_B_Hythonia.dck,25,25,,,b,a,20,0
+2026-10-21T02:47:46Z,8dd48a92d20,inner,1,decks/tier1/T1_B_Gallia.dck,decks/tier1/T1_B_Falthis.dck,10,10,,,a,a,11,0
+2026-10-21T02:47:46Z,8dd48a92d20,inner,1,decks/tier1/T1_B_Gallia.dck,decks/tier1/T1_B_Falthis.dck,10,10,,,b,b,11,0
+2026-10-21T02:48:06Z,8dd48a92d20,inner,1,decks/tier1/T1_B_Yahenni.dck,decks/tier1/T1_B_Splinter.dck,10,10,,,a,a,27,0
+2026-10-21T02:48:06Z,8dd48a92d20,inner,1,decks/tier1/T1_B_Yahenni.dck,decks/tier1/T1_B_Splinter.dck,10,10,,,b,a,10,0
+2026-10-21T02:48:30Z,8dd48a92d20,inner,1,decks/tier1/T1_B_Moonstone.dck,decks/tier1/T1_B_Keskit.dck,10,10,,,a,b,14,0
+2026-10-21T02:48:30Z,8dd48a92d20,inner,1,decks/tier1/T1_B_Moonstone.dck,decks/tier1/T1_B_Keskit.dck,10,10,,,b,a,16,0
+2026-10-21T02:48:51Z,8dd48a92d20,inner,3,decks/tier3/T3_B_Imotekh.dck,decks/tier3/T3_B_Yargle.dck,25,25,,,a,a,19,0
+2026-10-21T02:48:51Z,8dd48a92d20,inner,3,decks/tier3/T3_B_Imotekh.dck,decks/tier3/T3_B_Yargle.dck,25,25,,,b,a,14,0
+2026-10-21T02:49:15Z,8dd48a92d20,inner,2,decks/tier2/T2_B_Sengir.dck,decks/tier2/T2_B_Rev.dck,15,15,,,a,a,13,0
+2026-10-21T02:49:15Z,8dd48a92d20,inner,2,decks/tier2/T2_B_Sengir.dck,decks/tier2/T2_B_Rev.dck,15,15,,,b,b,19,0
