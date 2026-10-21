@@ -105,3 +105,5 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:43:03Z,1a6eac0bb60,inner,2,decks/tier2/T2_WB_Thalisse.dck,decks/tier2/T2_RG_Halana.dck,15,15,,,b,b,27,0
 2026-10-21T02:43:43Z,1a6eac0bb60,inner,4,decks/tier4/T4_WU_Raff.dck,decks/tier4/T4_WBG_Necrobloom.dck,30,30,,,a,a,11,0
 2026-10-21T02:43:43Z,1a6eac0bb60,inner,4,decks/tier4/T4_WU_Raff.dck,decks/tier4/T4_WBG_Necrobloom.dck,30,30,,,b,a,28,0
+2026-10-21T02:44:18Z,1a6eac0bb60,inner,5,decks/tier5/T5_WRG_Gahiji.dck,decks/tier5/T5_UBR_Inalla.dck,35,35,,,a,b,18,0
+2026-10-21T02:44:18Z,1a6eac0bb60,inner,5,decks/tier5/T5_WRG_Gahiji.dck,decks/tier5/T5_UBR_Inalla.dck,35,35,,,b,b,15,0
