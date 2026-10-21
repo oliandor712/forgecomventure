@@ -39,3 +39,15 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:12:10Z,29f74078,inner,5,decks/tier5/T5_R_Zuko.dck,decks/tier5/T5_R_Ral.dck,35,35,,,b,b,21,0
 2026-10-21T02:12:39Z,29f74078,inner,5,decks/tier5/T5_R_Zuko.dck,decks/tier5/T5_R_Longshot.dck,35,35,,,a,a,23,0
 2026-10-21T02:12:39Z,29f74078,inner,5,decks/tier5/T5_R_Zuko.dck,decks/tier5/T5_R_Longshot.dck,35,35,,,b,a,14,0
+2026-10-21T02:12:58Z,29f74078,inner,5,decks/tier5/T5_R_Rose.dck,decks/tier5/T5_R_Godo.dck,35,35,,,a,a,29,0
+2026-10-21T02:12:58Z,29f74078,inner,5,decks/tier5/T5_R_Rose.dck,decks/tier5/T5_R_Godo.dck,35,35,,,b,b,23,0
+2026-10-21T02:13:40Z,29f74078,inner,4,decks/tier4/T4_R_Magda.dck,decks/tier4/T4_R_Etali.dck,30,30,,,a,a,9,0
+2026-10-21T02:13:40Z,29f74078,inner,4,decks/tier4/T4_R_Magda.dck,decks/tier4/T4_R_Etali.dck,30,30,,,b,a,16,0
+2026-10-21T02:13:57Z,29f74078,inner,4,decks/tier4/T4_R_Tyrox.dck,decks/tier4/T4_R_Gimli.dck,30,30,,,a,b,18,0
+2026-10-21T02:13:57Z,29f74078,inner,4,decks/tier4/T4_R_Tyrox.dck,decks/tier4/T4_R_Gimli.dck,30,30,,,b,b,13,0
+2026-10-21T02:14:13Z,29f74078,inner,3,decks/tier3/T3_R_Zada.dck,decks/tier3/T3_R_Iron.dck,25,25,,,a,a,19,0
+2026-10-21T02:14:13Z,29f74078,inner,3,decks/tier3/T3_R_Zada.dck,decks/tier3/T3_R_Iron.dck,25,25,,,b,b,11,0
+2026-10-21T02:14:32Z,29f74078,inner,4,decks/tier4/T4_R_Gimli.dck,decks/tier4/T4_R_Koth.dck,30,30,,,a,a,11,0
+2026-10-21T02:14:32Z,29f74078,inner,4,decks/tier4/T4_R_Gimli.dck,decks/tier4/T4_R_Koth.dck,30,30,,,b,b,13,0
+2026-10-21T02:14:48Z,29f74078,inner,3,decks/tier3/T3_R_Pashalik.dck,decks/tier3/T3_R_Auntie.dck,25,25,,,a,a,17,0
+2026-10-21T02:14:48Z,29f74078,inner,3,decks/tier3/T3_R_Pashalik.dck,decks/tier3/T3_R_Auntie.dck,25,25,,,b,a,13,0
