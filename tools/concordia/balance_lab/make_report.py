@@ -147,6 +147,13 @@ L_queue = ["## Mass research queue (QUEUE.toon, H28: %d games per deck)" % 40, "
                slots_done, slots_total, 100 * slots_done / slots_total, sum(1 for q in QUEUE.values() if q["games"] >= q["target"]), len(QUEUE), per_batch,
                "%.0f" % (remaining / per_batch) if per_batch else "unknown"), "",
            "Archetype tag: tokens (12+ token makers), ramp (10+ mana producers), control (10+ removal and 24 or fewer creatures), aggro (average mana cost 2.8 or less with 24+ creatures), otherwise midrange. Combo is not tagged. Colour shards: W, U, B, R, G mono, then multicolour.", ""]
+short = collections.defaultdict(list)
+for name, q in QUEUE.items():
+    if q["tier"] != "S" and q["games"] < q["target"]:
+        short[(q["tier"], q["color"])].append(name)
+L_queue += ["**Partial results:** the run stopped early. Decks still below target, by tier and colour (%d in total):" % sum(len(v) for v in short.values()), ""]
+L_queue += ["- tier %s, colour %s: %d decks" % (t, c, len(v)) for (t, c), v in sorted(short.items())] or ["- none"]
+L_queue += [""]
 L += L_queue
 cell = collections.defaultdict(lambda: [0, 0.0])
 for r in inner:
