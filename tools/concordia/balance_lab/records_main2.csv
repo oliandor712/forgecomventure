@@ -1,3 +1,17 @@
 utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,turns,timeout
 2026-10-21T02:18:16Z,d8e44e4b,inner,2,decks/tier2/T2_UG_Moritte.dck,decks/tier2/T2_BR_Obosh.dck,15,15,,,a,a,15,0
 2026-10-21T02:18:16Z,d8e44e4b,inner,2,decks/tier2/T2_UG_Moritte.dck,decks/tier2/T2_BR_Obosh.dck,15,15,,,b,a,16,0
+2026-10-21T02:18:44Z,d8e44e4b,inner,4,decks/tier4/T4_WG_Miriam.dck,decks/tier4/T4_WB_Tomik.dck,30,30,,,a,b,20,0
+2026-10-21T02:18:44Z,d8e44e4b,inner,4,decks/tier4/T4_WG_Miriam.dck,decks/tier4/T4_WB_Tomik.dck,30,30,,,b,b,17,0
+2026-10-21T02:19:14Z,d8e44e4b,inner,3,decks/tier3/T3_UB_Adwal.dck,decks/tier3/T3_WUG_Falco.dck,25,25,,,a,a,15,0
+2026-10-21T02:19:14Z,d8e44e4b,inner,3,decks/tier3/T3_UB_Adwal.dck,decks/tier3/T3_WUG_Falco.dck,25,25,,,b,b,23,0
+2026-10-21T02:19:58Z,d8e44e4b,inner,4,decks/tier4/T4_URG_Magus.dck,decks/tier4/T4_BR_Juri.dck,30,30,,,a,b,14,0
+2026-10-21T02:19:58Z,d8e44e4b,inner,4,decks/tier4/T4_URG_Magus.dck,decks/tier4/T4_BR_Juri.dck,30,30,,,b,b,17,0
+2026-10-21T02:20:25Z,d8e44e4b,bonus,2,decks/tier2/T2_U_Echo.dck,decks/starter/U_Starter_Normal.dck,15,15,land+onedrop,,a,a,11,0
+2026-10-21T02:20:25Z,d8e44e4b,bonus,2,decks/tier2/T2_U_Echo.dck,decks/starter/U_Starter_Normal.dck,15,15,land+onedrop,,b,a,18,0
+2026-10-21T02:20:25Z,d8e44e4b,bonus,2,decks/tier2/T2_U_Echo.dck,decks/starter/U_Starter_Normal.dck,15,15,,,a,a,25,0
+2026-10-21T02:20:25Z,d8e44e4b,bonus,2,decks/tier2/T2_U_Echo.dck,decks/starter/U_Starter_Normal.dck,15,15,,,b,a,24,0
+2026-10-21T02:21:24Z,d8e44e4b,bonus,1,decks/tier1/T1_U_Padeem.dck,decks/starter/W_Starter_Alt.dck,10,10,land+onedrop,,a,b,26,0
+2026-10-21T02:21:24Z,d8e44e4b,bonus,1,decks/tier1/T1_U_Padeem.dck,decks/starter/W_Starter_Alt.dck,10,10,land+onedrop,,b,a,12,0
+2026-10-21T02:21:24Z,d8e44e4b,bonus,1,decks/tier1/T1_U_Padeem.dck,decks/starter/W_Starter_Alt.dck,10,10,,,a,b,16,0
+2026-10-21T02:21:24Z,d8e44e4b,bonus,1,decks/tier1/T1_U_Padeem.dck,decks/starter/W_Starter_Alt.dck,10,10,,,b,b,15,0
