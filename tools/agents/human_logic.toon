@@ -13,7 +13,7 @@ rules[29|]{id|area|rule|since|status|where}:
   H08|builder|Raise the tier 1-2 floor. T1 decks 16-18 power and T2 25-30 rather than as weak as the builder can make them|2026-10-21|applied|build.py FLOOR CEILING T1_TARGET
   H09|builder|Push staples at tiers 1-2 but only in uncommon printings|2026-10-21|applied|build.py UNCOMMON_STAPLE_BONUS
   H10|builder|Add near-staple nonbasic lands and cheap mana rocks from budget decks (precons and low-rarity lists) inside the tier's ramp caps|2026-10-21|applied|budget_lands.py
-  H11|builder|Loosen tier 1 creature requirements: 30-34 creatures with more instants, sorceries, artifacts and enchantments|2026-10-21|applied|build.py SPEC 1
+  H11|builder|Loosen tier 1 creature requirements: 30-34 creatures with more instants, sorceries, artifacts and enchantments. Low subarchetypes (low-control, low-aggro, low-tribal, low-tokens) may go down to a floor of 26 creatures (user, 2026-10-21)|2026-10-21|applied|build.py SPEC 1
   H12|builder|Card type mix follows the color's nature. A blue spells deck should not run 37 creatures|2026-10-21|partly|blue starter fixed, AI decks not yet audited by color
   H13|builder|Synergy beats score. A low-scoring card that works with the commander's ability is rated slightly above a stronger card that does not|2026-10-21|partly|starter alternates only (variants.py SYN), not the 200 AI decks
   H14|builder|Cost-reduction commanders such as Goreclaw want low-score creatures with enter-the-battlefield abilities at the reduced power threshold|2026-10-21|partly|SYN counts power 4+ creatures and gives a bonus for enter-the-battlefield text
