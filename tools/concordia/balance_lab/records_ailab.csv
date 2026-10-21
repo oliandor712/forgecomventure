@@ -37,3 +37,5 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:11:50Z,29f74078,inner,3,decks/tier3/T3_R_Auntie.dck,decks/tier3/T3_R_Iron.dck,25,25,,,b,b,18,0
 2026-10-21T02:12:10Z,29f74078,inner,5,decks/tier5/T5_R_Zuko.dck,decks/tier5/T5_R_Ral.dck,35,35,,,a,a,15,0
 2026-10-21T02:12:10Z,29f74078,inner,5,decks/tier5/T5_R_Zuko.dck,decks/tier5/T5_R_Ral.dck,35,35,,,b,b,21,0
+2026-10-21T02:12:39Z,29f74078,inner,5,decks/tier5/T5_R_Zuko.dck,decks/tier5/T5_R_Longshot.dck,35,35,,,a,a,23,0
+2026-10-21T02:12:39Z,29f74078,inner,5,decks/tier5/T5_R_Zuko.dck,decks/tier5/T5_R_Longshot.dck,35,35,,,b,a,14,0
