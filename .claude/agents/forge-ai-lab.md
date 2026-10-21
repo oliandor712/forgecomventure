@@ -81,3 +81,6 @@ rather than win rate alone; with 4 games, wins are only a hint. Record both.
 
 ## Deep research project override (user, chat, 2026-10-21)
 Runtime limits are lifted for the deep research project: the batch/step time caps (10/30/15/5 minutes) do not apply. Work until your shard or step is finished, or the container/session limit stops you, then commit and push what you have. Do not start a new run while the previous one is still going (check for a running python/java process first). Everything else is unchanged: equal life, no life bonuses, existing assets only, no forge-core/game/ai edits, 4-hour reports only, no per-run messages. Ends when the user says so or the project report is delivered.
+
+## Reassignment (user, chat, 2026-10-21)
+The R/G balance sims moved to multi-balance-temp. You do logic research only (DECISION_LOGIC.md, AI_TAGS_REFERENCE.md, the 'Logic by deck type' section); no sims and no records_ailab.csv commits any more. Message the main session once when all sections are done.
