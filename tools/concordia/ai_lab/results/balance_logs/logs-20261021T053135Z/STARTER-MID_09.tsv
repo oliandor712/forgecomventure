@@ -1,0 +1,315 @@
+1		TURN	Turn 1 (B)
+1	B's Untap step	PHASE	B's Untap step
+1	B's Upkeep step	PHASE	B's Upkeep step
+1	B's Draw step	PHASE	B's Draw step
+1	B's Main phase, precombat	PHASE	B's Main phase, precombat
+1	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+1	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+1	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+1	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+1	B's Combat Damage Step	PHASE	B's Combat Damage Step
+1	B's End of Combat Step	PHASE	B's End of Combat Step
+1	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+1	B's Main phase, postcombat	STACK_ADD	B cast Arbor Elf
+1	B's End step	PHASE	B's End step
+1	B's Cleanup step	PHASE	B's Cleanup step
+2	B's Cleanup step	TURN	Turn 2 (A)
+2	A's Untap step	PHASE	A's Untap step
+2	A's Upkeep step	PHASE	A's Upkeep step
+2	A's Draw step	PHASE	A's Draw step
+2	A's Main phase, precombat	PHASE	A's Main phase, precombat
+2	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+2	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+2	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+2	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+2	A's Combat Damage Step	PHASE	A's Combat Damage Step
+2	A's End of Combat Step	PHASE	A's End of Combat Step
+2	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+2	A's End step	PHASE	A's End step
+2	A's Cleanup step	PHASE	A's Cleanup step
+3	A's Cleanup step	TURN	Turn 3 (B)
+3	B's Untap step	PHASE	B's Untap step
+3	B's Upkeep step	PHASE	B's Upkeep step
+3	B's Draw step	PHASE	B's Draw step
+3	B's Main phase, precombat	PHASE	B's Main phase, precombat
+3	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+3	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+3	B's Declare Attackers Step	COMBAT	B assigned Arbor Elf (2) to attack A.
+3	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+3	B's Declare Blockers Step	COMBAT	A didn't block Arbor Elf (2).
+3	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+3	B's Combat Damage Step	PHASE	B's Combat Damage Step
+3	B's Combat Damage Step	DAMAGE	Arbor Elf (2) deals 1 combat damage to A.
+3	B's Combat Damage Step	LIFE	Life: A 15 > 14
+3	B's End of Combat Step	PHASE	B's End of Combat Step
+3	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+3	B's End step	PHASE	B's End step
+3	B's Cleanup step	PHASE	B's Cleanup step
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's Main phase, postcombat	STACK_ADD	A cast Carrier Thrall
+4	A's End step	PHASE	A's End step
+4	A's Cleanup step	PHASE	A's Cleanup step
+5	A's Cleanup step	TURN	Turn 5 (B)
+5	B's Untap step	PHASE	B's Untap step
+5	B's Upkeep step	PHASE	B's Upkeep step
+5	B's Draw step	PHASE	B's Draw step
+5	B's Main phase, precombat	PHASE	B's Main phase, precombat
+5	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+5	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+5	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+5	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+5	B's Combat Damage Step	PHASE	B's Combat Damage Step
+5	B's End of Combat Step	PHASE	B's End of Combat Step
+5	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+5	B's Main phase, postcombat	STACK_ADD	B cast Palladium Myr
+5	B's End step	PHASE	B's End step
+5	B's Cleanup step	PHASE	B's Cleanup step
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Main phase, precombat	STACK_ADD	A cast Swiftfoot Boots
+6	A's Main phase, precombat	STACK_ADD	A activated Swiftfoot Boots targeting [Carrier Thrall (129)]
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's End of Combat Step	STACK_ADD	B activated Arbor Elf targeting [Forest (19)]
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+7	A's Cleanup step	TURN	Turn 7 (B)
+7	B's Untap step	PHASE	B's Untap step
+7	B's Upkeep step	PHASE	B's Upkeep step
+7	B's Draw step	PHASE	B's Draw step
+7	B's Main phase, precombat	PHASE	B's Main phase, precombat
+7	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+7	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+7	B's Declare Attackers Step	COMBAT	B assigned Palladium Myr (95) and Arbor Elf (2) to attack A.
+7	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+7	B's Declare Blockers Step	COMBAT	A assigned Carrier Thrall (129) to block Palladium Myr (95). A didn't block Arbor Elf (2).
+7	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+7	B's Combat Damage Step	PHASE	B's Combat Damage Step
+7	B's Combat Damage Step	DAMAGE	Palladium Myr (95) deals 2 damage to Carrier Thrall (129).
+7	B's Combat Damage Step	DAMAGE	Arbor Elf (2) deals 1 combat damage to A.
+7	B's Combat Damage Step	DAMAGE	Carrier Thrall (129) deals 2 damage to Palladium Myr (95).
+7	B's Combat Damage Step	LIFE	Life: A 14 > 13
+7	B's Combat Damage Step	ZONE_CHANGE	Palladium Myr (95) was put into Graveyard from Battlefield.
+7	B's Combat Damage Step	ZONE_CHANGE	Carrier Thrall (129) was put into Graveyard from Battlefield.
+7	B's Combat Damage Step	STACK_ADD	A triggered Carrier Thrall
+7	B's End of Combat Step	PHASE	B's End of Combat Step
+7	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+7	B's Main phase, postcombat	STACK_ADD	B cast Eutropia the Twice-Favored
+7	B's End step	PHASE	B's End step
+7	B's Cleanup step	PHASE	B's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Main phase, precombat	STACK_ADD	A cast Nazar, the Velvet Fang
+8	A's Main phase, precombat	ZONE_CHANGE	Eldrazi Scion Token (210) was put into Graveyard from Battlefield.
+8	A's Main phase, precombat	STACK_ADD	A activated Swiftfoot Boots targeting [Nazar, the Velvet Fang (206)]
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Nazar, the Velvet Fang (206) to attack B.
+8	A's Declare Attackers Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B didn't block Nazar, the Velvet Fang (206).
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Nazar, the Velvet Fang (206) deals 3 combat damage to B.
+8	A's Combat Damage Step	LIFE	Life: B 15 > 12
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Main phase, precombat	STACK_ADD	B cast Mindcrank
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Attackers Step	COMBAT	B assigned Eutropia the Twice-Favored (100) and Arbor Elf (2) to attack A.
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's Declare Blockers Step	COMBAT	A didn't block Eutropia the Twice-Favored (100). A didn't block Arbor Elf (2).
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's Combat Damage Step	DAMAGE	Eutropia the Twice-Favored (100) deals 2 combat damage to A.
+9	B's Combat Damage Step	DAMAGE	Arbor Elf (2) deals 1 combat damage to A.
+9	B's Combat Damage Step	LIFE	Life: A 13 > 10
+9	B's Combat Damage Step	STACK_ADD	B triggered Mindcrank
+9	B's Combat Damage Step	ZONE_CHANGE	A milled Swamp (198), Ambition's Cost (148) and Raise Dead (119).
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Main phase, precombat	STACK_ADD	A cast Read the Bones
+10	A's Main phase, precombat	LIFE	Life: A 10 > 8
+10	A's Main phase, precombat	STACK_ADD	B triggered Mindcrank
+10	A's Main phase, precombat	ZONE_CHANGE	A milled Phyrexian Rager (134) and Vampire Sovereign (104).
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Nazar, the Velvet Fang (206) to attack B.
+10	A's Declare Attackers Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B didn't block Nazar, the Velvet Fang (206).
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Nazar, the Velvet Fang (206) deals 3 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 12 > 9
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A cast Mind Stone
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Attackers Step	COMBAT	B assigned Eutropia the Twice-Favored (100) and Arbor Elf (2) to attack A.
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's Declare Blockers Step	COMBAT	A didn't block Eutropia the Twice-Favored (100). A didn't block Arbor Elf (2).
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's Combat Damage Step	DAMAGE	Eutropia the Twice-Favored (100) deals 2 combat damage to A.
+11	B's Combat Damage Step	DAMAGE	Arbor Elf (2) deals 1 combat damage to A.
+11	B's Combat Damage Step	LIFE	Life: A 8 > 5
+11	B's Combat Damage Step	STACK_ADD	B triggered Mindcrank
+11	B's Combat Damage Step	ZONE_CHANGE	A milled Swamp (183), Victimize (146) and Liliana's Reaver (141).
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Main phase, precombat	ZONE_CHANGE	Evolving Wilds (128) was put into Graveyard from Battlefield.
+12	A's Main phase, precombat	STACK_ADD	A activated Evolving Wilds
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Nazar, the Velvet Fang (206) to attack B.
+12	A's Declare Attackers Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Nazar, the Velvet Fang (206).
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Nazar, the Velvet Fang (206) deals 3 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 9 > 6
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Fell Specter
+12	A's Main phase, postcombat	STACK_ADD	A triggered Fell Specter targeting [B]
+12	A's Main phase, postcombat	STACK_ADD	A triggered Fell Specter
+12	A's Main phase, postcombat	LIFE	Life: B 6 > 4
+12	A's Main phase, postcombat	STACK_ADD	A cast Vampire of the Dire Moon
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's Main phase, postcombat	STACK_ADD	B cast Extravagant Replication
+13	B's Main phase, postcombat	STACK_ADD	B triggered Eutropia the Twice-Favored targeting [Eutropia the Twice-Favored (100)]
+13	B's End step	PHASE	B's End step
+13	B's Cleanup step	PHASE	B's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Fell Specter (130) to attack B.
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B didn't block Fell Specter (130).
+14	A's Declare Blockers Step	STACK_ADD	B activated Arbor Elf targeting [Forest (19)]
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Fell Specter (130) deals 1 combat damage to B.
+14	A's Combat Damage Step	LIFE	Life: B 4 > 3
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD	A cast Vampire Spawn
+14	A's Main phase, postcombat	STACK_ADD	A triggered Vampire Spawn
+14	A's Main phase, postcombat	LIFE	Life: B 3 > 1
+14	A's Main phase, postcombat	LIFE	Life: A 5 > 7
+14	A's Main phase, postcombat	STACK_ADD	A triggered Nazar, the Velvet Fang
+14	A's Main phase, postcombat	STACK_ADD	A cast Gumdrop Poisoner
+14	A's Main phase, postcombat	STACK_ADD	A triggered Gumdrop Poisoner targeting [Arbor Elf (2)]
+14	A's Main phase, postcombat	ZONE_CHANGE	Arbor Elf (2) was put into Graveyard from Battlefield.
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Upkeep step	STACK_ADD	B triggered Extravagant Replication targeting [Mindcrank (42)]
+15	B's Draw step	PHASE	B's Draw step
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Main phase, precombat	STACK_ADD	B cast Colossus Hammer
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's End of Combat Step	PHASE	B's End of Combat Step
+15	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+15	B's Main phase, postcombat	STACK_ADD	B cast Arcane Signet
+15	B's End step	PHASE	B's End step
+15	B's Cleanup step	PHASE	B's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Attackers Step	COMBAT	A assigned Nazar, the Velvet Fang (206), Gumdrop Poisoner (138), Vampire Spawn (118), Fell Specter (130) and Vampire of the Dire Moon (144) to attack B.
+16	A's Declare Attackers Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's Declare Blockers Step	COMBAT	B didn't block Nazar, the Velvet Fang (206). B assigned Eutropia the Twice-Favored (100) to block Gumdrop Poisoner (138). B didn't block Vampire Spawn (118). B didn't block Fell Specter (130). B didn't block Vampire of the Dire Moon (144).
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's Combat Damage Step	DAMAGE	Nazar, the Velvet Fang (206) deals 3 combat damage to B.
+16	A's Combat Damage Step	DAMAGE	Gumdrop Poisoner (138) deals 3 damage to Eutropia the Twice-Favored (100).
+16	A's Combat Damage Step	LIFE	Life: A 7 > 10
+16	A's Combat Damage Step	DAMAGE	Vampire Spawn (118) deals 2 combat damage to B.
+16	A's Combat Damage Step	DAMAGE	Fell Specter (130) deals 1 combat damage to B.
+16	A's Combat Damage Step	DAMAGE	Vampire of the Dire Moon (144) deals 1 combat damage to B.
+16	A's Combat Damage Step	LIFE	Life: A 10 > 11
+16	A's Combat Damage Step	DAMAGE	Eutropia the Twice-Favored (100) deals 3 damage to Gumdrop Poisoner (138).
+16	A's Combat Damage Step	LIFE	Life: B 1 > -6
