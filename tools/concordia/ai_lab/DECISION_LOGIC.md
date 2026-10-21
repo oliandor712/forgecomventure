@@ -29,7 +29,7 @@ What this means for the deck types (provisional):
 Flagged cards (AI:RemoveDeck) relevant here: Fog effects (Thwart the Enemy, Vine Snare, Endure) are read by the AI only when `hasAFogEffect` returns true, so their flag decides whether the AI ever holds them. See AI_TAGS_REFERENCE.md section 5.
 
 ## Open items
-- Attack logic (AiAttackController.java, 1881 lines): not yet read.
+- Attack logic: done (section 2).
 - Removal targeting, spell order, mana, commander, tricks, ETB/tokens, mulligan: not yet read.
 - "Logic by deck type" archetype categories are provisional until tools/concordia/balance_lab/README.md publishes its tags.
 
