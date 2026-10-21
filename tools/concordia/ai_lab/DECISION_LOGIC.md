@@ -89,7 +89,7 @@ Hold or cast, `useRemovalNow` (ComputerUtilCard.java:1226-1360), only for single
 - Interrupt 3: enchanted target with no AI enchantment on it counts as two-for-one (1287-1297).
 - Interrupt 4: the opponent is casting a pump on this same target (1300-1307).
 - Burn: `valueBurn` (toughness / damage, squared) at 0.8 or more casts now before combat end (1316-1323).
-- Tempo: `valueTempo` = max(0.1 x target CMC / removal CMC, burn). Doubled for equipped targets, sorcery-speed spells, untargetable-proof targets, persist/undying/modular. Halved for bounce of non-tokens. Land targets get extra value. At 0.8 or more casts now before combat end (1331-1352).
+- Tempo: `valueTempo` = max(0.1 x target CMC / removal CMC, burn). Doubled for equipped targets, sorcery-speed spells, targets that cannot be destroyed, persist/undying/modular. Halved for bounce of non-tokens. Land targets get extra value. At 0.8 or more casts now before combat end (1331-1352).
 - Threat: a creature's `evaluateCreature / 100` plus damage it would do if unblocked, divided by the AI's life. Reduced to 10% during the AI's combat, which means the threat check mostly matters on the opponent's turn.
 
 What this means for deck types (provisional):
