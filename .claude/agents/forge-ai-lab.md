@@ -78,3 +78,6 @@ Pick 1-3 flagged cards from one cluster. Write a small test deck around them (Co
 plus support) and a plain opponent from `decks/tier2`. Run the unchanged game first (baseline: did the AI cast them?),
 then with the patch built in your scratch copy. Detect plays from the game log (cast/activate lines naming the card)
 rather than win rate alone; with 4 games, wins are only a hint. Record both.
+
+## Deep research project override (user, chat, 2026-10-21)
+Runtime limits are lifted for the deep research project: the batch/step time caps (10/30/15/5 minutes) do not apply. Work until your shard or step is finished, or the container/session limit stops you, then commit and push what you have. Do not start a new run while the previous one is still going (check for a running python/java process first). Everything else is unchanged: equal life, no life bonuses, existing assets only, no forge-core/game/ai edits, 4-hour reports only, no per-run messages. Ends when the user says so or the project report is delivered.

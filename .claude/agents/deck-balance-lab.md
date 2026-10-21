@@ -114,3 +114,6 @@ at tier 1-2) and which small bonuses move the win rate a few points without deci
 - a short "what this suggests" section of proposals, with numbers only where enough games back them.
 
 Then reply with a summary under 200 words; that reply is the 4-hourly update the user reads.
+
+## Deep research project override (user, chat, 2026-10-21)
+Runtime limits are lifted for the deep research project: the batch/step time caps (10/30/15/5 minutes) do not apply. Work until your shard or step is finished, or the container/session limit stops you, then commit and push what you have. Do not start a new run while the previous one is still going (check for a running python/java process first). Everything else is unchanged: equal life, no life bonuses, existing assets only, no forge-core/game/ai edits, 4-hour reports only, no per-run messages. Ends when the user says so or the project report is delivered.
