@@ -187,3 +187,11 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:51:40Z,843237e9dbb,inner,3,decks/tier3/T3_BR_Exava.dck,decks/tier3/T3_BG_Abomination.dck,25,25,,,b,a,12,0
 2026-10-21T02:52:06Z,843237e9dbb,inner,5,decks/tier5/T5_UG_Kruphix.dck,decks/tier5/T5_WU_Medomai.dck,35,35,,,a,b,20,0
 2026-10-21T02:52:06Z,843237e9dbb,inner,5,decks/tier5/T5_UG_Kruphix.dck,decks/tier5/T5_WU_Medomai.dck,35,35,,,b,b,15,0
+2026-10-21T03:07:34Z,fc5b96a6de6,inner,3,decks/tier3/T3_BR_Exava.dck,decks/tier3/T3_UB_Gyruda.dck,25,25,,,a,a,19,0
+2026-10-21T03:07:34Z,fc5b96a6de6,inner,3,decks/tier3/T3_BR_Exava.dck,decks/tier3/T3_UB_Gyruda.dck,25,25,,,b,b,21,0
+2026-10-21T03:08:12Z,fc5b96a6de6,inner,4,decks/tier4/T4_URG_Flubs.dck,decks/tier4/T4_WG_Karametra.dck,30,30,,,a,b,16,0
+2026-10-21T03:08:12Z,fc5b96a6de6,inner,4,decks/tier4/T4_URG_Flubs.dck,decks/tier4/T4_WG_Karametra.dck,30,30,,,b,draw,35,1
+2026-10-21T03:11:04Z,fc5b96a6de6,inner,2,decks/tier2/T2_UB_Atris.dck,decks/tier2/T2_BR_Garna.dck,15,15,,,a,a,17,0
+2026-10-21T03:11:04Z,fc5b96a6de6,inner,2,decks/tier2/T2_UB_Atris.dck,decks/tier2/T2_BR_Garna.dck,15,15,,,b,a,13,0
+2026-10-21T03:11:24Z,fc5b96a6de6,inner,5,decks/tier5/T5_BG_Shessra.dck,decks/tier5/T5_WUG_Bumbleflower.dck,35,35,,,a,a,33,0
+2026-10-21T03:11:24Z,fc5b96a6de6,inner,5,decks/tier5/T5_BG_Shessra.dck,decks/tier5/T5_WUG_Bumbleflower.dck,35,35,,,b,a,14,0
