@@ -105,10 +105,12 @@ build on its findings, and cite entries by date and title.
 |---|---|---|---|
 | forge-ai-lab | `.claude/agents/forge-ai-lab.md` | session_01SdzhYuPRVSAtP7QLaagBxk | step every 2 h at :06 (was hourly; changed at the user's request), about 5 min; report every 4 h |
 | deck-balance-lab | `.claude/agents/deck-balance-lab.md` | session_011UrsiVw1s1nsvYUSkv2iLy | hourly batch, at most 30 min, at :10; report every 4 h at :25 |
+| multi-balance-temp (temporary) | `.claude/agents/multi-balance-temp.md` | TBD | no schedule; one --until-done process on multicolor slice 2/3; ends when its decks reach 40 |
 
 The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
+- 2026-10-21: multi-balance-temp created: temporary worker, multicolor slice 2/3
 - 2026-10-21: 
 - 2026-10-21: 
 - 2026-10-21: Added tools/agents/human_logic.toon (the user's deck-balance rules) and the TOON rule above. Nothing else was converted: existing markdown tables save under 1% and the rest is prose, CSV or code-read JSON.
@@ -120,10 +122,3 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-20: 200 variant decks added (one per AI deck: alternate commander, 5-8 cards changed), so each tier folder now holds 80 decks; pools and random picks include them. Starters: power 27, blue rerolled to Gadwick wizards, and each colour has a _Normal and _Alt starter (split starter games 50/50). deck-balance-lab: weight coverage toward the new variants until they reach the median game count.
 - 2026-10-20: 
 - 2026-10-20: forge-ai-lab's shrunk test decks (ai_lab/decks/*_30/_40, all from minideck.py) were regenerated from the current tier decks (T1-2 floor raise, T1 creature loosening), same size, lands and test-card copies. Old copies in tools/concordia/backups/2026-10-20_ai_lab_test_decks_pre_regen/. Results before this commit used the old test decks; don't pool them with new runs. lab001_switchpt and opp_sai_30 (not minideck builds) are unchanged.
-- 2026-10-20: 
-
-- 2026-10-21 MASS RESEARCH PROJECT (user): balance lab runs 40 games per AI deck in colour shards via QUEUE.toon; AI lab documents Forge AI decision logic by deck type; main session merges both into one combined report (balance by tier/colour/archetype + AI logic by deck type).
-
-- 2026-10-21 Deep research project: runtime limits lifted for both labs (user, chat). One run at a time per agent.
-
-- 2026-10-21 All scheduled tasks disabled (user) until the deep research project completes: check-in, balance batch, balance report, AI lab wake, Spellbinder resume. Labs run --until-done by themselves; re-enable with update_trigger enabled=true after the project.
