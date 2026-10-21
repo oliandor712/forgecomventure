@@ -104,7 +104,7 @@ build on its findings, and cite entries by date and title.
 | Agent | Brief | Session | Schedule |
 |---|---|---|---|
 | forge-ai-lab | `.claude/agents/forge-ai-lab.md` | session_01SdzhYuPRVSAtP7QLaagBxk | step every 2 h at :06 (was hourly; changed at the user's request), about 5 min; report every 4 h |
-| deck-balance-lab | `.claude/agents/deck-balance-lab.md` | session_011UrsiVw1s1nsvYUSkv2iLy | hourly batch, at most 10 min, at :10; report every 4 h at :25 |
+| deck-balance-lab | `.claude/agents/deck-balance-lab.md` | session_011UrsiVw1s1nsvYUSkv2iLy | hourly batch, at most 30 min, at :10; report every 4 h at :25 |
 
 The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
