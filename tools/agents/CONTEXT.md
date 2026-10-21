@@ -105,7 +105,7 @@ build on its findings, and cite entries by date and title.
 |---|---|---|---|
 | forge-ai-lab | `.claude/agents/forge-ai-lab.md` | session_01SdzhYuPRVSAtP7QLaagBxk | step every 2 h at :06 (was hourly; changed at the user's request), about 5 min; report every 4 h |
 | deck-balance-lab | `.claude/agents/deck-balance-lab.md` | session_011UrsiVw1s1nsvYUSkv2iLy | hourly batch, at most 30 min, at :10; report every 4 h at :25 |
-| multi-balance-temp (temporary) | `.claude/agents/multi-balance-temp.md` | TBD | no schedule; one --until-done process on multicolor slice 2/3; ends when its decks reach 40 |
+| multi-balance-temp (temporary) | `.claude/agents/multi-balance-temp.md` | session_01Xf8fcEAkTmjYqjkqjprkzB | no schedule; one --until-done process on multicolor slice 2/3; ends when its decks reach 40 |
 
 The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
