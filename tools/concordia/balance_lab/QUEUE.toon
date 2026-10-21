@@ -3,24 +3,24 @@ queue[410|]{deck|games_done|target|color|tier|archetype}:
   decks/starter/B_Starter_Alt.dck|100|40|B|S|starter
   decks/starter/B_Starter_Normal.dck|48|40|B|S|starter
   decks/starter/G_Starter_Alt.dck|32|40|G|S|starter
-  decks/starter/G_Starter_Normal.dck|44|40|G|S|starter
+  decks/starter/G_Starter_Normal.dck|52|40|G|S|starter
   decks/starter/R_Starter_Alt.dck|24|40|R|S|starter
   decks/starter/R_Starter_Normal.dck|56|40|R|S|starter
-  decks/starter/U_Starter_Alt.dck|48|40|U|S|starter
+  decks/starter/U_Starter_Alt.dck|56|40|U|S|starter
   decks/starter/U_Starter_Normal.dck|40|40|U|S|starter
-  decks/starter/W_Starter_Alt.dck|24|40|W|S|starter
+  decks/starter/W_Starter_Alt.dck|28|40|W|S|starter
   decks/starter/W_Starter_Normal.dck|24|40|W|S|starter
   decks/tier1/T1_B_Arnyn.dck|6|25|B|1|aggro
   decks/tier1/T1_B_Butch.dck|6|25|B|1|aggro
   decks/tier1/T1_B_Falthis.dck|6|25|B|1|aggro
-  decks/tier1/T1_B_Gallia.dck|12|25|B|1|aggro
+  decks/tier1/T1_B_Gallia.dck|16|25|B|1|aggro
   decks/tier1/T1_B_Gonti.dck|4|25|B|1|aggro
-  decks/tier1/T1_B_Grma.dck|4|25|B|1|aggro
-  decks/tier1/T1_B_Hammerhead.dck|8|25|B|1|aggro
+  decks/tier1/T1_B_Grma.dck|6|25|B|1|aggro
+  decks/tier1/T1_B_Hammerhead.dck|10|25|B|1|aggro
   decks/tier1/T1_B_Keskit.dck|4|25|B|1|aggro
   decks/tier1/T1_B_Moonstone.dck|6|25|B|1|aggro
-  decks/tier1/T1_B_Ozox.dck|4|25|B|1|aggro
-  decks/tier1/T1_B_Sivriss.dck|8|25|B|1|aggro
+  decks/tier1/T1_B_Ozox.dck|8|25|B|1|aggro
+  decks/tier1/T1_B_Sivriss.dck|12|25|B|1|aggro
   decks/tier1/T1_B_Skitter.dck|8|25|B|1|aggro
   decks/tier1/T1_B_Splinter.dck|14|25|B|1|aggro
   decks/tier1/T1_B_Tormod.dck|4|25|B|1|aggro
@@ -60,7 +60,7 @@ queue[410|]{deck|games_done|target|color|tier|archetype}:
   decks/tier1/T1_R_in.dck|6|25|R|1|tokens
   decks/tier1/T1_U_Attuma.dck|0|25|U|1|aggro
   decks/tier1/T1_U_Bilbo.dck|4|25|U|1|aggro
-  decks/tier1/T1_U_Elrond.dck|0|25|U|1|aggro
+  decks/tier1/T1_U_Elrond.dck|2|25|U|1|aggro
   decks/tier1/T1_U_Esior.dck|4|25|U|1|aggro
   decks/tier1/T1_U_Ioreth.dck|4|25|U|1|aggro
   decks/tier1/T1_U_Iron.dck|4|25|U|1|aggro
@@ -72,7 +72,7 @@ queue[410|]{deck|games_done|target|color|tier|archetype}:
   decks/tier1/T1_U_Quistis.dck|0|25|U|1|aggro
   decks/tier1/T1_U_Shuri.dck|0|25|U|1|aggro
   decks/tier1/T1_U_Siani.dck|0|25|U|1|aggro
-  decks/tier1/T1_U_Tetsuko.dck|0|25|U|1|aggro
+  decks/tier1/T1_U_Tetsuko.dck|2|25|U|1|aggro
   decks/tier1/T1_U_Urza.dck|0|25|U|1|aggro
   decks/tier1/T1_W_Adelbert.dck|0|25|W|1|aggro
   decks/tier1/T1_W_Anafenza.dck|0|25|W|1|aggro
@@ -95,16 +95,16 @@ queue[410|]{deck|games_done|target|color|tier|archetype}:
   decks/tier2/T2_BR_Garna.dck|6|25|BR|2|midrange
   decks/tier2/T2_BR_Obosh.dck|10|25|BR|2|midrange
   decks/tier2/T2_B_Baron.dck|12|25|B|2|midrange
-  decks/tier2/T2_B_Braids.dck|10|25|B|2|midrange
+  decks/tier2/T2_B_Braids.dck|12|25|B|2|midrange
   decks/tier2/T2_B_Fumulus.dck|14|25|B|2|midrange
-  decks/tier2/T2_B_Gollum.dck|8|25|B|2|midrange
-  decks/tier2/T2_B_Loot.dck|12|25|B|2|midrange
-  decks/tier2/T2_B_Mari.dck|8|25|B|2|midrange
-  decks/tier2/T2_B_MarrowGnawer.dck|12|25|B|2|midrange
-  decks/tier2/T2_B_Rev.dck|10|25|B|2|midrange
-  decks/tier2/T2_B_Sarevok.dck|12|25|B|2|midrange
+  decks/tier2/T2_B_Gollum.dck|10|25|B|2|midrange
+  decks/tier2/T2_B_Loot.dck|14|25|B|2|midrange
+  decks/tier2/T2_B_Mari.dck|12|25|B|2|midrange
+  decks/tier2/T2_B_MarrowGnawer.dck|16|25|B|2|midrange
+  decks/tier2/T2_B_Rev.dck|14|25|B|2|midrange
+  decks/tier2/T2_B_Sarevok.dck|16|25|B|2|midrange
   decks/tier2/T2_B_Sengir.dck|12|25|B|2|midrange
-  decks/tier2/T2_B_Syr.dck|6|25|B|2|midrange
+  decks/tier2/T2_B_Syr.dck|8|25|B|2|midrange
   decks/tier2/T2_B_Vito.dck|12|25|B|2|midrange
   decks/tier2/T2_G_Arasta.dck|4|25|G|2|midrange
   decks/tier2/T2_G_Arwen.dck|4|25|G|2|midrange
@@ -255,13 +255,13 @@ queue[410|]{deck|games_done|target|color|tier|archetype}:
   decks/tier4/T4_BR_Cruelclaw.dck|4|25|BR|4|ramp
   decks/tier4/T4_BR_Juri.dck|4|25|BR|4|ramp
   decks/tier4/T4_B_Gisa.dck|8|25|B|4|ramp
-  decks/tier4/T4_B_Isareth.dck|4|25|B|4|ramp
-  decks/tier4/T4_B_Jadar.dck|6|25|B|4|ramp
+  decks/tier4/T4_B_Isareth.dck|6|25|B|4|ramp
+  decks/tier4/T4_B_Jadar.dck|8|25|B|4|ramp
   decks/tier4/T4_B_Karumonix.dck|4|25|B|4|ramp
   decks/tier4/T4_B_Massacre.dck|4|25|B|4|ramp
   decks/tier4/T4_B_Ob.dck|4|25|B|4|ramp
-  decks/tier4/T4_B_Sheoldred.dck|6|25|B|4|ramp
-  decks/tier4/T4_B_Taborax.dck|4|25|B|4|ramp
+  decks/tier4/T4_B_Sheoldred.dck|8|25|B|4|ramp
+  decks/tier4/T4_B_Taborax.dck|6|25|B|4|ramp
   decks/tier4/T4_B_Tombstone.dck|10|25|B|4|ramp
   decks/tier4/T4_B_Toshiro.dck|6|25|B|4|ramp
   decks/tier4/T4_G_Celeborn.dck|2|25|G|4|ramp
@@ -336,16 +336,16 @@ queue[410|]{deck|games_done|target|color|tier|archetype}:
   decks/tier5/T5_BRG_Winter.dck|6|25|BRG|5|tokens
   decks/tier5/T5_BR_Olivia.dck|2|25|BR|5|midrange
   decks/tier5/T5_BR_Strefan.dck|4|25|BR|5|midrange
-  decks/tier5/T5_B_Danitha.dck|6|25|B|5|aggro
+  decks/tier5/T5_B_Danitha.dck|8|25|B|5|aggro
   decks/tier5/T5_B_Gaius.dck|6|25|B|5|tokens
   decks/tier5/T5_B_Gix.dck|4|25|B|5|ramp
   decks/tier5/T5_B_Gothmog.dck|8|25|B|5|ramp
   decks/tier5/T5_B_Ihsan.dck|6|25|B|5|ramp
-  decks/tier5/T5_B_Krrik.dck|4|25|B|5|ramp
+  decks/tier5/T5_B_Krrik.dck|6|25|B|5|ramp
   decks/tier5/T5_B_Sephiroth.dck|4|25|B|5|tokens
   decks/tier5/T5_B_Tinybones.dck|6|25|B|5|ramp
-  decks/tier5/T5_B_Tinybones2.dck|4|25|B|5|ramp
-  decks/tier5/T5_B_Yawgmoth.dck|4|25|B|5|ramp
+  decks/tier5/T5_B_Tinybones2.dck|6|25|B|5|ramp
+  decks/tier5/T5_B_Yawgmoth.dck|6|25|B|5|ramp
   decks/tier5/T5_G_Ashaya.dck|2|25|G|5|ramp
   decks/tier5/T5_G_Ezuri.dck|2|25|G|5|ramp
   decks/tier5/T5_G_Halsin.dck|4|25|G|5|ramp
@@ -376,14 +376,14 @@ queue[410|]{deck|games_done|target|color|tier|archetype}:
   decks/tier5/T5_UG_Tatyova.dck|2|25|UG|5|control
   decks/tier5/T5_UR_LocustGod.dck|2|25|UR|5|control
   decks/tier5/T5_UR_The.dck|8|25|UR|5|ramp
-  decks/tier5/T5_U_Arni.dck|0|25|U|5|ramp
+  decks/tier5/T5_U_Arni.dck|4|25|U|5|ramp
   decks/tier5/T5_U_Baral.dck|0|25|U|5|aggro
   decks/tier5/T5_U_Emry.dck|0|25|U|5|ramp
   decks/tier5/T5_U_Hakim.dck|0|25|U|5|aggro
-  decks/tier5/T5_U_Hapatra.dck|0|25|U|5|ramp
+  decks/tier5/T5_U_Hapatra.dck|2|25|U|5|ramp
   decks/tier5/T5_U_Kefnet.dck|0|25|U|5|ramp
   decks/tier5/T5_U_Lier.dck|0|25|U|5|ramp
-  decks/tier5/T5_U_Loki.dck|0|25|U|5|ramp
+  decks/tier5/T5_U_Loki.dck|2|25|U|5|ramp
   decks/tier5/T5_U_Mister.dck|0|25|U|5|ramp
   decks/tier5/T5_U_Uvilda.dck|0|25|U|5|ramp
   decks/tier5/T5_WB_Bartolom.dck|6|25|WB|5|tokens
