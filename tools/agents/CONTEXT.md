@@ -113,6 +113,7 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 ## How the agents cooperate (user, 2026-10-21)
 - **Deck balance agents feed the AI lab with AI behaviour data.** Every balance simulation writes a phase log; the digests (tools/concordia/ai_lab/digests/<worker>-<UTC hour>/) are the data the AI lab studies for decision logic (blocking, attacks, removal, mana, commander play, by deck type).
 - **The AI lab feeds the deck balancers with balance-change options.** From its bonus and AI-change tests (starting bonuses, card-script unflags, patches) it passes the balance lab and main session measured options for strengthening the AI decks against the player decks. The options go in the 4-hour report or a message to the main session; nothing is applied to decks or forge-ai without the usual approvals.
+- The AI lab's current option table is `tools/concordia/ai_lab/OPTIONS_FOR_BALANCERS.md` (effect, cost, what each needs); the balancers read it before proposing deck changes.
 - The main session routes both directions: it keeps the digest step running, answers analysis requests, and records approved options.
 
 ## Recent updates
