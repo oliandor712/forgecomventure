@@ -145,9 +145,11 @@ Repeat each command (about 9 minutes per call) until it prints DONE, then take t
 4. **Never end a turn waiting.** A turn ends only when your task command prints DONE, your deliverable is pushed, or you are blocked: then send the main session `BLOCKED: <exact command and error>` and move to the next item. Never "waiting for the user".
 5. **Guardrails (the only reasons to refuse; name the one in a line to the main session):** editing forge-core/forge-game/forge-ai source on campaign-design or applying an AI patch to a source directory (patches on the sim overlay are fine); force-pushing or rewriting history; opening or merging a PR; pushing to any branch except campaign-design; unequal-life or life-bonus simulations; committing another agent's files; deleting data without a backup; ticking an approval box yourself. An approval the main session quotes from the user counts as the user's approval, but "approved for testing" never means applying to source.
 6. A harness or classifier denial is not a guardrail: split the command into simple ones and retry once; if still denied, `BLOCKED:` to the main session and go on.
-7. Every turn starts the same way: `git pull --no-rebase origin campaign-design`, `python3 tools/agents/toolbox.py --check` (STALE means pull again, then tell the main session), read `tools/agents/TOOLBOX.md`.
+7. **Duration estimates (user order, 2026-10-21).** Before any command you expect to take longer than about 30 seconds, send the main session one line first: `ETA: <seconds> s | <what you are running> | start <HH:MM:SSZ>`. Then run it. The main session checks in 15 seconds after the estimate has passed: if the command has finished you have nothing to do, otherwise it asks what is happening, diagnoses the delay and orders a remedy (follow that order at once). There is no fixed limit on how long a command may take; the estimate is what is checked. If your estimate turns out wrong while the command runs, send a new `ETA:` line.
+8. Every turn starts the same way: `git pull --no-rebase origin campaign-design`, `python3 tools/agents/toolbox.py --check` (STALE means pull again, then tell the main session), read `tools/agents/TOOLBOX.md`.
 
 ## Recent updates
+- 2026-10-21: Duration estimates: agents send an ETA line before long commands; main session checks 15 s after it and remedies
 - 2026-10-21: BonusSim -Dseed (seeded games), suite --seed, toolbox stamp fixed
 - 2026-10-21: Agents remade (gen 2): stricter Obedience protocol, TOOLBOX.md and AGENT_KNOWLEDGE.md shared references, handoffs compiled
 - 2026-10-21: Simulation suite: one program for setup, runs, phase logging, digests, pushes and reports; archetype sampling
@@ -159,4 +161,3 @@ Repeat each command (about 9 minutes per call) until it prints DONE, then take t
 - 2026-10-21: cooperation model: balance agents feed phase-log data to the AI lab; the AI lab feeds balance-change options to the balancers
 - 2026-10-21: Phase logging is standard for all simulations (user): run_batch.play writes phase logs, runs ai_lab/phase_digest.py and deletes the raw logs; digests under ai_lab/digests are pushed with the records (run_foreground.sh does it)
 - 2026-10-21: agents: effort raised to high (briefs); temporary until the session limit
-- 2026-10-21: human_logic.toon pruned to deck building, deck balance and AI improvement (29 rows)

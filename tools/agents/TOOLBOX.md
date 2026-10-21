@@ -1,6 +1,6 @@
 # Toolbox: the shared reference for every agent
 
-Generated 2026-10-21 14:02Z at commit 1de7d44c81f on branch campaign-design. **Tools stamp: `4c2a6d9f2718`.**
+Generated 2026-10-21 14:05Z at commit 8d2190f5ce9 on branch campaign-design. **Tools stamp: `b32dcadcf968`.**
 
 ## Start of every turn (all agents)
 1. `git pull --no-rebase origin campaign-design` (if the clone is shallow: `git fetch --unshallow origin campaign-design`).
@@ -13,7 +13,7 @@ Generated 2026-10-21 14:02Z at commit 1de7d44c81f on branch campaign-design. **T
 | tool | used by | what it does | last change |
 |---|---|---|---|
 | `tools/agents/CONTEXT.md` | all | shared rules, authority, commit ownership, agent table, recent updates: read first, every turn | 526a2d38deb 10-21 13:50Z |
-| `tools/agents/AGENT_KNOWLEDGE.md` | all | compiled pitfalls, conventions, unfinished work and next steps from the earlier agents | c0979fa3bd0 10-21 13:07Z |
+| `tools/agents/AGENT_KNOWLEDGE.md` | all | compiled pitfalls, conventions, unfinished work and next steps from the earlier agents | 8d2190f5ce9 10-21 14:02Z |
 | `tools/agents/human_logic.toon` | all | the user's own deck-building, balance and AI rules; a rule beats a metric | 2e9f6c93cb6 10-21 05:44Z |
 | `tools/concordia/suite/sim_suite.py` | sim workers, main | THE simulation program: setup / run / plan / status / report; archetype cells, adaptive stop, phase logs, digests, push | 526a2d38deb 10-21 13:50Z |
 | `tools/concordia/suite/README.md` | sim workers | how to use the suite, its stop rules and the limit-the-total levers | 02130fc55ee 10-21 13:00Z |

@@ -16,7 +16,7 @@ Shared by the deck balance lab and the Forge AI lab. Read after `TOOLBOX.md` and
 | Raw phase logs in `ai_lab/results/balance_logs` look untracked | never commit them (digests only); delete the folder |
 | `pgrep -f "sim_suite.py run"` inside a `bash -c` wait loop matches the loop's own command line, so the wait runs to its full timeout (found 2026-10-21: an 8-minute stall) | wait on a pid (`while kill -0 $PID`), or anchor the pattern (`pgrep -f '^python3 tools/concordia/suite/sim_suite.py run'`), or better run the suite in the foreground and repeat the call |
 | Fixed polling loops (`for i in 1..17; sleep 30`) block the agent for the whole loop and delay every message to it | poll with a short loop (at most 2 minutes) and stop as soon as the condition holds; check the files that prove completion (row counts, report file) |
-| Messages sent with priority `later` wait until the agent's turn ends; long foreground commands delay even `next` messages to the end of the running command | keep commands under about 5 minutes, and use `next` for anything the agent must see soon |
+| Messages sent with priority `later` wait until the agent's turn ends; a long foreground command delays even `next` messages until it returns | send an `ETA:` line before any long command (Obedience protocol 7); the main session checks 15 s after the estimate and remedies; use priority `next` for anything the agent must see soon |
 | CRLF warnings on records files | harmless |
 | Case-sensitive greps on logs (log wording is mixed case: "A triggered X", "hand:") | use `grep -i` |
 | Subprocess timeout over 3600 s overflows | cap at 3600 |
