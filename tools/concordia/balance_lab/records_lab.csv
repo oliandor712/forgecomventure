@@ -1,0 +1,9 @@
+utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,turns,timeout
+2026-10-21T04:29:43Z,9710cde19af,inner,3,decks/tier3/T3_B_Yargle.dck,decks/tier3/T3_B_Imotekh.dck,25,25,,,a,b,15,0
+2026-10-21T04:29:43Z,9710cde19af,inner,3,decks/tier3/T3_B_Yargle.dck,decks/tier3/T3_B_Imotekh.dck,25,25,,,b,a,16,0
+2026-10-21T04:30:11Z,9710cde19af,inner,3,decks/tier3/T3_B_Shredder.dck,decks/tier3/T3_B_Hythonia.dck,25,25,,,a,a,28,0
+2026-10-21T04:30:11Z,9710cde19af,inner,3,decks/tier3/T3_B_Shredder.dck,decks/tier3/T3_B_Hythonia.dck,25,25,,,b,b,21,0
+2026-10-21T04:31:03Z,9710cde19af,inner,3,decks/tier3/T3_B_Yargle.dck,decks/tier3/T3_B_Shirei.dck,25,25,,,a,a,17,0
+2026-10-21T04:31:03Z,9710cde19af,inner,3,decks/tier3/T3_B_Yargle.dck,decks/tier3/T3_B_Shirei.dck,25,25,,,b,a,18,0
+2026-10-21T04:31:29Z,9710cde19af,inner,5,decks/tier5/T5_B_Gothmog.dck,decks/tier5/T5_B_Gaius.dck,35,35,,,a,b,21,0
+2026-10-21T04:31:29Z,9710cde19af,inner,5,decks/tier5/T5_B_Gothmog.dck,decks/tier5/T5_B_Gaius.dck,35,35,,,b,b,25,0
