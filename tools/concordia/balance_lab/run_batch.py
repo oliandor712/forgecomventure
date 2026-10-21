@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """One batch of the deck balance lab: inner-tier pairings and bonus matched sets, appended to records.csv.
-Usage: python3 tools/concordia/balance_lab/run_batch.py [--budget 600] [--seed N]
+Usage: python3 tools/concordia/balance_lab/run_batch.py [--budget 1800] [--seed N]
 Plays via tools/concordia/sim/run.sh BonusSim; no new game starts after minute 8 of the batch."""
 import argparse, collections, csv, glob, json, os, random, re, subprocess, sys, time, datetime
 
@@ -49,7 +49,7 @@ def green_pool():
     return sorted(p for p in out if os.path.exists(p))
 
 
-SHARDS = ["W", "U", "B", "R", "G", "multi"]  # one shard per hour, round-robin by UTC hour (queue plan, 2026-10-21)
+SHARDS = ["W", "U", "B", "multi"]  # one shard per hour, round-robin by UTC hour; R and G belong to the AI lab (2026-10-21)
 
 
 def shard_of(deck):
@@ -157,7 +157,7 @@ def play(games, budget_end):
 
 def run():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--budget", type=int, default=600)
+    ap.add_argument("--budget", type=int, default=1800)  # 30 min cap (brief); no new game starts after minute 8
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--pairings", type=int, default=4)
     ap.add_argument("--pool", default="shard", help="shard (this hour's colour shard, default), green (priority) or all")
