@@ -111,6 +111,7 @@ build on its findings, and cite entries by date and title.
 The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
+- 2026-10-21: Phase logging is standard for all simulations (user): run_batch.play writes phase logs, runs ai_lab/phase_digest.py and deletes the raw logs; digests under ai_lab/digests are pushed with the records (run_foreground.sh does it)
 - 2026-10-21: agents: effort raised to high (briefs); temporary until the session limit
 - 2026-10-21: human_logic.toon pruned to deck building, deck balance and AI improvement (29 rows)
 - 2026-10-21: push_records.sh: shared safe push for records files
@@ -121,5 +122,4 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-21: 
 - 2026-10-21: 
 - 2026-10-21: Added tools/agents/human_logic.toon (the user's deck-balance rules) and the TOON rule above. Nothing else was converted: existing markdown tables save under 1% and the rest is prose, CSV or code-read JSON.
-- 2026-10-21: 
 - 2026-10-21: 

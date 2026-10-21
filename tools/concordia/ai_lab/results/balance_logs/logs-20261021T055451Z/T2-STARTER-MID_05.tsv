@@ -1,0 +1,267 @@
+1		TURN	Turn 1 (B)
+1	B's Untap step	PHASE	B's Untap step
+1	B's Upkeep step	PHASE	B's Upkeep step
+1	B's Draw step	PHASE	B's Draw step
+1	B's Main phase, precombat	PHASE	B's Main phase, precombat
+1	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+1	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+1	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+1	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+1	B's Combat Damage Step	PHASE	B's Combat Damage Step
+1	B's End of Combat Step	PHASE	B's End of Combat Step
+1	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+1	B's End step	PHASE	B's End step
+1	B's Cleanup step	PHASE	B's Cleanup step
+2	B's Cleanup step	TURN	Turn 2 (A)
+2	A's Untap step	PHASE	A's Untap step
+2	A's Upkeep step	PHASE	A's Upkeep step
+2	A's Draw step	PHASE	A's Draw step
+2	A's Main phase, precombat	PHASE	A's Main phase, precombat
+2	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+2	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+2	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+2	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+2	A's Combat Damage Step	PHASE	A's Combat Damage Step
+2	A's End of Combat Step	PHASE	A's End of Combat Step
+2	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+2	A's End step	PHASE	A's End step
+2	A's Cleanup step	PHASE	A's Cleanup step
+3	A's Cleanup step	TURN	Turn 3 (B)
+3	B's Untap step	PHASE	B's Untap step
+3	B's Upkeep step	PHASE	B's Upkeep step
+3	B's Draw step	PHASE	B's Draw step
+3	B's Main phase, precombat	PHASE	B's Main phase, precombat
+3	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+3	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+3	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+3	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+3	B's Combat Damage Step	PHASE	B's Combat Damage Step
+3	B's End of Combat Step	PHASE	B's End of Combat Step
+3	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+3	B's Main phase, postcombat	STACK_ADD	B cast Ayli, Eternal Pilgrim
+3	B's End step	PHASE	B's End step
+3	B's Cleanup step	PHASE	B's Cleanup step
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's End step	PHASE	A's End step
+4	A's Cleanup step	PHASE	A's Cleanup step
+5	A's Cleanup step	TURN	Turn 5 (B)
+5	B's Untap step	PHASE	B's Untap step
+5	B's Upkeep step	PHASE	B's Upkeep step
+5	B's Draw step	PHASE	B's Draw step
+5	B's Main phase, precombat	PHASE	B's Main phase, precombat
+5	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+5	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+5	B's Declare Attackers Step	COMBAT	B assigned Ayli, Eternal Pilgrim (33) to attack A.
+5	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+5	B's Declare Blockers Step	COMBAT	A didn't block Ayli, Eternal Pilgrim (33).
+5	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+5	B's Combat Damage Step	PHASE	B's Combat Damage Step
+5	B's Combat Damage Step	DAMAGE	Ayli, Eternal Pilgrim (33) deals 2 combat damage to A.
+5	B's Combat Damage Step	LIFE	Life: A 15 > 13
+5	B's End of Combat Step	PHASE	B's End of Combat Step
+5	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+5	B's Main phase, postcombat	STACK_ADD	B cast Buried Alive
+5	B's End step	PHASE	B's End step
+5	B's Cleanup step	PHASE	B's Cleanup step
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD	A cast Barrin, Tolarian Archmage
+6	A's Main phase, postcombat	STACK_ADD	A triggered Barrin, Tolarian Archmage targeting [Ayli, Eternal Pilgrim (33)]
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+7	A's Cleanup step	TURN	Turn 7 (B)
+7	B's Untap step	PHASE	B's Untap step
+7	B's Upkeep step	PHASE	B's Upkeep step
+7	B's Draw step	PHASE	B's Draw step
+7	B's Main phase, precombat	PHASE	B's Main phase, precombat
+7	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+7	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+7	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+7	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+7	B's Combat Damage Step	PHASE	B's Combat Damage Step
+7	B's End of Combat Step	PHASE	B's End of Combat Step
+7	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+7	B's Main phase, postcombat	STACK_ADD	B cast Eumidian Wastewaker
+7	B's End step	PHASE	B's End step
+7	B's Cleanup step	PHASE	B's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Main phase, precombat	STACK_ADD	A cast Fact or Fiction
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Attackers Step	COMBAT	B assigned Eumidian Wastewaker (4) to attack A.
+9	B's Declare Attackers Step	STACK_ADD	B triggered Eumidian Wastewaker
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's Declare Blockers Step	COMBAT	A didn't block Eumidian Wastewaker (4).
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's Combat Damage Step	DAMAGE	Eumidian Wastewaker (4) deals 4 combat damage to A.
+9	B's Combat Damage Step	LIFE	Life: A 13 > 9
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's Main phase, postcombat	STACK_ADD	B cast Orah, Skyclave Hierophant
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A cast Riverwise Augur
+10	A's Main phase, postcombat	STACK_ADD	A triggered Riverwise Augur
+10	A's Main phase, postcombat	STACK_ADD	A cast Essence Flux targeting [Riverwise Augur (166)]
+10	A's Main phase, postcombat	ZONE_CHANGE	Riverwise Augur (166) was put into Exile from Battlefield.
+10	A's Main phase, postcombat	STACK_ADD	A triggered Riverwise Augur
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Attackers Step	COMBAT	B assigned Eumidian Wastewaker (4) and Orah, Skyclave Hierophant (100) to attack A.
+11	B's Declare Attackers Step	STACK_ADD	B triggered Eumidian Wastewaker
+11	B's Declare Attackers Step	ZONE_CHANGE	Island (148) was put into Graveyard from Battlefield.
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's Declare Blockers Step	COMBAT	A didn't block Eumidian Wastewaker (4). A assigned Barrin, Tolarian Archmage (208) and Riverwise Augur (166) to block Orah, Skyclave Hierophant (100).
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's Combat Damage Step	DAMAGE	Eumidian Wastewaker (4) deals 4 combat damage to A.
+11	B's Combat Damage Step	DAMAGE	Orah, Skyclave Hierophant (100) deals 1 damage to Barrin, Tolarian Archmage (208).
+11	B's Combat Damage Step	DAMAGE	Orah, Skyclave Hierophant (100) deals 2 damage to Riverwise Augur (166).
+11	B's Combat Damage Step	LIFE	Life: B 15 > 18
+11	B's Combat Damage Step	DAMAGE	Barrin, Tolarian Archmage (208) deals 2 damage to Orah, Skyclave Hierophant (100).
+11	B's Combat Damage Step	DAMAGE	Riverwise Augur (166) deals 2 damage to Orah, Skyclave Hierophant (100).
+11	B's Combat Damage Step	LIFE	Life: A 9 > 5
+11	B's Combat Damage Step	ZONE_CHANGE	Orah, Skyclave Hierophant (100) was put into Graveyard from Battlefield.
+11	B's Combat Damage Step	ZONE_CHANGE	Riverwise Augur (166) was put into Graveyard from Battlefield.
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	STACK_ADD	B cast Ayli, Eternal Pilgrim
+11	B's Main phase, postcombat	STACK_ADD	B cast Righteous Valkyrie
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Main phase, precombat	STACK_ADD	A cast Merfolk Trickster
+12	A's Main phase, precombat	STACK_ADD	A triggered Merfolk Trickster targeting [Ayli, Eternal Pilgrim (33)]
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Flux Channeler
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Eumidian Wastewaker (4), Ayli, Eternal Pilgrim (33) and Righteous Valkyrie (79) to attack A.
+13	B's Declare Attackers Step	STACK_ADD	B triggered Eumidian Wastewaker
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A assigned Merfolk Trickster (131) and Flux Channeler (197) to block Eumidian Wastewaker (4). A assigned Barrin, Tolarian Archmage (208) to block Ayli, Eternal Pilgrim (33). A didn't block Righteous Valkyrie (79).
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Eumidian Wastewaker (4) deals 2 damage to Merfolk Trickster (131).
+13	B's Combat Damage Step	DAMAGE	Eumidian Wastewaker (4) deals 2 damage to Flux Channeler (197).
+13	B's Combat Damage Step	DAMAGE	Ayli, Eternal Pilgrim (33) deals 2 damage (Deathtouch) to Barrin, Tolarian Archmage (208).
+13	B's Combat Damage Step	DAMAGE	Righteous Valkyrie (79) deals 2 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Merfolk Trickster (131) deals 2 damage to Eumidian Wastewaker (4).
+13	B's Combat Damage Step	DAMAGE	Flux Channeler (197) deals 2 damage to Eumidian Wastewaker (4).
+13	B's Combat Damage Step	DAMAGE	Barrin, Tolarian Archmage (208) deals 2 damage to Ayli, Eternal Pilgrim (33).
+13	B's Combat Damage Step	LIFE	Life: A 5 > 3
+13	B's Combat Damage Step	ZONE_CHANGE	Eumidian Wastewaker (4) was put into Graveyard from Battlefield.
+13	B's Combat Damage Step	ZONE_CHANGE	Barrin, Tolarian Archmage (208) was put into Graveyard from Battlefield.
+13	B's Combat Damage Step	ZONE_CHANGE	Merfolk Trickster (131) was put into Graveyard from Battlefield.
+13	B's Combat Damage Step	ZONE_CHANGE	Flux Channeler (197) was put into Graveyard from Battlefield.
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's End step	PHASE	B's End step
+13	B's Cleanup step	PHASE	B's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD	A cast Propaganda
+14	A's Main phase, postcombat	STACK_ADD	A cast Decoction Module
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Draw step	PHASE	B's Draw step
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Attackers Step	COMBAT	B assigned Ayli, Eternal Pilgrim (33) and Righteous Valkyrie (79) to attack A.
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's Declare Blockers Step	COMBAT	A didn't block Ayli, Eternal Pilgrim (33). A didn't block Righteous Valkyrie (79).
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's Combat Damage Step	DAMAGE	Ayli, Eternal Pilgrim (33) deals 2 combat damage to A.
+15	B's Combat Damage Step	DAMAGE	Righteous Valkyrie (79) deals 2 combat damage to A.
+15	B's Combat Damage Step	LIFE	Life: A 3 > -1

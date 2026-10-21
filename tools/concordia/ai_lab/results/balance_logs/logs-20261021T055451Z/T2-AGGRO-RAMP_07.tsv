@@ -1,0 +1,208 @@
+1		TURN	Turn 1 (B)
+1	B's Untap step	PHASE	B's Untap step
+1	B's Upkeep step	PHASE	B's Upkeep step
+1	B's Draw step	PHASE	B's Draw step
+1	B's Main phase, precombat	PHASE	B's Main phase, precombat
+1	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+1	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+1	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+1	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+1	B's Combat Damage Step	PHASE	B's Combat Damage Step
+1	B's End of Combat Step	PHASE	B's End of Combat Step
+1	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+1	B's Main phase, postcombat	STACK_ADD	B cast Walking Bulwark
+1	B's End step	PHASE	B's End step
+1	B's Cleanup step	PHASE	B's Cleanup step
+2	B's Cleanup step	TURN	Turn 2 (A)
+2	A's Untap step	PHASE	A's Untap step
+2	A's Upkeep step	PHASE	A's Upkeep step
+2	A's Draw step	PHASE	A's Draw step
+2	A's Main phase, precombat	PHASE	A's Main phase, precombat
+2	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+2	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+2	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+2	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+2	A's Combat Damage Step	PHASE	A's Combat Damage Step
+2	A's End of Combat Step	PHASE	A's End of Combat Step
+2	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+2	A's End step	PHASE	A's End step
+2	A's Cleanup step	PHASE	A's Cleanup step
+3	A's Cleanup step	TURN	Turn 3 (B)
+3	B's Untap step	PHASE	B's Untap step
+3	B's Upkeep step	PHASE	B's Upkeep step
+3	B's Draw step	PHASE	B's Draw step
+3	B's Main phase, precombat	PHASE	B's Main phase, precombat
+3	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+3	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+3	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+3	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+3	B's Combat Damage Step	PHASE	B's Combat Damage Step
+3	B's End of Combat Step	PHASE	B's End of Combat Step
+3	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+3	B's Main phase, postcombat	STACK_ADD	B cast Trailblazer's Boots
+3	B's End step	PHASE	B's End step
+3	B's Cleanup step	PHASE	B's Cleanup step
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's Main phase, postcombat	STACK_ADD	A cast Elvish Warmaster
+4	A's End step	PHASE	A's End step
+4	A's Cleanup step	PHASE	A's Cleanup step
+5	A's Cleanup step	TURN	Turn 5 (B)
+5	B's Untap step	PHASE	B's Untap step
+5	B's Upkeep step	PHASE	B's Upkeep step
+5	B's Draw step	PHASE	B's Draw step
+5	B's Main phase, precombat	PHASE	B's Main phase, precombat
+5	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+5	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+5	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+5	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+5	B's Combat Damage Step	PHASE	B's Combat Damage Step
+5	B's End of Combat Step	PHASE	B's End of Combat Step
+5	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+5	B's Main phase, postcombat	STACK_ADD	B cast Brotherhood Regalia
+5	B's End step	PHASE	B's End step
+5	B's Cleanup step	PHASE	B's Cleanup step
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD	A cast Evolution Sage
+6	A's Main phase, postcombat	STACK_ADD	A triggered Elvish Warmaster
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+7	A's Cleanup step	TURN	Turn 7 (B)
+7	B's Untap step	PHASE	B's Untap step
+7	B's Upkeep step	PHASE	B's Upkeep step
+7	B's Draw step	PHASE	B's Draw step
+7	B's Main phase, precombat	PHASE	B's Main phase, precombat
+7	B's Main phase, precombat	STACK_ADD	B cast Traxos, Academy Guardian
+7	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+7	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+7	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+7	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+7	B's Combat Damage Step	PHASE	B's Combat Damage Step
+7	B's End of Combat Step	PHASE	B's End of Combat Step
+7	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+7	B's End step	PHASE	B's End step
+7	B's Cleanup step	PHASE	B's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Main phase, precombat	STACK_ADD	A triggered Evolution Sage
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Jaheira, Friend of the Forest
+8	A's Main phase, postcombat	STACK_ADD	A triggered Elvish Warmaster
+8	A's Main phase, postcombat	STACK_ADD	A cast Arcane Signet
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Main phase, precombat	STACK_ADD	B cast Mindless Automaton
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Attackers Step	COMBAT	B assigned Traxos, Academy Guardian (100) to attack A.
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's Declare Blockers Step	COMBAT	A didn't block Traxos, Academy Guardian (100).
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's Combat Damage Step	DAMAGE	Traxos, Academy Guardian (100) deals 1 combat damage to A.
+9	B's Combat Damage Step	LIFE	Life: A 15 > 14
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's Main phase, postcombat	STACK_ADD	B activated Mindless Automaton
+9	B's Main phase, postcombat	ZONE_CHANGE	Mindless Automaton (25) was put into Graveyard from Battlefield.
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Upkeep step	STACK_ADD	A activated Elvish Warmaster
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Main phase, precombat	STACK_ADD	A triggered Evolution Sage
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Evolution Sage (156), Elvish Warmaster (161) and Jaheira, Friend of the Forest (201) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B assigned Walking Bulwark (9) to block Evolution Sage (156). B didn't block Elvish Warmaster (161). B didn't block Jaheira, Friend of the Forest (201).
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Evolution Sage (156) deals 5 damage (Deathtouch) to Walking Bulwark (9).
+10	A's Combat Damage Step	DAMAGE	Elvish Warmaster (161) deals 4 combat damage to B.
+10	A's Combat Damage Step	DAMAGE	Jaheira, Friend of the Forest (201) deals 4 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 15 > 7
+10	A's Combat Damage Step	ZONE_CHANGE	Walking Bulwark (9) was put into Graveyard from Battlefield.
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Main phase, precombat	STACK_ADD	B activated Brotherhood Regalia targeting [Traxos, Academy Guardian (100)]
+11	B's Main phase, precombat	STACK_ADD	B cast Gingerbrute
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Attackers Step	COMBAT	B assigned Gingerbrute (64) and Traxos, Academy Guardian (100) to attack A.
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's Declare Blockers Step	COMBAT	A didn't block Gingerbrute (64). A didn't block Traxos, Academy Guardian (100).
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's Combat Damage Step	DAMAGE	Gingerbrute (64) deals 1 combat damage to A.
+11	B's Combat Damage Step	DAMAGE	Traxos, Academy Guardian (100) deals 1 combat damage to A.
+11	B's Combat Damage Step	LIFE	Life: A 14 > 12
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Upkeep step	STACK_ADD	A activated Elvish Warmaster
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Main phase, precombat	STACK_ADD	A triggered Evolution Sage
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Evolution Sage (156), Elvish Warmaster (161), Jaheira, Friend of the Forest (201) and Elf Warrior Token (205) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B assigned Traxos, Academy Guardian (100) to block Evolution Sage (156). B didn't block Elvish Warmaster (161). B didn't block Jaheira, Friend of the Forest (201). B didn't block Elf Warrior Token (205).
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Evolution Sage (156) deals 5 damage (Deathtouch) to Traxos, Academy Guardian (100).
+12	A's Combat Damage Step	DAMAGE	Elvish Warmaster (161) deals 4 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Jaheira, Friend of the Forest (201) deals 4 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Elf Warrior Token (205) deals 3 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Traxos, Academy Guardian (100) deals 1 damage to Evolution Sage (156).
+12	A's Combat Damage Step	LIFE	Life: B 7 > -4
