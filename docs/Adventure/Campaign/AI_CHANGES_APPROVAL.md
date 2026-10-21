@@ -86,7 +86,7 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
   - Changes no AI behaviour: log lines only. The AI lab tests it in a scratch worktree and confirms the games' results are
     unchanged and the digest picks up the reason field.
 
-- [ ] **Consolidation of 010, 011 and 012** into one test-only patch (`ai-test-instrumentation.patch`): ordered by the main session 2026-10-21; the originals move to `patches/archive/` once the single patch gives identical log lines.
+- [x] **Consolidation of 010, 011 and 012** into one test-only patch (`ai-test-instrumentation.patch`): ordered by the main session 2026-10-21; verified 2026-10-21: 40 of 40 seeded games identical to stock; originals moved to `patches/archive/`.
 
 ## How a box gets ticked
 
