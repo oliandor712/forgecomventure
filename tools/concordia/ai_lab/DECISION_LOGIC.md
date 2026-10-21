@@ -264,3 +264,18 @@ Game shape:
 AI_DECISION rows (patch 010): none in these digests. The folders were digested before the patch was on the sim classpath. The first AI_DECISION rows will come from the next batches.
 
 Caveats: the blocking rates are per decision, so one attacker counts once per blocker decision; the life bucket uses the blocker's life at the time of the block. This is a survey across all matchups, not a per-deck result.
+
+## 100-game analysis, second pass (2,824 games, 37 folders, 2026-10-21)
+Source: tools/concordia/ai_lab/digests/ (all digested folders). The AI_DECISION rows (patch 010 test overlay) are now present: 798,765 spell-choice rows, 242,702 block-start rows, 53,324 attack-level rows. The overlay is log-only, but the results-unchanged check is still open, so treat the overlay games as the same AI until that check passes.
+
+Blocking, per blocker decision, by the blocker's life:
+- Life 15 or more: 8% block (12,401 decisions).
+- Life 8 to 14: 19% (11,601).
+- Life under 8: 39% (14,075).
+Same gradient as the earlier passes (5%/15%/35% at 376 games). The rule in section 1 holds at a larger sample.
+
+Game shape:
+- Median 15 turns, mean 16.6. Per game: casts 8.6 (A) and 8.5 (B); attacks 3.3 and 3.2; blocks 1.6 and 1.5.
+- Cast median turn 11 across 48,423 casts.
+
+Caveats: these are survey counts across all matchups, not per deck. The gradient is per decision, so one blocker facing several attackers counts several times. The overlay check is still open.
