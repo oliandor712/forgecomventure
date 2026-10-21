@@ -1,7 +1,8 @@
 [metadata]
 Name=Starter_Red
+Description=Starter. Mono-red goblins led by Squee, Dubious Monarch: every attack brings another goblin.
 [Commander]
-1 Tarox Bladewing|FUT
+1 Squee, Dubious Monarch|DMU
 [Main]
 18 Mountain|FDN|[278]
 18 Mountain|FDN|[279]
@@ -15,14 +16,14 @@ Name=Starter_Red
 1 Firebrand Archer|FDN
 1 Lightning Mare|M19
 1 Goblin Trailblazer|CMR
-1 Immersturm Raider|J22
-1 Tibalt's Rager|JMP
+1 Akki Ronin|NEO
+1 Goblin Vandal|WTH
 1 Torch Fiend|M13
 1 Guttersnipe|FDN
 1 Prodigal Pyromancer|M10
 1 Brazen Scourge|FDN
-1 Firespitter Whelp|FDN
-1 Mindsparker|FDN
+1 Legion Warboss|GRN
+1 Goblin Ringleader|M20
 1 Goblin Rabblemaster|M15
 1 Storm Caller|M21
 1 Bogardan Firefiend|10E
@@ -31,17 +32,17 @@ Name=Starter_Red
 1 Volley Veteran|FDN
 1 Beetleback Chief|JMP
 1 Keldon Raider|M20
-1 Furnace Whelp|M13
+1 Goblin Heelcutter|FRF
 1 Hellrider|JMP
-1 Rapacious Dragon|FDN
+1 Chasm Guide|BFZ
 1 Siege-Gang Commander|M10
 1 Pitchburn Devils|M14
-1 Shivan Dragon|FDN
-1 Rorix Bladewing|CMM
+1 Kiki-Jiki, Mirror Breaker|CHK
+1 Daretti, Rocketeer Engineer|DFT
 1 Evolving Wilds|FDN
 1 Terramorphic Expanse|CMM
-1 Wayfarer's Bauble|CMM
-1 Mind Stone|10E
+1 Fire Diamond|7ED
+1 Glittering Stockpile|SNC
 1 Loyal Apprentice|CMM
 1 Flamekin Harbinger|LRW
 1 Dragon's Rage Channeler|H2R
@@ -65,12 +66,12 @@ Name=Starter_Red
 1 Titan's Strength|ORI
 1 Brute Force|MMA
 1 Trumpet Blast|M10
-1 Swiftfoot Boots|FDN
+1 Curse of Opulence|CLB
 1 Bonesplitter|CMR
 1 Hordeling Outburst|J22
 [Sideboard]
-1 Sokenzan Spellblade|SOK
-1 Dragonspeaker Shaman|SCG
-1 Goblin Freerunner|OGW
-1 Swarming Goblins|AFR
-1 Krenko, Mob Boss|FDN
+1 Dire Fleet Daredevil|RIX
+1 Impulsive Pilferer|CMM
+1 Captivating Crew|XLN
+1 Captain Ripley Vance|CMM
+1 Thunderhead Gunner|DFT

@@ -86,7 +86,7 @@ def candidates(d, cards, used):
     return [p for _, p in sorted(out, key=lambda x: -x[0])]
 
 
-def variant(d, newcmd, folder=None):
+def variant(d, newcmd, folder=None, n=None, syn=None):
     folder = folder or os.path.join(B.OUT, 'tier%d' % d['tier'])
     path = os.path.join(folder, d['file'])
     ci, cards, lines = parse(path)
@@ -94,10 +94,11 @@ def variant(d, newcmd, folder=None):
     old_theme = d.get('theme', []); new_theme = G.theme_of(newcmd) or []
     have = {p['name'].lower() for _, p, _ in cards} | {newcmd['name'].lower()}
     old_only = [c for c in cards if B.theme_match(c[1], old_theme) and not B.theme_match(c[1], new_theme)]
-    n = max(5, min(8, 5 + len(old_only) // 6))
+    n = n or max(5, min(8, 5 + len(old_only) // 6))
+    syn = syn or (lambda q: 0)
     def out_score(c):
-        p = c[1]
-        return 3 * (c in old_only) + (not B.theme_match(p, new_theme)) - min(p['pop'], 50) / 50
+        p = c[1]  # cards that work with the commander's ability stay; others go first
+        return 3 * (c in old_only) + (not B.theme_match(p, new_theme)) - min(p['pop'], 50) / 50 - 8 * syn(p) + (2 if not syn(p) else 0)
     outs = sorted(cards, key=lambda c: -out_score(c))[:n]
     rare_left = collections.Counter(power_of(p, ed)[1] for _, p, ed in cards)
     swaps = []
@@ -110,7 +111,7 @@ def variant(d, newcmd, folder=None):
             if 'Legendary' in q['types'] and 'Creature' not in q['types'] and tier == 1: continue
             r = next((x for x in 'CURM' if x in q['best'] and rare_left[x] < spec['rar'].get(x, 0) + (1 if x == power_of(p, ed)[1] else 0)), None)
             if not r: continue
-            s = 10 * B.theme_match(q, new_theme) - abs(q['power'][r] - pw) / 4 + min(q['pop'], 40) / 8
+            s = 10 * B.theme_match(q, new_theme) + 12 * syn(q) - abs(q['power'][r] - pw) / 4 + min(q['pop'], 40) / 8  # synergy beats raw score
             if best is None or s > best[0]: best = (s, q, r)
         if not best: continue
         _, q, r = best
@@ -143,6 +144,57 @@ def starter_ok(p, cards, need=3):
     return sum(deck_types[t] for t in subtypes(p)) >= need
 
 
+def _o(p): return re.sub(r'\([^)]*\)', '', p['oracle']).replace('\\n', ' ').lower()
+def _pow(p):
+    try: return int(p['pt'][0]) if p['pt'] else -1
+    except ValueError: return -1
+def _cr(p): return 'Creature' in p['types']
+ETB = re.compile(r'when [^.]{0,60}enters')
+# per starter commander: how well a card works with its ability (0 none, 1 works, more = works better).
+# Used to protect and prefer synergy cards, so a low-scoring card that fits the commander beats a stronger one that doesn't.
+SYN = {
+    'goreclaw, terror of qal sisma': lambda p: (1 + 0.6 * bool(ETB.search(_o(p)))) if _cr(p) and _pow(p) >= 4 else 0,
+    'gwenna, eyes of gaea': lambda p: (1 + 0.4 * bool(ETB.search(_o(p)))) if _cr(p) and _pow(p) >= 5 else 0,
+    'nazar, the velvet fang': lambda p: (1.6 if p['tags'] & B.ROLE['removal'] else 1) if re.search(r'gain (\d+|x|that much) life|you gain life|lifelink|gains? \d+ life|gain life equal', _o(p)) else 0,
+    'barrin, tolarian archmage': lambda p: 1 if re.search(r"return [^.]*target [^.]*to (its|their) owner's hand", _o(p)) else (0.6 if _cr(p) and ETB.search(_o(p)) else 0),
+    'squee, dubious monarch': lambda p: (1 + 0.5 * bool(re.search(r'haste|whenever [^.]* attacks', _o(p)))) if 'Goblin' in subtypes(p) else 0,
+    'breeches, eager pillager': lambda p: 1.6 if 'Pirate' in subtypes(p) else 0,
+    'haliya, guided by light': lambda p: 1 if _cr(p) or 'Artifact' in p['types'] or 'gain' in _o(p) else 0,
+}
+# commanders the user chose for the starter alternates (review form, 2026-10-21); unlisted colours pick automatically
+FORCE_ALT = {'W': 'Haliya, Guided by Light', 'U': 'Barrin, Tolarian Archmage', 'B': 'Nazar, the Velvet Fang',
+             'R': 'Breeches, Eager Pillager', 'G': 'Gwenna, Eyes of Gaea'}
+
+
+def best_variant(d, cmd, folder, out_path, syn, lo=26.5, hi=27.5):
+    """Tries 5-8 swaps and keeps the passing build closest to power 27; returns (lines, swaps, rating) or None."""
+    best = None
+    for n in (5, 6, 7, 8):
+        fname, lines, swaps = variant(d, cmd, folder, n=n, syn=syn)
+        if not 5 <= len(swaps) <= 8: continue
+        open(out_path, 'w').write('\n'.join(lines) + '\n')
+        r = dt.rate(out_path, data, cfg)
+        if [x for s_, x in dt.check_tier(r, 2, 20) if s_ == 'FAIL'] or not lo <= r['power'] <= hi: continue
+        if best is None or abs(r['power'] - 27) < abs(best[2]['power'] - 27): best = (lines, swaps, r)
+    if best is None and syn is not None:  # the commander itself moves the power: build, then tune back to 27 protecting synergy cards
+        import starter_tune as T
+        fname, lines, swaps = variant(d, cmd, folder, n=5, syn=syn)
+        open(out_path, 'w').write('\n'.join(lines) + '\n')
+        r, tsw = T.tune(out_path, protect=lambda q: syn(q) > 0)
+        if not [x for s_, x in dt.check_tier(r, 2, 20) if s_ == 'FAIL'] and lo <= r['power'] <= hi and len(swaps) + len(tsw) <= 8:
+            lines = open(out_path).read().splitlines()
+            best = (lines, swaps + _pairs(tsw), r)
+    return best
+
+
+def _pairs(tsw):
+    out = []
+    for t in tsw:
+        m = re.match(r'^(.*) \(\d+\) -> (.*) \(\d+\)$', t)
+        if m: out.append((m.group(1), m.group(2)))
+    return out
+
+
 def set_sideboard(path, entries):
     """Replaces the deck file's [Sideboard] section with these card lines."""
     out, skip = [], False
@@ -160,23 +212,35 @@ def starters(prev, used):
         cmdname = re.match(r'^\d+\s+([^|]+)', lines[ci]).group(1).strip()
         d = {'tier': 2, 'colors': c, 'file': os.path.basename(base), 'name': 'Starter_%s' % COLOR[c], 'life': 20,
              'theme': G.theme_of(pool[cmdname.lower()]) or [], 'alt_file': '%s_Starter_Alt.dck' % c, 'word': 'Starter.'}
-        cand = candidates(d, cards, used)
-        tries = [x for need in (3, 1, 0) for x in [y for y in cand if starter_ok(y, cards, need)][:8]]  # loosen fit if needed
-        seen = set(); tries = [x for x in tries if not (x['name'] in seen or seen.add(x['name']))]
+        if c in FORCE_ALT:
+            tries = [pool[FORCE_ALT[c].lower()]]
+        else:
+            cand = candidates(d, cards, used)
+            tries = [x for need in (3, 1, 0) for x in [y for y in cand if starter_ok(y, cards, need)][:8]]  # loosen fit if needed
+            seen = set(); tries = [x for x in tries if not (x['name'] in seen or seen.add(x['name']))]
         for cmd in tries:
-            fname, lines2, swaps = variant(d, cmd, folder)
-            if not 5 <= len(swaps) <= 8: continue
-            path = os.path.join(folder, fname)
+            path = os.path.join(folder, d['alt_file']); fname = d['alt_file']
+            got = best_variant(d, cmd, folder, path, SYN.get(cmd['name'].lower()))
+            if not got:
+                if os.path.exists(path): os.remove(path)
+                continue
+            lines2, swaps, r = got
             open(path, 'w').write('\n'.join(lines2) + '\n')
-            r = dt.rate(path, data, cfg)
-            if [x for s, x in dt.check_tier(r, 2, 20) if s == 'FAIL'] or not 26.5 <= r['power'] <= 27.5:
-                os.remove(path); continue
             if DRY: os.remove(path)
             else:  # each version carries the other's 5-8 cards in its sideboard (user, 2026-10-20)
-                ed_of = lambda ls: {re.match(r'^\d+\s+([^|]+)', l).group(1).strip(): l for l in ls if re.match(r'^\d+\s+[^|]+\|', l)}
-                bl, al = ed_of(lines), ed_of(lines2)
-                set_sideboard(base, [al[n] for _, n in swaps if n in al])
-                set_sideboard(path, [bl[o] for o, _ in swaps if o in bl])
+                # sideboards from the two main decks themselves: each holds exactly the cards only the other one runs
+                def mains(fp):
+                    out, sec = {}, None
+                    for l in open(fp).read().splitlines():
+                        if l.startswith('['): sec = l; continue
+                        m = re.match(r'^\d+\s+([^|]+)', l)
+                        if sec == '[Main]' and m and 'Basic' not in pool.get(m.group(1).strip().lower(), {}).get('types', 'Basic'):
+                            out.setdefault(m.group(1).strip(), l)
+                    return out
+                bm, am = mains(base), mains(path)
+                set_sideboard(base, [am[n] for n in am if n not in bm])
+                set_sideboard(path, [bm[n] for n in bm if n not in am])
+                swaps = list(zip([n for n in bm if n not in am], [n for n in am if n not in bm]))
             used.add(cmd['name'].lower())
             res.append({'file': fname, 'tier': 2, 'colors': c, 'variant_of': d['file'], 'commander': cmd['name'], 'starter': True,
                         'base_commander': cmdname, 'power': round(r['power'], 1), 'swaps': swaps})

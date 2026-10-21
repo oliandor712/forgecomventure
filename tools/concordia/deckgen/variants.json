@@ -6947,27 +6947,27 @@
   "commander": "Haliya, Guided by Light",
   "starter": true,
   "base_commander": "Syr Alin, the Lion's Claw",
-  "power": 27.2,
+  "power": 27.5,
   "swaps": [
    [
-    "Leonin Skyhunter",
-    "Orzhov Advokist"
+    "Journey to Nowhere",
+    "Frontline Medic"
    ],
    [
-    "Knight of Meadowgrain",
-    "Soul's Attendant"
+    "Fateful Absence",
+    "Loran of the Third Path"
    ],
    [
-    "Skyhunter Skirmisher",
-    "Ajani's Chosen"
+    "Glorious Anthem",
+    "Mycosynth Wellspring"
    ],
    [
-    "Moment of Heroism",
-    "Armillary Sphere"
+    "Captain's Call",
+    "Heirloom Blade"
    ],
    [
-    "Sheltering Light",
-    "Sejiri Shelter"
+    "Gideon's Reproach",
+    "Cathar Commando"
    ]
   ]
  },
@@ -6976,30 +6976,38 @@
   "tier": 2,
   "colors": "U",
   "variant_of": "U_Starter_Normal.dck",
-  "commander": "Inga Rune-Eyes",
+  "commander": "Barrin, Tolarian Archmage",
   "starter": true,
   "base_commander": "Gadwick, the Wizened",
-  "power": 26.7,
+  "power": 26.9,
   "swaps": [
    [
-    "Expanded Anatomy",
+    "Stream of Unconsciousness",
     "Dramatic Reversal"
    ],
    [
-    "Exhaustion",
-    "Ichor Wellspring"
-   ],
-   [
-    "Psychic Spiral",
-    "Reconnaissance Mission"
-   ],
-   [
     "Contentious Plan",
-    "Mycosynth Wellspring"
+    "Rescue"
+   ],
+   [
+    "Exhaustion",
+    "Expel from Orazca"
+   ],
+   [
+    "Expanded Anatomy",
+    "Decoction Module"
+   ],
+   [
+    "Irenicus's Vile Duplication",
+    "Propaganda"
    ],
    [
     "Time of Ice",
-    "Whispersilk Cloak"
+    "Sweep Away"
+   ],
+   [
+    "Psychic Spiral",
+    "Filter Out"
    ]
   ]
  },
@@ -7011,31 +7019,27 @@
   "commander": "Nazar, the Velvet Fang",
   "starter": true,
   "base_commander": "Syr Konrad, the Grim",
-  "power": 27.4,
+  "power": 27.1,
   "swaps": [
    [
+    "Morbid Opportunist",
+    "Nullpriest of Oblivion"
+   ],
+   [
     "Dutiful Attendant",
-    "Yahenni, Undying Partisan"
+    "Marauding Blight-Priest"
+   ],
+   [
+    "Nekrataal",
+    "Gumdrop Poisoner"
+   ],
+   [
+    "Josu Vess, Lich Knight",
+    "Malakir Bloodwitch"
    ],
    [
     "Sengir Autocrat",
     "Bloodline Necromancer"
-   ],
-   [
-    "Nekrataal",
-    "Chittering Witch"
-   ],
-   [
-    "Josu Vess, Lich Knight",
-    "Pawn of Ulamog"
-   ],
-   [
-    "Zulaport Cutthroat",
-    "Vito, Thorn of the Dusk Rose"
-   ],
-   [
-    "Morbid Opportunist",
-    "Piper of the Swarm"
    ]
   ]
  },
@@ -7044,30 +7048,30 @@
   "tier": 2,
   "colors": "R",
   "variant_of": "R_Starter_Normal.dck",
-  "commander": "Ben-Ben, Akki Hermit",
+  "commander": "Breeches, Eager Pillager",
   "starter": true,
-  "base_commander": "Tarox Bladewing",
-  "power": 27.3,
+  "base_commander": "Squee, Dubious Monarch",
+  "power": 27.5,
   "swaps": [
    [
-    "Rorix Bladewing",
-    "Sokenzan Spellblade"
+    "Scorch Spitter",
+    "Dire Fleet Daredevil"
    ],
    [
-    "Firespitter Whelp",
-    "Dragonspeaker Shaman"
+    "Lightning Mare",
+    "Impulsive Pilferer"
    ],
    [
-    "Furnace Whelp",
-    "Goblin Freerunner"
+    "Storm Caller",
+    "Captivating Crew"
    ],
    [
-    "Shivan Dragon",
-    "Swarming Goblins"
+    "Bogardan Firefiend",
+    "Captain Ripley Vance"
    ],
    [
-    "Rapacious Dragon",
-    "Krenko, Mob Boss"
+    "Keldon Raider",
+    "Thunderhead Gunner"
    ]
   ]
  },
@@ -7079,27 +7083,39 @@
   "commander": "Gwenna, Eyes of Gaea",
   "starter": true,
   "base_commander": "Goreclaw, Terror of Qal Sisma",
-  "power": 27.4,
+  "power": 27.0,
   "swaps": [
    [
-    "Garruk's Companion",
-    "Augur of Autumn"
+    "Kalonian Tusker",
+    "Aftermath Analyst"
    ],
    [
-    "Crushing Canopy",
-    "Viridian Corrupter"
+    "Alpine Grizzly",
+    "Hunted Wumpus"
    ],
    [
-    "Centaur Courser",
-    "Evolution Sage"
+    "Bosco, Just a Bear",
+    "Earthshaker Giant"
+   ],
+   [
+    "Predatory Wurm",
+    "Tajuru Pathwarden"
    ],
    [
     "Magnigoth Sentry",
-    "Lys Alana Huntmaster"
+    "Yedora, Grave Gardener"
    ],
    [
-    "Briarpack Alpha",
-    "Yedora, Grave Gardener"
+    "Somberwald Stag",
+    "Hivespine Wolverine"
+   ],
+   [
+    "Epic Confrontation",
+    "Viridian Corrupter"
+   ],
+   [
+    "Pounce",
+    "Jagged-Scar Archers"
    ]
   ]
  }

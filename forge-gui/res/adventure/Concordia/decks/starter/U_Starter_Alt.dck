@@ -1,8 +1,8 @@
 [metadata]
-Name=Starter_Blue (Inga Rune-Eyes)
-Description=Starter. Variant of U_Starter_Normal led by Inga Rune-Eyes; 5 cards changed.
+Name=Starter_Blue (Barrin)
+Description=Starter. Variant of U_Starter_Normal led by Barrin, Tolarian Archmage; 5 cards changed.
 [Commander]
-1 Inga Rune-Eyes|KHM
+1 Barrin, Tolarian Archmage|M21
 [Main]
 32 Island|FDN
 1 Lonely Sandbar|ONS
@@ -16,10 +16,10 @@ Description=Starter. Variant of U_Starter_Normal led by Inga Rune-Eyes; 5 cards 
 1 Serum Visions|5DN
 1 Slip Out the Back|SNC
 1 Sol Ring|TMC
-1 Stream of Unconsciousness|MOR
+1 Dramatic Reversal|PIO
 1 Arcane Signet|TMC
 1 Brotherhood Regalia|ACR
-1 Mycosynth Wellspring|NPH
+1 Rescue|DOM
 1 Deranged Assistant|ISD
 1 Hero's Blade|FRF
 1 Karfell Harbinger|KHM
@@ -36,8 +36,8 @@ Description=Starter. Variant of U_Starter_Normal led by Inga Rune-Eyes; 5 cards 
 1 Bontu's Monument|AKH
 1 Cloud Key|SLZ
 1 Commander's Sphere|CMM
-1 Ichor Wellspring|MBS
-1 Dramatic Reversal|TLE
+1 Expel from Orazca|RIX
+1 Decoction Module|KLD
 1 Fireshrieker|FDN
 1 Flux Channeler|WAR
 1 Herald's Horn|CMM
@@ -52,18 +52,18 @@ Description=Starter. Variant of U_Starter_Normal led by Inga Rune-Eyes; 5 cards 
 1 Fact or Fiction|INV
 1 Glimmer of Genius|KLD
 1 Hieroglyphic Illumination|AKH
-1 Irenicus's Vile Duplication|CLB
+1 Propaganda|TMP
 1 Rimewind Cryomancer|CSP
 1 Rite of Replication|MAR
 1 Riverwise Augur|RIX
 1 Soratami Mirror-Mage|CHK
 1 Soratami Savant|CHK
-1 Whispersilk Cloak|DST
+1 Sweep Away|OGW
 1 Disciple of the Ring|2X2
 1 Disruptor of Currents|ECL
 1 Flow of Knowledge|BRO
 1 Hakim, Loreweaver|MIR
-1 Reconnaissance Mission|IKO
+1 Filter Out|MAT
 1 Saruman the White|LTR
 1 Sea Gate Loremaster|ZEN
 1 Arcanis the Omnipotent|FDN
@@ -73,8 +73,10 @@ Description=Starter. Variant of U_Starter_Normal led by Inga Rune-Eyes; 5 cards 
 1 Dig Through Time|SLZ
 1 Memnarch, the Warden|FRC
 [Sideboard]
-1 Expanded Anatomy|STX
-1 Exhaustion|9ED
-1 Psychic Spiral|RTR
+1 Stream of Unconsciousness|MOR
 1 Contentious Plan|WAR
+1 Exhaustion|9ED
+1 Expanded Anatomy|STX
+1 Irenicus's Vile Duplication|CLB
 1 Time of Ice|DOM
+1 Psychic Spiral|RTR

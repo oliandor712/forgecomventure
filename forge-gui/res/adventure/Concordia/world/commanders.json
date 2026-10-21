@@ -216,5 +216,8 @@
   {"card": "Inga Rune-Eyes", "set": "KHM", "color": "U", "band": 2, "start": false},
   {"card": "Nazar, the Velvet Fang", "set": "J25", "color": "B", "band": 2, "start": false},
   {"card": "Ben-Ben, Akki Hermit", "set": "CHK", "color": "R", "band": 2, "start": false},
-  {"card": "Gwenna, Eyes of Gaea", "set": "BRO", "color": "G", "band": 2, "start": false}
+  {"card": "Gwenna, Eyes of Gaea", "set": "BRO", "color": "G", "band": 2, "start": false},
+  {"card": "Barrin, Tolarian Archmage", "set": "M21", "color": "U", "band": 2, "start": false},
+  {"card": "Squee, Dubious Monarch", "set": "DMU", "color": "R", "band": 2, "start": false},
+  {"card": "Breeches, Eager Pillager", "set": "LCI", "color": "R", "band": 2, "start": false}
 ]
