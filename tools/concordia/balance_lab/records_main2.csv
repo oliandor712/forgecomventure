@@ -45,3 +45,7 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:30:59Z,1a6eac0bb60,inner,4,decks/tier4/T4_BR_Cruelclaw.dck,decks/tier4/T4_WUR_Sevinne.dck,30,30,,,b,a,18,0
 2026-10-21T02:31:29Z,1a6eac0bb60,inner,2,decks/tier2/T2_BG_Meren.dck,decks/tier2/T2_WR_Balefang.dck,15,15,,,a,a,9,0
 2026-10-21T02:31:29Z,1a6eac0bb60,inner,2,decks/tier2/T2_BG_Meren.dck,decks/tier2/T2_WR_Balefang.dck,15,15,,,b,a,14,0
+2026-10-21T02:31:48Z,1a6eac0bb60,bonus,2,decks/tier2/T2_R_Toggo.dck,decks/starter/B_Starter_Alt.dck,15,15,arena,,a,b,14,0
+2026-10-21T02:31:48Z,1a6eac0bb60,bonus,2,decks/tier2/T2_R_Toggo.dck,decks/starter/B_Starter_Alt.dck,15,15,arena,,b,b,14,0
+2026-10-21T02:31:48Z,1a6eac0bb60,bonus,2,decks/tier2/T2_R_Toggo.dck,decks/starter/B_Starter_Alt.dck,15,15,,,a,b,12,0
+2026-10-21T02:31:48Z,1a6eac0bb60,bonus,2,decks/tier2/T2_R_Toggo.dck,decks/starter/B_Starter_Alt.dck,15,15,,,b,b,11,0

@@ -97,3 +97,5 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:30:19Z,1a6eac0bb60,inner,3,decks/tier3/T3_WUB_Zur.dck,decks/tier3/T3_BR_Exava.dck,25,25,,,b,b,21,0
 2026-10-21T02:30:48Z,1a6eac0bb60,inner,5,decks/tier5/T5_WB_Bartolom.dck,decks/tier5/T5_BG_Vraska.dck,35,35,,,a,b,34,0
 2026-10-21T02:30:48Z,1a6eac0bb60,inner,5,decks/tier5/T5_WB_Bartolom.dck,decks/tier5/T5_BG_Vraska.dck,35,35,,,b,a,26,0
+2026-10-21T02:31:48Z,1a6eac0bb60,inner,3,decks/tier3/T3_WG_Maja.dck,decks/tier3/T3_BR_Exava.dck,25,25,,,a,a,15,0
+2026-10-21T02:31:48Z,1a6eac0bb60,inner,3,decks/tier3/T3_WG_Maja.dck,decks/tier3/T3_BR_Exava.dck,25,25,,,b,b,17,0
