@@ -437,3 +437,9 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:40:57Z,8dd48a92d20,inner,3,decks/tier3/T3_B_XuIfit.dck,decks/tier3/T3_B_Imotekh.dck,25,25,,,b,a,15,0
 2026-10-21T02:42:38Z,8dd48a92d20,inner,3,decks/tier3/T3_B_Shredder.dck,decks/tier3/T3_B_Imotekh.dck,25,25,,,a,b,18,0
 2026-10-21T02:42:38Z,8dd48a92d20,inner,3,decks/tier3/T3_B_Shredder.dck,decks/tier3/T3_B_Imotekh.dck,25,25,,,b,a,12,0
+2026-10-21T02:43:03Z,8dd48a92d20,inner,3,decks/tier3/T3_B_Roshan.dck,decks/tier3/T3_B_XuIfit.dck,25,25,,,a,b,24,0
+2026-10-21T02:43:03Z,8dd48a92d20,inner,3,decks/tier3/T3_B_Roshan.dck,decks/tier3/T3_B_XuIfit.dck,25,25,,,b,a,18,0
+2026-10-21T02:43:35Z,8dd48a92d20,inner,4,decks/tier4/T4_B_Jadar.dck,decks/tier4/T4_B_Tombstone.dck,30,30,,,a,a,17,0
+2026-10-21T02:43:35Z,8dd48a92d20,inner,4,decks/tier4/T4_B_Jadar.dck,decks/tier4/T4_B_Tombstone.dck,30,30,,,b,a,18,0
+2026-10-21T02:44:04Z,8dd48a92d20,inner,4,decks/tier4/T4_B_Isareth.dck,decks/tier4/T4_B_Tombstone.dck,30,30,,,a,a,13,0
+2026-10-21T02:44:04Z,8dd48a92d20,inner,4,decks/tier4/T4_B_Isareth.dck,decks/tier4/T4_B_Tombstone.dck,30,30,,,b,a,16,0
