@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """One batch of the deck balance lab: inner-tier pairings and bonus matched sets, appended to records.csv.
-Usage: python3 tools/concordia/balance_lab/run_batch.py [--budget 1800] [--seed N]
+Usage: python3 tools/concordia/balance_lab/run_batch.py [--seed N]
 Plays via tools/concordia/sim/run.sh BonusSim; no new game starts after minute 8 of the batch."""
 import argparse, collections, csv, glob, json, os, random, re, subprocess, sys, time, datetime
 
@@ -146,7 +146,7 @@ def play(games, budget_end):
     for g in games:
         args += [g["da"], str(g["la"]), g["xa"], g["db"], str(g["lb"]), g["xb"], g["first"], g["label"]]
     p = subprocess.run([ROOT + "/tools/concordia/sim/run.sh", "BonusSim", "forge-gui/", "150"] + args, cwd=ROOT,
-                       capture_output=True, text=True, timeout=min(3600, max(60, budget_end - time.time() + 200)))
+                       capture_output=True, text=True, timeout=None)  # no compute cap (user, 2026-10-21); each game still has its own 150 s limit in BonusSim
     res = {}
     for ln in p.stdout.splitlines():
         if ln.startswith("GAME\t"):
@@ -161,7 +161,6 @@ def target_for(d):  # games per deck (user, 2026-10-21): 25 for AI decks, 40 for
 
 def run():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--budget", type=int, default=1800)  # no new game starts in the last 2 minutes of the budget (runtime limits lifted 2026-10-21)
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--pairings", type=int, default=4)
     ap.add_argument("--pool", default="shard", help="shard (this hour's colour shard, default), green (priority) or all")
@@ -180,7 +179,7 @@ def run():
     else:
         pool = None if o.pool == "all" else set(green_pool())
     start = time.time()
-    stop_new = start + (1e7 if o.until_done else 480); end = start + (1e7 if o.until_done else o.budget)
+    stop_new = end = float("inf")  # no compute cap (user, 2026-10-21)
     commit = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     rows = load(); c = counts(rows)
     new = not os.path.exists(REC)
