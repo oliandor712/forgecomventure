@@ -49,7 +49,8 @@ def card_power(p, ed):
     return p['power'][p['minr']]
 
 
-def tune(path):
+def tune(path, protect=None):
+    """protect(card) -> truthy keeps that card (e.g. cards that work with the commander's ability)."""
     lines = read(path)
     colors = None
     swaps = []
@@ -62,8 +63,8 @@ def tune(path):
             colors = frozenset().union(*[p['id'] for _, p, _ in cards])
         have = {p['name'].lower() for _, p, _ in cards}
         down = r['power'] > TARGET
-        red_cut = down and os.path.basename(path).startswith('R_')
-        order = sorted(cards, key=lambda c: (-(red_cut and role(c[1]) == 'removal'), -card_power(c[1], c[2]) if down else card_power(c[1], c[2])))
+        red_cut = down and os.path.basename(path).startswith('R_') and protect is None
+        order = sorted([c for c in cards if not (protect and protect(c[1]))], key=lambda c: (-(red_cut and role(c[1]) == 'removal'), -card_power(c[1], c[2]) if down else card_power(c[1], c[2])))
         done = False
         for i, p, ed in order:
             pw, rl = card_power(p, ed), role(p)
