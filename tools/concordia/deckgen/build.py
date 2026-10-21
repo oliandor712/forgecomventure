@@ -15,6 +15,7 @@ sys.path.insert(0, os.path.dirname(HERE))
 import deck_tier as dt
 import archetype_rules as ar  # archetype windows and sub-archetype classification (tools/concordia)
 import ability_tags as at  # ability-led tags and the deck-building bonus (deckgen)
+import commander_support as cp  # what supports a commander's own ability (human logic H31-H36)
 data = dt.build_cache(); cfg = json.load(open(dt.CONFIG))
 pool = pickle.load(open(os.path.join(HERE, 'pool.pkl'), 'rb'))
 RES = dt.RES
@@ -43,8 +44,14 @@ def card_traits(p):
 
 HUMAN = os.path.normpath(os.path.join(HERE, '../../../tools/agents/human_logic.toon'))
 RETRY = {'H08', 'H13', 'H14', 'H15', 'H16', 'H17'}  # rules whose WARN gets one rebuild with a raised weight (dry runs)
-GENERIC_TAGS = {'mana_source', 'fixing', 'draw', 'removal', 'lifegain', 'etb_trigger', 'dies_trigger', 'combat_damage_trigger',
-                'counterspell', 'tutor', 'land_tutor', 'selection', 'discard', 'fog', 'protection_trick'}  # too common to show a commander's ability
+def commander_works(cmd, chosen):
+    """Deck cards that pass any support test for the commander's own ability (commander_support.profile and supports, H31-H36)."""
+    prof = cp.profile(cmd['oracle'], cmd['types'])
+    n = 0
+    for p, _ in chosen:
+        t = at.card_text(p['name'])
+        if prof and any(cp.supports(it, p['name'], t, ability_tags(p), at.parse(t)[5]) for it in prof): n += 1
+    return n
 
 def human_rules():
     """The user's deck-building rows from human_logic.toon: {rule id: [area, rule, since, status, where]}. Read twice per deck."""
@@ -56,9 +63,10 @@ def human_rules():
 
 def human_pass1(d, ident, rules):
     """Pass 1, before the fill: the rules as build parameters. Human-logic rows win over the metrics (file header)."""
+    low = str(d.get('sub') or '').startswith('low-')
     return {'target': 17.0 if 'H08' in rules else T1_TARGET,  # H08: tier 1 power 16-18
             'bonus': d.get('_boost', {}).get('bonus', 1.0),  # ability_tags weight; raised once on a retry
-            'cwin': (30, 34) if 'H11' in rules and d['tier'] == 1 else None,  # H11: tier 1 creatures 30-34
+            'cwin': ((26, 99) if low else (30, 34)) if 'H11' in rules and d['tier'] == 1 else None,  # H11: tier 1 creatures 30-34; low-* subs 26 up to the window max (user, S3)
             'spells': 'H12' in rules and 'U' in ident,  # H12: a blue deck carries spells, so fewer creatures
             'uncommon': 'H09' in rules and d['tier'] == 1}  # H09: tier 1 staples only in uncommon printings
 
@@ -76,21 +84,22 @@ def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     check('H09', not bad, 'staples outside uncommon printings: %s' % (', '.join(bad) or 'none'))
     budget = {k.lower() for k in BUDGET} | {k.lower() for k in ROCKS}
     check('H10', any(p['name'].lower() in budget for p, _ in chosen + lands), 'budget lands or rocks present')
-    check('H11', 30 <= cr <= 34, 'creatures %d (30-34)' % cr, d['tier'] == 1)
+    low = str(d.get('sub') or '').startswith('low-')  # S3: low-* decks floor 26, ceiling the archetype window max
+    check('H11', (26 if low else 30) <= cr <= (info['window'][1] if low else 34), 'creatures %d (%s)' % (cr, '26 to window max' if low else '30-34'), d['tier'] == 1)
     check('H12', cr <= 32, 'blue deck creatures %d (32 max)' % cr, 'U' in ident)
     pos = sum(1 for p, _ in chosen if at.bonus(ability_tags(p), d['archetype'], d.get('sub'), info['traits'], len(ident) == 1, ''.join(sorted(ident))) > 0) if d.get('archetype') else 0
     check('H13', pos >= 10, 'cards with a positive ability bonus %d (10 needed)' % pos, bool(d.get('archetype')))
-    text = cmd['oracle'].lower(); ctags = ability_tags(cmd)
+    text = cmd['oracle'].lower()
     cost_cut = re.search(r'costs? (\{\d+\} |\{\d\} )?less', text) is not None
     etb = sum(1 for p, _ in chosen if 'Creature' in p['types'].split() and 'etb_trigger' in ability_tags(p))
     check('H14', etb >= 3, 'creatures with an enter-the-battlefield ability %d (3 needed)' % etb, cost_cut)
     big = sum(1 for p, _ in chosen if 'Creature' in p['types'].split() and p['pt'] and p['pt'][0].isdigit() and int(p['pt'][0]) >= 5)
     check('H15', big >= 3, 'creatures with power 5+ %d (3 needed)' % big, bool(re.search(r'power \d+ or greater', text)))
     drain = sum(1 for p, _ in chosen if ability_tags(p) & {'drain', 'burn'})
-    check('H16', drain >= 2, 'drain or burn cards %d (2 needed)' % drain, 'lifegain' in ctags)
-    specific = ctags - GENERIC_TAGS
-    works = sum(1 for p, _ in chosen if ability_tags(p) & specific)
-    check('H17', works >= 5, 'cards that work with the commander ability %d (5 needed)' % works, bool(specific))
+    dmg = re.search(r'noncombat damage|damage to any target|deals? \d+ damage to (target|any|each)', text) is not None  # H36
+    check('H16', drain >= 2, 'drain or burn cards %d (2 needed)' % drain, dmg)
+    works = commander_works(cmd, chosen)  # H17: cards that support the commander's own ability (threshold 5)
+    check('H17', works >= 5, 'cards that support the commander ability %d (5 needed)' % works, bool(cp.profile(cmd['oracle'], cmd['types'])))
     return out
 BASIC = {'W': 'Plains', 'U': 'Island', 'B': 'Swamp', 'R': 'Mountain', 'G': 'Forest'}
 SPEC = {

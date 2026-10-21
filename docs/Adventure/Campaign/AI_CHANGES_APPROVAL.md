@@ -86,7 +86,7 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
   - Changes no AI behaviour: log lines only. The AI lab tests it in a scratch worktree and confirms the games' results are
     unchanged and the digest picks up the reason field.
 
-- [x] **Consolidation of 010, 011 and 012** into one test-only patch (`ai-test-instrumentation.patch`): ordered by the main session 2026-10-21; verified 2026-10-21: 40 of 40 seeded games identical to stock; originals moved to `patches/archive/`.
+- [x] **Consolidation of 010, 011 and 012** into one test-only patch (`ai-test-instrumentation.patch`): ordered by the main session 2026-10-21; verified 2026-10-21: 40 of 40 seeded games identical to stock; originals moved to `patches/archive/`. Follow-up 013 (user approved item 10, 2026-10-21): `patches/013-trim-clear-blocks.patch` removes the BLOCK_REASON pass=clear lines (about half the BLOCK_REASON volume); applied on top of the consolidated patch; results-unchanged 20/20 identical (`ai_lab/results/unchanged-check/013/`). Test-only, never forge-ai/src.
 
 ## How a box gets ticked
 
