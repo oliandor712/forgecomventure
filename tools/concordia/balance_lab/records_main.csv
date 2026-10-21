@@ -47,3 +47,5 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:17:41Z,d8e44e4b,inner,3,decks/tier3/T3_WUG_Derevi.dck,decks/tier3/T3_WU_Isperia.dck,25,25,,,b,b,19,0
 2026-10-21T02:18:05Z,d8e44e4b,inner,5,decks/tier5/T5_WG_Garnet.dck,decks/tier5/T5_WRG_Gahiji.dck,35,35,,,a,b,16,0
 2026-10-21T02:18:05Z,d8e44e4b,inner,5,decks/tier5/T5_WG_Garnet.dck,decks/tier5/T5_WRG_Gahiji.dck,35,35,,,b,b,17,0
+2026-10-21T02:18:32Z,d8e44e4b,inner,4,decks/tier4/T4_BG_Yargle.dck,decks/tier4/T4_URG_Flubs.dck,30,30,,,a,b,20,0
+2026-10-21T02:18:32Z,d8e44e4b,inner,4,decks/tier4/T4_BG_Yargle.dck,decks/tier4/T4_URG_Flubs.dck,30,30,,,b,b,19,0
