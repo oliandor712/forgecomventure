@@ -21,7 +21,7 @@
   "agents": {
     "forge-ai-lab": {
       "brief": ".claude/agents/forge-ai-lab.md",
-      "session": "TBD",
+      "session": "session_018TohPY7UPn5mh9b7aJ4at5",
       "model": "sonnet, effort high",
       "folders": [
         "tools/concordia/ai_lab/",
@@ -135,7 +135,7 @@
     },
     "deck-balance-lab": {
       "brief": ".claude/agents/deck-balance-lab.md",
-      "session": "TBD",
+      "session": "session_01PwU5ft7yoiwonjyndwCVv9",
       "model": "sonnet, effort high",
       "folders": [
         "tools/concordia/balance_lab/"

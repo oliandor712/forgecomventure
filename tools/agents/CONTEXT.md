@@ -103,8 +103,8 @@ build on its findings, and cite entries by date and title.
 ## Agents
 | Agent | Brief | Session | Schedule |
 |---|---|---|---|
-| forge-ai-lab | `.claude/agents/forge-ai-lab.md` | session_01SdzhYuPRVSAtP7QLaagBxk | step every 2 h at :06 (was hourly; changed at the user's request), about 5 min; report every 4 h |
-| deck-balance-lab | `.claude/agents/deck-balance-lab.md` | session_011UrsiVw1s1nsvYUSkv2iLy | `--until-done` run, no time cap (triggers disabled during the deep research project) |
+| forge-ai-lab | `.claude/agents/forge-ai-lab.md` | session_018TohPY7UPn5mh9b7aJ4at5 | step every 2 h at :06 (was hourly; changed at the user's request), about 5 min; report every 4 h |
+| deck-balance-lab | `.claude/agents/deck-balance-lab.md` | session_01PwU5ft7yoiwonjyndwCVv9 | `--until-done` run, no time cap (triggers disabled during the deep research project) |
 
 The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
