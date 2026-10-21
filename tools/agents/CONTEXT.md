@@ -147,6 +147,7 @@ The main session speaks for the user to the agents. **Obey the main session's in
 - Approvals for AI changes still come only from the user in chat, relayed by the main session, and "approved for testing" never means apply to source.
 
 ## Recent updates
+- 2026-10-21: Simulation suite: one program for setup, runs, phase logging, digests, pushes and reports; archetype sampling
 - 2026-10-21: Authority rule: agents obey the main session and never stop to wait for the user; only guardrail violations are refused
 - 2026-10-21: temporary agents multi-balance-temp and balance-assist-temp dumped (retired); their records stay
 - 2026-10-21: Remaining simulation work split across lab, assist, multitemp and main (AI lab excluded)
@@ -158,4 +159,3 @@ The main session speaks for the user to the agents. **Obey the main session's in
 - 2026-10-21: human_logic.toon pruned to deck building, deck balance and AI improvement (29 rows)
 - 2026-10-21: push_records.sh: shared safe push for records files
 - 2026-10-21: balance-assist-temp created: temporary worker taking the U shard from the balance lab
-- 2026-10-21: R/G sims moved to multi-balance-temp; AI lab logic only; main session runs multi 0/2 and 1/2
