@@ -279,3 +279,12 @@ Game shape:
 - Cast median turn 11 across 48,423 casts.
 
 Caveats: these are survey counts across all matchups, not per deck. The gradient is per decision, so one blocker facing several attackers counts several times. The overlay check is still open.
+
+## Final results (research ended early, 3,094 digested games, 2026-10-21)
+Ended on the main session's order. Blocking results are final for the digests so far.
+- Blocking, by blocker life: 15+ life 8% (13,742 decisions); 8 to 14 life 19% (12,622); under 8 life 39% (15,525). Same gradient as the earlier passes.
+- Game length: median 16 turns over 3,094 games.
+- Patch 010 (AI decision log) is test-only. Its results-unchanged check is not completed, so overlay games are treated as the stock AI with that caveat.
+
+Sections reached: 1 blocking (done), 2 attacking (done), 3 removal targeting (done), 4 spell order (done), 5 mana use (done).
+Sections not completed (research ended early): commander, combat tricks, ETB/tokens, mulligan, "Logic by deck type". What remains: the same log-based checks as sections 1 to 5, applied to these areas, plus the deck-type table once the balance lab publishes its archetype tags.

@@ -282,3 +282,9 @@ _Checked against the lab's sims (results in `tools/concordia/ai_lab/`), commit 2
 | `ComputerUtilCard.shouldPumpCard` (pump decisions generally) | `ComputerUtilCard.java:1474-1720` | Combat trickery section builds a simulated combat with the pumped creature. In the blocker branch it dropped co-blockers (patch 008); the kill check calls `ComputerUtilCombat.attackerWouldBeDestroyed` (`ComputerUtilCombat.java:696-714`), which sums the damage of the blockers present in the combat it receives. The window in which the co-blocker fix changes an answer is narrow (0 of 37 evaluations). |
 
 Lab method note: flags removed in a scratch assets copy, equal life, 40-card decks, 10 games per arm; a cast count proves play, not good play.
+
+## Research status (ended early, 2026-10-21)
+- Section 1 (SpellApiToAi mapping), 2 (AI:RemoveDeck flags), 3 (SVar hints), 4 (AILogic values), 5 (Fog/SwitchPT/shouldPumpCard): complete as of this date.
+- Decision logic by area (blocking, attacking, removal targeting, spell order, mana): written in tools/concordia/ai_lab/DECISION_LOGIC.md with source references.
+- Not completed (research ended early): commander, combat tricks, ETB/tokens, mulligan, and the "Logic by deck type" section. Remaining work is the same log-based checks as in DECISION_LOGIC.md, applied to those areas.
+- Patch 010 (AI decision log) is test-only and not applied to forge-ai/src.

@@ -24,3 +24,14 @@ Notes for the balancers:
 | 9 | AI decision log (patch 010, test overlay only) | makes AI_DECISION rows in the digests; results-unchanged check still open | none on the shipped game | test overlay only (SIM_ACTIVE.txt); forge-ai/src needs the user's chat approval |
 
 Note: the 376-game digest shows the AI chump-blocks more as its life falls (5%, 15%, 35% of decisions by life band). This is the behaviour the balancers should expect when they test life-based pressure.
+
+## Final (research ended early, 2026-10-21)
+Balance options measured so far, with game counts (10 games per arm unless stated; H28 needs about 40 per arm for win-rate claims):
+- Option 1, land bonus: 75% win rate (40 games) and land+one-drop 77% (34 games) against 46% baseline. Needs the 40-game check before any starter change.
+- Option 2 and 3, SwitchPT flag and patch 005 v3: 68 to 14 switch activations in s005 (10 games), 92 to 2 to 8 in n001 variants. Casts unchanged. Patch 005 needs the user's chat approval.
+- Option 4, Fog and Endure flags (002, 003): Fog cast in the opponent's declare-blockers window; Endure cast when threatened (10-game runs). Card script, awaiting approval.
+- Option 5, patch 004 (Harsh Justice): not written; Harsh Justice never cast even without its flag. Planned.
+- Option 6, patch 008: 0 changed decisions in 37 co-blocker cases. Not recommended.
+- Option 7, patch 006: no measurable effect. Parked.
+- Option 8, balance data: starters and tier 5 above the field, tier 1-2 black decks below, from 3,442 Commander records (20 to 40 games per deck). Needs 40 games before any deck change.
+- Option 9, patch 010 AI decision log: test overlay only, 3,094 digested games with AI_DECISION rows. Its results-unchanged check is not completed.
