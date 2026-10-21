@@ -107,3 +107,7 @@ Result: 406 blocker-branch evaluations, 37 with co-blockers (5 with 1, 7 with 2,
 
 ### Plan for the hand-built 008 case (found a way)
 `forge.game.GameState` (`forge-game/.../GameState.java:47`, `parse(...)` :514-523, used by the puzzle mode `Puzzle.java:44,105`) can load a hand-written state (life, battlefield, hand, phase) onto a game. Next: a small `ScenarioSim` (in `tools/concordia/ai_lab/`) that builds a Commander-less 2-player game, applies a state file (AI side: Giant Growth in hand, a 1/1 and a 2/2 on the battlefield; opponent: a 4/4 attacking, phase combat declare attackers), lets the AI choose blocks and the pump, and prints the shadow lines (`SHADOW`/`SHADOWREACH`) from the 008 scratch build. Split across the next hourly wakes: (1) ScenarioSim skeleton + state file, (2) run base vs 008, (3) write up. Note: decks changed (regenerated); this scenario uses no decks.
+
+### Sample size vs the user's rule H28 (tools/agents/human_logic.toon)
+H28: a clear result needs about 40 games per deck for a 70-30 deck. Every A/B in this file used 10 games per arm, and 4 games for 001 (first run). So all win-rate readings here are noise, and cast/activation counts are the only usable signal, which is why the logs and the useful-play column matter. Going forward: decision-level tests (shadow mode, hand-built scenarios) do not need many games; win-rate claims need about 40 games per arm.
+H25/H26 applied: the decks are 40 cards, regenerated after the tier change (see the note above the 005 section).
