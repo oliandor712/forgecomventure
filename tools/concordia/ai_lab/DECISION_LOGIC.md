@@ -190,3 +190,22 @@ Reading against the logic notes:
 - Nothing in the full pass contradicts the mana rules (section 5), but it does not test them either; no log line shows which source paid for a spell.
 
 Caveats: counts come from different experiments, decks and life totals; the phase logs do not record AI scores, so "why" is inferred from the code, not read from the logs. Treat this as a survey to target the next experiments, not as evidence for a rule change.
+
+## Decision-level results by experiment arm (2026-10-21)
+Source: summary.txt and *-summary.txt in tools/concordia/ai_lab/results/. Ten games per arm, so win counts are not evidence on their own (H28 needs about 40); the decision counts are what this section reads. "Activations" are card activations, which for SwitchPT cards (Aquamoeba, Turtleshell Changeling, Myr Quadropod) are the switch decisions.
+
+Switch decisions (SwitchPT, patch 001 and 005 family):
+- n001 patched, before the v3 switch rule: 92 activations in 10 games.
+- n001 variants with v3-era logic: n001-v3 2 activations, n001-guard 4, n001-twoversions 8. Casts stayed at 5-8 per card.
+- s005 base 68 activations, s005 code (v3) 14: the same reduction seen in the earlier pilot.
+Reading: the v3 switch rule removes most switch activations (about 92 to 2-8 in n001, 68 to 14 in s005) while keeping the casts. Decision count supports the v3 logic; it does not show that switching helps play.
+
+Win counts (10 games per arm, not evidence on their own):
+- n001 (switch deck): the A side wins 0 to 1 of 10 in every arm, so this deck is losing regardless of switch logic. Its games are long (21 to 29 turns), so the switch rule is not what decides them.
+- Fog and flag arms (g008, r008, s006, n003): A wins between 2 and 9 of 10, with no consistent direction across patched and base. Treat as noise.
+
+Shadow test (008, gang-block co-blockers): 406 blocker-branch evaluations, 37 with co-blockers present, 0 disagreements between base and 008. This is the same result as before: patch 008 does not change any decision in these logs.
+
+Whitefog run (003, patched only): Endure 0 casts, Shield Dancer 5 casts (creature only, postcombat), Harsh Justice 0 casts. Harsh Justice is not cast even without its flag, which matches the window problem noted earlier: its window does not overlap FogAi's declare-blockers window (patch 004 needed).
+
+Open decision-logic questions from these arms: why the switch deck loses even with fewer switches; whether Shield Dancer's creature-only casts are the AI's choice or a targeting result (EffectAi.java:136-140).
