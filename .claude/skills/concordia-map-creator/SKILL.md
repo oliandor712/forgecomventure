@@ -86,10 +86,8 @@ the game re-rolls both every time it spawns (each load, and after entering a tow
 in the zone's color; trainers are 1-2 colors at stage 1 and 2-3 after that. Pools are picked by deck power window in
 `build_color_zone.py` (`WILD`, `TRAINER`, `KEEPER`, `GUARDIAN`, `WARDEN`); don't hand-pick decks by tier alone.
 
-**Doors and buildings.** A door's trigger (the `entry` object) is a thin strip, 4 px deep (at most 6), flush against
-the wall or building it is set in, on the side opposite its `direction`. A full-tile trigger fires a tile before the
-player reaches the door; one standing off the wall fires out in the open. Tile objects hang from their bottom edge,
-so for a door in a building's bottom row the strip's Tiled `y` is the building's bottom edge + 4 and `height` 4. A
+**Doors and buildings.** A door's trigger (the `entry` object) keeps the original full-size shape (a tile deep, as in
+Emberbrook's house); thin 4 px strips made Emberbrook's house door impossible to re-enter (user test, 2026-10-21), so don't use them. A
 door's arrival spot (next to the target entry, on its `direction` side) needs at least one
 free tile, clear of collision and inside the map, and must not overlap another entry. Keep a building's door clear of
 hedges and map edges below it. The game also moves a blocked arrival to the nearest free spot and reloads the previous

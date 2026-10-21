@@ -2,7 +2,7 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). When a rule conflicts with a metric, the rule wins.
 # status: applied = in code or decks now, partly = some of it done, open = not done or not decided. since = date the user said it.
 # Add a row whenever the user gives deck-balance input in chat; never delete a row, set its status instead.
-rules[30|]{id|area|rule|since|status|where}:
+rules[33|]{id|area|rule|since|status|where}:
   H01|curve|A zone's stage locks at the player's first fight there from Seals held (0-1 stage 1, 2-3 stage 2, 4-5 stage 3)|2026-10-20|applied|TierLock.java and config tierLock
   H02|curve|Wild creatures, random-dungeon enemies, pass keepers, grove guardians and Wardens are mono-color. Trainers are 1-2 colors at stage 1 then 2-3|2026-10-20|applied|build_color_zone.py
   H03|curve|Random dungeons draw from the wild encounter pool, never from keepers or guardians|2026-10-20|applied|build_color_zone.py
@@ -33,3 +33,6 @@ rules[30|]{id|area|rule|since|status|where}:
   H28|testing|Target is 25 games per AI deck and 40 per starter deck (user, 2026-10-21). Clear results need about 40 games per deck for a 70-30 deck and about 25 matched sets per bonus for a 25-point effect and about 600 games for a seat edge|2026-10-21|applied|balance lab brief
   H29|pc-npc|The player's win rate against NPC enemies: tiers 1-2 target 70%, tiers 3-5 target 50% (user, pc_win_rate, 2026-10-21; replaces the earlier flat 70% at every stage)|2026-10-21|partly|make_report.py PC_TARGET; balance lab reports each stage against its target
   H30|pc-npc|Starting bonuses for enemies stay small and never touch life. Judge them by measured win rate against the starters|2026-10-20|applied|balance lab
+  H31|towns|Commander Hall is mandatory in every town except Emberbrook (Mossgate, gate towns, zone towns)|2026-10-21|open|OVERWORLD.md 4.1a; zone town rows updated; maps not built yet
+  H32|towns|A quest building is optional in Mossgate, gate towns and Warden (zone) towns|2026-10-21|open|OVERWORLD.md 4.1a; not required by the zone builders
+  H33|maps|Door triggers keep the original full-size shape; thin 4 px strips broke Emberbrook house re-entry|2026-10-21|applied|emberbrook, mossgate and temple doors restored; check_doors.py and the map skill updated

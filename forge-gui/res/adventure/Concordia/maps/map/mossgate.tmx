@@ -47,7 +47,7 @@
   <object id="50" template="../obj/shardtrader.tx" x="98" y="98"/>
   <object id="51" template="../obj/shop_boosters.tx" x="272" y="98"/>
   <object id="52" template="../obj/shop_colorless.tx" x="208" y="50"/>
-  <object id="54" name="Gate Temple" template="../../../common/maps/obj/entry_down.tx" x="128" y="212" width="16" height="4">
+  <object id="54" name="Gate Temple" template="../../../common/maps/obj/entry_down.tx" x="128" y="224" width="16" height="16">
    <properties>
     <property name="direction" value="down"/>
     <property name="teleport" value="../Concordia/maps/map/mossgate_temple.tmx"/>
