@@ -1,6 +1,6 @@
 # Toolbox: the shared reference for every agent
 
-Generated 2026-10-21 16:37Z at commit e01b1b4b28d on branch campaign-design. **Tools stamp: `6db520156a09`.**
+Generated 2026-10-21 16:40Z at commit 10b73da9206 on branch campaign-design. **Tools stamp: `11f19ebdec32`.**
 
 ## Start of every turn (all agents)
 1. `git pull --no-rebase origin campaign-design` (if the clone is shallow: `git fetch --unshallow origin campaign-design`).
@@ -31,7 +31,7 @@ Generated 2026-10-21 16:37Z at commit e01b1b4b28d on branch campaign-design. **T
 | `tools/concordia/ai_lab/OPTIONS_FOR_BALANCERS.md` | ai lab, balance lab | measured options to empower AI decks | cb4d53dfc3a 10-21 12:12Z |
 | `tools/concordia/ai_lab/DECISION_LOGIC.md` | ai lab | how the Forge AI decides (blocks, attacks, removal, spells, mana) | 14bd574c2eb 10-21 14:13Z |
 | `tools/concordia/ai_lab/RESULTS_UNCHANGED_PLAN.md` | ai lab, main | the 40-game check that patches 010/011 do not change results | e84698929da 10-21 12:50Z |
-| `tools/concordia/deckgen/build.py` | deck builder | builds the tier decks from decks.json (role quotas, curve, caps); run after mine.py and pool.py | f1139925c35 10-20 23:41Z |
+| `tools/concordia/deckgen/build.py` | deck builder | builds the tier decks from decks.json (role quotas, curve, caps); run after mine.py and pool.py | d4301032d86 10-21 16:39Z |
 | `tools/concordia/deckgen/pool.py` | deck builder | card pool from the card scripts (skips AI:RemoveDeck:All, so unflagged cards enter it) | 440176a2f0f 10-20 17:13Z |
 | `tools/concordia/deckgen/variants.py` | deck builder | alternate-commander variants and starter alternates (--starters) | 9e6451c159b 10-21 01:47Z |
 | `tools/concordia/deckgen/starter_tune.py` | deck builder | tunes the player starters toward deck power 27 | 5439eb01f80 10-21 01:16Z |
