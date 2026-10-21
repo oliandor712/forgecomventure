@@ -34,5 +34,5 @@ rules[33|]{id|area|rule|since|status|where}:
   H29|pc-npc|The player's win rate against NPC enemies: tiers 1-2 target 70%, tiers 3-5 target 50% (user, pc_win_rate, 2026-10-21; replaces the earlier flat 70% at every stage)|2026-10-21|partly|make_report.py PC_TARGET; balance lab reports each stage against its target
   H30|pc-npc|Starting bonuses for enemies stay small and never touch life. Judge them by measured win rate against the starters|2026-10-20|applied|balance lab
   H31|towns|Commander Hall is mandatory in every town except Emberbrook (Mossgate, gate towns, zone towns)|2026-10-21|open|OVERWORLD.md 4.1a; zone town rows updated; maps not built yet
-  H32|towns|A quest building is optional in Mossgate, gate towns and Warden (zone) towns|2026-10-21|open|OVERWORLD.md 4.1a; not required by the zone builders
+  H32|towns|A quest building is allowed only in Mossgate, gate towns and Warden (zone) towns, and is optional there; no other town type gets one|2026-10-21|open|OVERWORLD.md 4.1a; not required by the zone builders; clarified in chat 2026-10-21
   H33|maps|Door triggers keep the original full-size shape; thin 4 px strips broke Emberbrook house re-entry|2026-10-21|applied|emberbrook, mossgate and temple doors restored; check_doors.py and the map skill updated
