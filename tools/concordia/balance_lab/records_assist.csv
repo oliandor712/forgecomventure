@@ -1,0 +1,7 @@
+utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,turns,timeout
+2026-10-21T03:02:30Z,e21d777ff71,inner,5,decks/tier5/T5_U_Arni.dck,decks/tier5/T5_U_Loki.dck,35,35,,,a,b,20,0
+2026-10-21T03:02:30Z,e21d777ff71,inner,5,decks/tier5/T5_U_Arni.dck,decks/tier5/T5_U_Loki.dck,35,35,,,b,b,23,0
+2026-10-21T03:03:01Z,e21d777ff71,inner,5,decks/tier5/T5_U_Arni.dck,decks/tier5/T5_U_Hapatra.dck,35,35,,,a,b,30,0
+2026-10-21T03:03:01Z,e21d777ff71,inner,5,decks/tier5/T5_U_Arni.dck,decks/tier5/T5_U_Hapatra.dck,35,35,,,b,a,20,0
+2026-10-21T03:03:53Z,e21d777ff71,inner,1,decks/tier1/T1_U_Tetsuko.dck,decks/tier1/T1_U_Elrond.dck,10,10,,,a,a,25,0
+2026-10-21T03:03:53Z,e21d777ff71,inner,1,decks/tier1/T1_U_Tetsuko.dck,decks/tier1/T1_U_Elrond.dck,10,10,,,b,a,18,0
