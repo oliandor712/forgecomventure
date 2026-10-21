@@ -119,3 +119,5 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:45:59Z,1a6eac0bb60,bonus,2,decks/tier2/T2_W_Gerrard.dck,decks/starter/B_Starter_Alt.dck,15,15,staff,,b,a,22,0
 2026-10-21T02:45:59Z,1a6eac0bb60,bonus,2,decks/tier2/T2_W_Gerrard.dck,decks/starter/B_Starter_Alt.dck,15,15,,,a,b,22,0
 2026-10-21T02:45:59Z,1a6eac0bb60,bonus,2,decks/tier2/T2_W_Gerrard.dck,decks/starter/B_Starter_Alt.dck,15,15,,,b,b,17,0
+2026-10-21T02:46:54Z,c329d44eb7a,inner,1,decks/tier1/T1_R_Kediss.dck,decks/tier1/T1_R_Tomik.dck,10,10,,,a,b,16,0
+2026-10-21T02:46:54Z,c329d44eb7a,inner,1,decks/tier1/T1_R_Kediss.dck,decks/tier1/T1_R_Tomik.dck,10,10,,,b,a,8,0
