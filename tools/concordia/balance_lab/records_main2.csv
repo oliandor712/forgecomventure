@@ -1,0 +1,3 @@
+utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,turns,timeout
+2026-10-21T02:18:16Z,d8e44e4b,inner,2,decks/tier2/T2_UG_Moritte.dck,decks/tier2/T2_BR_Obosh.dck,15,15,,,a,a,15,0
+2026-10-21T02:18:16Z,d8e44e4b,inner,2,decks/tier2/T2_UG_Moritte.dck,decks/tier2/T2_BR_Obosh.dck,15,15,,,b,a,16,0
