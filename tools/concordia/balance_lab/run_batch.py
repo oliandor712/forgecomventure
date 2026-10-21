@@ -49,7 +49,7 @@ def green_pool():
     return sorted(p for p in out if os.path.exists(p))
 
 
-SHARDS = ["W", "U", "B", "multi"]  # one shard per hour, round-robin by UTC hour; R and G belong to the AI lab (2026-10-21)
+SHARDS = ["W", "U", "B"]  # one shard per hour, round-robin by UTC hour; R, G belong to the AI lab and multicolour to the main session (2026-10-21)
 
 
 def shard_of(deck):
@@ -163,6 +163,7 @@ def run():
     ap.add_argument("--pool", default="shard", help="shard (this hour's colour shard, default), green (priority) or all")
     ap.add_argument("--shard", default=None, help="W, U, B, R, G or multi; default is the hour's shard in the round-robin")
     ap.add_argument("--sets", type=int, default=2)
+    ap.add_argument("--until-done", action="store_true", help="no time caps (user, 2026-10-21): keep batching until every deck in the shard has 40 games")
     o = ap.parse_args()
     rng = random.Random(o.seed)
     if o.pool == "shard":
@@ -170,7 +171,8 @@ def run():
         pool = set(shard_decks(shard)); print("shard", shard, len(pool), "decks")
     else:
         pool = None if o.pool == "all" else set(green_pool())
-    start = time.time(); stop_new = start + 480; end = start + o.budget
+    start = time.time()
+    stop_new = start + (1e12 if o.until_done else 480); end = start + (1e12 if o.until_done else o.budget)
     commit = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     rows = load(); c = counts(rows)
     new = not os.path.exists(REC)
@@ -179,9 +181,18 @@ def run():
     nbonus_done = {b: 0 for b in BONUSES}
     for r in rows:
         if r["kind"] == "bonus": nbonus_done[r["bonus_a"] or r["bonus_b"] or "?"] = nbonus_done.get(r["bonus_a"] or r["bonus_b"], 0) + 1
-    plan = [("inner",)] * o.pairings + [("bonus",)] * o.sets
+    def underfilled():  # live counts: keep going while a deck in the shard is below 40 games (H28)
+        ds = pool if pool is not None else [d for t in range(1, 6) for d in decks("tier%d" % t)]
+        return any(c.get(rel(d), 0) < 40 for d in ds)
+
+    def plan_steps():
+        if not o.until_done:
+            yield from [("inner",)] * o.pairings + [("bonus",)] * o.sets
+            return
+        while underfilled():
+            yield from [("inner",)] * o.pairings + [("bonus",)] * o.sets
     played = 0
-    for step in plan:
+    for step in plan_steps():
         if time.time() > stop_new: break
         utc = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         games, meta = [], {}
