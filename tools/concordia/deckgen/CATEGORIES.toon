@@ -23,7 +23,7 @@ decks[410|]{file|tier|colours|archetype|sub|reach|creatures|power}:
   tier1/T1_B_Sivriss.dck|1|B|aggro|low-control|2|33|17.7
   tier1/T1_B_Skitter.dck|1|B|tribal||0|34|17.8
   tier1/T1_B_Splinter.dck|1|B|tribal|low-control|2|30|17.1
-  tier1/T1_B_Tormod.dck|1|B|tribal|low-control|2|34|17.5
+  tier1/T1_B_Tormod.dck|1|B|tribal|low-control|2|32|17.5
   tier1/T1_B_Whisper.dck|1|B|aggro|low-control|2|34|17.7
   tier1/T1_B_Yahenni.dck|1|B|tribal|low-control|2|32|16.9
   tier1/T1_G_Anara.dck|1|G|tribal||2|34|17.2
@@ -35,7 +35,7 @@ decks[410|]{file|tier|colours|archetype|sub|reach|creatures|power}:
   tier1/T1_G_Halana.dck|1|G|aggro||2|34|18.0
   tier1/T1_G_Jiang.dck|1|G|aggro||2|34|17.9
   tier1/T1_G_Loot.dck|1|G|tribal|low-control|2|34|17.1
-  tier1/T1_G_Numa.dck|1|G|aggro|low-control|4|34|17.5
+  tier1/T1_G_Numa.dck|1|G|tokens|low-control|4|32|17.0
   tier1/T1_G_Peregrin.dck|1|G|aggro||2|34|17.4
   tier1/T1_G_Renata.dck|1|G|tokens|low-control|4|32|18.0
   tier1/T1_G_Ruxa.dck|1|G|aggro||0|34|17.6
@@ -43,7 +43,7 @@ decks[410|]{file|tier|colours|archetype|sub|reach|creatures|power}:
   tier1/T1_G_Toph.dck|1|G|aggro||2|34|17.9
   tier1/T1_G_Wilson.dck|1|G|tribal||0|33|17.9
   tier1/T1_R_Anax.dck|1|R|aggro|low-control|3|32|17.7
-  tier1/T1_R_Breeches.dck|1|R|tokens|low-control|2|34|17.4
+  tier1/T1_R_Breeches.dck|1|R|tokens|low-control|2|30|17.8
   tier1/T1_R_Cleon.dck|1|R|tokens|low-control|2|30|17.3
   tier1/T1_R_Dori.dck|1|R|tokens|low-control|5|30|17.7
   tier1/T1_R_Grishnkh.dck|1|R|tokens|low-control|2|30|17.3
@@ -64,7 +64,7 @@ decks[410|]{file|tier|colours|archetype|sub|reach|creatures|power}:
   tier1/T1_U_Esior.dck|1|U|tribal||0|34|17.6
   tier1/T1_U_Ioreth.dck|1|U|aggro|low-aggro|1|34|17.7
   tier1/T1_U_Iron.dck|1|U|aggro|low-aggro|0|34|18.0
-  tier1/T1_U_Malcolm.dck|1|U|aggro|low-control|4|34|17.1
+  tier1/T1_U_Malcolm.dck|1|U|aggro|low-control|4|32|17.1
   tier1/T1_U_Master.dck|1|U|aggro|low-aggro|1|34|17.7
   tier1/T1_U_Meneldor.dck|1|U|tribal||0|34|17.8
   tier1/T1_U_Padeem.dck|1|U|tribal||1|34|17.2
@@ -84,7 +84,7 @@ decks[410|]{file|tier|colours|archetype|sub|reach|creatures|power}:
   tier1/T1_W_Kemba.dck|1|W|tokens|low-control|5|32|17.1
   tier1/T1_W_Losheel.dck|1|W|tokens|low-control|3|32|16.5
   tier1/T1_W_Pianna.dck|1|W|aggro||1|34|17.2
-  tier1/T1_W_Prava.dck|1|W|tokens||1|34|17.4
+  tier1/T1_W_Prava.dck|1|W|tokens|low-control|5|32|17.1
   tier1/T1_W_Rescue.dck|1|W|tokens|low-control|5|32|16.2
   tier1/T1_W_Rosie.dck|1|W|tokens|low-control|5|30|17.1
   tier1/T1_W_Sokka.dck|1|W|aggro||1|34|17.4
