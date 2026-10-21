@@ -63,3 +63,42 @@ Not recommended: editing the shipped `Default.ai`, `Reckless.ai` or `Cautious.ai
 - Research by reading code; no game was run.
 - `selectAI` is in forge-gui-mobile (the adventure front end); the desktop game picks profiles through the lobby.
 - `AiProps` defaults and the `.ai` files can disagree (for example CHANCE_TO_ATTACK_INTO_TRADE 40 vs 0); the file wins when present.
+
+## 6. Mid-match profile changes (2026-10-21; answers the user's question and the S1 check)
+
+### 6.1 Where the profile lives at run time
+- The profile is a NAME, held per player: `LobbyPlayerAi.aiProfile` (`forge-ai/.../LobbyPlayerAi.java` 14, 25-31; `setAiProfile` is public).
+- The property values are NOT copied to the player. They sit in one static map, `AiProfileUtil.loadedProfiles` (line 42), filled by `loadAllProfiles` (80-89), which runs once from `FModel` (forge-gui `FModel.java` 276).
+- Every read goes through `AiProfileUtil.getAIProp(lobbyPlayer, prop)` (146-150), which looks up the CURRENT name each time. `AiController.getProperty/getIntProperty/getBoolProperty` (forge-ai `AiController.java` 1290-1297) delegate there. Counted 2026-10-21: 97 `AiProfileUtil` calls and 147 `AiProps` uses in forge-ai, and none is cached in a field (grep of `private ... = getXProperty(` found none).
+- Hand-over: `GamePlayerUtil.createAiPlayer(name, profileOverride)` (forge-gui `GamePlayerUtil.java` 54-96) sets the name; `DuelScene.selectAI` (mobile, 911-924) supplies the override from `"ai"`; `setRotateProfileEachGame` (forge-gui 85) rotates the profile per game for the random modes.
+- Loaded once, reloadable only by calling `loadAllProfiles` again (no call site besides `FModel`).
+- Caution (verified in code): an UNKNOWN name silently falls back to the `AiProps` enum defaults, not to Default.ai (`getAIProp` 146-150: a missing map returns `fp0.getDefault()`). AiProps defaults differ from Default.ai (for example CHANCE_TO_ATTACK_INTO_TRADE 40 vs 0; MULLIGAN 5 vs 4).
+
+### 6.2 Can it change mid-match?
+| When | Yes/no | Smallest existing mechanism | What could be inconsistent | Risk |
+|---|---|---|---|---|
+| (a) Between games of a match | yes in principle | `LobbyPlayerAi.setAiProfile(name)` on the opponent's lobby player before the next game. Between games the Match re-prepares players (`Match.java` 233-234, 327: `isFirstGame` logic); not verified whether the lobby player object is reused | pilot flag is fixed on game 1 (see 6.3); nothing else cached | low |
+| (b) Between turns in a game | yes | the same setter, called from a game event (phase or turn change). Each property is read at the moment of the decision, so the next decision uses the new value | per-decision state only: an attack already declared stays declared; `AiAttackController` is rebuilt for each declare-attackers (`AiController.java` 140, 158, 1354), so the switch lands at the next combat | low to medium |
+| (c) On an event (life threshold, board, boss phase) | yes, but needs a Java hook | a game-event listener that calls `setAiProfile` on the opponent. No existing data-only trigger for it: `enemies.json` `"ai"` is read once at duel start (`DuelScene` 515) | none beyond (b) | medium: Java, shipped game |
+
+### 6.3 Precedents: the AI already adapts without a profile swap
+- `ComputerUtilCombat` 443-449: `AI_IN_DANGER_THRESHOLD` steps up at random toward `AI_IN_DANGER_MAX_THRESHOLD` on each call (a per-decision random band).
+- `AiAttackController`: aggression level 0-6 is recomputed each declare-attackers from `ratioDiff` and `outNumber` (1155-1296); it is board-driven, not profile-driven.
+- `MyRandom.percentTrue(chanceToAttackToTrade)` (1271-1282): a per-attack roll each turn.
+- `PlayerControllerAi.pilotsNonAggroDeck` (75-76): the one value fixed per match, set on game 1 (`Match.java` 327-328).
+
+### 6.4 Adventure angle: data or Java?
+- Data (existing): `enemies.json` `"ai"` (one of four names), read once per duel at start (`DuelScene` 515). It cannot switch mid-duel and nothing in the JSON describes a phase.
+- Java needed for a boss phase, e.g. "below N life, become Reckless": a listener in the duel (or in a card/ability hook) that compares the opponent's life and calls `LobbyPlayerAi.setAiProfile("reckless")` once. Needs the opponent's `LobbyPlayerAi` (`Player.getLobbyPlayer()`, `forge-game` `Player.java` 2394). Not verified which existing hook fires on each life change; it must be checked before any proposal.
+
+### 6.5 Testing
+- Test-only: a BonusSim variant that sets profiles through `createAiPlayer(name, profile)` (existing overload) per side, and calls `setAiProfile` at a turn number (for (b)). Seeded, equal life, equal load, stock vs overlay: the same game is identical until the switch turn. Cost: about one 20-game batch per arm (about 4 minutes on 4 cores).
+- The results-unchanged method from 010-013 applies to a switch-free run; a switched run is a new arm, not a comparison against stock.
+
+### 6.6 Answer to S1 (does adventure run the pilot flag?)
+Yes, as far as the code shows: `DuelScene` uses `HostedMatch` (line 36, 78), which creates a `Match` (`HostedMatch.java` 138), and `Match.java` 327-328 calls `complainCardsCantPlayWell` on the first game for every player whose controller is `PlayerControllerAi`. So `setupAutoProfile` runs once per duel for the AI. Not verified at run time.
+
+### 6.7 Recommendations (mid-match)
+1. Keep profiles per enemy (E1) for now; no mid-match switch is needed to test the idea.
+2. If a boss phase is wanted: test (b) first in a test-only BonusSim variant, then decide on (c).
+3. Never let a profile name go unchecked: validate against `AiProfileUtil.getAvailableProfiles()` before `setAiProfile`, or unknown names silently use enum defaults.
