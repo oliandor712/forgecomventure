@@ -146,7 +146,7 @@ def play(games, budget_end):
     for g in games:
         args += [g["da"], str(g["la"]), g["xa"], g["db"], str(g["lb"]), g["xb"], g["first"], g["label"]]
     p = subprocess.run([ROOT + "/tools/concordia/sim/run.sh", "BonusSim", "forge-gui/", "150"] + args, cwd=ROOT,
-                       capture_output=True, text=True, timeout=None if budget_end - time.time() > 1e6 else max(60, budget_end - time.time() + 200))  # uncapped runs wait without a timeout
+                       capture_output=True, text=True, timeout=min(3600, max(60, budget_end - time.time() + 200)))
     res = {}
     for ln in p.stdout.splitlines():
         if ln.startswith("GAME\t"):
@@ -157,7 +157,7 @@ def play(games, budget_end):
 
 def run():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--budget", type=int, default=1800)  # 30 min cap (brief); no new game starts after minute 8
+    ap.add_argument("--budget", type=int, default=1800)  # no new game starts in the last 2 minutes of the budget (runtime limits lifted 2026-10-21)
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--pairings", type=int, default=4)
     ap.add_argument("--pool", default="shard", help="shard (this hour's colour shard, default), green (priority) or all")

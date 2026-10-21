@@ -31,3 +31,11 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:06:45Z,fe89afda,bonus,1,decks/tier1/T1_G_Dionus.dck,decks/starter/R_Starter_Alt.dck,10,10,arena,,b,b,9,0
 2026-10-21T02:06:45Z,fe89afda,bonus,1,decks/tier1/T1_G_Dionus.dck,decks/starter/R_Starter_Alt.dck,10,10,,,a,b,12,0
 2026-10-21T02:06:45Z,fe89afda,bonus,1,decks/tier1/T1_G_Dionus.dck,decks/starter/R_Starter_Alt.dck,10,10,,,b,b,9,0
+2026-10-21T02:11:35Z,29f74078,inner,1,decks/tier1/T1_R_Lannery.dck,decks/tier1/T1_R_in.dck,10,10,,,a,b,8,0
+2026-10-21T02:11:35Z,29f74078,inner,1,decks/tier1/T1_R_Lannery.dck,decks/tier1/T1_R_in.dck,10,10,,,b,a,12,0
+2026-10-21T02:11:50Z,29f74078,inner,3,decks/tier3/T3_R_Auntie.dck,decks/tier3/T3_R_Iron.dck,25,25,,,a,b,18,0
+2026-10-21T02:11:50Z,29f74078,inner,3,decks/tier3/T3_R_Auntie.dck,decks/tier3/T3_R_Iron.dck,25,25,,,b,b,18,0
+2026-10-21T02:12:10Z,29f74078,inner,5,decks/tier5/T5_R_Zuko.dck,decks/tier5/T5_R_Ral.dck,35,35,,,a,a,15,0
+2026-10-21T02:12:10Z,29f74078,inner,5,decks/tier5/T5_R_Zuko.dck,decks/tier5/T5_R_Ral.dck,35,35,,,b,b,21,0
+2026-10-21T02:12:39Z,29f74078,inner,5,decks/tier5/T5_R_Zuko.dck,decks/tier5/T5_R_Longshot.dck,35,35,,,a,a,23,0
+2026-10-21T02:12:39Z,29f74078,inner,5,decks/tier5/T5_R_Zuko.dck,decks/tier5/T5_R_Longshot.dck,35,35,,,b,a,14,0
