@@ -157,7 +157,7 @@ def play(games, budget_end):
 
 def run():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--budget", type=int, default=1800)  # 30 min cap (brief); no new game starts after minute 8
+    ap.add_argument("--budget", type=int, default=1800)  # no new game starts in the last 2 minutes of the budget (runtime limits lifted 2026-10-21)
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--pairings", type=int, default=4)
     ap.add_argument("--pool", default="shard", help="shard (this hour's colour shard, default), green (priority) or all")
