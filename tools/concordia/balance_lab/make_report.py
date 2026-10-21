@@ -125,30 +125,31 @@ for d, ((n0, w0), (n1, w1)) in sorted(sg.items()):
     L.append("| %s | %d | %s | %d | %s |" % (d, n0, "%.0f%%" % (100 * w0 / n0) if n0 else "-", n1, "%.0f%%" % (100 * w1 / n1) if n1 else "-"))
 if not sg: L.append("| none yet | | | | |")
 L += [""]
-# H29 (user, 2026-10-21): the player's win rate against NPC enemies should be 70% at every stage. The player is the starter (side b);
-# enemy decks are side a. Stage groups follow build_color_zone.py: stage 1 = tiers 1-2, stage 2 = tiers 3-4, stage 3 = tier 5.
-PC_TARGET = .70
+# H29 (user, 2026-10-21, pc_win_rate): the player's win rate against NPC enemies. Tiers 1-2 target 70%, tiers 3-5 target 50%.
+# The player is the starter (side b); enemy decks are side a. Stage groups follow build_color_zone.py: stage 1 = tiers 1-2,
+# stage 2 = tiers 3-4, stage 3 = tier 5. Stages 2 and 3 both sit in the 50% group.
+PC_TARGET = {1: .70, 2: .50, 3: .50}
 STAGE_OF = {"1": 1, "2": 1, "3": 2, "4": 2, "5": 3}
 pc = collections.defaultdict(lambda: [0, 0.0])
 for r in bonus:
     if "/starter/" in r["deck_b"] and st_new(r) and r["tier"] in STAGE_OF:
         s = STAGE_OF[r["tier"]]
         pc[s][0] += 1; pc[s][1] += score(r, "b")
-L += ["## PC win rate against NPC enemies per stage (H29 target 70%)", "",
-      "Starter (player) win rate against the enemy decks of each stage, bonus sets only, tuned starters only, Normal and Alt together. Stage groups: 1 = tiers 1-2, 2 = tiers 3-4, 3 = tier 5. H28: a 70-30 call needs about 40 games per deck, so these rows are a first look until each stage has that many games.", "",
-      "| stage | games | PC win rate | 90% interval | gap to 70% |", "|---|---|---|---|---|"]
+L += ["## PC win rate against NPC enemies per stage (H29: tiers 1-2 target 70%, tiers 3-5 target 50%)", "",
+      "Starter (player) win rate against the enemy decks of each stage, bonus sets only, tuned starters only, Normal and Alt together. Stage groups: 1 = tiers 1-2, 2 = tiers 3-4, 3 = tier 5. Targets: stage 1 70%, stages 2-3 50%. H28: a 70-30 call needs about 40 games per deck, so these rows are a first look until each stage has that many games.", "",
+      "| stage | target | games | PC win rate | 90% interval | gap to target |", "|---|---|---|---|---|"]
 for s in (1, 2, 3):
     n, w = pc[s]
     if n:
         lo, hi = wilson(w, n)
-        L.append("| %d | %d | %.0f%% | %.0f-%.0f%% | %+.0f pts |" % (s, n, 100 * w / n, 100 * lo, 100 * hi, 100 * (w / n - PC_TARGET)))
+        L.append("| %d | %.0f%% | %d | %.0f%% | %.0f-%.0f%% | %+.0f pts |" % (s, 100 * PC_TARGET[s], n, 100 * w / n, 100 * lo, 100 * hi, 100 * (w / n - PC_TARGET[s])))
     else:
-        L.append("| %d | 0 | - | - | - |" % s)
+        L.append("| %d | %.0f%% | 0 | - | - | - |" % (s, 100 * PC_TARGET[s]))
 L += [""]
 L += ["## Human rules the lab follows (tools/agents/human_logic.toon)", "",
       "- H23 equal life in every game; H24 and H30 small card bonuses only, no life bonuses; H27 starter games split 50/50 Normal and Alt; H28 sample sizes (about 40 games per deck for a 70-30 call, 25 matched sets for a 25-point bonus effect, about 600 games for a seat edge).",
       "- H25 (30-40 card test decks) does not apply here: these sims play whole AI decks against each other, not single tested cards, so the decks are not shrunk.",
-      "- H29 (PC win rate 70% at every stage): shown above, per stage, against 70%.", ""]
+      "- H29 (PC win rate: tiers 1-2 at 70%, tiers 3-5 at 50%): shown above, per stage, against each stage's target.", ""]
 L += ["## Coverage", "", "Decks with fewer than 4 games: %d of %d seen. Games per deck: min %d, median %d, max %d." % (
     sum(1 for v in allgames.values() if v < 4), len(allgames), min(allgames.values()), sorted(allgames.values())[len(allgames) // 2], max(allgames.values())),
     "Not yet in the record: " + ", ".join(sorted(set(["land", "onedrop", "land+onedrop", "arena", "staff", "legion", "market", "bedlam", "hornet"]) - set(by))) + ".", ""]
