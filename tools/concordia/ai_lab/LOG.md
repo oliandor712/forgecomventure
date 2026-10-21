@@ -41,3 +41,4 @@ STANDING INSTRUCTION (user, 2026-10-20): each hourly wake is time-boxed to about
 2026-10-20T23:06Z coordinator removed (main session); only main session pauses/resumes me
 2026-10-20T23:43Z noted deck regeneration; earlier results are tagged old-deck; new tests use the new decks
 2026-10-21T00:12Z found GameState-based way to build the hand-made 008 case (plan in EXPERIMENTS.md); next wake: ScenarioSim skeleton
+2026-10-21T01:35Z read human_logic.toon: H25/H26 applied; H28 (~40 games per arm for win-rate claims) means my 10-game win rates are noise (logged). ScenarioSim skeleton is next wake.
