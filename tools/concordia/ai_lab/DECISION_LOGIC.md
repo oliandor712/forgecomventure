@@ -247,3 +247,20 @@ Blocks by side: in STARTER-MID, the midrange blocker blocked 19 times and the st
 Casts: median cast turn 13 in tier 5 vs tier 5, 10 in starter vs midrange; both sides cast about equally in each pairing.
 
 Caveats: 20 games in total, so these are direction only. The AGGRO-RAMP label is wrong (both sides are tier 5). Per-game TSVs show the decision inputs (attackers, blockers, life), but not AI scores, so the reasons behind each block are still inferred from the code.
+
+## 100-game analysis (digest threshold passed; 376 games, 28 folders, 2026-10-21)
+Source: tools/concordia/ai_lab/digests/ (games.tsv and decisions.tsv.gz from phase_digest.py). Games come from all decks and tiers; these are not the aggro/ramp pairings alone.
+
+Blocking (per blocker decision, by the blocker's own life):
+- Life 15 or more: block rate 5% (1,546 decisions).
+- Life 8 to 14: 15% (1,576).
+- Life under 8: 35% (1,676).
+Reading: the same direction as section 1 and the earlier logs. Chump blocks rise as life falls. The gradient is steeper here than in the 20-game set (7% / 15% / 35%), so the broader sample supports the rule more strongly.
+
+Game shape:
+- Median 15 turns, mean 16.2. Per game: 8.5 casts for side A and 8.3 for side B; attacks 3.2 and 3.1; blocks 1.3 and 1.1.
+- Casts: median turn 10 across 6,312 casts. Spell timing is still concentrated after turn 8, as in the earlier logs.
+
+AI_DECISION rows (patch 010): none in these digests. The folders were digested before the patch was on the sim classpath. The first AI_DECISION rows will come from the next batches.
+
+Caveats: the blocking rates are per decision, so one attacker counts once per blocker decision; the life bucket uses the blocker's life at the time of the block. This is a survey across all matchups, not a per-deck result.
