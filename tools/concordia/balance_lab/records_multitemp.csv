@@ -119,3 +119,15 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:45:59Z,1a6eac0bb60,bonus,2,decks/tier2/T2_W_Gerrard.dck,decks/starter/B_Starter_Alt.dck,15,15,staff,,b,a,22,0
 2026-10-21T02:45:59Z,1a6eac0bb60,bonus,2,decks/tier2/T2_W_Gerrard.dck,decks/starter/B_Starter_Alt.dck,15,15,,,a,b,22,0
 2026-10-21T02:45:59Z,1a6eac0bb60,bonus,2,decks/tier2/T2_W_Gerrard.dck,decks/starter/B_Starter_Alt.dck,15,15,,,b,b,17,0
+2026-10-21T02:46:54Z,c329d44eb7a,inner,1,decks/tier1/T1_R_Kediss.dck,decks/tier1/T1_R_Tomik.dck,10,10,,,a,b,16,0
+2026-10-21T02:46:54Z,c329d44eb7a,inner,1,decks/tier1/T1_R_Kediss.dck,decks/tier1/T1_R_Tomik.dck,10,10,,,b,a,8,0
+2026-10-21T02:47:10Z,c329d44eb7a,inner,4,decks/tier4/T4_R_Etali.dck,decks/tier4/T4_R_Koth.dck,30,30,,,a,b,16,0
+2026-10-21T02:47:10Z,c329d44eb7a,inner,4,decks/tier4/T4_R_Etali.dck,decks/tier4/T4_R_Koth.dck,30,30,,,b,a,16,0
+2026-10-21T02:47:29Z,c329d44eb7a,inner,2,decks/tier2/T2_R_Eron.dck,decks/tier2/T2_R_Zirilan.dck,15,15,,,a,a,13,0
+2026-10-21T02:47:29Z,c329d44eb7a,inner,2,decks/tier2/T2_R_Eron.dck,decks/tier2/T2_R_Zirilan.dck,15,15,,,b,b,11,0
+2026-10-21T02:47:46Z,c329d44eb7a,inner,1,decks/tier1/T1_R_Cleon.dck,decks/tier1/T1_R_Grishnkh.dck,10,10,,,a,a,7,0
+2026-10-21T02:47:46Z,c329d44eb7a,inner,1,decks/tier1/T1_R_Cleon.dck,decks/tier1/T1_R_Grishnkh.dck,10,10,,,b,b,9,0
+2026-10-21T02:47:58Z,c329d44eb7a,bonus,2,decks/tier2/T2_R_Alexios.dck,decks/starter/W_Starter_Alt.dck,15,15,onedrop,,a,a,11,0
+2026-10-21T02:47:58Z,c329d44eb7a,bonus,2,decks/tier2/T2_R_Alexios.dck,decks/starter/W_Starter_Alt.dck,15,15,onedrop,,b,b,15,0
+2026-10-21T02:47:58Z,c329d44eb7a,bonus,2,decks/tier2/T2_R_Alexios.dck,decks/starter/W_Starter_Alt.dck,15,15,,,a,a,7,0
+2026-10-21T02:47:58Z,c329d44eb7a,bonus,2,decks/tier2/T2_R_Alexios.dck,decks/starter/W_Starter_Alt.dck,15,15,,,b,b,15,0
