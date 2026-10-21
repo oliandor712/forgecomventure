@@ -64,4 +64,37 @@ What this means for deck types (provisional):
 
 Flagged cards (AI:RemoveDeck) relevant here: no flagged card changes the attack level directly. Card-specific attack effects (`hasAttackEffect`) do count as "attack effect" for levels 2-3, so flagged cards with attack triggers are judged more kindly once they can be cast.
 
-Still open: `chooseDefender` (770) and `reinforceWithBanding` (501) are not yet traced.
+
+## 3. Removal targeting (DestroyAi.java, ComputerUtilCard.java)
+
+Target choice, DestroyAi (rules run in order):
+- Candidate list: `CardLists.getTargetableCards` on the battlefield (40), then indestructible and regeneration or shield checks are filtered out (155-190). Opponent's permanents are preferred (151, 343).
+- If every candidate is a creature: `prioritizeCreaturesWorthRemovingNow` (157), then the best by `getBestRemovalTargetAI` (219).
+- If every candidate is a land: `getBestLandToRemoveAI` (227), with the Strip Mine style logic (`doLandForLandRemovalLogic`, 427).
+- Otherwise: `getBestRemovalTargetAI` (237).
+- For `OppDestroyYours` logic: if the AI's own best creature is within 40 points of the target, the AI does not cast the removal (221-223).
+
+Value per target, `evaluateRemovalTargetPriority` (ComputerUtilCard.java:585-605):
+- Creature: `evaluateCreature` (the same score used for blocks and attacks).
+- Land: `evaluateLandRemovalPriority`.
+- Other permanents: 50 + 30 x mana value. Planeswalkers add 10 per loyalty counter.
+- Tokens: +30 (gone for good).
+- Opponent-controlled: plus `evaluateBoardPosition / 4`.
+
+Hold or cast, `useRemovalNow` (ComputerUtilCard.java:1226-1360), only for single-target removal spells:
+- Always true for abilities that are not spells (1234).
+- Cast in main phase 1 if the spell helps a spell cast that turn (1239).
+- Interrupt 1: removing a possible blocker lets the AI attack with more creatures (1247-1262).
+- Interrupt 2: in the declare-blockers step, removing a blocker saves an attacker that would die (1266-1285).
+- Interrupt 3: enchanted target with no AI enchantment on it counts as two-for-one (1287-1297).
+- Interrupt 4: the opponent is casting a pump on this same target (1300-1307).
+- Burn: `valueBurn` (toughness / damage, squared) at 0.8 or more casts now before combat end (1316-1323).
+- Tempo: `valueTempo` = max(0.1 x target CMC / removal CMC, burn). Doubled for equipped targets, sorcery-speed spells, untargetable-proof targets, persist/undying/modular. Halved for bounce of non-tokens. Land targets get extra value. At 0.8 or more casts now before combat end (1331-1352).
+- Threat: a creature's `evaluateCreature / 100` plus damage it would do if unblocked, divided by the AI's life. Reduced to 10% during the AI's combat, which means the threat check mostly matters on the opponent's turn.
+
+What this means for deck types (provisional):
+- Control: the 0.8 tempo and threat thresholds mean removal is held for the best target. Control decks with many removal spells will be slower to use them on small creatures.
+- Aggro: the AI uses removal early on blockers (interrupt 1), which helps aggro decks that want to swing.
+- Tokens: token targets get +30 value, so the AI aims removal at the tokens' best member when it has to choose.
+
+Flagged cards (AI:RemoveDeck): a flagged removal card never reaches this path because the play ban applies first. Unflagging a removal card puts it through the rules above, so its value depends on the target scores here, not on the card script.
