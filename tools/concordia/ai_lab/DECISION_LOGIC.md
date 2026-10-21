@@ -165,3 +165,28 @@ Source: phase TSVs in tools/concordia/ai_lab/results/*/*.tsv. Each declare-block
 - Defender life 8 to 14: blocked in 21 of 33 steps (64%).
 - Defender life under 8: blocked in 16 of 21 steps (76%).
 Reading: blocks rise as life falls, which fits the rule that chump blocks wait for life in danger (section 1). Blocks at high life are still common, so good blocks and trades are doing much of the work, not only chumps. Caveats: board sizes differ between steps and the counts are small; this is direction, not a fitted rate.
+
+## Full log pass (results/, 230 phase logs, 2026-10-21)
+Scope: every TSV under tools/concordia/ai_lab/results/, including shadow runs. Mixed experiments and deck versions, so the numbers describe the logs as a whole, not one arm.
+
+Casting:
+- 547 spell casts with a turn number. Median cast turn 11. Early (turns 1-4) 20, mid (5-8) 139, late (9+) 388. The logs are slow-starting: most casts come after turn 8.
+- Flagged cards (AI:RemoveDeck) cast by the lab deck (side A), median turn of cast (range):
+  - Aquamoeba: 56 casts, median 6 (3-21)
+  - Turtleshell Changeling: 55, median 12 (7-33)
+  - Myr Quadropod: 50, median 10 (7-40)
+  - Vine Snare: 25, median 14 (8-27)
+  - Thwart the Enemy: 18, median 16 (12-26)
+  - Endure: 2, median 25 (21-29)
+  These are the flagged cards that reach the stack at all, so the flag removal experiments show them cast after the flag is gone.
+
+Combat:
+- Attack declarations by side A: 150 steps, mean 1.7 attackers. By side B: 182 steps, mean 4.6 attackers. The gap is mostly the deck build (B's boards are wider), not an AI choice; a board-matched test is needed before reading attack restraint from it.
+- Combat damage events: 71 in turns 5-8 and 629 in turns 9 and later. Games are decided late; early combat is rare.
+
+Reading against the logic notes:
+- Attack levels (section 2) and blocks (section 1, log check) are consistent with the logs: blocks rise as life falls, and attackers are few while the board is small.
+- Spell timing (section 4) is consistent with the late casting. Expensive spells are cast late in these decks, so the high-CMC-first rule rarely fires early.
+- Nothing in the full pass contradicts the mana rules (section 5), but it does not test them either; no log line shows which source paid for a spell.
+
+Caveats: counts come from different experiments, decks and life totals; the phase logs do not record AI scores, so "why" is inferred from the code, not read from the logs. Treat this as a survey to target the next experiments, not as evidence for a rule change.
