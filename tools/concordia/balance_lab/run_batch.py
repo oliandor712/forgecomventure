@@ -146,7 +146,7 @@ def play(games, budget_end):
     for g in games:
         args += [g["da"], str(g["la"]), g["xa"], g["db"], str(g["lb"]), g["xb"], g["first"], g["label"]]
     p = subprocess.run([ROOT + "/tools/concordia/sim/run.sh", "BonusSim", "forge-gui/", "150"] + args, cwd=ROOT,
-                       capture_output=True, text=True, timeout=max(60, budget_end - time.time() + 200))
+                       capture_output=True, text=True, timeout=None if budget_end - time.time() > 1e6 else max(60, budget_end - time.time() + 200))  # uncapped runs wait without a timeout
     res = {}
     for ln in p.stdout.splitlines():
         if ln.startswith("GAME\t"):
@@ -172,7 +172,7 @@ def run():
     else:
         pool = None if o.pool == "all" else set(green_pool())
     start = time.time()
-    stop_new = start + (1e12 if o.until_done else 480); end = start + (1e12 if o.until_done else o.budget)
+    stop_new = start + (1e7 if o.until_done else 480); end = start + (1e7 if o.until_done else o.budget)
     commit = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     rows = load(); c = counts(rows)
     new = not os.path.exists(REC)
