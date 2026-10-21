@@ -43,3 +43,10 @@ STANDING INSTRUCTION (user, 2026-10-20): each hourly wake is time-boxed to about
 2026-10-21T00:12Z found GameState-based way to build the hand-made 008 case (plan in EXPERIMENTS.md); next wake: ScenarioSim skeleton
 2026-10-21T01:35Z read human_logic.toon: H25/H26 applied; H28 (~40 games per arm for win-rate claims) means my 10-game win rates are noise (logged). ScenarioSim skeleton is next wake.
 2026-10-21T01:36Z RULE (main session): no send_message after each run; results go in the 4-hour report; message only for an unfixable blocker
+
+## State summary (for context compaction, 2026-10-21 01:39Z)
+- Read first: tools/agents/CONTEXT.md, tools/agents/human_logic.toon, .claude/agents/forge-ai-lab.md, AI_FLAGGED_CARDS.md (Audit), tools/agents/analysis/forge-ai-lab.md.
+- Rules: no edits to forge-core/forge-game/forge-ai on campaign-design; code changes only as patch files (tested in scratch worktrees); card-script fixes are patches too; AI_CHANGES_APPROVAL.md lists what the user must approve; 40-card test decks, equal life, 10 games per arm (H28 says ~40 for win-rate claims); 5-minute time box; no per-run messages; results go in the 4-hour report; ANALYSIS REQUEST and CHECKLIST lines in the report.
+- Patches: 001 SwitchPT flag removal (needs 005); 002 Fog flags (ready); 003 Endure flag (ready); 004 Harsh Justice reflect logic (planned); 005 SwitchPT two-version scoring v3 (close); 006 FogAi counts Effect fogs (parked); 007 curse on blocked attackers (planned); 008 gang-block co-blockers (no demonstrated effect, needs hand-built case); 009 pump overshoot (candidate).
+- Open work: ScenarioSim (plan in EXPERIMENTS.md, "Plan for the hand-built 008 case") to load a hand-written combat via forge-game GameState; then base vs 008 in that scenario.
+- Scratch build: $SCRATCH/ai-lab-wt008 (only 008 applied, instrumented with SHADOW lines), cache $SCRATCH/simcache-008; $SCRATCH/ai-lab-wt (005 v3 + 006 + 008) with cache simcache-patched. Old-deck results are tagged in EXPERIMENTS.md.
