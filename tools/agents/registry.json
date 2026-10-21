@@ -78,6 +78,10 @@
     [
      "2026-10-21",
      "Don't message the main session after each run; results go in the 4-hour report, messages only for blockers."
+    ],
+    [
+     "2026-10-21",
+     "R/G sims moved to the temp agent: logic research only"
     ]
    ],
    "analyses": [
@@ -212,6 +216,10 @@
     [
      "2026-10-21",
      "Create a temp agent to split the multicolor shard and retry; slice 2 of 3, ends when its decks reach 40"
+    ],
+    [
+     "2026-10-21",
+     "Take the R/G sims from the AI lab; main session takes multi slice 2/3"
     ]
    ],
    "analyses": []

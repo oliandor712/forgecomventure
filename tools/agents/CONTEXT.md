@@ -105,11 +105,12 @@ build on its findings, and cite entries by date and title.
 |---|---|---|---|
 | forge-ai-lab | `.claude/agents/forge-ai-lab.md` | session_01SdzhYuPRVSAtP7QLaagBxk | step every 2 h at :06 (was hourly; changed at the user's request), about 5 min; report every 4 h |
 | deck-balance-lab | `.claude/agents/deck-balance-lab.md` | session_011UrsiVw1s1nsvYUSkv2iLy | `--until-done` run, no time cap (triggers disabled during the deep research project) |
-| multi-balance-temp (temporary) | `.claude/agents/multi-balance-temp.md` | session_01Xf8fcEAkTmjYqjkqjprkzB | no schedule; one --until-done process on multicolor slice 2/3; ends when its decks reach 40 |
+| multi-balance-temp (temporary) | `.claude/agents/multi-balance-temp.md` | session_01Xf8fcEAkTmjYqjkqjprkzB | no schedule; one --until-done process on the R then G shards; ends when they reach 25 |
 
 The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
+- 2026-10-21: R/G sims moved to multi-balance-temp; AI lab logic only; main session runs multi 0/2 and 1/2
 - 2026-10-21: deck-balance-lab brief: 30-minute cap removed (no time cap on a run)
 - 2026-10-21: multi-balance-temp created: temporary worker, multicolor slice 2/3
 - 2026-10-21: 
@@ -121,4 +122,3 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-21: The agent_operations_master doc was deleted at the user's request; the check-in no longer refreshes a doc or reads an inbox. Requests reach the main session in chat only.
 - 2026-10-20: 
 - 2026-10-20: 200 variant decks added (one per AI deck: alternate commander, 5-8 cards changed), so each tier folder now holds 80 decks; pools and random picks include them. Starters: power 27, blue rerolled to Gadwick wizards, and each colour has a _Normal and _Alt starter (split starter games 50/50). deck-balance-lab: weight coverage toward the new variants until they reach the median game count.
-- 2026-10-20: 
