@@ -12,6 +12,7 @@ DECK = {
     "staples": (2, 15),
     "commander_rarity": {"C", "U"},
     "commander_mv": (None, None),  # was (2, 4): tier 1 commanders have no mana value requirement (user, 2026-10-21)
+    "commander_colours": 1,  # exactly one colour of identity (user, 2026-10-21)
     "lands": (41, 42),  # was (40, 46): lands are decided last from the curve
     "ramp": (0, 3), "fast": (0, 0), "draw": (0, 3), "removal": (0, 3), "wipe": (0, 0), "tutor": (0, 0),
     "avg_mv": (2.5, 3.4),
@@ -41,7 +42,12 @@ LANDS = (41, 42)
 POWER = {"target": 17.0, "floor": 16.0, "ceiling": 18.0}  # target was 15.0, floor was 15.0
 
 # Archetype classification thresholds.
-TOKENS_MIN = 13  # token makers needed for the tokens archetype (was 12)
+TOKENS_MIN = 12  # token makers needed for the tokens archetype (user: 12+)
+TOKEN_QUOTA = 13  # token cards a declared tokens deck aims for, so it lands above the classification line
+TOKEN_CAP = (9, 6)  # aggro/tribal decks: most token cards (first try, after the second retry)
+TRIBE_QUOTA = (15, 18)  # tribal decks: creatures of the tribe (first try, on a retry)
+OTHER_TYPE_CAP = 9  # tribal decks: most creatures of any one other type
+AGGRO_TYPE_CAP = 11  # aggro decks: most creatures of a type the commander names
 SCALE_NEED = 5  # enchantments (or other X) a "number of X you control" lock card needs before it counts
 
 # Build spec (deckgen/build.py SPEC[1]): quotas, caps, curve and rarity counts for a 100-card deck.

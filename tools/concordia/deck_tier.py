@@ -407,6 +407,7 @@ def rate(path, data, config):
         if c:
             commanders.append({"name": c["name"], "mv": c["cmc"], "rarity": rarity_of(data, c["name"], ed),
                                "legendary_creature": "Legendary" in c["types"] and "Creature" in c["types"],
+                               "colours": len(color_identity(c)),
                                "power": card_power(data, c, classify(c), rarity_of(data, c["name"], ed))})
     total = sum(n for n, _, _ in entries["main"]) + sum(n for n, _, _ in entries["commander"])
     deck_names = set(names)
@@ -463,7 +464,11 @@ def check_tier(r, tier, life=None):
     for c in r["commanders"]:
         out.append(("PASS" if c["rarity"] in spec["commander_rarity"] else "FAIL",
                     "commander %s rarity %s (allowed %s)" % (c["name"], c["rarity"], "/".join(sorted(spec["commander_rarity"])))))
-        rng("commander mana value", c["mv"], spec["commander_mv"])
+        if spec["commander_mv"] != (None, None):  # tier 1 has no mana value requirement
+            rng("commander mana value", c["mv"], spec["commander_mv"])
+        if spec.get("commander_colours"):
+            out.append(("PASS" if c["colours"] == spec["commander_colours"] else "WARN",
+                        "commander %s colour identity %d (allowed %d)" % (c["name"], c["colours"], spec["commander_colours"])))
     for key in ("lands", "creatures", "ramp", "fast", "draw", "removal", "wipe", "tutor", "avg_mv", "power"):
         rng(key, r[key], spec[key], hard=key in ("fast",))
     if "max_uncommon" in spec:

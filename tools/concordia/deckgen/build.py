@@ -265,7 +265,7 @@ def build(d):
         cands.append(p)
     # archetype leans (declared aggro/tribal: at most TOK_CAP token cards; declared tokens: at least 13; tribal: 15+ of the tribe; low-* subs: their lean)
     atry = d.get('_arch_try', 0)
-    TOK_CAP = 9 if atry < 2 else 6
+    TOK_CAP = t1.TOKEN_CAP[0] if atry < 2 else t1.TOKEN_CAP[1]
     ntok = [0]; nnc = collections.Counter(); ntype_c = collections.Counter()
     tokcard = lambda p: 'Land' not in p['types'].split() and ar.is_token_card(card_text(p))
     rclasses = set()
@@ -295,9 +295,9 @@ def build(d):
             if 'Enchantment' in p['types'].split() and arch in ('tribal', 'tokens') and sub != 'low-' + arch and nnc['E'] >= ar.LOW_ENCHANT_MIN - 1: return None
             if 'Artifact' in p['types'].split() and arch == 'aggro' and sub != 'low-aggro' and nnc['A'] >= ar.LOW_ARTIFACT_MIN - 1: return None
         if arch == 'tribal' and tribe and tier == 1 and 'Creature' in p['types'].split() and tribe not in p['types'].split():   # classify: the top creature type must be the tribe, not Human or another type
-            if any(ntype_c[x] >= 9 for x in p['types'].split() if x not in ar.SKIP_TYPES): return None
+            if any(ntype_c[x] >= t1.OTHER_TYPE_CAP for x in p['types'].split() if x not in ar.SKIP_TYPES): return None
         if arch == 'aggro' and tier == 1 and 'Creature' in p['types'].split():   # an aggro deck must not turn tribal: a creature type the commander names stays under 11
-            if any(ntype_c[x] >= 11 and x != 'Human' and x.lower() in cmd_names for x in p['types'].split() if x not in ar.SKIP_TYPES): return None
+            if any(ntype_c[x] >= t1.AGGRO_TYPE_CAP and x != 'Human' and x.lower() in cmd_names for x in p['types'].split() if x not in ar.SKIP_TYPES): return None
         if arch in ('aggro', 'tribal') and tier == 1 and ntok[0] >= TOK_CAP and tokcard(p): return None   # token cards would reclassify the deck as tokens
         if arch and tier == 1 and sub != 'low-control':   # not low-control: no lock card, and creature removal only with no other removal class (classify: reach 2+ with a creature answer = low-control)
             rc = rclass(p)
@@ -352,10 +352,10 @@ def build(d):
                 b = best(filt)
                 if not b: break
                 add(b[1], b[2])
-        if arch == 'tokens': quota(13, tokcard, tokcard)
+        if arch == 'tokens': quota(t1.TOKEN_QUOTA, tokcard, tokcard)
         if arch == 'tribal' and tribe:
             istribe = lambda p: 'Creature' in p['types'].split() and tribe in p['types'].split()
-            quota(15 + 3 * (atry >= 2), istribe, istribe)
+            quota(t1.TRIBE_QUOTA[1] if atry >= 2 else t1.TRIBE_QUOTA[0], istribe, istribe)
         if sub == 'low-control':
             quota(1 + (atry >= 1), lambda p: ar.lock_card(card_text(p), p['types'].split()), lambda p: ar.lock_card(card_text(p), p['types'].split()))
         if sub == 'low-aggro':

@@ -15,14 +15,16 @@ Tier 1 requirements live in `tools/concordia/tier1_rules.py` (the one source; de
 | Setting | Tier 1 value |
 |---|---|
 | Deck | 100 cards: commander + 99 |
-| Commander | one legendary creature, no mana value limit, common or uncommon, one commander (a Partner-ability commander is fine) |
+| Commander | one legendary creature, exactly one colour of identity, no mana value limit, common or uncommon, one commander (a Partner-ability commander is fine). Not shared with another tier: not checked by deck_tier (a categorize.py / audit concern) |
 | Lands | 41-42, decided last from the curve |
 | Power (average card power) | 16-18 |
 | Creatures | 30-36; low-* subarchetypes 26 up to 36 minus their shift |
 | Archetype build targets (creatures) | aggro 33-36, tribal 31-34, tokens 29-32, kept inside the band |
 | Instants + sorceries (minimum) | tokens 12, aggro 10, tribal 8 |
 | Enchantments (minimum) | tokens 3, tribal 2, aggro 1 |
-| Tokens archetype | 13 or more token makers |
+| Tokens archetype | 12 or more token makers (builds aim at 13 token cards) |
+| Token cards in aggro or tribal decks | at most 9 (6 after a retry) |
+| Tribal creatures | 15 of the tribe (18 after a retry) |
 | Ramp / draw / removal | 0-3 each |
 | Fast mana, tutors, wipes, Game Changers, extra turns, combos | none |
 | Rarity | commons and uncommons only (up to 25 uncommons) |
