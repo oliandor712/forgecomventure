@@ -125,6 +125,10 @@ for d, ((n0, w0), (n1, w1)) in sorted(sg.items()):
     L.append("| %s | %d | %s | %d | %s |" % (d, n0, "%.0f%%" % (100 * w0 / n0) if n0 else "-", n1, "%.0f%%" % (100 * w1 / n1) if n1 else "-"))
 if not sg: L.append("| none yet | | | | |")
 L += [""]
+L += ["## Human rules the lab follows (tools/agents/human_logic.toon)", "",
+      "- H23 equal life in every game; H24 and H30 small card bonuses only, no life bonuses; H27 starter games split 50/50 Normal and Alt; H28 sample sizes (about 40 games per deck for a 70-30 call, 25 matched sets for a 25-point bonus effect, about 600 games for a seat edge).",
+      "- H25 (30-40 card test decks) does not apply here: these sims play whole AI decks against each other, not single tested cards, so the decks are not shrunk.",
+      "- H29 (PC vs NPC targets) is open: the report does not judge enemy strength against stage targets yet.", ""]
 L += ["## Coverage", "", "Decks with fewer than 4 games: %d of %d seen. Games per deck: min %d, median %d, max %d." % (
     sum(1 for v in allgames.values() if v < 4), len(allgames), min(allgames.values()), sorted(allgames.values())[len(allgames) // 2], max(allgames.values())),
     "Not yet in the record: " + ", ".join(sorted(set(["land", "onedrop", "land+onedrop", "arena", "staff", "legion", "market", "bedlam", "hornet"]) - set(by))) + ".", ""]

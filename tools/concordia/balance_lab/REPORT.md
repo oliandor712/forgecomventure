@@ -1,6 +1,6 @@
 # Deck balance report
 
-Generated 2026-10-21 01:22Z from 286 games (138 inner-tier, 148 bonus). Intervals are 90% Wilson; draws count half.
+Generated 2026-10-21 01:32Z from 286 games (138 inner-tier, 148 bonus). Intervals are 90% Wilson; draws count half.
 
 Inner-tier tables below use only the **new decks** (rows at or after the rebuild commit: 440176a2 for tiers 3-5, 58aa312f for tier 2, f1139925 for tier 1): 58 inner games; 80 inner games on the old decks are left out. Bonus impact pools old and new rows, since a matched set compares the same pairing.
 
@@ -112,6 +112,12 @@ Enemy win rate against each starter file, split by with and without bonus. Games
 | starter | games without bonus | enemy win | games with bonus | enemy win |
 |---|---|---|---|---|
 | none yet | | | | |
+
+## Human rules the lab follows (tools/agents/human_logic.toon)
+
+- H23 equal life in every game; H24 and H30 small card bonuses only, no life bonuses; H27 starter games split 50/50 Normal and Alt; H28 sample sizes (about 40 games per deck for a 70-30 call, 25 matched sets for a 25-point bonus effect, about 600 games for a seat edge).
+- H25 (30-40 card test decks) does not apply here: these sims play whole AI decks against each other, not single tested cards, so the decks are not shrunk.
+- H29 (PC vs NPC targets) is open: the report does not judge enemy strength against stage targets yet.
 
 ## Coverage
 
