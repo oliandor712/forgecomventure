@@ -7,7 +7,7 @@ Research only (approved by the main session). No edits to forge-ai, the overlay 
 
 **What "near-identical" must mean.** The same API (`SP$`/`AB$`/`DB$` name), the same AI-relevant parameters (NumDmg, ValidTgts, Cost shape) and the same AILogic value. A lookalike with a different cost or duration can change the AI's decision.
 
-**Method to find candidates (not run).** Group card scripts by (API, AILogic value, cost shape); a card is a candidate when it shares the group but lacks the value. This needs the value counts, which are in the main session's `AILOGIC_SAMPLE.md` — **not yet in the repo** (checked 23:02Z; reported as blocked).
+**Method to find candidates (not run).** Group card scripts by (API, AILogic value, cost shape); a card is a candidate when it shares the group but lacks the value. The main session's `AILOGIC_SAMPLE.md` (pushed after my first draft) gives 350 distinct values on 1,814 cards: 191 values occur on one card only, and 37 occur on 10 or more. The 37 common values are where propagation pays off; the 191 single-card values need no propagation. Top values by card count: Always 187, PowerDmg 96, MostProminentInComputerDeck 83, Pump 71, AtOppEOT 66, NeedsPrevention 65, Fight 63, Curse 62, MakeUnblockable 55, ReplaySpell 43, Fog 35.
 
 - Ease: M (card scripts; needs approval per card group).
 - Viability: good where the API and parameters match; poor for cards whose API is different.
@@ -51,6 +51,6 @@ Research only (approved by the main session). No edits to forge-ai, the overlay 
 | 4 | Item 1: propagate AILogic to lookalikes | M | good per API; needs the sample | none | wrong logic on a lookalike |
 
 ## 6. What is not done
-- AILOGIC_SAMPLE.md (value counts for item 1) is not in the repo; blocked until the main session pushes it.
+- Item 1's candidate list is not built; the sample now exists, so the next step is the (API, value, cost shape) grouping.
 - Concordia `KeyCards` values are not written (data change, needs approval).
 - Not verified: other code that keys decks by name; start-up behaviour on a bad `.ai` file; exact-function average CMC.
