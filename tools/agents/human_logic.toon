@@ -2,7 +2,7 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Read before building, judging or testing decks, or proposing AI changes. When a rule conflicts with a metric, the rule wins.
 # status: applied = in code or decks now, partly = some of it done, open = not done or not decided. since = date the user said it.
 # Add a row only for user input on deck building, deck balance or AI improvement (town, map, quest and UI rules live in the design docs). Pruned 2026-10-21 at the user's request.
-rules[35|]{id|area|rule|since|status|where}:
+rules[43|]{id|area|rule|since|status|where}:
   H01|curve|A zone's stage locks at the player's first fight there from Seals held (0-1 stage 1, 2-3 stage 2, 4-5 stage 3)|2026-10-20|applied|TierLock.java and config tierLock
   H02|curve|Wild creatures, random-dungeon enemies, pass keepers, grove guardians and Wardens are mono-color. Trainers are 1-2 colors at stage 1 then 2-3|2026-10-20|applied|build_color_zone.py
   H03|curve|Random dungeons draw from the wild encounter pool, never from keepers or guardians|2026-10-20|applied|build_color_zone.py
@@ -38,3 +38,11 @@ rules[35|]{id|area|rule|since|status|where}:
   H34|commanders|Exile the top card and you may play it is low-draw interaction. Exiling an opponent's library is low removal. Opponent interaction on a commander (attack tax, spell tax, deathtouch) is control synergy; paying mana to attack is curve disruption|2026-10-21|open|ability_tags.py and H17 check
   H35|commanders|Weigh poison counters as 4 life damage each. Sneak is two differently costed cards and a combat trick. Free recursion is not a -1 on trades and wants minimum-risk combat|2026-10-21|open|ability_tags.py and deck scoring
   H36|commanders|H16 applies only when the commander's own ability includes noncombat damage. Decouple burn and drain from lifegain: they are a potential synergy, not a requirement (Dwynen's warning is dropped)|2026-10-21|open|build.py H16 check
+  H37|commanders|Partner commanders (two partners) get their own deck-building framework, but partner commanders are excluded from tier 1 (user, 2026-10-21)|2026-10-21|open|commander_support.is_partner; 13 tier 1 decks use a partner commander today
+  H38|commanders|Split enter-the-battlefield abilities: 'when this enters' (self, wants blink and recursion support) is not 'when another creature enters' (other, does not trigger on the commander itself, wants creatures and tokens entering)|2026-10-21|applied|commander_support.py etb_self and etb_other
+  H39|commanders|Reach is flying hate and low creature removal. 'Flicker another creature' is a potential loop with enter-the-battlefield effects. Equipment can only attach to the player's own permanents|2026-10-21|applied|commander_support.py flying_hate and flicker
+  H40|commanders|A token's type is its tribe (Cat tokens mean cat tribal). Upkeep triggers fire every turn: weigh the potential over the next 2 turns. A legendary token follows the legend rule|2026-10-21|partly|commander_support.py tribe from tokens; legend rule not yet checked
+  H41|commanders|Sacrificing a land is a cost, not sacrifice synergy. Such commanders prioritize protection, and land-sacrifice synergy is very rare|2026-10-21|applied|commander_support.py
+  H42|commanders|'Total power of creatures you control' means the summed power of all of the player's creatures on the battlefield|2026-10-21|open|commander_support.py high_power counts cards, not the sum
+  H43|commanders|Inspect keyword mechanics such as the Ring and tag them. Scry counts as draw synergy. A self-untap is low recursion for triggered abilities (Ioreth: low control, legendary synergy)|2026-10-21|partly|commander_support.py ring and scry tests
+  H44|commanders|Discard, self-mill and draw form one cluster (Oin). Token support goes with graveyard-leave commanders (Tormod). Protection commanders weigh a high-impact partner (Anara)|2026-10-21|partly|commander_support.py

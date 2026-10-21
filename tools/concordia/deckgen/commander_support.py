@@ -26,7 +26,7 @@ SKIP = {"Creature", "Artifact", "Enchantment", "Legendary", "Snow", "Tribal", "K
 CARD_TYPES = {"Equipment", "Artifact", "Aura", "Enchantment", "Vehicle", "Saga", "Instant", "Sorcery", "Land", "Planeswalker"}
 
 
-def profile(oracle, types):
+def profile(oracle, types, name=""):
     """-> sorted list of support tests for a commander."""
     t = oracle.replace("\\n", "\n").lower()
     own = {x for x in types.split() if x not in SKIP}
@@ -49,7 +49,9 @@ def profile(oracle, types):
         out.add("scales:" + m.group(1).capitalize())
     if "modified" in t: out.add("modified")
     if re.search(r"whenever [^.]*attack|when [^.]*attack", t): out.add("attack")
-    if re.search(r"(when|whenever) [^.]*enters?\b", t) or re.search(r"return another target (permanent|creature) you control to its owner", t): out.add("etb")
+    nm = name.split(",")[0].lower()
+    if nm and re.search(r"when(ever)? (" + re.escape(nm) + r"|this creature)[^.]*enters", t): out.add("etb_self")   # H38: triggers only on the commander itself
+    if re.search(r"(when|whenever) (another|a|one or more|an?) [^.]*creatures? [^.]*enters?\b", t) or re.search(r"return another target (permanent|creature) you control to its owner", t): out.add("etb_other")   # H38: another creature enters
     for m in re.finditer(r"\b(artifact|enchantment) creatures? you control", t): out.add("scales:" + m.group(1).capitalize())
     if re.search(r"whenever you discard|discard", t): out.add("discard")
     if re.search(r"sacrifice|from your graveyard to (your hand|the battlefield)|dies", t): out.add("sacrifice")
@@ -58,7 +60,22 @@ def profile(oracle, types):
     if re.search(r"lifelink|gain[s]? \d* ?life|you gain life", t): out.add("lifegain")
     for kw, tag in (("flying", "evasion"), ("menace", "evasion"), ("haste", "attack"), ("double strike", "double_strike")):
         if re.search(r"(^|\n|, )" + kw, t): out.add(tag)
+    if re.search(r"cards? leaves? your graveyard|leave your graveyard", t): out.add("graveyard_leave")   # Tormod
+    if re.search(r"(^|\n|, )reach\b", t): out.add("flying_hate")   # H39: reach = flying hate, low creature removal
+    if re.search(r"exile (up to one )?(other )?(another )?target creature you control.{0,90}return|flicker", t): out.add("flicker")   # H39: potential loop with etb
+    if "ring tempts" in t or "the ring" in t: out.add("ring")   # H43
+    if re.search(r"\bscry\b", t): out.add("scry")   # H43: scry counts as draw synergy
+    if re.search(r"\blegendary\b", t): out.add("scales:Legendary")
+    for m in re.finditer(r"(?i:create[s]?) [^.]*?\b([A-Z][a-z]+)(?: [A-Z][a-z]+)? creature tokens?", oracle.replace("\\n", "\n")):
+        if m.group(1) not in ("Creature", "White", "Blue", "Black", "Red", "Green", "Colorless"): out.add("tribe:" + m.group(1))   # token type is the tribe (H40)
+    if re.search(r"(creature )?tokens? you control", t): out.add("token")   # Prava, Jiang: token makers and token pump
+    if re.search(r"sacrifice (a|another|an?) land", t):   # H41: sacrificing a land is a cost
+        out.discard("sacrifice"); out.add("protection")
     return sorted(out)
+
+
+def is_partner(oracle):
+    return bool(re.search(r"(^|\n|\\n)partner\b", oracle.lower().replace("\\n", "\n")))   # H37
 
 
 def supports(item, name, text, tags, types):
@@ -73,6 +90,14 @@ def supports(item, name, text, tags, types):
     if item == "modified": return "Equipment" in ty or "Aura" in ty or "counters_plus" in tags or "equip" in tags
     if item == "attack": return crea and bool(tags & {"evasion", "flying", "haste", "evasion_grant"}) or bool(tags & {"pump_single", "pump_team", "haste_grant", "evasion_grant"})
     if item == "etb": return (crea and "etb_trigger" in tags) or bool(tags & {"bounce", "clone"})
+    if item == "etb_other": return bool(tags & {"token_make", "clone", "bounce"}) or (crea and "etb_trigger" in tags) or bool(re.search(r"exile target creature you control, then return|flicker", text.lower()))
+    if item == "etb_self": return bool(tags & {"bounce", "clone", "recursion", "reanimate"}) or bool(re.search(r"exile target creature you control, then return|flicker", text.lower()))
+    if item == "graveyard_leave": return bool(tags & {"recursion", "reanimate", "grave_hate", "self_mill", "discard", "token_make", "temp_reanimate"})
+    if item == "token": return bool(tags & {"token_make", "pump_team", "artifact_token"})
+    if item == "flying_hate": return "removal" in tags or "shrink" in tags
+    if item == "flicker": return bool(re.search(r"exile target creature you control, then return|flicker", text.lower())) or (crea and "etb_trigger" in tags)
+    if item == "ring": return "ringtempts" in text.lower() or "the ring tempts" in text.lower()
+    if item == "scry": return bool(tags & {"selection", "draw"})
     if item == "discard": return bool(tags & {"discard"}) or "draw" in tags and "discard" in tags
     if item == "sacrifice": return bool(tags & {"sacrifice_outlet", "dies_trigger", "recursion", "reanimate", "temp_reanimate"})
     if item == "control": return bool(tags & {"removal", "tap_down", "bounce", "counterspell", "restrict", "attack_tax", "shrink", "fog"}) or "deathtouch" in tags
@@ -111,7 +136,7 @@ def analyse(path, pool):
     main, cmd = read(path)
     cn = cmd[0][1]
     c = pool.get(cn.lower())
-    prof = profile(c["oracle"], c["types"]) if c else []
+    prof = profile(c["oracle"], c["types"], cn) if c else []
     cards = []
     for q, n in main:
         t = at.card_text(n)
@@ -120,19 +145,20 @@ def analyse(path, pool):
     per = {it: sum(1 for n, t, tg, ty in cards if supports(it, n, t, tg, ty)) for it in prof}
     # a card supports the commander if it passes ANY test
     works = sum(1 for n, t, tg, ty in cards if any(supports(it, n, t, tg, ty) for it in prof))
-    return cn, prof, per, works
+    return cn, prof, per, works, bool(c) and is_partner(c["oracle"])
 
 
 def main():
     pool = pickle.load(open(os.path.join(HERE, "pool.pkl"), "rb"))
     rows = []
     for f in sorted(glob.glob(os.path.join(DECKS, "tier1", "*.dck"))):
-        cn, prof, per, works = analyse(f, pool)
-        rows.append((os.path.basename(f)[3:-4], cn, ";".join(prof) or "none", works, ";".join("%s=%d" % kv for kv in per.items())))
+        cn, prof, per, works, partner = analyse(f, pool)
+        rows.append((os.path.basename(f)[3:-4], cn, ";".join(prof) or "none", works, ";".join("%s=%d" % kv for kv in per.items()), "partner" if partner else ""))
     L = ["# Commander support (generated by deckgen/commander_support.py; rules H31-H36). works = deck cards that pass any profile test of the commander's ability; threshold in build.py H17 is 5.",
-         "commanders[%d|]{deck|commander|profile|works|per_test}:" % len(rows)] + ["  %s|%s|%s|%d|%s" % r for r in rows]
+         "commanders[%d|]{deck|commander|profile|works|per_test|partner}:" % len(rows)] + ["  %s|%s|%s|%d|%s|%s" % r for r in rows]
     open(os.path.join(HERE, "COMMANDER_SUPPORT.toon"), "w").write("\n".join(L) + "\n")
     w = [r[3] for r in rows]
+    print("partner commanders in tier 1 (H37: exclude from tier 1): %s" % ", ".join(r[0] for r in rows if r[5]))
     print("%d decks; works >=5: %d, 3-4: %d, <3: %d; profile none: %d" % (len(rows), sum(1 for x in w if x >= 5), sum(1 for x in w if 3 <= x < 5), sum(1 for x in w if x < 3), sum(1 for r in rows if r[2] == "none")))
 
 
