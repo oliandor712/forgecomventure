@@ -37,3 +37,11 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:27:11Z,a2f67786,inner,2,decks/tier2/T2_BG_Meren.dck,decks/tier2/T2_WU_Denry.dck,15,15,,,b,a,30,0
 2026-10-21T02:27:49Z,a2f67786,inner,5,decks/tier5/T5_WU_Prince.dck,decks/tier5/T5_UB_Oona.dck,35,35,,,a,a,23,0
 2026-10-21T02:27:49Z,a2f67786,inner,5,decks/tier5/T5_WU_Prince.dck,decks/tier5/T5_UB_Oona.dck,35,35,,,b,b,33,0
+2026-10-21T02:29:27Z,1a6eac0bb60,inner,5,decks/tier5/T5_UBR_Inalla.dck,decks/tier5/T5_BR_Strefan.dck,35,35,,,a,b,22,0
+2026-10-21T02:29:27Z,1a6eac0bb60,inner,5,decks/tier5/T5_UBR_Inalla.dck,decks/tier5/T5_BR_Strefan.dck,35,35,,,b,a,22,0
+2026-10-21T02:30:25Z,1a6eac0bb60,inner,5,decks/tier5/T5_UBR_Inalla.dck,decks/tier5/T5_UB_Oona.dck,35,35,,,a,b,22,0
+2026-10-21T02:30:25Z,1a6eac0bb60,inner,5,decks/tier5/T5_UBR_Inalla.dck,decks/tier5/T5_UB_Oona.dck,35,35,,,b,b,21,0
+2026-10-21T02:30:59Z,1a6eac0bb60,inner,4,decks/tier4/T4_BR_Cruelclaw.dck,decks/tier4/T4_WUR_Sevinne.dck,30,30,,,a,a,17,0
+2026-10-21T02:30:59Z,1a6eac0bb60,inner,4,decks/tier4/T4_BR_Cruelclaw.dck,decks/tier4/T4_WUR_Sevinne.dck,30,30,,,b,a,18,0
+2026-10-21T02:31:29Z,1a6eac0bb60,inner,2,decks/tier2/T2_BG_Meren.dck,decks/tier2/T2_WR_Balefang.dck,15,15,,,a,a,9,0
+2026-10-21T02:31:29Z,1a6eac0bb60,inner,2,decks/tier2/T2_BG_Meren.dck,decks/tier2/T2_WR_Balefang.dck,15,15,,,b,a,14,0
