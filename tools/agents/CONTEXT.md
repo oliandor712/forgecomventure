@@ -159,6 +159,7 @@ The main session is session `session_01SmNeweiyRBavDSUetnsUjF` (also addressable
 ## Recent updates
 - 2026-10-21: How to reach the main session: id and send_message tool documented (deck-builder could not find it)
 - 2026-10-21: deck-builder agent created: main processor for decklist updates and new decks; balance data, unflagged card data, categorization; main session assists when its ETA exceeds 5 minutes
+- 2026-10-21: Tier 1 rework handed to deck-builder: deckgen/HANDOFF_DECKBUILDER.md (archetype/sub model, H31-H48, new tools, staged fresh set of 80, learnings, open items)
 - 2026-10-21: AI patches 002 and 003 (unflag Thwart the Enemy, Vine Snare, Endure) approved by the user and applied; backup in backups/2026-10-21_cards_pre_002_003
 - 2026-10-21: Duration estimates: agents send an ETA line before long commands; main session checks 15 s after it and remedies
 - 2026-10-21: BonusSim -Dseed (seeded games), suite --seed, toolbox stamp fixed

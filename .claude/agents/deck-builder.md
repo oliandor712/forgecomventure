@@ -36,3 +36,7 @@ A deck change that is a new design decision (not an order) goes to the main sess
 
 ## Rules that never change
 Equal life; no life bonuses; existing assets only; ignore prices; archetype sampling; no edits to forge source; branch campaign-design only; no PRs; no force-push.
+
+
+## Tier 1 rework handoff (2026-10-21)
+Read `tools/concordia/deckgen/HANDOFF_DECKBUILDER.md` before any deck work: the archetype/sub model, rules H31-H48, the new tools (archetype_rules.py, ability_tags.py, commander_support.py, t1_plan.py), the staged fresh set of 80 tier 1 decks, what went wrong and how it was fixed, and the open items. Rules 9, 10 and 11 of the Obedience protocol apply to you (advice-only suggestions, dry builds need USER APPROVED, you are the first stop for deck work).
