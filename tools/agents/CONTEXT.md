@@ -110,7 +110,15 @@ build on its findings, and cite entries by date and title.
 
 The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
+## How the agents cooperate (user, 2026-10-21)
+- **Deck balance agents feed the AI lab with AI behaviour data.** Every balance simulation writes a phase log; the digests (tools/concordia/ai_lab/digests/<worker>-<UTC hour>/) are the data the AI lab studies for decision logic (blocking, attacks, removal, mana, commander play, by deck type).
+- **The AI lab feeds the deck balancers with balance-change options.** From its bonus and AI-change tests (starting bonuses, card-script unflags, patches) it passes the balance lab and main session measured options for strengthening the AI decks against the player decks. The options go in the 4-hour report or a message to the main session; nothing is applied to decks or forge-ai without the usual approvals.
+- The AI lab's current option table is `tools/concordia/ai_lab/OPTIONS_FOR_BALANCERS.md` (effect, cost, what each needs); the balancers read it before proposing deck changes.
+- The main session routes both directions: it keeps the digest step running, answers analysis requests, and records approved options.
+
 ## Recent updates
+- 2026-10-21: cooperation model: balance agents feed phase-log data to the AI lab; the AI lab feeds balance-change options to the balancers
+- 2026-10-21: Phase logging is standard for all simulations (user): run_batch.play writes phase logs, runs ai_lab/phase_digest.py and deletes the raw logs; digests under ai_lab/digests are pushed with the records (run_foreground.sh does it)
 - 2026-10-21: agents: effort raised to high (briefs); temporary until the session limit
 - 2026-10-21: human_logic.toon pruned to deck building, deck balance and AI improvement (29 rows)
 - 2026-10-21: push_records.sh: shared safe push for records files
@@ -121,5 +129,3 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-21: 
 - 2026-10-21: 
 - 2026-10-21: Added tools/agents/human_logic.toon (the user's deck-balance rules) and the TOON rule above. Nothing else was converted: existing markdown tables save under 1% and the rest is prose, CSV or code-read JSON.
-- 2026-10-21: 
-- 2026-10-21: 
