@@ -339,3 +339,12 @@ What the new log lines allowed that the old data did not: the GAME header gave d
 Tool problem fixed: AI_* digest rows (SPELL_CHOICE, MANA_SOURCE, BLOCK_START, ATTACK_LEVEL) carried the end-of-game life in `life_a`/`life_b` because the AI_DECISION log lines sit at the end of the raw log. `phase_digest.py` now gives them the life at the end of their own turn. Digests written before 2026-10-21 14:10Z keep the old values, so use the `life=` field in the detail for those (the analysis above does).
 
 Still missing: the chosen aggression level (patch 012), block and attack reasons (012), the commander cast cost, removal target reasoning, and any white or multicolour result split by tier (96 games over 18 cells is too thin). Colours other than W and multi do not appear in this batch. Nothing here changes the numbers in `OPTIONS_FOR_BALANCERS.md`.
+
+### Addendum 2026-10-21 (lab finished: 120 games with meta, was 96)
+24 more lab games (`lab-20261021T14*`). Colour is still the deck-A tag only: W 14 games, multicolour 106. Side B is not split, so white decks are present in more games than the 14 counted here. Archetypes: aggro 30, midrange 46, ramp 20, control 24. Same method and caveats as above.
+- **Blocks, all games:** 9% [8-11] n=977 at 15+ life, 24% [20-28] n=310 at 8-14, 34% [31-38] n=483 under 8. The shape is unchanged; control now reads 7% / 21% / 29% (n=229 / 67 / 85), white 6% / 26% / 36% (n=68 / 39 / 56).
+- **Attackers sent by `ratioDiff`:** 39% [37-41] n=1534 when >= 1, 19% [16-22] n=430 from 0 to 1, 18% [16-19] n=1161 below 0. The control "behind" outlier fell from 30% to 24% (n=217) with more games, so it was mostly noise; aggro stays lowest when behind (11%, n=301).
+- **Mulligans:** 0.55 lines per game overall (240 hands). Control fell from 1.00 to 0.88 per game (24 games), ramp 0.30, white 0.21 per game (28 hands), so white's low rate is holding but still a small sample.
+- **Mana and cast timing:** non-basic sources 29% n=8,210 (white 17% n=688, control 38% n=1,791). Mean cast turn 12.9 over 2,402 casts; white 10.1 (n=202 casts), multicolour 13.2, control 14.0.
+- **Commander and triggers:** 11 command-zone moves in 120 games (still too few); 2,510 triggers.
+- Nothing here changes `OPTIONS_FOR_BALANCERS.md`.
