@@ -120,8 +120,9 @@ def parse_game(path, label):
             m = re.match(r"(A|B) cast (.+)", msg)
             if m:
                 rows.append((turn, ph, "CAST", m.group(1), m.group(2).split(" (")[0], *lk(), 1))
-            elif msg.startswith("triggered"):
-                rows.append((turn, ph, "TRIGGER", "", msg[len("triggered "):].split(" (")[0], *lk(), 1))
+            elif re.match(r"(A|B) triggered ", msg):
+                # the game log writes triggers as "A triggered <source>" (ETB and other triggers)
+                rows.append((turn, ph, "TRIGGER", msg[0], msg.split(" triggered ", 1)[1].split(" (")[0], *lk(), 1))
         elif typ == "DAMAGE":
             m = DAMAGE.search(msg)
             if m:
