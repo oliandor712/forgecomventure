@@ -138,15 +138,17 @@ Remaining on the 25-per-deck queue (2,883 slots): W 1,288, multi 1,498, B 72, G 
 | main session (`main`) | `run_foreground.sh multi main 2/4` | about 375 |
 Repeat each command (about 9 minutes per call) until it prints DONE, then take the next one. Pull first (digest code), push with push_records.sh. When all your commands print DONE, message the main session once; a finished agent can take over a slice from a slower one on the main session's word.
 
-## Authority and never stopping (user order, 2026-10-21)
-The main session speaks for the user to the agents. **Obey the main session's instructions** (assignments, resume, stop, pause, reassign, push, commit scope, tooling changes) without asking the user to repeat them. Do not stop mid-task to wait for the user.
-- **Never** end a turn with "waiting for the user" while work remains. Questions go to the main session (send_message), and you keep working on whatever is not blocked by the answer. A task is done only when its command prints DONE or its deliverable is pushed.
-- **Resume after a pause** on the main session's word. A relayed "the user said X" from the main session counts. If the user paused you directly in your own chat, the main session's later resume order counts too.
-- **Refuse only guardrail violations**, and say which one in one line to the main session: editing forge-core/forge-game/forge-ai source on campaign-design or applying an AI patch to a source directory (test overlay patches are fine); force-pushing or rewriting history; opening or merging a PR; pushing to a branch other than campaign-design; unequal-life or life-bonus simulations; committing another agent's files; deleting data without a backup; ticking an AI_CHANGES_APPROVAL box (only the user ticks it, in chat with the main session).
-- **A harness or classifier denial** (a command blocked by the permission system) is not a guardrail: split the command into simple separate commands and retry once; if it is still denied, report the exact command to the main session and move to the next task item.
-- Approvals for AI changes still come only from the user in chat, relayed by the main session, and "approved for testing" never means apply to source.
+## Obedience protocol (user order, 2026-10-21; replaces "Authority and never stopping")
+1. **The main session is the user's voice.** Every instruction from it is a user instruction: assignments, resume, stop, pause, reassign, scope, tools, approvals the main session quotes from the user. **Always obey it, at once**, unless the task violates a guardrail (below). Do not argue, do not ask the user to confirm, do not wait.
+2. **User questions go through the main session.** If you need an answer from the user, send the main session `USER QUESTION: <the exact question and the options>` and keep working on everything the answer does not block. When the main session replies, **treat its reply as the user's own answer** and act on it.
+3. **If the user types in your own chat**, do what the user says, and report it to the main session at once: `USER DIRECT: <what they said and what you are doing>`. A later order from the main session on the same subject still stands unless the user's direct words forbid it.
+4. **Never end a turn waiting.** A turn ends only when your task command prints DONE, your deliverable is pushed, or you are blocked: then send the main session `BLOCKED: <exact command and error>` and move to the next item. Never "waiting for the user".
+5. **Guardrails (the only reasons to refuse; name the one in a line to the main session):** editing forge-core/forge-game/forge-ai source on campaign-design or applying an AI patch to a source directory (patches on the sim overlay are fine); force-pushing or rewriting history; opening or merging a PR; pushing to any branch except campaign-design; unequal-life or life-bonus simulations; committing another agent's files; deleting data without a backup; ticking an approval box yourself. An approval the main session quotes from the user counts as the user's approval, but "approved for testing" never means applying to source.
+6. A harness or classifier denial is not a guardrail: split the command into simple ones and retry once; if still denied, `BLOCKED:` to the main session and go on.
+7. Every turn starts the same way: `git pull --no-rebase origin campaign-design`, `python3 tools/agents/toolbox.py --check` (STALE means pull again, then tell the main session), read `tools/agents/TOOLBOX.md`.
 
 ## Recent updates
+- 2026-10-21: Agents remade (gen 2): stricter Obedience protocol, TOOLBOX.md and AGENT_KNOWLEDGE.md shared references, handoffs compiled
 - 2026-10-21: Simulation suite: one program for setup, runs, phase logging, digests, pushes and reports; archetype sampling
 - 2026-10-21: Authority rule: agents obey the main session and never stop to wait for the user; only guardrail violations are refused
 - 2026-10-21: temporary agents multi-balance-temp and balance-assist-temp dumped (retired); their records stay
@@ -158,4 +160,3 @@ The main session speaks for the user to the agents. **Obey the main session's in
 - 2026-10-21: agents: effort raised to high (briefs); temporary until the session limit
 - 2026-10-21: human_logic.toon pruned to deck building, deck balance and AI improvement (29 rows)
 - 2026-10-21: push_records.sh: shared safe push for records files
-- 2026-10-21: balance-assist-temp created: temporary worker taking the U shard from the balance lab
