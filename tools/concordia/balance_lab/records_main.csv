@@ -345,3 +345,5 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T05:42:01Z,148ee22adb0,inner,2,decks/tier2/T2_BG_Grakmaw.dck,decks/tier2/T2_UB_Atris.dck,15,15,,,b,b,13,0
 2026-10-21T05:42:27Z,148ee22adb0,inner,2,decks/tier2/T2_WU_Captain.dck,decks/tier2/T2_BG_Grakmaw.dck,15,15,,,a,b,22,0
 2026-10-21T05:42:27Z,148ee22adb0,inner,2,decks/tier2/T2_WU_Captain.dck,decks/tier2/T2_BG_Grakmaw.dck,15,15,,,b,b,15,0
+2026-10-21T05:43:11Z,f4a86a0feb7,inner,2,decks/tier2/T2_BG_Grakmaw.dck,decks/tier2/T2_RG_Halana.dck,15,15,,,a,b,16,0
+2026-10-21T05:43:11Z,f4a86a0feb7,inner,2,decks/tier2/T2_BG_Grakmaw.dck,decks/tier2/T2_RG_Halana.dck,15,15,,,b,b,15,0
