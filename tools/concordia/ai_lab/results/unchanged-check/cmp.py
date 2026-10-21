@@ -1,5 +1,6 @@
 import glob,os,re,sys
 R='/tmp/claude-0/uc'
+ARM=sys.argv[1] if len(sys.argv)>1 else 'cons'
 def res(arm):
     d={}
     for f in glob.glob(f'{R}/{arm}/p*.res'):
@@ -14,12 +15,12 @@ def norm(path):
         l=re.sub(r' hand: .*','',l)
         out.append(l)
     return out
-s,c=res('stock'),res('cons')
+s,c=res('stock'),res(sys.argv[1] if len(sys.argv)>1 else 'cons')
 print('games stock',len(s),'cons',len(c))
 same=diffw=difflog=0; first=[]
 for g in sorted(set(s)&set(c)):
     if s[g]!=c[g]: diffw+=1; first.append((g,'result',s[g],c[g])); continue
-    a,b=norm(f'{R}/stock/logs/{g}.tsv'),norm(f'{R}/cons/logs/{g}.tsv')
+    a,b=norm(f'{R}/stock/logs/{g}.tsv'),norm(f'{R}/{ARM}/logs/{g}.tsv')
     if a==b: same+=1
     else:
         difflog+=1
