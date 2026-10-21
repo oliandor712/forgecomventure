@@ -209,3 +209,22 @@ Shadow test (008, gang-block co-blockers): 406 blocker-branch evaluations, 37 wi
 Whitefog run (003, patched only): Endure 0 casts, Shield Dancer 5 casts (creature only, postcombat), Harsh Justice 0 casts. Harsh Justice is not cast even without its flag, which matches the window problem noted earlier: its window does not overlap FogAi's declare-blockers window (patch 004 needed).
 
 Open decision-logic questions from these arms: why the switch deck loses even with fewer switches; whether Shield Dancer's creature-only casts are the AI's choice or a targeting result (EffectAi.java:136-140).
+
+## Decision-logic read of the 100-card Commander sims (2026-10-21)
+Source: tools/concordia/balance_lab/records*.csv (7 files, 3,442 games, all 100-card Commander decks: starters and tiers), archetype tags from QUEUE.toon. These records hold outcomes only (winner, first player, turns, timeouts). They contain no decisions, so everything below is an inference about AI decision logic, not a reading of it.
+
+Outcomes by archetype (side-level, 2,614 decided no-bonus games; play order compensated):
+- starter: 65.7% balanced, n=811, median 14 turns.
+- ramp: 50.6%, n=1,527, median 18 turns.
+- tokens: 46.3%, n=586, median 15.5 turns.
+- midrange: 45.6%, n=1,446, median 15 turns.
+- aggro: 44.1%, n=832, median 13 turns.
+- control: 42.3%, n=26 (too few to read), median 19.5 turns.
+- Timeouts 6, draws 7 across all rows: the AI finishes games.
+
+Decision-logic reads (hypotheses to test, not findings):
+- Aggro is the shortest archetype (13 turns) and wins below 50%. Section 2 says the AI attacks more freely with more creatures and more life. If aggro is losing short games, the likely places to look are blocking (section 1: the AI blocks freely at high life, so early pressure gets absorbed by trades) and removal targeting (section 3: removal aims at the best creature, not the most damaging one).
+- Ramp runs longest among the big archetypes (18 turns) at 50.6%. Section 5 says the AI taps its own creatures last and keeps blockers back, so ramp boards may stall rather than lose. Long games with no timeouts suggest the AI is passive, not stuck.
+- Starters are the outlier at 65.7%. Their 14-turn games may reflect the AI playing its own deck well in a matchup it can read, or weaker opponents (pairing mix, same caveat as the balance analysis).
+
+What the records cannot show: which attacks, blocks, casts or removal targets produced these results. Testing any of the reads above needs phase logs for a sample of these games (for example a DeckSim run with -Dlogdir on an aggro vs ramp pairing), then the same decision counts as the results analysis.
