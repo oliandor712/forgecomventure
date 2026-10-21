@@ -155,6 +155,6 @@ What this means for deck types (provisional):
 - Control: holding open mana matters for bluffs and tricks. The attack logic counts open mana, so a control deck with lands untapped looks less exposed, and the AI attacks less into it.
 - Aggro: low open mana, so the AI attacks more freely on turns when it is tapped out (the trade roll allows this).
 
-Flagged cards (AI:RemoveDeck) relevant here: none change mana use. A flagged mana source is still used normally if it is in play. Fog cards that cost mana count in `getAvailableManaEstimate` only when they are castable, which depends on the flag.
+Flagged cards (AI:RemoveDeck) relevant here: none change mana use. A flagged mana source is still used normally if it is in play. Fog counting is separate from this estimate: `FogAi.countAvailableFogs` counts only real Fog API spells, so an Effect-based Fog is not counted (patch 006 would change that).
 
 Still open: the `checkCosts` path (`canPayShardWithSpellAbility`) and reserved-card handling.
