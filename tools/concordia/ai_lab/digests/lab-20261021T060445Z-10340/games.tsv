@@ -1,0 +1,5 @@
+game	batch	turns	attacks_a	attacks_b	blocks_a	blocks_b	casts_a	casts_b	last_life_a	last_life_b
+b0	lab-20261021T060445Z-10340	11	5	1	0	2	5	5	7	3
+b1	lab-20261021T060445Z-10340	11	2	3	2	0	6	5	2	6
+b2	lab-20261021T060445Z-10340	10	0	3	2	0	3	6	3	40
+b3	lab-20261021T060445Z-10340	11	1	4	1	0	6	5	1	6
