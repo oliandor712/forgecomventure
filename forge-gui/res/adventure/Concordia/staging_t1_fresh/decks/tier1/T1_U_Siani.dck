@@ -4,17 +4,15 @@ Description=Tier 1 (Bracket 1). Mono-blue aggro deck led by Siani, Eye of the St
 [Commander]
 1 Siani, Eye of the Storm|CMR
 [Main]
-38 Island|FDN
+39 Island|FDN
 1 Lonely Sandbar|ONS
 1 Myriad Landscape|CMM
 1 Temple of the False God|SCG
-1 Ugin's Conjurant|WAR
-1 Greataxe|AFR
+1 Aerial Formation|JOU
+1 Fleeting Distraction|FDN
 1 Humbling Elder|TDM
-1 Myr Moonvessel|DST
-1 Prying Blade|XLN
-1 Runed Stalactite|LRW
-1 Short Sword|M21
+1 Mizzium Skin|RTR
+1 Rush of Ice|BFZ
 1 Augur of Bolas|PLST
 1 Doorkeeper|RTR
 1 Elusive Spellfist|DTK
@@ -35,17 +33,17 @@ Description=Tier 1 (Bracket 1). Mono-blue aggro deck led by Siani, Eye of the St
 1 Stalactite Dagger|ECL
 1 Tester of the Tangential|SOS
 1 Treasure Hunt|WWK
+1 Arcane Laboratory|7ED
 1 Bottle Gnomes|10E
 1 Call to Mind|M11
 1 Cathodion|2XM
-1 Curse of Inertia|CMA
 1 Deluge|10E
-1 Fireshrieker|FDN
 1 Flux Channeler|WAR
 1 Grip of Phyresis|CM2
 1 Highspire Bell-Ringer|TDM
 1 Hydroelectric Specimen|MH3
 1 Kolinahr Priest|TRC
+1 Pilgrim's Eye|WWK
 1 Runic Repetition|ISD
 1 Shimmer Myr|CMM
 1 Steady Progress|SOM
@@ -57,11 +55,12 @@ Description=Tier 1 (Bracket 1). Mono-blue aggro deck led by Siani, Eye of the St
 1 Mistfire Adept|FRF
 1 Mistfire Weaver|KTK
 1 Sleep|M19
-1 Vaporous Djinn|MIR
 1 Wash Out|INV
+1 Waterspout Djinn|VIS
 1 Djinn of Fool's Fall|OTJ
 1 Eternal Skylord|WAR
-1 Meteorite|DMU
+1 Geode Golem|CMM
+1 Luxurious Locomotive|OTJ
 1 Mystic of the Hidden Way|KTK
 1 Whirlwind Adept|KTK
 1 Mahamoti Djinn|PLST

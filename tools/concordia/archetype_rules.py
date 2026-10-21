@@ -124,6 +124,17 @@ def read_deck(path):
     return main, cmd
 
 
+def is_token_card(t):
+    """The token test of classify(): a token maker or a 'creatures you control get/have' card (script text)."""
+    return bool(re.search(r"^A:(SP|AB)\$ Token|^SVar:TrigToken", t, re.M) or "TokenScript$" in t or re.search(r"creatures you control (get|have)", t))
+
+
+def lock_card(t, ty):
+    """True when a non-creature card counts as a lock for low-control (pacify, restrict or tax, not a scaling card)."""
+    sig, sc = control_signal(t, ty)
+    return bool(sig) and not sc and bool(sig & {"pacify", "restrict", "tax"})
+
+
 def classify(path, tier=None):
     """Classification of one deck: archetype, sub, reach, counts. Tier is read from the path when not given."""
     if tier is None:
@@ -139,7 +150,7 @@ def classify(path, tier=None):
             creatures += q
             for x in ty:
                 if x not in SKIP_TYPES: tribes[x] += q
-        if re.search(r"^A:(SP|AB)\$ Token|^SVar:TrigToken", t, re.M) or "TokenScript$" in t or re.search(r"creatures you control (get|have)", t): tokens += q
+        if is_token_card(t): tokens += q
         if "Creature" not in ty:
             if "Artifact" in ty: art += q
             if "Enchantment" in ty: ench += q

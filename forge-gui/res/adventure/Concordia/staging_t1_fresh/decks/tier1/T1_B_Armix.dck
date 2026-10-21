@@ -21,7 +21,6 @@ Description=Tier 1 (Bracket 1). Mono-black aggro deck led by Armix, Filigree Thr
 1 Exsanguinate|FDN
 1 Fellwar Stone|9ED
 1 Gleaming Barrier|FDN
-1 Halo Scarab|SNC
 1 Hovermyr|NPH
 1 Ichorclaw Myr|SOM
 1 Myr Sire|MBS
@@ -35,6 +34,7 @@ Description=Tier 1 (Bracket 1). Mono-black aggro deck led by Armix, Filigree Thr
 1 Unlikely Aid|IKO
 1 Voltaic Servant|DOM
 1 Walking Atlas|WWK
+1 Weathered Runestone|KHM
 1 Arterial Flow|RIX
 1 Bottle Gnomes|10E
 1 Buried Alive|ODY
@@ -46,7 +46,7 @@ Description=Tier 1 (Bracket 1). Mono-black aggro deck led by Armix, Filigree Thr
 1 Dauntless Scrapbot|EOE
 1 Essence Harvest|AVR
 1 Filigree Familiar|CMR
-1 Fireshrieker|FDN
+1 Flayed One|40K
 1 Magic Pot|FIN
 1 Pilgrim's Eye|WWK
 1 Shimmer Myr|CMM
@@ -54,7 +54,7 @@ Description=Tier 1 (Bracket 1). Mono-black aggro deck led by Armix, Filigree Thr
 1 Arcbound Crusher|DST
 1 Brass Knuckles|CMM
 1 Core Prowler|MBS
-1 Geth's Grimoire|DST
+1 Frogmite|MRD
 1 Jhoira's Familiar|DOM
 1 Pactdoll Terror|DFT
 1 Scaretiller|CMM
@@ -62,7 +62,7 @@ Description=Tier 1 (Bracket 1). Mono-black aggro deck led by Armix, Filigree Thr
 1 Aradara Express|KLD
 1 Geode Golem|CMM
 1 Join the Maestros|SNC
+1 Rise Again|M21
 1 Sanguine Bond|IMA
-1 Skybox Ferry|DFT
 1 Corrupt|7ED
-1 Sojourner's Companion|MH2
+1 Tasigur's Cruelty|FRF

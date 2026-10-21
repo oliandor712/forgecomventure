@@ -17,7 +17,6 @@ Description=Tier 1 (Bracket 1). Mono-blue tokens deck led by Alirios, Enraptured
 1 Wingcrafter|AVR
 1 A Little Chat|SNC
 1 Anticipate|IKO
-1 Avalanche Caller|KHM
 1 Bill Ferny, Bree Swindler|LTR
 1 Blighted Agent|NPH
 1 Bumbleflower's Sharepot|BLB
@@ -35,13 +34,13 @@ Description=Tier 1 (Bracket 1). Mono-blue tokens deck led by Alirios, Enraptured
 1 Scuttletide|MH2
 1 Spider-Slayer, Hatred Honed|SPM
 1 Telling Time|C18
-1 Aviation Pioneer|M19
+1 Weathered Runestone|KHM
 1 Burdened Aerialist|MH2
 1 Deeproot Waters|XLN
 1 Etherium Spinner|MH2
 1 Flux Channeler|WAR
+1 Graceful Adept|CHK
 1 Ioreth of the Healing House|LTR
-1 Nuka-Cola Vending Machine|PIP
 1 Prosperous Thief|NEO
 1 Sailor of Means|RIX
 1 Sea Gate Oracle|ROE
@@ -49,13 +48,14 @@ Description=Tier 1 (Bracket 1). Mono-blue tokens deck led by Alirios, Enraptured
 1 Silundi Vision|PIO
 1 Tandem Lookout|PLST
 1 Treason of Isengard|LTR
+1 Wingspan Mentor|IKO
 1 Worn Powerstone|MH3
 1 Xerex Strobe-Knight|MOM
-1 Coastal Piracy|TLE
 1 Efficient Construction|AER
 1 Fact or Fiction|INV
 1 Irenicus's Vile Duplication|CLB
 1 Murmuring Mystic|CMM
+1 Ninja of the Deep Hours|BOK
 1 Whirler Rogue|ORI
 1 Whispering Wizard|VOW
 1 Wing Splicer|NPH
@@ -63,6 +63,6 @@ Description=Tier 1 (Bracket 1). Mono-blue tokens deck led by Alirios, Enraptured
 1 Lost Days|TLA
 1 Muse's Encouragement|SOS
 1 Ojutai's Summons|DTK
-1 Prosperous Pirates|XLN
+1 Skybox Ferry|DFT
 1 Draconic Lore|CLB
 1 Dig Through Time|SLZ
