@@ -22,7 +22,7 @@ ALL_BONUSES = ["land", "onedrop", "land+onedrop", "arena", "staff", "legion", "m
 # then land+onedrop, 3+ pairings each against all five starters
 # 2026-10-20: small bonuses against the premade arena and staff, 5 matched sets each; no life bonuses;
 # bedlam, hornet, market, legion wait
-STARTER_EPOCH = "2026-10-21T01:16:50Z"  # starters last changed here (commit 5439eb01); older starter games are old decks
+STARTER_EPOCH = "2026-10-21T01:25:00Z"  # first batch after the starter rework 5439eb01 (the 01:11 batch ran the old decks); earlier starter games are old decks
 BONUSES = ["land", "onedrop", "land+onedrop", "arena", "staff"]
 
 

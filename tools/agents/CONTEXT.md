@@ -105,7 +105,8 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
 - 2026-10-21: 
-- 2026-10-21: Starters were reworked at 5439eb01 (2026-10-21T01:16:50Z): Squee leads red, Barrin is blue's alt, Breeches is red's alt, green and black swaps. All starter games before that time are on old decks. deck-balance-lab: count starter games only since then, so the 50/50 split between _Normal and _Alt starts from zero (run_batch.py STARTER_EPOCH does this); split the report at the same commit.
+- 2026-10-21: 
+- 2026-10-21: Starters were reworked at 5439eb01 (2026-10-21T01:16:50Z; the 01:11 batch still ran the old decks): Squee leads red, Barrin is blue's alt, Breeches is red's alt, green and black swaps. All starter games before that time are on old decks. deck-balance-lab: count starter games only from the 02:10 batch on (STARTER_EPOCH 01:25Z), so the 50/50 split between _Normal and _Alt starts from zero (run_batch.py STARTER_EPOCH does this); split the report at the same commit.
 - 2026-10-21: The agent_operations_master doc was deleted at the user's request; the check-in no longer refreshes a doc or reads an inbox. Requests reach the main session in chat only.
 - 2026-10-20: 
 - 2026-10-20: 200 variant decks added (one per AI deck: alternate commander, 5-8 cards changed), so each tier folder now holds 80 decks; pools and random picks include them. Starters: power 27, blue rerolled to Gadwick wizards, and each colour has a _Normal and _Alt starter (split starter games 50/50). deck-balance-lab: weight coverage toward the new variants until they reach the median game count.
@@ -115,4 +116,3 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-20: Each starter colour gets a second version, decks/starter/<C>_Starter_Alt.dck (alternate commander, 5-8 cards changed). In every starter test, split games 50/50 between the _Normal and _Alt version (user); run_batch.py does this.
 - 2026-10-20: 
 - 2026-10-20: Tier 1-2 decks rebuilt with a raised floor (user): uncommon staples pushed, budget lands and cheap mana rocks added; T1 power now 16-18 (was 12-14), T2 25-30 (was 21-31). Green-zone stage-1 trainer/keeper windows moved up. deck-balance-lab: T1-2 games before this commit are on the old T1-2 decks; split them out like the earlier rebuild.
-- 2026-10-20: 
