@@ -67,3 +67,9 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:21:21Z,d8e44e4b,inner,3,decks/tier3/T3_BG_Abomination.dck,decks/tier3/T3_UR_Jori.dck,25,25,,,b,a,18,0
 2026-10-21T02:21:59Z,d8e44e4b,inner,2,decks/tier2/T2_BR_Garna.dck,decks/tier2/T2_WU_Captain.dck,15,15,,,a,b,16,0
 2026-10-21T02:21:59Z,d8e44e4b,inner,2,decks/tier2/T2_BR_Garna.dck,decks/tier2/T2_WU_Captain.dck,15,15,,,b,b,15,0
+2026-10-21T02:22:40Z,a2f67786,inner,4,decks/tier4/T4_WG_Karametra.dck,decks/tier4/T4_WBR_Marchesa.dck,30,30,,,a,a,17,0
+2026-10-21T02:22:40Z,a2f67786,inner,4,decks/tier4/T4_WG_Karametra.dck,decks/tier4/T4_WBR_Marchesa.dck,30,30,,,b,a,18,0
+2026-10-21T02:23:29Z,a2f67786,inner,2,decks/tier2/T2_BG_Grakmaw.dck,decks/tier2/T2_WB_Orah.dck,15,15,,,a,b,14,0
+2026-10-21T02:23:29Z,a2f67786,inner,2,decks/tier2/T2_BG_Grakmaw.dck,decks/tier2/T2_WB_Orah.dck,15,15,,,b,b,15,0
+2026-10-21T02:23:53Z,a2f67786,inner,5,decks/tier5/T5_BR_Olivia.dck,decks/tier5/T5_UG_Tatyova.dck,35,35,,,a,a,17,0
+2026-10-21T02:23:53Z,a2f67786,inner,5,decks/tier5/T5_BR_Olivia.dck,decks/tier5/T5_UG_Tatyova.dck,35,35,,,b,b,17,0
