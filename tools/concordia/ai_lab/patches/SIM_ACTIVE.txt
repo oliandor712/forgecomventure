@@ -1,3 +1,4 @@
 # Test-only forge-ai patches applied to the SIM classpath by tools/concordia/sim/setup.sh (never to forge-ai/src or the shipped game).
 # One patch file name per line. Empty or delete this file to run the sims on the stock AI.
 010-decision-log.patch
+011-more-log-lines.patch
