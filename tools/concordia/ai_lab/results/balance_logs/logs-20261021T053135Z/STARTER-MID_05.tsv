@@ -1,0 +1,282 @@
+1		TURN	Turn 1 (B)
+1	B's Untap step	PHASE	B's Untap step
+1	B's Upkeep step	PHASE	B's Upkeep step
+1	B's Draw step	PHASE	B's Draw step
+1	B's Main phase, precombat	PHASE	B's Main phase, precombat
+1	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+1	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+1	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+1	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+1	B's Combat Damage Step	PHASE	B's Combat Damage Step
+1	B's End of Combat Step	PHASE	B's End of Combat Step
+1	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+1	B's Main phase, postcombat	STACK_ADD	B cast Arbor Elf
+1	B's End step	PHASE	B's End step
+1	B's Cleanup step	PHASE	B's Cleanup step
+2	B's Cleanup step	TURN	Turn 2 (A)
+2	A's Untap step	PHASE	A's Untap step
+2	A's Upkeep step	PHASE	A's Upkeep step
+2	A's Draw step	PHASE	A's Draw step
+2	A's Main phase, precombat	PHASE	A's Main phase, precombat
+2	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+2	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+2	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+2	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+2	A's Combat Damage Step	PHASE	A's Combat Damage Step
+2	A's End of Combat Step	PHASE	A's End of Combat Step
+2	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+2	A's End step	PHASE	A's End step
+2	A's Cleanup step	PHASE	A's Cleanup step
+3	A's Cleanup step	TURN	Turn 3 (B)
+3	B's Untap step	PHASE	B's Untap step
+3	B's Upkeep step	PHASE	B's Upkeep step
+3	B's Draw step	PHASE	B's Draw step
+3	B's Main phase, precombat	PHASE	B's Main phase, precombat
+3	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+3	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+3	B's Declare Attackers Step	COMBAT	B assigned Arbor Elf (2) to attack A.
+3	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+3	B's Declare Blockers Step	COMBAT	A didn't block Arbor Elf (2).
+3	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+3	B's Combat Damage Step	PHASE	B's Combat Damage Step
+3	B's Combat Damage Step	DAMAGE	Arbor Elf (2) deals 1 combat damage to A.
+3	B's Combat Damage Step	LIFE	Life: A 15 > 14
+3	B's End of Combat Step	PHASE	B's End of Combat Step
+3	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+3	B's End step	PHASE	B's End step
+3	B's Cleanup step	PHASE	B's Cleanup step
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's Main phase, postcombat	STACK_ADD	A cast Charcoal Diamond
+4	A's End step	PHASE	A's End step
+4	A's Cleanup step	PHASE	A's Cleanup step
+5	A's Cleanup step	TURN	Turn 5 (B)
+5	B's Untap step	PHASE	B's Untap step
+5	B's Upkeep step	PHASE	B's Upkeep step
+5	B's Draw step	PHASE	B's Draw step
+5	B's Main phase, precombat	PHASE	B's Main phase, precombat
+5	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+5	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+5	B's Declare Attackers Step	COMBAT	B assigned Arbor Elf (2) to attack A.
+5	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+5	B's Declare Blockers Step	COMBAT	A didn't block Arbor Elf (2).
+5	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+5	B's Combat Damage Step	PHASE	B's Combat Damage Step
+5	B's Combat Damage Step	DAMAGE	Arbor Elf (2) deals 1 combat damage to A.
+5	B's Combat Damage Step	LIFE	Life: A 14 > 13
+5	B's End of Combat Step	PHASE	B's End of Combat Step
+5	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+5	B's Main phase, postcombat	STACK_ADD	B cast Eutropia the Twice-Favored
+5	B's End step	PHASE	B's End step
+5	B's Cleanup step	PHASE	B's Cleanup step
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD	A cast Nazar, the Velvet Fang
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+7	A's Cleanup step	TURN	Turn 7 (B)
+7	B's Untap step	PHASE	B's Untap step
+7	B's Upkeep step	PHASE	B's Upkeep step
+7	B's Draw step	PHASE	B's Draw step
+7	B's Main phase, precombat	PHASE	B's Main phase, precombat
+7	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+7	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+7	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+7	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+7	B's Combat Damage Step	PHASE	B's Combat Damage Step
+7	B's End of Combat Step	PHASE	B's End of Combat Step
+7	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+7	B's Main phase, postcombat	STACK_ADD	B cast Goreclaw, Terror of Qal Sisma
+7	B's End step	PHASE	B's End step
+7	B's Cleanup step	PHASE	B's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's End of Combat Step	STACK_ADD	B activated Arbor Elf targeting [Forest (12)]
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Bloodhunter Bat
+8	A's Main phase, postcombat	STACK_ADD	A triggered Bloodhunter Bat targeting [B]
+8	A's Main phase, postcombat	LIFE	Life: B 15 > 13
+8	A's Main phase, postcombat	LIFE	Life: A 13 > 15
+8	A's Main phase, postcombat	STACK_ADD	A triggered Nazar, the Velvet Fang
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Attackers Step	COMBAT	B assigned Goreclaw, Terror of Qal Sisma (75) to attack A.
+9	B's Declare Attackers Step	STACK_ADD	B triggered Goreclaw, Terror of Qal Sisma
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's Declare Blockers Step	COMBAT	A didn't block Goreclaw, Terror of Qal Sisma (75).
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's Combat Damage Step	DAMAGE	Goreclaw, Terror of Qal Sisma (75) deals 5 combat damage to A.
+9	B's Combat Damage Step	LIFE	Life: A 15 > 10
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Draw step	STACK_ADD	A cast Doom Blade targeting [Goreclaw, Terror of Qal Sisma (75)]
+10	A's Draw step	ZONE_CHANGE	Goreclaw, Terror of Qal Sisma (75) was put into Graveyard from Battlefield.
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Nazar, the Velvet Fang (206) and Bloodhunter Bat (145) to attack B.
+10	A's Declare Attackers Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+10	A's Declare Attackers Step	STACK_ADD	B cast Stream of Unconsciousness targeting [Nazar, the Velvet Fang (206)]
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B assigned Eutropia the Twice-Favored (100) and Arbor Elf (2) to block Nazar, the Velvet Fang (206). B didn't block Bloodhunter Bat (145).
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Bloodhunter Bat (145) deals 2 combat damage to B.
+10	A's Combat Damage Step	DAMAGE	Eutropia the Twice-Favored (100) deals 2 damage to Nazar, the Velvet Fang (206).
+10	A's Combat Damage Step	DAMAGE	Arbor Elf (2) deals 1 damage to Nazar, the Velvet Fang (206).
+10	A's Combat Damage Step	LIFE	Life: B 13 > 11
+10	A's Combat Damage Step	ZONE_CHANGE	Nazar, the Velvet Fang (206) was put into Graveyard from Battlefield.
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A cast Crow of Dark Tidings
+10	A's Main phase, postcombat	STACK_ADD	A triggered Crow of Dark Tidings
+10	A's Main phase, postcombat	ZONE_CHANGE	A milled Swamp (192) and Swamp (189).
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	STACK_ADD	B cast Archmage Emeritus
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Bloodhunter Bat (145) and Crow of Dark Tidings (137) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Bloodhunter Bat (145). B didn't block Crow of Dark Tidings (137).
+12	A's Declare Blockers Step	STACK_ADD	B activated Arbor Elf targeting [Forest (13)]
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Bloodhunter Bat (145) deals 2 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Crow of Dark Tidings (137) deals 2 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 11 > 7
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Night's Whisper
+12	A's Main phase, postcombat	LIFE	Life: A 10 > 8
+12	A's Main phase, postcombat	STACK_ADD	A cast Mind Stone
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Beginning of Combat Step	STACK_ADD	A cast Murder targeting [Archmage Emeritus (43)]
+13	B's Beginning of Combat Step	STACK_ADD	B cast Dismiss targeting [Destroy target creature.]
+13	B's Beginning of Combat Step	STACK_ADD	B triggered Archmage Emeritus
+13	B's Beginning of Combat Step	ZONE_CHANGE	Send countered spell to Graveyard
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Eutropia the Twice-Favored (100), Archmage Emeritus (43) and Arbor Elf (2) to attack A.
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A didn't block Eutropia the Twice-Favored (100). A didn't block Archmage Emeritus (43). A didn't block Arbor Elf (2).
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Eutropia the Twice-Favored (100) deals 2 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Archmage Emeritus (43) deals 2 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Arbor Elf (2) deals 1 combat damage to A.
+13	B's Combat Damage Step	LIFE	Life: A 8 > 3
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's Main phase, postcombat	STACK_ADD	B cast Regrowth targeting [Goreclaw, Terror of Qal Sisma (75)]
+13	B's Main phase, postcombat	STACK_ADD	B triggered Archmage Emeritus
+13	B's End step	PHASE	B's End step
+13	B's Cleanup step	PHASE	B's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Main phase, precombat	STACK_ADD	A cast Nefarox, Overlord of Grixis
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Bloodhunter Bat (145) to attack B.
+14	A's Declare Attackers Step	STACK_ADD	A triggered Nefarox, Overlord of Grixis
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B didn't block Bloodhunter Bat (145).
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Bloodhunter Bat (145) deals 3 combat damage to B.
+14	A's Combat Damage Step	LIFE	Life: B 7 > 4
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Upkeep step	STACK_ADD	B cast Desecrate Reality targeting [Nefarox, Overlord of Grixis (105)]
+15	B's Upkeep step	STACK_ADD	B triggered Archmage Emeritus
+15	B's Upkeep step	ZONE_CHANGE	Nefarox, Overlord of Grixis (105) was put into Exile from Battlefield.
+15	B's Draw step	PHASE	B's Draw step
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Attackers Step	COMBAT	B assigned Eutropia the Twice-Favored (100), Archmage Emeritus (43) and Arbor Elf (2) to attack A.
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's Declare Blockers Step	COMBAT	A didn't block Eutropia the Twice-Favored (100). A assigned Crow of Dark Tidings (137) to block Archmage Emeritus (43). A didn't block Arbor Elf (2).
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's Combat Damage Step	DAMAGE	Eutropia the Twice-Favored (100) deals 2 combat damage to A.
+15	B's Combat Damage Step	DAMAGE	Archmage Emeritus (43) deals 2 damage to Crow of Dark Tidings (137).
+15	B's Combat Damage Step	DAMAGE	Arbor Elf (2) deals 1 combat damage to A.
+15	B's Combat Damage Step	DAMAGE	Crow of Dark Tidings (137) deals 2 damage to Archmage Emeritus (43).
+15	B's Combat Damage Step	LIFE	Life: A 3 > 0
