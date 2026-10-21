@@ -391,3 +391,5 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:30:33Z,225ec115,bonus,1,decks/tier1/T1_B_Sivriss.dck,decks/starter/G_Starter_Alt.dck,10,10,,,b,b,13,0
 2026-10-21T02:31:56Z,0cde4b266dd,inner,3,decks/tier3/T3_B_Roshan.dck,decks/tier3/T3_B_Shirei.dck,25,25,,,a,b,24,0
 2026-10-21T02:31:56Z,0cde4b266dd,inner,3,decks/tier3/T3_B_Roshan.dck,decks/tier3/T3_B_Shirei.dck,25,25,,,b,a,16,0
+2026-10-21T02:32:53Z,8dd48a92d20,inner,1,decks/tier1/T1_B_Butch.dck,decks/tier1/T1_B_Whisper.dck,10,10,,,a,a,11,0
+2026-10-21T02:32:53Z,8dd48a92d20,inner,1,decks/tier1/T1_B_Butch.dck,decks/tier1/T1_B_Whisper.dck,10,10,,,b,a,12,0
