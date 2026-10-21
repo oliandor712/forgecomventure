@@ -20,7 +20,7 @@ ALL_BONUSES = ["land", "onedrop", "land+onedrop", "arena", "staff", "legion", "m
 # main session, 2026-10-20: land, onedrop, land+onedrop, life5 against arena, staff, life10 first; the rest later
 # user, 2026-10-20: life bonuses eliminated as an option; T1-2 order from the bonus review: land and onedrop alone,
 # then land+onedrop, 3+ pairings each against all five starters
-# inbox #3 (2026-10-20): small bonuses against the premade arena and staff, 5 matched sets each; no life bonuses;
+# 2026-10-20: small bonuses against the premade arena and staff, 5 matched sets each; no life bonuses;
 # bedlam, hornet, market, legion wait
 BONUSES = ["land", "onedrop", "land+onedrop", "arena", "staff"]
 

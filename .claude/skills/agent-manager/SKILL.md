@@ -69,11 +69,7 @@ For each agent:
    - files written outside its folders, or a modified `forge-gui-mobile/pom.xml`;
    - failed pushes.
 5. Fix what you can: scripts, briefs, CONTEXT.md. Then follow "When a fix or project change affects the agents".
-6. Refresh the Claude Doc `agent_operations_master` (https://claude.ai/code/artifact/0e47b3f5-e601-4bc8-9868-fa3b3abb0a0b,
-   container kind "project", same id) with the Claude Docs tools: Status, checklist summary, analysis notes. Act on its
-   open inbox rows (approval-needing rows become NEEDS USER) and reply under "Replies from Claude Code". Skip if the
-   tools are unavailable and say so.
-7. Report to the user in 5 lines or fewer, or in one line if all is well.
+6. Report to the user in 5 lines or fewer, or in one line if all is well.
 
 Also run `agentctl.py status`. If an agent shows `context NOT SENT`, send it its update.
 
