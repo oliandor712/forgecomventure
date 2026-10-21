@@ -17,8 +17,8 @@ rules[30|]{id|area|rule|since|status|where}:
   H12|builder|Card type mix follows the color's nature. A blue spells deck should not run 37 creatures|2026-10-21|partly|blue starter fixed, AI decks not yet audited by color
   H13|builder|Synergy beats score. A low-scoring card that works with the commander's ability is rated slightly above a stronger card that does not|2026-10-21|partly|starter alternates only (variants.py SYN), not the 200 AI decks
   H14|builder|Cost-reduction commanders such as Goreclaw want low-score creatures with enter-the-battlefield abilities at the reduced power threshold|2026-10-21|partly|SYN counts power 4+ creatures and gives a bonus for enter-the-battlefield text
-  H15|builder|Commanders with a power threshold such as Gwenna need more creatures at that power. Add power 5 options|2026-10-21|partly|SYN for Gwenna, 11 fitting cards
-  H16|builder|Life gain commanders such as Nazar want X damage and gain X life effects counted as alternate removal|2026-10-21|open|SYN counts life gain cards as synergy, not as removal
+  H15|builder|Commanders with a power threshold such as Gwenna need more creatures at that power. Add power 5 options|2026-10-21|applied|SYN for Gwenna; 63 green power 5+ creatures in pool; approved in chat 2026-10-21
+  H16|builder|Life gain commanders such as Nazar want X damage and gain X life effects counted as alternate removal|2026-10-21|applied|variants.py DRAIN regex; approved in chat 2026-10-21; takes effect at next variant or starter regeneration
   H17|commanders|A commander must use its own ability in its deck. Judge by how many deck cards work with it and change the ones that do not|2026-10-21|applied|review of the ten starters (Tarox, Ben-Ben, Inga replaced)
   H18|commanders|Double the deck pool with variants led by alternate or budget commanders. Change 5-8 cards plus the commander|2026-10-21|applied|variants.py and variants.json
   H19|starters|Starters aim for deck power 27, the middle of tier 2|2026-10-21|applied|starter_tune.py
@@ -31,5 +31,5 @@ rules[30|]{id|area|rule|since|status|where}:
   H26|testing|Regenerate the shrunk test decks whenever the tier decks change|2026-10-21|applied|ai_lab/decks
   H27|testing|Split starter tests 50/50 between each color's two versions|2026-10-21|applied|run_batch.py STARTER_EPOCH
   H28|testing|Clear results need about 40 games per deck for a 70-30 deck and about 25 matched sets per bonus for a 25-point effect and about 600 games for a seat edge|2026-10-21|applied|balance lab brief
-  H29|pc-npc|The player starts at power 27 against stage 1 enemies at 16-27 and the gap should close as stages rise. The exact PC vs NPC win target is not set|2026-10-21|open|needs a target win rate per stage from the user
+  H29|pc-npc|The player starts at power 27 against stage 1 enemies at 16-27 and the gap should close as stages rise. PC vs NPC win target is 70% for the player at every stage (user, 2026-10-21)|2026-10-21|partly|target set; balance lab to report each stage against 70%
   H30|pc-npc|Starting bonuses for enemies stay small and never touch life. Judge them by measured win rate against the starters|2026-10-20|applied|balance lab

@@ -149,13 +149,14 @@ def _pow(p):
     try: return int(p['pt'][0]) if p['pt'] else -1
     except ValueError: return -1
 def _cr(p): return 'Creature' in p['types']
+DRAIN = re.compile(r'deals? (x|\d+) damage[^.]*(and|,) you gain (x|\d+|that much) life|you gain life equal to[^.]*(damage|toughness|power)|gain x life')
 ETB = re.compile(r'when [^.]{0,60}enters')
 # per starter commander: how well a card works with its ability (0 none, 1 works, more = works better).
 # Used to protect and prefer synergy cards, so a low-scoring card that fits the commander beats a stronger one that doesn't.
 SYN = {
     'goreclaw, terror of qal sisma': lambda p: (1 + 0.6 * bool(ETB.search(_o(p)))) if _cr(p) and _pow(p) >= 4 else 0,
     'gwenna, eyes of gaea': lambda p: (1 + 0.4 * bool(ETB.search(_o(p)))) if _cr(p) and _pow(p) >= 5 else 0,
-    'nazar, the velvet fang': lambda p: (1.6 if p['tags'] & B.ROLE['removal'] else 1) if re.search(r'gain (\d+|x|that much) life|you gain life|lifelink|gains? \d+ life|gain life equal', _o(p)) else 0,
+    'nazar, the velvet fang': lambda p: (1.6 if (p['tags'] & B.ROLE['removal'] or DRAIN.search(_o(p))) else 1) if re.search(r'gain (\d+|x|that much) life|you gain life|lifelink|gains? \d+ life|gain life equal', _o(p)) else 0,
     'barrin, tolarian archmage': lambda p: 1 if re.search(r"return [^.]*target [^.]*to (its|their) owner's hand", _o(p)) else (0.6 if _cr(p) and ETB.search(_o(p)) else 0),
     'squee, dubious monarch': lambda p: (1 + 0.5 * bool(re.search(r'haste|whenever [^.]* attacks', _o(p)))) if 'Goblin' in subtypes(p) else 0,
     'breeches, eager pillager': lambda p: 1.6 if 'Pirate' in subtypes(p) else 0,
