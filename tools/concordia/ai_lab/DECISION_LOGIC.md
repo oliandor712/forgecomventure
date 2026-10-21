@@ -309,3 +309,33 @@ Not completed from the logs:
 - Commander play (cast timing, commander tax, command-zone use): the digest records no command-zone moves and no tax costs. Needed: ZONE rows for "from Command zone" and the cast cost per commander cast.
 - Mulligan and opening hands: no mulligan or hand-size lines are in the digest. Needed: the opening hand and each mulligan decision.
 - Logic by deck type and by colour: needs a deck name or archetype on each digest row. Only the 20 Commander games carry a tier. Needed: deck id per game in the digest, then a join to the balance records.
+
+## Agent/tool test: logic by archetype and colour (white and multicolour included) - 2026-10-21
+
+Data: 96 lab games with a `games_meta.tsv` row (digests `lab-20261021T13*`, first batch that carries deck ids): 10 white (W), 86 multicolour, no other colour. Archetypes: aggro 30, midrange 38, ramp 16, control 12. Script: `analyse_meta.py` (`--detail` for the splits). Rates are `rate [Wilson 90%] n=decisions`; the unit is a decision, not a game, so decisions inside one game are not independent and the real intervals are wider. Colour is the deck A tag; side B's deck is not split. One digest bug found and fixed on the way (below).
+
+| Area | All (96 games) | Aggro (30) | Midrange (38) | Ramp (16) | Control (12) | W (10) | Multi (86) |
+|---|---|---|---|---|---|---|---|
+| Block rate, blocker life 15+ | 9% [7-11] n=741 | 13% n=245 | 8% n=259 | 6% n=127 | 7% n=110 | 6% n=34 | 9% n=707 |
+| Block rate, life 8-14 | 22% [18-26] n=247 | 29% n=66 | 18% n=102 | 18% n=44 | 26% n=35 | 20% n=30 | 22% n=217 |
+| Block rate, life under 8 | 35% [31-39] n=418 | 33% n=120 | 38% n=194 | 34% n=67 | 30% n=37 | 36% n=53 | 35% n=365 |
+| Attackers sent, ratioDiff >= 1 | 39% [37-41] n=1178 | 38% | 38% | 39% | 42% | 34% n=102 | 39% |
+| Attackers sent, ratioDiff 0 to 1 | 19% [16-23] n=362 | 18% | 21% | 24% n=38 | 13% n=60 | 19% n=36 | 19% |
+| Attackers sent, ratioDiff < 0 | 17% [15-19] n=944 | 11% n=301 | 18% | 17% | 30% n=97 | 13% n=123 | 18% |
+| Mulligan lines per game | 0.54 | 0.47 | 0.58 | 0.25 | 1.00 | 0.10 (20 hands) | 0.59 |
+| Non-basic mana sources | 27% n=6410 | 20% | 27% | 31% | 36% | 11% n=497 | 28% |
+
+Reading:
+- **Blocks.** The life-band rule holds in every archetype and in both colour groups: blocks stay under 15% above 15 life and rise to about a third under 8 life (all-games 9% -> 22% -> 35%). Aggro blocks more than the rest in the middle band (29%, n=66, wide interval), which is not a rule yet.
+- **Attacks per aggression input.** The log holds `ratioDiff` and `attackers` per turn but not the chosen level (1-6), so the join is by `ratioDiff` band, not by level: the AI sends 39% of its available attackers when `ratioDiff` >= 1 and 17-19% below 1. Control is the exception when behind (30%, n=97 against 11% for aggro, n=301): control decks hold fewer bodies, so the "available attackers" count is small and the difference needs more games. Patch 012 will log the level to replace this proxy. Attackers are counted per turn from AI_ATTACK_LEVEL rows, so a creature that could attack twice in a turn is counted once.
+- **Removal and spell order.** No new log line covers the removal target choice; the claim in section 3 (highest `evaluateCreature` target) is untested here. Spell choice rows (3,661) show candidates and the top pick only. Mean cast turn (not median) is 12.5 over 1,869 casts: W 10.3 (n=147), multi 12.7 (n=1,722), control 13.8 (n=283), aggro/midrange 12.1. White decks cast earlier, in line with their lower curve, from 10 games only.
+- **Mana source.** 6,410 AI_MANA_SOURCE rows. Non-basic sources pay 27% of the shards; white is 11% (n=497), consistent with white decks being mostly basic Plains. Control 36%, ramp 31%.
+- **Mulligans and hands.** 192 hands logged and 52 mulligan lines (0.54 per game). Control mulligans the most (1.00 per game, 12 games) and ramp the least (0.25); the white decks mulligan 0.10 per game from 10 games, too few to claim.
+- **Commander play.** Only 10 command-zone moves in 96 games, so commander timing cannot be read yet. The log shows moves out of the command zone but no cost; a COMMANDER_CAST line is still needed.
+- **ETB and tokens.** 2,064 triggers (ETB and other) and 152 token zone moves are visible: triggers per game are highest in control (41 per game, 12 games), about 15 in aggro/ramp.
+
+What the new log lines allowed that the old data did not: the GAME header gave deck, tier, archetype and colour per game (a split never possible in the 3,146-game pool); HAND/MULLIGAN lines gave opening hands; AI_MANA_SOURCE gave source choice; TRIGGER lines show ETB triggers (FINAL_REPORT section 2 wrongly says they cannot be read).
+
+Tool problem fixed: AI_* digest rows (SPELL_CHOICE, MANA_SOURCE, BLOCK_START, ATTACK_LEVEL) carried the end-of-game life in `life_a`/`life_b` because the AI_DECISION log lines sit at the end of the raw log. `phase_digest.py` now gives them the life at the end of their own turn. Digests written before 2026-10-21 14:10Z keep the old values, so use the `life=` field in the detail for those (the analysis above does).
+
+Still missing: the chosen aggression level (patch 012), block and attack reasons (012), the commander cast cost, removal target reasoning, and any white or multicolour result split by tier (96 games over 18 cells is too thin). Colours other than W and multi do not appear in this batch. Nothing here changes the numbers in `OPTIONS_FOR_BALANCERS.md`.
