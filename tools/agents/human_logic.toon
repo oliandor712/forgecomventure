@@ -1,8 +1,8 @@
-# Human logic: the user's own rules for deck balance and PC vs NPC balancing. Read before building, judging or testing decks.
-# Claude-only file in TOON (pipe-delimited table; # lines are comments). When a rule conflicts with a metric, the rule wins.
+# Human logic: the user's own rules for DECK BUILDING, deck balance (PC vs NPC) and Forge AI improvement. Nothing else is recorded here.
+# Claude-only file in TOON (pipe-delimited table; # lines are comments). Read before building, judging or testing decks, or proposing AI changes. When a rule conflicts with a metric, the rule wins.
 # status: applied = in code or decks now, partly = some of it done, open = not done or not decided. since = date the user said it.
-# Add a row whenever the user gives deck-balance input in chat; never delete a row, set its status instead.
-rules[34|]{id|area|rule|since|status|where}:
+# Add a row only for user input on deck building, deck balance or AI improvement (town, map, quest and UI rules live in the design docs). Pruned 2026-10-21 at the user's request.
+rules[29|]{id|area|rule|since|status|where}:
   H01|curve|A zone's stage locks at the player's first fight there from Seals held (0-1 stage 1, 2-3 stage 2, 4-5 stage 3)|2026-10-20|applied|TierLock.java and config tierLock
   H02|curve|Wild creatures, random-dungeon enemies, pass keepers, grove guardians and Wardens are mono-color. Trainers are 1-2 colors at stage 1 then 2-3|2026-10-20|applied|build_color_zone.py
   H03|curve|Random dungeons draw from the wild encounter pool, never from keepers or guardians|2026-10-20|applied|build_color_zone.py
@@ -23,7 +23,6 @@ rules[34|]{id|area|rule|since|status|where}:
   H18|commanders|Double the deck pool with variants led by alternate or budget commanders. Change 5-8 cards plus the commander|2026-10-21|applied|variants.py and variants.json
   H19|starters|Starters aim for deck power 27, the middle of tier 2|2026-10-21|applied|starter_tune.py
   H20|starters|Each color has two starters with different commanders and 5-8 different cards. Both commanders start unlocked|2026-10-21|applied|variants.py --starters and hall_roster.py
-  H21|starters|The player picks which commander leads at the Seal Angel after the color pick and can switch at the Commander Hall|2026-10-21|applied|zone_flags.py and setStarterDeck action
   H22|starters|Each starter version holds the other's swap cards in its sideboard|2026-10-21|applied|variants.py set_sideboard
   H23|testing|Every simulation uses equal life on both sides with no exceptions|2026-10-20|applied|run_batch.py
   H24|testing|Life bonuses are eliminated as an encounter bonus. Test only small card bonuses such as a free land or one-drop against the premade ones|2026-10-20|applied|run_batch.py BONUSES
@@ -33,7 +32,3 @@ rules[34|]{id|area|rule|since|status|where}:
   H28|testing|Target is 25 games per AI deck and 40 per starter deck (user, 2026-10-21). Clear results need about 40 games per deck for a 70-30 deck and about 25 matched sets per bonus for a 25-point effect and about 600 games for a seat edge|2026-10-21|applied|balance lab brief
   H29|pc-npc|The player's win rate against NPC enemies: tiers 1-2 target 70%, tiers 3-5 target 50% (user, pc_win_rate, 2026-10-21; replaces the earlier flat 70% at every stage)|2026-10-21|partly|make_report.py PC_TARGET; balance lab reports each stage against its target
   H30|pc-npc|Starting bonuses for enemies stay small and never touch life. Judge them by measured win rate against the starters|2026-10-20|applied|balance lab
-  H31|towns|Commander Hall is mandatory in every town except Emberbrook (Mossgate, gate towns, zone towns)|2026-10-21|open|OVERWORLD.md 4.1a; zone town rows updated; maps not built yet
-  H32|towns|A quest building is allowed only in Mossgate, gate towns and Warden (zone) towns, and is optional there; no other town type gets one|2026-10-21|open|OVERWORLD.md 4.1a; not required by the zone builders; clarified in chat 2026-10-21
-  H33|maps|Door triggers keep the original full-size shape; thin 4 px strips broke Emberbrook house re-entry|2026-10-21|applied|emberbrook, mossgate and temple doors restored; check_doors.py and the map skill updated
-  H34|towns|Town reputation: one scale for shops and quests, suggested -20..+50 (matches the existing +-20 price clamp). Open: scale not chosen, nothing built|2026-10-21|open|RANDOM_QUESTS_ANALYSIS.md s7 and SHOP_GENERATION_ANALYSIS.md s6 propose different scales; needs the user's decision

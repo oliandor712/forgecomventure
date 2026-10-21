@@ -22,7 +22,7 @@
     "forge-ai-lab": {
       "brief": ".claude/agents/forge-ai-lab.md",
       "session": "session_01SdzhYuPRVSAtP7QLaagBxk",
-      "model": "sonnet, effort low",
+      "model": "sonnet, effort high (temporary, until the session limit)",
       "folders": [
         "tools/concordia/ai_lab/",
         "docs/Adventure/Campaign/AI_TAGS_REFERENCE.md"
@@ -82,6 +82,10 @@
         [
           "2026-10-21",
           "R/G sims moved to the temp agent: logic research only"
+        ],
+        [
+          "2026-10-21",
+          "Temporarily raise effort to high and keep it until the session limit is hit"
         ]
       ],
       "analyses": [
@@ -118,7 +122,7 @@
     "deck-balance-lab": {
       "brief": ".claude/agents/deck-balance-lab.md",
       "session": "session_011UrsiVw1s1nsvYUSkv2iLy",
-      "model": "sonnet, effort low",
+      "model": "sonnet, effort high (temporary, until the session limit)",
       "folders": [
         "tools/concordia/balance_lab/"
       ],
@@ -190,6 +194,10 @@
         [
           "2026-10-21",
           "Remove the 30-minute cap from the brief"
+        ],
+        [
+          "2026-10-21",
+          "Temporarily raise effort to high and keep it until the session limit is hit"
         ]
       ],
       "analyses": [
@@ -206,7 +214,7 @@
     "multi-balance-temp": {
       "brief": ".claude/agents/multi-balance-temp.md",
       "session": "session_01Xf8fcEAkTmjYqjkqjprkzB",
-      "model": "sonnet, effort low",
+      "model": "sonnet, effort high (temporary, until the session limit)",
       "folders": [
         "tools/concordia/balance_lab/records_multitemp.csv"
       ],
@@ -220,6 +228,10 @@
         [
           "2026-10-21",
           "Take the R/G sims from the AI lab; main session takes multi slice 2/3"
+        ],
+        [
+          "2026-10-21",
+          "Temporarily raise effort to high and keep it until the session limit is hit"
         ]
       ],
       "analyses": []
@@ -227,7 +239,7 @@
     "balance-assist-temp": {
       "brief": ".claude/agents/balance-assist-temp.md",
       "session": "session_013BsiDe1jUJVyjo7fDgKnNq",
-      "model": "sonnet, effort low",
+      "model": "sonnet, effort high (temporary, until the session limit)",
       "folders": [
         "tools/concordia/balance_lab/records_assist.csv"
       ],
@@ -237,6 +249,10 @@
         [
           "2026-10-21",
           "Add a temp agent that assists the deck balance lab by taking over the U shard"
+        ],
+        [
+          "2026-10-21",
+          "Temporarily raise effort to high and keep it until the session limit is hit"
         ]
       ],
       "analyses": []
