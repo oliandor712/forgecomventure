@@ -1,0 +1,294 @@
+1		TURN	Turn 1 (B)
+1	B's Untap step	PHASE	B's Untap step
+1	B's Upkeep step	PHASE	B's Upkeep step
+1	B's Draw step	PHASE	B's Draw step
+1	B's Main phase, precombat	PHASE	B's Main phase, precombat
+1	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+1	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+1	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+1	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+1	B's Combat Damage Step	PHASE	B's Combat Damage Step
+1	B's End of Combat Step	PHASE	B's End of Combat Step
+1	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+1	B's End step	PHASE	B's End step
+1	B's Cleanup step	PHASE	B's Cleanup step
+2	B's Cleanup step	TURN	Turn 2 (A)
+2	A's Untap step	PHASE	A's Untap step
+2	A's Upkeep step	PHASE	A's Upkeep step
+2	A's Draw step	PHASE	A's Draw step
+2	A's Main phase, precombat	PHASE	A's Main phase, precombat
+2	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+2	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+2	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+2	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+2	A's Combat Damage Step	PHASE	A's Combat Damage Step
+2	A's End of Combat Step	PHASE	A's End of Combat Step
+2	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+2	A's End step	PHASE	A's End step
+2	A's Cleanup step	PHASE	A's Cleanup step
+3	A's Cleanup step	TURN	Turn 3 (B)
+3	B's Untap step	PHASE	B's Untap step
+3	B's Upkeep step	PHASE	B's Upkeep step
+3	B's Draw step	PHASE	B's Draw step
+3	B's Main phase, precombat	PHASE	B's Main phase, precombat
+3	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+3	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+3	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+3	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+3	B's Combat Damage Step	PHASE	B's Combat Damage Step
+3	B's End of Combat Step	PHASE	B's End of Combat Step
+3	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+3	B's Main phase, postcombat	STACK_ADD	B cast Arcane Signet
+3	B's End step	PHASE	B's End step
+3	B's Cleanup step	PHASE	B's Cleanup step
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's Main phase, postcombat	STACK_ADD	A cast Wildwood Scourge
+4	A's End step	PHASE	A's End step
+4	A's Cleanup step	PHASE	A's Cleanup step
+5	A's Cleanup step	TURN	Turn 5 (B)
+5	B's Untap step	PHASE	B's Untap step
+5	B's Upkeep step	PHASE	B's Upkeep step
+5	B's Draw step	PHASE	B's Draw step
+5	B's Main phase, precombat	PHASE	B's Main phase, precombat
+5	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+5	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+5	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+5	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+5	B's Combat Damage Step	PHASE	B's Combat Damage Step
+5	B's End of Combat Step	PHASE	B's End of Combat Step
+5	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+5	B's Main phase, postcombat	STACK_ADD	B cast Chief of the Foundry
+5	B's End step	PHASE	B's End step
+5	B's Cleanup step	PHASE	B's Cleanup step
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Main phase, precombat	STACK_ADD	A cast Hydra's Growth targeting [Wildwood Scourge (108)]
+6	A's Main phase, precombat	STACK_ADD	A triggered Hydra's Growth
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+7	A's Cleanup step	TURN	Turn 7 (B)
+7	B's Untap step	PHASE	B's Untap step
+7	B's Upkeep step	PHASE	B's Upkeep step
+7	B's Draw step	PHASE	B's Draw step
+7	B's Main phase, precombat	PHASE	B's Main phase, precombat
+7	B's Main phase, precombat	STACK_ADD	B cast Rise and Shine targeting [Arcane Signet (31)]
+7	B's Main phase, precombat	STACK_ADD	B cast Swiftfoot Boots
+7	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+7	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+7	B's Declare Attackers Step	COMBAT	B assigned Chief of the Foundry (10) to attack A.
+7	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+7	B's Declare Blockers Step	COMBAT	A didn't block Chief of the Foundry (10).
+7	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+7	B's Combat Damage Step	PHASE	B's Combat Damage Step
+7	B's Combat Damage Step	DAMAGE	Chief of the Foundry (10) deals 2 combat damage to A.
+7	B's Combat Damage Step	LIFE	Life: A 15 > 13
+7	B's End of Combat Step	PHASE	B's End of Combat Step
+7	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+7	B's End step	PHASE	B's End step
+7	B's Cleanup step	PHASE	B's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Upkeep step	STACK_ADD	A triggered Hydra's Growth
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Wildwood Scourge (108) to attack B.
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B didn't block Wildwood Scourge (108).
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Wildwood Scourge (108) deals 4 combat damage to B.
+8	A's Combat Damage Step	LIFE	Life: B 15 > 11
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Renata, Called to the Hunt
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Main phase, precombat	STACK_ADD	B cast Clay Golem
+9	B's Main phase, precombat	STACK_ADD	B activated Swiftfoot Boots targeting [Arcane Signet (31)]
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Upkeep step	STACK_ADD	A triggered Hydra's Growth
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Main phase, precombat	STACK_ADD	A cast Jaheira, Friend of the Forest
+10	A's Main phase, precombat	STACK_ADD	A triggered Wildwood Scourge
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Wildwood Scourge (108) and Renata, Called to the Hunt (192) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B assigned Chief of the Foundry (10) to block Wildwood Scourge (108). B assigned Clay Golem (3) to block Renata, Called to the Hunt (192).
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Wildwood Scourge (108) deals 9 damage to Chief of the Foundry (10).
+10	A's Combat Damage Step	DAMAGE	Renata, Called to the Hunt (192) deals 5 damage to Clay Golem (3).
+10	A's Combat Damage Step	DAMAGE	Clay Golem (3) deals 5 damage to Renata, Called to the Hunt (192).
+10	A's Combat Damage Step	DAMAGE	Chief of the Foundry (10) deals 2 damage to Wildwood Scourge (108).
+10	A's Combat Damage Step	ZONE_CHANGE	Renata, Called to the Hunt (192) was put into Graveyard from Battlefield.
+10	A's Combat Damage Step	ZONE_CHANGE	Chief of the Foundry (10) was put into Graveyard from Battlefield.
+10	A's Combat Damage Step	ZONE_CHANGE	Clay Golem (3) was put into Graveyard from Battlefield.
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A triggered Khalni Garden
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	STACK_ADD	B cast Traxos, Academy Guardian
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Upkeep step	STACK_ADD	A triggered Hydra's Growth
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Main phase, precombat	STACK_ADD	A cast Reclamation Sage
+12	A's Main phase, precombat	STACK_ADD	A triggered Reclamation Sage targeting [Traxos, Academy Guardian (100)]
+12	A's Main phase, precombat	ZONE_CHANGE	Traxos, Academy Guardian (100) was put into Graveyard from Battlefield.
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Wildwood Scourge (108) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B assigned Arcane Signet (31) to block Wildwood Scourge (108).
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Wildwood Scourge (108) deals 18 damage to Arcane Signet (31).
+12	A's Combat Damage Step	DAMAGE	Arcane Signet (31) deals 4 damage to Wildwood Scourge (108).
+12	A's Combat Damage Step	ZONE_CHANGE	Arcane Signet (31) was put into Graveyard from Battlefield.
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Elemental Bond
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Main phase, precombat	STACK_ADD	B cast Grapeshot Catapult
+13	B's Main phase, precombat	STACK_ADD	B activated Swiftfoot Boots targeting [Grapeshot Catapult (96)]
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's End step	PHASE	B's End step
+13	B's Cleanup step	PHASE	B's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Upkeep step	STACK_ADD	A triggered Hydra's Growth
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Main phase, precombat	STACK_ADD	A triggered Gingerbread Cabin
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Wildwood Scourge (108) and Jaheira, Friend of the Forest (201) to attack B.
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B assigned Grapeshot Catapult (96) to block Wildwood Scourge (108). B didn't block Jaheira, Friend of the Forest (201).
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Wildwood Scourge (108) deals 36 damage to Grapeshot Catapult (96).
+14	A's Combat Damage Step	DAMAGE	Jaheira, Friend of the Forest (201) deals 3 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Grapeshot Catapult (96) deals 2 damage to Wildwood Scourge (108).
+14	A's Combat Damage Step	LIFE	Life: B 11 > 8
+14	A's Combat Damage Step	ZONE_CHANGE	Grapeshot Catapult (96) was put into Graveyard from Battlefield.
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD	A cast Loyal Guardian
+14	A's Main phase, postcombat	STACK_ADD	A triggered Elemental Bond
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Draw step	PHASE	B's Draw step
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Main phase, precombat	STACK_ADD	B cast Shimmer Myr
+15	B's Main phase, precombat	STACK_ADD	B cast Junk Diver
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's End of Combat Step	PHASE	B's End of Combat Step
+15	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+15	B's End step	PHASE	B's End step
+15	B's Cleanup step	PHASE	B's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Upkeep step	STACK_ADD	A triggered Hydra's Growth
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Beginning of Combat Step	STACK_ADD	A triggered Loyal Guardian
+16	A's Beginning of Combat Step	STACK_ADD	A triggered Wildwood Scourge
+16	A's Beginning of Combat Step	STACK_ADD	A triggered Wildwood Scourge
+16	A's Beginning of Combat Step	STACK_ADD	A triggered Wildwood Scourge
+16	A's Beginning of Combat Step	STACK_ADD	A triggered Wildwood Scourge
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Attackers Step	COMBAT	A assigned Wildwood Scourge (108), Loyal Guardian (166), Jaheira, Friend of the Forest (201), Reclamation Sage (167) and Plant Token (205) to attack B.
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's Declare Blockers Step	COMBAT	B assigned Junk Diver (24) to block Wildwood Scourge (108). B didn't block Loyal Guardian (166). B assigned Shimmer Myr (8) to block Jaheira, Friend of the Forest (201). B didn't block Reclamation Sage (167). B didn't block Plant Token (205).
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's Combat Damage Step	DAMAGE	Wildwood Scourge (108) deals 77 damage to Junk Diver (24).
+16	A's Combat Damage Step	DAMAGE	Loyal Guardian (166) deals 5 combat damage to B.
+16	A's Combat Damage Step	DAMAGE	Jaheira, Friend of the Forest (201) deals 4 damage to Shimmer Myr (8).
+16	A's Combat Damage Step	DAMAGE	Reclamation Sage (167) deals 3 combat damage to B.
+16	A's Combat Damage Step	DAMAGE	Plant Token (205) deals 1 combat damage to B.
+16	A's Combat Damage Step	DAMAGE	Junk Diver (24) deals 1 damage to Wildwood Scourge (108).
+16	A's Combat Damage Step	DAMAGE	Shimmer Myr (8) deals 2 damage to Jaheira, Friend of the Forest (201).
+16	A's Combat Damage Step	LIFE	Life: B 8 > -1
