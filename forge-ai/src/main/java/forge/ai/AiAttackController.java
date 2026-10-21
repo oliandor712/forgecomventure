@@ -1257,9 +1257,6 @@ public class AiAttackController {
             // end see how long until unblockable attackers will be fatal
             // *****************
 
-            if (AiDecisionLog.enabled()) {
-                AiDecisionLog.add("ATTACK_LEVEL\t" + ai.getName() + "\tratioDiff=" + String.format("%.2f", ratioDiff) + "\toutNumber=" + outNumber + "\tattackers=" + this.attackers.size());
-            }
             // decide on attack aggression based on a comparison of forces, life
             // totals and other considerations some bad "magic numbers" here
             // TODO replace with nice descriptive variable names

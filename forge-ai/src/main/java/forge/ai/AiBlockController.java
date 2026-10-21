@@ -1113,9 +1113,6 @@ public class AiBlockController {
      * @param possibleBlockers list of blockers to be considered
      */
     private void assignBlockers(final Combat combat, List<Card> possibleBlockers) {
-        if (AiDecisionLog.enabled()) {
-            AiDecisionLog.add("BLOCK_START\t" + ai.getName() + "\tlife=" + ai.getLife() + "\tattackers=" + attackers.size() + "\tblockers=" + blockersLeft.size());
-        }
         if (attackers.isEmpty()) {
             return;
         }

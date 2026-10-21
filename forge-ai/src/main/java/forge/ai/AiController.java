@@ -1669,15 +1669,6 @@ public class AiController {
         if (all == null || all.isEmpty())
             return null;
 
-        if (AiDecisionLog.enabled()) {
-            List<SpellAbility> top = new ArrayList<>(all);
-            top.sort(ComputerUtilAbility.saEvaluator);
-            StringBuilder names = new StringBuilder();
-            for (int i = 0; i < Math.min(3, top.size()); i++) {
-                names.append(i > 0 ? "|" : "").append(top.get(i).getHostCard() == null ? "?" : top.get(i).getHostCard().getName());
-            }
-            AiDecisionLog.add("SPELL_CHOICE\t" + player.getName() + "\tcandidates=" + all.size() + "\ttop=" + names);
-        }
         try {
             all.sort(ComputerUtilAbility.saEvaluator); // put best spells first
             ComputerUtilAbility.sortCreatureSpells(all);
