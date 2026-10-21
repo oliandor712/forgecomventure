@@ -11,7 +11,8 @@ export BALANCE_WORKER=$WORKER; [ -n "$SLICE" ] && export BALANCE_SLICE=$SLICE
 git pull --no-rebase -q origin campaign-design 2>/dev/null
 timeout ${CHUNK_SECONDS:-540} python3 tools/concordia/balance_lab/run_batch.py --shard "$SHARD" --until-done 2>&1 | tail -3
 for p in $(ps -eo pid,args | awk '/DeckSim/ && !/awk/ {print $1}'); do kill "$p" 2>/dev/null; done
-tools/concordia/balance_lab/push_records.sh "records_${WORKER}.csv" 2>&1 | tail -1
+[ "$WORKER" != "logs" ] && rm -rf tools/concordia/ai_lab/results/balance_logs/"${WORKER}"-*  # raw phase logs of a game cut off by the timeout; digests are kept
+tools/concordia/balance_lab/push_records.sh "records_${WORKER}.csv" tools/concordia/ai_lab/digests 2>&1 | tail -1
 python3 - "$SHARD" "$SLICE" <<'P'
 import sys,os
 sys.path.insert(0,'tools/concordia/balance_lab')
