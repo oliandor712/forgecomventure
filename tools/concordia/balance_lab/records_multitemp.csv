@@ -1,0 +1,7 @@
+utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,turns,timeout
+2026-10-21T02:24:05Z,a2f67786,inner,4,decks/tier4/T4_BG_Yargle.dck,decks/tier4/T4_UBG_Damia.dck,30,30,,,a,b,22,0
+2026-10-21T02:24:05Z,a2f67786,inner,4,decks/tier4/T4_BG_Yargle.dck,decks/tier4/T4_UBG_Damia.dck,30,30,,,b,a,30,0
+2026-10-21T02:24:34Z,a2f67786,inner,5,decks/tier5/T5_BRG_Winter.dck,decks/tier5/T5_WG_Garnet.dck,35,35,,,a,b,28,0
+2026-10-21T02:24:34Z,a2f67786,inner,5,decks/tier5/T5_BRG_Winter.dck,decks/tier5/T5_WG_Garnet.dck,35,35,,,b,b,17,0
+2026-10-21T02:25:03Z,a2f67786,inner,3,decks/tier3/T3_GW_Sigarda.dck,decks/tier3/T3_WUB_Yshtola.dck,25,25,,,a,b,30,0
+2026-10-21T02:25:03Z,a2f67786,inner,3,decks/tier3/T3_GW_Sigarda.dck,decks/tier3/T3_WUB_Yshtola.dck,25,25,,,b,b,17,0
