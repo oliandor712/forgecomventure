@@ -21,3 +21,5 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:23:41Z,a2f67786,inner,5,decks/tier5/T5_WR_Craig.dck,decks/tier5/T5_WB_Carmen.dck,35,35,,,b,a,32,0
 2026-10-21T02:24:17Z,a2f67786,inner,2,decks/tier2/T2_UB_The.dck,decks/tier2/T2_WU_Denry.dck,15,15,,,a,b,18,0
 2026-10-21T02:24:17Z,a2f67786,inner,2,decks/tier2/T2_UB_The.dck,decks/tier2/T2_WU_Denry.dck,15,15,,,b,a,22,0
+2026-10-21T02:24:45Z,a2f67786,inner,2,decks/tier2/T2_WR_Balefang.dck,decks/tier2/T2_BG_Meren.dck,15,15,,,a,a,13,0
+2026-10-21T02:24:45Z,a2f67786,inner,2,decks/tier2/T2_WR_Balefang.dck,decks/tier2/T2_BG_Meren.dck,15,15,,,b,b,15,0
