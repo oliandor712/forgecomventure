@@ -98,3 +98,114 @@ What this means for deck types (provisional):
 - Tokens: token targets get +30 value, so the AI aims removal at the tokens' best member when it has to choose.
 
 Flagged cards (AI:RemoveDeck): a flagged removal card never reaches this path because the play ban applies first. Unflagging a removal card puts it through the rules above, so its value depends on the target scores here, not on the card script.
+
+## 4. Spell order (ComputerUtilAbility.java, AiController.java)
+
+Entry: `chooseSpellAbilityToPlayFromList` (AiController.java:1668) sorts the candidate list, then takes the first one that its API logic accepts. Candidates come from `getSpellAbilityToPlay` (1596), which first handles responses to the stack (`topOwnedByAI`, `mustRespond`, 1600-1625).
+
+Sort, in `saComparator.compareEvaluator` (ComputerUtilAbility.java:244-355), higher score first:
+- Base score: total mana cost (CMC of the pay costs).
+- Deprioritised: `AIActivateLast` (first check), planar die rolls marked low priority, pump spells whose only cost is energy (last, by energy amount).
+- Promoted: zero-CMC abilities before costed ones (except mana abilities), and `FreeSpellAI` cards first.
+- Same-card ties: a cheaper spectacle cost is preferred.
+- Priority added to the score by `getSpellAbilityPriority` (lines 330-355 onward):
+  - Creatures +1 (creature spells before spells).
+  - Flagged cards (`isCardRemAIDeck`) -10. This is the play-ban flag, so flagged cards sort last even when they are cast.
+  - `AIPriorityModifier` SVar: added directly.
+  - `EndOfTurnLeavePlay` on a card in play +1 (use before it goes).
+  - Cards in hand when the hand is over the maximum size: +1 per card over the limit, so the AI casts cards before it has to discard.
+  - Equipment with no creatures on the battlefield -9.
+- Creature spells are then re-sorted among themselves by `EvaluateCreatureSpellComparator` (`sortCreatureSpells`, ComputerUtilAbility.java:458-475). The comparator uses `evaluateCreature` and is skipped when there are fewer than two creature spells.
+
+What this means for deck types (provisional):
+- Ramp and midrange: the highest-cost spell goes first, so the AI taps out for its biggest threat when it can. Cheap interaction waits.
+- Control: cheap instants come after expensive sorceries in the same turn, so the AI can end up holding removal for the wrong turn. Watch for this in the logs.
+- Aggro: zero-CMC and cheap creatures sort early and get cast before the AI has mana for its bigger threats.
+- Tokens: token makers cost little and sort late unless they are creatures, which then drop to the creature re-sort.
+
+Flagged cards (AI:RemoveDeck): a flagged card is pushed down by -10 in this sort. Removing the flag restores its normal place in the order, so once a card is castable, it is cast at its CMC rank, not last.
+
+Open: the response path (`topOwnedByAI`, `mustRespond`, 1600-1625) is only sketched here.
+
+## 5. Mana use (ComputerUtilMana.java)
+
+Paying a cost: `chooseManaAbility` (ComputerUtilMana.java:293) picks the next mana source for a shard. Before the default order, it applies source preferences:
+- `AIPreference ManaFrom$` or `AIManaPref`: Snow sources first; Treasure spent one at a time (`Treasure`) or freely (`TreasureMax`); `NotSameCard` removes sources with the same name as the spell (318-344).
+- It skips the spell's own host as a source (~352), and any creature already paying a tap cost this turn (memory set `PAYS_TAP_COST`, ~355).
+- Pump instants and sorceries do not tap a creature that is their target (Servant of the Conduit case, ~380).
+- Animate: the AI does not tap the enchanted card for its own aura, and a manland animated this turn is not tapped again (~365-375).
+- Attach: `AvoidPayingWithAttachTarget` stops the AI paying with the land it is attaching to, when another copy is untapped (~390-396).
+- Cavern of Souls: for generic costs, pays with the coloured ability when a creature type matches, so the spell stays uncounterable (~400-415).
+
+Order of sources, `getManaSourcesToPayCost` and `sortManaAbilities` (133-160):
+- Each source card gets a score (`scoreManaProducingCard`, ~108-130), lower is tapped first:
+  - Its mana abilities' own score.
+  - +13 for each non-mana activated ability that is possible.
+  - +13 if it can attack, +13 if it can block.
+- So lands with no other use are tapped first, and creatures with abilities or combat use are kept untapped.
+- Shards are paid in order of fewest sources first (line 1250).
+- Final order (~1640-1660): colourless sources, then sources by number of mana they make (1 to 5), then any-colour sources, then other sources with the best creature last (sorted by `evaluateCreature`, reversed), then "use last" sources such as sacrifice outlets.
+
+Spending for X and budget checks:
+- `determineLeftoverMana` (ComputerUtilMana.java:1784) increases X one at a time until the cost is no longer payable, capped by `XMax` or `AIXMax`. The AI uses all available mana for X spells.
+- `getAvailableManaEstimate` (1458-1461) is the number the attack and fog logic read for "open mana". It is used in the attack trade roll (AiAttackController 1271-1282) and in FogAi's mana reservation (FogAi.java:105-133).
+
+What this means for deck types (provisional):
+- Ramp: many mana sources; the AI keeps creatures with abilities untapped and taps lands first, so it can often cast a big spell and still hold blockers.
+- Control: holding open mana matters for bluffs and tricks. The attack logic counts open mana, so a control deck with lands untapped looks less exposed, and the AI attacks less into it.
+- Aggro: low open mana, so the AI attacks more freely on turns when it is tapped out (the trade roll allows this).
+
+Flagged cards (AI:RemoveDeck) relevant here: none change mana use. A flagged mana source is still used normally if it is in play. Fog counting is separate from this estimate: `FogAi.countAvailableFogs` counts only real Fog API spells, so an Effect-based Fog is not counted (patch 006 would change that).
+
+Still open: the `checkCosts` path (`canPayShardWithSpellAbility`) and reserved-card handling.
+
+## Log check of blocking (results/, s005 and related runs, 2026-10-21)
+Source: phase TSVs in tools/concordia/ai_lab/results/*/*.tsv. Each declare-blockers step with attackers was counted by the defender's life at that moment (life from LIFE lines).
+- Defender life 15 or more: blocked in 32 of 71 steps (45%).
+- Defender life 8 to 14: blocked in 21 of 33 steps (64%).
+- Defender life under 8: blocked in 16 of 21 steps (76%).
+Reading: blocks rise as life falls, which fits the rule that chump blocks wait for life in danger (section 1). Blocks at high life are still common, so good blocks and trades are doing much of the work, not only chumps. Caveats: board sizes differ between steps and the counts are small; this is direction, not a fitted rate.
+
+## Full log pass (results/, 230 phase logs, 2026-10-21)
+Scope: every TSV under tools/concordia/ai_lab/results/, including shadow runs. Mixed experiments and deck versions, so the numbers describe the logs as a whole, not one arm.
+
+Casting:
+- 547 spell casts with a turn number. Median cast turn 11. Early (turns 1-4) 20, mid (5-8) 139, late (9+) 388. The logs are slow-starting: most casts come after turn 8.
+- Flagged cards (AI:RemoveDeck) cast by the lab deck (side A), median turn of cast (range):
+  - Aquamoeba: 56 casts, median 6 (3-21)
+  - Turtleshell Changeling: 55, median 12 (7-33)
+  - Myr Quadropod: 50, median 10 (7-40)
+  - Vine Snare: 25, median 14 (8-27)
+  - Thwart the Enemy: 18, median 16 (12-26)
+  - Endure: 2, median 25 (21-29)
+  These are the flagged cards that reach the stack at all, so the flag removal experiments show them cast after the flag is gone.
+
+Combat:
+- Attack declarations by side A: 150 steps, mean 1.7 attackers. By side B: 182 steps, mean 4.6 attackers. The gap is mostly the deck build (B's boards are wider), not an AI choice; a board-matched test is needed before reading attack restraint from it.
+- Combat damage events: 71 in turns 5-8 and 629 in turns 9 and later. Games are decided late; early combat is rare.
+
+Reading against the logic notes:
+- Attack levels (section 2) and blocks (section 1, log check) are consistent with the logs: blocks rise as life falls, and attackers are few while the board is small.
+- Spell timing (section 4) is consistent with the late casting. Expensive spells are cast late in these decks, so the high-CMC-first rule rarely fires early.
+- Nothing in the full pass contradicts the mana rules (section 5), but it does not test them either; no log line shows which source paid for a spell.
+
+Caveats: counts come from different experiments, decks and life totals; the phase logs do not record AI scores, so "why" is inferred from the code, not read from the logs. Treat this as a survey to target the next experiments, not as evidence for a rule change.
+
+## Decision-level results by experiment arm (2026-10-21)
+Source: summary.txt and *-summary.txt in tools/concordia/ai_lab/results/. Ten games per arm, so win counts are not evidence on their own (H28 needs about 40); the decision counts are what this section reads. "Activations" are card activations, which for SwitchPT cards (Aquamoeba, Turtleshell Changeling, Myr Quadropod) are the switch decisions.
+
+Switch decisions (SwitchPT, patch 001 and 005 family):
+- n001 patched, before the v3 switch rule: 92 activations in 10 games.
+- n001 variants with v3-era logic: n001-v3 2 activations, n001-guard 4, n001-twoversions 8. Casts stayed at 5-8 per card.
+- s005 base 68 activations, s005 code (v3) 14: the same reduction seen in the earlier pilot.
+Reading: the v3 switch rule removes most switch activations (about 92 to 2-8 in n001, 68 to 14 in s005) while keeping the casts. Decision count supports the v3 logic; it does not show that switching helps play.
+
+Win counts (10 games per arm, not evidence on their own):
+- n001 (switch deck): the A side wins 0 to 1 of 10 in every arm, so this deck is losing regardless of switch logic. Its games are long (21 to 29 turns), so the switch rule is not what decides them.
+- Fog and flag arms (g008, r008, s006, n003): A wins between 2 and 9 of 10, with no consistent direction across patched and base. Treat as noise.
+
+Shadow test (008, gang-block co-blockers): 406 blocker-branch evaluations, 37 with co-blockers present, 0 disagreements between base and 008. This is the same result as before: patch 008 does not change any decision in these logs.
+
+Whitefog run (003, patched only): Endure 0 casts, Shield Dancer 5 casts (creature only, postcombat), Harsh Justice 0 casts. Harsh Justice is not cast even without its flag, which matches the window problem noted earlier: its window does not overlap FogAi's declare-blockers window (patch 004 needed).
+
+Open decision-logic questions from these arms: why the switch deck loses even with fewer switches; whether Shield Dancer's creature-only casts are the AI's choice or a targeting result (EffectAi.java:136-140).
