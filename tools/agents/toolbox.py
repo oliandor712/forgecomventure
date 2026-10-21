@@ -5,7 +5,7 @@
   python3 tools/agents/toolbox.py --check   # (every agent, after git pull) prints UP TO DATE, or STALE with what changed
 
 The tool list below is the registry of tools; add a line to TOOLS when a new tool becomes standard.
-Each tool shows the commit that last changed it (informational; in a shallow clone these ids can differ). The stamp is built from file contents, so it is identical in every clone.
+Each tool shows the commit that last changed it (informational; in a shallow clone these ids can differ). The stamp is built from the contents of the scripts and rules (not the documents agents edit, see UNSTAMPED), so it is identical in every clone and only changes when a tool changes.
 """
 import csv, glob, hashlib, os, subprocess, sys, datetime
 
@@ -39,6 +39,11 @@ TOOLS = [
     ("docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md", "ai lab, main", "AI change checkboxes; only the user ticks"),
     ("docs/Adventure/Campaign/RESEARCH_MASTER_REPORT.md", "all", "the compiled research so far"),
 ]
+# Documents that agents edit (listed above for reference, but NOT part of the stamp: an agent edit must not make everyone's check say STALE)
+UNSTAMPED = {"tools/concordia/ai_lab/OPTIONS_FOR_BALANCERS.md", "tools/concordia/ai_lab/DECISION_LOGIC.md",
+             "tools/concordia/ai_lab/RESULTS_UNCHANGED_PLAN.md", "docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md",
+             "docs/Adventure/Campaign/RESEARCH_MASTER_REPORT.md", "tools/concordia/ai_lab/patches/SIM_ACTIVE.txt",
+             "tools/agents/AGENT_KNOWLEDGE.md", "tools/agents/CONTEXT.md"}
 DATA_DIRS = [
     ("forge-gui/res/adventure/Concordia/decks/tier1", "AI decks, tier 1"), ("forge-gui/res/adventure/Concordia/decks/tier2", "AI decks, tier 2"),
     ("forge-gui/res/adventure/Concordia/decks/tier3", "AI decks, tier 3"), ("forge-gui/res/adventure/Concordia/decks/tier4", "AI decks, tier 4"),
@@ -60,6 +65,7 @@ def tools_stamp():
     (A stamp built from last-commit ids differs in a shallow clone and made --check say STALE for ever.)"""
     parts = []
     for p, _, _ in TOOLS:
+        if p in UNSTAMPED: continue
         fp = os.path.join(ROOT, p)
         try:
             h = hashlib.sha1(open(fp, "rb").read().replace(b"\r\n", b"\n")).hexdigest()[:8]
