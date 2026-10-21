@@ -10,13 +10,32 @@ Tools:
 
 ## 1. The three tiers
 
+Tier 1 requirements live in `tools/concordia/tier1_rules.py` (the one source; deck_tier, the builder and archetype_rules import it):
+
+| Setting | Tier 1 value |
+|---|---|
+| Deck | 100 cards: commander + 99 |
+| Commander | one legendary creature, mana value 2-4, common or uncommon, one commander (a Partner-ability commander is fine) |
+| Lands | 41-42, decided last from the curve |
+| Power (average card power) | 16-18 |
+| Creatures | 30-36; low-* subarchetypes 26 up to 36 minus their shift |
+| Archetype build targets (creatures) | aggro 33-36, tribal 31-34, tokens 29-32, kept inside the band |
+| Instants + sorceries (minimum) | tokens 12, aggro 10, tribal 8 |
+| Enchantments (minimum) | tokens 3, tribal 2, aggro 1 |
+| Tokens archetype | 13 or more token makers |
+| Ramp / draw / removal | 0-3 each |
+| Fast mana, tutors, wipes, Game Changers, extra turns, combos | none |
+| Rarity | commons and uncommons only (up to 25 uncommons); staples only as uncommons |
+| Enemy life | 10-12 |
+| Commander support (H17) | 5 or more deck cards that work with the commander |
+
 | | Tier 1: Weak / wild | Tier 2: Moderate | Tier 3: Challenging |
 |---|---|---|---|
 | Used for | Wild encounters, raiders, route trainers early on, tutorials | Route trainers, gym trainers, the rival's early fights | Wardens, the Champion's Paragons, secret legends, late rival fights |
 | Enemy life | 10-12 | 15-20 | 25-35 |
 | Commander Bracket | **Bracket 1 (Exhibition)**: themed, deliberately under-built | **Bracket 2 (Core)**: Concordia's own starters, about a stock precon | **Bracket 3 (Upgraded)**: Forge's Realm of Legends enemy decks, minus anything the AI can't play |
 | Commander | Common or uncommon, mana value 2-4, simple text | Common, uncommon or rare, mana value 3-5, useful every game | Uncommon, rare or mythic, mana value 3-7, the deck's engine |
-| Lands | 40-46, all basic | 36-39, mostly basic | 33-38, with good nonbasics |
+| Lands | 41-42, all basic | 36-39, mostly basic | 33-38, with good nonbasics |
 | Land count check (Karsten, §2 step 3) | not checked: Tier 1 is over-landed on purpose | within ±3 | within ±3 |
 | Ramp | 0-3 | 2-8 | 8-16 |
 | Fast mana (Sol Ring, moxen, rituals) | 0 | 0-1 | 0-3 |

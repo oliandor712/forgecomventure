@@ -13,6 +13,7 @@ import sys, os, re, json, pickle, collections, math
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 import deck_tier as dt
+import tier1_rules as t1  # tier 1 requirements (one source of truth, tools/concordia/tier1_rules.py)
 import archetype_rules as ar  # archetype windows and sub-archetype classification (tools/concordia)
 import ability_tags as at  # ability-led tags and the deck-building bonus (deckgen)
 import commander_support as cp  # what supports a commander's own ability (human logic H31-H36)
@@ -20,7 +21,6 @@ data = dt.build_cache(); cfg = json.load(open(dt.CONFIG))
 pool = pickle.load(open(os.path.join(HERE, 'pool.pkl'), 'rb'))
 RES = dt.RES
 OUT = os.path.join(RES, 'adventure', 'Concordia', 'decks')
-LAND_CLAMP = {1: (41, 42)}  # land step only: tier 1 decks keep 41-42 lands (user, 2026-10-21); other tiers use archetype_rules.LAND_RANGE
 ABILITY = {}  # card name -> ability tags, computed once per card (ability_tags.tags_of)
 def ability_tags(p):
     if p['name'] not in ABILITY: ABILITY[p['name']] = at.tags_of(at.card_text(p['name']))
@@ -95,7 +95,7 @@ def creature_band(d):
 
 def human_pass1(d, ident, rules):
     """Pass 1, before the fill: the rules as build parameters. Human-logic rows win over the metrics (file header)."""
-    return {'target': 17.0 if 'H08' in rules else T1_TARGET,  # H08: tier 1 power 16-18
+    return {'target': t1.POWER['target'] if 'H08' in rules else T1_TARGET,  # H08: tier 1 power 16-18
             'bonus': d.get('_boost', {}).get('bonus', 1.0),  # ability_tags weight; raised once on a retry
             'cwin': creature_band(d) if 'H11' in rules and d['tier'] == 1 else None,  # H11 wins: the band from archetype_rules.creature_check
             'spells': 'H12' in rules and 'U' in ident,  # H12: a blue deck carries spells, so fewer creatures
@@ -135,8 +135,7 @@ def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     return out
 BASIC = {'W': 'Plains', 'U': 'Island', 'B': 'Swamp', 'R': 'Mountain', 'G': 'Forest'}
 SPEC = {
- 1: dict(lands=42, quota={'removal': 2, 'draw': 1, 'ramp': 1}, cap={'ramp': 2, 'draw': 2, 'removal': 3, 'wipe': 0, 'tutor': 0, 'fast': 0},
-         creatures=30, cmax=34, types={'Instant|Sorcery': 10, 'Artifact|Enchantment': 6}, curve={1: 7, 2: 20, 3: 16, 4: 8, 5: 6, 6: 2}, rar={'C': 99, 'U': 25}, gc=0),
+ 1: t1.BUILD_SPEC,
  2: dict(lands=38, quota={'wipe': 1, 'removal': 8, 'ramp': 5, 'draw': 5}, cap={'ramp': 7, 'draw': 8, 'removal': 10, 'wipe': 2, 'tutor': 1, 'fast': 1},
          creatures=30, cmax=34, types={'Instant': 5, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 4}, curve={1: 6, 2: 15, 3: 15, 4: 12, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 10, 'M': 1}, gc=0),
  3: dict(lands=37, quota={'wipe': 2, 'removal': 10, 'ramp': 10, 'draw': 9}, cap={'ramp': 12, 'draw': 11, 'removal': 13, 'wipe': 3, 'tutor': 2, 'fast': 3},
@@ -150,16 +149,16 @@ TARGET_POWER = {2: 26.5, 3: 35.5, 4: 40, 5: 46.5}  # card power the builder aims
 # Staples (deckgen/staples.py: popular, low standalone impact) make decks consistent without swinging games: tiers 2-3
 # prefer them, 4-5 mildly, tier 1 avoids them so wild encounters stay rough. Watch-list cards (popular and high
 # impact, not Game Changers) are capped like Game Changers. Precon inclusion counts as casual playability at 2-3.
-STAPLE_BONUS = {1: -4, 2: 0, 3: 3, 4: 1.5, 5: 1.5}
+STAPLE_BONUS = {1: t1.STAPLE_BONUS, 2: 0, 3: 3, 4: 1.5, 5: 1.5}
 # Raise the tier 1-2 floor (user, 2026-10-20): push staples at tiers 1-2, uncommon printings only (other staples keep
 # STAPLE_BONUS), give tier 1 a power target instead of building it as weak as possible, and rebuild any tier 1-2 deck
 # whose power lands under FLOOR with a raised target. Near-staple budget lands (budget_lands.json) fill BUDGET_LANDS.
-UNCOMMON_STAPLE_BONUS = {1: 6, 2: 6}
-T1_TARGET = 15.0
-FLOOR = {1: 15.0, 2: 24.5}
-CEILING = {1: 18.0, 2: 30.0}  # pushed staples lift the top too; keep tier 1-2 decks inside their bands
-BUDGET_LANDS = {1: 3, 2: 5}
-BUDGET_ROCKS = {1: 2, 2: 3}  # cheap mana rocks from budget decks, inside the tier's ramp/fast caps
+UNCOMMON_STAPLE_BONUS = {1: t1.UNCOMMON_STAPLE_BONUS, 2: 6}
+T1_TARGET = t1.POWER['target']
+FLOOR = {1: t1.POWER['floor'], 2: 24.5}
+CEILING = {1: t1.POWER['ceiling'], 2: 30.0}  # pushed staples lift the top too; keep tier 1-2 decks inside their bands
+BUDGET_LANDS = {1: t1.BUDGET_LANDS, 2: 5}
+BUDGET_ROCKS = {1: t1.BUDGET_ROCKS, 2: 3}  # cheap mana rocks from budget decks, inside the tier's ramp/fast caps
 _bl = os.path.join(HERE, 'budget_lands.json')
 BUDGET = json.load(open(_bl))['lands'] if os.path.exists(_bl) else {}
 ROCKS = json.load(open(_bl)).get('rocks', {}) if os.path.exists(_bl) else {}
@@ -168,7 +167,7 @@ def spread(items, key):
     """Order budget picks by popularity times a stable per-deck jitter, so decks don't all get the same few cards."""
     h = lambda n: int(hashlib.md5((key + n).encode()).hexdigest()[:8], 16) / 0xffffffff
     return sorted(items, key=lambda kv: -kv[1]['decks'] * (0.5 + h(kv[0])) - (1000 if kv[1]['colors'] else 0))
-WATCH_CAP = {1: 0, 2: 1, 3: 2, 4: 4, 5: 8}
+WATCH_CAP = {1: t1.WATCH_CAP, 2: 1, 3: 2, 4: 4, 5: 8}
 PRECON_BONUS = {2: 2, 3: 2}
 # Per deck in decks.json, for balancing after simulations: "target" overrides TARGET_POWER (tiers 2-5), and
 # "seed_bonus" (default 25) how strongly the seed deck's cards are preferred (lower lets "target" steer more), and
@@ -387,7 +386,7 @@ def build(d):
     avg = sum(p['cmc'] for p, _ in chosen) / max(1, len(chosen))
     ref = sum(k * v for k, v in SPEC[tier]['curve'].items()) / sum(SPEC[tier]['curve'].values())
     mana = sum(1 for p, _ in chosen if p['tags'] & {'ramp', 'fast'})
-    lo_land, hi_land = LAND_CLAMP.get(tier, ar.LAND_RANGE[tier])
+    lo_land, hi_land = ar.LAND_RANGE[tier]  # tier 1: tier1_rules.LANDS (41-42)
     total = min(max(round(spec['lands'] + 4 * (avg - ref) - mana / 2), lo_land), hi_land)
     bumps = 0
     while len(chosen) < 99 - total:

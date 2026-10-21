@@ -14,36 +14,37 @@ Subarchetype (a second label, never a simulation cell):
 A `low-*` deck shifts its primary type (creatures) down 2-4 and a secondary type up 2-4 (SHIFT).
 Usage: python3 archetype_rules.py DECK.dck [...]   prints the classification as TOON-like rows."""
 import os, re, sys, collections, json
+import tier1_rules as t1  # tier 1 requirements (one source of truth)
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../.."))
 CARDS = os.path.join(ROOT, "forge-gui/res/cardsfolder")
-TOKENS_MIN = 12
+TOKENS_MIN = t1.TOKENS_MIN
 TRIBE_MIN = 12
 LOW_ARTIFACT_MIN = 9
 LOW_ENCHANT_MIN = 4
-SCALE_NEED = 5  # enchantments (or other X) a "number of X you control" control card needs before it counts as control
+SCALE_NEED = t1.SCALE_NEED  # enchantments (or other X) a "number of X you control" control card needs before it counts as control
 REMOVAL_CLASSES = ("creature", "artifact", "enchantment", "land", "token")  # user's priority list, highest first
 SKIP_TYPES = {"Creature", "Artifact", "Enchantment", "Legendary", "Snow", "Tribal", "Kindred", "Instant", "Sorcery", "Land"}
 
 # Creature windows (min, max) by tier and archetype; control only exists at tiers 2-5. Ramp and midrange keep the tier range.
 CREATURES = {
-    1: {"aggro": (33, 36), "tribal": (31, 34), "tokens": (29, 32)},
+    1: t1.TARGETS,
     2: {"aggro": (33, 36), "tribal": (31, 34), "tokens": (29, 32), "control": (26, 28)},
     3: {"aggro": (32, 36), "tribal": (30, 34), "tokens": (28, 32), "control": (22, 26)},
     4: {"aggro": (32, 36), "tribal": (30, 34), "tokens": (28, 32), "control": (22, 26)},
     5: {"aggro": (30, 34), "tribal": (28, 32), "tokens": (26, 30), "control": (20, 24)},
 }
 # Minimum instants+sorceries and enchantments by tier and archetype (artifacts: unchanged, tried first as cheap alternates)
-INSTANT_SORCERY = {1: {"tokens": 12, "aggro": 10, "tribal": 8}, 2: {"control": 13, "tokens": 11, "aggro": 9, "tribal": 7},
+INSTANT_SORCERY = {1: t1.INSTANT_SORCERY, 2: {"control": 13, "tokens": 11, "aggro": 9, "tribal": 7},
                    3: {"control": 14, "tokens": 12, "aggro": 10, "tribal": 8}, 4: {"control": 14, "tokens": 12, "aggro": 10, "tribal": 8},
                    5: {"control": 14, "tokens": 12, "aggro": 10, "tribal": 8}}
-ENCHANTMENT = {1: {"tokens": 3, "tribal": 2, "aggro": 1}, 2: {"tokens": 6, "control": 5, "tribal": 4, "aggro": 3},
+ENCHANTMENT = {1: t1.ENCHANTMENT, 2: {"tokens": 6, "control": 5, "tribal": 4, "aggro": 3},
                3: {"tokens": 5, "control": 4, "tribal": 3, "aggro": 2}, 4: {"tokens": 5, "control": 4, "tribal": 3, "aggro": 2},
                5: {"tokens": 5, "control": 4, "tribal": 3, "aggro": 2}}
-CREATURE_FLOOR = {1: 26, 2: 26, 3: 16, 4: 14, 5: 12}  # deck_tier.py hard minimum per tier
+CREATURE_FLOOR = {1: t1.LOW_FLOOR, 2: 26, 3: 16, 4: 14, 5: 12}  # deck_tier.py hard minimum per tier
 # low-* shift: (primary down, secondary up) in 2..4; reach 2 uses 2, reach 3 uses 3, reach 4+ uses 4
 SECONDARY = {"low-control": "instant_sorcery", "low-aggro": "artifact", "low-tribal": "enchantment", "low-tokens": "enchantment"}
-LAND_RANGE = {1: (40, 46), 2: (36, 39), 3: (33, 38), 4: (33, 37), 5: (31, 37)}  # deck_tier.py land range per tier
+LAND_RANGE = {1: t1.LANDS, 2: (36, 39), 3: (33, 38), 4: (33, 37), 5: (31, 37)}  # deck_tier.py land range per tier
 
 
 def shift_for(reach):
@@ -55,8 +56,9 @@ def creature_check(tier, archetype, sub=None, reach=2):
     goes down to 26 and up to the band max minus its shift. Tiers 2-5 keep the archetype window."""
     if tier != 1:
         return windows(tier, archetype, sub, reach)[:2]
+    lo_band, hi_band = t1.CREATURE_BAND
     d = shift_for(reach) if sub else 0
-    return (max(26, 30 - d) if sub else 30), 36 - d
+    return (max(t1.LOW_FLOOR, lo_band - d) if sub else lo_band), hi_band - d
 
 def windows(tier, archetype, sub=None, reach=2):
     """(creature min, creature max, instant+sorcery min, enchantment min, artifact bonus) for a deck target.
