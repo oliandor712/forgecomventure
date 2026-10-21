@@ -26,7 +26,7 @@ RES = os.path.abspath(os.path.join(HERE, '..', '..', '..', 'forge-gui', 'res', '
 CONCORDIA = os.path.join(RES, 'Concordia')
 FLIP = 0x1FFFFFFF
 PLAYER = 16  # sprite size
-MAX_DEPTH = 6  # px: how deep a door trigger may be
+MAX_DEPTH = 32  # px: how deep a door trigger may be (thin 4 px strips broke re-entering Emberbrook's house on 2026-10-21; use the original full-size triggers)
 
 
 def game_path(path):
@@ -170,10 +170,8 @@ def trigger_problem(m, e):
     out = []
     if gap is None:
         out.append('has no wall behind it (on the side opposite "%s")' % d)
-    elif gap > 1:
-        out.append('stands %g px off its wall: move it flush against the wall' % gap)
     if depth > MAX_DEPTH:
-        out.append('is %g px deep: make it a strip of at most %d px so it fires at the door, not a tile early' % (depth, MAX_DEPTH))
+        out.append('is %g px deep: keep it at most %d px deep' % (depth, MAX_DEPTH))
     return out
 
 
