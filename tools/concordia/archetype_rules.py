@@ -50,8 +50,17 @@ def shift_for(reach):
     return 2 if reach <= 2 else 3 if reach == 3 else 4
 
 
+def creature_check(tier, archetype, sub=None, reach=2):
+    """Creature pass/fail band. H11 wins over the archetype windows (user, 2026-10-21): tier 1 is 30-36 creatures; a low-* deck
+    goes down to 26 and up to the band max minus its shift. Tiers 2-5 keep the archetype window."""
+    if tier != 1:
+        return windows(tier, archetype, sub, reach)[:2]
+    d = shift_for(reach) if sub else 0
+    return (max(26, 30 - d) if sub else 30), 36 - d
+
 def windows(tier, archetype, sub=None, reach=2):
-    """(creature min, creature max, instant+sorcery min, enchantment min, artifact bonus) for a deck target."""
+    """(creature min, creature max, instant+sorcery min, enchantment min, artifact bonus) for a deck target.
+    Tier 1 creature numbers are build targets: the archetype preference shifted by the sub, clipped into creature_check's band."""
     lo, hi = CREATURES.get(tier, {}).get(archetype, (CREATURE_FLOOR[tier], 99))
     isx = INSTANT_SORCERY.get(tier, {}).get(archetype, 0)
     ench = ENCHANTMENT.get(tier, {}).get(archetype, 0)
@@ -63,6 +72,10 @@ def windows(tier, archetype, sub=None, reach=2):
         if sec == "instant_sorcery": isx += d
         elif sec == "enchantment": ench += d
         elif sec == "artifact": art += d
+    if tier == 1:
+        clo, chi = creature_check(tier, archetype, sub, reach)
+        lo = min(max(lo, clo), chi)
+        hi = max(min(hi, chi), lo)
     return lo, hi, isx, ench, art
 
 
@@ -178,13 +191,16 @@ def classify(path, tier=None):
                 artifacts=art, enchantments=ench, instant_sorcery=isx, classes=dict(classes))
 
 
-def report(tier=1):
-    """Decks outside their archetype window (creatures, instants+sorceries, enchantments); read-only, for the rebuild approval list."""
+def report(tier=1, folder=None):
+    """Decks outside their archetype window (creatures: creature_check band; instants+sorceries, enchantments: windows minimums);
+    read-only. folder: a staging decks folder to check instead of the live tier folder."""
     import glob
     rows = []
-    for f in sorted(glob.glob(os.path.join(ROOT, "forge-gui/res/adventure/Concordia/decks/tier%d/*.dck" % tier))):
+    src = os.path.abspath(folder) if folder else os.path.join(ROOT, "forge-gui/res/adventure/Concordia/decks/tier%d" % tier)
+    for f in sorted(glob.glob(os.path.join(src, "*.dck"))):
         c = classify(f, tier)
-        lo, hi, isx, ench, art = windows(tier, c["archetype"], c["sub"], c["reach"])
+        lo, hi = creature_check(tier, c["archetype"], c["sub"], c["reach"])
+        _, _, isx, ench, art = windows(tier, c["archetype"], c["sub"], c["reach"])
         why = []
         if c["creatures"] < lo: why.append("creatures %d<%d" % (c["creatures"], lo))
         if c["creatures"] > hi: why.append("creatures %d>%d" % (c["creatures"], hi))
@@ -196,8 +212,10 @@ def report(tier=1):
 
 
 def main(argv):
-    if argv and argv[0] == "--report":
-        return report(int(argv[1]) if len(argv) > 1 else 1)
+    if argv and argv[0] == "--report":  # --report [TIER] [--dir DECKS_FOLDER]
+        args = argv[1:]
+        folder = args[args.index("--dir") + 1] if "--dir" in args else None
+        return report(int(next((a for a in args if a.isdigit()), 1)), folder)
     print("decks[%d|]{file|archetype|sub|reach|creatures|window}:" % len(argv))
     for p in argv:
         c = classify(p)

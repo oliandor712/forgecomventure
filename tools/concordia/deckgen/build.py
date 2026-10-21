@@ -88,12 +88,16 @@ def human_rules():
         if m: rules[m.group(1)] = m.group(2).split('|')
     return rules
 
+def creature_band(d):
+    """The H11 creature band for a deck: archetype_rules.creature_check when the deck has an archetype, else 30-36."""
+    if d.get('archetype'): return ar.creature_check(d['tier'], d['archetype'], d.get('sub'), d.get('reach', 2))
+    return 30, 36
+
 def human_pass1(d, ident, rules):
     """Pass 1, before the fill: the rules as build parameters. Human-logic rows win over the metrics (file header)."""
-    low = str(d.get('sub') or '').startswith('low-')
     return {'target': 17.0 if 'H08' in rules else T1_TARGET,  # H08: tier 1 power 16-18
             'bonus': d.get('_boost', {}).get('bonus', 1.0),  # ability_tags weight; raised once on a retry
-            'cwin': ((26, 99) if low else (30, 36)) if 'H11' in rules and d['tier'] == 1 else None,  # H11: tier 1 creatures 30-36 (user, 2026-10-21); low-* subs 26 up to the window max (user, S3)
+            'cwin': creature_band(d) if 'H11' in rules and d['tier'] == 1 else None,  # H11 wins: the band from archetype_rules.creature_check
             'spells': 'H12' in rules and 'U' in ident,  # H12: a blue deck carries spells, so fewer creatures
             'uncommon': 'H09' in rules and d['tier'] == 1}  # H09: tier 1 staples only in uncommon printings
 
@@ -111,8 +115,8 @@ def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     check('H09', not bad, 'staples outside uncommon printings: %s' % (', '.join(bad) or 'none'))
     budget = {k.lower() for k in BUDGET} | {k.lower() for k in ROCKS}
     check('H10', any(p['name'].lower() in budget for p, _ in chosen + lands), 'budget lands or rocks present')
-    low = str(d.get('sub') or '').startswith('low-')  # S3: low-* decks floor 26, ceiling the archetype window max
-    check('H11', (26 if low else 30) <= cr <= (info['window'][1] if low else 36), 'creatures %d (%s)' % (cr, '26 to window max' if low else '30-36'), d['tier'] == 1)
+    band = creature_band(d)
+    check('H11', band[0] <= cr <= band[1], 'creatures %d (%d-%d)' % (cr, band[0], band[1]), d['tier'] == 1)
     check('H12', cr <= 32, 'blue deck creatures %d (32 max)' % cr, 'U' in ident)
     pos = sum(1 for p, _ in chosen if at.bonus(ability_tags(p), d['archetype'], d.get('sub'), info['traits'], len(ident) == 1, ''.join(sorted(ident))) > 0) if d.get('archetype') else 0
     check('H13', pos >= 10, 'cards with a positive ability bonus %d (10 needed)' % pos, bool(d.get('archetype')))

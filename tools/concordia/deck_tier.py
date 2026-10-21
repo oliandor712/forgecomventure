@@ -517,7 +517,8 @@ def archetype_checks(path, r, tier):
         return []
     import archetype_rules as ar
     c = ar.classify(path, tier)
-    lo, hi, isx, ench, art = ar.windows(tier, c["archetype"], c["sub"], c["reach"])
+    lo, hi = ar.creature_check(tier, c["archetype"], c["sub"], c["reach"])  # same band as archetype_rules --report
+    _, _, isx, ench, _ = ar.windows(tier, c["archetype"], c["sub"], c["reach"])
     label = c["archetype"] + ("/" + c["sub"] if c["sub"] else "")
     out = [("PASS" if lo <= r["creatures"] <= hi else "WARN", "archetype %s: creatures %d (window %d-%d)" % (label, r["creatures"], lo, hi))]
     out.append(("PASS" if c["instant_sorcery"] >= isx else "WARN", "archetype %s: instants+sorceries %d (min %d)" % (label, c["instant_sorcery"], isx)))
