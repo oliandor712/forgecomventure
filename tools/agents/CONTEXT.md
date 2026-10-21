@@ -149,6 +149,7 @@ Repeat each command (about 9 minutes per call) until it prints DONE, then take t
 8. Every turn starts the same way: `git pull --no-rebase origin campaign-design`, `python3 tools/agents/toolbox.py --check` (STALE means pull again, then tell the main session), read `tools/agents/TOOLBOX.md`.
 
 ## Recent updates
+- 2026-10-21: AI patches 002 and 003 (unflag Thwart the Enemy, Vine Snare, Endure) approved by the user and applied; backup in backups/2026-10-21_cards_pre_002_003
 - 2026-10-21: Duration estimates: agents send an ETA line before long commands; main session checks 15 s after it and remedies
 - 2026-10-21: BonusSim -Dseed (seeded games), suite --seed, toolbox stamp fixed
 - 2026-10-21: Agents remade (gen 2): stricter Obedience protocol, TOOLBOX.md and AGENT_KNOWLEDGE.md shared references, handoffs compiled
@@ -160,4 +161,3 @@ Repeat each command (about 9 minutes per call) until it prints DONE, then take t
 - 2026-10-21: Agent review after each 4-hour report: three-way TOON conversation, main session deploys unanimous changes
 - 2026-10-21: cooperation model: balance agents feed phase-log data to the AI lab; the AI lab feeds balance-change options to the balancers
 - 2026-10-21: Phase logging is standard for all simulations (user): run_batch.play writes phase logs, runs ai_lab/phase_digest.py and deletes the raw logs; digests under ai_lab/digests are pushed with the records (run_foreground.sh does it)
-- 2026-10-21: agents: effort raised to high (briefs); temporary until the session limit

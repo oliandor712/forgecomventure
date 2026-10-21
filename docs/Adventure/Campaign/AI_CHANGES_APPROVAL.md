@@ -13,11 +13,11 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
 
 ## Card-script changes (data only: removing a stale `AI:RemoveDeck:All` flag)
 
-- [ ] **002, unflag the green Fogs: Thwart the Enemy, Vine Snare**: Ready.
+- [x] **002, unflag the green Fogs: Thwart the Enemy, Vine Snare**: Approved by the user in chat 2026-10-21 and applied (card scripts, data only). Backup: `tools/concordia/backups/2026-10-21_cards_pre_002_003`. Smoke: a 40-card test deck with the three cards played a full game with no errors.
   - Patch: `tools/concordia/ai_lab/patches/002-fog-unflag.patch`.
   - Tested: 0 casts with the flag, 19 without it (2 copies, 30-card decks), and 8 at normal card density.
   - Every cast came in the opponent's declare blockers step, facing unblocked attackers.
-- [ ] **003, unflag Endure**: Ready.
+- [x] **003, unflag Endure**: Approved by the user in chat 2026-10-21 and applied (card script, data only). Backup: `tools/concordia/backups/2026-10-21_cards_pre_002_003`.
   - Patch: `patches/003-white-fog-unflag.patch`.
   - Tested: 0 casts with the flag; 15 casts (2 copies) and 2 at normal density without it.
   - It was cast only when the AI was under real threat.
