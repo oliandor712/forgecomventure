@@ -1,0 +1,26 @@
+--- a/forge-ai/src/main/java/forge/ai/AiBlockController.java
++++ b/forge-ai/src/main/java/forge/ai/AiBlockController.java
+@@ -1144,7 +1144,6 @@
+             return;
+         }
+ 
+-        if (AiDecisionLog.enabled()) { AiDecisionLog.add("BLOCK_REASON\t" + ai.getName() + "\tturn=" + ai.getGame().getPhaseHandler().getTurn() + "\tpass=clear\tlife=" + ai.getLife()); }
+                 clearBlockers(combat, possibleBlockers);
+ 
+         diff = (ai.getLife() * 2) - 5; // This is the minimal gain for an unnecessary trade
+@@ -1205,7 +1204,6 @@
+ 
+             // == 2. If the AI life would still be in danger make a safer approach ==
+             if (lifeInDanger) {
+-                if (AiDecisionLog.enabled()) { AiDecisionLog.add("BLOCK_REASON\t" + ai.getName() + "\tturn=" + ai.getGame().getPhaseHandler().getTurn() + "\tpass=clear\tlife=" + ai.getLife()); }
+                 clearBlockers(combat, possibleBlockers); // reset every block assignment
+                 logPass("trade", combat, () -> makeTradeBlocks(combat));
+                 logPass("good", combat, () -> makeGoodBlocks(combat));
+@@ -1225,7 +1223,6 @@
+ 
+             // == 3. If the AI life would be in serious danger make an even safer approach ==
+             if (lifeInDanger && ComputerUtilCombat.lifeInSeriousDanger(ai, combat)) {
+-                if (AiDecisionLog.enabled()) { AiDecisionLog.add("BLOCK_REASON\t" + ai.getName() + "\tturn=" + ai.getGame().getPhaseHandler().getTurn() + "\tpass=clear\tlife=" + ai.getLife()); }
+                 clearBlockers(combat, possibleBlockers);
+                 logPass("chump", combat, () -> makeChumpBlocks(combat));
+ 

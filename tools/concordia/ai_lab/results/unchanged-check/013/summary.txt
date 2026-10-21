@@ -1,0 +1,6 @@
+Results-unchanged check for 013-trim-clear-blocks.patch (forge-ai-lab, 2026-10-21 17:26-17:31Z)
+Arms: stock classpath vs consolidated overlay + 013 (ai-test-instrumentation.patch then 013-trim-clear-blocks.patch), -Daidecisionlog=1.
+Games: 20 per arm = 10 tier-2 deck pairs x both seats, seed 91, equal life 40, equal load (2 java per arm, 4 in parallel).
+Per game: winners and turns (GAME lines) and every non-AI phase-log line (AI_DECISION rows excluded; MULLIGAN hand suffix stripped).
+Result: 20 identical, 0 different in results and in non-AI lines. No BLOCK_REASON pass=clear line remains in the 013 arm (0 found; the consolidated arm had about 48% of BLOCK_REASON lines as pass=clear, 6134 of 12708 over 40 games).
+Method note: the first 013 run used a stale classpath (cache4/cp.txt pointed at the consolidated classes) and was discarded; the rerun above uses the corrected classpath. Output of the discarded run is not kept in this folder.

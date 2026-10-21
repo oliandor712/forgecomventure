@@ -1,3 +1,4 @@
 # Test-only forge-ai patches applied to the SIM classpath by tools/concordia/sim/setup.sh (never to forge-ai/src or the shipped game).
 # One patch file name per line. Empty or delete this file to run the sims on the stock AI.
 ai-test-instrumentation.patch
+013-trim-clear-blocks.patch
