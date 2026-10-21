@@ -205,3 +205,11 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T04:26:14Z,b29c3589757,inner,3,decks/tier3/T3_BRG_Coram.dck,decks/tier3/T3_WB_Firja.dck,25,25,,,b,b,19,0
 2026-10-21T04:26:41Z,b29c3589757,inner,5,decks/tier5/T5_BR_Olivia.dck,decks/tier5/T5_WUG_Bumbleflower.dck,35,35,,,a,a,17,0
 2026-10-21T04:26:41Z,b29c3589757,inner,5,decks/tier5/T5_BR_Olivia.dck,decks/tier5/T5_WUG_Bumbleflower.dck,35,35,,,b,a,16,0
+2026-10-21T04:27:16Z,2630cc4fb7d,inner,2,decks/tier2/T2_UG_Eutropia.dck,decks/tier2/T2_WB_Orah.dck,15,15,,,a,b,18,0
+2026-10-21T04:27:16Z,2630cc4fb7d,inner,2,decks/tier2/T2_UG_Eutropia.dck,decks/tier2/T2_WB_Orah.dck,15,15,,,b,b,13,0
+2026-10-21T04:27:35Z,2630cc4fb7d,inner,4,decks/tier4/T4_UB_Morbius.dck,decks/tier4/T4_WBR_Altar.dck,30,30,,,a,b,20,0
+2026-10-21T04:27:35Z,2630cc4fb7d,inner,4,decks/tier4/T4_UB_Morbius.dck,decks/tier4/T4_WBR_Altar.dck,30,30,,,b,a,16,0
+2026-10-21T04:28:00Z,2630cc4fb7d,inner,2,decks/tier2/T2_WR_Balefang.dck,decks/tier2/T2_BG_Grakmaw.dck,15,15,,,a,b,14,0
+2026-10-21T04:28:00Z,2630cc4fb7d,inner,2,decks/tier2/T2_WR_Balefang.dck,decks/tier2/T2_BG_Grakmaw.dck,15,15,,,b,a,14,0
+2026-10-21T04:28:22Z,2630cc4fb7d,inner,2,decks/tier2/T2_WG_Bess.dck,decks/tier2/T2_UG_Eutropia.dck,15,15,,,a,b,16,0
+2026-10-21T04:28:22Z,2630cc4fb7d,inner,2,decks/tier2/T2_WG_Bess.dck,decks/tier2/T2_UG_Eutropia.dck,15,15,,,b,a,14,0
