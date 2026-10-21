@@ -150,7 +150,7 @@ def play(games, budget_end):
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     batch = "%s-%s-%d" % (WORKER or "lab", stamp, os.getpid())
     logdir = os.path.join(ROOT, "tools/concordia/ai_lab/results/balance_logs", batch)
-    env = dict(os.environ, SIM_JAVA_OPTS="-Dlogdir=" + logdir + " -Daidecisionlog=1")
+    env = dict(os.environ, SIM_JAVA_OPTS="-Dlogdir=" + logdir + " -Daidecisionlog=1" + (" -Dseed=" + os.environ["BALANCE_SEED"] if os.environ.get("BALANCE_SEED") else ""))
     p = subprocess.run([ROOT + "/tools/concordia/sim/run.sh", "BonusSim", "forge-gui/", "150"] + args, cwd=ROOT,
                        capture_output=True, text=True, timeout=None, env=env)
     if os.path.isdir(logdir):

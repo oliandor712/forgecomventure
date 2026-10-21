@@ -103,6 +103,9 @@ public class BonusSim {
             List<IPaperCard> xb = cards(a[i + 5]);
             boolean aFirst = a[i + 6].equals("a");
             String label = a[i + 7];
+            // -Dseed=N: seeded game (shuffles and every MyRandom draw), so stock and patched AI can be compared game by game
+            String seedProp = System.getProperty("seed");
+            if (seedProp != null) forge.util.MyRandom.setRandom(new java.util.Random(Long.parseLong(seedProp) * 1000003L + label.hashCode()));
             GameRules rules = new GameRules(GameType.Commander);
             rules.setGamesPerMatch(1);
             RegisteredPlayer ra = RegisteredPlayer.forCommander(da);

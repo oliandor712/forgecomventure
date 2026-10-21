@@ -148,6 +148,7 @@ Repeat each command (about 9 minutes per call) until it prints DONE, then take t
 7. Every turn starts the same way: `git pull --no-rebase origin campaign-design`, `python3 tools/agents/toolbox.py --check` (STALE means pull again, then tell the main session), read `tools/agents/TOOLBOX.md`.
 
 ## Recent updates
+- 2026-10-21: BonusSim -Dseed (seeded games), suite --seed, toolbox stamp fixed
 - 2026-10-21: Agents remade (gen 2): stricter Obedience protocol, TOOLBOX.md and AGENT_KNOWLEDGE.md shared references, handoffs compiled
 - 2026-10-21: Simulation suite: one program for setup, runs, phase logging, digests, pushes and reports; archetype sampling
 - 2026-10-21: Authority rule: agents obey the main session and never stop to wait for the user; only guardrail violations are refused
@@ -159,4 +160,3 @@ Repeat each command (about 9 minutes per call) until it prints DONE, then take t
 - 2026-10-21: Phase logging is standard for all simulations (user): run_batch.play writes phase logs, runs ai_lab/phase_digest.py and deletes the raw logs; digests under ai_lab/digests are pushed with the records (run_foreground.sh does it)
 - 2026-10-21: agents: effort raised to high (briefs); temporary until the session limit
 - 2026-10-21: human_logic.toon pruned to deck building, deck balance and AI improvement (29 rows)
-- 2026-10-21: push_records.sh: shared safe push for records files

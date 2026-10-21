@@ -327,9 +327,11 @@ def main():
     ap.add_argument("--bonus-sets", type=int, default=12, help="matched sets per (tier, enemy archetype, bonus)")
     ap.add_argument("--total", type=int, default=0, help="hard cap on all suite games across every worker (0 = none)")
     ap.add_argument("--focus", default="", help="colours to favour when drawing decks, e.g. W,multi (the archetype cells stay the unit)")
+    ap.add_argument("--seed", type=int, default=0, help="seed every game (MyRandom), so the same game can be replayed with the stock and the patched AI")
     ap.add_argument("--no-push", action="store_true"); ap.add_argument("--no-pull", action="store_true")
     a = ap.parse_args()
     FOCUS.update(x for x in a.focus.split(',') if x)
+    if a.seed: os.environ['BALANCE_SEED'] = str(a.seed)
     {"setup": cmd_setup, "run": cmd_run, "status": cmd_status, "report": cmd_report, "plan": cmd_plan}[a.cmd](a)
 
 
