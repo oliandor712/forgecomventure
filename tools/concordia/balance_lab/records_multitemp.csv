@@ -939,3 +939,5 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T04:39:31Z,c329d44eb7a,inner,4,decks/tier4/T4_R_Combustion.dck,decks/tier4/T4_R_Etali.dck,30,30,,,b,b,15,0
 2026-10-21T04:39:50Z,c329d44eb7a,inner,3,decks/tier3/T3_R_Zada.dck,decks/tier3/T3_R_Pashalik.dck,25,25,,,a,b,20,0
 2026-10-21T04:39:50Z,c329d44eb7a,inner,3,decks/tier3/T3_R_Zada.dck,decks/tier3/T3_R_Pashalik.dck,25,25,,,b,b,30,0
+2026-10-21T04:40:25Z,c329d44eb7a,inner,2,decks/tier2/T2_R_Jaxis.dck,decks/tier2/T2_R_Tahngarth.dck,15,15,,,a,a,9,0
+2026-10-21T04:40:25Z,c329d44eb7a,inner,2,decks/tier2/T2_R_Jaxis.dck,decks/tier2/T2_R_Tahngarth.dck,15,15,,,b,b,9,0
