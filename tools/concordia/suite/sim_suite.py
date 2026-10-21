@@ -164,12 +164,28 @@ def cmd_plan(a):
     print("time at about %.0f s per game: %.1f process-hours (divide by workers)" % (sec, total * sec / 3600))
 
 
+FOCUS = set()  # --focus W,multi: colours to favour (a deck is "multi" when it has more than one colour)
+
+
+def in_focus(d):
+    c = rb.colors(d)
+    return ("multi" if len(c) > 1 else c) in FOCUS
+
+
+def pick_deck(rng, decks, exclude=None, favour=1.0):
+    """Random deck of the group; with --focus, a focus-colour deck is drawn when the group has one (with probability `favour`)."""
+    pool = [d for d in decks if d != exclude]
+    foc = [d for d in pool if in_focus(d)] if FOCUS else []
+    if foc and rng.random() < favour: pool = foc
+    return rng.choice(pool)
+
+
 def draw(rng, g, c, starters):
     mode, t, x, y = c
     life = rb.LIFE[t]
     if mode == "inner":
-        a = rng.choice(g[t][x]); pool = [d for d in g[t][y] if d != a]
-        return a, rng.choice(pool), life, ""
+        a = pick_deck(rng, g[t][x], None, 1.0); b = pick_deck(rng, g[t][y], a, 0.5)
+        return a, b, life, ""
     if mode == "starter":
         a = rng.choice(starters); b = rng.choice(g[t][y])
         return a, b, (rb.LIFE[min(t + 1, 5)] if t > 2 else life), ""
@@ -310,8 +326,10 @@ def main():
     ap.add_argument("--halfwidth", type=float, default=0.15, help="stop a cell when its 90%% interval half-width is at most this (C)")
     ap.add_argument("--bonus-sets", type=int, default=12, help="matched sets per (tier, enemy archetype, bonus)")
     ap.add_argument("--total", type=int, default=0, help="hard cap on all suite games across every worker (0 = none)")
+    ap.add_argument("--focus", default="", help="colours to favour when drawing decks, e.g. W,multi (the archetype cells stay the unit)")
     ap.add_argument("--no-push", action="store_true"); ap.add_argument("--no-pull", action="store_true")
     a = ap.parse_args()
+    FOCUS.update(x for x in a.focus.split(',') if x)
     {"setup": cmd_setup, "run": cmd_run, "status": cmd_status, "report": cmd_report, "plan": cmd_plan}[a.cmd](a)
 
 

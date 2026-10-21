@@ -1,0 +1,18 @@
+# Project from the user (2026-10-21): test the remade agents and the new tools end to end.
+project: agent_tool_test
+main_session:
+  role: instructs agents, monitors results, ensures workflow
+  worker: main session
+  target: agent/tool test
+deck_balance_lab:
+  role: runs the simulation suite
+  worker: lab
+  target_games: 5 per category
+  target_category: archetypes
+forge_ai_lab:
+  role: studies the phase logs
+  worker: ailab
+rules[4]: equal life in every game,no life bonuses,push with push_records.sh,no bonus tests
+notes[1]: Add results for white and multicolour decks to missing research pool
+# Main session's reading: a category is an archetype cell (tier, archetype A, archetype B): 18 inner cells with 5 games each = 90 games.
+# White and multicolour decks are favoured in every draw (--focus W,multi) so the missing pool gets filled.
