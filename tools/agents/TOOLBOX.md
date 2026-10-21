@@ -1,6 +1,6 @@
 # Toolbox: the shared reference for every agent
 
-Generated 2026-10-21 18:57Z at commit f829b760af1 on branch campaign-design. **Tools stamp: `7df0a2de3aa8`.**
+Generated 2026-10-21 18:58Z at commit efa8ec9ac01 on branch campaign-design. **Tools stamp: `92d478499566`.**
 
 ## Start of every turn (all agents)
 1. `git pull --no-rebase origin campaign-design` (if the clone is shallow: `git fetch --unshallow origin campaign-design`).
@@ -32,18 +32,18 @@ Generated 2026-10-21 18:57Z at commit f829b760af1 on branch campaign-design. **T
 | `tools/concordia/ai_lab/DECISION_LOGIC.md` | ai lab | how the Forge AI decides (blocks, attacks, removal, spells, mana) | 14bd574c2eb 10-21 14:13Z |
 | `tools/concordia/ai_lab/RESULTS_UNCHANGED_PLAN.md` | ai lab, main | the 40-game check that patches 010/011 do not change results | e84698929da 10-21 12:50Z |
 | `tools/concordia/archetype_rules.py` | deck builder, main | tier 1 archetype/sub/reach classification, creature windows and type quotas; --report 1 [--dir] lists decks outside their window | c8f3395a7ad 10-21 18:54Z |
-| `tools/concordia/tier1_rules.py` | deck builder, balance lab, main | the tier 1 requirements (deck check, creature band, quotas, lands, power targets): the one source of truth | f829b760af1 10-21 18:56Z |
+| `tools/concordia/tier1_rules.py` | deck builder, balance lab, main | the tier 1 requirements (deck check, creature band, quotas, lands, power targets): the one source of truth | 4005990ff40 10-21 18:58Z |
 | `tools/concordia/deckgen/ability_tags.py` | deck builder | ability-led tags (per signature), bonus(), potential_pt (never read 0/0 as-is), land-type and scales:/lord: tags; writes ABILITY_TAGS.toon | 87bd26d5384 10-21 18:44Z |
 | `tools/concordia/deckgen/commander_support.py` | deck builder | commander ability reader: cards that support a commander (H17, 5 needed), partner pairs; writes COMMANDER_SUPPORT.toon | 87bd26d5384 10-21 18:44Z |
 | `tools/concordia/deckgen/t1_plan.py` | deck builder | 100-commander tier 1 pool, 80 chosen with declared archetype/sub; writes t1_fresh.json | f829b760af1 10-21 18:56Z |
 | `tools/concordia/deckgen/HANDOFF_DECKBUILDER.md` | deck builder | tier 1 rework handoff: state, decisions, tools, learnings, open items | 8242a18bace 10-21 18:46Z |
-| `tools/concordia/deckgen/build.py` | deck builder | builds the tier decks from decks.json (role quotas, curve, caps); run after mine.py and pool.py | f829b760af1 10-21 18:56Z |
+| `tools/concordia/deckgen/build.py` | deck builder | builds the tier decks from decks.json (role quotas, curve, caps); run after mine.py and pool.py | 4005990ff40 10-21 18:58Z |
 | `tools/concordia/deckgen/pool.py` | deck builder | card pool from the card scripts (skips AI:RemoveDeck:All, so unflagged cards enter it) | 440176a2f0f 10-20 17:13Z |
 | `tools/concordia/deckgen/variants.py` | deck builder | alternate-commander variants and starter alternates (--starters) | 9e6451c159b 10-21 01:47Z |
 | `tools/concordia/deckgen/starter_tune.py` | deck builder | tunes the player starters toward deck power 27 | 5439eb01f80 10-21 01:16Z |
 | `tools/concordia/deckgen/gen_mono.py` | deck builder | mono-colour deck generation | f829b760af1 10-21 18:56Z |
 | `tools/concordia/deckgen/hall_roster.py` | deck builder | Commander Hall roster and starter commanders | 6dddd69a942 10-20 23:39Z |
-| `tools/concordia/deck_tier.py` | deck builder, balance lab | deck power and tier bands | c8f3395a7ad 10-21 18:54Z |
+| `tools/concordia/deck_tier.py` | deck builder, balance lab | deck power and tier bands | 4005990ff40 10-21 18:58Z |
 | `tools/concordia/maps/check_doors.py` | main | door and map checks | aa0ba6a4ea1 10-21 04:54Z |
 | `tools/agents/agentctl.py` | main | agent registry, requests, updates, check | c021274ce3b 10-20 17:21Z |
 | `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md` | ai lab, main | AI change checkboxes; only the user ticks | 1252840b6c7 10-21 17:31Z |
