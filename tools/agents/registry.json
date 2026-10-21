@@ -74,6 +74,10 @@
     [
      "2026-10-21",
      "Read tools/agents/human_logic.toon (the user's deck-balance rules); write new Claude-only data files in TOON where it saves tokens."
+    ],
+    [
+     "2026-10-21",
+     "Don't message the main session after each run; results go in the 4-hour report, messages only for blockers."
     ]
    ],
    "analyses": [
@@ -174,6 +178,10 @@
     [
      "2026-10-21",
      "Read tools/agents/human_logic.toon before judging decks; write new Claude-only data files in TOON where it saves tokens."
+    ],
+    [
+     "2026-10-21",
+     "Don't message the main session after each hourly batch; results go in the 4-hour report, messages only for blockers."
     ]
    ],
    "analyses": [
@@ -230,6 +238,10 @@
    [
     "2026-10-21",
     "Deleted the agent_operations_master Claude Doc and purged it from the workflow: check-in steps 8-9 removed, no inbox, no doc refreshes. Approvals still count only when given in chat."
+   ],
+   [
+    "2026-10-21",
+    "Remove medium-impact token bloat: agents stop messaging main after each run (4-hour report only, blockers excepted); connector and plugin clean-up left to the user's settings."
    ]
   ],
   "checkin": "trig_013wq1jHysGSQBbB9e6daKd5 at :40 every 4 h"

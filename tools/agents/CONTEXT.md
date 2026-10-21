@@ -45,6 +45,7 @@ bottom. When this file and your brief disagree, this file wins, because it is ne
 - **TOON** (https://github.com/toon-format/toon) is the format for data files only Claude reads: a list of same-shaped records or a map of same-shaped objects is written as `name[N]{a,b}:` plus one row each (`name[N|]{a|b}:` when cells hold commas), saving 25-55% against JSON. Keep CSV/TSV for flat tables (smaller), JSON where code reads the file, and markdown for anything the user reads. Check a file with `npx @toon-format/cli file.toon`.
 
 ## Asking the main session for analysis
+**No per-run messages.** Don't send_message the main session after a run or batch: every message wakes it and costs tokens. Push your results and put them in your 4-hour report. Message it only for a blocker you can't fix.
 Put a line starting `ANALYSIS REQUEST:` in your **4-hour report** (not after every test; batch them, to keep the
 request-and-answer loop slow and cheap; an urgent blocker may go at once). Give the question, the files it concerns, and what you need
 back. The main session reads your reports at its 4-hour check-ins. It files the answer in
@@ -109,6 +110,7 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 
 ## Recent updates
 - 2026-10-21: 
+- 2026-10-21: 
 - 2026-10-21: Added tools/agents/human_logic.toon (the user's deck-balance rules) and the TOON rule above. Nothing else was converted: existing markdown tables save under 1% and the rest is prose, CSV or code-read JSON.
 - 2026-10-21: 
 - 2026-10-21: 
@@ -119,4 +121,3 @@ The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 - 2026-10-20: 
 - 2026-10-20: forge-ai-lab's shrunk test decks (ai_lab/decks/*_30/_40, all from minideck.py) were regenerated from the current tier decks (T1-2 floor raise, T1 creature loosening), same size, lands and test-card copies. Old copies in tools/concordia/backups/2026-10-20_ai_lab_test_decks_pre_regen/. Results before this commit used the old test decks; don't pool them with new runs. lab001_switchpt and opp_sai_30 (not minideck builds) are unchanged.
 - 2026-10-20: 
-- 2026-10-20: Each starter colour gets a second version, decks/starter/<C>_Starter_Alt.dck (alternate commander, 5-8 cards changed). In every starter test, split games 50/50 between the _Normal and _Alt version (user); run_batch.py does this.

@@ -8,4 +8,4 @@ After every test run, send the results to the main session (send_message) and pu
 report asking for: win-rate analysis, match-length analysis, and suggestions to improve inner-tier balance.
 
 ## Log
-- 2026-10-20: PAUSED by the main session (user request) until 21:00 UTC; resume on RESUME. No sim was running; all games pushed.
+- 2026-10-20: Paused 17:57-20:16 UTC by the main session (user request); RESUMED at 20:16 UTC. Schedules on.
