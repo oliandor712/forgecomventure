@@ -1,0 +1,1308 @@
+[
+ {
+  "tier": 1,
+  "file": "T1_W_Agent.dck",
+  "name": "Agent 13",
+  "commander": "Agent 13, Sharon Carter",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Spy",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white tokens deck led by Agent 13, Sharon Carter.",
+  "archetype": "tokens",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Bill.dck",
+  "name": "Bill the Pony",
+  "commander": "Bill the Pony",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Horse"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white tokens deck led by Bill the Pony.",
+  "archetype": "tokens",
+  "sub": "low-tokens",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Commander.dck",
+  "name": "Commander Sofia Daguerre",
+  "commander": "Commander Sofia Daguerre",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Pilot"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white tokens deck led by Commander Sofia Daguerre.",
+  "archetype": "tokens",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Lita.dck",
+  "name": "Lita",
+  "commander": "Lita, Little Orphan Amphibian",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Mutant",
+   "Ninja",
+   "Turtle"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white tokens deck led by Lita, Little Orphan Amphibian.",
+  "archetype": "tokens",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Rosie.dck",
+  "name": "Rosie Cotton of South Lane",
+  "commander": "Rosie Cotton of South Lane",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Halfling",
+   "Peasant"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white tokens deck led by Rosie Cotton of South Lane.",
+  "archetype": "tokens",
+  "sub": "low-tokens",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Bucky.dck",
+  "name": "Bucky Barnes",
+  "commander": "Bucky Barnes, Eager Ally",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Soldier",
+   "Human",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white tribal deck led by Bucky Barnes, Eager Ally.",
+  "archetype": "tribal",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Faramir.dck",
+  "name": "Faramir",
+  "commander": "Faramir, Field Commander",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Soldier"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white tribal deck led by Faramir, Field Commander.",
+  "archetype": "tribal",
+  "sub": "low-tribal",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_GoShintai.dck",
+  "name": "Go-Shintai of Shared Purpose",
+  "commander": "Go-Shintai of Shared Purpose",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Shrine",
+   "Spirit",
+   "Enchantment"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white tribal deck led by Go-Shintai of Shared Purpose.",
+  "archetype": "tribal",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Okoye.dck",
+  "name": "Okoye",
+  "commander": "Okoye, Dora Milaje Leader",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Soldier",
+   "Human",
+   "Warrior",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white tribal deck led by Okoye, Dora Milaje Leader.",
+  "archetype": "tribal",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_The.dck",
+  "name": "The Howling Commandos",
+  "commander": "The Howling Commandos",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Soldier",
+   "Human",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white tribal deck led by The Howling Commandos.",
+  "archetype": "tribal",
+  "sub": "low-tribal",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_April.dck",
+  "name": "April O'Neil",
+  "commander": "April O'Neil, Kunoichi Trainee",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Ninja"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white aggro deck led by April O'Neil, Kunoichi Trainee.",
+  "archetype": "aggro",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Daxos.dck",
+  "name": "Daxos",
+  "commander": "Daxos, Blessed by the Sun",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Enchantment",
+   "Demigod"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white aggro deck led by Daxos, Blessed by the Sun.",
+  "archetype": "aggro",
+  "sub": "low-aggro",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Falcon.dck",
+  "name": "Falcon",
+  "commander": "Falcon, Joaquin Torres",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Bird",
+   "Human",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white aggro deck led by Falcon, Joaquin Torres.",
+  "archetype": "aggro",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_MJ.dck",
+  "name": "MJ",
+  "commander": "MJ, Rising Star",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Performer"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white aggro deck led by MJ, Rising Star.",
+  "archetype": "aggro",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Qala.dck",
+  "name": "Qala",
+  "commander": "Qala, Ajani's Pridemate",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Cat",
+   "Warrior"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white aggro deck led by Qala, Ajani's Pridemate.",
+  "archetype": "aggro",
+  "sub": "low-aggro",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_W_Snow.dck",
+  "name": "Snow Villiers",
+  "commander": "Snow Villiers",
+  "colors": "W",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Rebel",
+   "Monk"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-white aggro deck led by Snow Villiers.",
+  "archetype": "aggro",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Alirios.dck",
+  "name": "Alirios",
+  "commander": "Alirios, Enraptured",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Reflection",
+   "Human"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue tokens deck led by Alirios, Enraptured.",
+  "archetype": "tokens",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Bill.dck",
+  "name": "Bill Ferny",
+  "commander": "Bill Ferny, Bree Swindler",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Rogue"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue tokens deck led by Bill Ferny, Bree Swindler.",
+  "archetype": "tokens",
+  "sub": "low-tokens",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Ray.dck",
+  "name": "Ray Fillet",
+  "commander": "Ray Fillet, Man Ray",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Fish",
+   "Mutant"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue tokens deck led by Ray Fillet, Man Ray.",
+  "archetype": "tokens",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Urza.dck",
+  "name": "Urza",
+  "commander": "Urza, Powerstone Prodigy",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Artificer"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue tokens deck led by Urza, Powerstone Prodigy.",
+  "archetype": "tokens",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Attuma.dck",
+  "name": "Attuma",
+  "commander": "Attuma, Atlantean Warlord",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Merfolk",
+   "Warrior",
+   "Villain"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue tribal deck led by Attuma, Atlantean Warlord.",
+  "archetype": "tribal",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Malcolm.dck",
+  "name": "Malcolm",
+  "commander": "Malcolm, Keen-Eyed Navigator",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Pirate",
+   "Siren"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue tribal deck led by Malcolm, Keen-Eyed Navigator.",
+  "archetype": "tribal",
+  "sub": "low-tribal",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Namora.dck",
+  "name": "Namora",
+  "commander": "Namora, the Sea Queen",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Merfolk",
+   "Mutant",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue tribal deck led by Namora, the Sea Queen.",
+  "archetype": "tribal",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Renari.dck",
+  "name": "Renari",
+  "commander": "Renari, Merchant of Marvels",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Dragon",
+   "Artificer"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue tribal deck led by Renari, Merchant of Marvels.",
+  "archetype": "tribal",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Callaphe.dck",
+  "name": "Callaphe",
+  "commander": "Callaphe, Beloved of the Sea",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Enchantment",
+   "Demigod"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue aggro deck led by Callaphe, Beloved of the Sea.",
+  "archetype": "aggro",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Donatello.dck",
+  "name": "Donatello",
+  "commander": "Donatello, Way with Machines",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Mutant",
+   "Ninja",
+   "Turtle"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue aggro deck led by Donatello, Way with Machines.",
+  "archetype": "aggro",
+  "sub": "low-aggro",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Geist.dck",
+  "name": "Geist of Saint Thalia",
+  "commander": "Geist of Saint Thalia",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Spirit",
+   "Cleric"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue aggro deck led by Geist of Saint Thalia.",
+  "archetype": "aggro",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Graviton.dck",
+  "name": "Graviton",
+  "commander": "Graviton, Fundamental Force",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Villain"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue aggro deck led by Graviton, Fundamental Force.",
+  "archetype": "aggro",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Justice.dck",
+  "name": "Justice",
+  "commander": "Justice, Vance Astrovik",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Mutant",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue aggro deck led by Justice, Vance Astrovik.",
+  "archetype": "aggro",
+  "sub": "low-aggro",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Rescue.dck",
+  "name": "Rescue",
+  "commander": "Rescue, Pepper Potts",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Artifact",
+   "Human",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue aggro deck led by Rescue, Pepper Potts.",
+  "archetype": "aggro",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Siani.dck",
+  "name": "Siani",
+  "commander": "Siani, Eye of the Storm",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Djinn",
+   "Monk"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue aggro deck led by Siani, Eye of the Storm.",
+  "archetype": "aggro",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_U_Tetsuko.dck",
+  "name": "Tetsuko Umezawa",
+  "commander": "Tetsuko Umezawa, Fugitive",
+  "colors": "U",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Rogue"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-blue aggro deck led by Tetsuko Umezawa, Fugitive.",
+  "archetype": "aggro",
+  "sub": "low-aggro",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Azula.dck",
+  "name": "Azula",
+  "commander": "Azula, On the Hunt",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Noble"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black tokens deck led by Azula, On the Hunt.",
+  "archetype": "tokens",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Grima.dck",
+  "name": "Gríma Wormtongue",
+  "commander": "Gríma Wormtongue",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Advisor"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black tokens deck led by Gríma Wormtongue.",
+  "archetype": "tokens",
+  "sub": "low-tokens",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_June.dck",
+  "name": "June",
+  "commander": "June, Bounty Hunter",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Mercenary"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black tokens deck led by June, Bounty Hunter.",
+  "archetype": "tokens",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Safana.dck",
+  "name": "Safana",
+  "commander": "Safana, Calimport Cutthroat",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Rogue"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black tokens deck led by Safana, Calimport Cutthroat.",
+  "archetype": "tokens",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Arnim.dck",
+  "name": "Arnim Zola",
+  "commander": "Arnim Zola, Bio-Fanatic",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Villain",
+   "Artifact",
+   "Scientist"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black tribal deck led by Arnim Zola, Bio-Fanatic.",
+  "archetype": "tribal",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Butch.dck",
+  "name": "Butch DeLoria",
+  "commander": "Butch DeLoria, Tunnel Snake",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Rogue",
+   "Human"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black tribal deck led by Butch DeLoria, Tunnel Snake.",
+  "archetype": "tribal",
+  "sub": "low-tribal",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Ozox.dck",
+  "name": "Ozox",
+  "commander": "Ozox, the Clattering King",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Skeleton",
+   "Noble"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black tribal deck led by Ozox, the Clattering King.",
+  "archetype": "tribal",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Swordsman.dck",
+  "name": "Swordsman",
+  "commander": "Swordsman, Sharp Scoundrel",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Villain",
+   "Human",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black tribal deck led by Swordsman, Sharp Scoundrel.",
+  "archetype": "tribal",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Tormod.dck",
+  "name": "Tormod",
+  "commander": "Tormod, the Desecrator",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Zombie",
+   "Wizard"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black tribal deck led by Tormod, the Desecrator.",
+  "archetype": "tribal",
+  "sub": "low-tribal",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Yellowjacket.dck",
+  "name": "Yellowjacket",
+  "commander": "Yellowjacket, Heartless Marauder",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Villain",
+   "Human",
+   "Rogue"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black tribal deck led by Yellowjacket, Heartless Marauder.",
+  "archetype": "tribal",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Armix.dck",
+  "name": "Armix",
+  "commander": "Armix, Filigree Thrasher",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Artifact",
+   "Golem"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black aggro deck led by Armix, Filigree Thrasher.",
+  "archetype": "aggro",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Arnyn.dck",
+  "name": "Arnyn",
+  "commander": "Arnyn, Deathbloom Botanist",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Vampire",
+   "Druid"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black aggro deck led by Arnyn, Deathbloom Botanist.",
+  "archetype": "aggro",
+  "sub": "low-aggro",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Gallia.dck",
+  "name": "Gallia",
+  "commander": "Gallia, Tragic Host",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Zombie",
+   "Satyr"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black aggro deck led by Gallia, Tragic Host.",
+  "archetype": "aggro",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Klaw.dck",
+  "name": "Klaw",
+  "commander": "Klaw, Sonic Subjugator",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Rogue",
+   "Villain"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black aggro deck led by Klaw, Sonic Subjugator.",
+  "archetype": "aggro",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Tymaret.dck",
+  "name": "Tymaret",
+  "commander": "Tymaret, Chosen from Death",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Enchantment",
+   "Demigod"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black aggro deck led by Tymaret, Chosen from Death.",
+  "archetype": "aggro",
+  "sub": "low-aggro",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_B_Winter.dck",
+  "name": "Winter",
+  "commander": "Winter, Tormented Loner",
+  "colors": "B",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Warlock"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-black aggro deck led by Winter, Tormented Loner.",
+  "archetype": "aggro",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Anax.dck",
+  "name": "Anax",
+  "commander": "Anax, Hardened in the Forge",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Satyr",
+   "Enchantment",
+   "Demigod"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red tokens deck led by Anax, Hardened in the Forge.",
+  "archetype": "tokens",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Captain.dck",
+  "name": "Captain Lannery Storm",
+  "commander": "Captain Lannery Storm",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Pirate"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red tokens deck led by Captain Lannery Storm.",
+  "archetype": "tokens",
+  "sub": "low-tokens",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Gut.dck",
+  "name": "Gut",
+  "commander": "Gut, True Soul Zealot",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Skeleton",
+   "Goblin",
+   "Shaman"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red tokens deck led by Gut, True Soul Zealot.",
+  "archetype": "tokens",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Ivora.dck",
+  "name": "Ivora",
+  "commander": "Ivora, Insatiable Heir",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Vampire",
+   "Warrior"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red tokens deck led by Ivora, Insatiable Heir.",
+  "archetype": "tokens",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Pia.dck",
+  "name": "Pia",
+  "commander": "Pia, Determined Rebuilder",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Artificer"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red tokens deck led by Pia, Determined Rebuilder.",
+  "archetype": "tokens",
+  "sub": "low-tokens",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Prompto.dck",
+  "name": "Prompto Argentum",
+  "commander": "Prompto Argentum",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Scout"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red tokens deck led by Prompto Argentum.",
+  "archetype": "tokens",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Breeches.dck",
+  "name": "Breeches",
+  "commander": "Breeches, Brazen Plunderer",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Pirate",
+   "Goblin"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red tribal deck led by Breeches, Brazen Plunderer.",
+  "archetype": "tribal",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_General.dck",
+  "name": "General Kreat",
+  "commander": "General Kreat, the Boltbringer",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Goblin",
+   "Soldier"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red tribal deck led by General Kreat, the Boltbringer.",
+  "archetype": "tribal",
+  "sub": "low-tribal",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Human.dck",
+  "name": "Human Torch",
+  "commander": "Human Torch, Johnny Storm",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red tribal deck led by Human Torch, Johnny Storm.",
+  "archetype": "tribal",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_LaAn.dck",
+  "name": "La'An Noonien-Singh",
+  "commander": "La'An Noonien-Singh, Security",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Soldier"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red aggro deck led by La'An Noonien-Singh, Security.",
+  "archetype": "aggro",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Raphael.dck",
+  "name": "Raphael",
+  "commander": "Raphael, Most Attitude",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Mutant",
+   "Ninja",
+   "Turtle"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red aggro deck led by Raphael, Most Attitude.",
+  "archetype": "aggro",
+  "sub": "low-aggro",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Speed.dck",
+  "name": "Speed",
+  "commander": "Speed, Young Avenger",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Mutant",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red aggro deck led by Speed, Young Avenger.",
+  "archetype": "aggro",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Tetsuko.dck",
+  "name": "Tetsuko Umezawa",
+  "commander": "Tetsuko Umezawa, Pursuer",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Mercenary"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red aggro deck led by Tetsuko Umezawa, Pursuer.",
+  "archetype": "aggro",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_The.dck",
+  "name": "The Mary Janes",
+  "commander": "The Mary Janes",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Bard",
+   "Performer"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red aggro deck led by The Mary Janes.",
+  "archetype": "aggro",
+  "sub": "low-aggro",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Ty.dck",
+  "name": "Ty Lee",
+  "commander": "Ty Lee, Artful Acrobat",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Performer"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red aggro deck led by Ty Lee, Artful Acrobat.",
+  "archetype": "aggro",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_R_Wingnut.dck",
+  "name": "Wingnut",
+  "commander": "Wingnut, Bat on the Belfry",
+  "colors": "R",
+  "life": 11,
+  "theme": [
+   "Bat",
+   "Mutant"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-red aggro deck led by Wingnut, Bat on the Belfry.",
+  "archetype": "aggro",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Meriadoc.dck",
+  "name": "Meriadoc Brandybuck",
+  "commander": "Meriadoc Brandybuck",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Halfling",
+   "Citizen"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green tokens deck led by Meriadoc Brandybuck.",
+  "archetype": "tokens",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Michelangelo.dck",
+  "name": "Michelangelo",
+  "commander": "Michelangelo, Mutant BFF",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Mutant",
+   "Ninja",
+   "Turtle"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green tokens deck led by Michelangelo, Mutant BFF.",
+  "archetype": "tokens",
+  "sub": "low-tokens",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_TippyToe.dck",
+  "name": "Tippy-Toe",
+  "commander": "Tippy-Toe, Terrific Partner",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Squirrel",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green tokens deck led by Tippy-Toe, Terrific Partner.",
+  "archetype": "tokens",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Black.dck",
+  "name": "Black Tom Cassidy",
+  "commander": "Black Tom Cassidy",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Mutant",
+   "Villain"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green tribal deck led by Black Tom Cassidy.",
+  "archetype": "tribal",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Dwynen.dck",
+  "name": "Dwynen",
+  "commander": "Dwynen, Gilt-Leaf Daen",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Elf",
+   "Warrior"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green tribal deck led by Dwynen, Gilt-Leaf Daen.",
+  "archetype": "tribal",
+  "sub": "low-tribal",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Jiang.dck",
+  "name": "Jiang Yanggu",
+  "commander": "Jiang Yanggu, Never Alone",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Dog",
+   "Human",
+   "Druid"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green tribal deck led by Jiang Yanggu, Never Alone.",
+  "archetype": "tribal",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_SpidersMan.dck",
+  "name": "Spiders-Man",
+  "commander": "Spiders-Man, Heroic Horde",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Spider",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green tribal deck led by Spiders-Man, Heroic Horde.",
+  "archetype": "tribal",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Torgal.dck",
+  "name": "Torgal",
+  "commander": "Torgal, A Fine Hound",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Wolf"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green tribal deck led by Torgal, A Fine Hound.",
+  "archetype": "tribal",
+  "sub": "low-tribal",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_White.dck",
+  "name": "White Tiger",
+  "commander": "White Tiger, Ava Ayala",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Cat",
+   "Human",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green tribal deck led by White Tiger, Ava Ayala.",
+  "archetype": "tribal",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_X23.dck",
+  "name": "X-23",
+  "commander": "X-23, Deadly Weapon",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Mutant",
+   "Berserker",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green tribal deck led by X-23, Deadly Weapon.",
+  "archetype": "tribal",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Goliath.dck",
+  "name": "Goliath",
+  "commander": "Goliath, Mass Manipulator",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Scientist",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green aggro deck led by Goliath, Mass Manipulator.",
+  "archetype": "aggro",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Halana.dck",
+  "name": "Halana",
+  "commander": "Halana, Kessig Ranger",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Archer",
+   "Ranger"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green aggro deck led by Halana, Kessig Ranger.",
+  "archetype": "aggro",
+  "sub": "low-aggro",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Hellcat.dck",
+  "name": "Hellcat",
+  "commander": "Hellcat, Undying Vigilante",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Human",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green aggro deck led by Hellcat, Undying Vigilante.",
+  "archetype": "aggro",
+  "sub": null,
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Hulkling.dck",
+  "name": "Hulkling",
+  "commander": "Hulkling, Burgeoning Bruiser",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Kree",
+   "Skrull",
+   "Hero"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green aggro deck led by Hulkling, Burgeoning Bruiser.",
+  "archetype": "aggro",
+  "sub": "low-control",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Renata.dck",
+  "name": "Renata",
+  "commander": "Renata, Called to the Hunt",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Enchantment",
+   "Demigod"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green aggro deck led by Renata, Called to the Hunt.",
+  "archetype": "aggro",
+  "sub": "low-aggro",
+  "reach": 2
+ },
+ {
+  "tier": 1,
+  "file": "T1_G_Ruxa.dck",
+  "name": "Ruxa",
+  "commander": "Ruxa, Patient Professor",
+  "colors": "G",
+  "life": 11,
+  "theme": [
+   "Bear",
+   "Druid"
+  ],
+  "desc": "Tier 1 (Bracket 1). Mono-green aggro deck led by Ruxa, Patient Professor.",
+  "archetype": "aggro",
+  "sub": null,
+  "reach": 2
+ }
+]

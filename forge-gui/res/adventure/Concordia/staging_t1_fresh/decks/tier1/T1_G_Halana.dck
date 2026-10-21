@@ -1,0 +1,68 @@
+[metadata]
+Name=Halana
+Description=Tier 1 (Bracket 1). Mono-green aggro deck led by Halana, Kessig Ranger.
+[Commander]
+1 Halana, Kessig Ranger|CMR
+[Main]
+38 Forest|FDN
+1 Tranquil Thicket|ONS
+1 Myriad Landscape|CMM
+1 Temple of the False God|SCG
+1 Aspect of Hydra|BNG
+1 Explosive Growth|INV
+1 Kodama's Might|CHK
+1 Might of Alara|CFX
+1 Tyvar's Stand|ONE
+1 Viridian Longbow|MRD
+1 Wirewood Pride|ONS
+1 Boon of Boseiju|NEO
+1 Deepwood Drummer|MMQ
+1 Destiny Spinner|THB
+1 Dreampod Druid|PLST
+1 Fellwar Stone|9ED
+1 Gatherer of Graces|GPT
+1 Gunner Conscript|PIP
+1 Hamlet Captain|EMN
+1 Hidden Herbalists|AER
+1 Ixalli's Keeper|XLN
+1 Jade Mage|M12
+1 Mortal's Resolve|BNG
+1 Mortarpod|MBS
+1 Obsessive Skinner|SOI
+1 Saw|DSK
+1 Spider-Slayer, Hatred Honed|SPM
+1 Thornweald Archer|FDN
+1 Titanic Growth|WOE
+1 Venom Connoisseur|FDN
+1 White Tiger, Ava Ayala|MSH
+1 Borderland Ranger|AVR
+1 Carefree Swinemaster|CLB
+1 Dawnhart Mentor|MID
+1 Earthbending Student|TLE
+1 Eccentric Farmer|MID
+1 Fireshrieker|FDN
+1 Galactic Wayfarer|EOE
+1 Hyrax Tower Scout|THB
+1 Invigorate|MMQ
+1 Patient Naturalist|OTJ
+1 Thallid Germinator|TSP
+1 Toph, the Blind Bandit|TLA
+1 Tuskguard Captain|CMM
+1 Worn Powerstone|MH3
+1 Yavimaya Elder|CMR
+1 Yavimaya Enchantress|C18
+1 Brass Knuckles|CMM
+1 Capenna Express|SNC
+1 Professional Wrestler|SPM
+1 Provisions Merchant|WOE
+1 Skybeast Tracker|WOE
+1 Stone-Seeder Hierophant|RAV
+1 Surrak, the Hunt Caller|CMM
+1 Wilderness Reclamation|RNA
+1 Aradara Express|KLD
+1 Bighorner Rancher|PIP
+1 Elturgard Ranger|AFR
+1 Scatter the Seeds|RAV
+1 Wolfkin Bond|M20
+1 Zuko's Exile|TLA
+1 Wolf's Quarry|ELD
