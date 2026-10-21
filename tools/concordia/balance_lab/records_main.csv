@@ -21,3 +21,13 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:12:25Z,c69a0758,inner,3,decks/tier3/T3_UB_Gyruda.dck,decks/tier3/T3_WG_Maja.dck,25,25,,,b,b,13,0
 2026-10-21T02:12:45Z,c69a0758,inner,2,decks/tier2/T2_WG_Jasmine.dck,decks/tier2/T2_UR_Mizzix.dck,15,15,,,a,a,15,0
 2026-10-21T02:12:45Z,c69a0758,inner,2,decks/tier2/T2_WG_Jasmine.dck,decks/tier2/T2_UR_Mizzix.dck,15,15,,,b,b,33,0
+2026-10-21T02:13:13Z,c69a0758,inner,2,decks/tier2/T2_UB_The.dck,decks/tier2/T2_WU_Denry.dck,15,15,,,a,b,18,0
+2026-10-21T02:13:13Z,c69a0758,inner,2,decks/tier2/T2_UB_The.dck,decks/tier2/T2_WU_Denry.dck,15,15,,,b,b,35,0
+2026-10-21T02:13:40Z,c69a0758,bonus,2,decks/tier2/T2_W_Ashe.dck,decks/starter/R_Starter_Normal.dck,15,15,land,,a,a,19,0
+2026-10-21T02:13:40Z,c69a0758,bonus,2,decks/tier2/T2_W_Ashe.dck,decks/starter/R_Starter_Normal.dck,15,15,land,,b,a,14,0
+2026-10-21T02:13:40Z,c69a0758,bonus,2,decks/tier2/T2_W_Ashe.dck,decks/starter/R_Starter_Normal.dck,15,15,,,a,b,16,0
+2026-10-21T02:13:40Z,c69a0758,bonus,2,decks/tier2/T2_W_Ashe.dck,decks/starter/R_Starter_Normal.dck,15,15,,,b,b,23,0
+2026-10-21T02:14:14Z,c69a0758,bonus,2,decks/tier2/T2_WB_Thalisse.dck,decks/starter/U_Starter_Normal.dck,15,15,land,,a,a,13,0
+2026-10-21T02:14:14Z,c69a0758,bonus,2,decks/tier2/T2_WB_Thalisse.dck,decks/starter/U_Starter_Normal.dck,15,15,land,,b,b,17,0
+2026-10-21T02:14:14Z,c69a0758,bonus,2,decks/tier2/T2_WB_Thalisse.dck,decks/starter/U_Starter_Normal.dck,15,15,,,a,a,13,0
+2026-10-21T02:14:14Z,c69a0758,bonus,2,decks/tier2/T2_WB_Thalisse.dck,decks/starter/U_Starter_Normal.dck,15,15,,,b,b,17,0
