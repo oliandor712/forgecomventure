@@ -126,3 +126,35 @@ What this means for deck types (provisional):
 Flagged cards (AI:RemoveDeck): a flagged card is pushed down by -10 in this sort. Removing the flag restores its normal place in the order, so once a card is castable, it is cast at its CMC rank, not last.
 
 Open: the response path (`topOwnedByAI`, `mustRespond`, 1600-1625) is only sketched here.
+
+## 5. Mana use (ComputerUtilMana.java)
+
+Paying a cost: `chooseManaAbility` (ComputerUtilMana.java:293) picks the next mana source for a shard. Before the default order, it applies source preferences:
+- `AIPreference ManaFrom$` or `AIManaPref`: Snow sources first; Treasure spent one at a time (`Treasure`) or freely (`TreasureMax`); `NotSameCard` removes sources with the same name as the spell (318-344).
+- It skips the spell's own host as a source (~352), and any creature already paying a tap cost this turn (memory set `PAYS_TAP_COST`, ~355).
+- Pump instants and sorceries do not tap a creature that is their target (Servant of the Conduit case, ~380).
+- Animate: the AI does not tap the enchanted card for its own aura, and a manland animated this turn is not tapped again (~365-375).
+- Attach: `AvoidPayingWithAttachTarget` stops the AI paying with the land it is attaching to, when another copy is untapped (~390-396).
+- Cavern of Souls: for generic costs, pays with the coloured ability when a creature type matches, so the spell stays uncounterable (~400-415).
+
+Order of sources, `getManaSourcesToPayCost` and `sortManaAbilities` (133-160):
+- Each source card gets a score (`scoreManaProducingCard`, ~108-130), lower is tapped first:
+  - Its mana abilities' own score.
+  - +13 for each non-mana activated ability that is possible.
+  - +13 if it can attack, +13 if it can block.
+- So lands with no other use are tapped first, and creatures with abilities or combat use are kept untapped.
+- Shards are paid in order of fewest sources first (line 1250).
+- Final order (~1640-1660): colourless sources, then sources by number of mana they make (1 to 5), then any-colour sources, then other sources with the best creature last (sorted by `evaluateCreature`, reversed), then "use last" sources such as sacrifice outlets.
+
+Spending for X and budget checks:
+- `determineLeftoverMana` (ComputerUtilMana.java:1784) increases X one at a time until the cost is no longer payable, capped by `XMax` or `AIXMax`. The AI uses all available mana for X spells.
+- `getAvailableManaEstimate` (1458-1461) is the number the attack and fog logic read for "open mana". It is used in the attack trade roll (AiAttackController 1271-1282) and in FogAi's mana reservation (FogAi.java:105-133).
+
+What this means for deck types (provisional):
+- Ramp: many mana sources; the AI keeps creatures with abilities untapped and taps lands first, so it can often cast a big spell and still hold blockers.
+- Control: holding open mana matters for bluffs and tricks. The attack logic counts open mana, so a control deck with lands untapped looks less exposed, and the AI attacks less into it.
+- Aggro: low open mana, so the AI attacks more freely on turns when it is tapped out (the trade roll allows this).
+
+Flagged cards (AI:RemoveDeck) relevant here: none change mana use. A flagged mana source is still used normally if it is in play. Fog cards that cost mana count in `getAvailableManaEstimate` only when they are castable, which depends on the flag.
+
+Still open: the `checkCosts` path (`canPayShardWithSpellAbility`) and reserved-card handling.
