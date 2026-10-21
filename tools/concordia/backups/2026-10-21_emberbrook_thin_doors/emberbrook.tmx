@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.1" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="62">
+ <editorsettings>
+  <export target="wastetown..tmx" format="tmx"/>
+ </editorsettings>
+ <tileset firstgid="1" source="../../../common/maps/tileset/main.tsx"/>
+ <tileset firstgid="10113" source="../../../common/maps/tileset/buildings.tsx"/>
+ <tileset firstgid="11905" source="../../../common/maps/tileset/buildings-nocollide.tsx"/>
+ <layer id="1" name="Background" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJzr5GRg6Bxk+AUHBJOqz28QuH0UY8dN3NTHg9He5xy0tbcNDcPs1OCiv72tSOyRYi+t0xU2e5W5aG+vChcqHuh8NGovde19zoGoV7HVrbSyF1QuoadnUuwlx20wsymxl5L4HUn2YiuvKGkbEKuHWvYi0/SydxSP4sGKARuK+bI=
+  </data>
+ </layer>
+ <layer id="2" name="Ground" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJztlUFOAkEQRb8xRGZwuAcHwKg7QjScg4UbQA6A8SDKkngdIBhlqURXcgi6Y3fSQHX3Z9I7+MlPZjpV81JVnRrguDWtArOEnlc57vkZ0EU6P5D11nLgMqGLnAQrvRTAq/K44HNS5F/XgRvl2/r/+yADHgkPMzmf1YeK/1Remjy297anu/laT6b2UaAH7p0+9H7Phbv8R9Y7cPqmnyfKF4TfnBy371ahWiVui+yzjvNxNfO5BFfrrgHcN7Zj3bMQ10qzfXX7uDEx3JAYru8s9XxTcCV1AtyvfP/utoWzFcFdK/8G6rV3VNoZfdODXibvDvtcZr5210nW+09zYzFluHbXSV4abiymDFeaaWy+3/n+rA9R7D9QmN3ExKUWu0tC6sRD0KwAVxU/94f4BhOzq4Vivge4J510zNoAyJKMbg==
+  </data>
+ </layer>
+ <layer id="3" name="Walls" width="30" height="30">
+  <properties>
+   <property name="spriteLayer" type="bool" value="true"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4D2YAsLA4M4FfE2FuLsDWTFLl6gSRxfXouBQUGLsHmE7F3CTZw+GLAG2mlDBXthQE8bwf6kjUoTY14VL241lbzEu49YQKl/R7q9X4Fx+42E+CVXnbEOA4OJDuluoEU463FSz7zBHr/Dwd4qpHIDVBbpI5VLhkCsqw1hw8piEA3i66Cpg7GR7S3HU14R6z5SALJ5FVjshomRYq8gjnyFy1584AMr8XUqMXX1JyqGH8wP1I4TGKjEEh99moTtxaaPGgDZ3hxN/GppZe8oGAXYAAB7/jCB
+  </data>
+ </layer>
+ <layer id="5" name="Overlay" width="30" height="30">
+  <data encoding="base64" compression="zlib">
+   eJxjYBhYMIuXgWE2DfEcXuz2WvDR1l9WOMwftXdw2dvKw8CgC2WfgvLpYS8IXNNGpbGBOzrUt5ccMBTt1dRkYNDSJCxGib062JWBgbkGUD0QW2rgVqOLxifWXvQkIw50iATUMcFA+0KAOBRq702g4ltoGk6Raa8qjvJUFF9AIAH0/DUU0xU97MVXL8LqNGLUkGovclmEi02KOlLCWd8IwTYEsnWNMNWAgA6aOmxgsMcvMUDQeGDsJQWM2juw9l4Dil8nEiMDYvXcoLG/RsHgAgDoMlFq
+  </data>
+ </layer>
+ <objectgroup id="4" name="Objects">
+  <object id="1" template="../../../common/maps/obj/entry_up.tx" x="224" y="440" width="28" height="16"/>
+  <object id="2" template="../../../common/maps/obj/exit.tx" x="192" y="464" width="96" height="16"/>
+  <object id="60" name="house door" template="../../../common/maps/obj/door_down.tx" x="192" y="292" width="16" height="4">
+   <properties>
+    <property name="direction" value="down"/>
+    <property name="teleport" value="../Concordia/maps/map/emberbrook_house.tmx"/>
+    <property name="teleportObjectId" value="170"/>
+   </properties>
+  </object>
+  <object id="20" template="../../../common/maps/obj/enemy.tx" x="96" y="200" width="16" height="16">
+  <properties>
+   <property name="enemy" value="Tutorial Raider"/>
+   <property name="dialog" value="[{&quot;text&quot;: &quot;The raider grins. \&quot;Beat me and you can have the best card in my deck.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Duel)&quot;, &quot;action&quot;: [{&quot;battleWithActorID&quot;: -1}]}]}]"/>
+   <property name="defeatDialog" value="[{&quot;condition&quot;: [{&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;raidersBeaten&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 4}}], &quot;action&quot;: [{&quot;deleteMapObject&quot;: -1}, {&quot;advanceQuestFlag&quot;: &quot;raidersBeaten&quot;}], &quot;text&quot;: &quot;The raider flees toward the wall. That was the last of them. The square goes quiet, and someone is waiting at the village gate.&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colW&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 30}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're White, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colU&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 31}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Blue, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colB&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 32}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Black, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colR&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 34}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Red, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colG&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 33}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Green, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}]}, {&quot;condition&quot;: [{&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;raidersBeaten&quot;, &quot;op&quot;: &quot;&lt;&quot;, &quot;val&quot;: 4}}], &quot;action&quot;: [{&quot;deleteMapObject&quot;: -1}, {&quot;advanceQuestFlag&quot;: &quot;raidersBeaten&quot;}], &quot;text&quot;: &quot;The raider flees toward the wall. Raiders are still loose in the square.&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}]"/>
+   <property name="threatRange" type="int" value="3"/>
+   <property name="pursueRange" type="int" value="4"/>
+  </properties>
+  </object>
+  <object id="21" template="../../../common/maps/obj/enemy.tx" x="352" y="200" width="16" height="16">
+  <properties>
+   <property name="enemy" value="Raider Scout"/>
+   <property name="dialog" value="[{&quot;text&quot;: &quot;The scout twirls a dagger. \&quot;Let's see if you can keep up.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Duel)&quot;, &quot;action&quot;: [{&quot;battleWithActorID&quot;: -1}]}]}]"/>
+   <property name="defeatDialog" value="[{&quot;condition&quot;: [{&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;raidersBeaten&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 4}}], &quot;action&quot;: [{&quot;deleteMapObject&quot;: -1}, {&quot;advanceQuestFlag&quot;: &quot;raidersBeaten&quot;}], &quot;text&quot;: &quot;The scout runs off into the trees. That was the last of them. The square goes quiet, and someone is waiting at the village gate.&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colW&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 30}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're White, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colU&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 31}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Blue, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colB&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 32}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Black, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colR&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 34}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Red, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colG&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 33}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Green, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}]}, {&quot;condition&quot;: [{&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;raidersBeaten&quot;, &quot;op&quot;: &quot;&lt;&quot;, &quot;val&quot;: 4}}], &quot;action&quot;: [{&quot;deleteMapObject&quot;: -1}, {&quot;advanceQuestFlag&quot;: &quot;raidersBeaten&quot;}], &quot;text&quot;: &quot;The scout runs off into the trees. Raiders are still loose in the square.&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}]"/>
+   <property name="threatRange" type="int" value="3"/>
+   <property name="pursueRange" type="int" value="4"/>
+  </properties>
+  </object>
+  <object id="22" template="../../../common/maps/obj/enemy.tx" x="128" y="320" width="16" height="16">
+  <properties>
+   <property name="enemy" value="Raider Brute"/>
+   <property name="dialog" value="[{&quot;text&quot;: &quot;The brute slams a fist on the bench. \&quot;The Seal-day crowd ran. Why haven't you?\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Duel)&quot;, &quot;action&quot;: [{&quot;battleWithActorID&quot;: -1}]}]}]"/>
+   <property name="defeatDialog" value="[{&quot;condition&quot;: [{&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;raidersBeaten&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 4}}], &quot;action&quot;: [{&quot;deleteMapObject&quot;: -1}, {&quot;advanceQuestFlag&quot;: &quot;raidersBeaten&quot;}], &quot;text&quot;: &quot;The brute grumbles and leaves. That was the last of them. The square goes quiet, and someone is waiting at the village gate.&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colW&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 30}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're White, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colU&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 31}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Blue, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colB&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 32}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Black, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colR&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 34}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Red, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colG&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 33}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Green, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}]}, {&quot;condition&quot;: [{&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;raidersBeaten&quot;, &quot;op&quot;: &quot;&lt;&quot;, &quot;val&quot;: 4}}], &quot;action&quot;: [{&quot;deleteMapObject&quot;: -1}, {&quot;advanceQuestFlag&quot;: &quot;raidersBeaten&quot;}], &quot;text&quot;: &quot;The brute grumbles and leaves. Raiders are still loose in the square.&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}]"/>
+   <property name="threatRange" type="int" value="3"/>
+   <property name="pursueRange" type="int" value="4"/>
+  </properties>
+  </object>
+  <object id="23" template="../../../common/maps/obj/enemy.tx" x="320" y="320" width="16" height="16">
+  <properties>
+   <property name="enemy" value="Raider Smuggler"/>
+   <property name="dialog" value="[{&quot;text&quot;: &quot;The smuggler sneers. \&quot;Every card in this village is ours tonight. Starting with yours.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Duel)&quot;, &quot;action&quot;: [{&quot;battleWithActorID&quot;: -1}]}]}]"/>
+   <property name="defeatDialog" value="[{&quot;condition&quot;: [{&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;raidersBeaten&quot;, &quot;op&quot;: &quot;=&quot;, &quot;val&quot;: 4}}], &quot;action&quot;: [{&quot;deleteMapObject&quot;: -1}, {&quot;advanceQuestFlag&quot;: &quot;raidersBeaten&quot;}], &quot;text&quot;: &quot;The smuggler backs off. That was the last of them. The square goes quiet, and someone is waiting at the village gate.&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colW&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 30}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're White, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colU&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 31}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Blue, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colB&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 32}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Black, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colR&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 34}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Red, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}, {&quot;name&quot;: &quot;(Continue)&quot;, &quot;condition&quot;: [{&quot;checkCharacterFlag&quot;: &quot;colG&quot;}], &quot;action&quot;: [{&quot;activateMapObject&quot;: 33}], &quot;text&quot;: &quot;Your rival stands in the village gate, arms folded. \&quot;You're Green, and I'm the opposite. Nobody leaves Emberbrook until we find out whose colors the Seals listen to.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}]}, {&quot;condition&quot;: [{&quot;getQuestFlag&quot;: {&quot;key&quot;: &quot;raidersBeaten&quot;, &quot;op&quot;: &quot;&lt;&quot;, &quot;val&quot;: 4}}], &quot;action&quot;: [{&quot;deleteMapObject&quot;: -1}, {&quot;advanceQuestFlag&quot;: &quot;raidersBeaten&quot;}], &quot;text&quot;: &quot;The smuggler backs off. Raiders are still loose in the square.&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Continue)&quot;}]}]"/>
+   <property name="threatRange" type="int" value="3"/>
+   <property name="pursueRange" type="int" value="4"/>
+  </properties>
+  </object>
+  <object id="30" template="../../../common/maps/obj/enemy.tx" x="232" y="424" width="16" height="16">
+  <properties>
+   <property name="enemy" value="Rival Black"/>
+   <property name="dialog" value='[{"text": "Your rival blocks the village gate, their deck chosen by the angels. \"I want to beat you in front of the whole village.\"", "options": [{"name": "(Duel)", "action": [{"battleWithActorID": -1}]}]}]'/>
+   <property name="defeatDialog" value='[{"text": "Your rival lowers their cards and laughs. \"Not bad. This isn&apos;t over.\"", "action": [{"deleteMapObject": -1}], "options": [{"name": "(Continue)", "action": [{"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]}]'/>
+   <property name="hidden" type="bool" value="True"/>
+   <property name="inactive" type="bool" value="True"/>
+   <property name="threatRange" type="int" value="56"/>
+   <property name="pursueRange" type="int" value="112"/>
+  </properties>
+  </object>
+  <object id="31" template="../../../common/maps/obj/enemy.tx" x="232" y="424" width="16" height="16">
+  <properties>
+   <property name="enemy" value="Rival Red"/>
+   <property name="dialog" value='[{"text": "Your rival blocks the village gate, their deck chosen by the angels. \"I want to beat you in front of the whole village.\"", "options": [{"name": "(Duel)", "action": [{"battleWithActorID": -1}]}]}]'/>
+   <property name="defeatDialog" value='[{"text": "Your rival lowers their cards and laughs. \"Not bad. This isn&apos;t over.\"", "action": [{"deleteMapObject": -1}], "options": [{"name": "(Continue)", "action": [{"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]}]'/>
+   <property name="hidden" type="bool" value="True"/>
+   <property name="inactive" type="bool" value="True"/>
+   <property name="threatRange" type="int" value="56"/>
+   <property name="pursueRange" type="int" value="112"/>
+  </properties>
+  </object>
+  <object id="32" template="../../../common/maps/obj/enemy.tx" x="232" y="424" width="16" height="16">
+  <properties>
+   <property name="enemy" value="Rival Green"/>
+   <property name="dialog" value='[{"text": "Your rival blocks the village gate, their deck chosen by the angels. \"I want to beat you in front of the whole village.\"", "options": [{"name": "(Duel)", "action": [{"battleWithActorID": -1}]}]}]'/>
+   <property name="defeatDialog" value='[{"text": "Your rival lowers their cards and laughs. \"Not bad. This isn&apos;t over.\"", "action": [{"deleteMapObject": -1}], "options": [{"name": "(Continue)", "action": [{"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]}]'/>
+   <property name="hidden" type="bool" value="True"/>
+   <property name="inactive" type="bool" value="True"/>
+   <property name="threatRange" type="int" value="56"/>
+   <property name="pursueRange" type="int" value="112"/>
+  </properties>
+  </object>
+  <object id="34" template="../../../common/maps/obj/enemy.tx" x="232" y="424" width="16" height="16">
+  <properties>
+   <property name="enemy" value="Rival White"/>
+   <property name="dialog" value='[{"text": "Your rival blocks the village gate, their deck chosen by the angels. \"I want to beat you in front of the whole village.\"", "options": [{"name": "(Duel)", "action": [{"battleWithActorID": -1}]}]}]'/>
+   <property name="defeatDialog" value='[{"text": "Your rival lowers their cards and laughs. \"Not bad. This isn&apos;t over.\"", "action": [{"deleteMapObject": -1}], "options": [{"name": "(Continue)", "action": [{"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]}]'/>
+   <property name="hidden" type="bool" value="True"/>
+   <property name="inactive" type="bool" value="True"/>
+   <property name="threatRange" type="int" value="56"/>
+   <property name="pursueRange" type="int" value="112"/>
+  </properties>
+  </object>
+  <object id="33" template="../../../common/maps/obj/enemy.tx" x="232" y="424" width="16" height="16">
+  <properties>
+   <property name="enemy" value="Rival Blue"/>
+   <property name="dialog" value='[{"text": "Your rival blocks the village gate, their deck chosen by the angels. \"I want to beat you in front of the whole village.\"", "options": [{"name": "(Duel)", "action": [{"battleWithActorID": -1}]}]}]'/>
+   <property name="defeatDialog" value='[{"text": "Your rival lowers their cards and laughs. \"Not bad. This isn&apos;t over.\"", "action": [{"deleteMapObject": -1}], "options": [{"name": "(Continue)", "action": [{"setQuestFlag": {"key": "tutorialDone", "val": 1}}]}]}]'/>
+   <property name="hidden" type="bool" value="True"/>
+   <property name="inactive" type="bool" value="True"/>
+   <property name="threatRange" type="int" value="56"/>
+   <property name="pursueRange" type="int" value="112"/>
+  </properties>
+  </object>
+  <object id="61" name="gate guard" template="../../../common/maps/obj/dialog.tx" x="192" y="432" width="96" height="16">
+  <properties>
+   <property name="dialog" value="[{&quot;condition&quot;: [{&quot;checkQuestFlag&quot;: &quot;tutorialDone&quot;, &quot;not&quot;: true}], &quot;text&quot;: &quot;The village gate is barred. A guard shakes her head: \&quot;Nobody leaves while raiders are loose in the square. Beat them, and whoever's waiting for you at the gate.\&quot;&quot;, &quot;options&quot;: [{&quot;name&quot;: &quot;(Turn back)&quot;}]}]"/>
+   <property name="hidden" type="bool" value="true"/>
+  </properties>
+  </object>
+ </objectgroup>
+</map>
