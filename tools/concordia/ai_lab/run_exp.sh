@@ -1,13 +1,13 @@
 #!/bin/bash
 # run_exp.sh <label> <watch cards, comma sep> <deckA> <deckB> <patchedAssetsDir>
-# Runs baseline (forge-gui/) and patched (scratch assets) in parallel: 10 games, 150 s cap, equal life 20, phase-annotated
+# Runs baseline (forge-gui/) and patched (scratch assets) in parallel: 10 games, no per-game cap (86400 s), equal life 20, phase-annotated
 # logs in tools/concordia/ai_lab/results/<label>-{baseline,patched}/. Output: results/<label>-summary.txt
 set -e
 cd "$(dirname "$0")/../../.."
 L=$1; W=$2; A=$3; B=$4; P=$5; R=tools/concordia/ai_lab/results
 for c in baseline patched; do
   AS=forge-gui/; [ $c = patched ] && AS=$P/
-  ( java -Xmx3g -Djava.awt.headless=true "-Dwatch=$W" -Dlogdir=$R/$L-$c -cp "$(cat ~/.cache/forge-sim/labcp.txt)" AiLabSim $AS 10 150 $A 20 $B 20 $L-$c 2>&1 | grep -E 'RESULT|PLAYS|rror' > $R/$L-$c.raw ) &
+  ( java -Xmx3g -Djava.awt.headless=true "-Dwatch=$W" -Dlogdir=$R/$L-$c -cp "$(cat ~/.cache/forge-sim/labcp.txt)" AiLabSim $AS 10 86400 $A 20 $B 20 $L-$c 2>&1 | grep -E 'RESULT|PLAYS|rror' > $R/$L-$c.raw ) &
 done
 wait
 for c in baseline patched; do

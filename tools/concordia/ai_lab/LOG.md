@@ -52,3 +52,4 @@ STANDING INSTRUCTION (user, 2026-10-20): each hourly wake is time-boxed to about
 - Scratch build: $SCRATCH/ai-lab-wt008 (only 008 applied, instrumented with SHADOW lines), cache $SCRATCH/simcache-008; $SCRATCH/ai-lab-wt (005 v3 + 006 + 008) with cache simcache-patched. Old-deck results are tagged in EXPERIMENTS.md.
 2026-10-21T02:09Z balance lab shares: R and G shards run, 16 games each, records_ailab.csv pushed; DECISION_LOGIC.md blocking slice pushed; 4h report posted (REPORTED)
 2026-10-21T02:09Z REPORTED (4h report: ailab sims 32 games; ANALYSIS REQUEST: is 005 v3 safe to keep out of approvals list; CHECKLIST: ScenarioSim not started)
+2026-10-21T02:40Z user: remove all hourly and compute caps, keep 4-hour reports. Per-game timeout in run_exp.sh and run_code_ab.sh changed from 150 s to 86400 s (no cap; results at 150 s stay comparable only to 150 s runs). Hourly steps and 5-minute box no longer apply. 4-hour reports stay.
