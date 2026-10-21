@@ -161,3 +161,11 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:44:04Z,1a6eac0bb60,inner,3,decks/tier3/T3_WU_Isperia.dck,decks/tier3/T3_UR_Jori.dck,25,25,,,b,a,18,0
 2026-10-21T02:44:31Z,1a6eac0bb60,inner,5,decks/tier5/T5_WU_Medomai.dck,decks/tier5/T5_UB_Nymris.dck,35,35,,,a,b,18,0
 2026-10-21T02:44:31Z,1a6eac0bb60,inner,5,decks/tier5/T5_WU_Medomai.dck,decks/tier5/T5_UB_Nymris.dck,35,35,,,b,a,23,0
+2026-10-21T02:45:06Z,1a6eac0bb60,inner,5,decks/tier5/T5_WR_BalloonMan.dck,decks/tier5/T5_WB_Bartolom.dck,35,35,,,a,a,21,0
+2026-10-21T02:45:06Z,1a6eac0bb60,inner,5,decks/tier5/T5_WR_BalloonMan.dck,decks/tier5/T5_WB_Bartolom.dck,35,35,,,b,a,24,0
+2026-10-21T02:45:52Z,1a6eac0bb60,bonus,2,decks/tier2/T2_U_Thryx.dck,decks/starter/B_Starter_Alt.dck,15,15,staff,,a,b,18,0
+2026-10-21T02:45:52Z,1a6eac0bb60,bonus,2,decks/tier2/T2_U_Thryx.dck,decks/starter/B_Starter_Alt.dck,15,15,staff,,b,a,20,0
+2026-10-21T02:45:52Z,1a6eac0bb60,bonus,2,decks/tier2/T2_U_Thryx.dck,decks/starter/B_Starter_Alt.dck,15,15,,,a,b,12,0
+2026-10-21T02:45:52Z,1a6eac0bb60,bonus,2,decks/tier2/T2_U_Thryx.dck,decks/starter/B_Starter_Alt.dck,15,15,,,b,b,11,0
+2026-10-21T02:46:43Z,843237e9dbb,inner,4,decks/tier4/T4_UR_Adeliz.dck,decks/tier4/T4_RG_Anzrag.dck,30,30,,,a,b,14,0
+2026-10-21T02:46:43Z,843237e9dbb,inner,4,decks/tier4/T4_UR_Adeliz.dck,decks/tier4/T4_RG_Anzrag.dck,30,30,,,b,b,15,0
