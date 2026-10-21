@@ -222,7 +222,7 @@ Gate Temple ─► GATE PASS ─► Gate town ─► Route A ─► INNER PASS 1
 | Route B | A long corridor with side paths | Each side path leads to a clearing; some clearings hold a random dungeon (§4.4), others duelists or treasure |
 | Inner pass 2 | A mandatory dungeon | Its two doors are at the end of route B and the start of route C. Two-way |
 | Route C | An open field | Random spawns (wild encounters) instead of placed duelists |
-| Zone town | A small town at the far end of the field | Inn, shard trader, booster shop and the zone color's two specialty shops (Green: creatures and enchantments), stocked in the zone's color. Heals. **Not** a Waystone stop |
+| Zone town | A small town at the far end of the field | Inn, shard trader, booster shop, a Commander Hall and the zone color's two specialty shops (Green: creatures and enchantments), stocked in the zone's color. Heals. **Not** a Waystone stop |
 | Warden's dungeon | The zone's boss dungeon | Entered from the zone town. Dungeon puzzle and Warden (`DESIGN.md` §3.3, §5.3) |
 
 **Healing only in towns.** The gate town and the zone town are the only places in the zone to heal; there are no
@@ -258,6 +258,14 @@ Every gate town has all the services Mossgate has, with stock focused on the zon
 Each color-focused shop is a new entry in `world/shops.json` (for example `WhiteCreatures`), so the templates need
 a per-zone copy or a property that overrides `commonShopList`. Five zones by five focused shops is 25 shop entries,
 written once by a script.
+
+### 4.1a Town building rules (user, 2026-10-21)
+
+- **Commander Hall is mandatory in every town except Emberbrook**: Mossgate, every gate town and every zone town has one
+  (`commanderhall.tx`, §4.1). Emberbrook has none; the starter commanders are chosen at the Seal Angels and then reached
+  at Mossgate's hall.
+- **A quest building is optional** in Mossgate, the gate towns and the Warden (zone) towns. A town can have one, but none
+  is required, so a town may ship without it.
 
 ### 4.2 The Waystone
 
