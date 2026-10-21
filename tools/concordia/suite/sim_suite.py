@@ -11,13 +11,14 @@ efficiency suggestions A-D built in and the user's archetype rule:
   +  seconds per game, archetype, worker and tier on every row
   *  archetype rule (user, 2026-10-21): decks are grouped by archetype, and each game draws a RANDOM deck from the archetype
      group of each side instead of walking the individual decks. A "cell" is (tier, archetype A, archetype B).
-Modes: inner (archetype vs archetype within a tier), starter (a starter vs an enemy archetype at a stage), bonus (matched sets).
+Modes: inner (archetype vs archetype within a tier), starter (a starter vs an enemy archetype at a stage), bonus (matched sets); "all" = inner + starter, "everything" adds bonus (bonuses were already measured at 173+ sets each, so they are opt-in).
 Games always have equal life on both sides; no life bonuses; both seats alternate inside every pairing.
 Every game writes a phase log, is digested by ai_lab/phase_digest.py (hourly folder per worker) and the raw log is deleted.
 The AI test patches (ai_lab/patches/SIM_ACTIVE.txt: 010, 011) are compiled onto the SIM classpath only, never into forge-ai/src.
 
   python3 tools/concordia/suite/sim_suite.py setup
   python3 tools/concordia/suite/sim_suite.py run [--worker W] [--mode inner|starter|bonus|all] [--minutes 9 | --until-done]
+  python3 tools/concordia/suite/sim_suite.py plan --mode all              # expected games still needed (limits the total)
   python3 tools/concordia/suite/sim_suite.py status
   python3 tools/concordia/suite/sim_suite.py report
 """
@@ -85,18 +86,21 @@ def groups():
     return g
 
 
+MIN_GROUP = 3  # an archetype group with fewer decks repeats the same decks: not sampled (listed by setup as too small)
+
+
 def cell_list(g, modes):
     cells = []
     for t in range(1, 6):
-        archs = sorted(g[t])
-        if modes in ("inner", "all"):
+        archs = sorted(a for a in g[t] if len(g[t][a]) >= MIN_GROUP)
+        if modes in ("inner", "all", "everything"):
             for i, a in enumerate(archs):
                 for b in archs[i:]:
-                    if a == b and len(g[t][a]) < 2: continue
+                    if a == b: continue  # a mirror answers only the seat edge (50% by symmetry): not worth a single game
                     cells.append(("inner", t, a, b))
-        if modes in ("starter", "all"):
+        if modes in ("starter", "all", "everything"):
             for a in archs: cells.append(("starter", t, "starter", a))
-        if modes in ("bonus", "all") and t <= 2:
+        if modes in ("bonus", "everything") and t <= 2:
             for a in archs:
                 for bo in BONUSES: cells.append(("bonus", t, a, bo))
     return cells
@@ -114,6 +118,18 @@ def stats(rows):
     return s, sets
 
 
+def need(n, w, a, target=0.5):
+    """Games still wanted by a cell: 0 when it is resolved. Resolved = decisive (90% interval clear of the target) after --min games,
+    or narrow (half-width <= --halfwidth), or at --max."""
+    if n >= a.max: return 0
+    lo, hi = wilson(w, n)
+    if n >= a.min and (lo > target or hi < target): return 0
+    if n >= a.min and (hi - lo) / 2 <= a.halfwidth: return 0
+    p = min(max(w / n, 0.1), 0.9) if n else 0.5
+    want = math.ceil(2.706 * p * (1 - p) / (a.halfwidth ** 2))  # z=1.645
+    return max(a.min - n, min(a.max, want) - n, 1)
+
+
 def pending(cells, rows, a):
     s, sets = stats(rows)
     todo = []
@@ -124,13 +140,28 @@ def pending(cells, rows, a):
             if n < a.bonus_sets: todo.append((0, -(a.bonus_sets - n), c))
             continue
         n, w = s.get(c, (0, 0.0))
-        if n >= a.max: continue
-        lo, hi = wilson(w, n)
-        h = (hi - lo) / 2
-        if n < a.min: todo.append((0, n, c))
-        elif h > a.halfwidth: todo.append((1, -h, c))
+        target = TARGET[t] if mode == "starter" else 0.5
+        k = need(n, w, a, target)
+        if k: todo.append((0 if n < a.min else 1, -k, c))
     todo.sort(key=lambda x: (x[0], x[1]))
     return [c for _, _, c in todo]
+
+
+def cmd_plan(a):
+    g = groups(); cells = cell_list(g, a.mode); rows = load_rows(); s, sets = stats(rows)
+    total = 0; per = collections.Counter()
+    for c in cells:
+        mode, t, x, y = c
+        if mode == "bonus":
+            k = 4 * max(0, a.bonus_sets - sets.get((t, x, y), 0))
+        else:
+            n, w = s.get(c, (0, 0.0)); k = need(n, w, a, TARGET[t] if mode == "starter" else 0.5)
+        total += k; per[mode] += k
+    sec = 8.0
+    print("cells: %d; games already recorded: %d" % (len(cells), len(rows)))
+    print("expected games still needed (stop rules: decisive or +-%.0f points, min %d, max %d): %d  %s" % (100 * a.halfwidth, a.min, a.max, total, dict(per)))
+    print("worst case (every cell hits max): %d" % sum(a.max if c[0] != "bonus" else 4 * a.bonus_sets for c in cells))
+    print("time at about %.0f s per game: %.1f process-hours (divide by workers)" % (sec, total * sec / 3600))
 
 
 def draw(rng, g, c, starters):
@@ -175,6 +206,7 @@ def cmd_setup(a):
     active = os.path.join(ROOT, "tools/concordia/ai_lab/patches/SIM_ACTIVE.txt")
     print("test overlay patches:", [l.strip() for l in open(active) if l.strip() and not l.startswith("#")] if os.path.exists(active) else "none")
     print("decks by tier and archetype:", {t: {k: len(v) for k, v in sorted(gr.items())} for t, gr in groups().items()})
+    print("groups with fewer than %d decks are not sampled:" % MIN_GROUP, {t: [k for k, v in gr.items() if len(v) < MIN_GROUP] for t, gr in groups().items()})
 
 
 def cmd_run(a):
@@ -191,6 +223,7 @@ def cmd_run(a):
     played = 0; t0 = time.time(); done = False
     while time.time() < end:
         rows = load_rows()
+        if a.total and len(rows) >= a.total: print("total cap of %d games reached" % a.total); done = True; break
         games, meta = plan_chunk(rng, g, cells, rows, a)
         if not games: done = True; break
         utc = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -265,20 +298,21 @@ def cmd_report(a):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("cmd", choices=["setup", "run", "status", "report"])
+    ap.add_argument("cmd", choices=["setup", "run", "status", "report", "plan"])
     ap.add_argument("--worker", default=os.environ.get("BALANCE_WORKER", "suite"))
-    ap.add_argument("--mode", default="inner", choices=["inner", "starter", "bonus", "all"])
+    ap.add_argument("--mode", default="inner", choices=["inner", "starter", "bonus", "all", "everything"])
     ap.add_argument("--minutes", type=float, default=9)
     ap.add_argument("--until-done", action="store_true")
     ap.add_argument("--chunk", type=int, default=24, help="games per JVM call (B)")
     ap.add_argument("--chunks", type=int, default=0, help="stop after this many chunks (0 = by time)")
-    ap.add_argument("--min", type=int, default=20, help="minimum games per cell")
-    ap.add_argument("--max", type=int, default=200, help="maximum games per cell (C)")
-    ap.add_argument("--halfwidth", type=float, default=0.10, help="stop a cell when its 90%% interval half-width is at most this (C)")
-    ap.add_argument("--bonus-sets", type=int, default=25, help="matched sets per (tier, enemy archetype, bonus)")
+    ap.add_argument("--min", type=int, default=12, help="minimum games per cell")
+    ap.add_argument("--max", type=int, default=60, help="maximum games per cell (C)")
+    ap.add_argument("--halfwidth", type=float, default=0.15, help="stop a cell when its 90%% interval half-width is at most this (C)")
+    ap.add_argument("--bonus-sets", type=int, default=12, help="matched sets per (tier, enemy archetype, bonus)")
+    ap.add_argument("--total", type=int, default=0, help="hard cap on all suite games across every worker (0 = none)")
     ap.add_argument("--no-push", action="store_true"); ap.add_argument("--no-pull", action="store_true")
     a = ap.parse_args()
-    {"setup": cmd_setup, "run": cmd_run, "status": cmd_status, "report": cmd_report}[a.cmd](a)
+    {"setup": cmd_setup, "run": cmd_run, "status": cmd_status, "report": cmd_report, "plan": cmd_plan}[a.cmd](a)
 
 
 if __name__ == "__main__":
