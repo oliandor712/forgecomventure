@@ -49,3 +49,7 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:31:48Z,1a6eac0bb60,bonus,2,decks/tier2/T2_R_Toggo.dck,decks/starter/B_Starter_Alt.dck,15,15,arena,,b,b,14,0
 2026-10-21T02:31:48Z,1a6eac0bb60,bonus,2,decks/tier2/T2_R_Toggo.dck,decks/starter/B_Starter_Alt.dck,15,15,,,a,b,12,0
 2026-10-21T02:31:48Z,1a6eac0bb60,bonus,2,decks/tier2/T2_R_Toggo.dck,decks/starter/B_Starter_Alt.dck,15,15,,,b,b,11,0
+2026-10-21T02:32:21Z,1a6eac0bb60,bonus,2,decks/tier2/T2_RG_Strider.dck,decks/starter/B_Starter_Alt.dck,15,15,arena,,a,b,16,0
+2026-10-21T02:32:21Z,1a6eac0bb60,bonus,2,decks/tier2/T2_RG_Strider.dck,decks/starter/B_Starter_Alt.dck,15,15,arena,,b,b,13,0
+2026-10-21T02:32:21Z,1a6eac0bb60,bonus,2,decks/tier2/T2_RG_Strider.dck,decks/starter/B_Starter_Alt.dck,15,15,,,a,b,24,0
+2026-10-21T02:32:21Z,1a6eac0bb60,bonus,2,decks/tier2/T2_RG_Strider.dck,decks/starter/B_Starter_Alt.dck,15,15,,,b,a,14,0
