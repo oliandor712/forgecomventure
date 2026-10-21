@@ -27,7 +27,12 @@ def cmc(mana):
 
 
 def archetype(deck):
-    """Simple tag rule from the Main list (quantities counted), scripts from cardsfolder. Order: tokens, ramp, control, aggro, midrange."""
+    """Tier 1 uses archetype_rules (tokens, tribal with a commander clause, aggro; interaction is a tag, not an archetype).
+    Tiers 2-5 keep the simple tag rule from the Main list (quantities counted), scripts from cardsfolder. Order: tokens, ramp, control, aggro, midrange."""
+    if re.search(r"tier1", deck.replace(os.sep, "/")):
+        sys.path.insert(0, os.path.join(ROOT, "tools/concordia"))
+        import archetype_rules as ar
+        return ar.classify(deck, 1)["archetype"]
     main = []
     sec = None
     for ln in open(deck):

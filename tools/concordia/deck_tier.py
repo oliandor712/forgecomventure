@@ -511,6 +511,20 @@ def check_tier(r, tier, life=None):
     return out
 
 
+def archetype_checks(path, r, tier):
+    """WARN lines for the deck's archetype window (archetype_rules.py): creatures, instants+sorceries, enchantments. Tier 1 only for now."""
+    if tier != 1:
+        return []
+    import archetype_rules as ar
+    c = ar.classify(path, tier)
+    lo, hi, isx, ench, art = ar.windows(tier, c["archetype"], c["sub"], c["reach"])
+    label = c["archetype"] + ("/" + c["sub"] if c["sub"] else "")
+    out = [("PASS" if lo <= r["creatures"] <= hi else "WARN", "archetype %s: creatures %d (window %d-%d)" % (label, r["creatures"], lo, hi))]
+    out.append(("PASS" if c["instant_sorcery"] >= isx else "WARN", "archetype %s: instants+sorceries %d (min %d)" % (label, c["instant_sorcery"], isx)))
+    out.append(("PASS" if c["enchantments"] >= ench else "WARN", "archetype %s: enchantments %d (min %d)" % (label, c["enchantments"], ench)))
+    return out
+
+
 def best_tier(r):
     scores = {}
     for t in TIERS:
@@ -544,7 +558,7 @@ def main(argv):
         fit, scores = best_tier(r)
         r["best_tier"] = fit
         if tier:
-            r["checks"] = check_tier(r, tier, life)
+            r["checks"] = check_tier(r, tier, life) + archetype_checks(p, r, tier)
             failed |= any(s == "FAIL" for s, _ in r["checks"])
         if as_json:
             print(json.dumps(r))
