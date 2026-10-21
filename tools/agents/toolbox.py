@@ -5,7 +5,7 @@
   python3 tools/agents/toolbox.py --check   # (every agent, after git pull) prints UP TO DATE, or STALE with what changed
 
 The tool list below is the registry of tools; add a line to TOOLS when a new tool becomes standard.
-Each tool shows the commit that last changed it, so an agent can see at a glance whether its checkout is current.
+Each tool shows the commit that last changed it (informational; in a shallow clone these ids can differ). The stamp is built from file contents, so it is identical in every clone.
 """
 import csv, glob, hashlib, os, subprocess, sys, datetime
 
@@ -56,9 +56,16 @@ def last_commit(path):
 
 
 def tools_stamp():
+    """Stamp of the tools' CONTENT (sha1 of each listed file), so it is the same in every clone, shallow or not.
+    (A stamp built from last-commit ids differs in a shallow clone and made --check say STALE for ever.)"""
     parts = []
     for p, _, _ in TOOLS:
-        parts.append(p + ":" + (git("log", "-1", "--format=%h", "--", p) or "-"))
+        fp = os.path.join(ROOT, p)
+        try:
+            h = hashlib.sha1(open(fp, "rb").read().replace(b"\r\n", b"\n")).hexdigest()[:8]
+        except OSError:
+            h = "missing"
+        parts.append(p + ":" + h)
     return hashlib.sha1("\n".join(parts).encode()).hexdigest()[:12], parts
 
 
