@@ -127,6 +127,14 @@ def parse_game(path, label):
             m = DAMAGE.search(msg)
             if m:
                 rows.append((turn, ph, "DAMAGE", m.group(3), f"{names(m.group(1))[0]} {m.group(2)}", *lk(), int(m.group(2))))
+        elif typ == "MULLIGAN":
+            # "A has kept a hand of 7 cards hand: Island; Mockingbird; ..." (patch 011) gives the opening hand
+            m = re.match(r"(A|B) has kept a hand of (\d+) cards hand: (.*)", msg)
+            if m:
+                rows.append((0, "Mulligan", "HAND", m.group(1), f"{m.group(2)} cards: {m.group(3)}", *lk(), int(m.group(2))))
+            elif " mulliganed down to " in msg:
+                side = msg[0] if msg[:1] in ("A", "B") else ""
+                rows.append((turn, ph, "MULLIGAN", side, msg, *lk(), 1))
         elif typ == "ZONE_CHANGE" and " was put into " in msg:
             # every zone move, not only battlefield exits: command zone, hand, library, exile, stack
             m = re.search(r"was put into (\w+) from (\w+)", msg)
