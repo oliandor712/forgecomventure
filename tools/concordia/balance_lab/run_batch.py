@@ -49,7 +49,7 @@ def green_pool():
     return sorted(p for p in out if os.path.exists(p))
 
 
-SHARDS = ["W", "U", "B", "multi"]  # one shard per hour, round-robin by UTC hour; R and G belong to the AI lab (2026-10-21)
+SHARDS = ["W", "U", "B"]  # one shard per hour, round-robin by UTC hour; R, G belong to the AI lab and multicolour to the main session (2026-10-21)
 
 
 def shard_of(deck):
