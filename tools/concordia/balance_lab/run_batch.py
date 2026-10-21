@@ -83,11 +83,12 @@ def load():
 
 REBUILD = "440176a2"  # deck rebuild: coverage counts only games on the new decks
 _new = {}
+REBUILD_T1 = "f1139925"  # tier 1 regenerated with 30-34 creatures: T1 rows before it are old T1 decks
 REBUILD2 = "58aa312f"  # tier 1-2 decks rebuilt again with a raised floor: T1-2 rows before it are old decks
 
 
 def is_new(r):
-    base = REBUILD2 if r["tier"] in ("1", "2") else REBUILD
+    base = REBUILD_T1 if r["tier"] == "1" else REBUILD2 if r["tier"] == "2" else REBUILD
     k = (r["commit"], base)
     if k not in _new:
         _new[k] = subprocess.run(["git", "merge-base", "--is-ancestor", base, r["commit"]], cwd=ROOT).returncode == 0
