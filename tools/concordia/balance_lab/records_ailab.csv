@@ -119,3 +119,5 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:26:06Z,7de52038384,inner,1,decks/tier1/T1_R_Hobgoblin.dck,decks/tier1/T1_R_Molten.dck,10,10,,,b,b,7,0
 2026-10-21T02:26:17Z,7de52038384,inner,3,decks/tier3/T3_R_Krenko.dck,decks/tier3/T3_R_Pashalik.dck,25,25,,,a,a,17,0
 2026-10-21T02:26:17Z,7de52038384,inner,3,decks/tier3/T3_R_Krenko.dck,decks/tier3/T3_R_Pashalik.dck,25,25,,,b,a,20,0
+2026-10-21T02:29:03Z,29a93bd9a0b,inner,4,decks/tier4/T4_R_Koth.dck,decks/tier4/T4_R_Rionya.dck,30,30,,,a,b,18,0
+2026-10-21T02:29:03Z,29a93bd9a0b,inner,4,decks/tier4/T4_R_Koth.dck,decks/tier4/T4_R_Rionya.dck,30,30,,,b,b,21,0
