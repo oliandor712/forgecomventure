@@ -31,3 +31,9 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:14:14Z,c69a0758,bonus,2,decks/tier2/T2_WB_Thalisse.dck,decks/starter/U_Starter_Normal.dck,15,15,land,,b,b,17,0
 2026-10-21T02:14:14Z,c69a0758,bonus,2,decks/tier2/T2_WB_Thalisse.dck,decks/starter/U_Starter_Normal.dck,15,15,,,a,a,13,0
 2026-10-21T02:14:14Z,c69a0758,bonus,2,decks/tier2/T2_WB_Thalisse.dck,decks/starter/U_Starter_Normal.dck,15,15,,,b,b,17,0
+2026-10-21T02:14:42Z,c69a0758,inner,4,decks/tier4/T4_WBG_Felothar.dck,decks/tier4/T4_WU_Raff.dck,30,30,,,a,b,32,0
+2026-10-21T02:14:42Z,c69a0758,inner,4,decks/tier4/T4_WBG_Felothar.dck,decks/tier4/T4_WU_Raff.dck,30,30,,,b,b,27,0
+2026-10-21T02:15:26Z,c69a0758,inner,4,decks/tier4/T4_URG_Magus.dck,decks/tier4/T4_BG_Ygra.dck,30,30,,,a,a,23,0
+2026-10-21T02:15:26Z,c69a0758,inner,4,decks/tier4/T4_URG_Magus.dck,decks/tier4/T4_BG_Ygra.dck,30,30,,,b,b,25,0
+2026-10-21T02:15:50Z,c69a0758,inner,4,decks/tier4/T4_UB_Morbius.dck,decks/tier4/T4_RG_Anzrag.dck,30,30,,,a,b,16,0
+2026-10-21T02:15:50Z,c69a0758,inner,4,decks/tier4/T4_UB_Morbius.dck,decks/tier4/T4_RG_Anzrag.dck,30,30,,,b,b,19,0
