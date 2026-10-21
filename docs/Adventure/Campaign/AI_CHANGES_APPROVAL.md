@@ -94,4 +94,4 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
 3. You tick the box and ask for it to be applied. The main session then applies the patch to `campaign-design`,
    backs up the replaced files in `tools/concordia/backups/`, and re-runs the checks.
 
-- [ ] **011, more log lines (log-only, test-only)**: Planned. `tools/concordia/ai_lab/patches/011-more-log-lines.patch` (mulligan keep line with the opening hand; tested with 2 games in a separate cache). Companion `tools/concordia/ai_lab/patches/BonusSim-mulligan.patch` (balance lab writer, needs applying). Not listed in SIM_ACTIVE.txt yet.
+- [ ] **011, more log lines (log-only, test-only)**: Planned. `tools/concordia/ai_lab/patches/011-more-log-lines.patch` (mulligan keep line with the opening hand; log-only mana-source line, MANA_SOURCE; both tested with 2 games in a separate cache; needs patch 010 applied first). Companion `tools/concordia/ai_lab/patches/BonusSim-mulligan.patch` (balance lab writer, needs applying). Not listed in SIM_ACTIVE.txt yet.
