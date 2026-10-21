@@ -332,7 +332,7 @@ Reading:
 - **Mana source.** 6,410 AI_MANA_SOURCE rows. Non-basic sources pay 27% of the shards; white is 11% (n=497), consistent with white decks being mostly basic Plains. Control 36%, ramp 31%.
 - **Mulligans and hands.** 192 hands logged and 52 mulligan lines (0.54 per game). Control mulligans the most (1.00 per game, 12 games) and ramp the least (0.25); the white decks mulligan 0.10 per game from 10 games, too few to claim.
 - **Commander play.** Only 10 command-zone moves in 96 games, so commander timing cannot be read yet. The log shows moves out of the command zone but no cost; a COMMANDER_CAST line is still needed.
-- **ETB and tokens.** 2,064 triggers (ETB and other) and 152 token zone moves are visible: triggers per game are highest in control (41 per game, 12 games), about 15 in aggro/ramp.
+- **ETB and tokens.** 2,064 triggers (ETB and other) and 152 token zone moves are visible: triggers per game are highest in control (41 per game, 12 games), 16 in aggro, 20 in ramp, 21 in midrange.
 
 What the new log lines allowed that the old data did not: the GAME header gave deck, tier, archetype and colour per game (a split never possible in the 3,146-game pool); HAND/MULLIGAN lines gave opening hands; AI_MANA_SOURCE gave source choice; TRIGGER lines show ETB triggers (FINAL_REPORT section 2 wrongly says they cannot be read).
 
