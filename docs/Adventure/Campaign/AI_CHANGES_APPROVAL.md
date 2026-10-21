@@ -106,3 +106,11 @@ Source: `tools/concordia/ai_lab/DECK_LOGIC_TO_AI_DECISIONS.md`. Every entry is a
 - [ ] **DL-3, attack-tax payment (research item)**: read `AiCostDecision` before proposing any change. No change proposed yet.
 - [ ] **DL-4, enter-the-battlefield creatures in play order**: reuse `AILogic$ BadETB` on blink-tag creatures (1 card uses it today). Card scripts; needs approval.
 - [ ] **DL-5, drain scaling**: reuse `NumDmg$ X` with `SVar:X:TargetedPlayer$CardsInHand` for drains that scale with a count. Card scripts; needs approval.
+
+## AI play styles (forge-ai-lab, 2026-10-21, research proposals; nothing applied)
+Source: `tools/concordia/ai_lab/AI_PLAY_STYLES.md`. Unticked. Existing names and keys only, except PS-4 and PS-5 which are Java and need separate approval.
+- [ ] **PS-1, per-enemy AI profile (data only)**: set `"ai"` in `forge-gui/res/adventure/Concordia/world/enemies.json` to an existing profile name (default, reckless, cautious, experimental) by tier. Today all 58 enemies are "" (the player's own setting). Test first: seeded stock vs profile comparison in a test-only sim variant.
+- [ ] **PS-2, control deck name (data only)**: `[metadata] Name=` containing "Control" sets the non-aggro attack profile for that deck (see DL-1). Changes tier 1 piloting; check the PC win-rate target first (H29).
+- [ ] **PS-3, card AILogic values (card scripts)**: reuse existing AILogic values only, per card (Fog, Protection, BadETB, Pump). Needs approval for card scripts.
+- [ ] **PS-4, new profile names (Java, shipped game)**: add names to `DuelScene.selectAI` and new `.ai` files. Not allowed without approval; sims on the overlay first.
+- [ ] **PS-5, archetype-based pilot flag (Java, shipped game)**: `PlayerControllerAi.setupAutoProfile` reads archetype instead of name or CMC. Changes attacks for every AI deck; approval and seeded tests on tiers 1-5 first.
