@@ -8,6 +8,7 @@ and keeps a running count so the analysis can run every 100 new games.
 
 Usage:
   python3 tools/concordia/ai_lab/phase_digest.py <batch_folder> [more folders]
+  python3 tools/concordia/ai_lab/phase_digest.py --into <name> <batch_folder>   append to digests/<name>/
   python3 tools/concordia/ai_lab/phase_digest.py --status        games received vs games analysed
 
 Decision kinds: ATTACK, BLOCK, NOBLOCK, CAST, TRIGGER, DAMAGE, LIFE, ZONE (graveyard/exile moves).
@@ -97,15 +98,28 @@ def parse_game(path, label):
     return rows
 
 
-def write_batch(folder, index):
+def write_batch(folder, into=None):
+    """Digest one raw log folder. With into=None the output is digests/<folder name>/ (rewritten).
+    With into=<name> the games are appended to digests/<name>/ and game ids are prefixed with the
+    raw folder name, so repeated game labels from different calls stay unique. Folders already in
+    the target are skipped, so rerunning a folder never double-counts."""
     batch = os.path.basename(os.path.normpath(folder))
-    outdir = os.path.join(DIGESTS, batch)
+    outdir = os.path.join(DIGESTS, into or batch)
     os.makedirs(outdir, exist_ok=True)
+    done_path = os.path.join(outdir, "sources.txt")
+    done = set(open(done_path).read().split()) if (into and os.path.exists(done_path)) else set()
+    if into and batch in done:
+        return 0
+    prefix = f"{batch}/" if into else ""
     games = []
+    mode = "at" if into else "wt"
     dec_path = os.path.join(outdir, "decisions.tsv.gz")
-    with gzip.open(dec_path, "wt", newline="") as dz:
+    games_path = os.path.join(outdir, "games.tsv")
+    new_games = not (into and os.path.exists(games_path))
+    with gzip.open(dec_path, mode, newline="") as dz:
         w = csv.writer(dz, delimiter="\t")
-        w.writerow(["game", "turn", "phase", "kind", "side", "detail", "life_a", "life_b", "n"])
+        if not into or os.path.getsize(dec_path) == 0 or new_games:
+            w.writerow(["game", "turn", "phase", "kind", "side", "detail", "life_a", "life_b", "n"])
         for path in sorted(glob.glob(os.path.join(folder, "*.tsv"))):
             label = os.path.basename(path)[:-4]
             if label == "INDEX":
@@ -113,19 +127,24 @@ def write_batch(folder, index):
             rows = parse_game(path, label)
             cnt = {"A": {"ATTACK": 0, "BLOCK": 0, "CAST": 0}, "B": {"ATTACK": 0, "BLOCK": 0, "CAST": 0}}
             for r in rows:
-                w.writerow([label, *r])
+                w.writerow([prefix + label, *r])
                 if r[2] in cnt.get(r[3], {}):
                     cnt[r[3]][r[2]] += 1
             last = rows[-1] if rows else None
-            games.append([label, batch, last[0] if last else 0,
+            games.append([prefix + label, batch, last[0] if last else 0,
                           cnt["A"]["ATTACK"], cnt["B"]["ATTACK"], cnt["A"]["BLOCK"], cnt["B"]["BLOCK"],
                           cnt["A"]["CAST"], cnt["B"]["CAST"],
                           last[5] if last else "", last[6] if last else ""])
-    with open(os.path.join(outdir, "games.tsv"), "w", newline="") as f:
+    header = ["game", "batch", "turns", "attacks_a", "attacks_b", "blocks_a", "blocks_b",
+              "casts_a", "casts_b", "last_life_a", "last_life_b"]
+    with open(games_path, "a" if into else "w", newline="") as f:
         w = csv.writer(f, delimiter="\t")
-        w.writerow(["game", "batch", "turns", "attacks_a", "attacks_b", "blocks_a", "blocks_b",
-                    "casts_a", "casts_b", "last_life_a", "last_life_b"])
+        if not into or new_games:
+            w.writerow(header)
         w.writerows(games)
+    if into:
+        with open(done_path, "a") as f:
+            f.write(batch + "\n")
     return len(games)
 
 
@@ -145,6 +164,11 @@ def analysed():
 
 
 def main(argv):
+    into = None
+    if "--into" in argv:
+        i = argv.index("--into")
+        into = argv[i + 1]
+        argv = argv[:i] + argv[i + 2:]
     if argv and argv[0] == "--status":
         got, done = received_games(), analysed()
         print(f"games digested {got}, analysed {done}, due for analysis {got - done >= STEP} ({got - done} new)")
@@ -154,8 +178,8 @@ def main(argv):
         return 2
     os.makedirs(DIGESTS, exist_ok=True)
     for folder in argv:
-        n = write_batch(folder, None)
-        print(f"digested {n} games from {folder}")
+        n = write_batch(folder, into)
+        print(f"digested {n} games from {folder}" + (f" into {into}" if into else ""))
     got, done = received_games(), analysed()
     print(f"games digested {got}, analysed {done}, due for analysis {got - done >= STEP}")
     return 0

@@ -145,8 +145,20 @@ def play(games, budget_end):
     args = []
     for g in games:
         args += [g["da"], str(g["la"]), g["xa"], g["db"], str(g["lb"]), g["xb"], g["first"], g["label"]]
+    # Phase logging is standard for every simulation (user, 2026-10-21): each game writes its phase log to a local batch folder,
+    # then phase_digest.py compresses it to tools/concordia/ai_lab/digests/<worker>-<utc>/ (pushed with the records) and the raw logs are deleted.
+    stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    batch = "%s-%s-%d" % (WORKER or "lab", stamp, os.getpid())
+    logdir = os.path.join(ROOT, "tools/concordia/ai_lab/results/balance_logs", batch)
+    env = dict(os.environ, SIM_JAVA_OPTS="-Dlogdir=" + logdir)
     p = subprocess.run([ROOT + "/tools/concordia/sim/run.sh", "BonusSim", "forge-gui/", "150"] + args, cwd=ROOT,
-                       capture_output=True, text=True, timeout=None)  # no compute cap (user, 2026-10-21); each game still has its own 150 s limit in BonusSim
+                       capture_output=True, text=True, timeout=None, env=env)
+    if os.path.isdir(logdir):
+        try:
+            subprocess.run([sys.executable, ROOT + "/tools/concordia/ai_lab/phase_digest.py", logdir, "--into", "%s-%s" % (WORKER or "lab", stamp[:11])], cwd=ROOT, capture_output=True, text=True, timeout=300)
+        finally:
+            if not os.environ.get("KEEP_PHASE_LOGS"):
+                import shutil; shutil.rmtree(logdir, ignore_errors=True)  # no compute cap (user, 2026-10-21); each game still has its own 150 s limit in BonusSim
     res = {}
     for ln in p.stdout.splitlines():
         if ln.startswith("GAME\t"):
