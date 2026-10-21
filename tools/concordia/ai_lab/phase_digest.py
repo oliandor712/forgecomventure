@@ -53,6 +53,23 @@ def starting_life(lines):
 META_KEYS = ("deck_a", "deck_b", "tier", "archetype", "colour")
 
 
+def queue_tags():
+    """deck path -> (archetype, colour) from the balance lab's QUEUE.toon (empty if missing)."""
+    tags = {}
+    path = os.path.join(HERE, "..", "balance_lab", "QUEUE.toon")
+    try:
+        for line in open(path):
+            m = re.match(r"\s+(decks/\S+?\.dck)\|\d+\|\d+\|(\w+)\|\w+\|(\w+)", line)
+            if m:
+                tags[m.group(1)] = (m.group(3), m.group(2))
+    except OSError:
+        pass
+    return tags
+
+
+TAGS = queue_tags()
+
+
 def parse_game(path, label):
     """Return (rows, meta). meta comes from GAME header rows written by BonusSim (deck ids, tier,
     archetype, colour); it is empty for logs written before the header existed."""
@@ -147,6 +164,9 @@ def write_batch(folder, into=None):
             if label == "INDEX":
                 continue
             rows, meta = parse_game(path, label)
+            arch, colour = TAGS.get(meta.get("deck_a", ""), ("", ""))
+            meta.setdefault("archetype", arch)
+            meta.setdefault("colour", colour)
             metas.append([prefix + label] + [meta.get(k, "") for k in META_KEYS])
             cnt = {"A": {"ATTACK": 0, "BLOCK": 0, "CAST": 0}, "B": {"ATTACK": 0, "BLOCK": 0, "CAST": 0}}
             for r in rows:
