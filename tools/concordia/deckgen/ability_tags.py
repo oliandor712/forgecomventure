@@ -96,7 +96,7 @@ POLICY = {
     "discard": dict(group="reanimation", syn=["sacrifice", "reanimation", "card_flow"], note="self-discard feeds reanimation; opposing discard is control"),
     "mill": dict(group="reanimation", syn=["reanimation"]),
     "grave_hate": dict(group="control/grave-hate", staple=True, note="new removal subtype grave-hate; tier 1 staple"),
-    "token_make": dict(group="tokens", syn=["tokens", "creatures", "flying"], note="tribal option when the token type matches a tribe (Elf, Angel, Soldier, Spirit)"),
+    "token_make": dict(group="tokens", arch=dict(tokens=2), syn=["tokens", "creatures", "flying"], note="tribal option when the token type matches a tribe (Elf, Angel, Soldier, Spirit)"),
     "clone": dict(syn=["legendary"]),
     "shrink": dict(removal_weight=0.5, note="low removal"),
     "proliferate": dict(syn=["counters"], note="counters of any kind"),
@@ -119,6 +119,11 @@ POLICY = {
     "artifact_token": dict(syn=["artifacts", "sacrifice"]),
     "sacrifice_outlet": dict(syn=["artifacts", "sacrifice"]),
 }
+# H45 (user, 2026-10-21): one synergy tag per basic land type; the bonus counts when the deck's land base holds enough of that type (trait landtype:X = basics + nonbasic lands of the type)
+LANDTYPES = ["Plains", "Island", "Swamp", "Mountain", "Forest"]
+LANDTYPE_NEED = 6
+for _x in LANDTYPES:
+    POLICY["landtype:" + _x] = dict(group="landtype", need={"landtype:" + _x: LANDTYPE_NEED}, flat=1.0, note="H45: cares about or provides the basic land type " + _x + "; counts when the deck holds %d+ of it" % LANDTYPE_NEED)
 # colour leans (slight): tag -> colours that get a small bonus
 COLOUR_LEAN = {"removal_land": "R", "tap_down": "UW", "equip": "UW", "draw": "U", "selection": "U", "clone": "U", "recursion": "B", "reanimate": "B",
                "self_mill": "UB", "mill": "UB", "sacrifice_outlet": "B", "haste_grant": "R"}
@@ -186,6 +191,117 @@ def tag_signature(sig):
     return _SIG_CACHE[sig]
 
 
+# ---- H45: land-type synergy tags (text-led: the ability cares about or provides a basic land type)
+_LT_SKIP_API = re.compile(r"\b(AB|SP|DB)\$ (Destroy|DestroyAll|Sacrifice|SacrificeAll|Tap|TapAll)\b")
+
+
+def landtype_tags(text):
+    """landtype:X for every basic land type an ability counts, searches for, puts onto the battlefield, grants or has as a nonbasic land type (Domain: all five)."""
+    face = text.split("\nALTERNATE")[0]
+    out = set()
+    types = ""
+    for ln in face.splitlines():
+        if ln.startswith("Types:"): types = ln[6:]
+    ty = types.split()
+    if "Land" in ty and "Basic" not in ty:
+        out |= {"landtype:" + x for x in LANDTYPES if x in ty}   # dual lands: the type line carries the land types
+    for ln in face.splitlines():
+        if ln.startswith("K:"):
+            m = re.match(r"K:(?:Type|Land)cycling:([^:]*)", ln)
+            if m: out |= {"landtype:" + x for x in LANDTYPES if x in m.group(1)}
+            continue
+        if not re.match(r"^(A|S|T|R|SVar):", ln): continue
+        body = STRIP.sub("", ln)
+        if _LT_SKIP_API.search(body): continue
+        body = re.sub(r"\b(?:Plains|Island|Swamp|Mountain|Forest)\.[^ |,]*Opp[^ |,]*", "", body)   # an opponent's land is hate, not synergy
+        if "Count$Domain" in body or "Domain" in body.split("|")[0]: out |= {"landtype:" + x for x in LANDTYPES}
+        for x in LANDTYPES:
+            if re.search(r"\b" + x + r"\b", body): out.add("landtype:" + x)
+    return out
+
+
+# ---- H46: potential stat from board state (user, 2026-10-21): never read 0/0, X/0, 0/X or * as printed
+DEFAULT_BOARD = dict(lands=17, creatures=12, tokens=4, artifacts=5, enchantments=5, equipment=2, counters=3, devotion=5, graveyard=5, hand=3, x=4)
+
+
+def _board(traits, key):
+    if traits is None: return DEFAULT_BOARD.get(key, 3)
+    if key.startswith("landtype:"): return traits.get(key, 0)
+    return traits.get(key) or DEFAULT_BOARD.get(key, 3)
+
+
+def _count_valid(filt, traits):
+    parts = re.split(r"[.+,]", filt.strip())
+    if any(x.startswith("Opp") or x in ("OppCtrl", "YouDontCtrl") for x in parts) or "inZoneGraveyard" in filt or "InYourYard" in filt:
+        return _board(traits, "graveyard") if "Graveyard" in filt or "inZoneGraveyard" in filt or "YourYard" in filt else _board(traits, "creatures")
+    if "Hand" in filt: return _board(traits, "hand")
+    for x in parts:
+        if x in LANDTYPES: return _board(traits, "landtype:" + x)
+    if "token" in filt.lower(): return _board(traits, "tokens")
+    for x, k in (("Land", "lands"), ("Creature", "creatures"), ("Artifact", "artifacts"), ("Enchantment", "enchantments"), ("Equipment", "equipment"), ("Aura", "enchantments")):
+        if x in parts: return _board(traits, k)
+    return max(2, _board(traits, "creatures") // 3)   # a tribe or other subset of the creatures
+
+
+def _eval(expr, svars, traits, depth=0):
+    """Forge SVar expression -> int, with the deck's traits standing for the board."""
+    expr = (expr or "").strip()
+    if re.fullmatch(r"-?\d+", expr): return int(expr)
+    if expr in svars and depth < 5: return _eval(svars[expr], svars, traits, depth + 1)
+    m = re.match(r"(?:Count|Number)\$(.*)$", expr)
+    if not m: return 3
+    base, *ops = m.group(1).split("/")
+    base = base.strip()
+    if re.fullmatch(r"-?\d+", base): v = int(base)
+    elif base.startswith(("Valid ", "ValidAll ", "ValidGraveyard ", "ValidHand ")): v = _count_valid(base.split(" ", 1)[1], traits)
+    elif base.startswith("Domain"): v = max(1, sum(1 for x in LANDTYPES if _board(traits, "landtype:" + x) > 0))
+    elif base.startswith("Devotion"): v = _board(traits, "devotion")
+    elif base.startswith(("CardCounters", "Counters")): v = _board(traits, "counters")
+    elif base.startswith(("xPaid", "Targeted", "X")): v = _board(traits, "x")
+    elif "Graveyard" in base: v = _board(traits, "graveyard")
+    elif "InYourHand" in base or "Hand" in base: v = _board(traits, "hand")
+    else: v = 3
+    for op in ops:
+        o, _, n = op.partition(".")
+        try: n = int(n) if re.fullmatch(r"-?\d+", n) else _eval(n, svars, traits, depth + 1)
+        except Exception: n = 0
+        if o == "Plus": v += n
+        elif o == "Minus": v -= n
+        elif o == "Times": v *= n
+        elif o == "Twice": v *= 2
+        elif o.startswith("HalfUp"): v = (v + 1) // 2
+        elif o.startswith("HalfDown"): v //= 2
+    return max(v, 0)
+
+
+def potential_pt(text, traits=None):
+    """(power, toughness) a creature can reach given the deck's board traits; None when not a creature. Reads the ability first: PT 0/0, X/0, 0/X, '*',
+    'gets +N/+N for each ...', 'power equal to ...', etb counters. Printed numbers are used only when nothing in the script scales them."""
+    face = text.split("\nALTERNATE")[0]
+    if not re.search(r"^Types:.*\bCreature\b", face, re.M): return None
+    svars = dict(re.findall(r"^SVar:(\w+):(.*)$", face, re.M))
+    m = re.search(r"^PT:([^/\n]*)/(.*)$", face, re.M)
+    if not m: return None
+    def base(x):
+        x = x.strip()
+        if re.fullmatch(r"\d+", x): return int(x)
+        mm = re.match(r"(\d+)\+\*", x)
+        return int(mm.group(1)) if mm else 0   # '*' and '*+N' start from 0 and take the defining ability
+    pw, tg = base(m.group(1)), base(m.group(2))
+    for ln in face.splitlines():
+        if ln.startswith("S:") and "Mode$ Continuous" in ln and re.search(r"AffectedDefined\$ Self|Affected\$ (Card|Creature)\.Self\b", ln):
+            f = dict(re.findall(r"(\w+)\$ ([^|]*?)\s*(?:\||$)", ln))
+            if "SetPower" in f: pw = _eval(f["SetPower"], svars, traits) + (base(m.group(1)) if "+*" in m.group(1) else 0)
+            if "SetToughness" in f: tg = _eval(f["SetToughness"], svars, traits) + (base(m.group(2)) if "+*" in m.group(2) else 0)
+            if "AddPower" in f: pw += _eval(f["AddPower"], svars, traits)
+            if "AddToughness" in f: tg += _eval(f["AddToughness"], svars, traits)
+        elif ln.startswith("K:etbCounter:P1P1:"):
+            n = _eval(ln.split(":")[3], svars, traits); pw += n; tg += n
+        elif ln.startswith("K:ETBReplacement") or ln.startswith("K:Modular"):
+            pass
+    return pw, tg
+
+
 def tags_of(text):
     """Ability-led tags of one card script (set), plus provides/needs from Forge's Deck lines."""
     sigs, kws, has, needs, hints, types = parse(text)
@@ -198,6 +314,7 @@ def tags_of(text):
     for h in has: tags.add("has:" + h.replace("Ability$", "").replace("Type$", "type:").replace("$", ":"))
     for n in needs: tags.add("needs:" + n.replace("Ability$", "").replace("Type$", "type:").replace("$", ":"))
     for n in hints: tags.add("hint:" + n.replace("Ability$", "").replace("Type$", "type:").replace("$", ":"))
+    tags |= landtype_tags(text)
     if "Equipment" in types: tags.add("equip")
     if "Vehicle" in types: tags.add("crew")
     return tags
@@ -212,6 +329,7 @@ def bonus(tags, archetype, sub=None, traits=None, mono=False, colours=""):
         if not p: continue
         need = p.get("need")
         if need and any(traits.get(k, 0) < n for k, n in need.items()): continue
+        b += p.get("flat", 0)
         b += p.get("arch", {}).get(archetype, 0)
         if sub and sub.startswith("low-control"): b += p.get("arch", {}).get("control", 0) * 0.5
         b += 0.5 * sum(1 for s in p.get("syn", []) if traits.get(s, 0) >= 3)

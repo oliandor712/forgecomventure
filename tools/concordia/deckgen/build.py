@@ -25,7 +25,25 @@ ABILITY = {}  # card name -> ability tags, computed once per card (ability_tags.
 def ability_tags(p):
     if p['name'] not in ABILITY: ABILITY[p['name']] = at.tags_of(at.card_text(p['name']))
     return ABILITY[p['name']]
-def card_traits(p):
+TEXT = {}
+def card_text(p):
+    if p['name'] not in TEXT: TEXT[p['name']] = at.card_text(p['name'])
+    return TEXT[p['name']]
+BASIC_TYPE = {'W': 'Plains', 'U': 'Island', 'B': 'Swamp', 'R': 'Mountain', 'G': 'Forest'}
+def pot_power(p, traits=None):
+    """H46: power a creature can reach from the deck's board traits (never the printed 0/0 or '*'); None for a non-creature."""
+    pp = at.potential_pt(card_text(p), traits)
+    return pp[0] if pp else None
+def land_traits(basics, lands):
+    """H45: landtype:X = basic lands of the type plus nonbasic lands whose type line has it; lands = total."""
+    tr = collections.Counter()
+    for c, n in basics.items(): tr['landtype:' + BASIC_TYPE[c]] += n
+    for p, _ in lands:
+        for x in at.LANDTYPES:
+            if x in p['types'].split(): tr['landtype:' + x] += 1
+    tr['lands'] = sum(basics.values()) + len(lands)
+    return tr
+def card_traits(p, traits=None):
     """Deck traits one card adds (counted per deck as it fills; ability_tags.bonus reads them)."""
     t, ox, tags = p['types'].split(), p['oracle'], ability_tags(p)
     out = []
@@ -34,7 +52,8 @@ def card_traits(p):
     if 'token_make' in tags: out.append('tokens')
     if tags & {'counters_plus', 'proliferate'}: out.append('counters')
     if tags & {'reanimate', 'recursion'}: out.append('reanimation')
-    if 'Creature' in t and p['pt'] and p['pt'][0].isdigit() and int(p['pt'][0]) >= 4: out.append('high_power')
+    pw = pot_power(p, traits) if 'Creature' in t else None   # H46: ability first, board state second
+    if pw is not None and pw >= 4: out.append('high_power')
     if p['cmc'] >= 5: out.append('high_curve')
     if 'Legendary' in t: out.append('legendary')
     for kind, trait in (('Artifact', 'artifacts'), ('Enchantment', 'enchantments'), ('Instant', 'instants'), ('Creature', 'creatures')):
@@ -93,7 +112,8 @@ def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     cost_cut = re.search(r'costs? (\{\d+\} |\{\d\} )?less', text) is not None
     etb = sum(1 for p, _ in chosen if 'Creature' in p['types'].split() and 'etb_trigger' in ability_tags(p))
     check('H14', etb >= 3, 'creatures with an enter-the-battlefield ability %d (3 needed)' % etb, cost_cut)
-    big = sum(1 for p, _ in chosen if 'Creature' in p['types'].split() and p['pt'] and p['pt'][0].isdigit() and int(p['pt'][0]) >= 5)
+    tr = dict(info['traits']); tr.update(land_traits(basics, lands))
+    big = sum(1 for p, _ in chosen if (pot_power(p, tr) or 0) >= 5)   # H46: potential power from the finished deck's board
     check('H15', big >= 3, 'creatures with power 5+ %d (3 needed)' % big, bool(re.search(r'power \d+ or greater', text)))
     drain = sum(1 for p, _ in chosen if ability_tags(p) & {'drain', 'burn'})
     dmg = re.search(r'noncombat damage|damage to any target|deals? \d+ damage to (target|any|each)', text) is not None  # H36
@@ -194,6 +214,9 @@ def build(d):
         spec['types']['Enchantment'] = ench
     mono = len(ident) == 1; colours = ''.join(sorted(ident))
     traits = collections.Counter()
+    nland_est = max(0, spec['lands'] - 6)   # H45: expected basics (the land base is sized after the fill); split evenly over the deck's colours
+    for c in ident: traits['landtype:' + BASIC_TYPE[c]] = nland_est // max(1, len(ident))
+    traits['lands'] = spec['lands']
     cmd = pool[d['commander'].lower()]
     # external seeds (deckgen/external/seeds, not committed) are skipped when missing; the deck then builds unseeded
     seed = set(parse(os.path.join(RES, d['seed']))) if d.get('seed') and os.path.exists(os.path.join(RES, d['seed'])) else set()
@@ -206,9 +229,8 @@ def build(d):
         if tier == 1:
             s = -0.7 * abs(pw - d.get('target', p1['target'])) + 4 * min(pop, 5) / 5 - 0.8 * max(0, p['nabil'] - 2)
             if 'Creature' in p['types'] and p['pt']:
-                try:
-                    if int(p['pt'][0]) + int(p['pt'][1]) > 2 * p['cmc'] + 1: s -= 6  # above-rate body
-                except ValueError: pass
+                pp = at.potential_pt(card_text(p), traits)   # H46: potential stat, not the printed 0/0
+                if pp and pp[0] + pp[1] > 2 * p['cmc'] + 1: s -= 6  # above-rate body
         elif tier == 2:
             s = -0.7 * abs(pw - d.get('target', TARGET_POWER[2])) + 3 * min(pop, 10) / 10
         else:
@@ -230,6 +252,25 @@ def build(d):
         if p['pop'] == 0 and tier > 1 and k not in seed: continue
         if tier == 1 and p['minr'] not in 'CU': continue
         cands.append(p)
+    # archetype leans (declared aggro/tribal: at most TOK_CAP token cards; declared tokens: at least 13; tribal: 15+ of the tribe; low-* subs: their lean)
+    atry = d.get('_arch_try', 0)
+    TOK_CAP = 9 if atry < 2 else 6
+    ntok = [0]; nnc = collections.Counter(); ntype_c = collections.Counter()
+    tokcard = lambda p: 'Land' not in p['types'].split() and ar.is_token_card(card_text(p))
+    rclasses = set()
+    def rclass(p):
+        """Removal classes of a non-creature card (archetype_rules), None for a lock card."""
+        t, ty = card_text(p), p['types'].split()
+        if 'Creature' in ty or 'Land' in ty: return set()
+        if ar.control_signal(t, ty)[0] & {'restrict', 'tax'}: return None
+        return ar.removal_classes(t, ty)
+    cmd_names = (cmd['oracle'] + ' ' + cmd['types']).lower()
+    tribe = None
+    if arch == 'tribal':
+        # classify() takes the commander's text AND type line as naming the tribe, Human excluded
+        tribes = sorted(({it[6:] for it in cp.profile(cmd['oracle'], cmd['types'], cmd['name']) if it.startswith('tribe:')} | {x for x in cmd['types'].split() if x not in ar.SKIP_TYPES}) - {'Human'})
+        cnt = {x: sum(1 for q in cands if 'Creature' in q['types'].split() and x in q['types'].split()) for x in tribes}
+        tribe = max(cnt, key=cnt.get) if cnt else None
     chosen = []; rcount = collections.Counter(); roles = collections.Counter(); curve = collections.Counter(); ncreat = 0; ngc = 0; nwatch = 0
     nonland = 99 - spec['lands']
     def can_add(p):
@@ -239,6 +280,17 @@ def build(d):
         if curve[bucket(p['cmc'])] >= spec['curve'][bucket(p['cmc'])]: return None
         if p['gc'] and ngc >= spec['gc']: return None
         if p.get('cat') == 'watch' and nwatch >= WATCH_CAP[tier]: return None
+        if arch and tier == 1 and 'Creature' not in p['types'].split() and 'Land' not in p['types'].split():   # keep the sub label as declared (classify counts non-creature artifacts and enchantments)
+            if 'Enchantment' in p['types'].split() and arch in ('tribal', 'tokens') and sub != 'low-' + arch and nnc['E'] >= ar.LOW_ENCHANT_MIN - 1: return None
+            if 'Artifact' in p['types'].split() and arch == 'aggro' and sub != 'low-aggro' and nnc['A'] >= ar.LOW_ARTIFACT_MIN - 1: return None
+        if arch == 'tribal' and tribe and tier == 1 and 'Creature' in p['types'].split() and tribe not in p['types'].split():   # classify: the top creature type must be the tribe, not Human or another type
+            if any(ntype_c[x] >= 9 for x in p['types'].split() if x not in ar.SKIP_TYPES): return None
+        if arch == 'aggro' and tier == 1 and 'Creature' in p['types'].split():   # an aggro deck must not turn tribal: a creature type the commander names stays under 11
+            if any(ntype_c[x] >= 11 and x != 'Human' and x.lower() in cmd_names for x in p['types'].split() if x not in ar.SKIP_TYPES): return None
+        if arch in ('aggro', 'tribal') and tier == 1 and ntok[0] >= TOK_CAP and tokcard(p): return None   # token cards would reclassify the deck as tokens
+        if arch and tier == 1 and sub != 'low-control':   # not low-control: no lock card, and creature removal only with no other removal class (classify: reach 2+ with a creature answer = low-control)
+            rc = rclass(p)
+            if rc is None or ('creature' in (rclasses | rc) and len(rclasses | rc) > 1): return None
         r = pick_rarity(p, tier, rcount, spec)
         if p1['uncommon'] and p.get('cat') == 'staple' and r != 'U': return None  # H09: tier 1 staples only as uncommon
         return r
@@ -250,7 +302,15 @@ def build(d):
         if 'Creature' in p['types']: ncreat += 1
         if p['gc']: ngc += 1
         if p.get('cat') == 'watch': nwatch += 1
-        traits.update(card_traits(p))
+        if tier == 1 and tokcard(p): ntok[0] += 1
+        if 'Creature' in p['types'].split():
+            for x in p['types'].split():
+                if x not in ar.SKIP_TYPES: ntype_c[x] += 1
+        else:
+            if 'Enchantment' in p['types'].split(): nnc['E'] += 1
+            if 'Artifact' in p['types'].split(): nnc['A'] += 1
+        if tier == 1 and arch and sub != 'low-control': rclasses.update(rclass(p) or ())
+        traits.update(card_traits(p, traits))
         cands.remove(p)
     def best(filt):
         bestp = None
@@ -276,6 +336,24 @@ def build(d):
             b = b or best(lambda p: p['tags'] & ROLE[role])  # cheap artifacts are tried first as alternates (archetype decks)
             if not b: break
             add(b[1], b[2])
+    if arch and tier == 1:   # archetype quota pass: the finished deck must classify as declared (archetype_rules.classify)
+        def quota(n, test, filt):
+            while len(chosen) < nonland and sum(1 for p, _ in chosen if test(p)) < n:
+                b = best(filt)
+                if not b: break
+                add(b[1], b[2])
+        if arch == 'tokens': quota(13, tokcard, tokcard)
+        if arch == 'tribal' and tribe:
+            istribe = lambda p: 'Creature' in p['types'].split() and tribe in p['types'].split()
+            quota(15 + 3 * (atry >= 2), istribe, istribe)
+        if sub == 'low-control':
+            quota(1 + (atry >= 1), lambda p: ar.lock_card(card_text(p), p['types'].split()), lambda p: ar.lock_card(card_text(p), p['types'].split()))
+        if sub == 'low-aggro':
+            isart = lambda p: 'Artifact' in p['types'].split() and 'Creature' not in p['types'].split() and 'Land' not in p['types'].split()
+            quota(ar.LOW_ARTIFACT_MIN + 1 + (atry >= 2), isart, isart)
+        if sub in ('low-tribal', 'low-tokens'):
+            isench = lambda p: 'Enchantment' in p['types'].split() and 'Creature' not in p['types'].split()
+            quota(ar.LOW_ENCHANT_MIN + (atry >= 1), isench, isench)
     def ntype(alts): return sum(1 for p, _ in chosen if any(a in p['types'].split() for a in alts.split('|')))
     for alts, n in spec['types'].items():
         while ntype(alts) < n and len(chosen) < nonland:
@@ -394,7 +472,7 @@ if __name__ == '__main__':
         if CLASSIFY and not d.get('archetype'):
             c = ar.classify(os.path.join(REAL_OUT, 'tier%d' % d['tier'], d['file']), d['tier'])
             d['archetype'], d['sub'], d['reach'] = c['archetype'], c['sub'], c['reach']
-        for attempt in range(6):
+        for attempt in range(8):
             cmd, chosen, lands, basics = build(d)
             path = write(d, cmd, chosen, lands, basics)
             r = dt.rate(path, data, cfg)
@@ -409,6 +487,13 @@ if __name__ == '__main__':
             if d['tier'] in CEILING and r['power'] > CEILING[d['tier']] and attempt < 5:
                 base = d.get('target', T1_TARGET if d['tier'] == 1 else TARGET_POWER[2])
                 d['target'] = round(base - (r['power'] - CEILING[d['tier']]) - 0.5, 1); continue
+            if d.get('archetype') and d['tier'] == 1 and d.get('_arch_try', 0) < 3:  # the finished deck must classify as its target (tokens need 12+ token makers, low-* needs its lean)
+                c = ar.classify(path, 1)
+                if (c['archetype'], c['sub']) != (d['archetype'], d.get('sub')):
+                    d['_arch_try'] = d.get('_arch_try', 0) + 1
+                    d['_boost'] = {'bonus': 2.0 + d['_arch_try']}; d['_arch_miss'] = '%s/%s' % (c['archetype'], c['sub'])
+                    continue
+                d.pop('_arch_miss', None)
             if DRY:  # pass 2 of human_logic.toon (second read), then one rebuild with the failing rule's weight raised
                 d['_hv'] = human_pass2(d, cmd, chosen, lands, basics, d['_info'], r['power'], human_rules())
                 retry = {rule for rule, v, _ in d['_hv'] if v == 'WARN' and rule in RETRY}

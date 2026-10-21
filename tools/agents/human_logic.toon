@@ -2,7 +2,7 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Read before building, judging or testing decks, or proposing AI changes. When a rule conflicts with a metric, the rule wins.
 # status: applied = in code or decks now, partly = some of it done, open = not done or not decided. since = date the user said it.
 # Add a row only for user input on deck building, deck balance or AI improvement (town, map, quest and UI rules live in the design docs). Pruned 2026-10-21 at the user's request.
-rules[43|]{id|area|rule|since|status|where}:
+rules[45|]{id|area|rule|since|status|where}:
   H01|curve|A zone's stage locks at the player's first fight there from Seals held (0-1 stage 1, 2-3 stage 2, 4-5 stage 3)|2026-10-20|applied|TierLock.java and config tierLock
   H02|curve|Wild creatures, random-dungeon enemies, pass keepers, grove guardians and Wardens are mono-color. Trainers are 1-2 colors at stage 1 then 2-3|2026-10-20|applied|build_color_zone.py
   H03|curve|Random dungeons draw from the wild encounter pool, never from keepers or guardians|2026-10-20|applied|build_color_zone.py
@@ -46,3 +46,5 @@ rules[43|]{id|area|rule|since|status|where}:
   H42|commanders|'Total power of creatures you control' means the summed power of all of the player's creatures on the battlefield|2026-10-21|open|commander_support.py high_power counts cards, not the sum
   H43|commanders|Inspect keyword mechanics such as the Ring and tag them. Scry counts as draw synergy. A self-untap is low recursion for triggered abilities (Ioreth: low control, legendary synergy)|2026-10-21|partly|commander_support.py ring and scry tests
   H44|commanders|Discard, self-mill and draw form one cluster (Oin). Token support goes with graveyard-leave commanders (Tormod). Protection commanders weigh a high-impact partner (Anara)|2026-10-21|partly|commander_support.py
+  H45|commanders|Land-type synergy tags: one tag per basic land type (landtype:Plains, Island, Swamp, Mountain, Forest) for any ability that cares about or provides the type ('for each Mountain you control', fetching or putting a basic Mountain, landcycling, Domain = all five, nonbasic lands with the type on the type line). A deck scores them when its land base holds enough of the type (trait landtype:X); commanders such as Molten Man get the matching support test|2026-10-21|applied|ability_tags.py landtype_tags and POLICY, commander_support.py profile and supports, build.py land traits
+  H46|commanders|Never read 0/0, X/0, 0/X or * as printed: read the ability first and tabulate the potential stat from the deck's board state (lands of a type, creature, token, artifact, enchantment, counter and devotion counts), as for other synergies. A 0/0 Molten Man in a deck with 12 Mountains is a 12/12|2026-10-21|applied|ability_tags.py potential_pt; used by build.py (high_power, H15, above-rate body) and commander_support.py high_power

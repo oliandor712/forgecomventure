@@ -68,8 +68,11 @@ def profile(oracle, types, name=""):
     if re.search(r"\blegendary\b", t): out.add("scales:Legendary")
     for m in re.finditer(r"(?i:create[s]?) [^.]*?\b([A-Z][a-z]+)(?: [A-Z][a-z]+)? creature tokens?", oracle.replace("\\n", "\n")):
         if m.group(1) not in ("Creature", "White", "Blue", "Black", "Red", "Green", "Colorless"): out.add("tribe:" + m.group(1))   # token type is the tribe (H40)
-    if re.search(r"(creature )?tokens? you control", t): out.add("token")   # Prava, Jiang: token makers and token pump
+    if re.search(r"(creature )?tokens? you control|create[s]? [^.]*\btokens?\b|populate|amass", t): out.add("token")   # Prava, Jiang: token makers and token pump
     if re.search(r"deals damage equal to its power to target creature", t): out.add("dmg_power")   # Halana's own trigger is the low creature removal
+    for lt in at.LANDTYPES:   # H45: the commander cares about or fetches a basic land type (Molten Man: +1/+1 for each Mountain, fetch a basic Mountain)
+        if re.search(r"\b" + lt.lower() + r"s?\b", re.sub(r"\b" + lt.lower() + r"walk\b", "", t)): out.add("landtype:" + lt)
+    if re.search(r"\bdomain\b|basic land types? among", t): out.update("landtype:" + lt for lt in at.LANDTYPES)
     if re.search(r"sacrifice (a|another|an?) land", t):   # H41: sacrificing a land is a cost
         out.discard("sacrifice"); out.add("protection")
     return sorted(out)
@@ -79,8 +82,9 @@ def is_partner(oracle):
     return bool(re.search(r"(^|\n|\\n)partner\b", oracle.lower().replace("\\n", "\n")))   # H37
 
 
-def supports(item, name, text, tags, types):
+def supports(item, name, text, tags, types, traits=None):
     ty = types.split()
+    if item.startswith("landtype:"): return item in tags   # H45
     crea = "Creature" in ty
     if item.startswith("tribe:"):
         T = item[6:]
@@ -110,8 +114,8 @@ def supports(item, name, text, tags, types):
         return bool(mc) and item[9:] in mc.group(1) and "Land" not in ty
     if item == "counters": return bool(tags & {"counters_plus", "proliferate"})
     if item == "high_power":
-        pt = re.search(r"^PT:(\d+)/", text, re.M)
-        return crea and bool(pt) and int(pt.group(1)) >= 4
+        pp = at.potential_pt(text, traits)   # H46: the ability first, never 0/0 as printed
+        return crea and pp is not None and pp[0] >= 4
     if item == "small":
         pt = re.search(r"^PT:(\d+)/(\d+)", text, re.M)
         return crea and bool(pt) and min(int(pt.group(1)), int(pt.group(2))) <= 1
@@ -134,6 +138,25 @@ def read(path):
     return main, cmd
 
 
+def deck_traits(main, cards):
+    """Board-state traits of a finished deck for potential_pt (H46): basic and typed lands, creature, token, artifact, enchantment, equipment and counter cards."""
+    tr = collections.Counter()
+    for q, n in main:
+        t = at.card_text(n)
+        m = re.search(r"^Types:(.*\bLand\b.*)$", t or "", re.M)
+        if not m: continue
+        tr["lands"] += q
+        for lt in at.LANDTYPES:
+            if re.search(r"\b" + lt + r"\b", m.group(1)): tr["landtype:" + lt] += q
+    for n, t, tg, ty in cards:
+        ty = ty.split()
+        for k, trait in (("Creature", "creatures"), ("Artifact", "artifacts"), ("Enchantment", "enchantments"), ("Equipment", "equipment")):
+            if k in ty: tr[trait] += 1
+        if "token_make" in tg: tr["tokens"] += 1
+        if tg & {"counters_plus", "proliferate"}: tr["counters"] += 1
+    return dict(tr)
+
+
 def analyse(path, pool):
     main, cmd = read(path)
     cn = cmd[0][1]
@@ -144,9 +167,10 @@ def analyse(path, pool):
         t = at.card_text(n)
         if not t or "Types:Land" in t: continue
         cards.append((n, t, at.tags_of(t), at.parse(t)[5]))
-    per = {it: sum(1 for n, t, tg, ty in cards if supports(it, n, t, tg, ty)) for it in prof}
+    traits = deck_traits(main, cards)
+    per = {it: sum(1 for n, t, tg, ty in cards if supports(it, n, t, tg, ty, traits)) for it in prof}
     # a card supports the commander if it passes ANY test
-    works = sum(1 for n, t, tg, ty in cards if any(supports(it, n, t, tg, ty) for it in prof))
+    works = sum(1 for n, t, tg, ty in cards if any(supports(it, n, t, tg, ty, traits) for it in prof))
     return cn, prof, per, works, bool(c) and is_partner(c["oracle"])
 
 

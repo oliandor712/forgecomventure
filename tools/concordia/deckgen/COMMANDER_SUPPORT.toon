@@ -5,15 +5,15 @@ commanders[80|]{deck|commander|profile|works|per_test|partner}:
   B_Falthis|Falthis, Shadowcat Familiar|control|5|control=5|partner
   B_Gallia|Gallia, Tragic Host|counters;evasion;sacrifice|19|counters=0;evasion=4;sacrifice=15|
   B_Gonti|Gonti, Lord of Luxury|control;etb_self|11|control=8;etb_self=3|
-  B_Grma|Gríma Wormtongue|lifegain;sacrifice;scales:Legendary|19|lifegain=7;sacrifice=9;scales:Legendary=6|
+  B_Grma|Gríma Wormtongue|lifegain;sacrifice;scales:Legendary;token|27|lifegain=7;sacrifice=9;scales:Legendary=6;token=10|
   B_Hammerhead|Hammerhead, Maggia Boss|counters;sacrifice|10|counters=4;sacrifice=9|
   B_Keskit|Keskit, the Flesh Sculptor|sacrifice|12|sacrifice=12|partner
   B_Moonstone|Moonstone, Harsh Mistress|discard;evasion|12|discard=6;evasion=6|
-  B_Ozox|Ozox, the Clattering King|control;sacrifice;scales:Legendary;tribe:Skeleton|20|control=7;sacrifice=10;scales:Legendary=0;tribe:Skeleton=6|
+  B_Ozox|Ozox, the Clattering King|control;sacrifice;scales:Legendary;token;tribe:Skeleton|23|control=7;sacrifice=10;scales:Legendary=0;token=3;tribe:Skeleton=6|
   B_Sivriss|Sivriss, Nightmare Speaker|mill;sacrifice|12|mill=4;sacrifice=9|
-  B_Skitter|Lord Skitter, Sewer King|control;tribe:Rat|33|control=8;tribe:Rat=32|
+  B_Skitter|Lord Skitter, Sewer King|control;token;tribe:Rat|36|control=8;token=7;tribe:Rat=32|
   B_Splinter|Splinter, Hamato Yoshi|evasion;tribe:Ninja|8|evasion=6;tribe:Ninja=2|
-  B_Tormod|Tormod, the Desecrator|graveyard_leave;tribe:Zombie|38|graveyard_leave=19;tribe:Zombie=28|partner
+  B_Tormod|Tormod, the Desecrator|graveyard_leave;token;tribe:Zombie|43|graveyard_leave=27;token=7;tribe:Zombie=29|partner
   B_Whisper|Whisper, Blood Liturgist|sacrifice|9|sacrifice=9|
   B_Yahenni|Yahenni, Undying Partisan|attack;counters;protection;sacrifice|23|attack=6;counters=7;protection=1;sacrifice=13|
   G_Anara|Anara, Wolvid Familiar|protection|3|protection=3|partner
@@ -21,30 +21,30 @@ commanders[80|]{deck|commander|profile|works|per_test|partner}:
   G_Dionus|Dionus, Elvish Archdruid|counters|7|counters=7|
   G_Dwynen|Dwynen, Gilt-Leaf Daen|attack;flying_hate;lifegain;tribe:Elf|32|attack=3;flying_hate=2;lifegain=1;tribe:Elf=30|
   G_Fynn|Fynn, the Fangbearer|control|5|control=5|
-  G_Goreclaw|Goreclaw, Terror of Qal Sisma|attack;high_power|11|attack=7;high_power=5|
+  G_Goreclaw|Goreclaw, Terror of Qal Sisma|attack;high_power|12|attack=7;high_power=6|
   G_Halana|Halana, Kessig Ranger|dmg_power;etb_other;flying_hate|10|dmg_power=2;etb_other=8;flying_hate=0|partner
   G_Jiang|Jiang Yanggu, Never Alone|etb_self;scales:Legendary;token;tribe:Dog|16|etb_self=6;scales:Legendary=3;token=9;tribe:Dog=1|
-  G_Loot|Loot, the Nexus|high_power|6|high_power=6|
-  G_Numa|Numa, Joraga Chieftain|counters|5|counters=5|partner
+  G_Loot|Loot, the Nexus|high_power|11|high_power=11|
+  G_Numa|Numa, Joraga Chieftain|counters|6|counters=6|partner
   G_Peregrin|Peregrin Took|lifegain;sacrifice|9|lifegain=4;sacrifice=6|
   G_Renata|Renata, Called to the Hunt|counters;devotion:G|45|counters=2;devotion:G=45|
   G_Ruxa|Ruxa, Patient Professor|attack;etb_self;sacrifice;scales:Creature|41|attack=8;etb_self=1;sacrifice=4;scales:Creature=33|
   G_Surrak|Surrak, the Hunt Caller|high_power|3|high_power=3|
   G_Toph|Toph, the Blind Bandit|counters;etb_self;sacrifice|11|counters=6;etb_self=3;sacrifice=5|
   G_Wilson|Wilson, Refined Grizzly|attack;control;flying_hate|13|attack=8;control=5;flying_hate=0|
-  R_Anax|Anax, Hardened in the Forge|control;devotion:R;high_power;sacrifice;tribe:Satyr|42|control=3;devotion:R=39;high_power=6;sacrifice=4;tribe:Satyr=2|
-  R_Breeches|Breeches, Brazen Plunderer|evasion;play_exile;tribe:Pirate|14|evasion=7;play_exile=5;tribe:Pirate=4|partner
+  R_Anax|Anax, Hardened in the Forge|control;devotion:R;high_power;sacrifice;token;tribe:Satyr|43|control=3;devotion:R=39;high_power=6;sacrifice=4;token=8;tribe:Satyr=2|
+  R_Breeches|Breeches, Brazen Plunderer|evasion;play_exile;tribe:Pirate|11|evasion=2;play_exile=5;tribe:Pirate=6|partner
   R_Cleon|Cleon, Merry Champion|double_strike;play_exile|14|double_strike=10;play_exile=4|
-  R_Dori|Dori, Bearer of Friends|etb_self;sacrifice|7|etb_self=1;sacrifice=7|
-  R_Grishnkh|Grishnákh, Brash Instigator|etb_self|1|etb_self=1|
-  R_Gut|Gut, True Soul Zealot|attack;sacrifice;tribe:Skeleton|27|attack=23;sacrifice=9;tribe:Skeleton=0|
+  R_Dori|Dori, Bearer of Friends|etb_self;sacrifice;token|47|etb_self=1;sacrifice=7;token=43|
+  R_Grishnkh|Grishnákh, Brash Instigator|etb_self;token|29|etb_self=1;token=28|
+  R_Gut|Gut, True Soul Zealot|attack;sacrifice;token;tribe:Skeleton|41|attack=23;sacrifice=9;token=26;tribe:Skeleton=0|
   R_Hobgoblin|Hobgoblin, Mantled Marauder|attack;discard;evasion|19|attack=15;discard=4;evasion=7|
   R_Ian|Ian the Reckless|attack;modified|22|attack=20;modified=2|
-  R_Ivora|Ivora, Insatiable Heir|counters;discard;etb_self;sacrifice|8|counters=1;discard=1;etb_self=0;sacrifice=7|
+  R_Ivora|Ivora, Insatiable Heir|counters;discard;etb_self;sacrifice;token|31|counters=1;discard=1;etb_self=0;sacrifice=7;token=27|
   R_Kediss|Kediss, Emberclaw Familiar|evasion|6|evasion=6|partner
-  R_Kreat|General Kreat, the Boltbringer|attack;etb_other;tribe:Goblin|45|attack=17;etb_other=12;tribe:Goblin=35|
-  R_Lannery|Captain Lannery Storm|attack;sacrifice|20|attack=15;sacrifice=7|
-  R_Molten|Molten Man, Inferno Incarnate|etb_self;protection|1|etb_self=1;protection=0|
+  R_Kreat|General Kreat, the Boltbringer|attack;etb_other;token;tribe:Goblin|45|attack=17;etb_other=12;token=15;tribe:Goblin=35|
+  R_Lannery|Captain Lannery Storm|attack;sacrifice;token|33|attack=15;sacrifice=7;token=18|
+  R_Molten|Molten Man, Inferno Incarnate|etb_self;landtype:Mountain;protection|1|etb_self=1;landtype:Mountain=0;protection=0|
   R_Squee|Squee, Goblin Nabob|sacrifice;tribe:Goblin|32|sacrifice=9;tribe:Goblin=30|
   R_Tomik|Tomik, Izzet Sparkmage|spells|13|spells=13|
   R_in|Óin the Brave|discard|1|discard=1|
@@ -54,7 +54,7 @@ commanders[80|]{deck|commander|profile|works|per_test|partner}:
   U_Esior|Esior, Wardwing Familiar|control;evasion|38|control=8;evasion=35|partner
   U_Ioreth|Ioreth of the Healing House|scales:Legendary;untap|3|scales:Legendary=1;untap=2|
   U_Iron|Iron Lad, Diverging Destiny|attack;evasion|13|attack=10;evasion=13|
-  U_Malcolm|Malcolm, Keen-Eyed Navigator|evasion;sacrifice;tribe:Pirate|20|evasion=13;sacrifice=4;tribe:Pirate=9|partner
+  U_Malcolm|Malcolm, Keen-Eyed Navigator|evasion;sacrifice;token;tribe:Pirate|26|evasion=10;sacrifice=7;token=7;tribe:Pirate=10|partner
   U_Master|Master Pakku|mill;spells|14|mill=2;spells=13|
   U_Meneldor|Meneldor, Swift Savior|evasion|35|evasion=35|
   U_Padeem|Padeem, Consul of Innovation|protection;scales:Artifact|13|protection=0;scales:Artifact=13|
@@ -63,20 +63,20 @@ commanders[80|]{deck|commander|profile|works|per_test|partner}:
   U_Shuri|Shuri, Wakandan Inventor|scales:Artifact;scales:Legendary|15|scales:Artifact=13;scales:Legendary=2|
   U_Siani|Siani, Eye of the Storm|attack;evasion;scry|42|attack=39;evasion=40;scry=9|partner
   U_Tetsuko|Tetsuko Umezawa, Fugitive|evasion;small|31|evasion=15;small=25|
-  U_Urza|Urza, Powerstone Prodigy|attack;discard|11|attack=7;discard=4|
+  U_Urza|Urza, Powerstone Prodigy|attack;discard;token|22|attack=7;discard=4;token=13|
   W_Adelbert|Adelbert Steiner|lifegain;scales:Equipment|8|lifegain=2;scales:Equipment=6|
   W_Anafenza|Anafenza, Kin-Tree Spirit|counters;etb_other|30|counters=27;etb_other=3|
   W_Ardenn|Ardenn, Intrepid Archaeologist|scales:Aura|1|scales:Aura=1|partner
   W_Baird|Baird, Steward of Argive|attack;control|19|attack=14;control=5|
   W_Bucky|Bucky Barnes, Eager Ally|attack;sacrifice;tribe:Soldier|38|attack=12;sacrifice=3;tribe:Soldier=31|
-  W_Commander|Commander Sofia Daguerre|etb_self;play_exile;sacrifice;scales:Legendary|13|etb_self=4;play_exile=3;sacrifice=5;scales:Legendary=5|
+  W_Commander|Commander Sofia Daguerre|etb_self;play_exile;sacrifice;scales:Legendary;token|35|etb_self=4;play_exile=3;sacrifice=5;scales:Legendary=5;token=29|
   W_Ennis|Ennis, Debate Moderator|counters;etb_self;flicker|3|counters=2;etb_self=1;flicker=0|
-  W_Kemba|Kemba, Kha Regent|scales:Equipment;tribe:Cat|16|scales:Equipment=0;tribe:Cat=16|
+  W_Kemba|Kemba, Kha Regent|scales:Equipment;token;tribe:Cat|32|scales:Equipment=0;token=22;tribe:Cat=16|
   W_Losheel|Losheel, Clockwork Scholar|etb_other;scales:Artifact|29|etb_other=19;scales:Artifact=11|
   W_Pianna|Pianna, Nomad Captain|attack;tribe:Nomad|11|attack=11;tribe:Nomad=0|
-  W_Prava|Prava of the Steel Legion|token;tribe:Soldier|26|token=17;tribe:Soldier=13|partner
+  W_Prava|Prava of the Steel Legion|token;tribe:Soldier|24|token=22;tribe:Soldier=5|partner
   W_Rescue|Rescue Girl, First Responder|etb_other;evasion|25|etb_other=21;evasion=5|
-  W_Rosie|Rosie Cotton of South Lane|counters;etb_self;lifegain;sacrifice|9|counters=1;etb_self=5;lifegain=2;sacrifice=3|
+  W_Rosie|Rosie Cotton of South Lane|counters;etb_self;lifegain;sacrifice;token|32|counters=1;etb_self=5;lifegain=2;sacrifice=3;token=27|
   W_Sokka|Sokka, Wolf Cove's Protector|attack|9|attack=9|
   W_Teshar|Teshar, Ancestor's Apostle|evasion;sacrifice|15|evasion=13;sacrifice=2|
   W_Thalia|Thalia, the Survivor|control;lifegain;spells|24|control=6;lifegain=1;spells=19|
