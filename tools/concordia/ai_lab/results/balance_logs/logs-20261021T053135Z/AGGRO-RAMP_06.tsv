@@ -1,0 +1,316 @@
+1		TURN	Turn 1 (A)
+1	A's Untap step	PHASE	A's Untap step
+1	A's Upkeep step	PHASE	A's Upkeep step
+1	A's Draw step	PHASE	A's Draw step
+1	A's Main phase, precombat	PHASE	A's Main phase, precombat
+1	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+1	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+1	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+1	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+1	A's Combat Damage Step	PHASE	A's Combat Damage Step
+1	A's End of Combat Step	PHASE	A's End of Combat Step
+1	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+1	A's End step	PHASE	A's End step
+1	A's Cleanup step	PHASE	A's Cleanup step
+2	A's Cleanup step	TURN	Turn 2 (B)
+2	B's Untap step	PHASE	B's Untap step
+2	B's Upkeep step	PHASE	B's Upkeep step
+2	B's Draw step	PHASE	B's Draw step
+2	B's Main phase, precombat	PHASE	B's Main phase, precombat
+2	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+2	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+2	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+2	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+2	B's Combat Damage Step	PHASE	B's Combat Damage Step
+2	B's End of Combat Step	PHASE	B's End of Combat Step
+2	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+2	B's End step	PHASE	B's End step
+2	B's Cleanup step	PHASE	B's Cleanup step
+3	B's Cleanup step	TURN	Turn 3 (A)
+3	A's Untap step	PHASE	A's Untap step
+3	A's Upkeep step	PHASE	A's Upkeep step
+3	A's Draw step	PHASE	A's Draw step
+3	A's Main phase, precombat	PHASE	A's Main phase, precombat
+3	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+3	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+3	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+3	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+3	A's Combat Damage Step	PHASE	A's Combat Damage Step
+3	A's End of Combat Step	PHASE	A's End of Combat Step
+3	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+3	A's Main phase, postcombat	STACK_ADD	A cast Ledger Shredder
+3	A's End step	PHASE	A's End step
+3	A's Cleanup step	PHASE	A's Cleanup step
+4	A's Cleanup step	TURN	Turn 4 (B)
+4	B's Untap step	PHASE	B's Untap step
+4	B's Upkeep step	PHASE	B's Upkeep step
+4	B's Draw step	PHASE	B's Draw step
+4	B's Main phase, precombat	PHASE	B's Main phase, precombat
+4	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+4	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+4	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+4	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+4	B's Combat Damage Step	PHASE	B's Combat Damage Step
+4	B's End of Combat Step	PHASE	B's End of Combat Step
+4	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+4	B's Main phase, postcombat	STACK_ADD	B cast Giada, Font of Hope
+4	B's End step	PHASE	B's End step
+4	B's Cleanup step	PHASE	B's Cleanup step
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's Main phase, postcombat	STACK_ADD	A cast Baral, Chief of Compliance
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+6	A's Cleanup step	TURN	Turn 6 (B)
+6	B's Untap step	PHASE	B's Untap step
+6	B's Upkeep step	PHASE	B's Upkeep step
+6	B's Draw step	PHASE	B's Draw step
+6	B's Main phase, precombat	PHASE	B's Main phase, precombat
+6	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+6	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+6	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+6	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+6	B's Combat Damage Step	PHASE	B's Combat Damage Step
+6	B's End of Combat Step	PHASE	B's End of Combat Step
+6	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+6	B's Main phase, postcombat	STACK_ADD	B cast Open the Armory
+6	B's End step	PHASE	B's End step
+6	B's Cleanup step	PHASE	B's Cleanup step
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD	A cast Pollywog Prodigy
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+8	A's Cleanup step	TURN	Turn 8 (B)
+8	B's Untap step	PHASE	B's Untap step
+8	B's Upkeep step	PHASE	B's Upkeep step
+8	B's Draw step	PHASE	B's Draw step
+8	B's Main phase, precombat	PHASE	B's Main phase, precombat
+8	B's Main phase, precombat	STACK_ADD	B cast Heirloom Blade
+8	B's Main phase, precombat	STACK_ADD	A cast Arcane Denial targeting [Heirloom Blade]
+8	B's Main phase, precombat	ZONE_CHANGE	Send countered spell to Graveyard
+8	B's Main phase, precombat	STACK_ADD	A triggered Baral, Chief of Compliance
+8	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+8	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+8	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+8	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+8	B's Combat Damage Step	PHASE	B's Combat Damage Step
+8	B's End of Combat Step	PHASE	B's End of Combat Step
+8	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+8	B's End step	PHASE	B's End step
+8	B's Cleanup step	PHASE	B's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Upkeep step	STACK_ADD	A triggered Arcane Denial
+9	A's Upkeep step	STACK_ADD	A triggered Arcane Denial
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Main phase, precombat	STACK_ADD	A cast Faerie Mastermind
+9	A's Main phase, precombat	STACK_ADD	A triggered Pollywog Prodigy
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Pollywog Prodigy (12) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Pollywog Prodigy (12).
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Pollywog Prodigy (12) deals 2 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 35 > 33
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Sol Ring
+9	A's Main phase, postcombat	STACK_ADD	A triggered Ledger Shredder
+9	A's Main phase, postcombat	STACK_ADD	A cast Rhystic Study
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+10	A's Cleanup step	TURN	Turn 10 (B)
+10	B's Untap step	PHASE	B's Untap step
+10	B's Upkeep step	PHASE	B's Upkeep step
+10	B's Draw step	PHASE	B's Draw step
+10	B's Main phase, precombat	PHASE	B's Main phase, precombat
+10	B's Main phase, precombat	STACK_ADD	B cast Fireshrieker
+10	B's Main phase, precombat	STACK_ADD	A triggered Rhystic Study
+10	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+10	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+10	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+10	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+10	B's Combat Damage Step	PHASE	B's Combat Damage Step
+10	B's End of Combat Step	PHASE	B's End of Combat Step
+10	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+10	B's End step	PHASE	B's End step
+10	B's Cleanup step	PHASE	B's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Pollywog Prodigy (12), Ledger Shredder (92) and Faerie Mastermind (78) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Pollywog Prodigy (12). B didn't block Ledger Shredder (92). B didn't block Faerie Mastermind (78).
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Pollywog Prodigy (12) deals 2 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Ledger Shredder (92) deals 2 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Faerie Mastermind (78) deals 2 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 33 > 27
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD	A cast Talrand, Sky Summoner
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Main phase, precombat	STACK_ADD	B activated Fireshrieker targeting [Giada, Font of Hope (105)]
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned Giada, Font of Hope (105) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A didn't block Giada, Font of Hope (105).
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's First Strike Damage Step	DAMAGE	Giada, Font of Hope (105) deals 2 combat damage to A.
+12	B's First Strike Damage Step	LIFE	Life: A 35 > 33
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE	Giada, Font of Hope (105) deals 2 combat damage to A.
+12	B's Combat Damage Step	LIFE	Life: A 33 > 31
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's Main phase, postcombat	STACK_ADD	B cast Stoneforge Mystic
+12	B's Main phase, postcombat	STACK_ADD	A triggered Rhystic Study
+12	B's Main phase, postcombat	STACK_ADD	B triggered Stoneforge Mystic
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step
+13	B's Cleanup step	TURN	Turn 13 (A)
+13	A's Untap step	PHASE	A's Untap step
+13	A's Upkeep step	PHASE	A's Upkeep step
+13	A's Draw step	PHASE	A's Draw step
+13	A's Main phase, precombat	PHASE	A's Main phase, precombat
+13	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+13	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+13	A's Declare Attackers Step	COMBAT	A assigned Ledger Shredder (92) and Pollywog Prodigy (12) to attack B.
+13	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+13	A's Declare Blockers Step	COMBAT	B didn't block Ledger Shredder (92). B didn't block Pollywog Prodigy (12).
+13	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+13	A's Combat Damage Step	PHASE	A's Combat Damage Step
+13	A's Combat Damage Step	DAMAGE	Ledger Shredder (92) deals 2 combat damage to B.
+13	A's Combat Damage Step	DAMAGE	Pollywog Prodigy (12) deals 2 combat damage to B.
+13	A's Combat Damage Step	LIFE	Life: B 27 > 23
+13	A's End of Combat Step	PHASE	A's End of Combat Step
+13	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+13	A's Main phase, postcombat	STACK_ADD	A cast Trophy Mage
+13	A's Main phase, postcombat	STACK_ADD	A triggered Trophy Mage
+13	A's Main phase, postcombat	STACK_ADD	A cast Spark Double
+13	A's Main phase, postcombat	STACK_ADD	A triggered Ledger Shredder
+13	A's End step	PHASE	A's End step
+13	A's Cleanup step	PHASE	A's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Main phase, precombat	STACK_ADD	B cast Sword of Hearth and Home
+14	B's Main phase, precombat	STACK_ADD	A triggered Rhystic Study
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's End step	PHASE	B's End step
+14	B's Cleanup step	PHASE	B's Cleanup step
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Draw step	PHASE	A's Draw step
+15	A's Draw step	STACK_ADD	A cast Cyclonic Rift targeting [Giada, Font of Hope (105)]
+15	A's Draw step	STACK_ADD	A triggered Talrand, Sky Summoner
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Main phase, precombat	STACK_ADD	A cast Heraldic Banner
+15	A's Main phase, precombat	STACK_ADD	A triggered Ledger Shredder
+15	A's Main phase, precombat	STACK_ADD	A triggered Ledger Shredder
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Attackers Step	COMBAT	A assigned Ledger Shredder (92), Pollywog Prodigy (12), Faerie Mastermind (78), Talrand, Sky Summoner (90), Trophy Mage (22), Ledger Shredder (2) and Baral, Chief of Compliance (100) to attack B.
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's Declare Blockers Step	COMBAT	B didn't block Ledger Shredder (92). B assigned Stoneforge Mystic (185) to block Pollywog Prodigy (12). B didn't block Faerie Mastermind (78). B didn't block Talrand, Sky Summoner (90). B didn't block Trophy Mage (22). B didn't block Ledger Shredder (2). B didn't block Baral, Chief of Compliance (100).
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's Combat Damage Step	DAMAGE	Ledger Shredder (92) deals 4 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Pollywog Prodigy (12) deals 3 damage to Stoneforge Mystic (185).
+15	A's Combat Damage Step	DAMAGE	Faerie Mastermind (78) deals 3 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Talrand, Sky Summoner (90) deals 3 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Trophy Mage (22) deals 3 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Ledger Shredder (2) deals 3 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Baral, Chief of Compliance (100) deals 2 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Stoneforge Mystic (185) deals 1 damage to Pollywog Prodigy (12).
+15	A's Combat Damage Step	LIFE	Life: B 23 > 5
+15	A's Combat Damage Step	ZONE_CHANGE	Stoneforge Mystic (185) was put into Graveyard from Battlefield.
+15	A's End of Combat Step	PHASE	A's End of Combat Step
+15	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+15	A's Main phase, postcombat	STACK_ADD	A activated Faerie Mastermind
+15	A's End step	PHASE	A's End step
+15	A's Cleanup step	PHASE	A's Cleanup step
+16	A's Cleanup step	TURN	Turn 16 (B)
+16	B's Untap step	PHASE	B's Untap step
+16	B's Upkeep step	PHASE	B's Upkeep step
+16	B's Draw step	PHASE	B's Draw step
+16	B's Main phase, precombat	PHASE	B's Main phase, precombat
+16	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+16	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+16	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+16	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+16	B's Combat Damage Step	PHASE	B's Combat Damage Step
+16	B's End of Combat Step	PHASE	B's End of Combat Step
+16	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+16	B's Main phase, postcombat	STACK_ADD	B cast Indomitable Archangel
+16	B's Main phase, postcombat	STACK_ADD	A triggered Rhystic Study
+16	B's End step	PHASE	B's End step
+16	B's Cleanup step	PHASE	B's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Attackers Step	COMBAT	A assigned Ledger Shredder (92), Pollywog Prodigy (12), Faerie Mastermind (78), Talrand, Sky Summoner (90), Trophy Mage (22), Ledger Shredder (2), Drake Token (206) and Baral, Chief of Compliance (100) to attack B.
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's Declare Blockers Step	COMBAT	B assigned Indomitable Archangel (110) to block Ledger Shredder (92). B didn't block Pollywog Prodigy (12). B didn't block Faerie Mastermind (78). B didn't block Talrand, Sky Summoner (90). B didn't block Trophy Mage (22). B didn't block Ledger Shredder (2). B didn't block Drake Token (206). B didn't block Baral, Chief of Compliance (100).
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's Combat Damage Step	DAMAGE	Ledger Shredder (92) deals 4 damage to Indomitable Archangel (110).
+17	A's Combat Damage Step	DAMAGE	Pollywog Prodigy (12) deals 3 combat damage to B.
+17	A's Combat Damage Step	DAMAGE	Faerie Mastermind (78) deals 3 combat damage to B.
+17	A's Combat Damage Step	DAMAGE	Talrand, Sky Summoner (90) deals 3 combat damage to B.
+17	A's Combat Damage Step	DAMAGE	Trophy Mage (22) deals 3 combat damage to B.
+17	A's Combat Damage Step	DAMAGE	Ledger Shredder (2) deals 3 combat damage to B.
+17	A's Combat Damage Step	DAMAGE	Drake Token (206) deals 3 combat damage to B.
+17	A's Combat Damage Step	DAMAGE	Baral, Chief of Compliance (100) deals 2 combat damage to B.
+17	A's Combat Damage Step	DAMAGE	Indomitable Archangel (110) deals 4 damage to Ledger Shredder (92).
+17	A's Combat Damage Step	LIFE	Life: B 5 > -15

@@ -1,0 +1,232 @@
+1		TURN	Turn 1 (A)
+1	A's Untap step	PHASE	A's Untap step
+1	A's Upkeep step	PHASE	A's Upkeep step
+1	A's Draw step	PHASE	A's Draw step
+1	A's Main phase, precombat	PHASE	A's Main phase, precombat
+1	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+1	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+1	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+1	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+1	A's Combat Damage Step	PHASE	A's Combat Damage Step
+1	A's End of Combat Step	PHASE	A's End of Combat Step
+1	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+1	A's Main phase, postcombat	STACK_ADD	A cast Vampire of the Dire Moon
+1	A's End step	PHASE	A's End step
+1	A's Cleanup step	PHASE	A's Cleanup step
+2	A's Cleanup step	TURN	Turn 2 (B)
+2	B's Untap step	PHASE	B's Untap step
+2	B's Upkeep step	PHASE	B's Upkeep step
+2	B's Draw step	PHASE	B's Draw step
+2	B's Main phase, precombat	PHASE	B's Main phase, precombat
+2	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+2	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+2	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+2	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+2	B's Combat Damage Step	PHASE	B's Combat Damage Step
+2	B's End of Combat Step	PHASE	B's End of Combat Step
+2	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+2	B's Main phase, postcombat	STACK_ADD	B cast Ruin Crab
+2	B's End step	PHASE	B's End step
+2	B's Cleanup step	PHASE	B's Cleanup step
+3	B's Cleanup step	TURN	Turn 3 (A)
+3	A's Untap step	PHASE	A's Untap step
+3	A's Upkeep step	PHASE	A's Upkeep step
+3	A's Draw step	PHASE	A's Draw step
+3	A's Main phase, precombat	PHASE	A's Main phase, precombat
+3	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+3	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+3	A's Declare Attackers Step	COMBAT	A assigned Vampire of the Dire Moon (43) to attack B.
+3	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+3	A's Declare Blockers Step	COMBAT	B didn't block Vampire of the Dire Moon (43).
+3	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+3	A's Combat Damage Step	PHASE	A's Combat Damage Step
+3	A's Combat Damage Step	DAMAGE	Vampire of the Dire Moon (43) deals 1 combat damage to B.
+3	A's Combat Damage Step	LIFE	Life: A 15 > 16
+3	A's Combat Damage Step	LIFE	Life: B 15 > 14
+3	A's End of Combat Step	PHASE	A's End of Combat Step
+3	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+3	A's Main phase, postcombat	STACK_ADD	A cast Child of Night
+3	A's End step	PHASE	A's End step
+3	A's Cleanup step	PHASE	A's Cleanup step
+4	A's Cleanup step	TURN	Turn 4 (B)
+4	B's Untap step	PHASE	B's Untap step
+4	B's Upkeep step	PHASE	B's Upkeep step
+4	B's Draw step	PHASE	B's Draw step
+4	B's Main phase, precombat	PHASE	B's Main phase, precombat
+4	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+4	B's Main phase, precombat	ZONE_CHANGE	A milled Swamp (59), Creeping Bloodsucker (52) and Supernatural Stamina (11).
+4	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+4	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+4	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+4	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+4	B's Combat Damage Step	PHASE	B's Combat Damage Step
+4	B's End of Combat Step	PHASE	B's End of Combat Step
+4	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+4	B's End step	PHASE	B's End step
+4	B's Cleanup step	PHASE	B's Cleanup step
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Attackers Step	COMBAT	A assigned Child of Night (8) and Vampire of the Dire Moon (43) to attack B.
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's Declare Blockers Step	COMBAT	B assigned Ruin Crab (191) to block Child of Night (8). B didn't block Vampire of the Dire Moon (43).
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's Combat Damage Step	DAMAGE	Child of Night (8) deals 2 damage to Ruin Crab (191).
+5	A's Combat Damage Step	LIFE	Life: A 16 > 18
+5	A's Combat Damage Step	DAMAGE	Vampire of the Dire Moon (43) deals 1 combat damage to B.
+5	A's Combat Damage Step	LIFE	Life: A 18 > 19
+5	A's Combat Damage Step	LIFE	Life: B 14 > 13
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's Main phase, postcombat	STACK_ADD	A cast Zulaport Cutthroat
+5	A's Main phase, postcombat	STACK_ADD	A cast Raise Dead targeting [Creeping Bloodsucker (52)]
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+6	A's Cleanup step	TURN	Turn 6 (B)
+6	B's Untap step	PHASE	B's Untap step
+6	B's Upkeep step	PHASE	B's Upkeep step
+6	B's Draw step	PHASE	B's Draw step
+6	B's Main phase, precombat	PHASE	B's Main phase, precombat
+6	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+6	B's Main phase, precombat	ZONE_CHANGE	A milled Exsanguinate (46), Consume Spirit (20) and Gray Merchant of Asphodel (24).
+6	B's Main phase, precombat	STACK_ADD	B cast Roiling Regrowth
+6	B's Main phase, precombat	ZONE_CHANGE	Forest (115) was put into Graveyard from Battlefield.
+6	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+6	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+6	B's Main phase, precombat	ZONE_CHANGE	A milled Cadaver Imp (21), Vindictive Vampire (50) and Swamp (70).
+6	B's Main phase, precombat	ZONE_CHANGE	A milled Swamp (96), Liliana's Reaver (40) and Swamp (66).
+6	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+6	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+6	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+6	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+6	B's Combat Damage Step	PHASE	B's Combat Damage Step
+6	B's End of Combat Step	PHASE	B's End of Combat Step
+6	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+6	B's End step	PHASE	B's End step
+6	B's Cleanup step	PHASE	B's Cleanup step
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Child of Night (8), Vampire of the Dire Moon (43) and Zulaport Cutthroat (14) to attack B.
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B assigned Ruin Crab (191) to block Child of Night (8). B didn't block Vampire of the Dire Moon (43). B didn't block Zulaport Cutthroat (14).
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Child of Night (8) deals 2 damage to Ruin Crab (191).
+7	A's Combat Damage Step	LIFE	Life: A 19 > 21
+7	A's Combat Damage Step	DAMAGE	Vampire of the Dire Moon (43) deals 1 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: A 21 > 22
+7	A's Combat Damage Step	DAMAGE	Zulaport Cutthroat (14) deals 1 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: B 13 > 11
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD	A cast Nazar, the Velvet Fang
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+8	A's Cleanup step	TURN	Turn 8 (B)
+8	B's Untap step	PHASE	B's Untap step
+8	B's Upkeep step	PHASE	B's Upkeep step
+8	B's Draw step	PHASE	B's Draw step
+8	B's Main phase, precombat	PHASE	B's Main phase, precombat
+8	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+8	B's Main phase, precombat	ZONE_CHANGE	A milled Gravedigger (98), Swamp (85) and Vampire Sovereign (3).
+8	B's Main phase, precombat	STACK_ADD	B cast Explosive Vegetation
+8	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+8	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+8	B's Main phase, precombat	ZONE_CHANGE	A milled Swamp (81), Feign Death (48) and Zombify (49).
+8	B's Main phase, precombat	ZONE_CHANGE	A milled Terramorphic Expanse (22), Swamp (88) and Swamp (53).
+8	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+8	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+8	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+8	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+8	B's Combat Damage Step	PHASE	B's Combat Damage Step
+8	B's End of Combat Step	PHASE	B's End of Combat Step
+8	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+8	B's End step	PHASE	B's End step
+8	B's Cleanup step	PHASE	B's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Nazar, the Velvet Fang (105), Child of Night (8), Vampire of the Dire Moon (43) and Zulaport Cutthroat (14) to attack B.
+9	A's Declare Attackers Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Nazar, the Velvet Fang (105). B assigned Ruin Crab (191) to block Child of Night (8). B didn't block Vampire of the Dire Moon (43). B didn't block Zulaport Cutthroat (14).
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Nazar, the Velvet Fang (105) deals 3 combat damage to B.
+9	A's Combat Damage Step	DAMAGE	Child of Night (8) deals 2 damage to Ruin Crab (191).
+9	A's Combat Damage Step	LIFE	Life: A 22 > 24
+9	A's Combat Damage Step	DAMAGE	Vampire of the Dire Moon (43) deals 1 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: A 24 > 25
+9	A's Combat Damage Step	DAMAGE	Zulaport Cutthroat (14) deals 1 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 11 > 6
+9	A's Combat Damage Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+9	A's Combat Damage Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Creeping Bloodsucker
+9	A's Main phase, postcombat	STACK_ADD	A cast Ravenous Rats
+9	A's Main phase, postcombat	STACK_ADD	A triggered Ravenous Rats targeting [B]
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+10	A's Cleanup step	TURN	Turn 10 (B)
+10	B's Untap step	PHASE	B's Untap step
+10	B's Upkeep step	PHASE	B's Upkeep step
+10	B's Draw step	PHASE	B's Draw step
+10	B's Main phase, precombat	PHASE	B's Main phase, precombat
+10	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+10	B's Main phase, precombat	ZONE_CHANGE	A milled Swamp (84), Evolving Wilds (27) and Typhoid Rats (42).
+10	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+10	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+10	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+10	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+10	B's Combat Damage Step	PHASE	B's Combat Damage Step
+10	B's End of Combat Step	PHASE	B's End of Combat Step
+10	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+10	B's Main phase, postcombat	STACK_ADD	B cast Goreclaw, Terror of Qal Sisma
+10	B's Main phase, postcombat	STACK_ADD	B cast Peregrin Took
+10	B's End step	PHASE	B's End step
+10	B's Cleanup step	PHASE	B's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Upkeep step	STACK_ADD	A triggered Creeping Bloodsucker
+11	A's Upkeep step	DAMAGE	Creeping Bloodsucker (52) deals 1 non-combat damage to B.
+11	A's Upkeep step	LIFE	Life: B 6 > 5
+11	A's Upkeep step	LIFE	Life: A 25 > 26
+11	A's Upkeep step	STACK_ADD	A triggered Nazar, the Velvet Fang
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Nazar, the Velvet Fang (105), Child of Night (8), Vampire of the Dire Moon (43), Zulaport Cutthroat (14), Creeping Bloodsucker (52) and Ravenous Rats (35) to attack B.
+11	A's Declare Attackers Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+11	A's Declare Attackers Step	LIFE	Life: A 26 > 23
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Nazar, the Velvet Fang (105). B assigned Ruin Crab (191) to block Child of Night (8). B assigned Peregrin Took (111) to block Vampire of the Dire Moon (43). B didn't block Zulaport Cutthroat (14). B assigned Goreclaw, Terror of Qal Sisma (181) to block Creeping Bloodsucker (52). B didn't block Ravenous Rats (35).
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Nazar, the Velvet Fang (105) deals 3 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Child of Night (8) deals 2 damage to Ruin Crab (191).
+11	A's Combat Damage Step	LIFE	Life: A 23 > 25
+11	A's Combat Damage Step	DAMAGE	Vampire of the Dire Moon (43) deals 1 damage (Deathtouch) to Peregrin Took (111).
+11	A's Combat Damage Step	LIFE	Life: A 25 > 26
+11	A's Combat Damage Step	DAMAGE	Zulaport Cutthroat (14) deals 1 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Creeping Bloodsucker (52) deals 1 damage to Goreclaw, Terror of Qal Sisma (181).
+11	A's Combat Damage Step	DAMAGE	Ravenous Rats (35) deals 1 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Peregrin Took (111) deals 2 damage to Vampire of the Dire Moon (43).
+11	A's Combat Damage Step	DAMAGE	Goreclaw, Terror of Qal Sisma (181) deals 4 damage to Creeping Bloodsucker (52).
+11	A's Combat Damage Step	LIFE	Life: B 5 > 0

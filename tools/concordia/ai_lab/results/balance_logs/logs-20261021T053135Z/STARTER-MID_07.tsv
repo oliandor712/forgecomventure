@@ -1,0 +1,393 @@
+1		TURN	Turn 1 (B)
+1	B's Untap step	PHASE	B's Untap step
+1	B's Upkeep step	PHASE	B's Upkeep step
+1	B's Draw step	PHASE	B's Draw step
+1	B's Main phase, precombat	PHASE	B's Main phase, precombat
+1	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+1	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+1	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+1	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+1	B's Combat Damage Step	PHASE	B's Combat Damage Step
+1	B's End of Combat Step	PHASE	B's End of Combat Step
+1	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+1	B's End step	PHASE	B's End step
+1	B's Cleanup step	PHASE	B's Cleanup step
+2	B's Cleanup step	TURN	Turn 2 (A)
+2	A's Untap step	PHASE	A's Untap step
+2	A's Upkeep step	PHASE	A's Upkeep step
+2	A's Draw step	PHASE	A's Draw step
+2	A's Main phase, precombat	PHASE	A's Main phase, precombat
+2	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+2	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+2	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+2	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+2	A's Combat Damage Step	PHASE	A's Combat Damage Step
+2	A's End of Combat Step	PHASE	A's End of Combat Step
+2	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+2	A's Main phase, postcombat	STACK_ADD	A cast Vampire of the Dire Moon
+2	A's End step	PHASE	A's End step
+2	A's Cleanup step	PHASE	A's Cleanup step
+3	A's Cleanup step	TURN	Turn 3 (B)
+3	B's Untap step	PHASE	B's Untap step
+3	B's Upkeep step	PHASE	B's Upkeep step
+3	B's Draw step	PHASE	B's Draw step
+3	B's Main phase, precombat	PHASE	B's Main phase, precombat
+3	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+3	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+3	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+3	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+3	B's Combat Damage Step	PHASE	B's Combat Damage Step
+3	B's End of Combat Step	PHASE	B's End of Combat Step
+3	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+3	B's Main phase, postcombat	STACK_ADD	B cast Aftermath Analyst
+3	B's Main phase, postcombat	STACK_ADD	B triggered Aftermath Analyst
+3	B's Main phase, postcombat	ZONE_CHANGE	B milled Marauding Mutagen (39), Junk Diver (31) and Forest (14).
+3	B's End step	PHASE	B's End step
+3	B's Cleanup step	PHASE	B's Cleanup step
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's Main phase, postcombat	STACK_ADD	A cast Malakir Blood-Priest
+4	A's Main phase, postcombat	STACK_ADD	A triggered Malakir Blood-Priest
+4	A's Main phase, postcombat	LIFE	Life: B 15 > 14
+4	A's Main phase, postcombat	LIFE	Life: A 15 > 16
+4	A's End step	PHASE	A's End step
+4	A's Cleanup step	PHASE	A's Cleanup step
+5	A's Cleanup step	TURN	Turn 5 (B)
+5	B's Untap step	PHASE	B's Untap step
+5	B's Upkeep step	PHASE	B's Upkeep step
+5	B's Draw step	PHASE	B's Draw step
+5	B's Main phase, precombat	PHASE	B's Main phase, precombat
+5	B's Main phase, precombat	STACK_ADD	B cast Mask of Memory
+5	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+5	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+5	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+5	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+5	B's Combat Damage Step	PHASE	B's Combat Damage Step
+5	B's End of Combat Step	PHASE	B's End of Combat Step
+5	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+5	B's End step	PHASE	B's End step
+5	B's Cleanup step	PHASE	B's Cleanup step
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Main phase, precombat	ZONE_CHANGE	Terramorphic Expanse (123) was put into Graveyard from Battlefield.
+6	A's Main phase, precombat	STACK_ADD	A activated Terramorphic Expanse
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	COMBAT	A assigned Vampire of the Dire Moon (144) to attack B.
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's Declare Blockers Step	COMBAT	B didn't block Vampire of the Dire Moon (144).
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's Combat Damage Step	DAMAGE	Vampire of the Dire Moon (144) deals 1 combat damage to B.
+6	A's Combat Damage Step	LIFE	Life: A 16 > 17
+6	A's Combat Damage Step	LIFE	Life: B 14 > 13
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD	A cast Night's Whisper
+6	A's Main phase, postcombat	LIFE	Life: A 17 > 15
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+7	A's Cleanup step	TURN	Turn 7 (B)
+7	B's Untap step	PHASE	B's Untap step
+7	B's Upkeep step	PHASE	B's Upkeep step
+7	B's Draw step	PHASE	B's Draw step
+7	B's Main phase, precombat	PHASE	B's Main phase, precombat
+7	B's Main phase, precombat	STACK_ADD	B activated Mask of Memory targeting [Aftermath Analyst (66)]
+7	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+7	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+7	B's Declare Attackers Step	COMBAT	B assigned Aftermath Analyst (66) to attack A.
+7	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+7	B's Declare Blockers Step	COMBAT	A didn't block Aftermath Analyst (66).
+7	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+7	B's Combat Damage Step	PHASE	B's Combat Damage Step
+7	B's Combat Damage Step	DAMAGE	Aftermath Analyst (66) deals 1 combat damage to A.
+7	B's Combat Damage Step	LIFE	Life: A 15 > 14
+7	B's Combat Damage Step	STACK_ADD	B triggered Mask of Memory
+7	B's End of Combat Step	PHASE	B's End of Combat Step
+7	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+7	B's Main phase, postcombat	STACK_ADD	B cast Tetsuko Umezawa, Fugitive
+7	B's End step	PHASE	B's End step
+7	B's Cleanup step	PHASE	B's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Cadaver Imp
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Main phase, precombat	STACK_ADD	B cast Explosive Vegetation
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Attackers Step	COMBAT	B assigned Aftermath Analyst (66) and Tetsuko Umezawa, Fugitive (37) to attack A.
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's Declare Blockers Step	COMBAT	A didn't block Aftermath Analyst (66). A didn't block Tetsuko Umezawa, Fugitive (37).
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's Combat Damage Step	DAMAGE	Aftermath Analyst (66) deals 1 combat damage to A.
+9	B's Combat Damage Step	DAMAGE	Tetsuko Umezawa, Fugitive (37) deals 1 combat damage to A.
+9	B's Combat Damage Step	LIFE	Life: A 14 > 12
+9	B's Combat Damage Step	STACK_ADD	B triggered Mask of Memory
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Draw step	STACK_ADD	A cast Cast Down targeting [Aftermath Analyst (66)]
+10	A's Draw step	ZONE_CHANGE	Aftermath Analyst (66) was put into Graveyard from Battlefield.
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Malakir Blood-Priest (113), Vampire of the Dire Moon (144) and Cadaver Imp (122) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B didn't block Malakir Blood-Priest (113). B didn't block Vampire of the Dire Moon (144). B didn't block Cadaver Imp (122).
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Malakir Blood-Priest (113) deals 2 combat damage to B.
+10	A's Combat Damage Step	DAMAGE	Vampire of the Dire Moon (144) deals 1 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: A 12 > 13
+10	A's Combat Damage Step	DAMAGE	Cadaver Imp (122) deals 1 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 13 > 9
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Main phase, precombat	STACK_ADD	B cast Migration Path
+11	B's Main phase, precombat	STACK_ADD	B activated Mask of Memory targeting [Tetsuko Umezawa, Fugitive (37)]
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Attackers Step	COMBAT	B assigned Tetsuko Umezawa, Fugitive (37) to attack A.
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's Declare Blockers Step	COMBAT	A didn't block Tetsuko Umezawa, Fugitive (37).
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's Combat Damage Step	DAMAGE	Tetsuko Umezawa, Fugitive (37) deals 1 combat damage to A.
+11	B's Combat Damage Step	LIFE	Life: A 13 > 12
+11	B's Combat Damage Step	STACK_ADD	B triggered Mask of Memory
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	STACK_ADD	B cast Pollywog Prodigy
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Main phase, precombat	STACK_ADD	A cast Unholy Strength targeting [Vampire of the Dire Moon (144)]
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Vampire of the Dire Moon (144) and Cadaver Imp (122) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Vampire of the Dire Moon (144). B didn't block Cadaver Imp (122).
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Vampire of the Dire Moon (144) deals 3 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: A 12 > 15
+12	A's Combat Damage Step	DAMAGE	Cadaver Imp (122) deals 1 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 9 > 5
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Dusk Legion Zealot
+12	A's Main phase, postcombat	STACK_ADD	A triggered Dusk Legion Zealot
+12	A's Main phase, postcombat	LIFE	Life: A 15 > 14
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Main phase, precombat	STACK_ADD	B cast Eutropia the Twice-Favored
+13	B's Main phase, precombat	STACK_ADD	B triggered Pollywog Prodigy
+13	B's Main phase, precombat	STACK_ADD	B cast Whispersilk Cloak
+13	B's Main phase, precombat	STACK_ADD	B activated Whispersilk Cloak targeting [Pollywog Prodigy (6)]
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Pollywog Prodigy (6) and Tetsuko Umezawa, Fugitive (37) to attack A.
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A didn't block Pollywog Prodigy (6). A didn't block Tetsuko Umezawa, Fugitive (37).
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Pollywog Prodigy (6) deals 2 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Tetsuko Umezawa, Fugitive (37) deals 1 combat damage to A.
+13	B's Combat Damage Step	LIFE	Life: A 14 > 11
+13	B's Combat Damage Step	STACK_ADD	B triggered Mask of Memory
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's End step	PHASE	B's End step
+13	B's Cleanup step	PHASE	B's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Vampire of the Dire Moon (144), Malakir Blood-Priest (113) and Cadaver Imp (122) to attack B.
+14	A's Declare Attackers Step	STACK_ADD	B cast Stream of Unconsciousness targeting [Vampire of the Dire Moon (144)]
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B didn't block Vampire of the Dire Moon (144). B assigned Eutropia the Twice-Favored (100) to block Malakir Blood-Priest (113). B didn't block Cadaver Imp (122).
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Malakir Blood-Priest (113) deals 2 damage to Eutropia the Twice-Favored (100).
+14	A's Combat Damage Step	DAMAGE	Cadaver Imp (122) deals 1 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Eutropia the Twice-Favored (100) deals 2 damage to Malakir Blood-Priest (113).
+14	A's Combat Damage Step	LIFE	Life: B 5 > 4
+14	A's Combat Damage Step	ZONE_CHANGE	Malakir Blood-Priest (113) was put into Graveyard from Battlefield.
+14	A's Combat Damage Step	ZONE_CHANGE	Eutropia the Twice-Favored (100) was put into Graveyard from Battlefield.
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD	A cast Vengeful Bloodwitch
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Draw step	PHASE	B's Draw step
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Main phase, precombat	STACK_ADD	B cast Goreclaw, Terror of Qal Sisma
+15	B's Main phase, precombat	STACK_ADD	B triggered Pollywog Prodigy
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Attackers Step	COMBAT	B assigned Pollywog Prodigy (6) and Tetsuko Umezawa, Fugitive (37) to attack A.
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's Declare Blockers Step	COMBAT	A didn't block Pollywog Prodigy (6). A didn't block Tetsuko Umezawa, Fugitive (37).
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's Combat Damage Step	DAMAGE	Pollywog Prodigy (6) deals 3 combat damage to A.
+15	B's Combat Damage Step	DAMAGE	Tetsuko Umezawa, Fugitive (37) deals 1 combat damage to A.
+15	B's Combat Damage Step	LIFE	Life: A 11 > 7
+15	B's Combat Damage Step	STACK_ADD	B triggered Mask of Memory
+15	B's End of Combat Step	PHASE	B's End of Combat Step
+15	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+15	B's Main phase, postcombat	STACK_ADD	B cast Glen Elendra Archmage
+15	B's End step	PHASE	B's End step
+15	B's Cleanup step	PHASE	B's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	STACK_ADD	A cast Nazar, the Velvet Fang
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step
+17	A's Cleanup step	TURN	Turn 17 (B)
+17	B's Untap step	PHASE	B's Untap step
+17	B's Upkeep step	PHASE	B's Upkeep step
+17	B's Draw step	PHASE	B's Draw step
+17	B's Main phase, precombat	PHASE	B's Main phase, precombat
+17	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+17	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+17	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+17	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+17	B's Combat Damage Step	PHASE	B's Combat Damage Step
+17	B's End of Combat Step	PHASE	B's End of Combat Step
+17	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+17	B's Main phase, postcombat	STACK_ADD	B cast Rolling Hamsphere
+17	B's End step	PHASE	B's End step
+17	B's Cleanup step	PHASE	B's Cleanup step
+18	B's Cleanup step	TURN	Turn 18 (A)
+18	A's Untap step	PHASE	A's Untap step
+18	A's Upkeep step	PHASE	A's Upkeep step
+18	A's Draw step	PHASE	A's Draw step
+18	A's Main phase, precombat	PHASE	A's Main phase, precombat
+18	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+18	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+18	A's Declare Attackers Step	COMBAT	A assigned Cadaver Imp (122) to attack B.
+18	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+18	A's Declare Blockers Step	COMBAT	B assigned Glen Elendra Archmage (23) to block Cadaver Imp (122).
+18	A's Declare Blockers Step	STACK_ADD	A cast Bladebrand targeting [Cadaver Imp (122)]
+18	A's Declare Blockers Step	STACK_ADD	B triggered Pollywog Prodigy
+18	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+18	A's Combat Damage Step	PHASE	A's Combat Damage Step
+18	A's Combat Damage Step	DAMAGE	Cadaver Imp (122) deals 1 damage (Deathtouch) to Glen Elendra Archmage (23).
+18	A's Combat Damage Step	DAMAGE	Glen Elendra Archmage (23) deals 2 damage to Cadaver Imp (122).
+18	A's Combat Damage Step	ZONE_CHANGE	Cadaver Imp (122) was put into Graveyard from Battlefield.
+18	A's Combat Damage Step	ZONE_CHANGE	Glen Elendra Archmage (23) was put into Graveyard from Battlefield.
+18	A's Combat Damage Step	STACK_ADD	A triggered Vengeful Bloodwitch targeting [B]
+18	A's Combat Damage Step	STACK_ADD	B triggered Glen Elendra Archmage
+18	A's Combat Damage Step	LIFE	Life: B 4 > 3
+18	A's Combat Damage Step	LIFE	Life: A 7 > 8
+18	A's Combat Damage Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+18	A's End of Combat Step	PHASE	A's End of Combat Step
+18	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+18	A's Main phase, postcombat	STACK_ADD	A cast Exsanguinate
+18	A's Main phase, postcombat	LIFE	Life: B 3 > 2
+18	A's Main phase, postcombat	LIFE	Life: A 8 > 9
+18	A's Main phase, postcombat	STACK_ADD	A triggered Nazar, the Velvet Fang
+18	A's End step	PHASE	A's End step
+18	A's Cleanup step	PHASE	A's Cleanup step
+19	A's Cleanup step	TURN	Turn 19 (B)
+19	B's Untap step	PHASE	B's Untap step
+19	B's Upkeep step	PHASE	B's Upkeep step
+19	B's Draw step	PHASE	B's Draw step
+19	B's Main phase, precombat	PHASE	B's Main phase, precombat
+19	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+19	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+19	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+19	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+19	B's Combat Damage Step	PHASE	B's Combat Damage Step
+19	B's End of Combat Step	PHASE	B's End of Combat Step
+19	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+19	B's Main phase, postcombat	STACK_ADD	B cast Laboratory Maniac
+19	B's Main phase, postcombat	STACK_ADD	B cast Identity Thief
+19	B's Main phase, postcombat	STACK_ADD	B cast Regrowth targeting [Tatyova, Benthic Druid (86)]
+19	B's End step	PHASE	B's End step
+19	B's Cleanup step	PHASE	B's Cleanup step
+20	B's Cleanup step	TURN	Turn 20 (A)
+20	A's Untap step	PHASE	A's Untap step
+20	A's Upkeep step	PHASE	A's Upkeep step
+20	A's Draw step	PHASE	A's Draw step
+20	A's Main phase, precombat	PHASE	A's Main phase, precombat
+20	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+20	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+20	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+20	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+20	A's Combat Damage Step	PHASE	A's Combat Damage Step
+20	A's End of Combat Step	PHASE	A's End of Combat Step
+20	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+20	A's Main phase, postcombat	STACK_ADD	A cast Malakir Bloodwitch
+20	A's Main phase, postcombat	STACK_ADD	A triggered Malakir Bloodwitch
+20	A's Main phase, postcombat	LIFE	Life: B 2 > -3
+20	A's Main phase, postcombat	LIFE	Life: A 9 > 14
