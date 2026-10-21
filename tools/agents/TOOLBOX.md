@@ -1,6 +1,6 @@
 # Toolbox: the shared reference for every agent
 
-Generated 2026-10-21 14:05Z at commit 8d2190f5ce9 on branch campaign-design. **Tools stamp: `b32dcadcf968`.**
+Generated 2026-10-21 14:09Z at commit 7af3bc5ee37 on branch campaign-design. **Tools stamp: `133efe2ef05c`.**
 
 ## Start of every turn (all agents)
 1. `git pull --no-rebase origin campaign-design` (if the clone is shallow: `git fetch --unshallow origin campaign-design`).
@@ -12,10 +12,10 @@ Generated 2026-10-21 14:05Z at commit 8d2190f5ce9 on branch campaign-design. **T
 
 | tool | used by | what it does | last change |
 |---|---|---|---|
-| `tools/agents/CONTEXT.md` | all | shared rules, authority, commit ownership, agent table, recent updates: read first, every turn | 526a2d38deb 10-21 13:50Z |
-| `tools/agents/AGENT_KNOWLEDGE.md` | all | compiled pitfalls, conventions, unfinished work and next steps from the earlier agents | 8d2190f5ce9 10-21 14:02Z |
+| `tools/agents/CONTEXT.md` | all | shared rules, authority, commit ownership, agent table, recent updates: read first, every turn | 7eeb5b42e82 10-21 14:05Z |
+| `tools/agents/AGENT_KNOWLEDGE.md` | all | compiled pitfalls, conventions, unfinished work and next steps from the earlier agents | 7eeb5b42e82 10-21 14:05Z |
 | `tools/agents/human_logic.toon` | all | the user's own deck-building, balance and AI rules; a rule beats a metric | 2e9f6c93cb6 10-21 05:44Z |
-| `tools/concordia/suite/sim_suite.py` | sim workers, main | THE simulation program: setup / run / plan / status / report; archetype cells, adaptive stop, phase logs, digests, push | 526a2d38deb 10-21 13:50Z |
+| `tools/concordia/suite/sim_suite.py` | sim workers, main | THE simulation program: setup / run / plan / status / report; archetype cells, adaptive stop, phase logs, digests, push | 6a2aa4b7df6 10-21 14:08Z |
 | `tools/concordia/suite/README.md` | sim workers | how to use the suite, its stop rules and the limit-the-total levers | 02130fc55ee 10-21 13:00Z |
 | `tools/concordia/balance_lab/push_records.sh` | all | safe push of named paths (detached HEAD, races, no force); the only way to push | c51dffc7016 10-21 03:06Z |
 | `tools/concordia/balance_lab/run_batch.py` | legacy | old per-deck batch runner (old record files only) | 526a2d38deb 10-21 13:50Z |
@@ -26,10 +26,10 @@ Generated 2026-10-21 14:05Z at commit 8d2190f5ce9 on branch campaign-design. **T
 | `tools/concordia/balance_lab/BonusSim.java` | sims | the headless game engine wrapper; writes the phase log (GAME header, mulligan, AI rows) | 526a2d38deb 10-21 13:50Z |
 | `tools/concordia/sim/setup.sh` | sims | builds the sim classpath and the test-only AI overlay (SIM_ACTIVE.txt); SIM_REBUILD=1 after Java changes | 9a0fa22559f 10-21 06:33Z |
 | `tools/concordia/sim/run.sh` | sims | runs a sim class; SIM_JAVA_OPTS adds JVM options | 959567c7f56 10-21 05:33Z |
-| `tools/concordia/ai_lab/phase_digest.py` | ai lab | digests phase logs into ai_lab/digests (--into, --status) | 8a3c5cd515a 10-21 12:48Z |
+| `tools/concordia/ai_lab/phase_digest.py` | ai lab | digests phase logs into ai_lab/digests (--into, --status) | 147e283ed69 10-21 14:08Z |
 | `tools/concordia/ai_lab/patches/SIM_ACTIVE.txt` | ai lab, sims | AI test patches compiled onto the sim classpath only (never forge-ai/src) | b978111e747 10-21 12:50Z |
 | `tools/concordia/ai_lab/OPTIONS_FOR_BALANCERS.md` | ai lab, balance lab | measured options to empower AI decks | cb4d53dfc3a 10-21 12:12Z |
-| `tools/concordia/ai_lab/DECISION_LOGIC.md` | ai lab | how the Forge AI decides (blocks, attacks, removal, spells, mana) | b4b45c7ef2e 10-21 12:12Z |
+| `tools/concordia/ai_lab/DECISION_LOGIC.md` | ai lab | how the Forge AI decides (blocks, attacks, removal, spells, mana) | 7af3bc5ee37 10-21 14:09Z |
 | `tools/concordia/ai_lab/RESULTS_UNCHANGED_PLAN.md` | ai lab, main | the 40-game check that patches 010/011 do not change results | e84698929da 10-21 12:50Z |
 | `tools/concordia/deck_tier.py` | balance lab | deck power and tier bands | f1139925c35 10-20 23:41Z |
 | `tools/concordia/maps/check_doors.py` | main | door and map checks | aa0ba6a4ea1 10-21 04:54Z |
@@ -58,9 +58,9 @@ python3 tools/agents/toolbox.py --check                                # is my c
 | AI decks, tier 4 | `forge-gui/res/adventure/Concordia/decks/tier4` | 80 decks |
 | AI decks, tier 5 | `forge-gui/res/adventure/Concordia/decks/tier5` | 80 decks |
 | player starter decks | `forge-gui/res/adventure/Concordia/decks/starter` | 10 decks |
-| suite records | `tools/concordia/suite/records_suite_<worker>.csv` | 72 games in 1 files |
+| suite records | `tools/concordia/suite/records_suite_<worker>.csv` | 96 games in 1 files |
 | old research records | `tools/concordia/balance_lab/records*.csv` | 7574 games in 8 files |
-| phase-log digests | `tools/concordia/ai_lab/digests/<worker>-<hour>/` | 42 folders |
+| phase-log digests | `tools/concordia/ai_lab/digests/<worker>-<hour>/` | 43 folders |
 | AI patches | `tools/concordia/ai_lab/patches/` | 10 files; on the test overlay: 010-decision-log.patch, 011-more-log-lines.patch |
 
 ## Rules that never change

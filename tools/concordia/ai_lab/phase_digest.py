@@ -76,6 +76,7 @@ def parse_game(path, label):
     lines = open(path, errors="ignore").read().splitlines()
     life = starting_life(lines)
     rows, turn, meta = [], 0, {}
+    snaps = [(0, life["A"], life["B"])]  # (turn, life_a, life_b) after each LIFE line, for AI_* rows
     for line in lines:
         r = line.rstrip("\n").split("\t")
         if len(r) < 4:
@@ -96,7 +97,7 @@ def parse_game(path, label):
             t = next((int(p[5:]) for p in parts if p.startswith("turn=") and p[5:].isdigit()), turn)
             side = parts[1] if len(parts) > 1 and parts[1] in ("A", "B") else ""
             detail = " ".join(parts[2:])
-            rows.append((t, "AI", "AI_" + kind, side, detail, life["A"], life["B"], 1))
+            rows.append((t, "AI", "AI_" + kind, side, detail, None, None, 1))  # life filled in below
             continue
         ph = short_phase(phase)
         def lk():
@@ -105,6 +106,7 @@ def parse_game(path, label):
             m = LIFE.search(msg)
             if m:
                 life[m.group(1)] = int(m.group(3))
+                snaps.append((turn, life["A"], life["B"]))
             continue
         if typ == "COMBAT" and "Declare Attackers" in phase and " assigned " in msg:
             side = msg[0]
@@ -142,6 +144,13 @@ def parse_game(path, label):
             dest, src = (m.group(1), m.group(2)) if m else ("?", "?")
             detail = f"{nm} -> {dest}" if src == "Battlefield" else f"{nm} -> {dest} from {src}"
             rows.append((turn, ph, "ZONE", "", detail, *lk(), 1))
+    # AI_DECISION rows sit at the end of the log, so they get the life at the end of their own turn
+    # (the last LIFE snapshot with turn <= the row's turn), not the end-of-game life
+    for i, r in enumerate(rows):
+        if r[5] is None:
+            snap = max((x for x in snaps if x[0] <= r[0]), key=lambda x: x[0], default=snaps[0])
+            la, lb = next((x[1], x[2]) for x in reversed(snaps) if x[0] <= r[0]) if r[0] >= 0 else (snap[1], snap[2])
+            rows[i] = r[:5] + (la, lb) + r[7:]
     return rows, meta
 
 

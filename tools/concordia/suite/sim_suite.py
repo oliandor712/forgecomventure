@@ -173,10 +173,15 @@ def in_focus(d):
 
 
 def pick_deck(rng, decks, exclude=None, favour=1.0):
-    """Random deck of the group; with --focus, a focus-colour deck is drawn when the group has one (with probability `favour`)."""
+    """Random deck of the group. With --focus, a focus-colour deck is drawn (probability `favour`) when the group has one, and the focus
+    colour classes (W, multi, ...) are chosen with equal weight, so a colour with few decks (white) is not drowned by one with many."""
     pool = [d for d in decks if d != exclude]
-    foc = [d for d in pool if in_focus(d)] if FOCUS else []
-    if foc and rng.random() < favour: pool = foc
+    if FOCUS and rng.random() < favour:
+        classes = {}
+        for d in pool:
+            c = rb.colors(d); k = "multi" if len(c) > 1 else c
+            if k in FOCUS: classes.setdefault(k, []).append(d)
+        if classes: pool = classes[rng.choice(sorted(classes))]
     return rng.choice(pool)
 
 
@@ -198,6 +203,12 @@ def plan_chunk(rng, g, cells, rows, a):
     games, meta = [], {}
     todo = pending(cells, rows, a)
     if not todo: return None, None
+    s, sets = stats(rows)
+    left = {}  # games each cell may still be given in this chunk, so a chunk never overshoots a cell's maximum or its need
+    for c in todo:
+        if c[0] == "bonus": left[c] = 4 * max(0, a.bonus_sets - sets.get((c[1], c[2], c[3]), 0))
+        else:
+            n, w = s.get(c, (0, 0.0)); left[c] = need(n, w, a, TARGET[c[1]] if c[0] == "starter" else 0.5)
     i = 0
     while len(games) < a.chunk and todo:
         c = todo[i % len(todo)]; i += 1
@@ -207,11 +218,14 @@ def plan_chunk(rng, g, cells, rows, a):
             xa = rb.bonus_cards(bonus, da, col)
             order = [(True, "a"), (True, "b"), (False, "a"), (False, "b")]
         else:
-            xa = "-"; order = [(False, "a"), (False, "b")]
+            xa = "-"; order = [(False, "a"), (False, "b")] if left[c] >= 2 else [(False, rng.choice(["a", "b"]))]  # an odd last game: random seat
         for with_bonus, first in order:
             lab = "g%d" % len(games)
             games.append(dict(da=da, la=life, xa=xa if with_bonus else "-", db=db, lb=life, xb="-", first=first, label=lab))
             meta[lab] = (c, da, db, life, bonus if with_bonus else "")
+        left[c] -= len(order)
+        if left[c] <= 0:
+            todo.remove(c); i = max(0, i - 1)
     return games, meta
 
 
