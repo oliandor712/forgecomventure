@@ -288,3 +288,7 @@ Lab method note: flags removed in a scratch assets copy, equal life, 40-card dec
 - Decision logic by area (blocking, attacking, removal targeting, spell order, mana): written in tools/concordia/ai_lab/DECISION_LOGIC.md with source references.
 - Not completed (research ended early): commander, combat tricks, ETB/tokens, mulligan, and the "Logic by deck type" section. Remaining work is the same log-based checks as in DECISION_LOGIC.md, applied to those areas.
 - Patch 010 (AI decision log) is test-only and not applied to forge-ai/src.
+
+## Status update (completion pass, 2026-10-21)
+- Commander, mulligan, and logic by deck type: not completed. The digests lack command-zone moves, mulligan lines and deck identity; see DECISION_LOGIC.md "Completion pass".
+- Combat tricks and ETB/tokens: done from the digests (38% of games have combat-step casts; 11.9% of attack declarations name a token). ETB triggers are not visible in the digests.
