@@ -98,3 +98,31 @@ What this means for deck types (provisional):
 - Tokens: token targets get +30 value, so the AI aims removal at the tokens' best member when it has to choose.
 
 Flagged cards (AI:RemoveDeck): a flagged removal card never reaches this path because the play ban applies first. Unflagging a removal card puts it through the rules above, so its value depends on the target scores here, not on the card script.
+
+## 4. Spell order (ComputerUtilAbility.java, AiController.java)
+
+Entry: `chooseSpellAbilityToPlayFromList` (AiController.java:1668) sorts the candidate list, then takes the first one that its API logic accepts. Candidates come from `getSpellAbilityToPlay` (1596), which first handles responses to the stack (`topOwnedByAI`, `mustRespond`, 1600-1625).
+
+Sort, in `saComparator.compareEvaluator` (ComputerUtilAbility.java:244-355), higher score first:
+- Base score: total mana cost (CMC of the pay costs).
+- Deprioritised: `AIActivateLast` (first check), planar die rolls marked low priority, pump spells whose only cost is energy (last, by energy amount).
+- Promoted: zero-CMC abilities before costed ones (except mana abilities), and `FreeSpellAI` cards first.
+- Same-card ties: a cheaper spectacle cost is preferred.
+- Priority added to the score by `getSpellAbilityPriority` (lines 330-355 onward):
+  - Creatures +1 (creature spells before spells).
+  - Flagged cards (`isCardRemAIDeck`) -10. This is the play-ban flag, so flagged cards sort last even when they are cast.
+  - `AIPriorityModifier` SVar: added directly.
+  - `EndOfTurnLeavePlay` on a card in play +1 (use before it goes).
+  - Cards in hand when the hand is over the maximum size: +1 per card over the limit, so the AI casts cards before it has to discard.
+  - Equipment with no creatures on the battlefield -9.
+- Creature spells are then re-sorted among themselves by `EvaluateCreatureSpellComparator` (`sortCreatureSpells`, ComputerUtilAbility.java:458-475). The comparator uses `evaluateCreature` and is skipped when there are fewer than two creature spells.
+
+What this means for deck types (provisional):
+- Ramp and midrange: the highest-cost spell goes first, so the AI taps out for its biggest threat when it can. Cheap interaction waits.
+- Control: cheap instants come after expensive sorceries in the same turn, so the AI can end up holding removal for the wrong turn. Watch for this in the logs.
+- Aggro: zero-CMC and cheap creatures sort early and get cast before the AI has mana for its bigger threats.
+- Tokens: token makers cost little and sort late unless they are creatures, which then drop to the creature re-sort.
+
+Flagged cards (AI:RemoveDeck): a flagged card is pushed down by -10 in this sort. Removing the flag restores its normal place in the order, so once a card is castable, it is cast at its CMC rank, not last.
+
+Open: the response path (`topOwnedByAI`, `mustRespond`, 1600-1625) is only sketched here.
