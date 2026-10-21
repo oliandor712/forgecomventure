@@ -11,7 +11,7 @@ queue[410|]{deck|games_done|target|color|tier|archetype}:
   decks/starter/W_Starter_Alt.dck|16|40|W|S|starter
   decks/starter/W_Starter_Normal.dck|24|40|W|S|starter
   decks/tier1/T1_B_Arnyn.dck|6|25|B|1|aggro
-  decks/tier1/T1_B_Butch.dck|4|25|B|1|aggro
+  decks/tier1/T1_B_Butch.dck|6|25|B|1|aggro
   decks/tier1/T1_B_Falthis.dck|2|25|B|1|aggro
   decks/tier1/T1_B_Gallia.dck|2|25|B|1|aggro
   decks/tier1/T1_B_Gonti.dck|4|25|B|1|aggro
@@ -24,7 +24,7 @@ queue[410|]{deck|games_done|target|color|tier|archetype}:
   decks/tier1/T1_B_Skitter.dck|4|25|B|1|aggro
   decks/tier1/T1_B_Splinter.dck|0|25|B|1|aggro
   decks/tier1/T1_B_Tormod.dck|2|25|B|1|aggro
-  decks/tier1/T1_B_Whisper.dck|0|25|B|1|aggro
+  decks/tier1/T1_B_Whisper.dck|2|25|B|1|aggro
   decks/tier1/T1_B_Yahenni.dck|2|25|B|1|aggro
   decks/tier1/T1_G_Anara.dck|6|25|G|1|aggro
   decks/tier1/T1_G_Bushmaster.dck|0|25|G|1|aggro
