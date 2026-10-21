@@ -173,10 +173,15 @@ def in_focus(d):
 
 
 def pick_deck(rng, decks, exclude=None, favour=1.0):
-    """Random deck of the group; with --focus, a focus-colour deck is drawn when the group has one (with probability `favour`)."""
+    """Random deck of the group. With --focus, a focus-colour deck is drawn (probability `favour`) when the group has one, and the focus
+    colour classes (W, multi, ...) are chosen with equal weight, so a colour with few decks (white) is not drowned by one with many."""
     pool = [d for d in decks if d != exclude]
-    foc = [d for d in pool if in_focus(d)] if FOCUS else []
-    if foc and rng.random() < favour: pool = foc
+    if FOCUS and rng.random() < favour:
+        classes = {}
+        for d in pool:
+            c = rb.colors(d); k = "multi" if len(c) > 1 else c
+            if k in FOCUS: classes.setdefault(k, []).append(d)
+        if classes: pool = classes[rng.choice(sorted(classes))]
     return rng.choice(pool)
 
 
