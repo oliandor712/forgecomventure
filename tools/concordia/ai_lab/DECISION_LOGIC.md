@@ -158,3 +158,10 @@ What this means for deck types (provisional):
 Flagged cards (AI:RemoveDeck) relevant here: none change mana use. A flagged mana source is still used normally if it is in play. Fog counting is separate from this estimate: `FogAi.countAvailableFogs` counts only real Fog API spells, so an Effect-based Fog is not counted (patch 006 would change that).
 
 Still open: the `checkCosts` path (`canPayShardWithSpellAbility`) and reserved-card handling.
+
+## Log check of blocking (results/, s005 and related runs, 2026-10-21)
+Source: phase TSVs in tools/concordia/ai_lab/results/*/*.tsv. Each declare-blockers step with attackers was counted by the defender's life at that moment (life from LIFE lines).
+- Defender life 15 or more: blocked in 32 of 71 steps (45%).
+- Defender life 8 to 14: blocked in 21 of 33 steps (64%).
+- Defender life under 8: blocked in 16 of 21 steps (76%).
+Reading: blocks rise as life falls, which fits the rule that chump blocks wait for life in danger (section 1). Blocks at high life are still common, so good blocks and trades are doing much of the work, not only chumps. Caveats: board sizes differ between steps and the counts are small; this is direction, not a fitted rate.
