@@ -125,6 +125,41 @@ for d, ((n0, w0), (n1, w1)) in sorted(sg.items()):
     L.append("| %s | %d | %s | %d | %s |" % (d, n0, "%.0f%%" % (100 * w0 / n0) if n0 else "-", n1, "%.0f%%" % (100 * w1 / n1) if n1 else "-"))
 if not sg: L.append("| none yet | | | | |")
 L += [""]
+# Mass research queue (main session, 2026-10-21): progress to 40 games per deck, ETA in batches, and results by tier x colour x archetype.
+import build_queue
+build_queue.main()
+QUEUE = {}
+for ln in open(os.path.join(LAB, "QUEUE.toon")):
+    if ln.startswith("  "):
+        name, games_done, target, col, tier, arch = ln.strip().split("|")
+        QUEUE[name] = dict(games=int(games_done), target=int(target), color=col, tier=tier, arch=arch)
+slots_done = sum(min(q["games"], q["target"]) for q in QUEUE.values())
+slots_total = sum(q["target"] for q in QUEUE.values())
+new_slots = collections.Counter()
+for r in rows:
+    if is_new(r):
+        new_slots[r["utc"][:13]] += 2  # one game is two deck-slots; a batch is one UTC hour (the hourly trigger)
+batches = len(new_slots)
+per_batch = sum(new_slots.values()) / batches if batches else 0
+remaining = slots_total - slots_done
+L_queue = ["## Mass research queue (QUEUE.toon, H28: %d games per deck)" % 40, "",
+           "Progress: %d of %d deck-game slots (%.0f%%). Decks at target: %d of %d. Average %.0f deck-slots per batch on the new decks; about %s batches (hourly, six colour shards in turn) to finish." % (
+               slots_done, slots_total, 100 * slots_done / slots_total, sum(1 for q in QUEUE.values() if q["games"] >= q["target"]), len(QUEUE), per_batch,
+               "%.0f" % (remaining / per_batch) if per_batch else "unknown"), "",
+           "Archetype tag: tokens (12+ token makers), ramp (10+ mana producers), control (10+ removal and 24 or fewer creatures), aggro (average mana cost 2.8 or less with 24+ creatures), otherwise midrange. Combo is not tagged. Colour shards: W, U, B, R, G mono, then multicolour.", ""]
+L += L_queue
+cell = collections.defaultdict(lambda: [0, 0.0])
+for r in inner:
+    for side, k in (("a", "deck_a"), ("b", "deck_b")):
+        q = QUEUE.get(r[k])
+        if q and q["tier"] != "S":
+            cell[(q["tier"], q["color"], q["arch"])][0] += 1; cell[(q["tier"], q["color"], q["arch"])][1] += score(r, side)
+L += ["| tier | colour | archetype | games (deck-sides) | win rate |", "|---|---|---|---|---|"]
+for key in sorted(cell):
+    n, w = cell[key]
+    L.append("| %s | %s | %s | %d | %.0f%% |" % (key[0], key[1], key[2], n, 100 * w / n))
+if not cell: L.append("| none yet | | | | |")
+L += [""]
 # H29 (user, 2026-10-21, pc_win_rate): the player's win rate against NPC enemies. Tiers 1-2 target 70%, tiers 3-5 target 50%.
 # The player is the starter (side b); enemy decks are side a. Stage groups follow build_color_zone.py: stage 1 = tiers 1-2,
 # stage 2 = tiers 3-4, stage 3 = tier 5. Stages 2 and 3 both sit in the 50% group.

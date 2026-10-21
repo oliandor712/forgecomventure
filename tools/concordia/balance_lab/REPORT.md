@@ -1,6 +1,6 @@
 # Deck balance report
 
-Generated 2026-10-21 01:50Z from 286 games (138 inner-tier, 148 bonus). Intervals are 90% Wilson; draws count half.
+Generated 2026-10-21 01:59Z from 286 games (138 inner-tier, 148 bonus). Intervals are 90% Wilson; draws count half.
 
 Inner-tier tables below use only the **new decks** (rows at or after the rebuild commit: 440176a2 for tiers 3-5, 58aa312f for tier 2, f1139925 for tier 1): 58 inner games; 80 inner games on the old decks are left out. Bonus impact pools old and new rows, since a matched set compares the same pairing.
 
@@ -112,6 +112,38 @@ Enemy win rate against each starter file, split by with and without bonus. Games
 | starter | games without bonus | enemy win | games with bonus | enemy win |
 |---|---|---|---|---|
 | none yet | | | | |
+
+## Mass research queue (QUEUE.toon, H28: 40 games per deck)
+
+Progress: 180 of 16400 deck-game slots (1%). Decks at target: 0 of 410. Average 36 deck-slots per batch on the new decks; about 451 batches (hourly, six colour shards in turn) to finish.
+
+Archetype tag: tokens (12+ token makers), ramp (10+ mana producers), control (10+ removal and 24 or fewer creatures), aggro (average mana cost 2.8 or less with 24+ creatures), otherwise midrange. Combo is not tagged. Colour shards: W, U, B, R, G mono, then multicolour.
+
+| tier | colour | archetype | games (deck-sides) | win rate |
+|---|---|---|---|---|
+| 1 | G | aggro | 16 | 56% |
+| 1 | G | tokens | 4 | 25% |
+| 2 | G | aggro | 2 | 50% |
+| 2 | G | midrange | 6 | 50% |
+| 3 | BG | midrange | 4 | 75% |
+| 3 | G | aggro | 2 | 100% |
+| 3 | G | midrange | 16 | 38% |
+| 3 | RG | midrange | 2 | 50% |
+| 3 | UG | midrange | 2 | 0% |
+| 3 | WRG | midrange | 2 | 100% |
+| 4 | BG | tokens | 2 | 0% |
+| 4 | G | control | 4 | 25% |
+| 4 | G | midrange | 4 | 75% |
+| 4 | G | ramp | 10 | 40% |
+| 4 | UBG | midrange | 2 | 100% |
+| 4 | UG | midrange | 2 | 100% |
+| 4 | URG | midrange | 2 | 50% |
+| 4 | WG | ramp | 2 | 50% |
+| 5 | BRG | midrange | 4 | 75% |
+| 5 | BRG | tokens | 2 | 100% |
+| 5 | G | ramp | 20 | 50% |
+| 5 | RG | aggro | 4 | 25% |
+| 5 | WUG | tokens | 2 | 0% |
 
 ## PC win rate against NPC enemies per stage (H29: tiers 1-2 target 70%, tiers 3-5 target 50%)
 

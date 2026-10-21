@@ -26,6 +26,18 @@ STARTER_EPOCH = "2026-10-21T01:25:00Z"  # first batch after the starter rework 5
 BONUSES = ["land", "onedrop", "land+onedrop", "arena", "staff"]
 
 
+LOCK = "/tmp/claude-0/-home-user-forgecomventure/df4f5a99-d818-5913-95ec-ecc9b6e060fd/scratchpad/balance_lab.lock"  # one batch at a time: hourly and mass runs
+
+
+def lock_held():
+    try:
+        pid = int(open(LOCK).read().strip())
+        os.kill(pid, 0)
+        return True
+    except (OSError, ValueError):
+        return False
+
+
 def green_pool():
     """Decks of the Green zone's enemies (world/enemies.json entries named Green ...): the priority pool for inner games."""
     en = json.load(open(ROOT + "/" + DECKS + "world/enemies.json"))
@@ -34,6 +46,18 @@ def green_pool():
         if str(e.get("name", "")).startswith("Green"):
             out.update(ROOT + "/" + DECKS + d for d in e.get("deck", []))
     return sorted(p for p in out if os.path.exists(p))
+
+
+SHARDS = ["W", "U", "B", "R", "G", "multi"]  # one shard per hour, round-robin by UTC hour (queue plan, 2026-10-21)
+
+
+def shard_of(deck):
+    c = colors(deck)
+    return c if len(c) == 1 else "multi"
+
+
+def shard_decks(shard):
+    return [d for d in glob.glob(os.path.join(ROOT, DECKS, "decks", "tier*", "*.dck")) if shard_of(d) == shard]
 
 
 def rel(p): return os.path.relpath(p, ROOT + "/" + DECKS) if os.path.isabs(p) else p[len(DECKS):] if p.startswith(DECKS) else p
@@ -129,16 +153,21 @@ def play(games, budget_end):
     return res
 
 
-def main():
+def run():
     ap = argparse.ArgumentParser()
     ap.add_argument("--budget", type=int, default=600)
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--pairings", type=int, default=4)
-    ap.add_argument("--pool", default="green", help="green (priority) or all")
+    ap.add_argument("--pool", default="shard", help="shard (this hour's colour shard, default), green (priority) or all")
+    ap.add_argument("--shard", default=None, help="W, U, B, R, G or multi; default is the hour's shard in the round-robin")
     ap.add_argument("--sets", type=int, default=2)
     o = ap.parse_args()
     rng = random.Random(o.seed)
-    pool = None if o.pool == "all" else set(green_pool())
+    if o.pool == "shard":
+        shard = o.shard or SHARDS[datetime.datetime.now(datetime.timezone.utc).hour % len(SHARDS)]
+        pool = set(shard_decks(shard)); print("shard", shard, len(pool), "decks")
+    else:
+        pool = None if o.pool == "all" else set(green_pool())
     start = time.time(); stop_new = start + 480; end = start + o.budget
     commit = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, capture_output=True, text=True).stdout.strip()
     rows = load(); c = counts(rows)
@@ -207,4 +236,19 @@ def main():
     print("played", played, "games in %.0fs" % (time.time() - start))
 
 
-main()
+
+
+def main():
+    if lock_held():
+        print("another batch holds the lock; skipping this run")
+        return
+    os.makedirs(os.path.dirname(LOCK), exist_ok=True)
+    open(LOCK, "w").write(str(os.getpid()))
+    try:
+        run()
+    finally:
+        os.remove(LOCK)
+
+
+if __name__ == "__main__":
+    main()
