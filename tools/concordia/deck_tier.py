@@ -75,8 +75,12 @@ def _read(path):
 
 
 def build_cache():
-    if os.path.exists(CACHE) and os.path.getmtime(CACHE) > os.path.getmtime(os.path.join(RES, "cardsfolder")):
-        return pickle.load(open(CACHE, "rb"))
+    # the cache is valid only if no card script is newer than it (the directory's own mtime misses edits to files inside subfolders:
+    # unflagging a card with patches 002/003 left a stale cache that still treated the cards as AI:RemoveDeck:All)
+    if os.path.exists(CACHE):
+        newest = max((os.path.getmtime(os.path.join(r, f)) for r, _, fs in os.walk(os.path.join(RES, "cardsfolder")) for f in fs), default=0)
+        if os.path.getmtime(CACHE) > newest:
+            return pickle.load(open(CACHE, "rb"))
     cards = {}
     for root, _, files in os.walk(os.path.join(RES, "cardsfolder")):
         for f in files:

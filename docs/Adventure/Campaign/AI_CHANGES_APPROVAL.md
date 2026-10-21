@@ -86,6 +86,8 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
   - Changes no AI behaviour: log lines only. The AI lab tests it in a scratch worktree and confirms the games' results are
     unchanged and the digest picks up the reason field.
 
+- [ ] **Consolidation of 010, 011 and 012** into one test-only patch (`ai-test-instrumentation.patch`): ordered by the main session 2026-10-21; the originals move to `patches/archive/` once the single patch gives identical log lines.
+
 ## How a box gets ticked
 
 1. The AI lab tests the change in a scratch copy (pre-approved) and records the "useful play" rate as well as casts
@@ -94,5 +96,5 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
 3. You tick the box and ask for it to be applied. The main session then applies the patch to `campaign-design`,
    backs up the replaced files in `tools/concordia/backups/`, and re-runs the checks.
 
-- [ ] **011, more log lines (log-only, test-only)**: Planned. `tools/concordia/ai_lab/patches/011-more-log-lines.patch` (mulligan keep line with the opening hand; log-only mana-source line, MANA_SOURCE; both tested with 2 games in a separate cache; needs patch 010 applied first). Companion `tools/concordia/ai_lab/patches/BonusSim-mulligan.patch` (balance lab writer, needs applying). Not listed in SIM_ACTIVE.txt yet.
-- [ ] **012, decision reasons (log-only, test-only)**: Written 2026-10-21 by the AI lab on the main session's order. `tools/concordia/ai_lab/patches/012-decision-reasons.patch` adds BLOCK_REASON (blocking pass name, blocker, attacker, life), ATTACK_REASON (aggression level and the shouldAttack branch per chosen attacker) and ATTACK_LEVEL_CHOSEN (the level) to the AI decision log. Log-only, never read by the AI; needs 010 applied first. Tested with 2 games in a separate cache (415 lines, no errors, games finished). Not listed in SIM_ACTIVE.txt yet; results-unchanged check still to do.
+- [x] **011, more log lines (log-only, test-only)**: Approved by the user in chat 2026-10-21 for testing only (sim overlay, never forge-ai/src or the shipped game); in use on the overlay. `tools/concordia/ai_lab/patches/011-more-log-lines.patch` (mulligan keep line with the opening hand; log-only mana-source line, MANA_SOURCE; both tested with 2 games in a separate cache; needs patch 010 applied first). Companion `tools/concordia/ai_lab/patches/BonusSim-mulligan.patch` (balance lab writer, needs applying). Not listed in SIM_ACTIVE.txt yet.
+- [x] **012, decision reasons (log-only, test-only)**: Approved by the user in chat 2026-10-21 for testing only (sim overlay, never forge-ai/src or the shipped game). Written 2026-10-21 by the AI lab on the main session's order. `tools/concordia/ai_lab/patches/012-decision-reasons.patch` adds BLOCK_REASON (blocking pass name, blocker, attacker, life), ATTACK_REASON (aggression level and the shouldAttack branch per chosen attacker) and ATTACK_LEVEL_CHOSEN (the level) to the AI decision log. Log-only, never read by the AI; needs 010 applied first. Tested with 2 games in a separate cache (415 lines, no errors, games finished). Not listed in SIM_ACTIVE.txt yet; results-unchanged check still to do.
