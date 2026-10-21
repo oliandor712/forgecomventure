@@ -155,7 +155,7 @@ def play(games, budget_end):
                        capture_output=True, text=True, timeout=None, env=env)
     if os.path.isdir(logdir):
         try:
-            subprocess.run([sys.executable, ROOT + "/tools/concordia/ai_lab/phase_digest.py", logdir], cwd=ROOT, capture_output=True, text=True, timeout=300)
+            subprocess.run([sys.executable, ROOT + "/tools/concordia/ai_lab/phase_digest.py", logdir, "--into", "%s-%s" % (WORKER or "lab", stamp[:11])], cwd=ROOT, capture_output=True, text=True, timeout=300)
         finally:
             if not os.environ.get("KEEP_PHASE_LOGS"):
                 import shutil; shutil.rmtree(logdir, ignore_errors=True)  # no compute cap (user, 2026-10-21); each game still has its own 150 s limit in BonusSim
