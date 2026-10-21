@@ -1,0 +1,296 @@
+1		TURN	Turn 1 (A)
+1	A's Untap step	PHASE	A's Untap step
+1	A's Upkeep step	PHASE	A's Upkeep step
+1	A's Draw step	PHASE	A's Draw step
+1	A's Main phase, precombat	PHASE	A's Main phase, precombat
+1	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+1	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+1	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+1	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+1	A's Combat Damage Step	PHASE	A's Combat Damage Step
+1	A's End of Combat Step	PHASE	A's End of Combat Step
+1	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+1	A's End step	PHASE	A's End step
+1	A's Cleanup step	PHASE	A's Cleanup step
+2	A's Cleanup step	TURN	Turn 2 (B)
+2	B's Untap step	PHASE	B's Untap step
+2	B's Upkeep step	PHASE	B's Upkeep step
+2	B's Draw step	PHASE	B's Draw step
+2	B's Main phase, precombat	PHASE	B's Main phase, precombat
+2	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+2	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+2	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+2	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+2	B's Combat Damage Step	PHASE	B's Combat Damage Step
+2	B's End of Combat Step	PHASE	B's End of Combat Step
+2	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+2	B's End step	PHASE	B's End step
+2	B's Cleanup step	PHASE	B's Cleanup step
+3	B's Cleanup step	TURN	Turn 3 (A)
+3	A's Untap step	PHASE	A's Untap step
+3	A's Upkeep step	PHASE	A's Upkeep step
+3	A's Draw step	PHASE	A's Draw step
+3	A's Main phase, precombat	PHASE	A's Main phase, precombat
+3	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+3	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+3	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+3	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+3	A's Combat Damage Step	PHASE	A's Combat Damage Step
+3	A's End of Combat Step	PHASE	A's End of Combat Step
+3	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+3	A's Main phase, postcombat	STACK_ADD	A cast Child of Night
+3	A's End step	PHASE	A's End step
+3	A's Cleanup step	PHASE	A's Cleanup step
+4	A's Cleanup step	TURN	Turn 4 (B)
+4	B's Untap step	PHASE	B's Untap step
+4	B's Upkeep step	PHASE	B's Upkeep step
+4	B's Draw step	PHASE	B's Draw step
+4	B's Main phase, precombat	PHASE	B's Main phase, precombat
+4	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+4	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+4	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+4	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+4	B's Combat Damage Step	PHASE	B's Combat Damage Step
+4	B's End of Combat Step	PHASE	B's End of Combat Step
+4	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+4	B's End step	PHASE	B's End step
+4	B's Cleanup step	PHASE	B's Cleanup step
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Attackers Step	COMBAT	A assigned Child of Night (8) to attack B.
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's Declare Blockers Step	COMBAT	B didn't block Child of Night (8).
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's Combat Damage Step	DAMAGE	Child of Night (8) deals 2 combat damage to B.
+5	A's Combat Damage Step	LIFE	Life: A 15 > 17
+5	A's Combat Damage Step	LIFE	Life: B 15 > 13
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+6	A's Cleanup step	TURN	Turn 6 (B)
+6	B's Untap step	PHASE	B's Untap step
+6	B's Upkeep step	PHASE	B's Upkeep step
+6	B's Draw step	PHASE	B's Draw step
+6	B's Main phase, precombat	PHASE	B's Main phase, precombat
+6	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+6	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+6	B's Declare Attackers Step	STACK_ADD	A cast Tempt with Treats
+6	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+6	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+6	B's Combat Damage Step	PHASE	B's Combat Damage Step
+6	B's End of Combat Step	PHASE	B's End of Combat Step
+6	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+6	B's Main phase, postcombat	STACK_ADD	B cast Evolution Sage
+6	B's End step	PHASE	B's End step
+6	B's Cleanup step	PHASE	B's Cleanup step
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD	A cast Nazar, the Velvet Fang
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+8	A's Cleanup step	TURN	Turn 8 (B)
+8	B's Untap step	PHASE	B's Untap step
+8	B's Upkeep step	PHASE	B's Upkeep step
+8	B's Draw step	PHASE	B's Draw step
+8	B's Main phase, precombat	PHASE	B's Main phase, precombat
+8	B's Main phase, precombat	STACK_ADD	B triggered Evolution Sage
+8	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+8	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+8	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+8	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+8	B's Combat Damage Step	PHASE	B's Combat Damage Step
+8	B's End of Combat Step	PHASE	B's End of Combat Step
+8	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+8	B's Main phase, postcombat	STACK_ADD	B cast Wonder
+8	B's End step	PHASE	B's End step
+8	B's Cleanup step	PHASE	B's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Child of Night (8) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Child of Night (8).
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Child of Night (8) deals 2 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: A 17 > 19
+9	A's Combat Damage Step	LIFE	Life: B 13 > 11
+9	A's Combat Damage Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Gumdrop Poisoner
+9	A's Main phase, postcombat	STACK_ADD	A triggered Gumdrop Poisoner targeting [Evolution Sage (141)]
+9	A's Main phase, postcombat	ZONE_CHANGE	Evolution Sage (141) was put into Graveyard from Battlefield.
+9	A's Main phase, postcombat	STACK_ADD	A cast Creeping Bloodsucker
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+10	A's Cleanup step	TURN	Turn 10 (B)
+10	B's Untap step	PHASE	B's Untap step
+10	B's Upkeep step	PHASE	B's Upkeep step
+10	B's Draw step	PHASE	B's Draw step
+10	B's Main phase, precombat	PHASE	B's Main phase, precombat
+10	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+10	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+10	B's Declare Attackers Step	COMBAT	B assigned Wonder (177) to attack A.
+10	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+10	B's Declare Blockers Step	COMBAT	A didn't block Wonder (177).
+10	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+10	B's Combat Damage Step	PHASE	B's Combat Damage Step
+10	B's Combat Damage Step	DAMAGE	Wonder (177) deals 2 combat damage to A.
+10	B's Combat Damage Step	LIFE	Life: A 19 > 17
+10	B's End of Combat Step	PHASE	B's End of Combat Step
+10	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+10	B's Main phase, postcombat	STACK_ADD	B triggered Simic Growth Chamber
+10	B's Main phase, postcombat	STACK_ADD	B cast Palladium Myr
+10	B's End step	PHASE	B's End step
+10	B's Cleanup step	PHASE	B's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Upkeep step	STACK_ADD	A triggered Creeping Bloodsucker
+11	A's Upkeep step	DAMAGE	Creeping Bloodsucker (52) deals 1 non-combat damage to B.
+11	A's Upkeep step	LIFE	Life: B 11 > 10
+11	A's Upkeep step	LIFE	Life: A 17 > 18
+11	A's Upkeep step	STACK_ADD	A triggered Nazar, the Velvet Fang
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Main phase, precombat	STACK_ADD	A cast Nefarox, Overlord of Grixis
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Nazar, the Velvet Fang (105), Gumdrop Poisoner (37) and Child of Night (8) to attack B.
+11	A's Declare Attackers Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Nazar, the Velvet Fang (105). B assigned Palladium Myr (201) to block Gumdrop Poisoner (37). B didn't block Child of Night (8).
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Nazar, the Velvet Fang (105) deals 3 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Gumdrop Poisoner (37) deals 3 damage to Palladium Myr (201).
+11	A's Combat Damage Step	LIFE	Life: A 18 > 21
+11	A's Combat Damage Step	DAMAGE	Child of Night (8) deals 2 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: A 21 > 23
+11	A's Combat Damage Step	DAMAGE	Palladium Myr (201) deals 2 damage to Gumdrop Poisoner (37).
+11	A's Combat Damage Step	LIFE	Life: B 10 > 5
+11	A's Combat Damage Step	ZONE_CHANGE	Gumdrop Poisoner (37) was put into Graveyard from Battlefield.
+11	A's Combat Damage Step	ZONE_CHANGE	Palladium Myr (201) was put into Graveyard from Battlefield.
+11	A's Combat Damage Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+11	A's Combat Damage Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's Main phase, postcombat	STACK_ADD	B cast Harmonize
+12	B's Main phase, postcombat	STACK_ADD	B cast Arboreal Grazer
+12	B's Main phase, postcombat	STACK_ADD	B triggered Arboreal Grazer
+12	B's Main phase, postcombat	STACK_ADD	B cast Ruin Crab
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step
+13	B's Cleanup step	TURN	Turn 13 (A)
+13	A's Untap step	PHASE	A's Untap step
+13	A's Upkeep step	PHASE	A's Upkeep step
+13	A's Upkeep step	STACK_ADD	A triggered Creeping Bloodsucker
+13	A's Upkeep step	DAMAGE	Creeping Bloodsucker (52) deals 1 non-combat damage to B.
+13	A's Upkeep step	LIFE	Life: B 5 > 4
+13	A's Upkeep step	LIFE	Life: A 23 > 24
+13	A's Upkeep step	STACK_ADD	A triggered Nazar, the Velvet Fang
+13	A's Draw step	PHASE	A's Draw step
+13	A's Main phase, precombat	PHASE	A's Main phase, precombat
+13	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+13	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+13	A's Declare Attackers Step	COMBAT	A assigned Nefarox, Overlord of Grixis (4), Nazar, the Velvet Fang (105), Child of Night (8) and Creeping Bloodsucker (52) to attack B.
+13	A's Declare Attackers Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+13	A's Declare Attackers Step	LIFE	Life: A 24 > 21
+13	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+13	A's Declare Blockers Step	COMBAT	B assigned Arboreal Grazer (139) to block Nefarox, Overlord of Grixis (4). B didn't block Nazar, the Velvet Fang (105). B assigned Ruin Crab (191) to block Child of Night (8). B assigned Wonder (177) to block Creeping Bloodsucker (52).
+13	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+13	A's Combat Damage Step	PHASE	A's Combat Damage Step
+13	A's Combat Damage Step	DAMAGE	Nefarox, Overlord of Grixis (4) deals 5 damage to Arboreal Grazer (139).
+13	A's Combat Damage Step	DAMAGE	Nazar, the Velvet Fang (105) deals 3 combat damage to B.
+13	A's Combat Damage Step	DAMAGE	Child of Night (8) deals 2 damage to Ruin Crab (191).
+13	A's Combat Damage Step	LIFE	Life: A 21 > 23
+13	A's Combat Damage Step	DAMAGE	Creeping Bloodsucker (52) deals 1 damage to Wonder (177).
+13	A's Combat Damage Step	DAMAGE	Wonder (177) deals 2 damage to Creeping Bloodsucker (52).
+13	A's Combat Damage Step	LIFE	Life: B 4 > 1
+13	A's Combat Damage Step	ZONE_CHANGE	Creeping Bloodsucker (52) was put into Graveyard from Battlefield.
+13	A's Combat Damage Step	ZONE_CHANGE	Arboreal Grazer (139) was put into Graveyard from Battlefield.
+13	A's Combat Damage Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+13	A's End of Combat Step	PHASE	A's End of Combat Step
+13	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+13	A's Main phase, postcombat	STACK_ADD	A cast Gravedigger
+13	A's Main phase, postcombat	STACK_ADD	A triggered Gravedigger targeting [Gumdrop Poisoner (37)]
+13	A's Main phase, postcombat	STACK_ADD	A cast Gumdrop Poisoner
+13	A's Main phase, postcombat	STACK_ADD	A triggered Gumdrop Poisoner targeting [Wonder (177)]
+13	A's Main phase, postcombat	ZONE_CHANGE	Wonder (177) was put into Graveyard from Battlefield.
+13	A's End step	PHASE	A's End step
+13	A's Cleanup step	PHASE	A's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Draw step	STACK_ADD	B cast Desecrate Reality targeting [Nefarox, Overlord of Grixis (4)]
+14	B's Draw step	ZONE_CHANGE	Nefarox, Overlord of Grixis (4) was put into Exile from Battlefield.
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+14	B's Main phase, precombat	ZONE_CHANGE	A milled Liliana's Reaver (40), Vampire Spawn (17) and Swamp (60).
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's End step	PHASE	B's End step
+14	B's Cleanup step	PHASE	B's Cleanup step
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Draw step	PHASE	A's Draw step
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Attackers Step	COMBAT	A assigned Nazar, the Velvet Fang (105), Gumdrop Poisoner (37), Child of Night (8) and Gravedigger (98) to attack B.
+15	A's Declare Attackers Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+15	A's Declare Attackers Step	LIFE	Life: A 23 > 20
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's Declare Blockers Step	COMBAT	B didn't block Nazar, the Velvet Fang (105). B assigned Ruin Crab (191) to block Gumdrop Poisoner (37). B didn't block Child of Night (8). B didn't block Gravedigger (98).
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's Combat Damage Step	DAMAGE	Nazar, the Velvet Fang (105) deals 3 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Gumdrop Poisoner (37) deals 3 damage to Ruin Crab (191).
+15	A's Combat Damage Step	LIFE	Life: A 20 > 23
+15	A's Combat Damage Step	DAMAGE	Child of Night (8) deals 2 combat damage to B.
+15	A's Combat Damage Step	LIFE	Life: A 23 > 25
+15	A's Combat Damage Step	DAMAGE	Gravedigger (98) deals 2 combat damage to B.
+15	A's Combat Damage Step	LIFE	Life: B 1 > -6

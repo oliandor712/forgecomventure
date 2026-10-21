@@ -1,0 +1,451 @@
+1		TURN	Turn 1 (A)
+1	A's Untap step	PHASE	A's Untap step
+1	A's Upkeep step	PHASE	A's Upkeep step
+1	A's Draw step	PHASE	A's Draw step
+1	A's Main phase, precombat	PHASE	A's Main phase, precombat
+1	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+1	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+1	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+1	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+1	A's Combat Damage Step	PHASE	A's Combat Damage Step
+1	A's End of Combat Step	PHASE	A's End of Combat Step
+1	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+1	A's End step	PHASE	A's End step
+1	A's Cleanup step	PHASE	A's Cleanup step
+2	A's Cleanup step	TURN	Turn 2 (B)
+2	B's Untap step	PHASE	B's Untap step
+2	B's Upkeep step	PHASE	B's Upkeep step
+2	B's Draw step	PHASE	B's Draw step
+2	B's Main phase, precombat	PHASE	B's Main phase, precombat
+2	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+2	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+2	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+2	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+2	B's Combat Damage Step	PHASE	B's Combat Damage Step
+2	B's End of Combat Step	PHASE	B's End of Combat Step
+2	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+2	B's End step	PHASE	B's End step
+2	B's Cleanup step	PHASE	B's Cleanup step
+3	B's Cleanup step	TURN	Turn 3 (A)
+3	A's Untap step	PHASE	A's Untap step
+3	A's Upkeep step	PHASE	A's Upkeep step
+3	A's Draw step	PHASE	A's Draw step
+3	A's Main phase, precombat	PHASE	A's Main phase, precombat
+3	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+3	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+3	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+3	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+3	A's Combat Damage Step	PHASE	A's Combat Damage Step
+3	A's End of Combat Step	PHASE	A's End of Combat Step
+3	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+3	A's Main phase, postcombat	STACK_ADD	A cast Infestation Sage
+3	A's End step	PHASE	A's End step
+3	A's Cleanup step	PHASE	A's Cleanup step
+4	A's Cleanup step	TURN	Turn 4 (B)
+4	B's Untap step	PHASE	B's Untap step
+4	B's Upkeep step	PHASE	B's Upkeep step
+4	B's Draw step	PHASE	B's Draw step
+4	B's Main phase, precombat	PHASE	B's Main phase, precombat
+4	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+4	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+4	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+4	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+4	B's Combat Damage Step	PHASE	B's Combat Damage Step
+4	B's End of Combat Step	PHASE	B's End of Combat Step
+4	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+4	B's Main phase, postcombat	STACK_ADD	B cast Growth Spiral
+4	B's End step	PHASE	B's End step
+4	B's Cleanup step	PHASE	B's Cleanup step
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Attackers Step	COMBAT	A assigned Infestation Sage (19) to attack B.
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's Declare Blockers Step	COMBAT	B didn't block Infestation Sage (19).
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's Combat Damage Step	DAMAGE	Infestation Sage (19) deals 1 combat damage to B.
+5	A's Combat Damage Step	LIFE	Life: B 15 > 14
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+6	A's Cleanup step	TURN	Turn 6 (B)
+6	B's Untap step	PHASE	B's Untap step
+6	B's Upkeep step	PHASE	B's Upkeep step
+6	B's Draw step	PHASE	B's Draw step
+6	B's Main phase, precombat	PHASE	B's Main phase, precombat
+6	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+6	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+6	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+6	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+6	B's Combat Damage Step	PHASE	B's Combat Damage Step
+6	B's End of Combat Step	PHASE	B's End of Combat Step
+6	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+6	B's Main phase, postcombat	STACK_ADD	B cast Eutropia the Twice-Favored
+6	B's End step	PHASE	B's End step
+6	B's Cleanup step	PHASE	B's Cleanup step
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Upkeep step	LIFE	Life: A 15 > 12
+7	A's Upkeep step	STACK_ADD	A cast Bitter Triumph targeting [Eutropia the Twice-Favored (206)]
+7	A's Upkeep step	ZONE_CHANGE	Eutropia the Twice-Favored (206) was put into Graveyard from Battlefield.
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Infestation Sage (19) to attack B.
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B didn't block Infestation Sage (19).
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Infestation Sage (19) deals 1 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: B 14 > 13
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+8	A's Cleanup step	TURN	Turn 8 (B)
+8	B's Untap step	PHASE	B's Untap step
+8	B's Upkeep step	PHASE	B's Upkeep step
+8	B's Draw step	PHASE	B's Draw step
+8	B's Main phase, precombat	PHASE	B's Main phase, precombat
+8	B's Main phase, precombat	STACK_ADD	B cast Migration Path
+8	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+8	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+8	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+8	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+8	B's Combat Damage Step	PHASE	B's Combat Damage Step
+8	B's End of Combat Step	PHASE	B's End of Combat Step
+8	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+8	B's End step	PHASE	B's End step
+8	B's Cleanup step	PHASE	B's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Infestation Sage (19) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Infestation Sage (19).
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Infestation Sage (19) deals 1 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 13 > 12
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Nazar, the Velvet Fang
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+10	A's Cleanup step	TURN	Turn 10 (B)
+10	B's Untap step	PHASE	B's Untap step
+10	B's Upkeep step	PHASE	B's Upkeep step
+10	B's Draw step	PHASE	B's Draw step
+10	B's Main phase, precombat	PHASE	B's Main phase, precombat
+10	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+10	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+10	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+10	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+10	B's Combat Damage Step	PHASE	B's Combat Damage Step
+10	B's End of Combat Step	PHASE	B's End of Combat Step
+10	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+10	B's Main phase, postcombat	STACK_ADD	B cast Marauding Mutagen
+10	B's Main phase, postcombat	STACK_ADD	B triggered Marauding Mutagen targeting [Swamp (64)]
+10	B's Main phase, postcombat	ZONE_CHANGE	Swamp (64) was put into Graveyard from Battlefield.
+10	B's End step	PHASE	B's End step
+10	B's Cleanup step	PHASE	B's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Upkeep step	STACK_ADD	A cast Tendrils of Corruption targeting [Marauding Mutagen (145)]
+11	A's Upkeep step	DAMAGE	Tendrils of Corruption (23) deals 4 damage to Marauding Mutagen (145).
+11	A's Upkeep step	LIFE	Life: A 12 > 16
+11	A's Upkeep step	ZONE_CHANGE	Marauding Mutagen (145) was put into Graveyard from Battlefield.
+11	A's Upkeep step	STACK_ADD	A triggered Nazar, the Velvet Fang
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Nazar, the Velvet Fang (105) and Infestation Sage (19) to attack B.
+11	A's Declare Attackers Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Nazar, the Velvet Fang (105). B didn't block Infestation Sage (19).
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Nazar, the Velvet Fang (105) deals 3 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Infestation Sage (19) deals 1 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 12 > 8
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's Main phase, postcombat	STACK_ADD	B cast Tatyova, Benthic Druid
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step
+13	B's Cleanup step	TURN	Turn 13 (A)
+13	A's Untap step	PHASE	A's Untap step
+13	A's Upkeep step	PHASE	A's Upkeep step
+13	A's Draw step	PHASE	A's Draw step
+13	A's Main phase, precombat	PHASE	A's Main phase, precombat
+13	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+13	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+13	A's Declare Attackers Step	COMBAT	A assigned Nazar, the Velvet Fang (105) to attack B.
+13	A's Declare Attackers Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+13	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+13	A's Declare Blockers Step	COMBAT	B didn't block Nazar, the Velvet Fang (105).
+13	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+13	A's Combat Damage Step	PHASE	A's Combat Damage Step
+13	A's Combat Damage Step	DAMAGE	Nazar, the Velvet Fang (105) deals 3 combat damage to B.
+13	A's Combat Damage Step	LIFE	Life: B 8 > 5
+13	A's End of Combat Step	PHASE	A's End of Combat Step
+13	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+13	A's Main phase, postcombat	STACK_ADD	A cast Gravedigger
+13	A's End step	PHASE	A's End step
+13	A's Cleanup step	PHASE	A's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's Main phase, postcombat	STACK_ADD	B cast Archmage Emeritus
+14	B's End step	PHASE	B's End step
+14	B's Cleanup step	PHASE	B's Cleanup step
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Draw step	PHASE	A's Draw step
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Attackers Step	COMBAT	A assigned Nazar, the Velvet Fang (105) to attack B.
+15	A's Declare Attackers Step	STACK_ADD	A triggered Nazar, the Velvet Fang
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's Declare Blockers Step	COMBAT	B assigned Archmage Emeritus (149) and Tatyova, Benthic Druid (192) to block Nazar, the Velvet Fang (105).
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's Combat Damage Step	DAMAGE	Nazar, the Velvet Fang (105) deals 3 damage to Tatyova, Benthic Druid (192).
+15	A's Combat Damage Step	DAMAGE	Archmage Emeritus (149) deals 2 damage to Nazar, the Velvet Fang (105).
+15	A's Combat Damage Step	DAMAGE	Tatyova, Benthic Druid (192) deals 3 damage to Nazar, the Velvet Fang (105).
+15	A's Combat Damage Step	ZONE_CHANGE	Nazar, the Velvet Fang (105) was put into Graveyard from Battlefield.
+15	A's Combat Damage Step	ZONE_CHANGE	Tatyova, Benthic Druid (192) was put into Graveyard from Battlefield.
+15	A's End of Combat Step	PHASE	A's End of Combat Step
+15	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+15	A's End step	PHASE	A's End step
+15	A's Cleanup step	PHASE	A's Cleanup step
+16	A's Cleanup step	TURN	Turn 16 (B)
+16	B's Untap step	PHASE	B's Untap step
+16	B's Upkeep step	PHASE	B's Upkeep step
+16	B's Draw step	PHASE	B's Draw step
+16	B's Main phase, precombat	PHASE	B's Main phase, precombat
+16	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+16	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+16	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+16	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+16	B's Combat Damage Step	PHASE	B's Combat Damage Step
+16	B's End of Combat Step	PHASE	B's End of Combat Step
+16	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+16	B's Main phase, postcombat	STACK_ADD	B triggered Simic Growth Chamber
+16	B's Main phase, postcombat	STACK_ADD	B cast Timeless Witness
+16	B's Main phase, postcombat	STACK_ADD	B triggered Timeless Witness targeting [Tatyova, Benthic Druid (192)]
+16	B's End step	PHASE	B's End step
+16	B's Cleanup step	PHASE	B's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Attackers Step	COMBAT	A assigned Gravedigger (98) to attack B.
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's Declare Blockers Step	COMBAT	B assigned Archmage Emeritus (149) to block Gravedigger (98).
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's Combat Damage Step	DAMAGE	Gravedigger (98) deals 2 damage to Archmage Emeritus (149).
+17	A's Combat Damage Step	DAMAGE	Archmage Emeritus (149) deals 2 damage to Gravedigger (98).
+17	A's Combat Damage Step	ZONE_CHANGE	Gravedigger (98) was put into Graveyard from Battlefield.
+17	A's Combat Damage Step	ZONE_CHANGE	Archmage Emeritus (149) was put into Graveyard from Battlefield.
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's End step	PHASE	A's End step
+17	A's Cleanup step	PHASE	A's Cleanup step
+18	A's Cleanup step	TURN	Turn 18 (B)
+18	B's Untap step	PHASE	B's Untap step
+18	B's Upkeep step	PHASE	B's Upkeep step
+18	B's Draw step	PHASE	B's Draw step
+18	B's Main phase, precombat	PHASE	B's Main phase, precombat
+18	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+18	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+18	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+18	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+18	B's Combat Damage Step	PHASE	B's Combat Damage Step
+18	B's End of Combat Step	PHASE	B's End of Combat Step
+18	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+18	B's Main phase, postcombat	STACK_ADD	B cast Rolling Hamsphere
+18	B's Main phase, postcombat	STACK_ADD	B cast Ruin Crab
+18	B's End step	PHASE	B's End step
+18	B's Cleanup step	PHASE	B's Cleanup step
+19	B's Cleanup step	TURN	Turn 19 (A)
+19	A's Untap step	PHASE	A's Untap step
+19	A's Upkeep step	PHASE	A's Upkeep step
+19	A's Draw step	PHASE	A's Draw step
+19	A's Main phase, precombat	PHASE	A's Main phase, precombat
+19	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+19	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+19	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+19	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+19	A's Combat Damage Step	PHASE	A's Combat Damage Step
+19	A's End of Combat Step	PHASE	A's End of Combat Step
+19	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+19	A's End step	PHASE	A's End step
+19	A's Cleanup step	PHASE	A's Cleanup step
+20	A's Cleanup step	TURN	Turn 20 (B)
+20	B's Untap step	PHASE	B's Untap step
+20	B's Upkeep step	PHASE	B's Upkeep step
+20	B's Draw step	PHASE	B's Draw step
+20	B's Main phase, precombat	PHASE	B's Main phase, precombat
+20	B's Main phase, precombat	STACK_ADD	B cast Hydroelectric Specimen
+20	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+20	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+20	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+20	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+20	B's Combat Damage Step	PHASE	B's Combat Damage Step
+20	B's End of Combat Step	PHASE	B's End of Combat Step
+20	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+20	B's Main phase, postcombat	STACK_ADD	B cast Tatyova, Benthic Druid
+20	B's End step	PHASE	B's End step
+20	B's Cleanup step	PHASE	B's Cleanup step
+21	B's Cleanup step	TURN	Turn 21 (A)
+21	A's Untap step	PHASE	A's Untap step
+21	A's Upkeep step	PHASE	A's Upkeep step
+21	A's Draw step	PHASE	A's Draw step
+21	A's Main phase, precombat	PHASE	A's Main phase, precombat
+21	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+21	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+21	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+21	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+21	A's Combat Damage Step	PHASE	A's Combat Damage Step
+21	A's End of Combat Step	PHASE	A's End of Combat Step
+21	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+21	A's Main phase, postcombat	ZONE_CHANGE	Terramorphic Expanse (22) was put into Graveyard from Battlefield.
+21	A's Main phase, postcombat	STACK_ADD	A activated Terramorphic Expanse
+21	A's End step	PHASE	A's End step
+21	A's Cleanup step	PHASE	A's Cleanup step
+22	A's Cleanup step	TURN	Turn 22 (B)
+22	B's Untap step	PHASE	B's Untap step
+22	B's Upkeep step	PHASE	B's Upkeep step
+22	B's Draw step	PHASE	B's Draw step
+22	B's Main phase, precombat	PHASE	B's Main phase, precombat
+22	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+22	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+22	B's Declare Attackers Step	COMBAT	B assigned Tatyova, Benthic Druid (192), Timeless Witness (185) and Hydroelectric Specimen (203) to attack A.
+22	B's Declare Attackers Step	STACK_ADD	A cast Tempt with Treats
+22	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+22	B's Declare Blockers Step	COMBAT	A didn't block Tatyova, Benthic Druid (192). A assigned Infestation Sage (19) to block Timeless Witness (185). A didn't block Hydroelectric Specimen (203).
+22	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+22	B's Combat Damage Step	PHASE	B's Combat Damage Step
+22	B's Combat Damage Step	DAMAGE	Tatyova, Benthic Druid (192) deals 3 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Timeless Witness (185) deals 2 damage to Infestation Sage (19).
+22	B's Combat Damage Step	DAMAGE	Hydroelectric Specimen (203) deals 1 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Infestation Sage (19) deals 1 damage to Timeless Witness (185).
+22	B's Combat Damage Step	LIFE	Life: A 16 > 12
+22	B's Combat Damage Step	ZONE_CHANGE	Timeless Witness (185) was put into Graveyard from Battlefield.
+22	B's Combat Damage Step	ZONE_CHANGE	Infestation Sage (19) was put into Graveyard from Battlefield.
+22	B's Combat Damage Step	STACK_ADD	A triggered Infestation Sage
+22	B's End of Combat Step	PHASE	B's End of Combat Step
+22	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+22	B's Main phase, postcombat	STACK_ADD	B activated Timeless Witness
+22	B's Main phase, postcombat	STACK_ADD	B triggered Timeless Witness targeting [Marauding Mutagen (145)]
+22	B's End step	PHASE	B's End step
+22	B's Cleanup step	PHASE	B's Cleanup step
+23	B's Cleanup step	TURN	Turn 23 (A)
+23	A's Untap step	PHASE	A's Untap step
+23	A's Upkeep step	PHASE	A's Upkeep step
+23	A's Draw step	PHASE	A's Draw step
+23	A's Main phase, precombat	PHASE	A's Main phase, precombat
+23	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+23	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+23	A's Declare Attackers Step	COMBAT	A assigned Insect Token (226) to attack B.
+23	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+23	A's Declare Blockers Step	COMBAT	B didn't block Insect Token (226).
+23	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+23	A's Combat Damage Step	PHASE	A's Combat Damage Step
+23	A's Combat Damage Step	DAMAGE	Insect Token (226) deals 1 combat damage to B.
+23	A's Combat Damage Step	LIFE	Life: B 5 > 4
+23	A's End of Combat Step	PHASE	A's End of Combat Step
+23	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+23	A's Main phase, postcombat	STACK_ADD	A cast Vampire Sovereign
+23	A's Main phase, postcombat	STACK_ADD	A triggered Vampire Sovereign targeting [B]
+23	A's Main phase, postcombat	LIFE	Life: B 4 > 1
+23	A's Main phase, postcombat	LIFE	Life: A 12 > 15
+23	A's Main phase, postcombat	STACK_ADD	A cast Gumdrop Poisoner
+23	A's Main phase, postcombat	STACK_ADD	A triggered Gumdrop Poisoner targeting [Tatyova, Benthic Druid (192)]
+23	A's Main phase, postcombat	ZONE_CHANGE	Tatyova, Benthic Druid (192) was put into Graveyard from Battlefield.
+23	A's End step	PHASE	A's End step
+23	A's Cleanup step	PHASE	A's Cleanup step
+24	A's Cleanup step	TURN	Turn 24 (B)
+24	B's Untap step	PHASE	B's Untap step
+24	B's Upkeep step	PHASE	B's Upkeep step
+24	B's Draw step	PHASE	B's Draw step
+24	B's Main phase, precombat	PHASE	B's Main phase, precombat
+24	B's Main phase, precombat	STACK_ADD	B cast Marauding Mutagen
+24	B's Main phase, precombat	STACK_ADD	B triggered Marauding Mutagen targeting [Food Token (222)]
+24	B's Main phase, precombat	ZONE_CHANGE	Food Token (222) was put into Graveyard from Battlefield.
+24	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+24	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+24	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+24	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+24	B's Combat Damage Step	PHASE	B's Combat Damage Step
+24	B's End of Combat Step	PHASE	B's End of Combat Step
+24	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+24	B's Main phase, postcombat	STACK_ADD	B cast Mirrormade
+24	B's End step	PHASE	B's End step
+24	B's Cleanup step	PHASE	B's Cleanup step
+25	B's Cleanup step	TURN	Turn 25 (A)
+25	A's Untap step	PHASE	A's Untap step
+25	A's Upkeep step	PHASE	A's Upkeep step
+25	A's Draw step	PHASE	A's Draw step
+25	A's Main phase, precombat	PHASE	A's Main phase, precombat
+25	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+25	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+25	A's Declare Attackers Step	COMBAT	A assigned Vampire Sovereign (3), Gumdrop Poisoner (37) and Insect Token (226) to attack B.
+25	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+25	A's Declare Blockers Step	COMBAT	B didn't block Vampire Sovereign (3). B assigned Ruin Crab (191), Hydroelectric Specimen (203) and Timeless Witness (228) to block Gumdrop Poisoner (37). B didn't block Insect Token (226).
+25	A's Declare Blockers Step	STACK_ADD	A cast Bladebrand targeting [Gumdrop Poisoner (37)]
+25	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+25	A's Combat Damage Step	PHASE	A's Combat Damage Step
+25	A's Combat Damage Step	DAMAGE	Vampire Sovereign (3) deals 3 combat damage to B.
+25	A's Combat Damage Step	DAMAGE	Gumdrop Poisoner (37) deals 1 damage (Deathtouch) to Timeless Witness (228).
+25	A's Combat Damage Step	DAMAGE	Gumdrop Poisoner (37) deals 1 damage (Deathtouch) to Hydroelectric Specimen (203).
+25	A's Combat Damage Step	DAMAGE	Gumdrop Poisoner (37) deals 1 damage (Deathtouch) to Ruin Crab (191).
+25	A's Combat Damage Step	LIFE	Life: A 15 > 18
+25	A's Combat Damage Step	DAMAGE	Insect Token (226) deals 1 combat damage to B.
+25	A's Combat Damage Step	DAMAGE	Hydroelectric Specimen (203) deals 1 damage to Gumdrop Poisoner (37).
+25	A's Combat Damage Step	DAMAGE	Timeless Witness (228) deals 4 damage to Gumdrop Poisoner (37).
+25	A's Combat Damage Step	LIFE	Life: B 1 > -3

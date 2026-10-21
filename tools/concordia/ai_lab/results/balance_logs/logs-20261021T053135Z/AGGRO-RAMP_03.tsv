@@ -1,0 +1,473 @@
+1		TURN	Turn 1 (B)
+1	B's Untap step	PHASE	B's Untap step
+1	B's Upkeep step	PHASE	B's Upkeep step
+1	B's Draw step	PHASE	B's Draw step
+1	B's Main phase, precombat	PHASE	B's Main phase, precombat
+1	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+1	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+1	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+1	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+1	B's Combat Damage Step	PHASE	B's Combat Damage Step
+1	B's End of Combat Step	PHASE	B's End of Combat Step
+1	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+1	B's Main phase, postcombat	STACK_ADD	B cast Steelshaper's Gift
+1	B's End step	PHASE	B's End step
+1	B's Cleanup step	PHASE	B's Cleanup step
+2	B's Cleanup step	TURN	Turn 2 (A)
+2	A's Untap step	PHASE	A's Untap step
+2	A's Upkeep step	PHASE	A's Upkeep step
+2	A's Draw step	PHASE	A's Draw step
+2	A's Main phase, precombat	PHASE	A's Main phase, precombat
+2	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+2	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+2	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+2	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+2	A's Combat Damage Step	PHASE	A's Combat Damage Step
+2	A's End of Combat Step	PHASE	A's End of Combat Step
+2	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+2	A's Main phase, postcombat	STACK_ADD	A cast Siren Stormtamer
+2	A's End step	PHASE	A's End step
+2	A's Cleanup step	PHASE	A's Cleanup step
+3	A's Cleanup step	TURN	Turn 3 (B)
+3	B's Untap step	PHASE	B's Untap step
+3	B's Upkeep step	PHASE	B's Upkeep step
+3	B's Draw step	PHASE	B's Draw step
+3	B's Main phase, precombat	PHASE	B's Main phase, precombat
+3	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+3	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+3	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+3	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+3	B's Combat Damage Step	PHASE	B's Combat Damage Step
+3	B's End of Combat Step	PHASE	B's End of Combat Step
+3	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+3	B's Main phase, postcombat	STACK_ADD	B cast Mind Stone
+3	B's End step	PHASE	B's End step
+3	B's Cleanup step	PHASE	B's Cleanup step
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Main phase, precombat	STACK_ADD	A cast Sword of the Animist
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Attackers Step	COMBAT	A assigned Siren Stormtamer (116) to attack B.
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's Declare Blockers Step	COMBAT	B didn't block Siren Stormtamer (116).
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's Combat Damage Step	DAMAGE	Siren Stormtamer (116) deals 1 combat damage to B.
+4	A's Combat Damage Step	LIFE	Life: B 35 > 34
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's End step	PHASE	A's End step
+4	A's Cleanup step	PHASE	A's Cleanup step
+5	A's Cleanup step	TURN	Turn 5 (B)
+5	B's Untap step	PHASE	B's Untap step
+5	B's Upkeep step	PHASE	B's Upkeep step
+5	B's Draw step	PHASE	B's Draw step
+5	B's Main phase, precombat	PHASE	B's Main phase, precombat
+5	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+5	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+5	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+5	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+5	B's Combat Damage Step	PHASE	B's Combat Damage Step
+5	B's End of Combat Step	PHASE	B's End of Combat Step
+5	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+5	B's Main phase, postcombat	STACK_ADD	B cast Burnished Hart
+5	B's End step	PHASE	B's End step
+5	B's Cleanup step	PHASE	B's Cleanup step
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Main phase, precombat	STACK_ADD	A activated Sword of the Animist targeting [Siren Stormtamer (116)]
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	COMBAT	A assigned Siren Stormtamer (116) to attack B.
+6	A's Declare Attackers Step	STACK_ADD	A triggered Sword of the Animist
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's Declare Blockers Step	COMBAT	B didn't block Siren Stormtamer (116).
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's Combat Damage Step	DAMAGE	Siren Stormtamer (116) deals 2 combat damage to B.
+6	A's Combat Damage Step	LIFE	Life: B 34 > 32
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+7	A's Cleanup step	TURN	Turn 7 (B)
+7	B's Untap step	PHASE	B's Untap step
+7	B's Upkeep step	PHASE	B's Upkeep step
+7	B's Upkeep step	ZONE_CHANGE	Burnished Hart (7) was put into Graveyard from Battlefield.
+7	B's Upkeep step	STACK_ADD	B activated Burnished Hart
+7	B's Draw step	PHASE	B's Draw step
+7	B's Main phase, precombat	PHASE	B's Main phase, precombat
+7	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+7	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+7	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+7	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+7	B's Combat Damage Step	PHASE	B's Combat Damage Step
+7	B's End of Combat Step	PHASE	B's End of Combat Step
+7	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+7	B's End step	PHASE	B's End step
+7	B's Cleanup step	PHASE	B's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Siren Stormtamer (116) to attack B.
+8	A's Declare Attackers Step	STACK_ADD	A triggered Sword of the Animist
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B didn't block Siren Stormtamer (116).
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Siren Stormtamer (116) deals 2 combat damage to B.
+8	A's Combat Damage Step	LIFE	Life: B 32 > 30
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Burnished Hart
+8	A's Main phase, postcombat	STACK_ADD	A cast Baral, Chief of Compliance
+8	A's End step	PHASE	A's End step
+8	A's End step	ZONE_CHANGE	Mind Stone (63) was put into Graveyard from Battlefield.
+8	A's End step	STACK_ADD	B activated Mind Stone
+8	A's Cleanup step	PHASE	A's Cleanup step
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's Main phase, postcombat	STACK_ADD	B cast Ugin, the Ineffable
+9	B's Main phase, postcombat	STACK_ADD	B activated Ugin, the Ineffable targeting [Siren Stormtamer (116)]
+9	B's Main phase, postcombat	ZONE_CHANGE	Siren Stormtamer (116) was put into Graveyard from Battlefield.
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Upkeep step	ZONE_CHANGE	Burnished Hart (115) was put into Graveyard from Battlefield.
+10	A's Upkeep step	STACK_ADD	A activated Burnished Hart
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Main phase, precombat	STACK_ADD	A activated Sword of the Animist targeting [Baral, Chief of Compliance (201)]
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Baral, Chief of Compliance (201) to attack Ugin, the Ineffable (91).
+10	A's Declare Attackers Step	STACK_ADD	A triggered Sword of the Animist
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B didn't block Baral, Chief of Compliance (201).
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	ZONE_CHANGE	Ugin, the Ineffable (91) was put into Graveyard from Battlefield.
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A cast Sol Ring
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	STACK_ADD	B cast Sephara, Sky's Blade
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Reflections of Littjara
+12	A's Main phase, postcombat	STACK_ADD	A cast Chasm Skulker
+12	A's Main phase, postcombat	STACK_ADD	A cast Rhystic Study
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Draw step	PHASE	B's Draw step
+13	B's Draw step	STACK_ADD	B cast Path to Exile targeting [Baral, Chief of Compliance (201)]
+13	B's Draw step	STACK_ADD	A triggered Rhystic Study
+13	B's Draw step	ZONE_CHANGE	Baral, Chief of Compliance (201) was put into Exile from Battlefield.
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Main phase, precombat	STACK_ADD	B cast Sword of Feast and Famine
+13	B's Main phase, precombat	STACK_ADD	A triggered Rhystic Study
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Sephara, Sky's Blade (100) to attack A.
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A didn't block Sephara, Sky's Blade (100).
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Sephara, Sky's Blade (100) deals 7 combat damage to A.
+13	B's Combat Damage Step	LIFE	Life: B 30 > 37
+13	B's Combat Damage Step	LIFE	Life: A 35 > 28
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's End step	PHASE	B's End step
+13	B's Cleanup step	PHASE	B's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Draw step	STACK_ADD	A triggered Chasm Skulker
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Main phase, precombat	STACK_ADD	A activated Sword of the Animist targeting [Chasm Skulker (108)]
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Chasm Skulker (108) to attack B.
+14	A's Declare Attackers Step	STACK_ADD	A triggered Sword of the Animist
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B didn't block Chasm Skulker (108).
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Chasm Skulker (108) deals 3 combat damage to B.
+14	A's Combat Damage Step	LIFE	Life: B 37 > 34
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD	A cast Mulldrifter
+14	A's Main phase, postcombat	STACK_ADD	A triggered Mulldrifter
+14	A's Main phase, postcombat	STACK_ADD	A triggered Chasm Skulker
+14	A's Main phase, postcombat	STACK_ADD	A triggered Chasm Skulker
+14	A's Main phase, postcombat	STACK_ADD	A cast Ledger Shredder
+14	A's Main phase, postcombat	STACK_ADD	A cast Propaganda
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Draw step	PHASE	B's Draw step
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Main phase, precombat	STACK_ADD	B activated Sword of Feast and Famine targeting [Sephara, Sky's Blade (100)]
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Attackers Step	COMBAT	B assigned Sephara, Sky's Blade (100) to attack A.
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's Declare Blockers Step	COMBAT	A assigned Ledger Shredder (193) to block Sephara, Sky's Blade (100).
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's Combat Damage Step	DAMAGE	Sephara, Sky's Blade (100) deals 9 damage to Ledger Shredder (193).
+15	B's Combat Damage Step	LIFE	Life: B 34 > 43
+15	B's Combat Damage Step	DAMAGE	Ledger Shredder (193) deals 1 damage to Sephara, Sky's Blade (100).
+15	B's Combat Damage Step	ZONE_CHANGE	Ledger Shredder (193) was put into Graveyard from Battlefield.
+15	B's End of Combat Step	PHASE	B's End of Combat Step
+15	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+15	B's Main phase, postcombat	STACK_ADD	B cast Extraplanar Lens
+15	B's Main phase, postcombat	STACK_ADD	A triggered Rhystic Study
+15	B's Main phase, postcombat	STACK_ADD	A triggered Chasm Skulker
+15	B's Main phase, postcombat	STACK_ADD	B triggered Extraplanar Lens targeting [Plains (30)]
+15	B's Main phase, postcombat	ZONE_CHANGE	Plains (30) was put into Exile from Battlefield.
+15	B's End step	PHASE	B's End step
+15	B's Cleanup step	PHASE	B's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Draw step	PHASE	A's Draw step
+16	A's Draw step	STACK_ADD	A triggered Chasm Skulker
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Attackers Step	COMBAT	A assigned Chasm Skulker (108) to attack B.
+16	A's Declare Attackers Step	STACK_ADD	A triggered Sword of the Animist
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's Declare Blockers Step	COMBAT	B didn't block Chasm Skulker (108).
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's Combat Damage Step	DAMAGE	Chasm Skulker (108) deals 7 combat damage to B.
+16	A's Combat Damage Step	LIFE	Life: B 43 > 36
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	STACK_ADD	A cast Archmage Emeritus
+16	A's Main phase, postcombat	STACK_ADD	A triggered Reflections of Littjara
+16	A's Main phase, postcombat	STACK_ADD	A cast Archmage Emeritus
+16	A's Main phase, postcombat	STACK_ADD	A cast Azami, Lady of Scrolls
+16	A's Main phase, postcombat	STACK_ADD	A triggered Reflections of Littjara
+16	A's Main phase, postcombat	STACK_ADD	A cast Azami, Lady of Scrolls
+16	A's Main phase, postcombat	ZONE_CHANGE	Azami, Lady of Scrolls (204) was put into Graveyard from Battlefield.
+16	A's Main phase, postcombat	STACK_ADD	A cast Teferi's Ageless Insight
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step
+17	A's Cleanup step	TURN	Turn 17 (B)
+17	B's Untap step	PHASE	B's Untap step
+17	B's Upkeep step	PHASE	B's Upkeep step
+17	B's Draw step	PHASE	B's Draw step
+17	B's Main phase, precombat	PHASE	B's Main phase, precombat
+17	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+17	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+17	B's Declare Attackers Step	COMBAT	B assigned Sephara, Sky's Blade (100) to attack A.
+17	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+17	B's Declare Blockers Step	COMBAT	A assigned Mulldrifter (169) to block Sephara, Sky's Blade (100).
+17	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+17	B's Combat Damage Step	PHASE	B's Combat Damage Step
+17	B's Combat Damage Step	DAMAGE	Sephara, Sky's Blade (100) deals 9 damage to Mulldrifter (169).
+17	B's Combat Damage Step	LIFE	Life: B 36 > 45
+17	B's Combat Damage Step	DAMAGE	Mulldrifter (169) deals 2 damage to Sephara, Sky's Blade (100).
+17	B's Combat Damage Step	ZONE_CHANGE	Mulldrifter (169) was put into Graveyard from Battlefield.
+17	B's End of Combat Step	PHASE	B's End of Combat Step
+17	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+17	B's Main phase, postcombat	STACK_ADD	B cast Emeria Shepherd
+17	B's Main phase, postcombat	STACK_ADD	A triggered Rhystic Study
+17	B's Main phase, postcombat	ZONE_CHANGE	Buried Ruin (79) was put into Graveyard from Battlefield.
+17	B's Main phase, postcombat	STACK_ADD	B activated Buried Ruin targeting [Burnished Hart (7)]
+17	B's Main phase, postcombat	STACK_ADD	A triggered Chasm Skulker
+17	B's Main phase, postcombat	STACK_ADD	A triggered Chasm Skulker
+17	B's End step	PHASE	B's End step
+17	B's End step	STACK_ADD	A activated Azami, Lady of Scrolls
+17	B's End step	STACK_ADD	A triggered Chasm Skulker
+17	B's End step	STACK_ADD	A triggered Chasm Skulker
+17	B's End step	STACK_ADD	A activated Azami, Lady of Scrolls
+17	B's End step	STACK_ADD	A triggered Chasm Skulker
+17	B's End step	STACK_ADD	A triggered Chasm Skulker
+17	B's End step	STACK_ADD	A activated Azami, Lady of Scrolls
+17	B's End step	STACK_ADD	A triggered Chasm Skulker
+17	B's End step	STACK_ADD	A triggered Chasm Skulker
+17	B's Cleanup step	PHASE	B's Cleanup step
+18	B's Cleanup step	TURN	Turn 18 (A)
+18	A's Untap step	PHASE	A's Untap step
+18	A's Upkeep step	PHASE	A's Upkeep step
+18	A's Draw step	PHASE	A's Draw step
+18	A's Draw step	STACK_ADD	A triggered Chasm Skulker
+18	A's Main phase, precombat	PHASE	A's Main phase, precombat
+18	A's Main phase, precombat	STACK_ADD	A cast Jeweled Amulet
+18	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+18	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+18	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+18	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+18	A's Combat Damage Step	PHASE	A's Combat Damage Step
+18	A's End of Combat Step	PHASE	A's End of Combat Step
+18	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+18	A's Main phase, postcombat	STACK_ADD	A cast Archmage of Runes
+18	A's Main phase, postcombat	STACK_ADD	A triggered Reflections of Littjara
+18	A's Main phase, postcombat	STACK_ADD	A cast Archmage of Runes
+18	A's Main phase, postcombat	STACK_ADD	A cast Trophy Mage
+18	A's Main phase, postcombat	STACK_ADD	A triggered Reflections of Littjara
+18	A's Main phase, postcombat	STACK_ADD	A cast Trophy Mage
+18	A's Main phase, postcombat	STACK_ADD	A triggered Trophy Mage
+18	A's Main phase, postcombat	STACK_ADD	A triggered Trophy Mage
+18	A's Main phase, postcombat	STACK_ADD	A cast Heraldic Banner
+18	A's Main phase, postcombat	STACK_ADD	A cast Midnight Clock
+18	A's Main phase, postcombat	STACK_ADD	A cast Wizard Class
+18	A's Main phase, postcombat	STACK_ADD	A activated Wizard Class
+18	A's Main phase, postcombat	STACK_ADD	A triggered Wizard Class
+18	A's Main phase, postcombat	STACK_ADD	A triggered Chasm Skulker
+18	A's Main phase, postcombat	STACK_ADD	A triggered Chasm Skulker
+18	A's Main phase, postcombat	STACK_ADD	A triggered Chasm Skulker
+18	A's Main phase, postcombat	STACK_ADD	A triggered Chasm Skulker
+18	A's End step	PHASE	A's End step
+18	A's Cleanup step	PHASE	A's Cleanup step
+19	A's Cleanup step	TURN	Turn 19 (B)
+19	B's Untap step	PHASE	B's Untap step
+19	B's Upkeep step	PHASE	B's Upkeep step
+19	B's Upkeep step	STACK_ADD	A triggered Midnight Clock
+19	B's Draw step	PHASE	B's Draw step
+19	B's Main phase, precombat	PHASE	B's Main phase, precombat
+19	B's Main phase, precombat	STACK_ADD	B triggered Emeria Shepherd targeting [Ugin, the Ineffable (91)]
+19	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+19	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+19	B's Declare Attackers Step	COMBAT	B assigned Sephara, Sky's Blade (100) and Emeria Shepherd (78) to attack A.
+19	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+19	B's Declare Blockers Step	COMBAT	A didn't block Sephara, Sky's Blade (100). A didn't block Emeria Shepherd (78).
+19	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+19	B's Combat Damage Step	PHASE	B's Combat Damage Step
+19	B's Combat Damage Step	DAMAGE	Sephara, Sky's Blade (100) deals 9 combat damage to A.
+19	B's Combat Damage Step	LIFE	Life: B 45 > 54
+19	B's Combat Damage Step	DAMAGE	Emeria Shepherd (78) deals 4 combat damage to A.
+19	B's Combat Damage Step	LIFE	Life: A 28 > 15
+19	B's Combat Damage Step	STACK_ADD	B triggered Sword of Feast and Famine
+19	B's End of Combat Step	PHASE	B's End of Combat Step
+19	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+19	B's Main phase, postcombat	STACK_ADD	B cast Herald of War
+19	B's Main phase, postcombat	STACK_ADD	A triggered Rhystic Study
+19	B's Main phase, postcombat	STACK_ADD	B cast Ugin, the Ineffable
+19	B's Main phase, postcombat	STACK_ADD	A triggered Rhystic Study
+19	B's Main phase, postcombat	STACK_ADD	A triggered Chasm Skulker
+19	B's Main phase, postcombat	STACK_ADD	A triggered Chasm Skulker
+19	B's Main phase, postcombat	STACK_ADD	B activated Ugin, the Ineffable targeting [Chasm Skulker (108)]
+19	B's Main phase, postcombat	ZONE_CHANGE	Chasm Skulker (108) was put into Graveyard from Battlefield.
+19	B's Main phase, postcombat	STACK_ADD	A triggered Chasm Skulker
+19	B's End step	PHASE	B's End step
+19	B's Cleanup step	PHASE	B's Cleanup step
+20	B's Cleanup step	TURN	Turn 20 (A)
+20	A's Untap step	PHASE	A's Untap step
+20	A's Upkeep step	PHASE	A's Upkeep step
+20	A's Upkeep step	STACK_ADD	A triggered Midnight Clock
+20	A's Draw step	PHASE	A's Draw step
+20	A's Main phase, precombat	PHASE	A's Main phase, precombat
+20	A's Main phase, precombat	STACK_ADD	A activated Wizard Class
+20	A's Main phase, precombat	STACK_ADD	A activated Sword of the Animist targeting [Archmage of Runes (119)]
+20	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+20	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+20	A's Declare Attackers Step	COMBAT	A assigned Archmage of Runes (119), Archmage of Runes (205), Archmage Emeritus (203), Archmage Emeritus (176), Trophy Mage (206), Trophy Mage (123), Squid Token (224), Squid Token (225), Squid Token (226), Squid Token (227), Squid Token (228), Squid Token (229), Squid Token (230), Squid Token (231), Squid Token (232), Squid Token (233), Squid Token (234), Squid Token (235), Squid Token (236), Squid Token (237), Squid Token (238), Squid Token (239), Squid Token (240), Squid Token (241), Squid Token (242), Squid Token (243) and Azami, Lady of Scrolls (114) to attack B.
+20	A's Declare Attackers Step	STACK_ADD	A triggered Sword of the Animist
+20	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+20	A's Declare Blockers Step	COMBAT	B assigned Herald of War (58) to block Archmage of Runes (119). B didn't block Archmage of Runes (205). B didn't block Archmage Emeritus (203). B didn't block Archmage Emeritus (176). B didn't block Trophy Mage (206). B didn't block Trophy Mage (123). B didn't block Squid Token (224). B didn't block Squid Token (225). B didn't block Squid Token (226). B didn't block Squid Token (227). B didn't block Squid Token (228). B didn't block Squid Token (229). B didn't block Squid Token (230). B didn't block Squid Token (231). B didn't block Squid Token (232). B didn't block Squid Token (233). B didn't block Squid Token (234). B didn't block Squid Token (235). B didn't block Squid Token (236). B didn't block Squid Token (237). B didn't block Squid Token (238). B didn't block Squid Token (239). B didn't block Squid Token (240). B didn't block Squid Token (241). B didn't block Squid Token (242). B didn't block Squid Token (243). B didn't block Azami, Lady of Scrolls (114).
+20	A's Declare Blockers Step	STACK_ADD	A cast Rapid Hybridization targeting [Sephara, Sky's Blade (100)]
+20	A's Declare Blockers Step	STACK_ADD	A triggered Archmage Emeritus
+20	A's Declare Blockers Step	STACK_ADD	A triggered Archmage Emeritus
+20	A's Declare Blockers Step	STACK_ADD	A triggered Archmage of Runes
+20	A's Declare Blockers Step	STACK_ADD	A triggered Archmage of Runes
+20	A's Declare Blockers Step	STACK_ADD	A triggered Wizard Class targeting [Archmage of Runes (119)]
+20	A's Declare Blockers Step	STACK_ADD	A triggered Wizard Class targeting [Archmage of Runes (119)]
+20	A's Declare Blockers Step	STACK_ADD	A triggered Wizard Class targeting [Archmage of Runes (119)]
+20	A's Declare Blockers Step	STACK_ADD	A triggered Wizard Class targeting [Archmage of Runes (119)]
+20	A's Declare Blockers Step	STACK_ADD	A triggered Wizard Class targeting [Archmage of Runes (119)]
+20	A's Declare Blockers Step	STACK_ADD	A triggered Wizard Class targeting [Archmage of Runes (119)]
+20	A's Declare Blockers Step	STACK_ADD	A triggered Wizard Class targeting [Archmage of Runes (119)]
+20	A's Declare Blockers Step	STACK_ADD	A triggered Wizard Class targeting [Archmage of Runes (119)]
+20	A's Declare Blockers Step	ZONE_CHANGE	Sephara, Sky's Blade (100) was put into Graveyard from Battlefield.
+20	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+20	A's Combat Damage Step	PHASE	A's Combat Damage Step
+20	A's Combat Damage Step	DAMAGE	Archmage of Runes (119) deals 13 damage to Herald of War (58).
+20	A's Combat Damage Step	DAMAGE	Archmage of Runes (205) deals 4 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Archmage Emeritus (203) deals 3 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Archmage Emeritus (176) deals 3 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Trophy Mage (206) deals 3 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Trophy Mage (123) deals 3 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (224) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (225) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (226) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (227) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (228) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (229) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (230) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (231) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (232) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (233) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (234) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (235) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (236) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (237) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (238) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (239) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (240) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (241) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (242) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Squid Token (243) deals 2 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Azami, Lady of Scrolls (114) deals 1 combat damage to B.
+20	A's Combat Damage Step	DAMAGE	Herald of War (58) deals 3 damage to Archmage of Runes (119).
+20	A's Combat Damage Step	LIFE	Life: B 54 > -3
