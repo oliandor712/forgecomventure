@@ -105,7 +105,7 @@ build on its findings, and cite entries by date and title.
 |---|---|---|---|
 | forge-ai-lab | `.claude/agents/forge-ai-lab.md` | session_018TohPY7UPn5mh9b7aJ4at5 | step every 2 h at :06 (was hourly; changed at the user's request), about 5 min; report every 4 h |
 | deck-balance-lab | `.claude/agents/deck-balance-lab.md` | session_01PwU5ft7yoiwonjyndwCVv9 | `--until-done` run, no time cap (triggers disabled during the deep research project) |
-| deck-builder | `.claude/agents/deck-builder.md` | TBD | no schedule; main processor for decklist updates and new decks; scope: balance data, unflagged card data, categorization; the main session assists when its ETA exceeds 5 minutes |
+| deck-builder | `.claude/agents/deck-builder.md` | session_01EiE27ZRU9BUAnaYQYocKuB | no schedule; main processor for decklist updates and new decks; scope: balance data, unflagged card data, categorization; the main session assists when its ETA exceeds 5 minutes |
 
 The main session checks on all agents every 4 hours (at :40) and fixes blockers.
 

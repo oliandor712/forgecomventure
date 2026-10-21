@@ -248,7 +248,7 @@
     },
     "deck-builder": {
       "brief": ".claude/agents/deck-builder.md",
-      "session": "TBD",
+      "session": "session_01EiE27ZRU9BUAnaYQYocKuB",
       "model": "sonnet, effort high",
       "folders": [
         "forge-gui/res/adventure/Concordia/decks/",
