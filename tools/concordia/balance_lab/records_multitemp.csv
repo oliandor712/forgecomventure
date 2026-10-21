@@ -105,3 +105,5 @@ utc,commit,kind,tier,deck_a,deck_b,life_a,life_b,bonus_a,bonus_b,first,winner,tu
 2026-10-21T02:41:12Z,1a6eac0bb60,bonus,2,decks/tier2/T2_U_Venser.dck,decks/starter/B_Starter_Alt.dck,15,15,,,b,b,29,0
 2026-10-21T02:41:38Z,1a6eac0bb60,inner,4,decks/tier4/T4_WR_Firesong.dck,decks/tier4/T4_WB_Tomik.dck,30,30,,,a,b,38,0
 2026-10-21T02:41:38Z,1a6eac0bb60,inner,4,decks/tier4/T4_WR_Firesong.dck,decks/tier4/T4_WB_Tomik.dck,30,30,,,b,a,20,0
+2026-10-21T02:44:00Z,1a6eac0bb60,inner,3,decks/tier3/T3_GW_Sigarda.dck,decks/tier3/T3_UB_Gyruda.dck,25,25,,,a,b,20,0
+2026-10-21T02:44:00Z,1a6eac0bb60,inner,3,decks/tier3/T3_GW_Sigarda.dck,decks/tier3/T3_UB_Gyruda.dck,25,25,,,b,a,34,0
