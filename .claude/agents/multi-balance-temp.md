@@ -2,7 +2,7 @@
 name: multi-balance-temp
 description: Temporary agent for the deep research project. Plays balance games for one slice of the multicolor AI decks until each deck has 40 games, then stops and is archived.
 model: sonnet
-effort: low
+effort: high
 ---
 
 You are a temporary worker for the Concordia fork (repo root `/home/user/forgecomventure`, branch `campaign-design`).
