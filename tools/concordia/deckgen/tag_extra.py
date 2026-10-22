@@ -62,6 +62,7 @@ DOC = {
  "condition:<readable>": ("a static or replacement effect that only applies while something is present, as one tag (condition:planeswalker_garruk_you_control, condition:no_card_you_own_in_library, condition:at_least_4_creature_you_control); replaces condition_present / _zone / _compare", "reverse check r1: Predatory Wurm, Laboratory Maniac; user 2026-10-22: prune redundant proposed tags"),
  "x_is:<what>": ("what a variable amount (X) measures, as one readable value read from the script's variable: target_power, target_mana_value, sacrificed_power, triggering_damage, life_lost_by_opponents_this_turn, count_land_you_control, count_creature_in_graveyard, devotion_black, x_paid, own_power, ... with arithmetic as a suffix (_times_2, _plus_1, _half_up); linked to its amount tag (scales_with) and to the object it measures (measures)", "reverse check r1/r2: Swords to Plowshares, Feed the Swarm, Gray Merchant, Exsanguinate; user 2026-10-22: make x_is robust with linked conditions (target power, life lost ...)"),
  "replace:<event>_to_<what>[_<detail>]": ("a replacement effect ('instead') as one tag: the event replaced, what happens instead, and a detail (replace:draw_to_winsgame, replace:addcounter_to_replacecounter_counternum_plus_1); replaces replacement / replace_event / replace_with / replace_detail", "reverse check r1: Kami of Whispered Hopes, Laboratory Maniac"),
+ "return:<zone>_to_<zone>": ("a card returns from the graveyard or exile to hand or library (return:graveyard_to_hand); the readable detail behind the AI umbrella tag recursion", "reverse check r5: Elvish Regrower lost its meaning when recursion became an AI tag"),
  "cant_be_countered / cant_be_blocked[:by_<what>]": ("this spell can't be countered / this creature can't be blocked (by creatures of that kind); evasion, not a restriction", "reverse check r1: Lightning Mare, Brotherhood Regalia"),
  "modal:<chosen>_of_<modes>": ("a modal spell: how many modes are chosen of how many exist (modal:1_of_3 = choose one of three); replaces the separate mode_count and mode_choose tags (user: redundant)", "reverse check r1: Valorous Stance, Return of the Wildspeaker"),
  "look_top:<n> / take:[may_]<count>[_<filter>]_to_<zone> / rest_dest:<zone>[_bottom[_random]]": ("look at the top N cards, take K (matching a filter, optionally = may) to a zone, put the rest in a zone (library_bottom_random = on the bottom in random order); one take tag replaces take_count, take_filter, take_dest, take_optional and rest_random_order (user: redundant)", "reverse check r1: Militia Bugler, Dig Through Time"),
@@ -183,6 +184,10 @@ SRC = {"Targeted": "target", "ParentTargeted": "target", "TargetedLKI": "target"
 OPS = [(r"^Twice$", "times_2"), (r"^Thrice$", "times_3"), (r"^Times\.(\d+)$", "times_%s"), (r"^Plus\.(\d+)$", "plus_%s"), (r"^Minus\.(\d+)$", "minus_%s"), (r"^Half(Up|Down)$", "half_%s")]
 
 
+VPROP = {"GreatestCardPower": "greatest_power", "GreatestCardManaCost": "greatest_mana_value", "GreatestCardToughness": "greatest_toughness", "Colors": "colors", "DifferentCardPower": "different_powers",
+         "CardPower": "total_power", "CardToughness": "total_toughness", "CardManaCost": "total_mana_value", "CardTypes": "card_types", "CardCounters": "counters", "DifferentCardManaCost": "different_mana_values", "DifferentCardNames": "different_names"}
+
+
 def readable_filter(f):
     f = re.sub(r"YouCtrl", "_you_control", f); f = re.sub(r"OppCtrl", "_opponents_control", f); f = re.sub(r"YouOwn", "_you_own", f)
     return filt(f)
@@ -212,8 +217,12 @@ def xdesc(v, sv, depth=0):
         if rest.startswith(("Compare", "Kicked", "Condition")): return None        # conditional values (if X then a else b), not a measured amount
         if rest.startswith("Valid"):
             zone = {"ValidGraveyard": "graveyard", "ValidHand": "hand", "ValidLibrary": "library", "ValidExile": "exile", "Valid": "battlefield"}.get(re.match(r"^Valid\w*", rest).group(0), "battlefield")
-            filt_ = re.sub(r"^Valid\w*\s*", "", rest).split("$")[0]
-            return ("count_%s%s" % (readable_filter(filt_), "" if zone == "battlefield" else "_in_" + zone) + suffix).replace("count__", "count_")
+            filt_, _, prop_ = re.sub(r"^Valid\w*\s*", "", rest).partition("$")
+            where = readable_filter(filt_) + ("" if zone == "battlefield" else "_in_" + zone)
+            if prop_:                                         # Count$Valid Creature.YouCtrl$GreatestCardPower = the greatest power among them, not how many
+                head = VPROP.get(re.split(r"[ .]", prop_)[0], tok(prop_)[:30])
+                return ("%s_among_%s" % (head, where) + suffix).replace("__", "_")
+            return ("count_%s" % where + suffix).replace("count__", "count_")
         if rest.startswith("Devotion"): return "devotion_" + tok(rest.split(".", 1)[-1]) + suffix
         if rest.startswith("CardCounters"): return "counters_on_this_" + tok(rest.split(".", 1)[-1].replace("P1P1", "plus_one")) + suffix
         if rest.startswith("ThisTurn"): return "this_turn_" + tok(rest)[:44] + suffix
@@ -478,6 +487,7 @@ def extra(lines, sv, types, text):
                 elif o == "Battlefield" and d == "Hand": add("remove:bounce")
                 elif o == "Battlefield" and d == "Library": add("remove:tuck")
                 elif o == "Graveyard" and d == "Hand" and bp.get("Defined", "").startswith("TriggeredNewCard"): add("recursion:return_self")
+                if o in ("Graveyard", "Exile") and d in ("Hand", "Library"): add("return:%s_to_%s" % (o.lower(), d.lower()))     # readable detail for the AI umbrella tag recursion
                 if o == "Hand" and d == "Exile": add("impulse_draw_part:exile_hand")
                 if d == "Battlefield" and o in ("Library", "Hand", "Graveyard", "Exile"):
                     add("put_onto_battlefield:from_" + o.lower())

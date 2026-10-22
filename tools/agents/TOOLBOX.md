@@ -1,6 +1,6 @@
 # Toolbox: the shared reference for every agent
 
-Generated 2026-10-22 19:04Z at commit 96b0607d on branch cd/claude2. **Tools stamp: `2466395437b3`.**
+Generated 2026-10-22 19:10Z at commit 11fef646 on branch cd/claude2. **Tools stamp: `2466395437b3`.**
 
 ## Start of every turn (all agents)
 1. `git pull --no-rebase origin campaign-design` (if the clone is shallow: `git fetch --unshallow origin campaign-design`).
@@ -14,7 +14,7 @@ Generated 2026-10-22 19:04Z at commit 96b0607d on branch cd/claude2. **Tools sta
 |---|---|---|---|
 | `tools/agents/CONTEXT.md` | all | shared rules, authority, commit ownership, agent table, recent updates: read first, every turn | d4d42bdc 10-22 12:56Z |
 | `tools/agents/AGENT_KNOWLEDGE.md` | all | compiled pitfalls, conventions, unfinished work and next steps from the earlier agents | 4005990f 10-21 18:58Z |
-| `tools/agents/human_logic.toon` | all | the user's own deck-building, balance and AI rules; a rule beats a metric | 96b0607d 10-22 19:01Z |
+| `tools/agents/human_logic.toon` | all | the user's own deck-building, balance and AI rules; a rule beats a metric | 11fef646 10-22 19:04Z |
 | `tools/concordia/suite/sim_suite.py` | sim workers, main | THE simulation program: setup / run / plan / status / report; archetype cells, adaptive stop, phase logs, digests, push | 4005990f 10-21 18:58Z |
 | `tools/concordia/suite/README.md` | sim workers | how to use the suite, its stop rules and the limit-the-total levers | 4005990f 10-21 18:58Z |
 | `tools/concordia/balance_lab/push_records.sh` | all | safe push of named paths (detached HEAD, races, no force); the only way to push | 4005990f 10-21 18:58Z |

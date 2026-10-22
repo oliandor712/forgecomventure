@@ -262,14 +262,14 @@ mtgish: rules=Flying TriggerA TriggerA
 forge_ai: AILogic=-
 
 card: Cadaver Imp
-tags: cardtype:creature type:imp kw:flying trigger_scope:self trigger:etb target_count:one target_type:creature target_scope:you_control target_zone:graveyard
+tags: cardtype:creature type:imp kw:flying trigger_scope:self trigger:etb target_count:one target_type:creature target_scope:you_control target_zone:graveyard return:graveyard_to_hand
 ai_tags: recursion tempo:+1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone,"",ValidTgts=Creature.YouCtrl,""
 groups[3]{id,source,tags}:
   k1,K line,kw:flying
   c1,T line,trigger_scope:self trigger:etb
-  c1.2,sub-ability of c1,target_count:one target_type:creature target_scope:you_control target_zone:graveyard
+  c1.2,sub-ability of c1,target_count:one target_type:creature target_scope:you_control target_zone:graveyard return:graveyard_to_hand
 mtgish: rules=Flying TriggerA
 forge_ai: AILogic=-
 
@@ -367,13 +367,13 @@ mtgish: rules=Lifelink TriggerA
 forge_ai: AILogic=-
 
 card: Gravedigger
-tags: cardtype:creature type:zombie trigger_scope:self trigger:etb target_count:one target_type:creature target_scope:you_control target_zone:graveyard
+tags: cardtype:creature type:zombie trigger_scope:self trigger:etb target_count:one target_type:creature target_scope:you_control target_zone:graveyard return:graveyard_to_hand
 ai_tags: recursion tempo:+1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone,"",ValidTgts=Creature.YouCtrl,""
 groups[2]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:etb
-  c1.2,sub-ability of c1,target_count:one target_type:creature target_scope:you_control target_zone:graveyard
+  c1.2,sub-ability of c1,target_count:one target_type:creature target_scope:you_control target_zone:graveyard return:graveyard_to_hand
 mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
@@ -801,12 +801,12 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Raise Dead
-tags: cardtype:sorcery target_count:one target_type:creature target_scope:you_control target_zone:graveyard
+tags: cardtype:sorcery target_count:one target_type:creature target_scope:you_control target_zone:graveyard return:graveyard_to_hand
 ai_tags: recursion
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone,"",ValidTgts=Creature.YouCtrl,""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:you_control target_zone:graveyard
+  c1,A line,target_count:one target_type:creature target_scope:you_control target_zone:graveyard return:graveyard_to_hand
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -859,13 +859,13 @@ mtgish: rules=TriggerOnceEachTurn
 forge_ai: AILogic=-
 
 card: Dutiful Attendant
-tags: cardtype:creature type:human type:warrior trigger_scope:self trigger:dies trigger_zone:graveyard target_count:one target_type:creature target_filter:other target_zone:graveyard
+tags: cardtype:creature type:human type:warrior trigger_scope:self trigger:dies trigger_zone:graveyard target_count:one target_type:creature target_filter:other target_zone:graveyard return:graveyard_to_hand
 ai_tags: recursion tempo:+1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",changezone,"",ValidTgts=Creature.Other,""
 groups[2]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:dies trigger_zone:graveyard
-  c1.2,sub-ability of c1,target_count:one target_type:creature target_filter:other target_zone:graveyard
+  c1.2,sub-ability of c1,target_count:one target_type:creature target_filter:other target_zone:graveyard return:graveyard_to_hand
 mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
@@ -928,7 +928,7 @@ groups[5]{id,source,tags}:
   c3,T line,trigger_scope:other
   c4,A line,cost:mana
 mtgish: rules=TriggerA Activated
-verify_flags: trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves) | trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield)
+verify_flags: trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield) | trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves)
 forge_ai: AILogic=AtOppEOT
 
 card: "Gwenna, Eyes of Gaea"
@@ -1223,13 +1223,13 @@ mtgish: rules=Activated
 forge_ai: AILogic=-
 
 card: Elvish Regrower
-tags: cardtype:creature type:elf type:druid trigger_scope:self trigger:etb target_count:one target_type:permanent target_scope:you_control target_zone:graveyard
+tags: cardtype:creature type:elf type:druid trigger_scope:self trigger:etb target_count:one target_type:permanent target_scope:you_control target_zone:graveyard return:graveyard_to_hand
 ai_tags: recursion tempo:+1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone,"",ValidTgts=Permanent.YouOwn,""
 groups[2]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:etb
-  c1.2,sub-ability of c1,target_count:one target_type:permanent target_scope:you_control target_zone:graveyard
+  c1.2,sub-ability of c1,target_count:one target_type:permanent target_scope:you_control target_zone:graveyard return:graveyard_to_hand
 mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
@@ -1503,15 +1503,15 @@ mtgish: rules=TriggerI EachPermanentLayerEffect TriggerA
 forge_ai: AILogic=-
 
 card: Return of the Wildspeaker
-tags: cardtype:instant draw modal:1_of_2 draw_count:x x_is:count_creature_you_control_nonhuman target_count:all target_type:creature target_scope:you_control target_filter:nonhuman pump_amount:+3/+3 duration:eot
+tags: cardtype:instant draw modal:1_of_2 draw_count:x x_is:greatest_power_among_creature_you_control_nonhuman target_count:all target_type:creature target_scope:you_control target_filter:nonhuman pump_amount:+3/+3 duration:eot
 ai_tags: pump_team tempo:x
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",charm,"","",""
 links[1]{from,rel,to}:
-  c1.2:draw_count:x,scales_with,c1.2:x_is:count_creature_you_control_nonhuman
+  c1.2:draw_count:x,scales_with,c1.2:x_is:greatest_power_among_creature_you_control_nonhuman
 groups[3]{id,source,tags}:
   c1,A line,modal:1_of_2
-  c1.2,sub-ability of c1,draw_count:x x_is:count_creature_you_control_nonhuman
+  c1.2,sub-ability of c1,draw_count:x x_is:greatest_power_among_creature_you_control_nonhuman
   c1.3,sub-ability of c1,target_count:all target_type:creature target_scope:you_control target_filter:nonhuman pump_amount:+3/+3 duration:eot
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
@@ -1530,14 +1530,14 @@ mtgish: rules=TriggerI
 forge_ai: AILogic=-
 
 card: Rishkar's Expertise
-tags: cardtype:sorcery draw draw_count:x x_is:count_creature_you_control cast_free
+tags: cardtype:sorcery draw draw_count:x x_is:greatest_power_among_creature_you_control cast_free
 ai_tags: tempo:x
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",draw+play,numcards=X,"",""
 links[1]{from,rel,to}:
-  c1:draw_count:x,scales_with,c1:x_is:count_creature_you_control
+  c1:draw_count:x,scales_with,c1:x_is:greatest_power_among_creature_you_control
 groups[2]{id,source,tags}:
-  c1,A line,draw_count:x x_is:count_creature_you_control
+  c1,A line,draw_count:x x_is:greatest_power_among_creature_you_control
   c1.2,sub-ability of c1,cast_free
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
@@ -1584,7 +1584,7 @@ verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=Always
 
 card: Rancor
-tags: cardtype:enchantment type:aura kw:enchant target_type:creature duration:static pump_amount:+2/+0 grant_kw:trample affected_type:creature trigger_scope:self trigger:dies trigger_zone:graveyard recursion:return_self
+tags: cardtype:enchantment type:aura kw:enchant target_type:creature duration:static pump_amount:+2/+0 grant_kw:trample affected_type:creature trigger_scope:self trigger:dies trigger_zone:graveyard recursion:return_self return:graveyard_to_hand
 ai_tags: trample recursion tempo:+1 ai_logic:pump
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,trample addpower=2,Affected=Creature AffectedDefined=Enchanted,duration:static
@@ -1596,7 +1596,7 @@ groups[4]{id,source,tags}:
   k1,K line,kw:enchant target_type:creature
   c1,S line,duration:static pump_amount:+2/+0 grant_kw:trample affected_type:creature
   c2,T line,trigger_scope:self trigger:dies trigger_zone:graveyard
-  c2.2,sub-ability of c2,recursion:return_self
+  c2.2,sub-ability of c2,recursion:return_self return:graveyard_to_hand
 mtgish: rules=EnchantPermanent PermanentLayerEffect TriggerA
 forge_ai: AILogic=Pump
 
@@ -1675,14 +1675,14 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Pulse of Murasa
-tags: cardtype:instant lifegain target_count:one target_type:creature target_type:land target_zone:graveyard lifegain_amount:6
+tags: cardtype:instant lifegain target_count:one target_type:creature target_type:land target_zone:graveyard return:graveyard_to_hand lifegain_amount:6
 ai_tags: recursion
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone+gainlife,lifeamount=6,"ValidTgts=Creature,Land Defined=You",""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_type:land target_zone:graveyard
+  c1,A line,target_count:one target_type:creature target_type:land target_zone:graveyard return:graveyard_to_hand
   c1.2,sub-ability of c1,lifegain_amount:6
 mtgish: rules=SpellActions
 verify_flags: bounce: only oracle says it, script tags lack bounce
@@ -3034,7 +3034,7 @@ mtgish: rules=Activated
 forge_ai: AILogic=-
 
 card: Watcher for Tomorrow
-tags: cardtype:creature type:human type:wizard kw:hideaway num:4 enters_tapped trigger_scope:self trigger:leaves return_exiled
+tags: cardtype:creature type:human type:wizard kw:hideaway num:4 enters_tapped trigger_scope:self trigger:leaves return:exile_to_hand return_exiled
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,replacement,"",replace_moved,"",ValidCard=Card.Self,""
   c2,leaves_self,"",changezone,"",Defined=ExiledWith,""
@@ -3044,7 +3044,7 @@ groups[4]{id,source,tags}:
   c0,card,enters_tapped
   k1,K line,kw:hideaway num:4
   c2,T line,trigger_scope:self trigger:leaves
-  c2.2,sub-ability of c2,return_exiled
+  c2.2,sub-ability of c2,return:exile_to_hand return_exiled
 mtgish: rules=Hideaway AsPermanentEnters TriggerA
 forge_ai: AILogic=-
 
@@ -3612,13 +3612,13 @@ mtgish: rules=SagaChapters
 forge_ai: AILogic=-
 
 card: Psychic Spiral
-tags: cardtype:instant mill scales:graveyard target_count:all target_type:card target_scope:you_control shuffle target_count:one target_type:player
+tags: cardtype:instant mill scales:graveyard target_count:all target_type:card target_scope:you_control return:graveyard_to_library shuffle target_count:one target_type:player
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezoneall+mill+cleanup,numcards=X,ValidTgts=Player,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,target_count:all target_type:card target_scope:you_control shuffle
+  c1,A line,target_count:all target_type:card target_scope:you_control return:graveyard_to_library shuffle
   c1.2,sub-ability of c1,target_count:one target_type:player
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
