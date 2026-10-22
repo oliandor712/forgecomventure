@@ -1,7 +1,7 @@
-records_commit: fe3044a0e807da1c0f02911d90c0a4f18f3e5494
-branch: cd/claude2
-created: 2026-10-22T21:08:48+00:00
-entries[62|]{path|hash}:
+records_commit: b5895d4fed92b93d07a0613880c57778765a538d
+branch: campaign-design
+created: 2026-10-22T21:53:46+00:00
+entries[64|]{path|hash}:
   .claude/agents/deck-balance-lab.md|1e1a3d15b05cbbc7b76a9dc757b585b792bc90af
   .claude/agents/deck-builder.md|0ac3eb4856798cd5409e37a21c0fdb6be9e43c61
   .claude/agents/forge-ai-lab.md|18058f482c3826816f44ec5e7617ebff42be86e4
@@ -32,10 +32,10 @@ entries[62|]{path|hash}:
   tools/agents/AGENT_KNOWLEDGE.md|bcde353c1ff1218ecf914bfbf3a590dae67f30a2
   tools/agents/CLAUDE2_SYNC_CHECK.md|0b996b5c30ff5d25a77d517b296875ccee10a3a2
   tools/agents/CONTEXT.md|42b76238dbb8f2f20fd329ffb81e76e31d97de46
-  tools/agents/HANDOVER.md|33b3ee66ad23dfbb664c5f7cd45158403b9577ea
+  tools/agents/HANDOVER.md|32cb4306221aab173638a12a5d477067eccd728c
   tools/agents/MAIN_SESSION_BRIEF.md|906ffdfdcdca8b065643c34d0ee9e32f01f44127
   tools/agents/NEW_SESSION_PROMPT.md|b7135d3a41813ffc929442e0aacae7a500d674a8
-  tools/agents/TOOLBOX.md|e70c145073ccd212097dd4ca3808e32d25607ef7
+  tools/agents/TOOLBOX.md|c3533a2cad84f1e01ebf84f5889a257e83d5ffe4
   tools/agents/agentctl.py|f3fe9c49aff244e384cc70a69d6e1b90d26510ef
   tools/agents/analysis/deck-balance-lab.md|c068929cba85dd1a6302922d0f427a2b6515cda7
   tools/agents/analysis/forge-ai-lab.md|cb3a0494195160830547d63ad3844b16f620b57a
@@ -43,16 +43,18 @@ entries[62|]{path|hash}:
   tools/agents/coordinator/interactions.log|3341d47173e80b9069227084bad9469ba2b803ea
   tools/agents/coordinator/productivity.csv|1ec1ce83c4b20d9f5b14b0726909a8af422c7e08
   tools/agents/docpush.py|5aafccdacbd34bce1699807723c98818898a2c41
-  tools/agents/human_logic.toon|c5c02137ed3127b90d1a2f16f8454bfc80b578a0
+  tools/agents/human_logic.toon|a722d5aebbd8a9ec0d4ce9169930b2e7a18870f6
   tools/agents/mailbox.py|d2c53572c26342bb2c070440ea9a496bcc9189d1
   tools/agents/mailbox/README.md|4486d8bc3b94c1a82d68a9a0417d9a7c2ebb59bb
   tools/agents/mailbox/msg/claude1_00001_status.toon|dadc9a6232ca1ff51428d2690a931c6da5e9e663
   tools/agents/mailbox/msg/claude1_00002_note.toon|ef4b17a26de582c15f8eb653aceacb22cb8ccc08
   tools/agents/mailbox/msg/claude1_00003_status.toon|95ca8cbd6265f071f64bdad3c46fb5bea7f8c1eb
+  tools/agents/mailbox/msg/claude1_00004_status.toon|59d8e4a838ef324e33f785fa93776dd027c53d9b
   tools/agents/mailbox/msg/claude2_00001_status.toon|bae55a6639dc5bcef80300f85e270c74cf745781
   tools/agents/mailbox/msg/claude2_00002_reply.toon|73aba2eda9c4186dd6c89ece4b1e79fafd5c2bba
   tools/agents/mailbox/msg/claude2_00003_reply.toon|c59716593417e9aeba81f5fffe2ef54ca5507eed
   tools/agents/mailbox/msg/claude2_00004_status.toon|fd12cfa46e5cdc08d4f2a6f38138e0cb86aafc37
+  tools/agents/mailbox/read/claude1.toon|b09eda1d855f83ffbdec93a0ad5eba16db42e161
   tools/agents/projects/agent_tool_test.toon|efde373ac3e3d421f8a3fe8cc4c4409c4574151e
   tools/agents/projects/claude2_agents.md|3a5d00568c1257584b09f5e69a428b1f0db4128e
   tools/agents/reference/MTG_COMP_RULES_20260807.txt|93f1becbbe17d493c29414198b17098fc30feafb
@@ -63,4 +65,4 @@ entries[62|]{path|hash}:
   tools/agents/retired_briefs/forge-ai-lab.2026-10-21.md|f11c22414eb11765ef7c42c5a85cc9eead994e53
   tools/agents/sync_check.py|c1c1d7f8f484a8772f9100b47050ad2c508703a9
   tools/agents/toolbox.py|e8d1cc1a07ede3a491a20c7a2d9f95d8629cfee1
-  tools/concordia/|07c4eca5b853aebd0c8364f0f8a4db9128ea1745
+  tools/concordia/|a93e44cb0cfb39cd126795cec97977d0030aa798
