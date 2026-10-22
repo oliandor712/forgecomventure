@@ -25,7 +25,7 @@ import tag_extra as TX
 
 READER_RULES = """You are the BLIND READER. You see only tags. Rules (strict):
 1. Read ONLY the two files you are given: one batch file (cards) and its reminders file (reminder texts of the keywords and tokens that occur in the batch, plus `tag_legend`: one line of meaning for each structured tag family in the batch; use it to read the tags). Do not open, list, search or fetch anything else (no repo, no card databases, no web, no other run folders). Do not run shell commands.
-2. Each card is an id plus tags, grouped. Tags are lower case `family:value` words. Groups (k1, c1, c1.2 ...) are tags that came from one line of the card; links relate groups. You are NOT told the card's name, cost, power/toughness or Oracle text. The reminders file explains keywords (kw:<name>) and predefined tokens (token_type:<name>) in rules language: use it to understand them, but for a keyword write the keyword itself (with its numbers or cost placeholders), not its reminder text.
+2. Each card is an id plus `typing` (what the card itself is: supertype, card type, subtypes; context only, never write a type line) and `tags` (what its abilities do), grouped. Tags are lower case `family:value` words. Groups (k1, c1, c1.2 ...) are tags that came from one line of the card; links relate groups. You are NOT told the card's name, cost, power/toughness or Oracle text. The reminders file explains keywords (kw:<name>) and predefined tokens (token_type:<name>) in rules language: use it to understand them, but for a keyword write the keyword itself (with its numbers or cost placeholders), not its reminder text.
 3. For every card write the rules text (Magic Oracle style, one line per ability, '/' between abilities) that these tags describe, as exactly as the tags allow. Use only what the tags say. If a tag does not say an amount, mana cost or exact wording, write a placeholder such as {cost}, N or X instead of guessing a real value. Do not add abilities the tags do not support. Do NOT write a type line (e.g. "Creature - Elf"); write only rules text.
 4. If you think you recognise the real card, say so in `recognised` (true) but still write only what the tags support. Never write the card's name.
 5. List in `unclear` every tag you could not turn into rules text, and in `conflicts` any tags that contradict each other.
@@ -37,7 +37,8 @@ def tag_blind(rec):
     """the blind view of one record: rules tags, groups and links only. AI Tags (tag_verify.is_ai_tag: opaque metrics, the AILogic reference, umbrella labels) are segregated and not shown at all.
     Group ids are kept; the source of a group (K line, A line ...), clauses, mtgish and AI lines are dropped"""
     groups = {("x" if g == "v" else g): [t for t in ts if not TV.is_ai_tag(t)] for g, ts in rec["groups"].items()}
-    return {"tags": [t for t in rec["tags"] if not TV.is_ai_tag(t)],
+    ty = ("supertype:", "cardtype:", "type:", "landtype:")
+    return {"typing": [t for t in rec["tags"] if t.startswith(ty)], "tags": [t for t in rec["tags"] if not TV.is_ai_tag(t) and not t.startswith(ty)],
             "groups": {g: " ".join(ts) for g, ts in groups.items() if ts}, "links": ["%s %s %s" % l for l in rec["links"] if not any(TV.is_ai_tag(p.split(":", 1)[-1]) for p in (l[0], l[2]))]}
 
 
@@ -301,7 +302,7 @@ def leak_check(wd, key):
         raws[fn] = open(os.path.join(wd, "in", fn)).read().lower()
         if not fn.startswith("batch_"): continue
         d = json.load(open(os.path.join(wd, "in", fn)))
-        for c in d["cards"]: own[c["id"]] = " ".join(c["tags"]).lower()
+        for c in d["cards"]: own[c["id"]] = " ".join(c.get("typing", []) + c["tags"]).lower()
         for pat in ("oracle:", "mtgish:", "forge_ai:", "clauses[", "svar:", "ailogic$"):
             if pat in raws[fn]: bad.append("%s contains %r" % (fn, pat))
     for cid, name in key.items():
