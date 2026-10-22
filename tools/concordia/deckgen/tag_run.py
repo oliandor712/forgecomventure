@@ -15,7 +15,7 @@ import tag_extra as TX
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 MTGISH = "/home/user/i5jb/mtgish/data/mtgish.lines.json"
 SUPERTYPES = {"Legendary", "Basic", "Snow", "World", "Ongoing"}
-CARDTYPES = ["Creature", "Instant", "Sorcery", "Enchantment", "Artifact", "Planeswalker", "Land", "Battle"]
+CARDTYPES = ["Creature", "Instant", "Sorcery", "Enchantment", "Artifact", "Planeswalker", "Land", "Battle", "Kindred", "Conspiracy", "Dungeon", "Phenomenon", "Plane", "Scheme", "Vanguard"]   # CR 205.2a
 BASIC_LAND = {"Plains", "Island", "Swamp", "Mountain", "Forest"}
 COLOR = {"W": "white", "U": "blue", "B": "black", "R": "red", "G": "green"}
 COLORWORD = {"white": "white", "blue": "blue", "black": "black", "red": "red", "green": "green"}
@@ -56,24 +56,40 @@ def snake(s):
 
 
 def kw_tags(line):
-    """K: line -> base keyword tag plus qualifier tags (colour, type, number, cost kind). Keyword stays a separate tag; qualifiers are separate tags (user 2026-10-22)."""
+    """K: line -> base keyword tag plus qualifier tags (user 2026-10-22). Names that are not rules keywords (Forge engine lines such as ETBReplacement)
+    become forge_line:<name>. Protection qualifiers are protection_from:<colour|type>; Enchant/Equip target types are target_type:<t>;
+    colours, numbers and cost kinds in the cost are color:, num:, cost:."""
     parts = line[2:].split(":")
     base = parts[0].strip()
-    tags = ["kw:" + snake(base)]
     rest = ":".join(parts[1:])
+    m = re.match(r"^Protection from (.+)$", base, re.I)
+    if m:
+        tags = ["kw:protection"]
+        for w in re.findall(r"\b(white|blue|black|red|green|colorless|everything|[a-z]+s)\b", m.group(1), re.I):
+            tags.append("protection_from:" + w.lower().rstrip("s") if w.lower() not in COLORWORD and w.lower() not in ("everything", "colorless") else "protection_from:" + w.lower())
+        return list(dict.fromkeys(tags))
+    key = snake(base).replace("_", "")
+    if KWSET and key not in KWSET:
+        return ["forge_line:" + snake(base)]
+    tags = ["kw:" + snake(base)]
     if not rest: return tags
-    low = rest
-    for w, c in COLORWORD.items():
-        if re.search(r"\b" + w + r"\b", low, re.I) or re.search(r"\bCard\.%s\b" % w.capitalize(), rest): tags.append("color:" + c)
-    for ty in ("Creature", "Artifact", "Enchantment", "Land", "Planeswalker", "Instant", "Sorcery", "Vehicle", "Equipment", "Aura", "Permanent", "Player", "Everything"):
-        if re.search(r"\b" + ty + r"\b", rest): tags.append(("qualifier:" if ty == "Everything" else "type:") + ty.lower())
-    for m in re.findall(r"\b(Plains|Island|Swamp|Mountain|Forest|Snow)\b", rest): tags.append("landtype:" + m.lower() if m != "Snow" else "supertype:snow")
-    # cost text: digits are numbers, single W/U/B/R/G letters are colours, Sac/PayLife/Discard are cost kinds
+    if snake(base) == "protection":
+        for w, c in COLORWORD.items():
+            if re.search(r"\b%s\b" % w, rest, re.I): tags.append("protection_from:" + c)
+        for ty in ("Creature", "Artifact", "Enchantment", "Instant", "Sorcery", "Land", "Planeswalker", "Everything", "Multicolored", "Player"):
+            if re.search(r"\b%s\b" % ty, rest): tags.append("protection_from:" + ty.lower())
+        for sub in re.findall(r"\.([A-Z][a-z]+)", rest):
+            if sub.lower() not in COLORWORD and sub not in ("Chosen", "Color"): tags.append("protection_from:" + sub.lower())
+        return list(dict.fromkeys(tags))
+    if snake(base) in ("enchant", "equip", "fortify", "attach"):
+        for ty in ("Creature", "Artifact", "Enchantment", "Land", "Planeswalker", "Vehicle", "Permanent", "Player", "Equipment", "Aura"):
+            if re.search(r"\b%s\b" % ty, rest): tags.append("target_type:" + ty.lower())
+    for m2 in re.findall(r"\b(Plains|Island|Swamp|Mountain|Forest)\b", rest): tags.append("landwalk:" + m2.lower())
     cost = re.sub(r"\([^)]*\)", "", rest)
-    for tok in re.split(r"[ :<>/]+", cost):
-        if tok.isdigit(): tags.append("num:" + tok)
-        elif tok == "X": tags.append("num:x")
-        elif tok in COLOR: tags.append("color:" + COLOR[tok])
+    for t in re.split(r"[ :<>/]+", cost):
+        if t.isdigit(): tags.append("num:" + t)
+        elif t == "X": tags.append("num:x")
+        elif t in COLOR: tags.append("color:" + COLOR[t])
     if "PayLife" in rest: tags.append("cost:life")
     if "Sac<" in rest: tags.append("cost:sacrifice")
     if "Discard<" in rest: tags.append("cost:discard")
@@ -183,10 +199,15 @@ def record(name, text, mg):
         if m: sv[m.group(1)] = m.group(2)
     types = next((l[6:] for l in lines if l.startswith("Types:")), "")
     tags = type_tags(types)
+    kgroups = {}
     for l in lines:
-        if l.startswith("K:"): tags += kw_tags(l)
+        if l.startswith("K:"):
+            kt = kw_tags(l)
+            kgroups["k%d" % (len(kgroups) + 1)] = kt
+            tags += kt
     base = sorted(t for t in AT.tags_of(text) if not t.startswith(("has:", "needs:", "hint:")))
-    clauses, links = [], []
+    ex_tags, ex_links, ex_groups = TX.extra(lines, sv, types, text)
+    clauses, links = [], list(ex_links)
     n = 0
     for l in lines:
         m = re.match(r"^(A|S|T|R):(.*)$", l)
@@ -194,30 +215,34 @@ def record(name, text, mg):
         n += 1
         cl = clause_from(sv, m.group(2), m.group(1), "c%d" % n, l)
         cl["secondary"] = "Secondary$ True" in l
+        cl["kind"] = m.group(1)
+        if cl["verb"] == "?" and m.group(1) == "R": cl["verb"] = "replace_" + snake(params(m.group(2)).get("Event", ""))
         clauses.append(cl)
-        if cl["trigger"] == "flip-up": links.append(("c%d.trigger" % n, "requires", "kw:morph")); tags.append("flip-up")
+        if cl["trigger"] == "flip-up":
+            mk = next((k for k, v in kgroups.items() if "kw:morph" in v), "kw:morph")
+            links.append(("c%d:flip-up" % n, "requires", mk)); tags.append("flip-up"); ex_groups.setdefault("c%d" % n, []).append("flip-up")
         if cl["payload"] and cl["duration"]:
-            links.append(("c%d.payload" % n, "lasts", "c%d.duration" % n))
-            if cl["duration"].startswith("duration:eot"): tags.append("duration:eot")
-        if cl["payload"] and cl["affected"]: links.append(("c%d.affected" % n, "receives", "c%d.payload" % n))
+            links.append(("c%d:payload" % n, "lasts", "c%d:duration" % n))
+            if cl["duration"].startswith("duration:eot"): tags.append("duration:eot"); ex_groups.setdefault(cl["id"], []).append("duration:eot")
+        if cl["payload"] and cl["affected"]: links.append(("c%d:affected" % n, "receives", "c%d:payload" % n))
     for l in lines:
         if l.startswith("K:"):
             b = l[2:].split(":")[0].strip()
+            kid = next((k for k, v in kgroups.items() if v and v[0] == "kw:" + snake(b)), "kw:" + snake(b))
             for pv in provides(b):
-                tags.append(pv); links.append(("kw:" + snake(b), "provides", pv))
+                tags.append(pv); links.append((kid, "provides", pv))
     for cl in clauses:
         for pl in cl["payload"].split():
-            if "=" not in pl and snake(pl) in KWSET.union({"first_strike", "double_strike", "lifelink", "deathtouch", "flying", "trample", "haste", "vigilance", "menace", "reach", "hexproof", "indestructible"}): tags.append(snake(pl))
-            if pl == "lifelink": tags.append("lifegain")
-        if "counters_" in cl["affected"]: tags.append("scales:counters")
-        if cl["verb"] in ("pump", "pumpall") and cl["payload"] and "ValidTgts" in cl["affected"]: tags.append("pump_single")
-    ex_tags, ex_links = TX.extra(lines, sv, types, text)
-    links += ex_links
+            if "=" not in pl and snake(pl) in KWSET.union({"first_strike", "double_strike", "lifelink", "deathtouch", "flying", "trample", "haste", "vigilance", "menace", "reach", "hexproof", "indestructible"}): tags.append(snake(pl)); ex_groups.setdefault(cl["id"], []).append(snake(pl))
+            if pl == "lifelink": tags.append("lifegain"); ex_groups.setdefault(cl["id"], []).append("lifegain")
+        if "counters_" in cl["affected"]: tags.append("scales:counters"); ex_groups.setdefault(cl["id"], []).append("scales:counters")
+        if cl["verb"] in ("pump", "pumpall") and cl["payload"] and "ValidTgts" in cl["affected"]: tags.append("pump_single"); ex_groups.setdefault(cl["id"], []).append("pump_single")
     tags = list(dict.fromkeys(tags + base + ex_tags))
     # keyword listed once: drop the plain tag when kw:<name> is present (user: trample listed twice)
     tags = [t for t in tags if not ("kw:" + t) in tags]
     # removal split by method (user): drop the umbrella 'removal' when a method tag exists
     if "removal" in tags and any(t.startswith("remove:") or t == "damage" for t in tags): tags.remove("removal")
+    tags = list(dict.fromkeys(t.lower() for t in tags))   # all tags lower case (scales:Goblin -> scales:goblin)
     # 2nd opinion: mtgish
     m = mg.get(name.lower()); mt = ""
     if m:
@@ -231,7 +256,9 @@ def record(name, text, mg):
     ai = sorted(set(re.findall(r"AILogic\$ ?([A-Za-z0-9_]+)", face)) | set(re.findall(r"^SVar:AttachAILogic:(\w+)", face, re.M)))
     aipref = "AIPreference" in face or "SVar:AIPreference" in face
     rd = "AI:RemoveDeck" in face
-    return dict(name=name, new=[t for t in ex_tags if t in tags], tags=tags, clauses=clauses, links=links, mtgish=mt, ai=ai, aipref=aipref, removedeck=rd, nlines=n)
+    groups = dict(kgroups)
+    for gid, ts in ex_groups.items(): groups[gid] = [t.lower() for t in ts]
+    return dict(name=name, groups=groups, base=[t.lower() for t in base], new=[t.lower() for t in ex_tags if t.lower() in tags], tags=tags, clauses=clauses, links=links, mtgish=mt, ai=ai, aipref=aipref, removedeck=rd, nlines=n)
 
 
 def render(r):
@@ -241,6 +268,10 @@ def render(r):
     if r["links"]:
         o.append("links[%d]{from,rel,to}:" % len(r["links"]))
         for a, b, c in r["links"]: o.append("  %s,%s,%s" % (a, b, c))
+    o.append("groups[%d]{id,source,tags}:" % len(r["groups"]))
+    for gid, ts in r["groups"].items():
+        src = "card" if gid == "c0" else ("K line" if gid.startswith("k") else "%s line" % next((c.get("kind", "?") for c in r["clauses"] if c["id"] == gid), "?"))
+        o.append("  %s,%s,%s" % (gid, src, q(" ".join(ts))))
     o.append("mtgish: " + r["mtgish"])
     o.append("forge_ai: AILogic=%s%s%s" % ("/".join(r["ai"]) or "-", " AIPreference" if r["aipref"] else "", " RemoveDeck" if r["removedeck"] else ""))
     return "\n".join(o)
@@ -266,8 +297,10 @@ def find_text(name):
 
 def write_approval(recs):
     fam = collections.OrderedDict()
+    existing = set(t for r in recs for t in r["base"])
     for r in recs:
         for t in r["new"]:
+            if t in existing: continue
             f = t.split(":")[0] if ":" in t else t
             d = fam.setdefault(f, collections.OrderedDict())
             d.setdefault(t, []).append(r["name"])

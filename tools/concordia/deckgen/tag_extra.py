@@ -1,7 +1,7 @@
 """New tags created to fill gaps seen across the references (human_logic.toon H56). Every tag family here is logged in
 tags/NEW_TAGS_FOR_APPROVAL.md and is PROPOSED until the user approves it. Source of each rule: the user's feedback on the starter sample
 (tags/TAG_FEEDBACK_STARTER_SAMPLE.md), the Forge script, and the Comprehensive Rules.
-extra(face_lines, svars, types, text) -> (tags, links)"""
+extra(face_lines, svars, types, text) -> (flat tags, links, groups {id: tags}). A group id says which script line a tag came from: tags in the same group are linked."""
 import re
 
 COLORS = {"W": "white", "U": "blue", "B": "black", "R": "red", "G": "green", "C": "colorless"}
@@ -28,6 +28,11 @@ DOC = {
  "damage / damage_amount:<n>": ("deals damage (damage is damage, not removal)", "Scorching Dragonfire, Rowan"),
  "die_replace:exile": ("'if it would die, exile it instead'", "Scorching Dragonfire, Garruk"),
  "target_count:one|up_to_<n>|all|x|each": ("how many things the effect picks", "Filter Out, Rowan, Oko"),
+ "trigger_scope:self|other": ("whether a zone-change trigger is about this card or other cards (enters, dies, leaves)", "found in the cross-check: Morbid Opportunist, Welcoming Vampire"),
+ "exile_from:<zone>": ("exiles cards out of a zone other than the battlefield (graveyard, hand, library)", "found in the cross-check: Scavenging Ooze, Squee"),
+ "token_type:copy": ("the token is a copy of another permanent", "found in the cross-check: Kiki-Jiki, Rite of Replication"),
+ "cast_free": ("casts a spell without paying its mana cost", "found in the cross-check: Rishkar's Expertise"),
+ "target_zone:<zone>": ("the zone the targets are in (graveyard, exile, hand, library)", "Victimize"),
  "target_type:<t> / target_filter:<f> / target_scope:you_control|opp_control": ("what the effect can pick: card type, filters such as nonland, and whose", "Filter Out, Scorching Dragonfire, Oblivion Ring"),
  "trigger:etb|dies|leaves|attacks|spell_cast|... / trigger_zone:graveyard / trigger_filter:<type>": ("trigger event, the zone it goes to, and a card-type filter on cast triggers", "Rancor, Oblivion Ring, Bontu's Monument"),
  "delayed:end_step / duration:end_step": ("an effect that happens at the next end step", "Kiki-Jiki"),
@@ -37,6 +42,15 @@ DOC = {
  "steal": ("gain control of something (linked to haste when the effect grants it)", "Rowan"),
  "cost_reduce_for:<type> + color:<c>": ("which spells a cost reduction applies to", "Bontu's Monument"),
  "counter:<type> / each_you_control": ("which counters are placed and on what", "Invasion of Moag"),
+ "cost_sacrifice_target:<t>": ("what a sacrifice cost sacrifices (self, land, creature ...)", "Harrow, Blighted Woodland"),
+ "sacrifice_type:<t>": ("what an edict makes players sacrifice", "Garruk"),
+ "token_cardtype:artifact": ("the token is an artifact", "Memnarch, Oko"),
+ "affects:<tribe>": ("which creature type a static effect applies to", "Goblin Rabblemaster"),
+ "steal_grants_<kw>": ("the control-gain effect also gives a keyword (linked to steal)", "Rowan"),
+ "return_exiled": ("returns what this card exiled when it leaves", "Oblivion Ring"),
+ "protection_from:<colour|type>": ("what a Protection keyword protects from (kw:protection stays the keyword)", "user: protection parsed as the keyword, colours and types as separate tags"),
+ "forge_line:<name>": ("a Forge engine line that is not a rules keyword (ETBReplacement, AlternateAdditionalCost, etbCounter ...)", "found in the cross-check: these were wrongly tagged kw:"),
+ "landwalk:<landtype>": ("which land type a landwalk keyword names", "user: landwalk type as its own tag"),
  "recursion:return_self": ("the card returns itself (to hand, from the graveyard)", "Rancor"),
 }
 
@@ -120,15 +134,18 @@ def cost_tags(cost, out):
 
 
 def extra(lines, sv, types, text):
-    tags, links = [], []
-    def add(*t): tags.extend(t)
+    groups = {"c0": []}          # group id -> tags: c0 = card level, cN = the N-th A/S/T/R line (same numbering as tag_run clauses)
+    cur = ["c0"]
+    links = []
+    def add(*t): groups[cur[0]].extend(t)
+    def lk(a, rel, b): links.append(("%s:%s" % (cur[0], a), rel, "%s:%s" % (cur[0], b)))
     for l in lines:
         if l.startswith("Loyalty:"): add("loyalty:" + l[8:].strip(), "counters:loyalty")
         if l.startswith("Defense:"): add("defense:" + l[8:].strip())
     if "AlternateMode:DoubleFaced" in text or "AlternateMode:Modal" in text: add("transform")
     if "Basic" in types.split() and "Land" in types.split():
         for t, c in (("Plains", "white"), ("Island", "blue"), ("Swamp", "black"), ("Mountain", "red"), ("Forest", "green")):
-            if t in types.split(): add("mana_source", "mana:" + c, "trigger:tap"); links.append(("mana_source", "produces", "mana:" + c))
+            if t in types.split(): add("mana_source", "mana:" + c, "trigger:tap"); lk("mana_source", "produces", "mana:" + c)
     oracle = next((l[7:] for l in lines if l.startswith("Oracle:")), "")
     if re.search(r"enters(?: the battlefield)? tapped(?!.*unless)", oracle) and "Basic" not in types.split(): add("enters_tapped")
     bodies = []
@@ -139,25 +156,30 @@ def extra(lines, sv, types, text):
     def chain(b):
         out = [b]
         p = params(b)
-        for k in ("Execute", "SubAbility"):
-            nx = p.get(k)
-            if nx in sv and nx not in seen_sv:
-                seen_sv.add(nx); out += chain(sv[nx])
+        for k in ("Execute", "SubAbility", "Choices", "RepeatSubAbility", "FallbackAbility"):
+            for nx in re.split(r"[ ,]+", p.get(k, "")):
+                if nx in sv and nx not in seen_sv:
+                    seen_sv.add(nx); out += chain(sv[nx])
         return out
-    for kind, body, line in bodies:
+    for n_, (kind, body, line) in enumerate(bodies, 1):
+        cur[0] = "c%d" % n_
+        groups.setdefault(cur[0], [])
         p = params(body)
-        if kind == "A": cost_tags(p.get("Cost", ""), tags)
+        if kind == "A": cost_tags(p.get("Cost", ""), groups[cur[0]])
+        if "Sac<" in line and "cost:sacrifice" not in groups[cur[0]]: add("cost:sacrifice")
+        if "Discard<" in line and "cost:discard" not in groups[cur[0]]: add("cost:discard")
         if kind == "T":
             mode = p.get("Mode", "")
-            if mode == "ChangesZone":
+            if mode in ("ChangesZone", "ChangesZoneAll"):
                 o, d = p.get("Origin", "Any"), p.get("Destination", "")
+                add("trigger_scope:self" if "Card.Self" in p.get("ValidCard", "") else "trigger_scope:other")
                 if d == "Battlefield": add("trigger:etb")
                 elif o == "Battlefield" and d == "Graveyard": add("trigger:dies", "trigger_zone:graveyard")
                 elif o == "Battlefield": add("trigger:leaves")
-            elif mode == "SpellCast":
+            elif mode in ("SpellCast", "SpellCastOrCopy"):
                 add("trigger:spell_cast")
                 for ty in re.findall(r"[A-Z][a-z]+", p.get("ValidCard", "")): add("trigger_filter:" + tok(ty))
-            elif mode == "Attacks": add("trigger:attacks")
+            elif mode in ("Attacks", "AttackersDeclared", "AttackerBlocked", "AttackerUnblocked"): add("trigger:attacks" if mode in ("Attacks", "AttackersDeclared") else "trigger:" + tok(mode))
             elif mode == "Discarded": add("trigger:discard")
         if kind == "S":
             mode = p.get("Mode", "")
@@ -170,14 +192,15 @@ def extra(lines, sv, types, text):
                 vc = p.get("ValidCard", "")
                 add("cost_reduce")
                 for ty in re.findall(r"[A-Z][a-z]+", vc):
-                    if ty in ("Creature", "Artifact", "Enchantment", "Instant", "Sorcery", "Planeswalker", "Land"): add("cost_reduce_for:" + tok(ty)); links.append(("cost_reduce", "filters", "cardtype:" + tok(ty)))
-                    elif ty in ("White", "Blue", "Black", "Red", "Green"): add("color:" + tok(ty)); links.append(("cost_reduce", "filters", "color:" + tok(ty)))
+                    if ty in ("Creature", "Artifact", "Enchantment", "Instant", "Sorcery", "Planeswalker", "Land"): add("cost_reduce_for:" + tok(ty)); lk("cost_reduce", "filters", "cardtype:" + tok(ty))
+                    elif ty in ("White", "Blue", "Black", "Red", "Green"): add("color:" + tok(ty)); lk("cost_reduce", "filters", "color:" + tok(ty))
         if kind == "R" and p.get("Event") == "Moved" and p.get("Destination") == "Graveyard":
             if "Exile" in sv.get(p.get("ReplaceWith", ""), ""): add("die_replace:exile")
         for b in chain(body):
             bp = params(b)
             api = (re.match(r"^(?:AB|SP|DB)\$ (\w+)", b) or [0, ""])[1]
-            target_tags(bp, tags, api)
+            if not (kind == "T" and b is body): target_tags(bp, groups[cur[0]], api)   # a trigger line's ValidCard(s) filter describes the event, not a target
+            if bp.get("ValidTgts") and bp.get("Origin") in ("Graveyard", "Exile", "Hand", "Library"): add("target_zone:" + bp["Origin"].lower())
             if api == "Mana":
                 pr = bp.get("Produced", "")
                 add("mana_source")
@@ -214,6 +237,8 @@ def extra(lines, sv, types, text):
                 elif o == "Battlefield" and d == "Library": add("remove:tuck")
                 elif o == "Graveyard" and d == "Hand" and bp.get("Defined", "").startswith("TriggeredNewCard"): add("recursion:return_self")
                 if o == "Hand" and d == "Exile": add("impulse_draw_part:exile_hand")
+                if d == "Exile" and o in ("Graveyard", "Hand", "Library"): add("exile_from:" + o.lower())
+                if "shuffle" in (bp.get("SpellDescription", "") + line).lower(): add("shuffle")
             if api in ("Destroy", "DestroyAll"): add("remove:destroy")
             if api in ("DealDamage", "DamageAll"):
                 add("damage")
@@ -224,19 +249,21 @@ def extra(lines, sv, types, text):
                 if bp.get("Defined") in ("Player", "Opponent", "Player.Opponent"):
                     add("remove:sacrifice")
                 if "SacValid" in bp: add("sacrifice_type:" + tok(bp["SacValid"].split(".")[0]))
-            if bp.get("ConditionDefined") == "Remembered" and api == "Token": links.append(("token_make", "conditional_on", "effect:sacrifice"))
-            if api == "ChangeZone" and bp.get("Defined") == "ExiledWith": add("return_exiled"); links.append(("return_exiled", "pairs_with", "trigger:leaves"))
+            if bp.get("ConditionDefined") == "Remembered" and api == "Token": lk("token_make", "conditional_on", "effect:sacrifice")
+            if api == "ChangeZone" and bp.get("Defined") == "ExiledWith": add("return_exiled"); lk("return_exiled", "pairs_with", "trigger:leaves")
             if api == "Effect":
                 for sname in re.split(r"[ ,]+", bp.get("StaticAbilities", "")):
                     if "MayPlay" in sv.get(sname, ""):
                         add("impulse_draw")
                         d = bp.get("Duration", "")
                         add({"UntilTheEndOfYourNextTurn": "duration:next_turn_end", "EndOfTurn": "duration:eot"}.get(d, "duration:eot" if not d else "duration:" + tok(d)))
-            if api == "Token": token_tags(bp, tags)
-            if api == "ExchangeControl": add("exchange_control", "steal"); links.append(("exchange_control", "pairs_with", "steal"))
+            if api == "Token": token_tags(bp, groups[cur[0]])
+            if api == "CopyPermanent": add("token_make", "token_type:copy")
+            if api == "Play" and bp.get("WithoutManaCost") == "True": add("cast_free")
+            if api == "ExchangeControl": add("exchange_control", "steal"); lk("exchange_control", "pairs_with", "steal")
             if api == "GainControl":
                 add("steal")
-                if "AddKWs" in bp: add("steal_grants_" + tok(bp["AddKWs"])); links.append(("steal", "pairs_with", tok(bp["AddKWs"])))
+                if "AddKWs" in bp: add("steal_grants_" + tok(bp["AddKWs"])); lk("steal", "pairs_with", tok(bp["AddKWs"]))
                 if bp.get("LoseControl") == "EOT": add("duration:eot")
             if api == "Animate":
                 if bp.get("RemoveAllAbilities") == "True": add("loses_all_abilities")
@@ -249,7 +276,9 @@ def extra(lines, sv, types, text):
             if api == "CopyPermanent" and bp.get("AtEOT") == "Sacrifice": add("delayed:end_step", "effect:sacrifice", "duration:end_step")
             if "KW" in bp and "can't block" in bp["KW"]: add("cant_block")
             if "MayPlay" in b or "MayPlay$" in b: add("impulse_draw")
-    out = list(dict.fromkeys(tags))
-    if "impulse_draw" in out and "impulse_draw_part:exile_hand" in out: out.remove("impulse_draw_part:exile_hand")
-    out = [t for t in out if not t.startswith("impulse_draw_part")]
-    return out, list(dict.fromkeys(links))
+    out_groups = {}
+    for gid, ts in groups.items():
+        ts = [t for t in dict.fromkeys(ts) if not t.startswith("impulse_draw_part")]
+        if ts: out_groups[gid] = ts
+    flat = list(dict.fromkeys(t for ts in out_groups.values() for t in ts))
+    return flat, list(dict.fromkeys(links)), out_groups

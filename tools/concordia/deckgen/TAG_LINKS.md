@@ -78,3 +78,12 @@ links[2]{from,rel,to}:
 2. Sub-ability chains: decided during the cardlist run (the user deferred rule gaps to the run).
 3. Source order: 1st card script, 2nd mtgish (less reliable), 3rd Forge AI (AILogic$ and forge-ai) as a reference (H54).
 4. Still to list during the run: trigger vocabulary from Forge `Mode$` values and the eight gap groups from the card-logic test.
+
+## How linking shows in the output (implemented in `tag_run.py`, 2026-10-22)
+No hash. Linked tags are identified by group ids that are positional within one card:
+- `k1, k2 ...` = the card's K: lines in order (a keyword plus its qualifier tags, e.g. `k2: kw:morph num:2 color:white`).
+- `c0` = card-level tags (type-derived, loyalty, defense, transform). `c1, c2 ...` = the card's A:/S:/T:/R: lines in order, the same numbering as the `clauses` table.
+- Tags in the same group came from the same script line, so they belong together (a token's type, count and colour; a cost and the effect it pays for). The flat `tags:` line is the union, for tools that only need the set.
+- `links[]` rows connect things across groups using `group:tag` references or group ids: `c1:flip-up requires k2`, `c1:payload lasts c1:duration`, `c3:token_make conditional_on c3:effect:sacrifice`, `c1:mana_source produces c1:mana:white`.
+- A card-wide id is `<card name>#<group id>` if needed across cards.
+Limits: tags from the old `ability_tags` tagger (draw, token_make, removal ...) are card-level and carry no group yet; only tags created in this work are grouped. Relations in use: requires, provides, lasts, receives, produces, filters, pairs_with, conditional_on.
