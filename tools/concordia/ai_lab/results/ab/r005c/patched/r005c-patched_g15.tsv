@@ -1,0 +1,118 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Island; Island; Karfell Harbinger; Aquamoeba; Turtleshell Changeling; Myr Quadropod; Slip Out the Back
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+6	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+8	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+10	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+12	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+16	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+16	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+16	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step
+25	A's Cleanup step	TURN	Turn 25 (B)
+25	B's Untap step	PHASE	B's Untap step
+25	B's Upkeep step	PHASE	B's Upkeep step
+25	B's Draw step	PHASE	B's Draw step
+25	B's Main phase, precombat	PHASE	B's Main phase, precombat
+25	B's Main phase, precombat	STACK_ADD	B cast Millikin
+25	B's Main phase, precombat	STACK_ADD	B triggered Sai, Master Thopterist
+25	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+25	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+25	B's Declare Attackers Step	COMBAT	B assigned Aetherjacket (47), Gingerbrute (76), Etherium Sculptor (74), Chief of the Foundry (49), Thopter Token (85), Ornithopter (69) and Sai, Master Thopterist (81) to attack A.
+25	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+25	B's Declare Blockers Step	COMBAT*	A didn't block Aetherjacket (47). A assigned Pollywog Prodigy (17) and Turtleshell Changeling (7) to block Gingerbrute (76). A assigned Deranged Assistant (1), Turtleshell Changeling (9) and Myr Quadropod (13) to block Etherium Sculptor (74). A assigned Triton Shorestalker (4) and Karfell Harbinger (2) to block Chief of the Foundry (49). A didn't block Thopter Token (85). A didn't block Ornithopter (69). A assigned Aquamoeba (16), Alandra, Sky Dreamer (40) and Aquamoeba (15) to block Sai, Master Thopterist (81).
+25	B's Declare Blockers Step	ZONE_CHANGE	Mycosynth Wellspring (77) was put into Graveyard from Battlefield.
+25	B's Declare Blockers Step	ZONE_CHANGE	Gingerbrute (76) was put into Graveyard from Battlefield.
+25	B's Declare Blockers Step	STACK_ADD	B activated Sai, Master Thopterist
+25	B's Declare Blockers Step	STACK_ADD	B triggered Mycosynth Wellspring
+25	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+25	B's Combat Damage Step	PHASE	B's Combat Damage Step
+25	B's Combat Damage Step	DAMAGE	Aetherjacket (47) deals 3 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Etherium Sculptor (74) deals 1 damage to Deranged Assistant (1).
+25	B's Combat Damage Step	DAMAGE*	Etherium Sculptor (74) deals 1 damage to Turtleshell Changeling (9).
+25	B's Combat Damage Step	DAMAGE	Chief of the Foundry (49) deals 1 damage to Karfell Harbinger (2).
+25	B's Combat Damage Step	DAMAGE	Chief of the Foundry (49) deals 1 damage to Triton Shorestalker (4).
+25	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 2 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Ornithopter (69) deals 1 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 1 damage to Alandra, Sky Dreamer (40).
+25	B's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 damage to Chief of the Foundry (49).
+25	B's Combat Damage Step	DAMAGE	Karfell Harbinger (2) deals 2 damage to Chief of the Foundry (49).
+25	B's Combat Damage Step	DAMAGE	Deranged Assistant (1) deals 1 damage to Etherium Sculptor (74).
+25	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (9) deals 1 damage to Etherium Sculptor (74).
+25	B's Combat Damage Step	DAMAGE*	Myr Quadropod (13) deals 1 damage to Etherium Sculptor (74).
+25	B's Combat Damage Step	DAMAGE*	Aquamoeba (16) deals 1 damage to Sai, Master Thopterist (81).
+25	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Sai, Master Thopterist (81).
+25	B's Combat Damage Step	DAMAGE*	Aquamoeba (15) deals 1 damage to Sai, Master Thopterist (81).
+25	B's Combat Damage Step	LIFE	Life: A 5 > -1

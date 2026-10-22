@@ -1,0 +1,232 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Karfell Harbinger; Myr Quadropod; Sol Ring; Turtleshell Changeling; Island; Island; Island
+3	B's Cleanup step	TURN	Turn 3 (A)
+3	A's Untap step	PHASE	A's Untap step
+3	A's Upkeep step	PHASE	A's Upkeep step
+3	A's Draw step	PHASE	A's Draw step
+3	A's Main phase, precombat	PHASE	A's Main phase, precombat
+3	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+3	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+3	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+3	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+3	A's Combat Damage Step	PHASE	A's Combat Damage Step
+3	A's End of Combat Step	PHASE	A's End of Combat Step
+3	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+3	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+3	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+3	A's End step	PHASE	A's End step
+3	A's Cleanup step	PHASE	A's Cleanup step
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+5	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+5	A's Main phase, postcombat	STACK_ADD	A cast Triton Shorestalker
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) to attack B.
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4).
+7	A's Declare Blockers Step	STACK_ADD*	A activated Myr Quadropod
+7	A's Declare Blockers Step	STACK_RESOLVE*	Myr Quadropod (13) - Myr Quadropod (13) gains hidden cardname's power and toughness are switched until end of turn.
+7	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+7	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: B 20 > 19
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4).
+9	A's Declare Blockers Step	STACK_ADD*	A activated Myr Quadropod
+9	A's Declare Blockers Step	STACK_RESOLVE*	Myr Quadropod (13) - Myr Quadropod (13) gains hidden cardname's power and toughness are switched until end of turn.
+9	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+9	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 19 > 18
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4).
+11	A's Declare Blockers Step	STACK_ADD*	A activated Myr Quadropod
+11	A's Declare Blockers Step	STACK_RESOLVE*	Myr Quadropod (13) - Myr Quadropod (13) gains hidden cardname's power and toughness are switched until end of turn.
+11	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+11	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 18 > 17
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+13	B's Cleanup step	TURN	Turn 13 (A)
+13	A's Untap step	PHASE	A's Untap step
+13	A's Upkeep step	PHASE	A's Upkeep step
+13	A's Draw step	PHASE	A's Draw step
+13	A's Main phase, precombat	PHASE	A's Main phase, precombat
+13	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+13	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+13	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) to attack B.
+13	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+13	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4).
+13	A's Declare Blockers Step	STACK_ADD*	A activated Myr Quadropod
+13	A's Declare Blockers Step	STACK_RESOLVE*	Myr Quadropod (13) - Myr Quadropod (13) gains hidden cardname's power and toughness are switched until end of turn.
+13	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+13	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+13	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+13	A's Combat Damage Step	PHASE	A's Combat Damage Step
+13	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+13	A's Combat Damage Step	LIFE	Life: B 17 > 16
+13	A's End of Combat Step	PHASE	A's End of Combat Step
+13	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+13	A's End step	PHASE	A's End step
+13	A's Cleanup step	PHASE	A's Cleanup step
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Draw step	PHASE	A's Draw step
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) to attack B.
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4).
+15	A's Declare Blockers Step	STACK_ADD*	A activated Myr Quadropod
+15	A's Declare Blockers Step	STACK_RESOLVE*	Myr Quadropod (13) - Myr Quadropod (13) gains hidden cardname's power and toughness are switched until end of turn.
+15	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+15	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+15	A's Combat Damage Step	LIFE	Life: B 16 > 15
+15	A's End of Combat Step	PHASE	A's End of Combat Step
+15	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+15	A's Main phase, postcombat	STACK_ADD	A cast Karfell Harbinger
+15	A's End step	PHASE	A's End step
+15	A's Cleanup step	PHASE	A's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) to attack B.
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4).
+17	A's Declare Blockers Step	STACK_ADD*	A activated Myr Quadropod
+17	A's Declare Blockers Step	STACK_RESOLVE*	Myr Quadropod (13) - Myr Quadropod (13) gains hidden cardname's power and toughness are switched until end of turn.
+17	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+17	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+17	A's Combat Damage Step	LIFE	Life: B 15 > 14
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+17	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+17	A's End step	PHASE	A's End step
+17	A's Cleanup step	PHASE	A's Cleanup step
+19	B's Cleanup step	TURN	Turn 19 (A)
+19	A's Untap step	PHASE	A's Untap step
+19	A's Upkeep step	PHASE	A's Upkeep step
+19	A's Draw step	PHASE	A's Draw step
+19	A's Main phase, precombat	PHASE	A's Main phase, precombat
+19	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+19	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+19	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) to attack B.
+19	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+19	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4).
+19	A's Declare Blockers Step	STACK_ADD*	A activated Myr Quadropod
+19	A's Declare Blockers Step	STACK_RESOLVE*	Myr Quadropod (13) - Myr Quadropod (13) gains hidden cardname's power and toughness are switched until end of turn.
+19	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+19	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+19	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+19	A's Combat Damage Step	PHASE	A's Combat Damage Step
+19	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+19	A's Combat Damage Step	LIFE	Life: B 14 > 13
+19	A's End of Combat Step	PHASE	A's End of Combat Step
+19	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+19	A's Main phase, postcombat	STACK_ADD	A cast Vodalian Arcanist
+19	A's End step	PHASE	A's End step
+19	A's Cleanup step	PHASE	A's Cleanup step
+21	B's Cleanup step	TURN	Turn 21 (A)
+21	A's Untap step	PHASE	A's Untap step
+21	A's Upkeep step	PHASE	A's Upkeep step
+21	A's Draw step	PHASE	A's Draw step
+21	A's Main phase, precombat	PHASE	A's Main phase, precombat
+21	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+21	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+21	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+21	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+21	A's Combat Damage Step	PHASE	A's Combat Damage Step
+21	A's End of Combat Step	PHASE	A's End of Combat Step
+21	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+21	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+21	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+21	A's Main phase, postcombat	STACK_ADD	A cast Alandra, Sky Dreamer
+21	A's End step	PHASE	A's End step
+21	A's Cleanup step	PHASE	A's Cleanup step
+22	A's Cleanup step	TURN	Turn 22 (B)
+22	B's Untap step	PHASE	B's Untap step
+22	B's Upkeep step	PHASE	B's Upkeep step
+22	B's Draw step	PHASE	B's Draw step
+22	B's Main phase, precombat	PHASE	B's Main phase, precombat
+22	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+22	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+22	B's Declare Attackers Step	COMBAT	B assigned Gingerbrute (76), Sai, Master Thopterist (81), Thopter Token (85), Thopter Token (88), Thopter Token (91), Etherium Sculptor (74) and Thopter Token (94) to attack A.
+22	B's Declare Attackers Step	STACK_ADD	A cast Stream of Unconsciousness targeting [Etherium Sculptor (74)]
+22	B's Declare Attackers Step	STACK_ADD*	A activated Aquamoeba
+22	B's Declare Attackers Step	STACK_RESOLVE*	Aquamoeba (16) - Aquamoeba (16) gains hidden cardname's power and toughness are switched until end of turn.
+22	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+22	B's Declare Blockers Step	COMBAT	A assigned Triton Shorestalker (4) to block Gingerbrute (76). A didn't block Sai, Master Thopterist (81). A didn't block Thopter Token (85). A didn't block Thopter Token (88). A didn't block Thopter Token (91). A didn't block Etherium Sculptor (74). A didn't block Thopter Token (94).
+22	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+22	B's Combat Damage Step	PHASE	B's Combat Damage Step
+22	B's Combat Damage Step	DAMAGE	Gingerbrute (76) deals 1 damage to Triton Shorestalker (4).
+22	B's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 1 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 1 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 1 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Thopter Token (91) deals 1 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Thopter Token (94) deals 1 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 damage to Gingerbrute (76).
+22	B's Combat Damage Step	LIFE	Life: A 4 > -1

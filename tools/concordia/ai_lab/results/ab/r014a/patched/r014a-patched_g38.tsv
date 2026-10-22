@@ -1,0 +1,114 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Swamp; Delightful Discovery; Island; Sol Ring; Demon's Due; Master Pakku; Corrupt Court Official
+6	A's Cleanup step	TURN	Turn 6 (B)
+6	B's Untap step	PHASE	B's Untap step
+6	B's Upkeep step	PHASE	B's Upkeep step
+6	B's Draw step	PHASE	B's Draw step
+6	B's Main phase, precombat	PHASE	B's Main phase, precombat
+6	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+6	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+6	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+6	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+6	B's Combat Damage Step	PHASE	B's Combat Damage Step
+6	B's End of Combat Step	PHASE	B's End of Combat Step
+6	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+6	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+6	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+6	B's Main phase, postcombat	ZONE_CHANGE*	A milled Opt (14), Ghostly Pilferer (28) and Bojuka Bog (36).
+6	B's End step	PHASE	B's End step
+6	B's Cleanup step	PHASE	B's Cleanup step
+8	A's Cleanup step	TURN	Turn 8 (B)
+8	B's Untap step	PHASE	B's Untap step
+8	B's Upkeep step	PHASE	B's Upkeep step
+8	B's Upkeep step	STACK_ADD	B cast Drown in the Loch
+8	B's Upkeep step	ZONE_CHANGE	Master Pakku (33) was put into Graveyard from Battlefield.
+8	B's Draw step	PHASE	B's Draw step
+8	B's Main phase, precombat	PHASE	B's Main phase, precombat
+8	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+8	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+8	B's Declare Attackers Step	COMBAT	B assigned Boggart Trawler (74) and The Mouth of Sauron (81) to attack A.
+8	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+8	B's Declare Blockers Step	COMBAT	A didn't block Boggart Trawler (74). A didn't block The Mouth of Sauron (81).
+8	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+8	B's Combat Damage Step	PHASE	B's Combat Damage Step
+8	B's Combat Damage Step	DAMAGE	Boggart Trawler (74) deals 3 combat damage to A.
+8	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+8	B's Combat Damage Step	LIFE	Life: A 20 > 14
+8	B's End of Combat Step	PHASE	B's End of Combat Step
+8	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+8	B's Main phase, postcombat	STACK_ADD	B cast Flux Channeler
+8	B's End step	PHASE	B's End step
+8	B's End step	STACK_ADD*	A cast Delightful Discovery
+8	B's End step	STACK_RESOLVE*	Delightful Discovery (17) - A scries 2. A draws two cards.
+8	B's Cleanup step	PHASE	B's Cleanup step
+10	A's Cleanup step	TURN	Turn 10 (B)
+10	B's Untap step	PHASE	B's Untap step
+10	B's Upkeep step	PHASE	B's Upkeep step
+10	B's Draw step	PHASE	B's Draw step
+10	B's Main phase, precombat	PHASE	B's Main phase, precombat
+10	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+10	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+10	B's Declare Attackers Step	COMBAT	B assigned Boggart Trawler (74), The Mouth of Sauron (81) and Flux Channeler (76) to attack A.
+10	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+10	B's Declare Blockers Step	COMBAT	A assigned Corrupt Court Official (11) to block Boggart Trawler (74). A didn't block The Mouth of Sauron (81). A didn't block Flux Channeler (76).
+10	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+10	B's Combat Damage Step	PHASE	B's Combat Damage Step
+10	B's Combat Damage Step	DAMAGE	Boggart Trawler (74) deals 3 damage to Corrupt Court Official (11).
+10	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+10	B's Combat Damage Step	DAMAGE	Flux Channeler (76) deals 2 combat damage to A.
+10	B's Combat Damage Step	DAMAGE	Corrupt Court Official (11) deals 1 damage to Boggart Trawler (74).
+10	B's Combat Damage Step	LIFE	Life: A 14 > 9
+10	B's Combat Damage Step	ZONE_CHANGE	Boggart Trawler (74) was put into Graveyard from Battlefield.
+10	B's Combat Damage Step	ZONE_CHANGE	Corrupt Court Official (11) was put into Graveyard from Battlefield.
+10	B's End of Combat Step	PHASE	B's End of Combat Step
+10	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+10	B's Main phase, postcombat	STACK_ADD	B cast Arcane Signet
+10	B's Main phase, postcombat	STACK_ADD	B triggered Flux Channeler
+10	B's End step	PHASE	B's End step
+10	B's End step	STACK_ADD*	A cast Demon's Due
+10	B's End step	LIFE	Life: A 9 > 7
+10	B's End step	STACK_RESOLVE*	Demon's Due (19) - A scries 2. A draws two cards. A loses 2 life.
+10	B's Cleanup step	PHASE	B's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) and Orc Army Token (84) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A assigned Ornithopter of Paradise (37) to block The Mouth of Sauron (81). A didn't block Orc Army Token (84).
+14	B's Declare Blockers Step	ZONE_CHANGE	Ornithopter of Paradise (37) was put into Graveyard from Battlefield.
+14	B's Declare Blockers Step	STACK_ADD	A activated Vampiric Rites
+14	B's Declare Blockers Step	LIFE	Life: A 7 > 8
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	Orc Army Token (84) deals 2 combat damage to A.
+14	B's Combat Damage Step	LIFE	Life: A 8 > 6
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's Main phase, postcombat	STACK_ADD	B cast Scheming Aspirant
+14	B's End step	PHASE	B's End step
+14	B's End step	STACK_ADD*	A cast Demon's Due
+14	B's End step	LIFE	Life: A 6 > 4
+14	B's End step	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+14	B's End step	STACK_ADD*	A cast Opt
+14	B's End step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+14	B's Cleanup step	PHASE	B's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's Main phase, postcombat	STACK_ADD	A cast Stitcher's Supplier
+17	A's Main phase, postcombat	STACK_ADD	A triggered Stitcher's Supplier
+17	A's Main phase, postcombat	ZONE_CHANGE*	A milled Ruin Crab (30), Deliberate (34) and Joint Exploration (38).
+17	A's End step	PHASE	A's End step
+17	A's Cleanup step	PHASE	A's Cleanup step

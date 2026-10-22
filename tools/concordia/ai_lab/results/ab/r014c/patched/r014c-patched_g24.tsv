@@ -1,0 +1,148 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Ornithopter of Paradise; Barren Moor; Joint Exploration; Delightful Discovery; Swamp; Sol Ring; Scheming Aspirant
+3	A's Cleanup step	TURN	Turn 3 (B)
+3	B's Untap step	PHASE	B's Untap step
+3	B's Upkeep step	PHASE	B's Upkeep step
+3	B's Draw step	PHASE	B's Draw step
+3	B's Main phase, precombat	PHASE	B's Main phase, precombat
+3	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+3	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+3	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+3	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+3	B's Combat Damage Step	PHASE	B's Combat Damage Step
+3	B's End of Combat Step	PHASE	B's End of Combat Step
+3	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+3	B's Main phase, postcombat	STACK_ADD	B cast Corrupt Court Official
+3	B's Main phase, postcombat	STACK_ADD	B triggered Corrupt Court Official targeting [A]
+3	B's Main phase, postcombat	DISCARD*	A discards Delightful Discovery (18).
+3	B's End step	PHASE	B's End step
+3	B's Cleanup step	PHASE	B's Cleanup step
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	COMBAT	A assigned Atris, Oracle of Half-Truths (40) to attack B.
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's Declare Blockers Step	COMBAT	B didn't block Atris, Oracle of Half-Truths (40).
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's Combat Damage Step	DAMAGE	Atris, Oracle of Half-Truths (40) deals 3 combat damage to B.
+6	A's Combat Damage Step	LIFE	Life: B 20 > 17
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD	A cast Scheming Aspirant
+6	A's Main phase, postcombat	STACK_ADD*	A cast Joint Exploration
+6	A's Main phase, postcombat	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+6	A's Main phase, postcombat	STACK_ADD*	A cast Opt
+6	A's Main phase, postcombat	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Beginning of Combat Step	STACK_ADD*	A cast Demon's Due
+8	A's Beginning of Combat Step	LIFE	Life: A 20 > 18
+8	A's Beginning of Combat Step	STACK_RESOLVE*	Demon's Due (19) - A scries 2. A draws two cards. A loses 2 life.
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Scheming Aspirant (2) to attack B.
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B didn't block Scheming Aspirant (2).
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Scheming Aspirant (2) deals 1 combat damage to B.
+8	A's Combat Damage Step	LIFE	Life: B 17 > 16
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Omen Hawker
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's Main phase, postcombat	STACK_ADD	B cast Sol Ring
+9	B's End step	PHASE	B's End step
+9	B's End step	STACK_ADD*	A cast Joint Exploration
+9	B's End step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+9	B's End step	STACK_ADD	A triggered Bojuka Bog targeting [B]
+9	B's Cleanup step	PHASE	B's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	STACK_ADD	B cast Gríma Wormtongue
+11	B's End step	PHASE	B's End step
+11	B's End step	STACK_ADD*	A cast Deliberate
+11	B's End step	STACK_ADD	A triggered Master Pakku
+11	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Deliberate (35), Activator: A, SpellAbility: Scry 2, then draw a card. ]
+11	B's End step	STACK_RESOLVE*	Deliberate (35) - A scries 2. A draws a card.
+11	B's End step	STACK_ADD*	A cast Demon's Due
+11	B's End step	STACK_ADD	A triggered Master Pakku
+11	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Demon's Due (20), Activator: A, SpellAbility: Scry 2, then draw two cards. You lose 2 life.  ]
+11	B's End step	LIFE	Life: A 18 > 16
+11	B's End step	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+11	B's Cleanup step	PHASE	B's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's End step	PHASE	B's End step
+13	B's End step	STACK_ADD*	A cast Delightful Discovery
+13	B's End step	STACK_ADD	A triggered Master Pakku
+13	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Delightful Discovery (17), Activator: A, SpellAbility: Scry 2, then draw two cards. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.) ]
+13	B's End step	STACK_RESOLVE*	Delightful Discovery (17) - A scries 2. A draws two cards.
+13	B's End step	STACK_ADD*	A cast Opt
+13	B's End step	STACK_ADD	A triggered Master Pakku
+13	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Opt (14), Activator: A, SpellAbility: Scry 1. Draw a card.]
+13	B's End step	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+13	B's Cleanup step	PHASE	B's Cleanup step
+17	A's Cleanup step	TURN	Turn 17 (B)
+17	B's Untap step	PHASE	B's Untap step
+17	B's Upkeep step	PHASE	B's Upkeep step
+17	B's Upkeep step	STACK_ADD	B cast Eaten by Piranhas targeting [Atris, Oracle of Half-Truths (40)]
+17	B's Draw step	PHASE	B's Draw step
+17	B's Draw step	STACK_ADD	B cast Drown in the Loch
+17	B's Draw step	ZONE_CHANGE	Baleful Strix (13) was put into Graveyard from Battlefield.
+17	B's Main phase, precombat	PHASE	B's Main phase, precombat
+17	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+17	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+17	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+17	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+17	B's Combat Damage Step	PHASE	B's Combat Damage Step
+17	B's End of Combat Step	PHASE	B's End of Combat Step
+17	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+17	B's End step	PHASE	B's End step
+17	B's End step	STACK_ADD*	A cast Deliberate
+17	B's End step	STACK_ADD	A triggered Master Pakku
+17	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Deliberate (34), Activator: A, SpellAbility: Scry 2, then draw a card. ]
+17	B's End step	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+17	B's Cleanup step	PHASE	B's Cleanup step

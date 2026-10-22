@@ -1,0 +1,64 @@
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Spider Token (86) and Mirkwood Spider (16) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Spider Token (86). B didn't block Mirkwood Spider (16).
+9	A's Declare Blockers Step	STACK_ADD	A cast Tamiyo's Safekeeping targeting [Spider Token (86)]
+9	A's Declare Blockers Step	LIFE	Life: A 20 > 22
+9	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Spider Token (86)]
+9	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Spider Token (86) gets +3/+3  until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Spider Token (86) deals 4 damage to Selvala, Heart of the Wilds (81).
+9	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 1 combat damage to B.
+9	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Spider Token (86).
+9	A's Combat Damage Step	LIFE	Life: B 17 > 16
+9	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Attackers Step	COMBAT	A assigned Spider Token (86) and Spider Token (88) to attack B.
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's Declare Blockers Step	COMBAT	B didn't block Spider Token (86). B didn't block Spider Token (88).
+17	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Spider Token (86)]
+17	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Spider Token (86) gets +4/+4  until end of turn.
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's Combat Damage Step	DAMAGE	Spider Token (86) deals 5 combat damage to B.
+17	A's Combat Damage Step	DAMAGE	Spider Token (88) deals 1 combat damage to B.
+17	A's Combat Damage Step	LIFE	Life: B 11 > 5
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's End step	PHASE	A's End step
+17	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Titanic Growth (11)]
+17	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Titanic Growth (11) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+17	A's Cleanup step	PHASE	A's Cleanup step
+25	B's Cleanup step	TURN	Turn 25 (A)
+25	A's Untap step	PHASE	A's Untap step
+25	A's Upkeep step	PHASE	A's Upkeep step
+25	A's Draw step	PHASE	A's Draw step
+25	A's Main phase, precombat	PHASE	A's Main phase, precombat
+25	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+25	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+25	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+25	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+25	A's Combat Damage Step	PHASE	A's Combat Damage Step
+25	A's End of Combat Step	PHASE	A's End of Combat Step
+25	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+25	A's End step	PHASE	A's End step
+25	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Giant Growth (19)]
+25	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Giant Growth (19) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+25	A's Cleanup step	PHASE	A's Cleanup step

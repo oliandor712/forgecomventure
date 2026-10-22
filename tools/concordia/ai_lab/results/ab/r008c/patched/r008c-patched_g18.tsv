@@ -1,0 +1,95 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Tyvar's Stand; Forest; Titanic Growth; Forest; Blossoming Defense; Hero's Blade; Canopy Spider
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22) to attack B.
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B didn't block Canopy Spider (22).
+7	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Canopy Spider (22)]
+7	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Canopy Spider (22) gets +2/+2 and gains hexproof until end of turn.
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 3 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: B 19 > 16
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD	A cast Sol Ring
+7	A's Main phase, postcombat	STACK_ADD	A cast Arasta of the Endless Web
+7	A's Main phase, postcombat	STACK_ADD	B cast Nature's Claim targeting [Arasta of the Endless Web (40)]
+7	A's Main phase, postcombat	STACK_ADD	A triggered Arasta of the Endless Web
+7	A's Main phase, postcombat	ZONE_CHANGE	Arasta of the Endless Web (40) was put into Graveyard from Battlefield.
+7	A's Main phase, postcombat	LIFE	Life: A 20 > 24
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Canopy Spider (22).
+9	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Canopy Spider (22)]
+9	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Canopy Spider (22) gets +4/+4  until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 5 damage to Selvala, Heart of the Wilds (81).
+9	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Canopy Spider (22).
+9	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Grappler Spider
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Canopy Spider (22)]
+11	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (10) - Canopy Spider (22) gets +2/+2 and gains hexproof until end of turn.
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22) and Grappler Spider (17) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Canopy Spider (22). B didn't block Grappler Spider (17).
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 3 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Grappler Spider (17) deals 2 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 16 > 11
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22) and Grappler Spider (17) to attack B.
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's Declare Blockers Step	COMBAT	B assigned Leaf Gilder (74) to block Canopy Spider (22). B assigned Leaf-Crowned Visionary (52) to block Grappler Spider (17).
+17	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Canopy Spider (22)]
+17	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Canopy Spider (22) gets +3/+3  until end of turn.
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 4 damage to Leaf Gilder (74).
+17	A's Combat Damage Step	DAMAGE	Grappler Spider (17) deals 2 damage to Leaf-Crowned Visionary (52).
+17	A's Combat Damage Step	DAMAGE	Leaf-Crowned Visionary (52) deals 1 damage to Grappler Spider (17).
+17	A's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 3 damage to Canopy Spider (22).
+17	A's Combat Damage Step	ZONE_CHANGE	Grappler Spider (17) was put into Graveyard from Battlefield.
+17	A's Combat Damage Step	ZONE_CHANGE	Leaf Gilder (74) was put into Graveyard from Battlefield.
+17	A's Combat Damage Step	ZONE_CHANGE	Leaf-Crowned Visionary (52) was put into Graveyard from Battlefield.
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's End step	PHASE	A's End step
+17	A's Cleanup step	PHASE	A's Cleanup step

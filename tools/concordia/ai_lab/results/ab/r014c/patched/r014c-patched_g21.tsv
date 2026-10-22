@@ -1,0 +1,105 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Joint Exploration; Island; Swamp; Deliberate; Opt; Sol Ring; Omen Hawker
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's Main phase, postcombat	STACK_ADD	A cast Sol Ring
+4	A's Main phase, postcombat	STACK_ADD*	A cast Deliberate
+4	A's Main phase, postcombat	STACK_RESOLVE*	Deliberate (35) - A scries 2. A draws a card.
+4	A's End step	PHASE	A's End step
+4	A's Cleanup step	PHASE	A's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Atris, Oracle of Half-Truths (40) to attack B.
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B didn't block Atris, Oracle of Half-Truths (40).
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Atris, Oracle of Half-Truths (40) deals 3 combat damage to B.
+8	A's Combat Damage Step	LIFE	Life: B 17 > 14
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Ghostly Pilferer
+8	A's Main phase, postcombat	STACK_ADD*	A cast Opt
+8	A's Main phase, postcombat	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+8	A's Main phase, postcombat	STACK_ADD	A cast Blood Artist
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Beginning of Combat Step	STACK_ADD*	A cast Deliberate
+10	A's Beginning of Combat Step	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A activated Lonely Sandbar
+10	A's Main phase, postcombat	STACK_ADD	A cast Vampiric Rites
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Upkeep step	ZONE_CHANGE	Myriad Landscape (29) was put into Graveyard from Battlefield.
+12	A's Upkeep step	STACK_ADD	A activated Myriad Landscape
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Beginning of Combat Step	STACK_ADD*	A cast Joint Exploration
+12	A's Beginning of Combat Step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Ghostly Pilferer (28) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Ghostly Pilferer (28).
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Ghostly Pilferer (28) deals 1 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 13 > 12
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Upkeep step	STACK_ADD	B triggered Ghostly Pilferer
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Ghostly Pilferer (65), Stitcher's Supplier (70), Baleful Strix (56) and Omen Hawker (69) to attack A.
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A didn't block Ghostly Pilferer (65). A didn't block Stitcher's Supplier (70). A didn't block Baleful Strix (56). A didn't block Omen Hawker (69).
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Ghostly Pilferer (65) deals 2 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Stitcher's Supplier (70) deals 1 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Baleful Strix (56) deals 1 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Omen Hawker (69) deals 1 combat damage to A.
+13	B's Combat Damage Step	LIFE	Life: A 12 > 7
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+13	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+13	B's Main phase, postcombat	ZONE_CHANGE*	A milled Delightful Discovery (18), Master Pakku (33) and Swamp (10).
+13	B's End step	PHASE	B's End step
+13	B's Cleanup step	PHASE	B's Cleanup step

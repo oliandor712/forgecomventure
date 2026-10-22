@@ -1,0 +1,65 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Blossoming Defense; Forest; Forest; Forest; Canopy Spider; Hero's Blade; Forest
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Mirkwood Spider (16)]
+6	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (9) - Mirkwood Spider (16) gets +2/+2 and gains hexproof until end of turn.
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (16) to attack B.
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's Declare Blockers Step	COMBAT	B didn't block Mirkwood Spider (16).
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 3 combat damage to B.
+6	A's Combat Damage Step	LIFE	Life: B 19 > 16
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD	A cast Canopy Spider
+6	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22) to attack B.
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Canopy Spider (22).
+8	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Canopy Spider (22)]
+8	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Canopy Spider (22) gets +4/+4  until end of turn.
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 5 damage to Selvala, Heart of the Wilds (81).
+8	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 3 damage to Canopy Spider (22).
+8	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Main phase, precombat	STACK_ADD	A cast Brotherhood Regalia
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Beginning of Combat Step	STACK_ADD*	A cast Giant Growth targeting [Canopy Spider (22)]
+10	A's Beginning of Combat Step	STACK_RESOLVE*	Giant Growth (19) - Canopy Spider (22) gets +3/+3  until end of turn.
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B didn't block Canopy Spider (22).
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 4 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 16 > 12
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step

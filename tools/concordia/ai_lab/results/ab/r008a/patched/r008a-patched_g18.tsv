@@ -1,0 +1,117 @@
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Deadly Recluse (15)]
+11	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (9) - Deadly Recluse (15) gets +2/+2 and gains hexproof until end of turn.
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Deadly Recluse (15) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Deadly Recluse (15).
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 3 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 17 > 14
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Draw step	PHASE	A's Draw step
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Deadly Recluse (15)]
+15	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (10) - Deadly Recluse (15) gets +2/+2 and gains hexproof until end of turn.
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Attackers Step	COMBAT	A assigned Deadly Recluse (15) to attack B.
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's Declare Blockers Step	COMBAT	B didn't block Deadly Recluse (15).
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 3 combat damage to B.
+15	A's Combat Damage Step	LIFE	Life: B 14 > 11
+15	A's End of Combat Step	PHASE	A's End of Combat Step
+15	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+15	A's End step	PHASE	A's End step
+15	A's Cleanup step	PHASE	A's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22) to attack B.
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's Declare Blockers Step	COMBAT	B assigned Collector Ouphe (48) and Selvala, Heart of the Wilds (81) to block Canopy Spider (22).
+17	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Canopy Spider (22)]
+17	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Canopy Spider (22) gets +4/+4  until end of turn.
+17	A's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 2 damage to Collector Ouphe (48).
+17	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 3 damage to Selvala, Heart of the Wilds (81).
+17	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Canopy Spider (22).
+17	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Canopy Spider (22).
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's End step	PHASE	A's End step
+17	A's Cleanup step	PHASE	A's Cleanup step
+26	A's Cleanup step	TURN	Turn 26 (B)
+26	B's Untap step	PHASE	B's Untap step
+26	B's Upkeep step	PHASE	B's Upkeep step
+26	B's Upkeep step	STACK_ADD	B activated Bloodline Shaman
+26	B's Draw step	PHASE	B's Draw step
+26	B's Main phase, precombat	PHASE	B's Main phase, precombat
+26	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+26	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+26	B's Declare Attackers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) and Krallenhorde Howler (50) to attack A.
+26	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+26	B's Declare Blockers Step	COMBAT	A assigned Grappler Spider (17), Spider Token (85) and Canopy Spider (22) to block Selvala, Heart of the Wilds (81). A didn't block Krallenhorde Howler (50).
+26	B's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Canopy Spider (22)]
+26	B's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (20) - Canopy Spider (22) gets +3/+3  until end of turn.
+26	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+26	B's Combat Damage Step	PHASE	B's Combat Damage Step
+26	B's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 1 damage to Grappler Spider (17).
+26	B's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Canopy Spider (22).
+26	B's Combat Damage Step	DAMAGE	Krallenhorde Howler (50) deals 3 combat damage to A.
+26	B's Combat Damage Step	DAMAGE	Grappler Spider (17) deals 2 damage to Selvala, Heart of the Wilds (81).
+26	B's Combat Damage Step	DAMAGE	Spider Token (85) deals 2 damage to Selvala, Heart of the Wilds (81).
+26	B's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 4 damage to Selvala, Heart of the Wilds (81).
+26	B's Combat Damage Step	LIFE	Life: A 26 > 23
+26	B's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+26	B's Combat Damage Step	ZONE_CHANGE	Grappler Spider (17) was put into Graveyard from Battlefield.
+26	B's End of Combat Step	PHASE	B's End of Combat Step
+26	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+26	B's End step	PHASE	B's End step
+26	B's Cleanup step	PHASE	B's Cleanup step
+29	B's Cleanup step	TURN	Turn 29 (A)
+29	A's Untap step	PHASE	A's Untap step
+29	A's Upkeep step	PHASE	A's Upkeep step
+29	A's Draw step	PHASE	A's Draw step
+29	A's Main phase, precombat	PHASE	A's Main phase, precombat
+29	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+29	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+29	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22) to attack B.
+29	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+29	A's Declare Blockers Step	COMBAT	B assigned Collector Ouphe (48) and Elvish Skysweeper (51) to block Canopy Spider (22).
+29	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Canopy Spider (22)]
+29	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Canopy Spider (22) gets +3/+3  until end of turn.
+29	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+29	A's Combat Damage Step	PHASE	A's Combat Damage Step
+29	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 2 damage to Collector Ouphe (48).
+29	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 2 damage to Elvish Skysweeper (51).
+29	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Canopy Spider (22).
+29	A's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 2 damage to Canopy Spider (22).
+29	A's Combat Damage Step	ZONE_CHANGE	Collector Ouphe (48) was put into Graveyard from Battlefield.
+29	A's Combat Damage Step	ZONE_CHANGE	Elvish Skysweeper (51) was put into Graveyard from Battlefield.
+29	A's End of Combat Step	PHASE	A's End of Combat Step
+29	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+29	A's End step	PHASE	A's End step
+29	A's End step	STACK_ADD	B activated Agatha's Soul Cauldron targeting [Arasta of the Endless Web (40)]
+29	A's End step	STACK_ADD	B triggered Agatha's Soul Cauldron targeting [Krallenhorde Howler (50)]
+29	A's Cleanup step	PHASE	A's Cleanup step

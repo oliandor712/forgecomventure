@@ -1,0 +1,49 @@
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Spider Token (89) and Arasta of the Endless Web (40) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Spider Token (89). B didn't block Arasta of the Endless Web (40).
+10	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Spider Token (89)]
+10	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (20) - Spider Token (89) gets +3/+3  until end of turn.
+10	A's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+10	A's Declare Blockers Step	STACK_ADD	A triggered Arasta of the Endless Web
+10	A's Declare Blockers Step	STACK_ADD	A triggered Aquastrand Spider
+10	A's Declare Blockers Step	STACK_ADD	B triggered Selvala, Heart of the Wilds
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Spider Token (89) deals 5 damage to Selvala, Heart of the Wilds (81).
+10	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 combat damage to B.
+10	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Spider Token (89).
+10	A's Combat Damage Step	LIFE	Life: B 14 > 11
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Copper Longlegs (2) and Arasta of the Endless Web (40) to attack B.
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Copper Longlegs (2). B didn't block Arasta of the Endless Web (40).
+14	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Copper Longlegs (2)]
+14	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Copper Longlegs (2) gets +4/+4  until end of turn.
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 5 damage to Selvala, Heart of the Wilds (81).
+14	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Copper Longlegs (2).
+14	A's Combat Damage Step	LIFE	Life: B 8 > 5
+14	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step

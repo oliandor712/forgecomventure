@@ -1,0 +1,73 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Titanic Growth; Forest; Forest; Forest; Forest; Snakeskin Veil; Forest
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Spider Token (85) and Arasta of the Endless Web (40) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B assigned Collector Ouphe (48) to block Spider Token (85). B didn't block Arasta of the Endless Web (40).
+9	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Spider Token (85)]
+9	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Spider Token (85) gets +4/+4  until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 5 damage to Collector Ouphe (48).
+9	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 combat damage to B.
+9	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Spider Token (85).
+9	A's Combat Damage Step	LIFE	Life: B 20 > 17
+9	A's Combat Damage Step	ZONE_CHANGE	Collector Ouphe (48) was put into Graveyard from Battlefield.
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40) and Spider Token (85) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Arasta of the Endless Web (40). B didn't block Spider Token (85).
+11	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Arasta of the Endless Web (40)]
+11	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (20) - Arasta of the Endless Web (40) gets +3/+3  until end of turn.
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 7 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 1 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 17 > 9
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Draw step	STACK_ADD	B cast Collective Resistance
+12	B's Draw step	STACK_ADD	A triggered Arasta of the Endless Web
+12	B's Draw step	STACK_ADD	B triggered Selvala, Heart of the Wilds
+12	B's Draw step	ZONE_CHANGE	Colossus Hammer (1) was put into Graveyard from Battlefield.
+12	B's Draw step	ZONE_CHANGE	Arasta of the Endless Web (40) was put into Graveyard from Battlefield.
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) and Leaf Gilder (74) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A didn't block Selvala, Heart of the Wilds (81). A assigned Spider Token (88) to block Leaf Gilder (74).
+12	B's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+12	B's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Spider Token (88)]
+12	B's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (10) - Spider Token (88) gets +2/+2 and gains hexproof until end of turn.
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 combat damage to A.
+12	B's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 2 damage to Spider Token (88).
+12	B's Combat Damage Step	DAMAGE	Spider Token (88) deals 3 damage to Leaf Gilder (74).
+12	B's Combat Damage Step	LIFE	Life: A 11 > 9
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step

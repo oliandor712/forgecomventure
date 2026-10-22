@@ -1,0 +1,87 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Swamp; Demon's Due; Opt; Swamp; Island; Swamp; Baleful Strix
+2	A's Cleanup step	TURN	Turn 2 (B)
+2	B's Untap step	PHASE	B's Untap step
+2	B's Upkeep step	PHASE	B's Upkeep step
+2	B's Draw step	PHASE	B's Draw step
+2	B's Main phase, precombat	PHASE	B's Main phase, precombat
+2	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+2	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+2	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+2	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+2	B's Combat Damage Step	PHASE	B's Combat Damage Step
+2	B's End of Combat Step	PHASE	B's End of Combat Step
+2	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+2	B's Main phase, postcombat	STACK_ADD	B cast Vampiric Rites
+2	B's End step	PHASE	B's End step
+2	B's End step	STACK_ADD*	A cast Opt
+2	B's End step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+2	B's Cleanup step	PHASE	B's Cleanup step
+8	A's Cleanup step	TURN	Turn 8 (B)
+8	B's Untap step	PHASE	B's Untap step
+8	B's Upkeep step	PHASE	B's Upkeep step
+8	B's Draw step	PHASE	B's Draw step
+8	B's Main phase, precombat	PHASE	B's Main phase, precombat
+8	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+8	B's Main phase, precombat	ZONE_CHANGE	A milled Island (23), Swamp (7) and Bojuka Bog (36).
+8	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+8	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+8	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+8	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+8	B's Combat Damage Step	PHASE	B's Combat Damage Step
+8	B's End of Combat Step	PHASE	B's End of Combat Step
+8	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+8	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+8	B's Main phase, postcombat	STACK_ADD	A triggered Ghostly Pilferer
+8	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+8	B's Main phase, postcombat	ZONE_CHANGE*	A milled Joint Exploration (39), Island (24) and Joint Exploration (38).
+8	B's End step	PHASE	B's End step
+8	B's Cleanup step	PHASE	B's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Upkeep step	STACK_ADD	A triggered Ghostly Pilferer
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Baleful Strix (13) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Baleful Strix (13).
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Baleful Strix (13) deals 1 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 18 > 17
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Blood Artist
+9	A's Main phase, postcombat	STACK_ADD	A cast Stitcher's Supplier
+9	A's Main phase, postcombat	STACK_ADD	A triggered Stitcher's Supplier
+9	A's Main phase, postcombat	ZONE_CHANGE*	A milled Myriad Landscape (29), Ruin Crab (30) and Demon's Due (20).
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Upkeep step	ZONE_CHANGE	Myriad Landscape (66) was put into Graveyard from Battlefield.
+14	B's Upkeep step	STACK_ADD	B activated Myriad Landscape
+14	B's Upkeep step	STACK_ADD	B triggered Ruin Crab
+14	B's Upkeep step	STACK_ADD	B triggered Ruin Crab
+14	B's Upkeep step	ZONE_CHANGE*	A milled Island (25), Master Pakku (33) and Deliberate (35).
+14	B's Upkeep step	ZONE_CHANGE*	A milled Barren Moor (27) and Delightful Discovery (17).
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A didn't block The Mouth of Sauron (81).
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+14	B's Combat Damage Step	LIFE	Life: A 8 > 5
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's Main phase, postcombat	STACK_ADD	B cast Boggart Trawler
+14	B's Main phase, postcombat	STACK_ADD	B triggered Boggart Trawler targeting [A]
+14	B's End step	PHASE	B's End step
+14	B's Cleanup step	PHASE	B's Cleanup step

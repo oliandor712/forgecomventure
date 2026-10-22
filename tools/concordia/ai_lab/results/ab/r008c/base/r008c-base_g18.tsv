@@ -1,0 +1,52 @@
+0		MULLIGAN*	A has kept a hand of 6 cards hand: Forest; Blossoming Defense; Forest; Forest; Ruins Recluse; Deadly Recluse
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Draw step	PHASE	A's Draw step
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Arasta of the Endless Web (40)]
+15	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (9) - Arasta of the Endless Web (40) gets +2/+2 and gains hexproof until end of turn.
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Attackers Step	COMBAT	A assigned Deadly Recluse (15) and Arasta of the Endless Web (40) to attack B.
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's Declare Blockers Step	COMBAT	B didn't block Deadly Recluse (15). B didn't block Arasta of the Endless Web (40).
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 1 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 5 combat damage to B.
+15	A's Combat Damage Step	LIFE	Life: B 20 > 14
+15	A's End of Combat Step	PHASE	A's End of Combat Step
+15	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+15	A's End step	PHASE	A's End step
+15	A's Cleanup step	PHASE	A's Cleanup step
+18	A's Cleanup step	TURN	Turn 18 (B)
+18	B's Untap step	PHASE	B's Untap step
+18	B's Upkeep step	PHASE	B's Upkeep step
+18	B's Draw step	PHASE	B's Draw step
+18	B's Main phase, precombat	PHASE	B's Main phase, precombat
+18	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+18	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+18	B's Declare Attackers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81), Leaf Gilder (74), Viridian Zealot (73), Elvish Mystic (77), Boreal Druid (46) and Leaf-Crowned Visionary (52) to attack A.
+18	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+18	B's Declare Blockers Step	COMBAT	A assigned Deadly Recluse (15) to block Selvala, Heart of the Wilds (81). A assigned Arasta of the Endless Web (40) to block Leaf Gilder (74). A didn't block Viridian Zealot (73). A didn't block Elvish Mystic (77). A didn't block Boreal Druid (46). A didn't block Leaf-Crowned Visionary (52).
+18	B's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+18	B's Declare Blockers Step	STACK_ADD	A triggered Arasta of the Endless Web
+18	B's Declare Blockers Step	STACK_ADD	B triggered Selvala, Heart of the Wilds
+18	B's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Deadly Recluse (15)]
+18	B's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Deadly Recluse (15) gets +4/+4  until end of turn.
+18	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+18	B's Combat Damage Step	PHASE	B's Combat Damage Step
+18	B's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 3 damage to Deadly Recluse (15).
+18	B's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 3 damage to Arasta of the Endless Web (40).
+18	B's Combat Damage Step	DAMAGE	Viridian Zealot (73) deals 3 combat damage to A.
+18	B's Combat Damage Step	DAMAGE	Elvish Mystic (77) deals 2 combat damage to A.
+18	B's Combat Damage Step	DAMAGE	Boreal Druid (46) deals 2 combat damage to A.
+18	B's Combat Damage Step	DAMAGE	Leaf-Crowned Visionary (52) deals 1 combat damage to A.
+18	B's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 5 damage (Deathtouch) to Selvala, Heart of the Wilds (81).
+18	B's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 damage to Leaf Gilder (74).
+18	B's Combat Damage Step	LIFE	Life: A 9 > 1
+18	B's End of Combat Step	PHASE	B's End of Combat Step
+18	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+18	B's End step	PHASE	B's End step
+18	B's Cleanup step	PHASE	B's Cleanup step

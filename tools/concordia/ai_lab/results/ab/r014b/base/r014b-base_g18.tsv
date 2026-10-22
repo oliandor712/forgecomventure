@@ -1,0 +1,97 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Delightful Discovery; Corrupt Court Official; Vampiric Rites; Swamp; Tainted Isle; Sol Ring; Lonely Sandbar
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Upkeep step	STACK_ADD*	A cast Joint Exploration
+5	A's Upkeep step	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+6	A's Cleanup step	TURN	Turn 6 (B)
+6	B's Untap step	PHASE	B's Untap step
+6	B's Upkeep step	PHASE	B's Upkeep step
+6	B's Draw step	PHASE	B's Draw step
+6	B's Main phase, precombat	PHASE	B's Main phase, precombat
+6	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+6	B's Main phase, precombat	ZONE_CHANGE*	A milled Opt (14), Island (22) and Delightful Discovery (17).
+6	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+6	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+6	B's Declare Attackers Step	COMBAT	B assigned Master Pakku (71) to attack A.
+6	B's Declare Attackers Step	STACK_ADD	B triggered Master Pakku targeting [B]
+6	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+6	B's Declare Blockers Step	COMBAT	A didn't block Master Pakku (71).
+6	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+6	B's Combat Damage Step	PHASE	B's Combat Damage Step
+6	B's Combat Damage Step	DAMAGE	Master Pakku (71) deals 1 combat damage to A.
+6	B's Combat Damage Step	LIFE	Life: A 20 > 19
+6	B's End of Combat Step	PHASE	B's End of Combat Step
+6	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+6	B's Main phase, postcombat	STACK_ADD	B cast Scheming Aspirant
+6	B's End step	PHASE	B's End step
+6	B's Cleanup step	PHASE	B's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Upkeep step	STACK_ADD*	A cast Delightful Discovery
+9	A's Upkeep step	STACK_RESOLVE*	Delightful Discovery (18) - A scries 2. A draws two cards.
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Omen Hawker
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Upkeep step	STACK_ADD*	A cast Opt
+11	A's Upkeep step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD	A cast Atris, Oracle of Half-Truths
+11	A's Main phase, postcombat	STACK_ADD	A triggered Atris, Oracle of Half-Truths targeting [B]
+11	A's Main phase, postcombat	STACK_ADD	A cast Master Pakku
+11	A's Main phase, postcombat	STACK_ADD	A cast Stitcher's Supplier
+11	A's Main phase, postcombat	STACK_ADD	A triggered Stitcher's Supplier
+11	A's Main phase, postcombat	ZONE_CHANGE*	A milled Deliberate (34), Demon's Due (19) and Swamp (8).
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+12	B's Main phase, precombat	ZONE_CHANGE*	A milled Barren Moor (27), Scheming Aspirant (2) and Demon's Due (20).
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+12	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+12	B's Main phase, postcombat	ZONE_CHANGE	A milled Blood Artist (1), Bojuka Bog (36) and Ghostly Pilferer (28).
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step

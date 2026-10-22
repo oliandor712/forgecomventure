@@ -1,0 +1,49 @@
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B assigned Collector Ouphe (48) and Selvala, Heart of the Wilds (81) to block Canopy Spider (22).
+10	A's Declare Blockers Step	STACK_ADD	A cast Tamiyo's Safekeeping targeting [Canopy Spider (22)]
+10	A's Declare Blockers Step	LIFE	Life: A 20 > 22
+10	A's Declare Blockers Step	STACK_ADD	A cast Snakeskin Veil targeting [Canopy Spider (22)]
+10	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Canopy Spider (22)]
+10	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (20) - Canopy Spider (22) gets +3/+3  until end of turn.
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 2 damage to Collector Ouphe (48).
+10	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 3 damage to Selvala, Heart of the Wilds (81).
+10	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Canopy Spider (22).
+10	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Canopy Spider (22).
+10	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+10	A's Combat Damage Step	ZONE_CHANGE	Collector Ouphe (48) was put into Graveyard from Battlefield.
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+18	B's Cleanup step	TURN	Turn 18 (A)
+18	A's Untap step	PHASE	A's Untap step
+18	A's Upkeep step	PHASE	A's Upkeep step
+18	A's Draw step	PHASE	A's Draw step
+18	A's Main phase, precombat	PHASE	A's Main phase, precombat
+18	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+18	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+18	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40), Canopy Spider (22), Copper Longlegs (2), Deadly Recluse (15) and Spider Token (85) to attack B.
+18	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+18	A's Declare Blockers Step	COMBAT	B assigned Leaf Gilder (74) to block Arasta of the Endless Web (40). B assigned H.E.R.B.I.E., Lovable Robot (80) to block Canopy Spider (22). B didn't block Copper Longlegs (2). B didn't block Deadly Recluse (15). B didn't block Spider Token (85).
+18	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Deadly Recluse (15)]
+18	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Deadly Recluse (15) gets +2/+2 and gains hexproof until end of turn.
+18	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+18	A's Combat Damage Step	PHASE	A's Combat Damage Step
+18	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 damage to Leaf Gilder (74).
+18	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 2 damage to H.E.R.B.I.E., Lovable Robot (80).
+18	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 1 combat damage to B.
+18	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 3 combat damage to B.
+18	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 1 combat damage to B.
+18	A's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 2 damage to Arasta of the Endless Web (40).
+18	A's Combat Damage Step	DAMAGE	H.E.R.B.I.E., Lovable Robot (80) deals 1 damage to Canopy Spider (22).
+18	A's Combat Damage Step	LIFE	Life: B 3 > -2

@@ -1,0 +1,82 @@
+13	B's Cleanup step	TURN	Turn 13 (A)
+13	A's Untap step	PHASE	A's Untap step
+13	A's Upkeep step	PHASE	A's Upkeep step
+13	A's Draw step	PHASE	A's Draw step
+13	A's Main phase, precombat	PHASE	A's Main phase, precombat
+13	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+13	A's Beginning of Combat Step	STACK_ADD*	A cast Titanic Growth targeting [Mirkwood Spider (16)]
+13	A's Beginning of Combat Step	STACK_RESOLVE*	Titanic Growth (11) - Mirkwood Spider (16) gets +4/+4  until end of turn.
+13	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+13	A's Declare Attackers Step	COMBAT	A assigned Aftermath Analyst (8) and Mirkwood Spider (16) to attack B.
+13	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+13	A's Declare Blockers Step	COMBAT	B assigned Duskwatch Recruiter (50) and Selvala, Heart of the Wilds (81) to block Aftermath Analyst (8). B didn't block Mirkwood Spider (16).
+13	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+13	A's Combat Damage Step	PHASE	A's Combat Damage Step
+13	A's Combat Damage Step	DAMAGE	Aftermath Analyst (8) deals 1 damage to Selvala, Heart of the Wilds (81).
+13	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 5 combat damage to B.
+13	A's Combat Damage Step	DAMAGE	Duskwatch Recruiter (50) deals 2 damage to Aftermath Analyst (8).
+13	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Aftermath Analyst (8).
+13	A's Combat Damage Step	LIFE	Life: B 9 > 4
+13	A's Combat Damage Step	ZONE_CHANGE	Aftermath Analyst (8) was put into Graveyard from Battlefield.
+13	A's End of Combat Step	PHASE	A's End of Combat Step
+13	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+13	A's End step	PHASE	A's End step
+13	A's End step	STACK_ADD	B activated Duskwatch Recruiter
+13	A's Cleanup step	PHASE	A's Cleanup step
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Draw step	PHASE	A's Draw step
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Beginning of Combat Step	STACK_ADD*	A cast Giant Growth targeting [Copper Longlegs (2)]
+15	A's Beginning of Combat Step	STACK_RESOLVE*	Giant Growth (19) - Copper Longlegs (2) gets +3/+3  until end of turn.
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Attackers Step	COMBAT	A assigned Aquastrand Spider (7), Mirkwood Spider (16) and Copper Longlegs (2) to attack B.
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Aquastrand Spider (7). B assigned Boreal Druid (46) to block Mirkwood Spider (16). B assigned Duskwatch Recruiter (50) to block Copper Longlegs (2).
+15	A's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's Combat Damage Step	DAMAGE	Aquastrand Spider (7) deals 2 damage to Selvala, Heart of the Wilds (81).
+15	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 1 damage (Deathtouch) to Boreal Druid (46).
+15	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 4 damage to Duskwatch Recruiter (50).
+15	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Aquastrand Spider (7).
+15	A's Combat Damage Step	DAMAGE	Boreal Druid (46) deals 1 damage to Mirkwood Spider (16).
+15	A's Combat Damage Step	DAMAGE	Duskwatch Recruiter (50) deals 2 damage to Copper Longlegs (2).
+15	A's Combat Damage Step	ZONE_CHANGE	Mirkwood Spider (16) was put into Graveyard from Battlefield.
+15	A's Combat Damage Step	ZONE_CHANGE	Aquastrand Spider (7) was put into Graveyard from Battlefield.
+15	A's End of Combat Step	PHASE	A's End of Combat Step
+15	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+15	A's Main phase, postcombat	STACK_ADD	A cast Arcane Signet
+15	A's Main phase, postcombat	STACK_ADD	B activated Duskwatch Recruiter
+15	A's End step	PHASE	A's End step
+15	A's Cleanup step	PHASE	A's Cleanup step
+20	A's Cleanup step	TURN	Turn 20 (B)
+20	B's Untap step	PHASE	B's Untap step
+20	B's Upkeep step	PHASE	B's Upkeep step
+20	B's Upkeep step	STACK_ADD	B activated Bloodline Shaman
+20	B's Draw step	PHASE	B's Draw step
+20	B's Main phase, precombat	PHASE	B's Main phase, precombat
+20	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+20	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+20	B's Declare Attackers Step	COMBAT	B assigned Krallenhorde Howler (50), Selvala, Heart of the Wilds (81), Boreal Druid (46) and H.E.R.B.I.E., Lovable Robot (80) to attack A.
+20	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+20	B's Declare Blockers Step	COMBAT	A assigned Copper Longlegs (2) to block Krallenhorde Howler (50). A didn't block Selvala, Heart of the Wilds (81). A didn't block Boreal Druid (46). A didn't block H.E.R.B.I.E., Lovable Robot (80).
+20	B's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Copper Longlegs (2)]
+20	B's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Copper Longlegs (2) gets +2/+2 and gains hexproof until end of turn.
+20	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+20	B's Combat Damage Step	PHASE	B's Combat Damage Step
+20	B's Combat Damage Step	DAMAGE	Krallenhorde Howler (50) deals 3 damage to Copper Longlegs (2).
+20	B's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 combat damage to A.
+20	B's Combat Damage Step	DAMAGE	Boreal Druid (46) deals 1 combat damage to A.
+20	B's Combat Damage Step	DAMAGE	H.E.R.B.I.E., Lovable Robot (80) deals 1 combat damage to A.
+20	B's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 3 damage to Krallenhorde Howler (50).
+20	B's Combat Damage Step	LIFE	Life: A 6 > 2
+20	B's Combat Damage Step	ZONE_CHANGE	Krallenhorde Howler (50) was put into Graveyard from Battlefield.
+20	B's End of Combat Step	PHASE	B's End of Combat Step
+20	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+20	B's Main phase, postcombat	STACK_ADD	B cast Viridian Zealot
+20	B's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+20	B's End step	PHASE	B's End step
+20	B's Cleanup step	PHASE	B's Cleanup step

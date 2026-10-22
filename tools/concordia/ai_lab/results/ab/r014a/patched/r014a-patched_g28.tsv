@@ -1,0 +1,95 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Baleful Strix; Island; Malakir Rebirth; Joint Exploration; Opt; Lonely Sandbar; Scheming Aspirant
+4	A's Cleanup step	TURN	Turn 4 (B)
+4	B's Untap step	PHASE	B's Untap step
+4	B's Upkeep step	PHASE	B's Upkeep step
+4	B's Draw step	PHASE	B's Draw step
+4	B's Main phase, precombat	PHASE	B's Main phase, precombat
+4	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+4	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+4	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+4	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+4	B's Combat Damage Step	PHASE	B's Combat Damage Step
+4	B's End of Combat Step	PHASE	B's End of Combat Step
+4	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+4	B's End step	PHASE	B's End step
+4	B's End step	STACK_ADD*	A cast Opt
+4	B's End step	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+4	B's Cleanup step	PHASE	B's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) and Baleful Strix (56) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A didn't block The Mouth of Sauron (81). A didn't block Baleful Strix (56).
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Baleful Strix (56) deals 1 combat damage to A.
+14	B's Combat Damage Step	LIFE	Life: A 17 > 13
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's Main phase, postcombat	STACK_ADD	B cast Gríma Wormtongue
+14	B's End step	PHASE	B's End step
+14	B's End step	STACK_ADD*	A cast Delightful Discovery
+14	B's End step	STACK_ADD	A triggered Master Pakku
+14	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Delightful Discovery (17), Activator: A, SpellAbility: Scry 2, then draw two cards. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.) ]
+14	B's End step	STACK_RESOLVE*	Delightful Discovery (17) - A scries 2. A draws two cards.
+14	B's End step	STACK_ADD*	A cast Joint Exploration
+14	B's End step	STACK_ADD	A triggered Master Pakku
+14	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Joint Exploration (38), Activator: A, SpellAbility: Scry 2, then draw a card.  If this spell was kicked, you may put a land card from your hand onto the battlefield.]
+14	B's End step	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+14	B's Cleanup step	PHASE	B's Cleanup step
+16	A's Cleanup step	TURN	Turn 16 (B)
+16	B's Untap step	PHASE	B's Untap step
+16	B's Upkeep step	PHASE	B's Upkeep step
+16	B's Draw step	PHASE	B's Draw step
+16	B's Main phase, precombat	PHASE	B's Main phase, precombat
+16	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+16	B's Main phase, precombat	ZONE_CHANGE*	A milled Barren Moor (27), Ornithopter of Paradise (37) and Demon's Due (20).
+16	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+16	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+16	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) and Baleful Strix (56) to attack A.
+16	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+16	B's Declare Blockers Step	COMBAT	A didn't block The Mouth of Sauron (81). A didn't block Baleful Strix (56).
+16	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+16	B's Combat Damage Step	PHASE	B's Combat Damage Step
+16	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+16	B's Combat Damage Step	DAMAGE	Baleful Strix (56) deals 1 combat damage to A.
+16	B's Combat Damage Step	LIFE	Life: A 13 > 9
+16	B's End of Combat Step	PHASE	B's End of Combat Step
+16	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+16	B's End step	PHASE	B's End step
+16	B's End step	STACK_ADD*	A cast Deliberate
+16	B's End step	STACK_ADD	A triggered Master Pakku
+16	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Deliberate (35), Activator: A, SpellAbility: Scry 2, then draw a card. ]
+16	B's End step	STACK_RESOLVE*	Deliberate (35) - A scries 2. A draws a card.
+16	B's End step	STACK_ADD*	A cast Joint Exploration
+16	B's End step	STACK_ADD	A triggered Master Pakku
+16	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Joint Exploration (39), Activator: A, SpellAbility: Scry 2, then draw a card.  If this spell was kicked, you may put a land card from your hand onto the battlefield.]
+16	B's End step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+16	B's End step	STACK_ADD*	A cast Opt
+16	B's End step	STACK_ADD	A triggered Master Pakku
+16	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Opt (15), Activator: A, SpellAbility: Scry 1. Draw a card.]
+16	B's End step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+16	B's Cleanup step	PHASE	B's Cleanup step
+19	B's Cleanup step	TURN	Turn 19 (A)
+19	A's Untap step	PHASE	A's Untap step
+19	A's Upkeep step	PHASE	A's Upkeep step
+19	A's Draw step	PHASE	A's Draw step
+19	A's Main phase, precombat	PHASE	A's Main phase, precombat
+19	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+19	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+19	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+19	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+19	A's Combat Damage Step	PHASE	A's Combat Damage Step
+19	A's End of Combat Step	PHASE	A's End of Combat Step
+19	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+19	A's Main phase, postcombat	STACK_ADD	A cast Stitcher's Supplier
+19	A's Main phase, postcombat	STACK_ADD	A triggered Stitcher's Supplier
+19	A's Main phase, postcombat	ZONE_CHANGE*	A milled Sol Ring (4), Demon's Due (19) and Corrupt Court Official (11).
+19	A's End step	PHASE	A's End step
+19	A's Cleanup step	PHASE	A's Cleanup step

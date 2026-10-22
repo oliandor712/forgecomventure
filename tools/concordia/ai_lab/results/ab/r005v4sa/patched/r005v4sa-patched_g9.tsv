@@ -1,0 +1,812 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Aquamoeba; Stonybrook Banneret; Island; Karfell Harbinger; Merfolk Trickster; Island; Island
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+6	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+6	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=6 phase=MAIN2 opp_creatures=3 no_blockers=false helps=false
+6	A's End step	PHASE	A's End step
+6	A's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=6 phase=END_OF_TURN opp_creatures=3 no_blockers=false helps=false
+6	A's Cleanup step	PHASE	A's Cleanup step
+7	A's Cleanup step	TURN	Turn 7 (B)
+7	B's Untap step	PHASE	B's Untap step
+7	B's Upkeep step	PHASE	B's Upkeep step
+7	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=7 phase=UPKEEP opp_creatures=3 no_blockers=false helps=false
+7	B's Draw step	PHASE	B's Draw step
+7	B's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=7 phase=DRAW opp_creatures=3 no_blockers=false helps=false
+7	B's Main phase, precombat	PHASE	B's Main phase, precombat
+7	B's Main phase, precombat	STACK_ADD	B cast Sai, Master Thopterist
+7	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=7 phase=MAIN1 opp_creatures=3 no_blockers=false helps=false
+7	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=7 phase=MAIN1 opp_creatures=4 no_blockers=false helps=false
+7	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+7	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=7 phase=COMBAT_BEGIN opp_creatures=4 no_blockers=false helps=false
+7	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+7	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=7 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=4 no_blockers=false helps=false
+7	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+7	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+7	B's Combat Damage Step	PHASE	B's Combat Damage Step
+7	B's End of Combat Step	PHASE	B's End of Combat Step
+7	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=7 phase=COMBAT_END opp_creatures=4 no_blockers=false helps=false
+7	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+7	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=7 phase=MAIN2 opp_creatures=4 no_blockers=false helps=false
+7	B's End step	PHASE	B's End step
+7	B's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=7 phase=END_OF_TURN opp_creatures=4 no_blockers=false helps=false
+7	B's Cleanup step	PHASE	B's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=8 phase=UPKEEP opp_creatures=4 no_blockers=false helps=false
+8	A's Draw step	PHASE	A's Draw step
+8	A's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=8 phase=DRAW opp_creatures=4 no_blockers=false helps=false
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=8 phase=MAIN1 opp_creatures=4 no_blockers=false helps=false
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=8 phase=COMBAT_BEGIN opp_creatures=4 no_blockers=false helps=false
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=8 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=4 no_blockers=false helps=false
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=8 phase=COMBAT_END opp_creatures=4 no_blockers=false helps=false
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=8 phase=MAIN2 opp_creatures=4 no_blockers=false helps=false
+8	A's Main phase, postcombat	STACK_ADD	A cast Alandra, Sky Dreamer
+8	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=8 phase=MAIN2 opp_creatures=4 no_blockers=false helps=false
+8	A's End step	PHASE	A's End step
+8	A's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=8 phase=END_OF_TURN opp_creatures=4 no_blockers=false helps=false
+8	A's Cleanup step	PHASE	A's Cleanup step
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=9 phase=UPKEEP opp_creatures=4 no_blockers=false helps=false
+9	B's Draw step	PHASE	B's Draw step
+9	B's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=9 phase=DRAW opp_creatures=4 no_blockers=false helps=false
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Main phase, precombat	STACK_ADD	B cast Myr Retriever
+9	B's Main phase, precombat	STACK_ADD	B triggered Sai, Master Thopterist
+9	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=9 phase=MAIN1 opp_creatures=4 no_blockers=false helps=false
+9	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=9 phase=MAIN1 opp_creatures=5 no_blockers=false helps=false
+9	B's Main phase, precombat	STACK_ADD	B cast Gingerbrute
+9	B's Main phase, precombat	STACK_ADD	B triggered Sai, Master Thopterist
+9	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=9 phase=MAIN1 opp_creatures=6 no_blockers=false helps=false
+9	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=9 phase=MAIN1 opp_creatures=7 no_blockers=false helps=false
+9	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=9 phase=MAIN1 opp_creatures=8 no_blockers=false helps=false
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=9 phase=COMBAT_BEGIN opp_creatures=8 no_blockers=false helps=false
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=9 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=8 no_blockers=false helps=false
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=9 phase=COMBAT_END opp_creatures=8 no_blockers=false helps=false
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=9 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+9	B's End step	PHASE	B's End step
+9	B's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=9 phase=END_OF_TURN opp_creatures=8 no_blockers=false helps=false
+9	B's Cleanup step	PHASE	B's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=10 phase=UPKEEP opp_creatures=8 no_blockers=false helps=false
+10	A's Draw step	PHASE	A's Draw step
+10	A's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=10 phase=DRAW opp_creatures=8 no_blockers=false helps=false
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=10 phase=MAIN1 opp_creatures=8 no_blockers=false helps=false
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=10 phase=COMBAT_BEGIN opp_creatures=8 no_blockers=false helps=false
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=10 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=8 no_blockers=false helps=false
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=10 phase=COMBAT_END opp_creatures=8 no_blockers=false helps=false
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=10 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+10	A's Main phase, postcombat	STACK_ADD	A cast Karfell Harbinger
+10	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=10 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+10	A's Main phase, postcombat	STACK_ADD	A cast Stonybrook Banneret
+10	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=10 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+10	A's End step	PHASE	A's End step
+10	A's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=10 phase=END_OF_TURN opp_creatures=8 no_blockers=false helps=false
+10	A's Cleanup step	PHASE	A's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=11 phase=UPKEEP opp_creatures=8 no_blockers=false helps=false
+11	B's Draw step	PHASE	B's Draw step
+11	B's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=11 phase=DRAW opp_creatures=8 no_blockers=false helps=false
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=11 phase=MAIN1 opp_creatures=8 no_blockers=false helps=false
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=11 phase=COMBAT_BEGIN opp_creatures=8 no_blockers=false helps=false
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Attackers Step	COMBAT	B assigned Thopter Token (85) and Thopter Token (88) to attack A.
+11	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=11 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=8 no_blockers=false helps=false
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's Declare Blockers Step	COMBAT	A didn't block Thopter Token (85). A didn't block Thopter Token (88).
+11	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=11 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=8 no_blockers=false helps=false
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 2 combat damage to A.
+11	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 2 combat damage to A.
+11	B's Combat Damage Step	LIFE	Life: A 19 > 15
+11	B's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=11 phase=COMBAT_DAMAGE opp_creatures=8 no_blockers=false helps=false
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=11 phase=COMBAT_END opp_creatures=8 no_blockers=false helps=false
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=11 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+11	B's End step	PHASE	B's End step
+11	B's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=11 phase=END_OF_TURN opp_creatures=8 no_blockers=false helps=false
+11	B's Cleanup step	PHASE	B's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=12 phase=UPKEEP opp_creatures=8 no_blockers=false helps=false
+12	A's Draw step	PHASE	A's Draw step
+12	A's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=12 phase=DRAW opp_creatures=8 no_blockers=false helps=false
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=12 phase=MAIN1 opp_creatures=8 no_blockers=false helps=false
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=12 phase=COMBAT_BEGIN opp_creatures=8 no_blockers=false helps=false
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Stonybrook Banneret (21) to attack B.
+12	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=12 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=8 no_blockers=false helps=false
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Stonybrook Banneret (21).
+12	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=12 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=8 no_blockers=false helps=false
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 20 > 19
+12	A's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=12 phase=COMBAT_DAMAGE opp_creatures=8 no_blockers=false helps=false
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=12 phase=COMBAT_END opp_creatures=8 no_blockers=false helps=false
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=12 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+12	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+12	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+12	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=12 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+12	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=12 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+12	A's End step	PHASE	A's End step
+12	A's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=12 phase=END_OF_TURN opp_creatures=8 no_blockers=false helps=false
+12	A's End step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=12 phase=END_OF_TURN opp_creatures=8 no_blockers=false helps=false
+12	A's Cleanup step	PHASE	A's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=13 phase=UPKEEP opp_creatures=8 no_blockers=false helps=false
+13	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=13 phase=UPKEEP opp_creatures=8 no_blockers=false helps=false
+13	B's Draw step	PHASE	B's Draw step
+13	B's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=13 phase=DRAW opp_creatures=8 no_blockers=false helps=false
+13	B's Draw step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=13 phase=DRAW opp_creatures=8 no_blockers=false helps=false
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=13 phase=MAIN1 opp_creatures=8 no_blockers=false helps=false
+13	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=13 phase=MAIN1 opp_creatures=8 no_blockers=false helps=false
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=13 phase=COMBAT_BEGIN opp_creatures=8 no_blockers=false helps=false
+13	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=13 phase=COMBAT_BEGIN opp_creatures=8 no_blockers=false helps=false
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Thopter Token (85) and Thopter Token (88) to attack A.
+13	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=13 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=8 no_blockers=false helps=false
+13	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=13 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=8 no_blockers=false helps=false
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A didn't block Thopter Token (85). A didn't block Thopter Token (88).
+13	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=13 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=8 no_blockers=false helps=false
+13	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=13 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=8 no_blockers=false helps=false
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 2 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 2 combat damage to A.
+13	B's Combat Damage Step	LIFE	Life: A 15 > 11
+13	B's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=13 phase=COMBAT_DAMAGE opp_creatures=8 no_blockers=false helps=false
+13	B's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=13 phase=COMBAT_DAMAGE opp_creatures=8 no_blockers=false helps=false
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=13 phase=COMBAT_END opp_creatures=8 no_blockers=false helps=false
+13	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=13 phase=COMBAT_END opp_creatures=8 no_blockers=false helps=false
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=13 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+13	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=13 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+13	B's End step	PHASE	B's End step
+13	B's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=13 phase=END_OF_TURN opp_creatures=8 no_blockers=false helps=false
+13	B's End step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=13 phase=END_OF_TURN opp_creatures=8 no_blockers=false helps=false
+13	B's Cleanup step	PHASE	B's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=14 phase=UPKEEP opp_creatures=8 no_blockers=false helps=false
+14	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=14 phase=UPKEEP opp_creatures=8 no_blockers=false helps=false
+14	A's Draw step	PHASE	A's Draw step
+14	A's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=14 phase=DRAW opp_creatures=8 no_blockers=false helps=false
+14	A's Draw step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=14 phase=DRAW opp_creatures=8 no_blockers=false helps=false
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=14 phase=MAIN1 opp_creatures=8 no_blockers=false helps=false
+14	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=14 phase=MAIN1 opp_creatures=8 no_blockers=false helps=false
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=14 phase=COMBAT_BEGIN opp_creatures=8 no_blockers=false helps=false
+14	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=14 phase=COMBAT_BEGIN opp_creatures=8 no_blockers=false helps=false
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=14 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=8 no_blockers=false helps=false
+14	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=14 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=8 no_blockers=false helps=false
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=14 phase=COMBAT_END opp_creatures=8 no_blockers=false helps=false
+14	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=14 phase=COMBAT_END opp_creatures=8 no_blockers=false helps=false
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=14 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+14	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=14 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+14	A's Main phase, postcombat	STACK_ADD	A cast Silvergill Adept
+14	A's Main phase, postcombat	STACK_ADD	A triggered Silvergill Adept
+14	A's Main phase, postcombat	STACK_ADD	A triggered Alandra, Sky Dreamer
+14	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=14 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+14	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=14 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+14	A's Main phase, postcombat	STACK_ADD	A cast Pollywog Prodigy
+14	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=14 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+14	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=14 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+14	A's Main phase, postcombat	STACK_ADD	A cast Sol Ring
+14	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=14 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+14	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=14 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+14	A's End step	PHASE	A's End step
+14	A's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=14 phase=END_OF_TURN opp_creatures=8 no_blockers=false helps=false
+14	A's End step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=14 phase=END_OF_TURN opp_creatures=8 no_blockers=false helps=false
+14	A's Cleanup step	PHASE	A's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=15 phase=UPKEEP opp_creatures=8 no_blockers=false helps=false
+15	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=15 phase=UPKEEP opp_creatures=8 no_blockers=false helps=false
+15	B's Draw step	PHASE	B's Draw step
+15	B's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=15 phase=DRAW opp_creatures=8 no_blockers=false helps=false
+15	B's Draw step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=15 phase=DRAW opp_creatures=8 no_blockers=false helps=false
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Main phase, precombat	STACK_ADD	B cast Aetherjacket
+15	B's Main phase, precombat	STACK_ADD	B triggered Sai, Master Thopterist
+15	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=15 phase=MAIN1 opp_creatures=8 no_blockers=false helps=false
+15	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=15 phase=MAIN1 opp_creatures=8 no_blockers=false helps=false
+15	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=15 phase=MAIN1 opp_creatures=9 no_blockers=false helps=false
+15	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=15 phase=MAIN1 opp_creatures=9 no_blockers=false helps=false
+15	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=15 phase=MAIN1 opp_creatures=10 no_blockers=false helps=false
+15	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=15 phase=MAIN1 opp_creatures=10 no_blockers=false helps=false
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=15 phase=COMBAT_BEGIN opp_creatures=10 no_blockers=false helps=false
+15	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=15 phase=COMBAT_BEGIN opp_creatures=10 no_blockers=false helps=false
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=15 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=10 no_blockers=false helps=false
+15	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=15 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=10 no_blockers=false helps=false
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's End of Combat Step	PHASE	B's End of Combat Step
+15	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=15 phase=COMBAT_END opp_creatures=10 no_blockers=false helps=false
+15	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=15 phase=COMBAT_END opp_creatures=10 no_blockers=false helps=false
+15	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+15	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=15 phase=MAIN2 opp_creatures=10 no_blockers=false helps=false
+15	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=15 phase=MAIN2 opp_creatures=10 no_blockers=false helps=false
+15	B's End step	PHASE	B's End step
+15	B's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=15 phase=END_OF_TURN opp_creatures=10 no_blockers=false helps=false
+15	B's End step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=15 phase=END_OF_TURN opp_creatures=10 no_blockers=false helps=false
+15	B's Cleanup step	PHASE	B's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=16 phase=UPKEEP opp_creatures=10 no_blockers=false helps=false
+16	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=16 phase=UPKEEP opp_creatures=10 no_blockers=false helps=false
+16	A's Draw step	PHASE	A's Draw step
+16	A's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=16 phase=DRAW opp_creatures=10 no_blockers=false helps=false
+16	A's Draw step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=16 phase=DRAW opp_creatures=10 no_blockers=false helps=false
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=16 phase=MAIN1 opp_creatures=10 no_blockers=false helps=false
+16	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=16 phase=MAIN1 opp_creatures=10 no_blockers=false helps=false
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=16 phase=COMBAT_BEGIN opp_creatures=10 no_blockers=false helps=false
+16	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=16 phase=COMBAT_BEGIN opp_creatures=10 no_blockers=false helps=false
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=16 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=10 no_blockers=false helps=false
+16	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=16 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=10 no_blockers=false helps=false
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=16 phase=COMBAT_END opp_creatures=10 no_blockers=false helps=false
+16	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=16 phase=COMBAT_END opp_creatures=10 no_blockers=false helps=false
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=16 phase=MAIN2 opp_creatures=10 no_blockers=false helps=false
+16	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=16 phase=MAIN2 opp_creatures=10 no_blockers=false helps=false
+16	A's Main phase, postcombat	STACK_ADD	A cast Deranged Assistant
+16	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=16 phase=MAIN2 opp_creatures=10 no_blockers=false helps=false
+16	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=16 phase=MAIN2 opp_creatures=10 no_blockers=false helps=false
+16	A's End step	PHASE	A's End step
+16	A's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=16 phase=END_OF_TURN opp_creatures=10 no_blockers=false helps=false
+16	A's End step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=16 phase=END_OF_TURN opp_creatures=10 no_blockers=false helps=false
+16	A's Cleanup step	PHASE	A's Cleanup step
+17	A's Cleanup step	TURN	Turn 17 (B)
+17	B's Untap step	PHASE	B's Untap step
+17	B's Upkeep step	PHASE	B's Upkeep step
+17	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=17 phase=UPKEEP opp_creatures=10 no_blockers=false helps=false
+17	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=17 phase=UPKEEP opp_creatures=10 no_blockers=false helps=false
+17	B's Draw step	PHASE	B's Draw step
+17	B's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=17 phase=DRAW opp_creatures=10 no_blockers=false helps=false
+17	B's Draw step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=17 phase=DRAW opp_creatures=10 no_blockers=false helps=false
+17	B's Main phase, precombat	PHASE	B's Main phase, precombat
+17	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=17 phase=MAIN1 opp_creatures=10 no_blockers=false helps=false
+17	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=17 phase=MAIN1 opp_creatures=10 no_blockers=false helps=false
+17	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+17	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=17 phase=COMBAT_BEGIN opp_creatures=10 no_blockers=false helps=false
+17	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=17 phase=COMBAT_BEGIN opp_creatures=10 no_blockers=false helps=false
+17	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+17	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=17 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=10 no_blockers=false helps=false
+17	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=17 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=10 no_blockers=false helps=false
+17	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+17	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+17	B's Combat Damage Step	PHASE	B's Combat Damage Step
+17	B's End of Combat Step	PHASE	B's End of Combat Step
+17	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=17 phase=COMBAT_END opp_creatures=10 no_blockers=false helps=false
+17	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=17 phase=COMBAT_END opp_creatures=10 no_blockers=false helps=false
+17	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+17	B's Main phase, postcombat	STACK_ADD	B cast Sol Ring
+17	B's Main phase, postcombat	STACK_ADD	B triggered Sai, Master Thopterist
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=17 phase=MAIN2 opp_creatures=10 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=17 phase=MAIN2 opp_creatures=10 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=17 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=17 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+17	B's Main phase, postcombat	STACK_ADD	B cast Rise and Shine targeting [Sol Ring (46)]
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=17 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=17 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=17 phase=MAIN2 opp_creatures=12 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=17 phase=MAIN2 opp_creatures=12 no_blockers=false helps=false
+17	B's End step	PHASE	B's End step
+17	B's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=17 phase=END_OF_TURN opp_creatures=12 no_blockers=false helps=false
+17	B's End step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=17 phase=END_OF_TURN opp_creatures=12 no_blockers=false helps=false
+17	B's Cleanup step	PHASE	B's Cleanup step
+18	B's Cleanup step	TURN	Turn 18 (A)
+18	A's Untap step	PHASE	A's Untap step
+18	A's Upkeep step	PHASE	A's Upkeep step
+18	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=18 phase=UPKEEP opp_creatures=12 no_blockers=false helps=false
+18	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=18 phase=UPKEEP opp_creatures=12 no_blockers=false helps=false
+18	A's Draw step	PHASE	A's Draw step
+18	A's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=18 phase=DRAW opp_creatures=12 no_blockers=false helps=false
+18	A's Draw step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=18 phase=DRAW opp_creatures=12 no_blockers=false helps=false
+18	A's Main phase, precombat	PHASE	A's Main phase, precombat
+18	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=18 phase=MAIN1 opp_creatures=12 no_blockers=false helps=false
+18	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=18 phase=MAIN1 opp_creatures=12 no_blockers=false helps=false
+18	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+18	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=18 phase=COMBAT_BEGIN opp_creatures=12 no_blockers=false helps=false
+18	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=18 phase=COMBAT_BEGIN opp_creatures=12 no_blockers=false helps=false
+18	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+18	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=18 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=12 no_blockers=false helps=false
+18	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=18 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=12 no_blockers=false helps=false
+18	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+18	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+18	A's Combat Damage Step	PHASE	A's Combat Damage Step
+18	A's End of Combat Step	PHASE	A's End of Combat Step
+18	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=18 phase=COMBAT_END opp_creatures=12 no_blockers=false helps=false
+18	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=18 phase=COMBAT_END opp_creatures=12 no_blockers=false helps=false
+18	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+18	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=18 phase=MAIN2 opp_creatures=12 no_blockers=false helps=false
+18	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=18 phase=MAIN2 opp_creatures=12 no_blockers=false helps=false
+18	A's Main phase, postcombat	STACK_ADD	A cast Serum Visions
+18	A's Main phase, postcombat	STACK_ADD	A triggered Alandra, Sky Dreamer
+18	A's Main phase, postcombat	STACK_ADD	A triggered Pollywog Prodigy
+18	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=18 phase=MAIN2 opp_creatures=12 no_blockers=false helps=false
+18	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+18	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+18	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=18 phase=MAIN2 opp_creatures=12 no_blockers=false helps=false
+18	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=18 phase=MAIN2 opp_creatures=12 no_blockers=false helps=false
+18	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=MAIN2 opp_creatures=12 no_blockers=false helps=false
+18	A's End step	PHASE	A's End step
+18	A's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=18 phase=END_OF_TURN opp_creatures=12 no_blockers=false helps=false
+18	A's End step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=18 phase=END_OF_TURN opp_creatures=12 no_blockers=false helps=false
+18	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=END_OF_TURN opp_creatures=12 no_blockers=false helps=false
+18	A's Cleanup step	PHASE	A's Cleanup step
+19	A's Cleanup step	TURN	Turn 19 (B)
+19	B's Untap step	PHASE	B's Untap step
+19	B's Upkeep step	PHASE	B's Upkeep step
+19	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=19 phase=UPKEEP opp_creatures=12 no_blockers=false helps=false
+19	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=19 phase=UPKEEP opp_creatures=12 no_blockers=false helps=false
+19	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=19 phase=UPKEEP opp_creatures=12 no_blockers=false helps=false
+19	B's Draw step	PHASE	B's Draw step
+19	B's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=19 phase=DRAW opp_creatures=12 no_blockers=false helps=false
+19	B's Draw step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=19 phase=DRAW opp_creatures=12 no_blockers=false helps=false
+19	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=19 phase=DRAW opp_creatures=12 no_blockers=false helps=false
+19	B's Main phase, precombat	PHASE	B's Main phase, precombat
+19	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=19 phase=MAIN1 opp_creatures=12 no_blockers=false helps=false
+19	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=19 phase=MAIN1 opp_creatures=12 no_blockers=false helps=false
+19	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=19 phase=MAIN1 opp_creatures=12 no_blockers=false helps=false
+19	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+19	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=19 phase=COMBAT_BEGIN opp_creatures=12 no_blockers=false helps=false
+19	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=19 phase=COMBAT_BEGIN opp_creatures=12 no_blockers=false helps=false
+19	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=19 phase=COMBAT_BEGIN opp_creatures=12 no_blockers=false helps=false
+19	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+19	B's Declare Attackers Step	COMBAT	B assigned Sol Ring (46) to attack A.
+19	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=19 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=12 no_blockers=false helps=false
+19	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=19 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=12 no_blockers=false helps=false
+19	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=19 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=12 no_blockers=false helps=false
+19	B's Declare Attackers Step	STACK_ADD	A cast Stream of Unconsciousness targeting [Sol Ring (46)]
+19	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=19 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=12 no_blockers=false helps=false
+19	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=19 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=12 no_blockers=false helps=false
+19	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=19 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=12 no_blockers=false helps=false
+19	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+19	B's Declare Blockers Step	COMBAT*	A assigned Drake Token (91), Aquamoeba (15), Karfell Harbinger (2) and Myr Quadropod (11) to block Sol Ring (46).
+19	B's Declare Blockers Step	ZONE_CHANGE	Sol Ring (46) was put into Graveyard from Battlefield.
+19	B's Declare Blockers Step	ZONE_CHANGE	Myr Retriever (43) was put into Graveyard from Battlefield.
+19	B's Declare Blockers Step	STACK_ADD	B activated Sai, Master Thopterist
+19	B's Declare Blockers Step	STACK_ADD	B triggered Myr Retriever targeting [Sol Ring (46)]
+19	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=19 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=10 no_blockers=false helps=false
+19	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=19 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=10 no_blockers=false helps=false
+19	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=19 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=10 no_blockers=false helps=false
+19	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=19 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=10 no_blockers=false helps=false
+19	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=19 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=10 no_blockers=false helps=false
+19	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=19 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=10 no_blockers=false helps=false
+19	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=19 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=10 no_blockers=false helps=false
+19	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=19 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=10 no_blockers=false helps=false
+19	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=19 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=10 no_blockers=false helps=false
+19	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+19	B's Combat Damage Step	PHASE	B's Combat Damage Step
+19	B's End of Combat Step	PHASE	B's End of Combat Step
+19	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=19 phase=COMBAT_END opp_creatures=10 no_blockers=false helps=false
+19	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=19 phase=COMBAT_END opp_creatures=10 no_blockers=false helps=false
+19	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=19 phase=COMBAT_END opp_creatures=10 no_blockers=false helps=false
+19	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+19	B's Main phase, postcombat	STACK_ADD	B cast Sol Ring
+19	B's Main phase, postcombat	STACK_ADD	B triggered Sai, Master Thopterist
+19	B's Main phase, postcombat	STACK_ADD	A triggered Pollywog Prodigy
+19	B's Main phase, postcombat	STACK_ADD	A triggered Alandra, Sky Dreamer
+19	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=19 phase=MAIN2 opp_creatures=10 no_blockers=false helps=false
+19	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=19 phase=MAIN2 opp_creatures=10 no_blockers=false helps=false
+19	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=19 phase=MAIN2 opp_creatures=10 no_blockers=false helps=false
+19	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=19 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+19	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=19 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+19	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=19 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+19	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=19 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+19	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=19 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+19	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=19 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+19	B's End step	PHASE	B's End step
+19	B's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=19 phase=END_OF_TURN opp_creatures=11 no_blockers=false helps=false
+19	B's End step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=19 phase=END_OF_TURN opp_creatures=11 no_blockers=false helps=false
+19	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=19 phase=END_OF_TURN opp_creatures=11 no_blockers=false helps=false
+19	B's Cleanup step	PHASE	B's Cleanup step
+20	B's Cleanup step	TURN	Turn 20 (A)
+20	A's Untap step	PHASE	A's Untap step
+20	A's Upkeep step	PHASE	A's Upkeep step
+20	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=20 phase=UPKEEP opp_creatures=11 no_blockers=false helps=false
+20	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=20 phase=UPKEEP opp_creatures=11 no_blockers=false helps=false
+20	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=20 phase=UPKEEP opp_creatures=11 no_blockers=false helps=false
+20	A's Draw step	PHASE	A's Draw step
+20	A's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=20 phase=DRAW opp_creatures=11 no_blockers=false helps=false
+20	A's Draw step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=20 phase=DRAW opp_creatures=11 no_blockers=false helps=false
+20	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=20 phase=DRAW opp_creatures=11 no_blockers=false helps=false
+20	A's Main phase, precombat	PHASE	A's Main phase, precombat
+20	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=20 phase=MAIN1 opp_creatures=11 no_blockers=false helps=false
+20	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=20 phase=MAIN1 opp_creatures=11 no_blockers=false helps=false
+20	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=20 phase=MAIN1 opp_creatures=11 no_blockers=false helps=false
+20	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+20	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=20 phase=COMBAT_BEGIN opp_creatures=11 no_blockers=false helps=false
+20	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=20 phase=COMBAT_BEGIN opp_creatures=11 no_blockers=false helps=false
+20	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=20 phase=COMBAT_BEGIN opp_creatures=11 no_blockers=false helps=false
+20	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+20	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=20 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=11 no_blockers=false helps=false
+20	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=20 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=11 no_blockers=false helps=false
+20	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=20 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=11 no_blockers=false helps=false
+20	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+20	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+20	A's Combat Damage Step	PHASE	A's Combat Damage Step
+20	A's End of Combat Step	PHASE	A's End of Combat Step
+20	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=20 phase=COMBAT_END opp_creatures=11 no_blockers=false helps=false
+20	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=20 phase=COMBAT_END opp_creatures=11 no_blockers=false helps=false
+20	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=20 phase=COMBAT_END opp_creatures=11 no_blockers=false helps=false
+20	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+20	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=20 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+20	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+20	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+20	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=20 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+20	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=20 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+20	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=20 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+20	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=20 phase=MAIN2 opp_creatures=11 no_blockers=false helps=false
+20	A's End step	PHASE	A's End step
+20	A's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=20 phase=END_OF_TURN opp_creatures=11 no_blockers=false helps=false
+20	A's End step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=20 phase=END_OF_TURN opp_creatures=11 no_blockers=false helps=false
+20	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=20 phase=END_OF_TURN opp_creatures=11 no_blockers=false helps=false
+20	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=20 phase=END_OF_TURN opp_creatures=11 no_blockers=false helps=false
+20	A's Cleanup step	PHASE	A's Cleanup step
+21	A's Cleanup step	TURN	Turn 21 (B)
+21	B's Untap step	PHASE	B's Untap step
+21	B's Upkeep step	PHASE	B's Upkeep step
+21	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=21 phase=UPKEEP opp_creatures=11 no_blockers=false helps=false
+21	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=21 phase=UPKEEP opp_creatures=11 no_blockers=false helps=false
+21	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=UPKEEP opp_creatures=11 no_blockers=false helps=false
+21	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=UPKEEP opp_creatures=11 no_blockers=false helps=false
+21	B's Draw step	PHASE	B's Draw step
+21	B's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=21 phase=DRAW opp_creatures=11 no_blockers=false helps=false
+21	B's Draw step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=21 phase=DRAW opp_creatures=11 no_blockers=false helps=false
+21	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=DRAW opp_creatures=11 no_blockers=false helps=false
+21	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=DRAW opp_creatures=11 no_blockers=false helps=false
+21	B's Main phase, precombat	PHASE	B's Main phase, precombat
+21	B's Main phase, precombat	STACK_ADD	B cast Etherium Sculptor
+21	B's Main phase, precombat	STACK_ADD	B triggered Sai, Master Thopterist
+21	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=21 phase=MAIN1 opp_creatures=11 no_blockers=false helps=false
+21	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=21 phase=MAIN1 opp_creatures=11 no_blockers=false helps=false
+21	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=MAIN1 opp_creatures=11 no_blockers=false helps=false
+21	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=MAIN1 opp_creatures=11 no_blockers=false helps=false
+21	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=21 phase=MAIN1 opp_creatures=12 no_blockers=false helps=false
+21	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=21 phase=MAIN1 opp_creatures=12 no_blockers=false helps=false
+21	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=MAIN1 opp_creatures=12 no_blockers=false helps=false
+21	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=MAIN1 opp_creatures=12 no_blockers=false helps=false
+21	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=21 phase=MAIN1 opp_creatures=13 no_blockers=false helps=false
+21	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=21 phase=MAIN1 opp_creatures=13 no_blockers=false helps=false
+21	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=MAIN1 opp_creatures=13 no_blockers=false helps=false
+21	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=MAIN1 opp_creatures=13 no_blockers=false helps=false
+21	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+21	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=21 phase=COMBAT_BEGIN opp_creatures=13 no_blockers=false helps=false
+21	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=21 phase=COMBAT_BEGIN opp_creatures=13 no_blockers=false helps=false
+21	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=COMBAT_BEGIN opp_creatures=13 no_blockers=false helps=false
+21	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=COMBAT_BEGIN opp_creatures=13 no_blockers=false helps=false
+21	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+21	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=21 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=13 no_blockers=false helps=false
+21	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=21 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=13 no_blockers=false helps=false
+21	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=13 no_blockers=false helps=false
+21	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=13 no_blockers=false helps=false
+21	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+21	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+21	B's Combat Damage Step	PHASE	B's Combat Damage Step
+21	B's End of Combat Step	PHASE	B's End of Combat Step
+21	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=21 phase=COMBAT_END opp_creatures=13 no_blockers=false helps=false
+21	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=21 phase=COMBAT_END opp_creatures=13 no_blockers=false helps=false
+21	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=COMBAT_END opp_creatures=13 no_blockers=false helps=false
+21	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=COMBAT_END opp_creatures=13 no_blockers=false helps=false
+21	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+21	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=21 phase=MAIN2 opp_creatures=13 no_blockers=false helps=false
+21	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=21 phase=MAIN2 opp_creatures=13 no_blockers=false helps=false
+21	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=MAIN2 opp_creatures=13 no_blockers=false helps=false
+21	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=MAIN2 opp_creatures=13 no_blockers=false helps=false
+21	B's End step	PHASE	B's End step
+21	B's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=21 phase=END_OF_TURN opp_creatures=13 no_blockers=false helps=false
+21	B's End step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=21 phase=END_OF_TURN opp_creatures=13 no_blockers=false helps=false
+21	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=END_OF_TURN opp_creatures=13 no_blockers=false helps=false
+21	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=21 phase=END_OF_TURN opp_creatures=13 no_blockers=false helps=false
+21	B's Cleanup step	PHASE	B's Cleanup step
+22	B's Cleanup step	TURN	Turn 22 (A)
+22	A's Untap step	PHASE	A's Untap step
+22	A's Upkeep step	PHASE	A's Upkeep step
+22	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=22 phase=UPKEEP opp_creatures=13 no_blockers=false helps=false
+22	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=22 phase=UPKEEP opp_creatures=13 no_blockers=false helps=false
+22	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=UPKEEP opp_creatures=13 no_blockers=false helps=false
+22	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=UPKEEP opp_creatures=13 no_blockers=false helps=false
+22	A's Draw step	PHASE	A's Draw step
+22	A's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=22 phase=DRAW opp_creatures=13 no_blockers=false helps=false
+22	A's Draw step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=22 phase=DRAW opp_creatures=13 no_blockers=false helps=false
+22	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=DRAW opp_creatures=13 no_blockers=false helps=false
+22	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=DRAW opp_creatures=13 no_blockers=false helps=false
+22	A's Draw step	STACK_ADD	A cast Slip Out the Back targeting [Stonybrook Banneret (21)]
+22	A's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=22 phase=DRAW opp_creatures=13 no_blockers=false helps=false
+22	A's Draw step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=22 phase=DRAW opp_creatures=13 no_blockers=false helps=false
+22	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=DRAW opp_creatures=13 no_blockers=false helps=false
+22	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=DRAW opp_creatures=13 no_blockers=false helps=false
+22	A's Main phase, precombat	PHASE	A's Main phase, precombat
+22	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=22 phase=MAIN1 opp_creatures=13 no_blockers=false helps=false
+22	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=22 phase=MAIN1 opp_creatures=13 no_blockers=false helps=false
+22	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=MAIN1 opp_creatures=13 no_blockers=false helps=false
+22	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=MAIN1 opp_creatures=13 no_blockers=false helps=false
+22	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+22	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=22 phase=COMBAT_BEGIN opp_creatures=13 no_blockers=false helps=false
+22	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=22 phase=COMBAT_BEGIN opp_creatures=13 no_blockers=false helps=false
+22	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=COMBAT_BEGIN opp_creatures=13 no_blockers=false helps=false
+22	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=COMBAT_BEGIN opp_creatures=13 no_blockers=false helps=false
+22	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+22	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=22 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=13 no_blockers=false helps=false
+22	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=22 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=13 no_blockers=false helps=false
+22	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=13 no_blockers=false helps=false
+22	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=13 no_blockers=false helps=false
+22	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+22	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+22	A's Combat Damage Step	PHASE	A's Combat Damage Step
+22	A's End of Combat Step	PHASE	A's End of Combat Step
+22	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=22 phase=COMBAT_END opp_creatures=13 no_blockers=false helps=false
+22	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=22 phase=COMBAT_END opp_creatures=13 no_blockers=false helps=false
+22	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=COMBAT_END opp_creatures=13 no_blockers=false helps=false
+22	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=COMBAT_END opp_creatures=13 no_blockers=false helps=false
+22	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+22	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=22 phase=MAIN2 opp_creatures=13 no_blockers=false helps=false
+22	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=22 phase=MAIN2 opp_creatures=13 no_blockers=false helps=false
+22	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=MAIN2 opp_creatures=13 no_blockers=false helps=false
+22	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=MAIN2 opp_creatures=13 no_blockers=false helps=false
+22	A's End step	PHASE	A's End step
+22	A's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=22 phase=END_OF_TURN opp_creatures=13 no_blockers=false helps=false
+22	A's End step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=22 phase=END_OF_TURN opp_creatures=13 no_blockers=false helps=false
+22	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=END_OF_TURN opp_creatures=13 no_blockers=false helps=false
+22	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=22 phase=END_OF_TURN opp_creatures=13 no_blockers=false helps=false
+22	A's Cleanup step	PHASE	A's Cleanup step
+23	A's Cleanup step	TURN	Turn 23 (B)
+23	B's Untap step	PHASE	B's Untap step
+23	B's Upkeep step	PHASE	B's Upkeep step
+23	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=23 phase=UPKEEP opp_creatures=13 no_blockers=false helps=false
+23	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=23 phase=UPKEEP opp_creatures=13 no_blockers=false helps=false
+23	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=UPKEEP opp_creatures=13 no_blockers=false helps=false
+23	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=UPKEEP opp_creatures=13 no_blockers=false helps=false
+23	B's Draw step	PHASE	B's Draw step
+23	B's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=23 phase=DRAW opp_creatures=13 no_blockers=false helps=false
+23	B's Draw step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=23 phase=DRAW opp_creatures=13 no_blockers=false helps=false
+23	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=DRAW opp_creatures=13 no_blockers=false helps=false
+23	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=DRAW opp_creatures=13 no_blockers=false helps=false
+23	B's Main phase, precombat	PHASE	B's Main phase, precombat
+23	B's Main phase, precombat	STACK_ADD	B cast Millikin
+23	B's Main phase, precombat	STACK_ADD	B triggered Sai, Master Thopterist
+23	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=23 phase=MAIN1 opp_creatures=13 no_blockers=false helps=false
+23	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=23 phase=MAIN1 opp_creatures=13 no_blockers=false helps=false
+23	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=MAIN1 opp_creatures=13 no_blockers=false helps=false
+23	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=MAIN1 opp_creatures=13 no_blockers=false helps=false
+23	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=23 phase=MAIN1 opp_creatures=14 no_blockers=false helps=false
+23	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=23 phase=MAIN1 opp_creatures=14 no_blockers=false helps=false
+23	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=MAIN1 opp_creatures=14 no_blockers=false helps=false
+23	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=MAIN1 opp_creatures=14 no_blockers=false helps=false
+23	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=23 phase=MAIN1 opp_creatures=15 no_blockers=false helps=false
+23	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=23 phase=MAIN1 opp_creatures=15 no_blockers=false helps=false
+23	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=MAIN1 opp_creatures=15 no_blockers=false helps=false
+23	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=MAIN1 opp_creatures=15 no_blockers=false helps=false
+23	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+23	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=23 phase=COMBAT_BEGIN opp_creatures=15 no_blockers=false helps=false
+23	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=23 phase=COMBAT_BEGIN opp_creatures=15 no_blockers=false helps=false
+23	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=COMBAT_BEGIN opp_creatures=15 no_blockers=false helps=false
+23	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=COMBAT_BEGIN opp_creatures=15 no_blockers=false helps=false
+23	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+23	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=23 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=15 no_blockers=false helps=false
+23	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=23 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=15 no_blockers=false helps=false
+23	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=15 no_blockers=false helps=false
+23	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=15 no_blockers=false helps=false
+23	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+23	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+23	B's Combat Damage Step	PHASE	B's Combat Damage Step
+23	B's End of Combat Step	PHASE	B's End of Combat Step
+23	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=23 phase=COMBAT_END opp_creatures=15 no_blockers=false helps=false
+23	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=23 phase=COMBAT_END opp_creatures=15 no_blockers=false helps=false
+23	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=COMBAT_END opp_creatures=15 no_blockers=false helps=false
+23	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=COMBAT_END opp_creatures=15 no_blockers=false helps=false
+23	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+23	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=23 phase=MAIN2 opp_creatures=15 no_blockers=false helps=false
+23	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=23 phase=MAIN2 opp_creatures=15 no_blockers=false helps=false
+23	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=MAIN2 opp_creatures=15 no_blockers=false helps=false
+23	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=MAIN2 opp_creatures=15 no_blockers=false helps=false
+23	B's End step	PHASE	B's End step
+23	B's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=23 phase=END_OF_TURN opp_creatures=15 no_blockers=false helps=false
+23	B's End step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=23 phase=END_OF_TURN opp_creatures=15 no_blockers=false helps=false
+23	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=END_OF_TURN opp_creatures=15 no_blockers=false helps=false
+23	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=23 phase=END_OF_TURN opp_creatures=15 no_blockers=false helps=false
+23	B's Cleanup step	PHASE	B's Cleanup step
+24	B's Cleanup step	TURN	Turn 24 (A)
+24	A's Untap step	PHASE	A's Untap step
+24	A's Upkeep step	PHASE	A's Upkeep step
+24	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=24 phase=UPKEEP opp_creatures=15 no_blockers=false helps=false
+24	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=24 phase=UPKEEP opp_creatures=15 no_blockers=false helps=false
+24	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=UPKEEP opp_creatures=15 no_blockers=false helps=false
+24	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=UPKEEP opp_creatures=15 no_blockers=false helps=false
+24	A's Draw step	PHASE	A's Draw step
+24	A's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=24 phase=DRAW opp_creatures=15 no_blockers=false helps=false
+24	A's Draw step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=24 phase=DRAW opp_creatures=15 no_blockers=false helps=false
+24	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=DRAW opp_creatures=15 no_blockers=false helps=false
+24	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=DRAW opp_creatures=15 no_blockers=false helps=false
+24	A's Main phase, precombat	PHASE	A's Main phase, precombat
+24	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=24 phase=MAIN1 opp_creatures=15 no_blockers=false helps=false
+24	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=24 phase=MAIN1 opp_creatures=15 no_blockers=false helps=false
+24	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=MAIN1 opp_creatures=15 no_blockers=false helps=false
+24	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=MAIN1 opp_creatures=15 no_blockers=false helps=false
+24	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+24	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=24 phase=COMBAT_BEGIN opp_creatures=15 no_blockers=false helps=false
+24	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=24 phase=COMBAT_BEGIN opp_creatures=15 no_blockers=false helps=false
+24	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=COMBAT_BEGIN opp_creatures=15 no_blockers=false helps=false
+24	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=COMBAT_BEGIN opp_creatures=15 no_blockers=false helps=false
+24	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+24	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=24 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=15 no_blockers=false helps=false
+24	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=24 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=15 no_blockers=false helps=false
+24	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=15 no_blockers=false helps=false
+24	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=15 no_blockers=false helps=false
+24	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+24	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+24	A's Combat Damage Step	PHASE	A's Combat Damage Step
+24	A's End of Combat Step	PHASE	A's End of Combat Step
+24	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=24 phase=COMBAT_END opp_creatures=15 no_blockers=false helps=false
+24	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=24 phase=COMBAT_END opp_creatures=15 no_blockers=false helps=false
+24	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=COMBAT_END opp_creatures=15 no_blockers=false helps=false
+24	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=COMBAT_END opp_creatures=15 no_blockers=false helps=false
+24	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+24	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=24 phase=MAIN2 opp_creatures=15 no_blockers=false helps=false
+24	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=24 phase=MAIN2 opp_creatures=15 no_blockers=false helps=false
+24	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=MAIN2 opp_creatures=15 no_blockers=false helps=false
+24	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=MAIN2 opp_creatures=15 no_blockers=false helps=false
+24	A's End step	PHASE	A's End step
+24	A's End step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=24 phase=END_OF_TURN opp_creatures=15 no_blockers=false helps=false
+24	A's End step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=24 phase=END_OF_TURN opp_creatures=15 no_blockers=false helps=false
+24	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=END_OF_TURN opp_creatures=15 no_blockers=false helps=false
+24	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=24 phase=END_OF_TURN opp_creatures=15 no_blockers=false helps=false
+24	A's Cleanup step	PHASE	A's Cleanup step
+25	A's Cleanup step	TURN	Turn 25 (B)
+25	B's Untap step	PHASE	B's Untap step
+25	B's Upkeep step	PHASE	B's Upkeep step
+25	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=25 phase=UPKEEP opp_creatures=15 no_blockers=false helps=false
+25	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=25 phase=UPKEEP opp_creatures=15 no_blockers=false helps=false
+25	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=UPKEEP opp_creatures=15 no_blockers=false helps=false
+25	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=UPKEEP opp_creatures=15 no_blockers=false helps=false
+25	B's Draw step	PHASE	B's Draw step
+25	B's Draw step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=25 phase=DRAW opp_creatures=15 no_blockers=false helps=false
+25	B's Draw step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=25 phase=DRAW opp_creatures=15 no_blockers=false helps=false
+25	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=DRAW opp_creatures=15 no_blockers=false helps=false
+25	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=DRAW opp_creatures=15 no_blockers=false helps=false
+25	B's Main phase, precombat	PHASE	B's Main phase, precombat
+25	B's Main phase, precombat	STACK_ADD	B cast Brotherhood Regalia
+25	B's Main phase, precombat	STACK_ADD	B triggered Sai, Master Thopterist
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=25 phase=MAIN1 opp_creatures=15 no_blockers=false helps=false
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=25 phase=MAIN1 opp_creatures=15 no_blockers=false helps=false
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=MAIN1 opp_creatures=15 no_blockers=false helps=false
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=MAIN1 opp_creatures=15 no_blockers=false helps=false
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=25 phase=MAIN1 opp_creatures=16 no_blockers=false helps=false
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=25 phase=MAIN1 opp_creatures=16 no_blockers=false helps=false
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=MAIN1 opp_creatures=16 no_blockers=false helps=false
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=MAIN1 opp_creatures=16 no_blockers=false helps=false
+25	B's Main phase, precombat	STACK_ADD	B activated Brotherhood Regalia targeting [Aetherjacket (47)]
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=25 phase=MAIN1 opp_creatures=16 no_blockers=false helps=false
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=25 phase=MAIN1 opp_creatures=16 no_blockers=false helps=false
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=MAIN1 opp_creatures=16 no_blockers=false helps=false
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=MAIN1 opp_creatures=16 no_blockers=false helps=false
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=25 phase=MAIN1 opp_creatures=16 no_blockers=false helps=false
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=25 phase=MAIN1 opp_creatures=16 no_blockers=false helps=false
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=MAIN1 opp_creatures=16 no_blockers=false helps=false
+25	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=MAIN1 opp_creatures=16 no_blockers=false helps=false
+25	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+25	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=25 phase=COMBAT_BEGIN opp_creatures=16 no_blockers=false helps=false
+25	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=25 phase=COMBAT_BEGIN opp_creatures=16 no_blockers=false helps=false
+25	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=COMBAT_BEGIN opp_creatures=16 no_blockers=false helps=false
+25	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=COMBAT_BEGIN opp_creatures=16 no_blockers=false helps=false
+25	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+25	B's Declare Attackers Step	COMBAT	B assigned Aetherjacket (47), Universal Automaton (70), Chief of the Foundry (49), Thopter Token (85), Thopter Token (88), Gingerbrute (76), Thopter Token (94), Thopter Token (97), Thopter Token (106), Thopter Token (109), Etherium Sculptor (74), Thopter Token (112), Sai, Master Thopterist (81) and Millikin (79) to attack A.
+25	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=25 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=16 no_blockers=false helps=false
+25	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=25 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=16 no_blockers=false helps=false
+25	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=16 no_blockers=false helps=false
+25	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=16 no_blockers=false helps=false
+25	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+25	B's Declare Blockers Step	COMBAT*	A didn't block Aetherjacket (47). A assigned Drake Token (91) to block Universal Automaton (70). A assigned Deranged Assistant (1), Aquamoeba (15) and Alandra, Sky Dreamer (40) to block Chief of the Foundry (49). A assigned Drake Token (104) to block Thopter Token (85). A didn't block Thopter Token (88). A assigned Drake Token (100) to block Gingerbrute (76). A didn't block Thopter Token (94). A didn't block Thopter Token (97). A didn't block Thopter Token (106). A didn't block Thopter Token (109). A assigned Silvergill Adept (3) and Karfell Harbinger (2) to block Etherium Sculptor (74). A didn't block Thopter Token (112). A assigned Merfolk Trickster (20), Myr Quadropod (11) and Pollywog Prodigy (17) to block Sai, Master Thopterist (81). A assigned Stonybrook Banneret (21) to block Millikin (79).
+25	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Aquamoeba turn=25 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=16 no_blockers=false helps=false
+25	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Myr Quadropod turn=25 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=16 no_blockers=false helps=false
+25	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=16 no_blockers=false helps=false
+25	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=25 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=16 no_blockers=false helps=false
+25	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+25	B's Combat Damage Step	PHASE	B's Combat Damage Step
+25	B's Combat Damage Step	DAMAGE	Aetherjacket (47) deals 3 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Universal Automaton (70) deals 2 damage to Drake Token (91).
+25	B's Combat Damage Step	DAMAGE	Chief of the Foundry (49) deals 1 damage to Deranged Assistant (1).
+25	B's Combat Damage Step	DAMAGE	Chief of the Foundry (49) deals 1 damage to Alandra, Sky Dreamer (40).
+25	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 2 damage to Drake Token (104).
+25	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 2 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Gingerbrute (76) deals 2 damage to Drake Token (100).
+25	B's Combat Damage Step	DAMAGE	Thopter Token (94) deals 2 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Thopter Token (97) deals 2 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Thopter Token (106) deals 2 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Thopter Token (109) deals 2 combat damage to A.
+25	B's Combat Damage Step	DAMAGE	Etherium Sculptor (74) deals 1 damage to Karfell Harbinger (2).
+25	B's Combat Damage Step	DAMAGE	Etherium Sculptor (74) deals 1 damage to Silvergill Adept (3).
+25	B's Combat Damage Step	DAMAGE	Thopter Token (112) deals 2 combat damage to A.
+25	B's Combat Damage Step	DAMAGE*	Sai, Master Thopterist (81) deals 1 damage to Myr Quadropod (11).
+25	B's Combat Damage Step	DAMAGE	Millikin (79) deals 1 damage to Stonybrook Banneret (21).
+25	B's Combat Damage Step	DAMAGE	Deranged Assistant (1) deals 1 damage to Chief of the Foundry (49).
+25	B's Combat Damage Step	DAMAGE*	Aquamoeba (15) deals 1 damage to Chief of the Foundry (49).
+25	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Chief of the Foundry (49).
+25	B's Combat Damage Step	DAMAGE	Silvergill Adept (3) deals 2 damage to Etherium Sculptor (74).
+25	B's Combat Damage Step	DAMAGE	Karfell Harbinger (2) deals 1 damage to Etherium Sculptor (74).
+25	B's Combat Damage Step	DAMAGE	Drake Token (91) deals 2 damage to Universal Automaton (70).
+25	B's Combat Damage Step	DAMAGE	Drake Token (100) deals 2 damage to Gingerbrute (76).
+25	B's Combat Damage Step	DAMAGE	Drake Token (104) deals 2 damage to Thopter Token (85).
+25	B's Combat Damage Step	DAMAGE	Merfolk Trickster (20) deals 2 damage to Sai, Master Thopterist (81).
+25	B's Combat Damage Step	DAMAGE*	Myr Quadropod (11) deals 1 damage to Sai, Master Thopterist (81).
+25	B's Combat Damage Step	DAMAGE	Pollywog Prodigy (17) deals 2 damage to Sai, Master Thopterist (81).
+25	B's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 2 damage to Millikin (79).
+25	B's Combat Damage Step	LIFE	Life: A 11 > -4

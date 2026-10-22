@@ -1,0 +1,55 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Blossoming Defense; Forest; Forest; Tyvar's Stand; Giant Growth; Tamiyo's Safekeeping; Forest
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Destiny Spinner (6)]
+9	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (9) - Destiny Spinner (6) gets +2/+2 and gains hexproof until end of turn.
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Destiny Spinner (6) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Destiny Spinner (6).
+9	A's Declare Blockers Step	STACK_ADD	A cast Tyvar's Stand targeting [Destiny Spinner (6)]
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Destiny Spinner (6) deals 7 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 18 > 11
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Upkeep step	STACK_ADD	B activated Bloodline Shaman
+12	B's Upkeep step	STACK_ADD	B cast Tail Swipe targeting [Selvala, Heart of the Wilds (81)] [Destiny Spinner (6)]
+12	B's Upkeep step	DAMAGE	Selvala, Heart of the Wilds (81) deals 3 damage to Destiny Spinner (6).
+12	B's Upkeep step	DAMAGE	Destiny Spinner (6) deals 2 damage to Selvala, Heart of the Wilds (81).
+12	B's Upkeep step	ZONE_CHANGE	Destiny Spinner (6) was put into Graveyard from Battlefield.
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned Leaf Gilder (74), Selvala, Heart of the Wilds (81), Elvish Lyrist (43) and Leaf-Crowned Visionary (52) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A didn't block Leaf Gilder (74). A assigned Grappler Spider (17) to block Selvala, Heart of the Wilds (81). A didn't block Elvish Lyrist (43). A didn't block Leaf-Crowned Visionary (52).
+12	B's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Grappler Spider (17)]
+12	B's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Grappler Spider (17) gets +3/+3  until end of turn.
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 3 combat damage to A.
+12	B's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 3 damage to Grappler Spider (17).
+12	B's Combat Damage Step	DAMAGE	Elvish Lyrist (43) deals 2 combat damage to A.
+12	B's Combat Damage Step	DAMAGE	Leaf-Crowned Visionary (52) deals 1 combat damage to A.
+12	B's Combat Damage Step	DAMAGE	Grappler Spider (17) deals 5 damage to Selvala, Heart of the Wilds (81).
+12	B's Combat Damage Step	LIFE	Life: A 20 > 14
+12	B's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's Main phase, postcombat	STACK_ADD	B cast Duskwatch Recruiter
+12	B's Main phase, postcombat	STACK_ADD	B cast Elvish Mystic
+12	B's Main phase, postcombat	STACK_ADD	B triggered Leaf-Crowned Visionary
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step

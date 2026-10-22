@@ -1,0 +1,44 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Giant Growth; Titanic Growth; Forest; Forest; Grappler Spider; Snakeskin Veil; Arcane Signet
+6	A's Cleanup step	TURN	Turn 6 (B)
+6	B's Untap step	PHASE	B's Untap step
+6	B's Upkeep step	PHASE	B's Upkeep step
+6	B's Upkeep step	STACK_ADD	B cast Ram Through targeting [Collector Ouphe (48)] [Grappler Spider (17)]
+6	B's Upkeep step	STACK_ADD*	A cast Titanic Growth targeting [Grappler Spider (17)]
+6	B's Upkeep step	STACK_RESOLVE*	Titanic Growth (11) - Grappler Spider (17) gets +4/+4  until end of turn.
+6	B's Upkeep step	DAMAGE	Collector Ouphe (48) deals 2 damage to Grappler Spider (17).
+6	B's Draw step	PHASE	B's Draw step
+6	B's Main phase, precombat	PHASE	B's Main phase, precombat
+6	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+6	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+6	B's Declare Attackers Step	COMBAT	B assigned Collector Ouphe (48) to attack A.
+6	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+6	B's Declare Blockers Step	COMBAT	A didn't block Collector Ouphe (48).
+6	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+6	B's Combat Damage Step	PHASE	B's Combat Damage Step
+6	B's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 combat damage to A.
+6	B's Combat Damage Step	LIFE	Life: A 20 > 18
+6	B's End of Combat Step	PHASE	B's End of Combat Step
+6	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+6	B's End step	PHASE	B's End step
+6	B's Cleanup step	PHASE	B's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Grappler Spider (17), Arasta of the Endless Web (40) and Deadly Recluse (15) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Grappler Spider (17). B didn't block Arasta of the Endless Web (40). B didn't block Deadly Recluse (15).
+11	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Deadly Recluse (15)]
+11	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Deadly Recluse (15) gets +4/+4  until end of turn.
+11	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Deadly Recluse (15)]
+11	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Deadly Recluse (15) gets +3/+3  until end of turn.
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Grappler Spider (17) deals 2 damage to Selvala, Heart of the Wilds (81).
+11	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 9 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Grappler Spider (17).
+11	A's Combat Damage Step	LIFE	Life: B 12 > 0

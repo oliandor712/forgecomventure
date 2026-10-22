@@ -1,0 +1,145 @@
+0		MULLIGAN*	A has kept a hand of 6 cards hand: Deadly Recluse; Aquastrand Spider; Forest; Forest; Blossoming Defense; Copper Longlegs
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Destiny Spinner (6)]
+10	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (9) - Destiny Spinner (6) gets +2/+2 and gains hexproof until end of turn.
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Destiny Spinner (6) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B didn't block Destiny Spinner (6).
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Destiny Spinner (6) deals 4 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 20 > 16
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A cast Aquastrand Spider
+10	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Destiny Spinner (6)]
+12	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (10) - Destiny Spinner (6) gets +2/+2 and gains hexproof until end of turn.
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Destiny Spinner (6) and Deadly Recluse (15) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Destiny Spinner (6). B didn't block Deadly Recluse (15).
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Destiny Spinner (6) deals 4 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 1 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 16 > 11
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Arasta of the Endless Web
+12	A's Main phase, postcombat	STACK_ADD	A triggered Aquastrand Spider
+12	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+26	B's Cleanup step	TURN	Turn 26 (A)
+26	A's Untap step	PHASE	A's Untap step
+26	A's Upkeep step	PHASE	A's Upkeep step
+26	A's Draw step	PHASE	A's Draw step
+26	A's Main phase, precombat	PHASE	A's Main phase, precombat
+26	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+26	A's Beginning of Combat Step	STACK_ADD*	A cast Titanic Growth targeting [Copper Longlegs (2)]
+26	A's Beginning of Combat Step	STACK_RESOLVE*	Titanic Growth (11) - Copper Longlegs (2) gets +4/+4  until end of turn.
+26	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+26	A's Declare Attackers Step	COMBAT	A assigned Spider Token (85) and Copper Longlegs (2) to attack B.
+26	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+26	A's Declare Blockers Step	COMBAT	B assigned Collector Ouphe (48) to block Spider Token (85). B didn't block Copper Longlegs (2).
+26	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+26	A's Combat Damage Step	PHASE	A's Combat Damage Step
+26	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 1 damage to Collector Ouphe (48).
+26	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 5 combat damage to B.
+26	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Spider Token (85).
+26	A's Combat Damage Step	LIFE	Life: B 10 > 5
+26	A's Combat Damage Step	ZONE_CHANGE	Spider Token (85) was put into Graveyard from Battlefield.
+26	A's End of Combat Step	PHASE	A's End of Combat Step
+26	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+26	A's End step	PHASE	A's End step
+26	A's Cleanup step	PHASE	A's Cleanup step
+36	B's Cleanup step	TURN	Turn 36 (A)
+36	A's Untap step	PHASE	A's Untap step
+36	A's Upkeep step	PHASE	A's Upkeep step
+36	A's Upkeep step	STACK_ADD	A cast Snakeskin Veil targeting [Destiny Spinner (6)]
+36	A's Draw step	PHASE	A's Draw step
+36	A's Main phase, precombat	PHASE	A's Main phase, precombat
+36	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+36	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+36	A's Declare Attackers Step	COMBAT	A assigned Destiny Spinner (6) to attack B.
+36	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+36	A's Declare Blockers Step	COMBAT	B assigned Elvish Skysweeper (51) to block Destiny Spinner (6).
+36	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+36	A's Combat Damage Step	PHASE	A's Combat Damage Step
+36	A's Combat Damage Step	DAMAGE	Destiny Spinner (6) deals 13 damage to Elvish Skysweeper (51).
+36	A's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 1 damage to Destiny Spinner (6).
+36	A's Combat Damage Step	ZONE_CHANGE	Elvish Skysweeper (51) was put into Graveyard from Battlefield.
+36	A's End of Combat Step	PHASE	A's End of Combat Step
+36	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+36	A's Main phase, postcombat	STACK_ADD	A cast Aftermath Analyst
+36	A's Main phase, postcombat	STACK_ADD	A triggered Aquastrand Spider
+36	A's Main phase, postcombat	STACK_ADD	A triggered Aftermath Analyst
+36	A's Main phase, postcombat	ZONE_CHANGE*	A milled Tamiyo's Safekeeping (3), Giant Growth (19) and Forest (32).
+36	A's End step	PHASE	A's End step
+36	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Titanic Growth (11)]
+36	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Titanic Growth (11) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+36	A's Cleanup step	PHASE	A's Cleanup step
+40	B's Cleanup step	TURN	Turn 40 (A)
+40	A's Untap step	PHASE	A's Untap step
+40	A's Upkeep step	PHASE	A's Upkeep step
+40	A's Draw step	PHASE	A's Draw step
+40	A's Main phase, precombat	PHASE	A's Main phase, precombat
+40	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+40	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+40	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+40	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+40	A's Combat Damage Step	PHASE	A's Combat Damage Step
+40	A's End of Combat Step	PHASE	A's End of Combat Step
+40	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+40	A's End step	PHASE	A's End step
+40	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Giant Growth (19)]
+40	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Giant Growth (19) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+40	A's End step	ZONE_CHANGE	Viridian Zealot (73) was put into Graveyard from Battlefield.
+40	A's End step	STACK_ADD	B activated Viridian Zealot targeting [Destiny Spinner (6)]
+40	A's End step	ZONE_CHANGE	Destiny Spinner (6) was put into Graveyard from Battlefield.
+40	A's Cleanup step	PHASE	A's Cleanup step
+41	A's Cleanup step	TURN	Turn 41 (B)
+41	B's Untap step	PHASE	B's Untap step
+41	B's Upkeep step	PHASE	B's Upkeep step
+41	B's Draw step	PHASE	B's Draw step
+41	B's Draw step	STACK_ADD	B cast Collective Resistance
+41	B's Draw step	ZONE_CHANGE	Arcane Signet (18) was put into Graveyard from Battlefield.
+41	B's Main phase, precombat	PHASE	B's Main phase, precombat
+41	B's Main phase, precombat	STACK_ADD	B activated Ozolith, the Shattered Spire targeting [Phyrexian Dreadnought (42)]
+41	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+41	B's Beginning of Combat Step	STACK_ADD	B triggered H.E.R.B.I.E., Lovable Robot
+41	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+41	B's Declare Attackers Step	COMBAT	B assigned Phyrexian Dreadnought (42), Krallenhorde Howler (50), H.E.R.B.I.E., Lovable Robot (80) and Elvish Lyrist (43) to attack A.
+41	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+41	B's Declare Blockers Step	COMBAT	A assigned Aftermath Analyst (8) and Canopy Spider (22) to block Phyrexian Dreadnought (42). A assigned Aquastrand Spider (7) to block Krallenhorde Howler (50). A assigned Copper Longlegs (2) to block H.E.R.B.I.E., Lovable Robot (80). A assigned Grappler Spider (17) to block Elvish Lyrist (43).
+41	B's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Canopy Spider (22)]
+41	B's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Canopy Spider (22) gets +4/+4  until end of turn.
+41	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+41	B's Combat Damage Step	PHASE	B's Combat Damage Step
+41	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 8 combat damage to A.
+41	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 7 damage to Canopy Spider (22).
+41	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 3 damage to Aftermath Analyst (8).
+41	B's Combat Damage Step	DAMAGE	Krallenhorde Howler (50) deals 3 damage to Aquastrand Spider (7).
+41	B's Combat Damage Step	DAMAGE	H.E.R.B.I.E., Lovable Robot (80) deals 1 damage to Copper Longlegs (2).
+41	B's Combat Damage Step	DAMAGE	Elvish Lyrist (43) deals 1 damage to Grappler Spider (17).
+41	B's Combat Damage Step	DAMAGE	Aquastrand Spider (7) deals 1 damage to Krallenhorde Howler (50).
+41	B's Combat Damage Step	DAMAGE	Aftermath Analyst (8) deals 1 damage to Phyrexian Dreadnought (42).
+41	B's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 5 damage to Phyrexian Dreadnought (42).
+41	B's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 1 damage to H.E.R.B.I.E., Lovable Robot (80).
+41	B's Combat Damage Step	DAMAGE	Grappler Spider (17) deals 2 damage to Elvish Lyrist (43).
+41	B's Combat Damage Step	LIFE	Life: A 6 > -2

@@ -1,0 +1,23 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Forest; Forest; Titanic Growth; Forest; Forest; Tamiyo's Safekeeping; Forest
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Beginning of Combat Step	STACK_ADD	A activated Aquastrand Spider targeting [Aquastrand Spider (7)]
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	COMBAT	A assigned Aquastrand Spider (7) to attack B.
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Aquastrand Spider (7).
+6	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Aquastrand Spider (7)]
+6	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Aquastrand Spider (7) gets +4/+4  until end of turn.
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's Combat Damage Step	DAMAGE	Aquastrand Spider (7) deals 6 damage to Selvala, Heart of the Wilds (81).
+6	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Aquastrand Spider (7).
+6	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step

@@ -1,0 +1,134 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Ruins Recluse; Forest; Mirkwood Spider; Titanic Growth; Forest; Copper Longlegs; Forest
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (16) to attack B.
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's Declare Blockers Step	COMBAT	B assigned Elvish Mystic (77) to block Mirkwood Spider (16).
+4	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Mirkwood Spider (16)]
+4	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Mirkwood Spider (16) gets +4/+4  until end of turn.
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 5 damage (Deathtouch) to Elvish Mystic (77).
+4	A's Combat Damage Step	DAMAGE	Elvish Mystic (77) deals 1 damage to Mirkwood Spider (16).
+4	A's Combat Damage Step	ZONE_CHANGE	Elvish Mystic (77) was put into Graveyard from Battlefield.
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's End step	PHASE	A's End step
+4	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Copper Longlegs (2)]
+12	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (10) - Copper Longlegs (2) gets +2/+2 and gains hexproof until end of turn.
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Copper Longlegs (2) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Copper Longlegs (2).
+12	A's Declare Blockers Step	STACK_ADD	A cast Tyvar's Stand targeting [Copper Longlegs (2)]
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 7 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 17 > 10
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+18	B's Cleanup step	TURN	Turn 18 (A)
+18	A's Untap step	PHASE	A's Untap step
+18	A's Upkeep step	PHASE	A's Upkeep step
+18	A's Draw step	PHASE	A's Draw step
+18	A's Main phase, precombat	PHASE	A's Main phase, precombat
+18	A's Main phase, precombat	STACK_ADD	A cast Hero's Blade
+18	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+18	A's Beginning of Combat Step	STACK_ADD*	A cast Giant Growth targeting [Mirkwood Spider (16)]
+18	A's Beginning of Combat Step	STACK_RESOLVE*	Giant Growth (19) - Mirkwood Spider (16) gets +3/+3  until end of turn.
+18	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+18	A's Declare Attackers Step	COMBAT	A assigned Spider Token (86) and Mirkwood Spider (16) to attack B.
+18	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+18	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Spider Token (86). B didn't block Mirkwood Spider (16).
+18	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+18	A's Combat Damage Step	PHASE	A's Combat Damage Step
+18	A's Combat Damage Step	DAMAGE	Spider Token (86) deals 2 damage to Selvala, Heart of the Wilds (81).
+18	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 4 combat damage to B.
+18	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Spider Token (86).
+18	A's Combat Damage Step	LIFE	Life: B 9 > 5
+18	A's End of Combat Step	PHASE	A's End of Combat Step
+18	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+18	A's End step	PHASE	A's End step
+18	A's Cleanup step	PHASE	A's Cleanup step
+24	B's Cleanup step	TURN	Turn 24 (A)
+24	A's Untap step	PHASE	A's Untap step
+24	A's Upkeep step	PHASE	A's Upkeep step
+24	A's Draw step	PHASE	A's Draw step
+24	A's Main phase, precombat	PHASE	A's Main phase, precombat
+24	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+24	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+24	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+24	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+24	A's Combat Damage Step	PHASE	A's Combat Damage Step
+24	A's End of Combat Step	PHASE	A's End of Combat Step
+24	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+24	A's Main phase, postcombat	STACK_ADD	A cast Aftermath Analyst
+24	A's Main phase, postcombat	STACK_ADD	A triggered Aftermath Analyst
+24	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+24	A's Main phase, postcombat	ZONE_CHANGE*	A milled Grappler Spider (17), Giant Growth (20) and Forest (32).
+24	A's End step	PHASE	A's End step
+24	A's Cleanup step	PHASE	A's Cleanup step
+38	B's Cleanup step	TURN	Turn 38 (A)
+38	A's Untap step	PHASE	A's Untap step
+38	A's Upkeep step	PHASE	A's Upkeep step
+38	A's Draw step	PHASE	A's Draw step
+38	A's Main phase, precombat	PHASE	A's Main phase, precombat
+38	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+38	A's Beginning of Combat Step	STACK_ADD	A cast Tamiyo's Safekeeping targeting [Spider Token (86)]
+38	A's Beginning of Combat Step	LIFE	Life: A 15 > 17
+38	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+38	A's Declare Attackers Step	COMBAT	A assigned Spider Token (86) to attack B.
+38	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+38	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Spider Token (86).
+38	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Spider Token (86)]
+38	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Spider Token (86) gets +4/+4  until end of turn.
+38	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+38	A's Combat Damage Step	PHASE	A's Combat Damage Step
+38	A's Combat Damage Step	DAMAGE	Spider Token (86) deals 6 damage to Selvala, Heart of the Wilds (81).
+38	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Spider Token (86).
+38	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+38	A's End of Combat Step	PHASE	A's End of Combat Step
+38	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+38	A's End step	PHASE	A's End step
+38	A's Cleanup step	PHASE	A's Cleanup step
+46	B's Cleanup step	TURN	Turn 46 (A)
+46	A's Untap step	PHASE	A's Untap step
+46	A's Upkeep step	PHASE	A's Upkeep step
+46	A's Draw step	PHASE	A's Draw step
+46	A's Main phase, precombat	PHASE	A's Main phase, precombat
+46	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+46	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+46	A's Declare Attackers Step	COMBAT	A assigned Spider Token (86) and Deadly Recluse (15) to attack B.
+46	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+46	A's Declare Blockers Step	COMBAT	B assigned Leaf Gilder (74) to block Spider Token (86). B assigned Collector Ouphe (48) to block Deadly Recluse (15).
+46	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Deadly Recluse (15)]
+46	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Deadly Recluse (15) gets +2/+2 and gains hexproof until end of turn.
+46	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+46	A's Combat Damage Step	PHASE	A's Combat Damage Step
+46	A's Combat Damage Step	DAMAGE	Spider Token (86) deals 2 damage to Leaf Gilder (74).
+46	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 3 damage (Deathtouch) to Collector Ouphe (48).
+46	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Deadly Recluse (15).
+46	A's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 3 damage to Spider Token (86).
+46	A's Combat Damage Step	ZONE_CHANGE	Spider Token (86) was put into Graveyard from Battlefield.
+46	A's Combat Damage Step	ZONE_CHANGE	Collector Ouphe (48) was put into Graveyard from Battlefield.
+46	A's Combat Damage Step	ZONE_CHANGE	Leaf Gilder (74) was put into Graveyard from Battlefield.
+46	A's End of Combat Step	PHASE	A's End of Combat Step
+46	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+46	A's End step	PHASE	A's End step
+46	A's End step	STACK_ADD	B activated Agatha's Soul Cauldron targeting [Arasta of the Endless Web (40)]
+46	A's End step	STACK_ADD	B triggered Agatha's Soul Cauldron targeting [Bloodline Shaman (45)]
+46	A's Cleanup step	PHASE	A's Cleanup step

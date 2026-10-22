@@ -1,0 +1,135 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Lonely Sandbar; Barren Moor; Island; Demon's Due; Ruin Crab; Island; Baleful Strix
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+11	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+11	B's Main phase, postcombat	ZONE_CHANGE*	A milled Swamp (10), Joint Exploration (38) and Demon's Due (20).
+11	B's Main phase, postcombat	STACK_ADD	B cast Baleful Strix
+11	B's Main phase, postcombat	STACK_ADD	B triggered Baleful Strix
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Upkeep step	STACK_ADD*	A cast Demon's Due
+12	A's Upkeep step	STACK_ADD	A triggered Master Pakku
+12	A's Upkeep step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Demon's Due (19), Activator: A, SpellAbility: Scry 2, then draw two cards. You lose 2 life.  ]
+12	A's Upkeep step	LIFE	Life: A 17 > 15
+12	A's Upkeep step	STACK_RESOLVE*	Demon's Due (19) - A scries 2. A draws two cards. A loses 2 life.
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Main phase, precombat	STACK_ADD	A triggered Ruin Crab
+12	A's Main phase, precombat	ZONE_CHANGE	B milled Bitter Triumph (75), Flux Channeler (76) and Swamp (52).
+12	A's Main phase, precombat	STACK_ADD	A cast Sol Ring
+12	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Draw step	PHASE	B's Draw step
+13	B's Draw step	STACK_ADD*	A cast Deliberate
+13	B's Draw step	STACK_ADD	A triggered Master Pakku
+13	B's Draw step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Deliberate (35), Activator: A, SpellAbility: Scry 2, then draw a card. ]
+13	B's Draw step	STACK_RESOLVE*	Deliberate (35) - A scries 2. A draws a card.
+13	B's Draw step	STACK_ADD*	A cast Opt
+13	B's Draw step	STACK_ADD	A triggered Master Pakku
+13	B's Draw step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Opt (15), Activator: A, SpellAbility: Scry 1. Draw a card.]
+13	B's Draw step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's Main phase, postcombat	STACK_ADD	B cast Ornithopter of Paradise
+13	B's Main phase, postcombat	STACK_ADD	B cast Corrupt Court Official
+13	B's Main phase, postcombat	STACK_ADD	B triggered Corrupt Court Official targeting [A]
+13	B's End step	PHASE	B's End step
+13	B's Cleanup step	PHASE	B's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Upkeep step	STACK_ADD*	A cast Delightful Discovery
+14	A's Upkeep step	STACK_ADD	A triggered Master Pakku
+14	A's Upkeep step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Delightful Discovery (17), Activator: A, SpellAbility: Scry 2, then draw two cards. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.) ]
+14	A's Upkeep step	STACK_RESOLVE*	Delightful Discovery (17) - A scries 2. A draws two cards.
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Main phase, precombat	STACK_ADD	A cast Vampiric Rites
+14	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD	A cast Ghostly Pilferer
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Draw step	PHASE	B's Draw step
+15	B's Draw step	STACK_ADD*	A cast Opt
+15	B's Draw step	STACK_ADD	A triggered Master Pakku
+15	B's Draw step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Opt (14), Activator: A, SpellAbility: Scry 1. Draw a card.]
+15	B's Draw step	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's End of Combat Step	PHASE	B's End of Combat Step
+15	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+15	B's End step	PHASE	B's End step
+15	B's Cleanup step	PHASE	B's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Upkeep step	STACK_ADD*	A cast Delightful Discovery
+16	A's Upkeep step	STACK_ADD	A triggered Master Pakku
+16	A's Upkeep step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Delightful Discovery (18), Activator: A, SpellAbility: Scry 2, then draw two cards. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.) ]
+16	A's Upkeep step	STACK_RESOLVE*	Delightful Discovery (18) - A scries 2. A draws two cards.
+16	A's Upkeep step	STACK_ADD*	A cast Deliberate
+16	A's Upkeep step	STACK_ADD	A triggered Master Pakku
+16	A's Upkeep step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Deliberate (34), Activator: A, SpellAbility: Scry 2, then draw a card. ]
+16	A's Upkeep step	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+16	A's Upkeep step	STACK_ADD*	A cast Joint Exploration
+16	A's Upkeep step	STACK_ADD	A triggered Master Pakku
+16	A's Upkeep step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Joint Exploration (39), Activator: A, SpellAbility: Scry 2, then draw a card.  If this spell was kicked, you may put a land card from your hand onto the battlefield.]
+16	A's Upkeep step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Main phase, precombat	STACK_ADD	A triggered Ruin Crab
+16	A's Main phase, precombat	ZONE_CHANGE	B milled Scheming Aspirant (43).
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step

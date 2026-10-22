@@ -1,0 +1,167 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Swamp; Island; Ghostly Pilferer; Swamp; Swamp; Deliberate; Blood Artist
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Upkeep step	STACK_ADD*	A cast Deliberate
+6	A's Upkeep step	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD	A cast Stitcher's Supplier
+6	A's Main phase, postcombat	STACK_ADD	A triggered Stitcher's Supplier
+6	A's Main phase, postcombat	ZONE_CHANGE	A milled Malakir Rebirth (3), Bojuka Bog (36) and Swamp (7).
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Upkeep step	STACK_ADD*	A cast Deliberate
+8	A's Upkeep step	STACK_RESOLVE*	Deliberate (35) - A scries 2. A draws a card.
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Scheming Aspirant
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Upkeep step	STACK_ADD*	A cast Joint Exploration
+10	A's Upkeep step	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Scheming Aspirant (2) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B didn't block Scheming Aspirant (2).
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Scheming Aspirant (2) deals 1 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 20 > 19
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A cast Ornithopter of Paradise
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Attackers Step	COMBAT	B assigned Umbral Collar Zealot (62) to attack A.
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's Declare Blockers Step	COMBAT	A didn't block Umbral Collar Zealot (62).
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's Combat Damage Step	DAMAGE	Umbral Collar Zealot (62) deals 3 combat damage to A.
+11	B's Combat Damage Step	LIFE	Life: A 16 > 13
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+11	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+11	B's Main phase, postcombat	ZONE_CHANGE*	A milled Opt (15), Baleful Strix (13) and Lonely Sandbar (12).
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Upkeep step	STACK_ADD*	A cast Demon's Due
+14	A's Upkeep step	LIFE	Life: A 6 > 4
+14	A's Upkeep step	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD	A cast Blood Artist
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Upkeep step	STACK_ADD*	A cast Joint Exploration
+16	A's Upkeep step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	STACK_ADD	A cast Omen Hawker
+16	A's Main phase, postcombat	STACK_ADD	A cast Corrupt Court Official
+16	A's Main phase, postcombat	STACK_ADD	A triggered Corrupt Court Official targeting [B]
+16	A's Main phase, postcombat	STACK_ADD	A cast Vampiric Rites
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step
+17	A's Cleanup step	TURN	Turn 17 (B)
+17	B's Untap step	PHASE	B's Untap step
+17	B's Upkeep step	PHASE	B's Upkeep step
+17	B's Draw step	PHASE	B's Draw step
+17	B's Draw step	STACK_ADD	B cast Eaten by Piranhas targeting [Scheming Aspirant (2)]
+17	B's Main phase, precombat	PHASE	B's Main phase, precombat
+17	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+17	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+17	B's Declare Attackers Step	COMBAT	B assigned Orc Army Token (84), Stitcher's Supplier (70), Corrupt Court Official (54) and Zulaport Cutthroat (64) to attack A.
+17	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+17	B's Declare Blockers Step	COMBAT	A assigned Omen Hawker (31) to block Orc Army Token (84). A assigned Corrupt Court Official (11) to block Stitcher's Supplier (70). A assigned Stitcher's Supplier (32) to block Corrupt Court Official (54). A assigned Scheming Aspirant (2) to block Zulaport Cutthroat (64).
+17	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+17	B's Combat Damage Step	PHASE	B's Combat Damage Step
+17	B's Combat Damage Step	DAMAGE	Orc Army Token (84) deals 5 damage to Omen Hawker (31).
+17	B's Combat Damage Step	DAMAGE	Stitcher's Supplier (70) deals 1 damage to Corrupt Court Official (11).
+17	B's Combat Damage Step	DAMAGE	Corrupt Court Official (54) deals 1 damage to Stitcher's Supplier (32).
+17	B's Combat Damage Step	DAMAGE	Zulaport Cutthroat (64) deals 1 damage to Scheming Aspirant (2).
+17	B's Combat Damage Step	DAMAGE	Stitcher's Supplier (32) deals 1 damage to Corrupt Court Official (54).
+17	B's Combat Damage Step	DAMAGE	Scheming Aspirant (2) deals 1 damage to Zulaport Cutthroat (64).
+17	B's Combat Damage Step	DAMAGE	Corrupt Court Official (11) deals 1 damage to Stitcher's Supplier (70).
+17	B's Combat Damage Step	DAMAGE	Omen Hawker (31) deals 1 damage to Orc Army Token (84).
+17	B's Combat Damage Step	ZONE_CHANGE	Stitcher's Supplier (70) was put into Graveyard from Battlefield.
+17	B's Combat Damage Step	ZONE_CHANGE	Corrupt Court Official (54) was put into Graveyard from Battlefield.
+17	B's Combat Damage Step	ZONE_CHANGE	Zulaport Cutthroat (64) was put into Graveyard from Battlefield.
+17	B's Combat Damage Step	ZONE_CHANGE	Stitcher's Supplier (32) was put into Graveyard from Battlefield.
+17	B's Combat Damage Step	ZONE_CHANGE	Scheming Aspirant (2) was put into Graveyard from Battlefield.
+17	B's Combat Damage Step	ZONE_CHANGE	Omen Hawker (31) was put into Graveyard from Battlefield.
+17	B's Combat Damage Step	ZONE_CHANGE	Corrupt Court Official (11) was put into Graveyard from Battlefield.
+17	B's Combat Damage Step	ZONE_CHANGE	Eaten by Piranhas (67) was put into Graveyard from Battlefield.
+17	B's Combat Damage Step	STACK_ADD	B triggered Blood Artist targeting [A]
+17	B's Combat Damage Step	STACK_ADD	B triggered Stitcher's Supplier
+17	B's Combat Damage Step	STACK_ADD	B triggered Zulaport Cutthroat
+17	B's Combat Damage Step	STACK_ADD	B triggered Blood Artist targeting [A]
+17	B's Combat Damage Step	STACK_ADD	B triggered Zulaport Cutthroat
+17	B's Combat Damage Step	STACK_ADD	B triggered Blood Artist targeting [A]
+17	B's Combat Damage Step	STACK_ADD	B triggered Zulaport Cutthroat
+17	B's Combat Damage Step	STACK_ADD	B triggered Blood Artist targeting [A]
+17	B's Combat Damage Step	STACK_ADD	B triggered Blood Artist targeting [A]
+17	B's Combat Damage Step	STACK_ADD	B triggered Blood Artist targeting [A]
+17	B's Combat Damage Step	STACK_ADD	B triggered Blood Artist targeting [A]
+17	B's Combat Damage Step	STACK_ADD	A triggered Stitcher's Supplier
+17	B's Combat Damage Step	ZONE_CHANGE*	A milled Island (23), Swamp (9) and Demon's Due (19).
+17	B's Combat Damage Step	LIFE	Life: A 4 > 3
+17	B's Combat Damage Step	LIFE	Life: B 21 > 22
+17	B's Combat Damage Step	LIFE	Life: A 3 > 2
+17	B's Combat Damage Step	LIFE	Life: B 22 > 23
+17	B's Combat Damage Step	LIFE	Life: A 2 > 1
+17	B's Combat Damage Step	LIFE	Life: B 23 > 24
+17	B's Combat Damage Step	LIFE	Life: A 1 > 0
+17	B's Combat Damage Step	LIFE	Life: B 24 > 25

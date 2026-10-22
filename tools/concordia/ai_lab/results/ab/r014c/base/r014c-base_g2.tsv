@@ -1,0 +1,152 @@
+0		MULLIGAN*	A has kept a hand of 6 cards hand: Swamp; Barren Moor; Swamp; Demon's Due; Island; Joint Exploration
+7	A's Cleanup step	TURN	Turn 7 (B)
+7	B's Untap step	PHASE	B's Untap step
+7	B's Upkeep step	PHASE	B's Upkeep step
+7	B's Upkeep step	ZONE_CHANGE	Myriad Landscape (66) was put into Graveyard from Battlefield.
+7	B's Upkeep step	STACK_ADD	B activated Myriad Landscape
+7	B's Upkeep step	STACK_ADD*	A cast Delightful Discovery
+7	B's Upkeep step	STACK_RESOLVE*	Delightful Discovery (17) - A scries 2. A draws two cards.
+7	B's Draw step	PHASE	B's Draw step
+7	B's Main phase, precombat	PHASE	B's Main phase, precombat
+7	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+7	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+7	B's Declare Attackers Step	COMBAT	B assigned Master Pakku (71) to attack A.
+7	B's Declare Attackers Step	STACK_ADD	B triggered Master Pakku targeting [B]
+7	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+7	B's Declare Blockers Step	COMBAT	A didn't block Master Pakku (71).
+7	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+7	B's Combat Damage Step	PHASE	B's Combat Damage Step
+7	B's Combat Damage Step	DAMAGE	Master Pakku (71) deals 1 combat damage to A.
+7	B's Combat Damage Step	LIFE	Life: A 18 > 17
+7	B's End of Combat Step	PHASE	B's End of Combat Step
+7	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+7	B's End step	PHASE	B's End step
+7	B's Cleanup step	PHASE	B's Cleanup step
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Upkeep step	LIFE	Life: B 14 > 11
+9	B's Upkeep step	STACK_ADD	B cast Bitter Triumph targeting [Atris, Oracle of Half-Truths (40)]
+9	B's Upkeep step	STACK_ADD	B triggered Master Pakku
+9	B's Upkeep step	STACK_ADD*	A cast Demon's Due
+9	B's Upkeep step	LIFE	Life: A 17 > 15
+9	B's Upkeep step	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+9	B's Upkeep step	ZONE_CHANGE	Atris, Oracle of Half-Truths (40) was put into Graveyard from Battlefield.
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Attackers Step	COMBAT	B assigned Master Pakku (71) to attack A.
+9	B's Declare Attackers Step	STACK_ADD	B triggered Master Pakku targeting [B]
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's Declare Blockers Step	COMBAT	A didn't block Master Pakku (71).
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's Combat Damage Step	DAMAGE	Master Pakku (71) deals 2 combat damage to A.
+9	B's Combat Damage Step	LIFE	Life: A 15 > 13
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's Main phase, postcombat	STACK_ADD	B cast Umbral Collar Zealot
+9	B's Main phase, postcombat	STACK_ADD	B cast Zulaport Cutthroat
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Attackers Step	COMBAT	B assigned Umbral Collar Zealot (62) to attack A.
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's Declare Blockers Step	COMBAT	A assigned Corrupt Court Official (11) and Scheming Aspirant (2) to block Umbral Collar Zealot (62).
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's Combat Damage Step	DAMAGE	Umbral Collar Zealot (62) deals 3 damage to Scheming Aspirant (2).
+11	B's Combat Damage Step	DAMAGE	Corrupt Court Official (11) deals 1 damage to Umbral Collar Zealot (62).
+11	B's Combat Damage Step	DAMAGE	Scheming Aspirant (2) deals 1 damage to Umbral Collar Zealot (62).
+11	B's Combat Damage Step	ZONE_CHANGE	Umbral Collar Zealot (62) was put into Graveyard from Battlefield.
+11	B's Combat Damage Step	ZONE_CHANGE	Scheming Aspirant (2) was put into Graveyard from Battlefield.
+11	B's Combat Damage Step	STACK_ADD	B triggered Zulaport Cutthroat
+11	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+11	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+11	B's Combat Damage Step	LIFE	Life: B 11 > 10
+11	B's Combat Damage Step	LIFE	Life: A 13 > 14
+11	B's Combat Damage Step	LIFE	Life: B 10 > 9
+11	B's Combat Damage Step	LIFE	Life: A 14 > 15
+11	B's Combat Damage Step	LIFE	Life: A 15 > 14
+11	B's Combat Damage Step	LIFE	Life: B 9 > 10
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+11	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+11	B's Main phase, postcombat	ZONE_CHANGE*	A milled Bojuka Bog (36), Ornithopter of Paradise (37) and Opt (14).
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Upkeep step	STACK_ADD*	A cast Deliberate
+12	A's Upkeep step	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+12	A's Upkeep step	STACK_ADD*	A cast Delightful Discovery
+12	A's Upkeep step	STACK_RESOLVE*	Delightful Discovery (18) - A scries 2. A draws two cards.
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Ruin Crab
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Upkeep step	STACK_ADD*	A cast Demon's Due
+14	A's Upkeep step	LIFE	Life: A 8 > 6
+14	A's Upkeep step	STACK_RESOLVE*	Demon's Due (19) - A scries 2. A draws two cards. A loses 2 life.
+14	A's Upkeep step	STACK_ADD*	A cast Joint Exploration
+14	A's Upkeep step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+14	A's Upkeep step	STACK_ADD*	A cast Joint Exploration
+14	A's Upkeep step	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Main phase, precombat	STACK_ADD	A triggered Ruin Crab
+14	A's Main phase, precombat	ZONE_CHANGE	B milled Swamp (47), Drown in the Loch (77) and Baleful Strix (56).
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Upkeep step	ZONE_CHANGE	Myriad Landscape (29) was put into Graveyard from Battlefield.
+16	A's Upkeep step	STACK_ADD	A activated Myriad Landscape
+16	A's Upkeep step	STACK_ADD	A triggered Ruin Crab
+16	A's Upkeep step	STACK_ADD	A triggered Ruin Crab
+16	A's Upkeep step	ZONE_CHANGE	B milled Omen Hawker (69), Scheming Aspirant (43) and Ornithopter of Paradise (79).
+16	A's Upkeep step	ZONE_CHANGE	B milled Ghostly Pilferer (65), Malakir Rebirth (44) and Ruin Crab (68).
+16	A's Upkeep step	STACK_ADD*	A cast Opt
+16	A's Upkeep step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Main phase, precombat	STACK_ADD	A triggered Ruin Crab
+16	A's Main phase, precombat	ZONE_CHANGE	B milled Barren Moor (63), Swamp (49) and Blood Artist (42).
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	STACK_ADD	A cast Ghostly Pilferer
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step

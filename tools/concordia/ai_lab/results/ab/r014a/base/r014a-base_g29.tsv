@@ -1,0 +1,114 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Corrupt Court Official; Swamp; Ruin Crab; Swamp; Baleful Strix; Opt; Island
+3	B's Cleanup step	TURN	Turn 3 (A)
+3	A's Untap step	PHASE	A's Untap step
+3	A's Upkeep step	PHASE	A's Upkeep step
+3	A's Upkeep step	STACK_ADD*	A cast Opt
+3	A's Upkeep step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+3	A's Draw step	PHASE	A's Draw step
+3	A's Main phase, precombat	PHASE	A's Main phase, precombat
+3	A's Main phase, precombat	STACK_ADD	A triggered Ruin Crab
+3	A's Main phase, precombat	ZONE_CHANGE	B milled Swamp (47), Bojuka Bog (78) and Swamp (52).
+3	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+3	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+3	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+3	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+3	A's Combat Damage Step	PHASE	A's Combat Damage Step
+3	A's End of Combat Step	PHASE	A's End of Combat Step
+3	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+3	A's Main phase, postcombat	STACK_ADD	A cast Vampiric Rites
+3	A's End step	PHASE	A's End step
+3	A's Cleanup step	PHASE	A's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Upkeep step	STACK_ADD*	A cast Joint Exploration
+9	A's Upkeep step	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Main phase, precombat	STACK_ADD	A triggered Ruin Crab
+9	A's Main phase, precombat	ZONE_CHANGE	B milled Gríma Wormtongue (72), Island (60) and Master Pakku (71).
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Baleful Strix (13) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Baleful Strix (13).
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Baleful Strix (13) deals 1 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 19 > 18
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Omen Hawker
+9	A's Main phase, postcombat	STACK_ADD	A cast Sol Ring
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+10	A's Cleanup step	TURN	Turn 10 (B)
+10	B's Untap step	PHASE	B's Untap step
+10	B's Upkeep step	PHASE	B's Upkeep step
+10	B's Draw step	PHASE	B's Draw step
+10	B's Draw step	STACK_ADD*	A cast Opt
+10	B's Draw step	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+10	B's Draw step	LIFE	Life: B 18 > 15
+10	B's Draw step	STACK_ADD	B cast Bitter Triumph targeting [Atris, Oracle of Half-Truths (40)]
+10	B's Draw step	STACK_ADD	B triggered Flux Channeler
+10	B's Draw step	ZONE_CHANGE	Atris, Oracle of Half-Truths (40) was put into Graveyard from Battlefield.
+10	B's Draw step	STACK_ADD	B triggered Blood Artist targeting [A]
+10	B's Draw step	LIFE	Life: A 17 > 16
+10	B's Draw step	LIFE	Life: B 15 > 16
+10	B's Main phase, precombat	PHASE	B's Main phase, precombat
+10	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+10	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+10	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) to attack A.
+10	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+10	B's Declare Blockers Step	COMBAT	A didn't block The Mouth of Sauron (81).
+10	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+10	B's Combat Damage Step	PHASE	B's Combat Damage Step
+10	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+10	B's Combat Damage Step	LIFE	Life: A 16 > 13
+10	B's End of Combat Step	PHASE	B's End of Combat Step
+10	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+10	B's End step	PHASE	B's End step
+10	B's Cleanup step	PHASE	B's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+12	B's Main phase, precombat	STACK_ADD*	A cast Demon's Due
+12	B's Main phase, precombat	LIFE	Life: A 13 > 11
+12	B's Main phase, precombat	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+12	B's Main phase, precombat	ZONE_CHANGE*	A milled Lonely Sandbar (12), Demon's Due (19) and Deliberate (34).
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A didn't block The Mouth of Sauron (81).
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+12	B's Combat Damage Step	LIFE	Life: A 11 > 8
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's Main phase, postcombat	STACK_ADD	A cast Ornithopter of Paradise
+17	A's Main phase, postcombat	STACK_ADD	A cast Corrupt Court Official
+17	A's Main phase, postcombat	STACK_ADD	A triggered Corrupt Court Official targeting [B]
+17	A's Main phase, postcombat	STACK_ADD	A cast Stitcher's Supplier
+17	A's Main phase, postcombat	STACK_ADD	A triggered Stitcher's Supplier
+17	A's Main phase, postcombat	ZONE_CHANGE*	A milled Delightful Discovery (18), Deliberate (35) and Scheming Aspirant (2).
+17	A's End step	PHASE	A's End step
+17	A's Cleanup step	PHASE	A's Cleanup step

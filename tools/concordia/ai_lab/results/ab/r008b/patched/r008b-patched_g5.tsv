@@ -1,0 +1,26 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Forest; Forest; Brotherhood Regalia; Forest; Giant Growth; Arcane Signet; Forest
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Main phase, precombat	STACK_ADD	A cast Colossus Hammer
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Spider Token (88) and Arasta of the Endless Web (40) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Spider Token (88). B didn't block Arasta of the Endless Web (40).
+9	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Spider Token (88)]
+9	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (20) - Spider Token (88) gets +3/+3  until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Spider Token (88) deals 4 damage to Selvala, Heart of the Wilds (81).
+9	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 combat damage to B.
+9	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Spider Token (88).
+9	A's Combat Damage Step	LIFE	Life: B 16 > 13
+9	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Sol Ring
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step

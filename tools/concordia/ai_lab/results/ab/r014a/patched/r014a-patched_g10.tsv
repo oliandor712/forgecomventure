@@ -1,0 +1,59 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Opt; Omen Hawker; Swamp; Delightful Discovery; Sol Ring; Lonely Sandbar; Bojuka Bog
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+9	B's Main phase, precombat	ZONE_CHANGE*	A milled Opt (14), Ornithopter of Paradise (37) and Ghostly Pilferer (28).
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's End step	PHASE	B's End step
+9	B's End step	STACK_ADD*	A cast Opt
+9	B's End step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+9	B's Cleanup step	PHASE	B's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+11	B's Main phase, precombat	STACK_ADD	B triggered Bojuka Bog targeting [A]
+11	B's Main phase, precombat	ZONE_CHANGE*	A milled Joint Exploration (38), Joint Exploration (39) and Barren Moor (27).
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) to attack A.
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's Declare Blockers Step	COMBAT	A didn't block The Mouth of Sauron (81).
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+11	B's Combat Damage Step	LIFE	Life: A 13 > 10
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's End step	PHASE	B's End step
+11	B's End step	STACK_ADD*	A cast Deliberate
+11	B's End step	STACK_RESOLVE*	Deliberate (35) - A scries 2. A draws a card.
+11	B's Cleanup step	PHASE	B's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD	A cast Vampiric Rites
+14	A's End step	PHASE	A's End step
+14	A's End step	STACK_ADD*	A cast Delightful Discovery
+14	A's End step	STACK_RESOLVE*	Delightful Discovery (17) - A scries 2. A draws two cards.
+14	A's Cleanup step	PHASE	A's Cleanup step

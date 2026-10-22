@@ -1,0 +1,124 @@
+0		MULLIGAN*	A has kept a hand of 6 cards hand: Joint Exploration; Barren Moor; Baleful Strix; Swamp; Swamp; Opt
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Upkeep step	STACK_ADD*	A cast Joint Exploration
+10	A's Upkeep step	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A cast Baleful Strix
+10	A's Main phase, postcombat	STACK_ADD	A triggered Baleful Strix
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Upkeep step	STACK_ADD*	A cast Opt
+12	A's Upkeep step	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Baleful Strix (13) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Baleful Strix (13).
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Baleful Strix (13) deals 1 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 19 > 18
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Ruin Crab
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Upkeep step	STACK_ADD*	A cast Delightful Discovery
+14	A's Upkeep step	STACK_RESOLVE*	Delightful Discovery (18) - A scries 2. A draws two cards.
+14	A's Upkeep step	STACK_ADD*	A cast Opt
+14	A's Upkeep step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Main phase, precombat	STACK_ADD	A triggered Ruin Crab
+14	A's Main phase, precombat	ZONE_CHANGE	B milled Malakir Rebirth (44), Tainted Isle (46) and Island (58).
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Baleful Strix (13) to attack B.
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B didn't block Baleful Strix (13).
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Baleful Strix (13) deals 1 combat damage to B.
+14	A's Combat Damage Step	LIFE	Life: B 18 > 17
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD	A cast Omen Hawker
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Upkeep step	STACK_ADD*	A cast Delightful Discovery
+16	A's Upkeep step	STACK_RESOLVE*	Delightful Discovery (17) - A scries 2. A draws two cards.
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Main phase, precombat	STACK_ADD	A triggered Ruin Crab
+16	A's Main phase, precombat	ZONE_CHANGE	B milled Lonely Sandbar (55), Island (60) and Swamp (50).
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Attackers Step	COMBAT	A assigned Baleful Strix (13) to attack B.
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's Declare Blockers Step	COMBAT	B didn't block Baleful Strix (13).
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's Combat Damage Step	DAMAGE	Baleful Strix (13) deals 1 combat damage to B.
+16	A's Combat Damage Step	LIFE	Life: B 17 > 16
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	STACK_ADD	A cast Master Pakku
+16	A's Main phase, postcombat	STACK_ADD	A activated Lonely Sandbar
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step
+19	A's Cleanup step	TURN	Turn 19 (B)
+19	B's Untap step	PHASE	B's Untap step
+19	B's Upkeep step	PHASE	B's Upkeep step
+19	B's Draw step	PHASE	B's Draw step
+19	B's Main phase, precombat	PHASE	B's Main phase, precombat
+19	B's Main phase, precombat	STACK_ADD*	A cast Demon's Due
+19	B's Main phase, precombat	LIFE	Life: A 7 > 5
+19	B's Main phase, precombat	STACK_RESOLVE*	Demon's Due (19) - A scries 2. A draws two cards. A loses 2 life.
+19	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+19	B's Beginning of Combat Step	STACK_ADD*	A cast Demon's Due
+19	B's Beginning of Combat Step	LIFE	Life: A 5 > 3
+19	B's Beginning of Combat Step	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+19	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+19	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) to attack A.
+19	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+19	B's Declare Blockers Step	COMBAT	A assigned Scheming Aspirant (2) and Atris, Oracle of Half-Truths (40) to block The Mouth of Sauron (81).
+19	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+19	B's Combat Damage Step	PHASE	B's Combat Damage Step
+19	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 1 damage to Scheming Aspirant (2).
+19	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 2 damage to Atris, Oracle of Half-Truths (40).
+19	B's Combat Damage Step	DAMAGE	Scheming Aspirant (2) deals 1 damage to The Mouth of Sauron (81).
+19	B's Combat Damage Step	DAMAGE	Atris, Oracle of Half-Truths (40) deals 3 damage to The Mouth of Sauron (81).
+19	B's Combat Damage Step	ZONE_CHANGE	The Mouth of Sauron (81) was put into Graveyard from Battlefield.
+19	B's Combat Damage Step	ZONE_CHANGE	Scheming Aspirant (2) was put into Graveyard from Battlefield.
+19	B's Combat Damage Step	ZONE_CHANGE	Atris, Oracle of Half-Truths (40) was put into Graveyard from Battlefield.
+19	B's Combat Damage Step	ZONE_CHANGE	Eaten by Piranhas (67) was put into Graveyard from Battlefield.
+19	B's Combat Damage Step	STACK_ADD	B triggered Zulaport Cutthroat
+19	B's Combat Damage Step	LIFE	Life: A 3 > 2
+19	B's Combat Damage Step	LIFE	Life: B 16 > 17
+19	B's End of Combat Step	PHASE	B's End of Combat Step
+19	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+19	B's Main phase, postcombat	STACK_ADD	B cast Baleful Strix
+19	B's Main phase, postcombat	STACK_ADD	B triggered Baleful Strix
+19	B's End step	PHASE	B's End step
+19	B's Cleanup step	PHASE	B's Cleanup step

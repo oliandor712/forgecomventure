@@ -1,0 +1,74 @@
+0		MULLIGAN*	A has kept a hand of 6 cards hand: Forest; Blossoming Defense; Brotherhood Regalia; Forest; Hero's Blade; Forest
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Arasta of the Endless Web (40).
+9	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Arasta of the Endless Web (40)]
+9	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Arasta of the Endless Web (40) gets +4/+4  until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 10 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 20 > 10
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Mirkwood Spider
+9	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+10	A's Cleanup step	TURN	Turn 10 (B)
+10	B's Untap step	PHASE	B's Untap step
+10	B's Upkeep step	PHASE	B's Upkeep step
+10	B's Upkeep step	STACK_ADD	B cast Ram Through targeting [Selvala, Heart of the Wilds (81)] [Mirkwood Spider (16)]
+10	B's Upkeep step	STACK_ADD	A triggered Arasta of the Endless Web
+10	B's Upkeep step	STACK_ADD	B cast Tail Swipe targeting [Selvala, Heart of the Wilds (81)] [Spider Token (85)]
+10	B's Upkeep step	STACK_ADD	A triggered Arasta of the Endless Web
+10	B's Upkeep step	STACK_ADD	B triggered Selvala, Heart of the Wilds
+10	B's Upkeep step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Spider Token (85).
+10	B's Upkeep step	DAMAGE	Spider Token (85) deals 1 damage to Selvala, Heart of the Wilds (81).
+10	B's Upkeep step	ZONE_CHANGE	Spider Token (85) was put into Graveyard from Battlefield.
+10	B's Upkeep step	STACK_ADD	B triggered Selvala, Heart of the Wilds
+10	B's Upkeep step	STACK_ADD*	A cast Blossoming Defense targeting [Mirkwood Spider (16)]
+10	B's Upkeep step	STACK_RESOLVE*	Blossoming Defense (9) - Mirkwood Spider (16) gets +2/+2 and gains hexproof until end of turn.
+10	B's Draw step	PHASE	B's Draw step
+10	B's Main phase, precombat	PHASE	B's Main phase, precombat
+10	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+10	B's Beginning of Combat Step	STACK_ADD	B triggered H.E.R.B.I.E., Lovable Robot
+10	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+10	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+10	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+10	B's Combat Damage Step	PHASE	B's Combat Damage Step
+10	B's End of Combat Step	PHASE	B's End of Combat Step
+10	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+10	B's Main phase, postcombat	STACK_ADD	B cast Leaf Gilder
+10	B's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+10	B's End step	PHASE	B's End step
+10	B's Cleanup step	PHASE	B's Cleanup step
+13	B's Cleanup step	TURN	Turn 13 (A)
+13	A's Untap step	PHASE	A's Untap step
+13	A's Upkeep step	PHASE	A's Upkeep step
+13	A's Draw step	PHASE	A's Draw step
+13	A's Main phase, precombat	PHASE	A's Main phase, precombat
+13	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+13	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+13	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40) to attack B.
+13	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+13	A's Declare Blockers Step	COMBAT	B assigned Leaf Gilder (74) to block Arasta of the Endless Web (40).
+13	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+13	A's Combat Damage Step	PHASE	A's Combat Damage Step
+13	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 6 damage to Leaf Gilder (74).
+13	A's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 2 damage to Arasta of the Endless Web (40).
+13	A's Combat Damage Step	ZONE_CHANGE	Leaf Gilder (74) was put into Graveyard from Battlefield.
+13	A's End of Combat Step	PHASE	A's End of Combat Step
+13	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+13	A's Main phase, postcombat	STACK_ADD	A cast Aftermath Analyst
+13	A's Main phase, postcombat	STACK_ADD	A triggered Aftermath Analyst
+13	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+13	A's Main phase, postcombat	ZONE_CHANGE*	A milled Giant Growth (19), Deadly Recluse (15) and Blossoming Defense (10).
+13	A's End step	PHASE	A's End step
+13	A's Cleanup step	PHASE	A's Cleanup step

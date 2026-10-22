@@ -1,0 +1,98 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Snakeskin Veil; Hero's Blade; Aquastrand Spider; Colossus Hammer; Blossoming Defense; Forest; Forest
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Attackers Step	COMBAT	A assigned Aquastrand Spider (7) to attack B.
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's Declare Blockers Step	COMBAT	B didn't block Aquastrand Spider (7).
+5	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Aquastrand Spider (7)]
+5	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Aquastrand Spider (7) gets +2/+2 and gains hexproof until end of turn.
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's Combat Damage Step	DAMAGE	Aquastrand Spider (7) deals 4 combat damage to B.
+5	A's Combat Damage Step	LIFE	Life: B 20 > 16
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's Main phase, postcombat	STACK_ADD	A cast Ruins Recluse
+5	A's Main phase, postcombat	STACK_ADD	A triggered Aquastrand Spider
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Main phase, precombat	STACK_ADD	A activated Colossus Hammer targeting [Arasta of the Endless Web (40)]
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40) to attack B.
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's Declare Blockers Step	COMBAT	B assigned Bloodline Shaman (45) to block Arasta of the Endless Web (40).
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 16 damage to Bloodline Shaman (45).
+17	A's Combat Damage Step	DAMAGE	Bloodline Shaman (45) deals 1 damage to Arasta of the Endless Web (40).
+17	A's Combat Damage Step	ZONE_CHANGE	Bloodline Shaman (45) was put into Graveyard from Battlefield.
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's End step	PHASE	A's End step
+17	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Blossoming Defense (9)]
+17	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Blossoming Defense (9) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+17	A's Cleanup step	PHASE	A's Cleanup step
+19	B's Cleanup step	TURN	Turn 19 (A)
+19	A's Untap step	PHASE	A's Untap step
+19	A's Upkeep step	PHASE	A's Upkeep step
+19	A's Draw step	PHASE	A's Draw step
+19	A's Main phase, precombat	PHASE	A's Main phase, precombat
+19	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+19	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+19	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40) to attack B.
+19	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+19	A's Declare Blockers Step	COMBAT	B assigned Krallenhorde Howler (50) and Elvish Lyrist (43) to block Arasta of the Endless Web (40).
+19	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Arasta of the Endless Web (40)]
+19	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (10) - Arasta of the Endless Web (40) gets +2/+2 and gains hexproof until end of turn.
+19	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+19	A's Combat Damage Step	PHASE	A's Combat Damage Step
+19	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 damage to Krallenhorde Howler (50).
+19	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 15 damage to Elvish Lyrist (43).
+19	A's Combat Damage Step	DAMAGE	Krallenhorde Howler (50) deals 3 damage to Arasta of the Endless Web (40).
+19	A's Combat Damage Step	DAMAGE	Elvish Lyrist (43) deals 15 damage to Arasta of the Endless Web (40).
+19	A's Combat Damage Step	ZONE_CHANGE	Elvish Lyrist (43) was put into Graveyard from Battlefield.
+19	A's Combat Damage Step	ZONE_CHANGE	Krallenhorde Howler (50) was put into Graveyard from Battlefield.
+19	A's End of Combat Step	PHASE	A's End of Combat Step
+19	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+19	A's Main phase, postcombat	STACK_ADD	A cast Sol Ring
+19	A's End step	PHASE	A's End step
+19	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Blossoming Defense (10)]
+19	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Blossoming Defense (10) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+19	A's Cleanup step	PHASE	A's Cleanup step
+21	B's Cleanup step	TURN	Turn 21 (A)
+21	A's Untap step	PHASE	A's Untap step
+21	A's Upkeep step	PHASE	A's Upkeep step
+21	A's Draw step	PHASE	A's Draw step
+21	A's Main phase, precombat	PHASE	A's Main phase, precombat
+21	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+21	A's Beginning of Combat Step	STACK_ADD*	A cast Titanic Growth targeting [Aquastrand Spider (7)]
+21	A's Beginning of Combat Step	STACK_RESOLVE*	Titanic Growth (11) - Aquastrand Spider (7) gets +4/+4  until end of turn.
+21	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+21	A's Declare Attackers Step	COMBAT	A assigned Spider Token (85), Arasta of the Endless Web (40) and Aquastrand Spider (7) to attack B.
+21	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+21	A's Declare Blockers Step	COMBAT	B didn't block Spider Token (85). B assigned Leaf Gilder (74) to block Arasta of the Endless Web (40). B assigned Boreal Druid (46) to block Aquastrand Spider (7).
+21	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+21	A's Combat Damage Step	PHASE	A's Combat Damage Step
+21	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 1 combat damage to B.
+21	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 16 damage to Leaf Gilder (74).
+21	A's Combat Damage Step	DAMAGE	Aquastrand Spider (7) deals 5 damage to Boreal Druid (46).
+21	A's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 2 damage to Arasta of the Endless Web (40).
+21	A's Combat Damage Step	DAMAGE	Boreal Druid (46) deals 3 damage to Aquastrand Spider (7).
+21	A's Combat Damage Step	LIFE	Life: B 5 > 4
+21	A's Combat Damage Step	ZONE_CHANGE	Boreal Druid (46) was put into Graveyard from Battlefield.
+21	A's Combat Damage Step	ZONE_CHANGE	Leaf Gilder (74) was put into Graveyard from Battlefield.
+21	A's End of Combat Step	PHASE	A's End of Combat Step
+21	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+21	A's End step	PHASE	A's End step
+21	A's Cleanup step	PHASE	A's Cleanup step

@@ -1,0 +1,47 @@
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Ruins Recluse (13) to attack B.
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B assigned Elvish Lyrist (43) to block Ruins Recluse (13).
+7	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Ruins Recluse (13)]
+7	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Ruins Recluse (13) gets +4/+4  until end of turn.
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 5 damage (Deathtouch) to Elvish Lyrist (43).
+7	A's Combat Damage Step	DAMAGE	Elvish Lyrist (43) deals 1 damage to Ruins Recluse (13).
+7	A's Combat Damage Step	ZONE_CHANGE	Elvish Lyrist (43) was put into Graveyard from Battlefield.
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+13	B's Cleanup step	TURN	Turn 13 (A)
+13	A's Untap step	PHASE	A's Untap step
+13	A's Upkeep step	PHASE	A's Upkeep step
+13	A's Draw step	PHASE	A's Draw step
+13	A's Main phase, precombat	PHASE	A's Main phase, precombat
+13	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+13	A's Beginning of Combat Step	STACK_ADD	A cast Tamiyo's Safekeeping targeting [Spider Token (88)]
+13	A's Beginning of Combat Step	LIFE	Life: A 20 > 22
+13	A's Beginning of Combat Step	STACK_ADD*	A cast Titanic Growth targeting [Copper Longlegs (2)]
+13	A's Beginning of Combat Step	STACK_RESOLVE*	Titanic Growth (12) - Copper Longlegs (2) gets +4/+4  until end of turn.
+13	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+13	A's Declare Attackers Step	COMBAT	A assigned Spider Token (88), Copper Longlegs (2), Arasta of the Endless Web (40) and Deadly Recluse (15) to attack B.
+13	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+13	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Spider Token (88). B didn't block Copper Longlegs (2). B didn't block Arasta of the Endless Web (40). B didn't block Deadly Recluse (15).
+13	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+13	A's Combat Damage Step	PHASE	A's Combat Damage Step
+13	A's Combat Damage Step	DAMAGE	Spider Token (88) deals 1 damage to Selvala, Heart of the Wilds (81).
+13	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 5 combat damage to B.
+13	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 combat damage to B.
+13	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 1 combat damage to B.
+13	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Spider Token (88).
+13	A's Combat Damage Step	LIFE	Life: B 14 > 5
+13	A's End of Combat Step	PHASE	A's End of Combat Step
+13	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+13	A's End step	PHASE	A's End step
+13	A's Cleanup step	PHASE	A's Cleanup step

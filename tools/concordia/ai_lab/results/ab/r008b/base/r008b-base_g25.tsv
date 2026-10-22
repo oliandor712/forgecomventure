@@ -1,0 +1,31 @@
+24	A's Cleanup step	TURN	Turn 24 (B)
+24	B's Untap step	PHASE	B's Untap step
+24	B's Upkeep step	PHASE	B's Upkeep step
+24	B's Draw step	PHASE	B's Draw step
+24	B's Main phase, precombat	PHASE	B's Main phase, precombat
+24	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+24	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+24	B's Declare Attackers Step	COMBAT	B assigned Phyrexian Dreadnought (42) to attack A.
+24	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+24	B's Declare Blockers Step	COMBAT	A assigned Spider Token (92), Aquastrand Spider (7), Spider Token (85) and Spider Token (95) to block Phyrexian Dreadnought (42).
+24	B's Declare Blockers Step	STACK_ADD	A cast Snakeskin Veil targeting [Aquastrand Spider (7)]
+24	B's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Aquastrand Spider (7)]
+24	B's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (20) - Aquastrand Spider (7) gets +3/+3  until end of turn.
+24	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+24	B's Combat Damage Step	PHASE	B's Combat Damage Step
+24	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 3 damage to Spider Token (85).
+24	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 5 damage to Aquastrand Spider (7).
+24	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 2 damage to Spider Token (92).
+24	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 2 damage to Spider Token (95).
+24	B's Combat Damage Step	DAMAGE	Spider Token (92) deals 1 damage to Phyrexian Dreadnought (42).
+24	B's Combat Damage Step	DAMAGE	Aquastrand Spider (7) deals 5 damage to Phyrexian Dreadnought (42).
+24	B's Combat Damage Step	DAMAGE	Spider Token (85) deals 2 damage to Phyrexian Dreadnought (42).
+24	B's Combat Damage Step	DAMAGE	Spider Token (95) deals 1 damage to Phyrexian Dreadnought (42).
+24	B's Combat Damage Step	ZONE_CHANGE	Aquastrand Spider (7) was put into Graveyard from Battlefield.
+24	B's Combat Damage Step	ZONE_CHANGE	Spider Token (85) was put into Graveyard from Battlefield.
+24	B's Combat Damage Step	ZONE_CHANGE	Spider Token (92) was put into Graveyard from Battlefield.
+24	B's Combat Damage Step	ZONE_CHANGE	Spider Token (95) was put into Graveyard from Battlefield.
+24	B's End of Combat Step	PHASE	B's End of Combat Step
+24	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+24	B's End step	PHASE	B's End step
+24	B's Cleanup step	PHASE	B's Cleanup step

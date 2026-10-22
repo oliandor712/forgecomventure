@@ -1,0 +1,93 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Vodalian Arcanist; Island; Island; Island; Turtleshell Changeling; Stream of Unconsciousness; Island
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Vodalian Arcanist (10) to attack B.
+8	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B didn't block Vodalian Arcanist (10).
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Vodalian Arcanist (10) deals 1 combat damage to B.
+8	A's Combat Damage Step	LIFE	Life: B 19 > 18
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+8	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Vodalian Arcanist (10) to attack B.
+10	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B didn't block Vodalian Arcanist (10).
+10	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+10	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (8) - Turtleshell Changeling (8) gains hidden cardname's power and toughness are switched until end of turn.
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Vodalian Arcanist (10) deals 1 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 18 > 17
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+10	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+10	A's Main phase, postcombat	STACK_ADD	A cast Triton Shorestalker
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Alandra, Sky Dreamer
+12	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+12	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Main phase, precombat	STACK_ADD	B activated Brotherhood Regalia targeting [Aetherjacket (47)]
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Aetherjacket (47), Thopter Token (85), Thopter Token (88), Chief of the Foundry (49), Universal Automaton (70) and Sai, Master Thopterist (81) to attack A.
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT*	A didn't block Aetherjacket (47). A didn't block Thopter Token (85). A didn't block Thopter Token (88). A assigned Triton Shorestalker (4), Vodalian Arcanist (10) and Turtleshell Changeling (8) to block Chief of the Foundry (49). A assigned Aquamoeba (16) and Alandra, Sky Dreamer (40) to block Universal Automaton (70). A assigned Aquamoeba (15) to block Sai, Master Thopterist (81).
+13	B's Declare Blockers Step	STACK_ADD*	A activated Aquamoeba
+13	B's Declare Blockers Step	STACK_RESOLVE*	Aquamoeba (16) - Aquamoeba (16) gains hidden cardname's power and toughness are switched until end of turn.
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Aetherjacket (47) deals 4 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 3 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 3 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Chief of the Foundry (49) deals 1 damage to Triton Shorestalker (4).
+13	B's Combat Damage Step	DAMAGE*	Chief of the Foundry (49) deals 1 damage to Turtleshell Changeling (8).
+13	B's Combat Damage Step	DAMAGE*	Universal Automaton (70) deals 1 damage to Aquamoeba (16).
+13	B's Combat Damage Step	DAMAGE	Universal Automaton (70) deals 1 damage to Alandra, Sky Dreamer (40).
+13	B's Combat Damage Step	DAMAGE*	Sai, Master Thopterist (81) deals 1 damage to Aquamoeba (15).
+13	B's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 damage to Chief of the Foundry (49).
+13	B's Combat Damage Step	DAMAGE	Vodalian Arcanist (10) deals 1 damage to Chief of the Foundry (49).
+13	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (8) deals 1 damage to Chief of the Foundry (49).
+13	B's Combat Damage Step	DAMAGE*	Aquamoeba (16) deals 3 damage to Universal Automaton (70).
+13	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Universal Automaton (70).
+13	B's Combat Damage Step	DAMAGE*	Aquamoeba (15) deals 1 damage to Sai, Master Thopterist (81).
+13	B's Combat Damage Step	LIFE	Life: A 10 > 0

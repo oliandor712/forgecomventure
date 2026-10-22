@@ -1,0 +1,54 @@
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40) and Ruins Recluse (13) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Arasta of the Endless Web (40). B assigned Elvish Skysweeper (51) and H.E.R.B.I.E., Lovable Robot (80) to block Ruins Recluse (13).
+9	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Ruins Recluse (13)]
+9	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Ruins Recluse (13) gets +2/+2 and gains hexproof until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 combat damage to B.
+9	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 1 damage (Deathtouch) to H.E.R.B.I.E., Lovable Robot (80).
+9	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 2 damage (Deathtouch) to Elvish Skysweeper (51).
+9	A's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 1 damage to Ruins Recluse (13).
+9	A's Combat Damage Step	DAMAGE	H.E.R.B.I.E., Lovable Robot (80) deals 1 damage to Ruins Recluse (13).
+9	A's Combat Damage Step	LIFE	Life: B 18 > 15
+9	A's Combat Damage Step	ZONE_CHANGE	Elvish Skysweeper (51) was put into Graveyard from Battlefield.
+9	A's Combat Damage Step	ZONE_CHANGE	H.E.R.B.I.E., Lovable Robot (80) was put into Graveyard from Battlefield.
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Copper Longlegs
+9	A's Main phase, postcombat	STACK_ADD	A cast Aftermath Analyst
+9	A's Main phase, postcombat	STACK_ADD	A triggered Aftermath Analyst
+9	A's Main phase, postcombat	ZONE_CHANGE	A milled Forest (36), Deadly Recluse (15) and Grappler Spider (17).
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Beginning of Combat Step	STACK_ADD*	A cast Titanic Growth targeting [Copper Longlegs (2)]
+11	A's Beginning of Combat Step	STACK_RESOLVE*	Titanic Growth (12) - Copper Longlegs (2) gets +4/+4  until end of turn.
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Copper Longlegs (2), Arasta of the Endless Web (40) and Ruins Recluse (13) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Copper Longlegs (2). B didn't block Arasta of the Endless Web (40). B didn't block Ruins Recluse (13).
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 5 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 1 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 15 > 6
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD	A cast Aquastrand Spider
+11	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step

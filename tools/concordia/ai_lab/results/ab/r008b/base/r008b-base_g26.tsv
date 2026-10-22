@@ -1,0 +1,19 @@
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Main phase, precombat	STACK_ADD	A activated Hero's Blade targeting [Arasta of the Endless Web (40)]
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40), Aquastrand Spider (7) and Canopy Spider (22) to attack B.
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's Declare Blockers Step	COMBAT	B didn't block Arasta of the Endless Web (40). B didn't block Aquastrand Spider (7). B didn't block Canopy Spider (22).
+16	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Arasta of the Endless Web (40)]
+16	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Arasta of the Endless Web (40) gets +3/+3  until end of turn.
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 9 combat damage to B.
+16	A's Combat Damage Step	DAMAGE	Aquastrand Spider (7) deals 2 combat damage to B.
+16	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 1 combat damage to B.
+16	A's Combat Damage Step	LIFE	Life: B 6 > -6

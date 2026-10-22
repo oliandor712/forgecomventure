@@ -1,0 +1,22 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Hero's Blade; Giant Growth; Forest; Grappler Spider; Forest; Titanic Growth; Copper Longlegs
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Main phase, precombat	STACK_ADD	A cast Brotherhood Regalia
+14	A's Main phase, precombat	STACK_ADD	A activated Brotherhood Regalia targeting [Arasta of the Endless Web (40)]
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40) and Spider Token (85) to attack B.
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B didn't block Arasta of the Endless Web (40). B assigned Leaf-Crowned Visionary (52) and Elvish Skysweeper (51) to block Spider Token (85).
+14	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Arasta of the Endless Web (40)]
+14	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (20) - Arasta of the Endless Web (40) gets +3/+3  until end of turn.
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 9 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 1 damage to Leaf-Crowned Visionary (52).
+14	A's Combat Damage Step	DAMAGE	Leaf-Crowned Visionary (52) deals 1 damage to Spider Token (85).
+14	A's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 2 damage to Spider Token (85).
+14	A's Combat Damage Step	LIFE	Life: B 4 > -5

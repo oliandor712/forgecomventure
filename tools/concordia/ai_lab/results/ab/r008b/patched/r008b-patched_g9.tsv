@@ -1,0 +1,41 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Grappler Spider; Forest; Forest; Forest; Brotherhood Regalia; Aftermath Analyst; Blossoming Defense
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Main phase, precombat	STACK_ADD	A cast Brotherhood Regalia
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Aftermath Analyst
+8	A's Main phase, postcombat	STACK_ADD	A triggered Aftermath Analyst
+8	A's Main phase, postcombat	ZONE_CHANGE*	A milled Forest (36), Giant Growth (19) and Giant Growth (20).
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Draw step	PHASE	B's Draw step
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Main phase, precombat	STACK_ADD	B activated Ozolith, the Shattered Spire targeting [Phyrexian Dreadnought (42)]
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Attackers Step	COMBAT	B assigned Phyrexian Dreadnought (42) and Elvish Mystic (77) to attack A.
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's Declare Blockers Step	COMBAT	A assigned Canopy Spider (22) to block Phyrexian Dreadnought (42). A assigned Mirkwood Spider (16) to block Elvish Mystic (77).
+15	B's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+15	B's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Mirkwood Spider (16)]
+15	B's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (10) - Mirkwood Spider (16) gets +2/+2 and gains hexproof until end of turn.
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 13 combat damage to A.
+15	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 3 damage to Canopy Spider (22).
+15	B's Combat Damage Step	DAMAGE	Elvish Mystic (77) deals 1 damage to Mirkwood Spider (16).
+15	B's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 1 damage to Phyrexian Dreadnought (42).
+15	B's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 3 damage (Deathtouch) to Elvish Mystic (77).
+15	B's Combat Damage Step	LIFE	Life: A 7 > -6

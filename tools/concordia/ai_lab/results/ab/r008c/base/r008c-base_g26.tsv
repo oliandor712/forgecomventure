@@ -1,0 +1,29 @@
+19	B's Cleanup step	TURN	Turn 19 (A)
+19	A's Untap step	PHASE	A's Untap step
+19	A's Upkeep step	PHASE	A's Upkeep step
+19	A's Draw step	PHASE	A's Draw step
+19	A's Main phase, precombat	PHASE	A's Main phase, precombat
+19	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+19	A's Beginning of Combat Step	STACK_ADD*	A cast Titanic Growth targeting [Aftermath Analyst (8)]
+19	A's Beginning of Combat Step	STACK_RESOLVE*	Titanic Growth (11) - Aftermath Analyst (8) gets +4/+4  until end of turn.
+19	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+19	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22), Aftermath Analyst (8) and Ruins Recluse (13) to attack B.
+19	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+19	A's Declare Blockers Step	COMBAT	B assigned Collector Ouphe (48) and Selvala, Heart of the Wilds (81) to block Canopy Spider (22). B assigned Elvish Skysweeper (51) to block Aftermath Analyst (8). B didn't block Ruins Recluse (13).
+19	A's Declare Blockers Step	STACK_ADD	A cast Tamiyo's Safekeeping targeting [Canopy Spider (22)]
+19	A's Declare Blockers Step	LIFE	Life: A 14 > 16
+19	A's Declare Blockers Step	STACK_ADD	A activated Ruins Recluse
+19	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+19	A's Combat Damage Step	PHASE	A's Combat Damage Step
+19	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 1 damage to Selvala, Heart of the Wilds (81).
+19	A's Combat Damage Step	DAMAGE	Aftermath Analyst (8) deals 5 damage to Elvish Skysweeper (51).
+19	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 4 combat damage to B.
+19	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Canopy Spider (22).
+19	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Canopy Spider (22).
+19	A's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 1 damage to Aftermath Analyst (8).
+19	A's Combat Damage Step	LIFE	Life: B 11 > 7
+19	A's Combat Damage Step	ZONE_CHANGE	Elvish Skysweeper (51) was put into Graveyard from Battlefield.
+19	A's End of Combat Step	PHASE	A's End of Combat Step
+19	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+19	A's End step	PHASE	A's End step
+19	A's Cleanup step	PHASE	A's Cleanup step

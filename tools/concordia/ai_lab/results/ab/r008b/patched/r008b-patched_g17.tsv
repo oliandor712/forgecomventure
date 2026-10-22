@@ -1,0 +1,49 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Tyvar's Stand; Blossoming Defense; Arcane Signet; Forest; Hero's Blade; Forest; Snakeskin Veil
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Draw step	PHASE	B's Draw step
+9	B's Draw step	STACK_ADD	B cast Nature's Claim targeting [Destiny Spinner (6)]
+9	B's Draw step	STACK_ADD*	A cast Blossoming Defense targeting [Destiny Spinner (6)]
+9	B's Draw step	STACK_RESOLVE*	Blossoming Defense (9) - Destiny Spinner (6) gets +2/+2 and gains hexproof until end of turn.
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Main phase, precombat	STACK_ADD	B activated Ozolith, the Shattered Spire targeting [Elvish Mystic (77)]
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Attackers Step	COMBAT	B assigned Elvish Mystic (77) to attack A.
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's Declare Blockers Step	COMBAT	A didn't block Elvish Mystic (77).
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's Combat Damage Step	DAMAGE	Elvish Mystic (77) deals 7 combat damage to A.
+9	B's Combat Damage Step	LIFE	Life: A 11 > 4
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's Main phase, postcombat	STACK_ADD	B cast Bloodline Shaman
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step
+17	A's Cleanup step	TURN	Turn 17 (B)
+17	B's Untap step	PHASE	B's Untap step
+17	B's Upkeep step	PHASE	B's Upkeep step
+17	B's Draw step	PHASE	B's Draw step
+17	B's Draw step	STACK_ADD	B cast Return to Nature
+17	B's Draw step	STACK_ADD	A triggered Arasta of the Endless Web
+17	B's Draw step	ZONE_CHANGE	Arasta of the Endless Web (40) was put into Graveyard from Battlefield.
+17	B's Main phase, precombat	PHASE	B's Main phase, precombat
+17	B's Main phase, precombat	STACK_ADD	B activated Ozolith, the Shattered Spire targeting [Phyrexian Dreadnought (42)]
+17	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+17	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+17	B's Declare Attackers Step	COMBAT	B assigned Phyrexian Dreadnought (42) to attack A.
+17	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+17	B's Declare Blockers Step	COMBAT	A assigned Spider Token (85) and Spider Token (88) to block Phyrexian Dreadnought (42).
+17	B's Declare Blockers Step	STACK_ADD	A cast Snakeskin Veil targeting [Spider Token (85)]
+17	B's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Spider Token (85)]
+17	B's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (10) - Spider Token (85) gets +2/+2 and gains hexproof until end of turn.
+17	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+17	B's Combat Damage Step	PHASE	B's Combat Damage Step
+17	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 9 combat damage to A.
+17	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 5 damage to Spider Token (85).
+17	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 2 damage to Spider Token (88).
+17	B's Combat Damage Step	DAMAGE	Spider Token (85) deals 4 damage to Phyrexian Dreadnought (42).
+17	B's Combat Damage Step	DAMAGE	Spider Token (88) deals 1 damage to Phyrexian Dreadnought (42).
+17	B's Combat Damage Step	LIFE	Life: A 4 > -5

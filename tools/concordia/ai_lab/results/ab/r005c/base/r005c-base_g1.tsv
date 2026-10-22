@@ -1,0 +1,139 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Island; Deranged Assistant; Island; Island; Island; Karfell Harbinger; Turtleshell Changeling
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Stonybrook Banneret (21) to attack B.
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B didn't block Stonybrook Banneret (21).
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: B 20 > 19
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+7	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+7	A's Main phase, postcombat	STACK_ADD	A cast Triton Shorestalker
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Stonybrook Banneret (21) and Triton Shorestalker (4) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Stonybrook Banneret (21). B didn't block Triton Shorestalker (4).
+9	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+9	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (8) - Turtleshell Changeling (8) gains hidden cardname's power and toughness are switched until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 combat damage to B.
+9	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 19 > 17
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Alandra, Sky Dreamer
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Stonybrook Banneret (21) and Triton Shorestalker (4) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Stonybrook Banneret (21). B didn't block Triton Shorestalker (4).
+11	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+11	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (8) - Turtleshell Changeling (8) gains hidden cardname's power and toughness are switched until end of turn.
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 17 > 15
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+11	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+13	B's Cleanup step	TURN	Turn 13 (A)
+13	A's Untap step	PHASE	A's Untap step
+13	A's Upkeep step	PHASE	A's Upkeep step
+13	A's Draw step	PHASE	A's Draw step
+13	A's Main phase, precombat	PHASE	A's Main phase, precombat
+13	A's Main phase, precombat	STACK_ADD	A cast Merfolk Trickster
+13	A's Main phase, precombat	STACK_ADD	A triggered Merfolk Trickster targeting [Thopter Token (88)]
+13	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+13	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+13	A's Declare Attackers Step	COMBAT	A assigned Stonybrook Banneret (21) and Triton Shorestalker (4) to attack B.
+13	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+13	A's Declare Blockers Step	COMBAT	B didn't block Stonybrook Banneret (21). B didn't block Triton Shorestalker (4).
+13	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+13	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (8) - Turtleshell Changeling (8) gains hidden cardname's power and toughness are switched until end of turn.
+13	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+13	A's Combat Damage Step	PHASE	A's Combat Damage Step
+13	A's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 combat damage to B.
+13	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+13	A's Combat Damage Step	LIFE	Life: B 15 > 13
+13	A's End of Combat Step	PHASE	A's End of Combat Step
+13	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+13	A's End step	PHASE	A's End step
+13	A's Cleanup step	PHASE	A's Cleanup step
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Draw step	PHASE	A's Draw step
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's End of Combat Step	PHASE	A's End of Combat Step
+15	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+15	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+15	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+15	A's Main phase, postcombat	STACK_ADD	A cast Vodalian Arcanist
+15	A's End step	PHASE	A's End step
+15	A's Cleanup step	PHASE	A's Cleanup step
+16	A's Cleanup step	TURN	Turn 16 (B)
+16	B's Untap step	PHASE	B's Untap step
+16	B's Upkeep step	PHASE	B's Upkeep step
+16	B's Draw step	PHASE	B's Draw step
+16	B's Main phase, precombat	PHASE	B's Main phase, precombat
+16	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+16	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+16	B's Declare Attackers Step	COMBAT	B assigned Thopter Token (85), Thopter Token (88), Chief of the Foundry (49), Universal Automaton (70), Etherium Sculptor (74), Sai, Master Thopterist (81) and Millikin (79) to attack A.
+16	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+16	B's Declare Blockers Step	COMBAT*	A didn't block Thopter Token (85). A didn't block Thopter Token (88). A didn't block Chief of the Foundry (49). A assigned Stonybrook Banneret (21) and Alandra, Sky Dreamer (40) to block Universal Automaton (70). A assigned Triton Shorestalker (4), Karfell Harbinger (2) and Turtleshell Changeling (8) to block Etherium Sculptor (74). A assigned Deranged Assistant (1), Turtleshell Changeling (7), Myr Quadropod (11) and Vodalian Arcanist (10) to block Sai, Master Thopterist (81). A assigned Merfolk Trickster (20) to block Millikin (79).
+16	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+16	B's Combat Damage Step	PHASE	B's Combat Damage Step
+16	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 3 combat damage to A.
+16	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 3 combat damage to A.
+16	B's Combat Damage Step	DAMAGE	Chief of the Foundry (49) deals 2 combat damage to A.
+16	B's Combat Damage Step	DAMAGE	Universal Automaton (70) deals 1 damage to Stonybrook Banneret (21).
+16	B's Combat Damage Step	DAMAGE	Universal Automaton (70) deals 1 damage to Alandra, Sky Dreamer (40).
+16	B's Combat Damage Step	DAMAGE	Etherium Sculptor (74) deals 1 damage to Triton Shorestalker (4).
+16	B's Combat Damage Step	DAMAGE*	Etherium Sculptor (74) deals 1 damage to Turtleshell Changeling (8).
+16	B's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 1 damage to Deranged Assistant (1).
+16	B's Combat Damage Step	DAMAGE	Millikin (79) deals 1 damage to Merfolk Trickster (20).
+16	B's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 damage to Etherium Sculptor (74).
+16	B's Combat Damage Step	DAMAGE	Karfell Harbinger (2) deals 1 damage to Etherium Sculptor (74).
+16	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (8) deals 1 damage to Etherium Sculptor (74).
+16	B's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 damage to Universal Automaton (70).
+16	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Universal Automaton (70).
+16	B's Combat Damage Step	DAMAGE	Deranged Assistant (1) deals 1 damage to Sai, Master Thopterist (81).
+16	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (7) deals 1 damage to Sai, Master Thopterist (81).
+16	B's Combat Damage Step	DAMAGE*	Myr Quadropod (11) deals 1 damage to Sai, Master Thopterist (81).
+16	B's Combat Damage Step	DAMAGE	Vodalian Arcanist (10) deals 1 damage to Sai, Master Thopterist (81).
+16	B's Combat Damage Step	DAMAGE	Merfolk Trickster (20) deals 2 damage to Millikin (79).
+16	B's Combat Damage Step	LIFE	Life: A 3 > -5

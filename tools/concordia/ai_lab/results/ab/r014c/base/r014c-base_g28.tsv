@@ -1,0 +1,98 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Bojuka Bog; Omen Hawker; Island; Baleful Strix; Island; Deliberate; Master Pakku
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+9	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+9	B's Main phase, postcombat	ZONE_CHANGE*	A milled Delightful Discovery (17), Opt (14) and Swamp (8).
+9	B's Main phase, postcombat	STACK_ADD	B activated Barren Moor
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Upkeep step	STACK_ADD*	A cast Joint Exploration
+10	A's Upkeep step	STACK_ADD	A triggered Master Pakku
+10	A's Upkeep step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Joint Exploration (38), Activator: A, SpellAbility: Scry 2, then draw a card.  If this spell was kicked, you may put a land card from your hand onto the battlefield.]
+10	A's Upkeep step	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+10	A's Upkeep step	STACK_ADD*	A cast Deliberate
+10	A's Upkeep step	STACK_ADD	A triggered Master Pakku
+10	A's Upkeep step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Deliberate (34), Activator: A, SpellAbility: Scry 2, then draw a card. ]
+10	A's Upkeep step	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Main phase, precombat	STACK_ADD	A cast Vampiric Rites
+10	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Baleful Strix (13) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B didn't block Baleful Strix (13).
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Baleful Strix (13) deals 1 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 15 > 14
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Upkeep step	STACK_ADD*	A cast Demon's Due
+14	A's Upkeep step	LIFE	Life: A 7 > 5
+14	A's Upkeep step	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD	A cast Stitcher's Supplier
+14	A's Main phase, postcombat	STACK_ADD	A triggered Stitcher's Supplier
+14	A's Main phase, postcombat	ZONE_CHANGE*	A milled Opt (15), Scheming Aspirant (2) and Ruin Crab (30).
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Draw step	PHASE	B's Draw step
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Attackers Step	COMBAT	B assigned Orc Army Token (84), The Mouth of Sauron (81) and Flux Channeler (76) to attack A.
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's Declare Blockers Step	COMBAT	A assigned Baleful Strix (13) to block Orc Army Token (84). A assigned Stitcher's Supplier (32) to block The Mouth of Sauron (81). A assigned Atris, Oracle of Half-Truths (40) to block Flux Channeler (76).
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's Combat Damage Step	DAMAGE	Orc Army Token (84) deals 4 damage to Baleful Strix (13).
+15	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 damage to Stitcher's Supplier (32).
+15	B's Combat Damage Step	DAMAGE	Flux Channeler (76) deals 2 damage to Atris, Oracle of Half-Truths (40).
+15	B's Combat Damage Step	DAMAGE	Baleful Strix (13) deals 1 damage (Deathtouch) to Orc Army Token (84).
+15	B's Combat Damage Step	DAMAGE	Atris, Oracle of Half-Truths (40) deals 3 damage to Flux Channeler (76).
+15	B's Combat Damage Step	DAMAGE	Stitcher's Supplier (32) deals 1 damage to The Mouth of Sauron (81).
+15	B's Combat Damage Step	ZONE_CHANGE	Flux Channeler (76) was put into Graveyard from Battlefield.
+15	B's Combat Damage Step	ZONE_CHANGE	Orc Army Token (84) was put into Graveyard from Battlefield.
+15	B's Combat Damage Step	ZONE_CHANGE	Baleful Strix (13) was put into Graveyard from Battlefield.
+15	B's Combat Damage Step	ZONE_CHANGE	Atris, Oracle of Half-Truths (40) was put into Graveyard from Battlefield.
+15	B's Combat Damage Step	ZONE_CHANGE	Stitcher's Supplier (32) was put into Graveyard from Battlefield.
+15	B's Combat Damage Step	STACK_ADD	A triggered Stitcher's Supplier
+15	B's Combat Damage Step	ZONE_CHANGE*	A milled Tainted Isle (5), Lonely Sandbar (12) and Demon's Due (19).
+15	B's End of Combat Step	PHASE	B's End of Combat Step
+15	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+15	B's Main phase, postcombat	STACK_ADD	B cast Boggart Trawler
+15	B's Main phase, postcombat	STACK_ADD	B triggered Boggart Trawler targeting [A]
+15	B's End step	PHASE	B's End step
+15	B's Cleanup step	PHASE	B's Cleanup step

@@ -1,0 +1,46 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Sol Ring; Grappler Spider; Forest; Blossoming Defense; Forest; Snakeskin Veil; Forest
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Deadly Recluse (15) to attack B.
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B didn't block Deadly Recluse (15).
+8	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Deadly Recluse (15)]
+8	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Deadly Recluse (15) gets +4/+4  until end of turn.
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 6 combat damage to B.
+8	A's Combat Damage Step	LIFE	Life: B 19 > 13
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Grappler Spider
+8	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40) and Deadly Recluse (15) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Arasta of the Endless Web (40). B didn't block Deadly Recluse (15).
+12	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Arasta of the Endless Web (40)]
+12	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Arasta of the Endless Web (40) gets +4/+4  until end of turn.
+12	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Arasta of the Endless Web (40)]
+12	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (10) - Arasta of the Endless Web (40) gets +2/+2 and gains hexproof until end of turn.
+12	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Arasta of the Endless Web (40)]
+12	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (20) - Arasta of the Endless Web (40) gets +3/+3  until end of turn.
+12	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Arasta of the Endless Web (40)]
+12	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Arasta of the Endless Web (40) gets +2/+2 and gains hexproof until end of turn.
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 14 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 2 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 11 > -5

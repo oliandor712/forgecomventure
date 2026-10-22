@@ -1,0 +1,73 @@
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Alandra, Sky Dreamer (40) and Stonybrook Banneret (21) to attack B.
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B didn't block Alandra, Sky Dreamer (40). B didn't block Stonybrook Banneret (21).
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 3 combat damage to B.
+7	A's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: B 18 > 14
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+7	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+8	A's Cleanup step	TURN	Turn 8 (B)
+8	B's Untap step	PHASE	B's Untap step
+8	B's Upkeep step	PHASE	B's Upkeep step
+8	B's Draw step	PHASE	B's Draw step
+8	B's Main phase, precombat	PHASE	B's Main phase, precombat
+8	B's Main phase, precombat	STACK_ADD	B cast Rise and Shine targeting [Mask of Memory (68)]
+8	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+8	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+8	B's Declare Attackers Step	COMBAT	B assigned Mask of Memory (68) to attack A.
+8	B's Declare Attackers Step	STACK_ADD	A cast Stream of Unconsciousness targeting [Mask of Memory (68)]
+8	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+8	B's Declare Blockers Step	COMBAT*	A assigned Turtleshell Changeling (9) to block Mask of Memory (68).
+8	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+8	B's Combat Damage Step	PHASE	B's Combat Damage Step
+8	B's Combat Damage Step	DAMAGE*	Mask of Memory (68) deals 1 damage to Turtleshell Changeling (9).
+8	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (9) deals 1 damage to Mask of Memory (68).
+8	B's End of Combat Step	PHASE	B's End of Combat Step
+8	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+8	B's Main phase, postcombat	STACK_ADD	B cast Arcane Signet
+8	B's Main phase, postcombat	STACK_ADD	B cast Universal Automaton
+8	B's End step	PHASE	B's End step
+8	B's Cleanup step	PHASE	B's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Main phase, precombat	STACK_ADD	B cast Shield Sphere
+14	B's Main phase, precombat	STACK_ADD	B triggered Sai, Master Thopterist
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned Etherium Sculptor (74), Chief of the Foundry (49), Gingerbrute (76), Universal Automaton (70), Thopter Token (85), Thopter Token (100), Thopter Token (103) and Sai, Master Thopterist (81) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT*	A assigned Drake Token (88) to block Etherium Sculptor (74). A assigned Stonybrook Banneret (21) to block Chief of the Foundry (49). A assigned Turtleshell Changeling (9) to block Gingerbrute (76). A didn't block Universal Automaton (70). A didn't block Thopter Token (85). A didn't block Thopter Token (100). A didn't block Thopter Token (103). A didn't block Sai, Master Thopterist (81).
+14	B's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+14	B's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (9) - Turtleshell Changeling (9) gains hidden cardname's power and toughness are switched until end of turn.
+14	B's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+14	B's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (9) - Turtleshell Changeling (9) gains hidden cardname's power and toughness are switched until end of turn.
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	Etherium Sculptor (74) deals 2 damage to Drake Token (88).
+14	B's Combat Damage Step	DAMAGE	Chief of the Foundry (49) deals 2 damage to Stonybrook Banneret (21).
+14	B's Combat Damage Step	DAMAGE*	Gingerbrute (76) deals 2 damage to Turtleshell Changeling (9).
+14	B's Combat Damage Step	DAMAGE	Universal Automaton (70) deals 2 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 2 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Thopter Token (100) deals 2 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Thopter Token (103) deals 2 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 1 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 damage to Chief of the Foundry (49).
+14	B's Combat Damage Step	DAMAGE	Drake Token (88) deals 2 damage to Etherium Sculptor (74).
+14	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (9) deals 1 damage to Gingerbrute (76).
+14	B's Combat Damage Step	LIFE	Life: A 9 > 0

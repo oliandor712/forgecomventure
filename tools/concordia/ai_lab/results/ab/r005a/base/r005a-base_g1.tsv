@@ -1,0 +1,155 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Island; Island; Merfolk Trickster; Island; Deranged Assistant; Myr Quadropod; Vodalian Arcanist
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+8	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+8	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+8	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+10	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+10	A's Main phase, postcombat	STACK_ADD	A cast Deranged Assistant
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Beginning of Combat Step	STACK_ADD*	A activated Myr Quadropod
+13	B's Beginning of Combat Step	STACK_RESOLVE*	Myr Quadropod (11) - Myr Quadropod (11) gains hidden cardname's power and toughness are switched until end of turn.
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Thopter Token (85), Thopter Token (88), Thopter Token (91) and Aetherjacket (47) to attack A.
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A didn't block Thopter Token (85). A didn't block Thopter Token (88). A didn't block Thopter Token (91). A didn't block Aetherjacket (47).
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 1 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 1 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Thopter Token (91) deals 1 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Aetherjacket (47) deals 2 combat damage to A.
+13	B's Combat Damage Step	LIFE	Life: A 13 > 8
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's Main phase, postcombat	STACK_ADD	B cast Wall of Junk
+13	B's Main phase, postcombat	STACK_ADD	B triggered Sai, Master Thopterist
+13	B's End step	PHASE	B's End step
+13	B's Cleanup step	PHASE	B's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Draw step	PHASE	B's Draw step
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Beginning of Combat Step	STACK_ADD*	A activated Myr Quadropod
+15	B's Beginning of Combat Step	STACK_RESOLVE*	Myr Quadropod (11) - Myr Quadropod (11) gains hidden cardname's power and toughness are switched until end of turn.
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's End of Combat Step	PHASE	B's End of Combat Step
+15	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+15	B's End step	PHASE	B's End step
+15	B's Cleanup step	PHASE	B's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+16	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step
+17	A's Cleanup step	TURN	Turn 17 (B)
+17	B's Untap step	PHASE	B's Untap step
+17	B's Upkeep step	PHASE	B's Upkeep step
+17	B's Draw step	PHASE	B's Draw step
+17	B's Main phase, precombat	PHASE	B's Main phase, precombat
+17	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+17	B's Beginning of Combat Step	STACK_ADD*	A activated Aquamoeba
+17	B's Beginning of Combat Step	STACK_RESOLVE*	Aquamoeba (16) - Aquamoeba (16) gains hidden cardname's power and toughness are switched until end of turn.
+17	B's Beginning of Combat Step	STACK_ADD*	A activated Myr Quadropod
+17	B's Beginning of Combat Step	STACK_RESOLVE*	Myr Quadropod (11) - Myr Quadropod (11) gains hidden cardname's power and toughness are switched until end of turn.
+17	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+17	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+17	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+17	B's Combat Damage Step	PHASE	B's Combat Damage Step
+17	B's End of Combat Step	PHASE	B's End of Combat Step
+17	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+17	B's Main phase, postcombat	STACK_ADD	B cast Idol of Oblivion
+17	B's Main phase, postcombat	STACK_ADD	B triggered Sai, Master Thopterist
+17	B's Main phase, postcombat	STACK_ADD	B activated Idol of Oblivion
+17	B's Main phase, postcombat	STACK_ADD	B cast Favorable Winds
+17	B's End step	PHASE	B's End step
+17	B's Cleanup step	PHASE	B's Cleanup step
+19	A's Cleanup step	TURN	Turn 19 (B)
+19	B's Untap step	PHASE	B's Untap step
+19	B's Upkeep step	PHASE	B's Upkeep step
+19	B's Draw step	PHASE	B's Draw step
+19	B's Main phase, precombat	PHASE	B's Main phase, precombat
+19	B's Main phase, precombat	STACK_ADD	B cast Mask of Memory
+19	B's Main phase, precombat	STACK_ADD	B triggered Sai, Master Thopterist
+19	B's Main phase, precombat	STACK_ADD	B activated Mask of Memory targeting [Aetherjacket (47)]
+19	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+19	B's Beginning of Combat Step	STACK_ADD*	A activated Aquamoeba
+19	B's Beginning of Combat Step	STACK_RESOLVE*	Aquamoeba (16) - Aquamoeba (16) gains hidden cardname's power and toughness are switched until end of turn.
+19	B's Beginning of Combat Step	STACK_ADD*	A activated Myr Quadropod
+19	B's Beginning of Combat Step	STACK_RESOLVE*	Myr Quadropod (11) - Myr Quadropod (11) gains hidden cardname's power and toughness are switched until end of turn.
+19	B's Beginning of Combat Step	STACK_ADD*	A activated Myr Quadropod
+19	B's Beginning of Combat Step	STACK_RESOLVE*	Myr Quadropod (12) - Myr Quadropod (12) gains hidden cardname's power and toughness are switched until end of turn.
+19	B's Beginning of Combat Step	STACK_ADD*	A activated Turtleshell Changeling
+19	B's Beginning of Combat Step	STACK_RESOLVE*	Turtleshell Changeling (8) - Turtleshell Changeling (8) gains hidden cardname's power and toughness are switched until end of turn.
+19	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+19	B's Declare Attackers Step	COMBAT	B assigned Aetherjacket (47), Thopter Token (85), Thopter Token (88), Thopter Token (91), Containment Construct (42), Thopter Token (94), Thopter Token (100), Gingerbrute (76), Sai, Master Thopterist (81), Universal Automaton (70) and Ornithopter of Paradise (80) to attack A.
+19	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+19	B's Declare Blockers Step	COMBAT	A assigned Drake Token (97) to block Aetherjacket (47). A didn't block Thopter Token (85). A didn't block Thopter Token (88). A didn't block Thopter Token (91). A assigned Deranged Assistant (1) to block Containment Construct (42). A didn't block Thopter Token (94). A didn't block Thopter Token (100). A assigned Merfolk Trickster (20) to block Gingerbrute (76). A assigned Silvergill Adept (3) and Alandra, Sky Dreamer (40) to block Sai, Master Thopterist (81). A assigned Vodalian Arcanist (10) to block Universal Automaton (70). A didn't block Ornithopter of Paradise (80).
+19	B's Declare Blockers Step	ZONE_CHANGE	Gingerbrute (76) was put into Graveyard from Battlefield.
+19	B's Declare Blockers Step	ZONE_CHANGE	Universal Automaton (70) was put into Graveyard from Battlefield.
+19	B's Declare Blockers Step	STACK_ADD	B activated Sai, Master Thopterist
+19	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+19	B's Combat Damage Step	PHASE	B's Combat Damage Step
+19	B's Combat Damage Step	DAMAGE	Aetherjacket (47) deals 3 damage to Drake Token (97).
+19	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 2 combat damage to A.
+19	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 2 combat damage to A.
+19	B's Combat Damage Step	DAMAGE	Thopter Token (91) deals 2 combat damage to A.
+19	B's Combat Damage Step	DAMAGE	Containment Construct (42) deals 2 damage to Deranged Assistant (1).
+19	B's Combat Damage Step	DAMAGE	Thopter Token (94) deals 2 combat damage to A.
+19	B's Combat Damage Step	DAMAGE	Thopter Token (100) deals 2 combat damage to A.
+19	B's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 1 damage to Silvergill Adept (3).
+19	B's Combat Damage Step	DAMAGE	Ornithopter of Paradise (80) deals 1 combat damage to A.
+19	B's Combat Damage Step	DAMAGE	Drake Token (97) deals 2 damage to Aetherjacket (47).
+19	B's Combat Damage Step	DAMAGE	Deranged Assistant (1) deals 1 damage to Containment Construct (42).
+19	B's Combat Damage Step	DAMAGE	Silvergill Adept (3) deals 2 damage to Sai, Master Thopterist (81).
+19	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Sai, Master Thopterist (81).
+19	B's Combat Damage Step	LIFE	Life: A 8 > -3
