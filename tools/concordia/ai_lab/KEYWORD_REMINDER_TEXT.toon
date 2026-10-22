@@ -1,0 +1,244 @@
+# Keyword reminder text records, built from the Comprehensive Rules (effective 2026-08-07; full text in tools/agents/reference/MTG_COMP_RULES_20260807.txt; rules 701 = keyword actions, 702 = keyword abilities) and the Oracle lines of the Forge card scripts. reminder_text = the most common parenthesised reminder wording printed directly after the keyword at the start of a rules line, numbers shown as N and costs as {C}. cards_with = cards using that exact wording; cards_any = cards with any reminder wording for the keyword. Empty reminder_text = no card in the pool prints reminder text for it (read the rule in the CR). coverage: in_reference = also in the user's keyword document or the Claude-added block of KEYWORD_REFERENCE.toon; cr_only = only in the Comprehensive Rules (missing from our reference).
+keywords[242]{rule,name,coverage,reminder_text,example,cards_with,cards_any}:
+  701.7,Create,cr_only,"","",0,0
+  701.8,Destroy,cr_only,"","",0,0
+  701.9,Discard,cr_only,"","",0,0
+  701.10,Double,cr_only,"","",0,0
+  701.11,Triple,cr_only,"","",0,0
+  701.12,Exchange,cr_only,"","",0,0
+  701.13,Exile,cr_only,"","",0,0
+  701.14,Fight,cr_only,"","",0,0
+  701.15,Goad,cr_only,"","",0,0
+  701.16,Investigate,in_reference,"","",0,0
+  701.17,Mill,cr_only,"","",0,0
+  701.18,Play,cr_only,"","",0,0
+  701.20,Reveal,cr_only,"","",0,0
+  701.21,Sacrifice,in_reference,"","",0,0
+  701.22,Scry,in_reference,"","",0,0
+  701.23,Search,cr_only,"","",0,0
+  701.24,Shuffle,cr_only,"","",0,0
+  701.26,Tap and Untap,in_reference,"","",0,0
+  701.27,Transform,in_reference,"","",0,0
+  701.29,Fateseal,in_reference,"","",0,0
+  701.30,Clash,in_reference,"","",0,0
+  701.31,Planeswalk,cr_only,"","",0,0
+  701.32,Set in Motion,cr_only,"","",0,0
+  701.33,Abandon,cr_only,"","",0,0
+  701.34,Proliferate,in_reference,"","",0,0
+  701.35,Detain,in_reference,"","",0,0
+  701.36,Populate,in_reference,"","",0,0
+  701.37,Monstrosity,in_reference,"","",0,0
+  701.38,Vote,cr_only,"","",0,0
+  701.39,Bolster,in_reference,"","",0,0
+  701.40,Manifest,in_reference,"","",0,0
+  701.41,Support,in_reference,"","",0,0
+  701.42,Meld,in_reference,"","",0,0
+  701.43,Exert,in_reference,"","",0,0
+  701.44,Explore,in_reference,"","",0,0
+  701.45,Assemble,cr_only,"","",0,0
+  701.46,Adapt,in_reference,"","",0,0
+  701.47,Amass,cr_only,"","",0,0
+  701.48,Learn,cr_only,"","",0,0
+  701.49,Venture into the Dungeon,cr_only,"","",0,0
+  701.50,Connive,in_reference,"","",0,0
+  701.51,Open an Attraction,cr_only,"","",0,0
+  701.52,Roll to Visit Your Attractions,cr_only,"","",0,0
+  701.53,Incubate,cr_only,"","",0,0
+  701.54,The Ring Tempts You,cr_only,"","",0,0
+  701.55,Face a Villainous Choice,cr_only,"","",0,0
+  701.57,Discover,cr_only,"","",0,0
+  701.58,Cloak,cr_only,"","",0,0
+  701.60,Suspect,cr_only,"","",0,0
+  701.61,Forage,cr_only,"","",0,0
+  701.62,Manifest Dread,cr_only,"","",0,0
+  701.63,Endure,cr_only,"","",0,0
+  701.64,Harness,cr_only,"","",0,0
+  701.65,Airbend,cr_only,"","",0,0
+  701.66,Earthbend,cr_only,"","",0,0
+  701.67,Waterbend,cr_only,"","",0,0
+  701.68,Blight,cr_only,"","",0,0
+  701.69,Heal,cr_only,"","",0,0
+  702.3,Defender,in_reference,This creature can't attack.,Benevolent Ancestor,115,115
+  702.4,Double Strike,in_reference,This creature deals both first-strike and regular combat damage.,Iroas's Champion,12,12
+  702.5,Enchant,in_reference,Target a creature as you cast this. This card enters attached to that creature.,Web,15,17
+  702.7,First Strike,in_reference,This creature deals combat damage before creatures without first strike.,Blood Ogre,28,28
+  702.8,Flash,in_reference,You may cast this spell any time you could cast an instant.,Brineborn Cutthroat,86,87
+  702.9,Flying,in_reference,This creature can't be blocked except by creatures with flying or reach.,"Blue Marvel, Adam Brashear",80,80
+  702.10,Haste,in_reference,This creature can attack and {C} as soon as it comes under your control.,Bolt Hound,29,33
+  702.11,Hexproof,in_reference,This creature can't be the target of spells or abilities your opponents control.,Benthic Giant,42,45
+  702.12,Indestructible,in_reference,"Effects that say \"destroy\" don't destroy this artifact.",Myr Matrix,7,13
+  702.14,Landwalk,in_reference,"","",0,0
+  702.15,Lifelink,in_reference,Damage dealt by this creature also causes you to gain that much life.,"Black Panther, Claws of Bast",49,49
+  702.16,Protection,in_reference,"This creature can't be blocked, targeted, dealt damage, or enchanted by anything white.",Black Knight,2,13
+  702.17,Reach,in_reference,This creature can block creatures with flying.,Blightwidow,86,86
+  702.18,Shroud,in_reference,This creature can't be the target of spells or abilities.,Blurred Mongoose,32,34
+  702.19,Trample,in_reference,This creature can deal excess combat damage to the player or planeswalker it's attacking.,Ball Lightning,38,52
+  702.20,Vigilance,in_reference,Attacking doesn't cause this creature to tap.,"Beatrix, Loyal General",48,48
+  702.21,Ward,in_reference,"Whenever this creature becomes the target of a spell or ability an opponent controls, counter it unless that player pays {C}.",Bronze Guardian,52,57
+  702.22,Banding,in_reference,"Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.",Benalish Hero,12,13
+  702.23,Rampage,in_reference,"Whenever this creature becomes blocked, it gets +N/+N until end of turn for each creature blocking it beyond the first.",Balduvian War-Makers,9,9
+  702.25,Flanking,in_reference,"Whenever a creature without flanking blocks this creature, the blocking creature gets -N/-N until end of turn.",Burning Shield Askari,27,27
+  702.26,Phasing,in_reference,"This phases in or out before you untap during each of your untap steps. While it's phased out, it's treated as though it doesn't exist.",Breezekeeper,12,12
+  702.27,Buyback,in_reference,"You may pay an additional {C} as you cast this spell. If you do, put this card into your hand as it resolves.",Invulnerability,26,31
+  702.28,Shadow,in_reference,This creature can block or be blocked by only creatures with shadow.,"Boss Uramon, Shadow's Reach",39,39
+  702.29,Cycling,in_reference,"{C}, Discard this card: Draw a card.",Bloated Toad,220,296
+  702.30,Echo,in_reference,"At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.",Basalt Gargoyle,47,47
+  702.31,Horsemanship,in_reference,This creature can't be blocked except by creatures with horsemanship.,Barbarian General,26,26
+  702.32,Fading,in_reference,"This creature enters with three fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.",Blastoderm,4,17
+  702.33,Kicker,in_reference,You may pay an additional {C}{C} as you cast this spell.,Blink of an Eye,90,191
+  702.34,Flashback,in_reference,You may cast this card from your graveyard for its flashback cost. Then exile it.,Bulk Up,176,183
+  702.35,Madness,in_reference,"If you discard this card, discard it into exile. When you do, cast it for its madness cost or put it into your graveyard.",Blazing Rootwalla,58,58
+  702.36,Fear,in_reference,This creature can't be blocked except by artifact creatures and/or black creatures.,Inkfathom Witch,37,37
+  702.37,Morph,in_reference,You may cast this card face down as a N/N creature for {C}. Turn it face up any time for its morph cost.,Blistering Firecat,138,138
+  702.38,Amplify,in_reference,"As this creature enters, put a +N/+N counter on it for each Zombie card you reveal in your hand.",Ghastly Remains,3,9
+  702.39,Provoke,in_reference,"Whenever this creature attacks, you may have target creature defending player controls untap and block it if able.",Brontotherium,8,8
+  702.40,Storm,in_reference,"When you cast this spell, copy it for each spell cast before it this turn.",Weather the Storm,17,35
+  702.41,Affinity,in_reference,This spell costs {C} less to cast for each artifact you control.,Broodstar,34,73
+  702.42,Entwine,in_reference,Choose both if you pay the entwine cost.,Blinding Beam,29,30
+  702.43,Modular,in_reference,"This creature enters with two +N/+N counters on it. When it dies, you may put its +N/+N counters on target artifact creature.",Scrapyard Recombiner,7,21
+  702.44,Sunburst,in_reference,This enters with a +N/+N counter on it for each color of mana spent to cast it.,Lunar Avenger,8,15
+  702.45,Bushido,in_reference,"Whenever this creature blocks or becomes blocked, it gets +N/+N until end of turn.",Battle-Mad Ronin,35,35
+  702.46,Soulshift,in_reference,"When this creature dies, you may return target Spirit card with mana value N or less from your graveyard to your hand.",Burr Grafter,25,25
+  702.47,Splice,in_reference,"As you cast an Arcane spell, you may reveal this card from your hand and pay its splice cost. If you do, add this card's effects to that spell.",Blessed Breath,22,22
+  702.48,Offering,in_reference,"","",0,0
+  702.49,Ninjutsu,in_reference,"{C}{C}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.",Blade-Blizzard Kitsune,23,31
+  702.50,Epic,in_reference,"For the rest of the game, you can't cast spells. At the beginning of each of your upkeeps, copy this spell except for its epic ability. You may choose a new target for the copy.",Neverending Torment,3,5
+  702.51,Convoke,in_reference,Your creatures can help cast this spell. Each creature you tap while casting this spell pays for {C} or one mana of that creature's color.,Bloodline Bidding,98,99
+  702.52,Dredge,in_reference,"If you would draw a card, you may mill two cards instead. If you do, return this card from your graveyard to your hand.",Moldervine Cloak,5,14
+  702.53,Transmute,in_reference,"{C}{C}{C}, Discard this card: Search your library for a card with the same mana value as this card, reveal it, put it into your hand, then shuffle. Transmute only as a sorcery.",Brainspoil,13,14
+  702.54,Bloodthirst,in_reference,"If an opponent was dealt damage this turn, this creature enters with a +N/+N counter on it.",Bloodscale Prowler,11,23
+  702.55,Haunt,in_reference,"When this creature dies, exile it haunting target creature.",Blind Hunter,7,10
+  702.56,Replicate,in_reference,"When you cast this spell, copy it for each time you paid its replicate cost. You may choose new targets for the copies.",Mists of Lórien,12,17
+  702.57,Forecast,in_reference,"","",0,0
+  702.58,Graft,in_reference,"This creature enters with two +N/+N counters on it. Whenever another creature enters, you may move a +N/+N counter from this creature onto it.",Vigean Graftmage,4,13
+  702.59,Recover,in_reference,"When a creature is put into your graveyard from the battlefield, you may pay {C}{C}. If you do, return this card from your graveyard to your hand. Otherwise, exile this card.",Icefall,4,6
+  702.61,Split Second,in_reference,"As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.",Quagnoth,21,21
+  702.62,Suspend,in_reference,"Rather than cast this card from your hand, you may pay {C}{C} and exile it with three time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, you may cast it without paying its mana cost.",Inspiring Refrain,8,53
+  702.63,Vanishing,cr_only,"This creature enters with three time counters on it. At the beginning of your upkeep, remove a time counter from it. When the last is removed, sacrifice it.",Chronozoa,6,20
+  702.65,Aura Swap,in_reference,{C}{C}: Exchange this Aura with an Aura card in your hand.,Arcanum Wings,1,1
+  702.66,Delve,in_reference,Each card you exile from your graveyard while casting this spell pays for {C}.,Become Immense,27,27
+  702.67,Fortify,cr_only,{C}: Attach to target land you control. Fortify only as a sorcery.,C.A.M.P.,1,2
+  702.68,Frenzy,in_reference,"","",0,0
+  702.69,Gravestorm,in_reference,"When you cast this spell, copy it for each permanent put into a graveyard from the battlefield this turn.",Ominous Harvest,2,3
+  702.70,Poisonous,in_reference,"","",0,0
+  702.71,Transfigure,in_reference,"{C}{C}{C}, Sacrifice this creature: Search your library for a creature card with the same mana value as this creature, put that card onto the battlefield, then shuffle. Transfigure only as a sorcery.",Fleshwrither,1,1
+  702.72,Champion,in_reference,"When this enters, sacrifice it unless you exile another creature you control. When this leaves the battlefield, that card returns to the battlefield.",Changeling Hero,3,12
+  702.73,Changeling,in_reference,This card is every creature type.,Barkform Harvester,61,61
+  702.74,Evoke,in_reference,"You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters.",Briarhorn,27,27
+  702.75,Hideaway,in_reference,"When this permanent enters, look at the top four cards of your library, exile one face down, then put the rest on the bottom of your library.",Watcher for Tomorrow,6,14
+  702.77,Reinforce,in_reference,"{C}{C}, Discard this card: Put a +N/+N counter on target creature.",Brighthearth Banneret,4,11
+  702.78,Conspire,in_reference,"As you cast this spell, you may tap two untapped creatures you control that share a color with it. When you do, copy it and you may choose a new target for the copy.",Barkshell Blessing,9,11
+  702.79,Persist,in_reference,"When this creature dies, if it had no -N/-N counters on it, return it to the battlefield under its owner's control with a -N/-N counter on it.",Woodfall Primus,24,24
+  702.80,Wither,in_reference,This deals damage to creatures in the form of -N/-N counters.,Boggart Ram-Gang,25,26
+  702.81,Retrace,in_reference,You may cast this card from your graveyard by discarding a land card in addition to paying its other costs.,Waves of Aggression,17,18
+  702.82,Devour,in_reference,"As this enters, you may sacrifice any number of creatures. This creature enters with that many +N/+N counters on it.",Bloodspore Thrinax,8,22
+  702.83,Exalted,in_reference,"Whenever a creature you control attacks alone, that creature gets +N/+N until end of turn.",Battlegrace Angel,34,34
+  702.84,Unearth,in_reference,{C}{C}: Return this card from your graveyard to the battlefield. It gains haste. Exile it at the beginning of the next end step or if it would leave the battlefield. Unearth only as a sorcery.,Brackwater Elemental,28,51
+  702.85,Cascade,in_reference,"When you cast this spell, exile cards from the top of your library until you exile a nonland card that costs less. You may cast it without paying its mana cost. Put the exiled cards on the bottom in a random order.",Bituminous Blast,31,32
+  702.86,Annihilator,in_reference,"Whenever this creature attacks, defending player sacrifices two permanents.",Breaker of Creation,5,12
+  702.87,Level Up,in_reference,{C}: Put a level counter on this. Level up only as a sorcery.,Ikiral Outrider,14,26
+  702.88,Rebound,in_reference,"If you cast this spell from your hand, exile it as it resolves. At the beginning of your next upkeep, you may cast this card from exile without paying its mana cost.",Blossoming Calm,33,33
+  702.89,Umbra Armor,cr_only,"If enchanted creature would be destroyed, instead remove all damage from it and destroy this Aura.",Bear Umbra,15,15
+  702.90,Infect,in_reference,This creature deals damage to creatures in the form of -N/-N counters and to players in the form of poison counters.,Blighted Agent,44,44
+  702.91,Battle Cry,in_reference,"Whenever this creature attacks, each other attacking creature gets +N/+N until end of turn.","Iraxxa, Empress of Mars",12,12
+  702.92,Living Weapon,in_reference,"When this Equipment enters, create a N/N black Phyrexian Germ creature token, then attach this to it.",Batterbone,18,18
+  702.93,Undying,in_reference,"When this creature dies, if it had no +N/+N counters on it, return it to the battlefield under its owner's control with a +N/+N counter on it.",Butcher Ghoul,22,22
+  702.94,Miracle,in_reference,You may cast this card for its miracle cost when you draw it if it's the first card you drew this turn.,Bonfire of the Damned,17,17
+  702.95,Soulbond,in_reference,You may pair this creature with another unpaired creature when either enters. They remain paired for as long as you control both of them.,Imperious Mindbreaker,24,24
+  702.96,Overload,in_reference,"You may cast this spell for its overload cost. If you do, change \"target\" in its text to \"each.\"",Blustersquall,26,26
+  702.97,Scavenge,in_reference,"{C}{C}{C}, Exile this card from your graveyard: Put a number of +N/+N counters equal to this card's power on target creature. Scavenge only as a sorcery.",Bannerhide Krushok,8,14
+  702.98,Unleash,in_reference,You may have this creature enter with a +N/+N counter on it. It can't block as long as it has a +N/+N counter on it.,Bloodfray Giant,14,14
+  702.99,Cipher,in_reference,"Then you may exile this spell card encoded on a creature you control. Whenever that creature deals combat damage to a player, its controller may cast a copy of the encoded card without paying its mana cost.",Writ of Return,15,15
+  702.100,Evolve,in_reference,"Whenever a creature you control enters, if that creature has greater power or toughness than this creature, put a +N/+N counter on this creature.",Battering Krasis,22,22
+  702.101,Extort,in_reference,"Whenever you cast a spell, you may pay {C}. If you do, each opponent loses N life and you gain that much life.",Basilica Guards,17,17
+  702.102,Fuse,cr_only,You may cast one or both halves of this card from your hand.,Beck,17,17
+  702.103,Bestow,in_reference,"If you cast this card for its bestow cost, it's an Aura spell with enchant creature. It becomes a creature again if it's not attached.",Boon Satyr,41,41
+  702.104,Tribute,in_reference,"As this creature enters, an opponent of your choice may put two +N/+N counters on it.",Ornitharch,5,11
+  702.105,Dethrone,cr_only,"Whenever this creature attacks the player with the most life or tied for most life, put a +N/+N counter on it.","Marchesa, the Black Rose",9,9
+  702.106,Hidden Agenda,cr_only,Start the game with this conspiracy face down in the command zone and secretly choose a card name. You may turn this conspiracy face up any time and reveal that name.,Brago's Favor,14,14
+  702.107,Outlast,cr_only,"{C}, {C}: Put a +N/+N counter on this creature. Outlast only as a sorcery.",Mer-Ek Nightblade,7,12
+  702.108,Prowess,in_reference,"Whenever you cast a noncreature spell, this creature gets +N/+N until end of turn.",Bloodwater Entity,78,78
+  702.109,Dash,in_reference,"You may cast this spell for its dash cost. If you do, it gains haste, and it's returned from the battlefield to its owner's hand at the beginning of the next end step.",Warbringer,22,23
+  702.110,Exploit,in_reference,"When this creature enters, you may sacrifice a creature.",Qarsi Sadist,23,23
+  702.111,Menace,in_reference,This creature can't be blocked except by two or more creatures.,Blood Researcher,127,128
+  702.112,Renown,in_reference,"When this creature deals combat damage to a player, if it isn't renowned, put a +N/+N counter on it and it becomes renowned.",War Oracle,15,20
+  702.113,Awaken,cr_only,"If you cast this spell for {C}{C}, also put four +N/+N counters on target land you control and it becomes a N/N Elemental creature with haste. It's still a land.",Boiling Earth,4,15
+  702.115,Ingest,cr_only,"Whenever this creature deals combat damage to a player, that player exiles the top card of their library.",Benthic Infiltrator,9,9
+  702.116,Myriad,cr_only,"Whenever this creature attacks, for each opponent other than defending player, you may create a token copy that's tapped and attacking that player or a planeswalker they control. Exile the tokens at end of combat.",Banshee of the Dread Choir,14,14
+  702.117,Surge,cr_only,You may cast this spell for its surge cost if you or a teammate has cast another spell this turn.,Boulder Salvo,11,11
+  702.118,Skulk,cr_only,This creature can't be blocked by creatures with greater power.,Ingenious Prodigy,14,14
+  702.119,Emerge,in_reference,You may cast this spell by sacrificing a creature and paying the emerge cost reduced by that creature's mana value.,It of the Horrid Swarm,14,15
+  702.120,Escalate,cr_only,Pay this cost for each mode chosen beyond the first.,Blessed Alliance,7,7
+  702.121,Melee,cr_only,"Whenever this creature attacks, it gets +N/+N until end of turn for each opponent you attacked this combat.",Wings of the Guard,12,12
+  702.122,Crew,in_reference,Tap any number of creatures you control with total power N or more: This Vehicle becomes an artifact creature until end of turn.,Big Wheel,97,99
+  702.123,Fabricate,cr_only,"When this creature enters, put a +N/+N counter on it or create a N/N colorless Servo artifact creature token.",Iron League Steed,10,16
+  702.124,Partner,in_reference,You can have two commanders if both have partner.,"Bruse Tarl, Boorish Herder",56,93
+  702.125,Undaunted,cr_only,This spell costs {C} less to cast for each opponent.,Curtains' Call,5,5
+  702.126,Improvise,cr_only,Your artifacts can help cast this spell. Each artifact you tap after you're done activating mana abilities pays for {C}.,Barricade Breaker,22,23
+  702.127,Aftermath,in_reference,"","",0,0
+  702.128,Embalm,in_reference,"{C}{C}, Exile this card from your graveyard: Create a token that's a copy of it, except it's a white Zombie Human Warrior with no mana cost. Embalm only as a sorcery.",Trueheart Duelist,2,14
+  702.129,Eternalize,cr_only,"{C}{C}{C}, Exile this card from your graveyard: Create a token that's a copy of it, except it's a N/N black Zombie Human Shaman with no mana cost. Eternalize only as a sorcery.",Timeless Witness,1,10
+  702.130,Afflict,cr_only,"Whenever this creature becomes blocked, defending player loses N life.",Wildfire Eternal,10,10
+  702.131,Ascend,cr_only,"If you control ten or more permanents, you get the city's blessing for the rest of the game.",Illustrious Wanderglyph,28,28
+  702.132,Assist,cr_only,Another player can pay up to {C} of this spell's cost.,Bloodborn Scoundrels,14,16
+  702.133,Jump-Start,in_reference,You may cast this card from your graveyard by discarding a card in addition to paying its other costs. Then exile this card.,Beacon Bolt,12,12
+  702.134,Mentor,in_reference,"Whenever this creature attacks, put a +N/+N counter on target attacking creature with lesser power.",Blade Instructor,19,19
+  702.135,Afterlife,in_reference,"When this creature dies, create a N/N white and black Spirit creature token with flying.",Imperious Oligarch,5,11
+  702.136,Riot,in_reference,This creature enters with your choice of a +N/+N counter or haste.,Burning-Tree Vandal,12,13
+  702.137,Spectacle,in_reference,You may cast this spell for its spectacle cost rather than its mana cost if an opponent lost life this turn.,Body Count,11,11
+  702.138,Escape,in_reference,"","",0,0
+  702.139,Companion,cr_only,"","",0,0
+  702.140,Mutate,in_reference,"If you cast this spell for its mutate cost, put it over or under target non-Human creature you own. They mutate into the creature on top plus all abilities from under it.",Boneyard Lurker,34,34
+  702.141,Encore,cr_only,"{C}{C}{C}, Exile this card from your graveyard: For each opponent, create a token copy that attacks that opponent this turn if able. They gain haste. Sacrifice them at the beginning of the next end step. Activate only as a sorcery.",Belonging,14,25
+  702.142,Boast,cr_only,"","",0,0
+  702.143,Foretell,in_reference,"During your turn, you may pay {C} and exile this card from your hand face down. Cast it on a later turn for its foretell cost.",Behold the Multiverse,47,47
+  702.144,Demonstrate,cr_only,"When you cast this spell, you may copy it. If you do, choose an opponent to also copy it. Players may choose new targets for their copies.",Transforming Flourish,4,6
+  702.145,Daybound and Nightbound,in_reference,"If a player casts no spells during their own turn, it becomes night next turn.",Bird Admirer,34,34
+  702.146,Disturb,in_reference,You may cast this card from your graveyard transformed for its disturb cost.,Binding Geist,24,24
+  702.147,Decayed,cr_only,"This creature can't block. When it attacks, sacrifice it at end of combat.",Rot-Curse Rakshasa,1,1
+  702.148,Cleave,cr_only,"You may cast this spell for its cleave cost. If you do, remove the words in square brackets.",Inspired Idea,12,12
+  702.149,Training,cr_only,"Whenever this creature attacks with another creature with greater power, put a +N/+N counter on this creature.",Jenny Flint,9,9
+  702.150,Compleated,cr_only,"{C} can be paid with {C}, {C}, or N life. If life was paid, this planeswalker enters with two fewer loyalty counters.","Tamiyo, Compleated Sage",4,7
+  702.151,Reconfigure,in_reference,"{C}: Attach to target creature you control; or unattach from a creature. Reconfigure only as a sorcery. While attached, this isn't a creature.",Bronzeplate Boar,13,15
+  702.152,Blitz,in_reference,"If you cast this spell for its blitz cost, it gains haste and \"When this creature dies, draw a card.\" Sacrifice it at the beginning of the next end step.",Wave of Rats,14,14
+  702.153,Casualty,in_reference,"As you cast this spell, you may sacrifice a creature with power N or greater. When you do, copy this spell and you may choose new targets for the copy.",Illicit Shipment,7,14
+  702.154,Enlist,cr_only,"As this creature attacks, you may tap a nonattacking creature you control without summoning sickness. When you do, add its power to this creature's until end of turn.",Benalish Faithbonder,11,11
+  702.155,Read Ahead,cr_only,Choose a chapter and start with that many lore counters. Add one after your draw step. Skipped chapters don't trigger. Sacrifice after III.,Braids's Frightful Return,10,10
+  702.156,Ravenous,cr_only,"This creature enters with X +N/+N counters on it. If X is N or more, draw a card when it enters.",Broodlord,12,12
+  702.157,Squad,cr_only,"As an additional cost to cast this spell, you may pay {C} any number of times. When this creature enters, create that many tokens that are copies of it.",Wasteland Raider,11,13
+  702.158,Space Sculptor,cr_only,"Space Beleren divides the battlefield into alpha, beta, and gamma sectors. If a creature isn't assigned to a sector, its controller assigns it to one. Opponents assign first.",Space Beleren,1,1
+  702.159,Visit,cr_only,"","",0,0
+  702.160,Prototype,cr_only,"You may cast this spell with different mana cost, color, and size. It keeps its abilities and types.",Boulderbranch Golem,18,18
+  702.161,Living Metal,cr_only,"","",0,0
+  702.162,More Than Meets the Eye,cr_only,You may cast this card converted for {C}{C}.,"Blitzwing, Cruel Tormentor",9,15
+  702.163,For Mirrodin!,cr_only,"When this Equipment enters, create a N/N red Rebel creature token, then attach this to it.",Bladehold War-Whip,13,13
+  702.164,Toxic,in_reference,Players dealt combat damage by this creature also get a poison counter.,Bilious Skulldweller,17,28
+  702.165,Backup,cr_only,"When this creature enters, put a +N/+N counter on target creature. If that's another creature, it gains the following ability until end of turn.","Bright-Palm, Soul Awakener",15,24
+  702.166,Bargain,cr_only,"You may sacrifice an artifact, enchantment, or token as you cast this spell.",Brave the Wilds,20,20
+  702.167,Craft,cr_only,"{C}{C}{C}, Exile this artifact, Exile another artifact you control or an artifact card from your graveyard: Return this card transformed under its owner's control. Craft only as a sorcery.",Inverted Iceberg,4,16
+  702.168,Disguise,cr_only,You may cast this card face down for {C} as a N/N creature with ward {C}. Turn it face up any time for its disguise cost.,Bolrac-Clan Basher,37,37
+  702.169,Solved,cr_only,"","",0,0
+  702.170,Plot,in_reference,You may pay {C}{C} and exile this card from your hand. Cast it as a sorcery on a later turn without paying its mana cost. Plot only as a sorcery.,Brimstone Roundup,29,33
+  702.171,Saddle,in_reference,Tap any number of other creatures you control with total power N or more: This Mount becomes saddled until end of turn. Saddle only as a sorcery.,Bulwark Ox,23,23
+  702.172,Spree,cr_only,Choose one or more additional costs.,Insatiable Avarice,21,21
+  702.173,Freerunning,cr_only,You may cast this spell for its freerunning cost if you dealt combat damage to a player this turn with an Assassin or commander.,Brotherhood Ambushers,11,11
+  702.174,Gift,cr_only,"You may promise an opponent a gift as you cast this spell. If you do, they draw a card before its other effects.",Wear Down,10,25
+  702.175,Offspring,cr_only,"You may pay an additional {C} as you cast this spell. If you do, when this creature enters, create a N/N token copy of it.",Bushy Bodyguard,16,20
+  702.176,Impending,cr_only,"If you cast this spell for its impending cost, it enters with four time counters and isn't a creature until the last is removed. At the beginning of your end step, remove a time counter from it.",Overlord of the Floodpits,4,5
+  702.177,Exhaust,cr_only,"","",0,0
+  702.178,Max Speed,cr_only,"","",0,0
+  702.179,Start Your Engines!,cr_only,"If you have no speed, it starts at N. It increases once on each of your turns when an opponent loses life. Max speed is N.",Burnout Bashtronaut,38,38
+  702.180,Harmonize,cr_only,"You may cast this card from your graveyard for its harmonize cost. You may tap a creature you control to reduce that cost by {C}, where X is its power. Then exile this spell.",Wild Ride,9,11
+  702.181,Mobilize,cr_only,"Whenever this creature attacks, create a tapped and attacking N/N red Warrior creature token. Sacrifice it at the beginning of the next end step.",Venerated Stormsinger,8,12
+  702.182,Job Select,cr_only,"When this Equipment enters, create a N/N colorless Hero creature token, then attach this to it.",Black Mage's Rod,15,15
+  702.183,Tiered,cr_only,Choose one additional cost.,Ice Magic,7,7
+  702.185,Warp,in_reference,"You may cast this card from your hand for its warp cost. Exile this creature at the beginning of the next end step, then you may cast it from exile on a later turn.",Broodguard Elite,24,29
+  702.186,∞ (Infinity),cr_only,"","",0,0
+  702.187,Mayhem,cr_only,You may cast this card from your graveyard for {C}{C} if you discarded it this turn. Timing rules still apply.,Prison Break,8,14
+  702.188,Web-slinging,cr_only,You may cast this spell for {C}{C} if you also return a tapped creature you control to its owner's hand.,Spider-UK,4,10
+  702.189,Firebending,cr_only,"Whenever this creature attacks, add {C}. This mana lasts until end of combat.",Boiling Rock Rioter,9,15
+  702.190,Sneak,cr_only,You may cast this spell for {C}{C} if you also return an unblocked attacker you control to hand during the declare blockers step.,Michelangelo's Technique,7,23
+  702.191,Increment,cr_only,"Whenever you cast a spell, if the amount of mana you spent is greater than this creature's power or toughness, put a +N/+N counter on this creature.","Berta, Wise Extrapolator",9,9
+  702.192,Paradigm,cr_only,"Then exile this spell. After you first resolve a spell with this name, you may cast a copy of it from exile without paying its mana cost at the beginning of each of your first main phases.",Improvisation Capstone,5,5
+  702.193,Power-up,cr_only,"","",0,0
+  702.194,Teamwork,cr_only,"As an additional cost to cast this spell, you may tap any number of creatures you control with total power N or more.",Beast Mode,17,17

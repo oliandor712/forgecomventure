@@ -171,3 +171,4 @@ The main session is session `session_01SmNeweiyRBavDSUetnsUjF` (also addressable
 - 2026-10-21: Remaining simulation work split across lab, assist, multitemp and main (AI lab excluded)
 - 2026-10-21: Who commits what: ownership table; AI lab scope widened to its own docs and approval entries; sims' digests are committed by the worker that ran them
 - 2026-10-21: Agent review after each 4-hour report: three-way TOON conversation, main session deploys unanimous changes
+- 2026-10-22: Rules references for all agents: tools/agents/reference/MTG_COMP_RULES_20260807.txt (Magic Comprehensive Rules, effective 2026-08-07; keywords are rules 701 and 702); tools/concordia/ai_lab/KEYWORD_REFERENCE.toon (user's keyword document, plus a block added by Claude), KEYWORD_REMINDER_TEXT.toon (CR rule number, reminder wording from Oracle lines, coverage vs the reference), KEYWORD_FIRST_RELEASE.toon
