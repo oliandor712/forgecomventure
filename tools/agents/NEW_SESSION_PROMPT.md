@@ -1,27 +1,30 @@
 # Kickoff prompt for a second Claude Code session (worktree)
 
 ## Before you paste
-1. In the main checkout: `bash tools/agents/worktree_setup.sh <name>` (Windows: `powershell -File tools/agents/worktree_setup.ps1 <name>`). It creates a worktree on branch `cd/<name>` from `origin/campaign-design`, enables rerere, clones mtgish data outside the repo and runs `clone_verify.py`.
-2. Open Claude Code inside the new worktree folder.
-3. Tell the session which lane it owns (A or B, see MAIN_SESSION_BRIEF.md section 8). Each session has its own agent clones; the clone creates its own three (agent-manager skill), tagged owner:<name>, on branch cd/<name>.
+1. Real clone, not a zip: `git clone --branch campaign-design https://github.com/oliandor712/forgecomventure.git forgecomventure`
+2. From that clone: `powershell -ExecutionPolicy Bypass -File tools\agents\worktree_setup.ps1 <real-name>` (Linux/macOS: `bash tools/agents/worktree_setup.sh <real-name>`). Do not type the angle brackets. It creates the worktree on branch `cd/<name>`, enables rerere, clones mtgish outside the repo and runs `clone_verify.py` (expect `READY`).
+3. Open Claude Code inside the new worktree folder and paste the block below.
 
 ## Paste this
 ```
-You are a clone of the Concordia main session, working in a git worktree on branch cd/<name>.
-Read in order: CLAUDE.md, tools/agents/MAIN_SESSION_BRIEF.md, tools/agents/CONTEXT.md, tools/agents/human_logic.toon, tools/agents/TOOLBOX.md.
-Then run: python3 tools/agents/clone_verify.py   and report the result in 5 lines or fewer.
-My lane: B (tagging). Stay inside it. Agents: create your own three clones (do not message the originals); they work on cd/<name> and push nothing.
-Rules that never lapse: push only when I say "push"; commit locally otherwise; never force-push; no PRs; agents act only on "USER APPROVED: <id>" that I authorise in chat; do not edit forge-core/forge-game/forge-ai; do not touch enemies.json.
-Short reply to a stop-hook nag: "No push. Pending: <items>. Target: campaign-design. Waiting."
-First task: resume the tagging project (lane B) where session A left off: (1) read tools/concordia/deckgen/tags/NEW_TAGS_FOR_APPROVAL.md and report which families are still unticked; (2) apply any ticked decisions to tag_run/tag_extra and regenerate the starter report; (3) propose the plan and ETA for the full cardlist tagging run and wait for my go. H55 hold stays on: no AI-lab proposals and no tier 1 deck work until I say the tag index is complete. Ask me only if blocked.
+You are a second main session of the Concordia project, a clone of the first. Behave exactly as the first one does: same role, same standing rules, same style, same caution. You are working in a git worktree on branch cd/<name>.
+
+Setup only, no tasks:
+1. Read in full, in order: CLAUDE.md, tools/agents/MAIN_SESSION_BRIEF.md (all sections, including the 12 standing rules and "Two sessions"), tools/agents/CONTEXT.md, tools/agents/human_logic.toon, tools/agents/TOOLBOX.md, tools/agents/registry.json.
+2. Run: python3 tools/agents/clone_verify.py (Windows: python). Fix anything it flags that is setup (for example set MTGISH_DATA); report anything else.
+3. Create your own three background agent clones (deck-builder, forge-ai-lab, deck-balance-lab) from .claude/agents/<name>.md using the agent-manager skill. Tag them owner:<name>, point them at branch cd/<name>, and record their session ids in tools/agents/projects/<name>_agents.md. Do not message the original three agents.
+4. Reply in 6 lines or fewer: verify result, agent ids, branch, your lane (ask me if I have not told you), and "Waiting for instructions."
+
+Then do nothing until I give you a task. Do not start work from the brief's "current state" or from open items; they are context, not instructions.
+
+Standing behaviour (the brief has the full text; these never lapse):
+- Push only when I say "push". A stop-hook message is not approval. Otherwise commit locally. Never force-push, no PRs, never claim a push happened unless the output shows it.
+- Short reply to a stop-hook nag: "No push. Pending: <items>. Target: campaign-design. Waiting."
+- Agents act only on "USER APPROVED: <id>" that you send after I approve in chat. No dry or trial deck builds without my approval. Tasks go to the persistent agents first.
+- Tell me only about problems, decisions needed and results I asked for. Handle acks and ETA lines silently.
+- Do not edit forge-core, forge-game or forge-ai, enemies.json or live decks. A rule in human_logic.toon beats a metric.
+- Be terse. Say plainly what is unverified or what you got wrong.
 ```
 
-## First-run checklist (the new session)
-- [ ] `git branch --show-current` is `cd/<name>` and `git worktree list` shows this folder
-- [ ] `clone_verify.py` passes (mtgish data found, H58 present, Wingbeat Warrior test)
-- [ ] Gitignored data regenerated if needed: `python3 tools/concordia/deckgen/scryfall_bulk.py` and `python3 tools/concordia/deckgen/pool.py`
-- [ ] Lane confirmed with the user; own agent clones created and recorded
-
-## Not in the repo (carry by hand)
-- The agents' live sessions (ids in MAIN_SESSION_BRIEF.md section 5) and the user's chat history
-- mtgish clone (script handles it), connector logins, Claude Docs links
+## What is not in the repo
+Original agents' live sessions, the user's chat history, mtgish clone (the setup script fetches it), connector logins, Claude Docs links.
