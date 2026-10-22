@@ -1,6 +1,6 @@
 # Toolbox: the shared reference for every agent
 
-Generated 2026-10-22 15:36Z at commit 5239e47f on branch cd/claude2. **Tools stamp: `03f80961d572`.**
+Generated 2026-10-22 15:49Z at commit c1b0fd17 on branch cd/claude2. **Tools stamp: `baf7c70ca969`.**
 
 ## Start of every turn (all agents)
 1. `git pull --no-rebase origin campaign-design` (if the clone is shallow: `git fetch --unshallow origin campaign-design`).
