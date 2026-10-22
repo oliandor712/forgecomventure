@@ -1,3 +1,14 @@
+Patch 014: AILogic$ BestOpportunity on 6 scry-then-draw instants (Opt, Deliberate, Joint Exploration,
+Delightful Discovery, Graven Lore, Demon's Due). Card scripts only. Excluded: Judge Unworthy, Riddle of Lightning
+(removal, Judge only targets attackers/blockers), Precognitive Perception (needs main-phase cast for its scry).
+Status: saved, untested, unticked. Apply: git apply from repo root.
+
+Omen of the Sea trace (2026-10-22, 3,216 digest games): the Omen CAST events (upkeep, draw, beginning of combat) are the
+Flash enchantment spell, which has no AILogic; the tag sits only on the sac ability (ScryAi.java:96/111). Ability
+activations are not logged as CAST. The 7 Omen-of-the-Sea sacrifices seen (ZONE -> Graveyard) are 3 at own main 1 and 4 at
+an end step: consistent with BestOpportunity. No anomaly. Consequence for 014: on these instants the tag controls the spell
+itself, not a later ability, so it moves the cast; check cast phases after applying (expect more end-step casts).
+
 diff --git a/forge-gui/res/cardsfolder/d/deliberate.txt b/forge-gui/res/cardsfolder/d/deliberate.txt
 index 12a22475..e5bf5853 100644
 --- a/forge-gui/res/cardsfolder/d/deliberate.txt
