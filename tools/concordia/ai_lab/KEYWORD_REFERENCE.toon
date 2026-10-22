@@ -172,3 +172,19 @@ keywords[172]{name,kind,example,summary}:
   Sweep,ability_word,Charge Across the Araba,"When you cast a spell with sweep, you may return any number of lands with the basic land type as dictated by the card. Some effect is gained from this. Not a good mechanic."
   Threshold,ability_word,Nimble Mongoose,Cards with threshold gain some effect when you have 7 or more cards in the graveyard.
   Undergrowth,ability_word,Kraul Foragers,Cards with undergrowth have effects dependent on the amount of creatures in your graveyard.
+
+# Added by Claude, 2026-10-22 (user: "add missing keywords to reference"). The table above is the user's document and is unchanged. These entries come from the AI lab's list of Forge keywords missing from it plus general rules knowledge, not from the user's document; examples are cards from the local Scryfall data that carry the keyword. Check against the Forge script / Oracle line before relying on a summary. Storied is taken from the reminder text on Bombur, Gentle Dreamer's Oracle line.
+keywords_added[13]{name,kind,example,summary,source}:
+  Hexproof,keyword,Soul of the Rapids,Cannot be the target of spells or abilities an opponent controls. Its controller can still target it.,added_by_claude
+  Infect,keyword,Phyrexian Juggernaut,Damage it deals to creatures is dealt as -1/-1 counters and damage to players gives poison counters instead of life loss. A player with 10 poison counters loses.,added_by_claude
+  Toxic,keyword,Tyrranax Atrocity,Written as Toxic X. When the creature deals combat damage to a player that player also gets X poison counters in addition to the normal damage.,added_by_claude
+  Warp,keyword,Starbreach Whale,Written as Warp [cost]. Cast the card from hand for its warp cost; exile it at the next end step and it can be cast again from exile on a later turn.,added_by_claude
+  Plot,keyword,Unscrupulous Contractor,Written as Plot [cost]. Pay the plot cost at sorcery timing to exile the card; on a later turn cast it from exile for free at sorcery timing.,added_by_claude
+  Saddle,keyword,Caustic Bronco,Written as Saddle X on Mounts. At sorcery timing tap other creatures with total power X or more; the Mount becomes saddled until end of turn and may use its saddled abilities.,added_by_claude
+  Station,keyword,Wedgelight Rammer,Written as Station on Spacecraft. Tap another creature you control to put charge counters equal to its power on the Spacecraft; at certain counter totals it gains abilities and becomes a creature.,added_by_claude
+  Chapter,keyword,,Chapter abilities are the numbered abilities on a Saga. A lore counter is added each turn after the first main phase draw step and each chapter triggers when counters reach its number; the Saga is sacrificed after the last chapter.,added_by_claude
+  Class,keyword,,Class enchantments have levels. Pay each level's cost at sorcery timing in order to unlock that level's ability; levels are permanent while the Class stays on the battlefield.,added_by_claude
+  Partner,keyword,Lore Weaver,Commander rule keyword. Two commanders that both have partner can be the same deck's commanders. Variants (Partner with, Friends forever, Choose a Background) restrict which pairs are legal.,added_by_claude
+  Devoid,keyword,Void Grafter,The card is colorless even though its mana cost has colored symbols.,added_by_claude
+  Choose a Background,keyword,Halsin Emerald Archdruid,Commander rule keyword. Lets the commander have a Background enchantment as a second commander.,added_by_claude
+  Storied,keyword,Balin Loremaster,If you control three or more artifacts / legendary permanents / Sagas (any mix) you have an enduring story for the rest of the game; some Storied cards act differently once you do.,forge_oracle_reminder_text
