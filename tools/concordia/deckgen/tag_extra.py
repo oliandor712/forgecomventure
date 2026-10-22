@@ -18,7 +18,7 @@ DOC = {
  "enters_tapped": ("the permanent enters tapped", "Myriad Landscape, Frost Marsh"),
  "cost:tap / cost:sacrifice / cost:mana / cost:life / cost:discard": ("what the activation cost contains; sacrifice is also tagged when it is a cost", "Harrow, Blighted Woodland, Myriad Landscape"),
  "effect:sacrifice": ("sacrifice happens as an effect (not a cost)", "Garruk, Kiki-Jiki, Victimize"),
- "loyalty:<n> / loyalty_cost:+n|-n / counters:loyalty": ("planeswalker loyalty and loyalty costs; loyalty is a kind of counter", "Oko, Rowan"),
+ "loyalty:<n> / loyalty_change:+n|-n / counters:loyalty": ("planeswalker loyalty, and the loyalty change an ability makes (renamed from loyalty_cost, user note); loyalty is a kind of counter", "Oko, Rowan"),
  "defense:<n>": ("battle defense value", "Invasion of ... battles"),
  "transform": ("card transforms (double-faced) or becomes a different thing", "Invasion battles"),
  "becomes:<type> / loses_all_abilities": ("an Animate effect: what it becomes, and that it loses all abilities", "Oko"),
@@ -31,6 +31,11 @@ DOC = {
  "trigger_scope:self|other": ("whether a zone-change trigger is about this card or other cards (enters, dies, leaves)", "found in the cross-check: Morbid Opportunist, Welcoming Vampire"),
  "exile_from:<zone>": ("exiles cards out of a zone other than the battlefield (graveyard, hand, library)", "found in the cross-check: Scavenging Ooze, Squee"),
  "token_type:copy": ("the token is a copy of another permanent", "found in the cross-check: Kiki-Jiki, Rite of Replication"),
+ "draw_count:<n|x> / discard_count:<n|x>": ("how many cards an ability draws or makes a player discard", "user note: tag draw count"),
+ "tempo:+n|0|-n|x": ("net cards added to your hand or battlefield minus cards removed (the spell itself, sacrificed or discarded cards) when the ability resolves; x = unknown amount", "user note: tempo gain (+1), applied to every ability that adds more cards than it removes"),
+ "put_onto_battlefield / put_from:<zone>": ("a card is put onto the battlefield from a zone instead of being cast (tutors, reanimation); distinct from trigger:etb", "user note: distinct from etb because it bypasses the etb trigger (question logged: see approval log)"),
+ "cost_if_you_do": ("the 'If you do' part marks the preceding sacrifice/discard as a cost", "user note on Victimize"),
+ "enters_untapped / enters_tapped_conditional": ("lands that enter untapped, or tapped unless a condition holds (enters_tapped stays for always-tapped)", "user note: tag whether a land enters tapped"),
  "cast_free": ("casts a spell without paying its mana cost", "found in the cross-check: Rishkar's Expertise"),
  "target_zone:<zone>": ("the zone the targets are in (graveyard, exile, hand, library)", "Victimize"),
  "target_type:<t> / target_filter:<f> / target_scope:you_control|opp_control": ("what the effect can pick: card type, filters such as nonland, and whose", "Filter Out, Scorching Dragonfire, Oblivion Ring"),
@@ -127,8 +132,8 @@ def cost_tags(cost, out):
         if m: out.append("cost_sacrifice_target:" + ("self" if m.group(1) == "CARDNAME" else tok(m.group(1).split(".")[0])))
     if "PayLife" in cost: out.append("cost:life")
     if "Discard<" in cost: out.append("cost:discard")
-    for m in re.finditer(r"AddCounter<(\d+)/LOYALTY>", cost): out += ["loyalty_cost:+" + m.group(1), "counters:loyalty"]
-    for m in re.finditer(r"SubCounter<(\d+)/LOYALTY>", cost): out += ["loyalty_cost:-" + m.group(1), "counters:loyalty"]
+    for m in re.finditer(r"AddCounter<(\d+)/LOYALTY>", cost): out += ["loyalty_change:+" + m.group(1), "counters:loyalty"]
+    for m in re.finditer(r"SubCounter<(\d+)/LOYALTY>", cost): out += ["loyalty_change:-" + m.group(1), "counters:loyalty"]
     c2 = re.sub(r"\w+<[^>]*>", "", cost)
     if re.search(r"(^|\s)(\d+|X|[WUBRGC])(\s|$)", c2): out.append("cost:mana")
 
@@ -147,7 +152,9 @@ def extra(lines, sv, types, text):
         for t, c in (("Plains", "white"), ("Island", "blue"), ("Swamp", "black"), ("Mountain", "red"), ("Forest", "green")):
             if t in types.split(): add("mana_source", "mana:" + c, "trigger:tap"); lk("mana_source", "produces", "mana:" + c)
     oracle = next((l[7:] for l in lines if l.startswith("Oracle:")), "")
-    if re.search(r"enters(?: the battlefield)? tapped(?!.*unless)", oracle) and "Basic" not in types.split(): add("enters_tapped")
+    if re.search(r"enters(?: the battlefield)? tapped", oracle) and "Basic" not in types.split():
+        add("enters_tapped_conditional" if re.search(r"enters(?: the battlefield)? tapped unless", oracle) else "enters_tapped")
+    elif "Land" in types.split(): add("enters_untapped")
     bodies = []
     for l in lines:
         m = re.match(r"^(A|S|T|R):(.*)$", l)
@@ -196,7 +203,22 @@ def extra(lines, sv, types, text):
                     elif ty in ("White", "Blue", "Black", "Red", "Green"): add("color:" + tok(ty)); lk("cost_reduce", "filters", "color:" + tok(ty))
         if kind == "R" and p.get("Event") == "Moved" and p.get("Destination") == "Graveyard":
             if "Exile" in sv.get(p.get("ReplaceWith", ""), ""): add("die_replace:exile")
-        for b in chain(body):
+        main_gid = cur[0]
+        pos = neg = 0
+        unk = False
+        sacgid = None
+        desc_main = p.get("SpellDescription", "") + p.get("Description", "") + p.get("TriggerDescription", "")
+        for m_ in re.finditer(r"Sac<(\d+)/", line): neg += int(m_.group(1))
+        for m_ in re.finditer(r"Discard<(\d+)/", line): neg += int(m_.group(1))
+        is_spell = kind == "A" and body.startswith("SP$") and any(t in types.split() for t in ("Instant", "Sorcery"))
+        if is_spell: neg += 1
+        def cnt(s, dflt=1):
+            global_unk[0] = global_unk[0] or not (s or "").isdigit() and s not in (None, "")
+            return int(s) if (s or "").isdigit() else dflt
+        global_unk = [False]
+        for ci, b in enumerate(chain(body)):
+            cur[0] = main_gid if ci == 0 else "%s.%d" % (main_gid, ci + 1)
+            groups.setdefault(cur[0], [])
             bp = params(b)
             api = (re.match(r"^(?:AB|SP|DB)\$ (\w+)", b) or [0, ""])[1]
             if not (kind == "T" and b is body): target_tags(bp, groups[cur[0]], api)   # a trigger line's ValidCard(s) filter describes the event, not a target
@@ -237,6 +259,13 @@ def extra(lines, sv, types, text):
                 elif o == "Battlefield" and d == "Library": add("remove:tuck")
                 elif o == "Graveyard" and d == "Hand" and bp.get("Defined", "").startswith("TriggeredNewCard"): add("recursion:return_self")
                 if o == "Hand" and d == "Exile": add("impulse_draw_part:exile_hand")
+                if d == "Battlefield" and o in ("Library", "Hand", "Graveyard", "Exile"):
+                    add("put_onto_battlefield", "put_from:" + o.lower())
+                    if bp.get("Tapped") == "True": add("enters_tapped")
+                    if o == "Graveyard": add("reanimate")
+                if o == "Library" and d in ("Hand", "Battlefield"): pos += cnt(bp.get("ChangeNum", "1"))
+                elif o in ("Graveyard", "Exile") and d in ("Hand", "Battlefield") and bp.get("Defined") != "ExiledWith":
+                    pos += cnt(bp.get("TargetMax", bp.get("ChangeNum", "1")))
                 if d == "Exile" and o in ("Graveyard", "Hand", "Library"): add("exile_from:" + o.lower())
                 if "shuffle" in (bp.get("SpellDescription", "") + line).lower(): add("shuffle")
             if api in ("Destroy", "DestroyAll"): add("remove:destroy")
@@ -245,11 +274,14 @@ def extra(lines, sv, types, text):
                 if bp.get("NumDmg", "").isdigit(): add("damage_amount:" + bp["NumDmg"])
                 if "ReplaceDyingDefined" in bp: add("die_replace:exile")
             if api == "Sacrifice":
-                add("effect:sacrifice")
+                add("effect:sacrifice"); sacgid = cur[0]
+                if bp.get("Defined", "You") in ("You", "Player"): neg += 1
+                if re.search(r"Sacrifice[^.]*\.\s*If you do", desc_main): add("cost:sacrifice", "cost_if_you_do")
+                if "SacValid" in bp and tok(bp["SacValid"].split(".")[0]) != "land": add("sacrifice_outlet")
                 if bp.get("Defined") in ("Player", "Opponent", "Player.Opponent"):
                     add("remove:sacrifice")
                 if "SacValid" in bp: add("sacrifice_type:" + tok(bp["SacValid"].split(".")[0]))
-            if bp.get("ConditionDefined") == "Remembered" and api == "Token": lk("token_make", "conditional_on", "effect:sacrifice")
+            if bp.get("ConditionDefined") == "Remembered" and api == "Token" and sacgid: links.append(("%s:token_make" % cur[0], "conditional_on", "%s:effect:sacrifice" % sacgid))
             if api == "ChangeZone" and bp.get("Defined") == "ExiledWith": add("return_exiled"); lk("return_exiled", "pairs_with", "trigger:leaves")
             if api == "Effect":
                 for sname in re.split(r"[ ,]+", bp.get("StaticAbilities", "")):
@@ -257,8 +289,17 @@ def extra(lines, sv, types, text):
                         add("impulse_draw")
                         d = bp.get("Duration", "")
                         add({"UntilTheEndOfYourNextTurn": "duration:next_turn_end", "EndOfTurn": "duration:eot"}.get(d, "duration:eot" if not d else "duration:" + tok(d)))
-            if api == "Token": token_tags(bp, groups[cur[0]])
-            if api == "CopyPermanent": add("token_make", "token_type:copy")
+            if api == "Token":
+                token_tags(bp, groups[cur[0]])
+                if bp.get("TokenOwner", "You") == "You": pos += cnt(bp.get("TokenAmount", "1"))
+            if api == "Draw":
+                nd = bp.get("NumCards", "1"); add("draw_count:" + nd.lower())
+                if bp.get("Defined", "You") == "You": pos += cnt(nd)
+            if api == "Discard":
+                nd = bp.get("NumCards", "1"); add("discard_count:" + nd.lower())
+                if bp.get("Defined", "You") == "You": neg += cnt(nd)
+                if re.search(r"Discard[^.]*\.\s*If you do", desc_main): add("cost:discard", "cost_if_you_do")
+            if api == "CopyPermanent": add("token_make", "token_type:copy"); pos += 1
             if api == "Play" and bp.get("WithoutManaCost") == "True": add("cast_free")
             if api == "ExchangeControl": add("exchange_control", "steal"); lk("exchange_control", "pairs_with", "steal")
             if api == "GainControl":
@@ -276,6 +317,9 @@ def extra(lines, sv, types, text):
             if api == "CopyPermanent" and bp.get("AtEOT") == "Sacrifice": add("delayed:end_step", "effect:sacrifice", "duration:end_step")
             if "KW" in bp and "can't block" in bp["KW"]: add("cant_block")
             if "MayPlay" in b or "MayPlay$" in b: add("impulse_draw")
+        cur[0] = main_gid
+        if pos or neg or is_spell:
+            groups[main_gid].append("tempo:x" if global_unk[0] else ("tempo:%+d" % (pos - neg) if pos != neg else "tempo:0"))
     out_groups = {}
     for gid, ts in groups.items():
         ts = [t for t in dict.fromkeys(ts) if not t.startswith("impulse_draw_part")]

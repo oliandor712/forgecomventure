@@ -237,6 +237,11 @@ def record(name, text, mg):
             if pl == "lifelink": tags.append("lifegain"); ex_groups.setdefault(cl["id"], []).append("lifegain")
         if "counters_" in cl["affected"]: tags.append("scales:counters"); ex_groups.setdefault(cl["id"], []).append("scales:counters")
         if cl["verb"] in ("pump", "pumpall") and cl["payload"] and "ValidTgts" in cl["affected"]: tags.append("pump_single"); ex_groups.setdefault(cl["id"], []).append("pump_single")
+    # sacrifice outlet (user): a land sacrificed is not an outlet; a creature (or other non-land) sacrificed always is
+    sact = {t.split(":", 1)[1] for t in ex_tags if t.startswith(("cost_sacrifice_target:", "sacrifice_type:"))}
+    if "self" in sact and "Land" in types.split(): sact.discard("self"); sact.add("land")
+    if sact and not (sact - {"land"}): base = [t for t in base if t != "sacrifice_outlet"]
+    elif sact - {"land", "self"}: ex_tags = ex_tags + ["sacrifice_outlet"]; ex_groups.setdefault("c0", []).append("sacrifice_outlet")
     tags = list(dict.fromkeys(tags + base + ex_tags))
     # keyword listed once: drop the plain tag when kw:<name> is present (user: trample listed twice)
     tags = [t for t in tags if not ("kw:" + t) in tags]
@@ -257,7 +262,9 @@ def record(name, text, mg):
     aipref = "AIPreference" in face or "SVar:AIPreference" in face
     rd = "AI:RemoveDeck" in face
     groups = dict(kgroups)
-    for gid, ts in ex_groups.items(): groups[gid] = [t.lower() for t in ts]
+    for gid, ts in ex_groups.items(): groups[gid] = [t.lower() for t in dict.fromkeys(ts)]
+    def gkey(g): return (0 if g == "c0" else 1 if g.startswith("k") else 2, [int(x) for x in re.findall(r"\d+", g)])
+    groups = dict(sorted(groups.items(), key=lambda kv: gkey(kv[0])))
     return dict(name=name, groups=groups, base=[t.lower() for t in base], new=[t.lower() for t in ex_tags if t.lower() in tags], tags=tags, clauses=clauses, links=links, mtgish=mt, ai=ai, aipref=aipref, removedeck=rd, nlines=n)
 
 
@@ -270,7 +277,7 @@ def render(r):
         for a, b, c in r["links"]: o.append("  %s,%s,%s" % (a, b, c))
     o.append("groups[%d]{id,source,tags}:" % len(r["groups"]))
     for gid, ts in r["groups"].items():
-        src = "card" if gid == "c0" else ("K line" if gid.startswith("k") else "%s line" % next((c.get("kind", "?") for c in r["clauses"] if c["id"] == gid), "?"))
+        src = "card" if gid == "c0" else ("K line" if gid.startswith("k") else ("sub-ability of " + gid.split(".")[0] if "." in gid else "%s line" % next((c.get("kind", "?") for c in r["clauses"] if c["id"] == gid), "?")))
         o.append("  %s,%s,%s" % (gid, src, q(" ".join(ts))))
     o.append("mtgish: " + r["mtgish"])
     o.append("forge_ai: AILogic=%s%s%s" % ("/".join(r["ai"]) or "-", " AIPreference" if r["aipref"] else "", " RemoveDeck" if r["removedeck"] else ""))

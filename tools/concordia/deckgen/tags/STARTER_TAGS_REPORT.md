@@ -4,7 +4,7 @@
 
 ## Most common tags
 
-cardtype:creature 200, target_count:one 127, trigger_scope:self 92, target_type:creature 90, trigger:etb 90, cardtype:instant 64, draw 60, type:human 52, token_make 46, cost:tap 41, cost:mana 37, target_scope:you_control 37, lifegain 37, damage 37, mana_source 35, cardtype:sorcery 34, duration:eot 33, type:wizard 33, cardtype:artifact 28, burn 26, token_count:1 26, remove:destroy 25, kw:flying 24, type:goblin 24, supertype:legendary 23, sacrifice_outlet 23, cost:sacrifice 22, token_pt:1/1 22, trigger:dies 20, trigger_zone:graveyard 20, cost_sacrifice_target:self 18, target_scope:opp_control 18, type:vampire 17, tutor 17, type:soldier 17, trigger_scope:other 17, cardtype:enchantment 17, trigger:attacks 16, shuffle 16, token_color:colorless 16
+cardtype:creature 200, target_count:one 127, trigger_scope:self 92, target_type:creature 90, trigger:etb 90, tempo:+1 74, tempo:-1 73, cardtype:instant 64, draw 60, type:human 52, token_make 46, cost:tap 41, cost:mana 37, target_scope:you_control 37, lifegain 37, damage 37, mana_source 35, draw_count:1 35, cardtype:sorcery 34, duration:eot 33, type:wizard 33, tempo:0 28, cardtype:artifact 28, put_onto_battlefield 26, burn 26, token_count:1 26, remove:destroy 25, kw:flying 24, type:goblin 24, supertype:legendary 23, cost:sacrifice 23, token_pt:1/1 22, sacrifice_outlet 20, trigger:dies 20, trigger_zone:graveyard 20, cost_sacrifice_target:self 18, target_scope:opp_control 18, type:vampire 17, tutor 17, enters_tapped 17
 
 ## Trigger types seen in clauses
 
