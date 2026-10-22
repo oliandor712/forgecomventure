@@ -140,3 +140,76 @@ Tag check on full script text: **50 of 50 untagged by `ability_tags.tags_of`** (
 1. Prefer A/S/T lines over K lines when choosing the primary signature; re-score set C (expected gain: most of the 19 misses are K-led).
 2. Add the eight rule gaps above as candidate RULES entries, each tested on set C (no change to the existing tags).
 3. Main session runs method B (mtgish) on the same sets and compares.
+
+## Re-run A2 (all lines)
+Change from A1: the signature now covers every line of the script (A/S/T/R, and K at weight 0.4, plus cost shape and trigger mode), not only the first line. The prediction is the `AILogic$` of the nearest pool card by weighted Jaccard overlap (leave-one-out on set C); exact-signature and API-only lookups are not needed because the nearest card always exists in the pool.
+
+Grades: exact = same value; partial = wrong value, but both the predicted and the actual value are used on cards whose primary API matches the card's own primary API; miss otherwise.
+
+**A2 score line (set C, 50 cards): exact 17 / partial 18 / miss 15. Exact-or-partial 35 of 50 (70%), up from 31 of 50 (62%) in A1. Exact alone: 17 in A2 vs 18 in A1.**
+
+Predictions changed from A1: 12 of 50. Changes:
+
+| Card | Actual | A1 predicted (grade) | A2 predicted (grade) | Nearest pool card |
+|---|---|---|---|---|
+| Passenger Ferry | Pump | ReplaySpell (miss) | Pump (exact) | bessie, the doctor's roadster |
+| Iron Lad, Diverging Destiny | Main2 | MostProminentInHumanDeck (miss) | MakeUnblockable (miss) | merfolk sovereign |
+| Embalmer's Tools | AtOppEOT | Always (partial) | AtOppEOT (exact) | hair-strung koto |
+| Rampaging Geoderm | TgtAttacker | Always (miss) | Random (miss) | raging river |
+| Etchings of the Chosen | MostProminentInComputerDeck | MostProminentInComputerDeck (exact) | Aristocrat (partial) | ahn-crop invader |
+| Alora, Merry Thief | Pump | Always (partial) | Random (partial) | raging river |
+| Lava Zombie | NeverBounceItself | PowerDmg (miss) | Pump (miss) | bloodtithe harvester |
+| Circle of Affliction | MostProminentInHumanDeck | MostProminentInComputerDeck (partial) | Always (partial) | neyam shai murad |
+| Subira, Tulzidi Caravanner | MakeUnblockable | MakeUnblockable (exact) | Bribe (partial) | mercenaries |
+| Cavern Harpy | NeverBounceItself | MostProminentInHumanDeck (partial) | SacAndRetFromGrave (partial) | chthonian nightmare |
+| Claim the Kingdom | Pump | Always (partial) | NeverBounceItself (partial) | bloodrage alpha |
+| Bloodline Pretender | MostProminentInComputerDeck | MostProminentInComputerDeck (exact) | MostProminentInComputerDeckNonToken (partial) | molten echoes |
+
+Remaining misses in A2 (15 cards):
+
+| Card | Actual | A2 predicted | Nearest pool card |
+|---|---|---|---|
+| Iron Lad, Diverging Destiny | Main2 | MakeUnblockable | merfolk sovereign |
+| Traveler's Cloak | ChosenLandwalk | MostProminentInHumanDeck | pentarch ward |
+| Bill Ferny, Bree Swindler | Curse | Pump | anzrag, the quake-mole |
+| Rampaging Geoderm | TgtAttacker | Random | raging river |
+| Wash Out | MostExcessOpponentControls | MostProminentInHumanDeck | brave the elements |
+| Lava Zombie | NeverBounceItself | Pump | bloodtithe harvester |
+| Hidetsugu's Second Rite | OppAtTenLife | CantRegenerate | quenchable fire |
+| Hikari, Twilight Guardian | IfNotBuffed | CloneBestCreature | hulkling, young avenger |
+| Evolutionary Escalation | BoonCounterOnOppCreature | CloneBestCreature | irma, part-time mutant |
+| Torment of Venom | PayUnlessCost | PowerDmg | beastie beatdown |
+| Timely Reinforcements | PlayForSub | Fog | fog of war |
+| Legion Vanguard | Aristocrat | Always | enter the unknown |
+| Twinferno | SpellCopy | PowerDmg | brokers charm |
+| Shuri, Wakandan Inventor | Pump | PowerDmg | mage duel |
+| You Look Upon the Tarrasque | Fog | PowerDmg | brokers charm |
+
+## Test set T: proposals that changed from A1: 17 of 50
+
+| Card | A1 proposal | A2 proposal | Similarity | Nearest pool card |
+|---|---|---|---|---|
+| Lightning Berserker | PowerDmg | InfernoOfTheStarMounts | 0.48 | inferno of the star mounts |
+| Blades of Velis Vel | SwitchPT | PowerDmg | 0.71 | berserk |
+| Bombur, Gentle Dreamer | none needed | MostProminentOppControls | 0.56 | an-zerrin ruins |
+| Zombie Musher | ReplaySpell | MoveCounter.IsCounterUser | 0.21 | spike hatcher |
+| Halsin, Emerald Archdruid | Pump | PowerDmg | 0.42 | flourishing grapple |
+| Crumble to Dust | Pump | BeforeCombat | 0.71 | back for more |
+| Dragon Engine | PowerDmg | Berserk | 1.0 | wine of blood and iron |
+| Split-Tail Miko | MakeUnblockable | Pump | 0.33 | nomad mythmaker |
+| Tangle Kelp | Curse | NeverBounceItself | 0.59 | bloodrage alpha |
+| Relentless Pursuit | none needed | Always | 0.33 | wandering archaic |
+| Cogwork Archivist | Always | MostProminentInComputerDeckNonToken | 0.71 | belbe's portal |
+| Frozen in Ice | Curse | Pump | 0.81 | reins of the vinesteed |
+| Captain America, Living Legend | AtEOTIfNotAttacking | Curse | 0.71 | kudzu |
+| Avalanche Caller | Pump | PowerDmg | 0.5 | flourishing grapple |
+| Bind the Monster | Curse | NeverBounceItself | 0.59 | bloodrage alpha |
+| Phyrexian Ironfoot | MostProminentInComputerDeck | AtOppEOT | 0.33 | basalt monolith |
+| Death Ward | none needed | MoveCounter.IsCounterUser | 0.29 | spike hatcher |
+
+## Remaining gaps
+The eight rule gaps from A1 still stand (self-pump, Animate, Effect/static keyword grants, unlisted trigger modes, hand or graveyard to library, static conditions and aura stats, multi-target and sub-ability pumps, keyword-only signatures). A2 does not fix any of them: the nearest-neighbour proposal can name a value, but it cannot tell whether an ability is tagged. Tags on set T are still 0 of 50.
+
+## Comparison with method B (mtgish)
+Not done: `tools/concordia/ai_lab/CARD_TEST_B_MTGISH.md` is not in the repo after `git pull` (checked 00:10Z). I cannot confirm the 17-of-18 figure or compare per card. The B comparison needs that file's per-card rows (card, predicted value, grade).
+
