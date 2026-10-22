@@ -1,106 +1,107 @@
-# Reader grammar: plan for the best instructions on reading a tag record
+# Reader grammar: plan for one fixed way to read a tag record
 
-Planning document, 2026-10-22 (Claude 1). Nothing in it has been built or run. Numbers come from the reverse-check reports and from `runs/r1..r5/results.json` (recomputed for this plan); r6 to r11 are known only from their reports.
+Planning document, revised 2026-10-22 (Claude 1) after the user set the goals below. Nothing in it has been built or run. Numbers come from the reverse-check reports and from `runs/r1..r5/results.json` (recomputed); r6 to r11 are known only from their reports.
 
-## 1. Goal, and what "best" means
-Write one instruction set (a "reader grammar") that tells a reader how to turn a card's tag record (`typing`, `tags`, groups `k1 c0 c1 c1.2 ...`, `links`) into the ability text it describes, so that the text matches the real Oracle text as closely as possible.
+## 1. Goals (user, 2026-10-22)
+1. **Primary: limit variance.** The same set of ability tags must be read the same way every time: the same reader twice, and different readers, give the same text.
+2. **Secondary: write like a Magic card.** The reader's output follows the way Oracle text is structured and worded (keywords first, one ability per line, the standard trigger / activated / static forms, standard phrases and number style).
+3. **Guard, not goal: accuracy.** Matching the real Oracle text (the old reverse-check score) must not get worse. It is a non-regression gate, no longer the thing being maximised.
 
-"Best" = highest reconstruction accuracy on the reverse check, measured as:
-- mean similarity per card (0.4 tf-idf cosine + 0.4 concept F1 + 0.2 number F1),
-- share of cards where the real card is the best match among all cards (top-1),
-- no empty answers, no name leaks, low reader-to-reader noise.
+"Grammar" here = the instruction set that fixes how a reader turns a tag record (`typing`, `tags`, groups `k1 c0 c1 c1.2 ...`, `links`) into text. The strongest way to guarantee the same reading every time is to make the grammar executable (section 5, phase 8). That is my recommendation; decision in section 8.
 
-Proposed targets (yours to change): mean >= 0.94 on the full 353-card sample (r8 now 0.926), top-1 >= 92% (r8: 312 of 348 = 90%), 0 empty answers, and no card worse than 0.05 below its current score unless explained.
+## 2. How variance is measured (new, none of this exists yet)
+The old reverse check scores one reader against the real card. It cannot see two readers disagreeing in wording when both score alike. New measures, all on identical tag inputs read by k independent readers (proposed k = 3):
 
-Scope question for you (section 8): the grammar is written for the blind LLM reader. The same text can be the spec for deterministic consumers (deck builder, balance fit), but that is an extra phase.
+| Measure | Definition | Why |
+|---|---|---|
+| V1 exact agreement | share of cards where all k outputs are identical after normalising case, punctuation and spacing | strictest "same way every time" |
+| V2 text agreement | mean pairwise token F1 between outputs of the same card | partial credit for near-identical wording |
+| V3 structure agreement | outputs parsed into an ability signature (ordered list of kinds: keyword / triggered / activated / static / spell effect, with their trigger event, cost tags and effect verbs); share of cards where all k signatures match | catches reordering, merged or split abilities, missing or added clauses |
+| V4 score spread | per-card standard deviation of the old accuracy score across the k readers | continuity with earlier numbers (6c vs 6d: SD 0.019) |
+| S1 style conformance | share of an output's ability sentences that match the Oracle-form linter (section 4, rule set B) | secondary goal |
+| A accuracy (guard) | mean similarity as before | must not fall by more than 0.01 |
 
-## 2. Evidence so far
-| run | cards | mean | top-1 | what changed (reports) |
-|---|---|---|---|---|
-| r1 | 353 | 0.777 | 219 (63%) | baseline tags |
-| r2 | 353 | 0.863 | 266 | detail tags (static, modal, look-at-top, saga, amounts, grants), opaque tags hidden, "no type line" |
-| r3 | 353 | 0.873 | 262 | restrict / team pump / token detail, AI tags hidden, reminder texts supplied |
-| r4 | 353 | 0.878 | 266 | `x_is` says what X measures |
-| r5 | 176 | 0.887 | 144 | half-sample rerun (changes: see `CHANGES_AND_FEEDBACK.md`) |
-| r6a-d | 176 | 0.896-0.902 | | scorer fixed, rule 6a (never empty), cost_reduce / choose_on_enter tags |
-| r7 | 353 | 0.914 | 306 | agent suggestions S01-S09, `typing:` line, zone split |
-| r8 | 353 | 0.926 | 312 | gap tags (trigger filters, conditional mana, conditions) |
-| r9 | 20 | 0.786 -> 0.884 | | `scales`, `x_is` rule "write X, not its definition", `mana_restriction` value |
+Proposed targets (yours to change): V3 >= 98% of cards, V1 >= 85%, V2 >= 0.95, V4 SD <= 0.010 (now 0.019), S1 >= 98%, A not below the r8 level of 0.926 minus 0.01. Baselines for V1, V2, V3 and S1 are unknown until phase 1.
 
-Floor: a dumb tag-to-words dictionary scores 0.60 (top-1 41%), so about 0.17 of the r1 score was reader skill and the rest was tags.
+## 3. What the earlier runs say about variance
+- Reader noise on identical inputs was SD 0.019 per card (r6c vs r6d, 174 cards); 2 cards moved by more than 0.1, none by more than 0.2. Before the scorer and reader-rule fixes it was SD 0.081 with 12 and 4 such cards. Most of that older "variance" was the scorer (name replacement depended on the hash seed), the rest was tags the reader could not read.
+- Score spread understates text spread: two readers can phrase the same ability differently and both score 0.9. No run kept the readers' texts side by side for identical inputs, so wording variance has never been measured. That is phase 1.
+- Known sources of reader-to-reader differences, from the reports:
+  1. **Definitions and padding:** r8 readers wrote "X is the amount of mana paid for X", r7 readers did not (Exsanguinate and Gadwick moved by about 0.22 on identical tags). Fixed for `x_paid` by a rule; the same class of difference can exist elsewhere.
+  2. **Gaps filled by guessing:** Cloud Key scored 0.57 for one reader and 0.0 for another when the tags gave nothing to say. A placeholder rule (6a) removed the empties.
+  3. **Scope and optional words:** "you control", "each / all", "opponent", "may" are the most often dropped or added concepts (about 30 cards each in r4). These are the places two readers most likely differ.
+  4. **Equivalent wordings:** "put onto the battlefield" vs "return to the battlefield", "target creature an opponent controls" vs "target opposing creature", "deals X damage" vs "X damage is dealt". Not measured; expected from how free-form text behaves.
+  5. **Ordering and splitting:** one ability as one sentence or two; abilities in tag order vs printed order. Not measured.
+  6. **Self-reference:** "this creature" vs "it" vs the card name (names are blocked; type comes from `typing`).
+- Reader integrity so far: leak check clean, recognised cards 0 to 1 per run.
 
-How the numbers were measured, and what limits them:
-- Reader noise on identical inputs: SD 0.019 per card (r6c vs r6d). A 40-card batch mean moves about 0.003 from reader noise, a full-sample paired difference about 0.001-0.002.
-- The score rewards matching wording and concepts; the 0.7 / 0.4 bands are unvalidated.
-- Almost every step changed several things at once ("two things changed at once", R2). The gain of any single instruction is mostly unknown. Only three instruction-only effects were isolated: rule 6a, "write X not its definition", and the `scales` wording (all small samples).
-- Only r1-r5 raw results are in the repo. r6-r11 raw results are not (their run data was outside the repo), so section 3 is computed on r1 and r4.
+## 4. Shape of the grammar
+**A. Reading procedure (fixes order and merging)**
+1. Read `typing` only to choose the self-reference word (`this creature`, `this permanent`, `this spell`, `this land`...).
+2. Process groups in a fixed order: `k` groups (keyword lines) first, then `c0` (card-level), then `c1`, `c2`, ... in order; a sub-group `cN.M` is a step of group `cN`; read it as the next sentence of that ability.
+3. Each group becomes exactly one ability, written in one fixed form (rule set B). Links decide wording inside an ability (`requires` = cost or condition, `lasts` = duration, `receives` = what the effect gives, `produces` = what it makes, `conditional_on` = "if ...").
+4. Fixed precedence for competing tags and a fixed way to say "unclear": placeholder tokens `{cost}`, `N`, `X`, and the tag is named in `unclear`; never guess a number or a filter.
+5. Never add a definition, a reminder text, a type line or a name; never drop a scope tag.
 
-## 3. Accuracy weights: what the reader most needs to be told
-Weight = how much total score the topic costs now, how often it fails, and how much a fix gained when one was tried. Loss figures are from r4 (348 cards, total loss 43.1 = sum of 1 - similarity); "excess loss" = cards carrying the family times how far below the overall mean they score. Families overlap, so these are indicators, not additive shares.
+**B. Oracle structure and wording (secondary goal)**
+- Output = the card's rules text, one ability per line (joined by ` / ` in the file), keywords first, then abilities in printed order.
+- Keyword abilities: the keyword with its number or cost, no reminder text. Several keywords on one line separated by commas where Oracle does so.
+- Triggered: `When / Whenever / At the beginning of <event>, <effect>.` (`When` for one-time events such as enters or dies, `Whenever` for repeatable ones, `At the beginning of` for steps and phases), with the optional limits in the standard spots (`This ability triggers only once each turn.`).
+- Activated: `<cost>: <effect>.` with costs in Oracle order and symbols (`{T}`, `{1}{B}`, `Sacrifice a creature`).
+- Static and spell abilities: one sentence per effect, imperative for spells (`Draw a card.`), declarative for permanents (`Creatures you control get +1/+1.`).
+- Targets and scope: `target <type>`, `up to N target ...`, `each opponent`, `you control`, `an opponent controls`, `you may` for optional effects, `instead` for replacement effects.
+- Numbers and style details (number words vs digits, `its`/`that creature` back-references, capitalisation) are not guessed: they are taken from frequency counts over the Oracle texts of the card pool in phase 0, so the grammar matches how cards are really printed.
+- Rule set B is also the **style linter** used for S1.
 
-| # | Topic the grammar must cover | Evidence | Weight |
-|---|---|---|---|
-| 1 | Scope and recipient words: "each / all", "you control", "opponent", "may" (optional) | The four most-missed concepts in every run: r4 each/all 32 cards, you_control 30, may 30, opponent 29 (r1: 34 / 49 / 29 / 29). `each_opponent` cards gained +0.05 to +0.09 (R6). | High |
-| 2 | Triggers: `trigger`, `trigger_scope`, `trigger_filter`, `trigger_zone` | Largest excess loss in r4 (trigger 3.5, trigger_scope 2.5); most "unclear" tags (trigger 10 of 166). Filters fixed Yedora-type cards partly (0.59 -> 0.75). | High |
-| 3 | Amounts and X: `x_is`, `scales`, `*_amount`, `x_paid`, numbers | Cards missing a number 86 -> 28; `x_is` excess loss 2.4; fixes gained +0.22 (Exsanguinate, Gadwick), +0.56 (Sea Gate Loremaster), 20-card group 0.786 -> 0.884. | High |
-| 4 | Never empty, partial text plus placeholder, list the unclear tag | Cloud Key 0.57 -> 0.0 and Stonybrook 0.92 -> 0.37 were gaps the reader could not fill; rule 6a followed by no empty answers. | High (protects against zeros) |
-| 5 | Draw and damage families: `draw`, `draw_count`, `damage`, `damage_amount` | Second and third largest excess loss in r4 (2.8, 2.7, 1.6). Cause not yet known: amount, recipient or scope? | Medium, needs diagnosis |
-| 6 | Conditions: `condition:`, `mana_conditional`, `activation_restriction` | Few cards, big gains per card (Leafkin Druid 0.35 -> 1.00, Temple of the False God 0.51 -> 1.00). | Medium |
-| 7 | Zone moves: `from_zone`, `to_zone`, `take`, `rest_*`, `return`, `put_onto_battlefield`, `controller` | Legend added in r5; recursion tags 6 of 8 unclear. Zombify fell 1.00 -> 0.74 when `controller:owner` was misread, now fixed (H67). | Medium |
-| 8 | Groups and links: one group = one printed line, `c1.2` = a step of its ability, `links` requires / provides / lasts / receives / conditional_on | No direct measurement. Weak cards that depend on it: Feign Death (granted trigger) 0.50, Desecrate Reality 0.61. | Medium, unmeasured |
-| 9 | Keywords and reminder text: write the keyword, not its reminder | Rule exists; no failure reported. | Low |
-| 10 | Output form: Oracle wording, one ability per sentence, ` / `, no type line, "this creature" | Type lines in r1 cost score until dropped by the scorer. | Low for accuracy, required by the scorer |
-| 11 | Validity rules: only the tags, never a name, say if you recognise a card | Recognised cards 5 -> 0-1; scores 0.82 vs 0.78 for the rest, so little inflation. | Low, but needed so scores can be trusted |
+**C. Phrase book: one canonical sentence per tag pattern.** A table from tag patterns (family, value, scope, links) to one wording, plus a decision table for every tag combination that has more than one valid reading. Built from the families in `TAG_LEGEND.md` and `TAG_REFERENCE.md`, ordered by how much disagreement they cause (measured in phase 1; until then by the earlier miss counts: scope words, triggers, amounts and X, draw and damage families, conditions, zone moves).
 
-Cards still weak in r8: Vines of Vastwood 0.52 (kicker bonus), Desecrate Reality 0.61, Saruman 0.63, Ripples of Potential 0.64, Kami of Whispered Hopes 0.59. Several are tag gaps, not reading gaps; the grammar must not be asked to fix those.
+**D. Output form (reduces free-form variance).** Instead of free text the reader returns one record per group: `{group, kind, text}` where `kind` is one of keyword / triggered / activated / static / spell and `text` follows B. The file is then joined in the fixed order. This is tested as its own arm.
 
-## 4. Shape of the grammar (v1 draft outline)
-1. Record anatomy: `typing` is context only; `tags` are what the abilities do; groups; links; what `kw:` and `x` mean.
-2. Reading procedure, in order: read the typing, read group by group (k lines, then c0, then c1...), merge a group's tags into one sentence, apply links, order sentences as printed, then check each number and scope word.
-3. Family cards, one short paragraph each, ordered by the weights in section 3 (scope words and triggers first). Each has the tag shape, the wording to write, and a one-line example taken from non-test cards.
-4. Ambiguity rules: conflicting tags, an unreadable tag, a missing amount (placeholder `N` or `X`), when to say less rather than guess.
-5. Output form and the "do not" list (names, type lines, reminder text, definitions of X).
-6. Worked examples: 5 to 8 short ones, none from the cards used to score.
-Length cap: about 1,500 words, with the existing per-batch tag legend kept as is. Test a shorter "top-weights only" version too, because longer instructions do not always help.
+**E. Worked examples:** 8 to 12 short ones, covering each ability kind, none taken from the cards used for scoring.
+
+Length cap about 1,500 words for the instruction part plus the phrase book as a table; a shorter "top-disagreement families only" version is tested too, because longer instructions do not always help.
 
 ## 5. Plan
 | Phase | Work | Output | Gate to continue |
 |---|---|---|---|
-| 0 Freeze | Stamp the tag version (commit + variant), fix the scorer, fix the 353-card test set and add a 150-card hold-out sample of non-starter cards (needs `tag_run.py card` on a random sample of the pool) | `tagcheck/GRAMMAR_BASELINE.md` | scorer selftest passes |
-| 1 Weights | Recompute section 3 on the current tags: rerun the current reader once (call it r12, 9 readers) so r1-r11 gaps do not matter; per-family excess loss and "unclear" rate; diagnose item 5 | weight table v2 | you approve the order of topics |
-| 2 Draft | Write `tags/READER_GRAMMAR.md` v1 (full) and v1s (top weights only) | two drafts, word counts | you read them (checklist doc) |
-| 3 A/B, tags frozen | Same 353 cards, same tags, arms: C0 current prompt, C1 + full grammar, C2 + short grammar. 9 fresh readers per arm; paired per card | `R12_GRAMMAR_AB.md` | an arm beats C0 by > 0.01 mean with no card worse than -0.05 unexplained, using the balance lab's gate (hard stop only on a whole-sample mean drop > 0.03 with >= 150 cards, or a paired drop > 0.05 on changed cards) |
-| 4 Iterate | Two rounds: rewrite the families with the most remaining loss, rerun only the affected cards plus about 20 unchanged control cards | grammar v2, v3 | control cards stay within noise (0.02) |
-| 5 Hold-out | Run the winning arm and C0 on the 150 hold-out cards | generalisation result | hold-out gain >= half of the 353-card gain; otherwise the grammar is overfit and goes back to phase 4 |
-| 6 Human check | Hand-read about 30 cards the scorer rated 0.4-0.9 to see whether the score matches meaning (also validates the bands) | note in the report | scorer and human agree on at least 80% |
-| 7 Freeze and wire | Commit `READER_GRAMMAR.md` with a version stamp; load it into `tag-blind-reader` through the per-batch reminders file; add a grammar version to the tag stamp; use it as the regression check in the full-cardlist run | frozen v1 | none |
-| 8 Optional | Turn the same text into a formal spec (small EBNF plus a deterministic tags-to-text function) for the deck builder and balance fit | `tag_grammar.ebnf` + tests | needs your yes in section 8 |
+| 0 Freeze and tools | Stamp the tag version; fix the 353-card test set and a 150-card hold-out sample of non-starter cards (needs `tag_run.py card` on a random pool sample); add `consistency` (V1 to V4), the ability-signature parser and the style linter to `reverse_check.py`; count Oracle style statistics (number style, phrase frequencies, ability order) over the card pool | `GRAMMAR_BASELINE.md`, tools with selftests | selftest: identical texts give V1 = 100%, scrambled ability order breaks V3, a text in non-Oracle form fails S1 |
+| 1 Variance baseline | Current reader prompt, 3 independent readers per batch (9 batches, 27 reader runs), identical tags | V1 to V4, S1, A; list of cards and tag patterns where readers disagree; per-family share of the disagreement | you approve the target numbers and the order of families |
+| 2 Phrase book and grammar draft | Write the phrase book, decision tables and procedure for the highest-disagreement families first; two versions: full and short | `tags/READER_GRAMMAR.md` v1 and v1s | you read the draft (checklist doc) |
+| 3 A/B, tags frozen | Same cards and tags; arms C0 current prompt, C1 grammar (free text), C2 grammar + per-group output records (D), C3 = C2 with the short grammar; 3 readers per arm per batch | `R12_GRAMMAR_AB.md` | an arm raises V3 and V1 clearly (more than the noise between two C0 repeats, from phase 1) with A not falling by more than 0.01 (balance lab gate: hard stop on a whole-sample mean drop > 0.03 with >= 150 cards or a paired drop > 0.05 on changed cards) |
+| 4 Iterate | Two rounds on the patterns that still disagree; rerun only the affected cards plus about 20 unchanged control cards | grammar v2, v3 | control cards stay within noise |
+| 5 Hold-out | Winning arm and C0 on the 150 hold-out cards, 3 readers each | generalisation result | hold-out V3 gain at least half of the 353-card gain; otherwise it is overfit and returns to phase 4 |
+| 6 Human check | Hand-read about 30 outputs: do they read like real Magic cards, and do the linter, signature parser and my judgement agree on "same / different" | note in the report | at least 80% agreement; this also validates the old 0.7 / 0.4 score bands |
+| 7 Freeze and wire | Commit `READER_GRAMMAR.md` with a version stamp; load it into `tag-blind-reader` through the per-batch reminders file; add the grammar version to the tag stamp; use V1 to V3 as a regression check in the full-cardlist run | frozen v1 | none |
+| 8 Executable grammar (recommended) | Turn the phrase book into a deterministic tags-to-text function (small formal grammar plus tests). Variance is then zero by construction. Check it against the reader majority and against Oracle text; the reader then verifies or paraphrases instead of inventing the wording. The deck builder and balance fit can use the same renderer | `tag_render.py`, `tag_grammar.ebnf`, tests | renderer agreement with reader majority >= 95% of cards and accuracy A not below the best reader arm |
 
-Estimated reader runs: phase 1 = 9, phase 3 = 27, phase 4 = about 20 (partial reruns), phase 5 = about 8 per arm, so about 80 to 100 single-reader agent runs in total. Cost per run has not been measured. Elapsed time: not estimated.
+Estimated reader runs (single-reader agent runs): phase 1 = 27, phase 3 = 4 arms x 3 readers x 9 batches = 108 (or about 72 without C0, which phase 1 already gives), phase 4 about 30, phase 5 about 24. Total about 130 to 190. Cheaper path: 2 readers instead of 3 and a 150-card subset for phase 3: about 70 in total. Cost per run is unmeasured; elapsed time is not estimated.
 
 ## 6. Risks and how the plan handles them
-- **Overfitting to the 353 starter cards:** held-out sample (phase 5), examples taken from non-test cards.
-- **Confounding:** tags are frozen during phase 3, so any change is the instructions alone. Never change tags and instructions in the same run.
-- **Scorer limits:** wording-based, bands unvalidated; phase 6 checks it by hand. A gain below 0.01 is treated as noise.
-- **Longer is not better:** the short arm tests that.
-- **Reader leakage:** the leak check in `reverse_check.py export` stays on; examples must not use test cards.
+- **Variance cannot reach zero with free-text readers.** Even with a strict grammar a model can choose another synonym. Phase 3 measures how close it gets; phase 8 is the way to a guaranteed result. The reader model's temperature cannot be set from here.
+- **A single canonical wording can hide meaning** if the tags are ambiguous. The phrase book lists every ambiguous tag combination and decides it once; unreadable tags stay `unclear`, never guessed.
+- **Overfitting to the 353 starter cards:** hold-out sample (phase 5); examples taken from non-test cards.
+- **Confounding:** tags are frozen during phase 3, so any change is the instructions alone. Tags and instructions never change in the same run.
+- **Metrics are new and unvalidated:** the signature parser and linter are tested by selftest (phase 0) and by hand (phase 6) before they gate anything.
+- **Style rules from memory would be wrong in places:** they come from counts over the card pool, not from my recollection.
+- **Tag gaps masquerading as reading gaps:** weak cards are triaged first (tag gap goes to the tagger, reading gap goes to the grammar).
+- **Reader leakage:** the leak check in `reverse_check.py export` stays on.
 - **Reader model or prompt drift:** the grammar version goes into the tag stamp; a new reader model means rerunning phase 3.
-- **Tag gaps masquerading as reading gaps:** weak cards are triaged first (tag gap -> tagger fix, reading gap -> grammar).
 
 ## 7. Who does what
-- Whichever main session is on shift runs the phases; the tag-blind-reader agent is the instrument (a fresh instance per batch, never reused).
-- The balance lab owns the paired statistics and the gate; the deck builder reviews the family cards for the consumer view (section 8, phase 8); the AI lab is not needed.
-- Reader runs and any reader-prompt change are tag-project work. H55 is gone, so nothing in this plan waits on it. The full-cardlist tagging run is not required first.
+- Whichever main session is on shift runs the phases; `tag-blind-reader` is the instrument (a fresh instance per batch, never reused).
+- The balance lab owns the paired statistics and the gate; the deck builder reviews the phrase book from the consumer side and is the first user of the renderer; the AI lab is not needed.
+- Nothing here waits on H55 (gone) or on the full-cardlist tagging run.
 
 ## 8. Decisions needed from you
-1. **Scope:** LLM reader only (phases 0 to 7), or also a deterministic spec for the deck builder (phase 8)?
-2. **Targets:** keep mean >= 0.94 and top-1 >= 92%, or set others.
-3. **Budget:** about 80 to 100 single-reader runs OK? (Per-run cost is unmeasured; say if there is a ceiling.)
-4. **Hold-out cards:** random from the whole pool (proposed), or a chosen set such as the tier 1 commanders' support cards?
-5. **Go:** start with phase 0 and 1 (about 9 reader runs), or wait for the answers above.
+1. **Executable grammar:** build the renderer (phase 8) as part of this project? It is the only route to truly identical output.
+2. **Targets:** keep V3 >= 98%, V1 >= 85%, V2 >= 0.95, V4 SD <= 0.010, S1 >= 98%, accuracy not below 0.926 minus 0.01?
+3. **Budget:** about 130 to 190 reader runs (about 70 on the cheaper path)? Per-run cost is unmeasured; say if there is a ceiling.
+4. **Self-reference:** `this creature` / `this permanent` by card type (current practice), or the Oracle placeholder `~`?
+5. **Hold-out cards:** random from the pool (proposed), or a chosen set?
+6. **Go:** start with phase 0 and 1 (tools plus 27 reader runs), or wait?
 
 ## 9. Not verified
-- Section 3 uses r1 and r4 raw results only; r6 to r11 figures are from their reports. Excess loss is confounded across overlapping families.
-- The cause of the draw and damage losses (item 5) is unknown.
-- Effect sizes for each instruction are mostly unknown; the plan exists to measure them.
-- The 80 to 100 run count is a planning estimate.
+- No variance baseline exists; V1 to V3, S1 and the signature parser are proposals.
+- Section 3 items 4 to 6 are expectations, not measurements. The draw and damage family losses from the earlier plan are still undiagnosed.
+- Effect sizes for each instruction are mostly unknown; almost every earlier step changed several things at once.
+- The reader-run counts and the targets are planning estimates.
