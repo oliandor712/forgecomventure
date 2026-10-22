@@ -18,22 +18,19 @@
 | Is condition_present different from static? | answered: different (gate vs kind of ability); proposal below |
 
 ## 2. Reverse check, same 353 cards, same scorer (348 with ability text)
-| | r1 | r2 | r3 |
-|---|---|---|---|
-| what changed | baseline | detail tags, opaque flagged | restrict / team pump / token detail, AI Tags hidden, reminder texts for the reader |
-| mean similarity | 0.774 | 0.861 | 0.871 |
-| good / partial / gap | 234 / 93 / 21 | 293 / 51 / 4 | 306 / 40 / 2 |
-| real card ranked #1 | 219 | 266 | 262 |
-| real card in top 5 | 295 | 323 | 325 |
-| cards missing a number | 86 | 36 | 28 |
-| cards the reader said it recognised | 5 | 1 | 0 |
+| | r1 | r2 | r3 | r4 |
+|---|---|---|---|---|
+| what changed | baseline | detail tags, opaque flagged | restrict / team pump / token detail, AI Tags hidden, reminder texts for the reader | x_is says what X measures and is linked to its amount and the object it measures |
+| mean similarity | 0.774 | 0.861 | 0.871 | 0.876 |
+| good / partial / gap | 234 / 93 / 21 | 293 / 51 / 4 | 306 / 40 / 2 | 308 / 38 / 2 |
+| real card ranked #1 | 219 | 266 | 262 | 266 |
+| real card in top 5 | 295 | 323 | 325 | 325 |
+| cards missing a number | 86 | 36 | 28 | 28 |
+| cards the reader said it recognised | 5 | 1 | 0 | 1 |
 
-By type (r1 / r2 / r3): creatures 0.78 / 0.86 / 0.87, instants 0.73 / 0.84 / 0.86, sorceries 0.78 / 0.85 / 0.87, enchantments 0.71 / 0.88 / 0.89, artifacts 0.79 / 0.89 / 0.88, lands 0.90 / 0.92 / 0.91.
-Biggest r2 -> r3 gains: Trumpet Blast 0.40 -> 1.00, Syr Alin 0.55 -> 1.00, Goreclaw 0.60 -> 1.00, Overrun 0.61 -> 1.00, Time of Ice 0.77 -> 0.94, Return of the Wildspeaker 0.41 -> 0.72, Pacifism 0.79 -> 1.00. Small losses: Pounce -0.16, Zuran Spellcaster -0.14, Ravenous Rats -0.13, Keldon Raider -0.13, Rogue's Passage -0.13 (reader variation or a tag that now says less; not examined).
-
-**Still weak (r3):** Leafkin Druid 0.29 (conditional mana), Sea Gate Loremaster, Welcoming Vampire (trigger filters), Elite Scaleguard, Mentor of the Meek, Flow of Knowledge, Swords to Plowshares 0.56 and Feed the Swarm 0.53 (`x_is` does not read "its power" / "mana value" yet, so X has no meaning). Most-lost concepts: each / all (33 cards), you control (33), opponent (30), may (29).
-
-**Trust:** one pass per run; the r3 gain over r2 is small (+0.01 mean, rank #1 slightly down) and within reader noise; the r1 -> r2 jump (+0.09) is the real one. Bands unvalidated. Reader isolation rests on the tool list and prompt.
+r3 -> r4 gains: Swords to Plowshares 0.56 -> 0.95, Feed the Swarm 0.53 -> 0.92, Kami of Whispered Hopes 0.58 -> 0.82, Memnarch 0.17 up, Pounce 0.16 up. Small losses (-0.11 to -0.16): Dusk Legion Zealot, Prodigal Sorcerer, Torch Fiend, Charcoal Diamond, Fire Diamond (reader variation or less text; not examined).
+Still weak (r4): Leafkin Druid 0.29 (conditional mana), Sea Gate Loremaster, Welcoming Vampire, Elite Scaleguard (trigger filters), Vines of Vastwood, Mindcrank, Explore, Feign Death 0.54. Most-lost concepts: each / all (32 cards), you control (30), may (30), opponent (29). Tags the readers could not read: trigger (10), recursion (6), target_type (6).
+r2 -> r4 is the real gain over r1 (+0.10 mean); r3 and r4 differ from r2 by amounts within reader noise except for the named cards. By type (r1 / r2 / r3): see `R2_FINDINGS.md`; one pass per run, bands unvalidated.
 
 ## 3. Agent updates (all in this container's group)
 - **forge-ai-lab:** pushed patch 014 + its unticked entry, `AI_LOGIC_TAG_REVIEW.md`, results n014 / n005 / n008 and `ab_recipe.sh`. Nothing applied to any card script or forge-ai. Its own 40-game tests: 014 casts per game -25%, wins noise; 005 v3 switch activations 356 -> 52, wins 5 vs 1 (n.s.); 008 no regression, no benefit. Omen of the Sea anomaly withdrawn.
