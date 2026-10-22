@@ -799,11 +799,12 @@ forge_ai: AILogic=-
 
 card: Feign Death
 typing: cardtype:instant
-tags: reanimate target_count:one target_type:creature grant_ability:dies_trigger
+tags: reanimate target_count:one target_type:creature grant_ability:dies_trigger duration:eot trigger:dies trigger_scope:self return from_zone:graveyard to_zone:battlefield put_onto_battlefield put_tapped counters_plus counter:p1p1 counter_count:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",animate,"",ValidTgts=Creature,""
-groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature grant_ability:dies_trigger
+groups[2]{id,source,tags}:
+  c1,A line,target_count:one target_type:creature grant_ability:dies_trigger duration:eot
+  c1.g,sub-ability of c1,trigger:dies trigger_scope:self return from_zone:graveyard to_zone:battlefield put_onto_battlefield reanimate put_tapped counters_plus counter:p1p1 counter_count:1
 mtgish: rules=SpellActions
 verify_flags: trigger trigger:dies from mtgish only (WhenAPermanentDies)
 forge_ai: AILogic=-
@@ -1132,16 +1133,16 @@ forge_ai: AILogic=-
 
 card: Kami of Whispered Hopes
 typing: cardtype:creature type:spirit
-tags: mana_source replace:addcounter_to_replacecounter_counternum_plus_1 cost:tap mana:any mana_amount:y x_is:own_power
+tags: mana_source duration:static replace:add_counters_plus_1 counter:p1p1 affected_type:permanent affected_scope:you_control cost:tap mana:any mana_amount:x x_is:own_power
 ai_tags: fixing
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,replacement,"",replace_addcounter,"",ValidCard=Permanent.YouCtrl+inZoneBattlefield,""
   c2,activated,T,mana,"","",""
 links[1]{from,rel,to}:
-  c2:mana_amount:y,scales_with,c2:x_is:own_power
+  c2:mana_amount:x,scales_with,c2:x_is:own_power
 groups[2]{id,source,tags}:
-  c1,R line,replace:addcounter_to_replacecounter_counternum_plus_1
-  c2,A line,cost:tap mana_source mana:any mana_amount:y x_is:own_power
+  c1,R line,duration:static replace:add_counters_plus_1 counter:p1p1 affected_type:permanent affected_scope:you_control
+  c2,A line,cost:tap mana_source mana:any mana_amount:x x_is:own_power
 mtgish: rules=ReplaceWouldPutCounters Activated
 forge_ai: AILogic=-
 

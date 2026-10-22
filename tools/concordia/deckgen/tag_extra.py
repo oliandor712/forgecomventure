@@ -544,6 +544,12 @@ def extra(lines, sv, types, text):
             if ev == "Counter" and "Self" in p.get("ValidCard", "") and p.get("Layer") == "CantHappen": add("cant_be_countered")
             elif ev == "Untap" and p.get("Layer") == "CantHappen":
                 restrict_add(["doesnt_untap"], add, p.get("Description", "")); affected_tags({"Affected": p.get("ValidCard", "")}, add)
+            elif ev == "AddCounter" and re.search(r"ReplaceCount\$CounterNum/Plus\.(\d+)", "\n".join(sv.values()) if False else sv.get((re.search(r"Amount\$ (\w+)", sv.get(p.get("ReplaceWith", ""), "")) or [0, ""])[1], "")):
+                # "if counters would be put on a permanent you control, that many plus N are put instead" (user: static ability, replace effect, N+1 counters)
+                nn = re.search(r"Plus\.(\d+)", sv[re.search(r"Amount\$ (\w+)", sv[p["ReplaceWith"]]).group(1)]).group(1)
+                add("duration:static", "replace:add_counters_plus_" + nn)
+                if p.get("ValidCounterType"): add("counter:" + tok(p["ValidCounterType"]))
+                affected_tags({"Affected": p.get("ValidCard", "").replace("+inZoneBattlefield", "")}, add)
             elif ev:
                 rw = sv.get(p.get("ReplaceWith", ""), "")
                 api_ = (re.match(r"^DB\$ (\w+)", rw) or [0, ""])[1]
@@ -590,7 +596,7 @@ def extra(lines, sv, types, text):
                 else:
                     for c in pr.split():
                         if c in COLORS: add("mana:" + COLORS[c]); links.append(("mana_source", "produces", "mana:" + COLORS[c]))
-                add("mana_amount:" + bp.get("Amount", "1").lower())
+                add("mana_amount:" + (bp.get("Amount", "1").lower() if bp.get("Amount", "1").isdigit() or not x_is(bp.get("Amount"), sv) else "x"))      # a variable amount is x whatever the script calls it (Y, Z ...)
                 if not bp.get("Amount", "1").isdigit() and x_is(bp.get("Amount"), sv): add("x_is:" + x_is(bp.get("Amount"), sv))
                 if "RestrictValid" in bp:           # value = what the mana can be spent on (instant_or_sorcery, creature_spell, activated_ability ...)
                     rv_ = []

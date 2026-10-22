@@ -154,6 +154,21 @@ def gap_pass(face, lines, sv, tags, ex_groups):
         if re.search(r"Condition\$ Kicked|Count\$Kicked", chain): add(gid, "condition:kicked")
         if re.search(r"AdjustLandPlays\$ (\d+)", chain): add(gid, "extra_land_drop:" + re.search(r"AdjustLandPlays\$ (\d+)", chain).group(1))
         if re.search(r"\b(AB|DB|SP)\$ Phases\b", chain): add(gid, "phase_out")
+        # an ability that grants a triggered ability until end of turn (Feign Death): duration, and what the granted trigger does, in its own group
+        for tn in re.findall(r"Triggers\$ ?(\w+)", body):
+            tb = sv.get(tn, "")
+            if not tb: continue
+            tp = _params(tb); gg = gid + ".g"
+            if re.search(r"Until end of turn", body + p.get("SpellDescription", ""), re.I) and "Duration" not in p: add(gid, "duration:eot")
+            if tp.get("Mode") == "ChangesZone" and tp.get("Destination") == "Graveyard" and "Self" in tp.get("ValidCard", ""): add(gg, "trigger:dies", "trigger_scope:self")
+            for sn in _chain(tb, sv)[1:]:
+                sp = _params(sn)
+                if sp.get("Origin") and sp.get("Destination") == "Battlefield":
+                    add(gg, "return", "from_zone:" + sp["Origin"].lower(), "to_zone:battlefield", "put_onto_battlefield")      # put onto the battlefield: not cast
+                    if sp["Origin"] == "Graveyard": add(gg, "reanimate")
+                    if sp.get("Tapped") == "True": add(gg, "put_tapped")
+                    mc_ = re.match(r"(P1P1)", sp.get("WithCountersType", ""))
+                    if mc_: add(gg, "counters_plus", "counter:p1p1", "counter_count:1")
     # Explore-type effects hang on an Effect SVar that is not part of an A/S/T line
     for w in ABILITY_WORDS:                              # ability-word conditions that sit in SVars the A/S/T chain does not reach
         if re.search(r"Condition\$ %s\b|Count\$%s\b" % (w, w), face) and ("condition:" + w.lower()) not in tags: add("c0", "condition:" + w.lower())
