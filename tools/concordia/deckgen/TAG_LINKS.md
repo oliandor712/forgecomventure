@@ -76,5 +76,5 @@ links[2]{from,rel,to}:
 ## Decisions (user, 2026-10-22)
 1. Links are stored per card (H53). The full tag, relation and duration vocabulary is written during the cardlist run, not now.
 2. Sub-ability chains: decided during the cardlist run (the user deferred rule gaps to the run).
-3. Source order is Forge first, AILogic$ as a reference, mtgish as a less reliable second opinion (H54).
+3. Source order: 1st card script, 2nd mtgish (less reliable), 3rd Forge AI (AILogic$ and forge-ai) as a reference (H54).
 4. Still to list during the run: trigger vocabulary from Forge `Mode$` values and the eight gap groups from the card-logic test.
