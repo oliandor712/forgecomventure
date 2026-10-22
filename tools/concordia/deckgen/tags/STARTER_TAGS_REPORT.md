@@ -41,8 +41,8 @@ Flags (one source disagrees, nothing added): 62 on 57 cards.
 - Feign Death: trigger trigger:dies from mtgish only (WhenAPermanentDies)
 - Swiftfoot Boots: cost cost:mana from mtgish only
 - Josu Vess, Lich Knight: cost cost:mana from mtgish only
-- Syr Konrad, the Grim: trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield)
 - Syr Konrad, the Grim: trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves)
+- Syr Konrad, the Grim: trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield)
 - Gwenna, Eyes of Gaea: untap: only mtgish says it, script tags lack untap
 - Search for Tomorrow: cost cost:mana from mtgish only
 - Professor of Zoomancy: lifegain: only mtgish says it, script tags lack lifegain
