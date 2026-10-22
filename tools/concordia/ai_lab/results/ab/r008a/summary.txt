@@ -1,0 +1,4 @@
+RESULT	r008a-base	A=26	B=14	draw=0	avgTurns=20.1
+  casts 101 activations 11
+RESULT	r008a-patched	A=30	B=10	draw=0	avgTurns=20.8
+  casts 95 activations 14
