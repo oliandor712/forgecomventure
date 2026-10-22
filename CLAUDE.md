@@ -17,3 +17,4 @@ Fork `oliandor712/forgecomventure`. Concordia is a Pokemon-like Commander campai
 - Do not edit `forge-core`, `forge-game` or `forge-ai` sources; AI ideas go in patch files under `tools/concordia/ai_lab/`. Do not edit `enemies.json` or live decks without the user's word.
 - A rule in `tools/agents/human_logic.toon` beats a metric.
 - Generated files are regenerated, never hand-merged (see MAIN_SESSION_BRIEF).
+- Session-to-session messages and claims: `tools/agents/mailbox/README.md` (`python3 tools/agents/mailbox.py check` before editing shared files).
