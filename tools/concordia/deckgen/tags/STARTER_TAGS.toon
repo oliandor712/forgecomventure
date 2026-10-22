@@ -928,7 +928,7 @@ groups[5]{id,source,tags}:
   c3,T line,trigger_scope:other
   c4,A line,cost:mana
 mtgish: rules=TriggerA Activated
-verify_flags: trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield) | trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves)
+verify_flags: trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves) | trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield)
 forge_ai: AILogic=AtOppEOT
 
 card: "Gwenna, Eyes of Gaea"
