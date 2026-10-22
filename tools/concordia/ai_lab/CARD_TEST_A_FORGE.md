@@ -140,3 +140,194 @@ Tag check on full script text: **50 of 50 untagged by `ability_tags.tags_of`** (
 1. Prefer A/S/T lines over K lines when choosing the primary signature; re-score set C (expected gain: most of the 19 misses are K-led).
 2. Add the eight rule gaps above as candidate RULES entries, each tested on set C (no change to the existing tags).
 3. Main session runs method B (mtgish) on the same sets and compares.
+
+## Re-run A2 (all lines)
+Change from A1: the signature now covers every line of the script (A/S/T/R, and K at weight 0.4, plus cost shape and trigger mode), not only the first line. The prediction is the `AILogic$` of the nearest pool card by weighted Jaccard overlap (leave-one-out on set C); exact-signature and API-only lookups are not needed because the nearest card always exists in the pool.
+
+Grades: exact = same value; partial = wrong value, but both the predicted and the actual value are used on cards whose primary API matches the card's own primary API; miss otherwise.
+
+**A2 score line (set C, 50 cards): exact 17 / partial 18 / miss 15. Exact-or-partial 35 of 50 (70%), up from 31 of 50 (62%) in A1. Exact alone: 17 in A2 vs 18 in A1.**
+
+Predictions changed from A1: 12 of 50. Changes:
+
+| Card | Actual | A1 predicted (grade) | A2 predicted (grade) | Nearest pool card |
+|---|---|---|---|---|
+| Passenger Ferry | Pump | ReplaySpell (miss) | Pump (exact) | bessie, the doctor's roadster |
+| Iron Lad, Diverging Destiny | Main2 | MostProminentInHumanDeck (miss) | MakeUnblockable (miss) | merfolk sovereign |
+| Embalmer's Tools | AtOppEOT | Always (partial) | AtOppEOT (exact) | hair-strung koto |
+| Rampaging Geoderm | TgtAttacker | Always (miss) | Random (miss) | raging river |
+| Etchings of the Chosen | MostProminentInComputerDeck | MostProminentInComputerDeck (exact) | Aristocrat (partial) | ahn-crop invader |
+| Alora, Merry Thief | Pump | Always (partial) | Random (partial) | raging river |
+| Lava Zombie | NeverBounceItself | PowerDmg (miss) | Pump (miss) | bloodtithe harvester |
+| Circle of Affliction | MostProminentInHumanDeck | MostProminentInComputerDeck (partial) | Always (partial) | neyam shai murad |
+| Subira, Tulzidi Caravanner | MakeUnblockable | MakeUnblockable (exact) | Bribe (partial) | mercenaries |
+| Cavern Harpy | NeverBounceItself | MostProminentInHumanDeck (partial) | SacAndRetFromGrave (partial) | chthonian nightmare |
+| Claim the Kingdom | Pump | Always (partial) | NeverBounceItself (partial) | bloodrage alpha |
+| Bloodline Pretender | MostProminentInComputerDeck | MostProminentInComputerDeck (exact) | MostProminentInComputerDeckNonToken (partial) | molten echoes |
+
+Remaining misses in A2 (15 cards):
+
+| Card | Actual | A2 predicted | Nearest pool card |
+|---|---|---|---|
+| Iron Lad, Diverging Destiny | Main2 | MakeUnblockable | merfolk sovereign |
+| Traveler's Cloak | ChosenLandwalk | MostProminentInHumanDeck | pentarch ward |
+| Bill Ferny, Bree Swindler | Curse | Pump | anzrag, the quake-mole |
+| Rampaging Geoderm | TgtAttacker | Random | raging river |
+| Wash Out | MostExcessOpponentControls | MostProminentInHumanDeck | brave the elements |
+| Lava Zombie | NeverBounceItself | Pump | bloodtithe harvester |
+| Hidetsugu's Second Rite | OppAtTenLife | CantRegenerate | quenchable fire |
+| Hikari, Twilight Guardian | IfNotBuffed | CloneBestCreature | hulkling, young avenger |
+| Evolutionary Escalation | BoonCounterOnOppCreature | CloneBestCreature | irma, part-time mutant |
+| Torment of Venom | PayUnlessCost | PowerDmg | beastie beatdown |
+| Timely Reinforcements | PlayForSub | Fog | fog of war |
+| Legion Vanguard | Aristocrat | Always | enter the unknown |
+| Twinferno | SpellCopy | PowerDmg | brokers charm |
+| Shuri, Wakandan Inventor | Pump | PowerDmg | mage duel |
+| You Look Upon the Tarrasque | Fog | PowerDmg | brokers charm |
+
+## Test set T: proposals that changed from A1: 17 of 50
+
+| Card | A1 proposal | A2 proposal | Similarity | Nearest pool card |
+|---|---|---|---|---|
+| Lightning Berserker | PowerDmg | InfernoOfTheStarMounts | 0.48 | inferno of the star mounts |
+| Blades of Velis Vel | SwitchPT | PowerDmg | 0.71 | berserk |
+| Bombur, Gentle Dreamer | none needed | MostProminentOppControls | 0.56 | an-zerrin ruins |
+| Zombie Musher | ReplaySpell | MoveCounter.IsCounterUser | 0.21 | spike hatcher |
+| Halsin, Emerald Archdruid | Pump | PowerDmg | 0.42 | flourishing grapple |
+| Crumble to Dust | Pump | BeforeCombat | 0.71 | back for more |
+| Dragon Engine | PowerDmg | Berserk | 1.0 | wine of blood and iron |
+| Split-Tail Miko | MakeUnblockable | Pump | 0.33 | nomad mythmaker |
+| Tangle Kelp | Curse | NeverBounceItself | 0.59 | bloodrage alpha |
+| Relentless Pursuit | none needed | Always | 0.33 | wandering archaic |
+| Cogwork Archivist | Always | MostProminentInComputerDeckNonToken | 0.71 | belbe's portal |
+| Frozen in Ice | Curse | Pump | 0.81 | reins of the vinesteed |
+| Captain America, Living Legend | AtEOTIfNotAttacking | Curse | 0.71 | kudzu |
+| Avalanche Caller | Pump | PowerDmg | 0.5 | flourishing grapple |
+| Bind the Monster | Curse | NeverBounceItself | 0.59 | bloodrage alpha |
+| Phyrexian Ironfoot | MostProminentInComputerDeck | AtOppEOT | 0.33 | basalt monolith |
+| Death Ward | none needed | MoveCounter.IsCounterUser | 0.29 | spike hatcher |
+
+## Remaining gaps
+The eight rule gaps from A1 still stand (self-pump, Animate, Effect/static keyword grants, unlisted trigger modes, hand or graveyard to library, static conditions and aura stats, multi-target and sub-ability pumps, keyword-only signatures). A2 does not fix any of them: the nearest-neighbour proposal can name a value, but it cannot tell whether an ability is tagged. Tags on set T are still 0 of 50.
+
+## Comparison with method B (mtgish)
+Not done: `tools/concordia/ai_lab/CARD_TEST_B_MTGISH.md` is not in the repo after `git pull` (checked 00:10Z). I cannot confirm the 17-of-18 figure or compare per card. The B comparison needs that file's per-card rows (card, predicted value, grade).
+
+
+## Re-run A3: keywords as their own features (K as full features)
+User request (main session, 2026-10-22): each keyword (K: line) is its own feature (kw:flying style) instead of being down-weighted. Both versions are reported so the effect shows. Set C and set T unchanged; leave-one-out on C; method B results from `CARD_TEST_B_MTGISH.md` (per-card table, section C) used for the agreement check.
+
+| Measure | A2: K down-weighted (0.4) | A3: K as full features (1.0) |
+|---|---|---|
+| Exact / partial / miss (C) | 17 / 18 / 15 | 18 / 17 / 15 |
+| Exact-or-partial (C) | 35 of 50 | 35 of 50 |
+| Strict exact (C) | 17 of 50 | 18 of 50 |
+| Agreement with method B (where both give a value) | 17 cards | 18 cards |
+| ...correct when they agree | 16 of 17 | 17 of 18 |
+| Method B strict exact (C), for reference | 33 of 50 | 33 of 50 |
+
+Control predictions that changed between A2 and A3: 2 of 50.
+
+| Card | Actual | A2 (grade) | A3 (grade) |
+|---|---|---|---|
+| Iron Lad, Diverging Destiny | Main2 | MakeUnblockable (miss) | MostProminentInHumanDeck (miss) |
+| Cavern Harpy | NeverBounceItself | SacAndRetFromGrave (partial) | NeverBounceItself (exact) |
+
+Test-set proposals that changed between A2 and A3: 4 of 50.
+
+| Card | A2 proposal | A3 proposal |
+|---|---|---|
+| Lightning Berserker | InfernoOfTheStarMounts | PowerDmg |
+| Blades of Velis Vel | PowerDmg | SwitchPT |
+| Zombie Musher | MoveCounter.IsCounterUser | ReplaySpell |
+| Death Ward | MoveCounter.IsCounterUser | ExceptSelf |
+
+Reading: making keywords full features gives the best agreement with method B, and it matches the main session's 17-of-18 figure (A3 agrees with B on 18 control cards and is right on 17). Exact-or-partial is the same (35 of 50) in both versions, so the change moves cards between exact and partial rather than adding hits. Keywords should therefore be tag features, as proposed. The A3 proposals are untested on the tag side: keyword-as-feature does not add any tag rule, so the eight rule gaps still stand.
+
+## A3 (keyword compensation): three keyword variants
+Keyword features: (a) down-weighted to 0.4 (A2 as before); (b) separate `kw:<name>` features at weight 1, uncompensated; (c) separate features with weight 1/n, where n is the number of keyword features on that card, so a card with three keywords gives each 1/3. Weighted Jaccard is computed per feature with each card's own weights (min over max). Non-keyword features weigh 1 in all three. Leave-one-out on set C.
+
+| Variant | Exact (strict) | Partial | Miss | Exact-or-partial | Agree with B | Correct when agree | B strict exact (ref.) |
+|---|---|---|---|---|---|---|---|
+| (a) K down-weighted 0.4 | 17 of 50 | 18 | 15 | 35 of 50 | 17 | 16 of 17 | 33 of 50 |
+| (b) K separate, uncompensated | 18 of 50 | 17 | 15 | 35 of 50 | 18 | 17 of 18 | 33 of 50 |
+| (c) K separate, 1/n compensated | 18 of 50 | 17 | 15 | 35 of 50 | 18 | 17 of 18 | 33 of 50 |
+
+Note: exact is strict (predicted value equals actual). Partial is shown separately and is not counted in strict exact. Exact-or-partial = strict exact + partial, which is 35 of 50 for (a) and 35 of 50 for (b) and (c).
+
+Test-set proposals changing from (a):
+- (b) vs (a): 4 of 50
+- (c) vs (a): 3 of 50
+
+### Per-card comparison with method B (control set C)
+| Card | Actual | A (a) | A (c) | B (mtgish) | Both (c) and B agree | Right? |
+|---|---|---|---|---|---|---|
+| Passenger Ferry | Pump | Pump | Pump | Pump | yes | A(c) right |
+| Unburied Earthcarver | AristocratCounters | PowerDmg | PowerDmg | Aristocrat | no | - |
+| Omen of the Dead | BestOpportunity | BestOpportunity | BestOpportunity | AtOppEOT | no | A(c) right |
+| Creative Outburst | AlwaysOnDiscard | AlwaysOnDiscard | AlwaysOnDiscard | AlwaysOnDiscard | yes | A(c) right |
+| Iron Lad, Diverging Destiny | Main2 | MakeUnblockable | MakeUnblockable | Main2 | no | B right |
+| Inner Fire | ManaRitual | ManaRitual | ManaRitual | ManaRitual | yes | A(c) right |
+| Sentinel Totem | ExileGraveyards | ExileGraveyards | ExileGraveyards | ExileGraveyards | yes | A(c) right |
+| Underfoot Underdogs | MakeUnblockable | MakeUnblockable | MakeUnblockable | MakeUnblockable | yes | A(c) right |
+| Traveler's Cloak | ChosenLandwalk | MostProminentInHumanDeck | MostProminentInHumanDeck | MostProminentInHumanDeck | yes | - |
+| Arrester's Zeal | Main1IfAble | PowerDmg | PowerDmg | Main1IfAble | no | B right |
+| Bill Ferny, Bree Swindler | Curse | Pump | Pump | DonateTargetPerm | no | - |
+| Touch of Invisibility | Pump | Fog | Fog | Pump | no | B right |
+| Embalmer's Tools | AtOppEOT | AtOppEOT | AtOppEOT | AtOppEOT | yes | A(c) right |
+| Rampaging Geoderm | TgtAttacker | Random | Random | PowerDmg | no | - |
+| Etchings of the Chosen | MostProminentInComputerDeck | Aristocrat | Aristocrat | MostProminentInComputerDeck | no | B right |
+| Terrific Team-Up | PowerDmg | PowerDmg | PowerDmg | PowerDmg | yes | A(c) right |
+| Alora, Merry Thief | Pump | Random | Random | Pump | no | B right |
+| Wash Out | MostExcessOpponentControls | MostProminentInHumanDeck | MostProminentInHumanDeck | MostProminentHumanCreatures | no | - |
+| Auriok Replica | NeedsPrevention | NeedsPrevention | NeedsPrevention | NeedsPrevention | yes | A(c) right |
+| Lava Zombie | NeverBounceItself | Pump | Pump | NeverBounceItself | no | B right |
+| Circle of Affliction | MostProminentInHumanDeck | Always | Always | MostProminentInGame | no | - |
+| Flaming Gambit | WorstCard | ReplaySpell | ReplaySpell | BurnCreatures | no | - |
+| Subira, Tulzidi Caravanner | MakeUnblockable | Bribe | Bribe | MakeUnblockable | no | B right |
+| Drain Life | XLifeDrain | XLifeDrain | XLifeDrain | XLifeDrain | yes | A(c) right |
+| Ancestral Statue | NeverBounceItself | NeverBounceItself | NeverBounceItself | NeverBounceItself | yes | A(c) right |
+| Cavern Harpy | NeverBounceItself | SacAndRetFromGrave | NeverBounceItself | NeverBounceItself | yes | A(c) right |
+| Claim the Kingdom | Pump | NeverBounceItself | NeverBounceItself | AtOppEOT | no | - |
+| Hidetsugu's Second Rite | OppAtTenLife | CantRegenerate | CantRegenerate | ChainOfSmog | no | - |
+| Hikari, Twilight Guardian | IfNotBuffed | CloneBestCreature | CloneBestCreature | Always | no | - |
+| Recoup | ReplaySpell | WorstCard | WorstCard | ReplaySpell | no | B right |
+| Millstone | AtOppEOT | AtOppEOT | AtOppEOT | AtOppEOT | yes | A(c) right |
+| Pilgrim of Justice | NeedsPrevention | NeedsPrevention | NeedsPrevention | NeedsPrevention | yes | A(c) right |
+| Evolutionary Escalation | BoonCounterOnOppCreature | CloneBestCreature | CloneBestCreature | Always, Fight | no | - |
+| Torment of Venom | PayUnlessCost | PowerDmg | PowerDmg | PayUnlessCost | no | B right |
+| Zoyowa Lava-Tongue | PayUnlessCost | PayUnlessCost | PayUnlessCost | PayUnlessCost | yes | A(c) right |
+| Timely Reinforcements | PlayForSub | Fog | Fog | DiscardUncastableAndExcess | no | - |
+| Bloodline Pretender | MostProminentInComputerDeck | MostProminentInComputerDeckNonToken | MostProminentInComputerDeckNonToken | MostProminentInComputerDeck | no | B right |
+| Legion Vanguard | Aristocrat | Always | Always | AristocratCounters | no | - |
+| Aquatic Incursion | MakeUnblockable | MakeUnblockable | MakeUnblockable | MakeUnblockable | yes | A(c) right |
+| Twinferno | SpellCopy | PowerDmg | PowerDmg | Berserk | no | - |
+| Shuri, Wakandan Inventor | Pump | PowerDmg | PowerDmg | IfDefinedCreatureIsBetter | no | - |
+| Addle | MostProminentInHumanDeck | MostProminentHumanCreatures | MostProminentHumanCreatures | MostProminentInHumanDeck | no | B right |
+| Prism Ring | MostProminentInComputerDeck | MostProminentInGame | MostProminentInGame | MostProminentInComputerDeck | no | B right |
+| Ant-Man's Army | FoodOrTreasure | NeverBounceItself | NeverBounceItself | FoodOrTreasure | no | B right |
+| Omen of the Sea | BestOpportunity | BestOpportunity | BestOpportunity | BestOpportunity | yes | A(c) right |
+| You Look Upon the Tarrasque | Fog | PowerDmg | PowerDmg | Fight | no | - |
+| Ambrosia Whiteheart | BounceOwnTrigger | ReplaySpell | ReplaySpell | BounceOwnTrigger | no | B right |
+| Stronghold Discipline | AllPlayerLoseLife | MostProminentComputerControls | MostProminentComputerControls | AllPlayerLoseLife | no | B right |
+| Cutthroat Centurion | Aristocrat | Aristocrat | Aristocrat | Aristocrat | yes | A(c) right |
+| Haunting Apparition | Curse | MostProminentInHumanDeck | MostProminentInHumanDeck | Curse | no | B right |
+
+Reading: the keyword variants change only the exact count by one or two cards, and the agreement with B stays high. The compensated variant (c) gives the same figures as the uncompensated variant (b) on this set. The B table in `CARD_TEST_B_MTGISH.md` is the reference for the per-card rows above.
+
+## A3 headline: variant (b), every keyword a full-weight feature
+Decision (main session, 2026-10-22): variant (b) is the method. Every keyword is its own full-weight feature `kw:<name>`, no down-weighting, no 1/n compensation. Keyword names keep the parameter where it carries meaning: `Protection from red` -> `protection:red`; `Enchant creature` -> `enchant:creature`; `Equip:2` -> `equip`; `Ward:2` -> `ward` (the number is a cost, not a name); `Snow landwalk` -> `snow_landwalk`. The split is: text after `from` for protection, text after `Enchant` for enchant, otherwise the text before the first `:`, `(` or a digit, lower case, spaces as underscores. A compound such as `Protection from white and from black` becomes `protection:white_and_from_black`, which is a known limit.
+
+| Variant | Strict exact | Partial | Miss | Exact-or-partial | Agree with B | Correct when agree |
+|---|---|---|---|---|---|---|
+| HEADLINE (b) K separate, uncompensated, full keyword names | 18 of 50 | 17 | 15 | 35 of 50 | 18 | 17 of 18 |
+| reference (a) K down-weighted 0.4 | 17 of 50 | 18 | 15 | 35 of 50 | 17 | 16 of 17 |
+| reference (c) K separate, 1/n compensated | 18 of 50 | 17 | 15 | 35 of 50 | 18 | 17 of 18 |
+
+Headline: strict exact 18 of 50, agreement with method B on 18 cards, right on 17 of them. Method B strict exact: 33 of 50.
+
+Keyword-name change (first word -> full name, variant b): 0 of 50 control predictions changed.
+
+Test-set proposals changed by the keyword-name split: 0 of 50.
+
+Note: the earlier A3 section (first-word names) stays as written, for the record. Variant (b) from that section is the same method with the first-word names; the headline above replaces it.
