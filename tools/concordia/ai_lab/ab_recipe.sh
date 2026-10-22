@@ -5,7 +5,7 @@
 #   --cards P       card-script patch (diff of forge-gui/res/cardsfolder), applied to the "patched" arm's scratch assets only
 #   --base-cards P  card-script patch applied to BOTH arms (e.g. 001 unflag, so the arms differ only in the code patch)
 # Both arms run in parallel (4 cores: one worker per ab_recipe.sh call). Output: $AB_OUT/<label>/{base,patched}.raw, per-game logs,
-# summary.txt (RESULT lines, casts, activations). Scratch in $AB_TMP (default /tmp/ab_<label>); nothing touches the repo.
+# AB_JAVA_OPTS adds java flags to both arms (e.g. "-Daidecisionlog=1"). summary.txt (RESULT lines, casts, activations). Scratch in $AB_TMP (default /tmp/ab_<label>); nothing touches the repo.
 # AiLabSim has no seed, so give two workers different <label>s and sum their summaries.
 set -e
 ROOT=$(cd "$(dirname "$0")/../../.." && pwd); cd "$ROOT"
@@ -35,7 +35,7 @@ if [ ${#CODE[@]} -gt 0 ]; then
 fi
 for arm in base patched; do
   CP=$CPB; [ $arm = patched ] && CP=$CPP
-  ( java -Xmx3g -Djava.awt.headless=true "-Dwatch=$W" -Dlogdir=$O/$arm -cp "$CP" AiLabSim $T/assets_$arm/ $N 900 $DA 20 $DB 20 $L-$arm > $O/$arm.raw 2>&1 ) &
+  ( java -Xmx3g -Djava.awt.headless=true $AB_JAVA_OPTS "-Dwatch=$W" -Dlogdir=$O/$arm -cp "$CP" AiLabSim $T/assets_$arm/ $N 900 $DA 20 $DB 20 $L-$arm > $O/$arm.raw 2>&1 ) &
 done
 wait
 { for arm in base patched; do grep -h RESULT $O/$arm.raw

@@ -1,22 +1,16 @@
-# 005-switchpt-two-versions (v3): PumpAi SwitchPT treats the host as two creatures (forge-ai CODE patch, NOT applied)
-# v3 revises v2 after the main-session review (analysis "Patch 005 two-version SwitchPT review"; v2 backed up in
-# tools/concordia/backups/2026-10-20_005-v2-patch/):
-#  - which version is better is decided by ComputerUtilCard.shouldPumpCard(ai, sa, host, p-t, t-p, []) (simulates first
-#    strike, deathtouch, indestructible, prevention, trample, marked damage) instead of hand-written damage math;
-#  - a discard cost must be beaten by the gain (versionScore difference > 60 for a spare land, else 120);
-#  - planeswalker loyalty counts as lethal; phase gate (declare blockers of a combat the host is in) and the 1 switch +
-#    1 switch back cap are kept.
-# Not done yet from the review: costs of mana that could have cast a spell, removal exposure, AiCardMemory marker so the
-# save-my-creature logic doesn't bounce a switched-to-die creature (Echoing Truth case in game g4).
-# Test (AiLabSim n001, 40-card deck, flags removed, equal life 20, 10 games vs Sai; this build also contains patch 006):
-#   flag removal only 92 activations; v1 simple guard 4; v2 8; v3 2 activations (all declare blockers), 20 casts, wins A 1-9.
-# v3 is very conservative: the AI switches rarely; the test deck has few opportunities. Next: a deck with more switch cards
-# and the per-activation log columns (score_now/score_switched, cost, role, outcome, useful).
-diff --git a/forge-ai/src/main/java/forge/ai/ability/PumpAi.java b/forge-ai/src/main/java/forge/ai/ability/PumpAi.java
-index cc8e6881..5113bf5a 100644
+# 005-switchpt-two-versions (v4): PumpAi SwitchPT treats the host as two creatures (forge-ai CODE patch, NOT applied)
+# v4 = v3 + three changes (user order via Claude 2, 2026-10-22): the "only after blockers are declared" gate is skipped when the
+# host attacks and no untapped creature of the defending player can block it (CombatUtil.canBlock; empty field or all
+# blockers tapped/unable). Then the switch is allowed once attackers are declared (COMBAT_DECLARE_ATTACKERS), because blocks cannot
+# change the outcome. Beginning of combat stays closed (the spam). Everything else as v3: at most 1 switch + 1 back per turn,
+# versionScore via ComputerUtilCard.shouldPumpCard, discard cost must be beaten by the gain.
+# v3 is archived in patches/archive/005-switchpt-two-versions-v3.patch. Test-only activation log: 015-switchpt-check-log.patch.
+# Test (v3, 40 games, switch-heavy deck vs Sai): activations 356 -> 52, wins 5 vs 1 (n.s.); v4 not yet tested.
+# (second change: when the early gate applies, switchPTHelps compares versionScore of the two versions instead of shouldPumpCard, which only predicts unblocked attackers after blockers are declared; found in the first 6-game run, helps=false at declare attackers.)
+# (third change: PumpAi.checkApiLogic skips its own shouldPumpCard call for the early switch, otherwise it vetoed it again at declare attackers.)
 --- a/forge-ai/src/main/java/forge/ai/ability/PumpAi.java
 +++ b/forge-ai/src/main/java/forge/ai/ability/PumpAi.java
-@@ -54,8 +54,11 @@ public class PumpAi extends PumpAiBase {
+@@ -54,8 +54,11 @@
              return SpecialAiLogic.doAristocratWithCountersLogic(ai, sa).willingToPlay();
          } else if (aiLogic.equals("SwitchPT")) {
              // Some more AI would be even better, but this is a good start to prevent spamming
@@ -30,7 +24,7 @@ index cc8e6881..5113bf5a 100644
                  return false;
              }
          }
-@@ -63,6 +66,66 @@ public class PumpAi extends PumpAiBase {
+@@ -63,6 +66,90 @@
          return super.checkAiLogic(ai, sa, aiLogic);
      }
  
@@ -49,7 +43,13 @@ index cc8e6881..5113bf5a 100644
 +        }
 +        final int p = host.getNetPower();
 +        final int t = host.getNetToughness();
-+        if (!ComputerUtilCard.shouldPumpCard(ai, sa, host, p - t, t - p, java.util.Collections.<String>emptyList())) {
++        if (host.getGame().getPhaseHandler().is(PhaseType.COMBAT_DECLARE_ATTACKERS) && switchPTNoPotentialBlockers(host)) {
++            // nothing can block the host: shouldPumpCard only predicts unblocked attackers once blockers are declared, so compare
++            // the two versions directly (damage to the defender, lethal counts most)
++            if (versionScore(ai, host, combat, t, p) <= versionScore(ai, host, combat, p, t)) {
++                return false;
++            }
++        } else if (!ComputerUtilCard.shouldPumpCard(ai, sa, host, p - t, t - p, java.util.Collections.<String>emptyList())) {
 +            return false;
 +        }
 +        if (sa.getPayCosts() != null && sa.getPayCosts().hasSpecificCostType(forge.game.cost.CostDiscard.class)) {
@@ -94,17 +94,52 @@ index cc8e6881..5113bf5a 100644
 +        return score;
 +    }
 +
++    // true if the host attacks and no untapped creature of the defending player can block it (so blocks cannot change the outcome)
++    private static boolean switchPTNoPotentialBlockers(final Card host) {
++        final forge.game.combat.Combat combat = host.getGame().getCombat();
++        if (combat == null || !combat.isAttacking(host)) {
++            return false;
++        }
++        final Player defender = combat.getDefenderPlayerByAttacker(host);
++        if (defender == null) {
++            return false;
++        }
++        for (final Card c : defender.getCreaturesInPlay()) {
++            if (CombatUtil.canBlock(host, c)) {
++                return false;
++            }
++        }
++        return true;
++    }
++
      @Override
      protected boolean checkPhaseRestrictions(final Player ai, final SpellAbility sa, final PhaseHandler ph,
                                               final String logic) {
-@@ -79,8 +142,8 @@ public class PumpAi extends PumpAiBase {
+@@ -79,8 +166,13 @@
                  return false;
              }
          } else if (logic.equals("SwitchPT")) {
 -            // Some more AI would be even better, but this is a good start to prevent spamming
 -            if (ph.getPhase().isAfter(PhaseType.COMBAT_FIRST_STRIKE_DAMAGE) || !ph.inCombat()) {
-+            // Only after blockers are declared, so the outcome of this combat is known
-+            if (!ph.is(PhaseType.COMBAT_DECLARE_BLOCKERS) || !ph.inCombat()) {
++            // Only after blockers are declared, so the outcome of this combat is known; or, for an attacking host that no
++            // opposing creature can block, once attackers are declared (the best version is already known)
++            if (!ph.inCombat()) {
++                return false;
++            }
++            if (!ph.is(PhaseType.COMBAT_DECLARE_BLOCKERS)
++                    && !(ph.is(PhaseType.COMBAT_DECLARE_ATTACKERS) && switchPTNoPotentialBlockers(sa.getHostCard()))) {
                  return false;
              }
          }
+@@ -320,6 +412,11 @@
+                     return new AiAbilityDecision(100, AiPlayDecision.WillPlay);
+                 }
+                 if (!card.getController().isOpponentOf(ai)) {
++                    if ("SwitchPT".equals(sa.getParam("AILogic")) && card == sa.getHostCard()
++                            && game.getPhaseHandler().is(PhaseType.COMBAT_DECLARE_ATTACKERS) && switchPTNoPotentialBlockers(card)) {
++                        // early switch of an unblockable-in-practice attacker: checkAiLogic already compared the two versions
++                        return new AiAbilityDecision(100, AiPlayDecision.WillPlay);
++                    }
+                     if (ComputerUtilCard.shouldPumpCard(ai, sa, card, defense, attack, keywords, false)) {
+                         return new AiAbilityDecision(100, AiPlayDecision.WillPlay);
+                     }

@@ -1,0 +1,20 @@
+[metadata]
+Name=Opp Burn Control 40
+Description=Test opponent for 005 v4: almost no creatures (commander only), so attackers meet an empty battlefield. 40 cards.
+[Commander]
+1 Niv-Mizzet, the Firemind
+[Main]
+8 Island
+8 Mountain
+3 Lightning Bolt
+2 Shock
+2 Burst Lightning
+2 Chain Lightning
+2 Searing Spear
+2 Counterspell
+2 Mana Leak
+1 Brainstorm
+2 Ponder
+2 Divination
+2 Izzet Charm
+1 Electrolyze

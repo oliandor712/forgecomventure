@@ -1,0 +1,20 @@
+# 015-switchpt-check-log (log-only, test-only): applies on top of 005 v4. Adds one game-log line per SwitchPT evaluation:
+# "SWITCHPT_CHECK <host> turn= phase= opp_creatures= no_blockers= helps=" (opp_creatures = creatures the opponent has in play;
+# no_blockers = host attacks and nothing can block it; helps = switchPTHelps result). Evaluations happen in every phase before the
+# phase gate (checkAiLogic runs first), so filter on phase. AiLabSim shows the lines in the watched-card logs. Activations come from
+# the normal STACK_ADD lines.
+--- a/forge-ai/src/main/java/forge/ai/ability/PumpAi.java
++++ b/forge-ai/src/main/java/forge/ai/ability/PumpAi.java
+@@ -58,6 +58,12 @@
+                 // at most one switch and one switch back per turn
+                 return false;
+             }
++            if (sa.isActivatedAbility() && !sa.usesTargeting()) {
++                final forge.game.phase.PhaseHandler ph = ai.getGame().getPhaseHandler();
++                ai.getGame().getGameLog().add(forge.game.GameLogEntryType.INFORMATION, "SWITCHPT_CHECK " + sa.getHostCard().getName()
++                        + " turn=" + ph.getTurn() + " phase=" + ph.getPhase() + " opp_creatures=" + ai.getOpponents().getCreaturesInPlay().size()
++                        + " no_blockers=" + switchPTNoPotentialBlockers(sa.getHostCard()) + " helps=" + switchPTHelps(ai, sa));
++            }
+             if (sa.isActivatedAbility() && !sa.usesTargeting() && !switchPTHelps(ai, sa)) {
+                 return false;
+             }
