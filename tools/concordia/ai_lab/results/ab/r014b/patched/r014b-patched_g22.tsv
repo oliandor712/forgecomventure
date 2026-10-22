@@ -1,0 +1,129 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Delightful Discovery; Lonely Sandbar; Scheming Aspirant; Joint Exploration; Swamp; Blood Artist; Deliberate
+10	A's Cleanup step	TURN	Turn 10 (B)
+10	B's Untap step	PHASE	B's Untap step
+10	B's Upkeep step	PHASE	B's Upkeep step
+10	B's Draw step	PHASE	B's Draw step
+10	B's Main phase, precombat	PHASE	B's Main phase, precombat
+10	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+10	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+10	B's Declare Attackers Step	COMBAT	B assigned Umbral Collar Zealot (62) to attack A.
+10	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+10	B's Declare Blockers Step	COMBAT	A didn't block Umbral Collar Zealot (62).
+10	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+10	B's Combat Damage Step	PHASE	B's Combat Damage Step
+10	B's Combat Damage Step	DAMAGE	Umbral Collar Zealot (62) deals 3 combat damage to A.
+10	B's Combat Damage Step	LIFE	Life: A 20 > 17
+10	B's End of Combat Step	PHASE	B's End of Combat Step
+10	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+10	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+10	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+10	B's Main phase, postcombat	ZONE_CHANGE*	A milled Vampiric Rites (16), Bojuka Bog (36) and Deliberate (35).
+10	B's End step	PHASE	B's End step
+10	B's Cleanup step	PHASE	B's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Beginning of Combat Step	STACK_ADD*	A cast Joint Exploration
+11	A's Beginning of Combat Step	STACK_ADD	A triggered Master Pakku
+11	A's Beginning of Combat Step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Joint Exploration (38), Activator: A, SpellAbility: Scry 2, then draw a card.  If this spell was kicked, you may put a land card from your hand onto the battlefield.]
+11	A's Beginning of Combat Step	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+16	A's Cleanup step	TURN	Turn 16 (B)
+16	B's Untap step	PHASE	B's Untap step
+16	B's Upkeep step	PHASE	B's Upkeep step
+16	B's Draw step	PHASE	B's Draw step
+16	B's Main phase, precombat	PHASE	B's Main phase, precombat
+16	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+16	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+16	B's Declare Attackers Step	COMBAT	B assigned Umbral Collar Zealot (62), The Mouth of Sauron (81) and Boggart Trawler (74) to attack A.
+16	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+16	B's Declare Blockers Step	COMBAT	A assigned Atris, Oracle of Half-Truths (40) to block Umbral Collar Zealot (62). A assigned Blood Artist (1) to block The Mouth of Sauron (81). A assigned Stitcher's Supplier (32) to block Boggart Trawler (74).
+16	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+16	B's Combat Damage Step	PHASE	B's Combat Damage Step
+16	B's Combat Damage Step	DAMAGE	Umbral Collar Zealot (62) deals 3 damage to Atris, Oracle of Half-Truths (40).
+16	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 damage to Blood Artist (1).
+16	B's Combat Damage Step	DAMAGE	Boggart Trawler (74) deals 3 damage to Stitcher's Supplier (32).
+16	B's Combat Damage Step	DAMAGE	Stitcher's Supplier (32) deals 1 damage to Boggart Trawler (74).
+16	B's Combat Damage Step	DAMAGE	Atris, Oracle of Half-Truths (40) deals 3 damage to Umbral Collar Zealot (62).
+16	B's Combat Damage Step	ZONE_CHANGE	Umbral Collar Zealot (62) was put into Graveyard from Battlefield.
+16	B's Combat Damage Step	ZONE_CHANGE	Boggart Trawler (74) was put into Graveyard from Battlefield.
+16	B's Combat Damage Step	ZONE_CHANGE	Blood Artist (1) was put into Graveyard from Battlefield.
+16	B's Combat Damage Step	ZONE_CHANGE	Atris, Oracle of Half-Truths (40) was put into Graveyard from Battlefield.
+16	B's Combat Damage Step	ZONE_CHANGE	Stitcher's Supplier (32) was put into Graveyard from Battlefield.
+16	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+16	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+16	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+16	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+16	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+16	B's Combat Damage Step	STACK_ADD	A triggered Stitcher's Supplier
+16	B's Combat Damage Step	ZONE_CHANGE*	A milled Swamp (6), Tainted Isle (5) and Opt (15).
+16	B's Combat Damage Step	LIFE	Life: B 14 > 13
+16	B's Combat Damage Step	LIFE	Life: A 5 > 6
+16	B's Combat Damage Step	LIFE	Life: B 13 > 12
+16	B's Combat Damage Step	LIFE	Life: A 6 > 7
+16	B's Combat Damage Step	LIFE	Life: B 12 > 11
+16	B's Combat Damage Step	LIFE	Life: A 7 > 8
+16	B's Combat Damage Step	LIFE	Life: B 11 > 10
+16	B's Combat Damage Step	LIFE	Life: A 8 > 9
+16	B's Combat Damage Step	LIFE	Life: B 10 > 9
+16	B's Combat Damage Step	LIFE	Life: A 9 > 10
+16	B's End of Combat Step	PHASE	B's End of Combat Step
+16	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+16	B's End step	PHASE	B's End step
+16	B's End step	STACK_ADD*	A cast Demon's Due
+16	B's End step	LIFE	Life: A 10 > 8
+16	B's End step	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+16	B's Cleanup step	PHASE	B's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's Main phase, postcombat	STACK_ADD	A cast Ornithopter of Paradise
+17	A's Main phase, postcombat	STACK_ADD	A cast Ruin Crab
+17	A's Main phase, postcombat	STACK_ADD	A cast Corrupt Court Official
+17	A's Main phase, postcombat	STACK_ADD	A triggered Corrupt Court Official targeting [B]
+17	A's Main phase, postcombat	STACK_ADD*	A cast Deliberate
+17	A's Main phase, postcombat	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+17	A's End step	PHASE	A's End step
+17	A's Cleanup step	PHASE	A's Cleanup step
+20	A's Cleanup step	TURN	Turn 20 (B)
+20	B's Untap step	PHASE	B's Untap step
+20	B's Upkeep step	PHASE	B's Upkeep step
+20	B's Draw step	PHASE	B's Draw step
+20	B's Main phase, precombat	PHASE	B's Main phase, precombat
+20	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+20	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+20	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) to attack A.
+20	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+20	B's Declare Blockers Step	COMBAT	A assigned Scheming Aspirant (2) to block The Mouth of Sauron (81).
+20	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+20	B's Combat Damage Step	PHASE	B's Combat Damage Step
+20	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 damage to Scheming Aspirant (2).
+20	B's Combat Damage Step	DAMAGE	Scheming Aspirant (2) deals 1 damage to The Mouth of Sauron (81).
+20	B's Combat Damage Step	ZONE_CHANGE	Scheming Aspirant (2) was put into Graveyard from Battlefield.
+20	B's Combat Damage Step	ZONE_CHANGE	Eaten by Piranhas (67) was put into Graveyard from Battlefield.
+20	B's End of Combat Step	PHASE	B's End of Combat Step
+20	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+20	B's Main phase, postcombat	STACK_ADD	B cast Ghostly Pilferer
+20	B's End step	PHASE	B's End step
+20	B's End step	STACK_ADD*	A cast Delightful Discovery
+20	B's End step	STACK_RESOLVE*	Delightful Discovery (17) - A scries 2. A draws two cards.
+20	B's Cleanup step	PHASE	B's Cleanup step

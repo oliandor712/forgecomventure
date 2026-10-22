@@ -1,0 +1,64 @@
+0		MULLIGAN*	A has kept a hand of 6 cards hand: Blossoming Defense; Forest; Tyvar's Stand; Forest; Mirkwood Spider; Forest
+3	B's Cleanup step	TURN	Turn 3 (A)
+3	A's Untap step	PHASE	A's Untap step
+3	A's Upkeep step	PHASE	A's Upkeep step
+3	A's Draw step	PHASE	A's Draw step
+3	A's Main phase, precombat	PHASE	A's Main phase, precombat
+3	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+3	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Mirkwood Spider (16)]
+3	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (10) - Mirkwood Spider (16) gets +2/+2 and gains hexproof until end of turn.
+3	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+3	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (16) to attack B.
+3	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+3	A's Declare Blockers Step	COMBAT	B didn't block Mirkwood Spider (16).
+3	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+3	A's Combat Damage Step	PHASE	A's Combat Damage Step
+3	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 3 combat damage to B.
+3	A's Combat Damage Step	LIFE	Life: B 20 > 17
+3	A's End of Combat Step	PHASE	A's End of Combat Step
+3	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+3	A's End step	PHASE	A's End step
+3	A's Cleanup step	PHASE	A's Cleanup step
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD	A cast Arasta of the Endless Web
+7	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+7	A's End step	PHASE	A's End step
+7	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Blossoming Defense (10)]
+7	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Blossoming Defense (10) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+7	A's Cleanup step	PHASE	A's Cleanup step
+29	B's Cleanup step	TURN	Turn 29 (A)
+29	A's Untap step	PHASE	A's Untap step
+29	A's Upkeep step	PHASE	A's Upkeep step
+29	A's Draw step	PHASE	A's Draw step
+29	A's Main phase, precombat	PHASE	A's Main phase, precombat
+29	A's Main phase, precombat	STACK_ADD	A activated Hero's Blade targeting [Copper Longlegs (2)]
+29	A's Main phase, precombat	STACK_ADD	A activated Brotherhood Regalia targeting [Copper Longlegs (2)]
+29	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+29	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+29	A's Declare Attackers Step	COMBAT	A assigned Copper Longlegs (2) to attack B.
+29	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+29	A's Declare Blockers Step	COMBAT	B didn't block Copper Longlegs (2).
+29	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+29	A's Combat Damage Step	PHASE	A's Combat Damage Step
+29	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 4 combat damage to B.
+29	A's Combat Damage Step	LIFE	Life: B 12 > 8
+29	A's End of Combat Step	PHASE	A's End of Combat Step
+29	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+29	A's Main phase, postcombat	STACK_ADD	A cast Aftermath Analyst
+29	A's Main phase, postcombat	STACK_ADD	A triggered Aftermath Analyst
+29	A's Main phase, postcombat	ZONE_CHANGE*	A milled Colossus Hammer (1), Forest (25) and Blossoming Defense (9).
+29	A's End step	PHASE	A's End step
+29	A's End step	STACK_ADD	B activated Agatha's Soul Cauldron targeting [Deadly Recluse (15)]
+29	A's End step	STACK_ADD	B triggered Agatha's Soul Cauldron targeting [Phyrexian Dreadnought (42)]
+29	A's Cleanup step	PHASE	A's Cleanup step

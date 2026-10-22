@@ -1,0 +1,90 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Opt; Island; Myriad Landscape; Malakir Rebirth; Omen Hawker; Demon's Due; Corrupt Court Official
+6	A's Cleanup step	TURN	Turn 6 (B)
+6	B's Untap step	PHASE	B's Untap step
+6	B's Upkeep step	PHASE	B's Upkeep step
+6	B's Draw step	PHASE	B's Draw step
+6	B's Main phase, precombat	PHASE	B's Main phase, precombat
+6	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+6	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+6	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+6	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+6	B's Combat Damage Step	PHASE	B's Combat Damage Step
+6	B's End of Combat Step	PHASE	B's End of Combat Step
+6	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+6	B's Main phase, postcombat	STACK_ADD	B cast Ghostly Pilferer
+6	B's End step	PHASE	B's End step
+6	B's End step	STACK_ADD*	A cast Opt
+6	B's End step	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+6	B's Cleanup step	PHASE	B's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Draw step	LIFE	Life: B 13 > 10
+14	B's Draw step	STACK_ADD	B cast Bitter Triumph targeting [Atris, Oracle of Half-Truths (40)]
+14	B's Draw step	ZONE_CHANGE	Atris, Oracle of Half-Truths (40) was put into Graveyard from Battlefield.
+14	B's Draw step	STACK_ADD	A triggered Blood Artist targeting [B]
+14	B's Draw step	LIFE	Life: B 10 > 9
+14	B's Draw step	LIFE	Life: A 17 > 18
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) and Orc Army Token (84) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A didn't block The Mouth of Sauron (81). A didn't block Orc Army Token (84).
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Orc Army Token (84) deals 1 combat damage to A.
+14	B's Combat Damage Step	LIFE	Life: A 18 > 14
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's End step	PHASE	B's End step
+14	B's End step	STACK_ADD*	A cast Demon's Due
+14	B's End step	LIFE	Life: A 14 > 12
+14	B's End step	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+14	B's Cleanup step	PHASE	B's Cleanup step
+16	A's Cleanup step	TURN	Turn 16 (B)
+16	B's Untap step	PHASE	B's Untap step
+16	B's Upkeep step	PHASE	B's Upkeep step
+16	B's Draw step	PHASE	B's Draw step
+16	B's Main phase, precombat	PHASE	B's Main phase, precombat
+16	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+16	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+16	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) to attack A.
+16	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+16	B's Declare Blockers Step	COMBAT	A didn't block The Mouth of Sauron (81).
+16	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+16	B's Combat Damage Step	PHASE	B's Combat Damage Step
+16	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+16	B's Combat Damage Step	LIFE	Life: A 12 > 9
+16	B's End of Combat Step	PHASE	B's End of Combat Step
+16	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+16	B's Main phase, postcombat	STACK_ADD	B cast Blood Artist
+16	B's End step	PHASE	B's End step
+16	B's End step	STACK_ADD*	A cast Demon's Due
+16	B's End step	LIFE	Life: A 9 > 7
+16	B's End step	STACK_RESOLVE*	Demon's Due (19) - A scries 2. A draws two cards. A loses 2 life.
+16	B's End step	STACK_ADD*	A cast Joint Exploration
+16	B's End step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+16	B's Cleanup step	PHASE	B's Cleanup step
+18	A's Cleanup step	TURN	Turn 18 (B)
+18	B's Untap step	PHASE	B's Untap step
+18	B's Upkeep step	PHASE	B's Upkeep step
+18	B's Draw step	PHASE	B's Draw step
+18	B's Main phase, precombat	PHASE	B's Main phase, precombat
+18	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+18	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+18	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) to attack A.
+18	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+18	B's Declare Blockers Step	COMBAT	A didn't block The Mouth of Sauron (81).
+18	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+18	B's Combat Damage Step	PHASE	B's Combat Damage Step
+18	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+18	B's Combat Damage Step	LIFE	Life: A 7 > 4
+18	B's End of Combat Step	PHASE	B's End of Combat Step
+18	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+18	B's End step	PHASE	B's End step
+18	B's End step	STACK_ADD*	A cast Deliberate
+18	B's End step	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+18	B's Cleanup step	PHASE	B's Cleanup step

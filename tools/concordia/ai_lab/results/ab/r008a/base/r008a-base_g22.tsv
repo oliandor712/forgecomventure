@@ -1,0 +1,50 @@
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40) and Deadly Recluse (15) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B didn't block Arasta of the Endless Web (40). B didn't block Deadly Recluse (15).
+10	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Deadly Recluse (15)]
+10	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Deadly Recluse (15) gets +4/+4  until end of turn.
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 combat damage to B.
+10	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 5 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 13 > 5
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Beginning of Combat Step	STACK_ADD*	A cast Giant Growth targeting [Copper Longlegs (2)]
+12	A's Beginning of Combat Step	STACK_RESOLVE*	Giant Growth (19) - Copper Longlegs (2) gets +3/+3  until end of turn.
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Copper Longlegs (2), Arasta of the Endless Web (40) and Deadly Recluse (15) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B assigned Leaf Gilder (74) to block Copper Longlegs (2). B assigned Duskwatch Recruiter (50) to block Arasta of the Endless Web (40). B assigned Collector Ouphe (48) to block Deadly Recluse (15).
+12	A's Declare Blockers Step	STACK_ADD	A cast Tamiyo's Safekeeping targeting [Deadly Recluse (15)]
+12	A's Declare Blockers Step	LIFE	Life: A 20 > 22
+12	A's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+12	A's Declare Blockers Step	STACK_ADD	A triggered Arasta of the Endless Web
+12	A's Declare Blockers Step	STACK_ADD	B triggered Selvala, Heart of the Wilds
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 4 damage to Leaf Gilder (74).
+12	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 damage to Duskwatch Recruiter (50).
+12	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 1 damage (Deathtouch) to Collector Ouphe (48).
+12	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Deadly Recluse (15).
+12	A's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 2 damage to Copper Longlegs (2).
+12	A's Combat Damage Step	DAMAGE	Duskwatch Recruiter (50) deals 2 damage to Arasta of the Endless Web (40).
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step

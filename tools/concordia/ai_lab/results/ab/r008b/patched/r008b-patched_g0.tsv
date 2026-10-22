@@ -1,0 +1,35 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Forest; Destiny Spinner; Titanic Growth; Grappler Spider; Forest; Blossoming Defense; Deadly Recluse
+19	A's Cleanup step	TURN	Turn 19 (B)
+19	B's Untap step	PHASE	B's Untap step
+19	B's Upkeep step	PHASE	B's Upkeep step
+19	B's Draw step	PHASE	B's Draw step
+19	B's Draw step	STACK_ADD	B cast Nature's Claim targeting [Destiny Spinner (6)]
+19	B's Draw step	STACK_ADD	A triggered Destiny Spinner
+19	B's Draw step	STACK_ADD*	A cast Blossoming Defense targeting [Destiny Spinner (6)]
+19	B's Draw step	STACK_RESOLVE*	Blossoming Defense (10) - Destiny Spinner (6) gets +2/+2 and gains hexproof until end of turn.
+19	B's Main phase, precombat	PHASE	B's Main phase, precombat
+19	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+19	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+19	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+19	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+19	B's Combat Damage Step	PHASE	B's Combat Damage Step
+19	B's End of Combat Step	PHASE	B's End of Combat Step
+19	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+19	B's End step	PHASE	B's End step
+19	B's Cleanup step	PHASE	B's Cleanup step
+20	B's Cleanup step	TURN	Turn 20 (A)
+20	A's Untap step	PHASE	A's Untap step
+20	A's Upkeep step	PHASE	A's Upkeep step
+20	A's Draw step	PHASE	A's Draw step
+20	A's Main phase, precombat	PHASE	A's Main phase, precombat
+20	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+20	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+20	A's Declare Attackers Step	COMBAT	A assigned Destiny Spinner (6) to attack B.
+20	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+20	A's Declare Blockers Step	COMBAT	B didn't block Destiny Spinner (6).
+20	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Destiny Spinner (6)]
+20	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Destiny Spinner (6) gets +4/+4  until end of turn.
+20	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+20	A's Combat Damage Step	PHASE	A's Combat Damage Step
+20	A's Combat Damage Step	DAMAGE	Destiny Spinner (6) deals 9 combat damage to B.
+20	A's Combat Damage Step	LIFE	Life: B 9 > 0

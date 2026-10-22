@@ -1,0 +1,72 @@
+0		MULLIGAN*	A has kept a hand of 6 cards hand: Canopy Spider; Forest; Blossoming Defense; Forest; Colossus Hammer; Forest
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22) to attack B.
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Canopy Spider (22).
+6	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Canopy Spider (22)]
+6	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Canopy Spider (22) gets +2/+2 and gains hexproof until end of turn.
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 3 damage to Selvala, Heart of the Wilds (81).
+6	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Canopy Spider (22).
+6	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD	A cast Copper Longlegs
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22) and Copper Longlegs (2) to attack B.
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B didn't block Canopy Spider (22). B didn't block Copper Longlegs (2).
+8	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Copper Longlegs (2)]
+8	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Copper Longlegs (2) gets +3/+3  until end of turn.
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 1 combat damage to B.
+8	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 4 combat damage to B.
+8	A's Combat Damage Step	LIFE	Life: B 20 > 15
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Ruins Recluse
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+23	A's Cleanup step	TURN	Turn 23 (B)
+23	B's Untap step	PHASE	B's Untap step
+23	B's Upkeep step	PHASE	B's Upkeep step
+23	B's Draw step	PHASE	B's Draw step
+23	B's Main phase, precombat	PHASE	B's Main phase, precombat
+23	B's Main phase, precombat	STACK_ADD	B activated Ozolith, the Shattered Spire targeting [Phyrexian Dreadnought (42)]
+23	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+23	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+23	B's Declare Attackers Step	COMBAT	B assigned Phyrexian Dreadnought (42) to attack A.
+23	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+23	B's Declare Blockers Step	COMBAT	A assigned Spider Token (91) and Copper Longlegs (2) to block Phyrexian Dreadnought (42).
+23	B's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Copper Longlegs (2)]
+23	B's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Copper Longlegs (2) gets +4/+4  until end of turn.
+23	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+23	B's Combat Damage Step	PHASE	B's Combat Damage Step
+23	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 4 combat damage to A.
+23	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 7 damage to Copper Longlegs (2).
+23	B's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 3 damage to Spider Token (91).
+23	B's Combat Damage Step	DAMAGE	Spider Token (91) deals 2 damage to Phyrexian Dreadnought (42).
+23	B's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 5 damage to Phyrexian Dreadnought (42).
+23	B's Combat Damage Step	LIFE	Life: A 8 > 4
+23	B's Combat Damage Step	ZONE_CHANGE	Copper Longlegs (2) was put into Graveyard from Battlefield.
+23	B's Combat Damage Step	ZONE_CHANGE	Spider Token (91) was put into Graveyard from Battlefield.
+23	B's End of Combat Step	PHASE	B's End of Combat Step
+23	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+23	B's End step	PHASE	B's End step
+23	B's Cleanup step	PHASE	B's Cleanup step

@@ -1,0 +1,140 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Swamp; Opt; Barren Moor; Vampiric Rites; Island; Opt; Master Pakku
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Main phase, precombat	STACK_ADD	A cast Vampiric Rites
+5	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+5	A's Main phase, precombat	STACK_ADD*	A cast Opt
+5	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+5	A's Main phase, precombat	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Opt (15), Activator: A, SpellAbility: Scry 1. Draw a card.]
+5	A's Main phase, precombat	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+5	A's Main phase, precombat	STACK_ADD*	A cast Opt
+5	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+5	A's Main phase, precombat	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Opt (14), Activator: A, SpellAbility: Scry 1. Draw a card.]
+5	A's Main phase, precombat	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Attackers Step	COMBAT	A assigned Master Pakku (33) to attack B.
+5	A's Declare Attackers Step	STACK_ADD	A triggered Master Pakku targeting [A]
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's Declare Blockers Step	COMBAT	B didn't block Master Pakku (33).
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's Combat Damage Step	DAMAGE	Master Pakku (33) deals 4 combat damage to B.
+5	A's Combat Damage Step	LIFE	Life: B 20 > 16
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Main phase, precombat	STACK_ADD*	A cast Deliberate
+7	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+7	A's Main phase, precombat	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Deliberate (35), Activator: A, SpellAbility: Scry 2, then draw a card. ]
+7	A's Main phase, precombat	STACK_RESOLVE*	Deliberate (35) - A scries 2. A draws a card.
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Master Pakku (33) to attack B.
+7	A's Declare Attackers Step	STACK_ADD	A triggered Master Pakku targeting [A]
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B didn't block Master Pakku (33).
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Master Pakku (33) deals 2 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: B 16 > 14
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD	A cast Omen Hawker
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+8	A's Cleanup step	TURN	Turn 8 (B)
+8	B's Untap step	PHASE	B's Untap step
+8	B's Upkeep step	PHASE	B's Upkeep step
+8	B's Draw step	PHASE	B's Draw step
+8	B's Main phase, precombat	PHASE	B's Main phase, precombat
+8	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+8	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+8	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+8	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+8	B's Combat Damage Step	PHASE	B's Combat Damage Step
+8	B's End of Combat Step	PHASE	B's End of Combat Step
+8	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+8	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+8	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+8	B's Main phase, postcombat	ZONE_CHANGE*	A milled Ornithopter of Paradise (37), Delightful Discovery (18) and Baleful Strix (13).
+8	B's End step	PHASE	B's End step
+8	B's Cleanup step	PHASE	B's Cleanup step
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Draw step	PHASE	A's Draw step
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's End of Combat Step	PHASE	A's End of Combat Step
+15	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+15	A's Main phase, postcombat	STACK_ADD	A cast Stitcher's Supplier
+15	A's Main phase, postcombat	STACK_ADD	A triggered Stitcher's Supplier
+15	A's Main phase, postcombat	ZONE_CHANGE*	A milled Malakir Rebirth (3), Swamp (6) and Demon's Due (19).
+15	A's Main phase, postcombat	STACK_ADD	A activated Barren Moor
+15	A's End step	PHASE	A's End step
+15	A's Cleanup step	PHASE	A's Cleanup step
+16	A's Cleanup step	TURN	Turn 16 (B)
+16	B's Untap step	PHASE	B's Untap step
+16	B's Upkeep step	PHASE	B's Upkeep step
+16	B's Upkeep step	ZONE_CHANGE	Myriad Landscape (66) was put into Graveyard from Battlefield.
+16	B's Upkeep step	STACK_ADD	B activated Myriad Landscape
+16	B's Draw step	PHASE	B's Draw step
+16	B's Main phase, precombat	PHASE	B's Main phase, precombat
+16	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+16	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+16	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+16	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+16	B's Combat Damage Step	PHASE	B's Combat Damage Step
+16	B's End of Combat Step	PHASE	B's End of Combat Step
+16	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+16	B's End step	PHASE	B's End step
+16	B's End step	STACK_ADD*	A cast Joint Exploration
+16	B's End step	STACK_ADD	A triggered Master Pakku
+16	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Joint Exploration (39), Activator: A, SpellAbility: Scry 2, then draw a card.  If this spell was kicked, you may put a land card from your hand onto the battlefield.]
+16	B's End step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+16	B's Cleanup step	PHASE	B's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Main phase, precombat	STACK_ADD*	A cast Deliberate
+17	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+17	A's Main phase, precombat	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Deliberate (34), Activator: A, SpellAbility: Scry 2, then draw a card. ]
+17	A's Main phase, precombat	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+17	A's Main phase, precombat	STACK_ADD*	A cast Demon's Due
+17	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+17	A's Main phase, precombat	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Demon's Due (20), Activator: A, SpellAbility: Scry 2, then draw two cards. You lose 2 life.  ]
+17	A's Main phase, precombat	LIFE	Life: A 18 > 16
+17	A's Main phase, precombat	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+17	A's Main phase, precombat	STACK_ADD	A cast Sol Ring
+17	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Attackers Step	COMBAT	A assigned Master Pakku (33) to attack B.
+17	A's Declare Attackers Step	STACK_ADD	A triggered Master Pakku targeting [A]
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's Declare Blockers Step	COMBAT	B didn't block Master Pakku (33).
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's Combat Damage Step	DAMAGE	Master Pakku (33) deals 4 combat damage to B.
+17	A's Combat Damage Step	LIFE	Life: B 14 > 10
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's Main phase, postcombat	STACK_ADD	A cast Ghostly Pilferer
+17	A's End step	PHASE	A's End step
+17	A's Cleanup step	PHASE	A's Cleanup step

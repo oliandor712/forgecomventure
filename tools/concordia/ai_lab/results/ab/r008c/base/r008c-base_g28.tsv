@@ -1,0 +1,53 @@
+0		MULLIGAN*	A has kept a hand of 6 cards hand: Titanic Growth; Forest; Forest; Sol Ring; Forest; Copper Longlegs
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Beginning of Combat Step	STACK_ADD*	A cast Titanic Growth targeting [Spider Token (85)]
+9	A's Beginning of Combat Step	STACK_RESOLVE*	Titanic Growth (11) - Spider Token (85) gets +4/+4  until end of turn.
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Grappler Spider (17), Mirkwood Spider (16) and Spider Token (85) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B assigned Elvish Skysweeper (51) to block Grappler Spider (17). B didn't block Mirkwood Spider (16). B didn't block Spider Token (85).
+9	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Grappler Spider (17)]
+9	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Grappler Spider (17) gets +2/+2 and gains hexproof until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Grappler Spider (17) deals 4 damage to Elvish Skysweeper (51).
+9	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 1 combat damage to B.
+9	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 5 combat damage to B.
+9	A's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 3 damage to Grappler Spider (17).
+9	A's Combat Damage Step	LIFE	Life: B 13 > 7
+9	A's Combat Damage Step	ZONE_CHANGE	Grappler Spider (17) was put into Graveyard from Battlefield.
+9	A's Combat Damage Step	ZONE_CHANGE	Elvish Skysweeper (51) was put into Graveyard from Battlefield.
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Draw step	PHASE	A's Draw step
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (16), Copper Longlegs (2), Spider Token (85) and Canopy Spider (22) to attack B.
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's Declare Blockers Step	COMBAT	B assigned Boreal Druid (46) to block Mirkwood Spider (16). B didn't block Copper Longlegs (2). B didn't block Spider Token (85). B didn't block Canopy Spider (22).
+15	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Mirkwood Spider (16)]
+15	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Mirkwood Spider (16) gets +4/+4  until end of turn.
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 8 damage (Deathtouch) to Boreal Druid (46).
+15	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 1 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 1 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 1 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Boreal Druid (46) deals 3 damage to Mirkwood Spider (16).
+15	A's Combat Damage Step	LIFE	Life: B 5 > 2
+15	A's Combat Damage Step	ZONE_CHANGE	Boreal Druid (46) was put into Graveyard from Battlefield.
+15	A's End of Combat Step	PHASE	A's End of Combat Step
+15	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+15	A's End step	PHASE	A's End step
+15	A's Cleanup step	PHASE	A's Cleanup step

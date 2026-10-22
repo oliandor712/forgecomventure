@@ -1,0 +1,99 @@
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (16) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B didn't block Mirkwood Spider (16).
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 1 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 17 > 16
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A cast Destiny Spinner
+10	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+10	A's Main phase, postcombat	STACK_ADD	A cast Aftermath Analyst
+10	A's Main phase, postcombat	STACK_ADD	A triggered Aftermath Analyst
+10	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+10	A's Main phase, postcombat	ZONE_CHANGE*	A milled Titanic Growth (11), Colossus Hammer (1) and Forest (33).
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Main phase, precombat	STACK_ADD	A cast Hero's Blade
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Beginning of Combat Step	STACK_ADD*	A cast Giant Growth targeting [Destiny Spinner (6)]
+12	A's Beginning of Combat Step	STACK_RESOLVE*	Giant Growth (19) - Destiny Spinner (6) gets +3/+3  until end of turn.
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22), Mirkwood Spider (16) and Destiny Spinner (6) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) and Viridian Zealot (73) to block Canopy Spider (22). B didn't block Mirkwood Spider (16). B didn't block Destiny Spinner (6).
+12	A's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 2 damage to Selvala, Heart of the Wilds (81).
+12	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 1 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Destiny Spinner (6) deals 5 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Canopy Spider (22).
+12	A's Combat Damage Step	DAMAGE	Viridian Zealot (73) deals 2 damage to Canopy Spider (22).
+12	A's Combat Damage Step	LIFE	Life: B 16 > 10
+12	A's Combat Damage Step	ZONE_CHANGE	Canopy Spider (22) was put into Graveyard from Battlefield.
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+24	B's Cleanup step	TURN	Turn 24 (A)
+24	A's Untap step	PHASE	A's Untap step
+24	A's Upkeep step	PHASE	A's Upkeep step
+24	A's Draw step	PHASE	A's Draw step
+24	A's Main phase, precombat	PHASE	A's Main phase, precombat
+24	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+24	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+24	A's Declare Attackers Step	COMBAT	A assigned Spider Token (85), Mirkwood Spider (16) and Ruins Recluse (13) to attack B.
+24	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+24	A's Declare Blockers Step	COMBAT	B assigned Collector Ouphe (48) to block Spider Token (85). B assigned H.E.R.B.I.E., Lovable Robot (80) to block Mirkwood Spider (16). B assigned Selvala, Heart of the Wilds (81) to block Ruins Recluse (13).
+24	A's Declare Blockers Step	STACK_ADD	A activated Ruins Recluse
+24	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Mirkwood Spider (16)]
+24	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (20) - Mirkwood Spider (16) gets +3/+3  until end of turn.
+24	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+24	A's Combat Damage Step	PHASE	A's Combat Damage Step
+24	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 1 damage to Collector Ouphe (48).
+24	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 4 damage (Deathtouch) to H.E.R.B.I.E., Lovable Robot (80).
+24	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 3 damage (Deathtouch) to Selvala, Heart of the Wilds (81).
+24	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Spider Token (85).
+24	A's Combat Damage Step	DAMAGE	H.E.R.B.I.E., Lovable Robot (80) deals 1 damage to Mirkwood Spider (16).
+24	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Ruins Recluse (13).
+24	A's Combat Damage Step	ZONE_CHANGE	Spider Token (85) was put into Graveyard from Battlefield.
+24	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+24	A's Combat Damage Step	ZONE_CHANGE	H.E.R.B.I.E., Lovable Robot (80) was put into Graveyard from Battlefield.
+24	A's End of Combat Step	PHASE	A's End of Combat Step
+24	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+24	A's End step	PHASE	A's End step
+24	A's Cleanup step	PHASE	A's Cleanup step
+26	B's Cleanup step	TURN	Turn 26 (A)
+26	A's Untap step	PHASE	A's Untap step
+26	A's Upkeep step	PHASE	A's Upkeep step
+26	A's Draw step	PHASE	A's Draw step
+26	A's Main phase, precombat	PHASE	A's Main phase, precombat
+26	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+26	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+26	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (16), Ruins Recluse (13), Aftermath Analyst (8) and Copper Longlegs (2) to attack B.
+26	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+26	A's Declare Blockers Step	COMBAT	B didn't block Mirkwood Spider (16). B assigned Collector Ouphe (48) to block Ruins Recluse (13). B didn't block Aftermath Analyst (8). B didn't block Copper Longlegs (2).
+26	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Mirkwood Spider (16)]
+26	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Mirkwood Spider (16) gets +4/+4  until end of turn.
+26	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+26	A's Combat Damage Step	PHASE	A's Combat Damage Step
+26	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 5 combat damage to B.
+26	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 3 damage (Deathtouch) to Collector Ouphe (48).
+26	A's Combat Damage Step	DAMAGE	Aftermath Analyst (8) deals 1 combat damage to B.
+26	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 1 combat damage to B.
+26	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Ruins Recluse (13).
+26	A's Combat Damage Step	LIFE	Life: B 5 > -2

@@ -1,0 +1,17 @@
+0		MULLIGAN*	A has kept a hand of 6 cards hand: Forest; Hero's Blade; Tyvar's Stand; Forest; Titanic Growth; Forest
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Arasta of the Endless Web (40).
+11	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Arasta of the Endless Web (40)]
+11	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Arasta of the Endless Web (40) gets +4/+4  until end of turn.
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 10 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 10 > 0

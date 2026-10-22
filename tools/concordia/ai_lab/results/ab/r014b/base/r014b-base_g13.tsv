@@ -1,0 +1,116 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Opt; Demon's Due; Master Pakku; Malakir Rebirth; Swamp; Lonely Sandbar; Baleful Strix
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Upkeep step	STACK_ADD*	A cast Deliberate
+8	A's Upkeep step	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Upkeep step	STACK_ADD*	A cast Demon's Due
+10	A's Upkeep step	LIFE	Life: A 13 > 11
+10	A's Upkeep step	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A cast Omen Hawker
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Upkeep step	STACK_ADD*	A cast Opt
+12	A's Upkeep step	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Atris, Oracle of Half-Truths
+12	A's Main phase, postcombat	STACK_ADD	A triggered Atris, Oracle of Half-Truths targeting [B]
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Upkeep step	LIFE	Life: B 20 > 17
+13	B's Upkeep step	STACK_ADD	B cast Bitter Triumph targeting [Atris, Oracle of Half-Truths (40)]
+13	B's Upkeep step	ZONE_CHANGE	Atris, Oracle of Half-Truths (40) was put into Graveyard from Battlefield.
+13	B's Draw step	PHASE	B's Draw step
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Baleful Strix (56) and Gríma Wormtongue (72) to attack A.
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A didn't block Baleful Strix (56). A didn't block Gríma Wormtongue (72).
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Baleful Strix (56) deals 1 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Gríma Wormtongue (72) deals 1 combat damage to A.
+13	B's Combat Damage Step	LIFE	Life: A 9 > 7
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+13	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+13	B's Main phase, postcombat	ZONE_CHANGE*	A milled Vampiric Rites (16), Blood Artist (1) and Joint Exploration (39).
+13	B's End step	PHASE	B's End step
+13	B's Cleanup step	PHASE	B's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Upkeep step	STACK_ADD*	A cast Joint Exploration
+14	A's Upkeep step	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD	A cast Baleful Strix
+14	A's Main phase, postcombat	STACK_ADD	A triggered Baleful Strix
+14	A's Main phase, postcombat	STACK_ADD	A cast Master Pakku
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Upkeep step	STACK_ADD*	A cast Delightful Discovery
+16	A's Upkeep step	STACK_RESOLVE*	Delightful Discovery (17) - A scries 2. A draws two cards.
+16	A's Upkeep step	STACK_ADD*	A cast Opt
+16	A's Upkeep step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	STACK_ADD	A cast Scheming Aspirant
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step

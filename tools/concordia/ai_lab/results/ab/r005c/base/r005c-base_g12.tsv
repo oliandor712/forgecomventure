@@ -1,0 +1,202 @@
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) to attack B.
+5	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4).
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+5	A's Combat Damage Step	LIFE	Life: B 19 > 18
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+5	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) to attack B.
+7	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4).
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: B 18 > 17
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD*	A cast Myr Quadropod
+7	A's Main phase, postcombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) to attack B.
+9	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4).
+9	A's Declare Blockers Step	STACK_ADD*	A activated Myr Quadropod
+9	A's Declare Blockers Step	STACK_RESOLVE*	Myr Quadropod (11) - Myr Quadropod (11) gains hidden cardname's power and toughness are switched until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 17 > 16
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Pollywog Prodigy
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Draw step	STACK_ADD	A cast Merfolk Trickster
+11	A's Draw step	STACK_ADD	A triggered Merfolk Trickster targeting [Containment Construct (42)]
+11	A's Draw step	STACK_ADD	A triggered Pollywog Prodigy
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) to attack B.
+11	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4).
+11	A's Declare Blockers Step	STACK_ADD*	A activated Myr Quadropod
+11	A's Declare Blockers Step	STACK_RESOLVE*	Myr Quadropod (11) - Myr Quadropod (11) gains hidden cardname's power and toughness are switched until end of turn.
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 16 > 15
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Main phase, precombat	STACK_ADD	B cast Rise and Shine targeting [Mask of Memory (68)]
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned Mask of Memory (68) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT*	A assigned Merfolk Trickster (20), Pollywog Prodigy (17) and Myr Quadropod (11) to block Mask of Memory (68).
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE	Mask of Memory (68) deals 1 damage to Pollywog Prodigy (17).
+12	B's Combat Damage Step	DAMAGE*	Mask of Memory (68) deals 4 damage to Myr Quadropod (11).
+12	B's Combat Damage Step	DAMAGE	Merfolk Trickster (20) deals 2 damage to Mask of Memory (68).
+12	B's Combat Damage Step	DAMAGE	Pollywog Prodigy (17) deals 2 damage to Mask of Memory (68).
+12	B's Combat Damage Step	DAMAGE*	Myr Quadropod (11) deals 1 damage to Mask of Memory (68).
+12	B's Combat Damage Step	ZONE_CHANGE	Mask of Memory (68) was put into Graveyard from Battlefield.
+12	B's Combat Damage Step	ZONE_CHANGE*	Myr Quadropod (11) was put into Graveyard from Battlefield.
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's Main phase, postcombat	STACK_ADD	B cast Millikin
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) to attack B.
+17	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4).
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+17	A's Combat Damage Step	LIFE	Life: B 13 > 12
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+17	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+17	A's End step	PHASE	A's End step
+17	A's Cleanup step	PHASE	A's Cleanup step
+20	A's Cleanup step	TURN	Turn 20 (B)
+20	B's Untap step	PHASE	B's Untap step
+20	B's Upkeep step	PHASE	B's Upkeep step
+20	B's Draw step	PHASE	B's Draw step
+20	B's Main phase, precombat	PHASE	B's Main phase, precombat
+20	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+20	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+20	B's Declare Attackers Step	COMBAT	B assigned Thopter Token (85), Thopter Token (88) and Thopter Token (91) to attack A.
+20	B's Declare Attackers Step	STACK_ADD	A cast Stream of Unconsciousness targeting [Thopter Token (85)]
+20	B's Declare Attackers Step	STACK_ADD*	A activated Aquamoeba
+20	B's Declare Attackers Step	STACK_RESOLVE*	Aquamoeba (15) - Aquamoeba (15) gains hidden cardname's power and toughness are switched until end of turn.
+20	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+20	B's Declare Blockers Step	COMBAT	A didn't block Thopter Token (85). A didn't block Thopter Token (88). A didn't block Thopter Token (91).
+20	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+20	B's Combat Damage Step	PHASE	B's Combat Damage Step
+20	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 3 combat damage to A.
+20	B's Combat Damage Step	DAMAGE	Thopter Token (91) deals 3 combat damage to A.
+20	B's Combat Damage Step	LIFE	Life: A 17 > 11
+20	B's End of Combat Step	PHASE	B's End of Combat Step
+20	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+20	B's Main phase, postcombat	STACK_ADD	B cast Idol of Oblivion
+20	B's Main phase, postcombat	STACK_ADD	B triggered Sai, Master Thopterist
+20	B's Main phase, postcombat	STACK_ADD	B activated Idol of Oblivion
+20	B's Main phase, postcombat	STACK_ADD	B cast Mycosynth Wellspring
+20	B's Main phase, postcombat	STACK_ADD	B triggered Sai, Master Thopterist
+20	B's Main phase, postcombat	STACK_ADD	B triggered Mycosynth Wellspring
+20	B's End step	PHASE	B's End step
+20	B's Cleanup step	PHASE	B's Cleanup step
+22	A's Cleanup step	TURN	Turn 22 (B)
+22	B's Untap step	PHASE	B's Untap step
+22	B's Upkeep step	PHASE	B's Upkeep step
+22	B's Draw step	PHASE	B's Draw step
+22	B's Main phase, precombat	PHASE	B's Main phase, precombat
+22	B's Main phase, precombat	STACK_ADD	B cast Trailblazer's Boots
+22	B's Main phase, precombat	STACK_ADD	B triggered Sai, Master Thopterist
+22	B's Main phase, precombat	STACK_ADD	B activated Trailblazer's Boots targeting [Sai, Master Thopterist (81)]
+22	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+22	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+22	B's Declare Attackers Step	COMBAT	B assigned Containment Construct (42), Thopter Token (85), Thopter Token (88), Thopter Token (91), Thopter Token (97), Thopter Token (100), Chief of the Foundry (49), Universal Automaton (70), Millikin (79) and Sai, Master Thopterist (81) to attack A.
+22	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+22	B's Declare Blockers Step	COMBAT*	A assigned Triton Shorestalker (4) and Pollywog Prodigy (17) to block Containment Construct (42). A assigned Drake Token (94) to block Thopter Token (85). A didn't block Thopter Token (88). A didn't block Thopter Token (91). A didn't block Thopter Token (97). A didn't block Thopter Token (100). A assigned Silvergill Adept (3) and Alandra, Sky Dreamer (40) to block Chief of the Foundry (49). A assigned Merfolk Trickster (20) to block Universal Automaton (70). A assigned Aquamoeba (14) to block Millikin (79). A assigned Aquamoeba (15), Vodalian Arcanist (10) and Karfell Harbinger (2) to block Sai, Master Thopterist (81).
+22	B's Declare Blockers Step	STACK_ADD*	A activated Aquamoeba
+22	B's Declare Blockers Step	STACK_RESOLVE*	Aquamoeba (15) - Aquamoeba (15) gains hidden cardname's power and toughness are switched until end of turn.
+22	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+22	B's Combat Damage Step	PHASE	B's Combat Damage Step
+22	B's Combat Damage Step	DAMAGE	Containment Construct (42) deals 2 damage to Pollywog Prodigy (17).
+22	B's Combat Damage Step	DAMAGE	Containment Construct (42) deals 1 damage to Triton Shorestalker (4).
+22	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 3 damage to Drake Token (94).
+22	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 3 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Thopter Token (91) deals 3 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Thopter Token (97) deals 3 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Thopter Token (100) deals 3 combat damage to A.
+22	B's Combat Damage Step	DAMAGE	Chief of the Foundry (49) deals 1 damage to Silvergill Adept (3).
+22	B's Combat Damage Step	DAMAGE	Chief of the Foundry (49) deals 1 damage to Alandra, Sky Dreamer (40).
+22	B's Combat Damage Step	DAMAGE	Universal Automaton (70) deals 2 damage to Merfolk Trickster (20).
+22	B's Combat Damage Step	DAMAGE*	Millikin (79) deals 1 damage to Aquamoeba (14).
+22	B's Combat Damage Step	DAMAGE*	Sai, Master Thopterist (81) deals 1 damage to Aquamoeba (15).
+22	B's Combat Damage Step	DAMAGE	Drake Token (94) deals 2 damage to Thopter Token (85).
+22	B's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 damage to Containment Construct (42).
+22	B's Combat Damage Step	DAMAGE	Pollywog Prodigy (17) deals 2 damage to Containment Construct (42).
+22	B's Combat Damage Step	DAMAGE	Silvergill Adept (3) deals 2 damage to Chief of the Foundry (49).
+22	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Chief of the Foundry (49).
+22	B's Combat Damage Step	DAMAGE	Merfolk Trickster (20) deals 2 damage to Universal Automaton (70).
+22	B's Combat Damage Step	DAMAGE*	Aquamoeba (15) deals 3 damage to Sai, Master Thopterist (81).
+22	B's Combat Damage Step	DAMAGE	Vodalian Arcanist (10) deals 1 damage to Sai, Master Thopterist (81).
+22	B's Combat Damage Step	DAMAGE	Karfell Harbinger (2) deals 1 damage to Sai, Master Thopterist (81).
+22	B's Combat Damage Step	DAMAGE*	Aquamoeba (14) deals 1 damage to Millikin (79).
+22	B's Combat Damage Step	LIFE	Life: A 11 > -1

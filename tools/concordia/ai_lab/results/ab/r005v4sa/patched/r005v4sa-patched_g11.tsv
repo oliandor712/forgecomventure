@@ -1,0 +1,53 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Island; Stonybrook Banneret; Serum Visions; Deranged Assistant; Turtleshell Changeling; Island; Stream of Unconsciousness
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+8	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+8	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=8 phase=MAIN2 opp_creatures=5 no_blockers=false helps=false
+8	A's End step	PHASE	A's End step
+8	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=8 phase=END_OF_TURN opp_creatures=5 no_blockers=false helps=false
+8	A's Cleanup step	PHASE	A's Cleanup step
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=UPKEEP opp_creatures=5 no_blockers=false helps=false
+9	B's Draw step	PHASE	B's Draw step
+9	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=DRAW opp_creatures=5 no_blockers=false helps=false
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=MAIN1 opp_creatures=5 no_blockers=false helps=false
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=COMBAT_BEGIN opp_creatures=5 no_blockers=false helps=false
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Attackers Step	COMBAT	B assigned Sol Ring (46) and Mask of Memory (68) to attack A.
+9	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=5 no_blockers=false helps=false
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's Declare Blockers Step	COMBAT*	A assigned Merfolk Trickster (20), Vodalian Arcanist (10) and Turtleshell Changeling (9) to block Sol Ring (46). A didn't block Mask of Memory (68).
+9	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=5 no_blockers=false helps=false
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's Combat Damage Step	DAMAGE*	Sol Ring (46) deals 4 damage to Turtleshell Changeling (9).
+9	B's Combat Damage Step	DAMAGE	Mask of Memory (68) deals 4 combat damage to A.
+9	B's Combat Damage Step	DAMAGE	Merfolk Trickster (20) deals 2 damage to Sol Ring (46).
+9	B's Combat Damage Step	DAMAGE	Vodalian Arcanist (10) deals 1 damage to Sol Ring (46).
+9	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (9) deals 1 damage to Sol Ring (46).
+9	B's Combat Damage Step	LIFE	Life: A 20 > 16
+9	B's Combat Damage Step	ZONE_CHANGE	Sol Ring (46) was put into Graveyard from Battlefield.
+9	B's Combat Damage Step	ZONE_CHANGE*	Turtleshell Changeling (9) was put into Graveyard from Battlefield.
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's Main phase, postcombat	STACK_ADD	B cast Wall of Junk
+9	B's Main phase, postcombat	STACK_ADD	B triggered Sai, Master Thopterist
+9	B's Main phase, postcombat	STACK_ADD	B cast Swiftfoot Boots
+9	B's Main phase, postcombat	STACK_ADD	B triggered Sai, Master Thopterist
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step

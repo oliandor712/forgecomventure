@@ -1,0 +1,68 @@
+0		MULLIGAN*	A has kept a hand of 6 cards hand: Ruins Recluse; Forest; Titanic Growth; Forest; Snakeskin Veil; Forest
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Beginning of Combat Step	STACK_ADD	A cast Snakeskin Veil targeting [Ruins Recluse (13)]
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	COMBAT	A assigned Ruins Recluse (13) to attack B.
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Ruins Recluse (13).
+6	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Ruins Recluse (13)]
+6	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Ruins Recluse (13) gets +4/+4  until end of turn.
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 6 damage (Deathtouch) to Selvala, Heart of the Wilds (81).
+6	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Ruins Recluse (13).
+6	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Ruins Recluse (13) and Spider Token (86) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B didn't block Ruins Recluse (13). B didn't block Spider Token (86).
+10	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Spider Token (86)]
+10	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Spider Token (86) gets +3/+3  until end of turn.
+10	A's Declare Blockers Step	STACK_ADD	A activated Ruins Recluse
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 3 combat damage to B.
+10	A's Combat Damage Step	DAMAGE	Spider Token (86) deals 4 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 18 > 11
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Ruins Recluse (13) and Spider Token (86) to attack B.
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B assigned Elvish Mystic (77) to block Ruins Recluse (13). B didn't block Spider Token (86).
+14	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Spider Token (86)]
+14	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (10) - Spider Token (86) gets +2/+2 and gains hexproof until end of turn.
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 3 damage (Deathtouch) to Elvish Mystic (77).
+14	A's Combat Damage Step	DAMAGE	Spider Token (86) deals 3 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Elvish Mystic (77) deals 1 damage to Ruins Recluse (13).
+14	A's Combat Damage Step	LIFE	Life: B 7 > 4
+14	A's Combat Damage Step	ZONE_CHANGE	Elvish Mystic (77) was put into Graveyard from Battlefield.
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step

@@ -1,0 +1,113 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Ornithopter of Paradise; Vampiric Rites; Swamp; Swamp; Island; Delightful Discovery; Island
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Upkeep step	ZONE_CHANGE	Myriad Landscape (66) was put into Graveyard from Battlefield.
+9	B's Upkeep step	STACK_ADD	B activated Myriad Landscape
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Main phase, precombat	STACK_ADD	B cast Eaten by Piranhas targeting [Atris, Oracle of Half-Truths (40)]
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's End step	PHASE	B's End step
+9	B's End step	STACK_ADD*	A cast Opt
+9	B's End step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+9	B's Cleanup step	PHASE	B's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+11	B's Main phase, postcombat	STACK_ADD	A triggered Ghostly Pilferer
+11	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+11	B's Main phase, postcombat	ZONE_CHANGE*	A milled Baleful Strix (13), Bojuka Bog (36) and Joint Exploration (38).
+11	B's Main phase, postcombat	STACK_ADD	B cast Baleful Strix
+11	B's Main phase, postcombat	STACK_ADD	B triggered Baleful Strix
+11	B's End step	PHASE	B's End step
+11	B's End step	STACK_ADD*	A cast Delightful Discovery
+11	B's End step	STACK_RESOLVE*	Delightful Discovery (17) - A scries 2. A draws two cards.
+11	B's Cleanup step	PHASE	B's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Draw step	PHASE	B's Draw step
+13	B's Draw step	STACK_ADD	B cast Drown in the Loch
+13	B's Draw step	ZONE_CHANGE	Ghostly Pilferer (28) was put into Graveyard from Battlefield.
+13	B's Draw step	STACK_ADD	B triggered Blood Artist targeting [A]
+13	B's Draw step	STACK_ADD	A triggered Blood Artist targeting [B]
+13	B's Draw step	LIFE	Life: B 16 > 15
+13	B's Draw step	LIFE	Life: A 20 > 21
+13	B's Draw step	LIFE	Life: A 21 > 20
+13	B's Draw step	LIFE	Life: B 15 > 16
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Boggart Trawler (74), The Mouth of Sauron (81) and Baleful Strix (56) to attack A.
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A assigned Stitcher's Supplier (32) to block Boggart Trawler (74). A didn't block The Mouth of Sauron (81). A didn't block Baleful Strix (56).
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Boggart Trawler (74) deals 3 damage to Stitcher's Supplier (32).
+13	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Baleful Strix (56) deals 1 combat damage to A.
+13	B's Combat Damage Step	DAMAGE	Stitcher's Supplier (32) deals 1 damage to Boggart Trawler (74).
+13	B's Combat Damage Step	LIFE	Life: A 20 > 16
+13	B's Combat Damage Step	ZONE_CHANGE	Boggart Trawler (74) was put into Graveyard from Battlefield.
+13	B's Combat Damage Step	ZONE_CHANGE	Stitcher's Supplier (32) was put into Graveyard from Battlefield.
+13	B's Combat Damage Step	STACK_ADD	B triggered Blood Artist targeting [A]
+13	B's Combat Damage Step	STACK_ADD	B triggered Blood Artist targeting [A]
+13	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+13	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+13	B's Combat Damage Step	STACK_ADD	A triggered Stitcher's Supplier
+13	B's Combat Damage Step	ZONE_CHANGE*	A milled Deliberate (35), Demon's Due (20) and Swamp (9).
+13	B's Combat Damage Step	LIFE	Life: B 16 > 15
+13	B's Combat Damage Step	LIFE	Life: A 16 > 17
+13	B's Combat Damage Step	LIFE	Life: B 15 > 14
+13	B's Combat Damage Step	LIFE	Life: A 17 > 18
+13	B's Combat Damage Step	LIFE	Life: A 18 > 17
+13	B's Combat Damage Step	LIFE	Life: B 14 > 15
+13	B's Combat Damage Step	LIFE	Life: A 17 > 16
+13	B's Combat Damage Step	LIFE	Life: B 15 > 16
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's Main phase, postcombat	STACK_ADD	B cast Scheming Aspirant
+13	B's Main phase, postcombat	STACK_ADD	B cast Zulaport Cutthroat
+13	B's End step	PHASE	B's End step
+13	B's Cleanup step	PHASE	B's Cleanup step
+19	A's Cleanup step	TURN	Turn 19 (B)
+19	B's Untap step	PHASE	B's Untap step
+19	B's Upkeep step	PHASE	B's Upkeep step
+19	B's Draw step	PHASE	B's Draw step
+19	B's Main phase, precombat	PHASE	B's Main phase, precombat
+19	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+19	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+19	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) and Baleful Strix (56) to attack A.
+19	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+19	B's Declare Blockers Step	COMBAT	A didn't block The Mouth of Sauron (81). A didn't block Baleful Strix (56).
+19	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+19	B's Combat Damage Step	PHASE	B's Combat Damage Step
+19	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+19	B's Combat Damage Step	DAMAGE	Baleful Strix (56) deals 1 combat damage to A.
+19	B's Combat Damage Step	LIFE	Life: A 8 > 4
+19	B's End of Combat Step	PHASE	B's End of Combat Step
+19	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+19	B's Main phase, postcombat	STACK_ADD	B cast Gríma Wormtongue
+19	B's End step	PHASE	B's End step
+19	B's End step	STACK_ADD*	A cast Deliberate
+19	B's End step	STACK_ADD	A triggered Master Pakku
+19	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Deliberate (34), Activator: A, SpellAbility: Scry 2, then draw a card. ]
+19	B's End step	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+19	B's Cleanup step	PHASE	B's Cleanup step

@@ -1,0 +1,108 @@
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) to attack B.
+7	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4).
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 2 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: B 20 > 18
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+7	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) to attack B.
+9	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4).
+9	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+9	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 2 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 18 > 16
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Stonybrook Banneret
+9	A's Main phase, postcombat	STACK_ADD	A cast Serum Visions
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Triton Shorestalker (4) and Stonybrook Banneret (21) to attack B.
+11	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Triton Shorestalker (4). B didn't block Stonybrook Banneret (21).
+11	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+11	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 2 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 16 > 13
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD	A cast Alandra, Sky Dreamer
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Beginning of Combat Step	STACK_ADD*	A activated Turtleshell Changeling
+14	B's Beginning of Combat Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned Eldrazi Token (106), Aetherjacket (47), Thopter Token (85), Thopter Token (88), Ornithopter of Paradise (80), Myr Retriever (43), Sai, Master Thopterist (81) and Universal Automaton (70) to attack A.
+14	B's Declare Attackers Step	STACK_ADD	A cast Stream of Unconsciousness targeting [Eldrazi Token (106)]
+14	B's Declare Attackers Step	STACK_ADD	A cast Merfolk Trickster
+14	B's Declare Attackers Step	STACK_ADD	A triggered Merfolk Trickster targeting [Aetherjacket (47)]
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT*	A assigned Alandra, Sky Dreamer (40) to block Eldrazi Token (106). A assigned Stonybrook Banneret (21) to block Aetherjacket (47). A didn't block Thopter Token (85). A didn't block Thopter Token (88). A didn't block Ornithopter of Paradise (80). A assigned Triton Shorestalker (4) to block Myr Retriever (43). A assigned Turtleshell Changeling (7) to block Sai, Master Thopterist (81). A assigned Merfolk Trickster (20) to block Universal Automaton (70).
+14	B's Declare Blockers Step	ZONE_CHANGE	Universal Automaton (70) was put into Graveyard from Battlefield.
+14	B's Declare Blockers Step	ZONE_CHANGE	Myr Retriever (43) was put into Graveyard from Battlefield.
+14	B's Declare Blockers Step	STACK_ADD	B activated Sai, Master Thopterist
+14	B's Declare Blockers Step	STACK_ADD	B triggered Myr Retriever targeting [Universal Automaton (70)]
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	Eldrazi Token (106) deals 6 damage to Alandra, Sky Dreamer (40).
+14	B's Combat Damage Step	DAMAGE	Aetherjacket (47) deals 2 damage to Stonybrook Banneret (21).
+14	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 2 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 2 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Ornithopter of Paradise (80) deals 1 combat damage to A.
+14	B's Combat Damage Step	DAMAGE*	Sai, Master Thopterist (81) deals 1 damage to Turtleshell Changeling (7).
+14	B's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 damage to Aetherjacket (47).
+14	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (7) deals 4 damage to Sai, Master Thopterist (81).
+14	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Eldrazi Token (106).
+14	B's Combat Damage Step	LIFE	Life: A 6 > 1
+14	B's Combat Damage Step	ZONE_CHANGE	Aetherjacket (47) was put into Graveyard from Battlefield.
+14	B's Combat Damage Step	ZONE_CHANGE	Sai, Master Thopterist (81) was put into Graveyard from Battlefield.
+14	B's Combat Damage Step	ZONE_CHANGE*	Turtleshell Changeling (7) was put into Graveyard from Battlefield.
+14	B's Combat Damage Step	ZONE_CHANGE	Stonybrook Banneret (21) was put into Graveyard from Battlefield.
+14	B's Combat Damage Step	ZONE_CHANGE	Alandra, Sky Dreamer (40) was put into Graveyard from Battlefield.
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's Main phase, postcombat	STACK_ADD	B cast Universal Automaton
+14	B's End step	PHASE	B's End step
+14	B's Cleanup step	PHASE	B's Cleanup step

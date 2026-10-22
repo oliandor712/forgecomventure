@@ -1,0 +1,158 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Island; Deranged Assistant; Turtleshell Changeling; Aquamoeba; Slip Out the Back; Island; Island
+3	B's Cleanup step	TURN	Turn 3 (A)
+3	A's Untap step	PHASE	A's Untap step
+3	A's Upkeep step	PHASE	A's Upkeep step
+3	A's Draw step	PHASE	A's Draw step
+3	A's Main phase, precombat	PHASE	A's Main phase, precombat
+3	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+3	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+3	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+3	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+3	A's Combat Damage Step	PHASE	A's Combat Damage Step
+3	A's End of Combat Step	PHASE	A's End of Combat Step
+3	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+3	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+3	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+3	A's End step	PHASE	A's End step
+3	A's Cleanup step	PHASE	A's Cleanup step
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's Main phase, postcombat	STACK_ADD*	A cast Aquamoeba
+5	A's Main phase, postcombat	STACK_RESOLVE*	Aquamoeba - Creature 1 / 3
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+6	A's Cleanup step	TURN	Turn 6 (B)
+6	B's Untap step	PHASE	B's Untap step
+6	B's Upkeep step	PHASE	B's Upkeep step
+6	B's Draw step	PHASE	B's Draw step
+6	B's Main phase, precombat	PHASE	B's Main phase, precombat
+6	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+6	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+6	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+6	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+6	B's Combat Damage Step	PHASE	B's Combat Damage Step
+6	B's End of Combat Step	PHASE	B's End of Combat Step
+6	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+6	B's Main phase, postcombat	STACK_ADD	B cast Sai, Master Thopterist
+6	B's End step	PHASE	B's End step
+6	B's End step	STACK_ADD*	A cast Slip Out the Back targeting [Aquamoeba (15)]
+6	B's End step	STACK_RESOLVE*	Slip Out the Back (18) - A puts a +1/+1 counter on Aquamoeba (15). Aquamoeba (15) phases out.
+6	B's Cleanup step	PHASE	B's Cleanup step
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+7	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+10	A's Cleanup step	TURN	Turn 10 (B)
+10	B's Untap step	PHASE	B's Untap step
+10	B's Upkeep step	PHASE	B's Upkeep step
+10	B's Draw step	PHASE	B's Draw step
+10	B's Main phase, precombat	PHASE	B's Main phase, precombat
+10	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+10	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+10	B's Declare Attackers Step	COMBAT	B assigned Sol Ring (46) and Arcane Signet (75) to attack A.
+10	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+10	B's Declare Blockers Step	COMBAT*	A didn't block Sol Ring (46). A assigned Alandra, Sky Dreamer (40) and Aquamoeba (15) to block Arcane Signet (75).
+10	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+10	B's Combat Damage Step	PHASE	B's Combat Damage Step
+10	B's Combat Damage Step	DAMAGE	Sol Ring (46) deals 4 combat damage to A.
+10	B's Combat Damage Step	DAMAGE	Arcane Signet (75) deals 4 damage to Alandra, Sky Dreamer (40).
+10	B's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 damage to Arcane Signet (75).
+10	B's Combat Damage Step	DAMAGE*	Aquamoeba (15) deals 2 damage to Arcane Signet (75).
+10	B's Combat Damage Step	LIFE	Life: A 20 > 16
+10	B's Combat Damage Step	ZONE_CHANGE	Arcane Signet (75) was put into Graveyard from Battlefield.
+10	B's Combat Damage Step	ZONE_CHANGE	Alandra, Sky Dreamer (40) was put into Graveyard from Battlefield.
+10	B's End of Combat Step	PHASE	B's End of Combat Step
+10	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+10	B's End step	PHASE	B's End step
+10	B's Cleanup step	PHASE	B's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Main phase, precombat	STACK_ADD	B cast Swiftfoot Boots
+12	B's Main phase, precombat	STACK_ADD	B triggered Sai, Master Thopterist
+12	B's Main phase, precombat	STACK_ADD	B activated Swiftfoot Boots targeting [Sol Ring (46)]
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned Sol Ring (46) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT*	A assigned Turtleshell Changeling (8), Aquamoeba (16) and Aquamoeba (15) to block Sol Ring (46).
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE*	Sol Ring (46) deals 4 damage to Aquamoeba (15).
+12	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (8) deals 1 damage to Sol Ring (46).
+12	B's Combat Damage Step	DAMAGE*	Aquamoeba (16) deals 1 damage to Sol Ring (46).
+12	B's Combat Damage Step	DAMAGE*	Aquamoeba (15) deals 2 damage to Sol Ring (46).
+12	B's Combat Damage Step	ZONE_CHANGE	Sol Ring (46) was put into Graveyard from Battlefield.
+12	B's Combat Damage Step	ZONE_CHANGE*	Aquamoeba (15) was put into Graveyard from Battlefield.
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's Main phase, postcombat	STACK_ADD	B activated Swiftfoot Boots targeting [Sai, Master Thopterist (81)]
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step
+19	B's Cleanup step	TURN	Turn 19 (A)
+19	A's Untap step	PHASE	A's Untap step
+19	A's Upkeep step	PHASE	A's Upkeep step
+19	A's Draw step	PHASE	A's Draw step
+19	A's Main phase, precombat	PHASE	A's Main phase, precombat
+19	A's Main phase, precombat	STACK_ADD*	A cast Aqueous Form targeting [Turtleshell Changeling (8)]
+19	A's Main phase, precombat	STACK_RESOLVE*	Aqueous Form (5) -  Attach to Turtleshell Changeling (8)
+19	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+19	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+19	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+19	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+19	A's Combat Damage Step	PHASE	A's Combat Damage Step
+19	A's End of Combat Step	PHASE	A's End of Combat Step
+19	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+19	A's End step	PHASE	A's End step
+19	A's Cleanup step	PHASE	A's Cleanup step
+20	A's Cleanup step	TURN	Turn 20 (B)
+20	B's Untap step	PHASE	B's Untap step
+20	B's Upkeep step	PHASE	B's Upkeep step
+20	B's Draw step	PHASE	B's Draw step
+20	B's Main phase, precombat	PHASE	B's Main phase, precombat
+20	B's Main phase, precombat	STACK_ADD	B cast Trailblazer's Boots
+20	B's Main phase, precombat	STACK_ADD	B triggered Sai, Master Thopterist
+20	B's Main phase, precombat	STACK_ADD	B activated Trailblazer's Boots targeting [Sai, Master Thopterist (81)]
+20	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+20	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+20	B's Declare Attackers Step	COMBAT	B assigned Containment Construct (42), Thopter Token (85), Thopter Token (88), Thopter Token (91), Thopter Token (94), Sai, Master Thopterist (81) and Ornithopter (69) to attack A.
+20	B's Declare Attackers Step	STACK_ADD	A cast Stream of Unconsciousness targeting [Ornithopter (69)]
+20	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+20	B's Declare Blockers Step	COMBAT*	A assigned Deranged Assistant (1) to block Containment Construct (42). A didn't block Thopter Token (85). A didn't block Thopter Token (88). A didn't block Thopter Token (91). A didn't block Thopter Token (94). A assigned Merfolk Trickster (20), Aquamoeba (16) and Turtleshell Changeling (8) to block Sai, Master Thopterist (81). A didn't block Ornithopter (69).
+20	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+20	B's Combat Damage Step	PHASE	B's Combat Damage Step
+20	B's Combat Damage Step	DAMAGE	Containment Construct (42) deals 2 damage to Deranged Assistant (1).
+20	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 2 combat damage to A.
+20	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 2 combat damage to A.
+20	B's Combat Damage Step	DAMAGE	Thopter Token (91) deals 2 combat damage to A.
+20	B's Combat Damage Step	DAMAGE	Thopter Token (94) deals 2 combat damage to A.
+20	B's Combat Damage Step	DAMAGE*	Sai, Master Thopterist (81) deals 1 damage to Turtleshell Changeling (8).
+20	B's Combat Damage Step	DAMAGE	Deranged Assistant (1) deals 1 damage to Containment Construct (42).
+20	B's Combat Damage Step	DAMAGE	Merfolk Trickster (20) deals 2 damage to Sai, Master Thopterist (81).
+20	B's Combat Damage Step	DAMAGE*	Aquamoeba (16) deals 1 damage to Sai, Master Thopterist (81).
+20	B's Combat Damage Step	DAMAGE*	Turtleshell Changeling (8) deals 1 damage to Sai, Master Thopterist (81).
+20	B's Combat Damage Step	LIFE	Life: A 4 > -4

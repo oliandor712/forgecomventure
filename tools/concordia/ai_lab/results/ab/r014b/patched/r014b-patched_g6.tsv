@@ -1,0 +1,58 @@
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD	A cast Stitcher's Supplier
+6	A's Main phase, postcombat	STACK_ADD	A triggered Stitcher's Supplier
+6	A's Main phase, postcombat	ZONE_CHANGE*	A milled Deliberate (34), Demon's Due (20) and Joint Exploration (38).
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+25	A's Cleanup step	TURN	Turn 25 (B)
+25	B's Untap step	PHASE	B's Untap step
+25	B's Upkeep step	PHASE	B's Upkeep step
+25	B's Draw step	PHASE	B's Draw step
+25	B's Main phase, precombat	PHASE	B's Main phase, precombat
+25	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+25	B's Main phase, precombat	ZONE_CHANGE*	A milled Ornithopter of Paradise (37), Tainted Isle (5) and Delightful Discovery (17).
+25	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+25	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+25	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+25	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+25	B's Combat Damage Step	PHASE	B's Combat Damage Step
+25	B's End of Combat Step	PHASE	B's End of Combat Step
+25	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+25	B's End step	PHASE	B's End step
+25	B's End step	STACK_ADD*	A cast Joint Exploration
+25	B's End step	STACK_ADD	A triggered Master Pakku
+25	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Joint Exploration (39), Activator: A, SpellAbility: Scry 2, then draw a card.  If this spell was kicked, you may put a land card from your hand onto the battlefield.]
+25	B's End step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+25	B's Cleanup step	PHASE	B's Cleanup step
+27	A's Cleanup step	TURN	Turn 27 (B)
+27	B's Untap step	PHASE	B's Untap step
+27	B's Upkeep step	PHASE	B's Upkeep step
+27	B's Draw step	PHASE	B's Draw step
+27	B's Main phase, precombat	PHASE	B's Main phase, precombat
+27	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+27	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+27	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+27	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+27	B's Combat Damage Step	PHASE	B's Combat Damage Step
+27	B's End of Combat Step	PHASE	B's End of Combat Step
+27	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+27	B's Main phase, postcombat	STACK_ADD	B cast Corrupt Court Official
+27	B's Main phase, postcombat	STACK_ADD	B triggered Corrupt Court Official targeting [A]
+27	B's Main phase, postcombat	DISCARD*	A discards Opt (14).
+27	B's End step	PHASE	B's End step
+27	B's End step	STACK_ADD*	A cast Deliberate
+27	B's End step	STACK_ADD	A triggered Master Pakku
+27	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Deliberate (35), Activator: A, SpellAbility: Scry 2, then draw a card. ]
+27	B's End step	STACK_RESOLVE*	Deliberate (35) - A scries 2. A draws a card.
+27	B's Cleanup step	PHASE	B's Cleanup step

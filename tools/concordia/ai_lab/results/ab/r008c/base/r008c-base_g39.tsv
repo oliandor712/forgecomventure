@@ -1,0 +1,18 @@
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22) and Arasta of the Endless Web (40) to attack B.
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's Declare Blockers Step	COMBAT	B assigned H.E.R.B.I.E., Lovable Robot (80) to block Canopy Spider (22). B didn't block Arasta of the Endless Web (40).
+17	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Arasta of the Endless Web (40)]
+17	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Arasta of the Endless Web (40) gets +4/+4  until end of turn.
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 1 damage to H.E.R.B.I.E., Lovable Robot (80).
+17	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 7 combat damage to B.
+17	A's Combat Damage Step	DAMAGE	H.E.R.B.I.E., Lovable Robot (80) deals 3 damage to Canopy Spider (22).
+17	A's Combat Damage Step	LIFE	Life: B 7 > 0

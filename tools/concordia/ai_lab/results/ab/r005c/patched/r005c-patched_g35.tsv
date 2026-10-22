@@ -1,0 +1,148 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Turtleshell Changeling; Island; Sol Ring; Aqueous Form; Turtleshell Changeling; Island; Island
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+4	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+4	A's End step	PHASE	A's End step
+4	A's Cleanup step	PHASE	A's Cleanup step
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Main phase, precombat	STACK_ADD*	A cast Aqueous Form targeting [Turtleshell Changeling (8)]
+6	A's Main phase, precombat	STACK_RESOLVE*	Aqueous Form (5) -  Attach to Turtleshell Changeling (8)
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	COMBAT*	A assigned Turtleshell Changeling (8) to attack B.
+6	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+6	A's Declare Attackers Step	STACK_RESOLVE*	Whenever enchanted creature attacks, scry 1. (Look at the top card of your library. You may put that card on the bottom.) [Attacker: Turtleshell Changeling (8)]
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's Declare Blockers Step	COMBAT*	B didn't block Turtleshell Changeling (8).
+6	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+6	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (8) - Turtleshell Changeling (8) gains hidden cardname's power and toughness are switched until end of turn.
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's Combat Damage Step	DAMAGE*	Turtleshell Changeling (8) deals 4 combat damage to B.
+6	A's Combat Damage Step	LIFE	Life: B 20 > 16
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD	A cast Triton Shorestalker
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT*	A assigned Turtleshell Changeling (8) and Triton Shorestalker (4) to attack B.
+8	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+8	A's Declare Attackers Step	STACK_RESOLVE*	Whenever enchanted creature attacks, scry 1. (Look at the top card of your library. You may put that card on the bottom.) [Attacker: Turtleshell Changeling (8)]
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT*	B didn't block Turtleshell Changeling (8). B didn't block Triton Shorestalker (4).
+8	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+8	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (8) - Turtleshell Changeling (8) gains hidden cardname's power and toughness are switched until end of turn.
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE*	Turtleshell Changeling (8) deals 4 combat damage to B.
+8	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+8	A's Combat Damage Step	LIFE	Life: B 16 > 11
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT*	A assigned Turtleshell Changeling (8) and Triton Shorestalker (4) to attack B.
+10	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+10	A's Declare Attackers Step	STACK_RESOLVE*	Whenever enchanted creature attacks, scry 1. (Look at the top card of your library. You may put that card on the bottom.) [Attacker: Turtleshell Changeling (8)]
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT*	B didn't block Turtleshell Changeling (8). B didn't block Triton Shorestalker (4).
+10	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+10	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (8) - Turtleshell Changeling (8) gains hidden cardname's power and toughness are switched until end of turn.
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE*	Turtleshell Changeling (8) deals 4 combat damage to B.
+10	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 11 > 6
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+10	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT*	A assigned Turtleshell Changeling (8) and Triton Shorestalker (4) to attack B.
+12	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+12	A's Declare Attackers Step	STACK_RESOLVE*	Whenever enchanted creature attacks, scry 1. (Look at the top card of your library. You may put that card on the bottom.) [Attacker: Turtleshell Changeling (8)]
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT*	B didn't block Turtleshell Changeling (8). B didn't block Triton Shorestalker (4).
+12	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+12	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (8) - Turtleshell Changeling (8) gains hidden cardname's power and toughness are switched until end of turn.
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE*	Turtleshell Changeling (8) deals 4 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 6 > 1
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+12	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT*	A assigned Turtleshell Changeling (8), Triton Shorestalker (4), Turtleshell Changeling (7) and Turtleshell Changeling (9) to attack B.
+14	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+14	A's Declare Attackers Step	STACK_RESOLVE*	Whenever enchanted creature attacks, scry 1. (Look at the top card of your library. You may put that card on the bottom.) [Attacker: Turtleshell Changeling (8)]
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT*	B didn't block Turtleshell Changeling (8). B didn't block Triton Shorestalker (4). B assigned Thopter Token (85), Ornithopter (69) and Chief of the Foundry (49) to block Turtleshell Changeling (7). B assigned Thopter Token (88) and Aetherjacket (47) to block Turtleshell Changeling (9).
+14	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+14	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (8) - Turtleshell Changeling (8) gains hidden cardname's power and toughness are switched until end of turn.
+14	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+14	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+14	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+14	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+14	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+14	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (9) - Turtleshell Changeling (9) gains hidden cardname's power and toughness are switched until end of turn.
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE*	Turtleshell Changeling (8) deals 4 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Triton Shorestalker (4) deals 1 combat damage to B.
+14	A's Combat Damage Step	DAMAGE*	Turtleshell Changeling (7) deals 1 damage to Chief of the Foundry (49).
+14	A's Combat Damage Step	DAMAGE*	Turtleshell Changeling (9) deals 2 damage to Thopter Token (88).
+14	A's Combat Damage Step	DAMAGE*	Turtleshell Changeling (9) deals 2 damage to Aetherjacket (47).
+14	A's Combat Damage Step	DAMAGE*	Thopter Token (85) deals 2 damage to Turtleshell Changeling (7).
+14	A's Combat Damage Step	DAMAGE*	Ornithopter (69) deals 1 damage to Turtleshell Changeling (7).
+14	A's Combat Damage Step	DAMAGE*	Chief of the Foundry (49) deals 2 damage to Turtleshell Changeling (7).
+14	A's Combat Damage Step	DAMAGE*	Thopter Token (88) deals 2 damage to Turtleshell Changeling (9).
+14	A's Combat Damage Step	DAMAGE*	Aetherjacket (47) deals 3 damage to Turtleshell Changeling (9).
+14	A's Combat Damage Step	LIFE	Life: B 1 > -4

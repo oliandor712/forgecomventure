@@ -1,0 +1,96 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Forest; Forest; Blossoming Defense; Sol Ring; Aftermath Analyst; Deadly Recluse; Titanic Growth
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Draw step	STACK_ADD	A cast Snakeskin Veil targeting [Deadly Recluse (15)]
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Spider Token (85) and Deadly Recluse (15) to attack B.
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Spider Token (85). B didn't block Deadly Recluse (15).
+8	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Spider Token (85)]
+8	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Spider Token (85) gets +4/+4  until end of turn.
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 5 damage to Selvala, Heart of the Wilds (81).
+8	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 2 combat damage to B.
+8	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Spider Token (85).
+8	A's Combat Damage Step	LIFE	Life: B 18 > 16
+8	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Deadly Recluse (15) and Spider Token (88) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Deadly Recluse (15). B didn't block Spider Token (88).
+12	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Deadly Recluse (15)]
+12	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (10) - Deadly Recluse (15) gets +2/+2 and gains hexproof until end of turn.
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 4 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Spider Token (88) deals 1 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 10 > 5
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Mirkwood Spider
+12	A's Main phase, postcombat	STACK_ADD	A cast Aftermath Analyst
+12	A's Main phase, postcombat	STACK_ADD	A triggered Aftermath Analyst
+12	A's Main phase, postcombat	ZONE_CHANGE	A milled Tamiyo's Safekeeping (3), Forest (37) and Hero's Blade (14).
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+20	B's Cleanup step	TURN	Turn 20 (A)
+20	A's Untap step	PHASE	A's Untap step
+20	A's Upkeep step	PHASE	A's Upkeep step
+20	A's Draw step	PHASE	A's Draw step
+20	A's Main phase, precombat	PHASE	A's Main phase, precombat
+20	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+20	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+20	A's Declare Attackers Step	COMBAT	A assigned Aftermath Analyst (8) to attack B.
+20	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+20	A's Declare Blockers Step	COMBAT	B assigned Leaf Gilder (74) to block Aftermath Analyst (8).
+20	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Aftermath Analyst (8)]
+20	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Aftermath Analyst (8) gets +3/+3  until end of turn.
+20	A's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+20	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+20	A's Combat Damage Step	PHASE	A's Combat Damage Step
+20	A's Combat Damage Step	DAMAGE	Aftermath Analyst (8) deals 4 damage to Leaf Gilder (74).
+20	A's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 4 damage to Aftermath Analyst (8).
+20	A's End of Combat Step	PHASE	A's End of Combat Step
+20	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+20	A's End step	PHASE	A's End step
+20	A's Cleanup step	PHASE	A's Cleanup step
+44	B's Cleanup step	TURN	Turn 44 (A)
+44	A's Untap step	PHASE	A's Untap step
+44	A's Upkeep step	PHASE	A's Upkeep step
+44	A's Draw step	PHASE	A's Draw step
+44	A's Main phase, precombat	PHASE	A's Main phase, precombat
+44	A's Main phase, precombat	STACK_ADD	A activated Colossus Hammer targeting [Canopy Spider (22)]
+44	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+44	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+44	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22), Mirkwood Spider (16), Aftermath Analyst (8), Copper Longlegs (2) and Aquastrand Spider (7) to attack B.
+44	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+44	A's Declare Blockers Step	COMBAT	B assigned Boreal Druid (46) to block Canopy Spider (22). B assigned Phyrexian Dreadnought (42) to block Mirkwood Spider (16). B didn't block Aftermath Analyst (8). B didn't block Copper Longlegs (2). B didn't block Aquastrand Spider (7).
+44	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Copper Longlegs (2)]
+44	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Copper Longlegs (2) gets +4/+4  until end of turn.
+44	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Copper Longlegs (2)]
+44	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (20) - Copper Longlegs (2) gets +3/+3  until end of turn.
+44	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+44	A's Combat Damage Step	PHASE	A's Combat Damage Step
+44	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 11 damage to Boreal Druid (46).
+44	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 1 damage (Deathtouch) to Phyrexian Dreadnought (42).
+44	A's Combat Damage Step	DAMAGE	Aftermath Analyst (8) deals 1 combat damage to B.
+44	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 8 combat damage to B.
+44	A's Combat Damage Step	DAMAGE	Aquastrand Spider (7) deals 1 combat damage to B.
+44	A's Combat Damage Step	DAMAGE	Boreal Druid (46) deals 1 damage to Canopy Spider (22).
+44	A's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 14 damage to Mirkwood Spider (16).
+44	A's Combat Damage Step	LIFE	Life: B 3 > -7

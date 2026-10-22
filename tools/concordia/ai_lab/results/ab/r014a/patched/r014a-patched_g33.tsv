@@ -1,0 +1,101 @@
+0		MULLIGAN*	A has kept a hand of 6 cards hand: Malakir Rebirth; Vampiric Rites; Island; Tainted Isle; Demon's Due; Barren Moor
+3	A's Cleanup step	TURN	Turn 3 (B)
+3	B's Untap step	PHASE	B's Untap step
+3	B's Upkeep step	PHASE	B's Upkeep step
+3	B's Draw step	PHASE	B's Draw step
+3	B's Main phase, precombat	PHASE	B's Main phase, precombat
+3	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+3	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+3	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+3	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+3	B's Combat Damage Step	PHASE	B's Combat Damage Step
+3	B's End of Combat Step	PHASE	B's End of Combat Step
+3	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+3	B's Main phase, postcombat	STACK_ADD	B cast Baleful Strix
+3	B's Main phase, postcombat	STACK_ADD	B triggered Baleful Strix
+3	B's End step	PHASE	B's End step
+3	B's End step	STACK_ADD*	A cast Opt
+3	B's End step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+3	B's Cleanup step	PHASE	B's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+11	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+11	B's Main phase, postcombat	ZONE_CHANGE*	A milled Island (26), Joint Exploration (38) and Swamp (8).
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Main phase, precombat	STACK_ADD*	A cast Deliberate
+16	A's Main phase, precombat	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's End of Combat Step	STACK_ADD*	A cast Demon's Due
+16	A's End of Combat Step	LIFE	Life: A 13 > 11
+16	A's End of Combat Step	STACK_RESOLVE*	Demon's Due (19) - A scries 2. A draws two cards. A loses 2 life.
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	STACK_ADD	A cast Master Pakku
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step
+18	B's Cleanup step	TURN	Turn 18 (A)
+18	A's Untap step	PHASE	A's Untap step
+18	A's Upkeep step	PHASE	A's Upkeep step
+18	A's Draw step	PHASE	A's Draw step
+18	A's Main phase, precombat	PHASE	A's Main phase, precombat
+18	A's Main phase, precombat	STACK_ADD*	A cast Demon's Due
+18	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+18	A's Main phase, precombat	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Demon's Due (20), Activator: A, SpellAbility: Scry 2, then draw two cards. You lose 2 life.  ]
+18	A's Main phase, precombat	LIFE	Life: A 11 > 9
+18	A's Main phase, precombat	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+18	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+18	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+18	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+18	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+18	A's Combat Damage Step	PHASE	A's Combat Damage Step
+18	A's End of Combat Step	PHASE	A's End of Combat Step
+18	A's End of Combat Step	STACK_ADD*	A cast Joint Exploration
+18	A's End of Combat Step	STACK_ADD	A triggered Master Pakku
+18	A's End of Combat Step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Joint Exploration (39), Activator: A, SpellAbility: Scry 2, then draw a card.  If this spell was kicked, you may put a land card from your hand onto the battlefield.]
+18	A's End of Combat Step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+18	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+18	A's Main phase, postcombat	STACK_ADD	A cast Sol Ring
+18	A's Main phase, postcombat	STACK_ADD	A triggered Master Pakku
+18	A's End step	PHASE	A's End step
+18	A's Cleanup step	PHASE	A's Cleanup step
+20	B's Cleanup step	TURN	Turn 20 (A)
+20	A's Untap step	PHASE	A's Untap step
+20	A's Upkeep step	PHASE	A's Upkeep step
+20	A's Upkeep step	ZONE_CHANGE	Myriad Landscape (29) was put into Graveyard from Battlefield.
+20	A's Upkeep step	STACK_ADD	A activated Myriad Landscape
+20	A's Draw step	PHASE	A's Draw step
+20	A's Main phase, precombat	PHASE	A's Main phase, precombat
+20	A's Main phase, precombat	STACK_ADD*	A cast Opt
+20	A's Main phase, precombat	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+20	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+20	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+20	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+20	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+20	A's Combat Damage Step	PHASE	A's Combat Damage Step
+20	A's End of Combat Step	PHASE	A's End of Combat Step
+20	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+20	A's Main phase, postcombat	STACK_ADD*	A cast Deliberate
+20	A's Main phase, postcombat	STACK_RESOLVE*	Deliberate (35) - A scries 2. A draws a card.
+20	A's End step	PHASE	A's End step
+20	A's Cleanup step	PHASE	A's Cleanup step

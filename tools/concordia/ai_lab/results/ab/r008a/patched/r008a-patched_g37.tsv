@@ -1,0 +1,63 @@
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Copper Longlegs (2) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Copper Longlegs (2).
+9	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Copper Longlegs (2)]
+9	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Copper Longlegs (2) gets +4/+4  until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 6 damage to Selvala, Heart of the Wilds (81).
+9	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Copper Longlegs (2).
+9	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Aquastrand Spider (7) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Aquastrand Spider (7).
+11	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Aquastrand Spider (7)]
+11	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Aquastrand Spider (7) gets +3/+3  until end of turn.
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Aquastrand Spider (7) deals 5 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 18 > 13
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD	A cast Arcane Signet
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Draw step	PHASE	A's Draw step
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Beginning of Combat Step	STACK_ADD*	A cast Titanic Growth targeting [Aquastrand Spider (7)]
+15	A's Beginning of Combat Step	STACK_RESOLVE*	Titanic Growth (11) - Aquastrand Spider (7) gets +4/+4  until end of turn.
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Attackers Step	COMBAT	A assigned Aquastrand Spider (7) and Copper Longlegs (2) to attack B.
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's Declare Blockers Step	COMBAT	B didn't block Aquastrand Spider (7). B didn't block Copper Longlegs (2).
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's Combat Damage Step	DAMAGE	Aquastrand Spider (7) deals 5 combat damage to B.
+15	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 2 combat damage to B.
+15	A's Combat Damage Step	LIFE	Life: B 13 > 6
+15	A's End of Combat Step	PHASE	A's End of Combat Step
+15	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+15	A's End step	PHASE	A's End step
+15	A's Cleanup step	PHASE	A's Cleanup step

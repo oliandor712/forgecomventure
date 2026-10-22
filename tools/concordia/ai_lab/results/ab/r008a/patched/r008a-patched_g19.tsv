@@ -1,0 +1,33 @@
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's Main phase, postcombat	STACK_ADD	A cast Aftermath Analyst
+4	A's Main phase, postcombat	STACK_ADD	A triggered Aftermath Analyst
+4	A's Main phase, postcombat	ZONE_CHANGE*	A milled Mirkwood Spider (16), Aquastrand Spider (7) and Titanic Growth (12).
+4	A's End step	PHASE	A's End step
+4	A's Cleanup step	PHASE	A's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's End step	PHASE	A's End step
+16	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Titanic Growth (12)]
+16	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Titanic Growth (12) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+16	A's Cleanup step	PHASE	A's Cleanup step

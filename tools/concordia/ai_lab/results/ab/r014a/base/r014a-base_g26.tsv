@@ -1,0 +1,71 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Joint Exploration; Bojuka Bog; Island; Island; Swamp; Opt; Scheming Aspirant
+3	A's Cleanup step	TURN	Turn 3 (B)
+3	B's Untap step	PHASE	B's Untap step
+3	B's Upkeep step	PHASE	B's Upkeep step
+3	B's Draw step	PHASE	B's Draw step
+3	B's Main phase, precombat	PHASE	B's Main phase, precombat
+3	B's Main phase, precombat	STACK_ADD*	A cast Opt
+3	B's Main phase, precombat	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+3	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+3	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+3	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+3	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+3	B's Combat Damage Step	PHASE	B's Combat Damage Step
+3	B's End of Combat Step	PHASE	B's End of Combat Step
+3	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+3	B's Main phase, postcombat	STACK_ADD	B cast Umbral Collar Zealot
+3	B's End step	PHASE	B's End step
+3	B's Cleanup step	PHASE	B's Cleanup step
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Upkeep step	STACK_ADD*	A cast Opt
+4	A's Upkeep step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's End step	PHASE	A's End step
+4	A's Cleanup step	PHASE	A's Cleanup step
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Upkeep step	STACK_ADD*	A cast Joint Exploration
+6	A's Upkeep step	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Attackers Step	COMBAT	B assigned Umbral Collar Zealot (62) to attack A.
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's Declare Blockers Step	COMBAT	A didn't block Umbral Collar Zealot (62).
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's Combat Damage Step	DAMAGE	Umbral Collar Zealot (62) deals 3 combat damage to A.
+11	B's Combat Damage Step	LIFE	Life: A 8 > 5
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+11	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+11	B's Main phase, postcombat	ZONE_CHANGE*	A milled Stitcher's Supplier (32), Master Pakku (33) and Delightful Discovery (18).
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step

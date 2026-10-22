@@ -1,0 +1,93 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Destiny Spinner; Forest; Forest; Forest; Aftermath Analyst; Forest; Blossoming Defense
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40) to attack B.
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's Declare Blockers Step	COMBAT	B didn't block Arasta of the Endless Web (40).
+6	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Arasta of the Endless Web (40)]
+6	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (10) - Arasta of the Endless Web (40) gets +2/+2 and gains hexproof until end of turn.
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 5 combat damage to B.
+6	A's Combat Damage Step	LIFE	Life: B 20 > 15
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD	A cast Destiny Spinner
+6	A's Main phase, postcombat	STACK_ADD	A cast Aftermath Analyst
+6	A's Main phase, postcombat	STACK_ADD	A triggered Aftermath Analyst
+6	A's Main phase, postcombat	ZONE_CHANGE	A milled Forest (30), Forest (26) and Forest (35).
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Main phase, precombat	STACK_ADD	A activated Colossus Hammer targeting [Arasta of the Endless Web (40)]
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Destiny Spinner (6) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Destiny Spinner (6).
+10	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Destiny Spinner (6)]
+10	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Destiny Spinner (6) gets +4/+4  until end of turn.
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Destiny Spinner (6) deals 6 damage to Selvala, Heart of the Wilds (81).
+10	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Destiny Spinner (6).
+10	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Upkeep step	STACK_ADD	B triggered Duskwatch Recruiter
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Beginning of Combat Step	STACK_ADD	A cast Tamiyo's Safekeeping targeting [Arasta of the Endless Web (40)]
+14	A's Beginning of Combat Step	LIFE	Life: A 5 > 7
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40) to attack B.
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B assigned Elvish Skysweeper (51) to block Arasta of the Endless Web (40).
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 13 damage to Elvish Skysweeper (51).
+14	A's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 1 damage to Arasta of the Endless Web (40).
+14	A's Combat Damage Step	ZONE_CHANGE	Elvish Skysweeper (51) was put into Graveyard from Battlefield.
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's End step	PHASE	A's End step
+14	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Titanic Growth (12)]
+14	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Titanic Growth (12) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+14	A's Cleanup step	PHASE	A's Cleanup step
+22	B's Cleanup step	TURN	Turn 22 (A)
+22	A's Untap step	PHASE	A's Untap step
+22	A's Upkeep step	PHASE	A's Upkeep step
+22	A's Draw step	PHASE	A's Draw step
+22	A's Main phase, precombat	PHASE	A's Main phase, precombat
+22	A's Main phase, precombat	STACK_ADD	A cast Brotherhood Regalia
+22	A's Main phase, precombat	STACK_ADD	A activated Brotherhood Regalia targeting [Aquastrand Spider (7)]
+22	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+22	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+22	A's Declare Attackers Step	COMBAT	A assigned Aquastrand Spider (7), Deadly Recluse (15) and Spider Token (85) to attack B.
+22	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+22	A's Declare Blockers Step	COMBAT	B didn't block Aquastrand Spider (7). B assigned Leaf Gilder (74) to block Deadly Recluse (15). B assigned Krallenhorde Howler (50) to block Spider Token (85).
+22	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Aquastrand Spider (7)]
+22	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Aquastrand Spider (7) gets +4/+4  until end of turn.
+22	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+22	A's Combat Damage Step	PHASE	A's Combat Damage Step
+22	A's Combat Damage Step	DAMAGE	Aquastrand Spider (7) deals 15 combat damage to B.
+22	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 2 damage (Deathtouch) to Leaf Gilder (74).
+22	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 1 damage to Krallenhorde Howler (50).
+22	A's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 2 damage to Deadly Recluse (15).
+22	A's Combat Damage Step	DAMAGE	Krallenhorde Howler (50) deals 3 damage to Spider Token (85).
+22	A's Combat Damage Step	LIFE	Life: B 10 > -5

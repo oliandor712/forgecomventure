@@ -1,0 +1,24 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Hero's Blade; Forest; Blossoming Defense; Forest; Forest; Titanic Growth; Colossus Hammer
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned Krallenhorde Howler (50) and Selvala, Heart of the Wilds (81) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A assigned Mirkwood Spider (16) to block Krallenhorde Howler (50). A didn't block Selvala, Heart of the Wilds (81).
+12	B's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+12	B's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Mirkwood Spider (16)]
+12	B's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Mirkwood Spider (16) gets +4/+4  until end of turn.
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE	Krallenhorde Howler (50) deals 3 damage to Mirkwood Spider (16).
+12	B's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 combat damage to A.
+12	B's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 5 damage (Deathtouch) to Krallenhorde Howler (50).
+12	B's Combat Damage Step	LIFE	Life: A 16 > 14
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step

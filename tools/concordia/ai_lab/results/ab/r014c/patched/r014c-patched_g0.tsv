@@ -1,0 +1,110 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Baleful Strix; Omen Hawker; Swamp; Swamp; Delightful Discovery; Master Pakku; Island
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+9	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+9	B's Main phase, postcombat	ZONE_CHANGE*	A milled Corrupt Court Official (11), Demon's Due (19) and Tainted Isle (5).
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A triggered Bojuka Bog targeting [B]
+10	A's Main phase, postcombat	STACK_ADD	A cast Ghostly Pilferer
+10	A's End step	PHASE	A's End step
+10	A's End step	STACK_ADD*	A cast Opt
+10	A's End step	STACK_ADD	A triggered Master Pakku
+10	A's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Opt (15), Activator: A, SpellAbility: Scry 1. Draw a card.]
+10	A's End step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+10	A's Cleanup step	PHASE	A's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Main phase, precombat	STACK_ADD	A cast Sol Ring
+12	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+12	A's Main phase, precombat	STACK_ADD*	A cast Demon's Due
+12	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+12	A's Main phase, precombat	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Demon's Due (20), Activator: A, SpellAbility: Scry 2, then draw two cards. You lose 2 life.  ]
+12	A's Main phase, precombat	LIFE	Life: A 16 > 14
+12	A's Main phase, precombat	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Ornithopter of Paradise
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Main phase, precombat	STACK_ADD*	A cast Delightful Discovery
+14	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+14	A's Main phase, precombat	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Delightful Discovery (17), Activator: A, SpellAbility: Scry 2, then draw two cards. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.) ]
+14	A's Main phase, precombat	STACK_RESOLVE*	Delightful Discovery (17) - A scries 2. A draws two cards.
+14	A's Main phase, precombat	STACK_ADD*	A cast Joint Exploration
+14	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+14	A's Main phase, precombat	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Joint Exploration (39), Activator: A, SpellAbility: Scry 2, then draw a card.  If this spell was kicked, you may put a land card from your hand onto the battlefield.]
+14	A's Main phase, precombat	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's End of Combat Step	STACK_ADD*	A cast Joint Exploration
+14	A's End of Combat Step	STACK_ADD	A triggered Master Pakku
+14	A's End of Combat Step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Joint Exploration (38), Activator: A, SpellAbility: Scry 2, then draw a card.  If this spell was kicked, you may put a land card from your hand onto the battlefield.]
+14	A's End of Combat Step	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+14	A's End of Combat Step	STACK_ADD*	A cast Opt
+14	A's End of Combat Step	STACK_ADD	A triggered Master Pakku
+14	A's End of Combat Step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Opt (14), Activator: A, SpellAbility: Scry 1. Draw a card.]
+14	A's End of Combat Step	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	STACK_ADD	A cast Scheming Aspirant
+16	A's Main phase, postcombat	STACK_ADD	A cast Blood Artist
+16	A's End step	PHASE	A's End step
+16	A's End step	STACK_ADD*	A cast Delightful Discovery
+16	A's End step	STACK_ADD	A triggered Master Pakku
+16	A's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Delightful Discovery (18), Activator: A, SpellAbility: Scry 2, then draw two cards. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.) ]
+16	A's End step	STACK_RESOLVE*	Delightful Discovery (18) - A scries 2. A draws two cards.
+16	A's Cleanup step	PHASE	A's Cleanup step

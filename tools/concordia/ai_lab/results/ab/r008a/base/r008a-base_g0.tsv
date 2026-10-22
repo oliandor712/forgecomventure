@@ -1,0 +1,51 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Copper Longlegs; Giant Growth; Forest; Forest; Sol Ring; Canopy Spider; Aftermath Analyst
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Canopy Spider (22)]
+7	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (10) - Canopy Spider (22) gets +2/+2 and gains hexproof until end of turn.
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Grappler Spider (17) and Canopy Spider (22) to attack B.
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Grappler Spider (17). B didn't block Canopy Spider (22).
+7	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Grappler Spider (17)]
+7	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Grappler Spider (17) gets +3/+3  until end of turn.
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Grappler Spider (17) deals 5 damage to Selvala, Heart of the Wilds (81).
+7	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 3 combat damage to B.
+7	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Grappler Spider (17).
+7	A's Combat Damage Step	LIFE	Life: B 19 > 16
+7	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+13	B's Cleanup step	TURN	Turn 13 (A)
+13	A's Untap step	PHASE	A's Untap step
+13	A's Upkeep step	PHASE	A's Upkeep step
+13	A's Draw step	PHASE	A's Draw step
+13	A's Main phase, precombat	PHASE	A's Main phase, precombat
+13	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+13	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+13	A's Declare Attackers Step	COMBAT	A assigned Mirkwood Spider (16), Grappler Spider (17), Canopy Spider (22), Copper Longlegs (2) and Aftermath Analyst (8) to attack B.
+13	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+13	A's Declare Blockers Step	COMBAT	B didn't block Mirkwood Spider (16). B didn't block Grappler Spider (17). B didn't block Canopy Spider (22). B didn't block Copper Longlegs (2). B didn't block Aftermath Analyst (8).
+13	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Copper Longlegs (2)]
+13	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (9) - Copper Longlegs (2) gets +2/+2 and gains hexproof until end of turn.
+13	A's Declare Blockers Step	STACK_ADD	A cast Tyvar's Stand targeting [Mirkwood Spider (16)]
+13	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+13	A's Combat Damage Step	PHASE	A's Combat Damage Step
+13	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 2 combat damage to B.
+13	A's Combat Damage Step	DAMAGE	Grappler Spider (17) deals 2 combat damage to B.
+13	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 1 combat damage to B.
+13	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 3 combat damage to B.
+13	A's Combat Damage Step	DAMAGE	Aftermath Analyst (8) deals 1 combat damage to B.
+13	A's Combat Damage Step	LIFE	Life: B 13 > 4
+13	A's End of Combat Step	PHASE	A's End of Combat Step
+13	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+13	A's End step	PHASE	A's End step
+13	A's Cleanup step	PHASE	A's Cleanup step

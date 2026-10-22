@@ -1,0 +1,40 @@
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Spider Token (85)]
+12	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (9) - Spider Token (85) gets +2/+2 and gains hexproof until end of turn.
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Aftermath Analyst (8) and Spider Token (85) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Aftermath Analyst (8). B didn't block Spider Token (85).
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Aftermath Analyst (8) deals 4 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 4 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 16 > 8
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's End step	PHASE	A's End step
+12	A's End step	STACK_ADD	B activated Agatha's Soul Cauldron targeting [Canopy Spider (22)]
+12	A's End step	STACK_ADD	B triggered Agatha's Soul Cauldron targeting [Selvala, Heart of the Wilds (81)]
+12	A's Cleanup step	PHASE	A's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Aftermath Analyst (8) and Spider Token (85) to attack B.
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B didn't block Aftermath Analyst (8). B didn't block Spider Token (85).
+14	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Aftermath Analyst (8)]
+14	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (20) - Aftermath Analyst (8) gets +3/+3  until end of turn.
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Aftermath Analyst (8) deals 7 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 2 combat damage to B.
+14	A's Combat Damage Step	LIFE	Life: B 8 > -1

@@ -1,0 +1,101 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Deliberate; Island; Baleful Strix; Sol Ring; Island; Opt; Island
+3	B's Cleanup step	TURN	Turn 3 (A)
+3	A's Untap step	PHASE	A's Untap step
+3	A's Upkeep step	PHASE	A's Upkeep step
+3	A's Draw step	PHASE	A's Draw step
+3	A's Main phase, precombat	PHASE	A's Main phase, precombat
+3	A's Main phase, precombat	STACK_ADD*	A cast Deliberate
+3	A's Main phase, precombat	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+3	A's Main phase, precombat	STACK_ADD*	A cast Opt
+3	A's Main phase, precombat	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+3	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+3	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+3	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+3	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+3	A's Combat Damage Step	PHASE	A's Combat Damage Step
+3	A's End of Combat Step	PHASE	A's End of Combat Step
+3	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+3	A's End step	PHASE	A's End step
+3	A's Cleanup step	PHASE	A's Cleanup step
+4	A's Cleanup step	TURN	Turn 4 (B)
+4	B's Untap step	PHASE	B's Untap step
+4	B's Upkeep step	PHASE	B's Upkeep step
+4	B's Draw step	PHASE	B's Draw step
+4	B's Main phase, precombat	PHASE	B's Main phase, precombat
+4	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+4	B's Main phase, precombat	ZONE_CHANGE*	A milled Demon's Due (20), Ghostly Pilferer (28) and Deliberate (35).
+4	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+4	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+4	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+4	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+4	B's Combat Damage Step	PHASE	B's Combat Damage Step
+4	B's End of Combat Step	PHASE	B's End of Combat Step
+4	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+4	B's Main phase, postcombat	STACK_ADD	B cast Stitcher's Supplier
+4	B's Main phase, postcombat	STACK_ADD	B triggered Stitcher's Supplier
+4	B's Main phase, postcombat	ZONE_CHANGE	B milled Drown in the Loch (77), Ornithopter of Paradise (79) and Lonely Sandbar (55).
+4	B's End step	PHASE	B's End step
+4	B's Cleanup step	PHASE	B's Cleanup step
+6	A's Cleanup step	TURN	Turn 6 (B)
+6	B's Untap step	PHASE	B's Untap step
+6	B's Upkeep step	PHASE	B's Upkeep step
+6	B's Draw step	PHASE	B's Draw step
+6	B's Main phase, precombat	PHASE	B's Main phase, precombat
+6	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+6	B's Main phase, precombat	ZONE_CHANGE*	A milled Malakir Rebirth (3), Demon's Due (19) and Swamp (7).
+6	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+6	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+6	B's Declare Attackers Step	COMBAT	B assigned Stitcher's Supplier (70) to attack A.
+6	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+6	B's Declare Blockers Step	COMBAT	A didn't block Stitcher's Supplier (70).
+6	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+6	B's Combat Damage Step	PHASE	B's Combat Damage Step
+6	B's Combat Damage Step	DAMAGE	Stitcher's Supplier (70) deals 1 combat damage to A.
+6	B's Combat Damage Step	LIFE	Life: A 20 > 19
+6	B's End of Combat Step	PHASE	B's End of Combat Step
+6	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+6	B's Main phase, postcombat	STACK_ADD	B cast Flux Channeler
+6	B's End step	PHASE	B's End step
+6	B's End step	STACK_ADD*	A cast Delightful Discovery
+6	B's End step	STACK_RESOLVE*	Delightful Discovery (18) - A scries 2. A draws two cards.
+6	B's End step	STACK_ADD*	A cast Opt
+6	B's End step	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+6	B's Cleanup step	PHASE	B's Cleanup step
+8	A's Cleanup step	TURN	Turn 8 (B)
+8	B's Untap step	PHASE	B's Untap step
+8	B's Upkeep step	PHASE	B's Upkeep step
+8	B's Upkeep step	STACK_ADD	B cast Eaten by Piranhas targeting [Master Pakku (33)]
+8	B's Upkeep step	STACK_ADD	B triggered Flux Channeler
+8	B's Draw step	PHASE	B's Draw step
+8	B's Main phase, precombat	PHASE	B's Main phase, precombat
+8	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+8	B's Main phase, precombat	ZONE_CHANGE*	A milled Scheming Aspirant (2), Delightful Discovery (17) and Blood Artist (1).
+8	B's Main phase, precombat	LIFE	Life: B 20 > 17
+8	B's Main phase, precombat	STACK_ADD	B cast Bitter Triumph targeting [Ornithopter of Paradise (37)]
+8	B's Main phase, precombat	STACK_ADD	B triggered Flux Channeler
+8	B's Main phase, precombat	ZONE_CHANGE	Ornithopter of Paradise (37) was put into Graveyard from Battlefield.
+8	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+8	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+8	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+8	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+8	B's Combat Damage Step	PHASE	B's Combat Damage Step
+8	B's End of Combat Step	PHASE	B's End of Combat Step
+8	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+8	B's End step	PHASE	B's End step
+8	B's Cleanup step	PHASE	B's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+12	B's Main phase, precombat	ZONE_CHANGE*	A milled Joint Exploration (38), Barren Moor (27) and Swamp (9).
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step

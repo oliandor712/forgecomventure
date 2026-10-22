@@ -1,0 +1,25 @@
+20	B's Cleanup step	TURN	Turn 20 (A)
+20	A's Untap step	PHASE	A's Untap step
+20	A's Upkeep step	PHASE	A's Upkeep step
+20	A's Draw step	PHASE	A's Draw step
+20	A's Main phase, precombat	PHASE	A's Main phase, precombat
+20	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+20	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+20	A's Declare Attackers Step	COMBAT	A assigned Ruins Recluse (13) and Deadly Recluse (15) to attack B.
+20	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+20	A's Declare Blockers Step	COMBAT	B assigned Leaf-Crowned Visionary (52) to block Ruins Recluse (13). B assigned Selvala, Heart of the Wilds (81) to block Deadly Recluse (15).
+20	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Deadly Recluse (15)]
+20	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (20) - Deadly Recluse (15) gets +3/+3  until end of turn.
+20	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+20	A's Combat Damage Step	PHASE	A's Combat Damage Step
+20	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 8 damage (Deathtouch) to Leaf-Crowned Visionary (52).
+20	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 4 damage (Deathtouch) to Selvala, Heart of the Wilds (81).
+20	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 4 damage to Deadly Recluse (15).
+20	A's Combat Damage Step	DAMAGE	Leaf-Crowned Visionary (52) deals 1 damage to Ruins Recluse (13).
+20	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+20	A's Combat Damage Step	ZONE_CHANGE	Leaf-Crowned Visionary (52) was put into Graveyard from Battlefield.
+20	A's End of Combat Step	PHASE	A's End of Combat Step
+20	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+20	A's End step	PHASE	A's End step
+20	A's End step	STACK_ADD	B activated Agatha's Soul Cauldron targeting [Arcane Signet (18)]
+20	A's Cleanup step	PHASE	A's Cleanup step

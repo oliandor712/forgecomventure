@@ -1,0 +1,74 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Swamp; Delightful Discovery; Deliberate; Island; Ghostly Pilferer; Barren Moor; Swamp
+4	A's Cleanup step	TURN	Turn 4 (B)
+4	B's Untap step	PHASE	B's Untap step
+4	B's Upkeep step	PHASE	B's Upkeep step
+4	B's Draw step	PHASE	B's Draw step
+4	B's Main phase, precombat	PHASE	B's Main phase, precombat
+4	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+4	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+4	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+4	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+4	B's Combat Damage Step	PHASE	B's Combat Damage Step
+4	B's End of Combat Step	PHASE	B's End of Combat Step
+4	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+4	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+4	B's Main phase, postcombat	STACK_ADD	A triggered Ghostly Pilferer
+4	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+4	B's Main phase, postcombat	ZONE_CHANGE*	A milled Tainted Isle (5), Opt (15) and Swamp (10).
+4	B's End step	PHASE	B's End step
+4	B's Cleanup step	PHASE	B's Cleanup step
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's Main phase, postcombat	STACK_ADD	A cast Vampiric Rites
+5	A's End step	PHASE	A's End step
+5	A's End step	STACK_ADD*	A cast Deliberate
+5	A's End step	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+5	A's Cleanup step	PHASE	A's Cleanup step
+10	A's Cleanup step	TURN	Turn 10 (B)
+10	B's Untap step	PHASE	B's Untap step
+10	B's Upkeep step	PHASE	B's Upkeep step
+10	B's Draw step	PHASE	B's Draw step
+10	B's Main phase, precombat	PHASE	B's Main phase, precombat
+10	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+10	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+10	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81), Orc Army Token (84), Baleful Strix (56), Master Pakku (71), Zulaport Cutthroat (64) and Corrupt Court Official (54) to attack A.
+10	B's Declare Attackers Step	STACK_ADD	B triggered Master Pakku targeting [B]
+10	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+10	B's Declare Blockers Step	COMBAT	A assigned Baleful Strix (13) to block The Mouth of Sauron (81). A didn't block Orc Army Token (84). A didn't block Baleful Strix (56). A didn't block Master Pakku (71). A assigned Ghostly Pilferer (28) to block Zulaport Cutthroat (64). A didn't block Corrupt Court Official (54).
+10	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+10	B's Combat Damage Step	PHASE	B's Combat Damage Step
+10	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 damage to Baleful Strix (13).
+10	B's Combat Damage Step	DAMAGE	Orc Army Token (84) deals 1 combat damage to A.
+10	B's Combat Damage Step	DAMAGE	Baleful Strix (56) deals 1 combat damage to A.
+10	B's Combat Damage Step	DAMAGE	Master Pakku (71) deals 1 combat damage to A.
+10	B's Combat Damage Step	DAMAGE	Zulaport Cutthroat (64) deals 1 damage to Ghostly Pilferer (28).
+10	B's Combat Damage Step	DAMAGE	Corrupt Court Official (54) deals 1 combat damage to A.
+10	B's Combat Damage Step	DAMAGE	Baleful Strix (13) deals 1 damage (Deathtouch) to The Mouth of Sauron (81).
+10	B's Combat Damage Step	DAMAGE	Ghostly Pilferer (28) deals 2 damage to Zulaport Cutthroat (64).
+10	B's Combat Damage Step	LIFE	Life: A 8 > 4
+10	B's Combat Damage Step	ZONE_CHANGE	The Mouth of Sauron (81) was put into Graveyard from Battlefield.
+10	B's Combat Damage Step	ZONE_CHANGE	Zulaport Cutthroat (64) was put into Graveyard from Battlefield.
+10	B's Combat Damage Step	ZONE_CHANGE	Ghostly Pilferer (28) was put into Graveyard from Battlefield.
+10	B's Combat Damage Step	ZONE_CHANGE	Baleful Strix (13) was put into Graveyard from Battlefield.
+10	B's Combat Damage Step	STACK_ADD	B triggered Zulaport Cutthroat
+10	B's Combat Damage Step	STACK_ADD	B triggered Zulaport Cutthroat
+10	B's Combat Damage Step	LIFE	Life: A 4 > 3
+10	B's Combat Damage Step	LIFE	Life: B 20 > 21
+10	B's Combat Damage Step	LIFE	Life: A 3 > 2
+10	B's Combat Damage Step	LIFE	Life: B 21 > 22
+10	B's End of Combat Step	PHASE	B's End of Combat Step
+10	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+10	B's End step	PHASE	B's End step
+10	B's End step	STACK_ADD*	A cast Opt
+10	B's End step	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+10	B's Cleanup step	PHASE	B's Cleanup step

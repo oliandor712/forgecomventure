@@ -1,0 +1,138 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Delightful Discovery; Myriad Landscape; Master Pakku; Ghostly Pilferer; Swamp; Joint Exploration; Demon's Due
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Main phase, precombat	STACK_ADD	A cast Vampiric Rites
+11	A's Main phase, precombat	STACK_ADD	A triggered Master Pakku
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Atris, Oracle of Half-Truths (40) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Atris, Oracle of Half-Truths (40).
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Atris, Oracle of Half-Truths (40) deals 3 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 17 > 14
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD	A cast Ghostly Pilferer
+11	A's Main phase, postcombat	STACK_ADD*	A cast Joint Exploration
+11	A's Main phase, postcombat	STACK_ADD	A triggered Master Pakku
+11	A's Main phase, postcombat	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Joint Exploration (38), Activator: A, SpellAbility: Scry 2, then draw a card.  If this spell was kicked, you may put a land card from your hand onto the battlefield.]
+11	A's Main phase, postcombat	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+12	B's Main phase, postcombat	STACK_ADD	A triggered Ghostly Pilferer
+12	B's Main phase, postcombat	STACK_ADD	A activated Lonely Sandbar
+12	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+12	B's Main phase, postcombat	ZONE_CHANGE*	A milled Deliberate (35), Bojuka Bog (36) and Stitcher's Supplier (32).
+12	B's Main phase, postcombat	STACK_ADD	B cast Omen Hawker
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned Umbral Collar Zealot (62) and The Mouth of Sauron (81) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A assigned Ghostly Pilferer (28) to block Umbral Collar Zealot (62). A didn't block The Mouth of Sauron (81).
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	Umbral Collar Zealot (62) deals 3 damage to Ghostly Pilferer (28).
+14	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Ghostly Pilferer (28) deals 2 damage to Umbral Collar Zealot (62).
+14	B's Combat Damage Step	LIFE	Life: A 10 > 7
+14	B's Combat Damage Step	ZONE_CHANGE	Umbral Collar Zealot (62) was put into Graveyard from Battlefield.
+14	B's Combat Damage Step	ZONE_CHANGE	Ghostly Pilferer (28) was put into Graveyard from Battlefield.
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's Main phase, postcombat	STACK_ADD	B cast Ruin Crab
+14	B's Main phase, postcombat	STACK_ADD	B cast Corrupt Court Official
+14	B's Main phase, postcombat	STACK_ADD	B triggered Corrupt Court Official targeting [A]
+14	B's Main phase, postcombat	STACK_ADD	B activated Lonely Sandbar
+14	B's Main phase, postcombat	STACK_ADD	B cast Fellwar Stone
+14	B's End step	PHASE	B's End step
+14	B's End step	STACK_ADD*	A cast Demon's Due
+14	B's End step	STACK_ADD	A triggered Master Pakku
+14	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Demon's Due (19), Activator: A, SpellAbility: Scry 2, then draw two cards. You lose 2 life.  ]
+14	B's End step	LIFE	Life: A 7 > 5
+14	B's End step	STACK_RESOLVE*	Demon's Due (19) - A scries 2. A draws two cards. A loses 2 life.
+14	B's End step	STACK_ADD*	A cast Joint Exploration
+14	B's End step	STACK_ADD	A triggered Master Pakku
+14	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Joint Exploration (39), Activator: A, SpellAbility: Scry 2, then draw a card.  If this spell was kicked, you may put a land card from your hand onto the battlefield.]
+14	B's End step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+14	B's End step	STACK_ADD*	A cast Deliberate
+14	B's End step	STACK_ADD	A triggered Master Pakku
+14	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Deliberate (34), Activator: A, SpellAbility: Scry 2, then draw a card. ]
+14	B's End step	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+14	B's Cleanup step	PHASE	B's Cleanup step
+16	A's Cleanup step	TURN	Turn 16 (B)
+16	B's Untap step	PHASE	B's Untap step
+16	B's Upkeep step	PHASE	B's Upkeep step
+16	B's Draw step	PHASE	B's Draw step
+16	B's Main phase, precombat	PHASE	B's Main phase, precombat
+16	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+16	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+16	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) to attack A.
+16	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+16	B's Declare Blockers Step	COMBAT	A assigned Master Pakku (33) and Atris, Oracle of Half-Truths (40) to block The Mouth of Sauron (81).
+16	B's Declare Blockers Step	ZONE_CHANGE	Corrupt Court Official (11) was put into Graveyard from Battlefield.
+16	B's Declare Blockers Step	STACK_ADD	A activated Vampiric Rites
+16	B's Declare Blockers Step	LIFE	Life: A 5 > 6
+16	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+16	B's Combat Damage Step	PHASE	B's Combat Damage Step
+16	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 1 damage to Master Pakku (33).
+16	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 2 damage to Atris, Oracle of Half-Truths (40).
+16	B's Combat Damage Step	DAMAGE	Master Pakku (33) deals 1 damage to The Mouth of Sauron (81).
+16	B's Combat Damage Step	DAMAGE	Atris, Oracle of Half-Truths (40) deals 3 damage to The Mouth of Sauron (81).
+16	B's Combat Damage Step	ZONE_CHANGE	The Mouth of Sauron (81) was put into Graveyard from Battlefield.
+16	B's Combat Damage Step	ZONE_CHANGE	Atris, Oracle of Half-Truths (40) was put into Graveyard from Battlefield.
+16	B's End of Combat Step	PHASE	B's End of Combat Step
+16	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+16	B's Main phase, postcombat	STACK_ADD	B cast Gríma Wormtongue
+16	B's End step	PHASE	B's End step
+16	B's End step	STACK_ADD*	A cast Opt
+16	B's End step	STACK_ADD	A triggered Master Pakku
+16	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Opt (14), Activator: A, SpellAbility: Scry 1. Draw a card.]
+16	B's End step	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+16	B's Cleanup step	PHASE	B's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Main phase, precombat	STACK_ADD	A triggered Ruin Crab
+17	A's Main phase, precombat	ZONE_CHANGE	B milled Swamp (50), Barren Moor (63) and Tainted Isle (46).
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's End of Combat Step	PHASE	A's End of Combat Step
+17	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+17	A's Main phase, postcombat	STACK_ADD	A cast Baleful Strix
+17	A's Main phase, postcombat	STACK_ADD	A triggered Baleful Strix
+17	A's End step	PHASE	A's End step
+17	A's End step	STACK_ADD*	A cast Delightful Discovery
+17	A's End step	STACK_ADD	A triggered Master Pakku
+17	A's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Delightful Discovery (18), Activator: A, SpellAbility: Scry 2, then draw two cards. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.) ]
+17	A's End step	STACK_RESOLVE*	Delightful Discovery (18) - A scries 2. A draws two cards.
+17	A's Cleanup step	PHASE	A's Cleanup step

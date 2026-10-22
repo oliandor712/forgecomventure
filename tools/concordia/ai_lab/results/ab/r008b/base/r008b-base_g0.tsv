@@ -1,0 +1,33 @@
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Destiny Spinner (6), Mirkwood Spider (16), Arasta of the Endless Web (40), Ruins Recluse (13) and Deadly Recluse (15) to attack B.
+11	A's Declare Attackers Step	STACK_ADD	A triggered Mirkwood Spider targeting [Arasta of the Endless Web (40)]
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) and Elvish Skysweeper (51) to block Destiny Spinner (6). B didn't block Mirkwood Spider (16). B didn't block Arasta of the Endless Web (40). B assigned Viridian Zealot (73) to block Ruins Recluse (13). B didn't block Deadly Recluse (15).
+11	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Destiny Spinner (6)]
+11	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Destiny Spinner (6) gets +4/+4  until end of turn.
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Destiny Spinner (6) deals 3 damage to Selvala, Heart of the Wilds (81).
+11	A's Combat Damage Step	DAMAGE	Destiny Spinner (6) deals 3 damage to Elvish Skysweeper (51).
+11	A's Combat Damage Step	DAMAGE	Mirkwood Spider (16) deals 1 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 1 damage (Deathtouch) to Viridian Zealot (73).
+11	A's Combat Damage Step	DAMAGE	Deadly Recluse (15) deals 1 combat damage to B.
+11	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Destiny Spinner (6).
+11	A's Combat Damage Step	DAMAGE	Elvish Skysweeper (51) deals 1 damage to Destiny Spinner (6).
+11	A's Combat Damage Step	DAMAGE	Viridian Zealot (73) deals 2 damage to Ruins Recluse (13).
+11	A's Combat Damage Step	LIFE	Life: B 13 > 8
+11	A's Combat Damage Step	ZONE_CHANGE	Ruins Recluse (13) was put into Graveyard from Battlefield.
+11	A's Combat Damage Step	ZONE_CHANGE	Elvish Skysweeper (51) was put into Graveyard from Battlefield.
+11	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+11	A's Combat Damage Step	ZONE_CHANGE	Viridian Zealot (73) was put into Graveyard from Battlefield.
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step

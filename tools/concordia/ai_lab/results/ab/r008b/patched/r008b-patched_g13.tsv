@@ -1,0 +1,121 @@
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Destiny Spinner (6)]
+10	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (9) - Destiny Spinner (6) gets +2/+2 and gains hexproof until end of turn.
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Destiny Spinner (6) and Arasta of the Endless Web (40) to attack B.
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B didn't block Destiny Spinner (6). B didn't block Arasta of the Endless Web (40).
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Destiny Spinner (6) deals 4 combat damage to B.
+10	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 20 > 13
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A cast Brotherhood Regalia
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+22	B's Cleanup step	TURN	Turn 22 (A)
+22	A's Untap step	PHASE	A's Untap step
+22	A's Upkeep step	PHASE	A's Upkeep step
+22	A's Draw step	PHASE	A's Draw step
+22	A's Main phase, precombat	PHASE	A's Main phase, precombat
+22	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+22	A's Beginning of Combat Step	STACK_ADD*	A cast Giant Growth targeting [Aquastrand Spider (7)]
+22	A's Beginning of Combat Step	STACK_RESOLVE*	Giant Growth (19) - Aquastrand Spider (7) gets +3/+3  until end of turn.
+22	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+22	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22) and Aquastrand Spider (7) to attack B.
+22	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+22	A's Declare Blockers Step	COMBAT	B assigned Selvala, Heart of the Wilds (81) to block Canopy Spider (22). B assigned Leaf-Crowned Visionary (52) to block Aquastrand Spider (7).
+22	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+22	A's Combat Damage Step	PHASE	A's Combat Damage Step
+22	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 1 damage to Selvala, Heart of the Wilds (81).
+22	A's Combat Damage Step	DAMAGE	Aquastrand Spider (7) deals 4 damage to Leaf-Crowned Visionary (52).
+22	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 3 damage to Canopy Spider (22).
+22	A's Combat Damage Step	DAMAGE	Leaf-Crowned Visionary (52) deals 1 damage to Aquastrand Spider (7).
+22	A's Combat Damage Step	ZONE_CHANGE	Canopy Spider (22) was put into Graveyard from Battlefield.
+22	A's Combat Damage Step	ZONE_CHANGE	Leaf-Crowned Visionary (52) was put into Graveyard from Battlefield.
+22	A's End of Combat Step	PHASE	A's End of Combat Step
+22	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+22	A's End step	PHASE	A's End step
+22	A's Cleanup step	PHASE	A's Cleanup step
+40	B's Cleanup step	TURN	Turn 40 (A)
+40	A's Untap step	PHASE	A's Untap step
+40	A's Upkeep step	PHASE	A's Upkeep step
+40	A's Draw step	PHASE	A's Draw step
+40	A's Main phase, precombat	PHASE	A's Main phase, precombat
+40	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+40	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+40	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+40	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+40	A's Combat Damage Step	PHASE	A's Combat Damage Step
+40	A's End of Combat Step	PHASE	A's End of Combat Step
+40	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+40	A's Main phase, postcombat	STACK_ADD	A cast Aftermath Analyst
+40	A's Main phase, postcombat	STACK_ADD	A triggered Aquastrand Spider
+40	A's Main phase, postcombat	STACK_ADD	A triggered Aftermath Analyst
+40	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+40	A's Main phase, postcombat	ZONE_CHANGE*	A milled Hero's Blade (14), Titanic Growth (12) and Snakeskin Veil (5).
+40	A's End step	PHASE	A's End step
+40	A's End step	ZONE_CHANGE	Viridian Zealot (73) was put into Graveyard from Battlefield.
+40	A's End step	STACK_ADD	B activated Viridian Zealot targeting [Arcane Signet (18)]
+40	A's End step	ZONE_CHANGE	Arcane Signet (18) was put into Graveyard from Battlefield.
+40	A's Cleanup step	PHASE	A's Cleanup step
+44	B's Cleanup step	TURN	Turn 44 (A)
+44	A's Untap step	PHASE	A's Untap step
+44	A's Upkeep step	PHASE	A's Upkeep step
+44	A's Draw step	PHASE	A's Draw step
+44	A's Main phase, precombat	PHASE	A's Main phase, precombat
+44	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+44	A's Beginning of Combat Step	STACK_ADD*	A cast Giant Growth targeting [Aftermath Analyst (8)]
+44	A's Beginning of Combat Step	STACK_RESOLVE*	Giant Growth (20) - Aftermath Analyst (8) gets +3/+3  until end of turn.
+44	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+44	A's Declare Attackers Step	COMBAT	A assigned Spider Token (92), Aftermath Analyst (8) and Ruins Recluse (13) to attack B.
+44	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+44	A's Declare Blockers Step	COMBAT	B assigned Collector Ouphe (48) to block Spider Token (92). B assigned Leaf Gilder (74) to block Aftermath Analyst (8). B assigned Elvish Mystic (77) to block Ruins Recluse (13).
+44	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+44	A's Combat Damage Step	PHASE	A's Combat Damage Step
+44	A's Combat Damage Step	DAMAGE	Spider Token (92) deals 1 damage to Collector Ouphe (48).
+44	A's Combat Damage Step	DAMAGE	Aftermath Analyst (8) deals 4 damage to Leaf Gilder (74).
+44	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 4 damage (Deathtouch) to Elvish Mystic (77).
+44	A's Combat Damage Step	DAMAGE	Collector Ouphe (48) deals 2 damage to Spider Token (92).
+44	A's Combat Damage Step	DAMAGE	Elvish Mystic (77) deals 1 damage to Ruins Recluse (13).
+44	A's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 2 damage to Aftermath Analyst (8).
+44	A's Combat Damage Step	ZONE_CHANGE	Spider Token (92) was put into Graveyard from Battlefield.
+44	A's Combat Damage Step	ZONE_CHANGE	Leaf Gilder (74) was put into Graveyard from Battlefield.
+44	A's Combat Damage Step	ZONE_CHANGE	Elvish Mystic (77) was put into Graveyard from Battlefield.
+44	A's End of Combat Step	PHASE	A's End of Combat Step
+44	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+44	A's End step	PHASE	A's End step
+44	A's Cleanup step	PHASE	A's Cleanup step
+48	B's Cleanup step	TURN	Turn 48 (A)
+48	A's Untap step	PHASE	A's Untap step
+48	A's Upkeep step	PHASE	A's Upkeep step
+48	A's Draw step	PHASE	A's Draw step
+48	A's Main phase, precombat	PHASE	A's Main phase, precombat
+48	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+48	A's Beginning of Combat Step	STACK_ADD*	A cast Titanic Growth targeting [Copper Longlegs (2)]
+48	A's Beginning of Combat Step	STACK_RESOLVE*	Titanic Growth (11) - Copper Longlegs (2) gets +4/+4  until end of turn.
+48	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+48	A's Declare Attackers Step	COMBAT	A assigned Spider Token (95), Ruins Recluse (13) and Copper Longlegs (2) to attack B.
+48	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+48	A's Declare Blockers Step	COMBAT	B didn't block Spider Token (95). B assigned H.E.R.B.I.E., Lovable Robot (80) to block Ruins Recluse (13). B assigned Selvala, Heart of the Wilds (81) to block Copper Longlegs (2).
+48	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+48	A's Combat Damage Step	PHASE	A's Combat Damage Step
+48	A's Combat Damage Step	DAMAGE	Spider Token (95) deals 1 combat damage to B.
+48	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 18 damage (Deathtouch) to H.E.R.B.I.E., Lovable Robot (80).
+48	A's Combat Damage Step	DAMAGE	Copper Longlegs (2) deals 5 damage to Selvala, Heart of the Wilds (81).
+48	A's Combat Damage Step	DAMAGE	H.E.R.B.I.E., Lovable Robot (80) deals 1 damage to Ruins Recluse (13).
+48	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Copper Longlegs (2).
+48	A's Combat Damage Step	LIFE	Life: B 5 > 4
+48	A's Combat Damage Step	ZONE_CHANGE	H.E.R.B.I.E., Lovable Robot (80) was put into Graveyard from Battlefield.
+48	A's Combat Damage Step	ZONE_CHANGE	Selvala, Heart of the Wilds (81) was put into Graveyard from Battlefield.
+48	A's End of Combat Step	PHASE	A's End of Combat Step
+48	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+48	A's End step	PHASE	A's End step
+48	A's Cleanup step	PHASE	A's Cleanup step

@@ -1,0 +1,54 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Merfolk Trickster; Myr Quadropod; Island; Island; Island; Deranged Assistant; Island
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Main phase, precombat	STACK_ADD*	A cast Myr Quadropod
+8	A's Main phase, precombat	STACK_RESOLVE*	Myr Quadropod - Creature 1 / 4
+8	A's Main phase, precombat	STACK_ADD	A triggered Pollywog Prodigy
+8	A's Main phase, precombat	STACK_RESOLVE*	Evolve (Whenever a creature you control enters, if that creature has greater power or toughness than this creature, put a +1/+1 counter on this creature.) [Zone Changer: Myr Quadropod (11)]
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Deranged Assistant
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Main phase, precombat	STACK_ADD	B cast Universal Automaton
+11	B's Main phase, precombat	STACK_ADD	B triggered Sai, Master Thopterist
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Beginning of Combat Step	STACK_ADD*	A activated Myr Quadropod
+11	B's Beginning of Combat Step	STACK_RESOLVE*	Myr Quadropod (11) - Myr Quadropod (11) gains hidden cardname's power and toughness are switched until end of turn.
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Attackers Step	COMBAT	B assigned Gingerbrute (76), Thopter Token (85), Thopter Token (88), Thopter Token (91), Thopter Token (96), Chief of the Foundry (49), Thopter Token (105), Thopter Token (108), Thopter Token (111), Millikin (79) and Sai, Master Thopterist (81) to attack A.
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's Declare Blockers Step	COMBAT	A assigned Merfolk Trickster (20) to block Gingerbrute (76). A didn't block Thopter Token (85). A didn't block Thopter Token (88). A didn't block Thopter Token (91). A didn't block Thopter Token (96). A assigned Deranged Assistant (1) to block Chief of the Foundry (49). A didn't block Thopter Token (105). A didn't block Thopter Token (108). A didn't block Thopter Token (111). A assigned Alandra, Sky Dreamer (40) to block Millikin (79). A assigned Pollywog Prodigy (17) to block Sai, Master Thopterist (81).
+11	B's Declare Blockers Step	ZONE_CHANGE	Mycosynth Wellspring (77) was put into Graveyard from Battlefield.
+11	B's Declare Blockers Step	ZONE_CHANGE	Millikin (79) was put into Graveyard from Battlefield.
+11	B's Declare Blockers Step	STACK_ADD	B activated Sai, Master Thopterist
+11	B's Declare Blockers Step	STACK_ADD	B triggered Mycosynth Wellspring
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's Combat Damage Step	DAMAGE	Gingerbrute (76) deals 2 damage to Merfolk Trickster (20).
+11	B's Combat Damage Step	DAMAGE	Thopter Token (85) deals 2 combat damage to A.
+11	B's Combat Damage Step	DAMAGE	Thopter Token (88) deals 2 combat damage to A.
+11	B's Combat Damage Step	DAMAGE	Thopter Token (91) deals 2 combat damage to A.
+11	B's Combat Damage Step	DAMAGE	Thopter Token (96) deals 2 combat damage to A.
+11	B's Combat Damage Step	DAMAGE	Chief of the Foundry (49) deals 2 damage to Deranged Assistant (1).
+11	B's Combat Damage Step	DAMAGE	Thopter Token (105) deals 2 combat damage to A.
+11	B's Combat Damage Step	DAMAGE	Thopter Token (108) deals 2 combat damage to A.
+11	B's Combat Damage Step	DAMAGE	Thopter Token (111) deals 2 combat damage to A.
+11	B's Combat Damage Step	DAMAGE	Sai, Master Thopterist (81) deals 1 damage to Pollywog Prodigy (17).
+11	B's Combat Damage Step	DAMAGE	Deranged Assistant (1) deals 1 damage to Chief of the Foundry (49).
+11	B's Combat Damage Step	DAMAGE	Merfolk Trickster (20) deals 2 damage to Gingerbrute (76).
+11	B's Combat Damage Step	DAMAGE	Pollywog Prodigy (17) deals 2 damage to Sai, Master Thopterist (81).
+11	B's Combat Damage Step	LIFE	Life: A 12 > -2

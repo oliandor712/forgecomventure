@@ -1,0 +1,25 @@
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Spider Token (85) and Arasta of the Endless Web (40) to attack B.
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B assigned Leaf Gilder (74) to block Spider Token (85). B assigned Leaf-Crowned Visionary (52) to block Arasta of the Endless Web (40).
+14	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Spider Token (85)]
+14	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Spider Token (85) gets +3/+3  until end of turn.
+14	A's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+14	A's Declare Blockers Step	STACK_ADD	A triggered Arasta of the Endless Web
+14	A's Declare Blockers Step	STACK_ADD	B triggered Selvala, Heart of the Wilds
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 4 damage to Leaf Gilder (74).
+14	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 damage to Leaf-Crowned Visionary (52).
+14	A's Combat Damage Step	DAMAGE	Leaf Gilder (74) deals 3 damage to Spider Token (85).
+14	A's Combat Damage Step	DAMAGE	Leaf-Crowned Visionary (52) deals 1 damage to Arasta of the Endless Web (40).
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step

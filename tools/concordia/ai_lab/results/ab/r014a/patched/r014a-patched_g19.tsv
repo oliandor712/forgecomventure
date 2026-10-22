@@ -1,0 +1,65 @@
+0		MULLIGAN*	A has kept a hand of 6 cards hand: Swamp; Deliberate; Demon's Due; Joint Exploration; Omen Hawker; Swamp
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Omen Hawker (31) and Corrupt Court Official (11) to attack B.
+9	A's Declare Attackers Step	STACK_ADD*	A cast Demon's Due
+9	A's Declare Attackers Step	LIFE	Life: A 14 > 12
+9	A's Declare Attackers Step	STACK_RESOLVE*	Demon's Due (19) - A scries 2. A draws two cards. A loses 2 life.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Omen Hawker (31). B didn't block Corrupt Court Official (11).
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Omen Hawker (31) deals 1 combat damage to B.
+9	A's Combat Damage Step	DAMAGE	Corrupt Court Official (11) deals 1 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 17 > 15
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Main phase, precombat	STACK_ADD*	A cast Deliberate
+11	A's Main phase, precombat	STACK_RESOLVE*	Deliberate (35) - A scries 2. A draws a card.
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD	A cast Vampiric Rites
+11	A's Main phase, postcombat	STACK_ADD*	A cast Joint Exploration
+11	A's Main phase, postcombat	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned Umbral Collar Zealot (62) and Gríma Wormtongue (72) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A didn't block Umbral Collar Zealot (62). A didn't block Gríma Wormtongue (72).
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE	Umbral Collar Zealot (62) deals 3 combat damage to A.
+12	B's Combat Damage Step	DAMAGE	Gríma Wormtongue (72) deals 1 combat damage to A.
+12	B's Combat Damage Step	LIFE	Life: A 9 > 5
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+12	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+12	B's Main phase, postcombat	ZONE_CHANGE*	A milled Ruin Crab (30), Deliberate (34) and Swamp (8).
+12	B's Main phase, postcombat	STACK_ADD	B cast Ghostly Pilferer
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step

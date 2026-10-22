@@ -1,0 +1,130 @@
+0		MULLIGAN*	A has kept a hand of 6 cards hand: Sol Ring; Deliberate; Malakir Rebirth; Corrupt Court Official; Tainted Isle; Swamp
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Upkeep step	STACK_ADD*	A cast Deliberate
+5	A's Upkeep step	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Attackers Step	COMBAT	A assigned Atris, Oracle of Half-Truths (40) to attack B.
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's Declare Blockers Step	COMBAT	B didn't block Atris, Oracle of Half-Truths (40).
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's Combat Damage Step	DAMAGE	Atris, Oracle of Half-Truths (40) deals 3 combat damage to B.
+5	A's Combat Damage Step	LIFE	Life: B 20 > 17
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's Main phase, postcombat	STACK_ADD	A cast Corrupt Court Official
+5	A's Main phase, postcombat	STACK_ADD	A triggered Corrupt Court Official targeting [B]
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+8	A's Cleanup step	TURN	Turn 8 (B)
+8	B's Untap step	PHASE	B's Untap step
+8	B's Upkeep step	PHASE	B's Upkeep step
+8	B's Upkeep step	STACK_ADD*	A cast Demon's Due
+8	B's Upkeep step	LIFE	Life: A 19 > 17
+8	B's Upkeep step	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+8	B's Draw step	PHASE	B's Draw step
+8	B's Main phase, precombat	PHASE	B's Main phase, precombat
+8	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+8	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+8	B's Declare Attackers Step	COMBAT	B assigned Baleful Strix (56) and Scheming Aspirant (43) to attack A.
+8	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+8	B's Declare Blockers Step	COMBAT	A didn't block Baleful Strix (56). A didn't block Scheming Aspirant (43).
+8	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+8	B's Combat Damage Step	PHASE	B's Combat Damage Step
+8	B's Combat Damage Step	DAMAGE	Baleful Strix (56) deals 1 combat damage to A.
+8	B's Combat Damage Step	DAMAGE	Scheming Aspirant (43) deals 1 combat damage to A.
+8	B's Combat Damage Step	LIFE	Life: A 17 > 15
+8	B's End of Combat Step	PHASE	B's End of Combat Step
+8	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+8	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+8	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+8	B's Main phase, postcombat	ZONE_CHANGE	A milled Ghostly Pilferer (28), Swamp (7) and Island (25).
+8	B's Main phase, postcombat	STACK_ADD	B cast Fellwar Stone
+8	B's End step	PHASE	B's End step
+8	B's Cleanup step	PHASE	B's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Upkeep step	STACK_ADD*	A cast Deliberate
+9	A's Upkeep step	STACK_RESOLVE*	Deliberate (35) - A scries 2. A draws a card.
+9	A's Upkeep step	STACK_ADD*	A cast Opt
+9	A's Upkeep step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's Main phase, postcombat	STACK_ADD	A cast Baleful Strix
+9	A's Main phase, postcombat	STACK_ADD	A triggered Baleful Strix
+9	A's Main phase, postcombat	STACK_ADD	A activated Barren Moor
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Upkeep step	STACK_ADD*	A cast Demon's Due
+12	B's Upkeep step	LIFE	Life: A 12 > 10
+12	B's Upkeep step	STACK_RESOLVE*	Demon's Due (19) - A scries 2. A draws two cards. A loses 2 life.
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81), Orc Army Token (84) and Baleful Strix (56) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A assigned Baleful Strix (13) to block The Mouth of Sauron (81). A didn't block Orc Army Token (84). A didn't block Baleful Strix (56).
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 damage to Baleful Strix (13).
+12	B's Combat Damage Step	DAMAGE	Orc Army Token (84) deals 3 combat damage to A.
+12	B's Combat Damage Step	DAMAGE	Baleful Strix (56) deals 1 combat damage to A.
+12	B's Combat Damage Step	DAMAGE	Baleful Strix (13) deals 1 damage (Deathtouch) to The Mouth of Sauron (81).
+12	B's Combat Damage Step	LIFE	Life: A 10 > 6
+12	B's Combat Damage Step	ZONE_CHANGE	The Mouth of Sauron (81) was put into Graveyard from Battlefield.
+12	B's Combat Damage Step	ZONE_CHANGE	Baleful Strix (13) was put into Graveyard from Battlefield.
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's Main phase, postcombat	STACK_ADD	B triggered Bojuka Bog targeting [A]
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Upkeep step	STACK_ADD*	A cast Joint Exploration
+14	B's Upkeep step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+14	B's Draw step	PHASE	B's Draw step
+14	B's Draw step	STACK_ADD*	A cast Opt
+14	B's Draw step	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned Orc Army Token (84) and Baleful Strix (56) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A assigned Atris, Oracle of Half-Truths (40) to block Orc Army Token (84). A didn't block Baleful Strix (56).
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	Orc Army Token (84) deals 3 damage to Atris, Oracle of Half-Truths (40).
+14	B's Combat Damage Step	DAMAGE	Baleful Strix (56) deals 1 combat damage to A.
+14	B's Combat Damage Step	DAMAGE	Atris, Oracle of Half-Truths (40) deals 3 damage to Orc Army Token (84).
+14	B's Combat Damage Step	LIFE	Life: A 6 > 5
+14	B's Combat Damage Step	ZONE_CHANGE	Orc Army Token (84) was put into Graveyard from Battlefield.
+14	B's Combat Damage Step	ZONE_CHANGE	Atris, Oracle of Half-Truths (40) was put into Graveyard from Battlefield.
+14	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+14	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+14	B's Combat Damage Step	LIFE	Life: B 14 > 13
+14	B's Combat Damage Step	LIFE	Life: A 5 > 6
+14	B's Combat Damage Step	LIFE	Life: B 13 > 12
+14	B's Combat Damage Step	LIFE	Life: A 6 > 7
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's Main phase, postcombat	STACK_ADD	B cast Master Pakku
+14	B's End step	PHASE	B's End step
+14	B's Cleanup step	PHASE	B's Cleanup step

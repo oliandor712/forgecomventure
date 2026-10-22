@@ -1,0 +1,63 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Giant Growth; Tamiyo's Safekeeping; Giant Growth; Sol Ring; Forest; Ruins Recluse; Forest
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40) to attack B.
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's Declare Blockers Step	COMBAT	B didn't block Arasta of the Endless Web (40).
+5	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Arasta of the Endless Web (40)]
+5	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Arasta of the Endless Web (40) gets +4/+4  until end of turn.
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 7 combat damage to B.
+5	A's Combat Damage Step	LIFE	Life: B 20 > 13
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's Main phase, postcombat	STACK_ADD	A cast Ruins Recluse
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Beginning of Combat Step	STACK_ADD*	A cast Blossoming Defense targeting [Ruins Recluse (13)]
+7	A's Beginning of Combat Step	STACK_RESOLVE*	Blossoming Defense (10) - Ruins Recluse (13) gets +2/+2 and gains hexproof until end of turn.
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Ruins Recluse (13) and Arasta of the Endless Web (40) to attack B.
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B didn't block Ruins Recluse (13). B didn't block Arasta of the Endless Web (40).
+7	A's Declare Blockers Step	STACK_ADD	A activated Ruins Recluse
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 4 combat damage to B.
+7	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: B 13 > 6
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Ruins Recluse (13) and Spider Token (85) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Ruins Recluse (13). B didn't block Spider Token (85).
+9	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Ruins Recluse (13)]
+9	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (20) - Ruins Recluse (13) gets +3/+3  until end of turn.
+9	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Ruins Recluse (13)]
+9	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Ruins Recluse (13) gets +3/+3  until end of turn.
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 8 combat damage to B.
+9	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 1 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 6 > -3

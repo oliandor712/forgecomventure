@@ -1,0 +1,62 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Tamiyo's Safekeeping; Forest; Snakeskin Veil; Forest; Titanic Growth; Arcane Signet; Titanic Growth
+9	B's Cleanup step	TURN	Turn 9 (A)
+9	A's Untap step	PHASE	A's Untap step
+9	A's Upkeep step	PHASE	A's Upkeep step
+9	A's Draw step	PHASE	A's Draw step
+9	A's Main phase, precombat	PHASE	A's Main phase, precombat
+9	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+9	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+9	A's Declare Attackers Step	COMBAT	A assigned Grappler Spider (17) to attack B.
+9	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+9	A's Declare Blockers Step	COMBAT	B didn't block Grappler Spider (17).
+9	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Grappler Spider (17)]
+9	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (11) - Grappler Spider (17) gets +4/+4  until end of turn.
+9	A's Declare Blockers Step	STACK_ADD	A cast Tyvar's Stand targeting [Grappler Spider (17)]
+9	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+9	A's Combat Damage Step	PHASE	A's Combat Damage Step
+9	A's Combat Damage Step	DAMAGE	Grappler Spider (17) deals 8 combat damage to B.
+9	A's Combat Damage Step	LIFE	Life: B 20 > 12
+9	A's End of Combat Step	PHASE	A's End of Combat Step
+9	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+9	A's End step	PHASE	A's End step
+9	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Attackers Step	COMBAT	A assigned Grappler Spider (17) to attack B.
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's Declare Blockers Step	COMBAT	B didn't block Grappler Spider (17).
+11	A's Declare Blockers Step	STACK_ADD*	A cast Titanic Growth targeting [Grappler Spider (17)]
+11	A's Declare Blockers Step	STACK_RESOLVE*	Titanic Growth (12) - Grappler Spider (17) gets +4/+4  until end of turn.
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's Combat Damage Step	DAMAGE	Grappler Spider (17) deals 7 combat damage to B.
+11	A's Combat Damage Step	LIFE	Life: B 12 > 5
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD	A cast Destiny Spinner
+11	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+17	B's Cleanup step	TURN	Turn 17 (A)
+17	A's Untap step	PHASE	A's Untap step
+17	A's Upkeep step	PHASE	A's Upkeep step
+17	A's Draw step	PHASE	A's Draw step
+17	A's Main phase, precombat	PHASE	A's Main phase, precombat
+17	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+17	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+17	A's Declare Attackers Step	COMBAT	A assigned Grappler Spider (17) and Arasta of the Endless Web (40) to attack B.
+17	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+17	A's Declare Blockers Step	COMBAT	B didn't block Grappler Spider (17). B assigned Phyrexian Dreadnought (42) to block Arasta of the Endless Web (40).
+17	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Grappler Spider (17)]
+17	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Grappler Spider (17) gets +3/+3  until end of turn.
+17	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+17	A's Combat Damage Step	PHASE	A's Combat Damage Step
+17	A's Combat Damage Step	DAMAGE	Grappler Spider (17) deals 6 combat damage to B.
+17	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 3 damage to Phyrexian Dreadnought (42).
+17	A's Combat Damage Step	DAMAGE	Phyrexian Dreadnought (42) deals 12 damage to Arasta of the Endless Web (40).
+17	A's Combat Damage Step	LIFE	Life: B 5 > -1

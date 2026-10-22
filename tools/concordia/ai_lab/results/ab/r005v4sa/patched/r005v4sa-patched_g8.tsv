@@ -1,0 +1,515 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Deranged Assistant; Island; Sol Ring; Island; Vodalian Arcanist; Turtleshell Changeling; Stonybrook Banneret
+4	B's Cleanup step	TURN	Turn 4 (A)
+4	A's Untap step	PHASE	A's Untap step
+4	A's Upkeep step	PHASE	A's Upkeep step
+4	A's Draw step	PHASE	A's Draw step
+4	A's Main phase, precombat	PHASE	A's Main phase, precombat
+4	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+4	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+4	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+4	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+4	A's Combat Damage Step	PHASE	A's Combat Damage Step
+4	A's End of Combat Step	PHASE	A's End of Combat Step
+4	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+4	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+4	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+4	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=4 phase=MAIN2 opp_creatures=2 no_blockers=false helps=false
+4	A's End step	PHASE	A's End step
+4	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=4 phase=END_OF_TURN opp_creatures=2 no_blockers=false helps=false
+4	A's Cleanup step	PHASE	A's Cleanup step
+5	A's Cleanup step	TURN	Turn 5 (B)
+5	B's Untap step	PHASE	B's Untap step
+5	B's Upkeep step	PHASE	B's Upkeep step
+5	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=5 phase=UPKEEP opp_creatures=2 no_blockers=false helps=false
+5	B's Draw step	PHASE	B's Draw step
+5	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=5 phase=DRAW opp_creatures=2 no_blockers=false helps=false
+5	B's Main phase, precombat	PHASE	B's Main phase, precombat
+5	B's Main phase, precombat	STACK_ADD	B activated Mask of Memory targeting [Gingerbrute (76)]
+5	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=5 phase=MAIN1 opp_creatures=2 no_blockers=false helps=false
+5	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=5 phase=MAIN1 opp_creatures=2 no_blockers=false helps=false
+5	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+5	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=5 phase=COMBAT_BEGIN opp_creatures=2 no_blockers=false helps=false
+5	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+5	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=5 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=2 no_blockers=false helps=false
+5	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+5	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+5	B's Combat Damage Step	PHASE	B's Combat Damage Step
+5	B's End of Combat Step	PHASE	B's End of Combat Step
+5	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=5 phase=COMBAT_END opp_creatures=2 no_blockers=false helps=false
+5	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+5	B's Main phase, postcombat	STACK_ADD	B cast Millikin
+5	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=5 phase=MAIN2 opp_creatures=2 no_blockers=false helps=false
+5	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=5 phase=MAIN2 opp_creatures=3 no_blockers=false helps=false
+5	B's End step	PHASE	B's End step
+5	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=5 phase=END_OF_TURN opp_creatures=3 no_blockers=false helps=false
+5	B's Cleanup step	PHASE	B's Cleanup step
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=6 phase=UPKEEP opp_creatures=3 no_blockers=false helps=false
+6	A's Draw step	PHASE	A's Draw step
+6	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=6 phase=DRAW opp_creatures=3 no_blockers=false helps=false
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=6 phase=MAIN1 opp_creatures=3 no_blockers=false helps=false
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=6 phase=COMBAT_BEGIN opp_creatures=3 no_blockers=false helps=false
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=6 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=3 no_blockers=false helps=false
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=6 phase=COMBAT_END opp_creatures=3 no_blockers=false helps=false
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD	A cast Alandra, Sky Dreamer
+6	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=6 phase=MAIN2 opp_creatures=3 no_blockers=false helps=false
+6	A's Main phase, postcombat	STACK_ADD	A cast Serum Visions
+6	A's Main phase, postcombat	STACK_ADD	A triggered Alandra, Sky Dreamer
+6	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=6 phase=MAIN2 opp_creatures=3 no_blockers=false helps=false
+6	A's End step	PHASE	A's End step
+6	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=6 phase=END_OF_TURN opp_creatures=3 no_blockers=false helps=false
+6	A's Cleanup step	PHASE	A's Cleanup step
+7	A's Cleanup step	TURN	Turn 7 (B)
+7	B's Untap step	PHASE	B's Untap step
+7	B's Upkeep step	PHASE	B's Upkeep step
+7	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=7 phase=UPKEEP opp_creatures=3 no_blockers=false helps=false
+7	B's Draw step	PHASE	B's Draw step
+7	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=7 phase=DRAW opp_creatures=3 no_blockers=false helps=false
+7	B's Main phase, precombat	PHASE	B's Main phase, precombat
+7	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=7 phase=MAIN1 opp_creatures=3 no_blockers=false helps=false
+7	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+7	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=7 phase=COMBAT_BEGIN opp_creatures=3 no_blockers=false helps=false
+7	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+7	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=7 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=3 no_blockers=false helps=false
+7	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+7	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+7	B's Combat Damage Step	PHASE	B's Combat Damage Step
+7	B's End of Combat Step	PHASE	B's End of Combat Step
+7	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=7 phase=COMBAT_END opp_creatures=3 no_blockers=false helps=false
+7	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+7	B's Main phase, postcombat	STACK_ADD	B cast Aetherjacket
+7	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=7 phase=MAIN2 opp_creatures=3 no_blockers=false helps=false
+7	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=7 phase=MAIN2 opp_creatures=4 no_blockers=false helps=false
+7	B's End step	PHASE	B's End step
+7	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=7 phase=END_OF_TURN opp_creatures=4 no_blockers=false helps=false
+7	B's Cleanup step	PHASE	B's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=8 phase=UPKEEP opp_creatures=4 no_blockers=false helps=false
+8	A's Draw step	PHASE	A's Draw step
+8	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=8 phase=DRAW opp_creatures=4 no_blockers=false helps=false
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=8 phase=MAIN1 opp_creatures=4 no_blockers=false helps=false
+8	A's Main phase, precombat	STACK_ADD	A cast Aqueous Form targeting [Alandra, Sky Dreamer (40)]
+8	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=8 phase=MAIN1 opp_creatures=4 no_blockers=false helps=false
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=8 phase=COMBAT_BEGIN opp_creatures=4 no_blockers=false helps=false
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Alandra, Sky Dreamer (40) and Drake Token (85) to attack B.
+8	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+8	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=8 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=4 no_blockers=false helps=false
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B didn't block Alandra, Sky Dreamer (40). B didn't block Drake Token (85).
+8	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=8 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=4 no_blockers=false helps=false
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 combat damage to B.
+8	A's Combat Damage Step	DAMAGE	Drake Token (85) deals 2 combat damage to B.
+8	A's Combat Damage Step	LIFE	Life: B 20 > 16
+8	A's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=8 phase=COMBAT_DAMAGE opp_creatures=4 no_blockers=false helps=false
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=8 phase=COMBAT_END opp_creatures=4 no_blockers=false helps=false
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Vodalian Arcanist
+8	A's Main phase, postcombat	STACK_ADD	A cast Stonybrook Banneret
+8	A's Main phase, postcombat	STACK_ADD	A cast Deranged Assistant
+8	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=8 phase=MAIN2 opp_creatures=4 no_blockers=false helps=false
+8	A's End step	PHASE	A's End step
+8	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=8 phase=END_OF_TURN opp_creatures=4 no_blockers=false helps=false
+8	A's Cleanup step	PHASE	A's Cleanup step
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=UPKEEP opp_creatures=4 no_blockers=false helps=false
+9	B's Draw step	PHASE	B's Draw step
+9	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=DRAW opp_creatures=4 no_blockers=false helps=false
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Main phase, precombat	STACK_ADD	B cast Ornithopter
+9	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=MAIN1 opp_creatures=4 no_blockers=false helps=false
+9	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=MAIN1 opp_creatures=5 no_blockers=false helps=false
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=COMBAT_BEGIN opp_creatures=5 no_blockers=false helps=false
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Attackers Step	COMBAT	B assigned Aetherjacket (47) to attack A.
+9	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=5 no_blockers=false helps=false
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's Declare Blockers Step	COMBAT	A didn't block Aetherjacket (47).
+9	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=5 no_blockers=false helps=false
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's Combat Damage Step	DAMAGE	Aetherjacket (47) deals 2 combat damage to A.
+9	B's Combat Damage Step	LIFE	Life: A 18 > 16
+9	B's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=COMBAT_DAMAGE opp_creatures=5 no_blockers=false helps=false
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=COMBAT_END opp_creatures=5 no_blockers=false helps=false
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's Main phase, postcombat	STACK_ADD	B cast Sai, Master Thopterist
+9	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=MAIN2 opp_creatures=5 no_blockers=false helps=false
+9	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=MAIN2 opp_creatures=6 no_blockers=false helps=false
+9	B's End step	PHASE	B's End step
+9	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=9 phase=END_OF_TURN opp_creatures=6 no_blockers=false helps=false
+9	B's Cleanup step	PHASE	B's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=10 phase=UPKEEP opp_creatures=6 no_blockers=false helps=false
+10	A's Draw step	PHASE	A's Draw step
+10	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=10 phase=DRAW opp_creatures=6 no_blockers=false helps=false
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=10 phase=MAIN1 opp_creatures=6 no_blockers=false helps=false
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=10 phase=COMBAT_BEGIN opp_creatures=6 no_blockers=false helps=false
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Attackers Step	COMBAT	A assigned Alandra, Sky Dreamer (40), Drake Token (85) and Stonybrook Banneret (21) to attack B.
+10	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+10	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=10 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=6 no_blockers=false helps=false
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's Declare Blockers Step	COMBAT	B didn't block Alandra, Sky Dreamer (40). B didn't block Drake Token (85). B didn't block Stonybrook Banneret (21).
+10	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=10 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=6 no_blockers=false helps=false
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 combat damage to B.
+10	A's Combat Damage Step	DAMAGE	Drake Token (85) deals 2 combat damage to B.
+10	A's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 combat damage to B.
+10	A's Combat Damage Step	LIFE	Life: B 16 > 11
+10	A's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=10 phase=COMBAT_DAMAGE opp_creatures=6 no_blockers=false helps=false
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=10 phase=COMBAT_END opp_creatures=6 no_blockers=false helps=false
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's Main phase, postcombat	STACK_ADD	A cast Karfell Harbinger
+10	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=10 phase=MAIN2 opp_creatures=6 no_blockers=false helps=false
+10	A's End step	PHASE	A's End step
+10	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=10 phase=END_OF_TURN opp_creatures=6 no_blockers=false helps=false
+10	A's Cleanup step	PHASE	A's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=11 phase=UPKEEP opp_creatures=6 no_blockers=false helps=false
+11	B's Draw step	PHASE	B's Draw step
+11	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=11 phase=DRAW opp_creatures=6 no_blockers=false helps=false
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=11 phase=MAIN1 opp_creatures=6 no_blockers=false helps=false
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=11 phase=COMBAT_BEGIN opp_creatures=6 no_blockers=false helps=false
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Attackers Step	COMBAT	B assigned Aetherjacket (47) to attack A.
+11	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=11 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=6 no_blockers=false helps=false
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's Declare Blockers Step	COMBAT	A didn't block Aetherjacket (47).
+11	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=11 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=6 no_blockers=false helps=false
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's Combat Damage Step	DAMAGE	Aetherjacket (47) deals 2 combat damage to A.
+11	B's Combat Damage Step	LIFE	Life: A 16 > 14
+11	B's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=11 phase=COMBAT_DAMAGE opp_creatures=6 no_blockers=false helps=false
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=11 phase=COMBAT_END opp_creatures=6 no_blockers=false helps=false
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=11 phase=MAIN2 opp_creatures=6 no_blockers=false helps=false
+11	B's End step	PHASE	B's End step
+11	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=11 phase=END_OF_TURN opp_creatures=6 no_blockers=false helps=false
+11	B's Cleanup step	PHASE	B's Cleanup step
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=12 phase=UPKEEP opp_creatures=6 no_blockers=false helps=false
+12	A's Draw step	PHASE	A's Draw step
+12	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=12 phase=DRAW opp_creatures=6 no_blockers=false helps=false
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=12 phase=MAIN1 opp_creatures=6 no_blockers=false helps=false
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=12 phase=COMBAT_BEGIN opp_creatures=6 no_blockers=false helps=false
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Alandra, Sky Dreamer (40), Drake Token (85) and Stonybrook Banneret (21) to attack B.
+12	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+12	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=12 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=6 no_blockers=false helps=false
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B didn't block Alandra, Sky Dreamer (40). B didn't block Drake Token (85). B didn't block Stonybrook Banneret (21).
+12	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=12 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=6 no_blockers=false helps=false
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Drake Token (85) deals 2 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 combat damage to B.
+12	A's Combat Damage Step	LIFE	Life: B 11 > 6
+12	A's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=12 phase=COMBAT_DAMAGE opp_creatures=6 no_blockers=false helps=false
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=12 phase=COMBAT_END opp_creatures=6 no_blockers=false helps=false
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD*	A cast Turtleshell Changeling
+12	A's Main phase, postcombat	STACK_RESOLVE*	Turtleshell Changeling - Creature 1 / 4
+12	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=12 phase=MAIN2 opp_creatures=6 no_blockers=false helps=false
+12	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=12 phase=MAIN2 opp_creatures=6 no_blockers=false helps=false
+12	A's End step	PHASE	A's End step
+12	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=12 phase=END_OF_TURN opp_creatures=6 no_blockers=false helps=false
+12	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=12 phase=END_OF_TURN opp_creatures=6 no_blockers=false helps=false
+12	A's Cleanup step	PHASE	A's Cleanup step
+13	A's Cleanup step	TURN	Turn 13 (B)
+13	B's Untap step	PHASE	B's Untap step
+13	B's Upkeep step	PHASE	B's Upkeep step
+13	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=UPKEEP opp_creatures=6 no_blockers=false helps=false
+13	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=UPKEEP opp_creatures=6 no_blockers=false helps=false
+13	B's Draw step	PHASE	B's Draw step
+13	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=DRAW opp_creatures=6 no_blockers=false helps=false
+13	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=DRAW opp_creatures=6 no_blockers=false helps=false
+13	B's Main phase, precombat	PHASE	B's Main phase, precombat
+13	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=MAIN1 opp_creatures=6 no_blockers=false helps=false
+13	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=MAIN1 opp_creatures=6 no_blockers=false helps=false
+13	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+13	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=COMBAT_BEGIN opp_creatures=6 no_blockers=false helps=false
+13	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=COMBAT_BEGIN opp_creatures=6 no_blockers=false helps=false
+13	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+13	B's Declare Attackers Step	COMBAT	B assigned Aetherjacket (47) to attack A.
+13	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=6 no_blockers=false helps=false
+13	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=6 no_blockers=false helps=false
+13	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+13	B's Declare Blockers Step	COMBAT	A didn't block Aetherjacket (47).
+13	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=6 no_blockers=false helps=false
+13	B's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=6 no_blockers=false helps=false
+13	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+13	B's Combat Damage Step	PHASE	B's Combat Damage Step
+13	B's Combat Damage Step	DAMAGE	Aetherjacket (47) deals 2 combat damage to A.
+13	B's Combat Damage Step	LIFE	Life: A 14 > 12
+13	B's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=COMBAT_DAMAGE opp_creatures=6 no_blockers=false helps=false
+13	B's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=COMBAT_DAMAGE opp_creatures=6 no_blockers=false helps=false
+13	B's End of Combat Step	PHASE	B's End of Combat Step
+13	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=COMBAT_END opp_creatures=6 no_blockers=false helps=false
+13	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=COMBAT_END opp_creatures=6 no_blockers=false helps=false
+13	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+13	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=MAIN2 opp_creatures=6 no_blockers=false helps=false
+13	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=MAIN2 opp_creatures=6 no_blockers=false helps=false
+13	B's End step	PHASE	B's End step
+13	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=END_OF_TURN opp_creatures=6 no_blockers=false helps=false
+13	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=13 phase=END_OF_TURN opp_creatures=6 no_blockers=false helps=false
+13	B's Cleanup step	PHASE	B's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=UPKEEP opp_creatures=6 no_blockers=false helps=false
+14	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=UPKEEP opp_creatures=6 no_blockers=false helps=false
+14	A's Draw step	PHASE	A's Draw step
+14	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=DRAW opp_creatures=6 no_blockers=false helps=false
+14	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=DRAW opp_creatures=6 no_blockers=false helps=false
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=MAIN1 opp_creatures=6 no_blockers=false helps=false
+14	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=MAIN1 opp_creatures=6 no_blockers=false helps=false
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=COMBAT_BEGIN opp_creatures=6 no_blockers=false helps=false
+14	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=COMBAT_BEGIN opp_creatures=6 no_blockers=false helps=false
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Attackers Step	COMBAT	A assigned Alandra, Sky Dreamer (40), Drake Token (85) and Stonybrook Banneret (21) to attack B.
+14	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+14	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=6 no_blockers=false helps=false
+14	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=6 no_blockers=false helps=false
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's Declare Blockers Step	COMBAT	B didn't block Alandra, Sky Dreamer (40). B assigned Aetherjacket (47) to block Drake Token (85). B didn't block Stonybrook Banneret (21).
+14	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=6 no_blockers=false helps=false
+14	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=6 no_blockers=false helps=false
+14	A's Declare Blockers Step	ZONE_CHANGE	Gingerbrute (76) was put into Graveyard from Battlefield.
+14	A's Declare Blockers Step	STACK_ADD	B activated Gingerbrute
+14	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=5 no_blockers=false helps=false
+14	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=5 no_blockers=false helps=false
+14	A's Declare Blockers Step	LIFE	Life: B 6 > 9
+14	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=5 no_blockers=false helps=false
+14	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=5 no_blockers=false helps=false
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Drake Token (85) deals 2 damage to Aetherjacket (47).
+14	A's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 combat damage to B.
+14	A's Combat Damage Step	DAMAGE	Aetherjacket (47) deals 2 damage to Drake Token (85).
+14	A's Combat Damage Step	LIFE	Life: B 9 > 6
+14	A's Combat Damage Step	ZONE_CHANGE	Drake Token (85) was put into Graveyard from Battlefield.
+14	A's Combat Damage Step	ZONE_CHANGE	Aetherjacket (47) was put into Graveyard from Battlefield.
+14	A's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=COMBAT_DAMAGE opp_creatures=4 no_blockers=false helps=false
+14	A's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=COMBAT_DAMAGE opp_creatures=4 no_blockers=false helps=false
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=COMBAT_END opp_creatures=4 no_blockers=false helps=false
+14	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=COMBAT_END opp_creatures=4 no_blockers=false helps=false
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=MAIN2 opp_creatures=4 no_blockers=false helps=false
+14	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=MAIN2 opp_creatures=4 no_blockers=false helps=false
+14	A's End step	PHASE	A's End step
+14	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=END_OF_TURN opp_creatures=4 no_blockers=false helps=false
+14	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=14 phase=END_OF_TURN opp_creatures=4 no_blockers=false helps=false
+14	A's Cleanup step	PHASE	A's Cleanup step
+15	A's Cleanup step	TURN	Turn 15 (B)
+15	B's Untap step	PHASE	B's Untap step
+15	B's Upkeep step	PHASE	B's Upkeep step
+15	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=UPKEEP opp_creatures=4 no_blockers=false helps=false
+15	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=UPKEEP opp_creatures=4 no_blockers=false helps=false
+15	B's Draw step	PHASE	B's Draw step
+15	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=DRAW opp_creatures=4 no_blockers=false helps=false
+15	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=DRAW opp_creatures=4 no_blockers=false helps=false
+15	B's Main phase, precombat	PHASE	B's Main phase, precombat
+15	B's Main phase, precombat	STACK_ADD	B cast Rise and Shine
+15	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=MAIN1 opp_creatures=4 no_blockers=false helps=false
+15	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=MAIN1 opp_creatures=4 no_blockers=false helps=false
+15	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=MAIN1 opp_creatures=5 no_blockers=false helps=false
+15	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=MAIN1 opp_creatures=5 no_blockers=false helps=false
+15	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+15	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=COMBAT_BEGIN opp_creatures=5 no_blockers=false helps=false
+15	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=COMBAT_BEGIN opp_creatures=5 no_blockers=false helps=false
+15	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+15	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=5 no_blockers=false helps=false
+15	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=5 no_blockers=false helps=false
+15	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+15	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+15	B's Combat Damage Step	PHASE	B's Combat Damage Step
+15	B's End of Combat Step	PHASE	B's End of Combat Step
+15	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=COMBAT_END opp_creatures=5 no_blockers=false helps=false
+15	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=COMBAT_END opp_creatures=5 no_blockers=false helps=false
+15	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+15	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=MAIN2 opp_creatures=5 no_blockers=false helps=false
+15	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=MAIN2 opp_creatures=5 no_blockers=false helps=false
+15	B's End step	PHASE	B's End step
+15	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=END_OF_TURN opp_creatures=5 no_blockers=false helps=false
+15	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=15 phase=END_OF_TURN opp_creatures=5 no_blockers=false helps=false
+15	B's Cleanup step	PHASE	B's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=UPKEEP opp_creatures=5 no_blockers=false helps=false
+16	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=UPKEEP opp_creatures=5 no_blockers=false helps=false
+16	A's Draw step	PHASE	A's Draw step
+16	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=DRAW opp_creatures=5 no_blockers=false helps=false
+16	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=DRAW opp_creatures=5 no_blockers=false helps=false
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=MAIN1 opp_creatures=5 no_blockers=false helps=false
+16	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=MAIN1 opp_creatures=5 no_blockers=false helps=false
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=COMBAT_BEGIN opp_creatures=5 no_blockers=false helps=false
+16	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=COMBAT_BEGIN opp_creatures=5 no_blockers=false helps=false
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Attackers Step	COMBAT	A assigned Alandra, Sky Dreamer (40) and Stonybrook Banneret (21) to attack B.
+16	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+16	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=5 no_blockers=false helps=false
+16	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=5 no_blockers=false helps=false
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's Declare Blockers Step	COMBAT	B didn't block Alandra, Sky Dreamer (40). B didn't block Stonybrook Banneret (21).
+16	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=5 no_blockers=false helps=false
+16	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=5 no_blockers=false helps=false
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 combat damage to B.
+16	A's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 combat damage to B.
+16	A's Combat Damage Step	LIFE	Life: B 6 > 3
+16	A's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=COMBAT_DAMAGE opp_creatures=5 no_blockers=false helps=false
+16	A's Combat Damage Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=COMBAT_DAMAGE opp_creatures=5 no_blockers=false helps=false
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=COMBAT_END opp_creatures=5 no_blockers=false helps=false
+16	A's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=COMBAT_END opp_creatures=5 no_blockers=false helps=false
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=MAIN2 opp_creatures=5 no_blockers=false helps=false
+16	A's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=MAIN2 opp_creatures=5 no_blockers=false helps=false
+16	A's End step	PHASE	A's End step
+16	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=END_OF_TURN opp_creatures=5 no_blockers=false helps=false
+16	A's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=16 phase=END_OF_TURN opp_creatures=5 no_blockers=false helps=false
+16	A's Cleanup step	PHASE	A's Cleanup step
+17	A's Cleanup step	TURN	Turn 17 (B)
+17	B's Untap step	PHASE	B's Untap step
+17	B's Upkeep step	PHASE	B's Upkeep step
+17	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=UPKEEP opp_creatures=5 no_blockers=false helps=false
+17	B's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=UPKEEP opp_creatures=5 no_blockers=false helps=false
+17	B's Draw step	PHASE	B's Draw step
+17	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=DRAW opp_creatures=5 no_blockers=false helps=false
+17	B's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=DRAW opp_creatures=5 no_blockers=false helps=false
+17	B's Main phase, precombat	PHASE	B's Main phase, precombat
+17	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=MAIN1 opp_creatures=5 no_blockers=false helps=false
+17	B's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=MAIN1 opp_creatures=5 no_blockers=false helps=false
+17	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+17	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=COMBAT_BEGIN opp_creatures=5 no_blockers=false helps=false
+17	B's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=COMBAT_BEGIN opp_creatures=5 no_blockers=false helps=false
+17	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+17	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=5 no_blockers=false helps=false
+17	B's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=5 no_blockers=false helps=false
+17	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+17	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+17	B's Combat Damage Step	PHASE	B's Combat Damage Step
+17	B's End of Combat Step	PHASE	B's End of Combat Step
+17	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=COMBAT_END opp_creatures=5 no_blockers=false helps=false
+17	B's End of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=COMBAT_END opp_creatures=5 no_blockers=false helps=false
+17	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+17	B's Main phase, postcombat	STACK_ADD	B cast Etherium Sculptor
+17	B's Main phase, postcombat	STACK_ADD	B triggered Sai, Master Thopterist
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=MAIN2 opp_creatures=5 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=MAIN2 opp_creatures=5 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=MAIN2 opp_creatures=6 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=MAIN2 opp_creatures=6 no_blockers=false helps=false
+17	B's Main phase, postcombat	STACK_ADD	B cast Brotherhood Regalia
+17	B's Main phase, postcombat	STACK_ADD	B triggered Sai, Master Thopterist
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=MAIN2 opp_creatures=7 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=MAIN2 opp_creatures=7 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+17	B's Main phase, postcombat	STACK_ADD	B activated Brotherhood Regalia targeting [Mask of Memory (68)]
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+17	B's Main phase, postcombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=MAIN2 opp_creatures=8 no_blockers=false helps=false
+17	B's End step	PHASE	B's End step
+17	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=END_OF_TURN opp_creatures=8 no_blockers=false helps=false
+17	B's End step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=17 phase=END_OF_TURN opp_creatures=8 no_blockers=false helps=false
+17	B's Cleanup step	PHASE	B's Cleanup step
+18	B's Cleanup step	TURN	Turn 18 (A)
+18	A's Untap step	PHASE	A's Untap step
+18	A's Upkeep step	PHASE	A's Upkeep step
+18	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=UPKEEP opp_creatures=8 no_blockers=false helps=false
+18	A's Upkeep step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=UPKEEP opp_creatures=8 no_blockers=false helps=false
+18	A's Draw step	PHASE	A's Draw step
+18	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=DRAW opp_creatures=8 no_blockers=false helps=false
+18	A's Draw step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=DRAW opp_creatures=8 no_blockers=false helps=false
+18	A's Main phase, precombat	PHASE	A's Main phase, precombat
+18	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=MAIN1 opp_creatures=8 no_blockers=false helps=false
+18	A's Main phase, precombat	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=MAIN1 opp_creatures=8 no_blockers=false helps=false
+18	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+18	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=COMBAT_BEGIN opp_creatures=8 no_blockers=false helps=false
+18	A's Beginning of Combat Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=COMBAT_BEGIN opp_creatures=8 no_blockers=false helps=false
+18	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+18	A's Declare Attackers Step	COMBAT*	A assigned Alandra, Sky Dreamer (40), Turtleshell Changeling (7), Vodalian Arcanist (10), Stonybrook Banneret (21), Deranged Assistant (1), Karfell Harbinger (2) and Turtleshell Changeling (9) to attack B.
+18	A's Declare Attackers Step	STACK_ADD	A triggered Aqueous Form
+18	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=8 no_blockers=false helps=false
+18	A's Declare Attackers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=COMBAT_DECLARE_ATTACKERS opp_creatures=8 no_blockers=false helps=false
+18	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+18	A's Declare Blockers Step	COMBAT*	B didn't block Alandra, Sky Dreamer (40). B assigned Thopter Token (88) and Mask of Memory (68) to block Turtleshell Changeling (7). B assigned Shield Sphere (73) to block Vodalian Arcanist (10). B didn't block Stonybrook Banneret (21). B assigned Millikin (79) to block Deranged Assistant (1). B assigned Ornithopter (69) to block Karfell Harbinger (2). B assigned Thopter Token (91), Sai, Master Thopterist (81) and Etherium Sculptor (74) to block Turtleshell Changeling (9).
+18	A's Declare Blockers Step	STACK_ADD	B triggered Shield Sphere
+18	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=8 no_blockers=false helps=true
+18	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=8 no_blockers=false helps=true
+18	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=8 no_blockers=false helps=true
+18	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+18	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+18	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=8 no_blockers=false helps=true
+18	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+18	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (7) - Turtleshell Changeling (7) gains hidden cardname's power and toughness are switched until end of turn.
+18	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=8 no_blockers=false helps=true
+18	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+18	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (9) - Turtleshell Changeling (9) gains hidden cardname's power and toughness are switched until end of turn.
+18	A's Declare Blockers Step	INFORMATION*	SWITCHPT_CHECK Turtleshell Changeling turn=18 phase=COMBAT_DECLARE_BLOCKERS opp_creatures=8 no_blockers=false helps=true
+18	A's Declare Blockers Step	STACK_ADD*	A activated Turtleshell Changeling
+18	A's Declare Blockers Step	STACK_RESOLVE*	Turtleshell Changeling (9) - Turtleshell Changeling (9) gains hidden cardname's power and toughness are switched until end of turn.
+18	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+18	A's Combat Damage Step	PHASE	A's Combat Damage Step
+18	A's Combat Damage Step	DAMAGE	Alandra, Sky Dreamer (40) deals 2 combat damage to B.
+18	A's Combat Damage Step	DAMAGE*	Turtleshell Changeling (7) deals 1 damage to Thopter Token (88).
+18	A's Combat Damage Step	DAMAGE	Vodalian Arcanist (10) deals 1 damage to Shield Sphere (73).
+18	A's Combat Damage Step	DAMAGE	Stonybrook Banneret (21) deals 1 combat damage to B.
+18	A's Combat Damage Step	DAMAGE	Deranged Assistant (1) deals 1 damage to Millikin (79).
+18	A's Combat Damage Step	DAMAGE	Karfell Harbinger (2) deals 1 damage to Ornithopter (69).
+18	A's Combat Damage Step	DAMAGE*	Turtleshell Changeling (9) deals 1 damage to Thopter Token (91).
+18	A's Combat Damage Step	DAMAGE*	Thopter Token (88) deals 1 damage to Turtleshell Changeling (7).
+18	A's Combat Damage Step	DAMAGE*	Mask of Memory (68) deals 4 damage to Turtleshell Changeling (7).
+18	A's Combat Damage Step	DAMAGE*	Thopter Token (91) deals 1 damage to Turtleshell Changeling (9).
+18	A's Combat Damage Step	DAMAGE*	Sai, Master Thopterist (81) deals 1 damage to Turtleshell Changeling (9).
+18	A's Combat Damage Step	DAMAGE*	Etherium Sculptor (74) deals 1 damage to Turtleshell Changeling (9).
+18	A's Combat Damage Step	LIFE	Life: B 3 > 0

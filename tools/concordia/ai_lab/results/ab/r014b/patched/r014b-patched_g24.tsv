@@ -1,0 +1,118 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Scheming Aspirant; Island; Demon's Due; Opt; Lonely Sandbar; Island; Delightful Discovery
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Attackers Step	COMBAT	A assigned Ornithopter of Paradise (37) to attack B.
+6	A's Declare Attackers Step	STACK_ADD*	A cast Opt
+6	A's Declare Attackers Step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's Declare Blockers Step	COMBAT	B didn't block Ornithopter of Paradise (37).
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's Combat Damage Step	DAMAGE	Ornithopter of Paradise (37) deals 1 combat damage to B.
+6	A's Combat Damage Step	LIFE	Life: B 20 > 19
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's Main phase, postcombat	STACK_ADD	A cast Sol Ring
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Attackers Step	COMBAT	A assigned Ornithopter of Paradise (37) to attack B.
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's Declare Blockers Step	COMBAT	B didn't block Ornithopter of Paradise (37).
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's Combat Damage Step	DAMAGE	Ornithopter of Paradise (37) deals 1 combat damage to B.
+8	A's Combat Damage Step	LIFE	Life: B 19 > 18
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's End of Combat Step	STACK_ADD*	A cast Delightful Discovery
+8	A's End of Combat Step	STACK_RESOLVE*	Delightful Discovery (17) - A scries 2. A draws two cards.
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Stitcher's Supplier
+8	A's Main phase, postcombat	STACK_ADD	A triggered Stitcher's Supplier
+8	A's Main phase, postcombat	ZONE_CHANGE*	A milled Island (25), Joint Exploration (38) and Island (21).
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+11	A's Cleanup step	TURN	Turn 11 (B)
+11	B's Untap step	PHASE	B's Untap step
+11	B's Upkeep step	PHASE	B's Upkeep step
+11	B's Draw step	PHASE	B's Draw step
+11	B's Main phase, precombat	PHASE	B's Main phase, precombat
+11	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+11	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+11	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+11	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+11	B's Combat Damage Step	PHASE	B's Combat Damage Step
+11	B's End of Combat Step	PHASE	B's End of Combat Step
+11	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+11	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+11	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+11	B's Main phase, postcombat	ZONE_CHANGE*	A milled Joint Exploration (39), Omen Hawker (31) and Master Pakku (33).
+11	B's Main phase, postcombat	STACK_ADD	B cast Scheming Aspirant
+11	B's End step	PHASE	B's End step
+11	B's Cleanup step	PHASE	B's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Main phase, precombat	STACK_ADD	A triggered Ruin Crab
+14	A's Main phase, precombat	STACK_ADD	A triggered Bojuka Bog targeting [B]
+14	A's Main phase, precombat	ZONE_CHANGE	B milled Baleful Strix (56), Island (58) and Stitcher's Supplier (70).
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD	A cast Blood Artist
+14	A's End step	PHASE	A's End step
+14	A's End step	STACK_ADD*	A cast Delightful Discovery
+14	A's End step	STACK_RESOLVE*	Delightful Discovery (18) - A scries 2. A draws two cards.
+14	A's Cleanup step	PHASE	A's Cleanup step
+17	A's Cleanup step	TURN	Turn 17 (B)
+17	B's Untap step	PHASE	B's Untap step
+17	B's Upkeep step	PHASE	B's Upkeep step
+17	B's Draw step	PHASE	B's Draw step
+17	B's Main phase, precombat	PHASE	B's Main phase, precombat
+17	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+17	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+17	B's Declare Attackers Step	COMBAT	B assigned Boggart Trawler (74) and The Mouth of Sauron (81) to attack A.
+17	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+17	B's Declare Blockers Step	COMBAT	A assigned Scheming Aspirant (2) to block Boggart Trawler (74). A assigned Baleful Strix (13) to block The Mouth of Sauron (81).
+17	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+17	B's Combat Damage Step	PHASE	B's Combat Damage Step
+17	B's Combat Damage Step	DAMAGE	Boggart Trawler (74) deals 3 damage to Scheming Aspirant (2).
+17	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 damage to Baleful Strix (13).
+17	B's Combat Damage Step	DAMAGE	Baleful Strix (13) deals 1 damage (Deathtouch) to The Mouth of Sauron (81).
+17	B's Combat Damage Step	DAMAGE	Scheming Aspirant (2) deals 1 damage to Boggart Trawler (74).
+17	B's Combat Damage Step	ZONE_CHANGE	Boggart Trawler (74) was put into Graveyard from Battlefield.
+17	B's Combat Damage Step	ZONE_CHANGE	The Mouth of Sauron (81) was put into Graveyard from Battlefield.
+17	B's Combat Damage Step	ZONE_CHANGE	Scheming Aspirant (2) was put into Graveyard from Battlefield.
+17	B's Combat Damage Step	ZONE_CHANGE	Baleful Strix (13) was put into Graveyard from Battlefield.
+17	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+17	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+17	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+17	B's Combat Damage Step	STACK_ADD	A triggered Blood Artist targeting [B]
+17	B's Combat Damage Step	LIFE	Life: B 15 > 14
+17	B's Combat Damage Step	LIFE	Life: B 14 > 13
+17	B's Combat Damage Step	LIFE	Life: B 13 > 12
+17	B's Combat Damage Step	LIFE	Life: B 12 > 11
+17	B's End of Combat Step	PHASE	B's End of Combat Step
+17	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+17	B's Main phase, postcombat	STACK_ADD	B cast Corrupt Court Official
+17	B's Main phase, postcombat	STACK_ADD	B triggered Corrupt Court Official targeting [A]
+17	B's Main phase, postcombat	DISCARD*	A discards Deliberate (34).
+17	B's End step	PHASE	B's End step
+17	B's Cleanup step	PHASE	B's Cleanup step

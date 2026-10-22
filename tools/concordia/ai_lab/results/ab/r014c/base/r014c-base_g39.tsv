@@ -1,0 +1,134 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Swamp; Lonely Sandbar; Vampiric Rites; Demon's Due; Opt; Tainted Isle; Bojuka Bog
+6	B's Cleanup step	TURN	Turn 6 (A)
+6	A's Untap step	PHASE	A's Untap step
+6	A's Upkeep step	PHASE	A's Upkeep step
+6	A's Upkeep step	STACK_ADD*	A cast Opt
+6	A's Upkeep step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+6	A's Draw step	PHASE	A's Draw step
+6	A's Main phase, precombat	PHASE	A's Main phase, precombat
+6	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+6	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+6	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+6	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+6	A's Combat Damage Step	PHASE	A's Combat Damage Step
+6	A's End of Combat Step	PHASE	A's End of Combat Step
+6	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+6	A's End step	PHASE	A's End step
+6	A's Cleanup step	PHASE	A's Cleanup step
+7	A's Cleanup step	TURN	Turn 7 (B)
+7	B's Untap step	PHASE	B's Untap step
+7	B's Upkeep step	PHASE	B's Upkeep step
+7	B's Draw step	PHASE	B's Draw step
+7	B's Main phase, precombat	PHASE	B's Main phase, precombat
+7	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+7	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+7	B's Declare Attackers Step	COMBAT	B assigned Gríma Wormtongue (72) to attack A.
+7	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+7	B's Declare Blockers Step	COMBAT	A didn't block Gríma Wormtongue (72).
+7	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+7	B's Combat Damage Step	PHASE	B's Combat Damage Step
+7	B's Combat Damage Step	DAMAGE	Gríma Wormtongue (72) deals 1 combat damage to A.
+7	B's Combat Damage Step	LIFE	Life: A 20 > 19
+7	B's End of Combat Step	PHASE	B's End of Combat Step
+7	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+7	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+7	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+7	B's Main phase, postcombat	ZONE_CHANGE*	A milled Demon's Due (19), Island (21) and Swamp (8).
+7	B's End step	PHASE	B's End step
+7	B's Cleanup step	PHASE	B's Cleanup step
+8	B's Cleanup step	TURN	Turn 8 (A)
+8	A's Untap step	PHASE	A's Untap step
+8	A's Upkeep step	PHASE	A's Upkeep step
+8	A's Upkeep step	STACK_ADD*	A cast Deliberate
+8	A's Upkeep step	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+8	A's Draw step	PHASE	A's Draw step
+8	A's Main phase, precombat	PHASE	A's Main phase, precombat
+8	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+8	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+8	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+8	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+8	A's Combat Damage Step	PHASE	A's Combat Damage Step
+8	A's End of Combat Step	PHASE	A's End of Combat Step
+8	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+8	A's Main phase, postcombat	STACK_ADD	A cast Ruin Crab
+8	A's End step	PHASE	A's End step
+8	A's Cleanup step	PHASE	A's Cleanup step
+10	B's Cleanup step	TURN	Turn 10 (A)
+10	A's Untap step	PHASE	A's Untap step
+10	A's Upkeep step	PHASE	A's Upkeep step
+10	A's Upkeep step	STACK_ADD*	A cast Demon's Due
+10	A's Upkeep step	LIFE	Life: A 16 > 14
+10	A's Upkeep step	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+10	A's Draw step	PHASE	A's Draw step
+10	A's Main phase, precombat	PHASE	A's Main phase, precombat
+10	A's Main phase, precombat	STACK_ADD	A triggered Ruin Crab
+10	A's Main phase, precombat	STACK_ADD	A triggered Bojuka Bog targeting [B]
+10	A's Main phase, precombat	ZONE_CHANGE	B milled Island (58), Lonely Sandbar (55) and Swamp (48).
+10	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+10	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+10	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+10	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+10	A's Combat Damage Step	PHASE	A's Combat Damage Step
+10	A's End of Combat Step	PHASE	A's End of Combat Step
+10	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+10	A's End step	PHASE	A's End step
+10	A's Cleanup step	PHASE	A's Cleanup step
+14	B's Cleanup step	TURN	Turn 14 (A)
+14	A's Untap step	PHASE	A's Untap step
+14	A's Upkeep step	PHASE	A's Upkeep step
+14	A's Upkeep step	STACK_ADD*	A cast Joint Exploration
+14	A's Upkeep step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+14	A's Draw step	PHASE	A's Draw step
+14	A's Main phase, precombat	PHASE	A's Main phase, precombat
+14	A's Main phase, precombat	STACK_ADD	A triggered Ruin Crab
+14	A's Main phase, precombat	ZONE_CHANGE	B milled Zulaport Cutthroat (64), Drown in the Loch (77) and Scheming Aspirant (43).
+14	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+14	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+14	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+14	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+14	A's Combat Damage Step	PHASE	A's Combat Damage Step
+14	A's End of Combat Step	PHASE	A's End of Combat Step
+14	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+14	A's Main phase, postcombat	STACK_ADD	A cast Baleful Strix
+14	A's Main phase, postcombat	STACK_ADD	A triggered Baleful Strix
+14	A's Main phase, postcombat	STACK_ADD	A cast Scheming Aspirant
+14	A's Main phase, postcombat	STACK_ADD	A cast Omen Hawker
+14	A's End step	PHASE	A's End step
+14	A's Cleanup step	PHASE	A's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Upkeep step	STACK_ADD*	A cast Delightful Discovery
+16	A's Upkeep step	STACK_RESOLVE*	Delightful Discovery (18) - A scries 2. A draws two cards.
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Main phase, precombat	STACK_ADD	A triggered Ruin Crab
+16	A's Main phase, precombat	ZONE_CHANGE	B milled Myriad Landscape (66), Omen Hawker (69) and Corrupt Court Official (54).
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's Main phase, postcombat	STACK_ADD	A cast Master Pakku
+16	A's Main phase, postcombat	STACK_ADD	A cast Sol Ring
+16	A's Main phase, postcombat	STACK_ADD	A triggered Master Pakku
+16	A's End step	PHASE	A's End step
+16	A's Cleanup step	PHASE	A's Cleanup step
+17	A's Cleanup step	TURN	Turn 17 (B)
+17	B's Untap step	PHASE	B's Untap step
+17	B's Upkeep step	PHASE	B's Upkeep step
+17	B's Draw step	PHASE	B's Draw step
+17	B's Main phase, precombat	PHASE	B's Main phase, precombat
+17	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+17	B's Main phase, precombat	ZONE_CHANGE*	A milled Joint Exploration (38), Myriad Landscape (29) and Opt (14).
+17	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+17	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+17	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+17	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+17	B's Combat Damage Step	PHASE	B's Combat Damage Step
+17	B's End of Combat Step	PHASE	B's End of Combat Step
+17	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+17	B's End step	PHASE	B's End step
+17	B's Cleanup step	PHASE	B's Cleanup step

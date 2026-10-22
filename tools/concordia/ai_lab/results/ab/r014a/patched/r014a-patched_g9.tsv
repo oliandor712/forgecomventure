@@ -1,0 +1,103 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Opt; Lonely Sandbar; Ghostly Pilferer; Opt; Island; Blood Artist; Swamp
+2	A's Cleanup step	TURN	Turn 2 (B)
+2	B's Untap step	PHASE	B's Untap step
+2	B's Upkeep step	PHASE	B's Upkeep step
+2	B's Draw step	PHASE	B's Draw step
+2	B's Main phase, precombat	PHASE	B's Main phase, precombat
+2	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+2	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+2	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+2	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+2	B's Combat Damage Step	PHASE	B's Combat Damage Step
+2	B's End of Combat Step	PHASE	B's End of Combat Step
+2	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+2	B's Main phase, postcombat	STACK_ADD	B cast Stitcher's Supplier
+2	B's Main phase, postcombat	STACK_ADD	B triggered Stitcher's Supplier
+2	B's Main phase, postcombat	ZONE_CHANGE	B milled Island (60), Blood Artist (42) and Fellwar Stone (80).
+2	B's End step	PHASE	B's End step
+2	B's End step	STACK_ADD*	A cast Opt
+2	B's End step	STACK_RESOLVE*	Opt (14) - A scries 1. A draws a card.
+2	B's Cleanup step	PHASE	B's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's Main phase, postcombat	STACK_ADD	B cast Umbral Collar Zealot
+12	B's Main phase, postcombat	STACK_ADD	B cast Scheming Aspirant
+12	B's Main phase, postcombat	STACK_ADD	B cast Zulaport Cutthroat
+12	B's End step	PHASE	B's End step
+12	B's End step	STACK_ADD*	A cast Opt
+12	B's End step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+12	B's End step	STACK_ADD*	A cast Demon's Due
+12	B's End step	LIFE	Life: A 21 > 19
+12	B's End step	STACK_RESOLVE*	Demon's Due (20) - A scries 2. A draws two cards. A loses 2 life.
+12	B's End step	STACK_ADD*	A cast Joint Exploration
+12	B's End step	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+12	B's Cleanup step	PHASE	B's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's Main phase, postcombat	STACK_ADD	B cast Baleful Strix
+14	B's Main phase, postcombat	STACK_ADD	B triggered Baleful Strix
+14	B's Main phase, postcombat	STACK_ADD	B activated Barren Moor
+14	B's Main phase, postcombat	STACK_ADD	B cast Flux Channeler
+14	B's End step	PHASE	B's End step
+14	B's End step	STACK_ADD*	A cast Joint Exploration
+14	B's End step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+14	B's End step	STACK_ADD	A triggered Bojuka Bog targeting [B]
+14	B's End step	STACK_ADD*	A cast Delightful Discovery
+14	B's End step	STACK_RESOLVE*	Delightful Discovery (18) - A scries 2. A draws two cards.
+14	B's Cleanup step	PHASE	B's Cleanup step
+18	A's Cleanup step	TURN	Turn 18 (B)
+18	B's Untap step	PHASE	B's Untap step
+18	B's Upkeep step	PHASE	B's Upkeep step
+18	B's Draw step	PHASE	B's Draw step
+18	B's Main phase, precombat	PHASE	B's Main phase, precombat
+18	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+18	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+18	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+18	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+18	B's Combat Damage Step	PHASE	B's Combat Damage Step
+18	B's End of Combat Step	PHASE	B's End of Combat Step
+18	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+18	B's Main phase, postcombat	STACK_ADD	B cast Ornithopter of Paradise
+18	B's End step	PHASE	B's End step
+18	B's End step	STACK_ADD*	A cast Delightful Discovery
+18	B's End step	STACK_ADD	A triggered Master Pakku
+18	B's End step	STACK_RESOLVE*	Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.) [Card: Delightful Discovery (17), Activator: A, SpellAbility: Scry 2, then draw two cards. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.) ]
+18	B's End step	STACK_RESOLVE*	Delightful Discovery (17) - A scries 2. A draws two cards.
+18	B's Cleanup step	PHASE	B's Cleanup step
+19	B's Cleanup step	TURN	Turn 19 (A)
+19	A's Untap step	PHASE	A's Untap step
+19	A's Upkeep step	PHASE	A's Upkeep step
+19	A's Draw step	PHASE	A's Draw step
+19	A's Main phase, precombat	PHASE	A's Main phase, precombat
+19	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+19	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+19	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+19	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+19	A's Combat Damage Step	PHASE	A's Combat Damage Step
+19	A's End of Combat Step	PHASE	A's End of Combat Step
+19	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+19	A's Main phase, postcombat	STACK_ADD	A cast Stitcher's Supplier
+19	A's Main phase, postcombat	STACK_ADD	A triggered Stitcher's Supplier
+19	A's Main phase, postcombat	ZONE_CHANGE*	A milled Island (26), Myriad Landscape (29) and Demon's Due (19).
+19	A's End step	PHASE	A's End step
+19	A's Cleanup step	PHASE	A's Cleanup step

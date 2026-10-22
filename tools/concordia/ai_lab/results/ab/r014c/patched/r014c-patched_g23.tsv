@@ -1,0 +1,105 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Swamp; Island; Swamp; Omen Hawker; Opt; Deliberate; Ghostly Pilferer
+5	B's Cleanup step	TURN	Turn 5 (A)
+5	A's Untap step	PHASE	A's Untap step
+5	A's Upkeep step	PHASE	A's Upkeep step
+5	A's Draw step	PHASE	A's Draw step
+5	A's Main phase, precombat	PHASE	A's Main phase, precombat
+5	A's Main phase, precombat	STACK_ADD*	A cast Opt
+5	A's Main phase, precombat	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+5	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+5	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+5	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+5	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+5	A's Combat Damage Step	PHASE	A's Combat Damage Step
+5	A's End of Combat Step	PHASE	A's End of Combat Step
+5	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+5	A's Main phase, postcombat	STACK_ADD	A cast Stitcher's Supplier
+5	A's Main phase, postcombat	STACK_ADD	A triggered Stitcher's Supplier
+5	A's Main phase, postcombat	ZONE_CHANGE*	A milled Master Pakku (33), Opt (14) and Baleful Strix (13).
+5	A's End step	PHASE	A's End step
+5	A's Cleanup step	PHASE	A's Cleanup step
+6	A's Cleanup step	TURN	Turn 6 (B)
+6	B's Untap step	PHASE	B's Untap step
+6	B's Upkeep step	PHASE	B's Upkeep step
+6	B's Draw step	PHASE	B's Draw step
+6	B's Main phase, precombat	PHASE	B's Main phase, precombat
+6	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+6	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+6	B's Declare Attackers Step	COMBAT	B assigned Master Pakku (71) to attack A.
+6	B's Declare Attackers Step	STACK_ADD	B triggered Master Pakku targeting [B]
+6	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+6	B's Declare Blockers Step	COMBAT	A didn't block Master Pakku (71).
+6	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+6	B's Combat Damage Step	PHASE	B's Combat Damage Step
+6	B's Combat Damage Step	DAMAGE	Master Pakku (71) deals 1 combat damage to A.
+6	B's Combat Damage Step	LIFE	Life: A 20 > 19
+6	B's End of Combat Step	PHASE	B's End of Combat Step
+6	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+6	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+6	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+6	B's Main phase, postcombat	ZONE_CHANGE*	A milled Island (24), Delightful Discovery (17) and Demon's Due (19).
+6	B's Main phase, postcombat	STACK_ADD	B cast Ruin Crab
+6	B's End step	PHASE	B's End step
+6	B's Cleanup step	PHASE	B's Cleanup step
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Main phase, precombat	STACK_ADD*	A cast Deliberate
+7	A's Main phase, precombat	STACK_RESOLVE*	Deliberate (35) - A scries 2. A draws a card.
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's Main phase, postcombat	STACK_ADD	A cast Blood Artist
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Main phase, precombat	STACK_ADD*	A cast Deliberate
+11	A's Main phase, precombat	STACK_RESOLVE*	Deliberate (34) - A scries 2. A draws a card.
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's End step	PHASE	A's End step
+11	A's Cleanup step	PHASE	A's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Draw step	PHASE	B's Draw step
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+12	B's Main phase, precombat	ZONE_CHANGE*	A milled Corrupt Court Official (11), Ornithopter of Paradise (37) and Joint Exploration (38).
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned Orc Army Token (84), The Mouth of Sauron (81) and Flux Channeler (76) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A assigned Stitcher's Supplier (32) to block Orc Army Token (84). A didn't block The Mouth of Sauron (81). A assigned Atris, Oracle of Half-Truths (40) to block Flux Channeler (76).
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE	Orc Army Token (84) deals 4 damage to Stitcher's Supplier (32).
+12	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+12	B's Combat Damage Step	DAMAGE	Flux Channeler (76) deals 2 damage to Atris, Oracle of Half-Truths (40).
+12	B's Combat Damage Step	DAMAGE	Atris, Oracle of Half-Truths (40) deals 3 damage to Flux Channeler (76).
+12	B's Combat Damage Step	DAMAGE	Stitcher's Supplier (32) deals 1 damage to Orc Army Token (84).
+12	B's Combat Damage Step	LIFE	Life: A 7 > 4
+12	B's Combat Damage Step	ZONE_CHANGE	Flux Channeler (76) was put into Graveyard from Battlefield.
+12	B's Combat Damage Step	ZONE_CHANGE	Stitcher's Supplier (32) was put into Graveyard from Battlefield.
+12	B's Combat Damage Step	ZONE_CHANGE	Atris, Oracle of Half-Truths (40) was put into Graveyard from Battlefield.
+12	B's Combat Damage Step	STACK_ADD	A triggered Stitcher's Supplier
+12	B's Combat Damage Step	ZONE_CHANGE*	A milled Joint Exploration (39), Vampiric Rites (16) and Scheming Aspirant (2).
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step

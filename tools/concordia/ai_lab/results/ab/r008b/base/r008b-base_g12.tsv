@@ -1,0 +1,75 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Brotherhood Regalia; Canopy Spider; Giant Growth; Forest; Grappler Spider; Forest; Aquastrand Spider
+12	B's Cleanup step	TURN	Turn 12 (A)
+12	A's Untap step	PHASE	A's Untap step
+12	A's Upkeep step	PHASE	A's Upkeep step
+12	A's Draw step	PHASE	A's Draw step
+12	A's Draw step	STACK_ADD	A cast Snakeskin Veil targeting [Arasta of the Endless Web (40)]
+12	A's Main phase, precombat	PHASE	A's Main phase, precombat
+12	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+12	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+12	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22) and Arasta of the Endless Web (40) to attack B.
+12	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+12	A's Declare Blockers Step	COMBAT	B assigned Viridian Zealot (73) to block Canopy Spider (22). B didn't block Arasta of the Endless Web (40).
+12	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Canopy Spider (22)]
+12	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (20) - Canopy Spider (22) gets +3/+3  until end of turn.
+12	A's Declare Blockers Step	STACK_ADD	B cast Heroic Intervention
+12	A's Declare Blockers Step	STACK_ADD	A triggered Arasta of the Endless Web
+12	A's Declare Blockers Step	STACK_ADD	A triggered Aquastrand Spider
+12	A's Declare Blockers Step	STACK_ADD	B triggered Selvala, Heart of the Wilds
+12	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+12	A's Combat Damage Step	PHASE	A's Combat Damage Step
+12	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 4 damage to Viridian Zealot (73).
+12	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 4 combat damage to B.
+12	A's Combat Damage Step	DAMAGE	Viridian Zealot (73) deals 3 damage to Canopy Spider (22).
+12	A's Combat Damage Step	LIFE	Life: B 20 > 16
+12	A's End of Combat Step	PHASE	A's End of Combat Step
+12	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+12	A's Main phase, postcombat	STACK_ADD	A cast Sol Ring
+12	A's End step	PHASE	A's End step
+12	A's Cleanup step	PHASE	A's Cleanup step
+16	B's Cleanup step	TURN	Turn 16 (A)
+16	A's Untap step	PHASE	A's Untap step
+16	A's Upkeep step	PHASE	A's Upkeep step
+16	A's Draw step	PHASE	A's Draw step
+16	A's Main phase, precombat	PHASE	A's Main phase, precombat
+16	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+16	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+16	A's Declare Attackers Step	COMBAT	A assigned Arasta of the Endless Web (40) to attack B.
+16	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+16	A's Declare Blockers Step	COMBAT	B assigned Leaf-Crowned Visionary (52) to block Arasta of the Endless Web (40).
+16	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+16	A's Combat Damage Step	PHASE	A's Combat Damage Step
+16	A's Combat Damage Step	DAMAGE	Arasta of the Endless Web (40) deals 7 damage to Leaf-Crowned Visionary (52).
+16	A's Combat Damage Step	DAMAGE	Leaf-Crowned Visionary (52) deals 1 damage to Arasta of the Endless Web (40).
+16	A's Combat Damage Step	ZONE_CHANGE	Leaf-Crowned Visionary (52) was put into Graveyard from Battlefield.
+16	A's End of Combat Step	PHASE	A's End of Combat Step
+16	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+16	A's End step	PHASE	A's End step
+16	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Giant Growth (20)]
+16	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Giant Growth (20) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+16	A's End step	ZONE_CHANGE	Viridian Zealot (73) was put into Graveyard from Battlefield.
+16	A's End step	STACK_ADD	B activated Viridian Zealot targeting [Arasta of the Endless Web (40)]
+16	A's End step	ZONE_CHANGE	Arasta of the Endless Web (40) was put into Graveyard from Battlefield.
+16	A's Cleanup step	PHASE	A's Cleanup step
+18	B's Cleanup step	TURN	Turn 18 (A)
+18	A's Untap step	PHASE	A's Untap step
+18	A's Upkeep step	PHASE	A's Upkeep step
+18	A's Draw step	PHASE	A's Draw step
+18	A's Main phase, precombat	PHASE	A's Main phase, precombat
+18	A's Main phase, precombat	STACK_ADD	A activated Hero's Blade targeting [Canopy Spider (22)]
+18	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+18	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+18	A's Declare Attackers Step	COMBAT	A assigned Canopy Spider (22), Grappler Spider (17), Spider Token (85), Aquastrand Spider (7) and Spider Token (88) to attack B.
+18	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+18	A's Declare Blockers Step	COMBAT	B didn't block Canopy Spider (22). B assigned Selvala, Heart of the Wilds (81) to block Grappler Spider (17). B didn't block Spider Token (85). B didn't block Aquastrand Spider (7). B didn't block Spider Token (88).
+18	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Canopy Spider (22)]
+18	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (10) - Canopy Spider (22) gets +2/+2 and gains hexproof until end of turn.
+18	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+18	A's Combat Damage Step	PHASE	A's Combat Damage Step
+18	A's Combat Damage Step	DAMAGE	Canopy Spider (22) deals 6 combat damage to B.
+18	A's Combat Damage Step	DAMAGE	Grappler Spider (17) deals 2 damage to Selvala, Heart of the Wilds (81).
+18	A's Combat Damage Step	DAMAGE	Spider Token (85) deals 2 combat damage to B.
+18	A's Combat Damage Step	DAMAGE	Aquastrand Spider (7) deals 1 combat damage to B.
+18	A's Combat Damage Step	DAMAGE	Spider Token (88) deals 1 combat damage to B.
+18	A's Combat Damage Step	DAMAGE	Selvala, Heart of the Wilds (81) deals 2 damage to Grappler Spider (17).
+18	A's Combat Damage Step	LIFE	Life: B 9 > -1

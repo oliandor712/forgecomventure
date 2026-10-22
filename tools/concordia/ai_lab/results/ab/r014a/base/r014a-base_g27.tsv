@@ -1,0 +1,133 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Swamp; Stitcher's Supplier; Delightful Discovery; Corrupt Court Official; Myriad Landscape; Barren Moor; Master Pakku
+1		TURN	Turn 1 (A)
+1	A's Untap step	PHASE	A's Untap step
+1	A's Upkeep step	PHASE	A's Upkeep step
+1	A's Draw step	PHASE	A's Draw step
+1	A's Main phase, precombat	PHASE	A's Main phase, precombat
+1	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+1	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+1	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+1	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+1	A's Combat Damage Step	PHASE	A's Combat Damage Step
+1	A's End of Combat Step	PHASE	A's End of Combat Step
+1	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+1	A's Main phase, postcombat	STACK_ADD	A cast Stitcher's Supplier
+1	A's Main phase, postcombat	STACK_ADD	A triggered Stitcher's Supplier
+1	A's Main phase, postcombat	ZONE_CHANGE*	A milled Sol Ring (4), Island (24) and Opt (14).
+1	A's End step	PHASE	A's End step
+1	A's Cleanup step	PHASE	A's Cleanup step
+8	A's Cleanup step	TURN	Turn 8 (B)
+8	B's Untap step	PHASE	B's Untap step
+8	B's Upkeep step	PHASE	B's Upkeep step
+8	B's Draw step	PHASE	B's Draw step
+8	B's Main phase, precombat	PHASE	B's Main phase, precombat
+8	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+8	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+8	B's Declare Attackers Step	COMBAT	B assigned Scheming Aspirant (43) to attack A.
+8	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+8	B's Declare Blockers Step	COMBAT	A didn't block Scheming Aspirant (43).
+8	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+8	B's Combat Damage Step	PHASE	B's Combat Damage Step
+8	B's Combat Damage Step	DAMAGE	Scheming Aspirant (43) deals 1 combat damage to A.
+8	B's Combat Damage Step	LIFE	Life: A 19 > 18
+8	B's End of Combat Step	PHASE	B's End of Combat Step
+8	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+8	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+8	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+8	B's Main phase, postcombat	ZONE_CHANGE*	A milled Deliberate (34), Ruin Crab (30) and Tainted Isle (5).
+8	B's Main phase, postcombat	STACK_ADD	B cast Corrupt Court Official
+8	B's Main phase, postcombat	STACK_ADD	B triggered Corrupt Court Official targeting [A]
+8	B's End step	PHASE	B's End step
+8	B's Cleanup step	PHASE	B's Cleanup step
+12	A's Cleanup step	TURN	Turn 12 (B)
+12	B's Untap step	PHASE	B's Untap step
+12	B's Upkeep step	PHASE	B's Upkeep step
+12	B's Upkeep step	STACK_ADD*	A cast Joint Exploration
+12	B's Upkeep step	STACK_RESOLVE*	Joint Exploration (39) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+12	B's Draw step	PHASE	B's Draw step
+12	B's Draw step	STACK_ADD	B cast Eaten by Piranhas targeting [Atris, Oracle of Half-Truths (40)]
+12	B's Main phase, precombat	PHASE	B's Main phase, precombat
+12	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+12	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+12	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) to attack A.
+12	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+12	B's Declare Blockers Step	COMBAT	A didn't block The Mouth of Sauron (81).
+12	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+12	B's Combat Damage Step	PHASE	B's Combat Damage Step
+12	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+12	B's Combat Damage Step	LIFE	Life: A 13 > 10
+12	B's End of Combat Step	PHASE	B's End of Combat Step
+12	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+12	B's End step	PHASE	B's End step
+12	B's Cleanup step	PHASE	B's Cleanup step
+14	A's Cleanup step	TURN	Turn 14 (B)
+14	B's Untap step	PHASE	B's Untap step
+14	B's Upkeep step	PHASE	B's Upkeep step
+14	B's Upkeep step	STACK_ADD*	A cast Delightful Discovery
+14	B's Upkeep step	STACK_RESOLVE*	Delightful Discovery (18) - A scries 2. A draws two cards.
+14	B's Draw step	PHASE	B's Draw step
+14	B's Main phase, precombat	PHASE	B's Main phase, precombat
+14	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+14	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+14	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) to attack A.
+14	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+14	B's Declare Blockers Step	COMBAT	A didn't block The Mouth of Sauron (81).
+14	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+14	B's Combat Damage Step	PHASE	B's Combat Damage Step
+14	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+14	B's Combat Damage Step	LIFE	Life: A 10 > 7
+14	B's End of Combat Step	PHASE	B's End of Combat Step
+14	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+14	B's End step	PHASE	B's End step
+14	B's Cleanup step	PHASE	B's Cleanup step
+16	A's Cleanup step	TURN	Turn 16 (B)
+16	B's Untap step	PHASE	B's Untap step
+16	B's Upkeep step	PHASE	B's Upkeep step
+16	B's Upkeep step	STACK_ADD*	A cast Joint Exploration
+16	B's Upkeep step	STACK_RESOLVE*	Joint Exploration (38) - A scries 2. A draws a card. (OPTIONAL) A puts a land card from their hand onto the battlefield.
+16	B's Upkeep step	STACK_ADD*	A cast Opt
+16	B's Upkeep step	STACK_RESOLVE*	Opt (15) - A scries 1. A draws a card.
+16	B's Draw step	PHASE	B's Draw step
+16	B's Main phase, precombat	PHASE	B's Main phase, precombat
+16	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+16	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+16	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) to attack A.
+16	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+16	B's Declare Blockers Step	COMBAT	A didn't block The Mouth of Sauron (81).
+16	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+16	B's Combat Damage Step	PHASE	B's Combat Damage Step
+16	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 combat damage to A.
+16	B's Combat Damage Step	LIFE	Life: A 7 > 4
+16	B's End of Combat Step	PHASE	B's End of Combat Step
+16	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+16	B's Main phase, postcombat	STACK_ADD	B cast Umbral Collar Zealot
+16	B's End step	PHASE	B's End step
+16	B's Cleanup step	PHASE	B's Cleanup step
+18	A's Cleanup step	TURN	Turn 18 (B)
+18	B's Untap step	PHASE	B's Untap step
+18	B's Upkeep step	PHASE	B's Upkeep step
+18	B's Upkeep step	STACK_ADD*	A cast Deliberate
+18	B's Upkeep step	STACK_RESOLVE*	Deliberate (35) - A scries 2. A draws a card.
+18	B's Draw step	PHASE	B's Draw step
+18	B's Main phase, precombat	PHASE	B's Main phase, precombat
+18	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+18	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+18	B's Declare Attackers Step	COMBAT	B assigned The Mouth of Sauron (81) and Umbral Collar Zealot (62) to attack A.
+18	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+18	B's Declare Blockers Step	COMBAT	A assigned Baleful Strix (13) to block The Mouth of Sauron (81). A assigned Stitcher's Supplier (32) and Scheming Aspirant (2) to block Umbral Collar Zealot (62).
+18	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+18	B's Combat Damage Step	PHASE	B's Combat Damage Step
+18	B's Combat Damage Step	DAMAGE	The Mouth of Sauron (81) deals 3 damage to Baleful Strix (13).
+18	B's Combat Damage Step	DAMAGE	Umbral Collar Zealot (62) deals 3 damage to Scheming Aspirant (2).
+18	B's Combat Damage Step	DAMAGE	Baleful Strix (13) deals 1 damage (Deathtouch) to The Mouth of Sauron (81).
+18	B's Combat Damage Step	DAMAGE	Stitcher's Supplier (32) deals 1 damage to Umbral Collar Zealot (62).
+18	B's Combat Damage Step	DAMAGE	Scheming Aspirant (2) deals 1 damage to Umbral Collar Zealot (62).
+18	B's Combat Damage Step	ZONE_CHANGE	The Mouth of Sauron (81) was put into Graveyard from Battlefield.
+18	B's Combat Damage Step	ZONE_CHANGE	Umbral Collar Zealot (62) was put into Graveyard from Battlefield.
+18	B's Combat Damage Step	ZONE_CHANGE	Scheming Aspirant (2) was put into Graveyard from Battlefield.
+18	B's Combat Damage Step	ZONE_CHANGE	Baleful Strix (13) was put into Graveyard from Battlefield.
+18	B's End of Combat Step	PHASE	B's End of Combat Step
+18	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+18	B's Main phase, postcombat	STACK_ADD	B cast Ornithopter of Paradise
+18	B's End step	PHASE	B's End step
+18	B's Cleanup step	PHASE	B's Cleanup step

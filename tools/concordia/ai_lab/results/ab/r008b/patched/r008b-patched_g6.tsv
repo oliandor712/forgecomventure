@@ -1,0 +1,63 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Blossoming Defense; Ruins Recluse; Forest; Snakeskin Veil; Forest; Aquastrand Spider; Forest
+7	B's Cleanup step	TURN	Turn 7 (A)
+7	A's Untap step	PHASE	A's Untap step
+7	A's Upkeep step	PHASE	A's Upkeep step
+7	A's Draw step	PHASE	A's Draw step
+7	A's Main phase, precombat	PHASE	A's Main phase, precombat
+7	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+7	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+7	A's Declare Attackers Step	COMBAT	A assigned Ruins Recluse (13) to attack B.
+7	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+7	A's Declare Blockers Step	COMBAT	B didn't block Ruins Recluse (13).
+7	A's Declare Blockers Step	STACK_ADD*	A cast Blossoming Defense targeting [Ruins Recluse (13)]
+7	A's Declare Blockers Step	STACK_RESOLVE*	Blossoming Defense (10) - Ruins Recluse (13) gets +2/+2 and gains hexproof until end of turn.
+7	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+7	A's Combat Damage Step	PHASE	A's Combat Damage Step
+7	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 4 combat damage to B.
+7	A's Combat Damage Step	LIFE	Life: B 20 > 16
+7	A's End of Combat Step	PHASE	A's End of Combat Step
+7	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+7	A's End step	PHASE	A's End step
+7	A's Cleanup step	PHASE	A's Cleanup step
+11	B's Cleanup step	TURN	Turn 11 (A)
+11	A's Untap step	PHASE	A's Untap step
+11	A's Upkeep step	PHASE	A's Upkeep step
+11	A's Draw step	PHASE	A's Draw step
+11	A's Main phase, precombat	PHASE	A's Main phase, precombat
+11	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+11	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+11	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+11	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+11	A's Combat Damage Step	PHASE	A's Combat Damage Step
+11	A's End of Combat Step	PHASE	A's End of Combat Step
+11	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+11	A's Main phase, postcombat	STACK_ADD	A cast Arasta of the Endless Web
+11	A's Main phase, postcombat	STACK_ADD	A triggered Aquastrand Spider
+11	A's Main phase, postcombat	STACK_ADD	B triggered Selvala, Heart of the Wilds
+11	A's End step	PHASE	A's End step
+11	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Blossoming Defense (10)]
+11	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Blossoming Defense (10) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+11	A's Cleanup step	PHASE	A's Cleanup step
+15	B's Cleanup step	TURN	Turn 15 (A)
+15	A's Untap step	PHASE	A's Untap step
+15	A's Upkeep step	PHASE	A's Upkeep step
+15	A's Upkeep step	STACK_ADD	A activated Ruins Recluse
+15	A's Draw step	PHASE	A's Draw step
+15	A's Main phase, precombat	PHASE	A's Main phase, precombat
+15	A's Beginning of Combat Step	PHASE	A's Beginning of Combat Step
+15	A's Declare Attackers Step	PHASE	A's Declare Attackers Step
+15	A's Declare Attackers Step	COMBAT	A assigned Ruins Recluse (13) to attack B.
+15	A's Declare Blockers Step	PHASE	A's Declare Blockers Step
+15	A's Declare Blockers Step	COMBAT	B didn't block Ruins Recluse (13).
+15	A's Declare Blockers Step	STACK_ADD*	A cast Giant Growth targeting [Ruins Recluse (13)]
+15	A's Declare Blockers Step	STACK_RESOLVE*	Giant Growth (19) - Ruins Recluse (13) gets +3/+3  until end of turn.
+15	A's First Strike Damage Step	PHASE	A's First Strike Damage Step
+15	A's Combat Damage Step	PHASE	A's Combat Damage Step
+15	A's Combat Damage Step	DAMAGE	Ruins Recluse (13) deals 7 combat damage to B.
+15	A's Combat Damage Step	LIFE	Life: B 14 > 7
+15	A's End of Combat Step	PHASE	A's End of Combat Step
+15	A's Main phase, postcombat	PHASE	A's Main phase, postcombat
+15	A's End step	PHASE	A's End step
+15	A's End step	STACK_ADD*	B activated Agatha's Soul Cauldron targeting [Giant Growth (19)]
+15	A's End step	STACK_RESOLVE*	Agatha's Soul Cauldron (71) - Exile Giant Growth (19) from the graveyard. When a creature card is exiled this way, put a +1/+1 counter on target creature you control. 
+15	A's Cleanup step	PHASE	A's Cleanup step

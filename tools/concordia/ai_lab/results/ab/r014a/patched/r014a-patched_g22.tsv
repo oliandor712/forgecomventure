@@ -1,0 +1,27 @@
+0		MULLIGAN*	A has kept a hand of 7 cards hand: Master Pakku; Demon's Due; Swamp; Demon's Due; Malakir Rebirth; Myriad Landscape; Corrupt Court Official
+9	A's Cleanup step	TURN	Turn 9 (B)
+9	B's Untap step	PHASE	B's Untap step
+9	B's Upkeep step	PHASE	B's Upkeep step
+9	B's Draw step	PHASE	B's Draw step
+9	B's Main phase, precombat	PHASE	B's Main phase, precombat
+9	B's Main phase, precombat	STACK_ADD	B triggered Ruin Crab
+9	B's Main phase, precombat	STACK_ADD	B triggered Bojuka Bog targeting [A]
+9	B's Main phase, precombat	ZONE_CHANGE*	A milled Vampiric Rites (16), Island (26) and Delightful Discovery (17).
+9	B's Beginning of Combat Step	PHASE	B's Beginning of Combat Step
+9	B's Declare Attackers Step	PHASE	B's Declare Attackers Step
+9	B's Declare Attackers Step	COMBAT	B assigned Umbral Collar Zealot (62), Flux Channeler (76) and Baleful Strix (56) to attack A.
+9	B's Declare Blockers Step	PHASE	B's Declare Blockers Step
+9	B's Declare Blockers Step	COMBAT	A didn't block Umbral Collar Zealot (62). A didn't block Flux Channeler (76). A didn't block Baleful Strix (56).
+9	B's First Strike Damage Step	PHASE	B's First Strike Damage Step
+9	B's Combat Damage Step	PHASE	B's Combat Damage Step
+9	B's Combat Damage Step	DAMAGE	Umbral Collar Zealot (62) deals 3 combat damage to A.
+9	B's Combat Damage Step	DAMAGE	Flux Channeler (76) deals 2 combat damage to A.
+9	B's Combat Damage Step	DAMAGE	Baleful Strix (56) deals 1 combat damage to A.
+9	B's Combat Damage Step	LIFE	Life: A 12 > 6
+9	B's End of Combat Step	PHASE	B's End of Combat Step
+9	B's Main phase, postcombat	PHASE	B's Main phase, postcombat
+9	B's Main phase, postcombat	STACK_ADD	B cast The Mouth of Sauron
+9	B's Main phase, postcombat	STACK_ADD	B triggered The Mouth of Sauron targeting [A]
+9	B's Main phase, postcombat	ZONE_CHANGE*	A milled Island (23), Opt (15) and Sol Ring (4).
+9	B's End step	PHASE	B's End step
+9	B's Cleanup step	PHASE	B's Cleanup step
