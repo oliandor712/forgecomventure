@@ -253,7 +253,7 @@ Keyword features: (a) down-weighted to 0.4 (A2 as before); (b) separate `kw:<nam
 | (b) K separate, uncompensated | 18 of 50 | 17 | 15 | 35 of 50 | 18 | 17 of 18 | 33 of 50 |
 | (c) K separate, 1/n compensated | 18 of 50 | 17 | 15 | 35 of 50 | 18 | 17 of 18 | 33 of 50 |
 
-Note: exact is strict (predicted value equals actual). Partial is shown separately and is not counted in strict exact. Exact-or-partial (last column before the B columns) = exact + partial.
+Note: exact is strict (predicted value equals actual). Partial is shown separately and is not counted in strict exact. Exact-or-partial = strict exact + partial, which is 35 of 50 for (a) and 35 of 50 for (b) and (c).
 
 Test-set proposals changing from (a):
 - (b) vs (a): 4 of 50
