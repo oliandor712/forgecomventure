@@ -67,6 +67,8 @@ DOC = {
  "look_top:<n> / take_count:<n> / take_filter:<t> / take_dest:<zone> / rest_dest:<zone> / rest_random_order / take_optional": ("look at the top N cards, take K matching a filter to a zone, put the rest elsewhere (splits the opaque 'selection' tag)", "reverse check r1: Militia Bugler, Dig Through Time"),
  "piles_split / pile_separator:<who>": ("cards are divided into two piles", "reverse check r1: Fact or Fiction"),
  "restrict / restrict_kind:cant_attack_or_block|cant_attack|cant_block|cant_activate|doesnt_untap|loses_abilities|cant_attack_unless_cost": ("an effect that stops something from acting: can't attack or block (A/B), can't attack (A), can't block (B), its abilities can't be activated, doesn't untap, or loses its abilities; `restrict` stays as the umbrella, the kind says which; who is affected is in the target / affected tags and how long in the duration tag", "user 2026-10-22: make restrict robust (Pacifism, Goblin Heelcutter, Icy Blast, Merfolk Trickster)"),
+ "pump_all": ("a team pump: an effect that changes power/toughness or grants keywords to many creatures at once; read with pump_amount, grant_kw, affected_type / affected_scope / affected_filter (other, attacking ...) and the duration tag", "user 2026-10-22: remake pump_team more readable (Overrun, Trumpet Blast, Make a Stand)"),
+ "token_ability:<what it does>": ("what a standard artifact token does when sacrificed or paid for (Treasure, Food, Clue, Blood, Gold, Map; CR 111.10), written out so artifact_token and token_type need no outside knowledge", "user 2026-10-22: remake artifact_token more readable"),
  "restrict_scope:self": ("the restriction is a drawback on the card itself (a creature that can't block)", "restrict robustness: Bloodghast, Bog Hoodlums"),
  "cant_be_blocked": ("the creature can't be blocked (evasion granted by a static effect); a restriction on the blocked player's creatures is `restrict`, not this", "restrict robustness: Brotherhood Regalia"),
  "duration:next_untap / duration:while_control": ("an effect lasts until the next untap step / for as long as you control the source", "restrict detail: Icy Blast, Exhaustion, Time of Ice"),
@@ -80,6 +82,12 @@ DOC = {
 
 
 def tok(s): return re.sub(r"[^a-z0-9]+", "_", s.lower()).strip("_")
+
+
+def filt(s):
+    """a Forge filter word as readable tag text: powerGE4 -> power_ge_4"""
+    return tok(re.sub(r"(power|toughness|cmc)(GE|LE|EQ|GT|LT)(\d+|X)", r"\1_\2_\3", s))
+
 
 
 def params(body):
@@ -114,8 +122,8 @@ def target_tags(p, out, api=""):
         for r in rest:
             if r in ("YouCtrl", "YouOwn"): out.append("target_scope:you_control")
             elif r in ("OppCtrl", "YouDontCtrl"): out.append("target_scope:opp_control")
-            elif r.startswith("non") or r in ("Other", "Basic", "Legendary", "Tapped", "Untapped"): out.append("target_filter:" + tok(r))
-            elif r and r[0].isupper() and main[0] in ("Permanent", "Card", "Creature"): out.append("target_filter:" + tok(r))
+            elif r.startswith("non") or r in ("Other", "Basic", "Legendary", "Tapped", "Untapped"): out.append("target_filter:" + filt(r))
+            elif r and r[0].isupper() and main[0] in ("Permanent", "Card", "Creature"): out.append("target_filter:" + filt(r))
 
 
 def token_tags(p, out):
@@ -138,6 +146,9 @@ def token_tags(p, out):
         else: types.append(w)
     if types: out.append("token_type:" + "_".join(types))
     ty = "_".join(types)
+    TOKEN_ABILITY = {"treasure": "tap_sacrifice_add_mana_any_color", "food": "pay_2_tap_sacrifice_gain_3_life", "clue": "pay_2_sacrifice_draw_a_card",
+                     "blood": "pay_1_tap_discard_sacrifice_draw_a_card", "gold": "sacrifice_add_mana_any_color", "map": "pay_1_tap_sacrifice_target_creature_explores"}
+    if ty in TOKEN_ABILITY: out.append("token_ability:" + TOKEN_ABILITY[ty])      # what the standard artifact token does (CR 111.10), so the type name needs no outside knowledge
     for key, prov in (("food", "lifegain"), ("treasure", "mana_source"), ("clue", "draw"), ("blood", "discard")):
         if ty == key: out.append(prov)
 
@@ -201,8 +212,8 @@ def affected_tags(p, add):
         for r in main[1:] + bits[1:]:
             if r in ("YouCtrl", "YouOwn"): add("affected_scope:you_control")
             elif r in ("OppCtrl",): add("affected_scope:opp_control")
-            elif r == "Other": add("affected_filter:other")
-            elif r: add("affected_filter:" + tok(r))
+            elif r in ("Other", "StrictlyOther"): add("affected_filter:other")
+            elif r: add("affected_filter:" + filt(r))
 
 
 def restrict_kinds(text):
@@ -438,8 +449,12 @@ def extra(lines, sv, types, text):
                     add("%s:x" % key_)
                     w = x_is(la, sv)
                     if w: add("x_is:" + w)
-            if api == "Pump" and ("NumAtt" in bp or "NumDef" in bp) and "KW" not in bp or api == "Pump" and ("NumAtt" in bp or "NumDef" in bp):
+            if api in ("Pump", "PumpAll") and ("NumAtt" in bp or "NumDef" in bp):
                 add("pump_amount:%s/%s" % (sign(bp.get("NumAtt"), sv, xt2), sign(bp.get("NumDef"), sv, xt2))); add(*xt2)
+            if api == "PumpAll":                                  # team pump: who is pumped, in the same affected_* words as a static anthem
+                add("pump_all")
+                affected_tags({"Affected": bp.get("ValidCards", "")}, add)
+                if "Duration" not in bp: add("duration:eot")
             if api in ("PutCounter", "PutCounterAll") and bp.get("CounterNum"):
                 cn = bp["CounterNum"]
                 add("counter_count:" + (cn if cn.isdigit() else "x"))
@@ -459,7 +474,7 @@ def extra(lines, sv, types, text):
                     if ks: restrict_add(ks, add, sv.get(nm, "") + " " + bp.get("Duration", "").replace("AsLongAsControl", "as long as you control") + " " + bp.get("SpellDescription", ""))
             if api == "Animate" and bp.get("RemoveAllAbilities") == "True":
                 add("restrict", "restrict_kind:loses_abilities", "duration:permanent" if bp.get("Permanent") == "True" else "duration:eot")
-            if api == "Pump" and bp.get("KW"):
+            if api in ("Pump", "PumpAll") and bp.get("KW"):
                 for kw_ in re.split(r"\s*&\s*", bp["KW"]):
                     if kw_ and not kw_.startswith("HIDDEN"): add("grant_kw:" + tok(kw_.split(":")[0]))
                 add("duration:" + ({"EndOfTurn": "eot", "Permanent": "permanent"}.get(bp.get("Duration", ""), tok(bp["Duration"])) if bp.get("Duration") else "eot"))
@@ -468,7 +483,7 @@ def extra(lines, sv, types, text):
             if api == "Dig":
                 add("look_top:" + bp.get("DigNum", "1").lower())
                 add("take_count:" + (bp.get("ChangeNum", "1").lower() if bp.get("ChangeNum", "1") != "All" else "all"))
-                if bp.get("ChangeValid"): add("take_filter:" + tok(bp["ChangeValid"]))
+                if bp.get("ChangeValid"): add("take_filter:" + filt(bp["ChangeValid"]))
                 if bp.get("DestinationZone"): add("take_dest:" + tok(bp["DestinationZone"]))
                 if bp.get("DestinationZone2"): add("rest_dest:" + tok(bp["DestinationZone2"]) + ("_bottom" if bp.get("LibraryPosition") == "-1" else ""))
                 if bp.get("RestRandomOrder") == "True": add("rest_random_order")
