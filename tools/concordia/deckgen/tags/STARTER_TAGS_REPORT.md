@@ -4,7 +4,7 @@
 
 ## Most common tags
 
-cardtype:creature 200, target_count:one 128, trigger_scope:self 92, target_type:creature 91, trigger:etb 90, cardtype:instant 64, draw 60, tempo:+1 55, type:human 52, token_make 47, cost:tap 41, cost:mana 38, target_scope:you_control 37, lifegain 37, damage 37, duration:eot 36, mana_source 35, draw_count:1 35, cardtype:sorcery 34, type:wizard 33, cardtype:artifact 28, tempo:+0.5 27, put_onto_battlefield 26, burn 26, token_count:1 26, remove:destroy 25, kw:flying 24, type:goblin 24, supertype:legendary 23, cost:sacrifice 23, token_pt:1/1 22, duration:static 21, life_loss 20, mana_amount:1 20, trigger:dies 20, trigger_zone:graveyard 20, from_zone:graveyard 19, target_scope:opp_control 19, cost_sacrifice_target:self 18, affected_type:creature 18
+cardtype:creature 200, target_count:one 128, trigger:etb 92, target_type:creature 91, trigger_scope:self 87, cardtype:instant 64, draw 60, tempo:+1 55, type:human 52, token_make 47, cost:tap 41, cost:mana 38, target_scope:you_control 37, lifegain 37, damage 37, duration:eot 36, mana_source 35, draw_count:1 35, cardtype:sorcery 34, type:wizard 33, cardtype:artifact 28, tempo:+0.5 27, duration:static 27, put_onto_battlefield 26, burn 26, token_count:1 26, remove:destroy 25, kw:flying 24, type:goblin 24, supertype:legendary 23, cost:sacrifice 23, token_pt:1/1 22, life_loss 20, mana_amount:1 20, trigger:dies 20, trigger_zone:graveyard 20, from_zone:graveyard 19, target_scope:opp_control 19, cost_sacrifice_target:self 18, optional 18
 
 ## Trigger types seen in clauses
 
@@ -97,7 +97,7 @@ Flags (one source disagrees, nothing added): 61 on 56 cards.
 
 ## Double check of this run
 
-- Structure checks on 353 records (no duplicate or upper-case tags; every supertype and card type in the Types line has its tag; every K: line has a kw: or forge_line: tag): all passed
+- Structure checks on 353 records (no duplicate or upper-case tags; every supertype and card type in the Types line has its tag; every K: line has a kw: or forge_line: tag): K: line without kw tag: Cloud Key (etbreplacement), Herald's Horn (etbreplacement)
 - Comparison with the original run (before the cross-check layer, checked 2026-10-22 after the self-sacrifice fix): 80 tags added on 80 cards changed (22 ai_logic, 58 other tags on 51 cards); 14 `sacrifice_outlet` tags removed (self-sacrifice is not an outlet, user 2026-10-22); nothing else removed or changed.
 - By hand: every cross-check addition on the sample cards and about 40 others was read against the Oracle text (see `STARTER_TAGS_SAMPLE.md`); the findings are listed under 'Known problems' below.
 
