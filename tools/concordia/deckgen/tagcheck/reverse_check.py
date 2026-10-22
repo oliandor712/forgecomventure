@@ -29,7 +29,7 @@ READER_RULES = """You are the BLIND READER. You see only tags. Rules (strict):
 3. For every card write the rules text (Magic Oracle style, one line per ability, '/' between abilities) that these tags describe, as exactly as the tags allow. Use only what the tags say. If a tag does not say an amount, mana cost or exact wording, write a placeholder such as {cost}, N or X instead of guessing a real value. Do not add abilities the tags do not support. Do NOT write a type line (e.g. "Creature - Elf"); write only rules text.
 4. If you think you recognise the real card, say so in `recognised` (true) but still write only what the tags support. Never write the card's name.
 5. List in `unclear` every tag you could not turn into rules text, and in `conflicts` any tags that contradict each other.
-6. Never leave a card's text empty when it has ability tags: write the best partial text the tags support, use a placeholder such as {effect} or {cost} for the part a tag does not say, and list the tag under `unclear`. An empty answer is only right for a card with no ability tags.
+6. Write X, not its definition, when `x_is` is x_paid (the X in the mana cost). Never leave a card's text empty when it has ability tags: write the best partial text the tags support, use a placeholder such as {effect} or {cost} for the part a tag does not say, and list the tag under `unclear`. An empty answer is only right for a card with no ability tags.
 7. Write the answer as JSON to the output file you are given, exactly: {"cards":[{"id":"c001","text":"...","unclear":["tag"],"conflicts":["..."],"recognised":false}, ...]} with one entry for every id in the batch, in order. Then reply with one line: the number of cards written."""
 
 
@@ -200,6 +200,7 @@ def is_typeline(seg):
 
 def clean_reco(text):
     """the reader is not asked for a type line but often writes one: drop segments that are only a type line, so they are not scored as rules text"""
+    text = re.sub(r",? where x is the amount of mana paid for x\.?|(?<=[.!/])\s*x is the amount of mana paid for x\.?", ".", text, flags=re.I)     # defining X (the X in the mana cost) is explanation, not an extra ability
     segs = re.split(r"\s+/\s+|(?<=[.!])\s+", text)
     return " / ".join(g for g in segs if not is_typeline(g.strip()))
 
@@ -265,6 +266,7 @@ def baseline_text(rec):
 # ---------- commands -----------------------------------------------------------------------------------------------------------------------------
 def cmd_export(a):
     recs = starter_records()
+    if getattr(a, "cards", None): want = {c.strip().lower() for c in a.cards.split(";")}; recs = [r for r in recs if r["name"].lower() in want]      # a hand-picked subset
     if a.limit: random.Random(1).shuffle(recs); recs = recs[: a.limit]
     random.Random(7).shuffle(recs)                          # no alphabetical or deck-order hints
     wd = workdir(a.run)
@@ -414,7 +416,7 @@ def cmd_selftest(a):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sp = ap.add_subparsers(dest="cmd", required=True)
-    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=40); e.add_argument("--legend", action="store_true")
+    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=40); e.add_argument("--legend", action="store_true"); e.add_argument("--cards", default="")
     c = sp.add_parser("compare"); c.add_argument("--run", required=True)
     s = sp.add_parser("selftest"); s.add_argument("--limit", type=int, default=0)
     a = ap.parse_args()

@@ -163,6 +163,12 @@ def gap_pass(face, lines, sv, tags, ex_groups):
     if re.search(r"AdjustLandPlays\$ (\d+)", face) and not any(t.startswith("extra_land_drop") for t in tags):
         add("c0", "extra_land_drop:" + re.search(r"AdjustLandPlays\$ (\d+)", face).group(1))
     if re.search(r"^K:AlternateAdditionalCost", face, re.M): add("c0", "cost_additional")
+    # scaling (user 2026-10-22): every "number of X you control" count carries scales:<X>, basic land types included (Flow of Knowledge: scales:island)
+    for t in list(tags):
+        mc = re.match(r"^x_is:count_([a-z0-9]+(?:_[a-z0-9]+)*?)(?:_you_control)?$", t)
+        if mc and mc.group(1) not in ("graveyard", "hand", "library", "exile") and ("scales:" + mc.group(1)) not in tags:
+            gid = next((g for g, ts in ex_groups.items() if t in ts), "c0")
+            add(gid, "scales:" + mc.group(1))
     for gid, ts in add_g.items():
         ex_groups.setdefault(gid, []).extend(t for t in ts if t not in ex_groups.get(gid, []))
     return tags, ex_groups

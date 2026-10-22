@@ -20,7 +20,6 @@ LEGEND = {
  "modal": "choose N of M modes (modal:1_of_3 = choose one of three)",
  "replace": "a replacement effect: replace:<event>_to_<what> (draw_to_winsgame = instead of drawing, win the game)",
  "condition": "the ability works only while this is true (a permanent or card you control, or an empty library)",
- "x_is": "what the variable X counts or equals (count_<thing>_you_control, own_power, target_power, x_paid, devotion_<colour>...)",
  "restrict_kind": "kind of restriction placed on a creature (cant_attack, cant_block, cant_attack_or_block, cant_attack_unless_cost)",
  "token_ability": "ability the created token has, in words (tap_sacrifice_add_mana_any_color = {T}, Sacrifice: Add one mana of any color)",
  "exile_from": "exiles cards from a zone other than the battlefield",
@@ -40,6 +39,9 @@ LEGEND = {
  "extra_land_drop": "its controller may play this many additional lands each turn",
  "phase_out": "permanents phase out",
  "cost_additional": "an alternative additional cost as the card is cast (reveal a card or pay mana, for example); the cost tags follow",
+ "scales": "the amount (X) of this ability is the number of that kind of thing you control: write it as 'for each <thing> you control' (scales:island on a draw_count:x = draw a card for each Island you control)",
+ "mana_restriction": "the mana can be spent only on what the value says (mana_restriction:instant_or_sorcery = spend this mana only to cast an instant or sorcery spell)",
+ "x_is": "what X is. Write X in the text and do not define it unless the value names a count or a stat: count_<thing>_you_control = for each <thing> you control, own_power / target_power = equal to that creature's power; x_paid = just X (the X in the mana cost)",
  "optional": "the effect of this group is optional (you may ...)",
  "target_scope": "whose things or which players the effect hits (you_control, opp_control; each_opponent = every opponent, each_player = every player; no value means a single chosen target)",
  "trigger_scope": "which cards fire a zone-change trigger: self = this card only, other = another card, any = this card or any other card",
@@ -80,7 +82,7 @@ REF_EXTRA = {
  "counterspell": ("counters a spell", "script Counter; CR 701.6"),
  "mill": ("puts cards from the top of a library into a graveyard", "script Mill; CR 701.17"),
  "reveal": ("reveals cards", "script Reveal / PeekAndReveal; CR 701.16"),
- "scales": ("the effect grows with the number of things of this kind (scales:elf = per Elf you control)", "script Count$ variables (ability_tags.py)"),
+ "scales": ("the effect grows with the number of things of this kind you control (scales:elf = per Elf you control); basic land types and graveyard-style counts included", "script Count$ variables (ability_tags.py)"),
  "cant_regenerate": ("the creature can't be regenerated", "script NoRegen$ True / Mode$ CantRegenerate; CR 701.19 (agent suggestion S07)"),
  "num": ("number in a keyword cost or qualifier (kicker, ward, equip amounts)", "script K: line"),
  "reanimate": ("returns a creature card from a graveyard onto the battlefield", "script ChangeZone Graveyard -> Battlefield"),
@@ -117,7 +119,7 @@ for _k in ("trample", "haste", "indestructible", "hexproof", "deathtouch", "flyi
 DOC = {
  "mana:<color>": ("colour of mana an ability produces (white, blue, black, red, green, colorless, any, commander_identity)", "feedback: link color type to mana source (Arcane Signet, Plains, Temple, Frost Marsh)"),
  "mana_amount:<n>": ("how much mana is produced per activation; always tagged on a mana source ability, also when it is 1", "Temple of the False God; user note: always tag mana_amount"),
- "mana_restriction": ("the mana can only be spent on certain things", "Vodalian Arcanist"),
+ "mana_restriction": ("the mana can only be spent on certain things; the value says on what (instant_or_sorcery, creature_spell, artifact_spell_or_activated_ability ...)", "Vodalian Arcanist; script RestrictValid$"),
  "mana_choice": ("the ability lets you choose between colours", "Frost Marsh, Arcane Signet"),
  "trigger:tap": ("the ability is a tap ability (basic lands tap for one colour of mana)", "feedback: Plains, Frost Marsh trigger type"),
  "activation_restriction": ("the ability can only be activated under a condition", "Temple of the False God"),
@@ -590,7 +592,13 @@ def extra(lines, sv, types, text):
                         if c in COLORS: add("mana:" + COLORS[c]); links.append(("mana_source", "produces", "mana:" + COLORS[c]))
                 add("mana_amount:" + bp.get("Amount", "1").lower())
                 if not bp.get("Amount", "1").isdigit() and x_is(bp.get("Amount"), sv): add("x_is:" + x_is(bp.get("Amount"), sv))
-                if "RestrictValid" in bp: add("mana_restriction")
+                if "RestrictValid" in bp:           # value = what the mana can be spent on (instant_or_sorcery, creature_spell, activated_ability ...)
+                    rv_ = []
+                    for part_ in bp["RestrictValid"].split(","):
+                        if part_.startswith("Spell."): w_ = part_[6:].split("+")[0]; rv_.append(("non" + w_[3:].lower() if w_.startswith("non") else w_.lower()) + ("_spell" if w_.lower() in ("creature", "artifact", "legendary", "noncreature") else ""))
+                        elif part_.startswith("Activated"): rv_.append("activated_ability")
+                        else: rv_.append(tok(part_))
+                    add("mana_restriction:" + "_or_".join(dict.fromkeys(rv_)))
                 if "IsPresent" in bp or "ConditionPresent" in bp: add("activation_restriction")
             if "IsPresent" in bp and api != "Mana" and kind == "A": add("activation_restriction")
             if api == "ChangeZone" or api == "ChangeZoneAll":

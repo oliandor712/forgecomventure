@@ -668,7 +668,7 @@ forge_ai: AILogic=-
 
 card: Tendrils of Corruption
 typing: cardtype:instant landtype:swamp
-tags: lifegain target_count:one target_type:creature damage damage_amount:x x_is:count_swamp_you_control lifegain_amount:x
+tags: lifegain target_count:one target_type:creature damage damage_amount:x x_is:count_swamp_you_control lifegain_amount:x scales:swamp
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dealdamage+gainlife,numdmg=X lifeamount=X,ValidTgts=Creature,""
 links[3]{from,rel,to}:
@@ -676,14 +676,14 @@ links[3]{from,rel,to}:
   c1.2:lifegain_amount:x,scales_with,c1.2:x_is:count_swamp_you_control
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature damage damage_amount:x x_is:count_swamp_you_control
+  c1,A line,target_count:one target_type:creature damage damage_amount:x x_is:count_swamp_you_control scales:swamp
   c1.2,sub-ability of c1,lifegain_amount:x x_is:count_swamp_you_control
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Corrupt
 typing: cardtype:sorcery landtype:swamp
-tags: lifegain target_count:one target_type:any damage damage_amount:x x_is:count_swamp_you_control lifegain_amount:x x_is:totaldamagedonebythisturn
+tags: lifegain target_count:one target_type:any damage damage_amount:x x_is:count_swamp_you_control lifegain_amount:x x_is:totaldamagedonebythisturn scales:swamp
 ai_tags: burn
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dealdamage+gainlife,numdmg=X lifeamount=Y,ValidTgts=Any Defined=You,""
@@ -692,7 +692,7 @@ links[3]{from,rel,to}:
   c1.2:lifegain_amount:x,scales_with,c1.2:x_is:totaldamagedonebythisturn
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:any damage damage_amount:x x_is:count_swamp_you_control
+  c1,A line,target_count:one target_type:any damage damage_amount:x x_is:count_swamp_you_control scales:swamp
   c1.2,sub-ability of c1,lifegain_amount:x x_is:totaldamagedonebythisturn
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
@@ -1007,7 +1007,7 @@ forge_ai: AILogic=AtOppEOT
 
 card: "Gwenna, Eyes of Gaea"
 typing: supertype:legendary cardtype:creature type:elf type:druid type:scout
-tags: counters_plus mana_source cost:tap mana:any mana_choice mana_amount:2 mana_restriction trigger:spell_cast trigger_filter:creature counter:p1p1 trigger_filter:power_ge_5
+tags: counters_plus mana_source cost:tap mana:any mana_choice mana_amount:2 mana_restriction:creature_spell_or_activated_ability trigger:spell_cast trigger_filter:creature counter:p1p1 trigger_filter:power_ge_5
 ai_tags: fixing
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
@@ -1015,7 +1015,7 @@ clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   c2:affected,receives,c2:payload
 groups[3]{id,source,tags}:
-  c1,A line,cost:tap mana_source mana:any mana_choice mana_amount:2 mana_restriction
+  c1,A line,cost:tap mana_source mana:any mana_choice mana_amount:2 mana_restriction:creature_spell_or_activated_ability
   c2,T line,trigger:spell_cast trigger_filter:creature trigger_filter:power_ge_5
   c2.2,sub-ability of c2,counter:p1p1
 mtgish: rules=Activated TriggerA
@@ -1845,7 +1845,7 @@ forge_ai: AILogic=-
 
 card: "Bosco, Just a Bear"
 typing: supertype:legendary cardtype:creature type:bear
-tags: duration:eot counters_plus sacrifice_outlet token_make trigger:etb token_count:x token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain x_is:count_creature_legendary_you_control cost:sacrifice cost_sacrifice_target:food cost:mana counter_count:2 counter:p1p1 grant_kw:trample trigger_scope:self
+tags: duration:eot counters_plus sacrifice_outlet token_make trigger:etb token_count:x token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain x_is:count_creature_legendary_you_control cost:sacrifice cost_sacrifice_target:food cost:mana counter_count:2 counter:p1p1 grant_kw:trample trigger_scope:self scales:creature_legendary
 ai_tags: trample artifact_token tempo:x
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_a_food_sac,"",""
@@ -1857,7 +1857,7 @@ links[3]{from,rel,to}:
 groups[5]{id,source,tags}:
   c0,card,sacrifice_outlet
   c1,T line,trigger:etb trigger_scope:self
-  c1.2,sub-ability of c1,token_count:x token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain x_is:count_creature_legendary_you_control
+  c1.2,sub-ability of c1,token_count:x token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain x_is:count_creature_legendary_you_control scales:creature_legendary
   c2,A line,cost:sacrifice cost_sacrifice_target:food cost:mana counter_count:2 counter:p1p1 duration:eot
   c2.2,sub-ability of c2,grant_kw:trample duration:eot
 mtgish: rules=TriggerA Activated
@@ -2209,7 +2209,7 @@ forge_ai: AILogic=-
 
 card: Goblin Rabblemaster
 typing: cardtype:creature type:goblin type:warrior
-tags: duration:eot scales:goblin token_make must_attack affects:goblin token_count:1 token_color:red token_pt:1/1 token_kw:haste token_type:goblin trigger:attacks pump_amount:+x/+0 x_is:count_goblin_attacking_other trigger:beginning_of_combat
+tags: duration:eot scales:goblin token_make must_attack affects:goblin token_count:1 token_color:red token_pt:1/1 token_kw:haste token_type:goblin trigger:attacks pump_amount:+x/+0 x_is:count_goblin_attacking_other trigger:beginning_of_combat scales:goblin_attacking_other
 ai_tags: tempo:+0.5
 clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_mustattack,"","",""
@@ -2223,7 +2223,7 @@ groups[5]{id,source,tags}:
   c1,S line,must_attack affects:goblin
   c2.2,sub-ability of c2,token_count:1 token_color:red token_pt:1/1 token_kw:haste token_type:goblin
   c3,T line,trigger:attacks duration:eot
-  c3.2,sub-ability of c3,pump_amount:+x/+0 x_is:count_goblin_attacking_other
+  c3.2,sub-ability of c3,pump_amount:+x/+0 x_is:count_goblin_attacking_other scales:goblin_attacking_other
   v,cross-check (oracle/mtgish/keyword/ai),trigger:beginning_of_combat
 mtgish: rules=EachPermanentRuleEffect TriggerA TriggerA
 forge_ai: AILogic=-
@@ -3166,13 +3166,13 @@ forge_ai: AILogic=-
 
 card: Karfell Harbinger
 typing: cardtype:creature type:zombie type:wizard
-tags: mana_source cost:tap mana:blue mana_amount:1 mana_restriction
+tags: mana_source cost:tap mana:blue mana_amount:1 mana_restriction:static_foretelling_or_instant_or_sorcery
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
 links[1]{from,rel,to}:
   mana_source,produces,mana:blue
 groups[1]{id,source,tags}:
-  c1,A line,cost:tap mana_source mana:blue mana_amount:1 mana_restriction
+  c1,A line,cost:tap mana_source mana:blue mana_amount:1 mana_restriction:static_foretelling_or_instant_or_sorcery
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -3273,13 +3273,13 @@ forge_ai: AILogic=-
 
 card: Vodalian Arcanist
 typing: cardtype:creature type:merfolk type:wizard
-tags: mana_source cost:tap mana:colorless mana_amount:1 mana_restriction
+tags: mana_source cost:tap mana:colorless mana_amount:1 mana_restriction:instant_or_sorcery
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
 links[1]{from,rel,to}:
   mana_source,produces,mana:colorless
 groups[1]{id,source,tags}:
-  c1,A line,cost:tap mana_source mana:colorless mana_amount:1 mana_restriction
+  c1,A line,cost:tap mana_source mana:colorless mana_amount:1 mana_restriction:instant_or_sorcery
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -3699,7 +3699,7 @@ forge_ai: AILogic=-
 
 card: Flow of Knowledge
 typing: cardtype:instant landtype:island
-tags: discard draw draw_count:x x_is:count_island_you_control discard_count:2
+tags: discard draw draw_count:x x_is:count_island_you_control discard_count:2 scales:island
 ai_tags: tempo:x
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",draw+discard,numcards=X numcards=2,Defined=You,""
@@ -3707,7 +3707,7 @@ links[2]{from,rel,to}:
   c1:draw_count:x,scales_with,c1:x_is:count_island_you_control
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,draw_count:x x_is:count_island_you_control
+  c1,A line,draw_count:x x_is:count_island_you_control scales:island
   c1.2,sub-ability of c1,discard_count:2
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
