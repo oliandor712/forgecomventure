@@ -14,6 +14,8 @@ Say if any should be changed; unmarked means accepted with the family.
 | Family | New values (cards) |
 |---|---|
 | `ai_logic` | ai_logic:always (3); ai_logic:pump (2); ai_logic:powerdmg (2); ai_logic:fight (2); ai_logic:curse (2); ai_logic:atoppeot (1); ai_logic:foodortreasure (1); ai_logic:ateotifnotattacking (1); ai_logic:cantregenerate (1); ai_logic:makeunblockable (1); ai_logic:manaritual (1); ai_logic:mostprominentincomputerdecknontoken (1); ai_logic:gaincontrol (1); ai_logic:bestopportunity (1) |
+| `return` | return:graveyard_to_hand (7); return:exile_to_hand (1); return:graveyard_to_library (1) |
+| `x_is` | x_is:greatest_power_among_creature_you_control_nonhuman (1); x_is:greatest_power_among_creature_you_control (1) |
 
 ## Tag names that were merged or renamed (the old names no longer exist)
 

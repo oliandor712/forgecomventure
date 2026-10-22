@@ -1,0 +1,18 @@
+{"cards":[
+{"id":"c161","text":"Equipped creature has \"Whenever this creature deals combat damage, discard a card, then draw N cards.\" / Equip {1}","unclear":["draw","trigger:combat_damage"],"conflicts":[],"recognised":false},
+{"id":"c162","text":"When this creature enters, exile target creature an opponent controls.","unclear":["c1: trigger_scope:self trigger:etb (second ETB trigger with no payload tags)"],"conflicts":[],"recognised":false},
+{"id":"c163","text":"First strike / When this creature enters, destroy target nonartifact, nonblack creature.","unclear":[],"conflicts":[],"recognised":false},
+{"id":"c164","text":"Flying / Exalted / Whenever this creature attacks, sacrifice a creature.","unclear":["sacrifice_outlet"],"conflicts":[],"recognised":false},
+{"id":"c165","text":"Draw a card. Proliferate.","unclear":[],"conflicts":[],"recognised":false},
+{"id":"c166","text":"When this creature enters, draw a card, then discard a card.","unclear":["discard","order of draw and discard"],"conflicts":[],"recognised":false},
+{"id":"c167","text":"When this artifact enters, search your library for a basic land card, put it into your hand, then shuffle. / When this artifact is put into a graveyard from the battlefield, [effect not given].","unclear":["c2 payload (trigger:dies has no effect tags)"],"conflicts":[],"recognised":false},
+{"id":"c168","text":"Whenever another creature enters, create a Food token and a Treasure token.","unclear":["trigger_scope:other (which other permanents are not specified)"],"conflicts":[],"recognised":false},
+{"id":"c169","text":"Haste / {T}, Sacrifice this creature: It deals 1 damage to any target.","unclear":[],"conflicts":[],"recognised":false},
+{"id":"c170","text":"When this creature enters, draw a card.","unclear":["link c1:affected receives c1:payload (no affected tag)"],"conflicts":[],"recognised":false},
+{"id":"c171","text":"Enchant creature / Enchanted creature gets +2/+1.","unclear":[],"conflicts":[],"recognised":false},
+{"id":"c172","text":"{T}: Add {C}. Spend this mana only [restriction not given].","unclear":["mana_restriction"],"conflicts":[],"recognised":false},
+{"id":"c173","text":"Create two 1/1 white Soldier creature tokens.","unclear":[],"conflicts":[],"recognised":false},
+{"id":"c174","text":"When this creature enters, each opponent loses X life and you gain X life, where X is your party size.","unclear":["who loses life (affected not tagged)","life_loss"],"conflicts":[],"recognised":false},
+{"id":"c175","text":"Delve / Look at the top seven cards of your library. Put two of them into your hand.","unclear":["fate of the remaining cards not tagged"],"conflicts":[],"recognised":false},
+{"id":"c176","text":"Flying / When this creature enters, mill N cards. / When this creature dies, [effect not given].","unclear":["self_mill (no amount)","c2 payload (trigger:dies has no effect tags)"],"conflicts":[],"recognised":false}
+]}

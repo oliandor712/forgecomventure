@@ -32,6 +32,17 @@ r3 -> r4 gains: Swords to Plowshares 0.56 -> 0.95, Feed the Swarm 0.53 -> 0.92, 
 Still weak (r4): Leafkin Druid 0.29 (conditional mana), Sea Gate Loremaster, Welcoming Vampire, Elite Scaleguard (trigger filters), Vines of Vastwood, Mindcrank, Explore, Feign Death 0.54. Most-lost concepts: each / all (32 cards), you control (30), may (30), opponent (29). Tags the readers could not read: trigger (10), recursion (6), target_type (6).
 r2 -> r4 is the real gain over r1 (+0.10 mean); r3 and r4 differ from r2 by amounts within reader noise except for the named cards. By type (r1 / r2 / r3): see `R2_FINDINGS.md`; one pass per run, bands unvalidated.
 
+### r5 (half sample: 176 random cards, 174 with ability text; r1-r4 re-read on the same 174)
+| | r1 | r2 | r3 | r4 | r5 |
+|---|---|---|---|---|---|
+| mean similarity | 0.765 | 0.864 | 0.872 | 0.881 | 0.885 |
+| good / partial / gap | 114 / 50 / 10 | 146 / 26 / 2 | 152 / 21 / 1 | 155 / 18 / 1 | 156 / 17 / 1 |
+| real card ranked #1 | 107 | 137 | 133 | 132 | 144 |
+| real card in top 5 | 148 | 161 | 164 | 163 | 169 |
+| cards missing a number | 48 | 18 | 14 | 14 | 14 |
+| cards the reader said it recognised | 3 | 0 | 0 | 0 | 0 |
+r5 tags = r4 plus the merges (condition, replace, put_onto_battlefield:from_, grant_kw only) and AI Tags kept intact and hidden. Sea Gate Loremaster 0.38 -> 1.0, Rancor +0.17, Prey Upon +0.16. Two losses traced to tag errors, fixed after the run (not re-read): Rishkar's Expertise 0.27 (x_is said "count of creatures" but the script means the greatest power among them; now `x_is:greatest_power_among_creature_you_control`) and Elvish Regrower 0.69 (the `recursion` AI tag was the only record of "return from graveyard to hand"; now `return:graveyard_to_hand`, one new proposed family). Still weak: Welcoming Vampire, Elite Scaleguard, Mindcrank, Feign Death, Explore, Mentor of the Meek. Half sample: differences of 0.01 are noise.
+
 ## 3. Agent updates (all in this container's group)
 - **forge-ai-lab:** pushed patch 014 + its unticked entry, `AI_LOGIC_TAG_REVIEW.md`, results n014 / n005 / n008 and `ab_recipe.sh`. Nothing applied to any card script or forge-ai. Its own 40-game tests: 014 casts per game -25%, wins noise; 005 v3 switch activations 356 -> 52, wins 5 vs 1 (n.s.); 008 no regression, no benefit. Omen of the Sea anomaly withdrawn.
 - **deck-balance-lab:** running 9 x 40-game A/B runs for 014, 005 (+001), 008 under your standing order; 5 done at last report: 014 (120 games) wins 6 vs 10 (n.s.), casts 784 -> 643; 005 (80 games) wins 7 vs 6, activations 742 -> 106. 008 not started. Nothing pushed until all nine finish.

@@ -21,8 +21,8 @@ Outgoing: Claude 1 (`session_01SmNeweiyRBavDSUetnsUjF`, branch `campaign-design`
 - `human_logic.toon` rows H59-H64 appended (count line fixed to 63).
 
 ## Open items and pending approvals
-- **Tag families:** 44 proposed families await the user's tick in `deckgen/tags/NEW_TAGS_FOR_APPROVAL.md` (58 were approved 2026-10-22); two behaviour changes still unapproved (drop umbrella `removal` when a method tag exists; list keywords once).
-- **User decisions pending:** (1) merge `condition_present/_zone/_compare` into one readable `condition:` tag? (2) the AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token): right? (3) next AI patch to write: 004 (Harsh Justice reflect), 007 (attacker curses through the blocker, AI lab's pick, needs the Shield Dancer unflag) or 009 (don't over-pump).
+- **Tag families:** all approved by the user on 2026-10-22 (58 first, the rest after the redundancy prune, with the two behaviour changes); archive in `deckgen/tags/APPROVED_TAGS_ARCHIVE.md`; `NEW_TAGS_FOR_APPROVAL.md` lists only families created by later runs. Redundancy check on every run (`tags/REDUNDANCY_CHECK.md`, 0 findings on the starter set).
+- **User decisions pending:** (1) [done: merged into `condition:`] (2) the AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token): right? (3) next AI patch to write: 004 (Harsh Justice reflect), 007 (attacker curses through the blocker, AI lab's pick, needs the Shield Dancer unflag) or 009 (don't over-pump).
 - **AI patches (AI_CHANGES_APPROVAL.md, all unticked, none applied):** 014 timing only, strength effect unproven (120 games: wins 6 vs 10 ns, casts 784 -> 643). 005 + 001: switch spam fixed (activations 1122 -> 222 in 120 games), strength unproven. 008: no effect seen, parked until a scenario test. 005 v4 (user requirement: ignore the after-blocks gate when the opponent has no creature that could block) is built and smoke-tested (10 games); its volume runs (r005v4sa-c Sai matchup, r005v4ba-c burn matchup, 40 games each) were started and then killed by the user's "pause all": nothing pushed for v4 volume.
 - **H55 hold stays** (tag index not declared complete): no tier 1 deck work, no AI lab proposals beyond the user-ordered patch tests.
 - **Reverse check, weak spots for the full-cardlist run:** conditional mana (Leafkin Druid), trigger filters (power / type / once per turn), "may" (optional), "each / all", "you control", "opponent" wording, `recursion` and `target_type` tags the readers could not read, Feign Death. `condition_*` merge above.
@@ -36,7 +36,7 @@ Outgoing: Claude 1 (`session_01SmNeweiyRBavDSUetnsUjF`, branch `campaign-design`
 
 ## Unverified or uncertain
 - Claude 2's agent states above are its own report; Claude 1 could not query them. `sync_check.py` was written for the first handover; the manifest is rewritten at each end of shift (this one included).
-- The end-of-shift push order for Claude 2 reaches it through the mailbox, the brief and the prompt; the running Claude 2 must confirm it with the user at its next start of shift.
+- The end-of-shift auto-push order for Claude 2 was withdrawn by the user (2026-10-22, start of Claude 2 shift 2): Claude 2 keeps backing up to cd/claude2 and pushes to campaign-design only on "push".
 - Reverse-check scores: one reader pass per run (no reader-noise estimate); r3 and r4 differ from r2 by amounts within noise except for named cards; quality bands (0.7 / 0.4) unvalidated; reader isolation rests on the tool list and prompt, transcripts not audited line by line.
 - The AI lab's claim that "pause all" came from the user in the balance lab's chat is unverified from here; treated as the user's order.
 - The patch test results are the agents' reports (summaries pushed by them); I recomputed the Fisher p-values only.

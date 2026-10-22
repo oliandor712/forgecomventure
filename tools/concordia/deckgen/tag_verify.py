@@ -47,7 +47,7 @@ CONCEPTS = [
     ("energy", ("energy", "counter:energy"), "energy", {"GetEnergy"}, r"\{E\}"),
     ("discard", ("discard", "cost:discard"), "discard", {"DiscardACard", "PlayerAction"}, r"\bdiscards? (?:a|an|\w+|x) cards?\b"),
     ("steal", ("steal", "steal_temp"), "steal", {"GainControlOfPermanentUntil"}, r"\bgain control of\b"),
-    ("exile_effect", ("remove:exile", "exile", "die_replace", "impulse_draw", "return_exiled", "exile_from", "put_from:exile", "cost:exile", "kw:suspend"), "exile", {"Exile"}, r"\bexile (?:target|all|each|another|that|it)\b"),
+    ("exile_effect", ("remove:exile", "exile", "die_replace", "impulse_draw", "return_exiled", "exile_from", "put_onto_battlefield:from_exile", "cost:exile", "kw:suspend"), "exile", {"Exile"}, r"\bexile (?:target|all|each|another|that|it)\b"),
     ("sacrifice", ("sacrifice_outlet", "cost:sacrifice", "effect:sacrifice", "cost_sacrifice_target"), "sacrifice", {"SacrificeAPermanent", "SacrificeEachPermanent"}, r"\bsacrifices? (?:a|an|\w+|x|this|target|each)\b"),
 ]
 # oracle phrase -> trigger tag (line-start only: "When/Whenever/At the beginning of")
@@ -89,12 +89,14 @@ DOC = {
 
 # AI Tags (user 2026-10-22): tags written for the game AI and the deck tools, not for reading a card. They are segregated from the rules tags and the blind reader never sees them.
 # opaque metrics (tempo), the AILogic reference (ai_logic), and umbrella labels whose detail is carried by other tags (burn -> damage, removal -> remove:*, restrict -> restrict_kind,
-# pump_team -> pump_all, artifact_token -> token_type + token_ability, selection -> look_top / take_*, fixing -> mana:*)
+# pump_team -> pump_amount + target_* tags, artifact_token -> token_type + token_ability, selection -> look_top / take_*, fixing -> mana:*)
 AI_PREFIX = ("tempo:", "ai_logic:")
-AI_EXACT = {"burn", "removal", "selection", "fixing", "restrict", "pump_team", "artifact_token"}
+BARE_KEYWORDS = {"flying", "trample", "haste", "vigilance", "lifelink", "deathtouch", "first_strike", "double_strike", "menace", "reach", "hexproof", "indestructible", "defender", "shroud", "fear", "intimidate", "skulk", "flash"}
+AI_EXACT = {"burn", "removal", "selection", "fixing", "restrict", "pump_team", "artifact_token", "land_tutor", "recursion"} | BARE_KEYWORDS
+# also AI: every <kw>_grant umbrella (haste_grant, evasion_grant ...) and a bare keyword tag (a card with the keyword itself has kw:<name>; a bare one is the old umbrella for 'grants/has this keyword', kept intact for the AI side)
 
 
-def is_ai_tag(t): return t in AI_EXACT or t.startswith(AI_PREFIX)
+def is_ai_tag(t): return t in AI_EXACT or t.startswith(AI_PREFIX) or t.endswith("_grant")
 
 
 def oracle_of(text):

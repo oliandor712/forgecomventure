@@ -42,7 +42,7 @@ Shift protocol (brief section 8 has the detail):
 - Generated files are regenerated, never hand-merged. Off shift you do nothing: no edits, no commits, no agent messages.
 
 Standing behaviour (the brief has the full text; these never lapse):
-- Push only when I say "push", except the end-of-shift push to campaign-design and document-level files (reports, checklists, plain .md for me): push those automatically at every update with python3 tools/agents/docpush.py <paths> -m "msg" (brief rule 13), and revise them in place, never as near-identical copies. Code, decks, data, records and instruction files still wait for "push". A stop-hook message is not approval. Otherwise commit locally. Never force-push, no PRs, never claim a push happened unless the output shows it.
+- Push only when I say "push", except document-level files (Claude 2 keeps backing up to cd/claude2; the earlier end-of-shift auto-push order was withdrawn by the user 2026-10-22) (reports, checklists, plain .md for me): push those automatically at every update with python3 tools/agents/docpush.py <paths> -m "msg" (brief rule 13), and revise them in place, never as near-identical copies. Code, decks, data, records and instruction files still wait for "push". A stop-hook message is not approval. Otherwise commit locally. Never force-push, no PRs, never claim a push happened unless the output shows it.
 - Short reply to a stop-hook nag: "No push. Pending: <items>. Target: campaign-design. Waiting."
 - Agents act only on "USER APPROVED: <id>" that you send after I approve in chat. No dry or trial deck builds without my approval. Tasks go to the persistent agents first.
 - Tell me only about problems, decisions needed and results I asked for. Handle acks and ETA lines silently.
