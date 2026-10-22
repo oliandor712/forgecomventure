@@ -20,3 +20,12 @@ Tool: `python3 tools/agents/mailbox.py` (see its header). Nothing here commits o
 - **Before editing a shared file** (`human_logic.toon`, `registry.json`, `CONTEXT.md`, toolbox, anything the other shift touched): `python3 tools/agents/mailbox.py check --files <paths>`. Exit 1 = overlap or an active claim by the other session: merge first or ask the user.
 - **Long edits to shared files:** `send --type claim --files <paths>` first, `--type release` when done.
 - **End of shift:** release your claims, send a `status` note for anything the other shift must know, update `HANDOVER.md`, commit, wait for "push".
+
+## Shared hot files and proposals (recycled from the earlier update-files protocol, commit e433ed0304c)
+Shared hot files: `CONTEXT.md`, `registry.json`, `human_logic.toon`, `MAIN_SESSION_BRIEF.md`, `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md`. Generated files (`TOOLBOX.md`, tag outputs) are regenerated, never edited.
+- **On shift:** edit a shared file directly, after `mailbox.py check --files <path>` is clean. For a long edit, `claim` it first and `release` it after.
+- **Off shift:** never edit. If the off-shift session (or its agents, through it) has a change to propose, it sends a `request` message to the other session in this form, and the on-shift session applies it after the user's OK:
+  `subject: <target file> | <op>` with op `append:<section>`, `replace:<anchor text>` or `delete:<anchor text>`, the exact text in the body, and anchor text instead of line numbers.
+- **Applying:** the applier commits with the message ids in the commit text and answers with a `reply` (`--re <id>`) saying `applied <commit>` or `rejected: <reason>`. Rejections are never silent. Message ids are final (`<sender>_<seq>`), so nothing is renumbered at merge.
+- **Disagreement:** if two proposals hit the same target and section and disagree, show both to the user in one line each before applying; otherwise apply in sequence order.
+- **`human_logic.toon`:** rows keep the next free id (H59 onward); the session that adds rows takes the next free ids at the time it applies them and fixes the `rules[N|]` count line.
