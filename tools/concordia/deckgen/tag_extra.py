@@ -34,6 +34,7 @@ DOC = {
  "draw_count:<n|x> / discard_count:<n|x>": ("how many cards an ability draws or makes a player discard", "user note: tag draw count"),
  "tempo:+n|0|-n|x": ("net cards added to your hand or battlefield minus cards removed (the spell itself, sacrificed or discarded cards) when the ability resolves; x = unknown amount", "user note: tempo gain (+1), applied to every ability that adds more cards than it removes"),
  "put_onto_battlefield / put_from:<zone>": ("a card is put onto the battlefield from a zone instead of being cast (tutors, reanimation); distinct from trigger:etb", "user note: distinct from etb because it bypasses the etb trigger (question logged: see approval log)"),
+ "put_tapped": ("an effect puts the card(s) onto the battlefield tapped (kept apart from enters_tapped, which is about the card itself)", "user note on Victimize (enters tapped); kept separate after a conflict on Blighted Woodland"),
  "cost_if_you_do": ("the 'If you do' part marks the preceding sacrifice/discard as a cost", "user note on Victimize"),
  "enters_untapped / enters_tapped_conditional": ("lands that enter untapped, or tapped unless a condition holds (enters_tapped stays for always-tapped)", "user note: tag whether a land enters tapped"),
  "cast_free": ("casts a spell without paying its mana cost", "found in the cross-check: Rishkar's Expertise"),
@@ -261,7 +262,7 @@ def extra(lines, sv, types, text):
                 if o == "Hand" and d == "Exile": add("impulse_draw_part:exile_hand")
                 if d == "Battlefield" and o in ("Library", "Hand", "Graveyard", "Exile"):
                     add("put_onto_battlefield", "put_from:" + o.lower())
-                    if bp.get("Tapped") == "True": add("enters_tapped")
+                    if bp.get("Tapped") == "True": add("put_tapped")
                     if o == "Graveyard": add("reanimate")
                 if o == "Library" and d in ("Hand", "Battlefield"): pos += cnt(bp.get("ChangeNum", "1"))
                 elif o in ("Graveyard", "Exile") and d in ("Hand", "Battlefield") and bp.get("Defined") != "ExiledWith":

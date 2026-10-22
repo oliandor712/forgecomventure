@@ -27,22 +27,22 @@ mtgish: rules=
 forge_ai: AILogic=-
 
 card: Evolving Wilds
-tags: cardtype:land land_tutor enters_untapped cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped tempo:0
+tags: cardtype:land land_tutor enters_untapped cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T Sac<1/CARDNAME>,changezone,"","",""
 groups[2]{id,source,tags}:
   c0,card,enters_untapped
-  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped tempo:0
+  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
 card: Terramorphic Expanse
-tags: cardtype:land land_tutor enters_untapped cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped tempo:0
+tags: cardtype:land land_tutor enters_untapped cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T Sac<1/CARDNAME>,changezone,"","",""
 groups[2]{id,source,tags}:
   c0,card,enters_untapped
-  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped tempo:0
+  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -73,13 +73,13 @@ mtgish: rules=Activated Activated
 forge_ai: AILogic=-
 
 card: Victimize
-tags: cardtype:sorcery reanimate effect:sacrifice cost:sacrifice cost_if_you_do sacrifice_outlet sacrifice_type:creature tempo:0 target_count:2 target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard enters_tapped
+tags: cardtype:sorcery reanimate effect:sacrifice cost:sacrifice cost_if_you_do sacrifice_outlet sacrifice_type:creature tempo:0 target_count:2 target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard put_tapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",sacrifice+changezone+cleanup,"",Defined=You ValidTgts=Creature.YouCtrl,""
 groups[3]{id,source,tags}:
   c0,card,sacrifice_outlet
   c1,A line,effect:sacrifice cost:sacrifice cost_if_you_do sacrifice_outlet sacrifice_type:creature tempo:0
-  c1.2,sub-ability of c1,target_count:2 target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard enters_tapped reanimate
+  c1.2,sub-ability of c1,target_count:2 target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard put_tapped reanimate
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -92,11 +92,11 @@ mtgish: rules=Deathtouch
 forge_ai: AILogic=-
 
 card: Reassembling Skeleton
-tags: cardtype:creature type:skeleton type:warrior reanimate cost:mana put_onto_battlefield put_from:graveyard enters_tapped tempo:+1
+tags: cardtype:creature type:skeleton type:warrior reanimate cost:mana put_onto_battlefield put_from:graveyard put_tapped tempo:+1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 B,changezone,"","",""
 groups[1]{id,source,tags}:
-  c1,A line,cost:mana put_onto_battlefield put_from:graveyard enters_tapped reanimate tempo:+1
+  c1,A line,cost:mana put_onto_battlefield put_from:graveyard put_tapped reanimate tempo:+1
 mtgish: rules=FromGraveyard
 forge_ai: AILogic=-
 
@@ -463,12 +463,12 @@ mtgish: rules=Flying Exalted TriggerA
 forge_ai: AILogic=-
 
 card: Gravewaker
-tags: cardtype:creature type:bird type:spirit kw:flying reanimate cost:mana target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard enters_tapped tempo:+1
+tags: cardtype:creature type:bird type:spirit kw:flying reanimate cost:mana target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard put_tapped tempo:+1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,5 B B,changezone,"",ValidTgts=Creature.YouOwn,""
 groups[2]{id,source,tags}:
   k1,K line,kw:flying
-  c1,A line,cost:mana target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard enters_tapped reanimate tempo:+1
+  c1,A line,cost:mana target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard put_tapped reanimate tempo:+1
 mtgish: rules=Flying Activated
 forge_ai: AILogic=-
 
@@ -901,7 +901,7 @@ mtgish: rules=Reach Deathtouch
 forge_ai: AILogic=-
 
 card: Aftermath Analyst
-tags: cardtype:creature type:elf type:detective reanimate sacrifice_outlet self_mill trigger_scope:self trigger:etb cost:sacrifice cost_sacrifice_target:self cost:mana target_count:all target_type:land target_scope:you_control put_onto_battlefield put_from:graveyard enters_tapped tempo:0
+tags: cardtype:creature type:elf type:detective reanimate sacrifice_outlet self_mill trigger_scope:self trigger:etb cost:sacrifice cost_sacrifice_target:self cost:mana target_count:all target_type:land target_scope:you_control put_onto_battlefield put_from:graveyard put_tapped tempo:0
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",mill,numcards=3,Defined=You,""
   c2,activated,3 G Sac<1/CARDNAME>,changezoneall,"","",""
@@ -909,16 +909,16 @@ links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:etb
-  c2,A line,cost:sacrifice cost_sacrifice_target:self cost:mana target_count:all target_type:land target_scope:you_control put_onto_battlefield put_from:graveyard enters_tapped reanimate tempo:0
+  c2,A line,cost:sacrifice cost_sacrifice_target:self cost:mana target_count:all target_type:land target_scope:you_control put_onto_battlefield put_from:graveyard put_tapped reanimate tempo:0
 mtgish: rules=TriggerA Activated
 forge_ai: AILogic=-
 
 card: Sakura-Tribe Elder
-tags: cardtype:creature type:snake type:shaman land_tutor sacrifice_outlet cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped tempo:0
+tags: cardtype:creature type:snake type:shaman land_tutor sacrifice_outlet cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,Sac<1/CARDNAME>,changezone,"","",""
 groups[1]{id,source,tags}:
-  c1,A line,cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped tempo:0
+  c1,A line,cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -1462,7 +1462,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Khalni Heart Expedition
-tags: cardtype:enchantment land_tutor sacrifice_outlet trigger_scope:other trigger:etb counter:quest cost:sacrifice cost_sacrifice_target:self tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped tempo:+1
+tags: cardtype:enchantment land_tutor sacrifice_outlet trigger_scope:other trigger:etb counter:quest cost:sacrifice cost_sacrifice_target:self tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:+1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_other,"",putcounter,countertype=QUEST,Defined=Self,""
   c2,activated,SubCounter<3/QUEST> Sac<1/CARDNAME>,changezone,"","",""
@@ -1471,7 +1471,7 @@ links[1]{from,rel,to}:
 groups[3]{id,source,tags}:
   c1,T line,trigger_scope:other trigger:etb
   c1.2,sub-ability of c1,counter:quest
-  c2,A line,cost:sacrifice cost_sacrifice_target:self tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped tempo:+1
+  c2,A line,cost:sacrifice cost_sacrifice_target:self tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:+1
 mtgish: rules=TriggerA Activated
 forge_ai: AILogic=-
 
@@ -1485,12 +1485,12 @@ mtgish: rules=CastEffect SpellActions
 forge_ai: AILogic=- AIPreference
 
 card: Kodama's Reach
-tags: cardtype:sorcery type:arcane land_tutor tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:library shuffle tempo:+1 tutor_count:1 tutor_target:land_isremembered tutor_dest:battlefield_tapped put_onto_battlefield put_from:library enters_tapped tutor_dest:hand
+tags: cardtype:sorcery type:arcane land_tutor tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:library shuffle tempo:+1 tutor_count:1 tutor_target:land_isremembered tutor_dest:battlefield_tapped put_onto_battlefield put_from:library put_tapped tutor_dest:hand
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone+changezone+changezone+cleanup,"","",""
 groups[3]{id,source,tags}:
   c1,A line,tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:library shuffle tempo:+1
-  c1.2,sub-ability of c1,tutor tutor_count:1 tutor_target:land_isremembered tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped
+  c1.2,sub-ability of c1,tutor tutor_count:1 tutor_target:land_isremembered tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
   c1.3,sub-ability of c1,tutor tutor_count:1 tutor_target:land_isremembered tutor_dest:hand shuffle
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
@@ -2449,7 +2449,7 @@ mtgish: rules=AsPermanentEnters Activated Cycling
 forge_ai: AILogic=-
 
 card: Myriad Landscape
-tags: cardtype:land land_tutor mana_source enters_tapped cost:tap mana:colorless cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library tempo:+1
+tags: cardtype:land land_tutor mana_source enters_tapped cost:tap mana:colorless cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:+1
 clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c1,replacement,"",replace_moved,"",ValidCard=Card.Self,""
   c2,activated,T,mana,"","",""
@@ -2459,7 +2459,7 @@ links[1]{from,rel,to}:
 groups[3]{id,source,tags}:
   c0,card,enters_tapped
   c2,A line,cost:tap mana_source mana:colorless
-  c3,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped tempo:+1
+  c3,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:+1
 mtgish: rules=AsPermanentEnters Activated Activated
 forge_ai: AILogic=-
 
@@ -2503,7 +2503,7 @@ mtgish: rules=PlayerEffect Activated
 forge_ai: AILogic=-
 
 card: Blighted Woodland
-tags: cardtype:land land_tutor mana_source enters_untapped cost:tap mana:colorless cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped tempo:+1
+tags: cardtype:land land_tutor mana_source enters_untapped cost:tap mana:colorless cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:+1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
   c2,activated,3 G T Sac<1/CARDNAME>,changezone,"","",""
@@ -2512,7 +2512,7 @@ links[1]{from,rel,to}:
 groups[3]{id,source,tags}:
   c0,card,enters_untapped
   c1,A line,cost:tap mana_source mana:colorless
-  c2,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped tempo:+1
+  c2,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:+1
 mtgish: rules=Activated Activated
 forge_ai: AILogic=-
 
@@ -3315,11 +3315,11 @@ mtgish: rules=
 forge_ai: AILogic=-
 
 card: Wayfarer's Bauble
-tags: cardtype:artifact land_tutor sacrifice_outlet cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped tempo:0
+tags: cardtype:artifact land_tutor sacrifice_outlet cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,2 T Sac<1/CARDNAME>,changezone,"","",""
 groups[1]{id,source,tags}:
-  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped tempo:0
+  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -3527,7 +3527,7 @@ mtgish: rules=Flash TriggerA
 forge_ai: AILogic=-
 
 card: Solemn Simulacrum
-tags: cardtype:artifact cardtype:creature type:golem draw land_tutor trigger_scope:self trigger:etb tempo:+1 tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped trigger:dies trigger_zone:graveyard draw_count:1
+tags: cardtype:artifact cardtype:creature type:golem draw land_tutor trigger_scope:self trigger:etb tempo:+1 tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped trigger:dies trigger_zone:graveyard draw_count:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone,"","",""
   c2,dies_self,"",draw,numcards=1,Defined=TriggeredCardController,""
@@ -3535,7 +3535,7 @@ links[1]{from,rel,to}:
   c2:affected,receives,c2:payload
 groups[4]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:etb tempo:+1
-  c1.2,sub-ability of c1,tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library enters_tapped
+  c1.2,sub-ability of c1,tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
   c2,T line,trigger_scope:self trigger:dies trigger_zone:graveyard
   c2.2,sub-ability of c2,draw_count:1
 mtgish: rules=TriggerA TriggerA
