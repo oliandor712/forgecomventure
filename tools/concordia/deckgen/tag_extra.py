@@ -7,6 +7,32 @@ import re
 COLORS = {"W": "white", "U": "blue", "B": "black", "R": "red", "G": "green", "C": "colorless"}
 KWNAMES = {"flying", "trample", "haste", "vigilance", "lifelink", "deathtouch", "menace", "reach", "first", "double", "indestructible", "hexproof", "defender"}
 
+# pinned reference text: family -> one line meaning (and how its values read). Shown to blind readers (batch tag_legend, only families present) and written to tags/TAG_LEGEND.md
+LEGEND = {
+ "from_zone": "zone the card comes from (graveyard, hand, library, exile). Pairs with the other tags of the same group: return, put_onto_battlefield, cost:exile",
+ "to_zone": "zone the card goes to (hand, library, exile, battlefield). Pairs with return or take in the same group",
+ "return": "a card is returned from one zone to another; read with from_zone and to_zone (return from_zone:graveyard to_zone:hand = return a card from graveyard to hand)",
+ "put_onto_battlefield": "a card is put onto the battlefield without being cast; from_zone says where from",
+ "look_top": "look at the top N cards of a library",
+ "take": "of the looked-at cards, take this many (may_ = optional, all = every matching card, then an optional type or filter); to_zone says where they go",
+ "rest_to_zone": "where the looked-at cards that were not taken go; rest_order says the position",
+ "rest_order": "position of the rest in the library: bottom, or bottom_random (bottom in a random order)",
+ "modal": "choose N of M modes (modal:1_of_3 = choose one of three)",
+ "replace": "a replacement effect: replace:<event>_to_<what> (draw_to_winsgame = instead of drawing, win the game)",
+ "condition": "the ability works only while this is true (a permanent or card you control, or an empty library)",
+ "x_is": "what the variable X counts or equals (count_<thing>_you_control, own_power, target_power, x_paid, devotion_<colour>...)",
+ "restrict_kind": "kind of restriction placed on a creature (cant_attack, cant_block, cant_attack_or_block, cant_attack_unless_cost)",
+ "token_ability": "ability the created token has, in words (tap_sacrifice_add_mana_any_color = {T}, Sacrifice: Add one mana of any color)",
+ "exile_from": "exiles cards from a zone other than the battlefield",
+ "cost": "non-mana cost of the ability (tap, sacrifice, remove_counters, exile with from_zone, life, discard, return)",
+ "duration": "how long an effect lasts (eot = until end of turn, static = while the source is on the battlefield, next_untap, while_control, end_step...)",
+ "affected_scope": "whose permanents the effect or static ability affects (you_control, opponent_controls, all)",
+ "trigger": "event that triggers the ability (attacks, dies, etb, gain_life, beginning_of_combat ...)",
+ "piles_split": "cards are split into two piles by this player",
+ "lifegain_amount": "life gained (number, x, or equal_to_life_lost)",
+ "cant_be_blocked": "cannot be blocked, with the exception named in the value (by_creature_blue = by blue creatures)",
+}
+
 # family -> (meaning, why / user note)
 DOC = {
  "mana:<color>": ("colour of mana an ability produces (white, blue, black, red, green, colorless, any, commander_identity)", "feedback: link color type to mana source (Arcane Signet, Plains, Temple, Frost Marsh)"),
@@ -33,7 +59,7 @@ DOC = {
  "token_type:copy": ("the token is a copy of another permanent", "found in the cross-check: Kiki-Jiki, Rite of Replication"),
  "draw_count:<n|x> / discard_count:<n|x>": ("how many cards an ability draws or makes a player discard", "user note: tag draw count"),
  "tempo:+n|x": ("net cards added to your hand or battlefield minus cards removed (the spell itself, sacrificed or discarded cards) when the ability resolves; tokens count 0.5 each; only positive values are tagged; tempo:x when an amount is a variable", "user note: tempo gain (+1), applied to every ability that adds more cards than it removes"),
- "put_onto_battlefield:from_<zone>": ("a card is put onto the battlefield from a zone (one tag: put_onto_battlefield:from_library; replaces put_onto_battlefield + put_from:<zone>, user: redundant) without being cast, so its mana cost and 'when you cast' triggers are skipped; enter-the-battlefield triggers still happen (CR 603.6a). Distinct from trigger:etb, which is a trigger on entering", "user note, confirmed 2026-10-22: the tag means 'not cast'"),
+ "put_onto_battlefield + from_zone:<zone>": ("a card is put onto the battlefield from a zone (put_onto_battlefield from_zone:library) without being cast, so its mana cost and 'when you cast' triggers are skipped; enter-the-battlefield triggers still happen (CR 603.6a). Distinct from trigger:etb, which is a trigger on entering", "user note, confirmed 2026-10-22: the tag means 'not cast'"),
  "cost_if_you_do": ("the 'If you do' part marks the preceding sacrifice/discard as a cost", "user note on Victimize"),
  "enters_untapped / enters_tapped_conditional": ("lands that enter untapped, or tapped unless a condition holds (enters_tapped stays for always-tapped)", "user note: tag whether a land enters tapped"),
  "cast_free": ("casts a spell without paying its mana cost", "found in the cross-check: Rishkar's Expertise"),
@@ -62,10 +88,10 @@ DOC = {
  "condition:<readable>": ("a static or replacement effect that only applies while something is present, as one tag (condition:planeswalker_garruk_you_control, condition:no_card_you_own_in_library, condition:at_least_4_creature_you_control); replaces condition_present / _zone / _compare", "reverse check r1: Predatory Wurm, Laboratory Maniac; user 2026-10-22: prune redundant proposed tags"),
  "x_is:<what>": ("what a variable amount (X) measures, as one readable value read from the script's variable: target_power, target_mana_value, sacrificed_power, triggering_damage, life_lost_by_opponents_this_turn, count_land_you_control, count_creature_in_graveyard, devotion_black, x_paid, own_power, ... with arithmetic as a suffix (_times_2, _plus_1, _half_up); linked to its amount tag (scales_with) and to the object it measures (measures)", "reverse check r1/r2: Swords to Plowshares, Feed the Swarm, Gray Merchant, Exsanguinate; user 2026-10-22: make x_is robust with linked conditions (target power, life lost ...)"),
  "replace:<event>_to_<what>[_<detail>]": ("a replacement effect ('instead') as one tag: the event replaced, what happens instead, and a detail (replace:draw_to_winsgame, replace:addcounter_to_replacecounter_counternum_plus_1); replaces replacement / replace_event / replace_with / replace_detail", "reverse check r1: Kami of Whispered Hopes, Laboratory Maniac"),
- "return:<zone>_to_<zone>": ("a card returns from the graveyard or exile to hand or library (return:graveyard_to_hand); the readable detail behind the AI umbrella tag recursion", "reverse check r5: Elvish Regrower lost its meaning when recursion became an AI tag"),
+ "return + from_zone:<zone> + to_zone:<zone>": ("a card returns from the graveyard or exile to hand or library (return from_zone:graveyard to_zone:hand); the readable detail behind the AI umbrella tag recursion. from_zone / to_zone are the shared zone tags used by every zone-move tag (return, take, put_onto_battlefield, cost:exile)", "reverse check r5: Elvish Regrower lost its meaning when recursion became an AI tag"),
  "cant_be_countered / cant_be_blocked[:by_<what>]": ("this spell can't be countered / this creature can't be blocked (by creatures of that kind); evasion, not a restriction", "reverse check r1: Lightning Mare, Brotherhood Regalia"),
  "modal:<chosen>_of_<modes>": ("a modal spell: how many modes are chosen of how many exist (modal:1_of_3 = choose one of three); replaces the separate mode_count and mode_choose tags (user: redundant)", "reverse check r1: Valorous Stance, Return of the Wildspeaker"),
- "look_top:<n> / take:[may_]<count>[_<filter>]_to_<zone> / rest_dest:<zone>[_bottom[_random]]": ("look at the top N cards, take K (matching a filter, optionally = may) to a zone, put the rest in a zone (library_bottom_random = on the bottom in random order); one take tag replaces take_count, take_filter, take_dest, take_optional and rest_random_order (user: redundant)", "reverse check r1: Militia Bugler, Dig Through Time"),
+ "look_top:<n> / take:[may_]<count>[_<filter>] + to_zone:<zone> / rest_to_zone:<zone> + rest_order:bottom[_random]": ("look at the top N cards, take K (matching a filter, optionally = may) to a zone (to_zone), put the rest in a zone (rest_to_zone) in a position (rest_order bottom_random = on the bottom in random order); one take tag replaces take_count, take_filter, take_optional (user: redundant); zones are separate shared to_zone tags", "reverse check r1: Militia Bugler, Dig Through Time"),
  "piles_split:<who>": ("cards are divided into two piles by that player; one tag replaces piles_split + pile_separator (user: redundant)", "reverse check r1: Fact or Fiction"),
  "restrict / restrict_kind:cant_attack_or_block|cant_attack|cant_block|cant_activate|doesnt_untap|loses_abilities|cant_attack_unless_cost": ("an effect that stops something from acting: can't attack or block (A/B), can't attack (A), can't block (B), its abilities can't be activated, doesn't untap, or loses its abilities; `restrict` stays as the umbrella, the kind says which; who is affected is in the target / affected tags and how long in the duration tag", "user 2026-10-22: make restrict robust (Pacifism, Goblin Heelcutter, Icy Blast, Merfolk Trickster)"),
 
@@ -77,7 +103,7 @@ DOC = {
  "grant_ability:<what>": ("an effect gives a permanent an ability or trigger for a time, not a transformation (grant_ability:dies_trigger); replaces grant_ability + granted_trigger", "reverse check r1: Feign Death, Supernatural Stamina were mis-tagged transform"),
  "saga_chapter:<i>": ("saga chapter number of an ability (how many chapters the saga has is already kw:chapter + num)", "reverse check r1: Time of Ice"),
  "lifegain_amount:<n|x|equal_to_life_lost> / life_loss_amount:<n|x> / counter_count:<n|x>": ("amounts the first run dropped: life gained or lost, counters placed", "reverse check r1: 86 of 348 cards lost a number"),
- "cost:return / cost_return_target:<t> / cost:exile_from_graveyard": ("non-mana costs: return a permanent you control to hand; exile a card from your graveyard", "reverse check r1: Soratami Savant, Disciple of the Ring"),
+ "cost:return / cost_return_target:<t> / cost:exile + from_zone:graveyard": ("non-mana costs: return a permanent you control to hand; exile a card from your graveyard", "reverse check r1: Soratami Savant, Disciple of the Ring"),
  "recursion:return_self": ("the card returns itself (to hand, from the graveyard)", "Rancor"),
 }
 
@@ -164,7 +190,7 @@ def cost_tags(cost, out):
     m = re.search(r"Return<\d+/([^/>]*)", cost)
     if m: out += ["cost:return", "cost_return_target:" + tok(m.group(1).split(".")[0])]
     m = re.search(r"ExileFromGrave<\d+/([^/>]*)", cost)
-    if m: out += ["cost:exile_from_graveyard", "cost_exile_target:" + tok(m.group(1).replace(";", "_or_").split(".")[0])]
+    if m: out += ["cost:exile", "from_zone:graveyard", "cost_exile_target:" + tok(m.group(1).replace(";", "_or_").split(".")[0])]
     if "PayLife" in cost: out.append("cost:life")
     if "Discard<" in cost: out.append("cost:discard")
     for m in re.finditer(r"AddCounter<(\d+)/LOYALTY>", cost): out += ["loyalty_change:+" + m.group(1), "counters:loyalty"]
@@ -487,10 +513,10 @@ def extra(lines, sv, types, text):
                 elif o == "Battlefield" and d == "Hand": add("remove:bounce")
                 elif o == "Battlefield" and d == "Library": add("remove:tuck")
                 elif o == "Graveyard" and d == "Hand" and bp.get("Defined", "").startswith("TriggeredNewCard"): add("recursion:return_self")
-                if o in ("Graveyard", "Exile") and d in ("Hand", "Library"): add("return:%s_to_%s" % (o.lower(), d.lower()))     # readable detail for the AI umbrella tag recursion
+                if o in ("Graveyard", "Exile") and d in ("Hand", "Library"): add("return", "from_zone:" + o.lower(), "to_zone:" + d.lower())     # readable detail for the AI umbrella tag recursion
                 if o == "Hand" and d == "Exile": add("impulse_draw_part:exile_hand")
                 if d == "Battlefield" and o in ("Library", "Hand", "Graveyard", "Exile"):
-                    add("put_onto_battlefield:from_" + o.lower())
+                    add("put_onto_battlefield", "from_zone:" + o.lower())
                     if bp.get("Tapped") == "True": add("put_tapped")
                     if o == "Graveyard": add("reanimate")
                 if o == "Library" and d in ("Hand", "Battlefield"): pos += cnt(bp.get("ChangeNum", "1"))
@@ -566,9 +592,9 @@ def extra(lines, sv, types, text):
                 add("modal:%s_of_%d" % (bp.get("CharmNum", "1").lower().replace("x", "x"), nmodes))
             if api == "Dig":                                      # look_top:N + ONE take tag (count, filter, destination, optional) + the rest
                 ncards = bp.get("ChangeNum", "1").lower()
-                tk = ncards + ("_" + filt(bp["ChangeValid"]) if bp.get("ChangeValid") else "") + "_to_" + (tok(bp["DestinationZone"]) if bp.get("DestinationZone") else "hand")
-                add("look_top:" + bp.get("DigNum", "1").lower(), "take:" + ("may_" if bp.get("Optional") == "True" else "") + tk)
-                if bp.get("DestinationZone2"): add("rest_dest:" + tok(bp["DestinationZone2"]) + ("_bottom" if bp.get("LibraryPosition") == "-1" else "") + ("_random" if bp.get("RestRandomOrder") == "True" and bp.get("LibraryPosition") == "-1" else ""))
+                tk = ncards + ("_" + filt(bp["ChangeValid"]) if bp.get("ChangeValid") else "")
+                add("look_top:" + bp.get("DigNum", "1").lower(), "take:" + ("may_" if bp.get("Optional") == "True" else "") + tk, "to_zone:" + (tok(bp["DestinationZone"]) if bp.get("DestinationZone") else "hand"))
+                if bp.get("DestinationZone2"): add("rest_to_zone:" + tok(bp["DestinationZone2"]), *(["rest_order:" + ("bottom_random" if bp.get("RestRandomOrder") == "True" else "bottom")] if bp.get("LibraryPosition") == "-1" else []))
             if api == "PeekAndReveal": add("look_top:" + bp.get("PeekAmount", "1").lower(), "reveal")
             if api == "TwoPiles": add("piles_split:" + (tok(bp.get("Separator", "")) or "you"))       # one tag: who splits the cards into two piles (opponent / you)
             if api == "Token":

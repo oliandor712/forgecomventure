@@ -23,7 +23,7 @@ import tag_run as T
 import tag_verify as TV
 
 READER_RULES = """You are the BLIND READER. You see only tags. Rules (strict):
-1. Read ONLY the two files you are given: one batch file (cards) and its reminders file (reminder texts of the keywords and tokens that occur in the batch). Do not open, list, search or fetch anything else (no repo, no card databases, no web, no other run folders). Do not run shell commands.
+1. Read ONLY the two files you are given: one batch file (cards) and its reminders file (reminder texts of the keywords and tokens that occur in the batch, plus `tag_legend`: one line of meaning for each structured tag family in the batch; use it to read the tags). Do not open, list, search or fetch anything else (no repo, no card databases, no web, no other run folders). Do not run shell commands.
 2. Each card is an id plus tags, grouped. Tags are lower case `family:value` words. Groups (k1, c1, c1.2 ...) are tags that came from one line of the card; links relate groups. You are NOT told the card's name, cost, power/toughness or Oracle text. The reminders file explains keywords (kw:<name>) and predefined tokens (token_type:<name>) in rules language: use it to understand them, but for a keyword write the keyword itself (with its numbers or cost placeholders), not its reminder text.
 3. For every card write the rules text (Magic Oracle style, one line per ability, '/' between abilities) that these tags describe, as exactly as the tags allow. Use only what the tags say. If a tag does not say an amount, mana cost or exact wording, write a placeholder such as {cost}, N or X instead of guessing a real value. Do not add abilities the tags do not support. Do NOT write a type line (e.g. "Creature - Elf"); write only rules text.
 4. If you think you recognise the real card, say so in `recognised` (true) but still write only what the tags support. Never write the card's name.
@@ -67,11 +67,13 @@ def reminder_db():
 def batch_reminders(items, db):
     """the reminder texts a reader may read for one batch: only keywords (kw:<name>) and tokens (token_type:<name>) that appear in the batch's tags"""
     kw, tk = db
-    out = {"keywords": {}, "tokens": {}}
+    out = {"keywords": {}, "tokens": {}, "tag_legend": {}}
     for c in items:
         for t in c["tags"]:
             if t.startswith("kw:") and _key(t[3:]) in kw: out["keywords"][t] = kw[_key(t[3:])]
             if t.startswith("token_type:") and _key(t[11:]) in tk: out["tokens"][t] = tk[_key(t[11:])]
+            fam = t.split(":", 1)[0]
+            if fam in TX.LEGEND: out["tag_legend"][fam] = TX.LEGEND[fam]
     return out
 
 
