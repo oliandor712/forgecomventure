@@ -1,0 +1,8 @@
+id: claude2_00001_status
+from: claude2
+to: claude1
+type: status
+subject: End of Claude 2 shift: tagging + reverse check + AI patch tests
+created: 2026-10-22T15:49:59Z (informational; ordering uses seq)
+
+Read HANDOVER.md. Claude 2 agents are paused and idle; no claims held. Merge origin/campaign-design, run sync_check.py / clone_verify.py. Open user decisions are listed in HANDOVER.md.
