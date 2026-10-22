@@ -1701,7 +1701,7 @@ verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=-
 
 card: "Breeches, Eager Pillager"
-tags: supertype:legendary cardtype:creature type:goblin type:pirate kw:first_strike artifact_token selection token_make trigger:attacks tempo:+1.5 modal mode_count:3 mode_choose:one token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source target_count:one target_type:creature duration:eot restrict look_top:1 take_count:all take_dest:exile impulse_draw impulse_draw_count:1
+tags: supertype:legendary cardtype:creature type:goblin type:pirate kw:first_strike artifact_token selection token_make trigger:attacks tempo:+1.5 modal mode_count:3 mode_choose:one token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source target_count:one target_type:creature restrict restrict_kind:cant_block duration:eot look_top:1 take_count:all take_dest:exile impulse_draw impulse_draw_count:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attacks,"",charm,"","",""
 links[1]{from,rel,to}:
@@ -1711,7 +1711,7 @@ groups[7]{id,source,tags}:
   c1,T line,trigger:attacks tempo:+1.5
   c1.2,sub-ability of c1,modal mode_count:3 mode_choose:one
   c1.3,sub-ability of c1,token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
-  c1.4,sub-ability of c1,target_count:one target_type:creature duration:eot restrict
+  c1.4,sub-ability of c1,target_count:one target_type:creature restrict restrict_kind:cant_block duration:eot
   c1.5,sub-ability of c1,look_top:1 take_count:all take_dest:exile
   c1.6,sub-ability of c1,impulse_draw impulse_draw_count:1 duration:eot
 mtgish: rules=FirstStrike TriggerA
@@ -2030,7 +2030,7 @@ mtgish: rules=Reach ActivatedWithModifiers
 forge_ai: AILogic=-
 
 card: Goblin Heelcutter
-tags: cardtype:creature type:goblin type:berserker kw:dash num:2 color:red duration:eot pump_single trigger:attacks target_count:one target_type:creature restrict
+tags: cardtype:creature type:goblin type:berserker kw:dash num:2 color:red duration:eot pump_single trigger:attacks target_count:one target_type:creature restrict restrict_kind:cant_block
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attacks,"",pump,hidden_cardname_can_t_block,ValidTgts=Creature,duration:eot(forge_default)
 links[2]{from,rel,to}:
@@ -2039,7 +2039,7 @@ links[2]{from,rel,to}:
 groups[3]{id,source,tags}:
   k1,K line,kw:dash num:2 color:red
   c1,T line,trigger:attacks duration:eot pump_single
-  c1.2,sub-ability of c1,target_count:one target_type:creature duration:eot restrict
+  c1.2,sub-ability of c1,target_count:one target_type:creature restrict restrict_kind:cant_block duration:eot
 mtgish: rules=TriggerA Dash
 verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=-
@@ -2475,7 +2475,7 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Lightning Mare
-tags: cardtype:creature type:elemental type:horse duration:eot restrict cant_be_countered cant_be_blocked_by:creature_blue cost:mana pump_amount:+1/+0
+tags: cardtype:creature type:elemental type:horse duration:eot cant_be_countered cant_be_blocked_by:creature_blue cost:mana pump_amount:+1/+0
 clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c1,replacement,"",replace_counter,"",ValidCard=Card.Self,""
   c2,static,"",static_cantblockby,"","",""
@@ -2665,7 +2665,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Icy Blast
-tags: cardtype:instant tap_down target_count:x target_type:creature duration:permanent
+tags: cardtype:instant tap_down target_count:x target_type:creature restrict restrict_kind:doesnt_untap duration:next_untap
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",tap+pump,hidden_this_card_doesn_t_untap_during_your_next_untap_step,ValidTgts=Creature Defined=Targeted,duration:permanent
 links[2]{from,rel,to}:
@@ -2673,7 +2673,7 @@ links[2]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
   c1,A line,target_count:x target_type:creature
-  c1.2,sub-ability of c1,duration:permanent
+  c1.2,sub-ability of c1,restrict restrict_kind:doesnt_untap duration:next_untap duration:permanent
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -2733,7 +2733,7 @@ mtgish: rules=Activated
 forge_ai: AILogic=- RemoveDeck
 
 card: Brotherhood Regalia
-tags: cardtype:artifact type:equipment kw:equip target_type:creature num:1 num:3 restrict static_grant:ward affected_type:creature
+tags: cardtype:artifact type:equipment kw:equip target_type:creature num:1 num:3 static_grant:ward affected_type:creature cant_be_blocked
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,ward_2,Affected=Creature AffectedDefined=Equipped,duration:static
   c2,static,"",static_cantblockby,"","",""
@@ -2744,7 +2744,7 @@ groups[4]{id,source,tags}:
   k1,K line,kw:equip target_type:creature num:1
   k2,K line,kw:equip num:3
   c1,S line,static_grant:ward affected_type:creature
-  c2,S line,restrict
+  c2,S line,cant_be_blocked
 mtgish: rules=PermanentLayerEffect PermanentRuleEffect Equip Equip
 verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=-
@@ -2811,14 +2811,14 @@ verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=-
 
 card: Merfolk Trickster
-tags: cardtype:creature type:merfolk type:wizard kw:flash trigger_scope:self trigger:etb target_count:one target_type:creature target_scope:opp_control loses_all_abilities transform
+tags: cardtype:creature type:merfolk type:wizard kw:flash trigger_scope:self trigger:etb target_count:one target_type:creature target_scope:opp_control restrict restrict_kind:loses_abilities duration:eot loses_all_abilities
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",tap+animate,"",ValidTgts=Creature.OppCtrl Defined=Targeted,""
 groups[4]{id,source,tags}:
   k1,K line,kw:flash
   c1,T line,trigger_scope:self trigger:etb
   c1.2,sub-ability of c1,target_count:one target_type:creature target_scope:opp_control
-  c1.3,sub-ability of c1,loses_all_abilities transform
+  c1.3,sub-ability of c1,restrict restrict_kind:loses_abilities duration:eot loses_all_abilities
 mtgish: rules=Flash TriggerA
 forge_ai: AILogic=-
 
@@ -3159,10 +3159,11 @@ verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=-
 
 card: Propaganda
-tags: cardtype:enchantment attack_tax restrict
+tags: cardtype:enchantment attack_tax restrict restrict_kind:cant_attack_unless_cost
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,2,static_cantattackunless,"",ValidCard=Creature,""
-groups[0]{id,source,tags}:
+groups[1]{id,source,tags}:
+  c1,S line,restrict restrict_kind:cant_attack_unless_cost
 mtgish: rules=EachPermanentRuleEffect
 verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=-
@@ -3401,11 +3402,11 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Exhaustion
-tags: cardtype:sorcery target_count:one target_type:opponent ai_logic:keepoppcreatslandstapped
+tags: cardtype:sorcery target_count:one target_type:opponent restrict restrict_kind:doesnt_untap duration:next_untap ai_logic:keepoppcreatslandstapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",effect,"",ValidTgts=Opponent,duration:permanent
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:opponent
+  c1,A line,target_count:one target_type:opponent restrict restrict_kind:doesnt_untap duration:next_untap
   v,cross-check (oracle/mtgish/keyword/ai),ai_logic:keepoppcreatslandstapped
 mtgish: rules=SpellActions
 forge_ai: AILogic=KeepOppCreatsLandsTapped
@@ -3433,12 +3434,13 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Time of Ice
-tags: cardtype:enchantment type:saga kw:chapter num:3 bounce chapter_count:3 saga_chapter:1 target_count:one target_type:creature target_scope:opp_control saga_chapter:2 saga_chapter:3 target_count:all remove:bounce
+tags: cardtype:enchantment type:saga kw:chapter num:3 bounce chapter_count:3 saga_chapter:1 target_count:one target_type:creature target_scope:opp_control restrict restrict_kind:doesnt_untap duration:while_control saga_chapter:2 saga_chapter:3 target_count:all remove:bounce
 clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
-groups[5]{id,source,tags}:
+groups[6]{id,source,tags}:
   c0,card,chapter_count:3
   k1,K line,kw:chapter num:3
   s1,saga chapter 1,saga_chapter:1 target_count:one target_type:creature target_scope:opp_control
+  s1.2,sub-ability of s1,restrict restrict_kind:doesnt_untap duration:while_control
   s2,saga chapter 2,saga_chapter:2 target_count:one target_type:creature target_scope:opp_control
   s3,saga chapter 3,saga_chapter:3 target_count:all target_type:creature remove:bounce
 mtgish: rules=SagaChapters
@@ -3896,11 +3898,12 @@ verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=-
 
 card: Pacifism
-tags: cardtype:enchantment type:aura kw:enchant target_type:creature restrict ai_logic:curse
+tags: cardtype:enchantment type:aura kw:enchant target_type:creature restrict restrict_kind:cant_attack_or_block affected_type:creature affected_filter:enchantedby ai_logic:curse
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_cantattack_cantblock,"",ValidCard=Creature.EnchantedBy,""
-groups[2]{id,source,tags}:
+groups[3]{id,source,tags}:
   k1,K line,kw:enchant target_type:creature
+  c1,S line,restrict restrict_kind:cant_attack_or_block affected_type:creature affected_filter:enchantedby
   v,cross-check (oracle/mtgish/keyword/ai),ai_logic:curse
 mtgish: rules=EnchantPermanent PermanentRuleEffect
 forge_ai: AILogic=Curse
@@ -4034,10 +4037,11 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Ghostly Prison
-tags: cardtype:enchantment attack_tax restrict
+tags: cardtype:enchantment attack_tax restrict restrict_kind:cant_attack_unless_cost
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,2,static_cantattackunless,"",ValidCard=Creature,""
-groups[0]{id,source,tags}:
+groups[1]{id,source,tags}:
+  c1,S line,restrict restrict_kind:cant_attack_unless_cost
 mtgish: rules=EachPermanentRuleEffect
 verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=-

@@ -262,6 +262,9 @@ def record(name, text, mg):
     tags = [t for t in tags if not ("kw:" + t) in tags]
     # removal split by method (user): drop the umbrella 'removal' when a method tag exists
     if "removal" in tags and any(t.startswith("remove:") or t == "damage" for t in tags): tags.remove("removal")
+    if "restrict" in tags and not any(x.startswith("restrict_kind:") for x in tags) and any(x == "cant_be_blocked" or x.startswith("cant_be_blocked_by:") for x in tags):
+        tags = [x for x in tags if x != "restrict"]   # 'can't be blocked (by X)' is evasion, not a restriction on someone else
+    if "duration:next_untap" in tags or "duration:while_control" in tags: tags = [t for t in tags if t != "duration:permanent"]   # Forge's Duration$ Permanent on a 'next untap step' / 'as long as you control' effect is a script detail
     tags = list(dict.fromkeys(t.lower() for t in tags))   # all tags lower case (scales:Goblin -> scales:goblin)
     # 2nd opinion: mtgish
     m = mg.get(name.lower()); mt = ""

@@ -66,6 +66,10 @@ DOC = {
  "modal / mode_count:<n> / mode_choose:<one|two|n>": ("a modal spell ('choose one'): number of modes and how many are chosen", "reverse check r1: Valorous Stance, Return of the Wildspeaker"),
  "look_top:<n> / take_count:<n> / take_filter:<t> / take_dest:<zone> / rest_dest:<zone> / rest_random_order / take_optional": ("look at the top N cards, take K matching a filter to a zone, put the rest elsewhere (splits the opaque 'selection' tag)", "reverse check r1: Militia Bugler, Dig Through Time"),
  "piles_split / pile_separator:<who>": ("cards are divided into two piles", "reverse check r1: Fact or Fiction"),
+ "restrict / restrict_kind:cant_attack_or_block|cant_attack|cant_block|cant_activate|doesnt_untap|loses_abilities|cant_attack_unless_cost": ("an effect that stops something from acting: can't attack or block (A/B), can't attack (A), can't block (B), its abilities can't be activated, doesn't untap, or loses its abilities; `restrict` stays as the umbrella, the kind says which; who is affected is in the target / affected tags and how long in the duration tag", "user 2026-10-22: make restrict robust (Pacifism, Goblin Heelcutter, Icy Blast, Merfolk Trickster)"),
+ "restrict_scope:self": ("the restriction is a drawback on the card itself (a creature that can't block)", "restrict robustness: Bloodghast, Bog Hoodlums"),
+ "cant_be_blocked": ("the creature can't be blocked (evasion granted by a static effect); a restriction on the blocked player's creatures is `restrict`, not this", "restrict robustness: Brotherhood Regalia"),
+ "duration:next_untap / duration:while_control": ("an effect lasts until the next untap step / for as long as you control the source", "restrict detail: Icy Blast, Exhaustion, Time of Ice"),
  "grant_kw:<kw>": ("an effect gives a keyword for a time (duration tag says how long; eot when none is written, as Forge does)", "reverse check r1: Valorous Stance (modes were not read)"),
  "grant_ability / granted_trigger:<event>": ("an effect gives a permanent an ability or trigger for a time (not a transformation)", "reverse check r1: Feign Death, Supernatural Stamina were mis-tagged transform"),
  "saga_chapter:<i> / chapter_count:<n>": ("saga chapter number of an ability, and how many chapters the saga has", "reverse check r1: Time of Ice"),
@@ -201,6 +205,25 @@ def affected_tags(p, add):
             elif r: add("affected_filter:" + tok(r))
 
 
+def restrict_kinds(text):
+    """what a restriction text (a HIDDEN keyword string, a static / replacement SVar, a description) forbids; the user's variables: A/B, A, B, doesn't untap, loses abilities"""
+    t = text.lower()
+    out = []
+    if re.search(r"can't attack or block|cantattack,\s*cantblock|cantblock,\s*cantattack", t): out.append("cant_attack_or_block")
+    else:
+        if re.search(r"can't attack\b|mode\$ cantattack\b(?!unless)", t) and "cantattackunless" not in t: out.append("cant_attack")
+        if re.search(r"can't block\b|mode\$ cantblock\b(?!by)", t): out.append("cant_block")
+    if re.search(r"doesn't untap|event\$ untap", t): out.append("doesnt_untap")
+    return out
+
+
+def restrict_add(kinds, add, text=""):
+    for k in kinds: add("restrict", "restrict_kind:" + k)
+    t = text.lower()
+    if "next untap step" in t: add("duration:next_untap")
+    if "as long as you control" in t: add("duration:while_control")
+
+
 def extra(lines, sv, types, text):
     groups = {"c0": []}          # group id -> tags: c0 = card level, cN = the N-th A/S/T/R line (same numbering as tag_run clauses)
     cur = ["c0"]
@@ -266,8 +289,9 @@ def extra(lines, sv, types, text):
                 add("must_attack")
                 for ty in re.findall(r"[A-Z][a-z]+", p.get("ValidCreature", "")):
                     if ty not in ("Creature", "Other", "You", "Ctrl"): add("affects:" + tok(ty))
-            if mode in ("CantBlock", "CantBlockBy"):
+            if mode == "CantBlock":
                 if p.get("ValidCreature", p.get("ValidAttacker", "Creature")) not in ("Card.Self", "Creature.Self"): add("restrict")
+            if mode == "CantBlockBy" and not p.get("ValidBlocker") and "Self" not in p.get("ValidAttacker", ""): add("cant_be_blocked")      # equipped / enchanted creature can't be blocked: evasion, not a restriction
             if mode == "ReduceCost":
                 vc = p.get("ValidCard", "")
                 add("cost_reduce")
@@ -282,11 +306,25 @@ def extra(lines, sv, types, text):
                 for kw_ in re.split(r"\s*&\s*", p.get(k, "")):
                     if kw_: add("static_grant:" + tok(kw_.split(":")[0]))
             affected_tags(p, add); present_tags(p, add); add(*xt)
+        if kind == "S" and re.fullmatch(r"Cant\w+(,Cant\w+)*", p.get("Mode", "")) and {"CantAttack", "CantBlock", "CantBeActivated"} & set(p["Mode"].split(",")):
+            modes = set(p["Mode"].split(","))
+            ks = (["cant_attack_or_block"] if {"CantAttack", "CantBlock"} <= modes else ["cant_attack"] * ("CantAttack" in modes) + ["cant_block"] * ("CantBlock" in modes)) + ["cant_activate"] * ("CantBeActivated" in modes)
+            restrict_add(ks, add, p.get("Description", ""))
+            vc = p.get("ValidCard", p.get("ValidCreature", ""))
+            if "Self" in vc: add("restrict_scope:self")                   # a drawback on the card itself (Bloodghast: can't block)
+            else: affected_tags({"Affected": vc}, add)
+        if kind == "S" and p.get("Mode") == "CantBlockBy" and "Self" not in p.get("ValidAttacker", "") and p.get("ValidBlocker"):
+            restrict_add(["cant_block"], add, p.get("Description", "")); affected_tags({"Affected": p["ValidBlocker"].split(",")[0]}, add)   # these creatures can't block (Bower Passage)
+        if kind == "S" and p.get("Mode") == "CantAttackUnless": add("restrict", "restrict_kind:cant_attack_unless_cost")
+        if kind == "S" and p.get("Mode") == "Continuous" and "doesn't untap" in p.get("AddHiddenKeyword", "").lower():
+            restrict_add(["doesnt_untap"], add, p.get("AddHiddenKeyword", "")); affected_tags(p, add)
         if kind == "S" and p.get("Mode") == "CantBlockBy" and "Self" in p.get("ValidAttacker", ""):
             add("cant_be_blocked_by:" + tok(p.get("ValidBlocker", "").replace(".", "_")))
         if kind == "R":
             ev = p.get("Event", "")
             if ev == "Counter" and "Self" in p.get("ValidCard", "") and p.get("Layer") == "CantHappen": add("cant_be_countered")
+            elif ev == "Untap" and p.get("Layer") == "CantHappen":
+                restrict_add(["doesnt_untap"], add, p.get("Description", "")); affected_tags({"Affected": p.get("ValidCard", "")}, add)
             elif ev:
                 add("replacement", "replace_event:" + tok(ev))
                 rw = sv.get(p.get("ReplaceWith", ""), "")
@@ -410,6 +448,17 @@ def extra(lines, sv, types, text):
             if api == "DealDamage" and not bp.get("NumDmg", "1").isdigit():
                 w = x_is(bp.get("NumDmg"), sv)
                 if w: add("damage_amount:x", "x_is:" + w)
+            if api in ("Pump", "PumpAll") and ("HIDDEN" in bp.get("KW", "") or "can't" in bp.get("KW", "").lower()):
+                ks = restrict_kinds(bp["KW"])
+                restrict_add(ks, add, bp["KW"] + " " + bp.get("SpellDescription", ""))
+                if ks and not any(x.startswith("duration:") for x in groups[cur[0]]):
+                    add("duration:" + ({"Permanent": "permanent"}.get(bp.get("Duration", ""), "eot")) if "next untap step" not in bp["KW"].lower() else "duration:next_untap")
+            if api == "Effect":
+                for nm in re.split(r"[ ,]+", bp.get("StaticAbilities", "") + " " + bp.get("ReplacementEffects", "")):
+                    ks = restrict_kinds(sv.get(nm, ""))
+                    if ks: restrict_add(ks, add, sv.get(nm, "") + " " + bp.get("Duration", "").replace("AsLongAsControl", "as long as you control") + " " + bp.get("SpellDescription", ""))
+            if api == "Animate" and bp.get("RemoveAllAbilities") == "True":
+                add("restrict", "restrict_kind:loses_abilities", "duration:permanent" if bp.get("Permanent") == "True" else "duration:eot")
             if api == "Pump" and bp.get("KW"):
                 for kw_ in re.split(r"\s*&\s*", bp["KW"]):
                     if kw_ and not kw_.startswith("HIDDEN"): add("grant_kw:" + tok(kw_.split(":")[0]))
@@ -445,7 +494,9 @@ def extra(lines, sv, types, text):
                 if bp.get("LoseControl") == "EOT": add("duration:eot")
             if api == "Animate":
                 if bp.get("RemoveAllAbilities") == "True": add("loses_all_abilities")
-                if bp.get("Types") or bp.get("RemoveAllAbilities") == "True" or bp.get("Colors"):
+                if bp.get("RemoveAllAbilities") == "True" and not (bp.get("Types") or bp.get("Colors")):
+                    add("loses_all_abilities")                  # a curse that only removes abilities (Merfolk Trickster) does not make the permanent something else
+                elif bp.get("Types") or bp.get("RemoveAllAbilities") == "True" or bp.get("Colors"):
                     add("transform")
                     for ty in (bp.get("Types", "")).split(","):
                         if ty: add("becomes:" + tok(ty))

@@ -13,7 +13,7 @@ You are the BLIND READER for the Concordia reverse tag check. You are given two 
 2. You are NOT told the card name, mana cost, power/toughness or Oracle text, and you must not try to find them out. Use only the tags, groups and links in the batch, plus the general rules of Magic.
 3. Never write a card name. If you think you recognise a card, set `recognised` to true and still write only what the tags support.
 4. Write only what the tags say. A tag with no amount or cost: use a placeholder ({cost}, N, X). Do not invent abilities, numbers or wording that the tags do not support. Do not pad.
-5. Tags are lower case `family:value`; groups (k1, c1, c1.2, x) are tags that came from one line of the card; `links` relate groups. Group `x` holds tags added by a cross-check. Tags in `ignore_tags` (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token) are internal metrics or umbrella labels: ignore them completely, do not write text for them and do not list them in `unclear`. Do not write a type line ("Creature - Elf"); write only rules text.
+5. Tags are lower case `family:value`; groups (k1, c1, c1.2, x) are tags that came from one line of the card; `links` relate groups. Group `x` holds tags added by a cross-check. Tags in `ignore_tags` (tempo, ai_logic, burn, removal, selection, fixing, pump_team, artifact_token) are internal metrics or umbrella labels: ignore them completely, do not write text for them and do not list them in `unclear`. Do not write a type line ("Creature - Elf"); write only rules text.
 6. Rules text style: Magic Oracle wording, one ability per sentence, abilities separated by ` / `, `this creature` for the card itself, keywords as `Flying`, `Trample` etc.
 
 ## Output

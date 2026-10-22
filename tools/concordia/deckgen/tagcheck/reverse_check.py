@@ -27,12 +27,12 @@ READER_RULES = """You are the BLIND READER. You see only tags. Rules (strict):
 2. Each card is an id plus tags, grouped. Tags are lower case `family:value` words. Groups (k1, c1, c1.2 ...) are tags that came from one line of the card; links relate groups. You are NOT told the card's name, cost, power/toughness or Oracle text.
 3. For every card write the rules text (Magic Oracle style, one line per ability, '/' between abilities) that these tags describe, as exactly as the tags allow. Use only what the tags say. If a tag does not say an amount, mana cost or exact wording, write a placeholder such as {cost}, N or X instead of guessing a real value. Do not add abilities the tags do not support.
 4. If you think you recognise the real card, say so in `recognised` (true) but still write only what the tags support. Never write the card's name.
-5. `ignore_tags` are internal metrics or umbrella labels (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token). Ignore them completely: do not turn them into text and do not list them in `unclear`. List in `unclear` every other tag you could not turn into rules text, and in `conflicts` any tags that contradict each other. Do NOT write a type line (e.g. "Creature - Elf"); write only rules text.
+5. `ignore_tags` are internal metrics or umbrella labels (tempo, ai_logic, burn, removal, selection, fixing, pump_team, artifact_token). Ignore them completely: do not turn them into text and do not list them in `unclear`. List in `unclear` every other tag you could not turn into rules text, and in `conflicts` any tags that contradict each other. Do NOT write a type line (e.g. "Creature - Elf"); write only rules text.
 6. Write the answer as JSON to the output file you are given, exactly: {"cards":[{"id":"c001","text":"...","unclear":["tag"],"conflicts":["..."],"recognised":false}, ...]} with one entry for every id in the batch, in order. Then reply with one line: the number of cards written."""
 
 
 OPAQUE = ("tempo:", "ai_logic:")                                   # prefixes
-OPAQUE_EXACT = {"burn", "removal", "selection", "fixing", "restrict", "pump_team", "artifact_token"}   # umbrella tags the r1 readers could not turn into rules text
+OPAQUE_EXACT = {"burn", "removal", "selection", "fixing", "pump_team", "artifact_token"}   # umbrella tags the r1 readers could not turn into rules text
 
 
 def is_opaque(t): return t in OPAQUE_EXACT or t.startswith(OPAQUE)
