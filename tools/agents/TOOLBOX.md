@@ -1,6 +1,6 @@
 # Toolbox: the shared reference for every agent
 
-Generated 2026-10-22 20:06Z at commit 36c18372 on branch cd/claude2. **Tools stamp: `2466395437b3`.**
+Generated 2026-10-22 21:08Z at commit f25ee786 on branch cd/claude2. **Tools stamp: `7983a6e6382b`.**
 
 ## Start of every turn (all agents)
 1. `git pull --no-rebase origin campaign-design` (if the clone is shallow: `git fetch --unshallow origin campaign-design`).
@@ -14,7 +14,7 @@ Generated 2026-10-22 20:06Z at commit 36c18372 on branch cd/claude2. **Tools sta
 |---|---|---|---|
 | `tools/agents/CONTEXT.md` | all | shared rules, authority, commit ownership, agent table, recent updates: read first, every turn | d4d42bdc 10-22 12:56Z |
 | `tools/agents/AGENT_KNOWLEDGE.md` | all | compiled pitfalls, conventions, unfinished work and next steps from the earlier agents | 4005990f 10-21 18:58Z |
-| `tools/agents/human_logic.toon` | all | the user's own deck-building, balance and AI rules; a rule beats a metric | 11fef646 10-22 19:04Z |
+| `tools/agents/human_logic.toon` | all | the user's own deck-building, balance and AI rules; a rule beats a metric | 83b3bea1 10-22 20:25Z |
 | `tools/concordia/suite/sim_suite.py` | sim workers, main | THE simulation program: setup / run / plan / status / report; archetype cells, adaptive stop, phase logs, digests, push | 4005990f 10-21 18:58Z |
 | `tools/concordia/suite/README.md` | sim workers | how to use the suite, its stop rules and the limit-the-total levers | 4005990f 10-21 18:58Z |
 | `tools/concordia/balance_lab/push_records.sh` | all | safe push of named paths (detached HEAD, races, no force); the only way to push | 4005990f 10-21 18:58Z |
@@ -33,7 +33,7 @@ Generated 2026-10-22 20:06Z at commit 36c18372 on branch cd/claude2. **Tools sta
 | `tools/concordia/ai_lab/RESULTS_UNCHANGED_PLAN.md` | ai lab, main | the 40-game check that patches 010/011 do not change results | 4005990f 10-21 18:58Z |
 | `tools/concordia/archetype_rules.py` | deck builder, main | tier 1 archetype/sub/reach classification, creature windows and type quotas; --report 1 [--dir] lists decks outside their window | 4005990f 10-21 18:58Z |
 | `tools/concordia/tier1_rules.py` | deck builder, balance lab, main | the tier 1 requirements (deck check, creature band, quotas, lands, power targets): the one source of truth | 4005990f 10-21 18:58Z |
-| `tools/concordia/deckgen/ability_tags.py` | deck builder | ability-led tags (per signature), bonus(), potential_pt (never read 0/0 as-is), land-type and scales:/lord: tags; writes ABILITY_TAGS.toon | 4005990f 10-21 18:58Z |
+| `tools/concordia/deckgen/ability_tags.py` | deck builder | ability-led tags (per signature), bonus(), potential_pt (never read 0/0 as-is), land-type and scales:/lord: tags; writes ABILITY_TAGS.toon | 22eb639c 10-22 20:43Z |
 | `tools/concordia/deckgen/commander_support.py` | deck builder | commander ability reader: cards that support a commander (H17, 5 needed), partner pairs; writes COMMANDER_SUPPORT.toon | 4005990f 10-21 18:58Z |
 | `tools/concordia/deckgen/t1_plan.py` | deck builder | 100-commander tier 1 pool, 80 chosen with declared archetype/sub; writes t1_fresh.json | 4005990f 10-21 18:58Z |
 | `tools/concordia/deckgen/HANDOFF_DECKBUILDER.md` | deck builder | tier 1 rework handoff: state, decisions, tools, learnings, open items | 4005990f 10-21 18:58Z |
