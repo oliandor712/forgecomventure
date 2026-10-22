@@ -4,7 +4,7 @@
 
 ## Most common tags
 
-cardtype:creature 200, target_count:one 128, trigger_scope:self 92, target_type:creature 91, trigger:etb 90, cardtype:instant 64, draw 60, tempo:+1 55, type:human 52, token_make 47, cost:tap 41, cost:mana 38, target_scope:you_control 37, lifegain 37, damage 37, duration:eot 36, mana_source 35, draw_count:1 35, cardtype:sorcery 34, type:wizard 33, cardtype:artifact 28, tempo:+0.5 27, burn 26, token_count:1 26, remove:destroy 25, kw:flying 24, type:goblin 24, supertype:legendary 23, cost:sacrifice 23, token_pt:1/1 22, duration:static 21, life_loss 20, mana_amount:1 20, trigger:dies 20, trigger_zone:graveyard 20, target_scope:opp_control 19, cost_sacrifice_target:self 18, affected_type:creature 18, type:vampire 17, tutor 17
+cardtype:creature 200, target_count:one 128, trigger_scope:self 92, target_type:creature 91, trigger:etb 90, cardtype:instant 64, draw 60, tempo:+1 55, type:human 52, token_make 47, cost:tap 41, cost:mana 38, target_scope:you_control 37, lifegain 37, damage 37, duration:eot 36, mana_source 35, draw_count:1 35, cardtype:sorcery 34, type:wizard 33, cardtype:artifact 28, tempo:+0.5 27, put_onto_battlefield 26, burn 26, token_count:1 26, remove:destroy 25, kw:flying 24, type:goblin 24, supertype:legendary 23, cost:sacrifice 23, token_pt:1/1 22, duration:static 21, life_loss 20, mana_amount:1 20, trigger:dies 20, trigger_zone:graveyard 20, from_zone:graveyard 19, target_scope:opp_control 19, cost_sacrifice_target:self 18, affected_type:creature 18
 
 ## Trigger types seen in clauses
 
@@ -27,11 +27,11 @@ script has more abilities than mtgish rules: 0 ()
 
 ## Cross-check layer (oracle, mtgish, keyword reference/CR, Forge AI)
 
-Cards where the cross-check added tags: 51; tags added in total: 58 (life_loss 20, fight 7, scry 6, trigger:upkeep 5, trigger:combat_damage 3, trigger:gain_life 2, cost:remove_counters 2, trigger:beginning_of_combat 2, untap 2, trigger:end_step 2, cost:discard 1, cost:life 1, discard 1, surveil 1, cost:mana 1, cost:exile 1, token_make 1).
+Cards where the cross-check added tags: 51; tags added in total: 57 (life_loss 20, fight 7, scry 6, trigger:upkeep 5, trigger:combat_damage 3, trigger:gain_life 2, cost:remove_counters 2, trigger:beginning_of_combat 2, untap 2, trigger:end_step 2, cost:discard 1, cost:life 1, discard 1, surveil 1, cost:mana 1, token_make 1).
 
 Cards with an ai_logic tag: 21.
 
-Flags (one source disagrees, nothing added): 62 on 57 cards.
+Flags (one source disagrees, nothing added): 61 on 56 cards.
 
 - Nazar, the Velvet Fang: cost cost:remove_counters from mtgish only
 - Carrier Thrall: cost cost:sacrifice from mtgish only
@@ -41,8 +41,8 @@ Flags (one source disagrees, nothing added): 62 on 57 cards.
 - Feign Death: trigger trigger:dies from mtgish only (WhenAPermanentDies)
 - Swiftfoot Boots: cost cost:mana from mtgish only
 - Josu Vess, Lich Knight: cost cost:mana from mtgish only
-- Syr Konrad, the Grim: trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield)
 - Syr Konrad, the Grim: trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves)
+- Syr Konrad, the Grim: trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield)
 - Gwenna, Eyes of Gaea: untap: only mtgish says it, script tags lack untap
 - Search for Tomorrow: cost cost:mana from mtgish only
 - Professor of Zoomancy: lifegain: only mtgish says it, script tags lack lifegain
@@ -83,7 +83,6 @@ Flags (one source disagrees, nothing added): 62 on 57 cards.
 - Propaganda: cost cost:mana from mtgish only
 - Rite of Replication: cost cost:mana from mtgish only
 - Sweep Away: cost cost:tuck from mtgish only
-- Disciple of the Ring: exile_effect: only mtgish says it, script tags lack exile
 - Saruman the White: cost cost:mana from mtgish only
 - Skittering Invasion: cost cost:sacrifice from mtgish only
 - Haliya, Guided by Light: cost cost:mana from mtgish only

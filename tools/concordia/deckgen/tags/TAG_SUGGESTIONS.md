@@ -26,11 +26,9 @@ Sources: deck-builder `TAG_UTILITY_DECKBUILDER.md` (DB), balance lab `TAG_UTILIT
 ## Updates to existing tags
 | Id | Suggestion | From | Evidence | Confirm |
 |---|---|---|---|---|
-| S14 | Merge `trigger:etb` + `trigger_scope:self` into `trigger:etb_self` (and `etb_other`)? | DB | 92 vs 90 cards, near-identical sets | DB, AL |
 | S15 | Fix false `tutor`: only when a library is searched (Herald's Horn, Fact or Fiction) | AL, RC | cross-check `extra? tutor` | AL |
 | S16 | `ai_logic` keeps its original case and the ability it sits on (`ai_logic:AtOppEOT@c2`) | AL | lowercased, per card | AL |
 | S17 | AI tags for timing and targeting: `ai_timing:` (instant, eot, main, combat) and `ai_target:` (best_creature, opp_only, own_only) | AL | the AI-patch queries missed timing and targeting | AL |
-| S18 | `mana_source` + `mana:*` + `mana_amount:*` always travel together: one tag (`mana:black:1`)? (kept separate today for the reader) | DB | always together | DB |
 
 ## Tooling (not tags)
 | Id | Suggestion | From | Confirm |
@@ -41,7 +39,9 @@ Sources: deck-builder `TAG_UTILITY_DECKBUILDER.md` (DB), balance lab `TAG_UTILIT
 | S22 | Separate flag file for the "cost:mana from mtgish only" noise so real disagreements are not buried | AL | AL |
 | S23 | Gate each batch of the full-cardlist run with `redundancy()`, the reverse check on 40 deck-relevant cards and a card-power diff | DB | DB, BL |
 
-Done this shift, not suggestions: `return:<zone>_to_<zone>` (approved), `x_is` greatest-among fix, self-sacrifice outlet fix, `restrict_kind`, AI Tags category kept intact.
+Closed by the decomposition decision (2026-10-22, TAG_DECOMPOSITION.md options A+B): compound-tag suggestions S14 (merge etb + self into one tag) and S18 (merge the three mana tags into one) are removed from the list; tags stay separate, readers get pinned meanings (`TAG_LEGEND.md`), the derived tags `etb_self`, `etb_other`, `mana_out` stay in change list D. Zone moves are now `from_zone:` / `to_zone:` tags, so no suggestion about zone-value compounds remains.
+
+Done this shift, not suggestions: `return` + `from_zone` / `to_zone` zone tags (approved; replaces `return:<zone>_to_<zone>`), pinned tag legend, `take` / `rest_*` / `put_onto_battlefield` / `cost:exile` zone split, `x_is` greatest-among fix, self-sacrifice outlet fix, `restrict_kind`, AI Tags category kept intact.
 
 ## Votes (deck-builder DB, balance lab BL, AI lab AL; all three answered 2026-10-22)
 | Id | Votes | What changed because of the votes |

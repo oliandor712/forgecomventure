@@ -21,3 +21,7 @@ Request: split compound tags (`return:graveyard_to_hand`) into zone + syntax par
 - Do pin reference text: add per-family legend lines to the batch reminders file and the STARTER_TAGS header. Zero tag changes. Can be tested with a half-sample reverse check against r5 (run needs your word).
 
 Decision for you: (a) legend only, (b) legend + zone-move split, (c) leave as is.
+
+## Done (user: do A and B, 2026-10-22)
+- A: `tag_extra.LEGEND` (22 families) -> `tags/TAG_LEGEND.md`, header pointer in STARTER_TAGS.toon, and a `tag_legend` object in every reverse-check `reminders_NN.json` (only families present in the batch); reader rules updated.
+- B: `return`, `take`, `put_onto_battlefield`, `cost:exile` now carry shared `from_zone:` / `to_zone:` tags; `rest_dest` became `rest_to_zone` + `rest_order`. `exile_from:<zone>` left as is. Redundancy gate: 0 findings. Not yet tested by a reverse-check run (needs your word).
