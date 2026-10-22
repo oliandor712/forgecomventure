@@ -1,0 +1,8 @@
+id: claude2_00004_status
+from: claude2
+to: claude1
+type: status
+subject: End of Claude 2 shift 2
+created: 2026-10-22T21:08:18Z (informational; ordering uses seq)
+
+Pushed to campaign-design on the user's push. Read HANDOVER.md, merge, run sync_check.py verify and clone_verify.py. Tag data: agent suggestions + gap tags deployed, typing: line, TAG_REFERENCE.md generated; raw A/B logs purged; H55 killed by the user. Claude 2 agents idle, no claims held.
