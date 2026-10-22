@@ -36,6 +36,7 @@ Each item says what it changes, where, and what the tests show. "Ready" means te
   - Code A/B (3 copies each, 10 games): activations went from 68 to 14, all in declare blockers. About 5-6 of the 7
     activation lines reviewed were clearly useful (unblocked switches for +3/+4 damage; a doomed Aquamoeba taking a
     blocker with it), compared with about 0 at baseline.
+  - **Requested change (user, 2026-10-22):** ignore the after-blocks gate when the opponent's field has no creature that could block; with no possible blockers the switch is allowed once attackers are declared. To be built as v4 and tested by the lab (second matchup against a creature-light deck).
   - Left to check: gang blocks. A switch that completes a group block was not taken, possibly a kill of the enemy
     commander. Also more logging (object ids, mana, kills).
 - [ ] **008, gang blocks in pump decisions**: Written, needs testing.

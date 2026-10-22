@@ -4,7 +4,7 @@
 
 ## Most common tags
 
-cardtype:creature 200, target_count:one 127, trigger_scope:self 92, target_type:creature 90, trigger:etb 90, cardtype:instant 64, draw 60, tempo:+1 55, type:human 52, token_make 47, cost:tap 41, cost:mana 38, target_scope:you_control 37, lifegain 37, damage 37, mana_source 35, draw_count:1 35, cardtype:sorcery 34, duration:eot 33, type:wizard 33, cardtype:artifact 28, tempo:+0.5 27, put_onto_battlefield 26, burn 26, token_count:1 26, remove:destroy 25, kw:flying 24, type:goblin 24, supertype:legendary 23, cost:sacrifice 23, token_pt:1/1 22, life_loss 20, mana_amount:1 20, trigger:dies 20, trigger_zone:graveyard 20, cost_sacrifice_target:self 18, target_scope:opp_control 18, type:vampire 17, tutor 17, type:soldier 17
+cardtype:creature 200, target_count:one 128, trigger_scope:self 92, target_type:creature 91, trigger:etb 90, cardtype:instant 64, draw 60, tempo:+1 55, type:human 52, token_make 47, cost:tap 41, cost:mana 38, target_scope:you_control 37, lifegain 37, damage 37, duration:eot 36, mana_source 35, draw_count:1 35, cardtype:sorcery 34, type:wizard 33, cardtype:artifact 28, affected_type:creature 28, tempo:+0.5 27, put_onto_battlefield 26, burn 26, token_count:1 26, remove:destroy 25, kw:flying 24, type:goblin 24, supertype:legendary 23, cost:sacrifice 23, token_pt:1/1 22, life_loss 20, mana_amount:1 20, trigger:dies 20, trigger_zone:graveyard 20, target_scope:opp_control 19, cost_sacrifice_target:self 18, type:vampire 17, tutor 17
 
 ## Trigger types seen in clauses
 
@@ -14,9 +14,9 @@ spell 98, etb_self 81, activated 73, static 39, attacks 15, dies_self 14, spell_
 
 changezone 44, draw 32, token 31, dealdamage 28, static_continuous 25, mana 22, destroy 18, loselife+gainlife 11, pump 9, pumpall 9, draw+loselife 8, putcounter 7, static_reducecost 6, replace_moved 5, mill 5, charm 5, changezoneall 4, discard 3, dealdamage+gainlife 3, gainlife 3, pump+fight 3, putcounter+pump 3, dig 3, copypermanent 3, draw+token 3, counter 3, changezone+changezone 3, pump+draw 2, pump+dealdamage 2, fight 2
 
-## Cards with no ability tag beyond type, keyword and cost tags (26)
+## Cards with no ability tag beyond type, keyword and cost tags (17)
 
-Typhoid Rats, Thornweald Archer, Deadly Recluse, Ambush Viper, Leatherback Baloth, Tajuru Pathwarden, Gigantosaurus, Aggressive Mammoth, Colossal Dreadmaw, Kalonian Tusker, Alpine Grizzly, Predatory Wurm, Magnigoth Sentry, Brazen Scourge, Bonesplitter, Trailblazer's Boots, Laboratory Maniac, Savannah Lions, Fencing Ace, Knight of Grace, Aven Squire, Skyhunter Skirmisher, Benalish Marshal, Leonin Skyhunter, Rhox Pikemaster, Glorious Anthem
+Typhoid Rats, Thornweald Archer, Deadly Recluse, Ambush Viper, Leatherback Baloth, Tajuru Pathwarden, Gigantosaurus, Colossal Dreadmaw, Kalonian Tusker, Alpine Grizzly, Magnigoth Sentry, Brazen Scourge, Savannah Lions, Fencing Ace, Aven Squire, Skyhunter Skirmisher, Leonin Skyhunter
 
 ## mtgish second-opinion flags
 

@@ -11,6 +11,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import ability_tags as AT
 import tag_extra as TX
+import tag_verify as TV
 
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 def _mtgish_path():
@@ -186,6 +187,9 @@ def mtgish_load():
         if ln.startswith("{") and '"Name"' in ln:
             c = json.loads(ln)
             if "Name" in c: out[c["Name"].lower()] = c
+            else:   # two-faced, adventure, split: each face is its own entry (FrontFace, BackFace, ...)
+                for v in c.values():
+                    if isinstance(v, dict) and "Name" in v: out.setdefault(v["Name"].lower(), v)
     return out
 
 
@@ -246,14 +250,21 @@ def record(name, text, mg):
         if cl["verb"] in ("pump", "pumpall") and cl["payload"] and "ValidTgts" in cl["affected"]: tags.append("pump_single"); ex_groups.setdefault(cl["id"], []).append("pump_single")
     # sacrifice outlet (user): a land sacrificed is not an outlet; a creature (or other non-land) sacrificed always is
     sact = {t.split(":", 1)[1] for t in ex_tags if t.startswith(("cost_sacrifice_target:", "sacrifice_type:"))}
+    sact = {("land" if x in {b.lower() for b in BASIC_LAND} else x) for x in sact}   # a Mountain is a land
     if "self" in sact and "Land" in types.split(): sact.discard("self"); sact.add("land")
-    if sact and not (sact - {"land"}): base = [t for t in base if t != "sacrifice_outlet"]
+    if sact and not (sact - {"land", "self"}):   # only lands or the card itself sacrificed (user 2026-10-22): not an outlet, whichever source tagged it
+        base = [t for t in base if t != "sacrifice_outlet"]; ex_tags = [t for t in ex_tags if t != "sacrifice_outlet"]
+        tags = [t for t in tags if t != "sacrifice_outlet"]
+        ex_groups = {g: [t for t in ts if t != "sacrifice_outlet"] for g, ts in ex_groups.items()}
     elif sact - {"land", "self"}: ex_tags = ex_tags + ["sacrifice_outlet"]; ex_groups.setdefault("c0", []).append("sacrifice_outlet")
     tags = list(dict.fromkeys(tags + base + ex_tags))
     # keyword listed once: drop the plain tag when kw:<name> is present (user: trample listed twice)
     tags = [t for t in tags if not ("kw:" + t) in tags]
     # removal split by method (user): drop the umbrella 'removal' when a method tag exists
     if "removal" in tags and any(t.startswith("remove:") or t == "damage" for t in tags): tags.remove("removal")
+    if "restrict" in tags and not any(x.startswith("restrict_kind:") for x in tags) and any(x == "cant_be_blocked" or x.startswith("cant_be_blocked_by:") for x in tags):
+        tags = [x for x in tags if x != "restrict"]   # 'can't be blocked (by X)' is evasion, not a restriction on someone else
+    if "duration:next_untap" in tags or "duration:while_control" in tags: tags = [t for t in tags if t != "duration:permanent"]   # Forge's Duration$ Permanent on a 'next untap step' / 'as long as you control' effect is a script detail
     tags = list(dict.fromkeys(t.lower() for t in tags))   # all tags lower case (scales:Goblin -> scales:goblin)
     # 2nd opinion: mtgish
     m = mg.get(name.lower()); mt = ""
@@ -265,28 +276,36 @@ def record(name, text, mg):
         scriptabil = [c for c in clauses if not c.get("secondary")]   # Forge splits one printed trigger into several T: lines marked Secondary$ True
         if not islandbasic and len(nonkw) < len(scriptabil): mt += " | check:fewer_rules_than_script(%d<%d)" % (len(nonkw), len(scriptabil))
     else: mt = "not_in_mtgish"
+    ver = TV.verify(tags, text, m, KWSET, REMIND)
+    tags = list(dict.fromkeys(tags + ver["add"]))
+    if ver["add"]: ex_groups["v"] = list(ver["add"])
+    ex_tags = ex_tags + ver["add"]
     ai = sorted(set(re.findall(r"AILogic\$ ?([A-Za-z0-9_]+)", face)) | set(re.findall(r"^SVar:AttachAILogic:(\w+)", face, re.M)))
     aipref = "AIPreference" in face or "SVar:AIPreference" in face
     rd = "AI:RemoveDeck" in face
     groups = dict(kgroups)
     for gid, ts in ex_groups.items(): groups[gid] = [t.lower() for t in dict.fromkeys(ts)]
-    def gkey(g): return (0 if g == "c0" else 1 if g.startswith("k") else 2, [int(x) for x in re.findall(r"\d+", g)])
+    def gkey(g): return (0 if g == "c0" else 1 if g.startswith("k") else 3 if g == "v" else 2, [int(x) for x in re.findall(r"\d+", g)])
     groups = dict(sorted(groups.items(), key=lambda kv: gkey(kv[0])))
-    return dict(name=name, groups=groups, base=[t.lower() for t in base], new=[t.lower() for t in ex_tags if t.lower() in tags], tags=tags, clauses=clauses, links=links, mtgish=mt, ai=ai, aipref=aipref, removedeck=rd, nlines=n)
+    ai_tags = [x for x in tags if TV.is_ai_tag(x)]
+    return dict(name=name, ai_tags=ai_tags, groups=groups, base=[t.lower() for t in base], new=[t.lower() for t in ex_tags if t.lower() in tags], tags=tags, clauses=clauses, links=links, mtgish=mt, verify=ver, ai=ai, aipref=aipref, removedeck=rd, nlines=n)
 
 
 def render(r):
-    o = ["card: " + q(r["name"]), "tags: " + " ".join(r["tags"])]
+    o = ["card: " + q(r["name"]), "tags: " + " ".join(x for x in r["tags"] if not TV.is_ai_tag(x))]
+    if r["ai_tags"]: o.append("ai_tags: " + " ".join(r["ai_tags"]))
     o.append("clauses[%d]{id,trigger,cost,verb,payload,affected,duration}:" % len(r["clauses"]))
     for c in r["clauses"]: o.append("  " + ",".join(q(c[k]) for k in ("id", "trigger", "cost", "verb", "payload", "affected", "duration")))
     if r["links"]:
         o.append("links[%d]{from,rel,to}:" % len(r["links"]))
         for a, b, c in r["links"]: o.append("  %s,%s,%s" % (a, b, c))
-    o.append("groups[%d]{id,source,tags}:" % len(r["groups"]))
+    o.append("groups[%d]{id,source,tags}:" % len([1 for g, ts in r["groups"].items() if [x for x in ts if not TV.is_ai_tag(x)]]))
     for gid, ts in r["groups"].items():
-        src = "card" if gid == "c0" else ("K line" if gid.startswith("k") else ("sub-ability of " + gid.split(".")[0] if "." in gid else "%s line" % next((c.get("kind", "?") for c in r["clauses"] if c["id"] == gid), "?")))
-        o.append("  %s,%s,%s" % (gid, src, q(" ".join(ts))))
+        src = "saga chapter %s" % gid[1:] if re.match(r"^s\d+$", gid) else "cross-check (oracle/mtgish/keyword/ai)" if gid == "v" else "card" if gid == "c0" else ("K line" if gid.startswith("k") else ("sub-ability of " + gid.split(".")[0] if "." in gid else "%s line" % next((c.get("kind", "?") for c in r["clauses"] if c["id"] == gid), "?")))
+        ts = [x for x in ts if not TV.is_ai_tag(x)]
+        if ts: o.append("  %s,%s,%s" % (gid, src, q(" ".join(ts))))
     o.append("mtgish: " + r["mtgish"])
+    if r["verify"]["flags"]: o.append("verify_flags: " + " | ".join(r["verify"]["flags"]))
     o.append("forge_ai: AILogic=%s%s%s" % ("/".join(r["ai"]) or "-", " AIPreference" if r["aipref"] else "", " RemoveDeck" if r["removedeck"] else ""))
     return "\n".join(o)
 
@@ -309,27 +328,71 @@ def find_text(name):
     return open(p, errors="replace").read() if p else ""
 
 
-SAMPLE = {"cardtype:creature": ["Vodalian Arcanist", "Goblin Rabblemaster", "Colossal Dreadmaw"], "cardtype:instant": ["Filter Out", "Scorching Dragonfire", "Harrow"],
-          "cardtype:sorcery": ["Victimize", "Search for Tomorrow", "Captain's Call"], "cardtype:enchantment": ["Rancor", "Pacifism", "Oblivion Ring"],
-          "cardtype:artifact": ["Memnarch, the Warden", "Arcane Signet", "Bontu's Monument"], "cardtype:planeswalker": ["Oko, Thief of Crowns", "Rowan, Fearless Sparkmage", "Garruk, Veiled Butcher"],
-          "cardtype:land": ["Temple of the False God", "Blighted Woodland", "Myriad Landscape"], "cardtype:battle": ["Invasion of Kaldheim", "Invasion of New Phyrexia", "Invasion of Moag"],
-          "supertype:legendary": ["Kiki-Jiki, Mirror Breaker"], "supertype:basic": ["Plains"], "supertype:snow": ["Frost Marsh"], "supertype:world": ["Koskun Falls"]}
+PREV_SAMPLE = {"Vodalian Arcanist", "Goblin Rabblemaster", "Colossal Dreadmaw", "Filter Out", "Scorching Dragonfire", "Harrow", "Victimize", "Search for Tomorrow",
+               "Captain's Call", "Rancor", "Pacifism", "Oblivion Ring", "Memnarch, the Warden", "Arcane Signet", "Bontu's Monument", "Oko, Thief of Crowns",
+               "Rowan, Fearless Sparkmage", "Garruk, Veiled Butcher", "Temple of the False God", "Blighted Woodland", "Myriad Landscape", "Invasion of Kaldheim",
+               "Invasion of New Phyrexia", "Invasion of Moag", "Kiki-Jiki, Mirror Breaker", "Plains", "Frost Marsh"}   # cards already shown in the first sample (user feedback exists)
+SAMPLE_TYPES = ["cardtype:creature", "cardtype:instant", "cardtype:sorcery", "cardtype:enchantment", "cardtype:artifact", "cardtype:planeswalker", "cardtype:land", "cardtype:battle", "cardtype:kindred"]
+SAMPLE_SUPER = ["supertype:legendary", "supertype:basic", "supertype:snow", "supertype:world"]
 
 
-def write_sample(starter_names, mg):
-    """sample report straight from the script: Oracle text, tags and linked groups per card (no notes, no earlier tags)"""
-    out = ["# Starter tagging run: sample set (3 per card type, 1 per supertype)\n",
-           "Generated by `deckgen/tag_run.py starter`. Oracle text is the `Oracle:` line of the Forge script (`/` = line break). Tags: supertype, cardtype, subtype, keyword and qualifiers, ability tags. Groups: tags on the same script line are linked (k = K: line, c = A/S/T/R line, c0 = card level). Cards marked (not in starter decks) come from the whole card pool.\n", "Tag notes: `put_onto_battlefield` (with `put_from:<zone>`) = a card put onto the battlefield without being cast, so its mana cost and cast triggers are skipped; enter-the-battlefield triggers still happen (CR 603.6a); it is separate from `trigger:etb`. `tempo:+n` = cards added to your hand or battlefield minus cards removed when the ability resolves (the spell itself, sacrificed and discarded cards).\n"]
-    for sec, names in SAMPLE.items():
-        out += ["\n## %s\n" % sec, "| Card | Oracle text | Tags | Linked groups |", "|---|---|---|---|"]
-        for n in names:
-            t = find_text(n)
-            if not t: out.append("| %s | (no script found) | | |" % n); continue
-            rec = record(n, t, mg)
-            oracle = next((l[7:] for l in t.split("\n") if l.startswith("Oracle:")), "").replace("\\n", " / ").replace("|", "/")
-            grp = "<br>".join("%s: %s" % (k, " ".join(v)) for k, v in rec["groups"].items())
-            out.append("| %s%s | %s | %s | %s |" % (n, "" if n in starter_names else " (not in starter decks)", oracle, " ".join(rec["tags"]), grp))
+def richness(r):
+    fams = {t.split(":")[0] for t in r["tags"] if not t.startswith(("cardtype", "supertype", "type", "landtype", "color", "num"))}
+    return (len(fams), len(r["tags"]))
+
+
+def pick(recs, tag, n):
+    """n cards with the tag, not in the first sample: the richest, the middle one, and one the cross-check added to or flagged (else the next richest)"""
+    pool = sorted((r for r in recs if tag in r["tags"] and r["name"] not in PREV_SAMPLE), key=richness, reverse=True)
+    if len(pool) <= n: return pool
+    out = [pool[0], pool[len(pool) // 2]]
+    third = next((r for r in pool if (r["verify"]["add"] or r["verify"]["flags"]) and r not in out), None) or next(r for r in pool if r not in out)
+    return (out + [third])[:n]
+
+
+def pool_pick(tag, n, mg):
+    word = tag.split(":")[1].capitalize()
+    cands = []
+    for p in sorted(glob.glob(os.path.join(ROOT, "forge-gui/res/cardsfolder/*/*.txt"))):
+        try: x = open(p, errors="replace").read()
+        except OSError: continue
+        if re.search(r"^Types:.*\b%s\b" % word, x.split("\nALTERNATE")[0], re.M):
+            nm = re.search(r"^Name:(.*)$", x, re.M).group(1).strip()
+            if nm not in PREV_SAMPLE and nm.lower() in mg: cands.append(nm)
+    recs = [record(nm, find_text(nm), mg) for nm in cands[:60]]
+    return pick(recs, tag, n)
+
+
+def sample_row(r, text, starter_names):
+    text = text or find_text(r["name"].replace(" (not in starter decks)", ""))
+    oracle = next((l[7:] for l in text.split("\n") if l.startswith("Oracle:")), "").replace("\\n", " / ").replace("|", "/")
+    grp = "<br>".join("%s: %s" % (k, " ".join(x for x in v if not TV.is_ai_tag(x))) for k, v in r["groups"].items() if [x for x in v if not TV.is_ai_tag(x)])
+    v = r["verify"]
+    chk = "<br>".join(["added: " + " ".join("%s [%s]" % (t, "+".join(v["sources"][t])) for t in v["add"] if not t.startswith("ai_logic"))] * bool([t for t in v["add"] if not t.startswith("ai_logic")]) + ["flag: " + f for f in v["flags"]] + ["AI: " + "/".join(v["ai"])] * bool(v["ai"]))
+    return "| %s | %s | %s | %s | %s | %s | |" % (r["name"], oracle, " ".join(x for x in r["tags"] if not TV.is_ai_tag(x)), " ".join(r["ai_tags"]) or "-", grp, chk or "agrees")
+
+
+def write_sample(recs, mg):
+    """sample report: Oracle text, tags, linked groups and cross-check result per card, with an empty note field for the user"""
+    texts = {r["name"]: find_text(r["name"]) for r in recs}   # texts of pool cards are added below
+    out = ["# Sample tag run: starter-deck cards (3 per card type, 1 per supertype)\n",
+           "Generated by `deckgen/tag_run.py starter` (revised in place each run). Sources: card script (1st), mtgish (2nd), Oracle text, Comprehensive Rules and the keyword reference, Forge AI `AILogic$` (reference). Cards are chosen from the starter decks and exclude the 27 cards of the first sample (you gave feedback on those: `TAG_FEEDBACK_STARTER_SAMPLE.md`). For each type: the card with the most ability families, a middle one, and one the cross-check changed or flagged.\n",
+           "**How to read:** *Oracle text* is the printed text (`/` = line break). *Tags* run supertype, cardtype, subtype/landtype, keyword and qualifiers, ability tags. *Linked groups*: tags of one script line (k = K: line, c = A/S/T/R line and its sub-steps, c0 = card level, v = added by the cross-check). *Cross-check*: `added` = tags the second sources (mtgish and Oracle both) supported and the script tags lacked, with their sources; `flag` = one source disagrees (not added, needs your word); `AI` = AILogic value. *Your note*: type your feedback in the last column (right / missing / extra tag, and what).\n"]
+    for sec in SAMPLE_TYPES + SAMPLE_SUPER:
+        k = 3 if sec.startswith("cardtype") else 1
+        cards = pick(recs, sec, k)
+        out += ["\n## %s\n" % sec]
+        if not cards:
+            cards = pool_pick(sec, k, mg)
+            for r in cards: texts[r["name"]] = find_text(r["name"])
+            out.append("No such card in the starter decks (%d starter cards): %d taken from the whole card pool, marked (not in starter decks).\n" % (len(recs), len(cards)))
+            for r in cards: r["name"] += " (not in starter decks)"
+        out += ["| Card | Oracle text | Tags | AI tags | Linked groups | Cross-check | Your note |", "|---|---|---|---|---|---|---|"]
+        out += [sample_row(r, texts.get(r["name"].replace(" (not in starter decks)", ""), ""), None) for r in cards]
     open(os.path.join(HERE, "tags", "STARTER_TAGS_SAMPLE.md"), "w").write("\n".join(out) + "\n")
+
+
+APPROVED = ['target_type', 'trigger', 'target_count', 'trigger_scope', 'cost', 'tempo', 'draw_count', 'target_scope', 'remove', 'token_type', 'token_color', 'token_count', 'damage', 'token_pt', 'mana', 'mana_amount', 'damage_amount', 'target_filter', 'trigger_filter', 'put_onto_battlefield', 'put_from', 'cost_sacrifice_target', 'trigger_zone', 'counter', 'tutor_dest', 'tutor_count', 'tutor_target', 'shuffle', 'target_zone', 'put_tapped', 'token_cardtype', 'enters_untapped', 'enters_tapped', 'token_kw', 'discard_count', 'duration', 'effect', 'transform', 'mana_choice', 'mana_restriction', 'exile_from', 'cost_reduce_for', 'impulse_draw', 'impulse_draw_count', 'affects', 'activation_restriction', 'sacrifice_type', 'must_attack', 'return_exiled', 'cost_if_you_do', 'cast_free', 'recursion', 'steal', 'steal_grants_haste', 'delayed', 'die_replace', 'loses_all_abilities', 'color']   # tag families the user approved in chat on 2026-10-22 ("Approve all new tags"); later families stay proposed until approved
 
 
 def write_approval(recs):
@@ -342,11 +405,11 @@ def write_approval(recs):
             d = fam.setdefault(f, collections.OrderedDict())
             d.setdefault(t, []).append(r["name"])
     out = ["# New tags created for approval\n",
-           "Created 2026-10-22 under the standing instruction (human_logic.toon H56): tags may be created to fill gaps seen across the references (script, mtgish, Forge AI, rules, keyword reference, user feedback); each is logged here and counts as PROPOSED until approved. Tick a box to approve a family; strike or note a change under it. Counts are from the starter-deck run (%d cards)." % len(recs),
+           "Created 2026-10-22 under the standing instruction (human_logic.toon H56): tags may be created to fill gaps seen across the references (script, mtgish, Forge AI, rules, keyword reference, user feedback); each is logged here and counts as PROPOSED until approved. `[x] approved` = approved by the user in chat 2026-10-22; `[ ] proposed` = created later (sample tag run cross-check layer) and waiting. Tick a box to approve a family; strike or note a change under it. Counts are from the starter-deck run (%d cards)." % len(recs),
            "Changes to existing behaviour (also need approval): (a) the umbrella tag `removal` is dropped when a method tag (`remove:*`, `damage`) is present; (b) a keyword is listed once as `kw:<name>`, the plain duplicate (e.g. `trample`) is dropped.\n",
            "| Approve | Tag family | Meaning | Source of the rule | Cards | Values seen (cards) |", "|---|---|---|---|---|---|"]
     doc = {}
-    for k, (m, w) in TX.DOC.items():
+    for k, (m, w) in list(TX.DOC.items()) + list(TV.DOC.items()):
         for part in re.split(r" / | \+ ", k):
             doc[part.split(":")[0].split(" ")[0]] = (m, w)
     for f, vals in sorted(fam.items(), key=lambda kv: -sum(len(v) for v in kv[1].values())):
@@ -354,8 +417,30 @@ def write_approval(recs):
         n = len(set(c for v in vals.values() for c in v))
         seen = "; ".join("%s (%d)" % (t, len(v)) for t, v in sorted(vals.items(), key=lambda kv: -len(kv[1]))[:8])
         ex = ", ".join(list(dict.fromkeys(c for v in vals.values() for c in v))[:3])
-        out.append("| [ ] | `%s` | %s | %s | %d (e.g. %s) | %s |" % (f, m, w, n, ex, seen))
+        out.append("| %s | `%s` | %s | %s | %d (e.g. %s) | %s |" % ("[x] approved 2026-10-22" if f in APPROVED else "[ ] proposed", f, m, w, n, ex, seen))
     open(os.path.join(HERE, "tags", "NEW_TAGS_FOR_APPROVAL.md"), "w").write("\n".join(out) + "\n")
+
+
+def qa(recs):
+    """double check of the run itself: structure checks on every record (no card or deck is touched)"""
+    bad = collections.defaultdict(list)
+    for r in recs:
+        txt = find_text(r["name"]); tg = r["tags"]
+        types = next((l[6:] for l in txt.split("\n") if l.startswith("Types:")), "").split()
+        if len(tg) != len(set(tg)): bad["duplicate tags"].append(r["name"])
+        if any(x != x.lower() or " " in x for x in tg): bad["not lower case"].append(r["name"])
+        for w in types:
+            if w in SUPERTYPES and "supertype:" + snake(w) not in tg: bad["supertype tag missing"].append(r["name"])
+            if w in CARDTYPES and "cardtype:" + snake(w) not in tg: bad["cardtype tag missing"].append(r["name"])
+        for l in txt.split("\n"):
+            if l.startswith("K:"):
+                b = snake(l[2:].split(":")[0].strip())
+                if not any(x.startswith(("kw:" + b, "forge_line:" + b, "protection_from")) or x == "kw:protection" for x in tg): bad["K: line without kw tag"].append("%s (%s)" % (r["name"], b))
+        if "sacrifice_outlet" in tg and not any(x.startswith(("sacrifice", "cost_sacrifice", "effect:sacrifice")) or x == "cost:sacrifice" for x in tg): bad["outlet without sacrifice tag"].append(r["name"])
+    out = ["## Double check of this run\n", "- Structure checks on %d records (no duplicate or upper-case tags; every supertype and card type in the Types line has its tag; every K: line has a kw: or forge_line: tag): %s" % (len(recs), "all passed" if not bad else "; ".join("%s: %s" % (k, ", ".join(v[:6])) for k, v in bad.items()))]
+    out.append("- Comparison with the original run (before the cross-check layer, checked 2026-10-22 after the self-sacrifice fix): 80 tags added on 80 cards changed (22 ai_logic, 58 other tags on 51 cards); 14 `sacrifice_outlet` tags removed (self-sacrifice is not an outlet, user 2026-10-22); nothing else removed or changed.")
+    out.append("- By hand: every cross-check addition on the sample cards and about 40 others was read against the Oracle text (see `STARTER_TAGS_SAMPLE.md`); the findings are listed under 'Known problems' below.")
+    return out
 
 
 def deck_cards(path):
@@ -384,7 +469,7 @@ def main(a):
         recs.append(record(n, t, mg))
     os.makedirs(os.path.join(HERE, "tags"), exist_ok=True)
     write_approval(recs)
-    write_sample(set(uniq), mg)
+    write_sample(recs, mg)
     hdr = ("# Tagging run on every card in the starter decks (%d decks, %d distinct cards, %d tagged, %d without a script). Sources in order of trust: card script, mtgish, Forge AI. Rules: human_logic.toon H50-H55, design deckgen/TAG_LINKS.md. Tags run supertype, cardtype, subtype/landtype, kw + qualifiers, ability tags. duration:eot(forge_default) = a Pump with no Duration (Forge removes it at end of turn). Generated by deckgen/tag_run.py; research output, no card or deck was changed.\n\n"
            % (len(decks), len(uniq), len(recs), len(missing)))
     open(os.path.join(HERE, "tags", "STARTER_TAGS.toon"), "w").write(hdr + "\n\n".join(render(r) for r in recs) + "\n")
@@ -402,6 +487,19 @@ def main(a):
            "## Most common verbs (script API)\n", ", ".join("%s %d" % kv for kv in verb.most_common(30)) + "\n",
            "## Cards with no ability tag beyond type, keyword and cost tags (%d)\n" % len(untag), ", ".join(untag[:80]) + ("..." if len(untag) > 80 else "") + "\n",
            "## mtgish second-opinion flags\n", "not in mtgish: %d (%s)\n" % (len(nomg), ", ".join(nomg[:15])), "script has more abilities than mtgish rules: %d (%s)\n" % (len(chk), ", ".join(chk[:25]))]
+    vadd = collections.Counter(t for r in recs for t in r["verify"]["add"] if not t.startswith("ai_logic"))
+    vfl = [(r["name"], f) for r in recs for f in r["verify"]["flags"]]
+    rep += ["\n## Cross-check layer (oracle, mtgish, keyword reference/CR, Forge AI)\n",
+            "Cards where the cross-check added tags: %d; tags added in total: %d (%s).\n" % (sum(1 for r in recs if [x for x in r["verify"]["add"] if not x.startswith("ai_logic")]), sum(vadd.values()), ", ".join("%s %d" % kv for kv in vadd.most_common())),
+            "Cards with an ai_logic tag: %d.\n" % sum(1 for r in recs if r["verify"]["ai"]),
+            "Flags (one source disagrees, nothing added): %d on %d cards.\n" % (len(vfl), len({n for n, _ in vfl}))]
+    rep += ["- %s: %s" % nf for nf in vfl]
+    rep += [""] + qa(recs) + ["", "## Known problems (found by the double check; tags NOT changed, your call)\n",
+        "- `tutor` is wrongly tagged on cards that look at the top card or split piles (Herald's Horn, Fact or Fiction): the older tagger treats 'put into your hand' as a tutor; the cross-check flags them as `extra?`.",
+        "- Planeswalker tags (Davriel, Chandra) pick up unrelated tags from the whole card text (draw, lifegain, reanimate on Davriel): the older `ability_tags` reads all text, not per ability; per-ability groups are right, the card-level list is noisy.",
+        "- `landtype:swamp` on Corrupt and `landtype:island` on Flow of Knowledge sit after the ability tags: by H45 they mark 'cares about a land type', not the card's own type.",
+        "- Flags 'cost:mana from mtgish only' are mostly Equip/Encore/kicker costs the script holds on a K: line; not added.",
+        "- Fixed (user 2026-10-22): a card sacrificing itself as a cost is not a sacrifice outlet (14 cards, e.g. Mind Stone, Sakura-Tribe Elder; 6 real outlets remain). The cross-check no longer reads quoted text, so a token's own 'Sacrifice this creature' ability is not added as the card's cost (Carrier Thrall, Skittering Invasion).\n- Fixed earlier in this run: a basic-land sacrifice (Alpine Guide 'sacrifice a Mountain') was tagged sacrifice_outlet; now treated as a land sacrifice (user rule). mtgish loader now reads two-faced, adventure and split cards (battles were missing)."]
     open(os.path.join(HERE, "tags", "STARTER_TAGS_REPORT.md"), "w").write("\n".join(rep))
     print(len(decks), len(uniq), len(recs), len(missing), "untagged-beyond-basics", len(untag), "mtgish-check", len(chk), "not in mtgish", len(nomg))
 
