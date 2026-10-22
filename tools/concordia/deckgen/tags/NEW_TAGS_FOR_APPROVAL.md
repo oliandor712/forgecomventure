@@ -7,6 +7,8 @@ Changes to existing behaviour (approved with "approve all tags", 2026-10-22; tre
 |---|---|---|---|---|---|
 | [ ] proposed | `return` | a card returns from the graveyard or exile to hand or library (return from_zone:graveyard to_zone:hand); the readable detail behind the AI umbrella tag recursion. from_zone / to_zone are the shared zone tags used by every zone-move tag (return, take, put_onto_battlefield, cost:exile) | reverse check r5: Elvish Regrower lost its meaning when recursion became an AI tag | 9 (e.g. Cadaver Imp, Gravedigger, Raise Dead) | return (9) |
 | [ ] proposed | `cost_reduce_amount` | (see feedback notes) | created from the user feedback pattern | 6 (e.g. Goreclaw, Terror of Qal Sisma, Dragonlord's Servant, Stonybrook Banneret) | cost_reduce_amount:1 (5); cost_reduce_amount:2 (1) |
+| [ ] proposed | `cost_reduce_mana` | (see feedback notes) | created from the user feedback pattern | 5 (e.g. Goreclaw, Terror of Qal Sisma, Dragonlord's Servant, Stonybrook Banneret) | cost_reduce_mana:generic (5) |
+| [ ] proposed | `choice_option` | (see feedback notes) | created from the user feedback pattern | 1 (e.g. Cloud Key) | choice_option:artifact (1); choice_option:creature (1); choice_option:enchantment (1); choice_option:instant (1); choice_option:sorcery (1) |
 | [ ] proposed | `choose_on_enter` | (see feedback notes) | created from the user feedback pattern | 2 (e.g. Cloud Key, Herald's Horn) | choose_on_enter:card_type (1); choose_on_enter:creature_type (1) |
 
 ## New values inside already-approved families (the family is approved; these values appeared after the approval)
