@@ -103,7 +103,6 @@ Changes to existing behaviour (also need approval): (a) the umbrella tag `remova
 | [x] approved 2026-10-22 | `color` | which spells a cost reduction applies to | Bontu's Monument | 1 (e.g. Bontu's Monument) | color:black (1) |
 | [ ] proposed | `condition_zone` | a static or replacement effect that only applies while something is present (e.g. you control a Garruk planeswalker; your library has 0 cards) | reverse check r1: Predatory Wurm, Laboratory Maniac | 1 (e.g. Laboratory Maniac) | condition_zone:library (1) |
 | [ ] proposed | `condition_compare` | a static or replacement effect that only applies while something is present (e.g. you control a Garruk planeswalker; your library has 0 cards) | reverse check r1: Predatory Wurm, Laboratory Maniac | 1 (e.g. Laboratory Maniac) | condition_compare:eq0 (1) |
-| [ ] proposed | `piles_split` | cards are divided into two piles | reverse check r1: Fact or Fiction | 1 (e.g. Fact or Fiction) | piles_split (1) |
-| [ ] proposed | `pile_separator` | cards are divided into two piles | reverse check r1: Fact or Fiction | 1 (e.g. Fact or Fiction) | pile_separator:opponent (1) |
+| [ ] proposed | `piles_split` | cards are divided into two piles by that player; one tag replaces piles_split + pile_separator (user: redundant) | reverse check r1: Fact or Fiction | 1 (e.g. Fact or Fiction) | piles_split:opponent (1) |
 | [ ] proposed | `cost_exile_target` | (see feedback notes) | created from the user feedback pattern | 1 (e.g. Disciple of the Ring) | cost_exile_target:instant_or_sorcery (1) |
 | [ ] proposed | `chapter_count` | saga chapter number of an ability, and how many chapters the saga has | reverse check r1: Time of Ice | 1 (e.g. Time of Ice) | chapter_count:3 (1) |
