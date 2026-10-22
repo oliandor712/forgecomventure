@@ -72,7 +72,7 @@ KWRX = [(k, re.compile(r"\b%s\b" % re.escape(w))) for k, w in
 
 def norm(text, name=""):
     t = text.lower()
-    t = re.sub(r"\([^)]*\)", " ", t)                       # reminder text
+    t = re.sub(r"\([^)]*\)", " ", t) if re.sub(r"\([^)]*\)", "", t).strip(" /\\n") else t.replace("(", " ").replace(")", " ")   # reminder text (kept when it is all the card has: basic lands)
     t = t.replace("\\n", " ").replace("/", " / ")
     if name:
         for part in {name.lower(), name.lower().split(",")[0], name.lower().split(" ")[0]}:
@@ -133,7 +133,7 @@ class Index:
 
 
 def score(orig_text, reco_text, name, idx, orig_vec, reco_vec):
-    on, rn = norm(orig_text, name), norm(reco_text, name)
+    on, rn = norm(orig_text, name), norm(clean_reco(reco_text), name)
     oc, rc = concepts(on), concepts(rn)
     _, _, cf = f1(oc, rc)
     onum, rnum = numbers(on), numbers(rn)
@@ -142,6 +142,21 @@ def score(orig_text, reco_text, name, idx, orig_vec, reco_vec):
     sim = 0.4 * cs + 0.4 * cf + 0.2 * nf
     return dict(sim=round(sim, 3), cosine=round(cs, 3), concept_f1=round(cf, 3), number_f1=round(nf, 3), missing=sorted(oc - rc), extra=sorted(rc - oc),
                 missing_numbers=sorted((onum - rnum).elements()), extra_numbers=sorted((rnum - onum).elements()))
+
+
+TYPEWORDS = {"basic", "legendary", "snow", "world", "tribal", "kindred", "artifact", "enchantment", "land", "creature", "instant", "sorcery", "saga", "aura", "equipment", "planeswalker", "battle", "vehicle"}
+
+
+def is_typeline(seg):
+    """a short segment made only of type words and Capitalised subtypes ('Elf Druid creature.', 'Basic Land - Island', 'Instant'), no verbs, no punctuation but a dash"""
+    w = re.sub(r"[.—–-]+", " ", seg).split()
+    return 0 < len(w) <= 6 and ":" not in seg and any(x.lower() in TYPEWORDS for x in w) and all(x.lower() in TYPEWORDS or x[0].isupper() for x in w)
+
+
+def clean_reco(text):
+    """the reader is not asked for a type line but often writes one: drop segments that are only a type line, so they are not scored as rules text"""
+    segs = re.split(r"\s+/\s+|(?<=[.!])\s+", text)
+    return " / ".join(g for g in segs if not is_typeline(g.strip()))
 
 
 def original_text(name):
@@ -159,14 +174,15 @@ def evaluate(texts, key, recs):
     idx = Index(odocs)
     res = {}
     for i, n in key.items():
-        reco = texts.get(i, "")
+        reco = clean_reco(texts.get(i, ""))     # type lines dropped; the raw text stays in the reader's output file
         rt = toks(norm(reco, n)); rv = idx.v(rt)
         s = score(otext[n], reco, n, idx, idx.vec[n], rv)
         sims = sorted(((Index.cos(rv, idx.vec[m]), m) for m in names), reverse=True) if rt else []
         rank = next((k + 1 for k, (_, m) in enumerate(sims) if m == n), None)
         # ties: cards with identical text get the best rank (their texts are the same)
         if rank and sims: rank = 1 + sum(1 for c, m in sims if c > Index.cos(rv, idx.vec[n]) + 1e-9)
-        s.update(name=n, orig=otext[n], reco=reco, rank=rank, band=band(s["sim"]), has_text=bool(rt))
+        if not rt: s.update(sim=0.0, cosine=0.0, concept_f1=0.0, number_f1=0.0)    # nothing written is never a match, even when the real text has no known concept
+        s.update(name=n, orig=otext[n], reco=reco, rank=rank, band=band(s["sim"]), has_text=bool(otext[n].strip()), empty_reco=not rt)   # scored whenever the real card has ability text: an empty reconstruction is a gap, not a skip
         s["vanilla"] = not otext[n].strip()
         if s["vanilla"]: s.update(has_text=False, band="vanilla", sim=0.0 if reco.strip() else 1.0, rank=None)   # no ability text: nothing to reverse; text from the reader would be invented
         res[i] = s
@@ -279,8 +295,8 @@ def cmd_compare(a):
     rec_by_name = {r["name"]: r for r in starter_records()}
     for i, r in res.items():
         r["unclear"] = meta.get(i, {}).get("unclear", []); r["conflicts"] = meta.get(i, {}).get("conflicts", []); r["recognised"] = bool(meta.get(i, {}).get("recognised"))
-        r["name_leak"] = bool(r["reco"]) and r["name"].lower() in r["reco"].lower()
         r["tags"] = rec_by_name[r["name"]]["tags"] if r["name"] in rec_by_name else []
+        r["name_leak"] = bool(texts.get(i, "")) and r["name"].lower() in texts.get(i, "").lower() and not (" " not in r["name"] and any(t.endswith(":" + r["name"].lower()) for t in r["tags"]))
     json.dump(res, open(os.path.join(wd, "results.json"), "w"), indent=1)
     write_report(res, bad, a.run, os.path.join(HERE, "REVERSE_CHECK_REPORT.md"), extra=[summarize(res, "reader")])
     print(json.dumps(summarize(res, "reader")))
