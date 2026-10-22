@@ -1,0 +1,760 @@
+﻿Keywords
+Evergreen Keywords
+Definition: Evergreen keywords are keywords that show up in almost every set and do not typically have reminder text. 
+1. Deathtouch
+   1. Example card: Sedge Scorpion
+   2. Whenever a creature with deathtouch deals damage to another creature, that creature will die.
+   3. It does not have to be combat damage, so if you have a card like Rabid Bite, it will still kill the creature dealt damage. 
+   4. Normal deathtouch doesn’t kill planeswalkers, but there are some that can give “planeswalker deathtouch” or make tokens with that ability, such as Vraska, Swam’s Eminence.
+2. Defender
+   1. Example card: Wall of Mist
+   2. Creature cannot attack.
+   3. In the past, there was a rule that said “Walls can’t attack.” So if you see an old creature with the type “Wall”, but it doesn’t have defender in the text-box, it still has defender. 
+3. Double Strike
+   1. Example card: Boros Swiftblade
+   2. Creature deals both first strike damage and regular damage.
+4. Enchant
+   1. Example card: Abundant Growth
+   2. Written as “Enchant X” where X is a permanent type
+   3. These are auras. 
+   4. When cast, auras must have a target. If the target is removed before the aura equips, it goes straight to the graveyard; however, if you return an aura from the graveyard to the battlefield, you may select a target after it enters. 
+      1. There are some weird edge cases where this can get around hexproof. 
+5. Equip
+   1. Example card: Sword of Feast and Famine
+   2. Written as “Equip X” where X is a mana cost
+   3. These are equipment.
+   4. Equipment are put onto the battlefield, and once the equip cost is paid, it can be attached to a creature. It cannot be unattached from a creature, only moved to another creature. 
+   5. Activate only as a sorcery unless otherwise stated.
+6. First Strike
+   1. Example card: Battle Hurda
+   2. Creature with first strike deals damage before creatures without first strike in combat. 
+   3. For example, if you have a 2/2 elf and a 2/2 soldier with first strike in combat, the elf would die before it deals damage to the soldier. 
+7. Flash
+   1. Example card: Bounding Krasis
+   2. This is on nonland permanent cards (creatures, artifact, enchantments, planeswalkers).
+   3. Permits you to cast those spells whenever you could cast an instant.
+8. Flying
+   1. Example card: Storm Crow
+   2. Creatures with flying can only be blocked by other creatures with flying or by creatures with reach. 
+9. Haste
+   1. Example card: Tenement Crasher
+   2. Creatures with haste may attack or activate “tap” abilities the turn they come into play, i.e. no summoning sickness.
+10. Lifelink
+   1. Example card: Bishop’s Soldier
+   2. Whenever a creature with lifelink deals damage, either to an opponent or creature, you gain life equal to the amount of damage. 
+   3. All damage happens at the same time. If you are dealt lethal damage, but have a lifelink creature to block that brings you back up above 0 life, you would not die.
+   4. Some abilities say “whenever target creature deals damage, you gain that much life.” That is not lifelink. It is an ability trigger that uses “the stack”, so if you were to be dealt lethal damage, that ability would not gain you the life before your life points are reduced to 0. 
+11. Menace
+   1. Example card: Ruin Grinder
+   2. Creatures with menace can only be blocked by 2 or more creatures.
+   3. When paired with deathtouch, it’s very potent. 
+12. Protection
+   1. Example card: Apostle of Purifying Light
+   2. Written as “Protection from X”
+   3. This is complicated.
+   4. A creature with protection cannot be damaged, blocked, targeted, enchanted, or equipped by something of that color. This does include your own things. If something gains protection from white, and it has a white aura on it, that aura will fall off. 
+   5. Damage is actually prevented. So if a spell or ability says damage can’t be prevented, then the creature with protection can be damaged. 
+   6. Does not stop “destroy all creatures” spells. Since they do not target the creature, it does not prevent the destruction.
+   7. It does stop “deals damage to all creatures” spells, because the damage is prevented by protection. 
+   8. Told you, complicated. 
+13. Prowess
+   1. Example card: Monastery Swiftspear
+   2. Whenever you cast a noncreature spell, prowess creatures get +1/+1 until end of turn.
+   3. Does stack, so if you cast 2 noncreature spells, prowess creatures get +1/+1 for each of those spells, getting +2/+2 total. 
+14. Reach
+   1. Example card: Giant Spider
+   2. Creatures with reach may block creatures with flying.
+15. Trample
+   1. Example card: Colossal Dreadmaw
+   2. Creatures with trample deal excess damage to defending player. 
+   3. Example
+      1. You have a 6/6 dinosaur attacking DP (defending player). DP has a 3/3 centaur blocker, and chooses to block your 6/6 dinosaur. You will still deal 3 damage to that player, despite the centaur blocking your creature. 
+      1. Only lethal damage needs to be assigned to a blocker for trample damage to be dealt to the defending player. Therefore, if you have a creature with deathtouch and trample, it needs to only deal 1 damage to the creature. The remaining damage is then dealt to the player. 
+16. Vigilance 
+   1. Example card: Serra Angel
+   2. Attacking does not cause creature to tap. 
+17. Ward
+   1. Example card: Dreadlight Monstrosity
+   2. Written as “Ward [cost]”
+   3. If a creature with ward becomes the target of a spell or ability an opponent controls, counter that spell unless the opponent pays the ward cost. 
+   4. Used instead of hexproof for most creatures now, due to hexproof being so difficult to interact with. 
+Keyword Actions
+Definition: Not an ability, but a special keyword dictating what action a player should take. 
+1. Attach
+   1. Used on auras, equipment, and fortifications (only one fortification, Darksteel Garrison, in the game.)
+   2. Used to “put on” an aura or equipment to a permanent.
+2. Clash
+   1. Example card: Fire Juggler
+   2. When a spell tells players to clash, each player reveals the top card of their library. When they do, the person with the higher mana value of the revealed card wins the clash. In the event of a tie, there is no winner. 
+3. Counter
+   1. Example card: Counterspell
+   2. Countering a spell or ability removes it from the stack. 
+   3. Also called permission, because you get to say “no” to so many things. 
+4. Reconfigure
+   1. Example card: The Reality Chip
+   2. Written as “Reconfigure X” where X is a mana cost
+   3. These are artifact creatures that are also equipment.
+   4. Reconfigure can both attach and unattach from a creature, not just move them between creatures. It can also simply be moved. 
+   5. Activate only as a sorcery unless otherwise stated. 
+5. Regeneration
+   1. Example card: Ancient Silverback
+   2. Written as “regenerate: [cost]”
+   3. When the regeneration cost is paid, it gives that permanent a “regeneration shield” for the rest of the turn. 
+   4. If that permanent would be destroyed, instead it is tapped and not destroyed instead.
+   5. Called a replacement effect. You replace destruction with regeneration. 
+6. Sacrifice
+   1. Example card: Chainer’s Edict
+   2. The owner of a permanent places it into their own graveyard due to an effect or spell. 
+   3. Some spells cause you to sacrifice a creature as an additional cost, sometimes spells an opponent cast can cause you to sacrifice a creature. 
+   4. There are also many abilities on lands and creatures that allow you to sacrifice them to gain some benefit, such as on the card Sakura Tribe Elder.
+7. Scry
+   1. Example card: Crystal Ball
+   2. Written as “Scry X” where X is a number
+   3. Look at the top X cards of your library, put any number on the bottom of your library. Put the rest back in any order. 
+8. Tap/untap
+   1. Allows you to tap or untap a permanent.
+Expansion Keywords
+Definition: Keywords that typically appear only in a certain set/block or in “expert-level” sets, such as Modern Horizons, where stronger cards are purposely printed to be played in formats with larger card pools. 
+1. Absorb
+   1. Only on one card: Lymph Sliver
+   2. Written as “Absorb X” where X is a number
+   3. When the creature with absorb is dealth damage, it prevents X damage from whatever source dealt the damage. 
+   4. For example, if Lymph Sliver is to be dealt 3 damage from the card lightning bolt, it prevents 1 of that damage, so only 2 damage would be marked on the card.
+2. Adapt
+   1. Example card: Growth-Chamber Guardian
+   2. Written as “[cost] Adapt X”, where X is a number
+   3. When the adapt cost is paid, put X +1/+1 counters on the creatures whose ability was activated.
+   4. Many creatures with adapt have an ability that triggers when a counter is put onto it or has an enhanced ability while it has a counter on it. 
+3. Adventure
+   1. Example card: Bonecrusher Giant
+   2. On a card with adventure, you may cast a spell for it’s adventure cost. If you do, exile that card. You may then cast the creature side from exile. 
+   3. You have to cast adventure spell, then creature half. You cannot cast creature half, then adventure from exile. 
+   4. All adventures are instants or sorceries.
+4. Affinity
+   1. Example card: Thoughtcast
+   2. Written as “Affinity for X”, where X is a card type
+   3. Most commonly written as “affinity for artifacts”, a card can have affinity for anything. 
+   4. Affinity causes the generic mana in a casting cost to be reduced by the number of permanents of the X type you control.
+   5. For example, if you have 4 artifacts, the card Frogmite requires no mana to be cast, but even if you have 10 artifacts, you must still pay 1 blue mana for Thoughtcast. 
+5. Afterlife
+   1. Example card:  Orzhov Enforcer
+   2. Written as “Afterlife X”, where X is an number
+   3. When a creature with afterlife dies, it’s controller creates X 1/1 black and white spirit tokens with flying equal to the afterlife number. 
+6. Aftermath
+   1. Example card: Commit to Memory
+   2. Only on split cards
+   3. One side may only be cast from your hand, the other side may only be cast from the graveyard.
+7. Alliance
+   1. Example card: Gala Greeters
+   2. Basically “Landfall”, but on creatures.
+   3. Whenever another creature enters, some effect happens. 
+8. Amplify
+   1. Example card: Kilnmouth Dragon
+   2. Written as “Amplify X”, where X is a number
+   3. When you cast a card with amplify, you may reveal any number of cards that share a card type with that card. The card that was cast then enters with a number of +1/+1 counters equal to X times the amount of cards revealed that way.
+   4. For example, if you cast Kilnmouth Dragon and reveal 2 dragons from your hand, Kilnmouth Dragon enters with 6 counters on it. 
+9. Annihilator
+   1. Example card: Ulamog’s Crusher
+   2. Written as “Annihilator X”, where X is a number
+   3. Whenever a creature with annihilator attacks, the defending player sacrifices X permanents, where X is the number associated with annihilator. 
+   4. Only on Eldrazi cards (giant colorless space monsters, basically)
+10. Aura Swap
+   1. Example card: Arcanum Wings
+   2. Written as “Aura Swap X”, where X is a mana cost
+   3. When a card with aura swap is attached to a creature, you may pay the cost associated with aura swap to return the attached card to your hand and attach an aura from your hand to the same creature. 
+   4. For example, if you have Arcanum Wings on a 1/1 elf token, then pay 2U to activate the ability, you may return Arcanum Wings to your hand and place Eldrazi Conscription (for example, but could be any other aura in your hand) on the elf token, making it much much much more intimidating. 
+   5. Only on one card, Arcanum Wings.
+11. Banding
+   1. Example card: Knights of Thorn
+   2. Historically, THE MOST complicated mechanic in all of MTG history. 
+   3. 53 words of rules text:
+      1. “Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.” - From the official MTG rulebook
+   4. Essentially, when creatures with banding (and up to one without) block or are blocked, you may distribute the damage among your creatures rather than your opponent choosing where the damage goes. 
+   5. This is considered a retired mechanic, but is historically significant. 
+   6. There is a worse version called “bands with other”, and long story short, it is just more difficult to put creatures together for the band. 
+      1. I really don’t wanna explain more, but if you are still interested, visit the MTG wiki.
+12. Battle Cry
+   1. Example card: Signal Pest
+   2. Whenever a creature with battle cry attacks, other attacking creatures get +1/+0 until the end of turn. 
+13. Bestow
+   1. Example card: Celestial Archon
+   2. Written as “Bestow [cost]”
+   3. When you pay the bestow cost, you use a creature with bestow as an aura for a creature on the battlefield. If the bestowed creature dies, the creature with bestow stays on the battlefield.
+   4. Great way to protect against a board wipe, while making your creatures stronger. 
+14. Blitz
+   1. Example card:
+   2. Written as “Blitz [cost]”
+   3. You may cast a card for it’s blitz cost. If you do, it gains haste. Sacrifice it at the next end step and draw a card. 
+   4. You may only blitz any time you could cast a sorcery. 
+15. Bloodrush
+   1. Example card: Skarrg Goliath
+   2. Written as “Bloodrush [cost]”
+   3. You may discard a creature with bloodrush by paying its bloodrush cost. Then, a target creature is granted a boost and abilities based off the discarded creature. 
+16. Bloodthirst
+   1. Example card: Scab-Clan Mauler
+   2. Written as “Bloodthirst X”, where X is a number
+   3. Creatures with Bloodthirst counters enter the battlefield with X +1/+1 counters on them, if an opponent was dealt damage this turn. 
+   4. For example, if Scab-Clan Mauler was cast on turn 2 with no damage having been dealt to your opponent, it would be a 1/1. If you had played a creature turn 1 and dealt damage to the opponent with it on turn 2, then played Scab-Clan Mauler, it would enter the battlefield as a 3/3.
+17. Bolster
+   1. Example card: Dromoka, the Eternal
+   2. Written as “Bolster X”, where X is a number
+   3. Whenever a creature with bolster attacks, you put X +1/+1 counters on target creature you control with the lowest toughness equal to the X in bolster. 
+18. Bushido
+   1. Example card: Devoted Retainer
+   2. Written as “Bushido X”, where X is a number
+   3. If a creature with Bushido is blocked or blocks, it gets +X/+X until the end of the turn, where X is the number associated with Bushido.
+   4. Only on samurai cards from the original Kamigawa block cards from 2004.
+19. Buyback
+   1. Example card: Capsize
+   2. Written as “Buyback X”, where X is a mana cost.
+   3. Only on instants and sorceries. When you cast a card, you may pay the buyback cost. If you do, instead of the card going to your graveyard, it goes back to your hand after resolving. 
+   4. For example, one way to win a game of magic is you generate infinite mana (through a variety of ways), and use Capsize to bounce all of your opponents things forever so they can never stop you from winning. 
+20. Cascade
+   1. Example card: Bloodbraid Elf
+   2. Whenever a you cast a card with cascade, exile the top card of your library until you find a card with a lesser converted mana cost, then you may cast that card without paying its mana cost.
+   3. 2 spells for the cost of 1 spell. Very powerful, considered broken. 
+21. Casualty
+   1. Example card: A Little Chat
+   2. Written as “Casualty X”, where X is a number
+   3. When you cast a card with casualty, you may sacrifice a creature with power equal to the X value. If you do, copy the spell.
+22. Champion
+   1. Example card: Wanderwine Prophets
+   2. Written as “Champion a [creature type]”
+   3. When you cast a creature with champion, you must exile a card that is the type referred to in the champion keyword. If the champion card leaves play, the exiled card will be returned to the battlefield. 
+   4. Champion is called an “evolution-style” mechanic, where you are sacrificing a worse creature for a better creature. 
+23. Changeling
+   1. Example card: Chameleon Colossus
+   2. Creatures with changeling count as all creature types, therefore benefitting from all bonuses associated with tribal synergies. 
+   3. Very common in decks without many good creatures of a specific type. 
+24. Channel
+   1. Example card: Greater Tanuki
+   2. Written as “Channel [cost]”
+   3. You may pay the channel cost of a card in your hand, if you do, you discard that card and yield some effect. 
+25. Cipher
+   1. Example card: Call of the Nightwing
+   2. When you cast a spell with cipher, you may exile it as it resolves. Then, choose a creature to “cipher” the spell onto. Whenever that creature deals damage to an opponent, you may cast the “ciphered” spell without paying its cost.
+   3. Sounds really strong, but usually sucks… Spells are too expensive for what they do, and creatures are easily killed. 
+26. Connive
+   1. Example card: Ledger Shredder
+   2. Written as “[CARDNAME] connives”
+   3. Whenever a card connives, you draw and discard a card. If a nonland card was discarded this way, put a +1/+1 counter on the creature that connived. 
+   4. Some have an effect when it enters the battlefield, some when attacking, and some with mana costs. 
+   5. Only one card so far has “connives X”, which means you draw X cards and discard X cards.
+27. Conspire
+   1. Example card: Giantbaiting
+   2. Only on instants and sorceries. When you cast a spell with conspire, you may tap 2 creatures that share a color with the spell. If you do, copy that spell. 
+28. Convoke
+   1. Example card: March of the Multitudes
+   2. Convoke allows you to tap creatures to pay for the cost in a spell. 
+   3. Creatures tapped with convoke can either pay for generic costs or colored costs, as long as they are the same color as the mana symbol they are paying. 
+   4. For example, if you have 5 creatures and 4 lands, you may cast March of the Multitudes for a total of 9 mana, since your creatures help pay the cost.
+29. Coven
+   1. Example card: Augur of Autumn
+   2. If you control at least 3 creatures with different powers, then creatures with coven gain some benefit.
+30. Crew
+   1. Example card: Aethersphere Harvester
+   2. Written as “Crew X” where X is a number
+   3. Only on vehicles. To crew a vehicle, you must tap any number of creatures whos power equals X or greater. 
+   4. For example, Aethersphere Harvester only needs a creature with 1 power to turn it from an artifact into an artifact creature, but Colossal Plow needs 6 power. 
+31. Cumulative Upkeep
+   1. Example card: Mystic Remora
+   2. Written as “Cumulative Upkeep [cost]”
+   3. Old and difficult mechanic. Essentially, the cost compounds each turn, and must be paid at the upkeep step. On your upkeep you place an age-counter on the card with cumulative upkeep, then pay the upkeep cost as many times as there are age-counters on the card.
+   4. For example, mystic remora has a cumulative upkeep cost of 1 mana. If you play it on turn 1, that means at the beginning of your 2nd turn you will pay 1 mana or else you sacrifice it. On the third turn you pay 2 mana, turn 4 you pay 3 mana, just to keep the card around. 
+32. Cycling
+   1. Example card: Cast Out
+   2. Written as “Cycling [cost]
+   3. Whenever a card has cycling, you may pay the cycling cost and discard that card. Then you draw a new card. 
+   4. This is useful on cards that are good at certain points in the game, but bad at other points.
+   5. For example, the card Migration Path is good early on, when you want to get more lands out. But if you draw it while you already have 12 lands out, it’s typically better to pay 2 mana and get a different card. 
+   6. There are other kinds of cycling, such as “basic landcycling”, where you discard the card, but instead of just drawing a card, you get to search your library for any basic land card and put it into your hand. Very common in budget decks that run a lot of colors. See Ash Barrens.
+33. Dash
+   1. Example card: Ragavan, Nimble Pilferer
+   2. You may pay the dash cost for a creature, that creature gains haste and returns to your hand at the end of the turn. 
+   3. Helps you dodge sorcery speed removal spells, like board sweepers. 
+34. Daybound/Nightbound
+   1. Example card: Brutal Cathar
+   2. The day/night cycle must be introduced by a card with daybound/nightbound. Whenever a player plays 2 or more spells on their turn, it becomes day. If a player casts no spells during their turn, it becomes night. 
+   3. Cards with this mechanic transform or give some benefit to changing day to night or vice versa.
+35. Delve
+   1. Example card: Treasure Cruise
+   2. Delve allows you to exile cards from your graveyard to pay the generic mana cost of the card with delve.
+   3. For example, with Treasure Cruise if you have 12 cards in your graveyard, you may pay 1 blue mana and “delve” 7 cards to draw 3 cards while only paying 1 mana.
+   4. Considered one of the most “broken” mechanics in the game. Lets you cast VERY powerful spells far too cheaply if you can put lots of cards in your graveyard.
+36. Detain
+   1. Example card: Lavinia of the Tenth
+   2. Whenever a player “detains” a permanent, that permanent cannot attack, block, or activate abilities until the start of that player’s next turn. 
+37. Devour                
+   1. Example card: Predator Dragon
+   2. Written as “Devour X”, where X is a number
+   3. Whenever a creature with devour enters the battlefield, you may sacrifice any number of creatures you control. The creature with devour then gets X +1/+1 counters for each creature sacrificed this way. 
+38. Disturb
+   1. Example card: Lunarch Veteran
+   2. Written as “Disturb [cost]”
+   3. Whenever a card with disturb is in your graveyard, you may cast it for its disturb cost. When you do, it enters the battlefield transformed. 
+39. Dredge
+   1. Example card: Life from the Loam
+   2. Written as “Dredge X”, where X is a number
+   3. If a card with dredge is in your graveyard, instead of drawing a card, you may put the top X cards of your library into your graveyard where X number associated with the ability, and return the dredge card to your hand. 
+   4. For example, if you have a Life from the Loam in the graveyard, instead of drawing a card, you can put the top 3 cards of your library in the graveyard and put Life from the Loam back in your hand. 
+   5. Considered very broken, because it allows you to do crazy things with creatures that can automatically come back from the graveyard, such as Prized Amalgam. It is also often paired with delve to make casting insane cards very easy. 
+40. Echo
+   1. Example card: Avalanche Riders
+   2. Written as “Echo [cost]”
+   3. Whenever a card with echo comes into play under your control, you must pay the echo cost at the beginning of the next upkeep or sacrifice the creature. 
+   4. Old and “bad” mechanic. Just makes you have to pay a lot of mana to keep creatures around.
+41. Embalm
+   1. Example card: Aven Wind Guide
+   2. Written as “Embalm [cost]”
+   3. When a creature is in the graveyard, you may pay the embalm cost to exile that creature from your graveyard and make a token of it. 
+   4. You may only embalm at sorcery speed. 
+42. Emerge
+   1. Example card
+   2. Emerge allows you to sacrifice a creature and pay the difference between the sacrificed creature’s mana cost and the emerge cost.
+   3. Very similar to offering mechanic in that way.
+43. Entwine
+   1. Example card: Tooth and Nail
+   2. Written as “Entwine [cost]”
+   3. On cards with 2 options, it allows you to pay mana in addition to the casting cost to do both options. 
+44. Epic
+   1. Example card: Enduring Ideal
+   2. After a card with Epic resolves, you may no longer cast spells. Instead, it provides you with (typically), some insane benefit. 
+45. Escape
+   1. Example card: Cling to Dust
+   2. Written as “Escape [cost]”
+   3. You may cast a card from the graveyard for it’s escape cost by exiling a specified amount of other cards from your graveyard. 
+   4. For example, you may cast Cling to Dust for its escape cost and exiling 5 other cards as well. 
+46. Evoke
+   1. Example card: Mulldrifter
+   2. You may cast a card for its evoke cost, but when it enters the battlefield, it is immediately sacrificed. 
+   3. The evoke cost is usually much less than the cost of casting the card.
+   4. Also, for some reason, entirely on elemental creatures. Not sure what you’d do with that info, but there it is. 
+47. Evolve
+   1. Example card: Experiment One
+   2. Whenever a creature with power or toughness greater than a creature with evolve enters the battlefield, put a +1/+1 counter on the creature with evolve. 
+   3. If you play Experiment One on turn 1, then Watchwolf on turn 2, Experiment One will have a +1/+1 counter put on it.
+48. Exalted
+   1. Example card: Noble Hierarch
+   2. Whenever a creature you control attacks alone, it gets +1/+1 for each instance of exalted.
+   3. If you have 2 creatures with exalted, and one of them attacks alone, that is 2 instances of exalted, so that creatures ends up getting +2/+2.
+49. Exert
+   1. Example card: Glorybringer
+   2. When a creature with exert attacks, you may “exert” the card. If you do, it does not untap during its controller’s next untap step. Cards grant some ability when you exert them. 
+50. Exploit
+   1. Example card: Fell Stinger
+   2. Whenever you cast a card with exploit, as an additional cost, you may sacrifice a creature. If you do, you gain some benefit. 
+51. Explore
+   1. Example card: Merfolk Branchwalker
+   2. Whenever a creature with explore enters the battlefield, reveal the top card of your library. If it is a land card, put it into your hand. If it is a nonland card, you may put it into your graveyard. For each nonland card revealed this way, put a +1/+1 counter on the explore creature. 
+   3. One creature, Jadelight Ranger, has “explore, explore” in the textbox. That means it happens twice. If you reveal a nonland card from the top of your library on the first trigger and choose not to put it into your graveyard, Jadelight Ranger will get 2 counters. If the first card is a land card, and the second is a nonland card, it will get 1 counter, etc. 
+52. Extort
+   1. Example card: Blind Obedience
+   2. Whenever you cast a spell you may pay either white or black mana. If you do, each opponent loses 1 life and you gain life equal to the amount of life lost this way.
+   3. Because the white mana symbol on extort cards is in the reminder text, extort cards can be played in both monowhite and monoblack commander decks, depending on the casting cost. 
+53. Fabricated
+   1. Example card: Angel of Invention
+   2. Written as “Fabricate X”, where X is a number
+   3. Whenever a creature with fabricate enters the battlefield, you may either put X +1/+1 counters on that creature or create X 1/1 colorless servo creature tokens. 
+54. Fading
+   1. Example card: Tangle Wire
+   2. Written as “Fading X”, where X is a number
+   3. Cards with fading enter the battlefield with X fading counters on them. At the beginning of your upkeep, remove a fading counter from that permanent. If you cannot remove a fading counter, sacrifice that creature. 
+   4. Very similar to vanishing.
+      1. Vanishing is only different because when the last counter is removed, you sacrifice the card.
+      2. With fading, you keep the card one more turn until you “can’t remove a counter” during your upkeep.
+55. Fateseal
+   1. Example card: Spin into myth
+   2. When you “scry” on your opponents’ library. 
+   3. You are allowed to look at the top X cards of the opponent’s library, as dictated by the number in the keyword. You then decide what stays on top of the library and what goes to the bottom. 
+56. Fear
+   1. Example card: Dross Prowler
+   2. Only on black cards. 
+   3. The creature that has fear cannot be blocked except by black and artifact creatures. 
+57. Flanking
+   1. Example card: Benalish Cavalry
+   2. Whenever a creature with flanking is blocked, the blocking creature gets -1/-1 until the end of the turn. 
+   3. Older mechanic; rare and not all that good. 
+58. Flashback
+   1. Example card: Faithless Looting
+   2. Written as “Flashback [cost]”
+   3. When a card with flashback is in the graveyard, you may cast it for its flashback cost, then exile it. 
+   4. This mechanic allows you to get 2 uses out of a spell, or it can be paired with dredge to let you cast spells from the graveyard.
+   5. Some cards have wildly different flashback costs, like Smiting Helix.
+59. Flip
+   1. Example card: Erayo, Soratami Ascendant
+   2. Flip cards are turned upside-down when a certain condition is met. 
+   3. They are not turned face-down, but rotated 180 degrees.
+   4. Only on cards from the original Kamigawa block. 
+60. Forecast
+   1. Example card: Proclamation of Rebirth
+   2. Written as “Forecast [cost]”
+   3. During your upkeep, you may pay the forecast cost and reveal the forecast card from your hand, then the ability from forecast resolves. 
+   4. Used to get value from a card without losing the card, so you can keep accruing value over several turns. 
+61. Foretell
+   1. Example card: Doomskar
+   2. Written as “Foretell [cost]”
+   3. During your turn, at any time, you may pay 2 to “foretell” a card. You may cast that card for its foretell cost on a later turn.
+   4. If you foretell a card, you cannot cast it on the same turn you foretell it. 
+62. Frenzy
+   1. Example card: Frenzy Sliver
+   2. Written as “Frenzy X” where X is a number
+   3. Whenever a creature with frenzy attacks and isn’t blocked, it gets +X/+0 until the end of turn. 
+   4. Only on one card, the example card. 
+63. Graft
+   1. Example card: Plaxcaster Frogling
+   2. Written as “Graft X” where X is a number
+   3. All creatures with graft are 0/0s that enter the battlefield with X +1/+1 counters on them equal to the graft number. Whenever another creature enters the battlefield, creatures with graft may move one of their counters to the new creature. 
+64. Gravestorm
+   1. Example card: Bitter Ordeal
+   2. When the spell is cast, copy it for each permanent that entered the graveyard this turn.
+   3. Only on one card with the mechanic.
+65. Haunt
+   1. Example card: Belfry Spirit
+   2. Once a creature or spell with haunt enters the graveyard, it is exiled and then attached to a creature on the battlefield to “haunt it”.
+   3. All cards with the haunt mechanic have an enter the battlefield trigger that is the same as the haunt trigger. The haunt trigger occurs when the “haunted” creature is put into the graveyard. 
+66. Hideaway
+   1. Example card: Mosswort Bridge
+   2. When a card with hideaway enters the battlefield, you look at the top 4 cards of your library. Exile one card under the hideaway permanent. Then, when a condition is met, you cast the exiled card without paying its mana cost. 
+   3. Only on 5 cards from a set called Lorwyn, and one creature from a special set. The creature doesn’t let you cast the spell for free though, so it’s kind of different. 
+   4. There are 5 hideaway lands, Windbrisk Heights, Shelldock Isle, Howltooth Hollow, Spinerock Knoll, and Mosswort Bridge. Very common in commander.
+67. Horsemanship
+   1. Example card: Sun Quan, Lord of Wu
+   2. Horsemanship is like flying. Creatures with horsemanship can’t be blocked by creatures without horsemanship, unless explicitly stated otherwise. 
+   3. Only from an old set called Portal: 3 Kingdoms. Set in the 3 Kingdoms era in China. Was originally meant to try to get asian people into magic. Very rare nowadays, some very expensive cards in it. 
+68. Imprint
+   1. Example card: Extraplanar Lens
+   2. Written as “Imprint [something]”
+   3. When a card with imprint enters the battlefield, it can have you exile almost anything, then gives you some boon based on that.
+   4. Isochron Scepter and Mimic Vat are very popular in commander. 
+69. Indestructible
+   1. Example card: Avacyn, Angle of Hope
+   2. Creatures with indestructible cannot be removed from the battlefield by effects that say “destroy” nor damage.
+   3. You can remove indestructible creatures and permanents by exile effects (Swords to Plowshares), -1/-1 effects (Toxic Deluge), and bounce effects (Cyclonic Rift).
+   4. Weird thing about indestructible: If you deal “lethal damage” to an indestructible creature, then use a -1/-1 effect, it will die. If you do it the other way around, -1/-1 then damage, it won’t die. Rarely comes up, but something to know.
+70. Inspired
+   1. Example card: King Macar, the Gold-Cursed
+   2. Whenever a card with inspired becomes untapped, something happens.
+71. Investigate
+   1. Example card: Thraben Inspector
+   2. Whenever a card investigates, create a clue tokens.
+   3. Clue tokens have “Pay 2 mana and sacrifice this artifact, draw a card.” 
+72. Jump-start
+   1. Example card: Radical Idea
+   2. Cards with Jump-start may be cast from the graveyard by paying their mana cost and discarding a card.
+73. Kicker
+   1. Example card: Tourach, Dread Cantor
+   2. Written as “Kicker [cost]”
+   3. When you cast a spell, you may also pay the kicker cost to have an additional effect happen. 
+   4. It’s become a joke that all other mechanics are just kicker or flashback, so this is the main mechanic most branch off of. 
+   5. Variant of Kicker called multikicker:
+      1. You may pay the kicker cost any number of times.
+74. Level up
+   1. Example card: Lighthouse Chronologist
+   2. Cards with level up enter the battlefield at level 0. You may pay the level up cost to put a level counter on that creature. As creatures “gain experience (level up)”, they gain more abilities. 
+   3. You may only level up as a sorcery, but may do so as many times as you want per turn.
+75. Landwalk 
+   1. Example card: Benthic Behemoth
+   2. Written as “plainswalk” or “islandwalk”,etc
+   3. Creatures with landwalk cannot be blocked if the defending player has a land that is the type mentioned in the ability. 
+   4. For example, a merfolk with islandwalk cannot be blocked by another creature, even if that creature also has islandwalk. 
+76. Living Weapon
+   1. Example card: Batterskull
+   2. Cards with living weapon are equipment. When they enter the battlefield, they generate a 0/0 black germ creature token, and attach themselves to that creature. 
+   3. Since the germs have no abilities and are 0/0 creatures, they will die if the equipment becomes unattached (without improving their toughness or something of course).
+77. Madness
+   1. Example card: Basking Rootwalla
+   2. Written as “Madness [cost]”
+   3. When a spell with madness is discarded, it is exiled. Then, you may cast that card for it’s madness cost. If you don’t cast it, it is then moved to the graveyard. 
+78. Manifest
+   1. Example card: Reality Shift
+   2. Written as “Manifest [one or more cards]”
+   3. Manifested cards are face-down 2/2 creatures, just like morphs. Manifested creatures may be turned face up for their mana cost.
+   4. If a card with morph is manifested, you may use the morph cost/ability instead of the casting cost. 
+79. Meld
+   1. Example card: Brisela, Voice of Nightmares
+   2. 2 cards can be melded together to create a single creature.
+   3. Only in one set, not many cards.
+80. Mentor
+   1. Example card: Legion Warboss
+   2. Whenever a card with mentor attacks, put a +1/+1 counter on target attacking creature with less power than the mentor creature. 
+   3. If for some reason, a mentor card is put into the battlefield attacking, it does not trigger mentor. The act of declaring it as an attacker is what triggers mentor, not the fact that it is attacking. 
+81. Miracle
+   1. Example card: Temporal Mastery
+   2. You may cast a card for its miracle cost if it is the first card you draw in a turn.
+   3. Since the timing on miracles is different, if you draw a sorcery on an opponent’s turn and it has miracle, you may cast it for its miracle cost, even though it is a sorcery. 
+   4. Miracles are very strong in eternal formats where the top of the library can be more easily manipulated. 
+82. Modular
+   1. Example card: Arcbound Mouser
+   2. Written as “Modular X”, where X is a number
+   3. Creatures with modular enter with X +1/+1 counters. When a creature with modular dies, it’s counters may be moved to another target artifact creature. 
+83. Monstrosity
+   1. Example card: Fleecemane Lion
+   2. Written as “[cost]: Monstrosity X”, where X is a number
+   3. As long as a card has not already become monstrous, you may pay the monstrosity cost and put X +1/+1 counters on that creature. 
+   4. Creatures with monstrosity typically have another benefit than just counters. 
+   5. The monstrosity cost can be activated at any time, so if an opponent is going to target Fleecemane Lion with a “destroy” spell, you can make it monstrous in response to keep it from dying. 
+84. Morph and Megamorph
+   1. Example card: Ainok Survivalist
+   2. Written as “Morph [cost]”
+   3. You may pay 3 generic mana and put a card with morph onto the battlefield face down as a colorless 2/2 creature. Then you may pay the morph cost to flip the card face up. 
+   4. This is a special action and cannot be stopped.
+   5. Morph cards often have a special ability that happens when turned face up. You can stop those with cards like Stifle.
+   6. The only difference between morph and megamorph is that megamorph creatures get a +1/+1 counter when turned face up. 
+85. Mutate
+   1. Example card: Dirge Bat
+   2. Written as “Mutate [cost]”
+   3. Creatures may be cast for their mutate cost if targeting a non-human creature you control to mutate onto. 
+   4. When a creature mutates onto a creature, you choose whether or not to place it on top or bottom of the creature on the battlefield. 
+   5. Cards on top of the mutate pile determine the power and toughness of the “mutate pile”.
+   6. The card on top also has all of the abilities of the creatures below them on the pile. 
+   7. For example, if you have a 2/2 bird creature token, and mutate Migratory Greathorn on top of it, you will have a 3/4 creature with flying. The creature will be Migratory Greathorn, but it will have flying because the creature below it has flying.This process can be done several times and have several creatures in a “mutate pile”, which is why it can get so complicated.
+   8. If the creature you’re trying to mutate onto gets removed, the creature with mutate will still enter the battlefield. 
+86. Ninjutsu
+   1. Example card: Ninja of the Deep Hours
+   2. Written as “Ninjutsu [cost]”
+   3. You may return an unblocked attacking creature you control and put a ninja down in its’ place, attacking.
+   4. Essentially, you just exchange attackers. Most ninjas have triggers that happen when they deal damage, which is good because you are having them deal damage when they enter during combat.
+   5. When using the ninjutsu ability, it is not casting the spell, so it can’t be countered by cards like Counterspell, but they can also be stopped by cards like Containment Priest.
+87. Offering
+   1. Example card: Patron of the Kitsune
+   2. Written as “[creature type] offering”
+   3. Creatures with offering may be cast as though it has flash if you sacrifice a creature of the appropriate type. Also, the mana cost is altered based on what you sacrifice. For example, Patron of the Orochi has snake offering and a mana cost of 6 generic and 2 green. If you cast it sacrificing a snake with mana cost of 2 generic and a green, you only have to pay 4 generic and 1 green. You just subtract the sacrificed creatures cost from the cost of the new creature.
+88. Overload
+   1. Example card: Vandalblast
+   2. Written as “Overload [cost]”
+   3. When an instant or sorcery is overloaded, instead of targeting 1 target, it affects all targets.
+   4. Vandalblast specifically says, “target artifact you don’t control”. When overloaded, it destroys all artifacts your opponents control. If something can only target opponent’s cards, the overloaded version will also only affect opponents cards. The opposite is also true. 
+89. Persist
+   1. Example card: Kitchen Finks
+   2. If a creature with persist is put into a graveyard from play and had no -1/-1 counters on it, return it to the battlefield with a -1/-1 counter.
+   3. Doubles up enter the battlefield triggers and death triggers and stuff. 
+   4. Easy to combo with.
+90. Phasing
+   1. Example card: Sandbar Crocodile
+   2. Old and complicated mechanic
+   3. Cards that are phased out are treated as though they don’t exist. Any auras and equipment attached do not fall off and are phased out with the creature. It’s similar to exile, but the creatures return at the beginning of their controller’s upkeep. 
+   4. Creatures with phasing both phase in and out at your upkeep, so one turn the are in, the next they are out, then so-on and so-forth. 
+   5. Phasing does not cause enter the battlefield triggers to happen again, as they don’t technically leave the battlefield. 
+91. Poisonous
+   1. Example card: Virulent Sliver
+   2. Written as “Poisonous X”, where X is a number
+   3. Whenever a creature with poisonous deals damage to a player, that player gets X poison counters, where X is the number associated with the ability. If a player has 10 poison counters, they lose the game.
+   4. Largely been replaced by infect
+      1. Infect also used poison counters, but creatures with infect put a number of poison counters on a player equal to that creatures power.
+      2. Creatures with infect don’t deal normal damage. They also deal damage to other creatures as -1/-1 counters instead of normal damage.
+92. Populate
+   1. Example card: Growing Ranks
+   2. Make a copy of a creature token you control.
+93. Proliferate
+   1. Example card: Grateful Apparition
+   2. Whenever you proliferate, you may add an additional counter to anything that already has a counter.
+   3. This includes +1/+1 counters, loyalty counters, poison counters, etc. Basically all counters. 
+   4. Great way to lose to poison or infect. 
+   5. You can only add an ADDITIONAL counter. If something does not have a counter, one cannot be placed onto it. 
+94. Provoke
+   1. Example card: Lowland Tracker
+   2. When a creature with provoke attacks, its controller may target a creature defending player controls. Then, untap that creature (if applicable). That creature must block the attacking creature with provoke. 
+   3. They mostly suck in general. 
+95. Prowl
+   1. Example card: Latchkey Faerie
+   2. Written as “Prowl [cost]”
+   3. A creature may be cast for its prowl cost, only if a creature that shares a creature type dealt damage to a player this turn. 
+96. Rampage
+   1. Example card: Craw Giant
+   2. Written as “Rampage X”, where X is a number.
+   3. Whenever a creature with rampage is blocked, it gets +X/+X until end of turn for each creature blocking it. 
+97. Rebound
+   1. Example card: Ephemerate
+   2. Whenever you cast a card with rebound, exile it. You may cast that card again without paying its mana cost on your next upkeep. 
+98. Recover
+   1. Example card: Icefall
+   2. Written as “Recover [cost]”
+   3. Whenever a creature is put into a player’s graveyard from the battlefield, all cards with recover trigger. You may then pay the recover cost for each card and return it to your hand. If you do not or cannot pay the cost, the card is exiled instead.
+99. Reinforce
+   1. Example card: Burrenton Bombardier
+   2. Written as “Reinforce: X  - [cost]”, where X is a number
+   3. You may discard a card with reinforce from your hand and pay the reinforce cost, then put X +1/+1 counters on target creature 
+100. Renown
+   1. Example card: Scab-Clan Berserker
+   2. Written as “Reinforce X”, where X is a number.
+   3. Whenever a creature with renown deals combat damage to a player for the first time, put X +1/+1 counters on it. It then becomes renown.
+   4. Most creatures with renown have an ability that only becomes active once it has become renown. 
+101. Replicate
+   1. Example card: Shattering Spree
+   2. Written as “Replicate [cost]”
+   3. Whenever you cast a spell, you may pay its replicate cost any number of times. If you do, copy that spell for each time you paid the replicate cost. 
+102. Retrace
+   1. Example card: Oona’s Grace
+   2. Cards with retrace may be cast from the graveyard if you discard a land card in addition to paying their other costs. 
+   3. Unlike most other versions of this, they are not exiled once cast from the graveyard, so you can keep retracing them as long as you have lands and mana. 
+103. Riot
+   1. Example card: Gruul Spellbreaker
+   2. Whenever a creature with riot enters the battlefield, its controller chooses for it to enter with either a +1/+1 counter and haste. 
+104. Ripple
+   1. Example card: Surging Dementia
+   2. Written as “Ripple X”, where X is a number
+   3. When a spell is cast with Ripple, its controller may reveal the top X cards of their library and cast any copies of that card without paying the mana cost. This triggers ripple again. 
+   4. Considered a pretty bad mechanic. Funnily enough, one card, Thrumming Stone, is very good. If you have a card that can have any number of them in your deck and you have just a ton of those cards packed in, it will usually win you the game. 
+105. Scavenge
+   1. Example card: Deadbridge Goliath
+   2. Written as “Scavenge [cost]”
+   3. You may exile a card with scavenge from your graveyard by paying it’s scavenge cost. Then, place a number of +1/+1 counters on target creature. 
+106. Shadow
+   1. Example card: Dauthi Cutthroat
+   2. Creatures with shadow can only block or be blocked by other creatures with shadow. 
+107. Shroud
+   1. Example card: Argothian Enchantress
+   2. Creatures with shroud cannot be the target of spells or abilities. 
+   3. That includes all players.
+108. Soulbond
+   1. Example card: Deadeye Navigator
+   2. Creatures with souldbond enter the battlefield and bond to another creature. Both creatures then gain some boon.
+109. Soulshift 
+   1. Example card: Elder Pine of Jukai
+   2. Written as “Soulshift X”, where X is a number
+   3. Whenever a creature with soulshift is put into the graveyard, its controller may return a spirit card from the graveyard to their hand with mana value X or less. 
+110. Spectacle
+   1. Example card: Light up the Stage
+   2. Written as “Spectacle [cost]”
+   3. You may cast a card for its spectacle cost if an opponent was dealt damage this turn.
+111. Splice
+   1. Example card: Everdream
+   2. Written as “Splice onto X”, where X is a card type
+   3. When you cast a card of the specified type, you may pay the splice cost and reveal that card. The effect of the revealed card is then “tacked onto” the spell being cast.
+   4. Lets you repeatedly “cast” a card without actually casting it. 
+112. Split Second
+   1. Example card: Angel’s Grace
+   2. A card with split second cannot be interacted with. Once it is on the stack, nothing else can be put there until it has resolved.
+113. Storm
+   1. Example card: Grapeshot
+   2. Whenever a card with storm is cast, copy it for each spell cast before it this turn.
+   3. For example, if you cast 2 lightning bolts and then a Grapeshot, there are actually 3 copies of grapeshot because it is copied 2 times from the 2 lightning bolts cast before it. 
+114. Sunburst
+   1. Example card: Engineered Explosives
+   2. A card with sunburst enters with a counter on it for each color of mana used to cast the spell. 
+   3. If a card with sunburst cost 5 generic mana, and you spend 3 green mana and 2 black mana, it only gets 2 counters. If you spend one of every color of mana, it gets 5 counters. 
+115. Support
+   1. Example card: Generous Patron
+   2. Written as “Support X”, where X is a number
+   3. When the ability resolves, place a +1/+1 counter on up to X target creatures.
+   4. You do not have to place them on your creatures. 
+116. Surveil
+   1. Example card: Notion Rain
+   2. Written as “Surveil X”, where X is a number
+   3. When the ability resolves, look at the top X cards of your library. You may put any number into your graveyard and rest back on top of your library in any order. 
+   4. Similar to scry, except you cannot put the spells on the bottom of your library. 
+117. Suspend
+   1. Example card: Rift Bolt
+   2. Written as “Suspend X [cost]”, where X is a number
+   3. You may pay the suspend cost for a card and exile it with X time counters on it. At the beginning of your upkeep, remove a time counter from the card. When the last time counter is removed, you may then cast that spell without paying its mana cost. 
+   4. Creatures with suspend enter the battlefield with haste. 
+   5. If a card does not have a mana cost and only has suspend, it cannot be cast without suspend unless another spell permits you to cast it without paying its mana cost. 
+118. Totem Armor
+   1. Example card: Bear Umbra
+   2. Totem Armor is only on auras.
+   3. If a creature attached with an aura that has Totem Armor would die, instead, the aura is destroyed instead. 
+   4. If multiple Totem Armor auras are attached to a creature that would be destroyed, you may choose one that is destroyed and keep the rest. 
+119. Transfigure
+   1. Example card: Fleshwrither
+   2. Written as “Transfigure [cost]”
+   3. Any time a sorcery could be cast, you may pay the transfigure cost and sacrifice the creature with transfigure to search your library for a creature with the same mana value. 
+   4. Only on one card.
+120. Transform
+   1. Example card: Aberrant Researcher // Perfected Form
+   2. Applies to double-faced cards. When some condition is met, you may transform a card from its front side to its back side. 
+   3. What causes a transformation varies widely from in-game actions to mana costs. 
+121. Transmute
+   1. Example card: Muddle the Mixture
+   2. Written as “Transmute [cost]”
+   3. When you transmute a card, you pay the transmute cost and discard that card, then search your library for a card with the same mana value. 
+122. Tribute
+   1. Example card: Fanatic of Xenagos
+   2. Written as “Tribute X”, where X is a number.
+   3. Whenever a creature with tribute enters the battlefield, an opponent may pay “tribute” by putting X +1/+1 counters on it. If the tribute is not paid, some other effect will occur. 
+123. Undying
+   1. Example card: Young Wolf
+   2. When a creature with undying is put into the graveyard, if it had no +1/+1 counters, return it to the battlefield with a +1/+1 counter. 
+   3. Yes, this is persist with +1 counters instead of -1 counters.
+124. Unearth
+   1. Example card: Dregscape Zombie
+   2. Written as “Unearth [cost]”
+   3. When a creature with unearth is in the graveyard, you may pay the unearth cost any time you could play a sorcery. Return that creature to the battlefield, and it gains haste. Exile it at the end step. 
+125. Unleash
+   1. Example card: Rakdos Cackler
+   2. When a creature with unleash enters the battlefield, its controller may choose to have it enter with a +1/+1 counter on it. If a creature with unleash has a counter on it, it cannot block.
+   3. The counter does not have to come from unleash, it’s any +1/+1 counter. 
+126. Wither
+   1. Example card: Harvest Gwyllion
+   2. Wither is a replacement effect. If a creature would be dealt nonlethal damage by a creature with wither, it instead has -1/-1 counters placed on it instead of marking normal damage. 
+   3. This is similar to infect, but players do not receive poison counters from creatures with wither. 
+Ability Keywords
+1. Addendum
+   1. Example card: Emergency Powers
+   2. Cards with addendum have an added effect if cast in your main phase. 
+2. Battalion
+   1. Example card: Legion Loyalist
+   2. Creatures with battalion have an additional effect trigger if they attack with at least 2 other creatures
+3. Chroma
+   1. Example card: Fiery Bombardment
+   2. Cards with chroma check for specific mana symbols in specific zones, then give a benefit or effect based on that.
+4. Domain
+   1. Example card: Prismatic Geoscope
+   2. Cards with domain have some effect related to the number of basic land types you control. Some good effects, some bad effects. 
+5. Enrage
+   1. Example card: Ranging Raptors
+   2. Only on creatures.
+   3. If a creature with enrage is dealt damage, some type of trigger will occur. 
+6. Fateful Hour
+   1. Example card: Break of Day
+   2. Cards with fateful hour gain an additional ability if it’s controller is at 5 or less life. 
+7. Ferocious
+   1. Example card: Wild Slash
+   2. Cards with ferocious gain an additional ability if their controller also controls a creature with more than 4 power. 
+8. Grandeur
+   1. Example card: Baru, Fist of Krosa
+   2. Very few cards with this and they are bad.
+   3. Allows you to discard a card with the same name to give it a bonus.
+9. Hellbent
+   1. Example card: Infernal Tutor
+   2. Cards with hellbent give some additional boon or greater effect if you have no cards in hand when the card resolves.
+   3. If you cast the card, and while it is on the stack, you somehow discard your hand, you will still get the hellbent ability even though you had cards when you cast it. It only checks once the card is going to resolve. 
+10. Heroic
+   1. Example card: Fabled Hero
+   2. Cards with heroic grant some additional benefit when targeted with a spell.
+11. Join forces
+   1. Example card: Collective Voyage
+   2. Cards with join forces allow all players to contribute mana towards some effect. 
+   3. Meant for commander/multiplayer games.
+12. Kinship
+   1. Example card: Pyroclast Consul
+   2. On your upkeep, if you control a card with kinship, you may look at the top card of your library. If it is a creature that shares a type with the kinship creature on the battlefield, you may reveal it for some effect. 
+13. Landfall
+   1. Example card: Khalni Heart Expedition
+   2. Cards with landfall have some ability that triggers when a land enters the battlefield. 
+14. Metalcraft
+   1. Example card: Puresteel Paladin
+   2. Cards with metalcraft gain an additional benefit if it’s controller controls 3 or more artifacts. 
+15. Morbid
+   1. Example card: Tragic Slip
+   2. Cards with morbid gain some effect if a creature died that turn.
+16. Radiance 
+   1. Example card: Rally the Righteous
+   2. Basically, if you target a permanent with a spell, that spell affects all permanents of the same type that share a color. 
+   3. If you have 5 white creatures and cast Rally the Righteous on one, the other 4 with also get +3/+3
+17. Raid
+   1. Example card: Bloodsoaked Champion
+   2. Cards with raid get some effect if their controller attacked before playing them.
+18. Rally
+   1. Example card: Lantern Scout
+   2. Cards with rally have some effect trigger whenever a creature with the type Ally enters the battlefield.
+19. Sweep        
+   1. Example card: Charge Across the Araba
+   2. When you cast a spell with sweep, you may return any number of lands with the basic land type as dictated by the card. Some effect is gained from this. 
+   3. Not a good mechanic. 
+   4. Only in old Kamigawa sets.
+20. Threshold
+   1. Example card: Nimble Mongoose
+   2. Cards with threshold gain some effect when you have 7 or more cards in the graveyard. 
+21. Undergrowth
+   1. Example card: Kraul Foragers
+   2. Cards with undergrowth have effects dependent on the amount of creatures in your graveyard.
