@@ -159,6 +159,7 @@ TYPEWORDS = {"basic", "legendary", "snow", "world", "tribal", "kindred", "artifa
 def is_typeline(seg):
     """a short segment made only of type words and Capitalised subtypes ('Elf Druid creature.', 'Basic Land - Island', 'Instant'), no verbs, no punctuation but a dash"""
     w = re.sub(r"[.—–-]+", " ", seg).split()
+    if w and w[0].lower() in ("enchant", "equip", "fortify", "reconfigure"): return False     # 'Enchant creature' is a rules line, not a type line
     return 0 < len(w) <= 6 and ":" not in seg and any(x.lower() in TYPEWORDS for x in w) and all(x.lower() in TYPEWORDS or x[0].isupper() for x in w)
 
 

@@ -111,13 +111,14 @@
    "selection",
    "target_count:one",
    "target_type:creature",
+   "pump_amount:+3/+1",
    "scry"
   ],
   "name_leak": false
  },
  "c004": {
-  "sim": 0.516,
-  "cosine": 0.623,
+  "sim": 0.536,
+  "cosine": 0.673,
   "concept_f1": 0.667,
   "number_f1": 0.0,
   "missing": [
@@ -136,7 +137,7 @@
   "extra_numbers": [],
   "name": "Rancor",
   "orig": "Enchant creature / Enchanted creature gets +2/+0 and has trample. / When Rancor is put into a graveyard from the battlefield, return Rancor to its owner's hand.",
-  "reco": "Enchanted creature has Trample. / When this Aura dies, return it to {zone}.",
+  "reco": "Enchant creature / Enchanted creature has Trample. / When this Aura dies, return it to {zone}.",
   "rank": 2,
   "band": "partial",
   "has_text": true,
@@ -159,6 +160,10 @@
    "target_type:creature",
    "trample",
    "recursion",
+   "static_pump",
+   "pump_amount:+2/+0",
+   "static_grant:trample",
+   "affected_type:creature",
    "trigger_scope:self",
    "trigger:dies",
    "trigger_zone:graveyard",
@@ -295,7 +300,7 @@
   "name": "Feign Death",
   "orig": "Until end of turn, target creature gains \"When this creature dies, return it to the battlefield tapped under its owner's control with a +1/+1 counter on it.\"",
   "reco": "Return target creature card from a graveyard to the battlefield, transformed.",
-  "rank": 22,
+  "rank": 21,
   "band": "gap",
   "has_text": true,
   "empty_reco": false,
@@ -310,13 +315,14 @@
    "reanimate",
    "target_count:one",
    "target_type:creature",
-   "transform"
+   "grant_ability",
+   "granted_trigger:dies"
   ],
   "name_leak": false
  },
  "c009": {
-  "sim": 0.552,
-  "cosine": 0.381,
+  "sim": 0.649,
+  "cosine": 0.623,
   "concept_f1": 1.0,
   "number_f1": 0.0,
   "missing": [],
@@ -328,7 +334,7 @@
   "name": "Dusk Legion Zealot",
   "orig": "When Dusk Legion Zealot enters, you draw a card and you lose 1 life.",
   "reco": "When this creature enters, you draw a card and you lose N life.",
-  "rank": 5,
+  "rank": 1,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -348,13 +354,14 @@
    "trigger:etb",
    "tempo:+1",
    "draw_count:1",
+   "life_loss_amount:1",
    "life_loss"
   ],
   "name_leak": false
  },
  "c010": {
-  "sim": 0.785,
-  "cosine": 0.605,
+  "sim": 0.767,
+  "cosine": 0.559,
   "concept_f1": 0.857,
   "number_f1": 1.0,
   "missing": [
@@ -426,6 +433,7 @@
    "draw",
    "target_count:one",
    "target_type:creature",
+   "grant_kw:deathtouch",
    "draw_count:1"
   ],
   "name_leak": false
@@ -494,7 +502,12 @@
   "tags": [
    "cardtype:creature",
    "type:human",
-   "type:knight"
+   "type:knight",
+   "static_pump",
+   "pump_amount:+1/+1",
+   "affected_type:creature",
+   "affected_filter:other",
+   "affected_scope:you_control"
   ],
   "name_leak": false
  },
@@ -553,7 +566,7 @@
   "name": "Captain Ripley Vance",
   "orig": "Whenever you cast your third spell each turn, put a +1/+1 counter on Captain Ripley Vance, then it deals damage equal to its power to any target.",
   "reco": "Whenever you cast a spell, put a +1/+1 counter on {object} and this creature deals X damage to any target.",
-  "rank": 2,
+  "rank": 1,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -578,10 +591,13 @@
    "trigger_filter:card",
    "trigger_filter:you",
    "trigger_filter:ctrl",
+   "counter_count:1",
    "counter:p1p1",
    "target_count:one",
    "target_type:any",
-   "damage"
+   "damage",
+   "damage_amount:x",
+   "x_is:own_power"
   ],
   "name_leak": false
  },
@@ -597,7 +613,7 @@
   "name": "Lightning Strike",
   "orig": "Lightning Strike deals 3 damage to any target.",
   "reco": "This spell deals 3 damage to any target.",
-  "rank": 1,
+  "rank": 2,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -647,13 +663,14 @@
    "cardtype:instant",
    "draw",
    "lifegain",
+   "lifegain_amount:3",
    "draw_count:1"
   ],
   "name_leak": false
  },
  "c018": {
-  "sim": 1.0,
-  "cosine": 1.0,
+  "sim": 0.916,
+  "cosine": 0.79,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -680,6 +697,9 @@
    "draw",
    "mana_source",
    "enters_tapped",
+   "replacement",
+   "replace_event:moved",
+   "replace_with:tap",
    "cost:tap",
    "mana:blue",
    "mana_amount:1"
@@ -721,7 +741,8 @@
    "target_count:one",
    "target_type:creature",
    "target_type:land",
-   "target_zone:graveyard"
+   "target_zone:graveyard",
+   "lifegain_amount:6"
   ],
   "name_leak": false
  },
@@ -757,7 +778,8 @@
    "cardtype:instant",
    "tap_down",
    "target_count:x",
-   "target_type:creature"
+   "target_type:creature",
+   "duration:permanent"
   ],
   "name_leak": false
  },
@@ -831,8 +853,8 @@
   "name_leak": false
  },
  "c023": {
-  "sim": 0.879,
-  "cosine": 0.697,
+  "sim": 1.0,
+  "cosine": 1.0,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -842,7 +864,7 @@
   "name": "Charcoal Diamond",
   "orig": "Charcoal Diamond enters tapped. / {T}: Add {B}.",
   "reco": "This artifact enters tapped. / {T}: Add {B}.",
-  "rank": 8,
+  "rank": 1,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -856,7 +878,10 @@
    "enters_tapped",
    "cost:tap",
    "mana:black",
-   "mana_amount:1"
+   "mana_amount:1",
+   "replacement",
+   "replace_event:moved",
+   "replace_with:tap"
   ],
   "name_leak": false
  },
@@ -890,8 +915,8 @@
   "name_leak": false
  },
  "c025": {
-  "sim": 1.0,
-  "cosine": 1.0,
+  "sim": 0.87,
+  "cosine": 0.676,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -1044,7 +1069,7 @@
   "name": "Fact or Fiction",
   "orig": "Reveal the top five cards of your library. An opponent separates those cards into two piles. Put one pile into your hand and the other into your graveyard.",
   "reco": "Mill N cards. / Search your library for a {type} card and put it {zone}.",
-  "rank": 32,
+  "rank": 30,
   "band": "gap",
   "has_text": true,
   "empty_reco": false,
@@ -1059,7 +1084,11 @@
   "tags": [
    "cardtype:instant",
    "self_mill",
-   "tutor"
+   "tutor",
+   "look_top:5",
+   "reveal",
+   "piles_split",
+   "pile_separator:opponent"
   ],
   "name_leak": false
  },
@@ -1078,7 +1107,7 @@
   "name": "Sengir Vampire",
   "orig": "Flying (This creature can't be blocked except by creatures with flying or reach.) / Whenever a creature dealt damage by Sengir Vampire this turn dies, put a +1/+1 counter on Sengir Vampire.",
   "reco": "Flying / Whenever another creature dies, put a +1/+1 counter on {object}.",
-  "rank": 3,
+  "rank": 2,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -1098,6 +1127,7 @@
    "trigger_scope:other",
    "trigger:dies",
    "trigger_zone:graveyard",
+   "counter_count:1",
    "counter:p1p1"
   ],
   "name_leak": false
@@ -1182,8 +1212,8 @@
   "name_leak": false
  },
  "c033": {
-  "sim": 0.824,
-  "cosine": 0.833,
+  "sim": 0.731,
+  "cosine": 0.601,
   "concept_f1": 0.727,
   "number_f1": 1.0,
   "missing": [
@@ -1231,7 +1261,7 @@
   "name": "Phyrexian Rager",
   "orig": "When Phyrexian Rager enters, you draw a card and you lose 1 life.",
   "reco": "When this creature enters, you draw a card and you lose N life.",
-  "rank": 3,
+  "rank": 4,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -1251,6 +1281,7 @@
    "trigger:etb",
    "tempo:+1",
    "draw_count:1",
+   "life_loss_amount:1",
    "life_loss"
   ],
   "name_leak": false
@@ -1269,7 +1300,7 @@
   "name": "Rise from the Grave",
   "orig": "Put target creature card from a graveyard onto the battlefield under your control. That creature is a black Zombie in addition to its other colors and types.",
   "reco": "Return target creature card from a graveyard to the battlefield.",
-  "rank": 15,
+  "rank": 16,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -1432,7 +1463,10 @@
   "tags": [
    "cardtype:enchantment",
    "haste",
-   "haste_grant"
+   "haste_grant",
+   "static_grant:haste",
+   "affected_type:creature",
+   "affected_scope:you_control"
   ],
   "name_leak": false
  },
@@ -1540,7 +1574,7 @@
   "name": "Priest of Titania",
   "orig": "{T}: Add {G} for each Elf on the battlefield.",
   "reco": "{T}: Add X {G}, where X is the number of Elves you control.",
-  "rank": 23,
+  "rank": 25,
   "band": "gap",
   "has_text": true,
   "empty_reco": false,
@@ -1583,7 +1617,7 @@
   "name": "Leafkin Druid",
   "orig": "{T}: Add {G}. If you control four or more creatures, add {G}{G} instead.",
   "reco": "{T}: Add X {G}.",
-  "rank": 15,
+  "rank": 17,
   "band": "gap",
   "has_text": true,
   "empty_reco": false,
@@ -1605,8 +1639,8 @@
   "name_leak": false
  },
  "c044": {
-  "sim": 0.517,
-  "cosine": 0.459,
+  "sim": 0.494,
+  "cosine": 0.401,
   "concept_f1": 0.333,
   "number_f1": 1.0,
   "missing": [
@@ -1621,7 +1655,7 @@
   "name": "Dark Bargain",
   "orig": "Look at the top three cards of your library. Put two of them into your hand and the other into your graveyard. Dark Bargain deals 2 damage to you.",
   "reco": "This spell deals 2 damage to {target}.",
-  "rank": 9,
+  "rank": 13,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -1635,6 +1669,9 @@
   "tags": [
    "cardtype:instant",
    "selection",
+   "look_top:3",
+   "take_count:2",
+   "rest_dest:graveyard",
    "damage",
    "damage_amount:2"
   ],
@@ -1707,6 +1744,7 @@
    "token_make",
    "trigger_scope:self",
    "trigger:etb",
+   "lifegain_amount:5",
    "trigger:leaves",
    "tempo:+0.5",
    "token_count:1",
@@ -1717,8 +1755,8 @@
   "name_leak": false
  },
  "c047": {
-  "sim": 0.622,
-  "cosine": 0.438,
+  "sim": 0.635,
+  "cosine": 0.471,
   "concept_f1": 0.615,
   "number_f1": 1.0,
   "missing": [
@@ -1734,7 +1772,7 @@
   "name": "Syr Konrad, the Grim",
   "orig": "Whenever another creature dies, or a creature card is put into a graveyard from anywhere other than the battlefield, or a creature card leaves your graveyard, Syr Konrad, the Grim deals 1 damage to each opponent. / {1}{B}: Each player mills a card.",
   "reco": "Whenever {another event}, this creature deals 1 damage to {target}. / Whenever another creature dies, {effect}. / {cost}: {effect}.",
-  "rank": 11,
+  "rank": 9,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -1847,8 +1885,8 @@
   "name_leak": false
  },
  "c050": {
-  "sim": 0.569,
-  "cosine": 0.533,
+  "sim": 0.554,
+  "cosine": 0.497,
   "concept_f1": 0.889,
   "number_f1": 0.0,
   "missing": [
@@ -1889,7 +1927,9 @@
    "trigger_scope:self",
    "trigger:etb",
    "target_count:up_to_1",
-   "target_type:creature"
+   "target_type:creature",
+   "pump_amount:-x/-x",
+   "x_is:lifeyougainedthisturn"
   ],
   "name_leak": false
  },
@@ -1960,8 +2000,8 @@
   "name_leak": false
  },
  "c053": {
-  "sim": 0.518,
-  "cosine": 0.438,
+  "sim": 0.492,
+  "cosine": 0.372,
   "concept_f1": 0.857,
   "number_f1": 0.0,
   "missing": [
@@ -1977,7 +2017,7 @@
   "name": "Zulaport Cutthroat",
   "orig": "Whenever Zulaport Cutthroat or another creature you control dies, each opponent loses 1 life and you gain 1 life.",
   "reco": "When this creature dies, each opponent loses N life and you gain N life.",
-  "rank": 1,
+  "rank": 3,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -2000,6 +2040,8 @@
    "trigger_scope:self",
    "trigger:dies",
    "trigger_zone:graveyard",
+   "life_loss_amount:1",
+   "lifegain_amount:1",
    "life_loss"
   ],
   "name_leak": false
@@ -2041,8 +2083,8 @@
   "name_leak": false
  },
  "c055": {
-  "sim": 0.86,
-  "cosine": 0.65,
+  "sim": 1.0,
+  "cosine": 1.0,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -2052,7 +2094,7 @@
   "name": "Llanowar Visionary",
   "orig": "When Llanowar Visionary enters, draw a card. / {T}: Add {G}.",
   "reco": "When this creature enters, draw a card. / {T}: Add {G}.",
-  "rank": 11,
+  "rank": 1,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -2108,13 +2150,14 @@
    "draw",
    "draw_count:2",
    "tempo:+1",
+   "life_loss_amount:2",
    "life_loss"
   ],
   "name_leak": false
  },
  "c057": {
-  "sim": 0.947,
-  "cosine": 0.867,
+  "sim": 0.996,
+  "cosine": 0.99,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -2124,7 +2167,7 @@
   "name": "Sakura-Tribe Elder",
   "orig": "Sacrifice Sakura-Tribe Elder: Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",
   "reco": "Sacrifice this creature: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
-  "rank": 3,
+  "rank": 1,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -2427,6 +2470,9 @@
    "kw:hideaway",
    "num:4",
    "enters_tapped",
+   "replacement",
+   "replace_event:moved",
+   "replace_with:tap",
    "trigger_scope:self",
    "trigger:leaves",
    "return_exiled"
@@ -2434,8 +2480,8 @@
   "name_leak": false
  },
  "c066": {
-  "sim": 0.724,
-  "cosine": 0.643,
+  "sim": 0.679,
+  "cosine": 0.53,
   "concept_f1": 0.667,
   "number_f1": 1.0,
   "missing": [
@@ -2452,7 +2498,7 @@
   "orig": "Whenever Goblin Vandal attacks and isn't blocked, you may pay {R}. If you do, destroy target artifact defending player controls and Goblin Vandal assigns no combat damage this turn.",
   "reco": "Whenever this creature attacks and isn't blocked, destroy target artifact.",
   "rank": 2,
-  "band": "good",
+  "band": "partial",
   "has_text": true,
   "empty_reco": false,
   "vanilla": false,
@@ -2541,6 +2587,7 @@
    "selection",
    "tempo:+1",
    "draw_count:2",
+   "counter_count:2",
    "counter:energy",
    "ai_logic:bestopportunity",
    "scry"
@@ -2576,7 +2623,9 @@
    "cardtype:artifact",
    "type:equipment",
    "kw:equip",
-   "num:2"
+   "num:2",
+   "static_grant:landwalk",
+   "affected_type:creature"
   ],
   "name_leak": false
  },
@@ -2656,7 +2705,8 @@
    "duration:eot",
    "pump_single",
    "target_count:one",
-   "target_type:creature"
+   "target_type:creature",
+   "pump_amount:+3/+3"
   ],
   "name_leak": false
  },
@@ -2672,7 +2722,7 @@
   "name": "Wayfarer's Bauble",
   "orig": "{2}, {T}, Sacrifice Wayfarer's Bauble: Search your library for a basic land card, put that card onto the battlefield tapped, then shuffle.",
   "reco": "{cost}, {T}, Sacrifice this artifact: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
-  "rank": 2,
+  "rank": 3,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -2719,7 +2769,7 @@
   "name": "Welcoming Vampire",
   "orig": "Flying / Whenever one or more other creatures you control with power 2 or less enter, draw a card. This ability triggers only once each turn.",
   "reco": "Flying / Whenever another {creature} enters, draw a card.",
-  "rank": 24,
+  "rank": 26,
   "band": "gap",
   "has_text": true,
   "empty_reco": false,
@@ -2773,7 +2823,8 @@
    "lifegain",
    "sacrifice_outlet",
    "cost:sacrifice",
-   "cost_sacrifice_target:beast"
+   "cost_sacrifice_target:beast",
+   "lifegain_amount:4"
   ],
   "name_leak": false
  },
@@ -2819,6 +2870,8 @@
    "trigger_zone:graveyard",
    "target_count:one",
    "target_type:opponent",
+   "life_loss_amount:1",
+   "lifegain_amount:1",
    "life_loss"
   ],
   "name_leak": false
@@ -2897,6 +2950,10 @@
    "artifact_token",
    "scales:artifact",
    "token_make",
+   "static_pump",
+   "pump_amount:+x/+0",
+   "static_affects:self",
+   "x_is:count_artifact_youctrl",
    "trigger:spell_cast",
    "trigger_filter:instant",
    "trigger_filter:sorcery",
@@ -2939,7 +2996,10 @@
    "num:1",
    "haste",
    "hexproof",
-   "haste_grant"
+   "haste_grant",
+   "static_grant:haste",
+   "static_grant:hexproof",
+   "affected_type:creature"
   ],
   "name_leak": false
  },
@@ -3069,6 +3129,9 @@
    "token_make",
    "trigger:attacks",
    "tempo:+1.5",
+   "modal",
+   "mode_count:3",
+   "mode_choose:one",
    "token_count:1",
    "token_color:colorless",
    "token_cardtype:artifact",
@@ -3076,10 +3139,13 @@
    "mana_source",
    "target_count:one",
    "target_type:creature",
+   "duration:eot",
    "restrict",
+   "look_top:1",
+   "take_count:all",
+   "take_dest:exile",
    "impulse_draw",
-   "impulse_draw_count:1",
-   "duration:eot"
+   "impulse_draw_count:1"
   ],
   "name_leak": false
  },
@@ -3169,7 +3235,7 @@
   "name": "Rogue's Passage",
   "orig": "{T}: Add {C}. / {4}, {T}: Target creature can't be blocked this turn.",
   "reco": "This land enters untapped. / {T}: Add {C}. / {cost}, {T}: Target creature {effect}.",
-  "rank": 10,
+  "rank": 11,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -3242,8 +3308,8 @@
   "name_leak": false
  },
  "c086": {
-  "sim": 0.879,
-  "cosine": 0.697,
+  "sim": 0.867,
+  "cosine": 0.668,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -3253,7 +3319,7 @@
   "name": "Fire Diamond",
   "orig": "Fire Diamond enters tapped. / {T}: Add {R}.",
   "reco": "This artifact enters tapped. / {T}: Add {R}.",
-  "rank": 8,
+  "rank": 10,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -3267,13 +3333,16 @@
    "enters_tapped",
    "cost:tap",
    "mana:red",
-   "mana_amount:1"
+   "mana_amount:1",
+   "replacement",
+   "replace_event:moved",
+   "replace_with:tap"
   ],
   "name_leak": false
  },
  "c087": {
-  "sim": 0.895,
-  "cosine": 0.737,
+  "sim": 1.0,
+  "cosine": 1.0,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -3283,7 +3352,7 @@
   "name": "Indrik Stomphowler",
   "orig": "When Indrik Stomphowler enters, destroy target artifact or enchantment.",
   "reco": "When this creature enters, destroy target artifact or enchantment.",
-  "rank": 4,
+  "rank": 1,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -3382,6 +3451,8 @@
    "tutor",
    "cost_reduce_for:creature",
    "tempo:+1",
+   "look_top:1",
+   "reveal",
    "tutor_count:1",
    "tutor_target:",
    "tutor_dest:hand",
@@ -3391,8 +3462,8 @@
   "name_leak": false
  },
  "c090": {
-  "sim": 0.685,
-  "cosine": 0.547,
+  "sim": 0.733,
+  "cosine": 0.665,
   "concept_f1": 0.667,
   "number_f1": 1.0,
   "missing": [
@@ -3407,8 +3478,8 @@
   "name": "Firebrand Archer",
   "orig": "Whenever you cast a noncreature spell, Firebrand Archer deals 1 damage to each opponent.",
   "reco": "Whenever a player casts a creature spell, this creature deals 1 damage to {target}.",
-  "rank": 5,
-  "band": "partial",
+  "rank": 1,
+  "band": "good",
   "has_text": true,
   "empty_reco": false,
   "vanilla": false,
@@ -3470,6 +3541,7 @@
    "target_count:one",
    "target_type:creature",
    "target_scope:you_control",
+   "pump_amount:+1/+2",
    "target_scope:opp_control",
    "ai_logic:fight",
    "fight"
@@ -3509,6 +3581,7 @@
    "selection",
    "tempo:+1",
    "draw_count:2",
+   "life_loss_amount:2",
    "life_loss",
    "scry"
   ],
@@ -3784,7 +3857,7 @@
   "name": "Palace Jailer",
   "orig": "When Palace Jailer enters, you become the monarch. / When Palace Jailer enters, exile target creature an opponent controls until an opponent becomes the monarch.",
   "reco": "When this creature enters, exile target creature an opponent controls.",
-  "rank": 5,
+  "rank": 3,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -3840,6 +3913,8 @@
    "type:wizard",
    "kw:flying",
    "counterspell",
+   "cost:return",
+   "cost_return_target:land",
    "cost:mana",
    "target_count:one",
    "target_type:card"
@@ -4042,7 +4117,9 @@
   "tags": [
    "cardtype:instant",
    "kw:delve",
-   "selection"
+   "selection",
+   "look_top:7",
+   "take_count:2"
   ],
   "name_leak": false
  },
@@ -4082,8 +4159,8 @@
   "name_leak": false
  },
  "c110": {
-  "sim": 0.855,
-  "cosine": 0.729,
+  "sim": 0.939,
+  "cosine": 0.939,
   "concept_f1": 0.909,
   "number_f1": 1.0,
   "missing": [
@@ -4096,7 +4173,7 @@
   "name": "Yavimaya Elder",
   "orig": "When Yavimaya Elder dies, you may search your library for up to two basic land cards, reveal them, put them into your hand, then shuffle. / {2}, Sacrifice Yavimaya Elder: Draw a card.",
   "reco": "When this creature dies, search your library for up to two basic land cards, put them into your hand, then shuffle. / {cost}, Sacrifice this creature: Draw a card.",
-  "rank": 4,
+  "rank": 1,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -4166,6 +4243,8 @@
    "trigger_zone:graveyard",
    "target_count:one",
    "target_type:player",
+   "life_loss_amount:1",
+   "lifegain_amount:1",
    "life_loss"
   ],
   "name_leak": false
@@ -4255,7 +4334,7 @@
   "name": "Akki Ronin",
   "orig": "Whenever a Samurai or Warrior you control attacks alone, you may discard a card. If you do, draw a card.",
   "reco": "Whenever this creature attacks, you may discard a card. / If you do, draw a card.",
-  "rank": 7,
+  "rank": 6,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -4295,7 +4374,7 @@
   "name": "Overrun",
   "orig": "Creatures you control get +3/+3 and gain trample until end of turn.",
   "reco": "Creatures you control gain trample until end of turn.",
-  "rank": 3,
+  "rank": 2,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -4329,7 +4408,7 @@
   "name": "Storm Caller",
   "orig": "When Storm Caller enters, it deals 2 damage to each opponent.",
   "reco": "When this creature enters, it deals 2 damage to {target}.",
-  "rank": 3,
+  "rank": 2,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -4392,8 +4471,8 @@
   "name_leak": false
  },
  "c118": {
-  "sim": 0.998,
-  "cosine": 0.994,
+  "sim": 0.936,
+  "cosine": 0.839,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -4491,7 +4570,12 @@
    "cardtype:creature",
    "type:rhino",
    "type:soldier",
-   "kw:first_strike"
+   "kw:first_strike",
+   "static_grant:first_strike",
+   "affected_type:creature",
+   "affected_filter:soldier",
+   "affected_filter:other",
+   "affected_scope:you_control"
   ],
   "name_leak": false
  },
@@ -4568,6 +4652,7 @@
    "land_tutor",
    "trigger_scope:other",
    "trigger:etb",
+   "counter_count:1",
    "counter:quest",
    "cost:sacrifice",
    "cost_sacrifice_target:self",
@@ -4638,7 +4723,9 @@
    "cost:sacrifice",
    "cost_sacrifice_target:food",
    "cost:mana",
-   "counter:p1p1"
+   "counter_count:2",
+   "counter:p1p1",
+   "grant_kw:trample"
   ],
   "name_leak": false
  },
@@ -4662,7 +4749,7 @@
   "name": "Goreclaw, Terror of Qal Sisma",
   "orig": "Creature spells you cast with power 4 or greater cost {2} less to cast. / Whenever Goreclaw, Terror of Qal Sisma attacks, each creature you control with power 4 or greater gets +1/+1 and gains trample until end of turn.",
   "reco": "Trample / Creature spells cost {N} less to cast. / Whenever this creature attacks, creatures you control gain Trample until end of turn.",
-  "rank": 4,
+  "rank": 3,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -4690,8 +4777,8 @@
   "name_leak": false
  },
  "c125": {
-  "sim": 0.873,
-  "cosine": 0.683,
+  "sim": 1.0,
+  "cosine": 1.0,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -4701,7 +4788,7 @@
   "name": "Searing Spear",
   "orig": "Searing Spear deals 3 damage to any target.",
   "reco": "This spell deals 3 damage to any target.",
-  "rank": 2,
+  "rank": 1,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -4720,8 +4807,8 @@
   "name_leak": false
  },
  "c126": {
-  "sim": 0.894,
-  "cosine": 0.735,
+  "sim": 0.941,
+  "cosine": 0.854,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -4731,7 +4818,7 @@
   "name": "Evolving Wilds",
   "orig": "{T}, Sacrifice Evolving Wilds: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
   "reco": "This land enters untapped. / {T}, Sacrifice this land: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
-  "rank": 5,
+  "rank": 1,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -4833,7 +4920,10 @@
    "kw:haste",
    "selection",
    "trigger_scope:self",
-   "trigger:etb"
+   "trigger:etb",
+   "look_top:4",
+   "take_count:all",
+   "take_filter:goblin"
   ],
   "name_leak": false
  },
@@ -4851,7 +4941,7 @@
   "name": "Deranged Assistant",
   "orig": "{T}, Mill a card: Add {C}. (To mill a card, put the top card of your library into your graveyard.)",
   "reco": "{T}: Add {C}.",
-  "rank": 9,
+  "rank": 10,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -4931,8 +5021,8 @@
   "name_leak": false
  },
  "c132": {
-  "sim": 0.841,
-  "cosine": 0.679,
+  "sim": 0.884,
+  "cosine": 0.787,
   "concept_f1": 0.923,
   "number_f1": 1.0,
   "missing": [
@@ -5008,6 +5098,7 @@
    "target_count:one",
    "target_type:player",
    "draw_count:1",
+   "life_loss_amount:1",
    "life_loss",
    "trigger:upkeep"
   ],
@@ -5147,7 +5238,8 @@
    "duration:eot",
    "pump_single",
    "target_count:one",
-   "target_type:creature"
+   "target_type:creature",
+   "pump_amount:+3/+3"
   ],
   "name_leak": false
  },
@@ -5189,6 +5281,9 @@
    "cardtype:instant",
    "draw",
    "pump_team",
+   "modal",
+   "mode_count:2",
+   "mode_choose:one",
    "tempo:x",
    "draw_count:x",
    "target_count:all",
@@ -5227,6 +5322,9 @@
    "kw:spectacle",
    "color:red",
    "selection",
+   "look_top:2",
+   "take_count:all",
+   "take_dest:exile",
    "tempo:+1",
    "impulse_draw",
    "impulse_draw_count:2",
@@ -5235,8 +5333,8 @@
   "name_leak": false
  },
  "c140": {
-  "sim": 0.752,
-  "cosine": 0.652,
+  "sim": 0.722,
+  "cosine": 0.578,
   "concept_f1": 0.727,
   "number_f1": 1.0,
   "missing": [
@@ -5250,7 +5348,7 @@
   "name": "Silvergill Adept",
   "orig": "As an additional cost to cast this spell, reveal a Merfolk card from your hand or pay {3}. / When Silvergill Adept enters, draw a card.",
   "reco": "As an additional cost to cast this spell, {alternate additional cost}. / When this creature enters, draw a card.",
-  "rank": 4,
+  "rank": 6,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -5277,24 +5375,21 @@
   "name_leak": false
  },
  "c141": {
-  "sim": 0.0,
-  "cosine": 0.0,
-  "concept_f1": 0.0,
-  "number_f1": 0.0,
-  "missing": [
-   "creature",
-   "enchant"
-  ],
+  "sim": 0.996,
+  "cosine": 0.989,
+  "concept_f1": 1.0,
+  "number_f1": 1.0,
+  "missing": [],
   "extra": [],
   "missing_numbers": [],
   "extra_numbers": [],
   "name": "Control Magic",
   "orig": "Enchant creature / You control enchanted creature.",
-  "reco": "",
-  "rank": null,
-  "band": "gap",
+  "reco": "Enchant creature",
+  "rank": 1,
+  "band": "good",
   "has_text": true,
-  "empty_reco": true,
+  "empty_reco": false,
   "vanilla": false,
   "unclear": [
    "ai_logic:gaincontrol"
@@ -5306,6 +5401,7 @@
    "type:aura",
    "kw:enchant",
    "target_type:creature",
+   "affected_type:enchanted",
    "ai_logic:gaincontrol"
   ],
   "name_leak": false
@@ -5435,6 +5531,8 @@
    "color:black",
    "trigger:spell_cast",
    "trigger_filter:creature",
+   "life_loss_amount:1",
+   "lifegain_amount:1",
    "life_loss"
   ],
   "name_leak": false
@@ -5468,13 +5566,14 @@
    "pump_single",
    "shrink",
    "target_count:one",
-   "target_type:creature"
+   "target_type:creature",
+   "pump_amount:-4/-4"
   ],
   "name_leak": false
  },
  "c146": {
-  "sim": 0.451,
-  "cosine": 0.412,
+  "sim": 0.466,
+  "cosine": 0.451,
   "concept_f1": 0.714,
   "number_f1": 0.0,
   "missing": [
@@ -5517,6 +5616,10 @@
    "trigger:spell_cast",
    "trigger_filter:card",
    "trigger_filter:creature",
+   "static_pump",
+   "pump_amount:+2/+2",
+   "static_grant:flying",
+   "static_affects:self",
    "must_attack",
    "affects:card",
    "affects:self",
@@ -5723,8 +5826,8 @@
   "name_leak": false
  },
  "c152": {
-  "sim": 1.0,
-  "cosine": 1.0,
+  "sim": 0.909,
+  "cosine": 0.772,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -5817,8 +5920,8 @@
   "name_leak": false
  },
  "c155": {
-  "sim": 0.764,
-  "cosine": 0.744,
+  "sim": 0.705,
+  "cosine": 0.595,
   "concept_f1": 0.667,
   "number_f1": 1.0,
   "missing": [
@@ -5833,7 +5936,7 @@
   "name": "Kessig Flamebreather",
   "orig": "Whenever you cast a noncreature spell, Kessig Flamebreather deals 1 damage to each opponent.",
   "reco": "Whenever you cast a creature spell, this creature deals 1 damage to {affected}.",
-  "rank": 1,
+  "rank": 4,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -5857,8 +5960,8 @@
   "name_leak": false
  },
  "c156": {
-  "sim": 0.656,
-  "cosine": 0.782,
+  "sim": 0.691,
+  "cosine": 0.87,
   "concept_f1": 0.857,
   "number_f1": 0.0,
   "missing": [
@@ -5895,10 +5998,12 @@
    "kw:menace",
    "draw",
    "evasion",
+   "counter_count:1",
    "counter:feeding",
    "trigger:attacks",
    "tempo:+3",
    "draw_count:3",
+   "life_loss_amount:3",
    "life_loss",
    "trigger:gain_life"
   ],
@@ -5948,8 +6053,8 @@
   "name_leak": false
  },
  "c158": {
-  "sim": 0.917,
-  "cosine": 0.793,
+  "sim": 0.992,
+  "cosine": 0.98,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -6107,7 +6212,9 @@
    "counters_plus",
    "target_count:one",
    "target_type:creature",
-   "counter:p1p1"
+   "counter_count:2",
+   "counter:p1p1",
+   "grant_kw:vigilance"
   ],
   "name_leak": false
  },
@@ -6177,6 +6284,7 @@
    "draw",
    "tempo:+1",
    "draw_count:1",
+   "life_loss_amount:1",
    "life_loss",
    "trigger:upkeep"
   ],
@@ -6286,8 +6394,8 @@
   "name_leak": false
  },
  "c168": {
-  "sim": 0.824,
-  "cosine": 0.56,
+  "sim": 0.852,
+  "cosine": 0.631,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -6297,7 +6405,7 @@
   "name": "Chasm Guide",
   "orig": "Rally \u2014 Whenever Chasm Guide or another Ally you control enters, creatures you control gain haste until end of turn.",
   "reco": "When this creature enters, creatures you control gain haste until end of turn.",
-  "rank": 3,
+  "rank": 2,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -6326,8 +6434,8 @@
   "name_leak": false
  },
  "c169": {
-  "sim": 0.853,
-  "cosine": 0.848,
+  "sim": 0.875,
+  "cosine": 0.901,
   "concept_f1": 0.952,
   "number_f1": 0.667,
   "missing": [
@@ -6372,6 +6480,8 @@
    "token_kw:haste",
    "token_type:goblin",
    "trigger:attacks",
+   "pump_amount:+x/+0",
+   "x_is:count_goblin_attacking_other",
    "trigger:beginning_of_combat"
   ],
   "name_leak": false
@@ -6409,13 +6519,15 @@
    "lifegain",
    "pump_single",
    "target_count:one",
-   "target_type:creature"
+   "target_type:creature",
+   "pump_amount:+2/+2",
+   "grant_kw:lifelink"
   ],
   "name_leak": false
  },
  "c171": {
-  "sim": 0.452,
-  "cosine": 0.273,
+  "sim": 0.443,
+  "cosine": 0.249,
   "concept_f1": 0.857,
   "number_f1": 0.0,
   "missing": [
@@ -6432,7 +6544,7 @@
   "name": "Malakir Blood-Priest",
   "orig": "When Malakir Blood-Priest enters, each opponent loses X life and you gain X life, where X is the number of creatures in your party. (Your party consists of up to one each of Cleric, Rogue, Warrior, and Wizard.)",
   "reco": "When this creature enters, each opponent loses N life and you gain N life.",
-  "rank": 9,
+  "rank": 13,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -6452,6 +6564,9 @@
    "lifegain",
    "trigger_scope:self",
    "trigger:etb",
+   "life_loss_amount:x",
+   "x_is:party",
+   "lifegain_amount:x",
    "life_loss"
   ],
   "name_leak": false
@@ -6485,6 +6600,7 @@
    "bounce",
    "trigger_scope:other",
    "trigger:etb",
+   "counter_count:1",
    "counter:energy",
    "cost:tap",
    "cost:mana",
@@ -6496,8 +6612,8 @@
   "name_leak": false
  },
  "c173": {
-  "sim": 0.723,
-  "cosine": 0.473,
+  "sim": 0.721,
+  "cosine": 0.468,
   "concept_f1": 0.833,
   "number_f1": 1.0,
   "missing": [
@@ -6510,7 +6626,7 @@
   "name": "Essence Flux",
   "orig": "Exile target creature you control, then return that card to the battlefield under its owner's control. If it's a Spirit, put a +1/+1 counter on it.",
   "reco": "Exile target creature you control. / Put N +1/+1 counter(s) on it.",
-  "rank": 4,
+  "rank": 3,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -6528,6 +6644,7 @@
    "target_type:creature",
    "target_scope:you_control",
    "remove:exile",
+   "counter_count:1",
    "counter:p1p1"
   ],
   "name_leak": false
@@ -6569,7 +6686,9 @@
    "target_type:creature",
    "num:1",
    "num:3",
-   "restrict"
+   "restrict",
+   "static_grant:ward",
+   "affected_type:creature"
   ],
   "name_leak": false
  },
@@ -6673,8 +6792,8 @@
   "name_leak": false
  },
  "c178": {
-  "sim": 0.563,
-  "cosine": 0.18,
+  "sim": 0.561,
+  "cosine": 0.175,
   "concept_f1": 0.727,
   "number_f1": 1.0,
   "missing": [
@@ -6688,7 +6807,7 @@
   "name": "Jagged-Scar Archers",
   "orig": "Jagged-Scar Archers's power and toughness are each equal to the number of Elves you control. / {T}: Jagged-Scar Archers deals damage equal to its power to target creature with flying.",
   "reco": "{T}: This creature deals N damage to target creature.",
-  "rank": 33,
+  "rank": 32,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -6706,7 +6825,9 @@
    "cost:tap",
    "target_count:one",
    "target_type:creature",
-   "damage"
+   "damage",
+   "damage_amount:x",
+   "x_is:own_power"
   ],
   "name_leak": false
  },
@@ -6799,7 +6920,7 @@
   "name": "Volley Veteran",
   "orig": "When Volley Veteran enters, it deals damage to target creature an opponent controls equal to the number of Goblins you control.",
   "reco": "When this creature enters, it deals N damage to target creature an opponent controls.",
-  "rank": 6,
+  "rank": 4,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -6819,7 +6940,9 @@
    "target_count:one",
    "target_type:creature",
    "target_scope:opp_control",
-   "damage"
+   "damage",
+   "damage_amount:x",
+   "x_is:count_goblin_youctrl"
   ],
   "name_leak": false
  },
@@ -6953,8 +7076,8 @@
   "name_leak": false
  },
  "c185": {
-  "sim": 0.821,
-  "cosine": 0.599,
+  "sim": 0.785,
+  "cosine": 0.509,
   "concept_f1": 0.952,
   "number_f1": 1.0,
   "missing": [
@@ -6966,7 +7089,7 @@
   "name": "Frontline Medic",
   "orig": "Battalion \u2014 Whenever Frontline Medic and at least two other creatures attack, creatures you control gain indestructible until end of turn. / Sacrifice Frontline Medic: Counter target spell with {X} in its mana cost unless its controller pays {3}.",
   "reco": "Whenever this creature attacks, creatures you control gain indestructible until end of turn. / Sacrifice this creature: Counter target card.",
-  "rank": 1,
+  "rank": 3,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -6997,8 +7120,8 @@
   "name_leak": false
  },
  "c186": {
-  "sim": 0.288,
-  "cosine": 0.221,
+  "sim": 0.296,
+  "cosine": 0.239,
   "concept_f1": 0.5,
   "number_f1": 0.0,
   "missing": [
@@ -7020,7 +7143,7 @@
   "name": "Kami of Whispered Hopes",
   "orig": "If one or more +1/+1 counters would be put on a permanent you control, that many plus one +1/+1 counters are put on that permanent instead. / {T}: Add X mana of any one color, where X is Kami of Whispered Hopes's power.",
   "reco": "{T}: Add Y mana of any color.",
-  "rank": 17,
+  "rank": 16,
   "band": "gap",
   "has_text": true,
   "empty_reco": false,
@@ -7037,6 +7160,10 @@
    "type:spirit",
    "fixing",
    "mana_source",
+   "replacement",
+   "replace_event:addcounter",
+   "replace_with:replacecounter",
+   "replace_detail:counternum_plus_1",
    "cost:tap",
    "mana:any",
    "mana_amount:y"
@@ -7114,8 +7241,8 @@
   "name_leak": false
  },
  "c189": {
-  "sim": 0.664,
-  "cosine": 0.736,
+  "sim": 0.633,
+  "cosine": 0.66,
   "concept_f1": 0.923,
   "number_f1": 0.0,
   "missing": [
@@ -7187,7 +7314,11 @@
   "tags": [
    "cardtype:creature",
    "type:wurm",
-   "kw:vigilance"
+   "kw:vigilance",
+   "static_pump",
+   "pump_amount:+2/+2",
+   "static_affects:self",
+   "condition_present:planeswalker_garruk_youctrl"
   ],
   "name_leak": false
  },
@@ -7232,8 +7363,8 @@
   "name_leak": false
  },
  "c192": {
-  "sim": 0.978,
-  "cosine": 0.997,
+  "sim": 0.87,
+  "cosine": 0.727,
   "concept_f1": 0.947,
   "number_f1": 1.0,
   "missing": [
@@ -7245,7 +7376,7 @@
   "name": "Solemn Simulacrum",
   "orig": "When Solemn Simulacrum enters, you may search your library for a basic land card, put that card onto the battlefield tapped, then shuffle. / When Solemn Simulacrum dies, you may draw a card.",
   "reco": "When this creature enters, search your library for a basic land card, put it onto the battlefield tapped, then shuffle. / When this creature dies, draw a card.",
-  "rank": 1,
+  "rank": 6,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -7340,7 +7471,9 @@
    "kw:equip",
    "num:2",
    "double_strike",
-   "grant_double_strike"
+   "grant_double_strike",
+   "static_grant:double_strike",
+   "affected_type:creature"
   ],
   "name_leak": false
  },
@@ -7410,7 +7543,11 @@
   "conflicts": [],
   "recognised": false,
   "tags": [
-   "cardtype:enchantment"
+   "cardtype:enchantment",
+   "static_pump",
+   "pump_amount:+1/+1",
+   "affected_type:creature",
+   "affected_scope:you_control"
   ],
   "name_leak": false
  },
@@ -7426,7 +7563,7 @@
   "name": "Goblin Instigator",
   "orig": "When Goblin Instigator enters, create a 1/1 red Goblin creature token.",
   "reco": "When this creature enters, create a 1/1 red Goblin creature token.",
-  "rank": 2,
+  "rank": 1,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -7567,8 +7704,8 @@
   "name_leak": false
  },
  "c201": {
-  "sim": 1.0,
-  "cosine": 1.0,
+  "sim": 0.934,
+  "cosine": 0.835,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -7578,7 +7715,7 @@
   "name": "Beetleback Chief",
   "orig": "When Beetleback Chief enters, create two 1/1 red Goblin creature tokens.",
   "reco": "When this creature enters, create two 1/1 red Goblin creature tokens.",
-  "rank": 1,
+  "rank": 2,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -7638,13 +7775,16 @@
    "type:horse",
    "duration:eot",
    "restrict",
-   "cost:mana"
+   "cant_be_countered",
+   "cant_be_blocked_by:creature_blue",
+   "cost:mana",
+   "pump_amount:+1/+0"
   ],
   "name_leak": false
  },
  "c203": {
-  "sim": 0.846,
-  "cosine": 0.758,
+  "sim": 0.797,
+  "cosine": 0.636,
   "concept_f1": 0.857,
   "number_f1": 1.0,
   "missing": [
@@ -7656,7 +7796,7 @@
   "name": "Scorch Spitter",
   "orig": "Whenever Scorch Spitter attacks, it deals 1 damage to the player or planeswalker it's attacking.",
   "reco": "Whenever this creature attacks, it deals 1 damage to {affected}.",
-  "rank": 1,
+  "rank": 4,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -7706,8 +7846,8 @@
   "name_leak": false
  },
  "c205": {
-  "sim": 0.915,
-  "cosine": 0.913,
+  "sim": 0.82,
+  "cosine": 0.676,
   "concept_f1": 0.875,
   "number_f1": 1.0,
   "missing": [
@@ -7720,7 +7860,7 @@
   "name": "Cadaver Imp",
   "orig": "Flying / When Cadaver Imp enters, you may return target creature card from your graveyard to your hand.",
   "reco": "Flying / When this creature enters, return target creature card from your graveyard to {zone}.",
-  "rank": 1,
+  "rank": 5,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -7747,8 +7887,8 @@
   "name_leak": false
  },
  "c206": {
-  "sim": 0.746,
-  "cosine": 0.441,
+  "sim": 0.783,
+  "cosine": 0.533,
   "concept_f1": 0.923,
   "number_f1": 1.0,
   "missing": [
@@ -7784,8 +7924,8 @@
   "name_leak": false
  },
  "c207": {
-  "sim": 0.66,
-  "cosine": 0.851,
+  "sim": 0.668,
+  "cosine": 0.87,
   "concept_f1": 0.8,
   "number_f1": 0.0,
   "missing": [
@@ -7799,8 +7939,8 @@
   "extra_numbers": [],
   "name": "Unholy Strength",
   "orig": "Enchant creature / Enchanted creature gets +2/+1.",
-  "reco": "Enchanted creature gets {payload}.",
-  "rank": 1,
+  "reco": "Enchant creature / Enchanted creature gets {payload}.",
+  "rank": 2,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -7816,6 +7956,9 @@
    "type:aura",
    "kw:enchant",
    "target_type:creature",
+   "static_pump",
+   "pump_amount:+2/+1",
+   "affected_type:creature",
    "ai_logic:pump"
   ],
   "name_leak": false
@@ -7877,7 +8020,13 @@
   "tags": [
    "cardtype:creature",
    "type:human",
-   "type:wizard"
+   "type:wizard",
+   "replacement",
+   "replace_event:draw",
+   "replace_with:winsgame",
+   "condition_present:card_youown",
+   "condition_zone:library",
+   "condition_compare:eq0"
   ],
   "name_leak": false
  },
@@ -8020,8 +8169,8 @@
   "name_leak": false
  },
  "c214": {
-  "sim": 0.573,
-  "cosine": 0.432,
+  "sim": 0.64,
+  "cosine": 0.599,
   "concept_f1": 1.0,
   "number_f1": 0.0,
   "missing": [],
@@ -8054,6 +8203,7 @@
    "trigger_scope:self",
    "trigger:etb",
    "tempo:+1",
+   "lifegain_amount:1",
    "draw_count:1"
   ],
   "name_leak": false
@@ -8075,7 +8225,7 @@
   "name": "Ram Through",
   "orig": "Target creature you control deals damage equal to its power to target creature you don't control. If the creature you control has trample, excess damage is dealt to that creature's controller instead.",
   "reco": "Target creature you control gets {payload} until end of turn. / It deals {N} damage to target creature an opponent controls.",
-  "rank": 23,
+  "rank": 20,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -8113,7 +8263,7 @@
   "name": "Keldon Raider",
   "orig": "When Keldon Raider enters, you may discard a card. If you do, draw a card.",
   "reco": "When this creature enters, draw a card, then discard a card.",
-  "rank": 3,
+  "rank": 2,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -8168,8 +8318,8 @@
   "name_leak": false
  },
  "c218": {
-  "sim": 0.836,
-  "cosine": 0.691,
+  "sim": 0.813,
+  "cosine": 0.632,
   "concept_f1": 1.0,
   "number_f1": 0.8,
   "missing": [],
@@ -8340,8 +8490,8 @@
   "name_leak": false
  },
  "c223": {
-  "sim": 0.463,
-  "cosine": 0.49,
+  "sim": 0.461,
+  "cosine": 0.485,
   "concept_f1": 0.667,
   "number_f1": 0.0,
   "missing": [
@@ -8377,10 +8527,16 @@
    "type:human",
    "type:wizard",
    "counterspell",
+   "cost:exile_from_graveyard",
+   "cost_exile_target:instant_or_sorcery",
    "cost:mana",
+   "modal",
+   "mode_count:4",
+   "mode_choose:one",
    "target_count:one",
    "target_type:card",
    "target_filter:noncreature",
+   "pump_amount:+1/+1",
    "target_type:creature",
    "cost:exile",
    "untap"
@@ -8484,8 +8640,8 @@
   "name_leak": false
  },
  "c227": {
-  "sim": 0.87,
-  "cosine": 0.723,
+  "sim": 0.955,
+  "cosine": 0.935,
   "concept_f1": 0.952,
   "number_f1": 1.0,
   "missing": [
@@ -8515,6 +8671,9 @@
    "counters_plus",
    "trigger_scope:self",
    "trigger:etb",
+   "modal",
+   "mode_count:3",
+   "mode_choose:one",
    "target_count:one",
    "target_type:creature",
    "target_scope:you_control",
@@ -8558,15 +8717,20 @@
   "tags": [
    "cardtype:instant",
    "protection_trick",
+   "modal",
+   "mode_count:2",
+   "mode_choose:one",
    "target_count:one",
    "target_type:creature",
+   "grant_kw:indestructible",
+   "duration:eot",
    "remove:destroy"
   ],
   "name_leak": false
  },
  "c229": {
-  "sim": 0.665,
-  "cosine": 0.562,
+  "sim": 0.608,
+  "cosine": 0.42,
   "concept_f1": 0.6,
   "number_f1": 1.0,
   "missing": [
@@ -8582,7 +8746,7 @@
   "name": "Reckless Fireweaver",
   "orig": "Whenever an artifact you control enters, Reckless Fireweaver deals 1 damage to each opponent.",
   "reco": "Whenever another creature enters, this creature deals 1 damage to {affected}.",
-  "rank": 5,
+  "rank": 9,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -8760,7 +8924,9 @@
    "reanimate",
    "target_count:one",
    "target_type:creature",
-   "transform"
+   "pump_amount:+2/+0",
+   "grant_ability",
+   "granted_trigger:dies"
   ],
   "name_leak": false
  },
@@ -8949,7 +9115,7 @@
   "name": "Reclamation Sage",
   "orig": "When Reclamation Sage enters, you may destroy target artifact or enchantment.",
   "reco": "When this creature enters, destroy target artifact or enchantment.",
-  "rank": 4,
+  "rank": 5,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -8971,8 +9137,8 @@
   "name_leak": false
  },
  "c240": {
-  "sim": 0.467,
-  "cosine": 0.367,
+  "sim": 0.456,
+  "cosine": 0.339,
   "concept_f1": 0.8,
   "number_f1": 0.0,
   "missing": [
@@ -8988,7 +9154,7 @@
   "name": "Garruk's Uprising",
   "orig": "When Garruk's Uprising enters, if you control a creature with power 4 or greater, draw a card. / Creatures you control have trample. (They can deal excess combat damage to the player or planeswalker they're attacking.) / Whenever a creature you control with power 4 or greater enters, draw a card.",
   "reco": "When this enchantment enters, draw a card. / Whenever another {object} enters, {affected} gains Trample {duration}.",
-  "rank": 8,
+  "rank": 11,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -9009,13 +9175,16 @@
    "trigger:etb",
    "tempo:+1",
    "draw_count:1",
+   "static_grant:trample",
+   "affected_type:creature",
+   "affected_scope:you_control",
    "trigger_scope:other"
   ],
   "name_leak": false
  },
  "c241": {
-  "sim": 1.0,
-  "cosine": 1.0,
+  "sim": 0.894,
+  "cosine": 0.735,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -9025,7 +9194,7 @@
   "name": "Mind Stone",
   "orig": "{T}: Add {C}. / {1}, {T}, Sacrifice Mind Stone: Draw a card.",
   "reco": "{T}: Add {C}. / {cost}, {T}, Sacrifice this artifact: Draw a card.",
-  "rank": 1,
+  "rank": 2,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -9048,8 +9217,8 @@
   "name_leak": false
  },
  "c242": {
-  "sim": 0.895,
-  "cosine": 0.737,
+  "sim": 1.0,
+  "cosine": 1.0,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -9164,7 +9333,7 @@
   "name": "Yedora, Grave Gardener",
   "orig": "Whenever another nontoken creature you control dies, you may return it to the battlefield face down under its owner's control. It's a Forest land. (It has no other types or abilities.)",
   "reco": "Whenever another creature dies, put {card} from {graveyard} onto the battlefield.",
-  "rank": 9,
+  "rank": 7,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -9207,7 +9376,7 @@
   "name": "Incinerate",
   "orig": "Incinerate deals 3 damage to any target. A creature dealt damage this way can't be regenerated this turn.",
   "reco": "This spell deals 3 damage to any target.",
-  "rank": 7,
+  "rank": 6,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -9261,8 +9430,8 @@
   "name_leak": false
  },
  "c248": {
-  "sim": 0.874,
-  "cosine": 0.685,
+  "sim": 0.936,
+  "cosine": 0.84,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -9371,6 +9540,8 @@
    "type:wizard",
    "kw:flying",
    "bounce",
+   "cost:return",
+   "cost_return_target:land",
    "cost:mana",
    "target_count:one",
    "target_type:creature",
@@ -9379,8 +9550,8 @@
   "name_leak": false
  },
  "c251": {
-  "sim": 0.845,
-  "cosine": 0.946,
+  "sim": 0.844,
+  "cosine": 0.945,
   "concept_f1": 0.667,
   "number_f1": 1.0,
   "missing": [
@@ -9504,8 +9675,8 @@
   "name_leak": false
  },
  "c254": {
-  "sim": 0.683,
-  "cosine": 0.458,
+  "sim": 0.715,
+  "cosine": 0.538,
   "concept_f1": 0.75,
   "number_f1": 1.0,
   "missing": [
@@ -9518,8 +9689,8 @@
   "name": "Riverwise Augur",
   "orig": "When Riverwise Augur enters, draw three cards, then put two cards from your hand on top of your library in any order.",
   "reco": "When this creature enters, draw three cards.",
-  "rank": 5,
-  "band": "partial",
+  "rank": 3,
+  "band": "good",
   "has_text": true,
   "empty_reco": false,
   "vanilla": false,
@@ -9561,7 +9732,7 @@
   "name": "Heirloom Blade",
   "orig": "Equipped creature gets +3/+1. / Whenever equipped creature dies, you may reveal cards from the top of your library until you reveal a creature card that shares a creature type with it. Put that card into your hand and the rest on the bottom of your library in a random order. / Equip {1}",
   "reco": "Equip {1} / Whenever another creature dies, {effect}. / Equipped creature {effect}.",
-  "rank": 9,
+  "rank": 8,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -9580,6 +9751,9 @@
    "kw:equip",
    "num:1",
    "selection",
+   "static_pump",
+   "pump_amount:+3/+1",
+   "affected_type:creature",
    "trigger_scope:other",
    "trigger:dies",
    "trigger_zone:graveyard"
@@ -9613,7 +9787,8 @@
    "lifegain",
    "target_count:one",
    "target_type:creature",
-   "remove:exile"
+   "remove:exile",
+   "lifegain_amount:x"
   ],
   "name_leak": false
  },
@@ -9734,8 +9909,8 @@
   "name_leak": false
  },
  "c260": {
-  "sim": 0.4,
-  "cosine": 0.2,
+  "sim": 0.392,
+  "cosine": 0.181,
   "concept_f1": 0.8,
   "number_f1": 0.0,
   "missing": [
@@ -9752,8 +9927,8 @@
   "name": "Tendrils of Corruption",
   "orig": "Tendrils of Corruption deals X damage to target creature and you gain X life, where X is the number of Swamps you control.",
   "reco": "This spell deals N damage to target creature. / You gain N life.",
-  "rank": 9,
-  "band": "partial",
+  "rank": 14,
+  "band": "gap",
   "has_text": true,
   "empty_reco": false,
   "vanilla": false,
@@ -9770,7 +9945,10 @@
    "lifegain",
    "target_count:one",
    "target_type:creature",
-   "damage"
+   "damage",
+   "damage_amount:x",
+   "x_is:count_swamp_youctrl",
+   "lifegain_amount:x"
   ],
   "name_leak": false
  },
@@ -9928,7 +10106,7 @@
   "name": "Pitchburn Devils",
   "orig": "When Pitchburn Devils dies, it deals 3 damage to any target.",
   "reco": "When this creature dies, it deals 3 damage to any target.",
-  "rank": 1,
+  "rank": 2,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -10137,8 +10315,8 @@
   "name_leak": false
  },
  "c271": {
-  "sim": 0.802,
-  "cosine": 0.756,
+  "sim": 0.741,
+  "cosine": 0.602,
   "concept_f1": 0.75,
   "number_f1": 1.0,
   "missing": [
@@ -10151,7 +10329,7 @@
   "name": "Gideon's Reproach",
   "orig": "Gideon's Reproach deals 4 damage to target attacking or blocking creature.",
   "reco": "This spell deals 4 damage to target creature.",
-  "rank": 1,
+  "rank": 2,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -10224,8 +10402,8 @@
   "name_leak": false
  },
  "c273": {
-  "sim": 0.797,
-  "cosine": 0.684,
+  "sim": 0.761,
+  "cosine": 0.594,
   "concept_f1": 0.909,
   "number_f1": 0.8,
   "missing": [
@@ -10260,13 +10438,15 @@
    "target_type:card",
    "target_zone:graveyard",
    "exile_from:graveyard",
-   "counter:p1p1"
+   "counter_count:1",
+   "counter:p1p1",
+   "lifegain_amount:1"
   ],
   "name_leak": false
  },
  "c274": {
-  "sim": 0.951,
-  "cosine": 0.925,
+  "sim": 0.908,
+  "cosine": 0.818,
   "concept_f1": 0.952,
   "number_f1": 1.0,
   "missing": [
@@ -10344,8 +10524,8 @@
   "name_leak": false
  },
  "c276": {
-  "sim": 0.939,
-  "cosine": 0.847,
+  "sim": 1.0,
+  "cosine": 1.0,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -10382,8 +10562,8 @@
   "name_leak": false
  },
  "c277": {
-  "sim": 0.855,
-  "cosine": 0.637,
+  "sim": 0.939,
+  "cosine": 0.847,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -10458,8 +10638,8 @@
   "name_leak": false
  },
  "c279": {
-  "sim": 0.477,
-  "cosine": 0.478,
+  "sim": 0.46,
+  "cosine": 0.435,
   "concept_f1": 0.714,
   "number_f1": 0.0,
   "missing": [
@@ -10477,7 +10657,7 @@
   "name": "Hero's Blade",
   "orig": "Equipped creature gets +3/+2. / Whenever a legendary creature you control enters, you may attach Hero's Blade to it. / Equip {4} ({4}: Attach to target creature you control. Equip only as a sorcery.)",
   "reco": "Equip {4} / Whenever another creature enters, {effect}. / Equipped creature {effect}.",
-  "rank": 5,
+  "rank": 7,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -10494,6 +10674,9 @@
    "type:equipment",
    "kw:equip",
    "num:4",
+   "static_pump",
+   "pump_amount:+3/+2",
+   "affected_type:creature",
    "trigger_scope:other",
    "trigger:etb"
   ],
@@ -10543,8 +10726,8 @@
   "name_leak": false
  },
  "c281": {
-  "sim": 0.627,
-  "cosine": 0.567,
+  "sim": 0.567,
+  "cosine": 0.418,
   "concept_f1": 1.0,
   "number_f1": 0.0,
   "missing": [],
@@ -10556,7 +10739,7 @@
   "name": "Serum Visionary",
   "orig": "When Serum Visionary enters, draw a card, then scry 2.",
   "reco": "When this creature enters, draw a card. / Scry N.",
-  "rank": 1,
+  "rank": 2,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -10665,8 +10848,8 @@
   "name_leak": false
  },
  "c284": {
-  "sim": 0.37,
-  "cosine": 0.175,
+  "sim": 0.376,
+  "cosine": 0.19,
   "concept_f1": 0.75,
   "number_f1": 0.0,
   "missing": [
@@ -10683,7 +10866,7 @@
   "name": "Consume Spirit",
   "orig": "Spend only black mana on X. / Consume Spirit deals X damage to any target and you gain X life.",
   "reco": "This spell deals N damage to any target. / You gain N life.",
-  "rank": 13,
+  "rank": 10,
   "band": "gap",
   "has_text": true,
   "empty_reco": false,
@@ -10699,7 +10882,10 @@
    "lifegain",
    "target_count:one",
    "target_type:any",
-   "damage"
+   "damage",
+   "damage_amount:x",
+   "x_is:x_paid",
+   "lifegain_amount:x"
   ],
   "name_leak": false
  },
@@ -10741,6 +10927,8 @@
    "pump_single",
    "target_count:one",
    "target_type:creature",
+   "pump_amount:+x/+x",
+   "x_is:kicked_4_0",
    "ai_logic:always"
   ],
   "name_leak": false
@@ -10757,7 +10945,7 @@
   "name": "Banisher Priest",
   "orig": "When Banisher Priest enters, exile target creature an opponent controls until Banisher Priest leaves the battlefield. (That creature returns under its owner's control.)",
   "reco": "When this creature enters, exile target creature an opponent controls.",
-  "rank": 3,
+  "rank": 1,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -10808,7 +10996,8 @@
    "duration:eot",
    "pump_single",
    "target_count:one",
-   "target_type:creature"
+   "target_type:creature",
+   "pump_amount:+4/+4"
   ],
   "name_leak": false
  },
@@ -10844,8 +11033,8 @@
   "name_leak": false
  },
  "c289": {
-  "sim": 0.869,
-  "cosine": 0.923,
+  "sim": 0.797,
+  "cosine": 0.743,
   "concept_f1": 0.75,
   "number_f1": 1.0,
   "missing": [
@@ -10880,8 +11069,8 @@
   "name_leak": false
  },
  "c290": {
-  "sim": 0.923,
-  "cosine": 0.918,
+  "sim": 0.877,
+  "cosine": 0.803,
   "concept_f1": 0.889,
   "number_f1": 1.0,
   "missing": [
@@ -11002,8 +11191,8 @@
   "name_leak": false
  },
  "c293": {
-  "sim": 0.95,
-  "cosine": 0.875,
+  "sim": 0.909,
+  "cosine": 0.773,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -11013,7 +11202,7 @@
   "name": "Blighted Woodland",
   "orig": "{T}: Add {C}. / {3}{G}, {T}, Sacrifice Blighted Woodland: Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
   "reco": "This land enters untapped. / {T}: Add {C}. / {cost}, {T}, Sacrifice this land: Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
-  "rank": 1,
+  "rank": 4,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -11091,8 +11280,8 @@
   "name_leak": false
  },
  "c295": {
-  "sim": 1.0,
-  "cosine": 1.0,
+  "sim": 0.865,
+  "cosine": 0.663,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -11102,7 +11291,7 @@
   "name": "Zuran Spellcaster",
   "orig": "{T}: Zuran Spellcaster deals 1 damage to any target.",
   "reco": "{T}: This creature deals 1 damage to any target.",
-  "rank": 1,
+  "rank": 4,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -11151,7 +11340,11 @@
   "tags": [
    "cardtype:creature",
    "type:elephant",
-   "kw:trample"
+   "kw:trample",
+   "static_grant:trample",
+   "affected_type:creature",
+   "affected_filter:other",
+   "affected_scope:you_control"
   ],
   "name_leak": false
  },
@@ -11229,6 +11422,7 @@
    "lifegain",
    "trigger_scope:self",
    "trigger:etb",
+   "lifegain_amount:1",
    "tempo:+1",
    "draw_count:1",
    "trigger:end_step"
@@ -11273,7 +11467,8 @@
    "trigger:dies",
    "trigger_zone:graveyard",
    "damage",
-   "damage_amount:1"
+   "damage_amount:1",
+   "lifegain_amount:1"
   ],
   "name_leak": false
  },
@@ -11313,6 +11508,7 @@
    "draw",
    "target_count:one",
    "target_type:creature",
+   "pump_amount:-4/+0",
    "draw_count:1"
   ],
   "name_leak": false
@@ -11349,6 +11545,7 @@
    "target_type:player",
    "draw_count:2",
    "tempo:+1",
+   "life_loss_amount:2",
    "life_loss"
   ],
   "name_leak": false
@@ -11433,8 +11630,8 @@
   "name_leak": false
  },
  "c304": {
-  "sim": 0.308,
-  "cosine": 0.27,
+  "sim": 0.314,
+  "cosine": 0.285,
   "concept_f1": 0.5,
   "number_f1": 0.0,
   "missing": [
@@ -11470,13 +11667,20 @@
    "kw:vigilance",
    "selection",
    "trigger_scope:self",
-   "trigger:etb"
+   "trigger:etb",
+   "look_top:4",
+   "take_count:1",
+   "take_filter:creature_powerle2",
+   "take_dest:hand",
+   "rest_dest:library_bottom",
+   "rest_random_order",
+   "take_optional"
   ],
   "name_leak": false
  },
  "c305": {
-  "sim": 0.488,
-  "cosine": 0.553,
+  "sim": 0.469,
+  "cosine": 0.506,
   "concept_f1": 0.667,
   "number_f1": 0.0,
   "missing": [
@@ -11507,7 +11711,11 @@
    "type:human",
    "type:knight",
    "kw:first_strike",
-   "kw:hexproof"
+   "kw:hexproof",
+   "static_pump",
+   "pump_amount:+1/+0",
+   "static_affects:self",
+   "condition_present:permanent_black"
   ],
   "name_leak": false
  },
@@ -11541,6 +11749,7 @@
    "draw",
    "draw_count:3",
    "tempo:+2",
+   "life_loss_amount:3",
    "life_loss"
   ],
   "name_leak": false
@@ -11682,7 +11891,7 @@
   "name": "Thraben Inspector",
   "orig": "When Thraben Inspector enters, investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")",
   "reco": "When this creature enters, create {token}.",
-  "rank": 32,
+  "rank": 31,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -11846,13 +12055,14 @@
    "selection",
    "target_count:one",
    "target_type:creature",
+   "grant_kw:indestructible",
    "scry"
   ],
   "name_leak": false
  },
  "c315": {
-  "sim": 1.0,
-  "cosine": 1.0,
+  "sim": 0.887,
+  "cosine": 0.718,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -11862,7 +12072,7 @@
   "name": "Ember Hauler",
   "orig": "{1}, Sacrifice Ember Hauler: It deals 2 damage to any target.",
   "reco": "{cost}, Sacrifice this creature: It deals 2 damage to any target.",
-  "rank": 1,
+  "rank": 2,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -11885,8 +12095,8 @@
   "name_leak": false
  },
  "c316": {
-  "sim": 0.95,
-  "cosine": 0.876,
+  "sim": 0.936,
+  "cosine": 0.839,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -11955,7 +12165,7 @@
   "name": "Time of Ice",
   "orig": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.) / I, II \u2014 Tap target creature an opponent controls. It doesn't untap during its controller's untap step for as long as you control Time of Ice. / III \u2014 Return all tapped creatures to their owners' hands.",
   "reco": "Saga with 3 chapters. / Chapter {N}: Return {permanent} to its owner's hand.",
-  "rank": 31,
+  "rank": 33,
   "band": "gap",
   "has_text": true,
   "empty_reco": false,
@@ -11970,13 +12180,22 @@
    "type:saga",
    "kw:chapter",
    "num:3",
-   "bounce"
+   "bounce",
+   "chapter_count:3",
+   "saga_chapter:1",
+   "target_count:one",
+   "target_type:creature",
+   "target_scope:opp_control",
+   "saga_chapter:2",
+   "saga_chapter:3",
+   "target_count:all",
+   "remove:bounce"
   ],
   "name_leak": false
  },
  "c318": {
-  "sim": 0.731,
-  "cosine": 0.578,
+  "sim": 0.707,
+  "cosine": 0.517,
   "concept_f1": 0.75,
   "number_f1": 1.0,
   "missing": [
@@ -11989,7 +12208,7 @@
   "name": "Creeping Bloodsucker",
   "orig": "At the beginning of your upkeep, Creeping Bloodsucker deals 1 damage to each opponent. You gain life equal to the damage dealt this way.",
   "reco": "At the beginning of {the} upkeep, this creature deals 1 damage to {target}. / You gain N life.",
-  "rank": 1,
+  "rank": 2,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -12008,6 +12227,8 @@
    "lifegain",
    "damage",
    "damage_amount:1",
+   "lifegain_amount:x",
+   "x_is:rememberednumber",
    "trigger:upkeep"
   ],
   "name_leak": false
@@ -12042,8 +12263,8 @@
   "name_leak": false
  },
  "c320": {
-  "sim": 0.467,
-  "cosine": 0.368,
+  "sim": 0.445,
+  "cosine": 0.312,
   "concept_f1": 0.8,
   "number_f1": 0.0,
   "missing": [
@@ -12078,6 +12299,8 @@
    "lifegain",
    "trigger_scope:self",
    "trigger:etb",
+   "life_loss_amount:2",
+   "lifegain_amount:2",
    "life_loss"
   ],
   "name_leak": false
@@ -12114,7 +12337,10 @@
    "cardtype:artifact",
    "type:equipment",
    "kw:equip",
-   "num:1"
+   "num:1",
+   "static_pump",
+   "pump_amount:+2/+0",
+   "affected_type:creature"
   ],
   "name_leak": false
  },
@@ -12187,8 +12413,8 @@
   "name_leak": false
  },
  "c324": {
-  "sim": 0.664,
-  "cosine": 0.661,
+  "sim": 0.632,
+  "cosine": 0.58,
   "concept_f1": 1.0,
   "number_f1": 0.0,
   "missing": [],
@@ -12222,13 +12448,14 @@
    "target_type:opponent",
    "discard_count:1",
    "trigger:discard",
+   "life_loss_amount:2",
    "life_loss"
   ],
   "name_leak": false
  },
  "c325": {
-  "sim": 0.716,
-  "cosine": 0.534,
+  "sim": 0.722,
+  "cosine": 0.549,
   "concept_f1": 0.923,
   "number_f1": 0.667,
   "missing": [
@@ -12243,7 +12470,7 @@
   "name": "Ancestral Blade",
   "orig": "When Ancestral Blade enters, create a 1/1 white Soldier creature token, then attach Ancestral Blade to it. / Equipped creature gets +1/+1. / Equip {1} ({1}: Attach to target creature you control. Equip only as a sorcery.)",
   "reco": "When this Equipment enters, create a 1/1 white Soldier creature token. / Equipped creature receives {payload} {duration}. / Equip {1}",
-  "rank": 3,
+  "rank": 4,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -12266,13 +12493,16 @@
    "token_count:1",
    "token_color:white",
    "token_pt:1/1",
-   "token_type:soldier"
+   "token_type:soldier",
+   "static_pump",
+   "pump_amount:+1/+1",
+   "affected_type:creature"
   ],
   "name_leak": false
  },
  "c326": {
-  "sim": 0.867,
-  "cosine": 0.912,
+  "sim": 0.841,
+  "cosine": 0.846,
   "concept_f1": 0.923,
   "number_f1": 0.667,
   "missing": [
@@ -12304,6 +12534,13 @@
    "kw:vigilance",
    "lord:soldier",
    "token_make",
+   "static_pump",
+   "pump_amount:+1/+1",
+   "static_grant:vigilance",
+   "affected_type:creature",
+   "affected_filter:soldier",
+   "affected_filter:other",
+   "affected_scope:you_control",
    "trigger_scope:self",
    "trigger:etb",
    "tempo:+1.5",
@@ -12315,8 +12552,8 @@
   "name_leak": false
  },
  "c327": {
-  "sim": 0.428,
-  "cosine": 0.356,
+  "sim": 0.444,
+  "cosine": 0.395,
   "concept_f1": 0.714,
   "number_f1": 0.0,
   "missing": [
@@ -12335,7 +12572,7 @@
   "name": "Elite Scaleguard",
   "orig": "When Elite Scaleguard enters, bolster 2. (Choose a creature with the least toughness among creatures you control and put two +1/+1 counters on it.) / Whenever a creature you control with a +1/+1 counter on it attacks, tap target creature defending player controls.",
   "reco": "When this creature enters, {effect}. / Whenever this creature attacks, {effect} target creature.",
-  "rank": 8,
+  "rank": 4,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -12390,6 +12627,7 @@
    "target_count:one",
    "target_type:creature",
    "target_scope:you_control",
+   "counter_count:1",
    "counter:p1p1",
    "target_scope:opp_control",
    "ai_logic:always",
@@ -12416,7 +12654,7 @@
   "name": "Exsanguinate",
   "orig": "Each opponent loses X life. You gain life equal to the life lost this way.",
   "reco": "{Player} loses N life. / You gain N life.",
-  "rank": 6,
+  "rank": 3,
   "band": "gap",
   "has_text": true,
   "empty_reco": false,
@@ -12431,6 +12669,9 @@
    "cardtype:sorcery",
    "burn",
    "lifegain",
+   "life_loss_amount:x",
+   "x_is:x_paid",
+   "life_amount:equal_to_life_lost",
    "life_loss"
   ],
   "name_leak": false
@@ -12488,7 +12729,7 @@
   "name": "Malakir Bloodwitch",
   "orig": "Flying, protection from white / When Malakir Bloodwitch enters, each opponent loses life equal to the number of Vampires you control. You gain life equal to the life lost this way.",
   "reco": "Flying / Protection from white / When this creature enters, {affected} loses X life and you gain X life.",
-  "rank": 2,
+  "rank": 3,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -12510,7 +12751,10 @@
    "lifegain",
    "scales:vampire",
    "trigger_scope:self",
-   "trigger:etb"
+   "trigger:etb",
+   "life_loss_amount:x",
+   "x_is:count_vampire_youctrl",
+   "life_amount:equal_to_life_lost"
   ],
   "name_leak": false
  },
@@ -12528,7 +12772,7 @@
   "name": "Reliquary Tower",
   "orig": "You have no maximum hand size. / {T}: Add {C}.",
   "reco": "{T}: Add {C}.",
-  "rank": 20,
+  "rank": 18,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -12540,6 +12784,7 @@
    "cardtype:land",
    "mana_source",
    "enters_untapped",
+   "affected_type:you",
    "cost:tap",
    "mana:colorless",
    "mana_amount:1"
@@ -12562,7 +12807,7 @@
   "name": "Exhaustion",
   "orig": "Creatures and lands target opponent controls don't untap during their next untap step.",
   "reco": "Target opponent {effect}.",
-  "rank": 23,
+  "rank": 21,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -12596,7 +12841,7 @@
   "name": "Feed the Swarm",
   "orig": "Destroy target creature or enchantment an opponent controls. You lose life equal to that permanent's mana value.",
   "reco": "Destroy target creature or enchantment an opponent controls.",
-  "rank": 6,
+  "rank": 7,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -12612,7 +12857,8 @@
    "target_type:creature",
    "target_scope:opp_control",
    "target_type:enchantment",
-   "remove:destroy"
+   "remove:destroy",
+   "life_loss_amount:x"
   ],
   "name_leak": false
  },
@@ -12647,13 +12893,15 @@
    "target_count:one",
    "target_type:creature",
    "target_scope:you_control",
-   "counter:p1p1"
+   "counter_count:1",
+   "counter:p1p1",
+   "grant_kw:hexproof"
   ],
   "name_leak": false
  },
  "c336": {
-  "sim": 0.573,
-  "cosine": 0.433,
+  "sim": 0.549,
+  "cosine": 0.372,
   "concept_f1": 1.0,
   "number_f1": 0.0,
   "missing": [],
@@ -12685,6 +12933,8 @@
    "trigger:etb",
    "target_count:one",
    "target_type:opponent",
+   "life_loss_amount:3",
+   "lifegain_amount:3",
    "life_loss"
   ],
   "name_leak": false
@@ -12701,7 +12951,7 @@
   "name": "Myriad Landscape",
   "orig": "Myriad Landscape enters tapped. / {T}: Add {C}. / {2}, {T}, Sacrifice Myriad Landscape: Search your library for up to two basic land cards that share a land type, put them onto the battlefield tapped, then shuffle.",
   "reco": "This land enters tapped. / {T}: Add {C}. / {cost}, {T}, Sacrifice this land: Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
-  "rank": 8,
+  "rank": 7,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -12716,6 +12966,9 @@
    "land_tutor",
    "mana_source",
    "enters_tapped",
+   "replacement",
+   "replace_event:moved",
+   "replace_with:tap",
    "cost:tap",
    "mana:colorless",
    "mana_amount:1",
@@ -12925,13 +13178,14 @@
    "trigger:etb",
    "target_count:one",
    "target_type:creature",
+   "counter_count:3",
    "counter:m1m1"
   ],
   "name_leak": false
  },
  "c344": {
-  "sim": 1.0,
-  "cosine": 1.0,
+  "sim": 0.907,
+  "cosine": 0.767,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -12958,6 +13212,7 @@
    "type:cat",
    "type:soldier",
    "counters_plus",
+   "counter_count:1",
    "counter:p1p1",
    "trigger:gain_life"
   ],
@@ -13007,7 +13262,7 @@
   "name": "Corrupt",
   "orig": "Corrupt deals damage to any target equal to the number of Swamps you control. You gain life equal to the damage dealt this way.",
   "reco": "This spell deals N damage to any target. / You gain N life.",
-  "rank": 8,
+  "rank": 6,
   "band": "partial",
   "has_text": true,
   "empty_reco": false,
@@ -13024,13 +13279,17 @@
    "lifegain",
    "target_count:one",
    "target_type:any",
-   "damage"
+   "damage",
+   "damage_amount:x",
+   "x_is:count_swamp_youctrl",
+   "lifegain_amount:x",
+   "x_is:totaldamagedonebythisturn"
   ],
   "name_leak": false
  },
  "c347": {
-  "sim": 0.995,
-  "cosine": 0.988,
+  "sim": 0.911,
+  "cosine": 0.778,
   "concept_f1": 1.0,
   "number_f1": 1.0,
   "missing": [],
@@ -13066,8 +13325,8 @@
   "name_leak": false
  },
  "c348": {
-  "sim": 0.351,
-  "cosine": 0.212,
+  "sim": 0.364,
+  "cosine": 0.244,
   "concept_f1": 0.667,
   "number_f1": 0.0,
   "missing": [
@@ -13085,7 +13344,7 @@
   "name": "Gray Merchant of Asphodel",
   "orig": "When Gray Merchant of Asphodel enters, each opponent loses X life, where X is your devotion to black. You gain life equal to the life lost this way. (Each {B} in the mana costs of permanents you control counts toward your devotion to black.)",
   "reco": "When this creature enters, {affected} loses N life and you gain N life.",
-  "rank": 13,
+  "rank": 9,
   "band": "gap",
   "has_text": true,
   "empty_reco": false,
@@ -13102,6 +13361,9 @@
    "lifegain",
    "trigger_scope:self",
    "trigger:etb",
+   "life_loss_amount:x",
+   "x_is:devotion_black",
+   "life_amount:equal_to_life_lost",
    "life_loss"
   ],
   "name_leak": false
@@ -13139,6 +13401,8 @@
    "trigger:etb",
    "target_count:one",
    "target_type:player",
+   "life_loss_amount:2",
+   "lifegain_amount:2",
    "life_loss"
   ],
   "name_leak": false
@@ -13158,7 +13422,7 @@
   "name": "Feat of Resistance",
   "orig": "Put a +1/+1 counter on target creature you control. It gains protection from the color of your choice until end of turn. (It can't be blocked, targeted, dealt damage, enchanted, or equipped by anything of that color.)",
   "reco": "Put a +1/+1 counter on target creature you control.",
-  "rank": 8,
+  "rank": 7,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -13172,6 +13436,7 @@
    "target_count:one",
    "target_type:creature",
    "target_scope:you_control",
+   "counter_count:1",
    "counter:p1p1"
   ],
   "name_leak": false
@@ -13260,7 +13525,7 @@
   "name": "Spikeshot Goblin",
   "orig": "{R}, {T}: Spikeshot Goblin deals damage equal to its power to any target.",
   "reco": "{cost}, {T}: This creature deals N damage to any target.",
-  "rank": 4,
+  "rank": 3,
   "band": "good",
   "has_text": true,
   "empty_reco": false,
@@ -13277,7 +13542,9 @@
    "cost:mana",
    "target_count:one",
    "target_type:any",
-   "damage"
+   "damage",
+   "damage_amount:x",
+   "x_is:own_power"
   ],
   "name_leak": false
  }
