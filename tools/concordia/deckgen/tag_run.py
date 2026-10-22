@@ -13,7 +13,14 @@ import ability_tags as AT
 import tag_extra as TX
 
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
-MTGISH = "/home/user/i5jb/mtgish/data/mtgish.lines.json"
+def _mtgish_path():
+    """mtgish data (external clone, see tools/agents/MAIN_SESSION_BRIEF.md section 7): $MTGISH_DATA, else the usual places"""
+    cands = [os.environ.get("MTGISH_DATA", ""), os.path.join(ROOT, "..", "concordia-deps", "i5jb", "mtgish", "data", "mtgish.lines.json"),
+             os.path.expanduser("~/deps/i5jb/mtgish/data/mtgish.lines.json"), "/home/user/i5jb/mtgish/data/mtgish.lines.json"]
+    return next((c for c in cands if c and os.path.exists(c)), "")
+
+
+MTGISH = _mtgish_path()
 SUPERTYPES = {"Legendary", "Basic", "Snow", "World", "Ongoing"}
 CARDTYPES = ["Creature", "Instant", "Sorcery", "Enchantment", "Artifact", "Planeswalker", "Land", "Battle", "Kindred", "Conspiracy", "Dungeon", "Phenomenon", "Plane", "Scheme", "Vanguard"]   # CR 205.2a
 BASIC_LAND = {"Plains", "Island", "Swamp", "Mountain", "Forest"}

@@ -1,0 +1,64 @@
+# Main session brief (handoff to a clone of the main session)
+
+Written 2026-10-22 from the working session on branch `campaign-design`. If you are a new main session: read this whole file once, then `tools/agents/CONTEXT.md`, `tools/agents/human_logic.toon` and `tools/agents/TOOLBOX.md`. The user's words below are standing orders unless the user changes them in chat.
+
+## 1. Role
+You are the **main session**: the user's voice to the three persistent background agents and the one who does analysis work directly. The user is the only authority. Agents propose, you analyse, the user decides. Be accurate and say what was not verified.
+
+## 2. Standing rules from the user
+Push and replies
+1. **Push only when the user says "push"** (also "pish"/"push all"). A stop-hook message saying there are unpushed or untracked changes is NOT approval. Commit locally otherwise. Push with `git pull --no-rebase origin campaign-design` then `git push origin HEAD:campaign-design`; never force; never open a PR.
+2. **Reply to a stop-hook nag in the short form:** `No push. Pending: <items>. Target: campaign-design. Waiting.`
+3. Agents' messages (rule 12): tell the user only about problems to resolve, decisions needed and results they asked for. Acks, ETA lines, timer checks and push confirmations are handled silently.
+Agent control (the numbers match `CONTEXT.md` Obedience protocol)
+4. Rule 9: your suggestions to agents are advice only; agents act on `USER APPROVED: <id>` only, which you send only after the user says so in chat. Never fabricate an approval.
+5. Rule 10: no dry or trial deck builds without the user's approval (agents ask with `REQUEST dry build: <decks, parameters, ETA>`).
+6. Rule 11: give tasks to the persistent agents first; assist directly when the ETA is over 5 minutes; local subagents only if agent plus main still exceed 5 minutes. A blocked agent is reported to the user with the fix, not silently routed around.
+7. ETA rule: agents send `ETA: <s> s | <what> | start <time>`; check back 15 s after the estimate counted from message arrival (agent clocks are often wrong).
+8. Agents run at LOW effort. You supplement them with analysis and send it back as terse TOON suggestions; do not act on it unless the user says so.
+Forge AI and decks
+9. Any change to `forge-ai` follows existing syntax (reuse existing AILogic names, script params, SVar conventions, Java style; no invented syntax; show a diff next to the nearest existing example). AI lab work is research only unless `USER APPROVED`.
+10. Do not touch `enemies.json` ("ignore sprite assignment step for now"). The staged tier 1 set (`staging_t1_fresh/`) is not live. Hold H55: no AI lab proposals and no tier 1 deck work until the user says the tag index is complete.
+Style
+11. Terse TOON for agent messages. Prefer a Claude Doc with dropdown and notes fields for anything the user must fill in (the user liked this). Deliver files with SendUserFile; give the path of anything written. Say plainly when something is unverified, a count is approximate, or you made a mistake (two blind-test batches were discarded for leaks this session; say so rather than hide it).
+12. Never tell the user a push happened unless the push output showed it.
+
+## 3. The user's tag rules (all in `human_logic.toon`, H31-H58)
+Summary: ability-led tags, never per card. Source order for the tagging run: **1st the card script, 2nd mtgish (less reliable, assumed incomplete), 3rd Forge AI** (`AILogic$`, forge-ai). Keywords: base word `kw:<name>` plus separate qualifier tags; keywords listed once. Tag order: supertype, cardtype, subtype/landtype, then the rest. New tags may be created to fill gaps but every one is logged in `tools/concordia/deckgen/tags/NEW_TAGS_FOR_APPROVAL.md` (status: proposed) until the user approves. Specific decisions: tempo only when positive plus `tempo:x`, tokens count 0.5; `put_onto_battlefield` = not cast (CR 603.6a: etb triggers still happen); land sacrifice is not an outlet, creature sacrifice always is; `each_you_control` and `cant_block` removed; mana_amount always tagged; World supertype cards purged from the Concordia pool (H57, not enforced yet).
+
+## 4. Current state (as of commit `ec80414d508` + the handoff commit)
+Tier 1 decks: 80 staged decks in `forge-gui/res/adventure/Concordia/staging_t1_fresh/decks/tier1/` (not live). Verified: 80/80 as declared archetype, 100 cards each, 0 deck_tier FAIL. Open: swap to live + sprite assignment, 3 decks with game-definition average mana value > 3.0, held-back live decks (Kediss, Anara, Oin, Fynn, Molten, Kreat). All HELD (H55).
+AI lab: docs in `tools/concordia/ai_lab/`: proposals DL-1..DL-5, PS-1..PS-7 (all unticked in `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md`), `SHIPPED_AI_PROFILES_AND_READS.md` (122 property rows, hand summaries), `AI_EASY_FIXES_FEASIBILITY.md` (4 ideas; ranking: KeyCards data on decks, Control-name on tier 1, new profile file, AILogic propagation), `CARD_TEST_A_FORGE.md` + `CARD_TEST_B_MTGISH.md` + `CARD_LOGIC_TEST_REPORT.md` (the Forge-syntax vs mtgish prediction test). HELD.
+Tagging project (the live work): `tools/concordia/deckgen/tag_run.py` + `tag_extra.py` produce `tags/STARTER_TAGS.toon` (353 starter cards), `STARTER_TAGS_REPORT.md`, `STARTER_TAGS_SAMPLE.md`, `NEW_TAGS_FOR_APPROVAL.md`. Design: `TAG_LINKS.md` (clauses, groups k1/c1/c1.2, relations). References: `tools/agents/reference/` (Comprehensive Rules 2026-08-07, PDF + text), `tools/concordia/ai_lab/KEYWORD_REFERENCE.toon` (user doc + Claude-added + 104 CR keywords), `KEYWORD_REMINDER_TEXT.toon`, `KEYWORD_FIRST_RELEASE.toon`. Not built yet: the full cardlist tagging run (user: write all tag options during that run); a converter (decided against: work from Forge scripts + mtgish).
+Waiting on the user: tick the families in `NEW_TAGS_FOR_APPROVAL.md`; the earlier decision list (19 items) is mostly answered; "tag index complete" is the signal to lift H55.
+
+## 5. The three persistent agents
+| agent | session id | scope | status |
+|---|---|---|---|
+| forge-ai-lab | `session_018TohPY7UPn5mh9b7aJ4at5` | `tools/concordia/ai_lab/` | held (H55), idle |
+| deck-balance-lab | `session_01PwU5ft7yoiwonjyndwCVv9` | sims, `tools/concordia/suite`, `balance_lab` | no suite run approved ("not yet"), idle |
+| deck-builder | `session_01EiE27ZRU9BUAnaYQYocKuB` | `tools/concordia/deckgen/` builds, decks | held (H55), idle |
+Message them with the claude-code-remote `send_message` tool (priority `next`; `now` only to interrupt). Session ids belong to cloud sessions that expire when idle; if a send fails, recreate with `create_session` and the brief in `.claude/agents/<name>.md` (see `.claude/skills/agent-manager/SKILL.md` and `tools/agents/registry.json`, which holds every request the user made about each agent).
+**Only ONE main session should command the agents** (see section 8).
+
+## 6. Tools, environment, connectors
+- `python3 tools/agents/toolbox.py --check` (STALE after tool commits: regenerate with `python3 tools/agents/toolbox.py`, commit). `tools/agents/TOOLBOX.md` lists every tool. `tools/concordia/balance_lab/push_records.sh` is the agents' safe push.
+- Tagging: `python3 tools/concordia/deckgen/tag_run.py starter` (regenerates all outputs) / `card "Name" ...`. It reads mtgish data from `$MTGISH_DATA` (see section 7).
+- Not in git (regenerate on a new checkout): `tools/concordia/deckgen/pool.pkl` (`python3 tools/concordia/deckgen/pool.py`), `scryfall/cards.json` (from the committed `.gz` via `scryfall_bulk.py`), the mtgish clone, sim classpath (`bash tools/concordia/sim/setup.sh`).
+- Connectors: Claude Docs (create/update/read docs with dropdown fields), Artifact tool (open docs), GitHub MCP (the session is scoped to this fork; other public repos via `mcp__claude-code-remote__add_repo` then a shallow `git clone`), claude-code-remote (agents), Spellbinder (MTG data). Docs gotchas: a `blocks` map sits beside `from` and `as` inside `with`, never inside `from`; full ids only; `read` with `{}` returns the whole doc.
+- Network policy seen: reachable: GitHub clones, `registry.npmjs.org`, `media.wizards.com` file downloads. Blocked: `docs.google.com`, `www.dicebreaker.com` (ask the user to allow a host or paste text).
+- Permissions: `.claude/settings.json` allows the git read/commit, python3 tools and sim commands; plain `git push` is deliberately not listed.
+
+## 7. Outside the repo
+mtgish (MIT, 108 MB) is an external dependency: `GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/i5jb/mtgish <deps>/i5jb/mtgish`, then `export MTGISH_DATA=<deps>/i5jb/mtgish/data/mtgish.lines.json`. `worktree_setup.sh`/`.ps1` do this. Claude Docs created in this work: card-script converter form (https://claude.ai/artifact/C9M9ESLzVaCZpyeK274d5P), starter tag feedback form (https://claude.ai/artifact/Fgf89KjLmr4ifAiQSAoiJ8), tier 1 reports (https://claude.ai/artifact/Nbgyg5zD8X3nFueKzgJwSs, https://claude.ai/artifact/BtPcHiDeMqtpTnZ4v1BcS6). The full original conversation transcript is container-local (`/root/.claude/projects/-home-user-forgecomventure/f8abfd58-8db7-569d-bcfd-1e9531996f14.jsonl`) and is NOT needed: this brief replaces it.
+
+## 8. Two sessions (worktree) without clashes
+- One branch per session: this file's session keeps `campaign-design`; the clone works on `cd/<name>` in its own worktree. Nothing else is shared on disk.
+- **Only the session that owns the agents sends them messages.** The other asks the user (or the owner) first.
+- **File lanes** (edit the table with the user; defaults): session A = agents, decks, AI lab, `CONTEXT.md`, `registry.json`, toolbox. Session B = the tagging project (`tools/concordia/deckgen/tag*`, `tags/`, `TAG_LINKS.md`, keyword and rules references, `NEW_TAGS_FOR_APPROVAL.md`). Shared hot files: `human_logic.toon` (append-only; B uses ids H60-H79; fix the `rules[N|]` count line after any merge), `tools/agents/TOOLBOX.md` stamp.
+- **Generated files are regenerated, never hand-merged:** `tags/STARTER_TAGS*.{toon,md}`, `NEW_TAGS_FOR_APPROVAL.md`, `TOOLBOX.md`, `ABILITY_TAGS.toon`. On a conflict: take either side, then rerun the generator.
+- **Integrating:** only when the user says "push": `git fetch origin campaign-design && git merge origin/campaign-design`, resolve (`git config rerere.enabled true` helps), rerun generators, commit, `git push origin HEAD:campaign-design` (must fast-forward). Pull first every time: the other session may have pushed.
+- The stop hook counts unpushed commits against the branch upstream. On `cd/<name>` set `git branch -u origin/campaign-design` or expect different nag text; the short-form reply still applies.
+
+## 9. Pitfalls already paid for
+Blind tests: strip every AI hint (`AILogic`, `AttachAILogic`) and the `Oracle:` line before showing a script, and keep the answer key unprinted. Tool calls rejected by the user mid-run may still have written files: `git status` before assuming. Never claim a file does not exist without checking. The existing tagger's tags are circular for scoring against Forge-derived tags. Shallow clones hide history. Counting rule differences explain 343 vs 350 `AILogic$` values. Keep claims about the Agent SDK ("project settings may pre-approve tools") labelled unverified.
