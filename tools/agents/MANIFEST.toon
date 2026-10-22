@@ -1,15 +1,16 @@
-records_commit: 40a6a5aaba976ccf8a53efdacf5e46e50364519b
+records_commit: b2f85062b04e0710b25d988fcfec763796c46083
 branch: campaign-design
-created: 2026-10-22T13:47:22+00:00
-entries[54|]{path|hash}:
+created: 2026-10-22T16:56:02+00:00
+entries[59|]{path|hash}:
   .claude/agents/deck-balance-lab.md|1e1a3d15b05cbbc7b76a9dc757b585b792bc90af
   .claude/agents/deck-builder.md|0ac3eb4856798cd5409e37a21c0fdb6be9e43c61
   .claude/agents/forge-ai-lab.md|18058f482c3826816f44ec5e7617ebff42be86e4
+  .claude/agents/tag-blind-reader.md|395a40c436f400fcd5380d26ee8f5bb294c715f5
   .claude/settings.json|6d32bfdc32c41acc3a5412d20838acf1d8806a1d
   .claude/skills/agent-manager/SKILL.md|611bef8eeac8bb2a07510fb4091c85a6054d0d16
   .claude/skills/concordia-map-creator/SKILL.md|f8d590efec75e0492baf7e7a8177419c311a22a6
   CLAUDE.md|de13abcb44f24f0bb2b3f8e6864b3d42ce3784d9
-  docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md|72bcb41761bed635da8a60f67004fa79e0c3f34f
+  docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md|1d4bfc71388472ad312be412d5f797fd1c8772e9
   docs/Adventure/Campaign/AI_FLAGGED_CARDS.md|ab846bdea2e7449d32861e0131b72dc875583d15
   docs/Adventure/Campaign/AI_RESEARCH.md|25599e9869f0ae1b37c8f9ebeff918449893de28
   docs/Adventure/Campaign/AI_TAGS_REFERENCE.md|0920082dc42b6cfa45e77b58864c60b4aef1a092
@@ -31,10 +32,10 @@ entries[54|]{path|hash}:
   tools/agents/AGENT_KNOWLEDGE.md|bcde353c1ff1218ecf914bfbf3a590dae67f30a2
   tools/agents/CLAUDE2_SYNC_CHECK.md|0b996b5c30ff5d25a77d517b296875ccee10a3a2
   tools/agents/CONTEXT.md|42b76238dbb8f2f20fd329ffb81e76e31d97de46
-  tools/agents/HANDOVER.md|135ba7f590288ca05e87dc0d586edd481c263c60
-  tools/agents/MAIN_SESSION_BRIEF.md|6ca53653f15829ee9b65a1816885729cda7eb10e
-  tools/agents/NEW_SESSION_PROMPT.md|d5f1eac75c6b063e5558822e5ff4893e7fc9e002
-  tools/agents/TOOLBOX.md|8f052cce383ed8d16df7cc5dda295e8b5459259b
+  tools/agents/HANDOVER.md|ee118e5b03157abd4ca75515f5fd5cc498542e40
+  tools/agents/MAIN_SESSION_BRIEF.md|25d961ef169e3c3fc270f3198f43310efb494d39
+  tools/agents/NEW_SESSION_PROMPT.md|2287db4f8bac29a86bbe940da5f947817d480895
+  tools/agents/TOOLBOX.md|f14150bdf6f372d38d6daa5b58f2204c74dacc60
   tools/agents/agentctl.py|f3fe9c49aff244e384cc70a69d6e1b90d26510ef
   tools/agents/analysis/deck-balance-lab.md|c068929cba85dd1a6302922d0f427a2b6515cda7
   tools/agents/analysis/forge-ai-lab.md|cb3a0494195160830547d63ad3844b16f620b57a
@@ -42,11 +43,15 @@ entries[54|]{path|hash}:
   tools/agents/coordinator/interactions.log|3341d47173e80b9069227084bad9469ba2b803ea
   tools/agents/coordinator/productivity.csv|1ec1ce83c4b20d9f5b14b0726909a8af422c7e08
   tools/agents/docpush.py|5aafccdacbd34bce1699807723c98818898a2c41
-  tools/agents/human_logic.toon|a42e12516e862d372398e2497aa0e5d8767595b2
+  tools/agents/human_logic.toon|53d9b64da688d0f838a842faf95f3f633aff734f
   tools/agents/mailbox.py|d2c53572c26342bb2c070440ea9a496bcc9189d1
   tools/agents/mailbox/README.md|4486d8bc3b94c1a82d68a9a0417d9a7c2ebb59bb
   tools/agents/mailbox/msg/claude1_00001_status.toon|dadc9a6232ca1ff51428d2690a931c6da5e9e663
+  tools/agents/mailbox/msg/claude1_00002_note.toon|ef4b17a26de582c15f8eb653aceacb22cb8ccc08
+  tools/agents/mailbox/msg/claude1_00003_status.toon|95ca8cbd6265f071f64bdad3c46fb5bea7f8c1eb
+  tools/agents/mailbox/msg/claude2_00001_status.toon|bae55a6639dc5bcef80300f85e270c74cf745781
   tools/agents/projects/agent_tool_test.toon|efde373ac3e3d421f8a3fe8cc4c4409c4574151e
+  tools/agents/projects/claude2_agents.md|3a5d00568c1257584b09f5e69a428b1f0db4128e
   tools/agents/reference/MTG_COMP_RULES_20260807.txt|93f1becbbe17d493c29414198b17098fc30feafb
   tools/agents/reference/MagicCompRules 20260807.pdf|f003b94b6c2253f4124fe8718d7e82e6ef056fc0
   tools/agents/reference/README.md|163e399be84e6d5cfef9f5ef58087decd15a64e8
@@ -55,4 +60,4 @@ entries[54|]{path|hash}:
   tools/agents/retired_briefs/forge-ai-lab.2026-10-21.md|f11c22414eb11765ef7c42c5a85cc9eead994e53
   tools/agents/sync_check.py|c1c1d7f8f484a8772f9100b47050ad2c508703a9
   tools/agents/toolbox.py|e8d1cc1a07ede3a491a20c7a2d9f95d8629cfee1
-  tools/concordia/|66b5a4ace6c31c5deda175646b36630d259712d1
+  tools/concordia/|e35580d8a86a1765f9ae2b8f08285ccae932f4a0
