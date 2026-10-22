@@ -1,0 +1,36 @@
+[metadata]
+Name=Atris's Crew (The Mouth of Sauron) (40)
+Description=Test deck shrunk to 40 cards by ai_lab/minideck.py from T2_UB_The.dck; test cards: none
+[Commander]
+1 The Mouth of Sauron|LTR
+[Main]
+4 Island
+7 Swamp
+1 Myriad Landscape|CMM
+1 Tainted Isle|TOR
+1 Bojuka Bog|WWK
+1 Barren Moor|ONS
+1 Lonely Sandbar|ONS
+1 Omen Hawker|MOM
+1 Ruin Crab|ZNR
+1 Stitcher's Supplier|M19
+1 Malakir Rebirth|ZNR
+1 Sol Ring|TMC
+1 Vampiric Rites|FDN
+1 Baleful Strix|SLZ
+1 Blood Artist|AVR
+1 Corrupt Court Official|TLA
+1 Ghostly Pilferer|M21
+1 Master Pakku|TLA
+1 Ornithopter of Paradise|J25
+1 Scheming Aspirant|ONE
+1 Umbral Collar Zealot|EOE
+1 Zulaport Cutthroat|BFZ
+1 Arcane Signet|TMC
+1 Bitter Triumph|LCI
+1 Drown in the Loch|ELD
+1 Eaten by Piranhas|FDN
+1 Fellwar Stone|9ED
+1 Boggart Trawler|MH3
+1 Flux Channeler|WAR
+1 Gríma Wormtongue|LTR

@@ -7,7 +7,7 @@ Research only. Read from `origin/cd/claude2` (STARTER_TAGS.toon 353 cards, tag_v
 
 | # | Finding | Evidence | Severity |
 |---|---|---|---|
-| 1 | `sacrifice_outlet` is wrong on self-sacrifice | 20 cards carry it; 14 of them also have `cost_sacrifice_target:self` (Mind Stone, Sakura-Tribe Elder, Yavimaya Elder, Thrashing Brontodon, Ember Hauler...). Self-sac is not an outlet. Land fix covered only lands | high (noise in a query AI work would use) |
+| 1 | `sacrifice_outlet` is wrong on self-sacrifice | 20 cards carry it; 14 of them also have `cost_sacrifice_target:self` (Mind Stone, Sakura-Tribe Elder, Yavimaya Elder, Thrashing Brontodon, Ember Hauler...). Self-sac is not an outlet. Land fix covered only lands | high. **Resolved 2026-10-22** in the regenerated run on cd/claude2: 6 cards left (Victimize, Nefarox, Ravenous Baloth, Bosco, Siege-Gang Commander, Daretti), 0 with `cost_sacrifice_target:self`; I re-checked the toon. Query 5 should now be a hit |
 | 2 | `ai_logic` value is lowercased and not tied to an ability | `snake()` in tag_verify.py:12 and :190-191. `atoppeot`, `makeunblockable` can't be grepped in code; case info lost. Syr Konrad's AtOppEOT sits on the mill ability only, but the tag sits on the card | medium |
 | 3 | Compound value `Always/Fight` split | Hunt the Weak shows `ai_logic:always ai_logic:fight`. Regex `[A-Za-z0-9_]+` stops at `/`, so one of the two probably comes from a second AILogic line; check the script. If it is one string, the split is fine; if two abilities, tag is per card not per ability | low |
 | 4 | Missing implied tags for logic that exists | Control Magic `gaincontrol`: no control-steal tag. Incinerate `cantregenerate`: no no-regenerate tag. Rogue's Passage `makeunblockable`: no unblockable-grant tag. Exhaustion `keepoppcreatslandstapped`: no skip-untap tag. Pacifism `curse`: has `restrict`, ok | medium |
@@ -60,7 +60,7 @@ Five worked queries (starter tags, 353 cards):
 | 2 | `cardtype:instant` + `draw` | 11, 1 with ai_logic | timing logic for draw instants | partial: includes Bladebrand, Return of the Wildspeaker (not pure draw) |
 | 3 | `cardtype:instant` + `target_type:creature` + `damage` | 5, 2 with ai_logic (PowerDmg) | none needed | **hit**: PowerDmg cards found |
 | 4 | `fight` | 7, 2 with ai_logic | check Prey Upon, Pounce, Somberwald Stag have Fight | **hit**: 5 fight cards lack the logic; real candidate list |
-| 5 | `sacrifice_outlet` | 20 | outlet-AI | **miss**: 14 are self-sacrifice (finding 1.1) |
+| 5 | `sacrifice_outlet` | 20 (6 after the regenerated run) | outlet-AI | **miss** on the first run (14 self-sacrifice, finding 1.1); the 6 left are real outlets, so now a hit |
 
 Also: `trigger:upkeep` found 5 cards (Phyrexian Arena etc.), correct; `type:aura` found all 5 starter auras, all with ai_logic (so the tag set already covers it).
 
@@ -76,12 +76,12 @@ Also: `trigger:upkeep` found 5 cards (Phyrexian Arena etc.), correct; `type:aura
 **Verdict: partly useful.**
 - Good for selecting candidates by *effect shape* (queries 1, 3, 4): 3 of 5 queries returned usable lists without reading scripts.
 - Weak for *timing and targeting*, which is where AI patches mostly live; no tag expresses them, and `ai_logic:<name>` only repeats what the script already says.
-- One wrong tag (`sacrifice_outlet`) made query 5 useless; fix it first.
+- One wrong tag (`sacrifice_outlet`) made query 5 useless; fixed in the regenerated run (20 -> 6). With it, 4 of 5 queries are usable.
 
 **What the full-cardlist run should add for the AI lab**
 1. Keep original case and the ability the logic sits on: `ai_logic:AtOppEOT@a2`.
 2. Tags for timing: `ai_timing:instant|eot|main`, and for targeting: `ai_target:best_creature|opp_only`.
-3. Split `sacrifice_outlet` (outlet) from `cost_sacrifice_target:self`.
+3. ~~Split `sacrifice_outlet` from self-sacrifice~~ done in the regenerated run.
 4. The tags noted in section 1.4 (steal, unblockable, no_regen, skip_untap).
 5. A per-tag count over the full list so a query's hit set is known (e.g. instant+scry = 11).
 6. Separate flag files for "mtgish cost only" so they don't bury real disagreements.
