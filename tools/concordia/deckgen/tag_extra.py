@@ -100,7 +100,7 @@ REF_EXTRA = {
  "grant_double_strike": ("grants double strike", "script Pump KW$ Double Strike"),
  "grave_hate": ("exiles or punishes cards in graveyards", "script ChangeZone Graveyard -> Exile"),
  "lord": ("gives a bonus to all creatures of a type", "script S: Continuous with a type filter"),
- "burn": ("AI tag: deals damage as removal or reach", "AI Tags category (tag_verify.is_ai_tag)"),
+ "burn": ("AI tag: damage or life loss that can hit a player (any target, player or opponent); the damage itself is tagged damage, damage_amount and target_type", "ability_tags.py rule: DealDamage with ValidTgts Any|Player|Opponent, or LoseLife on an opponent; AI Tags category"),
  "land_tutor": ("AI tag: searches the library for a land", "AI Tags category"),
  "selection": ("AI tag: card selection (look, scry, loot)", "AI Tags category"),
  "artifact_token": ("AI tag: creates artifact tokens", "AI Tags category"),
