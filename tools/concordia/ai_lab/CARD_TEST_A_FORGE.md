@@ -331,3 +331,102 @@ Keyword-name change (first word -> full name, variant b): 0 of 50 control predic
 Test-set proposals changed by the keyword-name split: 0 of 50.
 
 Note: the earlier A3 section (first-word names) stays as written, for the record. Variant (b) from that section is the same method with the first-word names; the headline above replaces it.
+
+## A3b: compound keywords, qualifiers and numbers (supersedes the A3 headline split rule)
+Rule (main session, 2026-10-22): the keyword feature is the base word only (`kw:protection`, `kw:enchant`, `kw:equip`, `kw:ward`, `kw:landwalk`, `kw:flashback` ...). Qualifiers become separate features: colours -> `color:<name>`; card or creature types -> `type:<name>`; `from everything` -> `qualifier:everything`; landwalk land types -> `landtype:<X>`; the `Snow` landwalk gives `supertype:snow` (a decision of mine: snow is a supertype, not one of the five H45 land types). Numbers tied to a keyword become `num:<n>`; colour symbols in a keyword cost become `color:<name>`. Variant (b) throughout: all features weight 1.
+
+### Compound and qualified keyword lines found in C and T, and the features each produced
+| Set | Card | Keyword line | Base feature | Qualifier features | Number and cost features |
+|---|---|---|---|---|---|
+| C | Traveler's Cloak | Enchant:Creature | kw:enchant | type:creature | - |
+| C | Traveler's Cloak | ETBReplacement:Other:ChooseLT | kw:etbreplacement | qualifier:choose_land_type | - |
+| C | Etchings of the Chosen | ETBReplacement:Other:ChooseCT | kw:etbreplacement | qualifier:choose_creature_type | - |
+| C | Circle of Affliction | ETBReplacement:Other:ChooseColor | kw:etbreplacement | qualifier:choose_color | - |
+| C | Pilgrim of Justice | Protection from red | kw:protection | color:red | - |
+| C | Bloodline Pretender | ETBReplacement:Other:ChooseCT | kw:etbreplacement | qualifier:choose_creature_type | - |
+| C | Prism Ring | ETBReplacement:Other:ChooseColor | kw:etbreplacement | qualifier:choose_color | - |
+| C | Haunting Apparition | ETBReplacement:Other:ChooseP | kw:etbreplacement | qualifier:choose_player | - |
+| C | Passenger Ferry | Crew:2 | kw:crew | - | num:2 |
+| C | Flaming Gambit | Flashback:X R R | kw:flashback | - | num:x, color:red (twice, set) |
+| C | Recoup | Flashback:3 R | kw:flashback | - | num:3, color:red |
+| C | Abandon Reason | Madness:1 R | kw:madness | - | num:1, color:red |
+| T | Mask of Law and Grace | Enchant:Creature | kw:enchant | type:creature | - |
+| T | Lignify | Enchant:Creature | kw:enchant | type:creature | - |
+| T | Defensive Stance | Enchant:Creature | kw:enchant | type:creature | - |
+| T | Rime Transfusion | Enchant:Creature | kw:enchant | type:creature | - |
+| T | Tangle Kelp | Enchant:Creature | kw:enchant | type:creature | - |
+| T | Frozen in Ice | Enchant:Creature | kw:enchant | type:creature | - |
+| T | Bind the Monster | Enchant:Creature | kw:enchant | type:creature | - |
+| T | Zombie Musher | Landwalk:Land.Snow:snow Land | kw:landwalk | supertype:snow | - |
+| T | Lightning Berserker | Dash:R | kw:dash | - | color:red |
+
+Compound forms: none of the 100 cards has `Protection from X and from Y` or `Enchant X or Y`. The only multi-part lines are `ETBReplacement:Other:Choose*` (code suffix mapped to a qualifier) and `Landwalk:Land.Snow:snow Land`. Two keyword forms in the sets carry a non-mana or unusual cost: none found (Crew, Madness and Flashback costs are mana or a number).
+
+### Re-score (variant b, leave-one-out on C, full set T)
+| Configuration | Strict exact | Partial | Miss | Exact-or-partial | Agree with B | Correct when agree |
+|---|---|---|---|---|---|---|
+| Previous headline: keyword base word only | 18 of 50 | 17 | 15 | 35 of 50 | 18 | 17 of 18 |
+| (1) keyword + qualifiers (A3b) | 20 of 50 | 15 | 15 | 35 of 50 | 20 | 19 of 20 |
+| (2) (1) + numbers and colour costs (A3b) | 20 of 50 | 15 | 15 | 35 of 50 | 20 | 19 of 20 |
+
+Changes:
+- Previous headline to (1): 3 control predictions changed (Iron Lad -> DoubleLife, Etchings of the Chosen -> MostProminentInComputerDeck, Haunting Apparition -> Curse); 4 test proposals changed (Zombie Musher, Tangle Kelp, Cogwork Archivist, Bind the Monster). Strict exact went up by 2 and the agreement with method B went up by 2.
+- (1) to (2): 0 control predictions changed; 1 test proposal changed (Lightning Berserker: PowerDmg -> WorstCard). The colour feature from `Dash:R` moves that proposal. I have not checked which value is right for Lightning Berserker, so this change is not a gain by itself.
+- Numbers and costs have no measurable effect on this set: the only numbered keywords are Crew, Flashback and Madness, and their numbers are shared by few cards.
+
+Caveats: the qualifier gains are on 50 control cards, and most of them come from the 6 choose-type keyword lines. The effect is small and within the noise of one card per change. Method B's strict exact is still 33 of 50; the comparison above uses the same B table.
+
+## Keyword reference check (against KEYWORD_REFERENCE.toon, 2026-10-22)
+Compared the K: lines of the 100 control and test cards with the user's keyword reference (143 `kind=keyword` entries; `ability_word` and `action` kinds excluded, since they are not Forge K: keywords). Names matched after lower-casing and removing non-letters. Forge base word = the K: line up to `:`, a parameter, or a `(`.
+
+**K: keywords in C and T that are NOT in the reference (6 cards, 4 bases):**
+
+| Forge K: base | Cards | Note |
+|---|---|---|
+| ETBReplacement | Bloodline Pretender, Circle of Affliction, Etchings of the Chosen, Haunting Apparition, Prism Ring, Traveler's Cloak | engine replacement line (choose a colour, type or player on entering); not a keyword in the reference |
+| Choose a Background | Alora, Merry Thief; Halsin, Emerald Archdruid | a Forge line for Background cards; not in the reference |
+| Storied | Bombur, Gentle Dreamer | keyword not in the reference |
+| Devoid | Crumble to Dust | keyword not in the reference |
+
+**Reference keywords with no `K:` spelling anywhere in cardsfolder (32 of 143):** Absorb, Adapt, Adventure, Alliance, Bloodrush, Bolster, Channel, Connive, Coven, Daybound/Nightbound, Detain, Exert, Explore, Fabricated, Fateseal, Flip, Forecast, Frenzy, Imprint, Inspired, Investigate, Manifest, Meld, Monstrosity, Morph and Megamorph, Poisonous, Populate, Proliferate, Support, Surveil, Totem Armor, Transform.
+
+Notes: several of these are mechanics that Forge writes as `A:` or `SVar:` lines, not `K:` lines (for example Proliferate, Explore, Investigate), so "no K: spelling" does not mean the mechanic is absent. The Morph entry is spelled `Morph` in Forge; the reference's "Morph and Megamorph" is a combined entry. Common Forge keywords the reference lacks: Hexproof, Infect, Toxic, Warp, Plot, Saddle, Station, Chapter, Class, Partner (cardsfolder-wide, the most frequent unmatched bases).
+
+## A4 (keywords removed from matching)
+Rule (main session, 2026-10-22): keyword (K:) lines and the features they produce (kw:, color:, type: and the rest, as in A3b) take no part in the AILogic$ overlap. Keywords stay on the card as separate tags. Method: the feature set is built from A/S/T/R lines only, with each line's API, cost shape and mode (as in A2). Reminder text is stripped before matching. The feature set never reads the text, so stripping reminder text cannot change any prediction here (checked by construction, not by a separate run).
+
+| Configuration (set C, leave-one-out) | Strict exact | Partial | Miss | Agree with B | Correct when agree |
+|---|---|---|---|---|---|
+| A3b: keywords and qualifiers in the match | 20 of 50 | 15 | 15 | 20 | 19 of 20 |
+| A4: keywords removed from the match | 16 of 50 | 19 | 15 | 16 | 15 of 16 |
+| Method B strict exact (reference) | 33 of 50 | | | | |
+
+A4 is worse than A3b on every strict measure. Removing the keyword features loses 4 strict exact and agreement with B drops from 20 to 16. The keyword features carried signal for the AILogic$ match on this set. Which cards gained or lost from the removal is in the table below; I have not checked by card type (auras, Flying creatures) whether the loss is concentrated there.
+
+Control predictions that changed (A3b -> A4): 17 of 50 (listed below). Test-set proposals that changed: 18 of 50.
+
+| Card | Actual | A3b | A4 | A4 grade |
+|---|---|---|---|---|
+| Passenger Ferry | Pump | ReplaySpell | Pump | partial |
+| Iron Lad, Diverging Destiny | Main2 | DoubleLife | MakeUnblockable | miss |
+| Traveler's Cloak | ChosenLandwalk | MostProminentInHumanDeck | Always | miss |
+| Rampaging Geoderm | TgtAttacker | Random | Pump | miss |
+| Etchings of the Chosen | MostProminentInComputerDeck | MostProminentInComputerDeck | Aristocrat | partial |
+| Alora, Merry Thief | Pump | Random | Fog | partial |
+| Circle of Affliction | MostProminentInHumanDeck | Always | ReplaySpell | partial |
+| Flaming Gambit | WorstCard | ReplaySpell | PowerDmg | partial |
+| Cavern Harpy | NeverBounceItself | NeverBounceItself | Pump | partial |
+| Hikari, Twilight Guardian | IfNotBuffed | CloneBestCreature | Always | miss |
+| Recoup | ReplaySpell | WorstCard | PowerDmg | partial |
+| Evolutionary Escalation | BoonCounterOnOppCreature | CloneBestCreature | PayUnlessCost | miss |
+| Bloodline Pretender | MostProminentInComputerDeck | MostProminentInComputerDeckNonToken | NeverBounceItself | partial |
+| Addle | MostProminentInHumanDeck | MostProminentHumanCreatures | MostProminentAttackers | partial |
+| Prism Ring | MostProminentInComputerDeck | MostProminentInGame | Always | partial |
+| Ambrosia Whiteheart | BounceOwnTrigger | ReplaySpell | NeverBounceItself | partial |
+| Haunting Apparition | Curse | Curse | MostProminentInComputerDeck | partial |
+
+Keyword-only cards: none. Removing K lines leaves at least one A/S/T/R line on all 100 cards (C and T), so no card lacks an ability line. The aura cards (Enchant) keep their S: or Mode$ Continuous lines, and Flying creatures keep their triggers or abilities.
+
+Reminder text: stripped before matching, no effect on the features (they never read text).
+
+Recommendation: keep keywords in the match (A3b) for AILogic$ similarity on this set; keep A4 as a comparison only. Removing keywords lowers the score here, so the rule as written is not supported by this test.
