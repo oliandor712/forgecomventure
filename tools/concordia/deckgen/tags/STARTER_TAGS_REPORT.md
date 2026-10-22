@@ -1,0 +1,25 @@
+# Starter deck tagging run: report
+
+10 decks, 353 distinct cards, 352 tagged, 1 with no script (Gumdrop Poisoner).
+
+## Most common tags
+
+cardtype:creature 199, cardtype:instant 64, removal 63, draw 60, type:human 51, token_make 43, cardtype:sorcery 34, type:wizard 33, lifegain 32, duration:eot 29, cardtype:artifact 28, burn 26, flying 25, kw:flying 24, type:goblin 24, supertype:legendary 23, sacrifice_outlet 23, mana_source 22, type:vampire 17, type:soldier 17, cardtype:enchantment 17, type:shaman 16, counters_plus 15, cardtype:land 13, land_tutor 13, type:elf 13, discard 13, selection 13, reanimate 12, trample 11, bounce 11, pump_single 10, haste 10, kw:first_strike 10, first_strike 10, type:knight 10, type:druid 10, artifact_token 10, pump_team 10, deathtouch 9
+
+## Trigger types seen in clauses
+
+spell 98, etb_self 80, activated 73, static 39, attacks 15, dies_self 14, spell_cast 13, phase 10, etb_other 10, replacement 8, dies_other 5, leaves_self 5, combat_damage 3, gain_life 2, changeszoneall 2, discarded 1, zone_hand_graveyard 1, zone_graveyard_any 1, attackerunblocked 1, spellcastorcopy 1, attackersdeclared 1, lifelost 1, sacrificed 1
+
+## Most common verbs (script API)
+
+changezone 44, draw 32, token 31, dealdamage 28, static_continuous 25, mana 22, destroy 18, loselife+gainlife 11, pumpall 9, draw+loselife 8, ? 8, pump 8, putcounter 7, static_reducecost 6, mill 5, charm 5, changezoneall 4, discard 3, dealdamage+gainlife 3, gainlife 3, pump+fight 3, putcounter+pump 3, dig 3, copypermanent 3, draw+token 3, counter 3, changezone+changezone 3, pump+draw 2, pump+dealdamage 2, fight 2
+
+## Cards with no ability tag beyond type, keyword and cost tags (31)
+
+Swamp, Unholy Strength, Forest, Hunted Wumpus, Leatherback Baloth, Gigantosaurus, Kalonian Tusker, Alpine Grizzly, Predatory Wurm, Magnigoth Sentry, Mountain, Kessig Flamebreather, Firebrand Archer, Guttersnipe, Spear Spewer, Reckless Fireweaver, Scorch Spitter, Storm Caller, Island, Dramatic Reversal, Merfolk Trickster, Watcher for Tomorrow, Laboratory Maniac, Control Magic, Exhaustion, Plains, Savannah Lions, Thraben Inspector, Benalish Marshal, Elite Scaleguard, Glorious Anthem
+
+## mtgish second-opinion flags
+
+not in mtgish: 0 ()
+
+script has more abilities than mtgish rules: 0 ()
