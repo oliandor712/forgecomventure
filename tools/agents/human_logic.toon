@@ -2,7 +2,7 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Read before building, judging or testing decks, or proposing AI changes. When a rule conflicts with a metric, the rule wins.
 # status: applied = in code or decks now, partly = some of it done, open = not done or not decided. since = date the user said it.
 # Add a row only for user input on deck building, deck balance or AI improvement (town, map, quest and UI rules live in the design docs). Pruned 2026-10-21 at the user's request.
-rules[57|]{id|area|rule|since|status|where}:
+rules[58|]{id|area|rule|since|status|where}:
   H01|curve|A zone's stage locks at the player's first fight there from Seals held (0-1 stage 1, 2-3 stage 2, 4-5 stage 3)|2026-10-20|applied|TierLock.java and config tierLock
   H02|curve|Wild creatures, random-dungeon enemies, pass keepers, grove guardians and Wardens are mono-color. Trainers are 1-2 colors at stage 1 then 2-3|2026-10-20|applied|build_color_zone.py
   H03|curve|Random dungeons draw from the wild encounter pool, never from keepers or guardians|2026-10-20|applied|build_color_zone.py
@@ -59,3 +59,4 @@ rules[57|]{id|area|rule|since|status|where}:
   H55|tags|Hold: AI lab proposals and tier 1 deck work (swap to live, sprite assignment, fixes, rebuilds) are set aside until the tag index is complete|2026-10-22|open|all agents
   H56|tags|Tagging may create new tags to fill gaps seen across the references (script, mtgish, Forge AI, rules, keyword reference, user feedback); every tag created is logged in deckgen/tags/NEW_TAGS_FOR_APPROVAL.md and counts as proposed until the user approves it|2026-10-22|open|tag_run.py, NEW_TAGS_FOR_APPROVAL.md
   H57|pool|World supertype cards are purged from the Concordia card pool and the exclusion is enforced (deck building, pool tools, deck checks); 26 World cards exist in the Forge card scripts|2026-10-22|open|not enforced yet (deck work on hold, H55)
+  H58|tags|put_onto_battlefield (with put_from:<zone>) = a card put onto the battlefield without being cast: mana cost and cast triggers are skipped, enter-the-battlefield triggers still happen (CR 603.6a). It is distinct from trigger:etb. Also: tempo:+n = cards added to hand/battlefield minus cards removed by the ability (spell itself, sacrifice, discard); sacrifice of a land is not a sacrifice_outlet, sacrifice of a creature always is|2026-10-22|open|tag_run.py, tag_extra.py
