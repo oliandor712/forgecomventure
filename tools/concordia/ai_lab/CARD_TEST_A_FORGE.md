@@ -243,3 +243,74 @@ Test-set proposals that changed between A2 and A3: 4 of 50.
 | Death Ward | MoveCounter.IsCounterUser | ExceptSelf |
 
 Reading: making keywords full features gives the best agreement with method B, and it matches the main session's 17-of-18 figure (A3 agrees with B on 18 control cards and is right on 17). Exact-or-partial is the same (35 of 50) in both versions, so the change moves cards between exact and partial rather than adding hits. Keywords should therefore be tag features, as proposed. The A3 proposals are untested on the tag side: keyword-as-feature does not add any tag rule, so the eight rule gaps still stand.
+
+## A3 (keyword compensation): three keyword variants
+Keyword features: (a) down-weighted to 0.4 (A2 as before); (b) separate `kw:<name>` features at weight 1, uncompensated; (c) separate features with weight 1/n, where n is the number of keyword features on that card, so a card with three keywords gives each 1/3. Weighted Jaccard is computed per feature with each card's own weights (min over max). Non-keyword features weigh 1 in all three. Leave-one-out on set C.
+
+| Variant | Exact (strict) | Partial | Miss | Exact-or-partial | Agree with B | Correct when agree | B strict exact (ref.) |
+|---|---|---|---|---|---|---|---|
+| (a) K down-weighted 0.4 | 17 of 50 | 18 | 15 | 35 of 50 | 17 | 16 of 17 | 33 of 50 |
+| (b) K separate, uncompensated | 18 of 50 | 17 | 15 | 35 of 50 | 18 | 17 of 18 | 33 of 50 |
+| (c) K separate, 1/n compensated | 18 of 50 | 17 | 15 | 35 of 50 | 18 | 17 of 18 | 33 of 50 |
+
+Note: exact is strict (predicted value equals actual). Partial is shown separately and is not counted in strict exact. Exact-or-partial (last column before the B columns) = exact + partial.
+
+Test-set proposals changing from (a):
+- (b) vs (a): 4 of 50
+- (c) vs (a): 3 of 50
+
+### Per-card comparison with method B (control set C)
+| Card | Actual | A (a) | A (c) | B (mtgish) | Both (c) and B agree | Right? |
+|---|---|---|---|---|---|---|
+| Passenger Ferry | Pump | Pump | Pump | Pump | yes | A(c) right |
+| Unburied Earthcarver | AristocratCounters | PowerDmg | PowerDmg | Aristocrat | no | - |
+| Omen of the Dead | BestOpportunity | BestOpportunity | BestOpportunity | AtOppEOT | no | A(c) right |
+| Creative Outburst | AlwaysOnDiscard | AlwaysOnDiscard | AlwaysOnDiscard | AlwaysOnDiscard | yes | A(c) right |
+| Iron Lad, Diverging Destiny | Main2 | MakeUnblockable | MakeUnblockable | Main2 | no | B right |
+| Inner Fire | ManaRitual | ManaRitual | ManaRitual | ManaRitual | yes | A(c) right |
+| Sentinel Totem | ExileGraveyards | ExileGraveyards | ExileGraveyards | ExileGraveyards | yes | A(c) right |
+| Underfoot Underdogs | MakeUnblockable | MakeUnblockable | MakeUnblockable | MakeUnblockable | yes | A(c) right |
+| Traveler's Cloak | ChosenLandwalk | MostProminentInHumanDeck | MostProminentInHumanDeck | MostProminentInHumanDeck | yes | - |
+| Arrester's Zeal | Main1IfAble | PowerDmg | PowerDmg | Main1IfAble | no | B right |
+| Bill Ferny, Bree Swindler | Curse | Pump | Pump | DonateTargetPerm | no | - |
+| Touch of Invisibility | Pump | Fog | Fog | Pump | no | B right |
+| Embalmer's Tools | AtOppEOT | AtOppEOT | AtOppEOT | AtOppEOT | yes | A(c) right |
+| Rampaging Geoderm | TgtAttacker | Random | Random | PowerDmg | no | - |
+| Etchings of the Chosen | MostProminentInComputerDeck | Aristocrat | Aristocrat | MostProminentInComputerDeck | no | B right |
+| Terrific Team-Up | PowerDmg | PowerDmg | PowerDmg | PowerDmg | yes | A(c) right |
+| Alora, Merry Thief | Pump | Random | Random | Pump | no | B right |
+| Wash Out | MostExcessOpponentControls | MostProminentInHumanDeck | MostProminentInHumanDeck | MostProminentHumanCreatures | no | - |
+| Auriok Replica | NeedsPrevention | NeedsPrevention | NeedsPrevention | NeedsPrevention | yes | A(c) right |
+| Lava Zombie | NeverBounceItself | Pump | Pump | NeverBounceItself | no | B right |
+| Circle of Affliction | MostProminentInHumanDeck | Always | Always | MostProminentInGame | no | - |
+| Flaming Gambit | WorstCard | ReplaySpell | ReplaySpell | BurnCreatures | no | - |
+| Subira, Tulzidi Caravanner | MakeUnblockable | Bribe | Bribe | MakeUnblockable | no | B right |
+| Drain Life | XLifeDrain | XLifeDrain | XLifeDrain | XLifeDrain | yes | A(c) right |
+| Ancestral Statue | NeverBounceItself | NeverBounceItself | NeverBounceItself | NeverBounceItself | yes | A(c) right |
+| Cavern Harpy | NeverBounceItself | SacAndRetFromGrave | NeverBounceItself | NeverBounceItself | yes | A(c) right |
+| Claim the Kingdom | Pump | NeverBounceItself | NeverBounceItself | AtOppEOT | no | - |
+| Hidetsugu's Second Rite | OppAtTenLife | CantRegenerate | CantRegenerate | ChainOfSmog | no | - |
+| Hikari, Twilight Guardian | IfNotBuffed | CloneBestCreature | CloneBestCreature | Always | no | - |
+| Recoup | ReplaySpell | WorstCard | WorstCard | ReplaySpell | no | B right |
+| Millstone | AtOppEOT | AtOppEOT | AtOppEOT | AtOppEOT | yes | A(c) right |
+| Pilgrim of Justice | NeedsPrevention | NeedsPrevention | NeedsPrevention | NeedsPrevention | yes | A(c) right |
+| Evolutionary Escalation | BoonCounterOnOppCreature | CloneBestCreature | CloneBestCreature | Always, Fight | no | - |
+| Torment of Venom | PayUnlessCost | PowerDmg | PowerDmg | PayUnlessCost | no | B right |
+| Zoyowa Lava-Tongue | PayUnlessCost | PayUnlessCost | PayUnlessCost | PayUnlessCost | yes | A(c) right |
+| Timely Reinforcements | PlayForSub | Fog | Fog | DiscardUncastableAndExcess | no | - |
+| Bloodline Pretender | MostProminentInComputerDeck | MostProminentInComputerDeckNonToken | MostProminentInComputerDeckNonToken | MostProminentInComputerDeck | no | B right |
+| Legion Vanguard | Aristocrat | Always | Always | AristocratCounters | no | - |
+| Aquatic Incursion | MakeUnblockable | MakeUnblockable | MakeUnblockable | MakeUnblockable | yes | A(c) right |
+| Twinferno | SpellCopy | PowerDmg | PowerDmg | Berserk | no | - |
+| Shuri, Wakandan Inventor | Pump | PowerDmg | PowerDmg | IfDefinedCreatureIsBetter | no | - |
+| Addle | MostProminentInHumanDeck | MostProminentHumanCreatures | MostProminentHumanCreatures | MostProminentInHumanDeck | no | B right |
+| Prism Ring | MostProminentInComputerDeck | MostProminentInGame | MostProminentInGame | MostProminentInComputerDeck | no | B right |
+| Ant-Man's Army | FoodOrTreasure | NeverBounceItself | NeverBounceItself | FoodOrTreasure | no | B right |
+| Omen of the Sea | BestOpportunity | BestOpportunity | BestOpportunity | BestOpportunity | yes | A(c) right |
+| You Look Upon the Tarrasque | Fog | PowerDmg | PowerDmg | Fight | no | - |
+| Ambrosia Whiteheart | BounceOwnTrigger | ReplaySpell | ReplaySpell | BounceOwnTrigger | no | B right |
+| Stronghold Discipline | AllPlayerLoseLife | MostProminentComputerControls | MostProminentComputerControls | AllPlayerLoseLife | no | B right |
+| Cutthroat Centurion | Aristocrat | Aristocrat | Aristocrat | Aristocrat | yes | A(c) right |
+| Haunting Apparition | Curse | MostProminentInHumanDeck | MostProminentInHumanDeck | Curse | no | B right |
+
+Reading: the keyword variants change only the exact count by one or two cards, and the agreement with B stays high. The compensated variant (c) gives the same figures as the uncompensated variant (b) on this set. The B table in `CARD_TEST_B_MTGISH.md` is the reference for the per-card rows above.
