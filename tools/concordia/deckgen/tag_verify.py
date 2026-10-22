@@ -92,7 +92,9 @@ def oracle_of(text):
     return line.replace("\\n", "\n")
 
 
-def strip_reminder(s): return re.sub(r"\s*\([^)]*\)", "", s)
+def strip_reminder(s):
+    """drop reminder text in parentheses and quoted text (abilities given to tokens, e.g. a Scion's 'Sacrifice this creature: Add {C}')"""
+    return re.sub(r'\s*"[^"]*"', "", re.sub(r"\s*\([^)]*\)", "", s))
 
 
 def walk(o, acc):

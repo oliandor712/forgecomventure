@@ -252,7 +252,7 @@ def record(name, text, mg):
     sact = {t.split(":", 1)[1] for t in ex_tags if t.startswith(("cost_sacrifice_target:", "sacrifice_type:"))}
     sact = {("land" if x in {b.lower() for b in BASIC_LAND} else x) for x in sact}   # a Mountain is a land
     if "self" in sact and "Land" in types.split(): sact.discard("self"); sact.add("land")
-    if sact and not (sact - {"land"}):   # only lands sacrificed: not an outlet, whichever source tagged it
+    if sact and not (sact - {"land", "self"}):   # only lands or the card itself sacrificed (user 2026-10-22): not an outlet, whichever source tagged it
         base = [t for t in base if t != "sacrifice_outlet"]; ex_tags = [t for t in ex_tags if t != "sacrifice_outlet"]
         tags = [t for t in tags if t != "sacrifice_outlet"]
         ex_groups = {g: [t for t in ts if t != "sacrifice_outlet"] for g, ts in ex_groups.items()}
@@ -432,7 +432,7 @@ def qa(recs):
                 if not any(x.startswith(("kw:" + b, "forge_line:" + b, "protection_from")) or x == "kw:protection" for x in tg): bad["K: line without kw tag"].append("%s (%s)" % (r["name"], b))
         if "sacrifice_outlet" in tg and not any(x.startswith(("sacrifice", "cost_sacrifice", "effect:sacrifice")) or x == "cost:sacrifice" for x in tg): bad["outlet without sacrifice tag"].append(r["name"])
     out = ["## Double check of this run\n", "- Structure checks on %d records (no duplicate or upper-case tags; every supertype and card type in the Types line has its tag; every K: line has a kw: or forge_line: tag): %s" % (len(recs), "all passed" if not bad else "; ".join("%s: %s" % (k, ", ".join(v[:6])) for k, v in bad.items()))]
-    out.append("- Comparison with the previous run (committed STARTER_TAGS.toon, checked 2026-10-22 when this layer was added): the cross-check only added tags (83 additions on 71 cards, 22 of them ai_logic); no earlier tag was removed or changed.")
+    out.append("- Comparison with the original run (before the cross-check layer, checked 2026-10-22 after the self-sacrifice fix): 80 tags added on 80 cards changed (22 ai_logic, 58 other tags on 51 cards); 14 `sacrifice_outlet` tags removed (self-sacrifice is not an outlet, user 2026-10-22); nothing else removed or changed.")
     out.append("- By hand: every cross-check addition on the sample cards and about 40 others was read against the Oracle text (see `STARTER_TAGS_SAMPLE.md`); the findings are listed under 'Known problems' below.")
     return out
 
@@ -493,7 +493,7 @@ def main(a):
         "- Planeswalker tags (Davriel, Chandra) pick up unrelated tags from the whole card text (draw, lifegain, reanimate on Davriel): the older `ability_tags` reads all text, not per ability; per-ability groups are right, the card-level list is noisy.",
         "- `landtype:swamp` on Corrupt and `landtype:island` on Flow of Knowledge sit after the ability tags: by H45 they mark 'cares about a land type', not the card's own type.",
         "- Flags 'cost:mana from mtgish only' are mostly Equip/Encore/kicker costs the script holds on a K: line; not added.",
-        "- Fixed in this run: a basic-land sacrifice (Alpine Guide 'sacrifice a Mountain') was tagged sacrifice_outlet; now treated as a land sacrifice (user rule). mtgish loader now reads two-faced, adventure and split cards (battles were missing)."]
+        "- Fixed (user 2026-10-22): a card sacrificing itself as a cost is not a sacrifice outlet (14 cards, e.g. Mind Stone, Sakura-Tribe Elder; 6 real outlets remain). The cross-check no longer reads quoted text, so a token's own 'Sacrifice this creature' ability is not added as the card's cost (Carrier Thrall, Skittering Invasion).\n- Fixed earlier in this run: a basic-land sacrifice (Alpine Guide 'sacrifice a Mountain') was tagged sacrifice_outlet; now treated as a land sacrifice (user rule). mtgish loader now reads two-faced, adventure and split cards (battles were missing)."]
     open(os.path.join(HERE, "tags", "STARTER_TAGS_REPORT.md"), "w").write("\n".join(rep))
     print(len(decks), len(uniq), len(recs), len(missing), "untagged-beyond-basics", len(untag), "mtgish-check", len(chk), "not in mtgish", len(nomg))
 

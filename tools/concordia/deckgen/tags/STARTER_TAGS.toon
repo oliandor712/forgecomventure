@@ -62,7 +62,7 @@ mtgish: rules=AsPermanentEnters Activated
 forge_ai: AILogic=-
 
 card: Mind Stone
-tags: cardtype:artifact draw mana_source sacrifice_outlet cost:tap mana:colorless mana_amount:1 cost:sacrifice cost_sacrifice_target:self cost:mana draw_count:1
+tags: cardtype:artifact draw mana_source cost:tap mana:colorless mana_amount:1 cost:sacrifice cost_sacrifice_target:self cost:mana draw_count:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
   c2,activated,1 T Sac<1/CARDNAME>,draw,numcards=1,"",""
@@ -208,15 +208,14 @@ mtgish: rules=Deathtouch Lifelink
 forge_ai: AILogic=-
 
 card: Carrier Thrall
-tags: cardtype:creature type:vampire token_make trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+0.5 token_count:1 token_color:colorless token_pt:1/1 token_type:eldrazi_scion cost:sacrifice
+tags: cardtype:creature type:vampire token_make trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+0.5 token_count:1 token_color:colorless token_pt:1/1 token_type:eldrazi_scion
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",token,tokenscript=c_1_1_eldrazi_scion_sac,"",""
-groups[3]{id,source,tags}:
+groups[2]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:colorless token_pt:1/1 token_type:eldrazi_scion
-  v,cross-check (oracle/mtgish/keyword/ai),cost:sacrifice
 mtgish: rules=TriggerA
-verify_flags: sacrifice: only oracle says it, script tags lack sacrifice
+verify_flags: cost cost:sacrifice from mtgish only
 forge_ai: AILogic=-
 
 card: Vampire Nighthawk
@@ -843,7 +842,7 @@ groups[6]{id,source,tags}:
   c4,A line,cost:mana
   v,cross-check (oracle/mtgish/keyword/ai),ai_logic:atoppeot
 mtgish: rules=TriggerA Activated
-verify_flags: trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves) | trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield)
+verify_flags: trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield) | trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves)
 forge_ai: AILogic=AtOppEOT
 
 card: "Gwenna, Eyes of Gaea"
@@ -935,7 +934,7 @@ mtgish: rules=Reach Deathtouch
 forge_ai: AILogic=-
 
 card: Aftermath Analyst
-tags: cardtype:creature type:elf type:detective reanimate sacrifice_outlet self_mill trigger_scope:self trigger:etb cost:sacrifice cost_sacrifice_target:self cost:mana target_count:all target_type:land target_scope:you_control put_onto_battlefield put_from:graveyard put_tapped
+tags: cardtype:creature type:elf type:detective reanimate self_mill trigger_scope:self trigger:etb cost:sacrifice cost_sacrifice_target:self cost:mana target_count:all target_type:land target_scope:you_control put_onto_battlefield put_from:graveyard put_tapped
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",mill,numcards=3,Defined=You,""
   c2,activated,3 G Sac<1/CARDNAME>,changezoneall,"","",""
@@ -948,7 +947,7 @@ mtgish: rules=TriggerA Activated
 forge_ai: AILogic=-
 
 card: Sakura-Tribe Elder
-tags: cardtype:creature type:snake type:shaman land_tutor sacrifice_outlet cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+tags: cardtype:creature type:snake type:shaman land_tutor cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,Sac<1/CARDNAME>,changezone,"","",""
 groups[1]{id,source,tags}:
@@ -1045,7 +1044,7 @@ mtgish: rules=Defender TriggerA
 forge_ai: AILogic=-
 
 card: Yavimaya Elder
-tags: cardtype:creature type:human type:druid draw land_tutor sacrifice_outlet trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+2 tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:hand shuffle cost:sacrifice cost_sacrifice_target:self cost:mana draw_count:1
+tags: cardtype:creature type:human type:druid draw land_tutor trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+2 tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:hand shuffle cost:sacrifice cost_sacrifice_target:self cost:mana draw_count:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",changezone,"","",""
   c2,activated,2 Sac<1/CARDNAME>,draw,numcards=1,"",""
@@ -1067,7 +1066,7 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Thrashing Brontodon
-tags: cardtype:creature type:dinosaur sacrifice_outlet cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact target_type:enchantment remove:destroy ai_logic:ateotifnotattacking
+tags: cardtype:creature type:dinosaur cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact target_type:enchantment remove:destroy ai_logic:ateotifnotattacking
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 Sac<1/CARDNAME>,destroy,"","ValidTgts=Artifact,Enchantment",""
 groups[2]{id,source,tags}:
@@ -1077,15 +1076,14 @@ mtgish: rules=Activated
 forge_ai: AILogic=AtEOTIfNotAttacking
 
 card: Professor of Zoomancy
-tags: cardtype:creature type:bear type:druid token_make trigger_scope:self trigger:etb tempo:+0.5 token_count:1 token_color:black token_color:green token_pt:1/1 token_type:pest_lifegain lifegain
+tags: cardtype:creature type:bear type:druid token_make trigger_scope:self trigger:etb tempo:+0.5 token_count:1 token_color:black token_color:green token_pt:1/1 token_type:pest_lifegain
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=bg_1_1_pest_lifegain,"",""
-groups[3]{id,source,tags}:
+groups[2]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:etb tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:black token_color:green token_pt:1/1 token_type:pest_lifegain
-  v,cross-check (oracle/mtgish/keyword/ai),lifegain
 mtgish: rules=TriggerA
-verify_flags: trigger trigger:dies from mtgish only (WhenAPermanentDies)
+verify_flags: lifegain: only mtgish says it, script tags lack lifegain | trigger trigger:dies from mtgish only (WhenAPermanentDies)
 forge_ai: AILogic=-
 
 card: Fierce Witchstalker
@@ -1511,7 +1509,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Khalni Heart Expedition
-tags: cardtype:enchantment land_tutor sacrifice_outlet trigger_scope:other trigger:etb counter:quest cost:sacrifice cost_sacrifice_target:self tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:+1 cost:remove_counters
+tags: cardtype:enchantment land_tutor trigger_scope:other trigger:etb counter:quest cost:sacrifice cost_sacrifice_target:self tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:+1 cost:remove_counters
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_other,"",putcounter,countertype=QUEST,Defined=Self,""
   c2,activated,SubCounter<3/QUEST> Sac<1/CARDNAME>,changezone,"","",""
@@ -1685,7 +1683,7 @@ mtgish: rules=
 forge_ai: AILogic=-
 
 card: Fanatical Firebrand
-tags: cardtype:creature type:goblin type:pirate kw:haste burn sacrifice_outlet cost:tap cost:sacrifice cost_sacrifice_target:self target_count:one target_type:any damage damage_amount:1
+tags: cardtype:creature type:goblin type:pirate kw:haste burn cost:tap cost:sacrifice cost_sacrifice_target:self target_count:one target_type:any damage damage_amount:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T Sac<1/CARDNAME>,dealdamage,numdmg=1,ValidTgts=Any,""
 links[1]{from,rel,to}:
@@ -1733,7 +1731,7 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Ember Hauler
-tags: cardtype:creature type:goblin burn sacrifice_outlet cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:any damage damage_amount:2
+tags: cardtype:creature type:goblin burn cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:any damage damage_amount:2
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 Sac<1/CARDNAME>,dealdamage,numdmg=2,ValidTgts=Any,""
 links[1]{from,rel,to}:
@@ -1822,7 +1820,7 @@ verify_flags: trigger trigger:attacks from oracle only | cost cost:mana from mtg
 forge_ai: AILogic=-
 
 card: Torch Fiend
-tags: cardtype:creature type:devil sacrifice_outlet cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact remove:destroy
+tags: cardtype:creature type:devil cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,R Sac<1/CARDNAME>,destroy,"",ValidTgts=Artifact,""
 groups[1]{id,source,tags}:
@@ -2089,7 +2087,7 @@ mtgish: rules=AsPermanentEnters Activated
 forge_ai: AILogic=-
 
 card: Glittering Stockpile
-tags: cardtype:artifact type:treasure fixing mana_source sacrifice_outlet scales:counters cost:tap mana:red mana_amount:1 counter:stash cost:sacrifice cost_sacrifice_target:self mana:any mana_amount:x
+tags: cardtype:artifact type:treasure fixing mana_source scales:counters cost:tap mana:red mana_amount:1 counter:stash cost:sacrifice cost_sacrifice_target:self mana:any mana_amount:x
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana+putcounter,countertype=STASH,Defined=Self,""
   c2,activated,T Sac<1/CARDNAME>,mana,"","",""
@@ -2886,7 +2884,7 @@ mtgish: rules=AsPermanentEnters PlayerEffect
 forge_ai: AILogic=-
 
 card: Commander's Sphere
-tags: cardtype:artifact draw fixing mana_source sacrifice_outlet cost:tap mana:commander_identity mana_choice mana_amount:1 cost:sacrifice cost_sacrifice_target:self draw_count:1
+tags: cardtype:artifact draw fixing mana_source cost:tap mana:commander_identity mana_choice mana_amount:1 cost:sacrifice cost_sacrifice_target:self draw_count:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
   c2,activated,Sac<1/CARDNAME>,draw,numcards=1,"",""
@@ -3277,14 +3275,13 @@ mtgish: rules=Activated
 forge_ai: AILogic=-
 
 card: Skittering Invasion
-tags: cardtype:kindred cardtype:sorcery type:eldrazi token_make token_count:5 token_color:colorless token_pt:0/1 token_type:eldrazi_spawn tempo:+1.5 cost:sacrifice
+tags: cardtype:kindred cardtype:sorcery type:eldrazi token_make token_count:5 token_color:colorless token_pt:0/1 token_type:eldrazi_spawn tempo:+1.5
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=c_0_1_eldrazi_spawn_sac,"",""
-groups[2]{id,source,tags}:
+groups[1]{id,source,tags}:
   c1,A line,token_count:5 token_color:colorless token_pt:0/1 token_type:eldrazi_spawn tempo:+1.5
-  v,cross-check (oracle/mtgish/keyword/ai),cost:sacrifice
 mtgish: rules=SpellActions
-verify_flags: sacrifice: only oracle says it, script tags lack sacrifice
+verify_flags: cost cost:sacrifice from mtgish only
 forge_ai: AILogic=-
 
 card: Dig Through Time
@@ -3426,7 +3423,7 @@ mtgish: rules=
 forge_ai: AILogic=-
 
 card: Wayfarer's Bauble
-tags: cardtype:artifact land_tutor sacrifice_outlet cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+tags: cardtype:artifact land_tutor cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,2 T Sac<1/CARDNAME>,changezone,"","",""
 groups[1]{id,source,tags}:
@@ -3804,7 +3801,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Frontline Medic
-tags: cardtype:creature type:human type:cleric duration:eot indestructible counterspell pump_team sacrifice_outlet trigger:attacks target_count:all target_type:creature target_scope:you_control cost:sacrifice cost_sacrifice_target:self target_count:one target_type:card
+tags: cardtype:creature type:human type:cleric duration:eot indestructible counterspell pump_team trigger:attacks target_count:all target_type:creature target_scope:you_control cost:sacrifice cost_sacrifice_target:self target_count:one target_type:card
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attacks,"",pumpall,indestructible,"",duration:eot(forge_default)
   c2,activated,Sac<1/CARDNAME>,counter,"",ValidTgts=Card.hasXCost,""
@@ -4047,7 +4044,7 @@ verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=-
 
 card: Cathar Commando
-tags: cardtype:creature type:human type:soldier kw:flash sacrifice_outlet cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact target_type:enchantment remove:destroy
+tags: cardtype:creature type:human type:soldier kw:flash cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact target_type:enchantment remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 Sac<1/CARDNAME>,destroy,"","ValidTgts=Artifact,Enchantment",""
 groups[2]{id,source,tags}:
