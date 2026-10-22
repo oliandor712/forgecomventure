@@ -73,8 +73,8 @@ links[2]{from,rel,to}:
 - **mtgish:** `TriggerA(...)`, `Activated(cost, ...)`, `PermanentLayerEffect`/`EachPermanentLayerEffect` = static, `CreatePermanentLayerEffectUntil(..., UntilEndOfTurn)` = a timed grant. mtgish sometimes drops an ability (Wingbeat Warrior), so merge with Forge instead of trusting it alone.
 - **Keywords:** resolve once through KEYWORD_REFERENCE.toon and the CR rule number (KEYWORD_REMINDER_TEXT.toon), then add `kw:` plus qualifier tags; linked clauses (like flip-up for morph) come from the reminder text.
 
-## Open points for the user
-1. Names: `duration:eot` and `flip-up` as chosen; `static`, `permanent`, `until_leaves` are mine.
-2. Are links stored per card (as above) or only as a rules table (`flip-up requires kw:morph`)? Per card is richer; a rules table is smaller.
-3. Whether `then` (sub-ability chains) needs its own relation or the clause order is enough.
-4. A tag vocabulary for triggers (enters, dies, attacks, combat damage, spell cast, upkeep, flip-up ...) is still to be listed from Forge `Mode$` values.
+## Decisions (user, 2026-10-22)
+1. Links are stored per card (H53). The full tag, relation and duration vocabulary is written during the cardlist run, not now.
+2. Sub-ability chains: decided during the cardlist run (the user deferred rule gaps to the run).
+3. Source order is Forge first, AILogic$ as a reference, mtgish as a less reliable second opinion (H54).
+4. Still to list during the run: trigger vocabulary from Forge `Mode$` values and the eight gap groups from the card-logic test.
