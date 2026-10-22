@@ -52,3 +52,12 @@ The 16 weak cards: mean 0.510 -> 0.730. The other 332 cards: 0.934 -> 0.936 (no 
 - Largest drops among the other cards: Exsanguinate -0.23, Gadwick -0.22, Vodalian Arcanist -0.13 (reader variance is about 0.02 per card on identical tags, so these are worth a look: tags of those cards did not change except where `trigger_filter` / `mana_conditional` was added).
 Lowest now: Sea Gate Loremaster 0.44, Feign Death 0.50, Vines of Vastwood 0.52, Kami 0.59, Thraben Inspector 0.61, Serum Visions 0.61.
 Unverified: one run; no repeat on this tag version.
+
+## Investigation of the r8 drops and the scaling cards (2026-10-22, user order)
+**Exsanguinate -0.23, Gadwick -0.22, Vodalian Arcanist -0.13: tags were identical in r7 and r8; two different causes, neither reader noise.**
+- Exsanguinate and Gadwick (`x_is:x_paid`): the r8 readers added a definition ("X is the amount of mana paid for X", "draw X cards, where X is ...") that the r7 readers left out. The scorer counted it as an extra concept ("mana") and extra numbers. Fixes: the scorer drops that definition sentence; reader rule: write X, not its definition, for `x_paid`; legend text for `x_is`. Re-read: Exsanguinate 1.00, Gadwick 0.97.
+- Vodalian Arcanist: a real tag gap. `mana_restriction` had no value, so the reader could only write "{restriction}". The script has `RestrictValid$ Spell.Instant,Spell.Sorcery`. `mana_restriction` now carries the value (`instant_or_sorcery`, `creature_spell_or_activated_ability`; 3 families on the starters). Re-read: 1.00. One value is ugly (`static_foretelling_or_instant_or_sorcery`, from a Foretell-related restriction) and should be tidied.
+
+**Scaling (user: these should use the scaling tag).** `scales:<thing>` was skipped for basic land types, so Flow of Knowledge (Islands) and Tendrils of Corruption / Corrupt (Swamps) lacked it. Now every `x_is:count_<thing>_you_control` carries `scales:<thing>`; the legend for `scales` says to write "for each <thing> you control". Re-read: Sea Gate Loremaster 0.44 -> 1.00, Flow of Knowledge 0.65 -> 1.00, Karfell Harbinger 0.70 -> 0.91.
+
+Re-read of the 20 cards that carry `x_is` counts, `scales` or `mana_restriction` (r9, one reader): mean 0.786 (r8) -> 0.884. Unverified: one reader, 20 cards, no full run after these changes.

@@ -15,7 +15,6 @@ Pinned reference text, one line per tag family with a structured or non-obvious 
 | `modal` | choose N of M modes (modal:1_of_3 = choose one of three) |
 | `replace` | a replacement effect: replace:<event>_to_<what> (draw_to_winsgame = instead of drawing, win the game) |
 | `condition` | the ability works only while this is true (a permanent or card you control, or an empty library) |
-| `x_is` | what the variable X counts or equals (count_<thing>_you_control, own_power, target_power, x_paid, devotion_<colour>...) |
 | `restrict_kind` | kind of restriction placed on a creature (cant_attack, cant_block, cant_attack_or_block, cant_attack_unless_cost) |
 | `token_ability` | ability the created token has, in words (tap_sacrifice_add_mana_any_color = {T}, Sacrifice: Add one mana of any color) |
 | `exile_from` | exiles cards from a zone other than the battlefield |
@@ -30,6 +29,14 @@ Pinned reference text, one line per tag family with a structured or non-obvious 
 | `choice_option` | one of the options the choice offers (choose_on_enter lists them: artifact, creature, enchantment ...) |
 | `cost_reduce_mana` | the kind of mana the cost is reduced by (generic = any mana) |
 | `cost_reduce_amount` | how much each affected spell costs less (generic mana) |
+| `mana_conditional` | the mana ability adds a different amount, or works only, when the condition: tag of its group holds |
+| `mana_amount_if` | mana added when the condition holds; mana_amount is the base amount otherwise |
+| `extra_land_drop` | its controller may play this many additional lands each turn |
+| `phase_out` | permanents phase out |
+| `cost_additional` | an alternative additional cost as the card is cast (reveal a card or pay mana, for example); the cost tags follow |
+| `scales` | the amount (X) of this ability is the number of that kind of thing you control: write it as 'for each <thing> you control' (scales:island on a draw_count:x = draw a card for each Island you control) |
+| `mana_restriction` | the mana can be spent only on what the value says (mana_restriction:instant_or_sorcery = spend this mana only to cast an instant or sorcery spell) |
+| `x_is` | what X is. Write X in the text and do not define it unless the value names a count or a stat: count_<thing>_you_control = for each <thing> you control, own_power / target_power = equal to that creature's power; x_paid = just X (the X in the mana cost) |
 | `optional` | the effect of this group is optional (you may ...) |
 | `target_scope` | whose things or which players the effect hits (you_control, opp_control; each_opponent = every opponent, each_player = every player; no value means a single chosen target) |
 | `trigger_scope` | which cards fire a zone-change trigger: self = this card only, other = another card, any = this card or any other card |
