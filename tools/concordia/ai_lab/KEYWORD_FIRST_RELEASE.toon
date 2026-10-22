@@ -1,0 +1,163 @@
+# First card release date per keyword, derived from the local Scryfall data (deckgen/scryfall/cards.json: released_at + keywords). Approximation: released_at is the date of the printing stored for each oracle card, so an older printing may exist. Set names are not in the local data. The Dicebreaker article could not be fetched (host blocked), so no article context is included yet.
+keywords[160]{name,kind,first_card_released,first_card,cards_with_keyword}:
+  First Strike,keyword,1993-12-17,Stone-Throwing Devils,408
+  Banding,keyword,1993-12-17,Camel,26
+  Landwalk,keyword,1993-12-17,Desert Nomads,133
+  Enchant,keyword,1994-03-04,Artifact Possession,1279
+  Defender,keyword,1994-06-01,Wall of Earth,315
+  Flying,keyword,1994-06-01,Pixie Queen,3366
+  Protection,keyword,1994-06-01,Wall of Putrid Flesh,209
+  Rampage,keyword,1994-06-01,Aerathi Berserker,15
+  Trample,keyword,1994-08-01,Nameless Race,1059
+  Cumulative Upkeep,keyword,1995-06-03,Illusionary Terrain,82
+  Reach,keyword,1995-10-01,Rashka the Slayer,450
+  Vigilance,keyword,1995-10-01,Ghost Hounds,775
+  Haste,keyword,1996-06-10,Balduvian War-Makers,702
+  Flanking,keyword,1996-10-08,Burning Shield Askari,30
+  Phasing,keyword,1996-10-08,Merfolk Raiders,13
+  Shroud,keyword,1996-10-08,Jolrael's Centaur,39
+  Fear,keyword,1997-02-03,Suq'Ata Assassin,40
+  Buyback,keyword,1997-10-14,Invulnerability,41
+  Shadow,keyword,1997-10-14,Soltari Crusader,40
+  Cycling,keyword,1998-10-12,Rune of Protection: Blue,410
+  Echo,keyword,1998-10-12,Viashino Outrider,52
+  Flash,keyword,1999-02-15,Defender of Law,641
+  Horsemanship,keyword,1999-05-01,"Ma Chao, Western Warrior",30
+  Fading,keyword,2000-02-14,Phyrexian Prowler,18
+  Kicker,keyword,2000-10-02,Overload,236
+  Domain,ability_word,2000-10-02,Strength of Unity,58
+  Flashback,keyword,2001-10-01,Scorching Missile,219
+  Surveil,keyword,2001-10-01,Think Tank,263
+  Threshold,ability_word,2001-10-01,Krosan Beast,108
+  Madness,keyword,2002-02-04,Strength of Lunacy,63
+  Morph and Megamorph,keyword,2002-10-07,Gravel Slinger,184
+  Hellbent,ability_word,2003-01-01,"Lyzolda, the Blood Witch Avatar",23
+  Double Strike,keyword,2003-02-03,Rockshard Elemental,134
+  Amplify,keyword,2003-02-03,Ghastly Remains,9
+  Provoke,keyword,2003-02-03,Goblin Grappler,9
+  Storm,keyword,2003-05-26,Reaping the Graves,40
+  Equip,keyword,2003-10-02,Sword of Kaldra,632
+  Affinity,keyword,2003-10-02,Assert Authority,78
+  Entwine,keyword,2003-10-02,Solar Tide,33
+  Imprint,keyword,2003-10-02,Mirror Golem,30
+  Scry,action,2004-02-06,Darksteel Pendant,454
+  Indestructible,keyword,2004-02-06,Darksteel Pendant,116
+  Modular,keyword,2004-02-06,Arcbound Hybrid,24
+  Sunburst,keyword,2004-06-04,Spinal Parasite,16
+  Menace,keyword,2004-10-01,Vine Kami,419
+  Bushido,keyword,2004-10-01,Numai Outcast,38
+  Soulshift,keyword,2004-10-01,Hundred-Talon Kami,26
+  Splice,keyword,2004-10-01,Strange Inversion,32
+  Offering,keyword,2005-02-04,Patron of the Akki,6
+  Channel,keyword,2005-06-03,"Jiwari, the Earth Aflame",39
+  Epic,keyword,2005-06-03,Neverending Torment,5
+  Sweep,ability_word,2005-06-03,Sink into Takenuma,4
+  Convoke,keyword,2005-10-07,Autochthon Wurm,106
+  Dredge,keyword,2005-10-07,Darkblast,14
+  Transmute,keyword,2005-10-07,Shred Memory,14
+  Landfall,ability_word,2005-10-07,Stone-Seeder Hierophant,197
+  Radiance,ability_word,2005-10-07,Incite Hysteria,10
+  Bloodthirst,keyword,2006-02-03,Rabble-Rouser,23
+  Haunt,keyword,2006-02-03,Cry of Contrition,10
+  Replicate,keyword,2006-02-03,Mimeofacture,21
+  Forecast,keyword,2006-05-05,Writ of Passage,12
+  Graft,keyword,2006-05-05,Cytoplast Manipulator,13
+  Recover,keyword,2006-07-21,Grim Harvest,7
+  Ripple,keyword,2006-07-21,Surging Might,5
+  Split Second,keyword,2006-10-06,Trickbind,25
+  Suspend,keyword,2006-10-06,Plunder,73
+  Aura Swap,keyword,2007-05-04,Arcanum Wings,1
+  Fateseal,keyword,2007-05-04,Mesmeric Sliver,3
+  Gravestorm,keyword,2007-05-04,Bitter Ordeal,3
+  Transfigure,keyword,2007-05-04,Fleshwrither,1
+  Grandeur,ability_word,2007-05-04,"Korlash, Heir to Blackblade",7
+  Deathtouch,keyword,2007-10-12,Moonglove Winnower,364
+  Lifelink,keyword,2007-10-12,Changeling Hero,404
+  Clash,action,2007-10-12,Woodland Guidance,29
+  Champion,keyword,2007-10-12,Thoughtweft Trio,12
+  Changeling,keyword,2007-10-12,Woodland Changeling,67
+  Evoke,keyword,2007-10-12,Mournwhelk,37
+  Hideaway,keyword,2007-10-12,Howltooth Hollow,15
+  Prowl,keyword,2008-02-01,Knowledge Exploitation,10
+  Reinforce,keyword,2008-02-01,Brighthearth Banneret,11
+  Kinship,ability_word,2008-02-01,Pyroclast Consul,12
+  Conspire,keyword,2008-05-02,Traitor's Roar,11
+  Persist,keyword,2008-05-02,Furystoke Giant,25
+  Wither,keyword,2008-05-02,Boggart Ram-Gang,27
+  Retrace,keyword,2008-07-25,Monstrify,18
+  Chroma,ability_word,2008-07-25,Heartlash Cinder,9
+  Devour,keyword,2008-10-03,Tar Fiend,23
+  Exalted,keyword,2008-10-03,Waveskimmer Aven,36
+  Unearth,keyword,2008-10-03,Fatestitcher,58
+  Cascade,keyword,2009-04-30,Stormcaller's Boon,37
+  Annihilator,keyword,2010-04-23,Hand of Emrakul,14
+  Level up,keyword,2010-04-23,Zulaport Enforcer,26
+  Rebound,keyword,2010-04-23,World at War,36
+  Proliferate,keyword,2010-10-01,Contagion Engine,106
+  Metalcraft,ability_word,2010-10-01,Lumengrid Drake,35
+  Battle Cry,keyword,2011-02-04,Accorder Paladin,14
+  Living Weapon,keyword,2011-02-04,Strandwalker,19
+  Join forces,ability_word,2011-06-17,Alliance of Arms,5
+  Transform,keyword,2011-09-30,Screeching Bat // Stalking Vampire,437
+  Morbid,ability_word,2011-09-30,Hollowhenge Scavenger,29
+  Undying,keyword,2012-02-03,Vengeful Vampire,23
+  Fateful Hour,ability_word,2012-02-03,Break of Day,10
+  Miracle,keyword,2012-05-04,Blessings of Nature,19
+  Soulbond,keyword,2012-05-04,Stonewright,26
+  Detain,keyword,2012-10-05,Archon of the Triumvirate,14
+  Overload,keyword,2012-10-05,Mizzium Skin,28
+  Populate,keyword,2012-10-05,Coursers' Accord,27
+  Scavenge,keyword,2012-10-05,Terrus Wurm,14
+  Unleash,keyword,2012-10-05,Grim Roustabout,14
+  Bloodrush,keyword,2013-02-01,Viashino Shanktail,13
+  Cipher,keyword,2013-02-01,Paranoid Delusions,15
+  Evolve,keyword,2013-02-01,Adaptive Snapjaw,23
+  Extort,keyword,2013-02-01,Kingpin's Pet,18
+  Battalion,ability_word,2013-02-01,Ordruun Veteran,22
+  Delve,keyword,2013-06-07,Death Rattle,30
+  Bestow,keyword,2013-09-27,Leafcrown Dryad,43
+  Monstrosity,keyword,2013-09-27,Ember Swallower,37
+  Heroic,ability_word,2013-09-27,"Anthousa, Setessan Hero",45
+  Inspired,keyword,2014-02-07,Servant of Tymaret,19
+  Tribute,keyword,2014-02-07,Oracle of Bones,11
+  Prowess,keyword,2014-09-26,Bloodfire Expert,102
+  Ferocious,ability_word,2014-09-26,Dragon Grip,26
+  Raid,ability_word,2014-09-26,Mardu Skullhunter,46
+  Bolster,keyword,2015-01-23,Cached Defenses,25
+  Dash,keyword,2015-01-23,Vaultbreaker,22
+  Manifest,keyword,2015-01-23,Sultai Emissary,68
+  Exploit,keyword,2015-03-27,Rakshasa Gravecaller,23
+  Renown,keyword,2015-07-17,Rhox Maulers,20
+  Rally,ability_word,2015-10-02,Grovetender Druids,14
+  Support,keyword,2016-01-22,Unity of Purpose,20
+  Investigate,keyword,2016-04-08,Confront the Unknown,147
+  Emerge,keyword,2016-07-22,Vexing Scuttler,15
+  Crew,keyword,2016-09-30,Demolition Stomper,196
+  Ninjutsu,keyword,2016-11-25,"Higure, the Still Wind",37
+  Aftermath,keyword,2017-04-28,Insult // Injury,27
+  Embalm,keyword,2017-04-28,Anointer Priest,15
+  Exert,keyword,2017-04-28,Nef-Crop Entangler,36
+  Explore,keyword,2017-09-29,Lurking Chupacabra,59
+  Enrage,ability_word,2017-09-29,Snapping Sailback,25
+  Jump-start,keyword,2018-10-05,Maximize Altitude,13
+  Mentor,keyword,2018-10-05,Hammer Dropper,21
+  Undergrowth,ability_word,2018-10-05,Mausoleum Secrets,13
+  Adapt,keyword,2019-01-25,Growth-Chamber Guardian,25
+  Afterlife,keyword,2019-01-25,Knight of Sorrows,11
+  Riot,keyword,2019-01-25,Zhur-Taa Goblin,13
+  Spectacle,keyword,2019-01-25,Drill Bit,11
+  Addendum,ability_word,2019-01-25,Sphinx's Insight,10
+  Escape,keyword,2020-01-24,Glimpse of Freedom,33
+  Mutate,keyword,2020-04-17,Mindleecher,34
+  Foretell,keyword,2021-02-05,Rise of the Dread Marn,52
+  Ward,keyword,2021-04-23,Sedgemoor Witch,216
+  Coven,keyword,2021-09-24,Dawnhart Wardens,20
+  Daybound/Nightbound,keyword,2021-09-24,Graveyard Trespasser // Graveyard Glutton,73
+  Disturb,keyword,2021-09-24,Devoted Grafkeeper // Departed Soulkeeper,25
+  Reconfigure,action,2022-02-18,Bronzeplate Boar,21
+  Alliance,keyword,2022-04-29,Witty Roastmaster,24
+  Blitz,keyword,2022-04-29,Mezzio Mugger,19
+  Casualty,keyword,2022-04-29,Flawless Forgery,16
+  Connive,keyword,2022-04-29,"Toluz, Clever Conductor",51
+  Meld,keyword,2022-11-18,"Mishra, Claimed by Gix",7
+no_scryfall_keyword_match[12]: Attach; Counter; Regeneration; Sacrifice; Tap/untap; Absorb; Adventure; Fabricated; Flip; Frenzy; Poisonous; Totem Armor
