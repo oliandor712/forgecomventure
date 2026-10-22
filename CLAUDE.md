@@ -18,3 +18,4 @@ Fork `oliandor712/forgecomventure`. Concordia is a Pokemon-like Commander campai
 - A rule in `tools/agents/human_logic.toon` beats a metric.
 - Generated files are regenerated, never hand-merged (see MAIN_SESSION_BRIEF).
 - Session-to-session messages and claims: `tools/agents/mailbox/README.md` (`python3 tools/agents/mailbox.py check` before editing shared files).
+- Documents (reports, checklists, plain `.md` for the user) are pushed automatically with `python3 tools/agents/docpush.py <paths>` at every update, and revised in place (no near-identical copies). Everything else (code, decks, data, records, instruction files) pushes only on the user's "push".
