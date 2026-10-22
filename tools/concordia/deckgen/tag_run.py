@@ -281,6 +281,9 @@ def record(name, text, mg):
     tags = list(dict.fromkeys(tags + ver["add"]))
     if ver["add"]: ex_groups["v"] = list(ver["add"])
     ex_tags = ex_tags + ver["add"]
+    if os.environ.get("TAG_VARIANT") == "sugg":   # test copy of the tag list with agent suggestions S01-S09, S15 (tag_variant.py); off by default
+        import tag_variant as TVAR
+        tags, ex_groups = TVAR.apply(name, face, lines, sv, tags, ex_groups)
     ai = sorted(set(re.findall(r"AILogic\$ ?([A-Za-z0-9_]+)", face)) | set(re.findall(r"^SVar:AttachAILogic:(\w+)", face, re.M)))
     aipref = "AIPreference" in face or "SVar:AIPreference" in face
     rd = "AI:RemoveDeck" in face

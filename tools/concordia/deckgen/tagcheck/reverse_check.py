@@ -21,6 +21,7 @@ DECKGEN = os.path.abspath(os.path.join(HERE, ".."))
 sys.path.insert(0, DECKGEN)
 import tag_run as T
 import tag_verify as TV
+import tag_extra as TX
 
 READER_RULES = """You are the BLIND READER. You see only tags. Rules (strict):
 1. Read ONLY the two files you are given: one batch file (cards) and its reminders file (reminder texts of the keywords and tokens that occur in the batch, plus `tag_legend`: one line of meaning for each structured tag family in the batch; use it to read the tags). Do not open, list, search or fetch anything else (no repo, no card databases, no web, no other run folders). Do not run shell commands.
