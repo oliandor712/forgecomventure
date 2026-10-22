@@ -47,7 +47,7 @@ CONCEPTS = [
     ("energy", ("energy", "counter:energy"), "energy", {"GetEnergy"}, r"\{E\}"),
     ("discard", ("discard", "cost:discard"), "discard", {"DiscardACard", "PlayerAction"}, r"\bdiscards? (?:a|an|\w+|x) cards?\b"),
     ("steal", ("steal", "steal_temp"), "steal", {"GainControlOfPermanentUntil"}, r"\bgain control of\b"),
-    ("exile_effect", ("remove:exile", "exile", "die_replace", "impulse_draw", "return_exiled", "exile_from", "put_from:exile", "cost:exile", "kw:suspend"), "exile", {"Exile"}, r"\bexile (?:target|all|each|another|that|it)\b"),
+    ("exile_effect", ("remove:exile", "exile", "die_replace", "impulse_draw", "return_exiled", "exile_from", "put_onto_battlefield:from_exile", "cost:exile", "kw:suspend"), "exile", {"Exile"}, r"\bexile (?:target|all|each|another|that|it)\b"),
     ("sacrifice", ("sacrifice_outlet", "cost:sacrifice", "effect:sacrifice", "cost_sacrifice_target"), "sacrifice", {"SacrificeAPermanent", "SacrificeEachPermanent"}, r"\bsacrifices? (?:a|an|\w+|x|this|target|each)\b"),
 ]
 # oracle phrase -> trigger tag (line-start only: "When/Whenever/At the beginning of")

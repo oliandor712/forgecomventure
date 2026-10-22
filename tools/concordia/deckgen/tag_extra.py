@@ -33,7 +33,7 @@ DOC = {
  "token_type:copy": ("the token is a copy of another permanent", "found in the cross-check: Kiki-Jiki, Rite of Replication"),
  "draw_count:<n|x> / discard_count:<n|x>": ("how many cards an ability draws or makes a player discard", "user note: tag draw count"),
  "tempo:+n|x": ("net cards added to your hand or battlefield minus cards removed (the spell itself, sacrificed or discarded cards) when the ability resolves; tokens count 0.5 each; only positive values are tagged; tempo:x when an amount is a variable", "user note: tempo gain (+1), applied to every ability that adds more cards than it removes"),
- "put_onto_battlefield / put_from:<zone>": ("a card is put onto the battlefield from a zone without being cast, so its mana cost and 'when you cast' triggers are skipped; enter-the-battlefield triggers still happen (CR 603.6a). Distinct from trigger:etb, which is a trigger on entering", "user note, confirmed 2026-10-22: the tag means 'not cast'"),
+ "put_onto_battlefield:from_<zone>": ("a card is put onto the battlefield from a zone (one tag: put_onto_battlefield:from_library; replaces put_onto_battlefield + put_from:<zone>, user: redundant) without being cast, so its mana cost and 'when you cast' triggers are skipped; enter-the-battlefield triggers still happen (CR 603.6a). Distinct from trigger:etb, which is a trigger on entering", "user note, confirmed 2026-10-22: the tag means 'not cast'"),
  "cost_if_you_do": ("the 'If you do' part marks the preceding sacrifice/discard as a cost", "user note on Victimize"),
  "enters_untapped / enters_tapped_conditional": ("lands that enter untapped, or tapped unless a condition holds (enters_tapped stays for always-tapped)", "user note: tag whether a land enters tapped"),
  "cast_free": ("casts a spell without paying its mana cost", "found in the cross-check: Rishkar's Expertise"),
@@ -480,7 +480,7 @@ def extra(lines, sv, types, text):
                 elif o == "Graveyard" and d == "Hand" and bp.get("Defined", "").startswith("TriggeredNewCard"): add("recursion:return_self")
                 if o == "Hand" and d == "Exile": add("impulse_draw_part:exile_hand")
                 if d == "Battlefield" and o in ("Library", "Hand", "Graveyard", "Exile"):
-                    add("put_onto_battlefield", "put_from:" + o.lower())
+                    add("put_onto_battlefield:from_" + o.lower())
                     if bp.get("Tapped") == "True": add("put_tapped")
                     if o == "Graveyard": add("reanimate")
                 if o == "Library" and d in ("Hand", "Battlefield"): pos += cnt(bp.get("ChangeNum", "1"))

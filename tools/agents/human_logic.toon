@@ -2,7 +2,7 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Read before building, judging or testing decks, or proposing AI changes. When a rule conflicts with a metric, the rule wins.
 # status: applied = in code or decks now, partly = some of it done, open = not done or not decided. since = date the user said it.
 # Add a row only for user input on deck building, deck balance or AI improvement (town, map, quest and UI rules live in the design docs). Pruned 2026-10-21 at the user's request.
-rules[63|]{id|area|rule|since|status|where}:
+rules[64|]{id|area|rule|since|status|where}:
   H01|curve|A zone's stage locks at the player's first fight there from Seals held (0-1 stage 1, 2-3 stage 2, 4-5 stage 3)|2026-10-20|applied|TierLock.java and config tierLock
   H02|curve|Wild creatures, random-dungeon enemies, pass keepers, grove guardians and Wardens are mono-color. Trainers are 1-2 colors at stage 1 then 2-3|2026-10-20|applied|build_color_zone.py
   H03|curve|Random dungeons draw from the wild encounter pool, never from keepers or guardians|2026-10-20|applied|build_color_zone.py
@@ -66,3 +66,4 @@ rules[63|]{id|area|rule|since|status|where}:
   H62|tags|restrict carries restrict_kind (cant_attack_or_block, cant_attack, cant_block, cant_activate, doesnt_untap, loses_abilities, cant_attack_unless_cost); evasion ('can't be blocked') is not restrict; x_is names what X measures (target_power, life_lost ...) and is linked to its amount tag and the object it measures|2026-10-22|applied|tag_extra.py
   H63|testing|Always use the balance lab for deck and test-deck simulation assistance (not the AI lab or the main session alone)|2026-10-22|applied|agent routing, Claude 2 shift
   H64|ai|Patch 005 (SwitchPT two versions) must ignore its after-blocks gate when the opponent has no creature that could block; with no possible blockers the switch is allowed once attackers are declared|2026-10-22|partly|005 v4 built and smoke-tested; volume runs not done
+  H65|tags|All tag families are approved (2026-10-22: the first 58, then the rest after the redundancy prune), with the two behaviour changes (umbrella removal dropped when a method tag exists; keyword listed once). Redundancy check runs on every tag generation (tags/REDUNDANCY_CHECK.md); candidates are merged, dropped or whitelisted with a reason; merges applied: put_onto_battlefield:from_<zone>, grant_kw replaces the bare keyword and <kw>_grant tags, land_tutor dropped when tutor_target exists|2026-10-22|applied|tag_run.py redundancy(), REDUNDANCY_OK

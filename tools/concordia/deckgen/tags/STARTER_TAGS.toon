@@ -31,22 +31,22 @@ mtgish: rules=
 forge_ai: AILogic=-
 
 card: Evolving Wilds
-tags: cardtype:land land_tutor enters_untapped cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+tags: cardtype:land enters_untapped cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T Sac<1/CARDNAME>,changezone,"","",""
 groups[2]{id,source,tags}:
   c0,card,enters_untapped
-  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
 card: Terramorphic Expanse
-tags: cardtype:land land_tutor enters_untapped cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+tags: cardtype:land enters_untapped cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T Sac<1/CARDNAME>,changezone,"","",""
 groups[2]{id,source,tags}:
   c0,card,enters_untapped
-  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -77,13 +77,13 @@ mtgish: rules=Activated Activated
 forge_ai: AILogic=-
 
 card: Victimize
-tags: cardtype:sorcery reanimate effect:sacrifice cost:sacrifice cost_if_you_do sacrifice_outlet sacrifice_type:creature target_count:2 target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard put_tapped
+tags: cardtype:sorcery reanimate effect:sacrifice cost:sacrifice cost_if_you_do sacrifice_outlet sacrifice_type:creature target_count:2 target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield:from_graveyard put_tapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",sacrifice+changezone+cleanup,"",Defined=You ValidTgts=Creature.YouCtrl,""
 groups[3]{id,source,tags}:
   c0,card,sacrifice_outlet
   c1,A line,effect:sacrifice cost:sacrifice cost_if_you_do sacrifice_outlet sacrifice_type:creature
-  c1.2,sub-ability of c1,target_count:2 target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard put_tapped reanimate
+  c1.2,sub-ability of c1,target_count:2 target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield:from_graveyard put_tapped reanimate
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -96,12 +96,12 @@ mtgish: rules=Deathtouch
 forge_ai: AILogic=-
 
 card: Reassembling Skeleton
-tags: cardtype:creature type:skeleton type:warrior reanimate cost:mana put_onto_battlefield put_from:graveyard put_tapped
+tags: cardtype:creature type:skeleton type:warrior reanimate cost:mana put_onto_battlefield:from_graveyard put_tapped
 ai_tags: tempo:+1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 B,changezone,"","",""
 groups[1]{id,source,tags}:
-  c1,A line,cost:mana put_onto_battlefield put_from:graveyard put_tapped reanimate
+  c1,A line,cost:mana put_onto_battlefield:from_graveyard put_tapped reanimate
 mtgish: rules=FromGraveyard
 forge_ai: AILogic=-
 
@@ -527,13 +527,13 @@ mtgish: rules=Flying Exalted TriggerA
 forge_ai: AILogic=-
 
 card: Gravewaker
-tags: cardtype:creature type:bird type:spirit kw:flying reanimate cost:mana target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard put_tapped
+tags: cardtype:creature type:bird type:spirit kw:flying reanimate cost:mana target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield:from_graveyard put_tapped
 ai_tags: tempo:+1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,5 B B,changezone,"",ValidTgts=Creature.YouOwn,""
 groups[2]{id,source,tags}:
   k1,K line,kw:flying
-  c1,A line,cost:mana target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard put_tapped reanimate
+  c1,A line,cost:mana target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield:from_graveyard put_tapped reanimate
 mtgish: rules=Flying Activated
 forge_ai: AILogic=-
 
@@ -747,7 +747,7 @@ verify_flags: trigger trigger:dies from mtgish only (WhenAPermanentDies)
 forge_ai: AILogic=-
 
 card: Swiftfoot Boots
-tags: cardtype:artifact type:equipment kw:equip num:1 haste hexproof haste_grant grant_kw:haste duration:static grant_kw:hexproof affected_type:creature
+tags: cardtype:artifact type:equipment kw:equip num:1 grant_kw:haste duration:static grant_kw:hexproof affected_type:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,haste hexproof,Affected=Creature AffectedDefined=Equipped,duration:static
 links[2]{from,rel,to}:
@@ -761,7 +761,7 @@ verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=-
 
 card: Bladebrand
-tags: cardtype:instant duration:eot deathtouch draw target_count:one target_type:creature grant_kw:deathtouch draw_count:1
+tags: cardtype:instant duration:eot draw target_count:one target_type:creature grant_kw:deathtouch draw_count:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+draw,deathtouch,ValidTgts=Creature,duration:eot(forge_default)
 links[2]{from,rel,to}:
@@ -788,11 +788,11 @@ mtgish: rules=EnchantPermanent PermanentLayerEffect
 forge_ai: AILogic=Pump
 
 card: Zombify
-tags: cardtype:sorcery reanimate target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard
+tags: cardtype:sorcery reanimate target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield:from_graveyard
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone,"",ValidTgts=Creature.YouCtrl,""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard reanimate
+  c1,A line,target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield:from_graveyard reanimate
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -806,11 +806,11 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Rise from the Grave
-tags: cardtype:sorcery reanimate target_count:one target_type:creature target_zone:graveyard put_onto_battlefield put_from:graveyard
+tags: cardtype:sorcery reanimate target_count:one target_type:creature target_zone:graveyard put_onto_battlefield:from_graveyard
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone,"",ValidTgts=Creature,""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_zone:graveyard put_onto_battlefield put_from:graveyard reanimate
+  c1,A line,target_count:one target_type:creature target_zone:graveyard put_onto_battlefield:from_graveyard reanimate
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -923,7 +923,7 @@ groups[5]{id,source,tags}:
   c3,T line,trigger_scope:other
   c4,A line,cost:mana
 mtgish: rules=TriggerA Activated
-verify_flags: trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves) | trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield)
+verify_flags: trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield) | trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves)
 forge_ai: AILogic=AtOppEOT
 
 card: "Gwenna, Eyes of Gaea"
@@ -953,12 +953,12 @@ mtgish: rules=
 forge_ai: AILogic=-
 
 card: Search for Tomorrow
-tags: cardtype:sorcery kw:suspend num:2 color:green land_tutor tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield put_from:library
+tags: cardtype:sorcery kw:suspend num:2 color:green tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield:from_library
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone,"","",""
 groups[2]{id,source,tags}:
   k1,K line,kw:suspend num:2 color:green
-  c1,A line,tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield put_from:library
+  c1,A line,tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield:from_library
 mtgish: rules=SpellActions Suspend
 verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=-
@@ -1018,7 +1018,7 @@ mtgish: rules=Reach Deathtouch
 forge_ai: AILogic=-
 
 card: Aftermath Analyst
-tags: cardtype:creature type:elf type:detective reanimate self_mill trigger_scope:self trigger:etb cost:sacrifice cost_sacrifice_target:self cost:mana target_count:all target_type:land target_scope:you_control put_onto_battlefield put_from:graveyard put_tapped
+tags: cardtype:creature type:elf type:detective reanimate self_mill trigger_scope:self trigger:etb cost:sacrifice cost_sacrifice_target:self cost:mana target_count:all target_type:land target_scope:you_control put_onto_battlefield:from_graveyard put_tapped
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",mill,numcards=3,Defined=You,""
   c2,activated,3 G Sac<1/CARDNAME>,changezoneall,"","",""
@@ -1026,16 +1026,16 @@ links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:etb
-  c2,A line,cost:sacrifice cost_sacrifice_target:self cost:mana target_count:all target_type:land target_scope:you_control put_onto_battlefield put_from:graveyard put_tapped reanimate
+  c2,A line,cost:sacrifice cost_sacrifice_target:self cost:mana target_count:all target_type:land target_scope:you_control put_onto_battlefield:from_graveyard put_tapped reanimate
 mtgish: rules=TriggerA Activated
 forge_ai: AILogic=-
 
 card: Sakura-Tribe Elder
-tags: cardtype:creature type:snake type:shaman land_tutor cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+tags: cardtype:creature type:snake type:shaman cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,Sac<1/CARDNAME>,changezone,"","",""
 groups[1]{id,source,tags}:
-  c1,A line,cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+  c1,A line,cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -1063,12 +1063,12 @@ mtgish: rules=Flash Deathtouch
 forge_ai: AILogic=-
 
 card: Hunted Wumpus
-tags: cardtype:creature type:beast trigger_scope:self trigger:etb put_onto_battlefield put_from:hand
+tags: cardtype:creature type:beast trigger_scope:self trigger:etb put_onto_battlefield:from_hand
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone,"","",""
 groups[2]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:etb
-  c1.2,sub-ability of c1,put_onto_battlefield put_from:hand
+  c1.2,sub-ability of c1,put_onto_battlefield:from_hand
 mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
@@ -1135,7 +1135,7 @@ mtgish: rules=Defender TriggerA
 forge_ai: AILogic=-
 
 card: Yavimaya Elder
-tags: cardtype:creature type:human type:druid draw land_tutor trigger_scope:self trigger:dies trigger_zone:graveyard tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:hand shuffle cost:sacrifice cost_sacrifice_target:self cost:mana draw_count:1
+tags: cardtype:creature type:human type:druid draw trigger_scope:self trigger:dies trigger_zone:graveyard tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:hand shuffle cost:sacrifice cost_sacrifice_target:self cost:mana draw_count:1
 ai_tags: tempo:+2
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",changezone,"","",""
@@ -1236,13 +1236,13 @@ mtgish: rules=Vigilance Trample
 forge_ai: AILogic=-
 
 card: "Yedora, Grave Gardener"
-tags: supertype:legendary cardtype:creature type:treefolk type:druid landtype:forest reanimate trigger_scope:other trigger:dies trigger_zone:graveyard put_onto_battlefield put_from:graveyard
+tags: supertype:legendary cardtype:creature type:treefolk type:druid landtype:forest reanimate trigger_scope:other trigger:dies trigger_zone:graveyard put_onto_battlefield:from_graveyard
 ai_tags: tempo:+1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_other,"",changezone,"",Defined=TriggeredNewCardLKICopy,""
 groups[2]{id,source,tags}:
   c1,T line,trigger_scope:other trigger:dies trigger_zone:graveyard
-  c1.2,sub-ability of c1,put_onto_battlefield put_from:graveyard reanimate
+  c1.2,sub-ability of c1,put_onto_battlefield:from_graveyard reanimate
 mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
@@ -1478,7 +1478,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Garruk's Uprising
-tags: cardtype:enchantment trample draw trigger_scope:self trigger:etb draw_count:1 grant_kw:trample duration:static affected_type:creature affected_scope:you_control trigger_scope:other
+tags: cardtype:enchantment draw trigger_scope:self trigger:etb draw_count:1 grant_kw:trample duration:static affected_type:creature affected_scope:you_control trigger_scope:other
 ai_tags: tempo:+1
 clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",draw,"",Defined=You,""
@@ -1548,7 +1548,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Snakeskin Veil
-tags: cardtype:instant duration:eot hexproof counters_plus protection_trick target_count:one target_type:creature target_scope:you_control counter_count:1 counter:p1p1 grant_kw:hexproof
+tags: cardtype:instant duration:eot counters_plus protection_trick target_count:one target_type:creature target_scope:you_control counter_count:1 counter:p1p1 grant_kw:hexproof
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",putcounter+pump,countertype=P1P1 hexproof,ValidTgts=Creature.YouCtrl Defined=Targeted,duration:eot(forge_default)
 links[2]{from,rel,to}:
@@ -1576,7 +1576,7 @@ verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=Always
 
 card: Rancor
-tags: cardtype:enchantment type:aura kw:enchant target_type:creature trample recursion duration:static pump_amount:+2/+0 grant_kw:trample affected_type:creature trigger_scope:self trigger:dies trigger_zone:graveyard recursion:return_self
+tags: cardtype:enchantment type:aura kw:enchant target_type:creature duration:static pump_amount:+2/+0 grant_kw:trample affected_type:creature trigger_scope:self trigger:dies trigger_zone:graveyard recursion:return_self
 ai_tags: tempo:+1 ai_logic:pump
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,trample addpower=2,Affected=Creature AffectedDefined=Enchanted,duration:static
@@ -1617,7 +1617,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Overrun
-tags: cardtype:sorcery duration:eot trample target_count:all target_type:creature target_scope:you_control pump_amount:+3/+3 grant_kw:trample
+tags: cardtype:sorcery duration:eot target_count:all target_type:creature target_scope:you_control pump_amount:+3/+3 grant_kw:trample
 ai_tags: pump_team
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pumpall,trample numatt=+3 numdef=+3,"",duration:eot(forge_default)
@@ -1629,7 +1629,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Khalni Heart Expedition
-tags: cardtype:enchantment land_tutor trigger_scope:other trigger:etb counter_count:1 counter:quest cost:sacrifice cost_sacrifice_target:self tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped cost:remove_counters
+tags: cardtype:enchantment trigger_scope:other trigger:etb counter_count:1 counter:quest cost:sacrifice cost_sacrifice_target:self tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped cost:remove_counters
 ai_tags: tempo:+1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_other,"",putcounter,countertype=QUEST,Defined=Self,""
@@ -1639,28 +1639,28 @@ links[1]{from,rel,to}:
 groups[4]{id,source,tags}:
   c1,T line,trigger_scope:other trigger:etb
   c1.2,sub-ability of c1,counter_count:1 counter:quest
-  c2,A line,cost:sacrifice cost_sacrifice_target:self tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+  c2,A line,cost:sacrifice cost_sacrifice_target:self tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
   v,cross-check (oracle/mtgish/keyword/ai),cost:remove_counters
 mtgish: rules=TriggerA Activated
 forge_ai: AILogic=-
 
 card: Harrow
-tags: cardtype:instant land_tutor cost:sacrifice cost_sacrifice_target:land cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield put_from:library
+tags: cardtype:instant cost:sacrifice cost_sacrifice_target:land cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield:from_library
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,2 G Sac<1/Land>,changezone,"","",""
 groups[1]{id,source,tags}:
-  c1,A line,cost:sacrifice cost_sacrifice_target:land cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield put_from:library
+  c1,A line,cost:sacrifice cost_sacrifice_target:land cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield:from_library
 mtgish: rules=CastEffect SpellActions
 forge_ai: AILogic=- AIPreference
 
 card: Kodama's Reach
-tags: cardtype:sorcery type:arcane land_tutor tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:library shuffle tutor_count:1 tutor_target:land_isremembered tutor_dest:battlefield_tapped put_onto_battlefield put_from:library put_tapped tutor_dest:hand
+tags: cardtype:sorcery type:arcane tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:library shuffle tutor_count:1 tutor_target:land_isremembered tutor_dest:battlefield_tapped put_onto_battlefield:from_library put_tapped tutor_dest:hand
 ai_tags: tempo:+1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone+changezone+changezone+cleanup,"","",""
 groups[3]{id,source,tags}:
   c1,A line,tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:library shuffle
-  c1.2,sub-ability of c1,tutor tutor_count:1 tutor_target:land_isremembered tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+  c1.2,sub-ability of c1,tutor tutor_count:1 tutor_target:land_isremembered tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
   c1.3,sub-ability of c1,tutor tutor_count:1 tutor_target:land_isremembered tutor_dest:hand shuffle
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
@@ -1693,7 +1693,7 @@ mtgish: rules=
 forge_ai: AILogic=-
 
 card: "Bosco, Just a Bear"
-tags: supertype:legendary cardtype:creature type:bear duration:eot trample counters_plus sacrifice_outlet token_make trigger_scope:self trigger:etb token_count:x token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain x_is:count_creature_legendary_you_control cost:sacrifice cost_sacrifice_target:food cost:mana counter_count:2 counter:p1p1 grant_kw:trample
+tags: supertype:legendary cardtype:creature type:bear duration:eot counters_plus sacrifice_outlet token_make trigger_scope:self trigger:etb token_count:x token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain x_is:count_creature_legendary_you_control cost:sacrifice cost_sacrifice_target:food cost:mana counter_count:2 counter:p1p1 grant_kw:trample
 ai_tags: artifact_token tempo:x
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_a_food_sac,"",""
@@ -1772,7 +1772,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: "Goreclaw, Terror of Qal Sisma"
-tags: supertype:legendary cardtype:creature type:bear duration:eot trample cost_reduce cost_reduce_for:creature trigger:attacks target_count:all target_type:creature target_scope:you_control target_filter:power_ge_4 pump_amount:+1/+1 grant_kw:trample
+tags: supertype:legendary cardtype:creature type:bear duration:eot cost_reduce cost_reduce_for:creature trigger:attacks target_count:all target_type:creature target_scope:you_control target_filter:power_ge_4 pump_amount:+1/+1 grant_kw:trample
 ai_tags: pump_team
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_reducecost,"",ValidCard=Creature.powerGE4,""
@@ -2165,7 +2165,7 @@ mtgish: rules=Haste TriggerA
 forge_ai: AILogic=-
 
 card: Chasm Guide
-tags: cardtype:creature type:goblin type:scout type:ally duration:eot haste haste_grant trigger_scope:self trigger:etb target_count:all target_type:creature target_scope:you_control grant_kw:haste
+tags: cardtype:creature type:goblin type:scout type:ally duration:eot trigger_scope:self trigger:etb target_count:all target_type:creature target_scope:you_control grant_kw:haste
 ai_tags: pump_team
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",pumpall,haste,"",duration:eot(forge_default)
@@ -2218,7 +2218,7 @@ mtgish: rules=Haste Activated
 forge_ai: AILogic=-
 
 card: "Daretti, Rocketeer Engineer"
-tags: supertype:legendary cardtype:creature type:goblin type:artificer reanimate sacrifice_outlet trigger_scope:self trigger:etb target_count:one target_type:artifact target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard trigger:attacks
+tags: supertype:legendary cardtype:creature type:goblin type:artificer reanimate sacrifice_outlet trigger_scope:self trigger:etb target_count:one target_type:artifact target_scope:you_control target_zone:graveyard put_onto_battlefield:from_graveyard trigger:attacks
 ai_tags: tempo:+1
 clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,"","",duration:static
@@ -2226,7 +2226,7 @@ clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c3,attacks,"",changezone,"",ValidTgts=Artifact.YouCtrl Defined=Targeted,""
 groups[3]{id,source,tags}:
   c2,T line,trigger_scope:self trigger:etb
-  c2.2,sub-ability of c2,target_count:one target_type:artifact target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard reanimate
+  c2.2,sub-ability of c2,target_count:one target_type:artifact target_scope:you_control target_zone:graveyard put_onto_battlefield:from_graveyard reanimate
   c3,T line,trigger:attacks
 mtgish: rules=CDA_Power TriggerA
 verify_flags: cost cost:sacrifice from mtgish only
@@ -2285,7 +2285,7 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=- RemoveDeck
 
 card: Dragon's Rage Channeler
-tags: cardtype:creature type:human type:shaman flying evasion_grant trigger:spell_cast trigger_filter:card trigger_filter:creature duration:static pump_amount:+2/+2 grant_kw:flying affected_scope:self must_attack affects:card affects:self surveil
+tags: cardtype:creature type:human type:shaman evasion_grant trigger:spell_cast trigger_filter:card trigger_filter:creature duration:static pump_amount:+2/+2 grant_kw:flying affected_scope:self must_attack affects:card affects:self surveil
 clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell_cast,"",surveil,"","",""
   c2,static,"",static_continuous,flying addpower=2 addtoughness=2,AffectedDefined=Self,duration:static
@@ -2424,7 +2424,7 @@ verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=-
 
 card: Fervor
-tags: cardtype:enchantment haste haste_grant grant_kw:haste duration:static affected_type:creature affected_scope:you_control
+tags: cardtype:enchantment grant_kw:haste duration:static affected_type:creature affected_scope:you_control
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,haste,Affected=Creature.YouCtrl,duration:static
 links[2]{from,rel,to}:
@@ -2708,7 +2708,7 @@ verify_flags: cost cost:mana from mtgish only
 forge_ai: AILogic=-
 
 card: Myriad Landscape
-tags: cardtype:land land_tutor mana_source enters_tapped cost:tap mana:colorless mana_amount:1 cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+tags: cardtype:land mana_source enters_tapped cost:tap mana:colorless mana_amount:1 cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
 ai_tags: tempo:+1
 clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c1,replacement,"",replace_moved,"",ValidCard=Card.Self,""
@@ -2719,7 +2719,7 @@ links[1]{from,rel,to}:
 groups[3]{id,source,tags}:
   c0,card,enters_tapped
   c2,A line,cost:tap mana_source mana:colorless mana_amount:1
-  c3,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+  c3,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
 mtgish: rules=AsPermanentEnters Activated Activated
 forge_ai: AILogic=-
 
@@ -2765,7 +2765,7 @@ mtgish: rules=PlayerEffect Activated
 forge_ai: AILogic=-
 
 card: Blighted Woodland
-tags: cardtype:land land_tutor mana_source enters_untapped cost:tap mana:colorless mana_amount:1 cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+tags: cardtype:land mana_source enters_untapped cost:tap mana:colorless mana_amount:1 cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
 ai_tags: tempo:+1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
@@ -2775,7 +2775,7 @@ links[1]{from,rel,to}:
 groups[3]{id,source,tags}:
   c0,card,enters_untapped
   c1,A line,cost:tap mana_source mana:colorless mana_amount:1
-  c2,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+  c2,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
 mtgish: rules=Activated Activated
 forge_ai: AILogic=-
 
@@ -3120,7 +3120,7 @@ mtgish: rules=TriggerA Activated
 forge_ai: AILogic=-
 
 card: Fireshrieker
-tags: cardtype:artifact type:equipment kw:equip num:2 double_strike grant_double_strike grant_kw:double_strike duration:static affected_type:creature
+tags: cardtype:artifact type:equipment kw:equip num:2 grant_kw:double_strike duration:static affected_type:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,double_strike,Affected=Creature AffectedDefined=Equipped,duration:static
 links[2]{from,rel,to}:
@@ -3415,14 +3415,14 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: "Hakim, Loreweaver"
-tags: supertype:legendary cardtype:creature type:human type:wizard kw:flying reanimate cost:mana target_count:one target_type:aura target_scope:you_control target_zone:graveyard activation_restriction put_onto_battlefield put_from:graveyard cost:tap target_count:all target_type:card target_filter:aura target_filter:attachedto_card_self remove:destroy
+tags: supertype:legendary cardtype:creature type:human type:wizard kw:flying reanimate cost:mana target_count:one target_type:aura target_scope:you_control target_zone:graveyard activation_restriction put_onto_battlefield:from_graveyard cost:tap target_count:all target_type:card target_filter:aura target_filter:attachedto_card_self remove:destroy
 ai_tags: tempo:+1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,U U,changezone,"",ValidTgts=Aura.YouOwn,""
   c2,activated,U U T,destroyall,"","",""
 groups[3]{id,source,tags}:
   k1,K line,kw:flying
-  c1,A line,cost:mana target_count:one target_type:aura target_scope:you_control target_zone:graveyard activation_restriction put_onto_battlefield put_from:graveyard reanimate
+  c1,A line,cost:mana target_count:one target_type:aura target_scope:you_control target_zone:graveyard activation_restriction put_onto_battlefield:from_graveyard reanimate
   c2,A line,cost:tap cost:mana target_count:all target_type:card target_filter:aura target_filter:attachedto_card_self remove:destroy
 mtgish: rules=Flying ActivatedWithModifiers Activated
 forge_ai: AILogic=-
@@ -3472,12 +3472,12 @@ mtgish: rules=Activated Activated
 forge_ai: AILogic=-
 
 card: Desecrate Reality
-tags: cardtype:instant reanimate target_count:one target_type:permanent target_scope:opp_control remove:exile put_onto_battlefield put_from:graveyard
+tags: cardtype:instant reanimate target_count:one target_type:permanent target_scope:opp_control remove:exile put_onto_battlefield:from_graveyard
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone+changezone,"",ValidTgts=Permanent.OppCtrl+cmcEven,""
 groups[2]{id,source,tags}:
   c1,A line,target_count:one target_type:permanent target_scope:opp_control remove:exile
-  c1.2,sub-ability of c1,put_onto_battlefield put_from:graveyard reanimate
+  c1.2,sub-ability of c1,put_onto_battlefield:from_graveyard reanimate
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -3563,7 +3563,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=KeepOppCreatsLandsTapped
 
 card: Expanded Anatomy
-tags: cardtype:sorcery type:lesson duration:eot vigilance counters_plus target_count:one target_type:creature counter_count:2 counter:p1p1 grant_kw:vigilance
+tags: cardtype:sorcery type:lesson duration:eot counters_plus target_count:one target_type:creature counter_count:2 counter:p1p1 grant_kw:vigilance
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",putcounter+pump,countertype=P1P1 vigilance,ValidTgts=Creature Defined=Targeted,duration:eot(forge_default)
 links[2]{from,rel,to}:
@@ -3653,11 +3653,11 @@ mtgish: rules=
 forge_ai: AILogic=-
 
 card: Wayfarer's Bauble
-tags: cardtype:artifact land_tutor cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+tags: cardtype:artifact cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,2 T Sac<1/CARDNAME>,changezone,"","",""
 groups[1]{id,source,tags}:
-  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -3879,7 +3879,7 @@ mtgish: rules=Flash TriggerA
 forge_ai: AILogic=-
 
 card: Solemn Simulacrum
-tags: cardtype:artifact cardtype:creature type:golem draw land_tutor trigger_scope:self trigger:etb tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped trigger:dies trigger_zone:graveyard draw_count:1
+tags: cardtype:artifact cardtype:creature type:golem draw trigger_scope:self trigger:etb tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped trigger:dies trigger_zone:graveyard draw_count:1
 ai_tags: tempo:+1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone,"","",""
@@ -3888,7 +3888,7 @@ links[1]{from,rel,to}:
   c2:affected,receives,c2:payload
 groups[4]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:etb
-  c1.2,sub-ability of c1,tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
+  c1.2,sub-ability of c1,tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield:from_library put_tapped
   c2,T line,trigger_scope:self trigger:dies trigger_zone:graveyard
   c2.2,sub-ability of c2,draw_count:1
 mtgish: rules=TriggerA TriggerA
@@ -3906,7 +3906,7 @@ mtgish: rules=Flying Lifelink
 forge_ai: AILogic=-
 
 card: Restoration Angel
-tags: cardtype:creature type:angel kw:flash kw:flying trigger_scope:self trigger:etb target_count:one target_type:creature target_filter:nonangel target_scope:you_control remove:exile put_onto_battlefield put_from:exile
+tags: cardtype:creature type:angel kw:flash kw:flying trigger_scope:self trigger:etb target_count:one target_type:creature target_filter:nonangel target_scope:you_control remove:exile put_onto_battlefield:from_exile
 ai_tags: tempo:+1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone+changezone,"",ValidTgts=Creature.nonAngel+YouCtrl Defined=Remembered,""
@@ -3915,7 +3915,7 @@ groups[5]{id,source,tags}:
   k2,K line,kw:flying
   c1,T line,trigger_scope:self trigger:etb
   c1.2,sub-ability of c1,target_count:one target_type:creature target_filter:nonangel target_scope:you_control remove:exile
-  c1.3,sub-ability of c1,put_onto_battlefield put_from:exile
+  c1.3,sub-ability of c1,put_onto_battlefield:from_exile
 mtgish: rules=Flash Flying TriggerA
 verify_flags: cost cost:exile from mtgish only
 forge_ai: AILogic=-
@@ -4050,7 +4050,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Frontline Medic
-tags: cardtype:creature type:human type:cleric duration:eot indestructible counterspell trigger:attacks target_count:all target_type:creature target_scope:you_control grant_kw:indestructible cost:sacrifice cost_sacrifice_target:self target_count:one target_type:card
+tags: cardtype:creature type:human type:cleric duration:eot counterspell trigger:attacks target_count:all target_type:creature target_scope:you_control grant_kw:indestructible cost:sacrifice cost_sacrifice_target:self target_count:one target_type:card
 ai_tags: pump_team
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attacks,"",pumpall,indestructible,"",duration:eot(forge_default)
@@ -4087,7 +4087,7 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Oblivion Ring
-tags: cardtype:enchantment trigger_scope:self trigger:etb target_count:one target_type:permanent target_filter:nonland target_filter:other remove:exile trigger:leaves put_onto_battlefield put_from:exile return_exiled
+tags: cardtype:enchantment trigger_scope:self trigger:etb target_count:one target_type:permanent target_filter:nonland target_filter:other remove:exile trigger:leaves put_onto_battlefield:from_exile return_exiled
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone,"",ValidTgts=Permanent.nonLand+Other,""
   c2,leaves_self,"",changezone,"",Defined=ExiledWith,""
@@ -4097,7 +4097,7 @@ groups[4]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:etb
   c1.2,sub-ability of c1,target_count:one target_type:permanent target_filter:nonland target_filter:other remove:exile
   c2,T line,trigger_scope:self trigger:leaves
-  c2.2,sub-ability of c2,put_onto_battlefield put_from:exile return_exiled
+  c2.2,sub-ability of c2,put_onto_battlefield:from_exile return_exiled
 mtgish: rules=TriggerA TriggerA
 forge_ai: AILogic=-
 
@@ -4169,7 +4169,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Moment of Heroism
-tags: cardtype:instant duration:eot lifelink lifegain pump_single target_count:one target_type:creature pump_amount:+2/+2 grant_kw:lifelink
+tags: cardtype:instant duration:eot lifegain pump_single target_count:one target_type:creature pump_amount:+2/+2 grant_kw:lifelink
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump,lifelink numatt=+2 numdef=+2,ValidTgts=Creature,duration:eot(forge_default)
 links[2]{from,rel,to}:
@@ -4181,7 +4181,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Make a Stand
-tags: cardtype:instant duration:eot indestructible target_count:all target_type:creature target_scope:you_control pump_amount:+1/+0 grant_kw:indestructible
+tags: cardtype:instant duration:eot target_count:all target_type:creature target_scope:you_control pump_amount:+1/+0 grant_kw:indestructible
 ai_tags: pump_team
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pumpall,indestructible numatt=+1,"",duration:eot(forge_default)
@@ -4193,7 +4193,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Sheltering Light
-tags: cardtype:instant duration:eot indestructible protection_trick target_count:one target_type:creature grant_kw:indestructible scry
+tags: cardtype:instant duration:eot protection_trick target_count:one target_type:creature grant_kw:indestructible scry
 ai_tags: selection
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+scry,indestructible,ValidTgts=Creature,duration:eot(forge_default)
@@ -4240,7 +4240,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Mycosynth Wellspring
-tags: cardtype:artifact land_tutor trigger_scope:self trigger:etb tutor tutor_count:1 tutor_target:basic_land tutor_dest:hand shuffle trigger:dies trigger_zone:graveyard
+tags: cardtype:artifact trigger_scope:self trigger:etb tutor tutor_count:1 tutor_target:basic_land tutor_dest:hand shuffle trigger:dies trigger_zone:graveyard
 ai_tags: tempo:+1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone,"","",""
@@ -4318,20 +4318,20 @@ mtgish: rules=Flash Activated
 forge_ai: AILogic=-
 
 card: Felidar Guardian
-tags: cardtype:creature type:cat type:beast trigger_scope:self trigger:etb target_count:one target_type:permanent target_filter:other target_scope:you_control remove:exile put_onto_battlefield put_from:exile
+tags: cardtype:creature type:cat type:beast trigger_scope:self trigger:etb target_count:one target_type:permanent target_filter:other target_scope:you_control remove:exile put_onto_battlefield:from_exile
 ai_tags: tempo:+1 ai_logic:bounceonce
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone+changezone,"",ValidTgts=Permanent.Other+YouCtrl Defined=Remembered,""
 groups[3]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:etb
   c1.2,sub-ability of c1,target_count:one target_type:permanent target_filter:other target_scope:you_control remove:exile
-  c1.3,sub-ability of c1,put_onto_battlefield put_from:exile
+  c1.3,sub-ability of c1,put_onto_battlefield:from_exile
 mtgish: rules=TriggerA
 verify_flags: cost cost:exile from mtgish only
 forge_ai: AILogic=BounceOnce
 
 card: Journey to Nowhere
-tags: cardtype:enchantment trigger_scope:self trigger:etb target_count:one target_type:creature remove:exile trigger:leaves put_onto_battlefield put_from:exile
+tags: cardtype:enchantment trigger_scope:self trigger:etb target_count:one target_type:creature remove:exile trigger:leaves put_onto_battlefield:from_exile
 ai_tags: tempo:+1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone,"",ValidTgts=Creature,""
@@ -4340,7 +4340,7 @@ groups[4]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:etb
   c1.2,sub-ability of c1,target_count:one target_type:creature remove:exile
   c2,T line,trigger_scope:self trigger:leaves
-  c2.2,sub-ability of c2,put_onto_battlefield put_from:exile
+  c2.2,sub-ability of c2,put_onto_battlefield:from_exile
 mtgish: rules=TriggerA TriggerA
 forge_ai: AILogic=-
 

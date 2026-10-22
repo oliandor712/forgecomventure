@@ -262,6 +262,12 @@ def record(name, text, mg):
     tags = [t for t in tags if not ("kw:" + t) in tags]
     # removal split by method (user): drop the umbrella 'removal' when a method tag exists
     if "removal" in tags and any(t.startswith("remove:") or t == "damage" for t in tags): tags.remove("removal")
+    # redundancy merges (user 2026-10-22, "run full merge"): a granted keyword has grant_kw:<kw>, so the old bare keyword tag and <kw>_grant tag on a card that only grants it say the same thing;
+    # a land tutor is already tutor + tutor_target; a bare recursion next to recursion:<kind> adds nothing
+    for g in [x[9:] for x in tags if x.startswith("grant_kw:")]:
+        if "kw:" + g not in tags: tags = [x for x in tags if x not in (g, g + "_grant", "grant_" + g)]
+    if "land_tutor" in tags and any(x.startswith("tutor_target:") for x in tags): tags = [x for x in tags if x != "land_tutor"]
+    if "recursion" in tags and any(x.startswith("recursion:") for x in tags): tags = [x for x in tags if x != "recursion"]
     if "restrict" in tags and not any(x.startswith("restrict_kind:") for x in tags) and any(x.startswith("cant_be_blocked") for x in tags):
         tags = [x for x in tags if x != "restrict"]   # 'can't be blocked (by X)' is evasion, not a restriction on someone else
     if "duration:next_untap" in tags or "duration:while_control" in tags: tags = [t for t in tags if t != "duration:permanent"]   # Forge's Duration$ Permanent on a 'next untap step' / 'as long as you control' effect is a script detail
@@ -392,7 +398,8 @@ def write_sample(recs, mg):
     open(os.path.join(HERE, "tags", "STARTER_TAGS_SAMPLE.md"), "w").write("\n".join(out) + "\n")
 
 
-APPROVED = ['target_type', 'trigger', 'target_count', 'trigger_scope', 'cost', 'tempo', 'draw_count', 'target_scope', 'remove', 'token_type', 'token_color', 'token_count', 'damage', 'token_pt', 'mana', 'mana_amount', 'damage_amount', 'target_filter', 'trigger_filter', 'put_onto_battlefield', 'put_from', 'cost_sacrifice_target', 'trigger_zone', 'counter', 'tutor_dest', 'tutor_count', 'tutor_target', 'shuffle', 'target_zone', 'put_tapped', 'token_cardtype', 'enters_untapped', 'enters_tapped', 'token_kw', 'discard_count', 'duration', 'effect', 'transform', 'mana_choice', 'mana_restriction', 'exile_from', 'cost_reduce_for', 'impulse_draw', 'impulse_draw_count', 'affects', 'activation_restriction', 'sacrifice_type', 'must_attack', 'return_exiled', 'cost_if_you_do', 'cast_free', 'recursion', 'steal', 'steal_grants_haste', 'delayed', 'die_replace', 'loses_all_abilities', 'color']   # tag families the user approved in chat on 2026-10-22 ("Approve all new tags"); later families stay proposed until approved
+# tag families the user approved in chat on 2026-10-22: the first 58 ("Approve all new tags") and the rest later the same day ("approve all tags", after the redundancy prune); a family created later stays proposed until approved
+APPROVED = ['activation_restriction', 'affects', 'cast_free', 'color', 'cost', 'cost_if_you_do', 'cost_reduce_for', 'cost_sacrifice_target', 'counter', 'damage', 'damage_amount', 'delayed', 'die_replace', 'discard_count', 'draw_count', 'duration', 'effect', 'enters_tapped', 'enters_untapped', 'exile_from', 'impulse_draw', 'impulse_draw_count', 'loses_all_abilities', 'mana', 'mana_amount', 'mana_choice', 'mana_restriction', 'must_attack', 'put_from', 'put_onto_battlefield', 'put_tapped', 'recursion', 'remove', 'return_exiled', 'sacrifice_type', 'shuffle', 'steal', 'steal_grants_haste', 'target_count', 'target_filter', 'target_scope', 'target_type', 'target_zone', 'tempo', 'token_cardtype', 'token_color', 'token_count', 'token_kw', 'token_pt', 'token_type', 'transform', 'trigger', 'trigger_filter', 'trigger_scope', 'trigger_zone', 'tutor_count', 'tutor_dest', 'tutor_target', 'affected_filter', 'affected_scope', 'affected_type', 'ai_logic', 'cant_be_blocked', 'cant_be_countered', 'condition', 'cost_exile_target', 'cost_return_target', 'counter_count', 'fight', 'grant_ability', 'grant_kw', 'life_loss', 'life_loss_amount', 'lifegain_amount', 'look_top', 'modal', 'piles_split', 'pump_amount', 'replace', 'rest_dest', 'restrict_kind', 'reveal', 'saga_chapter', 'scry', 'surveil', 'take', 'token_ability', 'untap', 'x_is']   
 
 
 def write_approval(recs, red=()):
@@ -406,7 +413,7 @@ def write_approval(recs, red=()):
             d.setdefault(t, []).append(r["name"])
     out = ["# New tags created for approval\n",
            "Created 2026-10-22 under the standing instruction (human_logic.toon H56): tags may be created to fill gaps seen across the references (script, mtgish, Forge AI, rules, keyword reference, user feedback); each is logged here and counts as PROPOSED until approved. Only families that wait for approval are listed; the 57 families approved on 2026-10-22 are in `APPROVED_TAGS_ARCHIVE.md`. Tick a box to approve a family; strike or note a change under it. Counts are from the starter-deck run (%d cards)." % len(recs),
-           "Changes to existing behaviour (also need approval): (a) the umbrella tag `removal` is dropped when a method tag (`remove:*`, `damage`) is present; (b) a keyword is listed once as `kw:<name>`, the plain duplicate (e.g. `trample`) is dropped.\n",
+           "Changes to existing behaviour (approved with \"approve all tags\", 2026-10-22; treated as covered by that order, say if not): (a) the umbrella tag `removal` is dropped when a method tag (`remove:*`, `damage`) is present; (b) a keyword is listed once as `kw:<name>`, the plain duplicate (e.g. `trample`) is dropped.\n",
            "| Approve | Tag family | Meaning | Source of the rule | Cards | Values seen (cards) |", "|---|---|---|---|---|---|"]
     archive = ["# Approved tag families (archive)\n",
                "Moved out of `NEW_TAGS_FOR_APPROVAL.md` on 2026-10-22 at the user's request. These families were approved by the user in chat on 2026-10-22 (\"Approve all new tags\"); they stay in use. Counts are from the starter-deck run (%d cards); regenerated by `deckgen/tag_run.py starter`.\n" % len(recs),
@@ -422,6 +429,7 @@ def write_approval(recs, red=()):
         ex = ", ".join(list(dict.fromkeys(c for v in vals.values() for c in v))[:3])
         row = "| %s | `%s` | %s | %s | %d (e.g. %s) | %s |" % ("[x] approved 2026-10-22" if f in APPROVED else "[ ] proposed", f, m, w, n, ex, seen)
         (archive if f in APPROVED else out).append(row)
+    if not any("[ ] proposed" in x for x in out): out.append("| | *No family waits for approval.* | | | | |")
     # values added inside families that were already approved (the family was approved, these values are new since 2026-10-22)
     snap = set(l.strip() for l in open(os.path.join(HERE, "tags", "APPROVAL_SNAPSHOT.txt")) if l.strip() and not l.startswith("#"))
     allt = collections.OrderedDict()
@@ -438,7 +446,7 @@ def write_approval(recs, red=()):
             "- `x_is:<what>` values were renamed to readable words (e.g. `count_swamp_youctrl` -> `count_swamp_you_control`); `restrict` now also carries `restrict_kind:<kind>`.",
             "- `transform` was removed from Feign Death, Supernatural Stamina and Merfolk Trickster (they grant or remove abilities); `sacrifice_outlet` was removed from 14 cards that sacrifice only themselves (user rule).",
             "- Segregated, not removed: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`) sit on the `ai_tags:` line and are hidden from the blind reader.",
-            "", "## Waiting on the user", "- Tick the proposed families above; decide the two behaviour changes at the top; confirm the AI Tags list."]
+            "", "## Waiting on the user", "- Nothing is waiting for approval: all families, the two behaviour changes and the merged tags were approved on 2026-10-22. New families created by later runs are listed in the table above as proposed.", "- Still open (not an approval): confirm the AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token)."]
     open(os.path.join(HERE, "tags", "NEW_TAGS_FOR_APPROVAL.md"), "w").write("\n".join(out) + "\n")
     open(os.path.join(HERE, "tags", "APPROVED_TAGS_ARCHIVE.md"), "w").write("\n".join(archive) + "\n")
 
@@ -477,6 +485,9 @@ REDUNDANCY_OK = {   # (family A, family B): why A and B may stay together althou
     ("lifegain_amount", "lifegain"): "amount qualifies the action", ("life_loss", "life_loss_amount"): "mirrors lifegain / lifegain_amount; not every pool card has an amount", ("counter_count", "counter"): "qualifier",
     ("token_ability", "token_cardtype"): "qualifier", ("take", "look_top"): "qualifier",
 }
+SINGLE_OK = {"target_zone": "other zones (exile, hand, library) exist in the pool", "trigger_zone": "graveyard is the only zone in the starter set", "exile_from": "hand and library exist in the pool",
+             "token_cardtype": "enchantment tokens (Shard, Roles) exist in the pool", "effect": "more effect kinds expected in the full run", "cost_reduce_for": "other card types exist in the pool",
+             "recursion": "return_self is one kind of recursion; the bare tag stays for the others"}      # single-value families that stay: the starter set shows one value, the full pool has more
 VALUES_OK = {"trigger_filter"}      # families whose values legitimately travel together (instant + sorcery on one trigger)
 
 
@@ -511,7 +522,7 @@ def redundancy(recs):
                 out.append(("implied", "%s -> %s" % (a, b), "every card with `%s` (%d) also has `%s` (%d): `%s` may be implied" % (a, len(cards[a]), b, len(cards[b]), a)))
     for f, vs in sorted(vals.items()):
         vv = {v: c for v, c in vs.items() if ":" in v}
-        if len(vv) == 1 and len(cards[f]) >= 3 and f not in ("supertype", "cardtype", "defense", "loyalty"): out.append(("single value", f, "family `%s` has only one value (%s) on %d cards: could be a plain tag" % (f, list(vv)[0], len(cards[f]))))
+        if len(vv) == 1 and len(cards[f]) >= 3 and f not in ("supertype", "cardtype", "defense", "loyalty") and f not in SINGLE_OK: out.append(("single value", f, "family `%s` has only one value (%s) on %d cards: could be a plain tag" % (f, list(vv)[0], len(cards[f]))))
         names = list(vv)
         for i, a in enumerate(names):
             for b in names[i + 1:]:
