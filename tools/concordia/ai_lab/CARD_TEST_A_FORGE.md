@@ -314,3 +314,20 @@ Test-set proposals changing from (a):
 | Haunting Apparition | Curse | MostProminentInHumanDeck | MostProminentInHumanDeck | Curse | no | B right |
 
 Reading: the keyword variants change only the exact count by one or two cards, and the agreement with B stays high. The compensated variant (c) gives the same figures as the uncompensated variant (b) on this set. The B table in `CARD_TEST_B_MTGISH.md` is the reference for the per-card rows above.
+
+## A3 headline: variant (b), every keyword a full-weight feature
+Decision (main session, 2026-10-22): variant (b) is the method. Every keyword is its own full-weight feature `kw:<name>`, no down-weighting, no 1/n compensation. Keyword names keep the parameter where it carries meaning: `Protection from red` -> `protection:red`; `Enchant creature` -> `enchant:creature`; `Equip:2` -> `equip`; `Ward:2` -> `ward` (the number is a cost, not a name); `Snow landwalk` -> `snow_landwalk`. The split is: text after `from` for protection, text after `Enchant` for enchant, otherwise the text before the first `:`, `(` or a digit, lower case, spaces as underscores. A compound such as `Protection from white and from black` becomes `protection:white_and_from_black`, which is a known limit.
+
+| Variant | Strict exact | Partial | Miss | Exact-or-partial | Agree with B | Correct when agree |
+|---|---|---|---|---|---|---|
+| HEADLINE (b) K separate, uncompensated, full keyword names | 18 of 50 | 17 | 15 | 35 of 50 | 18 | 17 of 18 |
+| reference (a) K down-weighted 0.4 | 17 of 50 | 18 | 15 | 35 of 50 | 17 | 16 of 17 |
+| reference (c) K separate, 1/n compensated | 18 of 50 | 17 | 15 | 35 of 50 | 18 | 17 of 18 |
+
+Headline: strict exact 18 of 50, agreement with method B on 18 cards, right on 17 of them. Method B strict exact: 33 of 50.
+
+Keyword-name change (first word -> full name, variant b): 0 of 50 control predictions changed.
+
+Test-set proposals changed by the keyword-name split: 0 of 50.
+
+Note: the earlier A3 section (first-word names) stays as written, for the record. Variant (b) from that section is the same method with the first-word names; the headline above replaces it.
