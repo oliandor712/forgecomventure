@@ -239,6 +239,24 @@ def render(r):
     return "\n".join(o)
 
 
+_IDX = {}
+
+
+def find_text(name):
+    """script text by card name; falls back to an index of every Name: line because multi-face scripts are filed as front_back.txt (e.g. gumdrop_poisoner_tempt_with_treats.txt)"""
+    t = AT.card_text(name)
+    if t: return t
+    if not _IDX:
+        for p in glob.glob(os.path.join(ROOT, "forge-gui/res/cardsfolder/*/*.txt")):
+            try: x = open(p, errors="replace").read()
+            except OSError: continue
+            m = re.search(r"^Name:(.*)$", x, re.M)
+            if m: _IDX.setdefault(m.group(1).strip().lower(), p)
+            for m2 in re.finditer(r"^Name:(.*)$", x, re.M): _IDX.setdefault(m2.group(1).strip().lower(), p)
+    p = _IDX.get(name.lower())
+    return open(p, errors="replace").read() if p else ""
+
+
 def deck_cards(path):
     names = collections.Counter()
     for l in open(path, encoding="utf-8", errors="replace"):
@@ -250,7 +268,7 @@ def deck_cards(path):
 def main(a):
     mg = mtgish_load()
     if a and a[0] == "card":
-        for n in a[1:]: print(render(record(n, AT.card_text(n), mg)), end="\n\n")
+        for n in a[1:]: print(render(record(n, find_text(n), mg)), end="\n\n")
         return
     decks = sorted(glob.glob(os.path.join(ROOT, "forge-gui/res/adventure/Concordia/decks/starter/*.dck")))
     uniq = collections.OrderedDict()
@@ -260,7 +278,7 @@ def main(a):
             uniq.setdefault(n, 1); inwhich[n].add(os.path.basename(d)[:-4])
     recs, missing = [], []
     for n in uniq:
-        t = AT.card_text(n)
+        t = find_text(n)
         if not t: missing.append(n); continue
         recs.append(record(n, t, mg))
     os.makedirs(os.path.join(HERE, "tags"), exist_ok=True)

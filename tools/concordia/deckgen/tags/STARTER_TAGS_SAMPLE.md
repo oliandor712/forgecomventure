@@ -1,15 +1,15 @@
 # Starter tagging run: sample set (3 per card type, 1 per supertype)
 
-Cards come from the starter decks where the deck has that type; a type or supertype the starter decks do not hold is filled from the whole card pool and marked *(not in starter decks)*. Oracle text is the `Oracle:` line of the Forge script (`/` = line break). Tags are the output of `deckgen/tag_run.py` (order: supertype, cardtype, subtype, keyword and qualifiers, ability tags). Nothing was changed in any card or deck.
+Cards come from the starter decks where the deck has that type; a type or supertype the starter decks do not hold is filled from the whole card pool and marked '(not in starter decks)'. Oracle text is the `Oracle:` line of the Forge script (`/` = line break). Tags are the output of `deckgen/tag_run.py`. Nothing was changed in any card or deck.
 
 
 ## cardtype:creature
 
 | Card | Oracle text | Tags |
 |---|---|---|
-| Deranged Assistant | {T}, Mill a card: Add {C}. (To mill a card, put the top card of your library into your graveyard.) | cardtype:creature type:human type:wizard mana_source mill |
-| Captivating Crew | {3}{R}: Gain control of target creature an opponent controls until end of turn. Untap that creature. It gains haste until end of turn. Activate only as a sorcery. | cardtype:creature type:human type:pirate steal_temp |
-| Scrapshooter | Gift a card (You may promise an opponent a gift as you cast this spell. If you do, when it enters, they draw a card.) / Reach / When Scrapshooter enters, if the gift was promised, destroy target artifact or enchantment an opponent controls. | cardtype:creature type:raccoon type:archer kw:gift kw:reach draw removal |
+| Vodalian Arcanist | {T}: Add {C}. Spend this mana only to cast an instant or sorcery spell. | cardtype:creature type:merfolk type:wizard mana_source |
+| Goblin Rabblemaster | Other Goblin creatures you control attack each combat if able. / At the beginning of combat on your turn, create a 1/1 red Goblin creature token with haste. / Whenever Goblin Rabblemaster attacks, it gets +1/+0 until end of turn for each other attacking Goblin. | cardtype:creature type:goblin type:warrior duration:eot scales:Goblin token_make |
+| Colossal Dreadmaw | Trample (This creature can deal excess combat damage to the player or planeswalker it's attacking.) | cardtype:creature type:dinosaur kw:trample trample |
 
 ## cardtype:instant
 
@@ -47,43 +47,46 @@ Cards come from the starter decks where the deck has that type; a type or supert
 
 | Card | Oracle text | Tags |
 |---|---|---|
-| Teferi, Temporal Archmage *(not in starter decks)* | [+1]: Look at the top two cards of your library. Put one of them into your hand and the other on the bottom of your library. / [-1]: Untap up to four target permanents. / [-10]: You get an emblem with "You may activate loyalty abilities of planeswalkers you control on any player's turn any time you could cast an instant." / Teferi, Temporal Archmage can be your commander. | supertype:legendary cardtype:planeswalker type:teferi selection |
-| Teferi, Timeless Voyager *(not in starter decks)* | [+1]: Draw a card. / [-3]: Put target creature on top of its owner's library. / [-8]: Each creature target opponent controls phases out. Until the end of your next turn, they can't phase in. (Treat them and anything attached to them as though they don't exist.) | supertype:legendary cardtype:planeswalker type:teferi draw removal |
-| Davriel, Soul Broker *(not in starter decks)* | [+1]: Until your next turn, whenever an opponent attacks you and/or planeswalkers you control, they discard a card. If they can't, they sacrifice an attacking creature. / [-2]: Accept one of Davriel's offers, then accept one of Davriel's conditions. / [-3]: Target creature an opponent controls perpetually gets -3/-3. | supertype:legendary cardtype:planeswalker type:davriel pump_single discard draw lifegain pump_team reanimate recursion scales:graveyard selection shrink |
+| Oko, Thief of Crowns (not in starter decks) | [+2]: Create a Food token. (It's an artifact with "{2}, {T}, Sacrifice this token: You gain 3 life.") / [+1]: Target artifact or creature loses all abilities and becomes a green Elk creature with base power and toughness 3/3. / [-5]: Exchange control of target artifact or creature you control and target creature an opponent controls with power 3 or less. | supertype:legendary cardtype:planeswalker type:oko artifact_token token_make |
+| Rowan, Fearless Sparkmage (not in starter decks) | [+1]: Up to one target creature gets +3/+0 and gains first strike until end of turn. / [-2]: Rowan, Fearless Sparkmage deals 1 damage to each of up to two target creatures. Those creatures can't block this turn. / [-9]: Gain control of all creatures until end of turn. Untap them. They gain haste until end of turn. | supertype:legendary cardtype:planeswalker type:rowan duration:eot first_strike pump_single removal steal_temp |
+| Garruk, Veiled Butcher (not in starter decks) | If a creature an opponent controls would die, exile it instead. / [+2]: Up to one target creature gets -4/-1 until your next turn. / [-2]: Each player sacrifices a creature of their choice. If you sacrificed a creature this way, create a 4/4 green Beast creature token with trample. / [-3]: Each opponent discards two cards. For each opponent who didn't discard two nonland cards this way, you draw a card. | supertype:legendary cardtype:planeswalker type:garruk pump_single discard draw shrink token_make |
 
 ## cardtype:land
 
 | Card | Oracle text | Tags |
 |---|---|---|
-| Lonely Sandbar | Lonely Sandbar enters tapped. / {T}: Add {U}. / Cycling {U} ({U}, Discard this card: Draw a card.) | cardtype:land kw:cycling color:blue draw cycling mana_source |
+| Temple of the False God | {T}: Add {C}{C}. Activate only if you control five or more lands. | cardtype:land mana_source |
 | Blighted Woodland | {T}: Add {C}. / {3}{G}, {T}, Sacrifice Blighted Woodland: Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle. | cardtype:land land_tutor mana_source sacrifice_outlet |
-| Evolving Wilds | {T}, Sacrifice Evolving Wilds: Search your library for a basic land card, put it onto the battlefield tapped, then shuffle. | cardtype:land land_tutor sacrifice_outlet |
+| Myriad Landscape | Myriad Landscape enters tapped. / {T}: Add {C}. / {2}, {T}, Sacrifice Myriad Landscape: Search your library for up to two basic land cards that share a land type, put them onto the battlefield tapped, then shuffle. | cardtype:land land_tutor mana_source sacrifice_outlet |
 
 ## cardtype:battle
 
 | Card | Oracle text | Tags |
 |---|---|---|
+| Invasion of Kaldheim (not in starter decks) | (As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.) / When Invasion of Kaldheim enters, exile all cards from your hand, then draw that many cards. Until the end of your next turn, you may play cards exiled this way. | cardtype:battle type:siege draw |
+| Invasion of New Phyrexia (not in starter decks) | (As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.) / When Invasion of New Phyrexia enters, create X 2/2 white and blue Knight creature tokens with vigilance. | cardtype:battle type:siege token_make |
+| Invasion of Moag (not in starter decks) | (As a Siege enters, choose an opponent to protect it. You and others can attack it. When it's defeated, exile it, then cast it transformed.) / When Invasion of Moag enters, put a +1/+1 counter on each creature you control. | cardtype:battle type:siege counters_plus |
 
 ## supertype:legendary
 
 | Card | Oracle text | Tags |
 |---|---|---|
-| Arcanis the Omnipotent | {T}: Draw three cards. / {2}{U}{U}: Return Arcanis the Omnipotent to its owner's hand. | supertype:legendary cardtype:creature type:wizard bounce draw |
+| Kiki-Jiki, Mirror Breaker | Haste / {T}: Create a token that's a copy of target nonlegendary creature you control, except it has haste. Sacrifice it at the beginning of the next end step. | supertype:legendary cardtype:creature type:goblin type:shaman kw:haste clone haste |
 
 ## supertype:basic
 
 | Card | Oracle text | Tags |
 |---|---|---|
-| Forest | ({T}: Add {G}.) | supertype:basic cardtype:land landtype:forest |
+| Plains | ({T}: Add {W}.) | supertype:basic cardtype:land landtype:plains |
 
 ## supertype:snow
 
 | Card | Oracle text | Tags |
 |---|---|---|
-| Blizzard Strix *(not in starter decks)* | Flash / Flying / When Blizzard Strix enters, if you control another snow permanent, exile target permanent other than Blizzard Strix. Return that card to the battlefield under its owner's control at the beginning of the next end step. | supertype:snow cardtype:creature type:bird kw:flash kw:flying flying removal |
+| Frost Marsh (not in starter decks) | Frost Marsh enters tapped. / {T}: Add {U} or {B}. | supertype:snow cardtype:land fixing mana_source |
 
 ## supertype:world
 
 | Card | Oracle text | Tags |
 |---|---|---|
-| Eye of Singularity *(not in starter decks)* | When Eye of Singularity enters, destroy each permanent with the same name as another permanent, except for basic lands. They can't be regenerated. / Whenever a permanent other than a basic land enters, destroy all other permanents with that name. They can't be regenerated. | supertype:world cardtype:enchantment |
+| Koskun Falls (not in starter decks) | At the beginning of your upkeep, sacrifice Koskun Falls unless you tap an untapped creature you control. / Creatures can't attack you unless their controller pays {2} for each creature they control that's attacking you. | supertype:world cardtype:enchantment attack_tax restrict |
