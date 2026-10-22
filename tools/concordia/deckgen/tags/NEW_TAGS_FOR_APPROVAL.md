@@ -21,6 +21,7 @@ Say if any should be changed; unmarked means accepted with the family.
 | `take` | take:2 (2); take:all (2); take:all_goblin (1); take:may_1_creature_power_le_2 (1) |
 | `cost_reduce_for` | cost_reduce_for:chosen_type (2); cost_reduce_for:dragon (1); cost_reduce_for:merfolk (1); cost_reduce_for:wizard (1) |
 | `to_zone` | to_zone:hand (12); to_zone:exile (2); to_zone:library (1) |
+| `mana_restriction` | mana_restriction:creature_spell_or_activated_ability (1); mana_restriction:static_foretelling_or_instant_or_sorcery (1); mana_restriction:instant_or_sorcery (1) |
 | `x_is` | x_is:greatest_power_among_creature_you_control_nonhuman (1); x_is:greatest_power_among_creature_you_control (1); x_is:kicked_bonus_4 (1) |
 | `trigger_scope` | trigger_scope:any (12); trigger_scope:damaged_by_self (1) |
 | `target_scope` | target_scope:each_opponent (15); target_scope:each_player (1) |
