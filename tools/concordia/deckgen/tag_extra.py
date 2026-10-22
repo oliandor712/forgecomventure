@@ -42,9 +42,9 @@ LEGEND = {
  "scales": "the amount (X) of this ability is the number of that kind of thing you control: write it as 'for each <thing> you control' (scales:island on a draw_count:x = draw a card for each Island you control)",
  "mana_restriction": "the mana can be spent only on what the value says (mana_restriction:instant_or_sorcery = spend this mana only to cast an instant or sorcery spell)",
  "x_is": "what X is. Write X in the text and do not define it unless the value names a count or a stat: count_<thing>_you_control = for each <thing> you control, own_power / target_power = equal to that creature's power; x_paid = just X (the X in the mana cost)",
- "controller": "who controls the permanent after the effect (controller:owner = it returns under its owner's control)",
+ "controller": "who controls the permanent after the effect: controller:you (default: it enters under the control of the player who controls the effect) or controller:owner (only when the Oracle text says 'under its owner's control')",
  "optional": "the effect of this group is optional (you may ...)",
- "target_scope": "whose things or which players the effect hits (you_control, opp_control, any = whoever controls it; each_opponent = every opponent, each_player = every player; no value means a single chosen target)",
+ "target_scope": "whose things or which players the effect hits (you_control, opp_control; no tag = whoever controls it; each_opponent = every opponent, each_player = every player; no value means a single chosen target)",
  "trigger_scope": "which cards fire a zone-change trigger: self = this card only, other = another card, any = this card or any other card",
  "trigger_filter": "narrows the triggering card or spell: a card type, power_ge_N / power_le_N (power at least / at most N), one_or_more (triggers once for a group)",
  "limit": "limit on how often the ability works (once_per_turn = only once each turn)",
@@ -113,8 +113,6 @@ REF_EXTRA = {
  "evasion_grant": ("AI tag: grants an evasion keyword", "AI Tags category"),
  "haste_grant": ("AI tag: grants haste", "AI Tags category"),
 }
-for _k in ("trample", "haste", "indestructible", "hexproof", "deathtouch", "flying", "double_strike", "vigilance", "lifelink"):
-    REF_EXTRA[_k] = ("AI tag: bare keyword on a card that only grants it; the keyword itself is kw:%s" % _k, "AI Tags category (BARE_KEYWORDS)")
 
 # family -> (meaning, why / user note)
 DOC = {
@@ -429,6 +427,12 @@ def restrict_add(kinds, add, text=""):
     if "as long as you control" in t: add("duration:while_control")
 
 
+def _owner_stated(text):
+    """controller:owner only when the Oracle line says 'under its owner's control' (user 2026-10-22); otherwise controller:you"""
+    o = next((l[7:] for l in text.split("\n") if l.startswith("Oracle:")), "")
+    return bool(re.search(r"under (?:its|their) owner's control", o.replace("\\n", " "), re.I))
+
+
 def extra(lines, sv, types, text):
     groups = {"c0": []}          # group id -> tags: c0 = card level, cN = the N-th A/S/T/R line (same numbering as tag_run clauses)
     cur = ["c0"]
@@ -629,7 +633,7 @@ def extra(lines, sv, types, text):
                 if d == "Battlefield" and o in ("Library", "Hand", "Graveyard", "Exile"):
                     add("put_onto_battlefield", "from_zone:" + o.lower())
                     if bp.get("Tapped") == "True": add("put_tapped")
-                    add("controller:you" if bp.get("GainControl") == "True" else "controller:owner")      # who controls it on the battlefield (reanimate is derived from put_onto_battlefield + from_zone:graveyard)
+                    add("controller:owner" if (bp.get("GainControl") != "True" and _owner_stated(text)) else "controller:you")      # who controls it on the battlefield (reanimate is derived from put_onto_battlefield + from_zone:graveyard)
                 if o == "Library" and d in ("Hand", "Battlefield"): pos += cnt(bp.get("ChangeNum", "1"))
                 elif o in ("Graveyard", "Exile") and d in ("Hand", "Battlefield") and bp.get("Defined") != "ExiledWith":
                     pos += cnt(bp.get("TargetMax", bp.get("ChangeNum", "1")))

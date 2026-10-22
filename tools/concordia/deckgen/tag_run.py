@@ -265,7 +265,9 @@ def record(name, text, mg):
     tags = [t for t in tags if not ("kw:" + t) in tags]
     # removal split by method (user): drop the umbrella 'removal' when a method tag exists
     if "removal" in tags and any(t.startswith("remove:") or t == "damage" for t in tags): tags.remove("removal")
-    # umbrella tags (haste_grant, bare keyword tags on granting cards, land_tutor, recursion ...) stay intact: they belong to the AI Tags category (tag_verify.is_ai_tag), not to the rules tags
+    # bare keyword tags on granting cards (trample on Rancor ...) are dropped (user 2026-10-22): grant_kw:<kw> already says it
+    tags = [t for t in tags if t not in TV.BARE_KEYWORDS]
+    # umbrella tags (haste_grant, land_tutor, recursion ...) stay intact: they belong to the AI Tags category (tag_verify.is_ai_tag), not to the rules tags
     if "restrict" in tags and not any(x.startswith("restrict_kind:") for x in tags) and any(x.startswith("cant_be_blocked") for x in tags):
         tags = [x for x in tags if x != "restrict"]   # 'can't be blocked (by X)' is evasion, not a restriction on someone else
     if "duration:next_untap" in tags or "duration:while_control" in tags: tags = [t for t in tags if t != "duration:permanent"]   # Forge's Duration$ Permanent on a 'next untap step' / 'as long as you control' effect is a script detail
@@ -521,6 +523,7 @@ def qa(recs):
     return out
 
 
+ABSENT_EQUIVALENT = {("target_scope", "any"): "no target_scope tag already means whoever controls it"}   # (family, value) that says nothing more than the tag being absent; never emitted (user 2026-10-22)
 REDUNDANCY_OK = {   # (family A, family B): why A and B may stay together although A's cards are a subset of B's (kept short; extend only with a reason)
     ("trigger_scope", "trigger"): "scope qualifies the trigger", ("trigger_zone", "trigger"): "zone qualifies the trigger", ("trigger_filter", "trigger"): "filter qualifies the trigger",
     ("tutor_count", "tutor"): "qualifier", ("tutor_target", "tutor"): "qualifier", ("tutor_dest", "tutor"): "qualifier", ("shuffle", "tutor"): "separate fact",
@@ -556,6 +559,9 @@ def redundancy(recs):
         for f in fams:
             if f in tg and any(x.startswith(f + ":") for x in tg): bare_and_valued[f] += 1
     out = []
+    for (fam, val), why in ABSENT_EQUIVALENT.items():
+        n_ = len(vals[fam].get(fam + ":" + val, ()))
+        if n_: out.append(("absent-equal", "%s:%s" % (fam, val), "`%s:%s` is on %d cards: %s, so the tag adds nothing" % (fam, val, n_, why)))
     for f, n in sorted(bare_and_valued.items()): out.append(("bare+valued", f, "`%s` and `%s:<value>` both on %d cards: the bare tag adds nothing the valued tags do not say" % (f, f, n)))
     fl = sorted(cards, key=lambda f: -len(cards[f]))
     seen_eq = set()
@@ -641,7 +647,7 @@ def main(a):
         "- Fixed (user 2026-10-22): a card sacrificing itself as a cost is not a sacrifice outlet (14 cards, e.g. Mind Stone, Sakura-Tribe Elder; 6 real outlets remain). The cross-check no longer reads quoted text, so a token's own 'Sacrifice this creature' ability is not added as the card's cost (Carrier Thrall, Skittering Invasion).\n- Fixed earlier in this run: a basic-land sacrifice (Alpine Guide 'sacrifice a Mountain') was tagged sacrifice_outlet; now treated as a land sacrifice (user rule). mtgish loader now reads two-faced, adventure and split cards (battles were missing)."]
     open(os.path.join(HERE, "tags", "STARTER_TAGS_REPORT.md"), "w").write("\n".join(rep))
     rc = ["# Redundancy check of the tag data\n", "Run by `deckgen/tag_run.py starter` on every tag generation (user order 2026-10-22). Rules tags only (AI Tags excluded). A finding is a candidate, not an error: decide to merge, drop or whitelist it in `REDUNDANCY_OK` with a reason. %d cards, %d findings.\n" % (len(recs), len(red))]
-    for kind in ("bare+valued", "same cards", "values together", "implied", "single value"):
+    for kind in ("absent-equal", "bare+valued", "same cards", "values together", "implied", "single value"):
         rows = [x for x in red if x[0] == kind]
         if rows: rc += ["\n## %s (%d)\n" % (kind, len(rows))] + ["- %s" % x[2] for x in rows]
     if not red: rc.append("No findings.")

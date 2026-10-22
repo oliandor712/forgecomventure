@@ -4,7 +4,7 @@
 
 ## Most common tags
 
-cardtype:creature 200, target_count:one 128, trigger:etb 92, target_type:creature 91, trigger_scope:self 89, cardtype:instant 64, draw 60, tempo:+1 55, type:human 52, token_make 47, cost:tap 41, cost:mana 38, target_scope:you_control 37, lifegain 37, damage 37, duration:eot 37, mana_source 35, draw_count:1 35, cardtype:sorcery 34, type:wizard 33, put_onto_battlefield 29, cardtype:artifact 28, duration:static 28, tempo:+0.5 27, controller:owner 26, burn 26, token_count:1 26, remove:destroy 25, kw:flying 24, type:goblin 24, supertype:legendary 23, cost:sacrifice 23, trigger_filter:you_control 23, trigger:dies 22, token_pt:1/1 22, mana_amount:1 21, from_zone:graveyard 21, life_loss 20, trigger_zone:graveyard 20, target_scope:opp_control 19
+cardtype:creature 200, target_count:one 128, trigger:etb 92, target_type:creature 91, trigger_scope:self 89, cardtype:instant 64, draw 60, tempo:+1 55, type:human 52, token_make 47, cost:tap 41, cost:mana 38, target_scope:you_control 37, lifegain 37, damage 37, duration:eot 37, mana_source 35, draw_count:1 35, cardtype:sorcery 34, type:wizard 33, put_onto_battlefield 29, cardtype:artifact 28, duration:static 28, tempo:+0.5 27, burn 26, token_count:1 26, remove:destroy 25, controller:you 24, kw:flying 24, type:goblin 24, supertype:legendary 23, cost:sacrifice 23, trigger_filter:you_control 23, trigger:dies 22, token_pt:1/1 22, mana_amount:1 21, from_zone:graveyard 21, life_loss 20, trigger_zone:graveyard 20, target_scope:opp_control 19
 
 ## Trigger types seen in clauses
 
@@ -41,8 +41,8 @@ Flags (one source disagrees, nothing added): 61 on 56 cards.
 - Feign Death: trigger trigger:dies from mtgish only (WhenAPermanentDies)
 - Swiftfoot Boots: cost cost:mana from mtgish only
 - Josu Vess, Lich Knight: cost cost:mana from mtgish only
-- Syr Konrad, the Grim: trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield)
 - Syr Konrad, the Grim: trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves)
+- Syr Konrad, the Grim: trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield)
 - Gwenna, Eyes of Gaea: untap: only mtgish says it, script tags lack untap
 - Search for Tomorrow: cost cost:mana from mtgish only
 - Professor of Zoomancy: lifegain: only mtgish says it, script tags lack lifegain

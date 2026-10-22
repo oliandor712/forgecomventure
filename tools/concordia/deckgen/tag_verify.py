@@ -92,7 +92,7 @@ DOC = {
 # pump_team -> pump_amount + target_* tags, artifact_token -> token_type + token_ability, selection -> look_top / take_*, fixing -> mana:*)
 AI_PREFIX = ("tempo:", "ai_logic:")
 BARE_KEYWORDS = {"flying", "trample", "haste", "vigilance", "lifelink", "deathtouch", "first_strike", "double_strike", "menace", "reach", "hexproof", "indestructible", "defender", "shroud", "fear", "intimidate", "skulk", "flash"}
-AI_EXACT = {"burn", "removal", "selection", "fixing", "restrict", "pump_team", "artifact_token", "land_tutor", "recursion", "reanimate"} | BARE_KEYWORDS
+AI_EXACT = {"burn", "removal", "selection", "fixing", "restrict", "pump_team", "artifact_token", "land_tutor", "recursion", "reanimate"}   # bare keyword tags were dropped 2026-10-22 (BARE_KEYWORDS: removed from every record by tag_run)
 # also AI: every <kw>_grant umbrella (haste_grant, evasion_grant ...) and a bare keyword tag (a card with the keyword itself has kw:<name>; a bare one is the old umbrella for 'grants/has this keyword', kept intact for the AI side)
 
 
