@@ -86,7 +86,39 @@ def forge_pass():
     print("forge_oracle rows:", sorted(rows))
 
 
+WEAK = ["Max Speed", "Solved", "Power-up", "Forecast", "Escape", "Companion", "Exhaust", "Living Metal", "Visit"]      # filled rows that read like effect text or only part of the reminder
+
+
+def cr_pass():
+    """rules text from the Comprehensive Rules (tools/agents/reference/MTG_COMP_RULES_20260807.txt, 701 keyword actions / 702 keyword abilities): the first sub-rule (xxx.Na) of each keyword.
+    Used for keywords with no printed reminder anywhere (Meld, The Ring Tempts You, Poisonous, Visit ...), for the plain verbs (rule text, not a printed reminder) and to replace the WEAK rows."""
+    txt = open(os.path.join(ROOT, "tools/agents/reference/MTG_COMP_RULES_20260807.txt"), encoding="utf-8", errors="replace").read()
+    txt = txt.replace("\u2019", "'").replace("\u201c", '"').replace("\u201d", '"').replace("\u2014", "-")
+    path = os.path.join(AI, "KEYWORD_REMINDER_FILL.toon")
+    lines = open(path, encoding="utf-8").read().rstrip("\n").split("\n")
+    rows = [l for l in lines if l.startswith("  ")]
+    todo = [csv.reader([l.strip()]).__next__() for l in rows]
+    names = [r[0] for r in todo if (not r[2] or r[0] in WEAK)]
+    done = {}
+    for nm in names:
+        m = re.search(r"^(70[12]\.\d+)\. %s\n\s+(70[12]\.\d+a) (.*?)(?=\n\s+70[12]\.\d+[b-z] |\n70[12]\.\d+\. )" % re.escape(nm), txt, re.M | re.S)
+        if m:
+            body = re.sub(r"\s+", " ", m.group(3)).strip()
+            done[nm] = (m.group(2), body[:420])
+    keep = []
+    for l in rows:
+        nm = csv.reader([l.strip()]).__next__()[0]
+        if nm in done:
+            rule, body = done[nm]
+            l = "  %s,cr_rule_%s,%s,0,%s" % (q(nm), rule, q(body), "rule_text_not_printed_reminder")
+        keep.append(l)
+    head = [l for l in lines if l.startswith("#")]
+    open(path, "w", encoding="utf-8").write("\n".join(head) + "\nkeywords[%d]{name,source,reminder_text,cards_seen,note}:\n" % len(keep) + "\n".join(keep) + "\n")
+    print("cr rows:", len(done), "of", len(names), "; still without text:", [n for n in names if n not in done])
+
+
 def main():
+    if "--cr" in sys.argv: return cr_pass()
     if "--forge" in os.sys.argv: return forge_pass()
     out = []
     for nm in missing():
