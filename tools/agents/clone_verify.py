@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check that a (cloned/worktree) session is ready. Run from anywhere: python3 tools/agents/clone_verify.py"""
+"""Check that a (cloned) cloud session is ready. Run from anywhere: python3 tools/agents/clone_verify.py"""
 import os, subprocess, sys
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 def sh(*a):
@@ -23,7 +23,7 @@ except Exception as e:
 out = subprocess.run([sys.executable, os.path.join(ROOT, "tools/concordia/deckgen/tag_run.py"), "card", "Wingbeat Warrior"], capture_output=True, text=True).stdout
 check("tag_run card Wingbeat Warrior", "flip-up" in out and "duration:eot" in out)
 br = sh("git", "branch", "--show-current")
-print(f"INFO branch={br} worktrees={len(sh('git','worktree','list').splitlines())} dirty={bool(sh('git','status','--short'))}")
+print(f"INFO branch={br} dirty={bool(sh('git','status','--short'))}")
 print(("pool.pkl present" if os.path.exists(os.path.join(ROOT, "tools/concordia/deckgen/pool.pkl")) else "INFO pool.pkl missing: run tools/concordia/deckgen/pool.py when needed"))
 print("READY" if ok else "NOT READY")
 sys.exit(0 if ok else 1)
