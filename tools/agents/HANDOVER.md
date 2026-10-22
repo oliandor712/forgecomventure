@@ -36,7 +36,7 @@ Outgoing: Claude 1 (`session_01SmNeweiyRBavDSUetnsUjF`, branch `campaign-design`
 
 ## Unverified or uncertain
 - Claude 2's agent states above are its own report; Claude 1 could not query them. `sync_check.py` was written for the first handover; the manifest is rewritten at each end of shift (this one included).
-- The end-of-shift push order for Claude 2 reaches it through the mailbox, the brief and the prompt; the running Claude 2 must confirm it with the user at its next start of shift.
+- The end-of-shift auto-push order for Claude 2 was withdrawn by the user (2026-10-22, start of Claude 2 shift 2): Claude 2 keeps backing up to cd/claude2 and pushes to campaign-design only on "push".
 - Reverse-check scores: one reader pass per run (no reader-noise estimate); r3 and r4 differ from r2 by amounts within noise except for named cards; quality bands (0.7 / 0.4) unvalidated; reader isolation rests on the tool list and prompt, transcripts not audited line by line.
 - The AI lab's claim that "pause all" came from the user in the balance lab's chat is unverified from here; treated as the user's order.
 - The patch test results are the agents' reports (summaries pushed by them); I recomputed the Fisher p-values only.

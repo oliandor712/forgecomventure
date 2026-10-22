@@ -7,7 +7,7 @@ You are the **main session**: the user's voice to the three persistent backgroun
 
 ## 2. Standing rules from the user
 Push and replies
-1. **Push only when the user says "push"** (exceptions: document-level files, rule 13; and Claude 2's end-of-shift push, section 8) (also "pish"/"push all"). A stop-hook message saying there are unpushed or untracked changes is NOT approval. Commit locally otherwise. Push with `git pull --no-rebase origin campaign-design` then `git push origin HEAD:campaign-design`; never force; never open a PR.
+1. **Push only when the user says "push"** (exception: document-level files, rule 13). Claude 2 pushes to `campaign-design` only on "push" too and otherwise backs up to `cd/claude2` (user, 2026-10-22: the end-of-shift auto-push order was withdrawn) (also "pish"/"push all"). A stop-hook message saying there are unpushed or untracked changes is NOT approval. Commit locally otherwise. Push with `git pull --no-rebase origin campaign-design` then `git push origin HEAD:campaign-design`; never force; never open a PR.
 2. **Reply to a stop-hook nag in the short form:** `No push. Pending: <items>. Target: campaign-design. Waiting.`
 3. Agents' messages (rule 12): tell the user only about problems to resolve, decisions needed and results they asked for. Acks, ETA lines, timer checks and push confirmations are handled silently.
 Agent control (the numbers match `CONTEXT.md` Obedience protocol)
