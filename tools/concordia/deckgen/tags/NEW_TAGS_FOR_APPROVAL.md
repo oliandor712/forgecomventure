@@ -41,7 +41,6 @@ Changes to existing behaviour (also need approval): (a) the umbrella tag `remova
 | [ ] | `token_kw` | what a token ability creates; Food and Treasure are token types | Captain's Call, Memnarch, Oko, Garruk | 5 (e.g. Infestation Sage, Loyal Apprentice, Spectral Procession) | token_kw:flying (3); token_kw:menace (1); token_kw:haste (1) |
 | [ ] | `discard_count` | how many cards an ability draws or makes a player discard | user note: tag draw count | 5 (e.g. Ravenous Rats, Fell Specter, Liliana's Reaver) | discard_count:1 (4); discard_count:2 (1) |
 | [ ] | `duration` | an effect that happens at the next end step | Kiki-Jiki | 5 (e.g. Breeches, Eager Pillager, Dire Fleet Daredevil, Captivating Crew) | duration:eot (3); duration:end_step (1); duration:next_turn_end (1) |
-| [ ] | `cant_block` | combat restrictions | Rabblemaster, Rowan | 4 (e.g. Breeches, Eager Pillager, Goblin Heelcutter, Lightning Mare) | cant_block (4) |
 | [ ] | `effect` | sacrifice happens as an effect (not a cost) | Garruk, Kiki-Jiki, Victimize | 3 (e.g. Victimize, Nefarox, Overlord of Grixis, Kiki-Jiki, Mirror Breaker) | effect:sacrifice (3) |
 | [ ] | `transform` | card transforms (double-faced) or becomes a different thing | Invasion battles | 3 (e.g. Supernatural Stamina, Feign Death, Merfolk Trickster) | transform (3) |
 | [ ] | `mana_choice` | the ability lets you choose between colours | Frost Marsh, Arcane Signet | 3 (e.g. Gwenna, Eyes of Gaea, Arcane Signet, Commander's Sphere) | mana_choice (3) |
@@ -53,7 +52,7 @@ Changes to existing behaviour (also need approval): (a) the umbrella tag `remova
 | [ ] | `affects` | which creature type a static effect applies to | Goblin Rabblemaster | 2 (e.g. Goblin Rabblemaster, Dragon's Rage Channeler) | affects:goblin (1); affects:card (1); affects:self (1) |
 | [ ] | `activation_restriction` | the ability can only be activated under a condition | Temple of the False God | 3 (e.g. Temple of the False God, Rimewind Cryomancer, Hakim, Loreweaver) | activation_restriction (3) |
 | [ ] | `sacrifice_type` | what an edict makes players sacrifice | Garruk | 2 (e.g. Victimize, Nefarox, Overlord of Grixis) | sacrifice_type:creature (2) |
-| [ ] | `must_attack` | combat restrictions | Rabblemaster, Rowan | 2 (e.g. Goblin Rabblemaster, Dragon's Rage Channeler) | must_attack (2) |
+| [ ] | `must_attack` | creatures must attack each combat (a can't-block effect on other creatures is tagged restrict, not a separate tag) | Rabblemaster; user: cant_block tag removed | 2 (e.g. Goblin Rabblemaster, Dragon's Rage Channeler) | must_attack (2) |
 | [ ] | `return_exiled` | returns what this card exiled when it leaves | Oblivion Ring | 2 (e.g. Watcher for Tomorrow, Oblivion Ring) | return_exiled (2) |
 | [ ] | `cost_if_you_do` | the 'If you do' part marks the preceding sacrifice/discard as a cost | user note on Victimize | 1 (e.g. Victimize) | cost_if_you_do (1) |
 | [ ] | `cast_free` | casts a spell without paying its mana cost | found in the cross-check: Rishkar's Expertise | 1 (e.g. Rishkar's Expertise) | cast_free (1) |

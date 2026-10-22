@@ -1602,7 +1602,7 @@ mtgish: rules=PlayerEffect TriggerA
 forge_ai: AILogic=-
 
 card: "Breeches, Eager Pillager"
-tags: supertype:legendary cardtype:creature type:goblin type:pirate kw:first_strike artifact_token selection token_make trigger:attacks tempo:+1.5 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source target_count:one target_type:creature cant_block restrict impulse_draw impulse_draw_count:1 duration:eot
+tags: supertype:legendary cardtype:creature type:goblin type:pirate kw:first_strike artifact_token selection token_make trigger:attacks tempo:+1.5 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source target_count:one target_type:creature restrict impulse_draw impulse_draw_count:1 duration:eot
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attacks,"",charm,"","",""
 links[1]{from,rel,to}:
@@ -1611,7 +1611,7 @@ groups[5]{id,source,tags}:
   k1,K line,kw:first_strike
   c1,T line,trigger:attacks tempo:+1.5
   c1.3,sub-ability of c1,token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
-  c1.4,sub-ability of c1,target_count:one target_type:creature cant_block restrict
+  c1.4,sub-ability of c1,target_count:one target_type:creature restrict
   c1.6,sub-ability of c1,impulse_draw impulse_draw_count:1 duration:eot
 mtgish: rules=FirstStrike TriggerA
 forge_ai: AILogic=-
@@ -1921,7 +1921,7 @@ mtgish: rules=Reach ActivatedWithModifiers
 forge_ai: AILogic=-
 
 card: Goblin Heelcutter
-tags: cardtype:creature type:goblin type:berserker kw:dash num:2 color:red duration:eot pump_single trigger:attacks target_count:one target_type:creature cant_block restrict
+tags: cardtype:creature type:goblin type:berserker kw:dash num:2 color:red duration:eot pump_single trigger:attacks target_count:one target_type:creature restrict
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attacks,"",pump,hidden_cardname_can_t_block,ValidTgts=Creature,duration:eot(forge_default)
 links[2]{from,rel,to}:
@@ -1930,7 +1930,7 @@ links[2]{from,rel,to}:
 groups[3]{id,source,tags}:
   k1,K line,kw:dash num:2 color:red
   c1,T line,trigger:attacks duration:eot pump_single
-  c1.2,sub-ability of c1,target_count:one target_type:creature cant_block restrict
+  c1.2,sub-ability of c1,target_count:one target_type:creature restrict
 mtgish: rules=TriggerA Dash
 forge_ai: AILogic=-
 
@@ -2351,7 +2351,7 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Lightning Mare
-tags: cardtype:creature type:elemental type:horse duration:eot restrict cant_block cost:mana
+tags: cardtype:creature type:elemental type:horse duration:eot restrict cost:mana
 clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c1,replacement,"",replace_counter,"",ValidCard=Card.Self,""
   c2,static,"",static_cantblockby,"","",""
@@ -2359,8 +2359,7 @@ clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
 links[2]{from,rel,to}:
   c3:payload,lasts,c3:duration
   c3:affected,receives,c3:payload
-groups[2]{id,source,tags}:
-  c2,S line,cant_block
+groups[1]{id,source,tags}:
   c3,A line,cost:mana duration:eot
 mtgish: rules=FromStack PermanentRuleEffect Activated
 forge_ai: AILogic=-
@@ -2597,7 +2596,7 @@ mtgish: rules=Activated
 forge_ai: AILogic=- RemoveDeck
 
 card: Brotherhood Regalia
-tags: cardtype:artifact type:equipment kw:equip target_type:creature num:1 num:3 restrict cant_block
+tags: cardtype:artifact type:equipment kw:equip target_type:creature num:1 num:3 restrict
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,ward_2,Affected=Creature AffectedDefined=Equipped,duration:static
   c2,static,"",static_cantblockby,"","",""
@@ -2607,7 +2606,7 @@ links[2]{from,rel,to}:
 groups[3]{id,source,tags}:
   k1,K line,kw:equip target_type:creature num:1
   k2,K line,kw:equip num:3
-  c2,S line,cant_block restrict
+  c2,S line,restrict
 mtgish: rules=PermanentLayerEffect PermanentRuleEffect Equip Equip
 forge_ai: AILogic=-
 

@@ -42,7 +42,7 @@ DOC = {
  "trigger:etb|dies|leaves|attacks|spell_cast|... / trigger_zone:graveyard / trigger_filter:<type>": ("trigger event, the zone it goes to, and a card-type filter on cast triggers", "Rancor, Oblivion Ring, Bontu's Monument"),
  "delayed:end_step / duration:end_step": ("an effect that happens at the next end step", "Kiki-Jiki"),
  "impulse_draw / impulse_draw_count:<n|x>": ("exile cards and let you play them for a limited time; counted and linked like draw (count, duration, tempo)", "Invasion of Kaldheim; user note: same links as draw"),
- "must_attack / cant_block": ("combat restrictions", "Rabblemaster, Rowan"),
+ "must_attack": ("creatures must attack each combat (a can't-block effect on other creatures is tagged restrict, not a separate tag)", "Rabblemaster; user: cant_block tag removed"),
  "exchange_control": ("swap control of two permanents (linked to steal)", "Oko"),
  "steal": ("gain control of something (linked to haste when the effect grants it)", "Rowan"),
  "cost_reduce_for:<type> + color:<c>": ("which spells a cost reduction applies to", "Bontu's Monument"),
@@ -195,7 +195,6 @@ def extra(lines, sv, types, text):
                 for ty in re.findall(r"[A-Z][a-z]+", p.get("ValidCreature", "")):
                     if ty not in ("Creature", "Other", "You", "Ctrl"): add("affects:" + tok(ty))
             if mode in ("CantBlock", "CantBlockBy"):
-                add("cant_block")
                 if p.get("ValidCreature", p.get("ValidAttacker", "Creature")) not in ("Card.Self", "Creature.Self"): add("restrict")
             if mode == "ReduceCost":
                 vc = p.get("ValidCard", "")
@@ -324,7 +323,6 @@ def extra(lines, sv, types, text):
                 if bp.get("CounterType"): add("counter:" + tok(bp["CounterType"]))
             if api == "CopyPermanent" and bp.get("AtEOT") == "Sacrifice": add("delayed:end_step", "effect:sacrifice", "duration:end_step")
             if "KW" in bp and "can't block" in bp["KW"]:
-                add("cant_block")
                 if "ValidTgts" in bp or bp.get("Defined") == "Targeted": add("restrict")   # can't-block effect on other creatures (user)
             if "MayPlay" in b or "MayPlay$" in b: add("impulse_draw")
         cur[0] = main_gid
