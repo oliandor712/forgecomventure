@@ -24,14 +24,14 @@ Outgoing: Claude 1 (`session_01SmNeweiyRBavDSUetnsUjF`, branch `campaign-design`
 - **Tag families:** all approved by the user on 2026-10-22 (58 first, the rest after the redundancy prune, with the two behaviour changes); archive in `deckgen/tags/APPROVED_TAGS_ARCHIVE.md`; `NEW_TAGS_FOR_APPROVAL.md` lists only families created by later runs. Redundancy check on every run (`tags/REDUNDANCY_CHECK.md`, 0 findings on the starter set).
 - **User decisions pending:** (1) [done: merged into `condition:`] (2) the AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token): right? (3) next AI patch to write: 004 (Harsh Justice reflect), 007 (attacker curses through the blocker, AI lab's pick, needs the Shield Dancer unflag) or 009 (don't over-pump).
 - **AI patches (AI_CHANGES_APPROVAL.md, all unticked, none applied):** 014 timing only, strength effect unproven (120 games: wins 6 vs 10 ns, casts 784 -> 643). 005 + 001: switch spam fixed (activations 1122 -> 222 in 120 games), strength unproven. 008: no effect seen, parked until a scenario test. 005 v4 (user requirement: ignore the after-blocks gate when the opponent has no creature that could block) is built and smoke-tested (10 games); its volume runs (r005v4sa-c Sai matchup, r005v4ba-c burn matchup, 40 games each) were started and then killed by the user's "pause all": nothing pushed for v4 volume.
-- **H55 hold stays** (tag index not declared complete): no tier 1 deck work, no AI lab proposals beyond the user-ordered patch tests.
+- **H55 was killed by the user (2026-10-22, "kill h55")**: tier 1 deck work and AI lab proposals are allowed again; nothing goes live and no patch is applied without the user's word.
 - **Reverse check, weak spots for the full-cardlist run:** conditional mana (Leafkin Druid), trigger filters (power / type / once per turn), "may" (optional), "each / all", "you control", "opponent" wording, `recursion` and `target_type` tags the readers could not read, Feign Death. `condition_*` merge above.
 - Operations: `sync_check.py verify` printed NOT SYNCED at the last push (expected: it compares with Claude 1's end-of-shift manifest). `pool.pkl` is not regenerated (no check needed it).
 
 ## Agent states (Claude 2's group; ids in `projects/claude2_agents.md`; never message them from Claude 1)
 - forge-ai-lab `session_012GGR4uHxSZZdoF7AUfDwRN`: paused, idle. Has pushed patch 014, 005 v4, 015, results n014/n005/n008, `ab_recipe.sh`, decks.
 - deck-balance-lab `session_015WzCaTSu8xpFdrSVLifceE`: paused, idle, no processes or timers. 005 v4 volume runs lost (killed).
-- deck-builder `session_01SAbP8j8tKrW3EME5sgBTfV`: idle since setup, H55 respected, nothing pushed.
+- deck-builder `session_01SAbP8j8tKrW3EME5sgBTfV`: idle since setup, H55 killed since, nothing pushed.
 - Claude 1's agents (idle per the session list at the start of this shift, nothing sent to them): (`forge-ai-lab session_018TohPY7UPn5mh9b7aJ4at5`, `deck-balance-lab session_01PwU5ft7yoiwonjyndwCVv9`, `deck-builder session_01EiE27ZRU9BUAnaYQYocKuB`) were not contacted.
 
 ## Unverified or uncertain

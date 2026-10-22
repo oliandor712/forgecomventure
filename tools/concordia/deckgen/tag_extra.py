@@ -30,6 +30,9 @@ LEGEND = {
  "trigger": "event that triggers the ability (attacks, dies, etb, gain_life, beginning_of_combat ...)",
  "piles_split": "cards are split into two piles by this player",
  "lifegain_amount": "life gained (number, x, or equal_to_life_lost)",
+ "choose_on_enter": "as this card enters the battlefield its controller chooses something (color, card_type, creature_type, player ...); other tags of the card refer to the choice (cost_reduce_for:chosen_type = spells of the chosen type)",
+ "cost_reduce_for": "which spells a cost reduction applies to (a card type, a creature type, or chosen_type); cost_reduce_amount is how much cheaper",
+ "cost_reduce_amount": "how much each affected spell costs less (generic mana)",
  "optional": "the effect of this group is optional (you may ...)",
  "target_scope": "whose things or which players the effect hits (you_control, opp_control; each_opponent = every opponent, each_player = every player; no value means a single chosen target)",
  "trigger_scope": "which cards fire a zone-change trigger: self = this card only, other = another card, any = this card or any other card",
@@ -363,6 +366,15 @@ def extra(lines, sv, types, text):
     for l in lines:
         if l.startswith("Loyalty:"): add("loyalty:" + l[8:].strip(), "counters:loyalty")
         if l.startswith("Defense:"): add("defense:" + l[8:].strip())
+    for l in lines:                                      # K:ETBReplacement:Other:<svar> with a Choose* effect: "as this enters, choose a colour / type / player ..." (replaces the opaque forge_line:etbreplacement)
+        m = re.match(r"^K:ETBReplacement:\w+:(\w+)", l)
+        sx = sv.get(m.group(1), "") if m else ""
+        mm = re.search(r"DB\$ (Choose\w+|NamedCard)", sx)
+        if mm:
+            api_ = mm.group(1); ty_ = re.search(r"\bType\$ ([\w ]+?) ?(?:\||$)", sx)
+            what = {"ChooseColor": "color", "ChoosePlayer": "player", "ChooseCard": "card", "ChooseNumber": "number", "NamedCard": "card_name", "ChooseDirection": "direction"}.get(api_)
+            if api_ == "ChooseType": what = {"Creature": "creature_type", "Card": "card_type", "Basic Land": "basic_land_type", "Land": "land_type"}.get(ty_.group(1).strip() if ty_ else "", "type")
+            if what: add("choose_on_enter:" + what)
     if "AlternateMode:DoubleFaced" in text or "AlternateMode:Modal" in text: add("transform")
     if "Basic" in types.split() and "Land" in types.split():
         for t, c in (("Plains", "white"), ("Island", "blue"), ("Swamp", "black"), ("Mountain", "red"), ("Forest", "green")):
@@ -424,8 +436,11 @@ def extra(lines, sv, types, text):
             if mode == "ReduceCost":
                 vc = p.get("ValidCard", "")
                 add("cost_reduce")
+                if p.get("Amount", "").isdigit(): add("cost_reduce_amount:" + p["Amount"])
+                if "ChosenType" in vc: add("cost_reduce_for:chosen_type")
                 for ty in re.findall(r"[A-Z][a-z]+", vc):
                     if ty in ("Creature", "Artifact", "Enchantment", "Instant", "Sorcery", "Planeswalker", "Land"): add("cost_reduce_for:" + tok(ty)); lk("cost_reduce", "filters", "cardtype:" + tok(ty))
+                    elif ty not in ("Card", "Spell", "Other", "You", "Ctrl", "Chosen", "Type", "White", "Blue", "Black", "Red", "Green", "Colorless", "Non", "Self", "Opp") and "," in vc + ",": add("cost_reduce_for:" + tok(ty))
                     elif ty in ("White", "Blue", "Black", "Red", "Green"): add("color:" + tok(ty)); lk("cost_reduce", "filters", "color:" + tok(ty))
         if kind == "S" and p.get("Mode") == "Continuous":
             xt = []

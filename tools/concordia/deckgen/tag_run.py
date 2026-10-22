@@ -218,6 +218,9 @@ def record(name, text, mg):
             tags += kt
     base = sorted(t for t in AT.tags_of(text) if not t.startswith(("has:", "needs:", "hint:")))
     ex_tags, ex_links, ex_groups = TX.extra(lines, sv, types, text)
+    if any(t.startswith("choose_on_enter:") for t in ex_tags):   # the opaque forge_line:etbreplacement is replaced by the readable choose_on_enter tag
+        tags = [t for t in tags if t != "forge_line:etbreplacement"]
+        kgroups = {g: [t for t in ts if t != "forge_line:etbreplacement"] for g, ts in kgroups.items()}
     clauses, links = [], list(ex_links)
     n = 0
     for l in lines:
@@ -476,7 +479,7 @@ REDUNDANCY_OK = {   # (family A, family B): why A and B may stay together althou
     ("tutor_count", "tutor"): "qualifier", ("tutor_target", "tutor"): "qualifier", ("tutor_dest", "tutor"): "qualifier", ("shuffle", "tutor"): "separate fact",
     ("token_count", "token_make"): "qualifier", ("token_color", "token_make"): "qualifier", ("token_pt", "token_make"): "qualifier", ("token_type", "token_make"): "qualifier",
     ("draw_count", "draw"): "qualifier", ("discard_count", "discard"): "qualifier", ("damage_amount", "damage"): "qualifier", ("mana_amount", "mana_source"): "qualifier", ("mana", "mana_source"): "qualifier",
-    ("put_onto_battlefield", "from_zone"): "from_zone is shared by every zone move", ("restrict_kind", "restrict"): "restrict is an AI tag (umbrella); kind is the readable detail", ("loyalty_change", "counters"): "loyalty is a counter",
+    ("put_onto_battlefield", "from_zone"): "from_zone is shared by every zone move", ("cost_reduce_amount", "cost_reduce"): "qualifier", ("cost_reduce_for", "cost_reduce"): "qualifier", ("cost_reduce_amount", "cost_reduce_for"): "different facts", ("restrict_kind", "restrict"): "restrict is an AI tag (umbrella); kind is the readable detail", ("loyalty_change", "counters"): "loyalty is a counter",
     ("token_color", "token_count"): "different facts", ("mana", "mana_amount"): "colour and amount are different facts", ("tutor_count", "tutor_target"): "different facts", ("tutor_count", "tutor_dest"): "different facts",
     ("tutor_dest", "tutor_target"): "different facts", ("impulse_draw", "impulse_draw_count"): "qualifier", ("type", "cardtype"): "subtype needs a card type", ("target_count", "target_type"): "different facts",
     ("token_count", "token_type"): "qualifier", ("token_color", "token_type"): "qualifier", ("token_pt", "token_type"): "qualifier", ("token_pt", "token_count"): "qualifier", ("token_pt", "token_color"): "qualifier",

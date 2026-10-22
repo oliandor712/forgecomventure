@@ -1783,7 +1783,7 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: "Goreclaw, Terror of Qal Sisma"
-tags: supertype:legendary cardtype:creature type:bear duration:eot cost_reduce cost_reduce_for:creature trigger:attacks target_count:all target_type:creature target_scope:you_control target_filter:power_ge_4 pump_amount:+1/+1 grant_kw:trample
+tags: supertype:legendary cardtype:creature type:bear duration:eot cost_reduce cost_reduce_amount:2 cost_reduce_for:creature trigger:attacks target_count:all target_type:creature target_scope:you_control target_filter:power_ge_4 pump_amount:+1/+1 grant_kw:trample
 ai_tags: trample pump_team
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_reducecost,"",ValidCard=Creature.powerGE4,""
@@ -1792,7 +1792,7 @@ links[2]{from,rel,to}:
   c1:cost_reduce,filters,c1:cardtype:creature
   c2:payload,lasts,c2:duration
 groups[3]{id,source,tags}:
-  c1,S line,cost_reduce cost_reduce_for:creature
+  c1,S line,cost_reduce cost_reduce_amount:2 cost_reduce_for:creature
   c2,T line,trigger:attacks duration:eot
   c2.2,sub-ability of c2,target_count:all target_type:creature target_scope:you_control target_filter:power_ge_4 pump_amount:+1/+1 duration:eot grant_kw:trample
 mtgish: rules=PlayerEffect TriggerA
@@ -2371,11 +2371,11 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Dragonlord's Servant
-tags: cardtype:creature type:goblin type:shaman cost_reduce
+tags: cardtype:creature type:goblin type:shaman cost_reduce cost_reduce_amount:1 cost_reduce_for:dragon
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_reducecost,"",ValidCard=Dragon,""
 groups[1]{id,source,tags}:
-  c1,S line,cost_reduce
+  c1,S line,cost_reduce cost_reduce_amount:1 cost_reduce_for:dragon
 mtgish: rules=PlayerEffect
 forge_ai: AILogic=-
 
@@ -3000,12 +3000,12 @@ mtgish: rules=CastEffect TriggerA
 forge_ai: AILogic=-
 
 card: Stonybrook Banneret
-tags: cardtype:creature type:merfolk type:wizard kw:landwalk landwalk:island cost_reduce
+tags: cardtype:creature type:merfolk type:wizard kw:landwalk landwalk:island cost_reduce cost_reduce_amount:1 cost_reduce_for:merfolk cost_reduce_for:wizard
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_reducecost,"","ValidCard=Merfolk,Wizard",""
 groups[2]{id,source,tags}:
   k1,K line,kw:landwalk landwalk:island
-  c1,S line,cost_reduce
+  c1,S line,cost_reduce cost_reduce_amount:1 cost_reduce_for:merfolk cost_reduce_for:wizard
 mtgish: rules=Landwalk PlayerEffect
 forge_ai: AILogic=-
 
@@ -3062,7 +3062,7 @@ mtgish: rules=Activated
 forge_ai: AILogic=ManaRitual
 
 card: Bontu's Monument
-tags: supertype:legendary cardtype:artifact cost_reduce lifegain cost_reduce_for:creature color:black trigger:spell_cast trigger_filter:creature life_loss_amount:1 lifegain_amount:1 life_loss
+tags: supertype:legendary cardtype:artifact cost_reduce lifegain cost_reduce_amount:1 cost_reduce_for:creature color:black trigger:spell_cast trigger_filter:creature life_loss_amount:1 lifegain_amount:1 life_loss
 ai_tags: burn
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_reducecost,"",ValidCard=Creature.Black,""
@@ -3072,7 +3072,7 @@ links[3]{from,rel,to}:
   c1:cost_reduce,filters,c1:color:black
   c2:affected,receives,c2:payload
 groups[5]{id,source,tags}:
-  c1,S line,cost_reduce cost_reduce_for:creature color:black
+  c1,S line,cost_reduce cost_reduce_amount:1 cost_reduce_for:creature color:black
   c2,T line,trigger:spell_cast trigger_filter:creature
   c2.2,sub-ability of c2,life_loss_amount:1
   c2.3,sub-ability of c2,lifegain_amount:1
@@ -3081,12 +3081,12 @@ mtgish: rules=PlayerEffect TriggerA
 forge_ai: AILogic=-
 
 card: Cloud Key
-tags: cardtype:artifact forge_line:etbreplacement cost_reduce
+tags: cardtype:artifact cost_reduce choose_on_enter:card_type cost_reduce_amount:1 cost_reduce_for:chosen_type
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_reducecost,"",ValidCard=Card.ChosenType,""
 groups[2]{id,source,tags}:
-  k1,K line,forge_line:etbreplacement
-  c1,S line,cost_reduce
+  c0,card,choose_on_enter:card_type
+  c1,S line,cost_reduce cost_reduce_amount:1 cost_reduce_for:chosen_type
 mtgish: rules=AsPermanentEnters PlayerEffect
 forge_ai: AILogic=-
 
@@ -3157,7 +3157,7 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Herald's Horn
-tags: cardtype:artifact forge_line:etbreplacement cost_reduce tutor cost_reduce_for:creature look_top:1 reveal tutor_count:1 tutor_target: tutor_dest:hand trigger:upkeep
+tags: cardtype:artifact cost_reduce tutor choose_on_enter:creature_type cost_reduce_amount:1 cost_reduce_for:chosen_type cost_reduce_for:creature look_top:1 reveal tutor_count:1 tutor_target: tutor_dest:hand trigger:upkeep
 ai_tags: tempo:+1 ai_logic:mostprominentincomputerdecknontoken
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_reducecost,"",ValidCard=Creature.ChosenType,""
@@ -3165,8 +3165,8 @@ clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   c1:cost_reduce,filters,c1:cardtype:creature
 groups[5]{id,source,tags}:
-  k1,K line,forge_line:etbreplacement
-  c1,S line,cost_reduce cost_reduce_for:creature
+  c0,card,choose_on_enter:creature_type
+  c1,S line,cost_reduce cost_reduce_amount:1 cost_reduce_for:chosen_type cost_reduce_for:creature
   c2.2,sub-ability of c2,look_top:1 reveal
   c2.3,sub-ability of c2,tutor tutor_count:1 tutor_target: tutor_dest:hand
   v,cross-check (oracle/mtgish/keyword/ai),trigger:upkeep

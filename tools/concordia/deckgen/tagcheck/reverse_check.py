@@ -29,7 +29,8 @@ READER_RULES = """You are the BLIND READER. You see only tags. Rules (strict):
 3. For every card write the rules text (Magic Oracle style, one line per ability, '/' between abilities) that these tags describe, as exactly as the tags allow. Use only what the tags say. If a tag does not say an amount, mana cost or exact wording, write a placeholder such as {cost}, N or X instead of guessing a real value. Do not add abilities the tags do not support. Do NOT write a type line (e.g. "Creature - Elf"); write only rules text.
 4. If you think you recognise the real card, say so in `recognised` (true) but still write only what the tags support. Never write the card's name.
 5. List in `unclear` every tag you could not turn into rules text, and in `conflicts` any tags that contradict each other.
-6. Write the answer as JSON to the output file you are given, exactly: {"cards":[{"id":"c001","text":"...","unclear":["tag"],"conflicts":["..."],"recognised":false}, ...]} with one entry for every id in the batch, in order. Then reply with one line: the number of cards written."""
+6. Never leave a card's text empty when it has ability tags: write the best partial text the tags support, use a placeholder such as {effect} or {cost} for the part a tag does not say, and list the tag under `unclear`. An empty answer is only right for a card with no ability tags.
+7. Write the answer as JSON to the output file you are given, exactly: {"cards":[{"id":"c001","text":"...","unclear":["tag"],"conflicts":["..."],"recognised":false}, ...]} with one entry for every id in the batch, in order. Then reply with one line: the number of cards written."""
 
 
 def tag_blind(rec):
@@ -119,6 +120,7 @@ def norm(text, name=""):
         for part in {name.lower(), name.lower().split(",")[0], name.lower().split(" ")[0]}:
             if len(part) > 2: t = t.replace(part, " self ")
     t = re.sub(r"\bthis (?:creature|permanent|artifact|enchantment|land|spell|card|planeswalker|equipment|aura)\b|\b(?:it|~)\b", " self ", t)
+    t = re.sub(r"\b(?:an |each |target )?opponents? (?:controls?|doesn't control)\b|\byou don't control\b|\byou do not control\b", " opponent controls ", t)   # same meaning, different wording (Prey Upon: 1.0 vs 0.84 for the same tags)
     t = t.replace("{t}", " tap ")
     t = re.sub(r"\{[^}]*\}", " ", t)                       # mana symbols: costs are not tags (structural gap)
     t = re.sub(r"[^a-z0-9+\-/ ]", " ", t)

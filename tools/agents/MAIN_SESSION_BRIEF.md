@@ -18,7 +18,7 @@ Agent control (the numbers match `CONTEXT.md` Obedience protocol)
 8. Agents run at LOW effort. You supplement them with analysis and send it back as terse TOON suggestions; do not act on it unless the user says so.
 Forge AI and decks
 9. Any change to `forge-ai` follows existing syntax (reuse existing AILogic names, script params, SVar conventions, Java style; no invented syntax; show a diff next to the nearest existing example). AI lab work is research only unless `USER APPROVED`.
-10. Do not touch `enemies.json` ("ignore sprite assignment step for now"). The staged tier 1 set (`staging_t1_fresh/`) is not live. Hold H55: no AI lab proposals and no tier 1 deck work until the user says the tag index is complete.
+10. Do not touch `enemies.json` ("ignore sprite assignment step for now"). The staged tier 1 set (`staging_t1_fresh/`) is not live. Hold H55 was killed by the user 2026-10-22 (AI lab proposals and tier 1 deck work are allowed again; nothing goes live without the user). Old text: until the user says the tag index is complete.
 Style
 11. Terse TOON for agent messages. Prefer a Claude Doc with dropdown and notes fields for anything the user must fill in (the user liked this). Deliver files with SendUserFile; give the path of anything written. Say plainly when something is unverified, a count is approximate, or you made a mistake (two blind-test batches were discarded for leaks this session; say so rather than hide it).
 12. Never tell the user a push happened unless the push output showed it.
@@ -31,14 +31,14 @@ Summary: ability-led tags, never per card. Source order for the tagging run: **1
 Tier 1 decks: 80 staged decks in `forge-gui/res/adventure/Concordia/staging_t1_fresh/decks/tier1/` (not live). Verified: 80/80 as declared archetype, 100 cards each, 0 deck_tier FAIL. Open: swap to live + sprite assignment, 3 decks with game-definition average mana value > 3.0, held-back live decks (Kediss, Anara, Oin, Fynn, Molten, Kreat). All HELD (H55).
 AI lab: docs in `tools/concordia/ai_lab/`: proposals DL-1..DL-5, PS-1..PS-7 (all unticked in `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md`), `SHIPPED_AI_PROFILES_AND_READS.md` (122 property rows, hand summaries), `AI_EASY_FIXES_FEASIBILITY.md` (4 ideas; ranking: KeyCards data on decks, Control-name on tier 1, new profile file, AILogic propagation), `CARD_TEST_A_FORGE.md` + `CARD_TEST_B_MTGISH.md` + `CARD_LOGIC_TEST_REPORT.md` (the Forge-syntax vs mtgish prediction test). HELD.
 Tagging project (the live work): `tools/concordia/deckgen/tag_run.py` + `tag_extra.py` produce `tags/STARTER_TAGS.toon` (353 starter cards), `STARTER_TAGS_REPORT.md`, `STARTER_TAGS_SAMPLE.md`, `NEW_TAGS_FOR_APPROVAL.md`. Design: `TAG_LINKS.md` (clauses, groups k1/c1/c1.2, relations). References: `tools/agents/reference/` (Comprehensive Rules 2026-08-07, PDF + text), `tools/concordia/ai_lab/KEYWORD_REFERENCE.toon` (user doc + Claude-added + 104 CR keywords), `KEYWORD_REMINDER_TEXT.toon`, `KEYWORD_FIRST_RELEASE.toon`. Not built yet: the full cardlist tagging run (user: write all tag options during that run); a converter (decided against: work from Forge scripts + mtgish).
-Waiting on the user: tick the families in `NEW_TAGS_FOR_APPROVAL.md`; the earlier decision list (19 items) is mostly answered; "tag index complete" is the signal to lift H55.
+Waiting on the user: tick the families in `NEW_TAGS_FOR_APPROVAL.md`; the earlier decision list (19 items) is mostly answered; H55 is killed (user, 2026-10-22).
 
 ## 5. The three persistent agents
 | agent | session id | scope | status |
 |---|---|---|---|
-| forge-ai-lab | `session_018TohPY7UPn5mh9b7aJ4at5` | `tools/concordia/ai_lab/` | held (H55), idle |
+| forge-ai-lab | `session_018TohPY7UPn5mh9b7aJ4at5` | `tools/concordia/ai_lab/` | idle (H55 killed) |
 | deck-balance-lab | `session_01PwU5ft7yoiwonjyndwCVv9` | sims, `tools/concordia/suite`, `balance_lab` | no suite run approved ("not yet"), idle |
-| deck-builder | `session_01EiE27ZRU9BUAnaYQYocKuB` | `tools/concordia/deckgen/` builds, decks | held (H55), idle |
+| deck-builder | `session_01EiE27ZRU9BUAnaYQYocKuB` | `tools/concordia/deckgen/` builds, decks | idle (H55 killed) |
 Message them with the claude-code-remote `send_message` tool (priority `next`; `now` only to interrupt). Session ids belong to cloud sessions that expire when idle; if a send fails, recreate with `create_session` and the brief in `.claude/agents/<agent>.md` (see `.claude/skills/agent-manager/SKILL.md` and `tools/agents/registry.json`, which holds every request the user made about each agent).
 **Each main session has its OWN agent clones** (decided by the user). A clone session never messages the original three; it creates its own with `create_session` from `.claude/agents/<agent>.md`, tagged `owner:claude2`, working on `campaign-design` during its owner's shift (see section 8).
 
