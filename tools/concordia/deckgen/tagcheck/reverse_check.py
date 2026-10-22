@@ -117,7 +117,7 @@ def norm(text, name=""):
     t = re.sub(r"\([^)]*\)", " ", t) if re.sub(r"\([^)]*\)", "", t).strip(" /\\n") else t.replace("(", " ").replace(")", " ")   # reminder text (kept when it is all the card has: basic lands)
     t = t.replace("\\n", " ").replace("/", " / ")
     if name:
-        for part in {name.lower(), name.lower().split(",")[0], name.lower().split(" ")[0]}:
+        for part in sorted({name.lower(), name.lower().split(",")[0], name.lower().split(" ")[0]}, key=len, reverse=True):   # longest first: a set's order changes with the hash seed and left "Zuran [Spellcaster]" half-replaced in some runs
             if len(part) > 2: t = t.replace(part, " self ")
     t = re.sub(r"\bthis (?:creature|permanent|artifact|enchantment|land|spell|card|planeswalker|equipment|aura)\b|\b(?:it|~)\b", " self ", t)
     t = re.sub(r"\b(?:an |each |target )?opponents? (?:controls?|doesn't control)\b|\byou don't control\b|\byou do not control\b", " opponent controls ", t)   # same meaning, different wording (Prey Upon: 1.0 vs 0.84 for the same tags)
