@@ -132,9 +132,9 @@ Tag check on full script text: **50 of 50 untagged by `ability_tags.tags_of`** (
 8. **Keyword-only signatures**: Storied, Devoid, Snow landwalk: no rule, and they make the primary signature weak (see the limit above).
 
 ## Notes: cases that needed more than the Forge line
-- Lignify, Rime Transfusion, Defensive Stance, Mask of Law and Grace: the Oracle line was needed to confirm the aura's stat change; the Forge line alone shows only Enchant and a Continuous static.
-- Passenger Ferry and Cavern Harpy-type control cards: their AILogic$ value is not implied by the signature (for example Passenger Ferry's Pump value; the script has no clue beyond the Crew K line).
-- Halsin and Avalanche Caller: the Forge animate line gives the P/T but not the duration condition ("target token you control"); the Oracle text confirms it is until end of turn.
+- Enchant auras (Lignify, Rime Transfusion, Defensive Stance, Mask of Law and Grace): the primary signature is the K Enchant line, so the prediction is NeedsPrevention or nothing. The Forge line gives the stat change; I did not check the Oracle line for these, so whether it adds anything is not verified.
+- Passenger Ferry (set C): the actual value is Pump, but its primary signature is a Crew keyword, so the prediction (ReplaySpell) is a miss. The keyword-first limit explains it.
+- Halsin and Avalanche Caller: the Forge animate line gives the P/T and the valid target; the duration is in the SpellDescription, not in a separate key. Not verified against the Oracle line.
 
 ## Proposed next steps (not executed)
 1. Prefer A/S/T lines over K lines when choosing the primary signature; re-score set C (expected gain: most of the 19 misses are K-led).
