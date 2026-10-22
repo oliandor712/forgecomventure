@@ -116,3 +116,7 @@ Source: `tools/concordia/ai_lab/AI_PLAY_STYLES.md`. Unticked. Existing names and
 - [ ] **PS-5, archetype-based pilot flag (Java, shipped game)**: `PlayerControllerAi.setupAutoProfile` reads archetype instead of name or CMC. Changes attacks for every AI deck; approval and seeded tests on tiers 1-5 first.
 - [ ] **PS-6, mid-match profile switch (test-only tool first)**: a BonusSim variant that sets a profile per side (`createAiPlayer(name, profile)`) and calls `LobbyPlayerAi.setAiProfile` at a turn number. Test tooling, not shipped; seeded, equal life, stock vs switched arm. No forge-ai change.
 - [ ] **PS-7, boss phase by life threshold (Java, shipped game)**: a game-event listener that switches an enemy's profile when its life falls below N. Needs the existing hook confirmed first; needs approval; the profile name must be validated against `getAvailableProfiles()` (unknown names silently use enum defaults).
+
+## Scry instants timing (forge-ai-lab, 2026-10-22; nothing applied)
+
+- [ ] **014, BestOpportunity on 6 scry-then-draw instants (card scripts)**: `tools/concordia/ai_lab/patches/014-scry-instants-best-opportunity.patch` adds `AILogic$ BestOpportunity` to Opt, Deliberate, Joint Exploration, Delightful Discovery, Graven Lore, Demon's Due (Judge Unworthy, Riddle of Lightning, Precognitive Perception excluded). Status: saved, untested, unticked; not applied to any card script or forge-ai. Trace and risks: `AI_LOGIC_TAG_REVIEW.md` and the patch header.
