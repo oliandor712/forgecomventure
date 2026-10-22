@@ -10,7 +10,7 @@ KWNAMES = {"flying", "trample", "haste", "vigilance", "lifelink", "deathtouch", 
 # family -> (meaning, why / user note)
 DOC = {
  "mana:<color>": ("colour of mana an ability produces (white, blue, black, red, green, colorless, any, commander_identity)", "feedback: link color type to mana source (Arcane Signet, Plains, Temple, Frost Marsh)"),
- "mana_amount:<n>": ("how much mana is produced per activation", "Temple of the False God"),
+ "mana_amount:<n>": ("how much mana is produced per activation; always tagged on a mana source ability, also when it is 1", "Temple of the False God; user note: always tag mana_amount"),
  "mana_restriction": ("the mana can only be spent on certain things", "Vodalian Arcanist"),
  "mana_choice": ("the ability lets you choose between colours", "Frost Marsh, Arcane Signet"),
  "trigger:tap": ("the ability is a tap ability (basic lands tap for one colour of mana)", "feedback: Plains, Frost Marsh trigger type"),
@@ -32,7 +32,7 @@ DOC = {
  "exile_from:<zone>": ("exiles cards out of a zone other than the battlefield (graveyard, hand, library)", "found in the cross-check: Scavenging Ooze, Squee"),
  "token_type:copy": ("the token is a copy of another permanent", "found in the cross-check: Kiki-Jiki, Rite of Replication"),
  "draw_count:<n|x> / discard_count:<n|x>": ("how many cards an ability draws or makes a player discard", "user note: tag draw count"),
- "tempo:+n|0|-n|x": ("net cards added to your hand or battlefield minus cards removed (the spell itself, sacrificed or discarded cards) when the ability resolves; x = unknown amount", "user note: tempo gain (+1), applied to every ability that adds more cards than it removes"),
+ "tempo:+n|x": ("net cards added to your hand or battlefield minus cards removed (the spell itself, sacrificed or discarded cards) when the ability resolves; tokens count 0.5 each; only positive values are tagged; tempo:x when an amount is a variable", "user note: tempo gain (+1), applied to every ability that adds more cards than it removes"),
  "put_onto_battlefield / put_from:<zone>": ("a card is put onto the battlefield from a zone without being cast, so its mana cost and 'when you cast' triggers are skipped; enter-the-battlefield triggers still happen (CR 603.6a). Distinct from trigger:etb, which is a trigger on entering", "user note, confirmed 2026-10-22: the tag means 'not cast'"),
  "cost_if_you_do": ("the 'If you do' part marks the preceding sacrifice/discard as a cost", "user note on Victimize"),
  "enters_untapped / enters_tapped_conditional": ("lands that enter untapped, or tapped unless a condition holds (enters_tapped stays for always-tapped)", "user note: tag whether a land enters tapped"),
@@ -41,12 +41,12 @@ DOC = {
  "target_type:<t> / target_filter:<f> / target_scope:you_control|opp_control": ("what the effect can pick: card type, filters such as nonland, and whose", "Filter Out, Scorching Dragonfire, Oblivion Ring"),
  "trigger:etb|dies|leaves|attacks|spell_cast|... / trigger_zone:graveyard / trigger_filter:<type>": ("trigger event, the zone it goes to, and a card-type filter on cast triggers", "Rancor, Oblivion Ring, Bontu's Monument"),
  "delayed:end_step / duration:end_step": ("an effect that happens at the next end step", "Kiki-Jiki"),
- "impulse_draw": ("exile cards and let you play them for a limited time", "Invasion of Kaldheim"),
+ "impulse_draw / impulse_draw_count:<n|x>": ("exile cards and let you play them for a limited time; counted and linked like draw (count, duration, tempo)", "Invasion of Kaldheim; user note: same links as draw"),
  "must_attack / cant_block": ("combat restrictions", "Rabblemaster, Rowan"),
  "exchange_control": ("swap control of two permanents (linked to steal)", "Oko"),
  "steal": ("gain control of something (linked to haste when the effect grants it)", "Rowan"),
  "cost_reduce_for:<type> + color:<c>": ("which spells a cost reduction applies to", "Bontu's Monument"),
- "counter:<type> / each_you_control": ("which counters are placed and on what", "Invasion of Moag"),
+ "counter:<type>": ("which counters are placed (the count and scope of the targets are target_count and target_scope)", "Invasion of Moag"),
  "cost_sacrifice_target:<t>": ("what a sacrifice cost sacrifices (self, land, creature ...)", "Harrow, Blighted Woodland"),
  "sacrifice_type:<t>": ("what an edict makes players sacrifice", "Garruk"),
  "token_cardtype:artifact": ("the token is an artifact", "Memnarch, Oko"),
@@ -150,7 +150,7 @@ def extra(lines, sv, types, text):
     if "AlternateMode:DoubleFaced" in text or "AlternateMode:Modal" in text: add("transform")
     if "Basic" in types.split() and "Land" in types.split():
         for t, c in (("Plains", "white"), ("Island", "blue"), ("Swamp", "black"), ("Mountain", "red"), ("Forest", "green")):
-            if t in types.split(): add("mana_source", "mana:" + c, "trigger:tap"); lk("mana_source", "produces", "mana:" + c)
+            if t in types.split(): add("mana_source", "mana:" + c, "mana_amount:1", "trigger:tap"); lk("mana_source", "produces", "mana:" + c)
     oracle = next((l[7:] for l in lines if l.startswith("Oracle:")), "")
     if re.search(r"enters(?: the battlefield)? tapped", oracle) and "Basic" not in types.split():
         add("enters_tapped_conditional" if re.search(r"enters(?: the battlefield)? tapped unless", oracle) else "enters_tapped")
@@ -194,7 +194,9 @@ def extra(lines, sv, types, text):
                 add("must_attack")
                 for ty in re.findall(r"[A-Z][a-z]+", p.get("ValidCreature", "")):
                     if ty not in ("Creature", "Other", "You", "Ctrl"): add("affects:" + tok(ty))
-            if mode in ("CantBlock", "CantBlockBy"): add("cant_block")
+            if mode in ("CantBlock", "CantBlockBy"):
+                add("cant_block")
+                if p.get("ValidCreature", p.get("ValidAttacker", "Creature")) not in ("Card.Self", "Creature.Self"): add("restrict")
             if mode == "ReduceCost":
                 vc = p.get("ValidCard", "")
                 add("cost_reduce")
@@ -207,6 +209,7 @@ def extra(lines, sv, types, text):
         pos = neg = 0
         unk = False
         sacgid = None
+        last_exile = "x"
         desc_main = p.get("SpellDescription", "") + p.get("Description", "") + p.get("TriggerDescription", "")
         for m_ in re.finditer(r"Sac<(\d+)/", line): neg += int(m_.group(1))
         for m_ in re.finditer(r"Discard<(\d+)/", line): neg += int(m_.group(1))
@@ -238,7 +241,7 @@ def extra(lines, sv, types, text):
                 else:
                     for c in pr.split():
                         if c in COLORS: add("mana:" + COLORS[c]); links.append(("mana_source", "produces", "mana:" + COLORS[c]))
-                if bp.get("Amount", "1") not in ("1",): add("mana_amount:" + bp["Amount"])
+                add("mana_amount:" + bp.get("Amount", "1").lower())
                 if "RestrictValid" in bp: add("mana_restriction")
                 if "IsPresent" in bp or "ConditionPresent" in bp: add("activation_restriction")
             if "IsPresent" in bp and api != "Mana" and kind == "A": add("activation_restriction")
@@ -283,23 +286,29 @@ def extra(lines, sv, types, text):
                 if "SacValid" in bp: add("sacrifice_type:" + tok(bp["SacValid"].split(".")[0]))
             if bp.get("ConditionDefined") == "Remembered" and api == "Token" and sacgid: links.append(("%s:token_make" % cur[0], "conditional_on", "%s:effect:sacrifice" % sacgid))
             if api == "ChangeZone" and bp.get("Defined") == "ExiledWith": add("return_exiled"); lk("return_exiled", "pairs_with", "trigger:leaves")
+            if api == "Dig": last_exile = bp.get("DigNum", "1")
+            if api == "ChangeZoneAll" and bp.get("Destination") == "Exile": last_exile = "x"
+            if api == "ChangeZone" and bp.get("Destination") == "Exile": last_exile = bp.get("ChangeNum", "1")
             if api == "Effect":
                 for sname in re.split(r"[ ,]+", bp.get("StaticAbilities", "")):
                     if "MayPlay" in sv.get(sname, ""):
-                        add("impulse_draw")
+                        add("impulse_draw", "impulse_draw_count:" + str(last_exile).lower())
+                        if str(last_exile).isdigit(): pos += int(last_exile)
+                        else: global_unk[0] = True
+                        lk("impulse_draw", "pairs_with", "impulse_draw_count:" + str(last_exile).lower())
                         d = bp.get("Duration", "")
                         add({"UntilTheEndOfYourNextTurn": "duration:next_turn_end", "EndOfTurn": "duration:eot"}.get(d, "duration:eot" if not d else "duration:" + tok(d)))
             if api == "Token":
                 token_tags(bp, groups[cur[0]])
-                if bp.get("TokenOwner", "You") == "You": pos += cnt(bp.get("TokenAmount", "1"))
+                if bp.get("TokenOwner", "You") == "You": pos += 0.5 * cnt(bp.get("TokenAmount", "1"))   # tokens count half (user)
             if api == "Draw":
-                nd = bp.get("NumCards", "1"); add("draw_count:" + nd.lower())
+                nd = bp.get("NumCards", "1"); add("draw_count:" + (nd if nd.isdigit() else "x"))
                 if bp.get("Defined", "You") == "You": pos += cnt(nd)
             if api == "Discard":
-                nd = bp.get("NumCards", "1"); add("discard_count:" + nd.lower())
+                nd = bp.get("NumCards", "1"); add("discard_count:" + (nd if nd.isdigit() else "x"))
                 if bp.get("Defined", "You") == "You": neg += cnt(nd)
                 if re.search(r"Discard[^.]*\.\s*If you do", desc_main): add("cost:discard", "cost_if_you_do")
-            if api == "CopyPermanent": add("token_make", "token_type:copy"); pos += 1
+            if api == "CopyPermanent": add("token_make", "token_type:copy"); pos += 0.5
             if api == "Play" and bp.get("WithoutManaCost") == "True": add("cast_free")
             if api == "ExchangeControl": add("exchange_control", "steal"); lk("exchange_control", "pairs_with", "steal")
             if api == "GainControl":
@@ -313,13 +322,14 @@ def extra(lines, sv, types, text):
                     if ty: add("becomes:" + tok(ty))
             if api == "PutCounter" or api == "PutCounterAll":
                 if bp.get("CounterType"): add("counter:" + tok(bp["CounterType"]))
-                if api == "PutCounterAll": add("each_you_control")
             if api == "CopyPermanent" and bp.get("AtEOT") == "Sacrifice": add("delayed:end_step", "effect:sacrifice", "duration:end_step")
-            if "KW" in bp and "can't block" in bp["KW"]: add("cant_block")
+            if "KW" in bp and "can't block" in bp["KW"]:
+                add("cant_block")
+                if "ValidTgts" in bp or bp.get("Defined") == "Targeted": add("restrict")   # can't-block effect on other creatures (user)
             if "MayPlay" in b or "MayPlay$" in b: add("impulse_draw")
         cur[0] = main_gid
-        if pos or neg or is_spell:
-            groups[main_gid].append("tempo:x" if global_unk[0] else ("tempo:%+d" % (pos - neg) if pos != neg else "tempo:0"))
+        if global_unk[0]: groups[main_gid].append("tempo:x")                     # unknown amount is tracked too (user)
+        elif pos - neg > 0: groups[main_gid].append("tempo:+%g" % (pos - neg))   # known amounts only when positive; tempo 0 and negative are not tagged (user)
     out_groups = {}
     for gid, ts in groups.items():
         ts = [t for t in dict.fromkeys(ts) if not t.startswith("impulse_draw_part")]

@@ -17,37 +17,37 @@ mtgish: rules=Menace TriggerA TriggerA
 forge_ai: AILogic=-
 
 card: Swamp
-tags: supertype:basic cardtype:land landtype:swamp mana_source mana:black trigger:tap enters_untapped
+tags: supertype:basic cardtype:land landtype:swamp mana_source mana:black mana_amount:1 trigger:tap enters_untapped
 clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   c0:mana_source,produces,c0:mana:black
 groups[1]{id,source,tags}:
-  c0,card,mana_source mana:black trigger:tap enters_untapped
+  c0,card,mana_source mana:black mana_amount:1 trigger:tap enters_untapped
 mtgish: rules=
 forge_ai: AILogic=-
 
 card: Evolving Wilds
-tags: cardtype:land land_tutor enters_untapped cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
+tags: cardtype:land land_tutor enters_untapped cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T Sac<1/CARDNAME>,changezone,"","",""
 groups[2]{id,source,tags}:
   c0,card,enters_untapped
-  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
+  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
 card: Terramorphic Expanse
-tags: cardtype:land land_tutor enters_untapped cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
+tags: cardtype:land land_tutor enters_untapped cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T Sac<1/CARDNAME>,changezone,"","",""
 groups[2]{id,source,tags}:
   c0,card,enters_untapped
-  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
+  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
 card: Charcoal Diamond
-tags: cardtype:artifact mana_source enters_tapped cost:tap mana:black
+tags: cardtype:artifact mana_source enters_tapped cost:tap mana:black mana_amount:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
   c2,replacement,"",replace_moved,"",ValidCard=Card.Self,""
@@ -55,30 +55,30 @@ links[1]{from,rel,to}:
   mana_source,produces,mana:black
 groups[2]{id,source,tags}:
   c0,card,enters_tapped
-  c1,A line,cost:tap mana_source mana:black
+  c1,A line,cost:tap mana_source mana:black mana_amount:1
 mtgish: rules=AsPermanentEnters Activated
 forge_ai: AILogic=-
 
 card: Mind Stone
-tags: cardtype:artifact draw mana_source sacrifice_outlet cost:tap mana:colorless cost:sacrifice cost_sacrifice_target:self cost:mana draw_count:1 tempo:0
+tags: cardtype:artifact draw mana_source sacrifice_outlet cost:tap mana:colorless mana_amount:1 cost:sacrifice cost_sacrifice_target:self cost:mana draw_count:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
   c2,activated,1 T Sac<1/CARDNAME>,draw,numcards=1,"",""
 links[1]{from,rel,to}:
   mana_source,produces,mana:colorless
 groups[2]{id,source,tags}:
-  c1,A line,cost:tap mana_source mana:colorless
-  c2,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana draw_count:1 tempo:0
+  c1,A line,cost:tap mana_source mana:colorless mana_amount:1
+  c2,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana draw_count:1
 mtgish: rules=Activated Activated
 forge_ai: AILogic=-
 
 card: Victimize
-tags: cardtype:sorcery reanimate effect:sacrifice cost:sacrifice cost_if_you_do sacrifice_outlet sacrifice_type:creature tempo:0 target_count:2 target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard put_tapped
+tags: cardtype:sorcery reanimate effect:sacrifice cost:sacrifice cost_if_you_do sacrifice_outlet sacrifice_type:creature target_count:2 target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard put_tapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",sacrifice+changezone+cleanup,"",Defined=You ValidTgts=Creature.YouCtrl,""
 groups[3]{id,source,tags}:
   c0,card,sacrifice_outlet
-  c1,A line,effect:sacrifice cost:sacrifice cost_if_you_do sacrifice_outlet sacrifice_type:creature tempo:0
+  c1,A line,effect:sacrifice cost:sacrifice cost_if_you_do sacrifice_outlet sacrifice_type:creature
   c1.2,sub-ability of c1,target_count:2 target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard put_tapped reanimate
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
@@ -169,23 +169,23 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Infestation Sage
-tags: cardtype:creature type:elf type:warlock token_make trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+1 token_count:1 token_color:black token_color:green token_pt:1/1 token_kw:flying token_type:insect
+tags: cardtype:creature type:elf type:warlock token_make trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+0.5 token_count:1 token_color:black token_color:green token_pt:1/1 token_kw:flying token_type:insect
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",token,tokenscript=bg_1_1_insect_flying,"",""
 groups[2]{id,source,tags}:
-  c1,T line,trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+1
+  c1,T line,trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:black token_color:green token_pt:1/1 token_kw:flying token_type:insect
 mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Ravenous Rats
-tags: cardtype:creature type:rat discard trigger_scope:self trigger:etb tempo:-1 target_count:one target_type:opponent discard_count:1
+tags: cardtype:creature type:rat discard trigger_scope:self trigger:etb target_count:one target_type:opponent discard_count:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",discard,numcards=1,ValidTgts=Opponent,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,T line,trigger_scope:self trigger:etb tempo:-1
+  c1,T line,trigger_scope:self trigger:etb
   c1.2,sub-ability of c1,target_count:one target_type:opponent discard_count:1
 mtgish: rules=TriggerA
 forge_ai: AILogic=-
@@ -202,11 +202,11 @@ mtgish: rules=Deathtouch Lifelink
 forge_ai: AILogic=-
 
 card: Carrier Thrall
-tags: cardtype:creature type:vampire token_make trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+1 token_count:1 token_color:colorless token_pt:1/1 token_type:eldrazi_scion
+tags: cardtype:creature type:vampire token_make trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+0.5 token_count:1 token_color:colorless token_pt:1/1 token_type:eldrazi_scion
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",token,tokenscript=c_1_1_eldrazi_scion_sac,"",""
 groups[2]{id,source,tags}:
-  c1,T line,trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+1
+  c1,T line,trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:colorless token_pt:1/1 token_type:eldrazi_scion
 mtgish: rules=TriggerA
 forge_ai: AILogic=-
@@ -358,7 +358,7 @@ mtgish: rules=Flying Protection TriggerA
 forge_ai: AILogic=- RemoveDeck
 
 card: Fell Specter
-tags: cardtype:creature type:specter kw:flying discard trigger_scope:self trigger:etb tempo:-1 target_count:one target_type:opponent discard_count:1 trigger:discard
+tags: cardtype:creature type:specter kw:flying discard trigger_scope:self trigger:etb target_count:one target_type:opponent discard_count:1 trigger:discard
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",discard,numcards=1,ValidTgts=Opponent,""
   c2,discarded,"",loselife,lifeamount=2,Defined=TriggeredCardController,""
@@ -367,7 +367,7 @@ links[2]{from,rel,to}:
   c2:affected,receives,c2:payload
 groups[4]{id,source,tags}:
   k1,K line,kw:flying
-  c1,T line,trigger_scope:self trigger:etb tempo:-1
+  c1,T line,trigger_scope:self trigger:etb
   c1.2,sub-ability of c1,target_count:one target_type:opponent discard_count:1
   c2,T line,trigger:discard
 mtgish: rules=Flying TriggerA TriggerA
@@ -386,14 +386,14 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Liliana's Reaver
-tags: cardtype:creature type:zombie kw:deathtouch discard token_make tempo:+1 discard_count:1 token_count:1 token_color:black token_pt:2/2 token_type:zombie
+tags: cardtype:creature type:zombie kw:deathtouch discard token_make tempo:+0.5 discard_count:1 token_count:1 token_color:black token_pt:2/2 token_type:zombie
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,combat_damage,"",discard+token,numcards=1 tokenscript=b_2_2_zombie,Defined=TriggeredTarget,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[4]{id,source,tags}:
   k1,K line,kw:deathtouch
-  c1,T line,tempo:+1
+  c1,T line,tempo:+0.5
   c1.2,sub-ability of c1,discard_count:1
   c1.3,sub-ability of c1,token_count:1 token_color:black token_pt:2/2 token_type:zombie
 mtgish: rules=Deathtouch TriggerA
@@ -473,92 +473,92 @@ mtgish: rules=Flying Activated
 forge_ai: AILogic=-
 
 card: Bitter Triumph
-tags: cardtype:instant forge_line:alternateadditionalcost target_count:one target_type:creature target_type:planeswalker remove:destroy tempo:-1
+tags: cardtype:instant forge_line:alternateadditionalcost target_count:one target_type:creature target_type:planeswalker remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy,"","ValidTgts=Creature,Planeswalker",""
 groups[2]{id,source,tags}:
   k1,K line,forge_line:alternateadditionalcost
-  c1,A line,target_count:one target_type:creature target_type:planeswalker remove:destroy tempo:-1
+  c1,A line,target_count:one target_type:creature target_type:planeswalker remove:destroy
 mtgish: rules=CastEffect SpellActions
 forge_ai: AILogic=-
 
 card: Consume Spirit
-tags: cardtype:sorcery burn lifegain target_count:one target_type:any damage tempo:-1
+tags: cardtype:sorcery burn lifegain target_count:one target_type:any damage
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dealdamage+gainlife,numdmg=X lifeamount=X,ValidTgts=Any Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:any damage tempo:-1
+  c1,A line,target_count:one target_type:any damage
 mtgish: rules=CastEffect SpellActions
 forge_ai: AILogic=-
 
 card: Cast Down
-tags: cardtype:instant target_count:one target_type:creature target_filter:nonlegendary remove:destroy tempo:-1
+tags: cardtype:instant target_count:one target_type:creature target_filter:nonlegendary remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy,"",ValidTgts=Creature.nonLegendary,""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_filter:nonlegendary remove:destroy tempo:-1
+  c1,A line,target_count:one target_type:creature target_filter:nonlegendary remove:destroy
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Doom Blade
-tags: cardtype:instant target_count:one target_type:creature target_filter:nonblack remove:destroy tempo:-1
+tags: cardtype:instant target_count:one target_type:creature target_filter:nonblack remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy,"",ValidTgts=Creature.nonBlack,""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_filter:nonblack remove:destroy tempo:-1
+  c1,A line,target_count:one target_type:creature target_filter:nonblack remove:destroy
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Murder
-tags: cardtype:instant target_count:one target_type:creature remove:destroy tempo:-1
+tags: cardtype:instant target_count:one target_type:creature remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy,"",ValidTgts=Creature,""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature remove:destroy tempo:-1
+  c1,A line,target_count:one target_type:creature remove:destroy
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Hero's Downfall
-tags: cardtype:instant target_count:one target_type:creature target_type:planeswalker remove:destroy tempo:-1
+tags: cardtype:instant target_count:one target_type:creature target_type:planeswalker remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy,"","ValidTgts=Creature,Planeswalker",""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_type:planeswalker remove:destroy tempo:-1
+  c1,A line,target_count:one target_type:creature target_type:planeswalker remove:destroy
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Feed the Swarm
-tags: cardtype:sorcery target_count:one target_type:creature target_scope:opp_control target_type:enchantment remove:destroy tempo:-1
+tags: cardtype:sorcery target_count:one target_type:creature target_scope:opp_control target_type:enchantment remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy+loselife,lifeamount=X,"ValidTgts=Creature.OppCtrl,Enchantment.OppCtrl Defined=You",""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:opp_control target_type:enchantment remove:destroy tempo:-1
+  c1,A line,target_count:one target_type:creature target_scope:opp_control target_type:enchantment remove:destroy
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Tendrils of Corruption
-tags: cardtype:instant landtype:swamp lifegain target_count:one target_type:creature damage tempo:-1
+tags: cardtype:instant landtype:swamp lifegain target_count:one target_type:creature damage
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dealdamage+gainlife,numdmg=X lifeamount=X,ValidTgts=Creature,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature damage tempo:-1
+  c1,A line,target_count:one target_type:creature damage
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Corrupt
-tags: cardtype:sorcery burn landtype:swamp lifegain target_count:one target_type:any damage tempo:-1
+tags: cardtype:sorcery burn landtype:swamp lifegain target_count:one target_type:any damage
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dealdamage+gainlife,numdmg=X lifeamount=Y,ValidTgts=Any Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:any damage tempo:-1
+  c1,A line,target_count:one target_type:any damage
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -616,36 +616,35 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Dark Bargain
-tags: cardtype:instant selection tempo:-1 damage damage_amount:2
+tags: cardtype:instant selection damage damage_amount:2
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dig+dealdamage,numdmg=2,Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
-groups[2]{id,source,tags}:
-  c1,A line,tempo:-1
+groups[1]{id,source,tags}:
   c1.2,sub-ability of c1,damage damage_amount:2
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Supernatural Stamina
-tags: cardtype:instant duration:eot pump_single reanimate target_count:one target_type:creature tempo:-1 transform
+tags: cardtype:instant duration:eot pump_single reanimate target_count:one target_type:creature transform
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+animate,numatt=+2,ValidTgts=Creature Defined=ParentTarget,duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature tempo:-1 duration:eot
+  c1,A line,target_count:one target_type:creature duration:eot
   c1.2,sub-ability of c1,transform
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Feign Death
-tags: cardtype:instant reanimate target_count:one target_type:creature transform tempo:-1
+tags: cardtype:instant reanimate target_count:one target_type:creature transform
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",animate,"",ValidTgts=Creature,""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature transform tempo:-1
+  c1,A line,target_count:one target_type:creature transform
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -663,14 +662,14 @@ mtgish: rules=PermanentLayerEffect Equip
 forge_ai: AILogic=-
 
 card: Bladebrand
-tags: cardtype:instant duration:eot deathtouch draw target_count:one target_type:creature tempo:0 draw_count:1
+tags: cardtype:instant duration:eot deathtouch draw target_count:one target_type:creature draw_count:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+draw,deathtouch,ValidTgts=Creature,duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature tempo:0 duration:eot deathtouch
+  c1,A line,target_count:one target_type:creature duration:eot deathtouch
   c1.2,sub-ability of c1,draw_count:1
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
@@ -688,52 +687,51 @@ mtgish: rules=EnchantPermanent PermanentLayerEffect
 forge_ai: AILogic=Pump
 
 card: Zombify
-tags: cardtype:sorcery reanimate target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard tempo:0
+tags: cardtype:sorcery reanimate target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone,"",ValidTgts=Creature.YouCtrl,""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard reanimate tempo:0
+  c1,A line,target_count:one target_type:creature target_scope:you_control target_zone:graveyard put_onto_battlefield put_from:graveyard reanimate
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Raise Dead
-tags: cardtype:sorcery recursion target_count:one target_type:creature target_scope:you_control target_zone:graveyard tempo:0
+tags: cardtype:sorcery recursion target_count:one target_type:creature target_scope:you_control target_zone:graveyard
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone,"",ValidTgts=Creature.YouCtrl,""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:you_control target_zone:graveyard tempo:0
+  c1,A line,target_count:one target_type:creature target_scope:you_control target_zone:graveyard
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Rise from the Grave
-tags: cardtype:sorcery reanimate target_count:one target_type:creature target_zone:graveyard put_onto_battlefield put_from:graveyard tempo:0
+tags: cardtype:sorcery reanimate target_count:one target_type:creature target_zone:graveyard put_onto_battlefield put_from:graveyard
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone,"",ValidTgts=Creature,""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_zone:graveyard put_onto_battlefield put_from:graveyard reanimate tempo:0
+  c1,A line,target_count:one target_type:creature target_zone:graveyard put_onto_battlefield put_from:graveyard reanimate
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Exsanguinate
-tags: cardtype:sorcery burn lifegain tempo:-1
+tags: cardtype:sorcery burn lifegain
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",loselife+gainlife,lifeamount=X lifeamount=AFLifeLost,Defined=Player.Opponent Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
-groups[1]{id,source,tags}:
-  c1,A line,tempo:-1
+groups[0]{id,source,tags}:
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Grasp of Darkness
-tags: cardtype:instant duration:eot pump_single shrink target_count:one target_type:creature tempo:-1
+tags: cardtype:instant duration:eot pump_single shrink target_count:one target_type:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump,numatt=-4 numdef=-4,ValidTgts=Creature,duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature tempo:-1 duration:eot pump_single
+  c1,A line,target_count:one target_type:creature duration:eot pump_single
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -769,24 +767,24 @@ mtgish: rules=FirstStrike TriggerA
 forge_ai: AILogic=-
 
 card: "Josu Vess, Lich Knight"
-tags: supertype:legendary cardtype:creature type:zombie type:knight kw:kicker num:5 color:black kw:menace evasion token_make trigger_scope:self trigger:etb tempo:+8 token_count:8 token_color:black token_pt:2/2 token_kw:menace token_type:zombie_knight
+tags: supertype:legendary cardtype:creature type:zombie type:knight kw:kicker num:5 color:black kw:menace evasion token_make trigger_scope:self trigger:etb tempo:+4 token_count:8 token_color:black token_pt:2/2 token_kw:menace token_type:zombie_knight
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=b_2_2_zombie_knight_menace,"",""
 groups[4]{id,source,tags}:
   k1,K line,kw:kicker num:5 color:black
   k2,K line,kw:menace
-  c1,T line,trigger_scope:self trigger:etb tempo:+8
+  c1,T line,trigger_scope:self trigger:etb tempo:+4
   c1.2,sub-ability of c1,token_count:8 token_color:black token_pt:2/2 token_kw:menace token_type:zombie_knight
 mtgish: rules=Kicker Menace TriggerI
 forge_ai: AILogic=-
 
 card: Sengir Autocrat
-tags: cardtype:creature type:human token_make trigger_scope:self trigger:etb tempo:+3 token_count:3 token_color:black token_pt:0/1 token_type:serf trigger:leaves target_count:all target_type:serf remove:exile
+tags: cardtype:creature type:human token_make trigger_scope:self trigger:etb tempo:+1.5 token_count:3 token_color:black token_pt:0/1 token_type:serf trigger:leaves target_count:all target_type:serf remove:exile
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=b_0_1_serf,"",""
   c2,leaves_self,"",changezoneall,"","",""
 groups[4]{id,source,tags}:
-  c1,T line,trigger_scope:self trigger:etb tempo:+3
+  c1,T line,trigger_scope:self trigger:etb tempo:+1.5
   c1.2,sub-ability of c1,token_count:3 token_color:black token_pt:0/1 token_type:serf
   c2,T line,trigger_scope:self trigger:leaves
   c2.2,sub-ability of c2,target_count:all target_type:serf remove:exile
@@ -829,22 +827,22 @@ mtgish: rules=Activated TriggerA
 forge_ai: AILogic=-
 
 card: Forest
-tags: supertype:basic cardtype:land landtype:forest mana_source mana:green trigger:tap enters_untapped
+tags: supertype:basic cardtype:land landtype:forest mana_source mana:green mana_amount:1 trigger:tap enters_untapped
 clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   c0:mana_source,produces,c0:mana:green
 groups[1]{id,source,tags}:
-  c0,card,mana_source mana:green trigger:tap enters_untapped
+  c0,card,mana_source mana:green mana_amount:1 trigger:tap enters_untapped
 mtgish: rules=
 forge_ai: AILogic=-
 
 card: Search for Tomorrow
-tags: cardtype:sorcery kw:suspend num:2 color:green land_tutor tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield put_from:library tempo:0
+tags: cardtype:sorcery kw:suspend num:2 color:green land_tutor tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield put_from:library
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone,"","",""
 groups[2]{id,source,tags}:
   k1,K line,kw:suspend num:2 color:green
-  c1,A line,tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield put_from:library tempo:0
+  c1,A line,tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield put_from:library
 mtgish: rules=SpellActions Suspend
 forge_ai: AILogic=-
 
@@ -901,7 +899,7 @@ mtgish: rules=Reach Deathtouch
 forge_ai: AILogic=-
 
 card: Aftermath Analyst
-tags: cardtype:creature type:elf type:detective reanimate sacrifice_outlet self_mill trigger_scope:self trigger:etb cost:sacrifice cost_sacrifice_target:self cost:mana target_count:all target_type:land target_scope:you_control put_onto_battlefield put_from:graveyard put_tapped tempo:0
+tags: cardtype:creature type:elf type:detective reanimate sacrifice_outlet self_mill trigger_scope:self trigger:etb cost:sacrifice cost_sacrifice_target:self cost:mana target_count:all target_type:land target_scope:you_control put_onto_battlefield put_from:graveyard put_tapped
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",mill,numcards=3,Defined=You,""
   c2,activated,3 G Sac<1/CARDNAME>,changezoneall,"","",""
@@ -909,16 +907,16 @@ links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:etb
-  c2,A line,cost:sacrifice cost_sacrifice_target:self cost:mana target_count:all target_type:land target_scope:you_control put_onto_battlefield put_from:graveyard put_tapped reanimate tempo:0
+  c2,A line,cost:sacrifice cost_sacrifice_target:self cost:mana target_count:all target_type:land target_scope:you_control put_onto_battlefield put_from:graveyard put_tapped reanimate
 mtgish: rules=TriggerA Activated
 forge_ai: AILogic=-
 
 card: Sakura-Tribe Elder
-tags: cardtype:creature type:snake type:shaman land_tutor sacrifice_outlet cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
+tags: cardtype:creature type:snake type:shaman land_tutor sacrifice_outlet cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,Sac<1/CARDNAME>,changezone,"","",""
 groups[1]{id,source,tags}:
-  c1,A line,cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
+  c1,A line,cost:sacrifice cost_sacrifice_target:self tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -964,18 +962,18 @@ mtgish: rules=Activated
 forge_ai: AILogic=-
 
 card: Tireless Provisioner
-tags: cardtype:creature type:elf type:scout artifact_token token_make trigger_scope:other trigger:etb tempo:+2 token_count:1 token_color:colorless token_cardtype:artifact token_type:food lifegain token_type:treasure mana_source
+tags: cardtype:creature type:elf type:scout artifact_token token_make trigger_scope:other trigger:etb tempo:+1 token_count:1 token_color:colorless token_cardtype:artifact token_type:food lifegain token_type:treasure mana_source
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_other,"",genericchoice,"",Defined=You,""
 groups[3]{id,source,tags}:
-  c1,T line,trigger_scope:other trigger:etb tempo:+2
+  c1,T line,trigger_scope:other trigger:etb tempo:+1
   c1.3,sub-ability of c1,token_count:1 token_color:colorless token_cardtype:artifact token_type:food lifegain
   c1.4,sub-ability of c1,token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
 mtgish: rules=TriggerA
 forge_ai: AILogic=FoodOrTreasure
 
 card: Llanowar Visionary
-tags: cardtype:creature type:elf type:druid draw mana_source trigger_scope:self trigger:etb tempo:+1 draw_count:1 cost:tap mana:green
+tags: cardtype:creature type:elf type:druid draw mana_source trigger_scope:self trigger:etb tempo:+1 draw_count:1 cost:tap mana:green mana_amount:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",draw,numcards=1,Defined=You,""
   c2,activated,T,mana,"","",""
@@ -985,7 +983,7 @@ links[2]{from,rel,to}:
 groups[3]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:etb tempo:+1
   c1.2,sub-ability of c1,draw_count:1
-  c2,A line,cost:tap mana_source mana:green
+  c2,A line,cost:tap mana_source mana:green mana_amount:1
 mtgish: rules=TriggerA Activated
 forge_ai: AILogic=-
 
@@ -1010,14 +1008,14 @@ mtgish: rules=Defender TriggerA
 forge_ai: AILogic=-
 
 card: Yavimaya Elder
-tags: cardtype:creature type:human type:druid draw land_tutor sacrifice_outlet trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+2 tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:hand shuffle cost:sacrifice cost_sacrifice_target:self cost:mana draw_count:1 tempo:0
+tags: cardtype:creature type:human type:druid draw land_tutor sacrifice_outlet trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+2 tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:hand shuffle cost:sacrifice cost_sacrifice_target:self cost:mana draw_count:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",changezone,"","",""
   c2,activated,2 Sac<1/CARDNAME>,draw,numcards=1,"",""
 groups[3]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+2
   c1.2,sub-ability of c1,tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:hand shuffle
-  c2,A line,cost:sacrifice cost_sacrifice_target:self cost:mana draw_count:1 tempo:0
+  c2,A line,cost:sacrifice cost_sacrifice_target:self cost:mana draw_count:1
 mtgish: rules=TriggerA Activated
 forge_ai: AILogic=-
 
@@ -1032,31 +1030,31 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Thrashing Brontodon
-tags: cardtype:creature type:dinosaur sacrifice_outlet cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact target_type:enchantment remove:destroy tempo:-1
+tags: cardtype:creature type:dinosaur sacrifice_outlet cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact target_type:enchantment remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 Sac<1/CARDNAME>,destroy,"","ValidTgts=Artifact,Enchantment",""
 groups[1]{id,source,tags}:
-  c1,A line,cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact target_type:enchantment remove:destroy tempo:-1
+  c1,A line,cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact target_type:enchantment remove:destroy
 mtgish: rules=Activated
 forge_ai: AILogic=AtEOTIfNotAttacking
 
 card: Professor of Zoomancy
-tags: cardtype:creature type:bear type:druid token_make trigger_scope:self trigger:etb tempo:+1 token_count:1 token_color:black token_color:green token_pt:1/1 token_type:pest_lifegain
+tags: cardtype:creature type:bear type:druid token_make trigger_scope:self trigger:etb tempo:+0.5 token_count:1 token_color:black token_color:green token_pt:1/1 token_type:pest_lifegain
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=bg_1_1_pest_lifegain,"",""
 groups[2]{id,source,tags}:
-  c1,T line,trigger_scope:self trigger:etb tempo:+1
+  c1,T line,trigger_scope:self trigger:etb tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:black token_color:green token_pt:1/1 token_type:pest_lifegain
 mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Fierce Witchstalker
-tags: cardtype:creature type:wolf kw:trample artifact_token token_make trigger_scope:self trigger:etb tempo:+1 token_count:1 token_color:colorless token_cardtype:artifact token_type:food lifegain
+tags: cardtype:creature type:wolf kw:trample artifact_token token_make trigger_scope:self trigger:etb tempo:+0.5 token_count:1 token_color:colorless token_cardtype:artifact token_type:food lifegain
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_a_food_sac,"",""
 groups[3]{id,source,tags}:
   k1,K line,kw:trample
-  c1,T line,trigger_scope:self trigger:etb tempo:+1
+  c1,T line,trigger_scope:self trigger:etb tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:colorless token_cardtype:artifact token_type:food lifegain
 mtgish: rules=Trample TriggerA
 forge_ai: AILogic=-
@@ -1075,12 +1073,12 @@ mtgish: rules=Trample TriggerA
 forge_ai: AILogic=-
 
 card: Ravenous Baloth
-tags: cardtype:creature type:beast lifegain sacrifice_outlet cost:sacrifice cost_sacrifice_target:beast tempo:-1
+tags: cardtype:creature type:beast lifegain sacrifice_outlet cost:sacrifice cost_sacrifice_target:beast
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,Sac<1/Beast>,gainlife,lifeamount=4,"",""
 groups[2]{id,source,tags}:
   c0,card,sacrifice_outlet
-  c1,A line,cost:sacrifice cost_sacrifice_target:beast tempo:-1
+  c1,A line,cost:sacrifice cost_sacrifice_target:beast
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -1114,7 +1112,7 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Thragtusk
-tags: cardtype:creature type:beast lifegain token_make trigger_scope:self trigger:etb trigger:leaves tempo:+1 token_count:1 token_color:green token_pt:3/3 token_type:beast
+tags: cardtype:creature type:beast lifegain token_make trigger_scope:self trigger:etb trigger:leaves tempo:+0.5 token_count:1 token_color:green token_pt:3/3 token_type:beast
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",gainlife,lifeamount=5,Defined=You,""
   c2,leaves_self,"",token,tokenscript=g_3_3_beast,"",""
@@ -1122,7 +1120,7 @@ links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[3]{id,source,tags}:
   c1,T line,trigger_scope:self trigger:etb
-  c2,T line,trigger_scope:self trigger:leaves tempo:+1
+  c2,T line,trigger_scope:self trigger:leaves tempo:+0.5
   c2.2,sub-ability of c2,token_count:1 token_color:green token_pt:3/3 token_type:beast
 mtgish: rules=TriggerA TriggerA
 forge_ai: AILogic=-
@@ -1169,12 +1167,12 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Rampaging Baloths
-tags: cardtype:creature type:beast kw:trample token_make trigger_scope:other trigger:etb tempo:+1 token_count:1 token_color:green token_pt:4/4 token_type:beast
+tags: cardtype:creature type:beast kw:trample token_make trigger_scope:other trigger:etb tempo:+0.5 token_count:1 token_color:green token_pt:4/4 token_type:beast
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_other,"",token,tokenscript=g_4_4_beast,"",""
 groups[3]{id,source,tags}:
   k1,K line,kw:trample
-  c1,T line,trigger_scope:other trigger:etb tempo:+1
+  c1,T line,trigger_scope:other trigger:etb tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:green token_pt:4/4 token_type:beast
 mtgish: rules=Trample TriggerA
 forge_ai: AILogic=-
@@ -1201,24 +1199,24 @@ mtgish: rules=Trample
 forge_ai: AILogic=-
 
 card: Bite Down
-tags: cardtype:instant duration:eot target_count:one target_type:creature target_scope:you_control tempo:-1 target_scope:opp_control target_type:planeswalker damage
+tags: cardtype:instant duration:eot target_count:one target_type:creature target_scope:you_control target_scope:opp_control target_type:planeswalker damage
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+dealdamage,numdmg=X,"ValidTgts=Creature.YouCtrl ValidTgts=Creature.YouDontCtrl,Planeswalker.YouDontCtrl",duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:you_control tempo:-1 duration:eot
+  c1,A line,target_count:one target_type:creature target_scope:you_control duration:eot
   c1.2,sub-ability of c1,target_count:one target_type:creature target_scope:opp_control target_type:planeswalker damage
 mtgish: rules=SpellActions
 forge_ai: AILogic=PowerDmg
 
 card: Prey Upon
-tags: cardtype:sorcery removal target_count:one target_type:creature target_scope:you_control tempo:-1 target_scope:opp_control
+tags: cardtype:sorcery removal target_count:one target_type:creature target_scope:you_control target_scope:opp_control
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+fight,"",ValidTgts=Creature.YouCtrl ValidTgts=Creature.YouDontCtrl Defined=ParentTarget,duration:eot(forge_default)
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:you_control tempo:-1
+  c1,A line,target_count:one target_type:creature target_scope:you_control
   c1.2,sub-ability of c1,target_count:one target_type:creature target_scope:opp_control
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
@@ -1238,24 +1236,24 @@ mtgish: rules=Permanent_Gift Reach TriggerI
 forge_ai: AILogic=-
 
 card: Ram Through
-tags: cardtype:instant duration:eot target_count:one target_type:creature target_scope:you_control tempo:-1 target_scope:opp_control damage
+tags: cardtype:instant duration:eot target_count:one target_type:creature target_scope:you_control target_scope:opp_control damage
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+dealdamage,numdmg=X,ValidTgts=Creature.YouCtrl ValidTgts=Creature.YouDontCtrl,duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:you_control tempo:-1 duration:eot
+  c1,A line,target_count:one target_type:creature target_scope:you_control duration:eot
   c1.2,sub-ability of c1,target_count:one target_type:creature target_scope:opp_control damage
 mtgish: rules=SpellActions
 forge_ai: AILogic=PowerDmg
 
 card: Plummet
-tags: cardtype:instant target_count:one target_type:creature remove:destroy tempo:-1
+tags: cardtype:instant target_count:one target_type:creature remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy,"",ValidTgts=Creature.withFlying,""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature remove:destroy tempo:-1
+  c1,A line,target_count:one target_type:creature remove:destroy
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -1271,22 +1269,22 @@ mtgish: rules=Infect TriggerA
 forge_ai: AILogic=-
 
 card: Naturalize
-tags: cardtype:instant target_count:one target_type:artifact target_type:enchantment remove:destroy tempo:-1
+tags: cardtype:instant target_count:one target_type:artifact target_type:enchantment remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy,"","ValidTgts=Artifact,Enchantment",""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:artifact target_type:enchantment remove:destroy tempo:-1
+  c1,A line,target_count:one target_type:artifact target_type:enchantment remove:destroy
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Hunt the Weak
-tags: cardtype:sorcery counters_plus removal target_count:one target_type:creature target_scope:you_control counter:p1p1 tempo:-1 target_scope:opp_control
+tags: cardtype:sorcery counters_plus removal target_count:one target_type:creature target_scope:you_control counter:p1p1 target_scope:opp_control
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",putcounter+fight,countertype=P1P1,ValidTgts=Creature.YouCtrl ValidTgts=Creature.YouDontCtrl Defined=ParentTarget,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:you_control counter:p1p1 tempo:-1
+  c1,A line,target_count:one target_type:creature target_scope:you_control counter:p1p1
   c1.2,sub-ability of c1,target_count:one target_type:creature target_scope:opp_control
 mtgish: rules=SpellActions
 forge_ai: AILogic=Always/Fight
@@ -1374,31 +1372,31 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Giant Growth
-tags: cardtype:instant duration:eot pump_single target_count:one target_type:creature tempo:-1
+tags: cardtype:instant duration:eot pump_single target_count:one target_type:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump,numatt=+3 numdef=+3,ValidTgts=Creature,duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature tempo:-1 duration:eot pump_single
+  c1,A line,target_count:one target_type:creature duration:eot pump_single
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Snakeskin Veil
-tags: cardtype:instant duration:eot hexproof counters_plus protection_trick target_count:one target_type:creature target_scope:you_control counter:p1p1 tempo:-1
+tags: cardtype:instant duration:eot hexproof counters_plus protection_trick target_count:one target_type:creature target_scope:you_control counter:p1p1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",putcounter+pump,countertype=P1P1 hexproof,ValidTgts=Creature.YouCtrl Defined=Targeted,duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:you_control counter:p1p1 tempo:-1 duration:eot hexproof
+  c1,A line,target_count:one target_type:creature target_scope:you_control counter:p1p1 duration:eot hexproof
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Vines of Vastwood
-tags: cardtype:instant kw:kicker color:green duration:eot pump_single target_count:one target_type:creature tempo:-1
+tags: cardtype:instant kw:kicker color:green duration:eot pump_single target_count:one target_type:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+effect,numatt=+X numdef=+X,ValidTgts=Creature Defined=Targeted,duration:eot(forge_default)
 links[2]{from,rel,to}:
@@ -1406,7 +1404,7 @@ links[2]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
   k1,K line,kw:kicker color:green
-  c1,A line,target_count:one target_type:creature tempo:-1 duration:eot
+  c1,A line,target_count:one target_type:creature duration:eot
 mtgish: rules=SpellActions_Kicker
 forge_ai: AILogic=Always
 
@@ -1427,37 +1425,36 @@ mtgish: rules=EnchantPermanent PermanentLayerEffect TriggerA
 forge_ai: AILogic=Pump
 
 card: Explore
-tags: cardtype:sorcery draw tempo:0 draw_count:1
+tags: cardtype:sorcery draw draw_count:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",effect+draw,numcards=1,Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
-groups[2]{id,source,tags}:
-  c1,A line,tempo:0
+groups[1]{id,source,tags}:
   c1.2,sub-ability of c1,draw_count:1
 mtgish: rules=SpellActions
 forge_ai: AILogic=Always
 
 card: Titanic Growth
-tags: cardtype:instant duration:eot pump_single target_count:one target_type:creature tempo:-1
+tags: cardtype:instant duration:eot pump_single target_count:one target_type:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump,numatt=+4 numdef=+4,ValidTgts=Creature,duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature tempo:-1 duration:eot pump_single
+  c1,A line,target_count:one target_type:creature duration:eot pump_single
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Overrun
-tags: cardtype:sorcery duration:eot trample pump_team target_count:all target_type:creature target_scope:you_control tempo:-1
+tags: cardtype:sorcery duration:eot trample pump_team target_count:all target_type:creature target_scope:you_control
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pumpall,trample numatt=+3 numdef=+3,"",duration:eot(forge_default)
 links[1]{from,rel,to}:
   c1:payload,lasts,c1:duration
 groups[1]{id,source,tags}:
-  c1,A line,target_count:all target_type:creature target_scope:you_control tempo:-1 duration:eot trample
+  c1,A line,target_count:all target_type:creature target_scope:you_control duration:eot trample
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -1476,11 +1473,11 @@ mtgish: rules=TriggerA Activated
 forge_ai: AILogic=-
 
 card: Harrow
-tags: cardtype:instant land_tutor cost:sacrifice cost_sacrifice_target:land cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield put_from:library tempo:0
+tags: cardtype:instant land_tutor cost:sacrifice cost_sacrifice_target:land cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield put_from:library
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,2 G Sac<1/Land>,changezone,"","",""
 groups[1]{id,source,tags}:
-  c1,A line,cost:sacrifice cost_sacrifice_target:land cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield put_from:library tempo:0
+  c1,A line,cost:sacrifice cost_sacrifice_target:land cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield put_from:library
 mtgish: rules=CastEffect SpellActions
 forge_ai: AILogic=- AIPreference
 
@@ -1496,13 +1493,13 @@ mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Pulse of Murasa
-tags: cardtype:instant lifegain recursion target_count:one target_type:creature target_type:land target_zone:graveyard tempo:0
+tags: cardtype:instant lifegain recursion target_count:one target_type:creature target_type:land target_zone:graveyard
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone+gainlife,lifeamount=6,"ValidTgts=Creature,Land Defined=You",""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_type:land target_zone:graveyard tempo:0
+  c1,A line,target_count:one target_type:creature target_type:land target_zone:graveyard
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -1521,7 +1518,7 @@ mtgish: rules=
 forge_ai: AILogic=-
 
 card: "Bosco, Just a Bear"
-tags: supertype:legendary cardtype:creature type:bear duration:eot trample artifact_token counters_plus sacrifice_outlet token_make trigger_scope:self trigger:etb tempo:x token_count:x token_color:colorless token_cardtype:artifact token_type:food lifegain cost:sacrifice cost_sacrifice_target:food cost:mana counter:p1p1 tempo:-1
+tags: supertype:legendary cardtype:creature type:bear duration:eot trample artifact_token counters_plus sacrifice_outlet token_make trigger_scope:self trigger:etb tempo:x token_count:x token_color:colorless token_cardtype:artifact token_type:food lifegain cost:sacrifice cost_sacrifice_target:food cost:mana counter:p1p1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_a_food_sac,"",""
   c2,activated,2 G Sac<1/Food>,putcounter+pump,countertype=P1P1 trample,Defined=Self Defined=Self,duration:eot(forge_default)
@@ -1532,7 +1529,7 @@ groups[4]{id,source,tags}:
   c0,card,sacrifice_outlet
   c1,T line,trigger_scope:self trigger:etb tempo:x
   c1.2,sub-ability of c1,token_count:x token_color:colorless token_cardtype:artifact token_type:food lifegain
-  c2,A line,cost:sacrifice cost_sacrifice_target:food cost:mana counter:p1p1 tempo:-1 duration:eot trample
+  c2,A line,cost:sacrifice cost_sacrifice_target:food cost:mana counter:p1p1 duration:eot trample
 mtgish: rules=TriggerA Activated
 forge_ai: AILogic=-
 
@@ -1567,24 +1564,24 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Epic Confrontation
-tags: cardtype:sorcery duration:eot pump_single removal target_count:one target_type:creature target_scope:you_control tempo:-1 target_scope:opp_control
+tags: cardtype:sorcery duration:eot pump_single removal target_count:one target_type:creature target_scope:you_control target_scope:opp_control
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+fight,numatt=+1 numdef=+2,ValidTgts=Creature.YouCtrl ValidTgts=Creature.YouDontCtrl Defined=ParentTarget,duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:you_control tempo:-1 duration:eot
+  c1,A line,target_count:one target_type:creature target_scope:you_control duration:eot
   c1.2,sub-ability of c1,target_count:one target_type:creature target_scope:opp_control
 mtgish: rules=SpellActions
 forge_ai: AILogic=Fight
 
 card: Pounce
-tags: cardtype:instant removal target_count:one target_type:creature target_scope:you_control tempo:-1 target_scope:opp_control
+tags: cardtype:instant removal target_count:one target_type:creature target_scope:you_control target_scope:opp_control
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+fight,"",ValidTgts=Creature.YouCtrl ValidTgts=Creature.YouDontCtrl Defined=ParentTarget,duration:eot(forge_default)
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:you_control tempo:-1
+  c1,A line,target_count:one target_type:creature target_scope:you_control
   c1.2,sub-ability of c1,target_count:one target_type:creature target_scope:opp_control
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
@@ -1605,37 +1602,39 @@ mtgish: rules=PlayerEffect TriggerA
 forge_ai: AILogic=-
 
 card: "Breeches, Eager Pillager"
-tags: supertype:legendary cardtype:creature type:goblin type:pirate kw:first_strike artifact_token selection token_make trigger:attacks tempo:+1 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source target_count:one target_type:creature cant_block impulse_draw duration:eot
+tags: supertype:legendary cardtype:creature type:goblin type:pirate kw:first_strike artifact_token selection token_make trigger:attacks tempo:+1.5 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source target_count:one target_type:creature cant_block restrict impulse_draw impulse_draw_count:1 duration:eot
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attacks,"",charm,"","",""
+links[1]{from,rel,to}:
+  c1.6:impulse_draw,pairs_with,c1.6:impulse_draw_count:1
 groups[5]{id,source,tags}:
   k1,K line,kw:first_strike
-  c1,T line,trigger:attacks tempo:+1
+  c1,T line,trigger:attacks tempo:+1.5
   c1.3,sub-ability of c1,token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
-  c1.4,sub-ability of c1,target_count:one target_type:creature cant_block
-  c1.6,sub-ability of c1,impulse_draw duration:eot
+  c1.4,sub-ability of c1,target_count:one target_type:creature cant_block restrict
+  c1.6,sub-ability of c1,impulse_draw impulse_draw_count:1 duration:eot
 mtgish: rules=FirstStrike TriggerA
 forge_ai: AILogic=-
 
 card: Mountain
-tags: supertype:basic cardtype:land landtype:mountain mana_source mana:red trigger:tap enters_untapped
+tags: supertype:basic cardtype:land landtype:mountain mana_source mana:red mana_amount:1 trigger:tap enters_untapped
 clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   c0:mana_source,produces,c0:mana:red
 groups[1]{id,source,tags}:
-  c0,card,mana_source mana:red trigger:tap enters_untapped
+  c0,card,mana_source mana:red mana_amount:1 trigger:tap enters_untapped
 mtgish: rules=
 forge_ai: AILogic=-
 
 card: Fanatical Firebrand
-tags: cardtype:creature type:goblin type:pirate kw:haste burn sacrifice_outlet cost:tap cost:sacrifice cost_sacrifice_target:self target_count:one target_type:any damage damage_amount:1 tempo:-1
+tags: cardtype:creature type:goblin type:pirate kw:haste burn sacrifice_outlet cost:tap cost:sacrifice cost_sacrifice_target:self target_count:one target_type:any damage damage_amount:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T Sac<1/CARDNAME>,dealdamage,numdmg=1,ValidTgts=Any,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
   k1,K line,kw:haste
-  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self target_count:one target_type:any damage damage_amount:1 tempo:-1
+  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self target_count:one target_type:any damage damage_amount:1
 mtgish: rules=Haste Activated
 forge_ai: AILogic=-
 
@@ -1652,35 +1651,37 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Dire Fleet Daredevil
-tags: cardtype:creature type:human type:pirate kw:first_strike trigger_scope:self trigger:etb target_count:one target_type:instant target_type:sorcery target_zone:graveyard exile_from:graveyard impulse_draw duration:eot
+tags: cardtype:creature type:human type:pirate kw:first_strike trigger_scope:self trigger:etb tempo:+1 target_count:one target_type:instant target_type:sorcery target_zone:graveyard exile_from:graveyard impulse_draw impulse_draw_count:1 duration:eot
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone+effect+effect+cleanup,"","ValidTgts=Instant.OppOwn,Sorcery.OppOwn",""
+links[1]{from,rel,to}:
+  c1.3:impulse_draw,pairs_with,c1.3:impulse_draw_count:1
 groups[4]{id,source,tags}:
   k1,K line,kw:first_strike
-  c1,T line,trigger_scope:self trigger:etb
+  c1,T line,trigger_scope:self trigger:etb tempo:+1
   c1.2,sub-ability of c1,target_count:one target_type:instant target_type:sorcery target_zone:graveyard exile_from:graveyard
-  c1.3,sub-ability of c1,impulse_draw duration:eot
+  c1.3,sub-ability of c1,impulse_draw impulse_draw_count:1 duration:eot
 mtgish: rules=FirstStrike TriggerA
 forge_ai: AILogic=-
 
 card: Young Pyromancer
-tags: cardtype:creature type:human type:shaman token_make trigger:spell_cast trigger_filter:instant trigger_filter:sorcery tempo:+1 token_count:1 token_color:red token_pt:1/1 token_type:elemental
+tags: cardtype:creature type:human type:shaman token_make trigger:spell_cast trigger_filter:instant trigger_filter:sorcery tempo:+0.5 token_count:1 token_color:red token_pt:1/1 token_type:elemental
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell_cast,"",token,tokenscript=r_1_1_elemental,"",""
 groups[2]{id,source,tags}:
-  c1,T line,trigger:spell_cast trigger_filter:instant trigger_filter:sorcery tempo:+1
+  c1,T line,trigger:spell_cast trigger_filter:instant trigger_filter:sorcery tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:red token_pt:1/1 token_type:elemental
 mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Ember Hauler
-tags: cardtype:creature type:goblin burn sacrifice_outlet cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:any damage damage_amount:2 tempo:-1
+tags: cardtype:creature type:goblin burn sacrifice_outlet cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:any damage damage_amount:2
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 Sac<1/CARDNAME>,dealdamage,numdmg=2,ValidTgts=Any,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:any damage damage_amount:2 tempo:-1
+  c1,A line,cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:any damage damage_amount:2
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -1697,11 +1698,11 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Goblin Instigator
-tags: cardtype:creature type:goblin type:rogue token_make trigger_scope:self trigger:etb tempo:+1 token_count:1 token_color:red token_pt:1/1 token_type:goblin
+tags: cardtype:creature type:goblin type:rogue token_make trigger_scope:self trigger:etb tempo:+0.5 token_count:1 token_color:red token_pt:1/1 token_type:goblin
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=r_1_1_goblin,"",""
 groups[2]{id,source,tags}:
-  c1,T line,trigger_scope:self trigger:etb tempo:+1
+  c1,T line,trigger_scope:self trigger:etb tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:red token_pt:1/1 token_type:goblin
 mtgish: rules=TriggerA
 forge_ai: AILogic=-
@@ -1719,14 +1720,14 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Impulsive Pilferer
-tags: cardtype:creature type:goblin type:pirate kw:encore num:3 color:red token_make artifact_token trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+1 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
+tags: cardtype:creature type:goblin type:pirate kw:encore num:3 color:red token_make artifact_token trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+0.5 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",token,tokenscript=c_a_treasure_sac,"",""
 links[1]{from,rel,to}:
   k1,provides,token_make
 groups[3]{id,source,tags}:
   k1,K line,kw:encore num:3 color:red
-  c1,T line,trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+1
+  c1,T line,trigger_scope:self trigger:dies trigger_zone:graveyard tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
 mtgish: rules=TriggerA Encore
 forge_ai: AILogic=-
@@ -1760,11 +1761,11 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Torch Fiend
-tags: cardtype:creature type:devil sacrifice_outlet cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact remove:destroy tempo:-1
+tags: cardtype:creature type:devil sacrifice_outlet cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,R Sac<1/CARDNAME>,destroy,"",ValidTgts=Artifact,""
 groups[1]{id,source,tags}:
-  c1,A line,cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact remove:destroy tempo:-1
+  c1,A line,cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact remove:destroy
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -1800,7 +1801,7 @@ mtgish: rules=Haste
 forge_ai: AILogic=-
 
 card: Legion Warboss
-tags: cardtype:creature type:goblin type:soldier kw:mentor counters_plus token_make tempo:+1 token_count:1 token_color:red token_pt:1/1 token_type:goblin
+tags: cardtype:creature type:goblin type:soldier kw:mentor counters_plus token_make tempo:+0.5 token_count:1 token_color:red token_pt:1/1 token_type:goblin
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,phase,"",token+effect+cleanup,tokenscript=r_1_1_goblin,"",duration:UntilEndOfCombat
 links[2]{from,rel,to}:
@@ -1808,7 +1809,7 @@ links[2]{from,rel,to}:
   k1,provides,counters_plus
 groups[3]{id,source,tags}:
   k1,K line,kw:mentor
-  c1,T line,tempo:+1
+  c1,T line,tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:red token_pt:1/1 token_type:goblin
 mtgish: rules=Mentor TriggerA
 forge_ai: AILogic=-
@@ -1824,7 +1825,7 @@ mtgish: rules=Haste TriggerA
 forge_ai: AILogic=-
 
 card: Goblin Rabblemaster
-tags: cardtype:creature type:goblin type:warrior duration:eot scales:goblin token_make must_attack affects:goblin tempo:+1 token_count:1 token_color:red token_pt:1/1 token_kw:haste token_type:goblin trigger:attacks
+tags: cardtype:creature type:goblin type:warrior duration:eot scales:goblin token_make must_attack affects:goblin tempo:+0.5 token_count:1 token_color:red token_pt:1/1 token_kw:haste token_type:goblin trigger:attacks
 clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_mustattack,"","",""
   c2,phase,"",token,tokenscript=r_1_1_goblin_haste,"",""
@@ -1834,7 +1835,7 @@ links[2]{from,rel,to}:
   c3:affected,receives,c3:payload
 groups[4]{id,source,tags}:
   c1,S line,must_attack affects:goblin
-  c2,T line,tempo:+1
+  c2,T line,tempo:+0.5
   c2.2,sub-ability of c2,token_count:1 token_color:red token_pt:1/1 token_kw:haste token_type:goblin
   c3,T line,trigger:attacks duration:eot
 mtgish: rules=EachPermanentRuleEffect TriggerA TriggerA
@@ -1900,27 +1901,27 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Beetleback Chief
-tags: cardtype:creature type:goblin type:warrior token_make trigger_scope:self trigger:etb tempo:+2 token_count:2 token_color:red token_pt:1/1 token_type:goblin
+tags: cardtype:creature type:goblin type:warrior token_make trigger_scope:self trigger:etb tempo:+1 token_count:2 token_color:red token_pt:1/1 token_type:goblin
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=r_1_1_goblin,"",""
 groups[2]{id,source,tags}:
-  c1,T line,trigger_scope:self trigger:etb tempo:+2
+  c1,T line,trigger_scope:self trigger:etb tempo:+1
   c1.2,sub-ability of c1,token_count:2 token_color:red token_pt:1/1 token_type:goblin
 mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Thunderhead Gunner
-tags: cardtype:creature type:shark type:pirate kw:reach discard draw cost:discard draw_count:1 tempo:0
+tags: cardtype:creature type:shark type:pirate kw:reach discard draw cost:discard draw_count:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,Discard<1/Card>,draw,"","",""
 groups[2]{id,source,tags}:
   k1,K line,kw:reach
-  c1,A line,cost:discard draw_count:1 tempo:0
+  c1,A line,cost:discard draw_count:1
 mtgish: rules=Reach ActivatedWithModifiers
 forge_ai: AILogic=-
 
 card: Goblin Heelcutter
-tags: cardtype:creature type:goblin type:berserker kw:dash num:2 color:red duration:eot pump_single trigger:attacks target_count:one target_type:creature cant_block
+tags: cardtype:creature type:goblin type:berserker kw:dash num:2 color:red duration:eot pump_single trigger:attacks target_count:one target_type:creature cant_block restrict
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attacks,"",pump,hidden_cardname_can_t_block,ValidTgts=Creature,duration:eot(forge_default)
 links[2]{from,rel,to}:
@@ -1929,7 +1930,7 @@ links[2]{from,rel,to}:
 groups[3]{id,source,tags}:
   k1,K line,kw:dash num:2 color:red
   c1,T line,trigger:attacks duration:eot pump_single
-  c1.2,sub-ability of c1,target_count:one target_type:creature cant_block
+  c1.2,sub-ability of c1,target_count:one target_type:creature cant_block restrict
 mtgish: rules=TriggerA Dash
 forge_ai: AILogic=-
 
@@ -1959,7 +1960,7 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: Siege-Gang Commander
-tags: cardtype:creature type:goblin burn sacrifice_outlet token_make cost:sacrifice cost_sacrifice_target:goblin cost:mana target_count:one target_type:any damage damage_amount:2 tempo:-1 trigger_scope:self trigger:etb tempo:+3 token_count:3 token_color:red token_pt:1/1 token_type:goblin
+tags: cardtype:creature type:goblin burn sacrifice_outlet token_make cost:sacrifice cost_sacrifice_target:goblin cost:mana target_count:one target_type:any damage damage_amount:2 trigger_scope:self trigger:etb tempo:+1.5 token_count:3 token_color:red token_pt:1/1 token_type:goblin
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 R Sac<1/Goblin>,dealdamage,numdmg=2,ValidTgts=Any,""
   c2,etb_self,"",token,tokenscript=r_1_1_goblin,"",""
@@ -1967,8 +1968,8 @@ links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[4]{id,source,tags}:
   c0,card,sacrifice_outlet
-  c1,A line,cost:sacrifice cost_sacrifice_target:goblin cost:mana target_count:one target_type:any damage damage_amount:2 tempo:-1
-  c2,T line,trigger_scope:self trigger:etb tempo:+3
+  c1,A line,cost:sacrifice cost_sacrifice_target:goblin cost:mana target_count:one target_type:any damage damage_amount:2
+  c2,T line,trigger_scope:self trigger:etb tempo:+1.5
   c2.2,sub-ability of c2,token_count:3 token_color:red token_pt:1/1 token_type:goblin
 mtgish: rules=TriggerA Activated
 forge_ai: AILogic=- AIPreference
@@ -1986,12 +1987,12 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: "Kiki-Jiki, Mirror Breaker"
-tags: supertype:legendary cardtype:creature type:goblin type:shaman kw:haste clone cost:tap target_count:one target_type:creature target_filter:nonlegendary target_scope:you_control token_make token_type:copy delayed:end_step effect:sacrifice duration:end_step tempo:+1
+tags: supertype:legendary cardtype:creature type:goblin type:shaman kw:haste clone cost:tap target_count:one target_type:creature target_filter:nonlegendary target_scope:you_control token_make token_type:copy delayed:end_step effect:sacrifice duration:end_step tempo:+0.5
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,copypermanent,"",ValidTgts=Creature.nonLegendary+YouCtrl,""
 groups[2]{id,source,tags}:
   k1,K line,kw:haste
-  c1,A line,cost:tap target_count:one target_type:creature target_filter:nonlegendary target_scope:you_control token_make token_type:copy delayed:end_step effect:sacrifice duration:end_step tempo:+1
+  c1,A line,cost:tap target_count:one target_type:creature target_filter:nonlegendary target_scope:you_control token_make token_type:copy delayed:end_step effect:sacrifice duration:end_step tempo:+0.5
 mtgish: rules=Haste Activated
 forge_ai: AILogic=-
 
@@ -2009,7 +2010,7 @@ mtgish: rules=CDA_Power TriggerA
 forge_ai: AILogic=-
 
 card: Fire Diamond
-tags: cardtype:artifact mana_source enters_tapped cost:tap mana:red
+tags: cardtype:artifact mana_source enters_tapped cost:tap mana:red mana_amount:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
   c2,replacement,"",replace_moved,"",ValidCard=Card.Self,""
@@ -2017,12 +2018,12 @@ links[1]{from,rel,to}:
   mana_source,produces,mana:red
 groups[2]{id,source,tags}:
   c0,card,enters_tapped
-  c1,A line,cost:tap mana_source mana:red
+  c1,A line,cost:tap mana_source mana:red mana_amount:1
 mtgish: rules=AsPermanentEnters Activated
 forge_ai: AILogic=-
 
 card: Glittering Stockpile
-tags: cardtype:artifact type:treasure fixing mana_source sacrifice_outlet scales:counters cost:tap mana:red counter:stash cost:sacrifice cost_sacrifice_target:self mana:any mana_amount:x tempo:-1
+tags: cardtype:artifact type:treasure fixing mana_source sacrifice_outlet scales:counters cost:tap mana:red mana_amount:1 counter:stash cost:sacrifice cost_sacrifice_target:self mana:any mana_amount:x
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana+putcounter,countertype=STASH,Defined=Self,""
   c2,activated,T Sac<1/CARDNAME>,mana,"","",""
@@ -2030,19 +2031,19 @@ links[2]{from,rel,to}:
   mana_source,produces,mana:red
   c1:affected,receives,c1:payload
 groups[3]{id,source,tags}:
-  c1,A line,cost:tap mana_source mana:red
+  c1,A line,cost:tap mana_source mana:red mana_amount:1
   c1.2,sub-ability of c1,counter:stash
-  c2,A line,cost:tap cost:sacrifice cost_sacrifice_target:self mana_source mana:any mana_amount:x tempo:-1
+  c2,A line,cost:tap cost:sacrifice cost_sacrifice_target:self mana_source mana:any mana_amount:x
 mtgish: rules=Activated Activated
 forge_ai: AILogic=-
 
 card: Loyal Apprentice
-tags: cardtype:creature type:human type:artificer kw:haste token_make tempo:+1 token_count:1 token_color:colorless token_pt:1/1 token_cardtype:artifact token_kw:flying token_type:thopter
+tags: cardtype:creature type:human type:artificer kw:haste token_make tempo:+0.5 token_count:1 token_color:colorless token_pt:1/1 token_cardtype:artifact token_kw:flying token_type:thopter
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,phase,"",token,tokenscript=c_1_1_a_thopter_flying,"",""
 groups[3]{id,source,tags}:
   k1,K line,kw:haste
-  c1,T line,tempo:+1
+  c1,T line,tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:colorless token_pt:1/1 token_cardtype:artifact token_kw:flying token_type:thopter
 mtgish: rules=Haste TriggerI
 forge_ai: AILogic=-
@@ -2074,35 +2075,35 @@ mtgish: rules=TriggerA If
 forge_ai: AILogic=-
 
 card: Searing Spear
-tags: cardtype:instant burn target_count:one target_type:any damage damage_amount:3 tempo:-1
+tags: cardtype:instant burn target_count:one target_type:any damage damage_amount:3
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dealdamage,numdmg=3,ValidTgts=Any,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:any damage damage_amount:3 tempo:-1
+  c1,A line,target_count:one target_type:any damage damage_amount:3
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Incinerate
-tags: cardtype:instant burn target_count:one target_type:any damage damage_amount:3 tempo:-1
+tags: cardtype:instant burn target_count:one target_type:any damage damage_amount:3
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dealdamage+effect+cleanup,numdmg=3,ValidTgts=Any,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:any damage damage_amount:3 tempo:-1
+  c1,A line,target_count:one target_type:any damage damage_amount:3
 mtgish: rules=SpellActions
 forge_ai: AILogic=CantRegenerate
 
 card: Lightning Strike
-tags: cardtype:instant burn target_count:one target_type:any damage damage_amount:3 tempo:-1
+tags: cardtype:instant burn target_count:one target_type:any damage damage_amount:3
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dealdamage,numdmg=3,ValidTgts=Any,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:any damage damage_amount:3 tempo:-1
+  c1,A line,target_count:one target_type:any damage damage_amount:3
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -2117,13 +2118,13 @@ mtgish: rules=Defender Activated
 forge_ai: AILogic=-
 
 card: Scorching Dragonfire
-tags: cardtype:instant target_count:one target_type:creature target_type:planeswalker damage damage_amount:3 die_replace:exile tempo:-1
+tags: cardtype:instant target_count:one target_type:creature target_type:planeswalker damage damage_amount:3 die_replace:exile
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dealdamage,numdmg=3,"ValidTgts=Creature,Planeswalker",""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_type:planeswalker damage damage_amount:3 die_replace:exile tempo:-1
+  c1,A line,target_count:one target_type:creature target_type:planeswalker damage damage_amount:3 die_replace:exile
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -2137,7 +2138,7 @@ mtgish: rules=PlayerEffect
 forge_ai: AILogic=-
 
 card: Storm-Kiln Artist
-tags: cardtype:creature type:dwarf type:shaman artifact_token scales:artifact token_make trigger:spell_cast trigger_filter:instant trigger_filter:sorcery tempo:+1 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
+tags: cardtype:creature type:dwarf type:shaman artifact_token scales:artifact token_make trigger:spell_cast trigger_filter:instant trigger_filter:sorcery tempo:+0.5 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,addpower=X,AffectedDefined=Self,duration:static
   c2,spellcastorcopy,"",token,tokenscript=c_a_treasure_sac,"",""
@@ -2145,7 +2146,7 @@ links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c2,T line,trigger:spell_cast trigger_filter:instant trigger_filter:sorcery tempo:+1
+  c2,T line,trigger:spell_cast trigger_filter:instant trigger_filter:sorcery tempo:+0.5
   c2.2,sub-ability of c2,token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
 mtgish: rules=PermanentLayerEffect TriggerA
 forge_ai: AILogic=-
@@ -2199,116 +2200,118 @@ mtgish: rules=EachPermanentLayerEffect
 forge_ai: AILogic=-
 
 card: Thrill of Possibility
-tags: cardtype:instant discard draw cost:discard cost:mana draw_count:2 tempo:0
+tags: cardtype:instant discard draw cost:discard cost:mana draw_count:2
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,1 R Discard<1/Card>,draw,numcards=2,Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,cost:discard cost:mana draw_count:2 tempo:0
+  c1,A line,cost:discard cost:mana draw_count:2
 mtgish: rules=CastEffect SpellActions
 forge_ai: AILogic=-
 
 card: Tormenting Voice
-tags: cardtype:sorcery discard draw cost:discard cost:mana draw_count:2 tempo:0
+tags: cardtype:sorcery discard draw cost:discard cost:mana draw_count:2
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,1 R Discard<1/Card>,draw,numcards=2,Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,cost:discard cost:mana draw_count:2 tempo:0
+  c1,A line,cost:discard cost:mana draw_count:2
 mtgish: rules=CastEffect SpellActions
 forge_ai: AILogic=-
 
 card: Big Score
-tags: cardtype:instant artifact_token discard draw token_make cost:discard cost:mana draw_count:2 tempo:+2 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
+tags: cardtype:instant artifact_token discard draw token_make cost:discard cost:mana draw_count:2 tempo:+1 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,3 R Discard<1/Card/card>,draw+token,numcards=2 tokenscript=c_a_treasure_sac,Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,cost:discard cost:mana draw_count:2 tempo:+2
+  c1,A line,cost:discard cost:mana draw_count:2 tempo:+1
   c1.2,sub-ability of c1,token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
 mtgish: rules=CastEffect SpellActions
 forge_ai: AILogic=-
 
 card: Unexpected Windfall
-tags: cardtype:instant artifact_token discard draw token_make cost:discard cost:mana draw_count:2 tempo:+2 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
+tags: cardtype:instant artifact_token discard draw token_make cost:discard cost:mana draw_count:2 tempo:+1 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,2 R R Discard<1/Card/card>,draw+token,numcards=2 tokenscript=c_a_treasure_sac,Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,cost:discard cost:mana draw_count:2 tempo:+2
+  c1,A line,cost:discard cost:mana draw_count:2 tempo:+1
   c1.2,sub-ability of c1,token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
 mtgish: rules=CastEffect SpellActions
 forge_ai: AILogic=-
 
 card: Light Up the Stage
-tags: cardtype:sorcery kw:spectacle color:red selection tempo:-1 impulse_draw duration:next_turn_end
+tags: cardtype:sorcery kw:spectacle color:red selection tempo:+1 impulse_draw impulse_draw_count:2 duration:next_turn_end
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dig+effect+cleanup,"",Defined=You,duration:UntilTheEndOfYourNextTurn
+links[1]{from,rel,to}:
+  c1.2:impulse_draw,pairs_with,c1.2:impulse_draw_count:2
 groups[3]{id,source,tags}:
   k1,K line,kw:spectacle color:red
-  c1,A line,tempo:-1
-  c1.2,sub-ability of c1,impulse_draw duration:next_turn_end
+  c1,A line,tempo:+1
+  c1.2,sub-ability of c1,impulse_draw impulse_draw_count:2 duration:next_turn_end
 mtgish: rules=Spectacle SpellActions
 forge_ai: AILogic=-
 
 card: Seize the Spoils
-tags: cardtype:sorcery artifact_token discard draw token_make cost:discard cost:mana draw_count:2 tempo:+1 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
+tags: cardtype:sorcery artifact_token discard draw token_make cost:discard cost:mana draw_count:2 tempo:+0.5 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,2 R Discard<1/Card/card>,draw+token,numcards=2 tokenscript=c_a_treasure_sac,Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,cost:discard cost:mana draw_count:2 tempo:+1
+  c1,A line,cost:discard cost:mana draw_count:2 tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
 mtgish: rules=CastEffect SpellActions
 forge_ai: AILogic=-
 
 card: Titan's Strength
-tags: cardtype:instant duration:eot pump_single selection target_count:one target_type:creature tempo:-1
+tags: cardtype:instant duration:eot pump_single selection target_count:one target_type:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+scry,numatt=+3 numdef=+1,ValidTgts=Creature,duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature tempo:-1 duration:eot
+  c1,A line,target_count:one target_type:creature duration:eot
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Brute Force
-tags: cardtype:instant duration:eot pump_single target_count:one target_type:creature tempo:-1
+tags: cardtype:instant duration:eot pump_single target_count:one target_type:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump,numatt=+3 numdef=+3,ValidTgts=Creature,duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature tempo:-1 duration:eot pump_single
+  c1,A line,target_count:one target_type:creature duration:eot pump_single
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Trumpet Blast
-tags: cardtype:instant duration:eot pump_team target_count:all target_type:creature tempo:-1
+tags: cardtype:instant duration:eot pump_team target_count:all target_type:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pumpall,numatt=+2,"",duration:eot(forge_default)
 links[1]{from,rel,to}:
   c1:payload,lasts,c1:duration
 groups[1]{id,source,tags}:
-  c1,A line,target_count:all target_type:creature tempo:-1 duration:eot
+  c1,A line,target_count:all target_type:creature duration:eot
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Curse of Opulence
-tags: cardtype:enchantment type:aura type:curse kw:enchant target_type:player token_make trigger:attacks tempo:+1 token_count:1 token_color:colorless token_cardtype:artifact token_type:gold
+tags: cardtype:enchantment type:aura type:curse kw:enchant target_type:player token_make trigger:attacks tempo:+0.5 token_count:1 token_color:colorless token_cardtype:artifact token_type:gold
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attackersdeclared,"",token+token,tokenscript=c_a_gold_sac tokenscript=c_a_gold_sac,"",""
 groups[4]{id,source,tags}:
   k1,K line,kw:enchant target_type:player
-  c1,T line,trigger:attacks tempo:+1
+  c1,T line,trigger:attacks tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:colorless token_cardtype:artifact token_type:gold
   c1.3,sub-ability of c1,token_count:1 token_color:colorless token_cardtype:artifact token_type:gold
 mtgish: rules=EnchantPlayer TriggerA
@@ -2327,11 +2330,11 @@ mtgish: rules=PermanentLayerEffect Equip
 forge_ai: AILogic=-
 
 card: Hordeling Outburst
-tags: cardtype:sorcery token_make token_count:3 token_color:red token_pt:1/1 token_type:goblin tempo:+2
+tags: cardtype:sorcery token_make token_count:3 token_color:red token_pt:1/1 token_type:goblin tempo:+0.5
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=r_1_1_goblin,"",""
 groups[1]{id,source,tags}:
-  c1,A line,token_count:3 token_color:red token_pt:1/1 token_type:goblin tempo:+2
+  c1,A line,token_count:3 token_color:red token_pt:1/1 token_type:goblin tempo:+0.5
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -2397,13 +2400,13 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=-
 
 card: "Squee, Dubious Monarch"
-tags: supertype:legendary cardtype:creature type:goblin type:noble kw:haste token_make trigger:attacks tempo:+1 token_count:1 token_color:red token_pt:1/1 token_type:goblin
+tags: supertype:legendary cardtype:creature type:goblin type:noble kw:haste token_make trigger:attacks tempo:+0.5 token_count:1 token_color:red token_pt:1/1 token_type:goblin
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attacks,"",token,tokenscript=r_1_1_goblin,"",""
   c2,static,3 R ExileFromGrave<4/Card.Other/other cards>,static_alternativecost,"","",""
 groups[3]{id,source,tags}:
   k1,K line,kw:haste
-  c1,T line,trigger:attacks tempo:+1
+  c1,T line,trigger:attacks tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:red token_pt:1/1 token_type:goblin
 mtgish: rules=Haste TriggerA FromGraveyard
 forge_ai: AILogic=-
@@ -2424,17 +2427,17 @@ mtgish: rules=TriggerA TriggerI
 forge_ai: AILogic=-
 
 card: Island
-tags: supertype:basic cardtype:land landtype:island mana_source mana:blue trigger:tap enters_untapped
+tags: supertype:basic cardtype:land landtype:island mana_source mana:blue mana_amount:1 trigger:tap enters_untapped
 clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   c0:mana_source,produces,c0:mana:blue
 groups[1]{id,source,tags}:
-  c0,card,mana_source mana:blue trigger:tap enters_untapped
+  c0,card,mana_source mana:blue mana_amount:1 trigger:tap enters_untapped
 mtgish: rules=
 forge_ai: AILogic=-
 
 card: Lonely Sandbar
-tags: cardtype:land kw:cycling color:blue draw mana_source enters_tapped cost:tap mana:blue
+tags: cardtype:land kw:cycling color:blue draw mana_source enters_tapped cost:tap mana:blue mana_amount:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,replacement,"",replace_moved,"",ValidCard=Card.Self,""
   c2,activated,T,mana,"","",""
@@ -2444,12 +2447,12 @@ links[2]{from,rel,to}:
 groups[3]{id,source,tags}:
   c0,card,enters_tapped
   k1,K line,kw:cycling color:blue
-  c2,A line,cost:tap mana_source mana:blue
+  c2,A line,cost:tap mana_source mana:blue mana_amount:1
 mtgish: rules=AsPermanentEnters Activated Cycling
 forge_ai: AILogic=-
 
 card: Myriad Landscape
-tags: cardtype:land land_tutor mana_source enters_tapped cost:tap mana:colorless cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:+1
+tags: cardtype:land land_tutor mana_source enters_tapped cost:tap mana:colorless mana_amount:1 cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:+1
 clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c1,replacement,"",replace_moved,"",ValidCard=Card.Self,""
   c2,activated,T,mana,"","",""
@@ -2458,7 +2461,7 @@ links[1]{from,rel,to}:
   mana_source,produces,mana:colorless
 groups[3]{id,source,tags}:
   c0,card,enters_tapped
-  c2,A line,cost:tap mana_source mana:colorless
+  c2,A line,cost:tap mana_source mana:colorless mana_amount:1
   c3,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:+1
 mtgish: rules=AsPermanentEnters Activated Activated
 forge_ai: AILogic=-
@@ -2476,7 +2479,7 @@ mtgish: rules=ActivatedWithModifiers
 forge_ai: AILogic=- RemoveDeck
 
 card: Rogue's Passage
-tags: cardtype:land mana_source enters_untapped cost:tap mana:colorless cost:mana target_count:one target_type:creature
+tags: cardtype:land mana_source enters_untapped cost:tap mana:colorless mana_amount:1 cost:mana target_count:one target_type:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
   c2,activated,4 T,effect,"",ValidTgts=Creature,""
@@ -2484,13 +2487,13 @@ links[1]{from,rel,to}:
   mana_source,produces,mana:colorless
 groups[3]{id,source,tags}:
   c0,card,enters_untapped
-  c1,A line,cost:tap mana_source mana:colorless
+  c1,A line,cost:tap mana_source mana:colorless mana_amount:1
   c2,A line,cost:tap cost:mana target_count:one target_type:creature
 mtgish: rules=Activated Activated
 forge_ai: AILogic=MakeUnblockable
 
 card: Reliquary Tower
-tags: cardtype:land mana_source enters_untapped cost:tap mana:colorless
+tags: cardtype:land mana_source enters_untapped cost:tap mana:colorless mana_amount:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,"",Affected=You,duration:static
   c2,activated,T,mana,"","",""
@@ -2498,12 +2501,12 @@ links[1]{from,rel,to}:
   mana_source,produces,mana:colorless
 groups[2]{id,source,tags}:
   c0,card,enters_untapped
-  c2,A line,cost:tap mana_source mana:colorless
+  c2,A line,cost:tap mana_source mana:colorless mana_amount:1
 mtgish: rules=PlayerEffect Activated
 forge_ai: AILogic=-
 
 card: Blighted Woodland
-tags: cardtype:land land_tutor mana_source enters_untapped cost:tap mana:colorless cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:+1
+tags: cardtype:land land_tutor mana_source enters_untapped cost:tap mana:colorless mana_amount:1 cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:+1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
   c2,activated,3 G T Sac<1/CARDNAME>,changezone,"","",""
@@ -2511,54 +2514,54 @@ links[1]{from,rel,to}:
   mana_source,produces,mana:colorless
 groups[3]{id,source,tags}:
   c0,card,enters_untapped
-  c1,A line,cost:tap mana_source mana:colorless
+  c1,A line,cost:tap mana_source mana:colorless mana_amount:1
   c2,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:+1
 mtgish: rules=Activated Activated
 forge_ai: AILogic=-
 
 card: Essence Flux
-tags: cardtype:instant counters_plus target_count:one target_type:creature target_scope:you_control remove:exile tempo:-1 counter:p1p1
+tags: cardtype:instant counters_plus target_count:one target_type:creature target_scope:you_control remove:exile counter:p1p1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone+changezone+putcounter+cleanup,countertype=P1P1,ValidTgts=Creature.YouCtrl Defined=Remembered Defined=Remembered,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:you_control remove:exile tempo:-1
+  c1,A line,target_count:one target_type:creature target_scope:you_control remove:exile
   c1.3,sub-ability of c1,counter:p1p1
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Icy Blast
-tags: cardtype:instant tap_down target_count:x target_type:creature tempo:-1
+tags: cardtype:instant tap_down target_count:x target_type:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",tap+pump,hidden_this_card_doesn_t_untap_during_your_next_untap_step,ValidTgts=Creature Defined=Targeted,duration:permanent
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:x target_type:creature tempo:-1
+  c1,A line,target_count:x target_type:creature
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Serum Visions
-tags: cardtype:sorcery draw selection draw_count:1 tempo:0
+tags: cardtype:sorcery draw selection draw_count:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",draw+scry,numcards=1,Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,draw_count:1 tempo:0
+  c1,A line,draw_count:1
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Slip Out the Back
-tags: cardtype:instant counters_plus target_count:one target_type:creature counter:p1p1 tempo:-1
+tags: cardtype:instant counters_plus target_count:one target_type:creature counter:p1p1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",putcounter+phases,countertype=P1P1,ValidTgts=Creature Defined=Targeted,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature counter:p1p1 tempo:-1
+  c1,A line,target_count:one target_type:creature counter:p1p1
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -2574,22 +2577,22 @@ mtgish: rules=Activated
 forge_ai: AILogic=-
 
 card: Dramatic Reversal
-tags: cardtype:instant target_count:all target_type:permanent target_filter:nonland target_scope:you_control tempo:-1
+tags: cardtype:instant target_count:all target_type:permanent target_filter:nonland target_scope:you_control
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",untapall,"","",""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:all target_type:permanent target_filter:nonland target_scope:you_control tempo:-1
+  c1,A line,target_count:all target_type:permanent target_filter:nonland target_scope:you_control
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Arcane Signet
-tags: cardtype:artifact fixing mana_source cost:tap mana:commander_identity mana_choice
+tags: cardtype:artifact fixing mana_source cost:tap mana:commander_identity mana_choice mana_amount:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
 links[1]{from,rel,to}:
   mana_source,produces,mana:commander_identity
 groups[1]{id,source,tags}:
-  c1,A line,cost:tap mana_source mana:commander_identity mana_choice
+  c1,A line,cost:tap mana_source mana:commander_identity mana_choice mana_amount:1
 mtgish: rules=Activated
 forge_ai: AILogic=- RemoveDeck
 
@@ -2604,27 +2607,27 @@ links[2]{from,rel,to}:
 groups[3]{id,source,tags}:
   k1,K line,kw:equip target_type:creature num:1
   k2,K line,kw:equip num:3
-  c2,S line,cant_block
+  c2,S line,cant_block restrict
 mtgish: rules=PermanentLayerEffect PermanentRuleEffect Equip Equip
 forge_ai: AILogic=-
 
 card: Rescue
-tags: cardtype:instant bounce target_count:one target_type:permanent target_scope:you_control remove:bounce tempo:-1
+tags: cardtype:instant bounce target_count:one target_type:permanent target_scope:you_control remove:bounce
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone,"",ValidTgts=Permanent.YouCtrl,""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:permanent target_scope:you_control remove:bounce tempo:-1
+  c1,A line,target_count:one target_type:permanent target_scope:you_control remove:bounce
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Deranged Assistant
-tags: cardtype:creature type:human type:wizard mana_source mill cost:tap mana:colorless
+tags: cardtype:creature type:human type:wizard mana_source mill cost:tap mana:colorless mana_amount:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T Mill<1>,mana,"","",""
 links[1]{from,rel,to}:
   mana_source,produces,mana:colorless
 groups[1]{id,source,tags}:
-  c1,A line,cost:tap mana_source mana:colorless
+  c1,A line,cost:tap mana_source mana:colorless mana_amount:1
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -2643,25 +2646,24 @@ mtgish: rules=PermanentLayerEffect TriggerA Equip
 forge_ai: AILogic=-
 
 card: Karfell Harbinger
-tags: cardtype:creature type:zombie type:wizard mana_source cost:tap mana:blue mana_restriction
+tags: cardtype:creature type:zombie type:wizard mana_source cost:tap mana:blue mana_amount:1 mana_restriction
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
 links[1]{from,rel,to}:
   mana_source,produces,mana:blue
 groups[1]{id,source,tags}:
-  c1,A line,cost:tap mana_source mana:blue mana_restriction
+  c1,A line,cost:tap mana_source mana:blue mana_amount:1 mana_restriction
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
 card: Mask of Memory
-tags: cardtype:artifact type:equipment kw:equip num:1 discard draw tempo:-1 discard_count:1
+tags: cardtype:artifact type:equipment kw:equip num:1 discard draw discard_count:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,combat_damage,"",discard,numcards=1,Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
-groups[3]{id,source,tags}:
+groups[2]{id,source,tags}:
   k1,K line,kw:equip num:1
-  c1,T line,tempo:-1
   c1.2,sub-ability of c1,discard_count:1
 mtgish: rules=TriggerA Equip
 forge_ai: AILogic=-
@@ -2689,11 +2691,10 @@ mtgish: rules=TriggerA
 forge_ai: AILogic=- RemoveDeck
 
 card: Ripples of Potential
-tags: cardtype:instant proliferate tempo:-1
+tags: cardtype:instant proliferate
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",proliferate+phases+cleanup,"",Defined=Valid Permanent.IsRemembered+YouCtrl,""
-groups[1]{id,source,tags}:
-  c1,A line,tempo:-1
+groups[0]{id,source,tags}:
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -2733,13 +2734,13 @@ mtgish: rules=PermanentLayerEffect Equip
 forge_ai: AILogic=-
 
 card: Vodalian Arcanist
-tags: cardtype:creature type:merfolk type:wizard mana_source cost:tap mana:colorless mana_restriction
+tags: cardtype:creature type:merfolk type:wizard mana_source cost:tap mana:colorless mana_amount:1 mana_restriction
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
 links[1]{from,rel,to}:
   mana_source,produces,mana:colorless
 groups[1]{id,source,tags}:
-  c1,A line,cost:tap mana_source mana:colorless mana_restriction
+  c1,A line,cost:tap mana_source mana:colorless mana_amount:1 mana_restriction
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -2795,25 +2796,25 @@ mtgish: rules=AsPermanentEnters PlayerEffect
 forge_ai: AILogic=-
 
 card: Commander's Sphere
-tags: cardtype:artifact draw fixing mana_source sacrifice_outlet cost:tap mana:commander_identity mana_choice cost:sacrifice cost_sacrifice_target:self draw_count:1 tempo:0
+tags: cardtype:artifact draw fixing mana_source sacrifice_outlet cost:tap mana:commander_identity mana_choice mana_amount:1 cost:sacrifice cost_sacrifice_target:self draw_count:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
   c2,activated,Sac<1/CARDNAME>,draw,numcards=1,"",""
 links[1]{from,rel,to}:
   mana_source,produces,mana:commander_identity
 groups[2]{id,source,tags}:
-  c1,A line,cost:tap mana_source mana:commander_identity mana_choice
-  c2,A line,cost:sacrifice cost_sacrifice_target:self draw_count:1 tempo:0
+  c1,A line,cost:tap mana_source mana:commander_identity mana_choice mana_amount:1
+  c2,A line,cost:sacrifice cost_sacrifice_target:self draw_count:1
 mtgish: rules=Activated Activated
 forge_ai: AILogic=- RemoveDeck
 
 card: Expel from Orazca
-tags: cardtype:instant kw:ascend bounce target_count:one target_type:permanent target_filter:nonland tempo:-1 remove:bounce remove:tuck
+tags: cardtype:instant kw:ascend bounce target_count:one target_type:permanent target_filter:nonland remove:bounce remove:tuck
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+changezone+genericchoice,"",ValidTgts=Permanent.nonLand Defined=Targeted Defined=You,duration:eot(forge_default)
 groups[5]{id,source,tags}:
   k1,K line,kw:ascend
-  c1,A line,target_count:one target_type:permanent target_filter:nonland tempo:-1
+  c1,A line,target_count:one target_type:permanent target_filter:nonland
   c1.2,sub-ability of c1,remove:bounce
   c1.4,sub-ability of c1,remove:bounce
   c1.5,sub-ability of c1,remove:tuck
@@ -2880,13 +2881,13 @@ mtgish: rules=If
 forge_ai: AILogic=-
 
 card: Nuka-Cola Vending Machine
-tags: cardtype:artifact artifact_token token_make cost:tap cost:mana token_count:1 token_color:colorless token_cardtype:artifact token_type:food lifegain tempo:+1 token_type:treasure mana_source
+tags: cardtype:artifact artifact_token token_make cost:tap cost:mana token_count:1 token_color:colorless token_cardtype:artifact token_type:food lifegain tempo:+0.5 token_type:treasure mana_source
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 T,token,tokenscript=c_a_food_sac,"",""
   c2,sacrificed,"",token,tokenscript=c_a_treasure_sac,"",""
 groups[3]{id,source,tags}:
-  c1,A line,cost:tap cost:mana token_count:1 token_color:colorless token_cardtype:artifact token_type:food lifegain tempo:+1
-  c2,T line,tempo:+1
+  c1,A line,cost:tap cost:mana token_count:1 token_color:colorless token_cardtype:artifact token_type:food lifegain tempo:+0.5
+  c2,T line,tempo:+0.5
   c2.2,sub-ability of c2,token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure mana_source
 mtgish: rules=Activated TriggerA
 forge_ai: AILogic=-
@@ -2903,11 +2904,11 @@ mtgish: rules=Activated
 forge_ai: AILogic=-
 
 card: Sage's Dousing
-tags: cardtype:kindred cardtype:instant type:wizard counterspell draw target_count:one target_type:card tempo:0 draw_count:1
+tags: cardtype:kindred cardtype:instant type:wizard counterspell draw target_count:one target_type:card draw_count:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",counter+draw,"",ValidTgts=Card,""
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:card tempo:0
+  c1,A line,target_count:one target_type:card
   c1.2,sub-ability of c1,draw_count:1
 mtgish: rules=SpellActions
 forge_ai: AILogic=- RemoveDeck
@@ -2958,11 +2959,10 @@ mtgish: rules=Sunburst Activated
 forge_ai: AILogic=- RemoveDeck
 
 card: Fact or Fiction
-tags: cardtype:instant self_mill tutor tempo:-1
+tags: cardtype:instant self_mill tutor
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",peekandreveal+twopiles,"",Defined=You,""
-groups[1]{id,source,tags}:
-  c1,A line,tempo:-1
+groups[0]{id,source,tags}:
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -3009,12 +3009,12 @@ mtgish: rules=ActivatedWithModifiers
 forge_ai: AILogic=- RemoveDeck
 
 card: Rite of Replication
-tags: cardtype:sorcery kw:kicker num:5 clone target_count:one target_type:creature token_make token_type:copy tempo:0
+tags: cardtype:sorcery kw:kicker num:5 clone target_count:one target_type:creature token_make token_type:copy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",copypermanent,"",ValidTgts=Creature,""
 groups[2]{id,source,tags}:
   k1,K line,kw:kicker num:5
-  c1,A line,target_count:one target_type:creature token_make token_type:copy tempo:0
+  c1,A line,target_count:one target_type:creature token_make token_type:copy
 mtgish: rules=SpellActions_Kicker
 forge_ai: AILogic=-
 
@@ -3051,11 +3051,11 @@ mtgish: rules=Flying Activated
 forge_ai: AILogic=-
 
 card: Sweep Away
-tags: cardtype:instant bounce target_count:one target_type:creature tempo:-1 remove:bounce remove:tuck
+tags: cardtype:instant bounce target_count:one target_type:creature remove:bounce remove:tuck
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+changezone+genericchoice,"",ValidTgts=Creature Defined=Targeted Defined=You,duration:eot(forge_default)
 groups[4]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature tempo:-1
+  c1,A line,target_count:one target_type:creature
   c1.2,sub-ability of c1,remove:bounce
   c1.4,sub-ability of c1,remove:tuck
   c1.5,sub-ability of c1,remove:bounce
@@ -3111,11 +3111,11 @@ mtgish: rules=Flying ActivatedWithModifiers Activated
 forge_ai: AILogic=-
 
 card: Filter Out
-tags: cardtype:instant bounce target_count:all target_type:permanent target_filter:nonland target_filter:noncreature remove:bounce tempo:-1
+tags: cardtype:instant bounce target_count:all target_type:permanent target_filter:nonland target_filter:noncreature remove:bounce
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezoneall,"","",""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:all target_type:permanent target_filter:nonland target_filter:noncreature remove:bounce tempo:-1
+  c1,A line,target_count:all target_type:permanent target_filter:nonland target_filter:noncreature remove:bounce
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -3150,11 +3150,11 @@ mtgish: rules=Activated Activated
 forge_ai: AILogic=-
 
 card: Desecrate Reality
-tags: cardtype:instant reanimate target_count:one target_type:permanent target_scope:opp_control remove:exile tempo:0 put_onto_battlefield put_from:graveyard
+tags: cardtype:instant reanimate target_count:one target_type:permanent target_scope:opp_control remove:exile put_onto_battlefield put_from:graveyard
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone+changezone,"",ValidTgts=Permanent.OppCtrl+cmcEven,""
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:permanent target_scope:opp_control remove:exile tempo:0
+  c1,A line,target_count:one target_type:permanent target_scope:opp_control remove:exile
   c1.2,sub-ability of c1,put_onto_battlefield put_from:graveyard reanimate
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
@@ -3169,26 +3169,25 @@ mtgish: rules=Activated
 forge_ai: AILogic=-
 
 card: Skittering Invasion
-tags: cardtype:kindred cardtype:sorcery type:eldrazi token_make token_count:5 token_color:colorless token_pt:0/1 token_type:eldrazi_spawn tempo:+4
+tags: cardtype:kindred cardtype:sorcery type:eldrazi token_make token_count:5 token_color:colorless token_pt:0/1 token_type:eldrazi_spawn tempo:+1.5
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=c_0_1_eldrazi_spawn_sac,"",""
 groups[1]{id,source,tags}:
-  c1,A line,token_count:5 token_color:colorless token_pt:0/1 token_type:eldrazi_spawn tempo:+4
+  c1,A line,token_count:5 token_color:colorless token_pt:0/1 token_type:eldrazi_spawn tempo:+1.5
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Dig Through Time
-tags: cardtype:instant kw:delve selection tempo:-1
+tags: cardtype:instant kw:delve selection
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dig,"","",""
-groups[2]{id,source,tags}:
+groups[1]{id,source,tags}:
   k1,K line,kw:delve
-  c1,A line,tempo:-1
 mtgish: rules=Delve SpellActions
 forge_ai: AILogic=-
 
 card: "Memnarch, the Warden"
-tags: supertype:legendary cardtype:artifact cardtype:creature type:wizard kw:indestructible draw scales:artifact token_make trigger_scope:self trigger:etb tempo:+2 token_count:2 token_color:colorless token_pt:1/1 token_cardtype:artifact token_type:myr trigger:attacks tempo:x draw_count:x
+tags: supertype:legendary cardtype:artifact cardtype:creature type:wizard kw:indestructible draw scales:artifact token_make trigger_scope:self trigger:etb tempo:+1 token_count:2 token_color:colorless token_pt:1/1 token_cardtype:artifact token_type:myr trigger:attacks tempo:x draw_count:x
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_1_1_a_myr,"",""
   c2,attacks,"",draw,numcards=X,Defined=You,""
@@ -3196,7 +3195,7 @@ links[1]{from,rel,to}:
   c2:affected,receives,c2:payload
 groups[5]{id,source,tags}:
   k1,K line,kw:indestructible
-  c1,T line,trigger_scope:self trigger:etb tempo:+2
+  c1,T line,trigger_scope:self trigger:etb tempo:+1
   c1.2,sub-ability of c1,token_count:2 token_color:colorless token_pt:1/1 token_cardtype:artifact token_type:myr
   c2,T line,trigger:attacks tempo:x
   c2.2,sub-ability of c2,draw_count:x
@@ -3204,55 +3203,54 @@ mtgish: rules=Indestructible TriggerA TriggerA
 forge_ai: AILogic=-
 
 card: Stream of Unconsciousness
-tags: cardtype:kindred cardtype:instant type:wizard duration:eot draw target_count:one target_type:creature tempo:0 draw_count:1
+tags: cardtype:kindred cardtype:instant type:wizard duration:eot draw target_count:one target_type:creature draw_count:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+draw,numatt=-4,ValidTgts=Creature,duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature tempo:0 duration:eot
+  c1,A line,target_count:one target_type:creature duration:eot
   c1.2,sub-ability of c1,draw_count:1
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Contentious Plan
-tags: cardtype:sorcery draw proliferate tempo:0 draw_count:1
+tags: cardtype:sorcery draw proliferate draw_count:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",proliferate+draw,"","",""
-groups[2]{id,source,tags}:
-  c1,A line,tempo:0
+groups[1]{id,source,tags}:
   c1.2,sub-ability of c1,draw_count:1
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Exhaustion
-tags: cardtype:sorcery target_count:one target_type:opponent tempo:-1
+tags: cardtype:sorcery target_count:one target_type:opponent
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",effect,"",ValidTgts=Opponent,duration:permanent
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:opponent tempo:-1
+  c1,A line,target_count:one target_type:opponent
 mtgish: rules=SpellActions
 forge_ai: AILogic=KeepOppCreatsLandsTapped
 
 card: Expanded Anatomy
-tags: cardtype:sorcery type:lesson duration:eot vigilance counters_plus target_count:one target_type:creature counter:p1p1 tempo:-1
+tags: cardtype:sorcery type:lesson duration:eot vigilance counters_plus target_count:one target_type:creature counter:p1p1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",putcounter+pump,countertype=P1P1 vigilance,ValidTgts=Creature Defined=Targeted,duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature counter:p1p1 tempo:-1 duration:eot vigilance
+  c1,A line,target_count:one target_type:creature counter:p1p1 duration:eot vigilance
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Irenicus's Vile Duplication
-tags: cardtype:sorcery clone target_count:one target_type:creature target_scope:you_control token_make token_type:copy tempo:0
+tags: cardtype:sorcery clone target_count:one target_type:creature target_scope:you_control token_make token_type:copy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",copypermanent,"",ValidTgts=Creature.YouCtrl,""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:you_control token_make token_type:copy tempo:0
+  c1,A line,target_count:one target_type:creature target_scope:you_control token_make token_type:copy
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -3265,13 +3263,13 @@ mtgish: rules=SagaChapters
 forge_ai: AILogic=-
 
 card: Psychic Spiral
-tags: cardtype:instant mill scales:graveyard target_count:all target_type:card target_scope:you_control shuffle tempo:-1 target_count:one target_type:player
+tags: cardtype:instant mill scales:graveyard target_count:all target_type:card target_scope:you_control shuffle target_count:one target_type:player
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezoneall+mill+cleanup,numcards=X,ValidTgts=Player,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,target_count:all target_type:card target_scope:you_control shuffle tempo:-1
+  c1,A line,target_count:all target_type:card target_scope:you_control shuffle
   c1.2,sub-ability of c1,target_count:one target_type:player
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
@@ -3305,21 +3303,21 @@ mtgish: rules=TriggerA TriggerA Warp
 forge_ai: AILogic=-
 
 card: Plains
-tags: supertype:basic cardtype:land landtype:plains mana_source mana:white trigger:tap enters_untapped
+tags: supertype:basic cardtype:land landtype:plains mana_source mana:white mana_amount:1 trigger:tap enters_untapped
 clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   c0:mana_source,produces,c0:mana:white
 groups[1]{id,source,tags}:
-  c0,card,mana_source mana:white trigger:tap enters_untapped
+  c0,card,mana_source mana:white mana_amount:1 trigger:tap enters_untapped
 mtgish: rules=
 forge_ai: AILogic=-
 
 card: Wayfarer's Bauble
-tags: cardtype:artifact land_tutor sacrifice_outlet cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
+tags: cardtype:artifact land_tutor sacrifice_outlet cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,2 T Sac<1/CARDNAME>,changezone,"","",""
 groups[1]{id,source,tags}:
-  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped tempo:0
+  c1,A line,cost:tap cost:sacrifice cost_sacrifice_target:self cost:mana tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield put_from:library put_tapped
 mtgish: rules=Activated
 forge_ai: AILogic=-
 
@@ -3360,12 +3358,12 @@ mtgish: rules=FirstStrike Lifelink
 forge_ai: AILogic=-
 
 card: Precinct Captain
-tags: cardtype:creature type:human type:soldier kw:first_strike token_make tempo:+1 token_count:1 token_color:white token_pt:1/1 token_type:soldier
+tags: cardtype:creature type:human type:soldier kw:first_strike token_make tempo:+0.5 token_count:1 token_color:white token_pt:1/1 token_type:soldier
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,combat_damage,"",token,tokenscript=w_1_1_soldier,"",""
 groups[3]{id,source,tags}:
   k1,K line,kw:first_strike
-  c1,T line,tempo:+1
+  c1,T line,tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:white token_pt:1/1 token_type:soldier
 mtgish: rules=FirstStrike TriggerA
 forge_ai: AILogic=-
@@ -3432,12 +3430,12 @@ mtgish: rules=Flying Lifelink
 forge_ai: AILogic=-
 
 card: Attended Knight
-tags: cardtype:creature type:human type:knight kw:first_strike token_make trigger_scope:self trigger:etb tempo:+1 token_count:1 token_color:white token_pt:1/1 token_type:soldier
+tags: cardtype:creature type:human type:knight kw:first_strike token_make trigger_scope:self trigger:etb tempo:+0.5 token_count:1 token_color:white token_pt:1/1 token_type:soldier
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=w_1_1_soldier,"",""
 groups[3]{id,source,tags}:
   k1,K line,kw:first_strike
-  c1,T line,trigger_scope:self trigger:etb tempo:+1
+  c1,T line,trigger_scope:self trigger:etb tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:white token_pt:1/1 token_type:soldier
 mtgish: rules=FirstStrike TriggerA
 forge_ai: AILogic=-
@@ -3516,12 +3514,12 @@ mtgish: rules=Vigilance TriggerA
 forge_ai: AILogic=-
 
 card: Resolute Reinforcements
-tags: cardtype:creature type:human type:soldier kw:flash token_make trigger_scope:self trigger:etb tempo:+1 token_count:1 token_color:white token_pt:1/1 token_type:soldier
+tags: cardtype:creature type:human type:soldier kw:flash token_make trigger_scope:self trigger:etb tempo:+0.5 token_count:1 token_color:white token_pt:1/1 token_type:soldier
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=w_1_1_soldier,"",""
 groups[3]{id,source,tags}:
   k1,K line,kw:flash
-  c1,T line,trigger_scope:self trigger:etb tempo:+1
+  c1,T line,trigger_scope:self trigger:etb tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:white token_pt:1/1 token_type:soldier
 mtgish: rules=Flash TriggerA
 forge_ai: AILogic=-
@@ -3638,18 +3636,18 @@ mtgish: rules=Flying TriggerA
 forge_ai: AILogic=-
 
 card: Irregular Cohort
-tags: cardtype:creature type:shapeshifter kw:changeling token_make trigger_scope:self trigger:etb tempo:+1 token_count:1 token_color:colorless token_pt:2/2 token_type:shapeshifter_changeling
+tags: cardtype:creature type:shapeshifter kw:changeling token_make trigger_scope:self trigger:etb tempo:+0.5 token_count:1 token_color:colorless token_pt:2/2 token_type:shapeshifter_changeling
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_2_2_shapeshifter_changeling,"",""
 groups[3]{id,source,tags}:
   k1,K line,kw:changeling
-  c1,T line,trigger_scope:self trigger:etb tempo:+1
+  c1,T line,trigger_scope:self trigger:etb tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:colorless token_pt:2/2 token_type:shapeshifter_changeling
 mtgish: rules=CDA_Types TriggerA
 forge_ai: AILogic=-
 
 card: Captain of the Watch
-tags: cardtype:creature type:human type:soldier kw:vigilance lord:soldier token_make trigger_scope:self trigger:etb tempo:+3 token_count:3 token_color:white token_pt:1/1 token_type:soldier
+tags: cardtype:creature type:human type:soldier kw:vigilance lord:soldier token_make trigger_scope:self trigger:etb tempo:+1.5 token_count:3 token_color:white token_pt:1/1 token_type:soldier
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,vigilance addpower=1 addtoughness=1,Affected=Creature.Soldier+Other+YouCtrl,duration:static
   c2,etb_self,"",token,tokenscript=w_1_1_soldier,"",""
@@ -3659,7 +3657,7 @@ links[2]{from,rel,to}:
 groups[4]{id,source,tags}:
   k1,K line,kw:vigilance
   c1,S line,vigilance
-  c2,T line,trigger_scope:self trigger:etb tempo:+3
+  c2,T line,trigger_scope:self trigger:etb tempo:+1.5
   c2.2,sub-ability of c2,token_count:3 token_color:white token_pt:1/1 token_type:soldier
 mtgish: rules=Vigilance EachPermanentLayerEffect TriggerA
 forge_ai: AILogic=-
@@ -3677,18 +3675,18 @@ mtgish: rules=TriggerA TriggerA
 forge_ai: AILogic=-
 
 card: Swords to Plowshares
-tags: cardtype:instant lifegain target_count:one target_type:creature remove:exile tempo:-1
+tags: cardtype:instant lifegain target_count:one target_type:creature remove:exile
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone+gainlife,lifeamount=X,ValidTgts=Creature Defined=TargetedController,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature remove:exile tempo:-1
+  c1,A line,target_count:one target_type:creature remove:exile
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Frontline Medic
-tags: cardtype:creature type:human type:cleric duration:eot indestructible counterspell pump_team sacrifice_outlet trigger:attacks target_count:all target_type:creature target_scope:you_control cost:sacrifice cost_sacrifice_target:self target_count:one target_type:card tempo:-1
+tags: cardtype:creature type:human type:cleric duration:eot indestructible counterspell pump_team sacrifice_outlet trigger:attacks target_count:all target_type:creature target_scope:you_control cost:sacrifice cost_sacrifice_target:self target_count:one target_type:card
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attacks,"",pumpall,indestructible,"",duration:eot(forge_default)
   c2,activated,Sac<1/CARDNAME>,counter,"",ValidTgts=Card.hasXCost,""
@@ -3697,7 +3695,7 @@ links[1]{from,rel,to}:
 groups[3]{id,source,tags}:
   c1,T line,trigger:attacks duration:eot indestructible
   c1.2,sub-ability of c1,target_count:all target_type:creature target_scope:you_control
-  c2,A line,cost:sacrifice cost_sacrifice_target:self target_count:one target_type:card tempo:-1
+  c2,A line,cost:sacrifice cost_sacrifice_target:self target_count:one target_type:card
 mtgish: rules=TriggerA Activated
 forge_ai: AILogic=-
 
@@ -3736,11 +3734,10 @@ mtgish: rules=TriggerA TriggerA
 forge_ai: AILogic=-
 
 card: Valorous Stance
-tags: cardtype:instant protection_trick tempo:-1 target_count:one target_type:creature remove:destroy
+tags: cardtype:instant protection_trick target_count:one target_type:creature remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",charm,"","",""
-groups[3]{id,source,tags}:
-  c1,A line,tempo:-1
+groups[2]{id,source,tags}:
   c1.2,sub-ability of c1,target_count:one target_type:creature
   c1.3,sub-ability of c1,target_count:one target_type:creature remove:destroy
 mtgish: rules=SpellActions
@@ -3762,78 +3759,78 @@ mtgish: rules=Vigilance TriggerA Activated
 forge_ai: AILogic=- RemoveDeck
 
 card: Divine Verdict
-tags: cardtype:instant target_count:one target_type:creature remove:destroy tempo:-1
+tags: cardtype:instant target_count:one target_type:creature remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy,"","ValidTgts=Creature.attacking,Creature.blocking",""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature remove:destroy tempo:-1
+  c1,A line,target_count:one target_type:creature remove:destroy
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Stroke of Midnight
-tags: cardtype:instant token_make target_count:one target_type:permanent target_filter:nonland remove:destroy tempo:-1 token_count:1 token_color:white token_pt:1/1 token_type:human
+tags: cardtype:instant token_make target_count:one target_type:permanent target_filter:nonland remove:destroy token_count:1 token_color:white token_pt:1/1 token_type:human
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy+token,tokenscript=w_1_1_human,ValidTgts=Permanent.nonLand,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:permanent target_filter:nonland remove:destroy tempo:-1
+  c1,A line,target_count:one target_type:permanent target_filter:nonland remove:destroy
   c1.2,sub-ability of c1,token_count:1 token_color:white token_pt:1/1 token_type:human
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Disenchant
-tags: cardtype:instant target_count:one target_type:artifact target_type:enchantment remove:destroy tempo:-1
+tags: cardtype:instant target_count:one target_type:artifact target_type:enchantment remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy,"","ValidTgts=Artifact,Enchantment",""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:artifact target_type:enchantment remove:destroy tempo:-1
+  c1,A line,target_count:one target_type:artifact target_type:enchantment remove:destroy
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Feat of Resistance
-tags: cardtype:instant counters_plus target_count:one target_type:creature target_scope:you_control counter:p1p1 tempo:-1
+tags: cardtype:instant counters_plus target_count:one target_type:creature target_scope:you_control counter:p1p1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",putcounter+protection,countertype=P1P1,ValidTgts=Creature.YouCtrl Defined=Targeted,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_scope:you_control counter:p1p1 tempo:-1
+  c1,A line,target_count:one target_type:creature target_scope:you_control counter:p1p1
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Moment of Heroism
-tags: cardtype:instant duration:eot lifelink lifegain pump_single target_count:one target_type:creature tempo:-1
+tags: cardtype:instant duration:eot lifelink lifegain pump_single target_count:one target_type:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump,lifelink numatt=+2 numdef=+2,ValidTgts=Creature,duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature tempo:-1 duration:eot lifelink lifegain pump_single
+  c1,A line,target_count:one target_type:creature duration:eot lifelink lifegain pump_single
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Make a Stand
-tags: cardtype:instant duration:eot indestructible pump_team target_count:all target_type:creature target_scope:you_control tempo:-1
+tags: cardtype:instant duration:eot indestructible pump_team target_count:all target_type:creature target_scope:you_control
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pumpall,indestructible numatt=+1,"",duration:eot(forge_default)
 links[1]{from,rel,to}:
   c1:payload,lasts,c1:duration
 groups[1]{id,source,tags}:
-  c1,A line,target_count:all target_type:creature target_scope:you_control tempo:-1 duration:eot indestructible
+  c1,A line,target_count:all target_type:creature target_scope:you_control duration:eot indestructible
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Sheltering Light
-tags: cardtype:instant duration:eot indestructible protection_trick selection target_count:one target_type:creature tempo:-1
+tags: cardtype:instant duration:eot indestructible protection_trick selection target_count:one target_type:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+scry,indestructible,ValidTgts=Creature,duration:eot(forge_default)
 links[2]{from,rel,to}:
   c1:payload,lasts,c1:duration
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature tempo:-1 duration:eot indestructible
+  c1,A line,target_count:one target_type:creature duration:eot indestructible
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -3855,13 +3852,12 @@ mtgish: rules=Activated
 forge_ai: AILogic=-
 
 card: Revitalize
-tags: cardtype:instant draw lifegain tempo:0 draw_count:1
+tags: cardtype:instant draw lifegain draw_count:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",gainlife+draw,lifeamount=3,Defined=You Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
-groups[2]{id,source,tags}:
-  c1,A line,tempo:0
+groups[1]{id,source,tags}:
   c1.2,sub-ability of c1,draw_count:1
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
@@ -3879,25 +3875,25 @@ mtgish: rules=TriggerA TriggerA
 forge_ai: AILogic=-
 
 card: Raise the Alarm
-tags: cardtype:instant token_make token_count:2 token_color:white token_pt:1/1 token_type:soldier tempo:+1
+tags: cardtype:instant token_make token_count:2 token_color:white token_pt:1/1 token_type:soldier
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=w_1_1_soldier,"",""
 groups[1]{id,source,tags}:
-  c1,A line,token_count:2 token_color:white token_pt:1/1 token_type:soldier tempo:+1
+  c1,A line,token_count:2 token_color:white token_pt:1/1 token_type:soldier
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Spectral Procession
-tags: cardtype:sorcery token_make token_count:3 token_color:white token_pt:1/1 token_kw:flying token_type:spirit tempo:+2
+tags: cardtype:sorcery token_make token_count:3 token_color:white token_pt:1/1 token_kw:flying token_type:spirit tempo:+0.5
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=w_1_1_spirit_flying,"",""
 groups[1]{id,source,tags}:
-  c1,A line,token_count:3 token_color:white token_pt:1/1 token_kw:flying token_type:spirit tempo:+2
+  c1,A line,token_count:3 token_color:white token_pt:1/1 token_kw:flying token_type:spirit tempo:+0.5
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Ancestral Blade
-tags: cardtype:artifact type:equipment kw:equip num:1 token_make trigger_scope:self trigger:etb tempo:+1 token_count:1 token_color:white token_pt:1/1 token_type:soldier
+tags: cardtype:artifact type:equipment kw:equip num:1 token_make trigger_scope:self trigger:etb tempo:+0.5 token_count:1 token_color:white token_pt:1/1 token_type:soldier
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token+attach+cleanup,tokenscript=w_1_1_soldier,Defined=Remembered,""
   c2,static,"",static_continuous,addpower=1 addtoughness=1,Affected=Creature AffectedDefined=Equipped,duration:static
@@ -3907,7 +3903,7 @@ links[3]{from,rel,to}:
   c2:affected,receives,c2:payload
 groups[3]{id,source,tags}:
   k1,K line,kw:equip num:1
-  c1,T line,trigger_scope:self trigger:etb tempo:+1
+  c1,T line,trigger_scope:self trigger:etb tempo:+0.5
   c1.2,sub-ability of c1,token_count:1 token_color:white token_pt:1/1 token_type:soldier
 mtgish: rules=TriggerA PermanentLayerEffect Equip
 forge_ai: AILogic=-
@@ -3927,12 +3923,12 @@ mtgish: rules=PermanentLayerEffect TriggerA Equip
 forge_ai: AILogic=-
 
 card: Cathar Commando
-tags: cardtype:creature type:human type:soldier kw:flash sacrifice_outlet cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact target_type:enchantment remove:destroy tempo:-1
+tags: cardtype:creature type:human type:soldier kw:flash sacrifice_outlet cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact target_type:enchantment remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 Sac<1/CARDNAME>,destroy,"","ValidTgts=Artifact,Enchantment",""
 groups[2]{id,source,tags}:
   k1,K line,kw:flash
-  c1,A line,cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact target_type:enchantment remove:destroy tempo:-1
+  c1,A line,cost:sacrifice cost_sacrifice_target:self cost:mana target_count:one target_type:artifact target_type:enchantment remove:destroy
 mtgish: rules=Flash Activated
 forge_ai: AILogic=-
 
@@ -3961,11 +3957,11 @@ mtgish: rules=TriggerA TriggerA
 forge_ai: AILogic=-
 
 card: Fateful Absence
-tags: cardtype:instant target_count:one target_type:creature target_type:planeswalker remove:destroy tempo:-1
+tags: cardtype:instant target_count:one target_type:creature target_type:planeswalker remove:destroy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy+investigate,"","ValidTgts=Creature,Planeswalker Defined=TargetedController",""
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature target_type:planeswalker remove:destroy tempo:-1
+  c1,A line,target_count:one target_type:creature target_type:planeswalker remove:destroy
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
@@ -3981,22 +3977,22 @@ mtgish: rules=EachPermanentLayerEffect
 forge_ai: AILogic=-
 
 card: Captain's Call
-tags: cardtype:sorcery token_make token_count:3 token_color:white token_pt:1/1 token_type:soldier tempo:+2
+tags: cardtype:sorcery token_make token_count:3 token_color:white token_pt:1/1 token_type:soldier tempo:+0.5
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=w_1_1_soldier,"",""
 groups[1]{id,source,tags}:
-  c1,A line,token_count:3 token_color:white token_pt:1/1 token_type:soldier tempo:+2
+  c1,A line,token_count:3 token_color:white token_pt:1/1 token_type:soldier tempo:+0.5
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
 card: Gideon's Reproach
-tags: cardtype:instant target_count:one target_type:creature damage damage_amount:4 tempo:-1
+tags: cardtype:instant target_count:one target_type:creature damage damage_amount:4
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dealdamage,numdmg=4,"ValidTgts=Creature.attacking,Creature.blocking",""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature damage damage_amount:4 tempo:-1
+  c1,A line,target_count:one target_type:creature damage damage_amount:4
 mtgish: rules=SpellActions
 forge_ai: AILogic=-
 
