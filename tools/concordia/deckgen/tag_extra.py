@@ -63,8 +63,8 @@ DOC = {
  "x_is:<what>": ("what the variable X counts (devotion_black, count of a permanent type you control, x_paid, own power ...)", "reverse check r1: Gray Merchant, Exsanguinate, Tendrils of Corruption"),
  "replacement / replace_event:<e> / replace_with:<what> / replace_detail:<d>": ("a replacement effect ('instead'): which event it replaces and what happens instead", "reverse check r1: Kami of Whispered Hopes, Laboratory Maniac"),
  "cant_be_countered / cant_be_blocked_by:<what>": ("this spell can't be countered / this creature can't be blocked by creatures of that kind", "reverse check r1: Lightning Mare"),
- "modal / mode_count:<n> / mode_choose:<one|two|n>": ("a modal spell ('choose one'): number of modes and how many are chosen", "reverse check r1: Valorous Stance, Return of the Wildspeaker"),
- "look_top:<n> / take_count:<n> / take_filter:<t> / take_dest:<zone> / rest_dest:<zone> / rest_random_order / take_optional": ("look at the top N cards, take K matching a filter to a zone, put the rest elsewhere (splits the opaque 'selection' tag)", "reverse check r1: Militia Bugler, Dig Through Time"),
+ "modal:<chosen>_of_<modes>": ("a modal spell: how many modes are chosen of how many exist (modal:1_of_3 = choose one of three); replaces the separate mode_count and mode_choose tags (user: redundant)", "reverse check r1: Valorous Stance, Return of the Wildspeaker"),
+ "look_top:<n> / take:[may_]<count>[_<filter>]_to_<zone> / rest_dest:<zone>[_bottom[_random]]": ("look at the top N cards, take K (matching a filter, optionally = may) to a zone, put the rest in a zone (library_bottom_random = on the bottom in random order); one take tag replaces take_count, take_filter, take_dest, take_optional and rest_random_order (user: redundant)", "reverse check r1: Militia Bugler, Dig Through Time"),
  "piles_split / pile_separator:<who>": ("cards are divided into two piles", "reverse check r1: Fact or Fiction"),
  "restrict / restrict_kind:cant_attack_or_block|cant_attack|cant_block|cant_activate|doesnt_untap|loses_abilities|cant_attack_unless_cost": ("an effect that stops something from acting: can't attack or block (A/B), can't attack (A), can't block (B), its abilities can't be activated, doesn't untap, or loses its abilities; `restrict` stays as the umbrella, the kind says which; who is affected is in the target / affected tags and how long in the duration tag", "user 2026-10-22: make restrict robust (Pacifism, Goblin Heelcutter, Icy Blast, Merfolk Trickster)"),
  "pump_all": ("a team pump: an effect that changes power/toughness or grants keywords to many creatures at once; read with pump_amount, grant_kw, affected_type / affected_scope / affected_filter (other, attacking ...) and the duration tag", "user 2026-10-22: remake pump_team more readable (Overrun, Trumpet Blast, Make a Stand)"),
@@ -478,16 +478,15 @@ def extra(lines, sv, types, text):
                 for kw_ in re.split(r"\s*&\s*", bp["KW"]):
                     if kw_ and not kw_.startswith("HIDDEN"): add("grant_kw:" + tok(kw_.split(":")[0]))
                 add("duration:" + ({"EndOfTurn": "eot", "Permanent": "permanent"}.get(bp.get("Duration", ""), tok(bp["Duration"])) if bp.get("Duration") else "eot"))
-            if api == "Charm":
-                add("modal", "mode_count:%d" % len(re.split(r"[ ,]+", bp.get("Choices", "")) if bp.get("Choices") else []), "mode_choose:" + {"1": "one", "2": "two"}.get(bp.get("CharmNum", "1"), tok(bp.get("CharmNum", "1"))))
-            if api == "Dig":
-                add("look_top:" + bp.get("DigNum", "1").lower())
-                add("take_count:" + (bp.get("ChangeNum", "1").lower() if bp.get("ChangeNum", "1") != "All" else "all"))
-                if bp.get("ChangeValid"): add("take_filter:" + filt(bp["ChangeValid"]))
-                if bp.get("DestinationZone"): add("take_dest:" + tok(bp["DestinationZone"]))
-                if bp.get("DestinationZone2"): add("rest_dest:" + tok(bp["DestinationZone2"]) + ("_bottom" if bp.get("LibraryPosition") == "-1" else ""))
-                if bp.get("RestRandomOrder") == "True": add("rest_random_order")
-                if bp.get("Optional") == "True": add("take_optional")
+            if api == "Charm":                                    # one tag: how many modes are chosen of how many (modal:1_of_3), instead of separate count and choose tags
+                nmodes = len(re.split(r"[ ,]+", bp.get("Choices", ""))) if bp.get("Choices") else 0
+                add("modal:%s_of_%d" % (bp.get("CharmNum", "1").lower().replace("x", "x"), nmodes))
+            if api == "Dig":                                      # look_top:N + ONE take tag (count, filter, destination, optional) + the rest
+                cnt = bp.get("ChangeNum", "1").lower()
+                cnt = "all" if cnt == "all" else cnt
+                tk = cnt + ("_" + filt(bp["ChangeValid"]) if bp.get("ChangeValid") else "") + "_to_" + (tok(bp["DestinationZone"]) if bp.get("DestinationZone") else "hand")
+                add("look_top:" + bp.get("DigNum", "1").lower(), "take:" + ("may_" if bp.get("Optional") == "True" else "") + tk)
+                if bp.get("DestinationZone2"): add("rest_dest:" + tok(bp["DestinationZone2"]) + ("_bottom" if bp.get("LibraryPosition") == "-1" else "") + ("_random" if bp.get("RestRandomOrder") == "True" and bp.get("LibraryPosition") == "-1" else ""))
             if api == "PeekAndReveal": add("look_top:" + bp.get("PeekAmount", "1").lower(), "reveal")
             if api == "TwoPiles": add("piles_split", "pile_separator:" + tok(bp.get("Separator", "")))
             if api == "Token":

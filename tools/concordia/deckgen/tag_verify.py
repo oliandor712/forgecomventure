@@ -87,6 +87,16 @@ DOC = {
 }
 
 
+# AI Tags (user 2026-10-22): tags written for the game AI and the deck tools, not for reading a card. They are segregated from the rules tags and the blind reader never sees them.
+# opaque metrics (tempo), the AILogic reference (ai_logic), and umbrella labels whose detail is carried by other tags (burn -> damage, removal -> remove:*, restrict -> restrict_kind,
+# pump_team -> pump_all, artifact_token -> token_type + token_ability, selection -> look_top / take_*, fixing -> mana:*)
+AI_PREFIX = ("tempo:", "ai_logic:")
+AI_EXACT = {"burn", "removal", "selection", "fixing", "restrict", "pump_team", "artifact_token"}
+
+
+def is_ai_tag(t): return t in AI_EXACT or t.startswith(AI_PREFIX)
+
+
 def oracle_of(text):
     line = next((l[7:] for l in text.split("\n") if l.startswith("Oracle:")), "")
     return line.replace("\\n", "\n")

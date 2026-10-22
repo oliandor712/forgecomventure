@@ -287,20 +287,23 @@ def record(name, text, mg):
     for gid, ts in ex_groups.items(): groups[gid] = [t.lower() for t in dict.fromkeys(ts)]
     def gkey(g): return (0 if g == "c0" else 1 if g.startswith("k") else 3 if g == "v" else 2, [int(x) for x in re.findall(r"\d+", g)])
     groups = dict(sorted(groups.items(), key=lambda kv: gkey(kv[0])))
-    return dict(name=name, groups=groups, base=[t.lower() for t in base], new=[t.lower() for t in ex_tags if t.lower() in tags], tags=tags, clauses=clauses, links=links, mtgish=mt, verify=ver, ai=ai, aipref=aipref, removedeck=rd, nlines=n)
+    ai_tags = [x for x in tags if TV.is_ai_tag(x)]
+    return dict(name=name, ai_tags=ai_tags, groups=groups, base=[t.lower() for t in base], new=[t.lower() for t in ex_tags if t.lower() in tags], tags=tags, clauses=clauses, links=links, mtgish=mt, verify=ver, ai=ai, aipref=aipref, removedeck=rd, nlines=n)
 
 
 def render(r):
-    o = ["card: " + q(r["name"]), "tags: " + " ".join(r["tags"])]
+    o = ["card: " + q(r["name"]), "tags: " + " ".join(x for x in r["tags"] if not TV.is_ai_tag(x))]
+    if r["ai_tags"]: o.append("ai_tags: " + " ".join(r["ai_tags"]))
     o.append("clauses[%d]{id,trigger,cost,verb,payload,affected,duration}:" % len(r["clauses"]))
     for c in r["clauses"]: o.append("  " + ",".join(q(c[k]) for k in ("id", "trigger", "cost", "verb", "payload", "affected", "duration")))
     if r["links"]:
         o.append("links[%d]{from,rel,to}:" % len(r["links"]))
         for a, b, c in r["links"]: o.append("  %s,%s,%s" % (a, b, c))
-    o.append("groups[%d]{id,source,tags}:" % len(r["groups"]))
+    o.append("groups[%d]{id,source,tags}:" % len([1 for g, ts in r["groups"].items() if [x for x in ts if not TV.is_ai_tag(x)]]))
     for gid, ts in r["groups"].items():
         src = "saga chapter %s" % gid[1:] if re.match(r"^s\d+$", gid) else "cross-check (oracle/mtgish/keyword/ai)" if gid == "v" else "card" if gid == "c0" else ("K line" if gid.startswith("k") else ("sub-ability of " + gid.split(".")[0] if "." in gid else "%s line" % next((c.get("kind", "?") for c in r["clauses"] if c["id"] == gid), "?")))
-        o.append("  %s,%s,%s" % (gid, src, q(" ".join(ts))))
+        ts = [x for x in ts if not TV.is_ai_tag(x)]
+        if ts: o.append("  %s,%s,%s" % (gid, src, q(" ".join(ts))))
     o.append("mtgish: " + r["mtgish"])
     if r["verify"]["flags"]: o.append("verify_flags: " + " | ".join(r["verify"]["flags"]))
     o.append("forge_ai: AILogic=%s%s%s" % ("/".join(r["ai"]) or "-", " AIPreference" if r["aipref"] else "", " RemoveDeck" if r["removedeck"] else ""))
@@ -363,10 +366,10 @@ def pool_pick(tag, n, mg):
 def sample_row(r, text, starter_names):
     text = text or find_text(r["name"].replace(" (not in starter decks)", ""))
     oracle = next((l[7:] for l in text.split("\n") if l.startswith("Oracle:")), "").replace("\\n", " / ").replace("|", "/")
-    grp = "<br>".join("%s: %s" % (k, " ".join(v)) for k, v in r["groups"].items())
+    grp = "<br>".join("%s: %s" % (k, " ".join(x for x in v if not TV.is_ai_tag(x))) for k, v in r["groups"].items() if [x for x in v if not TV.is_ai_tag(x)])
     v = r["verify"]
     chk = "<br>".join(["added: " + " ".join("%s [%s]" % (t, "+".join(v["sources"][t])) for t in v["add"] if not t.startswith("ai_logic"))] * bool([t for t in v["add"] if not t.startswith("ai_logic")]) + ["flag: " + f for f in v["flags"]] + ["AI: " + "/".join(v["ai"])] * bool(v["ai"]))
-    return "| %s | %s | %s | %s | %s | |" % (r["name"], oracle, " ".join(r["tags"]), grp, chk or "agrees")
+    return "| %s | %s | %s | %s | %s | %s | |" % (r["name"], oracle, " ".join(x for x in r["tags"] if not TV.is_ai_tag(x)), " ".join(r["ai_tags"]) or "-", grp, chk or "agrees")
 
 
 def write_sample(recs, mg):
@@ -384,7 +387,7 @@ def write_sample(recs, mg):
             for r in cards: texts[r["name"]] = find_text(r["name"])
             out.append("No such card in the starter decks (%d starter cards): %d taken from the whole card pool, marked (not in starter decks).\n" % (len(recs), len(cards)))
             for r in cards: r["name"] += " (not in starter decks)"
-        out += ["| Card | Oracle text | Tags | Linked groups | Cross-check | Your note |", "|---|---|---|---|---|---|"]
+        out += ["| Card | Oracle text | Tags | AI tags | Linked groups | Cross-check | Your note |", "|---|---|---|---|---|---|---|"]
         out += [sample_row(r, texts.get(r["name"].replace(" (not in starter decks)", ""), ""), None) for r in cards]
     open(os.path.join(HERE, "tags", "STARTER_TAGS_SAMPLE.md"), "w").write("\n".join(out) + "\n")
 

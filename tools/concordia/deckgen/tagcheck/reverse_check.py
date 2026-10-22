@@ -23,27 +23,56 @@ import tag_run as T
 import tag_verify as TV
 
 READER_RULES = """You are the BLIND READER. You see only tags. Rules (strict):
-1. Read ONLY the one batch file you are given. Do not open, list, search or fetch anything else (no repo, no card databases, no web, no other run folders). Do not run shell commands.
-2. Each card is an id plus tags, grouped. Tags are lower case `family:value` words. Groups (k1, c1, c1.2 ...) are tags that came from one line of the card; links relate groups. You are NOT told the card's name, cost, power/toughness or Oracle text.
-3. For every card write the rules text (Magic Oracle style, one line per ability, '/' between abilities) that these tags describe, as exactly as the tags allow. Use only what the tags say. If a tag does not say an amount, mana cost or exact wording, write a placeholder such as {cost}, N or X instead of guessing a real value. Do not add abilities the tags do not support.
+1. Read ONLY the two files you are given: one batch file (cards) and its reminders file (reminder texts of the keywords and tokens that occur in the batch). Do not open, list, search or fetch anything else (no repo, no card databases, no web, no other run folders). Do not run shell commands.
+2. Each card is an id plus tags, grouped. Tags are lower case `family:value` words. Groups (k1, c1, c1.2 ...) are tags that came from one line of the card; links relate groups. You are NOT told the card's name, cost, power/toughness or Oracle text. The reminders file explains keywords (kw:<name>) and predefined tokens (token_type:<name>) in rules language: use it to understand them, but for a keyword write the keyword itself (with its numbers or cost placeholders), not its reminder text.
+3. For every card write the rules text (Magic Oracle style, one line per ability, '/' between abilities) that these tags describe, as exactly as the tags allow. Use only what the tags say. If a tag does not say an amount, mana cost or exact wording, write a placeholder such as {cost}, N or X instead of guessing a real value. Do not add abilities the tags do not support. Do NOT write a type line (e.g. "Creature - Elf"); write only rules text.
 4. If you think you recognise the real card, say so in `recognised` (true) but still write only what the tags support. Never write the card's name.
-5. `ignore_tags` are internal metrics or umbrella labels (tempo, ai_logic, burn, removal, selection, fixing). Ignore them completely: do not turn them into text and do not list them in `unclear`. List in `unclear` every other tag you could not turn into rules text, and in `conflicts` any tags that contradict each other. Do NOT write a type line (e.g. "Creature - Elf"); write only rules text.
+5. List in `unclear` every tag you could not turn into rules text, and in `conflicts` any tags that contradict each other.
 6. Write the answer as JSON to the output file you are given, exactly: {"cards":[{"id":"c001","text":"...","unclear":["tag"],"conflicts":["..."],"recognised":false}, ...]} with one entry for every id in the batch, in order. Then reply with one line: the number of cards written."""
 
 
-OPAQUE = ("tempo:", "ai_logic:")                                   # prefixes
-OPAQUE_EXACT = {"burn", "removal", "selection", "fixing"}   # umbrella tags the r1 readers could not turn into rules text
-
-
-def is_opaque(t): return t in OPAQUE_EXACT or t.startswith(OPAQUE)
-
-
 def tag_blind(rec):
-    """the blind view of one record: tags, groups and links only, with opaque umbrella/metric tags moved to `ignore_tags` (the reader is told to ignore them).
+    """the blind view of one record: rules tags, groups and links only. AI Tags (tag_verify.is_ai_tag: opaque metrics, the AILogic reference, umbrella labels) are segregated and not shown at all.
     Group ids are kept; the source of a group (K line, A line ...), clauses, mtgish and AI lines are dropped"""
-    groups = {("x" if g == "v" else g): [t for t in ts if not is_opaque(t)] for g, ts in rec["groups"].items()}
-    return {"tags": [t for t in rec["tags"] if not is_opaque(t)], "ignore_tags": [t for t in rec["tags"] if is_opaque(t)],
-            "groups": {g: " ".join(ts) for g, ts in groups.items() if ts}, "links": ["%s %s %s" % l for l in rec["links"]]}
+    groups = {("x" if g == "v" else g): [t for t in ts if not TV.is_ai_tag(t)] for g, ts in rec["groups"].items()}
+    return {"tags": [t for t in rec["tags"] if not TV.is_ai_tag(t)],
+            "groups": {g: " ".join(ts) for g, ts in groups.items() if ts}, "links": ["%s %s %s" % l for l in rec["links"] if not any(TV.is_ai_tag(p.split(":", 1)[-1]) for p in (l[0], l[2]))]}
+
+
+AI_DIR = os.path.join(T.ROOT, "tools/concordia/ai_lab")
+
+
+def _key(s): return re.sub(r"[^a-z0-9]", "", s.lower())
+
+
+def reminder_db():
+    """keyword and token reminder texts from the keyword repository: KEYWORD_REMINDER_TEXT.toon, KEYWORD_REMINDER_FILL.toon (gaps filled from Scryfall), TOKEN_REMINDER_TEXT.toon (CR 111.10)"""
+    import csv
+    kw, tk = {}, {}
+    def rows(fn):
+        for l in open(os.path.join(AI_DIR, fn), encoding="utf-8"):
+            if l.startswith("  "):
+                try: yield next(csv.reader([l.strip()], escapechar="\\", doublequote=False))
+                except StopIteration: pass
+    for f in rows("KEYWORD_REMINDER_TEXT.toon"):
+        if len(f) > 3 and f[3] and re.match(r"^70[12]\.", f[0]): kw[_key(f[1])] = f[3]
+    if os.path.exists(os.path.join(AI_DIR, "KEYWORD_REMINDER_FILL.toon")):
+        for f in rows("KEYWORD_REMINDER_FILL.toon"):
+            if len(f) > 2 and f[2] and _key(f[0]) not in kw: kw[_key(f[0])] = f[2]
+    for f in rows("TOKEN_REMINDER_TEXT.toon"):
+        if len(f) > 3 and f[0] != "tokens[21]{name": tk[_key(f[0])] = f[3] or f[2]
+    return kw, tk
+
+
+def batch_reminders(items, db):
+    """the reminder texts a reader may read for one batch: only keywords (kw:<name>) and tokens (token_type:<name>) that appear in the batch's tags"""
+    kw, tk = db
+    out = {"keywords": {}, "tokens": {}}
+    for c in items:
+        for t in c["tags"]:
+            if t.startswith("kw:") and _key(t[3:]) in kw: out["keywords"][t] = kw[_key(t[3:])]
+            if t.startswith("token_type:") and _key(t[11:]) in tk: out["tokens"][t] = tk[_key(t[11:])]
+    return out
 
 
 def starter_records():
@@ -241,8 +270,10 @@ def cmd_export(a):
             cid = "c%03d" % (k + j + 1); key[cid] = r["name"]
             items.append(dict(id=cid, **tag_blind(r)))
         batches.append(items)
+    db = reminder_db()
     for n, items in enumerate(batches, 1):
         json.dump(dict(cards=items), open(os.path.join(wd, "in", "batch_%02d.json" % n), "w"), indent=1)
+        json.dump(batch_reminders(items, db), open(os.path.join(wd, "in", "reminders_%02d.json" % n), "w"), indent=1)
     json.dump(key, open(os.path.join(wd, "key", "key.json"), "w"), indent=1)
     leaks = leak_check(wd, key)
     print("run %s: %d cards, %d batches in %s/in ; answer key in %s/key (never tell the reader)" % (a.run, len(key), len(batches), wd, wd))
@@ -253,7 +284,7 @@ def cmd_export(a):
         open(os.path.join(wd, "legend.md"), "w").write(legend_text())
     print("\n--- reader prompt (one subagent per batch, tools Read+Write only; fill in the paths) ---")
     for n in range(1, len(batches) + 1):
-        print("BATCH %d: Read %s/in/batch_%02d.json and Write %s/out/batch_%02d.json\n" % (n, wd, n, wd, n))
+        print("BATCH %d: Read %s/in/batch_%02d.json and %s/in/reminders_%02d.json; Write %s/out/batch_%02d.json\n" % (n, wd, n, wd, n, wd, n))
     print(rules)
     if leaks: sys.exit(2)
 
@@ -262,8 +293,9 @@ def leak_check(wd, key):
     """blind inputs must not contain the card name (unless a one-word name is simply one of the card's own tag values, e.g. Swamp / landtype:swamp), an Oracle fragment, or any key/AI/mtgish/script line"""
     bad, raws, own = [], {}, {}
     for fn in sorted(os.listdir(os.path.join(wd, "in"))):
-        d = json.load(open(os.path.join(wd, "in", fn)))
         raws[fn] = open(os.path.join(wd, "in", fn)).read().lower()
+        if not fn.startswith("batch_"): continue
+        d = json.load(open(os.path.join(wd, "in", fn)))
         for c in d["cards"]: own[c["id"]] = " ".join(c["tags"]).lower()
         for pat in ("oracle:", "mtgish:", "forge_ai:", "clauses[", "svar:", "ailogic$"):
             if pat in raws[fn]: bad.append("%s contains %r" % (fn, pat))
