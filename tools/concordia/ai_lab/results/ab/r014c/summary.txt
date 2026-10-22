@@ -1,0 +1,4 @@
+RESULT	r014c-base	A=4	B=36	draw=0	avgTurns=18.4
+  casts 259 activations 0
+RESULT	r014c-patched	A=6	B=34	draw=0	avgTurns=19.7
+  casts 195 activations 0
