@@ -10,7 +10,7 @@ def check(name, cond, note=""):
     ok &= bool(cond)
     print(("PASS " if cond else "FAIL ") + name + (f" ({note})" if note else ""))
 for f in ["CLAUDE.md", "tools/agents/MAIN_SESSION_BRIEF.md", "tools/agents/CONTEXT.md", "tools/agents/human_logic.toon", "tools/agents/TOOLBOX.md",
-          "tools/agents/registry.json", "tools/agents/mailbox.py", "tools/agents/mailbox/README.md", "tools/agents/HANDOVER.md", "tools/concordia/deckgen/tag_run.py", "tools/concordia/ai_lab/KEYWORD_REFERENCE.toon"]:
+          "tools/agents/registry.json", "tools/agents/mailbox.py", "tools/agents/mailbox/README.md", "tools/agents/HANDOVER.md", "tools/agents/sync_check.py", "tools/agents/CLAUDE2_SYNC_CHECK.md", "tools/concordia/deckgen/tag_run.py", "tools/concordia/ai_lab/KEYWORD_REFERENCE.toon"]:
     check("file " + f, os.path.exists(os.path.join(ROOT, f)))
 try: check("human_logic has H58", "H58" in open(os.path.join(ROOT, "tools/agents/human_logic.toon"), encoding="utf-8").read())
 except OSError: check("human_logic has H58", False)
