@@ -159,6 +159,8 @@ def gap_pass(face, lines, sv, tags, ex_groups):
             tb = sv.get(tn, "")
             if not tb: continue
             tp = _params(tb); gg = gid + ".g"
+            vt = p.get("ValidTgts", "")
+            if vt and not re.search(r"YouCtrl|OppCtrl|YouOwn|Other", vt) and "target_scope:any" not in tags: add(gid, "target_scope:any")      # any creature, whoever controls it (user, Feign Death)
             if re.search(r"Until end of turn", body + p.get("SpellDescription", ""), re.I) and "Duration" not in p: add(gid, "duration:eot")
             if tp.get("Mode") == "ChangesZone" and tp.get("Destination") == "Graveyard" and "Self" in tp.get("ValidCard", ""): add(gg, "trigger:dies", "trigger_scope:self")
             for sn in _chain(tb, sv)[1:]:
@@ -167,6 +169,7 @@ def gap_pass(face, lines, sv, tags, ex_groups):
                     add(gg, "return", "from_zone:" + sp["Origin"].lower(), "to_zone:battlefield", "put_onto_battlefield")      # put onto the battlefield: not cast
                     if sp["Origin"] == "Graveyard": add(gg, "reanimate")
                     if sp.get("Tapped") == "True": add(gg, "put_tapped")
+                    if "GainControl" not in sn and "NewController" not in sn: add(gg, "controller:owner")      # comes back under its owner's control
                     mc_ = re.match(r"(P1P1)", sp.get("WithCountersType", ""))
                     if mc_: add(gg, "counters_plus", "counter:p1p1", "counter_count:1")
     # Explore-type effects hang on an Effect SVar that is not part of an A/S/T line

@@ -799,12 +799,12 @@ forge_ai: AILogic=-
 
 card: Feign Death
 typing: cardtype:instant
-tags: reanimate target_count:one target_type:creature grant_ability:dies_trigger duration:eot trigger:dies trigger_scope:self return from_zone:graveyard to_zone:battlefield put_onto_battlefield put_tapped counters_plus counter:p1p1 counter_count:1
+tags: reanimate target_count:one target_type:creature grant_ability:dies_trigger target_scope:any duration:eot trigger:dies trigger_scope:self return from_zone:graveyard to_zone:battlefield put_onto_battlefield put_tapped controller:owner counters_plus counter:p1p1 counter_count:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",animate,"",ValidTgts=Creature,""
 groups[2]{id,source,tags}:
-  c1,A line,target_count:one target_type:creature grant_ability:dies_trigger duration:eot
-  c1.g,sub-ability of c1,trigger:dies trigger_scope:self return from_zone:graveyard to_zone:battlefield put_onto_battlefield reanimate put_tapped counters_plus counter:p1p1 counter_count:1
+  c1,A line,target_count:one target_type:creature grant_ability:dies_trigger target_scope:any duration:eot
+  c1.g,sub-ability of c1,trigger:dies trigger_scope:self return from_zone:graveyard to_zone:battlefield put_onto_battlefield reanimate put_tapped controller:owner counters_plus counter:p1p1 counter_count:1
 mtgish: rules=SpellActions
 verify_flags: trigger trigger:dies from mtgish only (WhenAPermanentDies)
 forge_ai: AILogic=-
@@ -3866,12 +3866,12 @@ forge_ai: AILogic=-
 
 card: Exhaustion
 typing: cardtype:sorcery
-tags: target_count:one target_type:opponent restrict_kind:doesnt_untap duration:next_untap
+tags: target_count:one target_type:opponent restrict_kind:doesnt_untap duration:next_untap target_scope:any
 ai_tags: restrict ai_logic:keepoppcreatslandstapped
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",effect,"",ValidTgts=Opponent,duration:permanent
 groups[1]{id,source,tags}:
-  c1,A line,target_count:one target_type:opponent restrict_kind:doesnt_untap duration:next_untap
+  c1,A line,target_count:one target_type:opponent restrict_kind:doesnt_untap duration:next_untap target_scope:any
 mtgish: rules=SpellActions
 forge_ai: AILogic=KeepOppCreatsLandsTapped
 
