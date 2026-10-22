@@ -1,6 +1,6 @@
 # Toolbox: the shared reference for every agent
 
-Generated 2026-10-22 15:29Z at commit 09228503 on branch cd/claude2. **Tools stamp: `03f80961d572`.**
+Generated 2026-10-22 15:36Z at commit 5239e47f on branch cd/claude2. **Tools stamp: `03f80961d572`.**
 
 ## Start of every turn (all agents)
 1. `git pull --no-rebase origin campaign-design` (if the clone is shallow: `git fetch --unshallow origin campaign-design`).
@@ -46,7 +46,7 @@ Generated 2026-10-22 15:29Z at commit 09228503 on branch cd/claude2. **Tools sta
 | `tools/concordia/deck_tier.py` | deck builder, balance lab | deck power and tier bands | 4005990f 10-21 18:58Z |
 | `tools/concordia/maps/check_doors.py` | main | door and map checks | 4005990f 10-21 18:58Z |
 | `tools/agents/agentctl.py` | main | agent registry, requests, updates, check | 4005990f 10-21 18:58Z |
-| `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md` | ai lab, main | AI change checkboxes; only the user ticks | 75316d47 10-22 14:26Z |
+| `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md` | ai lab, main | AI change checkboxes; only the user ticks | a4c5417b 10-22 15:30Z |
 | `docs/Adventure/Campaign/RESEARCH_MASTER_REPORT.md` | all | the compiled research so far | 4005990f 10-21 18:58Z |
 
 ## Daily commands
