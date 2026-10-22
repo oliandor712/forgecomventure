@@ -1,0 +1,31 @@
+[metadata]
+Name=Atris's Crew (40)
+Description=Test deck shrunk to 40 cards by ai_lab/minideck.py from T2_UB_Atris.dck; test cards: Opt, Deliberate, Joint Exploration, Delightful Discovery, Demon's Due
+[Commander]
+1 Atris, Oracle of Half-Truths|THB
+[Main]
+6 Island
+5 Swamp
+1 Myriad Landscape|CMM
+1 Tainted Isle|TOR
+1 Bojuka Bog|WWK
+1 Barren Moor|ONS
+1 Lonely Sandbar|ONS
+2 Opt
+2 Deliberate
+2 Joint Exploration
+2 Delightful Discovery
+2 Demon's Due
+1 Omen Hawker|MOM
+1 Ruin Crab|ZNR
+1 Stitcher's Supplier|M19
+1 Malakir Rebirth|ZNR
+1 Sol Ring|TMC
+1 Vampiric Rites|FDN
+1 Baleful Strix|SLZ
+1 Blood Artist|AVR
+1 Corrupt Court Official|TLA
+1 Ghostly Pilferer|M21
+1 Master Pakku|TLA
+1 Ornithopter of Paradise|J25
+1 Scheming Aspirant|ONE
