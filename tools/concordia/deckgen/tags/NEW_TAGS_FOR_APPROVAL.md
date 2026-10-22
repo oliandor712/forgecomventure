@@ -106,3 +106,24 @@ Changes to existing behaviour (also need approval): (a) the umbrella tag `remova
 | [ ] proposed | `piles_split` | cards are divided into two piles by that player; one tag replaces piles_split + pile_separator (user: redundant) | reverse check r1: Fact or Fiction | 1 (e.g. Fact or Fiction) | piles_split:opponent (1) |
 | [ ] proposed | `cost_exile_target` | (see feedback notes) | created from the user feedback pattern | 1 (e.g. Disciple of the Ring) | cost_exile_target:instant_or_sorcery (1) |
 | [ ] proposed | `chapter_count` | saga chapter number of an ability, and how many chapters the saga has | reverse check r1: Time of Ice | 1 (e.g. Time of Ice) | chapter_count:3 (1) |
+
+## New values inside already-approved families (the family is approved; these values appeared after the approval)
+
+Say if any should be changed; unmarked means accepted with the family.
+
+| Family | New values (cards) |
+|---|---|
+| `trigger` | trigger:upkeep (5); trigger:combat_damage (3); trigger:gain_life (2); trigger:beginning_of_combat (2); trigger:end_step (2) |
+| `cost` | cost:remove_counters (2); cost:return (2); cost:life (1); cost:exile_from_graveyard (1); cost:exile (1) |
+| `duration` | duration:next_untap (2); duration:while_control (1) |
+| `damage_amount` | damage_amount:x (9) |
+
+## Tag names that were merged or renamed (the old names no longer exist)
+
+- `mode_count` + `mode_choose` -> `modal:<chosen>_of_<modes>`; `take_count` / `take_filter` / `take_dest` / `take_optional` / `rest_random_order` -> `take:...` and `rest_dest:...`; `piles_split` + `pile_separator` -> `piles_split:<who>`.
+- `x_is:<what>` values were renamed to readable words (e.g. `count_swamp_youctrl` -> `count_swamp_you_control`); `restrict` now also carries `restrict_kind:<kind>`.
+- `transform` was removed from Feign Death, Supernatural Stamina and Merfolk Trickster (they grant or remove abilities); `sacrifice_outlet` was removed from 14 cards that sacrifice only themselves (user rule).
+- Segregated, not removed: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`) sit on the `ai_tags:` line and are hidden from the blind reader.
+
+## Waiting on the user
+- Tick the proposed families above; decide the two behaviour changes at the top; decide whether to merge `condition_present` / `condition_zone` / `condition_compare` into one readable `condition:` tag; confirm the AI Tags list.
