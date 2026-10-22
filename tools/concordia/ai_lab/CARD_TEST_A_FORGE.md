@@ -401,7 +401,7 @@ Rule (main session, 2026-10-22): keyword (K:) lines and the features they produc
 | A4: keywords removed from the match | 16 of 50 | 19 | 15 | 16 | 15 of 16 |
 | Method B strict exact (reference) | 33 of 50 | | | | |
 
-A4 is worse than A3b on every strict measure. Removing the keyword features loses 4 strict exact and agreement with B drops from 20 to 16. The keywords carried real signal for the AILogic$ match on this set: for example the Enchant auras and the Flying and Flash creatures, which the keyword features matched to their lookalikes.
+A4 is worse than A3b on every strict measure. Removing the keyword features loses 4 strict exact and agreement with B drops from 20 to 16. The keyword features carried signal for the AILogic$ match on this set. Which cards gained or lost from the removal is in the table below; I have not checked by card type (auras, Flying creatures) whether the loss is concentrated there.
 
 Control predictions that changed (A3b -> A4): 17 of 50 (listed below). Test-set proposals that changed: 18 of 50.
 
@@ -429,4 +429,4 @@ Keyword-only cards: none. Removing K lines leaves at least one A/S/T/R line on a
 
 Reminder text: stripped before matching, no effect on the features (they never read text).
 
-Recommendation: keep keywords in the match (A3b) for AILogic$ similarity; keep A4 only as a comparison. Keywords are useful as match features here, so the rule in the brief (remove them) would need a different test.
+Recommendation: keep keywords in the match (A3b) for AILogic$ similarity on this set; keep A4 as a comparison only. Removing keywords lowers the score here, so the rule as written is not supported by this test.
