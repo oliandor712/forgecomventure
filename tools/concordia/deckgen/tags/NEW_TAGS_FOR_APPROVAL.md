@@ -5,7 +5,7 @@ Changes to existing behaviour (approved with "approve all tags", 2026-10-22; tre
 
 | Approve | Tag family | Meaning | Source of the rule | Cards | Values seen (cards) |
 |---|---|---|---|---|---|
-| | *No family waits for approval.* | | | | |
+| [ ] proposed | `return` | a card returns from the graveyard or exile to hand or library (return from_zone:graveyard to_zone:hand); the readable detail behind the AI umbrella tag recursion. from_zone / to_zone are the shared zone tags used by every zone-move tag (return, take, put_onto_battlefield, cost:exile) | reverse check r5: Elvish Regrower lost its meaning when recursion became an AI tag | 9 (e.g. Cadaver Imp, Gravedigger, Raise Dead) | return (9) |
 
 ## New values inside already-approved families (the family is approved; these values appeared after the approval)
 
@@ -14,12 +14,16 @@ Say if any should be changed; unmarked means accepted with the family.
 | Family | New values (cards) |
 |---|---|
 | `ai_logic` | ai_logic:always (3); ai_logic:pump (2); ai_logic:powerdmg (2); ai_logic:fight (2); ai_logic:curse (2); ai_logic:atoppeot (1); ai_logic:foodortreasure (1); ai_logic:ateotifnotattacking (1); ai_logic:cantregenerate (1); ai_logic:makeunblockable (1); ai_logic:manaritual (1); ai_logic:mostprominentincomputerdecknontoken (1); ai_logic:gaincontrol (1); ai_logic:bestopportunity (1) |
-| `return` | return:graveyard_to_hand (7); return:exile_to_hand (1); return:graveyard_to_library (1) |
+| `from_zone` | from_zone:graveyard (19); from_zone:library (11); from_zone:exile (5); from_zone:hand (1) |
+| `take` | take:2 (2); take:all (2); take:all_goblin (1); take:may_1_creature_power_le_2 (1) |
+| `to_zone` | to_zone:hand (12); to_zone:exile (2); to_zone:library (1) |
+| `rest_to_zone` | rest_to_zone:graveyard (1); rest_to_zone:library (1) |
 | `x_is` | x_is:greatest_power_among_creature_you_control_nonhuman (1); x_is:greatest_power_among_creature_you_control (1) |
+| `rest_order` | rest_order:bottom_random (1) |
 
 ## Tag names that were merged or renamed (the old names no longer exist)
 
-- `mode_count` + `mode_choose` -> `modal:<chosen>_of_<modes>`; `take_count` / `take_filter` / `take_dest` / `take_optional` / `rest_random_order` -> `take:...` and `rest_dest:...`; `piles_split` + `pile_separator` -> `piles_split:<who>`.
+- `mode_count` + `mode_choose` -> `modal:<chosen>_of_<modes>`; `take_count` / `take_filter` / `take_dest` / `take_optional` / `rest_random_order` -> `take:...` + `to_zone:...` and `rest_to_zone:...` + `rest_order:...`; `return:<zone>_to_<zone>`, `put_onto_battlefield:from_<zone>`, `cost:exile_from_graveyard` -> bare tag + `from_zone:` / `to_zone:` zone tags; `piles_split` + `pile_separator` -> `piles_split:<who>`.
 - `x_is:<what>` values were renamed to readable words (e.g. `count_swamp_youctrl` -> `count_swamp_you_control`); `restrict` now also carries `restrict_kind:<kind>`.
 - `transform` was removed from Feign Death, Supernatural Stamina and Merfolk Trickster (they grant or remove abilities); `sacrifice_outlet` was removed from 14 cards that sacrifice only themselves (user rule).
 - Segregated, kept intact: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`, `land_tutor`, bare `recursion`, every `<kw>_grant` and the bare keyword tags on cards that only grant a keyword) sit on the `ai_tags:` line and are hidden from the blind reader and from the redundancy check.
