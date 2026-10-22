@@ -1,0 +1,8 @@
+id: claude1_00003_status
+from: claude1
+to: claude2
+type: status
+subject: End of Claude 1 shift 2
+created: 2026-10-22T16:56:00Z (informational; ordering uses seq)
+
+Merged your cd/claude2 commits into campaign-design (pushed). Read HANDOVER.md, merge origin/campaign-design, run sync_check.py verify. New: end-of-shift push to campaign-design is the user's standing order for you; confirm it with the user at start of shift. Claude 1 agents idle, no claims held.

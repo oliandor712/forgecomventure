@@ -2,10 +2,17 @@
 
 The outgoing session rewrites this file at the end of its shift (see MAIN_SESSION_BRIEF.md section 8). The incoming session reads it first. Only the session on shift edits it.
 
-Last updated: 2026-10-22, end of Claude 2's first shift
-Outgoing: Claude 2 (`session_01Gq6ZyZAehyS8qZDopm3Dym`, branch `cd/claude2`, backed up to origin/cd/claude2)
+Last updated: 2026-10-22, end of Claude 1's second shift
+Outgoing: Claude 1 (`session_01SmNeweiyRBavDSUetnsUjF`, branch `campaign-design`)
 
-## Done this shift
+## Done this shift (Claude 1, second shift)
+- Started shift: merged Claude 2's work (first via `origin/campaign-design`, then its end-of-shift commits from `origin/cd/claude2`); all of it is now on `campaign-design`.
+- Confirmed Claude 2 ran a full shift (its agents are in `projects/claude2_agents.md`). Its live session `session_01Gq6ZyZAehyS8qZDopm3Dym` is not visible from Claude 1's tools (`get_session` and `list_events`: not found).
+- User order recorded: Claude 2 always pushes to `campaign-design` at the end of its shift (brief rule 1 and section 8, kickoff prompt, mailbox note `claude1_00002_note`). Claude 1 still waits for "push".
+- Rule 13 (documents auto-push with `docpush.py`, revise in place) and `sync_check.py` + `CLAUDE2_SYNC_CHECK.md` are in place from the first shift.
+- Claude 1 made no tagging, deck or AI changes this shift.
+
+## Previous shift (Claude 2) done
 - **Tagging, sample tag run:** cross-check layer `tag_verify.py` (Oracle, mtgish, keyword reference/CR, AILogic); mtgish loader reads two-faced cards; AI Tags segregated (`ai_tags:` line; the reader never sees them); new tag families for static / replacement / modal / look-at-top / saga / amounts / grants / `restrict_kind` / `pump_all` / `token_ability` / `x_is` (readable value, linked to its amount tag and the object it measures); redundant pairs merged (`modal:1_of_3`, `take:...`, `piles_split:who`); self-sacrifice no longer an outlet (20 -> 6). Reports and samples regenerated in `deckgen/tags/`.
 - **Reverse tag check:** `deckgen/tagcheck/` (`reverse_check.py`, agent `tag-blind-reader`, per-batch reminder files). Runs r1-r4 on the 353 starter cards: mean similarity 0.774 / 0.861 / 0.871 / 0.876; real card ranked #1 219 / 266 / 262 / 266. Findings: `R1_FINDINGS.md`, `R2_FINDINGS.md`, `CHANGES_AND_FEEDBACK.md`, `REVERSE_CHECK_REPORT.md` (latest = r4). Run data in `tagcheck/runs/r1..r4`.
 - **Keyword repository:** `ai_lab/TOKEN_REMINDER_TEXT.toon` (CR 111.10 tokens), `ai_lab/KEYWORD_REMINDER_FILL.toon` (gaps filled from Scryfall API, Forge Oracle lines and CR rule text; generators `tagcheck/build_token_reference.py`, `build_reminder_fill.py [--forge|--cr]`).
@@ -25,9 +32,11 @@ Outgoing: Claude 2 (`session_01Gq6ZyZAehyS8qZDopm3Dym`, branch `cd/claude2`, bac
 - forge-ai-lab `session_012GGR4uHxSZZdoF7AUfDwRN`: paused, idle. Has pushed patch 014, 005 v4, 015, results n014/n005/n008, `ab_recipe.sh`, decks.
 - deck-balance-lab `session_015WzCaTSu8xpFdrSVLifceE`: paused, idle, no processes or timers. 005 v4 volume runs lost (killed).
 - deck-builder `session_01SAbP8j8tKrW3EME5sgBTfV`: idle since setup, H55 respected, nothing pushed.
-- Claude 1's agents (`forge-ai-lab session_018TohPY7UPn5mh9b7aJ4at5`, `deck-balance-lab session_01PwU5ft7yoiwonjyndwCVv9`, `deck-builder session_01EiE27ZRU9BUAnaYQYocKuB`) were not contacted.
+- Claude 1's agents (idle per the session list at the start of this shift, nothing sent to them): (`forge-ai-lab session_018TohPY7UPn5mh9b7aJ4at5`, `deck-balance-lab session_01PwU5ft7yoiwonjyndwCVv9`, `deck-builder session_01EiE27ZRU9BUAnaYQYocKuB`) were not contacted.
 
 ## Unverified or uncertain
+- Claude 2's agent states above are its own report; Claude 1 could not query them. `sync_check.py` was written for the first handover; the manifest is rewritten at each end of shift (this one included).
+- The end-of-shift push order for Claude 2 reaches it through the mailbox, the brief and the prompt; the running Claude 2 must confirm it with the user at its next start of shift.
 - Reverse-check scores: one reader pass per run (no reader-noise estimate); r3 and r4 differ from r2 by amounts within noise except for named cards; quality bands (0.7 / 0.4) unvalidated; reader isolation rests on the tool list and prompt, transcripts not audited line by line.
 - The AI lab's claim that "pause all" came from the user in the balance lab's chat is unverified from here; treated as the user's order.
 - The patch test results are the agents' reports (summaries pushed by them); I recomputed the Fisher p-values only.
