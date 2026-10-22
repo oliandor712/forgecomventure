@@ -262,7 +262,7 @@ def record(name, text, mg):
     tags = [t for t in tags if not ("kw:" + t) in tags]
     # removal split by method (user): drop the umbrella 'removal' when a method tag exists
     if "removal" in tags and any(t.startswith("remove:") or t == "damage" for t in tags): tags.remove("removal")
-    if "restrict" in tags and not any(x.startswith("restrict_kind:") for x in tags) and any(x == "cant_be_blocked" or x.startswith("cant_be_blocked_by:") for x in tags):
+    if "restrict" in tags and not any(x.startswith("restrict_kind:") for x in tags) and any(x.startswith("cant_be_blocked") for x in tags):
         tags = [x for x in tags if x != "restrict"]   # 'can't be blocked (by X)' is evasion, not a restriction on someone else
     if "duration:next_untap" in tags or "duration:while_control" in tags: tags = [t for t in tags if t != "duration:permanent"]   # Forge's Duration$ Permanent on a 'next untap step' / 'as long as you control' effect is a script detail
     tags = list(dict.fromkeys(t.lower() for t in tags))   # all tags lower case (scales:Goblin -> scales:goblin)
@@ -395,7 +395,7 @@ def write_sample(recs, mg):
 APPROVED = ['target_type', 'trigger', 'target_count', 'trigger_scope', 'cost', 'tempo', 'draw_count', 'target_scope', 'remove', 'token_type', 'token_color', 'token_count', 'damage', 'token_pt', 'mana', 'mana_amount', 'damage_amount', 'target_filter', 'trigger_filter', 'put_onto_battlefield', 'put_from', 'cost_sacrifice_target', 'trigger_zone', 'counter', 'tutor_dest', 'tutor_count', 'tutor_target', 'shuffle', 'target_zone', 'put_tapped', 'token_cardtype', 'enters_untapped', 'enters_tapped', 'token_kw', 'discard_count', 'duration', 'effect', 'transform', 'mana_choice', 'mana_restriction', 'exile_from', 'cost_reduce_for', 'impulse_draw', 'impulse_draw_count', 'affects', 'activation_restriction', 'sacrifice_type', 'must_attack', 'return_exiled', 'cost_if_you_do', 'cast_free', 'recursion', 'steal', 'steal_grants_haste', 'delayed', 'die_replace', 'loses_all_abilities', 'color']   # tag families the user approved in chat on 2026-10-22 ("Approve all new tags"); later families stay proposed until approved
 
 
-def write_approval(recs):
+def write_approval(recs, red=()):
     fam = collections.OrderedDict()
     existing = set(t for r in recs for t in r["base"])
     for r in recs:
@@ -438,7 +438,7 @@ def write_approval(recs):
             "- `x_is:<what>` values were renamed to readable words (e.g. `count_swamp_youctrl` -> `count_swamp_you_control`); `restrict` now also carries `restrict_kind:<kind>`.",
             "- `transform` was removed from Feign Death, Supernatural Stamina and Merfolk Trickster (they grant or remove abilities); `sacrifice_outlet` was removed from 14 cards that sacrifice only themselves (user rule).",
             "- Segregated, not removed: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`) sit on the `ai_tags:` line and are hidden from the blind reader.",
-            "", "## Waiting on the user", "- Tick the proposed families above; decide the two behaviour changes at the top; decide whether to merge `condition_present` / `condition_zone` / `condition_compare` into one readable `condition:` tag; confirm the AI Tags list."]
+            "", "## Waiting on the user", "- Tick the proposed families above; decide the two behaviour changes at the top; confirm the AI Tags list."]
     open(os.path.join(HERE, "tags", "NEW_TAGS_FOR_APPROVAL.md"), "w").write("\n".join(out) + "\n")
     open(os.path.join(HERE, "tags", "APPROVED_TAGS_ARCHIVE.md"), "w").write("\n".join(archive) + "\n")
 
@@ -462,6 +462,60 @@ def qa(recs):
     out = ["## Double check of this run\n", "- Structure checks on %d records (no duplicate or upper-case tags; every supertype and card type in the Types line has its tag; every K: line has a kw: or forge_line: tag): %s" % (len(recs), "all passed" if not bad else "; ".join("%s: %s" % (k, ", ".join(v[:6])) for k, v in bad.items()))]
     out.append("- Comparison with the original run (before the cross-check layer, checked 2026-10-22 after the self-sacrifice fix): 80 tags added on 80 cards changed (22 ai_logic, 58 other tags on 51 cards); 14 `sacrifice_outlet` tags removed (self-sacrifice is not an outlet, user 2026-10-22); nothing else removed or changed.")
     out.append("- By hand: every cross-check addition on the sample cards and about 40 others was read against the Oracle text (see `STARTER_TAGS_SAMPLE.md`); the findings are listed under 'Known problems' below.")
+    return out
+
+
+REDUNDANCY_OK = {   # (family A, family B): why A and B may stay together although A's cards are a subset of B's (kept short; extend only with a reason)
+    ("trigger_scope", "trigger"): "scope qualifies the trigger", ("trigger_zone", "trigger"): "zone qualifies the trigger", ("trigger_filter", "trigger"): "filter qualifies the trigger",
+    ("tutor_count", "tutor"): "qualifier", ("tutor_target", "tutor"): "qualifier", ("tutor_dest", "tutor"): "qualifier", ("shuffle", "tutor"): "separate fact",
+    ("token_count", "token_make"): "qualifier", ("token_color", "token_make"): "qualifier", ("token_pt", "token_make"): "qualifier", ("token_type", "token_make"): "qualifier",
+    ("draw_count", "draw"): "qualifier", ("discard_count", "discard"): "qualifier", ("damage_amount", "damage"): "qualifier", ("mana_amount", "mana_source"): "qualifier", ("mana", "mana_source"): "qualifier",
+    ("restrict_kind", "restrict"): "restrict is an AI tag (umbrella); kind is the readable detail", ("loyalty_change", "counters"): "loyalty is a counter",
+    ("token_color", "token_count"): "different facts", ("mana", "mana_amount"): "colour and amount are different facts", ("tutor_count", "tutor_target"): "different facts", ("tutor_count", "tutor_dest"): "different facts",
+    ("tutor_dest", "tutor_target"): "different facts", ("impulse_draw", "impulse_draw_count"): "qualifier", ("type", "cardtype"): "subtype needs a card type", ("target_count", "target_type"): "different facts",
+    ("token_count", "token_type"): "qualifier", ("token_color", "token_type"): "qualifier", ("token_pt", "token_type"): "qualifier", ("token_pt", "token_count"): "qualifier", ("token_pt", "token_color"): "qualifier",
+    ("lifegain_amount", "lifegain"): "amount qualifies the action", ("life_loss", "life_loss_amount"): "mirrors lifegain / lifegain_amount; not every pool card has an amount", ("counter_count", "counter"): "qualifier",
+    ("token_ability", "token_cardtype"): "qualifier", ("take", "look_top"): "qualifier",
+}
+VALUES_OK = {"trigger_filter"}      # families whose values legitimately travel together (instant + sorcery on one trigger)
+
+
+def redundancy(recs):
+    """Redundancy check for tag generation (user 2026-10-22: run on all future tag generation). Looks at the rules tags (AI tags excluded) over all cards for
+    1. a bare tag and a valued tag of the same family on one card (X and X:value),  2. two families that sit on exactly the same cards,
+    3. a family whose cards are a subset of another family's cards (A always comes with B: A may be implied by B),  4. a family that has only one value,
+    5. two values of one family that always come together (merge candidates).  Returns (findings, stats). Known intentional pairs are in REDUNDANCY_OK."""
+    cards = collections.defaultdict(set)      # family -> card names
+    vals = collections.defaultdict(lambda: collections.defaultdict(set))
+    bare_and_valued = collections.Counter()
+    for r in recs:
+        tg = [x for x in r["tags"] if not TV.is_ai_tag(x)]
+        fams = collections.Counter(x.split(":")[0] for x in tg)
+        for x in tg:
+            f = x.split(":")[0]
+            cards[f].add(r["name"]); vals[f][x].add(r["name"])
+        for f in fams:
+            if f in tg and any(x.startswith(f + ":") for x in tg): bare_and_valued[f] += 1
+    out = []
+    for f, n in sorted(bare_and_valued.items()): out.append(("bare+valued", f, "`%s` and `%s:<value>` both on %d cards: the bare tag adds nothing the valued tags do not say" % (f, f, n)))
+    fl = sorted(cards, key=lambda f: -len(cards[f]))
+    seen_eq = set()
+    for i, a in enumerate(fl):
+        if len(cards[a]) < 3: continue
+        for b in fl:
+            if a == b: continue
+            if cards[a] == cards[b]:
+                key = tuple(sorted((a, b)))
+                if key not in seen_eq and key not in REDUNDANCY_OK and (key[::-1]) not in REDUNDANCY_OK: out.append(("same cards", "%s / %s" % key, "`%s` and `%s` are on exactly the same %d cards: merge candidates" % (key[0], key[1], len(cards[a])))); seen_eq.add(key)
+            elif cards[a] < cards[b] and len(cards[a]) >= 5 and (a, b) not in REDUNDANCY_OK and cards[a] != cards[b] and len(cards[b]) <= 1.6 * len(cards[a]):
+                out.append(("implied", "%s -> %s" % (a, b), "every card with `%s` (%d) also has `%s` (%d): `%s` may be implied" % (a, len(cards[a]), b, len(cards[b]), a)))
+    for f, vs in sorted(vals.items()):
+        vv = {v: c for v, c in vs.items() if ":" in v}
+        if len(vv) == 1 and len(cards[f]) >= 3 and f not in ("supertype", "cardtype", "defense", "loyalty"): out.append(("single value", f, "family `%s` has only one value (%s) on %d cards: could be a plain tag" % (f, list(vv)[0], len(cards[f]))))
+        names = list(vv)
+        for i, a in enumerate(names):
+            for b in names[i + 1:]:
+                if vv[a] == vv[b] and len(vv[a]) >= 3 and f not in VALUES_OK: out.append(("values together", f, "values `%s` and `%s` are always on the same %d cards: merge candidates" % (a, b, len(vv[a]))))
     return out
 
 
@@ -490,7 +544,8 @@ def main(a):
         if not t: missing.append(n); continue
         recs.append(record(n, t, mg))
     os.makedirs(os.path.join(HERE, "tags"), exist_ok=True)
-    write_approval(recs)
+    red = redundancy(recs)
+    write_approval(recs, red)
     write_sample(recs, mg)
     hdr = ("# Tagging run on every card in the starter decks (%d decks, %d distinct cards, %d tagged, %d without a script). Sources in order of trust: card script, mtgish, Forge AI. Rules: human_logic.toon H50-H55, design deckgen/TAG_LINKS.md. Tags run supertype, cardtype, subtype/landtype, kw + qualifiers, ability tags. duration:eot(forge_default) = a Pump with no Duration (Forge removes it at end of turn). Generated by deckgen/tag_run.py; research output, no card or deck was changed.\n\n"
            % (len(decks), len(uniq), len(recs), len(missing)))
@@ -523,6 +578,13 @@ def main(a):
         "- Flags 'cost:mana from mtgish only' are mostly Equip/Encore/kicker costs the script holds on a K: line; not added.",
         "- Fixed (user 2026-10-22): a card sacrificing itself as a cost is not a sacrifice outlet (14 cards, e.g. Mind Stone, Sakura-Tribe Elder; 6 real outlets remain). The cross-check no longer reads quoted text, so a token's own 'Sacrifice this creature' ability is not added as the card's cost (Carrier Thrall, Skittering Invasion).\n- Fixed earlier in this run: a basic-land sacrifice (Alpine Guide 'sacrifice a Mountain') was tagged sacrifice_outlet; now treated as a land sacrifice (user rule). mtgish loader now reads two-faced, adventure and split cards (battles were missing)."]
     open(os.path.join(HERE, "tags", "STARTER_TAGS_REPORT.md"), "w").write("\n".join(rep))
+    rc = ["# Redundancy check of the tag data\n", "Run by `deckgen/tag_run.py starter` on every tag generation (user order 2026-10-22). Rules tags only (AI Tags excluded). A finding is a candidate, not an error: decide to merge, drop or whitelist it in `REDUNDANCY_OK` with a reason. %d cards, %d findings.\n" % (len(recs), len(red))]
+    for kind in ("bare+valued", "same cards", "values together", "implied", "single value"):
+        rows = [x for x in red if x[0] == kind]
+        if rows: rc += ["\n## %s (%d)\n" % (kind, len(rows))] + ["- %s" % x[2] for x in rows]
+    if not red: rc.append("No findings.")
+    open(os.path.join(HERE, "tags", "REDUNDANCY_CHECK.md"), "w").write("\n".join(rc) + "\n")
+    print("redundancy check: %d findings (see tags/REDUNDANCY_CHECK.md)" % len(red))
     print(len(decks), len(uniq), len(recs), len(missing), "untagged-beyond-basics", len(untag), "mtgish-check", len(chk), "not in mtgish", len(nomg))
 
 

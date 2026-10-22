@@ -56,26 +56,26 @@ DOC = {
  "protection_from:<colour|type>": ("what a Protection keyword protects from (kw:protection stays the keyword)", "user: protection parsed as the keyword, colours and types as separate tags"),
  "forge_line:<name>": ("a Forge engine line that is not a rules keyword (ETBReplacement, AlternateAdditionalCost, etbCounter ...)", "found in the cross-check: these were wrongly tagged kw:"),
  "landwalk:<landtype>": ("which land type a landwalk keyword names", "user: landwalk type as its own tag"),
- "static_pump / pump_amount:<+p/+t> / static_grant:<kw>": ("a continuous (static) effect that changes power/toughness or grants a keyword while the source is on the battlefield; the amount is the +p/+t (x when it scales)", "reverse check r1: Benalish Marshal, Predatory Wurm, Storm-Kiln Artist had no ability tag"),
+ "pump_amount:<+p/+t> / grant_kw:<kw> / duration:static": ("a continuous (static) effect that changes power/toughness or grants a keyword while the source is on the battlefield (duration:static marks it as static); the amount is the +p/+t (x when it scales)", "reverse check r1: Benalish Marshal, Predatory Wurm, Storm-Kiln Artist had no ability tag"),
  "affected_type:<t> / affected_scope:you_control|opp_control / affected_filter:other": ("what a static effect applies to (anthem: other creatures you control)", "reverse check r1: Benalish Marshal"),
- "static_affects:self": ("a static effect that applies to the card itself", "reverse check r1: Predatory Wurm, Storm-Kiln Artist"),
- "condition_present:<f> / condition_zone:<zone> / condition_compare:<cmp>": ("a static or replacement effect that only applies while something is present (e.g. you control a Garruk planeswalker; your library has 0 cards)", "reverse check r1: Predatory Wurm, Laboratory Maniac"),
+
+ "condition:<readable>": ("a static or replacement effect that only applies while something is present, as one tag (condition:planeswalker_garruk_you_control, condition:no_card_you_own_in_library, condition:at_least_4_creature_you_control); replaces condition_present / _zone / _compare", "reverse check r1: Predatory Wurm, Laboratory Maniac; user 2026-10-22: prune redundant proposed tags"),
  "x_is:<what>": ("what a variable amount (X) measures, as one readable value read from the script's variable: target_power, target_mana_value, sacrificed_power, triggering_damage, life_lost_by_opponents_this_turn, count_land_you_control, count_creature_in_graveyard, devotion_black, x_paid, own_power, ... with arithmetic as a suffix (_times_2, _plus_1, _half_up); linked to its amount tag (scales_with) and to the object it measures (measures)", "reverse check r1/r2: Swords to Plowshares, Feed the Swarm, Gray Merchant, Exsanguinate; user 2026-10-22: make x_is robust with linked conditions (target power, life lost ...)"),
- "replacement / replace_event:<e> / replace_with:<what> / replace_detail:<d>": ("a replacement effect ('instead'): which event it replaces and what happens instead", "reverse check r1: Kami of Whispered Hopes, Laboratory Maniac"),
- "cant_be_countered / cant_be_blocked_by:<what>": ("this spell can't be countered / this creature can't be blocked by creatures of that kind", "reverse check r1: Lightning Mare"),
+ "replace:<event>_to_<what>[_<detail>]": ("a replacement effect ('instead') as one tag: the event replaced, what happens instead, and a detail (replace:draw_to_winsgame, replace:addcounter_to_replacecounter_counternum_plus_1); replaces replacement / replace_event / replace_with / replace_detail", "reverse check r1: Kami of Whispered Hopes, Laboratory Maniac"),
+ "cant_be_countered / cant_be_blocked[:by_<what>]": ("this spell can't be countered / this creature can't be blocked (by creatures of that kind); evasion, not a restriction", "reverse check r1: Lightning Mare, Brotherhood Regalia"),
  "modal:<chosen>_of_<modes>": ("a modal spell: how many modes are chosen of how many exist (modal:1_of_3 = choose one of three); replaces the separate mode_count and mode_choose tags (user: redundant)", "reverse check r1: Valorous Stance, Return of the Wildspeaker"),
  "look_top:<n> / take:[may_]<count>[_<filter>]_to_<zone> / rest_dest:<zone>[_bottom[_random]]": ("look at the top N cards, take K (matching a filter, optionally = may) to a zone, put the rest in a zone (library_bottom_random = on the bottom in random order); one take tag replaces take_count, take_filter, take_dest, take_optional and rest_random_order (user: redundant)", "reverse check r1: Militia Bugler, Dig Through Time"),
  "piles_split:<who>": ("cards are divided into two piles by that player; one tag replaces piles_split + pile_separator (user: redundant)", "reverse check r1: Fact or Fiction"),
  "restrict / restrict_kind:cant_attack_or_block|cant_attack|cant_block|cant_activate|doesnt_untap|loses_abilities|cant_attack_unless_cost": ("an effect that stops something from acting: can't attack or block (A/B), can't attack (A), can't block (B), its abilities can't be activated, doesn't untap, or loses its abilities; `restrict` stays as the umbrella, the kind says which; who is affected is in the target / affected tags and how long in the duration tag", "user 2026-10-22: make restrict robust (Pacifism, Goblin Heelcutter, Icy Blast, Merfolk Trickster)"),
- "pump_all": ("a team pump: an effect that changes power/toughness or grants keywords to many creatures at once; read with pump_amount, grant_kw, affected_type / affected_scope / affected_filter (other, attacking ...) and the duration tag", "user 2026-10-22: remake pump_team more readable (Overrun, Trumpet Blast, Make a Stand)"),
+
  "token_ability:<what it does>": ("what a standard artifact token does when sacrificed or paid for (Treasure, Food, Clue, Blood, Gold, Map; CR 111.10), written out so artifact_token and token_type need no outside knowledge", "user 2026-10-22: remake artifact_token more readable"),
  "restrict_scope:self": ("the restriction is a drawback on the card itself (a creature that can't block)", "restrict robustness: Bloodghast, Bog Hoodlums"),
  "cant_be_blocked": ("the creature can't be blocked (evasion granted by a static effect); a restriction on the blocked player's creatures is `restrict`, not this", "restrict robustness: Brotherhood Regalia"),
  "duration:next_untap / duration:while_control": ("an effect lasts until the next untap step / for as long as you control the source", "restrict detail: Icy Blast, Exhaustion, Time of Ice"),
  "grant_kw:<kw>": ("an effect gives a keyword for a time (duration tag says how long; eot when none is written, as Forge does)", "reverse check r1: Valorous Stance (modes were not read)"),
- "grant_ability / granted_trigger:<event>": ("an effect gives a permanent an ability or trigger for a time (not a transformation)", "reverse check r1: Feign Death, Supernatural Stamina were mis-tagged transform"),
- "saga_chapter:<i> / chapter_count:<n>": ("saga chapter number of an ability, and how many chapters the saga has", "reverse check r1: Time of Ice"),
- "lifegain_amount:<n> / life_loss_amount:<n> / life_amount:equal_to_life_lost / counter_count:<n|x>": ("amounts the first run dropped: life gained or lost, counters placed", "reverse check r1: 86 of 348 cards lost a number"),
+ "grant_ability:<what>": ("an effect gives a permanent an ability or trigger for a time, not a transformation (grant_ability:dies_trigger); replaces grant_ability + granted_trigger", "reverse check r1: Feign Death, Supernatural Stamina were mis-tagged transform"),
+ "saga_chapter:<i>": ("saga chapter number of an ability (how many chapters the saga has is already kw:chapter + num)", "reverse check r1: Time of Ice"),
+ "lifegain_amount:<n|x|equal_to_life_lost> / life_loss_amount:<n|x> / counter_count:<n|x>": ("amounts the first run dropped: life gained or lost, counters placed", "reverse check r1: 86 of 348 cards lost a number"),
  "cost:return / cost_return_target:<t> / cost:exile_from_graveyard": ("non-mana costs: return a permanent you control to hand; exile a card from your graveyard", "reverse check r1: Soratami Savant, Disciple of the Ring"),
  "recursion:return_self": ("the card returns itself (to hand, from the graveyard)", "Rancor"),
 }
@@ -123,7 +123,7 @@ def target_tags(p, out, api=""):
             if r in ("YouCtrl", "YouOwn"): out.append("target_scope:you_control")
             elif r in ("OppCtrl", "YouDontCtrl"): out.append("target_scope:opp_control")
             elif r.startswith("non") or r in ("Other", "Basic", "Legendary", "Tapped", "Untapped"): out.append("target_filter:" + filt(r))
-            elif r and r[0].isupper() and main[0] in ("Permanent", "Card", "Creature"): out.append("target_filter:" + filt(r))
+            elif r and main[0] in ("Permanent", "Card", "Creature") and (r[0].isupper() or r in ("attacking", "blocking", "tapped", "untapped") or re.match(r"(power|toughness|cmc)(GE|LE|EQ|GT|LT)", r)): out.append("target_filter:" + filt(r))
 
 
 def token_tags(p, out):
@@ -253,7 +253,7 @@ def x_links(groups, links):
                 sac = next((("%s:%s" % (g, u)) for g in (gid, main, "c0") for u in groups.get(g, []) if u.startswith(("cost_sacrifice_target:", "sacrifice_type:"))), None)
                 if sac: links.append(("%s:%s" % (gid, t), "measures", sac))
         for u in ts:
-            if u == "life_amount:equal_to_life_lost":
+            if u.endswith("_amount:equal_to_life_lost"):
                 prev = next((("%s:%s" % (g, w)) for g, tw in groups.items() if g.split(".")[0] == main and g != gid for w in tw if w.startswith("life_loss_amount:")), None)
                 if prev: links.append(("%s:%s" % (gid, u), "depends_on", prev))
 
@@ -268,16 +268,20 @@ def sign(v, sv, extra_tags):
 
 
 def present_tags(p, add):
+    """one readable condition tag instead of present / zone / compare: condition:you_control_garruk_planeswalker, condition:no_card_you_own_in_library, condition:at_least_4_creature_you_control"""
     if "IsPresent" in p:
-        add("condition_present:" + tok(p["IsPresent"]))
-        if p.get("PresentZone"): add("condition_zone:" + tok(p["PresentZone"]))
-        if p.get("PresentCompare"): add("condition_compare:" + tok(p["PresentCompare"]))
+        what = readable_filter(p["IsPresent"].replace("YouCtrl", "you_control"))
+        zone = tok(p["PresentZone"]) if p.get("PresentZone") and p["PresentZone"] != "Battlefield" else ""
+        cmp_ = p.get("PresentCompare", "GE1")
+        m = re.match(r"^(EQ|GE|LE|GT|LT)(\d+)$", cmp_)
+        pre = "" if not m else {"EQ0": "no_", "GE1": ""}.get(cmp_, {"GE": "at_least_%s_", "LE": "at_most_%s_", "EQ": "exactly_%s_", "GT": "more_than_%s_", "LT": "fewer_than_%s_"}[m.group(1)] % m.group(2))
+        add("condition:" + pre + what + ("_in_" + zone if zone else ""))
 
 
 def affected_tags(p, add):
     a = p.get("Affected") or p.get("AffectedDefined") or ""
     if a in ("Self", "Card.Self", "Creature.Self") or a.startswith("Self"):
-        add("static_affects:self"); return
+        add("affected_scope:self"); return
     for part in a.split(",")[:1]:
         bits = part.split("+"); main = bits[0].split(".")
         if main[0]: add("affected_type:" + tok(main[0]))
@@ -332,7 +336,6 @@ def extra(lines, sv, types, text):
     for l in lines:
         mc = re.match(r"^K:Chapter:(\d+):(.*)$", l)
         if mc:
-            add("chapter_count:" + mc.group(1))
             for i, svn in enumerate(mc.group(2).split(","), 1):
                 if svn in sv:
                     bodies.append(("C", sv[svn], l)); gids[len(bodies)] = "s%d" % i
@@ -384,10 +387,10 @@ def extra(lines, sv, types, text):
         if kind == "S" and p.get("Mode") == "Continuous":
             xt = []
             if "AddPower" in p or "AddToughness" in p:
-                add("static_pump", "pump_amount:%s/%s" % (sign(p.get("AddPower"), sv, xt), sign(p.get("AddToughness"), sv, xt)))
+                add("duration:static", "pump_amount:%s/%s" % (sign(p.get("AddPower"), sv, xt), sign(p.get("AddToughness"), sv, xt)))
             for k in ("AddKeyword", "AddHiddenKeyword"):
                 for kw_ in re.split(r"\s*&\s*", p.get(k, "")):
-                    if kw_: add("static_grant:" + tok(kw_.split(":")[0]))
+                    if kw_: add("grant_kw:" + tok(kw_.split(":")[0]), "duration:static")
             affected_tags(p, add); present_tags(p, add); add(*xt)
         if kind == "S" and re.fullmatch(r"Cant\w+(,Cant\w+)*", p.get("Mode", "")) and {"CantAttack", "CantBlock", "CantBeActivated"} & set(p["Mode"].split(",")):
             modes = set(p["Mode"].split(","))
@@ -402,19 +405,19 @@ def extra(lines, sv, types, text):
         if kind == "S" and p.get("Mode") == "Continuous" and "doesn't untap" in p.get("AddHiddenKeyword", "").lower():
             restrict_add(["doesnt_untap"], add, p.get("AddHiddenKeyword", "")); affected_tags(p, add)
         if kind == "S" and p.get("Mode") == "CantBlockBy" and "Self" in p.get("ValidAttacker", ""):
-            add("cant_be_blocked_by:" + tok(p.get("ValidBlocker", "").replace(".", "_")))
+            add("cant_be_blocked:by_" + tok(p.get("ValidBlocker", "").replace(".", "_")))
         if kind == "R":
             ev = p.get("Event", "")
             if ev == "Counter" and "Self" in p.get("ValidCard", "") and p.get("Layer") == "CantHappen": add("cant_be_countered")
             elif ev == "Untap" and p.get("Layer") == "CantHappen":
                 restrict_add(["doesnt_untap"], add, p.get("Description", "")); affected_tags({"Affected": p.get("ValidCard", "")}, add)
             elif ev:
-                add("replacement", "replace_event:" + tok(ev))
                 rw = sv.get(p.get("ReplaceWith", ""), "")
                 api_ = (re.match(r"^DB\$ (\w+)", rw) or [0, ""])[1]
-                if api_: add("replace_with:" + tok(api_))
                 rp = re.search(r"Amount\$ (\w+)", rw)
-                if rp and rp.group(1) in sv: add("replace_detail:" + tok(sv[rp.group(1)].split("$", 1)[-1])[:40])
+                det = tok(sv[rp.group(1)].split("$", 1)[-1])[:40] if rp and rp.group(1) in sv else ""
+                if not (ev == "Moved" and (api_ == "Tap" or "Exile" in rw)):          # enters tapped / dies-exiled already have enters_tapped / die_replace:exile
+                    add("replace:%s_to_%s%s" % (tok(ev), tok(api_) or "other", "_" + det if det else ""))      # one tag: event replaced, what happens instead, detail
                 present_tags(p, add)
         if kind == "R" and p.get("Event") == "Moved" and p.get("Destination") == "Graveyard":
             if "Exile" in sv.get(p.get("ReplaceWith", ""), ""): add("die_replace:exile")
@@ -517,17 +520,14 @@ def extra(lines, sv, types, text):
                 la = bp.get("LifeAmount", "")
                 key_ = "lifegain_amount" if api == "GainLife" else "life_loss_amount"
                 if la.isdigit(): add("%s:%s" % (key_, la))
-                elif la == "AFLifeLost" or sv.get(la, "").startswith("Number$0"): add("life_amount:equal_to_life_lost")
+                elif la == "AFLifeLost" or sv.get(la, "").startswith("Number$0"): add("%s:equal_to_life_lost" % key_)
                 else:
                     add("%s:x" % key_)
                     w = x_is(la, sv)
                     if w: add("x_is:" + w)
             if api in ("Pump", "PumpAll") and ("NumAtt" in bp or "NumDef" in bp):
                 add("pump_amount:%s/%s" % (sign(bp.get("NumAtt"), sv, xt2), sign(bp.get("NumDef"), sv, xt2))); add(*xt2)
-            if api == "PumpAll":                                  # team pump: who is pumped, in the same affected_* words as a static anthem
-                add("pump_all")
-                affected_tags({"Affected": bp.get("ValidCards", "")}, add)
-                if "Duration" not in bp: add("duration:eot")
+            if api == "PumpAll" and "Duration" not in bp: add("duration:eot")      # team pump: who is pumped is in the target_* tags (target_count:all, type, scope, filter)
             if api in ("PutCounter", "PutCounterAll") and bp.get("CounterNum"):
                 cn = bp["CounterNum"]
                 add("counter_count:" + (cn if cn.isdigit() else "x"))
@@ -591,11 +591,12 @@ def extra(lines, sv, types, text):
                     for ty in (bp.get("Types", "")).split(","):
                         if ty: add("becomes:" + tok(ty))
                 else:
-                    add("grant_ability")                      # gives an ability or trigger, no change of what the permanent is (Feign Death)
+                    gt = []                                   # gives an ability or trigger, no change of what the permanent is (Feign Death)
                     for tn in re.split(r"[ ,]+", bp.get("Triggers", "")):
                         t_ = sv.get(tn, "")
-                        if "Origin$ Battlefield" in t_ and "Destination$ Graveyard" in t_: add("granted_trigger:dies")
-                        elif t_: add("granted_trigger:" + tok((re.search(r"Mode\$ (\w+)", t_) or [0, "trigger"])[1]))
+                        if "Origin$ Battlefield" in t_ and "Destination$ Graveyard" in t_: gt.append("dies_trigger")
+                        elif t_: gt.append(tok((re.search(r"Mode\$ (\w+)", t_) or [0, "trigger"])[1]) + "_trigger")
+                    add(*("grant_ability:" + g for g in gt)) if gt else add("grant_ability:other")
             if api == "PutCounter" or api == "PutCounterAll":
                 if bp.get("CounterType"): add("counter:" + tok(bp["CounterType"]))
             if api == "CopyPermanent" and bp.get("AtEOT") == "Sacrifice": add("delayed:end_step", "effect:sacrifice", "duration:end_step")
