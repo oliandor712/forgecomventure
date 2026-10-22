@@ -418,6 +418,23 @@ def write_approval(recs):
         seen = "; ".join("%s (%d)" % (t, len(v)) for t, v in sorted(vals.items(), key=lambda kv: -len(kv[1]))[:8])
         ex = ", ".join(list(dict.fromkeys(c for v in vals.values() for c in v))[:3])
         out.append("| %s | `%s` | %s | %s | %d (e.g. %s) | %s |" % ("[x] approved 2026-10-22" if f in APPROVED else "[ ] proposed", f, m, w, n, ex, seen))
+    # values added inside families that were already approved (the family was approved, these values are new since 2026-10-22)
+    snap = set(l.strip() for l in open(os.path.join(HERE, "tags", "APPROVAL_SNAPSHOT.txt")) if l.strip() and not l.startswith("#"))
+    allt = collections.OrderedDict()
+    for r in recs:
+        for tg in r["tags"]:
+            if TV.is_ai_tag(tg) and not tg.startswith("ai_logic"): continue
+            f = tg.split(":")[0]
+            if f in APPROVED and tg not in snap and (":" in tg): allt.setdefault(f, collections.OrderedDict()).setdefault(tg, []).append(r["name"])
+    out += ["", "## New values inside already-approved families (the family is approved; these values appeared after the approval)\n", "Say if any should be changed; unmarked means accepted with the family.\n", "| Family | New values (cards) |", "|---|---|"]
+    for f, vals in sorted(allt.items(), key=lambda kv: -len(kv[1])):
+        out.append("| `%s` | %s |" % (f, "; ".join("%s (%d)" % (v, len(c)) for v, c in sorted(vals.items(), key=lambda kv: -len(kv[1]))[:14])))
+    out += ["", "## Tag names that were merged or renamed (the old names no longer exist)\n",
+            "- `mode_count` + `mode_choose` -> `modal:<chosen>_of_<modes>`; `take_count` / `take_filter` / `take_dest` / `take_optional` / `rest_random_order` -> `take:...` and `rest_dest:...`; `piles_split` + `pile_separator` -> `piles_split:<who>`.",
+            "- `x_is:<what>` values were renamed to readable words (e.g. `count_swamp_youctrl` -> `count_swamp_you_control`); `restrict` now also carries `restrict_kind:<kind>`.",
+            "- `transform` was removed from Feign Death, Supernatural Stamina and Merfolk Trickster (they grant or remove abilities); `sacrifice_outlet` was removed from 14 cards that sacrifice only themselves (user rule).",
+            "- Segregated, not removed: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`) sit on the `ai_tags:` line and are hidden from the blind reader.",
+            "", "## Waiting on the user", "- Tick the proposed families above; decide the two behaviour changes at the top; decide whether to merge `condition_present` / `condition_zone` / `condition_compare` into one readable `condition:` tag; confirm the AI Tags list."]
     open(os.path.join(HERE, "tags", "NEW_TAGS_FOR_APPROVAL.md"), "w").write("\n".join(out) + "\n")
 
 
