@@ -56,6 +56,21 @@ DOC = {
  "protection_from:<colour|type>": ("what a Protection keyword protects from (kw:protection stays the keyword)", "user: protection parsed as the keyword, colours and types as separate tags"),
  "forge_line:<name>": ("a Forge engine line that is not a rules keyword (ETBReplacement, AlternateAdditionalCost, etbCounter ...)", "found in the cross-check: these were wrongly tagged kw:"),
  "landwalk:<landtype>": ("which land type a landwalk keyword names", "user: landwalk type as its own tag"),
+ "static_pump / pump_amount:<+p/+t> / static_grant:<kw>": ("a continuous (static) effect that changes power/toughness or grants a keyword while the source is on the battlefield; the amount is the +p/+t (x when it scales)", "reverse check r1: Benalish Marshal, Predatory Wurm, Storm-Kiln Artist had no ability tag"),
+ "affected_type:<t> / affected_scope:you_control|opp_control / affected_filter:other": ("what a static effect applies to (anthem: other creatures you control)", "reverse check r1: Benalish Marshal"),
+ "static_affects:self": ("a static effect that applies to the card itself", "reverse check r1: Predatory Wurm, Storm-Kiln Artist"),
+ "condition_present:<f> / condition_zone:<zone> / condition_compare:<cmp>": ("a static or replacement effect that only applies while something is present (e.g. you control a Garruk planeswalker; your library has 0 cards)", "reverse check r1: Predatory Wurm, Laboratory Maniac"),
+ "x_is:<what>": ("what the variable X counts (devotion_black, count of a permanent type you control, x_paid, own power ...)", "reverse check r1: Gray Merchant, Exsanguinate, Tendrils of Corruption"),
+ "replacement / replace_event:<e> / replace_with:<what> / replace_detail:<d>": ("a replacement effect ('instead'): which event it replaces and what happens instead", "reverse check r1: Kami of Whispered Hopes, Laboratory Maniac"),
+ "cant_be_countered / cant_be_blocked_by:<what>": ("this spell can't be countered / this creature can't be blocked by creatures of that kind", "reverse check r1: Lightning Mare"),
+ "modal / mode_count:<n> / mode_choose:<one|two|n>": ("a modal spell ('choose one'): number of modes and how many are chosen", "reverse check r1: Valorous Stance, Return of the Wildspeaker"),
+ "look_top:<n> / take_count:<n> / take_filter:<t> / take_dest:<zone> / rest_dest:<zone> / rest_random_order / take_optional": ("look at the top N cards, take K matching a filter to a zone, put the rest elsewhere (splits the opaque 'selection' tag)", "reverse check r1: Militia Bugler, Dig Through Time"),
+ "piles_split / pile_separator:<who>": ("cards are divided into two piles", "reverse check r1: Fact or Fiction"),
+ "grant_kw:<kw>": ("an effect gives a keyword for a time (duration tag says how long; eot when none is written, as Forge does)", "reverse check r1: Valorous Stance (modes were not read)"),
+ "grant_ability / granted_trigger:<event>": ("an effect gives a permanent an ability or trigger for a time (not a transformation)", "reverse check r1: Feign Death, Supernatural Stamina were mis-tagged transform"),
+ "saga_chapter:<i> / chapter_count:<n>": ("saga chapter number of an ability, and how many chapters the saga has", "reverse check r1: Time of Ice"),
+ "lifegain_amount:<n> / life_loss_amount:<n> / life_amount:equal_to_life_lost / counter_count:<n|x>": ("amounts the first run dropped: life gained or lost, counters placed", "reverse check r1: 86 of 348 cards lost a number"),
+ "cost:return / cost_return_target:<t> / cost:exile_from_graveyard": ("non-mana costs: return a permanent you control to hand; exile a card from your graveyard", "reverse check r1: Soratami Savant, Disciple of the Ring"),
  "recursion:return_self": ("the card returns itself (to hand, from the graveyard)", "Rancor"),
 }
 
@@ -130,12 +145,60 @@ def cost_tags(cost, out):
     if "Sac<" in cost:
         out.append("cost:sacrifice"); 
         if m: out.append("cost_sacrifice_target:" + ("self" if m.group(1) == "CARDNAME" else tok(m.group(1).split(".")[0])))
+    m = re.search(r"Return<\d+/([^/>]*)", cost)
+    if m: out += ["cost:return", "cost_return_target:" + tok(m.group(1).split(".")[0])]
+    m = re.search(r"ExileFromGrave<\d+/([^/>]*)", cost)
+    if m: out += ["cost:exile_from_graveyard", "cost_exile_target:" + tok(m.group(1).replace(";", "_or_").split(".")[0])]
     if "PayLife" in cost: out.append("cost:life")
     if "Discard<" in cost: out.append("cost:discard")
     for m in re.finditer(r"AddCounter<(\d+)/LOYALTY>", cost): out += ["loyalty_change:+" + m.group(1), "counters:loyalty"]
     for m in re.finditer(r"SubCounter<(\d+)/LOYALTY>", cost): out += ["loyalty_change:-" + m.group(1), "counters:loyalty"]
     c2 = re.sub(r"\w+<[^>]*>", "", cost)
     if re.search(r"(^|\s)(\d+|X|[WUBRGC])(\s|$)", c2): out.append("cost:mana")
+
+
+def x_is(v, sv):
+    """what a variable amount counts, read from the SVar the script points at (X:Count$Devotion.Black -> devotion_black)"""
+    if not v or v.isdigit() or v.lstrip("+-").isdigit(): return None
+    body = sv.get(v.lstrip("+-"), "")
+    m = re.match(r"^(?:Count|Number)\$(.*)$", body)
+    if not m: return None
+    r = m.group(1)
+    if r.startswith("xPaid"): return "x_paid"
+    if r == "CardPower": return "own_power"
+    if r.startswith("Devotion"): return "devotion_" + tok(r.split(".", 1)[-1])
+    if r.startswith("Valid"): return "count_" + tok(r[5:])[:40]
+    return tok(r)[:40]
+
+
+def sign(v, sv, extra_tags):
+    """+n / -n / +x for a pump amount; a variable also gets x_is:<what> in extra_tags"""
+    if v is None: return "+0"
+    if re.fullmatch(r"[+-]?\d+", v): return v if v[0] in "+-" else "+" + v
+    w = x_is(v, sv)
+    if w: extra_tags.append("x_is:" + w)
+    return ("-" if v.startswith("-") else "+") + "x"
+
+
+def present_tags(p, add):
+    if "IsPresent" in p:
+        add("condition_present:" + tok(p["IsPresent"]))
+        if p.get("PresentZone"): add("condition_zone:" + tok(p["PresentZone"]))
+        if p.get("PresentCompare"): add("condition_compare:" + tok(p["PresentCompare"]))
+
+
+def affected_tags(p, add):
+    a = p.get("Affected") or p.get("AffectedDefined") or ""
+    if a in ("Self", "Card.Self", "Creature.Self") or a.startswith("Self"):
+        add("static_affects:self"); return
+    for part in a.split(",")[:1]:
+        bits = part.split("+"); main = bits[0].split(".")
+        if main[0]: add("affected_type:" + tok(main[0]))
+        for r in main[1:] + bits[1:]:
+            if r in ("YouCtrl", "YouOwn"): add("affected_scope:you_control")
+            elif r in ("OppCtrl",): add("affected_scope:opp_control")
+            elif r == "Other": add("affected_filter:other")
+            elif r: add("affected_filter:" + tok(r))
 
 
 def extra(lines, sv, types, text):
@@ -159,6 +222,14 @@ def extra(lines, sv, types, text):
     for l in lines:
         m = re.match(r"^(A|S|T|R):(.*)$", l)
         if m: bodies.append((m.group(1), m.group(2), l))
+    gids = {}                                    # body index -> group id (saga chapters get s<i>)
+    for l in lines:
+        mc = re.match(r"^K:Chapter:(\d+):(.*)$", l)
+        if mc:
+            add("chapter_count:" + mc.group(1))
+            for i, svn in enumerate(mc.group(2).split(","), 1):
+                if svn in sv:
+                    bodies.append(("C", sv[svn], l)); gids[len(bodies)] = "s%d" % i
     seen_sv = set()
     def chain(b):
         out = [b]
@@ -169,9 +240,10 @@ def extra(lines, sv, types, text):
                     seen_sv.add(nx); out += chain(sv[nx])
         return out
     for n_, (kind, body, line) in enumerate(bodies, 1):
-        cur[0] = "c%d" % n_
+        cur[0] = gids.get(n_, "c%d" % n_)
         groups.setdefault(cur[0], [])
         p = params(body)
+        if kind == "C": add("saga_chapter:" + cur[0][1:])
         if kind == "A": cost_tags(p.get("Cost", ""), groups[cur[0]])
         if "Sac<" in line and "cost:sacrifice" not in groups[cur[0]]: add("cost:sacrifice")
         if "Discard<" in line and "cost:discard" not in groups[cur[0]]: add("cost:discard")
@@ -202,6 +274,27 @@ def extra(lines, sv, types, text):
                 for ty in re.findall(r"[A-Z][a-z]+", vc):
                     if ty in ("Creature", "Artifact", "Enchantment", "Instant", "Sorcery", "Planeswalker", "Land"): add("cost_reduce_for:" + tok(ty)); lk("cost_reduce", "filters", "cardtype:" + tok(ty))
                     elif ty in ("White", "Blue", "Black", "Red", "Green"): add("color:" + tok(ty)); lk("cost_reduce", "filters", "color:" + tok(ty))
+        if kind == "S" and p.get("Mode") == "Continuous":
+            xt = []
+            if "AddPower" in p or "AddToughness" in p:
+                add("static_pump", "pump_amount:%s/%s" % (sign(p.get("AddPower"), sv, xt), sign(p.get("AddToughness"), sv, xt)))
+            for k in ("AddKeyword", "AddHiddenKeyword"):
+                for kw_ in re.split(r"\s*&\s*", p.get(k, "")):
+                    if kw_: add("static_grant:" + tok(kw_.split(":")[0]))
+            affected_tags(p, add); present_tags(p, add); add(*xt)
+        if kind == "S" and p.get("Mode") == "CantBlockBy" and "Self" in p.get("ValidAttacker", ""):
+            add("cant_be_blocked_by:" + tok(p.get("ValidBlocker", "").replace(".", "_")))
+        if kind == "R":
+            ev = p.get("Event", "")
+            if ev == "Counter" and "Self" in p.get("ValidCard", "") and p.get("Layer") == "CantHappen": add("cant_be_countered")
+            elif ev:
+                add("replacement", "replace_event:" + tok(ev))
+                rw = sv.get(p.get("ReplaceWith", ""), "")
+                api_ = (re.match(r"^DB\$ (\w+)", rw) or [0, ""])[1]
+                if api_: add("replace_with:" + tok(api_))
+                rp = re.search(r"Amount\$ (\w+)", rw)
+                if rp and rp.group(1) in sv: add("replace_detail:" + tok(sv[rp.group(1)].split("$", 1)[-1])[:40])
+                present_tags(p, add)
         if kind == "R" and p.get("Event") == "Moved" and p.get("Destination") == "Graveyard":
             if "Exile" in sv.get(p.get("ReplaceWith", ""), ""): add("die_replace:exile")
         main_gid = cur[0]
@@ -297,6 +390,42 @@ def extra(lines, sv, types, text):
                         lk("impulse_draw", "pairs_with", "impulse_draw_count:" + str(last_exile).lower())
                         d = bp.get("Duration", "")
                         add({"UntilTheEndOfYourNextTurn": "duration:next_turn_end", "EndOfTurn": "duration:eot"}.get(d, "duration:eot" if not d else "duration:" + tok(d)))
+            xt2 = []
+            if api in ("GainLife", "LoseLife"):
+                la = bp.get("LifeAmount", "")
+                key_ = "lifegain_amount" if api == "GainLife" else "life_loss_amount"
+                if la.isdigit(): add("%s:%s" % (key_, la))
+                elif la == "AFLifeLost" or sv.get(la, "").startswith("Number$0"): add("life_amount:equal_to_life_lost")
+                else:
+                    add("%s:x" % key_)
+                    w = x_is(la, sv)
+                    if w: add("x_is:" + w)
+            if api == "Pump" and ("NumAtt" in bp or "NumDef" in bp) and "KW" not in bp or api == "Pump" and ("NumAtt" in bp or "NumDef" in bp):
+                add("pump_amount:%s/%s" % (sign(bp.get("NumAtt"), sv, xt2), sign(bp.get("NumDef"), sv, xt2))); add(*xt2)
+            if api in ("PutCounter", "PutCounterAll") and bp.get("CounterNum"):
+                cn = bp["CounterNum"]
+                add("counter_count:" + (cn if cn.isdigit() else "x"))
+                w = x_is(cn, sv)
+                if w: add("x_is:" + w)
+            if api == "DealDamage" and not bp.get("NumDmg", "1").isdigit():
+                w = x_is(bp.get("NumDmg"), sv)
+                if w: add("damage_amount:x", "x_is:" + w)
+            if api == "Pump" and bp.get("KW"):
+                for kw_ in re.split(r"\s*&\s*", bp["KW"]):
+                    if kw_ and not kw_.startswith("HIDDEN"): add("grant_kw:" + tok(kw_.split(":")[0]))
+                add("duration:" + ({"EndOfTurn": "eot", "Permanent": "permanent"}.get(bp.get("Duration", ""), tok(bp["Duration"])) if bp.get("Duration") else "eot"))
+            if api == "Charm":
+                add("modal", "mode_count:%d" % len(re.split(r"[ ,]+", bp.get("Choices", "")) if bp.get("Choices") else []), "mode_choose:" + {"1": "one", "2": "two"}.get(bp.get("CharmNum", "1"), tok(bp.get("CharmNum", "1"))))
+            if api == "Dig":
+                add("look_top:" + bp.get("DigNum", "1").lower())
+                add("take_count:" + (bp.get("ChangeNum", "1").lower() if bp.get("ChangeNum", "1") != "All" else "all"))
+                if bp.get("ChangeValid"): add("take_filter:" + tok(bp["ChangeValid"]))
+                if bp.get("DestinationZone"): add("take_dest:" + tok(bp["DestinationZone"]))
+                if bp.get("DestinationZone2"): add("rest_dest:" + tok(bp["DestinationZone2"]) + ("_bottom" if bp.get("LibraryPosition") == "-1" else ""))
+                if bp.get("RestRandomOrder") == "True": add("rest_random_order")
+                if bp.get("Optional") == "True": add("take_optional")
+            if api == "PeekAndReveal": add("look_top:" + bp.get("PeekAmount", "1").lower(), "reveal")
+            if api == "TwoPiles": add("piles_split", "pile_separator:" + tok(bp.get("Separator", "")))
             if api == "Token":
                 token_tags(bp, groups[cur[0]])
                 if bp.get("TokenOwner", "You") == "You": pos += 0.5 * cnt(bp.get("TokenAmount", "1"))   # tokens count half (user)
@@ -316,9 +445,16 @@ def extra(lines, sv, types, text):
                 if bp.get("LoseControl") == "EOT": add("duration:eot")
             if api == "Animate":
                 if bp.get("RemoveAllAbilities") == "True": add("loses_all_abilities")
-                add("transform")
-                for ty in (bp.get("Types", "")).split(","):
-                    if ty: add("becomes:" + tok(ty))
+                if bp.get("Types") or bp.get("RemoveAllAbilities") == "True" or bp.get("Colors"):
+                    add("transform")
+                    for ty in (bp.get("Types", "")).split(","):
+                        if ty: add("becomes:" + tok(ty))
+                else:
+                    add("grant_ability")                      # gives an ability or trigger, no change of what the permanent is (Feign Death)
+                    for tn in re.split(r"[ ,]+", bp.get("Triggers", "")):
+                        t_ = sv.get(tn, "")
+                        if "Origin$ Battlefield" in t_ and "Destination$ Graveyard" in t_: add("granted_trigger:dies")
+                        elif t_: add("granted_trigger:" + tok((re.search(r"Mode\$ (\w+)", t_) or [0, "trigger"])[1]))
             if api == "PutCounter" or api == "PutCounterAll":
                 if bp.get("CounterType"): add("counter:" + tok(bp["CounterType"]))
             if api == "CopyPermanent" and bp.get("AtEOT") == "Sacrifice": add("delayed:end_step", "effect:sacrifice", "duration:end_step")

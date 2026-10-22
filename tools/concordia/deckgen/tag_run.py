@@ -296,7 +296,7 @@ def render(r):
         for a, b, c in r["links"]: o.append("  %s,%s,%s" % (a, b, c))
     o.append("groups[%d]{id,source,tags}:" % len(r["groups"]))
     for gid, ts in r["groups"].items():
-        src = "cross-check (oracle/mtgish/keyword/ai)" if gid == "v" else "card" if gid == "c0" else ("K line" if gid.startswith("k") else ("sub-ability of " + gid.split(".")[0] if "." in gid else "%s line" % next((c.get("kind", "?") for c in r["clauses"] if c["id"] == gid), "?")))
+        src = "saga chapter %s" % gid[1:] if re.match(r"^s\d+$", gid) else "cross-check (oracle/mtgish/keyword/ai)" if gid == "v" else "card" if gid == "c0" else ("K line" if gid.startswith("k") else ("sub-ability of " + gid.split(".")[0] if "." in gid else "%s line" % next((c.get("kind", "?") for c in r["clauses"] if c["id"] == gid), "?")))
         o.append("  %s,%s,%s" % (gid, src, q(" ".join(ts))))
     o.append("mtgish: " + r["mtgish"])
     if r["verify"]["flags"]: o.append("verify_flags: " + " | ".join(r["verify"]["flags"]))
