@@ -262,12 +262,7 @@ def record(name, text, mg):
     tags = [t for t in tags if not ("kw:" + t) in tags]
     # removal split by method (user): drop the umbrella 'removal' when a method tag exists
     if "removal" in tags and any(t.startswith("remove:") or t == "damage" for t in tags): tags.remove("removal")
-    # redundancy merges (user 2026-10-22, "run full merge"): a granted keyword has grant_kw:<kw>, so the old bare keyword tag and <kw>_grant tag on a card that only grants it say the same thing;
-    # a land tutor is already tutor + tutor_target; a bare recursion next to recursion:<kind> adds nothing
-    for g in [x[9:] for x in tags if x.startswith("grant_kw:")]:
-        if "kw:" + g not in tags: tags = [x for x in tags if x not in (g, g + "_grant", "grant_" + g)]
-    if "land_tutor" in tags and any(x.startswith("tutor_target:") for x in tags): tags = [x for x in tags if x != "land_tutor"]
-    if "recursion" in tags and any(x.startswith("recursion:") for x in tags): tags = [x for x in tags if x != "recursion"]
+    # umbrella tags (haste_grant, bare keyword tags on granting cards, land_tutor, recursion ...) stay intact: they belong to the AI Tags category (tag_verify.is_ai_tag), not to the rules tags
     if "restrict" in tags and not any(x.startswith("restrict_kind:") for x in tags) and any(x.startswith("cant_be_blocked") for x in tags):
         tags = [x for x in tags if x != "restrict"]   # 'can't be blocked (by X)' is evasion, not a restriction on someone else
     if "duration:next_untap" in tags or "duration:while_control" in tags: tags = [t for t in tags if t != "duration:permanent"]   # Forge's Duration$ Permanent on a 'next untap step' / 'as long as you control' effect is a script detail
@@ -445,7 +440,7 @@ def write_approval(recs, red=()):
             "- `mode_count` + `mode_choose` -> `modal:<chosen>_of_<modes>`; `take_count` / `take_filter` / `take_dest` / `take_optional` / `rest_random_order` -> `take:...` and `rest_dest:...`; `piles_split` + `pile_separator` -> `piles_split:<who>`.",
             "- `x_is:<what>` values were renamed to readable words (e.g. `count_swamp_youctrl` -> `count_swamp_you_control`); `restrict` now also carries `restrict_kind:<kind>`.",
             "- `transform` was removed from Feign Death, Supernatural Stamina and Merfolk Trickster (they grant or remove abilities); `sacrifice_outlet` was removed from 14 cards that sacrifice only themselves (user rule).",
-            "- Segregated, not removed: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`) sit on the `ai_tags:` line and are hidden from the blind reader.",
+            "- Segregated, kept intact: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`, `land_tutor`, bare `recursion`, every `<kw>_grant` and the bare keyword tags on cards that only grant a keyword) sit on the `ai_tags:` line and are hidden from the blind reader and from the redundancy check.",
             "", "## Waiting on the user", "- Nothing is waiting for approval: all families, the two behaviour changes and the merged tags were approved on 2026-10-22. New families created by later runs are listed in the table above as proposed.", "- Still open (not an approval): confirm the AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token)."]
     open(os.path.join(HERE, "tags", "NEW_TAGS_FOR_APPROVAL.md"), "w").write("\n".join(out) + "\n")
     open(os.path.join(HERE, "tags", "APPROVED_TAGS_ARCHIVE.md"), "w").write("\n".join(archive) + "\n")
