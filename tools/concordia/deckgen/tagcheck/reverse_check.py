@@ -103,7 +103,7 @@ CONCEPTS = collections.OrderedDict([
     ("graveyard", r"\bgraveyard"), ("battlefield", r"\bbattlefield|\benters?\b"), ("dies", r"\bdies\b|\bdie\b"), ("attack", r"\battacks?\b|\battacking\b"), ("block", r"\bblock"),
     ("lifegain", r"\bgains? (?:\w+ )?life\b|\blifelink"), ("lifeloss", r"\bloses? (?:\w+ )?life\b"), ("mana", r"\badd\b|\bmana\b"), ("scry", r"\bscry"), ("surveil", r"\bsurveil"),
     ("mill", r"\bmills?\b"), ("fight", r"\bfights?\b"), ("copy", r"\bcopy|\bcopies"), ("control", r"gain control"), ("look_top", r"top (?:\w+ )?cards? of"), ("reveal", r"\breveal"),
-    ("eot", r"until end of turn|this turn"), ("target", r"\btarget"), ("each_all", r"\beach\b|\ball\b"), ("opponent", r"\bopponents?\b|\bplayer\b"), ("you_control", r"you control"),
+    ("eot", r"until end of turn|this turn"), ("target", r"\btarget"), ("each_all", r"\beach\b|\ball\b|\bthe number of\b"), ("opponent", r"\bopponents?\b|\bplayer\b"), ("you_control", r"you control"),
     ("trigger_when", r"\bwhen\b|\bwhenever\b"), ("trigger_phase", r"at the beginning of"), ("cast", r"\bcast\b"), ("pump", r"[+\-]\d+/[+\-]\d+|gets? [+\-]"), ("choose", r"\bchoose\b"),
     ("enchant", r"\benchant"), ("equip", r"\bequip"), ("legend", r"\blegendary\b"), ("tapped", r"\btapped\b"), ("cost_pay", r"\bpay\b"), ("may", r"\bmay\b"),
     ("x_value", r"\bx\b"), ("up_to", r"up to"), ("flip", r"transform|face (?:down|up)|\bmorph"), ("flash", r"\bflash\b"), ("haste", r"\bhaste\b"), ("proliferate", r"proliferate"),
