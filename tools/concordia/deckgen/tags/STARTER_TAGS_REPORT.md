@@ -4,7 +4,7 @@
 
 ## Most common tags
 
-cardtype:creature 200, target_count:one 127, trigger_scope:self 92, target_type:creature 90, trigger:etb 90, cardtype:instant 64, draw 60, tempo:+1 55, type:human 52, token_make 47, cost:tap 41, cost:mana 38, lifegain 38, target_scope:you_control 37, damage 37, mana_source 35, draw_count:1 35, cardtype:sorcery 34, duration:eot 33, type:wizard 33, cardtype:artifact 28, tempo:+0.5 27, put_onto_battlefield 26, burn 26, token_count:1 26, cost:sacrifice 25, remove:destroy 25, kw:flying 24, type:goblin 24, supertype:legendary 23, token_pt:1/1 22, life_loss 20, mana_amount:1 20, sacrifice_outlet 20, trigger:dies 20, trigger_zone:graveyard 20, cost_sacrifice_target:self 18, target_scope:opp_control 18, type:vampire 17, tutor 17
+cardtype:creature 200, target_count:one 127, trigger_scope:self 92, target_type:creature 90, trigger:etb 90, cardtype:instant 64, draw 60, tempo:+1 55, type:human 52, token_make 47, cost:tap 41, cost:mana 38, target_scope:you_control 37, lifegain 37, damage 37, mana_source 35, draw_count:1 35, cardtype:sorcery 34, duration:eot 33, type:wizard 33, cardtype:artifact 28, tempo:+0.5 27, put_onto_battlefield 26, burn 26, token_count:1 26, remove:destroy 25, kw:flying 24, type:goblin 24, supertype:legendary 23, cost:sacrifice 23, token_pt:1/1 22, life_loss 20, mana_amount:1 20, trigger:dies 20, trigger_zone:graveyard 20, cost_sacrifice_target:self 18, target_scope:opp_control 18, type:vampire 17, tutor 17, type:soldier 17
 
 ## Trigger types seen in clauses
 
@@ -27,24 +27,25 @@ script has more abilities than mtgish rules: 0 ()
 
 ## Cross-check layer (oracle, mtgish, keyword reference/CR, Forge AI)
 
-Cards where the cross-check added tags: 54; tags added in total: 61 (life_loss 20, fight 7, scry 6, trigger:upkeep 5, trigger:combat_damage 3, trigger:gain_life 2, cost:sacrifice 2, cost:remove_counters 2, trigger:beginning_of_combat 2, untap 2, trigger:end_step 2, cost:discard 1, cost:life 1, discard 1, lifegain 1, surveil 1, cost:mana 1, cost:exile 1, token_make 1).
+Cards where the cross-check added tags: 51; tags added in total: 58 (life_loss 20, fight 7, scry 6, trigger:upkeep 5, trigger:combat_damage 3, trigger:gain_life 2, cost:remove_counters 2, trigger:beginning_of_combat 2, untap 2, trigger:end_step 2, cost:discard 1, cost:life 1, discard 1, surveil 1, cost:mana 1, cost:exile 1, token_make 1).
 
 Cards with an ai_logic tag: 21.
 
-Flags (one source disagrees, nothing added): 61 on 57 cards.
+Flags (one source disagrees, nothing added): 62 on 57 cards.
 
 - Nazar, the Velvet Fang: cost cost:remove_counters from mtgish only
-- Carrier Thrall: sacrifice: only oracle says it, script tags lack sacrifice
+- Carrier Thrall: cost cost:sacrifice from mtgish only
 - Malakir Bloodwitch: life_loss: only mtgish says it, script tags lack life_loss
 - Feed the Swarm: life_loss: only mtgish says it, script tags lack life_loss
 - Supernatural Stamina: trigger trigger:dies from mtgish only (WhenAPermanentDies)
 - Feign Death: trigger trigger:dies from mtgish only (WhenAPermanentDies)
 - Swiftfoot Boots: cost cost:mana from mtgish only
 - Josu Vess, Lich Knight: cost cost:mana from mtgish only
-- Syr Konrad, the Grim: trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves)
 - Syr Konrad, the Grim: trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield)
+- Syr Konrad, the Grim: trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves)
 - Gwenna, Eyes of Gaea: untap: only mtgish says it, script tags lack untap
 - Search for Tomorrow: cost cost:mana from mtgish only
+- Professor of Zoomancy: lifegain: only mtgish says it, script tags lack lifegain
 - Professor of Zoomancy: trigger trigger:dies from mtgish only (WhenAPermanentDies)
 - Territorial Allosaurus: cost cost:mana from mtgish only
 - Vines of Vastwood: cost cost:mana from mtgish only
@@ -84,7 +85,7 @@ Flags (one source disagrees, nothing added): 61 on 57 cards.
 - Sweep Away: cost cost:tuck from mtgish only
 - Disciple of the Ring: exile_effect: only mtgish says it, script tags lack exile
 - Saruman the White: cost cost:mana from mtgish only
-- Skittering Invasion: sacrifice: only oracle says it, script tags lack sacrifice
+- Skittering Invasion: cost cost:sacrifice from mtgish only
 - Haliya, Guided by Light: cost cost:mana from mtgish only
 - Mentor of the Meek: cost cost:mana from mtgish only
 - Restoration Angel: cost cost:exile from mtgish only
@@ -98,7 +99,7 @@ Flags (one source disagrees, nothing added): 61 on 57 cards.
 ## Double check of this run
 
 - Structure checks on 353 records (no duplicate or upper-case tags; every supertype and card type in the Types line has its tag; every K: line has a kw: or forge_line: tag): all passed
-- Comparison with the previous run (committed STARTER_TAGS.toon, checked 2026-10-22 when this layer was added): the cross-check only added tags (83 additions on 71 cards, 22 of them ai_logic); no earlier tag was removed or changed.
+- Comparison with the original run (before the cross-check layer, checked 2026-10-22 after the self-sacrifice fix): 80 tags added on 80 cards changed (22 ai_logic, 58 other tags on 51 cards); 14 `sacrifice_outlet` tags removed (self-sacrifice is not an outlet, user 2026-10-22); nothing else removed or changed.
 - By hand: every cross-check addition on the sample cards and about 40 others was read against the Oracle text (see `STARTER_TAGS_SAMPLE.md`); the findings are listed under 'Known problems' below.
 
 ## Known problems (found by the double check; tags NOT changed, your call)
@@ -107,4 +108,5 @@ Flags (one source disagrees, nothing added): 61 on 57 cards.
 - Planeswalker tags (Davriel, Chandra) pick up unrelated tags from the whole card text (draw, lifegain, reanimate on Davriel): the older `ability_tags` reads all text, not per ability; per-ability groups are right, the card-level list is noisy.
 - `landtype:swamp` on Corrupt and `landtype:island` on Flow of Knowledge sit after the ability tags: by H45 they mark 'cares about a land type', not the card's own type.
 - Flags 'cost:mana from mtgish only' are mostly Equip/Encore/kicker costs the script holds on a K: line; not added.
-- Fixed in this run: a basic-land sacrifice (Alpine Guide 'sacrifice a Mountain') was tagged sacrifice_outlet; now treated as a land sacrifice (user rule). mtgish loader now reads two-faced, adventure and split cards (battles were missing).
+- Fixed (user 2026-10-22): a card sacrificing itself as a cost is not a sacrifice outlet (14 cards, e.g. Mind Stone, Sakura-Tribe Elder; 6 real outlets remain). The cross-check no longer reads quoted text, so a token's own 'Sacrifice this creature' ability is not added as the card's cost (Carrier Thrall, Skittering Invasion).
+- Fixed earlier in this run: a basic-land sacrifice (Alpine Guide 'sacrifice a Mountain') was tagged sacrifice_outlet; now treated as a land sacrifice (user rule). mtgish loader now reads two-faced, adventure and split cards (battles were missing).
