@@ -375,3 +375,19 @@ Changes:
 - Numbers and costs have no measurable effect on this set: the only numbered keywords are Crew, Flashback and Madness, and their numbers are shared by few cards.
 
 Caveats: the qualifier gains are on 50 control cards, and most of them come from the 6 choose-type keyword lines. The effect is small and within the noise of one card per change. Method B's strict exact is still 33 of 50; the comparison above uses the same B table.
+
+## Keyword reference check (against KEYWORD_REFERENCE.toon, 2026-10-22)
+Compared the K: lines of the 100 control and test cards with the user's keyword reference (143 `kind=keyword` entries; `ability_word` and `action` kinds excluded, since they are not Forge K: keywords). Names matched after lower-casing and removing non-letters. Forge base word = the K: line up to `:`, a parameter, or a `(`.
+
+**K: keywords in C and T that are NOT in the reference (6 cards, 4 bases):**
+
+| Forge K: base | Cards | Note |
+|---|---|---|
+| ETBReplacement | Bloodline Pretender, Circle of Affliction, Etchings of the Chosen, Haunting Apparition, Prism Ring, Traveler's Cloak | engine replacement line (choose a colour, type or player on entering); not a keyword in the reference |
+| Choose a Background | Alora, Merry Thief; Halsin, Emerald Archdruid | a Forge line for Background cards; not in the reference |
+| Storied | Bombur, Gentle Dreamer | keyword not in the reference |
+| Devoid | Crumble to Dust | keyword not in the reference |
+
+**Reference keywords with no `K:` spelling anywhere in cardsfolder (32 of 143):** Absorb, Adapt, Adventure, Alliance, Bloodrush, Bolster, Channel, Connive, Coven, Daybound/Nightbound, Detain, Exert, Explore, Fabricated, Fateseal, Flip, Forecast, Frenzy, Imprint, Inspired, Investigate, Manifest, Meld, Monstrosity, Morph and Megamorph, Poisonous, Populate, Proliferate, Support, Surveil, Totem Armor, Transform.
+
+Notes: several of these are mechanics that Forge writes as `A:` or `SVar:` lines, not `K:` lines (for example Proliferate, Explore, Investigate), so "no K: spelling" does not mean the mechanic is absent. The Morph entry is spelled `Morph` in Forge; the reference's "Morph and Megamorph" is a combined entry. Common Forge keywords the reference lacks: Hexproof, Infect, Toxic, Warp, Plot, Saddle, Station, Chapter, Class, Partner (cardsfolder-wide, the most frequent unmatched bases).
