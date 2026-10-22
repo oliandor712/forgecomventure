@@ -17,18 +17,18 @@ Say if any should be changed; unmarked means accepted with the family.
 | `trigger_filter` | trigger_filter:you_control (23); trigger_filter:one_or_more (2); trigger_filter:power_ge_5 (1); trigger_filter:nontoken (1); trigger_filter:power_ge_3 (1); trigger_filter:power_ge_4 (1); trigger_filter:nth_spell_3 (1); trigger_filter:nth_spell_2 (1); trigger_filter:power_le_2 (1); trigger_filter:has_counter:p1p1 (1) |
 | `condition` | condition:creature_you_control_power_ge_4 (2); condition:kicked (2); condition:count_creature_you_control_ge4 (1); condition:card_iscommander_you_own_you_control (1); condition:delirium (1); condition:at_least_5_land_you_control (1); condition:adamant (1); condition:at_least_2_creature_attacking_other (1) |
 | `choice_option` | choice_option:artifact (1); choice_option:creature (1); choice_option:enchantment (1); choice_option:instant (1); choice_option:sorcery (1) |
-| `from_zone` | from_zone:graveyard (20); from_zone:library (11); from_zone:exile (5); from_zone:hand (1) |
-| `to_zone` | to_zone:hand (12); to_zone:exile (2); to_zone:battlefield (1); to_zone:library (1) |
+| `from_zone` | from_zone:graveyard (21); from_zone:library (11); from_zone:exile (6); from_zone:hand (1) |
+| `to_zone` | to_zone:hand (12); to_zone:battlefield (3); to_zone:exile (2); to_zone:library (1) |
 | `take` | take:2 (2); take:all (2); take:all_goblin (1); take:may_1_creature_power_le_2 (1) |
 | `cost_reduce_for` | cost_reduce_for:chosen_type (2); cost_reduce_for:dragon (1); cost_reduce_for:merfolk (1); cost_reduce_for:wizard (1) |
-| `target_scope` | target_scope:each_opponent (15); target_scope:any (2); target_scope:each_player (1) |
+| `target_scope` | target_scope:each_opponent (15); target_scope:any (3); target_scope:each_player (1) |
 | `mana_restriction` | mana_restriction:creature_spell_or_activated_ability (1); mana_restriction:static_foretelling_or_instant_or_sorcery (1); mana_restriction:instant_or_sorcery (1) |
 | `x_is` | x_is:greatest_power_among_creature_you_control_nonhuman (1); x_is:greatest_power_among_creature_you_control (1); x_is:kicked_bonus_4 (1) |
+| `controller` | controller:owner (26); controller:you (3) |
 | `trigger_scope` | trigger_scope:any (12); trigger_scope:damaged_by_self (1) |
 | `rest_to_zone` | rest_to_zone:graveyard (1); rest_to_zone:library (1) |
 | `cost_reduce_amount` | cost_reduce_amount:1 (5); cost_reduce_amount:2 (1) |
 | `choose_on_enter` | choose_on_enter:card_type (1); choose_on_enter:creature_type (1) |
-| `controller` | controller:owner (1) |
 | `limit` | limit:once_per_turn (3) |
 | `mana_amount_if` | mana_amount_if:2 (1) |
 | `replace` | replace:add_counters_plus_1 (1) |

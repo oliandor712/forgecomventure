@@ -86,7 +86,7 @@ REF_EXTRA = {
  "scales": ("the effect grows with the number of things of this kind you control (scales:elf = per Elf you control); basic land types and graveyard-style counts included", "script Count$ variables (ability_tags.py)"),
  "cant_regenerate": ("the creature can't be regenerated", "script NoRegen$ True / Mode$ CantRegenerate; CR 701.19 (agent suggestion S07)"),
  "num": ("number in a keyword cost or qualifier (kicker, ward, equip amounts)", "script K: line"),
- "reanimate": ("returns a creature card from a graveyard onto the battlefield", "script ChangeZone Graveyard -> Battlefield"),
+ "reanimate": ("AI umbrella: any effect that moves a card from a graveyard onto the battlefield; derived from put_onto_battlefield + from_zone:graveyard (the readable detail is those tags and controller)", "AI Tags category; derived in tag_variant.py"),
  "pump_single": ("pumps one target creature", "script Pump with a target"),
  "bounce": ("returns a permanent to its owner's hand", "script ChangeZone Battlefield -> Hand"),
  "sacrifice_outlet": ("can sacrifice other permanents (not just itself or lands)", "script Cost$ Sac<..>; human_logic rule on self/land sacrifice"),
@@ -629,7 +629,7 @@ def extra(lines, sv, types, text):
                 if d == "Battlefield" and o in ("Library", "Hand", "Graveyard", "Exile"):
                     add("put_onto_battlefield", "from_zone:" + o.lower())
                     if bp.get("Tapped") == "True": add("put_tapped")
-                    if o == "Graveyard": add("reanimate")
+                    add("controller:you" if bp.get("GainControl") == "True" else "controller:owner")      # who controls it on the battlefield (reanimate is derived from put_onto_battlefield + from_zone:graveyard)
                 if o == "Library" and d in ("Hand", "Battlefield"): pos += cnt(bp.get("ChangeNum", "1"))
                 elif o in ("Graveyard", "Exile") and d in ("Hand", "Battlefield") and bp.get("Defined") != "ExiledWith":
                     pos += cnt(bp.get("TargetMax", bp.get("ChangeNum", "1")))

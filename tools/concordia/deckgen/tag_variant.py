@@ -155,7 +155,7 @@ def gap_pass(face, lines, sv, tags, ex_groups):
         if re.search(r"AdjustLandPlays\$ (\d+)", chain): add(gid, "extra_land_drop:" + re.search(r"AdjustLandPlays\$ (\d+)", chain).group(1))
         if re.search(r"\b(AB|DB|SP)\$ Phases\b", chain): add(gid, "phase_out")
         # an ability that grants a triggered ability until end of turn (Feign Death): duration, and what the granted trigger does, in its own group
-        for tn in re.findall(r"Triggers\$ ?(\w+)", body):
+        for tn in re.findall(r"Triggers\$ ?(\w+)", chain):
             tb = sv.get(tn, "")
             if not tb: continue
             tp = _params(tb); gg = gid + ".g"
@@ -181,6 +181,8 @@ def gap_pass(face, lines, sv, tags, ex_groups):
     if re.search(r"AdjustLandPlays\$ (\d+)", face) and not any(t.startswith("extra_land_drop") for t in tags):
         add("c0", "extra_land_drop:" + re.search(r"AdjustLandPlays\$ (\d+)", face).group(1))
     if re.search(r"^K:AlternateAdditionalCost", face, re.M): add("c0", "cost_additional")
+    # reanimate is an umbrella (user 2026-10-22): every effect that moves a card from a graveyard onto the battlefield (put_onto_battlefield + from_zone:graveyard)
+    if "put_onto_battlefield" in tags and "from_zone:graveyard" in tags and "reanimate" not in tags: add("c0", "reanimate")
     # scaling (user 2026-10-22): every "number of X you control" count carries scales:<X>, basic land types included (Flow of Knowledge: scales:island)
     for t in list(tags):
         mc = re.match(r"^x_is:count_([a-z0-9]+(?:_[a-z0-9]+)*?)(?:_you_control)?$", t)
