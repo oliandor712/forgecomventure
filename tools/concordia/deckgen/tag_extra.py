@@ -60,7 +60,7 @@ DOC = {
  "affected_type:<t> / affected_scope:you_control|opp_control / affected_filter:other": ("what a static effect applies to (anthem: other creatures you control)", "reverse check r1: Benalish Marshal"),
  "static_affects:self": ("a static effect that applies to the card itself", "reverse check r1: Predatory Wurm, Storm-Kiln Artist"),
  "condition_present:<f> / condition_zone:<zone> / condition_compare:<cmp>": ("a static or replacement effect that only applies while something is present (e.g. you control a Garruk planeswalker; your library has 0 cards)", "reverse check r1: Predatory Wurm, Laboratory Maniac"),
- "x_is:<what>": ("what the variable X counts (devotion_black, count of a permanent type you control, x_paid, own power ...)", "reverse check r1: Gray Merchant, Exsanguinate, Tendrils of Corruption"),
+ "x_is:<what>": ("what a variable amount (X) measures, as one readable value read from the script's variable: target_power, target_mana_value, sacrificed_power, triggering_damage, life_lost_by_opponents_this_turn, count_land_you_control, count_creature_in_graveyard, devotion_black, x_paid, own_power, ... with arithmetic as a suffix (_times_2, _plus_1, _half_up); linked to its amount tag (scales_with) and to the object it measures (measures)", "reverse check r1/r2: Swords to Plowshares, Feed the Swarm, Gray Merchant, Exsanguinate; user 2026-10-22: make x_is robust with linked conditions (target power, life lost ...)"),
  "replacement / replace_event:<e> / replace_with:<what> / replace_detail:<d>": ("a replacement effect ('instead'): which event it replaces and what happens instead", "reverse check r1: Kami of Whispered Hopes, Laboratory Maniac"),
  "cant_be_countered / cant_be_blocked_by:<what>": ("this spell can't be countered / this creature can't be blocked by creatures of that kind", "reverse check r1: Lightning Mare"),
  "modal:<chosen>_of_<modes>": ("a modal spell: how many modes are chosen of how many exist (modal:1_of_3 = choose one of three); replaces the separate mode_count and mode_choose tags (user: redundant)", "reverse check r1: Valorous Stance, Return of the Wildspeaker"),
@@ -172,18 +172,90 @@ def cost_tags(cost, out):
     if re.search(r"(^|\s)(\d+|X|[WUBRGC])(\s|$)", c2): out.append("cost:mana")
 
 
-def x_is(v, sv):
-    """what a variable amount counts, read from the SVar the script points at (X:Count$Devotion.Black -> devotion_black)"""
-    if not v or v.isdigit() or v.lstrip("+-").isdigit(): return None
-    body = sv.get(v.lstrip("+-"), "")
-    m = re.match(r"^(?:Count|Number)\$(.*)$", body)
+PROP = {"CardPower": "power", "CardToughness": "toughness", "CardManaCost": "mana_value", "CardManaCostLKI": "mana_value", "DamageAmount": "damage", "LifeAmount": "life",
+        "LifeGained": "life_gained", "xPaid": "x_paid", "YourLifeTotal": "your_life_total", "YourStartingLife": "your_starting_life", "LifeYouGainedThisTurn": "life_gained_this_turn",
+        "LifeOppsLostThisTurn": "life_lost_by_opponents_this_turn", "Domain": "domain", "Converge": "colors_spent", "Party": "party_size", "ChosenNumber": "chosen_number",
+        "Kicked": "kicked", "TimesKicked": "times_kicked", "CastTotalManaSpent": "mana_spent", "RememberedSize": "remembered_count", "RememberedNumber": "remembered_number",
+        "YouDrewThisTurn": "cards_drawn_this_turn", "CardsInYourHand": "cards_in_your_hand", "CardsInHand": "cards_in_hand", "Intensity": "intensity", "Amount": "amount",
+        "CounterNum": "counters", "CardsDiscardedThisTurn": "cards_discarded_this_turn", "CardsDrawnThisTurn": "cards_drawn_this_turn"}
+SRC = {"Targeted": "target", "ParentTargeted": "target", "TargetedLKI": "target", "TargetedPlayer": "target_player", "Sacrificed": "sacrificed", "TriggeredCard": "triggering",
+       "TriggeredSpellAbility": "triggering", "TriggerCount": "triggering", "Remembered": "remembered", "ReplaceCount": "replaced", "Discarded": "discarded", "Exiled": "exiled"}
+OPS = [(r"^Twice$", "times_2"), (r"^Thrice$", "times_3"), (r"^Times\.(\d+)$", "times_%s"), (r"^Plus\.(\d+)$", "plus_%s"), (r"^Minus\.(\d+)$", "minus_%s"), (r"^Half(Up|Down)$", "half_%s")]
+
+
+def readable_filter(f):
+    f = re.sub(r"YouCtrl", "_you_control", f); f = re.sub(r"OppCtrl", "_opponents_control", f); f = re.sub(r"YouOwn", "_you_own", f)
+    return filt(f)
+
+
+def xdesc(v, sv, depth=0):
+    """what a variable amount measures, as one readable tag value, read from the script's variable definition (Forge Count$/Targeted$/Sacrificed$/TriggerCount$/ReplaceCount$ ...):
+    target_power, target_mana_value, sacrificed_power, triggering_damage, life_lost_by_opponents_this_turn, count_land_you_control, devotion_black, x_paid ...
+    Arithmetic after '/' is appended (times_2, plus_1, half_up)."""
+    if not v or re.fullmatch(r"[+-]?\d+", v) or depth > 3: return None
+    body = sv.get(v.lstrip("+-"), v if "$" in v else "")
+    if not body: return None
+    base, *ops = body.split("/")
+    m = re.match(r"^(\w+)\$(.*)$", base.strip())
     if not m: return None
-    r = m.group(1)
-    if r.startswith("xPaid"): return "x_paid"
-    if r == "CardPower": return "own_power"
-    if r.startswith("Devotion"): return "devotion_" + tok(r.split(".", 1)[-1])
-    if r.startswith("Valid"): return "count_" + tok(r[5:])[:40]
-    return tok(r)[:40]
+    src, rest = m.group(1), m.group(2).strip()
+    suffix = ""
+    for o in ops:
+        for rx, fmt in OPS:
+            mm = re.match(rx, o.strip())
+            if mm: suffix += "_" + (fmt % mm.group(1) if "%s" in fmt else fmt); break
+    if src == "SVar":                                         # SVar$X/Twice: another variable, doubled etc.
+        inner = xdesc(rest.split("/")[0], sv, depth + 1)
+        return (inner + suffix) if inner else None
+    if src in ("Number", "Compare") or not rest and src == "Number": return None
+    if src == "Count":
+        if rest.startswith(("Compare", "Kicked", "Condition")): return None        # conditional values (if X then a else b), not a measured amount
+        if rest.startswith("Valid"):
+            zone = {"ValidGraveyard": "graveyard", "ValidHand": "hand", "ValidLibrary": "library", "ValidExile": "exile", "Valid": "battlefield"}.get(re.match(r"^Valid\w*", rest).group(0), "battlefield")
+            filt_ = re.sub(r"^Valid\w*\s*", "", rest).split("$")[0]
+            return ("count_%s%s" % (readable_filter(filt_), "" if zone == "battlefield" else "_in_" + zone) + suffix).replace("count__", "count_")
+        if rest.startswith("Devotion"): return "devotion_" + tok(rest.split(".", 1)[-1]) + suffix
+        if rest.startswith("CardCounters"): return "counters_on_this_" + tok(rest.split(".", 1)[-1].replace("P1P1", "plus_one")) + suffix
+        if rest.startswith("ThisTurn"): return "this_turn_" + tok(rest)[:44] + suffix
+        key = re.split(r"[ .]", rest)[0]
+        return PROP.get(key, tok(rest)[:44]) + suffix if key != "CardPower" else "own_power" + suffix
+    word = SRC.get(src)
+    if word:
+        key = re.split(r"[ .]", rest)[0]
+        prop = PROP.get(key)
+        if rest.startswith("Valid"): return "%s_count_%s" % (word, readable_filter(re.sub(r"^Valid\w*\s*", "", rest))) + suffix
+        if rest.startswith("CardCounters"): return "%s_counters_%s" % (word, tok(rest.split(".", 1)[-1].replace("P1P1", "plus_one"))) + suffix
+        if prop: return "%s_%s" % (word, prop) + suffix
+        return "%s_%s" % (word, tok(rest)[:36]) + suffix
+    if src == "PlayerCountOpponents" or src.startswith("PlayerCount"): return "players_" + tok(rest)[:44] + suffix
+    return tok(src + "_" + rest)[:48] + suffix
+
+
+def x_is(v, sv):
+    d = xdesc(v, sv)
+    return d
+
+
+def x_links(groups, links):
+    """link each variable amount to what it measures: the amount tag (pump_amount:+x/+0, life_loss_amount:x, counter_count:x, damage_amount:x, draw_count:x ...) 'scales_with' its x_is tag,
+    and an x_is that measures a target / sacrificed permanent / triggering object is linked to that object's tag"""
+    for gid, ts in groups.items():
+        main = gid.split(".")[0]
+        for t in ts:
+            if not t.startswith("x_is:"): continue
+            for u in ts:
+                if u != t and (re.search(r"(^|_)amount:|count:|pump_amount:", u) and (u.endswith(":x") or ":+x" in u or u.endswith("x/+0") or "x/" in u or u.endswith(":y"))):
+                    links.append(("%s:%s" % (gid, u), "scales_with", "%s:%s" % (gid, t)))
+            d = t[5:]
+            target = next((("%s:%s" % (g, u)) for g in (gid, main) for u in groups.get(g, []) if u.startswith("target_type:")), None)
+            if d.startswith(("target_", "target_player_")) and target: links.append(("%s:%s" % (gid, t), "measures", target))
+            if d.startswith("sacrificed_"):
+                sac = next((("%s:%s" % (g, u)) for g in (gid, main, "c0") for u in groups.get(g, []) if u.startswith(("cost_sacrifice_target:", "sacrifice_type:"))), None)
+                if sac: links.append(("%s:%s" % (gid, t), "measures", sac))
+        for u in ts:
+            if u == "life_amount:equal_to_life_lost":
+                prev = next((("%s:%s" % (g, w)) for g, tw in groups.items() if g.split(".")[0] == main and g != gid for w in tw if w.startswith("life_loss_amount:")), None)
+                if prev: links.append(("%s:%s" % (gid, u), "depends_on", prev))
 
 
 def sign(v, sv, extra_tags):
@@ -383,6 +455,7 @@ def extra(lines, sv, types, text):
                     for c in pr.split():
                         if c in COLORS: add("mana:" + COLORS[c]); links.append(("mana_source", "produces", "mana:" + COLORS[c]))
                 add("mana_amount:" + bp.get("Amount", "1").lower())
+                if not bp.get("Amount", "1").isdigit() and x_is(bp.get("Amount"), sv): add("x_is:" + x_is(bp.get("Amount"), sv))
                 if "RestrictValid" in bp: add("mana_restriction")
                 if "IsPresent" in bp or "ConditionPresent" in bp: add("activation_restriction")
             if "IsPresent" in bp and api != "Mana" and kind == "A": add("activation_restriction")
@@ -490,12 +563,16 @@ def extra(lines, sv, types, text):
             if api == "TwoPiles": add("piles_split:" + (tok(bp.get("Separator", "")) or "you"))       # one tag: who splits the cards into two piles (opponent / you)
             if api == "Token":
                 token_tags(bp, groups[cur[0]])
+                ta = bp.get("TokenAmount", "1")
+                if not ta.isdigit() and x_is(ta, sv): add("x_is:" + x_is(ta, sv))
                 if bp.get("TokenOwner", "You") == "You": pos += 0.5 * cnt(bp.get("TokenAmount", "1"))   # tokens count half (user)
             if api == "Draw":
                 nd = bp.get("NumCards", "1"); add("draw_count:" + (nd if nd.isdigit() else "x"))
+                if not nd.isdigit() and x_is(nd, sv): add("x_is:" + x_is(nd, sv))
                 if bp.get("Defined", "You") == "You": pos += cnt(nd)
             if api == "Discard":
                 nd = bp.get("NumCards", "1"); add("discard_count:" + (nd if nd.isdigit() else "x"))
+                if not nd.isdigit() and x_is(nd, sv): add("x_is:" + x_is(nd, sv))
                 if bp.get("Defined", "You") == "You": neg += cnt(nd)
                 if re.search(r"Discard[^.]*\.\s*If you do", desc_main): add("cost:discard", "cost_if_you_do")
             if api == "CopyPermanent": add("token_make", "token_type:copy"); pos += 0.5
@@ -532,5 +609,6 @@ def extra(lines, sv, types, text):
     for gid, ts in groups.items():
         ts = [t for t in dict.fromkeys(ts) if not t.startswith("impulse_draw_part")]
         if ts: out_groups[gid] = ts
+    links = list(links); x_links(out_groups, links)
     flat = list(dict.fromkeys(t for ts in out_groups.values() for t in ts))
     return flat, list(dict.fromkeys(links)), out_groups

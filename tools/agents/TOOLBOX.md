@@ -1,6 +1,6 @@
 # Toolbox: the shared reference for every agent
 
-Generated 2026-10-22 15:21Z at commit 8372861c on branch cd/claude2. **Tools stamp: `03f80961d572`.**
+Generated 2026-10-22 15:29Z at commit 09228503 on branch cd/claude2. **Tools stamp: `03f80961d572`.**
 
 ## Start of every turn (all agents)
 1. `git pull --no-rebase origin campaign-design` (if the clone is shallow: `git fetch --unshallow origin campaign-design`).
@@ -46,7 +46,7 @@ Generated 2026-10-22 15:21Z at commit 8372861c on branch cd/claude2. **Tools sta
 | `tools/concordia/deck_tier.py` | deck builder, balance lab | deck power and tier bands | 4005990f 10-21 18:58Z |
 | `tools/concordia/maps/check_doors.py` | main | door and map checks | 4005990f 10-21 18:58Z |
 | `tools/agents/agentctl.py` | main | agent registry, requests, updates, check | 4005990f 10-21 18:58Z |
-| `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md` | ai lab, main | AI change checkboxes; only the user ticks | bee024c5 10-21 19:22Z |
+| `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md` | ai lab, main | AI change checkboxes; only the user ticks | 75316d47 10-22 14:26Z |
 | `docs/Adventure/Campaign/RESEARCH_MASTER_REPORT.md` | all | the compiled research so far | 4005990f 10-21 18:58Z |
 
 ## Daily commands
@@ -73,7 +73,7 @@ python3 tools/agents/toolbox.py --check                                # is my c
 | suite records | `tools/concordia/suite/records_suite_<worker>.csv` | 120 games in 1 files |
 | old research records | `tools/concordia/balance_lab/records*.csv` | 7574 games in 8 files |
 | phase-log digests | `tools/concordia/ai_lab/digests/<worker>-<hour>/` | 43 folders |
-| AI patches | `tools/concordia/ai_lab/patches/` | 10 files; on the test overlay: ai-test-instrumentation.patch, 013-trim-clear-blocks.patch |
+| AI patches | `tools/concordia/ai_lab/patches/` | 11 files; on the test overlay: ai-test-instrumentation.patch, 013-trim-clear-blocks.patch |
 
 ## Rules that never change
 - Equal life on both sides in every simulation; no life bonuses; existing assets only; ignore prices.
