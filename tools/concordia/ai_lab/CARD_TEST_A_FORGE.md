@@ -213,3 +213,33 @@ The eight rule gaps from A1 still stand (self-pump, Animate, Effect/static keywo
 ## Comparison with method B (mtgish)
 Not done: `tools/concordia/ai_lab/CARD_TEST_B_MTGISH.md` is not in the repo after `git pull` (checked 00:10Z). I cannot confirm the 17-of-18 figure or compare per card. The B comparison needs that file's per-card rows (card, predicted value, grade).
 
+
+## Re-run A3: keywords as their own features (K as full features)
+User request (main session, 2026-10-22): each keyword (K: line) is its own feature (kw:flying style) instead of being down-weighted. Both versions are reported so the effect shows. Set C and set T unchanged; leave-one-out on C; method B results from `CARD_TEST_B_MTGISH.md` (per-card table, section C) used for the agreement check.
+
+| Measure | A2: K down-weighted (0.4) | A3: K as full features (1.0) |
+|---|---|---|
+| Exact / partial / miss (C) | 17 / 18 / 15 | 18 / 17 / 15 |
+| Exact-or-partial (C) | 35 of 50 | 35 of 50 |
+| Strict exact (C) | 17 of 50 | 18 of 50 |
+| Agreement with method B (where both give a value) | 17 cards | 18 cards |
+| ...correct when they agree | 16 of 17 | 17 of 18 |
+| Method B strict exact (C), for reference | 33 of 50 | 33 of 50 |
+
+Control predictions that changed between A2 and A3: 2 of 50.
+
+| Card | Actual | A2 (grade) | A3 (grade) |
+|---|---|---|---|
+| Iron Lad, Diverging Destiny | Main2 | MakeUnblockable (miss) | MostProminentInHumanDeck (miss) |
+| Cavern Harpy | NeverBounceItself | SacAndRetFromGrave (partial) | NeverBounceItself (exact) |
+
+Test-set proposals that changed between A2 and A3: 4 of 50.
+
+| Card | A2 proposal | A3 proposal |
+|---|---|---|
+| Lightning Berserker | InfernoOfTheStarMounts | PowerDmg |
+| Blades of Velis Vel | PowerDmg | SwitchPT |
+| Zombie Musher | MoveCounter.IsCounterUser | ReplaySpell |
+| Death Ward | MoveCounter.IsCounterUser | ExceptSelf |
+
+Reading: making keywords full features gives the best agreement with method B, and it matches the main session's 17-of-18 figure (A3 agrees with B on 18 control cards and is right on 17). Exact-or-partial is the same (35 of 50) in both versions, so the change moves cards between exact and partial rather than adding hits. Keywords should therefore be tag features, as proposed. The A3 proposals are untested on the tag side: keyword-as-feature does not add any tag rule, so the eight rule gaps still stand.
