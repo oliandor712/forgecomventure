@@ -62,7 +62,7 @@ RULES = [
     ("counterspell", r"\bCounter\b.*TargetType\$ Spell|^(SP|AB) Counter\b"),
     ("sacrifice_outlet", r"Cost\$ [^|]*Sac<"),
     ("artifact_token", r"\bToken\b.*TokenScript\$ [^|]*(food|treasure|clue|blood)"),
-    ("evasion_grant", r"AddKeyword\$ (Flying|Menace|Unblockable|Fear|Intimidate|Shadow)|KW\$ (Flying|Menace)"),
+    ("evasion_grant", r"AddKeyword\$ (Flying|Menace|Unblockable|Fear|Intimidate|Shadow|Landwalk)|KW\$ (Flying|Menace|Landwalk)"),
     ("dies_trigger", r"^T ChangesZone.*Origin\$ Battlefield.*Destination\$ Graveyard"),
     ("combat_damage_trigger", r"^T DamageDone.*CombatDamage"),
     ("etb_trigger", r"^T ChangesZone.*Destination\$ Battlefield"),
@@ -70,7 +70,7 @@ RULES = [
 RULES = [(t, re.compile(p)) for t, p in RULES]
 
 # ---- keyword tags (K: lines) and the traits a creature gives a deck
-KEYWORD_TAGS = {"Flying": "flying", "Menace": "evasion", "Unblockable": "evasion", "Fear": "evasion", "Intimidate": "evasion", "Shadow": "evasion",
+KEYWORD_TAGS = {"Flying": "flying", "Menace": "evasion", "Unblockable": "evasion", "Fear": "evasion", "Intimidate": "evasion", "Shadow": "evasion", "Landwalk": "evasion",
                 "Deathtouch": "deathtouch", "Double Strike": "double_strike", "First Strike": "first_strike", "Trample": "trample", "Haste": "haste",
                 "Flashback": "flashback", "Haunt": "haunt", "Cycling": "cycling", "Convoke": "convoke", "Lifelink": "lifelink", "Indestructible": "indestructible"}
 

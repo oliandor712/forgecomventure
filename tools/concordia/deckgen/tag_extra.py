@@ -77,7 +77,7 @@ REF_EXTRA = {
  "pump_single": ("pumps one target creature", "script Pump with a target"),
  "bounce": ("returns a permanent to its owner's hand", "script ChangeZone Battlefield -> Hand"),
  "sacrifice_outlet": ("can sacrifice other permanents (not just itself or lands)", "script Cost$ Sac<..>; human_logic rule on self/land sacrifice"),
- "evasion": ("hard to block: flying, menace, shadow, can't be blocked", "derived from kw and cant_be_blocked"),
+ "evasion": ("hard to block: menace, shadow, fear, intimidate, landwalk, can't be blocked (flying keeps its own tag)", "ability_tags.KEYWORD_TAGS and cant_be_blocked; landwalk added on the user's order 2026-10-22"),
  "self_mill": ("mills the card's own controller", "script Mill with a Defined player"),
  "shrink": ("gives -X/-X to a creature", "script Pump with negative amounts"),
  "protection_trick": ("gives protection or indestructibility at instant speed", "script Pump KW$ Protection / Indestructible"),

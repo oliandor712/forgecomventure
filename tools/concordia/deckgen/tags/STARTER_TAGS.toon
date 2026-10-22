@@ -1001,7 +1001,7 @@ groups[5]{id,source,tags}:
   c3,T line,target_scope:each_opponent trigger_scope:other
   c4,A line,cost:mana target_scope:each_player
 mtgish: rules=TriggerA Activated
-verify_flags: trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves) | trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield)
+verify_flags: trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield) | trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves)
 forge_ai: AILogic=AtOppEOT
 
 card: "Gwenna, Eyes of Gaea"
@@ -3238,7 +3238,7 @@ forge_ai: AILogic=-
 
 card: Stonybrook Banneret
 typing: cardtype:creature type:merfolk type:wizard
-tags: kw:landwalk landwalk:island cost_reduce duration:static cost_reduce_amount:1 cost_reduce_mana:generic cost_reduce_for:merfolk cost_reduce_for:wizard
+tags: kw:landwalk landwalk:island cost_reduce evasion duration:static cost_reduce_amount:1 cost_reduce_mana:generic cost_reduce_for:merfolk cost_reduce_for:wizard
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_reducecost,"","ValidCard=Merfolk,Wizard",""
 groups[2]{id,source,tags}:
@@ -3250,6 +3250,7 @@ forge_ai: AILogic=-
 card: Trailblazer's Boots
 typing: cardtype:artifact type:equipment
 tags: kw:equip num:2 grant_kw:landwalk duration:static affected_type:creature
+ai_tags: evasion_grant
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,landwalk_land_nonbasic_nonbasic_land,Affected=Creature AffectedDefined=Equipped,duration:static
 links[2]{from,rel,to}:
