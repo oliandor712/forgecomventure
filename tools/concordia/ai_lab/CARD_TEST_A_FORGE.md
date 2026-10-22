@@ -391,3 +391,42 @@ Compared the K: lines of the 100 control and test cards with the user's keyword 
 **Reference keywords with no `K:` spelling anywhere in cardsfolder (32 of 143):** Absorb, Adapt, Adventure, Alliance, Bloodrush, Bolster, Channel, Connive, Coven, Daybound/Nightbound, Detain, Exert, Explore, Fabricated, Fateseal, Flip, Forecast, Frenzy, Imprint, Inspired, Investigate, Manifest, Meld, Monstrosity, Morph and Megamorph, Poisonous, Populate, Proliferate, Support, Surveil, Totem Armor, Transform.
 
 Notes: several of these are mechanics that Forge writes as `A:` or `SVar:` lines, not `K:` lines (for example Proliferate, Explore, Investigate), so "no K: spelling" does not mean the mechanic is absent. The Morph entry is spelled `Morph` in Forge; the reference's "Morph and Megamorph" is a combined entry. Common Forge keywords the reference lacks: Hexproof, Infect, Toxic, Warp, Plot, Saddle, Station, Chapter, Class, Partner (cardsfolder-wide, the most frequent unmatched bases).
+
+## A4 (keywords removed from matching)
+Rule (main session, 2026-10-22): keyword (K:) lines and the features they produce (kw:, color:, type: and the rest, as in A3b) take no part in the AILogic$ overlap. Keywords stay on the card as separate tags. Method: the feature set is built from A/S/T/R lines only, with each line's API, cost shape and mode (as in A2). Reminder text is stripped before matching. The feature set never reads the text, so stripping reminder text cannot change any prediction here (checked by construction, not by a separate run).
+
+| Configuration (set C, leave-one-out) | Strict exact | Partial | Miss | Agree with B | Correct when agree |
+|---|---|---|---|---|---|
+| A3b: keywords and qualifiers in the match | 20 of 50 | 15 | 15 | 20 | 19 of 20 |
+| A4: keywords removed from the match | 16 of 50 | 19 | 15 | 16 | 15 of 16 |
+| Method B strict exact (reference) | 33 of 50 | | | | |
+
+A4 is worse than A3b on every strict measure. Removing the keyword features loses 4 strict exact and agreement with B drops from 20 to 16. The keywords carried real signal for the AILogic$ match on this set: for example the Enchant auras and the Flying and Flash creatures, which the keyword features matched to their lookalikes.
+
+Control predictions that changed (A3b -> A4): 17 of 50 (listed below). Test-set proposals that changed: 18 of 50.
+
+| Card | Actual | A3b | A4 | A4 grade |
+|---|---|---|---|---|
+| Passenger Ferry | Pump | ReplaySpell | Pump | partial |
+| Iron Lad, Diverging Destiny | Main2 | DoubleLife | MakeUnblockable | miss |
+| Traveler's Cloak | ChosenLandwalk | MostProminentInHumanDeck | Always | miss |
+| Rampaging Geoderm | TgtAttacker | Random | Pump | miss |
+| Etchings of the Chosen | MostProminentInComputerDeck | MostProminentInComputerDeck | Aristocrat | partial |
+| Alora, Merry Thief | Pump | Random | Fog | partial |
+| Circle of Affliction | MostProminentInHumanDeck | Always | ReplaySpell | partial |
+| Flaming Gambit | WorstCard | ReplaySpell | PowerDmg | partial |
+| Cavern Harpy | NeverBounceItself | NeverBounceItself | Pump | partial |
+| Hikari, Twilight Guardian | IfNotBuffed | CloneBestCreature | Always | miss |
+| Recoup | ReplaySpell | WorstCard | PowerDmg | partial |
+| Evolutionary Escalation | BoonCounterOnOppCreature | CloneBestCreature | PayUnlessCost | miss |
+| Bloodline Pretender | MostProminentInComputerDeck | MostProminentInComputerDeckNonToken | NeverBounceItself | partial |
+| Addle | MostProminentInHumanDeck | MostProminentHumanCreatures | MostProminentAttackers | partial |
+| Prism Ring | MostProminentInComputerDeck | MostProminentInGame | Always | partial |
+| Ambrosia Whiteheart | BounceOwnTrigger | ReplaySpell | NeverBounceItself | partial |
+| Haunting Apparition | Curse | Curse | MostProminentInComputerDeck | partial |
+
+Keyword-only cards: none. Removing K lines leaves at least one A/S/T/R line on all 100 cards (C and T), so no card lacks an ability line. The aura cards (Enchant) keep their S: or Mode$ Continuous lines, and Flying creatures keep their triggers or abilities.
+
+Reminder text: stripped before matching, no effect on the features (they never read text).
+
+Recommendation: keep keywords in the match (A3b) for AILogic$ similarity; keep A4 only as a comparison. Keywords are useful as match features here, so the rule in the brief (remove them) would need a different test.
