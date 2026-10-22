@@ -1,6 +1,6 @@
 # Toolbox: the shared reference for every agent
 
-Generated 2026-10-22 12:56Z at commit 41abdaa1d07 on branch campaign-design. **Tools stamp: `03f80961d572`.**
+Generated 2026-10-22 12:58Z at commit d4d42bdc065 on branch campaign-design. **Tools stamp: `03f80961d572`.**
 
 ## Start of every turn (all agents)
 1. `git pull --no-rebase origin campaign-design` (if the clone is shallow: `git fetch --unshallow origin campaign-design`).
@@ -12,7 +12,7 @@ Generated 2026-10-22 12:56Z at commit 41abdaa1d07 on branch campaign-design. **T
 
 | tool | used by | what it does | last change |
 |---|---|---|---|
-| `tools/agents/CONTEXT.md` | all | shared rules, authority, commit ownership, agent table, recent updates: read first, every turn | fdf2330b109 10-22 00:36Z |
+| `tools/agents/CONTEXT.md` | all | shared rules, authority, commit ownership, agent table, recent updates: read first, every turn | d4d42bdc065 10-22 12:56Z |
 | `tools/agents/AGENT_KNOWLEDGE.md` | all | compiled pitfalls, conventions, unfinished work and next steps from the earlier agents | 248c73877b7 10-21 14:39Z |
 | `tools/agents/human_logic.toon` | all | the user's own deck-building, balance and AI rules; a rule beats a metric | 2f821a43c7c 10-22 03:37Z |
 | `tools/concordia/suite/sim_suite.py` | sim workers, main | THE simulation program: setup / run / plan / status / report; archetype cells, adaptive stop, phase logs, digests, push | e2cf306f844 10-21 14:09Z |
