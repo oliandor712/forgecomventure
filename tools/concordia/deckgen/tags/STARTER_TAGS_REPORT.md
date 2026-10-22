@@ -4,7 +4,7 @@
 
 ## Most common tags
 
-cardtype:creature 200, cardtype:instant 64, removal 63, draw 60, type:human 52, token_make 43, cardtype:sorcery 34, lifegain 33, type:wizard 33, duration:eot 30, cardtype:artifact 28, burn 26, flying 25, kw:flying 24, type:goblin 24, supertype:legendary 23, sacrifice_outlet 23, mana_source 22, type:vampire 17, type:soldier 17, cardtype:enchantment 17, type:shaman 16, counters_plus 15, cardtype:land 13, land_tutor 13, type:elf 13, discard 13, selection 13, reanimate 12, pump_single 11, trample 11, bounce 11, haste 10, kw:first_strike 10, first_strike 10, type:knight 10, type:druid 10, artifact_token 10, pump_team 10, deathtouch 9
+cardtype:creature 200, target_count:one 123, trigger:etb 89, target_type:creature 82, cardtype:instant 64, draw 60, type:human 52, token_make 43, cost:tap 41, cost:mana 37, damage 37, target_scope:you_control 36, lifegain 36, cardtype:sorcery 34, mana_source 33, type:wizard 33, duration:eot 32, cardtype:artifact 28, burn 26, token_count:1 24, kw:flying 24, type:goblin 24, supertype:legendary 23, sacrifice_outlet 23, remove:destroy 23, cost:sacrifice 22, token_pt:1/1 22, trigger:dies 19, trigger_zone:graveyard 19, cost_sacrifice_target:self 18, target_scope:opp_control 18, type:vampire 17, tutor 17, type:soldier 17, cardtype:enchantment 17, target_count:all 17, type:shaman 16, trigger:attacks 15, shuffle 15, counters_plus 15
 
 ## Trigger types seen in clauses
 
@@ -14,9 +14,9 @@ spell 98, etb_self 81, activated 73, static 39, attacks 15, dies_self 14, spell_
 
 changezone 44, draw 32, token 31, dealdamage 28, static_continuous 25, mana 22, destroy 18, loselife+gainlife 11, pump 9, pumpall 9, draw+loselife 8, ? 8, putcounter 7, static_reducecost 6, mill 5, charm 5, changezoneall 4, discard 3, dealdamage+gainlife 3, gainlife 3, pump+fight 3, putcounter+pump 3, dig 3, copypermanent 3, draw+token 3, counter 3, changezone+changezone 3, pump+draw 2, pump+dealdamage 2, fight 2
 
-## Cards with no ability tag beyond type, keyword and cost tags (31)
+## Cards with no ability tag beyond type, keyword and cost tags (29)
 
-Swamp, Unholy Strength, Forest, Hunted Wumpus, Leatherback Baloth, Gigantosaurus, Kalonian Tusker, Alpine Grizzly, Predatory Wurm, Magnigoth Sentry, Mountain, Kessig Flamebreather, Firebrand Archer, Guttersnipe, Spear Spewer, Reckless Fireweaver, Scorch Spitter, Storm Caller, Island, Dramatic Reversal, Merfolk Trickster, Watcher for Tomorrow, Laboratory Maniac, Control Magic, Exhaustion, Plains, Savannah Lions, Thraben Inspector, Benalish Marshal, Elite Scaleguard, Glorious Anthem
+Typhoid Rats, Unholy Strength, Thornweald Archer, Deadly Recluse, Ambush Viper, Leatherback Baloth, Tajuru Pathwarden, Gigantosaurus, Aggressive Mammoth, Colossal Dreadmaw, Kalonian Tusker, Alpine Grizzly, Predatory Wurm, Magnigoth Sentry, Brazen Scourge, Bonesplitter, Trailblazer's Boots, Laboratory Maniac, Control Magic, Savannah Lions, White Knight, Fencing Ace, Knight of Grace, Aven Squire, Skyhunter Skirmisher, Benalish Marshal, Leonin Skyhunter, Rhox Pikemaster, Glorious Anthem
 
 ## mtgish second-opinion flags
 
