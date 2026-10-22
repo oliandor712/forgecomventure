@@ -36,3 +36,19 @@ Unverified: one run, scorer is tf-idf plus concept F1 (bands unvalidated).
 | Single cards | Explore: `AdjustLandPlays$ 1` Effect; Feign Death: Animate granting a dies trigger; Ripples: Proliferate + Phases; Colossal Majesty: `IsPresent$ Creature.YouCtrl+powerGE4` on the T line; Mindcrank: `Mode$ LifeLost` + `TriggerCount$LifeAmount` | `extra_land_drop:1`; `grant_trigger:dies`; `phase_out`; `trigger_condition` (same grammar); `trigger:life_loss` linked to the mill group | yes |
 
 Not verified: DB wrote from Forge knowledge without reading scripts; AL's counts are line counts over the whole cardsfolder.
+
+## R8: full sample after the gap tags (2026-10-22)
+Same 353 cards, 9 fresh readers, tags with the gap pass (trigger filters, conditional mana, ability-word and kicked conditions, `cost_additional`, `extra_land_drop`, `phase_out`, `trigger:life_loss`, leaked filter fragments removed) and the scorer now counting "where X is the number of" as "for each". r7 rescored with the same scorer for the comparison.
+
+| | mean | good / partial / gap | top-1 / top-5 |
+|---|---|---|---|
+| r7 (rescored) | 0.914 | 318 / 29 / 1 | 306 / 328 |
+| **r8** | **0.926** | 325 / 23 / 0 | 312 / 337 |
+
+The 16 weak cards: mean 0.510 -> 0.730. The other 332 cards: 0.934 -> 0.936 (no regression on average).
+- Fixed (>= 0.75): Leafkin Druid 0.35 -> 1.00, Explore 0.49 -> 1.00, Temple of the False God 0.51 -> 1.00, Colossal Majesty 0.54 -> 1.00, Mindcrank 0.48 -> 0.82, Elite Scaleguard 0.44 -> 0.77, Yedora 0.59 -> 0.75, Silvergill Adept 0.59 -> 0.75.
+- Improved, still weak: Saruman 0.50 -> 0.63, Ripples of Potential 0.51 -> 0.64, Desecrate Reality 0.56 -> 0.61, Vines of Vastwood 0.44 -> 0.52 (the kicker bonus is tagged `x_is:kicked_bonus_4`, but the reader does not turn it into "+4/+4 if kicked").
+- Unchanged: Sea Gate Loremaster 0.44 and Flow of Knowledge 0.65 (their tags already carry `x_is:count_*_you_control`; the reader still writes "X cards"), Feign Death 0.50 (granted dies trigger), Kami of Whispered Hopes 0.59.
+- Largest drops among the other cards: Exsanguinate -0.23, Gadwick -0.22, Vodalian Arcanist -0.13 (reader variance is about 0.02 per card on identical tags, so these are worth a look: tags of those cards did not change except where `trigger_filter` / `mana_conditional` was added).
+Lowest now: Sea Gate Loremaster 0.44, Feign Death 0.50, Vines of Vastwood 0.52, Kami 0.59, Thraben Inspector 0.61, Serum Visions 0.61.
+Unverified: one run; no repeat on this tag version.
