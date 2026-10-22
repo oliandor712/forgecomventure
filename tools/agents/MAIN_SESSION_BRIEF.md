@@ -39,7 +39,7 @@ Waiting on the user: tick the families in `NEW_TAGS_FOR_APPROVAL.md`; the earlie
 | deck-balance-lab | `session_01PwU5ft7yoiwonjyndwCVv9` | sims, `tools/concordia/suite`, `balance_lab` | no suite run approved ("not yet"), idle |
 | deck-builder | `session_01EiE27ZRU9BUAnaYQYocKuB` | `tools/concordia/deckgen/` builds, decks | held (H55), idle |
 Message them with the claude-code-remote `send_message` tool (priority `next`; `now` only to interrupt). Session ids belong to cloud sessions that expire when idle; if a send fails, recreate with `create_session` and the brief in `.claude/agents/<name>.md` (see `.claude/skills/agent-manager/SKILL.md` and `tools/agents/registry.json`, which holds every request the user made about each agent).
-**Only ONE main session should command the agents** (see section 8).
+**Each main session has its OWN agent clones** (decided by the user). A clone session never messages the original three; it creates its own with `create_session` from `.claude/agents/<name>.md`, tagged `owner:<name>`, pointed at its branch `cd/<name>` (see section 8).
 
 ## 6. Tools, environment, connectors
 - `python3 tools/agents/toolbox.py --check` (STALE after tool commits: regenerate with `python3 tools/agents/toolbox.py`, commit). `tools/agents/TOOLBOX.md` lists every tool. `tools/concordia/balance_lab/push_records.sh` is the agents' safe push.
@@ -54,7 +54,7 @@ mtgish (MIT, 108 MB) is an external dependency: `GIT_LFS_SKIP_SMUDGE=1 git clone
 
 ## 8. Two sessions (worktree) without clashes
 - One branch per session: this file's session keeps `campaign-design`; the clone works on `cd/<name>` in its own worktree. Nothing else is shared on disk.
-- **Only the session that owns the agents sends them messages.** The other asks the user (or the owner) first.
+- **Agents are per session:** each session messages only its own agent clones (the user's decision). Clone agents work on the clone's branch, never push to `campaign-design`, and stay in the clone's lane; the same file lanes apply to them. Agent session ids in the clone are recorded in its own copy of section 5 / `registry.json` (hot file: owner A edits it; B records ids in `tools/agents/projects/<name>_agents.md` instead).
 - **File lanes** (edit the table with the user; defaults): session A = agents, decks, AI lab, `CONTEXT.md`, `registry.json`, toolbox. Session B = the tagging project (`tools/concordia/deckgen/tag*`, `tags/`, `TAG_LINKS.md`, keyword and rules references, `NEW_TAGS_FOR_APPROVAL.md`). Shared hot files: `human_logic.toon` (append-only; B uses ids H60-H79; fix the `rules[N|]` count line after any merge), `tools/agents/TOOLBOX.md` stamp.
 - **Generated files are regenerated, never hand-merged:** `tags/STARTER_TAGS*.{toon,md}`, `NEW_TAGS_FOR_APPROVAL.md`, `TOOLBOX.md`, `ABILITY_TAGS.toon`. On a conflict: take either side, then rerun the generator.
 - **Integrating:** only when the user says "push": `git fetch origin campaign-design && git merge origin/campaign-design`, resolve (`git config rerere.enabled true` helps), rerun generators, commit, `git push origin HEAD:campaign-design` (must fast-forward). Pull first every time: the other session may have pushed.
