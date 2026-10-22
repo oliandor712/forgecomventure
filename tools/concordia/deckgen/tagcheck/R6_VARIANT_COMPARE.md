@@ -45,3 +45,21 @@ All three: adopt, after fixing the rules below. Nothing applied yet.
 **Version stamp (BL)**: tag_run commit hash + variant name, date, card count and tagged share of the 400 AI decks, per-family counts, reader pass id + n + mean, list of tags whose meaning changed, schema version of the per-deck table. A fit refuses to mix stamps.
 
 **Effect on balance counts (BL)**: each_opponent/each_player -> separate drain column; regenerate/cant_regenerate -> removal-kind counts; optional -> draws counted at 0.5 or excluded; once_per_turn -> cap on trigger load; no change to card_power until the fit.
+
+## Correction and reader-variance diagnosis (2026-10-22, user order: find the root cause, make results tighter)
+**Scorer bug (main cause of the "reader variance").** `norm()` replaced the card name using a Python `set`, whose order changes with the hash seed. Depending on the run, "Zuran Spellcaster" became `self` or `self spellcaster`, so the same reader text scored 1.0 in one process and 0.886 in another (cosine 1.0 vs 0.714). Fixed (longest name part first). Same inputs now score the same under any `PYTHONHASHSEED`. All numbers in this file above this section were computed with the buggy scorer; with the fix:
+
+| run | tags | mean |
+|---|---|---|
+| r6a | current (old) | 0.896 |
+| r6b | test copy (suggestions) | 0.902 |
+| r6c | current + tag fixes below, new reader rules | 0.901 |
+| r6d | identical inputs to r6c, fresh readers | 0.900 |
+
+**Pure reader variance** (r6c vs r6d, identical inputs, 174 cards): paired SD 0.019, mean difference -0.001, 2 cards differ by more than 0.1, none by more than 0.2. (Before the fixes: SD 0.081, 12 and 4.) Per-reader SD is about 0.013, so a 40-card mean has noise of about 0.002 to 0.003 from the reader, far below the 0.03 hard stop; the earlier 0.03 estimate was the scorer bug.
+
+**Dropouts were tag gaps, not the reader.** Cloud Key (`cost_reduce` + opaque `forge_line:etbreplacement`) and Stonybrook Banneret (`cost_reduce` with no spell type) gave the reader nothing to say: it guessed generic text (0.57) or abstained (0.0). Fixes in the live list: `cost_reduce_for:<type|subtype|chosen_type>` and `cost_reduce_amount:<n>` now emitted; `forge_line:etbreplacement` replaced by `choose_on_enter:<what>` where the script chooses a color/type/player on entry (187 cards in the full cardlist). Result: Cloud Key 0.82 / 0.80, Stonybrook 0.99 / 1.00 in r6c / r6d.
+
+**Other fixes:** scorer treats "an opponent controls" and "you don't control" alike (Prey Upon scored 1.0 vs 0.84 on identical tags); reader rule 6: never leave a card empty when it has ability tags (write the best partial text with a placeholder, list the unclear tag).
+
+**Variant comparison recomputed with the fixed scorer (r6a vs r6b):** the 28 cards whose tags changed: 0.787 -> 0.856 (+0.069); 146 unchanged cards: 0.917 -> 0.911 (noise, includes the two dropout cards). Same conclusion as before: the suggestions help the cards they touch. Still one run per version and S03/S05/S07/S08 rule fixes pending (see feedback above).

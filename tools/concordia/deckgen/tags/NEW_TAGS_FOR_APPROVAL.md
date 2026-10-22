@@ -6,6 +6,8 @@ Changes to existing behaviour (approved with "approve all tags", 2026-10-22; tre
 | Approve | Tag family | Meaning | Source of the rule | Cards | Values seen (cards) |
 |---|---|---|---|---|---|
 | [ ] proposed | `return` | a card returns from the graveyard or exile to hand or library (return from_zone:graveyard to_zone:hand); the readable detail behind the AI umbrella tag recursion. from_zone / to_zone are the shared zone tags used by every zone-move tag (return, take, put_onto_battlefield, cost:exile) | reverse check r5: Elvish Regrower lost its meaning when recursion became an AI tag | 9 (e.g. Cadaver Imp, Gravedigger, Raise Dead) | return (9) |
+| [ ] proposed | `cost_reduce_amount` | (see feedback notes) | created from the user feedback pattern | 6 (e.g. Goreclaw, Terror of Qal Sisma, Dragonlord's Servant, Stonybrook Banneret) | cost_reduce_amount:1 (5); cost_reduce_amount:2 (1) |
+| [ ] proposed | `choose_on_enter` | (see feedback notes) | created from the user feedback pattern | 2 (e.g. Cloud Key, Herald's Horn) | choose_on_enter:card_type (1); choose_on_enter:creature_type (1) |
 
 ## New values inside already-approved families (the family is approved; these values appeared after the approval)
 
@@ -16,6 +18,7 @@ Say if any should be changed; unmarked means accepted with the family.
 | `ai_logic` | ai_logic:always (3); ai_logic:pump (2); ai_logic:powerdmg (2); ai_logic:fight (2); ai_logic:curse (2); ai_logic:atoppeot (1); ai_logic:foodortreasure (1); ai_logic:ateotifnotattacking (1); ai_logic:cantregenerate (1); ai_logic:makeunblockable (1); ai_logic:manaritual (1); ai_logic:mostprominentincomputerdecknontoken (1); ai_logic:gaincontrol (1); ai_logic:bestopportunity (1) |
 | `from_zone` | from_zone:graveyard (19); from_zone:library (11); from_zone:exile (5); from_zone:hand (1) |
 | `take` | take:2 (2); take:all (2); take:all_goblin (1); take:may_1_creature_power_le_2 (1) |
+| `cost_reduce_for` | cost_reduce_for:chosen_type (2); cost_reduce_for:dragon (1); cost_reduce_for:merfolk (1); cost_reduce_for:wizard (1) |
 | `to_zone` | to_zone:hand (12); to_zone:exile (2); to_zone:library (1) |
 | `rest_to_zone` | rest_to_zone:graveyard (1); rest_to_zone:library (1) |
 | `x_is` | x_is:greatest_power_among_creature_you_control_nonhuman (1); x_is:greatest_power_among_creature_you_control (1) |
