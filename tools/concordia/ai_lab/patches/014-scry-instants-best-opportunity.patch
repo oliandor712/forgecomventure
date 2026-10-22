@@ -1,0 +1,76 @@
+diff --git a/forge-gui/res/cardsfolder/d/deliberate.txt b/forge-gui/res/cardsfolder/d/deliberate.txt
+index 12a22475..e5bf5853 100644
+--- a/forge-gui/res/cardsfolder/d/deliberate.txt
++++ b/forge-gui/res/cardsfolder/d/deliberate.txt
+@@ -1,6 +1,6 @@
+ Name:Deliberate
+ ManaCost:1 U
+ Types:Instant
+-A:SP$ Scry | ScryNum$ 2 | SpellDescription$ Scry 2, then draw a card. | SubAbility$ DBDraw
++A:SP$ Scry | AILogic$ BestOpportunity | ScryNum$ 2 | SpellDescription$ Scry 2, then draw a card. | SubAbility$ DBDraw
+ SVar:DBDraw:DB$ Draw
+ Oracle:Scry 2, then draw a card.
+diff --git a/forge-gui/res/cardsfolder/d/delightful_discovery.txt b/forge-gui/res/cardsfolder/d/delightful_discovery.txt
+index 0bc1a7d5..aabd90ad 100644
+--- a/forge-gui/res/cardsfolder/d/delightful_discovery.txt
++++ b/forge-gui/res/cardsfolder/d/delightful_discovery.txt
+@@ -2,7 +2,7 @@ Name:Delightful Discovery
+ ManaCost:4 U
+ Types:Instant
+ S:Mode$ ReduceCost | ValidCard$ Card.Self | Type$ Spell | Amount$ X | EffectZone$ All | Description$ This spell costs {1} less to cast for each spell your opponents have cast this turn.
+-A:SP$ Scry | ScryNum$ 2 | SubAbility$ DBDraw | SpellDescription$ Scry 2, then draw two cards. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)
++A:SP$ Scry | AILogic$ BestOpportunity | ScryNum$ 2 | SubAbility$ DBDraw | SpellDescription$ Scry 2, then draw two cards. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)
+ SVar:DBDraw:DB$ Draw | NumCards$ 2
+ SVar:X:Count$ThisTurnCast_Card.OppCtrl
+ Oracle:This spell costs {1} less to cast for each spell your opponents have cast this turn.\nScry 2, then draw two cards. (To scry 2, look at the top two cards of your library, then put any number of them on the bottom and the rest on top in any order.)
+diff --git a/forge-gui/res/cardsfolder/d/demons_due.txt b/forge-gui/res/cardsfolder/d/demons_due.txt
+index 3f6b1538..5814a4ed 100644
+--- a/forge-gui/res/cardsfolder/d/demons_due.txt
++++ b/forge-gui/res/cardsfolder/d/demons_due.txt
+@@ -1,7 +1,7 @@
+ Name:Demon's Due
+ ManaCost:3 B
+ Types:Instant
+-A:SP$ Scry | ScryNum$ 2 | SubAbility$ DBDraw | SpellDescription$ Scry 2, then draw two cards. You lose 2 life.
++A:SP$ Scry | AILogic$ BestOpportunity | ScryNum$ 2 | SubAbility$ DBDraw | SpellDescription$ Scry 2, then draw two cards. You lose 2 life.
+ SVar:DBDraw:DB$ Draw | NumCards$ 2 | SubAbility$ DBLoseLife
+ SVar:DBLoseLife:DB$ LoseLife | LifeAmount$ 2 | Defined$ You
+ Oracle:Scry 2, then draw two cards. You lose 2 life.
+diff --git a/forge-gui/res/cardsfolder/g/graven_lore.txt b/forge-gui/res/cardsfolder/g/graven_lore.txt
+index 4c4bb741..e848cc42 100644
+--- a/forge-gui/res/cardsfolder/g/graven_lore.txt
++++ b/forge-gui/res/cardsfolder/g/graven_lore.txt
+@@ -1,7 +1,7 @@
+ Name:Graven Lore
+ ManaCost:3 U U
+ Types:Snow Instant
+-A:SP$ Scry | ScryNum$ X | SubAbility$ DBDraw | SpellDescription$ Scry X, where X is the amount of {S} spent to cast this spell, then draw three cards. ({S} is mana from a snow source.)
++A:SP$ Scry | AILogic$ BestOpportunity | ScryNum$ X | SubAbility$ DBDraw | SpellDescription$ Scry X, where X is the amount of {S} spent to cast this spell, then draw three cards. ({S} is mana from a snow source.)
+ SVar:DBDraw:DB$ Draw | NumCards$ 3
+ SVar:X:Count$CastTotalManaSpent Snow
+ SVar:AIPreference:ManaFrom$Snow
+diff --git a/forge-gui/res/cardsfolder/j/joint_exploration.txt b/forge-gui/res/cardsfolder/j/joint_exploration.txt
+index f6748a85..80aaeb54 100644
+--- a/forge-gui/res/cardsfolder/j/joint_exploration.txt
++++ b/forge-gui/res/cardsfolder/j/joint_exploration.txt
+@@ -2,7 +2,7 @@ Name:Joint Exploration
+ ManaCost:1 U
+ Types:Instant
+ K:Kicker:G
+-A:SP$ Scry | ScryNum$ 2 | SubAbility$ DBDraw | SpellDescription$ Scry 2, then draw a card.
++A:SP$ Scry | AILogic$ BestOpportunity | ScryNum$ 2 | SubAbility$ DBDraw | SpellDescription$ Scry 2, then draw a card.
+ SVar:DBDraw:DB$ Draw | SubAbility$ DBChangeZone
+ SVar:DBChangeZone:DB$ ChangeZone | Condition$ Kicked | Origin$ Hand | Destination$ Battlefield | Optional$ You | ChangeType$ Land | ChangeNum$ 1 | SpellDescription$ If this spell was kicked, you may put a land card from your hand onto the battlefield.
+ DeckHints:Color$Green
+diff --git a/forge-gui/res/cardsfolder/o/opt.txt b/forge-gui/res/cardsfolder/o/opt.txt
+index b1fb204a..45c67d67 100644
+--- a/forge-gui/res/cardsfolder/o/opt.txt
++++ b/forge-gui/res/cardsfolder/o/opt.txt
+@@ -1,6 +1,6 @@
+ Name:Opt
+ ManaCost:U
+ Types:Instant
+-A:SP$ Scry | ScryNum$ 1 | SubAbility$ DBDraw | SpellDescription$ Scry 1.
++A:SP$ Scry | AILogic$ BestOpportunity | ScryNum$ 1 | SubAbility$ DBDraw | SpellDescription$ Scry 1.
+ SVar:DBDraw:DB$ Draw | Defined$ You | NumCards$ 1 | SpellDescription$ Draw a card.
+ Oracle:Scry 1.\nDraw a card.
