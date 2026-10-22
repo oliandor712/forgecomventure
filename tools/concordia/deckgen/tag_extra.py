@@ -32,6 +32,8 @@ LEGEND = {
  "lifegain_amount": "life gained (number, x, or equal_to_life_lost)",
  "choose_on_enter": "as this card enters the battlefield its controller chooses something (color, card_type, creature_type, player ...); other tags of the card refer to the choice (cost_reduce_for:chosen_type = spells of the chosen type)",
  "cost_reduce_for": "which spells a cost reduction applies to (a card type, a creature type, or chosen_type); cost_reduce_amount is how much cheaper",
+ "choice_option": "one of the options the choice offers (choose_on_enter lists them: artifact, creature, enchantment ...)",
+ "cost_reduce_mana": "the kind of mana the cost is reduced by (generic = any mana)",
  "cost_reduce_amount": "how much each affected spell costs less (generic mana)",
  "optional": "the effect of this group is optional (you may ...)",
  "target_scope": "whose things or which players the effect hits (you_control, opp_control; each_opponent = every opponent, each_player = every player; no value means a single chosen target)",
@@ -374,7 +376,10 @@ def extra(lines, sv, types, text):
             api_ = mm.group(1); ty_ = re.search(r"\bType\$ ([\w ]+?) ?(?:\||$)", sx)
             what = {"ChooseColor": "color", "ChoosePlayer": "player", "ChooseCard": "card", "ChooseNumber": "number", "NamedCard": "card_name", "ChooseDirection": "direction"}.get(api_)
             if api_ == "ChooseType": what = {"Creature": "creature_type", "Card": "card_type", "Basic Land": "basic_land_type", "Land": "land_type"}.get(ty_.group(1).strip() if ty_ else "", "type")
-            if what: add("choose_on_enter:" + what)
+            if what:
+                add("choose_on_enter:" + what, "trigger:etb")        # user (Cloud Key): ETB -> choice -> the choice drives the later effect
+                vt_ = re.search(r"\bValidTypes\$ ([\w,]+)", sx)
+                if vt_: add(*["choice_option:" + tok(o_) for o_ in vt_.group(1).split(",")])
     if "AlternateMode:DoubleFaced" in text or "AlternateMode:Modal" in text: add("transform")
     if "Basic" in types.split() and "Land" in types.split():
         for t, c in (("Plains", "white"), ("Island", "blue"), ("Swamp", "black"), ("Mountain", "red"), ("Forest", "green")):
@@ -435,9 +440,10 @@ def extra(lines, sv, types, text):
             if mode == "CantBlockBy" and not p.get("ValidBlocker") and "Self" not in p.get("ValidAttacker", ""): add("cant_be_blocked")      # equipped / enchanted creature can't be blocked: evasion, not a restriction
             if mode == "ReduceCost":
                 vc = p.get("ValidCard", "")
-                add("cost_reduce")
+                add("cost_reduce", "duration:static")      # user (Cloud Key): the reduction is a static ability
                 if p.get("Amount", "").isdigit(): add("cost_reduce_amount:" + p["Amount"])
-                if "ChosenType" in vc: add("cost_reduce_for:chosen_type")
+                if "ChosenType" in vc: add("cost_reduce_for:chosen_type"); links.append(("%s:cost_reduce_for" % cur[0], "uses", "c0:choose_on_enter"))
+                if p.get("Amount", "").isdigit() and not re.search(r"Color|Black|White|Blue|Red|Green", vc): add("cost_reduce_mana:generic")
                 for ty in re.findall(r"[A-Z][a-z]+", vc):
                     if ty in ("Creature", "Artifact", "Enchantment", "Instant", "Sorcery", "Planeswalker", "Land"): add("cost_reduce_for:" + tok(ty)); lk("cost_reduce", "filters", "cardtype:" + tok(ty))
                     elif ty not in ("Card", "Spell", "Other", "You", "Ctrl", "Chosen", "Type", "White", "Blue", "Black", "Red", "Green", "Colorless", "Non", "Self", "Opp") and "," in vc + ",": add("cost_reduce_for:" + tok(ty))
