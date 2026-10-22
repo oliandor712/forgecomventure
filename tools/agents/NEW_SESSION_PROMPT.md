@@ -2,10 +2,23 @@
 
 The clone is the same kind of session as the original: a Claude Code cloud session with its own container and its own fresh clone of `oliandor712/forgecomventure`. No worktree, no local setup.
 
-## Before you paste (user)
-1. Start a new Claude Code cloud session on the fork `oliandor712/forgecomventure`, branch `campaign-design`, with the same environment as the original (same network policy, GitHub connected, same connectors: Claude Docs, claude-code-remote, Spellbinder). Same model as the original.
-2. Pick a short name for it (letters only), e.g. `tagger`, and replace `<name>` below.
-3. Paste the block below as its first message.
+## Steps for you (the user)
+Setup
+1. Say "push" to the original session so this handoff is on `campaign-design`. The new session reads it from GitHub, so it must be pushed first.
+2. In the Claude app, start a new Claude Code cloud session on `oliandor712/forgecomventure`, branch `campaign-design`. Use the same environment (network policy, secrets), the same GitHub connection, the same connectors (Claude Docs, claude-code-remote, Spellbinder) and the same model as the original.
+3. Choose a short name (letters only), e.g. `tagger`. Replace every `<name>` in the block below, and `<agent>` stays as written.
+4. Paste the block as its first message. It will set itself up and reply in 6 lines or fewer ending with "Waiting for instructions."
+5. Check the reply: verify says READY, three agent ids listed, branch is `cd/<name>`. If verify fails, paste the output to the original session.
+6. Tell the clone its lane (A: agents, decks, AI lab; B: tagging) and give it its first task. The prompt deliberately gives none.
+Day to day
+7. Talk to each session about its own work. Each has its own three agents; do not ask one session about the other's agents.
+8. To bring the clone's work into the original (or the reverse), tell the session that has the work: "push". It merges `origin/campaign-design`, regenerates files, verifies, and fast-forwards `campaign-design`. Then tell the other session "sync" (fetch and merge `origin/campaign-design`).
+9. Never say "push" to both at once. Wait for the first to report the push output, then sync the second, then it may push.
+10. Answer the clone's one-time question about backing up to `cd/<name>` (yes = it may push that branch; no = it never pushes except on "push").
+11. Cloud containers are reclaimed when idle. If the clone says it lost its container, start a new cloud session, paste the same block with the same name, and it resumes from `cd/<name>` or `campaign-design`, whichever was pushed.
+If something goes wrong
+- Merge conflict it cannot settle: it should stop and show you the files. Generated files: ask it to take either side and rerun the generator.
+- Rejected push: it fetches, merges and retries; if it fails twice, it reports to you.
 
 ## Paste this
 ```
