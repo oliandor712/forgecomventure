@@ -1,7 +1,7 @@
 # AI logic tag review (forge-ai-lab clone, Claude 2 order 2026-10-22)
 
 Research only. Read from `origin/cd/claude2` (STARTER_TAGS.toon 353 cards, tag_verify.py, tag_run.py, report). No forge-ai edits, nothing pushed. File:line refs are forge-ai as on campaign-design.
-**Unverified / limits:** (a) I read the toon and scripts, not the 83/71 diff itself; the report on the branch says 61 tags on 54 cards, not 83 on 71, so I could not isolate the 83. (b) Starter cards only (353). (c) No games run; "what forge-ai does" is from source.
+**Unverified / limits:** (a) I read the toon and scripts, not the diff itself. The 83 tags on 71 cards = 61 tags on 54 cards (cross-check) + 22 ai_logic tags (Claude 2, 2026-10-22); both figures are right. (b) Starter cards only (353). (c) No games run; "what forge-ai does" is from source.
 
 ## 1 Review
 
