@@ -32,6 +32,7 @@ Small (fine to read): handoffs under 2k, `TAG_LEGEND.md` 2k, `tagcheck/README.md
 | Need | File |
 |---|---|
 | Project rules, layout | `CLAUDE.md` |
+| Session start script (single source) | `START.md` (repo root) |
 | Main-session workflow rules | `tools/agents/MAIN_SESSION_BRIEF.md` |
 | The user's deck/balance/AI/tag rules (H01..) | `tools/agents/human_logic.toon` |
 | Shared background context | `tools/agents/CONTEXT.md` |
