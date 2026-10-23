@@ -46,6 +46,35 @@ other 45102, triggered 14502, activated 2244
 
 0 lines: 351 cards, 1 lines: 12621 cards, 2 lines: 13212 cards, 3 lines: 5522 cards, 4 lines: 1206 cards, 5 lines: 167 cards, 6 lines: 64 cards, 7 lines: 22 cards, 8 lines: 5 cards
 
+## When vs whenever by trigger event (first clause of triggered lines)
+
+| Event | When | Whenever |
+|---|---|---|
+| enters | 4247 | 759 |
+| dies | 643 | 390 |
+| attacks | 26 | 1200 |
+| cast a spell | 109 | 841 |
+| deals damage | 11 | 821 |
+| put into a graveyard | 76 | 57 |
+| becomes tapped/untapped | 8 | 93 |
+| you gain life | 1 | 90 |
+| you draw | 4 | 121 |
+| blocks / is blocked | 11 | 214 |
+| other events | 869 | 1992 |
+
+## Return vs put, by destination and origin zone (matches in the pool)
+
+| Destination | Verb | Origin | Count |
+|---|---|---|---|
+| battlefield | put | elsewhere | 1267 |
+| battlefield | return | elsewhere | 1104 |
+| battlefield | put | hand | 2 |
+| hand | return | elsewhere | 1508 |
+| hand | put | elsewhere | 1319 |
+| hand | return | graveyard | 1 |
+| library | put | elsewhere | 51 |
+| library | put | library | 1 |
+
 Hold-out sample: 150 random non-starter cards with ability text (seed 20261022) in `tagcheck/holdout_cards.txt`; used only in phase 5, never to write the grammar.
 
 Unverified: the patterns are regexes (first version); `enters` vs `enters the battlefield` counts overlap.
