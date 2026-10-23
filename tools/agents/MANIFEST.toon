@@ -1,14 +1,14 @@
-records_commit: d111c7383e71e6dfdbbe28e6121fedf529052f47
+records_commit: 8f34bd6116fe63d08281fed7f8cfa9c865f2376a
 branch: campaign-design
-created: 2026-10-23T15:00:49-04:00
-entries[46|]{path|hash}:
+created: 2026-10-23T19:31:12-04:00
+entries[52|]{path|hash}:
   .claude/agents/deck-balance-lab.md|36c8af0428e37159d82f8458930f82545714cf7f
   .claude/agents/deck-builder.md|606456455630443fa3ed993aaaf738f5655a20d0
   .claude/agents/forge-ai-lab.md|ac6278d8bc2f8c15a74a20f2f1b20561b17ca679
-  .claude/agents/tag-blind-reader.md|c3583ac06403e98fcc84e3b8a52102d39fb43f6f
-  .claude/settings.json|291d14e5ff8ec4087afcfe092ab2ca64c9d7b9a9
+  .claude/agents/tag-blind-reader.md|475b6e9b2f8c4208a41551300a73450bfbcd34ba
+  .claude/settings.json|e92f8e2a1779e9dbc87fb9c96688078af2717b85
   .claude/skills/concordia-map-creator/SKILL.md|f8d590efec75e0492baf7e7a8177419c311a22a6
-  CLAUDE.md|771ffd6cb4cf1314b3c96772c918817c7af8d689
+  CLAUDE.md|e983972ec38c114df667a7786904157ca14ec02f
   docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md|1d4bfc71388472ad312be412d5f797fd1c8772e9
   docs/Adventure/Campaign/AI_FLAGGED_CARDS.md|ab846bdea2e7449d32861e0131b72dc875583d15
   docs/Adventure/Campaign/AI_RESEARCH.md|25599e9869f0ae1b37c8f9ebeff918449893de28
@@ -31,20 +31,26 @@ entries[46|]{path|hash}:
   docs/Adventure/Campaign/deck_balance_report.html|412f049a8eb13e0c372962c25bdbe6decb92d1f3
   forge-gui/res/adventure/Concordia/|8a67d867adcac3690150cfe197fe1010c21ea54a
   tools/agents/AGENT_KNOWLEDGE.md|bcde353c1ff1218ecf914bfbf3a590dae67f30a2
-  tools/agents/CLAUDE2_SYNC_CHECK.md|c40b768bb31b79782901473ecd3835782eac43d6
-  tools/agents/CONTEXT.md|faa4cf881086e9ab2b140ce199e766ed7b93ad29
-  tools/agents/HANDOVER.md|d212c3c91cbf7cc40753ceab8e6693eecb5d0c5f
-  tools/agents/MAIN_SESSION_BRIEF.md|3c3a40ad0d3e23281b81da67c2a39886bf604061
-  tools/agents/NEW_SESSION_PROMPT.md|c8e01701383962b39d584e804a37d5b3a8e676f5
-  tools/agents/TOOLBOX.md|1d062c882d0319da4a78887b692ede08bdd8891c
-  tools/agents/clone_verify.py|60f0be89bcabda7e7c4796aa734200c710372fad
+  tools/agents/CONTEXT.md|30b7f5b5031a9f270066d5d5f3bc2ebc95aae332
+  tools/agents/EFFICIENCY_UPGRADES_2026-10-23.md|1026dfb4e0f3ebd0811417d26e3226005ce2557b
+  tools/agents/HANDOVER.md|a448e18397d65a3473ea14f038ae143658c07dcb
+  tools/agents/INDEX.md|fda1bcf5df554885caf500deb058521ada8a8b1e
+  tools/agents/MAIN_SESSION_BRIEF.md|b27e83e6e1422a8bbbc995bdc8d90ad05fef0160
+  tools/agents/TOOLBOX.md|d0e02db2273530f476c5102bd490cb3cec8958d6
+  tools/agents/clone_verify.py|0e94b2684d0cb82e30b4f776cbee0aac26dd9caf
   tools/agents/docpush.py|e4b10866ee13066932e7d34366db5dba236c1fcd
-  tools/agents/human_logic.toon|a722d5aebbd8a9ec0d4ce9169930b2e7a18870f6
+  tools/agents/human_logic.toon|92ec73e453467cc4f6cefed6ed9ed9fdd92f402e
+  tools/agents/lookup.py|be8046b22768a971d901be02f71efaa1df13ea8c
   tools/agents/projects/agent_tool_test.toon|efde373ac3e3d421f8a3fe8cc4c4409c4574151e
   tools/agents/projects/claude2_agents.md|3a5d00568c1257584b09f5e69a428b1f0db4128e
+  tools/agents/reference/CR_COMPACT.txt|fb0c388a9c4341bfd0be9a5991f05a20207a8a92
+  tools/agents/reference/CR_GAME_RULES.txt|dadc612a2b5d1b81d9bd2a564a4a60088c496d91
+  tools/agents/reference/CR_INDEX.txt|4efc0c70eecf7e26a70b1c2ab1484ff9999077e4
+  tools/agents/reference/CR_TAG_RELEVANT.txt|91979d780629fb78e70d6e0cc95f506db1997b0e
   tools/agents/reference/MTG_COMP_RULES_20260807.txt|93f1becbbe17d493c29414198b17098fc30feafb
   tools/agents/reference/MagicCompRules 20260807.pdf|f003b94b6c2253f4124fe8718d7e82e6ef056fc0
-  tools/agents/reference/README.md|163e399be84e6d5cfef9f5ef58087decd15a64e8
+  tools/agents/reference/README.md|31980039481b96dc082fe1e57c84b4c7ebc8702e
+  tools/agents/reference/build_cr_compact.py|8748f89e0c1e85b84084d79f1b9ed2c09b844cdd
   tools/agents/sync_check.py|a0ce7a0085defd7aefc910ca554942074f56ca05
-  tools/agents/toolbox.py|ed0becabaded79e756c67104cac8bbcf8c262cda
-  tools/concordia/|85ef4b7d5298d9045e8cf337e253f9cd942dc1ee
+  tools/agents/toolbox.py|5b8f948c56f0ea29c578b1c32e03907dcb023122
+  tools/concordia/|040d6fd2b7508e342add4e168dc8d7ae0f426b77
