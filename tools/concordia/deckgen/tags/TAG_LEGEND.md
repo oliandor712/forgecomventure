@@ -19,7 +19,7 @@ Pinned reference text, one line per tag family with a structured or non-obvious 
 | `token_ability` | ability the created token has, in words (tap_sacrifice_add_mana_any_color = {T}, Sacrifice: Add one mana of any color) |
 | `exile_from` | exiles cards from a zone other than the battlefield |
 | `cost` | non-mana cost of the ability (tap, sacrifice, remove_counters, exile with from_zone, life, discard, return) |
-| `duration` | how long an effect lasts (eot = until end of turn, static = while the source is on the battlefield, next_untap, while_control, end_step...) |
+| `duration` | how long an effect lasts (eot = until end of turn, static = while the source is on the battlefield, next_untap, while_control, end_step, until_monarch_changes = until an opponent becomes the monarch...) |
 | `affected_scope` | whose permanents the effect or static ability affects (you_control, opponent_controls, all) |
 | `trigger` | event that triggers the ability (attacks, dies, etb, gain_life, beginning_of_combat ...) |
 | `piles_split` | cards are split into two piles by this player |
@@ -43,6 +43,9 @@ Pinned reference text, one line per tag family with a structured or non-obvious 
 | `trigger_scope` | which cards fire a zone-change trigger: self = this card only, other = another card, any = this card or any other card |
 | `trigger_filter` | narrows the triggering card or spell: a card type (always named for another card's zone-change trigger: trigger_filter:creature = another creature), a negated type (noncreature = noncreature spell), power_ge_N / power_le_N (power at least / at most N), one_or_more (triggers once for a group) |
 | `cost_mana` | the mana part of an activation cost, symbols joined (cost_mana:2b = {2}{B}, cost_mana:x = {X}); write the symbols where cost:mana stands |
+| `investigate` | investigate (CR 701.16): create a Clue token |
+| `bolster` | bolster N (CR 701.39): put N +1/+1 counters on the creature you control with the least toughness; the value is N |
+| `monarch` | you become the monarch (CR 724) |
 | `unless_cost_amount` | the mana an 'unless pays' tax asks for (unless_cost_amount:2 = unless its controller pays {2}); also the per-creature attack tax |
 | `limit` | limit on how often the ability works (once_per_turn = only once each turn) |
 | `regenerate` | regenerates a creature |

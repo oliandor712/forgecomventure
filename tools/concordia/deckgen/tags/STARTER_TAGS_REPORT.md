@@ -4,7 +4,7 @@
 
 ## Most common tags
 
-cardtype:creature 200, target_count:one 128, trigger:etb 92, target_type:creature 91, trigger_scope:self 89, cardtype:instant 64, draw 60, tempo:+1 55, type:human 52, token_make 47, cost:tap 41, cost:mana 38, target_scope:you_control 37, lifegain 37, damage 37, duration:eot 37, mana_source 35, draw_count:1 35, cardtype:sorcery 34, type:wizard 33, put_onto_battlefield 29, cardtype:artifact 28, duration:static 28, tempo:+0.5 27, burn 26, token_count:1 26, remove:destroy 25, controller:you 24, kw:flying 24, type:goblin 24, supertype:legendary 23, cost:sacrifice 23, trigger_filter:you_control 23, trigger:dies 22, token_pt:1/1 22, mana_amount:1 21, from_zone:graveyard 21, life_loss 20, trigger_zone:graveyard 20, target_scope:opp_control 19
+cardtype:creature 200, target_count:one 128, target_type:creature 92, trigger:etb 92, trigger_scope:self 89, cardtype:instant 64, draw 60, tempo:+1 55, type:human 52, token_make 47, cost:tap 41, cost:mana 40, target_scope:you_control 37, lifegain 37, damage 37, duration:eot 37, mana_source 35, draw_count:1 35, cardtype:sorcery 34, type:wizard 33, put_onto_battlefield 29, cardtype:artifact 28, duration:static 28, tempo:+0.5 27, burn 26, token_count:1 26, remove:destroy 25, cost:sacrifice 24, controller:you 24, kw:flying 24, type:goblin 24, supertype:legendary 23, trigger_filter:you_control 23, trigger:dies 22, token_pt:1/1 22, mana_amount:1 21, from_zone:graveyard 21, life_loss 20, trigger_zone:graveyard 20, optional 19
 
 ## Trigger types seen in clauses
 
@@ -27,13 +27,12 @@ script has more abilities than mtgish rules: 0 ()
 
 ## Cross-check layer (oracle, mtgish, keyword reference/CR, Forge AI)
 
-Cards where the cross-check added tags: 51; tags added in total: 57 (life_loss 20, fight 7, scry 6, trigger:upkeep 5, trigger:combat_damage 3, trigger:gain_life 2, cost:remove_counters 2, trigger:beginning_of_combat 2, untap 2, trigger:end_step 2, cost:discard 1, cost:life 1, discard 1, surveil 1, cost:mana 1, token_make 1).
+Cards where the cross-check added tags: 43; tags added in total: 46 (life_loss 20, fight 7, scry 6, trigger:combat_damage 3, untap 2, trigger:end_step 2, cost:discard 1, cost:life 1, discard 1, surveil 1, cost:mana 1, token_make 1).
 
 Cards with an ai_logic tag: 21.
 
-Flags (one source disagrees, nothing added): 61 on 56 cards.
+Flags (one source disagrees, nothing added): 54 on 50 cards.
 
-- Nazar, the Velvet Fang: cost cost:remove_counters from mtgish only
 - Carrier Thrall: cost cost:sacrifice from mtgish only
 - Malakir Bloodwitch: life_loss: only mtgish says it, script tags lack life_loss
 - Feed the Swarm: life_loss: only mtgish says it, script tags lack life_loss
@@ -52,18 +51,13 @@ Flags (one source disagrees, nothing added): 61 on 56 cards.
 - Pulse of Murasa: bounce: only oracle says it, script tags lack bounce
 - Goreclaw, Terror of Qal Sisma: cost cost:mana from mtgish only
 - Impulsive Pilferer: cost cost:mana from mtgish only
-- Akki Ronin: cost cost:discard from mtgish only
 - Goblin Vandal: trigger trigger:attacks from oracle only
-- Goblin Vandal: cost cost:mana from mtgish only
 - Goblin Heelcutter: cost cost:mana from mtgish only
-- Daretti, Rocketeer Engineer: cost cost:sacrifice from mtgish only
-- Loyal Apprentice: trigger trigger:beginning_of_combat from mtgish only (AtTheBeginningOfCombatDuringAPlayersTurn)
 - Storm-Kiln Artist: trigger trigger:copy_spell from mtgish only (WhenAPlayerCopiesASpell)
 - Coruscation Mage: cost cost:mana from mtgish only
 - Light Up the Stage: cost cost:mana from mtgish only
 - Curse of Opulence: trigger trigger:attacked from mtgish only (WhenAPlayerIsAttacked)
 - Bonesplitter: cost cost:mana from mtgish only
-- Keldon Raider: cost cost:discard from mtgish only
 - Squee, Dubious Monarch: exile_effect: only mtgish says it, script tags lack exile
 - Squee, Dubious Monarch: cost cost:exile from mtgish only
 - Squee, Dubious Monarch: cost cost:mana from mtgish only
@@ -86,7 +80,6 @@ Flags (one source disagrees, nothing added): 61 on 56 cards.
 - Saruman the White: cost cost:mana from mtgish only
 - Skittering Invasion: cost cost:sacrifice from mtgish only
 - Haliya, Guided by Light: cost cost:mana from mtgish only
-- Mentor of the Meek: cost cost:mana from mtgish only
 - Restoration Angel: cost cost:exile from mtgish only
 - Frontline Medic: cost cost:mana from mtgish only
 - Ghostly Prison: cost cost:mana from mtgish only

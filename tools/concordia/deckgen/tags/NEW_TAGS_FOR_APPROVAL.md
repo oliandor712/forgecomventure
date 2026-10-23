@@ -5,9 +5,12 @@ Changes to existing behaviour (approved with "approve all tags", 2026-10-22; tre
 
 | Approve | Tag family | Meaning | Source of the rule | Cards | Values seen (cards) |
 |---|---|---|---|---|---|
-| [ ] proposed | `cost_mana` | the mana part of an activation cost (cost_mana:2b = {2}{B}) | P4c E, user 2026-10-23 (placeholder triage: {cost} was 117 of 317 placeholders) | 37 (e.g. Mind Stone, Thrashing Brontodon, Ember Hauler) | cost_mana:1 (8); cost_mana:1r (4); cost_mana:2 (3); cost_mana:4 (3); cost_mana:1b (2); cost_mana:3g (2); cost_mana:2g (2); cost_mana:r (2) |
+| [ ] proposed | `cost_mana` | the mana part of an activation cost (cost_mana:2b = {2}{B}) | P4c E, user 2026-10-23 (placeholder triage: {cost} was 117 of 317 placeholders) | 39 (e.g. Mind Stone, Thrashing Brontodon, Ember Hauler) | cost_mana:1 (9); cost_mana:1r (4); cost_mana:2 (3); cost_mana:r (3); cost_mana:4 (3); cost_mana:1b (2); cost_mana:3g (2); cost_mana:2g (2) |
 | [ ] proposed | `return` | a card returns from the graveyard or exile to hand or library (return from_zone:graveyard to_zone:hand); the readable detail behind the AI umbrella tag recursion. from_zone / to_zone are the shared zone tags used by every zone-move tag (return, take, put_onto_battlefield, cost:exile) | reverse check r5: Elvish Regrower lost its meaning when recursion became an AI tag | 9 (e.g. Cadaver Imp, Gravedigger, Raise Dead) | return (9) |
 | [ ] proposed | `unless_cost_amount` | the mana an 'unless pays' tax or attack tax asks for | P4c E, user 2026-10-23 (Sage's Dousing, Ghostly Prison) | 2 (e.g. Propaganda, Ghostly Prison) | unless_cost_amount:2 (2) |
+| [ ] proposed | `investigate` | investigate (CR 701.16): create a Clue token | user 2026-10-23, P4c D (Thraben Inspector) | 2 (e.g. Thraben Inspector, Fateful Absence) | investigate (2) |
+| [ ] proposed | `monarch` | you become the monarch (CR 724) | user 2026-10-23, P4c D (Palace Jailer) | 1 (e.g. Palace Jailer) | monarch (1) |
+| [ ] proposed | `bolster` | bolster N (CR 701.39): put N +1/+1 counters on the creature you control with the least toughness | user 2026-10-23, P4c D (Elite Scaleguard) | 1 (e.g. Elite Scaleguard) | bolster:2 (1) |
 
 ## New values inside already-approved families (the family is approved; these values appeared after the approval)
 
@@ -18,27 +21,30 @@ Say if any should be changed; unmarked means accepted with the family.
 | `ai_logic` | ai_logic:always (3); ai_logic:pump (2); ai_logic:powerdmg (2); ai_logic:fight (2); ai_logic:curse (2); ai_logic:atoppeot (1); ai_logic:foodortreasure (1); ai_logic:ateotifnotattacking (1); ai_logic:cantregenerate (1); ai_logic:makeunblockable (1); ai_logic:manaritual (1); ai_logic:mostprominentincomputerdecknontoken (1); ai_logic:gaincontrol (1); ai_logic:bestopportunity (1) |
 | `trigger_filter` | trigger_filter:you_control (23); trigger_filter:noncreature (5); trigger_filter:land (3); trigger_filter:one_or_more (2); trigger_filter:artifact (2); trigger_filter:power_ge_5 (1); trigger_filter:nontoken (1); trigger_filter:power_ge_3 (1); trigger_filter:power_ge_4 (1); trigger_filter:nth_spell_3 (1); trigger_filter:nth_spell_2 (1); trigger_filter:power_le_2 (1); trigger_filter:has_counter:p1p1 (1) |
 | `condition` | condition:creature_you_control_power_ge_4 (2); condition:kicked (2); condition:count_creature_you_control_ge4 (1); condition:card_iscommander_you_own_you_control (1); condition:delirium (1); condition:at_least_5_land_you_control (1); condition:adamant (1); condition:at_least_2_creature_attacking_other (1) |
+| `take` | take:2 (2); take:all (2); take:all_goblin (1); take:may_1_chosen_type (1); take:may_1_creature_power_le_2 (1) |
 | `choice_option` | choice_option:artifact (1); choice_option:creature (1); choice_option:enchantment (1); choice_option:instant (1); choice_option:sorcery (1) |
 | `from_zone` | from_zone:graveyard (21); from_zone:library (11); from_zone:exile (6); from_zone:hand (1) |
-| `to_zone` | to_zone:hand (12); to_zone:battlefield (3); to_zone:exile (2); to_zone:library (1) |
+| `to_zone` | to_zone:hand (13); to_zone:battlefield (3); to_zone:exile (2); to_zone:library (1) |
 | `x_is` | x_is:previous_result (1); x_is:greatest_power_among_creature_you_control_nonhuman (1); x_is:greatest_power_among_creature_you_control (1); x_is:kicked_bonus_4 (1) |
-| `take` | take:2 (2); take:all (2); take:all_goblin (1); take:may_1_creature_power_le_2 (1) |
 | `cost_reduce_for` | cost_reduce_for:chosen_type (2); cost_reduce_for:dragon (1); cost_reduce_for:merfolk (1); cost_reduce_for:wizard (1) |
+| `target_scope` | target_scope:each_opponent (16); target_scope:each_player (1); target_scope:each_other_player (1) |
 | `mana_restriction` | mana_restriction:creature_spell_or_activated_ability (1); mana_restriction:static_foretelling_or_instant_or_sorcery (1); mana_restriction:instant_or_sorcery (1) |
 | `controller` | controller:you (24); controller:owner (5) |
 | `trigger_scope` | trigger_scope:any (12); trigger_scope:damaged_by_self (1) |
-| `target_scope` | target_scope:each_opponent (15); target_scope:each_player (1) |
 | `rest_to_zone` | rest_to_zone:graveyard (1); rest_to_zone:library (1) |
 | `cost_reduce_amount` | cost_reduce_amount:1 (5); cost_reduce_amount:2 (1) |
 | `choose_on_enter` | choose_on_enter:card_type (1); choose_on_enter:creature_type (1) |
+| `target_filter` | target_filter:even_mana_value (1); target_filter:odd_mana_value (1) |
 | `limit` | limit:once_per_turn (3) |
 | `mana_amount_if` | mana_amount_if:2 (1) |
 | `replace` | replace:add_counters_plus_1 (1) |
 | `affected_type` | affected_type:permanent (1) |
 | `extra_land_drop` | extra_land_drop:1 (1) |
 | `cost_reduce_mana` | cost_reduce_mana:generic (5) |
+| `cost_sacrifice_target` | cost_sacrifice_target:artifact (1) |
 | `trigger` | trigger:life_loss (1) |
 | `rest_order` | rest_order:bottom_random (1) |
+| `duration` | duration:until_monarch_changes (1) |
 
 ## Tag names that were merged or renamed (the old names no longer exist)
 

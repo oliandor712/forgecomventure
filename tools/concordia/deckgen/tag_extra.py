@@ -24,7 +24,7 @@ LEGEND = {
  "token_ability": "ability the created token has, in words (tap_sacrifice_add_mana_any_color = {T}, Sacrifice: Add one mana of any color)",
  "exile_from": "exiles cards from a zone other than the battlefield",
  "cost": "non-mana cost of the ability (tap, sacrifice, remove_counters, exile with from_zone, life, discard, return)",
- "duration": "how long an effect lasts (eot = until end of turn, static = while the source is on the battlefield, next_untap, while_control, end_step...)",
+ "duration": "how long an effect lasts (eot = until end of turn, static = while the source is on the battlefield, next_untap, while_control, end_step, until_monarch_changes = until an opponent becomes the monarch...)",
  "affected_scope": "whose permanents the effect or static ability affects (you_control, opponent_controls, all)",
  "trigger": "event that triggers the ability (attacks, dies, etb, gain_life, beginning_of_combat ...)",
  "piles_split": "cards are split into two piles by this player",
@@ -48,6 +48,9 @@ LEGEND = {
  "trigger_scope": "which cards fire a zone-change trigger: self = this card only, other = another card, any = this card or any other card",
  "trigger_filter": "narrows the triggering card or spell: a card type (always named for another card's zone-change trigger: trigger_filter:creature = another creature), a negated type (noncreature = noncreature spell), power_ge_N / power_le_N (power at least / at most N), one_or_more (triggers once for a group)",
  "cost_mana": "the mana part of an activation cost, symbols joined (cost_mana:2b = {2}{B}, cost_mana:x = {X}); write the symbols where cost:mana stands",
+ "investigate": "investigate (CR 701.16): create a Clue token",
+ "bolster": "bolster N (CR 701.39): put N +1/+1 counters on the creature you control with the least toughness; the value is N",
+ "monarch": "you become the monarch (CR 724)",
  "unless_cost_amount": "the mana an 'unless pays' tax asks for (unless_cost_amount:2 = unless its controller pays {2}); also the per-creature attack tax",
  "limit": "limit on how often the ability works (once_per_turn = only once each turn)",
  "regenerate": "regenerates a creature", "cant_regenerate": "the destroyed creature can't be regenerated",
@@ -144,6 +147,9 @@ DOC = {
  "tempo:+n|x": ("net cards added to your hand or battlefield minus cards removed (the spell itself, sacrificed or discarded cards) when the ability resolves; tokens count 0.5 each; only positive values are tagged; tempo:x when an amount is a variable", "user note: tempo gain (+1), applied to every ability that adds more cards than it removes"),
  "put_onto_battlefield + from_zone:<zone>": ("a card is put onto the battlefield from a zone (put_onto_battlefield from_zone:library) without being cast, so its mana cost and 'when you cast' triggers are skipped; enter-the-battlefield triggers still happen (CR 603.6a). Distinct from trigger:etb, which is a trigger on entering", "user note, confirmed 2026-10-22: the tag means 'not cast'"),
  "cost_mana:<symbols>": ("the mana part of an activation cost (cost_mana:2b = {2}{B})", "P4c E, user 2026-10-23 (placeholder triage: {cost} was 117 of 317 placeholders)"),
+ "investigate": ("investigate (CR 701.16): create a Clue token", "user 2026-10-23, P4c D (Thraben Inspector)"),
+ "bolster:<n>": ("bolster N (CR 701.39): put N +1/+1 counters on the creature you control with the least toughness", "user 2026-10-23, P4c D (Elite Scaleguard)"),
+ "monarch": ("you become the monarch (CR 724)", "user 2026-10-23, P4c D (Palace Jailer)"),
  "unless_cost_amount:<symbols>": ("the mana an 'unless pays' tax or attack tax asks for", "P4c E, user 2026-10-23 (Sage's Dousing, Ghostly Prison)"),
  "cost_if_you_do": ("the 'If you do' part marks the preceding sacrifice/discard as a cost", "user note on Victimize"),
  "enters_untapped / enters_tapped_conditional": ("lands that enter untapped, or tapped unless a condition holds (enters_tapped stays for always-tapped)", "user note: tag whether a land enters tapped"),
@@ -234,6 +240,7 @@ def target_tags(p, out, api=""):
         for r in rest:
             if r in ("YouCtrl", "YouOwn"): out.append("target_scope:you_control")
             elif r in ("OppCtrl", "YouDontCtrl"): out.append("target_scope:opp_control")
+            elif r in ("cmcEven", "cmcOdd"): out.append("target_filter:%s_mana_value" % r[3:].lower())
             elif r.startswith("non") or r in ("Other", "Basic", "Legendary", "Tapped", "Untapped"): out.append("target_filter:" + filt(r))
             elif r and main[0] in ("Permanent", "Card", "Creature") and (r[0].isupper() or r in ("attacking", "blocking", "tapped", "untapped") or re.match(r"(power|toughness|cmc)(GE|LE|EQ|GT|LT)", r)): out.append("target_filter:" + filt(r))
 
@@ -299,6 +306,7 @@ def cost_tags(cost, out):
     if "Discard<" in cost: out.append("cost:discard")
     for m in re.finditer(r"AddCounter<(\d+)/LOYALTY>", cost): out += ["loyalty_change:+" + m.group(1), "counters:loyalty"]
     for m in re.finditer(r"SubCounter<(\d+)/LOYALTY>", cost): out += ["loyalty_change:-" + m.group(1), "counters:loyalty"]
+    if re.search(r"SubCounter<\d+/(?!LOYALTY)", cost): out.append("cost:remove_counters")
     c2 = re.sub(r"\w+<[^>]*>", "", cost)
     if re.search(r"(^|\s)(\d+|X|[WUBRGC])(\s|$)", c2):
         out.append("cost:mana")
@@ -528,6 +536,9 @@ def extra(lines, sv, types, text):
                 for tf in spell_filters(p.get("ValidCard", "")): add("trigger_filter:" + tf)      # Card.nonCreature -> noncreature (negation is part of the value, P4c B)
             elif mode in ("Attacks", "AttackersDeclared", "AttackerBlocked", "AttackerUnblocked"): add("trigger:attacks" if mode in ("Attacks", "AttackersDeclared") else "trigger:" + tok(mode))
             elif mode == "Discarded": add("trigger:discard")
+            elif mode == "LifeGained": add("trigger:gain_life")
+            elif mode == "Phase" and p.get("Phase") == "BeginCombat": add("trigger:beginning_of_combat")
+            elif mode == "Phase" and p.get("Phase") == "Upkeep": add("trigger:upkeep")
         if kind == "S":
             mode = p.get("Mode", "")
             if mode == "MustAttack":
@@ -639,7 +650,10 @@ def extra(lines, sv, types, text):
             if "IsPresent" in bp and api != "Mana" and kind == "A": add("activation_restriction")
             if api == "ChangeZone" or api == "ChangeZoneAll":
                 o, d = bp.get("Origin", ""), bp.get("Destination", "")
-                if o == "Library":
+                for w_ in re.findall(r"cmc(Even|Odd)", bp.get("ChangeType", "")): add("target_filter:%s_mana_value" % w_.lower())      # Desecrate Reality: return a permanent with an odd mana value
+                if o == "Library" and bp.get("Defined") == "TopOfLibrary":       # the top card, not a search (Herald's Horn): no tutor tags
+                    add("take:may_1_chosen_type" if "ChosenType" in bp.get("ConditionPresent", "") else "take:1", "to_zone:" + tok(d))
+                elif o == "Library":
                     add("tutor")
                     n = bp.get("ChangeNum", "1")
                     add("tutor_count:" + ("up_to_" + n if n.isdigit() and int(n) > 1 else n))
@@ -683,6 +697,7 @@ def extra(lines, sv, types, text):
             if api == "ChangeZoneAll" and bp.get("Destination") == "Exile": last_exile = "x"
             if api == "ChangeZone" and bp.get("Destination") == "Exile": last_exile = bp.get("ChangeNum", "1")
             if api == "Effect":
+                if any("Mode$ BecomeMonarch" in sv.get(t_, "") for t_ in re.split(r"[ ,]+", bp.get("Triggers", ""))): add("duration:until_monarch_changes")      # Palace Jailer: exiled until an opponent becomes the monarch
                 for sname in re.split(r"[ ,]+", bp.get("StaticAbilities", "")):
                     if "MayPlay" in sv.get(sname, ""):
                         add("impulse_draw", "impulse_draw_count:" + str(last_exile).lower())
@@ -736,6 +751,15 @@ def extra(lines, sv, types, text):
                 add("look_top:" + bp.get("DigNum", "1").lower(), "take:" + ("may_" if bp.get("Optional") == "True" else "") + tk, "to_zone:" + (tok(bp["DestinationZone"]) if bp.get("DestinationZone") else "hand"))
                 if bp.get("DestinationZone2"): add("rest_to_zone:" + tok(bp["DestinationZone2"]), *(["rest_order:" + ("bottom_random" if bp.get("RestRandomOrder") == "True" else "bottom")] if bp.get("LibraryPosition") == "-1" else []))
             if api == "PeekAndReveal": add("look_top:" + bp.get("PeekAmount", "1").lower(), "reveal")
+            if api == "Investigate": add("investigate")                               # P4c D, user 2026-10-23
+            if bp.get("Bolster", "").isdigit(): add("bolster:" + bp["Bolster"])       # P4c D: bolster N
+            if api == "BecomeMonarch": add("monarch")                                 # P4c D
+            if ci > 0 and b.startswith("AB$") and bp.get("Cost"): cost_tags(bp["Cost"], groups[cur[0]])      # a cost paid inside a trigger's sub-ability (Nazar: you may remove three counters)
+            if bp.get("DefinedPlayer") == "Player.Other":
+                add("target_scope:each_other_player")
+                if bp.get("ChangeType"): add("target_type:" + tok(bp["ChangeType"].split(".")[0]))
+                if " may " in " " + desc_main.lower() + " ": add("optional")
+            if bp.get("TargetsForEachPlayer") == "True": add("target_scope:each_opponent")
             if api == "TwoPiles": add("piles_split:" + (tok(bp.get("Separator", "")) or "you"))       # one tag: who splits the cards into two piles (opponent / you)
             if api == "Token":
                 token_tags(bp, groups[cur[0]])
