@@ -34,6 +34,7 @@ Pinned reference text, one line per tag family with a structured or non-obvious 
 | `extra_land_drop` | its controller may play this many additional lands each turn |
 | `phase_out` | permanents phase out |
 | `cost_additional` | an alternative additional cost as the card is cast (reveal a card or pay mana, for example); the cost tags follow |
+| `additional_cost` | the spell has a mandatory additional cost to cast it (discard a card, sacrifice a creature ...); the cost tags (not the mana cost) say which; it is not the spell's own mana cost |
 | `scales` | the amount (X) of this ability is the number of that kind of thing you control: write it as 'for each <thing> you control' (scales:island on a draw_count:x = draw a card for each Island you control) |
 | `mana_restriction` | the mana can be spent only on what the value says (mana_restriction:instant_or_sorcery = spend this mana only to cast an instant or sorcery spell) |
 | `x_is` | what X is. Write X in the text and do not define it unless the value names a count or a stat: count_<thing>_you_control = for each <thing> you control, own_power / target_power = equal to that creature's power; x_paid = just X (the X in the mana cost), previous_result = the amount the previous effect of the same ability produced (damage dealt, life lost ...: 'gain life equal to the damage dealt this way') |

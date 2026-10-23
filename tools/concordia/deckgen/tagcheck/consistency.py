@@ -147,7 +147,7 @@ def compare(runs):
     fam_all, fam_bad = collections.Counter(), collections.Counter()
     tags = data[0][3]
     for i, pc in out["per_card"].items():
-        fams = {t.split(":")[0] for t in tags[i]["tags"]}
+        fams = {t.split(":")[0] for t in tags[i]["tags"] + [x for g in tags[i].get("groups", {}).values() for x in g.split()]}
         for f_ in fams:
             fam_all[f_] += 1
             if not pc["sig"]: fam_bad[f_] += 1

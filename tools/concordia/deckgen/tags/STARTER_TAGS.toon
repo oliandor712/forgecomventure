@@ -1009,7 +1009,7 @@ groups[5]{id,source,tags}:
   c3,T line,target_scope:each_opponent trigger_scope:other trigger_filter:creature
   c4,A line,cost_mana:1b target_scope:each_player
 mtgish: rules=TriggerA Activated
-verify_flags: trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield) | trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves)
+verify_flags: trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves) | trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield)
 forge_ai: AILogic=AtOppEOT
 
 card: "Gwenna, Eyes of Gaea"
@@ -1795,11 +1795,12 @@ forge_ai: AILogic=-
 
 card: Harrow
 typing: cardtype:instant
-tags: cost:sacrifice cost_sacrifice_target:land cost_mana:2g tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield from_zone:library controller:you
+tags: cost:sacrifice cost_sacrifice_target:land cost_mana:2g tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield from_zone:library controller:you additional_cost
 ai_tags: land_tutor
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,2 G Sac<1/Land>,changezone,"","",""
-groups[1]{id,source,tags}:
+groups[2]{id,source,tags}:
+  c0,card,additional_cost
   c1,A line,cost:sacrifice cost_sacrifice_target:land cost_mana:2g tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield from_zone:library controller:you
 mtgish: rules=CastEffect SpellActions
 forge_ai: AILogic=- AIPreference
@@ -2652,37 +2653,40 @@ forge_ai: AILogic=-
 
 card: Thrill of Possibility
 typing: cardtype:instant
-tags: discard draw cost:discard cost_mana:1r draw_count:2
+tags: discard draw cost:discard cost_mana:1r draw_count:2 additional_cost
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,1 R Discard<1/Card>,draw,numcards=2,Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
-groups[1]{id,source,tags}:
+groups[2]{id,source,tags}:
+  c0,card,additional_cost
   c1,A line,cost:discard cost_mana:1r draw_count:2
 mtgish: rules=CastEffect SpellActions
 forge_ai: AILogic=-
 
 card: Tormenting Voice
 typing: cardtype:sorcery
-tags: discard draw cost:discard cost_mana:1r draw_count:2
+tags: discard draw cost:discard cost_mana:1r draw_count:2 additional_cost
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,1 R Discard<1/Card>,draw,numcards=2,Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
-groups[1]{id,source,tags}:
+groups[2]{id,source,tags}:
+  c0,card,additional_cost
   c1,A line,cost:discard cost_mana:1r draw_count:2
 mtgish: rules=CastEffect SpellActions
 forge_ai: AILogic=-
 
 card: Big Score
 typing: cardtype:instant
-tags: discard draw token_make cost:discard cost_mana:3r draw_count:2 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
+tags: discard draw token_make cost:discard cost_mana:3r draw_count:2 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source additional_cost
 ai_tags: artifact_token tempo:+1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,3 R Discard<1/Card/card>,draw+token,numcards=2 tokenscript=c_a_treasure_sac,Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
-groups[2]{id,source,tags}:
+groups[3]{id,source,tags}:
+  c0,card,additional_cost
   c1,A line,cost:discard cost_mana:3r draw_count:2
   c1.2,sub-ability of c1,token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
 mtgish: rules=CastEffect SpellActions
@@ -2690,13 +2694,14 @@ forge_ai: AILogic=-
 
 card: Unexpected Windfall
 typing: cardtype:instant
-tags: discard draw token_make cost:discard cost_mana:2rr draw_count:2 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
+tags: discard draw token_make cost:discard cost_mana:2rr draw_count:2 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source additional_cost
 ai_tags: artifact_token tempo:+1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,2 R R Discard<1/Card/card>,draw+token,numcards=2 tokenscript=c_a_treasure_sac,Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
-groups[2]{id,source,tags}:
+groups[3]{id,source,tags}:
+  c0,card,additional_cost
   c1,A line,cost:discard cost_mana:2rr draw_count:2
   c1.2,sub-ability of c1,token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
 mtgish: rules=CastEffect SpellActions
@@ -2720,13 +2725,14 @@ forge_ai: AILogic=-
 
 card: Seize the Spoils
 typing: cardtype:sorcery
-tags: discard draw token_make cost:discard cost_mana:2r draw_count:2 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
+tags: discard draw token_make cost:discard cost_mana:2r draw_count:2 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source additional_cost
 ai_tags: artifact_token tempo:+0.5
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,2 R Discard<1/Card/card>,draw+token,numcards=2 tokenscript=c_a_treasure_sac,Defined=You,""
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
-groups[2]{id,source,tags}:
+groups[3]{id,source,tags}:
+  c0,card,additional_cost
   c1,A line,cost:discard cost_mana:2r draw_count:2
   c1.2,sub-ability of c1,token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
 mtgish: rules=CastEffect SpellActions

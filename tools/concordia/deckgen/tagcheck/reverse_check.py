@@ -294,9 +294,18 @@ def cmd_export(a):
             items.append(dict(id=cid, **tag_blind(r)))
         batches.append(items)
     db = reminder_db()
+    extra = json.load(open(a.reminders_extra)) if getattr(a, "reminders_extra", "") else {}
     for n, items in enumerate(batches, 1):
-        json.dump(dict(cards=items), open(os.path.join(wd, "in", "batch_%02d.json" % n), "w"), indent=1)
-        json.dump(batch_reminders(items, db), open(os.path.join(wd, "in", "reminders_%02d.json" % n), "w"), indent=1)
+        rem = dict(batch_reminders(items, db), **extra)
+        if a.slim:      # token-saving layout: one file per batch (reminders inside it), and `tags` lists only the tags that no group already shows
+            slim = []
+            for c in items:
+                shown = {t for g in c["groups"].values() for t in g.split()}
+                slim.append(dict(c, tags=[t for t in c["tags"] if t not in shown]))
+            json.dump(dict(reminders=rem, cards=slim), open(os.path.join(wd, "in", "batch_%02d.json" % n), "w"), indent=1)
+        else:
+            json.dump(dict(cards=items), open(os.path.join(wd, "in", "batch_%02d.json" % n), "w"), indent=1)
+            json.dump(rem, open(os.path.join(wd, "in", "reminders_%02d.json" % n), "w"), indent=1)
     json.dump(key, open(os.path.join(wd, "key", "key.json"), "w"), indent=1)
     leaks = leak_check(wd, key)
     print("run %s: %d cards, %d batches in %s/in ; answer key in %s/key (never tell the reader)" % (a.run, len(key), len(batches), wd, wd))
@@ -307,7 +316,8 @@ def cmd_export(a):
         open(os.path.join(wd, "legend.md"), "w").write(legend_text())
     print("\n--- reader prompt (one subagent per batch, tools Read+Write only; fill in the paths) ---")
     for n in range(1, len(batches) + 1):
-        print("BATCH %d: Read %s/in/batch_%02d.json and %s/in/reminders_%02d.json; Write %s/out/batch_%02d.json\n" % (n, wd, n, wd, n, wd, n))
+        if a.slim: print("BATCH %d: Read %s/in/batch_%02d.json (reminders inside); Write %s/out/batch_%02d.json\n" % (n, wd, n, wd, n))
+        else: print("BATCH %d: Read %s/in/batch_%02d.json and %s/in/reminders_%02d.json; Write %s/out/batch_%02d.json\n" % (n, wd, n, wd, n, wd, n))
     print(rules)
     if leaks: sys.exit(2)
 
@@ -319,7 +329,7 @@ def leak_check(wd, key):
         raws[fn] = open(os.path.join(wd, "in", fn)).read().lower()
         if not fn.startswith("batch_"): continue
         d = json.load(open(os.path.join(wd, "in", fn)))
-        for c in d["cards"]: own[c["id"]] = " ".join(c.get("typing", []) + c["tags"]).lower()
+        for c in d["cards"]: own[c["id"]] = " ".join(c.get("typing", []) + c["tags"] + list(c.get("groups", {}).values())).lower()
         for pat in ("oracle:", "mtgish:", "forge_ai:", "clauses[", "svar:", "ailogic$"):
             if pat in raws[fn]: bad.append("%s contains %r" % (fn, pat))
     for cid, name in key.items():
@@ -434,7 +444,7 @@ def cmd_selftest(a):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sp = ap.add_subparsers(dest="cmd", required=True)
-    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=40); e.add_argument("--legend", action="store_true"); e.add_argument("--cards", default="")
+    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=40); e.add_argument("--legend", action="store_true"); e.add_argument("--slim", action="store_true"); e.add_argument("--reminders-extra", dest="reminders_extra", default=""); e.add_argument("--cards", default="")
     c = sp.add_parser("compare"); c.add_argument("--run", required=True); [c.add_argument("--" + k, default="") for k in ("arm", "grammar", "reader", "note")]  # run metadata for run_log
     s = sp.add_parser("selftest"); s.add_argument("--limit", type=int, default=0)
     a = ap.parse_args()

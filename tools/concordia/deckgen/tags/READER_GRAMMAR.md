@@ -84,6 +84,7 @@ Order inside the cost: `{cost}` (only if `cost:mana`), then `{T}`, then the othe
 | `cost:return` + `cost_return_target:land` | `Return a land you control to its owner's hand` |
 - A mana ability (`mana_source`) is written `{T}: Add {U}.` The text before the colon is the cost; there is no `{cost}` unless `cost:mana` exists.
 - `cost_additional` (+ `cost:` tags): `As an additional cost to cast this spell, <cost A> or <cost B>.` The cost tags of the group are the alternatives, in tag order (`discard a card`, `pay N life`, `pay {cost}`). One cost tag only: no `or`. This sentence is its own ability (own line) and comes first.
+- `additional_cost` (+ `cost:` tags of the same group): `As an additional cost to cast this spell, <cost>.` (`discard a card`, `sacrifice a creature`). It is NOT the spell's own mana cost; `cost_mana:<symbols>` stays out of this sentence. Own line, first.
 
 ### 4.3 Keywords (group `k`)
 - `kw:<name>` alone: the name capitalised (`Flying`). Several plain keywords of consecutive `k` groups with no number or cost: ONE line separated by `, ` (`Flying, vigilance`; only the first word capitalised). A keyword with a value is a line of its own.
