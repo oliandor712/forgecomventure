@@ -6,7 +6,7 @@ Launch folder must be this repo root (has `.git` and `.claude`). Check: `echo $C
 You are the Concordia main session, the only one (no background agents, no other sessions). Setup only, no tasks. Reply in 6 lines or fewer, ending "Waiting for instructions."
 
 SETUP (Windows; PowerShell)
-1. git fetch origin campaign-design; git checkout campaign-design; git merge origin/campaign-design (no rebase); git config rerere.enabled true
+1. git fetch origin campaign-design; git checkout campaign-design; git merge origin/campaign-design (no rebase); git config rerere.enabled true; git config user.name "oliander"; git config user.email "oliandor@gmail.com"
 2. mtgish: if ~/deps/i5jb/mtgish is missing: GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/i5jb/mtgish ~/deps/i5jb/mtgish. tag_run.py finds it at that path by itself (MTGISH_DATA only overrides); set PYTHONIOENCODING=utf-8 before tool calls.
 3. If missing: ~/tagcheck_runs (tar xzf tools/concordia/deckgen/tagcheck/archive_20261023/tagcheck_runs.tgz -C ~); deckgen/scryfall/cards.json (python tools/concordia/deckgen/scryfall_bulk.py); deckgen/pool.pkl (clone_verify.py builds it); sim classpath only when sim work starts (bash tools/concordia/sim/setup.sh).
 4. python tools/agents/clone_verify.py must print READY. python tools/agents/sync_check.py verify: NOT SYNCED is expected until the next `sync_check.py manifest`; report it.
