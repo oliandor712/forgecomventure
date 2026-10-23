@@ -22,7 +22,7 @@ Paths are repo-relative. This file only points; it holds no rules. If a file her
 | `lookup.py size [paths]` | token estimate | guessing |
 
 ### Size guide (tokens ~ bytes/4; BIG = use a slice command or grep)
-BIG: CR text 259k; `STARTER_TAGS.toon` 56k; `ABILITY_TWINS.json` 42k; `balance_lab/records.csv` 30k; `KEYWORD_REFERENCE.toon` 19k; `DESIGN.md` 16k; `OVERWORLD.md` 12k; `DECISION_LOGIC.md` 9k; `TAG_REFERENCE.md` 9k; `balance_lab/REPORT.md` 9k; `RUN_LOG.jsonl` 9k; training-data handoff 7k (reference only, do not read for normal work).
+BIG: CR text 259k (`CR_COMPACT.txt` 212k); `KEYWORD_CR_FULLTEXT.toon` 49k (do not read); `STARTER_TAGS.toon` 56k; `ABILITY_TWINS.json` 42k; `balance_lab/records.csv` 30k; `KEYWORD_REFERENCE.toon` 19k; `DESIGN.md` 16k; `OVERWORLD.md` 12k; `DECISION_LOGIC.md` 9k; `TAG_REFERENCE.md` 9k; `balance_lab/REPORT.md` 9k; `RUN_LOG.jsonl` 9k; training-data handoff 7k (reference only, do not read for normal work).
 Medium (read only for the task): `READER_GRAMMAR.md` 6k; `human_logic.toon` 5k; `ENCOUNTER_TIERS.md` 5k; `READER_GRAMMAR_PLAN.md` 4k; `IDEAS_BACKLOG.md` 4k; `TOOLBOX.md` 3k; `AI_CHANGES_APPROVAL.md` 3k; `MAIN_SESSION_BRIEF.md` 3k; `CONTEXT.md` 3k; `TAG_LINKS.md` 3k.
 Small (fine to read): handoffs under 2k, `TAG_LEGEND.md` 2k, `tagcheck/README.md` 0.4k.
 
@@ -92,7 +92,7 @@ Small (fine to read): handoffs under 2k, `TAG_LEGEND.md` 2k, `tagcheck/README.md
 `docs/Adventure/Campaign/`: `DESIGN.md`, `OVERWORLD.md`, `ENCOUNTER_TIERS.md`, `IDEAS_BACKLOG.md` (nothing approved), `RESEARCH_MASTER_REPORT.md`, `CLAUDE_CHAT_CONTEXT.md`, `REPO_COMPACTING_PLAN.md`, `archive/`.
 
 ## 12. Reference data
-`tools/agents/reference/` (`MTG_COMP_RULES_20260807.txt`, PDF, `README.md`); `tools/concordia/ai_lab/KEYWORD_REFERENCE.toon`, `KEYWORD_REMINDER_TEXT.toon`, `KEYWORD_REMINDER_FILL.toon`, `KEYWORD_FIRST_RELEASE.toon`, `TOKEN_REMINDER_TEXT.toon`.
+`tools/agents/reference/` (`MTG_COMP_RULES_20260807.txt`, PDF, `README.md`); `tools/concordia/ai_lab/KEYWORD_MERGED.toon` (one row per keyword: summary + CR rule + reminder + first release; gaps filled, ~27k tok, prefer `lookup.py kw <name>`), `KEYWORD_CR_FULLTEXT.toon` (FULL CR rule text, ~49k tok, NOT READ unless absolutely needed), `CR_COMPACT.txt` and `CR_INDEX.txt` in `tools/agents/reference/` (rules without examples; use `lookup.py cr`), sources `KEYWORD_REFERENCE.toon`, `KEYWORD_REMINDER_TEXT.toon`, `KEYWORD_REMINDER_FILL.toon`, `KEYWORD_FIRST_RELEASE.toon`, `TOKEN_REMINDER_TEXT.toon`.
 
 ## 13. Windows build and install
 `tools/concordia/build-and-install.ps1`, `copy-to-install.ps1`, `update-concordia.ps1`, `update-source.ps1` (the user tests on Windows).
