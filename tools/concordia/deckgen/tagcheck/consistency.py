@@ -221,10 +221,13 @@ def selftest():
 if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser(); sp = ap.add_subparsers(dest="cmd", required=True)
-    c = sp.add_parser("compare"); c.add_argument("--runs", nargs="+", required=True); c.add_argument("--out", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "GRAMMAR_BASELINE.md"))
+    c = sp.add_parser("compare"); c.add_argument("--runs", nargs="+", required=True); c.add_argument("--out", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "GRAMMAR_BASELINE.md")); [c.add_argument("--" + k, default="") for k in ("arm", "grammar", "reader", "note")]  # metadata for run_log
     sp.add_parser("selftest")
     a = ap.parse_args()
     if a.cmd == "selftest": selftest()
     else:
         o = compare(a.runs); report(o, a.out)
+        try:    # RUN_LOG.jsonl
+            import run_log; run_log.log_compare(o, dict(arm=a.arm, grammar=a.grammar, reader=a.reader, note=a.note))
+        except Exception as ex: print("run_log skipped:", ex)
         print(json.dumps({k: o[k] for k in ("V1", "V2", "V3", "V4", "S1", "S1b", "A", "n")}, indent=1))

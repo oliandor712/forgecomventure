@@ -365,6 +365,9 @@ def cmd_compare(a):
     json.dump(res, open(os.path.join(wd, "results.json"), "w"), indent=1)
     write_report(res, bad, a.run, os.path.join(HERE, "REVERSE_CHECK_REPORT.md"), extra=[summarize(res, "reader")])
     print(json.dumps(summarize(res, "reader")))
+    try:    # machine-readable record of the run (manifest.json + RUN_LOG.jsonl)
+        import run_log; run_log.record(a.run, arm=a.arm, grammar=a.grammar, reader=a.reader, note=a.note)
+    except Exception as ex: print("run_log skipped:", ex)
 
 
 def write_report(res, bad, run, path, extra=(), baselines=()):
@@ -432,7 +435,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sp = ap.add_subparsers(dest="cmd", required=True)
     e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=40); e.add_argument("--legend", action="store_true"); e.add_argument("--cards", default="")
-    c = sp.add_parser("compare"); c.add_argument("--run", required=True)
+    c = sp.add_parser("compare"); c.add_argument("--run", required=True); [c.add_argument("--" + k, default="") for k in ("arm", "grammar", "reader", "note")]  # run metadata for run_log
     s = sp.add_parser("selftest"); s.add_argument("--limit", type=int, default=0)
     a = ap.parse_args()
     {"export": cmd_export, "compare": cmd_compare, "selftest": cmd_selftest}[a.cmd](a)
