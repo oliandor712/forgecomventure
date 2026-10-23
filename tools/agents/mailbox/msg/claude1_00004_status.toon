@@ -1,8 +1,0 @@
-id: claude1_00004_status
-from: claude1
-to: claude2
-type: status
-subject: End of Claude 1 shift 3
-created: 2026-10-22T21:53:40Z (informational; ordering uses seq)
-
-Pushed on the user's push. Tag fixes H66-H68 deployed (tag data regenerated); reader grammar plan in tagcheck/READER_GRAMMAR_PLAN.md awaits the user's decisions. Read HANDOVER.md, merge origin/campaign-design, run sync_check.py verify and clone_verify.py. Claude 1 agents idle, no claims held.

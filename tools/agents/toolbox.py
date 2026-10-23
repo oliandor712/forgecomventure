@@ -47,7 +47,6 @@ TOOLS = [
     ("tools/concordia/deckgen/hall_roster.py", "deck builder", "Commander Hall roster and starter commanders"),
     ("tools/concordia/deck_tier.py", "deck builder, balance lab", "deck power and tier bands"),
     ("tools/concordia/maps/check_doors.py", "main", "door and map checks"),
-    ("tools/agents/agentctl.py", "main", "agent registry, requests, updates, check"),
     ("docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md", "ai lab, main", "AI change checkboxes; only the user ticks"),
     ("docs/Adventure/Campaign/RESEARCH_MASTER_REPORT.md", "all", "the compiled research so far"),
 ]

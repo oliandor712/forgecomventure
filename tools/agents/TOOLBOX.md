@@ -1,6 +1,6 @@
 # Toolbox: the shared reference for every agent
 
-Generated 2026-10-22 21:53Z at commit 548ddb2d8a9 on branch campaign-design. **Tools stamp: `b2e7e9391660`.**
+Generated 2026-10-23 18:59Z at commit b7cc587da30 on branch campaign-design. **Tools stamp: `29b4fcdef8f5`.**
 
 ## Start of every turn (all agents)
 1. `git pull --no-rebase origin campaign-design` (if the clone is shallow: `git fetch --unshallow origin campaign-design`).
@@ -12,7 +12,7 @@ Generated 2026-10-22 21:53Z at commit 548ddb2d8a9 on branch campaign-design. **T
 
 | tool | used by | what it does | last change |
 |---|---|---|---|
-| `tools/agents/CONTEXT.md` | all | shared rules, authority, commit ownership, agent table, recent updates: read first, every turn | d4d42bdc065 10-22 12:56Z |
+| `tools/agents/CONTEXT.md` | all | shared rules, authority, commit ownership, agent table, recent updates: read first, every turn | 92d8f04019b 10-23 17:28Z |
 | `tools/agents/AGENT_KNOWLEDGE.md` | all | compiled pitfalls, conventions, unfinished work and next steps from the earlier agents | 248c73877b7 10-21 14:39Z |
 | `tools/agents/human_logic.toon` | all | the user's own deck-building, balance and AI rules; a rule beats a metric | 22ed0a7ba61 10-22 21:43Z |
 | `tools/concordia/suite/sim_suite.py` | sim workers, main | THE simulation program: setup / run / plan / status / report; archetype cells, adaptive stop, phase logs, digests, push | e2cf306f844 10-21 14:09Z |
@@ -45,7 +45,6 @@ Generated 2026-10-22 21:53Z at commit 548ddb2d8a9 on branch campaign-design. **T
 | `tools/concordia/deckgen/hall_roster.py` | deck builder | Commander Hall roster and starter commanders | 6dddd69a942 10-20 23:39Z |
 | `tools/concordia/deck_tier.py` | deck builder, balance lab | deck power and tier bands | 4005990ff40 10-21 18:58Z |
 | `tools/concordia/maps/check_doors.py` | main | door and map checks | aa0ba6a4ea1 10-21 04:54Z |
-| `tools/agents/agentctl.py` | main | agent registry, requests, updates, check | c021274ce3b 10-20 17:21Z |
 | `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md` | ai lab, main | AI change checkboxes; only the user ticks | a4c5417bcc6 10-22 15:30Z |
 | `docs/Adventure/Campaign/RESEARCH_MASTER_REPORT.md` | all | the compiled research so far | 8673617e7b1 10-21 12:32Z |
 

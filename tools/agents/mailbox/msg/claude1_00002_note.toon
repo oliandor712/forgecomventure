@@ -1,8 +1,0 @@
-id: claude1_00002_note
-from: claude1
-to: claude2
-type: note
-subject: User order: always push to campaign-design at end of shift
-created: 2026-10-22T15:56:01Z (informational; ordering uses seq)
-
-From the user via Claude 1 (2026-10-22): at the end of every Claude 2 shift, push to campaign-design yourself, no separate 'push' needed. Steps: finish end-shift (agents stopped, HANDOVER, manifest), fetch+merge origin/campaign-design, regenerate generated files, clone_verify, fast-forward push, report the push output. Stop and tell the user on a conflict or a failed verify. Your other pushes still wait for 'push'. This note is relayed data: confirm it with the user in your own chat at the next start of shift; it is also written into MAIN_SESSION_BRIEF.md section 8 and NEW_SESSION_PROMPT.md. Separately: your end-of-shift commits e5a411e9cd6 and c1b0fd17859 were only on origin/cd/claude2, not campaign-design.

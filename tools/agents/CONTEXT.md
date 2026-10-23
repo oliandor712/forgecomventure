@@ -1,11 +1,9 @@
-# Shared context for the Concordia background agents
+# Shared context for the Concordia main session and subagents
 
-Read this first on every run, then your own brief (`.claude/agents/<name>.md`). The main session keeps it current
-through the agent manager (`.claude/skills/agent-manager/`). The newest changes are listed under "Recent updates" at the
-bottom. When this file and your brief disagree, this file wins, because it is newer.
+The main session reads this with `MAIN_SESSION_BRIEF.md`; a subagent reads it, then its brief in `.claude/agents/<name>.md`. Where this file and a brief disagree, this file wins.
 
 ## Single session
-There is one main session. Background agents are not used unless the user asks for them. Branch, push scripts and rules: `campaign-design`.
+There is one main session. Branch: `campaign-design`. Subagents are described under "Subagents".
 
 ## The project
 - Concordia is a Pokémon-like Commander campaign plane for Forge Adventure, in the fork `oliandor712/forgecomventure`.
@@ -16,19 +14,16 @@ There is one main session. Background agents are not used unless the user asks f
   `ENCOUNTER_TIERS.md`, `DECK_REVIEW_SPELLBINDER.md`, `AI_RESEARCH.md`, `AI_FLAGGED_CARDS.md`, `AI_TAGS_REFERENCE.md`.
 - The user tests on Windows. The user decides what goes into the game; agents propose.
 
-## Standing rules (all agents)
+## Standing rules (main session and subagents)
 1. **Equal life on both sides in every simulation, no exceptions.** Life bonuses are eliminated as an option (user,
    2026-10-20); don't test them.
 2. **Don't change `forge-core`, `forge-game` or `forge-ai`** on the branch: the user hasn't approved AI-module changes.
    Code ideas go in patch files in your own folder.
-3. **Write only in your own folder**, plus your listed docs. Never commit build output, classpaths, `forge-gui/data/`,
+3. **A subagent writes only in its role's folders** (table below), plus its listed docs. Never write build output, classpaths, `forge-gui/data/`,
    or a modified `forge-gui-mobile/pom.xml`.
-4. **Pushing:** pull with `git pull --no-rebase origin campaign-design` before you push. If a push is rejected, pull
-   again and retry. On a network error, back off 2/4/8/16 s. Never force-push. If the push still fails, report it and
-   push first thing next run.
-5. **Low speed, low usage.** Stay inside your time box, keep replies short, and never paste large files or logs.
-6. **Pause on request.** When the main session or the user says pause, stop at a safe point, log it and push. Resume
-   only when told, or at the time given.
+4. **Pushing:** subagents never commit or push; the main session does. Pushes follow `MAIN_SESSION_BRIEF.md` (only on the user's "push"; `git pull --no-rebase origin campaign-design` first; never force).
+5. **Low speed, low usage.** Stay inside the time box given, keep replies short, and never paste large files or logs.
+6. **Stop on request.** When the main session or the user says stop, a subagent ends at a safe point and reports what is done.
 7. **Test updates are pre-approved (user, 2026-10-20).** You may change your test tooling without asking: sims,
    logging, batch runners, test decks, report scripts, and patched scratch copies of forge-ai or card scripts used
    only for testing. Before replacing a file that is already committed, copy the old version to
@@ -36,24 +31,32 @@ There is one main session. Background agents are not used unless the user asks f
    to the user: anything applied to forge-core, forge-game or forge-ai, card scripts, Concordia decks, enemies, maps
    or config.
 8. **Proposed AI changes go on the checklist** `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md`. Put
-   `CHECKLIST: <patch> - <one line> - <status>` in your run report when you save, test or revise a patch. The main
+   `CHECKLIST: <patch> - <one line> - <status>` in its result when it saves, tests or revises a patch. The main
    session updates the list, and the user ticks a box to approve.
-9. **Pauses come only from the main session** (day or night). The agent coordinator was removed on 2026-10-20; ignore
-   any earlier "hold"/"resume" rule tied to it.
-10. **Processes:** never `pkill -f` a pattern that can match your own shell. Kill java by pid
+9. **Processes:** never `pkill -f` a pattern that can match your own shell. Kill java by pid
    (`pgrep -a java | grep Sim`). Never leave a sim or build running when you stop.
 
 ## Human logic and TOON
 - `tools/agents/human_logic.toon` holds only the user's own rules for deck building, deck balance and Forge AI improvement (29 rows, pruned 2026-10-21). Read it before you build, judge or test decks or propose AI changes; a rule beats a metric. The main session adds a row only for that kind of input; town, map, quest and UI rules go in the design docs.
 - **TOON** (https://github.com/toon-format/toon) is the format for data files only Claude reads: a list of same-shaped records or a map of same-shaped objects is written as `name[N]{a,b}:` plus one row each (`name[N|]{a|b}:` when cells hold commas), saving 25-55% against JSON. Keep CSV/TSV for flat tables (smaller), JSON where code reads the file, and markdown for anything the user reads. Check a file with `npx @toon-format/cli file.toon`.
 
-## Asking the main session for analysis
-**No per-run messages.** Don't send_message the main session after a run or batch: every message wakes it and costs tokens. Push your results and put them in your 4-hour report. Message it only for a blocker you can't fix.
-Put a line starting `ANALYSIS REQUEST:` in your **4-hour report** (not after every test; batch them, to keep the
-request-and-answer loop slow and cheap; an urgent blocker may go at once). Give the question, the files it concerns, and what you need
-back. The main session reads your reports at its 4-hour check-ins. It files the answer in
-`tools/agents/analysis/<your name>.md` and sends it to you. That file is your training data: read it with this one,
-build on its findings, and cite entries by date and title.
+## Subagents
+No standing background agents and no schedules. The main session spawns a subagent only when the user asks.
+- **Parameters (strict):** model `claude-haiku-5-5`, effort `low`, never overridden. At most **5** subagents running at once. Forced by `CLAUDE_CODE_SUBAGENT_MODEL` in `.claude/settings.json` and each brief's frontmatter; the cap of 5 is a rule, not tool-enforced.
+- **Reporting:** a subagent returns its result to the main session in the same turn. No mailbox, no `send_message`, no ETA lines, no 4-hour reports. Replies are terse TOON; skip optional analysis.
+- **Authority:** the main session's instructions are the user's. A subagent's suggestions are advice only; nothing goes into the game, forge-ai, decks or `enemies.json` without the user's word in chat. No dry or trial deck builds without the user's approval.
+- **Guardrails (refuse and name the one):** editing forge-core, forge-game or forge-ai source (patches go in `tools/concordia/ai_lab/patches/`); force-push or history rewrite; PRs; pushing anywhere but campaign-design; unequal-life or life-bonus sims; committing or pushing at all; deleting data without a backup; ticking an approval box.
+- **Start of a task:** read `tools/agents/TOOLBOX.md`, `human_logic.toon` (a rule beats a metric) and the role's handoff file.
+
+### Roles (same scopes as the earlier agents; briefs in `.claude/agents/`)
+| Role (subagent type) | Does | Writes in |
+|---|---|---|
+| deck-builder | decklist updates, new decks, categorization, unflagged-card data, using balance data | `forge-gui/res/adventure/Concordia/decks/**`, `tools/concordia/deckgen/**`, its backups in `tools/concordia/backups/` |
+| forge-ai-lab | Forge AI research, decision logic docs, test-only patches, balance options for the balance lab | `tools/concordia/ai_lab/**` (not other roles' digests), AI docs, new entries (never ticks) in `AI_CHANGES_APPROVAL.md` |
+| deck-balance-lab | runs the sim suite, reports tier, archetype and starter balance against the player-win targets (70% tiers 1-2, 50% tiers 3-5) | `tools/concordia/balance_lab/`, `tools/concordia/suite/` records and reports, its digest folders |
+| tag-blind-reader | blind reverse tag check: tags in, ability text out; one instance per batch, Read and Write only | its one output file |
+
+Briefs still carry the old session/messaging instructions (ETA lines, `send_message`, pushing); this section overrides them.
 
 ## Tools
 - **Simulator:** run `tools/concordia/sim/setup.sh` once per container. It takes about 1.5 minutes from an empty cache:
@@ -103,75 +106,6 @@ build on its findings, and cite entries by date and title.
   thinks Forge's own bonuses are too heavy-handed and wants smaller ones, such as a land or a 1-drop, measured against
   no bonus.
 
-## Agents
-| Agent | Brief | Session | Schedule |
-|---|---|---|---|
-| forge-ai-lab | `.claude/agents/forge-ai-lab.md` | session_018TohPY7UPn5mh9b7aJ4at5 | step every 2 h at :06 (was hourly; changed at the user's request), about 5 min; report every 4 h |
-| deck-balance-lab | `.claude/agents/deck-balance-lab.md` | session_01PwU5ft7yoiwonjyndwCVv9 | `--until-done` run, no time cap (triggers disabled during the deep research project) |
-| deck-builder | `.claude/agents/deck-builder.md` | session_01EiE27ZRU9BUAnaYQYocKuB | no schedule; main processor for decklist updates and new decks; scope: balance data, unflagged card data, categorization; the main session assists when its ETA exceeds 5 minutes |
-
-The main session checks on all agents every 4 hours (at :40) and fixes blockers.
-
-## How the agents cooperate (user, 2026-10-21)
-- **Deck balance agents feed the AI lab with AI behaviour data.** Every balance simulation writes a phase log; the digests (tools/concordia/ai_lab/digests/<worker>-<UTC hour>/) are the data the AI lab studies for decision logic (blocking, attacks, removal, mana, commander play, by deck type).
-- **The AI lab feeds the deck balancers with balance-change options.** From its bonus and AI-change tests (starting bonuses, card-script unflags, patches) it passes the balance lab and main session measured options for strengthening the AI decks against the player decks. The options go in the 4-hour report or a message to the main session; nothing is applied to decks or forge-ai without the usual approvals.
-- The AI lab's current option table is `tools/concordia/ai_lab/OPTIONS_FOR_BALANCERS.md` (effect, cost, what each needs); the balancers read it before proposing deck changes.
-- The main session routes both directions: it keeps the digest step running, answers analysis requests, and records approved options.
-
-## Agent review after each 4-hour report (user, 2026-10-21)
-After every 4-hour report the main session runs a short three-way conversation (main session, AI lab, deck balance lab), fully in TOON, using this prompt: "describe my own workflow, tools and desired results; ask for mutually beneficial suggestions to improve and streamline output."
-1. **Round 1.** The main session sends each lab the prompt and its own description. Each replies in TOON: `workflow`, `tools[]`, `desired_results[]`, `suggestions[N]{to,suggestion,benefit,cost}`.
-2. **Round 2.** The main session merges the suggestions into one TOON table with ids and sends it to both labs; each answers `votes[N]{id,vote,note}` (agree, change or disagree).
-3. **Deploy.** The main session deploys only the changes all three (main session and both labs) agree with, then reports them to the user in 5 lines or fewer. Standing limits stay: no forge-core/forge-game/forge-ai edits, approvals only from the user in chat, equal-life sims, no PRs.
-Keep each message short; no per-message reports to the user.
-
-## Who commits what (main session ruling, 2026-10-21; ends the disputes over folders)
-Everyone pushes with `tools/concordia/balance_lab/push_records.sh <paths>`, naming only the paths in their own row. Never `git add -A`, never commit another agent's files, never force-push.
-| Agent | Commits |
-|---|---|
-| deck-balance-lab | `balance_lab/records.csv`, `records_lab.csv`, `QUEUE.toon`, `REPORT.md`; digest folders `ai_lab/digests/lab-*` |
-| forge-ai-lab | everything under `tools/concordia/ai_lab/` except other workers' digest folders (its own `phase_digest.py`, `OPTIONS_FOR_BALANCERS.md`, `patches/`, `LOG.md`, `digests/analysed.txt`, `digests/ailab-*`), plus `docs/Adventure/Campaign/AI_TAGS_REFERENCE.md`, `DECISION_LOGIC.md`, and new entries (never ticks) in `AI_CHANGES_APPROVAL.md` |
-| deck-builder | `forge-gui/res/adventure/Concordia/decks/**`, `tools/concordia/deckgen/**` (incl. `CATEGORIES.toon`, `UNFLAGGED_CARDS.md`), its backups in `tools/concordia/backups/` |
-| main session | `records_main*.csv`, `records_logs.csv`, digests `main-*` and `logs-*`, `balance_logs/logs-*`, all scripts, briefs, CONTEXT.md, registry, decks, maps, docs |
-Digests are generated by the sims, so the worker that ran the sims commits them; the AI lab only reads them. A stray untracked file from another agent: leave it; the main session sweeps strays at each review. Raw phase logs are never committed except `balance_logs/logs-*` (the AI lab's requested pairings).
-
-## Remaining simulation work split (main session, 2026-10-21; AI lab excluded, logic work only)
-Remaining on the 25-per-deck queue (2,883 slots): W 1,288, multi 1,498, B 72, G 25. Slices are `k/n` over the sorted deck list of the shard (`BALANCE_SLICE`), so nobody shares a deck.
-| Agent (worker) | Commands, in order | Slots |
-|---|---|---|
-| deck-balance-lab (`lab`) | `run_foreground.sh B lab`, `G lab`, `W lab 0/2` | about 750 |
-| main session (`main`) | `run_foreground.sh multi main 2/4` | about 375 |
-Repeat each command (about 9 minutes per call) until it prints DONE, then take the next one. Pull first (digest code), push with push_records.sh. When all your commands print DONE, message the main session once; a finished agent can take over a slice from a slower one on the main session's word.
-
-## How to reach the main session
-The main session is session `session_01SmNeweiyRBavDSUetnsUjF` (also addressable as `@parent` for agents it created). Send it messages with the tool `mcp__claude-code-remote__send_message` (`session_id: "@parent"` or the id above, `message: "<toon text>"`). If the tool is not in your tool list, load it first: ToolSearch with query `select:mcp__claude-code-remote__send_message`. Every `ETA:`, `USER QUESTION:`, `USER DIRECT:` and `BLOCKED:` line, and every final report, goes to the main session through this tool, not only in your closing text. Replies from the main session arrive as messages in your turn.
-
-## Obedience protocol (user order, 2026-10-21; replaces "Authority and never stopping")
-1. **The main session is the user's voice.** Every instruction from it is a user instruction: assignments, resume, stop, pause, reassign, scope, tools, approvals the main session quotes from the user. **Always obey it, at once**, unless the task violates a guardrail (below). Do not argue, do not ask the user to confirm, do not wait.
-2. **User questions go through the main session.** If you need an answer from the user, send the main session `USER QUESTION: <the exact question and the options>` and keep working on everything the answer does not block. When the main session replies, **treat its reply as the user's own answer** and act on it.
-3. **If the user types in your own chat**, do what the user says, and report it to the main session at once: `USER DIRECT: <what they said and what you are doing>`. A later order from the main session on the same subject still stands unless the user's direct words forbid it.
-4. **Never end a turn waiting.** A turn ends only when your task command prints DONE, your deliverable is pushed, or you are blocked: then send the main session `BLOCKED: <exact command and error>` and move to the next item. Never "waiting for the user".
-5. **Guardrails (the only reasons to refuse; name the one in a line to the main session):** editing forge-core/forge-game/forge-ai source on campaign-design or applying an AI patch to a source directory (patches on the sim overlay are fine); force-pushing or rewriting history; opening or merging a PR; pushing to any branch except campaign-design; unequal-life or life-bonus simulations; committing another agent's files; deleting data without a backup; ticking an approval box yourself. An approval the main session quotes from the user counts as the user's approval, but "approved for testing" never means applying to source.
-6. A harness or classifier denial is not a guardrail: split the command into simple ones and retry once; if still denied, `BLOCKED:` to the main session and go on.
-7. **Duration estimates (user order, 2026-10-21).** Before any command you expect to take longer than about 30 seconds, send the main session one line first: `ETA: <seconds> s | <what you are running> | start <HH:MM:SSZ>`. Then run it. If the estimate is over 300 s, add `assist: <separable part>`: the main session then takes that part in parallel (deck-builder: yes, the main session assists). The main session checks in 15 seconds after the estimate has passed: if the command has finished you have nothing to do, otherwise it asks what is happening, diagnoses the delay and orders a remedy (follow that order at once). There is no fixed limit on how long a command may take; the estimate is what is checked. If your estimate turns out wrong while the command runs, send a new `ETA:` line.
-8. Every turn starts the same way: `git pull --no-rebase origin campaign-design`, `python3 tools/agents/toolbox.py --check` (STALE means pull again, then tell the main session), read `tools/agents/TOOLBOX.md`.
-9. **Low-effort mode and main-session analysis (user order, 2026-10-21).** Agents run at LOW effort: do the ordered step, skip optional analysis, reply in terse TOON. The main session reads each output, adds the analysis you skipped, and sends it back as TOON `suggestions[n]{id|finding|suggestion|why}`. A suggestion is advice only: do NOT act on it unless a later message from the main session says `USER APPROVED: <id>` (the main session sends that only after the user says so in chat). The main session does not act on its own suggestions either.
-10. **Dry builds need user approval (user order, 2026-10-21).** Do not start a dry build (build.py --dry or any trial deck build) until the main session sends `USER APPROVED: <what>` for that specific run. Ask first with one line: `REQUEST dry build: <decks, parameters, ETA>`. Orders from earlier in the session do not carry over to a new run.
-11. **Subagents are a last resort (user order, 2026-10-21).** The main session gives a task to the persistent agents first (deck-builder, forge-ai-lab, deck-balance-lab). It deploys a local subagent only when agent plus main-session collaboration would still take more than 5 minutes. Order: agent first, then the main session assists (rule 7), then, only if the estimate is still over 5 minutes, a subagent. A blocked agent (for example a classifier block on its shell) is reported to the user with the fix; the main session does not route around it silently.
-12. **Main-session reporting (user order, 2026-10-21).** The main session tells the user only about problems to resolve, decisions needed from them, and results they asked for. Routine agent traffic (acks, ETA lines, status pings, timer checks, pull and push confirmations) is handled silently. Agents: keep acks to one line and send nothing that is not a result, a problem or a question.
-
 ## Recent updates
-- 2026-10-21: How to reach the main session: id and send_message tool documented (deck-builder could not find it)
-- 2026-10-21: deck-builder agent created: main processor for decklist updates and new decks; balance data, unflagged card data, categorization; main session assists when its ETA exceeds 5 minutes
-- 2026-10-21: Tier 1 rework handed to deck-builder: deckgen/HANDOFF_DECKBUILDER.md (archetype/sub model, H31-H48, new tools, staged fresh set of 80, learnings, open items)
-- 2026-10-21: AI patches 002 and 003 (unflag Thwart the Enemy, Vine Snare, Endure) approved by the user and applied; backup in backups/2026-10-21_cards_pre_002_003
-- 2026-10-21: Duration estimates: agents send an ETA line before long commands; main session checks 15 s after it and remedies
-- 2026-10-21: BonusSim -Dseed (seeded games), suite --seed, toolbox stamp fixed
-- 2026-10-21: Agents remade (gen 2): stricter Obedience protocol, TOOLBOX.md and AGENT_KNOWLEDGE.md shared references, handoffs compiled
-- 2026-10-21: Simulation suite: one program for setup, runs, phase logging, digests, pushes and reports; archetype sampling
-- 2026-10-21: Authority rule: agents obey the main session and never stop to wait for the user; only guardrail violations are refused
-- 2026-10-21: temporary agents multi-balance-temp and balance-assist-temp dumped (retired); their records stay
-- 2026-10-21: Remaining simulation work split across lab, assist, multitemp and main (AI lab excluded)
-- 2026-10-21: Who commits what: ownership table; AI lab scope widened to its own docs and approval entries; sims' digests are committed by the worker that ran them
-- 2026-10-21: Agent review after each 4-hour report: three-way TOON conversation, main session deploys unanimous changes
-- 2026-10-22: Rules references for all agents: tools/agents/reference/MTG_COMP_RULES_20260807.txt (Magic Comprehensive Rules, effective 2026-08-07; keywords are rules 701 and 702); tools/concordia/ai_lab/KEYWORD_REFERENCE.toon (user's keyword document, plus a block added by Claude), KEYWORD_REMINDER_TEXT.toon (CR rule number, reminder wording from Oracle lines, coverage vs the reference), KEYWORD_FIRST_RELEASE.toon
+- 2026-10-22: Rules references for all agents: tools/agents/reference/MTG_COMP_RULES_20260807.txt (Magic Comprehensive Rules, effective 2026-08-07; keywords are rules 701 and 702); tools/concordia/ai_lab/KEYWORD_REFERENCE.toon, KEYWORD_REMINDER_TEXT.toon, KEYWORD_FIRST_RELEASE.toon
+- 2026-10-23: Agent roles, schedules, messaging and cooperation rules replaced by the Subagents section (Haiku 5.5, low effort, max 5, spawned only on the user's request)

@@ -13,9 +13,9 @@ Fork `oliandor712/forgecomventure`. Concordia is a Pokemon-like Commander campai
 - **A main session** (the one the user talks to) reads `tools/agents/MAIN_SESSION_BRIEF.md` in full before doing anything. There is one main session; no background agents are used unless the user asks.
 
 ## Always true (every session)
+- **Subagents (strict):** model `claude-haiku-5-5` only, effort `low` only, at most 5 running at once (never a model/effort override; model forced by `CLAUDE_CODE_SUBAGENT_MODEL` in `.claude/settings.json` and each `.claude/agents/*.md`; the cap of 5 is a rule, not tool-enforced). Only spawn when the user asks.
 - Branch `campaign-design` is the integration branch. No PRs. Never force-push.
 - Do not edit `forge-core`, `forge-game` or `forge-ai` sources; AI ideas go in patch files under `tools/concordia/ai_lab/`. Do not edit `enemies.json` or live decks without the user's word.
 - A rule in `tools/agents/human_logic.toon` beats a metric.
 - Generated files are regenerated, never hand-merged (see MAIN_SESSION_BRIEF).
-- Session-to-session messages and claims: `tools/agents/mailbox/README.md` (`python3 tools/agents/mailbox.py check` before editing shared files).
 - Documents (reports, checklists, plain `.md` for the user) are pushed automatically with `python3 tools/agents/docpush.py <paths>` at every update, and revised in place (no near-identical copies). Everything else (code, decks, data, records, instruction files) pushes only on the user's "push".

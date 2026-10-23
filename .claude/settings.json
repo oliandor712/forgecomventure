@@ -20,5 +20,8 @@
       "Bash(sleep*)",
       "Bash(date*)"
     ]
+  },
+  "env": {
+    "CLAUDE_CODE_SUBAGENT_MODEL": "claude-haiku-5-5"
   }
 }
