@@ -10,6 +10,10 @@ tagger, never copied silently: check the differences, and `human_logic.toon` sti
   python3 tag_twins.py text "Oracle line"    twins for a free text line
   python3 tag_twins.py stats                 share of indexed lines that have an exact / near twin on another card
 
+Weight: each indexed line carries the reader accuracy of its card (mean `sim` over every blind-reader result of runs r12 on in
+~/tagcheck_runs, `reads` = number of readings; none = no reading yet). Twins are ranked by similarity x accuracy, so a twin the reader
+reproduced well comes before an equally similar one it got wrong; a low accuracy marks a twin whose tags may be incomplete. Both numbers are shown.
+
 Similarity: both lines are normalised (card name -> ~, numbers -> N, mana symbols -> {c}, reminder text dropped); 100% = identical
 after that, otherwise difflib ratio on the normalised words. Keyword-only lines are excluded. "A-" (Alchemy rebalance) cards are skipped.
 """
@@ -83,8 +87,23 @@ def parse_toon():
     return cards
 
 
+def accuracy():
+    """card name -> (mean reader sim, readings) from ~/tagcheck_runs/r12*..r15*/results.json (vanilla and text-less cards skipped)"""
+    base = os.environ.get("TAGCHECK_DIR") or os.path.expanduser("~/tagcheck_runs")
+    acc = collections.defaultdict(list)
+    for f in glob.glob(os.path.join(base, "r*", "results.json")):
+        m = re.match(r"r(\d+)", os.path.basename(os.path.dirname(f)))
+        if not m or int(m.group(1)) < 12:
+            continue
+        for r in json.load(open(f, encoding="utf-8")).values():
+            if r.get("has_text") and not r.get("vanilla") and not r.get("empty_reco") and r.get("name"):
+                acc[r["name"]].append(r["sim"])
+    return {n: (round(sum(v) / len(v), 3), len(v)) for n, v in acc.items()}
+
+
 def build():
     oracle = oracle_of_all()
+    accs = accuracy()
     cards = parse_toon()
     rows, aligned, unaligned, missing = [], 0, 0, []
     for name, c in cards.items():
@@ -100,10 +119,12 @@ def build():
                 tags = [t for g in c["groups"] if g[0] == gid or g[0].startswith(gid + ".") for t in g[2]]
             else:
                 gid, tags = None, [t for g in c["groups"] if re.match(r"^[cs]\d", g[0]) for t in g[2]]
-            rows.append({"card": name, "line": i + 1, "text": l, "norm": norm(l), "group": gid, "aligned": ok, "tags": tags})
+            rows.append({"card": name, "line": i + 1, "text": l, "norm": norm(l), "group": gid, "aligned": ok, "tags": tags,
+                         "acc": accs.get(name, (None, 0))[0], "reads": accs.get(name, (None, 0))[1]})
         aligned += len(lines) if ok else 0
         unaligned += 0 if ok else len(lines)
     json.dump(rows, open(OUT, "w", encoding="utf-8"), indent=0)
+    print("reader accuracy known for %d of %d cards" % (sum(1 for n in cards if n in accs), len(cards)))
     print("indexed %d lines from %d cards (%d lines aligned to a group, %d unaligned = whole-card tags); %d cards without Oracle: %s"
           % (len(rows), len(cards) - len(missing), aligned, unaligned, len(missing), ", ".join(missing[:8])))
 
@@ -120,7 +141,7 @@ def shingles(k):
 
 
 def twins(rows, text, skip_card=None, top=3, floor=0.5):
-    """[(pct, row)] best first; exact normalised match = 100"""
+    """[(pct, row)] best first by pct x reader accuracy (unknown accuracy counts as the mean of the known ones); exact normalised match = 100"""
     k = norm(text)
     res = []
     sk = shingles(k)
@@ -135,7 +156,9 @@ def twins(rows, text, skip_card=None, top=3, floor=0.5):
         s = difflib.SequenceMatcher(None, k.split(), r["norm"].split()).ratio()
         if s >= floor:
             res.append((int(s * 100), r))
-    res.sort(key=lambda x: -x[0])
+    known = [r["acc"] for r in rows if r.get("acc") is not None]
+    mean = sum(known) / len(known) if known else 1.0
+    res.sort(key=lambda x: -x[0] * (x[1]["acc"] if x[1].get("acc") is not None else mean))
     return res[:top]
 
 
@@ -145,7 +168,8 @@ def show(rows, text, skip_card=None):
     if not t:
         print("    no twin >= 50%")
     for pct, r in t:
-        print("    %3d%%  %s (line %d, group %s%s): %s" % (pct, r["card"], r["line"], r["group"] or "?", "" if r["aligned"] else ", unaligned: whole-card tags", r["text"][:90]))
+        a = "reader acc %.2f x%d" % (r["acc"], r["reads"]) if r.get("acc") is not None else "reader acc n/a"
+        print("    %3d%%  %s (line %d, group %s%s, %s): %s" % (pct, r["card"], r["line"], r["group"] or "?", "" if r["aligned"] else ", unaligned: whole-card tags", a, r["text"][:90]))
         print("          tags: " + " ".join(r["tags"]))
 
 

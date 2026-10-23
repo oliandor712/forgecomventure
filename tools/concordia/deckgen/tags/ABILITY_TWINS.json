@@ -10,7 +10,9 @@
 "trigger:gain_life",
 "counter_count:1",
 "counter:feeding"
-]
+],
+"acc": 0.937,
+"reads": 12
 },
 {
 "card": "Nazar, the Velvet Fang",
@@ -24,7 +26,9 @@
 "cost:remove_counters",
 "draw_count:3",
 "life_loss_amount:3"
-]
+],
+"acc": 0.937,
+"reads": 12
 },
 {
 "card": "Evolving Wilds",
@@ -47,7 +51,9 @@
 "from_zone:library",
 "put_tapped",
 "controller:you"
-]
+],
+"acc": 0.989,
+"reads": 12
 },
 {
 "card": "Terramorphic Expanse",
@@ -70,7 +76,9 @@
 "from_zone:library",
 "put_tapped",
 "controller:you"
-]
+],
+"acc": 0.988,
+"reads": 12
 },
 {
 "card": "Charcoal Diamond",
@@ -85,7 +93,9 @@
 "mana_source",
 "mana:black",
 "mana_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Mind Stone",
@@ -99,7 +109,9 @@
 "mana_source",
 "mana:colorless",
 "mana_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Mind Stone",
@@ -115,7 +127,9 @@
 "cost:mana",
 "cost_mana:1",
 "draw_count:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Victimize",
@@ -139,7 +153,9 @@
 "from_zone:graveyard",
 "put_tapped",
 "controller:you"
-]
+],
+"acc": 0.837,
+"reads": 12
 },
 {
 "card": "Reassembling Skeleton",
@@ -155,7 +171,9 @@
 "from_zone:graveyard",
 "put_tapped",
 "controller:you"
-]
+],
+"acc": 0.934,
+"reads": 12
 },
 {
 "card": "Vengeful Bloodwitch",
@@ -174,7 +192,9 @@
 "target_type:opponent",
 "life_loss_amount:1",
 "lifegain_amount:1"
-]
+],
+"acc": 0.974,
+"reads": 12
 },
 {
 "card": "Blood Artist",
@@ -192,7 +212,9 @@
 "target_type:player",
 "life_loss_amount:1",
 "lifegain_amount:1"
-]
+],
+"acc": 0.974,
+"reads": 12
 },
 {
 "card": "Zulaport Cutthroat",
@@ -210,7 +232,9 @@
 "trigger_filter:creature",
 "life_loss_amount:1",
 "lifegain_amount:1"
-]
+],
+"acc": 0.974,
+"reads": 12
 },
 {
 "card": "Dusk Legion Zealot",
@@ -224,7 +248,9 @@
 "trigger_scope:self",
 "draw_count:1",
 "life_loss_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Infestation Sage",
@@ -243,7 +269,9 @@
 "token_pt:1/1",
 "token_kw:flying",
 "token_type:insect"
-]
+],
+"acc": 0.952,
+"reads": 12
 },
 {
 "card": "Ravenous Rats",
@@ -258,7 +286,9 @@
 "target_count:one",
 "target_type:opponent",
 "discard_count:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Carrier Thrall",
@@ -275,7 +305,9 @@
 "token_color:colorless",
 "token_pt:1/1",
 "token_type:eldrazi_scion"
-]
+],
+"acc": 0.903,
+"reads": 12
 },
 {
 "card": "Crow of Dark Tidings",
@@ -290,7 +322,9 @@
 "trigger:dies",
 "trigger_zone:graveyard",
 "trigger_scope:self"
-]
+],
+"acc": 0.862,
+"reads": 12
 },
 {
 "card": "Cadaver Imp",
@@ -310,7 +344,9 @@
 "return",
 "from_zone:graveyard",
 "to_zone:hand"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Phyrexian Rager",
@@ -324,7 +360,9 @@
 "trigger_scope:self",
 "draw_count:1",
 "life_loss_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Creeping Bloodsucker",
@@ -340,7 +378,9 @@
 "damage_amount:1",
 "lifegain_amount:x",
 "x_is:previous_result"
-]
+],
+"acc": 0.74,
+"reads": 12
 },
 {
 "card": "Bloodhunter Bat",
@@ -356,7 +396,9 @@
 "target_type:player",
 "life_loss_amount:2",
 "lifegain_amount:2"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Vampire Spawn",
@@ -371,7 +413,9 @@
 "trigger_scope:self",
 "life_loss_amount:2",
 "lifegain_amount:2"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Malakir Blood-Priest",
@@ -388,7 +432,9 @@
 "x_is:party_size",
 "lifegain_amount:x",
 "x_is:party_size"
-]
+],
+"acc": 0.898,
+"reads": 12
 },
 {
 "card": "Gumdrop Poisoner",
@@ -406,7 +452,9 @@
 "target_type:creature",
 "pump_amount:-x/-x",
 "x_is:life_gained_this_turn"
-]
+],
+"acc": 0.951,
+"reads": 12
 },
 {
 "card": "Gravedigger",
@@ -426,7 +474,9 @@
 "return",
 "from_zone:graveyard",
 "to_zone:hand"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Skinrender",
@@ -442,7 +492,9 @@
 "target_type:creature",
 "counter_count:3",
 "counter:m1m1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Malakir Bloodwitch",
@@ -458,7 +510,9 @@
 "life_loss_amount:x",
 "x_is:count_vampire_you_control",
 "lifegain_amount:equal_to_life_lost"
-]
+],
+"acc": 0.731,
+"reads": 12
 },
 {
 "card": "Malakir Bloodwitch",
@@ -474,7 +528,9 @@
 "life_loss_amount:x",
 "x_is:count_vampire_you_control",
 "lifegain_amount:equal_to_life_lost"
-]
+],
+"acc": 0.731,
+"reads": 12
 },
 {
 "card": "Fell Specter",
@@ -489,7 +545,9 @@
 "target_count:one",
 "target_type:opponent",
 "discard_count:1"
-]
+],
+"acc": 0.955,
+"reads": 12
 },
 {
 "card": "Fell Specter",
@@ -501,7 +559,9 @@
 "tags": [
 "trigger:discard",
 "life_loss_amount:2"
-]
+],
+"acc": 0.955,
+"reads": 12
 },
 {
 "card": "Vindictive Vampire",
@@ -519,7 +579,9 @@
 "damage",
 "damage_amount:1",
 "lifegain_amount:1"
-]
+],
+"acc": 0.903,
+"reads": 12
 },
 {
 "card": "Liliana's Reaver",
@@ -534,7 +596,9 @@
 "token_color:black",
 "token_pt:2/2",
 "token_type:zombie"
-]
+],
+"acc": 0.9,
+"reads": 12
 },
 {
 "card": "Sengir Vampire",
@@ -550,7 +614,9 @@
 "trigger_filter:creature",
 "counter_count:1",
 "counter:p1p1"
-]
+],
+"acc": 0.997,
+"reads": 12
 },
 {
 "card": "Vampire Sovereign",
@@ -566,7 +632,9 @@
 "target_type:opponent",
 "life_loss_amount:3",
 "lifegain_amount:3"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Bloodgift Demon",
@@ -581,7 +649,9 @@
 "target_type:player",
 "draw_count:1",
 "life_loss_amount:1"
-]
+],
+"acc": 0.965,
+"reads": 12
 },
 {
 "card": "Gray Merchant of Asphodel",
@@ -597,7 +667,9 @@
 "life_loss_amount:x",
 "x_is:devotion_black",
 "lifegain_amount:equal_to_life_lost"
-]
+],
+"acc": 0.918,
+"reads": 12
 },
 {
 "card": "Nefarox, Overlord of Grixis",
@@ -612,7 +684,9 @@
 "effect:sacrifice",
 "sacrifice_outlet",
 "sacrifice_type:creature"
-]
+],
+"acc": 0.782,
+"reads": 12
 },
 {
 "card": "Gravewaker",
@@ -632,7 +706,9 @@
 "from_zone:graveyard",
 "put_tapped",
 "controller:you"
-]
+],
+"acc": 0.959,
+"reads": 21
 },
 {
 "card": "Bitter Triumph",
@@ -643,7 +719,9 @@
 "aligned": true,
 "tags": [
 "cost_additional"
-]
+],
+"acc": 0.723,
+"reads": 12
 },
 {
 "card": "Bitter Triumph",
@@ -657,7 +735,9 @@
 "target_type:creature",
 "target_type:planeswalker",
 "remove:destroy"
-]
+],
+"acc": 0.723,
+"reads": 12
 },
 {
 "card": "Consume Spirit",
@@ -674,7 +754,9 @@
 "x_is:x_paid",
 "lifegain_amount:x",
 "x_is:x_paid"
-]
+],
+"acc": 0.84,
+"reads": 12
 },
 {
 "card": "Consume Spirit",
@@ -691,7 +773,9 @@
 "x_is:x_paid",
 "lifegain_amount:x",
 "x_is:x_paid"
-]
+],
+"acc": 0.84,
+"reads": 12
 },
 {
 "card": "Cast Down",
@@ -705,7 +789,9 @@
 "target_type:creature",
 "target_filter:nonlegendary",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Doom Blade",
@@ -719,7 +805,9 @@
 "target_type:creature",
 "target_filter:nonblack",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Hero's Downfall",
@@ -733,7 +821,9 @@
 "target_type:creature",
 "target_type:planeswalker",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Feed the Swarm",
@@ -750,7 +840,9 @@
 "remove:destroy",
 "life_loss_amount:x",
 "x_is:target_mana_value"
-]
+],
+"acc": 0.828,
+"reads": 12
 },
 {
 "card": "Tendrils of Corruption",
@@ -768,7 +860,9 @@
 "scales:swamp",
 "lifegain_amount:x",
 "x_is:count_swamp_you_control"
-]
+],
+"acc": 0.739,
+"reads": 12
 },
 {
 "card": "Corrupt",
@@ -786,7 +880,9 @@
 "scales:swamp",
 "lifegain_amount:x",
 "x_is:totaldamagedonebythisturn"
-]
+],
+"acc": 0.591,
+"reads": 12
 },
 {
 "card": "Sign in Blood",
@@ -800,7 +896,9 @@
 "target_type:player",
 "draw_count:2",
 "life_loss_amount:2"
-]
+],
+"acc": 0.947,
+"reads": 12
 },
 {
 "card": "Night's Whisper",
@@ -812,7 +910,9 @@
 "tags": [
 "draw_count:2",
 "life_loss_amount:2"
-]
+],
+"acc": 0.994,
+"reads": 21
 },
 {
 "card": "Read the Bones",
@@ -824,7 +924,9 @@
 "tags": [
 "draw_count:2",
 "life_loss_amount:2"
-]
+],
+"acc": 0.838,
+"reads": 12
 },
 {
 "card": "Ambition's Cost",
@@ -836,7 +938,9 @@
 "tags": [
 "draw_count:3",
 "life_loss_amount:3"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Phyrexian Arena",
@@ -849,7 +953,9 @@
 "trigger:upkeep",
 "draw_count:1",
 "life_loss_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Dark Bargain",
@@ -865,7 +971,9 @@
 "rest_to_zone:graveyard",
 "damage",
 "damage_amount:2"
-]
+],
+"acc": 0.963,
+"reads": 12
 },
 {
 "card": "Supernatural Stamina",
@@ -888,7 +996,9 @@
 "put_tapped",
 "controller:owner",
 "grant_ability:dies_trigger"
-]
+],
+"acc": 0.979,
+"reads": 12
 },
 {
 "card": "Feign Death",
@@ -913,7 +1023,9 @@
 "counters_plus",
 "counter:p1p1",
 "counter_count:1"
-]
+],
+"acc": 0.984,
+"reads": 12
 },
 {
 "card": "Swiftfoot Boots",
@@ -929,7 +1041,9 @@
 "affected_type:creature",
 "haste",
 "hexproof"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Bladebrand",
@@ -945,7 +1059,9 @@
 "duration:eot",
 "deathtouch",
 "draw_count:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Unholy Strength",
@@ -958,7 +1074,9 @@
 "duration:static",
 "pump_amount:+2/+1",
 "affected_type:creature"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Zombify",
@@ -975,7 +1093,9 @@
 "put_onto_battlefield",
 "from_zone:graveyard",
 "controller:you"
-]
+],
+"acc": 0.912,
+"reads": 12
 },
 {
 "card": "Raise Dead",
@@ -992,7 +1112,9 @@
 "return",
 "from_zone:graveyard",
 "to_zone:hand"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Rise from the Grave",
@@ -1008,7 +1130,9 @@
 "put_onto_battlefield",
 "from_zone:graveyard",
 "controller:you"
-]
+],
+"acc": 0.813,
+"reads": 12
 },
 {
 "card": "Exsanguinate",
@@ -1022,7 +1146,9 @@
 "x_is:x_paid",
 "target_scope:each_opponent",
 "lifegain_amount:equal_to_life_lost"
-]
+],
+"acc": 0.977,
+"reads": 12
 },
 {
 "card": "Grasp of Darkness",
@@ -1037,7 +1163,9 @@
 "pump_amount:-4/-4",
 "duration:eot",
 "pump_single"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Morbid Opportunist",
@@ -1053,7 +1181,9 @@
 "trigger_filter:one_or_more",
 "limit:once_per_turn",
 "draw_count:1"
-]
+],
+"acc": 0.957,
+"reads": 12
 },
 {
 "card": "Dutiful Attendant",
@@ -1073,7 +1203,9 @@
 "return",
 "from_zone:graveyard",
 "to_zone:hand"
-]
+],
+"acc": 0.996,
+"reads": 12
 },
 {
 "card": "Nekrataal",
@@ -1091,7 +1223,9 @@
 "target_filter:nonartifact",
 "target_filter:nonblack",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Josu Vess, Lich Knight",
@@ -1108,7 +1242,9 @@
 "token_pt:2/2",
 "token_kw:menace",
 "token_type:zombie_knight"
-]
+],
+"acc": 0.971,
+"reads": 12
 },
 {
 "card": "Sengir Autocrat",
@@ -1124,7 +1260,9 @@
 "token_color:black",
 "token_pt:0/1",
 "token_type:serf"
-]
+],
+"acc": 0.991,
+"reads": 12
 },
 {
 "card": "Sengir Autocrat",
@@ -1139,7 +1277,9 @@
 "target_count:all",
 "target_type:serf",
 "remove:exile"
-]
+],
+"acc": 0.991,
+"reads": 12
 },
 {
 "card": "Syr Konrad, the Grim",
@@ -1165,7 +1305,9 @@
 "cost:mana",
 "cost_mana:1b",
 "target_scope:each_player"
-]
+],
+"acc": 0.753,
+"reads": 12
 },
 {
 "card": "Syr Konrad, the Grim",
@@ -1191,7 +1333,9 @@
 "cost:mana",
 "cost_mana:1b",
 "target_scope:each_player"
-]
+],
+"acc": 0.753,
+"reads": 12
 },
 {
 "card": "Gwenna, Eyes of Gaea",
@@ -1207,7 +1351,9 @@
 "mana_choice",
 "mana_amount:2",
 "mana_restriction:creature_spell_or_activated_ability"
-]
+],
+"acc": 0.953,
+"reads": 12
 },
 {
 "card": "Gwenna, Eyes of Gaea",
@@ -1221,7 +1367,9 @@
 "trigger_filter:creature",
 "trigger_filter:power_ge_5",
 "counter:p1p1"
-]
+],
+"acc": 0.953,
+"reads": 12
 },
 {
 "card": "Search for Tomorrow",
@@ -1239,7 +1387,9 @@
 "put_onto_battlefield",
 "from_zone:library",
 "controller:you"
-]
+],
+"acc": 0.898,
+"reads": 21
 },
 {
 "card": "Priest of Titania",
@@ -1254,7 +1404,9 @@
 "mana:green",
 "mana_amount:x",
 "x_is:count_elf"
-]
+],
+"acc": 0.864,
+"reads": 12
 },
 {
 "card": "Leafkin Druid",
@@ -1271,7 +1423,9 @@
 "mana_amount:1",
 "mana_amount_if:2",
 "condition:count_creature_you_control_ge4"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Elvish Visionary",
@@ -1284,7 +1438,9 @@
 "trigger:etb",
 "trigger_scope:self",
 "draw_count:1"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Aftermath Analyst",
@@ -1296,7 +1452,9 @@
 "tags": [
 "trigger:etb",
 "trigger_scope:self"
-]
+],
+"acc": 0.897,
+"reads": 12
 },
 {
 "card": "Aftermath Analyst",
@@ -1317,7 +1475,9 @@
 "from_zone:graveyard",
 "put_tapped",
 "controller:you"
-]
+],
+"acc": 0.897,
+"reads": 12
 },
 {
 "card": "Sakura-Tribe Elder",
@@ -1338,7 +1498,9 @@
 "from_zone:library",
 "put_tapped",
 "controller:you"
-]
+],
+"acc": 0.991,
+"reads": 12
 },
 {
 "card": "Kami of Whispered Hopes",
@@ -1353,7 +1515,9 @@
 "counter:p1p1",
 "affected_type:permanent",
 "affected_scope:you_control"
-]
+],
+"acc": 0.986,
+"reads": 12
 },
 {
 "card": "Kami of Whispered Hopes",
@@ -1368,7 +1532,9 @@
 "mana:any",
 "mana_amount:x",
 "x_is:own_power"
-]
+],
+"acc": 0.986,
+"reads": 12
 },
 {
 "card": "Hunted Wumpus",
@@ -1386,7 +1552,9 @@
 "target_scope:each_other_player",
 "target_type:creature",
 "optional"
-]
+],
+"acc": 0.707,
+"reads": 12
 },
 {
 "card": "Scavenging Ooze",
@@ -1405,7 +1573,9 @@
 "counter_count:1",
 "counter:p1p1",
 "lifegain_amount:1"
-]
+],
+"acc": 0.921,
+"reads": 12
 },
 {
 "card": "Tireless Provisioner",
@@ -1431,7 +1601,9 @@
 "token_type:treasure",
 "token_ability:tap_sacrifice_add_mana_any_color",
 "mana_source"
-]
+],
+"acc": 0.809,
+"reads": 12
 },
 {
 "card": "Llanowar Visionary",
@@ -1444,7 +1616,9 @@
 "trigger:etb",
 "trigger_scope:self",
 "draw_count:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Llanowar Visionary",
@@ -1458,7 +1632,9 @@
 "mana_source",
 "mana:green",
 "mana_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Wall of Blossoms",
@@ -1471,7 +1647,9 @@
 "trigger:etb",
 "trigger_scope:self",
 "draw_count:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Yavimaya Elder",
@@ -1489,7 +1667,9 @@
 "tutor_target:basic_land",
 "tutor_dest:hand",
 "shuffle"
-]
+],
+"acc": 0.939,
+"reads": 12
 },
 {
 "card": "Yavimaya Elder",
@@ -1504,7 +1684,9 @@
 "cost:mana",
 "cost_mana:2",
 "draw_count:1"
-]
+],
+"acc": 0.939,
+"reads": 12
 },
 {
 "card": "Reclamation Sage",
@@ -1521,7 +1703,9 @@
 "target_type:artifact",
 "target_type:enchantment",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Thrashing Brontodon",
@@ -1539,7 +1723,9 @@
 "target_type:artifact",
 "target_type:enchantment",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Professor of Zoomancy",
@@ -1556,7 +1742,9 @@
 "token_color:green",
 "token_pt:1/1",
 "token_type:pest_lifegain"
-]
+],
+"acc": 0.888,
+"reads": 12
 },
 {
 "card": "Fierce Witchstalker",
@@ -1574,7 +1762,9 @@
 "token_type:food",
 "token_ability:pay_2_tap_sacrifice_gain_3_life",
 "lifegain"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Earthshaker Giant",
@@ -1595,7 +1785,9 @@
 "pump_amount:+3/+3",
 "duration:eot",
 "grant_kw:trample"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Ravenous Baloth",
@@ -1609,7 +1801,9 @@
 "cost:sacrifice",
 "cost_sacrifice_target:beast",
 "lifegain_amount:4"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Elvish Regrower",
@@ -1628,7 +1822,9 @@
 "return",
 "from_zone:graveyard",
 "to_zone:hand"
-]
+],
+"acc": 0.996,
+"reads": 12
 },
 {
 "card": "Yedora, Grave Gardener",
@@ -1648,7 +1844,9 @@
 "put_onto_battlefield",
 "from_zone:graveyard",
 "controller:owner"
-]
+],
+"acc": 0.793,
+"reads": 12
 },
 {
 "card": "Thragtusk",
@@ -1661,7 +1859,9 @@
 "trigger:etb",
 "trigger_scope:self",
 "lifegain_amount:5"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Thragtusk",
@@ -1677,7 +1877,9 @@
 "token_color:green",
 "token_pt:3/3",
 "token_type:beast"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Garruk's Packleader",
@@ -1694,7 +1896,9 @@
 "trigger_filter:you_control",
 "trigger_filter:creature",
 "draw_count:1"
-]
+],
+"acc": 0.973,
+"reads": 12
 },
 {
 "card": "Hivespine Wolverine",
@@ -1717,7 +1921,9 @@
 "target_type:artifact",
 "target_type:enchantment",
 "remove:destroy"
-]
+],
+"acc": 0.964,
+"reads": 12
 },
 {
 "card": "Hivespine Wolverine",
@@ -1740,7 +1946,9 @@
 "target_type:artifact",
 "target_type:enchantment",
 "remove:destroy"
-]
+],
+"acc": 0.964,
+"reads": 12
 },
 {
 "card": "Hivespine Wolverine",
@@ -1763,7 +1971,9 @@
 "target_type:artifact",
 "target_type:enchantment",
 "remove:destroy"
-]
+],
+"acc": 0.964,
+"reads": 12
 },
 {
 "card": "Hivespine Wolverine",
@@ -1786,7 +1996,9 @@
 "target_type:artifact",
 "target_type:enchantment",
 "remove:destroy"
-]
+],
+"acc": 0.964,
+"reads": 12
 },
 {
 "card": "Indrik Stomphowler",
@@ -1802,7 +2014,9 @@
 "target_type:artifact",
 "target_type:enchantment",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Rampaging Baloths",
@@ -1820,7 +2034,9 @@
 "token_color:green",
 "token_pt:4/4",
 "token_type:beast"
-]
+],
+"acc": 0.879,
+"reads": 12
 },
 {
 "card": "Aggressive Mammoth",
@@ -1836,7 +2052,9 @@
 "affected_filter:other",
 "affected_scope:you_control",
 "trample"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Bite Down",
@@ -1857,7 +2075,9 @@
 "damage",
 "damage_amount:x",
 "x_is:target_power"
-]
+],
+"acc": 0.975,
+"reads": 12
 },
 {
 "card": "Prey Upon",
@@ -1873,7 +2093,9 @@
 "target_count:one",
 "target_type:creature",
 "target_scope:opp_control"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Scrapshooter",
@@ -1890,7 +2112,9 @@
 "target_scope:opp_control",
 "target_type:enchantment",
 "remove:destroy"
-]
+],
+"acc": 0.938,
+"reads": 12
 },
 {
 "card": "Ram Through",
@@ -1910,7 +2134,9 @@
 "damage",
 "damage_amount:x",
 "x_is:target_power"
-]
+],
+"acc": 0.756,
+"reads": 12
 },
 {
 "card": "Plummet",
@@ -1923,7 +2149,9 @@
 "target_count:one",
 "target_type:creature",
 "remove:destroy"
-]
+],
+"acc": 0.86,
+"reads": 12
 },
 {
 "card": "Viridian Corrupter",
@@ -1938,7 +2166,9 @@
 "target_count:one",
 "target_type:artifact",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Naturalize",
@@ -1952,7 +2182,9 @@
 "target_type:artifact",
 "target_type:enchantment",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Hunt the Weak",
@@ -1970,7 +2202,9 @@
 "target_count:one",
 "target_type:creature",
 "target_scope:opp_control"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Territorial Allosaurus",
@@ -1985,7 +2219,9 @@
 "target_count:one",
 "target_type:creature",
 "target_filter:other"
-]
+],
+"acc": 0.915,
+"reads": 12
 },
 {
 "card": "Jagged-Scar Archers",
@@ -2001,7 +2237,9 @@
 "damage",
 "damage_amount:x",
 "x_is:own_power"
-]
+],
+"acc": 0.76,
+"reads": 12
 },
 {
 "card": "Jagged-Scar Archers",
@@ -2017,7 +2255,9 @@
 "damage",
 "damage_amount:x",
 "x_is:own_power"
-]
+],
+"acc": 0.76,
+"reads": 12
 },
 {
 "card": "Garruk's Uprising",
@@ -2031,7 +2271,9 @@
 "trigger_scope:self",
 "condition:creature_you_control_power_ge_4",
 "draw_count:1"
-]
+],
+"acc": 0.986,
+"reads": 12
 },
 {
 "card": "Garruk's Uprising",
@@ -2046,7 +2288,9 @@
 "affected_type:creature",
 "affected_scope:you_control",
 "trample"
-]
+],
+"acc": 0.986,
+"reads": 12
 },
 {
 "card": "Garruk's Uprising",
@@ -2061,7 +2305,9 @@
 "trigger_scope:any",
 "trigger_filter:you_control",
 "trigger_filter:creature"
-]
+],
+"acc": 0.986,
+"reads": 12
 },
 {
 "card": "Return of the Wildspeaker",
@@ -2080,7 +2326,9 @@
 "target_filter:nonhuman",
 "pump_amount:+3/+3",
 "duration:eot"
-]
+],
+"acc": 0.747,
+"reads": 12
 },
 {
 "card": "Return of the Wildspeaker",
@@ -2099,7 +2347,9 @@
 "target_filter:nonhuman",
 "pump_amount:+3/+3",
 "duration:eot"
-]
+],
+"acc": 0.747,
+"reads": 12
 },
 {
 "card": "Colossal Majesty",
@@ -2112,7 +2362,9 @@
 "trigger:upkeep",
 "condition:creature_you_control_power_ge_4",
 "draw_count:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Rishkar's Expertise",
@@ -2126,7 +2378,9 @@
 "x_is:greatest_power_among_creature_you_control",
 "optional",
 "cast_free"
-]
+],
+"acc": 0.595,
+"reads": 12
 },
 {
 "card": "Rishkar's Expertise",
@@ -2140,7 +2394,9 @@
 "x_is:greatest_power_among_creature_you_control",
 "optional",
 "cast_free"
-]
+],
+"acc": 0.595,
+"reads": 12
 },
 {
 "card": "Giant Growth",
@@ -2155,7 +2411,9 @@
 "pump_amount:+3/+3",
 "duration:eot",
 "pump_single"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Snakeskin Veil",
@@ -2174,7 +2432,9 @@
 "hexproof",
 "grant_kw:hexproof",
 "duration:eot"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Vines of Vastwood",
@@ -2190,7 +2450,9 @@
 "target_type:creature",
 "pump_amount:+x/+x",
 "duration:eot"
-]
+],
+"acc": 0.536,
+"reads": 12
 },
 {
 "card": "Rancor",
@@ -2205,7 +2467,9 @@
 "grant_kw:trample",
 "affected_type:creature",
 "trample"
-]
+],
+"acc": 0.909,
+"reads": 12
 },
 {
 "card": "Rancor",
@@ -2222,7 +2486,9 @@
 "return",
 "from_zone:graveyard",
 "to_zone:hand"
-]
+],
+"acc": 0.909,
+"reads": 12
 },
 {
 "card": "Explore",
@@ -2234,7 +2500,9 @@
 "tags": [
 "extra_land_drop:1",
 "draw_count:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Titanic Growth",
@@ -2249,7 +2517,9 @@
 "pump_amount:+4/+4",
 "duration:eot",
 "pump_single"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Overrun",
@@ -2266,7 +2536,9 @@
 "duration:eot",
 "grant_kw:trample",
 "trample"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Khalni Heart Expedition",
@@ -2283,7 +2555,9 @@
 "trigger_filter:land",
 "counter_count:1",
 "counter:quest"
-]
+],
+"acc": 0.922,
+"reads": 12
 },
 {
 "card": "Khalni Heart Expedition",
@@ -2305,7 +2579,9 @@
 "from_zone:library",
 "put_tapped",
 "controller:you"
-]
+],
+"acc": 0.922,
+"reads": 12
 },
 {
 "card": "Harrow",
@@ -2327,7 +2603,9 @@
 "put_onto_battlefield",
 "from_zone:library",
 "controller:you"
-]
+],
+"acc": 0.936,
+"reads": 12
 },
 {
 "card": "Harrow",
@@ -2349,7 +2627,9 @@
 "put_onto_battlefield",
 "from_zone:library",
 "controller:you"
-]
+],
+"acc": 0.936,
+"reads": 12
 },
 {
 "card": "Kodama's Reach",
@@ -2378,7 +2658,9 @@
 "tutor_target:land_isremembered",
 "tutor_dest:hand",
 "shuffle"
-]
+],
+"acc": 0.948,
+"reads": 12
 },
 {
 "card": "Pulse of Murasa",
@@ -2396,7 +2678,9 @@
 "from_zone:graveyard",
 "to_zone:hand",
 "lifegain_amount:6"
-]
+],
+"acc": 0.97,
+"reads": 12
 },
 {
 "card": "Bosco, Just a Bear",
@@ -2427,7 +2711,9 @@
 "trample",
 "grant_kw:trample",
 "duration:eot"
-]
+],
+"acc": 0.964,
+"reads": 12
 },
 {
 "card": "Bosco, Just a Bear",
@@ -2458,7 +2744,9 @@
 "trample",
 "grant_kw:trample",
 "duration:eot"
-]
+],
+"acc": 0.964,
+"reads": 12
 },
 {
 "card": "Predatory Wurm",
@@ -2472,7 +2760,9 @@
 "pump_amount:+2/+2",
 "affected_scope:self",
 "condition:planeswalker_garruk_you_control"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Somberwald Stag",
@@ -2488,7 +2778,9 @@
 "target_count:one",
 "target_type:creature",
 "target_scope:opp_control"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Epic Confrontation",
@@ -2506,7 +2798,9 @@
 "target_count:one",
 "target_type:creature",
 "target_scope:opp_control"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Pounce",
@@ -2522,7 +2816,9 @@
 "target_count:one",
 "target_type:creature",
 "target_scope:opp_control"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Goreclaw, Terror of Qal Sisma",
@@ -2537,7 +2833,9 @@
 "cost_reduce_amount:2",
 "cost_reduce_mana:generic",
 "cost_reduce_for:creature"
-]
+],
+"acc": 0.906,
+"reads": 12
 },
 {
 "card": "Goreclaw, Terror of Qal Sisma",
@@ -2557,7 +2855,9 @@
 "pump_amount:+1/+1",
 "duration:eot",
 "grant_kw:trample"
-]
+],
+"acc": 0.906,
+"reads": 12
 },
 {
 "card": "Breeches, Eager Pillager",
@@ -2586,7 +2886,9 @@
 "impulse_draw",
 "impulse_draw_count:1",
 "duration:eot"
-]
+],
+"acc": 0.915,
+"reads": 12
 },
 {
 "card": "Breeches, Eager Pillager",
@@ -2615,7 +2917,9 @@
 "impulse_draw",
 "impulse_draw_count:1",
 "duration:eot"
-]
+],
+"acc": 0.915,
+"reads": 12
 },
 {
 "card": "Breeches, Eager Pillager",
@@ -2644,7 +2948,9 @@
 "impulse_draw",
 "impulse_draw_count:1",
 "duration:eot"
-]
+],
+"acc": 0.915,
+"reads": 12
 },
 {
 "card": "Breeches, Eager Pillager",
@@ -2673,7 +2979,9 @@
 "impulse_draw",
 "impulse_draw_count:1",
 "duration:eot"
-]
+],
+"acc": 0.915,
+"reads": 12
 },
 {
 "card": "Fanatical Firebrand",
@@ -2690,7 +2998,9 @@
 "target_type:any",
 "damage",
 "damage_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Kessig Flamebreather",
@@ -2705,7 +3015,9 @@
 "target_scope:each_opponent",
 "damage",
 "damage_amount:1"
-]
+],
+"acc": 0.889,
+"reads": 12
 },
 {
 "card": "Dire Fleet Daredevil",
@@ -2725,7 +3037,9 @@
 "impulse_draw",
 "impulse_draw_count:1",
 "duration:eot"
-]
+],
+"acc": 0.755,
+"reads": 12
 },
 {
 "card": "Young Pyromancer",
@@ -2742,7 +3056,9 @@
 "token_color:red",
 "token_pt:1/1",
 "token_type:elemental"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Ember Hauler",
@@ -2760,7 +3076,9 @@
 "target_type:any",
 "damage",
 "damage_amount:2"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Viashino Pyromancer",
@@ -2777,7 +3095,9 @@
 "target_type:planeswalker",
 "damage",
 "damage_amount:2"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Goblin Instigator",
@@ -2793,7 +3113,9 @@
 "token_color:red",
 "token_pt:1/1",
 "token_type:goblin"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Firebrand Archer",
@@ -2808,7 +3130,9 @@
 "target_scope:each_opponent",
 "damage",
 "damage_amount:1"
-]
+],
+"acc": 0.889,
+"reads": 12
 },
 {
 "card": "Impulsive Pilferer",
@@ -2827,7 +3151,9 @@
 "token_type:treasure",
 "token_ability:tap_sacrifice_add_mana_any_color",
 "mana_source"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Akki Ronin",
@@ -2841,7 +3167,9 @@
 "trigger_filter:you_control",
 "cost:discard",
 "draw_count:1"
-]
+],
+"acc": 0.762,
+"reads": 21
 },
 {
 "card": "Goblin Vandal",
@@ -2857,7 +3185,9 @@
 "remove:destroy",
 "cost:mana",
 "cost_mana:r"
-]
+],
+"acc": 0.726,
+"reads": 12
 },
 {
 "card": "Torch Fiend",
@@ -2874,7 +3204,9 @@
 "target_count:one",
 "target_type:artifact",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Guttersnipe",
@@ -2890,7 +3222,9 @@
 "target_scope:each_opponent",
 "damage",
 "damage_amount:2"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Prodigal Pyromancer",
@@ -2905,7 +3239,9 @@
 "target_type:any",
 "damage",
 "damage_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Legion Warboss",
@@ -2920,7 +3256,9 @@
 "token_color:red",
 "token_pt:1/1",
 "token_type:goblin"
-]
+],
+"acc": 0.798,
+"reads": 12
 },
 {
 "card": "Goblin Ringleader",
@@ -2935,7 +3273,9 @@
 "look_top:4",
 "take:all_goblin",
 "to_zone:hand"
-]
+],
+"acc": 0.801,
+"reads": 12
 },
 {
 "card": "Goblin Rabblemaster",
@@ -2947,7 +3287,9 @@
 "tags": [
 "must_attack",
 "affects:goblin"
-]
+],
+"acc": 0.918,
+"reads": 12
 },
 {
 "card": "Goblin Rabblemaster",
@@ -2963,7 +3305,9 @@
 "token_pt:1/1",
 "token_kw:haste",
 "token_type:goblin"
-]
+],
+"acc": 0.918,
+"reads": 12
 },
 {
 "card": "Goblin Rabblemaster",
@@ -2978,7 +3322,9 @@
 "pump_amount:+x/+0",
 "x_is:count_goblin_attacking_other",
 "scales:goblin_attacking_other"
-]
+],
+"acc": 0.918,
+"reads": 12
 },
 {
 "card": "Captivating Crew",
@@ -2996,7 +3342,9 @@
 "steal",
 "steal_grants_haste",
 "duration:eot"
-]
+],
+"acc": 0.946,
+"reads": 12
 },
 {
 "card": "Captain Ripley Vance",
@@ -3016,7 +3364,9 @@
 "damage",
 "damage_amount:x",
 "x_is:own_power"
-]
+],
+"acc": 0.986,
+"reads": 12
 },
 {
 "card": "Spikeshot Goblin",
@@ -3034,7 +3384,9 @@
 "damage",
 "damage_amount:x",
 "x_is:own_power"
-]
+],
+"acc": 0.927,
+"reads": 12
 },
 {
 "card": "Flametongue Kavu",
@@ -3050,7 +3402,9 @@
 "target_type:creature",
 "damage",
 "damage_amount:4"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Volley Veteran",
@@ -3068,7 +3422,9 @@
 "damage",
 "damage_amount:x",
 "x_is:count_goblin_you_control"
-]
+],
+"acc": 0.719,
+"reads": 12
 },
 {
 "card": "Beetleback Chief",
@@ -3084,7 +3440,9 @@
 "token_color:red",
 "token_pt:1/1",
 "token_type:goblin"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Thunderhead Gunner",
@@ -3097,7 +3455,9 @@
 "cost:discard",
 "draw_count:1",
 "limit:once_per_turn"
-]
+],
+"acc": 0.971,
+"reads": 12
 },
 {
 "card": "Goblin Heelcutter",
@@ -3114,7 +3474,9 @@
 "target_type:creature",
 "restrict_kind:cant_block",
 "duration:eot"
-]
+],
+"acc": 0.999,
+"reads": 12
 },
 {
 "card": "Hellrider",
@@ -3128,7 +3490,9 @@
 "trigger_filter:you_control",
 "damage",
 "damage_amount:1"
-]
+],
+"acc": 0.886,
+"reads": 12
 },
 {
 "card": "Chasm Guide",
@@ -3148,7 +3512,9 @@
 "target_scope:you_control",
 "duration:eot",
 "grant_kw:haste"
-]
+],
+"acc": 0.883,
+"reads": 12
 },
 {
 "card": "Siege-Gang Commander",
@@ -3173,7 +3539,9 @@
 "token_color:red",
 "token_pt:1/1",
 "token_type:goblin"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Siege-Gang Commander",
@@ -3198,7 +3566,9 @@
 "token_color:red",
 "token_pt:1/1",
 "token_type:goblin"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Pitchburn Devils",
@@ -3215,7 +3585,9 @@
 "target_type:any",
 "damage",
 "damage_amount:3"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Kiki-Jiki, Mirror Breaker",
@@ -3235,7 +3607,9 @@
 "delayed:end_step",
 "effect:sacrifice",
 "duration:end_step"
-]
+],
+"acc": 0.967,
+"reads": 12
 },
 {
 "card": "Daretti, Rocketeer Engineer",
@@ -3258,7 +3632,9 @@
 "cost:sacrifice",
 "cost_sacrifice_target:artifact",
 "trigger:attacks"
-]
+],
+"acc": 0.671,
+"reads": 12
 },
 {
 "card": "Daretti, Rocketeer Engineer",
@@ -3281,7 +3657,9 @@
 "cost:sacrifice",
 "cost_sacrifice_target:artifact",
 "trigger:attacks"
-]
+],
+"acc": 0.671,
+"reads": 12
 },
 {
 "card": "Fire Diamond",
@@ -3296,7 +3674,9 @@
 "mana_source",
 "mana:red",
 "mana_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Glittering Stockpile",
@@ -3311,7 +3691,9 @@
 "mana:red",
 "mana_amount:1",
 "counter:stash"
-]
+],
+"acc": 0.943,
+"reads": 12
 },
 {
 "card": "Glittering Stockpile",
@@ -3328,7 +3710,9 @@
 "mana:any",
 "mana_amount:x",
 "x_is:counters_on_this_stash"
-]
+],
+"acc": 0.943,
+"reads": 12
 },
 {
 "card": "Loyal Apprentice",
@@ -3346,7 +3730,9 @@
 "token_cardtype:artifact",
 "token_kw:flying",
 "token_type:thopter"
-]
+],
+"acc": 0.815,
+"reads": 12
 },
 {
 "card": "Flamekin Harbinger",
@@ -3364,7 +3750,9 @@
 "tutor_target:card_elemental",
 "tutor_dest:library",
 "shuffle"
-]
+],
+"acc": 0.924,
+"reads": 12
 },
 {
 "card": "Dragon's Rage Channeler",
@@ -3386,7 +3774,9 @@
 "affects:card",
 "affects:self",
 "condition:delirium"
-]
+],
+"acc": 0.854,
+"reads": 12
 },
 {
 "card": "Dragon's Rage Channeler",
@@ -3408,7 +3798,9 @@
 "affects:card",
 "affects:self",
 "condition:delirium"
-]
+],
+"acc": 0.854,
+"reads": 12
 },
 {
 "card": "Searing Spear",
@@ -3422,7 +3814,9 @@
 "target_type:any",
 "damage",
 "damage_amount:3"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Incinerate",
@@ -3437,7 +3831,9 @@
 "damage",
 "damage_amount:3",
 "cant_regenerate"
-]
+],
+"acc": 0.866,
+"reads": 12
 },
 {
 "card": "Lightning Strike",
@@ -3451,7 +3847,9 @@
 "target_type:any",
 "damage",
 "damage_amount:3"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Spear Spewer",
@@ -3464,7 +3862,9 @@
 "cost:tap",
 "damage",
 "damage_amount:1"
-]
+],
+"acc": 0.869,
+"reads": 12
 },
 {
 "card": "Scorching Dragonfire",
@@ -3480,7 +3880,9 @@
 "damage",
 "damage_amount:3",
 "die_replace:exile"
-]
+],
+"acc": 0.989,
+"reads": 12
 },
 {
 "card": "Dragonlord's Servant",
@@ -3495,7 +3897,9 @@
 "cost_reduce_amount:1",
 "cost_reduce_mana:generic",
 "cost_reduce_for:dragon"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Storm-Kiln Artist",
@@ -3509,7 +3913,9 @@
 "pump_amount:+x/+0",
 "affected_scope:self",
 "x_is:count_artifact_you_control"
-]
+],
+"acc": 0.863,
+"reads": 12
 },
 {
 "card": "Storm-Kiln Artist",
@@ -3528,7 +3934,9 @@
 "token_type:treasure",
 "token_ability:tap_sacrifice_add_mana_any_color",
 "mana_source"
-]
+],
+"acc": 0.863,
+"reads": 12
 },
 {
 "card": "Reckless Fireweaver",
@@ -3545,7 +3953,9 @@
 "trigger_filter:artifact",
 "damage",
 "damage_amount:1"
-]
+],
+"acc": 0.879,
+"reads": 12
 },
 {
 "card": "Goblin Matron",
@@ -3563,7 +3973,9 @@
 "tutor_target:card_goblin",
 "tutor_dest:hand",
 "shuffle"
-]
+],
+"acc": 0.93,
+"reads": 12
 },
 {
 "card": "Coruscation Mage",
@@ -3578,7 +3990,9 @@
 "target_scope:each_opponent",
 "damage",
 "damage_amount:1"
-]
+],
+"acc": 0.923,
+"reads": 12
 },
 {
 "card": "Fervor",
@@ -3593,7 +4007,9 @@
 "affected_type:creature",
 "affected_scope:you_control",
 "haste"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Thrill of Possibility",
@@ -3607,7 +4023,9 @@
 "cost:mana",
 "cost_mana:1r",
 "draw_count:2"
-]
+],
+"acc": 0.909,
+"reads": 21
 },
 {
 "card": "Tormenting Voice",
@@ -3621,7 +4039,9 @@
 "cost:mana",
 "cost_mana:1r",
 "draw_count:2"
-]
+],
+"acc": 0.83,
+"reads": 12
 },
 {
 "card": "Big Score",
@@ -3641,7 +4061,9 @@
 "token_type:treasure",
 "token_ability:tap_sacrifice_add_mana_any_color",
 "mana_source"
-]
+],
+"acc": 0.892,
+"reads": 12
 },
 {
 "card": "Big Score",
@@ -3661,7 +4083,9 @@
 "token_type:treasure",
 "token_ability:tap_sacrifice_add_mana_any_color",
 "mana_source"
-]
+],
+"acc": 0.892,
+"reads": 12
 },
 {
 "card": "Unexpected Windfall",
@@ -3681,7 +4105,9 @@
 "token_type:treasure",
 "token_ability:tap_sacrifice_add_mana_any_color",
 "mana_source"
-]
+],
+"acc": 0.946,
+"reads": 12
 },
 {
 "card": "Unexpected Windfall",
@@ -3701,7 +4127,9 @@
 "token_type:treasure",
 "token_ability:tap_sacrifice_add_mana_any_color",
 "mana_source"
-]
+],
+"acc": 0.946,
+"reads": 12
 },
 {
 "card": "Light Up the Stage",
@@ -3717,7 +4145,9 @@
 "impulse_draw",
 "impulse_draw_count:2",
 "duration:next_turn_end"
-]
+],
+"acc": 0.963,
+"reads": 12
 },
 {
 "card": "Seize the Spoils",
@@ -3737,7 +4167,9 @@
 "token_type:treasure",
 "token_ability:tap_sacrifice_add_mana_any_color",
 "mana_source"
-]
+],
+"acc": 0.895,
+"reads": 12
 },
 {
 "card": "Seize the Spoils",
@@ -3757,7 +4189,9 @@
 "token_type:treasure",
 "token_ability:tap_sacrifice_add_mana_any_color",
 "mana_source"
-]
+],
+"acc": 0.895,
+"reads": 12
 },
 {
 "card": "Titan's Strength",
@@ -3771,7 +4205,9 @@
 "target_type:creature",
 "pump_amount:+3/+1",
 "duration:eot"
-]
+],
+"acc": 0.862,
+"reads": 12
 },
 {
 "card": "Brute Force",
@@ -3786,7 +4222,9 @@
 "pump_amount:+3/+3",
 "duration:eot",
 "pump_single"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Trumpet Blast",
@@ -3801,7 +4239,9 @@
 "target_filter:attacking",
 "pump_amount:+2/+0",
 "duration:eot"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Curse of Opulence",
@@ -3822,7 +4262,9 @@
 "token_cardtype:artifact",
 "token_type:gold",
 "token_ability:sacrifice_add_mana_any_color"
-]
+],
+"acc": 0.893,
+"reads": 12
 },
 {
 "card": "Bonesplitter",
@@ -3835,7 +4277,9 @@
 "duration:static",
 "pump_amount:+2/+0",
 "affected_type:creature"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Hordeling Outburst",
@@ -3849,7 +4293,9 @@
 "token_color:red",
 "token_pt:1/1",
 "token_type:goblin"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Scorch Spitter",
@@ -3862,7 +4308,9 @@
 "trigger:attacks",
 "damage",
 "damage_amount:1"
-]
+],
+"acc": 0.846,
+"reads": 12
 },
 {
 "card": "Lightning Mare",
@@ -3873,7 +4321,9 @@
 "aligned": true,
 "tags": [
 "cant_be_countered"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Lightning Mare",
@@ -3884,7 +4334,9 @@
 "aligned": true,
 "tags": [
 "cant_be_blocked:by_creature_blue"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Lightning Mare",
@@ -3898,7 +4350,9 @@
 "cost_mana:1r",
 "pump_amount:+1/+0",
 "duration:eot"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Storm Caller",
@@ -3913,7 +4367,9 @@
 "trigger_scope:self",
 "damage",
 "damage_amount:2"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Bogardan Firefiend",
@@ -3930,7 +4386,9 @@
 "target_type:creature",
 "damage",
 "damage_amount:2"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Keldon Raider",
@@ -3944,7 +4402,9 @@
 "trigger_scope:self",
 "cost:discard",
 "draw_count:1"
-]
+],
+"acc": 0.956,
+"reads": 12
 },
 {
 "card": "Squee, Dubious Monarch",
@@ -3959,7 +4419,9 @@
 "token_color:red",
 "token_pt:1/1",
 "token_type:goblin"
-]
+],
+"acc": 0.712,
+"reads": 12
 },
 {
 "card": "Squee, Dubious Monarch",
@@ -3974,7 +4436,9 @@
 "token_color:red",
 "token_pt:1/1",
 "token_type:goblin"
-]
+],
+"acc": 0.712,
+"reads": 12
 },
 {
 "card": "Barrin, Tolarian Archmage",
@@ -3992,7 +4456,9 @@
 "target_type:planeswalker",
 "remove:bounce",
 "draw_count:1"
-]
+],
+"acc": 0.913,
+"reads": 12
 },
 {
 "card": "Barrin, Tolarian Archmage",
@@ -4010,7 +4476,9 @@
 "target_type:planeswalker",
 "remove:bounce",
 "draw_count:1"
-]
+],
+"acc": 0.913,
+"reads": 12
 },
 {
 "card": "Lonely Sandbar",
@@ -4025,7 +4493,9 @@
 "mana_source",
 "mana:blue",
 "mana_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Myriad Landscape",
@@ -4054,7 +4524,9 @@
 "from_zone:library",
 "put_tapped",
 "controller:you"
-]
+],
+"acc": 0.931,
+"reads": 12
 },
 {
 "card": "Myriad Landscape",
@@ -4083,7 +4555,9 @@
 "from_zone:library",
 "put_tapped",
 "controller:you"
-]
+],
+"acc": 0.931,
+"reads": 12
 },
 {
 "card": "Temple of the False God",
@@ -4101,7 +4575,9 @@
 "activation_restriction",
 "mana_conditional",
 "condition:at_least_5_land_you_control"
-]
+],
+"acc": 0.959,
+"reads": 12
 },
 {
 "card": "Rogue's Passage",
@@ -4121,7 +4597,9 @@
 "cost_mana:4",
 "target_count:one",
 "target_type:creature"
-]
+],
+"acc": 0.758,
+"reads": 12
 },
 {
 "card": "Rogue's Passage",
@@ -4141,7 +4619,9 @@
 "cost_mana:4",
 "target_count:one",
 "target_type:creature"
-]
+],
+"acc": 0.758,
+"reads": 12
 },
 {
 "card": "Reliquary Tower",
@@ -4157,7 +4637,9 @@
 "mana_source",
 "mana:colorless",
 "mana_amount:1"
-]
+],
+"acc": 0.676,
+"reads": 12
 },
 {
 "card": "Reliquary Tower",
@@ -4173,7 +4655,9 @@
 "mana_source",
 "mana:colorless",
 "mana_amount:1"
-]
+],
+"acc": 0.676,
+"reads": 12
 },
 {
 "card": "Blighted Woodland",
@@ -4202,7 +4686,9 @@
 "from_zone:library",
 "put_tapped",
 "controller:you"
-]
+],
+"acc": 0.995,
+"reads": 12
 },
 {
 "card": "Blighted Woodland",
@@ -4231,7 +4717,9 @@
 "from_zone:library",
 "put_tapped",
 "controller:you"
-]
+],
+"acc": 0.995,
+"reads": 12
 },
 {
 "card": "Essence Flux",
@@ -4247,7 +4735,9 @@
 "remove:exile",
 "counter_count:1",
 "counter:p1p1"
-]
+],
+"acc": 0.828,
+"reads": 12
 },
 {
 "card": "Icy Blast",
@@ -4262,7 +4752,9 @@
 "restrict_kind:doesnt_untap",
 "duration:next_untap",
 "duration:permanent"
-]
+],
+"acc": 0.822,
+"reads": 12
 },
 {
 "card": "Icy Blast",
@@ -4277,7 +4769,9 @@
 "restrict_kind:doesnt_untap",
 "duration:next_untap",
 "duration:permanent"
-]
+],
+"acc": 0.822,
+"reads": 12
 },
 {
 "card": "Serum Visions",
@@ -4288,7 +4782,9 @@
 "aligned": true,
 "tags": [
 "draw_count:1"
-]
+],
+"acc": 0.613,
+"reads": 12
 },
 {
 "card": "Slip Out the Back",
@@ -4302,7 +4798,9 @@
 "target_type:creature",
 "counter:p1p1",
 "phase_out"
-]
+],
+"acc": 0.995,
+"reads": 12
 },
 {
 "card": "Sol Ring",
@@ -4316,7 +4814,9 @@
 "mana_source",
 "mana:colorless",
 "mana_amount:2"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Dramatic Reversal",
@@ -4330,7 +4830,9 @@
 "target_type:permanent",
 "target_filter:nonland",
 "target_scope:you_control"
-]
+],
+"acc": 0.848,
+"reads": 12
 },
 {
 "card": "Arcane Signet",
@@ -4345,7 +4847,9 @@
 "mana:commander_identity",
 "mana_choice",
 "mana_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Brotherhood Regalia",
@@ -4358,7 +4862,9 @@
 "grant_kw:ward",
 "duration:static",
 "affected_type:creature"
-]
+],
+"acc": 0.841,
+"reads": 12
 },
 {
 "card": "Brotherhood Regalia",
@@ -4369,7 +4875,9 @@
 "aligned": true,
 "tags": [
 "cant_be_blocked"
-]
+],
+"acc": 0.841,
+"reads": 12
 },
 {
 "card": "Rescue",
@@ -4383,7 +4891,9 @@
 "target_type:permanent",
 "target_scope:you_control",
 "remove:bounce"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Deranged Assistant",
@@ -4397,7 +4907,9 @@
 "mana_source",
 "mana:colorless",
 "mana_amount:1"
-]
+],
+"acc": 0.826,
+"reads": 12
 },
 {
 "card": "Hero's Blade",
@@ -4410,7 +4922,9 @@
 "duration:static",
 "pump_amount:+3/+2",
 "affected_type:creature"
-]
+],
+"acc": 0.878,
+"reads": 12
 },
 {
 "card": "Hero's Blade",
@@ -4425,7 +4939,9 @@
 "trigger_scope:any",
 "trigger_filter:you_control",
 "trigger_filter:creature"
-]
+],
+"acc": 0.878,
+"reads": 12
 },
 {
 "card": "Karfell Harbinger",
@@ -4440,7 +4956,9 @@
 "mana:blue",
 "mana_amount:1",
 "mana_restriction:static_foretelling_or_instant_or_sorcery"
-]
+],
+"acc": 0.89,
+"reads": 12
 },
 {
 "card": "Mask of Memory",
@@ -4451,7 +4969,9 @@
 "aligned": false,
 "tags": [
 "discard_count:1"
-]
+],
+"acc": 0.851,
+"reads": 12
 },
 {
 "card": "Merfolk Trickster",
@@ -4469,7 +4989,9 @@
 "restrict_kind:loses_abilities",
 "duration:eot",
 "loses_all_abilities"
-]
+],
+"acc": 0.968,
+"reads": 12
 },
 {
 "card": "Mindcrank",
@@ -4480,7 +5002,9 @@
 "aligned": true,
 "tags": [
 "trigger:life_loss"
-]
+],
+"acc": 0.708,
+"reads": 12
 },
 {
 "card": "Ripples of Potential",
@@ -4491,7 +5015,9 @@
 "aligned": true,
 "tags": [
 "phase_out"
-]
+],
+"acc": 0.586,
+"reads": 21
 },
 {
 "card": "Silvergill Adept",
@@ -4502,7 +5028,9 @@
 "aligned": true,
 "tags": [
 "cost_additional"
-]
+],
+"acc": 0.825,
+"reads": 12
 },
 {
 "card": "Silvergill Adept",
@@ -4515,7 +5043,9 @@
 "trigger:etb",
 "trigger_scope:self",
 "draw_count:1"
-]
+],
+"acc": 0.825,
+"reads": 12
 },
 {
 "card": "Stonybrook Banneret",
@@ -4531,7 +5061,9 @@
 "cost_reduce_mana:generic",
 "cost_reduce_for:merfolk",
 "cost_reduce_for:wizard"
-]
+],
+"acc": 0.998,
+"reads": 12
 },
 {
 "card": "Trailblazer's Boots",
@@ -4544,7 +5076,9 @@
 "grant_kw:landwalk",
 "duration:static",
 "affected_type:creature"
-]
+],
+"acc": 0.847,
+"reads": 12
 },
 {
 "card": "Vodalian Arcanist",
@@ -4559,7 +5093,9 @@
 "mana:colorless",
 "mana_amount:1",
 "mana_restriction:instant_or_sorcery"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Watcher for Tomorrow",
@@ -4576,7 +5112,9 @@
 "from_zone:exile",
 "to_zone:hand",
 "return_exiled"
-]
+],
+"acc": 0.929,
+"reads": 12
 },
 {
 "card": "Apprentice Wizard",
@@ -4592,7 +5130,9 @@
 "mana_source",
 "mana:colorless",
 "mana_amount:3"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Bontu's Monument",
@@ -4607,7 +5147,9 @@
 "cost_reduce_amount:1",
 "cost_reduce_for:creature",
 "color:black"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Bontu's Monument",
@@ -4622,7 +5164,9 @@
 "target_scope:each_opponent",
 "life_loss_amount:1",
 "lifegain_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Cloud Key",
@@ -4639,7 +5183,9 @@
 "choice_option:enchantment",
 "choice_option:instant",
 "choice_option:sorcery"
-]
+],
+"acc": 0.997,
+"reads": 12
 },
 {
 "card": "Cloud Key",
@@ -4654,7 +5200,9 @@
 "cost_reduce_amount:1",
 "cost_reduce_for:chosen_type",
 "cost_reduce_mana:generic"
-]
+],
+"acc": 0.997,
+"reads": 12
 },
 {
 "card": "Commander's Sphere",
@@ -4669,7 +5217,9 @@
 "mana:commander_identity",
 "mana_choice",
 "mana_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Commander's Sphere",
@@ -4682,7 +5232,9 @@
 "cost:sacrifice",
 "cost_sacrifice_target:self",
 "draw_count:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Expel from Orazca",
@@ -4698,7 +5250,9 @@
 "remove:bounce",
 "remove:bounce",
 "remove:tuck"
-]
+],
+"acc": 0.804,
+"reads": 12
 },
 {
 "card": "Decoction Module",
@@ -4714,7 +5268,9 @@
 "trigger_filter:creature",
 "counter_count:1",
 "counter:energy"
-]
+],
+"acc": 0.934,
+"reads": 12
 },
 {
 "card": "Decoction Module",
@@ -4731,7 +5287,9 @@
 "target_type:creature",
 "target_scope:you_control",
 "remove:bounce"
-]
+],
+"acc": 0.934,
+"reads": 12
 },
 {
 "card": "Fireshrieker",
@@ -4745,7 +5303,9 @@
 "duration:static",
 "affected_type:creature",
 "double_strike"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Flux Channeler",
@@ -4757,7 +5317,9 @@
 "tags": [
 "trigger:spell_cast",
 "trigger_filter:noncreature"
-]
+],
+"acc": 0.869,
+"reads": 12
 },
 {
 "card": "Herald's Horn",
@@ -4769,7 +5331,9 @@
 "tags": [
 "choose_on_enter:creature_type",
 "trigger:etb"
-]
+],
+"acc": 0.931,
+"reads": 12
 },
 {
 "card": "Herald's Horn",
@@ -4785,7 +5349,9 @@
 "cost_reduce_for:chosen_type",
 "cost_reduce_mana:generic",
 "cost_reduce_for:creature"
-]
+],
+"acc": 0.931,
+"reads": 12
 },
 {
 "card": "Herald's Horn",
@@ -4800,7 +5366,9 @@
 "reveal",
 "take:may_1_chosen_type",
 "to_zone:hand"
-]
+],
+"acc": 0.931,
+"reads": 12
 },
 {
 "card": "Laboratory Maniac",
@@ -4812,7 +5380,9 @@
 "tags": [
 "replace:draw_to_winsgame",
 "condition:no_card_you_own_in_library"
-]
+],
+"acc": 0.971,
+"reads": 12
 },
 {
 "card": "Nuka-Cola Vending Machine",
@@ -4831,7 +5401,9 @@
 "token_type:food",
 "token_ability:pay_2_tap_sacrifice_gain_3_life",
 "lifegain"
-]
+],
+"acc": 0.827,
+"reads": 12
 },
 {
 "card": "Nuka-Cola Vending Machine",
@@ -4848,7 +5420,9 @@
 "token_type:treasure",
 "token_ability:tap_sacrifice_add_mana_any_color",
 "mana_source"
-]
+],
+"acc": 0.827,
+"reads": 12
 },
 {
 "card": "Prodigal Sorcerer",
@@ -4863,7 +5437,9 @@
 "target_type:any",
 "damage",
 "damage_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Sage's Dousing",
@@ -4878,7 +5454,9 @@
 "unless_cost",
 "unless_cost_amount:3",
 "draw_count:1"
-]
+],
+"acc": 0.892,
+"reads": 12
 },
 {
 "card": "Serum Visionary",
@@ -4891,7 +5469,9 @@
 "trigger:etb",
 "trigger_scope:self",
 "draw_count:1"
-]
+],
+"acc": 0.627,
+"reads": 12
 },
 {
 "card": "Zuran Spellcaster",
@@ -4906,7 +5486,9 @@
 "target_type:any",
 "damage",
 "damage_amount:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Control Magic",
@@ -4918,7 +5500,9 @@
 "tags": [
 "affected_type:enchanted",
 "steal"
-]
+],
+"acc": 0.999,
+"reads": 12
 },
 {
 "card": "Etched Oracle",
@@ -4934,7 +5518,9 @@
 "target_count:one",
 "target_type:player",
 "draw_count:3"
-]
+],
+"acc": 0.711,
+"reads": 21
 },
 {
 "card": "Fact or Fiction",
@@ -4947,7 +5533,9 @@
 "look_top:5",
 "reveal",
 "piles_split:opponent"
-]
+],
+"acc": 0.955,
+"reads": 12
 },
 {
 "card": "Glimmer of Genius",
@@ -4960,7 +5548,9 @@
 "draw_count:2",
 "counter_count:2",
 "counter:energy"
-]
+],
+"acc": 0.647,
+"reads": 12
 },
 {
 "card": "Propaganda",
@@ -4972,7 +5562,9 @@
 "tags": [
 "restrict_kind:cant_attack_unless_cost",
 "unless_cost_amount:2"
-]
+],
+"acc": 0.938,
+"reads": 10
 },
 {
 "card": "Rimewind Cryomancer",
@@ -4988,7 +5580,9 @@
 "target_count:one",
 "target_type:card",
 "activation_restriction"
-]
+],
+"acc": 0.679,
+"reads": 12
 },
 {
 "card": "Rite of Replication",
@@ -5003,7 +5597,9 @@
 "target_type:creature",
 "token_make",
 "token_type:copy"
-]
+],
+"acc": 0.908,
+"reads": 12
 },
 {
 "card": "Riverwise Augur",
@@ -5016,7 +5612,9 @@
 "trigger:etb",
 "trigger_scope:self",
 "draw_count:3"
-]
+],
+"acc": 0.717,
+"reads": 12
 },
 {
 "card": "Soratami Mirror-Mage",
@@ -5033,7 +5631,9 @@
 "target_count:one",
 "target_type:creature",
 "remove:bounce"
-]
+],
+"acc": 0.983,
+"reads": 12
 },
 {
 "card": "Soratami Savant",
@@ -5051,7 +5651,9 @@
 "target_type:card",
 "unless_cost",
 "unless_cost_amount:3"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Sweep Away",
@@ -5066,7 +5668,9 @@
 "remove:bounce",
 "remove:tuck",
 "remove:bounce"
-]
+],
+"acc": 0.817,
+"reads": 12
 },
 {
 "card": "Disciple of the Ring",
@@ -5092,7 +5696,9 @@
 "target_type:creature",
 "target_count:one",
 "target_type:creature"
-]
+],
+"acc": 0.974,
+"reads": 12
 },
 {
 "card": "Disciple of the Ring",
@@ -5118,7 +5724,9 @@
 "target_type:creature",
 "target_count:one",
 "target_type:creature"
-]
+],
+"acc": 0.974,
+"reads": 12
 },
 {
 "card": "Disciple of the Ring",
@@ -5144,7 +5752,9 @@
 "target_type:creature",
 "target_count:one",
 "target_type:creature"
-]
+],
+"acc": 0.974,
+"reads": 12
 },
 {
 "card": "Disciple of the Ring",
@@ -5170,7 +5780,9 @@
 "target_type:creature",
 "target_count:one",
 "target_type:creature"
-]
+],
+"acc": 0.974,
+"reads": 12
 },
 {
 "card": "Disciple of the Ring",
@@ -5196,7 +5808,9 @@
 "target_type:creature",
 "target_count:one",
 "target_type:creature"
-]
+],
+"acc": 0.974,
+"reads": 12
 },
 {
 "card": "Disruptor of Currents",
@@ -5213,7 +5827,9 @@
 "target_filter:nonland",
 "target_filter:other",
 "remove:bounce"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Flow of Knowledge",
@@ -5227,7 +5843,9 @@
 "x_is:count_island_you_control",
 "scales:island",
 "discard_count:2"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Hakim, Loreweaver",
@@ -5247,7 +5865,9 @@
 "put_onto_battlefield",
 "from_zone:graveyard",
 "controller:you"
-]
+],
+"acc": 0.886,
+"reads": 12
 },
 {
 "card": "Hakim, Loreweaver",
@@ -5265,7 +5885,9 @@
 "target_filter:aura",
 "target_filter:attachedto_card_self",
 "remove:destroy"
-]
+],
+"acc": 0.886,
+"reads": 12
 },
 {
 "card": "Filter Out",
@@ -5280,7 +5902,9 @@
 "target_filter:nonland",
 "target_filter:noncreature",
 "remove:bounce"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Saruman the White",
@@ -5293,7 +5917,9 @@
 "trigger:spell_cast",
 "trigger_filter:you_control",
 "trigger_filter:nth_spell_2"
-]
+],
+"acc": 0.629,
+"reads": 12
 },
 {
 "card": "Sea Gate Loremaster",
@@ -5306,7 +5932,9 @@
 "cost:tap",
 "draw_count:x",
 "x_is:count_ally_you_control"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Arcanis the Omnipotent",
@@ -5318,7 +5946,9 @@
 "tags": [
 "cost:tap",
 "draw_count:3"
-]
+],
+"acc": 0.996,
+"reads": 12
 },
 {
 "card": "Arcanis the Omnipotent",
@@ -5331,7 +5961,9 @@
 "cost:mana",
 "cost_mana:2uu",
 "remove:bounce"
-]
+],
+"acc": 0.996,
+"reads": 12
 },
 {
 "card": "Desecrate Reality",
@@ -5342,7 +5974,9 @@
 "aligned": true,
 "tags": [
 "condition:adamant"
-]
+],
+"acc": 0.717,
+"reads": 12
 },
 {
 "card": "Desecrate Reality",
@@ -5362,7 +5996,9 @@
 "put_onto_battlefield",
 "from_zone:graveyard",
 "controller:you"
-]
+],
+"acc": 0.717,
+"reads": 12
 },
 {
 "card": "Galecaster Colossus",
@@ -5377,7 +6013,9 @@
 "target_filter:nonland",
 "target_scope:opp_control",
 "remove:bounce"
-]
+],
+"acc": 0.816,
+"reads": 12
 },
 {
 "card": "Skittering Invasion",
@@ -5391,7 +6029,9 @@
 "token_color:colorless",
 "token_pt:0/1",
 "token_type:eldrazi_spawn"
-]
+],
+"acc": 0.845,
+"reads": 12
 },
 {
 "card": "Dig Through Time",
@@ -5404,7 +6044,9 @@
 "look_top:7",
 "take:2",
 "to_zone:hand"
-]
+],
+"acc": 0.934,
+"reads": 12
 },
 {
 "card": "Memnarch, the Warden",
@@ -5421,7 +6063,9 @@
 "token_pt:1/1",
 "token_cardtype:artifact",
 "token_type:myr"
-]
+],
+"acc": 0.998,
+"reads": 12
 },
 {
 "card": "Memnarch, the Warden",
@@ -5434,7 +6078,9 @@
 "trigger:attacks",
 "draw_count:x",
 "x_is:count_artifact_you_control"
-]
+],
+"acc": 0.998,
+"reads": 12
 },
 {
 "card": "Stream of Unconsciousness",
@@ -5449,7 +6095,9 @@
 "pump_amount:-4/+0",
 "duration:eot",
 "draw_count:1"
-]
+],
+"acc": 0.833,
+"reads": 12
 },
 {
 "card": "Exhaustion",
@@ -5463,7 +6111,9 @@
 "target_type:opponent",
 "restrict_kind:doesnt_untap",
 "duration:next_untap"
-]
+],
+"acc": 0.768,
+"reads": 12
 },
 {
 "card": "Expanded Anatomy",
@@ -5481,7 +6131,9 @@
 "vigilance",
 "grant_kw:vigilance",
 "duration:eot"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Irenicus's Vile Duplication",
@@ -5496,7 +6148,9 @@
 "target_scope:you_control",
 "token_make",
 "token_type:copy"
-]
+],
+"acc": 0.776,
+"reads": 12
 },
 {
 "card": "Time of Ice",
@@ -5521,7 +6175,9 @@
 "target_type:creature",
 "target_filter:tapped",
 "remove:bounce"
-]
+],
+"acc": 0.976,
+"reads": 12
 },
 {
 "card": "Time of Ice",
@@ -5546,7 +6202,9 @@
 "target_type:creature",
 "target_filter:tapped",
 "remove:bounce"
-]
+],
+"acc": 0.976,
+"reads": 12
 },
 {
 "card": "Psychic Spiral",
@@ -5565,7 +6223,9 @@
 "shuffle",
 "target_count:one",
 "target_type:player"
-]
+],
+"acc": 0.859,
+"reads": 12
 },
 {
 "card": "Gadwick, the Wizened",
@@ -5579,7 +6239,9 @@
 "trigger_scope:self",
 "draw_count:x",
 "x_is:x_paid"
-]
+],
+"acc": 0.964,
+"reads": 12
 },
 {
 "card": "Gadwick, the Wizened",
@@ -5594,7 +6256,9 @@
 "target_type:permanent",
 "target_scope:opp_control",
 "target_filter:nonland"
-]
+],
+"acc": 0.964,
+"reads": 12
 },
 {
 "card": "Haliya, Guided by Light",
@@ -5611,7 +6275,9 @@
 "trigger_filter:artifact",
 "lifegain_amount:1",
 "draw_count:1"
-]
+],
+"acc": 0.796,
+"reads": 12
 },
 {
 "card": "Haliya, Guided by Light",
@@ -5628,7 +6294,9 @@
 "trigger_filter:artifact",
 "lifegain_amount:1",
 "draw_count:1"
-]
+],
+"acc": 0.796,
+"reads": 12
 },
 {
 "card": "Wayfarer's Bauble",
@@ -5652,7 +6320,9 @@
 "from_zone:library",
 "put_tapped",
 "controller:you"
-]
+],
+"acc": 0.991,
+"reads": 12
 },
 {
 "card": "Thraben Inspector",
@@ -5665,7 +6335,9 @@
 "trigger:etb",
 "trigger_scope:self",
 "investigate"
-]
+],
+"acc": 0.595,
+"reads": 12
 },
 {
 "card": "Precinct Captain",
@@ -5679,7 +6351,9 @@
 "token_color:white",
 "token_pt:1/1",
 "token_type:soldier"
-]
+],
+"acc": 0.946,
+"reads": 21
 },
 {
 "card": "Knight of Grace",
@@ -5693,7 +6367,9 @@
 "pump_amount:+1/+0",
 "affected_scope:self",
 "condition:permanent_black"
-]
+],
+"acc": 0.882,
+"reads": 12
 },
 {
 "card": "Ajani's Pridemate",
@@ -5706,7 +6382,9 @@
 "trigger:gain_life",
 "counter_count:1",
 "counter:p1p1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Attended Knight",
@@ -5722,7 +6400,9 @@
 "token_color:white",
 "token_pt:1/1",
 "token_type:soldier"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Inspiring Overseer",
@@ -5736,7 +6416,9 @@
 "trigger_scope:self",
 "lifegain_amount:1",
 "draw_count:1"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Mentor of the Meek",
@@ -5754,7 +6436,9 @@
 "cost:mana",
 "cost_mana:1",
 "draw_count:1"
-]
+],
+"acc": 0.86,
+"reads": 12
 },
 {
 "card": "Benalish Marshal",
@@ -5769,7 +6453,9 @@
 "affected_type:creature",
 "affected_filter:other",
 "affected_scope:you_control"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Banisher Priest",
@@ -5785,7 +6471,9 @@
 "target_type:creature",
 "target_scope:opp_control",
 "remove:exile"
-]
+],
+"acc": 0.897,
+"reads": 12
 },
 {
 "card": "Welcoming Vampire",
@@ -5800,7 +6488,9 @@
 "trigger_filter:one_or_more",
 "limit:once_per_turn",
 "draw_count:1"
-]
+],
+"acc": 0.684,
+"reads": 12
 },
 {
 "card": "Militia Bugler",
@@ -5818,7 +6508,9 @@
 "to_zone:hand",
 "rest_to_zone:library",
 "rest_order:bottom_random"
-]
+],
+"acc": 0.966,
+"reads": 12
 },
 {
 "card": "Resolute Reinforcements",
@@ -5834,7 +6526,9 @@
 "token_color:white",
 "token_pt:1/1",
 "token_type:soldier"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Solemn Simulacrum",
@@ -5856,7 +6550,9 @@
 "from_zone:library",
 "put_tapped",
 "controller:you"
-]
+],
+"acc": 0.989,
+"reads": 12
 },
 {
 "card": "Solemn Simulacrum",
@@ -5870,7 +6566,9 @@
 "trigger_zone:graveyard",
 "trigger_scope:self",
 "draw_count:1"
-]
+],
+"acc": 0.989,
+"reads": 12
 },
 {
 "card": "Restoration Angel",
@@ -5891,7 +6589,9 @@
 "put_onto_battlefield",
 "from_zone:exile",
 "controller:you"
-]
+],
+"acc": 0.965,
+"reads": 12
 },
 {
 "card": "Rhox Pikemaster",
@@ -5908,7 +6608,9 @@
 "affected_filter:other",
 "affected_scope:you_control",
 "first_strike"
-]
+],
+"acc": 0.984,
+"reads": 12
 },
 {
 "card": "Palace Jailer",
@@ -5921,7 +6623,9 @@
 "trigger:etb",
 "trigger_scope:self",
 "monarch"
-]
+],
+"acc": 0.744,
+"reads": 12
 },
 {
 "card": "Palace Jailer",
@@ -5943,7 +6647,9 @@
 "target_scope:opp_control",
 "remove:exile",
 "duration:until_monarch_changes"
-]
+],
+"acc": 0.744,
+"reads": 12
 },
 {
 "card": "Mesa Enchantress",
@@ -5957,7 +6663,9 @@
 "trigger_filter:enchantment",
 "optional",
 "draw_count:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Goldnight Commander",
@@ -5977,7 +6685,9 @@
 "target_scope:you_control",
 "pump_amount:+1/+1",
 "duration:eot"
-]
+],
+"acc": 0.993,
+"reads": 12
 },
 {
 "card": "Angel of Finality",
@@ -5993,7 +6703,9 @@
 "target_type:player",
 "target_zone:graveyard",
 "exile_from:graveyard"
-]
+],
+"acc": 0.993,
+"reads": 12
 },
 {
 "card": "Irregular Cohort",
@@ -6009,7 +6721,9 @@
 "token_color:colorless",
 "token_pt:2/2",
 "token_type:shapeshifter_changeling"
-]
+],
+"acc": 0.989,
+"reads": 12
 },
 {
 "card": "Captain of the Watch",
@@ -6027,7 +6741,9 @@
 "affected_filter:other",
 "affected_scope:you_control",
 "vigilance"
-]
+],
+"acc": 0.999,
+"reads": 12
 },
 {
 "card": "Captain of the Watch",
@@ -6043,7 +6759,9 @@
 "token_color:white",
 "token_pt:1/1",
 "token_type:soldier"
-]
+],
+"acc": 0.999,
+"reads": 12
 },
 {
 "card": "Elite Scaleguard",
@@ -6056,7 +6774,9 @@
 "trigger:etb",
 "trigger_scope:self",
 "bolster:2"
-]
+],
+"acc": 0.767,
+"reads": 12
 },
 {
 "card": "Elite Scaleguard",
@@ -6071,7 +6791,9 @@
 "trigger_filter:has_counter:p1p1",
 "target_count:one",
 "target_type:creature"
-]
+],
+"acc": 0.767,
+"reads": 12
 },
 {
 "card": "Swords to Plowshares",
@@ -6086,7 +6808,9 @@
 "remove:exile",
 "lifegain_amount:x",
 "x_is:target_power"
-]
+],
+"acc": 0.954,
+"reads": 12
 },
 {
 "card": "Frontline Medic",
@@ -6105,7 +6829,9 @@
 "target_scope:you_control",
 "duration:eot",
 "grant_kw:indestructible"
-]
+],
+"acc": 0.907,
+"reads": 12
 },
 {
 "card": "Frontline Medic",
@@ -6121,7 +6847,9 @@
 "target_type:card",
 "unless_cost",
 "unless_cost_amount:3"
-]
+],
+"acc": 0.907,
+"reads": 12
 },
 {
 "card": "Pacifism",
@@ -6134,7 +6862,9 @@
 "restrict_kind:cant_attack_or_block",
 "affected_type:creature",
 "affected_filter:enchantedby"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Banishing Light",
@@ -6151,7 +6881,9 @@
 "target_filter:nonland",
 "target_scope:opp_control",
 "remove:exile"
-]
+],
+"acc": 0.933,
+"reads": 12
 },
 {
 "card": "Oblivion Ring",
@@ -6168,7 +6900,9 @@
 "target_filter:nonland",
 "target_filter:other",
 "remove:exile"
-]
+],
+"acc": 0.99,
+"reads": 12
 },
 {
 "card": "Oblivion Ring",
@@ -6184,7 +6918,9 @@
 "from_zone:exile",
 "controller:owner",
 "return_exiled"
-]
+],
+"acc": 0.99,
+"reads": 12
 },
 {
 "card": "Valorous Stance",
@@ -6203,7 +6939,9 @@
 "target_type:creature",
 "target_filter:toughness_ge_4",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Valorous Stance",
@@ -6222,7 +6960,9 @@
 "target_type:creature",
 "target_filter:toughness_ge_4",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Loran of the Third Path",
@@ -6238,7 +6978,9 @@
 "target_type:artifact",
 "target_type:enchantment",
 "remove:destroy"
-]
+],
+"acc": 0.981,
+"reads": 12
 },
 {
 "card": "Loran of the Third Path",
@@ -6252,7 +6994,9 @@
 "target_count:one",
 "target_type:opponent",
 "draw_count:1"
-]
+],
+"acc": 0.981,
+"reads": 12
 },
 {
 "card": "Divine Verdict",
@@ -6267,7 +7011,9 @@
 "target_filter:attacking",
 "target_filter:blocking",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Stroke of Midnight",
@@ -6285,7 +7031,9 @@
 "token_color:white",
 "token_pt:1/1",
 "token_type:human"
-]
+],
+"acc": 0.936,
+"reads": 12
 },
 {
 "card": "Disenchant",
@@ -6299,7 +7047,9 @@
 "target_type:artifact",
 "target_type:enchantment",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Feat of Resistance",
@@ -6314,7 +7064,9 @@
 "target_scope:you_control",
 "counter_count:1",
 "counter:p1p1"
-]
+],
+"acc": 0.738,
+"reads": 12
 },
 {
 "card": "Moment of Heroism",
@@ -6332,7 +7084,9 @@
 "lifelink",
 "lifegain",
 "pump_single"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Make a Stand",
@@ -6349,7 +7103,9 @@
 "duration:eot",
 "grant_kw:indestructible",
 "indestructible"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Sheltering Light",
@@ -6364,7 +7120,9 @@
 "grant_kw:indestructible",
 "duration:eot",
 "indestructible"
-]
+],
+"acc": 0.695,
+"reads": 12
 },
 {
 "card": "Ghostly Prison",
@@ -6376,7 +7134,9 @@
 "tags": [
 "restrict_kind:cant_attack_unless_cost",
 "unless_cost_amount:2"
-]
+],
+"acc": 0.969,
+"reads": 12
 },
 {
 "card": "Jayemdae Tome",
@@ -6390,7 +7150,9 @@
 "cost:mana",
 "cost_mana:4",
 "draw_count:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Revitalize",
@@ -6402,7 +7164,9 @@
 "tags": [
 "lifegain_amount:3",
 "draw_count:1"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Mycosynth Wellspring",
@@ -6424,7 +7188,9 @@
 "trigger_zone:graveyard",
 "optional",
 "trigger_scope:self"
-]
+],
+"acc": 0.869,
+"reads": 12
 },
 {
 "card": "Raise the Alarm",
@@ -6438,7 +7204,9 @@
 "token_color:white",
 "token_pt:1/1",
 "token_type:soldier"
-]
+],
+"acc": 0.988,
+"reads": 12
 },
 {
 "card": "Spectral Procession",
@@ -6453,7 +7221,9 @@
 "token_pt:1/1",
 "token_kw:flying",
 "token_type:spirit"
-]
+],
+"acc": 1.0,
+"reads": 21
 },
 {
 "card": "Ancestral Blade",
@@ -6469,7 +7239,9 @@
 "token_color:white",
 "token_pt:1/1",
 "token_type:soldier"
-]
+],
+"acc": 0.965,
+"reads": 12
 },
 {
 "card": "Ancestral Blade",
@@ -6482,7 +7254,9 @@
 "duration:static",
 "pump_amount:+1/+1",
 "affected_type:creature"
-]
+],
+"acc": 0.965,
+"reads": 12
 },
 {
 "card": "Heirloom Blade",
@@ -6495,7 +7269,9 @@
 "duration:static",
 "pump_amount:+3/+1",
 "affected_type:creature"
-]
+],
+"acc": 0.732,
+"reads": 12
 },
 {
 "card": "Heirloom Blade",
@@ -6509,7 +7285,9 @@
 "trigger_zone:graveyard",
 "optional",
 "trigger_scope:other"
-]
+],
+"acc": 0.732,
+"reads": 12
 },
 {
 "card": "Cathar Commando",
@@ -6527,7 +7305,9 @@
 "target_type:artifact",
 "target_type:enchantment",
 "remove:destroy"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Felidar Guardian",
@@ -6548,7 +7328,9 @@
 "put_onto_battlefield",
 "from_zone:exile",
 "controller:you"
-]
+],
+"acc": 0.959,
+"reads": 12
 },
 {
 "card": "Journey to Nowhere",
@@ -6563,7 +7345,9 @@
 "target_count:one",
 "target_type:creature",
 "remove:exile"
-]
+],
+"acc": 0.993,
+"reads": 12
 },
 {
 "card": "Journey to Nowhere",
@@ -6578,7 +7362,9 @@
 "put_onto_battlefield",
 "from_zone:exile",
 "controller:owner"
-]
+],
+"acc": 0.993,
+"reads": 12
 },
 {
 "card": "Fateful Absence",
@@ -6593,7 +7379,9 @@
 "target_type:planeswalker",
 "remove:destroy",
 "investigate"
-]
+],
+"acc": 0.858,
+"reads": 21
 },
 {
 "card": "Glorious Anthem",
@@ -6607,7 +7395,9 @@
 "pump_amount:+1/+1",
 "affected_type:creature",
 "affected_scope:you_control"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Captain's Call",
@@ -6621,7 +7411,9 @@
 "token_color:white",
 "token_pt:1/1",
 "token_type:soldier"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Gideon's Reproach",
@@ -6637,7 +7429,9 @@
 "target_filter:blocking",
 "damage",
 "damage_amount:4"
-]
+],
+"acc": 1.0,
+"reads": 12
 },
 {
 "card": "Syr Alin, the Lion's Claw",
@@ -6655,6 +7449,8 @@
 "target_scope:you_control",
 "pump_amount:+1/+1",
 "duration:eot"
-]
+],
+"acc": 0.995,
+"reads": 12
 }
 ]
