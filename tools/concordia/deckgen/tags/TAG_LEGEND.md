@@ -42,7 +42,7 @@ Pinned reference text, one line per tag family with a structured or non-obvious 
 | `target_scope` | whose things or which players the effect hits (you_control, opp_control; no tag = whoever controls it; each_opponent = every opponent, each_player = every player; no value means a single chosen target) |
 | `trigger_scope` | which cards fire a zone-change trigger: self = this card only, other = another card, any = this card or any other card |
 | `trigger_filter` | narrows the triggering card or spell: a card type (always named for another card's zone-change trigger: trigger_filter:creature = another creature), a negated type (noncreature = noncreature spell), power_ge_N / power_le_N (power at least / at most N), one_or_more (triggers once for a group) |
-| `cost_mana` | the mana part of an activation cost, symbols joined (cost_mana:2b = {2}{B}, cost_mana:x = {X}); write the symbols where cost:mana stands |
+| `cost_mana` | the mana part of an activation cost, symbols joined (cost_mana:2b = {2}{B}, cost_mana:x = {X}); cost:mana is not tagged when this tag is present |
 | `investigate` | investigate (CR 701.16): create a Clue token |
 | `bolster` | bolster N (CR 701.39): put N +1/+1 counters on the creature you control with the least toughness; the value is N |
 | `monarch` | you become the monarch (CR 724) |

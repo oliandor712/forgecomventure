@@ -289,6 +289,10 @@ def record(name, text, mg):
     if os.environ.get("TAG_VARIANT") != "off":   # agent suggestions S01-S09, S15 (tag_variant.py), deployed on the user's order 2026-10-22; TAG_VARIANT=off for the old tags
         import tag_variant as TVAR
         tags, ex_groups = TVAR.apply(name, face, lines, sv, tags, ex_groups)
+    # cost:mana is dropped when cost_mana:<symbols> says it (user 2026-10-23), in the tags and in every group
+    if any(t.startswith("cost_mana:") for t in tags):
+        tags = [t for t in tags if t != "cost:mana"]; ex_tags = [t for t in ex_tags if t != "cost:mana"]; base = [t for t in base if t != "cost:mana"]
+        ex_groups = {g: [t for t in ts if t != "cost:mana"] for g, ts in ex_groups.items()}; kgroups = {g: [t for t in ts if t != "cost:mana"] for g, ts in kgroups.items()}
     ai = sorted(set(re.findall(r"AILogic\$ ?([A-Za-z0-9_]+)", face)) | set(re.findall(r"^SVar:AttachAILogic:(\w+)", face, re.M)))
     aipref = "AIPreference" in face or "SVar:AIPreference" in face
     rd = "AI:RemoveDeck" in face
