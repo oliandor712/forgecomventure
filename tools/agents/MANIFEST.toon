@@ -1,6 +1,6 @@
-records_commit: 8f34bd6116fe63d08281fed7f8cfa9c865f2376a
+records_commit: 90709858dc11b83ea32dbef06051eb7cb41652a4
 branch: campaign-design
-created: 2026-10-23T19:31:12-04:00
+created: 2026-10-23T19:31:29-04:00
 entries[52|]{path|hash}:
   .claude/agents/deck-balance-lab.md|36c8af0428e37159d82f8458930f82545714cf7f
   .claude/agents/deck-builder.md|606456455630443fa3ed993aaaf738f5655a20d0
@@ -36,9 +36,9 @@ entries[52|]{path|hash}:
   tools/agents/HANDOVER.md|a448e18397d65a3473ea14f038ae143658c07dcb
   tools/agents/INDEX.md|fda1bcf5df554885caf500deb058521ada8a8b1e
   tools/agents/MAIN_SESSION_BRIEF.md|b27e83e6e1422a8bbbc995bdc8d90ad05fef0160
-  tools/agents/TOOLBOX.md|d0e02db2273530f476c5102bd490cb3cec8958d6
+  tools/agents/TOOLBOX.md|7e8cc58a380cd731238d7e04d3c47b5aa2ac4e13
   tools/agents/clone_verify.py|0e94b2684d0cb82e30b4f776cbee0aac26dd9caf
-  tools/agents/docpush.py|e4b10866ee13066932e7d34366db5dba236c1fcd
+  tools/agents/docpush.py|804c413da7b0db539b4d496cd3d7c42bbff06838
   tools/agents/human_logic.toon|92ec73e453467cc4f6cefed6ed9ed9fdd92f402e
   tools/agents/lookup.py|be8046b22768a971d901be02f71efaa1df13ea8c
   tools/agents/projects/agent_tool_test.toon|efde373ac3e3d421f8a3fe8cc4c4409c4574151e
