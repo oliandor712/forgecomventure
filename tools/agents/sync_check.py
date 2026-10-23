@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Record sync check between the two main sessions (used at shift change).
-  python3 tools/agents/sync_check.py manifest   (outgoing session, after its last commit) write tools/agents/MANIFEST.toon
-  python3 tools/agents/sync_check.py verify     (incoming session, after merging origin/campaign-design) compare this checkout with it
+"""Record sync check (single main session: use it to confirm a fresh clone matches the last manifest).
+  python3 tools/agents/sync_check.py manifest   (end of session, after the last commit) write tools/agents/MANIFEST.toon
+  python3 tools/agents/sync_check.py verify     (start of session, after merging origin/campaign-design) compare this checkout with it
 The manifest holds git object hashes (blob per file under tools/agents, .claude, CLAUDE.md, docs/Adventure/Campaign; tree hash per big directory),
 taken from the commit named in records_commit. verify recomputes the hashes from HEAD and lists every difference. Read-only; exit 1 on a mismatch."""
 import os, subprocess, sys

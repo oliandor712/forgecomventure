@@ -1,3 +1,5 @@
+> Single main session now: ignore the day/night and two-group parts below; they are history. The only command normally needed is `python3 tools/agents/mailbox.py check`.
+
 # Mailbox: how Claude 1, Claude 2 and their agent groups talk without conflicts
 
 Tool: `python3 tools/agents/mailbox.py` (see its header). Nothing here commits or pushes; the user's "push" rule is unchanged.

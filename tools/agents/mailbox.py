@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Mailbox between the two main sessions (claude1 = day, claude2 = night) and, through them, their agent groups.
+"""Mailbox (history from the two-session period). There is now ONE main session; it is always "claude1" and normally needs only `check`.
 Design: every message is its own immutable file named <sender>_<seq>_<type>.toon, so two sessions can never edit the same file.
 Read state is one cursor file per reader. Messages travel through git; nothing here commits or pushes (the user says "push").
   mailbox.py send --to claude2 --type note|request|reply|claim|release|status --subject S [--body T] [--for AGENT] [--files a,b] [--re ID]
@@ -8,7 +8,7 @@ Read state is one cursor file per reader. Messages travel through git; nothing h
   mailbox.py claims               active file claims of both sessions
   mailbox.py check [--files a,b]  overlap of my changes with campaign-design and with the other session's claims; exit 1 on conflict
   mailbox.py who                  show my id and the ids seen
-Identity: --as ID, else $CONCORDIA_ME, else .git/concordia_me, else the branch (campaign-design = claude1, cd/claude2 = claude2).
+Identity: --as ID, else $CONCORDIA_ME, else .git/concordia_me, else claude1 (single session, any branch).
 Sources scanned for messages: the working tree plus origin/campaign-design, origin/cd/claude1, origin/cd/claude2 (run `git fetch origin` first)."""
 import os, re, sys, subprocess, argparse, time
 ROOT = subprocess.run(["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True).stdout.strip() or os.getcwd()
@@ -26,7 +26,7 @@ def me(arg=None):
     f = os.path.join(ROOT, ".git", "concordia_me")
     if os.path.exists(f): return open(f).read().strip()
     br = (git("branch", "--show-current") or "").strip()
-    return "claude2" if br == "cd/claude2" else "claude1" if br in ("campaign-design", "cd/claude1") else sys.exit("cannot tell who I am: pass --as claude1|claude2")
+    return "claude1"
 def parse(name, text):
     head, _, body = text.partition("\n\n"); m = {"file": name, "body": body.strip()}
     for l in head.splitlines():

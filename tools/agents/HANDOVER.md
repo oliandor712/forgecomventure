@@ -37,7 +37,7 @@ No agents are used in the new session; none are running. Do not message or resum
 - Environment: subagent cap 20 concurrent; no foreground `sleep` (use Monitor/background); reader work dirs live outside the repo.
 
 ## Local archive (this container, outside repo, lost if the container is reclaimed)
-`~/concordia_archive/claude2_20261023/`: `tagcheck_runs.tgz` (all run dirs r1..r13), `scratchpads.tgz` (both session scratchpads incl. setup_arms.py, disagreement dumps), two full session transcripts `*.jsonl`, `repo_cd_claude2.bundle` (git bundle of cd/claude2), `agents_and_tagcheck_worktree.tgz` (tools/agents, tagcheck, tags, .claude/agents, Campaign docs). Not downloadable by the user from the app unless copied into the repo; tell the user.
+`~/concordia_archive/20261023/ (container only)`: `tagcheck_runs.tgz` (all run dirs r1..r13), `scratchpads.tgz` (both session scratchpads incl. setup_arms.py, disagreement dumps), two full session transcripts `*.jsonl`, `repo_cd_claude2.bundle` (git bundle of cd/claude2), `agents_and_tagcheck_worktree.tgz` (tools/agents, tagcheck, tags, .claude/agents, Campaign docs). Not downloadable by the user from the app unless copied into the repo; tell the user.
 
 ## Unverified
 Phase 3 results do not exist yet. Everything agents report about scripts/patches is from their own reading, not from my runs.
