@@ -4,8 +4,8 @@ Read this first on every run, then your own brief (`.claude/agents/<name>.md`). 
 through the agent manager (`.claude/skills/agent-manager/`). The newest changes are listed under "Recent updates" at the
 bottom. When this file and your brief disagree, this file wins, because it is newer.
 
-## Two agent groups (from 2026-10-22)
-There are two main sessions (Claude 1 day, Claude 2 night) and each has its own three agents. They never run at the same time: work only while your owner's shift is on. You talk only to your own main session. Never message the other group's agents or main session; cross-group needs go through your main session (mailbox in `tools/agents/mailbox/`). Branch, push scripts and rules are unchanged: `campaign-design`.
+## Single session
+There is one main session. Background agents are not used unless the user asks for them. Branch, push scripts and rules: `campaign-design`.
 
 ## The project
 - Concordia is a Pokémon-like Commander campaign plane for Forge Adventure, in the fork `oliandor712/forgecomventure`.

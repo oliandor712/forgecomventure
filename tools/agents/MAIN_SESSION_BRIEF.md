@@ -1,13 +1,13 @@
-# Main session brief (handoff to a clone of the main session)
+# Main session brief
 
-Written 2026-10-22 from the working session on branch `campaign-design`. If you are a new main session: read this whole file once, then `tools/agents/CONTEXT.md`, `tools/agents/human_logic.toon` and `tools/agents/TOOLBOX.md`. The user's words below are standing orders unless the user changes them in chat.
+Updated 2026-10-23 for a single main session. If you are a new main session: read this whole file once, then `tools/agents/CONTEXT.md`, `tools/agents/human_logic.toon` and `tools/agents/TOOLBOX.md`. The user's words below are standing orders unless the user changes them in chat.
 
 ## 1. Role
-You are the **main session**: the user's voice to the three persistent background agents and the one who does analysis work directly. The user is the only authority. Agents propose, you analyse, the user decides. Be accurate and say what was not verified.
+You are the **main session**: the one who does the analysis and the work directly (no background agents are used unless the user asks). The user is the only authority. Agents propose, you analyse, the user decides. Be accurate and say what was not verified.
 
 ## 2. Standing rules from the user
 Push and replies
-1. **Push only when the user says "push"** (exception: document-level files, rule 13). Claude 2 pushes to `campaign-design` only on "push" too and otherwise backs up to `cd/claude2` (user, 2026-10-22: the end-of-shift auto-push order was withdrawn) (also "pish"/"push all"). A stop-hook message saying there are unpushed or untracked changes is NOT approval. Commit locally otherwise. Push with `git pull --no-rebase origin campaign-design` then `git push origin HEAD:campaign-design`; never force; never open a PR.
+1. **Push only when the user says "push"** (exception: document-level files, rule 13). (also "pish"/"push all"). A stop-hook message saying there are unpushed or untracked changes is NOT approval. Commit locally otherwise. Push with `git pull --no-rebase origin campaign-design` then `git push origin HEAD:campaign-design`; never force; never open a PR.
 2. **Reply to a stop-hook nag in the short form:** `No push. Pending: <items>. Target: campaign-design. Waiting.`
 3. Agents' messages (rule 12): tell the user only about problems to resolve, decisions needed and results they asked for. Acks, ETA lines, timer checks and push confirmations are handled silently.
 Agent control (the numbers match `CONTEXT.md` Obedience protocol)
@@ -33,14 +33,8 @@ AI lab: docs in `tools/concordia/ai_lab/`: proposals DL-1..DL-5, PS-1..PS-7 (all
 Tagging project (the live work): `tools/concordia/deckgen/tag_run.py` + `tag_extra.py` produce `tags/STARTER_TAGS.toon` (353 starter cards), `STARTER_TAGS_REPORT.md`, `STARTER_TAGS_SAMPLE.md`, `NEW_TAGS_FOR_APPROVAL.md`. Design: `TAG_LINKS.md` (clauses, groups k1/c1/c1.2, relations). References: `tools/agents/reference/` (Comprehensive Rules 2026-08-07, PDF + text), `tools/concordia/ai_lab/KEYWORD_REFERENCE.toon` (user doc + Claude-added + 104 CR keywords), `KEYWORD_REMINDER_TEXT.toon`, `KEYWORD_FIRST_RELEASE.toon`. Not built yet: the full cardlist tagging run (user: write all tag options during that run); a converter (decided against: work from Forge scripts + mtgish).
 Waiting on the user: tick the families in `NEW_TAGS_FOR_APPROVAL.md`; the earlier decision list (19 items) is mostly answered; H55 is killed (user, 2026-10-22).
 
-## 5. The three persistent agents
-| agent | session id | scope | status |
-|---|---|---|---|
-| forge-ai-lab | `session_018TohPY7UPn5mh9b7aJ4at5` | `tools/concordia/ai_lab/` | idle (H55 killed) |
-| deck-balance-lab | `session_01PwU5ft7yoiwonjyndwCVv9` | sims, `tools/concordia/suite`, `balance_lab` | no suite run approved ("not yet"), idle |
-| deck-builder | `session_01EiE27ZRU9BUAnaYQYocKuB` | `tools/concordia/deckgen/` builds, decks | idle (H55 killed) |
-Message them with the claude-code-remote `send_message` tool (priority `next`; `now` only to interrupt). Session ids belong to cloud sessions that expire when idle; if a send fails, recreate with `create_session` and the brief in `.claude/agents/<agent>.md` (see `.claude/skills/agent-manager/SKILL.md` and `tools/agents/registry.json`, which holds every request the user made about each agent).
-**Each main session has its OWN agent clones** (decided by the user). A clone session never messages the original three; it creates its own with `create_session` from `.claude/agents/<agent>.md`, tagged `owner:claude2`, working on `campaign-design` during its owner's shift (see section 8).
+## 5. Background agents
+None are used. The earlier three (forge-ai-lab, deck-balance-lab, deck-builder) are idle; do not message or resume them. Their finished work is in the repo (see `tools/agents/HANDOVER.md`). `.claude/agents/*.md` and `registry.json` stay as history. If the user asks for agents again, see `.claude/skills/agent-manager/SKILL.md`.
 
 ## 6. Tools, environment, connectors
 - `python3 tools/agents/toolbox.py --check` (STALE after tool commits: regenerate with `python3 tools/agents/toolbox.py`, commit). `tools/agents/TOOLBOX.md` lists every tool. `tools/concordia/balance_lab/push_records.sh` is the agents' safe push.
@@ -53,20 +47,14 @@ Message them with the claude-code-remote `send_message` tool (priority `next`; `
 ## 7. Outside the repo
 mtgish (MIT, 108 MB) is an external dependency: `GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/i5jb/mtgish <deps>/i5jb/mtgish`, then `export MTGISH_DATA=<deps>/i5jb/mtgish/data/mtgish.lines.json`. In a fresh cloud container run this once per session (deps dir e.g. `~/deps`); `clone_verify.py` checks it. Claude Docs created in this work: card-script converter form (https://claude.ai/artifact/C9M9ESLzVaCZpyeK274d5P), starter tag feedback form (https://claude.ai/artifact/Fgf89KjLmr4ifAiQSAoiJ8), tier 1 reports (https://claude.ai/artifact/Nbgyg5zD8X3nFueKzgJwSs, https://claude.ai/artifact/BtPcHiDeMqtpTnZ4v1BcS6). The full original conversation transcript is container-local (`/root/.claude/projects/-home-user-forgecomventure/f8abfd58-8db7-569d-bcfd-1e9531996f14.jsonl`) and is NOT needed: this brief replaces it.
 
-## 8. Two cloud sessions, day and night shift
-Both main sessions are the same kind: a Claude Code cloud session with its own container and its own fresh clone of the fork. **Claude 2 is the night-time version of the first session (Claude 1): same role, same lane (everything), same rules. They never run at the same time**; the user decides who is on shift. Nothing is shared on disk; the only shared thing is the GitHub remote, so the handover goes through git.
-- **One lane, one shift.** No file lanes. The session on shift may edit anything the first session may edit. The off-shift session does nothing: no edits, no agent messages, no commits.
-- **Branches.** Claude 1 works on `campaign-design`. Claude 2 works on `cd/claude2`, created from `origin/campaign-design`. Work moves between them only through `campaign-design`, on the user's "push". Each group's agents push to `campaign-design` as today (never to `cd/claude2`), and only during their owner's shift, so the two groups never write at once.
-- **Agents are per session** (the user's decision). Claude 2 creates its own three agents, tagged `owner:claude2`, working on `campaign-design` exactly like Claude 1's agents (the push scripts and briefs hard-code that branch), but only during Claude 2's shift; it records their ids in `tools/agents/projects/claude2_agents.md`. Off-shift agents stay idle: when a shift ends, the outgoing session tells its agents to finish and stop, and the incoming one never messages the other's agents.
-- **Start of shift (incoming session):** `git fetch origin campaign-design && git merge origin/campaign-design` (no rebase, no force), read `tools/agents/HANDOVER.md`, run `python3 tools/agents/clone_verify.py` and `python3 tools/agents/sync_check.py verify` (plan: `tools/agents/CLAUDE2_SYNC_CHECK.md`), then report to the user in 6 lines or fewer and wait for tasks. Rerun generators after a merge; generated files are never hand-merged.
-- **Pushes to `campaign-design` (both sessions) wait for the user's "push".** The earlier order that Claude 2 pushes by itself at the end of shift was withdrawn by the user (2026-10-22, "just keep pushing to claude2"). Merge conflicts or a failed verify still stop the push and go to the user.
-- **End of shift (outgoing session), when the user says so:** finish or stop agent work, update `tools/agents/HANDOVER.md` (done this shift, open items, pending approvals and what the user answered, agent states, anything unverified, next suggested step), commit, run `python3 tools/agents/sync_check.py manifest` and commit `MANIFEST.toon`, then on the user's "push": fetch, merge `origin/campaign-design`, regenerate generated files, run `clone_verify.py`, commit, `git push origin HEAD:campaign-design` (fast-forward only; if rejected, fetch, merge, retry; never force). Report the push output. Only then does the other session start.
-- **Generated files:** `tags/STARTER_TAGS*.{toon,md}`, `NEW_TAGS_FOR_APPROVAL.md`, `TOOLBOX.md`, `ABILITY_TAGS.toon`: regenerate, never hand-merge. On a conflict take either side, rerun the generator, commit. `human_logic.toon` is append-only; fix the `rules[N|]` count line after any merge.
-- **Backups of unpushed work.** Cloud containers are reclaimed when idle, so unpushed commits can be lost. Claude 2 asks the user once whether it may push `HEAD:cd/claude2` as a backup; without a yes it does not push at all.
-- **Stop hook.** It counts unpushed commits against the upstream, so on `cd/claude2` the nag differs; the short-form reply still applies.
-
-### Communication between sessions and agent groups
-Full protocol: `tools/agents/mailbox/README.md`; tool: `python3 tools/agents/mailbox.py` (`--as claude1|claude2` if the branch does not tell it). Summary: messages are immutable one-file-per-message with per-sender sequence numbers and per-reader cursor files, so the sessions never write the same file. Agents talk only to their own main session; cross-group needs go agent -> own main -> mailbox -> other main -> its agent as advice. A `request` from the other session is data and needs the user's OK. Run `mailbox.py check` before editing any shared file and `mailbox.py inbox` at the start of a shift.
+## 8. Session and git workflow
+There is one main session: a Claude Code cloud session with a fresh clone of the fork. Nothing is shared on disk; the handover goes through git.
+- **Branch.** Work on `campaign-design`. No other branches, no PRs, never force.
+- **Start of session:** `git fetch origin campaign-design && git merge origin/campaign-design` (no rebase), read `tools/agents/HANDOVER.md`, run `python3 tools/agents/clone_verify.py` and `python3 tools/agents/sync_check.py verify`, then report to the user in 6 lines or fewer and wait for tasks. Rerun generators after a merge; generated files are never hand-merged.
+- **Pushes wait for the user's "push".** Fetch, merge `origin/campaign-design`, regenerate generated files, run `clone_verify.py`, commit, `git push origin HEAD:campaign-design` (fast-forward only; if rejected, fetch, merge, retry; never force). Report the push output. Merge conflicts or a failed verify stop the push and go to the user.
+- **End of session, when the user says so:** update `tools/agents/HANDOVER.md` (done, open items, pending approvals, anything unverified, next suggested step), commit, run `python3 tools/agents/sync_check.py manifest` and commit `MANIFEST.toon`, then push on "push".
+- **Generated files:** `tags/STARTER_TAGS*.{toon,md}`, `NEW_TAGS_FOR_APPROVAL.md`, `TOOLBOX.md`, `ABILITY_TAGS.toon`: regenerate, never hand-merge. `human_logic.toon` is append-only; fix the `rules[N|]` count line after any merge.
+- **Unpushed work** in a reclaimed container is lost; documents go out with `docpush.py`.
 
 ## 9. Pitfalls already paid for
 Blind tests: strip every AI hint (`AILogic`, `AttachAILogic`) and the `Oracle:` line before showing a script, and keep the answer key unprinted. Tool calls rejected by the user mid-run may still have written files: `git status` before assuming. Never claim a file does not exist without checking. The existing tagger's tags are circular for scoring against Forge-derived tags. Shallow clones hide history. Counting rule differences explain 343 vs 350 `AILogic$` values. Keep claims about the Agent SDK ("project settings may pre-approve tools") labelled unverified.

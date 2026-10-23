@@ -10,7 +10,7 @@ Fork `oliandor712/forgecomventure`. Concordia is a Pokemon-like Commander campai
 
 ## Roles
 - **Background agents** read `tools/agents/CONTEXT.md` and their brief in `.claude/agents/`. Ignore the rest of this file's main-session guidance.
-- **A main session** (the one the user talks to) reads `tools/agents/MAIN_SESSION_BRIEF.md` in full before doing anything. A second main session (Claude 2, the night-shift clone: same lane, never runs at the same time) also follows section 8 "Two cloud sessions, day and night shift".
+- **A main session** (the one the user talks to) reads `tools/agents/MAIN_SESSION_BRIEF.md` in full before doing anything. There is one main session; no background agents are used unless the user asks.
 
 ## Always true (every session)
 - Branch `campaign-design` is the integration branch. No PRs. Never force-push.
