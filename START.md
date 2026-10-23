@@ -26,3 +26,9 @@ RULES
 
 First task, only after the user says go.
 ```
+
+CONTEXT LIMITS (run once in PowerShell, then fully quit and reopen Claude; 200000 x 90 = 180k autocompact)
+```powershell
+[Environment]::SetEnvironmentVariable("CLAUDE_CODE_AUTO_COMPACT_WINDOW","200000","User"); [Environment]::SetEnvironmentVariable("CLAUDE_AUTOCOMPACT_PCT_OVERRIDE","90","User")
+```
+Per-window alternative (launch Claude from that same window): `$env:CLAUDE_CODE_AUTO_COMPACT_WINDOW="200000"; $env:CLAUDE_AUTOCOMPACT_PCT_OVERRIDE="90"`. Also in .claude/settings.json (env). A running session cannot set them for itself; check in a new session with `echo $env:CLAUDE_CODE_AUTO_COMPACT_WINDOW`.
