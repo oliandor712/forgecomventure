@@ -56,6 +56,10 @@ def apply(name, face, lines, sv, tags, ex_groups):
         # S01 optional ("you may"): Optional$ True / OptionalDecider$ You only (UnlessCost is a tax, OptionalCost is kicker-like)
         if re.search(r"\bOptional\$ True|OptionalDecider\$ You", chain) and not re.search(r"Mode\$ Continuous", body): add(gid, "optional")
         if re.search(r"\bUnlessCost\$", chain): add(gid, "unless_cost")
+        mu = re.search(r"\bUnlessCost\$ ([^|\n]+?)\s*(?:\||$)", chain)
+        if mu:
+            import tag_extra as TXm
+            if TXm.compact_mana(mu.group(1)): add(gid, "unless_cost_amount:" + TXm.compact_mana(mu.group(1)))      # the tax amount (P4c E)
         # S02 each opponent / each player (not a single target)
         if "ValidTgts" not in chain and kind in ("A", "T"):
             if re.search(r"Defined\$ (Player\.Opponent|Opponent)\b|ValidPlayers\$ Opponent", chain): add(gid, "target_scope:each_opponent")
@@ -133,6 +137,8 @@ def gap_pass(face, lines, sv, tags, ex_groups):
                 elif re.search(r"[.+]token\b", part): add(gid, "trigger_filter:token")
                 mc = re.search(r"counters_(GE|EQ)(\d+)_(\w+)", part)
                 if mc: add(gid, "trigger_filter:has_counter:" + mc.group(3).lower())
+            if p.get("Mode") in ("ChangesZone", "ChangesZoneAll"):       # the triggering card's type is always stated (P4c A): another creature dies = trigger_filter:creature
+                for tf in TX.spell_filters(p.get("ValidCard", "")): add(gid, "trigger_filter:" + tf)
             mn = re.search(r"ActivatorThisTurnCast\$ (EQ|GE|LE)(\d+)", body)
             if mn and mn.group(1) == "EQ": add(gid, "trigger_filter:nth_spell_" + mn.group(2))
             if p.get("Mode") == "LifeLost": add(gid, "trigger:life_loss")

@@ -36,12 +36,14 @@ Pinned reference text, one line per tag family with a structured or non-obvious 
 | `cost_additional` | an alternative additional cost as the card is cast (reveal a card or pay mana, for example); the cost tags follow |
 | `scales` | the amount (X) of this ability is the number of that kind of thing you control: write it as 'for each <thing> you control' (scales:island on a draw_count:x = draw a card for each Island you control) |
 | `mana_restriction` | the mana can be spent only on what the value says (mana_restriction:instant_or_sorcery = spend this mana only to cast an instant or sorcery spell) |
-| `x_is` | what X is. Write X in the text and do not define it unless the value names a count or a stat: count_<thing>_you_control = for each <thing> you control, own_power / target_power = equal to that creature's power; x_paid = just X (the X in the mana cost) |
+| `x_is` | what X is. Write X in the text and do not define it unless the value names a count or a stat: count_<thing>_you_control = for each <thing> you control, own_power / target_power = equal to that creature's power; x_paid = just X (the X in the mana cost), previous_result = the amount the previous effect of the same ability produced (damage dealt, life lost ...: 'gain life equal to the damage dealt this way') |
 | `controller` | who controls the permanent after the effect: controller:you (default: it enters under the control of the player who controls the effect) or controller:owner (only when the Oracle text says 'under its owner's control') |
 | `optional` | the effect of this group is optional (you may ...) |
 | `target_scope` | whose things or which players the effect hits (you_control, opp_control; no tag = whoever controls it; each_opponent = every opponent, each_player = every player; no value means a single chosen target) |
 | `trigger_scope` | which cards fire a zone-change trigger: self = this card only, other = another card, any = this card or any other card |
-| `trigger_filter` | narrows the triggering card or spell: a card type, power_ge_N / power_le_N (power at least / at most N), one_or_more (triggers once for a group) |
+| `trigger_filter` | narrows the triggering card or spell: a card type (always named for another card's zone-change trigger: trigger_filter:creature = another creature), a negated type (noncreature = noncreature spell), power_ge_N / power_le_N (power at least / at most N), one_or_more (triggers once for a group) |
+| `cost_mana` | the mana part of an activation cost, symbols joined (cost_mana:2b = {2}{B}, cost_mana:x = {X}); write the symbols where cost:mana stands |
+| `unless_cost_amount` | the mana an 'unless pays' tax asks for (unless_cost_amount:2 = unless its controller pays {2}); also the per-creature attack tax |
 | `limit` | limit on how often the ability works (once_per_turn = only once each turn) |
 | `regenerate` | regenerates a creature |
 | `cant_regenerate` | the destroyed creature can't be regenerated |

@@ -41,12 +41,14 @@ LEGEND = {
  "cost_additional": "an alternative additional cost as the card is cast (reveal a card or pay mana, for example); the cost tags follow",
  "scales": "the amount (X) of this ability is the number of that kind of thing you control: write it as 'for each <thing> you control' (scales:island on a draw_count:x = draw a card for each Island you control)",
  "mana_restriction": "the mana can be spent only on what the value says (mana_restriction:instant_or_sorcery = spend this mana only to cast an instant or sorcery spell)",
- "x_is": "what X is. Write X in the text and do not define it unless the value names a count or a stat: count_<thing>_you_control = for each <thing> you control, own_power / target_power = equal to that creature's power; x_paid = just X (the X in the mana cost)",
+ "x_is": "what X is. Write X in the text and do not define it unless the value names a count or a stat: count_<thing>_you_control = for each <thing> you control, own_power / target_power = equal to that creature's power; x_paid = just X (the X in the mana cost), previous_result = the amount the previous effect of the same ability produced (damage dealt, life lost ...: 'gain life equal to the damage dealt this way')",
  "controller": "who controls the permanent after the effect: controller:you (default: it enters under the control of the player who controls the effect) or controller:owner (only when the Oracle text says 'under its owner's control')",
  "optional": "the effect of this group is optional (you may ...)",
  "target_scope": "whose things or which players the effect hits (you_control, opp_control; no tag = whoever controls it; each_opponent = every opponent, each_player = every player; no value means a single chosen target)",
  "trigger_scope": "which cards fire a zone-change trigger: self = this card only, other = another card, any = this card or any other card",
- "trigger_filter": "narrows the triggering card or spell: a card type, power_ge_N / power_le_N (power at least / at most N), one_or_more (triggers once for a group)",
+ "trigger_filter": "narrows the triggering card or spell: a card type (always named for another card's zone-change trigger: trigger_filter:creature = another creature), a negated type (noncreature = noncreature spell), power_ge_N / power_le_N (power at least / at most N), one_or_more (triggers once for a group)",
+ "cost_mana": "the mana part of an activation cost, symbols joined (cost_mana:2b = {2}{B}, cost_mana:x = {X}); write the symbols where cost:mana stands",
+ "unless_cost_amount": "the mana an 'unless pays' tax asks for (unless_cost_amount:2 = unless its controller pays {2}); also the per-creature attack tax",
  "limit": "limit on how often the ability works (once_per_turn = only once each turn)",
  "regenerate": "regenerates a creature", "cant_regenerate": "the destroyed creature can't be regenerated",
  "prevent_damage": "prevents damage that would be dealt (a targeted shield, not all combat damage)",
@@ -141,6 +143,8 @@ DOC = {
  "draw_count:<n|x> / discard_count:<n|x>": ("how many cards an ability draws or makes a player discard", "user note: tag draw count"),
  "tempo:+n|x": ("net cards added to your hand or battlefield minus cards removed (the spell itself, sacrificed or discarded cards) when the ability resolves; tokens count 0.5 each; only positive values are tagged; tempo:x when an amount is a variable", "user note: tempo gain (+1), applied to every ability that adds more cards than it removes"),
  "put_onto_battlefield + from_zone:<zone>": ("a card is put onto the battlefield from a zone (put_onto_battlefield from_zone:library) without being cast, so its mana cost and 'when you cast' triggers are skipped; enter-the-battlefield triggers still happen (CR 603.6a). Distinct from trigger:etb, which is a trigger on entering", "user note, confirmed 2026-10-22: the tag means 'not cast'"),
+ "cost_mana:<symbols>": ("the mana part of an activation cost (cost_mana:2b = {2}{B})", "P4c E, user 2026-10-23 (placeholder triage: {cost} was 117 of 317 placeholders)"),
+ "unless_cost_amount:<symbols>": ("the mana an 'unless pays' tax or attack tax asks for", "P4c E, user 2026-10-23 (Sage's Dousing, Ghostly Prison)"),
  "cost_if_you_do": ("the 'If you do' part marks the preceding sacrifice/discard as a cost", "user note on Victimize"),
  "enters_untapped / enters_tapped_conditional": ("lands that enter untapped, or tapped unless a condition holds (enters_tapped stays for always-tapped)", "user note: tag whether a land enters tapped"),
  "cast_free": ("casts a spell without paying its mana cost", "found in the cross-check: Rishkar's Expertise"),
@@ -261,6 +265,25 @@ def token_tags(p, out):
         if ty == key: out.append(prov)
 
 
+def compact_mana(c):
+    """'1 B' -> '1b'; '' when the string is not plain mana symbols"""
+    c = (c or "").strip()
+    return c.replace(" ", "").lower() if re.fullmatch(r"(?:(?:\d+|X|[WUBRGC])\s*)+", c) else ""
+
+
+CTYPES = ("Creature", "Land", "Artifact", "Enchantment", "Planeswalker", "Instant", "Sorcery", "Battle")
+
+
+def spell_filters(vc):
+    """card types named by a ValidCard filter, a negated type as 'non<type>' (Card.nonCreature -> noncreature); Self-only parts name no filter"""
+    out = []
+    for part in [x for x in vc.split(",") if x]:
+        if re.match(r"^\w+\.Self$", part): continue
+        for neg, ty in re.findall(r"(?<![A-Za-z])(non)?(%s)(?![a-z])" % "|".join(CTYPES), part):
+            out.append((neg + ty).lower())
+    return list(dict.fromkeys(out))
+
+
 def cost_tags(cost, out):
     if not cost: return
     if re.search(r"(^|\s)T(\s|$)", cost): out.append("cost:tap")
@@ -277,13 +300,15 @@ def cost_tags(cost, out):
     for m in re.finditer(r"AddCounter<(\d+)/LOYALTY>", cost): out += ["loyalty_change:+" + m.group(1), "counters:loyalty"]
     for m in re.finditer(r"SubCounter<(\d+)/LOYALTY>", cost): out += ["loyalty_change:-" + m.group(1), "counters:loyalty"]
     c2 = re.sub(r"\w+<[^>]*>", "", cost)
-    if re.search(r"(^|\s)(\d+|X|[WUBRGC])(\s|$)", c2): out.append("cost:mana")
+    if re.search(r"(^|\s)(\d+|X|[WUBRGC])(\s|$)", c2):
+        out.append("cost:mana")
+        out.append("cost_mana:" + "".join(re.findall(r"(?:^|\s)(\d+|X|[WUBRGC])(?=\s|$)", c2)).lower())      # the mana amount of the cost, symbols joined (2b = {2}{B}); user 2026-10-23 (P4c E)
 
 
 PROP = {"CardPower": "power", "CardToughness": "toughness", "CardManaCost": "mana_value", "CardManaCostLKI": "mana_value", "DamageAmount": "damage", "LifeAmount": "life",
         "LifeGained": "life_gained", "xPaid": "x_paid", "YourLifeTotal": "your_life_total", "YourStartingLife": "your_starting_life", "LifeYouGainedThisTurn": "life_gained_this_turn",
         "LifeOppsLostThisTurn": "life_lost_by_opponents_this_turn", "Domain": "domain", "Converge": "colors_spent", "Party": "party_size", "ChosenNumber": "chosen_number",
-        "Kicked": "kicked", "TimesKicked": "times_kicked", "CastTotalManaSpent": "mana_spent", "RememberedSize": "remembered_count", "RememberedNumber": "remembered_number",
+        "Kicked": "kicked", "TimesKicked": "times_kicked", "CastTotalManaSpent": "mana_spent", "RememberedSize": "remembered_count", "RememberedNumber": "previous_result",
         "YouDrewThisTurn": "cards_drawn_this_turn", "CardsInYourHand": "cards_in_your_hand", "CardsInHand": "cards_in_hand", "Intensity": "intensity", "Amount": "amount",
         "CounterNum": "counters", "CardsDiscardedThisTurn": "cards_discarded_this_turn", "CardsDrawnThisTurn": "cards_drawn_this_turn"}
 SRC = {"Targeted": "target", "ParentTargeted": "target", "TargetedLKI": "target", "TargetedPlayer": "target_player", "Sacrificed": "sacrificed", "TriggeredCard": "triggering",
@@ -500,7 +525,7 @@ def extra(lines, sv, types, text):
                 elif o == "Battlefield": add("trigger:leaves")
             elif mode in ("SpellCast", "SpellCastOrCopy"):
                 add("trigger:spell_cast")
-                for ty in re.findall(r"[A-Z][a-z]+", p.get("ValidCard", "")): add("trigger_filter:" + tok(ty))
+                for tf in spell_filters(p.get("ValidCard", "")): add("trigger_filter:" + tf)      # Card.nonCreature -> noncreature (negation is part of the value, P4c B)
             elif mode in ("Attacks", "AttackersDeclared", "AttackerBlocked", "AttackerUnblocked"): add("trigger:attacks" if mode in ("Attacks", "AttackersDeclared") else "trigger:" + tok(mode))
             elif mode == "Discarded": add("trigger:discard")
         if kind == "S":
@@ -539,7 +564,7 @@ def extra(lines, sv, types, text):
             else: affected_tags({"Affected": vc}, add)
         if kind == "S" and p.get("Mode") == "CantBlockBy" and "Self" not in p.get("ValidAttacker", "") and p.get("ValidBlocker"):
             restrict_add(["cant_block"], add, p.get("Description", "")); affected_tags({"Affected": p["ValidBlocker"].split(",")[0]}, add)   # these creatures can't block (Bower Passage)
-        if kind == "S" and p.get("Mode") == "CantAttackUnless": add("restrict", "restrict_kind:cant_attack_unless_cost")
+        if kind == "S" and p.get("Mode") == "CantAttackUnless": add("restrict", "restrict_kind:cant_attack_unless_cost", *(["unless_cost_amount:" + compact_mana(p["Cost"])] if compact_mana(p.get("Cost", "")) else []))
         if kind == "S" and p.get("Mode") == "Continuous" and "doesn't untap" in p.get("AddHiddenKeyword", "").lower():
             restrict_add(["doesnt_untap"], add, p.get("AddHiddenKeyword", "")); affected_tags(p, add)
         if kind == "S" and p.get("Mode") == "CantBlockBy" and "Self" in p.get("ValidAttacker", ""):
