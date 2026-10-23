@@ -5,12 +5,7 @@ Changes to existing behaviour (approved with "approve all tags", 2026-10-22; tre
 
 | Approve | Tag family | Meaning | Source of the rule | Cards | Values seen (cards) |
 |---|---|---|---|---|---|
-| [ ] proposed | `cost_mana` | the mana part of an activation cost (cost_mana:2b = {2}{B}) | P4c E, user 2026-10-23 (placeholder triage: {cost} was 117 of 317 placeholders) | 39 (e.g. Mind Stone, Thrashing Brontodon, Ember Hauler) | cost_mana:1 (9); cost_mana:1r (4); cost_mana:2 (3); cost_mana:r (3); cost_mana:4 (3); cost_mana:1b (2); cost_mana:3g (2); cost_mana:2g (2) |
-| [ ] proposed | `return` | a card returns from the graveyard or exile to hand or library (return from_zone:graveyard to_zone:hand); the readable detail behind the AI umbrella tag recursion. from_zone / to_zone are the shared zone tags used by every zone-move tag (return, take, put_onto_battlefield, cost:exile) | reverse check r5: Elvish Regrower lost its meaning when recursion became an AI tag | 9 (e.g. Cadaver Imp, Gravedigger, Raise Dead) | return (9) |
-| [ ] proposed | `unless_cost_amount` | the mana an 'unless pays' tax or attack tax asks for | P4c E, user 2026-10-23 (Sage's Dousing, Ghostly Prison) | 2 (e.g. Propaganda, Ghostly Prison) | unless_cost_amount:2 (2) |
-| [ ] proposed | `investigate` | investigate (CR 701.16): create a Clue token | user 2026-10-23, P4c D (Thraben Inspector) | 2 (e.g. Thraben Inspector, Fateful Absence) | investigate (2) |
-| [ ] proposed | `monarch` | you become the monarch (CR 724) | user 2026-10-23, P4c D (Palace Jailer) | 1 (e.g. Palace Jailer) | monarch (1) |
-| [ ] proposed | `bolster` | bolster N (CR 701.39): put N +1/+1 counters on the creature you control with the least toughness | user 2026-10-23, P4c D (Elite Scaleguard) | 1 (e.g. Elite Scaleguard) | bolster:2 (1) |
+| | *No family waits for approval.* | | | | |
 
 ## New values inside already-approved families (the family is approved; these values appeared after the approval)
 
