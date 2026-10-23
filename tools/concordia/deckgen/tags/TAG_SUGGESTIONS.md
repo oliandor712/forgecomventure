@@ -31,5 +31,5 @@ Merging `trigger:etb` with `trigger_scope:self`; merging the three mana tags (de
 ## 4. Decisions for the user (answered 2026-10-23)
 - **D1: (a).** Treasure and Food makers keep `mana_source` / `lifegain`, linked to the token (`provided_by token_type:treasure`) so a builder can exclude them.
 - **D2: no.** AI tags do not feed card power (quota and playability only).
-- **D3: open.** Implement C, D, E, F now (before the full-cardlist run), or only C and D first?
+- **D3: C and D first.** Built 2026-10-23 (local, unpushed): `deckgen/derived_tags.py`, `face:` and `derived:` lines in `STARTER_TAGS.toon`. E and F wait.
 - **D4: yes.** New AI-side families in E join the AI Tags category on creation, with no per-family approval.

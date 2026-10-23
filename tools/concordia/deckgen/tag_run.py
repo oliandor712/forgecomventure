@@ -12,6 +12,7 @@ sys.path.insert(0, HERE)
 import ability_tags as AT
 import tag_extra as TX
 import tag_verify as TV
+import derived_tags as DT
 
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 def _mtgish_path():
@@ -301,7 +302,8 @@ def record(name, text, mg):
     def gkey(g): return (0 if g == "c0" else 1 if g.startswith("k") else 3 if g == "v" else 2, [int(x) for x in re.findall(r"\d+", g)])
     groups = dict(sorted(groups.items(), key=lambda kv: gkey(kv[0])))
     ai_tags = [x for x in tags if TV.is_ai_tag(x)]
-    return dict(name=name, ai_tags=ai_tags, groups=groups, base=[t.lower() for t in base], new=[t.lower() for t in ex_tags if t.lower() in tags], tags=tags, clauses=clauses, links=links, mtgish=mt, verify=ver, ai=ai, aipref=aipref, removedeck=rd, nlines=n)
+    links = list(links) + DT.provided_by(set(tags), set(base))
+    return dict(name=name, face=DT.face(text, name), derived=DT.derived(tags, groups, base), ai_tags=ai_tags, groups=groups, base=[t.lower() for t in base], new=[t.lower() for t in ex_tags if t.lower() in tags], tags=tags, clauses=clauses, links=links, mtgish=mt, verify=ver, ai=ai, aipref=aipref, removedeck=rd, nlines=n)
 
 
 def render(r):
@@ -309,6 +311,8 @@ def render(r):
     o = ["card: " + q(r["name"]), "typing: " + " ".join(x for x in r["tags"] if x.startswith(TYPING)),
          "tags: " + " ".join(x for x in r["tags"] if not TV.is_ai_tag(x) and not x.startswith(TYPING))]
     if r["ai_tags"]: o.append("ai_tags: " + " ".join(r["ai_tags"]))
+    o.append("face: " + r["face"])
+    if r["derived"]: o.append("derived: " + " ".join(r["derived"]))
     o.append("clauses[%d]{id,trigger,cost,verb,payload,affected,duration}:" % len(r["clauses"]))
     for c in r["clauses"]: o.append("  " + ",".join(q(c[k]) for k in ("id", "trigger", "cost", "verb", "payload", "affected", "duration")))
     if r["links"]:
