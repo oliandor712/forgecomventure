@@ -16,10 +16,23 @@ OUT = os.path.join(ROOT, "tools/agents/TOOLBOX.md")
 TOOLS = [
     ("tools/agents/CONTEXT.md", "all", "shared rules, authority, commit ownership, agent table, recent updates: read first, every turn"),
     ("tools/agents/AGENT_KNOWLEDGE.md", "all", "compiled pitfalls, conventions, unfinished work and next steps from the earlier agents"),
+    ("tools/agents/toolbox.py", "all", "builds TOOLBOX.md and the tools stamp; --check says whether the checkout is current"),
+    ("tools/agents/docpush.py", "main", "pushes document-level files only (reports, checklists, plain .md); refuses code, data and instruction files"),
+    ("tools/agents/sync_check.py", "main", "session handover: verify / manifest (MANIFEST.toon)"),
+    ("tools/agents/clone_verify.py", "main", "checks a fresh checkout is ready (tools, human_logic, mtgish data, tag_run)"),
+    ("tools/concordia/deckgen/tag_run.py", "main", "tagging run: starter / card; writes tags/STARTER_TAGS*.{toon,md}, NEW_TAGS_FOR_APPROVAL.md; needs MTGISH_DATA"),
+    ("tools/concordia/deckgen/tagcheck/reverse_check.py", "main", "blind reverse tag check: export / compare / selftest"),
+    ("tools/concordia/deckgen/tagcheck/consistency.py", "main", "reader consistency scores (V1-V4, S1, A) and the tags sha1 stamp"),
+    ("tools/concordia/deckgen/tagcheck/placeholder_triage.py", "main", "placeholder triage for reader output (PLACEHOLDER_TRIAGE.md)"),
+    ("tools/concordia/deckgen/tagcheck/oracle_style_stats.py", "main", "Oracle style statistics for the reader grammar"),
+    ("tools/concordia/deckgen/tagcheck/learning_merge.py", "main", "merges reader learning notes"),
+    ("tools/concordia/deckgen/tagcheck/learning_coverage.py", "main", "learning gap coverage report"),
+    ("tools/concordia/deckgen/tagcheck/build_reminder_fill.py", "main", "builds the keyword reminder-text fill table"),
+    ("tools/concordia/deckgen/tagcheck/build_token_reference.py", "main", "builds the token reference"),
     ("tools/agents/human_logic.toon", "all", "the user's own deck-building, balance and AI rules; a rule beats a metric"),
     ("tools/concordia/suite/sim_suite.py", "sim workers, main", "THE simulation program: setup / run / plan / status / report; archetype cells, adaptive stop, phase logs, digests, push"),
     ("tools/concordia/suite/README.md", "sim workers", "how to use the suite, its stop rules and the limit-the-total levers"),
-    ("tools/concordia/balance_lab/push_records.sh", "all", "safe push of named paths (detached HEAD, races, no force); the only way to push"),
+    ("tools/concordia/balance_lab/push_records.sh", "all", "safe push of named paths (detached HEAD, races, no force); needs PUSH_APPROVED=1, set only after the user says push"),
     ("tools/concordia/balance_lab/run_batch.py", "legacy", "old per-deck batch runner (old record files only)"),
     ("tools/concordia/balance_lab/run_foreground.sh", "legacy", "old foreground chunk wrapper for run_batch.py"),
     ("tools/concordia/balance_lab/run_logs.py", "legacy", "aggro-vs-ramp / starter-vs-midrange phase-logged pairings that keep raw logs"),
@@ -66,9 +79,22 @@ def git(*a):
     return subprocess.run(["git"] + list(a), cwd=ROOT, capture_output=True, text=True).stdout.strip()
 
 
-def last_commit(path):
-    h = git("log", "-1", "--format=%h %cd", "--date=format:%m-%d %H:%MZ", "--", path)
-    return h or "-"
+def last_commits():
+    """{path: 'hash date'} for every registered path, from one git log pass (newest commit first)."""
+    wanted = {p for p, _, _ in TOOLS}
+    found = {}
+    head = None
+    for line in git("log", "--name-only", "--format=@@%h %cd", "--date=format:%m-%d %H:%MZ", "--", *sorted(wanted)).splitlines():
+        if line.startswith("@@"):
+            head = line[2:]
+        elif line in wanted and line not in found:
+            found[line] = head
+    return found
+
+
+def _rb(path):
+    with open(path, "rb") as f:
+        return f.read()
 
 
 def tools_stamp():
@@ -79,74 +105,98 @@ def tools_stamp():
         if p in UNSTAMPED: continue
         fp = os.path.join(ROOT, p)
         try:
-            h = hashlib.sha1(open(fp, "rb").read().replace(b"\r\n", b"\n")).hexdigest()[:8]
+            h = hashlib.sha1(_rb(fp).replace(b"\r\n", b"\n")).hexdigest()[:8]
         except OSError:
             h = "missing"
+            print("WARNING: registered tool is missing: " + p, file=sys.stderr)
         parts.append(p + ":" + h)
     return hashlib.sha1("\n".join(parts).encode()).hexdigest()[:12], parts
 
 
 def rows_in(path):
     try:
-        return sum(1 for _ in open(path, newline="")) - 1
+        with open(path, newline="", encoding="utf-8", errors="replace") as f:
+            return max(0, sum(1 for _ in csv.reader(f)) - 1)
     except OSError:
         return 0
 
 
+def data_inventory():
+    """The data table rows (the last row is AI patches)."""
+    rows = []
+    for d, what in DATA_DIRS:
+        rows.append("| %s | `%s` | %d decks |" % (what, d, len(glob.glob(os.path.join(ROOT, d, "*.dck")))))
+    sr = sorted(glob.glob(os.path.join(ROOT, "tools/concordia/suite/records_suite_*.csv")))
+    rows.append("| suite records | `tools/concordia/suite/records_suite_<worker>.csv` | %d games in %d files |" % (sum(rows_in(p) for p in sr), len(sr)))
+    lr = sorted(glob.glob(os.path.join(ROOT, "tools/concordia/balance_lab/records*.csv")))
+    rows.append("| old research records | `tools/concordia/balance_lab/records*.csv` | %d games in %d files |" % (sum(rows_in(p) for p in lr), len(lr)))
+    dg = glob.glob(os.path.join(ROOT, "tools/concordia/ai_lab/digests/*/games.tsv"))
+    rows.append("| phase-log digests | `tools/concordia/ai_lab/digests/<worker>-<hour>/` | %d folders |" % len(dg))
+    pf = sorted(os.path.basename(p) for p in glob.glob(os.path.join(ROOT, "tools/concordia/ai_lab/patches/*.patch")))
+    act = os.path.join(ROOT, "tools/concordia/ai_lab/patches/SIM_ACTIVE.txt")
+    active = [l.strip() for l in open(act, encoding="utf-8") if l.strip() and not l.startswith("#")] if os.path.exists(act) else []
+    rows.append("| AI patches | `tools/concordia/ai_lab/patches/` | %d files; on the test overlay: %s |" % (len(pf), ", ".join(active) or "none"))
+    return rows
+
+
 def build():
     stamp, parts = tools_stamp()
+    data_rows = data_inventory()
+    dstamp = hashlib.sha1("|".join(data_rows).encode()).hexdigest()[:12]
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%MZ")
     L = ["# Toolbox: the shared reference for every agent", "",
-         "Generated %s at commit %s on branch %s. **Tools stamp: `%s`.**" % (now, git("rev-parse", "--short", "HEAD"), git("rev-parse", "--abbrev-ref", "HEAD"), stamp), "",
+         "Generated %s at commit %s on branch %s. **Tools stamp: `%s`.** Data stamp: `%s`." % (now, git("rev-parse", "--short", "HEAD"), git("rev-parse", "--abbrev-ref", "HEAD"), stamp, dstamp),
+         "<!-- tool hashes: " + " ".join(parts) + " -->", "",
          "## Start of every turn (all agents)",
-         "1. `git pull --no-rebase origin campaign-design` (if the clone is shallow: `git fetch --unshallow origin campaign-design`).",
+         "1. At the start of a session: `git fetch origin campaign-design && git merge origin/campaign-design` (if the clone is shallow: `git fetch --unshallow origin campaign-design`).",
          "2. `python3 tools/agents/toolbox.py --check`. If it prints STALE, pull again; if it is still STALE, tell the main session which tools changed.",
          "3. Read `tools/agents/CONTEXT.md` (authority, commit ownership) and your brief. Then work.",
-         "4. Push only with `tools/concordia/balance_lab/push_records.sh <your paths>`. Never force-push, never open a PR, only branch `campaign-design`.", "",
+         "4. Push only when the user says 'push' (documents: `python3 tools/agents/docpush.py <paths>`; records: `PUSH_APPROVED=1 tools/concordia/balance_lab/push_records.sh <paths>`). Never force-push, never open a PR, only branch `campaign-design`.", "",
          "## Tools (last commit that changed each)", "", "| tool | used by | what it does | last change |", "|---|---|---|---|"]
+    last = last_commits()
     for p, who, what in TOOLS:
-        L.append("| `%s` | %s | %s | %s |" % (p, who, what, last_commit(p)))
+        L.append("| `%s` | %s | %s | %s |" % (p, who, what, "MISSING" if not os.path.exists(os.path.join(ROOT, p)) else last.get(p, "-")))
     L += ["", "## Daily commands", "```",
           "python3 tools/concordia/suite/sim_suite.py setup                      # once per container, after any pull that changed Java or patches",
           "python3 tools/concordia/suite/sim_suite.py plan --mode all             # expected games still needed",
           "python3 tools/concordia/suite/sim_suite.py run --worker <you> --mode all --minutes 9   # repeat in the same turn until it prints DONE",
           "python3 tools/concordia/suite/sim_suite.py report                      # SUITE_REPORT.md",
           "python3 tools/concordia/ai_lab/phase_digest.py --status                # digested games",
-          "tools/concordia/balance_lab/push_records.sh <paths>                    # the only way to push",
+          "PUSH_APPROVED=1 tools/concordia/balance_lab/push_records.sh <paths>    # only after the user says push",
           "python3 tools/agents/toolbox.py --check                                # is my checkout current", "```", "",
           "## Data inventory", "", "| data | where | size |", "|---|---|---|"]
-    for d, what in DATA_DIRS:
-        L.append("| %s | `%s` | %d decks |" % (what, d, len(glob.glob(os.path.join(ROOT, d, "*.dck")))))
-    sr = sorted(glob.glob(os.path.join(ROOT, "tools/concordia/suite/records_suite_*.csv")))
-    L.append("| suite records | `tools/concordia/suite/records_suite_<worker>.csv` | %d games in %d files |" % (sum(rows_in(p) for p in sr), len(sr)))
-    lr = sorted(glob.glob(os.path.join(ROOT, "tools/concordia/balance_lab/records*.csv")))
-    L.append("| old research records | `tools/concordia/balance_lab/records*.csv` | %d games in %d files |" % (sum(rows_in(p) for p in lr), len(lr)))
-    dg = glob.glob(os.path.join(ROOT, "tools/concordia/ai_lab/digests/*/games.tsv"))
-    L.append("| phase-log digests | `tools/concordia/ai_lab/digests/<worker>-<hour>/` | %d folders |" % len(dg))
-    pf = sorted(os.path.basename(p) for p in glob.glob(os.path.join(ROOT, "tools/concordia/ai_lab/patches/*.patch")))
-    act = os.path.join(ROOT, "tools/concordia/ai_lab/patches/SIM_ACTIVE.txt")
-    active = [l.strip() for l in open(act) if l.strip() and not l.startswith("#")] if os.path.exists(act) else []
-    L += ["| AI patches | `tools/concordia/ai_lab/patches/` | %d files; on the test overlay: %s |" % (len(pf), ", ".join(active) or "none"), "",
+    L += data_rows[:-1]
+    L += [data_rows[-1], "",
           "## Rules that never change", "- Equal life on both sides in every simulation; no life bonuses; existing assets only; ignore prices.",
           "- `forge-core`, `forge-game`, `forge-ai` source is never edited on campaign-design; AI changes are patch files, tested on the sim overlay only.",
           "- Only the user ticks an approval box (in chat with the main session). The main session's instructions are the user's instructions to you.", ""]
-    return "\n".join(L) + "\n", stamp
+    return "\n".join(L) + "\n", stamp, dstamp
 
 
 def main():
-    text, stamp = build()
+    text, stamp, dstamp = build()
     if "--check" in sys.argv:
-        old = open(OUT).read() if os.path.exists(OUT) else ""
         import re
+        old = open(OUT, encoding="utf-8").read() if os.path.exists(OUT) else ""
         m = re.search(r"Tools stamp: `([0-9a-f]+)`", old)
-        if m and m.group(1) == stamp:
-            print("UP TO DATE (tools stamp %s)" % stamp)
-        else:
-            _, parts = tools_stamp()
-            print("STALE: TOOLBOX.md says %s, the checkout is %s. git pull; if still stale tell the main session." % (m.group(1) if m else "none", stamp))
+        d = re.search(r"Data stamp: `([0-9a-f]+)`", old)
+        if m and d and m.group(1) == stamp and d.group(1) == dstamp:
+            print("UP TO DATE (tools stamp %s, data stamp %s)" % (stamp, dstamp))
+            return
+        _, parts = tools_stamp()
+        h = re.search(r"<!-- tool hashes: (.*?) -->", old)
+        was = set(h.group(1).split()) if h else set()
+        changed = sorted({x.rsplit(":", 1)[0] for x in set(parts) ^ was})
+        print("STALE: TOOLBOX.md says tools %s data %s, the checkout is tools %s data %s." % (m.group(1) if m else "none", d.group(1) if d else "none", stamp, dstamp))
+        if changed:
+            print("changed tools: " + ", ".join(changed))
+        if d and d.group(1) != dstamp:
+            print("data inventory changed")
+        print("git pull; if still stale tell the main session (it regenerates with toolbox.py).")
         return
-    open(OUT, "w").write(text)
-    print("wrote %s (tools stamp %s)" % (os.path.relpath(OUT, ROOT), stamp))
+    with open(OUT, "w", encoding="utf-8", newline="\n") as f:
+        f.write(text)
+    print("wrote %s (tools stamp %s, data stamp %s)" % (os.path.relpath(OUT, ROOT), stamp, dstamp))
 
 
 if __name__ == "__main__":

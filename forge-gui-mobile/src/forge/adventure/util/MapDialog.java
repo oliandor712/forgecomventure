@@ -446,7 +446,7 @@ public class MapDialog {
             if (E.setStarterColor != null && !E.setStarterColor.isEmpty()) { //Replaces the starter deck with one for these colors
                 Current.player().replaceStarterColor(E.setStarterColor);
             }
-            if (E.setStarterDeck != null && !E.setStarterDeck.isEmpty()) { //Replaces the starter deck with this deck file
+            else if (E.setStarterDeck != null && !E.setStarterDeck.isEmpty()) { //Replaces the starter deck with this deck file
                 Current.player().replaceStarterDeck(E.setStarterDeck);
             }
             if (E.gateTo != null && !E.gateTo.isEmpty()) { //Leave the map and enter another POI

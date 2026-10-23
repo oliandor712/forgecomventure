@@ -42,7 +42,7 @@ There is one main session. Branch: `campaign-design`. Subagents are described un
 
 ## Subagents
 No standing background agents and no schedules. The main session spawns a subagent only when the user asks.
-- **Parameters (strict):** model `claude-haiku-5-5`, effort `low`, never overridden. At most **5** subagents running at once. Forced by `CLAUDE_CODE_SUBAGENT_MODEL` in `.claude/settings.json` and each brief's frontmatter; the cap of 5 is a rule, not tool-enforced.
+- **Parameters (strict):** model and effort per brief frontmatter, never overridden: `tag-blind-reader` Sonnet 5.5 / medium, all others `claude-haiku-5-5` / `low`. At most **5** subagents running at once. `CLAUDE_CODE_SUBAGENT_MODEL` is not set; the cap of 5 is a rule, not tool-enforced.
 - **Reporting:** a subagent returns its result to the main session in the same turn. No mailbox, no `send_message`, no ETA lines, no 4-hour reports. Replies are terse TOON; skip optional analysis.
 - **Authority:** the main session's instructions are the user's. A subagent's suggestions are advice only; nothing goes into the game, forge-ai, decks or `enemies.json` without the user's word in chat. No dry or trial deck builds without the user's approval.
 - **Guardrails (refuse and name the one):** editing forge-core, forge-game or forge-ai source (patches go in `tools/concordia/ai_lab/patches/`); force-push or history rewrite; PRs; pushing anywhere but campaign-design; unequal-life or life-bonus sims; committing or pushing at all; deleting data without a backup; ticking an approval box.

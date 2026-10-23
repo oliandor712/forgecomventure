@@ -9,15 +9,14 @@ Push `campaign-design` only on the user's "push" (documents via `python3 tools/a
 Goals in order: (1) same output from identical tags, (2) reads like a Magic card, (3) accuracy not lost. Plan: `READER_GRAMMAR_PLAN.md` (phases 0-8). Done: phases 0-2 (baseline `GRAMMAR_BASELINE.md`, `ORACLE_STYLE_STATS.md`, grammar drafts `tags/READER_GRAMMAR.md` full and `tags/READER_GRAMMAR_SHORT.md`, G2 = Equip line last, per the user).
 Baseline r12a/b/c (353 cards, 3 readers, tags sha1 ec0f8f6071): V1 61.5%, V1t 62.1%, V2 0.984, V3 87.9%, V4 SD 0.0077, S1 95.3%, S1b 61.3%, A 0.932. Targets: V3>=98%, V1>=85%, V2>=0.95, V4 SD<=0.010, S1>=98%, A>=0.916.
 
-### Phase 3 A/B (user said "go phase 3") - runs finished, NOT SCORED
-Run dirs `~/tagcheck_runs/r13c<arm><reader>` (arms: c1 full grammar free text, c2 full grammar + per-ability `records`, c3 short grammar; readers a/b/c; C0 = existing r12a/b/c). Each has `in/ key/ out/`. Inputs identical to r12 apart from grammar added to reminders (`reader_grammar`; c2 also `output_format`). Setup script: `/tmp/claude-0/-home-user-forgecomventure/23d7fb43-eb46-5702-a624-66afa2f79104/scratchpad/setup_arms.py` (archived).
-Output state (checked 17:18 UTC, card counts verified): c1a/b/c, c2a/b/c, c3a, c3b complete (9 batches, 353 cards each, files are `{"cards":[...]}`). **r13c3c has only batches 1-7 (280 cards); batches 8 and 9 are missing** (rate-limit failure). Without agents they cannot be re-run: score C3 on c3a and c3b only (or on the 280 cards c3c has) and say so in the report.
-To finish:
-1. Verify all 9 runs: 9 files, 353 cards.
-2. C2: convert `records` to `text` (join with " / "), keep the raw copy.
-3. Score: `MTGISH_DATA=$HOME/deps/i5jb/mtgish/data/mtgish.lines.json python3 tools/concordia/deckgen/tagcheck/reverse_check.py compare --run <run>` for each run (it overwrites `tagcheck/REVERSE_CHECK_REPORT.md`: `git checkout` it afterwards). Then `python3 tools/concordia/deckgen/tagcheck/consistency.py compare --runs r13c1a r13c1b r13c1c [--out file]`, same for c2, c3.
-4. Compare to the C0 baseline; apply the gate (A must stay >= 0.916; pick the arm that moves V3/V1/V2/S1 toward targets); write `tagcheck/R12_GRAMMAR_AB.md`; docpush; report to the user. Phases 4-8 only on the user's go.
-Known reader ambiguities (for grammar v2): `controller:you` wording for graveyard puts vs tutor puts; mill without amount; missing-tag placeholders.
+### Phase 3 A/B: scored (2026-10-23), report `tagcheck/R12_GRAMMAR_AB.md`
+C2 (full grammar + per-ability records) is best: V1 0.776, V2 0.991, V3 0.968, V4 SD 0.0032, S1 0.971, A 0.928 (C0 baseline V1 0.615, V3 0.879, A 0.932). Misses V3 (0.98), V1 (0.85), S1 (0.98). C3 incomplete (r13c3c has 7 of 9 batches, not rerun). Scores reproduced by the later audit.
+### Audit and new plan: `tagcheck/TAG_RUN_AUDIT_AND_PLAN.md` (supersedes plan section 5 for phases 4-8)
+Order now: P4a housekeeping (done, unpushed: sha1 stamp strips carriage returns in `consistency.py`; this file), P4b placeholder triage (done: `tagcheck/PLACEHOLDER_TRIAGE.md`, `placeholder_triage.py`), P4c tag proposals (A-E in the triage; need the user's approval), P4d grammar v2, P4e rerun on changed cards + 20 controls with one C0 repeat to measure noise, P5 hold-out, P6 human check, P7 freeze, P8 deterministic renderer. User decisions 2026-10-23: keep the V1 target 0.85; run the C0 repeat; approved P4a and P4b.
+Placeholders are the main V1 limit: 88 of 348 cards (25%) have one; `{cost}` is structural (mana amounts are not tags); `{effect}`/`{filter}` come mostly from triggers without the triggering card type, no negation in `trigger_filter`, and "equal to previous result" amounts.
+Run dirs: `~/tagcheck_runs/r12*`, `r13c*` on the Windows machine (also archived in `tagcheck/archive_20261023/tagcheck_runs.tgz`). Known reader ambiguities for grammar v2: `controller:you` wording for graveyard puts vs tutor puts; mill without amount; missing-tag placeholders.
+C0 repeat done (`tagcheck/R14_C0_REPEAT.md`): baseline readers were Sonnet/high, the repeat ran Haiku/low (commit 438fcbb12c1), so it is not a noise floor: same 24 cards V3 1.00 -> 0.75, V1 0.83 -> 0.54, accuracy equal. Decided 2026-10-23: readers use Sonnet 5.5 / medium. C0 repeat on the same 24 cards with Sonnet/medium (`tagcheck/R15_C0_SONNET_MEDIUM.md`): V1 0.708, V2 0.982, V3 0.958, V4 SD 0.0060, S1 0.973, A 0.949 (Sonnet/high 0.833/1.000/1.000/0.0007/0.973/0.952; Haiku/low 0.542/0.960/0.750/0.0092/0.963/0.946). Same-model noise floor still unmeasured.
+Readers (`tag-blind-reader`): Sonnet 5.5, medium (from 2026-10-23, frontmatter; env override removed), at most 5 at once, only when the user asks. Check the rate limit first.
 
 ## Other open items
 - Rate limit hit during phase 3 (HTTP 429, session limit). Check before launching readers.
@@ -34,10 +33,10 @@ No agents are used in the new session; none are running. Do not message or resum
 - Tags: `deckgen/tag_run.py` (needs `MTGISH_DATA`; mtgish cloned at `~/deps/i5jb/mtgish`: `GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/i5jb/mtgish`), `tag_variant.py` (`TAG_VARIANT=off`), `tags/TAG_LEGEND.md`, generated `TAG_REFERENCE.md`, `STARTER_TAGS.toon`.
 - Reverse check: `tagcheck/reverse_check.py` (`export/compare/selftest`), `consistency.py`, `learning_merge.py`, `learning_coverage.py`, `oracle_style_stats.py`, `build_reminder_fill.py`, `build_token_reference.py`, `holdout_cards.txt` (150), `SCORING_TOLERANCE.md`, reports R1/R2/R6/R7.
 - Sims: `tools/concordia/sim/`, `suite/`, `balance_lab/`, `ai_lab/`; decks `deckgen/`; game data `forge-gui/res/adventure/Concordia/`; design docs `docs/Adventure/Campaign/`.
-- Environment: subagent cap 20 concurrent; no foreground `sleep` (use Monitor/background); reader work dirs live outside the repo.
+- Environment: subagent cap 5 concurrent; no foreground `sleep` (use Monitor/background); reader work dirs live outside the repo.
 
-## Local archive (this container, outside repo, lost if the container is reclaimed)
+## Local archive (historical: the old cloud container; the archive is now in the repo at `tagcheck/archive_20261023/`)
 `~/concordia_archive/20261023/ (container only)`: `tagcheck_runs.tgz` (all run dirs r1..r13), `scratchpads.tgz` (both session scratchpads incl. setup_arms.py, disagreement dumps), two full session transcripts `*.jsonl`, `repo_cd_claude2.bundle` (git bundle of cd/claude2), `agents_and_tagcheck_worktree.tgz` (tools/agents, tagcheck, tags, .claude/agents, Campaign docs). Not downloadable by the user from the app unless copied into the repo; tell the user.
 
 ## Unverified
-Phase 3 results do not exist yet. Everything agents report about scripts/patches is from their own reading, not from my runs.
+Phase 3 C3 numbers were not recomputed in the audit. The placeholder/V1 re-count uses a rough normaliser. Everything agents report about scripts/patches is from their own reading, not from my runs.

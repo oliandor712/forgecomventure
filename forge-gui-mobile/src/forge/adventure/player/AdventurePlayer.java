@@ -981,14 +981,19 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
         getCurrentGameStage().addActor(actor);
     }
 
-    // Swaps the starter deck for the one of the given colors (for example "W") and removes the placeholder deck's cards.
-    public void replaceStarterColor(String colors) {
+    private DifficultyData currentDifficulty() {
         DifficultyData difficulty = Config.instance().getConfigData().difficulties[0];
         for (DifficultyData candidate : Config.instance().getConfigData().difficulties) {
             if (candidate.name != null && candidate.name.equals(difficultyData.name)) {
                 difficulty = candidate;
             }
         }
+        return difficulty;
+    }
+
+    // Swaps the starter deck for the one of the given colors (for example "W") and removes the placeholder deck's cards.
+    public void replaceStarterColor(String colors) {
+        DifficultyData difficulty = currentDifficulty();
         Deck newDeck = Config.instance().starterDeck(ColorSet.fromNames(colors.toCharArray()), difficulty, AdventureModes.Commander, 0, null);
         if (newDeck == null)
             return;
@@ -997,15 +1002,15 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
 
     /** Replaces the starter deck with the deck file at this plane-relative path (for example a starter variant). */
     public void replaceStarterDeck(String path) {
+        //getDeck falls back to a random deck for a bad .dck path, so check the file first.
+        if (path == null || !Config.instance().getFile(path).exists()) {
+            System.err.println("setStarterDeck: deck file not found: " + path);
+            return;
+        }
         Deck newDeck = CardUtil.getDeck(path, false, false, "", false, false);
         if (newDeck == null || newDeck.isEmpty())
             return;
-        DifficultyData difficulty = Config.instance().getConfigData().difficulties[0];
-        for (DifficultyData candidate : Config.instance().getConfigData().difficulties) {
-            if (candidate.name != null && candidate.name.equals(difficultyData.name)) {
-                difficulty = candidate;
-            }
-        }
+        DifficultyData difficulty = currentDifficulty();
         replaceStarter(newDeck, difficulty);
     }
 
@@ -1014,7 +1019,22 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
         String placeholderColor = Config.instance().getConfigData().placeholderStarterColor;
         Deck placeholder = placeholderColor == null || placeholderColor.isEmpty() || getAdventureMode() != AdventureModes.Commander ? null
                 : Config.instance().starterDeck(ColorSet.fromNames(placeholderColor.toCharArray()), difficulty, AdventureModes.Commander, 0, null);
-        for (Map.Entry<PaperCard, Integer> given : (placeholder != null ? placeholder : deck).getAllCardsInASinglePool(true, true)) {
+        //Replace the slot holding the placeholder starter, not whatever slot the player selected.
+        int slot = selectedDeckIndex;
+        boolean placeholderFound = false;
+        if (placeholder != null && !placeholder.getCommanders().isEmpty()) {
+            String commanderName = placeholder.getCommanders().get(0).getName();
+            for (int i = 0; i < decks.size(); i++) {
+                Deck candidate = decks.get(i);
+                if (candidate != null && !candidate.getCommanders().isEmpty() && candidate.getCommanders().get(0).getName().equals(commanderName)) {
+                    slot = i;
+                    placeholderFound = true;
+                    break;
+                }
+            }
+        }
+        //Take back the placeholder's cards only while it is still in its slot; otherwise take back the deck being replaced, never cards bought since.
+        for (Map.Entry<PaperCard, Integer> given : (placeholderFound ? placeholder : deck).getAllCardsInASinglePool(true, true)) {
             //the starter's own printing first, then other printings of the same name
             int left = given.getValue();
             int exact = Math.min(left, cards.count(given.getKey()));
@@ -1035,18 +1055,6 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
                 left -= take;
                 if (left <= 0)
                     break;
-            }
-        }
-        //Replace the slot holding the placeholder starter, not whatever slot the player selected.
-        int slot = selectedDeckIndex;
-        if (placeholder != null && !placeholder.getCommanders().isEmpty()) {
-            String commanderName = placeholder.getCommanders().get(0).getName();
-            for (int i = 0; i < decks.size(); i++) {
-                Deck candidate = decks.get(i);
-                if (candidate != null && !candidate.getCommanders().isEmpty() && candidate.getCommanders().get(0).getName().equals(commanderName)) {
-                    slot = i;
-                    break;
-                }
             }
         }
         decks.set(slot, newDeck);

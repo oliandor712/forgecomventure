@@ -22,7 +22,6 @@
     ]
   },
   "env": {
-    "CLAUDE_CODE_SUBAGENT_MODEL": "claude-haiku-5-5",
     "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "200000",
     "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "90"
   }

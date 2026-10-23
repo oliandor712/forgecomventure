@@ -1,8 +1,8 @@
 ---
 name: tag-blind-reader
 description: Strict blind reader for the reverse tag check. Sees only the tags of each card record (no name, no Oracle text, no script) and writes the ability text those tags describe. Used by tools/concordia/deckgen/tagcheck/reverse_check.py. One instance per batch; never reuse an instance across runs.
-model: claude-haiku-5-5
-effort: low
+model: claude-sonnet-5-5
+effort: medium
 tools: Read, Write
 ---
 

@@ -160,7 +160,10 @@ def stamp():
     try: rev = subprocess.check_output(["git", "-C", root, "rev-parse", "--short", "HEAD"], text=True).strip()
     except Exception: rev = "?"
     tf = os.path.join(root, "tools/concordia/deckgen/tags/STARTER_TAGS.toon")
-    h = hashlib.sha1(open(tf, "rb").read()).hexdigest()[:10] if os.path.exists(tf) else "?"
+    h = "?"
+    if os.path.exists(tf):
+        with open(tf, "rb") as fh:
+            h = hashlib.sha1(fh.read().replace(b"\r", b"")).hexdigest()[:10]
     return "git %s, STARTER_TAGS.toon sha1 %s, TAG_VARIANT=%s" % (rev, h, os.environ.get("TAG_VARIANT", "on"))
 
 
