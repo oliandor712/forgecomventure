@@ -3,7 +3,7 @@
 Status: DRAFT (phase 2, 2026-10-23). The top-disagreement rules of `READER_GRAMMAR.md` only; tested as arm C3 in phase 3. Section numbers refer to the full file.
 
 1. Card itself = `~`. Inside a quoted token or granted ability: `this creature` / `this permanent`.
-2. Output order: `k` groups first (plain keywords on one comma line, `Flying, vigilance`; a keyword with a value on its own line), then `c0`, `c1`, `c2` ... A group with all its sub-groups = ONE ability. ` / ` separates abilities only; sentences of one ability are separated by a space. End each ability with a period.
+2. Output order: `k` groups first (plain keywords on one comma line, `Flying, vigilance`; a keyword with a value on its own line), then `c0`, `c1`, `c2` ..., and last the `Equip` / `Reconfigure` / `Fortify` line. A group with all its sub-groups = ONE ability. ` / ` separates abilities only; sentences of one ability are separated by a space. End each ability with a period.
 3. Effect sentences in the order their verb tags first appear in `tags`; one effect per sentence. Pairs: `discard` + `draw` = `discard a card, then draw a card`; `shuffle` is the last clause (`, then shuffle`).
 4. Placeholders, only these: `N`, `X`, `{cost}` (only where `cost:mana` exists), `{effect}`, `{trigger}`, `{condition}`, `{restriction}`, `{filter}`, `{duration}`. Never `{card}`, `{permanent}`, `{player}`, `{target}`.
 5. Triggers: `When ~ enters,` / `When ~ dies,` (self only); `Whenever` for anything else; `At the beginning of your upkeep,`. Say `enters`, `dies`, never the zone. Other creatures: `Whenever another <type> you control enters,`; both: `Whenever ~ or another <type> you control enters,`. No type tag: `{filter}`.
