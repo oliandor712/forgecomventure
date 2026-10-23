@@ -28,20 +28,51 @@ def kind_of(a, typing=()):
     return "spell"
 
 
+PLACEHOLDERS = {"cost", "effect", "trigger", "condition", "restriction", "x", "t"}
+EVENTS = {"enter", "die", "dies", "attack", "block", "cast", "upkeep", "combat", "damage", "discard", "draw", "leave", "sacrifice", "tap", "untap", "gain", "life", "lose", "graveyard", "put", "counter",
+          "beginn", "end", "step", "turn", "land", "spell", "creature", "token", "mill", "search", "reveal", "exile", "return", "transform", "play", "becom", "deal"}
+NOISE = {"creature", "target", "battlefield", "you_control", "x_value", "opponent", "each_all", "trigger_when", "trigger_phase", "may"}   # scope / wording words: not structure (V3 measures structure; scope words are checked by the accuracy score)
+COSTS = [("tap", r"\{t\}|\btap\b"), ("mana", r"\{[0-9wubrgxcs/]+\}"), ("sacrifice", r"sacrifice"), ("discard", r"discard"), ("life", r"pay \d+ life|pay life"), ("exile", r"exile"), ("counter", r"remove"), ("return", r"return"), ("cost_ph", r"\{cost\}")]
+
+
+def _keywords(a):
+    parts = [x.strip() for x in re.split(r",\s*|;\s*", a) if x.strip()]
+    ks = []
+    for x in parts:
+        n = R.norm(x)
+        if (KW_ONLY.match(x) or (len(n.split()) <= 4 and any(rx.search(n) for _, rx in R.KWRX))) and not re.search(r"\b(deals?|draw|create|gain|lose|destroy|exile|return|put|target)\b", n): ks.append(n)
+        else: return None
+    return ks
+
+
 def signature(text):
-    """ordered list of (kind, trigger-event words, cost words, concept set) per ability: V3 compares these"""
-    sig = []
+    """structure of a reading (V3): (sorted keywords, ordered abilities). Keywords on one line or several are the same; consecutive effect sentences are one effect block; trigger clauses are reduced to
+    their event words; costs to cost kinds; effects to concept sets without scope / wording words. First version, checked by selftest and by reading disagreements (GRAMMAR_BASELINE.md)."""
+    kws, items = [], []
     for a in split_abilities(text):
+        a = re.sub(r"\{([^{}]*[a-z][^{}]*)\}", lambda m: m.group(0) if m.group(1).lower() in PLACEHOLDERS or re.fullmatch(r"[0-9wubrgxcts/]+", m.group(1).lower()) else m.group(1), a)      # {a player} placeholders are words; {2}{B}, {T}, {cost}, {effect} stay
+        ks = _keywords(a)
+        if ks is not None and kind_of(a) == "keyword": kws += ks; continue
         k = kind_of(a)
-        n = R.norm(a)
-        trig = " ".join(R.toks(n.split(",")[0])[:6]) if k == "triggered" else ""
-        cost = " ".join(R.toks(R.norm(a.split(":", 1)[0]))) if k == "activated" else ""
-        sig.append((k, trig, cost, tuple(sorted(R.concepts(n)))))
-    return tuple(sig)
+        if k == "triggered":
+            clause, _, rest = a.partition(",")
+            ev = tuple(sorted({t for t in R.toks(R.norm(clause)) if t in EVENTS} | set(R.concepts(R.norm(clause))) - NOISE))
+            eff = frozenset(R.concepts(R.norm(rest))) - NOISE
+            items.append(["triggered", ev, "", eff])
+        elif k == "activated":
+            cost, _, rest = a.partition(":")
+            ck = tuple(sorted(n for n, rx in COSTS if re.search(rx, cost.lower())))
+            items.append(["activated", (), ck, frozenset(R.concepts(R.norm(rest))) - NOISE])
+        else:
+            eff = frozenset(R.concepts(R.norm(a))) - NOISE
+            if items and items[-1][0] == "effect": items[-1][3] = items[-1][3] | eff
+            else: items.append(["effect", (), "", eff])
+    return (tuple(sorted(set(kws))), tuple((k, ev, c, tuple(sorted(e))) for k, ev, c, e in items))
 
 
-def exact_key(text):
-    return re.sub(r"[^a-z0-9{}+/~ -]", "", text.lower()).replace("  ", " ").strip().replace(" / ", "|")
+def exact_key(text, tolerant=False):
+    t = R.tolerate(text.lower()) if tolerant else text.lower()
+    return re.sub(r"[^a-z0-9{}+/~ -]", "", t).replace("  ", " ").strip().replace(" / ", "|")
 
 
 def token_f1(a, b):
@@ -91,10 +122,11 @@ def compare(runs):
         assert d[0] == key, "runs must share the same key (identical exports)"
     ids = [i for i in key]
     out = dict(runs=runs, cards=len(ids), k=len(runs), per_card={})
-    v1 = v3 = 0; v2s = []; v4s = []; s1n = s1d = s1bn = 0; n_eval = 0
+    v1 = v1t = v3 = 0; v2s = []; v4s = []; s1n = s1d = s1bn = 0; n_eval = 0
     for i in ids:
         ts = [d[1].get(i, "") for d in data]
         e = len({exact_key(t) for t in ts}) == 1
+        et = len({exact_key(t, True) for t in ts}) == 1
         sigs = [signature(t) for t in ts]
         s = len(set(sigs)) == 1
         f = [token_f1(a, b) for a, b in itertools.combinations(ts, 2)]
@@ -103,14 +135,14 @@ def compare(runs):
         van = all(d[2].get(i, {}).get("vanilla") for d in data if d[2])
         if van: continue
         n_eval += 1
-        v1 += e; v3 += s; v2s.append(statistics.mean(f)); 
+        v1 += e; v1t += et; v3 += s; v2s.append(statistics.mean(f)); 
         if len(sc) > 1: v4s.append(statistics.pstdev(sc))
         for t in ts:
             for a in split_abilities(t):
                 s1d += 1; ok = not lint(a); s1n += ok; s1bn += ok and self_ref_ok(a)
-        out["per_card"][i] = dict(name=key[i], exact=e, sig=s, f1=statistics.mean(f), score_sd=(statistics.pstdev(sc) if len(sc) > 1 else None), texts=ts, sigs=[list(x) for x in sigs])
+        out["per_card"][i] = dict(name=key[i], exact=e, sig=s, f1=statistics.mean(f), score_sd=(statistics.pstdev(sc) if len(sc) > 1 else None), texts=ts, sigs=[repr(x) for x in sigs])
     mean_acc = statistics.mean(x for d in data for x in [v.get("sim") for v in d[2].values() if v.get("has_text")] if x is not None) if all(d[2] for d in data) else None
-    out.update(V1=v1 / n_eval, V3=v3 / n_eval, V2=statistics.mean(v2s), V4=statistics.mean(v4s) if v4s else None, S1=s1n / s1d if s1d else None, S1b=s1bn / s1d if s1d else None, A=mean_acc, n=n_eval)
+    out.update(V1=v1 / n_eval, V1t=v1t / n_eval, V3=v3 / n_eval, V2=statistics.mean(v2s), V4=statistics.mean(v4s) if v4s else None, S1=s1n / s1d if s1d else None, S1b=s1bn / s1d if s1d else None, A=mean_acc, n=n_eval)
     # which tag families sit on the cards where readers disagree (V3)
     fam_all, fam_bad = collections.Counter(), collections.Counter()
     tags = data[0][3]
@@ -137,6 +169,7 @@ def report(o, path):
          "Generated by `tagcheck/consistency.py compare` (plan: `READER_GRAMMAR_PLAN.md`, phase 1). Tag version: %s. Runs: %s (%d independent readers per batch, identical inputs, current reader prompt, %d cards with ability text)." % (stamp(), ", ".join(o["runs"]), o["k"], o["n"]), "",
          "| Measure | Value | Plan target |", "|---|---|---|",
          "| V1 exact agreement (all %d outputs identical after case / punctuation) | %.1f%% | >= 85%% |" % (o["k"], 100 * o["V1"]),
+         "| V1t exact agreement with the scoring tolerances (this creature = name = ~, when = whenever, return = put for the battlefield) | %.1f%% | >= 85%% |" % (100 * o["V1t"]),
          "| V2 mean pairwise token F1 | %.3f | >= 0.95 |" % o["V2"],
          "| V3 ability-signature agreement | %.1f%% | >= 98%% |" % (100 * o["V3"]),
          "| V4 SD of the accuracy score across readers | %s | <= 0.010 |" % ("%.4f" % o["V4"] if o["V4"] is not None else "n/a"),
@@ -169,6 +202,9 @@ def selftest():
     assert signature(a) == signature(a)
     scr = "{T}: Add {G}. / Flying / When this creature enters, draw a card."
     assert signature(a) != signature(scr), "scrambled order must break V3"
+    assert signature("Flash, deathtouch") == signature("Flash / Deathtouch"), "keywords on one line = on several"
+    assert signature("You gain 3 life and draw a card.") == signature("You gain 3 life. / Draw a card."), "sentence splitting is style"
+    assert signature("Whenever {a player} discards a card, {that player} loses 2 life.") == signature("Whenever a player discards a card, that player loses 2 life.")
     assert token_f1(a, a) == 1.0 and token_f1(a, "Destroy target creature.") < 0.3
     assert lint("When ~ enters, draw a card.") == [] and lint("Flying") == []
     assert "reminder text" in lint("Flying (This creature can't be blocked except by creatures with flying.)")

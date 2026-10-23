@@ -1,0 +1,107 @@
+{
+ "TRIGGER_CONDITION": {
+  "cards": 230,
+  "old_had_family": 124,
+  "new_has_family": 59,
+  "new_only": 1,
+  "neither": 105
+ },
+ "OTHER": {
+  "cards": 194,
+  "old_had_family": 0,
+  "new_has_family": 0,
+  "new_only": 0,
+  "neither": 194
+ },
+ "FILTER": {
+  "cards": 146,
+  "old_had_family": 68,
+  "new_has_family": 70,
+  "new_only": 5,
+  "neither": 73
+ },
+ "TRIGGER_FILTER": {
+  "cards": 99,
+  "old_had_family": 65,
+  "new_has_family": 62,
+  "new_only": 17,
+  "neither": 17
+ },
+ "TIMING": {
+  "cards": 29,
+  "old_had_family": 6,
+  "new_has_family": 10,
+  "new_only": 7,
+  "neither": 16
+ },
+ "TOKEN": {
+  "cards": 63,
+  "old_had_family": 62,
+  "new_has_family": 62,
+  "new_only": 0,
+  "neither": 1
+ },
+ "AMOUNT": {
+  "cards": 287,
+  "old_had_family": 222,
+  "new_has_family": 229,
+  "new_only": 26,
+  "neither": 39
+ },
+ "ZONE": {
+  "cards": 145,
+  "old_had_family": 65,
+  "new_has_family": 106,
+  "new_only": 42,
+  "neither": 38
+ },
+ "GRANT_SCOPE": {
+  "cards": 150,
+  "old_had_family": 65,
+  "new_has_family": 50,
+  "new_only": 4,
+  "neither": 81
+ },
+ "COST": {
+  "cards": 149,
+  "old_had_family": 71,
+  "new_has_family": 73,
+  "new_only": 6,
+  "neither": 72
+ },
+ "MODE": {
+  "cards": 93,
+  "old_had_family": 4,
+  "new_has_family": 5,
+  "new_only": 1,
+  "neither": 88
+ },
+ "DURATION": {
+  "cards": 55,
+  "old_had_family": 2,
+  "new_has_family": 14,
+  "new_only": 12,
+  "neither": 41
+ },
+ "KEYWORD": {
+  "cards": 72,
+  "old_had_family": 42,
+  "new_has_family": 51,
+  "new_only": 9,
+  "neither": 21
+ },
+ "EVASION": {
+  "cards": 21,
+  "old_had_family": 7,
+  "new_has_family": 13,
+  "new_only": 6,
+  "neither": 8
+ },
+ "ALTFACE": {
+  "cards": 11,
+  "old_had_family": 3,
+  "new_has_family": 4,
+  "new_only": 1,
+  "neither": 7
+ }
+}

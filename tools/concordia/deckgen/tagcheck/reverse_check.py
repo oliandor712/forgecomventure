@@ -113,6 +113,20 @@ KWRX = [(k, re.compile(r"\b%s\b" % re.escape(w))) for k, w in
         ((k, k) for k in ("flying", "first strike", "double strike", "deathtouch", "lifelink", "trample", "vigilance", "menace", "reach", "hexproof", "indestructible", "haste", "defender", "flash", "ward", "protection", "prowess", "equip", "cycling", "kicker", "flashback", "morph", "myriad", "encore", "offspring", "exalted", "mentor", "landfall", "infect", "suspend", "dash", "ninjutsu", "convoke", "cumulative upkeep", "devotion"))]
 
 
+SELF_PHRASE = r"\b(?:this|that) (?:creature|permanent|artifact|enchantment|land|spell|card|planeswalker|equipment|aura|token|vehicle|saga|battle)\b"
+
+
+def tolerate(t):
+    """scoring tolerances (user order 2026-10-23, SCORING_TOLERANCE.md): wordings that mean the same are made identical before comparing, on lower-case text.
+    a. self-reference: 'this creature' / 'this permanent' ... / '~' stand for the card's name (CR 201.5; Oracle uses 'this creature' where the printed card names itself);
+    b. 'whenever' = 'when' (CR 603.1 treats [When/Whenever/At] as the same trigger template; 'at the beginning of' stays different);
+    c. a move to the battlefield is one action whether the text says 'return ... to the battlefield' or 'put ... onto the battlefield' (CR 110.2a: either way the permanent enters under the control of the player instructed unless the text says otherwise). 'return ... to hand / library' is NOT touched."""
+    t = re.sub(SELF_PHRASE + r"|~", " self ", t)
+    t = re.sub(r"\bwhenever\b", "when", t)
+    t = re.sub(r"\b(?:returns?|puts?)\b([^.;/]{0,80}?)\b(?:to|onto) the battlefield\b", r"put\1onto the battlefield", t)
+    return t
+
+
 def norm(text, name=""):
     t = text.lower()
     t = re.sub(r"\([^)]*\)", " ", t) if re.sub(r"\([^)]*\)", "", t).strip(" /\\n") else t.replace("(", " ").replace(")", " ")   # reminder text (kept when it is all the card has: basic lands)
@@ -121,6 +135,7 @@ def norm(text, name=""):
         for part in sorted({name.lower(), name.lower().split(",")[0], name.lower().split(" ")[0]}, key=len, reverse=True):   # longest first: a set's order changes with the hash seed and left "Zuran [Spellcaster]" half-replaced in some runs
             if len(part) > 2: t = t.replace(part, " self ")
     t = re.sub(r"\bthis (?:creature|permanent|artifact|enchantment|land|spell|card|planeswalker|equipment|aura)\b|\b(?:it|~)\b", " self ", t)
+    t = tolerate(t)
     t = re.sub(r"\b(?:an |each |target )?opponents? (?:controls?|doesn't control)\b|\byou don't control\b|\byou do not control\b", " opponent controls ", t)   # same meaning, different wording (Prey Upon: 1.0 vs 0.84 for the same tags)
     t = t.replace("{t}", " tap ")
     t = re.sub(r"\{[^}]*\}", " ", t)                       # mana symbols: costs are not tags (structural gap)
