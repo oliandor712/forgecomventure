@@ -32,7 +32,16 @@ def score(r, side):  # 1 win, .5 draw, 0 loss for side
     return 1 if r["winner"] == side else 0.5 if r["winner"] == "draw" else 0
 
 
+_POWER = {}
+
+
 def power(deck):
+    if deck not in _POWER:
+        _POWER[deck] = _power(deck)
+    return _POWER[deck]
+
+
+def _power(deck):
     try:
         out = subprocess.run(["python3", ROOT + "/tools/concordia/deck_tier.py", ROOT + "/forge-gui/res/adventure/Concordia/" + deck, "--json"],
                              capture_output=True, text=True).stdout

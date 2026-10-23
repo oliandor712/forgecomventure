@@ -167,11 +167,6 @@ def cmd_plan(a):
 FOCUS = set()  # --focus W,multi: colours to favour (a deck is "multi" when it has more than one colour)
 
 
-def in_focus(d):
-    c = rb.colors(d)
-    return ("multi" if len(c) > 1 else c) in FOCUS
-
-
 def pick_deck(rng, decks, exclude=None, favour=1.0):
     """Random deck of the group. With --focus, a focus-colour deck is drawn (probability `favour`) when the group has one, and the focus
     colour classes (W, multi, ...) are chosen with equal weight, so a colour with few decks (white) is not drowned by one with many."""

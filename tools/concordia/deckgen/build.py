@@ -9,7 +9,7 @@ role quotas (removal, draw, ramp, wipes), the card-type quotas, the creature cou
 mana curve, rarity and role caps. Only Commander-legal cards without an AI:RemoveDeck:All flag, outside Concordia's
 restrictions, are used. Tier 1 aims low on power, Tier 2 at about 25, Tier 3 at about 34 (deck_tier.py power score).
 """
-import sys, os, re, json, pickle, collections, math
+import sys, os, re, json, pickle, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 import deck_tier as dt

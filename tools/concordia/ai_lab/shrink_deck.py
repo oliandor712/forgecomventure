@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Shrink a Commander .dck to a smaller main deck, keeping proportions: basics scaled by the same factor, nonbasics
 sampled with a fixed seed, `--keep` names always included. Usage: shrink_deck.py in.dck out.dck [--main 29] [--keep A,B]"""
-import random, re, sys, argparse
+import random, re, argparse
 ap = argparse.ArgumentParser(); ap.add_argument('src'); ap.add_argument('dst')
 ap.add_argument('--main', type=int, default=29); ap.add_argument('--keep', default=''); ap.add_argument('--seed', type=int, default=1)
 a = ap.parse_args()

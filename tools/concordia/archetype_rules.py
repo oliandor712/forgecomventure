@@ -13,7 +13,7 @@ Subarchetype (a second label, never a simulation cell):
   low-tribal / low-tokens   4+ enchantments (tribal / tokens)
 A `low-*` deck shifts its primary type (creatures) down 2-4 and a secondary type up 2-4 (SHIFT).
 Usage: python3 archetype_rules.py DECK.dck [...]   prints the classification as TOON-like rows."""
-import os, re, sys, collections, json
+import os, re, sys, collections
 import tier1_rules as t1  # tier 1 requirements (one source of truth)
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../.."))

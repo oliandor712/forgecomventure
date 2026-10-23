@@ -1010,8 +1010,7 @@ public class AdventurePlayer implements Serializable, SaveFileContent {
         Deck newDeck = CardUtil.getDeck(path, false, false, "", false, false);
         if (newDeck == null || newDeck.isEmpty())
             return;
-        DifficultyData difficulty = currentDifficulty();
-        replaceStarter(newDeck, difficulty);
+        replaceStarter(newDeck, currentDifficulty());
     }
 
     private void replaceStarter(Deck newDeck, DifficultyData difficulty) {

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Writes QUEUE.toon: one row per deck (tier 1-5 and starters) with games so far, the 40-game target (H28), colour and archetype.
 Usage: python3 tools/concordia/balance_lab/build_queue.py. Read-only on decks; reads records.csv and the card scripts."""
-import csv, glob, os, re, sys, collections
+import glob, os, re, sys, collections
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
 LAB = os.path.join(ROOT, "tools/concordia/balance_lab")
 sys.path.insert(0, LAB)

@@ -4,7 +4,6 @@ Usage: MTGISH_DATA=... python3 learning_coverage.py --pairs <jsonl> [--out learn
 import os, re, sys, json, argparse, collections
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import tag_run as T
-import tag_verify as TV
 
 FAM = {
  "AMOUNT": r"(_amount|_count|^x_is|^scales|^x_def|^x_paid|^pump_amount|^num$|^per_unit)",

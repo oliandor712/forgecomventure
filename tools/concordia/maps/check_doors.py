@@ -39,10 +39,6 @@ def game_path(path):
     return os.path.normpath(os.path.join(CONCORDIA, p))
 
 
-def as_teleport(f):
-    return '../' + os.path.relpath(f, RES).replace(os.sep, '/')
-
-
 _tilesets = {}
 
 

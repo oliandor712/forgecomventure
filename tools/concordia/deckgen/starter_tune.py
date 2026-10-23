@@ -9,7 +9,7 @@ or at MAX_SWAPS. The commander and lands stay. Prints every swap.
 
 Run: python3 starter_tune.py [target] [--dry]
 """
-import os, re, sys, json, collections
+import os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import build as B  # noqa: E402

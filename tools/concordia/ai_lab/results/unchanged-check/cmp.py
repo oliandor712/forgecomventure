@@ -1,4 +1,4 @@
-import glob,os,re,sys
+import glob,re,sys
 R='/tmp/claude-0/uc'
 ARM=sys.argv[1] if len(sys.argv)>1 else 'cons'
 def res(arm):
