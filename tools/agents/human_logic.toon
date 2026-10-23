@@ -2,7 +2,7 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Read before building, judging or testing decks, or proposing AI changes. When a rule conflicts with a metric, the rule wins.
 # status: applied = in code or decks now, partly = some of it done, open = not done or not decided. since = date the user said it.
 # Add a row only for user input on deck building, deck balance or AI improvement (town, map, quest and UI rules live in the design docs). Pruned 2026-10-21 at the user's request.
-rules[68|]{id|area|rule|since|status|where}:
+rules[69|]{id|area|rule|since|status|where}:
   H01|curve|A zone's stage locks at the player's first fight there from Seals held (0-1 stage 1, 2-3 stage 2, 4-5 stage 3)|2026-10-20|applied|TierLock.java and config tierLock
   H02|curve|Wild creatures, random-dungeon enemies, pass keepers, grove guardians and Wardens are mono-color. Trainers are 1-2 colors at stage 1 then 2-3|2026-10-20|applied|build_color_zone.py
   H03|curve|Random dungeons draw from the wild encounter pool, never from keepers or guardians|2026-10-20|applied|build_color_zone.py
@@ -71,3 +71,4 @@ rules[68|]{id|area|rule|since|status|where}:
   H67|tags|controller:owner is tagged only where the Oracle text says the card returns under its owner's control; every other move to the battlefield is controller:you (Zombify, Victimize, fetch lands ...)|2026-10-22|applied|tag_extra.py _owner_stated; tag_variant.py owner_stated (21 starter cards changed)
   H68|tags|Bare keyword tags on cards that only grant a keyword (trample on Rancor ...) are dropped from the AI tags; grant_kw:<kw> already says it. Supersedes the bare-keyword part of H60|2026-10-22|applied|tag_run.py (18 tags on 17 starter cards)
   H69|tags|cost:mana is not tagged when cost_mana:<symbols> is present (the value says it). token_make stays alongside investigate (user decision: no change)|2026-10-23|applied|tag_run.py (cost:mana filter after cross-check); tag_extra.py legend
+  H70|tags|Families approved 2026-10-23: cost_mana, return, unless_cost_amount, investigate, monarch, bolster|2026-10-23|applied|tag_run.py APPROVED_LATER
