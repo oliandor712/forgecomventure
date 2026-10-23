@@ -24,6 +24,10 @@ out = subprocess.run([sys.executable, os.path.join(ROOT, "tools/concordia/deckge
 check("tag_run card Wingbeat Warrior", "flip-up" in out and "duration:eot" in out)
 br = sh("git", "branch", "--show-current")
 print(f"INFO branch={br} dirty={bool(sh('git','status','--short'))}")
-print(("pool.pkl present" if os.path.exists(os.path.join(ROOT, "tools/concordia/deckgen/pool.pkl")) else "INFO pool.pkl missing: run tools/concordia/deckgen/pool.py when needed"))
+POOL = os.path.join(ROOT, "tools/concordia/deckgen/pool.pkl")
+if not os.path.exists(POOL):
+    print("pool.pkl missing: building (tools/concordia/deckgen/pool.py)")
+    subprocess.run([sys.executable, os.path.join(ROOT, "tools/concordia/deckgen/pool.py")], capture_output=True, text=True)
+check("pool.pkl present", os.path.exists(POOL), "pool.py failed" if not os.path.exists(POOL) else "")
 print("READY" if ok else "NOT READY")
 sys.exit(0 if ok else 1)
