@@ -1,6 +1,6 @@
 # Toolbox: the shared reference for every agent
 
-Generated 2026-10-23 19:50Z at commit 366b9089193 on branch campaign-design. **Tools stamp: `5c25ceb5e6d5`.** Data stamp: `e914fcb2a33e`.
+Generated 2026-10-23 19:51Z at commit 388fcadcedc on branch campaign-design. **Tools stamp: `5c25ceb5e6d5`.** Data stamp: `e914fcb2a33e`.
 <!-- tool hashes: tools/agents/toolbox.py:a0cf519b tools/agents/docpush.py:c4c2249e tools/agents/sync_check.py:699504d1 tools/agents/clone_verify.py:51eeaf99 tools/concordia/deckgen/tag_run.py:84b6c34d tools/concordia/deckgen/tagcheck/reverse_check.py:791b9450 tools/concordia/deckgen/tagcheck/consistency.py:d8c58770 tools/concordia/deckgen/tagcheck/placeholder_triage.py:d9afccbb tools/concordia/deckgen/tagcheck/oracle_style_stats.py:aed12a51 tools/concordia/deckgen/tagcheck/learning_merge.py:5c4c1d7f tools/concordia/deckgen/tagcheck/learning_coverage.py:5ced5765 tools/concordia/deckgen/tagcheck/build_reminder_fill.py:29cf2b6c tools/concordia/deckgen/tagcheck/build_token_reference.py:b7d0906c tools/agents/human_logic.toon:ba905a0d tools/concordia/suite/sim_suite.py:61ef2f3f tools/concordia/suite/README.md:68719bd3 tools/concordia/balance_lab/push_records.sh:e88a8057 tools/concordia/balance_lab/run_batch.py:d552531a tools/concordia/balance_lab/run_foreground.sh:77fc02e6 tools/concordia/balance_lab/run_logs.py:f7a2eb5e tools/concordia/balance_lab/make_report.py:e655df33 tools/concordia/balance_lab/build_queue.py:905e50a6 tools/concordia/balance_lab/BonusSim.java:0787eec1 tools/concordia/sim/setup.sh:37d04850 tools/concordia/sim/run.sh:925da916 tools/concordia/ai_lab/phase_digest.py:afd39fc8 tools/concordia/archetype_rules.py:266d15a0 tools/concordia/tier1_rules.py:47659a5e tools/concordia/deckgen/ability_tags.py:b44a8a7a tools/concordia/deckgen/commander_support.py:2979c519 tools/concordia/deckgen/t1_plan.py:7f00d016 tools/concordia/deckgen/HANDOFF_DECKBUILDER.md:beba89ab tools/concordia/deckgen/build.py:24ccdb43 tools/concordia/deckgen/pool.py:d8162a22 tools/concordia/deckgen/variants.py:0ccc5047 tools/concordia/deckgen/starter_tune.py:4412604c tools/concordia/deckgen/gen_mono.py:914743c8 tools/concordia/deckgen/hall_roster.py:3f50f572 tools/concordia/deck_tier.py:69e511a6 tools/concordia/maps/check_doors.py:862e5f69 -->
 
 ## Start of every turn (all agents)
@@ -13,16 +13,16 @@ Generated 2026-10-23 19:50Z at commit 366b9089193 on branch campaign-design. **T
 
 | tool | used by | what it does | last change |
 |---|---|---|---|
-| `tools/agents/CONTEXT.md` | all | shared rules, authority, commit ownership, agent table, recent updates: read first, every turn | 438fcbb12c1 10-23 14:59Z |
+| `tools/agents/CONTEXT.md` | all | shared rules, authority, commit ownership, agent table, recent updates: read first, every turn | 388fcadcedc 10-23 15:51Z |
 | `tools/agents/AGENT_KNOWLEDGE.md` | all | compiled pitfalls, conventions, unfinished work and next steps from the earlier agents | 248c73877b7 10-21 14:39Z |
-| `tools/agents/toolbox.py` | all | builds TOOLBOX.md and the tools stamp; --check says whether the checkout is current | 438fcbb12c1 10-23 14:59Z |
+| `tools/agents/toolbox.py` | all | builds TOOLBOX.md and the tools stamp; --check says whether the checkout is current | 388fcadcedc 10-23 15:51Z |
 | `tools/agents/docpush.py` | main | pushes document-level files only (reports, checklists, plain .md); refuses code, data and instruction files | 438fcbb12c1 10-23 14:59Z |
 | `tools/agents/sync_check.py` | main | session handover: verify / manifest (MANIFEST.toon) | f5536a45e71 10-23 17:28Z |
 | `tools/agents/clone_verify.py` | main | checks a fresh checkout is ready (tools, human_logic, mtgish data, tag_run) | 438fcbb12c1 10-23 14:59Z |
 | `tools/concordia/deckgen/tag_run.py` | main | tagging run: starter / card; writes tags/STARTER_TAGS*.{toon,md}, NEW_TAGS_FOR_APPROVAL.md; needs MTGISH_DATA | 22ed0a7ba61 10-22 21:43Z |
 | `tools/concordia/deckgen/tagcheck/reverse_check.py` | main | blind reverse tag check: export / compare / selftest | d0080bbc8d3 10-23 11:58Z |
-| `tools/concordia/deckgen/tagcheck/consistency.py` | main | reader consistency scores (V1-V4, S1, A) and the tags sha1 stamp | d0080bbc8d3 10-23 11:58Z |
-| `tools/concordia/deckgen/tagcheck/placeholder_triage.py` | main | placeholder triage for reader output (PLACEHOLDER_TRIAGE.md) | - |
+| `tools/concordia/deckgen/tagcheck/consistency.py` | main | reader consistency scores (V1-V4, S1, A) and the tags sha1 stamp | 388fcadcedc 10-23 15:51Z |
+| `tools/concordia/deckgen/tagcheck/placeholder_triage.py` | main | placeholder triage for reader output (PLACEHOLDER_TRIAGE.md) | 388fcadcedc 10-23 15:51Z |
 | `tools/concordia/deckgen/tagcheck/oracle_style_stats.py` | main | Oracle style statistics for the reader grammar | d0080bbc8d3 10-23 11:58Z |
 | `tools/concordia/deckgen/tagcheck/learning_merge.py` | main | merges reader learning notes | d0080bbc8d3 10-23 11:58Z |
 | `tools/concordia/deckgen/tagcheck/learning_coverage.py` | main | learning gap coverage report | d0080bbc8d3 10-23 11:58Z |
@@ -31,7 +31,7 @@ Generated 2026-10-23 19:50Z at commit 366b9089193 on branch campaign-design. **T
 | `tools/agents/human_logic.toon` | all | the user's own deck-building, balance and AI rules; a rule beats a metric | 22ed0a7ba61 10-22 21:43Z |
 | `tools/concordia/suite/sim_suite.py` | sim workers, main | THE simulation program: setup / run / plan / status / report; archetype cells, adaptive stop, phase logs, digests, push | e2cf306f844 10-21 14:09Z |
 | `tools/concordia/suite/README.md` | sim workers | how to use the suite, its stop rules and the limit-the-total levers | 02130fc55ee 10-21 13:00Z |
-| `tools/concordia/balance_lab/push_records.sh` | all | safe push of named paths (detached HEAD, races, no force); needs PUSH_APPROVED=1, set only after the user says push | c51dffc7016 10-21 03:06Z |
+| `tools/concordia/balance_lab/push_records.sh` | all | safe push of named paths (detached HEAD, races, no force); needs PUSH_APPROVED=1, set only after the user says push | 388fcadcedc 10-23 15:51Z |
 | `tools/concordia/balance_lab/run_batch.py` | legacy | old per-deck batch runner (old record files only) | 526a2d38deb 10-21 13:50Z |
 | `tools/concordia/balance_lab/run_foreground.sh` | legacy | old foreground chunk wrapper for run_batch.py | 80639974b2d 10-21 06:01Z |
 | `tools/concordia/balance_lab/run_logs.py` | legacy | aggro-vs-ramp / starter-vs-midrange phase-logged pairings that keep raw logs | 731ea64184e 10-21 05:54Z |
