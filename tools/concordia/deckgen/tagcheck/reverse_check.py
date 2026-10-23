@@ -444,7 +444,7 @@ def cmd_selftest(a):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sp = ap.add_subparsers(dest="cmd", required=True)
-    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=40); e.add_argument("--legend", action="store_true"); e.add_argument("--slim", action="store_true"); e.add_argument("--reminders-extra", dest="reminders_extra", default=""); e.add_argument("--cards", default="")
+    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=40); e.add_argument("--legend", action="store_true"); e.add_argument("--slim", action=argparse.BooleanOptionalAction, default=True, help="slim layout is the default (about 23%% fewer reader tokens); --no-slim restores the old two-file layout"); e.add_argument("--reminders-extra", dest="reminders_extra", default=""); e.add_argument("--cards", default="")
     c = sp.add_parser("compare"); c.add_argument("--run", required=True); [c.add_argument("--" + k, default="") for k in ("arm", "grammar", "reader", "note")]  # run metadata for run_log
     s = sp.add_parser("selftest"); s.add_argument("--limit", type=int, default=0)
     a = ap.parse_args()

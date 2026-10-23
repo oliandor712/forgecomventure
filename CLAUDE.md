@@ -3,6 +3,7 @@
 Fork `oliandor712/forgecomventure`. Concordia is a Pokemon-like Commander campaign plane for Forge Adventure. The user tests on Windows and decides what goes into the game; Claude proposes.
 
 ## Where things live
+- **Lookup first:** read `tools/agents/INDEX.md` (task to file map, size guide). Never read BIG files whole (Comprehensive Rules, STARTER_TAGS, ABILITY_TWINS, records.csv); use `python3 tools/agents/lookup.py` slices, or Grep then Read with offset/limit.
 - Game data: `forge-gui/res/adventure/Concordia/` (decks `decks/tier1..5`, `starter`; `world/enemies.json`; `maps/`; `config.json`). Staged tier 1 set (not live): `staging_t1_fresh/`.
 - Design docs: `docs/Adventure/Campaign/` (OVERWORLD.md, ENCOUNTER_TIERS.md, AI_CHANGES_APPROVAL.md, ...).
 - Tools: `tools/concordia/` (decks `deckgen/`, sims `sim/`, `suite/`, `balance_lab/`, `ai_lab/`), `tools/agents/` (agent system, `human_logic.toon`, `reference/`).

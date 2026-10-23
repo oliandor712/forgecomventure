@@ -45,5 +45,8 @@ No agents are used in the new session; none are running. Do not message or resum
 ## Local archive (historical: the old cloud container; the archive is now in the repo at `tagcheck/archive_20261023/`)
 `~/concordia_archive/20261023/ (container only)`: `tagcheck_runs.tgz` (all run dirs r1..r13), `scratchpads.tgz` (both session scratchpads incl. setup_arms.py, disagreement dumps), two full session transcripts `*.jsonl`, `repo_cd_claude2.bundle` (git bundle of cd/claude2), `agents_and_tagcheck_worktree.tgz` (tools/agents, tagcheck, tags, .claude/agents, Campaign docs). Not downloadable by the user from the app unless copied into the repo; tell the user.
 
+## Efficiency upgrades (2026-10-23) - next session: request HIGH-EFFORT analysis
+All of this session's changes are token-efficiency upgrades: `INDEX.md` (tiers, size guide), `lookup.py` slice lookups, compact and split Comprehensive Rules files, merged keyword reference, slim reader layout as default. Details, numbers and the analysis to run at high effort: `tools/agents/EFFICIENCY_UPGRADES_2026-10-23.md`. Read the original CR only if the user asks.
+
 ## Unverified
 Phase 3 C3 numbers were recomputed on 2026-10-23 after r13c3c was completed. The V1 effect of grammar v2 is unmeasured until P4e. The placeholder/V1 re-count uses a rough normaliser. Everything agents report about scripts/patches is from their own reading, not from my runs.
