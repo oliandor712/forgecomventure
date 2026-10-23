@@ -136,12 +136,12 @@ KNOWN = [
     (r"r12[abc]$", dict(arm="C0", grammar="none", reader="sonnet/high", note="baseline, phase 1/3")),
     (r"r13c1[abc]$", dict(arm="C1", grammar="v1 full, free text")),
     (r"r13c2[abc]$", dict(arm="C2", grammar="v1 full + records")),
-    (r"r13c3c$", dict(arm="C3", grammar="v1 short", note="incomplete: batches 1-7 of 9 (73 cards missing, HTTP 429)")),
+    (r"r13c3c$", dict(arm="C3", grammar="v1 short", note="batches 8-9 rerun 2026-10-23 (claude-sonnet-5-5/medium) after HTTP 429; batches 1-7 reader unrecorded")),
     (r"r13c3[ab]$", dict(arm="C3", grammar="v1 short")),
     (r"r14c0[abc]$", dict(arm="C0", grammar="none", reader="claude-haiku-5-5/low", note="C0 repeat, 24 control cards")),
     (r"r15c0[abc]$", dict(arm="C0", grammar="none", reader="claude-sonnet-5-5/medium", note="C0 repeat, 24 control cards")),
 ]
-GROUPS = [["r12a", "r12b", "r12c"], ["r13c1a", "r13c1b", "r13c1c"], ["r13c2a", "r13c2b", "r13c2c"], ["r13c3a", "r13c3b"], ["r12suba", "r12subb", "r12subc"],
+GROUPS = [["r12a", "r12b", "r12c"], ["r13c1a", "r13c1b", "r13c1c"], ["r13c2a", "r13c2b", "r13c2c"], ["r13c3a", "r13c3b", "r13c3c"], ["r12suba", "r12subb", "r12subc"],
           ["r14c0a", "r14c0b", "r14c0c"], ["r15c0a", "r15c0b", "r15c0c"]]
 OLD_STAMP_FROM = "r12"   # runs from r12 on used STARTER_TAGS.toon sha1 ec0f8f6071 (GRAMMAR_BASELINE.md); r1-r11 predate the stamp
 

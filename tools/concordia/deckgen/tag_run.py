@@ -595,7 +595,13 @@ def deck_cards(path):
 def main(a):
     mg = mtgish_load()
     if a and a[0] == "card":
-        for n in a[1:]: print(render(record(n, find_text(n), mg)), end="\n\n")
+        for n in a[1:]:
+            print(render(record(n, find_text(n), mg)), end="\n\n")
+            try:
+                import tag_twins
+                tag_twins.main(["card", n])   # similar already-tagged ability lines, for reference
+            except Exception as ex:
+                print("(no twins:", ex, ")")
         return
     decks = sorted(glob.glob(os.path.join(ROOT, "forge-gui/res/adventure/Concordia/decks/starter/*.dck")))
     uniq = collections.OrderedDict()
@@ -618,6 +624,11 @@ def main(a):
     hdr += "# Each record has a typing: line (supertype, cardtype, type, landtype: what the card is) and a tags: line (what its abilities do). Tag meanings (pinned reference text, one line per family): tags/TAG_LEGEND.md. Zone moves use shared tags: from_zone:<zone> and to_zone:<zone> next to return, take, put_onto_battlefield, cost:exile.\n"
     open(os.path.join(HERE, "tags", "TAG_LEGEND.md"), "w").write("# Tag legend\n\nPinned reference text, one line per tag family with a structured or non-obvious value. Written by tag_run.py from `tag_extra.LEGEND`; blind readers get the same lines for the families present in their batch.\n\n| Family | Meaning |\n|---|---|\n" + "".join("| `%s` | %s |\n" % kv for kv in TX.LEGEND.items()))
     open(os.path.join(HERE, "tags", "STARTER_TAGS.toon"), "w").write(hdr + "\n\n".join(render(r) for r in recs) + "\n")
+    try:
+        import tag_twins
+        tag_twins.build()   # ability-line twin index, from the toon just written
+    except Exception as ex:
+        print("tag_twins index not rebuilt:", ex)
     # report
     tc = collections.Counter(t for r in recs for t in r["tags"])
     trig = collections.Counter(c["trigger"] for r in recs for c in r["clauses"])

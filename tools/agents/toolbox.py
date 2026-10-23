@@ -22,6 +22,8 @@ TOOLS = [
     ("tools/agents/clone_verify.py", "main", "checks a fresh checkout is ready (tools, human_logic, mtgish data, tag_run)"),
     ("tools/concordia/deckgen/tag_run.py", "main", "tagging run: starter / card; writes tags/STARTER_TAGS*.{toon,md}, NEW_TAGS_FOR_APPROVAL.md; needs MTGISH_DATA"),
     ("tools/concordia/deckgen/tagcheck/reverse_check.py", "main", "blind reverse tag check: export / compare / selftest"),
+    ("tools/concordia/deckgen/tag_twins.py", "main", "ability-line twin index (tags/ABILITY_TWINS.json): build / card / text / stats; tag_run.py rebuilds it and prints twins in `card`"),
+    ("tools/concordia/deckgen/tagcheck/run_log.py", "main", "reader-run manifests, append-only RUN_LOG.jsonl, bundles: record / compare / bundle / backfill / show; reverse_check and consistency call it"),
     ("tools/concordia/deckgen/tagcheck/consistency.py", "main", "reader consistency scores (V1-V4, S1, A) and the tags sha1 stamp"),
     ("tools/concordia/deckgen/tagcheck/placeholder_triage.py", "main", "placeholder triage for reader output (PLACEHOLDER_TRIAGE.md)"),
     ("tools/concordia/deckgen/tagcheck/oracle_style_stats.py", "main", "Oracle style statistics for the reader grammar"),
