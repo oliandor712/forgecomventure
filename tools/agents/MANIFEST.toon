@@ -1,6 +1,6 @@
-records_commit: 438fcbb12c140a5b3327fe3a8a3effa155807423
+records_commit: d111c7383e71e6dfdbbe28e6121fedf529052f47
 branch: campaign-design
-created: 2026-10-23T14:59:26-04:00
+created: 2026-10-23T15:00:49-04:00
 entries[46|]{path|hash}:
   .claude/agents/deck-balance-lab.md|36c8af0428e37159d82f8458930f82545714cf7f
   .claude/agents/deck-builder.md|606456455630443fa3ed993aaaf738f5655a20d0
