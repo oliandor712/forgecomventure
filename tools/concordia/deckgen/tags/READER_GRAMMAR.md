@@ -1,6 +1,6 @@
-# Reader grammar v1 (draft, full version)
+# Reader grammar v2 (draft, full version)
 
-Status: DRAFT for the user's review (phase 2 of `tagcheck/READER_GRAMMAR_PLAN.md`). Nothing here has been run on a reader yet. Written 2026-10-23 (Claude 2) from the 120 cards on which the three phase 1 readers (r12a, r12b, r12c) differed in structure or wording, the Oracle statistics in `tagcheck/ORACLE_STYLE_STATS.md`, `tags/TAG_LEGEND.md` and the user decisions of 2026-10-22. The short version is `READER_GRAMMAR_SHORT.md` (v1s).
+Status: v2 DRAFT (P4d, 2026-10-23), for the user's review; not yet run on a reader (P4e). v1 was run as arm C2 (V1 0.776). Changes are marked `[v2]`: tags added in P4c/P4d (`cost_mana`, `unless_cost_amount`, `trigger_filter:<cardtype>` incl. negations, `x_is:previous_result`, `investigate`, `bolster`, `monarch`, `duration:until_monarch_changes`, `target_scope:each_other_player`, even/odd mana value, `take`, `look_top`, `piles_split`), `controller` wording, mill, one spelling for unknown parts, Curse of Opulence. The C2 `records` input form is unchanged. v1 status text: DRAFT for the user's review (phase 2 of `tagcheck/READER_GRAMMAR_PLAN.md`). Nothing here has been run on a reader yet. Written 2026-10-23 (Claude 2) from the 120 cards on which the three phase 1 readers (r12a, r12b, r12c) differed in structure or wording, the Oracle statistics in `tagcheck/ORACLE_STYLE_STATS.md`, `tags/TAG_LEGEND.md` and the user decisions of 2026-10-22. The short version is `READER_GRAMMAR_SHORT.md` (v1s).
 
 Goal order: (1) same output every time, (2) reads like a Magic card, (3) no loss of accuracy. Where two correct wordings exist, the grammar picks ONE, even if it is not the most common Oracle form. Unverified rules are marked `[?]`.
 
@@ -22,7 +22,7 @@ A rule here beats a reader's preference. A reader never chooses between two word
 |---|---|
 | `N` | a number the tags do not give |
 | `X` | a variable amount (`x`), never defined unless 4.4 says so |
-| `{cost}` | a mana cost the tags do not give, and ONLY where a `cost:mana` tag (or a keyword that always has a cost) exists |
+| `{cost}` | a mana cost the tags do not give, and ONLY where a `cost:mana` tag (or a keyword that always has a cost) exists [v2] With `cost_mana:<symbols>` or `unless_cost_amount:<symbols>` write the symbols from the tag (4.2), never `{cost}` |
 | `{effect}` | an effect the tags do not describe |
 | `{trigger}` | a trigger event the tags do not name |
 | `{condition}` | a condition the tags do not spell out |
@@ -31,6 +31,8 @@ A rule here beats a reader's preference. A reader never chooses between two word
 | `{duration}` | a duration the tags do not give |
 
 `{card}`, `{permanent}`, `{player}`, `{it}`, `{target}`, `{destination}`, `{position}`, `{type}` are NOT allowed (phase 1 readers invented them). Use the table above, or a plain word: an unknown destination is simply omitted.
+
+[v2] One spelling for an unknown part: the placeholder takes the exact place of the missing words and the sentence keeps its normal shape. Unknown trigger: `{trigger}, draw a card.` (comma form; never `{Trigger}:` or `{trigger}:`, which reads as an activated ability). Unknown effect: `When ~ enters, {effect}.` Braces and lower case exactly as in the table; no capital, no extra words inside.
 
 ## 3. Words and numbers
 
@@ -61,6 +63,9 @@ A rule here beats a reader's preference. A reader never chooses between two word
 
 - `When` only for a self `etb` / `dies` / `leaves`; `Whenever` for everything else; `At the beginning of` for steps and phases.
 - Words are `enters` (never "enters the battlefield") and `dies` (never "is put into a graveyard from the battlefield").
+- [v2] `trigger_filter:<cardtype>` now names the triggering object (creature, land, artifact, instant, sorcery ...); a negated type is one value (`noncreature`): `Whenever you cast a noncreature spell,`, `Whenever another creature you control dies,`.
+- [v2] Aura on a player (`kw:enchant` with `target_type:player`) with `trigger:attacks` and no scope tag: `Whenever enchanted player is attacked,` (Curse of Opulence). The trigger is an attack on the enchanted player, not an attack by ~.
+- [v2] `trigger:gain_life` = `Whenever you gain life,`; `trigger:beginning_of_combat` = `At the beginning of combat on your turn,`; `trigger:upkeep` = `At the beginning of your upkeep,` (tags now emitted from the script; no `[?]`).
 - `<type> <you control>`: type from `trigger_filter` (creature, instant ...); if only `you_control` is given and no type, write `{filter}` (do not guess creature). Order: `another creature you control with power 3 or greater enters`. `power_ge_N` = `with power N or greater`, `power_le_N` = `with power N or less`; `nontoken` = `nontoken` before the type.
 - Self scope with two events (`trigger:etb` and `trigger:attacks` on one group): two sentences' worth of trigger joined with `and whenever`, in tag order.
 
@@ -68,13 +73,13 @@ A rule here beats a reader's preference. A reader never chooses between two word
 Order inside the cost: `{cost}` (only if `cost:mana`), then `{T}`, then the other costs in tag order, joined by `, `, then `: `.
 | Tag | Write |
 |---|---|
-| `cost:mana` | `{cost}` |
+| `cost:mana` | `{cost}`; [v2] with `cost_mana:<symbols>` write the symbols: `1b` = `{1}{B}`, `2` = `{2}`, `x` = `{X}`, `3gg` = `{3}{G}{G}` (digits first, then colours in tag order) |
 | `cost:tap` | `{T}` |
 | `cost:sacrifice` + `cost_sacrifice_target:self` | `Sacrifice ~` |
 | `cost_sacrifice_target:goblin` | `Sacrifice a Goblin` |
 | `cost:discard` | `Discard a card` (count only from `discard_count`) |
 | `cost:life` | `Pay N life` |
-| `cost:remove_counters` | `Remove N <kind> counters from ~` (kind from `counter:`; `quest` = `quest`) |
+| `cost:remove_counters` | `Remove N <kind> counters from ~` (kind from `counter:`; `quest` = `quest`). [v2] Inside an effect's `optional` cost (Nazar): `you may remove N <kind> counters from ~. If you do, <effects>` |
 | `cost:exile` + `from_zone:graveyard` | `Exile <cost_exile_target> card from your graveyard` |
 | `cost:return` + `cost_return_target:land` | `Return a land you control to its owner's hand` |
 - A mana ability (`mana_source`) is written `{T}: Add {U}.` The text before the colon is the cost; there is no `{cost}` unless `cost:mana` exists.
@@ -97,6 +102,7 @@ Order inside the cost: `{cost}` (only if `cost:mana`), then `{T}`, then the othe
 | `greatest_power_among_<set>` | `where X is the greatest power among <set>` |
 | `target_mana_value` | `equal to its mana value` |
 | `kicked_bonus_4` | `If this spell was kicked, X is 4.` |
+| [v2] `previous_result` | the amount is what the previous effect of the same ability produced: `equal to the damage dealt this way` (previous `damage`), `the life lost this way` (`life_loss`), `the life gained this way` (`lifegain`), `the number of cards drawn this way` (`draw`), `... discarded this way` (`discard`), `... milled this way` (`mill`); no clear previous effect: `equal to that much` |
 | any other value | `where X is {effect}` and the tag goes under `unclear` |
 - Rule of thumb: damage, life gain, life loss use `equal to ...`; draw, tokens, counters, mana use `X ..., where X is ...`.
 
@@ -110,6 +116,8 @@ Order inside the cost: `{cost}` (only if `cost:mana`), then `{T}`, then the othe
 | `target_scope:opp_control` | `an opponent controls` after the whole type phrase: `target creature or planeswalker an opponent controls` (not "you don't control") |
 | `target_scope:you_control` | `you control` after the type phrase |
 | `target_scope:each_opponent` | `each opponent` |
+| [v2] `target_scope:each_other_player` | `each other player` (Hunted Wumpus: `Each other player may put a creature card from their hand onto the battlefield.`; `optional` = `may` after the player word) |
+| [v2] `target_filter:even_mana_value` / `odd_mana_value` | `with an even mana value` / `with an odd mana value`, right after the type word, before the scope phrase |
 | `target_type:any` | `any target` |
 | `target_type:A` + `target_type:B` | `target A or B` (one target, two kinds) |
 | `target_filter:nonland` | before the type: `target nonland permanent` |
@@ -125,9 +133,10 @@ Two `target_scope` tags on one ability bind to the targets in the order the targ
 | `put_onto_battlefield` (no `return` tag) | `Put <it> from <zone> onto the battlefield` |
 | `return` + `to_zone:battlefield` | `Return <it> from <zone> to the battlefield` |
 | `put_tapped` | `... onto the battlefield tapped` / `... to the battlefield tapped` |
-| `controller:you` | add `under your control` |
+| `controller:you` | add `under your control` [v2] only when the card comes from a graveyard or exile that is not yours (`a graveyard`, `an opponent's graveyard`); never for library or hand origin, never for your own graveyard |
 | `controller:owner` | add `under its owner's control` (only then) |
 | no `controller` tag | write no control phrase |
+- [v2] Graveyard wording without a scope tag: `from_zone:graveyard` = `from your graveyard`; `target_scope:opp_control` = `from an opponent's graveyard`; `target_scope:each_player` = `from a graveyard`. Tutor puts (4.7) and library puts never get a control phrase: `onto the battlefield` already means under your control.
 - Verb rule: the tag `return` decides `Return`; the tag `put_onto_battlefield` without `return` decides `Put`. Library and hand origin always say `Put`.
 - `remove:exile` = `Exile`; `remove:destroy` = `Destroy`; `cant_regenerate` = ` It can't be regenerated.` `[?]` (second sentence).
 
@@ -155,16 +164,24 @@ Two `target_scope` tags on one ability bind to the targets in the order the targ
 | `lifegain` + `lifegain_amount` | `You gain N life.` (each_opponent: `Each opponent loses N life.`) |
 | `life_loss` + `life_loss_amount` | `You lose N life.` |
 | `damage` + `damage_amount` | `~ deals N damage to <target>.` (a spell: `~ deals ...`) |
-| `scry` / `surveil` / `mill` with no amount tag | `Scry N.` / `Surveil N.` / `Mill N cards.` |
+| `scry` / `surveil` / `mill` with no amount tag | `Scry N.` / `Surveil N.` / `Mill N cards.` [v2] `mill` (and `self_mill`) is always `Mill N cards.` when no amount tag exists, never `Mill a card.`; with a player target: `Target player mills N cards.`, `each_player`: `Each player mills N cards.` |
+| [v2] `investigate` | `Investigate.` (no reminder text) |
+| [v2] `bolster:N` | `Bolster N.` (digit, as Oracle) |
+| [v2] `monarch` | `You become the monarch.` |
+| [v2] `remove:exile` + `duration:until_monarch_changes` | `Exile <target> until an opponent becomes the monarch.` |
+| [v2] `look_top:N` + `reveal` | `Reveal the top N cards of your library.` (N = 1: `the top card`) |
+| [v2] `look_top:N` without `reveal` | `Look at the top N cards of your library.` (N = 1: `the top card`) |
+| [v2] `piles_split:opponent` | `An opponent separates those cards into two piles.` (`you`: `Separate those cards into two piles.`); what happens to the piles has no tag: `{effect}` |
+| [v2] `take:[may_]K[_filter]` + `to_zone:<zone>` | `[You may] put K <filter> card(s) from among them into your <zone>`; `chosen_type` = `of the chosen type` |
 | `optional` | `you may` before the verb (`you may draw a card.`) |
 | `pump_amount:+2/+0` | `<Subject> gets +2/+0 until end of turn.` (`duration:static` = no duration words) |
 | `grant_kw` with a pump on the same subject | one sentence: `gets +2/+0 and has trample` |
 | `untap` | `Untap it.` |
 | `phase_out` | `It phases out.` |
 | `steal` + `duration:eot` | `Gain control of <target> until end of turn.` |
-| `attack_tax` + `restrict_kind:cant_attack_unless_cost` | `Creatures can't attack you unless their controller pays {cost} for each creature they control that's attacking you.` |
+| `attack_tax` + `restrict_kind:cant_attack_unless_cost` | `Creatures can't attack you unless their controller pays {cost} for each creature they control that's attacking you.` [v2] with `unless_cost_amount:2` write `{2}` instead of `{cost}` |
 | `restrict_kind:doesnt_untap` + `duration:next_untap` | `It doesn't untap during its controller's next untap step.` (several: `They don't untap during their controller's next untap step.`) |
-| `counterspell` | `Counter target spell.` (`unless_cost`: ` unless its controller pays {cost}`) |
+| `counterspell` | `Counter target spell.` (`unless_cost`: ` unless its controller pays {cost}`) [v2] with `unless_cost_amount:3`: ` unless its controller pays {3}` |
 | `replace:...` | `instead` at the end of the clause; keep the event wording in the tag name |
 Exceptions to "one effect, one sentence": (a) `discard` and `draw` in the same group are written in tag order joined by `, then` (`discard a card, then draw a card`); (b) `shuffle` is always `, then shuffle` after the tutor or put clause; (c) pump + grant_kw (above).
 
@@ -215,4 +232,4 @@ Format: card / tags (abridged) / output.
 Planeswalker abilities, equipment reconfigure, double-faced and adventure cards, `x_is` values not listed in 4.4, Class and Saga rules beyond 4.9, `token_type:*_lifegain`-style fused values, `forge_line:*` lines, `recursion`, `impulse_draw` (`Exile the top card of your library. Until end of turn you may play it.` is the likely form, untested). These are filled in during phase 4 from what the readers actually do.
 
 ## 9. Decisions for the user (change any; the grammar follows)
-G1 `~` for the card itself. Already decided. · G2 Keywords first, but `Equip` / `Reconfigure` / `Fortify` last (user, 2026-10-23). · G3 One effect per sentence, no `and` joining, only 4.10 exceptions. · G4 `an opponent controls` rather than `you don't control`. · G5 `enters` / `dies` / `leaves` only, never the zone wording. · G6 keyword cost from `num` and `color` tags (guess risk, see 4.3). · G7 em dash `—` and `•` in modes. · G8 plain keywords of consecutive `k` groups on one line. · G9 `{filter}` instead of guessing `creature` when a trigger has only `you_control`. · G10 `and whenever` for a group with two trigger events.
+G1 `~` for the card itself. Already decided. · G2 Keywords first, but `Equip` / `Reconfigure` / `Fortify` last (user, 2026-10-23). · G3 One effect per sentence, no `and` joining, only 4.10 exceptions. · G4 `an opponent controls` rather than `you don't control`. · G5 `enters` / `dies` / `leaves` only, never the zone wording. · G6 keyword cost from `num` and `color` tags (guess risk, see 4.3). · G7 em dash `—` and `•` in modes. · G8 plain keywords of consecutive `k` groups on one line. · G9 `{filter}` instead of guessing `creature` when a trigger has only `you_control`. · G10 `and whenever` for a group with two trigger events. · [v2] G11 costs from `cost_mana` / `unless_cost_amount`, `{cost}` only without them · G12 `previous_result` = `equal to the <thing> this way` · G13 `under your control` only for a graveyard or exile that is not yours · G14 `Mill N cards.` always when no amount tag · G15 placeholders keep the sentence shape (`{trigger}, ...`) · G16 `Whenever enchanted player is attacked,` for an Aura on a player

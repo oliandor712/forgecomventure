@@ -59,3 +59,7 @@ Order change from before: P4b-P4c come before more grammar work; P8 may start in
 ## 6. Not verified
 
 C3 numbers (not recomputed). The placeholder/V1 re-count uses a rough normaliser. Metrics have no human validation yet. Hold-out generalisation unknown.
+
+## 7. Status (2026-10-23)
+
+P4a-P4c done. **P4d done**: `tags/READER_GRAMMAR.md` is v2 (changes marked `[v2]`, decisions G11-G16) and `READER_GRAMMAR_SHORT.md` has rules 14-18; `consistency.py selftest` passes. Not yet measured on a reader: next is P4e (only on the user's word; check the rate limit first).

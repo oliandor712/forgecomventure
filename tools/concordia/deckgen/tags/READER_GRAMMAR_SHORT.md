@@ -1,4 +1,4 @@
-# Reader grammar v1s (draft, short version)
+# Reader grammar v2s (draft, short version)
 
 Status: DRAFT (phase 2, 2026-10-23). The top-disagreement rules of `READER_GRAMMAR.md` only; tested as arm C3 in phase 3. Section numbers refer to the full file.
 
@@ -15,3 +15,8 @@ Status: DRAFT (phase 2, 2026-10-23). The top-disagreement rules of `READER_GRAMM
 11. Never write `enters untapped`, a type line, a name, reminder text, or a definition the tag did not ask for. Numbers: words for cards, tokens, counters (`two`), digits for damage, life, P/T. Unknown number `N`.
 12. Predefined tokens (Treasure, Food, Gold, Clue, Blood): `Create a Treasure token.` only. Modes: `Choose one —` with `•` bullets on the same line. Sagas: `I — ...` / `II — ...`.
 13. Gaps: use the matching placeholder, list the tag under `unclear`; never fill from memory of a real card.
+14. [v2] Costs from tags: `cost_mana:1b` = `{1}{B}` (`x` = `{X}`); `{cost}` only for `cost:mana` without `cost_mana`. `unless_cost_amount:2` = `unless ... pays {2}`. Unknown parts keep the sentence shape: `{trigger}, draw a card.`, `When ~ enters, {effect}.`; never `{Trigger}:`.
+15. [v2] `trigger_filter:creature` = `another creature`; `noncreature` = `noncreature spell`. Aura on a player + `trigger:attacks` = `Whenever enchanted player is attacked,`.
+16. [v2] `under your control` only for a graveyard or exile that is not yours; never for library, hand or your own graveyard. `from_zone:graveyard` alone = `from your graveyard`.
+17. [v2] `mill` without amount = `Mill N cards.`; `x_is:previous_result` = `equal to the damage dealt this way` (life lost, life gained, cards drawn ...; else `that much`).
+18. [v2] `investigate` = `Investigate.`; `bolster:N` = `Bolster N.`; `monarch` = `You become the monarch.`; `duration:until_monarch_changes` = `until an opponent becomes the monarch`; `target_scope:each_other_player` = `each other player`; `look_top:N` + `reveal` = `Reveal the top N cards of your library.`; `piles_split:opponent` = `An opponent separates those cards into two piles.`
