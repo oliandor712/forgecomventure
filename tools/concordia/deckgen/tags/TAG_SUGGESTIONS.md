@@ -28,8 +28,8 @@ Sources: deck-builder DB, balance lab BL, AI lab AL, reverse check RC, main sess
 ## 3. Not done on purpose
 Merging `trigger:etb` with `trigger_scope:self`; merging the three mana tags (derived `mana_out` instead); AI values best_creature / opp_only / own_only; "instant" and "combat" as AI timing values.
 
-## 4. Decisions for the user
-- **D1:** cards that only make a Treasure (Big Score, Seize the Spoils, Breeches ...) carry `mana_source`, and Food makers carry `lifegain`. A builder counting ramp would count them. (a) keep, link the tag to the token (`provided_by token_type:treasure`) so a builder can exclude it; (b) move such token-provided tags to the derived / AI side; (c) keep as is. Recommended: (a).
-- **D2:** may AI tags feed card power? DB and C2 recommend no (quota and playability only).
-- **D3:** implement C, D, E, F now (before the full-cardlist run), or only C and D first?
-- **D4:** do the new AI-side families in E join the AI Tags category on creation, with no per-family approval?
+## 4. Decisions for the user (answered 2026-10-23)
+- **D1: (a).** Treasure and Food makers keep `mana_source` / `lifegain`, linked to the token (`provided_by token_type:treasure`) so a builder can exclude them.
+- **D2: no.** AI tags do not feed card power (quota and playability only).
+- **D3: open.** Implement C, D, E, F now (before the full-cardlist run), or only C and D first?
+- **D4: yes.** New AI-side families in E join the AI Tags category on creation, with no per-family approval.
