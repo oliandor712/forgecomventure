@@ -8,7 +8,7 @@ Revised documents are overwritten in place: edit the existing file, do not creat
 import os, re, subprocess, sys, tempfile, argparse
 ROOT = subprocess.run(["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True).stdout.strip()
 BRANCH = "campaign-design"
-DENY = [r"^CLAUDE\.md$", r"^\.claude/", r"^tools/agents/(MAIN_SESSION_BRIEF|CONTEXT|NEW_SESSION_PROMPT|AGENT_KNOWLEDGE|HANDOVER|TOOLBOX)\.md$",
+DENY = [r"^CLAUDE\.md$", r"^START\.md$", r"^\.claude/", r"^tools/agents/(MAIN_SESSION_BRIEF|CONTEXT|NEW_SESSION_PROMPT|AGENT_KNOWLEDGE|HANDOVER|TOOLBOX)\.md$",
         r"^forge-", r"^docs/Adventure/Campaign/AI_CHANGES_APPROVAL\.md$"]
 TRAILER = "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01SmNeweiyRBavDSUetnsUjF"
 def git(*a, env=None, check=True):
