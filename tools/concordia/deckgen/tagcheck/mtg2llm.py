@@ -54,6 +54,9 @@ def mine():
     rules, used, seen = C.defaultdict(C.Counter), 0, 0
     for r in sorted(glob.glob(os.path.join(RUNS, "*/"))):
         if re.match(r"m\d", os.path.basename(os.path.normpath(r))): continue      # m<N> = test runs of the renderer (held out; never mined)
+        try:
+            with open(os.path.join(r, "key", "key.json"), encoding="utf-8") as fh: KEY = json.load(fh)
+        except Exception: KEY = {}
         for f in sorted(glob.glob(os.path.join(r, "in", "*.json"))):
             o = os.path.join(r, "out", os.path.basename(f))
             if not os.path.exists(o): continue
@@ -63,6 +66,7 @@ def mine():
             except Exception: continue
             for c in I:
                 if c["id"] not in O: continue
+                if c["id"] in KEY and RC.is_pre6(KEY[c["id"]]): continue      # pre-6th-only cards are not mined
                 seen += 1
                 u = units(c["groups"])
                 lines = [x.strip() for x in O[c["id"]]["text"].split(" / ") if x.strip()]
@@ -171,6 +175,9 @@ def mine_parts():
     P = {k: C.defaultdict(C.Counter) for k in ("trig", "cost", "target", "body")}
     for r in sorted(glob.glob(os.path.join(RUNS, "*/"))):
         if re.match(r"m\d", os.path.basename(os.path.normpath(r))): continue
+        try:
+            with open(os.path.join(r, "key", "key.json"), encoding="utf-8") as fh: KEY = json.load(fh)
+        except Exception: KEY = {}
         for f in sorted(glob.glob(os.path.join(r, "in", "*.json"))):
             o = os.path.join(r, "out", os.path.basename(f))
             if not os.path.exists(o): continue
@@ -180,6 +187,7 @@ def mine_parts():
             except Exception: continue
             for c in I:
                 if c["id"] not in O: continue
+                if c["id"] in KEY and RC.is_pre6(KEY[c["id"]]): continue
                 u = units(c["groups"]); lines = [x.strip() for x in O[c["id"]]["text"].split(" / ") if x.strip()]
                 if len(u) != len(lines): continue
                 for (g, ts), line in zip(u.items(), lines):
@@ -700,7 +708,7 @@ def cmd_unseen(a):
     for k in glob.glob(os.path.join(RUNS, "*", "key", "*.json")):
         try: seen_names |= set(json.load(open(k, encoding="utf-8")).values())
         except Exception: pass
-    pool = sorted({n for v in cardnames().values() for n in v if not n.startswith("A-") and n not in seen_names and script_text(n)})
+    pool = sorted({n for v in cardnames().values() for n in v if not n.startswith("A-") and n not in seen_names and not RC.is_pre6(n) and script_text(n)})
     random.Random(a.seed).shuffle(pool); pool = pool[:a.pool]
     R = rules(); cover, chosen = set(), []
     try: cover = {pattern([" ".join(t["tags"])]) for t in json.load(open(os.path.join(HERE, "..", "tags", "ABILITY_TWINS.json"), encoding="utf-8"))}      # ability twins: tag groups already indexed

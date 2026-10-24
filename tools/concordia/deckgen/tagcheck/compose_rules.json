@@ -91,7 +91,7 @@
    "canon": "Whenever another creature with power 3 or greater enters under your control"
   },
   "trigger:upkeep": {
-   "n": 4,
+   "n": 3,
    "top": 1.0,
    "canon": "At the beginning of your upkeep"
   },
@@ -208,7 +208,7 @@
    "canon": "{T}"
   },
   "cost:mana": {
-   "n": 109,
+   "n": 90,
    "top": 1.0,
    "canon": "{cost}"
   },
@@ -329,11 +329,6 @@
   }
  },
  "target": {
-  "target_count:one target_scope:you_control target_type:aura": {
-   "n": 19,
-   "top": 1.0,
-   "canon": "target Aura"
-  },
   "target_count:one target_type:creature": {
    "n": 514,
    "top": 0.973,
@@ -576,16 +571,6 @@
    "top": 1.0,
    "canon": "add {G} for each Elf you control."
   },
-  "kw:flying": {
-   "n": 375,
-   "top": 0.979,
-   "canon": "flying"
-  },
-  "activation_restriction controller:owner from_zone:graveyard put_onto_battlefield target_zone:graveyard": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "put {T} card from your graveyard onto the battlefield under its owner's control. {restriction}."
-  },
   "controller:owner from_zone:graveyard optional put_onto_battlefield": {
    "n": 7,
    "top": 0.286,
@@ -600,6 +585,11 @@
    "n": 38,
    "top": 0.526,
    "canon": "put {T} card from your graveyard onto the battlefield under your control."
+  },
+  "kw:flying": {
+   "n": 356,
+   "top": 0.98,
+   "canon": "flying"
   },
   "controller:owner from_zone:graveyard put_onto_battlefield put_tapped target_zone:graveyard": {
    "n": 1,
@@ -850,11 +840,6 @@
    "n": 12,
    "top": 0.917,
    "canon": "equipped creature has haste and hexproof."
-  },
-  "activation_restriction controller:you from_zone:graveyard put_onto_battlefield target_zone:graveyard": {
-   "n": 12,
-   "top": 0.667,
-   "canon": "put {T} card from your graveyard onto the battlefield under your control. Activate only {restriction}."
   },
   "impulse_draw impulse_draw_count:N look_top:N mana_source modal:N_of_N restrict_kind:cant_block take:all to_zone:exile token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_type:treasure": {
    "n": 13,
@@ -1566,11 +1551,6 @@
    "top": 1.0,
    "canon": "artifact - Equipment. Equipped creature has haste and hexproof."
   },
-  "activation_restriction put_from:graveyard put_onto_battlefield reanimate target_zone:graveyard tempo:+N": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "return {T} card from your graveyard to the battlefield. Activate only {restriction}."
-  },
   "put_from:graveyard put_onto_battlefield reanimate remove:exile": {
    "n": 2,
    "top": 0.5,
@@ -1930,11 +1910,6 @@
    "n": 3,
    "top": 0.667,
    "canon": "equip {N}"
-  },
-  "activation_restriction put_from:graveyard put_onto_battlefield reanimate target_zone:graveyard": {
-   "n": 3,
-   "top": 0.333,
-   "canon": "put {T} card from your graveyard onto the battlefield attached to this creature. Activate only {restriction}."
   },
   "look_top:N take_count:N": {
    "n": 1,
@@ -2341,11 +2316,6 @@
    "top": 1.0,
    "canon": "return this card from your graveyard to the battlefield tapped."
   },
-  "activation_restriction from_zone:graveyard put_onto_battlefield reanimate target_zone:graveyard": {
-   "n": 2,
-   "top": 0.5,
-   "canon": "put {T} card from your graveyard onto the battlefield. {restriction}"
-  },
   "from_zone:library put_onto_battlefield put_tapped shuffle tutor tutor_count:N tutor_count:up_to_N tutor_dest:battlefield_tapped tutor_dest:hand tutor_dest:library tutor_target:basic_land tutor_target:land_isremembered": {
    "n": 2,
    "top": 1.0,
@@ -2470,16 +2440,6 @@
    "n": 1,
    "top": 1.0,
    "canon": "gain control of {T} controlled by a player who controls an Island for as long as this creature remains tapped."
-  },
-  "kw:cumulative_upkeep num:N": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "cumulative upkeep {N}"
-  },
-  "counter:growth counter_count:N": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "put a growth counter on this enchantment."
   },
   "kw:choose_a_background": {
    "n": 1,

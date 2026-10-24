@@ -234,50 +234,6 @@
   "canon": "Target creature gets +N/+N until end of turn. It gains \"When this creature dies, return it to the battlefield tapped under its owner's control\" until end of turn.",
   "variants": []
  },
- "kw:flying": {
-  "n": 375,
-  "top": 0.979,
-  "canon": "Flying",
-  "variants": [
-   [
-    "Flying.",
-    6
-   ],
-   [
-    "Vampire creature. Flying",
-    1
-   ],
-   [
-    "Legendary Human Wizard creature. Flying",
-    1
-   ]
-  ]
- },
- "activation_restriction controller:owner cost:mana from_zone:graveyard put_onto_battlefield target_count:one target_scope:you_control target_type:aura target_zone:graveyard": {
-  "n": 1,
-  "top": 1.0,
-  "canon": "{cost}: Put target Aura card from your graveyard onto the battlefield under its owner's control. {restriction}.",
-  "variants": []
- },
- "cost:mana cost:tap remove:destroy target_count:all target_filter:attachedto_card_self target_filter:aura target_type:card": {
-  "n": 19,
-  "top": 0.474,
-  "canon": "{cost}, {T}: Destroy all Auras attached to this creature.",
-  "variants": [
-   [
-    "{cost}, {T}: Destroy all Auras attached to ~.",
-    8
-   ],
-   [
-    "{T}, {cost}: Destroy all Auras attached to this creature.",
-    1
-   ],
-   [
-    "{cost}, {T}: Destroy all Aura cards attached to ~.",
-    1
-   ]
-  ]
- },
  "controller:owner from_zone:graveyard optional put_onto_battlefield trigger:dies trigger_filter:nontoken trigger_filter:you_control trigger_scope:other trigger_zone:graveyard": {
   "n": 13,
   "top": 0.231,
@@ -334,6 +290,21 @@
    ],
    [
     "Return target creature card from your graveyard to the battlefield under your control.",
+    1
+   ]
+  ]
+ },
+ "kw:flying": {
+  "n": 356,
+  "top": 0.98,
+  "canon": "Flying",
+  "variants": [
+   [
+    "Flying.",
+    6
+   ],
+   [
+    "Vampire creature. Flying",
     1
    ]
   ]
@@ -1325,21 +1296,6 @@
   "top": 1.0,
   "canon": "{cost}, {T}: Draw N card.",
   "variants": []
- },
- "activation_restriction controller:you cost:mana from_zone:graveyard put_onto_battlefield target_count:one target_scope:you_control target_type:aura target_zone:graveyard": {
-  "n": 12,
-  "top": 0.667,
-  "canon": "{cost}: Put target Aura card from your graveyard onto the battlefield under your control. Activate only {restriction}.",
-  "variants": [
-   [
-    "{cost}: Put target Aura card from your graveyard onto the battlefield under your control. {restriction}",
-    3
-   ],
-   [
-    "{cost}: Return target Aura card from your graveyard to the battlefield under your control. {restriction}",
-    1
-   ]
-  ]
  },
  "duration:eot impulse_draw impulse_draw_count:N look_top:N mana_source modal:N_of_N restrict_kind:cant_block take:all target_count:one target_type:creature to_zone:exile token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_type:treasure trigger:attacks trigger_filter:you_control": {
   "n": 14,
@@ -5280,12 +5236,6 @@
   "canon": "Artifact - Book. {cost}, {T}: Draw N card.",
   "variants": []
  },
- "activation_restriction cost:mana put_from:graveyard put_onto_battlefield reanimate target_count:one target_scope:you_control target_type:aura target_zone:graveyard tempo:+N": {
-  "n": 1,
-  "top": 1.0,
-  "canon": "{cost}: Return target Aura card from your graveyard to the battlefield. Activate only {restriction}.",
-  "variants": []
- },
  "duration:eot impulse_draw impulse_draw_count:N mana_source restrict target_count:one target_type:creature tempo:+N.N token_cardtype:artifact token_color:colorless token_count:N token_type:treasure trigger:attacks": {
   "n": 1,
   "top": 1.0,
@@ -6437,21 +6387,6 @@
   "variants": [
    [
     "Equipped creature has haste and hexproof.",
-    1
-   ]
-  ]
- },
- "activation_restriction cost:mana put_from:graveyard put_onto_battlefield reanimate target_count:one target_scope:you_control target_type:aura target_zone:graveyard": {
-  "n": 3,
-  "top": 0.333,
-  "canon": "{cost}: Put target Aura card from your graveyard onto the battlefield attached to this creature. Activate only {restriction}.",
-  "variants": [
-   [
-    "{cost}: Return target Aura card from your graveyard to the battlefield. {activation restriction}",
-    1
-   ],
-   [
-    "{cost}: Return target Aura card from your graveyard to the battlefield. Activate only {restriction}.",
     1
    ]
   ]
@@ -7630,17 +7565,6 @@
   "canon": "Whenever this creature or another creature enters, create a 4/4 green Beast creature token.",
   "variants": []
  },
- "activation_restriction cost:mana from_zone:graveyard put_onto_battlefield reanimate target_count:one target_scope:you_control target_type:aura target_zone:graveyard": {
-  "n": 2,
-  "top": 0.5,
-  "canon": "{cost}: Put target Aura card from your graveyard onto the battlefield. {restriction}",
-  "variants": [
-   [
-    "{cost}: Put target Aura card from your graveyard onto the battlefield. Activate only {condition}.",
-    1
-   ]
-  ]
- },
  "lifegain mana_source token_ability:pay_N_tap_sacrifice_gain_N_life token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_type:food token_type:treasure trigger:etb trigger_scope:any": {
   "n": 1,
   "top": 1.0,
@@ -8055,24 +7979,6 @@
   "n": 1,
   "top": 1.0,
   "canon": "{T}: Gain control of target creature controlled by a player who controls an Island for as long as this creature remains tapped.",
-  "variants": []
- },
- "kw:cumulative_upkeep num:N": {
-  "n": 1,
-  "top": 1.0,
-  "canon": "Cumulative upkeep {N}",
-  "variants": []
- },
- "counter:growth counter_count:N trigger:upkeep": {
-  "n": 1,
-  "top": 1.0,
-  "canon": "At the beginning of your upkeep, put a growth counter on this enchantment.",
-  "variants": []
- },
- "damage damage_amount:x draw_count:x x_is:counters_on_this_growth x_is:remembered_amount": {
-  "n": 1,
-  "top": 1.0,
-  "canon": "{Trigger}: Draw X cards, where X is the number of growth counters on it. It deals X damage to {target}, where X is {the remembered amount}.",
   "variants": []
  },
  "kw:choose_a_background": {

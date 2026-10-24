@@ -14,7 +14,7 @@ Work dir (outside the repo, so the reader cannot stumble on card text): $TAGCHEC
 The report goes to deckgen/tagcheck/REVERSE_CHECK_REPORT.md (a document) and the per-card results to the run dir.
 Similarity (unvalidated until the first reader run): 0.4 tf-idf cosine + 0.4 concept F1 + 0.2 number F1. Mana-cost amounts are not tags, so {2}{G}-style symbols are
 removed from both texts before scoring and listed as a known structural gap."""
-import os, re, sys, json, math, random, argparse, collections
+import os, re, sys, glob, json, math, random, argparse, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DECKGEN = os.path.abspath(os.path.join(HERE, ".."))
@@ -277,12 +277,31 @@ def baseline_text(rec):
     return ". ".join(out)
 
 
+_PRE6 = []
+def pre6_only():
+    """lower-cased names of cards whose every printing is older than Sixth Edition (1999-04-21): stale formatting, kept out of runs, mining and tests"""
+    if _PRE6: return _PRE6[0]
+    first, late = set(), set()
+    for f in glob.glob(os.path.join(T.ROOT, "forge-gui/res/editions/*.txt")):
+        t = open(f, encoding="utf-8", errors="ignore").read()
+        d = re.search(r"^Date=(\S+)", t, re.M)
+        if not d: continue
+        for m in re.finditer(r"^\d+\w*\s+[A-Z]+\s+(.+?)(?:\s+@.*)?$", t, re.M):
+            (late if d.group(1) >= "1999-04-21" else first).add(m.group(1).strip().lower())
+    _PRE6.append(first - late); return _PRE6[0]
+
+
+def is_pre6(name): return all(p.strip().lower() in pre6_only() for p in name.split("//"))
+
+
 # ---------- commands -----------------------------------------------------------------------------------------------------------------------------
 def cmd_export(a):
     if getattr(a, "cardlist", ""):      # any cards with a script (not only starters): one name per line
         recs = [T.record(n, T.find_text(n)) for n in (l.strip() for l in open(a.cardlist, encoding="utf-8")) if n]
     else: recs = starter_records()
     if getattr(a, "cards", None): want = {c.strip().lower() for c in a.cards.split(";")}; recs = [r for r in recs if r["name"].lower() in want]      # a hand-picked subset
+    n0 = len(recs); recs = [r for r in recs if not is_pre6(r["name"])]
+    if n0 != len(recs): print("pre-6th: dropped %d card(s) whose every printing is older than Sixth Edition" % (n0 - len(recs)))
     if a.limit: random.Random(1).shuffle(recs); recs = recs[: a.limit]
     if getattr(a, "new_only", False):       # keep whole cards that have a unit with no exact rule and no composable parts (mtg2llm)
         import mtg2llm as M
