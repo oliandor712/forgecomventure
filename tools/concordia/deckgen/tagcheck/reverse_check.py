@@ -284,6 +284,16 @@ def cmd_export(a):
     else: recs = starter_records()
     if getattr(a, "cards", None): want = {c.strip().lower() for c in a.cards.split(";")}; recs = [r for r in recs if r["name"].lower() in want]      # a hand-picked subset
     if a.limit: random.Random(1).shuffle(recs); recs = recs[: a.limit]
+    if getattr(a, "new_only", False):       # keep whole cards that have a unit with no exact rule and no composable parts (mtg2llm)
+        import mtg2llm as M
+        def fresh(r):
+            for ts in M.units(tag_blind(r)["groups"]).values():
+                ts, names = M.split_named(ts)
+                if names: continue
+                if M.pattern([" ".join(ts)]) not in M.rules() and not M.compose(ts): return True
+            return False
+        n0 = len(recs); recs = [r for r in recs if fresh(r)]
+        print("new-only: %d of %d cards have a unit with no rule or parts" % (len(recs), n0))
     random.Random(7).shuffle(recs)                          # no alphabetical or deck-order hints
     wd = workdir(a.run)
     for d in ("in", "out", "key"): os.makedirs(os.path.join(wd, d), exist_ok=True)
@@ -445,7 +455,7 @@ def cmd_selftest(a):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sp = ap.add_subparsers(dest="cmd", required=True)
-    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=72); e.add_argument("--legend", action="store_true"); e.set_defaults(slim=True); e.add_argument("--reminders-extra", dest="reminders_extra", default=""); e.add_argument("--cards", default=""); e.add_argument("--cardlist", default="")
+    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=72); e.add_argument("--legend", action="store_true"); e.set_defaults(slim=True); e.add_argument("--reminders-extra", dest="reminders_extra", default=""); e.add_argument("--cards", default=""); e.add_argument("--cardlist", default=""); e.add_argument("--new-only", dest="new_only", action="store_true")
     c = sp.add_parser("compare"); c.add_argument("--run", required=True); [c.add_argument("--" + k, default="") for k in ("arm", "grammar", "reader", "note")]  # run metadata for run_log
     s = sp.add_parser("selftest"); s.add_argument("--limit", type=int, default=0)
     a = ap.parse_args()
