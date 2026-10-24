@@ -5,7 +5,7 @@ Changes to existing behaviour (approved with "approve all tags", 2026-10-22; tre
 
 | Approve | Tag family | Meaning | Source of the rule | Cards | Values seen (cards) |
 |---|---|---|---|---|---|
-| [ ] proposed | `named` | the printed name of ANOTHER card (or a named token/Role) that an ability mentions: 'a card named X', 'Partner with X'; words joined by _, casing kept; emitted only by tagcheck/mtg2llm.py tag, only with a value taken from the card's own script; own name, keywords, types and token words are never named: | user task 2026-10-23: names must survive the tag -> render round trip; Pir, Toothy, Agency Outfitter | 0 starter cards (mtg2llm tag: e.g. Pir, Imaginative Rascal; Toothy, Imaginary Friend; Agency Outfitter) | named:Toothy,_Imaginary_Friend |
+| | *No family waits for approval.* | | | | |
 
 ## New values inside already-approved families (the family is approved; these values appeared after the approval)
 

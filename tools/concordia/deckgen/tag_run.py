@@ -376,8 +376,8 @@ def write_sample(recs):
 APPROVED = ['activation_restriction', 'affects', 'cast_free', 'color', 'cost', 'cost_if_you_do', 'cost_reduce_for', 'cost_sacrifice_target', 'counter', 'damage', 'damage_amount', 'delayed', 'die_replace', 'discard_count', 'draw_count', 'duration', 'effect', 'enters_tapped', 'enters_untapped', 'exile_from', 'impulse_draw', 'impulse_draw_count', 'loses_all_abilities', 'mana', 'mana_amount', 'mana_choice', 'mana_restriction', 'must_attack', 'put_from', 'put_onto_battlefield', 'put_tapped', 'recursion', 'remove', 'return_exiled', 'sacrifice_type', 'shuffle', 'steal', 'steal_grants_haste', 'target_count', 'target_filter', 'target_scope', 'target_type', 'target_zone', 'tempo', 'token_cardtype', 'token_color', 'token_count', 'token_kw', 'token_pt', 'token_type', 'transform', 'trigger', 'trigger_filter', 'trigger_scope', 'trigger_zone', 'tutor_count', 'tutor_dest', 'tutor_target', 'affected_filter', 'affected_scope', 'affected_type', 'ai_logic', 'cant_be_blocked', 'cant_be_countered', 'condition', 'cost_exile_target', 'cost_return_target', 'counter_count', 'fight', 'grant_ability', 'grant_kw', 'life_loss', 'life_loss_amount', 'lifegain_amount', 'look_top', 'modal', 'piles_split', 'pump_amount', 'replace', 'rest_to_zone', 'rest_order', 'from_zone', 'to_zone', 'restrict_kind', 'reveal', 'saga_chapter', 'scry_count', 'surveil', 'take', 'token_ability', 'untap', 'x_is', 'optional', 'unless_cost', 'limit', 'regenerate', 'cant_regenerate', 'prevent_damage', 'choose_on_enter', 'choice_option', 'cost_reduce_amount', 'cost_reduce_mana', 'cost_reduce_for', 'mana_conditional', 'mana_amount_if', 'extra_land_drop', 'phase_out', 'cost_additional', 'controller']   
 
 
-PROPOSED_OFFLINE = ["named"]
-APPROVED_LATER = ['cost_mana', 'return', 'unless_cost_amount', 'investigate', 'monarch', 'bolster']   # approved by the user in chat on 2026-10-23
+PROPOSED_OFFLINE = []
+APPROVED_LATER = ['cost_mana', 'return', 'unless_cost_amount', 'investigate', 'monarch', 'bolster', 'named']   # approved by the user in chat on 2026-10-23
 
 
 def write_reference(recs):
