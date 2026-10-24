@@ -4,7 +4,7 @@
 Idea: a strict BLIND reader sees only the tags of a card (no name, no Oracle text, no script, no mtgish, no AI line) and writes the
 ability text those tags describe. We compare that text with the real card text, score the similarity and list what the tags failed to carry.
 
-  python3 reverse_check.py export  --run R [--limit N] [--batch 40] [--legend]   write blind batches + answer key, print the reader prompt
+  python3 reverse_check.py export  --run R [--limit N] [--batch 72] [--legend]   write blind batches + answer key, print the reader prompt
   python3 reverse_check.py compare --run R                                         score the reader's output -> report + gaps
   python3 reverse_check.py selftest                                                no reader: perfect / shuffled / mechanical-baseline texts through the scorer
 
@@ -82,11 +82,10 @@ def batch_reminders(items, db):
 
 def starter_records():
     import glob, collections as C
-    mg = T.mtgish_load()
     names = C.OrderedDict()
     for d in sorted(glob.glob(os.path.join(T.ROOT, "forge-gui/res/adventure/Concordia/decks/starter/*.dck"))):
         for n in T.deck_cards(d): names[n] = 1
-    return [T.record(n, T.find_text(n), mg) for n in names]
+    return [T.record(n, T.find_text(n)) for n in names]
 
 
 def workdir(run):
@@ -444,7 +443,7 @@ def cmd_selftest(a):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sp = ap.add_subparsers(dest="cmd", required=True)
-    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=40); e.add_argument("--legend", action="store_true"); e.add_argument("--slim", action=argparse.BooleanOptionalAction, default=True, help="slim layout is the default (about 23%% fewer reader tokens); --no-slim restores the old two-file layout"); e.add_argument("--reminders-extra", dest="reminders_extra", default=""); e.add_argument("--cards", default="")
+    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=72); e.add_argument("--legend", action="store_true"); e.set_defaults(slim=True); e.add_argument("--reminders-extra", dest="reminders_extra", default=""); e.add_argument("--cards", default="")
     c = sp.add_parser("compare"); c.add_argument("--run", required=True); [c.add_argument("--" + k, default="") for k in ("arm", "grammar", "reader", "note")]  # run metadata for run_log
     s = sp.add_parser("selftest"); s.add_argument("--limit", type=int, default=0)
     a = ap.parse_args()

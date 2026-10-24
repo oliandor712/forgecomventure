@@ -146,6 +146,7 @@ DOC = {
  "exile_from:<zone>": ("exiles cards out of a zone other than the battlefield (graveyard, hand, library)", "found in the cross-check: Scavenging Ooze, Squee"),
  "token_type:copy": ("the token is a copy of another permanent", "found in the cross-check: Kiki-Jiki, Rite of Replication"),
  "draw_count:<n|x> / discard_count:<n|x>": ("how many cards an ability draws or makes a player discard", "user note: tag draw count"),
+ "scry_count:<n|x>": ("how many cards a scry looks at (one tag says both that it scrys and how many, like draw_count; x = a variable amount, see x_is)", "user 2026-10-23: scry carries its number like other numbered effects"),
  "tempo:+n|x": ("net cards added to your hand or battlefield minus cards removed (the spell itself, sacrificed or discarded cards) when the ability resolves; tokens count 0.5 each; only positive values are tagged; tempo:x when an amount is a variable", "user note: tempo gain (+1), applied to every ability that adds more cards than it removes"),
  "put_onto_battlefield + from_zone:<zone>": ("a card is put onto the battlefield from a zone (put_onto_battlefield from_zone:library) without being cast, so its mana cost and 'when you cast' triggers are skipped; enter-the-battlefield triggers still happen (CR 603.6a). Distinct from trigger:etb, which is a trigger on entering", "user note, confirmed 2026-10-22: the tag means 'not cast'"),
  "cost_mana:<symbols>": ("the mana part of an activation cost (cost_mana:2b = {2}{B})", "P4c E, user 2026-10-23 (placeholder triage: {cost} was 117 of 317 placeholders)"),
@@ -772,6 +773,9 @@ def extra(lines, sv, types, text):
                 nd = bp.get("NumCards", "1"); add("draw_count:" + (nd if nd.isdigit() else "x"))
                 if not nd.isdigit() and x_is(nd, sv): add("x_is:" + x_is(nd, sv))
                 if bp.get("Defined", "You") == "You": pos += cnt(nd)
+            if api == "Scry":
+                ns = bp.get("ScryNum", "1"); add("scry_count:" + (ns if ns.isdigit() else "x"))
+                if not ns.isdigit() and x_is(ns, sv): add("x_is:" + x_is(ns, sv))
             if api == "Discard":
                 nd = bp.get("NumCards", "1"); add("discard_count:" + (nd if nd.isdigit() else "x"))
                 if not nd.isdigit() and x_is(nd, sv): add("x_is:" + x_is(nd, sv))

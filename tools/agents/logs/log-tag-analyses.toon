@@ -1,6 +1,8 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Append one row per analysis, under 400 chars.
 # Tag analyses: reverse check, tag suggestions, derived tags.
-log[3|]{date|topic|finding|caveat}:
+log[5|]{date|topic|finding|caveat}:
   2026-10-23|TAG_SUGGESTIONS C+D|face:/derived: lines built; on 353 starters spot_removal 69, etb_self 78, evasion_pkg 31, mana_out 28, anthem 3, wipe 0|shrink weight 0.5 unverified; E,F unbuilt
   2026-10-23|reader r18single|24 cards 1 reader: mean_sim 0.942, 23 good, 1 partial, top1 24/24|V1-V4,S1,A not computed
   2026-10-23|grammar performance|3 readers: none V1 .615 V3 .879; v1 full+records V1 .776 V3 .968; v1 short ~ none; v2 slim V1 .81 V3 .933 S1 .994 A .937; single reader r18 A .938-.946 matches 3-reader A|v2 only on 105 cards; V3 .98 target unmet; doc GRAMMAR_PERFORMANCE.md pushed a7336e066d7
+  2026-10-23|MTG2LLM miner+renderer+tagger|tagcheck/mtg2llm.py (mine,render,tag), no agents: 694 patterns from 192 reader batches (7439 readings, 5686 aligned); starters: 90% units rendered, numbers restored 89%, vs reader text exact 61% F1 .885|in-sample, vs reader not Oracle; scorer (use .6 count .2 order .2), held-out test, 55 no-rule units, 'this creature' for non-creatures unbuilt
+  2026-10-23|scry_count tag|script Scry emits scry_count:N/x (bare scry removed, 6 starters changed, no other tag); Oracle gap filler fills only if script lacks it; renderer maps it to old scry phrasing|STARTER_TAGS.toon not regenerated; X path tested on Oracle only; README not updated; unpushed

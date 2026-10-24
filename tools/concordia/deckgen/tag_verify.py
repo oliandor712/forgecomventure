@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """Cross-check layer for the tagging run (sample tag run, user 2026-10-22).
-The script tags (tag_run.record) are the 1st source. This module reads the other sources independently and reports or fills gaps:
-  oracle   the Oracle: line of the script (phrases: triggers, costs, actions)
-  mtgish   _Trigger / _Cost / _Action / _Rule names of the card's mtgish record
+The script tags (tag_run.record) are the only source (H54 rewritten 2026-10-23: mtgish dropped). This module fills gaps from:
+  oracle   the Oracle: line inside the same script, used as a gap filler (phrases: triggers, costs, actions); an Oracle phrase the script tags lack is added
   keyword  KEYWORD_REFERENCE.toon + CR 701/702 (KEYWORD_REMINDER_TEXT.toon): keyword lines and rules keywords must be kw: tags
   ai       AILogic$ values of the script (reference only, tagged ai_logic:<name>)
-verify() returns add (tags the other sources support and the script tags lack; they are new tags and go to the approval list),
-flags (disagreements to look at) and sources (which source supports each added tag). Nothing here edits a card or a deck."""
+verify() returns add (tags the Oracle line supports and the script tags lack; they are new tags and go to the approval list),
+flags (tags the Oracle line does not support, to look at) and sources (which source supports each added tag). Nothing here edits a card or a deck."""
 import re
 
 def snake(s): return re.sub(r"[^a-z0-9]+", "_", s.lower()).strip("_")
@@ -37,7 +36,6 @@ CONCEPTS = [
     ("bounce", ("bounce", "remove:bounce"), "bounce", {"PutPermanentIntoItsOwnersHand", "PutEachPermanentIntoItsOwnersHand"}, r"\breturn (?:target|all|each|that)[^.]*to (?:its|their) owner'?s? hands?\b"),
     ("counters", ("counters_plus", "counter:"), "counters_plus", {"PutCounters"}, r"\bput (?:a|an|\w+|x) [+\-/\w]*\s?counters? on\b"),
     ("tutor", ("tutor", "land_tutor"), "tutor", {"SearchLibrary"}, r"\bsearch your library\b"),
-    ("scry", ("scry",), "scry", {"Scry"}, r"\bscry \d+\b"),
     ("surveil", ("surveil",), "surveil", {"Surveil"}, r"\bsurveil \d+\b"),
     ("mill", ("mill", "self_mill"), "mill", {"MillNumberCards", "MillACard"}, r"\bmills? (?:\d+|x|a) cards?\b"),
     ("counterspell", ("counterspell",), "counterspell", {"CounterSpell"}, r"\bcounter target (?:spell|activated|triggered|noncreature|creature spell)"),
@@ -50,6 +48,7 @@ CONCEPTS = [
     ("exile_effect", ("remove:exile", "exile", "die_replace", "impulse_draw", "return_exiled", "exile_from", "from_zone:exile", "cost:exile", "kw:suspend"), "exile", {"Exile"}, r"\bexile (?:target|all|each|another|that|it)\b"),
     ("sacrifice", ("sacrifice_outlet", "cost:sacrifice", "effect:sacrifice", "cost_sacrifice_target"), "sacrifice", {"SacrificeAPermanent", "SacrificeEachPermanent"}, r"\bsacrifices? (?:a|an|\w+|x|this|target|each)\b"),
 ]
+LOOSE = {"bounce", "draw"}     # Oracle patterns too loose to add a tag alone; they only flag
 # oracle phrase -> trigger tag (line-start only: "When/Whenever/At the beginning of")
 O_TRIG = [(r"^(?:when|whenever) [^,]*\benters\b", "trigger:etb"), (r"^(?:when|whenever) [^,]*\bdies\b", "trigger:dies"),
           (r"^(?:when|whenever) [^,]*\battacks\b", "trigger:attacks"), (r"^(?:when|whenever) you cast\b|^(?:when|whenever) an? \w+ casts\b", "trigger:spell_cast"),
@@ -76,7 +75,7 @@ except OSError:
 DOC = {
     "life_loss": ("an effect makes a player lose life (not damage)", "cross-check: mtgish LoseLife + Oracle 'loses N life' (Nazar, Blood Artist, Gray Merchant)"),
     "fight": ("a creature fights another (CR 701.14)", "cross-check: mtgish Fight + Oracle (Prey Upon, Pounce)"),
-    "scry": ("scry N (CR 701.22): looks at the top cards and may bottom them; counts as draw synergy (H43)", "cross-check: mtgish Scry + Oracle (Serum Visions)"),
+    "scry_count": ("scry N (CR 701.22); one tag with the number: looks at the top cards and may bottom them; counts as draw synergy (H43)", "cross-check: mtgish Scry + Oracle (Serum Visions)"),
     "surveil": ("surveil N (CR 701.25)", "cross-check: mtgish Surveil + Oracle (Dragon's Rage Channeler)"),
     "untap": ("an effect untaps permanents", "cross-check: mtgish UntapPermanent + Oracle (Captivating Crew)"),
     "trigger": ("trigger event: upkeep, end_step, beginning_of_combat, combat_damage, gain_life, taps_for_mana (added to the existing trigger family)", "cross-check: mtgish _Trigger names + Oracle line starts (CR 603)"),
@@ -135,51 +134,44 @@ def verify(tags, text, mgcard, kwset, remind, types=""):
     olines = [strip_reminder(l).strip().lower() for l in orc.split("\n") if l.strip()]
     # effect text: for "When/Whenever/At the beginning of X, effect" lines only the part after the comma, so the trigger condition ("whenever you gain life") is not read as an effect
     elines = [re.sub(r"^(?:when|whenever|at the beginning of)\b[^,]*,\s*", "", l) for l in olines]
-    mf = mtgish_features(mgcard)
-    mnames = {n for _, n in mf}
     add, src, flags = {}, {}, []
 
     def propose(tag, source):
         if tag not in tagset:
             add.setdefault(tag, set()).add(source)
 
-    # --- concepts (abilities): mtgish action names and Oracle phrases
+    # --- concepts (abilities): an Oracle phrase the script tags lack is added (gap filler); LOOSE patterns are flagged only
+    # (2026-10-23 test without mtgish: bounce matched Pulse of Murasa's graveyard return, draw matched Laboratory Maniac's replacement; both wrong)
     for name, accepted, tag, mact, rx in CONCEPTS:
         if has(tagset, accepted): continue
-        by_m = bool(mact & mnames) and not (name == "discard" and "DiscardACard" in mnames and False)
-        by_o = any(re.search(rx, l) for l in elines)
-        if name == "discard" and by_m and not by_o: by_m = False       # PlayerAction is too generic to count alone
-        if by_m and by_o: propose(tag, "mtgish+oracle")
-        elif by_m or by_o: flags.append("%s: only %s says it, script tags lack %s" % (name, "mtgish" if by_m else "oracle", tag))
-    # --- reverse check: a concept tag the script gave that neither mtgish nor the Oracle text supports (possible extra tag)
+        if any(re.search(rx, l) for l in elines):
+            if name in LOOSE: flags.append("%s: Oracle line says it, script tags lack %s" % (name, tag))
+            else: propose(tag, "oracle_gap_fill")
+    # --- numbers the script did not give: scry carries its count (scry_count:N) like draw_count; the script wins, the Oracle line fills only when the script has no count; no separate bare scry tag
+    if not any(t.startswith("scry_count:") for t in tagset):
+        for l in elines:
+            m = re.search(r"\bscry (\d+|x)\b", l)
+            if m: propose("scry_count:" + m.group(1), "oracle_gap_fill"); break
+    # --- reverse check: a concept tag the script gave that the Oracle text does not support (possible extra tag)
     fulllines = [l.strip().lower() for l in orc.split("\n") if l.strip()]      # with reminder text: keywords supply tokens/draws (offspring, myriad, cycling)
     for name, accepted, tag, mact, rx in CONCEPTS:
         if name in ("exile_effect", "sacrifice", "discard", "counters", "damage", "lifegain") or tag not in tagset: continue
-        if not (mact & mnames) and not any(re.search(rx, l) for l in fulllines):
-            flags.append("extra? %s: no mtgish action or Oracle phrase supports it" % tag)
-    # --- triggers (syntax): mtgish _Trigger names, Oracle line starts
-    for kind, n in mf:
-        if kind == "_Trigger" and n in M_TRIG and M_TRIG[n] not in tagset:
-            if any(re.search(rx, l) and t == M_TRIG[n] for l in olines for rx, t in O_TRIG): propose(M_TRIG[n], "mtgish+oracle")
-            else: flags.append("trigger %s from mtgish only (%s)" % (M_TRIG[n], n))
+        if not any(re.search(rx, l) for l in fulllines):
+            flags.append("extra? %s: no Oracle phrase supports it" % tag)
+    # --- triggers (syntax): Oracle line starts fill missing trigger tags
     for l in olines:
         for rx, t in O_TRIG:
-            if re.search(rx, l) and t not in tagset and t not in add:
-                if any(M_TRIG.get(n) == t for k, n in mf if k == "_Trigger"): continue    # handled above
-                flags.append("trigger %s from oracle only" % t)
-    # --- costs: mtgish _Cost names, Oracle activated costs
+            if re.search(rx, l) and t not in tagset: propose(t, "oracle_gap_fill")
+    # --- costs: Oracle activated costs
     ocosts = set()
     for l in olines:
         m = re.match(r"^([^:]+):", l) or re.match(r"^as an additional cost to cast this spell, (.*?)\.?$", l)
         if m and not l.startswith(("choose", "chapter", "level")):
             for rx, t in O_COST:
                 if re.search(rx, m.group(1)): ocosts.add(t)
-    mcosts = {M_COST[n] for k, n in mf if k == "_Cost" and n in M_COST}
-    for t in sorted(mcosts | ocosts):
-        if t in tagset: continue
-        if t in mcosts and t in ocosts: propose(t, "mtgish+oracle")
-        else: flags.append("cost %s from %s only" % (t, "mtgish" if t in mcosts else "oracle"))
-    # --- keywords: Oracle keyword-only lines and mtgish _Rule names against the kw: tags and the reference/CR
+    for t in sorted(ocosts):
+        if t not in tagset: propose(t, "oracle_gap_fill")
+    # --- keywords: Oracle keyword-only lines against the kw: tags and the reference/CR
     kwtags = {t[3:] for t in tagset if t.startswith("kw:")}
     kwkeys = {key(t) for t in kwtags}
     oracle_kw = set()
@@ -193,10 +185,6 @@ def verify(tags, text, mgcard, kwset, remind, types=""):
     for k in oracle_kw:
         if k not in kwkeys and k not in {key(t) for t in tagset}:
             propose("kw:" + k, "oracle+keyword_reference")
-    toprules = {r.get("_Rule") for r in (mgcard or {}).get("Rules", []) if isinstance(r, dict)}
-    for n in sorted(toprules):
-        if n and key(n) in kwset and key(n) not in kwkeys and "kw:" + snake(n) not in add:
-            flags.append("mtgish rule %s is a keyword but script has no kw:%s" % (n, snake(n)))
     for k in kwtags:
         if key(k) not in remind and key(k) not in kwset:
             flags.append("kw:%s not in keyword reference or CR 701/702" % k)
