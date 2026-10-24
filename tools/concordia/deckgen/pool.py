@@ -21,6 +21,16 @@ for f in glob.glob(os.path.join(RES, 'editions', '*.txt')):
     if not code: continue
     typ = re.search(r'^Type=(.*)$', t, re.M); date = re.search(r'^Date=(.*)$', t, re.M)
     edmeta[code.group(1).strip().upper()] = ((typ.group(1).strip() if typ else ''), (date.group(1).strip() if date else ''))
+# Alchemy (digital-only) cards: named in an Alchemy edition and in no edition outside Alchemy / Online / Funny / Mystery Booster Commander Edition
+alch_in, alch_out = set(), set()
+for f in glob.glob(os.path.join(RES, 'editions', '*.txt')):
+    t = open(f, errors='replace').read()
+    nm = os.path.basename(f)
+    typ = re.search(r'^Type=(.*)$', t, re.M); typ = typ.group(1).strip() if typ else ''
+    names = {m.group(1).strip().lower() for m in re.finditer(r'^\d+\w*\s+[A-Z]+\s+(.+?)(?:\s+@.*)?$', t, re.M)}
+    if nm.startswith('Alchemy'): alch_in |= names
+    elif typ not in ('Online', 'Funny') and not nm.startswith('Mystery Booster Commander Edition'): alch_out |= names
+alchemy = alch_in - alch_out
 PRE6_CUTOFF = '1999-04-21'  # Sixth Edition release date
 PRIO = {'Expansion': 0, 'Core': 0, 'Starter': 1, 'Draft': 1, 'Duel_Deck': 2, 'Commander': 2, 'Reprint': 3, 'Collector_Edition': 4}
 GOOD_TYPES = set(PRIO)
@@ -61,6 +71,7 @@ for key, c in data['cards'].items():
     if 'all' in c['flags']: continue  # AI:RemoveDeck:All; RemoveDeck:Random only affects random deck generators
     if 'Conspiracy' in c['types'] or 'Scheme' in c['types'] or 'Plane' in c['types'].split() or 'Phenomenon' in c['types'] or 'Vanguard' in c['types'] or 'Dungeon' in c['types'] or 'Attraction' in c['types'] or 'Contraption' in c['types'] or 'Stickers' in c['types']:
         continue
+    if key in alchemy: continue  # Alchemy digital-only cards are not in the pool
     if re.search(r'\bA-|^A-', c['name']) or c['name'].startswith('A-'): continue
     prints = []
     for ed, cards in data['eds'].items():
