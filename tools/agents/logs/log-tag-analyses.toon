@@ -1,6 +1,6 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Append one row per analysis, under 400 chars.
 # Tag analyses: reverse check, tag suggestions, derived tags.
-log[31|]{date|topic|finding|caveat}:
+log[32|]{date|topic|finding|caveat}:
   2026-10-23|TAG_SUGGESTIONS C+D|face:/derived: lines built; on 353 starters spot_removal 69, etb_self 78, evasion_pkg 31, mana_out 28, anthem 3, wipe 0|shrink weight 0.5 unverified; E,F unbuilt
   2026-10-23|reader r18single|24 cards 1 reader: mean_sim 0.942, 23 good, 1 partial, top1 24/24|V1-V4,S1,A not computed
   2026-10-23|grammar performance|3 readers: none V1 .615 V3 .879; v1 full+records V1 .776 V3 .968; v1 short ~ none; v2 slim V1 .81 V3 .933 S1 .994 A .937; single reader r18 A .938-.946 matches 3-reader A|v2 only on 105 cards; V3 .98 target unmet; doc GRAMMAR_PERFORMANCE.md pushed a7336e066d7
@@ -32,3 +32,4 @@ log[31|]{date|topic|finding|caveat}:
 2026-10-24|rule_lint reverse check (not run): a mined rule whose canon says draw/mill but none of its tags does is quarantined at load (aims at life_loss => "draw N card and you lose N life", 20 starter units), so compose can build those lines from their tags|Untested by user request; effect on lint hits, starter coverage and sim unknown|N slots with no number tag (Haliya, Aftermath Analyst) stay fail-closed: tag gap, not a renderer fix
 2026-10-24|review fixes|rule_lint reverse draw/mill regexes were backspace chars (dead); fixed to , 12 more rules quarantined (51 lint hits); starters covered 74.2% sim .736 (was 74.0/.735); tag_guard keeps better sections when all new win, rewrites best file only on change; tag_run only skips a missing tag_guard|compose/render rule tables not re-mined
 2026-10-24|rule_guard (mtg2llm mine keeps best rule tables)|fresh mine keeps all 1002 patterns/compose table (sim sum 256.15 same); simulated worse canons on 30 most-used patterns: 30 of 30 kept stored|per-pattern evidence only from starter cards; patterns unused by starters keep stored canon
+2026-10-24|sync.py tagger<->check link|starters: 556 units, 419 rendered, 26 open_slot (tag gaps), 111 no_rule (rule gaps) -> tags/TAG_GAPS.toon; tag_run prints last summary at start and refreshes the file at end; mtg2llm mine refreshes it|hooks not run end to end (tag_run and mine not executed); sync re-tags from scripts, not the guarded best set

@@ -839,6 +839,8 @@ def main():
         units_n = sum(r["n"] for r in rules.values())
         agree = sum(r["n"] * r["top"] for r in rules.values()) / max(units_n, 1)
         multi = sum(r["n"] for r in rules.values() if r["n"] >= 3)
+        try: import sync; sync.write()      # tell the tagger which gaps are tag gaps and which are rule gaps (sync.py)
+        except Exception as ex: print("sync not run:", ex)
         print("card readings %d, aligned %d; patterns %d; units %d; units in patterns seen 3+ times %d (%.0f%%); canonical = reader's top line for %.0f%% of units"
               % (seen, used, len(rules), units_n, multi, 100 * multi / max(units_n, 1), 100 * agree))
 

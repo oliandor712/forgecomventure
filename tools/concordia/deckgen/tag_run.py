@@ -594,6 +594,8 @@ def main(a):
     except ModuleNotFoundError as ex:
         if ex.name != "tag_guard": raise      # only a missing guard is skipped; a broken import inside it must stop the run
         tag_guard = None; print("tag_guard not applied:", ex)
+    try: import sync; print("tag check, last run:", sync.previous() or "none yet")      # gaps the renderer reported back (tagcheck/sync.py, tags/TAG_GAPS.toon)
+    except Exception as ex: print("sync not read:", ex)
     if tag_guard: recs = tag_guard.apply(recs, force="--force" in a)     # a worse run never overrides the better tags already stored (per card, per ability group)
     os.makedirs(os.path.join(HERE, "tags"), exist_ok=True)
     red = redundancy(recs)
@@ -605,6 +607,8 @@ def main(a):
     hdr += "# Each record has a typing: line (supertype, cardtype, type, landtype: what the card is) and a tags: line (what its abilities do). Tag meanings (pinned reference text, one line per family): tags/TAG_LEGEND.md. Zone moves use shared tags: from_zone:<zone> and to_zone:<zone> next to return, take, put_onto_battlefield, cost:exile.\n"
     open(os.path.join(HERE, "tags", "TAG_LEGEND.md"), "w").write("# Tag legend\n\nPinned reference text, one line per tag family with a structured or non-obvious value. Written by tag_run.py from `tag_extra.LEGEND`; blind readers get the same lines for the families present in their batch.\n\n| Family | Meaning |\n|---|---|\n" + "".join("| `%s` | %s |\n" % kv for kv in TX.LEGEND.items()))
     open(os.path.join(HERE, "tags", "STARTER_TAGS.toon"), "w").write(hdr + "\n\n".join(render(r) for r in recs) + "\n")
+    try: sync.write(); print("tag check: gap file refreshed (tags/TAG_GAPS.toon)")      # the check reports back what this tag set still lacks
+    except Exception as ex: print("sync not written:", ex)
     try:
         import tag_twins
         tag_twins.build()   # ability-line twin index, from the toon just written
