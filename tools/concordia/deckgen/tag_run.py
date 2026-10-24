@@ -297,13 +297,15 @@ def find_text(name):
     if t: return t
     if not _IDX:
         for p in glob.glob(os.path.join(ROOT, "forge-gui/res/cardsfolder/*/*.txt")):
-            try: x = open(p, errors="replace").read()
+            try:
+                with open(p, errors="replace") as fh: x = fh.read()
             except OSError: continue
             m = re.search(r"^Name:(.*)$", x, re.M)
             if m: _IDX.setdefault(m.group(1).strip().lower(), p)
             for m2 in re.finditer(r"^Name:(.*)$", x, re.M): _IDX.setdefault(m2.group(1).strip().lower(), p)
     p = _IDX.get(name.lower())
-    return open(p, errors="replace").read() if p else ""
+    if not p: return ""
+    with open(p, errors="replace") as fh: return fh.read()
 
 
 PREV_SAMPLE = {"Vodalian Arcanist", "Goblin Rabblemaster", "Colossal Dreadmaw", "Filter Out", "Scorching Dragonfire", "Harrow", "Victimize", "Search for Tomorrow",

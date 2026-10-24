@@ -46,7 +46,7 @@ def templ(line):
     line = re.sub(r"\{\d+\}", "{N}", line)
     line = re.sub(r"[+\-]\d+/[+\-]\d+", "+N/+N", line)
     line = re.sub(r"\b(?:a|an|one)(?= cards?\b)", "N", line, flags=re.I)      # draw a card = draw N card(s); "a creature" is not an amount
-    line = re.sub(r"(?i)("+chr(92)+"bscry )"+NUMW, r"\1N", line)      # scry amounts too; Oracle writes them as digits
+    line = re.sub(r"(?i)(\bscry )"+NUMW, r"\1N", line)      # scry amounts too; Oracle writes them as digits
     return re.sub(NUMW + r"(?= (?:\w+ )?(?:cards?|damage|life|counters?|tokens?|mana|times))", "N", line, flags=re.I)
 
 
@@ -57,8 +57,8 @@ def mine():
             o = os.path.join(r, "out", os.path.basename(f))
             if not os.path.exists(o): continue
             try:
-                I = json.load(open(f, encoding="utf-8"))["cards"]
-                O = {c["id"]: c for c in json.load(open(o, encoding="utf-8"))["cards"]}
+                with open(f, encoding="utf-8") as fh: I = json.load(fh)["cards"]
+                with open(o, encoding="utf-8") as fh: O = {c["id"]: c for c in json.load(fh)["cards"]}
             except Exception: continue
             for c in I:
                 if c["id"] not in O: continue
@@ -67,7 +67,11 @@ def mine():
                 lines = [x.strip() for x in O[c["id"]]["text"].split(" / ") if x.strip()]
                 if len(u) != len(lines): continue
                 used += 1
-                for (g, ts), line in zip(u.items(), lines): rules[pattern(ts)][templ(line)] += 1
+                for (g, ts), line in zip(u.items(), lines):
+                    ts, names = split_named(ts)       # the renderer looks patterns up without named: tags and fills a {name} slot
+                    line = templ(line)
+                    for nm in names: line = line.replace(nm, "{name}")
+                    rules[pattern(ts)][line] += 1
     out = {}
     for p, cnt in rules.items():
         n = sum(cnt.values()); top = cnt.most_common(1)[0]
@@ -78,11 +82,13 @@ def mine():
 # ---------- renderer: tags -> text (no Oracle text, no agent) ----------------------------------------------------------------------------------
 WORDS = "zero a two three four five six seven eight nine ten".split()
 _rules = {}
+_sets = {}
 
 
 def rules():
     if not _rules:
-        _rules.update(json.load(open(os.path.join(HERE, "render_rules.json"), encoding="utf-8")))
+        with open(os.path.join(HERE, "render_rules.json"), encoding="utf-8") as fh: _rules.update(json.load(fh))
+        _sets.update({p: frozenset(p.split()) for p in _rules})
     return _rules
 
 
@@ -91,8 +97,8 @@ def nums(tagstrs):
     out = []
     for t in " ".join(tagstrs).split():
         val = t.partition(":")[2]
+        if val in ("p1p1", "m1m1"): out.append("+1/+1" if val == "p1p1" else "-1/-1"); continue      # the digits of p1p1 are not amounts
         out += re.findall(r"[+\-]\d+/[+\-]\d+|\d+|\bx\b", val)
-        if val in ("p1p1", "m1m1"): out.append("+1/+1" if val == "p1p1" else "-1/-1")
     return out
 
 
@@ -109,18 +115,21 @@ def fill(canon, ns):
         if m.string[:m.start()].lower().endswith("scry ") or re.match(r" (?:\w+ )?(?:damage|life|mana)", m.string[m.end():]): return v      # Oracle writes digits for damage, life and mana
         return WORDS[int(v)] if v.isdigit() and int(v) <= 10 else v
     out = re.sub(r"[+\-]N/[+\-]N|\{N\}|\bN\b", sub, canon)
-    return re.sub(r"\ba cards\b", "a card", out).replace("~", "this creature")
+    out = re.sub(r"\b(a|one) (card|token|counter)s\b", r"\1 \2", out)      # the noun follows the filled amount
+    out = re.sub(r"\b(two|three|four|five|six|seven|eight|nine|ten|X) (card|token|counter)\b", r"\1 \2s", out)
+    return out.replace("~", "this creature")
 
 
 def lookup(pat):
     """exact pattern, else the closest mined pattern sharing at least 80% of its tags (flagged approx), else None"""
     R = rules()
     if pat in R: return R[pat], False
-    a, best, bs = set(pat.split()), None, 0.8
+    a, best, bk, bp = set(pat.split()), None, None, None
     for p, v in R.items():
-        b = set(p.split()); j = len(a & b) / len(a | b)
-        if j >= bs and v["n"] >= 2: best, bs = v, j
-    return (best, True) if best else (None, False)
+        b = _sets[p]; j = len(a & b) / len(a | b)
+        k = (j, v["n"], p)      # ties go to the more frequent rule, then the pattern text, so the pick does not depend on key order
+        if j >= 0.8 and v["n"] >= 2 and (bk is None or k > bk): best, bk, bp = v, k, b
+    return (best, "dropped %s, extra %s" % (sorted(a - bp) or "-", sorted(bp - a) or "-")) if best else (None, False)
 
 
 # ---------- named:<Full Name> (the name of another card travels in the tag record only) --------------------------------------------------------
@@ -149,7 +158,7 @@ def put_names(line, names, tags, st):
     if todo:
         fb = next((ph for tg, ph in NAME_FALLBACK if tg in tags), None)
         if fb:
-            line = "" if line.startswith("{forge_line:") else re.sub(r"(?i)\bpartner\b(?! with)", "", line).strip()
+            line = "" if line.startswith("{forge_line:") else line if line.startswith("{") else re.sub(r"(?i)\bpartner\b(?! with)", "", line).strip()
             line = (line + " " if line else "") + NAME_SLOT.sub(todo.pop(0).replace("\\", "\\\\"), fb)
     st["name_used"] += len(names) - len(todo); st["name_unused"] += len(todo)
     return line
@@ -175,8 +184,11 @@ def tutor_named(toks, names):
     elif "trigger:dies" in toks: lead = "When this creature dies, "
     opt = "you may " if "optional" in toks else ""
     n = t.get("tutor_count", "1").lower(); joined = " or ".join(names) if len(names) > 1 else names[0]
-    what = "a card named " + joined if n in TUTOR_NUM or len(names) == 1 and not n.startswith("up_to") else "up to %s cards named %s" % (WORDS[int(n[6:])] if n[6:].isdigit() and int(n[6:]) <= 10 else n[6:], joined)
-    many = what.startswith("up to")
+    cnt = n[6:] if n.startswith("up_to_") else n
+    cw = WORDS[int(cnt)] if cnt.isdigit() and int(cnt) <= 10 else cnt
+    if n in TUTOR_NUM or len(names) == 1 and not n.startswith("up_to"): what = "a card named " + joined
+    else: what = ("up to %s cards named %s" if n.startswith("up_to") else "%s cards named %s") % (cw, joined)
+    many = not what.startswith("a card")
     dest = TUTOR_DEST.get(t.get("tutor_dest", "hand"), ", put it into your hand")
     if many: dest = dest.replace("reveal it", "reveal them").replace("put it", "put them")
     body = "search your library for " + what + dest + (", then shuffle" if "shuffle" in toks else "") + "."
@@ -195,7 +207,7 @@ def self_word(typing):
 def render(groups, typing=None):
     """groups: {id: 'tag tag ...'} as in a reader batch card. returns (text, stats)"""
     u = units({g: t for g, t in groups.items()})
-    lines, st = [], {"exact": 0, "approx": 0, "missing": 0, "name_used": 0, "name_unused": 0}
+    lines, st = [], {"exact": 0, "approx": 0, "missing": 0, "name_used": 0, "name_unused": 0, "diffs": []}
     for g, ts in u.items():
         ts, names = split_named(ts); ts = [" ".join(ts)]
         if names and "tutor" in ts[0].split():
@@ -214,6 +226,7 @@ def render(groups, typing=None):
         if v is None:
             st["missing"] += 1; lines.append(put_names("{%s}" % " ".join(ts), names, ts[0].split(), st) if names else "{%s}" % " ".join(ts)); continue
         st["approx" if approx else "exact"] += 1
+        if approx: st["diffs"].append("%s: %s" % (g, approx))
         line = fill(v["canon"], nums(ts))
         lines.append(put_names(line, names, ts[0].split(), st) if names else line)
     text = " / ".join(lines)
@@ -225,18 +238,20 @@ def render(groups, typing=None):
 def cmd_render(a):
     n = C.Counter(); words = []
     for f in sorted(glob.glob(os.path.join(RUNS, a.run, "in", "*.json"))):
-        d = json.load(open(f, encoding="utf-8"))
+        with open(f, encoding="utf-8") as fh: d = json.load(fh)
         if not isinstance(d, dict) or "cards" not in d: continue       # reminder files sit beside the batches
         d = d["cards"]
         o = os.path.join(RUNS, a.run, "out", os.path.basename(f))
-        ref = {c["id"]: c["text"] for c in json.load(open(o, encoding="utf-8"))["cards"]} if os.path.exists(o) else {}
+        ref = {}
+        if os.path.exists(o):
+            with open(o, encoding="utf-8") as fh: ref = {c["id"]: c["text"] for c in json.load(fh)["cards"]}
         for c in d:
-            t, st = render(c.get("groups") or {}, c.get("typing")); n.update(st); n["cards"] += 1
+            t, st = render(c.get("groups") or {}, c.get("typing")); n.update({k: x for k, x in st.items() if isinstance(x, int)}); n["cards"] += 1
             words.append({"id": c["id"], "text": t})
             if c["id"] in ref:
                 x, y = RC.toks(RC.norm(t)), RC.toks(RC.norm(ref[c["id"]]))
                 n["cmp"] += 1; n["same"] += (x == y); n["f1"] += RC.f1(set(x), set(y))[2]
-    json.dump(words, open(a.out, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    with open(a.out, "w", encoding="utf-8") as fh: json.dump(words, fh, indent=1, ensure_ascii=False)
     tot = n["exact"] + n["approx"] + n["missing"]
     if n["cmp"]: print("vs the reader's text (same run, in-sample): exact %.1f%%, mean token F1 %.3f over %d cards" % (100 * n["same"] / n["cmp"], n["f1"] / n["cmp"], n["cmp"]))
     print("cards %d, units %d: exact %d, approx %d, missing %d (%.1f%%)" % (n["cards"], tot, n["exact"], n["approx"], n["missing"], 100 * n["missing"] / max(tot, 1)))
@@ -248,29 +263,70 @@ def cmd_render(a):
 # script, card types, supertypes, subtypes, keyword and token names. A capitalised run is a name when it holds a word outside the pool, or follows
 # 'named' / 'Partner with'. The card's own name and its short forms never count. A value is text of the card's own script only (closed_vocab_check).
 VOCAB_CACHE = os.path.join(RUNS, ".names_vocab.json")
-CAP = r"(?<![A-Za-z])[A-Z][a-z'’-]+(?![A-Za-z])"      # CamelCase and ALLCAPS script words (SpellDescription, EFFECTSOURCE) are not names
+CAP = r"(?<![A-Za-zÀ-ɏ])(?<![A-Za-z]-)[A-Z][a-z'’-]+(?![A-Za-zÀ-ɏ]|-[A-Za-z])"      # CamelCase and ALLCAPS script words (SpellDescription, EFFECTSOURCE) are not names
 RUN = re.compile(r"%s(?:(?:,? (?:of the |of |the |and |de |la |von |van |der )?|, )%s)*" % (CAP, CAP))
 EXPLICIT = re.compile(r"(?:\bnamed|\bPartner with|\bpartner with) (%s(?:(?:,? (?:of the |of |the |and )?|, )%s)*)" % (CAP, CAP))
 _vocab = []
+TOKEN_REF = re.compile(r"(?<=token named )[A-Z][\w'’-]*|[A-Z][a-z]+(?: [A-Z][a-z]+)*(?= (?:creature |artifact )?tokens?\b)")      # token names are not card names
 
 
 def _strip(t):
     return re.sub(r"\([^)]*\)|\{[^}]*\}", " ", t)
 
 
+IRREG_PLURAL = {"wolf": "wolves", "elf": "elves", "dwarf": "dwarves", "thief": "thieves", "fungus": "fungi", "mouse": "mice", "ox": "oxen", "octopus": "octopuses", "man": "men"}
+
+
+def plurals(w):
+    """plural forms of a subtype or token word: -s, -es, -ies, -ves and the irregulars (merfolk and similar stay as they are)"""
+    out = {w + "s", w + "es"}
+    if w in IRREG_PLURAL: out.add(IRREG_PLURAL[w])
+    if w.endswith("y") and len(w) > 2: out.add(w[:-1] + "ies")
+    if w.endswith("f") and len(w) > 2: out.add(w[:-1] + "ves")
+    if w.endswith("fe") and len(w) > 3: out.add(w[:-2] + "ves")
+    if w.endswith("wolf"): out.add(w[:-4] + "wolves")
+    return out
+
+
+_names = []
+
+
 def vocab():
-    if _vocab: return _vocab[0]
-    try:
-        v = set(json.load(open(VOCAB_CACHE, encoding="utf-8"))); _vocab.append(v); return v
-    except Exception: pass
+    return _load()[0]
+
+
+def cardnames():
+    """one list of every name -> its full card names. A full name maps to itself; a legendary creature's nickname (the part before the comma) maps to the
+    full names that carry it (one, or several when ambiguous). Includes all faces and the A- stripped form"""
+    return _load()[1]
+
+
+def _load():
+    if _vocab: return _vocab[0], _names[0]
     root = RC.T.ROOT
-    low, start, v = C.Counter(), C.Counter(), set()
-    for f in glob.glob(os.path.join(root, "forge-gui/res/cardsfolder/*/*.txt")) + glob.glob(os.path.join(root, "forge-gui/res/tokenscripts/*.txt")):
-        try: x = open(f, encoding="utf-8", errors="replace").read()
+    files = glob.glob(os.path.join(root, "forge-gui/res/cardsfolder/*/*.txt")) + glob.glob(os.path.join(root, "forge-gui/res/tokenscripts/*.txt"))
+    try: sig = [len(files), max(os.stat(f).st_mtime for f in files)]      # the cache is valid only for this card set
+    except (OSError, ValueError): sig = None
+    try:
+        with open(VOCAB_CACHE, encoding="utf-8") as fh: cache = json.load(fh)
+        if sig and cache.get("sig") == sig and isinstance(cache.get("names"), dict): v = set(cache["words"]); nm = cache["names"]; _vocab.append(v); _names.append(nm); return v, nm
+    except Exception: pass
+    low, start, v, names = C.Counter(), C.Counter(), set(), {}
+    for f in files:
+        try:
+            with open(f, encoding="utf-8", errors="replace") as fh: x = fh.read()
         except OSError: continue
         m = re.search(r"^Name:(.*)$", x, re.M); own = m.group(1).strip() if m else ""
+        if "/tokenscripts" not in f.replace("\\", "/"):
+            for face in x.split("\nALTERNATE"):
+                fn = re.search(r"^Name:(.*)$", face, re.M); ft = re.search(r"^Types:(.*)$", face, re.M)
+                if not fn: continue
+                n = fn.group(1).strip(); names.setdefault(n, set()).add(n)
+                if n.startswith("A-"): names.setdefault(n[2:], set()).add(n)
+                if "," in n and ft and "Legendary" in ft.group(1) and "Creature" in ft.group(1): names.setdefault(n.split(",")[0], set()).add(n)
         for l in x.splitlines():
             if l.startswith("Types:"): v.update(w.lower() for w in re.findall(r"[A-Za-z][\w'-]*", l[6:]))
+            elif l.startswith("Name:") and "/tokenscripts" in f.replace("\\", "/"): v.update(w.lower() for w in re.findall(r"[A-Za-z][\w'-]*", l[5:]))      # token names
             elif l.startswith("K:"): v.update(w.lower() for w in re.findall(r"[A-Za-z][\w'-]*", l[2:].split(":")[0]))
             elif l.startswith("Oracle:"):
                 t = _strip(l[7:].replace("\\n", "\n"))
@@ -281,29 +337,67 @@ def vocab():
                         if w.islower(): low[w] += 1
                         elif i == 0: start[w.lower()] += 1
     v |= set(low) | {w for w, n in start.items() if n >= 3}
-    try: os.makedirs(RUNS, exist_ok=True); json.dump(sorted(v), open(VOCAB_CACHE, "w", encoding="utf-8"))
+    for w in list(v): v |= plurals(w)
+    try:
+        os.makedirs(RUNS, exist_ok=True)
+        with open(VOCAB_CACHE, "w", encoding="utf-8") as fh: json.dump({"sig": sig, "words": sorted(v), "names": {k: sorted(x) for k, x in sorted(names.items())}}, fh)
     except OSError: pass
-    _vocab.append(v); return v
+    names = {k: sorted(x) for k, x in names.items()}; _vocab.append(v); _names.append(names); return v, names
 
 
 def own_forms(name):
-    n = name.strip(); f = {n, n.split(",")[0], "CARDNAME", "NICKNAME"}      # short form = the part before the comma; a bare first word would eat "Alpine Watchdog" on Alpine Houndmaster
+    n = name.strip(); f = {n, n.split(",")[0], "CARDNAME", "NICKNAME"}
+    if n.startswith("A-"): f |= {n[2:], n[2:].split(",")[0]}      # Alchemy rebalanced cards print the plain name in their text      # short form = the part before the comma; a bare first word would eat "Alpine Watchdog" on Alpine Houndmaster
     return {x for x in f if len(x) > 2}
 
 
-def names_in(text, own, V=None):
-    """other-card names in one description text, in order of appearance (deduplicated)"""
-    V = V if V is not None else vocab(); out = []
-    t = _strip(text.replace("\\n", "\n"))
+# An ability name opens a line and ends at " — " ("Dynastic Codes — When ..."). "Choose one —" and modal bullets are rules text and stay.
+ABILITY_NAME = re.compile(r"^((?:[IVX]+, )*[IVX]+ — )?([^\n]{1,60}?)( ?— ?)", re.M)      # an optional saga chapter prefix, then the name
+MODE_NAME = re.compile(r"[A-Z][\w'’!?-]*(?: (?:of|the|a|an|to|and|in|on|for|it|its|your|you)\b| [A-Z][\w'’!?-]*)*[!?]?$")      # "Smash It", "Lift the Curse": a mode name, not a rules sentence
+
+
+def _blank_ability_name(m):
+    ch, pre = m.group(1) or "", m.group(2)
+    bullet = re.match(r"•\s*", pre)
+    if bullet and MODE_NAME.match(pre[bullet.end():]): return ch + pre[:bullet.end()] + " " * (len(pre) - bullet.end()) + m.group(3)      # "• Look Around — ..."
+    if re.match(r"\s*(?:choose\b|•)", pre, re.I) or re.search(r"[.:;]", pre): return m.group(0)
+    return ch + " " * len(pre) + m.group(3)
+
+
+RULE_WORDS = {"bearer"}      # rules words that occur only inside hyphen compounds (Ring-bearer)
+
+
+def known(b, V):
+    """a lower-cased word (or hyphen compound) of the pool, also as a plural/possessive already folded in"""
+    return all(p in V or p in RULE_WORDS or any(p[:-len(sfx)] in V for sfx in ("s", "es") if p.endswith(sfx)) for p in b.split("-") if p)
+
+
+def _spans(run, N, V):
+    """card names inside one capitalised run, longest first, left to right ("Return Black Lotus" -> Black Lotus). A one-word name must be outside the word pool"""
+    words = re.split(r"(?<=,) | ", run); out = []; i = 0
+    while i < len(words):
+        for k in range(len(words), i, -1):
+            cand = " ".join(words[i:k]).strip(", ")
+            full = N.get(cand)
+            if full and (k - i > 1 or re.sub(r"['’]s$", "", cand).lower() not in V):      # a one-word name or nickname must be outside the word pool
+                out.append(full[0] if len(full) == 1 else cand); i = k - 1; break      # an ambiguous nickname stays as written
+        i += 1
+    return out
+
+
+def names_in(text, own, V=None, N=None):
+    """other-card names in one description text, in order of appearance (deduplicated). Candidates are resolved against the card-name list"""
+    V = V if V is not None else vocab(); N = N if N is not None else cardnames(); out = []
+    t = text.replace("\\n", "\n")
+    t = re.sub(r"^(\s*• )[A-Z][^\n(]{0,40}?( \()", r"\1\2", t, flags=re.M)      # "• Hordeling Outburst (Create three ...)" is a mode name
+    t = TOKEN_REF.sub(" ", _strip(t))
     for nm in sorted(own, key=len, reverse=True): t = t.replace(nm, " ~ ")
-    ownw = {w.lower() for nm in own for w in re.findall(r"[A-Za-z][\w'-]*", nm)}
+    t = ABILITY_NAME.sub(_blank_ability_name, t)
     for m in EXPLICIT.finditer(t):
         if m.group(1) not in out: out.append(m.group(1))
     for m in RUN.finditer(t):
-        run = m.group(0).strip(", ")
-        if run in out or any(run in o for o in out): continue
-        base = [re.sub(r"['’]s$", "", w).lower() for w in re.findall(CAP, run)]
-        if any(not any(b in X for X in (V, ownw)) and not any(b[:-len(sfx)] in V for sfx in ("s", "es") if b.endswith(sfx)) for b in base): out.append(run)
+        for nm in _spans(m.group(0).strip(", "), N, V):
+            if nm not in out and not any(nm in o for o in out): out.append(nm)
     return out
 
 
@@ -335,9 +429,18 @@ def line_names(rec, text):
     return out
 
 
+_texts = {}
+
+
+def script_text(name):
+    """card script text, looked up once per name"""
+    if name not in _texts: _texts[name] = RC.T.find_text(name) or ""
+    return _texts[name]
+
+
 def add_named(rec, blind):
     """add named:<Full_Name> to the groups of the blind view; returns (added [(group, name)], flags)"""
-    text = RC.T.find_text(rec["name"]); found = line_names(rec, text) if text else {}
+    text = script_text(rec["name"]); found =line_names(rec, text) if text else {}
     added, flags, groups = [], [], blind["groups"]
     for g, names in found.items():
         tgt = g if g in groups else next((k for k in groups if k.split(".")[0] == g), None)
@@ -351,7 +454,7 @@ def add_named(rec, blind):
 
 def closed_vocab_check(rec, blind):
     """named: is the only free-text family; its value must be text of the card's own script. Returns the violations [(group, tag)]"""
-    text = RC.T.find_text(rec["name"]) or ""; flat = re.sub(r"\s+", " ", text.replace("\\n", " "))
+    text = script_text(rec["name"]); flat = re.sub(r"\s+", " ", text.replace("\\n", " "))
     return [(g, t) for g, ts in blind["groups"].items() for t in ts.split() if t.startswith("named:") and t[6:].replace("_", " ") not in flat]
 
 
@@ -359,7 +462,7 @@ def tag_cards(names=None):
     """blind-shaped records (groups in reader-batch form) for the given card names, or the starters, with named: tags added. Names reach the tag record only;
     the renderer never sees Oracle text. Returns [(record, blind, added, flags)]"""
     if names:       # any card with a script, not only the starters
-        recs = [RC.T.record(n.strip(), RC.T.find_text(n.strip())) for n in names if n.strip() and RC.T.find_text(n.strip())]
+        recs = [RC.T.record(n.strip(), script_text(n.strip())) for n in names if n.strip() and script_text(n.strip())]
     else: recs = RC.starter_records()
     out = []
     for r in recs:
@@ -377,9 +480,9 @@ def cmd_tag(a):
         bad += [(r["name"],) + x for x in closed_vocab_check(r, b)]
         if st["name_unused"]: unused.append(r["name"])
         out.append({"name": r["name"], "groups": b["groups"], "links": b["links"], "rendered": text,
-                    "flags": r["verify"]["flags"] + nflags + (["name unused"] if st["name_unused"] else []),
+                    "flags": r["verify"]["flags"] + nflags + (["name unused"] if st["name_unused"] else []) + ["approx rule, " + d for d in st["diffs"]],
                     "named": [n for _, n in added], "name_unused": st["name_unused"], "missing_units": st["missing"]})
-    json.dump(out, open(a.out, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    with open(a.out, "w", encoding="utf-8") as fh: json.dump(out, fh, indent=1, ensure_ascii=False)
     print("tagged %d cards -> %s; cards with verify flags %d; rendered units with no rule %d; named: tags %d on %d cards; name unused %d %s; closed-vocab violations %d"
           % (len(out), a.out, flags, placeholder, nm, sum(1 for o in out if o["named"]), len(unused), unused[:5], len(bad)))
     for x in bad: print("  VIOLATION", x)
@@ -410,6 +513,14 @@ def cmd_selftest(a):
     chk("tutor two-name / cost form keeps the names", "named Empyrial Archangel" in t4)
     chk("non-creature card says 'this artifact', not 'this creature'", "this creature" not in render({"c1": "cost:sacrifice cost_sacrifice_target:self prevent_damage"}, ["cardtype:artifact"])[0] and self_word(["cardtype:instant"]) == "spell" and self_word(["cardtype:artifact", "cardtype:creature"]) == "creature")
     chk("enchantment tutor line says 'this enchantment'", "When this enchantment enters" in render({"c1": "trigger:etb named:A_B", "c1.2": "tutor shuffle"}, ["cardtype:enchantment"])[0])
+    chk("ability name before ' — ' is not a name", names_in("Dynastic Codes — When CARDNAME enters, draw.", own) == [] and names_in("A Thousand Souls Die Every Day — {T}, Sacrifice CARDNAME: Draw.", own) == [])
+    chk("'Choose one —' is not skipped as an ability name", names_in("Choose one — Draw two cards. Search for a card named Black Lotus.", own) == ["Black Lotus"] and names_in("Choose one — Sol Ring", own) == ["Sol Ring"])
+    chk("plural subtypes not flagged", names_in("if you control three or more Wolves and/or Werewolves, draw.", own) == [] and names_in("Elves and Merfolk you control get +1/+1.", own) == [])
+    chk("token names not flagged", names_in("create a Cursed Role token and an Ornithopter token.", own) == [])
+    chk("bullet mode name, saga chapter name, glued dash", names_in("Choose one —\n• Lift the Curse — Destroy target enchantment.", own) == [] and names_in("I, II, III, IV — Stampede! — Other creatures get +1/+1.", own) == [] and names_in("Thank you very much—Whenever Chaos ensues, draw.", own) == [])
+    chk("hyphen compounds and Alchemy A- names", names_in("Non-Elf creatures; Ka-Zar; Two-Headed Coin; your Ring-bearer.", own_forms("Ka-Zar of the Savage Land")) == [] and names_in("When Phantom Carriage enters, draw.", own_forms("A-Phantom Carriage")) == [])
+    chk("legendary nickname resolves to the full name", names_in("Return Kydele to your hand.", own) == ["Kydele, Chosen of Kruphix"] and names_in("Whenever Kydele attacks, draw.", own_forms("Kydele, Chosen of Kruphix")) == [])
+    chk("leading sentence word dropped from a run", names_in("Return Black Lotus to your hand.", own) == ["Black Lotus"] and names_in("Return Zzyzx Qwerty to your hand.", own) == [])
     print("selftest", "PASSED" if ok[0] else "FAILED"); return 0 if ok[0] else 1
 
 
@@ -425,7 +536,7 @@ def main():
     if a.cmd == "render": return cmd_render(a)
     if a.cmd == "mine":
         rules, seen, used = mine()
-        json.dump(rules, open(a.out, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+        with open(a.out, "w", encoding="utf-8") as fh: json.dump(rules, fh, indent=1, ensure_ascii=False)
         units_n = sum(r["n"] for r in rules.values())
         agree = sum(r["n"] * r["top"] for r in rules.values()) / max(units_n, 1)
         multi = sum(r["n"] for r in rules.values() if r["n"] >= 3)
