@@ -19,7 +19,7 @@ The tool runs end to end as scripts: `python3 mtg2llm.py run --cards <set>` tags
 | Compare | `reverse_check.score`: tf-idf cosine 0.4, concept F1 0.4, number F1 0.2 | Kept, plus new count and order terms |
 | Data to learn from | reader outputs r1..r18 in `~/tagcheck_runs/`, archive, `learning/` (3,000 graded rebuilds, gap backlog) | Mined into the rule table and the gap list |
 
-Location: `tools/concordia/deckgen/mtg2llm.py` (new file; imports `tag_run`, `ability_tags`, `tag_extra`, `reverse_check` helpers; nothing in forge sources is touched).
+Location: `tools/concordia/deckgen/tagcheck/mtg2llm.py` (a tool, user 2026-10-23; sits next to `reverse_check.py`, imports `tag_run`, `ability_tags`, `tag_extra` and `reverse_check` helpers; listed in `TOOLBOX.md` via `toolbox.py`; nothing in forge sources is touched). `python3 mtg2llm.py run --cards <set>` below means this path.
 
 ## 3. Logic flow
 1. **Input:** card name and the Forge script (its Oracle section is the gap filler).
@@ -33,6 +33,14 @@ Location: `tools/concordia/deckgen/mtg2llm.py` (new file; imports `tag_run`, `ab
 - Collect (tags, reader text) pairs from the archived runs and `learning/`. Group by tag pattern (trigger group, cost, verb with amounts, filters). Rank phrasings by frequency; pick the top one as canonical, keep the rest as accepted variants for scoring.
 - Use cards where the readers agreed (V3 signature match, high score) as the rule source; cards with disagreement go to a review list instead of the table.
 - Gap backlog from `learning/LEARNING_DATA.md` (conditions via `SVarCompare$` / `ConditionCompare$`, `DigUntil`, `RollDice`, active-zone, lose-keyword, Eternalize / Embalm, Role tokens, Exhaust, Strive, "doesn't untap") is the first list of Oracle patterns to parse.
+
+## 4b. Enrichment by target (CR files and training data as reference)
+| Target | CR reference | Training data | What changes |
+|---|---|---|---|
+| Tagger | `CR_TAG_RELEVANT.txt` (602, 603, 608, 613-615, 704): closed lists of trigger events, replacement forms, cost kinds; missing chapters (113, 115, 118, 611, 502, 303.7, 207.2) via `CR_INDEX.txt` + `lookup.py cr` | gap backlog, `learning/` graded rebuilds, 353 starters | new patterns in `tag_extra`/`tag_verify` for backlog items; CR-based completeness check of `trigger:*`, `cost:*`, replacement tags |
+| Grammar | none (wording is not in the CR) | cards where readers agreed (V3 match); disagreement causes from R14 | fixed phrasings per tag pattern; placeholder spellings; fewer grammar sections needed |
+| Python reader (renderer) | keyword actions and reminder text for fixed keyword forms | (tags, reader text) pairs, weighted: starters highest | `render_rules.json`; unknown tag shows as `{tag}` |
+CR files stay reference only: the tool reads them to build or check tables, never at card run time, and the blind reader never sees them. Looser score tolerance (user 2026-10-23): word use is measured on stemmed content words with order ignored; on the 353 starters about 100 word-set groups at 40% overlap cover 82% of lines.
 
 ## 5. Score
 Three terms, all from the normalised texts; weights are for you to set (first proposal in brackets):
@@ -69,7 +77,8 @@ Phases 1-4 give a working renderer-based check on today's tags, before any Oracl
 Decided by the user (2026-10-23):
 - **Order term** weight 0.2 (word use takes the freed 0.2, now 0.6).
 - **Scope:** all data enriches the rules (starters, tier 1 `learning/` data, every archived run). The 353 starters carry the highest weight, since they had the most reader passes.
-- **Name:** MTG2LLM (`deckgen/mtg2llm.py`; location assumed, say if it should move).
+- **Name and place:** MTG2LLM, a tool at `deckgen/tagcheck/mtg2llm.py` (user: "it's a tool").
+- **Purpose (user 2026-10-23):** enrich three things from one place: the tagger (`tag_run.py` family), the grammar (`READER_GRAMMAR` v2 fixed forms) and the Python reader (the renderer, which stands in for the blind reader). References: the CR files and the training data (`learning/`, reader runs, 353 starters).
 
 - **Sources (H54 rewritten 2026-10-23):** card script only; mtgish dropped; the Oracle section inside the script is a gap filler for the tagger and is not read as a separate source; keywords via `KEYWORD_REFERENCE.toon` and the smaller CR files (`CR_TAG_RELEVANT.txt`, `CR_INDEX.txt`); the no-time-limit clause removed. This replaces the earlier idea of a separate Oracle-text parser (phases 5-6 now extend the script reader's Oracle gap filler instead).
 
