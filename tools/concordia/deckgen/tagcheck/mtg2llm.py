@@ -53,6 +53,7 @@ def templ(line):
 def mine():
     rules, used, seen = C.defaultdict(C.Counter), 0, 0
     for r in sorted(glob.glob(os.path.join(RUNS, "*/"))):
+        if re.match(r"m\d", os.path.basename(os.path.normpath(r))): continue      # m<N> = test runs of the renderer (held out; never mined)
         for f in sorted(glob.glob(os.path.join(r, "in", "*.json"))):
             o = os.path.join(r, "out", os.path.basename(f))
             if not os.path.exists(o): continue
@@ -130,6 +131,194 @@ def lookup(pat):
         k = (j, v["n"], p)      # ties go to the more frequent rule, then the pattern text, so the pick does not depend on key order
         if j >= 0.8 and v["n"] >= 2 and (bk is None or k > bk): best, bk, bp = v, k, b
     return (best, "dropped %s, extra %s" % (sorted(a - bp) or "-", sorted(bp - a) or "-")) if best else (None, False)
+
+
+# ---------- composing renderer: a unit with no exact rule is built from role parts (trigger, cost, target, duration, effect) -----------------------
+# The exact whole-group rules above stay first and unchanged. Parts are mined from the same reader lines (never Oracle text): a line is cut at its trigger comma
+# ("When ..., ") or cost colon ("{T}: "); the target phrase becomes {T}, 'until end of turn' becomes {D}; each part is counted under the tags of its own role.
+# A unit renders by composition only when every role it has finds a part rule; otherwise the near-match or {missing} paths run as before.
+TRIG_START = re.compile(r"^(?:When|Whenever|At)\b")
+TARGET_FAM = {"target_count", "target_scope", "target_type", "target_filter"}
+STOP = (r"gets?|gains?|loses?|to|and|with|from|into|on|onto|can't|cannot|has|have|becomes?|doesn't|deals?|if|that|then|or|until|this|it|is|are|was|"
+        r"fights?|attacks?|blocks?|untaps?|taps?|perpetually|where|for|as|at|in|under|instead|unless|may|must|can|loses|exile|destroy|return|put|sacrifice")
+TARGET_RE = re.compile(r"(?i)\b((?:up to (?:one|two|three|four|five|six|seven|\d+|N) )?(?:other |another )?target(?: (?!(?:%s)\b)[A-Za-z'’/+-]+)+?(?: (?:you control|an opponent controls|you don't control|that player controls|you own|an opponent owns))?)(?= |[.,:;]|$)" % STOP)
+DUR_EOT = re.compile(r" until end of turn")
+
+
+def role(tag):
+    f = tag.partition(":")[0]
+    if f.startswith("trigger"): return "trig"
+    if f.startswith("cost") and not f.startswith("cost_reduce"): return "cost"
+    if f in TARGET_FAM: return "target"
+    if f == "duration": return "dur"
+    return "eff"
+
+
+def split_roles(toks):
+    r = {"trig": [], "cost": [], "target": [], "dur": [], "eff": []}
+    for t in toks: r[role(t)].append(t)
+    return r
+
+
+def _pat(ts): return pattern([" ".join(ts)])
+
+
+def _target_norm(ph): return re.sub(r"(?i)\bup to (?:one|two|three|four|five|six|seven|\d+)\b", "up to N", ph)
+
+
+def mine_parts():
+    """-> {role: {pattern: Counter(text)}} from the aligned reader lines (same runs and alignment as mine(); held-out m<N> runs skipped)"""
+    P = {k: C.defaultdict(C.Counter) for k in ("trig", "cost", "target", "body")}
+    for r in sorted(glob.glob(os.path.join(RUNS, "*/"))):
+        if re.match(r"m\d", os.path.basename(os.path.normpath(r))): continue
+        for f in sorted(glob.glob(os.path.join(r, "in", "*.json"))):
+            o = os.path.join(r, "out", os.path.basename(f))
+            if not os.path.exists(o): continue
+            try:
+                with open(f, encoding="utf-8") as fh: I = json.load(fh)["cards"]
+                with open(o, encoding="utf-8") as fh: O = {c["id"]: c for c in json.load(fh)["cards"]}
+            except Exception: continue
+            for c in I:
+                if c["id"] not in O: continue
+                u = units(c["groups"]); lines = [x.strip() for x in O[c["id"]]["text"].split(" / ") if x.strip()]
+                if len(u) != len(lines): continue
+                for (g, ts), line in zip(u.items(), lines):
+                    ts, names = split_named(ts)
+                    if names: continue
+                    R = split_roles(ts); line = templ(line)
+                    has_trig = bool(TRIG_START.match(line)); has_cost = ": " in line.split(".")[0]
+                    if has_trig != bool(R["trig"]) or has_cost != bool(R["cost"]) or (has_trig and has_cost) or not R["eff"]: continue
+                    pre, body = "", line
+                    if has_trig:
+                        if ", " not in line: continue
+                        pre, body = line.split(", ", 1)
+                    elif has_cost:
+                        pre, body = line.split(": ", 1)
+                    if "{effect}" in body or "{" in pre and has_trig: continue
+                    if body[:1].isupper() and not re.match(r"[A-Z]{2}|X", body): body = body[0].lower() + body[1:]      # stored lower-case; render() capitalises
+                    if len(TARGET_RE.findall(body)) > 1: continue
+                    m = TARGET_RE.search(body)
+                    if m and R["target"]:
+                        P["target"][_pat(R["target"])][_target_norm(m.group(1))] += 1
+                        body = body[:m.start()] + "{T}" + body[m.end():]
+                    elif bool(m) != bool(R["target"]): continue
+                    if R["dur"]:
+                        if R["dur"] == ["duration:eot"] and DUR_EOT.search(body): body = DUR_EOT.sub("{D}", body, count=1)
+                        elif R["dur"] == ["duration:eot"] or "until end of turn" in body: continue
+                    elif "until end of turn" in body: continue
+                    if has_trig: P["trig"][_pat(R["trig"])][pre] += 1
+                    if has_cost: P["cost"][_pat(R["cost"])][pre] += 1
+                    P["body"][_pat(R["eff"])][body] += 1
+    out = {}
+    for k, d in P.items():
+        out[k] = {p: {"n": sum(c.values()), "top": round(c.most_common(1)[0][1] / sum(c.values()), 3), "canon": c.most_common(1)[0][0]} for p, c in d.items()}
+    return out
+
+
+_comp = {}
+
+
+def parts():
+    if not _comp:
+        p = os.path.join(HERE, "compose_rules.json")
+        _comp["R"] = json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+    return _comp["R"]
+
+
+def hand_parts():
+    return HAND_BODY
+
+
+# small hand-written phrases for tags the readings do not cover (see HAND_NOTE); keyed like the mined bodies (pattern of the effect tags)
+HAND_BODY = {      # {T} = the target phrase; "alt" is used when the unit has no target tag
+    "life_loss_amount:N": {"canon": "{T} loses N life.", "alt": "you lose N life."},
+    "life_loss_amount:N lifegain_amount:N": {"canon": "{T} loses N life and you gain N life.", "alt": "you lose N life and gain N life."},
+    "untap": {"canon": "untap {T}.", "alt": "untap this permanent."},
+    "regenerate": {"canon": "regenerate {T}.", "alt": "regenerate this creature."},
+    "sacrifice": {"canon": "{T} sacrifices a creature.", "alt": "sacrifice this permanent."},
+    "discard_count:N draw_count:N": {"canon": "{T} discards N cards, then draws N cards.", "alt": "discard N cards, then draw N cards."},
+}
+COLORS = {"white": "w", "blue": "u", "black": "b", "red": "r", "green": "g"}
+HAND_TARGET = {
+    "target_scope:each_opponent": "each opponent", "target_scope:each_player": "each player",
+    "target_count:all target_scope:you_control target_type:creature": "each creature you control",
+    "target_count:all target_type:creature": "each creature",
+    "target_type:land": "target land",
+    "target_count:up_to_N target_scope:you_control target_type:creature": "up to N target creatures you control",
+}
+HAND_TRIG = {"trigger:combat_damage": "Whenever this creature deals combat damage to a player"}
+# whole units that are one keyword; a colour tag on the unit is the colour of the keyword's mana cost
+HAND_UNIT = {
+    "kw:cycling num:N": "Cycling {N}", "kw:prowess": "Prowess", "kw:devoid": "Devoid", "kw:shadow": "Shadow", "kw:crew num:N": "Crew #",
+    "kw:morph num:N": "Morph {N}", "kw:disguise num:N": "Disguise {N}", "kw:megamorph num:N": "Megamorph {N}",
+    "kw:multikicker num:N": "Multikicker {N}", "kw:multikicker": "Multikicker", "kw:flip-up": "Turn this face up",
+    "kw:enchant target_type:land": "Enchant land", "kw:enchant target_type:permanent": "Enchant permanent",
+    "trigger:combat_damage": "Whenever this creature deals combat damage to a player.",
+}
+
+
+def _digits(text, ns):
+    """'#' slots take the card's amounts as plain digits (Crew 2, Pay 3 life)"""
+    ns = [n for n in ns if "/" not in n]
+    return re.sub(r"#", lambda m: (ns.pop(0).upper() if ns else "N"), text)
+
+
+def cost_text(cs):
+    """cost tags -> deterministic cost phrase, or None when a cost has no fixed wording"""
+    out = []
+    for t in cs:
+        f, _, v = t.partition(":")
+        if f == "cost_mana": out.append("".join("{%s}" % c.upper() for c in re.findall(r"\d+|[a-z]", v)))
+        elif f == "cost" and v == "tap": out.append("{T}")
+        elif f == "cost" and v == "life": out.append("Pay # life")
+        elif f == "cost" and v == "discard": out.append("Discard a card")
+        elif f == "cost" and v == "sacrifice" and "cost_sacrifice_target:self" in cs: out.append("Sacrifice this permanent")
+        elif f == "cost" and v == "sacrifice" and "cost_sacrifice_target:creature" in cs: out.append("Sacrifice a creature")
+        elif f == "cost_sacrifice_target" and v in ("self", "creature"): continue
+        else: return None
+    out.sort(key=lambda x: x == "{T}")
+    return ", ".join(out) or None
+
+
+def compose(ts):
+    """a unit's tags (no named:) -> text built from role parts, or None when some part has no rule"""
+    P = parts()
+    if not P: return None
+    hu = [t for t in ts if not t.startswith("color:")]
+    if len(hu) < len(ts) and any(t.startswith("kw:") for t in hu):
+        col = [t.partition(":")[2] for t in ts if t.startswith("color:")]
+        h = HAND_UNIT.get(_pat(hu))
+        if h and len(col) == 1 and len(col[0]) <= 5 and h.endswith("{N}"): return fill(h + "{%s}" % COLORS.get(col[0], col[0][:1]).upper(), nums(hu))
+    h = HAND_UNIT.get(_pat(ts))
+    if h: return _digits(fill(h, nums(ts)), nums(ts))
+    R = split_roles(ts)
+    if not R["eff"]: return None
+    b = P["body"].get(_pat(R["eff"])) or HAND_BODY.get(_pat(R["eff"]))
+    if not b: return None
+    body = b["canon"]
+    if R["target"]:
+        tp = _pat(R["target"]); t = P["target"].get(tp) or ({"canon": HAND_TARGET[tp]} if tp in HAND_TARGET else None)
+        if not t or "{T}" not in body: return None
+        body = body.replace("{T}", fill(t["canon"], nums(R["target"])))
+    elif "{T}" in body:
+        if not b.get("alt"): return None
+        body = b["alt"]
+    if "{D}" in body: body = body.replace("{D}", " until end of turn" if R["dur"] == ["duration:eot"] else "")
+    elif R["dur"] == ["duration:eot"] and "until" not in body: body = re.sub(r"\.?$", " until end of turn.", body, count=1) if not body.endswith("turn.") else body
+    body = fill(body, nums(R["eff"]))
+    if R["trig"]:
+        t = P["trig"].get(_pat(R["trig"])) or ({"canon": HAND_TRIG[_pat(R["trig"])]} if _pat(R["trig"]) in HAND_TRIG else None)
+        if not t: return None
+        return fill(t["canon"], nums(R["trig"])) + ", " + body
+    if R["cost"]:
+        ct = cost_text(R["cost"])
+        if ct: ct = _digits(fill(ct, nums(R["cost"])), nums(R["cost"]))
+        else:
+            c = P["cost"].get(_pat(R["cost"]))
+            if not c: return None
+            ct = fill(c["canon"], nums(R["cost"]))
+        return ct + ": " + body[:1].upper() + body[1:]
+    return body[:1].upper() + body[1:]
 
 
 # ---------- named:<Full Name> (the name of another card travels in the tag record only) --------------------------------------------------------
@@ -223,6 +412,10 @@ def render(groups, typing=None):
                     st["exact"] += 1
                     base = fill(v2["canon"], nums(rest)).rstrip()
                     lines.append(put_names(base if re.search("scry", base, re.I) else base + " Scry %s." % n.upper(), names, toks, st) if names else (base if re.search("scry", base, re.I) else base + " Scry %s." % n.upper())); continue
+        if v is None or approx:
+            cp = compose(ts[0].split()) if not names else None
+            if cp:
+                st["composed"] = st.get("composed", 0) + 1; lines.append(cp); continue
         if v is None:
             st["missing"] += 1; lines.append(put_names("{%s}" % " ".join(ts), names, ts[0].split(), st) if names else "{%s}" % " ".join(ts)); continue
         st["approx" if approx else "exact"] += 1
@@ -537,6 +730,9 @@ def main():
     if a.cmd == "mine":
         rules, seen, used = mine()
         with open(a.out, "w", encoding="utf-8") as fh: json.dump(rules, fh, indent=1, ensure_ascii=False)
+        cp = mine_parts()
+        with open(os.path.join(os.path.dirname(os.path.abspath(a.out)), "compose_rules.json"), "w", encoding="utf-8") as fh: json.dump(cp, fh, indent=1, ensure_ascii=False)
+        print("compose parts: " + ", ".join("%s %d" % (k, len(v)) for k, v in cp.items()))
         units_n = sum(r["n"] for r in rules.values())
         agree = sum(r["n"] * r["top"] for r in rules.values()) / max(units_n, 1)
         multi = sum(r["n"] for r in rules.values() if r["n"] >= 3)
