@@ -14,7 +14,7 @@ The tool runs end to end as scripts: `python3 mtg2llm.py run --cards <set>` tags
 ## 2. What exists and what is new
 | Piece | Today | In the new script |
 |---|---|---|
-| Card text to tags | `tag_run.py record()` reads the Forge **script**, cross-checks Oracle and mtgish in `tag_verify.py` | Base kept. New: an Oracle-text parser that produces the same tag vocabulary |
+| Card text to tags | `tag_run.py record()` reads the Forge **script**; `tag_verify.py` cross-checks with Oracle and mtgish | Base kept, script only (mtgish dropped). Gap filler: the Oracle section of the script, read by the tagger |
 | Tags to text | none (reader only; selftest has a "dumb dictionary" floor) | New `render`: rule table mined from reader outputs and the v2 grammar |
 | Compare | `reverse_check.score`: tf-idf cosine 0.4, concept F1 0.4, number F1 0.2 | Kept, plus new count and order terms |
 | Data to learn from | reader outputs r1..r18 in `~/tagcheck_runs/`, archive, `learning/` (3,000 graded rebuilds, gap backlog) | Mined into the rule table and the gap list |
@@ -22,9 +22,9 @@ The tool runs end to end as scripts: `python3 mtg2llm.py run --cards <set>` tags
 Location: `tools/concordia/deckgen/mtg2llm.py` (new file; imports `tag_run`, `ability_tags`, `tag_extra`, `reverse_check` helpers; nothing in forge sources is touched).
 
 ## 3. Logic flow
-1. **Input:** card name, Oracle text, and (when available) the Forge script.
-2. **Oracle to tags:** split Oracle into ability lines; match each line against patterns (keyword line, triggered, activated, static, spell effect, modal, saga chapter); emit tags from the approved vocabulary only. Where a line is not understood, emit a placeholder tag (`{unparsed}`), never raw text.
-3. **Merge with the script tagger:** base record from `tag_run.record()`; the Oracle parse fills gaps and flags disagreements (same role `tag_verify.py` has now).
+1. **Input:** card name and the Forge script (its Oracle section is the gap filler).
+2. **Script to tags:** `tag_run.record()` as today. Where the script leaves a line untagged, the tagger reads that line from the script's Oracle section with pattern rules and emits tags from the approved vocabulary only; a line it cannot read emits a placeholder tag (`{unparsed}`), never raw text.
+3. **Disagreements:** where the Oracle gap filler and the script tags disagree, the script wins and the card is flagged in the report.
 4. **Tags to text:** per tag group, the most common reader phrasing for that pattern, in the v2 grammar's fixed forms, ordered keywords first, one ability per line. Unknown tags render as `{tag}` so a gap shows up in the text.
 5. **Compare:** normalise both texts with `reverse_check.norm` and `tolerate`, then score (section 5).
 6. **Report:** per card the score, missing words, extra words, order breaks and the lines that did not parse; one summary row to `RUN_LOG.jsonl`.
@@ -59,7 +59,7 @@ A parser that copies Oracle words into tags would score 1.0 and prove nothing. G
 | 2 | Renderer (tags to text) | `mtg2llm.py render` | runs on all 353; unknown tags show as placeholders |
 | 3 | Scorer with count and order terms | `mtg2llm.py score` | selftest: perfect text 1.0, another card low, empty 0 |
 | 4 | First calibration: script tags to text to Oracle, 353 cards | baseline table, pass band | band set from the data |
-| 5 | Oracle parser for the common line forms | `mtg2llm.py tag` | tag-set F1 vs script tagger on the starters |
+| 5 | Oracle gap filler for common line forms | `mtg2llm.py tag` | tag-set F1 vs script-only tags on the starters; unparsed lines counted |
 | 6 | Gap backlog patterns | updated parser | per-gap coverage table |
 | 7 | Reader check on a sample | numbers vs section 7 targets | targets met or gap list written |
 
@@ -71,8 +71,7 @@ Decided by the user (2026-10-23):
 - **Scope:** all data enriches the rules (starters, tier 1 `learning/` data, every archived run). The 353 starters carry the highest weight, since they had the most reader passes.
 - **Name:** MTG2LLM (`deckgen/mtg2llm.py`; location assumed, say if it should move).
 
-Still open:
-- **Source order:** H54 ranks the tagging sources as 1st card script, 2nd mtgish, 3rd Forge AI (reference); it does not list Oracle text, which today enters only through the `tag_verify.py` cross-check. Should the Oracle parse stay a cross-check and gap-filler (recommended), or rank as a primary source? A new H-row will record the answer.
+- **Sources (H54 rewritten 2026-10-23):** card script only; mtgish dropped; the Oracle section inside the script is a gap filler for the tagger and is not read as a separate source; keywords via `KEYWORD_REFERENCE.toon` and the smaller CR files (`CR_TAG_RELEVANT.txt`, `CR_INDEX.txt`); the no-time-limit clause removed. This replaces the earlier idea of a separate Oracle-text parser (phases 5-6 now extend the script reader's Oracle gap filler instead).
 
 ## 10. Not verified
 - Whether reader phrasings are consistent enough per tag pattern to give one canonical text (V1 0.81 says about 4 in 5 cards agree exactly).
