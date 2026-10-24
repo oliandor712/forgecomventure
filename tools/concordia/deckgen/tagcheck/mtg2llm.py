@@ -203,7 +203,7 @@ def mine_parts():
                     elif has_cost:
                         pre, body = line.split(": ", 1)
                     if "{effect}" in body or "{" in pre and has_trig: continue
-                    if body[:1].isupper() and not re.match(r"[A-Z]{2}|X", body): body = body[0].lower() + body[1:]      # stored lower-case; render() capitalises
+                    if body[:1].isupper() and not re.match(r"[A-Z]{2}|X\b", body): body = body[0].lower() + body[1:]      # stored lower-case; render() capitalises
                     if len(TARGET_RE.findall(body)) > 1: continue
                     m = TARGET_RE.search(body)
                     if m and R["target"]:
@@ -241,7 +241,7 @@ def hand_parts():
 HAND_BODY = {      # {T} = the target phrase; "alt" is used when the unit has no target tag
     "life_loss_amount:N": {"canon": "{T} loses N life.", "alt": "you lose N life."},
     "life_loss_amount:N lifegain_amount:N": {"canon": "{T} loses N life and you gain N life.", "alt": "you lose N life and gain N life."},
-    "untap": {"canon": "untap {T}.", "alt": "untap this permanent."},
+    "untap": {"canon": "untap {T}."},
     "regenerate": {"canon": "regenerate {T}.", "alt": "regenerate this creature."},
     "sacrifice": {"canon": "{T} sacrifices a creature.", "alt": "sacrifice this permanent."},
     "discard_count:N draw_count:N": {"canon": "{T} discards N cards, then draws N cards.", "alt": "discard N cards, then draw N cards."},
@@ -291,12 +291,26 @@ def _carries(canon, tags):
     """a mined phrase can fill a unit's amounts only when it has one slot per amount and no literal number of its own (a body mined without the token size
     or pump amount cannot say them); False -> compose refuses and the approximate match runs"""
     bare = re.sub(r"\{[^}]*\}", "", canon)
-    if len(re.findall(r"[+\-]N/[+\-]N|N", canon.replace("{N}", " N "))) != len(nums(tags)): return False
+    if len(re.findall(r"[+\-]N/[+\-]N|\bN\b", canon.replace("{N}", " N "))) != len(nums(tags)): return False
     return not re.search(r"(?<![\w{])[+\-]?\d+(?:/[+\-]?\d+)?(?![\w}])", bare)
 
 
-def compose(ts):
-    """a unit's tags (no named:) -> text built from role parts, or None when some part has no rule"""
+_SYM = re.compile(r"\{(?:[TQ]|[WUBRGCXSEP]|\d+|[WUBRG2]/[WUBRGP]|effect)\}")
+
+
+def unresolved(line):
+    """a rendered line still holding a slot (an unfilled {filter}/{N card}/{Spells}/{name}, a bare N or #) is not a rendering"""
+    return bool(re.search(r"\{[^}]*\}|\bN\b|#", _SYM.sub("", line)))
+
+
+def compose(ts, stray=False):
+    """a unit's tags (no named:) -> text built from role parts, or None when some part has no rule. stray = the unit is a leftover effect group (id x) whose
+    target sits in another unit, so a no-target 'this permanent' fallback would be a guess"""
+    cp = _compose(ts, stray)
+    return cp if cp and not unresolved(cp) else None
+
+
+def _compose(ts, stray):
     P = parts()
     if not P: return None
     hu = [t for t in ts if not t.startswith("color:")]
@@ -320,7 +334,7 @@ def compose(ts):
         if not t or "{T}" not in body or not _carries(t["canon"], R["target"]): return None
         body = body.replace("{T}", fill(t["canon"], nums(R["target"])))
     elif "{T}" in body:
-        if not b.get("alt"): return None
+        if stray or not b.get("alt"): return None
         body = b["alt"]
     if "{D}" in body: body = body.replace("{D}", " until end of turn" if R["dur"] == ["duration:eot"] else "")
     elif R["dur"] == ["duration:eot"] and "until" not in body: body = re.sub(r"\.?$", " until end of turn.", body, count=1) if not body.endswith("turn.") else body
@@ -432,7 +446,7 @@ def render(groups, typing=None):
                     base = fill(v2["canon"], nums(rest)).rstrip()
                     lines.append(put_names(base if re.search("scry", base, re.I) else base + " Scry %s." % n.upper(), names, toks, st) if names else (base if re.search("scry", base, re.I) else base + " Scry %s." % n.upper())); continue
         if v is None or approx:
-            cp = compose(ts[0].split()) if not names else None
+            cp = compose(ts[0].split(), g == "x") if not names else None
             if cp:
                 st["partial" if "{effect}" in cp else "composed"] = st.get("partial" if "{effect}" in cp else "composed", 0) + 1; lines.append(cp); continue
         if v is None:
@@ -440,7 +454,12 @@ def render(groups, typing=None):
         st["approx" if approx else "exact"] += 1
         if approx: st["diffs"].append("%s: %s" % (g, approx))
         line = fill(v["canon"], nums(ts))
+        if approx and unresolved(line):      # a near-match line with a slot left open is not trusted (exact rules keep theirs)
+            st["approx"] -= 1; st["missing"] += 1; st["diffs"] = st["diffs"][:-1]
+            lines.append("{%s}" % " ".join(ts)); continue
         lines.append(put_names(line, names, ts[0].split(), st) if names else line)
+    last = [i for i, (g, ts) in enumerate(u.items()) if i < len(lines) and re.search(r"\bkw:(?:crew|cycling)\b", " ".join(ts))]
+    lines = [l for i, l in enumerate(lines) if i not in last] + [lines[i] for i in last]      # crew and cycling print after the other abilities (like equip)
     text = " / ".join(lines)
     sw = self_word(typing)
     if sw != "creature": text = re.sub(r"\bthis creature\b", "this " + sw, text)
