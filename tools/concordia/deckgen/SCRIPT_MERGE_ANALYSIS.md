@@ -79,6 +79,12 @@ Net: the list in the first draft was too broad. Real extractions: `workdir`, `sn
 
 `common.py` holds `workdir`, `snake`, `params`, `q`, `q_line`, `card_files`, `identity`. The `q` copies were NOT identical: `tag_run` quotes empty values and values with a comma, quote or backslash (`q`); the two builders strip newlines and do not quote on a backslash (`q_line`). Both kept, so no output changes. Rewired: tag_run, tag_verify, tag_extra, tag_twins, reverse_check, run_log, build_reminder_fill, build_token_reference, oracle_style_stats, mtg2llm, pool, spellbinder_signals. Checked: all scripts compile; `tag_run.py starter` leaves every generated file identical; `build_token_reference.py` output identical; `consistency.py selftest` ok; mtg2llm, reverse_check, run_log, sync, oracle_style_stats, spellbinder_signals import. Not run: `pool.py`, `build_reminder_fill.py` (network), `ability_tags.py`.
 
+## 5d. Step 2 status (2026-10-24): done, uncommitted
+
+`tagcheck/score.py` (170 lines) holds the scorer: `norm`, `tolerate`, `toks`, `concepts`, `KWRX`, `f1`, `mf1`, `numbers`, `Index`, `score`, `is_typeline`, `clean_reco`, `original_text`, `band`, `evaluate`, `summarize`. `reverse_check` (535 to 374 lines) re-exports them, so old `RC.<name>` calls still work. `consistency`, `learning_merge`, `mtg2llm`, `rule_guard`, `tag_audit`, `tag_guard` now call `score` for those names. `rule_guard` no longer imports `reverse_check` at all. Checked: `reverse_check selftest`, `consistency selftest`, `mtg2llm selftest` outputs byte-identical to HEAD; `tag_run.py starter` output identical.
+
+Cycles: `score` itself imports nothing from the project at load time (`original_text` imports tag_run/tag_verify on first call). `consistency <-> run_log` and `tag_run -> sync -> reverse_check -> tag_run` are unchanged; `tag_guard`, `sync`, `tag_audit` and `mtg2llm` still import `reverse_check` for `tag_blind`, `starter_records`, `is_pre6` and `T`, so `reverse_check -> tag_run -> tag_guard` still exists. Moving those three helpers (record building) out of `reverse_check` is the next cut; step 2 did not break 3 of 4 cycles as first estimated.
+
 ## 6. Order of work (revised after the third pass)
 
 1. `common.py`: `workdir`, `snake`, `params`, `q`, `card_files`, `identity` (no behaviour change; compare the three `q` bodies first).
