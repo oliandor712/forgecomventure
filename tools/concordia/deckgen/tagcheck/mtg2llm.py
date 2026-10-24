@@ -125,15 +125,18 @@ def fill(canon, ns):
     return out.replace("~", "this creature")
 
 
+APPROX_OK = {"color", "named"}      # a near match may differ only in these families; any other dropped or extra tag changes the meaning (wrong sibling body), so it is {missing}
+
+
 def lookup(pat):
-    """exact pattern, else the closest mined pattern sharing at least 80% of its tags (flagged approx), else None"""
+    """exact pattern, else the closest mined pattern sharing at least 80% of its tags and differing only in APPROX_OK families (flagged approx), else None"""
     R = rules()
     if pat in R: return R[pat], False
     a, best, bk, bp = set(pat.split()), None, None, None
     for p, v in R.items():
         b = _sets[p]; j = len(a & b) / len(a | b)
         k = (j, v["n"], p)      # ties go to the more frequent rule, then the pattern text, so the pick does not depend on key order
-        if j >= 0.8 and v["n"] >= 2 and (bk is None or k > bk): best, bk, bp = v, k, b
+        if j >= 0.8 and v["n"] >= 2 and (bk is None or k > bk) and all(t.partition(":")[0] in APPROX_OK for t in (a ^ b)): best, bk, bp = v, k, b
     return (best, "dropped %s, extra %s" % (sorted(a - bp) or "-", sorted(bp - a) or "-")) if best else (None, False)
 
 
@@ -315,9 +318,9 @@ def _compose(ts, stray):
     if not P: return None
     hu = [t for t in ts if not t.startswith("color:")]
     if len(hu) < len(ts) and any(t.startswith("kw:") for t in hu):
-        col = [t.partition(":")[2] for t in ts if t.startswith("color:")]
+        col = [t.partition(":")[2] for t in ts if t.startswith("color:")]      # a coloured cycling cost may be {R}{R} or hybrid; the colour tag cannot say, so Cycling takes no guess
         h = HAND_UNIT.get(_pat(hu))
-        if h and len(col) == 1 and len(col[0]) <= 5 and h.endswith("{N}"): return fill(h + "{%s}" % COLORS.get(col[0], col[0][:1]).upper(), nums(hu))
+        if h and len(col) == 1 and len(col[0]) <= 5 and h.endswith("{N}") and not h.startswith("Cycling"): return fill(h + "{%s}" % COLORS.get(col[0], col[0][:1]).upper(), nums(hu))
     h = HAND_UNIT.get(_pat(ts))
     if h: return _digits(fill(h, nums(ts)), nums(ts))
     R = split_roles(ts)

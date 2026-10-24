@@ -21,7 +21,7 @@ for f in glob.glob(os.path.join(RES, 'editions', '*.txt')):
     if not code: continue
     typ = re.search(r'^Type=(.*)$', t, re.M); date = re.search(r'^Date=(.*)$', t, re.M)
     edmeta[code.group(1).strip().upper()] = ((typ.group(1).strip() if typ else ''), (date.group(1).strip() if date else ''))
-# Alchemy (digital-only) cards: named in an Alchemy edition and in no edition outside Alchemy / Online / Funny / Mystery Booster Commander Edition
+# Alchemy cards: every card named in any Alchemy edition (including cards that also have paper printings)
 alch_in, alch_out = set(), set()
 for f in glob.glob(os.path.join(RES, 'editions', '*.txt')):
     t = open(f, errors='replace').read()
@@ -30,7 +30,7 @@ for f in glob.glob(os.path.join(RES, 'editions', '*.txt')):
     names = {m.group(1).strip().lower() for m in re.finditer(r'^\d+\w*\s+[A-Z]+\s+(.+?)(?:\s+@.*)?$', t, re.M)}
     if nm.startswith('Alchemy'): alch_in |= names
     elif typ not in ('Online', 'Funny') and not nm.startswith('Mystery Booster Commander Edition'): alch_out |= names
-alchemy = alch_in - alch_out
+alchemy = alch_in      # user 2026-10-24: any card named in an Alchemy edition leaves the pool, paper printings or not (alch_out kept for reference)
 PRE6_CUTOFF = '1999-04-21'  # Sixth Edition release date
 PRIO = {'Expansion': 0, 'Core': 0, 'Starter': 1, 'Draft': 1, 'Duel_Deck': 2, 'Commander': 2, 'Reprint': 3, 'Collector_Edition': 4}
 GOOD_TYPES = set(PRIO)
