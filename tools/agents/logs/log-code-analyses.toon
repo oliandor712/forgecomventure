@@ -1,0 +1,4 @@
+# Claude-only file in TOON (pipe-delimited table; # lines are comments). Append one row per analysis, under 400 chars.
+# Code and tooling analyses.
+log[1|]{date|topic|finding|caveat}:
+  2026-10-23|derived_tags.py|anthem needs duration:static + you_control/pump_team (auras, one-shots false hits); wipe excludes target_filter/you_control groups|commit 603c11540e3 local, unpushed
