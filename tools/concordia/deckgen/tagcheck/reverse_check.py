@@ -279,7 +279,9 @@ def baseline_text(rec):
 
 # ---------- commands -----------------------------------------------------------------------------------------------------------------------------
 def cmd_export(a):
-    recs = starter_records()
+    if getattr(a, "cardlist", ""):      # any cards with a script (not only starters): one name per line
+        recs = [T.record(n, T.find_text(n)) for n in (l.strip() for l in open(a.cardlist, encoding="utf-8")) if n]
+    else: recs = starter_records()
     if getattr(a, "cards", None): want = {c.strip().lower() for c in a.cards.split(";")}; recs = [r for r in recs if r["name"].lower() in want]      # a hand-picked subset
     if a.limit: random.Random(1).shuffle(recs); recs = recs[: a.limit]
     random.Random(7).shuffle(recs)                          # no alphabetical or deck-order hints
@@ -443,7 +445,7 @@ def cmd_selftest(a):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sp = ap.add_subparsers(dest="cmd", required=True)
-    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=72); e.add_argument("--legend", action="store_true"); e.set_defaults(slim=True); e.add_argument("--reminders-extra", dest="reminders_extra", default=""); e.add_argument("--cards", default="")
+    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=72); e.add_argument("--legend", action="store_true"); e.set_defaults(slim=True); e.add_argument("--reminders-extra", dest="reminders_extra", default=""); e.add_argument("--cards", default=""); e.add_argument("--cardlist", default="")
     c = sp.add_parser("compare"); c.add_argument("--run", required=True); [c.add_argument("--" + k, default="") for k in ("arm", "grammar", "reader", "note")]  # run metadata for run_log
     s = sp.add_parser("selftest"); s.add_argument("--limit", type=int, default=0)
     a = ap.parse_args()
