@@ -1,51 +1,62 @@
 # Script connections and merge options (all deckgen + tagcheck .py except mtg2llm.py)
 
-Generated 2026-10-24 from an import scan of 37 scripts. Builds on `SCRIPT_REDUNDANCY.md` (tagcheck only); this file covers all of `deckgen/`. Nothing has been merged; each option needs the user's word.
+Second pass, 2026-10-24: import scan of 37 scripts plus a read of the code. Builds on `SCRIPT_REDUNDANCY.md` (tagcheck only). Nothing has been merged; each option needs the user's word.
 
-## 1. Four clusters, hardly connected to each other
+**Read in full or in the relevant parts:** reverse_check, run_memory, tag_guard, tag_audit, run_log, reader_refs, rule_lint, placeholder_triage, learning_merge, learning_coverage, oracle_style_stats, build_reminder_fill, build_token_reference, tag_run.
+**Import scan and header only (not read through):** the deck generator cluster (mine, pool, build, gen_mono, variants, t1_plan, starter_tune, hall_roster, categorize, budget_lands, staples, commander_support, scryfall_bulk, spellbinder_signals), ability_tags, tag_extra, tag_variant, tag_verify, tag_twins, derived_tags, sync, rule_guard, consistency. Claims about those rest on imports and size only.
+
+## 1. Four clusters, hardly connected
 
 | Cluster | Scripts | Link to the others |
 |---|---|---|
 | Deck generator | mine, pool, build, gen_mono, variants, t1_plan, starter_tune, hall_roster, categorize, budget_lands, staples, commander_support, scryfall_bulk, spellbinder_signals | only `ability_tags` (via build, commander_support, t1_plan) |
-| Tagger | ability_tags, tag_run, tag_extra, tag_variant, tag_verify, tag_twins, derived_tags | `tag_run` is the hub: imports 9 modules |
-| Tag check | reverse_check, consistency, run_log, placeholder_triage, learning_*, oracle_style_stats, build_*_reference, reader_refs | `reverse_check` imports tag_run, tag_extra, tag_verify (tagger) and is imported by 7 |
+| Tagger | ability_tags, tag_run, tag_extra, tag_variant, tag_verify, tag_twins, derived_tags | `tag_run` is the hub (imports 9 modules) |
+| Tag check | reverse_check, consistency, run_log, placeholder_triage, learning_*, oracle_style_stats, build_*_reference, reader_refs | `reverse_check` imports tag_run, tag_extra, tag_verify and is imported by 7 |
 | Guards / sync | tag_guard, rule_guard, rule_lint, sync, tag_audit, run_memory | all import mtg2llm and reverse_check; every one calls run_memory |
 
-Hubs: `reverse_check` (used by 7), `mtg2llm` (6), `run_memory` (6), `ability_tags` (4), `tag_extra` (3), `tag_run` (3).
+## 2. Import cycles
 
-## 2. Import cycles (the real coupling problem)
+- `mtg2llm <-> reverse_check`
+- `consistency <-> run_log`
+- `tag_run -> sync -> reverse_check -> tag_run`
+- `tag_guard -> reverse_check -> tag_run -> tag_guard`
 
-- `mtg2llm <-> reverse_check` (each imports the other; one is imported lazily).
-- `consistency <-> run_log`.
-- `tag_run -> sync -> reverse_check -> tag_run` (sync renders the tagger's output, the tagger calls sync at its end).
-- `tag_guard -> reverse_check -> tag_run -> tag_guard`.
+All hold only through late imports inside functions. Root cause: `reverse_check` is five things in one file (scoring, export, run bookkeeping, report, CLI) and the scorer is what everyone needs. Moving the scorer out breaks three of the four cycles.
 
-These work only because of late imports inside functions. Merging within a cycle removes the cycle; merging across clusters does not.
+## 3. Findings from reading the code
 
-## 3. Merge candidates, best first
+- `reverse_check`: scoring, `export`, `compare`, bookkeeping and report writing in one 540-line file. `READER_RULES` text inside it has drifted from `.claude/agents/tag-blind-reader.md`.
+- `_sims` (reader-free scoring) is duplicated in tag_guard and rule_guard (and a variant in mtg2llm).
+- `run_memory` and the older `remember` function duplicate the memory-path logic. `tag_guard` logs twice (guard-runs.toon and run_memory).
+- `tag_audit` has dead `if False` code. `run_log` carries a one-time KNOWN/GROUPS backfill table.
+- `rule_lint`: the REVERSE regexes are broken (already noted in SCRIPTS.md).
+- `reader_refs` docstring mentions a nonexistent `export --refs`.
+- `build_reminder_fill` and `build_token_reference` each define their own `q()`; build_reminder_fill has an `os.sys.argv` oddity and three modes (API, `--forge`, `--cr`).
+- `placeholder_triage`, `learning_merge`, `learning_coverage`, `oracle_style_stats` are one-off analyses, used by nobody; `oracle_style_stats` repeats pool-reading code found elsewhere.
+- `tag_run` (655 lines) mixes record building, rendering, reference/approval/sample report writing, QA, redundancy check and CLI; it holds hard-coded APPROVED and REDUNDANCY_OK tables and has a late-import cycle with tagcheck (tag_guard, sync, run_memory, tag_twins).
 
-1. **rule_lint into rule_guard** (45 + 53 lines). rule_lint is used by rule_guard and mtg2llm only; one quarantine/accept module `rule_checks.py`. Low risk.
-2. **tag_audit + sync into one `tag_checks.py`** (62 + 65). Both import mtg2llm, reverse_check, run_memory, write a gap file, and run after the tagger. Also `tag_guard` (100) shares `_sims` with rule_guard. Option: `guards.py` holding tag_guard, rule_guard, rule_lint, sync, tag_audit as sections (about 330 lines), one `run_memory` call site. Medium risk (callers: tag_run, mtg2llm `mine`).
-3. **consistency + run_log** (234 + 217). Cyclic, same subject (reader run records); one `run_records.py`.
-4. **placeholder_triage, learning_merge, learning_coverage, oracle_style_stats** (95 + 76 + 64 + 100): one-off analysis tools, used by nobody. Merge into `analysis.py` with subcommands, or archive the learning_* pair (data from another session, finished).
-5. **build_reminder_fill + build_token_reference + reader_refs** (137 + 60 + 81): all build a reference file for readers. One `reference_files.py` with `fill`, `tokens`, `readers` subcommands. Low risk; `q()` is duplicated in two of them.
-6. **tag_variant into tag_run**: tag_variant (208) only post-processes tag_run output and imports tag_extra; tag_twins (214) and tag_verify (166) likewise are called only by tag_run. Merging all would make a 1,400-line tag_run: not recommended; keep as modules.
-7. **mine, pool, categorize, hall_roster, budget_lands** (41-101 lines each, no cross imports): small CLIs of the deck generator; could share one `deckgen_cli.py`, but they have no shared code, so merging only saves files, not logic.
+## 4. Merge candidates, best first
 
-Not worth merging: `build` (567) and `ability_tags` (439) (large, stable), `tag_extra` (824, big and growing; split instead), `reverse_check` (540; the largest hub, better to split scoring from the export/compare CLI than to grow).
+1. **rule_lint into rule_guard** (45 + 53 lines): used only by rule_guard and mtg2llm. Low risk.
+2. **Split reverse_check**: move the score (cosine, concept F1, number F1) and `_sims` into `score.py`; keep export/compare/report in reverse_check. Removes the reverse_check cycles with tag_guard, sync and mtg2llm. Medium risk, highest payoff.
+3. **Guards in one file** (`guards.py`: tag_guard, rule_guard, rule_lint, sync, tag_audit, about 330 lines) with one run_memory call site. Medium risk; callers are tag_run and `mtg2llm mine`.
+4. **consistency + run_log** into `run_records.py` (cyclic, same subject). Drop the KNOWN/GROUPS backfill once confirmed unused.
+5. **Reference builders** (build_reminder_fill, build_token_reference, reader_refs) into `reference_files.py` with subcommands `fill`, `tokens`, `readers`. Low risk; one `q()`.
+6. **Archive** learning_merge, learning_coverage (finished, other session's data) and fold placeholder_triage and oracle_style_stats into `analysis.py` subcommands.
+7. **tag_run**: do not grow it. Split out the report writers (reference/approval/sample) and the QA/redundancy check into a `tag_reports.py`, and move the APPROVED/REDUNDANCY_OK tables to data files.
 
-## 4. Duplicated helpers (extract, do not merge scripts)
+Not worth merging: build (567), ability_tags (439), tag_extra (824; split by family if it keeps growing). tag_variant, tag_verify, tag_twins stay modules of the tagger. The small deck-generator CLIs (mine, pool, categorize, hall_roster, budget_lands) share no code, so merging saves files only.
 
-- `norm` in ability_tags, spellbinder_signals, tag_twins, reverse_check: four text normalisers.
-- `parse` (ability_tags, build, variants) and `card_text` (ability_tags, build): card script parsing done twice.
-- `snake`, `params`, `provides`, `q`, `stats`, `identity`, `load`, `workdir`, `role`: same name in two or three scripts; `workdir` in reverse_check and run_log should be one function.
-- `_load` / `_sims` repeated in rule_guard, tag_guard and mtg2llm.
-Suggestion: one `common.py` for `norm`, `snake`, `workdir`, JSON/toon load and card-script parse.
+## 5. Duplicated helpers (extract to `common.py`)
 
-## 5. Suggested order (smallest safe steps)
+`norm` (ability_tags, spellbinder_signals, tag_twins, reverse_check); `parse` and `card_text` (ability_tags, build, variants); `snake`, `workdir` (reverse_check, run_log), `q`, memory path (run_memory, remember); `_load`/`_sims` (rule_guard, tag_guard, mtg2llm). The deck-generator duplicates are from import scan only; check them before extracting.
 
-1. `common.py` for the duplicated helpers (no behaviour change).
-2. rule_lint into rule_guard; consistency + run_log; reference builders into one file.
-3. Guards/sync consolidation after a full `tag_run.py starter` plus `mtg2llm.py mine` check shows identical output.
-4. Archive learning_* and the unused one-shot analysis tools.
-Result: 37 scripts to about 27, import cycles 4 to 1 (mtg2llm/reverse_check stays, handled by moving shared score code into `common.py`). Every step is checked by rerunning the guards and comparing scores, as in `SCRIPT_REDUNDANCY.md`.
+## 6. Order of work
+
+1. `common.py` (no behaviour change).
+2. `score.py` split out of reverse_check; fix the cycles.
+3. rule_lint into rule_guard; run_records; reference_files.
+4. Guards consolidation after a full `tag_run.py starter` + `mtg2llm.py mine` shows identical output and scores.
+5. Archive one-offs; tag_run report split.
+
+Result: 37 scripts to about 27, import cycles 4 to 0 or 1. Each step is checked by rerunning the guards and comparing scores, as in `SCRIPT_REDUNDANCY.md`.
