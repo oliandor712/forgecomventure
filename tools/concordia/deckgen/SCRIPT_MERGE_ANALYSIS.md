@@ -75,6 +75,10 @@ Net: the list in the first draft was too broad. Real extractions: `workdir`, `sn
 - `tag_extra` (823), `tag_variant`, `derived_tags` (89), `commander_support` have no helper overlap beyond the rows above; keep. Not audited: the rule bodies of `tag_extra.extra` (about 600 lines).
 - `hall_roster`, `categorize`, `budget_lands`, `t1_plan` share nothing but the deck-file reader and `pool.pkl` path.
 
+## 5c. Step 1 status (2026-10-24): done, uncommitted
+
+`common.py` holds `workdir`, `snake`, `params`, `q`, `q_line`, `card_files`, `identity`. The `q` copies were NOT identical: `tag_run` quotes empty values and values with a comma, quote or backslash (`q`); the two builders strip newlines and do not quote on a backslash (`q_line`). Both kept, so no output changes. Rewired: tag_run, tag_verify, tag_extra, tag_twins, reverse_check, run_log, build_reminder_fill, build_token_reference, oracle_style_stats, mtg2llm, pool, spellbinder_signals. Checked: all scripts compile; `tag_run.py starter` leaves every generated file identical; `build_token_reference.py` output identical; `consistency.py selftest` ok; mtg2llm, reverse_check, run_log, sync, oracle_style_stats, spellbinder_signals import. Not run: `pool.py`, `build_reminder_fill.py` (network), `ability_tags.py`.
+
 ## 6. Order of work (revised after the third pass)
 
 1. `common.py`: `workdir`, `snake`, `params`, `q`, `card_files`, `identity` (no behaviour change; compare the three `q` bodies first).
