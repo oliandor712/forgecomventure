@@ -589,6 +589,11 @@ def main(a):
         t = find_text(n)
         if not t: missing.append(n); continue
         recs.append(record(n, t))
+    try:
+        sys.path.insert(0, os.path.join(HERE, "tagcheck")); import tag_guard
+        recs = tag_guard.apply(recs, force="--force" in a)     # a worse run never overrides the better tags already stored (per card, per ability group)
+    except ImportError as ex:
+        print("tag_guard not applied:", ex)
     os.makedirs(os.path.join(HERE, "tags"), exist_ok=True)
     red = redundancy(recs)
     write_approval(recs, red)
