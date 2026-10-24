@@ -47,6 +47,7 @@ def write():
     lines += ["%s|%s|%s|%s" % (a, g, t.replace("|", "/"), r) for a, g, t, r in sorted(rows, key=lambda x: (x[3], x[0], x[1]))]
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f: f.write("\n".join(lines) + "\n")
+    import run_memory; run_memory.save("sync", "starter gap file", "%d units, %d rendered, %d open_slot, %d no_rule" % (n, ok, c["open_slot"], c["no_rule"]))
     return n, ok, c
 
 

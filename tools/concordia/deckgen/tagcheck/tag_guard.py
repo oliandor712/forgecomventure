@@ -92,6 +92,7 @@ def _log(t, n, force):
     i = next(k for k, l in enumerate(L) if l.startswith("guard["))
     L.append(row); L[i] = "guard[%d|]{date|guard|cards|same|new|merged|old|note}:" % (len(L) - i - 1)
     open(LOG, "w", encoding="utf-8").write("\n".join(L) + "\n")
+    import run_memory; run_memory.save("tag_guard", "starter tag run", "%d cards: %d same, %d new, %d merged, %d stored kept%s" % (n, t["same"], t["new"], t["merged"], t["old"], " (force)" if force else ""))
 
 
 def _save(recs):

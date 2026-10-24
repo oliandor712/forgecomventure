@@ -1,25 +1,18 @@
 # Claude-only file in TOON. Written by tagcheck/sync.py; regenerated, never hand-merged. open_slot = tag gap (tagger), no_rule = rule gap (mtg2llm mine / HAND tables).
-# starters: 556 units, 419 rendered, 26 open_slot, 111 no_rule
-gaps[137|]{card|group|tags|reason}:
+# starters: 556 units, 446 rendered, 26 open_slot, 84 no_rule
+gaps[110|]{card|group|tags|reason}:
 Aftermath Analyst|c2|cost:sacrifice cost_sacrifice_target:self cost_mana:3g target_count:all target_type:land target_scope:you_control put_onto_battlefield from_zone:graveyard put_tapped controller:you|no_rule
 Ambition's Cost|c1|draw_count:3 life_loss_amount:3|no_rule
-Ambition's Cost|x|life_loss|no_rule
 Apprentice Wizard|c1|cost:tap cost_mana:u mana_source mana:colorless mana_amount:3|no_rule
 Arcanis the Omnipotent|c2|cost_mana:2uu remove:bounce|no_rule
 Barrin, Tolarian Archmage|c1|trigger:etb trigger_scope:self target_count:up_to_1 target_type:creature target_filter:other target_type:planeswalker remove:bounce|no_rule
-Barrin, Tolarian Archmage|x|trigger:end_step|no_rule
 Big Score|c1|cost:discard cost_mana:3r draw_count:2 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source|no_rule
 Bite Down|c1|target_count:one target_type:creature target_scope:you_control duration:eot target_count:one target_type:creature target_scope:opp_control target_type:planeswalker damage damage_amount:x x_is:target_power|no_rule
 Bitter Triumph|x|cost:discard cost:life discard|no_rule
-Blood Artist|x|life_loss|no_rule
 Bloodgift Demon|c1|trigger:upkeep target_count:one target_type:player draw_count:1 life_loss_amount:1|no_rule
-Bloodgift Demon|x|life_loss|no_rule
-Bloodhunter Bat|x|life_loss|no_rule
 Bontu's Monument|c1|cost_reduce duration:static cost_reduce_amount:1 cost_reduce_for:creature color:black|no_rule
-Bontu's Monument|x|life_loss|no_rule
 Bosco, Just a Bear|c2|cost:sacrifice cost_sacrifice_target:food cost_mana:2g counter_count:2 counter:p1p1 duration:eot trample grant_kw:trample duration:eot|no_rule
 Captain Ripley Vance|c1|trigger:spell_cast trigger_filter:you_control trigger_filter:nth_spell_3 counter_count:1 counter:p1p1 target_count:one target_type:any damage damage_amount:x x_is:own_power|no_rule
-Captivating Crew|c1|cost_mana:3r target_count:one target_type:creature target_scope:opp_control steal steal_grants_haste duration:eot|no_rule
 Captivating Crew|x|untap|no_rule
 Coruscation Mage|c1|trigger:spell_cast trigger_filter:noncreature target_scope:each_opponent damage damage_amount:1|no_rule
 Creeping Bloodsucker|c1|trigger:upkeep target_scope:each_opponent damage damage_amount:1 lifegain_amount:x x_is:previous_result|no_rule
@@ -32,13 +25,10 @@ Dragon's Rage Channeler|c3|must_attack affects:card affects:self condition:delir
 Dragon's Rage Channeler|x|surveil|no_rule
 Dramatic Reversal|x|untap|no_rule
 Dusk Legion Zealot|c1|trigger:etb trigger_scope:self draw_count:1 life_loss_amount:1|no_rule
-Dusk Legion Zealot|x|life_loss|no_rule
 Elite Scaleguard|c1|trigger:etb trigger_scope:self bolster:2|no_rule
 Ember Hauler|c1|cost:sacrifice cost_sacrifice_target:self cost_mana:1 target_count:one target_type:any damage damage_amount:2|no_rule
 Etched Oracle|c1|cost:remove_counters cost_mana:1 target_count:one target_type:player draw_count:3|no_rule
-Exsanguinate|x|life_loss|no_rule
 Fell Specter|c2|trigger:discard life_loss_amount:2|no_rule
-Fell Specter|x|life_loss|no_rule
 Firebrand Archer|c1|trigger:spell_cast trigger_filter:noncreature target_scope:each_opponent damage damage_amount:1|no_rule
 Frontline Medic|c2|cost:sacrifice cost_sacrifice_target:self target_count:one target_type:card unless_cost unless_cost_amount:3|no_rule
 Garruk's Uprising|c3|trigger:etb trigger_filter:power_ge_4 trigger_scope:any trigger_filter:you_control trigger_filter:creature|no_rule
@@ -49,11 +39,9 @@ Goblin Rabblemaster|c2|trigger:beginning_of_combat token_count:1 token_color:red
 Goblin Rabblemaster|c3|trigger:attacks duration:eot pump_amount:+x/+0 x_is:count_goblin_attacking_other scales:goblin_attacking_other|no_rule
 Goldnight Commander|c1|trigger:etb duration:eot trigger_scope:other trigger_filter:you_control trigger_filter:creature target_count:all target_type:creature target_scope:you_control pump_amount:+1/+1 duration:eot|no_rule
 Gray Merchant of Asphodel|c1|trigger:etb target_scope:each_opponent trigger_scope:self life_loss_amount:x x_is:devotion_black lifegain_amount:equal_to_life_lost|no_rule
-Gray Merchant of Asphodel|x|life_loss|no_rule
 Hakim, Loreweaver|c1|cost_mana:uu target_count:one target_type:aura target_scope:you_control target_zone:graveyard activation_restriction put_onto_battlefield from_zone:graveyard controller:you|no_rule
 Hakim, Loreweaver|c2|cost:tap cost_mana:uu target_count:all target_type:card target_filter:aura target_filter:attachedto_card_self remove:destroy|no_rule
 Haliya, Guided by Light|c1|trigger:etb trigger_scope:any trigger_filter:you_control trigger_filter:creature trigger_filter:artifact lifegain_amount:1|no_rule
-Haliya, Guided by Light|x|trigger:end_step|no_rule
 Harrow|c1|cost:sacrifice cost_sacrifice_target:land cost_mana:2g tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield from_zone:library controller:you|no_rule
 Herald's Horn|c2|trigger:upkeep look_top:1 reveal take:may_1_chosen_type to_zone:hand|no_rule
 Hero's Blade|c2|trigger:etb optional trigger_scope:any trigger_filter:you_control trigger_filter:creature|no_rule
@@ -65,25 +53,19 @@ Khalni Heart Expedition|c2|cost:sacrifice cost_sacrifice_target:self cost:remove
 Legion Warboss|c1|trigger:beginning_of_combat token_count:1 token_color:red token_pt:1/1 token_type:goblin|no_rule
 Liliana's Reaver|c1|discard_count:1 token_count:1 token_color:black token_pt:2/2 token_type:zombie|no_rule
 Malakir Blood-Priest|c1|trigger:etb target_scope:each_opponent trigger_scope:self life_loss_amount:x x_is:party_size lifegain_amount:x x_is:party_size|no_rule
-Malakir Blood-Priest|x|life_loss|no_rule
 Mask of Memory|c1|discard_count:1|no_rule
 Mindcrank|c1|trigger:life_loss|no_rule
 Myriad Landscape|c3|cost:tap cost:sacrifice cost_sacrifice_target:self cost_mana:2 tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield from_zone:library put_tapped controller:you|no_rule
 Nazar, the Velvet Fang|c1|trigger:gain_life counter_count:1 counter:feeding|no_rule
 Nazar, the Velvet Fang|c2|trigger:attacks cost:remove_counters draw_count:3 life_loss_amount:3|no_rule
-Nazar, the Velvet Fang|x|life_loss|no_rule
 Night's Whisper|c1|draw_count:2 life_loss_amount:2|no_rule
-Night's Whisper|x|life_loss|no_rule
 Nuka-Cola Vending Machine|c1|cost:tap cost_mana:1 token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain|no_rule
 Phyrexian Arena|c1|trigger:upkeep draw_count:1 life_loss_amount:1|no_rule
-Phyrexian Arena|x|life_loss|no_rule
 Phyrexian Rager|c1|trigger:etb trigger_scope:self draw_count:1 life_loss_amount:1|no_rule
-Phyrexian Rager|x|life_loss|no_rule
 Propaganda|c1|restrict_kind:cant_attack_unless_cost unless_cost_amount:2|no_rule
 Psychic Spiral|c1|target_count:all target_type:card target_scope:you_control return from_zone:graveyard to_zone:library shuffle target_count:one target_type:player|no_rule
 Rampaging Baloths|c1|trigger:etb trigger_scope:any trigger_filter:you_control trigger_filter:land token_count:1 token_color:green token_pt:4/4 token_type:beast|no_rule
 Read the Bones|c1|scry_count:2 draw_count:2 life_loss_amount:2|no_rule
-Read the Bones|x|life_loss|no_rule
 Reckless Fireweaver|c1|trigger:etb target_scope:each_opponent trigger_scope:any trigger_filter:you_control trigger_filter:artifact damage damage_amount:1|no_rule
 Rimewind Cryomancer|c1|cost:tap cost_mana:1 target_count:one target_type:card activation_restriction|no_rule
 Rogue's Passage|c2|cost:tap cost_mana:4 target_count:one target_type:creature|no_rule
@@ -93,7 +75,6 @@ Scavenging Ooze|c1|cost_mana:g target_count:one target_type:card target_zone:gra
 Seize the Spoils|c1|cost:discard cost_mana:2r draw_count:2 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source|no_rule
 Siege-Gang Commander|c1|cost:sacrifice cost_sacrifice_target:goblin cost_mana:1r target_count:one target_type:any damage damage_amount:2|no_rule
 Sign in Blood|c1|target_count:one target_type:player draw_count:2 life_loss_amount:2|no_rule
-Sign in Blood|x|life_loss|no_rule
 Somberwald Stag|c1|trigger:etb optional trigger_scope:self target_count:one target_type:creature target_scope:opp_control|no_rule
 Soratami Mirror-Mage|c1|cost:return cost_return_target:land cost_mana:3 target_count:one target_type:creature remove:bounce|no_rule
 Soratami Savant|c1|cost:return cost_return_target:land cost_mana:3 target_count:one target_type:card unless_cost unless_cost_amount:3|no_rule
@@ -101,17 +82,9 @@ Spikeshot Goblin|c1|cost:tap cost_mana:r target_count:one target_type:any damage
 Syr Konrad, the Grim|c3|target_scope:each_opponent trigger_scope:other trigger_filter:creature|no_rule
 Territorial Allosaurus|c1|trigger:etb trigger_scope:self target_count:one target_type:creature target_filter:other|no_rule
 Territorial Allosaurus|k1|kw:kicker num:2 color:green|no_rule
-Thraben Inspector|x|token_make|no_rule
 Unexpected Windfall|c1|cost:discard cost_mana:2rr draw_count:2 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source|no_rule
-Vampire Sovereign|x|life_loss|no_rule
-Vampire Spawn|x|life_loss|no_rule
-Vengeful Bloodwitch|c1|trigger:dies trigger_zone:graveyard trigger_scope:any trigger_filter:you_control trigger_filter:creature target_count:one target_type:opponent life_loss_amount:1 lifegain_amount:1|no_rule
-Vengeful Bloodwitch|x|life_loss|no_rule
 Vindictive Vampire|c1|trigger:dies trigger_zone:graveyard trigger_scope:other trigger_filter:you_control trigger_filter:creature damage damage_amount:1 lifegain_amount:1|no_rule
 Watcher for Tomorrow|c2|trigger:leaves trigger_scope:self return from_zone:exile to_zone:hand return_exiled|no_rule
-Yedora, Grave Gardener|c1|trigger:dies trigger_zone:graveyard optional trigger_scope:other trigger_filter:you_control trigger_filter:nontoken trigger_filter:creature put_onto_battlefield from_zone:graveyard controller:owner|no_rule
-Zulaport Cutthroat|c1|trigger:dies trigger_zone:graveyard target_scope:each_opponent trigger_scope:any trigger_filter:you_control trigger_filter:creature life_loss_amount:1 lifegain_amount:1|no_rule
-Zulaport Cutthroat|x|life_loss|no_rule
 Akki Ronin|c1|trigger:attacks trigger_filter:you_control cost:discard draw_count:1|open_slot
 Bitter Triumph|k1|forge_line:alternateadditionalcost|open_slot
 Brotherhood Regalia|c1|grant_kw:ward duration:static affected_type:creature|open_slot

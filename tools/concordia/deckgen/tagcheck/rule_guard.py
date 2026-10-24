@@ -48,4 +48,5 @@ def apply(new_rules, new_comp, path, force=False):
     comp = new_comp if (new_comp != old_comp and mn > mo) else old_comp
     print("rule_guard: %d patterns added, %d canons replaced (starters score higher), %d kept stored; compose table %s (starter sim sum new %.2f vs stored %.2f)"
           % (added, swapped, kept, "replaced" if comp is new_comp and new_comp != old_comp else "kept", mn, mo))
+    import run_memory; run_memory.save("rule_guard", "mtg2llm mine", "%d patterns added, %d canons replaced, %d kept, compose %s, sim sum new %.2f vs stored %.2f" % (added, swapped, kept, "replaced" if comp is new_comp and new_comp != old_comp else "kept", mn, mo))
     return rules, comp

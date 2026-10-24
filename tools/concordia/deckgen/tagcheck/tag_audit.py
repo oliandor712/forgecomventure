@@ -54,6 +54,8 @@ def main():
     print("cards", len(pool))
     for k, v in rep.items():
         if k != "_lint": print("%-10s feature %5d  no matching tag %5d (%4.1f%%)  e.g. %s" % (k, v["cards_with_feature"], v["no_tag"], 100 * v["rate"], ", ".join(v["examples"][:4])))
+    try: import run_memory; run_memory.save("tag_audit", "reader-free tag audit", "%d cards; no matching tag: %s" % (len(pool), ", ".join("%s %d" % (k, v["no_tag"]) for k, v in rep.items() if k != "_lint")))
+    except Exception: pass
     for k, v in sorted(rep["_lint"].items(), key=lambda x: -x[1]["cards"])[:15]: print("lint %-18s %5d  e.g. %s" % (k, v["cards"], ", ".join(v["examples"][:4])))
 
 if __name__ == "__main__": main()

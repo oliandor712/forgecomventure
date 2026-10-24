@@ -647,6 +647,8 @@ def main(a):
     open(os.path.join(HERE, "tags", "REDUNDANCY_CHECK.md"), "w").write("\n".join(rc) + "\n")
     print("redundancy check: %d findings (see tags/REDUNDANCY_CHECK.md)" % len(red))
     print(len(decks), len(uniq), len(recs), len(missing), "untagged-beyond-basics", len(untag))
+    try: sys.path.insert(0, os.path.join(HERE, "tagcheck")); import run_memory; run_memory.save("tag_run", "starter", "%d decks, %d cards, %d tagged, %d no script, %d untagged beyond basics, %d redundancy findings" % (len(decks), len(uniq), len(recs), len(missing), len(untag), len(red)))
+    except Exception as ex: print("run_memory skipped:", ex)
 
 
 if __name__ == "__main__":

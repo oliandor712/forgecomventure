@@ -2,6 +2,9 @@
 
 Written 2026-10-23 by the previous main session (branch `cd/claude2`, now merged into `campaign-design`). That session is deleted. You are the only main session. The incoming session reads this first, then `CLAUDE.md`, `tools/agents/MAIN_SESSION_BRIEF.md` (all sections), `CONTEXT.md`, `human_logic.toon`, `TOOLBOX.md`, `registry.json`.
 
+## LATEST (2026-10-24 later): ten gap-reader rounds + script merge analysis
+Rounds g1-g10 (72 gap cards, 3 slim readers each, refs from g4): mean sim .66 -> .74 (R10 suspiciously uniform, check overlap with mined rules); gap words 391,188 -> 376,869 of 456,051. `reverse_check.py compare` is the standard post-run (memory row, `tags/READER_GAP_WORDS.toon`, mine, scan; never wrap in `timeout`). Refs A/B: `tagcheck/REFS_AB_NOTE.md`. Results copied to `tools/agents/logs/results-reader-runs.toon` and `tag-script-runs.toon`. Merge plan (nothing merged): `deckgen/SCRIPT_MERGE_ANALYSIS.md`, start with `common.py` and `score.py`.
+
 ## LATEST (2026-10-24): MTG2LLM composing renderer + pool hygiene (read first)
 Work in `tools/concordia/deckgen/tagcheck/mtg2llm.py` (tags to text, no Oracle text; order exact, compose, approx, `{missing}`) and `deckgen/pool.py`. Branch `campaign-design` pushed, remote tip a2d6438c71a. Commits, newest first: a2d6438c71a fail closed on open slots, no self fallback for stray groups, crew/cycling last; f7312be2c34 pool.py excludes Alchemy digital-only cards; 6bfc3bf6f6b mine reader run u2; 9e791d72d92 skip pre-6th-only cards in export/mine/unseen, re-mine (1002 patterns); 8318f9e665e pool.py drops printings before Sixth Edition (cutoff 1999-04-21); fe88756dd6a remove rule H57.
 Pool: 27,690 cards (pre-6th-only and 11 Alchemy-only cards gone). `pool.pkl` is gitignored; rebuild with pool.py. Alchemy rule = names in Alchemy editions minus names in any non-Online/Funny/MB-Commander edition.

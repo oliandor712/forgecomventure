@@ -296,7 +296,10 @@ def is_pre6(name): return all(p.strip().lower() in pre6_only() for p in name.spl
 
 # ---------- commands -----------------------------------------------------------------------------------------------------------------------------
 def cmd_export(a):
-    if getattr(a, "cardlist", ""):      # any cards with a script (not only starters): one name per line
+    if getattr(a, "gaps", 0):
+        import mtg2llm as M; names = M.gap_targets(a.gaps, a.run); print("gap targets: %d cards, biggest first (%s ...)" % (len(names), ", ".join(names[:3])))
+        recs = [T.record(n, T.find_text(n)) for n in names]
+    elif getattr(a, "cardlist", ""):      # any cards with a script (not only starters): one name per line
         recs = [T.record(n, T.find_text(n)) for n in (l.strip() for l in open(a.cardlist, encoding="utf-8")) if n]
     else: recs = starter_records()
     if getattr(a, "cards", None): want = {c.strip().lower() for c in a.cards.split(";")}; recs = [r for r in recs if r["name"].lower() in want]      # a hand-picked subset
@@ -408,6 +411,57 @@ def cmd_compare(a):
     try:    # machine-readable record of the run (manifest.json + RUN_LOG.jsonl)
         import run_log; run_log.record(a.run, arm=a.arm, grammar=a.grammar, reader=a.reader, note=a.note)
     except Exception as ex: print("run_log skipped:", ex)
+    if getattr(a, "no_mine", False): remember(a.run)
+    else: post_run(a.run)
+
+
+def remember(run, note=""):
+    """save the run's one-row summary to the session memory file results-reader-runs.toon (user 2026-10-24: reader run results belong in the regular memory updates). A row with the same run name is replaced"""
+    mem = os.path.join(os.path.expanduser("~"), ".claude", "projects", re.sub(r"[^A-Za-z0-9]", "-", T.ROOT), "memory", "results-reader-runs.toon")
+    if not os.path.exists(mem): print("memory file not found, row not saved:", mem); return
+    try: sc = json.load(open(os.path.join(workdir(run), "manifest.json"), encoding="utf-8"))["score"]; day = json.load(open(os.path.join(workdir(run), "manifest.json"), encoding="utf-8"))["date"]
+    except Exception as ex: print("remember skipped:", ex); return
+    row = "  %s|%s|%d|%s|-|-|%.3f|%d|%d|%d|-|%s" % (day, run, sc["cards"], "-", sc["mean_sim"], sc["good"], sc["partial"], sc["gap"], note)
+    L = open(mem, encoding="utf-8").read().rstrip("\n").split("\n")
+    L = [l for l in L if not l.startswith("  ") or l.split("|")[1:2] != [run]]
+    L.append(row); n = sum(1 for l in L if l.startswith("  "))
+    L = [re.sub(r"^runs\[\d+\|\]", "runs[%d|]" % n, l) for l in L]
+    open(mem, "w", encoding="utf-8", newline="").write("\n".join(L) + "\n")
+    print("memory: run %s saved to results-reader-runs.toon (%d rows)" % (run, n))
+
+
+def gap_words_of(res):
+    """per card: Oracle content words the reader's text lacks (stemmed, repeats counted)"""
+    out = {}
+    for r in res.values():
+        if not r.get("has_text"): continue
+        ot = collections.Counter(toks(norm(r["orig"], r["name"]))); rt = collections.Counter(toks(norm(clean_reco(r["reco"]), r["name"])))
+        out[r["name"]] = dict((ot - rt))
+    return out
+
+
+def post_run(run):
+    """standard step after every reader run (user 2026-10-24): (1) mine the Oracle words the readers could not carry from every finished run into tags/READER_GAP_WORDS.toon,
+    (2) mine the rule tables from all runs (mtg2llm.py mine, rule_guard keeps the better tables), (3) refresh the pool scan so the next --gaps export targets what is still open. Skip with compare --no-mine"""
+    import subprocess
+    remember(run)
+    words, cards = collections.Counter(), collections.defaultdict(set)
+    for f in sorted(glob.glob(os.path.join(workdir(""), "*", "results.json"))):
+        if re.match(r"m%sd" % chr(92), os.path.basename(os.path.dirname(f))): continue
+        try: res = json.load(open(f, encoding="utf-8"))
+        except Exception: continue
+        for n, g in gap_words_of(res).items():
+            for w, k in g.items():
+                if n not in cards[w]: words[w] += 1
+                cards[w].add(n)
+    rows = ["%s|%d|%s" % (w, k, "/".join(sorted(cards[w])[:3])) for w, k in words.most_common(400)]
+    out = os.path.join(DECKGEN, "tags", "READER_GAP_WORDS.toon")
+    open(out, "w", encoding="utf-8").write("\n".join(["# Claude-only file in TOON. Written by reverse_check.py post_run; regenerated from every run's results.json, never hand-merged.",
+        "# word (stemmed) = Oracle content word the readers' text lacked; cards = distinct cards missing it. Top 400.", "words[%d|]{word|cards|examples}:" % len(rows)] + rows) + "\n")
+    print("post-run: %d distinct missing words from all runs -> %s (top: %s)" % (len(words), out, ", ".join(w for w, _ in words.most_common(8))))
+    for cmd in (["mtg2llm.py", "mine"], ["mtg2llm.py", "scan"]):
+        r = subprocess.run([sys.executable, os.path.join(HERE, cmd[0])] + cmd[1:], capture_output=True, text=True)
+        print("post-run %s: %s" % (cmd[1], (r.stdout.strip().splitlines() or [r.stderr.strip()[-200:]])[-1]))
 
 
 def write_report(res, bad, run, path, extra=(), baselines=()):
@@ -474,8 +528,8 @@ def cmd_selftest(a):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sp = ap.add_subparsers(dest="cmd", required=True)
-    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=72); e.add_argument("--legend", action="store_true"); e.set_defaults(slim=True); e.add_argument("--reminders-extra", dest="reminders_extra", default=""); e.add_argument("--cards", default=""); e.add_argument("--cardlist", default=""); e.add_argument("--new-only", dest="new_only", action="store_true")
-    c = sp.add_parser("compare"); c.add_argument("--run", required=True); [c.add_argument("--" + k, default="") for k in ("arm", "grammar", "reader", "note")]  # run metadata for run_log
+    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=72); e.add_argument("--legend", action="store_true"); e.set_defaults(slim=True); e.add_argument("--reminders-extra", dest="reminders_extra", default=""); e.add_argument("--cards", default=""); e.add_argument("--cardlist", default=""); e.add_argument("--gaps", type=int, default=0, help="read the N unread pool cards with the biggest gap (tags/POOL_GAPS.toon, see mtg2llm.py scan)"); e.add_argument("--new-only", dest="new_only", action="store_true")
+    c = sp.add_parser("compare"); c.add_argument("--run", required=True); c.add_argument("--no-mine", dest="no_mine", action="store_true", help="skip the standard post-run mining"); [c.add_argument("--" + k, default="") for k in ("arm", "grammar", "reader", "note")]  # run metadata for run_log
     s = sp.add_parser("selftest"); s.add_argument("--limit", type=int, default=0)
     a = ap.parse_args()
     {"export": cmd_export, "compare": cmd_compare, "selftest": cmd_selftest}[a.cmd](a)

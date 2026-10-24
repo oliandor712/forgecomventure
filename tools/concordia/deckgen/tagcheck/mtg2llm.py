@@ -820,6 +820,26 @@ def is_walker(name):
     return bool(re.search(r"^Types:.*\bPlaneswalker\b", script_text(name), re.M))
 
 
+def gap_targets(n, run=""):
+    """the n pool cards with the biggest gap (tags/POOL_GAPS.toon, gap_words first) that no earlier reader run has read; planeswalkers and pre-6th cards are left out. Runs of the same round (g3a, g3b, g3c: name + one letter) do not hide each other's cards, so the 3 readers get the same list. Run `scan` first"""
+    path = os.path.join(HERE, "..", "tags", "POOL_GAPS.toon")
+    if not os.path.exists(path): sys.exit("no tags/POOL_GAPS.toon: run `mtg2llm.py scan` first")
+    seen = set()
+    rnd = re.match(r"^(.*\d)[a-z]$", run or "")
+    for k in glob.glob(os.path.join(RUNS, "*", "key", "*.json")):
+        if rnd and re.match(r"^%s[a-z]$" % re.escape(rnd.group(1)), os.path.basename(os.path.dirname(os.path.dirname(k)))): continue
+        try: seen |= set(json.load(open(k, encoding="utf-8")).values())
+        except Exception: pass
+    out = []
+    for l in open(path, encoding="utf-8"):
+        if l.startswith(("#", "cards[")): continue
+        name = l.split("|")[0]
+        if name in seen or name.startswith("A-") or RC.is_pre6(name) or is_walker(name) or not script_text(name): continue
+        out.append(name)
+        if len(out) >= n: break
+    return out
+
+
 def cmd_scan(a):
     """pool scan, reader-free: tag and render every pool card with a script, then score what the renderer has no record of. Per card: units, open_slot (tag gap), no_rule (rule gap), oracle_words,
     gap_words = Oracle content words (stemmed, no stop words or reminder text, repeats counted) missing from the render, gap_pct. Oracle only scores, the renderer never sees it.
@@ -852,6 +872,7 @@ def cmd_scan(a):
     os.makedirs(os.path.dirname(a.out), exist_ok=True)
     with open(a.out, "w", encoding="utf-8") as f: f.write("\n".join(lines) + "\n")
     print("scan: %d cards, gap words %d of %d (%.0f%%) -> %s" % (len(rows), tg, to, 100.0 * tg / max(to, 1), a.out))
+    import run_memory; run_memory.save("mtg2llm scan", "pool, planeswalkers set aside", "%d cards, gap words %d of %d (%.0f%%), %d gap-free" % (len(rows), tg, to, 100.0 * tg / max(to, 1), sum(1 for x in rows if x[5] == 0)))
 
 
 def main():
@@ -884,6 +905,7 @@ def main():
         except Exception as ex: print("sync not run:", ex)
         print("card readings %d, aligned %d; patterns %d; units %d; units in patterns seen 3+ times %d (%.0f%%); canonical = reader's top line for %.0f%% of units"
               % (seen, used, len(rules), units_n, multi, 100 * multi / max(units_n, 1), 100 * agree))
+        import run_memory; run_memory.save("mtg2llm mine", "render rules", "card readings %d, aligned %d, patterns %d, units %d, %d%% in patterns seen 3+ times" % (seen, used, len(rules), units_n, 100 * multi / max(units_n, 1)))
 
 
 if __name__ == "__main__":

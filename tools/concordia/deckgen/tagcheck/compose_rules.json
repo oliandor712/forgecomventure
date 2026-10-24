@@ -1,14 +1,189 @@
 {
  "trig": {
+  "trigger:upkeep": {
+   "n": 50,
+   "top": 0.98,
+   "canon": "At the beginning of your upkeep"
+  },
+  "trigger:attacks": {
+   "n": 156,
+   "top": 0.699,
+   "canon": "Whenever this creature attacks"
+  },
+  "trigger:beginning_of_combat": {
+   "n": 22,
+   "top": 0.955,
+   "canon": "At the beginning of combat on your turn"
+  },
+  "trigger:spell_cast": {
+   "n": 26,
+   "top": 0.962,
+   "canon": "Whenever you cast a spell"
+  },
   "trigger:etb trigger_scope:self": {
-   "n": 1162,
-   "top": 0.536,
+   "n": 1278,
+   "top": 0.549,
    "canon": "When this creature enters"
   },
+  "trigger:dies trigger_scope:other trigger_zone:graveyard": {
+   "n": 24,
+   "top": 1.0,
+   "canon": "Whenever another creature dies"
+  },
+  "trigger:spell_cast trigger_filter:enchantment": {
+   "n": 29,
+   "top": 1.0,
+   "canon": "Whenever you cast an enchantment spell"
+  },
+  "trigger:dies trigger_filter:you_control trigger_scope:other trigger_zone:graveyard": {
+   "n": 9,
+   "top": 0.889,
+   "canon": "Whenever another creature you control dies"
+  },
+  "trigger:spell_cast trigger_filter:cmc_ge_N trigger_filter:creature": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "Whenever you cast a creature spell with mana value 4 or greater"
+  },
+  "trigger:etb trigger_filter:creature trigger_filter:you_control trigger_scope:any": {
+   "n": 6,
+   "top": 0.5,
+   "canon": "Whenever this creature or another creature you control enters"
+  },
+  "trigger:dies trigger_filter:one_or_more trigger_scope:other trigger_zone:graveyard": {
+   "n": 9,
+   "top": 0.889,
+   "canon": "Whenever one or more other creatures die"
+  },
+  "trigger:dies trigger_filter:creature trigger_filter:nontoken trigger_filter:you_control trigger_scope:other trigger_zone:graveyard": {
+   "n": 6,
+   "top": 1.0,
+   "canon": "Whenever another nontoken creature you control dies"
+  },
+  "trigger:dies trigger_filter:artifact trigger_filter:you_control trigger_scope:any trigger_zone:graveyard": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "Whenever an artifact you control dies"
+  },
+  "trigger:etb trigger_filter:land trigger_filter:you_control trigger_scope:any": {
+   "n": 13,
+   "top": 0.538,
+   "canon": "Whenever a land you control enters"
+  },
   "trigger:dies trigger_scope:self trigger_zone:graveyard": {
-   "n": 167,
-   "top": 0.473,
+   "n": 186,
+   "top": 0.527,
    "canon": "When this creature dies"
+  },
+  "trigger:dies trigger_filter:creature trigger_filter:has_counter:pNpN trigger_filter:you_control trigger_scope:other trigger_zone:graveyard": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "Whenever another creature you control with a +N/+N counter on it dies"
+  },
+  "trigger:spell_cast trigger_filter:artifact": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "Whenever you cast an artifact spell"
+  },
+  "trigger:dies trigger_filter:creature trigger_filter:nontoken trigger_filter:opp_control trigger_scope:any trigger_zone:graveyard": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "Whenever a nontoken creature an opponent controls dies"
+  },
+  "trigger_filter:one_or_more": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "Whenever one or more creatures you control deal combat damage to a player"
+  },
+  "trigger:dies trigger_filter:has_counter:pNpN trigger_scope:self trigger_zone:graveyard": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "When this creature dies"
+  },
+  "trigger:spell_cast trigger_filter:instant trigger_filter:sorcery": {
+   "n": 63,
+   "top": 0.984,
+   "canon": "Whenever you cast an instant or sorcery spell"
+  },
+  "trigger:dies trigger_filter:creature trigger_filter:nontoken trigger_filter:you_control trigger_scope:any trigger_zone:graveyard": {
+   "n": 6,
+   "top": 1.0,
+   "canon": "Whenever a nontoken creature you control dies"
+  },
+  "trigger:etb trigger_filter:creature trigger_filter:nontoken trigger_filter:you_control trigger_scope:self": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "When this creature enters"
+  },
+  "trigger:etb trigger_filter:you_control trigger_scope:any": {
+   "n": 16,
+   "top": 0.5,
+   "canon": "Whenever this creature or another creature you control enters"
+  },
+  "trigger:spell_cast trigger_filter:noncreature": {
+   "n": 6,
+   "top": 1.0,
+   "canon": "Whenever you cast a noncreature spell"
+  },
+  "trigger:dies trigger_filter:creature trigger_filter:opp_control trigger_scope:any trigger_zone:graveyard": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "Whenever a creature an opponent controls dies"
+  },
+  "trigger:spell_cast trigger_filter:cmc_eq_x": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "Whenever you cast a spell with mana value X"
+  },
+  "trigger:etb trigger_filter:creature trigger_filter:power_le_N trigger_filter:you_control trigger_scope:any": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "Whenever this creature or another creature you control with power 3 or less enters"
+  },
+  "trigger:dies trigger_filter:creature trigger_filter:has_counter:bounty trigger_filter:opp_control trigger_scope:any trigger_zone:graveyard": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "Whenever a creature an opponent controls with a bounty counter on it dies"
+  },
+  "trigger:etb trigger_filter:nontoken trigger_filter:you_control trigger_scope:other": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "Whenever another nontoken creature enters under your control"
+  },
+  "trigger:etb trigger_filter:creature trigger_filter:you_control trigger_scope:self": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "When this creature enters"
+  },
+  "trigger:dies trigger_filter:creature trigger_filter:has_counter:oil trigger_filter:nontoken trigger_filter:you_control trigger_scope:any trigger_zone:graveyard": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "Whenever a nontoken creature you control with an oil counter on it dies"
+  },
+  "trigger:etb trigger_filter:creature trigger_filter:you_control trigger_scope:other": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "Whenever another creature you control enters"
+  },
+  "trigger:dies trigger_filter:creature trigger_filter:you_control trigger_scope:any trigger_zone:graveyard": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "Whenever a creature you control dies"
+  },
+  "trigger:dies trigger_filter:artifact trigger_filter:nontoken trigger_filter:you_control trigger_scope:any trigger_zone:graveyard": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "Whenever a nontoken artifact you control dies"
+  },
+  "trigger:dies trigger_filter:artifact trigger_filter:creature trigger_filter:you_control trigger_scope:other trigger_zone:graveyard": {
+   "n": 4,
+   "top": 0.75,
+   "canon": "Whenever another artifact creature you control dies"
+  },
+  "trigger:etb trigger_filter:one_or_more trigger_scope:other": {
+   "n": 9,
+   "top": 1.0,
+   "canon": "Whenever one or more other creatures enter"
   },
   "trigger:spell_cast trigger_filter:creature trigger_filter:power_ge_N": {
    "n": 12,
@@ -25,40 +200,15 @@
    "top": 0.571,
    "canon": "Whenever a creature dealt damage by ~ this turn dies"
   },
-  "trigger:dies trigger_filter:one_or_more trigger_scope:other trigger_zone:graveyard": {
-   "n": 5,
-   "top": 1.0,
-   "canon": "Whenever one or more other creatures die"
-  },
   "trigger:leaves trigger_scope:self": {
    "n": 66,
    "top": 0.318,
    "canon": "When ~ leaves the battlefield"
   },
-  "trigger:etb trigger_filter:you_control trigger_scope:any": {
-   "n": 12,
-   "top": 0.667,
-   "canon": "Whenever this creature or another creature you control enters"
-  },
-  "trigger:spell_cast trigger_filter:enchantment": {
-   "n": 26,
-   "top": 1.0,
-   "canon": "Whenever you cast an enchantment spell"
-  },
   "trigger:attackerunblocked": {
    "n": 17,
    "top": 0.529,
    "canon": "Whenever ~ attacks and isn't blocked"
-  },
-  "trigger:etb trigger_filter:one_or_more trigger_scope:other": {
-   "n": 6,
-   "top": 1.0,
-   "canon": "Whenever one or more other creatures enter"
-  },
-  "trigger:spell_cast trigger_filter:instant trigger_filter:sorcery": {
-   "n": 52,
-   "top": 0.981,
-   "canon": "Whenever you cast an instant or sorcery spell"
   },
   "trigger:attacks trigger_filter:you_control": {
    "n": 32,
@@ -70,45 +220,20 @@
    "top": 0.556,
    "canon": "Whenever another creature you control with power 2 or less enters"
   },
-  "trigger:attacks": {
-   "n": 125,
-   "top": 0.624,
-   "canon": "Whenever this creature attacks"
-  },
   "trigger:etb trigger_filter:power_ge_N trigger_filter:you_control trigger_scope:other": {
    "n": 9,
    "top": 0.333,
    "canon": "Whenever another creature with power 3 or greater enters under your control"
-  },
-  "trigger:dies trigger_filter:you_control trigger_scope:other trigger_zone:graveyard": {
-   "n": 6,
-   "top": 1.0,
-   "canon": "Whenever another creature you control dies"
   },
   "trigger:etb trigger_filter:creature trigger_filter:power_ge_N trigger_filter:you_control trigger_scope:other": {
    "n": 3,
    "top": 0.667,
    "canon": "Whenever another creature with power 3 or greater enters under your control"
   },
-  "trigger:upkeep": {
-   "n": 7,
-   "top": 1.0,
-   "canon": "At the beginning of your upkeep"
-  },
-  "trigger:beginning_of_combat": {
-   "n": 2,
-   "top": 1.0,
-   "canon": "At the beginning of combat on your turn"
-  },
   "trigger:gain_life": {
    "n": 1,
    "top": 1.0,
    "canon": "Whenever you gain life"
-  },
-  "trigger:etb trigger_filter:land trigger_filter:you_control trigger_scope:any": {
-   "n": 4,
-   "top": 1.0,
-   "canon": "Whenever a land you control enters"
   },
   "trigger:dies trigger_filter:creature trigger_scope:damaged_by_self trigger_zone:graveyard": {
    "n": 1,
@@ -119,11 +244,6 @@
    "n": 10,
    "top": 0.8,
    "canon": "Whenever you cast a creature spell"
-  },
-  "trigger:dies trigger_scope:other trigger_zone:graveyard": {
-   "n": 23,
-   "top": 1.0,
-   "canon": "Whenever another creature dies"
   },
   "trigger:spell_cast trigger_filter:creature": {
    "n": 3,
@@ -175,25 +295,10 @@
    "top": 1.0,
    "canon": "Whenever a token you control leaves the battlefield"
   },
-  "trigger:etb trigger_filter:creature trigger_filter:you_control trigger_scope:other": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "Whenever another creature you control enters"
-  },
-  "trigger:dies trigger_filter:artifact trigger_filter:creature trigger_filter:you_control trigger_scope:other trigger_zone:graveyard": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "Whenever another creature or artifact you control dies"
-  },
   "trigger:dies trigger_filter:creature trigger_scope:any trigger_zone:graveyard": {
    "n": 1,
    "top": 1.0,
    "canon": "Whenever a creature dies"
-  },
-  "trigger:spell_cast": {
-   "n": 6,
-   "top": 0.833,
-   "canon": "Whenever you cast a spell"
   },
   "trigger:discard": {
    "n": 1,
@@ -208,14 +313,224 @@
  },
  "cost": {
   "cost:tap": {
-   "n": 473,
-   "top": 1.0,
+   "n": 502,
+   "top": 0.99,
    "canon": "{T}"
   },
+  "cost_mana:r": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{R}"
+  },
+  "cost_mana:rrr": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{R}{R}{R}"
+  },
+  "cost_mana:x": {
+   "n": 6,
+   "top": 0.833,
+   "canon": "{X}"
+  },
+  "cost:tap cost_mana:x": {
+   "n": 11,
+   "top": 0.727,
+   "canon": "{T}, {X}"
+  },
+  "cost:tap cost_mana:Nw": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "{N}{W}, {T}"
+  },
+  "cost:remove_counters cost:tap": {
+   "n": 11,
+   "top": 0.182,
+   "canon": "{T}, Remove a +N/+N counter from this creature"
+  },
+  "cost:tap cost_mana:Nu": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{N}{U}, {T}"
+  },
+  "cost:tap cost_mana:N": {
+   "n": 32,
+   "top": 0.812,
+   "canon": "{N}, {T}"
+  },
+  "cost_mana:N": {
+   "n": 18,
+   "top": 0.889,
+   "canon": "{N}"
+  },
+  "cost_mana:Ng": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{N}{G}"
+  },
+  "cost:sacrifice cost_sacrifice_target:serpent": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "Sacrifice a Serpent"
+  },
+  "cost_mana:Nbr": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "{N}{B}{R}"
+  },
+  "cost:sacrifice cost:tap cost_mana:N cost_sacrifice_target:self": {
+   "n": 14,
+   "top": 0.929,
+   "canon": "{N}, {T}, Sacrifice this artifact"
+  },
+  "cost:sacrifice cost:tap cost_sacrifice_target:rat": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "{Tap}, Sacrifice a Rat"
+  },
+  "cost:tap cost_mana:Nc": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "{N}{C}, {Tap}"
+  },
+  "cost:sacrifice cost_mana:Nw cost_sacrifice_target:creature": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{N}{W}, Sacrifice a creature"
+  },
+  "cost:remove_counters": {
+   "n": 7,
+   "top": 0.571,
+   "canon": "Remove a counter from this creature"
+  },
+  "cost:exile cost:sacrifice cost:tap cost_exile_target:artifact_or_creature cost_mana:Nwub cost_sacrifice_target:artifact": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "{N}{W}{U}{B}, {T}, Sacrifice an artifact, Exile an artifact or creature card from your graveyard"
+  },
+  "cost:remove_counters cost_mana:N": {
+   "n": 18,
+   "top": 0.333,
+   "canon": "Remove a +N/+N counter from this creature, {N}"
+  },
+  "cost:exile cost_exile_target:cardname cost_mana:Nrr": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "{N}{R}{R}, Exile this card from your graveyard"
+  },
+  "cost:return cost_return_target:cardname": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "Return this enchantment to your hand"
+  },
+  "cost_mana:Nw": {
+   "n": 6,
+   "top": 1.0,
+   "canon": "{N}{W}"
+  },
+  "cost:tap cost_mana:Ngu": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{N}{G}{U}, {T}"
+  },
+  "cost_mana:Nb": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{N}{B}"
+  },
+  "cost_mana:xNb": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{X}{N}{B}"
+  },
+  "cost_mana:g": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "{G}"
+  },
+  "cost_mana:w": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "{W}"
+  },
+  "cost_mana:u": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{U}"
+  },
+  "cost:discard cost_mana:N": {
+   "n": 4,
+   "top": 1.0,
+   "canon": "{N}, Discard N card"
+  },
+  "cost:tap cost_mana:Ng": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "{N}{G}, {T}"
+  },
+  "cost:tap cost_mana:Ngg": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{N}{G}{G}, {T}"
+  },
+  "cost:discard cost_mana:xgg": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "Discard N card, {X}{G}{G}"
+  },
+  "cost:sacrifice cost:tap cost_mana:r cost_sacrifice_target:self": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{R}, {T}, Sacrifice this artifact"
+  },
+  "cost:return cost:tap cost_return_target:cardname": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "{T}, Return this card to hand"
+  },
+  "cost_mana:bbb": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{B}{B}{B}"
+  },
+  "cost:exile cost:tap cost_exile_target:creature cost_mana:N": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "{N}, {T}, Exile a creature card from your graveyard"
+  },
+  "cost:sacrifice cost:tap cost_mana:N cost_sacrifice_target:servo": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{N}, {T}, Sacrifice a Servo"
+  },
+  "cost:sacrifice cost:tap cost_sacrifice_target:thopter": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{T}, Sacrifice a Thopter"
+  },
+  "cost_mana:Nu": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{N}{U}"
+  },
   "cost:mana": {
-   "n": 90,
+   "n": 91,
    "top": 1.0,
    "canon": "{cost}"
+  },
+  "cost:sacrifice cost:tap cost_mana:Nwbg cost_sacrifice_target:self": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{N}{W}{B}{G}, {T}, Sacrifice this artifact"
+  },
+  "cost_mana:Nuu": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{N}{U}{U}"
+  },
+  "cost:sacrifice cost_mana:Nr cost_sacrifice_target:artifact": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "Sacrifice an artifact, {N}{R}"
   },
   "cost:sacrifice cost_sacrifice_target:self": {
    "n": 63,
@@ -277,20 +592,10 @@
    "top": 1.0,
    "canon": "{N}, Sacrifice this creature"
   },
-  "cost:sacrifice cost:tap cost_mana:N cost_sacrifice_target:self": {
-   "n": 6,
-   "top": 1.0,
-   "canon": "{N}, {T}, Sacrifice this artifact"
-  },
   "cost:sacrifice cost:tap cost_mana:Ng cost_sacrifice_target:self": {
    "n": 1,
    "top": 1.0,
    "canon": "{N}{G}, {T}, Sacrifice this land"
-  },
-  "cost:tap cost_mana:N": {
-   "n": 6,
-   "top": 0.5,
-   "canon": "{N}, {T}"
   },
   "cost:discard cost_mana:Ng": {
    "n": 1,
@@ -301,11 +606,6 @@
    "n": 1,
    "top": 1.0,
    "canon": "{N}, {T}, Remove a counter"
-  },
-  "cost_mana:N": {
-   "n": 5,
-   "top": 0.6,
-   "canon": "{N}"
   },
   "cost:remove_counters cost:sacrifice cost_sacrifice_target:self": {
    "n": 1,
@@ -327,16 +627,6 @@
    "top": 1.0,
    "canon": "{U}, {T}"
   },
-  "cost:remove_counters cost:tap": {
-   "n": 3,
-   "top": 0.667,
-   "canon": "{T}, Remove N charge counters"
-  },
-  "cost:tap cost_mana:Nw": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "{N}{W}, {T}"
-  },
   "cost:discard cost:tap cost_mana:N": {
    "n": 1,
    "top": 1.0,
@@ -357,52 +647,302 @@
    "top": 1.0,
    "canon": "{N}, {T}, Sacrifice an artifact"
   },
-  "cost:remove_counters": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "Remove a fade counter"
-  },
   "cost_mana:Nr": {
    "n": 1,
    "top": 1.0,
    "canon": "{N}{R}"
-  },
-  "cost_mana:u": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "{U}"
-  },
-  "cost:tap cost_mana:x": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "{X}, {T}"
   }
  },
  "target": {
+  "target_count:one target_filter:other target_scope:you_control target_type:creature": {
+   "n": 10,
+   "top": 1.0,
+   "canon": "another target creature you control"
+  },
+  "target_count:one target_filter:nonland target_scope:you_control target_type:permanent": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "target nonland"
+  },
+  "target_count:one target_filter:nonbasic target_filter:oppown target_type:card": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "target nonbasic"
+  },
+  "target_count:one target_filter:noncreature target_filter:nonland target_scope:you_control target_type:card": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "target noncreature"
+  },
+  "target_count:one target_filter:exiledwithsource target_type:card": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "target card"
+  },
   "target_count:one target_type:creature": {
-   "n": 515,
-   "top": 0.973,
+   "n": 543,
+   "top": 0.972,
    "canon": "target creature"
   },
+  "target_count:one target_scope:you_control target_type:instant target_type:sorcery": {
+   "n": 4,
+   "top": 1.0,
+   "canon": "target instant"
+  },
+  "target_count:one target_filter:attacking target_type:creature": {
+   "n": 5,
+   "top": 1.0,
+   "canon": "target attacking"
+  },
+  "target_count:all target_count:one target_filter:notdefinedtargeted target_scope:you_control target_type:card target_type:creature target_type:targetedcard": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "target creature"
+  },
+  "target_count:one target_type:card": {
+   "n": 73,
+   "top": 0.712,
+   "canon": "target spell"
+  },
   "target_count:one target_scope:you_control target_type:creature": {
-   "n": 187,
-   "top": 0.529,
+   "n": 207,
+   "top": 0.512,
+   "canon": "target creature you control"
+  },
+  "target_count:one target_type:instant target_type:sorcery": {
+   "n": 31,
+   "top": 1.0,
+   "canon": "target instant"
+  },
+  "target_count:one target_filter:other target_type:creature": {
+   "n": 27,
+   "top": 0.963,
+   "canon": "another target creature"
+  },
+  "target_count:one target_scope:you_control target_type:land": {
+   "n": 6,
+   "top": 1.0,
+   "canon": "target land you control"
+  },
+  "target_count:one target_filter:nonswamp target_type:land": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "target nonSwamp"
+  },
+  "target_count:one target_type:land": {
+   "n": 8,
+   "top": 1.0,
+   "canon": "target land"
+  },
+  "target_count:one target_scope:you_control target_type:artifact": {
+   "n": 22,
+   "top": 0.864,
+   "canon": "target artifact"
+  },
+  "target_count:up_to_N target_scope:you_control target_type:artifact target_type:creature": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "up to N target artifact"
+  },
+  "target_count:one target_scope:you_control target_type:permanent": {
+   "n": 49,
+   "top": 0.51,
+   "canon": "target permanent"
+  },
+  "target_count:one target_type:opponent": {
+   "n": 80,
+   "top": 0.713,
+   "canon": "target opponent"
+  },
+  "target_count:up_to_N target_scope:you_control target_type:artifact": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "up to N target artifact you control"
+  },
+  "target_count:one target_type:planeswalker target_type:player": {
+   "n": 19,
+   "top": 1.0,
+   "canon": "target player"
+  },
+  "target_count:one target_scope:each_opponent target_scope:opp_control target_type:creature": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "target creature"
+  },
+  "target_count:one target_filter:cmc_le_x target_scope:you_control target_type:creature": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "target creature"
+  },
+  "target_count:up_to_N target_filter:cmc_le_x target_scope:you_control target_type:creature": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "up to N target creature"
+  },
+  "target_count:up_to_N target_type:creature": {
+   "n": 24,
+   "top": 1.0,
+   "canon": "up to N target creature"
+  },
+  "target_count:one target_filter:other target_filter:power_eq_N target_filter:toughness_eq_N target_scope:you_control target_type:creature": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "target other"
+  },
+  "target_count:all target_count:one target_filter:isremembered target_filter:nonenchantment target_filter:nonland target_scope:each_opponent target_type:card target_type:permanent": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "target nonland"
+  },
+  "target_count:one target_filter:other target_scope:you_control target_type:villain": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "another target Villain you control"
+  },
+  "target_count:one target_filter:powerlttriggeredcard_cardpower target_scope:opp_control target_type:creature": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "target creature an opponent controls"
+  },
+  "target_count:all target_count:one target_scope:you_control target_type:creature target_type:player": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "target player's"
+  },
+  "target_count:one target_scope:opp_control target_scope:you_control target_type:creature target_type:land": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "Target land you control"
+  },
+  "target_count:one target_filter:cmc_eq_x target_filter:exiledwithsource target_type:creature": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "target creature"
+  },
+  "target_count:N target_type:creature": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "up to N target creatures"
+  },
+  "target_count:one target_type:artifact target_type:enchantment": {
+   "n": 129,
+   "top": 1.0,
+   "canon": "target artifact"
+  },
+  "target_count:one target_filter:cmc_le_N target_filter:noncreature target_filter:nonland target_type:creature target_type:permanent target_type:player": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "Target player"
+  },
+  "target_count:one target_filter:other target_scope:you_control target_type:artifact target_type:creature": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "target other"
+  },
+  "target_count:one target_filter:noncreature target_scope:you_control target_type:artifact": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "target noncreature"
+  },
+  "target_count:all target_count:one target_scope:opp_control target_scope:you_control target_type:creature target_type:mountain target_type:planeswalker": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "target creature an opponent controls"
+  },
+  "target_count:one target_scope:opp_control target_type:creature": {
+   "n": 95,
+   "top": 0.989,
+   "canon": "target creature an opponent controls"
+  },
+  "target_count:N target_scope:you_control target_type:creature": {
+   "n": 6,
+   "top": 0.667,
+   "canon": "target creatures you control"
+  },
+  "target_count:one target_scope:you_control target_type:creature target_type:vehicle": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "target creature"
+  },
+  "target_count:one target_scope:opp_control target_type:card": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "target card"
+  },
+  "target_count:up_to_N target_scope:you_control target_type:instant target_type:sorcery": {
+   "n": 4,
+   "top": 1.0,
+   "canon": "up to N target instant"
+  },
+  "target_count:one target_filter:cmc_lt_x target_type:creature": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "target creature"
+  },
+  "target_count:one target_filter:activeplayerctrl target_filter:nonwall target_type:creature": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "target nonWall"
+  },
+  "target_count:all target_count:one target_filter:isimprinted target_type:card": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "target spell"
+  },
+  "target_count:one target_filter:artifact target_filter:other target_scope:you_control target_type:creature": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "target other"
+  },
+  "target_count:all target_count:one target_scope:you_control target_type:creature target_type:instant target_type:sorcery": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "target instant"
+  },
+  "target_count:one target_filter:powerltz target_scope:you_control target_type:creature": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "target creature"
+  },
+  "target_count:all target_filter:isgoaded target_filter:issuspected target_type:creature": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "target goaded"
+  },
+  "target_count:one target_type:creature target_type:planeswalker": {
+   "n": 71,
+   "top": 1.0,
+   "canon": "target creature"
+  },
+  "target_count:up_to_N target_scope:you_control target_type:land": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "up to N target land you control"
+  },
+  "target_count:one target_filter:cmc_ge_N target_scope:opp_control target_type:permanent": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "target permanent an opponent controls"
+  },
+  "target_count:one target_scope:you_control target_type:creature target_type:planeswalker": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "target creature"
+  },
+  "target_count:one target_filter:activeplayerctrl target_type:creature": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "target creature you control"
+  },
+  "target_count:one target_filter:ownedby_triggereddefendingplayer target_type:creature": {
+   "n": 1,
+   "top": 1.0,
    "canon": "target creature"
   },
   "target_count:up_to_N target_type:artifact target_type:enchantment": {
    "n": 17,
    "top": 1.0,
    "canon": "up to N target artifact"
-  },
-  "target_count:one target_type:opponent": {
-   "n": 59,
-   "top": 0.678,
-   "canon": "target opponent"
-  },
-  "target_count:one target_type:instant target_type:sorcery": {
-   "n": 25,
-   "top": 1.0,
-   "canon": "target instant"
   },
   "target_count:one target_type:creature target_type:land": {
    "n": 16,
@@ -413,16 +953,6 @@
    "n": 21,
    "top": 1.0,
    "canon": "target creatures"
-  },
-  "target_count:one target_type:planeswalker target_type:player": {
-   "n": 17,
-   "top": 1.0,
-   "canon": "target player"
-  },
-  "target_count:up_to_N target_type:creature": {
-   "n": 20,
-   "top": 1.0,
-   "canon": "up to N target creature"
   },
   "target_count:one target_type:artifact": {
    "n": 52,
@@ -439,30 +969,10 @@
    "top": 1.0,
    "canon": "target permanent an opponent controls"
   },
-  "target_count:one target_type:artifact target_type:enchantment": {
-   "n": 126,
-   "top": 1.0,
-   "canon": "target artifact"
-  },
-  "target_count:one target_type:creature target_type:planeswalker": {
-   "n": 65,
-   "top": 1.0,
-   "canon": "target creature"
-  },
-  "target_count:one target_type:card": {
-   "n": 68,
-   "top": 0.765,
-   "canon": "target spell"
-  },
   "target_count:one target_filter:nonland target_type:permanent": {
    "n": 33,
    "top": 1.0,
    "canon": "target nonland"
-  },
-  "target_count:one target_filter:other target_type:creature": {
-   "n": 23,
-   "top": 0.957,
-   "canon": "another target creature"
   },
   "target_count:one target_filter:other target_scope:you_control target_type:permanent": {
    "n": 24,
@@ -473,16 +983,6 @@
    "n": 26,
    "top": 0.885,
    "canon": "target player's"
-  },
-  "target_count:one target_scope:opp_control target_type:creature": {
-   "n": 89,
-   "top": 0.989,
-   "canon": "target creature an opponent controls"
-  },
-  "target_count:one target_scope:you_control target_type:artifact": {
-   "n": 19,
-   "top": 1.0,
-   "canon": "target artifact"
   },
   "target_count:one target_filter:nonartifact target_filter:nonblack target_type:creature": {
    "n": 27,
@@ -498,11 +998,6 @@
    "n": 17,
    "top": 1.0,
    "canon": "target nonblack"
-  },
-  "target_count:one target_scope:you_control target_type:permanent": {
-   "n": 48,
-   "top": 0.521,
-   "canon": "target permanent"
   },
   "target_count:one target_filter:nonland target_filter:other target_type:permanent": {
    "n": 18,
@@ -569,11 +1064,6 @@
    "top": 1.0,
    "canon": "up to N target nonblack"
   },
-  "target_count:one target_type:land": {
-   "n": 2,
-   "top": 1.0,
-   "canon": "target land"
-  },
   "target_count:one target_type:permanent": {
    "n": 1,
    "top": 1.0,
@@ -591,6 +1081,1781 @@
   }
  },
  "body": {
+  "token_color:white token_count:N token_kw:vigilance token_pt:N/N token_type:astartes_warrior": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a 2/2 white Astartes Warrior creature token with vigilance."
+  },
+  "look_top:x optional take:may_N_artifact to_zone:hand": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "look at the top X cards of your library. You may put an artifact card from among them into your hand."
+  },
+  "forge_line:etbcounter": {
+   "n": 67,
+   "top": 0.254,
+   "canon": "this creature enters with N +N/+N counters on it."
+  },
+  "prevent_damage": {
+   "n": 6,
+   "top": 0.5,
+   "canon": "prevent {damage}."
+  },
+  "counter:pNpN counter_count:N": {
+   "n": 87,
+   "top": 0.368,
+   "canon": "put a +N/+N counter on {T}."
+  },
+  "look_top:N take:all to_zone:exile": {
+   "n": 9,
+   "top": 0.333,
+   "canon": "{T} exiles the top N cards of their library."
+  },
+  "cast_free optional": {
+   "n": 7,
+   "top": 0.571,
+   "canon": "you may cast {N card} without paying its mana cost."
+  },
+  "damage": {
+   "n": 18,
+   "top": 0.167,
+   "canon": "{damage effect}."
+  },
+  "look_top:N take:any_dwarf to_zone:hand": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "look at the top N cards of your library. Put a Dwarf card from among them into your hand."
+  },
+  "affected_filter:notedforgreenanchor affected_type:player extra_land_drop:N": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "players {noted for green anchor} may play an additional land on each of their turns."
+  },
+  "affected_filter:controlledby_player affected_filter:notedforredwaterfall affected_type:creature grant_kw:haste haste pump_amount:+N/+N": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "creatures controlled by {noted player} get +N/+N and have haste."
+  },
+  "affected_scope:self flying grant_kw:flying": {
+   "n": 4,
+   "top": 1.0,
+   "canon": "flying"
+  },
+  "affected_scope:self grant_kw:indestructible indestructible": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "indestructible"
+  },
+  "cant_be_blocked:by_creature_wall": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "this creature can't be blocked by Walls."
+  },
+  "counter:pNpN counter_count:x x_is:x_paid": {
+   "n": 9,
+   "top": 0.778,
+   "canon": "put X +N/+N counters on this creature."
+  },
+  "flying grant_kw:flying grant_kw:lifelink lifegain lifelink pump_single": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "{T} gains flying and lifelink{D}."
+  },
+  "cast_free from_zone:exile optional return to_zone:hand": {
+   "n": 4,
+   "top": 0.25,
+   "canon": "you may cast {card} without paying its mana cost; return {card} from exile to your hand."
+  },
+  "counter:charge counter_count:N exile_from:hand impulse_draw impulse_draw_count:N optional": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "you may put a charge counter on this artifact; exile N card from your hand, {then impulse draw: you may play it}."
+  },
+  "mana_amount:N mana_restriction:isremembered mana_source": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "add {one mana}, spend this mana only on {remembered}."
+  },
+  "affected_scope:you_control affected_type:spirit pump_amount:+x/+N x_is:intensity": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "you may exile {card}; it gains haste."
+  },
+  "token_color:black token_count:N token_pt:N/N token_type:zombie": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a 2/2 black Zombie creature token."
+  },
+  "token_color:colorless token_count:N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a colorless token."
+  },
+  "replace:damagedone_to_removecounter": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "if damage would be dealt to this creature, remove that many counters instead."
+  },
+  "sacrifice": {
+   "n": 12,
+   "top": 0.333,
+   "canon": "sacrifice {condition}."
+  },
+  "becomes:artifact becomes:vehicle transform": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "{T} permanent you control becomes a Vehicle artifact{D}."
+  },
+  "kw:flying": {
+   "n": 397,
+   "top": 0.975,
+   "canon": "flying"
+  },
+  "token_cardtype:artifact token_color:colorless token_count:x token_kw:flying token_pt:N/N token_type:tetravite_noenchant x_is:x_paid": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create X 1/1 colorless Tetravite artifact creature tokens with flying."
+  },
+  "controller:you from_zone:exile put_onto_battlefield return return_exiled saga_chapter:N to_zone:hand": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "return it to your hand."
+  },
+  "counter:flame counter_count:N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "put a flame counter on {target}."
+  },
+  "exile_from:graveyard exile_from:hand exile_from:library impulse_draw impulse_draw_count:numinlib shuffle target_zone:graveyard tutor tutor_count:numinlib tutor_dest:exile tutor_target:remembered_samename": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "exile {T} card an opponent owns from a graveyard, then that player shuffles; search their library for cards with the same name and exile them. You may play them as long as you control this creature."
+  },
+  "discard_count:N draw_count:N exile_from:graveyard token_make token_type:copy": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "draw N card, then discard N card; exile N card from a graveyard, create a token that's a copy of it."
+  },
+  "kw:vigilance": {
+   "n": 115,
+   "top": 0.965,
+   "canon": "vigilance"
+  },
+  "exile_from:graveyard target_zone:graveyard token_color:red token_color:white token_count:N token_pt:N/N token_type:spirit": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "exile {T}, nonland card from your graveyard; create a 3/2 red and white Spirit creature token."
+  },
+  "saga_chapter:N token_cardtype:artifact token_color:colorless token_count:N token_type:food_sac,w_N_N_human_doctor_reduce": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "a 1/1 white Human Doctor creature token."
+  },
+  "shuffle tutor tutor_count:N tutor_dest:hand tutor_target:basic_land_land_locus_land_sphere": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "search your library for a basic land, Locus, or Sphere land card, reveal it, put it into your hand, then shuffle."
+  },
+  "becomes:artifact becomes:construct becomes:creature becomes:phyrexian indestructible loses_all_abilities restrict_kind:loses_abilities transform": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "this artifact becomes a Phyrexian Construct artifact creature, loses all abilities, and is indestructible{D}."
+  },
+  "controller:you from_zone:library optional put_onto_battlefield shuffle tutor tutor_count:N tutor_dest:battlefield tutor_target:basic_land": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "you may search your library for a basic land card, put it onto the battlefield, then shuffle."
+  },
+  "counter:pNpN counter_count:x token_color:green token_count:N token_pt:N/N token_type:insect x_is:domain": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a 1/1 green Insect creature token, then put X +N/+N counters on it, where X is the number of basic land types among lands you control."
+  },
+  "cant_be_countered": {
+   "n": 20,
+   "top": 0.7,
+   "canon": "this spell can't be countered."
+  },
+  "token_count:N token_type:coil": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "create a Coil token."
+  },
+  "grant_kw:indestructible modal:N_of_N": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "choose one - {mode}; {T} gains indestructible{D}."
+  },
+  "counter:mNmN counter_count:N": {
+   "n": 24,
+   "top": 0.875,
+   "canon": "put three +N/+N counters on {T}."
+  },
+  "becomes:enchantment controller:you from_zone:graveyard put_onto_battlefield transform": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "put it onto the battlefield under your control; it becomes an enchantment."
+  },
+  "cant_be_blocked:by_artifact_creature": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "this creature can't be blocked by artifact creatures."
+  },
+  "controller:you from_zone:graveyard grant_ability:other put_onto_battlefield target_zone:graveyard": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "put {T} or sorcery card from your graveyard onto the battlefield under your control, {grant ability}."
+  },
+  "shuffle tutor tutor_count:N tutor_dest:library tutor_target:creature_cmclex": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "search your library for a creature card with mana value {comparison}, put it on top of your library, then shuffle."
+  },
+  "replace:damagedone_to_replacedamage_numdmg_limitmax_y": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "if damage would be dealt, {replacement effect with maximum limit}."
+  },
+  "forge_line:etbreplacement": {
+   "n": 18,
+   "top": 0.111,
+   "canon": "flying"
+  },
+  "counter:pNpN counter_count:x": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "put X +N/+N counters on this creature."
+  },
+  "counter:point counter_count:x token_color:black token_count:x token_kw:menace token_pt:N/N token_type:pirate x_is:players_haspropertywasdealtcombatdamagethisturn": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "put X point counters, where X is the number of players that were dealt combat damage this turn. Create X 2/2 black Pirate creature tokens with menace."
+  },
+  "token_color:white token_count:N token_pt:N/N token_type:human,u_N_N_merfolk,r_N_N_goblin": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "create a 1/1 white Human creature token, a 1/1 blue Merfolk creature token, and a 1/1 red Goblin creature token."
+  },
+  "condition:card_strictlyself controller:you from_zone:graveyard grant_ability:other put_onto_battlefield put_tapped": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "put a creature card from your graveyard onto the battlefield tapped under your control, and it gains {ability}."
+  },
+  "affected_type:creature pump_amount:+N/+N": {
+   "n": 100,
+   "top": 0.7,
+   "canon": "equipped creature gets +N/+N."
+  },
+  "affected_filter:enchantedby affected_type:creature restrict_kind:doesnt_untap": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "enchanted creature doesn't untap during its controller's untap step."
+  },
+  "sacrifice untap": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "untap."
+  },
+  "color:blue color:green kw:class num:N": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "draw N card."
+  },
+  "token_color:black token_color:white token_count:N token_kw:flying token_pt:N/N token_type:inkling": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "create a 2/1 white and black Inkling creature token with flying."
+  },
+  "kw:chapter num:N": {
+   "n": 8,
+   "top": 0.25,
+   "canon": "chapter III"
+  },
+  "exile_from:library saga_chapter:N shuffle tutor tutor_count:N tutor_dest:exile tutor_target:card": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "II - Each opponent loses X life, where X is the mana value of the exiled card."
+  },
+  "life_loss_amount:x saga_chapter:N x_is:exiledwith_cardmanacost": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "III - Put the exiled card onto the battlefield under your control."
+  },
+  "token_color:black token_color:red token_count:N token_type:shell": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "create a black token, a token, a red token, or a black Shell token."
+  },
+  "affected_scope:self grant_kw:vigilance vigilance": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "as long as {condition}, this creature has Vigilance."
+  },
+  "affected_scope:self grant_kw:trample grant_kw:vigilance trample vigilance": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "as long as {condition}, this creature has Vigilance and Trample."
+  },
+  "controller:you from_zone:graveyard put_onto_battlefield put_tapped": {
+   "n": 14,
+   "top": 0.571,
+   "canon": "put ~ from your graveyard onto the battlefield tapped under your control."
+  },
+  "impulse_draw": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "exile the top card of {T}. You may play that card this turn."
+  },
+  "token_make token_type:copy": {
+   "n": 53,
+   "top": 0.528,
+   "canon": "create a token that's a copy of {T}."
+  },
+  "affected_filter:reflection affected_type:creature grant_kw:shadow shadow": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "creatures with reflection type have Shadow."
+  },
+  "exile_from:graveyard target_zone:graveyard token_color:black token_count:N token_make token_type:copy token_type:x_x_zombie": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "exile {T} card from your graveyard. Create a token that's a copy of it, except it's a black Zombie X/X."
+  },
+  "condition:at_least_N_town_you_control token_count:N token_pt:N/N token_type:elemental": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "if you control five or more Towns, create a 2/2 Elemental creature token."
+  },
+  "affected_filter:other affected_scope:you_control affected_type:creature counter:pNpN replace:add_counters_plus_N": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "if one or more +N/+N counters would be put on another creature you control, that many plus one +N/+N counters are put on it instead."
+  },
+  "kw:choose_a_background": {
+   "n": 4,
+   "top": 1.0,
+   "canon": "choose a Background"
+  },
+  "token_count:N token_type:journal": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a Journal token."
+  },
+  "condition:no_creature_you_control_namedkeimi token_count:N": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "if you control no creature named {name}, create a token."
+  },
+  "token_color:colorless token_count:N token_pt:N/N token_type:eldrazi_spawn": {
+   "n": 21,
+   "top": 0.81,
+   "canon": "create five 0/1 colorless Eldrazi Spawn creature tokens."
+  },
+  "affected_filter:counters_geN_pNpN affected_type:card grant_kw:annihilator scales:counters": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "cards with eight or more +N/+N counters on them have Annihilator {N}."
+  },
+  "counter:midway counter_count:N exile_from:graveyard target_zone:graveyard": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "exile {T} or sorcery card from your graveyard. Put a midway counter on it."
+  },
+  "mana:any mana_amount:N mana_source": {
+   "n": 7,
+   "top": 0.857,
+   "canon": "add one mana of any color."
+  },
+  "discard_count:N lifegain_amount:N unless_cost": {
+   "n": 5,
+   "top": 0.2,
+   "canon": "unless {cost}, you gain N life and discard N card."
+  },
+  "kw:ward num:N": {
+   "n": 22,
+   "top": 1.0,
+   "canon": "ward {N}"
+  },
+  "replace:moved_to_daytime": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "{Day/night effect}."
+  },
+  "look_top:N optional take:may_N_creature_cmc_le_N to_zone:hand": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "you may look at the top N cards of your library. Put a creature card with mana value 3 or less from among them into your hand."
+  },
+  "counter:pNpN counter_count:N draw_count:N lifegain_amount:N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "draw N card, gain N life, and put a +N/+N counter on {target}."
+  },
+  "mana:any mana_amount:x mana_restriction:creature_spell mana_source x_is:own_power": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "add X mana of any color, where X is this creature's power. Spend this mana only to cast creature spells."
+  },
+  "cost_reduce cost_reduce_amount:N cost_reduce_for:dont cost_reduce_for:own cost_reduce_mana:generic": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "spells you cast cost {N} less to cast."
+  },
+  "damage damage_amount:x x_is:own_power x_is:target_power": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "this creature deals damage equal to its power to {T}. That creature deals damage equal to its power to this creature."
+  },
+  "kw:first_strike": {
+   "n": 182,
+   "top": 0.962,
+   "canon": "first strike"
+  },
+  "counter:mire counter_count:N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "put a mire counter on {T} land."
+  },
+  "life_loss_amount:N unless_cost unless_cost_amount:N": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "unless {N} is paid, {player} loses N life."
+  },
+  "controller:owner from_zone:exile put_onto_battlefield remove:exile": {
+   "n": 6,
+   "top": 0.5,
+   "canon": "exile {T}, then return it to the battlefield under its owner's control."
+  },
+  "life_loss": {
+   "n": 8,
+   "top": 0.25,
+   "canon": "transform."
+  },
+  "counter:flood counter_count:N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "put a flood counter on {T}."
+  },
+  "cost_reduce cost_reduce_for:instant cost_reduce_for:sorcery": {
+   "n": 4,
+   "top": 1.0,
+   "canon": "instant and sorcery spells cost {N} less to cast."
+  },
+  "cost_reduce": {
+   "n": 28,
+   "top": 0.321,
+   "canon": "{Spells} cost {N} less to cast."
+  },
+  "token_color:green token_count:N token_type:x_x_fungus_dinosaur": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "create an X/X green Fungus Dinosaur creature token."
+  },
+  "pump_amount:+x/+N pump_single": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{T} gets +X/+0{D}."
+  },
+  "affected_filter:token affected_scope:you_control affected_type:creature grant_kw:haste haste": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "creature tokens you control have Haste."
+  },
+  "look_top:N take:all_doctor to_zone:graveyard": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "look at the top fourteen cards of your library; put all Doctor cards from among them into your graveyard."
+  },
+  "mana:colorless mana_amount:N mana_source": {
+   "n": 126,
+   "top": 0.603,
+   "canon": "add {C}."
+  },
+  "condition:card_self_startedtheturnuntapped counter:dream counter_count:N": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "if this creature started the turn untapped, put a dream counter on it."
+  },
+  "affected_filter:food affected_scope:you_control affected_type:creature grant_kw:trample pump_amount:+N/+N trample": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "foods you control get +N/+N and have Trample."
+  },
+  "exile_from:graveyard optional token_make token_type:copy": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "you may exile it from your graveyard. If you do, create a token that's a copy of it."
+  },
+  "becomes:creature becomes:robot counter:pNpN counter_count:N transform": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "put three +N/+N counters on {T}. It becomes a Robot creature."
+  },
+  "counter:eachfromsource": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "put its counters on {T} or creature you control."
+  },
+  "controller:you from_zone:library put_onto_battlefield put_tapped shuffle tutor tutor_count:N tutor_dest:battlefield_tapped tutor_target:basic_land": {
+   "n": 58,
+   "top": 0.793,
+   "canon": "search your library for a basic land card, put it onto the battlefield tapped, then shuffle."
+  },
+  "counter:pNpN counter:quest counter_count:N grant_kw:trample": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "put a quest counter on this enchantment. Put a +N/+N counter on {T}. It gains trample{D}."
+  },
+  "counter:exposure counter_count:N life_loss_amount:x x_is:counters_on_this_exposure": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "put an exposure counter on this plane. Each player loses X life, where X is the number of exposure counters on it."
+  },
+  "token_cardtype:artifact token_color:black token_count:N token_kw:vigilance token_pt:N/N token_type:alien_angel_firststrike": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "create two 2/2 black Alien Angel artifact creature tokens with vigilance and first strike."
+  },
+  "damage damage_amount:N": {
+   "n": 156,
+   "top": 0.218,
+   "canon": "this creature deals N damage to {target}."
+  },
+  "condition:card_strictlyself controller:you from_zone:graveyard grant_ability:other put_onto_battlefield": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "put {N card} from a graveyard onto the battlefield under your control."
+  },
+  "affected_scope:self": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "this creature has vigilance as long as {condition}."
+  },
+  "exile": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "exile {it}."
+  },
+  "exile_from:graveyard saga_chapter:N target_zone:graveyard token_make token_type:copy": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "i - Exile {T} card from your graveyard; create a token that's a copy of it."
+  },
+  "saga_chapter:N token_make token_type:copy": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "II - Create a token that's a copy of {it}."
+  },
+  "kw:crew num:N": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "crew 2"
+  },
+  "kw:battle_cry": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "battle cry"
+  },
+  "restrict_kind:cant_block": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "{T} can't block this turn."
+  },
+  "from_zone:graveyard token_make token_type:copy": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "create a token that's a copy of {object}."
+  },
+  "counter:dream counter_count:x token_color:red token_count:N token_pt:N/N token_type:goblin x_is:players_amount": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "put X dream counters on it, where X is the number of players, and create a 1/1 red Goblin creature token."
+  },
+  "mana:colorless mana_amount:x mana_source x_is:x_paid": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "add X colorless mana."
+  },
+  "token_color:white token_count:N token_pt:N/N token_type:knight_pro_red": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a 2/2 white Knight creature token with protection from red."
+  },
+  "effect:sacrifice optional sacrifice_outlet sacrifice_type:creature": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "you may sacrifice a creature."
+  },
+  "controller:you from_zone:hand put_onto_battlefield": {
+   "n": 15,
+   "top": 0.4,
+   "canon": "put {filter} from your hand onto the battlefield under your control."
+  },
+  "becomes:creature counter:pNpN counter_count:N transform": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{T} becomes a creature with a +N/+N counter on it."
+  },
+  "kw:lifelink": {
+   "n": 108,
+   "top": 0.972,
+   "canon": "lifelink"
+  },
+  "replace:gainlife_to_replaceeffect": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "if you would gain life, {replacement effect}."
+  },
+  "token_count:N token_type:curse": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "{T} gets a Curse token."
+  },
+  "damage damage_amount:N from_zone:graveyard": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "this creature deals N damage to {T} or planeswalker."
+  },
+  "controller:you from_zone:graveyard grant_ability:other put_onto_battlefield put_tapped": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "{T} {mills/effect}. Put {N card} from a graveyard onto the battlefield tapped under your control. It gains {ability}."
+  },
+  "controller:you from_zone:library put_onto_battlefield shuffle tutor tutor_count:fetchcount tutor_dest:battlefield tutor_target:praetor": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "search your library for X Praetor cards, put them onto the battlefield, then shuffle."
+  },
+  "token_color:red token_count:N token_type:acha": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "create a red Acha token."
+  },
+  "kw:cycling num:N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "cycling {N}"
+  },
+  "affected_type:creature": {
+   "n": 4,
+   "top": 0.25,
+   "canon": "{Creatures effect.}"
+  },
+  "controller:you from_zone:graveyard put_onto_battlefield target_zone:graveyard": {
+   "n": 50,
+   "top": 0.4,
+   "canon": "put {T} card from your graveyard onto the battlefield under your control."
+  },
+  "token_color:black token_color:green token_count:N token_type:x_x_hydra": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create an X/X black and green Hydra creature token."
+  },
+  "token_color:black token_color:green token_count:N token_pt:N/N token_type:pest_attack_lifegain": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "create a 1/1 black and green Pest creature token with \"Whenever this creature attacks, you gain N life\"? [lifegain wording from token_type]"
+  },
+  "counter:deathtouch counter:double_strike counter:first_strike counter:flying counter:haste counter:indestructible counter:lifelink counter:menace counter:reach counter:trample counter:vigilance counter_count:N": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "{T} gets a haste counter, flying counter, first strike counter, double strike counter, deathtouch counter, indestructible counter, lifelink counter, menace counter, reach counter, trample counter, and vigilance counter...{D}."
+  },
+  "look_top:x optional rest_order:bottom_random rest_to_zone:library take:may_any_aura_cmc_le_x to_zone:battlefield": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "you may look at the top X cards of your library. You may put an Aura card with mana value X or less from among them onto the battlefield. Put the rest on the bottom of your library in a random order."
+  },
+  "lifegain_amount:x scales:card_you_own_in_hand_minus_N x_is:count_card_you_own_in_hand_minus_N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "you gain X life, where X is the number of cards in your hand minus 4."
+  },
+  "draw_count:N": {
+   "n": 393,
+   "top": 0.575,
+   "canon": "draw N card."
+  },
+  "affected_filter:other affected_scope:you_control affected_type:merfolk pump_amount:+N/+N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "other Merfolk you control get +N/+N."
+  },
+  "becomes:skeleton exile_from:graveyard target_zone:graveyard transform": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "exile {T} card from a graveyard. This creature becomes a Skeleton."
+  },
+  "look_top:N take:any_artifact_cmcley to_zone:battlefield": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "look at the top N cards of your library. You may put an artifact card with mana value N or less from among them onto the battlefield."
+  },
+  "cant_be_blocked:by_": {
+   "n": 7,
+   "top": 0.429,
+   "canon": "this creature can't be blocked {by}."
+  },
+  "becomes:detective becomes:human transform vigilance": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "this creature becomes a Human Detective and gains vigilance {duration}."
+  },
+  "becomes:creature becomes:legendary transform": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "this creature becomes a legendary creature."
+  },
+  "cast_free": {
+   "n": 7,
+   "top": 0.286,
+   "canon": "you may cast {N card} without paying its mana cost."
+  },
+  "affected_filter:legendary affected_scope:you_control affected_type:creature pump_amount:+x/+x scales:creature_legendary x_is:count_creature_legendary_you_control": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "legendary creatures you control get +X/+X, where X is the number of legendary creatures you control."
+  },
+  "cast_free from_zone:exile optional remove:tuck return shuffle to_zone:library": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "put {T}, nonenchantment permanent an opponent controls into its owner's library, then shuffle. You may cast {N card} without paying its mana cost. Return {remembered cards} from exile to your library and shuffle."
+  },
+  "look_top:N optional rest_order:bottom_random rest_to_zone:library take:may_N_land to_zone:battlefield": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "you may look at the top N cards of your library. You may put a land card from among them onto the battlefield. Put the rest on the bottom of your library in a random order."
+  },
+  "exile_from:graveyard lifegain target_zone:graveyard token_ability:pay_N_tap_sacrifice_gain_N_life token_cardtype:artifact token_color:colorless token_count:N token_type:food": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "exile {T} from a graveyard. Create a Food token."
+  },
+  "delayed:end_step effect:sacrifice token_make token_type:copy": {
+   "n": 28,
+   "top": 0.679,
+   "canon": "create a token that's a copy of {T} creature you control. Sacrifice it at the beginning of the next end step."
+  },
+  "cast_free optional tutor tutor_count:N tutor_dest:library tutor_target:artifact_noncolorless": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "you may search your library for a noncolorless artifact card, put it on top of your library, and cast {N card} without paying its mana cost."
+  },
+  "color:blue kw:prototype num:N": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "prototype {cost} - 3/{N} (blue)"
+  },
+  "grant_ability:other remove:bounce": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "return {T} with power less than {this creature's power} to its owner's hand."
+  },
+  "controller:owner from_zone:exile investigate mana_source modal:N_of_N put_onto_battlefield remove:exile token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_pt:N/N token_type:gamer token_type:treasure": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "choose one - Create a 1/1 colorless Gamer creature token; or Investigate; or Create a Treasure token; or Exile {object}, then return it to the battlefield under its owner's control."
+  },
+  "cast_free look_top:N optional reveal tutor tutor_count:N tutor_dest:graveyard tutor_target": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "{T} looks at the top N cards of their library, reveals them, you may cast N card for free, and put N card into your graveyard."
+  },
+  "optional replace:draw_to_diguntil": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "if you would draw N card, {you may dig until ...}."
+  },
+  "controller:you counter:pNpN counter_count:N exile_from:graveyard from_zone:library lifegain_amount:x modal:N_of_N put_onto_battlefield put_tapped shuffle target_zone:graveyard token_color:green token_count:N token_pt:N/N token_type:bear tutor tutor_count:up_to_N tutor_dest:battlefield_tapped tutor_target:land x_is:remembered_amount": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "choose two - Exile {T} graveyard; or You gain X life, where X is {remembered amount}; or Search your library for up to N land cards, put them onto the battlefield tapped, then shuffle; or Create two 2/2 green Bear creature tokens; or Put two +N/+N counters on each creature you control."
+  },
+  "replace:gameloss_to_other": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "if you would lose life, {replacement}."
+  },
+  "replace:gainlife_to_draw": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "if you would lose the game, {replacement}."
+  },
+  "color:green kw:class num:N": {
+   "n": 4,
+   "top": 0.25,
+   "canon": "level 2 {cost}"
+  },
+  "counter:pNpN counter_count:N damage damage_amount:N draw_count:N modal:N_of_N token_color:colorless token_count:N token_kw:defender token_pt:N/N token_type:wall": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "choose one - Create a 0/4 colorless Wall creature token with defender; or {It} deals N damage to {target}; or Put two +N/+N counters on {T}; or Draw N card."
+  },
+  "counter:pNpN counter_count:N grant_kw:double_strike lifegain_amount:N modal:N_of_N scry shuffle token_cardtype:artifact token_color:colorless token_count:N token_pt:N/N token_type:construct tutor tutor_count:N tutor_dest:hand tutor_target:plains_basic": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "choose two - Create a 2/2 colorless Construct artifact creature token; or Put a +N/+N counter on {target}; or {Target} gains double strike{D}; or Search your library for a basic Plains card, reveal it, put it into your hand, then shuffle; or You gain N life; or Scry N."
+  },
+  "color:black kw:class num:N": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "level 2 {N}"
+  },
+  "lifegain limit:once_per_turn token_ability:pay_N_tap_sacrifice_gain_N_life token_cardtype:artifact token_color:colorless token_count:N token_type:food": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "create a Food token. This ability triggers only once each turn."
+  },
+  "counter:time counter_count:N": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "put a time counter on this artifact."
+  },
+  "phase_out": {
+   "n": 12,
+   "top": 0.5,
+   "canon": "proliferate. It phases out."
+  },
+  "becomes:creature becomes:elemental ge1.2.1_of_2 modal:count$compare transform y": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "choose one or both - {T} becomes an Elemental creature."
+  },
+  "cost_reduce cost_reduce_amount:N cost_reduce_for:sphinx cost_reduce_mana:generic": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "sphinx spells you cast cost {N} less to cast."
+  },
+  "exile_from:graveyard": {
+   "n": 4,
+   "top": 0.25,
+   "canon": "you may exile it from their graveyard."
+  },
+  "counter:pNpN counter_count:N draw_count:N": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "put two +N/+N counters on this creature and draw N card."
+  },
+  "controller:you from_zone:exile put_onto_battlefield put_tapped target_zone:exile": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "put {T} card with mana value X exiled with this creature onto the battlefield tapped under your control."
+  },
+  "token_color:black token_count:N": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "create a black token."
+  },
+  "effect:sacrifice sacrifice_outlet sacrifice_type:artifact": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "sacrifice an artifact."
+  },
+  "damage damage_amount:N modal:N_of_N token_color:green token_count:N token_pt:N/N token_type:saproling": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "choose one - This creature deals N damage to {T}; or create a 1/1 green Saproling creature token."
+  },
+  "affected_scope:self grant_kw:hexproof grant_kw:indestructible hexproof indestructible": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "this creature has hexproof and indestructible."
+  },
+  "pump_amount:+N/+N token_color:green token_count:N token_pt:N/N token_type:hippo": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "this creature gets +N/+N{D}. {T} creates a 1/1 green Hippo creature token."
+  },
+  "lifegain_amount:N": {
+   "n": 43,
+   "top": 0.953,
+   "canon": "you gain N life."
+  },
+  "draw_count:N flying grant_kw:flying": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "this creature gains flying{D}. {T} draws N card."
+  },
+  "kw:trample": {
+   "n": 119,
+   "top": 0.966,
+   "canon": "trample"
+  },
+  "counter:pNpN counter_count:x token_color:blue token_color:green token_count:N token_pt:N/N token_type:fractal x_is:triggering_damage": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "create a 0/0 green and blue Fractal creature token, then put X +N/+N counters on it, where X is the damage dealt."
+  },
+  "affected_scope:self grant_kw:annihilator": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "this creature has annihilator N."
+  },
+  "controller:you from_zone:library put_onto_battlefield put_tapped shuffle tutor tutor_count:N tutor_dest:battlefield_tapped tutor_target:desert": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "search your library for a Desert card, put it onto the battlefield tapped, then shuffle."
+  },
+  "token_color:black token_color:blue token_count:N token_type:horror": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create two black and blue Horror creature tokens."
+  },
+  "look_top:N optional reveal token_color:green token_count:N token_pt:N/N token_type:elf_warrior": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "you may reveal the top card of your library {condition}; create a 1/1 green Elf Warrior creature token."
+  },
+  "token_color:blue token_color:red token_count:N token_pt:N/N token_type:otter_prowess": {
+   "n": 6,
+   "top": 1.0,
+   "canon": "create a 1/1 blue and red Otter creature token with prowess."
+  },
+  "kw:haste": {
+   "n": 171,
+   "top": 0.982,
+   "canon": "haste"
+  },
+  "grant_ability:changeszone_trigger": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "{T} gains {changes-zone triggered ability}{D}."
+  },
+  "optional replace:moved_to_discard": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "if you would discard N card, you may {replacement}."
+  },
+  "draw_count:x x_is:triggering_counters_all": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "draw X cards, where X is the number of counters on it."
+  },
+  "affected_filter:dwarf affected_filter:other affected_scope:you_control affected_type:permanent pump_amount:+N/+N": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "other Dwarves you control get +N/+N."
+  },
+  "affected_filter:vehicle affected_scope:you_control affected_type:creature pump_amount:+N/+N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "vehicles you control get +N/+N."
+  },
+  "look_top:x rest_order:bottom_random rest_to_zone:library take:all_dwarf_vehicle to_zone:hand": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "look at the top X cards of your library. Put all Dwarf and Vehicle cards from among them into your hand and the rest on the bottom of your library in a random order."
+  },
+  "damage remove:destroy": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "{damage effect}. Destroy {target}. {discard and draw}."
+  },
+  "grant_kw:menace grant_kw:vigilance menace vigilance": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "this creature gains vigilance and menace{D}."
+  },
+  "pump_amount:+N/+N": {
+   "n": 27,
+   "top": 0.444,
+   "canon": "this creature gets +N/+N{D}."
+  },
+  "remove:destroy": {
+   "n": 341,
+   "top": 0.384,
+   "canon": "destroy {T} or enchantment."
+  },
+  "controller:you from_zone:library put_onto_battlefield shuffle tutor tutor_count:N tutor_dest:battlefield tutor_target:card_youown": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "search your library for N card you own, put it onto the battlefield, then shuffle."
+  },
+  "from_zone:graveyard life_loss_amount:N lifegain_amount:N modal:N_of_N pump_amount:-N/-N remove:destroy return to_zone:hand": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "choose two - {T} mills {N}"
+  },
+  "counter:oil counter_count:N": {
+   "n": 7,
+   "top": 0.429,
+   "canon": "put an oil counter on {T} artifact or creature you control."
+  },
+  "token_color:red token_count:N token_pt:N/N token_type:phyrexian_goblin": {
+   "n": 6,
+   "top": 1.0,
+   "canon": "create a 1/1 red Phyrexian Goblin creature token."
+  },
+  "look_top:x optional rest_to_zone:library take:may_N_card_creature_sharescreaturetypewith_valid_creature_youctrl to_zone:hand": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "you may look at the top X cards of your library. You may put a creature card that shares a creature type with a creature you control from among them into your hand and the rest {into library}."
+  },
+  "damage damage_amount:x exile_from:library tutor tutor_count:N tutor_dest:exile tutor_target:mountain_youown x_is:triggerremembered_amount": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "exile a Mountain card from your library {and each Mountain you control}; this creature deals X damage to {T} or planeswalker."
+  },
+  "draw_count:N look_top:x optional take:may_N to_zone:library": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "you may look at the top X cards of your library, put one on the library {position}, then draw N card."
+  },
+  "counter:stun counter_count:N": {
+   "n": 6,
+   "top": 1.0,
+   "canon": "put a stun counter on {T}."
+  },
+  "pump_amount:+x/+x": {
+   "n": 11,
+   "top": 0.273,
+   "canon": "this creature gets +X/+X{D}."
+  },
+  "kw:flash": {
+   "n": 108,
+   "top": 0.991,
+   "canon": "flash"
+  },
+  "affected_filter:counters_geN_collection affected_filter:exiledbyyou affected_type:card impulse_draw scales:counters": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "you may play cards exiled by you that have counters on them {scales with counters}."
+  },
+  "kw:menace": {
+   "n": 39,
+   "top": 1.0,
+   "canon": "menace"
+  },
+  "token_color:green token_count:N token_pt:N/N token_type:wolf": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "create a 2/2 green Wolf creature token."
+  },
+  "look_top:z take:all to_zone:exile": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "{T} looks at the top Z cards of their library, exile all of them."
+  },
+  "affected_filter:chosenmodencr affected_type:card": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "cards of chosen mode ncr affected"
+  },
+  "counter:scroll counter_count:N lifegain_amount:x x_is:counters_on_this_scroll": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "put a scroll counter on {target}. You gain life equal to the number of scroll counters on this."
+  },
+  "color:red kw:class num:N": {
+   "n": 5,
+   "top": 0.2,
+   "canon": "level 2 - {N}{R}"
+  },
+  "color:blue kw:class num:N": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "level 2 - {N}{U}"
+  },
+  "counter:scroll draw_count:x x_is:counters_on_this_scroll": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "draw X cards, where X is the number of scroll counters on this."
+  },
+  "affected_scope:you_control affected_type:creature": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "creatures you control {static effect}."
+  },
+  "affected_scope:self condition:at_least_N_creature_legendary_you_control grant_kw:vigilance pump_amount:+N/+N vigilance": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "this creature gets +N/+N and has vigilance as long as you control at least three legendary creatures."
+  },
+  "look_top:N optional take:may_N_creature_legendary to_zone:hand": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "look at the top N cards of your library. You may put a legendary creature card from among them into your hand."
+  },
+  "token_cardtype:artifact token_color:black token_count:N token_kw:menace token_pt:N/N token_type:dalek": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "{Create a 3/3 black Dalek artifact creature token with menace.}"
+  },
+  "color:green cost_reduce cost_reduce_amount:N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "green spells you cast cost {N} less to cast."
+  },
+  "replace:addcounter_to_replacecounter_counternum_twice": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "if one or more +N/+N counters would be put on a permanent, twice that many are put on it instead."
+  },
+  "becomes:creature becomes:spirit counter:pNpN counter_count:x haste transform x_is:x_paid": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "put X +N/+N counters on {T}. It becomes a Spirit creature with haste."
+  },
+  "mana:any mana_amount:N mana_choice mana_restriction:dragon_or_activated_ability mana_source": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "add N mana of any one color. Spend this mana only to cast Dragon spells or activate abilities."
+  },
+  "look_top:N optional take:may_N_dragon to_zone:hand": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "look at the top N cards of your library. You may put a Dragon card from among them into your hand."
+  },
+  "controller:owner from_zone:exile put_onto_battlefield put_tapped remove:exile": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "exile this creature, then return it to the battlefield tapped under its owner's control."
+  },
+  "token_color:red token_count:N token_pt:N/N token_type:devil_burn": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "create three 1/1 red Devil creature tokens with {damage ability}."
+  },
+  "draw_count:N exile_from:graveyard target_zone:graveyard": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "exile {T} from an opponent's graveyard. Draw N card."
+  },
+  "token_color:red token_count:N token_pt:N/N token_type:soldier_firebending_N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a 2/2 red Soldier creature token with firebending 1."
+  },
+  "counter:quest counter_count:N optional": {
+   "n": 4,
+   "top": 0.25,
+   "canon": "you may put a quest counter on {permanent}."
+  },
+  "grant_ability:other": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{target} gains {ability}."
+  },
+  "exile_from:graveyard target_zone:graveyard": {
+   "n": 26,
+   "top": 0.846,
+   "canon": "exile {T} graveyard."
+  },
+  "look_top:N optional take:may_N_lesson_saga_shrine to_zone:hand": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "you may look at the top N cards of your library. You may put a Lesson, Saga, or Shrine card from among them into your hand."
+  },
+  "counter:pNpN": {
+   "n": 29,
+   "top": 0.31,
+   "canon": "put a +N/+N counter on {T}."
+  },
+  "affected_filter:cmc_le_x affected_filter:exiledwithsource affected_filter:nonland affected_filter:thisturnentered affected_type:card impulse_draw": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "you may play a nonland card with mana value X or less exiled with this creature that was exiled this turn."
+  },
+  "affected_filter:artifact affected_filter:other affected_scope:you_control affected_type:creature pump_amount:+N/+N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "other artifact creatures you control get +N/+N."
+  },
+  "effect:sacrifice unless_cost": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "sacrifice it unless you {cost}."
+  },
+  "cant_regenerate remove:destroy token_color:green token_count:N token_pt:N/N token_type:sheep": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "destroy {T}. It can't be regenerated. Create a 0/1 green Sheep creature token."
+  },
+  "exile_from:graveyard optional target_zone:graveyard": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "you may exile {T} or sorcery card from your graveyard."
+  },
+  "affected_scope:self impulse_draw": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "you may cast it this turn."
+  },
+  "controller:you from_zone:library put_onto_battlefield put_tapped shuffle tutor tutor_count:N tutor_dest:battlefield_tapped tutor_target:targeted_creature": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "{T} with mana value less than X. Search your library for a creature card, put it onto the battlefield tapped, then shuffle."
+  },
+  "controller:you from_zone:graveyard put_onto_battlefield unless_cost": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "return it to the battlefield under your control unless {cost}."
+  },
+  "kw:deathtouch": {
+   "n": 96,
+   "top": 0.99,
+   "canon": "deathtouch"
+  },
+  "becomes:halfling becomes:scout lifegain lifelink transform": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "this creature becomes a Halfling Scout with lifelink."
+  },
+  "becomes:halfling becomes:rogue transform": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "this creature becomes a Halfling Rogue."
+  },
+  "affected_scope:you_control affected_type:spirit grant_kw:haste grant_kw:trample haste pump_amount:+N/+N trample": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "spirits you control get +N/+N and have trample and haste."
+  },
+  "exile_from:graveyard token_make token_type:copy": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "exile it from your graveyard. Create a token that's a copy of it."
+  },
+  "token_color:green token_count:N token_pt:N/N token_type:cat": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a 1/1 green Cat creature token."
+  },
+  "token_color:white token_count:N token_pt:N/N token_type:dog": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a 1/1 white Dog creature token."
+  },
+  "impulse_draw impulse_draw_count:N look_top:N take:N to_zone:exile": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "exile the top card of your library. Until end of turn, you may play it."
+  },
+  "grant_ability:other remove:destroy": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "{T} creature the active player controls gains {ability}. {Destroy it} {at end of turn}."
+  },
+  "damage damage_amount:N scry token_color:blue token_color:red token_count:N token_pt:N/N token_type:elemental": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "scry N, create a 4/4 blue and red Elemental creature token, and this creature deals N damage to {target}."
+  },
+  "color:black color:blue kw:class num:N": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "class level 2 {cost}"
+  },
+  "affected_filter:chosenmodecosplay affected_type:card": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "{Cosplay mode effect}."
+  },
+  "affected_filter:chosenmodescience affected_type:card": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "{Science mode effect}."
+  },
+  "scales:counters": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "{T} creature gains double strike {for each counter}."
+  },
+  "cast_free from_zone:exile optional return to_zone:library": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "counter {T}. {You may cast N card without paying its mana cost.} Put {it} from exile into your library."
+  },
+  "affected_scope:self grant_kw:haste grant_kw:vigilance haste vigilance": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "this creature has vigilance and haste."
+  },
+  "look_top:N optional take:may_N_aura to_zone:hand": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "you may look at the top N cards of your library. You may put an Aura card from among them into your hand."
+  },
+  "token_color:white token_count:N token_pt:N/N token_type:human_soldier": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a 1/1 white Human Soldier creature token."
+  },
+  "cast_free effect:sacrifice from_zone:exile look_top:N optional return take:all to_zone:exile to_zone:hand": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "you may sacrifice this enchantment. When you do, look at the top N cards of your library, exile them, you may cast one without paying its mana cost, and return the rest to your hand."
+  },
+  "affected_scope:you_control affected_type:creature condition:at_least_N_creature_you_control grant_kw:vigilance pump_amount:+N/+N vigilance": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "as long as you control three or more creatures, creatures you control get +N/+N and have vigilance."
+  },
+  "affected_scope:you_control affected_type:creature condition:at_least_N_creature_you_control grant_kw:trample pump_amount:+N/+N trample": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "as long as you control six or more creatures, creatures you control get +N/+N and have trample."
+  },
+  "affected_scope:you_control affected_type:creature condition:at_least_N_creature_you_control double_strike grant_kw:double_strike pump_amount:+N/+N": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "as long as you control nine or more creatures, creatures you control get +N/+N and have double strike."
+  },
+  "token_cardtype:artifact token_color:colorless token_count:N token_pt:N/N token_type:servo": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a 1/1 colorless Servo artifact creature token."
+  },
+  "token_cardtype:artifact token_color:colorless token_count:N token_kw:flying token_pt:N/N token_type:thopter": {
+   "n": 10,
+   "top": 1.0,
+   "canon": "create a 1/1 colorless Thopter artifact creature token with flying."
+  },
+  "token_cardtype:artifact token_color:colorless token_count:N token_pt:N/N token_type:construct": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a 4/4 colorless Construct artifact creature token."
+  },
+  "draw_count:N lifegain_amount:N modal:N_of_N remove:exile token_color:white token_count:N token_pt:N/N token_type:soldier": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "choose one - Draw N card; or create two 1/1 white Soldier creature tokens; or you gain N life."
+  },
+  "look_top:N optional take:may_N_artifact to_zone:hand": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "you may look at the top N cards of your library. You may put an artifact card from among them into your hand."
+  },
+  "kw:reach": {
+   "n": 88,
+   "top": 0.955,
+   "canon": "reach"
+  },
+  "affected_scope:you_control affected_type:creature condition:at_least_N_land_you_control pump_amount:+N/+N": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "creatures you control get +N/+N as long as you control ten or more lands."
+  },
+  "look_top:N optional rest_to_zone:hand take:may_N_land to_zone:battlefield": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "you may look at the top card of your library. You may put a land card from among them onto the battlefield. Put the rest into your hand."
+  },
+  "token_cardtype:artifact token_color:blue token_count:N token_kw:flying token_pt:N/N token_type:thopter": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create two 1/1 blue Thopter artifact creature tokens with flying."
+  },
+  "affected_filter:white affected_scope:you_control affected_type:creature grant_kw:vigilance vigilance": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "white creatures you control have vigilance."
+  },
+  "affected_filter:blue affected_scope:you_control affected_type:creature grant_kw:hexproof hexproof": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "blue creatures you control have hexproof."
+  },
+  "affected_filter:black affected_scope:you_control affected_type:creature grant_kw:lifelink lifegain lifelink": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "black creatures you control have lifelink."
+  },
+  "affected_filter:red affected_scope:you_control affected_type:creature first_strike grant_kw:first_strike": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "red creatures you control have first strike."
+  },
+  "affected_filter:green affected_scope:you_control affected_type:creature grant_kw:trample trample": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "green creatures you control have trample."
+  },
+  "counter:soul token_color:white token_count:N token_kw:flying token_pt:N/N token_type:spirit": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "put a soul counter on this enchantment. Create a 2/2 white Spirit creature token with flying."
+  },
+  "affected_scope:you_control affected_type:spirit condition:card_self_counters_geN_soul pump_amount:+N/+N": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "spirits you control get +N/+N as long as this enchantment has five or more soul counters on it."
+  },
+  "counter:eachfromsource from_zone:graveyard return shuffle to_zone:library": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "put each counter it had on {T}. Shuffle {card} from your graveyard into your library."
+  },
+  "counter:quest counter_count:N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "put a quest counter on this creature."
+  },
+  "replace:scry_to_replaceeffect": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "if you would scry, {replacement effect}."
+  },
+  "look_top:N optional take:may_N_creature_kraken_creature_leviathan_creature_octopus_creature_serpent to_zone:battlefield tutor tutor_count:N tutor_dest:library tutor_target": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "look at the top card of your library. You may put a Kraken, Leviathan, Octopus, or Serpent creature card from among them onto the battlefield. {Put the rest on the library}."
+  },
+  "counter:bounty counter_count:N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "put a bounty counter on {target}."
+  },
+  "kw:enlist": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "enlist"
+  },
+  "cast_free look_top:x optional rest_order:bottom_random rest_to_zone:library take:may_N_instant_cmc_le_x_sorcery_cmc_le_x to_zone:exile": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "you may look at the top X cards of your library. You may exile an instant or sorcery card with mana value X or less from among them and cast it without paying its mana cost. Put the rest on the bottom of your library in a random order."
+  },
+  "token_color:colorless token_count:N token_pt:N/N token_type:spirit_spiritshadow": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "create a 1/1 colorless Spirit creature token."
+  },
+  "counter:pNpN counter_count:N counter_count:x x_is:previous_result": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "put {N} counters on it. Put X +N/+N counters on it, where X is the number of counters put this way."
+  },
+  "token_cardtype:artifact token_color:white token_count:N token_type:x_x_gnome_soldier_total_artifacts_creatures": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "create a white Gnome Soldier artifact creature token with \"This creature's power and toughness are each equal to the total number of artifacts and creatures you control.\""
+  },
+  "transform": {
+   "n": 4,
+   "top": 0.5,
+   "canon": "transform."
+  },
+  "exile_from:graveyard optional target_zone:graveyard token_make token_type:copy": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "you may exile {T} card with power less than zero from your graveyard. Create a token that's a copy of it."
+  },
+  "impulse_draw impulse_draw_count:N look_top:N mana_source modal:N_of_N take:all to_zone:exile token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_type:treasure": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "choose up to five {modes} - Create a Treasure token."
+  },
+  "forge_line:starting_intensity": {
+   "n": 4,
+   "top": 0.5,
+   "canon": "starting intensity {N}."
+  },
+  "affected_scope:self flying grant_kw:flying grant_kw:vigilance vigilance": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "this creature has flying and vigilance."
+  },
+  "steal steal_grants_haste": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "gain control of {T} or suspected creature{D}. It gains haste."
+  },
+  "affected_filter:chosenmodemirran affected_type:card": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "cards {Mirran mode effect}."
+  },
+  "affected_filter:chosenmodephyrexian affected_type:card": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "cards {Phyrexian mode effect}."
+  },
+  "condition:card_self_issolved": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "to solve - {condition}."
+  },
+  "becomes:creature becomes:elemental haste trample transform": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "this creature gains trample and haste. {T} becomes an Elemental creature."
+  },
+  "impulse_draw impulse_draw_count:x look_top:x take:all to_zone:exile": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "{T} exiles the top X cards of their library; you may play those cards{D}."
+  },
+  "color:blue color:red kw:class num:N": {
+   "n": 4,
+   "top": 0.25,
+   "canon": "class level 2 {cost} (blue and red)."
+  },
+  "discard_count:N draw_count:N": {
+   "n": 4,
+   "top": 0.5,
+   "canon": "draw N cards, then discard N cards."
+  },
+  "monarch": {
+   "n": 5,
+   "top": 1.0,
+   "canon": "you become the monarch."
+  },
+  "kw:bargain": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "bargain"
+  },
+  "cast_free exile_from:library from_zone:exile optional return shuffle to_zone:hand tutor tutor_count:N tutor_dest:exile tutor_target:card": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "search your library for N card, exile it, then shuffle. You may cast it without paying its mana cost. Return it to your hand and shuffle."
+  },
+  "remove:bounce": {
+   "n": 110,
+   "top": 0.591,
+   "canon": "return {T} to its owner's hand."
+  },
+  "shuffle": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "shuffle {it} into its owner's library."
+  },
+  "look_top:N piles_split:you reveal": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "look at the top N cards of your library and reveal them. Separate them into two piles. {Put counters, create tokens, mill}."
+  },
+  "condition:at_least_N_creature_isdamaged": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "to solve - {three or more creatures are damaged}."
+  },
+  "exile_from:graveyard grant_ability:damagedone_trigger target_zone:graveyard": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "exile {T} or sorcery card from your graveyard. {It} gains a damage-dealt triggered ability."
+  },
+  "remove:exile saga_chapter:N": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "i - Exile {T} with mana value 3 or greater."
+  },
+  "controller:you counter:pNpN_loyalty counter_count:N from_zone:graveyard put_onto_battlefield saga_chapter:N target_zone:graveyard": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "III - Return {T} or planeswalker card from your graveyard to the battlefield under your control. Put a +N/+N or loyalty counter on it."
+  },
+  "from_zone:exile pump_amount:+x/+x return shuffle to_zone:library x_is:triggering_counters_oil": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "it gets +X/+X, where X is the number of oil counters on it."
+  },
+  "damage damage_amount:x x_is:optionalgenericcostpaid_x_N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "this spell deals X damage to {T} or planeswalker."
+  },
+  "counter:fuse counter_count:N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "put a fuse counter on {T}."
+  },
+  "token_color:green token_color:white token_count:x token_pt:N/N token_type:citizen x_is:triggering_counters_plus_one": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "create X 1/1 green and white Citizen creature tokens, where X is the number of +N/+N counters on it plus one."
+  },
+  "affected_filter:other affected_scope:you_control affected_type:creature grant_kw:haste haste": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "other creatures you control have haste."
+  },
+  "controller:owner from_zone:graveyard put_onto_battlefield": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "put it onto the battlefield under its owner's control."
+  },
+  "pump_amount:+x/+x x_is:count_aura_you_control": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "it gets +X/+X{D}, where X is the number of Auras you control."
+  },
+  "token_color:colorless token_color:red token_count:N": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "create a 1/1 colorless and red token."
+  },
+  "counter:time counter_count:N look_top:x optional take:may_N_permanent_nonland_cmc_le_N to_zone:battlefield": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "you may put a time counter on this creature. If you do, look at the top X cards of your library and you may put a nonland permanent card with mana value 3 or less from among them onto the battlefield."
+  },
+  "optional": {
+   "n": 4,
+   "top": 0.5,
+   "canon": "you may N."
+  },
+  "shuffle tutor tutor_count:N tutor_dest:hand tutor_target:plains_basic_swamp_basic_forest_basic": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "search your library for a Plains, Swamp or Forest card, put it into your hand, then shuffle."
+  },
+  "token_color:white token_count:N token_type:x_x_spirit": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "create an X/X white Spirit creature token."
+  },
+  "affected_filter:red affected_scope:you_control affected_type:creature pump_amount:+N/+N": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "red creatures you control get +N/+N."
+  },
+  "affected_filter:white affected_scope:you_control affected_type:creature pump_amount:+N/+N": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "white creatures you control get +N/+N."
+  },
+  "draw_count:N lifegain_amount:N mana_source token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:blue token_color:colorless token_count:N token_pt:N/N token_type:fish token_type:treasure": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a Treasure token, you gain N life, create two 1/1 blue Fish creature tokens, and draw N card."
+  },
+  "effect:sacrifice sacrifice_type:self": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "sacrifice this Aura."
+  },
+  "shuffle tutor tutor_count:up_to_N tutor_dest:library tutor_target:basic_land": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "search your library for up to four basic land cards, put them on the library, then shuffle."
+  },
+  "counter:charge counter_count:N": {
+   "n": 4,
+   "top": 1.0,
+   "canon": "put a charge counter on this artifact."
+  },
+  "condition:card_self_counters_geN_charge token_color:red token_count:x token_kw:haste token_pt:N/N token_type:elemental x_is:remembered_count": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "if this artifact has five or more charge counters on it, create X 3/1 red Elemental creature tokens with haste."
+  },
+  "counter:pNpN counter_count:x token_color:blue token_color:green token_count:N token_pt:N/N token_type:fractal x_is:counters_on_this_study": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a 0/0 green and blue Fractal creature token, then put X +N/+N counters on it, where X is the number of counters on this enchantment."
+  },
+  "mana_source token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_type:treasure": {
+   "n": 49,
+   "top": 0.98,
+   "canon": "create a Treasure token."
+  },
+  "draw_count:x life_loss_amount:x x_is:players_haspropertywasdealtcombatdamagethisturnby_ca": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "draw X cards."
+  },
+  "token_color:green token_color:white token_count:N token_pt:N/N token_type:citizen": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "create a 1/1 green and white Citizen creature token."
+  },
+  "grant_kw:trample pump_amount:+N/+N": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "{T} gets +N/+N and gains trample{D}."
+  },
+  "becomes:kithkin becomes:soldier transform": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "this creature becomes a Kithkin Soldier."
+  },
+  "becomes:avatar becomes:kithkin transform": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "this creature becomes a Kithkin Avatar."
+  },
+  "token_color:white token_count:N token_pt:N/N token_type:soldier": {
+   "n": 116,
+   "top": 0.474,
+   "canon": "create a 1/1 white Soldier creature token."
+  },
+  "exile_from:hand": {
+   "n": 4,
+   "top": 1.0,
+   "canon": "exile N card from your hand."
+  },
+  "affected_filter:exiledwithsource affected_type:card impulse_draw": {
+   "n": 3,
+   "top": 1.0,
+   "canon": "you may play cards exiled with this creature."
+  },
+  "token_cardtype:artifact token_color:colorless token_count:N token_pt:N/N token_type:construct_total_artifacts": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "create a 0/0 colorless Construct artifact creature token."
+  },
+  "kw:defender": {
+   "n": 47,
+   "top": 1.0,
+   "canon": "defender"
+  },
+  "grant_ability:damagedone_trigger pump_amount:+N/+N": {
+   "n": 3,
+   "top": 0.333,
+   "canon": "{T} gets +N/+N{D} and gains {damage trigger ability}."
+  },
+  "affected_scope:self deathtouch double_strike first_strike flying grant_kw:deathtouch grant_kw:double_strike grant_kw:first_strike grant_kw:flying grant_kw:haste grant_kw:hexproof grant_kw:indestructible grant_kw:lifelink grant_kw:menace grant_kw:reach grant_kw:vigilance haste hexproof indestructible lifegain lifelink menace reach vigilance": {
+   "n": 3,
+   "top": 0.667,
+   "canon": "this creature has flying, first strike, double strike, deathtouch, haste, hexproof, indestructible, lifelink, menace, reach and vigilance."
+  },
+  "counter:oil": {
+   "n": 2,
+   "top": 0.5,
+   "canon": "put an oil counter on {T}."
+  },
+  "counter:pNpN discard_count:N draw_count:N grant_kw:menace modal:N_of_N": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "choose one --- Put a +N/+N counter on {target}; or {T} gains menace{D}; or discard N card, then draw N card."
+  },
+  "draw_count:x x_is:cardbasepower": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "draw X cards, where X is this creature's base power."
+  },
+  "affected_filter:horror affected_scope:you_control affected_type:card grant_kw:menace menace": {
+   "n": 2,
+   "top": 1.0,
+   "canon": "horrors you control have menace."
+  },
+  "counter:rope": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "put a rope counter on {T}."
+  },
+  "token_make": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "create a token copy}."
+  },
+  "controller:you from_zone:graveyard put_onto_battlefield put_tapped target_zone:graveyard": {
+   "n": 17,
+   "top": 0.588,
+   "canon": "put {T} card from your graveyard onto the battlefield tapped under your control."
+  },
+  "becomes:kithkin becomes:scout transform": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "this creature becomes a Kithkin Scout."
+  },
+  "color:blue kw:kicker num:N": {
+   "n": 1,
+   "top": 1.0,
+   "canon": "kicker {N}{U}"
+  },
   "condition:creature_you_control_power_ge_N draw_count:N": {
    "n": 15,
    "top": 1.0,
@@ -626,11 +2891,6 @@
    "top": 0.786,
    "canon": "add N mana of any one color. Spend this mana only to cast creature spells or activate abilities."
   },
-  "counter:pNpN": {
-   "n": 21,
-   "top": 0.286,
-   "canon": "put a +N/+N counter on ~."
-  },
   "mana:green mana_amount:x mana_source x_is:count_elf": {
    "n": 17,
    "top": 1.0,
@@ -646,16 +2906,6 @@
    "top": 1.0,
    "canon": "put this card from your graveyard onto the battlefield tapped under its owner's control."
   },
-  "controller:you from_zone:graveyard put_onto_battlefield target_zone:graveyard": {
-   "n": 38,
-   "top": 0.526,
-   "canon": "put {T} card from your graveyard onto the battlefield under your control."
-  },
-  "kw:flying": {
-   "n": 357,
-   "top": 0.98,
-   "canon": "flying"
-  },
   "controller:owner from_zone:graveyard put_onto_battlefield put_tapped target_zone:graveyard": {
    "n": 1,
    "top": 1.0,
@@ -665,31 +2915,6 @@
    "n": 1,
    "top": 1.0,
    "canon": "put {T} card from your graveyard onto the battlefield under its owner's control."
-  },
-  "kw:vigilance": {
-   "n": 100,
-   "top": 0.96,
-   "canon": "vigilance"
-  },
-  "remove:destroy": {
-   "n": 338,
-   "top": 0.379,
-   "canon": "destroy {T} or enchantment."
-  },
-  "draw_count:N": {
-   "n": 390,
-   "top": 0.572,
-   "canon": "draw N card."
-  },
-  "token_color:white token_count:N token_pt:N/N token_type:soldier": {
-   "n": 113,
-   "top": 0.46,
-   "canon": "create a 1/1 white Soldier creature token."
-  },
-  "pump_amount:+N/+N": {
-   "n": 24,
-   "top": 0.375,
-   "canon": "this creature gets +N/+N{D}."
   },
   "scry": {
    "n": 19,
@@ -706,25 +2931,10 @@
    "top": 0.652,
    "canon": "encore {N}{R}"
   },
-  "mana_source token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_type:treasure": {
-   "n": 48,
-   "top": 1.0,
-   "canon": "create a Treasure token."
-  },
   "kw:myriad": {
    "n": 15,
    "top": 1.0,
    "canon": "myriad"
-  },
-  "kw:first_strike": {
-   "n": 176,
-   "top": 0.96,
-   "canon": "first strike"
-  },
-  "damage damage_amount:N": {
-   "n": 152,
-   "top": 0.217,
-   "canon": "this creature deals N damage to {target}."
   },
   "affected_filter:other affected_scope:you_control affected_type:creature pump_amount:+N/+N": {
    "n": 14,
@@ -771,11 +2981,6 @@
    "top": 0.538,
    "canon": "reveal the top N cards of your library. An opponent separates them into two piles. Put one pile into your hand and the other into your graveyard."
   },
-  "counter:pNpN counter_count:N": {
-   "n": 44,
-   "top": 0.364,
-   "canon": "put a +N/+N counter on {T}."
-  },
   "draw_count:N limit:once_per_turn": {
    "n": 27,
    "top": 0.593,
@@ -786,55 +2991,25 @@
    "top": 0.192,
    "canon": "return {T} to its owner's hand or put it into its owner's library {position}."
   },
-  "controller:you from_zone:hand put_onto_battlefield": {
-   "n": 12,
-   "top": 0.5,
-   "canon": "put {filter} from your hand onto the battlefield under your control."
-  },
   "kw:offspring num:N": {
    "n": 17,
    "top": 0.941,
    "canon": "offspring {N}"
-  },
-  "kw:deathtouch": {
-   "n": 93,
-   "top": 0.989,
-   "canon": "deathtouch"
-  },
-  "kw:lifelink": {
-   "n": 105,
-   "top": 0.971,
-   "canon": "lifelink"
   },
   "affected_scope:you_control affected_type:creature grant_kw:haste haste": {
    "n": 14,
    "top": 1.0,
    "canon": "creatures you control have haste."
   },
-  "controller:you from_zone:graveyard put_onto_battlefield put_tapped": {
-   "n": 12,
-   "top": 0.667,
-   "canon": "put ~ from your graveyard onto the battlefield tapped under your control."
-  },
   "condition:count_creature_you_control_geN mana:green mana_amount:N mana_amount_if:N mana_conditional mana_source": {
    "n": 13,
    "top": 0.769,
    "canon": "add {G}. If you control four or more creatures, add {G}{G} instead."
   },
-  "lifegain_amount:N": {
-   "n": 41,
-   "top": 1.0,
-   "canon": "you gain N life."
-  },
   "token_color:green token_count:N token_pt:N/N token_type:beast": {
    "n": 34,
    "top": 0.647,
    "canon": "create a 3/3 green Beast creature token."
-  },
-  "kw:trample": {
-   "n": 107,
-   "top": 0.963,
-   "canon": "trample"
   },
   "pump_amount:-x/-x pump_single x_is:life_gained_this_turn": {
    "n": 14,
@@ -851,20 +3026,10 @@
    "top": 1.0,
    "canon": "add {G}."
   },
-  "controller:you from_zone:library put_onto_battlefield put_tapped shuffle tutor tutor_count:N tutor_dest:battlefield_tapped tutor_target:basic_land": {
-   "n": 55,
-   "top": 0.782,
-   "canon": "search your library for a basic land card, put it onto the battlefield tapped, then shuffle."
-  },
   "discard_count:N draw_count:x scales:island x_is:count_island_you_control": {
    "n": 13,
    "top": 0.692,
    "canon": "discard N cards, then draw N card for each Island you control."
-  },
-  "mana:colorless mana_amount:N mana_source": {
-   "n": 123,
-   "top": 0.593,
-   "canon": "add {C}."
   },
   "from_zone:graveyard return target_zone:graveyard to_zone:hand": {
    "n": 54,
@@ -936,11 +3101,6 @@
    "top": 0.688,
    "canon": "creature spells of the chosen type cost {N} less to cast."
   },
-  "kw:reach": {
-   "n": 85,
-   "top": 0.953,
-   "canon": "reach"
-  },
   "affected_filter:enchantedby affected_type:creature restrict_kind:cant_attack_or_block": {
    "n": 16,
    "top": 1.0,
@@ -971,11 +3131,6 @@
    "top": 0.824,
    "canon": "create a 2/2 colorless Shapeshifter creature token with changeling."
   },
-  "phase_out": {
-   "n": 11,
-   "top": 0.545,
-   "canon": "proliferate. It phases out."
-  },
   "kw:delve": {
    "n": 25,
    "top": 0.96,
@@ -990,11 +3145,6 @@
    "n": 21,
    "top": 0.667,
    "canon": "draw N card for each Ally you control."
-  },
-  "kw:flash": {
-   "n": 105,
-   "top": 0.99,
-   "canon": "flash"
   },
   "token_color:black token_count:N token_pt:N/N token_type:serf": {
    "n": 17,
@@ -1015,11 +3165,6 @@
    "n": 14,
    "top": 0.929,
    "canon": "creature spells you cast cost {N} less to cast."
-  },
-  "kw:haste": {
-   "n": 166,
-   "top": 0.982,
-   "canon": "haste"
   },
   "look_top:N take:all_goblin to_zone:hand": {
    "n": 22,
@@ -1066,11 +3211,6 @@
    "top": 1.0,
    "canon": "create a Food token."
   },
-  "exile_from:graveyard target_zone:graveyard": {
-   "n": 23,
-   "top": 0.957,
-   "canon": "exile {T} graveyard."
-  },
   "color:red kw:dash num:N": {
    "n": 16,
    "top": 0.938,
@@ -1115,11 +3255,6 @@
    "n": 3,
    "top": 0.667,
    "canon": "you get an energy counter."
-  },
-  "remove:bounce": {
-   "n": 109,
-   "top": 0.596,
-   "canon": "return {T} to its owner's hand."
   },
   "affected_type:creature grant_kw:ward": {
    "n": 11,
@@ -1181,16 +3316,6 @@
    "top": 1.0,
    "canon": "creatures you control get +N/+N."
   },
-  "token_make token_type:copy": {
-   "n": 40,
-   "top": 0.675,
-   "canon": "create a token that's a copy of {T}."
-  },
-  "cant_be_countered": {
-   "n": 17,
-   "top": 0.647,
-   "canon": "this spell can't be countered."
-  },
   "cant_be_blocked:by_creature_blue": {
    "n": 14,
    "top": 0.643,
@@ -1205,11 +3330,6 @@
    "n": 16,
    "top": 0.938,
    "canon": "sacrifice a creature."
-  },
-  "affected_type:creature pump_amount:+N/+N": {
-   "n": 99,
-   "top": 0.707,
-   "canon": "equipped creature gets +N/+N."
   },
   "condition:no_card_you_own_in_library replace:draw_to_winsgame": {
    "n": 14,
@@ -1256,20 +3376,10 @@
    "top": 1.0,
    "canon": "creatures you control have trample."
   },
-  "kw:defender": {
-   "n": 44,
-   "top": 1.0,
-   "canon": "defender"
-  },
   "controller:owner from_zone:exile put_onto_battlefield return_exiled": {
    "n": 12,
    "top": 0.5,
    "canon": "return the exiled card to the battlefield under its owner's control."
-  },
-  "token_color:colorless token_count:N token_pt:N/N token_type:eldrazi_spawn": {
-   "n": 18,
-   "top": 0.944,
-   "canon": "create five 0/1 colorless Eldrazi Spawn creature tokens."
   },
   "lifegain_amount:x remove:exile x_is:target_power": {
    "n": 21,
@@ -1280,11 +3390,6 @@
    "n": 13,
    "top": 0.538,
    "canon": "~ deals N damage to {T} for each Swamp you control. You gain N life for each Swamp you control."
-  },
-  "controller:you from_zone:graveyard put_onto_battlefield put_tapped target_zone:graveyard": {
-   "n": 16,
-   "top": 0.625,
-   "canon": "put {T} card from your graveyard onto the battlefield tapped under your control."
   },
   "activation_restriction condition:at_least_N_land_you_control mana:colorless mana_amount:N mana_conditional mana_source": {
    "n": 13,
@@ -1321,11 +3426,6 @@
    "top": 1.0,
    "canon": "create a 1/1 red Elemental creature token."
   },
-  "delayed:end_step effect:sacrifice token_make token_type:copy": {
-   "n": 22,
-   "top": 0.864,
-   "canon": "create a token that's a copy of {T} creature you control. Sacrifice it at the beginning of the next end step."
-  },
   "kw:convoke": {
    "n": 14,
    "top": 1.0,
@@ -1341,16 +3441,6 @@
    "top": 0.5,
    "canon": "kicker {cost}"
   },
-  "pump_amount:+x/+x": {
-   "n": 8,
-   "top": 0.25,
-   "canon": "{T} gets +X/+X{D}. If this spell was kicked, X is 4."
-  },
-  "kw:menace": {
-   "n": 33,
-   "top": 1.0,
-   "canon": "menace"
-  },
   "loses_all_abilities restrict_kind:loses_abilities": {
    "n": 20,
    "top": 1.0,
@@ -1365,11 +3455,6 @@
    "n": 13,
    "top": 0.769,
    "canon": "search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle."
-  },
-  "kw:ward num:N": {
-   "n": 16,
-   "top": 1.0,
-   "canon": "ward {N}"
   },
   "affected_filter:other affected_scope:you_control affected_type:creature grant_kw:trample trample": {
    "n": 11,
@@ -1436,11 +3521,6 @@
    "top": 1.0,
    "canon": "create eight 2/2 black Zombie Knight creature tokens with menace."
   },
-  "kw:chapter num:N": {
-   "n": 4,
-   "top": 0.5,
-   "canon": "chapter III"
-  },
   "restrict_kind:doesnt_untap saga_chapter:N": {
    "n": 1,
    "top": 1.0,
@@ -1470,11 +3550,6 @@
    "n": 20,
    "top": 0.65,
    "canon": "cycling {U}"
-  },
-  "counter:mNmN counter_count:N": {
-   "n": 21,
-   "top": 1.0,
-   "canon": "put three +N/+N counters on {T}."
   },
   "cost_reduce cost_reduce_amount:N cost_reduce_for:dragon cost_reduce_mana:generic": {
    "n": 13,
@@ -1570,11 +3645,6 @@
    "n": 4,
    "top": 1.0,
    "canon": "exile {T} or sorcery card from a graveyard. You may play it{D}."
-  },
-  "monarch": {
-   "n": 4,
-   "top": 1.0,
-   "canon": "you become the monarch."
   },
   "affected_type:you": {
    "n": 6,
@@ -1701,11 +3771,6 @@
    "top": 1.0,
    "canon": "exile {T}. Put N +N/+N counter(s) on it."
   },
-  "damage": {
-   "n": 3,
-   "top": 0.333,
-   "canon": "this creature deals N damage to {T}."
-  },
   "put_from:library put_onto_battlefield put_tapped shuffle tempo:+N tutor tutor_count:N tutor_count:up_to_N tutor_dest:battlefield_tapped tutor_dest:hand tutor_dest:library tutor_target:basic_land tutor_target:land_isremembered": {
    "n": 1,
    "top": 1.0,
@@ -1720,11 +3785,6 @@
    "n": 3,
    "top": 1.0,
    "canon": "add Y mana of any color."
-  },
-  "cost_reduce": {
-   "n": 15,
-   "top": 0.533,
-   "canon": "{Spells} cost {N} less to cast."
   },
   "put_from:library put_onto_battlefield put_tapped shuffle tempo:+N tutor tutor_count:N tutor_dest:battlefield_tapped tutor_target:basic_land": {
    "n": 1,
@@ -1765,11 +3825,6 @@
    "n": 1,
    "top": 1.0,
    "canon": "create five 0/1 colorless Eldrazi Spawn creature tokens."
-  },
-  "forge_line:etbreplacement": {
-   "n": 5,
-   "top": 0.2,
-   "canon": "{As this artifact enters, replacement effect.}"
   },
   "put_from:graveyard put_onto_battlefield put_tapped reanimate target_zone:graveyard tempo:+N": {
    "n": 1,
@@ -1820,11 +3875,6 @@
    "n": 11,
    "top": 0.364,
    "canon": "add {C}. Spend this mana only {restriction}."
-  },
-  "life_loss": {
-   "n": 4,
-   "top": 0.25,
-   "canon": "{That player} loses N life."
   },
   "shuffle tempo:+N tutor tutor_count:N tutor_dest:hand tutor_target:card_goblin": {
    "n": 1,
@@ -2106,11 +4156,6 @@
    "top": 0.5,
    "canon": "this spell deals X damage to {T} and {player} gains X life, where X is the number of Swamps you control."
   },
-  "token_cardtype:artifact token_color:colorless token_count:N token_kw:flying token_pt:N/N token_type:thopter": {
-   "n": 7,
-   "top": 1.0,
-   "canon": "create a 1/1 colorless Thopter artifact creature token with flying."
-  },
   "put_from:graveyard put_onto_battlefield put_tapped reanimate target_zone:graveyard": {
    "n": 3,
    "top": 0.667,
@@ -2145,11 +4190,6 @@
    "n": 3,
    "top": 0.667,
    "canon": "this creature gets +N/+N as long as a black permanent is on the battlefield."
-  },
-  "shuffle": {
-   "n": 2,
-   "top": 0.5,
-   "canon": "shuffle all cards from {your graveyard} into your library. {T} mills {N} cards."
   },
   "affected_filter:other affected_filter:soldier affected_scope:you_control affected_type:creature pump_amount:+N/+N static_grant:vigilance static_pump vigilance": {
    "n": 3,
@@ -2346,11 +4386,6 @@
    "top": 0.333,
    "canon": "you may put a creature card from a graveyard onto the battlefield."
   },
-  "optional": {
-   "n": 2,
-   "top": 1.0,
-   "canon": "you may N."
-  },
   "from_zone:exile optional put_onto_battlefield remove:exile": {
    "n": 5,
    "top": 0.6,
@@ -2451,45 +4486,20 @@
    "top": 1.0,
    "canon": "partner with {name}"
   },
-  "discard_count:N draw_count:N": {
-   "n": 2,
-   "top": 1.0,
-   "canon": "discard N card, then draw N cards."
-  },
-  "forge_line:etbcounter": {
-   "n": 5,
-   "top": 0.4,
-   "canon": "this creature enters with {N} oil counters on it."
-  },
   "affected_scope:self pump_amount:+x/+x x_is:counters_on_this_oil": {
    "n": 2,
    "top": 1.0,
    "canon": "this creature gets +X/+X, where X is the number of oil counters on it."
-  },
-  "counter:oil": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "put an oil counter on {target}."
   },
   "kw:start_your_engines": {
    "n": 2,
    "top": 1.0,
    "canon": "start your engines!"
   },
-  "affected_scope:self": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "{Effect on this artifact}."
-  },
   "affected_scope:opp_control affected_type:artifact restrict_kind:cant_activate": {
    "n": 1,
    "top": 1.0,
    "canon": "activated abilities of artifacts your opponents control can't be activated."
-  },
-  "counter:oil counter_count:N": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "put an oil counter on {target}."
   },
   "restrict_kind:cant_attack_or_block restrict_scope:self": {
    "n": 1,
@@ -2506,11 +4516,6 @@
    "top": 1.0,
    "canon": "gain control of {T} controlled by a player who controls an Island for as long as this creature remains tapped."
   },
-  "kw:choose_a_background": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "choose a Background"
-  },
   "counter:wind counter_count:N": {
    "n": 1,
    "top": 1.0,
@@ -2525,11 +4530,6 @@
    "n": 1,
    "top": 1.0,
    "canon": "equipped creature gets +X/+0 and has menace, where X is your party size."
-  },
-  "forge_line:starting_intensity": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "starting intensity N"
   },
   "affected_scope:you_control affected_type:creature pump_amount:+x/+N x_is:intensity": {
    "n": 1,
@@ -2581,35 +4581,10 @@
    "top": 1.0,
    "canon": "this creature can't block."
   },
-  "replace:moved_to_daytime": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "{Daytime replacement effect}."
-  },
-  "cost_reduce cost_reduce_for:instant cost_reduce_for:sorcery": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "instant and sorcery spells cost {N} less to cast."
-  },
-  "exile_from:graveyard": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "exile {it} from a graveyard."
-  },
   "affected_filter:counters_geN_stash affected_filter:youdontown affected_type:card impulse_draw scales:counters": {
    "n": 1,
    "top": 1.0,
    "canon": "you may play cards you don't own with stash counters on them."
-  },
-  "affected_type:creature": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "{Enchanted creature effect}."
-  },
-  "cast_free optional": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "you may cast {N card} without paying its mana cost."
   },
   "kw:undying": {
    "n": 1,
@@ -2625,11 +4600,6 @@
    "n": 1,
    "top": 1.0,
    "canon": "escape-{R}, {cost 8}"
-  },
-  "cant_be_blocked:by_": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "this creature can't be blocked {by exception}."
   },
   "discard_count:N draw_count:x optional x_is:remembered_amount": {
    "n": 1,
@@ -2650,11 +4620,6 @@
    "n": 1,
    "top": 1.0,
    "canon": "destroy {T}."
-  },
-  "counter:quest counter_count:N optional": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "you may put a quest counter on this enchantment."
   },
   "affected_filter:tapped affected_scope:you_control affected_type:creature condition:card_equippedby_tapped pump_amount:+N/+N": {
    "n": 1,
@@ -2680,11 +4645,6 @@
    "n": 1,
    "top": 1.0,
    "canon": "this creature gets +N/+N and has deathtouch."
-  },
-  "affected_filter:enchantedby affected_type:creature restrict_kind:doesnt_untap": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "enchanted creature doesn't untap during its controller's untap step."
   },
   "effect:sacrifice unless_cost unless_cost_amount:b": {
    "n": 1,
@@ -2720,11 +4680,6 @@
    "n": 1,
    "top": 1.0,
    "canon": "exile {T} from a graveyard. Each opponent loses N life and you gain N life."
-  },
-  "mana:any mana_amount:N mana_source": {
-   "n": 5,
-   "top": 0.8,
-   "canon": "add one mana of any color."
   },
   "color:blue color:red kw:kicker num:N": {
    "n": 1,
@@ -3006,11 +4961,6 @@
    "top": 1.0,
    "canon": "escape-{G}{U}, Exile N other cards from your graveyard."
   },
-  "effect:sacrifice sacrifice_type:self": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "sacrifice it. {condition}"
-  },
   "controller:you draw_count:N from_zone:hand lifegain_amount:N put_onto_battlefield": {
    "n": 1,
    "top": 1.0,
@@ -3020,11 +4970,6 @@
    "n": 1,
    "top": 1.0,
    "canon": "equipment spells and Vehicle spells you cast cost {N} less to cast."
-  },
-  "affected_scope:self flying grant_kw:flying": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "flying"
   },
   "affected_scope:self condition:threshold pump_amount:+N/+N": {
    "n": 2,
@@ -3061,11 +5006,6 @@
    "top": 1.0,
    "canon": "this spell deals X damage to {T}."
   },
-  "counter:charge counter_count:N": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "put a charge counter on this artifact."
-  },
   "counter:storage counter_count:N": {
    "n": 1,
    "top": 1.0,
@@ -3090,16 +5030,6 @@
    "n": 1,
    "top": 1.0,
    "canon": "other blue creatures you control get +N/+N."
-  },
-  "transform": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "{T} creature {transform effect}."
-  },
-  "exile_from:hand": {
-   "n": 1,
-   "top": 1.0,
-   "canon": "exile N card from your hand."
   },
   "from_zone:exile return to_zone:hand": {
    "n": 1,
