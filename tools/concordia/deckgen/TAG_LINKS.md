@@ -49,8 +49,8 @@ The flat tags the current deck builder reads are derived from the clause: `flip-
 | bounded_by | restricted by a limit | `bounded_by` `sorcery_speed` |
 
 ## Worked examples
-1. **Wingbeat Warrior** (above). Forge: `T:Mode$ TurnFaceUp` gives trigger `flip-up`; `Execute$ TrigPump` leads to `DB$ Pump | KW$ First Strike | ValidTgts$ Creature` which gives verb grant, payload first_strike, affected target:creature; no `Duration$` on a Pump, so `duration:eot`. mtgish: this ability is missing from its output, so the clause comes from Forge only.
-2. **Abzan Battle Priest.** Forge `S:Mode$ Continuous | Affected$ Creature.YouCtrl+counters_GE1_P1P1 | AddKeyword$ Lifelink`; mtgish `EachPermanentLayerEffect(And([IsCardtype(Creature), ControlledByAPlayer(You), HasACounterOfType(PTCounter(+1,+1))]), [AddAbility([Lifelink])])`.
+1. **Wingbeat Warrior** (above). Forge: `T:Mode$ TurnFaceUp` gives trigger `flip-up`; `Execute$ TrigPump` leads to `DB$ Pump | KW$ First Strike | ValidTgts$ Creature` which gives verb grant, payload first_strike, affected target:creature; no `Duration$` on a Pump, so `duration:eot`. The clause comes from the Forge script only.
+2. **Abzan Battle Priest.** Forge `S:Mode$ Continuous | Affected$ Creature.YouCtrl+counters_GE1_P1P1 | AddKeyword$ Lifelink`: affected = creature, you control, with a +1/+1 counter; payload `kw:lifelink`.
 ```
 clauses[1]{id,trigger,cost,condition,verb,payload,affected,duration,limits}:
   c1,static,,counter:p1p1,grant,lifelink,you_control:creature,duration:static,
