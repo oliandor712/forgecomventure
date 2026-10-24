@@ -280,6 +280,14 @@ def cost_text(cs):
     return ", ".join(out) or None
 
 
+def _carries(canon, tags):
+    """a mined phrase can fill a unit's amounts only when it has one slot per amount and no literal number of its own (a body mined without the token size
+    or pump amount cannot say them); False -> compose refuses and the approximate match runs"""
+    bare = re.sub(r"\{[^}]*\}", "", canon)
+    if len(re.findall(r"[+\-]N/[+\-]N|N", canon.replace("{N}", " N "))) != len(nums(tags)): return False
+    return not re.search(r"(?<![\w{])[+\-]?\d+(?:/[+\-]?\d+)?(?![\w}])", bare)
+
+
 def compose(ts):
     """a unit's tags (no named:) -> text built from role parts, or None when some part has no rule"""
     P = parts()
@@ -296,9 +304,10 @@ def compose(ts):
     b = P["body"].get(_pat(R["eff"])) or HAND_BODY.get(_pat(R["eff"]))
     if not b: return None
     body = b["canon"]
+    if not _carries(body, R["eff"]): return None
     if R["target"]:
         tp = _pat(R["target"]); t = P["target"].get(tp) or ({"canon": HAND_TARGET[tp]} if tp in HAND_TARGET else None)
-        if not t or "{T}" not in body: return None
+        if not t or "{T}" not in body or not _carries(t["canon"], R["target"]): return None
         body = body.replace("{T}", fill(t["canon"], nums(R["target"])))
     elif "{T}" in body:
         if not b.get("alt"): return None
@@ -308,14 +317,14 @@ def compose(ts):
     body = fill(body, nums(R["eff"]))
     if R["trig"]:
         t = P["trig"].get(_pat(R["trig"])) or ({"canon": HAND_TRIG[_pat(R["trig"])]} if _pat(R["trig"]) in HAND_TRIG else None)
-        if not t: return None
+        if not t or not _carries(t["canon"], R["trig"]): return None
         return fill(t["canon"], nums(R["trig"])) + ", " + body
     if R["cost"]:
         ct = cost_text(R["cost"])
         if ct: ct = _digits(fill(ct, nums(R["cost"])), nums(R["cost"]))
         else:
             c = P["cost"].get(_pat(R["cost"]))
-            if not c: return None
+            if not c or not _carries(c["canon"], R["cost"]): return None
             ct = fill(c["canon"], nums(R["cost"]))
         return ct + ": " + body[:1].upper() + body[1:]
     return body[:1].upper() + body[1:]
