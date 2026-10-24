@@ -14,6 +14,8 @@ CUE = {      # tag family or family:value -> regex the canon must contain
     "optional": r"\bmay\b", "enters_tapped": r"tapped", "enters_untapped": r"untapped|tapped", "untap": r"\buntap", "regenerate": r"regenerate",
     "mana:white": r"\{w\}|white", "mana:blue": r"\{u\}|blue", "mana:black": r"\{b\}|black", "mana:red": r"\{r\}|red", "mana:green": r"\{g\}|green",
 }
+REVERSE = {"draw": r"draws?", "mill": r"mills?"}
+REV_EXEMPT = ("cycl", "investig", "clue", "rummag", "loot", "connive", "explor", "forge_line", "kw:")
 def lint_rules(d):
     bad = []
     for k, v in d.items():
@@ -28,6 +30,10 @@ def lint_rules(d):
             if fam == "transform" and any(x.startswith("becomes") for x in toks): continue
             if rx and not re.search(rx, canon):
                 bad.append((k, v["canon"], t)); break
+        if k not in [x[0] for x in bad[-1:]]:
+            for word, rx in REVERSE.items():      # the other way round: the canon says draw/mill but no tag of the rule does (mined "life_loss" => "you draw N card and you lose N life")
+                if re.search(rx, canon) and not any(word in t.partition(":")[0] or any(e in t for e in REV_EXEMPT) for t in toks):
+                    bad.append((k, v["canon"], "canon:" + word)); break
     return bad
 def lint(path): return lint_rules(json.load(open(os.path.join(HERE, path), encoding="utf-8")))
 if __name__ == "__main__":
