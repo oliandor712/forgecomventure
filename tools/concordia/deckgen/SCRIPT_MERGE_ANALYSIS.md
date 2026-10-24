@@ -47,13 +47,28 @@ All hold only through late imports inside functions. Root cause: `reverse_check`
 
 Not worth merging: build (567), ability_tags (439), tag_extra (824; split by family if it keeps growing). tag_variant, tag_verify, tag_twins stay modules of the tagger. The small deck-generator CLIs (mine, pool, categorize, hall_roster, budget_lands) share no code, so merging saves files only.
 
-## 5. Duplicated helpers (extract to `common.py`)
+## 5. Duplicated helpers (extract to `common.py`) - verified by reading each copy, 2026-10-24
 
-`norm` (ability_tags, spellbinder_signals, tag_twins, reverse_check); `parse` and `card_text` (ability_tags, build, variants); `snake`, `workdir` (reverse_check, run_log), `q`, memory path (run_memory, remember); `_load`/`_sims` (rule_guard, tag_guard, mtg2llm). The deck-generator duplicates are from import scan only; check them before extracting.
+| Helper | Copies | Verdict |
+|---|---|---|
+| `workdir(run)` | reverse_check, run_log | identical: extract |
+| `q(x)` (TOON quoting) | tag_run, build_reminder_fill, build_token_reference | same intent; compare the three bodies once before extracting |
+| `snake(s)` | tag_run, tag_verify | identical regex: extract |
+| cardsfolder glob (`forge-gui/res/cardsfolder/*/*.txt`) | tag_run (2), tag_twins, build_reminder_fill, build_token_reference, mtg2llm `_load`, oracle_style_stats; ability_tags, pool, staples use their own walk | real duplication: add `common.card_files()` |
+| `_sims` | tag_guard (per-unit sims, reads tag records), rule_guard (swaps rule tables in M, restores them), mtg2llm (not read here) | share only the setup (`original_text`, `Index`, `score`); different bodies, so extract the setup as `score.sim_of(...)`, not the function |
+| `_load(p)` | rule_guard (json or `{}`), mtg2llm `_load` (builds the card-name vocabulary cache) | NOT duplicates; same name only. Leave |
+| `norm` | ability_tags (ability-signature normaliser), tag_twins (Oracle line to template), reverse_check (Oracle text for scoring), spellbinder_signals (card-name key) | four different functions: do NOT merge |
+| `parse` | ability_tags (script to signatures), build (deck file to names), variants (deck file to indexed cards) | only build and variants are similar, and both read a deck file with different output shapes. Leave; at most share the line regex |
+| `card_text` | ability_tags (name to script text), build (cache wrapper around the ability_tags one) | not duplicated: build calls ability_tags |
+| `pool.pkl` load | ability_tags, budget_lands, build, commander_support (2), t1_plan | one line each; extract `common.load_pool()` only for the path, saves nothing else |
+
+Net: the list in the first draft was too broad. Real extractions: `workdir`, `snake`, `q`, `card_files`, the `_sims` setup. Not helpers to merge: `norm`, `parse`, `card_text`, `_load`.
+
+Read now (second pass): the helper bodies above in ability_tags, build, variants, spellbinder_signals, tag_twins, tag_verify, tag_run, reverse_check, run_log, rule_guard, tag_guard, sync, mtg2llm `_load`. Still only skimmed: mine, pool, gen_mono, t1_plan, starter_tune, hall_roster, categorize, budget_lands, staples, commander_support, tag_extra, tag_variant, derived_tags, consistency (no helper claims about them beyond the `pool.pkl` line and the cardsfolder walk, both confirmed by grep).
 
 ## 6. Order of work
 
-1. `common.py` (no behaviour change).
+1. `common.py`: `workdir`, `snake`, `q`, `card_files` only (no behaviour change; compare the three `q` bodies first).
 2. `score.py` split out of reverse_check; fix the cycles.
 3. rule_lint into rule_guard; run_records; reference_files.
 4. Guards consolidation after a full `tag_run.py starter` + `mtg2llm.py mine` shows identical output and scores.
