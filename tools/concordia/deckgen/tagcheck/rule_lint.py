@@ -14,7 +14,7 @@ CUE = {      # tag family or family:value -> regex the canon must contain
     "optional": r"\bmay\b", "enters_tapped": r"tapped", "enters_untapped": r"untapped|tapped", "untap": r"\buntap", "regenerate": r"regenerate",
     "mana:white": r"\{w\}|white", "mana:blue": r"\{u\}|blue", "mana:black": r"\{b\}|black", "mana:red": r"\{r\}|red", "mana:green": r"\{g\}|green",
 }
-REVERSE = {"draw": r"draws?", "mill": r"mills?"}
+REVERSE = {"draw": r"\bdraws?\b", "mill": r"\bmills?\b"}
 REV_EXEMPT = ("cycl", "investig", "clue", "rummag", "loot", "connive", "explor", "forge_line", "kw:")
 def lint_rules(d):
     bad = []
@@ -22,18 +22,18 @@ def lint_rules(d):
         if not isinstance(v, dict) or "canon" not in v: continue
         canon = v["canon"].lower()
         toks = k.split()
+        hit = None
         for t in toks:
             fam = t.partition(":")[0]
             rx = CUE.get(t) or CUE.get(fam)
             if t == "mana_source" and any(x.startswith("token") for x in toks): continue      # a Treasure token is the mana source
             if fam == "counter_count" and "counter:energy" in toks: continue      # {E}
             if fam == "transform" and any(x.startswith("becomes") for x in toks): continue
-            if rx and not re.search(rx, canon):
-                bad.append((k, v["canon"], t)); break
-        if k not in [x[0] for x in bad[-1:]]:
+            if rx and not re.search(rx, canon): hit = t; break
+        if not hit:
             for word, rx in REVERSE.items():      # the other way round: the canon says draw/mill but no tag of the rule does (mined "life_loss" => "you draw N card and you lose N life")
-                if re.search(rx, canon) and not any(word in t.partition(":")[0] or any(e in t for e in REV_EXEMPT) for t in toks):
-                    bad.append((k, v["canon"], "canon:" + word)); break
+                if re.search(rx, canon) and not any(word in t or any(e in t for e in REV_EXEMPT) for t in toks): hit = "canon:" + word; break
+        if hit: bad.append((k, v["canon"], hit))
     return bad
 def lint(path): return lint_rules(json.load(open(os.path.join(HERE, path), encoding="utf-8")))
 if __name__ == "__main__":

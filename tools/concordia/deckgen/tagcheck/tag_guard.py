@@ -45,7 +45,7 @@ def _merge(old, new, so, sn):
     if po and pn and set(po) == set(pn):
         pick = {g: (new if pn[g] > po[g] else old) for g in po}
         if all(v is old for v in pick.values()): return old, "old"
-        if all(v is new for v in pick.values()): return (new if sn[0] >= so[0] else old), ("new" if sn[0] >= so[0] else "old")
+        if all(v is new for v in pick.values()): return new, "new"
         base = new if sn[0] > so[0] else old
         groups = dict(base["groups"])
         for sec, src in pick.items():
@@ -75,7 +75,7 @@ def apply(recs, force=False):
         m, how = _merge(old[n], r, so[n], sn[n]); out.append(m); tally[how] += 1
     kept = tally["old"]
     print("tag_guard: %d same, %d new better, %d merged per group, %d kept stored (new run scored lower)" % (tally["same"], tally["new"], tally["merged"], kept))
-    _save(out)
+    if tally["same"] != len(out) or len(out) != len(old): _save(out)      # rewrite the best file only when it changed
     return out
 
 

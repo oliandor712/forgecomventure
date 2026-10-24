@@ -477,12 +477,11 @@ def render(groups, typing=None):
                 st["partial" if "{effect}" in cp else "composed"] = st.get("partial" if "{effect}" in cp else "composed", 0) + 1; lines.append(cp); continue
         if v is None:
             st["missing"] += 1; lines.append(put_names("{%s}" % " ".join(ts), names, ts[0].split(), st) if names else "{%s}" % " ".join(ts)); continue
-        st["approx" if approx else "exact"] += 1
-        if approx: st["diffs"].append("%s: %s" % (g, approx))
         line = fill(v["canon"], nums(ts))
         if unresolved(line):      # a line with a slot left open (mined rule whose slot the tags cannot fill, e.g. "mill N cards") is not a rendering
-            st["approx" if approx else "exact"] -= 1; st["missing"] += 1; st["diffs"] = st["diffs"][:-1] if approx else st["diffs"]
-            lines.append("{%s}" % " ".join(ts)); continue
+            st["missing"] += 1; lines.append("{%s}" % " ".join(ts)); continue
+        st["approx" if approx else "exact"] += 1
+        if approx: st["diffs"].append("%s: %s" % (g, approx))
         lines.append(put_names(line, names, ts[0].split(), st) if names else line)
     last = [i for i, (g, ts) in enumerate(u.items()) if i < len(lines) and re.search(r"\bkw:(?:crew|cycling)\b", " ".join(ts))]
     lines = [l for i, l in enumerate(lines) if i not in last] + [lines[i] for i in last]      # crew and cycling print after the other abilities (like equip)
