@@ -703,6 +703,9 @@ def cmd_unseen(a):
     pool = sorted({n for v in cardnames().values() for n in v if not n.startswith("A-") and n not in seen_names and script_text(n)})
     random.Random(a.seed).shuffle(pool); pool = pool[:a.pool]
     R = rules(); cover, chosen = set(), []
+    try: cover = {pattern([" ".join(t["tags"])]) for t in json.load(open(os.path.join(HERE, "..", "tags", "ABILITY_TWINS.json"), encoding="utf-8"))}      # ability twins: tag groups already indexed
+    except Exception: pass
+    twin_n = len(cover)
     for r, b, added, nfl in tag_cards(pool):
         new = set()
         for g, ts in units(b["groups"]).items():
@@ -720,7 +723,7 @@ def cmd_unseen(a):
         cover |= new; out.append(name)
         if len(out) >= a.n: break
     with open(a.out, "w", encoding="utf-8") as fh: fh.write(chr(10).join(out) + chr(10))
-    print("pool %d cards, %d with unseen patterns; chose %d covering %d new patterns -> %s" % (len(pool), len(chosen), len(out), len(cover), a.out))
+    print("pool %d cards, %d with unseen patterns (%d patterns already in ABILITY_TWINS skipped); chose %d covering %d new patterns -> %s" % (len(pool), len(chosen), twin_n, len(out), len(cover) - twin_n, a.out))
 
 
 def cmd_selftest(a):
