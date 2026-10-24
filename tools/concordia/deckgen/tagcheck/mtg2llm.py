@@ -817,7 +817,7 @@ def cmd_selftest(a):
 
 def main():
     ap = argparse.ArgumentParser(); sp = ap.add_subparsers(dest="cmd", required=True)
-    m = sp.add_parser("mine"); m.add_argument("--out", default=os.path.join(HERE, "render_rules.json"))
+    m = sp.add_parser("mine"); m.add_argument("--out", default=os.path.join(HERE, "render_rules.json")); m.add_argument("--force", action="store_true", help="skip rule_guard and overwrite the stored rule tables")
     r = sp.add_parser("render"); r.add_argument("--run", required=True); r.add_argument("--out", default="rendered.json")
     t = sp.add_parser("tag"); t.add_argument("--cards", default=""); t.add_argument("--out", default="tagged.json")
     u = sp.add_parser("unseen"); u.add_argument("--n", type=int, default=100); u.add_argument("--pool", type=int, default=3000); u.add_argument("--seed", type=int, default=1)
@@ -830,8 +830,10 @@ def main():
     if a.cmd == "render": return cmd_render(a)
     if a.cmd == "mine":
         rules, seen, used = mine()
-        with open(a.out, "w", encoding="utf-8") as fh: json.dump(rules, fh, indent=1, ensure_ascii=False)
         cp = mine_parts()
+        import rule_guard      # a worse mine run never overrides better stored tables (rule_guard.py)
+        rules, cp = rule_guard.apply(rules, cp, a.out, force=a.force)
+        with open(a.out, "w", encoding="utf-8") as fh: json.dump(rules, fh, indent=1, ensure_ascii=False)
         with open(os.path.join(os.path.dirname(os.path.abspath(a.out)), "compose_rules.json"), "w", encoding="utf-8") as fh: json.dump(cp, fh, indent=1, ensure_ascii=False)
         print("compose parts: " + ", ".join("%s %d" % (k, len(v)) for k, v in cp.items()))
         units_n = sum(r["n"] for r in rules.values())
