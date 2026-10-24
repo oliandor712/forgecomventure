@@ -1,6 +1,6 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Append one row per analysis, under 400 chars.
 # Tag analyses: reverse check, tag suggestions, derived tags.
-log[33|]{date|topic|finding|caveat}:
+log[34|]{date|topic|finding|caveat}:
   2026-10-23|TAG_SUGGESTIONS C+D|face:/derived: lines built; on 353 starters spot_removal 69, etb_self 78, evasion_pkg 31, mana_out 28, anthem 3, wipe 0|shrink weight 0.5 unverified; E,F unbuilt
   2026-10-23|reader r18single|24 cards 1 reader: mean_sim 0.942, 23 good, 1 partial, top1 24/24|V1-V4,S1,A not computed
   2026-10-23|grammar performance|3 readers: none V1 .615 V3 .879; v1 full+records V1 .776 V3 .968; v1 short ~ none; v2 slim V1 .81 V3 .933 S1 .994 A .937; single reader r18 A .938-.946 matches 3-reader A|v2 only on 105 cards; V3 .98 target unmet; doc GRAMMAR_PERFORMANCE.md pushed a7336e066d7
@@ -34,3 +34,4 @@ log[33|]{date|topic|finding|caveat}:
 2026-10-24|rule_guard (mtg2llm mine keeps best rule tables)|fresh mine keeps all 1002 patterns/compose table (sim sum 256.15 same); simulated worse canons on 30 most-used patterns: 30 of 30 kept stored|per-pattern evidence only from starter cards; patterns unused by starters keep stored canon
 2026-10-24|sync.py tagger<->check link|starters: 556 units, 419 rendered, 26 open_slot (tag gaps), 111 no_rule (rule gaps) -> tags/TAG_GAPS.toon; tag_run prints last summary at start and refreshes the file at end; mtg2llm mine refreshes it|hooks not run end to end (tag_run and mine not executed); sync re-tags from scripts, not the guarded best set
 2026-10-24|tag_run starter + mtg2llm on same 353 starters, side by side|fresh tagger set vs guarded best set rendered with current rules: 0 of 353 renders differ, mean sim .736 both (guard: 353 same); full tag_run + sync hooks ran clean; sync now reads the best set|tagger is deterministic so identical; the 26 open_slot rows are mostly renderer slot fills (draw/discard/damage 1), no tag_extra change made
+2026-10-24|mtg2llm scan, whole pool (planeswalkers set aside)|32836 cards tagged and rendered reader-free in ~160 s; renderer lacks 391188 of 456051 Oracle words (86%); 3004 cards gap-free; per-card gap_words in tags/POOL_GAPS.toon|use gap_words/gap_pct to pick reader-run targets; open_slot = tagger, no_rule = rule table

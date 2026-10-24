@@ -753,7 +753,7 @@ def cmd_unseen(a):
     for k in glob.glob(os.path.join(RUNS, "*", "key", "*.json")):
         try: seen_names |= set(json.load(open(k, encoding="utf-8")).values())
         except Exception: pass
-    pool = sorted({n for v in cardnames().values() for n in v if not n.startswith("A-") and n not in seen_names and not RC.is_pre6(n) and script_text(n)})
+    pool = sorted({n for v in cardnames().values() for n in v if not n.startswith("A-") and n not in seen_names and not RC.is_pre6(n) and script_text(n) and not is_walker(n)})
     random.Random(a.seed).shuffle(pool); pool = pool[:a.pool]
     R = rules(); cover, chosen = set(), []
     try: cover = {pattern([" ".join(t["tags"])]) for t in json.load(open(os.path.join(HERE, "..", "tags", "ABILITY_TWINS.json"), encoding="utf-8"))}      # ability twins: tag groups already indexed
@@ -815,6 +815,45 @@ def cmd_selftest(a):
     print("selftest", "PASSED" if ok[0] else "FAILED"); return 0 if ok[0] else 1
 
 
+def is_walker(name):
+    """planeswalkers are set aside from tag tests (user 2026-10-24); they are handled separately"""
+    return bool(re.search(r"^Types:.*\bPlaneswalker\b", script_text(name), re.M))
+
+
+def cmd_scan(a):
+    """pool scan, reader-free: tag and render every pool card with a script, then score what the renderer has no record of. Per card: units, open_slot (tag gap), no_rule (rule gap), oracle_words,
+    gap_words = Oracle content words (stemmed, no stop words or reminder text, repeats counted) missing from the render, gap_pct. Oracle only scores, the renderer never sees it.
+    Writes tags/POOL_GAPS.toon sorted by gap_words so a reader run can take the biggest gaps first (regenerated, never hand-merged)"""
+    import time
+    names = sorted({n for v in cardnames().values() for n in v if not n.startswith("A-") and not RC.is_pre6(n) and script_text(n) and not is_walker(n)})
+    if a.limit: names = names[:a.limit]
+    rows, t0 = [], time.time()
+    for i in range(0, len(names), a.batch):
+        for r, b, _x, _y in tag_cards(names[i:i + a.batch]):
+            try:
+                n = r["name"]; ot = C.Counter(RC.toks(RC.norm(RC.original_text(n), n)))
+                text, _st = render(b["groups"], b["typing"])
+                rt = C.Counter(RC.toks(RC.norm(RC.clean_reco(re.sub(r"\{(?:missing|\.\.\.)\}", " ", text)), n)))
+                us = units(b["groups"]); osl = nor = 0
+                for g, ts in us.items():
+                    if not render({g: " ".join(ts)}, b["typing"])[1]["missing"]: continue
+                    v, approx = lookup(pattern([" ".join(ts)]))
+                    if v is not None and not approx and unresolved(fill(v["canon"], nums(ts))): osl += 1
+                    else: nor += 1
+                rows.append((n, len(us), osl, nor, sum(ot.values()), sum((ot - rt).values())))
+            except Exception as ex: print("skip %s: %s" % (r["name"], ex))
+        print("%d/%d cards, %.0fs" % (min(i + a.batch, len(names)), len(names), time.time() - t0), flush=True)
+    rows.sort(key=lambda x: (-x[5], x[0])); to, tg = sum(x[4] for x in rows), sum(x[5] for x in rows)
+    lines = ["# Claude-only file in TOON. Written by `mtg2llm.py scan`; regenerated, never hand-merged. Sorted by gap_words (largest first).",
+             "# gap_words = Oracle content words the render lacks (stemmed, reminder text and stop words removed). gap_pct = gap_words / oracle_words. Oracle only scores; the renderer never sees it.",
+             "# pool: %d cards scanned, %d with no gap words; oracle words %d, gap words %d (%.0f%%)" % (len(rows), sum(1 for x in rows if x[5] == 0), to, tg, 100.0 * tg / max(to, 1)),
+             "cards[%d|]{card|units|open_slot|no_rule|oracle_words|gap_words|gap_pct}:" % len(rows)]
+    lines += ["%s|%d|%d|%d|%d|%d|%d" % (n, u, o, r_, ow, g, round(100.0 * g / ow) if ow else 0) for n, u, o, r_, ow, g in rows]
+    os.makedirs(os.path.dirname(a.out), exist_ok=True)
+    with open(a.out, "w", encoding="utf-8") as f: f.write("\n".join(lines) + "\n")
+    print("scan: %d cards, gap words %d of %d (%.0f%%) -> %s" % (len(rows), tg, to, 100.0 * tg / max(to, 1), a.out))
+
+
 def main():
     ap = argparse.ArgumentParser(); sp = ap.add_subparsers(dest="cmd", required=True)
     m = sp.add_parser("mine"); m.add_argument("--out", default=os.path.join(HERE, "render_rules.json")); m.add_argument("--force", action="store_true", help="skip rule_guard and overwrite the stored rule tables")
@@ -822,10 +861,12 @@ def main():
     t = sp.add_parser("tag"); t.add_argument("--cards", default=""); t.add_argument("--out", default="tagged.json")
     u = sp.add_parser("unseen"); u.add_argument("--n", type=int, default=100); u.add_argument("--pool", type=int, default=3000); u.add_argument("--seed", type=int, default=1)
     u.add_argument("--out", default="unseen_cards.txt")
+    sc = sp.add_parser("scan"); sc.add_argument("--limit", type=int, default=0); sc.add_argument("--batch", type=int, default=500); sc.add_argument("--out", default=os.path.join(HERE, "..", "tags", "POOL_GAPS.toon"))
     sp.add_parser("selftest")
     a = ap.parse_args()
     if a.cmd == "selftest": sys.exit(cmd_selftest(a))
     if a.cmd == "tag": return cmd_tag(a)
+    if a.cmd == "scan": return cmd_scan(a)
     if a.cmd == "unseen": return cmd_unseen(a)
     if a.cmd == "render": return cmd_render(a)
     if a.cmd == "mine":
