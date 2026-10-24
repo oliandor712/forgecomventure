@@ -7,15 +7,28 @@ Rows are regenerated each time, never hand-merged."""
 import os, sys, re, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE); sys.path.insert(0, os.path.dirname(HERE))
-import mtg2llm as M
+import json, mtg2llm as M, reverse_check as RC
+BEST = os.path.join(os.path.dirname(HERE), "tags", "STARTER_TAGS.best.json")
 
 OUT = os.path.join(os.path.dirname(HERE), "tags", "TAG_GAPS.toon")
 
 
+def best_records():
+    """the guarded best tag set (tag_guard.py), or None when it is not seeded yet"""
+    if not os.path.exists(BEST): return None
+    d = json.load(open(BEST, encoding="utf-8"))
+    for v in d.values(): v["links"] = [tuple(l) for l in v["links"]]
+    return list(d.values())
+
+
 def gaps():
-    """(rows, units, rendered) over every tagged starter; row = (card, group, tags, reason)"""
+    """(rows, units, rendered) over every starter in the best tag set (fresh tags when no best set exists); row = (card, group, tags, reason)"""
     rows, n, ok = [], 0, 0
-    for r, b, _x, _y in M.tag_cards():
+    keep = RC.starter_records; best = best_records()
+    if best: RC.starter_records = lambda: best
+    try: tc = M.tag_cards()
+    finally: RC.starter_records = keep
+    for r, b, _x, _y in tc:
         for g, ts in M.units(b["groups"]).items():
             n += 1
             text, st = M.render({g: " ".join(ts)}, b["typing"])
