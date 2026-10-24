@@ -101,6 +101,13 @@ Checked: `reverse_check`, `consistency`, `mtg2llm` selftests byte-identical to H
 - Part 3 (drop the KNOWN/GROUPS backfill in run_log) is still open for the user's decision.
 - Checked: compileall, the three selftests byte-identical, `tag_run.py starter` leaves the tag files unchanged.
 
+## 5g. Steps 4, 5 and 6 status (2026-10-24): done, uncommitted
+
+- **Step 4:** `main()` added to `mine` and `pool`; `deckfile.py` created and six deck-file callers moved onto it.
+- **Step 5:** `tagcheck/guards.py` replaces `tag_guard`, `rule_guard`, `sync`, `tag_audit` (and `rule_lint`). `lint_rules` lives in `mtg2llm.py` so guards imports mtg2llm, not the reverse. Verified: `tag_run.py starter` 353 same, no tag file changed (only the `TAG_GAPS.toon` header names guards.py); `mtg2llm.py mine` and `guards.py lint|sync|audit` byte-identical; three selftests byte-identical.
+- **Step 6:** `learning_merge`, `learning_coverage` archived to `tagcheck/archive_20261024/`; `placeholder_triage` and `oracle_style_stats` folded into `tagcheck/analysis.py`; `tag_run` split: `tag_reports.py` holds the report writers, `qa`, `redundancy` and the starter driver; `tag_run.py` keeps record/render/`card` and dispatches `starter` by module name.
+- **Result:** 34 scripts (was 39 at the third pass); AST import graph (late imports included, dispatch by `importlib` name excluded) has **0 cycles**. Not done: moving the `APPROVED`/`REDUNDANCY_OK` tables to data files (they stay as constants in `tag_reports.py`).
+
 ## 6. Order of work (revised after the third pass)
 
 1. `common.py`: `workdir`, `snake`, `params`, `q`, `card_files`, `identity` (no behaviour change; compare the three `q` bodies first).
