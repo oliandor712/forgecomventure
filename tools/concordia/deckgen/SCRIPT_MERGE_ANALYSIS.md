@@ -2,8 +2,7 @@
 
 Second pass, 2026-10-24: import scan of 37 scripts plus a read of the code. Builds on `SCRIPT_REDUNDANCY.md` (tagcheck only). Nothing has been merged; each option needs the user's word.
 
-**Read in full or in the relevant parts:** reverse_check, run_memory, tag_guard, tag_audit, run_log, reader_refs, rule_lint, placeholder_triage, learning_merge, learning_coverage, oracle_style_stats, build_reminder_fill, build_token_reference, tag_run.
-**Import scan and header only (not read through):** the deck generator cluster (mine, pool, build, gen_mono, variants, t1_plan, starter_tune, hall_roster, categorize, budget_lands, staples, commander_support, scryfall_bulk, spellbinder_signals), ability_tags, tag_extra, tag_variant, tag_verify, tag_twins, derived_tags, sync, rule_guard, consistency. Claims about those rest on imports and size only.
+**Read in full or in the relevant parts (third pass 2026-10-24, nothing left skimmed):** all deck-generator scripts (mine, pool, build helpers, gen_mono, variants, t1_plan, starter_tune, hall_roster, categorize, budget_lands, staples, commander_support header and `read`), ability_tags, tag_extra (helpers; the 600-line rule body not audited line by line), tag_variant, tag_verify, tag_twins, derived_tags, tag_run, consistency, reverse_check, run_memory, tag_guard, rule_guard, tag_audit, run_log, reader_refs, rule_lint, placeholder_triage, learning_*, oracle_style_stats, build_reminder_fill, build_token_reference, sync.
 
 ## 1. Four clusters, hardly connected
 
@@ -40,7 +39,7 @@ All hold only through late imports inside functions. Root cause: `reverse_check`
 1. **rule_lint into rule_guard** (45 + 53 lines): used only by rule_guard and mtg2llm. Low risk.
 2. **Split reverse_check**: move the score (cosine, concept F1, number F1) and `_sims` into `score.py`; keep export/compare/report in reverse_check. Removes the reverse_check cycles with tag_guard, sync and mtg2llm. Medium risk, highest payoff.
 3. **Guards in one file** (`guards.py`: tag_guard, rule_guard, rule_lint, sync, tag_audit, about 330 lines) with one run_memory call site. Medium risk; callers are tag_run and `mtg2llm mine`.
-4. **consistency + run_log** into `run_records.py` (cyclic, same subject). Drop the KNOWN/GROUPS backfill once confirmed unused.
+4. **Do not merge consistency + run_log** (different jobs, see 5b). Break their cycle by moving `stamp()` into `run_log` and drop the KNOWN/GROUPS backfill once confirmed unused.
 5. **Reference builders** (build_reminder_fill, build_token_reference, reader_refs) into `reference_files.py` with subcommands `fill`, `tokens`, `readers`. Low risk; one `q()`.
 6. **Archive** learning_merge, learning_coverage (finished, other session's data) and fold placeholder_triage and oracle_style_stats into `analysis.py` subcommands.
 7. **tag_run**: do not grow it. Split out the report writers (reference/approval/sample) and the QA/redundancy check into a `tag_reports.py`, and move the APPROVED/REDUNDANCY_OK tables to data files.
@@ -53,7 +52,11 @@ Not worth merging: build (567), ability_tags (439), tag_extra (824; split by fam
 |---|---|---|
 | `workdir(run)` | reverse_check, run_log | identical: extract |
 | `q(x)` (TOON quoting) | tag_run, build_reminder_fill, build_token_reference | same intent; compare the three bodies once before extracting |
-| `snake(s)` | tag_run, tag_verify | identical regex: extract |
+| `snake(s)` | tag_run, tag_verify, tag_extra (`tok`) | identical regex, three copies: extract |
+| `params(body)` | tag_run, tag_extra | identical: extract. tag_variant `_params` differs (splits on `|`, strips) - leave |
+| deck-file line reader (`^(\d+)\s+([^|]+)\|?(\S*)`) | variants.parse, starter_tune.main_cards, hall_roster.commander, build.parse, t1_plan.used_elsewhere, commander_support.read, mine/pool popularity count | same format, six different return shapes: extract one `deckfile.read(path)` -> sections of (count, name, edition) and rebuild the callers on it |
+| `identity(c)` (colour identity) | pool.py, spellbinder_signals, mine.py (`ci`, inline variant) | pool and spellbinder identical: extract to `common`; mine.py uses `data[cards]` directly, switch it |
+| `card_power(p, ed)` / `power_of` | starter_tune, variants | same logic (variants also returns the rarity): keep variants' and import it in starter_tune |
 | cardsfolder glob (`forge-gui/res/cardsfolder/*/*.txt`) | tag_run (2), tag_twins, build_reminder_fill, build_token_reference, mtg2llm `_load`, oracle_style_stats; ability_tags, pool, staples use their own walk | real duplication: add `common.card_files()` |
 | `_sims` | tag_guard (per-unit sims, reads tag records), rule_guard (swaps rule tables in M, restores them), mtg2llm (not read here) | share only the setup (`original_text`, `Index`, `score`); different bodies, so extract the setup as `score.sim_of(...)`, not the function |
 | `_load(p)` | rule_guard (json or `{}`), mtg2llm `_load` (builds the card-name vocabulary cache) | NOT duplicates; same name only. Leave |
@@ -62,16 +65,23 @@ Not worth merging: build (567), ability_tags (439), tag_extra (824; split by fam
 | `card_text` | ability_tags (name to script text), build (cache wrapper around the ability_tags one) | not duplicated: build calls ability_tags |
 | `pool.pkl` load | ability_tags, budget_lands, build, commander_support (2), t1_plan | one line each; extract `common.load_pool()` only for the path, saves nothing else |
 
-Net: the list in the first draft was too broad. Real extractions: `workdir`, `snake`, `q`, `card_files`, the `_sims` setup. Not helpers to merge: `norm`, `parse`, `card_text`, `_load`.
+Net: the list in the first draft was too broad. Real extractions: `workdir`, `snake`, `params`, `q`, `card_files`, `identity`, the deck-file reader, the `_sims` setup. Not helpers to merge: `norm`, `parse`, `card_text`, `_load`.
 
-Read now (second pass): the helper bodies above in ability_tags, build, variants, spellbinder_signals, tag_twins, tag_verify, tag_run, reverse_check, run_log, rule_guard, tag_guard, sync, mtg2llm `_load`. Still only skimmed: mine, pool, gen_mono, t1_plan, starter_tune, hall_roster, categorize, budget_lands, staples, commander_support, tag_extra, tag_variant, derived_tags, consistency (no helper claims about them beyond the `pool.pkl` line and the cardsfolder walk, both confirmed by grep).
+## 5b. New findings from the third pass
 
-## 6. Order of work
+- `mine.py` and `pool.py` run on import (no `main()`), so nothing can import them; `build.py` (hub of the deck cluster, imported by gen_mono and starter_tune) also runs `pickle.load` at import. A shared module must not do that. Wrap `mine` and `pool` in `main()` before any merge.
+- `consistency.py` is not bookkeeping: it is the reader-agreement metrics (V1-V4, S1) and calls `reverse_check` for `norm`, `toks`, `concepts`, `KWRX`, `tolerate`, `is_typeline`, `workdir`. Merging it with `run_log` (bookkeeping) mixes two jobs. Better: the scorer split (`score.py`) takes what both need; `run_log` takes its `stamp()` call from a small `stamp.py`/`common`, and the `consistency <-> run_log` cycle (run_log calls `consistency.stamp` and `compare`) goes away by moving `stamp()` into `run_log`. Keep the two files.
+- `staples.py` and `pool.py` each walk cardsfolder separately for different fields (T: lines, PT:) - fold into the shared `card_files()` only.
+- `tag_extra` (823), `tag_variant`, `derived_tags` (89), `commander_support` have no helper overlap beyond the rows above; keep. Not audited: the rule bodies of `tag_extra.extra` (about 600 lines).
+- `hall_roster`, `categorize`, `budget_lands`, `t1_plan` share nothing but the deck-file reader and `pool.pkl` path.
 
-1. `common.py`: `workdir`, `snake`, `q`, `card_files` only (no behaviour change; compare the three `q` bodies first).
-2. `score.py` split out of reverse_check; fix the cycles.
-3. rule_lint into rule_guard; run_records; reference_files.
-4. Guards consolidation after a full `tag_run.py starter` + `mtg2llm.py mine` shows identical output and scores.
-5. Archive one-offs; tag_run report split.
+## 6. Order of work (revised after the third pass)
 
-Result: 37 scripts to about 27, import cycles 4 to 0 or 1. Each step is checked by rerunning the guards and comparing scores, as in `SCRIPT_REDUNDANCY.md`.
+1. `common.py`: `workdir`, `snake`, `params`, `q`, `card_files`, `identity` (no behaviour change; compare the three `q` bodies first).
+2. `score.py` split out of reverse_check (scoring, `norm`, `toks`, `concepts`, `KWRX`, `tolerate`, `_sims` setup); point consistency, guards and mtg2llm at it. Breaks 3 of 4 cycles.
+3. `stamp()` into run_log (breaks the 4th cycle); rule_lint into rule_guard; `reference_files.py`.
+4. Deck cluster: add `main()` to `mine` and `pool`, then `deckfile.py` reader and swap the six callers one by one (each deck script reruns with identical output: compare the written file with the committed one).
+5. Guards consolidation after a full `tag_run.py starter` + `mtg2llm.py mine` shows identical output and scores.
+6. Archive one-offs; tag_run report split.
+
+Result: 37 scripts to about 28 (consistency stays, one new `deckfile.py`), import cycles 4 to 0. Each step is checked by rerunning the guards and comparing scores, and for the deck cluster by diffing the generated files (`pool.pkl` content, `mined.json`, `budget_lands.json`, `t1_fresh.json`, `CATEGORIES.toon`).
