@@ -59,7 +59,7 @@ Small (fine to read): handoffs under 2k, `TAG_LEGEND.md` 2k, `tagcheck/README.md
 
 ## 5. Forge AI
 - Folder: `tools/concordia/ai_lab/`. Start with `HANDOFF.md`, `SHIPPED_AI_PROFILES_AND_READS.md`, `DECISION_LOGIC.md`, `FINAL_REPORT.md`.
-- Card logic: `CARD_LOGIC_TEST_REPORT.md`, `CARD_TEST_A_FORGE.md`, `CARD_TEST_B_MTGISH.md`, `AILOGIC_SAMPLE.md`, `AI_LOGIC_TAG_REVIEW.md`, `AI_PLAY_STYLES.md`.
+- Card logic: `ai_lab/archive_20261023/CARD_LOGIC_TEST_REPORT.md`, `ai_lab/archive_20261023/CARD_TEST_A_FORGE.md`, `ai_lab/archive_20261023/CARD_TEST_B_MTGISH.md`, `AILOGIC_SAMPLE.md`, `AI_LOGIC_TAG_REVIEW.md`, `AI_PLAY_STYLES.md`.
 - Fix ideas/feasibility: `AI_EASY_FIXES_FEASIBILITY.md`, `DECK_LOGIC_TO_AI_DECISIONS.md`, `OPTIONS_FOR_BALANCERS.md`, `EXPERIMENTS.md`.
 - Patches (test-only, never edit forge-ai directly): `ai_lab/patches/`; run A/B: `ab_recipe.sh`, `run_code_ab.sh`, `run_exp.sh`; results `ai_lab/results/`, digests `digests/`.
 - Approval state (only the user ticks): `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md`. Flagged cards: `AI_FLAGGED_CARDS.md`, `AI_TAGS_REFERENCE.md`, `AI_RESEARCH.md`.

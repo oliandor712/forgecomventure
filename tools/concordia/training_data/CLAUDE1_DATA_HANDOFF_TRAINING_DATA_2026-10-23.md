@@ -34,7 +34,7 @@ Concordia is a Pokemon-like Commander campaign plane for Forge Adventure (fork `
 
 ## 4. Forge AI findings (`tools/concordia/ai_lab/`)
 - 4 AI profiles (Default, Reckless, Cautious, Experimental), 122 AiProps, about 1,814 cards with AILogic$; AI reads its own deck via setupAutoProfile (`SHIPPED_AI_PROFILES_AND_READS.md`).
-- Card-logic test (`CARD_LOGIC_TEST_REPORT.md`): mtgish-derived about 33/50 versus Forge-syntax variants 16-20/50.
+- Card-logic test (`ai_lab/archive_20261023/CARD_LOGIC_TEST_REPORT.md`): mtgish-derived about 33/50 versus Forge-syntax variants 16-20/50.
 - Patches 005 v4 (SwitchPT; must allow the switch when the opponent has no possible blockers, H64), 014, 015: all unticked in `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md`, none applied. Volume runs: 9 runs of 40 games per arm, about +-11 pt noise; patch 005 v4 volume runs never completed (`results/ab/r005v4sa/` partial junk).
 - Easy-fix feasibility: `AI_EASY_FIXES_FEASIBILITY.md`. Tag review: `AI_LOGIC_TAG_REVIEW.md`.
 
