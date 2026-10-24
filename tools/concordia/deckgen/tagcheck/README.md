@@ -8,3 +8,6 @@ A blind reader sees only a card's tags and writes the ability text they describe
 4. `... selftest` checks the scorer without a reader: perfect text (~1.0), another card's text (low), no text (0), and a dumb tag-to-words dictionary (the floor a reader must beat).
 
 Scoring: 0.4 tf-idf cosine + 0.4 concept F1 + 0.2 number F1; bands good >= 0.7, partial 0.4-0.7, gap < 0.4 (unvalidated). Retrieval rank (is the real card the best match among all cards in the run?) is the most robust number. Mana-cost symbols are removed from both texts; vanilla cards are not scored.
+
+## scry_count (2026-10-23)
+Scry is one tag, `scry_count:N` (or `x` with `x_is`), read from the script `ScryNum$`; the Oracle gap filler fills it only when the script has no count. The bare `scry` tag no longer exists. Runs r1-r18 were made with bare `scry`; `mtg2llm.py` maps `scry_count` to that phrasing.

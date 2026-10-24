@@ -260,7 +260,7 @@ scales:elf
 scales:goblin
 scales:graveyard
 scales:vampire
-scry
+scry_count
 self_mill
 shrink
 shuffle

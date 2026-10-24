@@ -165,7 +165,8 @@ Two `target_scope` tags on one ability bind to the targets in the order the targ
 | `lifegain` + `lifegain_amount` | `You gain N life.` (each_opponent: `Each opponent loses N life.`) |
 | `life_loss` + `life_loss_amount` | `You lose N life.` |
 | `damage` + `damage_amount` | `~ deals N damage to <target>.` (a spell: `~ deals ...`) |
-| `scry` / `surveil` / `mill` with no amount tag | `Scry N.` / `Surveil N.` / `Mill N cards.` [v2] `mill` (and `self_mill`) is always `Mill N cards.` when no amount tag exists, never `Mill a card.`; with a player target: `Target player mills N cards.`, `each_player`: `Each player mills N cards.` |
+| `scry_count:N` (one tag: scry and its number; `scry_count:x` = `Scry X.`; digits, as Oracle writes them) | `Scry 2.` |
+| `surveil` / `mill` with no amount tag | `Surveil N.` / `Mill N cards.` [v2] `mill` (and `self_mill`) is always `Mill N cards.` when no amount tag exists, never `Mill a card.`; with a player target: `Target player mills N cards.`, `each_player`: `Each player mills N cards.` |
 | [v2] `investigate` | `Investigate.` (no reminder text) |
 | [v2] `bolster:N` | `Bolster N.` (digit, as Oracle) |
 | [v2] `monarch` | `You become the monarch.` |
@@ -225,7 +226,7 @@ Format: card / tags (abridged) / output.
    → `{cost}, {T}, Sacrifice ~: Destroy target creature. / Whenever ~ attacks, draw a card.`
 
 ## 7. Fallbacks
-1. A tag family with no row above: write the family name in plain words if it is obvious (`scry` = `Scry N.`), otherwise the placeholder that fits the slot and the tag under `unclear`.
+1. A tag family with no row above: write the family name in plain words if it is obvious (`surveil` = `Surveil N.`), otherwise the placeholder that fits the slot and the tag under `unclear`.
 2. Two tags that contradict each other: write the one that comes first in the record, list both under `conflicts`.
 3. Never invent a wording; never omit an ability the tags show.
 

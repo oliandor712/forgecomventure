@@ -38,7 +38,7 @@ Proposal only; names are mine. Weights go in one file (`deckgen/tag_weights.toon
 |---|---|---|---|
 | `removal_quota` | `remove:destroy/exile/bounce/tuck`, `damage`+`target_type:creature|any`, `restrict_kind:cant_attack*`; fight and shrink at x0.5 | per-method weight (exile 1.0, destroy 1.0, bounce 0.5, restrict 0.7, fight 0.5) per tier quota | regex `removal` / `bounce` |
 | `ramp_quota` | `mana_source` x `mana_amount`, `tutor_target:basic_land`+`tutor_dest:battlefield*`, `cost_reduce`; minus `enters_tapped` x0.2 | rock 1.0, land-tutor 1.0, burst 0.3 | `mana_source`, `land_tutor`, `mana_burst`, `cost_reduce` |
-| `draw_quota` | sum of `draw_count`, `impulse_draw_count` x0.7, `look_top/take`, `scry` x0.3; card advantage from `tempo:+n` | per-source weights | `draw`, `selection` |
+| `draw_quota` | sum of `draw_count`, `impulse_draw_count` x0.7, `look_top/take`, `scry_count` x0.3 (count of the scry); card advantage from `tempo:+n` | per-source weights | `draw`, `selection` |
 | `synergy` | `scales:Y`, `affects:Y`, `lord:Y`, commander `trigger:*` matched to deck `trigger_scope` payoffs, `token_type`, `type:` | per-hit 0.5 (today) -> exposed per tag family | `bonus()` syn list, H31-H46 readers |
 | `package` | linked groups (`requires`/`provides`): a requirement without a provider in the deck = -penalty; both present = +bonus | penalty 1.0, bonus 0.5 | ad-hoc commander_support tests |
 | `anti_synergy` | `target_scope:opp_control` on own-board effects, `must_attack`, edicts (`effect:sacrifice`), `restrict_kind` on mirror | per rule | none today |
