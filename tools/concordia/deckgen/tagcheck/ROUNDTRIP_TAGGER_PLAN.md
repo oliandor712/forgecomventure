@@ -5,6 +5,12 @@ Planning document. Nothing here is built or run. Facts come from `tag_run.py`, `
 ## 1. Goal
 One script that turns Oracle text into tags, turns those tags back into text, and scores the result against the original Oracle text by word use, word count and word order. It replaces the blind reader for routine checks: deterministic, 0 LLM tokens, same answer every run. The end product is a correct tag set per card; the round trip is the test that no fact was lost.
 
+## 1b. No agents in the tool (user order, 2026-10-23)
+The tool runs end to end as scripts: `python3 roundtrip.py run --cards <set>` tags, renders, scores and writes the report and one `RUN_LOG.jsonl` row, with no subagent, no LLM call and no token cost. Agents come after, as an audit of the finished result:
+- Audit input: the report's lowest-scoring cards, the lines that did not parse, and tag-set disagreements with the script tagger. Agents read only these, never the whole run.
+- Audit job: judge whether a flagged difference is a real tag gap, a renderer wording issue or a scorer tolerance issue, and propose the fix. Fixes are applied to the rules or the parser by the main session, then the tool is rerun.
+- Optional blind reader pass (`tag-blind-reader`) on a sample, as in section 7, after tagger or renderer changes. Not part of `run`.
+
 ## 2. What exists and what is new
 | Piece | Today | In the new script |
 |---|---|---|
