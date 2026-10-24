@@ -93,6 +93,8 @@ _sets = {}
 def rules():
     if not _rules:
         with open(os.path.join(HERE, "render_rules.json"), encoding="utf-8") as fh: _rules.update(json.load(fh))
+        import rule_lint      # a mined rule whose canon lacks the words its own tags name came from a merged or shifted reader line: not trusted (rule_lint.py)
+        for k, _c, _t in rule_lint.lint_rules(_rules): _rules.pop(k, None)
         _sets.update({p: frozenset(p.split()) for p in _rules})
     return _rules
 
@@ -120,6 +122,7 @@ def fill(canon, ns):
         if m.string[:m.start()].lower().endswith("scry ") or re.match(r" (?:\w+ )?(?:damage|life|mana)", m.string[m.end():]): return v      # Oracle writes digits for damage, life and mana
         return WORDS[int(v)] if v.isdigit() and int(v) <= 10 else v
     out = re.sub(r"[+\-]N/[+\-]N|\{N\}|\bN\b", sub, canon)
+    out = re.sub(r"\bup to a\b", "up to one", out)      # 'up to N' filled with 1
     out = re.sub(r"\b(a|one) (card|token|counter)s\b", r"\1 \2", out)      # the noun follows the filled amount
     out = re.sub(r"\b(two|three|four|five|six|seven|eight|nine|ten|X) (card|token|counter)\b", r"\1 \2s", out)
     return out.replace("~", "this creature")
@@ -286,7 +289,7 @@ def cost_text(cs):
         elif f == "cost" and v == "sacrifice" and "cost_sacrifice_target:creature" in cs: out.append("Sacrifice a creature")
         elif f == "cost_sacrifice_target" and v in ("self", "creature"): continue
         else: return None
-    out.sort(key=lambda x: x == "{T}")
+    out.sort(key=lambda x: 0 if x.startswith("{") and x != "{T}" else 1 if x == "{T}" else 2)      # Oracle order: mana, {T}, then the other costs
     return ", ".join(out) or None
 
 
@@ -313,7 +316,17 @@ def compose(ts, stray=False):
     return cp if cp and not unresolved(cp) else None
 
 
+def basic_mana(ts):
+    """'{T}: Add {G}.' / 'Add {U} or {W}.': a tap-for-mana ability with only colours, amount 1 and (for two colours) the choice tag. Anything else is not guessed"""
+    s = set(ts); col = [t[5:] for t in ts if t.startswith("mana:") and t[5:] in COLORS]
+    rest = s - {"cost:tap", "mana_source", "mana_amount:1"} - {"mana:" + c for c in col} - ({"mana_choice"} if len(col) == 2 else set())
+    if rest or not {"cost:tap", "mana_source", "mana_amount:1"} <= s or len(col) not in (1, 2) or len(col) != len([t for t in ts if t.startswith("mana:")]): return None
+    return "{T}: Add " + " or ".join("{%s}" % COLORS[c].upper() for c in col) + "."
+
+
 def _compose(ts, stray):
+    bm = basic_mana(ts)
+    if bm: return bm
     P = parts()
     if not P: return None
     hu = [t for t in ts if not t.startswith("color:")]
@@ -463,9 +476,10 @@ def render(groups, typing=None):
         lines.append(put_names(line, names, ts[0].split(), st) if names else line)
     last = [i for i, (g, ts) in enumerate(u.items()) if i < len(lines) and re.search(r"\bkw:(?:crew|cycling)\b", " ".join(ts))]
     lines = [l for i, l in enumerate(lines) if i not in last] + [lines[i] for i in last]      # crew and cycling print after the other abilities (like equip)
+    if "enters_tapped" in (groups.get("c0") or "").split(): lines.insert(0, "This creature enters tapped.")      # card-level label; self_word below names the type
     text = " / ".join(lines)
     sw = self_word(typing)
-    if sw != "creature": text = re.sub(r"\bthis creature\b", "this " + sw, text)
+    if sw != "creature": text = re.sub(r"\b([Tt]his) creature\b", lambda m: m.group(1) + " " + sw, text)
     return text, st
 
 

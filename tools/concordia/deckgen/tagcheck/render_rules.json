@@ -9378,7 +9378,7 @@
  "die_replace:exile": {
   "n": 1,
   "top": 1.0,
-  "canon": "If N card would die, exile it instead.",
+  "canon": "If a card would die, exile it instead.",
   "variants": []
  },
  "cost_mana:Nr effect:sacrifice": {
