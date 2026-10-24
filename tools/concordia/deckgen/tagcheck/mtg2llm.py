@@ -147,7 +147,7 @@ DUR_EOT = re.compile(r" until end of turn")
 
 def role(tag):
     f = tag.partition(":")[0]
-    if f.startswith("trigger"): return "trig"
+    if f.startswith("trigger") or f == "flip-up": return "trig"
     if f.startswith("cost") and not f.startswith("cost_reduce"): return "cost"
     if f in TARGET_FAM: return "target"
     if f == "duration": return "dur"
@@ -246,14 +246,13 @@ HAND_TARGET = {
     "target_type:land": "target land",
     "target_count:up_to_N target_scope:you_control target_type:creature": "up to N target creatures you control",
 }
-HAND_TRIG = {"trigger:combat_damage": "Whenever this creature deals combat damage to a player"}
+HAND_TRIG = {"trigger:combat_damage": "Whenever this creature deals combat damage to a player", "flip-up": "When this creature is turned face up"}
 # whole units that are one keyword; a colour tag on the unit is the colour of the keyword's mana cost
 HAND_UNIT = {
     "kw:cycling num:N": "Cycling {N}", "kw:prowess": "Prowess", "kw:devoid": "Devoid", "kw:shadow": "Shadow", "kw:crew num:N": "Crew #",
     "kw:morph num:N": "Morph {N}", "kw:disguise num:N": "Disguise {N}", "kw:megamorph num:N": "Megamorph {N}",
-    "kw:multikicker num:N": "Multikicker {N}", "kw:multikicker": "Multikicker", "kw:flip-up": "Turn this face up",
+    "kw:multikicker num:N": "Multikicker {N}", "kw:multikicker": "Multikicker",
     "kw:enchant target_type:land": "Enchant land", "kw:enchant target_type:permanent": "Enchant permanent",
-    "trigger:combat_damage": "Whenever this creature deals combat damage to a player.",
 }
 
 
@@ -300,7 +299,10 @@ def compose(ts):
     h = HAND_UNIT.get(_pat(ts))
     if h: return _digits(fill(h, nums(ts)), nums(ts))
     R = split_roles(ts)
-    if not R["eff"]: return None
+    if not R["eff"]:
+        if not (R["trig"] and not R["cost"] and not R["target"] and not R["dur"]): return None
+        t = P["trig"].get(_pat(R["trig"])) or ({"canon": HAND_TRIG[_pat(R["trig"])]} if _pat(R["trig"]) in HAND_TRIG else None)
+        return fill(t["canon"], nums(R["trig"])) + ", {effect}." if t and _carries(t["canon"], R["trig"]) else None
     b = P["body"].get(_pat(R["eff"])) or HAND_BODY.get(_pat(R["eff"]))
     if not b: return None
     body = b["canon"]
@@ -424,7 +426,7 @@ def render(groups, typing=None):
         if v is None or approx:
             cp = compose(ts[0].split()) if not names else None
             if cp:
-                st["composed"] = st.get("composed", 0) + 1; lines.append(cp); continue
+                st["partial" if "{effect}" in cp else "composed"] = st.get("partial" if "{effect}" in cp else "composed", 0) + 1; lines.append(cp); continue
         if v is None:
             st["missing"] += 1; lines.append(put_names("{%s}" % " ".join(ts), names, ts[0].split(), st) if names else "{%s}" % " ".join(ts)); continue
         st["approx" if approx else "exact"] += 1
@@ -690,6 +692,37 @@ def cmd_tag(a):
     for x in bad: print("  VIOLATION", x)
 
 
+def cmd_unseen(a):
+    """cards to read next: greedy cover of tag patterns that have no rule and no composition yet, one card name per line (feed to reverse_check export --cardlist).
+    Pool = every card with a script that is not in an earlier run's key; a pattern counts once however many cards carry it"""
+    import random
+    seen_names = set()
+    for k in glob.glob(os.path.join(RUNS, "*", "key", "*.json")):
+        try: seen_names |= set(json.load(open(k, encoding="utf-8")).values())
+        except Exception: pass
+    pool = sorted({n for v in cardnames().values() for n in v if not n.startswith("A-") and n not in seen_names and script_text(n)})
+    random.Random(a.seed).shuffle(pool); pool = pool[:a.pool]
+    R = rules(); cover, chosen = set(), []
+    for r, b, added, nfl in tag_cards(pool):
+        new = set()
+        for g, ts in units(b["groups"]).items():
+            ts, names = split_named(ts)
+            if names: continue
+            key = pattern([" ".join(ts)])
+            if lookup(key)[0] is not None and not lookup(key)[1] or compose(list(ts) if isinstance(ts, list) else ts.split()): continue
+            new.add(key)
+        new -= cover
+        if new: chosen.append((len(new), r["name"], new))
+    chosen.sort(key=lambda x: -x[0]); out = []
+    for n, name, new in chosen:
+        new -= cover
+        if not new: continue
+        cover |= new; out.append(name)
+        if len(out) >= a.n: break
+    with open(a.out, "w", encoding="utf-8") as fh: fh.write(chr(10).join(out) + chr(10))
+    print("pool %d cards, %d with unseen patterns; chose %d covering %d new patterns -> %s" % (len(pool), len(chosen), len(out), len(cover), a.out))
+
+
 def cmd_selftest(a):
     """own name, short forms, keywords, types and token words are NOT named:; real names are; the name survives the render"""
     ok = [True]
@@ -731,10 +764,13 @@ def main():
     m = sp.add_parser("mine"); m.add_argument("--out", default=os.path.join(HERE, "render_rules.json"))
     r = sp.add_parser("render"); r.add_argument("--run", required=True); r.add_argument("--out", default="rendered.json")
     t = sp.add_parser("tag"); t.add_argument("--cards", default=""); t.add_argument("--out", default="tagged.json")
+    u = sp.add_parser("unseen"); u.add_argument("--n", type=int, default=100); u.add_argument("--pool", type=int, default=3000); u.add_argument("--seed", type=int, default=1)
+    u.add_argument("--out", default="unseen_cards.txt")
     sp.add_parser("selftest")
     a = ap.parse_args()
     if a.cmd == "selftest": sys.exit(cmd_selftest(a))
     if a.cmd == "tag": return cmd_tag(a)
+    if a.cmd == "unseen": return cmd_unseen(a)
     if a.cmd == "render": return cmd_render(a)
     if a.cmd == "mine":
         rules, seen, used = mine()
