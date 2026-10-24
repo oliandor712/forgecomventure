@@ -349,6 +349,9 @@ def _compose(ts, stray):
         tp = _pat(R["target"]); t = P["target"].get(tp) or ({"canon": HAND_TARGET[tp]} if tp in HAND_TARGET else None)
         if not t or "{T}" not in body or not _carries(t["canon"], R["target"]): return None
         body = body.replace("{T}", fill(t["canon"], nums(R["target"])))
+        m = re.search(r"(up to \w+|two|three|four) target card (graveyard)\.$", body)
+        if m: body = body[:m.start()] + m.group(1) + " target cards from a single graveyard."      # "exile up to two target card graveyard" is the slot filler; the printed text names a single graveyard
+        elif body.endswith("target card graveyard."): body = body[:-len("target card graveyard.")] + "target card from a graveyard."
     elif "{T}" in body:
         if stray or not b.get("alt"): return None
         body = b["alt"]
@@ -461,6 +464,13 @@ def render(groups, typing=None):
                     st["exact"] += 1
                     base = fill(v2["canon"], nums(rest)).rstrip()
                     lines.append(put_names(base if re.search("scry", base, re.I) else base + " Scry %s." % n.upper(), names, toks, st) if names else (base if re.search("scry", base, re.I) else base + " Scry %s." % n.upper())); continue
+        if (v is None or approx) and "transform" in ts[0].split() and len(ts[0].split()) > 1:      # "... Then transform this <type>." ends an ability (Mysterious Tome)
+            rest = [t for t in ts[0].split() if t != "transform"]
+            v2, ap2 = lookup(pattern([" ".join(rest)]))
+            body = fill(v2["canon"], nums(rest)).rstrip() if v2 is not None and not ap2 else compose(rest, g == "x")
+            if body and not unresolved(body) and "{effect}" not in body:
+                st["exact" if v2 is not None and not ap2 else "composed"] = st.get("exact" if v2 is not None and not ap2 else "composed", 0) + 1
+                lines.append(body + " Then transform this creature."); continue
         if v is None or approx:
             cp = compose(ts[0].split(), g == "x") if not names else None
             if cp:
@@ -470,8 +480,8 @@ def render(groups, typing=None):
         st["approx" if approx else "exact"] += 1
         if approx: st["diffs"].append("%s: %s" % (g, approx))
         line = fill(v["canon"], nums(ts))
-        if approx and unresolved(line):      # a near-match line with a slot left open is not trusted (exact rules keep theirs)
-            st["approx"] -= 1; st["missing"] += 1; st["diffs"] = st["diffs"][:-1]
+        if unresolved(line):      # a line with a slot left open (mined rule whose slot the tags cannot fill, e.g. "mill N cards") is not a rendering
+            st["approx" if approx else "exact"] -= 1; st["missing"] += 1; st["diffs"] = st["diffs"][:-1] if approx else st["diffs"]
             lines.append("{%s}" % " ".join(ts)); continue
         lines.append(put_names(line, names, ts[0].split(), st) if names else line)
     last = [i for i, (g, ts) in enumerate(u.items()) if i < len(lines) and re.search(r"\bkw:(?:crew|cycling)\b", " ".join(ts))]

@@ -782,6 +782,7 @@ def extra(lines, sv, types, text):
                 if not nd.isdigit() and x_is(nd, sv): add("x_is:" + x_is(nd, sv))
                 if bp.get("Defined", "You") == "You": neg += cnt(nd)
                 if re.search(r"Discard[^.]*\.\s*If you do", desc_main): add("cost:discard", "cost_if_you_do")
+            if api == "SetState" and bp.get("Mode") == "Transform": add("transform")       # "Transform CARDNAME" step of an ability (Mysterious Tome)
             if api == "CopyPermanent": add("token_make", "token_type:copy"); pos += 0.5
             if api == "Play" and bp.get("WithoutManaCost") == "True": add("cast_free")
             if api == "ExchangeControl": add("exchange_control", "steal"); lk("exchange_control", "pairs_with", "steal")
