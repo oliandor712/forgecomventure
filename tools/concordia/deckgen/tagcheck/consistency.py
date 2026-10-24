@@ -6,7 +6,7 @@ V1 exact agreement, V2 mean pairwise token F1, V3 ability-signature agreement, V
 Research tool; reads ~/tagcheck_runs/<run>/{key,out,results.json,in}."""
 import os, re, sys, json, glob, itertools, statistics, collections, hashlib, subprocess
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import reverse_check as R
+import reverse_check as R, score as S
 
 SELF_WORDS = r"(?:this|that) (?:creature|permanent|artifact|enchantment|land|spell|card|planeswalker|equipment|aura|token|vehicle)"
 TRIG = re.compile(r"^(when|whenever|at the beginning of)\b", re.I)
@@ -19,11 +19,11 @@ def split_abilities(text):
 
 
 def kind_of(a, typing=()):
-    n = R.norm(a)
+    n = S.norm(a)
     toks = n.split()
     if TRIG.match(a): return "triggered"
     if ":" in a and COST_START.match(a.split(":", 1)[0].strip()): return "activated"
-    if (KW_ONLY.match(a) or (len(toks) <= 5 and any(rx.search(n) for _, rx in R.KWRX))) and not re.search(r"\b(deals?|draw|create|gain|lose|destroy|exile|return|put|target)\b", n): return "keyword"
+    if (KW_ONLY.match(a) or (len(toks) <= 5 and any(rx.search(n) for _, rx in S.KWRX))) and not re.search(r"\b(deals?|draw|create|gain|lose|destroy|exile|return|put|target)\b", n): return "keyword"
     if re.match(r"^(until|as long as|if|during|creatures?|each|other|all|enchanted|equipped|you|your|spells)\b", a, re.I) or re.search(r"\b(get|gets|have|has|can't|cost)\b", n): return "static"
     return "spell"
 
@@ -39,8 +39,8 @@ def _keywords(a):
     parts = [x.strip() for x in re.split(r",\s*|;\s*", a) if x.strip()]
     ks = []
     for x in parts:
-        n = R.norm(x)
-        if (KW_ONLY.match(x) or (len(n.split()) <= 4 and any(rx.search(n) for _, rx in R.KWRX))) and not re.search(r"\b(deals?|draw|create|gain|lose|destroy|exile|return|put|target)\b", n): ks.append(n)
+        n = S.norm(x)
+        if (KW_ONLY.match(x) or (len(n.split()) <= 4 and any(rx.search(n) for _, rx in S.KWRX))) and not re.search(r"\b(deals?|draw|create|gain|lose|destroy|exile|return|put|target)\b", n): ks.append(n)
         else: return None
     return ks
 
@@ -56,27 +56,27 @@ def signature(text):
         k = kind_of(a)
         if k == "triggered":
             clause, _, rest = a.partition(",")
-            ev = tuple(sorted({t for t in R.toks(R.norm(clause)) if t in EVENTS} | set(R.concepts(R.norm(clause))) - NOISE))
-            eff = frozenset(R.concepts(R.norm(rest))) - NOISE
+            ev = tuple(sorted({t for t in S.toks(S.norm(clause)) if t in EVENTS} | set(S.concepts(S.norm(clause))) - NOISE))
+            eff = frozenset(S.concepts(S.norm(rest))) - NOISE
             items.append(["triggered", ev, "", eff])
         elif k == "activated":
             cost, _, rest = a.partition(":")
             ck = tuple(sorted(n for n, rx in COSTS if re.search(rx, cost.lower())))
-            items.append(["activated", (), ck, frozenset(R.concepts(R.norm(rest))) - NOISE])
+            items.append(["activated", (), ck, frozenset(S.concepts(S.norm(rest))) - NOISE])
         else:
-            eff = frozenset(R.concepts(R.norm(a))) - NOISE
+            eff = frozenset(S.concepts(S.norm(a))) - NOISE
             if items and items[-1][0] == "effect": items[-1][3] = items[-1][3] | eff
             else: items.append(["effect", (), "", eff])
     return (tuple(sorted(set(kws))), tuple((k, ev, c, tuple(sorted(e))) for k, ev, c, e in items))
 
 
 def exact_key(text, tolerant=False):
-    t = R.tolerate(text.lower()) if tolerant else text.lower()
+    t = S.tolerate(text.lower()) if tolerant else text.lower()
     return re.sub(r"[^a-z0-9{}+/~ -]", "", t).replace("  ", " ").strip().replace(" / ", "|")
 
 
 def token_f1(a, b):
-    ta, tb = collections.Counter(R.toks(R.norm(a))), collections.Counter(R.toks(R.norm(b)))
+    ta, tb = collections.Counter(S.toks(S.norm(a))), collections.Counter(S.toks(S.norm(b)))
     if not ta and not tb: return 1.0
     ov = sum((ta & tb).values())
     if not ov: return 0.0
@@ -94,7 +94,7 @@ def lint(a):
     if k != "keyword" and not a.rstrip().endswith((".", '."', "}")): p.append("no final period")
     if TRIG.match(a) and "," not in a: p.append("trigger without comma")
     if ":" in a and not COST_START.match(a.split(":", 1)[0].strip()) and not a.startswith('"'): p.append("colon without cost")
-    if R.is_typeline(a): p.append("type line")
+    if S.is_typeline(a): p.append("type line")
     return p
 
 

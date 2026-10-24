@@ -11,7 +11,7 @@ Reads reader outputs only; never Oracle text.
 """
 import argparse, collections as C, glob, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import reverse_check as RC
+import reverse_check as RC, score as S
 from common import card_files  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -507,8 +507,8 @@ def cmd_render(a):
             t, st = render(c.get("groups") or {}, c.get("typing")); n.update({k: x for k, x in st.items() if isinstance(x, int)}); n["cards"] += 1
             words.append({"id": c["id"], "text": t})
             if c["id"] in ref:
-                x, y = RC.toks(RC.norm(t)), RC.toks(RC.norm(ref[c["id"]]))
-                n["cmp"] += 1; n["same"] += (x == y); n["f1"] += RC.f1(set(x), set(y))[2]
+                x, y = S.toks(S.norm(t)), S.toks(S.norm(ref[c["id"]]))
+                n["cmp"] += 1; n["same"] += (x == y); n["f1"] += S.f1(set(x), set(y))[2]
     with open(a.out, "w", encoding="utf-8") as fh: json.dump(words, fh, indent=1, ensure_ascii=False)
     tot = n["exact"] + n["approx"] + n["missing"]
     if n["cmp"]: print("vs the reader's text (same run, in-sample): exact %.1f%%, mean token F1 %.3f over %d cards" % (100 * n["same"] / n["cmp"], n["f1"] / n["cmp"], n["cmp"]))
@@ -852,9 +852,9 @@ def cmd_scan(a):
     for i in range(0, len(names), a.batch):
         for r, b, _x, _y in tag_cards(names[i:i + a.batch]):
             try:
-                n = r["name"]; ot = C.Counter(RC.toks(RC.norm(RC.original_text(n), n)))
+                n = r["name"]; ot = C.Counter(S.toks(S.norm(S.original_text(n), n)))
                 text, _st = render(b["groups"], b["typing"])
-                rt = C.Counter(RC.toks(RC.norm(RC.clean_reco(re.sub(r"\{(?:missing|\.\.\.)\}", " ", text)), n)))
+                rt = C.Counter(S.toks(S.norm(S.clean_reco(re.sub(r"\{(?:missing|\.\.\.)\}", " ", text)), n)))
                 us = units(b["groups"]); osl = nor = 0
                 for g, ts in us.items():
                     if not render({g: " ".join(ts)}, b["typing"])[1]["missing"]: continue

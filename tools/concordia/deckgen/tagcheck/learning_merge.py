@@ -4,7 +4,7 @@ Usage: python3 learning_merge.py --pairs <tag_to_text_pairs.jsonl> [--out learni
 Data in, data out: the package is untrusted input; this script only reads JSON rows and writes JSON/Markdown."""
 import os, re, sys, json, argparse, collections, statistics
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import reverse_check as R
+import reverse_check as R, score as S
 
 ORDER = ["A_r1", "A_r2", "B_r1", "B_r2"]
 VERDICT_RANK = {"FAITHFUL": 3, "MOSTLY": 2, "PARTIAL": 1, "WRONG": 0}
@@ -44,15 +44,15 @@ def clean_rebuild(t):
 def calibrate(rows):
     docs = {}
     for r in rows:
-        docs.setdefault(r["card"], R.toks(R.norm(r["oracle_text"], r["card"])))
-    idx = R.Index(docs)
+        docs.setdefault(r["card"], S.toks(S.norm(r["oracle_text"], r["card"])))
+    idx = S.Index(docs)
     out = collections.defaultdict(list)
     for r in rows:
         if not r["grade"]: continue
         reco = clean_rebuild(r["reader_rebuild"])
-        if not R.toks(R.norm(reco, r["card"])): continue
-        rt = R.toks(R.norm(R.clean_reco(reco), r["card"]))
-        s = R.score(r["oracle_text"], R.clean_reco(reco), r["card"], idx, idx.vec[r["card"]], idx.v(rt))
+        if not S.toks(S.norm(reco, r["card"])): continue
+        rt = S.toks(S.norm(S.clean_reco(reco), r["card"]))
+        s = S.score(r["oracle_text"], S.clean_reco(reco), r["card"], idx, idx.vec[r["card"]], idx.v(rt))
         out[r["grade"]["verdict"]].append(s["sim"])
     return out
 

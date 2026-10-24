@@ -6,7 +6,7 @@ is compared section by section (all keyword groups are one section, order ignore
 import os, sys, re, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE); sys.path.insert(0, os.path.dirname(HERE))
-import reverse_check as RC, mtg2llm as M
+import reverse_check as RC, score as S, mtg2llm as M
 
 BEST = os.path.join(os.path.dirname(HERE), "tags", "STARTER_TAGS.best.json")
 TYPING = ("supertype:", "cardtype:", "type:", "landtype:")
@@ -15,12 +15,12 @@ TYPING = ("supertype:", "cardtype:", "type:", "landtype:")
 def _sims(recs):
     """card name -> (whole-card sim, {unit group: sim or None}) for each record"""
     names = [r["name"] for r in recs]
-    orig = {n: RC.original_text(n) for n in names}
-    idx = RC.Index({n: RC.toks(RC.norm(orig[n], n)) for n in names})
+    orig = {n: S.original_text(n) for n in names}
+    idx = S.Index({n: S.toks(S.norm(orig[n], n)) for n in names})
     def sim(o, t, n):
-        rt = RC.toks(RC.norm(RC.clean_reco(t), n))
+        rt = S.toks(S.norm(S.clean_reco(t), n))
         if not rt: return 0.0
-        return RC.score(o, t, n, idx, idx.v(RC.toks(RC.norm(o, n))), idx.v(rt))["sim"]
+        return S.score(o, t, n, idx, idx.v(S.toks(S.norm(o, n))), idx.v(rt))["sim"]
     out = {}
     for r in recs:
         n = r["name"]; b = RC.tag_blind(r); text, _ = M.render(b["groups"], b["typing"])

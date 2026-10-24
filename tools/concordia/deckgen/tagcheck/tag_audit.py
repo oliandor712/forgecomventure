@@ -2,7 +2,7 @@
 A miss is a tag gap (the renderer cannot write what the tags do not say). Usage: python3 tag_audit.py [--n 0] [--out audit.json]"""
 import sys, os, re, json, argparse, collections as C
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
-import mtg2llm as M, reverse_check as RC
+import mtg2llm as M, reverse_check as RC, score as S
 
 # feature -> (script regex, Oracle regex, tag families / tags that carry it)
 FEATURES = {
@@ -35,7 +35,7 @@ def main():
     if a.n: pool = pool[:a.n]
     miss = C.defaultdict(list); seen = C.Counter(); both = C.Counter(); lint = C.defaultdict(list)
     for r, b, added, flags in M.tag_cards(pool):
-        name = r["name"]; script = M.script_text(name); orc = RC.original_text(name).lower(); fam = families(b)
+        name = r["name"]; script = M.script_text(name); orc = S.original_text(name).lower(); fam = families(b)
         for k, (srx, orx, want) in FEATURES.items():
             sh, oh = bool(re.search(srx, script)), bool(re.search(orx, orc))
             if not (sh or oh): continue

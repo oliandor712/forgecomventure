@@ -5,7 +5,7 @@ table replaces the stored one only when the mean starter score is higher (a tie 
 import os, sys, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE); sys.path.insert(0, os.path.dirname(HERE))
-import reverse_check as RC, mtg2llm as M, rule_lint
+import score as S, mtg2llm as M, rule_lint
 
 
 def _load(p): return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
@@ -18,13 +18,13 @@ def _sims(rules_d, comp_d):
     M._sets.clear(); M._sets.update({p: frozenset(p.split()) for p in M._rules}); M._comp.clear(); M._comp["R"] = comp_d
     try:
         tc = M.tag_cards(); names = [r["name"] for r, _b, _x, _y in tc]
-        orig = {n: RC.original_text(n) for n in names}
-        idx = RC.Index({n: RC.toks(RC.norm(orig[n], n)) for n in names})
+        orig = {n: S.original_text(n) for n in names}
+        idx = S.Index({n: S.toks(S.norm(orig[n], n)) for n in names})
         out = {}
         for r, b, _x, _y in tc:
             n = r["name"]; text, _ = M.render(b["groups"], b["typing"])
-            rt = RC.toks(RC.norm(RC.clean_reco(text), n))
-            s = RC.score(orig[n], text, n, idx, idx.v(RC.toks(RC.norm(orig[n], n))), idx.v(rt))["sim"] if rt else 0.0
+            rt = S.toks(S.norm(S.clean_reco(text), n))
+            s = S.score(orig[n], text, n, idx, idx.v(S.toks(S.norm(orig[n], n))), idx.v(rt))["sim"] if rt else 0.0
             out[n] = (s, {M.pattern([" ".join(ts)]) for ts in M.units(b["groups"]).values()})
         return out
     finally:
