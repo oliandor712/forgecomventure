@@ -21,6 +21,7 @@ for f in glob.glob(os.path.join(RES, 'editions', '*.txt')):
     if not code: continue
     typ = re.search(r'^Type=(.*)$', t, re.M); date = re.search(r'^Date=(.*)$', t, re.M)
     edmeta[code.group(1).strip().upper()] = ((typ.group(1).strip() if typ else ''), (date.group(1).strip() if date else ''))
+PRE6_CUTOFF = '1999-04-21'  # Sixth Edition release date
 PRIO = {'Expansion': 0, 'Core': 0, 'Starter': 1, 'Draft': 1, 'Duel_Deck': 2, 'Commander': 2, 'Reprint': 3, 'Collector_Edition': 4}
 GOOD_TYPES = set(PRIO)
 # PT / subtypes from scripts
@@ -65,7 +66,7 @@ for key, c in data['cards'].items():
     for ed, cards in data['eds'].items():
         if key in cards and ed not in bad_sets:
             typ, date = edmeta.get(ed, ('', ''))
-            if typ in GOOD_TYPES:
+            if typ in GOOD_TYPES and date >= PRE6_CUTOFF:  # printings before Sixth Edition are excluded (stale formatting); a card with only older printings leaves the pool
                 prints.append((cards[key], (-PRIO[typ], date), ed))
     if not prints: continue
     tags = dt.classify(c)
