@@ -17,7 +17,7 @@ except OSError: check("human_logic has H58", False)
 sys.path.insert(0, os.path.join(ROOT, "tools/concordia/deckgen"))
 try:
     import tag_run
-    check("mtgish data found", tag_run.MTGISH, tag_run.MTGISH or "set MTGISH_DATA")
+    check("import tag_run", True)
 except Exception as e:
     check("import tag_run", False, str(e))
 out = subprocess.run([sys.executable, os.path.join(ROOT, "tools/concordia/deckgen/tag_run.py"), "card", "Wingbeat Warrior"], capture_output=True, text=True).stdout

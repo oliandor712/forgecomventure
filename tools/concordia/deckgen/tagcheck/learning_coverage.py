@@ -1,6 +1,6 @@
 """For every card in learning/tier1_blind_test_cards.jsonl whose latest grade names gap labels, check whether this repo's current tagger emits a tag family that can carry that
 kind of fact, and whether the other session's old tagger (tags in the package rows) already had one. Presence of a family is a proxy for coverage, not proof of accuracy.
-Usage: MTGISH_DATA=... python3 learning_coverage.py --pairs <jsonl> [--out learning/COVERAGE.json]"""
+Usage: python3 learning_coverage.py --pairs <jsonl> [--out learning/COVERAGE.json]"""
 import os, re, sys, json, argparse, collections
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import tag_run as T
@@ -36,13 +36,12 @@ def main():
     for r in rows:
         if r["grade"]: old[(r["card"], r["round"])] = fams(r["tags"])
     cards = [json.loads(l) for l in open(a.cards, encoding="utf-8")]
-    mg = T.mtgish_load()
     res = collections.defaultdict(lambda: collections.Counter())
     missing = []
     for c in cards:
         gaps = c["rounds"][c["latest_round"]]["gaps"]
         if not gaps: continue
-        try: rec = T.record(c["card"], T.find_text(c["card"]), mg)
+        try: rec = T.record(c["card"], T.find_text(c["card"]))
         except Exception as e: missing.append((c["card"], str(e)[:60])); continue
         new = fams([t for t in rec["tags"]] + [t for t in rec["ai_tags"]])
         oldf = old.get((c["card"], c["latest_round"]), set())

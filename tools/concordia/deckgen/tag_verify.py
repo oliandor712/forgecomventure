@@ -11,42 +11,28 @@ import re
 def snake(s): return re.sub(r"[^a-z0-9]+", "_", s.lower()).strip("_")
 def key(s): return re.sub(r"[^a-z0-9]", "", s.lower())
 
-# mtgish _Trigger name -> tag
-M_TRIG = {"WhenAPermanentEntersTheBattlefield": "trigger:etb", "WhenAPermanentDies": "trigger:dies", "WhenACreatureAttacks": "trigger:attacks",
-          "WhenACreatureAttacksAlone": "trigger:attacks", "WhenACreatureAttacksAndIsntBlocked": "trigger:attackerunblocked",
-          "WhenAPlayerCastsASpell": "trigger:spell_cast", "WhenAPlayerCastsTheirNthSpellInATurn": "trigger:spell_cast",
-          "WhenAPermanentLeavesTheBattlefield": "trigger:leaves", "WhenAPlayerDiscardsACard": "trigger:discard",
-          "AtTheBeginningOfAPlayersUpkeep": "trigger:upkeep", "AtTheBeginningOfAPlayersEndStep": "trigger:end_step",
-          "AtTheBeginningOfCombatDuringAPlayersTurn": "trigger:beginning_of_combat", "WhenACreatureDealsCombatDamageToAPlayer": "trigger:combat_damage",
-          "WhenAPlayerGainsLife": "trigger:gain_life", "WhenAPermanentIsPutIntoAPlayersGraveyard": "trigger:dies",
-          "WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield": "trigger:graveyard", "WhenAGraveyardCardLeaves": "trigger:graveyard_leave",
-          "WhenAPlayerIsAttacked": "trigger:attacked", "WhenAPlayerCopiesASpell": "trigger:copy_spell"}
-# mtgish _Cost name -> tag
-M_COST = {"PayMana": "cost:mana", "TapPermanent": "cost:tap", "SacrificePermanent": "cost:sacrifice", "SacrificeAPermanent": "cost:sacrifice",
-          "DiscardACard": "cost:discard", "PayLife": "cost:life", "RemoveCounters": "cost:remove_counters", "Exile": "cost:exile",
-          "PutPermanentOnTopOfOwnersLibrary": "cost:tuck"}
-# concept: (accepted tag prefixes/exact, tag to add, mtgish _Action names, oracle regex)
+# concept: (name, accepted tag prefixes/exact, tag to add, oracle regex)
 CONCEPTS = [
-    ("draw", ("draw", "impulse_draw"), "draw", {"DrawACard", "DrawNumberCards"}, r"\bdraws? (?:a|an|\w+|x) cards?\b"),
-    ("token", ("token_make",), "token_make", {"CreateTokens", "EachPlayerCreatesTokens", "Investigate"}, r"\bcreates? [^.]*\btokens?\b|\binvestigate\b"),
-    ("damage", ("damage", "burn"), "damage", {"PermanentDealsDamage", "SpellDealsDamage", "DeadPermanentDealsDamage"}, r"\bdeals? (?:\d+|x|that much|damage)\b[^.]*damage|\bdeals damage\b"),
-    ("lifegain", ("lifegain", "lifelink", "kw:lifelink"), "lifegain", {"GainLife"}, r"\bgains? (?:\d+|x|that much)? ?life\b|\byou gain life\b"),
-    ("life_loss", ("life_loss",), "life_loss", {"LoseLife"}, r"\b(?:loses?|lose) (?:\d+|x|that much) life\b"),
-    ("destroy", ("remove:destroy", "removal"), "remove:destroy", {"DestroyPermanent", "DestroyPermanentNoRegen"}, r"\bdestroy (?:target|all|each|another|that)\b"),
-    ("bounce", ("bounce", "remove:bounce"), "bounce", {"PutPermanentIntoItsOwnersHand", "PutEachPermanentIntoItsOwnersHand"}, r"\breturn (?:target|all|each|that)[^.]*to (?:its|their) owner'?s? hands?\b"),
-    ("counters", ("counters_plus", "counter:"), "counters_plus", {"PutCounters"}, r"\bput (?:a|an|\w+|x) [+\-/\w]*\s?counters? on\b"),
-    ("tutor", ("tutor", "land_tutor"), "tutor", {"SearchLibrary"}, r"\bsearch your library\b"),
-    ("surveil", ("surveil",), "surveil", {"Surveil"}, r"\bsurveil \d+\b"),
-    ("mill", ("mill", "self_mill"), "mill", {"MillNumberCards", "MillACard"}, r"\bmills? (?:\d+|x|a) cards?\b"),
-    ("counterspell", ("counterspell",), "counterspell", {"CounterSpell"}, r"\bcounter target (?:spell|activated|triggered|noncreature|creature spell)"),
-    ("proliferate", ("proliferate",), "proliferate", {"Proliferate"}, r"\bproliferate\b"),
-    ("fight", ("fight",), "fight", {"Fight"}, r"\bfights?\b"),
-    ("untap", ("untap",), "untap", {"UntapPermanent"}, r"\buntap (?:target|all|each|that)\b"),
-    ("energy", ("energy", "counter:energy"), "energy", {"GetEnergy"}, r"\{E\}"),
-    ("discard", ("discard", "cost:discard"), "discard", {"DiscardACard", "PlayerAction"}, r"\bdiscards? (?:a|an|\w+|x) cards?\b"),
-    ("steal", ("steal", "steal_temp"), "steal", {"GainControlOfPermanentUntil"}, r"\bgain control of\b"),
-    ("exile_effect", ("remove:exile", "exile", "die_replace", "impulse_draw", "return_exiled", "exile_from", "from_zone:exile", "cost:exile", "kw:suspend"), "exile", {"Exile"}, r"\bexile (?:target|all|each|another|that|it)\b"),
-    ("sacrifice", ("sacrifice_outlet", "cost:sacrifice", "effect:sacrifice", "cost_sacrifice_target"), "sacrifice", {"SacrificeAPermanent", "SacrificeEachPermanent"}, r"\bsacrifices? (?:a|an|\w+|x|this|target|each)\b"),
+    ("draw", ("draw", "impulse_draw"), "draw", r"\bdraws? (?:a|an|\w+|x) cards?\b"),
+    ("token", ("token_make",), "token_make", r"\bcreates? [^.]*\btokens?\b|\binvestigate\b"),
+    ("damage", ("damage", "burn"), "damage", r"\bdeals? (?:\d+|x|that much|damage)\b[^.]*damage|\bdeals damage\b"),
+    ("lifegain", ("lifegain", "lifelink", "kw:lifelink"), "lifegain", r"\bgains? (?:\d+|x|that much)? ?life\b|\byou gain life\b"),
+    ("life_loss", ("life_loss",), "life_loss", r"\b(?:loses?|lose) (?:\d+|x|that much) life\b"),
+    ("destroy", ("remove:destroy", "removal"), "remove:destroy", r"\bdestroy (?:target|all|each|another|that)\b"),
+    ("bounce", ("bounce", "remove:bounce"), "bounce", r"\breturn (?:target|all|each|that)[^.]*to (?:its|their) owner'?s? hands?\b"),
+    ("counters", ("counters_plus", "counter:"), "counters_plus", r"\bput (?:a|an|\w+|x) [+\-/\w]*\s?counters? on\b"),
+    ("tutor", ("tutor", "land_tutor"), "tutor", r"\bsearch your library\b"),
+    ("surveil", ("surveil",), "surveil", r"\bsurveil \d+\b"),
+    ("mill", ("mill", "self_mill"), "mill", r"\bmills? (?:\d+|x|a) cards?\b"),
+    ("counterspell", ("counterspell",), "counterspell", r"\bcounter target (?:spell|activated|triggered|noncreature|creature spell)"),
+    ("proliferate", ("proliferate",), "proliferate", r"\bproliferate\b"),
+    ("fight", ("fight",), "fight", r"\bfights?\b"),
+    ("untap", ("untap",), "untap", r"\buntap (?:target|all|each|that)\b"),
+    ("energy", ("energy", "counter:energy"), "energy", r"\{E\}"),
+    ("discard", ("discard", "cost:discard"), "discard", r"\bdiscards? (?:a|an|\w+|x) cards?\b"),
+    ("steal", ("steal", "steal_temp"), "steal", r"\bgain control of\b"),
+    ("exile_effect", ("remove:exile", "exile", "die_replace", "impulse_draw", "return_exiled", "exile_from", "from_zone:exile", "cost:exile", "kw:suspend"), "exile", r"\bexile (?:target|all|each|another|that|it)\b"),
+    ("sacrifice", ("sacrifice_outlet", "cost:sacrifice", "effect:sacrifice", "cost_sacrifice_target"), "sacrifice", r"\bsacrifices? (?:a|an|\w+|x|this|target|each)\b"),
 ]
 LOOSE = {"bounce", "draw"}     # Oracle patterns too loose to add a tag alone; they only flag
 # oracle phrase -> trigger tag (line-start only: "When/Whenever/At the beginning of")
@@ -73,16 +59,16 @@ except OSError:
 
 
 DOC = {
-    "life_loss": ("an effect makes a player lose life (not damage)", "cross-check: mtgish LoseLife + Oracle 'loses N life' (Nazar, Blood Artist, Gray Merchant)"),
-    "fight": ("a creature fights another (CR 701.14)", "cross-check: mtgish Fight + Oracle (Prey Upon, Pounce)"),
-    "scry_count": ("scry N (CR 701.22); one tag with the number: looks at the top cards and may bottom them; counts as draw synergy (H43)", "cross-check: mtgish Scry + Oracle (Serum Visions)"),
-    "surveil": ("surveil N (CR 701.25)", "cross-check: mtgish Surveil + Oracle (Dragon's Rage Channeler)"),
-    "untap": ("an effect untaps permanents", "cross-check: mtgish UntapPermanent + Oracle (Captivating Crew)"),
-    "trigger": ("trigger event: upkeep, end_step, beginning_of_combat, combat_damage, gain_life, taps_for_mana (added to the existing trigger family)", "cross-check: mtgish _Trigger names + Oracle line starts (CR 603)"),
-    "cost": ("activation or additional cost kinds: remove_counters, exile, tuck, life (added to the existing cost family)", "cross-check: mtgish _Cost names + Oracle cost text (CR 602, 118)"),
+    "life_loss": ("an effect makes a player lose life (not damage)", "cross-check: Oracle 'loses N life' (Nazar, Blood Artist, Gray Merchant)"),
+    "fight": ("a creature fights another (CR 701.14)", "cross-check: Oracle (Prey Upon, Pounce)"),
+    "scry_count": ("scry N (CR 701.22); one tag with the number: looks at the top cards and may bottom them; counts as draw synergy (H43)", "cross-check: Oracle (Serum Visions)"),
+    "surveil": ("surveil N (CR 701.25)", "cross-check: Oracle (Dragon's Rage Channeler)"),
+    "untap": ("an effect untaps permanents", "cross-check: Oracle (Captivating Crew)"),
+    "trigger": ("trigger event: upkeep, end_step, beginning_of_combat, combat_damage, gain_life, taps_for_mana (added to the existing trigger family)", "cross-check: Oracle line starts (CR 603)"),
+    "cost": ("activation or additional cost kinds: remove_counters, exile, tuck, life (added to the existing cost family)", "cross-check: Oracle cost text (CR 602, 118)"),
     "ai_logic": ("the Forge AI's AILogic$ name from the card script; a reference tag for how the AI plays the card (3rd source, H54)", "cross-check: script AILogic$ / AttachAILogic"),
-    "discard": ("a player discards cards as an effect", "cross-check: mtgish + Oracle"),
-    "lifegain": ("an effect gains life", "cross-check: mtgish GainLife + Oracle"),
+    "discard": ("a player discards cards as an effect", "cross-check: Oracle"),
+    "lifegain": ("an effect gains life", "cross-check: Oracle"),
 }
 
 
@@ -108,26 +94,11 @@ def strip_reminder(s):
     return re.sub(r'\s*"[^"]*"', "", re.sub(r"\s*\([^)]*\)", "", s))
 
 
-def walk(o, acc):
-    if isinstance(o, dict):
-        for k, v in o.items():
-            if k in ("_Trigger", "_Cost", "_Action", "_Rule", "_Actions") and isinstance(v, str): acc.add((k, v))
-            walk(v, acc)
-    elif isinstance(o, list):
-        for v in o: walk(v, acc)
-
-
-def mtgish_features(card):
-    acc = set()
-    if card: walk(card.get("Rules", []), acc)
-    return acc
-
-
 def has(tags, acc):
     return any(t == a or (a.endswith(":") and t.startswith(a)) or t.startswith(a + ":") for t in tags for a in acc)
 
 
-def verify(tags, text, mgcard, kwset, remind, types=""):
+def verify(tags, text, kwset, remind, types=""):
     """tags: final tag list of the script pass. Returns dict(add, flags, sources, ai)."""
     tagset = set(tags)
     orc = oracle_of(text)
@@ -141,8 +112,8 @@ def verify(tags, text, mgcard, kwset, remind, types=""):
             add.setdefault(tag, set()).add(source)
 
     # --- concepts (abilities): an Oracle phrase the script tags lack is added (gap filler); LOOSE patterns are flagged only
-    # (2026-10-23 test without mtgish: bounce matched Pulse of Murasa's graveyard return, draw matched Laboratory Maniac's replacement; both wrong)
-    for name, accepted, tag, mact, rx in CONCEPTS:
+    # (2026-10-23 test: bounce matched Pulse of Murasa's graveyard return, draw matched Laboratory Maniac's replacement; both wrong)
+    for name, accepted, tag, rx in CONCEPTS:
         if has(tagset, accepted): continue
         if any(re.search(rx, l) for l in elines):
             if name in LOOSE: flags.append("%s: Oracle line says it, script tags lack %s" % (name, tag))
@@ -154,7 +125,7 @@ def verify(tags, text, mgcard, kwset, remind, types=""):
             if m: propose("scry_count:" + m.group(1), "oracle_gap_fill"); break
     # --- reverse check: a concept tag the script gave that the Oracle text does not support (possible extra tag)
     fulllines = [l.strip().lower() for l in orc.split("\n") if l.strip()]      # with reminder text: keywords supply tokens/draws (offspring, myriad, cycling)
-    for name, accepted, tag, mact, rx in CONCEPTS:
+    for name, accepted, tag, rx in CONCEPTS:
         if name in ("exile_effect", "sacrifice", "discard", "counters", "damage", "lifegain") or tag not in tagset: continue
         if not any(re.search(rx, l) for l in fulllines):
             flags.append("extra? %s: no Oracle phrase supports it" % tag)

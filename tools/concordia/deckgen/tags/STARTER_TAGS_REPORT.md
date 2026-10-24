@@ -18,75 +18,29 @@ changezone 44, draw 32, token 31, dealdamage 28, static_continuous 25, mana 22, 
 
 Typhoid Rats, Thornweald Archer, Deadly Recluse, Ambush Viper, Leatherback Baloth, Tajuru Pathwarden, Gigantosaurus, Colossal Dreadmaw, Kalonian Tusker, Alpine Grizzly, Magnigoth Sentry, Brazen Scourge, Savannah Lions, Fencing Ace, Aven Squire, Skyhunter Skirmisher, Leonin Skyhunter
 
-## mtgish second-opinion flags
 
-not in mtgish: 0 ()
+## Cross-check layer (Oracle gap filler, keyword reference/CR, Forge AI)
 
-script has more abilities than mtgish rules: 0 ()
-
-
-## Cross-check layer (oracle, mtgish, keyword reference/CR, Forge AI)
-
-Cards where the cross-check added tags: 43; tags added in total: 46 (life_loss 20, fight 7, scry 6, trigger:combat_damage 3, untap 2, trigger:end_step 2, cost:discard 1, cost:life 1, discard 1, surveil 1, cost:mana 1, token_make 1).
+Cards where the cross-check added tags: 40; tags added in total: 42 (life_loss 20, fight 7, trigger:combat_damage 3, untap 3, trigger:end_step 2, cost:discard 1, cost:life 1, discard 1, trigger:attacks 1, surveil 1, cost:mana 1, token_make 1).
 
 Cards with an ai_logic tag: 21.
 
-Flags (one source disagrees, nothing added): 54 on 50 cards.
+Flags (Oracle line and script tags disagree, nothing added): 14 on 14 cards.
 
-- Carrier Thrall: cost cost:sacrifice from mtgish only
-- Malakir Bloodwitch: life_loss: only mtgish says it, script tags lack life_loss
-- Feed the Swarm: life_loss: only mtgish says it, script tags lack life_loss
-- Supernatural Stamina: trigger trigger:dies from mtgish only (WhenAPermanentDies)
-- Feign Death: trigger trigger:dies from mtgish only (WhenAPermanentDies)
-- Swiftfoot Boots: cost cost:mana from mtgish only
-- Josu Vess, Lich Knight: cost cost:mana from mtgish only
-- Syr Konrad, the Grim: trigger trigger:graveyard_leave from mtgish only (WhenAGraveyardCardLeaves)
-- Syr Konrad, the Grim: trigger trigger:graveyard from mtgish only (WhenACardIsPutIntoAGraveyardFromAnywhereOtherThanTheBattlefield)
-- Gwenna, Eyes of Gaea: untap: only mtgish says it, script tags lack untap
-- Search for Tomorrow: cost cost:mana from mtgish only
-- Professor of Zoomancy: lifegain: only mtgish says it, script tags lack lifegain
-- Professor of Zoomancy: trigger trigger:dies from mtgish only (WhenAPermanentDies)
-- Territorial Allosaurus: cost cost:mana from mtgish only
-- Vines of Vastwood: cost cost:mana from mtgish only
-- Pulse of Murasa: bounce: only oracle says it, script tags lack bounce
-- Goreclaw, Terror of Qal Sisma: cost cost:mana from mtgish only
-- Impulsive Pilferer: cost cost:mana from mtgish only
-- Goblin Vandal: trigger trigger:attacks from oracle only
-- Goblin Heelcutter: cost cost:mana from mtgish only
-- Storm-Kiln Artist: trigger trigger:copy_spell from mtgish only (WhenAPlayerCopiesASpell)
-- Coruscation Mage: cost cost:mana from mtgish only
-- Light Up the Stage: cost cost:mana from mtgish only
-- Curse of Opulence: trigger trigger:attacked from mtgish only (WhenAPlayerIsAttacked)
-- Bonesplitter: cost cost:mana from mtgish only
-- Squee, Dubious Monarch: exile_effect: only mtgish says it, script tags lack exile
-- Squee, Dubious Monarch: cost cost:exile from mtgish only
-- Squee, Dubious Monarch: cost cost:mana from mtgish only
-- Lonely Sandbar: cost cost:mana from mtgish only
-- Dramatic Reversal: untap: only oracle says it, script tags lack untap
-- Brotherhood Regalia: cost cost:mana from mtgish only
-- Hero's Blade: cost cost:mana from mtgish only
-- Mask of Memory: cost cost:mana from mtgish only
-- Trailblazer's Boots: cost cost:mana from mtgish only
-- Expel from Orazca: cost cost:tuck from mtgish only
-- Fireshrieker: cost cost:mana from mtgish only
-- Herald's Horn: extra? tutor: no mtgish action or Oracle phrase supports it
-- Laboratory Maniac: draw: only oracle says it, script tags lack draw
-- Sage's Dousing: cost cost:mana from mtgish only
-- Fact or Fiction: extra? tutor: no mtgish action or Oracle phrase supports it
-- Hieroglyphic Illumination: cost cost:mana from mtgish only
-- Propaganda: cost cost:mana from mtgish only
-- Rite of Replication: cost cost:mana from mtgish only
-- Sweep Away: cost cost:tuck from mtgish only
-- Saruman the White: cost cost:mana from mtgish only
-- Skittering Invasion: cost cost:sacrifice from mtgish only
-- Haliya, Guided by Light: cost cost:mana from mtgish only
-- Restoration Angel: cost cost:exile from mtgish only
-- Frontline Medic: cost cost:mana from mtgish only
-- Ghostly Prison: cost cost:mana from mtgish only
-- Ancestral Blade: cost cost:mana from mtgish only
-- Heirloom Blade: cost cost:mana from mtgish only
-- Felidar Guardian: cost cost:exile from mtgish only
-- Fateful Absence: token: only mtgish says it, script tags lack token_make
+- Return of the Wildspeaker: extra? draw: no Oracle phrase supports it
+- Rishkar's Expertise: extra? draw: no Oracle phrase supports it
+- Pulse of Murasa: bounce: Oracle line says it, script tags lack bounce
+- Barrin, Tolarian Archmage: extra? bounce: no Oracle phrase supports it
+- Mindcrank: extra? mill: no Oracle phrase supports it
+- Herald's Horn: extra? tutor: no Oracle phrase supports it
+- Laboratory Maniac: draw: Oracle line says it, script tags lack draw
+- Fact or Fiction: extra? tutor: no Oracle phrase supports it
+- Disruptor of Currents: extra? bounce: no Oracle phrase supports it
+- Filter Out: extra? bounce: no Oracle phrase supports it
+- Arcanis the Omnipotent: extra? bounce: no Oracle phrase supports it
+- Time of Ice: extra? bounce: no Oracle phrase supports it
+- Psychic Spiral: extra? mill: no Oracle phrase supports it
+- Loran of the Third Path: extra? remove:destroy: no Oracle phrase supports it
 
 ## Double check of this run
 
@@ -99,6 +53,5 @@ Flags (one source disagrees, nothing added): 54 on 50 cards.
 - `tutor` is wrongly tagged on cards that look at the top card or split piles (Herald's Horn, Fact or Fiction): the older tagger treats 'put into your hand' as a tutor; the cross-check flags them as `extra?`.
 - Planeswalker tags (Davriel, Chandra) pick up unrelated tags from the whole card text (draw, lifegain, reanimate on Davriel): the older `ability_tags` reads all text, not per ability; per-ability groups are right, the card-level list is noisy.
 - `landtype:swamp` on Corrupt and `landtype:island` on Flow of Knowledge sit after the ability tags: by H45 they mark 'cares about a land type', not the card's own type.
-- Flags 'cost:mana from mtgish only' are mostly Equip/Encore/kicker costs the script holds on a K: line; not added.
 - Fixed (user 2026-10-22): a card sacrificing itself as a cost is not a sacrifice outlet (14 cards, e.g. Mind Stone, Sakura-Tribe Elder; 6 real outlets remain). The cross-check no longer reads quoted text, so a token's own 'Sacrifice this creature' ability is not added as the card's cost (Carrier Thrall, Skittering Invasion).
-- Fixed earlier in this run: a basic-land sacrifice (Alpine Guide 'sacrifice a Mountain') was tagged sacrifice_outlet; now treated as a land sacrifice (user rule). mtgish loader now reads two-faced, adventure and split cards (battles were missing).
+- Fixed earlier in this run: a basic-land sacrifice (Alpine Guide 'sacrifice a Mountain') was tagged sacrifice_outlet; now treated as a land sacrifice (user rule).

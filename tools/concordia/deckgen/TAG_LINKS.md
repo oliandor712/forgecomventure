@@ -11,7 +11,7 @@ User request 2026-10-22: link tags that depend on each other (for example `first
 - 611.2c for a resolving spell or ability that changes characteristics, the set of affected objects is fixed when the effect begins; for a static ability it is re-checked all the time.
 - 613.1f layer 6 applies ability-adding and ability-removing effects, so "gains first strike" is a layer 6 grant.
 - 702.7 first strike is a static ability that changes the combat damage step.
-- Forge default (PumpEffect.java lines 94 and 135): a Pump is removed at end of turn unless `Duration$ Permanent` or `Perpetual`. So Forge assumes end of turn where the CR default would be "end of game"; the duration must be read from the script or mtgish, never assumed from the CR.
+- Forge default (PumpEffect.java lines 94 and 135): a Pump is removed at end of turn unless `Duration$ Permanent` or `Perpetual`. So Forge assumes end of turn where the CR default would be "end of game"; the duration must be read from the script, never assumed from the CR.
 
 ## Model
 A card has card-level tags (cardtype, supertype, type, kw, color, num) and zero or more clauses. A clause is one trigger/cost/condition leading to one effect. The roles come straight from the rules text above:
@@ -21,7 +21,7 @@ A card has card-level tags (cardtype, supertype, type, kw, color, num) and zero 
 - verb: grant, pump, destroy, exile, bounce, draw, create, counter ...
 - payload: what is granted or changed (`first_strike`, `lifelink`, a stat change, a token)
 - affected: who gets it (`target:creature`, `equipped`, `you_control:creature+counter:p1p1`, `self`)
-- duration (from Forge `Duration$` and mtgish `Until*`): `duration:eot`, `duration:static` (static ability, while the source is on the battlefield), `duration:permanent`, `duration:perpetual`, `duration:until_leaves` (UntilHostLeavesPlay), `duration:while_control`
+- duration (from Forge `Duration$`): `duration:eot`, `duration:static` (static ability, while the source is on the battlefield), `duration:permanent`, `duration:perpetual`, `duration:until_leaves` (UntilHostLeavesPlay), `duration:while_control`
 - limits: `sorcery_speed`, `once_per_turn`, `optional`
 
 ## Record format (TOON)
@@ -70,13 +70,12 @@ links[2]{from,rel,to}:
 
 ## How to read each source into clauses
 - **Forge:** `T:` line `Mode$` = trigger; `Execute$ X` points to the SVar that holds the effect; `A:` `AB$`/`SP$` with `Cost$` = cost; `S:` `Mode$ Continuous` = static (duration:static); `DB$ Pump | KW$` or `AddKeyword$` = payload; `ValidTgts$`/`Affected$`/`Defined$` = affected; `Duration$` = duration, with a Pump that has none defaulting to eot. Follow `SubAbility$` chains and link their clauses with `then`.
-- **mtgish:** `TriggerA(...)`, `Activated(cost, ...)`, `PermanentLayerEffect`/`EachPermanentLayerEffect` = static, `CreatePermanentLayerEffectUntil(..., UntilEndOfTurn)` = a timed grant. mtgish sometimes drops an ability (Wingbeat Warrior), so merge with Forge instead of trusting it alone.
 - **Keywords:** resolve once through KEYWORD_REFERENCE.toon and the CR rule number (KEYWORD_REMINDER_TEXT.toon), then add `kw:` plus qualifier tags; linked clauses (like flip-up for morph) come from the reminder text.
 
 ## Decisions (user, 2026-10-22)
 1. Links are stored per card (H53). The full tag, relation and duration vocabulary is written during the cardlist run, not now.
 2. Sub-ability chains: decided during the cardlist run (the user deferred rule gaps to the run).
-3. Source order: 1st card script, 2nd mtgish (less reliable), 3rd Forge AI (AILogic$ and forge-ai) as a reference (H54).
+3. Source: the card script only (H54, mtgish dropped 2026-10-23); Forge AI (AILogic$ and forge-ai) is a reference.
 4. Still to list during the run: trigger vocabulary from Forge `Mode$` values and the eight gap groups from the card-logic test.
 
 ## How linking shows in the output (implemented in `tag_run.py`, 2026-10-22)

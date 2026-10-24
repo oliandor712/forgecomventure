@@ -1,0 +1,1 @@
+2026-10-23: mtgish dropped (user). These are the pre-removal versions (git HEAD) of tag_verify.py, tag_run.py, clone_verify.py, toolbox.py, learning_coverage.py, reverse_check.py, mtg2llm.py. Tag source is the card script only (H54).

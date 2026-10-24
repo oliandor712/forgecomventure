@@ -1,11 +1,11 @@
 # New tags created for approval
 
-Created 2026-10-22 under the standing instruction (human_logic.toon H56): tags may be created to fill gaps seen across the references (script, mtgish, Forge AI, rules, keyword reference, user feedback); each is logged here and counts as PROPOSED until approved. Only families that wait for approval are listed; the 57 families approved on 2026-10-22 are in `APPROVED_TAGS_ARCHIVE.md`. Tick a box to approve a family; strike or note a change under it. Counts are from the starter-deck run (353 cards).
+Created 2026-10-22 under the standing instruction (human_logic.toon H56): tags may be created to fill gaps seen across the references (script, Forge AI, rules, keyword reference, user feedback); each is logged here and counts as PROPOSED until approved. Only families that wait for approval are listed; the 57 families approved on 2026-10-22 are in `APPROVED_TAGS_ARCHIVE.md`. Tick a box to approve a family; strike or note a change under it. Counts are from the starter-deck run (353 cards).
 Changes to existing behaviour (approved with "approve all tags", 2026-10-22; treated as covered by that order, say if not): (a) the umbrella tag `removal` is dropped when a method tag (`remove:*`, `damage`) is present; (b) a keyword is listed once as `kw:<name>`, the plain duplicate (e.g. `trample`) is dropped.
 
 | Approve | Tag family | Meaning | Source of the rule | Cards | Values seen (cards) |
 |---|---|---|---|---|---|
-| | *No family waits for approval.* | | | | |
+| [ ] proposed | `named` | the printed name of ANOTHER card (or a named token/Role) that an ability mentions: 'a card named X', 'Partner with X'; words joined by _, casing kept; emitted only by tagcheck/mtg2llm.py tag, only with a value taken from the card's own script; own name, keywords, types and token words are never named: | user task 2026-10-23: names must survive the tag -> render round trip; Pir, Toothy, Agency Outfitter | 0 starter cards (mtg2llm tag: e.g. Pir, Imaginative Rascal; Toothy, Imaginary Friend; Agency Outfitter) | named:Toothy,_Imaginary_Friend |
 
 ## New values inside already-approved families (the family is approved; these values appeared after the approval)
 
@@ -26,6 +26,7 @@ Say if any should be changed; unmarked means accepted with the family.
 | `mana_restriction` | mana_restriction:creature_spell_or_activated_ability (1); mana_restriction:static_foretelling_or_instant_or_sorcery (1); mana_restriction:instant_or_sorcery (1) |
 | `controller` | controller:you (24); controller:owner (5) |
 | `trigger_scope` | trigger_scope:any (12); trigger_scope:damaged_by_self (1) |
+| `scry_count` | scry_count:2 (4); scry_count:1 (2) |
 | `rest_to_zone` | rest_to_zone:graveyard (1); rest_to_zone:library (1) |
 | `cost_reduce_amount` | cost_reduce_amount:1 (5); cost_reduce_amount:2 (1) |
 | `choose_on_enter` | choose_on_enter:card_type (1); choose_on_enter:creature_type (1) |

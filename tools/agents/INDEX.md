@@ -42,7 +42,7 @@ Small (fine to read): handoffs under 2k, `TAG_LEGEND.md` 2k, `tagcheck/README.md
 | Knowledge snapshot (training data) | `tools/concordia/training_data/CLAUDE1_DATA_HANDOFF_TRAINING_DATA_2026-10-23.md` |
 
 ## 3. Tag run (tagging cards)
-- Run: `tools/concordia/deckgen/tag_run.py` (`starter` or `card "Name"`; needs `MTGISH_DATA`, mtgish cloned at `~/deps/i5jb/mtgish`). Helpers: `tag_variant.py` (`TAG_VARIANT=off`), `tag_extra.py`, `tag_verify.py`, `tag_twins.py`, `ability_tags.py`.
+- Run: `tools/concordia/deckgen/tag_run.py` (`starter` or `card "Name"`). Helpers: `tag_variant.py` (`TAG_VARIANT=off`), `tag_extra.py`, `tag_verify.py`, `tag_twins.py`, `ability_tags.py`.
 - Outputs: `deckgen/tags/STARTER_TAGS.toon`, `TAG_REFERENCE.md` (families), `TAG_LEGEND.md`, `ABILITY_TWINS.json`, `REDUNDANCY_CHECK.md`, `STARTER_TAGS_REPORT.md`.
 - Approvals/ideas: `tags/NEW_TAGS_FOR_APPROVAL.md`, `APPROVED_TAGS_ARCHIVE.md`, `TAG_SUGGESTIONS.md`, `TAG_DECOMPOSITION.md`, `TAG_FEEDBACK_STARTER_SAMPLE.md`.
 - Link model: `deckgen/TAG_LINKS.md`. Commander support tags: `COMMANDER_SUPPORT.toon`, `commander_support.py`, `ABILITY_TAGS.toon`.

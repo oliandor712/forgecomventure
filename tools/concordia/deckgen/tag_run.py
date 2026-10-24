@@ -243,7 +243,7 @@ def record(name, text):
         tags = [x for x in tags if x != "restrict"]   # 'can't be blocked (by X)' is evasion, not a restriction on someone else
     if "duration:next_untap" in tags or "duration:while_control" in tags: tags = [t for t in tags if t != "duration:permanent"]   # Forge's Duration$ Permanent on a 'next untap step' / 'as long as you control' effect is a script detail
     tags = list(dict.fromkeys(t.lower() for t in tags))   # all tags lower case (scales:Goblin -> scales:goblin)
-    ver = TV.verify(tags, text, None, KWSET, REMIND)
+    ver = TV.verify(tags, text, KWSET, REMIND)
     tags = list(dict.fromkeys(tags + ver["add"]))
     if ver["add"]: ex_groups["v"] = list(ver["add"])
     ex_tags = ex_tags + ver["add"]
@@ -374,6 +374,7 @@ def write_sample(recs):
 APPROVED = ['activation_restriction', 'affects', 'cast_free', 'color', 'cost', 'cost_if_you_do', 'cost_reduce_for', 'cost_sacrifice_target', 'counter', 'damage', 'damage_amount', 'delayed', 'die_replace', 'discard_count', 'draw_count', 'duration', 'effect', 'enters_tapped', 'enters_untapped', 'exile_from', 'impulse_draw', 'impulse_draw_count', 'loses_all_abilities', 'mana', 'mana_amount', 'mana_choice', 'mana_restriction', 'must_attack', 'put_from', 'put_onto_battlefield', 'put_tapped', 'recursion', 'remove', 'return_exiled', 'sacrifice_type', 'shuffle', 'steal', 'steal_grants_haste', 'target_count', 'target_filter', 'target_scope', 'target_type', 'target_zone', 'tempo', 'token_cardtype', 'token_color', 'token_count', 'token_kw', 'token_pt', 'token_type', 'transform', 'trigger', 'trigger_filter', 'trigger_scope', 'trigger_zone', 'tutor_count', 'tutor_dest', 'tutor_target', 'affected_filter', 'affected_scope', 'affected_type', 'ai_logic', 'cant_be_blocked', 'cant_be_countered', 'condition', 'cost_exile_target', 'cost_return_target', 'counter_count', 'fight', 'grant_ability', 'grant_kw', 'life_loss', 'life_loss_amount', 'lifegain_amount', 'look_top', 'modal', 'piles_split', 'pump_amount', 'replace', 'rest_to_zone', 'rest_order', 'from_zone', 'to_zone', 'restrict_kind', 'reveal', 'saga_chapter', 'scry_count', 'surveil', 'take', 'token_ability', 'untap', 'x_is', 'optional', 'unless_cost', 'limit', 'regenerate', 'cant_regenerate', 'prevent_damage', 'choose_on_enter', 'choice_option', 'cost_reduce_amount', 'cost_reduce_mana', 'cost_reduce_for', 'mana_conditional', 'mana_amount_if', 'extra_land_drop', 'phase_out', 'cost_additional', 'controller']   
 
 
+PROPOSED_OFFLINE = ["named"]
 APPROVED_LATER = ['cost_mana', 'return', 'unless_cost_amount', 'investigate', 'monarch', 'bolster']   # approved by the user in chat on 2026-10-23
 
 
@@ -449,6 +450,9 @@ def write_approval(recs, red=()):
         ex = ", ".join(list(dict.fromkeys(c for v in vals.values() for c in v))[:3])
         row = "| %s | `%s` | %s | %s | %d (e.g. %s) | %s |" % ("[x] approved 2026-10-23" if f in APPROVED_LATER else "[x] approved 2026-10-22" if f in APPROVED else "[ ] proposed", f, m, w, n, ex, seen)
         (archive if f in APPROVED or f in APPROVED_LATER else out).append(row)
+    for f in PROPOSED_OFFLINE:      # families emitted outside tag_run (tagcheck/mtg2llm.py tag): listed here until approved, with no starter count
+        if f not in APPROVED and f not in APPROVED_LATER and f not in fam:
+            m, w = doc.get(f, ("(see tag_extra.DOC)", "")); out.append("| [ ] proposed | `%s` | %s | %s | 0 starter cards (mtg2llm tag: e.g. Pir, Imaginative Rascal; Toothy, Imaginary Friend; Agency Outfitter) | named:Toothy,_Imaginary_Friend |" % (f, m, w))
     if not any("[ ] proposed" in x for x in out): out.append("| | *No family waits for approval.* | | | | |")
     # values added inside families that were already approved (the family was approved, these values are new since 2026-10-22)
     snap = set(l.strip() for l in open(os.path.join(HERE, "tags", "APPROVAL_SNAPSHOT.txt")) if l.strip() and not l.startswith("#"))
@@ -621,7 +625,7 @@ def main(a):
         "- `tutor` is wrongly tagged on cards that look at the top card or split piles (Herald's Horn, Fact or Fiction): the older tagger treats 'put into your hand' as a tutor; the cross-check flags them as `extra?`.",
         "- Planeswalker tags (Davriel, Chandra) pick up unrelated tags from the whole card text (draw, lifegain, reanimate on Davriel): the older `ability_tags` reads all text, not per ability; per-ability groups are right, the card-level list is noisy.",
         "- `landtype:swamp` on Corrupt and `landtype:island` on Flow of Knowledge sit after the ability tags: by H45 they mark 'cares about a land type', not the card's own type.",
-        "- Fixed (user 2026-10-22): a card sacrificing itself as a cost is not a sacrifice outlet (14 cards, e.g. Mind Stone, Sakura-Tribe Elder; 6 real outlets remain). The cross-check no longer reads quoted text, so a token's own 'Sacrifice this creature' ability is not added as the card's cost (Carrier Thrall, Skittering Invasion).\n- Fixed earlier in this run: a basic-land sacrifice (Alpine Guide 'sacrifice a Mountain') was tagged sacrifice_outlet; now treated as a land sacrifice (user rule). mtgish loader now reads two-faced, adventure and split cards (battles were missing)."]
+        "- Fixed (user 2026-10-22): a card sacrificing itself as a cost is not a sacrifice outlet (14 cards, e.g. Mind Stone, Sakura-Tribe Elder; 6 real outlets remain). The cross-check no longer reads quoted text, so a token's own 'Sacrifice this creature' ability is not added as the card's cost (Carrier Thrall, Skittering Invasion).\n- Fixed earlier in this run: a basic-land sacrifice (Alpine Guide 'sacrifice a Mountain') was tagged sacrifice_outlet; now treated as a land sacrifice (user rule)."]
     open(os.path.join(HERE, "tags", "STARTER_TAGS_REPORT.md"), "w").write("\n".join(rep))
     rc = ["# Redundancy check of the tag data\n", "Run by `deckgen/tag_run.py starter` on every tag generation (user order 2026-10-22). Rules tags only (AI Tags excluded). A finding is a candidate, not an error: decide to merge, drop or whitelist it in `REDUNDANCY_OK` with a reason. %d cards, %d findings.\n" % (len(recs), len(red))]
     for kind in ("absent-equal", "bare+valued", "same cards", "values together", "implied", "single value"):
