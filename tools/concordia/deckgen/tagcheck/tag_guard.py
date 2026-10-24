@@ -75,8 +75,23 @@ def apply(recs, force=False):
         m, how = _merge(old[n], r, so[n], sn[n]); out.append(m); tally[how] += 1
     kept = tally["old"]
     print("tag_guard: %d same, %d new better, %d merged per group, %d kept stored (new run scored lower)" % (tally["same"], tally["new"], tally["merged"], kept))
+    _log(tally, len(recs), force)
     if tally["same"] != len(out) or len(out) != len(old): _save(out)      # rewrite the best file only when it changed
     return out
+
+
+LOG = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(HERE))), "agents", "logs", "guard-runs.toon")
+
+
+def _log(t, n, force):
+    """one row per guard run in tools/agents/logs/guard-runs.toon, so the count of overrides survives between sessions"""
+    import datetime
+    row = "%s|tag_guard|%d|%d|%d|%d|%d|%s" % (datetime.date.today(), n, t["same"], t["new"], t["merged"], t["old"], "force" if force else "")
+    head = ["# Claude-only file in TOON. One row per guard run (tag_guard.py). new = new tags beat stored, merged = per-section mix, old = stored kept because the run scored lower.", "guard[0|]{date|guard|cards|same|new|merged|old|note}:"]
+    L = open(LOG, encoding="utf-8").read().splitlines() if os.path.exists(LOG) else head
+    i = next(k for k, l in enumerate(L) if l.startswith("guard["))
+    L.append(row); L[i] = "guard[%d|]{date|guard|cards|same|new|merged|old|note}:" % (len(L) - i - 1)
+    open(LOG, "w", encoding="utf-8").write("\n".join(L) + "\n")
 
 
 def _save(recs):
