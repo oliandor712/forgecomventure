@@ -23,6 +23,7 @@ import tag_run as T
 import tag_verify as TV
 import tag_extra as TX
 from common import workdir  # noqa: E402
+from cards import tag_blind, starter_records, pre6_only, is_pre6  # noqa: E402,F401
 
 READER_RULES = """You are the BLIND READER. You see only tags. Rules (strict):
 1. Read ONLY the two files you are given: one batch file (cards) and its reminders file (reminder texts of the keywords and tokens that occur in the batch, plus `tag_legend`: one line of meaning for each structured tag family in the batch; use it to read the tags). Do not open, list, search or fetch anything else (no repo, no card databases, no web, no other run folders). Do not run shell commands.
@@ -32,15 +33,6 @@ READER_RULES = """You are the BLIND READER. You see only tags. Rules (strict):
 5. List in `unclear` every tag you could not turn into rules text, and in `conflicts` any tags that contradict each other.
 6. Write X, not its definition, when `x_is` is x_paid (the X in the mana cost). Never leave a card's text empty when it has ability tags: write the best partial text the tags support, use a placeholder such as {effect} or {cost} for the part a tag does not say, and list the tag under `unclear`. An empty answer is only right for a card with no ability tags.
 7. Write the answer as JSON to the output file you are given, exactly: {"cards":[{"id":"c001","text":"...","unclear":["tag"],"conflicts":["..."],"recognised":false}, ...]} with one entry for every id in the batch, in order. Then reply with one line: the number of cards written."""
-
-
-def tag_blind(rec):
-    """the blind view of one record: rules tags, groups and links only. AI Tags (tag_verify.is_ai_tag: opaque metrics, the AILogic reference, umbrella labels) are segregated and not shown at all.
-    Group ids are kept; the source of a group (K line, A line ...), clauses, mtgish and AI lines are dropped"""
-    groups = {("x" if g == "v" else g): [t for t in ts if not TV.is_ai_tag(t)] for g, ts in rec["groups"].items()}
-    ty = ("supertype:", "cardtype:", "type:", "landtype:")
-    return {"typing": [t for t in rec["tags"] if t.startswith(ty)], "tags": [t for t in rec["tags"] if not TV.is_ai_tag(t) and not t.startswith(ty)],
-            "groups": {g: " ".join(ts) for g, ts in groups.items() if ts}, "links": ["%s %s %s" % l for l in rec["links"] if not any(TV.is_ai_tag(p.split(":", 1)[-1]) for p in (l[0], l[2]))]}
 
 
 AI_DIR = os.path.join(T.ROOT, "tools/concordia/ai_lab")
@@ -81,14 +73,6 @@ def batch_reminders(items, db):
     return out
 
 
-def starter_records():
-    import glob, collections as C
-    names = C.OrderedDict()
-    for d in sorted(glob.glob(os.path.join(T.ROOT, "forge-gui/res/adventure/Concordia/decks/starter/*.dck"))):
-        for n in T.deck_cards(d): names[n] = 1
-    return [T.record(n, T.find_text(n)) for n in names]
-
-
 # ---------- text normalisation, concepts, similarity: moved to score.py, re-exported so existing callers keep working ----------
 from score import (STOP, CONCEPTS, KWRX, SELF_PHRASE, tolerate, norm, stem, toks, concepts, numbers, f1, mf1, Index, score, TYPEWORDS, is_typeline, clean_reco, original_text, band, evaluate, summarize)  # noqa: E402,F401
 
@@ -110,23 +94,6 @@ def baseline_text(rec):
         elif t.startswith("token_type:"): out.append(t[11:].replace("_", " ") + " token")
         elif t.startswith("tutor_target:"): out.append(t[13:].replace("_", " "))
     return ". ".join(out)
-
-
-_PRE6 = []
-def pre6_only():
-    """lower-cased names of cards whose every printing is older than Sixth Edition (1999-04-21): stale formatting, kept out of runs, mining and tests"""
-    if _PRE6: return _PRE6[0]
-    first, late = set(), set()
-    for f in glob.glob(os.path.join(T.ROOT, "forge-gui/res/editions/*.txt")):
-        t = open(f, encoding="utf-8", errors="ignore").read()
-        d = re.search(r"^Date=(\S+)", t, re.M)
-        if not d: continue
-        for m in re.finditer(r"^\d+\w*\s+[A-Z]+\s+(.+?)(?:\s+@.*)?$", t, re.M):
-            (late if d.group(1) >= "1999-04-21" else first).add(m.group(1).strip().lower())
-    _PRE6.append(first - late); return _PRE6[0]
-
-
-def is_pre6(name): return all(p.strip().lower() in pre6_only() for p in name.split("//"))
 
 
 # ---------- commands -----------------------------------------------------------------------------------------------------------------------------

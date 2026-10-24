@@ -8,14 +8,13 @@ This adds what was missing:
   tagcheck/run_archive/    .tgz bundles of finished runs (the repo copy; ~/tagcheck_runs is outside git)
 
   python3 run_log.py record RUN [--arm C2 --grammar v1 --reader sonnet-5-5/medium --note "..."]   write the manifest, append the log line
-  python3 run_log.py compare RUN RUN ... [--arm ..]                    run consistency.compare on the runs and log V1-V4, S1, A
   python3 run_log.py bundle NAME RUN RUN ...                           tar the runs into tagcheck/run_archive/NAME.tgz, mark them archived
   python3 run_log.py backfill                                          manifests and log lines for every existing run (known arms/readers from R12-R15)
   python3 run_log.py show                                              table of the log (last line per run)
 
-reverse_check.py compare and consistency.py compare call record/log_compare themselves, so new runs are logged without extra steps.
+  (comparisons are logged by `python3 consistency.py compare --runs ...`; run_log no longer imports consistency)
 """
-import datetime, glob, hashlib, json, os, re, sys, tarfile
+import datetime, glob, hashlib, json, os, re, subprocess, sys, tarfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
@@ -32,12 +31,16 @@ def _sha(paths):
     return h.hexdigest()[:12]
 
 
-def _stamp():
-    try:
-        import consistency
-        return consistency.stamp()
-    except Exception:
-        return "?"
+def stamp():
+    root = os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))
+    try: rev = subprocess.check_output(["git", "-C", root, "rev-parse", "--short", "HEAD"], text=True).strip()
+    except Exception: rev = "?"
+    tf = os.path.join(root, "tools/concordia/deckgen/tags/STARTER_TAGS.toon")
+    h = "?"
+    if os.path.exists(tf):
+        with open(tf, "rb") as fh:
+            h = hashlib.sha1(fh.read().replace(b"\r", b"")).hexdigest()[:10]
+    return "git %s, STARTER_TAGS.toon sha1 %s, TAG_VARIANT=%s" % (rev, h, os.environ.get("TAG_VARIANT", "on"))
 
 
 def _summary(wd):
@@ -69,7 +72,7 @@ def manifest(run, meta=None, keep_stamp=None):
         placeholders += sum(len(PH.findall(c.get("text", ""))) for c in json.load(open(f, encoding="utf-8")).get("cards", []))   # card text only (C2 'records' repeat it)
     times = [os.path.getmtime(f) for f in outs] or [os.path.getmtime(wd)]
     m = dict(run=run, kind="run", date=datetime.datetime.fromtimestamp(min(times)).strftime("%Y-%m-%d"),
-             arm=None, grammar=None, reader="unrecorded", note="", tag_stamp=keep_stamp or old.get("tag_stamp") or _stamp(),
+             arm=None, grammar=None, reader="unrecorded", note="", tag_stamp=keep_stamp or old.get("tag_stamp") or stamp(),
              batches_in=len(ins), batches_out=len(glob.glob(os.path.join(wd, "out", "batch_*.json"))), raw_kept=bool(glob.glob(os.path.join(wd, "out_raw", "*.json"))),
              input_sha1=_sha(ins) if ins else None, output_sha1=_sha(outs) if outs else None, placeholders=placeholders, score=_summary(wd),
              archived=old.get("archived"))
@@ -97,7 +100,7 @@ def record(run, **meta):
 
 def log_compare(o, meta=None):
     """o: consistency.compare() result"""
-    e = dict(kind="compare", runs=o["runs"], date=datetime.date.today().isoformat(), tag_stamp=_stamp(), n=o["n"], readers=o["k"])
+    e = dict(kind="compare", runs=o["runs"], date=datetime.date.today().isoformat(), tag_stamp=stamp(), n=o["n"], readers=o["k"])
     for k in ("V1", "V1t", "V2", "V3", "V4", "S1", "S1b", "A"):
         e[k] = None if o.get(k) is None else round(o[k], 4)
     e.update({k: v for k, v in (meta or {}).items() if v})
@@ -138,8 +141,6 @@ KNOWN = [
     (r"r14c0[abc]$", dict(arm="C0", grammar="none", reader="claude-haiku-5-5/low", note="C0 repeat, 24 control cards")),
     (r"r15c0[abc]$", dict(arm="C0", grammar="none", reader="claude-sonnet-5-5/medium", note="C0 repeat, 24 control cards")),
 ]
-GROUPS = [["r12a", "r12b", "r12c"], ["r13c1a", "r13c1b", "r13c1c"], ["r13c2a", "r13c2b", "r13c2c"], ["r13c3a", "r13c3b", "r13c3c"], ["r12suba", "r12subb", "r12subc"],
-          ["r14c0a", "r14c0b", "r14c0c"], ["r15c0a", "r15c0b", "r15c0c"]]
 OLD_STAMP_FROM = "r12"   # runs from r12 on used STARTER_TAGS.toon sha1 ec0f8f6071 (GRAMMAR_BASELINE.md); r1-r11 predate the stamp
 
 
@@ -155,15 +156,6 @@ def backfill():
         m = manifest(d, meta, keep_stamp=stamp)
         append(dict(m, backfilled=True))
         done += 1
-    import consistency
-    for g in GROUPS:
-        try:
-            o = consistency.compare(g)
-            e = log_compare(o, {"backfilled": True})
-            e["tag_stamp"] = "sha1 ec0f8f6071 (backfilled)"
-            print("compare", g, {k: e[k] for k in ("V1", "V3", "A")})
-        except Exception as ex:
-            print("compare skipped", g, ex)
     print("backfilled %d runs" % done)
 
 
@@ -181,7 +173,7 @@ def show():
 
 
 def main(a):
-    if not a or a[0] not in ("record", "compare", "bundle", "backfill", "show"):
+    if not a or a[0] not in ("record", "bundle", "backfill", "show"):
         print(__doc__)
         return
     meta, rest, i = {}, [], 1
@@ -196,10 +188,6 @@ def main(a):
         for r in rest:
             m = record(r, **meta)
             print(r, m["arm"], m["reader"], m["score"] and m["score"]["mean_sim"])
-    elif a[0] == "compare":
-        import consistency
-        o = consistency.compare(rest)
-        print(json.dumps(log_compare(o, meta), sort_keys=True))
     elif a[0] == "bundle":
         bundle(rest[0], rest[1:])
     elif a[0] == "backfill":

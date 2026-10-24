@@ -7,7 +7,7 @@ Rows are regenerated each time, never hand-merged."""
 import os, sys, re, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE); sys.path.insert(0, os.path.dirname(HERE))
-import json, mtg2llm as M, reverse_check as RC
+import json, mtg2llm as M, cards as CD
 BEST = os.path.join(os.path.dirname(HERE), "tags", "STARTER_TAGS.best.json")
 
 OUT = os.path.join(os.path.dirname(HERE), "tags", "TAG_GAPS.toon")
@@ -24,10 +24,10 @@ def best_records():
 def gaps():
     """(rows, units, rendered) over every starter in the best tag set (fresh tags when no best set exists); row = (card, group, tags, reason)"""
     rows, n, ok = [], 0, 0
-    keep = RC.starter_records; best = best_records()
-    if best: RC.starter_records = lambda: best
+    keep = CD.starter_records; best = best_records()
+    if best: CD.starter_records = lambda: best
     try: tc = M.tag_cards()
-    finally: RC.starter_records = keep
+    finally: CD.starter_records = keep
     for r, b, _x, _y in tc:
         for g, ts in M.units(b["groups"]).items():
             n += 1

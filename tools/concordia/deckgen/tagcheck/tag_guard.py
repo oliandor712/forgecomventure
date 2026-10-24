@@ -6,7 +6,7 @@ is compared section by section (all keyword groups are one section, order ignore
 import os, sys, re, json
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE); sys.path.insert(0, os.path.dirname(HERE))
-import reverse_check as RC, score as S, mtg2llm as M
+import cards as CD, score as S, mtg2llm as M
 
 BEST = os.path.join(os.path.dirname(HERE), "tags", "STARTER_TAGS.best.json")
 TYPING = ("supertype:", "cardtype:", "type:", "landtype:")
@@ -23,7 +23,7 @@ def _sims(recs):
         return S.score(o, t, n, idx, idx.v(S.toks(S.norm(o, n))), idx.v(rt))["sim"]
     out = {}
     for r in recs:
-        n = r["name"]; b = RC.tag_blind(r); text, _ = M.render(b["groups"], b["typing"])
+        n = r["name"]; b = CD.tag_blind(r); text, _ = M.render(b["groups"], b["typing"])
         total = sim(orig[n], text, n)
         lines = [l for l in re.split(r"\s*/\s*", orig[n]) if l.strip()]
         u = M.units(b["groups"]); per = {}

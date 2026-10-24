@@ -11,7 +11,8 @@ Reads reader outputs only; never Oracle text.
 """
 import argparse, collections as C, glob, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import reverse_check as RC, score as S
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import tag_run as T, cards as CD, score as S
 from common import card_files  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -67,7 +68,7 @@ def mine():
             except Exception: continue
             for c in I:
                 if c["id"] not in O: continue
-                if c["id"] in KEY and RC.is_pre6(KEY[c["id"]]): continue      # pre-6th-only cards are not mined
+                if c["id"] in KEY and CD.is_pre6(KEY[c["id"]]): continue      # pre-6th-only cards are not mined
                 seen += 1
                 u = units(c["groups"])
                 lines = [x.strip() for x in O[c["id"]]["text"].split(" / ") if x.strip()]
@@ -194,7 +195,7 @@ def mine_parts():
             except Exception: continue
             for c in I:
                 if c["id"] not in O: continue
-                if c["id"] in KEY and RC.is_pre6(KEY[c["id"]]): continue
+                if c["id"] in KEY and CD.is_pre6(KEY[c["id"]]): continue
                 u = units(c["groups"]); lines = [x.strip() for x in O[c["id"]]["text"].split(" / ") if x.strip()]
                 if len(u) != len(lines): continue
                 for (g, ts), line in zip(u.items(), lines):
@@ -561,7 +562,7 @@ def cardnames():
 
 def _load():
     if _vocab: return _vocab[0], _names[0]
-    root = RC.T.ROOT
+    root = T.ROOT
     files = card_files(root) + glob.glob(os.path.join(root, "forge-gui/res/tokenscripts/*.txt"))
     try: sig = [len(files), max(os.stat(f).st_mtime for f in files)]      # the cache is valid only for this card set
     except (OSError, ValueError): sig = None
@@ -692,7 +693,7 @@ _texts = {}
 
 def script_text(name):
     """card script text, looked up once per name"""
-    if name not in _texts: _texts[name] = RC.T.find_text(name) or ""
+    if name not in _texts: _texts[name] = T.find_text(name) or ""
     return _texts[name]
 
 
@@ -720,11 +721,11 @@ def tag_cards(names=None):
     """blind-shaped records (groups in reader-batch form) for the given card names, or the starters, with named: tags added. Names reach the tag record only;
     the renderer never sees Oracle text. Returns [(record, blind, added, flags)]"""
     if names:       # any card with a script, not only the starters
-        recs = [RC.T.record(n.strip(), script_text(n.strip())) for n in names if n.strip() and script_text(n.strip())]
-    else: recs = RC.starter_records()
+        recs = [T.record(n.strip(), script_text(n.strip())) for n in names if n.strip() and script_text(n.strip())]
+    else: recs = CD.starter_records()
     out = []
     for r in recs:
-        b = RC.tag_blind(r); added, flags = add_named(r, b)
+        b = CD.tag_blind(r); added, flags = add_named(r, b)
         out.append((r, b, added, flags))
     return out
 
@@ -754,7 +755,7 @@ def cmd_unseen(a):
     for k in glob.glob(os.path.join(RUNS, "*", "key", "*.json")):
         try: seen_names |= set(json.load(open(k, encoding="utf-8")).values())
         except Exception: pass
-    pool = sorted({n for v in cardnames().values() for n in v if not n.startswith("A-") and n not in seen_names and not RC.is_pre6(n) and script_text(n) and not is_walker(n)})
+    pool = sorted({n for v in cardnames().values() for n in v if not n.startswith("A-") and n not in seen_names and not CD.is_pre6(n) and script_text(n) and not is_walker(n)})
     random.Random(a.seed).shuffle(pool); pool = pool[:a.pool]
     R = rules(); cover, chosen = set(), []
     try: cover = {pattern([" ".join(t["tags"])]) for t in json.load(open(os.path.join(HERE, "..", "tags", "ABILITY_TWINS.json"), encoding="utf-8"))}      # ability twins: tag groups already indexed
@@ -835,7 +836,7 @@ def gap_targets(n, run=""):
     for l in open(path, encoding="utf-8"):
         if l.startswith(("#", "cards[")): continue
         name = l.split("|")[0]
-        if name in seen or name.startswith("A-") or RC.is_pre6(name) or is_walker(name) or not script_text(name): continue
+        if name in seen or name.startswith("A-") or CD.is_pre6(name) or is_walker(name) or not script_text(name): continue
         out.append(name)
         if len(out) >= n: break
     return out
@@ -846,7 +847,7 @@ def cmd_scan(a):
     gap_words = Oracle content words (stemmed, no stop words or reminder text, repeats counted) missing from the render, gap_pct. Oracle only scores, the renderer never sees it.
     Writes tags/POOL_GAPS.toon sorted by gap_words so a reader run can take the biggest gaps first (regenerated, never hand-merged)"""
     import time
-    names = sorted({n for v in cardnames().values() for n in v if not n.startswith("A-") and not RC.is_pre6(n) and script_text(n) and not is_walker(n)})
+    names = sorted({n for v in cardnames().values() for n in v if not n.startswith("A-") and not CD.is_pre6(n) and script_text(n) and not is_walker(n)})
     if a.limit: names = names[:a.limit]
     rows, t0 = [], time.time()
     for i in range(0, len(names), a.batch):

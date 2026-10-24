@@ -6,7 +6,9 @@ V1 exact agreement, V2 mean pairwise token F1, V3 ability-signature agreement, V
 Research tool; reads ~/tagcheck_runs/<run>/{key,out,results.json,in}."""
 import os, re, sys, json, glob, itertools, statistics, collections, hashlib, subprocess
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import reverse_check as R, score as S
+import score as S
+from common import workdir
+from run_log import stamp
 
 SELF_WORDS = r"(?:this|that) (?:creature|permanent|artifact|enchantment|land|spell|card|planeswalker|equipment|aura|token|vehicle)"
 TRIG = re.compile(r"^(when|whenever|at the beginning of)\b", re.I)
@@ -103,7 +105,7 @@ def self_ref_ok(a):
 
 
 def load_run(run):
-    wd = R.workdir(run)
+    wd = workdir(run)
     key = json.load(open(os.path.join(wd, "key", "key.json")))
     texts = {}
     for f in sorted(glob.glob(os.path.join(wd, "out", "batch_*.json"))):
@@ -153,18 +155,6 @@ def compare(runs):
             if not pc["sig"]: fam_bad[f_] += 1
     out["families"] = sorted(((f_, fam_bad[f_], fam_all[f_]) for f_ in fam_all if fam_bad[f_]), key=lambda x: (-x[1] / x[2] * min(1, x[2] / 5), -x[1]))
     return out
-
-
-def stamp():
-    root = R.T.ROOT
-    try: rev = subprocess.check_output(["git", "-C", root, "rev-parse", "--short", "HEAD"], text=True).strip()
-    except Exception: rev = "?"
-    tf = os.path.join(root, "tools/concordia/deckgen/tags/STARTER_TAGS.toon")
-    h = "?"
-    if os.path.exists(tf):
-        with open(tf, "rb") as fh:
-            h = hashlib.sha1(fh.read().replace(b"\r", b"")).hexdigest()[:10]
-    return "git %s, STARTER_TAGS.toon sha1 %s, TAG_VARIANT=%s" % (rev, h, os.environ.get("TAG_VARIANT", "on"))
 
 
 def report(o, path):
