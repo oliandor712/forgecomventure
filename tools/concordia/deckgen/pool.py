@@ -3,6 +3,7 @@ import sys, os, re, json, collections, pickle
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 import deck_tier as dt
+from common import identity  # noqa: E402
 data = dt.build_cache()
 cfg = json.load(open(dt.CONFIG))
 RES = dt.RES
@@ -60,11 +61,6 @@ if os.path.exists(ext):
         for s in set(n.lower() for n in list(x['cards']) + x['commanders']): pop[s] += 1
 _sig = os.path.join(HERE, 'spellbinder', 'signals.json')
 PRECON = {k: v['precon'] for k, v in json.load(open(_sig))['cards'].items() if 'precon' in v} if os.path.exists(_sig) else {}
-def identity(c):
-    s = set(re.findall(r'[WUBRG]', c['mc']))
-    for sym in re.findall(r'\{([^}]*)\}', re.sub(r'\([^)]*\)', '', c['oracle'])):
-        s |= set(re.findall(r'[WUBRG]', sym))
-    return frozenset(s)
 pool = {}
 for key, c in data['cards'].items():
     if key in banned or key in restricted: continue

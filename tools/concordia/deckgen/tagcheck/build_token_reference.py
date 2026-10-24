@@ -2,16 +2,13 @@
 """Builds tools/concordia/ai_lab/TOKEN_REMINDER_TEXT.toon: predefined token names and definitions from the Comprehensive Rules (111.10)
 plus the reminder wording the Forge Oracle lines print after them. It sits next to KEYWORD_REFERENCE.toon / KEYWORD_REMINDER_TEXT.toon (the keyword repository)
 and is what the blind reader may read, per batch, for the tokens its tags name.   python3 build_token_reference.py"""
-import os, re, glob, collections
+import os, re, sys, glob, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))
+sys.path.insert(0, os.path.dirname(HERE))
+from common import q_line as q, card_files  # noqa: E402
 CR = os.path.join(ROOT, "tools/agents/reference/MTG_COMP_RULES_20260807.txt")
 OUT = os.path.join(ROOT, "tools/concordia/ai_lab/TOKEN_REMINDER_TEXT.toon")
-
-
-def q(x):
-    x = str(x).replace("\n", " ")
-    return '"' + x.replace("\\", "\\\\").replace('"', '\\"') + '"' if re.search(r'[,"]', x) or x == "" else x
 
 
 def cr_tokens():
@@ -31,7 +28,7 @@ def oracle_reminders(names):
     """most common '(It's an artifact with ...)' wording per token name across the Forge card scripts"""
     found = collections.defaultdict(collections.Counter)
     rx = re.compile(r"[Cc]reates? [^.\n]*?\b(%s)\b tokens?[^.(\n]*\.? ?\(([^)]*)\)" % "|".join(re.escape(n) for n in names))
-    for p in glob.glob(os.path.join(ROOT, "forge-gui/res/cardsfolder/*/*.txt")):
+    for p in card_files(ROOT):
         try: x = open(p, errors="replace").read()
         except OSError: continue
         m = re.search(r"^Oracle:(.*)$", x, re.M)

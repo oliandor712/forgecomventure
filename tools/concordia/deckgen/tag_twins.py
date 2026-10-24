@@ -21,6 +21,8 @@ import collections, difflib, glob, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
+sys.path.insert(0, HERE)
+from common import card_files  # noqa: E402
 TOON = os.path.join(HERE, "tags", "STARTER_TAGS.toon")
 OUT = os.path.join(HERE, "tags", "ABILITY_TWINS.json")
 
@@ -28,7 +30,7 @@ OUT = os.path.join(HERE, "tags", "ABILITY_TWINS.json")
 def oracle_of_all():
     """name -> Oracle text from the Forge scripts; every face (ALTERNATE section) is its own card, A- cards dropped"""
     out = {}
-    for f in glob.glob(os.path.join(ROOT, "forge-gui/res/cardsfolder/*/*.txt")):
+    for f in card_files(ROOT):
         txt = open(f, encoding="utf-8", errors="replace").read()
         for part in re.split(r"^ALTERNATE\s*$", txt, flags=re.M):
             t = part.splitlines()

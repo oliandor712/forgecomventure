@@ -6,14 +6,11 @@ Run:  python3 build_reminder_fill.py   (needs network access to api.scryfall.com
 import os, sys, re, csv, json, time, urllib.request, urllib.parse, urllib.error, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))
+sys.path.insert(0, os.path.dirname(HERE))
+from common import q_line as q, card_files  # noqa: E402
 AI = os.path.join(ROOT, "tools/concordia/ai_lab")
 UA = {"User-Agent": "ConcordiaDeckTools/1.0 (fork oliandor712/forgecomventure)", "Accept": "application/json"}
 PLAIN = {"Create", "Destroy", "Discard", "Double", "Triple", "Exchange", "Exile", "Play", "Reveal", "Search", "Shuffle", "Sacrifice", "Mill", "Tap and Untap", "Planeswalk", "Set in Motion", "Abandon", "Vote", "Landwalk"}
-
-
-def q(x):
-    x = str(x).replace("\n", " ")
-    return '"' + x.replace("\\", "\\\\").replace('"', '\\"') + '"' if re.search(r'[,"]', x) or x == "" else x
 
 
 def get(url):
@@ -65,7 +62,7 @@ def forge_pass():
         if m: ref.append(m.group(1))
     absent = [n for n in ref if n not in base and n not in ("Attach", "Counter", "Tap/untap", "Flip", "Fabricated", "Inspired", "Imprint", "Coven", "Alliance", "Channel", "Class")]
     oracle = []
-    for p in glob.glob(os.path.join(ROOT, "forge-gui/res/cardsfolder/*/*.txt")):
+    for p in card_files(ROOT):
         x = open(p, errors="replace").read()
         m = re.search(r"^Oracle:(.*)$", x, re.M)
         if m: oracle.append(m.group(1).replace("\\n", "\n"))

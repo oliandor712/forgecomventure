@@ -3,13 +3,14 @@ instead of anyone's memory. Also draws the random hold-out sample (non-starter c
 import os, re, sys, glob, random, collections
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import tag_run as T
+from common import card_files
 
 ROOT = T.ROOT
 
 
 def pool():
     out = {}
-    for p in glob.glob(os.path.join(ROOT, "forge-gui/res/cardsfolder/*/*.txt")):
+    for p in card_files(ROOT):
         x = open(p, errors="replace").read()
         m = re.search(r"^Name:(.*)$", x, re.M); o = re.search(r"^Oracle:(.*)$", x, re.M); ty = re.search(r"^Types:(.*)$", x, re.M)
         if m and o and ty and "Token" not in ty.group(1).split() and "\nAlternateMode:" not in x and "ALTERNATE" not in x:

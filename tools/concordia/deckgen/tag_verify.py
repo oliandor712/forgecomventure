@@ -8,7 +8,7 @@ verify() returns add (tags the Oracle line supports and the script tags lack; th
 flags (tags the Oracle line does not support, to look at) and sources (which source supports each added tag). Nothing here edits a card or a deck."""
 import re
 
-def snake(s): return re.sub(r"[^a-z0-9]+", "_", s.lower()).strip("_")
+from common import snake   # noqa: E402
 def key(s): return re.sub(r"[^a-z0-9]", "", s.lower())
 
 # concept: (name, accepted tag prefixes/exact, tag to add, oracle regex)

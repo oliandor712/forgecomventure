@@ -18,14 +18,11 @@ reverse_check.py compare and consistency.py compare call record/log_compare them
 import datetime, glob, hashlib, json, os, re, sys, tarfile
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.dirname(HERE))
+from common import workdir  # noqa: E402
 LOG = os.path.join(HERE, "RUN_LOG.jsonl")
 ARCH = os.path.join(HERE, "run_archive")
 PH = re.compile(r"\{(?:cost|effect|trigger|condition|restriction|filter|duration)\}")
-
-
-def workdir(run):
-    base = os.environ.get("TAGCHECK_DIR") or os.path.expanduser("~/tagcheck_runs")
-    return os.path.join(base, run)
 
 
 def _sha(paths):

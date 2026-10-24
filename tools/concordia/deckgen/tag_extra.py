@@ -203,21 +203,13 @@ DOC = {
 }
 
 
-def tok(s): return re.sub(r"[^a-z0-9]+", "_", s.lower()).strip("_")
+from common import snake as tok, params   # noqa: E402
 
 
 def filt(s):
     """a Forge filter word as readable tag text: powerGE4 -> power_ge_4"""
     return tok(re.sub(r"(power|toughness|cmc)(GE|LE|EQ|GT|LT)(\d+|X)", r"\1_\2_\3", s))
 
-
-
-def params(body):
-    d = {}
-    for item in body.split(" | "):
-        m = re.match(r"^(\w+)\$ ?(.*)$", item)
-        if m: d[m.group(1)] = m.group(2)
-    return d
 
 
 def target_tags(p, out, api=""):

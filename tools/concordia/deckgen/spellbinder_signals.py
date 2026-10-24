@@ -16,6 +16,7 @@ import collections, datetime, json, os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 import deck_tier as dt  # noqa: E402
+from common import identity  # noqa: E402
 
 DIR = os.path.join(HERE, 'spellbinder')
 # Community decks were tried and dropped: Spellbinder had only 17 public Commander decks, none liked, most from one
@@ -29,13 +30,6 @@ def norm(name):
     """Spellbinder names -> the deck tools' keys: lower case, front face only for double-faced cards."""
     n = name.strip().lower().replace('’', "'")
     return n.split(' // ')[0].strip()
-
-
-def identity(c):
-    s = set(re.findall(r'[WUBRG]', c['mc']))
-    for sym in re.findall(r'\{([^}]*)\}', re.sub(r'\([^)]*\)', '', c['oracle'])):
-        s |= set(re.findall(r'[WUBRG]', sym))
-    return frozenset(s)
 
 
 def main():

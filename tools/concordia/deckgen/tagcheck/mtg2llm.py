@@ -12,6 +12,7 @@ Reads reader outputs only; never Oracle text.
 import argparse, collections as C, glob, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import reverse_check as RC
+from common import card_files  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RUNS = os.path.expanduser(os.environ.get("TAGCHECK_DIR") or "~/tagcheck_runs")
@@ -561,7 +562,7 @@ def cardnames():
 def _load():
     if _vocab: return _vocab[0], _names[0]
     root = RC.T.ROOT
-    files = glob.glob(os.path.join(root, "forge-gui/res/cardsfolder/*/*.txt")) + glob.glob(os.path.join(root, "forge-gui/res/tokenscripts/*.txt"))
+    files = card_files(root) + glob.glob(os.path.join(root, "forge-gui/res/tokenscripts/*.txt"))
     try: sig = [len(files), max(os.stat(f).st_mtime for f in files)]      # the cache is valid only for this card set
     except (OSError, ValueError): sig = None
     try:

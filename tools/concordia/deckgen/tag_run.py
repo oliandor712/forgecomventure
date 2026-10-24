@@ -12,6 +12,7 @@ sys.path.insert(0, HERE)
 import ability_tags as AT
 import tag_extra as TX
 import tag_verify as TV
+from common import q, snake, params, card_files   # noqa: E402
 import derived_tags as DT
 
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
@@ -45,15 +46,6 @@ def provides(base):
     if re.search(r"\bdraw", t, re.I): out.append("draw")
     if re.search(r"gain .*life", t, re.I): out.append("lifegain")
     return out
-
-
-def q(x):
-    x = str(x)
-    return '"' + x.replace("\\", "\\\\").replace('"', '\\"') + '"' if x == "" or re.search(r'[,"\\]', x) else x
-
-
-def snake(s):
-    return re.sub(r"[^a-z0-9]+", "_", s.lower()).strip("_")
 
 
 def kw_tags(line):
@@ -124,14 +116,6 @@ def trigger_of(body):
         return "zone_%s_%s" % (o.lower(), d.lower())
     if mode == "DamageDone": return "combat_damage" if "CombatDamage$ True" in body else "damage"
     return TRIG.get(mode, snake(mode))
-
-
-def params(body):
-    d = {}
-    for item in body.split(" | "):
-        m = re.match(r"^(\w+)\$ ?(.*)$", item)
-        if m: d[m.group(1)] = m.group(2)
-    return d
 
 
 def clause_from(sv, first, kind, cid, line):
@@ -296,7 +280,7 @@ def find_text(name):
     t = AT.card_text(name)
     if t: return t
     if not _IDX:
-        for p in glob.glob(os.path.join(ROOT, "forge-gui/res/cardsfolder/*/*.txt")):
+        for p in card_files(ROOT):
             try:
                 with open(p, errors="replace") as fh: x = fh.read()
             except OSError: continue
@@ -333,7 +317,7 @@ def pick(recs, tag, n):
 def pool_pick(tag, n):
     word = tag.split(":")[1].capitalize()
     cands = []
-    for p in sorted(glob.glob(os.path.join(ROOT, "forge-gui/res/cardsfolder/*/*.txt"))):
+    for p in sorted(card_files(ROOT)):
         try: x = open(p, errors="replace").read()
         except OSError: continue
         if re.search(r"^Types:.*\b%s\b" % word, x.split("\nALTERNATE")[0], re.M):
