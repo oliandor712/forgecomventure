@@ -93,6 +93,14 @@ Measured with an AST import graph over all 39 scripts (late imports included): s
 
 Checked: `reverse_check`, `consistency`, `mtg2llm` selftests byte-identical to HEAD; `tag_run.py starter` identical; `run_log.py show`, `sync.py` run.
 
+## 5f. Step 3 parts 1 and 2 (2026-10-24): done, uncommitted
+
+- `rule_lint.py` is merged into `rule_guard.py` (`lint_rules`, `lint`, `python3 rule_guard.py lint`); `mtg2llm.rules()` late-imports `rule_guard`. The broken REVERSE regexes are kept as they were (marked in a comment), because a fix changes which rules are quarantined and so the render output; that is a separate decision. `rule_guard.py lint` output is identical to the old `rule_lint.py` (114 hits in render_rules.json).
+- `reference_files.py` (`fill [--forge|--cr]`, `tokens`, `readers`) replaces `build_reminder_fill.py`, `build_token_reference.py` and `reader_refs.py`. `readers` output (all four files plus the leak scan) and `tokens` output are identical to the old scripts; the only difference is the generator name in the TOKEN_REMINDER_TEXT.toon header. `fill` needs the network and was only checked for import, argument handling and `missing()` (74 names); the `os.sys.argv` oddity is gone.
+- Docs that named the old scripts (SCRIPTS.md, INDEX.md, HANDOVER.md, toolbox.py) are updated; regenerate TOOLBOX.md with `toolbox.py` after the commit.
+- Part 3 (drop the KNOWN/GROUPS backfill in run_log) is still open for the user's decision.
+- Checked: compileall, the three selftests byte-identical, `tag_run.py starter` leaves the tag files unchanged.
+
 ## 6. Order of work (revised after the third pass)
 
 1. `common.py`: `workdir`, `snake`, `params`, `q`, `card_files`, `identity` (no behaviour change; compare the three `q` bodies first).
