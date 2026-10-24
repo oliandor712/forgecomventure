@@ -6,7 +6,7 @@ Planning document. Nothing here is built or run. Facts come from `tag_run.py`, `
 One script that turns Oracle text into tags, turns those tags back into text, and scores the result against the original Oracle text by word use, word count and word order. It replaces the blind reader for routine checks: deterministic, 0 LLM tokens, same answer every run. The end product is a correct tag set per card; the round trip is the test that no fact was lost.
 
 ## 1b. No agents in the tool (user order, 2026-10-23)
-The tool runs end to end as scripts: `python3 roundtrip.py run --cards <set>` tags, renders, scores and writes the report and one `RUN_LOG.jsonl` row, with no subagent, no LLM call and no token cost. Agents come after, as an audit of the finished result:
+The tool runs end to end as scripts: `python3 mtg2llm.py run --cards <set>` tags, renders, scores and writes the report and one `RUN_LOG.jsonl` row, with no subagent, no LLM call and no token cost. Agents come after, as an audit of the finished result:
 - Audit input: the report's lowest-scoring cards, the lines that did not parse, and tag-set disagreements with the script tagger. Agents read only these, never the whole run.
 - Audit job: judge whether a flagged difference is a real tag gap, a renderer wording issue or a scorer tolerance issue, and propose the fix. Fixes are applied to the rules or the parser by the main session, then the tool is rerun.
 - Optional blind reader pass (`tag-blind-reader`) on a sample, as in section 7, after tagger or renderer changes. Not part of `run`.
@@ -19,7 +19,7 @@ The tool runs end to end as scripts: `python3 roundtrip.py run --cards <set>` ta
 | Compare | `reverse_check.score`: tf-idf cosine 0.4, concept F1 0.4, number F1 0.2 | Kept, plus new count and order terms |
 | Data to learn from | reader outputs r1..r18 in `~/tagcheck_runs/`, archive, `learning/` (3,000 graded rebuilds, gap backlog) | Mined into the rule table and the gap list |
 
-Location: `tools/concordia/deckgen/roundtrip.py` (new file; imports `tag_run`, `ability_tags`, `tag_extra`, `reverse_check` helpers; nothing in forge sources is touched).
+Location: `tools/concordia/deckgen/mtg2llm.py` (new file; imports `tag_run`, `ability_tags`, `tag_extra`, `reverse_check` helpers; nothing in forge sources is touched).
 
 ## 3. Logic flow
 1. **Input:** card name, Oracle text, and (when available) the Forge script.
@@ -36,9 +36,9 @@ Location: `tools/concordia/deckgen/roundtrip.py` (new file; imports `tag_run`, `
 
 ## 5. Score
 Three terms, all from the normalised texts; weights are for you to set (first proposal in brackets):
-- **Word use** [0.4]: concept F1 and number F1 as now. A missing keyword or number counts fully.
+- **Word use** [0.6]: concept F1 and number F1 as now. A missing keyword or number counts fully.
 - **Word count** [0.2]: ratio of token counts and of ability counts (min over max). Catches dropped or invented abilities.
-- **Word order** [0.4]: sequence similarity of the stemmed token list (longest common subsequence ratio), plus ability order. Wording that differs but keeps order loses little.
+- **Word order** [0.2, user 2026-10-23]: sequence similarity of the stemmed token list (longest common subsequence ratio), plus ability order. Wording that differs but keeps order loses little.
 - Pass band to be set from the 353 starters after the first run; do not reuse the reader bands (0.7 / 0.4), since those were calibrated on reader noise.
 
 ## 6. Guard against a trivial pass
@@ -56,20 +56,23 @@ A parser that copies Oracle words into tags would score 1.0 and prove nothing. G
 | # | Phase | Output | Done when |
 |---|---|---|---|
 | 1 | Mine pairs from archived runs and `learning/` | `render_rules.json` (pattern, phrasing, count) | rules cover the tag families used by the 353 starters |
-| 2 | Renderer (tags to text) | `roundtrip.py render` | runs on all 353; unknown tags show as placeholders |
-| 3 | Scorer with count and order terms | `roundtrip.py score` | selftest: perfect text 1.0, another card low, empty 0 |
+| 2 | Renderer (tags to text) | `mtg2llm.py render` | runs on all 353; unknown tags show as placeholders |
+| 3 | Scorer with count and order terms | `mtg2llm.py score` | selftest: perfect text 1.0, another card low, empty 0 |
 | 4 | First calibration: script tags to text to Oracle, 353 cards | baseline table, pass band | band set from the data |
-| 5 | Oracle parser for the common line forms | `roundtrip.py tag` | tag-set F1 vs script tagger on the starters |
+| 5 | Oracle parser for the common line forms | `mtg2llm.py tag` | tag-set F1 vs script tagger on the starters |
 | 6 | Gap backlog patterns | updated parser | per-gap coverage table |
 | 7 | Reader check on a sample | numbers vs section 7 targets | targets met or gap list written |
 
 Phases 1-4 give a working renderer-based check on today's tags, before any Oracle parsing exists.
 
-## 9. Decisions for you
-1. **Source order:** `human_logic.toon` H54 puts the card script first and treats Oracle as a cross-check. Should the Oracle parse stay a cross-check and gap-filler (recommended), or become a primary source?
-2. **Order term:** word order weights wording, so differences in phrasing will cost points. Keep order at 0.4, or lower it?
-3. **Scope of the first build:** starters (353) only, or also tier 1 cards (2,000 in `learning/`)?
-4. **Name and location** of the script.
+## 9. Decisions
+Decided by the user (2026-10-23):
+- **Order term** weight 0.2 (word use takes the freed 0.2, now 0.6).
+- **Scope:** all data enriches the rules (starters, tier 1 `learning/` data, every archived run). The 353 starters carry the highest weight, since they had the most reader passes.
+- **Name:** MTG2LLM (`deckgen/mtg2llm.py`; location assumed, say if it should move).
+
+Still open:
+- **Source order:** H54 ranks the tagging sources as 1st card script, 2nd mtgish, 3rd Forge AI (reference); it does not list Oracle text, which today enters only through the `tag_verify.py` cross-check. Should the Oracle parse stay a cross-check and gap-filler (recommended), or rank as a primary source? A new H-row will record the answer.
 
 ## 10. Not verified
 - Whether reader phrasings are consistent enough per tag pattern to give one canonical text (V1 0.81 says about 4 in 5 cards agree exactly).
