@@ -85,6 +85,14 @@ Net: the list in the first draft was too broad. Real extractions: `workdir`, `sn
 
 Cycles: `score` itself imports nothing from the project at load time (`original_text` imports tag_run/tag_verify on first call). `consistency <-> run_log` and `tag_run -> sync -> reverse_check -> tag_run` are unchanged; `tag_guard`, `sync`, `tag_audit` and `mtg2llm` still import `reverse_check` for `tag_blind`, `starter_records`, `is_pre6` and `T`, so `reverse_check -> tag_run -> tag_guard` still exists. Moving those three helpers (record building) out of `reverse_check` is the next cut; step 2 did not break 3 of 4 cycles as first estimated.
 
+## 5e. Step 3 part 4 (2026-10-24): cycles cut, uncommitted
+
+New `tagcheck/cards.py` (41 lines): `tag_blind`, `starter_records`, `pre6_only`, `is_pre6`, moved unchanged out of `reverse_check` (which re-exports them). `mtg2llm`, `sync`, `tag_guard`, `tag_audit` use `cards` (and `tag_run` directly); none imports `reverse_check` any more. `stamp()` moved from `consistency` into `run_log`; `consistency` no longer imports `reverse_check` (uses `common.workdir`, `score`, `run_log.stamp`). `run_log` no longer imports `consistency`: its `compare` subcommand and the compare half of `backfill` (the `GROUPS` table, a one-time job already logged) were removed; comparisons are logged by `consistency.py compare --runs ...` as before.
+
+Measured with an AST import graph over all 39 scripts (late imports included): strongly connected groups went from 2 (and 4 cycles by hand count) to 1: `tag_run` <-> {`sync`, `tag_guard`} <-> {`cards`, `mtg2llm`, `rule_guard`, `score`}. The remaining edge is `tag_run.main()` calling the guards, `sync` and `run_memory` after a run. It disappears when `main()` and the report writers leave `tag_run` (step 6, driver module); the guards then depend on `tag_run` as a data layer only.
+
+Checked: `reverse_check`, `consistency`, `mtg2llm` selftests byte-identical to HEAD; `tag_run.py starter` identical; `run_log.py show`, `sync.py` run.
+
 ## 6. Order of work (revised after the third pass)
 
 1. `common.py`: `workdir`, `snake`, `params`, `q`, `card_files`, `identity` (no behaviour change; compare the three `q` bodies first).
