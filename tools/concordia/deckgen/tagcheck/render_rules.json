@@ -295,7 +295,7 @@
   ]
  },
  "kw:flying": {
-  "n": 356,
+  "n": 357,
   "top": 0.98,
   "canon": "Flying",
   "variants": [
@@ -1134,8 +1134,8 @@
   ]
  },
  "kw:equip num:N": {
-  "n": 164,
-  "top": 0.823,
+  "n": 165,
+  "top": 0.818,
   "canon": "Equip {N}",
   "variants": [
    [
@@ -1426,8 +1426,8 @@
   ]
  },
  "trigger:upkeep": {
-  "n": 16,
-  "top": 0.312,
+  "n": 17,
+  "top": 0.294,
   "canon": "At the beginning of your upkeep, look at the top card of your library. Reveal it. Search your library for N card, put it into your hand, then shuffle.",
   "variants": [
    [
@@ -1758,7 +1758,7 @@
   ]
  },
  "kw:flash": {
-  "n": 104,
+  "n": 105,
   "top": 0.99,
   "canon": "Flash",
   "variants": [
@@ -1994,8 +1994,8 @@
   ]
  },
  "cost:tap mana:colorless mana_amount:N mana_source": {
-  "n": 106,
-  "top": 0.689,
+  "n": 107,
+  "top": 0.682,
   "canon": "{T}: Add {C}.",
   "variants": [
    [
@@ -2008,6 +2008,10 @@
    ],
    [
     "Land. This land enters untapped.",
+    1
+   ],
+   [
+    "This land enters untapped.",
     1
    ]
   ]
@@ -2726,7 +2730,7 @@
   ]
  },
  "affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N": {
-  "n": 19,
+  "n": 20,
   "top": 1.0,
   "canon": "Creatures you control get +N/+N.",
   "variants": []
@@ -3589,10 +3593,15 @@
   ]
  },
  "kw:kicker num:N": {
-  "n": 23,
-  "top": 1.0,
+  "n": 24,
+  "top": 0.958,
   "canon": "Kicker {N}",
-  "variants": []
+  "variants": [
+   [
+    "Kicker {cost}",
+    1
+   ]
+  ]
  },
  "target_count:one target_type:creature token_make token_type:copy": {
   "n": 23,
@@ -4199,10 +4208,14 @@
   ]
  },
  "kw:chapter num:N": {
-  "n": 2,
+  "n": 4,
   "top": 0.5,
-  "canon": "Chapter 3",
+  "canon": "Chapter III",
   "variants": [
+   [
+    "Chapter 3",
+    1
+   ],
    [
     "Saga (chapter 3).",
     1
@@ -5675,10 +5688,15 @@
   "variants": []
  },
  "cost:remove_counters": {
-  "n": 1,
-  "top": 1.0,
+  "n": 2,
+  "top": 0.5,
   "canon": "{cost}, Remove N counters from this creature: Target player draws N cards.",
-  "variants": []
+  "variants": [
+   [
+    "{N}, Remove X storage counters: Add X mana in any combination of {U} and {B}.",
+    1
+   ]
+  ]
  },
  "ai_logic:always": {
   "n": 1,
@@ -7075,10 +7093,15 @@
   "variants": []
  },
  "trigger_scope:other": {
-  "n": 1,
-  "top": 1.0,
+  "n": 2,
+  "top": 0.5,
   "canon": "{Trigger}, {effect}.",
-  "variants": []
+  "variants": [
+   [
+    "{trigger other}: {effect}.",
+    1
+   ]
+  ]
  },
  "cost:mana": {
   "n": 1,
@@ -7917,12 +7940,12 @@
   "variants": []
  },
  "counters:loyalty loyalty_change:-N": {
-  "n": 2,
-  "top": 0.5,
-  "canon": "-2: {effect}",
+  "n": 3,
+  "top": 0.667,
+  "canon": "-8: {effect}",
   "variants": [
    [
-    "-8: {effect}",
+    "-2: {effect}",
     1
    ]
   ]
@@ -8592,7 +8615,7 @@
   "variants": []
  },
  "cost:tap mana:any mana_amount:N mana_source": {
-  "n": 2,
+  "n": 3,
   "top": 1.0,
   "canon": "{T}: Add one mana of any color.",
   "variants": []
@@ -8757,6 +8780,947 @@
   "n": 1,
   "top": 1.0,
   "canon": "Whenever this creature attacks, put a +N/+N counter on each Vampire you control.",
+  "variants": []
+ },
+ "counters:loyalty loyalty_change:+N mana:green mana:red mana_amount:N mana_choice mana_source": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+1: Add {R} or {G}.",
+  "variants": []
+ },
+ "counters:loyalty look_top:N loyalty_change:-N optional take:may_N_creature to_zone:hand": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-3: Look at the top N cards of your library. You may put up to N creature cards from among them into your hand. {rest per tags unknown}",
+  "variants": []
+ },
+ "scry trigger:etb trigger_scope:self": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this artifact enters, scry N.",
+  "variants": []
+ },
+ "cost:tap cost_mana:N mana:any mana_amount:N mana_source": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{T}, pay {N}: Add one mana of any color.",
+  "variants": []
+ },
+ "cost:sacrifice cost:tap cost_mana:N cost_sacrifice_target:self remove:destroy target_count:one target_type:permanent": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{N}, {T}, Sacrifice this artifact: Destroy target permanent.",
+  "variants": []
+ },
+ "duration:eot grant_kw:hexproof grant_kw:indestructible hexproof indestructible target_count:one target_scope:you_control target_type:creature trigger:etb trigger_scope:self": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this Equipment enters, target creature you control gains hexproof and indestructible until end of turn.",
+  "variants": []
+ },
+ "affected_type:creature duration:static flying grant_kw:flying pump_amount:+N/+N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Equip {N}{W}",
+  "variants": []
+ },
+ "color:white kw:equip num:N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Equipped creature gets +N/+N and has flying.",
+  "variants": []
+ },
+ "kw:affinity": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Affinity for {C}",
+  "variants": []
+ },
+ "token_color:white token_count:N token_kw:vigilance token_pt:N/N token_type:knight trigger:spell_cast": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Whenever you cast a spell, create a 2/2 white Knight creature token with vigilance.",
+  "variants": []
+ },
+ "cost:tap cost_mana:Nw token_color:white token_count:N token_kw:vigilance token_pt:N/N token_type:knight": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{N}{W}, {T}: Create a 2/2 white Knight creature token with vigilance.",
+  "variants": []
+ },
+ "controller:you from_zone:library put_onto_battlefield put_tapped shuffle trigger:etb trigger_scope:self tutor tutor_count:N tutor_dest:battlefield_tapped tutor_target:mountain_basic": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this creature enters, search your library for a basic Mountain card, put it onto the battlefield tapped, then shuffle.",
+  "variants": []
+ },
+ "affected_scope:self duration:static pump_amount:+x/+x scales:mountain x_is:count_mountain_you_control": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "This creature gets +X/+X, where X is the number of Mountains you control.",
+  "variants": []
+ },
+ "effect:sacrifice sacrifice_type:land trigger:leaves trigger_scope:self": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this creature leaves the battlefield, sacrifice a land.",
+  "variants": []
+ },
+ "affected_type:creature condition:cleric_you_control duration:static grant_kw:lifelink lifegain lifelink": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Equip {N}",
+  "variants": []
+ },
+ "affected_type:creature condition:rogue_you_control deathtouch duration:static grant_kw:deathtouch": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Equipped creature has lifelink as long as you control a Cleric.",
+  "variants": []
+ },
+ "affected_type:creature condition:warrior_you_control duration:static grant_kw:haste haste": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Equipped creature has deathtouch as long as you control a Rogue.",
+  "variants": []
+ },
+ "affected_type:creature condition:wizard_you_control duration:static flying grant_kw:flying": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Equipped creature has haste as long as you control a Warrior.",
+  "variants": []
+ },
+ "prevent_damage replace:damagedone_to_other": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Equipped creature has flying as long as you control a Wizard.",
+  "variants": []
+ },
+ "target_count:one target_type:opponent token_color:red token_color:white token_count:N trigger:upkeep": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "At the beginning of your upkeep, target opponent creates three white and red tokens {token details}.",
+  "variants": []
+ },
+ "cost:tap damage damage_amount:N target_count:one target_type:creature": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{T}: This creature deals N damage to target creature.",
+  "variants": []
+ },
+ "draw_count:N trigger:dies trigger_filter:opp_control trigger_scope:any trigger_zone:graveyard": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Whenever a creature an opponent controls dies, draw N card.",
+  "variants": []
+ },
+ "affected_filter:green affected_filter:other affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Other green creatures you control get +N/+N.",
+  "variants": []
+ },
+ "affected_filter:black affected_filter:other affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Other black creatures you control get +N/+N.",
+  "variants": []
+ },
+ "optional token_color:black token_color:green token_count:N token_pt:N/N token_type:worm trigger:upkeep": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "At the beginning of your upkeep, you may create a 1/1 black and green Worm creature token.",
+  "variants": []
+ },
+ "counter:strife counter_count:N trigger:upkeep": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "At the beginning of your upkeep, put a strife counter on this enchantment.",
+  "variants": []
+ },
+ "affected_filter:attacking affected_type:creature duration:static pump_amount:+x/+N x_is:counters_on_this_strife": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Attacking creatures get +X/+0, where X is the number of strife counters on this enchantment.",
+  "variants": []
+ },
+ "affected_filter:blocking affected_scope:you_control affected_type:creature duration:static pump_amount:+x/+N x_is:counters_on_this_strife": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Blocking creatures you control get +X/+0, where X is the number of strife counters on this enchantment.",
+  "variants": []
+ },
+ "counters:loyalty lifegain loyalty_change:+N token_ability:pay_N_tap_sacrifice_gain_N_life token_cardtype:artifact token_color:colorless token_count:N token_type:food": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+2: Create a Food token.",
+  "variants": []
+ },
+ "becomes:creature becomes:elk counters:loyalty duration:eot loses_all_abilities loyalty_change:+N restrict_kind:loses_abilities target_count:one target_type:artifact target_type:creature transform": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+1: Up to one target artifact or creature loses all abilities and becomes a green Elk creature until end of turn.",
+  "variants": []
+ },
+ "counters:loyalty exchange_control loyalty_change:-N steal target_count:one target_filter:power_le_N target_scope:opp_control target_scope:you_control target_type:artifact target_type:creature": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-5: Exchange control of target artifact or creature you control and target creature an opponent controls with power 3 or less.",
+  "variants": []
+ },
+ "cost:discard cost:tap cost_mana:N lifegain_amount:N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{N}, {T}, Discard N card: You gain N life.",
+  "variants": []
+ },
+ "cost:life cost:tap cost_mana:N token_color:white token_count:N token_pt:N/N token_type:goat": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{N}, {T}, Pay {life}: Create a 0/1 white Goat creature token.",
+  "variants": []
+ },
+ "cost:sacrifice cost:tap cost_mana:N cost_sacrifice_target:creature from_zone:graveyard return target_count:one target_scope:you_control target_type:artifact target_zone:graveyard to_zone:hand": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{N}, {T}, Sacrifice a creature: Return target artifact card from your graveyard to your hand.",
+  "variants": []
+ },
+ "cost:sacrifice cost:tap cost_mana:N cost_sacrifice_target:artifact draw_count:N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{N}, {T}, Sacrifice an artifact: Draw N card.",
+  "variants": []
+ },
+ "kw:training": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Training",
+  "variants": []
+ },
+ "target_count:up_to_N target_filter:other target_type:creature": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{trigger}: target other creature {effect}.",
+  "variants": []
+ },
+ "controller:you from_zone:exile put_onto_battlefield target_count:all target_filter:exiledwithsource target_type:card trigger:leaves trigger_scope:self": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this creature leaves the battlefield, put all cards exiled with it onto the battlefield under your control.",
+  "variants": []
+ },
+ "counters:loyalty duration:eot loyalty_change:+N pump_amount:+N/+N pump_single target_count:up_to_N target_type:creature": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+1: Up to one target creature gets +N/+N until end of turn.",
+  "variants": []
+ },
+ "counters:loyalty damage damage_amount:N lifegain_amount:N loyalty_change:-N target_count:one target_type:any": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-2: This planeswalker deals N damage to any target. You gain N life.",
+  "variants": []
+ },
+ "counters:loyalty loyalty_change:-N target_count:all target_scope:you_control target_type:vampire": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-8: {effect} Vampires you control.",
+  "variants": []
+ },
+ "color:blue kw:flashback num:N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Flashback {N}{U}",
+  "variants": []
+ },
+ "look_top:x take:N to_zone:hand": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Look at the top X cards of your library. Put two of them into your hand.",
+  "variants": []
+ },
+ "kw:enchant target_type:creature target_type:vehicle": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Enchant creature or Vehicle",
+  "variants": []
+ },
+ "token_color:colorless token_count:N token_pt:N/N token_type:pilot_crewsaddlebuff trigger:etb trigger_scope:self": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this Aura enters, create a 1/1 colorless Pilot creature token {with crew-saddle ability}.",
+  "variants": []
+ },
+ "affected_type:permanent duration:static grant_kw:lifelink lifegain lifelink pump_amount:+N/+N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Enchanted permanent gets +N/+N and has lifelink.",
+  "variants": []
+ },
+ "saga_chapter:N token_cardtype:artifact token_color:colorless token_count:N token_type:powerstone": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "I: Create N Powerstone tokens.",
+  "variants": []
+ },
+ "saga_chapter:N target_count:N target_type:player": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "II: Two target players {effect}.",
+  "variants": []
+ },
+ "damage damage_amount:x saga_chapter:N target_count:N target_type:any x_is:count_artifact_you_control": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "III: This Saga deals X damage to each of two target {any targets}, where X is the number of artifacts you control.",
+  "variants": []
+ },
+ "counter:flying counter_count:N target_count:one target_scope:you_control target_type:creature": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{chaos/planeswalk ability}: Put a flying counter on target creature you control.",
+  "variants": []
+ },
+ "duration:permanent impulse_draw impulse_draw_count:N remove:exile target_count:one target_type:creature": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Exile target creature; {impulse draw: you may play that card}.",
+  "variants": []
+ },
+ "target_count:all target_type:creature": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{effect} all creatures.",
+  "variants": []
+ },
+ "color:white kw:bestow num:N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Bestow {N}{W}",
+  "variants": []
+ },
+ "kw:mentor": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Mentor",
+  "variants": []
+ },
+ "affected_type:enchanted duration:static grant_kw:mentor mentor pump_amount:+N/+N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Enchanted creature gets +N/+N and has mentor.",
+  "variants": []
+ },
+ "affected_type:creature duration:static grant_kw:menace menace pump_amount:+N/+N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Equip {N}{B}",
+  "variants": []
+ },
+ "optional trigger:etb trigger_filter:creature trigger_scope:any": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Equipped creature gets +N/+N and has menace.",
+  "variants": []
+ },
+ "color:black kw:equip num:N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Whenever a creature enters, you may {effect}.",
+  "variants": []
+ },
+ "cost:tap mana:blue mana:white mana_amount:N mana_choice mana_source": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "This land enters tapped.",
+  "variants": []
+ },
+ "cost:tap cost_mana:N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{T}: Add {W} or {U}.",
+  "variants": []
+ },
+ "surveil": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{N}, {T}: {effect}",
+  "variants": []
+ },
+ "kw:landwalk": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Landwalk ({type})",
+  "variants": []
+ },
+ "affected_scope:you_control affected_type:desert impulse_draw": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Deserts you control {impulse draw effect}.",
+  "variants": []
+ },
+ "token_color:green token_color:red token_color:white token_count:N token_pt:N/N token_type:sand_warrior trigger:etb trigger_filter:you_control trigger_scope:any": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Whenever a permanent enters under your control, create two 1/1 red, green and white Sand Warrior creature tokens.",
+  "variants": []
+ },
+ "counters:loyalty loyalty_change:+N phase_out target_count:up_to_N target_filter:other target_scope:you_control target_type:planeswalker": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+1: Up to two other target planeswalkers you control phase out.",
+  "variants": []
+ },
+ "counters:loyalty loyalty_change:-N remove:bounce target_count:one target_filter:nonland target_scope:each_opponent target_scope:opp_control target_type:permanent": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-2: Return target nonland permanent an opponent controls to its owner's hand.",
+  "variants": []
+ },
+ "becomes:artifact becomes:construct becomes:creature counters:loyalty indestructible loyalty_change:-N target_count:one target_scope:you_control target_type:artifact transform vigilance": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-7: Target artifact you control becomes an artifact creature Construct with vigilance and indestructible.",
+  "variants": []
+ },
+ "effect:sacrifice sacrifice_type:self trigger_filter:one_or_more": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Whenever one or more {trigger}, sacrifice this creature.",
+  "variants": []
+ },
+ "cost_mana:Ngg": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{N}{G}{G}: {effect}.",
+  "variants": []
+ },
+ "affected_filter:ismonstrous affected_type:card duration:static grant_kw:reach reach": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Monstrous creatures have reach.",
+  "variants": []
+ },
+ "mana_source token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_type:treasure trigger:etb trigger_scope:self": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this creature enters, create a Treasure token.",
+  "variants": []
+ },
+ "pump_amount:+N/+N trigger:attacks unless_cost": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Whenever this creature attacks, {unless cost}, it gets +N/+N.",
+  "variants": []
+ },
+ "discard sacrifice": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{effect} +N/+N.",
+  "variants": []
+ },
+ "saga_chapter:N shuffle tutor tutor_count:up_to_N tutor_dest:hand tutor_target:forest_basic": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "I: Search your library for up to two basic Forest cards, put them into your hand, then shuffle.",
+  "variants": []
+ },
+ "from_zone:graveyard return saga_chapter:N target_count:up_to_N target_scope:you_control target_type:land target_zone:graveyard to_zone:library": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "II: Put up to one target land card from your graveyard on top of your library.",
+  "variants": []
+ },
+ "controller:you from_zone:exile put_onto_battlefield remove:exile saga_chapter:N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "III: Exile this Saga, then return it to the battlefield transformed.",
+  "variants": []
+ },
+ "color:white kw:unearth num:N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Unearth {N}{W}",
+  "variants": []
+ },
+ "controller:you from_zone:stack put_onto_battlefield return to_zone:battlefield trigger:etb trigger_scope:self": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this creature enters, return {card} from the stack to the battlefield under your control.",
+  "variants": []
+ },
+ "controller:you from_zone:stack put_onto_battlefield return to_zone:battlefield trigger:leaves trigger_scope:self": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this creature leaves the battlefield, return {card} from the stack to the battlefield under your control.",
+  "variants": []
+ },
+ "kw:fading num:N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Fading 7",
+  "variants": []
+ },
+ "cost:remove_counters token_color:green token_count:N token_type:x_x_saproling_burst": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Remove a fade counter: Create an X/X green Saproling creature token.",
+  "variants": []
+ },
+ "cant_regenerate remove:destroy trigger:leaves trigger_scope:self": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this enchantment leaves the battlefield, destroy {target}; it can't be regenerated.",
+  "variants": []
+ },
+ "color:blue color:green kw:escape num:N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Escape-{G}{U}, Exile N other cards from your graveyard.",
+  "variants": []
+ },
+ "effect:sacrifice sacrifice_type:self trigger:etb trigger_scope:self": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this creature enters, sacrifice it. {condition}",
+  "variants": []
+ },
+ "controller:you draw_count:N from_zone:hand lifegain_amount:N put_onto_battlefield trigger:etb trigger_scope:self": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this creature enters, you gain N life, draw N card, and put N card from your hand onto the battlefield.",
+  "variants": []
+ },
+ "optional trigger:attacks": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Whenever this creature attacks, you may {effect}.",
+  "variants": []
+ },
+ "counters:loyalty draw_count:N loyalty_change:+N": {
+  "n": 2,
+  "top": 0.5,
+  "canon": "+1: Draw N card.",
+  "variants": [
+   [
+    "0: Draw N card.",
+    1
+   ]
+  ]
+ },
+ "counters:loyalty damage damage_amount:N loyalty_change:-N target_count:N target_type:any": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-2: This deals N damage to each of up to three targets.",
+  "variants": []
+ },
+ "counters:loyalty damage damage_amount:N draw_count:N loyalty_change:-N target_count:all target_scope:opp_control target_type:creature": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-7: Draw N cards. Then this deals N damage to each creature your opponents control.",
+  "variants": []
+ },
+ "cost_reduce cost_reduce_amount:N cost_reduce_for:equipment cost_reduce_for:vehicle cost_reduce_mana:generic duration:static": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Equipment spells and Vehicle spells you cast cost {N} less to cast.",
+  "variants": []
+ },
+ "affected_scope:self duration:static flying grant_kw:flying": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Flying",
+  "variants": []
+ },
+ "cost:tap cost_mana:N from_zone:graveyard return target_count:one target_scope:you_control target_type:equipment target_type:vehicle target_zone:graveyard to_zone:hand": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{N}, {T}: Return target Equipment or Vehicle card from your graveyard to your hand.",
+  "variants": []
+ },
+ "effect:sacrifice trigger:attacks unless_cost": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "At the beginning of {step}",
+  "variants": []
+ },
+ "unless_cost": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Whenever this creature attacks, sacrifice it unless you pay {cost}.",
+  "variants": []
+ },
+ "affected_scope:self condition:threshold duration:static pump_amount:+N/+N": {
+  "n": 2,
+  "top": 1.0,
+  "canon": "Threshold - This creature gets +N/+N as long as seven or more cards are in your graveyard.",
+  "variants": []
+ },
+ "cost:discard duration:eot flying grant_kw:flying": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Discard N card: This creature gains flying until end of turn.",
+  "variants": []
+ },
+ "condition:threshold restrict_kind:cant_block restrict_scope:self": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Threshold - This creature can't block.",
+  "variants": []
+ },
+ "affected_scope:you_control affected_type:instant impulse_draw": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "You may play instant cards you control {effect}.",
+  "variants": []
+ },
+ "die_replace:exile": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "If N card would die, exile it instead.",
+  "variants": []
+ },
+ "cost_mana:Nr effect:sacrifice": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{N}{R}: Sacrifice this enchantment.",
+  "variants": []
+ },
+ "token_make token_type:copy trigger:etb trigger_scope:self": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this planeswalker enters, {effect} create a token that's a copy of {target}.",
+  "variants": []
+ },
+ "counters:loyalty loyalty_change:+N scry": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+1: Scry N.",
+  "variants": []
+ },
+ "counters:loyalty life_loss_amount:x look_top:N loyalty_change:+N take:all_card target_scope:each_opponent to_zone:hand x_is:remembered_mana_value": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+1: Each opponent reveals the top card of their library and puts it into their hand. They lose X life, where X is its mana value.",
+  "variants": []
+ },
+ "damage damage_amount:x lifegain_amount:x target_count:one target_type:creature target_type:planeswalker x_is:x_paid": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-X: This deals X damage to target creature or planeswalker. You gain X life.",
+  "variants": []
+ },
+ "counters:loyalty loyalty_change:-N token_color:black token_count:x token_kw:lifelink token_pt:N/N token_type:vampire_knight x_is:players_highestlifetotal": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-9: Create X 1/1 black Vampire Knight creature tokens with lifelink, where X is the highest life total among players.",
+  "variants": []
+ },
+ "color:red kw:overload num:x": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Overload {X}{R}",
+  "variants": []
+ },
+ "damage damage_amount:x target_count:one target_scope:opp_control target_type:creature x_is:x_paid": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "This spell deals X damage to target creature an opponent controls.",
+  "variants": []
+ },
+ "counters:loyalty loyalty_change:+N token_color:green token_count:N token_pt:N/N token_type:wolf": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+0: Create a 2/2 green Wolf creature token.",
+  "variants": []
+ },
+ "counters:loyalty deathtouch duration:eot grant_kw:deathtouch loyalty_change:+N pump_amount:+N/+N pump_single target_count:one target_filter:wolf target_type:creature": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+4: Target Wolf gets +N/+N and gains deathtouch until end of turn.",
+  "variants": []
+ },
+ "counter:loyalty counter_count:x counters:loyalty loyalty_change:-N remove:destroy target_count:one target_type:creature x_is:target_toughness": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-10: Destroy target creature. Put X loyalty counters on this planeswalker, where X is that creature's toughness.",
+  "variants": []
+ },
+ "counters:loyalty loyalty_change:-N remove:destroy target_count:all target_scope:opp_control target_type:creature": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-25: Destroy each creature your opponents control.",
+  "variants": []
+ },
+ "counter:charge counter_count:N trigger:etb trigger_filter:land trigger_filter:you_control trigger_scope:any": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Whenever a land you control enters, put a charge counter on this artifact.",
+  "variants": []
+ },
+ "cost:remove_counters cost:tap mana:colorless mana_amount:N mana_source": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{T}, Remove N charge counters: Add {C}{C}.",
+  "variants": []
+ },
+ "cost:remove_counters cost:tap damage damage_amount:N target_count:one target_type:any": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{T}, Remove N charge counters: This deals N damage to any target.",
+  "variants": []
+ },
+ "cost:tap cost_mana:N counter:storage counter_count:N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{T}: Add {C}.",
+  "variants": []
+ },
+ "cost_mana:N mana:black mana:blue mana_amount:x mana_choice mana_source x_is:x_paid": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{N}, {T}: Put a storage counter on this land.",
+  "variants": []
+ },
+ "cost_reduce cost_reduce_amount:N duration:static": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Spells you cast cost {N} less to cast. {scope unclear}",
+  "variants": []
+ },
+ "counters:loyalty look_top:N loyalty_change:+N take:N to_zone:exile token_color:colorless token_count:N token_pt:N/N token_type:spirit": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+1: Exile the top card of your library. Create a 2/2 colorless Spirit creature token.",
+  "variants": []
+ },
+ "counters:loyalty loyalty_change:-N remove:destroy target_count:one target_filter:noncolorless target_type:permanent": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-3: Destroy target noncolorless permanent.",
+  "variants": []
+ },
+ "draw_count:x trigger:etb trigger_scope:self x_is:eachspenttocast_u_half_down": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this creature enters, draw X cards, where X is half the blue mana spent to cast it, rounded down.",
+  "variants": []
+ },
+ "discard_count:x target_scope:each_opponent trigger:etb trigger_scope:self x_is:eachspenttocast_b_half_down": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this creature enters, each opponent discards X cards, where X is half the black mana spent to cast it, rounded down.",
+  "variants": []
+ },
+ "duration:eot grant_kw:haste grant_kw:trample haste pump_amount:+x/+N trample trigger:etb trigger_scope:self x_is:eachspenttocast_r_half_down": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this creature enters, it gets +X/+0 and gains trample and haste until end of turn, where X is half the red mana spent to cast it, rounded down.",
+  "variants": []
+ },
+ "counter:pNpN counter_count:N counters:loyalty loyalty_change:+N target_count:up_to_N target_scope:you_control target_type:creature": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+1: Put two +N/+N counters on up to one target creature you control.",
+  "variants": []
+ },
+ "counters:loyalty duration:eot grant_kw:prevent_all_damage_that_would_be_dealt_to_cardname loyalty_change:+N target_count:one target_scope:you_control target_type:creature": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+0: Target creature you control gains \"Prevent all damage that would be dealt to this creature\" until end of turn.",
+  "variants": []
+ },
+ "counters:loyalty loyalty_change:-N target_count:all target_scope:you_control target_type:creature trample": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-7: Creatures you control gain trample {effect}.",
+  "variants": []
+ },
+ "affected_filter:blue affected_filter:other affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Other blue creatures you control get +N/+N.",
+  "variants": []
+ },
+ "cost_mana:u target_count:one target_filter:artifact target_type:creature transform": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{U}: Target artifact creature {transform effect}.",
+  "variants": []
+ },
+ "mana:colorless mana_amount:N mana_restriction:artifact_spell_or_activated_ability mana_source": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{T}: Add {C}{C}. Spend this mana only to cast artifact spells or activate abilities of artifacts.",
+  "variants": []
+ },
+ "cost:tap exile_from:hand": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{T}: Exile N card from your hand.",
+  "variants": []
+ },
+ "cost:tap from_zone:exile return to_zone:hand": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{T}: Return N card exiled with this artifact to your hand.",
+  "variants": []
+ },
+ "target_count:all target_filter:isremembered target_type:card trigger:leaves trigger_scope:self": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "When this artifact leaves the battlefield, {effect} all cards exiled with it.",
+  "variants": []
+ },
+ "damage damage_amount:x target_count:one target_type:opponent target_type:planeswalker trigger_filter:one_or_more x_is:triggering_amount": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Whenever one or more {source} deals damage, this deals that much damage to target opponent or planeswalker.",
+  "variants": []
+ },
+ "counters:loyalty duration:eot impulse_draw impulse_draw_count:N look_top:N loyalty_change:+N take:all to_zone:exile": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+1: Exile the top card of your library. Until end of turn, you may play that card.",
+  "variants": []
+ },
+ "counters:loyalty look_top:N loyalty_change:-N take:all to_zone:exile": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-7: Exile the top N cards of your library. {effect}",
+  "variants": []
+ },
+ "color:black kw:suspend num:N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Suspend 2-{B}",
+  "variants": []
+ },
+ "condition:card_suspended_self_in_exile counter:time counter_count:N effect:sacrifice optional sacrifice_outlet sacrifice_type:permanent trigger:upkeep": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "At the beginning of your upkeep, you may {sacrifice effect}; remove N time counters. {unclear}",
+  "variants": []
+ },
+ "effect:sacrifice sacrifice_outlet sacrifice_type:permanent target_count:one target_type:player": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Target player sacrifices a permanent.",
+  "variants": []
+ },
+ "token_color:red token_color:white token_count:N token_pt:N/N token_type:spirit trigger_filter:one_or_more trigger_scope:other": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Whenever one or more {things} {trigger}, create a 3/2 red and white Spirit creature token.",
+  "variants": []
+ },
+ "cost:discard counters:loyalty draw_count:N loyalty_change:+N unless_cost": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+1: You may discard N card. If you do, draw N cards.",
+  "variants": []
+ },
+ "counters:loyalty double_strike duration:eot grant_kw:double_strike grant_kw:vigilance loyalty_change:-N target_count:all target_scope:you_control target_type:spirit vigilance": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-4: Spirits you control gain double strike and vigilance until end of turn.",
+  "variants": []
+ },
+ "counters:loyalty damage damage_amount:N loyalty_change:+N target_count:one target_type:planeswalker target_type:player": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+1: This deals N damage to target player or planeswalker.",
+  "variants": []
+ },
+ "damage damage_amount:x target_count:one target_type:creature x_is:x_paid": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-X: This deals X damage to target creature.",
+  "variants": []
+ },
+ "counters:loyalty damage damage_amount:N loyalty_change:-N target_count:all target_count:one target_filter:controlledby_targetedorcontroller target_type:creature target_type:planeswalker target_type:player": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-8: This deals N damage to target player or planeswalker and N damage to each creature that player or that planeswalker's controller controls.",
+  "variants": []
+ },
+ "target_count:one target_type:card": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Counter target spell.",
+  "variants": []
+ },
+ "cost_mana:Nuu target_count:one target_type:card": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Cleave {N}{U}{U}",
+  "variants": []
+ },
+ "kw:cleave": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Counter target spell {with words removed}.",
+  "variants": []
+ },
+ "counters:loyalty look_top:N loyalty_change:+N take:all_creature to_zone:hand": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "+1: Look at the top N cards of your library. You may reveal all creature cards from among them and put them into your hand.",
+  "variants": []
+ },
+ "controller:you counters:loyalty from_zone:hand loyalty_change:-N optional put_onto_battlefield": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-3: You may put N card from your hand onto the battlefield.",
+  "variants": []
+ },
+ "controller:you counters:loyalty from_zone:library loyalty_change:-N put_onto_battlefield return to_zone:battlefield": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-7: Put N card from your library onto the battlefield under your control.",
+  "variants": []
+ },
+ "color:white kw:escape num:N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Escape-{cost}",
+  "variants": []
+ },
+ "counters:loyalty duration:eot loyalty_change:-N pump_amount:+N/+N pump_single target_count:up_to_N target_scope:you_control target_type:creature": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-1: Up to two target creatures you control each get +N/+N until end of turn.",
+  "variants": []
+ },
+ "counters:loyalty loyalty_change:-N token_color:white token_count:N token_pt:N/N token_type:human_soldier": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-2: Create two 1/1 white Human Soldier creature tokens.",
+  "variants": []
+ },
+ "counters:loyalty lifegain_amount:N loyalty_change:-N": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "-3: You gain N life.",
+  "variants": []
+ },
+ "kw:increment": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Increment",
+  "variants": []
+ },
+ "mana:any mana_amount:N mana_source optional trigger_filter:one_or_more": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "Whenever {trigger}, you may add one mana of any color.",
+  "variants": []
+ },
+ "cost:tap cost_mana:x counter:pNpN counter_count:x token_color:blue token_color:green token_count:N token_pt:N/N token_type:fractal x_is:x_paid": {
+  "n": 1,
+  "top": 1.0,
+  "canon": "{X}, {T}: Create a 0/0 green and blue Fractal creature token, then put X +N/+N counters on it.",
   "variants": []
  }
 }
