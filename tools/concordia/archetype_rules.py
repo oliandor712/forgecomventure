@@ -26,14 +26,6 @@ SCALE_NEED = t1.SCALE_NEED  # enchantments (or other X) a "number of X you contr
 REMOVAL_CLASSES = ("creature", "artifact", "enchantment", "land", "token")  # user's priority list, highest first
 SKIP_TYPES = {"Creature", "Artifact", "Enchantment", "Legendary", "Snow", "Tribal", "Kindred", "Instant", "Sorcery", "Land"}
 
-# Creature windows (min, max) by tier and archetype; control only exists at tiers 2-5. Ramp and midrange keep the tier range.
-CREATURES = {
-    1: t1.TARGETS,
-    2: {"aggro": (33, 36), "tribal": (31, 34), "tokens": (29, 32), "control": (26, 28)},
-    3: {"aggro": (32, 36), "tribal": (30, 34), "tokens": (28, 32), "control": (22, 26)},
-    4: {"aggro": (32, 36), "tribal": (30, 34), "tokens": (28, 32), "control": (22, 26)},
-    5: {"aggro": (30, 34), "tribal": (28, 32), "tokens": (26, 30), "control": (20, 24)},
-}
 # Minimum instants+sorceries and enchantments by tier and archetype (artifacts: unchanged, tried first as cheap alternates)
 INSTANT_SORCERY = {1: t1.INSTANT_SORCERY, 2: {"control": 13, "tokens": 11, "aggro": 9, "tribal": 7},
                    3: {"control": 14, "tokens": 12, "aggro": 10, "tribal": 8}, 4: {"control": 14, "tokens": 12, "aggro": 10, "tribal": 8},
@@ -41,7 +33,6 @@ INSTANT_SORCERY = {1: t1.INSTANT_SORCERY, 2: {"control": 13, "tokens": 11, "aggr
 ENCHANTMENT = {1: t1.ENCHANTMENT, 2: {"tokens": 6, "control": 5, "tribal": 4, "aggro": 3},
                3: {"tokens": 5, "control": 4, "tribal": 3, "aggro": 2}, 4: {"tokens": 5, "control": 4, "tribal": 3, "aggro": 2},
                5: {"tokens": 5, "control": 4, "tribal": 3, "aggro": 2}}
-CREATURE_FLOOR = {1: t1.LOW_FLOOR, 2: 26, 3: 16, 4: 14, 5: 12}  # deck_tier.py hard minimum per tier
 # low-* shift: (primary down, secondary up) in 2..4; reach 2 uses 2, reach 3 uses 3, reach 4+ uses 4
 SECONDARY = {"low-control": "instant_sorcery", "low-aggro": "artifact", "low-tribal": "enchantment", "low-tokens": "enchantment"}
 LAND_RANGE = {1: t1.LANDS, 2: (36, 39), 3: (33, 38), 4: (33, 37), 5: (31, 37)}  # deck_tier.py land range per tier
@@ -52,32 +43,21 @@ def shift_for(reach):
 
 
 def creature_check(tier, archetype, sub=None, reach=2):
-    """Creature pass/fail band. H11 wins over the archetype windows (user, 2026-10-21): tier 1 is 30-36 creatures; a low-* deck
-    goes down to 26 and up to the band max minus its shift. Tiers 2-5 keep the archetype window."""
-    if tier != 1:
-        return windows(tier, archetype, sub, reach)[:2]
-    lo_band, hi_band = t1.CREATURE_BAND
-    d = shift_for(reach) if sub else 0
-    return (max(t1.LOW_FLOOR, lo_band - d) if sub else lo_band), hi_band - d
+    """Creature pass/fail band: at least 15, no hard maximum (99; the 35 soft cap is a build limit in tier1_rules), same for every tier, archetype and sub (H11, user 2026-10-25)."""
+    return t1.CREATURE_BAND  # for every tier, archetype and sub (user, 2026-10-25)
 
 def windows(tier, archetype, sub=None, reach=2):
-    """(creature min, creature max, instant+sorcery min, enchantment min, artifact bonus) for a deck target.
-    Tier 1 creature numbers are build targets: the archetype preference shifted by the sub, clipped into creature_check's band."""
-    lo, hi = CREATURES.get(tier, {}).get(archetype, (CREATURE_FLOOR[tier], 99))
+    """(creature min, creature max, instant+sorcery min, enchantment min, artifact bonus) for a deck target. Creatures are the one band for all (creature_check)."""
+    lo, hi = creature_check(tier, archetype, sub, reach)
     isx = INSTANT_SORCERY.get(tier, {}).get(archetype, 0)
     ench = ENCHANTMENT.get(tier, {}).get(archetype, 0)
     art = 0
     if sub:
         d = shift_for(reach)
-        lo, hi = max(CREATURE_FLOOR[tier], lo - d), max(CREATURE_FLOOR[tier], hi - d)
         sec = SECONDARY[sub]
         if sec == "instant_sorcery": isx += d
         elif sec == "enchantment": ench += d
         elif sec == "artifact": art += d
-    if tier == 1:
-        clo, chi = creature_check(tier, archetype, sub, reach)
-        lo = min(max(lo, clo), chi)
-        hi = max(min(hi, chi), lo)
     return lo, hi, isx, ench, art
 
 

@@ -1,0 +1,10 @@
+{
+  "baseline": "2026-10-25 (T3-T5 recalibrated to the dry rebuild: medians 33.7 / 38.0 / 41.4)",
+  "note": "One table for tier power numbers (ACTION_PLAN_TAG_DECK step 6). band = deck_tier.py's power window (inclusive, null = open); target = what build.py aims for; floor/ceiling = build.py's retry limits (tiers 2 only; tier 1 comes from tier1_rules.POWER). Tier 1 stays in tier1_rules.py. Numbers on the EDHREC card-power scale; recalibrate after card_power changes and bump the baseline date.",
+  "tiers": {
+    "2": {"band": [19, 31], "target": 26.5, "floor": 24.5, "ceiling": 30.0},
+    "3": {"band": [27, 39], "target": 34.5},
+    "4": {"band": [32, 42], "target": 38.5},
+    "5": {"band": [37, null], "target": 43}
+  }
+}

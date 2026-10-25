@@ -1,0 +1,4 @@
+# Claude-only file in TOON. Written by tagcheck/reader_metric.py; one row per reader run, rows replaced by run name.
+# rules_new / gaps_closed are against the previous update (blank history counts 0). pending = rules mined by one run only (second-batch rule).
+rows[1|]{run|date|rules|rules_new|gaps_open|gaps_closed|no_rule|rendered_pct|pending}:
+  g10c|2026-10-25|2841|0|26|0|84|80.2|2841

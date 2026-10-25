@@ -19,9 +19,11 @@ both commanders after the colour pick (tools/concordia/maps/zone_flags.py).
 Run: python3 variants.py [--dry] [--only FILE.dck ...] [--starters]
 """
 import collections, json, math, os, re, sys
+import deckfile as D  # noqa: E402
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import gen_mono as G  # noqa: E402
+import themes as TH  # noqa: E402
 B, dt, data, cfg, pool = G.B, G.dt, G.data, G.cfg, G.pool
 import scryfall_bulk as SB  # noqa: E402
 SC = SB.load()
@@ -53,14 +55,11 @@ def subtypes(p):
 
 def parse(path):
     """(commander line, [(line index, pool card, edition)], lines)"""
-    lines = open(path).read().splitlines(); sec = None; cmd = None; cards = []
-    for i, l in enumerate(lines):
-        if l.startswith('['): sec = l; continue
-        m = re.match(r'^(\d+)\s+([^|]+)\|?(\S*)', l)
-        if not m: continue
-        p = pool.get(m.group(2).strip().lower())
+    lines = D.lines(path); cmd = None; cards = []
+    for i, sec, _n, name, ed in D.entries(lines):
+        p = pool.get(name.lower())
         if sec == '[Commander]': cmd = i
-        elif sec == '[Main]' and p and 'Land' not in p['types'].split(): cards.append((i, p, m.group(3)))
+        elif sec == '[Main]' and p and 'Land' not in p['types'].split(): cards.append((i, p, ed))
     return cmd, cards, lines
 
 
@@ -91,7 +90,7 @@ def variant(d, newcmd, folder=None, n=None, syn=None):
     path = os.path.join(folder, d['file'])
     ci, cards, lines = parse(path)
     tier = d['tier']; ident = frozenset(d['colors']); spec = B.SPEC[tier]
-    old_theme = d.get('theme', []); new_theme = G.theme_of(newcmd) or []
+    old_theme = d.get('theme', []); new_theme = TH.variant_theme(old_theme, G.theme_of(newcmd) or [])   # keeps shared base themes, adds the new commander's, may replace later ones
     have = {p['name'].lower() for _, p, _ in cards} | {newcmd['name'].lower()}
     old_only = [c for c in cards if B.theme_match(c[1], old_theme) and not B.theme_match(c[1], new_theme)]
     n = n or max(5, min(8, 5 + len(old_only) // 6))

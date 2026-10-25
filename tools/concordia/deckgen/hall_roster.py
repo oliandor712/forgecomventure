@@ -8,6 +8,7 @@ unlocked from the start any more ("start": false), and both starter commanders o
 Run after variants.py --starters: python3 hall_roster.py
 """
 import json, os, re
+import deckfile as D
 HERE = os.path.dirname(os.path.abspath(__file__))
 RES = os.path.join(HERE, '..', '..', '..', 'forge-gui', 'res', 'adventure', 'Concordia')
 ROSTER = os.path.join(RES, 'world', 'commanders.json')
@@ -15,10 +16,8 @@ STARTER = os.path.join(RES, 'decks', 'starter')
 
 
 def commander(path):
-    lines = open(path).read().splitlines()
-    i = lines.index('[Commander]')
-    m = re.match(r'^\d+\s+([^|]+)\|?(\S*)', lines[i + 1])
-    return m.group(1).strip(), m.group(2)
+    _i, _sec, _n, name, ed = next(e for e in D.entries(D.lines(path)) if e[1] == '[Commander]')
+    return name, ed
 
 
 roster = json.load(open(ROSTER))

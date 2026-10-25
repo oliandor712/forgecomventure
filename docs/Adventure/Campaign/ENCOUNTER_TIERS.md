@@ -17,9 +17,9 @@ Tier 1 requirements live in `tools/concordia/tier1_rules.py` (the one source; de
 | Deck | 100 cards: commander + 99 |
 | Commander | one legendary creature, exactly one colour of identity, no mana value limit, common or uncommon, one commander (a Partner-ability commander is fine). Not shared with another tier: not checked by deck_tier (a categorize.py / audit concern) |
 | Lands | 41-42, decided last from the curve |
-| Power (average card power) | 16-18 |
-| Creatures | 30-36; low-* subarchetypes 26 up to 36 minus their shift |
-| Archetype build targets (creatures) | aggro 33-36, tribal 31-34, tokens 29-32, kept inside the band |
+| Power (average card power) | 16-21 |
+| Creatures | at least 15; soft cap 35, the builder stops adding creatures there (user, 2026-10-25) |
+| Archetype build targets (creatures) | none; the score decides between 15 and 35 |
 | Instants + sorceries (minimum) | tokens 12, aggro 10, tribal 8 |
 | Enchantments (minimum) | tokens 3, tribal 2, aggro 1 |
 | Tokens archetype | 12 or more token makers (builds aim at 13 token cards) |
@@ -47,7 +47,7 @@ Tier 1 requirements live in `tools/concordia/tier1_rules.py` (the one source; de
 | Board wipes | 0 | 0-2 | 1-4 |
 | Tutors | 0 | 0-1 | 0-3 |
 | Average mana value (nonland) | 2.5-3.4 | 2.6-3.6 | 2.8-3.9 |
-| Creatures | 35-60 | 26-36 | 16-40 |
+| Creatures | at least 15 | at least 15 | at least 15 |
 | Average card power (§3a) | 18 or less | 18-30 | 26 or more |
 | Rarity | Commons, plus up to 15 uncommons. No rares or mythics | 10 rares or fewer, 1 mythic or fewer | No real limit |
 | Card types (Moxfield grouping) | at least 6 noncreature cards, 4 of them instants or sorceries; creatures at most 85% | at least 4 instants, 3 sorceries, 4 artifacts, 2 enchantments; no type above 60% | as Tier 2 |

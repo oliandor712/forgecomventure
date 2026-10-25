@@ -215,6 +215,9 @@ def cmd_compare(a):
     except Exception as ex: print("run_log skipped:", ex)
     if getattr(a, "no_mine", False): remember(a.run)
     else: post_run(a.run)
+    try:    # reader metric and second-batch bookkeeping (reader_metric.py)
+        import reader_metric; print("reader metric:", "|".join(reader_metric.update(a.run)))
+    except Exception as ex: print("reader_metric skipped:", ex)
 
 
 def remember(run, note=""):
@@ -244,7 +247,7 @@ def gap_words_of(res):
 
 def post_run(run):
     """standard step after every reader run (user 2026-10-24): (1) mine the Oracle words the readers could not carry from every finished run into tags/READER_GAP_WORDS.toon,
-    (2) mine the rule tables from all runs (mtg2llm.py mine, rule_guard keeps the better tables), (3) refresh the pool scan so the next --gaps export targets what is still open. Skip with compare --no-mine"""
+    (2) mine the rule tables from all runs (mtg2llm.py mine, guards.apply_rules keeps the better tables), (3) refresh the pool scan so the next --gaps export targets what is still open. Skip with compare --no-mine"""
     import subprocess
     remember(run)
     words, cards = collections.Counter(), collections.defaultdict(set)

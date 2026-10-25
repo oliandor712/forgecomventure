@@ -42,7 +42,7 @@ Small (fine to read): handoffs under 2k, `TAG_LEGEND.md` 2k, `tagcheck/README.md
 | Knowledge snapshot (training data) | `tools/concordia/training_data/CLAUDE1_DATA_HANDOFF_TRAINING_DATA_2026-10-23.md` |
 
 ## 3. Tag run (tagging cards)
-- Run: `tools/concordia/deckgen/tag_run.py` (`starter` or `card "Name"`). Helpers: `tag_variant.py` (`TAG_VARIANT=off`), `tag_extra.py`, `tag_verify.py`, `tag_twins.py`, `ability_tags.py`.
+- Run: `tools/concordia/deckgen/tag_run.py` (`starter` or `card "Name"`). Starter run and reports: `tag_reports.py`. Helpers: `tag_variant.py` (`TAG_VARIANT=off`), `tag_extra.py`, `tag_verify.py`, `tag_twins.py`, `ability_tags.py`.
 - Outputs: `deckgen/tags/STARTER_TAGS.toon`, `TAG_REFERENCE.md` (families), `TAG_LEGEND.md`, `ABILITY_TWINS.json`, `REDUNDANCY_CHECK.md`, `STARTER_TAGS_REPORT.md`.
 - Approvals/ideas: `tags/NEW_TAGS_FOR_APPROVAL.md`, `APPROVED_TAGS_ARCHIVE.md`, `TAG_SUGGESTIONS.md`, `TAG_DECOMPOSITION.md`, `TAG_FEEDBACK_STARTER_SAMPLE.md`.
 - Link model: `deckgen/TAG_LINKS.md`. Commander support tags: `COMMANDER_SUPPORT.toon`, `commander_support.py`, `ABILITY_TAGS.toon`.
@@ -51,7 +51,7 @@ Small (fine to read): handoffs under 2k, `TAG_LEGEND.md` 2k, `tagcheck/README.md
 
 ## 4. Reader run (reverse tag check)
 - Folder: `tools/concordia/deckgen/tagcheck/`. Start with `README.md`, then `READER_GRAMMAR_PLAN.md` and `TAG_RUN_AUDIT_AND_PLAN.md` (current plan).
-- Scripts: `reverse_check.py` (`export/compare/selftest`), `consistency.py`, `run_log.py`, `placeholder_triage.py`, `oracle_style_stats.py`, `build_reminder_fill.py`, `build_token_reference.py`, `learning_merge.py`, `learning_coverage.py`.
+- Scripts: `reverse_check.py` (`export/compare/selftest`), `consistency.py`, `run_log.py`, `analysis.py`, `reference_files.py`, `guards.py` (learning_merge and learning_coverage are archived in `tagcheck/archive_20261024/`).
 - Grammar the reader follows: `deckgen/tags/READER_GRAMMAR.md` (full), `READER_GRAMMAR_SHORT.md`.
 - Results: `GRAMMAR_BASELINE.md`, `R12_GRAMMAR_AB.md`, `R14_GRAMMAR_V2.md`, `R14_C0_REPEAT.md`, `R15_C0_SONNET_MEDIUM.md`, `R16_SLIM_LAYOUT.md`, `PLACEHOLDER_TRIAGE.md`, `REVERSE_CHECK_REPORT.md`, `R1/R2/R6/R7`, `SCORING_TOLERANCE.md`.
 - Logs/archives: `RUN_LOG.jsonl`, `run_archive/`, `archive_20261023/`, hold-out `holdout_cards.txt`, learning data `learning/`.

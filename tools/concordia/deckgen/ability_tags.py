@@ -118,6 +118,16 @@ POLICY = {
     "counterspell": dict(group="control/counter", note="prefer low or alternate cost; avoid 'lose the game' triggers"),
     "artifact_token": dict(syn=["artifacts", "sacrifice"]),
     "sacrifice_outlet": dict(syn=["artifacts", "sacrifice"]),
+    # record tags without an old name (policy_tags.py supplies them); weights are proposals until the user approves them
+    "selection": dict(group="card_flow", note="scry and looting: card quality, no archetype lean"),
+    "surveil": dict(group="card_flow", syn=["reanimation", "mill"], note="fills the graveyard while selecting"),
+    "impulse_draw": dict(group="card_flow", arch=dict(aggro=1), note="temporary card advantage suits fast decks"),
+    "evasion_grant": dict(arch=dict(aggro=1), syn=["creatures", "tokens"], note="gives evasion to the team or one creature"),
+    "evasion": dict(arch=dict(aggro=1), note="the card itself is hard to block"),
+    "life_loss": dict(group="control/burn", arch=dict(control=1, aggro=1), note="opponent life loss; reads like drain"),
+    "steal": dict(arch=dict(aggro=1, control=1), note="permanent control change; weighted like steal_temp"),
+    "fight": dict(group="control/removal", syn=["high_power", "creatures"], note="removal that needs a big creature"),
+    "investigate": dict(syn=["artifacts", "sacrifice"], note="makes Clues, like artifact_token"),
 }
 # H45 (user, 2026-10-21): one synergy tag per basic land type; the bonus counts when the deck's land base holds enough of that type (trait landtype:X = basics + nonbasic lands of the type)
 LANDTYPES = ["Plains", "Island", "Swamp", "Mountain", "Forest"]

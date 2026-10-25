@@ -92,11 +92,47 @@ _rules = {}
 _sets = {}
 
 
+# a mined rule whose canon lacks the words its own tags name came from a merged or shifted reader line: not trusted (moved here from guards.py so guards can import this module)
+CUE = {      # tag family or family:value -> regex the canon must contain
+    "mana_source": r"\badd\b", "draw_count": r"\bdraw", "damage": r"\bdamage", "damage_amount": r"\bdamage", "scry": r"\bscry", "scry_count": r"\bscry",
+    "tutor": r"\bsearch", "token_make": r"\btoken|\bcreate", "token_count": r"\btoken|\bcreate", "lifegain_amount": r"\bgain", "life_loss_amount": r"\blose|\bloses|\bdamage|\bpay",
+    "counter_count": r"\bcounter", "discard_count": r"\bdiscard", "remove:destroy": r"\bdestroy", "remove:exile": r"\bexile", "remove:bounce": r"\bhand|\breturn|\bowner",
+    "surveil": r"\bsurveil", "investigate": r"\binvestigate", "transform": r"\btransform", "fight": r"\bfights?\b", "monarch": r"\bmonarch", "shuffle": r"\bshuffle",
+    "cost:tap": r"\{t\}|\btap", "cost:sacrifice": r"\bsacrifice", "cost_mana": r"\{", "trigger:etb": r"\benters|\bwhen\b|\bwhenever\b", "trigger:dies": r"\bdies|\bdie\b|graveyard",
+    "trigger:attacks": r"\battack", "trigger:upkeep": r"\bupkeep", "duration:eot": r"end of turn|\bthis turn", "kw:flying": r"flying", "grant_kw:flying": r"flying", "grant_kw:first_strike": r"first strike",
+    "grant_kw:trample": r"trample", "grant_kw:haste": r"haste", "grant_kw:lifelink": r"lifelink", "grant_kw:deathtouch": r"deathtouch", "grant_kw:vigilance": r"vigilance",
+    "grant_kw:menace": r"menace", "grant_kw:indestructible": r"indestructible", "grant_kw:hexproof": r"hexproof", "grant_kw:reach": r"\breach\b",
+    "optional": r"\bmay\b", "enters_tapped": r"tapped", "enters_untapped": r"untapped|tapped", "untap": r"\buntap", "regenerate": r"regenerate",
+    "mana:white": r"\{w\}|white", "mana:blue": r"\{u\}|blue", "mana:black": r"\{b\}|black", "mana:red": r"\{r\}|red", "mana:green": r"\{g\}|green",
+}
+# the REVERSE check is untested and its regexes are known broken (SCRIPTS.md); kept as it was
+REVERSE = {"draw": r"\bdraws?\b", "mill": r"\bmills?\b"}
+REV_EXEMPT = ("cycl", "investig", "clue", "rummag", "loot", "connive", "explor", "forge_line", "kw:")
+def lint_rules(d):
+    bad = []
+    for k, v in d.items():
+        if not isinstance(v, dict) or "canon" not in v: continue
+        canon = v["canon"].lower()
+        toks = k.split()
+        hit = None
+        for t in toks:
+            fam = t.partition(":")[0]
+            rx = CUE.get(t) or CUE.get(fam)
+            if t == "mana_source" and any(x.startswith("token") for x in toks): continue      # a Treasure token is the mana source
+            if fam == "counter_count" and "counter:energy" in toks: continue      # {E}
+            if fam == "transform" and any(x.startswith("becomes") for x in toks): continue
+            if rx and not re.search(rx, canon): hit = t; break
+        if not hit:
+            for word, rx in REVERSE.items():      # the other way round: the canon says draw/mill but no tag of the rule does (mined "life_loss" => "you draw N card and you lose N life")
+                if re.search(rx, canon) and not any(word in t or any(e in t for e in REV_EXEMPT) for t in toks): hit = "canon:" + word; break
+        if hit: bad.append((k, v["canon"], hit))
+    return bad
+
+
 def rules():
     if not _rules:
         with open(os.path.join(HERE, "render_rules.json"), encoding="utf-8") as fh: _rules.update(json.load(fh))
-        import rule_lint      # a mined rule whose canon lacks the words its own tags name came from a merged or shifted reader line: not trusted (rule_lint.py)
-        for k, _c, _t in rule_lint.lint_rules(_rules): _rules.pop(k, None)
+        for k, _c, _t in lint_rules(_rules): _rules.pop(k, None)
         _sets.update({p: frozenset(p.split()) for p in _rules})
     return _rules
 
@@ -879,7 +915,7 @@ def cmd_scan(a):
 
 def main():
     ap = argparse.ArgumentParser(); sp = ap.add_subparsers(dest="cmd", required=True)
-    m = sp.add_parser("mine"); m.add_argument("--out", default=os.path.join(HERE, "render_rules.json")); m.add_argument("--force", action="store_true", help="skip rule_guard and overwrite the stored rule tables")
+    m = sp.add_parser("mine"); m.add_argument("--out", default=os.path.join(HERE, "render_rules.json")); m.add_argument("--force", action="store_true", help="skip the rule guard (guards.py) and overwrite the stored rule tables")
     r = sp.add_parser("render"); r.add_argument("--run", required=True); r.add_argument("--out", default="rendered.json")
     t = sp.add_parser("tag"); t.add_argument("--cards", default=""); t.add_argument("--out", default="tagged.json")
     u = sp.add_parser("unseen"); u.add_argument("--n", type=int, default=100); u.add_argument("--pool", type=int, default=3000); u.add_argument("--seed", type=int, default=1)
@@ -895,15 +931,15 @@ def main():
     if a.cmd == "mine":
         rules, seen, used = mine()
         cp = mine_parts()
-        import rule_guard      # a worse mine run never overrides better stored tables (rule_guard.py)
-        rules, cp = rule_guard.apply(rules, cp, a.out, force=a.force)
+        import importlib; guards = importlib.import_module("guards")      # a worse mine run never overrides better stored tables (guards.py); by name because guards imports this module
+        rules, cp = guards.apply_rules(rules, cp, a.out, force=a.force)
         with open(a.out, "w", encoding="utf-8") as fh: json.dump(rules, fh, indent=1, ensure_ascii=False)
         with open(os.path.join(os.path.dirname(os.path.abspath(a.out)), "compose_rules.json"), "w", encoding="utf-8") as fh: json.dump(cp, fh, indent=1, ensure_ascii=False)
         print("compose parts: " + ", ".join("%s %d" % (k, len(v)) for k, v in cp.items()))
         units_n = sum(r["n"] for r in rules.values())
         agree = sum(r["n"] * r["top"] for r in rules.values()) / max(units_n, 1)
         multi = sum(r["n"] for r in rules.values() if r["n"] >= 3)
-        try: import sync; sync.write()      # tell the tagger which gaps are tag gaps and which are rule gaps (sync.py)
+        try: guards.write_gaps()      # tell the tagger which gaps are tag gaps and which are rule gaps (guards.py)
         except Exception as ex: print("sync not run:", ex)
         print("card readings %d, aligned %d; patterns %d; units %d; units in patterns seen 3+ times %d (%.0f%%); canonical = reader's top line for %.0f%% of units"
               % (seen, used, len(rules), units_n, multi, 100 * multi / max(units_n, 1), 100 * agree))

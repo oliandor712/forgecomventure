@@ -14,6 +14,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import build as B  # noqa: E402  (loads the pool and deck_tier)
 dt, data, cfg, pool = B.dt, B.data, B.cfg, B.pool
+TH = B.th
 
 # deck power goals per tier for the new decks (deck_tier average card power), low to high
 TARGETS = {1: [None] * 4, 2: [23.5, 25.5, 26.5, 27.5], 3: [29.5, 31.5, 32.5, 34.5], 4: [35, 36, 38, 40], 5: [40.5, 41.5, 43.5, 44.5]}  # EDHREC scale
@@ -37,8 +38,8 @@ def commander_ok(p, tier):
 
 
 def theme_of(p):
-    sub = p['types'].split('—')[-1] if '—' in p['types'] else ' '.join(p['types'].split()[2:])
-    return [t for t in sub.split() if t not in NOT_THEMES][:2]
+    """Tag-based theme (themes.py): tribes that are real (tribal ability or heavy presence) plus the umbrellas the commander's tags hit."""
+    return TH.theme_for(p, pool)
 
 
 def seed_file(deck, fname):

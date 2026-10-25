@@ -96,7 +96,7 @@ def apply(name, face, lines, sv, tags, ex_groups):
         ex_groups = {g: [t for t in ts if not t.startswith("trigger_scope:")] for g, ts in ex_groups.items()}
         for gid, v in scopes: add(gid, "trigger_scope:" + v)
     # S08: fog only for all-combat-damage prevention
-    if "fog" in tags and not re.search(r"PreventDamage[^\n]*(Combat\$ True|CombatDamage)|Mode\$ Fog|AILogic\$ Fog|DB\$ Fog|SP\$ Fog", face): tags = [t for t in tags if t != "fog"]
+    if "fog" in tags and not re.search(r"PreventDamage[^\n]*(Combat\$ True|CombatDamage)|Mode\$ Fog|AILogic\$ Fog|DB\$ Fog|SP\$ Fog|AB\$ Fog", face): tags = [t for t in tags if t != "fog"]
     # S15 false tutor: only a search of a library (ChangeZone with Origin$ Library) is a tutor
     if "tutor" in tags and not re.search(r"ChangeZone[^\n]*Origin\$ Library|Origin\$ Library[^\n]*ChangeZone", face):
         tags = [t for t in tags if t != "tutor" and not t.startswith("tutor_")]
@@ -107,6 +107,9 @@ def apply(name, face, lines, sv, tags, ex_groups):
 
 
 ABILITY_WORDS = ("Delirium", "Threshold", "Metalcraft", "Hellbent", "Morbid", "Raid", "Revolt", "Ferocious", "Spectacle", "Adamant", "Landfall")
+
+
+TRIGGER_NOT_TYPES = {"Creature", "Card", "Permanent", "Self", "Player", "Opponent", "You", "Spell", "Artifact", "Enchantment", "Land", "Planeswalker", "Instant", "Sorcery", "Battle", "Any", "Remembered", "Imprinted", "Equipped", "Enchanted", "Valid", "Triggered", "Targeted", "Other", "Nontoken", "Token", "Emblem", "Nonland", "Nonartifact", "Noncreature", "Nonbasic"}
 
 
 def gap_pass(face, lines, sv, tags, ex_groups):
@@ -139,6 +142,10 @@ def gap_pass(face, lines, sv, tags, ex_groups):
                 if mc: add(gid, "trigger_filter:has_counter:" + mc.group(3).lower())
             if p.get("Mode") in ("ChangesZone", "ChangesZoneAll"):       # the triggering card's type is always stated (P4c A): another creature dies = trigger_filter:creature
                 for tf in TX.spell_filters(p.get("ValidCard", "")): add(gid, "trigger_filter:" + tf)
+            if p.get("Mode") in ("AttackersDeclared", "Attacks", "DamageDone", "DamageDoneOnce", "DamageAll"):   # a creature type in the attacker or damage source filter is a tribal trigger (Goblin.YouCtrl, Pirate.YouCtrl)
+                for part in (p.get("ValidAttackers", "") + "," + p.get("ValidSource", "") + "," + p.get("ValidCard", "")).split(","):
+                    mt = re.match(r"^([A-Z][a-z]+)(?:\.|$)", part)
+                    if mt and mt.group(1) not in TRIGGER_NOT_TYPES and not re.search(r"\bSelf\b", part): add(gid, "trigger_filter:" + mt.group(1).lower())
             mn = re.search(r"ActivatorThisTurnCast\$ (EQ|GE|LE)(\d+)", body)
             if mn and mn.group(1) == "EQ": add(gid, "trigger_filter:nth_spell_" + mn.group(2))
             if p.get("Mode") == "LifeLost": add(gid, "trigger:life_loss")

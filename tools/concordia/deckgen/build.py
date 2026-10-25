@@ -10,20 +10,25 @@ mana curve, rarity and role caps. Only Commander-legal cards without an AI:Remov
 restrictions, are used. Tier 1 aims low on power, Tier 2 at about 25, Tier 3 at about 34 (deck_tier.py power score).
 """
 import sys, os, re, json, pickle, collections
+import deckfile as D
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 import deck_tier as dt
 import tier1_rules as t1  # tier 1 requirements (one source of truth, tools/concordia/tier1_rules.py)
 import archetype_rules as ar  # archetype windows and sub-archetype classification (tools/concordia)
 import ability_tags as at  # ability-led tags and the deck-building bonus (deckgen)
-import commander_support as cp  # what supports a commander's own ability (human logic H31-H36)
+import policy_tags as pt  # the record's tags under POLICY's names
+import themes as th  # tag-based deck themes (umbrella tags, heavy tribes)
+import tag_status as ts  # cards whose tags the check holds back
+import tag_version  # stamp of the tagger files, written into build output
+import commander_support as cp# what supports a commander's own ability (human logic H31-H36)
 data = dt.build_cache(); cfg = json.load(open(dt.CONFIG))
 pool = pickle.load(open(os.path.join(HERE, 'pool.pkl'), 'rb'))
 RES = dt.RES
 OUT = os.path.join(RES, 'adventure', 'Concordia', 'decks')
-ABILITY = {}  # card name -> ability tags, computed once per card (ability_tags.tags_of)
+ABILITY = {}  # card name -> tags POLICY reads, computed once per card (policy_tags.tags_for: tagger record + POLICY aliases)
 def ability_tags(p):
-    if p['name'] not in ABILITY: ABILITY[p['name']] = at.tags_of(at.card_text(p['name']))
+    if p['name'] not in ABILITY: ABILITY[p['name']] = pt.tags_for(p['name'])
     return ABILITY[p['name']]
 TEXT = {}
 def card_text(p):
@@ -89,16 +94,14 @@ def human_rules():
     return rules
 
 def creature_band(d):
-    """The H11 creature band for a deck: archetype_rules.creature_check when the deck has an archetype, else 30-36."""
-    if d.get('archetype'): return ar.creature_check(d['tier'], d['archetype'], d.get('sub'), d.get('reach', 2))
-    return 30, 36
+    """The H11 creature band for a deck: at least 15 (archetype_rules.creature_check); the builder stops adding creatures at t1.CREATURE_SOFT_CAP."""
+    return ar.creature_check(d['tier'], d.get('archetype'), d.get('sub'), d.get('reach', 2))
 
 def human_pass1(d, ident, rules):
     """Pass 1, before the fill: the rules as build parameters. Human-logic rows win over the metrics (file header)."""
-    return {'target': t1.POWER['target'] if 'H08' in rules else T1_TARGET,  # H08: tier 1 power 16-18
+    return {'target': t1.POWER['target'] if 'H08' in rules else T1_TARGET,  # H08: tier 1 power 16-21
             'bonus': d.get('_boost', {}).get('bonus', 1.0),  # ability_tags weight; raised once on a retry
-            'cwin': creature_band(d) if 'H11' in rules and d['tier'] == 1 else None,  # H11 wins: the band from archetype_rules.creature_check
-            'spells': 'H12' in rules and 'U' in ident}  # H12: a blue deck carries spells, so fewer creatures
+            'cwin': creature_band(d) if 'H11' in rules else None}  # H11: at least 15 creatures
 
 def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     """Pass 2, after the deck is built and its lands are sized: check the finished deck against each rule.
@@ -109,15 +112,14 @@ def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     ident = frozenset(d['colors']); cr = sum(1 for p, _ in chosen if 'Creature' in p['types'].split())
     isor = sum(1 for p, _ in chosen if {'Instant', 'Sorcery'} & set(p['types'].split()))
     check('H06', True, 'every card from the pool (existing assets only)')
-    check('H08', 16 <= power <= 18, 'tier 1 power %.1f (16-18)' % power, d['tier'] == 1)
+    check('H08', t1.POWER['floor'] <= power <= t1.POWER['ceiling'], 'tier 1 power %.1f (%g-%g)' % (power, t1.POWER['floor'], t1.POWER['ceiling']), d['tier'] == 1)
     printings = t1.STAPLE_PRINTINGS if d['tier'] == 1 else ('U',)  # H09: tier 1 commons or uncommons; other tiers uncommon only
     bad = [p['name'] for p, r in chosen if p.get('cat') == 'staple' and r not in printings]
     check('H09', not bad, 'staples outside %s printings: %s' % ('/'.join(printings), ', '.join(bad) or 'none'))
     budget = {k.lower() for k in BUDGET} | {k.lower() for k in ROCKS}
     check('H10', any(p['name'].lower() in budget for p, _ in chosen + lands), 'budget lands or rocks present')
     band = creature_band(d)
-    check('H11', band[0] <= cr <= band[1], 'creatures %d (%d-%d)' % (cr, band[0], band[1]), d['tier'] == 1)
-    check('H12', cr <= 32, 'blue deck creatures %d (32 max)' % cr, 'U' in ident)
+    check('H11', band[0] <= cr <= band[1], 'creatures %d (at least %d)' % (cr, band[0]), True)
     pos = sum(1 for p, _ in chosen if at.bonus(ability_tags(p), d['archetype'], d.get('sub'), info['traits'], len(ident) == 1, ''.join(sorted(ident))) > 0) if d.get('archetype') else 0
     check('H13', pos >= 10, 'cards with a positive ability bonus %d (10 needed)' % pos, bool(d.get('archetype')))
     text = cmd['oracle'].lower()
@@ -137,15 +139,15 @@ BASIC = {'W': 'Plains', 'U': 'Island', 'B': 'Swamp', 'R': 'Mountain', 'G': 'Fore
 SPEC = {
  1: t1.BUILD_SPEC,
  2: dict(lands=38, quota={'wipe': 1, 'removal': 8, 'ramp': 5, 'draw': 5}, cap={'ramp': 7, 'draw': 8, 'removal': 10, 'wipe': 2, 'tutor': 1, 'fast': 1},
-         creatures=30, cmax=34, types={'Instant': 5, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 4}, curve={1: 6, 2: 15, 3: 15, 4: 12, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 10, 'M': 1}, gc=0),
+         creatures=15, cmax=t1.CREATURE_SOFT_CAP, types={'Instant': 5, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 4}, curve={1: 6, 2: 15, 3: 15, 4: 12, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 10, 'M': 1}, gc=0),
  3: dict(lands=37, quota={'wipe': 2, 'removal': 10, 'ramp': 10, 'draw': 9}, cap={'ramp': 12, 'draw': 11, 'removal': 13, 'wipe': 3, 'tutor': 2, 'fast': 3},
-         creatures=28, cmax=34, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 3}, curve={1: 7, 2: 15, 3: 15, 4: 11, 5: 7, 6: 7}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 8}, gc=3),
+         creatures=15, cmax=t1.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 3}, curve={1: 7, 2: 15, 3: 15, 4: 11, 5: 7, 6: 7}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 8}, gc=3),
  4: dict(lands=35, quota={'wipe': 2, 'removal': 11, 'ramp': 11, 'draw': 10}, cap={'ramp': 15, 'draw': 14, 'removal': 16, 'wipe': 4, 'tutor': 3, 'fast': 3},
-         creatures=26, cmax=33, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 8, 2: 16, 3: 16, 4: 11, 5: 8, 6: 7}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 15}, gc=4),
+         creatures=15, cmax=t1.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 8, 2: 16, 3: 16, 4: 11, 5: 8, 6: 7}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 15}, gc=4),
  5: dict(lands=34, quota={'wipe': 2, 'removal': 12, 'ramp': 12, 'draw': 11, 'tutor': 2}, cap={'ramp': 17, 'draw': 16, 'removal': 18, 'wipe': 4, 'tutor': 5, 'fast': 5},
-         creatures=24, cmax=32, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 10, 2: 17, 3: 16, 4: 11, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 25}, gc=8),
+         creatures=15, cmax=t1.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 10, 2: 17, 3: 16, 4: 11, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 25}, gc=8),
 }
-TARGET_POWER = {2: 26.5, 3: 35.5, 4: 40, 5: 46.5}  # card power the builder aims for at each tier (EDHREC scale)
+TARGET_POWER = {int(k): v['target'] for k, v in dt.TIER_TABLE.items()}  # card power the builder aims for at each tier (tier_table.json, EDHREC scale)
 # Staples (deckgen/staples.py: popular, low standalone impact) make decks consistent without swinging games: tiers 2-3
 # prefer them, 4-5 mildly, tier 1 avoids them so wild encounters stay rough. Watch-list cards (popular and high
 # impact, not Game Changers) are capped like Game Changers. Precon inclusion counts as casual playability at 2-3.
@@ -155,8 +157,8 @@ STAPLE_BONUS = {1: t1.STAPLE_BONUS, 2: 0, 3: 3, 4: 1.5, 5: 1.5}
 # whose power lands under FLOOR with a raised target. Near-staple budget lands (budget_lands.json) fill BUDGET_LANDS.
 UNCOMMON_STAPLE_BONUS = {1: t1.UNCOMMON_STAPLE_BONUS, 2: 6}
 T1_TARGET = t1.POWER['target']
-FLOOR = {1: t1.POWER['floor'], 2: 24.5}
-CEILING = {1: t1.POWER['ceiling'], 2: 30.0}  # pushed staples lift the top too; keep tier 1-2 decks inside their bands
+FLOOR = {1: t1.POWER['floor'], 2: dt.TIER_TABLE['2']['floor']}
+CEILING = {1: t1.POWER['ceiling'], 2: dt.TIER_TABLE['2']['ceiling']}  # pushed staples lift the top too; keep tier 1-2 decks inside their bands
 BUDGET_LANDS = {1: t1.BUDGET_LANDS, 2: 5}
 BUDGET_ROCKS = {1: t1.BUDGET_ROCKS, 2: 3}  # cheap mana rocks from budget decks, inside the tier's ramp/fast caps
 _bl = os.path.join(HERE, 'budget_lands.json')
@@ -169,6 +171,7 @@ def spread(items, key):
     return sorted(items, key=lambda kv: -kv[1]['decks'] * (0.5 + h(kv[0])) - (1000 if kv[1]['colors'] else 0))
 WATCH_CAP = {1: t1.WATCH_CAP, 2: 1, 3: 2, 4: 4, 5: 8}
 PRECON_BONUS = {2: 2, 3: 2}
+SEED_BASE, SEED_SYN = 10, 15   # seed card bonus: base 10 (was a flat 25) plus up to 15 by tag synergy (commander_support.seed_synergy); a deck's "seed_bonus" replaces the base
 # Per deck in decks.json, for balancing after simulations: "target" overrides TARGET_POWER (tiers 2-5), and
 # "seed_bonus" (default 25) how strongly the seed deck's cards are preferred (lower lets "target" steer more), and
 # "weakness" (default 1.0) scales how hard a tier 1 deck avoids strong cards (lower = stronger deck).
@@ -176,15 +179,7 @@ ROLE = {'removal': {'removal', 'counter'}, 'draw': {'draw'}, 'ramp': {'ramp'}, '
 SKIP_TEXT = re.compile(r'sticker|attraction|contraption|\bvote\b|ante\b|initiative|day and night|ring tempts|the monarch|venture into|speed|your speed|start your engines|planechase|scheme|you may cast .* from your graveyard', re.I)
 
 def parse(path):
-    out = []
-    sec = None
-    for l in open(path, errors='replace'):
-        l = l.strip()
-        if l.startswith('['): sec = l.lower(); continue
-        m = re.match(r'^(\d+)\s+([^|]+)', l)
-        if m and sec in ('[main]', '[commander]'):
-            out.append(m.group(2).strip().lower())
-    return out
+    return [name.lower() for _i, sec, _n, name, _ed in D.entries(D.lines(path)) if sec and sec.lower() in ('[main]', '[commander]')]
 
 def theme_match(p, theme):
     if not theme: return False
@@ -193,6 +188,8 @@ def theme_match(p, theme):
             if 'Creature' in p['types'] and p['nabil'] == 0: return True
         elif t.startswith('/'):
             if re.search(t[1:], p['oracle'], re.I): return True
+        elif t.startswith('tag:'):
+            if th.matches(p['name'], t): return True
         elif t in p['types'].split():
             return True
     return False
@@ -212,14 +209,9 @@ def build(d):
     ident = frozenset(d['colors'])
     arch, sub, reach = d.get('archetype'), d.get('sub'), d.get('reach', 2)
     p1 = human_pass1(d, ident, human_rules())  # pass 1 of human_logic.toon: the rules as build parameters (first read)
-    if p1['spells']: spec['cmax'] = min(spec['cmax'], 32)  # H12: blue decks keep creatures down
-    if arch:  # archetype windows (archetype_rules.py): creature window, instant+sorcery and enchantment quotas
+    if arch:  # archetype quotas (archetype_rules.py): creature band, instant+sorcery and enchantment minimums
         lo, hi, isx, ench, _ = ar.windows(tier, arch, sub, reach)
-        if p1['cwin']:  # H11 wins over the archetype window when the two do not meet (the sub-archetype shift is overridden)
-            lo, hi = max(lo, p1['cwin'][0]), min(hi, p1['cwin'][1])
-            if lo > hi: lo, hi = p1['cwin']
-        if p1['spells']: hi = min(hi, 32)
-        spec['creatures'], spec['cmax'] = min(lo, hi), hi
+        spec['creatures'], spec['cmax'] = min(lo, hi), min(hi, t1.CREATURE_SOFT_CAP)
         spec['types'] = {k: v for k, v in spec['types'].items() if k not in ('Instant', 'Sorcery', 'Enchantment')}
         spec['types']['Instant|Sorcery'] = isx
         spec['types']['Enchantment'] = ench
@@ -231,25 +223,26 @@ def build(d):
     cmd = pool[d['commander'].lower()]
     # external seeds (deckgen/external/seeds, not committed) are skipped when missing; the deck then builds unseeded
     seed = set(parse(os.path.join(RES, d['seed']))) if d.get('seed') and os.path.exists(os.path.join(RES, d['seed'])) else set()
+    cmd_tags, seed_tags = cp.seed_profile(cmd['name'], seed) if seed and tier > 1 else (set(), set())
     banned = set(x.lower() for x in d.get('ban', []))
     theme = d.get('theme', [])
     def score(p, r):
-        pw = p['power'][r]
-        pop = p['pop']
+        pw = p['power'][r]   # popularity is already inside power (deck_tier.card_power), so it is not scored again here
         s = 0
         if tier == 1:
-            s = -0.7 * abs(pw - d.get('target', p1['target'])) + 4 * min(pop, 5) / 5 - 0.8 * max(0, p['nabil'] - 2)
+            s = -0.7 * abs(pw - d.get('target', p1['target'])) - 0.8 * max(0, p['nabil'] - 2)
             if 'Creature' in p['types'] and p['pt']:
                 pp = at.potential_pt(card_text(p), traits)   # H46: potential stat, not the printed 0/0
                 if pp and pp[0] + pp[1] > 2 * p['cmc'] + 1: s -= 6  # above-rate body
         elif tier == 2:
-            s = -0.7 * abs(pw - d.get('target', TARGET_POWER[2])) + 3 * min(pop, 10) / 10
+            s = -0.7 * abs(pw - d.get('target', TARGET_POWER[2]))
         else:
-            s = -0.6 * abs(pw - d.get('target', TARGET_POWER[tier])) + 4 * min(pop, 20) / 20
+            s = -0.6 * abs(pw - d.get('target', TARGET_POWER[tier]))
         if p.get('cat') == 'staple': s += UNCOMMON_STAPLE_BONUS[tier] if tier in UNCOMMON_STAPLE_BONUS and r == 'U' else STAPLE_BONUS[tier]
         s += PRECON_BONUS.get(tier, 0) * min(1.0, p.get('precon', 0.0) / 0.25)
         if theme_match(p, theme): s += 12
-        if p['name'].lower() in seed: s += d.get('seed_bonus', 25) if tier > 1 else 0
+        if p['name'].lower() in seed and tier > 1:   # a seed card gets a small base plus more for ability tags shared with the commander and the seed's own profile
+            s += d.get('seed_bonus', SEED_BASE) + SEED_SYN * cp.seed_synergy(p['name'], cmd_tags, seed_tags)
         if arch: s += p1['bonus'] * at.bonus(ability_tags(p), arch, sub, traits, mono, colours)  # ability-led tags (ability_tags.py)
         return s
     cands = []
@@ -475,14 +468,15 @@ if __name__ == '__main__':
         OUT = os.path.join(os.environ.get('BUILD_DRY_DIR', '/tmp/claude-0/-home-user-forgecomventure/00de60c9-7439-58b4-9ebf-e9518a668b3a/scratchpad/build_dry'), 'decks')
         os.makedirs(OUT, exist_ok=True)
         print('dry run: writing to %s (decks/ untouched)' % OUT)
+    print('tag stamp %s' % tag_version.stamp())
     decks = json.load(open(argv[1]))
     only = argv[2:]
     if VARIANTS:
         have = {x['file'] for x in decks}
         for v in json.load(open(os.path.join(HERE, 'variants.json'))):
             if v['file'] not in have and (not only or v['file'] in only):
-                base = next((x for x in decks if x['file'] == v['variant_of']), {})  # a variant keeps its base deck's theme
-                decks.append(dict(v, name=v['file'][:-4], desc='variant of ' + v['variant_of'], theme=base.get('theme', [])))
+                base = next((x for x in decks if x['file'] == v['variant_of']), {})  # a variant keeps the base themes its commander shares, adds its own, and may replace the later ones (themes.variant_theme)
+                decks.append(dict(v, name=v['file'][:-4], desc='variant of ' + v['variant_of'], theme=th.variant_theme(base.get('theme', []), th.theme_for(pool[v['commander'].lower()], pool))))
     for d in decks:
         if only and d['file'] not in only: continue
         if CLASSIFY and not d.get('archetype'):
@@ -519,18 +513,20 @@ if __name__ == '__main__':
                 retry = {rule for rule, v, _ in d['_hv'] if v == 'WARN' and rule in RETRY}
                 if retry and not d.get('_retry_done'):
                     d['_retry_done'] = True
-                    if 'H08' in retry: d['target'] = d.get('target', 17.0) + (17.0 - r['power'])
+                    if 'H08' in retry: d['target'] = d.get('target', T1_TARGET) + (T1_TARGET - r['power'])
                     if retry - {'H08'}: d['_boost'] = {'bonus': 2.0}
                     continue
             break
         fails = [x for s, x in chk if s == 'FAIL']; warns = [x for s, x in chk if s == 'WARN']
         print('%-28s T%d pow %.1f lands %d cr %d ramp %d draw %d rem %d wipe %d mv %.2f rar %s' % (d['file'], d['tier'], r['power'], r['lands'], r['creatures'], r['ramp'], r['draw'], r['removal'], r['wipe'], r['avg_mv'], r['rarity']))
+        held = {p['name']: ts.status(p['name'])[0] for p, _ in chosen}; held = {n: v for n, v in held.items() if v != 'ok'}
+        if held: print('    held-back tags: %s' % ', '.join('%s (%s)' % kv for kv in sorted(held.items())))
         for f in fails: print('    FAIL', f)
         for w in warns: print('    WARN', w)
         if DRY:
             info = d['_info']
             cr_n, isor, ench, nland = summary(d, cmd, chosen, lands, basics)
-            lo, hi = {1: (FLOOR[1], 19), 2: (19, 31), 3: (27, 38), 4: (34, 42), 5: (39, 99)}[d['tier']]
+            lo, hi = (FLOOR[1], t1.POWER['ceiling']) if d['tier'] == 1 else (dt.TIER_TABLE[str(d['tier'])]['band'][0], dt.TIER_TABLE[str(d['tier'])]['band'][1] or 99)
             band = 'in' if lo <= r['power'] <= hi else 'OUT'
             why = []
             if d.get('archetype'):
@@ -540,7 +536,7 @@ if __name__ == '__main__':
                 if ench < ench_min: why.append('ench %d<%d' % (ench, ench_min))
             reached = not why and d.get('archetype') is not None
             p1 = d['_p1']
-            pass1 = 'target %.1f bonus x%g cwin %s spells %s' % (p1['target'], p1['bonus'], p1['cwin'] or '-', 'yes' if p1['spells'] else 'no')
+            pass1 = 'target %.1f bonus x%g cwin %s' % (p1['target'], p1['bonus'], p1['cwin'] or '-')
             dry_rows.append((d['file'], d.get('archetype') or '-', d.get('sub') or '-', info['mean_bonus'], band, reached, r['power'], why, d['_hv'], pass1))
             print('    H ' + '; '.join('%s %s %s' % v for v in d['_hv']))
             print('    DRY %s %s/%s creatures %d inst+sorc %d ench %d lands %d power %.1f band %s bonus %s %s' % (
@@ -561,6 +557,7 @@ if __name__ == '__main__':
         print('human-logic WARN after the retry: %d decks, %d WARNs' % (len({w[0] for w in warn_rows}), len(warn_rows)))
         for name, (rule, _, detail) in warn_rows: print('  %s %s %s' % (name, rule, detail))
         with open(os.path.join(os.path.dirname(OUT), 'human_pass.toon'), 'w') as f:
+            f.write('# tag_stamp: %s\n' % tag_version.stamp())
             f.write('decks[%d|]{deck|archetype|sub|power|pass1|checks}:\n' % len(dry_rows))
             for row in dry_rows:
                 f.write('  %s|%s|%s|%.1f|%s|%s\n' % (row[0], row[1], row[2], row[6], row[9], ' '.join('%s:%s' % (rule, v) for rule, v, _ in row[8])))

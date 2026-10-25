@@ -10,6 +10,7 @@ or at MAX_SWAPS. The commander and lands stay. Prints every swap.
 Run: python3 starter_tune.py [target] [--dry]
 """
 import os, re, sys
+import deckfile as D  # noqa: E402
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import build as B  # noqa: E402
@@ -28,18 +29,14 @@ def role(p):
 
 
 def read(path):
-    lines = open(path).read().splitlines()
-    return lines
+    return D.lines(path)
 
 
 def main_cards(lines):
-    out, sec = [], None
-    for i, l in enumerate(lines):
-        if l.startswith('['): sec = l; continue
-        m = re.match(r'^(\d+)\s+([^|]+)\|?(\S*)', l)
-        if sec == '[Main]' and m:
-            k = m.group(2).strip().lower(); p = pool.get(k)
-            if p and 'Land' not in p['types'].split(): out.append((i, p, m.group(3)))
+    out = []
+    for i, sec, _n, name, ed in D.entries(lines):
+        p = pool.get(name.lower())
+        if sec == '[Main]' and p and 'Land' not in p['types'].split(): out.append((i, p, ed))
     return out
 
 

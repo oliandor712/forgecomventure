@@ -93,7 +93,7 @@ Briefs still carry the old session/messaging instructions (ETA lines, `send_mess
   10·Game Changer + 5·fast mana + 5·tutor. Raw power is the highest of the cube rank, the Spellbinder cEDH inclusion
   rate and 0.6 × EDHREC popularity (Scryfall's EDHREC rank, log-scaled).
 - **Deck power by tier** (deck average card power, rebuilt 2026-10-20): T1 12-13, T2 21-28, T3 30-38, T4 34-42,
-  T5 40-46. Bands: T1 <=19, T2 19-31, T3 27-38, T4 34-42, T5 >=39. Staples per deck: T1 0, T2 19, T3 30, T4 34,
+  T5 40-46. Bands: T1 <=19, T2 19-31, T3 27-38, T4 34-42, T5 >=39 (one source: tools/concordia/tier_table.json, with the builder targets, floor and ceiling; T1 in tier1_rules.py). Staples per deck: T1 0, T2 19, T3 30, T4 34,
   T5 38 on average; watch-list cards capped T1 0 / T2 1 / T3 2 / T4 4 / T5 8.
 - **Difficulty curve** (OVERWORLD.md §5.1): a zone's stage locks at the player's first fight there, from the Seals held:
   seals 0-1 stage 1, 2-3 stage 2, 4-5 stage 3 (`util/TierLock.java`, config `tierLock`).
@@ -105,6 +105,12 @@ Briefs still carry the old session/messaging instructions (ETA lines, `send_mess
   `EffectData` with `startBattleWithCard`, `lifeModifier` or `changeStartCards` (`scene/DuelScene.java` ~360). The user
   thinks Forge's own bonuses are too heavy-handed and wants smaller ones, such as a land or a 1-drop, measured against
   no bonus.
+
+## Feedback paths (tag, deck and balance loop)
+- **Misleading tag found** by the builder, the AI lab or balance (a card whose tags do not match its Oracle text): add the card to `tools/concordia/deckgen/tagcheck/holdout_cards.txt` or the next reader batch as a test case, note it in `tags/TAG_GAPS.toon` through `tagcheck/guards.py` (never hand-edit), and run `reverse_check.py` plus `reader_metric.py update <run>`. Until the check clears it, `tag_status.py` holds its tags back, so decks get no ability bonus from them.
+- **Balance adjusts decks** only in bounded, logged steps: `target` or `weakness` in `decks.json`, one deck per step, each logged in `HANDOVER.md` with the old and new value and the sim record it rests on. No other deck field changes for balance.
+- **Second-batch rule:** a mined render or compose rule is pending until a second, different run lists it (`tags/RULE_BATCHES.json`; `python3 tagcheck/reader_metric.py pending`).
+- **Old sims go stale** when the tag stamp changes: compare `tag_stamp` in `human_pass.toon` with the stamp on the sim rows before reusing them.
 
 ## Recent updates
 - 2026-10-22: Rules references for all agents: tools/agents/reference/MTG_COMP_RULES_20260807.txt (Magic Comprehensive Rules, effective 2026-08-07; keywords are rules 701 and 702); tools/concordia/ai_lab/KEYWORD_REFERENCE.toon, KEYWORD_REMINDER_TEXT.toon, KEYWORD_FIRST_RELEASE.toon

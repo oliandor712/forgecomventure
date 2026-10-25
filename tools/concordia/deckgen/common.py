@@ -27,7 +27,7 @@ def q(x):
 
 
 def q_line(x):
-    """TOON field quoting for single-line reference tables: newlines become spaces; a backslash alone does not force quotes (build_reminder_fill, build_token_reference)"""
+    """TOON field quoting for single-line reference tables: newlines become spaces; a backslash alone does not force quotes (reference_files)"""
     x = str(x).replace("\n", " ")
     return '"' + x.replace("\\", "\\\\").replace('"', '\\"') + '"' if re.search(r'[,"]', x) or x == "" else x
 

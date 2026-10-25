@@ -1508,7 +1508,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-white Bruna, the Fading Light deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/monstrosity/harpy.atlas",
   "target": 53.8,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_W_Bruna.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Bruna_the_Fading_Light.dck",
   "target_scale": "edhrec"
  },
  {
@@ -1525,7 +1525,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-white Delney, Streetwise Lookout deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/monstrosity/harpy.atlas",
   "target": 41.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_W_Delney.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Delney_Streetwise_Lookout.dck",
   "target_scale": "edhrec"
  },
  {
@@ -1541,7 +1541,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-white Heliod, Sun-Crowned deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
   "target": 43.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_W_Heliod.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Heliod_Sun_Crowned.dck",
   "ban": [
    "walking ballista",
    "triskelion"
@@ -1562,7 +1562,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-white Gandalf the White deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
   "target": 48.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_W_Gandalf.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Gandalf_the_White.dck",
   "ban": [
    "heliod, sun-crowned"
   ],
@@ -1581,7 +1581,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-white Giada, Font of Hope deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/celestial/cromat_angel.atlas",
   "target": 35.0,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_W_Giada.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Giada_Font_of_Hope.dck",
   "target_scale": "edhrec"
  },
  {
@@ -1597,7 +1597,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-white Thurid, Mare of Destiny deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/beast/bird/falcon.atlas",
   "target": 47.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_W_Thurid.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Thurid_Mare_of_Destiny.dck",
   "target_scale": "edhrec"
  },
  {
@@ -1614,7 +1614,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-white Sram, Senior Edificer deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/human/soldier/cathar.atlas",
   "target": 39.0,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_W_Sram.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Sram_Senior_Edificer.dck",
   "target_scale": "edhrec"
  },
  {
@@ -1631,7 +1631,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-white Abdel Adrian, Gorion's Ward deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/aberration/phyrexian/eleshnorn.atlas",
   "target": 43.2,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_W_Abdel.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Abdel_Adrian_Gorion_s_Ward.dck",
   "target_scale": "edhrec"
  },
  {
@@ -1648,7 +1648,8 @@
   "desc": "Tier 3 (Bracket 3). Mono-white Loran of the Third Path deck.",
   "sprite": "sprites/enemy/elemental/sandelemental.atlas",
   "target": 29.5,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Loran_of_the_Third_Path.dck"
  },
  {
   "tier": 3,
@@ -1664,7 +1665,8 @@
   "desc": "Tier 3 (Bracket 3). Mono-white Mangara, the Diplomat deck.",
   "sprite": "sprites/enemy/monstrosity/harpy.atlas",
   "target": 31.5,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Mangara_the_Diplomat.dck"
  },
  {
   "tier": 3,
@@ -1680,7 +1682,8 @@
   "desc": "Tier 3 (Bracket 3). Mono-white Elesh Norn, Grand Cenobite deck.",
   "sprite": "sprites/enemy/monstrosity/harpy.atlas",
   "target": 35.2,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Elesh_Norn_Grand_Cenobite.dck"
  },
  {
   "tier": 3,
@@ -1696,7 +1699,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-white Monk Gyatso deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
   "target": 34.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_W_Monk.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Monk_Gyatso.dck",
   "target_scale": "edhrec"
  },
  {
@@ -1713,7 +1716,8 @@
   "desc": "Tier 2 (Bracket 2). Mono-white Adeline, Resplendent Cathar deck.",
   "sprite": "sprites/enemy/humanoid/paladin_2.atlas",
   "target": 23.5,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Adeline_Resplendent_Cathar.dck"
  },
  {
   "tier": 2,
@@ -1729,7 +1733,8 @@
   "desc": "Tier 2 (Bracket 2). Mono-white Jazal Goldmane deck.",
   "sprite": "sprites/enemy/celestial/cromat_angel.atlas",
   "target": 30.3,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Jazal_Goldmane.dck"
  },
  {
   "tier": 2,
@@ -1745,7 +1750,8 @@
   "desc": "Tier 2 (Bracket 2). Mono-white Odric, Lunarch Marshal deck.",
   "sprite": "sprites/enemy/beast/bird/falcon.atlas",
   "target": 26.5,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Odric_Lunarch_Marshal.dck"
  },
  {
   "tier": 2,
@@ -1761,7 +1767,8 @@
   "desc": "Tier 2 (Bracket 2). Mono-white Boromir, Warden of the Tower deck.",
   "sprite": "sprites/enemy/humanoid/human/soldier/cathar.atlas",
   "target": 29.7,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Boromir_Warden_of_the_Tower.dck"
  },
  {
   "tier": 1,
@@ -1833,7 +1840,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-blue Emry, Lurker of the Loch deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/conjurer.atlas",
   "target": 38.4,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_U_Emry.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Emry_Lurker_of_the_Loch.dck",
   "target_scale": "edhrec"
  },
  {
@@ -1849,7 +1856,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-blue Kefnet the Mindful deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/conjurer.atlas",
   "target": 32.1,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_U_Kefnet.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Kefnet_the_Mindful.dck",
   "target_scale": "edhrec"
  },
  {
@@ -1866,7 +1873,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-blue Lier, Disciple of the Drowned deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/human/artificer/esper_artificer.atlas",
   "target": 43.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_U_Lier.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Lier_Disciple_of_the_Drowned.dck",
   "target_scale": "edhrec"
  },
  {
@@ -1883,7 +1890,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-blue Uvilda, Dean of Perfection deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/human/rogue/pirate.atlas",
   "target": 42.8,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_U_Uvilda.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Uvilda_Dean_of_Perfection.dck",
   "target_scale": "edhrec"
  },
  {
@@ -1899,7 +1906,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-blue Memnarch deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/elf/deftsorceress.atlas",
   "target": 32.2,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_U_Memnarch.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Memnarch.dck",
   "target_scale": "edhrec"
  },
  {
@@ -1915,7 +1922,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-blue Orvar, the All-Form deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/celestial/angel_2.atlas",
   "target": 31.3,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_U_Orvar.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Orvar_the_All_Form.dck",
   "target_scale": "edhrec"
  },
  {
@@ -1932,7 +1939,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-blue Azami, Lady of Scrolls deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/human/wizard/red_wiz2.atlas",
   "target": 32.4,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_U_Azami.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Azami_Lady_of_Scrolls.dck",
   "ban": [
    "dramatic reversal"
   ],
@@ -1952,7 +1959,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-blue Urza, Lord High Artificer deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/fey/pixie.atlas",
   "target": 40.0,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_U_Urza.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Urza_Lord_High_Artificer.dck",
   "ban": [
    "basalt monolith"
   ],
@@ -1971,7 +1978,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-blue Unesh, Criosphinx Sovereign deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/fey/pixie_dimir.atlas",
   "target": 27.1,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_U_Unesh.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Unesh_Criosphinx_Sovereign.dck",
   "target_scale": "edhrec"
  },
  {
@@ -1988,7 +1995,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-blue Talrand, Sky Summoner deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/conjurer.atlas",
   "target": 34.0,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_U_Talrand.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Talrand_Sky_Summoner.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2004,7 +2011,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-blue Thassa, Deep-Dwelling deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/conjurer.atlas",
   "target": 32.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_U_Thassa.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Thassa_Deep_Dwelling.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2021,7 +2028,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-blue Minn, Wily Illusionist deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/human/artificer/esper_artificer.atlas",
   "target": 34.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_U_Minn.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Minn_Wily_Illusionist.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2038,7 +2045,8 @@
   "desc": "Tier 2 (Bracket 2). Mono-blue Venser, Shaper Savant deck.",
   "sprite": "sprites/enemy/humanoid/human/rogue/pirate.atlas",
   "target": 23.5,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Venser_Shaper_Savant.dck"
  },
  {
   "tier": 2,
@@ -2054,7 +2062,8 @@
   "desc": "Tier 2 (Bracket 2). Mono-blue Alandra, Sky Dreamer deck.",
   "sprite": "sprites/enemy/humanoid/elf/deftsorceress.atlas",
   "target": 25.5,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Alandra_Sky_Dreamer.dck"
  },
  {
   "tier": 2,
@@ -2069,7 +2078,8 @@
   "desc": "Tier 2 (Bracket 2). Mono-blue Grazilaxx, Illithid Scholar deck.",
   "sprite": "sprites/enemy/celestial/angel_2.atlas",
   "target": 26.5,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Grazilaxx_Illithid_Scholar.dck"
  },
  {
   "tier": 2,
@@ -2085,7 +2095,7 @@
   "desc": "Tier 2 (Bracket 2). Mono-blue Charix, the Raging Isle deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/human/wizard/red_wiz2.atlas",
   "target": 31.1,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T2_U_Charix.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Charix_the_Raging_Isle.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2157,7 +2167,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-black Yawgmoth, Thran Physician deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/monstrosity/gorgonen.atlas",
   "target": 40.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_B_Yawgmoth.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Yawgmoth_Thran_Physician.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2174,7 +2184,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-black Tinybones, Trinket Thief deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/undead/vampire_4.atlas",
   "target": 41.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_B_Tinybones.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Tinybones_Trinket_Thief.dck",
   "ban": [
    "orcish bowmasters",
    "chain of smog"
@@ -2195,7 +2205,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-black Sephiroth, Fabled SOLDIER deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/human/rogue/pirate_captain.atlas",
   "target": 43.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_B_Sephiroth.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Sephiroth_Fabled_SOLDIER.dck",
   "ban": [
    "mikaeus, the unhallowed"
   ],
@@ -2215,7 +2225,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-black K'rrik, Son of Yawgmoth deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/aberration/phyrexian/drossgladiator.atlas",
   "target": 44.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_B_Krrik.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/K_rrik_Son_of_Yawgmoth.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2231,7 +2241,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-black Ob Nixilis, the Fallen deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/undead/shade.atlas",
   "target": 38.9,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_B_Ob.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Ob_Nixilis_the_Fallen.dck",
   "ban": [
    "bloodletter of aclazotz"
   ],
@@ -2251,7 +2261,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-black Massacre Girl, Known Killer deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/plant/fungus.atlas",
   "target": 39.3,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_B_Massacre.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Massacre_Girl_Known_Killer.dck",
   "ban": [
    "maha, its feathers night"
   ],
@@ -2271,7 +2281,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-black Gisa, the Hellraiser deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/plant/fungus.atlas",
   "target": 40.1,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_B_Gisa.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Gisa_the_Hellraiser.dck",
   "ban": [
    "magus of the coffers"
   ],
@@ -2291,7 +2301,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-black Toshiro Umezawa deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/knight.atlas",
   "target": 40.0,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_B_Toshiro.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Toshiro_Umezawa.dck",
   "ban": [
    "chain of smog",
    "maralen of the mornsong"
@@ -2311,7 +2321,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-black Imotekh the Stormlord deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/undead/shade.atlas",
   "target": 29.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_B_Imotekh.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Imotekh_the_Stormlord.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2328,7 +2338,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-black Xu-Ifit, Osteoharmonist deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/monstrosity/gorgonen.atlas",
   "target": 31.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_B_XuIfit.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Xu_Ifit_Osteoharmonist.dck",
   "ban": [
    "magus of the coffers"
   ],
@@ -2347,7 +2357,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-black Shirei, Shizo's Caretaker deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/undead/vampire_4.atlas",
   "target": 29.2,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_B_Shirei.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Shirei_Shizo_s_Caretaker.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2364,7 +2374,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-black Chainer, Dementia Master deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/human/rogue/pirate_captain.atlas",
   "target": 34.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_B_Chainer.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Chainer_Dementia_Master.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2380,7 +2390,8 @@
   "desc": "Tier 2 (Bracket 2). Mono-black Braids, Arisen Nightmare deck.",
   "sprite": "sprites/enemy/aberration/phyrexian/drossgladiator.atlas",
   "target": 23.5,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Braids_Arisen_Nightmare.dck"
  },
  {
   "tier": 2,
@@ -2396,7 +2407,8 @@
   "desc": "Tier 2 (Bracket 2). Mono-black Vito, Thorn of the Dusk Rose deck.",
   "sprite": "sprites/enemy/undead/shade.atlas",
   "target": 25.5,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Vito_Thorn_of_the_Dusk_Rose.dck"
  },
  {
   "tier": 2,
@@ -2412,7 +2424,7 @@
   "desc": "Tier 2 (Bracket 2). Mono-black Marrow-Gnawer deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/plant/fungus.atlas",
   "target": 26.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T2_B_MarrowGnawer.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Marrow_Gnawer.dck",
   "ban": [
    "thornbite staff"
   ],
@@ -2432,7 +2444,7 @@
   "desc": "Tier 2 (Bracket 2). Mono-black Syr Konrad, the Grim deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/plant/fungus.atlas",
   "target": 30.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T2_B_Syr.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Syr_Konrad_the_Grim.dck",
   "ban": [
    "bloodchief ascension"
   ],
@@ -2507,7 +2519,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-red Birgi, God of Storytelling deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/fey/satyr.atlas",
   "target": 44.4,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_R_Birgi.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Birgi_God_of_Storytelling.dck",
   "ban": [
    "kiki-jiki, mirror breaker",
    "blasphemous act"
@@ -2528,7 +2540,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-red Godo, Bandit Warlord deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/human/shaman/pyromancer.atlas",
   "target": 41.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_R_Godo.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Godo_Bandit_Warlord.dck",
   "ban": [
    "basalt monolith",
    "helm of the host"
@@ -2549,7 +2561,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-red Ral, Monsoon Mage deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/aberration/phyrexian/furnacegoblin.atlas",
   "target": 45.6,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_R_Ral.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Ral_Monsoon_Mage.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2565,7 +2577,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-red Rose, Cutthroat Raider deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/monstrosity/kavu.atlas",
   "target": 46.4,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_R_Rose.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Rose_Cutthroat_Raider.dck",
   "ban": [
    "godo, bandit warlord"
   ],
@@ -2585,7 +2597,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-red Etali, Primal Storm deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/fey/satyr.atlas",
   "target": 35.0,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_R_Etali.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Etali_Primal_Storm.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2601,7 +2613,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-red Ojer Axonil, Deepest Might deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/monstrosity/yeti.atlas",
   "target": 30.4,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_R_Ojer.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Ojer_Axonil_Deepest_Might.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2618,7 +2630,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-red Magda, Brazen Outlaw deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/swordsman_2.atlas",
   "target": 38.0,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_R_Magda.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Magda_Brazen_Outlaw.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2635,7 +2647,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-red Rionya, Fire Dancer deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/beast/bird/parrot.atlas",
   "target": 41.7,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_R_Rionya.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Rionya_Fire_Dancer.dck",
   "ban": [
    "godo, bandit warlord"
   ],
@@ -2654,7 +2666,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-red Lathliss, Dragon Queen deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/human/rogue/pirate2.atlas",
   "target": 19.0,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_R_Lathliss.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Lathliss_Dragon_Queen.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2671,7 +2683,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-red Zada, Hedron Grinder deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/fey/satyr.atlas",
   "target": 27.3,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_R_Zada.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Zada_Hedron_Grinder.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2688,7 +2700,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-red Auntie Blyte, Bad Influence deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/human/shaman/pyromancer.atlas",
   "target": 32.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_R_Auntie.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Auntie_Blyte_Bad_Influence.dck",
   "ban": [
    "heartless hidetsugu"
   ],
@@ -2708,7 +2720,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-red Krenko, Mob Boss deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/aberration/phyrexian/furnacegoblin.atlas",
   "target": 34.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_R_Krenko.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Krenko_Mob_Boss.dck",
   "ban": [
    "kiki-jiki, mirror breaker",
    "pyromancer's goggles"
@@ -2729,7 +2741,8 @@
   "desc": "Tier 2 (Bracket 2). Mono-red Kiki-Jiki, Mirror Breaker deck.",
   "sprite": "sprites/enemy/monstrosity/kavu.atlas",
   "target": 23.5,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Kiki_Jiki_Mirror_Breaker.dck"
  },
  {
   "tier": 2,
@@ -2749,7 +2762,8 @@
    "aggravated assault",
    "mana geyser"
   ],
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Kazuul_Tyrant_of_the_Cliffs.dck"
  },
  {
   "tier": 2,
@@ -2764,7 +2778,8 @@
   "desc": "Tier 2 (Bracket 2). Mono-red Krenko, Tin Street Kingpin deck.",
   "sprite": "sprites/enemy/monstrosity/yeti.atlas",
   "target": 32.0,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Krenko_Tin_Street_Kingpin.dck"
  },
  {
   "tier": 2,
@@ -2780,7 +2795,7 @@
   "desc": "Tier 2 (Bracket 2). Mono-red Zirilan of the Claw deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/swordsman_2.atlas",
   "target": 30.8,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T2_R_Zirilan.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Zirilan_of_the_Claw.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2852,7 +2867,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-green Yeva, Nature's Herald deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/aberration/phyrexian/copperhostbrutalizer.atlas",
   "target": 36.9,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_G_Yeva.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Yeva_Nature_s_Herald.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2868,7 +2883,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-green Ashaya, Soul of the Wild deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/plant/fungus_golgari.atlas",
   "target": 41.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_G_Ashaya.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Ashaya_Soul_of_the_Wild.dck",
   "ban": [
    "argothian elder",
    "ley weaver",
@@ -2890,7 +2905,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-green Lumra, Bellow of the Woods deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/plant/hiddenbush.atlas",
   "target": 39.9,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_G_Lumra.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Lumra_Bellow_of_the_Woods.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2906,7 +2921,7 @@
   "desc": "Tier 5 (Bracket 4, elite). Mono-green Jorn, God of Winter deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/swordsman_3.atlas",
   "target": 39.7,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T5_G_Jorn.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Jorn_God_of_Winter.dck",
   "ban": [
    "gyre sage"
   ],
@@ -2925,7 +2940,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-green Esika, God of the Tree deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/plant/treant_large.atlas",
   "target": 32.4,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_G_Esika.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Esika_God_of_the_Tree.dck",
   "target_scale": "edhrec"
  },
  {
@@ -2942,7 +2957,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-green Selvala, Heart of the Wilds deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/monstrosity/hydra.atlas",
   "target": 37.9,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_G_Selvala.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Selvala_Heart_of_the_Wilds.dck",
   "ban": [
    "marwyn, the nurturer",
    "staff of domination",
@@ -2967,7 +2982,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-green Yisan, the Wanderer Bard deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/beast/bear/bear.atlas",
   "target": 38.0,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_G_Yisan.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Yisan_the_Wanderer_Bard.dck",
   "ban": [
    "circle of dreams druid",
    "heronblade elite"
@@ -2988,7 +3003,7 @@
   "desc": "Tier 4 (Bracket 4). Mono-green Marwyn, the Nurturer deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/fey/satyr_2.atlas",
   "target": 40.0,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T4_G_Marwyn.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Marwyn_the_Nurturer.dck",
   "ban": [
    "staff of domination",
    "circle of dreams druid",
@@ -3012,7 +3027,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-green Shroofus Sproutsire deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/humanoid/elf/druid.atlas",
   "target": 26.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_G_Shroofus.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Shroofus_Sproutsire.dck",
   "target_scale": "edhrec"
  },
  {
@@ -3029,7 +3044,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-green Azusa, Lost but Seeking deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/aberration/phyrexian/copperhostbrutalizer.atlas",
   "target": 33.6,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_G_Azusa.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Azusa_Lost_but_Seeking.dck",
   "target_scale": "edhrec"
  },
  {
@@ -3046,7 +3061,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-green Kona, Rescue Beastie deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/plant/fungus_golgari.atlas",
   "target": 32.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_G_Kona.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Kona_Rescue_Beastie.dck",
   "target_scale": "edhrec"
  },
  {
@@ -3063,7 +3078,7 @@
   "desc": "Tier 3 (Bracket 3). Mono-green Reki, the History of Kamigawa deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/plant/hiddenbush.atlas",
   "target": 34.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T3_G_Reki.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Reki_the_History_of_Kamigawa.dck",
   "target_scale": "edhrec"
  },
  {
@@ -3079,7 +3094,8 @@
   "desc": "Tier 2 (Bracket 2). Mono-green Toski, Bearer of Secrets deck.",
   "sprite": "sprites/enemy/humanoid/swordsman_3.atlas",
   "target": 23.5,
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Toski_Bearer_of_Secrets.dck"
  },
  {
   "tier": 2,
@@ -3097,7 +3113,8 @@
   "ban": [
    "umbral mantle"
   ],
-  "target_scale": "edhrec"
+  "target_scale": "edhrec",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Arasta_of_the_Endless_Web.dck"
  },
  {
   "tier": 2,
@@ -3113,7 +3130,7 @@
   "desc": "Tier 2 (Bracket 2). Mono-green Thrun, Breaker of Silence deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/monstrosity/hydra.atlas",
   "target": 30.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T2_G_Thrun.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Thrun_Breaker_of_Silence.dck",
   "target_scale": "edhrec"
  },
  {
@@ -3130,7 +3147,7 @@
   "desc": "Tier 2 (Bracket 2). Mono-green Legolas, Master Archer deck. Seeded from a public Commander decklist.",
   "sprite": "sprites/enemy/beast/bear/bear.atlas",
   "target": 27.5,
-  "seed": "../../tools/concordia/deckgen/external/seeds/T2_G_Legolas.dck",
+  "seed": "../../tools/concordia/deckgen/external/seeds/Legolas_Master_Archer.dck",
   "target_scale": "edhrec"
  },
  {

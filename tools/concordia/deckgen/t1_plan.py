@@ -5,9 +5,10 @@ value 2-4, common or uncommon printing, not a commander of any other tier, start
 of the commander's colour pass the commander's support tests (commander_support.profile and supports, rules H31-H44).
 Usage: python3 t1_plan.py        writes t1_fresh.json and T1_COMMANDER_POOL.toon"""
 import os, re, sys, json, glob, pickle, collections, unicodedata
+import deckfile as D
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE); sys.path.insert(0, os.path.dirname(HERE))
-import ability_tags as at, commander_support as cs
+import ability_tags as at, commander_support as cs, themes as TH
 ROOT = os.path.abspath(os.path.join(HERE, "../../.."))
 DECKS = os.path.join(ROOT, "forge-gui/res/adventure/Concordia/decks")
 POOL = 20      # commanders per colour in the pool
@@ -19,12 +20,7 @@ def used_elsewhere():
     out = set()
     for f in glob.glob(os.path.join(DECKS, "*/*.dck")):
         if "/tier1/" in f: continue
-        sec = None
-        for ln in open(f, errors="replace"):
-            ln = ln.strip()
-            if ln.startswith("["): sec = ln; continue
-            m = re.match(r"\d+ ([^|]+)", ln)
-            if m and sec == "[Commander]": out.add(m.group(1).strip().lower())
+        out |= {name.lower() for _i, sec, _n, name, _ed in D.entries(D.lines(f)) if sec == "[Commander]"}
     return out
 
 
@@ -84,7 +80,7 @@ def main():
                 base = "T1_%s_%s" % (col, ascii_first(c["name"])); fn = base + ".dck"; j = 2
                 while fn in used: fn = "%s%d.dck" % (base, j); j += 1
                 used.add(fn)
-                theme = tb + [x for x in c["types"].split() if x not in ("Legendary", "Creature")]
+                theme = TH.theme_for(c, pool) or tb   # tag-based (themes.py); the profile tribe only when no tag theme exists
                 fresh.append(dict(tier=1, file=fn, name=c["name"].split(",")[0], commander=c["name"], colors=col, life=11, theme=list(dict.fromkeys(theme)),
                                   desc="Tier 1 (Bracket 1). Mono-%s %s deck led by %s." % ({"W": "white", "U": "blue", "B": "black", "R": "red", "G": "green"}[col], arch, c["name"]),
                                   archetype=arch, sub=sub, reach=2))

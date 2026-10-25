@@ -1,4 +1,4 @@
-# Claude-only file in TOON. Written by tagcheck/sync.py; regenerated, never hand-merged. open_slot = tag gap (tagger), no_rule = rule gap (mtg2llm mine / HAND tables).
+# Claude-only file in TOON. Written by tagcheck/guards.py; regenerated, never hand-merged. open_slot = tag gap (tagger), no_rule = rule gap (mtg2llm mine / HAND tables).
 # starters: 556 units, 446 rendered, 26 open_slot, 84 no_rule
 gaps[110|]{card|group|tags|reason}:
 Aftermath Analyst|c2|cost:sacrifice cost_sacrifice_target:self cost_mana:3g target_count:all target_type:land target_scope:you_control put_onto_battlefield from_zone:graveyard put_tapped controller:you|no_rule

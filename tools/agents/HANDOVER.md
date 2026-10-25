@@ -48,7 +48,7 @@ No agents are used in the new session; none are running. Do not message or resum
 ## Workflow and tools (what the project uses)
 - Sessions/handover: `MAIN_SESSION_BRIEF.md` (12 rules, section 8 two-session shifts), `START.md` (root; the single start script), `sync_check.py`, `clone_verify.py`, `toolbox.py --check`, `MANIFEST.toon`, `docpush.py` (documents only).
 - Tags: `deckgen/tag_run.py` (card scripts only), `tag_variant.py` (`TAG_VARIANT=off`), `tags/TAG_LEGEND.md`, generated `TAG_REFERENCE.md`, `STARTER_TAGS.toon`.
-- Reverse check: `tagcheck/reverse_check.py` (`export/compare/selftest`), `consistency.py`, `learning_merge.py`, `learning_coverage.py`, `oracle_style_stats.py`, `build_reminder_fill.py`, `build_token_reference.py`, `holdout_cards.txt` (150), `SCORING_TOLERANCE.md`, reports R1/R2/R6/R7.
+- Reverse check: `tagcheck/reverse_check.py` (`export/compare/selftest`), `consistency.py`, `analysis.py`, `reference_files.py`, `holdout_cards.txt` (150), `SCORING_TOLERANCE.md`, reports R1/R2/R6/R7.
 - Sims: `tools/concordia/sim/`, `suite/`, `balance_lab/`, `ai_lab/`; decks `deckgen/`; game data `forge-gui/res/adventure/Concordia/`; design docs `docs/Adventure/Campaign/`.
 - Environment: subagent cap 5 concurrent; no foreground `sleep` (use Monitor/background); reader work dirs live outside the repo.
 

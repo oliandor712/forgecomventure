@@ -33,25 +33,32 @@ FAST_MANA = {"sol ring", "mana crypt", "mana vault", "grim monolith", "basalt mo
 RARITY_WEIGHT = {"C": 0.1, "U": 0.35, "R": 0.7, "M": 1.0, "S": 0.7, "L": 0.0}
 ABIL_RE = re.compile(r"^(?:A:|SVar:[^:]+:)\s*(AB|SP|DB)\$\s*([A-Za-z]+)(.*)$")
 
+TIER_TABLE = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "tier_table.json"), encoding="utf-8"))["tiers"]
+
+
+def _band(tier):
+    return tuple(TIER_TABLE[str(tier)]["band"])   # power window: tier_table.json is the one place
+
+
 # Tier rules. Ranges are inclusive [min, max]; None means no bound. "hard" rules FAIL, the rest WARN.
 TIERS = {
     1: t1.DECK,  # tier 1 is defined in tier1_rules.py (one source of truth)
     2: {"name": "Tier 2 - Moderate", "life": (15, 20), "watch": 1, "staples": (12, 41), "commander_rarity": {"C", "U", "R"}, "commander_mv": (3, 5),
         "lands": (36, 39), "ramp": (2, 8), "fast": (0, 1), "draw": (2, 10), "removal": (4, 14), "wipe": (0, 2),
-        "tutor": (0, 1), "avg_mv": (2.6, 3.6), "creatures": (26, 36), "power": (19, 31),
+        "tutor": (0, 1), "avg_mv": (2.6, 3.6), "creatures": (15, None), "power": _band(2),
         "max_rare": 10, "max_mythic": 1, "game_changers": 0, "mld": 0, "extra_turns": 0, "combos": "none",
         "bracket": 2, "curve": {1: (2, 7), 2: (8, 18), 3: (10, 21), 4: (7, 15), 5: (4, 11), 6: (3, 12)},
         "types": {"Instant": 4, "Sorcery": 3, "Artifact": 4, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
     3: {"name": "Tier 3 - Challenging", "life": (25, 35), "watch": 2, "staples": (22, 39), "commander_rarity": {"U", "R", "M"}, "commander_mv": (3, 7),
         "lands": (33, 38), "ramp": (8, 16), "fast": (0, 3), "draw": (6, 14), "removal": (7, 16), "wipe": (1, 4),
-        "tutor": (0, 3), "avg_mv": (2.8, 3.9), "creatures": (16, 40), "power": (27, 38),
+        "tutor": (0, 3), "avg_mv": (2.8, 3.9), "creatures": (15, None), "power": _band(3),
         "max_rare": 60, "max_mythic": 15, "game_changers": 3, "mld": 0, "extra_turns": 1, "combos": "late",
         "bracket": 3, "curve": {1: (3, 12), 2: (9, 22), 3: (10, 21), 4: (5, 15), 5: (3, 11), 6: (2, 10)},
         "types": {"Instant": 4, "Sorcery": 3, "Artifact": 4, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
     # Bracket 4 (optimized), kept to what the Forge AI can pilot: no mass land denial, no early two-card combos.
     4: {"name": "Tier 4 - Hard", "life": (30, 40), "watch": 4, "staples": (22, 46), "commander_rarity": {"U", "R", "M"}, "commander_mv": (2, 7),
         "lands": (33, 37), "ramp": (9, 18), "fast": (0, 4), "draw": (8, 16), "removal": (8, 18), "wipe": (1, 5),
-        "tutor": (0, 4), "avg_mv": (2.7, 3.8), "creatures": (14, 38), "power": (34, 42),
+        "tutor": (0, 4), "avg_mv": (2.7, 3.8), "creatures": (15, None), "power": _band(4),
         "max_rare": 70, "max_mythic": 20, "game_changers": 5, "mld": 0, "extra_turns": 1, "combos": "late",
         "bracket": 4, "curve": {1: (4, 13), 2: (10, 22), 3: (10, 21), 4: (5, 15), 5: (3, 11), 6: (2, 10)},
         "types": {"Instant": 5, "Sorcery": 3, "Artifact": 5, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
@@ -59,7 +66,7 @@ TIERS = {
     # and no early two-card combos, which the AI can't assemble and players don't enjoy facing.
     5: {"name": "Tier 5 - Elite", "life": (35, 45), "watch": 8, "staples": (28, 48), "commander_rarity": {"U", "R", "M"}, "commander_mv": (2, 7),
         "lands": (31, 37), "ramp": (10, 20), "fast": (0, 6), "draw": (9, 18), "removal": (9, 20), "wipe": (1, 5),
-        "tutor": (0, 6), "avg_mv": (2.5, 3.8), "creatures": (12, 38), "power": (39, None),
+        "tutor": (0, 6), "avg_mv": (2.5, 3.8), "creatures": (15, None), "power": _band(5),
         "max_rare": 80, "max_mythic": 30, "game_changers": 10, "mld": 0, "extra_turns": 2, "combos": "late",
         "bracket": 5, "curve": {1: (5, 15), 2: (10, 23), 3: (9, 21), 4: (4, 15), 5: (2, 11), 6: (2, 10)},
         "types": {"Instant": 5, "Sorcery": 3, "Artifact": 5, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
@@ -325,20 +332,38 @@ def edhrec(c):
     return max(0.0, 1 - math.log10(r) / math.log10(30000)) if r else 0.0
 
 
+_dp = None
+DECKS_JSON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deckgen", "external", "decks.json")
+
+
+def deckpop(c):
+    """0-1 popularity from the collected decklists (deckgen/collect_decks.py: precons plus the most viewed Archidekt decks per
+    bracket): the share of those decks running the card, 1 at 30% or more, square-root curve. 0 when the file is missing."""
+    global _dp
+    if _dp is None:
+        _dp = {}
+        if os.path.exists(DECKS_JSON):
+            ds = [x for x in json.load(open(DECKS_JSON, encoding="utf-8"))["decks"] if x["source"] != "edhrec"]
+            cnt = collections.Counter(n.lower() for x in ds for n in set(x["cards"]) | set(x["commanders"]))
+            _dp = {k: min(1.0, v / (0.30 * len(ds))) ** 0.5 for k, v in cnt.items()} if ds else {}
+    return _dp.get(c["name"].lower().split(" // ")[0], 0.0)
+
+
 def card_power(data, c, tags, rarity):
-    """0-100 power estimate: raw power, mana efficiency, role, rarity, EDHREC popularity, Game Changer, fast mana, tutor.
-    35 raw + 15 efficiency + 15 role + 10 rarity + 5 EDHREC + 10 Game Changer + 5 fast + 5 tutor.
+    """0-100 power estimate: raw power, mana efficiency, role, rarity, Game Changer, fast mana, tutor.
+    40 raw + 15 efficiency + 15 role + 10 rarity + 10 Game Changer + 5 fast + 5 tutor.
+    Popularity counts once, inside raw power (the EDHREC lift below); it is not added again here or in the builder's score.
     Raw power is the cube rank, lifted by the cEDH inclusion rate or by EDHREC popularity (up to EDH_LIFT) when those
     are higher: the cube list misses most casual cards (Birds of Paradise isn't in it). A missing signal never lowers a
     card. Prices are not used (docs/Adventure/Campaign/DECK_REVIEW_SPELLBINDER.md)."""
     name = c["name"].lower()
     rank = data["cube"].get(name)
     cube = 1 - (rank - 1) / 4000 if rank else 0.0
-    pop = edhrec(c)
+    pop = max(edhrec(c), deckpop(c))
     cube = max(cube, cedh_strength(c) or 0.0, EDH_LIFT * pop)
     eff = max(0.0, min(1.0, (6 - c["cmc"]) / 5))
     role = 1.0 if tags & {"ramp", "draw", "removal", "wipe", "counter", "tutor"} else 0.0
-    p = 35 * cube + 15 * eff + 15 * role + 10 * RARITY_WEIGHT.get(rarity, 0.3) + 5 * pop
+    p = 40 * cube + 15 * eff + 15 * role + 10 * RARITY_WEIGHT.get(rarity, 0.3)
     p += 10 * (name in data["lists"]["gc"]) + 5 * ("fast" in tags) + 5 * ("tutor" in tags)
     return round(min(100.0, p), 1)
 

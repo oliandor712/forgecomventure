@@ -16,7 +16,7 @@ def save(script, what, result):
         nl = chr(10); clean = lambda x: str(x).replace("|", "/").replace(nl, " ")[:300]
         rows = [l for l in open(p, encoding="utf-8").read().split(nl) if l.startswith("  ")] if os.path.exists(p) else []
         rows = (rows + ["  %s|%s|%s|%s" % (datetime.date.today().isoformat(), clean(script), clean(what), clean(result))])[-300:]
-        head = ["# Claude-only file in TOON (pipe-delimited; # lines are comments). One row per run of a tag-related script (tag_run, tag_guard, rule_guard, sync, mtg2llm mine/scan, reverse_check). Appended by tagcheck/run_memory.py.",
+        head = ["# Claude-only file in TOON (pipe-delimited; # lines are comments). One row per run of a tag-related script (tag_run, guards, mtg2llm mine/scan, reverse_check). Appended by tagcheck/run_memory.py.",
                 "runs[%d|]{date|script|what|result}:" % len(rows)]
         open(p, "w", encoding="utf-8", newline="").write(nl.join(head + rows) + nl)
         return True

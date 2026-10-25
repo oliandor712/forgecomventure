@@ -15,14 +15,76 @@ Profile items (each one a support test on a deck card):
   evasion/haste/double_strike/flying keywords: equipment, pump and evasion grants
 Usage: python3 commander_support.py        writes COMMANDER_SUPPORT.toon for the 80 tier 1 decks and prints a summary"""
 import os, re, sys, glob, collections, pickle
+import deckfile as D
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import ability_tags as at
+import tag_map
+import tag_run
+import tag_status
 
 ROOT = os.path.abspath(os.path.join(HERE, "../../.."))
 DECKS = os.path.join(ROOT, "forge-gui/res/adventure/Concordia/decks")
 SKIP = {"Creature", "Artifact", "Enchantment", "Legendary", "Snow", "Tribal", "Kindred", "Instant", "Sorcery", "Land"}
+FEW = 4   # H74: 'a few' creatures with a tribal ability, the one number for both the commander-support check and themes.py (user, 2026-10-25)
+_MAP = None
+
+
+def record_tags(name, text):
+    """The tagger record of a card as the old-style tag set the support tests read, plus the record's own tags (tag_map.py: kept names stay, replaced names are present when a replacement is)."""
+    global _MAP
+    if _MAP is None: _MAP = tag_map.load()
+    full = tag_run.record(name, text)
+    rec = set(full["tags"]) - tag_status.status(name, full)[1]   # tags held back by the check count for nothing
+    out = set(rec)
+    for o, (st, repl) in _MAP.items():
+        if o.lower() in rec or any(r in rec for r in repl): out.add(o)
+    return out
+
+
+PLAIN = ("cardtype:", "supertype:", "type:", "duration:", "num:", "target_count:", "has:", "needs:", "hint:", "color:", "ai_logic:", "affected_type:", "tempo:", "trigger_scope:", "target_scope:", "target_type:", "token_color:")
+GENERIC = {"optional", "shuffle", "enters_untapped", "enters_tapped", "put_tapped", "mana_choice", "unless_cost", "return", "reveal", "exile",
+           "transform", "enters_tapped_conditional", "activation_restriction", "additional_cost", "cost_additional", "mana_conditional"}
+_FUNC = {}
+
+
+def functional_tags(name):
+    """The tagger record's ability tags for a card, minus type lines and generic bookkeeping tags: what the card does, for matching two cards."""
+    k = name.lower()
+    if k not in _FUNC:
+        text = tag_run.find_text(name)
+        full = tag_run.record(name, text) if text else None
+        rec = set(full["tags"]) - tag_status.status(name, full)[1] if full else set()
+        _FUNC[k] = {t for t in rec if not t.startswith(PLAIN) and t not in GENERIC and "_amount:" not in t and "_count:" not in t}
+    return _FUNC[k]
+
+
+def seed_profile(commander, seed_names):
+    """(tags of the commander, tags carried by many cards of the seed list): what the seed deck is about."""
+    prof = collections.Counter(t for n in seed_names for t in functional_tags(n))
+    need = max(SEED_PROFILE_MIN, round(SEED_PROFILE_SHARE * len(seed_names)))   # a tag recurs when 3+ cards (or 10% of a long list) carry it
+    return functional_tags(commander), {t for t, c in prof.items() if c >= need}
+
+
+def seed_synergy(name, cmd_tags, profile):
+    """0-1: the card's ability tags that match the commander (1 each) or the seed's recurring tags (0.5 each), three hits is full synergy."""
+    tags = functional_tags(name)
+    hits = len(tags & cmd_tags) + 0.5 * len((tags & profile) - cmd_tags)
+    return min(1.0, hits / SEED_FULL_HITS)
+
+
+SEED_PROFILE_MIN = 3
+SEED_PROFILE_SHARE = 0.10
+SEED_FULL_HITS = 3
+
+
+def tribal(rec, T):
+    """H74: the card carries a tribal ability for creature type T (lord, tribe-scaled count or tribe-filtered effect)."""
+    t = T.lower()
+    return bool({"lord:" + t, "scales:" + t, "affected_filter:" + t, "trigger_filter:" + t} & rec) or any(x.startswith("x_is:count_" + t) for x in rec)
+
+
 CARD_TYPES = {"Equipment", "Artifact", "Aura", "Enchantment", "Vehicle", "Saga", "Instant", "Sorcery", "Land", "Planeswalker"}
 
 
@@ -88,7 +150,7 @@ def supports(item, name, text, tags, types, traits=None):
     crea = "Creature" in ty
     if item.startswith("tribe:"):
         T = item[6:]
-        return (crea and T in ty) or ("Changeling" in text) or ("needs:type:" + T) in tags or re.search(r"\b" + T.lower() + "s?\\b", text.lower().split("oracle:")[-1]) is not None and crea
+        return (crea and T in ty) or ("Changeling" in text) or tribal(tags, T)
     if item.startswith("scales:"):
         Y = item[7:]
         return Y in ty or (Y == "Artifact" and "artifact_token" in tags) or (Y == "Equipment" and "equip" in tags) or (Y == "Creature" and crea)
@@ -129,12 +191,9 @@ def supports(item, name, text, tags, types, traits=None):
 
 
 def read(path):
-    sec, main, cmd = None, [], []
-    for ln in open(path, errors="replace"):
-        ln = ln.strip()
-        if ln.startswith("["): sec = ln; continue
-        m = re.match(r"(\d+) ([^|]+)", ln)
-        if m: (main if sec == "[Main]" else cmd if sec == "[Commander]" else []).append((int(m.group(1)), m.group(2).strip()))
+    main, cmd = [], []
+    for _i, sec, n, name, _ed in D.entries(D.lines(path)):
+        (main if sec == "[Main]" else cmd if sec == "[Commander]" else []).append((n, name))
     return main, cmd
 
 
@@ -170,7 +229,16 @@ def analyse(path, pool):
     for q, n in main:
         t = at.card_text(n)
         if not t or "Types:Land" in t: continue
-        cards.append((n, t, at.tags_of(t), at.parse(t)[5]))
+        cards.append((n, t, record_tags(n, t), at.parse(t)[5]))
+    ctext = at.card_text(cn)
+    crec = record_tags(cn, ctext) if ctext else set()
+    for it in [x for x in prof if x.startswith("tribe:")]:   # H74: a shared type is no support by itself; the commander or a few of the 99 need a tribal ability
+        T = it[6:]
+        if not (tribal(crec, T) or sum(1 for _n, _t, tg, _ty in cards if tribal(tg, T)) >= FEW): prof.remove(it)
+    if c:
+        for w in {x for x in c["types"].split() if x not in SKIP} - {x[6:] for x in prof if x.startswith("tribe:")}:
+            if sum(1 for _n, _t, tg, _ty in cards if tribal(tg, w)) >= FEW: prof.append("tribe:" + w)
+        prof.sort()
     traits = deck_traits(main, cards)
     per = {it: sum(1 for n, t, tg, ty in cards if supports(it, n, t, tg, ty, traits)) for it in prof}
     # a card supports the commander if it passes ANY test
@@ -184,7 +252,9 @@ def main():
     for f in sorted(glob.glob(os.path.join(DECKS, "tier1", "*.dck"))):
         cn, prof, per, works, partner = analyse(f, pool)
         rows.append((os.path.basename(f)[3:-4], cn, ";".join(prof) or "none", works, ";".join("%s=%d" % kv for kv in per.items()), "partner" if partner else ""))
-    L = ["# Commander support (generated by deckgen/commander_support.py; rules H31-H36). works = deck cards that pass any profile test of the commander's ability; threshold in build.py H17 is 5.",
+    import tag_version
+    L = ["# tag_stamp: %s (tag_version.py; the tagger files this was made on)" % tag_version.stamp(),
+         "# Commander support (generated by deckgen/commander_support.py; rules H31-H36). works = deck cards that pass any profile test of the commander's ability; threshold in build.py H17 is 5.",
          "commanders[%d|]{deck|commander|profile|works|per_test|partner}:" % len(rows)] + ["  %s|%s|%s|%d|%s|%s" % r for r in rows]
     open(os.path.join(HERE, "COMMANDER_SUPPORT.toon"), "w").write("\n".join(L) + "\n")
     w = [r[3] for r in rows]
