@@ -1,0 +1,244 @@
+Enchantress Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Voltron
+Go wide
+Aristocrats
+Enchantress
+Artifacts
+Tribal
+Stax
+Combo
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Enchantress
+Deck Archetype
+Enchantress: The Commander Archetype, Explained
+Enchantress solves the oldest problem with enchantments (they cost a card and do not affect the board immediately) by making every one of them replace itself.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Enchantress: Built around a critical mass of enchantments that draw cards as they resolve.
+What Enchantress Decks Actually Do
+Enchantress decks run a critical mass of enchantments alongside creatures and enchantments that draw a card whenever you cast one. The archetype is named after Verduran Enchantress and its successors, and it has been recognisably the same deck since the 1990s: play a cheap draw engine, then cast enchantments until you have drawn most of your library.
+What makes it work in Commander specifically is that enchantments are the hardest permanent type for most decks to remove. A resolved enchantment tends to stay resolved, so a deck that accumulates twelve of them builds a board that green and black opponents often simply cannot interact with. The win condition is usually secondary: a Sigil of the Empty Throne making Angels, a Sphere of Safety making the deck unattackable while it assembles something better.
+The Enchantress engine
+Three steps that feed each other, which is what makes it a deck rather than a pile of cards sharing a theme.
+1 Cast an enchantment Cheap ones are fine. The trigger is what you are paying for.
+2 Draw for it Argothian Enchantress replaces every enchantment as it resolves.
+3 Cast what you drew The deck refills faster than it spends, so the turn keeps going.
+↻ Two enchantresses out and the deck stops missing land drops.
+Which Colors Fit Enchantress
+Green and white own this archetype almost outright. Green has the enchantress draw effects themselves and the mana to deploy them; white has the pillowfort enchantments, the mass recursion, and the payoffs. Blue appears in Bant builds for copy effects, and black shows up in Orzhov constellation shells, but Selesnya is the beating heart of it.
+Green The draw engines themselves (Argothian Enchantress and its family) plus enchantment-based ramp.
+White Pillowfort effects that buy time, mass recursion like Replenish, and the enchantment payoffs that actually win.
+Blue Copy effects and card selection in Bant builds. A supporting color rather than a core one.
+Black Constellation payoffs and removal in Orzhov shells, where enchantments drain rather than defend.
+How color identity decides what you can play →
+Top 10 Enchantress Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building enchantress for the first time, these are the effects to
+understand before anything else.
+Argothian Enchantress ↗
+A one-mana body with shroud that draws on every enchantment. The best draw engine in the archetype and the hardest to remove.
+Enchantress's Presence ↗
+The same effect on an enchantment, which means it also triggers your other enchantresses when it resolves.
+Eidolon of Blossoms ↗
+Constellation draw, so it triggers on enchantments entering rather than being cast, so it catches tokens and recursion too.
+Setessan Champion ↗
+Draws and grows on each constellation trigger, turning the draw engine into a genuine threat.
+Sigil of the Empty Throne ↗
+A 4/4 Angel for every enchantment cast. The most common way an enchantress deck actually ends a game.
+Sphere of Safety ↗
+Attacking you costs mana per enchantment you control, which in this deck quickly means nobody can attack at all.
+Starfield of Nyx ↗
+Returns an enchantment from your graveyard each upkeep and animates the whole board once you have five.
+Sanctum Weaver ↗
+Taps for mana equal to your enchantment count. Ramp that scales with exactly the thing the deck is already doing.
+Serra's Sanctum ↗
+A land that taps for white mana per enchantment. Expensive to acquire, but no other card matches its ceiling here.
+Replenish ↗
+Returns every enchantment from your graveyard to the battlefield at once. The archetype's answer to a board wipe, and often a win on the spot.
+Top 10 Enchantress Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Sythis, Harvest's Hand ↗
+Draws and gains life on every enchantment cast, from a two-mana command zone. The most efficient starting point in the archetype.
+Tuvasa the Sunlit ↗
+Draws on your first enchantment each turn and grows with the count, doubling as a Voltron threat.
+Estrid, the Masked ↗
+A planeswalker commander that untaps your enchanted permanents and recurs auras from the graveyard.
+Zur the Enchanter ↗
+Tutors an enchantment directly onto the battlefield on every attack, which makes the deck brutally consistent.
+Daxos the Returned ↗
+Builds experience counters on enchantment casts and spends them on scaling Spirit tokens.
+Calix, Destiny's Hand ↗
+A planeswalker that finds enchantments, taps down threats, and returns auras. Removal and card advantage in one.
+Kestia, the Cultivator ↗
+Bestow lets her dodge removal, and she draws for each enchanted creature attacking.
+Siona, Captain of the Pyleas ↗
+A token per aura and a lethal combo with Shielded by Faith. The aggressive aura variant of the archetype.
+Sigarda, Host of Herons ↗
+Hexproof and immunity to sacrifice effects, which protects a heavy aura investment from the things auras usually lose to.
+Gylwain, Casting Director ↗
+Makes a free Role token on every creature you cast, so the enchantment count climbs without spending cards.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+Enchantress can draw twenty cards and still not win. The archetype's classic failure is assembling a beautiful, unattackable board with no way to close, while the table plays around it. Decide early how the deck wins (Angels, an aura-based commander kill, or a combo) and run enough copies of that plan that drawing half your library actually finds one.
+Frequently Asked Questions
+What is an enchantress deck in Commander?
+An enchantress deck plays a critical mass of enchantments alongside effects that draw a card whenever you cast one, named after cards like Argothian Enchantress. The draw engines chain into each other, so a resolved enchantress plus a hand of cheap enchantments can refill your hand every turn.
+What colors are enchantress decks in MTG?
+Green and white. Green supplies the enchantress draw effects and enchantment ramp; white supplies the pillowfort defence, mass recursion, and the payoffs that win. Blue appears in Bant builds and black in Orzhov constellation shells.
+How do enchantress decks win?
+Most commonly with a payoff that converts the enchantment count into a threat: Sigil of the Empty Throne making Angels, Starfield of Nyx animating the board, or an aura-stacked commander dealing commander damage. The draw engine finds the win condition; it is not the win condition itself.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Enchantress? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Voltron →Stax →Control →What Is Color Identity in MTG? →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Voltron
+Go wide
+Aristocrats
+Enchantress
+Artifacts
+Tribal
+Stax
+Combo
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

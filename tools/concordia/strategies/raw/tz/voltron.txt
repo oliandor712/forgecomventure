@@ -1,0 +1,244 @@
+Voltron Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Spellslinger
+Graveyard recursion
+Mill
+Voltron
+Go wide
+Aristocrats
+Enchantress
+Artifacts
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Voltron
+Deck Archetype
+Voltron: The Commander Archetype, Explained
+Voltron puts every resource into one creature and swings. It is the only archetype that gets to ignore life totals almost entirely, because twenty-one commander damage is a much shorter road than forty.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Voltron: One creature, usually the commander, carries the whole game plan.
+What Voltron Decks Actually Do
+A Voltron deck stacks equipment, auras, and counters onto a single creature, usually the commander, until it is large enough to kill in one or two connections. The name comes from the cartoon: individually unremarkable pieces assembling into one enormous thing.
+Commander's twenty-one-damage rule is what makes the plan work. Against a forty-life opponent a 10/10 is a four-turn clock, but as commander damage it is three connections, and against three opponents you only ever need to solve one of them at a time. The deck is really a protection deck wearing an aggro costume: the hard part is not making the creature big, it is keeping it alive through the removal a giant threat invites.
+The Voltron engine
+Three steps that build to a finish. This one ends the game rather than coming back round.
+1 Protect first Lightning Greaves goes down before anything worth removing does.
+2 Suit up Shadowspear and a sword turn one creature into a real threat.
+3 Twenty-one damage Commander damage removes a player without touching the other two.
+The last step wins the game, so there is nothing to come back round for.
+Which Colors Fit Voltron
+White is the home color. It owns equipment, auras, and the protection effects that keep the plan from evaporating to a single removal spell. Green adds raw size and trample, red adds haste and the aggressive equipment, and blue adds unblockable and counterspell protection. Black participates least, though it offers some of the best single-target pump in the format.
+White Equipment, auras, and protection: hexproof grants, indestructibility, and the effects that answer a board wipe before it resolves.
+Green Size and trample. Green makes the creature enormous and makes chump blockers stop working.
+Red Haste, double strike, and the most aggressive equipment. Red turns a big creature into a fast one.
+Blue Evasion and counterspells. Unblockable is a legitimate substitute for trample, and holding up a counter protects the investment.
+How color identity decides what you can play →
+Top 10 Voltron Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building voltron for the first time, these are the effects to
+understand before anything else.
+Lightning Greaves ↗
+Zero-cost equip granting haste and shroud. The most-played protection equipment in the format, and often the first thing a Voltron deck finds.
+Swiftfoot Boots ↗
+Hexproof instead of shroud, so you can still target your own creature with auras. The two boots do different jobs and most decks run both.
+Shadowspear ↗
+Trample and lifelink for one mana, plus the ability to strip hexproof and indestructible from blockers. Small, cheap, and always relevant.
+Sword of Feast and Famine ↗
+Protection from two colors, an opponent discards, and your lands untap. The best of the sword cycle for a deck that wants to keep casting after combat.
+Colossus Hammer ↗
+Plus ten, minus ten, with an eight-mana equip cost that decks solve with Sigarda's Aid or equipment-cost reduction. A one-card kill when it works.
+Whispersilk Cloak ↗
+Unblockable and shroud in one card. Evasion and protection stapled together is exactly what the archetype is short on.
+Rancor ↗
+Two power, trample, and it comes back to hand when it goes to the graveyard. Auras are card disadvantage; Rancor simply is not.
+Ethereal Armor ↗
+Scales with your enchantment count and grants first strike, which is why aura-based Voltron builds get better the longer they go.
+Bear Umbra ↗
+Untaps your lands on attack and shields the creature from the next removal spell via totem armor. Protection and ramp on one aura.
+Kaldra Compleat ↗
+A free 5/5 germ with first strike, trample, haste, and indestructible, and it exiles whatever it damages. A whole Voltron package in one card.
+Top 10 Voltron Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Uril, the Miststalker ↗
+Untargetable by opponents and grows with every aura you attach. The most protected Voltron commander in the format.
+Rafiq of the Many ↗
+Exalted plus double strike means a single attacker converts every pump effect into twice the damage.
+Bruna, Light of Alabaster ↗
+Attaches every aura from your hand and graveyard on attack, rebuilding the whole stack after a removal spell.
+Sram, Senior Edificer ↗
+Draws on every equipment, aura, or vehicle. Mono-white, cheap, and solves the archetype's card-advantage problem outright.
+Halvar, God of Battle ↗
+Moves equipment and auras around at no cost, and flips into an equipment that returns the creature it kills.
+Light-Paws, Emperor's Voice ↗
+Tutors an aura onto the battlefield with each aura you cast, chaining a whole suite out of a single card.
+Syr Gwyn, Hero of Ashvale ↗
+Free equip costs for Knights plus card draw on damage. A Voltron commander that can spread across a team.
+Nazahn, Revered Bladesmith ↗
+Tutors an equipment on entry and gives your equipped creatures trample. Consistency plus evasion in the command zone.
+Skullbriar, the Walking Grave ↗
+Keeps its counters when it changes zones, so removal costs you a turn rather than the whole investment.
+Greven, Predator Captain ↗
+Draws cards equal to the life you paid and grows accordingly. The black Voltron shell, powered by its own life total.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+Everything is in one card, and Swords to Plowshares costs one mana. Assume your commander will eat removal three or four times a game and build for it: cheap protection, recursion for your equipment, and a realistic sense of how much tax you can pay. Also watch the table read: a growing Voltron threat is visible to everyone, so you will be attacked before you are ready more often than any other archetype.
+Frequently Asked Questions
+What is a Voltron deck in Commander?
+A Voltron deck stacks equipment, auras, and counters onto one creature, usually the commander, until it can kill opponents in one or two hits. It aims to win through the twenty-one commander damage rule rather than by reducing anyone from forty life.
+How much commander damage do you need to win?
+Twenty-one from a single commander. It is tracked per commander and per player, so a 7/7 commander needs three connections against one opponent, and damage from a different commander does not add to the same total.
+What colors are best for Voltron?
+White first, for equipment, auras, and protection. Green adds size and trample, red adds haste and double strike, and blue adds evasion and counterspells. Boros, Selesnya, and Naya are the most common pairings, with mono-white a strong and cheap option.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Voltron? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Best Voltron Commanders →Common Voltron Deck Mistakes →Best Budget Voltron Upgrades →Aggro →Counters →What Is Commander Damage? →How Combat Works →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Spellslinger
+Graveyard recursion
+Mill
+Voltron
+Go wide
+Aristocrats
+Enchantress
+Artifacts
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

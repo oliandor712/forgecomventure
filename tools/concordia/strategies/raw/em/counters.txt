@@ -1,0 +1,426 @@
+Best +1/+1 Counters Commanders for EDH | EDHMatch
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Home
+Strategies
++1/+1 Counters
+Back to SearchBest +1/+1 Counters Commanders for EDH
++1/+1 counter decks are for players who want small creature upgrades to become permanent pressure across the board. This strategy wants to grow creatures over several turns, using +1/+1 counter commanders, counter doublers, and counter payoffs, to win through combat damage from creatures that keep getting larger. Unlike Tokens, Counters grows creatures over time instead of making many bodies, and unlike Voltron it spreads power beyond one attacker; unlike Proliferate, it focuses on +1/+1 growth rather than every counter type, while Infect is a separate poison plan. Counters matter decks reward pilots who sequence early creatures, multipliers, and protection so each trigger converts into lasting board presence.
+Best Colors for +1/+1 Counters Decks
+Selesnya pairs green counter doublers with white team growth, protection, and combat support.
+Simic combines evolve, adapt, proliferate, and card draw so creature growth keeps refilling the hand.
+Abzan adds black removal and recursion to white-green counters for longer midrange games.
+How Do +1/+1 Counters Decks Win in Commander?
++1/+1 Counters decks excel through a specific playstyle and win conditions. Here's how they work:
+✓ You play creatures that enter with counters or grow when counters are placed.
+✓ You add multipliers like Hardened Scales so each trigger produces extra growth.
+✓ You spread counters across several bodies to avoid relying on one attacker.
+✓ You convert large creatures into cards mana life or combat pressure.
+✓ You protect engines and preserve counters when removal clears the board.
+✓ You close by attacking with creatures that have grown beyond profitable blocks.
+Best Cards for +1/+1 Counters EDH Decks
+Hardened Scales
+Adds one extra +1/+1 counter to each placement, making small triggers scale.
+Branching Evolution
+Doubles +1/+1 counter placement so each growth trigger changes combat math quickly.
+The Ozolith
+Stores counters from dying creatures and moves them back onto the next threat.
+Cathars' Crusade
+Places counters across the board whenever creatures enter, scaling especially well with tokens.
+Inspiring Call
+Draws from countered creatures while giving them instant-speed protection from many sweepers.
+How to Build a +1/+1 Counters Commander Deck
+Core Components
+✓Run 3-5 counter multipliers such as Hardened Scales, Branching Evolution, or Conclave Mentor
+✓Include 15-20 creatures that enter with counters or trigger when counters are placed
+✓Add 4-6 proliferate effects like Evolution Sage or Inexorable Tide as growth accelerators
+✓Play 6-8 draw payoffs such as Inspiring Call or Rishkar's Expertise for large creatures
+✓Keep 8-10 ramp pieces so threats and activation costs fit into the same turns
+Win Conditions
+✓Attack with a tall board and trample so counters translate into actual damage
+✓Use Simic Ascendancy or Herd Baloth style payoffs as alternate routes
+✓Cast overrun effects like Overwhelming Stampede that scale with your largest creature
+✓Add flying, menace, fight effects, or removal so large creatures do not stall on blockers
+Protecting the Engine
+✓Run The Ozolith and Nesting Grounds so counters can survive creature removal
+✓Include 3-5 protection spells like Heroic Intervention for board wipes
+✓Avoid putting every counter on one creature when opponents have exile removal
+✓Use enchantment and artifact growth engines because they dodge many creature sweepers
+Weaknesses of +1/+1 Counters Decks
+⚠Counters decks can struggle against board wipes because most counters leave with the creatures.
+⚠The strategy needs setup turns, so fast combo or aggressive starts can move faster than its growth.
+⚠Targeted removal on counter doublers, draw payoffs, or protection engines can slow the deck sharply.
+⚠Large creatures without trample, evasion, or removal support can be held off by small blockers.
+Is +1/+1 Counters Right for You?
++1/+1 counters is approachable because the progress is visible and many core cards are inexpensive. The main skill is deciding when to spread counters across the board and when to stack one creature for pressure. It suits players who enjoy incremental growth, combat math, and engines that convert repeated triggers into permanent size.
+Related Commander Strategies
+Lifegain
+Lifegain can place counters, but its engine starts with life gained.
+Tokens
+Tokens makes many bodies; Counters grows existing creatures over time.
+Voltron
+Voltron builds one threat; Counters distributes lasting growth across multiple creatures.
+Proliferate
+Proliferate multiplies any counter type; Counters focuses on +1/+1 growth.
+Browse Commander Lists
+Top +1/+1 Counters CommandersProliferateFlying
+Top +1/+1 Counters Commanders
+The Wise Mothman
+MV: 4Universes Beyond
+Mill+1/+1 CountersMutants+7 more
+$11.98TCGPlayer
+€9.71CardMarket
+Ms. Bumbleflower
+MV: 4
++1/+1 CountersGroup HugWheels+7 more
+$6.54TCGPlayer
+€15.35CardMarket
+Hakbal of the Surging Soul
+MV: 4
+Merfolk+1/+1 CountersExplore+7 more
+$0.43TCGPlayer
+€1.44CardMarket
+Atraxa, Praetors' Voice
+MV: 4
+InfectPlaneswalkers+1/+1 Counters+7 more
+$27.86TCGPlayer
+€21.67CardMarket
+Shalai and Hallar
+MV: 4
++1/+1 CountersBurnCombo+7 more
+$6.63TCGPlayer
+€4.35CardMarket
+Tidus, Yuna's Guardian
+MV: 3Universes Beyond
++1/+1 CountersProliferateCounters Matter+7 more
+$2.75TCGPlayer
+€1.63CardMarket
+Helga, Skittish Seer
+MV: 3
++1/+1 CountersRampBig Mana+7 more
+$4.42TCGPlayer
+€4.09CardMarket
+Magus Lucea Kane
+MV: 4Universes Beyond
+X Spells+1/+1 CountersTyranids+7 more
+N/ATCGPlayer
+N/ACardMarket
+Animar, Soul of Elements
+MV: 3
++1/+1 CountersComboBirthing Pod+7 more
+$31.28TCGPlayer
+€27.39CardMarket
+Giada, Font of Hope
+MV: 2
+AngelsLifegain+1/+1 Counters+7 more
+$0.96TCGPlayer
+€0.53CardMarket
+Skullbriar, the Walking Grave
+MV: 2
++1/+1 CountersVoltronAggro+7 more
+$2.13TCGPlayer
+€0.47CardMarket
+Marchesa, the Black Rose
+MV: 4
++1/+1 CountersAristocratsReanimator+7 more
+$3.19TCGPlayer
+€1.23CardMarket
+Ezuri, Claw of Progress
+MV: 4
++1/+1 CountersInfectElves+7 more
+$2.37TCGPlayer
+€1.33CardMarket
+Betor, Ancestor's Voice
+MV: 5
+Lifegain+1/+1 CountersReanimator+7 more
+$3.47TCGPlayer
+€2.52CardMarket
+Zaxara, the Exemplary
+MV: 4
+X Spells+1/+1 CountersHydras+7 more
+$1.98TCGPlayer
+€1.32CardMarket
+Rocco, Street Chef
+MV: 3
++1/+1 CountersExileTokens+7 more
+$0.41TCGPlayer
+€0.39CardMarket
+Gargos, Vicious Watcher
+MV: 6
++1/+1 CountersHydrasX Spells+7 more
+$1.36TCGPlayer
+€1.29CardMarket
+Toph, the First Metalbender
+MV: 4Universes Beyond
+Lands MatterArtifacts+1/+1 Counters+7 more
+$1.28TCGPlayer
+€0.75CardMarket
+Edgar Markov
+MV: 6
+VampiresLifegainTokens+7 more
+$43.55TCGPlayer
+€35.69CardMarket
+Galadriel, Light of Valinor
+MV: 5Universes Beyond
+Elves+1/+1 CountersTokens+7 more
+$27.13TCGPlayer
+€23.87CardMarket
+Voja, Jaws of the Conclave
+MV: 5
+Elves+1/+1 CountersAggro+7 more
+N/ATCGPlayer
+N/ACardMarket
+Bristly Bill, Spine Sower
+MV: 2
++1/+1 CountersLands MatterLandfall+7 more
+$36.61TCGPlayer
+€25.49CardMarket
+Chishiro, the Shattered Blade
+MV: 4
++1/+1 CountersEquipmentAuras+7 more
+$0.93TCGPlayer
+€0.30CardMarket
+Hamza, Guardian of Arashin
+MV: 6
++1/+1 CountersAggroElephants+7 more
+$0.31TCGPlayer
+€0.23CardMarket
+Yuna, Grand Summoner
+MV: 4Universes Beyond
++1/+1 CountersComboEnchantress+7 more
+N/ATCGPlayer
+N/ACardMarket
+Filter and browse all +1/+1 Counters commanders →
+Frequently Asked Questions
+What makes a good +1/+1 Counters commander?
+The best +1/+1 counters commanders typically provide consistent access to the strategy's core mechanics. Look for commanders that you play creatures that enter with counters or grow when counters are placed.
+How do +1/+1 Counters decks win?
++1/+1 Counters decks win through a combination of Hardened Scales, Branching Evolution, The Ozolith, and other synergistic pieces that +1/+1 counter decks are for players who want small creature upgrades to become permanent pressure across the board.
+What are the best colors for +1/+1 Counters?
+Selesnya pairs green counter doublers with white team growth, protection, and combat support. However, Simic combines evolve, adapt, proliferate, and card draw so creature growth keeps refilling the hand.
+What are the weaknesses of +1/+1 Counters decks?
+Counters decks can struggle against board wipes because most counters leave with the creatures. The strategy needs setup turns, so fast combo or aggressive starts can move faster than its growth. Targeted removal on counter doublers, draw payoffs, or protection engines can slow the deck sharply. Large creatures without trample, evasion, or removal support can be held off by small blockers.
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH

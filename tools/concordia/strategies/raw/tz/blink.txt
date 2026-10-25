@@ -1,0 +1,245 @@
+Blink Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Superfriends
+Lands matter
+Counters
+Blink
+Lifegain
+Voltron Mistakes
+Voltron Budget Upgrades
+Aristocrats Mistakes
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Blink
+Deck Archetype
+Blink: The Commander Archetype, Explained
+A creature with a good enter trigger is a one-shot spell attached to a body. Blink decks make it a spell you get to cast every single turn.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Blink: Repeatedly exiles and returns its own creatures for their enter triggers.
+What Blink Decks Actually Do
+Blink decks, also called flicker decks, exile their own creatures and immediately return them, re-triggering every enter-the-battlefield ability. A Solemn Simulacrum blinked four times has fetched four lands and drawn four cards from one card.
+The archetype is built like an engine rather than a threat. Most of the deck is creatures whose value is entirely in their entry trigger, plus a suite of blink effects to reuse them. The by-products are what make it strong in practice: blinking is instant-speed removal protection, it resets combat damage and auras opponents put on your creatures, and effects that exile an opponent's creature permanently are just a blink effect pointed the wrong way.
+The Blink engine
+Three steps that feed each other, which is what makes it a deck rather than a pile of cards sharing a theme.
+1 The creature enters Its enter trigger does the work: a card, a kill or a land.
+2 Exile it Ephemerate costs one mana, at instant speed, and can be bought back.
+3 It returns Same creature, same trigger, same turn.
+↻ One good enter trigger is the whole deck, used repeatedly.
+Which Colors Fit Blink
+Blink is the most color-concentrated archetype after mill, and it is white-blue. White has the blink spells and most of the value creatures; blue has the flash, the card draw, and the untap effects. Green contributes a handful of excellent blink outlets and the best value creatures to blink, and black adds a death-and-return angle that overlaps with recursion. Red barely participates.
+White The deepest pool of blink spells and the value creatures worth blinking. The archetype's home color.
+Blue Flash, card draw, and the repeatable untap and blink outlets that make it an engine rather than a trick.
+Green A few of the best repeatable blink outlets, plus the largest enter-trigger creatures in the format.
+Black The death-and-return variant, where creatures come back from the graveyard rather than from exile.
+Red Almost absent. Red has sacrifice-and-return effects but little true blink.
+How color identity decides what you can play →
+Top 10 Blink Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building blink for the first time, these are the effects to
+understand before anything else.
+Ephemerate ↗
+One mana to blink a creature, with rebound so it does it again next turn. Two triggers and a removal dodge for a single card.
+Eldrazi Displacer ↗
+A repeatable blink for three mana, usable at instant speed on any creature, including an opponent's, as removal.
+Conjurer's Closet ↗
+Blinks a creature at the end of every one of your turns, for free, forever. The most reliable engine piece in the archetype.
+Deadeye Navigator ↗
+Soulbond gives unlimited blinks for two mana each. Powerful enough to be a combo piece with half the format.
+Ghostly Flicker ↗
+Blinks two permanents including lands and artifacts, which is what turns blink into an infinite-mana engine.
+Displacer Kitten ↗
+Blinks a nonland permanent whenever you cast a noncreature spell. Ties the archetype to spellslinger and to combo.
+Restoration Angel ↗
+A flash 3/4 flier that blinks a creature on entry. Value, a combat trick, and a removal dodge on one body.
+Panharmonicon ↗
+Doubles enter triggers for creatures and artifacts, so every blink pays twice for no extra mana.
+Solemn Simulacrum ↗
+Fetches a land on entry and draws on death. The archetype's benchmark for what a blink target should do.
+Cloudshift ↗
+The one-mana baseline. Cheap, instant-speed, and often the difference between losing a creature and getting a free trigger.
+Top 10 Blink Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Brago, King Eternal ↗
+Blinks all your nonland permanents on combat damage. The archetype's flagship and a notorious combo engine.
+Roon of the Hidden Realm ↗
+A repeatable blink from the command zone every turn, in the three colors with the best targets.
+Yarok, the Desecrated ↗
+Doubles every enter trigger you control, which turns each blink into two payoffs.
+Emiel the Blessed ↗
+A three-mana repeatable blink outlet with no color requirements beyond green, and a combo engine besides.
+Chulane, Teller of Tales ↗
+A card and a land on every creature cast, plus a bounce to reuse triggers. Value on every axis at once.
+Aminatou, the Fateshifter ↗
+A planeswalker commander whose minus-one blinks a permanent every single turn, for free.
+Ranar the Ever-Watchful ↗
+Makes a Spirit whenever you exile a card from hand or blink a permanent, so the engine builds a board.
+Ephara, God of the Polis ↗
+Draws on every creature entering on any turn, which rewards flash and end-step blinking.
+Yorion, Sky Nomad ↗
+Blinks any number of your permanents on entry, and can be recast repeatedly from the command zone.
+Thassa, Deep-Dwelling ↗
+Blinks a creature at every end step and is an indestructible non-creature most of the time. Nearly impossible to answer.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+Blink decks are slow to threaten anything, and a pile of value creatures with no finisher can grind for an hour without winning. Make sure something in the deck converts the accumulated advantage into a victory. The archetype also relies on triggers, which means Torpor Orb and its family shut it off entirely, so keep an answer or two for artifacts and enchantments.
+Frequently Asked Questions
+What is a blink deck in Commander?
+A blink deck exiles its own creatures and returns them immediately to re-trigger their enter-the-battlefield abilities. Repeating a Solemn Simulacrum or Mulldrifter every turn turns a one-shot value creature into an ongoing engine.
+What is the difference between blink and flicker?
+Nothing. They are two names for the same effect. Flicker comes from the card Flicker; blink from Momentary Blink. Both describe exiling a permanent and returning it, usually immediately and usually under your control.
+What colors are blink decks?
+White and blue above all. White has the blink spells and most of the value creatures, blue has the card draw and repeatable outlets. Green adds strong blink outlets and big enter-trigger creatures, and black supports a death-and-return variant instead.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Blink? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Best Blink Commanders →Graveyard recursion →Control →ETB vs. Triggered vs. Activated Abilities →How the Stack Works →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Superfriends
+Lands matter
+Counters
+Blink
+Lifegain
+Voltron Mistakes
+Voltron Budget Upgrades
+Aristocrats Mistakes
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

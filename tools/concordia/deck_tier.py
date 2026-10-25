@@ -312,6 +312,7 @@ def category(name):
 
 
 SCRYFALL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deckgen", "scryfall", "cards.json")
+NICHE_ROLE = 0.5   # share of the role term a niche:* card keeps (tag_run.py: pays only in a matching deck)
 EDH_LIFT = 0.6     # raw power an EDHREC rank alone can lift a card to (popularity is not pure strength)
 _edh = None
 
@@ -344,18 +345,61 @@ def deckpop(c):
         _dp = {}
         if os.path.exists(DECKS_JSON):
             ds = [x for x in json.load(open(DECKS_JSON, encoding="utf-8"))["decks"] if x["source"] != "edhrec"]
-            cnt = collections.Counter(n.lower() for x in ds for n in set(x["cards"]) | set(x["commanders"]))
+            cnt = collections.Counter(k for x in ds for k in {n.lower().split(" // ")[0] for n in set(x["cards"]) | set(x["commanders"])})   # keyed by front face, like the lookup below (split/adventure/MDFC cards)
             _dp = {k: min(1.0, v / (0.30 * len(ds))) ** 0.5 for k, v in cnt.items()} if ds else {}
     return _dp.get(c["name"].lower().split(" // ")[0], 0.0)
 
 
-def card_power(data, c, tags, rarity):
+def inputs_status():
+    """The external popularity inputs of card_power and whether each is present: {name: size in bytes or None}. They are not
+    committed, so power numbers differ between machines that lack one; pool.py records this next to pool.pkl and card_power warns."""
+    ps = {"scryfall/cards.json": [SCRYFALL, SCRYFALL + ".gz"], "external/decks.json": [DECKS_JSON], "spellbinder/signals.json": [SIGNALS]}
+    return {k: next((os.path.getsize(p) for p in v if os.path.exists(p)), None) for k, v in ps.items()}
+
+
+_warned = False
+
+
+def _warn_inputs():
+    global _warned
+    if not _warned:
+        _warned = True
+        miss = [k for k, v in inputs_status().items() if v is None]
+        if miss:
+            print("WARNING deck_tier.card_power: missing input(s) %s; popularity/cEDH terms count as 0, power numbers are not comparable "
+                  "with tier_table.json" % ", ".join(miss), file=sys.stderr)
+
+
+POOL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deckgen", "pool.pkl")
+_niche = None
+
+
+def niche_of(name):
+    """Tuple of the card's niche:* tags from deckgen/pool.pkl (the tag_run tags pool.py stored); () when there is no pool.
+    rate() uses it so a deck's power matches the pool's card power."""
+    global _niche
+    if _niche is None:
+        _niche = {}
+        if os.path.exists(POOL):
+            _niche = {k: tuple(t for t in v.get("ftags", ()) if t.startswith("niche:")) for k, v in pickle.load(open(POOL, "rb")).items()}
+    return _niche.get(name.lower(), ())
+
+
+def card_power(data, c, tags, rarity, ftags=()):
+    """Power for one rarity; see card_powers."""
+    return card_powers(data, c, tags, (rarity,), ftags)[rarity]
+
+
+def card_powers(data, c, tags, rarities, ftags=()):
+    """{rarity: power}; the rarity-independent terms are computed once. ftags (tag_run.tags, optional) halves the role term
+    of a niche card (Disenchant, Stone Rain: the effect only pays in a matching deck)."""
     """0-100 power estimate: raw power, mana efficiency, role, rarity, Game Changer, fast mana, tutor.
     40 raw + 15 efficiency + 15 role + 10 rarity + 10 Game Changer + 5 fast + 5 tutor.
     Popularity counts once, inside raw power (the EDHREC lift below); it is not added again here or in the builder's score.
     Raw power is the cube rank, lifted by the cEDH inclusion rate or by EDHREC popularity (up to EDH_LIFT) when those
     are higher: the cube list misses most casual cards (Birds of Paradise isn't in it). A missing signal never lowers a
     card. Prices are not used (docs/Adventure/Campaign/DECK_REVIEW_SPELLBINDER.md)."""
+    _warn_inputs()
     name = c["name"].lower()
     rank = data["cube"].get(name)
     cube = 1 - (rank - 1) / 4000 if rank else 0.0
@@ -363,9 +407,9 @@ def card_power(data, c, tags, rarity):
     cube = max(cube, cedh_strength(c) or 0.0, EDH_LIFT * pop)
     eff = max(0.0, min(1.0, (6 - c["cmc"]) / 5))
     role = 1.0 if tags & {"ramp", "draw", "removal", "wipe", "counter", "tutor"} else 0.0
-    p = 40 * cube + 15 * eff + 15 * role + 10 * RARITY_WEIGHT.get(rarity, 0.3)
-    p += 10 * (name in data["lists"]["gc"]) + 5 * ("fast" in tags) + 5 * ("tutor" in tags)
-    return round(min(100.0, p), 1)
+    if any(t.startswith("niche:") for t in ftags): role *= NICHE_ROLE
+    base = 40 * cube + 15 * eff + 15 * role + 10 * (name in data["lists"]["gc"]) + 5 * ("fast" in tags) + 5 * ("tutor" in tags)
+    return {r: round(min(100.0, base + 10 * RARITY_WEIGHT.get(r, 0.3)), 1) for r in rarities}
 
 
 def rate(path, data, config):
@@ -425,7 +469,7 @@ def rate(path, data, config):
                 rarity[r] += n
                 mvs += [c["cmc"]] * n
                 curve[min(c["cmc"], 7)] += n
-                powers += [card_power(data, c, tags, r)] * n
+                powers += [card_power(data, c, tags, r, niche_of(c["name"]))] * n
     commanders = []
     for n, name, ed in entries["commander"]:
         c = cards.get(name.lower())
@@ -433,7 +477,7 @@ def rate(path, data, config):
             commanders.append({"name": c["name"], "mv": c["cmc"], "rarity": rarity_of(data, c["name"], ed),
                                "legendary_creature": "Legendary" in c["types"] and "Creature" in c["types"],
                                "colours": len(color_identity(c)),
-                               "power": card_power(data, c, classify(c), rarity_of(data, c["name"], ed))})
+                               "power": card_power(data, c, classify(c), rarity_of(data, c["name"], ed), niche_of(c["name"]))})
     total = sum(n for n, _, _ in entries["main"]) + sum(n for n, _, _ in entries["commander"])
     deck_names = set(names)
     gc = sorted(x for x in deck_names if x in data["lists"]["gc"])

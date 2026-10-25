@@ -1,0 +1,245 @@
+Tribal Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Aristocrats
+Enchantress
+Artifacts
+Tribal
+Stax
+Combo
+Control
+Ramp
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Tribal
+Deck Archetype
+Tribal: The Commander Archetype, Explained
+Tribal is the archetype most people build first, because it starts from a question everyone can answer: which creature type do you actually like?
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Tribal: Rewards playing many creatures that share a creature type.
+What Tribal Decks Actually Do
+A tribal deck (increasingly called typal in official Wizards language, though almost nobody says that at a table) is built around creatures sharing a type, plus lords and payoffs that reward the concentration. Elves, Goblins, Zombies, Vampires, Dragons, Slivers, Merfolk, Angels, and dozens more all support real decks.
+The strength of the archetype is that its payoffs stack multiplicatively. One lord giving plus-one-plus-one is modest; three lords is a board of creatures that are each three points bigger, and it happened without any single card doing anything spectacular. The weakness is the mirror image: the deck is a house of cards against a wrath, and against targeted removal aimed at the lords rather than the bodies.
+The Tribal engine
+Three steps that build to a finish. This one ends the game rather than coming back round.
+1 Commit to the type Cavern of Souls means the important ones cannot be countered.
+2 The lords pump Vanquisher's Banner adds a card as well as the stats.
+3 Attack as one Every creature is bigger because the last one arrived.
+The last step wins the game, so there is nothing to come back round for.
+Which Colors Fit Tribal
+Uniquely on this list, tribal has no home colors: the creature type picks them. Elves are green, Goblins red, Merfolk blue, Zombies blue-black, Vampires black, Angels white, Dinosaurs Naya, Faeries Dimir, and Slivers and Dragons sprawl across all five. Choose the type first and the colors follow automatically, which is why this is the friendliest archetype for a first deck.
+White Angels, Humans, Knights, and Soldiers. The color of small creatures made large by anthems.
+Blue Merfolk, Faeries, Wizards, and Pirates: evasive types that win through unblockability rather than size.
+Black Zombies, Vampires, and Skeletons. The types that get better when they die and come back.
+Red Goblins, Dragons, and Dwarves. Fast, aggressive, and by far the best at making expendable copies of themselves.
+Green Elves, Beasts, and Dinosaurs. The types that ramp into each other or simply outsize everything.
+How color identity decides what you can play →
+Top 10 Tribal Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building tribal for the first time, these are the effects to
+understand before anything else.
+Cavern of Souls ↗
+A land that makes your chosen type uncounterable. Expensive, but no other card protects a tribal deck's key spells this cleanly.
+Path of Ancestry ↗
+The budget-friendly version of the same idea, adding a scry whenever it pays for a creature of your type.
+Vanquisher's Banner ↗
+An anthem that also draws a card for every creature of your type you cast. Fixes the archetype's card-advantage problem.
+Herald's Horn ↗
+Cost reduction plus a free card off the top each upkeep when it hits your type. Cheap and consistently excellent.
+Kindred Discovery ↗
+Draws whenever a creature of your type enters or attacks. The most explosive draw engine available to any tribe.
+Coat of Arms ↗
+Every creature gets plus-one-plus-one for each other creature sharing a type. Enormous, and symmetrical enough to be dangerous.
+Shared Animosity ↗
+The one-sided version for attackers only, which usually converts a developed board into lethal on the spot.
+Metallic Mimic ↗
+A two-drop that names your type and puts a counter on every one that follows. Works in any color.
+Urza's Incubator ↗
+Two generic mana off every creature spell of your type. The single biggest cost reduction available to tribal decks.
+Patriarch's Bidding ↗
+Returns every creature of the named types from all graveyards. The archetype's post-wrath reset button.
+Top 10 Tribal Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Edgar Markov ↗
+Vampires. Makes a token from the command zone on every Vampire cast, which is unmatched value for a tribal commander.
+The Ur-Dragon ↗
+Dragons. Cost reduction on Dragons and a free permanent from hand on every Dragon that connects.
+Sliver Overlord ↗
+Slivers. Tutors any Sliver repeatedly, which makes the deck the most consistent tribal build in the format.
+Lathril, Blade of the Elves ↗
+Elves. Makes tokens on damage and converts a wide Elf board into a drain that ignores blockers entirely.
+Wilhelt, the Rotcleaver ↗
+Zombies. Turns every Zombie death into a Decayed token and a card, which is the whole aristocrats overlap in one commander.
+Kumena, Tyrant of Orazca ↗
+Merfolk. Three abilities that convert a Merfolk board into unblockable damage, cards, and counters.
+Gishath, Sun's Avatar ↗
+Dinosaurs. Puts Dinosaurs directly from library to battlefield on combat damage, and a single hit often ends the game.
+Najeela, the Blade-Blossom ↗
+Warriors. Tokens on attack, and with five colors available she takes infinite combat steps.
+Muxus, Goblin Grandee ↗
+Goblins. Digs six deep and puts every Goblin found onto the battlefield at once.
+Kaalia of the Vast ↗
+Angels, Demons, and Dragons. Cheats one onto the battlefield attacking, every combat, from turn four.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+Tribal decks lose to board wipes harder than anything except go-wide, and the lords make targeted removal unusually effective too. Build in recursion (Patriarch's Bidding is in the archetype's top ten for a reason) and resist filling the last ten slots with weak creatures purely because they share a type. A bad card is still a bad card when it is on-theme.
+Frequently Asked Questions
+What is a tribal deck in Commander?
+A tribal deck is built around creatures that share a creature type, together with lords and payoffs that reward playing many of them. Wizards now officially calls this typal, but tribal remains the term almost everyone uses at the table.
+What is the best tribe in Commander?
+There is no single answer, but Elves, Goblins, Slivers, Dragons, and Vampires have the deepest card pools and the strongest payoffs. Slivers and Dragons get access to all five colors, while Elves and Goblins win on sheer speed and card count.
+What is the difference between tribal and typal?
+Nothing mechanically. Wizards changed the official terminology to typal because tribal was already a card type on cards like Bound in Silence. Players almost universally still say tribal, and the two mean the same thing in conversation.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Tribal? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Go wide →Aggro →Best MTG Commander Decks & Precons →What Is Color Identity in MTG? →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Aristocrats
+Enchantress
+Artifacts
+Tribal
+Stax
+Combo
+Control
+Ramp
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

@@ -1,0 +1,245 @@
+Stax Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Enchantress
+Artifacts
+Tribal
+Stax
+Combo
+Control
+Ramp
+Aggro
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Stax
+Deck Archetype
+Stax: The Commander Archetype, Explained
+Stax does not try to go faster than the table. It slows the table down to its own speed, then wins from a position where nobody else can act.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Stax: Taxes or locks down what every player at the table is allowed to do.
+What Stax Decks Actually Do
+Stax decks attack resources rather than life totals. They tax spells, deny untaps, force sacrifices, cap how many spells can be cast in a turn, and generally make the game's normal actions expensive or impossible. The name comes from a deck built around Smokestack, and the pattern has been the same ever since: shrink everyone's options, including your own, and make sure you are better positioned inside those constraints.
+The crucial detail is asymmetry. A symmetrical lock helps nobody, so a stax deck builds a way to sidestep its own prison: untapping outside the normal step, generating mana from sources the lock does not touch, or simply running few enough permanents that a sacrifice effect costs it less than everyone else. Winning is often an afterthought: once the lock is complete, a single small creature can close out the game over several turns.
+The Stax engine
+Three steps that feed each other, which is what makes it a deck rather than a pile of cards sharing a theme.
+1 Tax the table Sphere of Resistance makes every spell in the game cost more.
+2 They stay tapped out Winter Orb leaves everybody untapping one land a turn.
+3 You built for it Your deck is assembled to work under the lock; theirs is not.
+↻ Every turn under the lock is a turn they fall further behind.
+Which Colors Fit Stax
+White is the strongest stax color in Commander. It owns taxation effects, the best sweepers, and the creatures that make everyone else's turn cost more. Blue adds the counterspells and untap denial that make a lock airtight, and black adds edicts and discard. Red contributes land destruction and Blood Moon effects, and green participates least, mostly through mana denial rather than taxation.
+White Taxation, pillowfort defence, and sweepers. The color with the deepest and most efficient lock pieces.
+Blue Counterspells and untap denial, which turn a partial lock into a complete one.
+Black Edicts, discard, and the effects that punish opponents for the resources they still have.
+Red Land and artifact destruction, plus Blood Moon effects that punish greedy multicolor manabases.
+Green The least represented. Green denies mana rather than actions, and mostly appears for the ramp that powers a lock through.
+How color identity decides what you can play →
+Top 10 Stax Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building stax for the first time, these are the effects to
+understand before anything else.
+Winter Orb ↗
+Only one land untaps per untap step. Two mana that halves everyone's development, and the archetype's most recognisable card.
+Smokestack ↗
+Escalating forced sacrifices every turn. The card the archetype is named after, and still its most complete lock piece.
+Tangle Wire ↗
+Forces everyone to tap down for several turns while it fades. Bought turns, in a card, and it expires before it hurts you.
+Sphere of Resistance ↗
+Every spell costs one more. Symmetrical, but far worse for a four-color value deck than for a lean stax list.
+Thalia, Guardian of Thraben ↗
+The same tax on noncreature spells only, on a first-strike body that can pressure a player while it taxes.
+Blood Moon ↗
+Nonbasic lands become Mountains. In a format built on nonbasics, this ends games that have not started yet.
+Drannith Magistrate ↗
+Opponents cannot cast from anywhere except hand: no commanders, no flashback, no cascade. A two-drop that blanks entire decks.
+Rule of Law ↗
+One spell per player per turn. Shuts down combo and storm outright and makes value decks crawl.
+Cursed Totem ↗
+Turns off every creature's activated abilities, which is a one-card answer to mana dorks, sacrifice outlets, and most creature combos.
+Ensnaring Bridge ↗
+Creatures with power greater than your hand size cannot attack. A stax deck empties its hand anyway, so this is close to one-sided.
+Top 10 Stax Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Grand Arbiter Augustin IV ↗
+Your spells cost less and everyone else's cost more. Taxation from the command zone, on turn four, every game.
+Derevi, Empyrial Tactician ↗
+Repeatedly taps and untaps permanents and returns from the command zone cheaply, which makes her nearly impossible to remove permanently.
+Lavinia, Azorius Renegade ↗
+Counters any spell cast with more mana value than the caster's lands. Devastating against ritual-fuelled and free-spell decks.
+Tergrid, God of Fright ↗
+Everything opponents sacrifice or discard comes to you instead. Turns denial into your own board.
+Braids, Cabal Minion ↗
+Forces a sacrifice from every opponent every turn. Old, brutally simple, and banned in some circles for good reason.
+Hokori, Dust Drinker ↗
+A Winter Orb on a body, in the command zone, available every game.
+Sen Triplets ↗
+Locks a player out of casting and lets you play their hand. Denial and theft on the same trigger.
+Elesh Norn, Mother of Machines ↗
+Doubles your enter-the-battlefield triggers and turns off everyone else's. A lock piece that also builds your engine.
+Queen Marchesa ↗
+The monarch as a political lock: she creates a resource the table has to attack you for, while you defend it.
+Vorinclex, Voice of Hunger ↗
+Your lands make double mana and opponents' lands enter tapped. Green's version of resource denial, and one of the most punishing.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+This is the archetype most likely to cause a genuinely bad evening. Stax makes other people's games less fun in a direct, visible way, and in a casual pod it often produces long turns where three players do nothing. That does not make it wrong to play. It makes it something to raise before the game starts. Check the bracket your pod is at, say what your deck does in the Rule 0 conversation, and be ready to sleeve up something else.
+Frequently Asked Questions
+What is a stax deck in Commander?
+A stax deck attacks resources rather than life totals, using taxation effects, forced sacrifices, untap denial, and spell restrictions to limit what everyone can do. It builds a position where its own limited resources still function while opponents' do not, then wins slowly from inside that lock.
+Is stax bad for casual Commander?
+It is a poor fit for most casual pods without a conversation first. Stax deliberately reduces what other players can do, which many groups find unfun even when it is played well. It belongs in higher brackets or in pods that have explicitly agreed to it, which is exactly what the Rule 0 conversation is for.
+What colors are stax decks?
+White and blue primarily. White has the deepest taxation and sweeper suite, blue supplies counterspells and untap denial. Black adds edicts and discard, red adds land destruction and Blood Moon effects, and green is the least represented.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Stax? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+What Is Stax in MTG? →Control →Group hug →The Commander Bracket System, Explained →What Is Rule 0? →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Enchantress
+Artifacts
+Tribal
+Stax
+Combo
+Control
+Ramp
+Aggro
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

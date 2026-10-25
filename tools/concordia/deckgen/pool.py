@@ -1,8 +1,9 @@
 """Step 2 of the Concordia deck generator. Builds pool.pkl: every Commander-legal, AI-playable card with identity, tags, rarity options, power, popularity."""
-import sys, os, re, json, collections, pickle
+import sys, os, re, json, collections, pickle, time
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 import deck_tier as dt
+import tag_run  # the one tag source: ftags below
 from common import identity  # noqa: E402
 def main():
     data = dt.build_cache()
@@ -93,10 +94,13 @@ def main():
                      'gc': key in data['lists']['gc'], 'mld': key in data['lists']['mld'] or key in data['lists']['extra'],
                      'nabil': len(c['abil']) + len(c['static']) + len(c['kw']), 'oracle': c['oracle'],
                      'cube': data['cube'].get(key)}
-        pool[key]['power'] = {r: dt.card_power(data, c, tags, r) for r in best}
+        ftags = sorted(tag_run.tags(c['name']))  # full tag set from tag_run.record (the single tag source); 'tags' above stays the coarse deck-gen set
+        pool[key]['ftags'] = ftags
+        pool[key]['power'] = dt.card_powers(data, c, tags, list(best), ftags)
         pool[key]['cat'] = dt.category(key)  # staple / game_changer / watch (deckgen/staples.py)
         pool[key]['precon'] = PRECON.get(key, 0.0)
     pickle.dump(pool, open(os.path.join(HERE, 'pool.pkl'), 'wb'))
+    json.dump({'built': time.strftime('%Y-%m-%d'), 'cards': len(pool), 'inputs': dt.inputs_status()}, open(os.path.join(HERE, 'pool_meta.json'), 'w'), indent=1)  # which external inputs this pool's power numbers saw
     print(len(pool))
 
 

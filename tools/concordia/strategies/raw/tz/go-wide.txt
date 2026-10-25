@@ -1,0 +1,244 @@
+Go Wide Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Graveyard recursion
+Mill
+Voltron
+Go wide
+Aristocrats
+Enchantress
+Artifacts
+Tribal
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Go wide
+Deck Archetype
+Go Wide: The Commander Archetype, Explained
+Go wide is the opposite bet from Voltron: instead of one creature nobody can kill, twenty creatures nobody can kill all of. The whole deck is a setup for one enormous attack.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Go wide: Floods the board with tokens and wins with numbers.
+What Go wide Decks Actually Do
+Go-wide decks produce creature tokens in bulk and win by attacking with all of them at once. Individually the tokens are irrelevant: a 1/1 does nothing. The deck's job is to reach a number of bodies where one anthem, one trample effect, or one damage-per-creature trigger converts the board into lethal across the whole table.
+Structurally that means three layers: token producers that scale, multipliers that turn every token trigger into two or three, and a finisher that cashes the board in. It is the archetype with the widest gap between its worst board state and its best. Five tokens is nothing; fifteen tokens plus a Craterhoof Behemoth ends the game on the spot.
+The Go wide engine
+Three steps that build to a finish. This one ends the game rather than coming back round.
+1 Make tokens A few every turn, from whatever the deck is doing anyway.
+2 Double them Doubling Season and Anointed Procession turn three into six.
+3 Attack with all of it Cathars' Crusade means the board grows as it swings.
+The last step wins the game, so there is nothing to come back round for.
+Which Colors Fit Go wide
+White is the best token color in the format by a wide margin, both for making them and for the anthems that make them matter. Green supplies the mass-pump finishers and the token doublers, red brings goblins and damage-per-creature payoffs, and black overlaps heavily with Aristocrats by turning the same tokens into drain triggers. Blue is the odd color out.
+White The best token generation and nearly every anthem effect. A go-wide deck without white is choosing a harder path on purpose.
+Green Token doublers and the mass-pump-with-trample finishers that turn a wide board into a single lethal attack.
+Red Goblins, haste, and damage-per-creature effects that let the board win without attacking at all.
+Black Drain payoffs and sacrifice outlets: the overlap with Aristocrats, where the tokens are fuel rather than attackers.
+How color identity decides what you can play →
+Top 10 Go wide Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building go wide for the first time, these are the effects to
+understand before anything else.
+Doubling Season ↗
+Doubles tokens and counters. Expensive, format-defining, and the single most impactful card the archetype can draw.
+Anointed Procession ↗
+The white half of the effect at four mana, and the reason token decks run several doublers rather than one.
+Parallel Lives ↗
+The green half. Stacking two doublers quadruples output, which is how a modest token engine becomes a lethal one in a turn.
+Cathars' Crusade ↗
+A plus-one-plus-one counter on everything for every creature that enters. Grows the whole board geometrically and ends games quickly.
+Divine Visitation ↗
+Every token becomes a 4/4 Angel with flying and vigilance instead. Turns quantity directly into quality.
+Craterhoof Behemoth ↗
+Mass pump and trample on a haste body. The archetype's most reliable one-card kill from a developed board.
+Intangible Virtue ↗
+Two mana for a token-only anthem plus vigilance, which is exactly the rate a deck that makes twelve of them wants.
+Skullclamp ↗
+Equip a 1/1, it dies, draw two. Converts surplus tokens into a card-draw engine and fixes the archetype's biggest weakness.
+Impact Tremors ↗
+A damage to each opponent per creature entering. Wins without combat, which matters against decks full of blockers.
+Secure the Wastes ↗
+An instant-speed X tokens, so it dodges sorcery-speed wraths and can be held until the turn it is lethal.
+Top 10 Go wide Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Krenko, Mob Boss ↗
+Doubles your goblin count on every tap. The fastest token accumulation in the format if it survives a rotation.
+Adeline, Resplendent Cathar ↗
+A Human token per opponent on every attack, and she grows with the board. Aggro and go-wide in the same card.
+Rhys the Redeemed ↗
+A one-drop that first makes tokens and then copies your entire board. The cleanest scaling in the archetype.
+Trostani, Selesnya's Voice ↗
+Populate plus lifegain on every creature entering, which buys the turns a wide board needs to set up.
+Ghave, Guru of Spores ↗
+Converts counters into tokens and back. The bridge between go-wide, counters, and aristocrats, and a combo engine besides.
+Jetmir, Nexus of Revels ↗
+Escalating buffs at three, six, and nine attackers. A commander that states the archetype's thresholds as text.
+Prossh, Skyraider of Kher ↗
+Kobolds scaling with the commander tax you have already paid, and a built-in sacrifice outlet.
+The Locust God ↗
+A hasty flier per card drawn. The blue exception, powered by draw spells rather than by anthems.
+Purphoros, God of the Forge ↗
+Two damage per creature entering, from an indestructible non-creature body. Wins through blockers and through wraths.
+Emmara, Soul of the Accord ↗
+A token whenever she taps, including for convoke, so she produces every turn without ever attacking.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+One board wipe undoes an hour of work, and go-wide is the archetype wraths are printed to punish. Hold something back, run protection like Heroic Intervention or Boros Charm, and resist the urge to dump your whole hand before you can actually win. The second failure mode is quieter: a wide board with no finisher just sits there, so make sure the deck can convert numbers into damage.
+Frequently Asked Questions
+What is a go-wide deck in Commander?
+A go-wide deck creates many small creature tokens and wins by attacking with all of them at once, usually after playing an anthem, a mass-pump effect, or a payoff that deals damage for each creature. The individual tokens are weak; the board as a whole is the threat.
+What is the best color for tokens in Commander?
+White. It has the deepest token generation and nearly every anthem effect, and it pairs naturally with green for doublers and mass pump, or with black for sacrifice payoffs. Selesnya and Naya are the most common go-wide color combinations.
+How do go-wide decks deal with board wipes?
+By not overcommitting, and by running protection. Keeping token producers in hand, playing instant-speed makers like Secure the Wastes, and holding an effect that grants indestructible or hexproof all let a deck rebuild or simply survive the wrath it knows is coming.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Go wide? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Best Go-Wide / Token Commanders →Aristocrats →Counters →Tribal →The Commander Deck Template →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Graveyard recursion
+Mill
+Voltron
+Go wide
+Aristocrats
+Enchantress
+Artifacts
+Tribal
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

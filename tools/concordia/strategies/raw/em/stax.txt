@@ -1,0 +1,422 @@
+Best Stax Commanders for EDH | EDHMatch
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Home
+Strategies
+Stax
+Back to SearchBest Stax Commanders for EDH
+Stax decks are for players who want to win by deciding which resources matter before opponents can use them. This strategy wants to tax mana, cards, combat, and casting windows, using stax commanders and resource denial EDH pieces like Winter Orb and Smokestack, to win through a board state where your deck still functions and opponents cannot rebuild. Unlike Control, which answers threats after they appear, Stax locks the costs and rules of the game so many threats never get cast. The best stax commanders break parity, then convert the slowed table into combat damage, attrition, or a compact combo.
+Best Colors for Stax Decks
+Mono-white supplies Thalia effects, hatebears, Rule of Law pieces, and clean taxes that slow every opponent.
+Azorius pairs white taxes with blue card draw and counterspells to protect a parity-breaking lock.
+Orzhov adds discard, sacrifice pressure, and drain so the resource squeeze turns into a clock.
+How Do Stax Decks Win in Commander?
+Stax decks excel through a specific playstyle and win conditions. Here's how they work:
+✓ You deploy taxes and lock pieces before opponents spend their best turns.
+✓ You build around your own restrictions with mana rocks tokens untappers or commander discounts.
+✓ You sequence resource denial so each opponent rebuilds slower than you do.
+✓ You protect the lock with removal for the few threats that slip through.
+✓ You finish with attrition combat damage or a compact combo before the table resets.
+Best Cards for Stax EDH Decks
+Winter Orb
+Restricts untaps so mana stays scarce while your rocks, untappers, or commander break parity.
+Smokestack
+Turns expendable permanents into a sacrifice clock that grinds opponents out of real resources.
+Grand Arbiter Augustin IV
+Taxes opposing spells and discounts yours, giving Azorius stax a built-in parity break.
+Drannith Magistrate
+Stops commanders and exile casting, cutting off key Commander resources from the command zone.
+Thalia, Guardian of Thraben
+Adds an early tax to noncreature spells and slows fast spell-heavy starts.
+How to Build a Stax Commander Deck
+Core Components
+✓Run 8-12 tax or lock pieces such as Winter Orb, Static Orb, Sphere of Resistance, and Thalia effects
+✓Include 4-6 parity breakers that make your commander, rocks, tokens, or untappers work through the lock
+✓Use mana rocks and Treasure sources that operate under land untap restrictions and sphere taxes
+✓Choose a clear win condition before adding more denial pieces
+Breaking Parity
+✓Favor permanents over spell chains so Rule of Law effects slow opponents more than you
+✓Pair Winter Orb and Static Orb with untappers, vigilance, or artifact mana
+✓Feed Smokestack with tokens, Treasures, Clues, or recursive permanents instead of real cards
+✓Sequence softer taxes first when you need the table to keep playing
+Win Conditions
+✓Attack with a resilient commander once taxes keep blockers and removal scarce
+✓Deploy a two-card combo after opponents are locked out of efficient interaction
+✓Grind through Smokestack or forced sacrifice after opponents run low on permanents
+✓Do not stop at the lock; include enough finishers to end stalled games
+Weaknesses of Stax Decks
+⚠Stax can struggle when opponents ramp ahead before the first taxes resolve.
+⚠Artifact and enchantment removal can dismantle the lock one piece at a time.
+⚠Without a parity breaker, your own restrictions can slow you as much as the table.
+⚠The strategy carries a real table-feel cost because many pods dislike playing under locks.
+Is Stax Right for You?
+Stax fits patient players who enjoy sequencing constraints and building around awkward rules. It has a higher social cost than most archetypes, so talk with the pod before bringing hard locks to casual games. Start with soft taxes and a visible win condition before moving into heavier resource denial.
+Related Commander Strategies
+Control
+Control answers threats after they appear; Stax taxes resources so many threats never resolve.
+Combo
+Combo can finish behind locks; Stax uses denial first, then a compact endgame.
+Artifacts
+Artifacts supply many lock pieces, but artifacts decks build engines beyond denial.
+Browse Commander Lists
+Top Stax CommandersDiscardTheft
+Top Stax Commanders
+Grand Arbiter Augustin IV
+MV: 4
+StaxControlHatebears+7 more
+$19.85TCGPlayer
+€10.90CardMarket
+Winota, Joiner of Forces
+MV: 4
+HatebearsAggroStax+7 more
+$4.34TCGPlayer
+€4.46CardMarket
+Zur the Enchanter
+MV: 4
+EnchantressAurasStax+7 more
+$1.55TCGPlayer
+€0.71CardMarket
+Urza, Lord High Artificer
+MV: 4
+ArtifactsComboControl+7 more
+$16.28TCGPlayer
+€14.42CardMarket
+Lavinia, Azorius Renegade
+MV: 2
+StaxControlHatebears+7 more
+$0.73TCGPlayer
+€0.40CardMarket
+Y'shtola, Night's Blessed
+MV: 4Universes Beyond
+ControlSpellslingerLifegain+7 more
+$5.35TCGPlayer
+€2.75CardMarket
+Derevi, Empyrial Tactician
+MV: 3
+Birthing PodBirdsCombo+7 more
+N/ATCGPlayer
+N/ACardMarket
+Liesa, Shroud of Dusk
+MV: 5
+LifegainLifedrainHatebears+7 more
+$0.91TCGPlayer
+€0.97CardMarket
+Ellivere of the Wild Court
+MV: 4
+AurasEnchantressHatebears+7 more
+$0.42TCGPlayer
+€0.48CardMarket
+Oloro, Ageless Ascetic
+MV: 6
+LifegainControlCombo+7 more
+$18.51TCGPlayer
+€11.21CardMarket
+Thalia and The Gitrog Monster
+MV: 4
+Lands MatterLandfallHatebears+7 more
+$6.02TCGPlayer
+€3.19CardMarket
+Magda, Brazen Outlaw
+MV: 2
+TreasureDwarvesArtifacts+7 more
+$8.78TCGPlayer
+€6.70CardMarket
+Tayam, Luminous Enigma
+MV: 4
++1/+1 CountersComboReanimator+7 more
+$3.31TCGPlayer
+€1.38CardMarket
+Sen Triplets
+MV: 5
+TheftControlStax+7 more
+$8.58TCGPlayer
+€3.30CardMarket
+Heliod, Sun-Crowned
+MV: 3
+Lifegain+1/+1 CountersStax+7 more
+$22.28TCGPlayer
+€16.39CardMarket
+Sythis, Harvest's Hand
+MV: 2
+EnchantressAurasLifegain+7 more
+$4.32TCGPlayer
+€2.83CardMarket
+Hylda of the Icy Crown
+MV: 4
+ControlTap / UntapSnow+7 more
+$3.55TCGPlayer
+€1.96CardMarket
+Brago, King Eternal
+MV: 4
+BlinkControlCombo+7 more
+$3.13TCGPlayer
+€2.23CardMarket
+Shorikai, Genesis Engine
+MV: 4
+VehiclesArtifactsControl+7 more
+$2.86TCGPlayer
+€2.66CardMarket
+Hokori, Dust Drinker
+MV: 4
+StaxHatebearsArtifacts+7 more
+$1.91TCGPlayer
+€0.96CardMarket
+Myrel, Shield of Argive
+MV: 4
+SoldiersTokensAggro+7 more
+$18.47TCGPlayer
+€16.11CardMarket
+Jorn, God of Winter // Kaldring, the Rimestaff
+MV: 3
+SnowStaxRamp+7 more
+$0.33TCGPlayer
+€0.29CardMarket
+Kudo, King Among Bears
+MV: 2
++1/+1 CountersTokensBears+7 more
+$0.36TCGPlayer
+€0.18CardMarket
+Elesh Norn, Mother of Machines
+MV: 5
+BlinkTokensETB+7 more
+$25.34TCGPlayer
+€21.01CardMarket
+Slicer, Hired Muscle // Slicer, High-Speed Antagonist
+MV: 5Universes Beyond
+EquipmentVoltronAggro+7 more
+$7.70TCGPlayer
+€5.59CardMarket
+Filter and browse all Stax commanders →
+Frequently Asked Questions
+What makes a good Stax commander?
+The best stax commanders typically provide consistent access to the strategy's core mechanics. Look for commanders that you deploy taxes and lock pieces before opponents spend their best turns.
+How do Stax decks win?
+Stax decks win through a combination of Winter Orb, Smokestack, Grand Arbiter Augustin IV, and other synergistic pieces that stax decks are for players who want to win by deciding which resources matter before opponents can use them.
+What are the best colors for Stax?
+Mono-white supplies Thalia effects, hatebears, Rule of Law pieces, and clean taxes that slow every opponent. However, Azorius pairs white taxes with blue card draw and counterspells to protect a parity-breaking lock.
+What are the weaknesses of Stax decks?
+Stax can struggle when opponents ramp ahead before the first taxes resolve. Artifact and enchantment removal can dismantle the lock one piece at a time. Without a parity breaker, your own restrictions can slow you as much as the table. The strategy carries a real table-feel cost because many pods dislike playing under locks.
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH

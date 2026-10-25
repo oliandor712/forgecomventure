@@ -1,0 +1,422 @@
+Best Infect Commanders for EDH | EDHMatch
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Home
+Strategies
+Infect
+Back to SearchBest Infect Commanders for EDH
+Infect decks are for players who want life totals to matter less than reaching ten poison on each opponent. This strategy wants to connect with infect and toxic creatures, using pump spells, evasion, protection, and infect commanders, to win through poison counter decks EDH opponents have to answer early. In the Counters, Proliferate, and Infect overlap, Counters grows creatures, Proliferate multiplies many counter types, and Infect is the poison win condition that proliferate can accelerate. The social cost is real: once poison appears, the table often treats you as the first threat, and some pods restrict the mechanic before deck selection.
+Best Colors for Infect Decks
+Golgari pairs dense infect creatures with green pump, black removal, and recursion for lost threats.
+Simic adds unblockable effects, card draw, and proliferate engines that advance poison after contact.
+Abzan blends toxic commanders, corrupted payoffs, white protection, black removal, and green pump.
+How Do Infect Decks Win in Commander?
+Infect decks excel through a specific playstyle and win conditions. Here's how they work:
+✓ You attack early with infect and toxic creatures that deal poison instead of regular damage.
+✓ You pump an evasive attacker so ten poison can arrive in one or two hits.
+✓ You use proliferate to move existing poison counters toward lethal without another attack.
+✓ You protect the key swing because one removal spell can erase the turn.
+✓ You plan around the table turning on you as soon as poison appears.
+Best Cards for Infect EDH Decks
+Skithiryx, the Blight Dragon
+Flying, haste, and self-pump let it threaten ten poison with protection.
+Blightsteel Colossus
+An infect trampler that removes a player with one clean combat hit.
+Triumph of the Hordes
+Gives your board infect and trample, converting combat damage into poison.
+Inkmoth Nexus
+A land that becomes a flying infect attacker and dodges sorcery-speed sweepers.
+Grafted Exoskeleton
+Turns any creature, including your commander, into a poison threat.
+How to Build a Infect Commander Deck
+Core Components
+✓Run 15-20 infect or toxic creatures, favoring evasion like flying, trample, or unblockable
+✓Include 6-10 cheap pump spells such as Groundswell, Might of Old Krosa, or Berserk
+✓Add 5-8 proliferate effects like Evolution Sage, Tezzeret's Gambit, or Contagion Engine
+✓Pack 6-8 protection spells because poison attackers draw removal immediately
+The Ten-Poison Plan
+✓Ten poison eliminates a player regardless of life total, so lifegain does not change the clock
+✓One connected hit plus proliferate turns can finish a player without more combat
+✓Multiplayer means three opponents at ten poison each, so spreading counters matters
+✓Inkmoth Nexus and manlands keep threats available after board wipes
+Surviving the Table
+✓Expect focused removal and early attacks once the first poison counter lands
+✓Sequence so you threaten lethal before slowly handing out warning counters
+✓Use Triumph of the Hordes to convert any creature board into a poison finish
+✓Have the rule-zero conversation before game one because some pods house-rule poison
+Weaknesses of Infect Decks
+⚠Infect draws immediate table aggression, and playing one against three from turn two is a real cost of the archetype.
+⚠Dedicated infect creatures have weak stats for their cost, so the deck can struggle when poison stalls.
+⚠The strategy leans on combat, making it vulnerable to fog effects, deathtouch blockers, and repeated board wipes.
+⚠Some playgroups house-rule against poison entirely, so the deck may not be welcome at every table.
+Is Infect Right for You?
+Infect is mechanically simple and can be inexpensive, but it has a higher social cost than most combat decks. It suits players who enjoy racing under pressure and accept that one poison counter can reshape the whole table's threat assessment. Check with your pod first because the rule-zero conversation is part of playing poison.
+Related Commander Strategies
+Proliferate
+Proliferate multiplies counters broadly; Infect uses it to advance poison.
+Aggro
+Aggro deals life-total damage; Infect races each opponent to ten poison.
+Voltron
+Voltron aims for commander damage; Infect needs ten poison per player.
+Browse Commander Lists
+Top Infect CommandersProliferateExtra Combats
+Top Infect Commanders
+Atraxa, Praetors' Voice
+MV: 4
+InfectPlaneswalkers+1/+1 Counters+7 more
+$27.86TCGPlayer
+€21.67CardMarket
+Fynn, the Fangbearer
+MV: 2
+DeathtouchInfectAggro+7 more
+$0.20TCGPlayer
+€0.24CardMarket
+Ixhel, Scion of Atraxa
+MV: 4
+InfectPhyrexiansProliferate+7 more
+$3.01TCGPlayer
+€1.10CardMarket
+Vishgraz, the Doomhive
+MV: 5
+InfectPhyrexiansTokens+7 more
+$1.43TCGPlayer
+€0.65CardMarket
+Skithiryx, the Blight Dragon
+MV: 5
+InfectVoltronEquipment+7 more
+$13.01TCGPlayer
+€7.79CardMarket
+Brimaz, Blight of Oreskos
+MV: 4
+PhyrexiansInfectTokens+7 more
+$0.46TCGPlayer
+€0.41CardMarket
+Karumonix, the Rat King
+MV: 3
+RatsInfectRat Colony+7 more
+$1.12TCGPlayer
+€0.55CardMarket
+Venser, Corpse Puppet
+MV: 2
+InfectProliferateArtifacts+7 more
+$0.33TCGPlayer
+€0.17CardMarket
+Atraxa, Grand Unifier
+MV: 7
+BlinkComboInfect+7 more
+$18.36TCGPlayer
+€20.82CardMarket
+Skrelv, Defector Mite
+MV: 1
+InfectPhyrexiansTokens+7 more
+$3.39TCGPlayer
+€3.57CardMarket
+Kilo, Apogee Mind
+MV: 3
+Artifacts+1/+1 CountersProliferate+7 more
+$2.07TCGPlayer
+€0.66CardMarket
+High Perfect Morcant
+MV: 4
+-1/-1 CountersElvesTokens+7 more
+$1.20TCGPlayer
+€1.33CardMarket
+Agent Frank Horrigan
+MV: 7Universes Beyond
+Infect+1/+1 CountersProliferate+7 more
+$5.14TCGPlayer
+€7.81CardMarket
+Xavier Sal, Infested Captain
+MV: 3
+TokensPlaneswalkers+1/+1 Counters+7 more
+$2.79TCGPlayer
+€0.96CardMarket
+Ria Ivor, Bane of Bladehold
+MV: 4
+InfectTokensPhyrexians+7 more
+$0.32TCGPlayer
+€0.19CardMarket
+Ezuri, Stalker of Spheres
+MV: 4
++1/+1 CountersInfectProliferate+7 more
+$0.97TCGPlayer
+€0.53CardMarket
+Tekuthal, Inquiry Dominus
+MV: 4
+PlaneswalkersInfectProliferate+7 more
+$1.59TCGPlayer
+€1.83CardMarket
+Hapatra, Vizier of Poisons
+MV: 2
+-1/-1 CountersTokensInfect+7 more
+$0.31TCGPlayer
+€0.39CardMarket
+Tetsuko Umezawa, Fugitive
+MV: 2
+InfectWheelsAggro+7 more
+$0.15TCGPlayer
+€0.16CardMarket
+Ezuri, Claw of Progress
+MV: 4
++1/+1 CountersInfectElves+7 more
+$2.37TCGPlayer
+€1.33CardMarket
+Glissa, Herald of Predation
+MV: 5
+InfectPhyrexians+1/+1 Counters+7 more
+$0.31TCGPlayer
+€0.17CardMarket
+Jon Irenicus, Shattered One
+MV: 4
+DonateForced CombatStompy+7 more
+$0.31TCGPlayer
+€0.23CardMarket
+Toxrill, the Corrosive
+MV: 7
+-1/-1 CountersControlInfect+7 more
+$17.70TCGPlayer
+€15.75CardMarket
+Volrath, the Shapestealer
+MV: 5
+-1/-1 CountersClones+1/+1 Counters+7 more
+N/ATCGPlayer
+N/ACardMarket
+Etali, Primal Conqueror // Etali, Primal Sickness
+MV: 7
+ClonesComboRamp+7 more
+$30.15TCGPlayer
+€21.25CardMarket
+Filter and browse all Infect commanders →
+Frequently Asked Questions
+What makes a good Infect commander?
+The best infect commanders typically provide consistent access to the strategy's core mechanics. Look for commanders that you attack early with infect and toxic creatures that deal poison instead of regular damage.
+How do Infect decks win?
+Infect decks win through a combination of Skithiryx, the Blight Dragon, Blightsteel Colossus, Triumph of the Hordes, and other synergistic pieces that infect decks are for players who want life totals to matter less than reaching ten poison on each opponent.
+What are the best colors for Infect?
+Golgari pairs dense infect creatures with green pump, black removal, and recursion for lost threats. However, Simic adds unblockable effects, card draw, and proliferate engines that advance poison after contact.
+What are the weaknesses of Infect decks?
+Infect draws immediate table aggression, and playing one against three from turn two is a real cost of the archetype. Dedicated infect creatures have weak stats for their cost, so the deck can struggle when poison stalls. The strategy leans on combat, making it vulnerable to fog effects, deathtouch blockers, and repeated board wipes. Some playgroups house-rule against poison entirely, so the deck may not be welcome at every table.
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH

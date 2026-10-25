@@ -1,0 +1,245 @@
++1/+1 Counters Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Group hug
+Superfriends
+Lands matter
+Counters
+Blink
+Lifegain
+Voltron Mistakes
+Voltron Budget Upgrades
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Counters
+Deck Archetype
+Counters: The Commander Archetype, Explained
+Counters are permanent in a way that pump spells are not. A deck built on them grows every turn and keeps everything it has gained, even through a wrath, if the right pieces survive.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Counters: Built around +1/+1 counters and the effects that multiply them.
+What Counters Decks Actually Do
+Counter decks accumulate plus-one-plus-one counters on their creatures and run payoffs that scale with the total. The distinguishing feature is compounding: counter doublers multiply everything placed after them, so a modest board becomes an overwhelming one in a single turn without drawing a single extra card.
+The archetype overlaps with almost everything else here. Proliferate ties it to superfriends, token production ties it to go-wide, and the largest creatures in the format are usually counter payoffs. Its own identity comes from the doublers and the counter-manipulation cards: the pieces that do nothing on their own and change the scale of everything else.
+The Counters engine
+Three steps that feed each other, which is what makes it a deck rather than a pile of cards sharing a theme.
+1 Put a counter on it One at a time is fine, because the deck cares about what happens next.
+2 Multiply it Hardened Scales and Corpsejack Menace change the arithmetic.
+3 Keep them The Ozolith holds everything you built when the creature dies.
+↻ Each doubler makes every counter after it worth more.
+Which Colors Fit Counters
+Green is the primary color by a distance, holding the doublers, the hydras, and most of the payoffs. White adds counter-based anthems and token synergies, blue adds proliferate and evolve, and black adds the minus-one-minus-one counter variant, which uses the same infrastructure aimed at opponents' creatures instead. Red participates least.
+Green Doublers, hydras, and the deepest pool of creatures that arrive with counters already on them.
+White Counter-based anthems and the token generation that gives the counters somewhere to go.
+Blue Proliferate and evolve, which add counters without spending cards on them.
+Black The inverse: minus-one-minus-one counters used as removal, running on the same doublers and proliferate.
+Red Rarely a core color. Red contributes a handful of counter payoffs and little of the infrastructure.
+How color identity decides what you can play →
+Top 10 Counters Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building counters for the first time, these are the effects to
+understand before anything else.
+Hardened Scales ↗
+One extra counter every time counters are placed. A one-drop that quietly doubles the deck's output all game.
+Branching Evolution ↗
+Doubles counters placed on your creatures. The cleanest and most reliable multiplier in the archetype.
+Corpsejack Menace ↗
+The same effect on a 4/4 body, so it doubles counters and pressures the board at the same time.
+The Ozolith ↗
+Collects counters from creatures that die and moves them to a new creature. Makes removal cost you a body, not your investment.
+Kalonian Hydra ↗
+Doubles the counters on every creature you control on attack. Two attacks usually ends the game.
+Evolution Sage ↗
+Proliferates on every land drop, adding counters to every creature and planeswalker for free, every turn.
+Master Biomancer ↗
+Every creature you play enters with counters equal to its power and becomes a Mutant. Scales the whole deck at once.
+Conclave Mentor ↗
+An extra counter on placement plus lifegain when it dies. Cheap redundancy for the Hardened Scales effect.
+Inspiring Call ↗
+Draws for every creature with a counter and makes them indestructible. Card advantage and a wrath answer in one instant.
+Simic Ascendancy ↗
+Tracks growth counters and wins outright at twenty. An alternate win condition that costs the deck nothing to include.
+Top 10 Counters Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Ezuri, Claw of Progress ↗
+Experience counters that pump a creature every turn, growing permanently across the game.
+Animar, Soul of Elements ↗
+Grows on every creature cast and reduces their cost, so the deck accelerates as it gets bigger.
+Vorel of the Hull Clade ↗
+Doubles counters on a permanent every turn, including artifacts and lands with counters on them.
+Hamza, Guardian of Arashin ↗
+Creatures cost one less per creature with a counter, which makes a developed board fuel enormous turns.
+Kathril, Aspect Warper ↗
+Distributes counters based on keywords in your graveyard, tying counters to a self-mill plan.
+Anafenza, the Foremost ↗
+Counters on attack plus graveyard hate stapled on, which shuts down the recursion decks that beat you.
+Shalai and Hallar ↗
+Turns counter placement into direct damage to every opponent, so growth is also a clock.
+Renata, Called to the Hunt ↗
+Every creature enters with an extra counter. Mono-green, cheap, and it works with everything.
+Roalesk, Apex Hybrid ↗
+Arrives with counters and proliferates twice when it dies, so removal still advances your board.
+Hapatra, Vizier of Poisons ↗
+The minus-one-minus-one side: she turns counters into Snake tokens and doubles as repeatable removal.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+The doublers are the deck and they are all noncreature permanents, so a Vandalblast or a Back to Nature hurts more than a board wipe does. Spread the effect across creatures and enchantments rather than relying on one, and remember that counters do not survive a creature dying unless you have The Ozolith or similar. The archetype looks resilient but is only as durable as the bodies carrying it.
+Frequently Asked Questions
+What is a +1/+1 counters deck in Commander?
+It is a deck that accumulates plus-one-plus-one counters on its creatures and plays payoffs that scale with the total. Counter doublers like Branching Evolution multiply everything placed afterwards, so the board grows faster the longer the deck runs.
+What colors are best for counters?
+Green first, for the doublers, hydras, and most payoffs. White adds anthems and tokens, blue adds proliferate and evolve. Simic and Selesnya are the most common pairings, with Abzan popular for combining tokens, counters, and recursion.
+Do +1/+1 counters stay if a creature leaves the battlefield?
+No. A creature that leaves the battlefield returns as a new object with no counters, so all the accumulated growth is lost. Cards like The Ozolith and Skullbriar, the Walking Grave exist specifically to preserve counters through that, which is why they are archetype staples.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Counters? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Best +1/+1 Counter Commanders →Go wide →Superfriends →Voltron →How Combat Works →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Group hug
+Superfriends
+Lands matter
+Counters
+Blink
+Lifegain
+Voltron Mistakes
+Voltron Budget Upgrades
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

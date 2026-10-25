@@ -1,0 +1,419 @@
+Best Landfall Commanders for EDH | EDHMatch
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Home
+Strategies
+Landfall
+Back to SearchBest Landfall Commanders for EDH
+Landfall decks are for players who want every land drop to become a trigger, not just another mana source. This strategy wants to put lands onto the battlefield repeatedly, using fetch lands, extra land drops, land recursion, and landfall commanders, to win through tokens, counters, damage, cards, or other lands matter decks EDH payoffs. In the Ramp, Landfall, and Big Mana cluster, Ramp accelerates mana, Big Mana spends that mana on huge spells, and Landfall treats the land entering as the engine itself. The deck feels like turning the most reliable game action into a chain of visible rewards.
+Best Colors for Landfall Decks
+Mono-green supplies extra land drops, land recursion, ramp creatures, and Avenger of Zendikar-style payoffs.
+Gruul converts land drops into damage, hasty Elementals, extra combats, and pressure from Omnath-style triggers.
+Simic pairs extra land drops with card draw, letting lands replace themselves and refuel the engine.
+Selesnya adds token payoffs, counters, protection, and recursion engines such as Emeria Shepherd.
+How Do Landfall Decks Win in Commander?
+Landfall decks excel through a specific playstyle and win conditions. Here's how they work:
+✓ You play lands as engine pieces and turn each land entering into a trigger.
+✓ You use fetch lands and sacrifice lands so one land slot creates multiple triggers.
+✓ You stack extra land drop effects to fire payoffs several times in one turn.
+✓ You recur lands from the graveyard to keep the engine supplied.
+✓ You convert repeated triggers into tokens counters cards damage or extra combats.
+Best Cards for Landfall EDH Decks
+Lotus Cobra
+Converts each land entering into mana, letting fetch lands extend the turn.
+Scute Swarm
+Copies itself from repeated landfall triggers, building a wide token board.
+Avenger of Zendikar
+Makes Plants from your lands, then grows them with each landfall trigger.
+Azusa, Lost but Seeking
+Adds two land drops each turn, multiplying triggers and mana development.
+Ramunap Excavator
+Replays lands from your graveyard so fetches and sacrifice lands keep triggering landfall.
+How to Build a Landfall Commander Deck
+Core Components
+✓Run 8-10 landfall payoffs across tokens, counters, damage, and draw so triggers become real resources
+✓Include 4-6 extra land drop effects like Exploration, Azusa, or Wayward Swordtooth
+✓Add fetch effects, including budget options like Evolving Wilds, to double triggers in a turn
+✓Slot 2-3 land recursion pieces such as Ramunap Excavator or Crucible of Worlds
+Deck Structure
+✓Push land counts to 40 or more because extra land drops need a steady supply
+✓Prioritize card draw tied to lands, such as Tireless Tracker or Tatyova, to keep drops flowing
+✓Keep 5-7 interaction slots because the engine needs time to assemble
+Win Conditions
+✓Go wide with Scute Swarm and Avenger of Zendikar, then attack with a grown board
+✓Use Valakut Exploration or Omnath, Locus of Rage to convert landfall into damage
+✓Use Moraug, Fury of Akoum to turn land drops into extra combat steps
+Weaknesses of Landfall Decks
+⚠Board wipes can erase a token board built over several turns, forcing the engine to rebuild.
+⚠The deck can struggle when it misses land drops because payoffs need lands entering play.
+⚠Key engine pieces like Lotus Cobra and Azusa draw removal early, and the deck slows without them.
+⚠Mass land destruction or effects that punish extra lands can set the strategy back more than most decks.
+Is Landfall Right for You?
+Landfall is friendly to newer players because the core loop is natural: play a land and get a reward. Budget versions work well with Evolving Wilds, Rampaging Baloths, and basic ramp, while premium fetch lands mainly raise consistency. It suits players who enjoy incremental engines that visibly build from turn to turn.
+Related Commander Strategies
+Ramp
+Ramp plays lands for acceleration; Landfall plays them for the triggers.
+Big Mana
+Big Mana spends the mana; Landfall wins from land drops entering.
+Browse Commander Lists
+Top Landfall CommandersLands MatterRamp
+Top Landfall Commanders
+Omnath, Locus of Creation
+MV: 4
+LandfallLands MatterRamp+7 more
+$4.94TCGPlayer
+€3.36CardMarket
+Aesi, Tyrant of Gyre Strait
+MV: 6
+Lands MatterLandfallRamp+7 more
+$12.07TCGPlayer
+€13.93CardMarket
+The Necrobloom
+MV: 4
+Lands MatterTokensDredge+7 more
+$0.36TCGPlayer
+€0.23CardMarket
+Flubs, the Fool
+MV: 3
+Lands MatterCheeriosLandfall+7 more
+$2.89TCGPlayer
+€0.61CardMarket
+Hearthhull, the Worldseed
+MV: 4
+Lands MatterRampLand Destruction+7 more
+$1.13TCGPlayer
+€0.67CardMarket
+Omnath, Locus of Rage
+MV: 7
+Lands MatterLandfallRamp+7 more
+$0.34TCGPlayer
+€0.40CardMarket
+Yarok, the Desecrated
+MV: 5
+Lands MatterLandfallETB+7 more
+$0.33TCGPlayer
+€0.48CardMarket
+Thalia and The Gitrog Monster
+MV: 4
+Lands MatterLandfallHatebears+7 more
+$6.02TCGPlayer
+€3.19CardMarket
+Tatyova, Benthic Druid
+MV: 5
+Lands MatterLandfallRamp+7 more
+$0.29TCGPlayer
+€0.14CardMarket
+Zimone, Mystery Unraveler
+MV: 4
+Lands MatterMorphLandfall+7 more
+$0.51TCGPlayer
+€0.63CardMarket
+Toph, the First Metalbender
+MV: 4Universes Beyond
+Lands MatterArtifacts+1/+1 Counters+7 more
+$1.28TCGPlayer
+€0.75CardMarket
+Lord Windgrace
+MV: 5
+Lands MatterLandfallRamp+7 more
+N/ATCGPlayer
+N/ACardMarket
+Zimone and Dina
+MV: 3
+Lands MatterLandfallAristocrats+7 more
+$0.51TCGPlayer
+€0.46CardMarket
+Tifa Lockhart
+MV: 2Universes Beyond
+Lands MatterVoltronRamp+7 more
+$2.51TCGPlayer
+€1.86CardMarket
+Obuun, Mul Daya Ancestor
+MV: 4
+LandfallLands Matter+1/+1 Counters+7 more
+N/ATCGPlayer
+N/ACardMarket
+Karametra, God of Harvests
+MV: 5
+LandfallLands MatterRamp+7 more
+$5.16TCGPlayer
+€2.86CardMarket
+Choco, Seeker of Paradise
+MV: 4Universes Beyond
+Lands MatterBirdsFlying+7 more
+$0.51TCGPlayer
+€0.28CardMarket
+Teval, the Balanced Scale
+MV: 4
+ReanimatorLands MatterMill+7 more
+$5.57TCGPlayer
+€6.42CardMarket
+Azusa, Lost but Seeking
+MV: 3
+Lands MatterLandfallRamp+7 more
+$13.07TCGPlayer
+€8.80CardMarket
+Sméagol, Helpful Guide
+MV: 3Universes Beyond
+Lands MatterLandfallSacrifice+7 more
+$0.38TCGPlayer
+€0.39CardMarket
+Tannuk, Memorial Ensign
+MV: 3
+Lands MatterBurnLandfall+7 more
+$0.95TCGPlayer
+€0.65CardMarket
+Bristly Bill, Spine Sower
+MV: 2
++1/+1 CountersLands MatterLandfall+7 more
+$36.61TCGPlayer
+€25.49CardMarket
+Omnath, Locus of the Roil
+MV: 4
+Lands MatterElementalsLandfall+7 more
+$0.34TCGPlayer
+€0.38CardMarket
+Bonny Pall, Clearcutter
+MV: 6
+Lands MatterLandfallRamp+7 more
+$0.38TCGPlayer
+€0.45CardMarket
+The Wandering Minstrel
+MV: 2Universes Beyond
+Lands MatterRampCombo+7 more
+$0.32TCGPlayer
+€0.28CardMarket
+Filter and browse all Landfall commanders →
+Frequently Asked Questions
+What makes a good Landfall commander?
+The best landfall commanders typically provide consistent access to the strategy's core mechanics. Look for commanders that you play lands as engine pieces and turn each land entering into a trigger.
+How do Landfall decks win?
+Landfall decks win through a combination of Lotus Cobra, Scute Swarm, Avenger of Zendikar, and other synergistic pieces that landfall decks are for players who want every land drop to become a trigger, not just another mana source.
+What are the best colors for Landfall?
+Mono-green supplies extra land drops, land recursion, ramp creatures, and Avenger of Zendikar-style payoffs. However, Gruul converts land drops into damage, hasty Elementals, extra combats, and pressure from Omnath-style triggers.
+What are the weaknesses of Landfall decks?
+Board wipes can erase a token board built over several turns, forcing the engine to rebuild. The deck can struggle when it misses land drops because payoffs need lands entering play. Key engine pieces like Lotus Cobra and Azusa draw removal early, and the deck slows without them. Mass land destruction or effects that punish extra lands can set the strategy back more than most decks.
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH

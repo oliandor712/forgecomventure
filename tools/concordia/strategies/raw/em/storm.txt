@@ -1,0 +1,422 @@
+Best Storm Commanders for EDH | EDHMatch
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Home
+Strategies
+Storm
+Back to SearchBest Storm Commanders for EDH
+Storm decks are for players who want to sculpt a hand, pick one decisive turn, and chain cheap spells until the count becomes lethal. This strategy wants to cast many spells in one turn, using cantrips, rituals, cost reducers, and storm commanders, to win through Grapeshot, Tendrils of Agony, Aetherflux Reservoir, or another storm-count payoff. In the Spellslinger, Storm, Big Mana, and Combo cluster, Spellslinger grinds value from each instant or sorcery, Big Mana spends on fewer huge spells, Combo assembles fixed pieces, and Storm turns spell volume into the win. The best storm combo EDH decks reward careful sequencing because every card has to convert into mana, cards, count, or a protected finish.
+Best Colors for Storm Decks
+Izzet pairs blue cantrips and copy effects with red rituals, burn payoffs, and cost reduction.
+Grixis adds black tutors, graveyard recursion, and Tendrils of Agony lines to Izzet storm shells.
+Mono-red leans on rituals, impulse draw, Treasure, and commanders that refund mana as spells resolve.
+How Do Storm Decks Win in Commander?
+Storm decks excel through a specific playstyle and win conditions. Here's how they work:
+✓ You sculpt your hand with cantrips and hold rituals until one turn can carry the chain.
+✓ You count mana before committing because each spell must feed the next cast.
+✓ You use cost reducers commanders and rituals to convert small spells into more mana and cards.
+✓ You choose a payoff only when the count and protection are ready.
+✓ You finish with Grapeshot Tendrils of Agony Aetherflux Reservoir or another storm route.
+Best Cards for Storm EDH Decks
+Grapeshot
+Copies itself for each prior spell, converting storm count into direct damage.
+Aetherflux Reservoir
+Converts a long spell chain into life, then spends fifty life on damage.
+Jeska's Will
+Combines mana and impulse draw, often starting the turn that chains spells.
+Mind's Desire
+Converts storm count into free card access from the top of your library.
+Tendrils of Agony
+Turns each storm copy into life drain for black-based storm shells.
+How to Build a Storm Commander Deck
+Core Components
+✓Run 25-35 cheap instants and sorceries, mostly one or two mana, so the chain has enough casts
+✓Include rituals like Jeska's Will, Pyretic Ritual, and Cabal Ritual to gain mana mid-turn
+✓Use cost reducers and per-cast mana engines such as Birgi, God of Storytelling
+✓Pack cantrips like Ponder, Preordain, and Brainstorm to dig toward payoffs
+Enablers & Refuel
+✓Use wheel effects like Windfall to refill your hand while raising storm count
+✓Add copy effects and magecraft triggers when they convert each cast into cards or mana
+✓Run a few tutors to find the payoff once count and mana are ready
+✓Keep recursion like Past in Flames to rebuild after a stalled chain
+Win Conditions
+✓Use Grapeshot or Tendrils of Agony to convert storm count into damage or drain
+✓Let Aetherflux Reservoir turn repeated casts into life and a direct finish
+✓Use Mind's Desire or Brain Freeze when your list supports card-access or mill routes
+✓Run two or three payoffs so one answer does not strand the whole turn
+Weaknesses of Storm Decks
+⚠A single counterspell or removal spell aimed at the payoff can strand a full turn of setup.
+⚠Rule of Law, Thalia-style taxes, and graveyard hate can break the chain before it starts.
+⚠The deck often spends several turns visibly sculpting, which can draw pressure before it is ready.
+⚠Long combo turns can test casual tables if the pod did not agree to that pace.
+Is Storm Right for You?
+Storm has a high skill floor because you track mana, cards, storm count, and protection through one long turn. It suits players who like sequencing puzzles and are willing to practice lines before a pod game. Budget versions can work, but clean play matters more than expensive finishers.
+Related Commander Strategies
+Spellslinger
+Spellslinger grinds each cast for value; Storm banks casts for one lethal turn.
+Combo
+Combo assembles fixed pieces; Storm needs enough mana, cards, and spell count.
+Big Mana
+Big Mana casts fewer huge spells; Storm chains many cheap ones.
+Browse Commander Lists
+Top Storm CommandersCantripsWheels
+Top Storm Commanders
+Storm, Force of Nature
+MV: 4Universes Beyond
+SpellslingerStormSpell Copy+7 more
+$23.80TCGPlayer
+€20.93CardMarket
+Vivi Ornitier
+MV: 3Universes Beyond
+SpellslingerStormBurn+7 more
+$34.43TCGPlayer
+€30.58CardMarket
+Stella Lee, Wild Card
+MV: 3
+SpellslingerComboStorm+7 more
+$5.05TCGPlayer
+€3.70CardMarket
+Prismari, the Inspiration
+MV: 7
+StormSpellslingerBurn+7 more
+$3.52TCGPlayer
+€3.62CardMarket
+Ral, Monsoon Mage // Ral, Leyline Prodigy
+MV: 2
+SpellslingerStormCombo+7 more
+$6.86TCGPlayer
+€4.20CardMarket
+Flubs, the Fool
+MV: 3
+Lands MatterCheeriosLandfall+7 more
+$2.89TCGPlayer
+€0.61CardMarket
+Zada, Hedron Grinder
+MV: 4
+SpellslingerGoblinsTokens+7 more
+$0.17TCGPlayer
+€0.12CardMarket
+Veyran, Voice of Duality
+MV: 3
+SpellslingerSpell CopyStorm+7 more
+$2.39TCGPlayer
+€3.28CardMarket
+Jhoira, Weatherlight Captain
+MV: 4
+ArtifactsStormCheerios+7 more
+$0.40TCGPlayer
+€0.89CardMarket
+Fire Lord Azula
+MV: 4Universes Beyond
+SpellslingerComboSpell Copy+7 more
+$1.16TCGPlayer
+€1.05CardMarket
+Urza, Lord High Artificer
+MV: 4
+ArtifactsComboControl+7 more
+$16.28TCGPlayer
+€14.42CardMarket
+Iroh, Grand Lotus
+MV: 6Universes Beyond
+SpellslingerLessonsStorm+7 more
+$0.39TCGPlayer
+€0.31CardMarket
+Kykar, Wind's Fury
+MV: 4
+SpellslingerTokensPolymorph+7 more
+$0.46TCGPlayer
+€0.56CardMarket
+Alania, Divergent Storm
+MV: 5
+SpellslingerOttersProwess+7 more
+$0.35TCGPlayer
+€0.21CardMarket
+Urabrask // The Great Work
+MV: 4
+SpellslingerBurnStorm+7 more
+$15.81TCGPlayer
+€14.23CardMarket
+Ghyrson Starn, Kelermorph
+MV: 3Universes Beyond
+BurnSpellslingerPingers+7 more
+$33.42TCGPlayer
+€27.79CardMarket
+K'rrik, Son of Yawgmoth
+MV: 7
+LifegainComboSelf-Damage+7 more
+$1.12TCGPlayer
+€0.65CardMarket
+Niv-Mizzet, Parun
+MV: 6
+SpellslingerWheelsCombo+7 more
+$5.27TCGPlayer
+€2.87CardMarket
+Aeve, Progenitor Ooze
+MV: 5
+Oozes+1/+1 CountersStorm+7 more
+$0.34TCGPlayer
+€0.16CardMarket
+Bria, Riptide Rogue
+MV: 4
+SpellslingerProwessWizards+7 more
+N/ATCGPlayer
+N/ACardMarket
+Elsha of the Infinite
+MV: 5
+ComboSpellslingerStorm+7 more
+$0.66TCGPlayer
+€0.31CardMarket
+Ob Nixilis, Captive Kingpin
+MV: 4
+Combo+1/+1 CountersBurn+7 more
+$15.49TCGPlayer
+€13.39CardMarket
+Ashling, Flame Dancer
+MV: 4
+Spell CopySpellslingerBurn+7 more
+$5.63TCGPlayer
+€6.35CardMarket
+Vadrik, Astral Archmage
+MV: 3
+SpellslingerTreasureStorm+7 more
+$0.34TCGPlayer
+€0.16CardMarket
+Mizzix of the Izmagnus
+MV: 4
+SpellslingerX SpellsStorm+7 more
+$1.15TCGPlayer
+€0.44CardMarket
+Filter and browse all Storm commanders →
+Frequently Asked Questions
+What makes a good Storm commander?
+The best storm commanders typically provide consistent access to the strategy's core mechanics. Look for commanders that you sculpt your hand with cantrips and hold rituals until one turn can carry the chain.
+How do Storm decks win?
+Storm decks win through a combination of Grapeshot, Aetherflux Reservoir, Jeska's Will, and other synergistic pieces that storm decks are for players who want to sculpt a hand, pick one decisive turn, and chain cheap spells until the count becomes lethal.
+What are the best colors for Storm?
+Izzet pairs blue cantrips and copy effects with red rituals, burn payoffs, and cost reduction. However, Grixis adds black tutors, graveyard recursion, and Tendrils of Agony lines to Izzet storm shells.
+What are the weaknesses of Storm decks?
+A single counterspell or removal spell aimed at the payoff can strand a full turn of setup. Rule of Law, Thalia-style taxes, and graveyard hate can break the chain before it starts. The deck often spends several turns visibly sculpting, which can draw pressure before it is ready. Long combo turns can test casual tables if the pod did not agree to that pace.
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH

@@ -1,0 +1,83 @@
+# Public strategy guide facts per archetype and source, fetched 2026-10-25. Facts and counts only (no page prose stored).
+strategy_sources[81]{archetype,source,url,facts}:
+  aristocrats,sw,https://spellweave.app/guides/edh-archetypes,stack 2-3 drain triggers with a free outlet; bracket 2-4
+  aristocrats,em,https://www.edhmatch.com/strategies,payoffs 8-10; outlets 5-8; fodder 10-12; engine pieces cost 1-3
+  aristocrats,cf,https://commander-forge.com/archetypes,sub: aristocrats; blood artist; food chain; treasure sac; need fodder+outlet+payoff; outlet redundancy
+  aristocrats,tz,https://turnzerohq.com/guides/archetypes,usually also go-wide
+  sacrifice,em,https://www.edhmatch.com/strategies,outlets 3-5; fodder 8-10; sac-tied card advantage 8-10; edict interaction 6-8; low curve
+  sacrifice,cf,https://commander-forge.com/archetypes,Sacrifice group of 17; needs fodder; outlet; payoff
+  tokens,sw,https://spellweave.app/guides/edh-archetypes,2-3 turns wide then mass pump or doubler; bracket n/a
+  tokens,em,https://www.edhmatch.com/strategies,generators 10-14; doublers 2-4; anthems 4-6; draw 6-8; ramp 8-10; wipe answers 3-5
+  tokens,cf,https://commander-forge.com/archetypes,sub: go wide; anthems; populate; convoke
+  tokens,tz,https://turnzerohq.com/guides/archetypes,Doubling Season + Parallel Lives quadruples; sample 36 lands 12 ramp 9 removal 32 creatures 7 draw 1 wipe; Jetmir escalates at 3/6/9 attackers
+  tribal,sw,https://spellweave.app/guides/edh-archetypes,variants aggro; combo (Slivers; Wizards); value (Merfolk; Faeries)
+  tribal,cf,https://commander-forge.com/archetypes,sub under Creatures: Tribal; Aggro; Extra Combat; Power Matters
+  tribal,tz,https://turnzerohq.com/guides/archetypes,three lords outscale one; commit to a type; deploy lords and payoffs; attack as one
+  voltron,sw,https://spellweave.app/guides/edh-archetypes,two attacks of 10-11 for 21; bracket 2-3
+  voltron,em,https://www.edhmatch.com/strategies,equipment/auras 12-18; helpers 4-6; protection 6-8; ramp 8-10
+  voltron,cf,https://commander-forge.com/archetypes,subs: equipment; aura; infect; double strike
+  voltron,tz,https://turnzerohq.com/guides/archetypes,the opposite approach to go wide
+  equipment,em,https://www.edhmatch.com/strategies,equipment 10-14; lands 34-36 plus rocks; creatures 12-18; protection 6-10; recovers from sweepers because gear stays
+  equipment,cf,https://commander-forge.com/archetypes,sub of Artifact: Equipment; Sram; Wyleth; Akiri in sw
+  reanimator,sw,https://spellweave.app/guides/edh-archetypes,fill graveyard turn 2-3 then reanimate for 2-3 mana
+  reanimator,em,https://www.edhmatch.com/strategies,reanimation 8-12; setup 6-8; targets 6-10
+  reanimator,cf,https://commander-forge.com/archetypes,sub of Graveyard: Reanimator; Self-Mill; Dredge; Flashback
+  graveyard,sw,https://spellweave.app/guides/edh-archetypes,dredge; flashback; escape; overlaps reanimator and self-mill
+  graveyard,em,https://www.edhmatch.com/strategies,fillers 8-10; recursion 8-12; 1-2 backup engines; favor ETB/death-trigger creatures
+  graveyard,cf,https://commander-forge.com/archetypes,same Graveyard group as reanimator
+  mill,sw,https://spellweave.app/guides/edh-archetypes,win by empty library
+  mill,em,https://www.edhmatch.com/strategies,engines 8-12; multipliers 2-3; interaction 8-10
+  mill,cf,https://commander-forge.com/archetypes,subs: self-mill; opponent mill; mill combo; Bruvac
+  spellslinger,sw,https://spellweave.app/guides/edh-archetypes,explosive chain turns; weak to taxes
+  spellslinger,em,https://www.edhmatch.com/strategies,instants/sorceries 25-35; payoffs 6-10; cantrips 8-12; interaction 8-10; curve 1-3
+  spellslinger,cf,https://commander-forge.com/archetypes,subs: cantrips; copy spells; big spells; magecraft; Demanding
+  storm,sw,https://spellweave.app/guides/edh-archetypes,storm copies equal prior spells; tax-weak
+  storm,em,https://www.edhmatch.com/strategies,25-35 cheap spells (1-2 mana); a few tutors; 2-3 payoffs
+  combo,sw,https://spellweave.app/guides/edh-archetypes,bracket 3-4
+  combo,em,https://www.edhmatch.com/strategies,combos 2-3; tutors 5-10; draw 8-12; protection 6-10; redundancy
+  combo,tz,https://turnzerohq.com/guides/archetypes,often a backup plan in other archetypes
+  counters,sw,https://spellweave.app/guides/edh-archetypes,doublers; distributors; payoffs; proliferate
+  counters,em,https://www.edhmatch.com/strategies,multipliers 3-5; creatures 15-20; proliferate 4-6; draw 6-8; ramp 8-10; protection 3-5
+  counters,cf,https://commander-forge.com/archetypes,subs: +1/+1; proliferate; modular; hydras
+  proliferate,em,https://www.edhmatch.com/strategies,engines 8-12; seeds 10-15; draw 8-10; poison 1-2 optional; careful with sagas/vanishing/fading
+  proliferate,cf,https://commander-forge.com/archetypes,sub of Counters
+  proliferate,tz,https://turnzerohq.com/guides/archetypes,Atraxa archetype
+  infect,em,https://www.edhmatch.com/strategies,creatures 15-20; pump 6-10; proliferate 5-8; protection 6-8
+  infect,cf,https://commander-forge.com/archetypes,sub of Voltron: Infect
+  lifegain,sw,https://spellweave.app/guides/edh-archetypes,bracket 1-3
+  lifegain,em,https://www.edhmatch.com/strategies,sources 8-12; payoffs 6-10; ramp 10-12; removal 6-8; redundant Pridemate/Vito/Heliod effects first
+  lifegain,cf,https://commander-forge.com/archetypes,subs: soul sisters; payoffs; angel lifegain; drain; Beginner friendly
+  blink,sw,https://spellweave.app/guides/edh-archetypes,engines; ETB targets; Panharmonicon; Deadeye Navigator loop
+  blink,em,https://www.edhmatch.com/strategies,flicker 8-12; ETB creatures 20-25
+  blink,cf,https://commander-forge.com/archetypes,subs: ETB value; flicker combo; Panharmonicon; Soulherder
+  landfall,sw,https://spellweave.app/guides/edh-archetypes,lands matter / landfall; extra drops plus recursion
+  landfall,em,https://www.edhmatch.com/strategies,payoffs 8-10; extra drops 4-6; recursion 2-3; interaction 5-7; 40+ lands
+  landfall,cf,https://commander-forge.com/archetypes,Lands group: landfall; land destruction; land recursion; Maze's End
+  landfall,tz,https://turnzerohq.com/guides/archetypes,lands matter is usually also ramp
+  ramp,em,https://www.edhmatch.com/strategies,ramp 10-12 (prioritise 2-mana); lands 37-40; draw 8-10; interaction 8-10
+  ramp,tz,https://turnzerohq.com/guides/archetypes,ramp pairs with lands matter
+  big_mana,em,https://www.edhmatch.com/strategies,ramp 12-15; multipliers 2-4; draw 8-10; haymakers 4-6; mana sources 38-40; interaction 5-7
+  stax,sw,https://spellweave.app/guides/edh-archetypes,bracket 3-4
+  stax,em,https://www.edhmatch.com/strategies,locks 8-12; parity breakers 4-6; choose one clear win condition
+  stax,cf,https://commander-forge.com/archetypes,subs: tax; resource denial; hatebears; Winter Orb; Demanding
+  control,em,https://www.edhmatch.com/strategies,wipes 6-10; answers 8-12; finishers 2-3; lands 36-38
+  control,cf,https://commander-forge.com/archetypes,subs: draw-go; tap-out control; pillowfort; mass removal
+  group_hug,em,https://www.edhmatch.com/strategies,shared effects 8-12; breakers 4-6; lands 36-38
+  group_hug,sw,https://spellweave.app/guides/edh-archetypes,Kynaios and Tiro; Phelddagrif; Kenrith
+  enchantress,sw,https://spellweave.app/guides/edh-archetypes,Sythis; Tuvasa
+  enchantress,em,https://www.edhmatch.com/strategies,enchantress effects 6-10; low curve; 34-36 lands
+  enchantress,cf,https://commander-forge.com/archetypes,subs: aura; enchantment tokens; constellation; pillowfort
+  artifacts,em,https://www.edhmatch.com/strategies,artifacts 25-35; cost reducers 3-5
+  artifacts,cf,https://commander-forge.com/archetypes,subs: artifact tokens; affinity; equipment; artifact combo
+  artifacts,sw,https://spellweave.app/guides/edh-archetypes,Urza; Breya; Jhoira
+  superfriends,tz,https://turnzerohq.com/guides/archetypes,Atraxa; Carth the Lion; Sisay; Commodore Guff; Freyalise; Dihada; Nahiri; Jared Carthalion; Ramos; Saheeli commanders
+  aggro,em,https://www.edhmatch.com/strategies,creatures 25-35; anthems 2-4; extra combats 2-3; lands 33-35
+  aggro,cf,https://commander-forge.com/archetypes,Creatures group: aggro; Beginner friendly
+  card_draw,em,https://www.edhmatch.com/strategies,engines 10-15; payoffs 3-5; dense interaction; more lands or ramp
+  burn,sw,https://spellweave.app/guides/edh-archetypes,burn must scale to 120 life
+  burn,cf,https://commander-forge.com/archetypes,subs: direct damage; ping; group slug; earthquake
+  chaos,cf,https://commander-forge.com/archetypes,subs: coin flip; cascade; theft; possibility storm; Zndrsplt; Yidris; Gonti; Kalamax
+  treasure,sw,https://spellweave.app/guides/edh-archetypes,one-line entry; no engine/weakness detail
+  wheels,sw,https://spellweave.app/guides/edh-archetypes,one-line entry; no engine/weakness detail
+  impulse_draw,sw,https://spellweave.app/guides/edh-archetypes,one-line entry; no engine/weakness detail
+  legends_matter,sw,https://spellweave.app/guides/edh-archetypes,one-line entry; no engine/weakness detail

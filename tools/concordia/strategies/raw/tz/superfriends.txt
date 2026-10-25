@@ -1,0 +1,245 @@
+Superfriends Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Ramp
+Aggro
+Group hug
+Superfriends
+Lands matter
+Counters
+Blink
+Lifegain
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Superfriends
+Deck Archetype
+Superfriends: The Commander Archetype, Explained
+Planeswalkers are card advantage that opponents have to attack to stop. Superfriends runs so many that the table cannot attack them all.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Superfriends: Built around a critical mass of planeswalkers.
+What Superfriends Decks Actually Do
+A superfriends deck plays a critical mass of planeswalkers and the support that keeps them alive: proliferate effects to add loyalty, effects that let them activate twice, and defensive pieces that stop opponents attacking them. Each planeswalker generates value every turn it survives, so the deck wins by accumulating far more resources than three opponents combined.
+The archetype has a distinctive problem and a distinctive solution. The problem is that planeswalkers are terrible in multiplayer by default: three opponents can attack them, and loyalty does not scale with the number of people trying to remove it. The solution is defence: pillowfort enchantments, deterrents, and board wipes that leave your walkers untouched. A superfriends deck is really a defensive deck that happens to win with planeswalker ultimates.
+The Superfriends engine
+Three steps that feed each other, which is what makes it a deck rather than a pile of cards sharing a theme.
+1 Land a planeswalker Deepglow Skate doubles the loyalty it arrives with.
+2 Activate, then protect A walker that survives a turn cycle has paid for itself.
+3 Activate again The Chain Veil buys a second activation in the same turn.
+↻ Loyalty is a resource nobody else at the table is attacking yet.
+Which Colors Fit Superfriends
+White, blue, and black have the deepest planeswalker pools and the best protective effects, which is why Esper and its extensions dominate. Green contributes proliferate and the doubling effects that make ultimates arrive immediately, and red has strong individual walkers but little of the defensive infrastructure the deck needs. Four- and five-color builds are common precisely because the deck wants the best walkers regardless of color.
+White Pillowfort defence, board wipes that spare planeswalkers, and several of the strongest walkers in the format.
+Blue Counterspells, card selection, and untap effects that turn one activation per turn into two.
+Black Removal to clear the attackers, plus tutors to find the right walker for the board.
+Green Proliferate and counter-doubling, which shortens the road to an ultimate from four turns to one.
+Red Strong individual planeswalkers but little support. Usually a splash rather than a core color.
+How color identity decides what you can play →
+Top 10 Superfriends Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building superfriends for the first time, these are the effects to
+understand before anything else.
+Doubling Season ↗
+Planeswalkers enter with double loyalty, which means most of them can ultimate the turn they land.
+The Chain Veil ↗
+Activate each planeswalker one additional time per turn. The archetype's signature engine, and its most abusable card.
+Oath of Teferi ↗
+The same extra activation on an enchantment, plus a blink trigger on entry. Cheaper and harder to remove.
+Deepglow Skate ↗
+Doubles the counters on any permanents you choose, usually every planeswalker at once, straight into multiple ultimates.
+Vorinclex, Monstrous Raider ↗
+Doubles counters you place and halves everyone else's. A one-sided Doubling Season on a hasty body.
+Ugin, the Spirit Dragon ↗
+A colorless sweeper that leaves your board intact, since almost everything in a superfriends deck is colorless or a planeswalker.
+Elspeth, Sun's Champion ↗
+Makes three blockers a turn and wipes big creatures. Defends the whole team, which is the job that matters.
+Interplanar Beacon ↗
+A land that fixes for planeswalkers, gains life when you cast one, and costs nothing to include.
+Karn Liberated ↗
+Colorless, high loyalty, exiles any permanent, and fits into any deck in the archetype regardless of colors.
+Nissa, Who Shakes the World ↗
+Doubles green mana from Forests and makes 3/3 lands that defend the rest of the team.
+Top 10 Superfriends Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Atraxa, Praetors' Voice ↗
+Proliferate every end step, in the four colors with the best walkers. The definitive superfriends commander.
+Carth the Lion ↗
+Planeswalkers enter with an extra counter and cost less to find. Quiet, cheap, and relentlessly consistent.
+Sisay, Weatherlight Captain ↗
+Tutors any legendary permanent, including planeswalkers, and grows with each one on the battlefield.
+Dihada, Binder of Wills ↗
+A planeswalker commander that draws, gains life, and protects legends. Mardu superfriends in one card.
+Commodore Guff ↗
+Adds loyalty to a walker each turn and returns them from the graveyard. Built for this exact deck.
+Freyalise, Llanowar's Fury ↗
+A planeswalker commander that makes Elves, so the team defends itself while the loyalty climbs.
+Nahiri, the Lithomancer ↗
+Mono-white equipment-and-walkers, with a soldier token that keeps attackers busy.
+Jared Carthalion ↗
+Grows with the monarch and can be a planeswalker magnet in a Naya shell that lacks blue's defensive tools.
+Ramos, Dragon Engine ↗
+Stores counters from multicolor spells and dumps them into mana for a five-color walker suite.
+Saheeli, the Gifted ↗
+A planeswalker commander whose Thopters defend the board while her ultimate copies artifacts for a win.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+A planeswalker with four loyalty in a four-player game is a planeswalker with one loyalty. The archetype fails when it plays walkers without defence: every one becomes a free attack target that dies before it does anything. Build the fort first: deterrent enchantments, blockers, and sweepers, then the walkers. Superfriends is also mana-hungry and slow, so expect to be the archdeck target once two ultimates have resolved.
+Frequently Asked Questions
+What is a superfriends deck in Commander?
+A superfriends deck is built around playing many planeswalkers, supported by proliferate effects, extra-activation cards, and defensive pieces that keep them alive. Each surviving planeswalker generates value every turn, so the deck accumulates advantage the table cannot match.
+Can a planeswalker be your commander?
+Only if the card says it can be your commander, or if it is a legendary creature that becomes a planeswalker. Several planeswalkers printed for Commander products carry that line explicitly: Freyalise, Daretti, and Teferi, Temporal Archmage among them.
+Are planeswalkers good in multiplayer Commander?
+Individually they are weaker than in a duel, because three opponents can attack them and loyalty does not scale with the number of attackers. They become strong in a deck that also plays defence (pillowfort enchantments, blockers, and sweepers) which is exactly what superfriends is built to do.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Superfriends? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+MTG Planeswalkers, by Story Arc →What Is a Planeswalker? →Counters →Control →What Is Color Identity in MTG? →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Ramp
+Aggro
+Group hug
+Superfriends
+Lands matter
+Counters
+Blink
+Lifegain
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

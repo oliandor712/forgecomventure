@@ -1,0 +1,245 @@
+Aggro Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Combo
+Control
+Ramp
+Aggro
+Group hug
+Superfriends
+Lands matter
+Counters
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Aggro
+Deck Archetype
+Aggro: The Commander Archetype, Explained
+Aggro is the hardest archetype in Commander, because the format was designed to blunt it. One hundred and twenty life across three opponents is a lot of attacking.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Aggro: Cheap, aggressive creatures apply pressure early and often.
+What Aggro Decks Actually Do
+An aggro deck plays cheap, efficient creatures and attacks early, aiming to end games before slower decks assemble their engines. It trades late-game power for tempo: a two-mana 3/2 is terrible on turn ten and excellent on turn two, and the deck is a bet that turn ten will not arrive.
+Commander pushes back on all of it. Forty life each and three opponents means one hundred and twenty total damage, everyone plays board wipes, and singleton means you cannot run four copies of your best two-drop. Aggro decks that work solve this in specific ways: commander damage, which needs only twenty-one; evasion and trample that make blockers irrelevant; extra combat steps; or effects that hit all opponents at once so every attack counts three times.
+The Aggro engine
+Three steps that build to a finish. This one ends the game rather than coming back round.
+1 Cheap threats, early The curve tops out where other Commander decks start.
+2 Attack every turn Anger grants the whole team haste from the graveyard.
+3 Finish it Embercleave turns a board of small creatures into lethal damage.
+The last step wins the game, so there is nothing to come back round for.
+Which Colors Fit Aggro
+Red and white are the classic aggressive colors: cheap creatures, haste, and combat tricks. Green plays a different kind of aggro, trading speed for size and trample. Black attacks with efficient creatures backed by removal to clear blockers, and blue is largely absent, contributing evasion rather than pressure.
+Red Haste, cheap bodies, double strike, and extra combat steps. The color that most directly shortens the game.
+White Efficient small creatures and anthems, plus the protection that keeps an aggressive board alive through a wrath.
+Green Size and trample. Green aggro attacks with creatures too big to block profitably rather than too many to block.
+Black Efficient threats plus the removal to clear the way. Aggro with an answer for the one blocker that matters.
+Blue Barely present. Blue contributes evasion and the occasional tempo play, but it does not build pressure on its own.
+How color identity decides what you can play →
+Top 10 Aggro Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building aggro for the first time, these are the effects to
+understand before anything else.
+Embercleave ↗
+Cost reduction on a wide board, then double strike and trample at instant speed. Converts a stalled attack into lethal after blockers.
+Iroas, God of Victory ↗
+Your attackers cannot be blocked by more than one creature and do not take damage from blockers. Attacking becomes nearly free.
+Anger ↗
+Grants haste to your whole team from the graveyard, permanently, as long as you control a Mountain.
+Hammer of Purphoros ↗
+An anthem-plus-haste enchantment that also makes blockers, so the deck keeps pressuring without overextending.
+Aggravated Assault ↗
+Repeatable extra combat steps. With any mana-positive attack trigger this becomes an outright kill.
+Berserk ↗
+One mana to double a creature's power and give it trample. The classic surprise kill from a board that looked survivable.
+Return of the Wildspeaker ↗
+Draws cards equal to your biggest creature's power, or pumps the team. Solves aggro's card-advantage problem in green.
+Elesh Norn, Grand Cenobite ↗
+Plus-two-plus-two for you and minus-two-minus-two for everyone else. Frequently a one-sided board wipe and a lethal attack in one card.
+Dolmen Gate ↗
+Your attacking creatures take no combat damage, which lets a smaller board attack into a bigger one every turn.
+Ohran Frostfang ↗
+Deathtouch and a card for every attacker. Makes blocking suicidal and refills your hand while you swing.
+Top 10 Aggro Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Isshin, Two Heavens as One ↗
+Doubles every attack trigger in the deck. The most build-around aggressive commander of recent years.
+Xenagos, God of Revels ↗
+Haste and doubled power to one creature each combat. Turns any large body into an immediate kill threat.
+Neheb, the Eternal ↗
+Mana in your second main phase for damage dealt, so a big attack pays for the next threat.
+Aurelia, Exemplar of Justice ↗
+Mentor plus escalating buffs, and she pushes damage through with trample and first strike as the counters pile up.
+Zurgo Helmsmasher ↗
+A 7/2 haste for five that cannot be destroyed on your turn. Aggro reduced to its bluntest form.
+Gahiji, Honored One ↗
+Pumps every attacker that is not attacking you, which turns the whole table into your offence.
+Wulfgar of Icewind Dale ↗
+Doubles attack and haste triggers for your team, in a color pair full of them.
+Ilharg, the Raze-Boar ↗
+Puts a creature from hand onto the battlefield attacking, then returns it. Cheats out giants every combat.
+Ruric Thar, the Unbowed ↗
+A 6/6 vigilance that punishes noncreature spells, so the control decks pay for the turns they spend answering you.
+Toski, Bearer of Secrets ↗
+Indestructible, must attack, and draws a card for every creature that connects. Aggro that never runs out of cards.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+The politics are the hard part. Attacking early makes you the visible threat, and three opponents can agree to deal with you long before your deck is finished. Spread damage rather than focusing one player down unless you can finish them, and be realistic about the deck's clock. An aggro deck that has not won by turn eight is usually the worst deck at the table.
+Frequently Asked Questions
+Is aggro viable in Commander?
+Yes, but it needs a specific build. Forty life across three opponents is one hundred and twenty damage, so successful aggro decks lean on commander damage, evasion and trample, extra combat steps, or effects that damage every opponent at once, rather than simply attacking with more creatures.
+What colors are best for aggro in Commander?
+Red and white for cheap creatures, haste, and anthems; green for size and trample. Black supports an aggressive plan with removal to clear blockers. Blue is the weakest aggro color, contributing evasion rather than pressure.
+How fast should an aggro Commander deck win?
+Around turn seven to nine in a typical casual pod. Much later than that and slower decks have stabilised with board wipes and bigger creatures. If a deck regularly reaches turn ten without a clear path to victory, it usually needs more evasion or a way to end the game outside combat.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Aggro? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Voltron →Go wide →How Combat Works →What Is Commander Damage? →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Combo
+Control
+Ramp
+Aggro
+Group hug
+Superfriends
+Lands matter
+Counters
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

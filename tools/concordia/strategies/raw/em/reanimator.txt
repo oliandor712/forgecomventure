@@ -1,0 +1,423 @@
+Best Reanimator Commanders for EDH | EDHMatch
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Home
+Strategies
+Reanimator
+Back to SearchBest Reanimator Commanders for EDH
+Reanimator decks are for players who want to turn the graveyard into a shortcut for creatures that should cost far more mana. This strategy wants to load its own graveyard with high-impact targets, using discard, self-mill, and Entomb-style tutors, to win by casting cheap reanimation spells that cheat creatures into play ahead of schedule. Unlike Graveyard value decks, Reanimator is less about recurring small resources every turn, and unlike Mill it is not trying to empty libraries as the primary weapon. The best reanimator commanders and graveyard commanders help discard threats, return them, or convert each reanimated creature into immediate pressure.
+Best Colors for Reanimator Decks
+Mono-black supplies the cheapest reanimation spells, discard outlets, tutors, and life-for-mana exchanges.
+Dimir adds blue self-mill, card selection, and counterspells to protect the reanimation turn.
+Orzhov pairs black recursion with white protection, removal, and resilient creature returns.
+Golgari adds green self-mill, creature tutors, and regrowth effects that reuse spent recursion.
+How Do Reanimator Decks Win in Commander?
+Reanimator decks excel through a specific playstyle and win conditions. Here's how they work:
+✓ You put expensive creatures into your graveyard before you could cast them normally.
+✓ You use discard self-mill and tutors to find the right target for the table.
+✓ You cast cheap reanimation spells that convert the graveyard into battlefield pressure.
+✓ You choose creatures with enter triggers attack triggers or static effects that matter right away.
+✓ You hold backup recursion and answers for graveyard hate before committing.
+✓ You close with repeated reanimation or one mass return spell.
+Best Cards for Reanimator EDH Decks
+Reanimate
+Trades life for mana efficiency by returning the best creature in any graveyard.
+Animate Dead
+Low-cost aura recursion that brings back a creature and supports repeatable sacrifice loops.
+Entomb
+Puts the exact creature you need into the graveyard at instant speed.
+Buried Alive
+Stocks three creature targets at once for single-target or mass reanimation turns.
+Living Death
+Turns stocked graveyards into a new battlefield while clearing creatures already in play.
+How to Build a Reanimator Commander Deck
+Core Components
+✓Run 8-12 reanimation spells such as Reanimate, Animate Dead, Necromancy, and Victimize
+✓Include 6-8 graveyard setup cards like Entomb, Buried Alive, looting spells, and self-mill
+✓Choose 6-10 targets with immediate impact, such as Archon of Cruelty or Ashen Rider
+✓Add cheap creatures that block early and give Victimize or sacrifice outlets usable fuel
+Deck Structure
+✓Keep setup and recursion costs low so your first threat arrives before normal casting curves
+✓Favor enter-the-battlefield triggers because removal cannot undo the value already gained
+✓Reserve interaction for graveyard hate, exile removal, and counterspells on the reanimation spell
+✓Mix targets between attackers, engines, and answer creatures so the graveyard remains flexible
+Win Conditions
+✓Reanimate an early threat that attacks resources, life totals, or opposing boards immediately
+✓Use Living Death style effects when your graveyard contains several creatures worth returning
+✓Loop creatures with sacrifice outlets and reanimation when one large target cannot finish alone
+Weaknesses of Reanimator Decks
+⚠Graveyard hate like Rest in Peace or Bojuka Bog can remove every stocked target at once.
+⚠Instant-speed exile can answer the reanimated creature after you spend both setup and recursion.
+⚠Hands with reanimation but no target, or targets with no discard outlet, can stall badly.
+⚠The key turn is easy to read, so opponents often save interaction for the first recursion spell.
+Is Reanimator Right for You?
+Reanimator has a clear loop: move a creature to the graveyard, then return it for less mana than it should cost. It suits players who enjoy planning one strong turn and can accept that graveyard hate sometimes resets the work. Budget builds can use cheaper targets and recursion, while premium tutors and namesake spells raise the ceiling.
+Related Commander Strategies
+Sacrifice
+Sacrifice spends creatures for value; Reanimator uses the graveyard to return larger threats.
+Graveyard
+Graveyard decks recur many resources; Reanimator cheats high-impact creatures into play.
+Mill
+Mill attacks libraries or fuels engines; Reanimator stocks its own graveyard with targets.
+Browse Commander Lists
+Top Reanimator CommandersSelf-MillDiscard
+Top Reanimator Commanders
+Teval, the Balanced Scale
+MV: 4
+ReanimatorLands MatterMill+7 more
+$5.57TCGPlayer
+€6.42CardMarket
+Terra, Herald of Hope
+MV: 3Universes Beyond
+ReanimatorGraveyardSelf-Mill+7 more
+$1.13TCGPlayer
+€0.82CardMarket
+Meren of Clan Nel Toth
+MV: 4
+AristocratsReanimatorSacrifice+7 more
+$2.38TCGPlayer
+€1.86CardMarket
+Sefris of the Hidden Ways
+MV: 3
+ReanimatorDungeonDiscard+7 more
+N/ATCGPlayer
+N/ACardMarket
+Muldrotha, the Gravetide
+MV: 6
+ReanimatorMillSacrifice+7 more
+$0.61TCGPlayer
+€0.81CardMarket
+Hashaton, Scarab's Fist
+MV: 2
+DiscardReanimatorTokens+7 more
+$0.88TCGPlayer
+€1.23CardMarket
+Betor, Ancestor's Voice
+MV: 5
+Lifegain+1/+1 CountersReanimator+7 more
+$3.47TCGPlayer
+€2.52CardMarket
+Sauron, the Dark Lord
+MV: 6Universes Beyond
+ZombiesReanimatorAmass+7 more
+$21.68TCGPlayer
+€21.08CardMarket
+Raffine, Scheming Seer
+MV: 3
+ReanimatorWheels+1/+1 Counters+7 more
+$7.31TCGPlayer
+€4.50CardMarket
+Celes, Rune Knight
+MV: 4Universes Beyond
+ReanimatorCombo+1/+1 Counters+7 more
+$1.89TCGPlayer
+€0.82CardMarket
+Sidar Jabari of Zhalfir
+MV: 4
+KnightsReanimatorAggro+7 more
+$0.52TCGPlayer
+€0.46CardMarket
+Henzie "Toolbox" Torre
+MV: 3
+ReanimatorAggroAristocrats+7 more
+$1.00TCGPlayer
+€0.48CardMarket
+Mirko, Obsessive Theorist
+MV: 3
+TopdeckReanimatorSurveil+7 more
+N/ATCGPlayer
+N/ACardMarket
+Anikthea, Hand of Erebos
+MV: 5
+EnchantressReanimatorTokens+7 more
+N/ATCGPlayer
+N/ACardMarket
+Wilhelt, the Rotcleaver
+MV: 4
+ZombiesTokensAristocrats+7 more
+$9.30TCGPlayer
+€10.24CardMarket
+Slimefoot and Squee
+MV: 3
+ReanimatorAristocratsSaprolings+7 more
+$3.90TCGPlayer
+€2.69CardMarket
+Glarb, Calamity's Augur
+MV: 3
+Lands MatterFrogsReanimator+7 more
+$3.82TCGPlayer
+€4.07CardMarket
+Shilgengar, Sire of Famine
+MV: 5
+AngelsReanimatorLifegain+7 more
+$0.34TCGPlayer
+€0.20CardMarket
+Imotekh the Stormlord
+MV: 4Universes Beyond
+ArtifactsReanimatorGraveyard+7 more
+N/ATCGPlayer
+N/ACardMarket
+Karador, Ghost Chieftain
+MV: 8
+ReanimatorGraveyardBirthing Pod+7 more
+$0.31TCGPlayer
+€0.32CardMarket
+Disa the Restless
+MV: 5
+GraveyardMillReanimator+7 more
+$0.14TCGPlayer
+€0.25CardMarket
+Nethroi, Apex of Death
+MV: 5
+ReanimatorMutateMill+7 more
+$2.36TCGPlayer
+€2.22CardMarket
+Winter, Cynical Opportunist
+MV: 4
+MillReanimatorSelf-Mill+7 more
+$0.40TCGPlayer
+€0.45CardMarket
+K'rrik, Son of Yawgmoth
+MV: 7
+LifegainComboSelf-Damage+7 more
+$1.12TCGPlayer
+€0.65CardMarket
+Coram, the Undertaker
+MV: 4
+MillReanimatorGraveyard+7 more
+$0.34TCGPlayer
+€0.26CardMarket
+Filter and browse all Reanimator commanders →
+Frequently Asked Questions
+What makes a good Reanimator commander?
+The best reanimator commanders typically provide consistent access to the strategy's core mechanics. Look for commanders that you put expensive creatures into your graveyard before you could cast them normally.
+How do Reanimator decks win?
+Reanimator decks win through a combination of Reanimate, Animate Dead, Entomb, and other synergistic pieces that reanimator decks are for players who want to turn the graveyard into a shortcut for creatures that should cost far more mana.
+What are the best colors for Reanimator?
+Mono-black supplies the cheapest reanimation spells, discard outlets, tutors, and life-for-mana exchanges. However, Dimir adds blue self-mill, card selection, and counterspells to protect the reanimation turn.
+What are the weaknesses of Reanimator decks?
+Graveyard hate like Rest in Peace or Bojuka Bog can remove every stocked target at once. Instant-speed exile can answer the reanimated creature after you spend both setup and recursion. Hands with reanimation but no target, or targets with no discard outlet, can stall badly. The key turn is easy to read, so opponents often save interaction for the first recursion spell.
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH

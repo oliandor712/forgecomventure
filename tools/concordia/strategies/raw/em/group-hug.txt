@@ -1,0 +1,423 @@
+Best Group Hug Commanders for EDH | EDHMatch
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Home
+Strategies
+Group Hug
+Back to SearchBest Group Hug Commanders for EDH
+Group Hug decks are for players who want table politics to matter as much as board position. This strategy wants to give everyone extra cards, lands, or mana, using group hug commanders and symmetrical resource effects, to win through political leverage, hidden payoffs, or a carefully timed finish. Unlike Lifegain, it does not make your own life total the engine; it gives resources away and tries to profit from who uses them. The best political decks EDH players remember are frank about the risk: your gifts can help the wrong player first.
+Best Colors for Group Hug Decks
+Mono-blue supplies Howling Mine effects, Kami of the Crescent Moon, and counterspells for protecting a hidden finish.
+Simic adds group land ramp and draw, then uses green engines to profit from the larger table.
+Jeskai gives Zedruu donation lines, red chaos tools, and white protection for political deals.
+Four-color Kynaios and Tiro decks combine gifts, ramp, and interaction for long negotiated games.
+How Do Group Hug Decks Win in Commander?
+Group Hug decks excel through a specific playstyle and win conditions. Here's how they work:
+✓ You give the table cards lands or mana before asking for anything back.
+✓ You turn those gifts into time by steering attacks and removal elsewhere.
+✓ You break symmetry with payoffs that reward every draw land drop or donation.
+✓ You keep interaction ready for the opponent who uses your gifts too well.
+✓ You win through politics a hidden spell or a late payoff after the table weakens.
+Best Cards for Group Hug EDH Decks
+Howling Mine
+Keeps every hand full, buying goodwill while your payoff plan develops.
+Rites of Flourishing
+Adds shared draws and land drops, accelerating the table into a political midgame.
+Zedruu the Greathearted
+Turns donated permanents into cards and life while making alliances concrete.
+Smothering Tithe
+Converts opponents' extra draws into Treasure, letting your gifts pay you back.
+Approach of the Second Sun
+Rewards deep card draw with a hidden second cast that can end long games.
+How to Build a Group Hug Commander Deck
+Core Components
+✓Run 8-12 shared resource effects such as Howling Mine, Temple Bell, and Rites of Flourishing
+✓Include 4-6 symmetry breakers like Smothering Tithe, Consecrated Sphinx, or Zedruu
+✓Use pillowfort pieces such as Propaganda and Ghostly Prison to redirect attacks
+✓Keep instant-speed interaction for combo decks that convert your gifts too quickly
+Deck Structure
+✓Play 36-38 lands because the deck expects longer games and repeated land drops
+✓Lead with small gifts and save big group ramp for moments you can negotiate
+✓Protect or recur your hidden win condition so one counterspell does not erase the plan
+✓Include sweepers for opponents who use your resources to build the fastest board
+Win Conditions
+✓Approach of the Second Sun converts deep draw into a clean two-cast finish
+✓Alternate-win cards reward the huge hands created by repeated draw engines
+✓Zedruu can win by turning donations into steady cards and life over time
+✓Politics matters: guide the midgame so the final opponent is one you can beat
+Weaknesses of Group Hug Decks
+⚠Group Hug accelerates opponents, so combo and stax decks may use your gifts better than you do.
+⚠It often develops little pressure, which can make you easy to remove once trust fades.
+⚠Hidden win conditions draw immediate interaction once opponents understand the plan.
+⚠The deck is political by nature and can be treated as a kingmaker at experienced tables.
+Is Group Hug Right for You?
+Group Hug is mechanically approachable because many cards simply give resources to everyone. The hard part is politics: you need to know when a gift buys time and when it hands the game away. It suits social players who enjoy deals, shifting incentives, and honest table talk.
+Related Commander Strategies
+Lifegain
+Lifegain keeps life as its own engine; Group Hug gives resources away for leverage.
+Card Draw
+Card Draw keeps extra cards private; Group Hug shares cards to shape decisions.
+Ramp
+Ramp accelerates itself; Group Hug accelerates everyone and negotiates from the fallout.
+Browse Commander Lists
+Top Group Hug CommandersGroup SlugChaos
+Top Group Hug Commanders
+Ms. Bumbleflower
+MV: 4
++1/+1 CountersGroup HugWheels+7 more
+$6.54TCGPlayer
+€15.35CardMarket
+Kynaios and Tiro of Meletis
+MV: 4
+Group HugWheelsLands Matter+7 more
+N/ATCGPlayer
+N/ACardMarket
+Gluntch, the Bestower
+MV: 3
+Group Hug+1/+1 CountersPillow Fort+7 more
+$0.50TCGPlayer
+€0.44CardMarket
+Kwain, Itinerant Meddler
+MV: 2
+WheelsGroup HugCard Draw+7 more
+$0.42TCGPlayer
+€0.31CardMarket
+Kenrith, the Returned King
+MV: 5
+Group HugComboPolitics+7 more
+$3.03TCGPlayer
+€1.08CardMarket
+Xyris, the Writhing Storm
+MV: 5
+WheelsTokensGroup Hug+7 more
+$2.10TCGPlayer
+€0.97CardMarket
+Phelddagrif
+MV: 4
+Group HugComboPillow Fort+7 more
+$10.08TCGPlayer
+€4.73CardMarket
+Zedruu the Greathearted
+MV: 4
+ChaosDonateGroup Hug+7 more
+$2.42TCGPlayer
+€1.42CardMarket
+Rocco, Street Chef
+MV: 3
++1/+1 CountersExileTokens+7 more
+$0.41TCGPlayer
+€0.39CardMarket
+Nekusar, the Mindrazer
+MV: 5
+WheelsGroup SlugBurn+7 more
+$4.00TCGPlayer
+€1.23CardMarket
+Yurlok of Scorch Thrash
+MV: 4
+Group SlugBurnGroup Hug+7 more
+$0.30TCGPlayer
+€0.24CardMarket
+Kami of the Crescent Moon
+MV: 2
+WheelsGroup HugCard Draw+7 more
+$7.65TCGPlayer
+€5.36CardMarket
+Kibo, Uktabi Prince
+MV: 3
+Apes+1/+1 CountersArtifacts+7 more
+$13.72TCGPlayer
+€5.66CardMarket
+Braids, Conjurer Adept
+MV: 4
+Group HugBig ManaClones+7 more
+$0.39TCGPlayer
+€0.32CardMarket
+Kros, Defense Contractor
+MV: 4
++1/+1 CountersForced CombatGroup Hug+7 more
+$0.42TCGPlayer
+€0.42CardMarket
+Vazi, Keen Negotiator
+MV: 5
+TreasureGroup HugTokens+7 more
+$0.31TCGPlayer
+€0.20CardMarket
+Ian Malcolm, Chaotician
+MV: 3Universes Beyond
+ChaosWheelsGroup Hug+7 more
+$6.41TCGPlayer
+€4.06CardMarket
+Selvala, Explorer Returned
+MV: 3
+Group HugComboLifegain+7 more
+$0.25TCGPlayer
+€0.23CardMarket
+Heliod, the Radiant Dawn // Heliod, the Warped Eclipse
+MV: 4
+WheelsGroup HugControl+7 more
+$1.56TCGPlayer
+€1.10CardMarket
+The Council of Four
+MV: 5
+WheelsTokensGroup Hug+7 more
+$3.77TCGPlayer
+€1.45CardMarket
+Breena, the Demagogue
+MV: 3
++1/+1 CountersPillow FortPolitics+7 more
+$4.63TCGPlayer
+€1.53CardMarket
+Sokrates, Athenian Teacher
+MV: 3Universes Beyond
+WheelsGroup HugCard Draw+7 more
+$0.95TCGPlayer
+€0.56CardMarket
+Gonti, Night Minister
+MV: 4
+TheftGroup HugTreasure+7 more
+$0.93TCGPlayer
+€0.62CardMarket
+Winter, Misanthropic Guide
+MV: 4
+WheelsDiscardGroup Slug+7 more
+$0.20TCGPlayer
+€0.23CardMarket
+Círdan the Shipwright
+MV: 5Universes Beyond
+PoliticsGroup HugBlink+7 more
+$0.25TCGPlayer
+€0.49CardMarket
+Filter and browse all Group Hug commanders →
+Frequently Asked Questions
+What makes a good Group Hug commander?
+The best group hug commanders typically provide consistent access to the strategy's core mechanics. Look for commanders that you give the table cards lands or mana before asking for anything back.
+How do Group Hug decks win?
+Group Hug decks win through a combination of Howling Mine, Rites of Flourishing, Zedruu the Greathearted, and other synergistic pieces that group hug decks are for players who want table politics to matter as much as board position.
+What are the best colors for Group Hug?
+Mono-blue supplies Howling Mine effects, Kami of the Crescent Moon, and counterspells for protecting a hidden finish. However, Simic adds group land ramp and draw, then uses green engines to profit from the larger table.
+What are the weaknesses of Group Hug decks?
+Group Hug accelerates opponents, so combo and stax decks may use your gifts better than you do. It often develops little pressure, which can make you easy to remove once trust fades. Hidden win conditions draw immediate interaction once opponents understand the plan. The deck is political by nature and can be treated as a kingmaker at experienced tables.
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH

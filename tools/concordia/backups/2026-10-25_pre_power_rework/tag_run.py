@@ -1,0 +1,318 @@
+#!/usr/bin/env python3
+"""Tagging run (design: deckgen/TAG_LINKS.md; user rules human_logic.toon H50-H55).
+Sources (H54 rewritten 2026-10-23): the card script only; its Oracle section is a gap filler (tag_verify), not a separate source; mtgish is dropped. Forge AI (AILogic$ etc.) stays a reference input.
+Per card: tags (supertype, cardtype, subtype/landtype first, then kw + qualifiers, then ability tags), clauses, links, AI reference.
+
+  python3 tag_run.py starter            tag every card in decks/starter/*.dck -> tags/STARTER_TAGS.toon + STARTER_TAGS_REPORT.md
+  python3 tag_run.py card "Name" ...    print records\n  (the starter command also writes tags/NEW_TAGS_FOR_APPROVAL.md and tags/STARTER_TAGS_SAMPLE.md)
+"""
+import os, re, sys, json, glob, collections
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import ability_tags as AT
+import tag_extra as TX
+import tag_verify as TV
+from common import q, snake, params, card_files   # noqa: E402
+import derived_tags as DT
+
+ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
+SUPERTYPES = {"Legendary", "Basic", "Snow", "World", "Ongoing"}
+CARDTYPES = ["Creature", "Instant", "Sorcery", "Enchantment", "Artifact", "Planeswalker", "Land", "Battle", "Kindred", "Conspiracy", "Dungeon", "Phenomenon", "Plane", "Scheme", "Vanguard"]   # CR 205.2a
+BASIC_LAND = {"Plains", "Island", "Swamp", "Mountain", "Forest"}
+COLOR = {"W": "white", "U": "blue", "B": "black", "R": "red", "G": "green"}
+COLORWORD = {"white": "white", "blue": "blue", "black": "black", "red": "red", "green": "green"}
+KW_ACTIVE = re.compile(r"^(A|S|T|R):")
+KWSET, REMIND = set(), {}
+try:
+    for _l in open(os.path.join(HERE, "..", "ai_lab", "KEYWORD_REFERENCE.toon"), encoding="utf-8"):
+        _m = re.match(r'^  "?([^,"]+)"?,(?:keyword|action),', _l)
+        if _m:
+            for _p in re.split(r" and |/", _m.group(1)): KWSET.add(re.sub(r"[^a-z0-9]", "", _p.lower()))
+    import csv as _csv
+    for _l in open(os.path.join(HERE, "..", "ai_lab", "KEYWORD_REMINDER_TEXT.toon"), encoding="utf-8"):
+        if re.match(r"^  70[12]\.\d+,", _l):
+            _f = next(_csv.reader([_l.strip()]))
+            REMIND[re.sub(r"[^a-z0-9]", "", _f[1].lower())] = _f[3]
+except OSError:
+    pass
+
+
+def provides(base):
+    """tags a keyword supplies, read from its reminder text (KEYWORD_REMINDER_TEXT.toon, from the Comprehensive Rules and Oracle lines)"""
+    t = REMIND.get(re.sub(r"[^a-z0-9]", "", base.lower()), "")
+    out = []
+    if re.search(r"[+]N/[+]N counter", t): out.append("counters_plus")
+    if re.search(r"create .*token", t, re.I): out.append("token_make")
+    if re.search(r"\bdraw", t, re.I): out.append("draw")
+    if re.search(r"gain .*life", t, re.I): out.append("lifegain")
+    return out
+
+
+def kw_tags(line):
+    """K: line -> base keyword tag plus qualifier tags (user 2026-10-22). Names that are not rules keywords (Forge engine lines such as ETBReplacement)
+    become forge_line:<name>. Protection qualifiers are protection_from:<colour|type>; Enchant/Equip target types are target_type:<t>;
+    colours, numbers and cost kinds in the cost are color:, num:, cost:."""
+    parts = line[2:].split(":")
+    base = parts[0].strip()
+    rest = ":".join(parts[1:])
+    m = re.match(r"^Protection from (.+)$", base, re.I)
+    if m:
+        tags = ["kw:protection"]
+        for w in re.findall(r"\b(white|blue|black|red|green|colorless|everything|[a-z]+s)\b", m.group(1), re.I):
+            tags.append("protection_from:" + w.lower().rstrip("s") if w.lower() not in COLORWORD and w.lower() not in ("everything", "colorless") else "protection_from:" + w.lower())
+        return list(dict.fromkeys(tags))
+    key = snake(base).replace("_", "")
+    if KWSET and key not in KWSET:
+        return ["forge_line:" + snake(base)]
+    tags = ["kw:" + snake(base)]
+    if not rest: return tags
+    if snake(base) == "protection":
+        for w, c in COLORWORD.items():
+            if re.search(r"\b%s\b" % w, rest, re.I): tags.append("protection_from:" + c)
+        for ty in ("Creature", "Artifact", "Enchantment", "Instant", "Sorcery", "Land", "Planeswalker", "Everything", "Multicolored", "Player"):
+            if re.search(r"\b%s\b" % ty, rest): tags.append("protection_from:" + ty.lower())
+        for sub in re.findall(r"\.([A-Z][a-z]+)", rest):
+            if sub.lower() not in COLORWORD and sub not in ("Chosen", "Color"): tags.append("protection_from:" + sub.lower())
+        return list(dict.fromkeys(tags))
+    if snake(base) in ("enchant", "equip", "fortify", "attach"):
+        for ty in ("Creature", "Artifact", "Enchantment", "Land", "Planeswalker", "Vehicle", "Permanent", "Player", "Equipment", "Aura"):
+            if re.search(r"\b%s\b" % ty, rest): tags.append("target_type:" + ty.lower())
+    for m2 in re.findall(r"\b(Plains|Island|Swamp|Mountain|Forest)\b", rest): tags.append("landwalk:" + m2.lower())
+    cost = re.sub(r"\([^)]*\)", "", rest)
+    for t in re.split(r"[ :<>/]+", cost):
+        if t.isdigit(): tags.append("num:" + t)
+        elif t == "X": tags.append("num:x")
+        elif t in COLOR: tags.append("color:" + COLOR[t])
+    if "PayLife" in rest: tags.append("cost:life")
+    if "Sac<" in rest: tags.append("cost:sacrifice")
+    if "Discard<" in rest: tags.append("cost:discard")
+    return list(dict.fromkeys(tags))
+
+
+def type_tags(types):
+    words = types.split()
+    sup = [w for w in words if w in SUPERTYPES]
+    ct = [w for w in words if w in CARDTYPES]
+    sub = [w for w in words if w not in SUPERTYPES and w not in CARDTYPES]
+    out = ["supertype:" + snake(w) for w in sup] + ["cardtype:" + snake(w) for w in ct]
+    for w in sub:
+        out.append(("landtype:" if (w in BASIC_LAND and "Land" in ct) else "type:") + snake(w))
+    return out
+
+
+TRIG = {"Attacks": "attacks", "AttackerBlocked": "blocked", "SpellCast": "spell_cast", "Phase": "phase", "TurnFaceUp": "flip-up", "Taps": "taps",
+        "TapsForMana": "taps_for_mana", "Drawn": "draws", "LifeGained": "gain_life", "Sacrificed": "sacrificed", "Discarded": "discarded"}
+
+
+def trigger_of(body):
+    m = re.search(r"Mode\$ (\w+)", body)
+    mode = m.group(1) if m else ""
+    if mode == "ChangesZone":
+        o = (re.search(r"Origin\$ (\w+)", body) or [0, "Any"])[1]; d = (re.search(r"Destination\$ (\w+)", body) or [0, ""])[1]
+        who = "self" if "Card.Self" in body else "other"
+        if d == "Battlefield": return "etb_" + who
+        if o == "Battlefield" and d == "Graveyard": return "dies_" + who
+        if o == "Battlefield": return "leaves_" + who
+        return "zone_%s_%s" % (o.lower(), d.lower())
+    if mode == "DamageDone": return "combat_damage" if "CombatDamage$ True" in body else "damage"
+    return TRIG.get(mode, snake(mode))
+
+
+def clause_from(sv, first, kind, cid, line):
+    """one clause: trigger, cost, verb, payload, affected, duration. sv = SVar dict."""
+    p = params(first)
+    trig = cost = ""
+    if kind == "T": trig = trigger_of(first)
+    elif kind == "S": trig = "static"
+    elif kind == "R": trig = "replacement"
+    elif kind == "A": trig = "activated" if "Cost$" in first and not first.startswith("SP$") else "spell"
+    cost = p.get("Cost", "")
+    chain = []
+    cur = first
+    seen = 0
+    if kind == "T" and p.get("Execute") in sv: cur = sv[p["Execute"]]
+    while cur and seen < 6:
+        chain.append(cur); seen += 1
+        nx = params(cur).get("SubAbility")
+        cur = sv.get(nx) if nx in sv else None
+    if kind in ("S", "R"): chain = [first]
+    verbs, payload, affected, dur = [], [], [], ""
+    for c in chain:
+        cp = params(c)
+        api = (re.match(r"^(?:AB|SP|DB)\$ (\w+)", c) or [0, ""])[1] if re.match(r"^(AB|SP|DB)\$", c) else ""
+        if kind == "S": api = "static_" + snake(cp.get("Mode", ""))
+        verbs.append(api.lower() if api else snake(cp.get("Mode", "")) or "?")
+        for k in ("KW", "Keywords", "AddKeyword", "AddAbility"):
+            if k in cp: payload += [snake(x) for x in re.split(r"\s*[&,]\s*", cp[k])]
+        for k in ("NumAtt", "NumDef", "AddPower", "AddToughness", "NumDmg", "LifeAmount", "NumCards", "TokenScript", "CounterType"):
+            if k in cp: payload.append("%s=%s" % (k.lower(), cp[k]))
+        for k in ("ValidTgts", "Defined", "Affected", "AffectedDefined", "ValidCard"):
+            if k in cp: affected.append("%s=%s" % (k, cp[k]))
+        if "Duration" in cp: dur = cp["Duration"]
+    if not dur:
+        if kind == "S" and "Continuous" in first: dur = "static"
+        elif any(v in ("pump", "pumpall") for v in verbs): dur = "eot(forge_default)"
+    dur = {"EndOfTurn": "eot", "static": "static", "Permanent": "permanent", "Perpetual": "perpetual", "UntilHostLeavesPlay": "until_leaves"}.get(dur, dur)
+    return dict(id=cid, trigger=trig, cost=cost, verb="+".join(verbs), payload=" ".join(payload), affected=" ".join(affected), duration=("duration:" + dur) if dur else "")
+
+
+def record(name, text):
+    face = text.split("\nALTERNATE")[0]
+    lines = face.split("\n")
+    sv = {}
+    for l in lines:
+        m = re.match(r"^SVar:(\w+):(.*)$", l)
+        if m: sv[m.group(1)] = m.group(2)
+    types = next((l[6:] for l in lines if l.startswith("Types:")), "")
+    tags = type_tags(types)
+    kgroups = {}
+    for l in lines:
+        if l.startswith("K:"):
+            kt = kw_tags(l)
+            kgroups["k%d" % (len(kgroups) + 1)] = kt
+            tags += kt
+    base = sorted(t for t in AT.tags_of(text) if not t.startswith(("has:", "needs:", "hint:")))
+    ex_tags, ex_links, ex_groups = TX.extra(lines, sv, types, text)
+    if any(t.startswith("choose_on_enter:") for t in ex_tags):   # the opaque forge_line:etbreplacement is replaced by the readable choose_on_enter tag
+        tags = [t for t in tags if t != "forge_line:etbreplacement"]
+        kgroups = {g: [t for t in ts if t != "forge_line:etbreplacement"] for g, ts in kgroups.items()}
+    clauses, links = [], list(ex_links)
+    n = 0
+    for l in lines:
+        m = re.match(r"^(A|S|T|R):(.*)$", l)
+        if not m: continue
+        n += 1
+        cl = clause_from(sv, m.group(2), m.group(1), "c%d" % n, l)
+        cl["secondary"] = "Secondary$ True" in l
+        cl["kind"] = m.group(1)
+        if cl["verb"] == "?" and m.group(1) == "R": cl["verb"] = "replace_" + snake(params(m.group(2)).get("Event", ""))
+        clauses.append(cl)
+        if cl["trigger"] == "flip-up":
+            mk = next((k for k, v in kgroups.items() if "kw:morph" in v), "kw:morph")
+            links.append(("c%d:flip-up" % n, "requires", mk)); tags.append("flip-up"); ex_groups.setdefault("c%d" % n, []).append("flip-up")
+        if cl["payload"] and cl["duration"]:
+            links.append(("c%d:payload" % n, "lasts", "c%d:duration" % n))
+            if cl["duration"].startswith("duration:eot"): tags.append("duration:eot"); ex_groups.setdefault(cl["id"], []).append("duration:eot")
+        if cl["payload"] and cl["affected"]: links.append(("c%d:affected" % n, "receives", "c%d:payload" % n))
+    for l in lines:
+        if l.startswith("K:"):
+            b = l[2:].split(":")[0].strip()
+            kid = next((k for k, v in kgroups.items() if v and v[0] == "kw:" + snake(b)), "kw:" + snake(b))
+            for pv in provides(b):
+                tags.append(pv); links.append((kid, "provides", pv))
+    for cl in clauses:
+        for pl in cl["payload"].split():
+            if "=" not in pl and snake(pl) in KWSET.union({"first_strike", "double_strike", "lifelink", "deathtouch", "flying", "trample", "haste", "vigilance", "menace", "reach", "hexproof", "indestructible"}): tags.append(snake(pl)); ex_groups.setdefault(cl["id"], []).append(snake(pl))
+            if pl == "lifelink": tags.append("lifegain"); ex_groups.setdefault(cl["id"], []).append("lifegain")
+        if "counters_" in cl["affected"]: tags.append("scales:counters"); ex_groups.setdefault(cl["id"], []).append("scales:counters")
+        if cl["verb"] in ("pump", "pumpall") and cl["payload"] and "ValidTgts" in cl["affected"]: tags.append("pump_single"); ex_groups.setdefault(cl["id"], []).append("pump_single")
+    # sacrifice outlet (user): a land sacrificed is not an outlet; a creature (or other non-land) sacrificed always is
+    sact = {t.split(":", 1)[1] for t in ex_tags if t.startswith(("cost_sacrifice_target:", "sacrifice_type:"))}
+    sact = {("land" if x in {b.lower() for b in BASIC_LAND} else x) for x in sact}   # a Mountain is a land
+    if "self" in sact and "Land" in types.split(): sact.discard("self"); sact.add("land")
+    if sact and not (sact - {"land", "self"}):   # only lands or the card itself sacrificed (user 2026-10-22): not an outlet, whichever source tagged it
+        base = [t for t in base if t != "sacrifice_outlet"]; ex_tags = [t for t in ex_tags if t != "sacrifice_outlet"]
+        tags = [t for t in tags if t != "sacrifice_outlet"]
+        ex_groups = {g: [t for t in ts if t != "sacrifice_outlet"] for g, ts in ex_groups.items()}
+    elif sact - {"land", "self"}: ex_tags = ex_tags + ["sacrifice_outlet"]; ex_groups.setdefault("c0", []).append("sacrifice_outlet")
+    tags = list(dict.fromkeys(tags + base + ex_tags))
+    # keyword listed once: drop the plain tag when kw:<name> is present (user: trample listed twice)
+    tags = [t for t in tags if not ("kw:" + t) in tags]
+    # removal split by method (user): drop the umbrella 'removal' when a method tag exists
+    if "removal" in tags and any(t.startswith("remove:") or t == "damage" for t in tags): tags.remove("removal")
+    # bare keyword tags on granting cards (trample on Rancor ...) are dropped (user 2026-10-22): grant_kw:<kw> already says it
+    tags = [t for t in tags if t not in TV.BARE_KEYWORDS]
+    # umbrella tags (haste_grant, land_tutor, recursion ...) stay intact: they belong to the AI Tags category (tag_verify.is_ai_tag), not to the rules tags
+    if "restrict" in tags and not any(x.startswith("restrict_kind:") for x in tags) and any(x.startswith("cant_be_blocked") for x in tags):
+        tags = [x for x in tags if x != "restrict"]   # 'can't be blocked (by X)' is evasion, not a restriction on someone else
+    if "duration:next_untap" in tags or "duration:while_control" in tags: tags = [t for t in tags if t != "duration:permanent"]   # Forge's Duration$ Permanent on a 'next untap step' / 'as long as you control' effect is a script detail
+    tags = list(dict.fromkeys(t.lower() for t in tags))   # all tags lower case (scales:Goblin -> scales:goblin)
+    ver = TV.verify(tags, text, KWSET, REMIND)
+    tags = list(dict.fromkeys(tags + ver["add"]))
+    if ver["add"]: ex_groups["v"] = list(ver["add"])
+    ex_tags = ex_tags + ver["add"]
+    if os.environ.get("TAG_VARIANT") != "off":   # agent suggestions S01-S09, S15 (tag_variant.py), deployed on the user's order 2026-10-22; TAG_VARIANT=off for the old tags
+        import tag_variant as TVAR
+        tags, ex_groups = TVAR.apply(name, face, lines, sv, tags, ex_groups)
+    # cost:mana is dropped when cost_mana:<symbols> says it (user 2026-10-23), in the tags and in every group
+    if any(t.startswith("cost_mana:") for t in tags):
+        tags = [t for t in tags if t != "cost:mana"]; ex_tags = [t for t in ex_tags if t != "cost:mana"]; base = [t for t in base if t != "cost:mana"]
+        ex_groups = {g: [t for t in ts if t != "cost:mana"] for g, ts in ex_groups.items()}; kgroups = {g: [t for t in ts if t != "cost:mana"] for g, ts in kgroups.items()}
+    ai = sorted(set(re.findall(r"AILogic\$ ?([A-Za-z0-9_]+)", face)) | set(re.findall(r"^SVar:AttachAILogic:(\w+)", face, re.M)))
+    aipref = "AIPreference" in face or "SVar:AIPreference" in face
+    rd = "AI:RemoveDeck" in face
+    groups = dict(kgroups)
+    for gid, ts in ex_groups.items(): groups[gid] = [t.lower() for t in dict.fromkeys(ts)]
+    def gkey(g): return (0 if g == "c0" else 1 if g.startswith("k") else 3 if g == "v" else 2, [int(x) for x in re.findall(r"\d+", g)])
+    groups = dict(sorted(groups.items(), key=lambda kv: gkey(kv[0])))
+    ai_tags = [x for x in tags if TV.is_ai_tag(x)]
+    links = list(links) + DT.provided_by(set(tags), set(base))
+    return dict(name=name, face=DT.face(text, name), derived=DT.derived(tags, groups, base), ai_tags=ai_tags, groups=groups, base=[t.lower() for t in base], new=[t.lower() for t in ex_tags if t.lower() in tags], tags=tags, clauses=clauses, links=links, verify=ver, ai=ai, aipref=aipref, removedeck=rd, nlines=n)
+
+
+def render(r):
+    TYPING = ("supertype:", "cardtype:", "type:", "landtype:")      # the card's own typing, kept apart from the tags of its abilities (user 2026-10-22)
+    o = ["card: " + q(r["name"]), "typing: " + " ".join(x for x in r["tags"] if x.startswith(TYPING)),
+         "tags: " + " ".join(x for x in r["tags"] if not TV.is_ai_tag(x) and not x.startswith(TYPING))]
+    if r["ai_tags"]: o.append("ai_tags: " + " ".join(r["ai_tags"]))
+    o.append("face: " + r["face"])
+    if r["derived"]: o.append("derived: " + " ".join(r["derived"]))
+    o.append("clauses[%d]{id,trigger,cost,verb,payload,affected,duration}:" % len(r["clauses"]))
+    for c in r["clauses"]: o.append("  " + ",".join(q(c[k]) for k in ("id", "trigger", "cost", "verb", "payload", "affected", "duration")))
+    if r["links"]:
+        o.append("links[%d]{from,rel,to}:" % len(r["links"]))
+        for a, b, c in r["links"]: o.append("  %s,%s,%s" % (a, b, c))
+    o.append("groups[%d]{id,source,tags}:" % len([1 for g, ts in r["groups"].items() if [x for x in ts if not TV.is_ai_tag(x)]]))
+    for gid, ts in r["groups"].items():
+        src = "saga chapter %s" % gid[1:] if re.match(r"^s\d+$", gid) else "cross-check (oracle gap filler/keyword/ai)" if gid == "v" else "card" if gid == "c0" else ("K line" if gid.startswith("k") else ("sub-ability of " + gid.split(".")[0] if "." in gid else "%s line" % next((c.get("kind", "?") for c in r["clauses"] if c["id"] == gid), "?")))
+        ts = [x for x in ts if not TV.is_ai_tag(x)]
+        if ts: o.append("  %s,%s,%s" % (gid, src, q(" ".join(ts))))
+    if r["verify"]["flags"]: o.append("verify_flags: " + " | ".join(r["verify"]["flags"]))
+    o.append("forge_ai: AILogic=%s%s%s" % ("/".join(r["ai"]) or "-", " AIPreference" if r["aipref"] else "", " RemoveDeck" if r["removedeck"] else ""))
+    return "\n".join(o)
+
+
+_IDX = {}
+
+
+def find_text(name):
+    """script text by card name; falls back to an index of every Name: line because multi-face scripts are filed as front_back.txt (e.g. gumdrop_poisoner_tempt_with_treats.txt)"""
+    t = AT.card_text(name)
+    if t: return t
+    if not _IDX:
+        for p in card_files(ROOT):
+            try:
+                with open(p, errors="replace") as fh: x = fh.read()
+            except OSError: continue
+            m = re.search(r"^Name:(.*)$", x, re.M)
+            if m: _IDX.setdefault(m.group(1).strip().lower(), p)
+            for m2 in re.finditer(r"^Name:(.*)$", x, re.M): _IDX.setdefault(m2.group(1).strip().lower(), p)
+    p = _IDX.get(name.lower())
+    if not p: return ""
+    with open(p, errors="replace") as fh: return fh.read()
+
+
+def deck_cards(path):
+    names = collections.Counter()
+    for l in open(path, encoding="utf-8", errors="replace"):
+        m = re.match(r"^(\d+) ([^|]+)\|", l)
+        if m: names[m.group(2).strip()] += int(m.group(1))
+    return names
+
+
+def main(a):
+    if a and a[0] == "card":
+        for n in a[1:]:
+            print(render(record(n, find_text(n))), end="\n\n")
+            try:
+                import tag_twins
+                tag_twins.main(["card", n])   # similar already-tagged ability lines, for reference
+            except Exception as ex:
+                print("(no twins:", ex, ")")
+        return
+    import importlib   # by name: the starter run lives in tag_reports, which imports the guards, which import this module (no import cycle)
+    importlib.import_module("tag_reports").starter_main(a)
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

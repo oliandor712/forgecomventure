@@ -1,0 +1,17 @@
+# Claude-only file in TOON (pipe-delimited table; # lines are comments). Test results for the power scorer review fixes, 2026-10-25.
+tier_power[6|]{date|tier|decks|min|p25|median|p75|max|band_after}:
+  2026-10-25|starter|10|25.9|26.8|27.0|27.3|27.5|-
+  2026-10-25|tier1|80|16.1|16.9|17.3|17.6|18.1|16-21 (tier1_rules)
+  2026-10-25|tier2|80|24.3|25.5|27.5|28.3|29.8|22-31 target 27.0
+  2026-10-25|tier3|80|29.4|31.9|33.5|35.2|38.7|28.5-39 target 33.5
+  2026-10-25|tier4|80|33.6|35.9|38.2|39.7|42.5|33-43 target 38.5
+  2026-10-25|tier5|80|38.8|41.7|43.0|43.7|47.8|38.5+ target 43.0
+checks[8|]{date|check|result}:
+  2026-10-25|live decks T2-T5 inside new bands|320 of 320 inside
+  2026-10-25|pool rebuild|27699 cards, 75 s, inputs scryfall 9361335 B, decks.json 830202 B, signals.json 174383 B
+  2026-10-25|niche tags in pool|artifact 421, land 281, enchantment 256, self_mill 244, landfall 195, tribal 132, graveyard_hate 93, storm 37, planeswalker 34, lands 31, equipment 20, vehicle 13, aura 9, saga 4, battle 3
+  2026-10-25|niche:lands after fix|Polluted Delta, Windswept Heath yes; Evolving Wilds, Fabled Passage no
+  2026-10-25|niche:landfall after fix|Scute Swarm, Omnath Locus of Creation still tagged (anchored regex)
+  2026-10-25|Gitrog T3 deck power|35.3 before niche role in rate(), 34.7 after
+  2026-10-25|strategies validate.py|26 roles with problems, all missing cards are AI:RemoveDeck:All or filtered on purpose
+  2026-10-25|code review high|10 findings, 9 fixed, 1 skipped (full record() per card, no cache)

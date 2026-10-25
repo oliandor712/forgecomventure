@@ -1,0 +1,245 @@
+Lands Matter Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Aggro
+Group hug
+Superfriends
+Lands matter
+Counters
+Blink
+Lifegain
+Voltron Mistakes
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Lands matter
+Deck Archetype
+Lands Matter: The Commander Archetype, Explained
+Most decks treat lands as the cost of playing Magic. A lands deck treats them as the payoff: the one permanent type almost nobody at the table can interact with.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Lands matter: Landfall and land-recursion turn the mana base itself into the engine.
+What Lands matter Decks Actually Do
+Lands-matter decks build around the land drop itself. Landfall triggers pay out whenever a land enters, extra land drops mean several payouts a turn, and recursion effects return lands from the graveyard so the same card triggers landfall repeatedly.
+What makes it strong in Commander is the interaction profile. Almost nobody runs land destruction, and board wipes do not touch lands, so an engine built on them survives what kills every other archetype. The deck also blurs the line with ramp: it accelerates as a side effect of doing its actual job, which means it is rarely short on mana for the enormous payoffs it eventually casts.
+The Lands matter engine
+Three steps that feed each other, which is what makes it a deck rather than a pile of cards sharing a theme.
+1 Play a land One a turn, or several with the right permanent out.
+2 Landfall triggers Lotus Cobra turns each land drop into extra mana.
+3 Get it back Ramunap Excavator plays lands out of the graveyard again.
+↻ The mana base is the engine, so it never stops being live.
+Which Colors Fit Lands matter
+Green owns this outright: landfall, land tutoring, extra land drops, and land recursion are all overwhelmingly green. Black is the strongest partner, adding graveyard recursion that treats lands like any other card. Blue contributes the draw-on-landfall effects that make the deck refuel, red adds land-based damage and sacrifice-for-value lands, and white participates least.
+Green Landfall payoffs, extra land drops, land tutors, and the recursion that makes the engine loop. The archetype's foundation.
+Black Graveyard recursion applied to lands, plus the sacrifice effects that put them there deliberately.
+Blue Draw-on-landfall effects, which turn every land drop into a card and keep the deck from running dry.
+Red Damage tied to lands and effects that sacrifice lands for value, knowing you will get them back.
+White The least represented, contributing a handful of land recursion and mass land-fetch effects.
+How color identity decides what you can play →
+Top 10 Lands matter Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building lands matter for the first time, these are the effects to
+understand before anything else.
+Lotus Cobra ↗
+A Treasure-like mana boost on every landfall trigger. Turns a fetchland into acceleration and snowballs from turn two.
+Crucible of Worlds ↗
+Play lands from your graveyard. The card that turns every fetchland and sacrifice land into a repeatable engine.
+Ramunap Excavator ↗
+The same effect on a creature, which means green can tutor for it. Redundancy is what makes the engine reliable.
+Life from the Loam ↗
+Dredge back three lands a turn. The most efficient land-recursion engine ever printed, and it never runs out.
+Splendid Reclamation ↗
+Returns every land from your graveyard to the battlefield at once, triggering landfall for each of them.
+Avenger of Zendikar ↗
+A Plant per land, then pumps them all on every landfall. The archetype's most reliable one-card win condition.
+Field of the Dead ↗
+A 2/2 Zombie for every land drop once you have seven differently named lands. Free bodies from a land slot.
+Exploration ↗
+An extra land drop every turn for one mana. Doubles the trigger count for the whole game.
+Tireless Tracker ↗
+A Clue on every landfall and counters on itself when you crack them. Card advantage that also becomes a threat.
+Aftermath Analyst ↗
+Self-mills, then returns every land from your graveyard when sacrificed. A modern Splendid Reclamation on a body.
+Top 10 Lands matter Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Lord Windgrace ↗
+A planeswalker commander that recurs lands, draws, and makes 2/2 Cats. Purpose-built for the archetype.
+The Gitrog Monster ↗
+Draws on every land put into the graveyard and eats a land each upkeep. Value engine and infamous combo piece.
+Titania, Protector of Argoth ↗
+A 5/3 Elemental for every land that hits your graveyard. Converts a fetchland into an army.
+Tatyova, Benthic Druid ↗
+A card and a life on every landfall. The friendliest entry point to the archetype and still one of the best.
+Omnath, Locus of Creation ↗
+Escalating payouts on the first, second, and third landfall each turn. Rewards extra land drops directly.
+Aesi, Tyrant of Gyre Strait ↗
+An extra land drop and a card on your first land each turn, Tatyova plus Exploration in the command zone.
+Multani, Yavimaya's Avatar ↗
+Grows with lands on the battlefield and in the graveyard, and returns to hand from either. A recurring Voltron threat.
+Sasaya, Orochi Ascendant ↗
+Flips once you hold seven lands and then makes each land tap for its whole type. Absurd mana from a mono-green shell.
+Ob Nixilis, the Fallen ↗
+Landfall that drains three from an opponent and grows him by three. A mono-black clock built on land drops.
+Kodama of the East Tree ↗
+Every permanent entering lets you put another from hand onto the battlefield, chaining off every land drop.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+This is a slow archetype whose best turns come late, and it can spend the first six turns doing nothing that looks like a threat. That is usually fine (nobody attacks the lands player) but it means the deck needs a real payoff and enough draw to find it. Watch out too for combo lines the archetype falls into by accident: several lands commanders assemble loops that end games abruptly, which may be more than your pod signed up for.
+Frequently Asked Questions
+What is a lands matter deck in Commander?
+A lands-matter deck builds around land drops as its engine, using landfall triggers that pay out when a land enters, extra land drops to trigger them repeatedly, and recursion that returns lands from the graveyard so the same land can trigger again.
+What is landfall in Magic?
+Landfall is a triggered ability that fires whenever a land enters the battlefield under your control. It triggers on any land entering, not just your land drop for the turn, which is why fetchlands and land-recursion effects are so strong alongside it.
+Is lands matter the same as ramp?
+They overlap heavily but are not identical. Ramp wants mana in order to cast expensive spells; lands matter wants land drops as triggers, and the extra mana is a side effect. Most lands decks are also ramp decks, but a ramp deck full of mana rocks is not a lands deck.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Lands matter? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Best Lands-Matter Commanders →Ramp →Graveyard recursion →The Land & Mana Base Guide →What Makes a Curve and Why It Matters →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Aggro
+Group hug
+Superfriends
+Lands matter
+Counters
+Blink
+Lifegain
+Voltron Mistakes
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

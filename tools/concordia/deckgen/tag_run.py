@@ -156,6 +156,10 @@ def clause_from(sv, first, kind, cid, line):
     return dict(id=cid, trigger=trig, cost=cost, verb="+".join(verbs), payload=" ".join(payload), affected=" ".join(affected), duration=("duration:" + dur) if dur else "")
 
 
+NICHE_TYPES = {"artifact", "enchantment", "planeswalker", "battle", "land", "aura", "equipment", "vehicle", "saga"}
+NOT_TRIBE = {"green", "white", "blue", "black", "red", "colorless", "multicolor", "artifact", "enchantment", "chosentype", "strictlyother", "creature"}   # lord:<x> that is not a creature type
+
+
 def record(name, text):
     face = text.split("\nALTERNATE")[0]
     lines = face.split("\n")
@@ -238,6 +242,19 @@ def record(name, text):
     if any(t.startswith("cost_mana:") for t in tags):
         tags = [t for t in tags if t != "cost:mana"]; ex_tags = [t for t in ex_tags if t != "cost:mana"]; base = [t for t in base if t != "cost:mana"]
         ex_groups = {g: [t for t in ts if t != "cost:mana"] for g, ts in ex_groups.items()}; kgroups = {g: [t for t in ts if t != "cost:mana"] for g, ts in kgroups.items()}
+    # niche:<archetype> = the effect only pays in a deck built around that archetype (user 2026-10-25); the card keeps its tags, consumers weigh them down
+    if "Land" in types.split() and "land_tutor" in tags and "cost_sacrifice_target:self" in tags and not re.search(r"ChangeType\$ ?(?:Land|Card)\.Basic", face): tags.append("niche:lands")   # fetchland that names land types (Polluted Delta): sacrifice outlet / land-recursion decks; a basic-land fetch (Evolving Wilds, Fabled Passage) fixes mana in any deck
+    for nt, arch in (("grave_hate", "graveyard_hate"), ("self_mill", "self_mill"), ("haunt", "haunt")):
+        if nt in tags: tags.append("niche:" + arch)
+    tset, ttypes = set(tags), types.split()
+    if any(t.startswith("lord:") and t[5:] not in NOT_TRIBE for t in tset): tags.append("niche:tribal")   # lord of one creature type (user 2026-10-25: all suggested)
+    if "condition:landfall" in tset or any(t.startswith(("x_is:landfall", "token_type:bird_landfall")) for t in tset) or re.search(r"^Landfall|\bLandfall\b", face, re.M): tags.append("niche:landfall")
+    tt = {t.split(":", 1)[1] for t in tset if t.startswith(("target_type:", "affected_type:"))}   # niche by target type (user 2026-10-25): every targeted/affected type is a non-creature, non-spell card type; mixed cards (Austere Command) and noncreature/nonland filters stay general
+    tt_niche = {x for t in tt for x in t.split("_") if x in NICHE_TYPES}
+    if tt_niche and all(set(t.split("_")) <= NICHE_TYPES for t in tt) and not any(t.startswith(("target_filter:non", "affected_filter:non")) for t in tset):
+        tags += ["niche:" + x for x in sorted(tt_niche)]
+    if any(t in tset for t in ("kw:storm", "kw:gravestorm", "grant_kw:storm", "storm")): tags.append("niche:storm")
+    ex_tags = ex_tags + [t for t in tags if t.startswith("niche:")]   # niche tags count as new in "new", like the other cross-check additions
     ai = sorted(set(re.findall(r"AILogic\$ ?([A-Za-z0-9_]+)", face)) | set(re.findall(r"^SVar:AttachAILogic:(\w+)", face, re.M)))
     aipref = "AIPreference" in face or "SVar:AIPreference" in face
     rd = "AI:RemoveDeck" in face
@@ -290,6 +307,12 @@ def find_text(name):
     p = _IDX.get(name.lower())
     if not p: return ""
     with open(p, errors="replace") as fh: return fh.read()
+
+
+def tags(name):
+    """the single flat tag set of a card: record()['tags'] including the typing tags and niche:* tags, the one source every consumer should read (empty set when the script is missing)"""
+    text = find_text(name)
+    return set(record(name, text)["tags"]) if text else set()
 
 
 def deck_cards(path):

@@ -1,0 +1,204 @@
+Commander Strategies | EDHMatch
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Home
+Strategies
+Commander Strategies
+Discover powerful Commander strategies and find the perfect playstyle for your next EDH deck. Each strategy guide includes recommended commanders, key cards, and deckbuilding tips.
+Sacrifice & Value
+Lifegain
+Lifegain decks are for players who want each point of life to become a resource, not just a larger cushion against attacks. This strategy wants to gain life in steady repeatable triggers, using lifegain commanders, Soul Warden effects, and payoff cards, to win through life drain, oversized creatures, or a charged Aetherflux Reservoir. Unlike Group Hug, it keeps the resources for itself, and unlike Aristocrats it is driven by life gained rather than death triggers. The best lifegain decks EDH players build feel patient early, then convert a safe life total into pressure.
+View Strategy →
+Aristocrats
+Aristocrats decks are for players who enjoy turning expendable creatures into cards, Treasure, damage, and life drain whenever they die. This strategy wants to make cheap bodies, use sacrifice commanders and free outlets, and convert each death trigger into value to win through drain effects or recursive sacrifice loops. Unlike Tokens, it cares less about attacking with many bodies, and unlike broad Sacrifice decks it is specifically built around death trigger payoffs. The best aristocrats commanders let you grind from small pieces while the table decides whether removing your board helps you or hurts them.
+View Strategy →
+Sacrifice
+Sacrifice decks are for players who want their own permanents to be flexible resources rather than pieces to protect at all costs. This strategy wants to feed creatures, artifacts, and tokens into a sacrifice outlet, using fodder makers, recursion, and sacrifice commanders, to win through mana loops, edicts, drain payoffs, or a steady resource lead. Unlike Aristocrats, it is broader than death trigger drain, and unlike Tokens it values bodies mainly as expendable fuel. The best sacrifice commanders keep the engine moving even when opponents point removal at your board.
+View Strategy →
+Card Draw
+Card Draw decks are for players who want a full hand to be the engine, the protection, and eventually the win condition. This strategy wants to draw extra cards every turn, using card draw commanders, repeatable engines, wheels, and draw payoffs, to win through card advantage EDH plans such as damage triggers, stocked interaction, or superior late-game resources. Unlike Control, it is not only answering threats, and unlike Spellslinger it cares about the draw event more than the spell cast. The best card draw commanders either refill you directly or convert each extra card into pressure.
+View Strategy →
+Blink
+Blink decks are for players who want every creature to matter more than once. This strategy wants to exile and return creatures with enter-the-battlefield effects, using blink commanders, flicker spells, and repeatable engines, to win through compounding value, protected threats, or trigger loops. Unlike Control, Blink handles the game through reusable creature triggers instead of mostly counterspells, and unlike Tokens it may make bodies incidentally rather than going wide first. The best blink commanders make modest creatures convert into cards, removal, ramp, and rebuilt boards over several turns.
+View Strategy →
+Graveyard
+Reanimator
+Reanimator decks are for players who want to turn the graveyard into a shortcut for creatures that should cost far more mana. This strategy wants to load its own graveyard with high-impact targets, using discard, self-mill, and Entomb-style tutors, to win by casting cheap reanimation spells that cheat creatures into play ahead of schedule. Unlike Graveyard value decks, Reanimator is less about recurring small resources every turn, and unlike Mill it is not trying to empty libraries as the primary weapon. The best reanimator commanders and graveyard commanders help discard threats, return them, or convert each reanimated creature into immediate pressure.
+View Strategy →
+Graveyard
+Graveyard decks are for players who want every discarded, milled, or destroyed card to remain part of the game plan. This strategy wants to stock the graveyard, using self-mill, discard outlets, sacrifice, and dredge-style cards, to win by recurring threats, lands, and value pieces until opponents run out of clean answers. Unlike Reanimator, graveyard value decks EDH players build are not centered on one huge creature arriving early, and unlike Mill they use self-mill as fuel rather than treating libraries as the main target. The best graveyard commanders turn the graveyard into a steady resource engine that can rebuild after removal.
+View Strategy →
+Mill
+Mill decks are for players who want to pressure a different resource: the cards left in each library. This strategy wants to put cards from libraries into graveyards, using repeatable mill commanders, doublers, and self-mill engines, to win by emptying opponents' decks or by converting stocked graveyards into value. Unlike Reanimator, Mill is not mainly trying to cheat one creature into play, and unlike Graveyard value it treats milling as the weapon or fuel source rather than the recursion engine itself. The best mill decks EDH players build respect the multiplayer math by multiplying output, protecting engines, or turning every milled card into another resource.
+View Strategy →
+Spell-Based
+Spellslinger
+Spellslinger decks are for players who want each instant and sorcery to advance the board, refill the hand, or pressure life totals. This strategy wants to cast cheap spells across every turn cycle, using spellslinger commanders, magecraft payoffs, and copy effects, to win through accumulated damage, spell-made tokens, or card advantage. Unlike Storm, it does not need one huge chain turn, and unlike Combo it is not waiting for specific pieces to end the game at once. The best instants and sorceries decks reward steady sequencing and careful use of interaction.
+View Strategy →
+Combo
+Combo decks are for players who enjoy finding a narrow line, protecting it, and ending the game with specific cards working together. This strategy wants to assemble combo commanders, tutors, draw, and compact two-card or three-card packages, using infinite combos or deterministic loops, to win in one decisive moment. Unlike Spellslinger it is not paid for every spell cast, unlike Storm it does not need a long chain turn, and unlike Big Mana it does not rely on casting one enormous payoff. The best combo decks EDH players build balance speed with enough interaction to survive the table's disruption.
+View Strategy →
+Storm
+Storm decks are for players who want to sculpt a hand, pick one decisive turn, and chain cheap spells until the count becomes lethal. This strategy wants to cast many spells in one turn, using cantrips, rituals, cost reducers, and storm commanders, to win through Grapeshot, Tendrils of Agony, Aetherflux Reservoir, or another storm-count payoff. In the Spellslinger, Storm, Big Mana, and Combo cluster, Spellslinger grinds value from each instant or sorcery, Big Mana spends on fewer huge spells, Combo assembles fixed pieces, and Storm turns spell volume into the win. The best storm combo EDH decks reward careful sequencing because every card has to convert into mana, cards, count, or a protected finish.
+View Strategy →
+Big Mana
+Big Mana decks are for players who want the game to build toward casting one spell that changes every resource count at once. This strategy wants to accelerate beyond normal mana development, using land ramp, mana rocks, doublers, and big mana commanders, to win through X spells, huge spells EDH tables have to answer, or haymakers like Torment of Hailfire and Expropriate. In the Ramp, Landfall, and Big Mana overlap, Ramp is acceleration, Landfall turns land drops into triggers, and Big Mana is the payoff plan for spending all that mana. Unlike Storm, it usually casts fewer spells in a turn and asks each one to matter on resolution.
+View Strategy →
+Creatures & Combat
+Tokens
+Token decks are for players who want one card to become many bodies and then decide whether those bodies attack, block, draw cards, or fuel another engine. This strategy wants to flood the battlefield with creatures, using token commanders, repeatable generators, and anthem effects, to win through a go wide attack or by converting the swarm into damage, drain, or mana. Tokens is different from Aristocrats because making bodies comes first, from Counters because it grows wide instead of tall, and from Voltron because it spreads pressure across many creatures. The best token decks EDH players build reward patience against sweepers and careful timing on the finishing turn.
+View Strategy →
+Voltron
+Voltron decks are for players who want the game to revolve around one protected attacker and the timing of each combat step. This strategy wants to build one creature, usually a commander, using equipment and auras for power, evasion, and protection, to win through 21 commander damage on each opponent. Unlike Tokens or Aggro, Voltron does not spread pressure across many bodies, and unlike broad Equipment decks the gear is focused on one threat rather than a wider artifact engine. The best Voltron commanders make commander damage decks feel like a resource puzzle: suit up, connect, protect the threat, then rebuild if the table answers it.
+View Strategy →
++1/+1 Counters
++1/+1 counter decks are for players who want small creature upgrades to become permanent pressure across the board. This strategy wants to grow creatures over several turns, using +1/+1 counter commanders, counter doublers, and counter payoffs, to win through combat damage from creatures that keep getting larger. Unlike Tokens, Counters grows creatures over time instead of making many bodies, and unlike Voltron it spreads power beyond one attacker; unlike Proliferate, it focuses on +1/+1 growth rather than every counter type, while Infect is a separate poison plan. Counters matter decks reward pilots who sequence early creatures, multipliers, and protection so each trigger converts into lasting board presence.
+View Strategy →
+Proliferate
+Proliferate decks are for players who want one trigger to move several counter-based plans forward at the same time. This strategy wants to place useful counters first, using +1/+1 counters, poison, loyalty, charge counters, and repeatable proliferate commanders, to win through a grown board, planeswalker ultimates, or the final poison counter. Unlike +1/+1 Counters, Proliferate multiplies any counter type rather than only creature size, and unlike Infect it can use poison as one route without making ten poison the whole plan. Counter synergy EDH decks built around proliferate reward pilots who seed the right counters, then chain small increases until every permanent matters.
+View Strategy →
+Equipment
+Equipment decks are for players who want the gear itself to be the engine, turning ordinary creatures into credible attackers. This strategy wants to assemble weapons, tutors, and equip-cost shortcuts, using equipment commanders that find or attach gear, to win through upgraded combat, commander damage, or a team carrying shared tools. Unlike Voltron, Equipment does not have to put every card on one creature, and unlike Artifacts it focuses on weapons rather than every artifact type. The best equipment decks EDH players build recover well after creature sweepers because the gear usually stays on the battlefield.
+View Strategy →
+Infect
+Infect decks are for players who want life totals to matter less than reaching ten poison on each opponent. This strategy wants to connect with infect and toxic creatures, using pump spells, evasion, protection, and infect commanders, to win through poison counter decks EDH opponents have to answer early. In the Counters, Proliferate, and Infect overlap, Counters grows creatures, Proliferate multiplies many counter types, and Infect is the poison win condition that proliferate can accelerate. The social cost is real: once poison appears, the table often treats you as the first threat, and some pods restrict the mechanic before deck selection.
+View Strategy →
+Aggro
+Aggro decks are for players who want to commit threats early, attack often, and make combat math matter every turn. This strategy wants to pressure all opponents with efficient attackers, using anthems, haste, attack triggers, extra combats, and aggro commanders, to win through repeated combat damage before slower engines stabilize. In Commander that still means pushing through 120 total damage, so go-wide aggro EDH decks need refueling and scaling damage rather than only fast starts. Aggro differs from Tokens because it focuses on attacking with the bodies, from Voltron because it spreads pressure across many creatures, and from Infect because it deals life-total damage instead of poison.
+View Strategy →
+Control & Resources
+Ramp
+Ramp decks are for players who want to spend the early game accelerating so later turns happen ahead of schedule. This strategy wants to build more mana than the table, using mana ramp EDH staples, extra land drops, dorks, and rocks, to win through earlier threats, large spells, or a resource lead opponents must answer. Ramp is different from Landfall because acceleration is the point, and different from Big Mana because it is the engine rather than the payoff. The best ramp commanders reward extra mana sources while still giving you something meaningful to cast.
+View Strategy →
+Control
+Control decks are for players who enjoy deciding which threats matter, spending answers carefully, and winning after the table has slowed down. This strategy wants to stabilize the game, using control commanders, counterspells, removal, sweepers, and card-draw engines, to win through a protected finisher, planeswalker, combo finish, or long-term card advantage. Unlike Stax, Control answers threats on the stack or battlefield instead of locking everyone out of resources. The best control decks EDH players build accept that multiplayer control cannot counter everything, so they lean on sweepers and engines that trade across several opponents.
+View Strategy →
+Stax
+Stax decks are for players who want to win by deciding which resources matter before opponents can use them. This strategy wants to tax mana, cards, combat, and casting windows, using stax commanders and resource denial EDH pieces like Winter Orb and Smokestack, to win through a board state where your deck still functions and opponents cannot rebuild. Unlike Control, which answers threats after they appear, Stax locks the costs and rules of the game so many threats never get cast. The best stax commanders break parity, then convert the slowed table into combat damage, attrition, or a compact combo.
+View Strategy →
+Group Hug
+Group Hug decks are for players who want table politics to matter as much as board position. This strategy wants to give everyone extra cards, lands, or mana, using group hug commanders and symmetrical resource effects, to win through political leverage, hidden payoffs, or a carefully timed finish. Unlike Lifegain, it does not make your own life total the engine; it gives resources away and tries to profit from who uses them. The best political decks EDH players remember are frank about the risk: your gifts can help the wrong player first.
+View Strategy →
+Enchantress
+Enchantress decks are for players who want each enchantment cast to replace itself and add another layer to the board. This strategy wants to chain cheap enchantments, using enchantress commanders, draw engines, and protective pieces, to win through constellation triggers, token makers, or an aura-based Voltron line. Unlike general Card Draw decks, Enchantress ties its cards to enchantment casts, and unlike Lifegain it treats life from Sythis-style triggers as support rather than the main engine. The best enchantment decks EDH players build feel incremental: ramp a little, draw a card, protect the engine, then convert the chain into threats.
+View Strategy →
+Artifacts
+Artifact decks are for players who want cheap permanents, mana rocks, and utility pieces to become one connected engine. This strategy wants to build artifact count and mana density, using artifact commanders, cost reducers, Treasure, recursion, and untap effects, to win through construct armies, loops, or artifact payoffs. Unlike Equipment, it cares about every artifact rather than just weapons, and unlike Ramp it turns the mana rocks themselves into the engine instead of only casting bigger spells. The best artifact decks EDH players build reward careful sequencing because each small piece can convert the next piece into more mana or cards.
+View Strategy →
+Landfall
+Landfall decks are for players who want every land drop to become a trigger, not just another mana source. This strategy wants to put lands onto the battlefield repeatedly, using fetch lands, extra land drops, land recursion, and landfall commanders, to win through tokens, counters, damage, cards, or other lands matter decks EDH payoffs. In the Ramp, Landfall, and Big Mana cluster, Ramp accelerates mana, Big Mana spends that mana on huge spells, and Landfall treats the land entering as the engine itself. The deck feels like turning the most reliable game action into a chain of visible rewards.
+View Strategy →
+Find Your Perfect Strategy
+Not sure which strategy fits your playstyle? Take our interactive quiz to get personalized commander recommendations based on your preferences.
+Take the Quiz
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH

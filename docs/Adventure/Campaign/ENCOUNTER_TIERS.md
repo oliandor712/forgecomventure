@@ -48,7 +48,7 @@ Tier 1 requirements live in `tools/concordia/tier1_rules.py` (the one source; de
 | Tutors | 0 | 0-1 | 0-3 |
 | Average mana value (nonland) | 2.5-3.4 | 2.6-3.6 | 2.8-3.9 |
 | Creatures | at least 15 | at least 15 | at least 15 |
-| Average card power (§3a) | 18 or less | 18-30 | 26 or more |
+| Average card power (§3a) | 16-21 | 22-31 | 28.5-39 |
 | Rarity | Commons, plus up to 15 uncommons. No rares or mythics | 10 rares or fewer, 1 mythic or fewer | No real limit |
 | Card types (Moxfield grouping) | at least 6 noncreature cards, 4 of them instants or sorceries; creatures at most 85% | at least 4 instants, 3 sorceries, 4 artifacts, 2 enchantments; no type above 60% | as Tier 2 |
 | Game Changers | 0 | 0 | 3 or fewer |
@@ -134,13 +134,18 @@ Each tier is one official Commander Bracket. The bracket's rules are hard checks
 `deck_tier.py` gives every nonland card a power score from 0 to 100, using only data in this repository:
 
 ```
-power = 35 × cube rank       (1 − (rank − 1)/4000 from forge-gui/res/draft/rankings_cubecobra.txt; 0 if unranked)
+power = 40 × raw power       (the highest of: cube rank 1 − (rank − 1)/4000, cEDH inclusion rate, 0.6 × popularity;
+                              popularity = the higher of EDHREC rank and the share of collected decklists running the card)
       + 15 × mana efficiency  (clamp((6 − mana value)/5, 0, 1))
-      + 15 × role             (1 if the card ramps, draws, removes, wipes, counters or tutors)
-      + 15 × rarity           (common 0.1, uncommon 0.35, rare 0.7, mythic 1.0)
+      + 15 × role             (1 if the card ramps, draws, removes, wipes, counters or tutors; 0.5 if it is a niche:* card)
+      + 10 × rarity           (common 0.1, uncommon 0.35, rare 0.7, mythic 1.0)
       + 10 × Game Changer     (forge-gui/res/lists/gamechangers.txt)
       +  5 × fast mana        +  5 × tutor
 ```
+
+Tier power bands (`tools/concordia/tier_table.json`, baseline 2026-10-25; live-deck medians in brackets): Tier 1 16-21 [17.3], Tier 2 22-31
+[27.5], Tier 3 28.5-39 [33.5], Tier 4 33-43 [38.2], Tier 5 38.5 and up [43.0]. Neighbouring bands overlap by 2.5 to 5 points, so power gates
+a tier but the other tier rules (rarity, Game Changers, ramp, removal) tell neighbours apart.
 
 - **The deck's power is the average over its nonland cards.** It was calibrated on Concordia's lesson decks (about
   11), starters (24-29) and Realm of Legends enemies (26-35).

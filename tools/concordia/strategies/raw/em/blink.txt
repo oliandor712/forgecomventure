@@ -1,0 +1,419 @@
+Best Blink Commanders for EDH | EDHMatch
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Home
+Strategies
+Blink
+Back to SearchBest Blink Commanders for EDH
+Blink decks are for players who want every creature to matter more than once. This strategy wants to exile and return creatures with enter-the-battlefield effects, using blink commanders, flicker spells, and repeatable engines, to win through compounding value, protected threats, or trigger loops. Unlike Control, Blink handles the game through reusable creature triggers instead of mostly counterspells, and unlike Tokens it may make bodies incidentally rather than going wide first. The best blink commanders make modest creatures convert into cards, removal, ramp, and rebuilt boards over several turns.
+Best Colors for Blink Decks
+Azorius pairs white flicker spells with blue draw, bounce, and counterspells for the cleanest blink shell.
+Bant adds green ramp and creature quality so blink engines curve out faster and rebuild larger boards.
+Esper adds black removal, drain, and recursion to blink creatures that disrupt or finish games.
+How Do Blink Decks Win in Commander?
+Blink decks excel through a specific playstyle and win conditions. Here's how they work:
+✓ You cast creatures whose enter the battlefield triggers draw remove ramp or make bodies.
+✓ You reuse those triggers with one-shot flicker spells and repeatable blink engines.
+✓ You hold instant-speed blink to protect key creatures from removal or sweepers.
+✓ You grind cards and board presence by making the same creature work every turn.
+✓ You finish with a rebuilt board token engine or trigger loop.
+Best Cards for Blink EDH Decks
+Ephemerate
+Blinks a creature for one mana, then rebounds to reuse or protect it again.
+Thassa, Deep-Dwelling
+Turns one creature into a repeatable end-step trigger every turn.
+Soulherder
+Blinks each end step and grows as creatures leave exile.
+Mulldrifter
+Draws two on entry, making every blink convert into more cards.
+Ghostly Flicker
+Blinks two permanents and pairs with recursion creatures for value loops.
+How to Build a Blink Commander Deck
+Core Components
+✓Run 8-12 flicker effects such as Ephemerate, Momentary Blink, Ghostly Flicker, and Conjurer's Closet
+✓Play 20-25 creatures with enter-the-battlefield effects that draw, remove, ramp, drain, or make tokens
+✓Include repeatable blink engines like Thassa, Deep-Dwelling and Soulherder
+✓Add recursion creatures such as Archaeomancer or Mnemonic Wall to rebuy flicker spells
+Deck Structure
+✓Prefer interaction on creatures so Reflector Mage, Knight of Autumn, or Ravenous Chupacabra can be reused
+✓Keep mana open when instant-speed blink can protect a key engine
+✓Balance value creatures with actual closers so the deck does not only draw cards
+Win Conditions
+✓Out-card opponents until your rebuilt board is larger than what removal can contain
+✓Blink token producers repeatedly to assemble a wide board without playing a token deck first
+✓Loop drain triggers such as Gray Merchant of Asphodel for a finishing turn
+Weaknesses of Blink Decks
+⚠Effects like Torpor Orb and Hushbringer shut off the enter-the-battlefield triggers the deck relies on.
+⚠Blink can pressure life totals slowly if its value creatures do not convert into a win.
+⚠Exile removal and repeated commander removal can leave the engine without a reusable target.
+Is Blink Right for You?
+Blink is a strong first engine deck because many creatures replace themselves and flicker spells double as protection. It suits players who enjoy sequencing triggers, saving creatures at the right moment, and grinding small advantages into a board. Budget builds work well with cards like Ephemerate, Mulldrifter, and Ghostly Flicker.
+Related Commander Strategies
+Control
+Control answers with spells; Blink stabilizes through reusable creature triggers.
+Card Draw
+Card Draw sees more cards directly; Blink draws by reusing creatures like Mulldrifter.
+Tokens
+Tokens goes wide first; Blink may create tokens by looping enter-the-battlefield creatures.
+Browse Commander Lists
+Top Blink CommandersClonesCantrips
+Top Blink Commanders
+Brago, King Eternal
+MV: 4
+BlinkControlCombo+7 more
+$3.13TCGPlayer
+€2.23CardMarket
+Niko, Light of Hope
+MV: 4
+BlinkTokensClones+7 more
+$0.37TCGPlayer
+€0.67CardMarket
+Atraxa, Grand Unifier
+MV: 7
+BlinkComboInfect+7 more
+$18.36TCGPlayer
+€20.82CardMarket
+Aminatou, the Fateshifter
+MV: 3
+BlinkControlCombo+7 more
+$3.69TCGPlayer
+€4.67CardMarket
+Pantlaza, Sun-Favored
+MV: 5
+DinosaursDiscoverRamp+7 more
+$5.75TCGPlayer
+€5.93CardMarket
+Elesh Norn, Mother of Machines
+MV: 5
+BlinkTokensETB+7 more
+$25.34TCGPlayer
+€21.01CardMarket
+Preston, the Vanisher
+MV: 4
+BlinkTokensCombo+7 more
+$36.14TCGPlayer
+€27.39CardMarket
+Ketramose, the New Dawn
+MV: 3
+ExileBlinkControl+7 more
+$3.37TCGPlayer
+€5.73CardMarket
+Phelia, Exuberant Shepherd
+MV: 2
+Blink+1/+1 CountersExile+7 more
+$5.82TCGPlayer
+€6.19CardMarket
+Roon of the Hidden Realm
+MV: 5
+BlinkControlETB+7 more
+$0.36TCGPlayer
+€0.26CardMarket
+Kefka, Court Mage // Kefka, Ruler of Ruin
+MV: 5Universes Beyond
+DiscardComboControl+7 more
+$6.86TCGPlayer
+€6.13CardMarket
+Yorion, Sky Nomad
+MV: 5
+BlinkControlCombo+7 more
+$0.51TCGPlayer
+€0.74CardMarket
+Ranar the Ever-Watchful
+MV: 4
+ForetellBlinkTokens+7 more
+$0.36TCGPlayer
+€0.30CardMarket
+Plagon, Lord of the Beach
+MV: 3
+Toughness MattersBlinkCombo+7 more
+$0.97TCGPlayer
+€1.92CardMarket
+Arthur, Marigold Knight
+MV: 5
+BlinkAggroETB+7 more
+N/ATCGPlayer
+N/ACardMarket
+Aang, at the Crossroads // Aang, Destined Savior
+MV: 5Universes Beyond
+BlinkClonesCombo+7 more
+$0.59TCGPlayer
+€0.54CardMarket
+Kykar, Zephyr Awakener
+MV: 4
+BlinkControlTokens+7 more
+$0.33TCGPlayer
+€0.33CardMarket
+Galadriel, Light of Valinor
+MV: 5Universes Beyond
+Elves+1/+1 CountersTokens+7 more
+$27.13TCGPlayer
+€23.87CardMarket
+Tivit, Seller of Secrets
+MV: 6
+PoliticsArtifactsCombo+7 more
+$8.86TCGPlayer
+€5.89CardMarket
+Yarok, the Desecrated
+MV: 5
+Lands MatterLandfallETB+7 more
+$0.33TCGPlayer
+€0.48CardMarket
+Lagrella, the Magpie
+MV: 3
+BlinkComboControl+7 more
+$0.25TCGPlayer
+€0.13CardMarket
+Syr Vondam, Sunstar Exemplar
+MV: 2
+BlinkAristocratsTokens+7 more
+$0.35TCGPlayer
+€0.68CardMarket
+Loot, the Pathfinder
+MV: 5
+BlinkComboMidrange+7 more
+$0.43TCGPlayer
+€0.85CardMarket
+Shiko, Paragon of the Way
+MV: 5
+BlinkSpellslingerCombo+7 more
+$0.95TCGPlayer
+€1.25CardMarket
+Breya, Etherium Shaper
+MV: 4
+ArtifactsComboTokens+7 more
+$0.39TCGPlayer
+€0.45CardMarket
+Filter and browse all Blink commanders →
+Frequently Asked Questions
+What makes a good Blink commander?
+The best blink commanders typically provide consistent access to the strategy's core mechanics. Look for commanders that you cast creatures whose enter the battlefield triggers draw remove ramp or make bodies.
+How do Blink decks win?
+Blink decks win through a combination of Ephemerate, Thassa, Deep-Dwelling, Soulherder, and other synergistic pieces that blink decks are for players who want every creature to matter more than once.
+What are the best colors for Blink?
+Azorius pairs white flicker spells with blue draw, bounce, and counterspells for the cleanest blink shell. However, Bant adds green ramp and creature quality so blink engines curve out faster and rebuild larger boards.
+What are the weaknesses of Blink decks?
+Effects like Torpor Orb and Hushbringer shut off the enter-the-battlefield triggers the deck relies on. Blink can pressure life totals slowly if its value creatures do not convert into a win. Exile removal and repeated commander removal can leave the engine without a reusable target.
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH

@@ -1,0 +1,245 @@
+Group Hug Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Control
+Ramp
+Aggro
+Group hug
+Superfriends
+Lands matter
+Counters
+Blink
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Group hug
+Deck Archetype
+Group Hug: The Commander Archetype, Explained
+Group hug gives everyone extra cards, extra lands, and extra mana. The interesting question, the one the archetype lives or dies on, is what you do with the game you have just accelerated for four people.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Group hug: Gives the whole table resources, and wins from the goodwill it creates.
+What Group hug Decks Actually Do
+Group hug decks hand out resources to the whole table: extra draws, extra land drops, extra mana, sometimes extra creatures. In exchange they buy something less tangible: nobody attacks the player giving them cards, and a deck that is never anyone's first target gets to play a very long game unmolested.
+The archetype splits into two honest halves. Pure group hug is a social deck that genuinely wants a bigger, faster, more interactive game and is relaxed about winning. Everything else is group hug as a disguise: accelerate the table, take the political cover it provides, and then convert the enormous shared resources into a win that only works because everyone has a full hand. Both are legitimate; being clear about which one you brought is the polite part.
+The Group hug engine
+Three steps that feed each other, which is what makes it a deck rather than a pile of cards sharing a theme.
+1 Give everyone cards Howling Mine draws the whole table an extra one each turn.
+2 Nobody attacks you You are the reason their turns are worth taking.
+3 Take more than you gave You built to use the extra resources. They did not.
+↻ The table keeps you alive right up until it should not have.
+Which Colors Fit Group hug
+Blue, white, and green cover most of the archetype. Blue draws the cards, white makes and shares the resources, and green supplies the extra land drops and mana. Red appears in chaos-flavoured builds, and black is the odd color out. It has the drain payoffs that punish the table for the cards you gave them, which is the group-slug variant rather than the hug.
+Blue Table-wide draw effects, and the card advantage that lets you use the shared resources better than anyone else.
+White Shared resource generation and the pillowfort effects that make attacking you unattractive on top of impolite.
+Green Extra land drops and mana for everyone, which accelerates the game more than any draw effect does.
+Red Chaos and randomness in the more anarchic builds, plus damage payoffs for handing out cards.
+Black The group-slug angle: drain and discard payoffs that turn everyone's full hand into their problem.
+How color identity decides what you can play →
+Top 10 Group hug Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building group hug for the first time, these are the effects to
+understand before anything else.
+Howling Mine ↗
+An extra card for everyone each turn. The original group hug card, and still the cleanest statement of the plan.
+Font of Mythos ↗
+Two extra cards for everyone. Doubles the effect and doubles the goodwill.
+Rites of Flourishing ↗
+An extra card and an extra land drop for every player. Accelerates the whole table meaningfully, not just cosmetically.
+Dictate of Kruphix ↗
+Flash makes it land at the end of the turn before yours, so you are the first to benefit from it.
+Heartbeat of Spring ↗
+Lands produce double mana for everyone. Enormous, and it favours whoever has the best mana sink.
+Horn of Greed ↗
+A card for every land drop by anyone. In a table with extra land drops going around this draws absurdly.
+Kami of the Crescent Moon ↗
+A cheap, repeatable draw for everyone on a body, and a lightning rod that is not you.
+Minds Aglow ↗
+A joined-forces draw where every player contributes mana. Generous, and it refills your hand for a fraction of the cost.
+Collective Voyage ↗
+The land version of the same idea. Ramps the whole table, and you chose the timing.
+Braids, Conjurer Adept ↗
+Everyone puts a permanent onto the battlefield from hand each turn. The most generous effect in the archetype and the most easily abused.
+Top 10 Group hug Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Kynaios and Tiro of Meletis ↗
+A card and a land for everyone each turn. The archetype's flagship, and four colors of tools to exploit it.
+Zedruu the Greathearted ↗
+Gives away permanents and draws and gains life for each. Turns generosity into a genuine engine.
+Phelddagrif ↗
+The original hug: every ability helps you and helps an opponent. Old, strange, and beloved.
+Kwain, Itinerant Meddler ↗
+Each player may draw and gain life. Cheap, symmetrical, and a famous engine piece for decks that draw better than the table.
+Selvala, Explorer Returned ↗
+Parley gives everyone cards and you the mana. Generous in appearance, lopsided in practice.
+Edric, Spymaster of Trest ↗
+Everyone draws for connecting with a creature, which points the whole table away from you and at each other.
+Braids, Conjurer Adept ↗
+Free permanents for all, every turn. You are the one who built a deck around abusing it.
+Kenrith, the Returned King ↗
+Five abilities anyone can activate, in five colors. The most flexible political commander in the format.
+Xyris, the Writhing Storm ↗
+Forces opponents to draw and rewards you with a Snake for each. The clearest hug-into-win pipeline.
+Nekusar, the Mindrazer ↗
+The group-slug inversion: everyone draws extra and takes damage for it. The same cards, aimed the other way.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+Group hug earns a reputation quickly, and it is usually deserved. A table that has been handed forty cards over eight turns and then loses to a Psychosis Crawler will remember. Decide what your deck is, say so at the start, and if it is a hug-into-kill deck, tell people. The strategy is fine; the ambush is what causes friction. The other failure mode is the sincere one: a genuine hug deck can accelerate a stronger deck into winning far sooner than it would have.
+Frequently Asked Questions
+What is a group hug deck in Commander?
+A group hug deck gives resources to every player (extra card draw, extra land drops, extra mana) in exchange for political goodwill and the freedom to play a long game unthreatened. Some are genuinely social decks; others use the generosity as setup for a win that needs everyone to have a full hand.
+How do group hug decks win?
+Most commonly by exploiting the resources they handed out: damage per card drawn, a payoff for maximum hand size, or a combo assembled while nobody was attacking them. Some pure hug decks barely try to win at all, treating the archetype as a way to make everyone else's game more interesting.
+What is the difference between group hug and group slug?
+Group hug gives resources away and profits from the goodwill. Group slug gives them away and profits from the damage: cards like Nekusar, the Mindrazer turn every extra draw into life loss. They share almost all the same enablers and differ entirely in the payoff.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Group hug? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Stax →Control →What Is Rule 0? →The Ultimate Guide to Hosting Commander Night →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Control
+Ramp
+Aggro
+Group hug
+Superfriends
+Lands matter
+Counters
+Blink
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

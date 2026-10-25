@@ -1,0 +1,245 @@
+Artifact Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Go wide
+Aristocrats
+Enchantress
+Artifacts
+Tribal
+Stax
+Combo
+Control
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Artifacts
+Deck Archetype
+Artifacts: The Commander Archetype, Explained
+Artifacts are the only card type that every color can play, which makes this the one archetype where the commander picks the colors rather than the strategy doing it.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Artifacts: Built around a critical mass of artifacts and the payoffs that count them.
+What Artifacts Decks Actually Do
+Artifact decks assemble a critical mass of artifacts and run payoffs that count them, recur them, or turn them into something else. Because artifacts are colorless, the deck's actual engine (the mana rocks, the equipment, the cost reducers, the sacrifice loops) is available regardless of what is in the command zone.
+In practice there are two lanes that share a lot of cards. Artifact aggro plays cheap artifacts and creatures that grow with the count, closing games quickly. Artifact value plays cost reducers and recursion, chaining artifacts into more artifacts until something in the pile is lethal. Both benefit from artifacts being the most re-buyable permanent type in the format: a graveyard full of them is a resource, not a loss.
+The Artifacts engine
+Three steps that feed each other, which is what makes it a deck rather than a pile of cards sharing a theme.
+1 Play cheap artifacts Most cost one or two mana, and several cost none at all.
+2 The next costs less Foundry Inspector takes a mana off everything that follows.
+3 The count pays out Cranial Plating and Steel Overseer scale with how many you have.
+↻ Each artifact makes the rest of the deck cheaper and bigger.
+Which Colors Fit Artifacts
+The honest answer is that the artifacts themselves are colorless and the colors are chosen for what they add on top. Blue is the strongest partner. It has the best artifact-specific card advantage and the cheating-into-play effects. Red brings recursion and treasure, white brings equipment and mass recursion, black brings tutors and sacrifice payoffs, and green brings ramp and, unusually, the format's best artifact removal. Colorless is a real option: several strong commanders let a deck run no colors at all.
+Blue The best artifact payoffs, cost reduction, and the effects that put artifacts onto the battlefield from anywhere.
+Red Recursion from the graveyard, Treasure generation, and the sacrifice-and-rebuy loops the archetype is built on.
+White Equipment support and mass artifact recursion. The color that turns an artifact board into an attacking one.
+Black Tutors to find the missing piece, and payoffs that convert artifacts leaving the battlefield into drain.
+Green Ramp to deploy faster and, worth remembering, the best artifact removal in the format, which cuts both ways.
+How color identity decides what you can play →
+Top 10 Artifacts Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building artifacts for the first time, these are the effects to
+understand before anything else.
+Urza's Saga ↗
+A land that makes a Construct scaling with your artifact count and then tutors a cheap artifact. Enormous value from a land slot.
+Foundry Inspector ↗
+Artifacts cost one less. Cost reduction is what turns a hand of artifacts into a single explosive turn.
+Cranial Plating ↗
+Plus one power per artifact you control, with a black-mana equip at instant speed. The archetype's classic one-hit kill.
+Steel Overseer ↗
+A counter on every artifact creature each turn. Slow to start and unbeatable if ignored for three turns.
+Goblin Welder ↗
+Swaps an artifact on the battlefield for one in a graveyard, free, every turn. Recursion and disruption at once.
+Krark-Clan Ironworks ↗
+Sacrifice any artifact for two mana. The engine behind most artifact combo loops in the format.
+Mystic Forge ↗
+Play artifacts off the top of your library. In a deck that is mostly artifacts, this is drawing several extra cards a turn.
+Wurmcoil Engine ↗
+Six-mana lifelink and deathtouch that leaves two tokens behind. The fair, unglamorous card that stabilises boards.
+Scrap Trawler ↗
+Returns a cheaper artifact whenever an artifact you control dies, chaining into itself across a sacrifice loop.
+Unwinding Clock ↗
+Untaps all your artifacts on every player's turn, turning tap abilities into four activations per round instead of one.
+Top 10 Artifacts Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Urza, Lord High Artificer ↗
+Taps artifacts for mana, makes a Construct on entry, and digs into your library. Arguably the strongest artifact commander printed.
+Breya, Etherium Shaper ↗
+Four colors, a free Thopter pair, and three modal abilities. The most flexible artifact command zone in the format.
+Osgir, the Reconstructor ↗
+Exiles artifacts from the graveyard to make two copies. Turns every dead artifact into two live ones.
+Emry, Lurker of the Loch ↗
+Self-mills and casts artifacts out of the graveyard each turn, at a cost that drops as your artifact count rises.
+Sharuum the Hegemon ↗
+Reanimates an artifact on entry, which with a clone effect is one of the oldest combos in Commander.
+Jhoira, Weatherlight Captain ↗
+Draws a card for every historic spell you cast. Card advantage that scales directly with artifact count.
+Shorikai, Genesis Engine ↗
+A vehicle commander that makes a Pilot and loots every turn without ever attacking.
+Daretti, Scrap Savant ↗
+A planeswalker commander whose whole kit is discarding artifacts and returning them, with an emblem finisher.
+Arcum Dagsson ↗
+Tutors any artifact from the library each turn by sacrificing an artifact creature. Ruthlessly consistent, and famously divisive.
+Karn, Silver Golem ↗
+Animates your noncreature artifacts, and being genuinely colorless lets the deck run every colorless land and artifact in the format.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+Artifact removal is the most commonly played removal in Commander after creature removal, and mass artifact destruction hits this deck harder than a board wipe hits most. Green and red both have one-sided sweepers for artifacts specifically. Spread your value across enough permanents that no single Vandalblast is a concession, and keep some recursion so the sweeper is a setback rather than an ending.
+Frequently Asked Questions
+What is an artifact deck in Commander?
+An artifact deck runs a high concentration of artifacts and cards that reward that count: cost reducers, creatures that grow with the number of artifacts, and engines that sacrifice and return them. Because artifacts are colorless, the strategy can be built in any color combination.
+What is the best color for artifacts in MTG?
+Blue, for the strongest artifact-specific card advantage and cheat-into-play effects. Red is close behind for graveyard recursion and Treasure. That said, artifact decks exist in every color, and colorless commanders like Karn, Silver Golem support a deck with no colors at all.
+Are mana rocks part of the artifact archetype?
+They overlap but are not the same thing. Almost every Commander deck plays mana rocks; an artifact deck plays them and also counts them, so a Sol Ring is both acceleration and a payoff trigger. A deck is only really the artifact archetype when cards care how many artifacts you control.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Artifacts? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Best Artifact Commanders →Combo →Voltron →Mana Rocks: The Complete Guide →What Is Color Identity in MTG? →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Go wide
+Aristocrats
+Enchantress
+Artifacts
+Tribal
+Stax
+Combo
+Control
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

@@ -1,0 +1,244 @@
+Lifegain Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Lands matter
+Counters
+Blink
+Lifegain
+Voltron Mistakes
+Voltron Budget Upgrades
+Aristocrats Mistakes
+Aristocrats Budget Upgrades
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Lifegain
+Deck Archetype
+Lifegain: The Commander Archetype, Explained
+Gaining life does not win games. Lifegain decks are built on the cards that change that: the ones where every point gained is also a point drained, a card drawn, or a counter placed.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Lifegain: Built around gaining life and the payoffs that turn it into a win condition.
+What Lifegain Decks Actually Do
+A lifegain deck gains life in volume and runs payoffs that convert it into something else. On its own a high life total only postpones losing, so the archetype is really about the second half: drain effects that mirror your gain onto opponents, draw engines that pay out per life gained, and creatures that grow with the total.
+In Commander the archetype benefits from starting at forty, which makes life a spendable resource rather than a cushion. Cards that cost life become close to free, and the deck can afford to pay for effects that a twenty-life format could not support. The strongest builds pair a lifegain engine with a drain payoff so that the same trigger stabilises you and kills three opponents at once.
+The Lifegain engine
+Three steps that feed each other, which is what makes it a deck rather than a pile of cards sharing a theme.
+1 Gain life Small amounts, often, from cards that were doing something else.
+2 The payoff triggers Archangel of Thune grows the whole board every time you do.
+3 It becomes damage Vito turns the life you gained into life they lose.
+↻ Life stops being a buffer and starts being the win condition.
+Which Colors Fit Lifegain
+White and black are the archetype's colors, and their split is clean: white gains life, black converts it into damage. Orzhov covers the great majority of decks. Green offers large single lifegain effects and creatures that grow with the total, and red is essentially absent. It is the color least interested in gaining life at all.
+White The gain half. Repeatable small triggers, mass lifegain, and the creatures that reward a high total.
+Black The payoff half. Drain effects, the life-as-a-resource cards, and the combos that convert lifegain into a win.
+Green Large one-shot lifegain and creatures that grow with the amount gained, usually in a counters-adjacent shell.
+Blue A minor partner, contributing draw engines that trigger on lifegain rather than any gain of its own.
+How color identity decides what you can play →
+Top 10 Lifegain Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building lifegain for the first time, these are the effects to
+understand before anything else.
+Exquisite Blood ↗
+Gain life whenever an opponent loses it. Half of the format's best-known two-card infinite combo.
+Sanguine Bond ↗
+The other half: opponents lose life whenever you gain it. Together they loop until the table is at zero.
+Vito, Thorn of the Dusk Rose ↗
+A cheaper Sanguine Bond on a creature, which makes the combo far easier to assemble and tutor for.
+Aetherflux Reservoir ↗
+Gains escalating life per spell and pays fifty life to deal fifty damage. A win condition that needs no combat.
+Archangel of Thune ↗
+Puts a counter on every creature you control whenever you gain life, converting incidental gain into a lethal board.
+Well of Lost Dreams ↗
+Draw cards for life gained, up to the amount you paid. Turns the archetype's dead resource into cards.
+Serra Ascendant ↗
+A one-drop 6/6 flying lifelink at thirty or more life, which in a forty-life format is almost immediately.
+Soul Warden ↗
+A life for every creature entering, from anyone. Cheap, relentless, and the trigger most payoffs are counting.
+Rhox Faithmender ↗
+Doubles all life you gain, which doubles every drain, draw, and counter your payoffs produce.
+Felidar Sovereign ↗
+Wins the game outright at forty or more life on your upkeep. The most direct payoff the archetype has.
+Top 10 Lifegain Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Oloro, Ageless Ascetic ↗
+Gains two life every upkeep even from the command zone, which makes him the format's most passive engine.
+Karlov of the Ghost Council ↗
+Two counters per lifegain trigger and exiles creatures by spending them. Grows absurdly fast.
+Ayli, Eternal Pilgrim ↗
+Sacrifices creatures for life, then exiles any permanent once you are ten life ahead. Lifegain as removal.
+Licia, Sanguine Tribune ↗
+Costs less the more life you have gained and converts a chunk of your total into permanent power.
+Willowdusk, Essence Seer ↗
+Moves life gained onto a creature as counters, or turns it into damage. The green-black bridge to counters.
+Trelasarra, Moon Dancer ↗
+Scry and a counter on every lifegain trigger, on a two-drop. Cheap, fast, and consistent.
+Lathiel, the Bounteous Dawn ↗
+Distributes counters equal to the life gained that turn across your creatures at end step.
+Liesa, Shroud of Dusk ↗
+Drains every opponent whenever a creature dies and taxes their spells with life. Two payoffs on one body.
+Obzedat, Ghost Council ↗
+Drains two every turn and exiles himself to dodge removal, returning to drain again.
+Heliod, Sun-Crowned ↗
+Counters on lifegain and grants lifelink, which makes him both an engine and half of a famous combo.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+A high life total is not a win, and it can be an active liability: being at eighty makes you look untouchable, and tables respond by attacking the person they cannot ignore. Make sure the deck converts life into damage, cards, or counters rather than just accumulating it. Watch out too for how quickly the Exquisite Blood combo ends a game; if your pod is not expecting an infinite, say so before you sit down.
+Frequently Asked Questions
+How do lifegain decks win in Commander?
+Through payoffs, not through the life total itself. Drain effects mirror your lifegain onto opponents, cards like Well of Lost Dreams convert it into draws, Archangel of Thune converts it into counters, and Felidar Sovereign or Aetherflux Reservoir win outright at a high enough total.
+What colors are lifegain decks in MTG?
+White and black. White supplies the lifegain triggers and mass gain, black converts life into damage through drain effects and combos. Orzhov is the standard pairing, with green appearing in counters-focused builds.
+Is gaining life good in Commander?
+Only when it does something else at the same time. Starting at forty with three opponents means raw life gain rarely changes who wins. It just delays things. Lifegain is strong when each point also drains an opponent, draws a card, or grows a creature.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Lifegain? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Best Lifegain Commanders →Aristocrats →Counters →Combo →Commander Rules: The Complete Guide →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Lands matter
+Counters
+Blink
+Lifegain
+Voltron Mistakes
+Voltron Budget Upgrades
+Aristocrats Mistakes
+Aristocrats Budget Upgrades
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

@@ -1,0 +1,424 @@
+Best Sacrifice Commanders for EDH | EDHMatch
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Home
+Strategies
+Sacrifice
+Back to SearchBest Sacrifice Commanders for EDH
+Sacrifice decks are for players who want their own permanents to be flexible resources rather than pieces to protect at all costs. This strategy wants to feed creatures, artifacts, and tokens into a sacrifice outlet, using fodder makers, recursion, and sacrifice commanders, to win through mana loops, edicts, drain payoffs, or a steady resource lead. Unlike Aristocrats, it is broader than death trigger drain, and unlike Tokens it values bodies mainly as expendable fuel. The best sacrifice commanders keep the engine moving even when opponents point removal at your board.
+Best Colors for Sacrifice Decks
+Mono-black supplies free outlets, edicts, recursion, and drain payoffs for sacrifice engines.
+Golgari adds green token production and recursion to reuse creatures after they die.
+Rakdos uses Treasure, impulse draw, and damage payoffs to convert sacrifices into pressure.
+Jund combines fodder, outlets, recursion, and payoffs for commanders that reward repeated deaths.
+How Do Sacrifice Decks Win in Commander?
+Sacrifice decks excel through a specific playstyle and win conditions. Here's how they work:
+✓ You assemble cheap fodder producers and at least one free sacrifice outlet.
+✓ You feed your own permanents into outlets for mana cards removal or triggers.
+✓ You sacrifice targeted creatures in response so removal produces value for you.
+✓ You rebuild after sweepers with recursion and token generation.
+✓ You convert the resource lead into drain loops edicts or a decisive attack.
+Best Cards for Sacrifice EDH Decks
+Ashnod's Altar
+Free outlet that turns creatures into mana for loops and larger turns.
+Phyrexian Altar
+Converts creatures into colored mana for token and recursion loops.
+Viscera Seer
+One-mana free outlet that scries while letting creatures dodge removal.
+Grave Pact
+Turns your sacrifices into edicts that pressure every opponent's board.
+Pitiless Plunderer
+Makes Treasure when your creatures die, keeping sacrifice chains funded.
+How to Build a Sacrifice Commander Deck
+Core Components
+✓Run 3-5 free sacrifice outlets like Viscera Seer, Carrion Feeder, and Ashnod's Altar
+✓Include 8-10 fodder sources such as token makers, Reassembling Skeleton, and Treasure producers
+✓Add payoffs that trigger when your permanents die or leave play, such as Grave Pact
+✓Prioritize Meren-style recursion to reuse your best sacrifice pieces each turn
+Deck Structure
+✓Keep the mana curve low so fodder and outlets arrive early and rebuild after sweepers
+✓Choose a commander that generates fodder or rewards deaths so one removal spell does not stop the deck
+✓Include 8-10 card advantage effects tied to sacrifice like Village Rites and Deadly Dispute
+✓Save 6-8 interaction slots, leaning on edicts and sacrifice-based removal
+Win Conditions
+✓Drain the table by stacking death payoffs onto a steady stream of sacrifices
+✓Loop free outlets, recursion, and Treasure or mana producers where your table allows
+✓Grind boards down with edicts and recursion, then close with a rebuilt board
+Weaknesses of Sacrifice Decks
+⚠Graveyard hate like Rest in Peace can shut off recursion and make sacrifices cost real cards.
+⚠The deck can struggle against fast combo because its value plan usually needs several turns.
+⚠Losing key outlets or payoff enchantments can stall the engine until replacements arrive.
+⚠Token-light draws leave too little fodder, making early sacrifices costly.
+Is Sacrifice Right for You?
+Sacrifice is approachable because your creatures dying is part of the plan, so removal and sweepers hurt less than they do in many creature decks. It rewards players who enjoy instant-speed decisions and converting small resources into cards, mana, or removal. Budget versions work well, though premium altar effects can raise the price.
+Related Commander Strategies
+Aristocrats
+Aristocrats focuses on death trigger drain; Sacrifice uses more permanent types as resources.
+Tokens
+Tokens makes bodies for width; Sacrifice spends those bodies as fuel.
+Graveyard
+Sacrifice fills the graveyard; Graveyard decks make that zone the engine.
+Reanimator
+Reanimator cheats big creatures back; Sacrifice recurs small pieces and fodder.
+Browse Commander Lists
+Top Sacrifice CommandersTreasureAristocrats
+Top Sacrifice Commanders
+Ygra, Eater of All
+MV: 5
+SacrificeAristocratsTokens+7 more
+$11.96TCGPlayer
+€8.01CardMarket
+Korvold, Fae-Cursed King
+MV: 5
+SacrificeTreasureAristocrats+7 more
+$0.41TCGPlayer
+€1.13CardMarket
+Muldrotha, the Gravetide
+MV: 6
+ReanimatorMillSacrifice+7 more
+$0.61TCGPlayer
+€0.81CardMarket
+Camellia, the Seedmiser
+MV: 3
+SacrificeTokensSquirrels+7 more
+$2.80TCGPlayer
+€1.10CardMarket
+Tergrid, God of Fright // Tergrid's Lantern
+MV: 5
+DiscardSacrificeGroup Slug+7 more
+$19.20TCGPlayer
+€16.12CardMarket
+Hearthhull, the Worldseed
+MV: 4
+Lands MatterRampLand Destruction+7 more
+$1.13TCGPlayer
+€0.67CardMarket
+Rakdos, the Muscle
+MV: 5
+SacrificeAristocratsCombo+7 more
+$2.19TCGPlayer
+€1.54CardMarket
+Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel
+MV: 3Universes Beyond
+AristocratsSacrificeCombo+7 more
+$28.89TCGPlayer
+€27.97CardMarket
+Meren of Clan Nel Toth
+MV: 4
+AristocratsReanimatorSacrifice+7 more
+$2.38TCGPlayer
+€1.86CardMarket
+Teysa Karlov
+MV: 4
+AristocratsTokensSacrifice+7 more
+$2.65TCGPlayer
+€1.68CardMarket
+Chatterfang, Squirrel General
+MV: 3
+TokensAristocratsSquirrels+7 more
+$11.09TCGPlayer
+€7.02CardMarket
+Juri, Master of the Revue
+MV: 2
+TreasureSacrificeAristocrats+7 more
+$0.30TCGPlayer
+€0.20CardMarket
+Carmen, Cruel Skymarcher
+MV: 5
+AristocratsSacrificeVampires+7 more
+$6.47TCGPlayer
+€1.83CardMarket
+Ulalek, Fused Atrocity
+MV: 5
+EldraziBig ManaSacrifice+7 more
+$0.82TCGPlayer
+€0.45CardMarket
+Vren, the Relentless
+MV: 4
+RatsRat ColonyTokens+7 more
+$0.43TCGPlayer
+€0.41CardMarket
+Mazirek, Kraul Death Priest
+MV: 5
+Sacrifice+1/+1 CountersAristocrats+7 more
+$0.30TCGPlayer
+€0.49CardMarket
+Ashnod the Uncaring
+MV: 5
+ArtifactsSacrificeAristocrats+7 more
+$0.33TCGPlayer
+€0.29CardMarket
+Gyome, Master Chef
+MV: 4
+SacrificeTokensFood+7 more
+N/ATCGPlayer
+N/ACardMarket
+Sméagol, Helpful Guide
+MV: 3Universes Beyond
+Lands MatterLandfallSacrifice+7 more
+$0.38TCGPlayer
+€0.39CardMarket
+The Necrobloom
+MV: 4
+Lands MatterTokensDredge+7 more
+$0.36TCGPlayer
+€0.23CardMarket
+Braids, Arisen Nightmare
+MV: 3
+AristocratsSacrificeReanimator+7 more
+$4.61TCGPlayer
+€4.68CardMarket
+Henzie "Toolbox" Torre
+MV: 3
+ReanimatorAggroAristocrats+7 more
+$1.00TCGPlayer
+€0.48CardMarket
+Ziatora, the Incinerator
+MV: 6
+TreasureSacrificeAristocrats+7 more
+$0.69TCGPlayer
+€1.10CardMarket
+Prossh, Skyraider of Kher
+MV: 6
+AristocratsTokensSacrifice+7 more
+$0.39TCGPlayer
+€0.87CardMarket
+Minthara, Merciless Soul
+MV: 4
+AristocratsTokensSacrifice+7 more
+$0.23TCGPlayer
+€0.28CardMarket
+Filter and browse all Sacrifice commanders →
+Frequently Asked Questions
+What makes a good Sacrifice commander?
+The best sacrifice commanders typically provide consistent access to the strategy's core mechanics. Look for commanders that you assemble cheap fodder producers and at least one free sacrifice outlet.
+How do Sacrifice decks win?
+Sacrifice decks win through a combination of Ashnod's Altar, Phyrexian Altar, Viscera Seer, and other synergistic pieces that sacrifice decks are for players who want their own permanents to be flexible resources rather than pieces to protect at all costs.
+What are the best colors for Sacrifice?
+Mono-black supplies free outlets, edicts, recursion, and drain payoffs for sacrifice engines. However, Golgari adds green token production and recursion to reuse creatures after they die.
+What are the weaknesses of Sacrifice decks?
+Graveyard hate like Rest in Peace can shut off recursion and make sacrifices cost real cards. The deck can struggle against fast combo because its value plan usually needs several turns. Losing key outlets or payoff enchantments can stall the engine until replacements arrive. Token-light draws leave too little fodder, making early sacrifices costly.
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH

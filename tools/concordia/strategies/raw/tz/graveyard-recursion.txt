@@ -1,0 +1,244 @@
+Graveyard Recursion Commander Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     All 20 Archetypes
+Spellslinger
+Graveyard recursion
+Mill
+Voltron
+Go wide
+Aristocrats
+Enchantress
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Graveyard recursion
+Deck Archetype
+Graveyard Recursion: The Commander Archetype, Explained
+Most decks treat the graveyard as where cards go to stop mattering. A recursion deck treats it as a second hand, one that fills itself up, and that opponents mostly cannot interact with.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Graveyard recursion: Cards come back from the graveyard, treating it as a second hand.
+What Graveyard recursion Decks Actually Do
+Graveyard recursion decks put powerful cards into the graveyard on purpose and then bring them back. That covers two closely related plans: reanimator, which discards or mills a huge creature and cheats it onto the battlefield years before its mana cost, and value recursion, which loops smaller creatures and spells over and over for incremental advantage.
+The engine has three parts, and a deck needs all three: a way to fill the graveyard (self-mill, discard outlets, entomb effects, or simply trading in combat), a way to get things back (reanimation spells, recursive commanders, or Eternal Witness-style bodies), and payoffs worth the effort. Miss one and the deck stalls. A hand full of reanimation spells with an empty graveyard is a hand full of blanks.
+The Graveyard recursion engine
+Three steps that feed each other, which is what makes it a deck rather than a pile of cards sharing a theme.
+1 Something dies Or you put it there yourself. Entomb costs one mana.
+2 Bring it back Reanimate pays a fraction of what casting it would have cost.
+3 It dies again Nothing is spent for good, so the same threat answers removal twice.
+↻ The graveyard is a second hand you keep drawing from.
+Which Colors Fit Graveyard recursion
+Black is non-negotiable. It owns reanimation as a color-pie concept, and almost every deck in the archetype is at least partly black. Green is the strongest partner, contributing self-mill and the recursion of any card type rather than just creatures. White returns small creatures and permanents cheaply, and blue supplies the self-mill and looting that fills the yard in the first place.
+Black The core. Reanimation spells, tutors that put cards directly into the graveyard, and the sacrifice outlets that get them there.
+Green Regrowth effects that return any card type, plus creature-based recursion that is much harder to remove than a spell.
+White Cheap, repeatable return-to-battlefield effects, usually with a mana value cap. Excellent at grinding, poor at cheating out a giant.
+Blue Self-mill and looting: the fill half of the engine. Blue rarely reanimates on its own but is the best color at deciding what ends up in the yard.
+How color identity decides what you can play →
+Top 10 Graveyard recursion Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building graveyard recursion for the first time, these are the effects to
+understand before anything else.
+Reanimate ↗
+One black mana for any creature in any graveyard. The most efficient reanimation spell ever printed, and the life loss rarely matters at 40.
+Animate Dead ↗
+Two mana, sticks around as an enchantment, and hits any graveyard. The redundancy that makes the plan consistent.
+Entomb ↗
+One mana to put exactly the card you want into your own graveyard. Turns a reanimation spell into a tutor for anything.
+Buried Alive ↗
+Three creatures into the yard at once, which sets up both a reanimation spell and a mass-return effect in a single card.
+Living Death ↗
+Everyone's graveyard creatures swap with the battlefield. In a deck built for it this is a one-sided board wipe that also rebuilds your team.
+Eternal Witness ↗
+Returns any card from your graveyard on a body that can itself be recurred. The archetype's most-copied effect for a reason.
+Victimize ↗
+Sacrifice one creature, return two tapped. Converts a spare token into your two best creatures at instant-speed value.
+Persist ↗
+Two mana reanimation with a real drawback (the creature comes back with a minus-one-minus-one counter) that costs you almost nothing on a large body.
+Sun Titan ↗
+Recurs a permanent worth three or less on every attack. The white grind engine that keeps rebuilding after a wrath.
+Necromancy ↗
+Animate Dead with an instant-speed flash mode, which lets you reanimate in response to removal or at the end of an opponent's turn.
+Top 10 Graveyard recursion Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Meren of Clan Nel Toth ↗
+Free recursion every end step, scaling with experience counters. The definitive value-recursion commander.
+Muldrotha, the Gravetide ↗
+One permanent of each type per turn from the graveyard. Turns lands, artifacts, and enchantments into recursion targets, not just creatures.
+Karador, Ghost Chieftain ↗
+Costs less the fuller your graveyard is, and casts a creature from it every turn. Built to be milled.
+Alesha, Who Smiles at Death ↗
+Reanimates a small creature on attack, for free, at a mana value cap that hides an enormous number of powerful bodies.
+Chainer, Nightmare Adept ↗
+Discard a card to cast a creature from your graveyard with haste: the fill and the payoff in one activated ability.
+Sheoldred, Whispering One ↗
+Returns a creature to you and forces a sacrifice from everyone else each turn. A commander that attacks the archetype from both sides.
+The Mimeoplasm ↗
+Exiles two creatures from graveyards and becomes a hybrid of them. Rewards milling the whole table, not just yourself.
+Gisa and Geralf ↗
+Self-mill on cast plus one graveyard Zombie per turn, the natural bridge between recursion and tribal.
+Sedris, the Traitor King ↗
+Grants unearth to everything in your graveyard, so any creature you mill becomes a hasty one-shot attacker.
+Varina, Lich Queen ↗
+Draw-and-discard on attack, which fills the yard while it builds the board. Fill and payoff on the same trigger.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+Graveyard hate is the most commonly played sideboard-style effect in Commander, and a single Rest in Peace can turn the deck off entirely. Build in a way that survives it: keep some number of cards that are fine cast from hand, run answers to enchantments and artifacts, and avoid a line where every win requires the graveyard to be intact.
+Frequently Asked Questions
+What is a graveyard recursion deck in Commander?
+It is a deck that deliberately puts cards into its own graveyard and then returns them to the battlefield or hand. This includes reanimator decks, which discard or mill a large creature and cheat it into play early, and value decks that repeatedly loop smaller creatures and spells for incremental advantage.
+What is the difference between reanimator and graveyard value?
+Reanimator is explosive and aims to put one enormous threat onto the battlefield far ahead of schedule. Graveyard value grinds. It returns modest creatures and spells over and over so it always has more resources than everyone else. They use the same tools and often appear in the same deck.
+How do you beat graveyard decks in Commander?
+Exile rather than destroy. Effects that exile a graveyard, replace the graveyard entirely, or exile creatures as they die shut the plan down far more effectively than creature removal, because removing a reanimated creature usually just gives it back to the deck as a fresh target.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Graveyard recursion? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Best Reanimator Commanders →Common Graveyard Recursion & Reanimator Mistakes →Best Budget Graveyard Recursion Upgrades →Aristocrats →Mill →Best Recursion in Commander →Best Graveyard Hate in Commander →The Commander Deck Template →What Is Color Identity in MTG? →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     All 20 Archetypes
+Spellslinger
+Graveyard recursion
+Mill
+Voltron
+Go wide
+Aristocrats
+Enchantress
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

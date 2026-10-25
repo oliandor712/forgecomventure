@@ -1,0 +1,618 @@
+EDH Archetypes Guide: Every Commander Playstyle Explained | Spellweave
+GuidesPricingAboutEN
+Log InSign Up
+EN
+Sign Up
+Home
+Guides
+EDH Archetypes Guide: Every Commander Playstyle Explained
+EDH Archetypes Guide: Every Commander Playstyle Explained
+Stop reading decklists that feel wrong. Compare the archetypes you'll actually face at the table, find which one matches how you want to win, and build it in one click.
+For new and returning Commander players choosing a deck identity.
+Based on 4,231 decks built on Spellweave in the last 90 days.
+Find my playstyleCompare archetypesBrowse all
+Built and updated by the Spellweave deck-engine team.
+How decks win
+Combat
+Value engines
+Graveyard
+Spell chains
+Resource denial
+Politics
+The fast answer
+An archetype is your deck's main game plan. It defines how you generate value, defend yourself, and ultimately win. The most common Commander archetypes include tokens, aristocrats, voltron, spellslinger, reanimator, blink, lands matter, tribal, control, big mana, artifacts, combo, and stax. Most decks blend two engines, with one as the primary plan.
+Beginner-friendly: Tokens, Tribal, Voltron.  ·  Higher complexity / variance: Reanimator, Spellslinger, Combo, Stax.
+Find your playstyle
+Three questions. Three archetype matches. Twenty seconds.
+I want to win by
+CombatValue enginesGraveyardSpell chainsResource denialPoliticsCombo
+My pace
+FastMidrangeGrindy
+Heat I can take
+Low (fly under the radar)MediumHigh (be the threat)
+Popular Right Now
+Top archetypes built on Spellweave this period. (90 day window)
+Spellslinger13.2%
+Stompy10.0%
+Aristocrats7.9%
++1/+1 Counters6.1%
+Tokens5.6%
+Lifegain4.7%
+Compare the most-played archetypes
+Five fields, ten archetypes, one scan. Tap any row for a deeper read.
+ArchetypeCore EngineBest ColorsSkillBest if you enjoy
+AristocratsSacrifice creatures for value.Mardu, Abzan, EsperIntermediateValue engines, Graveyard
+TokensCreate large numbers of creature tokens and overwhelm opponents with sheer board presence.Naya, Selesnya, BantBeginnerCombat, Value engines
+TribalBuild around a creature type.Any (color-locked to tribe)BeginnerCombat, Value engines
+VoltronSuit up one creature (usually your commander) and win through commander damage.Bant, Naya, EsperBeginnerCombat
+ReanimatorPut powerful creatures into the graveyard and bring them back cheaply.Sultai, Esper, JunkIntermediateGraveyard, Value engines
+SpellslingerCast lots of instants and sorceries to generate value.Izzet, Jeskai, GrixisIntermediateSpell chains, Value engines
+ComboAssemble specific card combinations that win the game on the spot or create an insurmountable advantage.Sultai, Temur, EsperAdvancedCombo
++1/+1 CountersSynergize with placing and manipulating +1/+1 counters on your creatures.Simic, Bant, NayaBeginnerCombat, Value engines
+LifegainGain life and convert it into other resources.Orzhov, Abzan, BantBeginnerValue engines, Combat
+BlinkExile your own creatures and return them to the battlefield to reuse enter-the-battlefield (ETB) effects.Bant, Esper, JeskaiIntermediateValue engines
+Lands MatterSynergize with playing lands.Gruul, Sultai, NayaIntermediateValue engines, Combat
+LandfallTrigger payoffs whenever a land enters the battlefield under your control.AnyBeginnerCombat, Value engines
+StaxSlow opponents asymmetrically with restrictive permanents that hurt you less than everyone else.Esper, Bant, mono-WAdvancedResource denial
+Aristocrats
+Intermediate
+Core EngineSacrifice creatures for value.
+Best ColorsMardu, Abzan, Esper
+Best if you enjoyValue engines, Graveyard
+Read
+Tokens
+Beginner
+Core EngineCreate large numbers of creature tokens and overwhelm opponents with sheer board presence.
+Best ColorsNaya, Selesnya, Bant
+Best if you enjoyCombat, Value engines
+Read
+Tribal
+Beginner
+Core EngineBuild around a creature type.
+Best ColorsAny (color-locked to tribe)
+Best if you enjoyCombat, Value engines
+Read
+Voltron
+Beginner
+Core EngineSuit up one creature (usually your commander) and win through commander damage.
+Best ColorsBant, Naya, Esper
+Best if you enjoyCombat
+Read
+Reanimator
+Intermediate
+Core EnginePut powerful creatures into the graveyard and bring them back cheaply.
+Best ColorsSultai, Esper, Junk
+Best if you enjoyGraveyard, Value engines
+Read
+Spellslinger
+Intermediate
+Core EngineCast lots of instants and sorceries to generate value.
+Best ColorsIzzet, Jeskai, Grixis
+Best if you enjoySpell chains, Value engines
+Read
+Combo
+Advanced
+Core EngineAssemble specific card combinations that win the game on the spot or create an insurmountable advantage.
+Best ColorsSultai, Temur, Esper
+Best if you enjoyCombo
+Read
++1/+1 Counters
+Beginner
+Core EngineSynergize with placing and manipulating +1/+1 counters on your creatures.
+Best ColorsSimic, Bant, Naya
+Best if you enjoyCombat, Value engines
+Read
+Lifegain
+Beginner
+Core EngineGain life and convert it into other resources.
+Best ColorsOrzhov, Abzan, Bant
+Best if you enjoyValue engines, Combat
+Read
+Blink
+Intermediate
+Core EngineExile your own creatures and return them to the battlefield to reuse enter-the-battlefield (ETB) effects.
+Best ColorsBant, Esper, Jeskai
+Best if you enjoyValue engines
+Read
+Lands Matter
+Intermediate
+Core EngineSynergize with playing lands.
+Best ColorsGruul, Sultai, Naya
+Best if you enjoyValue engines, Combat
+Read
+Landfall
+Beginner
+Core EngineTrigger payoffs whenever a land enters the battlefield under your control.
+Best ColorsAny
+Best if you enjoyCombat, Value engines
+Read
+Stax
+Advanced
+Core EngineSlow opponents asymmetrically with restrictive permanents that hurt you less than everyone else.
+Best ColorsEsper, Bant, mono-W
+Best if you enjoyResource denial
+Read
+The deep dives
+Featured archetypes
+Each archetype below has a full breakdown. These are what you'll see most at any Commander table.
+Aristocrats
+IntermediateBracket 2 to 4
+Sacrifice creatures for value. The key mechanic is death triggers. You win by draining opponents through effects that deal damage or drain life whenever a creature dies, turning every creature death into incremental advantage.
+Best for
+Players who like value engines, sacrifice loops, and grindy snowball games.
+Avoid if
+You want fast combat kills or a low-complexity board.
+Open the Deck Builder for Aristocrats
+How it wins
+Stack two or three drain triggers (Blood Artist, Zulaport Cutthroat, Bastion of Remembrance) with a free sacrifice outlet, then turn every creature death into damage. Loops with Reassembling Skeleton or Gravecrawler can drain three opponents in a single turn cycle without ever attacking. Edict pieces like Grave Pact and Dictate of Erebos punish opponents who try to stabilize.
+Core synergy pieces
+•Sacrifice outlets: Viscera Seer, Ashnod's Altar
+•Death payoffs: Blood Artist, Zulaport Cutthroat, Grave Pact
+•Recursive creatures: Reassembling Skeleton, Bloodghast
+Commanders
+Sephiroth, Fabled SOLDIER // Sephiroth, One-Winged Angel43.5% (30)
+Dina, Essence Brewer23.2% (16)
+Meren of Clan Nel Toth17.4% (12)
+Teysa Karlov15.9% (11)
+How to beat it
+Exile-based graveyard hate (Rest in Peace, Bojuka Bog, Leyline of the Void) shuts off recursion. Static hate pieces neuter the drain payoffs. Hushbringer is the cleanest single answer because it stops both ETB and dies triggers, and Yasharn, Implacable Earth stops nontoken sacrifice. Removing the sacrifice outlet at instant speed can break many loops, especially when the outlet is the only free sacrifice engine on the battlefield.
+Open the Deck Builder for Aristocrats
+Tokens
+BeginnerBracket 2 to 4
+Create large numbers of creature tokens and overwhelm opponents with sheer board presence. Token strategies excel at going wide, making it difficult for opponents to block profitably or remove all your threats at once.
+Best for
+Beginners and visual-feedback players. You see your board grow every turn.
+Avoid if
+You want surgical removal and tight resource hands.
+Open the Deck Builder for Tokens
+How it wins
+Build a wide board across two or three turns, then close with a mass pump (Craterhoof Behemoth, Triumph of the Hordes) or a token doubler hitting multiple generators in the same turn. Many token commanders generate tokens repeatedly or convert routine game actions into tokens, helping the engine refill after each board wipe.
+Core synergy pieces
+•Token generators: Avenger of Zendikar, Secure the Wastes, Raise the Alarm
+•Token doublers: Doubling Season, Anointed Procession, Parallel Lives
+•Mass pump: Craterhoof Behemoth, Triumph of the Hordes
+Commanders
+Isshin, Two Heavens as One26.8% (11)
+Zurgo Stormrender26.8% (11)
+Chatterfang, Squirrel General24.4% (10)
+Mr. House, President and CEO22.0% (9)
+How to beat it
+Cheap creature sweepers (Toxic Deluge, Damnation, Farewell, Wrath of God) reset the plan. Anti-go-wide tech specifically punishes tokens: Massacre Wurm and Meathook Massacre drain on wipe, Echoing Truth clears an entire swarm of same-named tokens for two mana (the bounced tokens cease to exist), Ratchet Bomb and Pernicious Deed scale into a wide answer, and Illness in the Ranks plus Curse of Death's Hold neutralize the engine permanently.
+Open the Deck Builder for Tokens
+Tribal
+BeginnerBracket 2 to 4
+Build around a creature type. Most of your creatures share a type so lords, tribal payoffs, and type-locked anthems stack into a coherent engine. Tribal can run as aggro (Goblins, Elves), combo (Slivers, Wizards), or value (Merfolk, Faeries) depending on the tribe and commander.
+Best for
+Flavor-first players who love a chosen creature type and want a clean linear plan.
+Avoid if
+You like building tight engines without a creature-type theme guiding card choices.
+Open the Deck Builder for Tribal
+How it wins
+Density carries the strategy: every creature pulls double duty as a body and a payoff. Lords (Goblin King, Lord of Atlantis, Elvish Archdruid, Goblin Chieftain, Merrow Reejerey) stack anthems and turn small creatures into real threats. Tribal payoffs (Kindred Discovery, Herald's Horn, Urza's Incubator, Coat of Arms, Roaming Throne) draw cards, reduce costs, or compound triggers. Tribal commanders like The Ur-Dragon and Edgar Markov double as in-color payoff engines. Many modern tribal builds skew combo (Slivers, Wizards) or value-engine (Faeries, Merfolk) rather than pure aggro.
+Core synergy pieces
+•Lords: Creatures that give +1/+1 to all others of the same type
+•Tribal payoffs: Kindred Discovery, Herald's Horn, Vanquisher's Banner
+•Tribal-specific cards: Cards designed for your chosen creature type
+Commanders
+Edgar Markov, Krenko, Mob Boss, Lathril, Blade of the Elves
+How to beat it
+Repeated board wipes are the cleanest answer because tribal density means every wipe two-for-ones at minimum. Type-specific hate like Engineered Plague and Extinction punishes the whole creature base, and targeted removal on the key lord or payoff engine slows the snowball. Removing the commander often cuts off the tribe's best card-advantage source. Mana-tax pieces like Damping Sphere matter against specific tribes (Elves, Wizards) but are not universal answers.
+Open the Deck Builder for Tribal
+Voltron
+BeginnerBracket 2 to 3
+Suit up one creature (usually your commander) and win through commander damage. 21 combat damage from a single commander is lethal. The strategy focuses on making one creature as large and evasive as possible, then connecting for lethal swings.
+Best for
+New players who want a single clear gameplan: suit up the commander, swing.
+Avoid if
+You want resilience to spot removal or a backup plan if your commander gets stranded.
+Open the Deck Builder for Voltron
+How it wins
+Stack equipment (Sword of the Animist, Commander's Plate, Blackblade Reforged), auras (Shielded by Faith, Battle Mastery, All That Glitters), and +1/+1 counters onto an evasive commander. Two clean attacks usually closes the first opponent (10-11 + 10-11 = 21). Double strike shortens the clock; infect, exalted, or trample plus a big buff can enable one-shot kills.
+Core synergy pieces
+•Equipment: Sword of Feast and Famine, Lightning Greaves
+•Auras: Ethereal Armor, All That Glitters
+•Protection: Swiftfoot Boots, Heroic Intervention
+Commanders
+Cloud, Planet's Champion34.8% (8)
+Cloud, Ex-SOLDIER30.4% (7)
+Aurelia, the Warleader17.4% (4)
+Captain America, First Avenger17.4% (4)
+How to beat it
+Edict effects (Diabolic Edict, Fleshbag Marauder, Liliana's Triumph) bypass shroud and hexproof. Exile and bounce remove the commander even with indestructible. Maze of Ith, fog effects, and propaganda taxes stall the clock until removal lands.
+Open the Deck Builder for Voltron
+Reanimator
+IntermediateBracket 2 to 4
+Put powerful creatures into the graveyard and bring them back cheaply. Instead of paying full mana costs for expensive threats, you cheat them into play from the graveyard for a fraction of the cost.
+Best for
+Spike-leaning players who want haymakers in play 5 turns early.
+Avoid if
+Your pod runs heavy graveyard hate or you dislike the swing of binary lines.
+Open the Deck Builder for Reanimator
+How it wins
+Put a 7+ mana creature into the graveyard on turn 2-3 (Entomb, Buried Alive, discard outlet) and reanimate it for 2-3 mana. The flagship targets take over by themselves: Atraxa, Grand Unifier; Archon of Cruelty; Razaketh, the Foulblooded; Vilis, Broker of Blood; Jin-Gitaxias, Core Augur; Sheoldred, Whispering One. At higher power, reanimator often skips the haymaker step entirely and loops a Razaketh chain or assembles a compact combo.
+Core synergy pieces
+•Enablers: Entomb, Buried Alive, Faithless Looting
+•Reanimation spells: Reanimate, Animate Dead, Living Death
+•Big targets: Jin-Gitaxias, Core Augur, Razaketh, the Foulblooded
+Commanders
+Terra, Herald of Hope42.1% (16)
+Tergrid, God of Fright // Tergrid's Lantern23.7% (9)
+Kenrith, the Returned King18.4% (7)
+Mirko, Obsessive Theorist15.8% (6)
+How to beat it
+Instant-speed exile-style graveyard hate (Bojuka Bog, Tormod's Crypt, Soul-Guide Lantern) is often backbreaking if timed in response to the reanimation spell. Counterspells on the reanimation are equally clean. Forcing the player to cast their fatties from hand removes the cost-advantage entirely.
+Open the Deck Builder for Reanimator
+Spellslinger
+IntermediateBracket 2 to 4
+Cast lots of instants and sorceries to generate value. Every spell you cast triggers additional effects, creating a chain of advantage. Mana can be tight since you often need to hold up instant-speed interaction while also advancing your own game plan.
+Best for
+Players who like reactive lines, chaining cantrips, and copying spells.
+Avoid if
+You want a creature-heavy board or to avoid mana-intensive turns with held-up instants.
+Open the Deck Builder for Spellslinger
+How it wins
+Modern spellslinger is rarely a slow cantrip deck. Rituals (Jeska's Will, Mana Geyser, Birgi, God of Storytelling) and cost reducers (Goblin Electromancer, Baral, Chief of Compliance) fuel explosive chain turns. Payoffs (Storm-Kiln Artist, Archmage Emeritus, Young Pyromancer, Talrand, Sky Summoner) snowball value, copy effects (Galvanic Iteration, Twincast) double the output, and the kill comes from Aetherflux Reservoir, an Underworld Breach loop, or a wide token swing.
+Core synergy pieces
+•Spell payoffs: Guttersnipe, Talrand, Sky Summoner
+•Cost reducers: Goblin Electromancer, Baral, Chief of Compliance
+•Copy effects: Fork, Twincast
+Commanders
+Y'shtola, Night's Blessed45.9% (68)
+Fire Lord Azula22.3% (33)
+Vivi Ornitier19.6% (29)
+Niv-Mizzet, Parun12.2% (18)
+How to beat it
+Removing the payoff creature stalls the snowball, but tax effects (Eidolon of Rhetoric, Vryn Wingmare, Damping Sphere) and Rule of Law style lockouts hit spellslinger harder than counterspell trades, since one-for-one counter trades against cheap chain spells usually favor the spellslinger player. Graveyard hate also disrupts flashback, escape, and Underworld Breach lines.
+Open the Deck Builder for Spellslinger
+Combo
+AdvancedBracket 3 to 4
+Assemble specific card combinations that win the game on the spot or create an insurmountable advantage. Combo decks need tutors to find their pieces and protection to resolve them. Power level varies widely depending on how many cards the combo requires.
+Best for
+Spike-aligned players who enjoy tutoring, sequencing, and clean wins.
+Avoid if
+You play with casual pods that dislike abrupt 'I win on my turn' resolutions.
+Open the Deck Builder for Combo
+How it wins
+Tutor for the missing piece, protect the assembly with counterspells or hand disruption, and win in a single turn. At casual power, combos are typically 3-4 pieces (Heliod + Walking Ballista with a tutor, Kiki-Jiki + Zealous Conscripts as the kill). At cEDH, two-card combos dominate: Thassa's Oracle + Demonic Consultation or Tainted Pact is the canonical 'I win' button, and Underworld Breach + Brain Freeze is the current premier engine.
+Core synergy pieces
+•Thassa's Oracle + Demonic Consultation: Exile your library, then win with Oracle's enter-the-battlefield trigger
+•Kiki-Jiki + Zealous Conscripts: Infinite hasty attackers by copying Conscripts to untap Kiki-Jiki
+•Isochron Scepter + Dramatic Reversal: Infinite mana with mana rocks that produce at least three total mana
+Commanders
+Kinnan, Bonder Prodigy, Yawgmoth, Thran Physician, Tasigur, the Golden Fang
+How to beat it
+Counterspells on either piece break the assembly. Tutor punishment (Opposition Agent, Aven Mindcensor, Archivist of Oghma) flips the search step into a liability. Targeted hand attack (Thoughtseize, Praetor's Grasp) preempts the assembly. Stax pieces that disrupt mana production (Null Rod, Collector Ouphe, Cursed Totem) shut off many of the most efficient lines. At lower power, racing the combo player before piece-3 lands is also viable.
+Open the Deck Builder for Combo
++1/+1 Counters
+BeginnerBracket 2 to 4
+Synergize with placing and manipulating +1/+1 counters on your creatures. Counter strategies scale quickly, turning small creatures into massive threats while triggering powerful payoff effects along the way.
+Best for
+Players who love incremental scaling and exponential snowballs.
+Avoid if
+Your pod packs heavy creature wipes you can't recover from.
+Open the Deck Builder for +1/+1 Counters
+How it wins
+Stack a doubler (Hardened Scales, Branching Evolution, Doubling Season) with a counter distributor and watch every trigger pay double. Mid-game your weakest creature is a 6/6 and your commander closes games on its own. Many builds layer proliferate (Inexorable Tide, Evolution Sage, Karn's Bastion) for compounding scaling.
+Core synergy pieces
+•Counter doublers: Doubling Season, Hardened Scales, Branching Evolution
+•Counter distributors: Rishkar, Peema Renegade, Mikaeus, the Lunarch
+•Counter payoffs: Fathom Mage, Champion of Lambholt, Simic Ascendancy
+Commanders
+Tidus, Yuna's Guardian52.6% (40)
+Leonardo, the Balance22.4% (17)
+Ms. Bumbleflower13.2% (10)
+Bruce Banner // The Incredible Hulk11.8% (9)
+How to beat it
+Solemnity is the hardest single lockout. Combined with the right commander it shuts off the entire engine. Exile-based wipes (Farewell) reset the board cleanly, and Toxic Deluge gets around indestructible by reducing toughness. Counter-removal effects (Vampire Hexmage and Hex Parasite to nuke a key creature, Black Sun's Zenith as a -X sweeper) directly strip counter value. Removing the doubler enchantment before counters snowball matters most.
+Open the Deck Builder for +1/+1 Counters
+Lifegain
+BeginnerBracket 1 to 3
+Gain life and convert it into other resources. Lifegain on its own does not win games, but payoff cards turn each point of life gained into card draw, creature tokens, +1/+1 counters, or direct damage to opponents.
+Best for
+Defensive players who want a long-game cushion that converts to closing power.
+Avoid if
+You want fast pressure or hate one-card-combo finishes (Sanguine + Exquisite).
+Open the Deck Builder for Lifegain
+How it wins
+Run small repeated triggers (Soul Warden, Essence Warden, Suture Priest) and a counter-creating payoff (Heliod, Sun-Crowned; Cleric Class; Trudge Garden). Sanguine Bond + Exquisite Blood is the classic two-card combo finish. Aetherflux Reservoir converts life gain directly into damage, and Well of Lost Dreams turns it into card draw. Modern lifegain often hybridizes with aristocrats (Vito, Thorn of the Dusk Rose) or cleric tribal.
+Core synergy pieces
+•Lifegain payoffs: Ajani's Pridemate, Archangel of Thune, Heliod, Sun-Crowned
+•Life drain: Sanguine Bond, Exquisite Blood, Vito, Thorn of the Dusk Rose
+•Lifegain engines: Soul Warden, Essence Warden, Authority of the Consuls
+Commanders
+Frodo, Adventurous Hobbit34.1% (15)
+Kwia Vigorbloom25.0% (11)
+Blech, Loafing Pest20.5% (9)
+Trostani, Selesnya's Voice20.5% (9)
+How to beat it
+Static life-gain hate is brutal: Tainted Remedy and Rain of Gore invert every gain trigger into damage; Roiling Vortex, Sulfuric Vortex, and Erebos, God of the Dead prevent or punish gain entirely. Targeted removal on the payoff creature stalls the snowball, and Skullcrack-style effects answer combo-line gain spikes.
+Open the Deck Builder for Lifegain
+Blink
+IntermediateBracket 2 to 4
+Exile your own creatures and return them to the battlefield to reuse enter-the-battlefield (ETB) effects. With the right setup, a single blink on a draw creature becomes a repeatable card advantage engine that compounds every turn.
+Best for
+Players who love stacked triggers, ETB chains, and value-engine sequencing.
+Avoid if
+Your pod runs Torpor Orb or you dislike longer per-turn play sequences.
+Open the Deck Builder for Blink
+How it wins
+Stack ETB value creatures (Mulldrifter, Ravenous Chupacabra, Reflector Mage, Eternal Witness, Sun Titan, Agent of Treachery) with a blink engine that triggers every turn (Soulherder, Conjurer's Closet, Ephemerate, Teleportation Circle). Panharmonicon doubles every trigger. The deck typically out-resources the table and closes via accumulated value, with finishers like Deadeye Navigator pairing with a payoff (Peregrine Drake, Palinchron) or an extra-turns chain off Time Stretch / Temporal Manipulation.
+Core synergy pieces
+•Blink engines: Ephemerate, Conjurer's Closet, Soulherder, Teleportation Circle
+•ETB value: Mulldrifter, Thragtusk, Ravenous Chupacabra
+•ETB doubler: Panharmonicon
+Commanders
+Brago, King Eternal33.3% (3)
+Don & Leo, Problem Solvers22.2% (2)
+Delney, Streetwise Lookout22.2% (2)
+Phelia, Exuberant Shepherd22.2% (2)
+How to beat it
+Counter or remove the blink engine itself. Without it, the deck slows to a fair midrange ETB pile rather than a snowballing value engine. Static effects that disable ETB triggers (Torpor Orb, Hushwing Gryff, Tocatli Honor Guard) are devastating against the archetype.
+Open the Deck Builder for Blink
+Lands Matter
+IntermediateBracket 2 to 4
+Synergize with playing lands. Landfall triggers, land recursion, and land-based value engines turn the most basic game action into a powerful advantage. Every land drop becomes a spell.
+Best for
+Mid-to-late-game players who like grinding inevitability through land drops.
+Avoid if
+Your pod packs Wasteland/Strip Mine effects or you hate slow openings.
+Open the Deck Builder for Lands Matter
+How it wins
+Extra-land-drop enablers (Exploration, Oracle of Mul Daya, Azusa Lost but Seeking, Dryad of the Ilysian Grove) layer with fetchland recursion (Crucible of Worlds, Ramunap Excavator, Life from the Loam) so each turn fires 3+ landfall triggers. Payoffs scale fast: Avenger of Zendikar, Scute Swarm, Omnath Locus of Creation, Field of the Dead, Splendid Reclamation. Decks built around The Gitrog Monster or Lord Windgrace turn fetch loops into draw, ramp, and combo lines.
+Core synergy pieces
+•Landfall payoffs: Avenger of Zendikar, Scute Swarm, Omnath, Locus of Creation
+•Extra land drops: Exploration, Oracle of Mul Daya, Azusa, Lost but Seeking
+•Land recursion: Crucible of Worlds, Ramunap Excavator
+Commanders
+Toph, the First Metalbender42.4% (14)
+Aesi, Tyrant of Gyre Strait21.2% (7)
+Hearthhull, the Worldseed18.2% (6)
+Avatar Aang // Aang, Master of Elements18.2% (6)
+How to beat it
+Targeted land hate (Strip Mine, Wasteland, Ruination, Blood Moon, Back to Basics) hits this archetype harder than any other. Aven Mindcensor and Opposition Agent both have flash, so they can be deployed to punish fetchlands and tutors at the worst possible moment. Graveyard hate disrupts Crucible / Ramunap Excavator loops. Fast pressure before the ramp threshold also works.
+Open the Deck Builder for Lands Matter
+Landfall
+BeginnerBracket 1 to 4
+Trigger payoffs whenever a land enters the battlefield under your control. Landfall decks use extra land drops from Azusa, Lost but Seeking and Exploration, land ramp and search effects like Cultivate and Three Visits, and land recursion like Crucible of Worlds and Ramunap Excavator to chain triggers across turns and end games with a wave of damage or tokens.
+Best for
+Players who enjoy mid-to-late-game ramp-driven inevitability and explosive turns built around chained land drops.
+Avoid if
+Your pod runs Wasteland or Strip Mine effects, Blood Moon, or you dislike slow openings before the engine comes online.
+Open the Deck Builder for Landfall
+How it wins
+Stack extra-land-drop enablers (Exploration, Oracle of Mul Daya, Azusa Lost but Seeking, Dryad of the Ilysian Grove) with fetchland recursion (Crucible of Worlds, Ramunap Excavator, Life from the Loam) so each turn fires 3+ landfall triggers. Payoffs scale fast: Avenger of Zendikar, Scute Swarm, Omnath Locus of Creation, Field of the Dead, Splendid Reclamation. Decks built around The Gitrog Monster or Lord Windgrace turn fetch loops into draw, ramp, and combo lines.
+Core synergy pieces
+•Landfall payoffs: Avenger of Zendikar, Scute Swarm, Lotus Cobra, Felidar Retreat
+•Extra land drops and fetchlands: Azusa, Lost but Seeking, Exploration, Oracle of Mul Daya
+•Land recursion: Crucible of Worlds, Ramunap Excavator, The Mending of Dominaria
+Commanders
+Tifa Lockhart35.0% (7)
+Tatyova, Benthic Druid25.0% (5)
+Aesi, Tyrant of Gyre Strait20.0% (4)
+Omnath, Locus of Creation20.0% (4)
+How to beat it
+Targeted land hate (Strip Mine, Wasteland, Ruination, Blood Moon, Back to Basics) hits this archetype harder than any other. Aven Mindcensor and Opposition Agent both have flash, so they can be deployed to punish fetchlands and tutors at the worst possible moment. Graveyard hate disrupts Crucible / Ramunap Excavator loops. Fast pressure before the ramp threshold also works.
+Open the Deck Builder for Landfall
+Stax
+AdvancedBracket 3 to 4
+Slow opponents asymmetrically with restrictive permanents that hurt you less than everyone else. Stax can grind the game out with a value finisher or use the lock to force through a compact combo opponents can't interact with. Either way, the play pattern is 'they can't, you can.'
+Best for
+Advanced players comfortable with proactive resource denial and table heat.
+Avoid if
+You want a positive-feeling table or play casual unrated pods (lock pieces frustrate quickly).
+Open the Deck Builder for Stax
+How it wins
+Resolve asymmetric lock pieces (Drannith Magistrate, Collector Ouphe, Archon of Emeria, Sphere of Resistance, Rule of Law) so opponents can't execute their plans while you develop under your own locks. Rhystic Study and Smothering Tithe (treasures, not draw) turn opponents' constrained turns into your resources. Many modern stax lists transition into a protected combo (Thassa's Oracle, Breach lines) once the lock is stable rather than grinding to a value finish.
+Core synergy pieces
+•Tax and lock pieces: Thalia, Guardian of Thraben, Sphere of Resistance, Rule of Law
+•Resource denial: Winter Orb, Static Orb, Stasis
+•Value under locks: Smothering Tithe, Rhystic Study, Weathered Wayfarer
+Commanders
+Grand Arbiter Augustin IV45.5% (5)
+Thalia and The Gitrog Monster18.2% (2)
+Ketramose, the New Dawn18.2% (2)
+Winota, Joiner of Forces18.2% (2)
+How to beat it
+Flexible permanent removal is the most direct answer because modern stax pieces are spread across creatures (Drannith Magistrate, Collector Ouphe, Archon of Emeria), artifacts (Sphere of Resistance, Winter Orb), and enchantments (Rule of Law, Deafening Silence). The deck is fragile when locks are stripped faster than they can be redeployed. At lower power, stax often falls apart because the rest of the table can race or out-resource it before the lockout completes.
+Open the Deck Builder for Stax
+Also worth knowing
+More archetypes you'll meet
+These show up regularly. Lighter writeups, same useful detail.
+Graveyard
+Use the graveyard as a resource. Graveyard strategies treat the graveyard as a second hand, fueling mechanics like dredge, flashback, escape, and recursion. The more cards in your graveyard, the more options you have.
+Top commanders: Sidisi, Brood Tyrant, Karador, Ghost Chieftain, The Gitrog Monster
+Mill
+Win by putting all of an opponent's library into their graveyard. When a player must draw from an empty library, they lose. Mill strategies attack a resource most decks cannot protect, targeting the library directly rather than life totals.
+Top commanders: Phenax, God of Deception, Bruvac the Grandiloquent, Mirko Vosk, Mind Drinker
+Storm
+Cast many cheap spells in a single turn, then finish with a spell that has the storm keyword. A spell with storm creates a copy of itself for each spell cast before it that turn. Cast 10 spells before your storm finisher and it produces 10 copies.
+Top commanders: Mizzix of the Izmagnus, Kess, Dissident Mage, Krark, the Thumbless
+Burn
+Deal direct damage to opponents and their creatures. Burn strategies accumulate incremental damage through damage doublers and triggered abilities. In Commander, burn needs to scale to deal with 120 total life points across three opponents.
+Top commanders: Torbran, Thane of Red Fell, Purphoros, God of the Forge, Neheb, the Eternal
+Wheels
+Force all players to discard their hands and draw new cards. Wheels disrupt opponents by removing the answers and combos they were holding, while you benefit from symmetry-breaking effects that punish drawing or reward discarding.
+Top commanders: Nekusar, the Mindrazer, Xyris, the Writhing Storm, The Locust God
+Impulse Draw
+Exile cards from the top of your library and play or cast them during a limited window, often this turn or until your next turn. Impulse draw bypasses effects that restrict or replace card draws, such as Narset, Parter of Veils and Notion Thief, works around hand-size restrictions, and turns the top of your library into a temporary resource. Most impulse commanders are red or have access to red, where the mechanic is most concentrated.
+Top commanders: Prosper, Tome-Bound, Birgi, God of Storytelling, Etali, Primal Storm
+Enchantress
+Cast enchantments and draw cards from them. This creates a self-sustaining engine: play an enchantment, draw a card, play more enchantments. The strategy snowballs as each enchantress effect multiplies your card draw.
+Top commanders: Sythis, Harvest's Hand, Tuvasa the Sunlit, Go-Shintai of Life's Origin
+Artifacts
+Build around artifact synergies. Generate value by casting, sacrificing, and recurring artifacts. Artifact strategies benefit from strong mana acceleration through mana rocks, and many powerful artifact payoffs are colorless, making this theme accessible to any color combination.
+Top commanders: Urza, Lord High Artificer, Breya, Etherium Shaper, Jhoira, Weatherlight Captain
+Equipment
+Attach equipment to creatures to enhance their combat abilities. Unlike auras, equipment stays on the battlefield when the equipped creature dies, giving the strategy resilience. Equipment decks combine cheap creatures with powerful equipment to create lethal threats.
+Top commanders: Sram, Senior Edificer, Wyleth, Soul of Steel, Akiri, Line-Slinger
+Treasure
+Generate Treasure tokens and use them for mana advantage, artifact synergies, or sacrifice triggers. Treasure tokens are artifact tokens that can be sacrificed for one mana of any color, providing both ramp and fixing while triggering artifact-matters effects.
+Top commanders: Prosper, Tome-Bound, Korvold, Fae-Cursed King, Magda, Brazen Outlaw
+Legends Matter
+Build a deck where most or all of your nonland cards are legendary, then use payoffs that scale with legendary density. Sisay, Weatherlight Captain tutors legendary permanents, Kethis, the Hidden Hand discounts legendary spells, Jodah, the Unifier chains legendary spells cast from your hand into free lower-mana-value legendary nonland spells from your library, and Dihada, Binder of Wills digs for legendary cards while making Treasures for revealed cards put into your graveyard. Many legendary-matters tools come from sets and releases such as Dominaria United and the Universes Beyond release The Lord of the Rings: Tales of Middle-earth.
+Top commanders: Sisay, Weatherlight Captain, Jodah, the Unifier, Kethis, the Hidden Hand
+Group Hug
+Accelerate all players' resources with mass draw, extra lands, and other gifts. Group hug decks create political alliances by helping everyone, then win through hidden combo finishers or by directing opponents to fight each other.
+Top commanders: Kynaios and Tiro of Meletis, Phelddagrif, Kenrith, the Returned King
+Niche & emerging
+The long tail
+Less common, sometimes powerful. Quick notes only.
+Outlaws
+Build around outlaws.
+Stompy
+Play big creatures ahead of curve and attack.
+Infect
+Win by dealing 10 poison counters to an opponent.
+Clones
+Copy your own or opponents' best creatures.
+Extra Combats
+Take additional combat phases to multiply your damage output.
+Mutate
+Cast mutate creatures for their mutate cost targeting a non-Human creature with the same owner as the spell, usually your non-Human commander or another non-Human creature you own, to build one merged permanent with a pile of abilities.
+Polymorph
+Turn cheap tokens into the biggest creatures in your library.
+Self-Mill
+Deliberately fill your own graveyard to fuel delve, flashback, and recursion-based strategies.
+Superfriends
+Win with planeswalkers.
+Energy
+Generate and spend energy counters for powerful activated abilities.
+Vehicles
+Turn your artifacts into attackers by crewing Vehicles with your creatures.
+Sagas
+Build around Saga enchantments that trigger powerful chapter abilities over multiple turns.
+Discard
+Force opponents to discard cards, stripping away their resources and options.
+Group Slug
+Deal damage to all opponents simultaneously through permanents that punish common game actions.
+Forced Combat
+Force opponents' creatures to attack each other using the goad mechanic.
+Pillow Fort
+Build up defensive enchantments and effects that discourage or prevent opponents from attacking you.
+Upkeep Triggers
+Leverage repeating abilities that trigger at the beginning of upkeep steps to generate value, force sacrifices, or deal damage as turns cycle.
+Hybrids
+Most decks are hybrid archetypes
+Layering two engines is the norm in Commander. Here are the most common pairings on Spellweave.
+Most decks are not purely one archetype. An aristocrats deck might include a combo finish. A tribal deck might have reanimator elements to recur key creatures. A tokens strategy might blend with +1/+1 counters for explosive board growth.
+Your primary archetype determines your core card choices, and secondary themes fill supporting roles. When building, identify your main strategy first, then layer in complementary elements that strengthen your game plan without diluting it. Compare the most-played archetypes.
+FAQ
+Frequently asked questions
+What is an archetype in Commander?+An archetype is a deck's core game plan: how it generates value, defends itself, and ultimately wins. Most Commander decks anchor on one primary archetype and layer in elements from a second. Tokens, aristocrats, voltron, spellslinger, reanimator, and stax are all archetypes.
+What is the difference between an archetype and a theme?+Archetype is the engine: how the deck wins. Theme is the flavor: a tribe, a card type, or a mechanic. Slivers is a theme that lives inside the tribal archetype. Artifacts is often its own engine (artifact combo, treasure ramp, sacrifice, eggs, constructs) and only sometimes a theme inside another archetype like storm or aristocrats.
+Which archetype is best for new Commander players?+Tokens and tribal are the gentlest entry points: clear plans, deep budget-friendly card pools, and easy mulligan decisions. Voltron has the simplest game plan (suit up, swing) but is strategically fragile because the whole deck depends on the commander surviving. That is fine for learning and less forgiving in actual play.
+Can a Commander deck be more than one archetype?+Yes, and most are. The Spellweave engine routinely detects a primary archetype with a secondary engine layered on top. Aristocrats plus tokens, lands matter plus big mana, and reanimator plus graveyard value are some of the most common hybrids.
+What is the difference between control and stax?+Control reacts to threats with answers like counterspells, removal, and board wipes. Stax denies opponents resources before threats land, using lock pieces, tax effects, and asymmetric prison cards. Stax is more proactive, control is more reactive, and many decks blend both.
+Is tribal an archetype?+Tribal is usually treated as both an archetype and a theme. The archetype framing is about the engine: lords, tribal payoffs, and creature density driving combat damage. The theme framing is about the creature type itself.
+What archetype wins fastest in casual Commander?+Voltron can eliminate one player early because commander damage scales linearly with equipment, but it often struggles to close out the full table. Combo and ramp-into-Craterhoof lines actually end multi-player games faster on average. Reanimator can also win on turn 4-5 with the right opener.
+Where do these popularity numbers come from?+Live data from decks built on Spellweave. The engine classifies each deck's primary archetype based on its synergy profile, and we aggregate the result on a rolling 90-day window. Re-built decks count once each.
+Build a deck around your archetype
+Pick an archetype, choose a commander, and let the Spellweave engine assemble a synergy-driven shell you can tune card by card.
+Open Deck BuilderBrowse Commanders
+Related Guides
+Choosing a Commander
+How to pick the right commander for your playstyle. Color identity, build-around vs value engines, and partner mechanics.
+Card Synergy Explained
+Enablers, payoffs, and engines. How to identify cards that work together and build a deck with a coherent game plan.
+EDH Deck Roles
+The essential functional roles every Commander deck needs. Ramp, draw, removal, board wipes, counters, tutors, protection, recursion, and graveyard synergy.
+View all guides
+On this page
+Featured
+Aristocrats
+Tokens
+Tribal
+Voltron
+Reanimator
+Spellslinger
+Combo
++1/+1 Counters
+Lifegain
+Blink
+Lands Matter
+Landfall
+Stax
+Also covered
+Graveyard
+Mill
+Storm
+Burn
+Wheels
+Impulse Draw
+Enchantress
+Artifacts
+Equipment
+Treasure
+Legends Matter
+Group Hug
+Niche & emerging
+Outlaws
+Stompy
+Infect
+Clones
+Extra Combats
+Mutate
+Polymorph
+Self-Mill
+Superfriends
+Energy
+Vehicles
+Sagas
+Discard
+Group Slug
+Forced Combat
+Pillow Fort
+Upkeep Triggers
+Back to topOn this page
+On this page
+Featured
+Aristocrats
+Tokens
+Tribal
+Voltron
+Reanimator
+Spellslinger
+Combo
++1/+1 Counters
+Lifegain
+Blink
+Lands Matter
+Landfall
+Stax
+Also covered
+Graveyard
+Mill
+Storm
+Burn
+Wheels
+Impulse Draw
+Enchantress
+Artifacts
+Equipment
+Treasure
+Legends Matter
+Group Hug
+Niche & emerging
+Outlaws
+Stompy
+Infect
+Clones
+Extra Combats
+Mutate
+Polymorph
+Self-Mill
+Superfriends
+Energy
+Vehicles
+Sagas
+Discard
+Group Slug
+Forced Combat
+Pillow Fort
+Upkeep Triggers
+Back to top
+© 2026 Spellweave by 3Dec Studios · Unofficial Fan Content
+AboutPricingGuidesReleasesNewsletterSupportPrivacyTermsCookie settingsEnglishPortuguês (Brasil)Español日本語
+AboutPricingGuidesReleasesNewsletterSupportPrivacyTermsCookie settings
+EnglishPortuguês (Brasil)Español日本語
+© 2026 Spellweave by 3Dec Studios · Unofficial Fan Content

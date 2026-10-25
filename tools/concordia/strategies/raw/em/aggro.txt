@@ -1,0 +1,423 @@
+Best Aggro Commanders for EDH | EDHMatch
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH
+EDHMatchFind commanders that match how you play
+Home
+Find CommandersCommander QuizCommander DNAWhat Should I Build Next?Advanced SearchCollectionsColor Combinations
+Two-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by SetBrowse All
+Discover PlaystylePlayer Type QuizGuild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Search
+Search
+Home
+Find Commanders
+Commander Quiz
+Commander DNA
+What Should I Build Next?
+Advanced Search
+Collections
+Color CombinationsTwo-Color Guilds
+Azorius
+Dimir
+Rakdos
+Gruul
+Selesnya
+Orzhov
+Izzet
+Golgari
+Boros
+Simic
+Three-Color Combinations
+Jund
+Esper
+Grixis
+Bant
+Naya
+Abzan
+Jeskai
+Sultai
+Mardu
+Temur
+Mono-Color
+Mono-White
+Mono-Blue
+Mono-Black
+Mono-Red
+Mono-Green
+Colorless
+Colorless
+Browse by Set
+Browse All
+Discover Playstyle
+Player Type Quiz
+Guild Quiz
+Strategies
+Shortlist
+Blog
+Newsletter
+Home
+Strategies
+Aggro
+Back to SearchBest Aggro Commanders for EDH
+Aggro decks are for players who want to commit threats early, attack often, and make combat math matter every turn. This strategy wants to pressure all opponents with efficient attackers, using anthems, haste, attack triggers, extra combats, and aggro commanders, to win through repeated combat damage before slower engines stabilize. In Commander that still means pushing through 120 total damage, so go-wide aggro EDH decks need refueling and scaling damage rather than only fast starts. Aggro differs from Tokens because it focuses on attacking with the bodies, from Voltron because it spreads pressure across many creatures, and from Infect because it deals life-total damage instead of poison.
+Best Colors for Aggro Decks
+Boros stacks anthems, haste, extra combats, protection, and attack-trigger payoffs like battle cry.
+Gruul brings haste, larger bodies, trample, and ramp that deploys multiple attackers per turn.
+Mardu adds removal, drain, token pressure, and doubled attack triggers for resilient combat turns.
+Mono-red offers cheap creatures, haste, impulse draw, extra combats, and burn for weakened opponents.
+How Do Aggro Decks Win in Commander?
+Aggro decks excel through a specific playstyle and win conditions. Here's how they work:
+✓ You deploy cheap efficient creatures early and attack before engines stabilize.
+✓ You spread pressure across opponents while tracking who can absorb the least damage.
+✓ You use anthems haste and attack triggers to make small bodies scale.
+✓ You chain extra combat steps when one board can convert into lethal damage.
+✓ You refuel with combat draw or commander triggers because 120 damage requires more than a fast start.
+Best Cards for Aggro EDH Decks
+Shared Animosity
+Converts a wide board of shared creature types into scaling combat damage.
+Aggravated Assault
+Adds repeatable combat steps so one board can attack multiple times.
+Isshin, Two Heavens as One
+Doubles attack triggers, improving raid, battle cry, and myriad payoffs.
+Reconnaissance Mission
+Refills your hand when multiple attackers connect with opponents.
+Fervor
+Gives your creatures haste so new attackers pressure immediately.
+How to Build a Aggro Commander Deck
+Core Components
+✓Run 25-35 creatures, weighted toward one, two, and three mana, so attacks start early
+✓Use 2-4 anthem effects like Shared Animosity or Cathars' Crusade to make small bodies scale
+✓Add haste enablers such as Fervor or Rising of the Day so new creatures attack immediately
+✓Include 2-3 extra combat cards like Aggravated Assault or Moraug, Fury of Akoum
+✓Use combat-triggered draw like Reconnaissance Mission or Toski, Bearer of Secrets to refuel
+Deck Structure
+✓Keep the mana curve low and land count around 33-35 because your hand should empty quickly
+✓Choose a commander that refuels or multiplies attacks, like Isshin or Winota, Joiner of Forces
+✓Include a small removal package to clear blockers rather than answer everything
+✓Favor creatures with evasion, menace, or trample so stalled boards do not stop attacks
+Win Conditions
+✓Use wide attacks boosted by anthems to pressure multiple opponents over consecutive turns
+✓Chain extra combats to convert one strong board into 40-plus damage in a turn
+✓Use burn and drain effects like Impact Tremors to finish opponents who stabilize at low life
+Weaknesses of Aggro Decks
+⚠Board wipes can erase several turns of development with one card, so overextending is a constant risk.
+⚠Dealing 120 total damage across three opponents means the deck can run out of gas without dedicated refueling.
+⚠Pillow-fort and lifegain decks can outlast early pressure and take over once the game goes long.
+⚠Late-game topdecks can be weak because cheap attackers lose impact as the table develops.
+Is Aggro Right for You?
+Aggro is beginner-friendly because the core plan is clear: play creatures, attack, and keep pressure on the right players. It can be built on a tight budget with cheap creatures, anthems, and combat draw. It suits players who enjoy proactive turns, table reading, and honest combat math.
+Related Commander Strategies
+Tokens
+Tokens makes bodies; Aggro turns bodies into repeated combat damage.
+Equipment
+Equipment concentrates power on geared threats; Aggro spreads pressure across attackers.
+Infect
+Infect races to ten poison; Aggro must deal life-total damage.
+Browse Commander Lists
+Top Aggro CommandersExtra CombatsBurn
+Top Aggro Commanders
+Krenko, Mob Boss
+MV: 4
+GoblinsTokensAggro+7 more
+$2.80TCGPlayer
+€1.72CardMarket
+Edgar Markov
+MV: 6
+VampiresLifegainTokens+7 more
+$43.55TCGPlayer
+€35.69CardMarket
+Isshin, Two Heavens as One
+MV: 3
+AggroTokensAttack Triggers+7 more
+$3.76TCGPlayer
+€2.99CardMarket
+Kaalia of the Vast
+MV: 4
+FlyingAngelsAggro+7 more
+$3.79TCGPlayer
+€2.16CardMarket
+Zurgo Stormrender
+MV: 3
+TokensAristocratsAggro+7 more
+$4.58TCGPlayer
+€3.43CardMarket
+Bello, Bard of the Brambles
+MV: 3
+EnchantressArtifactsUnnatural+7 more
+$2.87TCGPlayer
+€3.35CardMarket
+Winota, Joiner of Forces
+MV: 4
+HatebearsAggroStax+7 more
+$4.34TCGPlayer
+€4.46CardMarket
+Caesar, Legion's Emperor
+MV: 4Universes Beyond
+TokensAristocratsHumans+7 more
+N/ATCGPlayer
+N/ACardMarket
+Arabella, Abandoned Doll
+MV: 2
+TokensAggroBurn+7 more
+$0.85TCGPlayer
+€0.28CardMarket
+Tovolar, Dire Overlord // Tovolar, the Midnight Scourge
+MV: 3
+WerewolvesAggroWolves+7 more
+$0.39TCGPlayer
+€0.46CardMarket
+Voja, Jaws of the Conclave
+MV: 5
+Elves+1/+1 CountersAggro+7 more
+N/ATCGPlayer
+N/ACardMarket
+Zada, Hedron Grinder
+MV: 4
+SpellslingerGoblinsTokens+7 more
+$0.17TCGPlayer
+€0.12CardMarket
+Pantlaza, Sun-Favored
+MV: 5
+DinosaursDiscoverRamp+7 more
+$5.75TCGPlayer
+€5.93CardMarket
+Yuriko, the Tiger's Shadow
+MV: 3
+NinjutsuNinjasTempo+7 more
+$2.95TCGPlayer
+€2.80CardMarket
+Éowyn, Shieldmaiden
+MV: 5Universes Beyond
+HumansTokensAggro+7 more
+$0.37TCGPlayer
+€0.41CardMarket
+Henzie "Toolbox" Torre
+MV: 3
+ReanimatorAggroAristocrats+7 more
+$1.00TCGPlayer
+€0.48CardMarket
+The Ur-Dragon
+MV: 9
+DragonsFlyingShapeshifters+7 more
+$37.54TCGPlayer
+€30.89CardMarket
+Fire Lord Azula
+MV: 4Universes Beyond
+SpellslingerComboSpell Copy+7 more
+$1.16TCGPlayer
+€1.05CardMarket
+Lathril, Blade of the Elves
+MV: 4
+ElvesTokensAggro+7 more
+$1.78TCGPlayer
+€1.45CardMarket
+Lightning, Army of One
+MV: 3Universes Beyond
+EquipmentVoltronExtra Combats+7 more
+$9.59TCGPlayer
+€8.55CardMarket
+Cloud, Ex-SOLDIER
+MV: 5Universes Beyond
+EquipmentVoltronArtifacts+7 more
+$1.44TCGPlayer
+€0.73CardMarket
+Najeela, the Blade-Blossom
+MV: 3
+WarriorsExtra CombatsAggro+7 more
+$7.23TCGPlayer
+€5.63CardMarket
+Fynn, the Fangbearer
+MV: 2
+DeathtouchInfectAggro+7 more
+$0.20TCGPlayer
+€0.24CardMarket
+Xenagos, God of Revels
+MV: 5
+Extra CombatsAggroRamp+7 more
+$11.21TCGPlayer
+€7.55CardMarket
+Tannuk, Steadfast Second
+MV: 4
+AggroArtifactsWarp+7 more
+$1.81TCGPlayer
+€1.82CardMarket
+Filter and browse all Aggro commanders →
+Frequently Asked Questions
+What makes a good Aggro commander?
+The best aggro commanders typically provide consistent access to the strategy's core mechanics. Look for commanders that you deploy cheap efficient creatures early and attack before engines stabilize.
+How do Aggro decks win?
+Aggro decks win through a combination of Shared Animosity, Aggravated Assault, Isshin, Two Heavens as One, and other synergistic pieces that aggro decks are for players who want to commit threats early, attack often, and make combat math matter every turn.
+What are the best colors for Aggro?
+Boros stacks anthems, haste, extra combats, protection, and attack-trigger payoffs like battle cry. However, Gruul brings haste, larger bodies, trample, and ramp that deploys multiple attackers per turn.
+What are the weaknesses of Aggro decks?
+Board wipes can erase several turns of development with one card, so overextending is a constant risk. Dealing 120 total damage across three opponents means the deck can run out of gas without dedicated refueling. Pillow-fort and lifegain decks can outlast early pressure and take over once the game goes long. Late-game topdecks can be weak because cheap attackers lose impact as the table develops.
+EDHMatchThe data platform for Commander. Find commanders that fit how you actually play.
+Explore
+Home
+Search
+Quiz
+What Should I Build Next?
+Blog
+Discover
+Collections
+Sets
+Budget
+Strategy Guides
+All Themes
+Tokens
+Sacrifice
+Lifegain
+Company
+Newsletter
+About
+Contact
+Legal
+Affiliate Disclosure
+Privacy Policy
+Terms & Conditions
+Cookie Settings
+Magic: The Gathering and its logos are trademarks of Wizards of the Coast LLC. This site is not affiliated with Wizards of the Coast LLC.© 2026 EDHMATCH

@@ -1,0 +1,5124 @@
+{
+ "version": 1,
+ "generated": "2026-10-25",
+ "sources": {
+  "sw": "https://spellweave.app/guides/edh-archetypes",
+  "em": "https://www.edhmatch.com/strategies",
+  "cf": "https://commander-forge.com/archetypes",
+  "tz": "https://turnzerohq.com/guides/archetypes"
+ },
+ "note": "removal_mass/edict/extra_combat are not ftags; mapped to removal/sacrifice/trigger:beginning_of_combat (coarse). Named cards absent from pool are reference only. ftags signals: 'x' matches tag x and x:*, 'x:y' exact. cmc_ge_N is a computed condition. weak_tags are opposing-deck tags that hurt the archetype (use in balancer).",
+ "archetypes": {
+  "aristocrats": {
+   "id": "aristocrats",
+   "plan": "cheap recursive bodies feed a free outlet while death triggers drain, draw and make Treasure",
+   "stages": [
+    "setup: cheap creatures and token makers",
+    "engine: 1-3 mana free sacrifice outlets",
+    "payoff: stack 2-3 death-trigger payoffs",
+    "rebuild: recursion after sweepers",
+    "win: chain sacrifices until drain finishes the table"
+   ],
+   "roles": {
+    "fodder": {
+     "sig": [
+      "token_make",
+      "recursion",
+      "reanimate"
+     ],
+     "cards": [
+      "Reassembling Skeleton",
+      "Bloodghast",
+      "Gravecrawler"
+     ],
+     "n": [
+      10,
+      12
+     ]
+    },
+    "outlet": {
+     "sig": [
+      "sacrifice_outlet",
+      "cost_sacrifice_target"
+     ],
+     "cards": [
+      "Viscera Seer",
+      "Carrion Feeder",
+      "Ashnod's Altar"
+     ],
+     "n": [
+      5,
+      8
+     ]
+    },
+    "payoff": {
+     "sig": [
+      "trigger:dies",
+      "life_loss",
+      "drain"
+     ],
+     "cards": [
+      "Blood Artist",
+      "Zulaport Cutthroat",
+      "Bastion of Remembrance",
+      "Grave Pact",
+      "Dictate of Erebos",
+      "Mayhem Devil",
+      "Pitiless Plunderer"
+     ],
+     "n": [
+      8,
+      10
+     ]
+    },
+    "recursion": {
+     "sig": [
+      "recursion",
+      "reanimate"
+     ],
+     "cards": [
+      "Meren of Clan Nel Toth"
+     ],
+     "n": null
+    }
+   },
+   "wins": [
+    "drain by stacked death triggers on a mass sacrifice turn",
+    "recurring sac loop for infinite triggers",
+    "grind then drain"
+   ],
+   "weak": "graveyard hate and exile stop recursion; Hushbringer-style trigger stops; activated-ability taxes slow outlets; slow versus fast combo",
+   "weak_tags": [
+    "grave_hate",
+    "restrict_kind:cant_activate"
+   ],
+   "overlaps": [
+    "sacrifice",
+    "tokens",
+    "lifegain",
+    "graveyard"
+   ],
+   "subs": [
+    "aristocrats",
+    "blood_artist",
+    "food_chain",
+    "treasure_sac"
+   ],
+   "colors": [
+    "B",
+    "WB",
+    "BR",
+    "BG",
+    "WBR"
+   ],
+   "bracket": [
+    2,
+    4
+   ],
+   "notes": "",
+   "src": {
+    "sw": "stack 2-3 drain triggers with a free outlet; bracket 2-4",
+    "em": "payoffs 8-10, outlets 5-8, fodder 10-12, engine pieces cost 1-3",
+    "cf": "sub: aristocrats, blood artist, food chain, treasure sac; need fodder+outlet+payoff, outlet redundancy",
+    "tz": "usually also go-wide"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Blood Artist",
+     "why": "Whenever any creature dies, including theirs, the player you target loses 1 life and you gain 1. The defining card of the archetype."
+    },
+    {
+     "name": "Zulaport Cutthroat",
+     "why": "Counts only your own creatures, but drains each opponent instead of one target. Redundancy is what turns a cute engine into a consistent kill."
+    },
+    {
+     "name": "Bastion of Remembrance",
+     "why": "A third copy on an enchantment, which is much harder for most decks to remove than a 0/1 body."
+    },
+    {
+     "name": "Viscera Seer",
+     "why": "A free sacrifice outlet on a one-drop, with scry attached. Being free and repeatable matters far more than the scry."
+    },
+    {
+     "name": "Ashnod's Altar",
+     "why": "Sacrifice for two colorless mana. The outlet that most combo lines in the archetype are built around."
+    },
+    {
+     "name": "Phyrexian Altar",
+     "why": "The same at one mana of any color, which fixes as well as ramps and enables far more loops."
+    },
+    {
+     "name": "Goblin Bombardment",
+     "why": "A free outlet that deals a damage each time, so it is an outlet and a win condition in one two-mana enchantment."
+    },
+    {
+     "name": "Pitiless Plunderer",
+     "why": "A Treasure for every creature that dies, which pays for the next sacrifice and turns many loops infinite."
+    },
+    {
+     "name": "Grave Pact",
+     "why": "Every creature you lose costs each opponent one too. Turns your engine into a one-sided board wipe on repeat."
+    },
+    {
+     "name": "Dictate of Erebos",
+     "why": "The same effect with flash, so it lands after a wrath or in response to removal on your commander."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Teysa Karlov",
+     "why": "Doubles every death trigger and gives your tokens vigilance and lifelink. The most direct payoff commander in the archetype."
+    },
+    {
+     "name": "Korvold, Fae-Cursed King",
+     "why": "Draws and grows on every sacrifice, of any permanent type. The best card-advantage engine of any aristocrats commander."
+    },
+    {
+     "name": "Yawgmoth, Thran Physician",
+     "why": "A free outlet, a draw engine, and repeatable removal on one four-drop. Rewrites what the deck is allowed to do."
+    },
+    {
+     "name": "Judith, the Scourge Diva",
+     "why": "Anthem plus a damage per nontoken death, aiming the engine at creatures as well as at players."
+    },
+    {
+     "name": "Ayara, First of Locthwain",
+     "why": "Drains on every black creature entering and converts creatures into cards. Mono-black and relentlessly consistent."
+    },
+    {
+     "name": "Marchesa, the Black Rose",
+     "why": "Returns your creatures when they die with a counter on them, which makes sacrificing genuinely free."
+    },
+    {
+     "name": "Shirei, Shizo's Caretaker",
+     "why": "Returns every one-power creature that died this turn, every turn. A recursion engine built for sacrifice loops."
+    },
+    {
+     "name": "Chatterfang, Squirrel General",
+     "why": "Adds a Squirrel to every token you make and turns the board into removal. Fuel supply and outlet in one."
+    },
+    {
+     "name": "Juri, Master of the Revue",
+     "why": "Grows on every sacrifice and dumps all that damage at a player when he dies. A sacrifice deck with a built-in finisher."
+    },
+    {
+     "name": "Braids, Arisen Nightmare",
+     "why": "Turns your own sacrifices into cards or life loss and makes opponents choose which. Value even when the engine stalls."
+    }
+   ],
+   "tz_watch_out": "Aristocrats decks can drain the table from a board that looks harmless, which is why experienced pods kill a Blood Artist on sight. Run enough redundancy that losing one payoff is not losing the game, and be honest at Rule 0. A deck that wins from an empty-looking board without attacking surprises people, and the surprise is the part that causes friction."
+  },
+  "sacrifice": {
+   "id": "sacrifice",
+   "plan": "permanents are expendable fuel for outlets; value comes from the sacrifice itself, not only deaths",
+   "stages": [
+    "early: fodder plus at least one free outlet",
+    "mid: sacrifice for mana, cards or triggers; sacrifice in response to removal",
+    "rebuild with recursion and tokens",
+    "win: drain, edicts or attack with rebuilt board"
+   ],
+   "roles": {
+    "outlet": {
+     "sig": [
+      "sacrifice_outlet"
+     ],
+     "cards": [
+      "Viscera Seer",
+      "Carrion Feeder",
+      "Ashnod's Altar",
+      "Phyrexian Altar"
+     ],
+     "n": [
+      3,
+      5
+     ]
+    },
+    "fodder": {
+     "sig": [
+      "token_make",
+      "recursion"
+     ],
+     "cards": [
+      "Reassembling Skeleton"
+     ],
+     "n": [
+      8,
+      10
+     ]
+    },
+    "payoff": {
+     "sig": [
+      "trigger:dies",
+      "sacrifice"
+     ],
+     "cards": [
+      "Grave Pact",
+      "Pitiless Plunderer"
+     ],
+     "n": null
+    },
+    "card_adv": {
+     "sig": [
+      "draw",
+      "cost_sacrifice_target"
+     ],
+     "cards": [
+      "Village Rites",
+      "Deadly Dispute"
+     ],
+     "n": [
+      8,
+      10
+     ]
+    },
+    "interaction": {
+     "sig": [
+      "sacrifice",
+      "effect:sacrifice"
+     ],
+     "cards": [],
+     "n": [
+      6,
+      8
+     ]
+    }
+   },
+   "wins": [
+    "drain via stacked death payoffs",
+    "outlet plus recursion loops",
+    "edict grind then attack"
+   ],
+   "weak": "graveyard hate; loses outlets or payoff enchantments; token-light draws; slow vs fast combo",
+   "weak_tags": [
+    "grave_hate"
+   ],
+   "overlaps": [
+    "aristocrats",
+    "tokens",
+    "graveyard",
+    "reanimator"
+   ],
+   "subs": [],
+   "colors": [
+    "B",
+    "BG",
+    "BR",
+    "BRG"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "em": "outlets 3-5, fodder 8-10, sac-tied card advantage 8-10, edict interaction 6-8, low curve",
+    "cf": "Sacrifice group of 17; needs fodder, outlet, payoff"
+   }
+  },
+  "tokens": {
+   "id": "tokens",
+   "plan": "go wide, double output, then one large alpha strike or a non-combat damage payoff",
+   "stages": [
+    "early: repeatable generators (prefer over one-shots)",
+    "mid: doublers and anthems; keep one generator back vs sweepers",
+    "finish: overrun, or damage per creature entering"
+   ],
+   "roles": {
+    "generator": {
+     "sig": [
+      "token_make"
+     ],
+     "cards": [
+      "Krenko, Mob Boss",
+      "Adeline, Resplendent Cathar",
+      "Rhys the Redeemed",
+      "Trostani, Selesnya's Voice",
+      "Tendershoot Dryad",
+      "Secure the Wastes",
+      "Avenger of Zendikar"
+     ],
+     "n": [
+      10,
+      14
+     ]
+    },
+    "doubler": {
+     "sig": [
+      "token_count",
+      "replace"
+     ],
+     "cards": [
+      "Doubling Season",
+      "Anointed Procession",
+      "Parallel Lives",
+      "Mondrak, Glory Dominus"
+     ],
+     "n": [
+      2,
+      4
+     ]
+    },
+    "anthem": {
+     "sig": [
+      "pump_team",
+      "lord"
+     ],
+     "cards": [
+      "Cathars' Crusade",
+      "Intangible Virtue",
+      "Divine Visitation"
+     ],
+     "n": [
+      4,
+      6
+     ]
+    },
+    "finisher": {
+     "sig": [
+      "pump_team",
+      "grant_kw:trample"
+     ],
+     "cards": [
+      "Craterhoof Behemoth",
+      "Overwhelming Stampede",
+      "Triumph of the Hordes"
+     ],
+     "n": null
+    },
+    "drain": {
+     "sig": [
+      "damage",
+      "trigger:etb"
+     ],
+     "cards": [
+      "Impact Tremors",
+      "Purphoros, God of the Forge"
+     ],
+     "n": null
+    },
+    "draw": {
+     "sig": [
+      "draw"
+     ],
+     "cards": [
+      "Skullclamp"
+     ],
+     "n": [
+      6,
+      8
+     ]
+    },
+    "protection": {
+     "sig": [
+      "protection_trick",
+      "phase_out",
+      "kw:indestructible"
+     ],
+     "cards": [
+      "Heroic Intervention",
+      "Flawless Maneuver",
+      "Selfless Spirit",
+      "Boros Charm"
+     ],
+     "n": [
+      3,
+      5
+     ]
+    },
+    "ramp": {
+     "sig": [
+      "mana_source"
+     ],
+     "cards": [],
+     "n": [
+      8,
+      10
+     ]
+    }
+   },
+   "wins": [
+    "mass pump plus trample alpha",
+    "Impact Tremors / Purphoros non-combat damage",
+    "tokens upgraded by Divine Visitation"
+   ],
+   "weak": "board wipes; Propaganda effects and big blockers; removal on doublers/anthems; overcommitting",
+   "weak_tags": [
+    "removal",
+    "restrict_kind:cant_attack",
+    "attack_tax"
+   ],
+   "overlaps": [
+    "aristocrats",
+    "counters",
+    "aggro",
+    "tribal",
+    "blink",
+    "proliferate"
+   ],
+   "subs": [
+    "go_wide",
+    "anthems",
+    "populate",
+    "convoke"
+   ],
+   "colors": [
+    "GW",
+    "WB",
+    "RG",
+    "UR",
+    "RGW"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "2-3 turns wide then mass pump or doubler; bracket n/a",
+    "em": "generators 10-14, doublers 2-4, anthems 4-6, draw 6-8, ramp 8-10, wipe answers 3-5",
+    "cf": "sub: go wide, anthems, populate, convoke",
+    "tz": "Doubling Season + Parallel Lives quadruples; sample 36 lands 12 ramp 9 removal 32 creatures 7 draw 1 wipe; Jetmir escalates at 3/6/9 attackers"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Doubling Season",
+     "why": "Doubles tokens and counters. Expensive, format-defining, and the single most impactful card the archetype can draw."
+    },
+    {
+     "name": "Anointed Procession",
+     "why": "The white half of the effect at four mana, and the reason token decks run several doublers rather than one."
+    },
+    {
+     "name": "Parallel Lives",
+     "why": "The green half. Stacking two doublers quadruples output, which is how a modest token engine becomes a lethal one in a turn."
+    },
+    {
+     "name": "Cathars' Crusade",
+     "why": "A plus-one-plus-one counter on everything for every creature that enters. Grows the whole board geometrically and ends games quickly."
+    },
+    {
+     "name": "Divine Visitation",
+     "why": "Every token becomes a 4/4 Angel with flying and vigilance instead. Turns quantity directly into quality."
+    },
+    {
+     "name": "Craterhoof Behemoth",
+     "why": "Mass pump and trample on a haste body. The archetype's most reliable one-card kill from a developed board."
+    },
+    {
+     "name": "Intangible Virtue",
+     "why": "Two mana for a token-only anthem plus vigilance, which is exactly the rate a deck that makes twelve of them wants."
+    },
+    {
+     "name": "Skullclamp",
+     "why": "Equip a 1/1, it dies, draw two. Converts surplus tokens into a card-draw engine and fixes the archetype's biggest weakness."
+    },
+    {
+     "name": "Impact Tremors",
+     "why": "A damage to each opponent per creature entering. Wins without combat, which matters against decks full of blockers."
+    },
+    {
+     "name": "Secure the Wastes",
+     "why": "An instant-speed X tokens, so it dodges sorcery-speed wraths and can be held until the turn it is lethal."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Krenko, Mob Boss",
+     "why": "Doubles your goblin count on every tap. The fastest token accumulation in the format if it survives a rotation."
+    },
+    {
+     "name": "Adeline, Resplendent Cathar",
+     "why": "A Human token per opponent on every attack, and she grows with the board. Aggro and go-wide in the same card."
+    },
+    {
+     "name": "Rhys the Redeemed",
+     "why": "A one-drop that first makes tokens and then copies your entire board. The cleanest scaling in the archetype."
+    },
+    {
+     "name": "Trostani, Selesnya's Voice",
+     "why": "Populate plus lifegain on every creature entering, which buys the turns a wide board needs to set up."
+    },
+    {
+     "name": "Ghave, Guru of Spores",
+     "why": "Converts counters into tokens and back. The bridge between go-wide, counters, and aristocrats, and a combo engine besides."
+    },
+    {
+     "name": "Jetmir, Nexus of Revels",
+     "why": "Escalating buffs at three, six, and nine attackers. A commander that states the archetype's thresholds as text."
+    },
+    {
+     "name": "Prossh, Skyraider of Kher",
+     "why": "Kobolds scaling with the commander tax you have already paid, and a built-in sacrifice outlet."
+    },
+    {
+     "name": "The Locust God",
+     "why": "A hasty flier per card drawn. The blue exception, powered by draw spells rather than by anthems."
+    },
+    {
+     "name": "Purphoros, God of the Forge",
+     "why": "Two damage per creature entering, from an indestructible non-creature body. Wins through blockers and through wraths."
+    },
+    {
+     "name": "Emmara, Soul of the Accord",
+     "why": "A token whenever she taps, including for convoke, so she produces every turn without ever attacking."
+    }
+   ],
+   "tz_watch_out": "One board wipe undoes an hour of work, and go-wide is the archetype wraths are printed to punish. Hold something back, run protection like Heroic Intervention or Boros Charm, and resist the urge to dump your whole hand before you can actually win. The second failure mode is quieter: a wide board with no finisher just sits there, so make sure the deck can convert numbers into damage."
+  },
+  "tribal": {
+   "id": "tribal",
+   "plan": "density of one creature type; lords stack multiplicatively; payoffs reward casting or attacking with the type",
+   "stages": [
+    "early: type two-drops and cost reducers",
+    "mid: lords and card-advantage payoffs",
+    "finish: mass pump or type-specific payoff"
+   ],
+   "roles": {
+    "lord": {
+     "sig": [
+      "lord",
+      "pump_team"
+     ],
+     "cards": [
+      "Goblin King",
+      "Lord of Atlantis",
+      "Elvish Archdruid",
+      "Goblin Chieftain",
+      "Merrow Reejerey"
+     ],
+     "n": null
+    },
+    "cost_reducer": {
+     "sig": [
+      "cost_reduce"
+     ],
+     "cards": [
+      "Urza's Incubator",
+      "Herald's Horn"
+     ],
+     "n": null
+    },
+    "card_adv": {
+     "sig": [
+      "draw",
+      "trigger:spell_cast"
+     ],
+     "cards": [
+      "Kindred Discovery",
+      "Vanquisher's Banner"
+     ],
+     "n": null
+    },
+    "anthem": {
+     "sig": [
+      "pump_team"
+     ],
+     "cards": [
+      "Coat of Arms",
+      "Shared Animosity"
+     ],
+     "n": null
+    },
+    "protection": {
+     "sig": [
+      "cant_be_countered"
+     ],
+     "cards": [
+      "Cavern of Souls",
+      "Path of Ancestry"
+     ],
+     "n": null
+    },
+    "recursion": {
+     "sig": [
+      "recursion",
+      "reanimate"
+     ],
+     "cards": [
+      "Patriarch's Bidding"
+     ],
+     "n": null
+    }
+   },
+   "wins": [
+    "mass pump on a wide board",
+    "Shared Animosity lethal",
+    "type-specific payoffs (Gishath, Lathril, Kumena)"
+   ],
+   "weak": "board wipes, Engineered Plague, Extinction; targeted removal on lords; filler creatures kept only for type",
+   "weak_tags": [
+    "removal"
+   ],
+   "overlaps": [
+    "aristocrats",
+    "tokens",
+    "aggro"
+   ],
+   "subs": [],
+   "colors": [
+    "any"
+   ],
+   "bracket": null,
+   "notes": "Concordia rule H74: tribe match counts only with tribal abilities. Tag niche:tribal marks cards that only pay off in a matching deck.",
+   "src": {
+    "sw": "variants aggro, combo (Slivers, Wizards), value (Merfolk, Faeries)",
+    "em": null,
+    "cf": "sub under Creatures: Tribal, Aggro, Extra Combat, Power Matters",
+    "tz": "three lords outscale one; commit to a type, deploy lords and payoffs, attack as one"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Cavern of Souls",
+     "why": "A land that makes your chosen type uncounterable. Expensive, but no other card protects a tribal deck's key spells this cleanly."
+    },
+    {
+     "name": "Path of Ancestry",
+     "why": "The budget-friendly version of the same idea, adding a scry whenever it pays for a creature of your type."
+    },
+    {
+     "name": "Vanquisher's Banner",
+     "why": "An anthem that also draws a card for every creature of your type you cast. Fixes the archetype's card-advantage problem."
+    },
+    {
+     "name": "Herald's Horn",
+     "why": "Cost reduction plus a free card off the top each upkeep when it hits your type. Cheap and consistently excellent."
+    },
+    {
+     "name": "Kindred Discovery",
+     "why": "Draws whenever a creature of your type enters or attacks. The most explosive draw engine available to any tribe."
+    },
+    {
+     "name": "Coat of Arms",
+     "why": "Every creature gets plus-one-plus-one for each other creature sharing a type. Enormous, and symmetrical enough to be dangerous."
+    },
+    {
+     "name": "Shared Animosity",
+     "why": "The one-sided version for attackers only, which usually converts a developed board into lethal on the spot."
+    },
+    {
+     "name": "Metallic Mimic",
+     "why": "A two-drop that names your type and puts a counter on every one that follows. Works in any color."
+    },
+    {
+     "name": "Urza's Incubator",
+     "why": "Two generic mana off every creature spell of your type. The single biggest cost reduction available to tribal decks."
+    },
+    {
+     "name": "Patriarch's Bidding",
+     "why": "Returns every creature of the named types from all graveyards. The archetype's post-wrath reset button."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Edgar Markov",
+     "why": "Vampires. Makes a token from the command zone on every Vampire cast, which is unmatched value for a tribal commander."
+    },
+    {
+     "name": "The Ur-Dragon",
+     "why": "Dragons. Cost reduction on Dragons and a free permanent from hand on every Dragon that connects."
+    },
+    {
+     "name": "Sliver Overlord",
+     "why": "Slivers. Tutors any Sliver repeatedly, which makes the deck the most consistent tribal build in the format."
+    },
+    {
+     "name": "Lathril, Blade of the Elves",
+     "why": "Elves. Makes tokens on damage and converts a wide Elf board into a drain that ignores blockers entirely."
+    },
+    {
+     "name": "Wilhelt, the Rotcleaver",
+     "why": "Zombies. Turns every Zombie death into a Decayed token and a card, which is the whole aristocrats overlap in one commander."
+    },
+    {
+     "name": "Kumena, Tyrant of Orazca",
+     "why": "Merfolk. Three abilities that convert a Merfolk board into unblockable damage, cards, and counters."
+    },
+    {
+     "name": "Gishath, Sun's Avatar",
+     "why": "Dinosaurs. Puts Dinosaurs directly from library to battlefield on combat damage, and a single hit often ends the game."
+    },
+    {
+     "name": "Najeela, the Blade-Blossom",
+     "why": "Warriors. Tokens on attack, and with five colors available she takes infinite combat steps."
+    },
+    {
+     "name": "Muxus, Goblin Grandee",
+     "why": "Goblins. Digs six deep and puts every Goblin found onto the battlefield at once."
+    },
+    {
+     "name": "Kaalia of the Vast",
+     "why": "Angels, Demons, and Dragons. Cheats one onto the battlefield attacking, every combat, from turn four."
+    }
+   ],
+   "tz_watch_out": "Tribal decks lose to board wipes harder than anything except go-wide, and the lords make targeted removal unusually effective too. Build in recursion (Patriarch's Bidding is in the archetype's top ten for a reason) and resist filling the last ten slots with weak creatures purely because they share a type. A bad card is still a bad card when it is on-theme."
+  },
+  "voltron": {
+   "id": "voltron",
+   "plan": "one protected threat (usually the commander) wins by 21 commander damage, often in two swings",
+   "stages": [
+    "pick the single threat",
+    "attach equipment/auras: power, evasion, protection",
+    "hold protection so removal or bounce does not reset",
+    "rebuild by re-equipping or recasting",
+    "remove players one at a time"
+   ],
+   "roles": {
+    "attach": {
+     "sig": [
+      "equip",
+      "kw:equip",
+      "kw:enchant",
+      "kw:bestow"
+     ],
+     "cards": [
+      "Sword of the Animist",
+      "Commander's Plate",
+      "Sword of Feast and Famine",
+      "All That Glitters",
+      "Shielded by Faith",
+      "Battle Mastery",
+      "Ethereal Armor"
+     ],
+     "n": [
+      12,
+      18
+     ]
+    },
+    "attach_helper": {
+     "sig": [
+      "cost_reduce",
+      "put_onto_battlefield"
+     ],
+     "cards": [
+      "Sigarda's Aid",
+      "Puresteel Paladin",
+      "Hammer of Nazahn",
+      "Colossus Hammer"
+     ],
+     "n": [
+      4,
+      6
+     ]
+    },
+    "protection": {
+     "sig": [
+      "protection_trick",
+      "kw:hexproof",
+      "phase_out",
+      "kw:indestructible"
+     ],
+     "cards": [
+      "Swiftfoot Boots",
+      "Lightning Greaves",
+      "Heroic Intervention",
+      "Flawless Maneuver",
+      "Teferi's Protection",
+      "Snakeskin Veil"
+     ],
+     "n": [
+      6,
+      8
+     ]
+    },
+    "evasion": {
+     "sig": [
+      "evasion",
+      "cant_be_blocked",
+      "kw:flying",
+      "kw:trample"
+     ],
+     "cards": [
+      "Rogue's Passage"
+     ],
+     "n": null
+    },
+    "tutor": {
+     "sig": [
+      "tutor"
+     ],
+     "cards": [
+      "Steelshaper's Gift",
+      "Open the Armory"
+     ],
+     "n": null
+    },
+    "ramp": {
+     "sig": [
+      "mana_source"
+     ],
+     "cards": [],
+     "n": [
+      8,
+      10
+     ]
+    },
+    "damage_multiplier": {
+     "sig": [
+      "kw:double_strike",
+      "trigger:beginning_of_combat"
+     ],
+     "cards": [],
+     "n": null
+    }
+   },
+   "wins": [
+    "21 commander damage on each opponent",
+    "double strike / extra combats",
+    "evasive or unblockable commander"
+   ],
+   "weak": "edicts, exile, mass bounce bypass protection; Maze of Ith, fog, propaganda; commander tax; aura-heavy builds lose cards when the creature dies",
+   "weak_tags": [
+    "sacrifice",
+    "bounce",
+    "fog",
+    "attack_tax",
+    "tap_down"
+   ],
+   "overlaps": [
+    "equipment",
+    "counters",
+    "enchantress",
+    "infect"
+   ],
+   "subs": [
+    "equipment_voltron",
+    "aura_voltron",
+    "infect_voltron",
+    "double_strike"
+   ],
+   "colors": [
+    "RW",
+    "WU",
+    "GW",
+    "UR"
+   ],
+   "bracket": [
+    2,
+    3
+   ],
+   "notes": "",
+   "src": {
+    "sw": "two attacks of 10-11 for 21; bracket 2-3",
+    "em": "equipment/auras 12-18, helpers 4-6, protection 6-8, ramp 8-10",
+    "cf": "subs: equipment, aura, infect, double strike",
+    "tz": "the opposite approach to go wide"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Lightning Greaves",
+     "why": "Zero-cost equip granting haste and shroud. The most-played protection equipment in the format, and often the first thing a Voltron deck finds."
+    },
+    {
+     "name": "Swiftfoot Boots",
+     "why": "Hexproof instead of shroud, so you can still target your own creature with auras. The two boots do different jobs and most decks run both."
+    },
+    {
+     "name": "Shadowspear",
+     "why": "Trample and lifelink for one mana, plus the ability to strip hexproof and indestructible from blockers. Small, cheap, and always relevant."
+    },
+    {
+     "name": "Sword of Feast and Famine",
+     "why": "Protection from two colors, an opponent discards, and your lands untap. The best of the sword cycle for a deck that wants to keep casting after combat."
+    },
+    {
+     "name": "Colossus Hammer",
+     "why": "Plus ten, minus ten, with an eight-mana equip cost that decks solve with Sigarda's Aid or equipment-cost reduction. A one-card kill when it works."
+    },
+    {
+     "name": "Whispersilk Cloak",
+     "why": "Unblockable and shroud in one card. Evasion and protection stapled together is exactly what the archetype is short on."
+    },
+    {
+     "name": "Rancor",
+     "why": "Two power, trample, and it comes back to hand when it goes to the graveyard. Auras are card disadvantage; Rancor simply is not."
+    },
+    {
+     "name": "Ethereal Armor",
+     "why": "Scales with your enchantment count and grants first strike, which is why aura-based Voltron builds get better the longer they go."
+    },
+    {
+     "name": "Bear Umbra",
+     "why": "Untaps your lands on attack and shields the creature from the next removal spell via totem armor. Protection and ramp on one aura."
+    },
+    {
+     "name": "Kaldra Compleat",
+     "why": "A free 5/5 germ with first strike, trample, haste, and indestructible, and it exiles whatever it damages. A whole Voltron package in one card."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Uril, the Miststalker",
+     "why": "Untargetable by opponents and grows with every aura you attach. The most protected Voltron commander in the format."
+    },
+    {
+     "name": "Rafiq of the Many",
+     "why": "Exalted plus double strike means a single attacker converts every pump effect into twice the damage."
+    },
+    {
+     "name": "Bruna, Light of Alabaster",
+     "why": "Attaches every aura from your hand and graveyard on attack, rebuilding the whole stack after a removal spell."
+    },
+    {
+     "name": "Sram, Senior Edificer",
+     "why": "Draws on every equipment, aura, or vehicle. Mono-white, cheap, and solves the archetype's card-advantage problem outright."
+    },
+    {
+     "name": "Halvar, God of Battle",
+     "why": "Moves equipment and auras around at no cost, and flips into an equipment that returns the creature it kills."
+    },
+    {
+     "name": "Light-Paws, Emperor's Voice",
+     "why": "Tutors an aura onto the battlefield with each aura you cast, chaining a whole suite out of a single card."
+    },
+    {
+     "name": "Syr Gwyn, Hero of Ashvale",
+     "why": "Free equip costs for Knights plus card draw on damage. A Voltron commander that can spread across a team."
+    },
+    {
+     "name": "Nazahn, Revered Bladesmith",
+     "why": "Tutors an equipment on entry and gives your equipped creatures trample. Consistency plus evasion in the command zone."
+    },
+    {
+     "name": "Skullbriar, the Walking Grave",
+     "why": "Keeps its counters when it changes zones, so removal costs you a turn rather than the whole investment."
+    },
+    {
+     "name": "Greven, Predator Captain",
+     "why": "Draws cards equal to the life you paid and grows accordingly. The black Voltron shell, powered by its own life total."
+    }
+   ],
+   "tz_watch_out": "Everything is in one card, and Swords to Plowshares costs one mana. Assume your commander will eat removal three or four times a game and build for it: cheap protection, recursion for your equipment, and a realistic sense of how much tax you can pay. Also watch the table read: a growing Voltron threat is visible to everyone, so you will be attacked before you are ready more often than any other archetype."
+  },
+  "equipment": {
+   "id": "equipment",
+   "plan": "weapons are the engine that makes ordinary creatures real attackers; gear spreads across a team",
+   "stages": [
+    "deploy carriers that survive removal",
+    "tutor or draw the right equipment",
+    "reduce equip costs or attach free",
+    "move gear between carriers",
+    "win via commander damage or a team sharing tools"
+   ],
+   "roles": {
+    "equipment": {
+     "sig": [
+      "equip",
+      "kw:equip",
+      "target_type:equipment"
+     ],
+     "cards": [
+      "Colossus Hammer",
+      "Sword of Feast and Famine"
+     ],
+     "n": [
+      10,
+      14
+     ]
+    },
+    "tutor": {
+     "sig": [
+      "tutor"
+     ],
+     "cards": [
+      "Stoneforge Mystic",
+      "Steelshaper's Gift",
+      "Open the Armory"
+     ],
+     "n": null
+    },
+    "cost_reducer": {
+     "sig": [
+      "cost_reduce"
+     ],
+     "cards": [
+      "Puresteel Paladin",
+      "Sigarda's Aid",
+      "Brass Squire"
+     ],
+     "n": null
+    },
+    "draw": {
+     "sig": [
+      "draw"
+     ],
+     "cards": [
+      "Sram, Senior Edificer"
+     ],
+     "n": null
+    },
+    "carrier": {
+     "sig": [
+      "evasion",
+      "grant_double_strike"
+     ],
+     "cards": [],
+     "n": [
+      12,
+      18
+     ]
+    },
+    "protection": {
+     "sig": [
+      "protection_trick"
+     ],
+     "cards": [],
+     "n": [
+      6,
+      10
+     ]
+    }
+   },
+   "wins": [
+    "commander damage from a safe carrier",
+    "spread weapons over tokens",
+    "sword triggers plus extra combats"
+   ],
+   "weak": "artifact removal and wipes; equip mana after carrier dies; gear with no creatures does nothing",
+   "weak_tags": [
+    "removal_artifact"
+   ],
+   "overlaps": [
+    "voltron",
+    "aggro",
+    "artifacts"
+   ],
+   "subs": [
+    "equipment"
+   ],
+   "colors": [
+    "W",
+    "RW",
+    "R"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "em": "equipment 10-14, lands 34-36 plus rocks, creatures 12-18, protection 6-10; recovers from sweepers because gear stays",
+    "cf": "sub of Artifact: Equipment; Sram, Wyleth, Akiri in sw"
+   }
+  },
+  "reanimator": {
+   "id": "reanimator",
+   "plan": "stock the graveyard with a 7+ mana creature then reanimate it for 2-3 mana on turn 2-4",
+   "stages": [
+    "stock: discard, self-mill, Entomb-style tutors",
+    "cast a cheap reanimation spell on the target",
+    "use enter/attack triggers immediately",
+    "hold backup recursion for graveyard hate",
+    "close with repeated or mass return"
+   ],
+   "roles": {
+    "enabler": {
+     "sig": [
+      "discard",
+      "self_mill",
+      "tutor_dest:graveyard",
+      "cost:discard"
+     ],
+     "cards": [
+      "Entomb",
+      "Buried Alive",
+      "Faithless Looting"
+     ],
+     "n": [
+      6,
+      8
+     ]
+    },
+    "reanimation": {
+     "sig": [
+      "reanimate",
+      "from_zone:graveyard"
+     ],
+     "cards": [
+      "Reanimate",
+      "Animate Dead",
+      "Necromancy",
+      "Victimize",
+      "Living Death"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "target": {
+     "sig": [
+      "cmc_ge_7"
+     ],
+     "cards": [
+      "Atraxa, Grand Unifier",
+      "Archon of Cruelty",
+      "Ashen Rider",
+      "Razaketh, the Foulblooded",
+      "Sheoldred, Whispering One"
+     ],
+     "n": [
+      6,
+      10
+     ]
+    },
+    "protection": {
+     "sig": [
+      "counterspell"
+     ],
+     "cards": [],
+     "n": null
+    }
+   },
+   "wins": [
+    "early reanimated bomb",
+    "Living Death mass return",
+    "sac outlet + reanimation loop"
+   ],
+   "weak": "graveyard hate at instant speed (Rest in Peace, Bojuka Bog, Leyline of the Void); exile removal; counterspells; no target in hand; predictable key turn",
+   "weak_tags": [
+    "grave_hate",
+    "counterspell"
+   ],
+   "overlaps": [
+    "graveyard",
+    "sacrifice",
+    "mill"
+   ],
+   "subs": [
+    "reanimator"
+   ],
+   "colors": [
+    "B",
+    "UB",
+    "WB",
+    "BG"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "fill graveyard turn 2-3 then reanimate for 2-3 mana",
+    "em": "reanimation 8-12, setup 6-8, targets 6-10",
+    "cf": "sub of Graveyard: Reanimator, Self-Mill, Dredge, Flashback"
+   }
+  },
+  "graveyard": {
+   "id": "graveyard",
+   "plan": "the graveyard is a second hand: fill it, then recur many small resources (creatures, lands, spells)",
+   "stages": [
+    "fill: self-mill, discard, sacrifice, dredge",
+    "replay creatures, lands, spells so removal only delays",
+    "convert recursion to card advantage/mana",
+    "rebuild after sweepers",
+    "close by grinding or a recursion-payoff loop"
+   ],
+   "roles": {
+    "filler": {
+     "sig": [
+      "self_mill",
+      "discard",
+      "mill",
+      "kw:dredge"
+     ],
+     "cards": [
+      "Stitcher's Supplier",
+      "Fauna Shaman"
+     ],
+     "n": [
+      8,
+      10
+     ]
+    },
+    "recursion": {
+     "sig": [
+      "recursion",
+      "reanimate",
+      "from_zone:graveyard",
+      "kw:flashback",
+      "kw:escape"
+     ],
+     "cards": [
+      "Eternal Witness",
+      "Life from the Loam",
+      "Muldrotha, the Gravetide",
+      "Genesis",
+      "Meren of Clan Nel Toth"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "payoff": {
+     "sig": [
+      "trigger:dies",
+      "life_loss"
+     ],
+     "cards": [
+      "Syr Konrad, the Grim"
+     ],
+     "n": null
+    },
+    "backup_engine": {
+     "sig": [
+      "recursion"
+     ],
+     "cards": [],
+     "n": [
+      1,
+      2
+     ]
+    }
+   },
+   "wins": [
+    "drain via recursion payoffs",
+    "grind out answers then attack",
+    "outlet plus recursion loop"
+   ],
+   "weak": "graveyard hate; exile removal; slow setup; visible recursion lines",
+   "weak_tags": [
+    "grave_hate"
+   ],
+   "overlaps": [
+    "aristocrats",
+    "sacrifice",
+    "reanimator",
+    "mill"
+   ],
+   "subs": [
+    "self_mill",
+    "dredge",
+    "flashback"
+   ],
+   "colors": [
+    "BG",
+    "BGU",
+    "UB",
+    "WBG"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "dredge, flashback, escape; overlaps reanimator and self-mill",
+    "em": "fillers 8-10, recursion 8-12, 1-2 backup engines, favor ETB/death-trigger creatures",
+    "cf": "same Graveyard group as reanimator"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Reanimate",
+     "why": "One black mana for any creature in any graveyard. The most efficient reanimation spell ever printed, and the life loss rarely matters at 40."
+    },
+    {
+     "name": "Animate Dead",
+     "why": "Two mana, sticks around as an enchantment, and hits any graveyard. The redundancy that makes the plan consistent."
+    },
+    {
+     "name": "Entomb",
+     "why": "One mana to put exactly the card you want into your own graveyard. Turns a reanimation spell into a tutor for anything."
+    },
+    {
+     "name": "Buried Alive",
+     "why": "Three creatures into the yard at once, which sets up both a reanimation spell and a mass-return effect in a single card."
+    },
+    {
+     "name": "Living Death",
+     "why": "Everyone's graveyard creatures swap with the battlefield. In a deck built for it this is a one-sided board wipe that also rebuilds your team."
+    },
+    {
+     "name": "Eternal Witness",
+     "why": "Returns any card from your graveyard on a body that can itself be recurred. The archetype's most-copied effect for a reason."
+    },
+    {
+     "name": "Victimize",
+     "why": "Sacrifice one creature, return two tapped. Converts a spare token into your two best creatures at instant-speed value."
+    },
+    {
+     "name": "Persist",
+     "why": "Two mana reanimation with a real drawback (the creature comes back with a minus-one-minus-one counter) that costs you almost nothing on a large body."
+    },
+    {
+     "name": "Sun Titan",
+     "why": "Recurs a permanent worth three or less on every attack. The white grind engine that keeps rebuilding after a wrath."
+    },
+    {
+     "name": "Necromancy",
+     "why": "Animate Dead with an instant-speed flash mode, which lets you reanimate in response to removal or at the end of an opponent's turn."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Meren of Clan Nel Toth",
+     "why": "Free recursion every end step, scaling with experience counters. The definitive value-recursion commander."
+    },
+    {
+     "name": "Muldrotha, the Gravetide",
+     "why": "One permanent of each type per turn from the graveyard. Turns lands, artifacts, and enchantments into recursion targets, not just creatures."
+    },
+    {
+     "name": "Karador, Ghost Chieftain",
+     "why": "Costs less the fuller your graveyard is, and casts a creature from it every turn. Built to be milled."
+    },
+    {
+     "name": "Alesha, Who Smiles at Death",
+     "why": "Reanimates a small creature on attack, for free, at a mana value cap that hides an enormous number of powerful bodies."
+    },
+    {
+     "name": "Chainer, Nightmare Adept",
+     "why": "Discard a card to cast a creature from your graveyard with haste: the fill and the payoff in one activated ability."
+    },
+    {
+     "name": "Sheoldred, Whispering One",
+     "why": "Returns a creature to you and forces a sacrifice from everyone else each turn. A commander that attacks the archetype from both sides."
+    },
+    {
+     "name": "The Mimeoplasm",
+     "why": "Exiles two creatures from graveyards and becomes a hybrid of them. Rewards milling the whole table, not just yourself."
+    },
+    {
+     "name": "Gisa and Geralf",
+     "why": "Self-mill on cast plus one graveyard Zombie per turn, the natural bridge between recursion and tribal."
+    },
+    {
+     "name": "Sedris, the Traitor King",
+     "why": "Grants unearth to everything in your graveyard, so any creature you mill becomes a hasty one-shot attacker."
+    },
+    {
+     "name": "Varina, Lich Queen",
+     "why": "Draw-and-discard on attack, which fills the yard while it builds the board. Fill and payoff on the same trigger."
+    }
+   ],
+   "tz_watch_out": "Graveyard hate is the most commonly played sideboard-style effect in Commander, and a single Rest in Peace can turn the deck off entirely. Build in a way that survives it: keep some number of cards that are fine cast from hand, run answers to enchantments and artifacts, and avoid a line where every win requires the graveyard to be intact."
+  },
+  "mill": {
+   "id": "mill",
+   "plan": "empty libraries (three opponents: repeatable and doubled mill) or cash in stocked graveyards",
+   "stages": [
+    "choose opponent mill or self-mill",
+    "deploy repeatable mill over several turns",
+    "add doublers",
+    "protect engines",
+    "cash graveyards for recursion, theft or drain"
+   ],
+   "roles": {
+    "engine": {
+     "sig": [
+      "mill",
+      "self_mill"
+     ],
+     "cards": [
+      "Mesmeric Orb",
+      "Ruin Crab",
+      "Sphinx's Tutelage",
+      "Fleet Swallower"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "doubler": {
+     "sig": [
+      "mill",
+      "replace"
+     ],
+     "cards": [
+      "Bruvac the Grandiloquent",
+      "Fraying Sanity"
+     ],
+     "n": [
+      2,
+      3
+     ]
+    },
+    "payoff": {
+     "sig": [
+      "mill"
+     ],
+     "cards": [
+      "Consuming Aberration",
+      "Bloodchief Ascension",
+      "Maddening Cacophony"
+     ],
+     "n": null
+    },
+    "outlet": {
+     "sig": [
+      "sacrifice_outlet"
+     ],
+     "cards": [
+      "Altar of Dementia"
+     ],
+     "n": null
+    },
+    "interaction": {
+     "sig": [
+      "removal",
+      "counterspell"
+     ],
+     "cards": [],
+     "n": [
+      8,
+      10
+     ]
+    },
+    "graveyard_exile": {
+     "sig": [
+      "exile_from",
+      "grave_hate"
+     ],
+     "cards": [],
+     "n": null
+    }
+   },
+   "wins": [
+    "empty libraries with doubled mill or Traumatize",
+    "self-mill into Jace, Wielder of Mysteries / Laboratory Maniac",
+    "mass reanimation or theft"
+   ],
+   "weak": "three 99-card libraries are slow; shuffle-back effects; mill feeds reanimator opponents; graveyard hate",
+   "weak_tags": [
+    "grave_hate"
+   ],
+   "overlaps": [
+    "reanimator",
+    "graveyard",
+    "control"
+   ],
+   "subs": [
+    "self_mill",
+    "opponent_mill",
+    "mill_combo"
+   ],
+   "colors": [
+    "U",
+    "UB",
+    "BGU"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "win by empty library",
+    "em": "engines 8-12, multipliers 2-3, interaction 8-10",
+    "cf": "subs: self-mill, opponent mill, mill combo, Bruvac"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Glimpse the Unthinkable",
+     "why": "Ten cards for two mana at sorcery speed. Still the most efficient single-target mill spell in the format."
+    },
+    {
+     "name": "Maddening Cacophony",
+     "why": "Eight to one player, or with kicker a quarter of every opponent's library at once. Built for multiplayer in a way most mill cards are not."
+    },
+    {
+     "name": "Fractured Sanity",
+     "why": "Fourteen cards for three mana, with cycling so it is never a dead draw. The efficiency ceiling for single-target mill."
+    },
+    {
+     "name": "Traumatize",
+     "why": "Halves a library in one card. Enormous on turn five, notably worse later. Mill's timing is the opposite of most decks'."
+    },
+    {
+     "name": "Hedron Crab",
+     "why": "Three cards off every land drop, including on other players' turns with a fetchland. A one-drop that accumulates absurd totals."
+    },
+    {
+     "name": "Ruin Crab",
+     "why": "The functional reprint, and the reason a mill deck can run eight crabs. Redundancy matters more here than raw power."
+    },
+    {
+     "name": "Psychic Corrosion",
+     "why": "Mills every opponent whenever you draw, which turns a normal blue draw engine into a table-wide clock."
+    },
+    {
+     "name": "Sphinx's Tutelage",
+     "why": "The same effect aimed at one opponent, with a repeat clause on matching colors that makes it wildly variable and occasionally lethal."
+    },
+    {
+     "name": "Altar of Dementia",
+     "why": "A free sacrifice outlet that mills for the sacrificed creature's power. The bridge between mill and any token or aristocrats shell."
+    },
+    {
+     "name": "Mesmeric Orb",
+     "why": "Mills everyone for every untap, including yours. Symmetrical, but you are the only player at the table who wants it."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Bruvac the Grandiloquent",
+     "why": "Doubles all mill you deal to opponents. Turns Traumatize into a full library and is the single biggest payoff in the archetype."
+    },
+    {
+     "name": "Phenax, God of Deception",
+     "why": "Tap any creature to mill for its toughness. Rewards big, defensive bodies that are good at surviving anyway."
+    },
+    {
+     "name": "Szadek, Lord of Secrets",
+     "why": "Doubles his own mill total on each successful hit. A commander-damage clock and a mill clock in the same card."
+    },
+    {
+     "name": "Mirko Vosk, Mind Drinker",
+     "why": "Mills to four lands on connect, which in a typical Commander deck means far more than four cards."
+    },
+    {
+     "name": "Anowon, the Ruin Thief",
+     "why": "Rogues mill on damage and grow as opponents' graveyards fill. The tribal-mill hybrid, and the most consistent build in the archetype."
+    },
+    {
+     "name": "Circu, Dimir Lobotomist",
+     "why": "Exiles what it mills, which pre-empts every graveyard-recursion deck the mill plan would otherwise be feeding."
+    },
+    {
+     "name": "Umbris, Fear Manifest",
+     "why": "Exiles cards from libraries and grows enormous doing it, converting the mill plan into commander damage as a backup."
+    },
+    {
+     "name": "Lord Xander, the Collector",
+     "why": "Discard, mill, and sacrifice triggers stacked on one body. Slow but attacks every resource at once."
+    },
+    {
+     "name": "Oona, Queen of the Fae",
+     "why": "Exiles from a library and makes a flier for each card of the chosen color, a mill effect that builds a board."
+    },
+    {
+     "name": "Tasha, the Witch Queen",
+     "why": "Lets you cast what you mill from opponents, turning three libraries into your own card pool."
+    }
+   ],
+   "tz_watch_out": "Mill is the archetype most likely to make a table turn on you, because milling everyone reads as attacking everyone. It also actively helps graveyard decks: filling a Muldrotha player's yard is doing their work for them. Talk about it in your Rule 0 conversation, and know which pods it is a good fit for before you sit down."
+  },
+  "spellslinger": {
+   "id": "spellslinger",
+   "plan": "many cheap instants and sorceries each turn feed per-cast payoffs",
+   "stages": [
+    "fill the deck with cheap, flexible spells",
+    "convert each cast to damage, tokens, cards or mana",
+    "hold interaction that also advances the engine",
+    "refill with cantrips, wheels, recursion",
+    "close with triggers, a token force or a large spell"
+   ],
+   "roles": {
+    "payoff": {
+     "sig": [
+      "trigger:spell_cast",
+      "kw:prowess"
+     ],
+     "cards": [
+      "Guttersnipe",
+      "Talrand, Sky Summoner",
+      "Archmage Emeritus",
+      "Young Pyromancer",
+      "Storm-Kiln Artist"
+     ],
+     "n": [
+      6,
+      10
+     ]
+    },
+    "cantrip": {
+     "sig": [
+      "draw",
+      "selection",
+      "scry_count"
+     ],
+     "cards": [
+      "Opt",
+      "Brainstorm",
+      "Frantic Search"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "cost_reducer": {
+     "sig": [
+      "cost_reduce",
+      "mana_source"
+     ],
+     "cards": [
+      "Goblin Electromancer",
+      "Baral, Chief of Compliance",
+      "Birgi, God of Storytelling"
+     ],
+     "n": null
+    },
+    "copy": {
+     "sig": [
+      "clone",
+      "token_type:copy"
+     ],
+     "cards": [
+      "Galvanic Iteration",
+      "Twincast",
+      "Fork"
+     ],
+     "n": null
+    },
+    "rebuy": {
+     "sig": [
+      "kw:flashback",
+      "recursion"
+     ],
+     "cards": [
+      "Mystic Sanctuary"
+     ],
+     "n": null
+    },
+    "spells": {
+     "sig": [
+      "cardtype:instant",
+      "cardtype:sorcery"
+     ],
+     "cards": [],
+     "n": [
+      25,
+      35
+     ]
+    }
+   },
+   "wins": [
+    "burn payoffs over many casts",
+    "spell-made tokens",
+    "copied finisher or large X spell",
+    "Aetherflux Reservoir"
+   ],
+   "weak": "fragile payoff creatures; taxes (Eidolon of Rhetoric, Damping Sphere, Rule of Law); discard; slow board impact",
+   "weak_tags": [
+    "restrict",
+    "attack_tax",
+    "counterspell"
+   ],
+   "overlaps": [
+    "storm",
+    "combo",
+    "control",
+    "card_draw"
+   ],
+   "subs": [
+    "cantrips",
+    "copy_spells",
+    "big_spells",
+    "magecraft"
+   ],
+   "colors": [
+    "UR",
+    "UBR",
+    "URW"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "explosive chain turns; weak to taxes",
+    "em": "instants/sorceries 25-35, payoffs 6-10, cantrips 8-12, interaction 8-10, curve 1-3",
+    "cf": "subs: cantrips, copy spells, big spells, magecraft; Demanding"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Archmage Emeritus",
+     "why": "Magecraft draw. Every instant and sorcery replaces itself, which is the single cleanest way to keep a chain from running out of gas."
+    },
+    {
+     "name": "Storm-Kiln Artist",
+     "why": "A Treasure per spell, so the deck's own spell count pays for the rest of the turn. The most common enabler of a genuinely explosive turn."
+    },
+    {
+     "name": "Young Pyromancer",
+     "why": "A 1/1 per spell for two mana. Converts a deck full of cheap cantrips into an actual board without changing the curve."
+    },
+    {
+     "name": "Thousand-Year Storm",
+     "why": "Each spell copies itself once per spell already cast this turn. Expensive, but it turns the third spell of a turn into a game-ending one."
+    },
+    {
+     "name": "Jeska's Will",
+     "why": "Mana and cards in one card, and with your commander out it delivers both. The premier red ritual in the archetype."
+    },
+    {
+     "name": "Underworld Breach",
+     "why": "Escape lets you recast the instants and sorceries already in your graveyard, which is where a Spellslinger deck keeps most of its deck by turn six."
+    },
+    {
+     "name": "Past in Flames",
+     "why": "Flashback on your whole graveyard for one turn. The classic way to make a second pass through everything you already cast."
+    },
+    {
+     "name": "Murmuring Mystic",
+     "why": "A 1/3 that makes a flying blocker per instant or sorcery. Solves the archetype's real weakness: having no bodies while durdling."
+    },
+    {
+     "name": "Ral, Storm Conduit",
+     "why": "Pings on every spell and copies your instants and sorceries. Doubles as a combo piece with any spell that copies itself."
+    },
+    {
+     "name": "Mizzix's Mastery",
+     "why": "Recast the biggest sorcery in your graveyard; overloaded, recast all of them. A one-card turn that ends games out of nowhere."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Veyran, Voice of Duality",
+     "why": "Doubles your own magecraft and cast triggers, so every payoff on the board pays twice."
+    },
+    {
+     "name": "Zaffai, Thunder Conductor",
+     "why": "Scales with mana value rather than spell count, rewarding a deck that casts a few big spells instead of many small ones."
+    },
+    {
+     "name": "Mizzix of the Izmagnus",
+     "why": "Experience counters make your instants and sorceries progressively cheaper, and the original cost-reduction commander."
+    },
+    {
+     "name": "Niv-Mizzet, Parun",
+     "why": "Draw a card, deal a damage; deal damage, draw a card. A commander that is also the deck's win condition."
+    },
+    {
+     "name": "Kess, Dissident Mage",
+     "why": "One free flashback per turn from the graveyard, which is why Grixis Spellslinger exists as its own lane."
+    },
+    {
+     "name": "Talrand, Sky Summoner",
+     "why": "A 2/2 flier per instant or sorcery, mono-blue. The budget entry point to the archetype and still a real clock."
+    },
+    {
+     "name": "Kalamax, the Stormsire",
+     "why": "Copies the first instant you cast each turn while tapped, pushing the deck toward instant speed and combat tricks."
+    },
+    {
+     "name": "Balmor, Battlemage Captain",
+     "why": "Pumps and grants flying to the team per spell, turning a token board into lethal in one cantrip-heavy turn."
+    },
+    {
+     "name": "Lier, Disciple of the Drowned",
+     "why": "Gives everything in your graveyard flashback and turns off counterspells, which is both an engine and a shield."
+    },
+    {
+     "name": "Elsha of the Infinite",
+     "why": "Play off the top of your library at instant speed. Rewards a deck built almost entirely of cheap noncreature spells."
+    }
+   ],
+   "tz_watch_out": "Spellslinger's failure mode is casting a lot of spells that do not add up to anything. A deck of cantrips with no payoff on the battlefield is a deck that drew cards and passed the turn. Keep enough payoff permanents that any given turn has something to trigger, and enough interaction that you are not simply durdling while three other players develop."
+  },
+  "storm": {
+   "id": "storm",
+   "plan": "bank many cheap spells in one turn until the storm count is lethal",
+   "stages": [
+    "cantrip to sculpt; hold rituals",
+    "count mana before committing",
+    "cost reducers and rituals turn spells into mana and cards",
+    "commit to a payoff only with count and protection ready"
+   ],
+   "roles": {
+    "cantrip": {
+     "sig": [
+      "draw",
+      "selection"
+     ],
+     "cards": [
+      "Ponder",
+      "Preordain",
+      "Brainstorm"
+     ],
+     "n": null
+    },
+    "ritual": {
+     "sig": [
+      "mana",
+      "mana_burst",
+      "cardtype:instant"
+     ],
+     "cards": [
+      "Jeska's Will",
+      "Pyretic Ritual",
+      "Cabal Ritual",
+      "Mana Geyser"
+     ],
+     "n": null
+    },
+    "cost_reducer": {
+     "sig": [
+      "cost_reduce"
+     ],
+     "cards": [
+      "Birgi, God of Storytelling",
+      "Baral, Chief of Compliance"
+     ],
+     "n": null
+    },
+    "refuel": {
+     "sig": [
+      "discard",
+      "draw"
+     ],
+     "cards": [
+      "Windfall",
+      "Past in Flames"
+     ],
+     "n": null
+    },
+    "payoff": {
+     "sig": [
+      "kw:storm",
+      "niche:storm"
+     ],
+     "cards": [
+      "Grapeshot",
+      "Tendrils of Agony",
+      "Aetherflux Reservoir",
+      "Mind's Desire",
+      "Brain Freeze"
+     ],
+     "n": [
+      2,
+      3
+     ]
+    },
+    "spells": {
+     "sig": [
+      "cardtype:instant",
+      "cardtype:sorcery"
+     ],
+     "cards": [],
+     "n": [
+      25,
+      35
+     ]
+    }
+   },
+   "wins": [
+    "Grapeshot/Tendrils lethal count",
+    "Aetherflux Reservoir shot",
+    "Brain Freeze mill",
+    "run 2-3 payoffs"
+   ],
+   "weak": "one counterspell on the payoff; Rule of Law, Thalia taxes, graveyard hate; visible sculpting; long turns unwelcome in casual pods",
+   "weak_tags": [
+    "counterspell",
+    "attack_tax",
+    "grave_hate",
+    "restrict"
+   ],
+   "overlaps": [
+    "spellslinger",
+    "combo",
+    "big_mana"
+   ],
+   "subs": [],
+   "colors": [
+    "UR",
+    "UBR",
+    "R"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "storm copies equal prior spells; tax-weak",
+    "em": "25-35 cheap spells (1-2 mana), a few tutors, 2-3 payoffs"
+   }
+  },
+  "combo": {
+   "id": "combo",
+   "plan": "tutor, protect, win in one decisive moment; 2-3 compact combos with redundancy",
+   "stages": [
+    "early: ramp, draw and tutor toward pieces",
+    "read the table before committing",
+    "hold protection through disruption",
+    "win in one moment, not through combat"
+   ],
+   "roles": {
+    "tutor": {
+     "sig": [
+      "tutor"
+     ],
+     "cards": [
+      "Demonic Tutor",
+      "Mystical Tutor",
+      "Enlightened Tutor"
+     ],
+     "n": [
+      5,
+      10
+     ]
+    },
+    "draw_select": {
+     "sig": [
+      "draw",
+      "selection"
+     ],
+     "cards": [],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "enabler": {
+     "sig": [
+      "mana_source",
+      "untap"
+     ],
+     "cards": [
+      "Isochron Scepter",
+      "Dramatic Reversal"
+     ],
+     "n": null
+    },
+    "payoff_engine": {
+     "sig": [
+      "token_type:copy",
+      "clone"
+     ],
+     "cards": [
+      "Kiki-Jiki, Mirror Breaker",
+      "Zealous Conscripts",
+      "Walking Ballista",
+      "Heliod, Sun-Crowned",
+      "Exquisite Blood",
+      "Sanguine Bond",
+      "Thassa's Oracle",
+      "Demonic Consultation",
+      "Tainted Pact",
+      "Underworld Breach",
+      "Brain Freeze"
+     ],
+     "n": [
+      2,
+      3
+     ]
+    },
+    "protection": {
+     "sig": [
+      "counterspell",
+      "protection_trick"
+     ],
+     "cards": [],
+     "n": [
+      6,
+      10
+     ]
+    },
+    "removal": {
+     "sig": [
+      "removal"
+     ],
+     "cards": [],
+     "n": null
+    }
+   },
+   "wins": [
+    "infinite mana into X spell",
+    "Kiki-Jiki loops",
+    "Thassa's Oracle package",
+    "drain loop",
+    "Scepter + Dramatic Reversal"
+   ],
+   "weak": "single counterspell or removal; tutor punishers (Opposition Agent, Aven Mindcensor, Archivist of Oghma); hand attack; Null Rod, Collector Ouphe; stax strands tutors",
+   "weak_tags": [
+    "counterspell",
+    "restrict",
+    "discard"
+   ],
+   "overlaps": [
+    "spellslinger",
+    "storm",
+    "control",
+    "stax"
+   ],
+   "subs": [],
+   "colors": [
+    "UB",
+    "UR",
+    "WB",
+    "BG"
+   ],
+   "bracket": [
+    3,
+    4
+   ],
+   "notes": "",
+   "src": {
+    "sw": "bracket 3-4",
+    "em": "combos 2-3, tutors 5-10, draw 8-12, protection 6-10, redundancy",
+    "tz": "often a backup plan in other archetypes"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Demonic Tutor",
+     "why": "Two mana, any card, straight to hand. The cleanest tutor ever printed and the backbone of consistency."
+    },
+    {
+     "name": "Vampiric Tutor",
+     "why": "One mana at instant speed for a card on top. Slower to use but cheap enough to hold up alongside protection."
+    },
+    {
+     "name": "Enlightened Tutor",
+     "why": "Finds artifacts and enchantments at instant speed, which covers a large share of the format's combo pieces."
+    },
+    {
+     "name": "Thassa's Oracle",
+     "why": "Win the game on its enter trigger with an empty library. The most-played alternate win condition in Commander."
+    },
+    {
+     "name": "Demonic Consultation",
+     "why": "Exiles your whole library for one card, which is a drawback everywhere except next to Thassa's Oracle, where it is the combo."
+    },
+    {
+     "name": "Isochron Scepter",
+     "why": "Imprints a cheap instant and recasts it every turn. Half of the format's most famous mana-generating loop."
+    },
+    {
+     "name": "Dramatic Reversal",
+     "why": "Untaps all your nonland permanents. The other half: with enough mana rocks the loop generates infinite mana."
+    },
+    {
+     "name": "Kiki-Jiki, Mirror Breaker",
+     "why": "Copies a creature with haste each turn, which is a two-card infinite with any creature that untaps or blinks him."
+    },
+    {
+     "name": "Protean Hulk",
+     "why": "Fetches six mana value of creatures when it dies, so a single sacrifice assembles a whole combo from the library."
+    },
+    {
+     "name": "Ad Nauseam",
+     "why": "Draws most of your deck at the cost of life. In a low-curve list it finds every piece at once."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Kinnan, Bonder Prodigy",
+     "why": "Doubles mana from nonland sources and cheats big creatures out. One of the strongest mana engines in the format."
+    },
+    {
+     "name": "Godo, Bandit Warlord",
+     "why": "Tutors Helm of the Host on entry, which grants infinite combat steps. A mono-red one-card combo."
+    },
+    {
+     "name": "Thrasios, Triton Hero",
+     "why": "Converts infinite mana into drawing your library. The default outlet in cEDH, and legal as a solo commander."
+    },
+    {
+     "name": "Captain Sisay",
+     "why": "Tutors any legendary permanent every turn, chaining into a pile of legends that lock or win."
+    },
+    {
+     "name": "Winota, Joiner of Forces",
+     "why": "Puts Humans onto the battlefield from the library on attack. Snowballs into a game-ending turn immediately."
+    },
+    {
+     "name": "Yisan, the Wanderer Bard",
+     "why": "Tutors creatures by escalating mana value, assembling a creature combo one verse counter at a time."
+    },
+    {
+     "name": "Selvala, Heart of the Wilds",
+     "why": "Enormous mana from a single tap, which turns any big-mana payoff into a kill."
+    },
+    {
+     "name": "Tivit, Seller of Secrets",
+     "why": "Makes Clue and Treasure tokens through voting, and combos cleanly with untap effects."
+    },
+    {
+     "name": "Oswald Fiddlebender",
+     "why": "Sacrifices an artifact to tutor another onto the battlefield, chaining a combo out of the library for one mana a time."
+    },
+    {
+     "name": "Krark, the Thumbless",
+     "why": "Coin-flip spell recursion that goes infinite with the right pairing. The most chaotic combo commander in common play."
+    }
+   ],
+   "tz_watch_out": "Combo is the archetype where power level is least visible from the outside, and where a mismatch is felt most sharply. A deck that wins on turn four in a pod expecting turn ten is not a better deck, it is a different game. Be specific in the Rule 0 conversation, saying that you have infinite combos and roughly when they land, and know which bracket your build belongs in."
+  },
+  "counters": {
+   "id": "counters",
+   "plan": "grow creatures with +1/+1 counters and multiply them until the weakest creature is huge",
+   "stages": [
+    "cast creatures that enter with counters",
+    "multipliers so each trigger gives more",
+    "spread counters across bodies",
+    "convert big creatures to cards/mana/life/pressure",
+    "protect the engine, attack with creatures that outgrow blocks"
+   ],
+   "roles": {
+    "multiplier": {
+     "sig": [
+      "counters_plus",
+      "replace"
+     ],
+     "cards": [
+      "Hardened Scales",
+      "Branching Evolution",
+      "Conclave Mentor",
+      "Doubling Season"
+     ],
+     "n": [
+      3,
+      5
+     ]
+    },
+    "enabler": {
+     "sig": [
+      "counter:p1p1",
+      "counters_plus"
+     ],
+     "cards": [
+      "Rishkar, Peema Renegade",
+      "Mikaeus, the Lunarch"
+     ],
+     "n": [
+      15,
+      20
+     ]
+    },
+    "proliferate": {
+     "sig": [
+      "proliferate"
+     ],
+     "cards": [
+      "Evolution Sage",
+      "Inexorable Tide",
+      "Karn's Bastion"
+     ],
+     "n": [
+      4,
+      6
+     ]
+    },
+    "draw_payoff": {
+     "sig": [
+      "draw",
+      "counters_plus"
+     ],
+     "cards": [
+      "Fathom Mage",
+      "Champion of Lambholt",
+      "Inspiring Call",
+      "Rishkar's Expertise"
+     ],
+     "n": [
+      6,
+      8
+     ]
+    },
+    "protection": {
+     "sig": [
+      "protection_trick"
+     ],
+     "cards": [
+      "The Ozolith",
+      "Nesting Grounds",
+      "Heroic Intervention"
+     ],
+     "n": [
+      3,
+      5
+     ]
+    },
+    "ramp": {
+     "sig": [
+      "mana_source"
+     ],
+     "cards": [],
+     "n": [
+      8,
+      10
+     ]
+    }
+   },
+   "wins": [
+    "tall trampling board",
+    "Simic Ascendancy",
+    "Overwhelming Stampede",
+    "evasion/removal to pass blockers"
+   ],
+   "weak": "board wipes (Farewell, Toxic Deluge); Solemnity; Vampire Hexmage; setup turns; removal on doublers",
+   "weak_tags": [
+    "removal",
+    "counter_prevent"
+   ],
+   "overlaps": [
+    "proliferate",
+    "tokens",
+    "voltron",
+    "lifegain"
+   ],
+   "subs": [
+    "p1p1",
+    "modular",
+    "hydras"
+   ],
+   "colors": [
+    "GW",
+    "GU",
+    "WBG"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "doublers, distributors, payoffs, proliferate",
+    "em": "multipliers 3-5, creatures 15-20, proliferate 4-6, draw 6-8, ramp 8-10, protection 3-5",
+    "cf": "subs: +1/+1, proliferate, modular, hydras"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Hardened Scales",
+     "why": "One extra counter every time counters are placed. A one-drop that quietly doubles the deck's output all game."
+    },
+    {
+     "name": "Branching Evolution",
+     "why": "Doubles counters placed on your creatures. The cleanest and most reliable multiplier in the archetype."
+    },
+    {
+     "name": "Corpsejack Menace",
+     "why": "The same effect on a 4/4 body, so it doubles counters and pressures the board at the same time."
+    },
+    {
+     "name": "The Ozolith",
+     "why": "Collects counters from creatures that die and moves them to a new creature. Makes removal cost you a body, not your investment."
+    },
+    {
+     "name": "Kalonian Hydra",
+     "why": "Doubles the counters on every creature you control on attack. Two attacks usually ends the game."
+    },
+    {
+     "name": "Evolution Sage",
+     "why": "Proliferates on every land drop, adding counters to every creature and planeswalker for free, every turn."
+    },
+    {
+     "name": "Master Biomancer",
+     "why": "Every creature you play enters with counters equal to its power and becomes a Mutant. Scales the whole deck at once."
+    },
+    {
+     "name": "Conclave Mentor",
+     "why": "An extra counter on placement plus lifegain when it dies. Cheap redundancy for the Hardened Scales effect."
+    },
+    {
+     "name": "Inspiring Call",
+     "why": "Draws for every creature with a counter and makes them indestructible. Card advantage and a wrath answer in one instant."
+    },
+    {
+     "name": "Simic Ascendancy",
+     "why": "Tracks growth counters and wins outright at twenty. An alternate win condition that costs the deck nothing to include."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Ezuri, Claw of Progress",
+     "why": "Experience counters that pump a creature every turn, growing permanently across the game."
+    },
+    {
+     "name": "Animar, Soul of Elements",
+     "why": "Grows on every creature cast and reduces their cost, so the deck accelerates as it gets bigger."
+    },
+    {
+     "name": "Vorel of the Hull Clade",
+     "why": "Doubles counters on a permanent every turn, including artifacts and lands with counters on them."
+    },
+    {
+     "name": "Hamza, Guardian of Arashin",
+     "why": "Creatures cost one less per creature with a counter, which makes a developed board fuel enormous turns."
+    },
+    {
+     "name": "Kathril, Aspect Warper",
+     "why": "Distributes counters based on keywords in your graveyard, tying counters to a self-mill plan."
+    },
+    {
+     "name": "Anafenza, the Foremost",
+     "why": "Counters on attack plus graveyard hate stapled on, which shuts down the recursion decks that beat you."
+    },
+    {
+     "name": "Shalai and Hallar",
+     "why": "Turns counter placement into direct damage to every opponent, so growth is also a clock."
+    },
+    {
+     "name": "Renata, Called to the Hunt",
+     "why": "Every creature enters with an extra counter. Mono-green, cheap, and it works with everything."
+    },
+    {
+     "name": "Roalesk, Apex Hybrid",
+     "why": "Arrives with counters and proliferates twice when it dies, so removal still advances your board."
+    },
+    {
+     "name": "Hapatra, Vizier of Poisons",
+     "why": "The minus-one-minus-one side: she turns counters into Snake tokens and doubles as repeatable removal."
+    }
+   ],
+   "tz_watch_out": "The doublers are the deck and they are all noncreature permanents, so a Vandalblast or a Back to Nature hurts more than a board wipe does. Spread the effect across creatures and enchantments rather than relying on one, and remember that counters do not survive a creature dying unless you have The Ozolith or similar. The archetype looks resilient but is only as durable as the bodies carrying it."
+  },
+  "proliferate": {
+   "id": "proliferate",
+   "plan": "seed any counter type, then one trigger adds to all of them",
+   "stages": [
+    "place first counters (+1/+1, poison, loyalty, charge)",
+    "trigger proliferate from spells, lands, abilities",
+    "spread across creatures, walkers, artifacts",
+    "protect board",
+    "pick route (combat, ultimates, poison)"
+   ],
+   "roles": {
+    "engine": {
+     "sig": [
+      "proliferate"
+     ],
+     "cards": [
+      "Evolution Sage",
+      "Flux Channeler",
+      "Inexorable Tide",
+      "Contagion Engine",
+      "Karn's Bastion"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "seed": {
+     "sig": [
+      "counter",
+      "loyalty_change"
+     ],
+     "cards": [],
+     "n": [
+      10,
+      15
+     ]
+    },
+    "protection": {
+     "sig": [
+      "protection_trick"
+     ],
+     "cards": [
+      "The Ozolith"
+     ],
+     "n": null
+    },
+    "draw": {
+     "sig": [
+      "draw"
+     ],
+     "cards": [],
+     "n": [
+      8,
+      10
+     ]
+    }
+   },
+   "wins": [
+    "grown counter board",
+    "planeswalker ultimates",
+    "ten poison via proliferate",
+    "Simic Ascendancy"
+   ],
+   "weak": "proliferate multiplies but does not create; board wipes; slow; poison draws attention",
+   "weak_tags": [
+    "removal"
+   ],
+   "overlaps": [
+    "counters",
+    "infect",
+    "superfriends"
+   ],
+   "subs": [],
+   "colors": [
+    "GU",
+    "WUBG",
+    "WU",
+    "UB"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "em": "engines 8-12, seeds 10-15, draw 8-10, poison 1-2 optional; careful with sagas/vanishing/fading",
+    "cf": "sub of Counters",
+    "tz": "Atraxa archetype"
+   }
+  },
+  "infect": {
+   "id": "infect",
+   "plan": "poison (infect/toxic) instead of life loss; 10 counters via a pumped evasive attacker plus proliferate",
+   "stages": [
+    "attack early with infect/toxic creatures",
+    "pump an evasive attacker for 10 in one or two hits",
+    "proliferate to finish",
+    "protect the swing"
+   ],
+   "roles": {
+    "creature": {
+     "sig": [
+      "kw:infect",
+      "kw:toxic"
+     ],
+     "cards": [
+      "Skithiryx, the Blight Dragon",
+      "Blightsteel Colossus",
+      "Inkmoth Nexus"
+     ],
+     "n": [
+      15,
+      20
+     ]
+    },
+    "pump": {
+     "sig": [
+      "pump_single",
+      "grant_kw:infect"
+     ],
+     "cards": [
+      "Groundswell",
+      "Might of Old Krosa",
+      "Berserk",
+      "Triumph of the Hordes",
+      "Grafted Exoskeleton"
+     ],
+     "n": [
+      6,
+      10
+     ]
+    },
+    "proliferate": {
+     "sig": [
+      "proliferate"
+     ],
+     "cards": [
+      "Evolution Sage",
+      "Contagion Engine",
+      "Tezzeret's Gambit"
+     ],
+     "n": [
+      5,
+      8
+     ]
+    },
+    "protection": {
+     "sig": [
+      "protection_trick"
+     ],
+     "cards": [],
+     "n": [
+      6,
+      8
+     ]
+    }
+   },
+   "wins": [
+    "ten poison on each opponent",
+    "proliferate after combat"
+   ],
+   "weak": "table aggression; fog, deathtouch blockers, wipes; some pods ban poison; lifegain irrelevant to the clock",
+   "weak_tags": [
+    "fog",
+    "removal"
+   ],
+   "overlaps": [
+    "voltron",
+    "proliferate",
+    "aggro"
+   ],
+   "subs": [],
+   "colors": [
+    "BG",
+    "GU",
+    "WBG"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "em": "creatures 15-20, pump 6-10, proliferate 5-8, protection 6-8",
+    "cf": "sub of Voltron: Infect"
+   }
+  },
+  "lifegain": {
+   "id": "lifegain",
+   "plan": "convert life gained into counters, cards, tokens, drain or a charged Aetherflux Reservoir",
+   "stages": [
+    "gain life in repeat small increments",
+    "payoffs turn each trigger into value",
+    "use the life buffer to play patiently",
+    "close with drain loop, oversized board or Reservoir"
+   ],
+   "roles": {
+    "trigger": {
+     "sig": [
+      "lifegain",
+      "kw:lifelink",
+      "trigger:gain_life"
+     ],
+     "cards": [
+      "Soul Warden",
+      "Essence Warden",
+      "Suture Priest",
+      "Authority of the Consuls"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "payoff": {
+     "sig": [
+      "trigger:gain_life"
+     ],
+     "cards": [
+      "Ajani's Pridemate",
+      "Heliod, Sun-Crowned",
+      "Vito, Thorn of the Dusk Rose",
+      "Archangel of Thune"
+     ],
+     "n": [
+      6,
+      10
+     ]
+    },
+    "drain": {
+     "sig": [
+      "life_loss",
+      "drain"
+     ],
+     "cards": [
+      "Sanguine Bond",
+      "Exquisite Blood"
+     ],
+     "n": null
+    },
+    "conversion": {
+     "sig": [
+      "draw"
+     ],
+     "cards": [
+      "Aetherflux Reservoir",
+      "Well of Lost Dreams"
+     ],
+     "n": null
+    },
+    "ramp": {
+     "sig": [
+      "mana_source"
+     ],
+     "cards": [],
+     "n": [
+      10,
+      12
+     ]
+    },
+    "interaction": {
+     "sig": [
+      "removal",
+      "removal"
+     ],
+     "cards": [],
+     "n": [
+      6,
+      8
+     ]
+    }
+   },
+   "wins": [
+    "Vito/Sanguine Bond drain loop",
+    "oversized payoff creatures",
+    "Aetherflux Reservoir"
+   ],
+   "weak": "life does not stop commander damage, poison or combo; payoffs draw removal; Tainted Remedy, Rain of Gore, Roiling Vortex; slow start",
+   "weak_tags": [
+    "life_loss",
+    "restrict"
+   ],
+   "overlaps": [
+    "aristocrats",
+    "counters",
+    "group_hug",
+    "enchantress"
+   ],
+   "subs": [
+    "soul_sisters",
+    "payoffs",
+    "angel_lifegain",
+    "drain"
+   ],
+   "colors": [
+    "W",
+    "WB",
+    "GW",
+    "WBG"
+   ],
+   "bracket": [
+    1,
+    3
+   ],
+   "notes": "",
+   "src": {
+    "sw": "bracket 1-3",
+    "em": "sources 8-12, payoffs 6-10, ramp 10-12, removal 6-8; redundant Pridemate/Vito/Heliod effects first",
+    "cf": "subs: soul sisters, payoffs, angel lifegain, drain; Beginner friendly"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Exquisite Blood",
+     "why": "Gain life whenever an opponent loses it. Half of the format's best-known two-card infinite combo."
+    },
+    {
+     "name": "Sanguine Bond",
+     "why": "The other half: opponents lose life whenever you gain it. Together they loop until the table is at zero."
+    },
+    {
+     "name": "Vito, Thorn of the Dusk Rose",
+     "why": "A cheaper Sanguine Bond on a creature, which makes the combo far easier to assemble and tutor for."
+    },
+    {
+     "name": "Aetherflux Reservoir",
+     "why": "Gains escalating life per spell and pays fifty life to deal fifty damage. A win condition that needs no combat."
+    },
+    {
+     "name": "Archangel of Thune",
+     "why": "Puts a counter on every creature you control whenever you gain life, converting incidental gain into a lethal board."
+    },
+    {
+     "name": "Well of Lost Dreams",
+     "why": "Draw cards for life gained, up to the amount you paid. Turns the archetype's dead resource into cards."
+    },
+    {
+     "name": "Serra Ascendant",
+     "why": "A one-drop 6/6 flying lifelink at thirty or more life, which in a forty-life format is almost immediately."
+    },
+    {
+     "name": "Soul Warden",
+     "why": "A life for every creature entering, from anyone. Cheap, relentless, and the trigger most payoffs are counting."
+    },
+    {
+     "name": "Rhox Faithmender",
+     "why": "Doubles all life you gain, which doubles every drain, draw, and counter your payoffs produce."
+    },
+    {
+     "name": "Felidar Sovereign",
+     "why": "Wins the game outright at forty or more life on your upkeep. The most direct payoff the archetype has."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Oloro, Ageless Ascetic",
+     "why": "Gains two life every upkeep even from the command zone, which makes him the format's most passive engine."
+    },
+    {
+     "name": "Karlov of the Ghost Council",
+     "why": "Two counters per lifegain trigger and exiles creatures by spending them. Grows absurdly fast."
+    },
+    {
+     "name": "Ayli, Eternal Pilgrim",
+     "why": "Sacrifices creatures for life, then exiles any permanent once you are ten life ahead. Lifegain as removal."
+    },
+    {
+     "name": "Licia, Sanguine Tribune",
+     "why": "Costs less the more life you have gained and converts a chunk of your total into permanent power."
+    },
+    {
+     "name": "Willowdusk, Essence Seer",
+     "why": "Moves life gained onto a creature as counters, or turns it into damage. The green-black bridge to counters."
+    },
+    {
+     "name": "Trelasarra, Moon Dancer",
+     "why": "Scry and a counter on every lifegain trigger, on a two-drop. Cheap, fast, and consistent."
+    },
+    {
+     "name": "Lathiel, the Bounteous Dawn",
+     "why": "Distributes counters equal to the life gained that turn across your creatures at end step."
+    },
+    {
+     "name": "Liesa, Shroud of Dusk",
+     "why": "Drains every opponent whenever a creature dies and taxes their spells with life. Two payoffs on one body."
+    },
+    {
+     "name": "Obzedat, Ghost Council",
+     "why": "Drains two every turn and exiles himself to dodge removal, returning to drain again."
+    },
+    {
+     "name": "Heliod, Sun-Crowned",
+     "why": "Counters on lifegain and grants lifelink, which makes him both an engine and half of a famous combo."
+    }
+   ],
+   "tz_watch_out": "A high life total is not a win, and it can be an active liability: being at eighty makes you look untouchable, and tables respond by attacking the person they cannot ignore. Make sure the deck converts life into damage, cards, or counters rather than just accumulating it. Watch out too for how quickly the Exquisite Blood combo ends a game; if your pod is not expecting an infinite, say so before you sit down."
+  },
+  "blink": {
+   "id": "blink",
+   "plan": "flicker creatures to reuse enter-the-battlefield triggers; a blink on a draw creature is a repeating engine",
+   "stages": [
+    "cast ETB creatures that draw, remove, ramp, drain or make tokens",
+    "reuse with flicker spells and repeatable engines",
+    "hold instant-speed blink as protection",
+    "grind card and board advantage",
+    "finish with token engine or trigger loop"
+   ],
+   "roles": {
+    "flicker": {
+     "sig": [
+      "clone",
+      "exile",
+      "return",
+      "put_onto_battlefield"
+     ],
+     "cards": [
+      "Ephemerate",
+      "Momentary Blink",
+      "Ghostly Flicker",
+      "Conjurer's Closet"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "engine": {
+     "sig": [
+      "trigger:end_step",
+      "put_onto_battlefield"
+     ],
+     "cards": [
+      "Thassa, Deep-Dwelling",
+      "Soulherder",
+      "Teleportation Circle",
+      "Panharmonicon"
+     ],
+     "n": null
+    },
+    "etb_creature": {
+     "sig": [
+      "trigger:etb"
+     ],
+     "cards": [
+      "Mulldrifter",
+      "Thragtusk",
+      "Ravenous Chupacabra",
+      "Reflector Mage",
+      "Eternal Witness",
+      "Sun Titan",
+      "Knight of Autumn",
+      "Agent of Treachery"
+     ],
+     "n": [
+      20,
+      25
+     ]
+    },
+    "recursion": {
+     "sig": [
+      "recursion"
+     ],
+     "cards": [
+      "Archaeomancer",
+      "Mnemonic Wall"
+     ],
+     "n": null
+    },
+    "finisher": {
+     "sig": [
+      "life_loss",
+      "token_make"
+     ],
+     "cards": [
+      "Gray Merchant of Asphodel",
+      "Deadeye Navigator",
+      "Peregrine Drake",
+      "Palinchron"
+     ],
+     "n": null
+    }
+   },
+   "wins": [
+    "out-card then outsize removal",
+    "token-producer blink for width",
+    "looped drain triggers",
+    "extra turns (Time Stretch)"
+   ],
+   "weak": "Torpor Orb and Hushbringer; exile or commander removal; slow clock",
+   "weak_tags": [
+    "restrict"
+   ],
+   "overlaps": [
+    "control",
+    "card_draw",
+    "tokens"
+   ],
+   "subs": [
+    "etb_value",
+    "flicker_combo",
+    "panharmonicon",
+    "soulherder"
+   ],
+   "colors": [
+    "WU",
+    "GWU",
+    "WUB"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "engines, ETB targets, Panharmonicon, Deadeye Navigator loop",
+    "em": "flicker 8-12, ETB creatures 20-25",
+    "cf": "subs: ETB value, flicker combo, Panharmonicon, Soulherder"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Ephemerate",
+     "why": "One mana to blink a creature, with rebound so it does it again next turn. Two triggers and a removal dodge for a single card."
+    },
+    {
+     "name": "Eldrazi Displacer",
+     "why": "A repeatable blink for three mana, usable at instant speed on any creature, including an opponent's, as removal."
+    },
+    {
+     "name": "Conjurer's Closet",
+     "why": "Blinks a creature at the end of every one of your turns, for free, forever. The most reliable engine piece in the archetype."
+    },
+    {
+     "name": "Deadeye Navigator",
+     "why": "Soulbond gives unlimited blinks for two mana each. Powerful enough to be a combo piece with half the format."
+    },
+    {
+     "name": "Ghostly Flicker",
+     "why": "Blinks two permanents including lands and artifacts, which is what turns blink into an infinite-mana engine."
+    },
+    {
+     "name": "Displacer Kitten",
+     "why": "Blinks a nonland permanent whenever you cast a noncreature spell. Ties the archetype to spellslinger and to combo."
+    },
+    {
+     "name": "Restoration Angel",
+     "why": "A flash 3/4 flier that blinks a creature on entry. Value, a combat trick, and a removal dodge on one body."
+    },
+    {
+     "name": "Panharmonicon",
+     "why": "Doubles enter triggers for creatures and artifacts, so every blink pays twice for no extra mana."
+    },
+    {
+     "name": "Solemn Simulacrum",
+     "why": "Fetches a land on entry and draws on death. The archetype's benchmark for what a blink target should do."
+    },
+    {
+     "name": "Cloudshift",
+     "why": "The one-mana baseline. Cheap, instant-speed, and often the difference between losing a creature and getting a free trigger."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Brago, King Eternal",
+     "why": "Blinks all your nonland permanents on combat damage. The archetype's flagship and a notorious combo engine."
+    },
+    {
+     "name": "Roon of the Hidden Realm",
+     "why": "A repeatable blink from the command zone every turn, in the three colors with the best targets."
+    },
+    {
+     "name": "Yarok, the Desecrated",
+     "why": "Doubles every enter trigger you control, which turns each blink into two payoffs."
+    },
+    {
+     "name": "Emiel the Blessed",
+     "why": "A three-mana repeatable blink outlet with no color requirements beyond green, and a combo engine besides."
+    },
+    {
+     "name": "Chulane, Teller of Tales",
+     "why": "A card and a land on every creature cast, plus a bounce to reuse triggers. Value on every axis at once."
+    },
+    {
+     "name": "Aminatou, the Fateshifter",
+     "why": "A planeswalker commander whose minus-one blinks a permanent every single turn, for free."
+    },
+    {
+     "name": "Ranar the Ever-Watchful",
+     "why": "Makes a Spirit whenever you exile a card from hand or blink a permanent, so the engine builds a board."
+    },
+    {
+     "name": "Ephara, God of the Polis",
+     "why": "Draws on every creature entering on any turn, which rewards flash and end-step blinking."
+    },
+    {
+     "name": "Yorion, Sky Nomad",
+     "why": "Blinks any number of your permanents on entry, and can be recast repeatedly from the command zone."
+    },
+    {
+     "name": "Thassa, Deep-Dwelling",
+     "why": "Blinks a creature at every end step and is an indestructible non-creature most of the time. Nearly impossible to answer."
+    }
+   ],
+   "tz_watch_out": "Blink decks are slow to threaten anything, and a pile of value creatures with no finisher can grind for an hour without winning. Make sure something in the deck converts the accumulated advantage into a victory. The archetype also relies on triggers, which means Torpor Orb and its family shut it off entirely, so keep an answer or two for artifacts and enchantments."
+  },
+  "landfall": {
+   "id": "landfall",
+   "plan": "every land drop is a trigger; extra drops plus recursion give 3+ triggers a turn",
+   "stages": [
+    "play land / fetch for extra triggers",
+    "stack extra land drops",
+    "recur lands from the graveyard",
+    "convert triggers to tokens, counters, cards, damage, combats"
+   ],
+   "roles": {
+    "payoff": {
+     "sig": [
+      "condition:landfall",
+      "niche:landfall"
+     ],
+     "cards": [
+      "Avenger of Zendikar",
+      "Scute Swarm",
+      "Omnath, Locus of Creation",
+      "Omnath, Locus of Rage",
+      "Valakut Exploration",
+      "Felidar Retreat",
+      "Tireless Tracker",
+      "Tatyova, Benthic Druid"
+     ],
+     "n": [
+      8,
+      10
+     ]
+    },
+    "extra_drop": {
+     "sig": [
+      "extra_land_drop"
+     ],
+     "cards": [
+      "Exploration",
+      "Oracle of Mul Daya",
+      "Azusa, Lost but Seeking",
+      "Dryad of the Ilysian Grove",
+      "Wayward Swordtooth"
+     ],
+     "n": [
+      4,
+      6
+     ]
+    },
+    "recursion": {
+     "sig": [
+      "recursion",
+      "from_zone:graveyard"
+     ],
+     "cards": [
+      "Crucible of Worlds",
+      "Ramunap Excavator",
+      "Life from the Loam"
+     ],
+     "n": [
+      2,
+      3
+     ]
+    },
+    "fetch": {
+     "sig": [
+      "niche:lands",
+      "land_tutor"
+     ],
+     "cards": [
+      "Evolving Wilds",
+      "Cultivate",
+      "Three Visits"
+     ],
+     "n": null
+    },
+    "ramp": {
+     "sig": [
+      "mana_source",
+      "land_tutor"
+     ],
+     "cards": [
+      "Lotus Cobra"
+     ],
+     "n": null
+    },
+    "interaction": {
+     "sig": [
+      "removal"
+     ],
+     "cards": [],
+     "n": [
+      5,
+      7
+     ]
+    }
+   },
+   "wins": [
+    "go wide with Scute Swarm/Avenger",
+    "landfall damage",
+    "extra combats (Moraug)"
+   ],
+   "weak": "board wipes; missed land drops; early removal on Cobra/Azusa; Strip Mine, Wasteland, Blood Moon, Back to Basics",
+   "weak_tags": [
+    "removal_land",
+    "restrict"
+   ],
+   "overlaps": [
+    "ramp",
+    "big_mana",
+    "tokens"
+   ],
+   "subs": [
+    "landfall",
+    "land_destruction",
+    "land_recursion",
+    "mazes_end"
+   ],
+   "colors": [
+    "G",
+    "RG",
+    "GU",
+    "GW"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "lands matter / landfall; extra drops plus recursion",
+    "em": "payoffs 8-10, extra drops 4-6, recursion 2-3, interaction 5-7, 40+ lands",
+    "cf": "Lands group: landfall, land destruction, land recursion, Maze's End",
+    "tz": "lands matter is usually also ramp"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Lotus Cobra",
+     "why": "A Treasure-like mana boost on every landfall trigger. Turns a fetchland into acceleration and snowballs from turn two."
+    },
+    {
+     "name": "Crucible of Worlds",
+     "why": "Play lands from your graveyard. The card that turns every fetchland and sacrifice land into a repeatable engine."
+    },
+    {
+     "name": "Ramunap Excavator",
+     "why": "The same effect on a creature, which means green can tutor for it. Redundancy is what makes the engine reliable."
+    },
+    {
+     "name": "Life from the Loam",
+     "why": "Dredge back three lands a turn. The most efficient land-recursion engine ever printed, and it never runs out."
+    },
+    {
+     "name": "Splendid Reclamation",
+     "why": "Returns every land from your graveyard to the battlefield at once, triggering landfall for each of them."
+    },
+    {
+     "name": "Avenger of Zendikar",
+     "why": "A Plant per land, then pumps them all on every landfall. The archetype's most reliable one-card win condition."
+    },
+    {
+     "name": "Field of the Dead",
+     "why": "A 2/2 Zombie for every land drop once you have seven differently named lands. Free bodies from a land slot."
+    },
+    {
+     "name": "Exploration",
+     "why": "An extra land drop every turn for one mana. Doubles the trigger count for the whole game."
+    },
+    {
+     "name": "Tireless Tracker",
+     "why": "A Clue on every landfall and counters on itself when you crack them. Card advantage that also becomes a threat."
+    },
+    {
+     "name": "Aftermath Analyst",
+     "why": "Self-mills, then returns every land from your graveyard when sacrificed. A modern Splendid Reclamation on a body."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Lord Windgrace",
+     "why": "A planeswalker commander that recurs lands, draws, and makes 2/2 Cats. Purpose-built for the archetype."
+    },
+    {
+     "name": "The Gitrog Monster",
+     "why": "Draws on every land put into the graveyard and eats a land each upkeep. Value engine and infamous combo piece."
+    },
+    {
+     "name": "Titania, Protector of Argoth",
+     "why": "A 5/3 Elemental for every land that hits your graveyard. Converts a fetchland into an army."
+    },
+    {
+     "name": "Tatyova, Benthic Druid",
+     "why": "A card and a life on every landfall. The friendliest entry point to the archetype and still one of the best."
+    },
+    {
+     "name": "Omnath, Locus of Creation",
+     "why": "Escalating payouts on the first, second, and third landfall each turn. Rewards extra land drops directly."
+    },
+    {
+     "name": "Aesi, Tyrant of Gyre Strait",
+     "why": "An extra land drop and a card on your first land each turn, Tatyova plus Exploration in the command zone."
+    },
+    {
+     "name": "Multani, Yavimaya's Avatar",
+     "why": "Grows with lands on the battlefield and in the graveyard, and returns to hand from either. A recurring Voltron threat."
+    },
+    {
+     "name": "Sasaya, Orochi Ascendant",
+     "why": "Flips once you hold seven lands and then makes each land tap for its whole type. Absurd mana from a mono-green shell."
+    },
+    {
+     "name": "Ob Nixilis, the Fallen",
+     "why": "Landfall that drains three from an opponent and grows him by three. A mono-black clock built on land drops."
+    },
+    {
+     "name": "Kodama of the East Tree",
+     "why": "Every permanent entering lets you put another from hand onto the battlefield, chaining off every land drop."
+    }
+   ],
+   "tz_watch_out": "This is a slow archetype whose best turns come late, and it can spend the first six turns doing nothing that looks like a threat. That is usually fine (nobody attacks the lands player) but it means the deck needs a real payoff and enough draw to find it. Watch out too for combo lines the archetype falls into by accident: several lands commanders assemble loops that end games abruptly, which may be more than your pod signed up for."
+  },
+  "ramp": {
+   "id": "ramp",
+   "plan": "accelerate early so later turns come sooner; mana lead converts to threats ahead of curve",
+   "stages": [
+    "turns 1-3: rocks, dorks, land ramp",
+    "have more mana than the table",
+    "deploy threats ahead of curve",
+    "close with scaling top-end"
+   ],
+   "roles": {
+    "ramp": {
+     "sig": [
+      "mana_source",
+      "land_tutor",
+      "tutor_target:basic_land"
+     ],
+     "cards": [
+      "Sol Ring",
+      "Cultivate",
+      "Sakura-Tribe Elder",
+      "Llanowar Elves",
+      "Arcane Signet",
+      "Kodama's Reach",
+      "Rampant Growth"
+     ],
+     "n": [
+      10,
+      12
+     ]
+    },
+    "multiplier": {
+     "sig": [
+      "mana_amount",
+      "replace"
+     ],
+     "cards": [
+      "Zendikar Resurgent",
+      "Mana Reflection",
+      "Nyxbloom Ancient"
+     ],
+     "n": null
+    },
+    "draw": {
+     "sig": [
+      "draw"
+     ],
+     "cards": [],
+     "n": [
+      8,
+      10
+     ]
+    },
+    "interaction": {
+     "sig": [
+      "removal",
+      "counterspell"
+     ],
+     "cards": [],
+     "n": [
+      8,
+      10
+     ]
+    },
+    "finisher": {
+     "sig": [
+      "x_is:x_paid"
+     ],
+     "cards": [
+      "Craterhoof Behemoth"
+     ],
+     "n": null
+    }
+   },
+   "wins": [
+    "scaling top-end threats",
+    "big X spells",
+    "mana-lead tempo"
+   ],
+   "weak": "exposes you to aggro and combo; one big threat dies to removal; wipes hit dorks and rocks",
+   "weak_tags": [
+    "removal",
+    "counterspell"
+   ],
+   "overlaps": [
+    "big_mana",
+    "landfall",
+    "artifacts",
+    "group_hug"
+   ],
+   "subs": [],
+   "colors": [
+    "G",
+    "GU",
+    "RG",
+    "GW"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "em": "ramp 10-12 (prioritise 2-mana), lands 37-40, draw 8-10, interaction 8-10",
+    "tz": "ramp pairs with lands matter"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Sol Ring",
+     "why": "One mana for a rock that taps for two. The most-played card in the format, and the single best ramp card in it."
+    },
+    {
+     "name": "Arcane Signet",
+     "why": "Two mana, taps for any color in your identity. The most efficient fixing-plus-ramp rock in a multicolor deck."
+    },
+    {
+     "name": "Nature's Lore",
+     "why": "Two mana for an untapped dual land from the library. Faster than Rampant Growth and fixes better."
+    },
+    {
+     "name": "Three Visits",
+     "why": "The functional reprint of the above, which is why green ramp decks can run both effects."
+    },
+    {
+     "name": "Cultivate",
+     "why": "Slower, but it puts one land on the battlefield and one in hand, so it fixes and guarantees the next land drop."
+    },
+    {
+     "name": "Kodama's Reach",
+     "why": "The same card again under a different name. Redundancy is the point in a deck that wants this effect every game."
+    },
+    {
+     "name": "Burgeoning",
+     "why": "An extra land drop for every opponent's first land. On turn one this is the most explosive ramp card in the format."
+    },
+    {
+     "name": "Smothering Tithe",
+     "why": "A Treasure whenever an opponent draws, unless they pay. In a four-player game this generates absurd quantities of mana."
+    },
+    {
+     "name": "Cabal Coffers",
+     "why": "Mana per Swamp, which in mono-black turns a normal land count into double-digit mana by turn six."
+    },
+    {
+     "name": "Nyxbloom Ancient",
+     "why": "Triples mana from every source you control. The largest single multiplier available, and a win condition attached to a 5/5 trample."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Azusa, Lost but Seeking",
+     "why": "Two extra land drops every turn. Mono-green, cheap, and the purest expression of the archetype."
+    },
+    {
+     "name": "Omnath, Locus of Mana",
+     "why": "Green mana does not empty from your pool and he grows with it. Turns a big turn into a big creature."
+    },
+    {
+     "name": "Marwyn, the Nurturer",
+     "why": "An Elf that grows with every Elf and taps for her power. Ramp and tribal in one command zone."
+    },
+    {
+     "name": "Karametra, God of Harvests",
+     "why": "A land from the library for every creature you cast, so the deck ramps just by playing normally."
+    },
+    {
+     "name": "Zaxara, the Exemplary",
+     "why": "A Hydra token for every X spell, plus infinite-mana-friendly abilities. The classic big-X payoff commander."
+    },
+    {
+     "name": "Nikya of the Old Ways",
+     "why": "Double mana from lands at the cost of casting no noncreature spells. A genuine deckbuilding constraint with a huge payoff."
+    },
+    {
+     "name": "Goreclaw, Terror of Qal Sisma",
+     "why": "Cost reduction and a pump-and-trample anthem for big creatures. Ramp that also finishes."
+    },
+    {
+     "name": "Grand Warlord Radha",
+     "why": "Mana for every attacking creature that carries into your second main phase. Aggro and ramp on the same trigger."
+    },
+    {
+     "name": "Jodah, Archmage Eternal",
+     "why": "Casts anything for five mana of any colors, which turns ramp into an excuse to play the biggest cards in Magic."
+    },
+    {
+     "name": "Kruphix, God of Horizons",
+     "why": "Unused mana carries over as colorless and your hand size is unlimited. Stores a ramp advantage across turns."
+    }
+   ],
+   "tz_watch_out": "Ramp's danger window is turns four through six: you have spent cards on mana, you have nothing on board, and everyone else has creatures. Decks that lose with ramp usually lose there, not to a lack of mana. Keep the curve honest, run some interaction, and make sure the payoffs arrive before the window closes. A deck that ramps to twelve mana and then casts a seven-drop that dies to removal has not accomplished anything."
+  },
+  "big_mana": {
+   "id": "big_mana",
+   "plan": "ramp past normal development and cast few huge spells that change the board at once",
+   "stages": [
+    "turns 1-3: ramp and doublers",
+    "protect the mana engine",
+    "cast a few haymakers",
+    "after sweepers rebuild through land ramp"
+   ],
+   "roles": {
+    "ramp": {
+     "sig": [
+      "mana_source",
+      "land_tutor"
+     ],
+     "cards": [],
+     "n": [
+      12,
+      15
+     ]
+    },
+    "multiplier": {
+     "sig": [
+      "mana_amount",
+      "replace"
+     ],
+     "cards": [
+      "Nyxbloom Ancient",
+      "Mana Reflection",
+      "Zendikar Resurgent"
+     ],
+     "n": [
+      2,
+      4
+     ]
+    },
+    "mana_land": {
+     "sig": [
+      "mana_source"
+     ],
+     "cards": [
+      "Nykthos, Shrine to Nyx",
+      "Cabal Coffers"
+     ],
+     "n": null
+    },
+    "draw": {
+     "sig": [
+      "draw"
+     ],
+     "cards": [],
+     "n": [
+      8,
+      10
+     ]
+    },
+    "haymaker": {
+     "sig": [
+      "x_is:x_paid"
+     ],
+     "cards": [
+      "Torment of Hailfire",
+      "Genesis Wave",
+      "Expropriate",
+      "Rishkar's Expertise"
+     ],
+     "n": [
+      4,
+      6
+     ]
+    },
+    "interaction": {
+     "sig": [
+      "removal",
+      "counterspell"
+     ],
+     "cards": [],
+     "n": [
+      5,
+      7
+     ]
+    }
+   },
+   "wins": [
+    "X spells",
+    "Torment of Hailfire",
+    "Expropriate",
+    "Genesis Wave"
+   ],
+   "weak": "single counterspell wastes a turn; aggro and fast combo; visible mana invites pressure",
+   "weak_tags": [
+    "counterspell"
+   ],
+   "overlaps": [
+    "ramp",
+    "storm",
+    "landfall"
+   ],
+   "subs": [],
+   "colors": [
+    "G",
+    "RG",
+    "GUR",
+    "B"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "em": "ramp 12-15, multipliers 2-4, draw 8-10, haymakers 4-6, mana sources 38-40, interaction 5-7"
+   }
+  },
+  "stax": {
+   "id": "stax",
+   "plan": "they cannot, you can: lock costs and resources early, then win under the lock",
+   "stages": [
+    "deploy taxes and locks before key turns",
+    "build parity breakers (rocks, tokens, untappers, commander)",
+    "deny resources",
+    "hold removal for leaks",
+    "finish by attrition, combat or compact combo"
+   ],
+   "roles": {
+    "lock": {
+     "sig": [
+      "restrict",
+      "restrict_kind:doesnt_untap",
+      "attack_tax"
+     ],
+     "cards": [
+      "Winter Orb",
+      "Static Orb",
+      "Sphere of Resistance",
+      "Smokestack",
+      "Thalia, Guardian of Thraben",
+      "Drannith Magistrate",
+      "Collector Ouphe",
+      "Archon of Emeria",
+      "Rule of Law",
+      "Stasis"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "parity_breaker": {
+     "sig": [
+      "mana_source",
+      "untap",
+      "token_make"
+     ],
+     "cards": [
+      "Smothering Tithe",
+      "Rhystic Study"
+     ],
+     "n": [
+      4,
+      6
+     ]
+    },
+    "fodder": {
+     "sig": [
+      "token_type:treasure",
+      "token_type:clue_draw"
+     ],
+     "cards": [],
+     "n": null
+    },
+    "win": {
+     "sig": [],
+     "cards": [],
+     "n": [
+      1,
+      2
+     ]
+    }
+   },
+   "wins": [
+    "resilient commander attack under the lock",
+    "Smokestack attrition",
+    "two-card combo"
+   ],
+   "weak": "opponents ramp before locks land; artifact/enchantment removal dismantles locks; own restrictions without parity breakers; politics",
+   "weak_tags": [
+    "removal_artifact",
+    "removal_enchantment"
+   ],
+   "overlaps": [
+    "control",
+    "combo",
+    "artifacts"
+   ],
+   "subs": [
+    "tax",
+    "resource_denial",
+    "hatebears",
+    "winter_orb"
+   ],
+   "colors": [
+    "W",
+    "WU",
+    "WB"
+   ],
+   "bracket": [
+    3,
+    4
+   ],
+   "notes": "",
+   "src": {
+    "sw": "bracket 3-4",
+    "em": "locks 8-12, parity breakers 4-6, choose one clear win condition",
+    "cf": "subs: tax, resource denial, hatebears, Winter Orb; Demanding"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Winter Orb",
+     "why": "Only one land untaps per untap step. Two mana that halves everyone's development, and the archetype's most recognisable card."
+    },
+    {
+     "name": "Smokestack",
+     "why": "Escalating forced sacrifices every turn. The card the archetype is named after, and still its most complete lock piece."
+    },
+    {
+     "name": "Tangle Wire",
+     "why": "Forces everyone to tap down for several turns while it fades. Bought turns, in a card, and it expires before it hurts you."
+    },
+    {
+     "name": "Sphere of Resistance",
+     "why": "Every spell costs one more. Symmetrical, but far worse for a four-color value deck than for a lean stax list."
+    },
+    {
+     "name": "Thalia, Guardian of Thraben",
+     "why": "The same tax on noncreature spells only, on a first-strike body that can pressure a player while it taxes."
+    },
+    {
+     "name": "Blood Moon",
+     "why": "Nonbasic lands become Mountains. In a format built on nonbasics, this ends games that have not started yet."
+    },
+    {
+     "name": "Drannith Magistrate",
+     "why": "Opponents cannot cast from anywhere except hand: no commanders, no flashback, no cascade. A two-drop that blanks entire decks."
+    },
+    {
+     "name": "Rule of Law",
+     "why": "One spell per player per turn. Shuts down combo and storm outright and makes value decks crawl."
+    },
+    {
+     "name": "Cursed Totem",
+     "why": "Turns off every creature's activated abilities, which is a one-card answer to mana dorks, sacrifice outlets, and most creature combos."
+    },
+    {
+     "name": "Ensnaring Bridge",
+     "why": "Creatures with power greater than your hand size cannot attack. A stax deck empties its hand anyway, so this is close to one-sided."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Grand Arbiter Augustin IV",
+     "why": "Your spells cost less and everyone else's cost more. Taxation from the command zone, on turn four, every game."
+    },
+    {
+     "name": "Derevi, Empyrial Tactician",
+     "why": "Repeatedly taps and untaps permanents and returns from the command zone cheaply, which makes her nearly impossible to remove permanently."
+    },
+    {
+     "name": "Lavinia, Azorius Renegade",
+     "why": "Counters any spell cast with more mana value than the caster's lands. Devastating against ritual-fuelled and free-spell decks."
+    },
+    {
+     "name": "Tergrid, God of Fright",
+     "why": "Everything opponents sacrifice or discard comes to you instead. Turns denial into your own board."
+    },
+    {
+     "name": "Braids, Cabal Minion",
+     "why": "Forces a sacrifice from every opponent every turn. Old, brutally simple, and banned in some circles for good reason."
+    },
+    {
+     "name": "Hokori, Dust Drinker",
+     "why": "A Winter Orb on a body, in the command zone, available every game."
+    },
+    {
+     "name": "Sen Triplets",
+     "why": "Locks a player out of casting and lets you play their hand. Denial and theft on the same trigger."
+    },
+    {
+     "name": "Elesh Norn, Mother of Machines",
+     "why": "Doubles your enter-the-battlefield triggers and turns off everyone else's. A lock piece that also builds your engine."
+    },
+    {
+     "name": "Queen Marchesa",
+     "why": "The monarch as a political lock: she creates a resource the table has to attack you for, while you defend it."
+    },
+    {
+     "name": "Vorinclex, Voice of Hunger",
+     "why": "Your lands make double mana and opponents' lands enter tapped. Green's version of resource denial, and one of the most punishing."
+    }
+   ],
+   "tz_watch_out": "This is the archetype most likely to cause a genuinely bad evening. Stax makes other people's games less fun in a direct, visible way, and in a casual pod it often produces long turns where three players do nothing. That does not make it wrong to play. It makes it something to raise before the game starts. Check the bracket your pod is at, say what your deck does in the Rule 0 conversation, and be ready to sleeve up something else."
+  },
+  "control": {
+   "id": "control",
+   "plan": "decide which threats matter, answer them, win late with a protected finisher or engine",
+   "stages": [
+    "hold mana and answer what matters",
+    "sweepers reset crowded boards then rebuild with draw",
+    "trade one-for-one sparingly",
+    "accumulate card advantage",
+    "close with protected finisher or combo"
+   ],
+   "roles": {
+    "answer": {
+     "sig": [
+      "counterspell",
+      "removal"
+     ],
+     "cards": [
+      "Swords to Plowshares",
+      "Cyclonic Rift"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "sweeper": {
+     "sig": [
+      "removal"
+     ],
+     "cards": [
+      "Supreme Verdict"
+     ],
+     "n": [
+      6,
+      10
+     ]
+    },
+    "draw_engine": {
+     "sig": [
+      "draw"
+     ],
+     "cards": [
+      "Rhystic Study",
+      "Mystic Remora"
+     ],
+     "n": null
+    },
+    "finisher": {
+     "sig": [
+      "cmc_ge_5"
+     ],
+     "cards": [
+      "Teferi, Hero of Dominaria"
+     ],
+     "n": [
+      2,
+      3
+     ]
+    }
+   },
+   "wins": [
+    "protected finisher",
+    "planeswalker",
+    "combo after interaction spent",
+    "card advantage"
+   ],
+   "weak": "one-for-one answers lose value to three opponents; slow clocks; fast rebuilders",
+   "weak_tags": [
+    "cant_be_countered"
+   ],
+   "overlaps": [
+    "card_draw",
+    "blink",
+    "mill",
+    "stax",
+    "combo"
+   ],
+   "subs": [
+    "draw_go",
+    "tap_out",
+    "pillowfort",
+    "mass_removal"
+   ],
+   "colors": [
+    "WU",
+    "UB",
+    "WUB",
+    "UR"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "em": "wipes 6-10, answers 8-12, finishers 2-3, lands 36-38",
+    "cf": "subs: draw-go, tap-out control, pillowfort, mass removal"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Counterspell",
+     "why": "Two mana, no conditions. Still the baseline every other counterspell is measured against."
+    },
+    {
+     "name": "Cyclonic Rift",
+     "why": "Overloaded, it returns every nonland permanent your opponents control at instant speed. The single most game-swinging card in the archetype."
+    },
+    {
+     "name": "Swords to Plowshares",
+     "why": "One mana to exile any creature. The life gained is close to irrelevant at forty."
+    },
+    {
+     "name": "Wrath of God",
+     "why": "Four mana, all creatures, no regeneration. Answering three players' boards with one card is how control keeps pace."
+    },
+    {
+     "name": "Toxic Deluge",
+     "why": "A scaling sweeper paid for in life, which gets around indestructible and large creatures alike."
+    },
+    {
+     "name": "Rhystic Study",
+     "why": "Taxes every spell the table casts, and either draws you cards or slows everyone down. Both outcomes are what control wants."
+    },
+    {
+     "name": "Mystic Remora",
+     "why": "Draws enormously in the early turns for one mana, then retires. The best cheap draw engine in multiplayer."
+    },
+    {
+     "name": "Fierce Guardianship",
+     "why": "A free counterspell with your commander out, which lets you tap out on your own turn and still hold up interaction."
+    },
+    {
+     "name": "Farewell",
+     "why": "Modal exile of any combination of artifacts, creatures, enchantments, and graveyards. One card that answers whole strategies."
+    },
+    {
+     "name": "Nevinyrral's Disk",
+     "why": "A repeatable-threat sweeper that hits artifacts and enchantments too, and is available in any color."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Baral, Chief of Compliance",
+     "why": "Cheaper counterspells and loot on every counter. Mono-blue control with the draw problem partly solved."
+    },
+    {
+     "name": "Teferi, Temporal Archmage",
+     "why": "A planeswalker commander that untaps four permanents each turn, so you counter on their turn and still develop on yours."
+    },
+    {
+     "name": "Azor, the Lawbringer",
+     "why": "A sphinx that draws a large chunk of a deck and stops opponents casting instants and sorceries for a turn."
+    },
+    {
+     "name": "Dragonlord Ojutai",
+     "why": "Hexproof while untapped and dig on damage. A control finisher that survives everything a control deck fears."
+    },
+    {
+     "name": "Dragonlord Silumgar",
+     "why": "Steals a creature or planeswalker and keeps stealing as he is recast. Removal that becomes your threat."
+    },
+    {
+     "name": "The Scarab God",
+     "why": "Scry and drain each upkeep, exiles graveyards for Zombies, and returns to hand instead of dying. Nearly unanswerable."
+    },
+    {
+     "name": "Ertai Resurrected",
+     "why": "Flash plus a modal counter or removal on entry, and he returns to the command zone rather than dying."
+    },
+    {
+     "name": "Rashmi, Eternities Crafter",
+     "why": "Free spells off the top on your first spell each turn, which fixes control's card-advantage math."
+    },
+    {
+     "name": "Nymris, Oona's Trickster",
+     "why": "Draws whenever you cast on an opponent's turn, exactly the play pattern control already wants."
+    },
+    {
+     "name": "Damia, Sage of Stone",
+     "why": "Refills you to seven cards every upkeep, which makes trading one-for-one with three opponents sustainable."
+    }
+   ],
+   "tz_watch_out": "The archetype's real risk is being the table's police officer. If you counter everything, three players learn that you are the problem, and in a format where they can all attack you at once that is a losing position regardless of how good your answers are. Let some things resolve, save your counterspells for what actually beats you, and make sure the deck can close a game rather than only prolong it."
+  },
+  "group_hug": {
+   "id": "group_hug",
+   "plan": "give the table cards, lands or mana and profit from how they use it",
+   "stages": [
+    "give lands or mana first",
+    "steer attacks and removal toward others",
+    "pay off every draw or land drop",
+    "hold interaction for the best user of gifts",
+    "win with a hidden spell or late payoff"
+   ],
+   "roles": {
+    "shared": {
+     "sig": [
+      "draw",
+      "put_onto_battlefield"
+     ],
+     "cards": [
+      "Howling Mine",
+      "Temple Bell",
+      "Rites of Flourishing",
+      "Kynaios and Tiro of Meletis",
+      "Phelddagrif"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "breaker": {
+     "sig": [
+      "draw",
+      "mana_source"
+     ],
+     "cards": [
+      "Smothering Tithe",
+      "Consecrated Sphinx",
+      "Zedruu the Greathearted"
+     ],
+     "n": [
+      4,
+      6
+     ]
+    },
+    "pillowfort": {
+     "sig": [
+      "attack_tax",
+      "restrict"
+     ],
+     "cards": [
+      "Propaganda",
+      "Ghostly Prison"
+     ],
+     "n": null
+    },
+    "win": {
+     "sig": [],
+     "cards": [
+      "Approach of the Second Sun"
+     ],
+     "n": null
+    }
+   },
+   "wins": [
+    "Approach of the Second Sun",
+    "alternate win with large hand",
+    "politics"
+   ],
+   "weak": "accelerates opponents; little pressure; hidden win conditions draw interaction",
+   "weak_tags": [
+    "removal"
+   ],
+   "overlaps": [
+    "lifegain",
+    "card_draw",
+    "ramp"
+   ],
+   "subs": [],
+   "colors": [
+    "U",
+    "GU",
+    "WUR"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "em": "shared effects 8-12, breakers 4-6, lands 36-38",
+    "sw": "Kynaios and Tiro, Phelddagrif, Kenrith"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Howling Mine",
+     "why": "An extra card for everyone each turn. The original group hug card, and still the cleanest statement of the plan."
+    },
+    {
+     "name": "Font of Mythos",
+     "why": "Two extra cards for everyone. Doubles the effect and doubles the goodwill."
+    },
+    {
+     "name": "Rites of Flourishing",
+     "why": "An extra card and an extra land drop for every player. Accelerates the whole table meaningfully, not just cosmetically."
+    },
+    {
+     "name": "Dictate of Kruphix",
+     "why": "Flash makes it land at the end of the turn before yours, so you are the first to benefit from it."
+    },
+    {
+     "name": "Heartbeat of Spring",
+     "why": "Lands produce double mana for everyone. Enormous, and it favours whoever has the best mana sink."
+    },
+    {
+     "name": "Horn of Greed",
+     "why": "A card for every land drop by anyone. In a table with extra land drops going around this draws absurdly."
+    },
+    {
+     "name": "Kami of the Crescent Moon",
+     "why": "A cheap, repeatable draw for everyone on a body, and a lightning rod that is not you."
+    },
+    {
+     "name": "Minds Aglow",
+     "why": "A joined-forces draw where every player contributes mana. Generous, and it refills your hand for a fraction of the cost."
+    },
+    {
+     "name": "Collective Voyage",
+     "why": "The land version of the same idea. Ramps the whole table, and you chose the timing."
+    },
+    {
+     "name": "Braids, Conjurer Adept",
+     "why": "Everyone puts a permanent onto the battlefield from hand each turn. The most generous effect in the archetype and the most easily abused."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Kynaios and Tiro of Meletis",
+     "why": "A card and a land for everyone each turn. The archetype's flagship, and four colors of tools to exploit it."
+    },
+    {
+     "name": "Zedruu the Greathearted",
+     "why": "Gives away permanents and draws and gains life for each. Turns generosity into a genuine engine."
+    },
+    {
+     "name": "Phelddagrif",
+     "why": "The original hug: every ability helps you and helps an opponent. Old, strange, and beloved."
+    },
+    {
+     "name": "Kwain, Itinerant Meddler",
+     "why": "Each player may draw and gain life. Cheap, symmetrical, and a famous engine piece for decks that draw better than the table."
+    },
+    {
+     "name": "Selvala, Explorer Returned",
+     "why": "Parley gives everyone cards and you the mana. Generous in appearance, lopsided in practice."
+    },
+    {
+     "name": "Edric, Spymaster of Trest",
+     "why": "Everyone draws for connecting with a creature, which points the whole table away from you and at each other."
+    },
+    {
+     "name": "Braids, Conjurer Adept",
+     "why": "Free permanents for all, every turn. You are the one who built a deck around abusing it."
+    },
+    {
+     "name": "Kenrith, the Returned King",
+     "why": "Five abilities anyone can activate, in five colors. The most flexible political commander in the format."
+    },
+    {
+     "name": "Xyris, the Writhing Storm",
+     "why": "Forces opponents to draw and rewards you with a Snake for each. The clearest hug-into-win pipeline."
+    },
+    {
+     "name": "Nekusar, the Mindrazer",
+     "why": "The group-slug inversion: everyone draws extra and takes damage for it. The same cards, aimed the other way."
+    }
+   ],
+   "tz_watch_out": "Group hug earns a reputation quickly, and it is usually deserved. A table that has been handed forty cards over eight turns and then loses to a Psychosis Crawler will remember. Decide what your deck is, say so at the start, and if it is a hug-into-kill deck, tell people. The strategy is fine; the ambush is what causes friction. The other failure mode is the sincere one: a genuine hug deck can accelerate a stronger deck into winning far sooner than it would have."
+  },
+  "enchantress": {
+   "id": "enchantress",
+   "plan": "cheap enchantments replace themselves through draw triggers; constellation or aura payoff converts them to a win",
+   "stages": [
+    "cast cheap enchantments",
+    "enchantress triggers replace them",
+    "stack 2+ draw engines",
+    "protect the engine",
+    "finish with constellation, tokens or aura Voltron"
+   ],
+   "roles": {
+    "draw": {
+     "sig": [
+      "draw",
+      "trigger:spell_cast"
+     ],
+     "cards": [
+      "Argothian Enchantress",
+      "Enchantress's Presence",
+      "Setessan Champion",
+      "Mesa Enchantress",
+      "Sythis, Harvest's Hand",
+      "Tuvasa the Sunlit"
+     ],
+     "n": [
+      6,
+      10
+     ]
+    },
+    "cheap_ench": {
+     "sig": [
+      "cardtype:enchantment",
+      "kw:enchant"
+     ],
+     "cards": [
+      "Wild Growth",
+      "Utopia Sprawl",
+      "Sanctum Weaver",
+      "Fertile Ground"
+     ],
+     "n": null
+    },
+    "protection": {
+     "sig": [
+      "protection_trick"
+     ],
+     "cards": [
+      "Sterling Grove",
+      "Greater Auramancy",
+      "Heroic Intervention"
+     ],
+     "n": null
+    },
+    "payoff": {
+     "sig": [
+      "token_make"
+     ],
+     "cards": [
+      "Sigil of the Empty Throne",
+      "Ajani's Chosen"
+     ],
+     "n": null
+    },
+    "recursion": {
+     "sig": [
+      "recursion"
+     ],
+     "cards": [
+      "Hall of Heliod's Generosity"
+     ],
+     "n": null
+    }
+   },
+   "wins": [
+    "constellation triggers",
+    "enchantment-cast tokens",
+    "aura Voltron",
+    "card lead"
+   ],
+   "weak": "enchantment removal and wipes (Farewell, Bane of Progress, Back to Nature); losing enchantresses; payoff-heavy hands",
+   "weak_tags": [
+    "removal_enchantment",
+    "removal"
+   ],
+   "overlaps": [
+    "card_draw",
+    "voltron",
+    "lifegain"
+   ],
+   "subs": [
+    "aura",
+    "enchantment_tokens",
+    "constellation",
+    "pillowfort"
+   ],
+   "colors": [
+    "GW",
+    "GWU",
+    "WB"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "Sythis, Tuvasa",
+    "em": "enchantress effects 6-10, low curve, 34-36 lands",
+    "cf": "subs: aura, enchantment tokens, constellation, pillowfort"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Argothian Enchantress",
+     "why": "A one-mana body with shroud that draws on every enchantment. The best draw engine in the archetype and the hardest to remove."
+    },
+    {
+     "name": "Enchantress's Presence",
+     "why": "The same effect on an enchantment, which means it also triggers your other enchantresses when it resolves."
+    },
+    {
+     "name": "Eidolon of Blossoms",
+     "why": "Constellation draw, so it triggers on enchantments entering rather than being cast, so it catches tokens and recursion too."
+    },
+    {
+     "name": "Setessan Champion",
+     "why": "Draws and grows on each constellation trigger, turning the draw engine into a genuine threat."
+    },
+    {
+     "name": "Sigil of the Empty Throne",
+     "why": "A 4/4 Angel for every enchantment cast. The most common way an enchantress deck actually ends a game."
+    },
+    {
+     "name": "Sphere of Safety",
+     "why": "Attacking you costs mana per enchantment you control, which in this deck quickly means nobody can attack at all."
+    },
+    {
+     "name": "Starfield of Nyx",
+     "why": "Returns an enchantment from your graveyard each upkeep and animates the whole board once you have five."
+    },
+    {
+     "name": "Sanctum Weaver",
+     "why": "Taps for mana equal to your enchantment count. Ramp that scales with exactly the thing the deck is already doing."
+    },
+    {
+     "name": "Serra's Sanctum",
+     "why": "A land that taps for white mana per enchantment. Expensive to acquire, but no other card matches its ceiling here."
+    },
+    {
+     "name": "Replenish",
+     "why": "Returns every enchantment from your graveyard to the battlefield at once. The archetype's answer to a board wipe, and often a win on the spot."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Sythis, Harvest's Hand",
+     "why": "Draws and gains life on every enchantment cast, from a two-mana command zone. The most efficient starting point in the archetype."
+    },
+    {
+     "name": "Tuvasa the Sunlit",
+     "why": "Draws on your first enchantment each turn and grows with the count, doubling as a Voltron threat."
+    },
+    {
+     "name": "Estrid, the Masked",
+     "why": "A planeswalker commander that untaps your enchanted permanents and recurs auras from the graveyard."
+    },
+    {
+     "name": "Zur the Enchanter",
+     "why": "Tutors an enchantment directly onto the battlefield on every attack, which makes the deck brutally consistent."
+    },
+    {
+     "name": "Daxos the Returned",
+     "why": "Builds experience counters on enchantment casts and spends them on scaling Spirit tokens."
+    },
+    {
+     "name": "Calix, Destiny's Hand",
+     "why": "A planeswalker that finds enchantments, taps down threats, and returns auras. Removal and card advantage in one."
+    },
+    {
+     "name": "Kestia, the Cultivator",
+     "why": "Bestow lets her dodge removal, and she draws for each enchanted creature attacking."
+    },
+    {
+     "name": "Siona, Captain of the Pyleas",
+     "why": "A token per aura and a lethal combo with Shielded by Faith. The aggressive aura variant of the archetype."
+    },
+    {
+     "name": "Sigarda, Host of Herons",
+     "why": "Hexproof and immunity to sacrifice effects, which protects a heavy aura investment from the things auras usually lose to."
+    },
+    {
+     "name": "Gylwain, Casting Director",
+     "why": "Makes a free Role token on every creature you cast, so the enchantment count climbs without spending cards."
+    }
+   ],
+   "tz_watch_out": "Enchantress can draw twenty cards and still not win. The archetype's classic failure is assembling a beautiful, unattackable board with no way to close, while the table plays around it. Decide early how the deck wins (Angels, an aura-based commander kill, or a combo) and run enough copies of that plan that drawing half your library actually finds one."
+  },
+  "artifacts": {
+   "id": "artifacts",
+   "plan": "connect cheap artifacts, rocks and utility pieces into one engine",
+   "stages": [
+    "deploy cheap artifacts and rocks to critical mass",
+    "cost reducers/affinity/Treasure cast several per turn",
+    "untap, sacrifice, recur artifacts",
+    "rebuild from graveyard",
+    "win with constructs, loops, drain or one big artifact"
+   ],
+   "roles": {
+    "artifact": {
+     "sig": [
+      "cardtype:artifact"
+     ],
+     "cards": [],
+     "n": [
+      25,
+      35
+     ]
+    },
+    "cost_reducer": {
+     "sig": [
+      "cost_reduce",
+      "kw:affinity"
+     ],
+     "cards": [
+      "Etherium Sculptor",
+      "Foundry Inspector",
+      "Cloud Key"
+     ],
+     "n": [
+      3,
+      5
+     ]
+    },
+    "treasure": {
+     "sig": [
+      "token_type:treasure",
+      "artifact_token"
+     ],
+     "cards": [
+      "Academy Manufactor"
+     ],
+     "n": null
+    },
+    "untapper": {
+     "sig": [
+      "untap"
+     ],
+     "cards": [
+      "Clock of Omens",
+      "Unwinding Clock"
+     ],
+     "n": null
+    },
+    "recursion": {
+     "sig": [
+      "recursion"
+     ],
+     "cards": [
+      "Emry, Lurker of the Loch",
+      "Teshar, Ancestor's Apostle"
+     ],
+     "n": null
+    },
+    "draw": {
+     "sig": [
+      "draw"
+     ],
+     "cards": [
+      "Mystic Forge",
+      "Reckoner's Bargain"
+     ],
+     "n": null
+    },
+    "protection": {
+     "sig": [
+      "protection_trick"
+     ],
+     "cards": [
+      "Welding Jar",
+      "Darksteel Forge"
+     ],
+     "n": null
+    },
+    "win": {
+     "sig": [
+      "x_is:count_artifact_you_control"
+     ],
+     "cards": [
+      "Urza, Lord High Artificer",
+      "Cyberdrive Awakener",
+      "Marionette Master",
+      "Aetherflux Reservoir"
+     ],
+     "n": null
+    }
+   },
+   "wins": [
+    "construct armies",
+    "mana loops",
+    "Marionette Master / Reservoir drain"
+   ],
+   "weak": "mass artifact removal (Vandalblast, Farewell, Bane of Progress); Collector Ouphe, Stony Silence; slow start",
+   "weak_tags": [
+    "removal_artifact",
+    "restrict"
+   ],
+   "overlaps": [
+    "equipment",
+    "stax",
+    "ramp",
+    "treasure"
+   ],
+   "subs": [
+    "artifact_tokens",
+    "affinity",
+    "equipment",
+    "artifact_combo"
+   ],
+   "colors": [
+    "U",
+    "UR",
+    "WU",
+    "WUB"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "em": "artifacts 25-35, cost reducers 3-5",
+    "cf": "subs: artifact tokens, affinity, equipment, artifact combo",
+    "sw": "Urza, Breya, Jhoira"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Urza's Saga",
+     "why": "A land that makes a Construct scaling with your artifact count and then tutors a cheap artifact. Enormous value from a land slot."
+    },
+    {
+     "name": "Foundry Inspector",
+     "why": "Artifacts cost one less. Cost reduction is what turns a hand of artifacts into a single explosive turn."
+    },
+    {
+     "name": "Cranial Plating",
+     "why": "Plus one power per artifact you control, with a black-mana equip at instant speed. The archetype's classic one-hit kill."
+    },
+    {
+     "name": "Steel Overseer",
+     "why": "A counter on every artifact creature each turn. Slow to start and unbeatable if ignored for three turns."
+    },
+    {
+     "name": "Goblin Welder",
+     "why": "Swaps an artifact on the battlefield for one in a graveyard, free, every turn. Recursion and disruption at once."
+    },
+    {
+     "name": "Krark-Clan Ironworks",
+     "why": "Sacrifice any artifact for two mana. The engine behind most artifact combo loops in the format."
+    },
+    {
+     "name": "Mystic Forge",
+     "why": "Play artifacts off the top of your library. In a deck that is mostly artifacts, this is drawing several extra cards a turn."
+    },
+    {
+     "name": "Wurmcoil Engine",
+     "why": "Six-mana lifelink and deathtouch that leaves two tokens behind. The fair, unglamorous card that stabilises boards."
+    },
+    {
+     "name": "Scrap Trawler",
+     "why": "Returns a cheaper artifact whenever an artifact you control dies, chaining into itself across a sacrifice loop."
+    },
+    {
+     "name": "Unwinding Clock",
+     "why": "Untaps all your artifacts on every player's turn, turning tap abilities into four activations per round instead of one."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Urza, Lord High Artificer",
+     "why": "Taps artifacts for mana, makes a Construct on entry, and digs into your library. Arguably the strongest artifact commander printed."
+    },
+    {
+     "name": "Breya, Etherium Shaper",
+     "why": "Four colors, a free Thopter pair, and three modal abilities. The most flexible artifact command zone in the format."
+    },
+    {
+     "name": "Osgir, the Reconstructor",
+     "why": "Exiles artifacts from the graveyard to make two copies. Turns every dead artifact into two live ones."
+    },
+    {
+     "name": "Emry, Lurker of the Loch",
+     "why": "Self-mills and casts artifacts out of the graveyard each turn, at a cost that drops as your artifact count rises."
+    },
+    {
+     "name": "Sharuum the Hegemon",
+     "why": "Reanimates an artifact on entry, which with a clone effect is one of the oldest combos in Commander."
+    },
+    {
+     "name": "Jhoira, Weatherlight Captain",
+     "why": "Draws a card for every historic spell you cast. Card advantage that scales directly with artifact count."
+    },
+    {
+     "name": "Shorikai, Genesis Engine",
+     "why": "A vehicle commander that makes a Pilot and loots every turn without ever attacking."
+    },
+    {
+     "name": "Daretti, Scrap Savant",
+     "why": "A planeswalker commander whose whole kit is discarding artifacts and returning them, with an emblem finisher."
+    },
+    {
+     "name": "Arcum Dagsson",
+     "why": "Tutors any artifact from the library each turn by sacrificing an artifact creature. Ruthlessly consistent, and famously divisive."
+    },
+    {
+     "name": "Karn, Silver Golem",
+     "why": "Animates your noncreature artifacts, and being genuinely colorless lets the deck run every colorless land and artifact in the format."
+    }
+   ],
+   "tz_watch_out": "Artifact removal is the most commonly played removal in Commander after creature removal, and mass artifact destruction hits this deck harder than a board wipe hits most. Green and red both have one-sided sweepers for artifacts specifically. Spread your value across enough permanents that no single Vandalblast is a concession, and keep some recursion so the sweeper is a setback rather than an ending."
+  },
+  "superfriends": {
+   "id": "superfriends",
+   "plan": "planeswalker density protected by blockers; loyalty doubling and extra activations",
+   "stages": [
+    "land a walker",
+    "protect it",
+    "activate again; surviving walkers are a resource",
+    "multiple ultimates in one turn via doubling"
+   ],
+   "roles": {
+    "walker": {
+     "sig": [
+      "loyalty_change",
+      "loyalty",
+      "cardtype:planeswalker"
+     ],
+     "cards": [
+      "Saheeli, Filigree Master"
+     ],
+     "n": null
+    },
+    "doubler": {
+     "sig": [
+      "counters_plus",
+      "replace"
+     ],
+     "cards": [
+      "Doubling Season",
+      "Deepglow Skate",
+      "Vorinclex, Monstrous Raider"
+     ],
+     "n": null
+    },
+    "extra_activation": {
+     "sig": [
+      "loyalty_change"
+     ],
+     "cards": [
+      "The Chain Veil",
+      "Oath of Teferi"
+     ],
+     "n": null
+    },
+    "defense": {
+     "sig": [
+      "token_make",
+      "removal"
+     ],
+     "cards": [
+      "Elspeth, Sun's Champion",
+      "Ugin, the Spirit Dragon"
+     ],
+     "n": null
+    },
+    "mana": {
+     "sig": [
+      "mana_source"
+     ],
+     "cards": [
+      "Nissa, Who Shakes the World",
+      "Interplanar Beacon"
+     ],
+     "n": null
+    },
+    "removal": {
+     "sig": [
+      "removal"
+     ],
+     "cards": [
+      "Karn Liberated"
+     ],
+     "n": null
+    }
+   },
+   "wins": [
+    "multiple ultimates one turn",
+    "accumulated walker value"
+   ],
+   "weak": "walkers without defense are free attack targets; slow and mana-hungry; archenemy after two ultimates",
+   "weak_tags": [
+    "removal_planeswalker"
+   ],
+   "overlaps": [
+    "counters",
+    "proliferate",
+    "control"
+   ],
+   "subs": [],
+   "colors": [
+    "WUB",
+    "G",
+    "WUBG"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "tz": "Atraxa, Carth the Lion, Sisay, Commodore Guff, Freyalise, Dihada, Nahiri, Jared Carthalion, Ramos, Saheeli commanders"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Doubling Season",
+     "why": "Planeswalkers enter with double loyalty, which means most of them can ultimate the turn they land."
+    },
+    {
+     "name": "The Chain Veil",
+     "why": "Activate each planeswalker one additional time per turn. The archetype's signature engine, and its most abusable card."
+    },
+    {
+     "name": "Oath of Teferi",
+     "why": "The same extra activation on an enchantment, plus a blink trigger on entry. Cheaper and harder to remove."
+    },
+    {
+     "name": "Deepglow Skate",
+     "why": "Doubles the counters on any permanents you choose, usually every planeswalker at once, straight into multiple ultimates."
+    },
+    {
+     "name": "Vorinclex, Monstrous Raider",
+     "why": "Doubles counters you place and halves everyone else's. A one-sided Doubling Season on a hasty body."
+    },
+    {
+     "name": "Ugin, the Spirit Dragon",
+     "why": "A colorless sweeper that leaves your board intact, since almost everything in a superfriends deck is colorless or a planeswalker."
+    },
+    {
+     "name": "Elspeth, Sun's Champion",
+     "why": "Makes three blockers a turn and wipes big creatures. Defends the whole team, which is the job that matters."
+    },
+    {
+     "name": "Interplanar Beacon",
+     "why": "A land that fixes for planeswalkers, gains life when you cast one, and costs nothing to include."
+    },
+    {
+     "name": "Karn Liberated",
+     "why": "Colorless, high loyalty, exiles any permanent, and fits into any deck in the archetype regardless of colors."
+    },
+    {
+     "name": "Nissa, Who Shakes the World",
+     "why": "Doubles green mana from Forests and makes 3/3 lands that defend the rest of the team."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Atraxa, Praetors' Voice",
+     "why": "Proliferate every end step, in the four colors with the best walkers. The definitive superfriends commander."
+    },
+    {
+     "name": "Carth the Lion",
+     "why": "Planeswalkers enter with an extra counter and cost less to find. Quiet, cheap, and relentlessly consistent."
+    },
+    {
+     "name": "Sisay, Weatherlight Captain",
+     "why": "Tutors any legendary permanent, including planeswalkers, and grows with each one on the battlefield."
+    },
+    {
+     "name": "Dihada, Binder of Wills",
+     "why": "A planeswalker commander that draws, gains life, and protects legends. Mardu superfriends in one card."
+    },
+    {
+     "name": "Commodore Guff",
+     "why": "Adds loyalty to a walker each turn and returns them from the graveyard. Built for this exact deck."
+    },
+    {
+     "name": "Freyalise, Llanowar's Fury",
+     "why": "A planeswalker commander that makes Elves, so the team defends itself while the loyalty climbs."
+    },
+    {
+     "name": "Nahiri, the Lithomancer",
+     "why": "Mono-white equipment-and-walkers, with a soldier token that keeps attackers busy."
+    },
+    {
+     "name": "Jared Carthalion",
+     "why": "Grows with the monarch and can be a planeswalker magnet in a Naya shell that lacks blue's defensive tools."
+    },
+    {
+     "name": "Ramos, Dragon Engine",
+     "why": "Stores counters from multicolor spells and dumps them into mana for a five-color walker suite."
+    },
+    {
+     "name": "Saheeli, the Gifted",
+     "why": "A planeswalker commander whose Thopters defend the board while her ultimate copies artifacts for a win."
+    }
+   ],
+   "tz_watch_out": "A planeswalker with four loyalty in a four-player game is a planeswalker with one loyalty. The archetype fails when it plays walkers without defence: every one becomes a free attack target that dies before it does anything. Build the fort first: deterrent enchantments, blockers, and sweepers, then the walkers. Superfriends is also mana-hungry and slow, so expect to be the archdeck target once two ultimates have resolved."
+  },
+  "aggro": {
+   "id": "aggro",
+   "plan": "commit cheap threats early and attack often; 120 total damage across the table",
+   "stages": [
+    "deploy 1-3 mana creatures early",
+    "attack before engines stabilise",
+    "spread pressure at the opponent who absorbs least",
+    "anthems, haste, attack triggers scale bodies",
+    "chain extra combats",
+    "refuel with combat draw"
+   ],
+   "roles": {
+    "creature": {
+     "sig": [
+      "cardtype:creature"
+     ],
+     "cards": [],
+     "n": [
+      25,
+      35
+     ]
+    },
+    "anthem": {
+     "sig": [
+      "pump_team",
+      "lord"
+     ],
+     "cards": [
+      "Shared Animosity",
+      "Cathars' Crusade"
+     ],
+     "n": [
+      2,
+      4
+     ]
+    },
+    "haste": {
+     "sig": [
+      "haste_grant",
+      "kw:haste"
+     ],
+     "cards": [
+      "Fervor",
+      "Rising of the Day"
+     ],
+     "n": null
+    },
+    "extra_combat": {
+     "sig": [
+      "trigger:beginning_of_combat"
+     ],
+     "cards": [
+      "Aggravated Assault",
+      "Moraug, Fury of Akoum"
+     ],
+     "n": [
+      2,
+      3
+     ]
+    },
+    "refuel": {
+     "sig": [
+      "draw",
+      "trigger:combat_damage"
+     ],
+     "cards": [
+      "Reconnaissance Mission",
+      "Toski, Bearer of Secrets"
+     ],
+     "n": null
+    },
+    "finisher": {
+     "sig": [
+      "damage"
+     ],
+     "cards": [
+      "Impact Tremors",
+      "Isshin, Two Heavens as One"
+     ],
+     "n": null
+    },
+    "removal": {
+     "sig": [
+      "removal"
+     ],
+     "cards": [],
+     "n": null
+    }
+   },
+   "wins": [
+    "wide anthem attacks over consecutive turns",
+    "extra combats for 40+ in a turn",
+    "burn/drain at low life"
+   ],
+   "weak": "board wipes; running out of gas; pillowfort and lifegain; late topdecks",
+   "weak_tags": [
+    "removal",
+    "attack_tax",
+    "fog"
+   ],
+   "overlaps": [
+    "tokens",
+    "equipment",
+    "infect",
+    "tribal"
+   ],
+   "subs": [
+    "aggro",
+    "extra_combat",
+    "power_matters"
+   ],
+   "colors": [
+    "RW",
+    "RG",
+    "BRW",
+    "R"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "em": "creatures 25-35, anthems 2-4, extra combats 2-3, lands 33-35",
+    "cf": "Creatures group: aggro; Beginner friendly"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Embercleave",
+     "why": "Cost reduction on a wide board, then double strike and trample at instant speed. Converts a stalled attack into lethal after blockers."
+    },
+    {
+     "name": "Iroas, God of Victory",
+     "why": "Your attackers cannot be blocked by more than one creature and do not take damage from blockers. Attacking becomes nearly free."
+    },
+    {
+     "name": "Anger",
+     "why": "Grants haste to your whole team from the graveyard, permanently, as long as you control a Mountain."
+    },
+    {
+     "name": "Hammer of Purphoros",
+     "why": "An anthem-plus-haste enchantment that also makes blockers, so the deck keeps pressuring without overextending."
+    },
+    {
+     "name": "Aggravated Assault",
+     "why": "Repeatable extra combat steps. With any mana-positive attack trigger this becomes an outright kill."
+    },
+    {
+     "name": "Berserk",
+     "why": "One mana to double a creature's power and give it trample. The classic surprise kill from a board that looked survivable."
+    },
+    {
+     "name": "Return of the Wildspeaker",
+     "why": "Draws cards equal to your biggest creature's power, or pumps the team. Solves aggro's card-advantage problem in green."
+    },
+    {
+     "name": "Elesh Norn, Grand Cenobite",
+     "why": "Plus-two-plus-two for you and minus-two-minus-two for everyone else. Frequently a one-sided board wipe and a lethal attack in one card."
+    },
+    {
+     "name": "Dolmen Gate",
+     "why": "Your attacking creatures take no combat damage, which lets a smaller board attack into a bigger one every turn."
+    },
+    {
+     "name": "Ohran Frostfang",
+     "why": "Deathtouch and a card for every attacker. Makes blocking suicidal and refills your hand while you swing."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Isshin, Two Heavens as One",
+     "why": "Doubles every attack trigger in the deck. The most build-around aggressive commander of recent years."
+    },
+    {
+     "name": "Xenagos, God of Revels",
+     "why": "Haste and doubled power to one creature each combat. Turns any large body into an immediate kill threat."
+    },
+    {
+     "name": "Neheb, the Eternal",
+     "why": "Mana in your second main phase for damage dealt, so a big attack pays for the next threat."
+    },
+    {
+     "name": "Aurelia, Exemplar of Justice",
+     "why": "Mentor plus escalating buffs, and she pushes damage through with trample and first strike as the counters pile up."
+    },
+    {
+     "name": "Zurgo Helmsmasher",
+     "why": "A 7/2 haste for five that cannot be destroyed on your turn. Aggro reduced to its bluntest form."
+    },
+    {
+     "name": "Gahiji, Honored One",
+     "why": "Pumps every attacker that is not attacking you, which turns the whole table into your offence."
+    },
+    {
+     "name": "Wulfgar of Icewind Dale",
+     "why": "Doubles attack and haste triggers for your team, in a color pair full of them."
+    },
+    {
+     "name": "Ilharg, the Raze-Boar",
+     "why": "Puts a creature from hand onto the battlefield attacking, then returns it. Cheats out giants every combat."
+    },
+    {
+     "name": "Ruric Thar, the Unbowed",
+     "why": "A 6/6 vigilance that punishes noncreature spells, so the control decks pay for the turns they spend answering you."
+    },
+    {
+     "name": "Toski, Bearer of Secrets",
+     "why": "Indestructible, must attack, and draws a card for every creature that connects. Aggro that never runs out of cards."
+    }
+   ],
+   "tz_watch_out": "The politics are the hard part. Attacking early makes you the visible threat, and three opponents can agree to deal with you long before your deck is finished. Spread damage rather than focusing one player down unless you can finish them, and be realistic about the deck's clock. An aggro deck that has not won by turn eight is usually the worst deck at the table."
+  },
+  "card_draw": {
+   "id": "card_draw",
+   "plan": "draw beyond the normal turn draw and convert a full hand to damage, drain or stocked interaction",
+   "stages": [
+    "deploy cheap draw engines early",
+    "draw extra",
+    "convert to damage/drain/tokens/answers",
+    "hold interaction",
+    "win late with card advantage"
+   ],
+   "roles": {
+    "engine": {
+     "sig": [
+      "draw",
+      "draw_count"
+     ],
+     "cards": [
+      "Rhystic Study",
+      "Mystic Remora",
+      "Guardian Project",
+      "Windfall"
+     ],
+     "n": [
+      10,
+      15
+     ]
+    },
+    "cantrip": {
+     "sig": [
+      "draw",
+      "selection"
+     ],
+     "cards": [
+      "Brainstorm",
+      "Ponder"
+     ],
+     "n": null
+    },
+    "payoff": {
+     "sig": [
+      "draw"
+     ],
+     "cards": [
+      "Niv-Mizzet, Parun",
+      "Sheoldred, the Apocalypse",
+      "Psychosis Crawler",
+      "Consecrated Sphinx"
+     ],
+     "n": [
+      3,
+      5
+     ]
+    },
+    "no_max_hand": {
+     "sig": [
+      "restrict"
+     ],
+     "cards": [
+      "Reliquary Tower",
+      "Thought Vessel"
+     ],
+     "n": null
+    }
+   },
+   "wins": [
+    "draw-damage triggers",
+    "Sheoldred plus wheels",
+    "out-resource late game",
+    "Laboratory Maniac"
+   ],
+   "weak": "engines draw removal; little board presence; Notion Thief, Narset; decking risk",
+   "weak_tags": [
+    "discard",
+    "restrict"
+   ],
+   "overlaps": [
+    "control",
+    "spellslinger",
+    "group_hug",
+    "enchantress",
+    "blink"
+   ],
+   "subs": [],
+   "colors": [
+    "U",
+    "UR",
+    "UB",
+    "GU"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "em": "engines 10-15, payoffs 3-5, dense interaction, more lands or ramp"
+   }
+  },
+  "burn": {
+   "id": "burn",
+   "plan": "direct damage to faces scaled to 120 life across three opponents: each-opponent effects and multipliers",
+   "stages": [
+    "prioritise each-opponent damage and doublers",
+    "repeatable pingers",
+    "earthquake effects"
+   ],
+   "roles": {
+    "damage": {
+     "sig": [
+      "burn",
+      "damage",
+      "damage_amount"
+     ],
+     "cards": [
+      "Torbran, Thane of Red Fell",
+      "Purphoros, God of the Forge",
+      "Kaervek the Merciless"
+     ],
+     "n": null
+    },
+    "multiplier": {
+     "sig": [
+      "replace"
+     ],
+     "cards": [
+      "Torbran, Thane of Red Fell"
+     ],
+     "n": null
+    },
+    "pinger": {
+     "sig": [
+      "damage",
+      "cost:tap"
+     ],
+     "cards": [],
+     "n": null
+    }
+   },
+   "wins": [
+    "face damage with multipliers",
+    "Earthquake",
+    "group slug"
+   ],
+   "weak": "single-target burn is inefficient in multiplayer; lifegain",
+   "weak_tags": [
+    "lifegain"
+   ],
+   "overlaps": [
+    "aggro",
+    "spellslinger"
+   ],
+   "subs": [
+    "direct_damage",
+    "ping",
+    "group_slug",
+    "earthquake"
+   ],
+   "colors": [
+    "R",
+    "BR",
+    "UR"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "burn must scale to 120 life",
+    "cf": "subs: direct damage, ping, group slug, earthquake"
+   }
+  },
+  "chaos": {
+   "id": "chaos",
+   "plan": "randomness, cascade and theft: warp the game with symmetrical effects your deck is built to exploit",
+   "stages": [
+    "pick effects your deck exploits",
+    "cascade chains, coin flips, theft"
+   ],
+   "roles": {
+    "cascade": {
+     "sig": [
+      "kw:cascade",
+      "cast_free"
+     ],
+     "cards": [],
+     "n": null
+    },
+    "theft": {
+     "sig": [
+      "steal",
+      "steal_temp"
+     ],
+     "cards": [
+      "Gonti, Lord of Luxury"
+     ],
+     "n": null
+    }
+   },
+   "wins": [
+    "free-spell chains",
+    "stolen permanents"
+   ],
+   "weak": "symmetrical chaos helps everyone",
+   "weak_tags": [],
+   "overlaps": [
+    "group_hug"
+   ],
+   "subs": [
+    "coin_flip",
+    "cascade",
+    "theft",
+    "possibility_storm"
+   ],
+   "colors": [
+    "R",
+    "UR",
+    "RG"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "cf": "subs: coin flip, cascade, theft, possibility storm; Zndrsplt, Yidris, Gonti, Kalamax"
+   }
+  },
+  "treasure": {
+   "id": "treasure",
+   "plan": "make Treasure and convert it to mana, drain or sacrifice value",
+   "stages": [],
+   "roles": {
+    "core": {
+     "sig": [],
+     "cards": [
+      "Prosper, Tome-Bound",
+      "Korvold, Fae-Cursed King",
+      "Magda, Brazen Outlaw"
+     ],
+     "n": null
+    }
+   },
+   "wins": [],
+   "weak": "",
+   "weak_tags": [],
+   "overlaps": [],
+   "subs": [],
+   "colors": [],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "one-line entry, no engine/weakness detail"
+   }
+  },
+  "wheels": {
+   "id": "wheels",
+   "plan": "symmetrical discard-and-draw with punishers",
+   "stages": [],
+   "roles": {
+    "core": {
+     "sig": [],
+     "cards": [
+      "Nekusar, the Mindrazer",
+      "Xyris, the Writhing Storm",
+      "The Locust God"
+     ],
+     "n": null
+    }
+   },
+   "wins": [],
+   "weak": "",
+   "weak_tags": [],
+   "overlaps": [],
+   "subs": [],
+   "colors": [],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "one-line entry, no engine/weakness detail"
+   }
+  },
+  "impulse_draw": {
+   "id": "impulse_draw",
+   "plan": "exile-and-play cards for card advantage",
+   "stages": [],
+   "roles": {
+    "core": {
+     "sig": [],
+     "cards": [
+      "Prosper, Tome-Bound",
+      "Birgi, God of Storytelling",
+      "Etali, Primal Conqueror",
+      "Narset, Enlightened Exile",
+      "Notion Thief"
+     ],
+     "n": null
+    }
+   },
+   "wins": [],
+   "weak": "",
+   "weak_tags": [],
+   "overlaps": [],
+   "subs": [],
+   "colors": [],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "one-line entry, no engine/weakness detail"
+   }
+  },
+  "legends_matter": {
+   "id": "legends_matter",
+   "plan": "legendary-density payoffs",
+   "stages": [],
+   "roles": {
+    "core": {
+     "sig": [],
+     "cards": [
+      "Sisay, Weatherlight Captain",
+      "Jodah, Archmage Eternal",
+      "Kethis, the Hidden Hand",
+      "Dihada, Binder of Wills"
+     ],
+     "n": null
+    }
+   },
+   "wins": [],
+   "weak": "",
+   "weak_tags": [],
+   "overlaps": [],
+   "subs": [],
+   "colors": [],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "one-line entry, no engine/weakness detail"
+   }
+  }
+ }
+}

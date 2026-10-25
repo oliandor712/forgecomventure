@@ -1,0 +1,245 @@
+Ramp Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Stax
+Combo
+Control
+Ramp
+Aggro
+Group hug
+Superfriends
+Lands matter
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Ramp
+Deck Archetype
+Ramp: The Commander Archetype, Explained
+Every Commander deck plays ramp. A ramp deck is the one that treats the mana advantage itself as the plan, rather than as a way to cast its real plan on time.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Ramp: Accelerates into a mana advantage and casts bigger things sooner.
+What Ramp Decks Actually Do
+Ramp decks accelerate their mana well past the one-land-per-turn baseline and then convert that lead into something the rest of the table cannot match: an enormous creature ten turns early, an X spell for twenty, or simply casting two threats a turn while everyone else casts one.
+The distinction worth drawing is between ramp as a component and ramp as an archetype. Almost every deck runs ten or so acceleration pieces; that is deckbuilding, not a strategy. A ramp deck runs closer to twenty, plus payoffs that specifically reward having far more mana than the format expects. The risk profile is distinctive too. The deck is at its most vulnerable in the middle turns, when it has spent several cards on mana and has nothing on board to show for it.
+The Ramp engine
+Three steps that feed each other, which is what makes it a deck rather than a pile of cards sharing a theme.
+1 Land, then a rock Sol Ring on turn one is two extra mana every turn afterwards.
+2 More mana than the turn Nature's Lore puts a land onto the battlefield untapped.
+3 Cast ahead of schedule A six-drop on turn four is a different game from a six-drop on six.
+↻ The spells you cast early are the ones that find more mana.
+Which Colors Fit Ramp
+Green is the ramp color and it is not close. It has land-fetching sorceries, mana creatures, extra land drops, and the doubling effects, at rates no other color approaches. Colorless mana rocks are available to everyone, which is why blue and black ramp decks exist at all. Red ramps in bursts through rituals and Treasure, and white, historically the worst ramp color, now has catch-up effects that only work when you are already behind.
+Green Land fetching, mana creatures, extra land drops, and mana doubling. The archetype's home by a very wide margin.
+Red Rituals and Treasure: burst mana for one big turn rather than a permanent advantage.
+Blue Artifact-based acceleration and untap effects, plus the card draw to use all that mana.
+Black Mana from life payments and the Cabal Coffers style of Swamp-count acceleration.
+White Catch-up ramp that only triggers when behind, plus taxation-adjacent effects like Smothering Tithe.
+How color identity decides what you can play →
+Top 10 Ramp Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building ramp for the first time, these are the effects to
+understand before anything else.
+Sol Ring ↗
+One mana for a rock that taps for two. The most-played card in the format, and the single best ramp card in it.
+Arcane Signet ↗
+Two mana, taps for any color in your identity. The most efficient fixing-plus-ramp rock in a multicolor deck.
+Nature's Lore ↗
+Two mana for an untapped dual land from the library. Faster than Rampant Growth and fixes better.
+Three Visits ↗
+The functional reprint of the above, which is why green ramp decks can run both effects.
+Cultivate ↗
+Slower, but it puts one land on the battlefield and one in hand, so it fixes and guarantees the next land drop.
+Kodama's Reach ↗
+The same card again under a different name. Redundancy is the point in a deck that wants this effect every game.
+Burgeoning ↗
+An extra land drop for every opponent's first land. On turn one this is the most explosive ramp card in the format.
+Smothering Tithe ↗
+A Treasure whenever an opponent draws, unless they pay. In a four-player game this generates absurd quantities of mana.
+Cabal Coffers ↗
+Mana per Swamp, which in mono-black turns a normal land count into double-digit mana by turn six.
+Nyxbloom Ancient ↗
+Triples mana from every source you control. The largest single multiplier available, and a win condition attached to a 5/5 trample.
+Top 10 Ramp Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Azusa, Lost but Seeking ↗
+Two extra land drops every turn. Mono-green, cheap, and the purest expression of the archetype.
+Omnath, Locus of Mana ↗
+Green mana does not empty from your pool and he grows with it. Turns a big turn into a big creature.
+Marwyn, the Nurturer ↗
+An Elf that grows with every Elf and taps for her power. Ramp and tribal in one command zone.
+Karametra, God of Harvests ↗
+A land from the library for every creature you cast, so the deck ramps just by playing normally.
+Zaxara, the Exemplary ↗
+A Hydra token for every X spell, plus infinite-mana-friendly abilities. The classic big-X payoff commander.
+Nikya of the Old Ways ↗
+Double mana from lands at the cost of casting no noncreature spells. A genuine deckbuilding constraint with a huge payoff.
+Goreclaw, Terror of Qal Sisma ↗
+Cost reduction and a pump-and-trample anthem for big creatures. Ramp that also finishes.
+Grand Warlord Radha ↗
+Mana for every attacking creature that carries into your second main phase. Aggro and ramp on the same trigger.
+Jodah, Archmage Eternal ↗
+Casts anything for five mana of any colors, which turns ramp into an excuse to play the biggest cards in Magic.
+Kruphix, God of Horizons ↗
+Unused mana carries over as colorless and your hand size is unlimited. Stores a ramp advantage across turns.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+Ramp's danger window is turns four through six: you have spent cards on mana, you have nothing on board, and everyone else has creatures. Decks that lose with ramp usually lose there, not to a lack of mana. Keep the curve honest, run some interaction, and make sure the payoffs arrive before the window closes. A deck that ramps to twelve mana and then casts a seven-drop that dies to removal has not accomplished anything.
+Frequently Asked Questions
+What is ramp in MTG Commander?
+Ramp is any effect that increases your available mana faster than one land per turn: mana rocks, mana creatures, land-fetching spells, and extra land drops. As an archetype, it means a deck that builds a large mana advantage and plays cards specifically designed to exploit it.
+How much ramp should a Commander deck run?
+A typical deck runs about ten pieces of acceleration alongside its thirty-six or so lands. A dedicated ramp deck runs closer to fifteen or twenty, plus payoffs that reward the surplus. Running lots of ramp without payoffs just means drawing mana instead of spells.
+What is the best color for ramp?
+Green, comfortably. It has the deepest and most efficient acceleration of every kind: land fetching, mana creatures, extra land drops, and mana doubling. Colorless mana rocks let every other color ramp, and red does it in bursts with rituals and Treasure.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Ramp? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Lands matter →Combo →Mana Rocks: The Complete Guide →The Land & Mana Base Guide →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Stax
+Combo
+Control
+Ramp
+Aggro
+Group hug
+Superfriends
+Lands matter
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

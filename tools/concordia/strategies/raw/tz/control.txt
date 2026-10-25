@@ -1,0 +1,245 @@
+Control Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Tribal
+Stax
+Combo
+Control
+Ramp
+Aggro
+Group hug
+Superfriends
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Control
+Deck Archetype
+Control: The Commander Archetype, Explained
+Control decks answer things. The hard part in Commander is that there are three times as many things to answer, and only one of you.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Control: Answers everything and wins late, once the table has run out of threats.
+What Control Decks Actually Do
+A control deck aims to neutralise every threat that matters until it can deploy a win condition safely. Counterspells, removal, board wipes, and card draw make up most of the list, and the actual way it wins is often two or three cards deep in a ninety-nine-card deck.
+Multiplayer changes the archetype more than any other. In a duel, one-for-one answers are fine because there is one opponent; in Commander a Counterspell trades with one card out of three opponents' hands, and you fall behind by answering everything. Successful control decks therefore lean on effects that answer many things at once (board wipes, mass bounce, taxation) and on card draw that keeps up with three players drawing at the same time.
+The Control engine
+Three steps that feed each other, which is what makes it a deck rather than a pile of cards sharing a theme.
+1 Hold mana open Untapped mana is the threat, whether or not you have the card.
+2 Answer the threat Counterspell on the stack, or Swords to Plowshares after it lands.
+3 Untap They spent a card and a turn; you spent a card.
+↻ Win late, once three opponents have run out of things to try.
+Which Colors Fit Control
+Blue is the archetype, effectively by definition: counterspells and the deepest card draw both live there. White supplies the board wipes and the cheapest unconditional removal, and black supplies targeted removal and its own sweepers. Red and green participate least: red's answers are damage-based and narrow, and green's are one-for-one artifact and enchantment removal rather than broad control tools.
+Blue Counterspells, card draw, and mass bounce. The color the archetype cannot exist without.
+White Board wipes and the most efficient unconditional removal in the format. Answers many threats at once, which is what multiplayer demands.
+Black Targeted removal that hits anything, plus sweepers that get around indestructible.
+Red Narrow support: artifact removal and damage-based sweepers. Rarely a core control color.
+Green The least suited. Green answers artifacts and enchantments well and almost nothing else on the control axis.
+How color identity decides what you can play →
+Top 10 Control Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building control for the first time, these are the effects to
+understand before anything else.
+Counterspell ↗
+Two mana, no conditions. Still the baseline every other counterspell is measured against.
+Cyclonic Rift ↗
+Overloaded, it returns every nonland permanent your opponents control at instant speed. The single most game-swinging card in the archetype.
+Swords to Plowshares ↗
+One mana to exile any creature. The life gained is close to irrelevant at forty.
+Wrath of God ↗
+Four mana, all creatures, no regeneration. Answering three players' boards with one card is how control keeps pace.
+Toxic Deluge ↗
+A scaling sweeper paid for in life, which gets around indestructible and large creatures alike.
+Rhystic Study ↗
+Taxes every spell the table casts, and either draws you cards or slows everyone down. Both outcomes are what control wants.
+Mystic Remora ↗
+Draws enormously in the early turns for one mana, then retires. The best cheap draw engine in multiplayer.
+Fierce Guardianship ↗
+A free counterspell with your commander out, which lets you tap out on your own turn and still hold up interaction.
+Farewell ↗
+Modal exile of any combination of artifacts, creatures, enchantments, and graveyards. One card that answers whole strategies.
+Nevinyrral's Disk ↗
+A repeatable-threat sweeper that hits artifacts and enchantments too, and is available in any color.
+Top 10 Control Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Baral, Chief of Compliance ↗
+Cheaper counterspells and loot on every counter. Mono-blue control with the draw problem partly solved.
+Teferi, Temporal Archmage ↗
+A planeswalker commander that untaps four permanents each turn, so you counter on their turn and still develop on yours.
+Azor, the Lawbringer ↗
+A sphinx that draws a large chunk of a deck and stops opponents casting instants and sorceries for a turn.
+Dragonlord Ojutai ↗
+Hexproof while untapped and dig on damage. A control finisher that survives everything a control deck fears.
+Dragonlord Silumgar ↗
+Steals a creature or planeswalker and keeps stealing as he is recast. Removal that becomes your threat.
+The Scarab God ↗
+Scry and drain each upkeep, exiles graveyards for Zombies, and returns to hand instead of dying. Nearly unanswerable.
+Ertai Resurrected ↗
+Flash plus a modal counter or removal on entry, and he returns to the command zone rather than dying.
+Rashmi, Eternities Crafter ↗
+Free spells off the top on your first spell each turn, which fixes control's card-advantage math.
+Nymris, Oona's Trickster ↗
+Draws whenever you cast on an opponent's turn, exactly the play pattern control already wants.
+Damia, Sage of Stone ↗
+Refills you to seven cards every upkeep, which makes trading one-for-one with three opponents sustainable.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+The archetype's real risk is being the table's police officer. If you counter everything, three players learn that you are the problem, and in a format where they can all attack you at once that is a losing position regardless of how good your answers are. Let some things resolve, save your counterspells for what actually beats you, and make sure the deck can close a game rather than only prolong it.
+Frequently Asked Questions
+Is control good in multiplayer Commander?
+It works, but it needs building differently than a duel control deck. One-for-one answers fall behind against three opponents, so multiplayer control leans on board wipes, mass bounce, and taxation effects that answer several players at once, plus card draw that keeps pace with a whole table.
+What colors are control decks in Commander?
+Blue above all, for counterspells and card draw. White adds board wipes and efficient removal, black adds unconditional targeted removal. Azorius, Dimir, and Esper are the classic control color combinations.
+How does a control deck actually win?
+Usually with a small number of resilient threats deployed once the board is stable: a hexproof commander, a large flier, or an alternate win condition. Some control decks win by decking opponents or with a single combo instead, since the deck already plays the interaction needed to protect it.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Control? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Stax →Spellslinger →How the Stack Works →Priority and Responding to Spells →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Tribal
+Stax
+Combo
+Control
+Ramp
+Aggro
+Group hug
+Superfriends
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close

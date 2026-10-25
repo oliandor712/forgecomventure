@@ -1,0 +1,245 @@
+Combo Commander Deck Guide: Best Cards & Commanders
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Artifacts
+Tribal
+Stax
+Combo
+Control
+Ramp
+Aggro
+Group hug
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Store   Learn       Guides Rules, strategy and how-tos
+FAQ Quick answers about TurnZero
+About Us Why we built TurnZero
+Features What the app does
+Pokémon Pokémon collection and scanning
+Yu-Gi-Oh! Yu-Gi-Oh! collection and scanning
+One Piece One Piece collection and scanning
+Riftbound Riftbound collection and scanning
+Star Wars: Unlimited SWU collection and scanning
+Lorcana Lorcana collection and scanning
+Tools       Commander Finder Find a commander to build
+Rate My Deck Bracket and review a decklist
+Stats       Cards Play rates across the catalog
+Commanders The commander leaderboard
+Decks Published decks and their results
+Sign In
+Search /  Get Started     Home
+Guides
+Deck Archetypes
+Combo
+Deck Archetype
+Combo: The Commander Archetype, Explained
+Every other archetype accumulates an advantage until it is big enough to win. A combo deck skips that: it finds two or three specific cards and the game simply ends.
+Track your collections, build decks and remember games in the free TurnZero HQ app.
+App Store     Google Play
+Combo: Aims to assemble a specific card combination that ends the game.
+What Combo Decks Actually Do
+A combo deck is built to assemble a particular interaction that wins on the spot: an infinite loop, a single enormous turn, or an alternate win condition that ignores damage entirely. The rest of the deck exists to find those pieces, protect them, and survive long enough to deploy them.
+That gives combo an unusual deck structure. It is mostly tutors, card selection, interaction, and mana, with a handful of actual win conditions. The archetype spans a huge power range: a casual deck with one two-card combo as a backup plan and a cEDH deck aiming to win on turn three are both combo decks, and the difference is entirely in how ruthlessly the supporting ninety cards are tuned.
+The Combo engine
+Three steps that build to a finish. This one ends the game rather than coming back round.
+1 Tutor for the piece Demonic Tutor finds whichever half of it you are missing.
+2 Assemble it Two cards, each unremarkable on its own.
+3 Win on the spot Thassa's Oracle with Demonic Consultation ends the game outright.
+The last step wins the game, so there is nothing to come back round for.
+Which Colors Fit Combo
+Blue and black are the combo colors because they are the tutoring and protection colors. Black finds any card; blue protects the turn you use it and supplies the alternate win conditions. Green tutors creatures and produces the huge mana that powers loops, red supplies rituals and its own creature-based loops, and white contributes tutors for artifacts and enchantments plus a handful of famous two-card kills.
+Blue Protection, card selection, and the alternate win conditions. Blue is why a combo turn resolves instead of getting answered.
+Black Unrestricted tutoring. Black finds the missing piece more cheaply and reliably than any other color.
+Green Creature tutors and explosive mana. Green assembles combos out of the battlefield rather than out of the hand.
+Red Rituals for a single big turn, plus creature-copy loops that are combos in their own right.
+White Artifact and enchantment tutors, and several of the format's best-known two-card kills.
+How color identity decides what you can play →
+Top 10 Combo Cards
+The cards that define the archetype rather than the ones winning this week. If you are
+building combo for the first time, these are the effects to
+understand before anything else.
+Demonic Tutor ↗
+Two mana, any card, straight to hand. The cleanest tutor ever printed and the backbone of consistency.
+Vampiric Tutor ↗
+One mana at instant speed for a card on top. Slower to use but cheap enough to hold up alongside protection.
+Enlightened Tutor ↗
+Finds artifacts and enchantments at instant speed, which covers a large share of the format's combo pieces.
+Thassa's Oracle ↗
+Win the game on its enter trigger with an empty library. The most-played alternate win condition in Commander.
+Demonic Consultation ↗
+Exiles your whole library for one card, which is a drawback everywhere except next to Thassa's Oracle, where it is the combo.
+Isochron Scepter ↗
+Imprints a cheap instant and recasts it every turn. Half of the format's most famous mana-generating loop.
+Dramatic Reversal ↗
+Untaps all your nonland permanents. The other half: with enough mana rocks the loop generates infinite mana.
+Kiki-Jiki, Mirror Breaker ↗
+Copies a creature with haste each turn, which is a two-card infinite with any creature that untaps or blinks him.
+Protean Hulk ↗
+Fetches six mana value of creatures when it dies, so a single sacrifice assembles a whole combo from the library.
+Ad Nauseam ↗
+Draws most of your deck at the cost of life. In a low-curve list it finds every piece at once.
+Top 10 Combo Commanders
+Ten command zones that support the strategy, spread across the color combinations it lives
+in. The color identity shown is what each commander lets you play in the other 99.
+Commander Spotlight
+Kinnan, Bonder Prodigy ↗
+Doubles mana from nonland sources and cheats big creatures out. One of the strongest mana engines in the format.
+Godo, Bandit Warlord ↗
+Tutors Helm of the Host on entry, which grants infinite combat steps. A mono-red one-card combo.
+Thrasios, Triton Hero ↗
+Converts infinite mana into drawing your library. The default outlet in cEDH, and legal as a solo commander.
+Captain Sisay ↗
+Tutors any legendary permanent every turn, chaining into a pile of legends that lock or win.
+Winota, Joiner of Forces ↗
+Puts Humans onto the battlefield from the library on attack. Snowballs into a game-ending turn immediately.
+Yisan, the Wanderer Bard ↗
+Tutors creatures by escalating mana value, assembling a creature combo one verse counter at a time.
+Selvala, Heart of the Wilds ↗
+Enormous mana from a single tap, which turns any big-mana payoff into a kill.
+Tivit, Seller of Secrets ↗
+Makes Clue and Treasure tokens through voting, and combos cleanly with untap effects.
+Oswald Fiddlebender ↗
+Sacrifices an artifact to tutor another onto the battlefield, chaining a combo out of the library for one mana a time.
+Krark, the Thumbless ↗
+Coin-flip spell recursion that goes infinite with the right pairing. The most chaotic combo commander in common play.
+See which commanders are actually winning games →
+Deck Lab
+Build the deck, then let it measure itself
+The Deck Lab checks the list while you are still writing it: lands, ramp, removal, card draw and the curve, each against what the deck is trying to be. Goldfish an opening hand, read the bracket the list actually earns, then track how every version of it does at the table.
+Build a Deck FreeHow the Deck Lab works →
+What to Watch Out For
+Combo is the archetype where power level is least visible from the outside, and where a mismatch is felt most sharply. A deck that wins on turn four in a pod expecting turn ten is not a better deck, it is a different game. Be specific in the Rule 0 conversation, saying that you have infinite combos and roughly when they land, and know which bracket your build belongs in.
+Frequently Asked Questions
+What is a combo deck in Commander?
+A combo deck is built to assemble a specific set of cards that wins immediately: an infinite loop, a single game-ending turn, or an alternate win condition. Most of the deck is tutors, card selection, protection, and mana, with only a few cards that actually win.
+Are infinite combos allowed in Commander?
+Yes, they are legal. A loop with a mandatory repeating action and no way to stop results in a draw, so you must be able to end it, but combos themselves are permitted. Whether a given pod wants them is a social question, which is what Rule 0 and the bracket system exist to settle.
+What is the difference between combo and cEDH?
+Combo is a strategy; cEDH is a format-wide power level in which nearly every deck is a tuned combo deck. Plenty of casual decks include a combo as a backup win condition without being anywhere near cEDH. The difference is how efficiently the other ninety cards support it.
+TurnZero HQ tags every deck you track with one of these archetypes, so your win rate is
+broken down by what your decks are actually trying to do, not just which commander is on
+top of them.
+All 20 Commander deck archetypes → See decks people published, tagged and with their win rates →
+Commander Finder
+Like the sound of Combo? Find a commander that plays it.
+A minute, no account, five commanders and why each one suits you.
+Find your commander   Advertisement   Related Guides
+Spellslinger →Artifacts →The Commander Bracket System, Explained →What Is EDH Power Level? →
+See all 29 in Deck Archetypes →
+Track how your archetype actually performs.
+Log your games with TurnZero HQ and see which of your decks wins, against what, and how often. Free to start.
+Create Free Account      Download on the App Store       Get it on Google Play
+TurnZero
+Home
+Features
+FAQ
+Premium
+Store
+Explore
+Deck Builder
+Guides
+Cards
+Commanders
+Decks
+Sets
+Secret Lair
+Follow
+TikTok
+Instagram
+YouTube
+All links
+© 2026 TurnZero HQ  Privacy Policy
+Terms
+Affiliate Disclosure
+Delete Account
+TurnZero HQ is an independent companion for trading card games. It is not affiliated with, endorsed, sponsored, or approved by the publishers or rights holders of the games it supports. Game names, card names, card images, artwork, and related trademarks belong to their respective owners.
+TurnZero HQ is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast LLC. ©Wizards of the Coast LLC.
+TurnZero was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
+Why TurnZero?    TurnZero HQ App
+Track your Commander games
+Life counter
+Deck builder
+Playgroup stats
+Card scanner
+Download on the App Store       Get it on Google Play
+Or start free in your browser →
+TurnZero HQ store
+The Commander Cube
+A deck-box-sized case for the rest of the table: 30 spring-loaded +1/+1 dials, up to 72
+status tokens, and your dice, all behind a magnetic lid.
+Buy on Etsy
+See how it works →
+Advertisement
+All articles
+Search 1799 articles /    Game Magic      Magic
+Pokémon
+Star Wars: Unlimited
+Yu-Gi-Oh!
+One Piece
+Riftbound
+Lorcana
+Learn to Play     Beginner Series
+MTG Formats
+Commander Glossary
+Guides & Tips
+Draft & Limited
+Commander     Play Better Commander
+Commander Guides
+Deck Archetypes     Artifacts
+Tribal
+Stax
+Combo
+Control
+Ramp
+Aggro
+Group hug
+See all →
+Color Combinations
+Cards & Decks     Card Spotlights
+Roundups
+Tools & Data
+Sets & Collecting     Set Guides
+Secret Lair
+Buying & Selling
+Lore & Story
+TurnZero HQ     How to Use TurnZero HQ
+App Comparisons
+For Game Stores
+Community & Media
+Esc
+Browse by section
+Beginner SeriesPlay Better CommanderCommander GlossaryMTG FormatsGuides & TipsCard SpotlightsDeck ArchetypesCommander GuidesColor CombinationsDraft & LimitedLore & StorySet GuidesSecret LairRoundupsApp ComparisonsBuying & SellingCommunity & MediaFor Game StoresPokémon TCGStar Wars: UnlimitedYu-Gi-Oh!One Piece Card GameRiftboundDisney LorcanaHow to Use TurnZero HQTools & Data
+↑↓ to navigate ↵ to open esc to close
+Ask TurnZero
+Ask TurnZero
+A question in your own words. We’ll point you at the page that answers it.
+×
+Ask   Try “how do I start a Commander deck”, “what is a bracket”, or a card name.
+Want answers about your decks?
+TurnZero Premium answers questions about your own games, decks, gatherings and your
+friends’ lists — grounded in what you’ve tracked.
+Get TurnZero →
+Card stats Close
