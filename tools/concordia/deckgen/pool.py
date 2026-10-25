@@ -32,7 +32,9 @@ def main():
         names = {m.group(1).strip().lower() for m in re.finditer(r'^\d+\w*\s+[A-Z]+\s+(.+?)(?:\s+@.*)?$', t, re.M)}
         if nm.startswith('Alchemy'): alch_in |= names
         elif typ not in ('Online', 'Funny') and not nm.startswith('Mystery Booster Commander Edition'): alch_out |= names
-    alchemy = alch_in      # user 2026-10-24: any card named in an Alchemy edition leaves the pool, paper printings or not (alch_out kept for reference)
+    # user 2026-10-25: digital-only means Scryfall "-in:paper" (digital_only_scryfall.json); cards in an Alchemy edition that also have paper printings stay
+    _dig = os.path.join(HERE, 'digital_only_scryfall.json')
+    alchemy = {x.lower() for x in json.load(open(_dig, encoding='utf-8'))} if os.path.exists(_dig) else alch_in
     PRE6_CUTOFF = '1999-04-21'  # Sixth Edition release date
     PRIO = {'Expansion': 0, 'Core': 0, 'Starter': 1, 'Draft': 1, 'Duel_Deck': 2, 'Commander': 2, 'Reprint': 3, 'Collector_Edition': 4}
     GOOD_TYPES = set(PRIO)
