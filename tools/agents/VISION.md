@@ -2,6 +2,10 @@
 
 Set by the user, 2026-10-24. Every tool is meant to be harmonious and to feed the next one. When a tool reads card data a different way from the tagger, that is a gap to close.
 
+## Role of the reader
+
+The reader (the blind tag reader and its runs) exists to build stored knowledge Claude can use to comprehend Magic accurately, so no session has to start from scratch. Its output is mined into the render rules, compose rules and gap files (`render_rules.json`, `compose_rules.json`, `TAG_GAPS.toon`), which the renderer then uses without any reader. Judge a reader run by how much durable, reusable knowledge it adds to those files, not by the run's own score.
+
 ## The chain
 
 1. **Tagger and renderer** give Claude a way to understand and compare Magic cards without faulty prose. Tags are the structured meaning of a card; the renderer turns tags back into text without a reader or Oracle.
