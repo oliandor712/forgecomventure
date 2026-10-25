@@ -19,3 +19,5 @@ In parallel: the **AI lab** uses the tags to find ways to improve the Forge AI s
 
 - `build.py`, `commander_support.py`, `deck_tier.py` and the deck tools read cards through the older `ability_tags` module (flat names such as `etb_trigger`, `token_make`). The tagger starts from the same module and then adds `tag_extra`, `tag_verify` and `tag_variant`, drops some base tags, and uses a structured vocabulary (`trigger:etb`, `target_type:...`). The deck tools never see those layers.
 - Next step, not started: one shared tag source for the deck tools (the tagger's record), with a mapping from the old names, then re-check deck results against the current decks before anything live changes (enemies.json and live decks need the user's word).
+
+See also: tools/agents/MEETING_FEEDBACK.md (agent meeting feedback on this vision, 2026-10-24).
