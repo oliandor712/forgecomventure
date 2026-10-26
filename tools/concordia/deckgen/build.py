@@ -14,7 +14,7 @@ import deckfile as D
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 import deck_tier as dt
-import tier1_rules as t1  # tier 1 requirements (one source of truth, tools/concordia/tier1_rules.py)
+import tier_rules as tr  # tier 1 requirements (one source of truth, tools/concordia/tier_rules.py)
 import archetype_rules as ar  # archetype windows and sub-archetype classification (tools/concordia)
 import ability_tags as at  # ability-led tags and the deck-building bonus (deckgen)
 import policy_tags as pt  # the record's tags under POLICY's names
@@ -96,12 +96,12 @@ def human_rules():
     return rules
 
 def creature_band(d):
-    """The H11 creature band for a deck: at least 15 (archetype_rules.creature_check); the builder stops adding creatures at t1.CREATURE_SOFT_CAP."""
+    """The H11 creature band for a deck: at least 15 (archetype_rules.creature_check); the builder stops adding creatures at tr.CREATURE_SOFT_CAP."""
     return ar.creature_check(d['tier'], d.get('archetype'), d.get('sub'), d.get('reach', 2))
 
 def human_pass1(d, ident, rules):
     """Pass 1, before the fill: the rules as build parameters. Human-logic rows win over the metrics (file header)."""
-    return {'target': t1.POWER['target'] if 'H08' in rules else T1_TARGET,  # H08: tier 1 power 17-23
+    return {'target': tr.POWER['target'] if 'H08' in rules else T1_TARGET,  # H08: tier 1 power 17-23
             'bonus': d.get('_boost', {}).get('bonus', 1.0),  # ability_tags weight; raised once on a retry
             'cwin': creature_band(d) if 'H11' in rules else None}  # H11: at least 15 creatures
 
@@ -114,8 +114,8 @@ def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     ident = frozenset(d['colors']); cr = sum(1 for p, _ in chosen if 'Creature' in p['types'].split())
     isor = sum(1 for p, _ in chosen if {'Instant', 'Sorcery'} & set(p['types'].split()))
     check('H06', True, 'every card from the pool (existing assets only)')
-    check('H08', t1.POWER['floor'] <= power <= t1.POWER['ceiling'], 'tier 1 power %.1f (%g-%g)' % (power, t1.POWER['floor'], t1.POWER['ceiling']), d['tier'] == 1)
-    printings = t1.STAPLE_PRINTINGS if d['tier'] == 1 else ('U',)  # H09: tier 1 commons or uncommons; other tiers uncommon only
+    check('H08', tr.POWER['floor'] <= power <= tr.POWER['ceiling'], 'tier 1 power %.1f (%g-%g)' % (power, tr.POWER['floor'], tr.POWER['ceiling']), d['tier'] == 1)
+    printings = tr.STAPLE_PRINTINGS if d['tier'] == 1 else ('U',)  # H09: tier 1 commons or uncommons; other tiers uncommon only
     bad = [p['name'] for p, r in chosen if p.get('cat') == 'staple' and r not in printings]
     check('H09', not bad, 'staples outside %s printings: %s' % ('/'.join(printings), ', '.join(bad) or 'none'))
     budget = {k.lower() for k in BUDGET} | {k.lower() for k in ROCKS}
@@ -139,30 +139,30 @@ def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     return out
 BASIC = {'W': 'Plains', 'U': 'Island', 'B': 'Swamp', 'R': 'Mountain', 'G': 'Forest'}
 SPEC = {
- 1: t1.BUILD_SPEC,
+ 1: tr.BUILD_SPEC,
  2: dict(lands=38, quota={'wipe': 1, 'removal': 8, 'ramp': 5, 'draw': 5}, cap={'ramp': 7, 'draw': 8, 'removal': 10, 'wipe': 2, 'tutor': 1, 'fast': 1},
-         creatures=15, cmax=t1.CREATURE_SOFT_CAP, types={'Instant': 5, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 4}, curve={1: 6, 2: 15, 3: 15, 4: 12, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 10, 'M': 1}, gc=0),
- 3: dict(lands=37, quota={'wipe': 2, 'removal': 10, 'ramp': 10, 'draw': 9}, cap={'ramp': 12, 'draw': 11, 'removal': 13, 'wipe': 3, 'tutor': 2, 'fast': 3},
-         creatures=15, cmax=t1.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 3}, curve={1: 7, 2: 15, 3: 15, 4: 11, 5: 7, 6: 7}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 8}, gc=3),
+         creatures=15, cmax=tr.CREATURE_SOFT_CAP, types={'Instant': 5, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 4}, curve={1: 6, 2: 15, 3: 15, 4: 12, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 99}, gc=0, p50=5, p70=2),
+ 3: dict(lands=37, quota={'wipe': 2, 'removal': 10, 'ramp': 10, 'draw': 9}, cap={'ramp': 12, 'draw': 11, 'removal': 13, 'wipe': 3, 'tutor': 2, 'fast': 2},
+         creatures=15, cmax=tr.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 3}, curve={1: 7, 2: 15, 3: 15, 4: 11, 5: 7, 6: 7}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 99}, gc=0, p50=10, p70=2),
  4: dict(lands=35, quota={'wipe': 2, 'removal': 11, 'ramp': 11, 'draw': 10}, cap={'ramp': 15, 'draw': 14, 'removal': 16, 'wipe': 4, 'tutor': 3, 'fast': 3},
-         creatures=15, cmax=t1.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 8, 2: 16, 3: 16, 4: 11, 5: 8, 6: 7}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 15}, gc=4),
+         creatures=15, cmax=tr.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 8, 2: 16, 3: 16, 4: 11, 5: 8, 6: 7}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 99}, gc=4, p50=14, p70=5),
  5: dict(lands=34, quota={'wipe': 2, 'removal': 12, 'ramp': 12, 'draw': 11, 'tutor': 2}, cap={'ramp': 17, 'draw': 16, 'removal': 18, 'wipe': 4, 'tutor': 5, 'fast': 5},
-         creatures=15, cmax=t1.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 10, 2: 17, 3: 16, 4: 11, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 25}, gc=8),
+         creatures=15, cmax=tr.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 10, 2: 17, 3: 16, 4: 11, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 99}, gc=6, p50=99, p70=99),
 }
 TARGET_POWER = {int(k): v['target'] for k, v in dt.TIER_TABLE.items()}  # card power the builder aims for at each tier (tier_table.json, EDHREC scale)
 # Staples (deckgen/staples.py: popular, low standalone impact) make decks consistent without swinging games: tiers 2-3
 # prefer them, 4-5 mildly, tier 1 avoids them so wild encounters stay rough. Watch-list cards (popular and high
 # impact, not Game Changers) are capped like Game Changers. Precon inclusion counts as casual playability at 2-3.
-STAPLE_BONUS = {1: t1.STAPLE_BONUS, 2: 0, 3: 3, 4: 1.5, 5: 1.5}
+STAPLE_BONUS = {1: tr.STAPLE_BONUS, 2: 0, 3: 3, 4: 1.5, 5: 1.5}
 # Raise the tier 1-2 floor (user, 2026-10-20): push staples at tiers 1-2, uncommon printings only (other staples keep
 # STAPLE_BONUS), give tier 1 a power target instead of building it as weak as possible, and rebuild any tier 1-2 deck
 # whose power lands under FLOOR with a raised target. Near-staple budget lands (budget_lands.json) fill BUDGET_LANDS.
-UNCOMMON_STAPLE_BONUS = {1: t1.UNCOMMON_STAPLE_BONUS, 2: 6}
-T1_TARGET = t1.POWER['target']
-FLOOR = {1: t1.POWER['floor'], 2: dt.TIER_TABLE['2']['floor']}
-CEILING = {1: t1.POWER['ceiling'], 2: dt.TIER_TABLE['2']['ceiling']}  # pushed staples lift the top too; keep tier 1-2 decks inside their bands
-BUDGET_LANDS = {1: t1.BUDGET_LANDS, 2: 5}
-BUDGET_ROCKS = {1: t1.BUDGET_ROCKS, 2: 3}  # cheap mana rocks from budget decks, inside the tier's ramp/fast caps
+UNCOMMON_STAPLE_BONUS = {1: tr.UNCOMMON_STAPLE_BONUS, 2: 6}
+T1_TARGET = tr.POWER['target']
+FLOOR = {1: tr.POWER['floor'], 2: dt.TIER_TABLE['2']['floor']}
+CEILING = {1: tr.POWER['ceiling'], 2: dt.TIER_TABLE['2']['ceiling']}  # pushed staples lift the top too; keep tier 1-2 decks inside their bands
+BUDGET_LANDS = {1: tr.BUDGET_LANDS, 2: 5}
+BUDGET_ROCKS = {1: tr.BUDGET_ROCKS, 2: 3}  # cheap mana rocks from budget decks, inside the tier's ramp/fast caps
 _bl = os.path.join(HERE, 'budget_lands.json')
 BUDGET = json.load(open(_bl))['lands'] if os.path.exists(_bl) else {}
 ROCKS = json.load(open(_bl)).get('rocks', {}) if os.path.exists(_bl) else {}
@@ -171,7 +171,7 @@ def spread(items, key):
     """Order budget picks by popularity times a stable per-deck jitter, so decks don't all get the same few cards."""
     h = lambda n: int(hashlib.md5((key + n).encode()).hexdigest()[:8], 16) / 0xffffffff
     return sorted(items, key=lambda kv: -kv[1]['decks'] * (0.5 + h(kv[0])) - (1000 if kv[1]['colors'] else 0))
-WATCH_CAP = {1: t1.WATCH_CAP, 2: 1, 3: 2, 4: 4, 5: 8}
+WATCH_CAP = {1: tr.WATCH_CAP, 2: 1, 3: 2, 4: 4, 5: 8}
 PRECON_BONUS = {2: 2, 3: 2}
 STRAT_ROLE, STRAT_ROLE_CAP = 2.0, 3   # per play-line role of a declared strategy (decks.json "strategy": [ids of strategies.json]) the card fills, capped
 NICHE_PEN = {2: 4, 3: 3, 4: 2, 5: 2}   # per niche:* tag no declared strategy uses (tag_run.py); capped at 2 tags
@@ -219,7 +219,7 @@ def build(d):
     p1 = human_pass1(d, ident, human_rules())  # pass 1 of human_logic.toon: the rules as build parameters (first read)
     if arch:  # archetype quotas (archetype_rules.py): creature band, instant+sorcery and enchantment minimums
         lo, hi, isx, ench, _ = ar.windows(tier, arch, sub, reach)
-        spec['creatures'], spec['cmax'] = min(lo, hi), min(hi, t1.CREATURE_SOFT_CAP)
+        spec['creatures'], spec['cmax'] = min(lo, hi), min(hi, tr.CREATURE_SOFT_CAP)
         spec['types'] = {k: v for k, v in spec['types'].items() if k not in ('Instant', 'Sorcery', 'Enchantment')}
         spec['types']['Instant|Sorcery'] = isx
         spec['types']['Enchantment'] = ench
@@ -268,7 +268,7 @@ def build(d):
         cands.append(p)
     # archetype leans (declared aggro/tribal: at most TOK_CAP token cards; declared tokens: at least 13; tribal: 15+ of the tribe; low-* subs: their lean)
     atry = d.get('_arch_try', 0)
-    TOK_CAP = t1.TOKEN_CAP[0] if atry < 2 else t1.TOKEN_CAP[1]
+    TOK_CAP = tr.TOKEN_CAP[0] if atry < 2 else tr.TOKEN_CAP[1]
     ntok = [0]; nnc = collections.Counter(); ntype_c = collections.Counter()
     tokcard = lambda p: 'Land' not in p['types'].split() and ar.is_token_card(card_text(p))
     rclasses = set()
@@ -285,7 +285,7 @@ def build(d):
         tribes = sorted(({it[6:] for it in cp.profile(cmd['oracle'], cmd['types'], cmd['name']) if it.startswith('tribe:')} | {x for x in cmd['types'].split() if x not in ar.SKIP_TYPES}) - {'Human'})
         cnt = {x: sum(1 for q in cands if 'Creature' in q['types'].split() and x in q['types'].split()) for x in tribes}
         tribe = max(cnt, key=cnt.get) if cnt else None
-    chosen = []; rcount = collections.Counter(); roles = collections.Counter(); curve = collections.Counter(); ncreat = 0; ngc = 0; nwatch = 0
+    chosen = []; rcount = collections.Counter(); roles = collections.Counter(); curve = collections.Counter(); ncreat = 0; ngc = 0; nwatch = 0; npow = [0, 0]   # npow: cards at power 50+ and 70+
     nonland = 99 - spec['lands']
     def can_add(p):
         tags = p['tags']
@@ -293,14 +293,17 @@ def build(d):
             if tags & tg and roles[role] + 1 > spec['cap'][role]: return None
         if curve[bucket(p['cmc'])] >= spec['curve'][bucket(p['cmc'])]: return None
         if p['gc'] and ngc >= spec['gc']: return None
+        pwr = p['power'].get(p['minr'], 0)   # power-50+/70+ caps per tier (tier_rules.TIERS premium50/premium70)
+        if pwr >= 50 and npow[0] >= spec.get('p50', 99): return None
+        if pwr >= 70 and npow[1] >= spec.get('p70', 99): return None
         if p.get('cat') == 'watch' and nwatch >= WATCH_CAP[tier]: return None
         if arch and tier == 1 and 'Creature' not in p['types'].split() and 'Land' not in p['types'].split():   # keep the sub label as declared (classify counts non-creature artifacts and enchantments)
             if 'Enchantment' in p['types'].split() and arch in ('tribal', 'tokens') and sub != 'low-' + arch and nnc['E'] >= ar.LOW_ENCHANT_MIN - 1: return None
             if 'Artifact' in p['types'].split() and arch == 'aggro' and sub != 'low-aggro' and nnc['A'] >= ar.LOW_ARTIFACT_MIN - 1: return None
         if arch == 'tribal' and tribe and tier == 1 and 'Creature' in p['types'].split() and tribe not in p['types'].split():   # classify: the top creature type must be the tribe, not Human or another type
-            if any(ntype_c[x] >= t1.OTHER_TYPE_CAP for x in p['types'].split() if x not in ar.SKIP_TYPES): return None
+            if any(ntype_c[x] >= tr.OTHER_TYPE_CAP for x in p['types'].split() if x not in ar.SKIP_TYPES): return None
         if arch == 'aggro' and tier == 1 and 'Creature' in p['types'].split():   # an aggro deck must not turn tribal: a creature type the commander names stays under 11
-            if any(ntype_c[x] >= t1.AGGRO_TYPE_CAP and x != 'Human' and x.lower() in cmd_names for x in p['types'].split() if x not in ar.SKIP_TYPES): return None
+            if any(ntype_c[x] >= tr.AGGRO_TYPE_CAP and x != 'Human' and x.lower() in cmd_names for x in p['types'].split() if x not in ar.SKIP_TYPES): return None
         if arch in ('aggro', 'tribal') and tier == 1 and ntok[0] >= TOK_CAP and tokcard(p): return None   # token cards would reclassify the deck as tokens
         if arch and tier == 1 and sub != 'low-control':   # not low-control: no lock card, and creature removal only with no other removal class (classify: reach 2+ with a creature answer = low-control)
             rc = rclass(p)
@@ -314,6 +317,8 @@ def build(d):
             if p['tags'] & tg: roles[role] += 1
         if 'Creature' in p['types']: ncreat += 1
         if p['gc']: ngc += 1
+        pwr = p['power'].get(p['minr'], 0)
+        npow[0] += pwr >= 50; npow[1] += pwr >= 70
         if p.get('cat') == 'watch': nwatch += 1
         if tier == 1 and tokcard(p): ntok[0] += 1
         if 'Creature' in p['types'].split():
@@ -355,10 +360,10 @@ def build(d):
                 b = best(filt)
                 if not b: break
                 add(b[1], b[2])
-        if arch == 'tokens': quota(t1.TOKEN_QUOTA, tokcard, tokcard)
+        if arch == 'tokens': quota(tr.TOKEN_QUOTA, tokcard, tokcard)
         if arch == 'tribal' and tribe:
             istribe = lambda p: 'Creature' in p['types'].split() and tribe in p['types'].split()
-            quota(t1.TRIBE_QUOTA[1] if atry >= 2 else t1.TRIBE_QUOTA[0], istribe, istribe)
+            quota(tr.TRIBE_QUOTA[1] if atry >= 2 else tr.TRIBE_QUOTA[0], istribe, istribe)
         if sub == 'low-control':
             quota(1 + (atry >= 1), lambda p: ar.lock_card(card_text(p), p['types'].split()), lambda p: ar.lock_card(card_text(p), p['types'].split()))
         if sub == 'low-aggro':
@@ -388,7 +393,7 @@ def build(d):
     avg = sum(p['cmc'] for p, _ in chosen) / max(1, len(chosen))
     ref = sum(k * v for k, v in SPEC[tier]['curve'].items()) / sum(SPEC[tier]['curve'].values())
     mana = sum(1 for p, _ in chosen if p['tags'] & {'ramp', 'fast'})
-    lo_land, hi_land = ar.LAND_RANGE[tier]  # tier 1: tier1_rules.LANDS (41-42)
+    lo_land, hi_land = ar.LAND_RANGE[tier]  # tier 1: tier_rules.LANDS (41-42)
     total = min(max(round(spec['lands'] + 4 * (avg - ref) - mana / 2), lo_land), hi_land)
     bumps = 0
     while len(chosen) < 99 - total:
@@ -538,7 +543,7 @@ if __name__ == '__main__':
         if DRY:
             info = d['_info']
             cr_n, isor, ench, nland = summary(d, cmd, chosen, lands, basics)
-            lo, hi = (FLOOR[1], t1.POWER['ceiling']) if d['tier'] == 1 else (dt.TIER_TABLE[str(d['tier'])]['band'][0], dt.TIER_TABLE[str(d['tier'])]['band'][1] or 99)
+            lo, hi = (FLOOR[1], tr.POWER['ceiling']) if d['tier'] == 1 else (dt.TIER_TABLE[str(d['tier'])]['band'][0], dt.TIER_TABLE[str(d['tier'])]['band'][1] or 99)
             band = 'in' if lo <= r['power'] <= hi else 'OUT'
             why = []
             if d.get('archetype'):

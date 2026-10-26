@@ -121,6 +121,7 @@ REF_EXTRA = {
  "removal": ("AI tag: umbrella for removal when no method tag applies", "AI Tags category"),
  "fixing": ("AI tag: fixes mana colours", "AI Tags category"),
  "evasion_grant": ("AI tag: grants an evasion keyword", "AI Tags category"),
+ "extra_turn": ("the card takes an extra turn (script AddTurn); capped per tier in tier_rules (none below T4, 1 at T4, 2 at T5)", "user 2026-10-26: own tag, replaces the name list in deck_tier"),
  "haste_grant": ("AI tag: grants haste", "AI Tags category"),
 }
 

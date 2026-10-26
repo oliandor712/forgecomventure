@@ -50,6 +50,7 @@ RULES = [
     ("counters_plus", r"PutCounter.*P1P1|MultiplyCounter"),
     ("attack_tax", r"CantAttackUnless"),
     ("restrict", r"Mode\$ (CantAttack|CantBlock|CantBeCast|CantPlayLand|CantDraw|CantGainLife|CantBeActivated|CantTarget)"),
+    ("extra_turn", r"AddTurn"),
     ("haste_grant", r"AddKeyword\$ Haste|KW\$ Haste"),
     ("grant_double_strike", r"Double Strike|DoubleStrike"),
     ("equip", r"^K Equip|Attach\b"),

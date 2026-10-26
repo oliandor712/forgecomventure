@@ -14,28 +14,28 @@ Subarchetype (a second label, never a simulation cell):
 A `low-*` deck shifts its primary type (creatures) down 2-4 and a secondary type up 2-4 (SHIFT).
 Usage: python3 archetype_rules.py DECK.dck [...]   prints the classification as TOON-like rows."""
 import os, re, sys, collections
-import tier1_rules as t1  # tier 1 requirements (one source of truth)
+import tier_rules as tr  # tier 1 requirements (one source of truth)
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../.."))
 CARDS = os.path.join(ROOT, "forge-gui/res/cardsfolder")
-TOKENS_MIN = t1.TOKENS_MIN
+TOKENS_MIN = tr.TOKENS_MIN
 TRIBE_MIN = 12
 LOW_ARTIFACT_MIN = 9
 LOW_ENCHANT_MIN = 4
-SCALE_NEED = t1.SCALE_NEED  # enchantments (or other X) a "number of X you control" control card needs before it counts as control
+SCALE_NEED = tr.SCALE_NEED  # enchantments (or other X) a "number of X you control" control card needs before it counts as control
 REMOVAL_CLASSES = ("creature", "artifact", "enchantment", "land", "token")  # user's priority list, highest first
 SKIP_TYPES = {"Creature", "Artifact", "Enchantment", "Legendary", "Snow", "Tribal", "Kindred", "Instant", "Sorcery", "Land"}
 
 # Minimum instants+sorceries and enchantments by tier and archetype (artifacts: unchanged, tried first as cheap alternates)
-INSTANT_SORCERY = {1: t1.INSTANT_SORCERY, 2: {"control": 13, "tokens": 11, "aggro": 9, "tribal": 7},
+INSTANT_SORCERY = {1: tr.INSTANT_SORCERY, 2: {"control": 13, "tokens": 11, "aggro": 9, "tribal": 7},
                    3: {"control": 14, "tokens": 12, "aggro": 10, "tribal": 8}, 4: {"control": 14, "tokens": 12, "aggro": 10, "tribal": 8},
                    5: {"control": 14, "tokens": 12, "aggro": 10, "tribal": 8}}
-ENCHANTMENT = {1: t1.ENCHANTMENT, 2: {"tokens": 6, "control": 5, "tribal": 4, "aggro": 3},
+ENCHANTMENT = {1: tr.ENCHANTMENT, 2: {"tokens": 6, "control": 5, "tribal": 4, "aggro": 3},
                3: {"tokens": 5, "control": 4, "tribal": 3, "aggro": 2}, 4: {"tokens": 5, "control": 4, "tribal": 3, "aggro": 2},
                5: {"tokens": 5, "control": 4, "tribal": 3, "aggro": 2}}
 # low-* shift: (primary down, secondary up) in 2..4; reach 2 uses 2, reach 3 uses 3, reach 4+ uses 4
 SECONDARY = {"low-control": "instant_sorcery", "low-aggro": "artifact", "low-tribal": "enchantment", "low-tokens": "enchantment"}
-LAND_RANGE = {1: t1.LANDS, 2: (36, 39), 3: (33, 38), 4: (33, 37), 5: (31, 37)}  # deck_tier.py land range per tier
+LAND_RANGE = {1: tr.LANDS, 2: (36, 39), 3: (33, 38), 4: (33, 37), 5: (31, 37)}  # deck_tier.py land range per tier
 
 
 def shift_for(reach):
@@ -43,8 +43,8 @@ def shift_for(reach):
 
 
 def creature_check(tier, archetype, sub=None, reach=2):
-    """Creature pass/fail band: at least 15, no hard maximum (99; the 35 soft cap is a build limit in tier1_rules), same for every tier, archetype and sub (H11, user 2026-10-25)."""
-    return t1.CREATURE_BAND  # for every tier, archetype and sub (user, 2026-10-25)
+    """Creature pass/fail band: at least 15, no hard maximum (99; the 35 soft cap is a build limit in tier_rules), same for every tier, archetype and sub (H11, user 2026-10-25)."""
+    return tr.CREATURE_BAND  # for every tier, archetype and sub (user, 2026-10-25)
 
 def windows(tier, archetype, sub=None, reach=2):
     """(creature min, creature max, instant+sorcery min, enchantment min, artifact bonus) for a deck target. Creatures are the one band for all (creature_check)."""

@@ -82,7 +82,7 @@ APPROVED = ['activation_restriction', 'affects', 'cast_free', 'color', 'cost', '
 
 PROPOSED_OFFLINE = []
 APPROVED_LATER = ['cost_mana', 'return', 'unless_cost_amount', 'investigate', 'monarch', 'bolster', 'named', 'additional_cost']   # approved by the user in chat on 2026-10-23 (additional_cost: pre-approved the same day, HANDOVER)
-APPROVED_DECISION = {'colorless_card': 'approved 2026-10-26 (user decision H78: colorless is the sixth colour)'}   # families approved by a recorded user decision
+APPROVED_DECISION = {'extra_turn': 'approved 2026-10-26 (user: own tag, per-tier cap)', 'colorless_card': 'approved 2026-10-26 (user decision H78: colorless is the sixth colour)'}   # families approved by a recorded user decision
 # Families the script pass emits (never 'new' in a cross-check run), so the table above never listed them. APPROVED_LISTED = on the APPROVED list since the 2026-10-25 commit, no chat approval found; PROPOSED_RECORDS = in use, never put to the user.
 APPROVED_LISTED = ['unless_cost', 'phase_out', 'cant_regenerate', 'prevent_damage', 'mana_conditional', 'alt_additional_cost']
 PROPOSED_RECORDS = []

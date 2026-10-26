@@ -1,7 +1,7 @@
 # Toolbox: the shared reference for every agent
 
-Generated 2026-10-24 23:58Z at commit a2881cca88e on branch campaign-design. **Tools stamp: `b5ef90a08ee5`.** Data stamp: `e914fcb2a33e`.
-<!-- tool hashes: tools/agents/toolbox.py:7800dd6e tools/agents/docpush.py:bd68dc60 tools/agents/sync_check.py:699504d1 tools/agents/clone_verify.py:9bdcfc88 tools/concordia/deckgen/tag_reports.py:73ec5743 tools/concordia/deckgen/tag_run.py:daeb5804 tools/concordia/deckgen/tagcheck/reverse_check.py:8c9681fa tools/concordia/deckgen/tag_twins.py:8f51549f tools/concordia/deckgen/tagcheck/run_log.py:ba256238 tools/concordia/deckgen/tagcheck/consistency.py:fc8b0804 tools/concordia/deckgen/tagcheck/analysis.py:d0276075 tools/concordia/deckgen/tagcheck/reference_files.py:c6bded6e tools/agents/human_logic.toon:a175d8d8 tools/concordia/suite/sim_suite.py:4391b919 tools/concordia/suite/README.md:68719bd3 tools/concordia/balance_lab/push_records.sh:e88a8057 tools/concordia/balance_lab/run_batch.py:d552531a tools/concordia/balance_lab/run_foreground.sh:77fc02e6 tools/concordia/balance_lab/run_logs.py:f7a2eb5e tools/concordia/balance_lab/make_report.py:474929e0 tools/concordia/balance_lab/build_queue.py:23ea8c65 tools/concordia/balance_lab/BonusSim.java:0787eec1 tools/concordia/sim/setup.sh:37d04850 tools/concordia/sim/run.sh:925da916 tools/concordia/ai_lab/phase_digest.py:afd39fc8 tools/concordia/archetype_rules.py:d32de237 tools/concordia/tier1_rules.py:47659a5e tools/concordia/deckgen/ability_tags.py:b44a8a7a tools/concordia/deckgen/commander_support.py:960edbb0 tools/concordia/deckgen/t1_plan.py:b5bffd8d tools/concordia/deckgen/HANDOFF_DECKBUILDER.md:beba89ab tools/concordia/deckgen/build.py:38c4cd6d tools/concordia/deckgen/pool.py:c30510d7 tools/concordia/deckgen/variants.py:41cce506 tools/concordia/deckgen/starter_tune.py:be7bfb62 tools/concordia/deckgen/gen_mono.py:914743c8 tools/concordia/deckgen/hall_roster.py:ccc1a701 tools/concordia/deck_tier.py:69e511a6 tools/concordia/maps/check_doors.py:df3fb9e5 -->
+Generated 2026-10-26 14:52Z at commit 6ac9c72e393 on branch campaign-design. **Tools stamp: `aac9864a77fe`.** Data stamp: `e914fcb2a33e`.
+<!-- tool hashes: tools/agents/toolbox.py:5396a7c5 tools/agents/docpush.py:bd68dc60 tools/agents/sync_check.py:699504d1 tools/agents/clone_verify.py:9bdcfc88 tools/concordia/deckgen/tag_reports.py:206f44c0 tools/concordia/deckgen/tag_run.py:7472e901 tools/concordia/deckgen/tagcheck/reverse_check.py:b1cc3cb3 tools/concordia/deckgen/tag_twins.py:58a1bc40 tools/concordia/deckgen/tagcheck/run_log.py:ba256238 tools/concordia/deckgen/tagcheck/consistency.py:fc8b0804 tools/concordia/deckgen/tagcheck/analysis.py:d0276075 tools/concordia/deckgen/tagcheck/reference_files.py:c6bded6e tools/agents/human_logic.toon:7e6792cc tools/concordia/suite/sim_suite.py:4391b919 tools/concordia/suite/README.md:68719bd3 tools/concordia/balance_lab/push_records.sh:e88a8057 tools/concordia/balance_lab/run_batch.py:d552531a tools/concordia/balance_lab/run_foreground.sh:77fc02e6 tools/concordia/balance_lab/run_logs.py:f7a2eb5e tools/concordia/balance_lab/make_report.py:474929e0 tools/concordia/balance_lab/build_queue.py:23ea8c65 tools/concordia/balance_lab/BonusSim.java:0787eec1 tools/concordia/sim/setup.sh:37d04850 tools/concordia/sim/run.sh:925da916 tools/concordia/ai_lab/phase_digest.py:afd39fc8 tools/concordia/archetype_rules.py:d0d9e8d7 tools/concordia/tier_rules.py:8a9e4c10 tools/concordia/deckgen/ability_tags.py:45505f6d tools/concordia/deckgen/commander_support.py:a16c20de tools/concordia/deckgen/t1_plan.py:536c79db tools/concordia/deckgen/HANDOFF_DECKBUILDER.md:dce8f7de tools/concordia/deckgen/build.py:7be425f5 tools/concordia/deckgen/pool.py:1065d128 tools/concordia/deckgen/variants.py:701b1916 tools/concordia/deckgen/starter_tune.py:b9fa0c73 tools/concordia/deckgen/gen_mono.py:f330a3ee tools/concordia/deckgen/hall_roster.py:9a2ab720 tools/concordia/deck_tier.py:d4c7c03a tools/concordia/maps/check_doors.py:df3fb9e5 -->
 
 ## Start of every turn (all agents)
 1. At the start of a session: `git fetch origin campaign-design && git merge origin/campaign-design` (if the clone is shallow: `git fetch --unshallow origin campaign-design`).
@@ -13,21 +13,21 @@ Generated 2026-10-24 23:58Z at commit a2881cca88e on branch campaign-design. **T
 
 | tool | used by | what it does | last change |
 |---|---|---|---|
-| `tools/agents/CONTEXT.md` | all | shared rules, authority, commit ownership, agent table, recent updates: read first, every turn | 388fcadcedc 10-23 15:51Z |
+| `tools/agents/CONTEXT.md` | all | shared rules, authority, commit ownership, agent table, recent updates: read first, every turn | 138e55d2660 10-25 21:06Z |
 | `tools/agents/AGENT_KNOWLEDGE.md` | all | compiled pitfalls, conventions, unfinished work and next steps from the earlier agents | 248c73877b7 10-21 14:39Z |
-| `tools/agents/toolbox.py` | all | builds TOOLBOX.md and the tools stamp; --check says whether the checkout is current | 612d21ce2f3 10-23 22:35Z |
+| `tools/agents/toolbox.py` | all | builds TOOLBOX.md and the tools stamp; --check says whether the checkout is current | 107a413c12b 10-25 10:02Z |
 | `tools/agents/docpush.py` | main | pushes document-level files only (reports, checklists, plain .md); refuses code, data and instruction files | 90709858dc1 10-23 19:31Z |
 | `tools/agents/sync_check.py` | main | session handover: verify / manifest (MANIFEST.toon) | f5536a45e71 10-23 17:28Z |
 | `tools/agents/clone_verify.py` | main | checks a fresh checkout is ready (tools, human_logic, tag_run) | 612d21ce2f3 10-23 22:35Z |
-| `tools/concordia/deckgen/tag_reports.py` | starter_main | starter tagging run (called by tag_run.py starter): sample/reference/approval reports, qa, redundancy check, guards, gap file | - |
-| `tools/concordia/deckgen/tag_run.py` | main | tagging run: starter / card; writes tags/STARTER_TAGS*.{toon,md}, NEW_TAGS_FOR_APPROVAL.md; reads the card scripts only | eb919c19dfd 10-24 19:00Z |
-| `tools/concordia/deckgen/tagcheck/reverse_check.py` | main | blind reverse tag check: export / compare / selftest | ea98d94a159 10-24 19:21Z |
-| `tools/concordia/deckgen/tag_twins.py` | main | ability-line twin index (tags/ABILITY_TWINS.json): build / card / text / stats; tag_run.py rebuilds it and prints twins in `card` | eb919c19dfd 10-24 19:00Z |
+| `tools/concordia/deckgen/tag_reports.py` | starter_main | starter tagging run (called by tag_run.py starter): sample/reference/approval reports, qa, redundancy check, guards, gap file | 6ac9c72e393 10-26 10:38Z |
+| `tools/concordia/deckgen/tag_run.py` | main | tagging run: starter / card; writes tags/STARTER_TAGS*.{toon,md}, NEW_TAGS_FOR_APPROVAL.md; reads the card scripts only | 6ac9c72e393 10-26 10:38Z |
+| `tools/concordia/deckgen/tagcheck/reverse_check.py` | main | blind reverse tag check: export / compare / selftest | 6bf87f76738 10-25 23:02Z |
+| `tools/concordia/deckgen/tag_twins.py` | main | ability-line twin index (tags/ABILITY_TWINS.json): build / card / text / stats; tag_run.py rebuilds it and prints twins in `card` | 13b45d1503f 10-25 20:08Z |
 | `tools/concordia/deckgen/tagcheck/run_log.py` | main | reader-run manifests, append-only RUN_LOG.jsonl, bundles: record / compare / bundle / backfill / show; reverse_check and consistency call it | ea98d94a159 10-24 19:21Z |
 | `tools/concordia/deckgen/tagcheck/consistency.py` | main | reader consistency scores (V1-V4, S1, A) and the tags sha1 stamp | ea98d94a159 10-24 19:21Z |
-| `tools/concordia/deckgen/tagcheck/analysis.py` | placeholders_main, style_main | one-off analyses: placeholders (reader placeholder triage) / style (Oracle style statistics, hold-out sample) | - |
-| `tools/concordia/deckgen/tagcheck/reference_files.py` | main | keyword reminder fill, token reference and blind-reader reference folder: fill / tokens / readers | - |
-| `tools/agents/human_logic.toon` | all | the user's own deck-building, balance and AI rules; a rule beats a metric | 12ee04e5081 10-24 13:16Z |
+| `tools/concordia/deckgen/tagcheck/analysis.py` | placeholders_main, style_main | one-off analyses: placeholders (reader placeholder triage) / style (Oracle style statistics, hold-out sample) | 107a413c12b 10-25 10:02Z |
+| `tools/concordia/deckgen/tagcheck/reference_files.py` | main | keyword reminder fill, token reference and blind-reader reference folder: fill / tokens / readers | 107a413c12b 10-25 10:02Z |
+| `tools/agents/human_logic.toon` | all | the user's own deck-building, balance and AI rules; a rule beats a metric | bb777d9638c 10-26 10:31Z |
 | `tools/concordia/suite/sim_suite.py` | sim workers, main | THE simulation program: setup / run / plan / status / report; archetype cells, adaptive stop, phase logs, digests, push | ac5e8e81a35 10-23 15:58Z |
 | `tools/concordia/suite/README.md` | sim workers | how to use the suite, its stop rules and the limit-the-total levers | 02130fc55ee 10-21 13:00Z |
 | `tools/concordia/balance_lab/push_records.sh` | all | safe push of named paths (detached HEAD, races, no force); needs PUSH_APPROVED=1, set only after the user says push | 388fcadcedc 10-23 15:51Z |
@@ -44,19 +44,19 @@ Generated 2026-10-24 23:58Z at commit a2881cca88e on branch campaign-design. **T
 | `tools/concordia/ai_lab/OPTIONS_FOR_BALANCERS.md` | ai lab, balance lab | measured options to empower AI decks | cb4d53dfc3a 10-21 12:12Z |
 | `tools/concordia/ai_lab/DECISION_LOGIC.md` | ai lab | how the Forge AI decides (blocks, attacks, removal, spells, mana) | b0e51b35a57 10-21 19:14Z |
 | `tools/concordia/ai_lab/RESULTS_UNCHANGED_PLAN.md` | ai lab, main | the 40-game check that patches 010/011 do not change results | e84698929da 10-21 12:50Z |
-| `tools/concordia/archetype_rules.py` | deck builder, main | tier 1 archetype/sub/reach classification, creature minimum (15) and type quotas; --report 1 [--dir] lists decks outside their window | ac5e8e81a35 10-23 15:58Z |
-| `tools/concordia/tier1_rules.py` | deck builder, balance lab, main | the tier 1 requirements (deck check, creature minimum, quotas, lands, power targets): the one source of truth | 4005990ff40 10-21 18:58Z |
-| `tools/concordia/deckgen/ability_tags.py` | deck builder | ability-led tags (per signature), bonus(), potential_pt (never read 0/0 as-is), land-type and scales:/lord: tags; writes ABILITY_TAGS.toon | 22eb639c733 10-22 20:43Z |
-| `tools/concordia/deckgen/commander_support.py` | deck builder | commander ability reader: cards that support a commander (H17, 5 needed), partner pairs; writes COMMANDER_SUPPORT.toon | 87bd26d5384 10-21 18:44Z |
-| `tools/concordia/deckgen/t1_plan.py` | deck builder | 100-commander tier 1 pool, 80 chosen with declared archetype/sub; writes t1_fresh.json | f829b760af1 10-21 18:56Z |
-| `tools/concordia/deckgen/HANDOFF_DECKBUILDER.md` | deck builder | tier 1 rework handoff: state, decisions, tools, learnings, open items | 8242a18bace 10-21 18:46Z |
-| `tools/concordia/deckgen/build.py` | deck builder | builds the tier decks from decks.json (role quotas, curve, caps); run after mine.py and pool.py | ac5e8e81a35 10-23 15:58Z |
-| `tools/concordia/deckgen/pool.py` | deck builder | card pool from the card scripts (skips AI:RemoveDeck:All, so unflagged cards enter it) | eb919c19dfd 10-24 19:00Z |
-| `tools/concordia/deckgen/variants.py` | deck builder | alternate-commander variants and starter alternates (--starters) | 9e6451c159b 10-21 01:47Z |
-| `tools/concordia/deckgen/starter_tune.py` | deck builder | tunes the player starters toward deck power 27 | ac5e8e81a35 10-23 15:58Z |
-| `tools/concordia/deckgen/gen_mono.py` | deck builder | mono-colour deck generation | f829b760af1 10-21 18:56Z |
-| `tools/concordia/deckgen/hall_roster.py` | deck builder | Commander Hall roster and starter commanders | 6dddd69a942 10-20 23:39Z |
-| `tools/concordia/deck_tier.py` | deck builder, balance lab | deck power and tier bands | 4005990ff40 10-21 18:58Z |
+| `tools/concordia/archetype_rules.py` | deck builder, main | tier 1 archetype/sub/reach classification, creature minimum (15) and type quotas; --report 1 [--dir] lists decks outside their window | 107a413c12b 10-25 10:02Z |
+| `tools/concordia/tier_rules.py` | deck builder, balance lab, main | the tier 1 requirements (deck check, creature minimum, quotas, lands, power targets): the one source of truth | - |
+| `tools/concordia/deckgen/ability_tags.py` | deck builder | ability-led tags (per signature), bonus(), potential_pt (never read 0/0 as-is), land-type and scales:/lord: tags; writes ABILITY_TAGS.toon | 107a413c12b 10-25 10:02Z |
+| `tools/concordia/deckgen/commander_support.py` | deck builder | commander ability reader: cards that support a commander (H17, 5 needed), partner pairs; writes COMMANDER_SUPPORT.toon | bb777d9638c 10-26 10:31Z |
+| `tools/concordia/deckgen/t1_plan.py` | deck builder | 100-commander tier 1 pool, 80 chosen with declared archetype/sub; writes t1_fresh.json | 107a413c12b 10-25 10:02Z |
+| `tools/concordia/deckgen/HANDOFF_DECKBUILDER.md` | deck builder | tier 1 rework handoff: state, decisions, tools, learnings, open items | 107a413c12b 10-25 10:02Z |
+| `tools/concordia/deckgen/build.py` | deck builder | builds the tier decks from decks.json (role quotas, curve, caps); run after mine.py and pool.py | bb777d9638c 10-26 10:31Z |
+| `tools/concordia/deckgen/pool.py` | deck builder | card pool from the card scripts (skips AI:RemoveDeck:All, so unflagged cards enter it) | 5548bf3b616 10-25 17:42Z |
+| `tools/concordia/deckgen/variants.py` | deck builder | alternate-commander variants and starter alternates (--starters) | 13b45d1503f 10-25 20:08Z |
+| `tools/concordia/deckgen/starter_tune.py` | deck builder | tunes the player starters toward deck power 27 | 13b45d1503f 10-25 20:08Z |
+| `tools/concordia/deckgen/gen_mono.py` | deck builder | mono-colour deck generation | 13b45d1503f 10-25 20:08Z |
+| `tools/concordia/deckgen/hall_roster.py` | deck builder | Commander Hall roster and starter commanders | 610d758086c 10-25 21:33Z |
+| `tools/concordia/deck_tier.py` | deck builder, balance lab | deck power and tier bands | 5548bf3b616 10-25 17:42Z |
 | `tools/concordia/maps/check_doors.py` | main | door and map checks | ac5e8e81a35 10-23 15:58Z |
 | `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md` | ai lab, main | AI change checkboxes; only the user ticks | a4c5417bcc6 10-22 15:30Z |
 | `docs/Adventure/Campaign/RESEARCH_MASTER_REPORT.md` | all | the compiled research so far | 8673617e7b1 10-21 12:32Z |

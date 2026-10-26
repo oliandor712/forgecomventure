@@ -15,7 +15,8 @@ forge-gui/res/draft/rankings_cubecobra.txt. The first run builds a cache next to
 Card classification is heuristic (see classify()); treat counts as close, not exact.
 """
 import collections, glob, json, math, os, pickle, re, statistics, sys
-import tier1_rules as t1  # tier 1 requirements (one source of truth)
+from tier_rules import TIERS, TIER_TABLE  # per-tier rules (one source of truth)
+import tier_rules as tr
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 RES = os.path.join(REPO, "forge-gui", "res")
@@ -32,46 +33,6 @@ FAST_MANA = {"sol ring", "mana crypt", "mana vault", "grim monolith", "basalt mo
              "city of traitors", "lotus field", "crystal vein", "springleaf drum"}
 RARITY_WEIGHT = {"C": 0.1, "U": 0.35, "R": 0.7, "M": 1.0, "S": 0.7, "L": 0.0}
 ABIL_RE = re.compile(r"^(?:A:|SVar:[^:]+:)\s*(AB|SP|DB)\$\s*([A-Za-z]+)(.*)$")
-
-TIER_TABLE = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "tier_table.json"), encoding="utf-8"))["tiers"]
-
-
-def _band(tier):
-    return tuple(TIER_TABLE[str(tier)]["band"])   # power window: tier_table.json is the one place
-
-
-# Tier rules. Ranges are inclusive [min, max]; None means no bound. "hard" rules FAIL, the rest WARN.
-TIERS = {
-    1: t1.DECK,  # tier 1 is defined in tier1_rules.py (one source of truth)
-    2: {"name": "Tier 2 - Moderate", "life": (15, 20), "watch": 1, "staples": (12, 41), "commander_rarity": {"C", "U", "R"}, "commander_mv": (3, 5),
-        "lands": (36, 39), "ramp": (2, 8), "fast": (0, 1), "draw": (2, 10), "removal": (4, 14), "wipe": (0, 2),
-        "tutor": (0, 1), "avg_mv": (2.6, 3.6), "creatures": (15, None), "power": _band(2),
-        "max_rare": 10, "max_mythic": 1, "game_changers": 0, "mld": 0, "extra_turns": 0, "combos": "none",
-        "bracket": 2, "curve": {1: (2, 7), 2: (8, 18), 3: (10, 21), 4: (7, 15), 5: (4, 11), 6: (3, 12)},
-        "types": {"Instant": 4, "Sorcery": 3, "Artifact": 4, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
-    3: {"name": "Tier 3 - Challenging", "life": (25, 35), "watch": 2, "staples": (22, 39), "commander_rarity": {"U", "R", "M"}, "commander_mv": (3, 7),
-        "lands": (33, 38), "ramp": (8, 16), "fast": (0, 3), "draw": (6, 14), "removal": (7, 16), "wipe": (1, 4),
-        "tutor": (0, 3), "avg_mv": (2.8, 3.9), "creatures": (15, None), "power": _band(3),
-        "max_rare": 60, "max_mythic": 15, "game_changers": 3, "mld": 0, "extra_turns": 1, "combos": "late",
-        "bracket": 3, "curve": {1: (3, 12), 2: (9, 22), 3: (10, 21), 4: (5, 15), 5: (3, 11), 6: (2, 10)},
-        "types": {"Instant": 4, "Sorcery": 3, "Artifact": 4, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
-    # Bracket 4 (optimized), kept to what the Forge AI can pilot: no mass land denial, no early two-card combos.
-    4: {"name": "Tier 4 - Hard", "life": (30, 40), "watch": 4, "staples": (22, 46), "commander_rarity": {"U", "R", "M"}, "commander_mv": (2, 7),
-        "lands": (33, 37), "ramp": (9, 18), "fast": (0, 4), "draw": (8, 16), "removal": (8, 18), "wipe": (1, 5),
-        "tutor": (0, 4), "avg_mv": (2.7, 3.8), "creatures": (15, None), "power": _band(4),
-        "max_rare": 70, "max_mythic": 20, "game_changers": 5, "mld": 0, "extra_turns": 1, "combos": "late",
-        "bracket": 4, "curve": {1: (4, 13), 2: (10, 22), 3: (10, 21), 4: (5, 15), 5: (3, 11), 6: (2, 10)},
-        "types": {"Instant": 5, "Sorcery": 3, "Artifact": 5, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
-    # The AI's ceiling: bracket 4 at full card quality (fast mana, tutors, Game Changers), still no mass land denial
-    # and no early two-card combos, which the AI can't assemble and players don't enjoy facing.
-    5: {"name": "Tier 5 - Elite", "life": (35, 45), "watch": 8, "staples": (28, 48), "commander_rarity": {"U", "R", "M"}, "commander_mv": (2, 7),
-        "lands": (31, 37), "ramp": (10, 20), "fast": (0, 6), "draw": (9, 18), "removal": (9, 20), "wipe": (1, 5),
-        "tutor": (0, 6), "avg_mv": (2.5, 3.8), "creatures": (15, None), "power": _band(5),
-        "max_rare": 80, "max_mythic": 30, "game_changers": 10, "mld": 0, "extra_turns": 2, "combos": "late",
-        "bracket": 5, "curve": {1: (5, 15), 2: (10, 23), 3: (9, 21), 4: (4, 15), 5: (2, 11), 6: (2, 10)},
-        "types": {"Instant": 5, "Sorcery": 3, "Artifact": 5, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
-}
-
 
 def _read(path):
     return open(path, encoding="utf-8", errors="replace").read()
@@ -180,6 +141,8 @@ def classify(c):
     perm = any(t in types for t in ("Artifact", "Creature", "Enchantment", "Planeswalker", "Battle"))
     for kind, eff, rest in c["abil"]:
         tgt = "ValidTgts$" in rest
+        if eff == "AddTurn":
+            tags.add("extra_turn")
         if eff == "Mana" and kind == "AB" and perm:
             tags.add("ramp")
             m = re.search(r"Amount\$\s*(\d+)", rest)
@@ -438,6 +401,7 @@ def rate(path, data, config):
     pips = collections.Counter()
     sources = collections.Counter()
     cheap_ramp_draw = 0
+    extra_turn_names = set()
     restricted = {x.lower() for x in config.get("restrictedCards", [])}
     banned_sets = set(config.get("restrictedEditions", []))
     for section in ("commander", "main"):
@@ -454,6 +418,8 @@ def rate(path, data, config):
             if section == "commander":
                 continue
             tags = classify(c)
+            if "extra_turn" in tags:
+                extra_turn_names.add(c["name"].lower())
             r = rarity_of(data, c["name"], ed)
             for t in tags:
                 counts[t] += n
@@ -484,7 +450,7 @@ def rate(path, data, config):
     staples = sorted(x for x in deck_names if category(x) == "staple")
     watch = sorted(x for x in deck_names if category(x) == "watch")
     mld = sorted(x for x in deck_names if x in data["lists"]["mld"])
-    extra = sorted(x for x in deck_names if x in data["lists"]["extra"])
+    extra = sorted(x for x in deck_names if x in data["lists"]["extra"] or x in extra_turn_names)
     chained = sorted(x for x in deck_names if x in data["lists"]["chained"])
     combos = {"early_game": [], "late_game": []}
     for kind, pieces in data["combos"]:
@@ -510,6 +476,7 @@ def rate(path, data, config):
         "curve": [curve[i] for i in range(8)], "rarity": {k: rarity[k] for k in "CURMS?" if rarity[k]},
         "power": round(statistics.mean(powers), 1) if powers else 0.0,
         "top_power": sorted(powers, reverse=True)[:10],
+        "premium50": sum(1 for p in powers if p >= 50), "premium70": sum(1 for p in powers if p >= 70),
         "game_changers": gc, "staples": staples, "watch": watch, "mass_land_denial": mld, "extra_turns": extra, "chained_extra_turns": chained,
         "combos": combos, "problems": problems,
         "types": dict(ptypes), "pips": {k: v for k, v in pips.items() if v}, "sources": dict(sources),
@@ -568,8 +535,12 @@ def check_tier(r, tier, life=None):
             if src < 14 or src / max(1, r["lands"]) < 0.8 * n / pips_total:
                 low.append("%s %d sources for %d%% of pips" % (col, src, round(100 * n / pips_total)))
         out.append(("PASS" if not low else "WARN", "colour sources %s%s" % (r["sources"], "" if not low else " - low: " + "; ".join(low))))
-    out.append(("PASS" if r["rarity"].get("R", 0) <= spec["max_rare"] else "WARN", "rares %d (max %d)" % (r["rarity"].get("R", 0), spec["max_rare"])))
-    out.append(("PASS" if r["rarity"].get("M", 0) <= spec["max_mythic"] else "FAIL", "mythics %d (max %d)" % (r["rarity"].get("M", 0), spec["max_mythic"])))
+    if "max_rare" in spec:   # only tier 1 has a rarity cap; tiers 2-5 have none
+        out.append(("PASS" if r["rarity"].get("R", 0) <= spec["max_rare"] else "WARN", "rares %d (max %d)" % (r["rarity"].get("R", 0), spec["max_rare"])))
+        out.append(("PASS" if r["rarity"].get("M", 0) <= spec["max_mythic"] else "FAIL", "mythics %d (max %d)" % (r["rarity"].get("M", 0), spec["max_mythic"])))
+    for key, floor in (("premium50", 50), ("premium70", 70)):
+        if key in spec:
+            rng("power-%d+ cards" % floor, r[key], spec[key])
     out.append(("PASS" if len(r["watch"]) <= spec["watch"] else "WARN", "watch-list cards %d (max %d) %s" % (len(r["watch"]), spec["watch"], r["watch"] or "")))
     rng("staples", len(r["staples"]), spec["staples"])
     out.append(("PASS" if len(r["game_changers"]) <= spec["game_changers"] else "FAIL", "Game Changers %d (max %d) %s" % (len(r["game_changers"]), spec["game_changers"], r["game_changers"] or "")))
