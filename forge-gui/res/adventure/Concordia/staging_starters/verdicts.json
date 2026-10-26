@@ -1,72 +1,52 @@
 {
 "instant ramen": {
-"tkey": "9a55ee1a8ad9",
-"okey": "aca42bad8998",
+"tkey": "da86518f68dc",
+"okey": "058cd8af8c99",
 "date": "2026-10-26",
 "ora": {
-"id": "c048",
-"function": "Flash artifact that draws a card and can be sacrificed for 3 life.",
+"id": "c005",
+"function": "Flash artifact: draw a card, sacrifice to gain 3",
 "roles": [
 "cantrip",
-"fodder",
 "draw"
 ],
 "archetypes": [
 "artifacts",
-"sacrifice",
-"lifegain"
+"lifegain",
+"card_draw"
 ],
-"power": 2,
+"power": 1,
 "confidence": 4,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c048",
-"function": "Flash Food artifact that draws a card; pay 2, tap, sacrifice to gain 3 life.",
+"id": "c005",
+"function": "Flash Food artifact that draws a card and sacrifices to gain 3 life.",
 "roles": [
 "cantrip",
-"fodder",
-"artifact"
+"filler"
 ],
 "archetypes": [
-"sacrifice",
 "lifegain",
-"artifacts"
+"artifacts",
+"card_draw"
 ],
 "power": 2,
 "confidence": 4,
 "unclear": []
 },
 "2": {
-"id": "c048",
-"function": "Flash Food that draws a card on entering; sacrifice for 3 life.",
+"id": "c005",
+"function": "Flash Food artifact that draws a card on entering, sacrifices for 3 life.",
 "roles": [
 "cantrip",
-"fodder",
-"artifact"
-],
-"archetypes": [
-"sacrifice",
-"lifegain",
-"artifacts"
-],
-"power": 2,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c048",
-"function": "Flash Food artifact that draws a card on ETB; sacrifice for 3 life.",
-"roles": [
-"cantrip",
-"fodder",
-"artifact"
+"draw"
 ],
 "archetypes": [
 "lifegain",
-"sacrifice",
-"artifacts"
+"card_draw",
+"colorless"
 ],
 "power": 2,
 "confidence": 4,
@@ -75,15 +55,15 @@
 }
 },
 "panther habit": {
-"tkey": "596315b27665",
-"okey": "29ad6dc38637",
+"tkey": "37a787793917",
+"okey": "dff32eee6a45",
 "date": "2026-10-26",
 "ora": {
-"id": "c002",
-"function": "Equipment that turns damage to equipped creature into +1/+1 counters.",
+"id": "c022",
+"function": "Equipment that turns damage into +1/+1 counters",
 "roles": [
 "equipment",
-"protection"
+"defense"
 ],
 "archetypes": [
 "equipment",
@@ -96,44 +76,8 @@
 },
 "tag": {
 "1": {
-"id": "c002",
-"function": "Equipment that turns damage into counters on equipped creature; equip 2.",
-"roles": [
-"equipment",
-"attach"
-],
-"archetypes": [
-"equipment",
-"counters",
-"voltron"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"replace:damagedone_to_putcounter"
-]
-},
-"2": {
-"id": "c002",
-"function": "Equipment that turns damage dealt into +1/+1 counters; equip 2.",
-"roles": [
-"equipment",
-"engine"
-],
-"archetypes": [
-"counters",
-"equipment",
-"voltron"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"replace:damagedone_to_putcounter"
-]
-},
-"3": {
-"id": "c002",
-"function": "Equipment with equip 2 that turns damage dealt into counters.",
+"id": "c022",
+"function": "Equipment with equip 2 that turns damage into counters.",
 "roles": [
 "equipment"
 ],
@@ -145,27 +89,43 @@
 "power": 2,
 "confidence": 2,
 "unclear": [
-"replace:damagedone_to_putcounter"
+"c1"
+]
+},
+"2": {
+"id": "c022",
+"function": "Equipment that turns damage into counters; equip 2.",
+"roles": [
+"equipment"
+],
+"archetypes": [
+"equipment",
+"counters",
+"voltron"
+],
+"power": 2,
+"confidence": 2,
+"unclear": [
+"c1 replace:damagedone_to_putcounter"
 ]
 }
 }
 },
 "fellwar stone": {
-"tkey": "2e73c9723cb5",
-"okey": "1f2ccc06ba55",
+"tkey": "4affaa988cca",
+"okey": "2d52e538f3ca",
 "date": "2026-10-26",
 "ora": {
-"id": "c012",
-"function": "Mana rock producing colors that opponents' lands could produce.",
+"id": "c001",
+"function": "Rock that taps for any colour an opponent land could make",
 "roles": [
-"mana",
 "ramp",
-"fixing"
+"mana"
 ],
 "archetypes": [
 "ramp",
-"big_mana",
-"artifacts"
+"colorless",
+"big_mana"
 ],
 "power": 2,
 "confidence": 4,
@@ -173,8 +133,8 @@
 },
 "tag": {
 "1": {
-"id": "c012",
-"function": "Colorless artifact with a tap ability.",
+"id": "c001",
+"function": "Colorless artifact with a tap ability; details unclear.",
 "roles": [
 "artifact"
 ],
@@ -184,34 +144,16 @@
 "ramp"
 ],
 "power": 2,
-"confidence": 1,
+"confidence": 2,
 "unclear": [
-"cost:tap"
+"c1"
 ]
 },
 "2": {
-"id": "c012",
-"function": "Colorless tap artifact, likely mana rock.",
+"id": "c001",
+"function": "Colorless artifact with a tap ability, likely a mana rock.",
 "roles": [
 "ramp",
-"mana"
-],
-"archetypes": [
-"ramp",
-"colorless",
-"artifacts"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"cost:tap"
-]
-},
-"3": {
-"id": "c012",
-"function": "Colorless artifact that taps for an effect.",
-"roles": [
-"artifact",
 "mana"
 ],
 "archetypes": [
@@ -222,94 +164,95 @@
 "power": 2,
 "confidence": 2,
 "unclear": [
-"cost:tap"
+"c1 cost:tap only"
 ]
 }
 }
 },
 "dreamstone hedron": {
-"tkey": "21e159dcb983",
-"okey": "86a7ec315fd3",
+"tkey": "7996f4aea03b",
+"okey": "ac53bf572de7",
 "date": "2026-10-26",
 "ora": {
-"id": "c050",
-"function": "Rock tapping for three colourless; sacrifice to draw three.",
+"id": "c046",
+"function": "Taps for three colourless; sacrifice to draw three",
 "roles": [
-"mana",
 "ramp",
+"mana",
 "draw"
 ],
 "archetypes": [
-"colorless",
 "big_mana",
+"colorless",
 "ramp"
 ],
 "power": 3,
-"confidence": 5,
+"confidence": 4,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c050",
-"function": "Colorless mana rock that can tap and sacrifice to draw three cards.",
+"id": "c046",
+"function": "Six-mana rock taps for three colorless; sacrifice to draw three.",
 "roles": [
-"mana",
-"draw"
+"ramp",
+"card_adv",
+"mana"
 ],
 "archetypes": [
+"big_mana",
 "colorless",
-"artifacts",
-"ramp"
+"artifacts"
 ],
 "power": 3,
-"confidence": 3,
+"confidence": 4,
 "unclear": []
 },
 "2": {
-"id": "c050",
-"function": "Colorless rock tapping for three colorless; can be tapped and sacrificed to draw three cards.",
+"id": "c046",
+"function": "Six-mana rock tapping for three colorless, sacrificed to draw three.",
 "roles": [
 "ramp",
 "draw",
-"artifact"
+"mana"
 ],
 "archetypes": [
 "colorless",
-"artifacts",
-"ramp"
+"big_mana",
+"card_draw"
 ],
 "power": 3,
-"confidence": 3,
-"unclear": []
-},
-"3": {
-"id": "c050",
-"function": "Colorless mana rock that can be sacrificed with mana to draw three cards.",
-"roles": [
-"mana",
-"draw",
-"artifact"
-],
-"archetypes": [
-"colorless",
-"artifacts",
-"ramp"
-],
-"power": 3,
-"confidence": 3,
+"confidence": 4,
 "unclear": []
 }
 }
 },
 "exalted sunborn": {
-"tkey": "3f294f8a4bb3",
-"okey": "f80b22341b80",
+"tkey": "47fad6d33a2e",
+"okey": "ab3c8bbe8652",
 "date": "2026-10-26",
 "ora": {
-"id": "c005",
-"function": "Flying lifelink creature that doubles tokens you create; can be warped in cheaply.",
+"id": "c021",
+"function": "Flying lifelinker that doubles tokens",
 "roles": [
+"creature",
 "doubler",
+"evasion"
+],
+"archetypes": [
+"tokens",
+"lifegain",
+"aggro"
+],
+"power": 4,
+"confidence": 5,
+"unclear": []
+},
+"tag": {
+"1": {
+"id": "c021",
+"function": "Flying lifelink Angel Wizard that replaces token creation; warp cost.",
+"roles": [
 "creature",
 "multiplier"
 ],
@@ -319,31 +262,14 @@
 "superfriends"
 ],
 "power": 4,
-"confidence": 5,
-"unclear": []
-},
-"tag": {
-"1": {
-"id": "c005",
-"function": "Flying lifelink Angel with warp; replaces created tokens with itself-style replacement.",
-"roles": [
-"creature",
-"evasion"
-],
-"archetypes": [
-"lifegain",
-"tokens",
-"tribal"
-],
-"power": 3,
-"confidence": 2,
+"confidence": 3,
 "unclear": [
-"replace:createtoken_to_replacetoken"
+"c1 replace:createtoken_to_replacetoken"
 ]
 },
 "2": {
-"id": "c005",
-"function": "Flying lifelink Angel with warp; replaces token creation with another token.",
+"id": "c021",
+"function": "Flying lifelink Angel Wizard with warp that alters token creation.",
 "roles": [
 "creature",
 "doubler"
@@ -351,64 +277,43 @@
 "archetypes": [
 "tokens",
 "lifegain",
-"aggro"
-],
-"power": 3,
-"confidence": 2,
-"unclear": [
-"replace:createtoken_to_replacetoken"
-]
-},
-"3": {
-"id": "c005",
-"function": "Flying lifelink Angel with warp; replaces token creation with another token.",
-"roles": [
-"creature",
-"evasion",
-"doubler"
-],
-"archetypes": [
-"lifegain",
-"tokens",
 "tribal"
 ],
-"power": 3,
+"power": 4,
 "confidence": 3,
 "unclear": [
-"replace:createtoken_to_replacetoken"
+"c1 replace:createtoken_to_replacetoken"
 ]
 }
 }
 },
 "god-eternal oketra": {
-"tkey": "29a386cb468e",
-"okey": "a2862dcfa617",
+"tkey": "c63d55672384",
+"okey": "33dbbe6dcd34",
 "date": "2026-10-26",
 "ora": {
-"id": "c006",
-"function": "Double strike creature that makes a 4/4 Zombie whenever you cast a creature spell.",
+"id": "c049",
+"function": "Double strike; creature spells make 4/4 Zombies",
 "roles": [
-"generator",
 "creature",
+"generator",
 "engine"
 ],
 "archetypes": [
 "tokens",
 "aggro",
-"superfriends"
+"legends_matter"
 ],
 "power": 4,
-"confidence": 4,
-"unclear": [
-"OFFPLAN: none, black token is fine in white deck"
-]
+"confidence": 5,
+"unclear": []
 },
 "tag": {
 "1": {
-"id": "c006",
-"function": "Legendary double strike god; makes 4/4 vigilance Zombie Warrior when casting creature spells.",
+"id": "c049",
+"function": "Legendary double strike Zombie God makes 4/4 Zombies on creature spell casts.",
 "roles": [
-"engine",
+"generator",
 "creature",
 "finisher"
 ],
@@ -420,66 +325,46 @@
 "power": 4,
 "confidence": 3,
 "unclear": [
-"trigger:leaves",
-"trigger:dies"
+"OFFPLAN: black token color"
 ]
 },
 "2": {
-"id": "c006",
-"function": "Legendary double strike God; makes 4/4 vigilance Zombie Warrior when you cast a creature.",
+"id": "c049",
+"function": "Legendary double strike God making 4/4 Zombie Warriors when creature spells are cast.",
 "roles": [
 "creature",
 "generator",
-"finisher"
-],
-"archetypes": [
-"tokens",
-"legends_matter",
-"aggro"
-],
-"power": 4,
-"confidence": 3,
-"unclear": [
-"c2 trigger:leaves optional",
-"x trigger:dies"
-]
-},
-"3": {
-"id": "c006",
-"function": "Double strike legendary God; makes 4/4 vigilance Zombie Warriors when you cast creatures.",
-"roles": [
-"creature",
-"engine",
 "finisher"
 ],
 "archetypes": [
 "tokens",
 "aristocrats",
-"legends_matter"
+"reanimator"
 ],
-"power": 4,
+"power": 3,
 "confidence": 3,
 "unclear": [
-"x:trigger:dies"
+"OFFPLAN: black token color",
+"x trigger:dies"
 ]
 }
 }
 },
 "nuka-cola vending machine": {
-"tkey": "bf700e76fcfc",
-"okey": "2e06e5371904",
+"tkey": "944d8e816800",
+"okey": "efa8b91ff9c1",
 "date": "2026-10-26",
 "ora": {
-"id": "c054",
-"function": "Makes Food for 1 and gives Treasure when you sacrifice Food.",
+"id": "c002",
+"function": "Makes Food, and a Treasure whenever you sacrifice a Food",
 "roles": [
 "generator",
 "treasure",
-"outlet"
+"engine"
 ],
 "archetypes": [
 "treasure",
-"sacrifice",
+"artifacts",
 "tokens"
 ],
 "power": 2,
@@ -488,91 +373,71 @@
 },
 "tag": {
 "1": {
-"id": "c054",
-"function": "Artifact making Food by tapping, and a Treasure when triggered.",
+"id": "c002",
+"function": "Makes Food on tap for mana, and Treasure from another trigger.",
 "roles": [
 "generator",
-"treasure",
 "ramp"
 ],
 "archetypes": [
 "treasure",
-"tokens",
-"sacrifice"
-],
-"power": 3,
-"confidence": 3,
-"unclear": []
-},
-"2": {
-"id": "c054",
-"function": "Artifact makes Food by tapping; creates a Treasure on a trigger.",
-"roles": [
-"generator",
-"treasure",
-"artifact"
-],
-"archetypes": [
-"treasure",
 "artifacts",
-"sacrifice"
+"lifegain"
 ],
 "power": 3,
 "confidence": 3,
 "unclear": [
-"OFFPLAN:c2 trigger unspecified"
+"c2"
 ]
 },
-"3": {
-"id": "c054",
-"function": "Artifact making a Food, and a Treasure when you sacrifice a Food.",
+"2": {
+"id": "c002",
+"function": "Artifact making Food and Treasure tokens, rewarding tokens you control.",
 "roles": [
 "generator",
-"engine",
-"artifact"
+"treasure",
+"engine"
 ],
 "archetypes": [
+"tokens",
 "treasure",
-"sacrifice",
-"tokens"
+"artifacts"
 ],
 "power": 3,
 "confidence": 3,
 "unclear": [
-"c2 trigger context"
+"c2 trigger_filter:you_control"
 ]
 }
 }
 },
 "ondu rising": {
-"tkey": "ad9f03b29b6e",
-"okey": "4d7d66681d71",
+"tkey": "7a4bda4a7c24",
+"okey": "0a19f8d4a2b9",
 "date": "2026-10-26",
 "ora": {
-"id": "c008",
-"function": "Attackers gain lifelink this turn; awaken option makes a land creature with counters.",
+"id": "c012",
+"function": "Lifelink for attackers; awaken makes a land creature",
 "roles": [
-"spell",
-"pump"
+"pump",
+"filler"
 ],
 "archetypes": [
 "lifegain",
-"tokens",
+"landfall",
 "aggro"
 ],
 "power": 2,
 "confidence": 3,
-"unclear": [
-"Awaken 4"
-]
+"unclear": []
 },
 "tag": {
 "1": {
-"id": "c008",
-"function": "Sorcery awakening a land with four counters, plus attack-trigger effect.",
+"id": "c012",
+"function": "Awaken sorcery putting counters on a land; attack trigger effect unclear.",
 "roles": [
-"creature",
-"ramp"
+"ramp",
+"creature"
 ],
 "archetypes": [
 "counters",
@@ -582,63 +447,45 @@
 "power": 2,
 "confidence": 2,
 "unclear": [
-"trigger:attacks"
+"c1"
 ]
 },
 "2": {
-"id": "c008",
-"function": "Awaken sorcery: four +1/+1 counters on a land that becomes a creature; attack effect.",
+"id": "c012",
+"function": "Cheap awaken sorcery putting counters on a land to make it a creature.",
 "roles": [
-"spell",
-"enabler"
+"creature",
+"spell"
 ],
 "archetypes": [
 "counters",
 "landfall",
-"aggro"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"c1 trigger:attacks duration:eot"
-]
-},
-"3": {
-"id": "c008",
-"function": "White awaken sorcery that animates a land with four counters; attack trigger until end of turn.",
-"roles": [
-"creature",
-"ramp"
-],
-"archetypes": [
-"counters",
-"aggro",
-"landfall"
+"tokens"
 ],
 "power": 2,
 "confidence": 3,
 "unclear": [
-"c1:trigger:attacks"
+"c1 trigger:attacks duration:eot"
 ]
 }
 }
 },
 "adeline, resplendent cathar": {
-"tkey": "dbcf78c954e4",
-"okey": "7021443957a4",
+"tkey": "9b72f2a85f12",
+"okey": "a1b6334f8f48",
 "date": "2026-10-26",
 "ora": {
-"id": "c009",
-"function": "Commander: whenever you attack, creates a tapped attacking 1/1 Human per opponent; grows with creatures.",
+"id": "c014",
+"function": "Commander: makes an attacking Human token each attack",
 "roles": [
-"core",
+"creature",
 "generator",
-"creature"
+"engine"
 ],
 "archetypes": [
 "tokens",
 "aggro",
-"tribal"
+"legends_matter"
 ],
 "power": 5,
 "confidence": 5,
@@ -646,8 +493,8 @@
 },
 "tag": {
 "1": {
-"id": "c009",
-"function": "Vigilant Human Knight that makes a 1/1 Human token whenever it attacks.",
+"id": "c014",
+"function": "Human Knight commander with vigilance; makes a 1/1 Human token when attacking.",
 "roles": [
 "core",
 "generator",
@@ -656,40 +503,24 @@
 "archetypes": [
 "tokens",
 "tribal",
-"legends_matter"
-],
-"power": 4,
-"confidence": 4,
-"unclear": []
-},
-"2": {
-"id": "c009",
-"function": "Legendary Human Knight with vigilance; makes a 1/1 Human token when it attacks.",
-"roles": [
-"creature",
-"generator"
-],
-"archetypes": [
-"tokens",
-"tribal",
-"legends_matter"
+"aggro"
 ],
 "power": 3,
 "confidence": 4,
 "unclear": []
 },
-"3": {
-"id": "c009",
-"function": "Legendary Human Knight with vigilance that makes a 1/1 Human token when attacking.",
+"2": {
+"id": "c014",
+"function": "Legendary Human Knight with vigilance making a 1/1 Human token whenever it attacks.",
 "roles": [
 "creature",
 "generator",
-"seed"
+"engine"
 ],
 "archetypes": [
 "tokens",
-"legends_matter",
-"tribal"
+"tribal",
+"aggro"
 ],
 "power": 3,
 "confidence": 4,
@@ -698,32 +529,33 @@
 }
 },
 "suture priest": {
-"tkey": "88738802fbca",
-"okey": "02da1c4514a4",
+"tkey": "efd8bcfe3c83",
+"okey": "324bb69b2106",
 "date": "2026-10-26",
 "ora": {
-"id": "c010",
-"function": "Gains life when your creatures enter and drains opponents when theirs enter.",
+"id": "c067",
+"function": "Gains life for your creatures, drains for theirs",
 "roles": [
+"creature",
 "drain",
-"trigger"
+"payoff"
 ],
 "archetypes": [
 "lifegain",
 "tokens",
-"aristocrats"
+"aggro"
 ],
-"power": 2,
+"power": 3,
 "confidence": 4,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c010",
-"function": "Gain 1 life when your creatures enter; opponents lose 1 when theirs enter.",
+"id": "c067",
+"function": "Phyrexian Cleric gains life for your creatures entering, drains when opponents' enter.",
 "roles": [
 "drain",
-"engine",
+"payoff",
 "creature"
 ],
 "archetypes": [
@@ -736,32 +568,16 @@
 "unclear": []
 },
 "2": {
-"id": "c010",
-"function": "Drains 1 when creatures enter: you gain on yours, opponents lose on theirs.",
+"id": "c067",
+"function": "Two-mana Phyrexian Cleric: gain 1 when your creatures enter, opponents lose 1 when theirs enter.",
 "roles": [
 "drain",
-"payoff"
+"payoff",
+"creature"
 ],
 "archetypes": [
 "tokens",
 "lifegain",
-"aristocrats"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c010",
-"function": "Gain 1 life when your creatures enter; opponents lose 1 when theirs enter.",
-"roles": [
-"drain",
-"engine",
-"payoff"
-],
-"archetypes": [
-"lifegain",
-"tokens",
 "aristocrats"
 ],
 "power": 3,
@@ -771,29 +587,12 @@
 }
 },
 "generous gift": {
-"tkey": "b1f55e66ed4d",
-"okey": "16cac7c81b7b",
+"tkey": "c7adc7983d78",
+"okey": "d533840e1602",
 "date": "2026-10-26",
 "ora": {
-"id": "c011",
-"function": "Destroys any permanent, giving its controller a 3/3 Elephant token.",
-"roles": [
-"removal",
-"answer"
-],
-"archetypes": [
-"control",
-"superfriends",
-"tokens"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"tag": {
-"1": {
-"id": "c011",
-"function": "Instant destroying a permanent; its controller gets a 3/3 Elephant.",
+"id": "c007",
+"function": "Destroys any permanent, giving its controller a 3/3",
 "roles": [
 "removal",
 "answer"
@@ -801,38 +600,40 @@
 "archetypes": [
 "control",
 "tokens",
-"superfriends"
+"group_hug"
+],
+"power": 4,
+"confidence": 4,
+"unclear": []
+},
+"tag": {
+"1": {
+"id": "c007",
+"function": "Instant destroys a permanent; its controller gets a 3/3 Elephant.",
+"roles": [
+"removal",
+"answer"
+],
+"archetypes": [
+"control",
+"tokens",
+"group_hug"
 ],
 "power": 3,
 "confidence": 4,
 "unclear": []
 },
 "2": {
-"id": "c011",
-"function": "Instant destroys target permanent; its controller gets a 3/3 Elephant token.",
+"id": "c007",
+"function": "Instant destroying a target permanent; its controller gets a 3/3 Elephant.",
 "roles": [
 "removal",
-"answer"
-],
-"archetypes": [
-"control",
-"tokens"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c011",
-"function": "Instant that destroys a permanent and gives its controller a 3/3 Elephant.",
-"roles": [
-"removal",
-"answer"
+"interaction"
 ],
 "archetypes": [
 "control",
 "tokens",
-"superfriends"
+"tribal"
 ],
 "power": 3,
 "confidence": 4,
@@ -841,70 +642,32 @@
 }
 },
 "gleaming splendor": {
-"tkey": "0bd0d66751ea",
-"okey": "fe21ca751432",
+"tkey": "78e52c1ed716",
+"okey": "3a85a9977308",
 "date": "2026-10-26",
 "ora": {
-"id": "c012",
-"function": "Makes Treasure when opponents draw second card; pay to give two players cards.",
+"id": "c018",
+"function": "Treasure when opponents draw; group draw",
 "roles": [
-"draw",
-"treasure"
-],
-"archetypes": [
-"group_hug",
 "treasure",
-"card_draw"
-],
-"power": 2,
-"confidence": 3,
-"unclear": [
-"Two target players each draw a card"
-]
-},
-"tag": {
-"1": {
-"id": "c012",
-"function": "Enchantment making a Treasure; activate to have two players draw a card.",
-"roles": [
-"generator",
-"draw",
-"mana"
-],
-"archetypes": [
-"group_hug",
-"treasure",
-"enchantress"
-],
-"power": 2,
-"confidence": 3,
-"unclear": []
-},
-"2": {
-"id": "c012",
-"function": "Enchantment makes a Treasure; pay 2W to make two players draw a card.",
-"roles": [
-"generator",
 "draw"
 ],
 "archetypes": [
 "group_hug",
 "treasure",
-"tokens"
+"wheels"
 ],
 "power": 2,
 "confidence": 3,
-"unclear": [
-"c2 target_count:2 target_type:player"
-]
+"unclear": []
 },
-"3": {
-"id": "c012",
-"function": "Enchantment that makes a Treasure and has a {2}{W} ability to make two players draw.",
+"tag": {
+"1": {
+"id": "c018",
+"function": "Enchantment makes a Treasure; pay to have two players draw.",
 "roles": [
-"generator",
-"draw",
-"group_hug"
+"treasure",
+"card_adv"
 ],
 "archetypes": [
 "group_hug",
@@ -914,36 +677,54 @@
 "power": 2,
 "confidence": 3,
 "unclear": [
-"c2 trigger and cost context"
+"c1 trigger"
+]
+},
+"2": {
+"id": "c018",
+"function": "Enchantment makes a Treasure; pay to have two players each draw a card.",
+"roles": [
+"treasure",
+"draw",
+"generator"
+],
+"archetypes": [
+"group_hug",
+"treasure",
+"card_draw"
+],
+"power": 2,
+"confidence": 3,
+"unclear": [
+"c1 trigger missing"
 ]
 }
 }
 },
 "arcane signet": {
-"tkey": "f4efc5b96cdf",
-"okey": "587ef1d646e5",
+"tkey": "f40ae370c13e",
+"okey": "bb537b1824b1",
 "date": "2026-10-26",
 "ora": {
-"id": "c013",
-"function": "Mana rock producing any color in commander's color identity.",
+"id": "c033",
+"function": "Two-mana rock in commander colours",
 "roles": [
-"mana",
 "ramp",
-"fixing"
+"mana"
 ],
 "archetypes": [
 "ramp",
 "big_mana",
-"artifacts"
+"colorless"
 ],
-"power": 3,
+"power": 4,
 "confidence": 5,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c013",
-"function": "Mana rock tapping for one mana of commander's color identity.",
+"id": "c033",
+"function": "Two-mana rock tapping for a commander-identity color.",
 "roles": [
 "ramp",
 "mana",
@@ -955,12 +736,12 @@
 "big_mana"
 ],
 "power": 3,
-"confidence": 4,
+"confidence": 5,
 "unclear": []
 },
 "2": {
-"id": "c013",
-"function": "Artifact tapping for one mana of commander's color identity.",
+"id": "c033",
+"function": "Two-mana rock producing mana of your commander's color identity.",
 "roles": [
 "ramp",
 "mana",
@@ -972,141 +753,84 @@
 "artifacts"
 ],
 "power": 3,
-"confidence": 5,
-"unclear": []
-},
-"3": {
-"id": "c013",
-"function": "Mana rock tapping for one mana of commander's color identity.",
-"roles": [
-"mana",
-"ramp",
-"fixing"
-],
-"archetypes": [
-"ramp",
-"colorless",
-"big_mana"
-],
-"power": 3,
-"confidence": 5,
+"confidence": 4,
 "unclear": []
 }
 }
 },
 "nine lives": {
-"tkey": "22f508df6251",
-"okey": "1c1afe676802",
+"tkey": "ffc4861e7480",
+"okey": "bba6d5fbab60",
 "date": "2026-10-26",
 "ora": {
-"id": "c014",
-"function": "Hexproof permanent absorbing damage to you with counters, but losing it loses the game.",
+"id": "c006",
+"function": "Prevents all damage to you but you lose when it leaves",
 "roles": [
 "defense",
-"protection"
+"pillowfort"
 ],
 "archetypes": [
-"control",
 "stax",
+"control",
 "lifegain"
 ],
 "power": 2,
 "confidence": 3,
-"unclear": [
-"When Nine Lives leaves the battlefield, you lose the game"
-]
+"unclear": []
 },
 "tag": {
 "1": {
-"id": "c014",
-"function": "Hexproof enchantment turning damage into counters, exiled at nine counters.",
-"roles": [
-"pillowfort",
-"defense"
-],
-"archetypes": [
-"stax",
-"counters",
-"control"
-],
-"power": 2,
-"confidence": 1,
-"unclear": [
-"replace:damagedone_to_putcounter",
-"condition:card_self_counters_ge9_incarnation",
-"trigger:leaves"
-]
-},
-"2": {
-"id": "c014",
-"function": "Hexproof enchantment turning damage into counters; exiles at nine counters.",
+"id": "c006",
+"function": "Hexproof enchantment turning damage into counters on itself, exiled at nine counters.",
 "roles": [
 "protection"
 ],
 "archetypes": [
-"counters",
-"control"
+"control",
+"stax",
+"counters"
 ],
 "power": 2,
-"confidence": 1,
+"confidence": 2,
 "unclear": [
-"replace:damagedone_to_putcounter",
-"condition:card_self_counters_ge9_incarnation",
-"c3 trigger:leaves",
+"c2",
 "x"
 ]
 },
-"3": {
-"id": "c014",
-"function": "Hexproof enchantment that turns damage into counters and exiles at nine counters.",
+"2": {
+"id": "c006",
+"function": "Hexproof enchantment turning damage into counters, exiling itself at nine counters.",
 "roles": [
+"protection",
 "defense"
 ],
 "archetypes": [
-"counters",
 "control",
+"counters",
 "stax"
 ],
-"power": 2,
-"confidence": 1,
+"power": 1,
+"confidence": 2,
 "unclear": [
-"replace:damagedone_to_putcounter",
-"condition:card_self_counters_ge9_incarnation",
+"c1 replace:damagedone_to_putcounter",
+"c2 condition incarnation",
 "c3",
-"x:counters_plus damage"
+"x counters_plus damage"
 ]
 }
 }
 },
 "memnarch, the warden": {
-"tkey": "3183b9ad2770",
-"okey": "6312c51cdcda",
+"tkey": "50ceddf2ec29",
+"okey": "1184e1e59245",
 "date": "2026-10-26",
 "ora": {
-"id": "c015",
-"function": "Indestructible creature making two Myr tokens and drawing cards per artifact when attacking.",
+"id": "c013",
+"function": "Indestructible, two Myr tokens, draws per artifact",
 "roles": [
-"generator",
-"draw_engine",
-"creature"
-],
-"archetypes": [
-"tokens",
-"artifacts",
-"card_draw"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"tag": {
-"1": {
-"id": "c015",
-"function": "Legendary artifact creature: makes two Myr tokens, draws per artifact when attacking.",
-"roles": [
-"generator",
-"draw_engine",
-"creature"
+"creature",
+"card_adv",
+"generator"
 ],
 "archetypes": [
 "artifacts",
@@ -1115,61 +839,65 @@
 ],
 "power": 4,
 "confidence": 3,
+"unclear": []
+},
+"tag": {
+"1": {
+"id": "c013",
+"function": "Ten-mana legendary artifact creature: makes two Myr, draws per artifact when attacking.",
+"roles": [
+"haymaker",
+"finisher",
+"draw_engine"
+],
+"archetypes": [
+"artifacts",
+"card_draw",
+"tokens"
+],
+"power": 2,
+"confidence": 3,
 "unclear": [
-"OFFPLAN: colorless artifact creature needs colorless sources"
+"OFFPLAN: artifact payoff, mv10 in starter"
 ]
 },
 "2": {
-"id": "c015",
-"function": "Indestructible legendary artifact creature: makes two Myr tokens, draws per artifact on attack.",
+"id": "c013",
+"function": "Huge legendary artifact creature making two Myr tokens, draws per artifact when attacking.",
 "roles": [
 "creature",
-"generator",
-"draw_engine"
+"draw_engine",
+"generator"
 ],
 "archetypes": [
 "artifacts",
-"tokens",
+"colorless",
 "card_draw"
 ],
-"power": 4,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c015",
-"function": "Indestructible artifact creature makes two Myr tokens on entering and draws per artifact on attack.",
-"roles": [
-"creature",
-"generator",
-"draw_engine"
-],
-"archetypes": [
-"artifacts",
-"tokens",
-"card_draw"
-],
-"power": 4,
-"confidence": 4,
-"unclear": []
+"power": 2,
+"confidence": 3,
+"unclear": [
+"OFFPLAN: colorless 10 mv, artifact count"
+]
 }
 }
 },
 "makindi stampede": {
-"tkey": "5ddad5b0621a",
-"okey": "e41465cc1b25",
+"tkey": "32fefe0d5fbb",
+"okey": "28cf9a6f5ee5",
 "date": "2026-10-26",
 "ora": {
-"id": "c016",
-"function": "Instant-speed team pump giving +2/+2 until end of turn.",
+"id": "c034",
+"function": "One-shot +2/+2 team pump",
 "roles": [
-"pump",
-"finisher"
+"finisher",
+"anthem",
+"pump"
 ],
 "archetypes": [
 "tokens",
 "aggro",
-"tribal"
+"counters"
 ],
 "power": 3,
 "confidence": 4,
@@ -1177,8 +905,8 @@
 },
 "tag": {
 "1": {
-"id": "c016",
-"function": "Sorcery giving your creatures +2/+2 until end of turn.",
+"id": "c034",
+"function": "Your creatures get +2/+2 until end of turn.",
 "roles": [
 "pump",
 "finisher"
@@ -1187,23 +915,6 @@
 "tokens",
 "aggro",
 "tribal"
-],
-"power": 3,
-"confidence": 3,
-"unclear": [
-"transform"
-]
-},
-"2": {
-"id": "c016",
-"function": "Transforming sorcery: creatures you control get +2/+2 until end of turn.",
-"roles": [
-"pump",
-"finisher"
-],
-"archetypes": [
-"tokens",
-"aggro"
 ],
 "power": 3,
 "confidence": 3,
@@ -1211,9 +922,9 @@
 "c0 transform"
 ]
 },
-"3": {
-"id": "c016",
-"function": "Transforming sorcery giving your creatures +2/+2 until end of turn.",
+"2": {
+"id": "c034",
+"function": "Sorcery giving your creatures +2/+2 until end of turn, likely with an extra effect.",
 "roles": [
 "pump",
 "finisher"
@@ -1224,24 +935,23 @@
 "tribal"
 ],
 "power": 3,
-"confidence": 2,
+"confidence": 3,
 "unclear": [
-"c0:transform"
+"c0 transform"
 ]
 }
 }
 },
 "treasure map": {
-"tkey": "6c77b7d0a2bc",
-"okey": "2fd4908d9226",
+"tkey": "e7d74322bfda",
+"okey": "154c49e39132",
 "date": "2026-10-26",
 "ora": {
-"id": "c062",
-"function": "Scrys, then transforms to make three Treasure after three uses.",
+"id": "c024",
+"function": "Scry engine that turns into three Treasures",
 "roles": [
-"treasure",
-"generator",
-"draw_select"
+"engine",
+"treasure"
 ],
 "archetypes": [
 "treasure",
@@ -1249,57 +959,15 @@
 "ramp"
 ],
 "power": 2,
-"confidence": 5,
+"confidence": 4,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c062",
-"function": "Artifact that scries by tapping, adds landmark counters and transforms.",
+"id": "c024",
+"function": "Artifact taps for scry and counters, transforms later.",
 "roles": [
 "artifact",
-"draw_select"
-],
-"archetypes": [
-"artifacts",
-"colorless",
-"control"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"token_make",
-"transform",
-"counter:landmark"
-]
-},
-"2": {
-"id": "c062",
-"function": "Artifact taps to scry 1 and adds a landmark counter, then transforms.",
-"roles": [
-"engine",
-"artifact",
-"cantrip"
-],
-"archetypes": [
-"colorless",
-"artifacts",
-"control"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"token_make",
-"counter:landmark",
-"transform"
-]
-},
-"3": {
-"id": "c062",
-"function": "Artifact that scries 1 for 1 and tracks landmark counters, then transforms.",
-"roles": [
-"artifact",
-"cantrip",
 "engine"
 ],
 "archetypes": [
@@ -1310,28 +978,47 @@
 "power": 2,
 "confidence": 2,
 "unclear": [
-"transform",
-"counter:landmark",
+"c0 transform",
 "token_make"
+]
+},
+"2": {
+"id": "c024",
+"function": "Cheap artifact scrying with landmark counters, likely transforming into a token-making land.",
+"roles": [
+"card_adv",
+"generator",
+"engine"
+],
+"archetypes": [
+"tokens",
+"artifacts",
+"colorless"
+],
+"power": 2,
+"confidence": 2,
+"unclear": [
+"c0 transform",
+"counter:landmark"
 ]
 }
 }
 },
 "beregond of the guard": {
-"tkey": "a57d8db56072",
-"okey": "04b5ea731230",
+"tkey": "9fa173c3b77b",
+"okey": "c2321832a499",
 "date": "2026-10-26",
 "ora": {
-"id": "c018",
-"function": "Whenever a Human enters, team gets +1/+1 and vigilance; pumps with Human tokens.",
+"id": "c042",
+"function": "Human entering pumps the team and gives vigilance",
 "roles": [
-"pump",
-"trigger",
-"creature"
+"creature",
+"anthem",
+"payoff"
 ],
 "archetypes": [
-"tokens",
 "tribal",
+"tokens",
 "aggro"
 ],
 "power": 3,
@@ -1340,10 +1027,10 @@
 },
 "tag": {
 "1": {
-"id": "c018",
-"function": "Legendary Human Soldier; creatures entering give your team +1/+1 and vigilance until end of turn.",
+"id": "c042",
+"function": "Legendary Human Soldier gives creatures +1/+1 and vigilance when creatures enter.",
 "roles": [
-"pump",
+"anthem",
 "payoff",
 "creature"
 ],
@@ -1353,33 +1040,16 @@
 "aggro"
 ],
 "power": 4,
-"confidence": 3,
+"confidence": 4,
 "unclear": []
 },
 "2": {
-"id": "c018",
-"function": "Legendary Human Soldier; when a creature enters, your creatures get +1/+1 and vigilance.",
+"id": "c042",
+"function": "Legendary Human Soldier pumping your team with vigilance whenever your permanents enter.",
 "roles": [
 "anthem",
-"creature",
-"payoff"
-],
-"archetypes": [
-"tokens",
-"tribal",
-"aggro"
-],
-"power": 4,
-"confidence": 3,
-"unclear": []
-},
-"3": {
-"id": "c018",
-"function": "Legendary Human Soldier; creatures you control get +1/+1 and vigilance when creature enters.",
-"roles": [
-"creature",
-"anthem",
-"pump"
+"payoff",
+"creature"
 ],
 "archetypes": [
 "tokens",
@@ -1393,73 +1063,56 @@
 }
 },
 "burnished hart": {
-"tkey": "5eeafbfc2a58",
-"okey": "3062ff0d15ce",
+"tkey": "c9690ecd1fb8",
+"okey": "72a5dbe4e62c",
 "date": "2026-10-26",
 "ora": {
-"id": "c052",
-"function": "Sacrifice for 3 to fetch two basic lands onto the battlefield tapped.",
-"roles": [
-"ramp",
-"outlet",
-"fetch"
-],
-"archetypes": [
-"ramp",
-"sacrifice",
-"blink"
-],
-"power": 3,
-"confidence": 5,
-"unclear": []
-},
-"tag": {
-"1": {
-"id": "c052",
-"function": "Artifact creature Elk; pay 3 and sacrifice to fetch two basic lands tapped.",
-"roles": [
-"ramp",
-"fixing",
-"artifact"
-],
-"archetypes": [
-"ramp",
-"sacrifice",
-"colorless"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"2": {
-"id": "c052",
-"function": "Colorless Elk creature; pay 3 and sacrifice to fetch up to two basic lands tapped.",
+"id": "c008",
+"function": "Mana creature that fetches two basics when sacrificed",
 "roles": [
 "ramp",
 "creature",
-"fodder"
+"fixing"
 ],
 "archetypes": [
 "ramp",
-"sacrifice",
+"artifacts",
 "landfall"
 ],
 "power": 3,
 "confidence": 4,
 "unclear": []
 },
-"3": {
-"id": "c052",
-"function": "Artifact creature; pay 3 and sacrifice to fetch up to two basic lands tapped.",
+"tag": {
+"1": {
+"id": "c008",
+"function": "Colorless Elk creature that sacrifices to fetch two basic lands tapped.",
 "roles": [
 "ramp",
 "creature",
-"fodder"
+"fetch"
 ],
 "archetypes": [
-"sacrifice",
 "ramp",
-"colorless"
+"colorless",
+"landfall"
+],
+"power": 3,
+"confidence": 4,
+"unclear": []
+},
+"2": {
+"id": "c008",
+"function": "Artifact creature sacrificed for 3 mana to fetch up to two basic lands tapped.",
+"roles": [
+"ramp",
+"creature",
+"fixing"
+],
+"archetypes": [
+"ramp",
+"colorless",
+"big_mana"
 ],
 "power": 3,
 "confidence": 4,
@@ -1468,67 +1121,32 @@
 }
 },
 "worship": {
-"tkey": "fa7b54b8ec84",
-"okey": "d95342b50fb9",
+"tkey": "f8f9b23c6e8a",
+"okey": "a42fb9a6697f",
 "date": "2026-10-26",
 "ora": {
-"id": "c020",
-"function": "Keeps you at 1 life instead of dying while you control a creature.",
+"id": "c023",
+"function": "Keeps you at 1 life while you control a creature",
 "roles": [
 "defense",
 "pillowfort"
 ],
 "archetypes": [
-"control",
-"lifegain",
-"stax"
-],
-"power": 2,
-"confidence": 4,
-"unclear": []
-},
-"tag": {
-"1": {
-"id": "c020",
-"function": "Enchantment modifying life reduction while you control a creature.",
-"roles": [
-"defense",
-"protection"
-],
-"archetypes": [
-"lifegain",
-"control",
-"stax"
-],
-"power": 2,
-"confidence": 1,
-"unclear": [
-"replace:lifereduced_to_replaceeffect"
-]
-},
-"2": {
-"id": "c020",
-"function": "Enchantment replacing life reduction while you control a creature; effect unclear.",
-"roles": [
-"defense"
-],
-"archetypes": [
+"stax",
 "lifegain",
 "control"
 ],
 "power": 2,
-"confidence": 1,
-"unclear": [
-"replace:lifereduced_to_replaceeffect",
-"condition:creature_you_control"
-]
+"confidence": 3,
+"unclear": []
 },
-"3": {
-"id": "c020",
-"function": "Enchantment altering life reduction while you control a creature.",
+"tag": {
+"1": {
+"id": "c023",
+"function": "Enchantment replaces life reduction while you control a creature.",
 "roles": [
-"defense",
-"protection"
+"protection",
+"defense"
 ],
 "archetypes": [
 "lifegain",
@@ -1536,101 +1154,102 @@
 "stax"
 ],
 "power": 2,
-"confidence": 1,
+"confidence": 2,
 "unclear": [
-"replace:lifereduced_to_replaceeffect",
-"condition:creature_you_control"
+"c1 replace:lifereduced_to_replaceeffect"
+]
+},
+"2": {
+"id": "c023",
+"function": "Enchantment replacing life loss while you control a creature.",
+"roles": [
+"protection",
+"defense"
+],
+"archetypes": [
+"lifegain",
+"control",
+"stax"
+],
+"power": 2,
+"confidence": 2,
+"unclear": [
+"c1 replace:lifereduced_to_replaceeffect"
 ]
 }
 }
 },
 "shelter": {
-"tkey": "f797764a58bf",
-"okey": "f618de1682f8",
+"tkey": "3ce5580ff2f5",
+"okey": "17d89d15b75f",
 "date": "2026-10-26",
 "ora": {
-"id": "c021",
-"function": "Gives a creature protection from a color until end of turn and draws a card.",
+"id": "c032",
+"function": "Protection from a colour and draws a card",
 "roles": [
 "protection",
 "cantrip"
 ],
 "archetypes": [
 "voltron",
-"control",
-"tokens"
+"tokens",
+"superfriends"
 ],
 "power": 2,
-"confidence": 5,
+"confidence": 4,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c021",
-"function": "Instant protecting your creature and drawing a card.",
+"id": "c032",
+"function": "Cheap instant protecting your creature and drawing a card.",
 "roles": [
 "protection",
 "cantrip"
 ],
 "archetypes": [
 "voltron",
-"control",
+"tokens",
 "card_draw"
 ],
 "power": 3,
-"confidence": 4,
+"confidence": 3,
 "unclear": []
 },
 "2": {
-"id": "c021",
-"function": "Instant protects a creature you control and draws a card.",
-"roles": [
-"protection",
-"cantrip"
-],
-"archetypes": [
-"tokens",
-"control",
-"card_draw"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c021",
-"function": "Instant that protects your creature and draws a card.",
+"id": "c032",
+"function": "Cheap instant protecting one of your creatures and drawing a card.",
 "roles": [
 "protection",
 "cantrip"
 ],
 "archetypes": [
 "voltron",
-"tokens",
-"control"
+"aggro",
+"tokens"
 ],
-"power": 3,
+"power": 2,
 "confidence": 3,
 "unclear": []
 }
 }
 },
 "pentarch ward": {
-"tkey": "a43893648daf",
-"okey": "60b5ab1fe063",
+"tkey": "ff30afa5fd32",
+"okey": "a1a2c2367982",
 "date": "2026-10-26",
 "ora": {
-"id": "c022",
-"function": "Aura giving protection from a chosen color; draws a card on entry.",
+"id": "c027",
+"function": "Aura giving protection from a colour; draws a card",
 "roles": [
 "protection",
 "cantrip",
-"cheap_ench"
+"attach"
 ],
 "archetypes": [
 "voltron",
-"enchantress",
-"control"
+"control",
+"card_draw"
 ],
 "power": 2,
 "confidence": 4,
@@ -1638,8 +1257,8 @@
 },
 "tag": {
 "1": {
-"id": "c022",
-"function": "Aura giving protection from a chosen color and drawing a card.",
+"id": "c027",
+"function": "Aura draws a card and grants protection from a chosen color.",
 "roles": [
 "protection",
 "cantrip",
@@ -1648,32 +1267,15 @@
 "archetypes": [
 "voltron",
 "enchantress",
-"card_draw"
+"control"
 ],
 "power": 2,
-"confidence": 4,
-"unclear": []
-},
-"2": {
-"id": "c022",
-"function": "Aura draws a card on entering and grants protection from a chosen color.",
-"roles": [
-"cantrip",
-"protection",
-"attach"
-],
-"archetypes": [
-"voltron",
-"enchantress",
-"card_draw"
-],
-"power": 3,
 "confidence": 3,
 "unclear": []
 },
-"3": {
-"id": "c022",
-"function": "Aura that draws a card and grants protection from a chosen color.",
+"2": {
+"id": "c027",
+"function": "Aura drawing a card on entering and granting protection from a chosen color.",
 "roles": [
 "cantrip",
 "protection",
@@ -1691,15 +1293,15 @@
 }
 },
 "losheel, clockwork scholar": {
-"tkey": "e12744fb544c",
-"okey": "0d5558c6a8fc",
+"tkey": "d0f774c0fee0",
+"okey": "36e5918a5cc7",
 "date": "2026-10-26",
 "ora": {
-"id": "c023",
-"function": "Prevents combat damage to attacking artifact creatures; draws when artifact creatures enter.",
+"id": "c025",
+"function": "Artifact creatures draw a card and avoid combat damage",
 "roles": [
-"draw_engine",
-"creature"
+"engine",
+"draw_engine"
 ],
 "archetypes": [
 "artifacts",
@@ -1707,32 +1309,13 @@
 "tokens"
 ],
 "power": 2,
-"confidence": 3,
-"unclear": [
-"OFFPLAN: needs artifact creatures, few in deck"
-]
+"confidence": 4,
+"unclear": []
 },
 "tag": {
 "1": {
-"id": "c023",
-"function": "Legendary Elephant Artificer; redirects damage, draws when other creatures enter once a turn.",
-"roles": [
-"draw_engine",
-"protection",
-"creature"
-],
-"archetypes": [
-"tokens",
-"card_draw",
-"legends_matter"
-],
-"power": 4,
-"confidence": 3,
-"unclear": []
-},
-"2": {
-"id": "c023",
-"function": "Legendary Elephant Artificer redirects damage; draws a card when other creatures enter, once per turn.",
+"id": "c025",
+"function": "Legendary Elephant Artificer redirects damage and draws when creatures enter, once a turn.",
 "roles": [
 "draw_engine",
 "creature",
@@ -1746,16 +1329,16 @@
 "power": 4,
 "confidence": 3,
 "unclear": [
-"replace:damagedone_to_other"
+"c1 replace"
 ]
 },
-"3": {
-"id": "c023",
-"function": "Legendary Elephant Artificer redirects damage and draws when creatures enter, once per turn.",
+"2": {
+"id": "c025",
+"function": "Legendary Elephant Artificer redirecting damage; draws when creatures enter, once per turn.",
 "roles": [
-"creature",
 "draw_engine",
-"defense"
+"protection",
+"creature"
 ],
 "archetypes": [
 "tokens",
@@ -1765,18 +1348,53 @@
 "power": 3,
 "confidence": 3,
 "unclear": [
-"replace:damagedone_to_other"
+"c1 replace:damagedone_to_other"
 ]
 }
 }
 },
 "for the emperor!": {
-"tkey": "6da8f48370e0",
-"okey": "183c50650608",
+"tkey": "cb77e8b7e258",
+"okey": "3d07d71d110e",
 "date": "2026-10-26",
 "ora": {
-"id": "c024",
-"function": "Team gets +2/+2, vigilance and lifelink until end of turn.",
+"id": "c011",
+"function": "One-shot team pump with vigilance and lifelink",
+"roles": [
+"finisher",
+"anthem",
+"pump"
+],
+"archetypes": [
+"tokens",
+"aggro",
+"lifegain"
+],
+"power": 4,
+"confidence": 4,
+"unclear": []
+},
+"tag": {
+"1": {
+"id": "c011",
+"function": "Your creatures get +2/+2, vigilance and lifelink until end of turn.",
+"roles": [
+"finisher",
+"pump",
+"anthem"
+],
+"archetypes": [
+"tokens",
+"aggro",
+"lifegain"
+],
+"power": 4,
+"confidence": 4,
+"unclear": []
+},
+"2": {
+"id": "c011",
+"function": "Sorcery giving your creatures +2/+2, vigilance and lifelink until end of turn.",
 "roles": [
 "pump",
 "finisher",
@@ -1784,58 +1402,8 @@
 ],
 "archetypes": [
 "tokens",
-"lifegain",
-"aggro"
-],
-"power": 3,
-"confidence": 5,
-"unclear": []
-},
-"tag": {
-"1": {
-"id": "c024",
-"function": "Sorcery: your creatures get +2/+2, vigilance and lifelink until end of turn.",
-"roles": [
-"pump",
-"finisher",
-"payoff"
-],
-"archetypes": [
-"tokens",
-"lifegain",
-"aggro"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"2": {
-"id": "c024",
-"function": "Creatures you control get +2/+2, vigilance and lifelink until end of turn.",
-"roles": [
-"pump",
-"finisher"
-],
-"archetypes": [
-"tokens",
-"lifegain",
-"aggro"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c024",
-"function": "Sorcery giving your creatures +2/+2, vigilance and lifelink until end of turn.",
-"roles": [
-"pump",
-"finisher"
-],
-"archetypes": [
-"tokens",
-"lifegain",
-"aggro"
+"aggro",
+"lifegain"
 ],
 "power": 3,
 "confidence": 4,
@@ -1844,20 +1412,20 @@
 }
 },
 "thought-knot seer": {
-"tkey": "4d0acfeb3c47",
-"okey": "9cfdd9e9b0fe",
+"tkey": "cb2a020fd480",
+"okey": "6f5a6ecde537",
 "date": "2026-10-26",
 "ora": {
-"id": "c039",
-"function": "Takes a nonland card from an opponent's hand; they draw when it leaves.",
+"id": "c028",
+"function": "Takes a nonland card from their hand; they redraw on leave",
 "roles": [
-"interaction",
-"creature"
+"creature",
+"interaction"
 ],
 "archetypes": [
-"control",
 "colorless",
-"stax"
+"control",
+"big_mana"
 ],
 "power": 3,
 "confidence": 4,
@@ -1865,8 +1433,8 @@
 },
 "tag": {
 "1": {
-"id": "c039",
-"function": "Eldrazi that exiles an opponent's hand card on ETB; they draw when it leaves.",
+"id": "c028",
+"function": "Eldrazi creature exiles a card from an opponent's hand, who draws on leaving.",
 "roles": [
 "creature",
 "interaction"
@@ -1876,142 +1444,102 @@
 "control",
 "stax"
 ],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"exile_from:hand"
-]
+"power": 3,
+"confidence": 3,
+"unclear": []
 },
 "2": {
-"id": "c039",
-"function": "Exiles a card from an opponent's hand on entering; they draw when it leaves.",
+"id": "c028",
+"function": "Eldrazi exiling a card from an opponent's hand on entering; they draw when it leaves.",
 "roles": [
 "creature",
-"interaction",
-"fodder"
+"interaction"
 ],
 "archetypes": [
-"sacrifice",
 "colorless",
-"control"
+"control",
+"stax"
 ],
 "power": 3,
 "confidence": 3,
 "unclear": [
-"exile_from:hand details"
-]
-},
-"3": {
-"id": "c039",
-"function": "Eldrazi that exiles from an opponent's hand on ETB; opponent draws when it leaves.",
-"roles": [
-"creature",
-"interaction"
-],
-"archetypes": [
-"control",
-"colorless",
-"stax"
-],
-"power": 2,
-"confidence": 3,
-"unclear": [
-"c1.3 exile detail"
+"c2 who draws"
 ]
 }
 }
 },
 "ob nixilis, the ascended": {
-"tkey": "39c0a8da0f43",
-"okey": "10a7c033c6ad",
+"tkey": "2041d4af6fa2",
+"okey": "25f2cb3c37e1",
 "date": "2026-10-26",
 "ora": {
-"id": "c026",
-"function": "Flying creature that destroys opponents' tapped creatures, gains life, then makes 4/4 Angels each end step.",
+"id": "c017",
+"function": "Flyer that sweeps tapped creatures and makes Angels",
 "roles": [
+"creature",
 "sweeper",
-"generator",
-"creature"
+"generator"
 ],
 "archetypes": [
 "tokens",
 "lifegain",
 "control"
 ],
-"power": 5,
+"power": 4,
 "confidence": 4,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c026",
-"function": "Flying legendary Angel: destroys opponents' tapped creatures on entry, gains life, makes 4/4 flying Angels at end step.",
+"id": "c017",
+"function": "Seven-mana flying Angel destroys tapped opposing creatures, gains life, makes 4/4 Angels each end step.",
 "roles": [
-"sweeper",
 "finisher",
-"engine"
+"sweeper",
+"generator"
 ],
 "archetypes": [
 "tokens",
 "lifegain",
 "control"
 ],
-"power": 5,
-"confidence": 3,
-"unclear": [
-"x_is:remembered_amount"
-]
+"power": 4,
+"confidence": 4,
+"unclear": []
 },
 "2": {
-"id": "c026",
-"function": "Legendary flying Angel; ETB destroys opponents' tapped creatures and gains life; makes 4/4 Angel tokens each end step.",
+"id": "c017",
+"function": "Legendary flying Angel destroying tapped enemy creatures, gaining life, making 4/4 Angels each end step.",
 "roles": [
 "sweeper",
 "finisher",
-"engine"
+"generator"
 ],
 "archetypes": [
 "tokens",
 "lifegain",
 "control"
 ],
-"power": 5,
+"power": 4,
 "confidence": 3,
 "unclear": [
+"c2 trigger:end_step owner",
 "x_is:remembered_amount"
-]
-},
-"3": {
-"id": "c026",
-"function": "Flying legendary angel; ETB destroys opponents' tapped creatures and gains life; makes 4/4 angel each end step.",
-"roles": [
-"sweeper",
-"finisher",
-"engine"
-],
-"archetypes": [
-"tokens",
-"lifegain",
-"control"
-],
-"power": 5,
-"confidence": 3,
-"unclear": [
-"c1.3:x_is:remembered_amount"
 ]
 }
 }
 },
 "exemplar of light": {
-"tkey": "ed4aaa559087",
-"okey": "d8932ea98140",
+"tkey": "c3452029892d",
+"okey": "f82285252467",
 "date": "2026-10-26",
 "ora": {
-"id": "c027",
-"function": "Flying creature growing with lifegain and drawing cards when it gets counters.",
+"id": "c035",
+"function": "Flyer that grows on lifegain and draws on counters",
 "roles": [
+"creature",
 "draw_engine",
-"creature"
+"payoff"
 ],
 "archetypes": [
 "lifegain",
@@ -2024,46 +1552,31 @@
 },
 "tag": {
 "1": {
-"id": "c027",
-"function": "Flying Angel: gaining life puts a +1/+1 counter on it and draws a card once per turn.",
+"id": "c035",
+"function": "Flying Angel gets +1/+1 counter on lifegain, draws once a turn on lifegain.",
 "roles": [
 "draw_engine",
-"payoff",
-"creature"
+"creature",
+"payoff"
 ],
 "archetypes": [
 "lifegain",
 "counters",
 "card_draw"
 ],
-"power": 3,
+"power": 4,
 "confidence": 3,
-"unclear": []
+"unclear": [
+"c2 trigger text"
+]
 },
 "2": {
-"id": "c027",
-"function": "Flying Angel; whenever you gain life, put a +1/+1 counter, draw once per turn.",
+"id": "c035",
+"function": "Flying Angel growing when you gain life and drawing once per turn.",
 "roles": [
-"payoff",
+"creature",
 "draw_engine",
-"creature"
-],
-"archetypes": [
-"lifegain",
-"counters",
-"card_draw"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c027",
-"function": "Flying angel; when you gain life, put a +1/+1 counter, draw once per turn.",
-"roles": [
-"draw_engine",
-"payoff",
-"creature"
+"payoff"
 ],
 "archetypes": [
 "lifegain",
@@ -2077,29 +1590,30 @@
 }
 },
 "aetherstorm roc": {
-"tkey": "2f5e613b108e",
-"okey": "5555dac2b513",
+"tkey": "244c0c5e74c3",
+"okey": "a3ed69a91381",
 "date": "2026-10-26",
 "ora": {
-"id": "c028",
-"function": "Flying creature collecting energy to grow and tap blockers when attacking.",
+"id": "c036",
+"function": "Flyer that makes energy and taps blockers",
 "roles": [
 "creature",
-"evasion"
+"evasion",
+"engine"
 ],
 "archetypes": [
+"counters",
 "aggro",
-"tokens",
-"counters"
+"tokens"
 ],
-"power": 2,
-"confidence": 4,
+"power": 3,
+"confidence": 3,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c028",
-"function": "Flying Bird: gets energy on creature ETB and puts +1/+1 counters on a creature when attacking.",
+"id": "c036",
+"function": "Flying Bird gets energy on creature entry, grows a creature when attacking.",
 "roles": [
 "creature",
 "engine"
@@ -2110,15 +1624,14 @@
 "tokens"
 ],
 "power": 3,
-"confidence": 2,
+"confidence": 3,
 "unclear": [
-"counter:energy",
-"c1 trigger_filter on self ETB"
+"energy use"
 ]
 },
 "2": {
-"id": "c028",
-"function": "Flying Bird; gains energy when creatures enter, attacking puts a +1/+1 counter on a creature.",
+"id": "c036",
+"function": "Flying Bird gaining energy from creatures, putting a counter on a creature when attacking.",
 "roles": [
 "creature",
 "engine"
@@ -2131,117 +1644,25 @@
 "power": 2,
 "confidence": 3,
 "unclear": [
-"counter:energy"
-]
-},
-"3": {
-"id": "c028",
-"function": "Flying bird gaining energy when creatures enter; attacks to put +1/+1 counter on a creature.",
-"roles": [
-"creature",
-"engine"
-],
-"archetypes": [
-"counters",
-"aggro",
-"tokens"
-],
-"power": 2,
-"confidence": 3,
-"unclear": [
-"counter:energy"
+"c2 target details"
 ]
 }
 }
 },
 "sejiri shelter": {
-"tkey": "8d9ad5a16fba",
-"okey": "891f80c5a337",
+"tkey": "50f372845356",
+"okey": "5b873dce6717",
 "date": "2026-10-26",
 "ora": {
 "id": "c029",
-"function": "Gives a creature protection from a color until end of turn.",
+"function": "Protection from a colour of your choice for a turn",
 "roles": [
 "protection"
 ],
 "archetypes": [
 "voltron",
-"control",
+"superfriends",
 "tokens"
-],
-"power": 2,
-"confidence": 5,
-"unclear": []
-},
-"tag": {
-"1": {
-"id": "c029",
-"function": "Instant that transforms a target creature you control, protecting it.",
-"roles": [
-"protection"
-],
-"archetypes": [
-"voltron",
-"tokens",
-"aggro"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"c0:transform"
-]
-},
-"2": {
-"id": "c029",
-"function": "Instant that transforms and protects target creature you control.",
-"roles": [
-"protection"
-],
-"archetypes": [
-"voltron",
-"control",
-"tokens"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"c0:transform"
-]
-},
-"3": {
-"id": "c029",
-"function": "Instant that transforms and protects target creature you control.",
-"roles": [
-"protection"
-],
-"archetypes": [
-"voltron",
-"tokens",
-"control"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"c0:transform"
-]
-}
-}
-},
-"fountainport bell": {
-"tkey": "1715da6b44f0",
-"okey": "5160d5bde492",
-"date": "2026-10-26",
-"ora": {
-"id": "c030",
-"function": "Puts a basic land on top of library; sacrifice to draw.",
-"roles": [
-"cantrip",
-"artifact"
-],
-"archetypes": [
-"artifacts",
-"colorless",
-"ramp"
 ],
 "power": 2,
 "confidence": 4,
@@ -2249,12 +1670,69 @@
 },
 "tag": {
 "1": {
-"id": "c030",
-"function": "Artifact that fetches a basic land on entry and can be sacrificed to draw.",
+"id": "c029",
+"function": "Instant that protects or transforms one of your creatures.",
 "roles": [
-"ramp",
+"protection"
+],
+"archetypes": [
+"voltron",
+"tokens",
+"superfriends"
+],
+"power": 2,
+"confidence": 2,
+"unclear": [
+"c0 transform",
+"c1 effect"
+]
+},
+"2": {
+"id": "c029",
+"function": "Cheap instant protecting one of your creatures, possibly transforming it.",
+"roles": [
+"protection"
+],
+"archetypes": [
+"voltron",
+"aggro",
+"tokens"
+],
+"power": 2,
+"confidence": 2,
+"unclear": [
+"c0 transform"
+]
+}
+}
+},
+"fountainport bell": {
+"tkey": "85dd4dee02fd",
+"okey": "1f61f2b70be8",
+"date": "2026-10-26",
+"ora": {
+"id": "c003",
+"function": "Fetches a basic to the top of the library; sacrifice to draw",
+"roles": [
 "cantrip",
-"artifact"
+"filler"
+],
+"archetypes": [
+"artifacts",
+"card_draw",
+"colorless"
+],
+"power": 1,
+"confidence": 3,
+"unclear": []
+},
+"tag": {
+"1": {
+"id": "c003",
+"function": "Artifact that fetches a basic land on entering, then sacrifices to draw.",
+"roles": [
+"fetch",
+"cantrip"
 ],
 "archetypes": [
 "ramp",
@@ -2262,76 +1740,55 @@
 "artifacts"
 ],
 "power": 2,
-"confidence": 3,
-"unclear": [
-"tutor_dest:library"
-]
+"confidence": 4,
+"unclear": []
 },
 "2": {
-"id": "c030",
-"function": "Artifact that fetches a basic land on ETB, sacrifice for 1 to draw a card.",
+"id": "c003",
+"function": "Cheap artifact fetches a basic land on entering, later sacrificed to draw a card.",
 "roles": [
 "ramp",
 "cantrip",
 "fixing"
 ],
 "archetypes": [
-"ramp",
 "colorless",
+"ramp",
 "artifacts"
 ],
 "power": 2,
-"confidence": 3,
-"unclear": [
-"tutor_dest:library"
-]
-},
-"3": {
-"id": "c030",
-"function": "Artifact fetching a basic land to library on ETB; sacrifice to draw a card.",
-"roles": [
-"cantrip",
-"artifact",
-"draw"
-],
-"archetypes": [
-"colorless",
-"artifacts",
-"ramp"
-],
-"power": 2,
-"confidence": 3,
+"confidence": 4,
 "unclear": []
 }
 }
 },
 "alms collector": {
-"tkey": "d0cc5dc86155",
-"okey": "03bb8d625722",
+"tkey": "e2a7663647fb",
+"okey": "2e7367ff64e3",
 "date": "2026-10-26",
 "ora": {
-"id": "c031",
-"function": "Flash creature that turns opponents' multi-card draws into symmetrical single draws.",
+"id": "c015",
+"function": "Flash body that limits opponent card draw",
 "roles": [
 "creature",
 "defense"
 ],
 "archetypes": [
 "group_hug",
-"stax",
-"control"
+"control",
+"card_draw"
 ],
 "power": 2,
-"confidence": 4,
+"confidence": 3,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c031",
-"function": "Flash Cat Cleric that replaces drawing cards with a different draw effect.",
+"id": "c015",
+"function": "Flash Cat Cleric that changes how card drawing works.",
 "roles": [
-"draw_engine",
-"creature"
+"creature",
+"draw"
 ],
 "archetypes": [
 "card_draw",
@@ -2341,113 +1798,56 @@
 "power": 2,
 "confidence": 2,
 "unclear": [
-"replace:drawcards_to_draw"
+"c1 replace:drawcards_to_draw"
 ]
 },
 "2": {
-"id": "c031",
-"function": "Flash Cat Cleric that modifies your card draws.",
+"id": "c015",
+"function": "Flash Cat Cleric that alters card draw replacement effects.",
 "roles": [
-"draw",
-"creature"
+"creature",
+"draw_engine"
 ],
 "archetypes": [
 "card_draw",
 "wheels",
-"control"
-],
-"power": 2,
-"confidence": 1,
-"unclear": [
-"replace:drawcards_to_draw"
-]
-},
-"3": {
-"id": "c031",
-"function": "Flash cat cleric with a draw replacement effect.",
-"roles": [
-"draw",
-"creature"
-],
-"archetypes": [
-"card_draw",
-"lifegain",
-"control"
+"group_hug"
 ],
 "power": 2,
 "confidence": 2,
 "unclear": [
-"replace:drawcards_to_draw"
+"c1 replace:drawcards_to_draw"
 ]
 }
 }
 },
 "solitary sanctuary": {
-"tkey": "0ead047447c5",
-"okey": "39fbdf2a0ccb",
+"tkey": "304e794919f4",
+"okey": "db23a6149107",
 "date": "2026-10-26",
 "ora": {
-"id": "c032",
-"function": "Taps and stuns an opposing creature; grows your creature when you tap opposing ones.",
+"id": "c016",
+"function": "Taps and stuns a creature, grows yours when you tap",
 "roles": [
-"interaction",
-"pump"
+"engine",
+"answer"
 ],
 "archetypes": [
 "counters",
-"aggro",
-"control"
+"control",
+"aggro"
 ],
 "power": 2,
 "confidence": 3,
-"unclear": [
-"Whenever you tap an untapped creature an opponent controls"
-]
+"unclear": []
 },
 "tag": {
 "1": {
-"id": "c032",
-"function": "Enchantment: stuns an opponent's creature on entry and puts +1/+1 counters on yours.",
+"id": "c016",
+"function": "Enchantment stuns an opposing creature; your creature gets +1/+1 counter on opponent trigger.",
 "roles": [
 "interaction",
 "engine"
-],
-"archetypes": [
-"counters",
-"tokens",
-"control"
-],
-"power": 3,
-"confidence": 2,
-"unclear": [
-"trigger_filter:opp_control"
-]
-},
-"2": {
-"id": "c032",
-"function": "Enchantment stuns an opposing creature on ETB; grows your creature when opponents' stuff triggers.",
-"roles": [
-"interaction",
-"engine"
-],
-"archetypes": [
-"counters",
-"control",
-"tokens"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"counter:stun",
-"trigger_filter:opp_control"
-]
-},
-"3": {
-"id": "c032",
-"function": "Enchantment stunning an opponent creature on ETB and growing your creature when triggered.",
-"roles": [
-"removal",
-"enabler"
 ],
 "archetypes": [
 "counters",
@@ -2457,73 +1857,56 @@
 "power": 3,
 "confidence": 3,
 "unclear": [
-"trigger_filter:opp_control"
+"c2 trigger"
+]
+},
+"2": {
+"id": "c016",
+"function": "Enchantment stunning an opposing creature on entering, grows your creature when opponents act.",
+"roles": [
+"interaction",
+"engine"
+],
+"archetypes": [
+"counters",
+"control",
+"tokens"
+],
+"power": 3,
+"confidence": 3,
+"unclear": [
+"c2 trigger_filter:opp_control"
 ]
 }
 }
 },
 "trostani's judgment": {
-"tkey": "db9a7b9c11b1",
-"okey": "489590c46400",
+"tkey": "8102f78f81f9",
+"okey": "c795a10a270e",
 "date": "2026-10-26",
 "ora": {
-"id": "c033",
-"function": "Exiles target creature and populates, copying a token you control.",
+"id": "c040",
+"function": "Exiles a creature, then copies a token",
 "roles": [
 "removal",
-"copy",
-"generator"
+"copy"
 ],
 "archetypes": [
 "tokens",
 "control",
-"superfriends"
+"counters"
 ],
-"power": 4,
-"confidence": 5,
+"power": 3,
+"confidence": 4,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c033",
-"function": "Instant that exiles a target creature and makes a token copy.",
+"id": "c040",
+"function": "Six-mana instant exiles a creature and makes a copy token.",
 "roles": [
 "removal",
 "copy"
-],
-"archetypes": [
-"control",
-"tokens",
-"blink"
-],
-"power": 3,
-"confidence": 2,
-"unclear": [
-"token_type:copy"
-]
-},
-"2": {
-"id": "c033",
-"function": "Instant exiles target creature, its controller or you gets a token copy.",
-"roles": [
-"removal",
-"copy"
-],
-"archetypes": [
-"control",
-"tokens",
-"chaos"
-],
-"power": 3,
-"confidence": 2,
-"unclear": []
-},
-"3": {
-"id": "c033",
-"function": "Instant exiles target creature; its controller gets a token copy.",
-"roles": [
-"removal",
-"answer"
 ],
 "archetypes": [
 "control",
@@ -2532,68 +1915,55 @@
 ],
 "power": 3,
 "confidence": 3,
-"unclear": []
+"unclear": [
+"clone detail"
+]
+},
+"2": {
+"id": "c040",
+"function": "Instant exiling a creature; its controller gets a copy token.",
+"roles": [
+"removal",
+"interaction"
+],
+"archetypes": [
+"control",
+"chaos",
+"tokens"
+],
+"power": 2,
+"confidence": 3,
+"unclear": [
+"clone detail"
+]
 }
 }
 },
 "cathars' crusade": {
-"tkey": "c35a7e14c8b3",
-"okey": "a65a45770fb9",
+"tkey": "49887ee1ec65",
+"okey": "5674a1aa08dd",
 "date": "2026-10-26",
 "ora": {
-"id": "c034",
-"function": "Whenever a creature enters, put a +1/+1 counter on each creature you control.",
+"id": "c066",
+"function": "Counters on all your creatures whenever one enters",
 "roles": [
 "engine",
-"anthem",
-"payoff"
+"payoff",
+"anthem"
 ],
 "archetypes": [
 "tokens",
 "counters",
 "aggro"
 ],
-"power": 5,
+"power": 4,
 "confidence": 5,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c034",
-"function": "Enchantment: when a creature enters under your control, put +1/+1 counters on your creatures.",
-"roles": [
-"anthem",
-"engine"
-],
-"archetypes": [
-"tokens",
-"counters",
-"aggro"
-],
-"power": 4,
-"confidence": 3,
-"unclear": []
-},
-"2": {
-"id": "c034",
-"function": "Whenever a creature enters under your control, put +1/+1 counters on your creatures.",
-"roles": [
-"anthem",
-"payoff",
-"engine"
-],
-"archetypes": [
-"tokens",
-"counters",
-"aggro"
-],
-"power": 4,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c034",
-"function": "Enchantment putting a +1/+1 counter on each creature you control when a creature enters.",
+"id": "c066",
+"function": "Five-mana enchantment puts a +1/+1 counter on each of your creatures when one enters.",
 "roles": [
 "anthem",
 "engine",
@@ -2605,22 +1975,39 @@
 "proliferate"
 ],
 "power": 4,
-"confidence": 3,
+"confidence": 4,
+"unclear": []
+},
+"2": {
+"id": "c066",
+"function": "Enchantment putting +1/+1 counters on all your creatures whenever a creature enters.",
+"roles": [
+"anthem",
+"engine",
+"payoff"
+],
+"archetypes": [
+"tokens",
+"counters",
+"aggro"
+],
+"power": 4,
+"confidence": 4,
 "unclear": []
 }
 }
 },
 "kozilek's command": {
-"tkey": "020ad90df546",
-"okey": "408dcbd7ed07",
+"tkey": "a8c55a314298",
+"okey": "49bbf69e55a7",
 "date": "2026-10-26",
 "ora": {
-"id": "c035",
-"function": "Colorless modal spell making Spawn, drawing, exiling a creature or graveyard cards.",
+"id": "c043",
+"function": "Modal removal, scry/draw or Eldrazi Spawn",
 "roles": [
 "removal",
 "generator",
-"draw"
+"interaction"
 ],
 "archetypes": [
 "colorless",
@@ -2628,18 +2015,16 @@
 "tokens"
 ],
 "power": 3,
-"confidence": 3,
-"unclear": [
-"OFFPLAN: colorless spell needing colorless sources"
-]
+"confidence": 4,
+"unclear": []
 },
 "tag": {
 "1": {
-"id": "c035",
-"function": "Colorless Eldrazi instant with modes: spawn tokens, scry, draw, exile creature or graveyard cards.",
+"id": "c043",
+"function": "Colorless Eldrazi instant choosing two of: spawn tokens, scry, draw, exile, graveyard exile.",
 "roles": [
 "interaction",
-"draw",
+"cantrip",
 "removal"
 ],
 "archetypes": [
@@ -2652,109 +2037,75 @@
 "unclear": []
 },
 "2": {
-"id": "c035",
+"id": "c043",
 "function": "Eldrazi instant with modes: Spawn tokens, scry, draw, exile creature, exile graveyard cards.",
-"roles": [
-"removal",
-"card_adv",
-"generator"
-],
-"archetypes": [
-"colorless",
-"control",
-"tokens"
-],
-"power": 3,
-"confidence": 3,
-"unclear": []
-},
-"3": {
-"id": "c035",
-"function": "Eldrazi instant choosing two modes: spawn tokens, scry, draw, exile creature or graveyard cards.",
 "roles": [
 "removal",
 "draw",
 "generator"
 ],
 "archetypes": [
-"control",
 "colorless",
-"tokens"
+"tokens",
+"control"
 ],
 "power": 3,
-"confidence": 3,
+"confidence": 4,
 "unclear": []
 }
 }
 },
 "angelic gift": {
-"tkey": "cbf402688cba",
-"okey": "8983d8c59fa4",
+"tkey": "c81f7a4982cf",
+"okey": "7006ae92a040",
 "date": "2026-10-26",
 "ora": {
-"id": "c036",
-"function": "Aura granting flying; draws a card on entry.",
-"roles": [
-"cantrip",
-"evasion",
-"cheap_ench"
-],
-"archetypes": [
-"voltron",
-"enchantress",
-"aggro"
-],
-"power": 2,
-"confidence": 4,
-"unclear": []
-},
-"tag": {
-"1": {
-"id": "c036",
-"function": "Aura giving flying to a creature and drawing a card on entry.",
-"roles": [
-"cantrip",
-"evasion",
-"attach"
-],
-"archetypes": [
-"voltron",
-"enchantress",
-"aggro"
-],
-"power": 2,
-"confidence": 4,
-"unclear": []
-},
-"2": {
-"id": "c036",
-"function": "Aura that draws a card on ETB and grants flying to enchanted creature.",
+"id": "c044",
+"function": "Aura giving flying; draws a card",
 "roles": [
 "cantrip",
 "attach",
 "evasion"
 ],
 "archetypes": [
-"enchantress",
 "voltron",
-"tokens"
+"card_draw",
+"aggro"
 ],
-"power": 2,
+"power": 1,
 "confidence": 4,
 "unclear": []
 },
-"3": {
-"id": "c036",
-"function": "Aura giving flying to enchanted creature and drawing a card on ETB.",
+"tag": {
+"1": {
+"id": "c044",
+"function": "Cheap Aura draws a card and grants flying.",
 "roles": [
-"cantrip",
 "evasion",
+"cantrip",
 "attach"
 ],
 "archetypes": [
 "voltron",
 "enchantress",
 "tokens"
+],
+"power": 2,
+"confidence": 4,
+"unclear": []
+},
+"2": {
+"id": "c044",
+"function": "Cheap Aura granting flying and drawing a card.",
+"roles": [
+"cantrip",
+"attach",
+"evasion"
+],
+"archetypes": [
+"voltron",
+"enchantress",
+"aggro"
 ],
 "power": 2,
 "confidence": 4,
@@ -2763,16 +2114,34 @@
 }
 },
 "unquestioned authority": {
-"tkey": "11a7f89c8cc6",
-"okey": "21b5089fa195",
+"tkey": "06db0135c36b",
+"okey": "c4361c3a2591",
 "date": "2026-10-26",
 "ora": {
-"id": "c037",
-"function": "Aura granting protection from creatures; draws a card on entry.",
+"id": "c045",
+"function": "Aura giving protection from creatures; draws a card",
 "roles": [
 "cantrip",
 "protection",
-"cheap_ench"
+"attach"
+],
+"archetypes": [
+"voltron",
+"card_draw",
+"control"
+],
+"power": 1,
+"confidence": 4,
+"unclear": []
+},
+"tag": {
+"1": {
+"id": "c045",
+"function": "Aura draws a card and grants protection from a color.",
+"roles": [
+"protection",
+"cantrip",
+"attach"
 ],
 "archetypes": [
 "voltron",
@@ -2780,13 +2149,12 @@
 "control"
 ],
 "power": 2,
-"confidence": 4,
+"confidence": 3,
 "unclear": []
 },
-"tag": {
-"1": {
-"id": "c037",
-"function": "Aura granting protection to a creature and drawing a card on entry.",
+"2": {
+"id": "c045",
+"function": "Aura granting protection and drawing a card on entering.",
 "roles": [
 "cantrip",
 "protection",
@@ -2796,40 +2164,6 @@
 "voltron",
 "enchantress",
 "aggro"
-],
-"power": 2,
-"confidence": 4,
-"unclear": []
-},
-"2": {
-"id": "c037",
-"function": "Aura that draws a card on ETB and grants protection to enchanted creature.",
-"roles": [
-"cantrip",
-"attach",
-"protection"
-],
-"archetypes": [
-"enchantress",
-"voltron",
-"card_draw"
-],
-"power": 2,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c037",
-"function": "Aura granting protection to enchanted creature and drawing a card on ETB.",
-"roles": [
-"cantrip",
-"protection",
-"attach"
-],
-"archetypes": [
-"voltron",
-"enchantress",
-"control"
 ],
 "power": 2,
 "confidence": 4,
@@ -2838,19 +2172,19 @@
 }
 },
 "bond of discipline": {
-"tkey": "1842e5dac663",
-"okey": "91a670d567a8",
+"tkey": "0f5036bb9c8b",
+"okey": "73d74aa45f3d",
 "date": "2026-10-26",
 "ora": {
-"id": "c038",
-"function": "Taps all opposing creatures and gives your creatures lifelink; alpha strike enabler.",
+"id": "c004",
+"function": "Taps all opposing creatures; yours gain lifelink",
 "roles": [
 "finisher",
-"enabler"
+"pump"
 ],
 "archetypes": [
-"tokens",
 "aggro",
+"tokens",
 "lifegain"
 ],
 "power": 3,
@@ -2859,79 +2193,59 @@
 },
 "tag": {
 "1": {
-"id": "c038",
-"function": "Sorcery: opponents' creatures get lifelink-tap effect while yours gain lifelink until end of turn.",
+"id": "c004",
+"function": "Opponents' creatures tap down, your creatures gain lifelink until end of turn.",
 "roles": [
-"pump",
-"spell"
+"finisher",
+"pump"
 ],
 "archetypes": [
-"lifegain",
 "tokens",
+"lifegain",
 "aggro"
 ],
-"power": 2,
-"confidence": 2,
+"power": 3,
+"confidence": 3,
 "unclear": [
-"tap_down",
-"c1 lifelink on opp creatures"
+"tap_down"
 ]
 },
 "2": {
-"id": "c038",
-"function": "Sorcery giving your creatures lifelink and opponents' creatures tapped down this turn.",
+"id": "c004",
+"function": "Sorcery tapping opposing creatures while your creatures gain lifelink for the turn.",
 "roles": [
-"pump",
-"enabler"
+"finisher",
+"pump"
 ],
 "archetypes": [
-"lifegain",
-"aggro",
-"tokens"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"c1 lifelink on opponents"
-]
-},
-"3": {
-"id": "c038",
-"function": "Sorcery tapping/lifelink effects: your creatures gain lifelink until end of turn.",
-"roles": [
-"enabler",
-"defense"
-],
-"archetypes": [
-"lifegain",
 "tokens",
-"aggro"
+"aggro",
+"lifegain"
 ],
-"power": 2,
-"confidence": 2,
+"power": 3,
+"confidence": 3,
 "unclear": [
-"tap_down",
-"c1:lifelink lifegain on opp creatures"
+"tap_down detail"
 ]
 }
 }
 },
 "goldnight commander": {
-"tkey": "2e8433663f8e",
-"okey": "7bdf4aadfbd2",
+"tkey": "76bbb6df3c8e",
+"okey": "6622a398e9b9",
 "date": "2026-10-26",
 "ora": {
-"id": "c039",
-"function": "Whenever another creature enters, team gets +1/+1 until end of turn.",
+"id": "c038",
+"function": "Team +1/+1 whenever another creature enters",
 "roles": [
-"pump",
-"trigger",
-"creature"
+"creature",
+"anthem",
+"payoff"
 ],
 "archetypes": [
 "tokens",
 "aggro",
-"tribal"
+"legends_matter"
 ],
 "power": 3,
 "confidence": 4,
@@ -2939,27 +2253,10 @@
 },
 "tag": {
 "1": {
-"id": "c039",
-"function": "Human Cleric Soldier: when another creature enters, your creatures get +1/+1 until end of turn.",
+"id": "c038",
+"function": "Human Cleric Soldier pumps your creatures +1/+1 when a creature enters.",
 "roles": [
-"pump",
-"engine",
-"creature"
-],
-"archetypes": [
-"tokens",
-"tribal",
-"aggro"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"2": {
-"id": "c039",
-"function": "Human Cleric; whenever another creature enters, your creatures get +1/+1 until end of turn.",
-"roles": [
-"pump",
+"anthem",
 "payoff",
 "creature"
 ],
@@ -2972,13 +2269,13 @@
 "confidence": 4,
 "unclear": []
 },
-"3": {
-"id": "c039",
-"function": "Human cleric; when another creature enters, creatures you control get +1/+1 until end of turn.",
+"2": {
+"id": "c038",
+"function": "Human Cleric Soldier pumping your team +1/+1 when other creatures enter.",
 "roles": [
-"pump",
-"lord",
-"creature"
+"anthem",
+"creature",
+"payoff"
 ],
 "archetypes": [
 "tokens",
@@ -2992,71 +2289,32 @@
 }
 },
 "trial of solidarity": {
-"tkey": "b6aab43698c9",
-"okey": "2ffa06aab0ad",
+"tkey": "88fe1478002e",
+"okey": "41d03259ca4d",
 "date": "2026-10-26",
 "ora": {
-"id": "c040",
-"function": "Team gets +2/+1 and vigilance until end of turn when it enters.",
+"id": "c048",
+"function": "One-shot +2/+1 and vigilance for the team",
 "roles": [
 "pump",
 "finisher"
 ],
 "archetypes": [
-"tokens",
 "aggro",
-"tribal"
+"tokens",
+"superfriends"
 ],
 "power": 2,
-"confidence": 4,
-"unclear": [
-"Cartouche return clause"
-]
+"confidence": 3,
+"unclear": []
 },
 "tag": {
 "1": {
-"id": "c040",
-"function": "Enchantment: ETB team +2/+1 and vigilance; later permanents entering can bounce.",
+"id": "c048",
+"function": "Enchantment gives creatures +2/+1 and vigilance on entering; bounces on entry.",
 "roles": [
 "pump",
-"spell"
-],
-"archetypes": [
-"tokens",
-"aggro",
-"blink"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"c2 remove:bounce",
-"bounce"
-]
-},
-"2": {
-"id": "c040",
-"function": "Enchantment ETB pumps team +2/+1 with vigilance; later entering permanents trigger a bounce.",
-"roles": [
-"pump",
-"enabler"
-],
-"archetypes": [
-"blink",
-"aggro",
-"tokens"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"c2.2:remove:bounce"
-]
-},
-"3": {
-"id": "c040",
-"function": "Enchantment pumping team +2/+1 with vigilance on ETB; bounces on creature entering.",
-"roles": [
-"pump",
-"enabler"
+"engine"
 ],
 "archetypes": [
 "tokens",
@@ -3066,27 +2324,46 @@
 "power": 2,
 "confidence": 2,
 "unclear": [
-"c2.2:remove:bounce target"
+"c2 bounce target",
+"bounce"
+]
+},
+"2": {
+"id": "c048",
+"function": "Enchantment pumping team +2/+1 and vigilance on entering; bounces on permanent entering.",
+"roles": [
+"pump",
+"engine"
+],
+"archetypes": [
+"tokens",
+"blink",
+"aggro"
+],
+"power": 2,
+"confidence": 2,
+"unclear": [
+"c2 remove:bounce scope"
 ]
 }
 }
 },
 "lossarnach captain": {
-"tkey": "f9d698ad1f54",
-"okey": "95483f1c5448",
+"tkey": "f3937d9411ca",
+"okey": "9c42ab28edbe",
 "date": "2026-10-26",
 "ora": {
-"id": "c041",
-"function": "First strike creature making a Human Soldier each upkeep and tapping blockers on Human ETB.",
+"id": "c039",
+"function": "Taps blockers; makes a Human token every upkeep",
 "roles": [
-"generator",
 "creature",
-"enabler"
+"generator",
+"etb_creature"
 ],
 "archetypes": [
 "tokens",
-"tribal",
-"aggro"
+"aggro",
+"tribal"
 ],
 "power": 4,
 "confidence": 5,
@@ -3094,12 +2371,11 @@
 },
 "tag": {
 "1": {
-"id": "c041",
-"function": "First strike Human Soldier: makes a 1/1 Human Soldier token each upkeep; triggers on creature ETB.",
+"id": "c039",
+"function": "First strike Human Soldier makes a 1/1 Human Soldier each upkeep.",
 "roles": [
 "generator",
-"creature",
-"engine"
+"creature"
 ],
 "archetypes": [
 "tokens",
@@ -3109,15 +2385,15 @@
 "power": 4,
 "confidence": 3,
 "unclear": [
-"c1.2 target opp creature"
+"c1 entry trigger effect"
 ]
 },
 "2": {
-"id": "c041",
-"function": "First strike Human Soldier; makes a 1/1 Human Soldier each upkeep, punishes opposing creature on creature ETB.",
+"id": "c039",
+"function": "First strike Human Soldier making a Human Soldier token each upkeep, with creature-enter trigger.",
 "roles": [
-"generator",
 "creature",
+"generator",
 "engine"
 ],
 "archetypes": [
@@ -3128,37 +2404,18 @@
 "power": 4,
 "confidence": 3,
 "unclear": [
-"c1.2 effect"
-]
-},
-"3": {
-"id": "c041",
-"function": "First strike human soldier making a 1/1 Human Soldier each upkeep; reacts to creatures entering.",
-"roles": [
-"generator",
-"creature",
-"engine"
-],
-"archetypes": [
-"tokens",
-"tribal",
-"aggro"
-],
-"power": 4,
-"confidence": 3,
-"unclear": [
-"c1.2 effect unclear"
+"c1.2 effect on opp creature"
 ]
 }
 }
 },
 "lightning greaves": {
-"tkey": "719bf21897da",
-"okey": "204803c1741f",
+"tkey": "92a6be909135",
+"okey": "01501a67a6a2",
 "date": "2026-10-26",
 "ora": {
-"id": "c035",
-"function": "Equip 0 for haste and shroud; protects and hastes ETB creatures.",
+"id": "c050",
+"function": "Equip 0 haste and shroud",
 "roles": [
 "equipment",
 "protection",
@@ -3167,20 +2424,19 @@
 "archetypes": [
 "voltron",
 "equipment",
-"blink"
+"artifacts"
 ],
-"power": 4,
-"confidence": 5,
+"power": 3,
+"confidence": 4,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c035",
-"function": "Free-equip Equipment granting haste and shroud to the equipped creature.",
+"id": "c050",
+"function": "Free-equip Equipment granting haste and shroud.",
 "roles": [
 "equipment",
-"haste",
-"protection"
+"haste"
 ],
 "archetypes": [
 "equipment",
@@ -3192,24 +2448,8 @@
 "unclear": []
 },
 "2": {
-"id": "c035",
-"function": "Equipment with equip 0 granting haste and shroud to equipped creature.",
-"roles": [
-"equipment",
-"haste"
-],
-"archetypes": [
-"equipment",
-"aggro",
-"colorless"
-],
-"power": 2,
-"confidence": 3,
-"unclear": []
-},
-"3": {
-"id": "c035",
-"function": "Equipment with equip 0 granting haste and shroud.",
+"id": "c050",
+"function": "Free-equip equipment granting haste and shroud.",
 "roles": [
 "equipment",
 "haste",
@@ -3227,184 +2467,147 @@
 }
 },
 "meteorite": {
-"tkey": "ded880a8a219",
-"okey": "57e5c48c84d0",
+"tkey": "39999380c778",
+"okey": "bcf83ee18c51",
 "date": "2026-10-26",
 "ora": {
-"id": "c006",
-"function": "Artifact that shocks any target on entering, then taps for any colour.",
+"id": "c031",
+"function": "Two damage on entering; later a mana rock",
 "roles": [
-"mana",
 "ramp",
-"removal"
+"damage",
+"mana"
 ],
 "archetypes": [
 "ramp",
 "artifacts",
-"burn"
+"big_mana"
 ],
-"power": 3,
+"power": 2,
 "confidence": 4,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c006",
-"function": "Colorless mana rock that pings any target for 2 on entering and taps for any color.",
+"id": "c031",
+"function": "Five-mana artifact deals 2 damage to any target and taps for any color.",
 "roles": [
-"ramp",
-"fixing",
-"damage"
-],
-"archetypes": [
-"ramp",
-"colorless",
-"artifacts"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"2": {
-"id": "c006",
-"function": "Mana rock that deals 2 damage to any target on entering and taps for any color.",
-"roles": [
-"ramp",
 "mana",
-"removal"
-],
-"archetypes": [
-"artifacts",
-"ramp",
-"colorless"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c006",
-"function": "Artifact mana rock that pings any target for 2 when it enters.",
-"roles": [
-"ramp",
-"removal",
-"mana"
+"damage",
+"artifact"
 ],
 "archetypes": [
 "colorless",
 "artifacts",
 "ramp"
 ],
-"power": 3,
+"power": 2,
+"confidence": 4,
+"unclear": []
+},
+"2": {
+"id": "c031",
+"function": "Five-mana any-color rock dealing 2 damage to any target on entering.",
+"roles": [
+"ramp",
+"fixing",
+"damage"
+],
+"archetypes": [
+"colorless",
+"artifacts",
+"ramp"
+],
+"power": 2,
 "confidence": 4,
 "unclear": []
 }
 }
 },
 "happily ever after": {
-"tkey": "64db05e856ac",
-"okey": "b48081c6c523",
+"tkey": "9956762da5db",
+"okey": "bb57224aaf51",
 "date": "2026-10-26",
 "ora": {
-"id": "c044",
-"function": "Each player gains 5 life and draws; five-color alternate win condition.",
+"id": "c052",
+"function": "Group lifegain and draw; five-colour win condition",
 "roles": [
-"win",
+"draw",
+"filler"
+],
+"archetypes": [
+"group_hug",
+"lifegain",
+"chaos"
+],
+"power": 1,
+"confidence": 4,
+"unclear": []
+},
+"tag": {
+"1": {
+"id": "c052",
+"function": "Each player gains 5 life and draws; upkeep trigger effect unclear.",
+"roles": [
+"card_adv",
 "draw"
 ],
 "archetypes": [
 "group_hug",
 "lifegain",
-"combo"
-],
-"power": 1,
-"confidence": 4,
-"unclear": [
-"OFFPLAN: five-color win condition impossible in mono-colored deck"
-]
-},
-"tag": {
-"1": {
-"id": "c044",
-"function": "Enchantment: each player gains 5 life and draws a card on entry, with an upkeep trigger.",
-"roles": [
-"draw",
-"enabler"
-],
-"archetypes": [
-"group_hug",
-"lifegain",
-"enchantress"
+"wheels"
 ],
 "power": 2,
-"confidence": 2,
+"confidence": 3,
 "unclear": [
-"c2 trigger:upkeep"
+"c2 upkeep effect"
 ]
 },
 "2": {
-"id": "c044",
-"function": "Enchantment: each player gains 5 life and draws on ETB; has an upkeep trigger.",
-"roles": [
-"card_adv",
-"enabler"
-],
-"archetypes": [
-"group_hug",
-"lifegain",
-"enchantress"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"c2 trigger:upkeep"
-]
-},
-"3": {
-"id": "c044",
-"function": "Enchantment giving each player 5 life and a card on ETB, with an upkeep trigger.",
+"id": "c052",
+"function": "Enchantment: each player gains 5 life and draws a card, with upkeep trigger.",
 "roles": [
 "draw",
-"enabler"
+"group_hug"
 ],
 "archetypes": [
 "group_hug",
 "lifegain",
-"enchantress"
+"card_draw"
 ],
 "power": 2,
 "confidence": 2,
 "unclear": [
-"c2:trigger:upkeep effect missing"
+"c2 trigger:upkeep payload"
 ]
 }
 }
 },
 "inspiring overseer": {
-"tkey": "00733d66eeea",
-"okey": "73adc0c9e8c2",
+"tkey": "b7883ffb16c1",
+"okey": "c7849fe3ca70",
 "date": "2026-10-26",
 "ora": {
-"id": "c045",
-"function": "Flying creature that gains 1 life and draws a card on entry.",
+"id": "c053",
+"function": "Flyer that gains 1 and draws a card",
 "roles": [
-"draw",
 "creature",
-"etb_creature"
+"draw",
+"evasion"
 ],
 "archetypes": [
 "card_draw",
 "lifegain",
-"tokens"
+"aggro"
 ],
-"power": 3,
+"power": 4,
 "confidence": 5,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c045",
-"function": "Flying Angel Cleric: gain 1 life and draw a card on entry.",
+"id": "c053",
+"function": "Flying Angel Cleric gains 1 life and draws a card on entering.",
 "roles": [
 "etb_creature",
 "cantrip",
@@ -3420,8 +2623,8 @@
 "unclear": []
 },
 "2": {
-"id": "c045",
-"function": "Flying Angel Cleric; ETB gain 1 life and draw a card.",
+"id": "c053",
+"function": "Flying Angel Cleric gaining 1 life and drawing a card on entering.",
 "roles": [
 "creature",
 "cantrip",
@@ -3430,24 +2633,7 @@
 "archetypes": [
 "lifegain",
 "card_draw",
-"blink"
-],
-"power": 3,
-"confidence": 5,
-"unclear": []
-},
-"3": {
-"id": "c045",
-"function": "Flying angel cleric; ETB gain 1 life and draw a card.",
-"roles": [
-"etb_creature",
-"cantrip",
-"creature"
-],
-"archetypes": [
-"lifegain",
-"card_draw",
-"blink"
+"tribal"
 ],
 "power": 3,
 "confidence": 4,
@@ -3456,16 +2642,15 @@
 }
 },
 "sol ring": {
-"tkey": "d4ab9b71fcfc",
-"okey": "67cf961525e7",
+"tkey": "e2e0af08ce9f",
+"okey": "66db28878922",
 "date": "2026-10-26",
 "ora": {
-"id": "c046",
-"function": "Tap for two colorless mana.",
+"id": "c054",
+"function": "Taps for two colourless",
 "roles": [
 "ramp",
-"mana",
-"artifact"
+"mana"
 ],
 "archetypes": [
 "ramp",
@@ -3478,25 +2663,8 @@
 },
 "tag": {
 "1": {
-"id": "c046",
-"function": "Colorless mana rock that taps for two colorless mana.",
-"roles": [
-"ramp",
-"mana",
-"artifact"
-],
-"archetypes": [
-"colorless",
-"big_mana",
-"ramp"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"2": {
-"id": "c046",
-"function": "Colorless mana rock tapping for two colorless mana.",
+"id": "c054",
+"function": "One-mana rock tapping for two colorless.",
 "roles": [
 "ramp",
 "mana"
@@ -3504,24 +2672,23 @@
 "archetypes": [
 "colorless",
 "ramp",
-"big_mana"
+"artifacts"
 ],
 "power": 3,
 "confidence": 5,
 "unclear": []
 },
-"3": {
-"id": "c046",
-"function": "Artifact mana rock tapping for two colorless.",
+"2": {
+"id": "c054",
+"function": "One-mana artifact tapping for two colorless mana.",
 "roles": [
 "ramp",
-"mana",
-"artifact"
+"mana"
 ],
 "archetypes": [
 "colorless",
 "ramp",
-"big_mana"
+"artifacts"
 ],
 "power": 3,
 "confidence": 4,
@@ -3530,73 +2697,54 @@
 }
 },
 "guide of souls": {
-"tkey": "e230bacfd568",
-"okey": "5ad03835ab6c",
+"tkey": "f5c2ba8c177d",
+"okey": "9dcd8fda6efb",
 "date": "2026-10-26",
 "ora": {
-"id": "c047",
-"function": "Gains life and energy as creatures enter; spend energy to grant counters and flying.",
+"id": "c055",
+"function": "Gains life and energy as creatures enter; makes Angels",
 "roles": [
-"trigger",
-"pump"
+"creature",
+"engine",
+"payoff"
 ],
 "archetypes": [
 "lifegain",
-"tokens",
-"counters"
+"counters",
+"tokens"
 ],
-"power": 3,
+"power": 4,
 "confidence": 4,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c047",
-"function": "Human Cleric: gains life and energy on creature ETB; attacking puts counters and transforms into Angel.",
+"id": "c055",
+"function": "Human Cleric gains life on creature entry, puts counters on attackers, transforms to Angel.",
 "roles": [
-"engine",
-"creature",
-"payoff"
-],
-"archetypes": [
-"tokens",
-"lifegain",
-"counters"
-],
-"power": 4,
-"confidence": 3,
-"unclear": [
-"counter:energy",
-"c2.3 target_filter:attacking"
-]
-},
-"2": {
-"id": "c047",
-"function": "Human Cleric; creatures entering gain life and energy; attacks with counters and transforms into Angel.",
-"roles": [
-"engine",
 "payoff",
-"creature"
+"creature",
+"engine"
 ],
 "archetypes": [
-"tokens",
+"counters",
 "lifegain",
-"counters"
+"tribal"
 ],
 "power": 3,
 "confidence": 3,
 "unclear": [
-"counter:energy",
-"c2.3 target_filter:attacking"
+"energy use",
+"c2 conditions"
 ]
 },
-"3": {
-"id": "c047",
-"function": "Human cleric gaining life and energy as creatures enter; attacks to add counters and transform.",
+"2": {
+"id": "c055",
+"function": "One-mana Human Cleric gaining life and energy when creatures enter, attacks to add counters and transform.",
 "roles": [
+"creature",
 "engine",
-"payoff",
-"creature"
+"payoff"
 ],
 "archetypes": [
 "counters",
@@ -3606,36 +2754,36 @@
 "power": 3,
 "confidence": 3,
 "unclear": [
-"c2.3/c2.4 target mix"
+"c2.3 attack targets",
+"c2.5 transform"
 ]
 }
 }
 },
 "kindly customer": {
-"tkey": "4df030da22f0",
-"okey": "1a5e368acd48",
+"tkey": "5c608d6e6bdf",
+"okey": "d87f75f9b7da",
 "date": "2026-10-26",
 "ora": {
-"id": "c048",
-"function": "Creature that draws a card on entering.",
+"id": "c056",
+"function": "Cheap body that draws a card",
 "roles": [
-"draw",
 "creature",
-"etb_creature"
+"cantrip"
 ],
 "archetypes": [
 "card_draw",
 "tokens",
-"blink"
+"lifegain"
 ],
 "power": 2,
-"confidence": 5,
+"confidence": 4,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c048",
-"function": "Human Citizen that draws a card when it enters.",
+"id": "c056",
+"function": "Human Citizen draws a card on entering.",
 "roles": [
 "etb_creature",
 "cantrip",
@@ -3651,34 +2799,17 @@
 "unclear": []
 },
 "2": {
-"id": "c048",
-"function": "Human Citizen that draws a card on ETB.",
+"id": "c056",
+"function": "Two-mana Human Citizen drawing a card on entering.",
 "roles": [
 "creature",
 "cantrip",
 "draw"
 ],
 "archetypes": [
-"card_draw",
 "tribal",
+"card_draw",
 "tokens"
-],
-"power": 2,
-"confidence": 5,
-"unclear": []
-},
-"3": {
-"id": "c048",
-"function": "Human citizen that draws a card on ETB.",
-"roles": [
-"cantrip",
-"etb_creature",
-"creature"
-],
-"archetypes": [
-"card_draw",
-"tribal",
-"blink"
 ],
 "power": 2,
 "confidence": 5,
@@ -3687,21 +2818,20 @@
 }
 },
 "skyclave apparition": {
-"tkey": "1ab017341d7f",
-"okey": "9ff207cb6f77",
+"tkey": "5b6a3c804d44",
+"okey": "4a2207ad4a45",
 "date": "2026-10-26",
 "ora": {
-"id": "c049",
-"function": "Exiles a nonland nontoken permanent with MV 4 or less; leaves an X/X token if it leaves.",
+"id": "c057",
+"function": "Exiles a nonland permanent of mana value 4 or less",
 "roles": [
-"removal",
-"answer",
-"creature"
+"creature",
+"removal"
 ],
 "archetypes": [
 "control",
-"blink",
-"superfriends"
+"tokens",
+"blink"
 ],
 "power": 4,
 "confidence": 5,
@@ -3709,41 +2839,8 @@
 },
 "tag": {
 "1": {
-"id": "c049",
-"function": "ETB exiles a nonland permanent cmc 4 or less; leaving makes a 1/1 Illusion token.",
-"roles": [
-"removal",
-"creature",
-"etb_creature"
-],
-"archetypes": [
-"tokens",
-"control",
-"blink"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"2": {
-"id": "c049",
-"function": "Exiles a cheap opposing nonland permanent on ETB; leaves a blue Illusion token when it leaves.",
-"roles": [
-"removal",
-"etb_creature"
-],
-"archetypes": [
-"control",
-"tokens",
-"blink"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c049",
-"function": "ETB exiles a cheap opposing nonland permanent; when it leaves, makes an Illusion token.",
+"id": "c057",
+"function": "Kor Spirit exiles an opposing nonland permanent mv 4 or less, leaves an Illusion token.",
 "roles": [
 "removal",
 "etb_creature",
@@ -3751,85 +2848,84 @@
 ],
 "archetypes": [
 "control",
+"blink",
+"tokens"
+],
+"power": 4,
+"confidence": 3,
+"unclear": [
+"x_x_illusion token"
+]
+},
+"2": {
+"id": "c057",
+"function": "Kor Spirit exiling an opposing nonland permanent mv 4 or less; leaves an Illusion token.",
+"roles": [
+"removal",
+"creature",
+"interaction"
+],
+"archetypes": [
+"control",
 "tokens",
 "blink"
 ],
 "power": 4,
 "confidence": 4,
-"unclear": []
+"unclear": [
+"token_type:x_x_illusion"
+]
 }
 }
 },
 "coveted jewel": {
-"tkey": "3c202efb01b6",
-"okey": "039cb2c81eda",
+"tkey": "7588bb5d2f9a",
+"okey": "1dd7384a58e7",
 "date": "2026-10-26",
 "ora": {
-"id": "c050",
-"function": "Draws three on entry, taps for three mana, but can be stolen by unblocked attackers.",
+"id": "c010",
+"function": "Draws three, taps for three mana, risks being stolen",
 "roles": [
 "ramp",
+"mana",
 "draw"
 ],
 "archetypes": [
 "big_mana",
-"group_hug",
+"ramp",
 "chaos"
 ],
-"power": 2,
-"confidence": 4,
-"unclear": [
-"Whenever creatures an opponent controls attack you and aren't blocked, that player gains control"
-]
+"power": 3,
+"confidence": 3,
+"unclear": []
 },
 "tag": {
 "1": {
-"id": "c050",
-"function": "Mana rock tapping for 3 mana of any colour; draws 3 on ETB, opponents may steal it.",
+"id": "c010",
+"function": "Six-mana artifact: draws three on entering, taps for mana, steals when opponents draw.",
 "roles": [
+"card_adv",
 "mana",
-"draw",
-"ramp"
+"engine"
 ],
 "archetypes": [
-"group_hug",
-"ramp",
-"colorless"
+"card_draw",
+"chaos",
+"artifacts"
 ],
 "power": 3,
 "confidence": 2,
 "unclear": [
-"steal_temp",
-"c3 trigger_filter:one_or_more",
-"OFFPLAN:colorless"
+"c3.3",
+"c2"
 ]
 },
 "2": {
-"id": "c050",
-"function": "Artifact mana rock tapping for three mana of any color; draws three on ETB and steals.",
+"id": "c010",
+"function": "Mana rock drawing three on entering, draws three more and steals when triggered.",
 "roles": [
 "ramp",
 "draw",
-"theft"
-],
-"archetypes": [
-"chaos",
-"card_draw",
-"colorless"
-],
-"power": 3,
-"confidence": 2,
-"unclear": [
-"steal_temp",
-"c3 trigger_filter:one_or_more"
-]
-},
-"3": {
-"id": "c050",
-"function": "Colorless artifact: draws three on ETB, taps for three mana, and steals when triggered.",
-"roles": [
-"draw",
-"mana",
 "card_adv"
 ],
 "archetypes": [
@@ -3837,30 +2933,29 @@
 "colorless",
 "chaos"
 ],
-"power": 4,
-"confidence": 2,
+"power": 3,
+"confidence": 3,
 "unclear": [
-"steal_temp",
 "c3 trigger_filter:one_or_more"
 ]
 }
 }
 },
 "absolver thrull": {
-"tkey": "807bdd63e4d6",
-"okey": "ed6c77c84da6",
+"tkey": "6d9d4d14c438",
+"okey": "69bac8f1d775",
 "date": "2026-10-26",
 "ora": {
-"id": "c051",
-"function": "Creature that destroys an enchantment on entry and again when it haunts a dying creature.",
+"id": "c059",
+"function": "Destroys an enchantment on enter and when haunted dies",
 "roles": [
-"answer",
-"creature"
+"creature",
+"answer"
 ],
 "archetypes": [
 "control",
-"graveyard",
-"blink"
+"aggro",
+"tokens"
 ],
 "power": 2,
 "confidence": 4,
@@ -3868,26 +2963,8 @@
 },
 "tag": {
 "1": {
-"id": "c051",
-"function": "Haunt creature; ETB and death effects haunt a target creature for value.",
-"roles": [
-"creature",
-"filler"
-],
-"archetypes": [
-"aristocrats",
-"sacrifice",
-"tokens"
-],
-"power": 2,
-"confidence": 2,
-"unclear": [
-"x group effect unknown"
-]
-},
-"2": {
-"id": "c051",
-"function": "Creature with haunt; triggers when it dies or enters.",
+"id": "c059",
+"function": "Thrull Cleric with haunt, triggering on death and entering.",
 "roles": [
 "creature",
 "filler"
@@ -3900,68 +2977,53 @@
 "power": 2,
 "confidence": 2,
 "unclear": [
-"x trigger:dies trigger:etb"
+"x effect",
+"haunt effect"
 ]
 },
-"3": {
-"id": "c051",
-"function": "Haunt creature that triggers on ETB and when it dies, giving repeated value.",
+"2": {
+"id": "c059",
+"function": "Thrull Cleric with haunt, triggering on death and entering.",
 "roles": [
 "creature",
-"etb_creature",
-"rebuy"
+"filler"
 ],
 "archetypes": [
 "aristocrats",
 "sacrifice",
-"blink"
+"graveyard"
 ],
 "power": 2,
 "confidence": 2,
 "unclear": [
-"x: trigger:dies trigger:etb effect unknown"
+"x trigger:dies trigger:etb effect unknown",
+"OFFPLAN: effect unknown"
 ]
 }
 }
 },
 "cloud key": {
-"tkey": "12b993497f67",
-"okey": "ae71c8547699",
+"tkey": "4497c96378c5",
+"okey": "d4123ed716fb",
 "date": "2026-10-26",
 "ora": {
-"id": "c059",
-"function": "Reduces cost of spells of one chosen type by one.",
-"roles": [
-"cost_reducer",
-"artifact"
-],
-"archetypes": [
-"artifacts",
-"spellslinger",
-"colorless"
-],
-"power": 2,
-"confidence": 4,
-"unclear": []
-},
-"tag": {
-"1": {
-"id": "c059",
-"function": "Artifact naming a card type; spells of that type cost one less.",
+"id": "c060",
+"function": "Cost reducer for one spell type",
 "roles": [
 "cost_reducer"
 ],
 "archetypes": [
-"colorless",
 "artifacts",
-"ramp"
+"spellslinger",
+"enchantress"
 ],
-"power": 2,
+"power": 3,
 "confidence": 3,
 "unclear": []
 },
-"2": {
-"id": "c059",
+"tag": {
+"1": {
+"id": "c060",
 "function": "Artifact choosing a card type; spells of that type cost one less.",
 "roles": [
 "cost_reducer",
@@ -3972,21 +3034,21 @@
 "artifacts",
 "tokens"
 ],
-"power": 2,
-"confidence": 3,
+"power": 3,
+"confidence": 4,
 "unclear": []
 },
-"3": {
-"id": "c059",
-"function": "Artifact reducing costs of spells of a chosen card type by one.",
+"2": {
+"id": "c060",
+"function": "Artifact reducing chosen card type spells by one generic mana.",
 "roles": [
 "cost_reducer",
-"artifact"
+"engine"
 ],
 "archetypes": [
-"artifacts",
 "colorless",
-"tokens"
+"artifacts",
+"ramp"
 ],
 "power": 3,
 "confidence": 4,
@@ -3995,92 +3057,20 @@
 }
 },
 "soul's attendant": {
-"tkey": "1ac83b7af4f6",
-"okey": "fe6a29a73c47",
+"tkey": "49cdea8c98d7",
+"okey": "562330cbfda5",
 "date": "2026-10-26",
 "ora": {
-"id": "c053",
-"function": "Gains 1 life whenever any creature enters.",
+"id": "c065",
+"function": "Gains life whenever another creature enters",
 "roles": [
-"trigger",
-"creature"
-],
-"archetypes": [
-"lifegain",
-"tokens",
-"group_hug"
-],
-"power": 2,
-"confidence": 4,
-"unclear": []
-},
-"tag": {
-"1": {
-"id": "c053",
-"function": "Whenever another creature enters, you may gain 1 life.",
-"roles": [
-"creature",
-"payoff"
-],
-"archetypes": [
-"lifegain",
-"tokens",
-"tribal"
-],
-"power": 2,
-"confidence": 4,
-"unclear": []
-},
-"2": {
-"id": "c053",
-"function": "Human Cleric that gains 1 life whenever another creature enters.",
-"roles": [
-"creature",
-"payoff"
-],
-"archetypes": [
-"lifegain",
-"tokens",
-"tribal"
-],
-"power": 2,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c053",
-"function": "Human Cleric that gains 1 life whenever another creature enters the battlefield.",
-"roles": [
-"creature",
 "engine",
 "payoff"
 ],
 "archetypes": [
 "lifegain",
 "tokens",
-"tribal"
-],
-"power": 3,
-"confidence": 4,
-"unclear": []
-}
-}
-},
-"thunderstaff": {
-"tkey": "8cec84f057cc",
-"okey": "ecabe00872ca",
-"date": "2026-10-26",
-"ora": {
-"id": "c032",
-"function": "Prevents 1 combat damage and pumps attackers +1/+0 for two.",
-"roles": [
-"pump",
-"defense"
-],
-"archetypes": [
-"tokens",
-"aggro",
-"artifacts"
+"counters"
 ],
 "power": 2,
 "confidence": 4,
@@ -4088,53 +3078,90 @@
 },
 "tag": {
 "1": {
-"id": "c032",
-"function": "Artifact that prevents damage while untapped and pumps attackers +1/+0 for mana.",
+"id": "c065",
+"function": "One-mana Human Cleric gains 1 life whenever a creature enters.",
 "roles": [
-"pump",
-"defense"
+"payoff",
+"creature"
 ],
 "archetypes": [
+"lifegain",
 "tokens",
-"aggro",
-"colorless"
+"tribal"
 ],
 "power": 2,
-"confidence": 2,
-"unclear": [
-"replace:damagedone_to_replacedamage"
-]
+"confidence": 4,
+"unclear": []
 },
 "2": {
-"id": "c032",
-"function": "Artifact that prevents damage while untapped and pumps attackers +1/+0 for mana.",
+"id": "c065",
+"function": "One-mana Human Cleric gaining 1 life whenever a creature enters.",
+"roles": [
+"creature",
+"payoff",
+"trigger"
+],
+"archetypes": [
+"lifegain",
+"tokens",
+"tribal"
+],
+"power": 2,
+"confidence": 4,
+"unclear": []
+}
+}
+},
+"thunderstaff": {
+"tkey": "13ea070dea6e",
+"okey": "a9e8995df18b",
+"date": "2026-10-26",
+"ora": {
+"id": "c062",
+"function": "Prevents 1 combat damage; pumps attackers",
+"roles": [
+"defense",
+"pump"
+],
+"archetypes": [
+"aggro",
+"stax",
+"tokens"
+],
+"power": 2,
+"confidence": 3,
+"unclear": []
+},
+"tag": {
+"1": {
+"id": "c062",
+"function": "Artifact that pumps attackers +1/+0 for 2; replaces damage while untapped.",
 "roles": [
 "pump",
-"protection",
 "artifact"
 ],
 "archetypes": [
-"aggro",
 "tokens",
+"aggro",
 "colorless"
 ],
 "power": 2,
 "confidence": 2,
 "unclear": [
-"replace:damagedone_to_replacedamage"
+"c1 replace"
 ]
 },
-"3": {
-"id": "c032",
-"function": "Artifact that replaces damage while untapped and pumps attackers +1/+0 for two mana.",
+"2": {
+"id": "c062",
+"function": "Artifact replacing damage while untapped; tap for attackers +1/+0.",
 "roles": [
 "pump",
 "defense"
 ],
 "archetypes": [
-"tokens",
 "aggro",
-"colorless"
+"tokens",
+"control"
 ],
 "power": 2,
 "confidence": 2,
@@ -4145,30 +3172,30 @@
 }
 },
 "gauntlet of power": {
-"tkey": "cbe0c280a993",
-"okey": "db8199f04803",
+"tkey": "5a553a01583b",
+"okey": "9c53dd428580",
 "date": "2026-10-26",
 "ora": {
-"id": "c055",
-"function": "Chosen color creatures get +1/+1; boosts basic land mana of that color.",
+"id": "c063",
+"function": "Anthem for a chosen colour and doubles basic land mana",
 "roles": [
 "anthem",
 "ramp",
-"lord"
+"mana"
 ],
 "archetypes": [
+"big_mana",
 "tokens",
-"ramp",
-"big_mana"
+"aggro"
 ],
-"power": 4,
+"power": 3,
 "confidence": 4,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c055",
-"function": "Choose a colour: creatures of that colour get +1/+1; taps for mana.",
+"id": "c063",
+"function": "Five-mana artifact gives chosen-color creatures +1/+1 and taps for mana.",
 "roles": [
 "anthem",
 "mana",
@@ -4176,19 +3203,20 @@
 ],
 "archetypes": [
 "tokens",
-"tribal",
-"colorless"
+"colorless",
+"aggro"
 ],
-"power": 3,
-"confidence": 3,
+"power": 4,
+"confidence": 4,
 "unclear": []
 },
 "2": {
-"id": "c055",
-"function": "Artifact choosing a color: creatures of that color get +1/+1, and it taps for mana.",
+"id": "c063",
+"function": "Five-mana artifact pumping creatures of a chosen color +1/+1 and producing mana.",
 "roles": [
 "anthem",
-"ramp"
+"ramp",
+"lord"
 ],
 "archetypes": [
 "tokens",
@@ -4198,58 +3226,40 @@
 "power": 3,
 "confidence": 4,
 "unclear": []
-},
-"3": {
-"id": "c055",
-"function": "Artifact mana rock choosing a color; creatures of that color get +1/+1.",
-"roles": [
-"anthem",
-"mana",
-"ramp"
-],
-"archetypes": [
-"tokens",
-"colorless",
-"ramp"
-],
-"power": 4,
-"confidence": 4,
-"unclear": []
 }
 }
 },
 "mosquito guard": {
-"tkey": "450d0596aa79",
-"okey": "a501c80c919c",
+"tkey": "69bc5878f755",
+"okey": "95f27daf97d0",
 "date": "2026-10-26",
 "ora": {
-"id": "c056",
-"function": "First strike creature that can be discarded for a +1/+1 counter.",
+"id": "c051",
+"function": "First strike body; reinforce as a trick",
 "roles": [
 "creature",
 "filler"
 ],
 "archetypes": [
-"counters",
 "aggro",
-"tokens"
+"tribal",
+"counters"
 ],
 "power": 1,
-"confidence": 4,
+"confidence": 3,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c056",
-"function": "First strike Soldier with reinforce to put a +1/+1 counter at instant speed.",
+"id": "c051",
+"function": "One-mana first strike Kithkin Soldier with reinforce for a +1/+1 counter.",
 "roles": [
 "creature",
-"pump",
 "filler"
 ],
 "archetypes": [
-"counters",
 "aggro",
+"counters",
 "tokens"
 ],
 "power": 2,
@@ -4257,33 +3267,16 @@
 "unclear": []
 },
 "2": {
-"id": "c056",
-"function": "First strike Kithkin Soldier with reinforce to put a +1/+1 counter at instant speed.",
+"id": "c051",
+"function": "One-mana first strike Kithkin Soldier with reinforce.",
 "roles": [
 "creature",
-"protection"
-],
-"archetypes": [
-"counters",
-"aggro",
-"tokens"
-],
-"power": 2,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c056",
-"function": "First strike Kithkin Soldier with reinforce to put a +1/+1 counter on a creature.",
-"roles": [
-"creature",
-"protection",
 "pump"
 ],
 "archetypes": [
-"counters",
 "aggro",
-"tokens"
+"counters",
+"tribal"
 ],
 "power": 2,
 "confidence": 4,
@@ -4292,183 +3285,157 @@
 }
 },
 "herald of anafenza": {
-"tkey": "4572db5d8a29",
-"okey": "b885c8d2f257",
+"tkey": "03790572451d",
+"okey": "78de8380deaf",
 "date": "2026-10-26",
 "ora": {
-"id": "c057",
-"function": "Outlast creature that makes a Warrior token each time you outlast.",
+"id": "c058",
+"function": "Outlast body that makes Warrior tokens",
 "roles": [
-"generator",
-"creature"
+"creature",
+"generator"
 ],
 "archetypes": [
 "tokens",
 "counters",
 "aggro"
 ],
-"power": 2,
+"power": 3,
 "confidence": 4,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c057",
-"function": "Outlast Human Soldier that makes a 1/1 Warrior token.",
+"id": "c058",
+"function": "One-mana Human Soldier with outlast that makes a 1/1 Warrior token.",
 "roles": [
+"generator",
 "creature",
-"etb_creature",
 "fodder"
 ],
 "archetypes": [
 "tokens",
-"counters",
-"tribal"
+"tribal",
+"counters"
 ],
 "power": 2,
 "confidence": 3,
-"unclear": []
+"unclear": [
+"c1.2 token trigger"
+]
 },
 "2": {
-"id": "c057",
-"function": "Human Soldier with outlast 2 that makes a 1/1 Warrior token.",
-"roles": [
-"etb_creature",
-"generator"
-],
-"archetypes": [
-"tokens",
-"counters",
-"tribal"
-],
-"power": 3,
-"confidence": 3,
-"unclear": []
-},
-"3": {
-"id": "c057",
-"function": "Human Soldier with outlast that makes a 1/1 Warrior token.",
+"id": "c058",
+"function": "One-mana Human Soldier with outlast, making a 1/1 Warrior token.",
 "roles": [
 "creature",
 "generator",
-"carrier"
+"fodder"
 ],
 "archetypes": [
 "tokens",
-"counters",
-"tribal"
+"tribal",
+"counters"
 ],
-"power": 3,
+"power": 2,
 "confidence": 3,
-"unclear": []
+"unclear": [
+"c1.2 token trigger missing"
+]
 }
 }
 },
 "commander sofia daguerre": {
-"tkey": "931d962472dd",
-"okey": "720129a15720",
+"tkey": "dbe8348f4503",
+"okey": "7d62ce7ebe7d",
 "date": "2026-10-26",
 "ora": {
-"id": "c058",
-"function": "Flash creature that destroys a legendary permanent, giving its controller a Junk token.",
+"id": "c068",
+"function": "Flash body that destroys a legendary permanent",
 "roles": [
-"removal",
 "creature",
-"answer"
+"answer",
+"interaction"
 ],
 "archetypes": [
-"control",
 "legends_matter",
-"blink"
+"control",
+"aggro"
 ],
 "power": 2,
-"confidence": 4,
-"unclear": [
-"Junk token"
-]
+"confidence": 3,
+"unclear": []
 },
 "tag": {
 "1": {
-"id": "c058",
-"function": "Flash legendary Human; ETB may destroy a legendary permanent and makes a Junk token.",
+"id": "c068",
+"function": "Flash legendary Human Pilot destroys a legendary permanent and makes a Junk token.",
+"roles": [
+"etb_creature",
+"removal",
+"generator"
+],
+"archetypes": [
+"tokens",
+"legends_matter",
+"tribal"
+],
+"power": 3,
+"confidence": 3,
+"unclear": [
+"junk_exileplay token"
+]
+},
+"2": {
+"id": "c068",
+"function": "Flash legendary Human Pilot destroying a legendary permanent and making a Junk token.",
 "roles": [
 "removal",
 "creature",
-"etb_creature"
-],
-"archetypes": [
-"tokens",
-"legends_matter",
-"control"
-],
-"power": 3,
-"confidence": 3,
-"unclear": []
-},
-"2": {
-"id": "c058",
-"function": "Flash legendary Human that destroys a legendary permanent and makes a Junk token.",
-"roles": [
-"removal",
 "generator"
 ],
 "archetypes": [
 "tokens",
-"legends_matter",
-"control"
+"tribal",
+"legends_matter"
 ],
 "power": 3,
 "confidence": 3,
-"unclear": []
-},
-"3": {
-"id": "c058",
-"function": "Flash legendary Human that destroys a legendary permanent and makes a Junk token.",
-"roles": [
-"removal",
-"etb_creature",
-"generator"
-],
-"archetypes": [
-"tokens",
-"legends_matter",
-"control"
-],
-"power": 3,
-"confidence": 3,
-"unclear": []
+"unclear": [
+"token_type:junk_exileplay"
+]
 }
 }
 },
 "hanged executioner": {
-"tkey": "e00211bb99dd",
-"okey": "aa9b69707d65",
+"tkey": "27c083a4dea1",
+"okey": "5f821776cc39",
 "date": "2026-10-26",
 "ora": {
-"id": "c059",
-"function": "Flying creature making a Spirit token; can exile itself to exile a creature.",
+"id": "c037",
+"function": "Flying body with a Spirit token and exile ability",
 "roles": [
+"creature",
 "removal",
-"generator",
-"creature"
+"generator"
 ],
 "archetypes": [
 "tokens",
 "control",
-"blink"
+"aggro"
 ],
 "power": 4,
-"confidence": 5,
+"confidence": 4,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c059",
-"function": "Flying Spirit makes a 1/1 flying Spirit on ETB; can exile itself to exile a creature.",
+"id": "c037",
+"function": "Flying Spirit makes a 1/1 flier on entering; can exile a creature for 3W.",
 "roles": [
-"etb_creature",
-"removal",
-"creature"
+"creature",
+"generator",
+"removal"
 ],
 "archetypes": [
 "tokens",
@@ -4476,65 +3443,47 @@
 "aggro"
 ],
 "power": 3,
-"confidence": 3,
+"confidence": 4,
 "unclear": [
 "x cost:exile"
 ]
 },
 "2": {
-"id": "c059",
-"function": "Flying Spirit that makes a 1/1 flying Spirit on ETB; can exile itself to exile a creature.",
+"id": "c037",
+"function": "Flying Spirit making a 1/1 flying Spirit on entering; pay to exile a creature.",
 "roles": [
-"etb_creature",
-"removal",
-"generator"
-],
-"archetypes": [
-"tokens",
-"control",
-"blink"
-],
-"power": 4,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c059",
-"function": "Flying Spirit makes a 1/1 flying Spirit on ETB; can exile itself to exile a creature.",
-"roles": [
+"creature",
 "generator",
-"removal",
-"creature"
+"removal"
 ],
 "archetypes": [
 "tokens",
 "control",
-"blink"
+"aggro"
 ],
-"power": 4,
-"confidence": 3,
+"power": 3,
+"confidence": 4,
 "unclear": [
-"x: cost:exile"
+"x cost:exile"
 ]
 }
 }
 },
 "chosen by heliod": {
-"tkey": "9005c71f4d86",
-"okey": "921496f7f0cc",
+"tkey": "2b6419e0f7b0",
+"okey": "bd0fdda84c55",
 "date": "2026-10-26",
 "ora": {
-"id": "c060",
-"function": "Aura giving +0/+2; draws a card on entry.",
+"id": "c064",
+"function": "Aura giving +0/+2; draws a card",
 "roles": [
 "cantrip",
-"cheap_ench",
-"protection"
+"attach"
 ],
 "archetypes": [
-"enchantress",
 "voltron",
-"control"
+"enchantress",
+"card_draw"
 ],
 "power": 1,
 "confidence": 4,
@@ -4542,50 +3491,32 @@
 },
 "tag": {
 "1": {
-"id": "c060",
-"function": "Aura giving +0/+2 and drawing a card on ETB.",
+"id": "c064",
+"function": "Cheap Aura gives +0/+2 and draws a card.",
 "roles": [
 "cantrip",
-"attach",
-"draw"
+"attach"
 ],
 "archetypes": [
+"voltron",
 "enchantress",
-"card_draw",
-"voltron"
+"card_draw"
 ],
-"power": 2,
+"power": 1,
 "confidence": 4,
 "unclear": []
 },
 "2": {
-"id": "c060",
-"function": "Aura giving +0/+2 to the enchanted creature and drawing a card on ETB.",
+"id": "c064",
+"function": "Aura giving +0/+2 and drawing a card on entering.",
 "roles": [
 "cantrip",
-"pump"
+"attach"
 ],
 "archetypes": [
-"enchantress",
 "voltron",
-"card_draw"
-],
-"power": 2,
-"confidence": 4,
-"unclear": []
-},
-"3": {
-"id": "c060",
-"function": "Aura giving +0/+2 to enchanted creature and drawing a card on ETB.",
-"roles": [
-"cantrip",
-"attach",
-"defense"
-],
-"archetypes": [
 "enchantress",
-"voltron",
-"card_draw"
+"aggro"
 ],
 "power": 2,
 "confidence": 4,
@@ -4594,49 +3525,30 @@
 }
 },
 "sandstone oracle": {
-"tkey": "463d08b46a34",
-"okey": "0cb700c8212a",
+"tkey": "80c4558a5189",
+"okey": "bd7fc22fd398",
 "date": "2026-10-26",
 "ora": {
-"id": "c061",
-"function": "Flying creature that draws cards equal to the opponent's hand-size lead.",
+"id": "c019",
+"function": "Seven-mana flyer that draws up to opponent hand size",
 "roles": [
-"draw",
 "creature",
-"etb_creature"
+"draw",
+"evasion"
 ],
 "archetypes": [
+"colorless",
 "card_draw",
-"aggro",
-"control"
+"big_mana"
 ],
 "power": 2,
-"confidence": 4,
+"confidence": 3,
 "unclear": []
 },
 "tag": {
 "1": {
-"id": "c061",
-"function": "Flying artifact creature that draws cards equal to a chosen player's hand size on ETB.",
-"roles": [
-"draw",
-"creature",
-"card_adv"
-],
-"archetypes": [
-"card_draw",
-"colorless",
-"control"
-],
-"power": 3,
-"confidence": 3,
-"unclear": [
-"scales:card_chosenctrl_in_hand"
-]
-},
-"2": {
-"id": "c061",
-"function": "Flying artifact Sphinx that draws cards equal to a chosen player's hand size on ETB.",
+"id": "c019",
+"function": "Seven-mana flying Sphinx draws cards equal to a chosen player's hand.",
 "roles": [
 "draw",
 "creature"
@@ -4648,94 +3560,37 @@
 ],
 "power": 3,
 "confidence": 3,
-"unclear": [
-"scales:card_chosenctrl_in_hand"
-]
+"unclear": []
 },
-"3": {
-"id": "c061",
-"function": "Flying artifact Sphinx that draws cards equal to a chosen player's hand size.",
+"2": {
+"id": "c019",
+"function": "Flying artifact Sphinx drawing cards equal to a chosen player's hand size.",
 "roles": [
-"draw",
 "creature",
-"card_adv"
+"draw"
 ],
 "archetypes": [
 "card_draw",
 "colorless",
-"control"
+"group_hug"
 ],
 "power": 3,
 "confidence": 3,
 "unclear": [
-"scales:card_chosenctrl_in_hand"
+"chosen player scope"
 ]
 }
 }
 },
 "teyo, lightshield expert": {
-"tkey": "90d0acaac6d6",
-"okey": "258ee2a0de6a",
+"tkey": "ebb21749d9b1",
+"okey": "367eb156027b",
 "date": "2026-10-26",
 "ora": {
-"id": "c062",
-"function": "Flash planeswalker-creature helper granting hexproof and a counter to a permanent.",
+"id": "c020",
+"function": "Flash protection and a counter for a permanent",
 "roles": [
 "protection",
-"enabler",
-"creature"
-],
-"archetypes": [
-"superfriends",
-"counters",
-"blink"
-],
-"power": 2,
-"confidence": 3,
-"unclear": [
-"loyalty counter on planeswalker"
-]
-},
-"tag": {
-"1": {
-"id": "c062",
-"function": "Flash legendary Human giving a permanent hexproof, a +1/+1 counter and a loyalty counter.",
-"roles": [
-"protection",
-"creature",
-"enabler"
-],
-"archetypes": [
-"superfriends",
-"counters",
-"tokens"
-],
-"power": 3,
-"confidence": 3,
-"unclear": []
-},
-"2": {
-"id": "c062",
-"function": "Flash legendary Human Cleric giving a permanent hexproof, a +1/+1 counter and a loyalty counter.",
-"roles": [
-"protection",
-"creature"
-],
-"archetypes": [
-"superfriends",
-"counters",
-"tokens"
-],
-"power": 3,
-"confidence": 3,
-"unclear": []
-},
-"3": {
-"id": "c062",
-"function": "Flash legendary Human giving a permanent hexproof, a +1/+1 counter and a loyalty counter.",
-"roles": [
-"protection",
-"creature",
 "enabler"
 ],
 "archetypes": [
@@ -4743,9 +3598,46 @@
 "counters",
 "legends_matter"
 ],
-"power": 3,
+"power": 2,
 "confidence": 3,
 "unclear": []
+},
+"tag": {
+"1": {
+"id": "c020",
+"function": "Flash Human Cleric gives a permanent hexproof and a counter on entering.",
+"roles": [
+"protection",
+"creature"
+],
+"archetypes": [
+"counters",
+"superfriends",
+"tribal"
+],
+"power": 3,
+"confidence": 3,
+"unclear": [
+"c1.4 loyalty counter"
+]
+},
+"2": {
+"id": "c020",
+"function": "Legendary Human Cleric with flash, giving hexproof and a counter on entering.",
+"roles": [
+"protection",
+"creature"
+],
+"archetypes": [
+"counters",
+"superfriends",
+"tribal"
+],
+"power": 3,
+"confidence": 3,
+"unclear": [
+"c1.4 counter:loyalty"
+]
 }
 }
 },
@@ -20730,6 +19622,346 @@
 "power": 2,
 "confidence": 3,
 "unclear": []
+}
+}
+},
+"rogue's passage": {
+"tkey": "45a1607ee477",
+"okey": "0d17f3e92f9b",
+"date": "2026-10-26",
+"ora": {
+"id": "c009",
+"function": "Colourless utility land that makes a creature unblockable",
+"roles": [
+"mana_land",
+"evasion"
+],
+"archetypes": [
+"colorless",
+"aggro",
+"big_mana"
+],
+"power": 2,
+"confidence": 4,
+"unclear": []
+},
+"tag": {
+"1": {
+"id": "c009",
+"function": "Utility land tapping for colorless with a 4-mana creature-targeting ability.",
+"roles": [
+"mana_land"
+],
+"archetypes": [
+"colorless",
+"control",
+"ramp"
+],
+"power": 2,
+"confidence": 2,
+"unclear": [
+"c2 effect"
+]
+},
+"2": {
+"id": "c009",
+"function": "Colorless utility land with a four-mana tap ability targeting a creature.",
+"roles": [
+"mana_land",
+"interaction"
+],
+"archetypes": [
+"colorless",
+"control",
+"aggro"
+],
+"power": 2,
+"confidence": 2,
+"unclear": [
+"c2 effect unknown"
+]
+}
+}
+},
+"scavenger grounds": {
+"tkey": "f3f0d6171322",
+"okey": "a0293abeacda",
+"date": "2026-10-26",
+"ora": {
+"id": "c026",
+"function": "Colourless land with Desert-based graveyard hate",
+"roles": [
+"mana_land",
+"graveyard_exile"
+],
+"archetypes": [
+"colorless",
+"graveyard",
+"big_mana"
+],
+"power": 1,
+"confidence": 4,
+"unclear": []
+},
+"tag": {
+"1": {
+"id": "c026",
+"function": "Desert land tapping for colorless, sacrifices to exile all graveyards.",
+"roles": [
+"mana_land",
+"graveyard_exile"
+],
+"archetypes": [
+"colorless",
+"control",
+"ramp"
+],
+"power": 2,
+"confidence": 4,
+"unclear": []
+},
+"2": {
+"id": "c026",
+"function": "Desert land that can exile all graveyard cards.",
+"roles": [
+"mana_land",
+"graveyard_exile"
+],
+"archetypes": [
+"control",
+"stax",
+"colorless"
+],
+"power": 2,
+"confidence": 4,
+"unclear": [
+"niche:graveyard_hate"
+]
+}
+}
+},
+"war room": {
+"tkey": "4b1c9c5cfaa6",
+"okey": "7ac5b578f063",
+"date": "2026-10-26",
+"ora": {
+"id": "c030",
+"function": "Colourless land that can pay life to draw",
+"roles": [
+"mana_land",
+"draw"
+],
+"archetypes": [
+"colorless",
+"card_draw",
+"big_mana"
+],
+"power": 2,
+"confidence": 4,
+"unclear": []
+},
+"tag": {
+"1": {
+"id": "c030",
+"function": "Land tapping for colorless that can pay life and mana to draw.",
+"roles": [
+"mana_land",
+"draw"
+],
+"archetypes": [
+"colorless",
+"card_draw",
+"ramp"
+],
+"power": 2,
+"confidence": 3,
+"unclear": []
+},
+"2": {
+"id": "c030",
+"function": "Colorless utility land; pay mana and life to draw a card.",
+"roles": [
+"mana_land",
+"draw"
+],
+"archetypes": [
+"card_draw",
+"colorless",
+"control"
+],
+"power": 3,
+"confidence": 4,
+"unclear": []
+}
+}
+},
+"demolition field": {
+"tkey": "d5c71e87e9ec",
+"okey": "3becc54f73fc",
+"date": "2026-10-26",
+"ora": {
+"id": "c041",
+"function": "Colourless land that destroys a nonbasic land",
+"roles": [
+"mana_land",
+"answer"
+],
+"archetypes": [
+"colorless",
+"stax",
+"control"
+],
+"power": 1,
+"confidence": 4,
+"unclear": []
+},
+"tag": {
+"1": {
+"id": "c041",
+"function": "Land tapping for colorless; sacrifice to destroy opposing nonbasic land and fetch basics.",
+"roles": [
+"mana_land",
+"fetch",
+"interaction"
+],
+"archetypes": [
+"ramp",
+"landfall",
+"stax"
+],
+"power": 2,
+"confidence": 3,
+"unclear": []
+},
+"2": {
+"id": "c041",
+"function": "Colorless land that sacrifices to destroy an opposing nonbasic land and fetch basics.",
+"roles": [
+"mana_land",
+"fetch",
+"interaction"
+],
+"archetypes": [
+"ramp",
+"landfall",
+"control"
+],
+"power": 2,
+"confidence": 3,
+"unclear": []
+}
+}
+},
+"eiganjo, seat of the empire": {
+"tkey": "4e0f385db378",
+"okey": "d1bd44663312",
+"date": "2026-10-26",
+"ora": {
+"id": "c047",
+"function": "White land with a channel burn ability",
+"roles": [
+"mana_land",
+"removal"
+],
+"archetypes": [
+"legends_matter",
+"control",
+"aggro"
+],
+"power": 3,
+"confidence": 4,
+"unclear": []
+},
+"tag": {
+"1": {
+"id": "c047",
+"function": "Legendary land tapping for white; discard to deal 4 damage to a combatant.",
+"roles": [
+"mana_land",
+"removal"
+],
+"archetypes": [
+"control",
+"aggro",
+"legends_matter"
+],
+"power": 3,
+"confidence": 3,
+"unclear": []
+},
+"2": {
+"id": "c047",
+"function": "Legendary white land that discards to deal 4 damage to a combatant.",
+"roles": [
+"mana_land",
+"removal"
+],
+"archetypes": [
+"control",
+"aggro",
+"legends_matter"
+],
+"power": 3,
+"confidence": 4,
+"unclear": []
+}
+}
+},
+"nykthos, shrine to nyx": {
+"tkey": "1c7a39265a10",
+"okey": "887f405e8d26",
+"date": "2026-10-26",
+"ora": {
+"id": "c061",
+"function": "Colourless land that turns devotion into mana",
+"roles": [
+"mana_land",
+"ramp"
+],
+"archetypes": [
+"big_mana",
+"colorless",
+"ramp"
+],
+"power": 3,
+"confidence": 4,
+"unclear": []
+},
+"tag": {
+"1": {
+"id": "c061",
+"function": "Legendary land tapping for colorless, or for devotion-based mana for 2.",
+"roles": [
+"mana_land"
+],
+"archetypes": [
+"colorless",
+"big_mana",
+"legends_matter"
+],
+"power": 2,
+"confidence": 3,
+"unclear": [
+"devotion_chosen"
+]
+},
+"2": {
+"id": "c061",
+"function": "Legendary land tapping for colorless or mana equal to devotion.",
+"roles": [
+"mana_land",
+"ramp"
+],
+"archetypes": [
+"big_mana",
+"legends_matter",
+"ramp"
+],
+"power": 3,
+"confidence": 3,
+"unclear": [
+"devotion_chosen"
+]
 }
 }
 }
