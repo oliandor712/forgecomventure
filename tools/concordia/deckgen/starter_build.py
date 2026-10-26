@@ -17,7 +17,7 @@ Nothing here touches decks/starter (live). Output: forge-gui/res/adventure/Conco
   python3 starter_build.py review-export --name W_Starter_Normal
   python3 starter_build.py review-compare --name W_Starter_Normal
 """
-import argparse, collections, json, os, re, subprocess, sys
+import argparse, collections, datetime, json, os, re, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import build as B  # noqa: E402  (pool, SPEC, ROLE, card_traits, budget lands)
@@ -345,7 +345,15 @@ def cmd_draft(a):
 def _picks(name): return json.load(open(os.path.join(STAGE, name + '.picks.json'), encoding='utf-8'))
 
 
-def run_id(name): return 'S_' + name
+def run_id(name, new=False):
+    """a fresh run dir per review (no stale out/ files for the readers); the latest id is kept in <name>.run"""
+    f = os.path.join(STAGE, name + '.run')
+    if new or not os.path.exists(f):
+        os.makedirs(STAGE, exist_ok=True); open(f, 'w').write('S_%s_%s' % (name, datetime.datetime.now().strftime('%Y%m%d_%H%M%S')))
+    return open(f).read().strip()
+
+
+VERDICTS = os.path.join(STAGE, 'verdicts.json')   # reader verdict cache, keyed by card name + tag-view hash + Oracle-text hash
 
 
 def cmd_review_export(a):
@@ -356,7 +364,13 @@ def cmd_review_export(a):
     open(ctx, 'w', encoding='utf-8').write(
         'Candidate 99-card Commander starter deck. Declared archetypes: %s. Commander profile: %s. The commander is one of the cards in the list. '
         'Judge every card against the archetypes and the deck_rules, with the whole deck in mind.' % (' and '.join(pk['strategy']), ', '.join(pk['profile'])))
-    subprocess.run([sys.executable, rc, 'glance-export', '--run', run_id(a.name), '--cardlist', lst, '--batch', '24', '--context', ctx], check=False)
+    rid = run_id(a.name, new=True)
+    out = subprocess.run([sys.executable, rc, 'glance-export', '--run', rid, '--cardlist', lst, '--batch', '24', '--context', ctx, '--cache', VERDICTS],
+                         check=False, capture_output=True, text=True, encoding='utf-8').stdout
+    sys.path.insert(0, os.path.join(HERE, 'tagcheck'))
+    from common import workdir
+    pf = os.path.join(workdir(rid), 'PROMPTS.txt'); open(pf, 'w', encoding='utf-8').write(out)
+    print(out); print('prompts saved to', pf, '(readers can be told: follow BATCH n in that file)')
 
 
 def cmd_review_compare(a):
