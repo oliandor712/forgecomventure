@@ -95,7 +95,7 @@ Briefs still carry the old session/messaging instructions (ETA lines, `send_mess
   10·Game Changer + 5·fast mana + 5·tutor. Raw power is the highest of the cube rank, the Spellbinder cEDH inclusion
   rate and 0.6 × EDHREC popularity (Scryfall's EDHREC rank, log-scaled).
 - **Deck power by tier** (deck average card power, rebuilt 2026-10-20): T1 12-13, T2 21-28, T3 30-38, T4 34-42,
-  T5 40-46. Bands: T1 <=19, T2 19-31, T3 27-38, T4 34-42, T5 >=39 (one source: tools/concordia/tier_table.json, with the builder targets, floor and ceiling; T1 in tier1_rules.py). Staples per deck: T1 0, T2 19, T3 30, T4 34,
+  T5 40-46. Bands: T1 17-23 (tier_rules.py), T2 22-30, T3 29-37, T4 35.5-41.5, T5 >=40 (one source: tools/concordia/tier_table.json, with the builder targets, floor and ceiling). Staples per deck: T1 0, T2 19, T3 30, T4 34,
   T5 38 on average; watch-list cards capped T1 0 / T2 1 / T3 2 / T4 4 / T5 8.
 - **Difficulty curve** (OVERWORLD.md §5.1): a zone's stage locks at the player's first fight there, from the Seals held:
   seals 0-1 stage 1, 2-3 stage 2, 4-5 stage 3 (`util/TierLock.java`, config `tierLock`).

@@ -34,7 +34,7 @@ def commander_ok(p, tier):
     spec = dt.TIERS[tier]
     lo, hi = spec['commander_mv']  # (None, None) = no mana value requirement
     return ('Legendary' in p['types'] and 'Creature' in p['types'] and (lo is None or lo <= p['cmc']) and (hi is None or p['cmc'] <= hi)
-            and p['minr'] in spec['commander_rarity'] and not p['gc'] and not p['mld'])
+            and not p['gc'] and not p['mld'])
 
 
 def theme_of(p):

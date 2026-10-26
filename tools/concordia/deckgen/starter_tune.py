@@ -70,7 +70,7 @@ def tune(path, protect=None):
                 if k in have or not q['id'] or not q['id'] <= colors or 'Land' in q['types'].split() or 'Legendary' in q['types']: continue
                 if q['pop'] < 8: continue  # cards real decks play
                 if ('Creature' in q['types']) != ('Creature' in p['types']) and not (red_cut and rl == 'removal'): continue
-                if q['gc'] or q['mld'] or q.get('cat') == 'watch' or not B.mech_ok(q, 1): continue
+                if q['gc'] or q['mld'] or q.get('cat') == 'watch' or not B.mech_ok(q, 1) or not B.extra_ok(q, 1): continue
                 if abs(q['cmc'] - p['cmc']) > 1: continue
                 if red_cut and rl == 'removal':
                     if role(q) != 'creature': continue

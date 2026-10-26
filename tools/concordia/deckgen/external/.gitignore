@@ -1,3 +1,4 @@
-# Third-party decklists gathered from public GitHub repositories (mixed or unstated licenses): kept local only.
+# Third-party decklists gathered from public sites (Archidekt, EDHREC): decks.json is committed on purpose (user, 2026-10-26) so every session has the popularity input; the download caches stay local.
 *
 !.gitignore
+!decks.json

@@ -105,7 +105,7 @@ def variant(d, newcmd, folder=None, n=None, syn=None):
         pw, _ = power_of(p, ed); rl = role(p); best = None
         for k, q in pool.items():
             if k in have or not q['id'] <= ident or 'Land' in q['types'].split(): continue
-            if q['gc'] or q['mld'] or q.get('cat') == 'watch' or not B.mech_ok(q, 1): continue
+            if q['gc'] or q['mld'] or q.get('cat') == 'watch' or not B.mech_ok(q, 1) or not B.extra_ok(q, 1): continue
             if role(q) != rl or abs(q['cmc'] - p['cmc']) > 1 or q['pop'] == 0: continue
             if 'Legendary' in q['types'] and 'Creature' not in q['types'] and tier == 1: continue
             r = next((x for x in 'CURM' if x in q['best'] and rare_left[x] < spec['rar'].get(x, 0) + (1 if x == power_of(p, ed)[1] else 0)), None)

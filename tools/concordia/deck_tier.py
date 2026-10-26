@@ -335,6 +335,17 @@ def _warn_inputs():
 
 POOL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deckgen", "pool.pkl")
 _niche = None
+_mech = None
+
+
+def mech_of(name):
+    """Tuple of the card's mech:* tags from deckgen/pool.pkl; () when there is no pool."""
+    global _mech
+    if _mech is None:
+        _mech = {}
+        if os.path.exists(POOL):
+            _mech = {k: tuple(t for t in v.get("ftags", ()) if t.startswith("mech:")) for k, v in pickle.load(open(POOL, "rb")).items()}
+    return _mech.get(name.lower(), ())
 
 
 def niche_of(name):
@@ -452,6 +463,7 @@ def rate(path, data, config):
     mld = sorted(x for x in deck_names if x in data["lists"]["mld"])
     extra = sorted(x for x in deck_names if x in data["lists"]["extra"] or x in extra_turn_names)
     chained = sorted(x for x in deck_names if x in data["lists"]["chained"])
+    mech = sorted("%s (%s)" % (x, t[5:]) for x in deck_names for t in mech_of(x) if tr.MECH_MIN_TIER.get(t[5:], 1) > 1)
     combos = {"early_game": [], "late_game": []}
     for kind, pieces in data["combos"]:
         if pieces <= deck_names:
@@ -477,7 +489,7 @@ def rate(path, data, config):
         "power": round(statistics.mean(powers), 1) if powers else 0.0,
         "top_power": sorted(powers, reverse=True)[:10],
         "premium50": sum(1 for p in powers if p >= 50), "premium70": sum(1 for p in powers if p >= 70),
-        "game_changers": gc, "staples": staples, "watch": watch, "mass_land_denial": mld, "extra_turns": extra, "chained_extra_turns": chained,
+        "game_changers": gc, "staples": staples, "watch": watch, "mass_land_denial": mld, "extra_turns": extra, "chained_extra_turns": chained, "mech": mech,
         "combos": combos, "problems": problems,
         "types": dict(ptypes), "pips": {k: v for k, v in pips.items() if v}, "sources": dict(sources),
         "karsten_lands": round(31.4 + 3.13 * (statistics.mean(mvs) if mvs else 0) - 0.28 * cheap_ramp_draw, 1),
@@ -498,8 +510,6 @@ def check_tier(r, tier, life=None):
     if life is not None:
         rng("life", life, spec["life"], hard=True)
     for c in r["commanders"]:
-        out.append(("PASS" if c["rarity"] in spec["commander_rarity"] else "FAIL",
-                    "commander %s rarity %s (allowed %s)" % (c["name"], c["rarity"], "/".join(sorted(spec["commander_rarity"])))))
         if spec["commander_mv"] != (None, None):  # tier 1 has no mana value requirement
             rng("commander mana value", c["mv"], spec["commander_mv"])
         if spec.get("commander_colours"):
@@ -535,9 +545,6 @@ def check_tier(r, tier, life=None):
             if src < 14 or src / max(1, r["lands"]) < 0.8 * n / pips_total:
                 low.append("%s %d sources for %d%% of pips" % (col, src, round(100 * n / pips_total)))
         out.append(("PASS" if not low else "WARN", "colour sources %s%s" % (r["sources"], "" if not low else " - low: " + "; ".join(low))))
-    if "max_rare" in spec:   # only tier 1 has a rarity cap; tiers 2-5 have none
-        out.append(("PASS" if r["rarity"].get("R", 0) <= spec["max_rare"] else "WARN", "rares %d (max %d)" % (r["rarity"].get("R", 0), spec["max_rare"])))
-        out.append(("PASS" if r["rarity"].get("M", 0) <= spec["max_mythic"] else "FAIL", "mythics %d (max %d)" % (r["rarity"].get("M", 0), spec["max_mythic"])))
     for key, floor in (("premium50", 50), ("premium70", 70)):
         if key in spec:
             rng("power-%d+ cards" % floor, r[key], spec[key])
@@ -546,6 +553,11 @@ def check_tier(r, tier, life=None):
     out.append(("PASS" if len(r["game_changers"]) <= spec["game_changers"] else "FAIL", "Game Changers %d (max %d) %s" % (len(r["game_changers"]), spec["game_changers"], r["game_changers"] or "")))
     out.append(("PASS" if len(r["mass_land_denial"]) <= spec["mld"] else "FAIL", "mass land denial %s" % (r["mass_land_denial"] or "none")))
     out.append(("PASS" if len(r["extra_turns"]) <= spec["extra_turns"] and not r["chained_extra_turns"] else "FAIL", "extra turns %s" % (r["extra_turns"] or "none")))
+    if os.path.exists(POOL):   # mech:* tier minimums (tier_rules.MECH_MIN_TIER); needs deckgen/pool.pkl for the card tags
+        bad = [m for m in r["mech"] if tr.MECH_MIN_TIER.get(m[m.rindex("(") + 1:-1], 1) > tier]
+        out.append(("PASS" if not bad else "FAIL", "mechanics above this tier %s" % (bad or "none")))
+    else:
+        out.append(("WARN", "mechanics tier check skipped: deckgen/pool.pkl missing"))
     early, late = r["combos"]["early_game"], r["combos"]["late_game"]
     combo_ok = not early and (spec["combos"] == "late" or not late)
     out.append(("PASS" if combo_ok else "FAIL", "two-card combos: early %s, late %s" % (early or "none", late or "none")))

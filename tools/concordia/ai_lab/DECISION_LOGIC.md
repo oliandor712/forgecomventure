@@ -350,7 +350,7 @@ Still missing: the chosen aggression level (patch 012), block and attack reasons
 - Nothing here changes `OPTIONS_FOR_BALANCERS.md`.
 
 ## Deck-building tags and human logic (2026-10-21)
-The deck builder's ability-led tags (`tools/concordia/deckgen/ability_tags.py`, `ABILITY_TAGS.toon`) and archetype rules (`tools/concordia/archetype_rules.py`, `tier1_rules.py`) do not reach the in-game AI. The only deck-level input is `PlayerControllerAi.setupAutoProfile` (name contains "Control" or average CMC > 3). Human-logic rules H31-H49 are builder rules; their AI counterparts and the gap list are in `DECK_LOGIC_TO_AI_DECISIONS.md`. Proposals DL-1 to DL-5 are unticked in `AI_CHANGES_APPROVAL.md`.
+The deck builder's ability-led tags (`tools/concordia/deckgen/ability_tags.py`, `ABILITY_TAGS.toon`) and archetype rules (`tools/concordia/archetype_rules.py`, `tier_rules.py`) do not reach the in-game AI. The only deck-level input is `PlayerControllerAi.setupAutoProfile` (name contains "Control" or average CMC > 3). Human-logic rules H31-H49 are builder rules; their AI counterparts and the gap list are in `DECK_LOGIC_TO_AI_DECISIONS.md`. Proposals DL-1 to DL-5 are unticked in `AI_CHANGES_APPROVAL.md`.
 
 ## AI play styles (2026-10-21)
 Four shipped profiles (Default, Reckless, Cautious, Experimental) differ in about 20 properties; Concordia enemies all use the player's setting (`enemies.json` "ai" is ""). Details, edit options and the test design are in `AI_PLAY_STYLES.md`; proposals PS-1 to PS-5 are unticked in `AI_CHANGES_APPROVAL.md`.

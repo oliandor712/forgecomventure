@@ -1,6 +1,6 @@
 # Deck-building logic -> Forge AI decisions (research, forge-ai-lab, 2026-10-21)
 
-Research only. Nothing applied to forge-ai/src, nothing on the sim overlay, no builds. Proposals are unticked entries in `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md` (DL-1 to DL-5). Inputs read: `tools/concordia/deckgen/HANDOFF_DECKBUILDER.md`, `deckgen/ability_tags.py` (POLICY, `tags_of`, `bonus`), `deckgen/ABILITY_TAGS.toon`, `deckgen/commander_support.py`, `tools/concordia/archetype_rules.py`, `tools/concordia/tier1_rules.py`, `tools/agents/human_logic.toon` H31-H49.
+Research only. Nothing applied to forge-ai/src, nothing on the sim overlay, no builds. Proposals are unticked entries in `docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md` (DL-1 to DL-5). Inputs read: `tools/concordia/deckgen/HANDOFF_DECKBUILDER.md`, `deckgen/ability_tags.py` (POLICY, `tags_of`, `bonus`), `deckgen/ABILITY_TAGS.toon`, `deckgen/commander_support.py`, `tools/concordia/archetype_rules.py`, `tools/concordia/tier_rules.py`, `tools/agents/human_logic.toon` H31-H49.
 
 ## 1. What the AI reads today (verified by grep, forge-ai and forge-game)
 | Signal | Where the AI reads it | Read in game? |

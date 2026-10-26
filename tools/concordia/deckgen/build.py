@@ -116,9 +116,6 @@ def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     isor = sum(1 for p, _ in chosen if {'Instant', 'Sorcery'} & set(p['types'].split()))
     check('H06', True, 'every card from the pool (existing assets only)')
     check('H08', tr.POWER['floor'] <= power <= tr.POWER['ceiling'], 'tier 1 power %.1f (%g-%g)' % (power, tr.POWER['floor'], tr.POWER['ceiling']), d['tier'] == 1)
-    printings = tr.STAPLE_PRINTINGS if d['tier'] == 1 else ('U',)  # H09: tier 1 commons or uncommons; other tiers uncommon only
-    bad = [p['name'] for p, r in chosen if p.get('cat') == 'staple' and r not in printings]
-    check('H09', not bad, 'staples outside %s printings: %s' % ('/'.join(printings), ', '.join(bad) or 'none'))
     budget = {k.lower() for k in BUDGET} | {k.lower() for k in ROCKS}
     check('H10', any(p['name'].lower() in budget for p, _ in chosen + lands), 'budget lands or rocks present')
     band = creature_band(d)
@@ -161,7 +158,7 @@ STAPLE_BONUS = {1: tr.STAPLE_BONUS, 2: 0, 3: 3, 4: 1.5, 5: 1.5}
 # Raise the tier 1-2 floor (user, 2026-10-20): push staples at tiers 1-2, uncommon printings only (other staples keep
 # STAPLE_BONUS), give tier 1 a power target instead of building it as weak as possible, and rebuild any tier 1-2 deck
 # whose power lands under FLOOR with a raised target. Near-staple budget lands (budget_lands.json) fill BUDGET_LANDS.
-UNCOMMON_STAPLE_BONUS = {1: tr.UNCOMMON_STAPLE_BONUS, 2: 6}
+STAPLE_PUSH_BONUS = {1: tr.STAPLE_PUSH_BONUS, 2: 6}
 T1_TARGET = tr.POWER['target']
 FLOOR = {1: tr.POWER['floor'], 2: dt.TIER_TABLE['2']['floor']}
 CEILING = {1: tr.POWER['ceiling'], 2: dt.TIER_TABLE['2']['ceiling']}  # pushed staples lift the top too; keep tier 1-2 decks inside their bands
@@ -176,6 +173,12 @@ def spread(items, key):
     h = lambda n: int(hashlib.md5((key + n).encode()).hexdigest()[:8], 16) / 0xffffffff
     return sorted(items, key=lambda kv: -kv[1]['decks'] * (0.5 + h(kv[0])) - (1000 if kv[1]['colors'] else 0))
 WATCH_CAP = {1: tr.WATCH_CAP, 2: 1, 3: 2, 4: 4, 5: 8}
+EXTRA_CAP = {t: tr.TIERS[t]['extra_turns'] for t in tr.TIERS}   # extra-turn cards per deck (0/0/0/1/2); chained extra turns are never built (tier_rules, user)
+
+
+def extra_ok(p, tier):
+    """False for chained extra-turn cards at any tier and for extra-turn cards at tiers whose limit is 0 (pool flags from lists/*.txt)."""
+    return not p.get('chained') and (not p.get('extra') or EXTRA_CAP[tier] > 0)
 PRECON_BONUS = {2: 2, 3: 2}
 STRAT_ROLE, STRAT_ROLE_CAP = 2.0, 3   # per play-line role of a declared strategy (decks.json "strategy": [ids of strategies.json]) the card fills, capped
 NICHE_PEN = {2: 4, 3: 3, 4: 2, 5: 2}   # per niche:* tag no declared strategy uses (tag_run.py); capped at 2 tags
@@ -185,8 +188,7 @@ SEED_BASE, SEED_SYN = 10, 15   # seed card bonus: base 10 (was a flat 25) plus u
 # "weakness" (default 1.0) scales how hard a tier 1 deck avoids strong cards (lower = stronger deck).
 ROLE = {'removal': {'removal', 'counter'}, 'draw': {'draw'}, 'ramp': {'ramp'}, 'wipe': {'wipe'}, 'tutor': {'tutor'}, 'fast': {'fast'}}
 # mech:* ftags (tag_run.MECH_RX) gate cards by tier (user 2026-10-25: the builder sees every pool card; restrictions follow the deck's tier). Value = lowest tier that may use the card; 99 = never (needs a component the game does not have).
-MECH_MIN_TIER = {'sticker': 99, 'attraction': 99, 'contraption': 99, 'planechase': 99, 'scheme': 99, 'ante': 99, 'speed': 4, 'initiative': 4, 'venture': 4,
-                 'vote': 3, 'monarch': 3, 'day_night': 3, 'ring': 3, 'graveyard_cast': 2}
+MECH_MIN_TIER = tr.MECH_MIN_TIER
 def mech_ok(p, tier):
     return all(tier >= MECH_MIN_TIER.get(t[5:], 1) for t in p.get('ftags', ()) if t.startswith('mech:'))
 
@@ -251,7 +253,7 @@ def build(d):
             s = -0.7 * abs(pw - d.get('target', TARGET_POWER[2]))
         else:
             s = -0.6 * abs(pw - d.get('target', TARGET_POWER[tier]))
-        if p.get('cat') == 'staple': s += UNCOMMON_STAPLE_BONUS[tier] if tier in UNCOMMON_STAPLE_BONUS and r == 'U' else STAPLE_BONUS[tier]
+        if p.get('cat') == 'staple': s += STAPLE_PUSH_BONUS[tier] if tier in STAPLE_PUSH_BONUS else STAPLE_BONUS[tier]
         s += PRECON_BONUS.get(tier, 0) * min(1.0, p.get('precon', 0.0) / 0.25)
         if theme_match(p, theme): s += 12
         if p['name'].lower() in seed and tier > 1:   # a seed card gets a small base plus more for ability tags shared with the commander and the seed's own profile
@@ -266,9 +268,8 @@ def build(d):
         if not p['id'] <= ident: continue
         if 'Land' in p['types'].split(): continue
         if p['mld'] or (p['gc'] and spec['gc'] == 0) or (p.get('cat') == 'watch' and WATCH_CAP[tier] == 0): continue
-        if not mech_ok(p, tier): continue
+        if not mech_ok(p, tier) or not extra_ok(p, tier): continue
         if 'Legendary' in p['types'] and 'Creature' not in p['types'] and tier == 1: continue
-        if tier == 1 and p['minr'] not in 'CU': continue
         cands.append(p)
     # archetype leans (declared aggro/tribal: at most TOK_CAP token cards; declared tokens: at least 13; tribal: 15+ of the tribe; low-* subs: their lean)
     atry = d.get('_arch_try', 0)
@@ -289,7 +290,7 @@ def build(d):
         tribes = sorted(({it[6:] for it in cp.profile(cmd['oracle'], cmd['types'], cmd['name']) if it.startswith('tribe:')} | {x for x in cmd['types'].split() if x not in ar.SKIP_TYPES}) - {'Human'})
         cnt = {x: sum(1 for q in cands if 'Creature' in q['types'].split() and x in q['types'].split()) for x in tribes}
         tribe = max(cnt, key=cnt.get) if cnt else None
-    chosen = []; rcount = collections.Counter(); roles = collections.Counter(); curve = collections.Counter(); ncreat = 0; ngc = 0; nwatch = 0; npow = [0, 0]   # npow: cards at power 50+ and 70+
+    chosen = []; rcount = collections.Counter(); roles = collections.Counter(); curve = collections.Counter(); ncreat = 0; ngc = 0; nwatch = 0; nextra = 0; npow = [0, 0]   # npow: cards at power 50+ and 70+
     nonland = 99 - spec['lands']
     def can_add(p):
         tags = p['tags']
@@ -301,6 +302,7 @@ def build(d):
         if pwr >= 50 and npow[0] >= spec.get('p50', 99): return None
         if pwr >= 70 and npow[1] >= spec.get('p70', 99): return None
         if p.get('cat') == 'watch' and nwatch >= WATCH_CAP[tier]: return None
+        if p.get('extra') and nextra >= EXTRA_CAP[tier]: return None
         if arch and tier == 1 and 'Creature' not in p['types'].split() and 'Land' not in p['types'].split():   # keep the sub label as declared (classify counts non-creature artifacts and enchantments)
             if 'Enchantment' in p['types'].split() and arch in ('tribal', 'tokens') and sub != 'low-' + arch and nnc['E'] >= ar.LOW_ENCHANT_MIN - 1: return None
             if 'Artifact' in p['types'].split() and arch == 'aggro' and sub != 'low-aggro' and nnc['A'] >= ar.LOW_ARTIFACT_MIN - 1: return None
@@ -315,7 +317,7 @@ def build(d):
         r = pick_rarity(p, tier, rcount, spec)
         return r
     def add(p, r):
-        nonlocal ncreat, ngc, nwatch
+        nonlocal ncreat, ngc, nwatch, nextra
         chosen.append((p, r)); rcount[r] += 1; curve[bucket(p['cmc'])] += 1
         for role, tg in ROLE.items():
             if p['tags'] & tg: roles[role] += 1
@@ -324,6 +326,7 @@ def build(d):
         pwr = p['power'].get(p['minr'], 0)
         npow[0] += pwr >= 50; npow[1] += pwr >= 70
         if p.get('cat') == 'watch': nwatch += 1
+        if p.get('extra'): nextra += 1
         if tier == 1 and tokcard(p): ntok[0] += 1
         if 'Creature' in p['types'].split():
             for x in p['types'].split():
@@ -421,7 +424,7 @@ def build(d):
             if p and 'Land' in p['types'].split() and 'Basic' not in p['types'] and p['id'] <= ident and not p['mld'] and k not in banned \
                     and not (p['gc'] and spec['gc'] == 0):
                 r = pick_rarity(p, tier, rcount, spec)
-                if r and (tier >= 3 or r in 'CU'):
+                if r:
                     nb.append(p['name'])
     nb = list(dict.fromkeys(nb))[: {2: 4, 3: 12, 4: 15, 5: 18}.get(tier, 4)]
     if tier in BUDGET_LANDS:

@@ -399,11 +399,11 @@ def eligible_pool():
     import pickle
     p = pickle.load(open(os.path.join(HERE, "pool.pkl"), "rb"))
     def pw(c):
-        v = [c["power"][r] for r in ("C", "U") if r in c["power"]]
+        v = list(c["power"].values())
         return min(v) if v else None
     for k, c in p.items():
         t = c["types"].split()
-        if "Land" in t or not (set(c["best"]) & {"C", "U"}) or c["gc"] or c["mld"] or c["tags"] & {"fast", "tutor", "wipe"}: continue
+        if "Land" in t or c["gc"] or c["mld"] or c["tags"] & {"fast", "tutor", "wipe"}: continue
         w = pw(c)
         if w is not None and w <= ELIGIBLE_POWER_CAP: yield k, c
 

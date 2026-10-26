@@ -91,7 +91,7 @@ def main():
         minr = min(best, key=order.index)
         pool[key] = {'name': c['name'], 'types': c['types'], 'cmc': c['cmc'], 'id': identity(c), 'tags': tags,
                      'best': {r: v[1] for r, v in best.items()}, 'minr': minr, 'pop': pop[key], 'pt': pt.get(key),
-                     'gc': key in data['lists']['gc'], 'mld': key in data['lists']['mld'] or key in data['lists']['extra'],
+                     'gc': key in data['lists']['gc'], 'mld': key in data['lists']['mld'], 'extra': key in data['lists']['extra'], 'chained': key in data['lists']['chained'],
                      'nabil': len(c['abil']) + len(c['static']) + len(c['kw']), 'oracle': c['oracle'],
                      'cube': data['cube'].get(key)}
         ftags = sorted(tag_run.tags(c['name']))  # full tag set from tag_run.record (the single tag source); 'tags' above stays the coarse deck-gen set

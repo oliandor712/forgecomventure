@@ -1,7 +1,7 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Test results for the power scorer review fixes, 2026-10-25.
 tier_power[6|]{date|tier|decks|min|p25|median|p75|max|band_after}:
   2026-10-25|starter|10|25.9|26.8|27.0|27.3|27.5|-
-  2026-10-25|tier1|80|16.1|16.9|17.3|17.6|18.1|16-21 (tier1_rules)
+  2026-10-25|tier1|80|16.1|16.9|17.3|17.6|18.1|16-21 (tier_rules)
   2026-10-25|tier2|80|24.3|25.5|27.5|28.3|29.8|22-31 target 27.0
   2026-10-25|tier3|80|29.4|31.9|33.5|35.2|38.7|28.5-39 target 33.5
   2026-10-25|tier4|80|33.6|35.9|38.2|39.7|42.5|33-43 target 38.5

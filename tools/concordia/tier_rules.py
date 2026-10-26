@@ -2,18 +2,17 @@
 TIERS[1..5] (deck check) and the build specs (BUILD_SPEC for tier 1, deckgen/build.py SPEC for tiers 2-5) read from here.
 deck_tier.py, deckgen/build.py and archetype_rules.py import it. Change a tier number here and nowhere else.
 Tier 1 also carries its archetype, token and creature constants below. Limits 2026-10-26: Game Changers 0/0/0/4/6, extra turns
-0/0/0/1/2, power-50+ and power-70+ cards, fast mana 0/1/2/3/5; no rarity caps in tiers 2-5 (tier 1 stays commons and uncommons)."""
+0/0/0/1/2, power-50+ and power-70+ cards, fast mana 0/1/2/3/5; no rarity restriction anywhere, on cards or commanders (user, 2026-10-26)."""
 import json, os
 
 
 # Deck check (deck_tier.py). Power is the deck's average card power score. Commander: one legendary creature, mana value 2-4,
-# common or uncommon printing. The deck is 100 cards (commander + 99).
+# any rarity (user, 2026-10-26). The deck is 100 cards (commander + 99).
 DECK = {
     "name": "Tier 1 - Weak / wild",
     "life": (10, 12),
     "watch": 0,
     "staples": (2, 15),
-    "commander_rarity": {"C", "U"},
     "commander_mv": (None, None),  # was (2, 4): tier 1 commanders have no mana value requirement (user, 2026-10-21)
     "commander_colours": 1,  # exactly one colour of identity (user, 2026-10-21)
     "lands": (41, 42),  # was (40, 46): lands are decided last from the curve
@@ -21,7 +20,7 @@ DECK = {
     "avg_mv": (2.5, 3.4),
     "creatures": (15, None),  # H11: at least 15 (pass/fail); the soft cap of 35 is a build limit only
     "power": (17, 23),  # H08 (user 2026-10-26: 17-23, was 16-21)
-    # no rarity cap in any tier (user, 2026-10-26; was commons plus up to 25 uncommons)
+    # no rarity restriction in any tier, for cards or commanders (user, 2026-10-26)
     "game_changers": 0, "mld": 0, "extra_turns": 0, "premium50": (0, 2), "premium70": (0, 0), "combos": "none",
     "bracket": 1,
     "curve": {1: (5, 8), 2: (15, 21), 3: (11, 16), 4: (5, 8), 5: (3, 10), 6: (0, 2)},
@@ -66,15 +65,19 @@ BUILD_SPEC = {
 
 # Build-time staples and budget cards for tier 1.
 STAPLE_BONUS = -4
-UNCOMMON_STAPLE_BONUS = 6
+
+# mech:* ftags (tag_run.MECH_RX) gate cards by tier (user 2026-10-25). Value = lowest tier that may use the card; 99 = never (needs a component the game does not have).
+# Enforced by deckgen/build.py mech_ok (builder) and deck_tier.py (deck check, FAIL).
+MECH_MIN_TIER = {'sticker': 99, 'attraction': 99, 'contraption': 99, 'planechase': 99, 'scheme': 99, 'ante': 99, 'speed': 4, 'initiative': 4, 'venture': 4,
+                 'vote': 3, 'monarch': 3, 'day_night': 3, 'ring': 3, 'graveyard_cast': 2}
+STAPLE_PUSH_BONUS = 6   # tiers 1-2 push staples at any rarity (H09; user 2026-10-26: no rarity restrictions)
 WATCH_CAP = 0
-STAPLE_PRINTINGS = ("C", "U")  # tier 1 staples: commons or uncommons, no rares or mythics (user, 2026-10-21; was uncommon only)
 BUDGET_LANDS = 3
 BUDGET_ROCKS = 2
 
 
 # Tiers 1-5 deck check (deck_tier.py). Ranges are inclusive [min, max]; None means no bound. "hard" rules FAIL, the rest WARN.
-# Rarity: no tier has a card rarity cap (the tier 1 commander is still common or uncommon).
+# Rarity: no tier restricts card or commander rarity (user, 2026-10-26).
 # premium50 / premium70: cards whose power score is 50+ / 70+ (WARN).
 TIER_TABLE = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "tier_table.json"), encoding="utf-8"))["tiers"]
 
@@ -86,20 +89,20 @@ def _band(tier):
 # Tier rules. Ranges are inclusive [min, max]; None means no bound. "hard" rules FAIL, the rest WARN.
 TIERS = {
     1: DECK,  # tier 1 values are defined above
-    2: {"name": "Tier 2 - Moderate", "life": (15, 20), "watch": 1, "staples": (12, 41), "commander_rarity": {"C", "U", "R"}, "commander_mv": (3, 5),
+    2: {"name": "Tier 2 - Moderate", "life": (15, 20), "watch": 1, "staples": (12, 41), "commander_mv": (3, 5),
         "lands": (36, 39), "ramp": (2, 8), "fast": (0, 1), "draw": (2, 10), "removal": (4, 14), "wipe": (0, 2),
         "tutor": (0, 1), "avg_mv": (2.6, 3.6), "creatures": (15, None), "power": _band(2),
         "game_changers": 0, "mld": 0, "extra_turns": 0, "premium50": (0, 5), "premium70": (0, 2), "combos": "none",
         "bracket": 2, "curve": {1: (2, 7), 2: (8, 18), 3: (10, 21), 4: (7, 15), 5: (4, 11), 6: (3, 12)},
         "types": {"Instant": 4, "Sorcery": 3, "Artifact": 4, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
-    3: {"name": "Tier 3 - Challenging", "life": (25, 35), "watch": 2, "staples": (22, 39), "commander_rarity": {"U", "R", "M"}, "commander_mv": (3, 7),
+    3: {"name": "Tier 3 - Challenging", "life": (25, 35), "watch": 2, "staples": (22, 39), "commander_mv": (3, 7),
         "lands": (33, 38), "ramp": (8, 16), "fast": (0, 2), "draw": (6, 14), "removal": (7, 16), "wipe": (1, 4),
         "tutor": (0, 3), "avg_mv": (2.8, 3.9), "creatures": (15, None), "power": _band(3),
         "game_changers": 0, "mld": 0, "extra_turns": 0, "premium50": (0, 10), "premium70": (0, 2), "combos": "late",
         "bracket": 3, "curve": {1: (3, 12), 2: (9, 22), 3: (10, 21), 4: (5, 15), 5: (3, 11), 6: (2, 10)},
         "types": {"Instant": 4, "Sorcery": 3, "Artifact": 4, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
     # Bracket 4 (optimized), kept to what the Forge AI can pilot: no mass land denial, no early two-card combos.
-    4: {"name": "Tier 4 - Hard", "life": (30, 40), "watch": 4, "staples": (22, 46), "commander_rarity": {"U", "R", "M"}, "commander_mv": (2, 7),
+    4: {"name": "Tier 4 - Hard", "life": (30, 40), "watch": 4, "staples": (22, 46), "commander_mv": (2, 7),
         "lands": (33, 37), "ramp": (9, 18), "fast": (0, 3), "draw": (8, 16), "removal": (8, 18), "wipe": (1, 5),
         "tutor": (0, 4), "avg_mv": (2.7, 3.8), "creatures": (15, None), "power": _band(4),
         "game_changers": 4, "mld": 0, "extra_turns": 1, "premium50": (4, 14), "premium70": (0, 5), "combos": "late",
@@ -107,7 +110,7 @@ TIERS = {
         "types": {"Instant": 5, "Sorcery": 3, "Artifact": 5, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
     # The AI's ceiling: bracket 4 at full card quality (fast mana, tutors, Game Changers), still no mass land denial
     # and no early two-card combos, which the AI can't assemble and players don't enjoy facing.
-    5: {"name": "Tier 5 - Elite", "life": (35, 45), "watch": 8, "staples": (28, 48), "commander_rarity": {"U", "R", "M"}, "commander_mv": (2, 7),
+    5: {"name": "Tier 5 - Elite", "life": (35, 45), "watch": 8, "staples": (28, 48), "commander_mv": (2, 7),
         "lands": (31, 37), "ramp": (10, 20), "fast": (0, 5), "draw": (9, 18), "removal": (9, 20), "wipe": (1, 5),
         "tutor": (0, 6), "avg_mv": (2.5, 3.8), "creatures": (15, None), "power": _band(5),
         "game_changers": 6, "mld": 0, "extra_turns": 2, "premium50": (8, None), "premium70": (1, None), "combos": "late",

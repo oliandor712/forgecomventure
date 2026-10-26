@@ -132,7 +132,7 @@ def cmd_commanders(a):
         rows.append(dict(name=p['name'], cmc=p['cmc'], pop=p['pop'], profile=prof, archetypes=arch[:4], fit=len(arch)))
     rows.sort(key=lambda r: (-min(len(r['archetypes']), 3), -r['pop']))
     rows = rows[: a.top * 3]
-    colour_pool = [p for p in pool.values() if p['id'] <= ident and 'Land' not in p['types'].split() and p['pop'] >= 8 and not p['gc'] and not p['mld']]
+    colour_pool = [p for p in pool.values() if p['id'] <= ident and 'Land' not in p['types'].split() and p['pop'] >= 8 and not p['gc'] and not p['mld'] and B.extra_ok(p, TIER)]
     for r in rows:   # support density: pool cards (colour, played in 8+ decks) passing any support test
         prof = r['profile']
         r['support_n'] = sum(1 for p in colour_pool if supports_cmd(prof, p))
@@ -175,12 +175,12 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         why.setdefault(p['name'], {})['payoff'] = pk
         fit = min(FIT_CAP, sf.fit(p['ftags'], strategy)) if strategy else 0
         s += FIT_W * fit - B.NICHE_PEN[TIER] * min(2, sf.niche_penalty(p['ftags'], strategy) if strategy else 0)
-        if p.get('cat') == 'staple': s += B.UNCOMMON_STAPLE_BONUS[TIER] if r == 'U' else B.STAPLE_BONUS[TIER]
+        if p.get('cat') == 'staple': s += B.STAPLE_PUSH_BONUS[TIER]
         s += B.PRECON_BONUS.get(TIER, 0) * min(1.0, p.get('precon', 0.0) / 0.25)
         why[p['name']].update(power=pw, supports=bool(sup), fit=fit)
         return s
     cands = [p for k, p in pool.items() if k != cmd['name'].lower() and k not in banned and p['id'] <= ident and 'Land' not in p['types'].split()
-             and not p['mld'] and not p['gc'] and B.mech_ok(p, TIER) and p['pop'] >= 3
+             and not p['mld'] and B.extra_ok(p, TIER) and not p['gc'] and B.mech_ok(p, TIER) and p['pop'] >= 3
              and not ('Legendary' in p['types'] and 'Creature' not in p['types'])
              ]
     members = collections.Counter()      # theme word -> cards in the deck (commander included) that belong to it or make it
