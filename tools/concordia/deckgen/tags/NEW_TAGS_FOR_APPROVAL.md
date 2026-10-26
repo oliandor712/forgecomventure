@@ -7,6 +7,12 @@ Changes to existing behaviour (approved with "approve all tags", 2026-10-22; tre
 |---|---|---|---|---|---|
 | [ ] proposed | `niche` | the card is only good in a deck built around the named theme; value = the theme (artifact, enchantment, landfall, tribal, self_mill, graveyard_hate, land, storm ...); the power score gives these cards 0.5 role credit | user 2026-10-25 (niche cards), deck_tier.py NICHE_ROLE | 29 (e.g. Crow of Dark Tidings, Aftermath Analyst, Crop Sigil) | niche:artifact (14); niche:enchantment (7); niche:self_mill (5); niche:land (4); niche:landfall (4); niche:graveyard_hate (2); niche:tribal (1) |
 | [ ] proposed | `mech` | the card needs a mechanic or component many decks and the Forge AI handle poorly (value = mechanic: monarch, graveyard_cast, vote, day_night, ring ...); build.py MECH_MIN_TIER gates it by tier. It repeats the effect tag where one exists (monarch / mech:monarch): the effect tag says what the card does, mech says where the builder may use it | user 2026-10-25 (replaces build.SKIP_TEXT) | 4 (e.g. Think Twice, Daring Waverider, Battle Screech) | mech:graveyard_cast (3); mech:monarch (1) |
+| [ ] pending (in use since 2026-10-25, no chat approval) | `unless_cost` | the effect happens unless a player pays a cost (a tax, not a choice); unless_cost_amount says how much |  | 5 (e.g. Gate to the Afterlife, Sage's Dousing, Soratami Savant) | unless_cost (5) |
+| [ ] pending (in use since 2026-10-25, no chat approval) | `phase_out` | permanents phase out |  | 2 (e.g. Slip Out the Back, Ripples of Potential) | phase_out (2) |
+| [ ] pending (in use since 2026-10-25, no chat approval) | `cant_regenerate` | the destroyed creature can't be regenerated |  | 4 (e.g. Nekrataal, Incinerate, Afterlife) | cant_regenerate (4) |
+| [ ] pending (in use since 2026-10-25, no chat approval) | `prevent_damage` | prevents damage that would be dealt (a targeted shield, not all combat damage) |  | 1 (e.g. Losheel, Clockwork Scholar) | prevent_damage (1) |
+| [ ] pending (in use since 2026-10-25, no chat approval) | `mana_conditional` | the mana ability adds a different amount, or works only, when the condition: tag of its group holds |  | 2 (e.g. Temple of the False God, Leafkin Druid) | mana_conditional (2) |
+| [ ] pending (in use since 2026-10-25, no chat approval) | `alt_additional_cost` | an alternative additional cost as the card is cast (reveal a card or pay mana, for example); the cost tags follow |  | 2 (e.g. Bitter Triumph, Silvergill Adept) | alt_additional_cost (2) |
 
 ## New values inside already-approved families (the family is approved; these values appeared after the approval)
 
@@ -73,7 +79,7 @@ Say if any should be changed; unmarked means accepted with the family.
 - `transform` was removed from Feign Death, Supernatural Stamina and Merfolk Trickster (they grant or remove abilities); `sacrifice_outlet` was removed from 14 cards that sacrifice only themselves (user rule).
 - Segregated, kept intact: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`, `land_tutor`, bare `recursion`, every `<kw>_grant` and the bare keyword tags on cards that only grant a keyword) sit on the `ai_tags:` line and are hidden from the blind reader and from the redundancy check.
 
-## Waiting on the user
-- Families marked `[ ]` in the first table: `niche` and `mech` (in use: `niche` feeds the power score, `mech` gates cards by tier). The bare tags `equip`, `grant_double_strike` and `infect` were removed on 2026-10-26 (user): they repeated `grant_kw:*`, `token_make` and `kw:equip`. All earlier families, the two behaviour changes and the merged tags were approved on 2026-10-22.
-- Confirm in chat: the six families marked "chat approval not found" in `APPROVED_TAGS_ARCHIVE.md` (they sit on the approved list since the 2026-10-25 commit).
-- Still open (not an approval): confirm the AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token).
+## Waiting on the user (everything pending, one list)
+- Families marked `[ ]` in the first table: `niche` and `mech` (in use: `niche` feeds the power score, `mech` gates cards by tier), and the six in use since 2026-10-25 without a chat approval: `unless_cost`, `phase_out`, `cant_regenerate`, `prevent_damage`, `mana_conditional`, `alt_additional_cost`. Say approve, or change.
+- The AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token): confirm it is the right set to keep apart from the blind reader (not a tag approval).
+- Everything else is approved: the 2026-10-22 families, the two behaviour changes, the merged tags, `colorless_card` and `extra_turn` (2026-10-26).

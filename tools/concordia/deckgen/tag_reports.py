@@ -173,9 +173,13 @@ def write_approval(recs, red=()):
         ex = ", ".join(list(dict.fromkeys(c for v in vals.values() for c in v))[:3])
         seen = "; ".join("%s (%d)" % (t, len(v)) for t, v in sorted(vals.items(), key=lambda kv: -len(kv[1]))[:8])
         return "| %s | `%s` | %s | %s | %d (e.g. %s) | %s |" % (status, f, m, w, n, ex, seen)
-    for f, status in [(f, "[x] " + APPROVED_DECISION[f]) for f in APPROVED_DECISION if f not in fam] + [(f, "[x] approved 2026-10-23") for f in ["additional_cost"] if f not in fam]             + [(f, "[x] on the approved list since 2026-10-25 (chat approval not found: confirm)") for f in APPROVED_LISTED if f not in fam]:
+    for f, status in [(f, "[x] " + APPROVED_DECISION[f]) for f in APPROVED_DECISION if f not in fam] + [(f, "[x] approved 2026-10-23") for f in ["additional_cost"] if f not in fam]:
         row = _rec_row(f, status)
         if row: archive.append(row)
+    for f in APPROVED_LISTED:     # in use since the 2026-10-25 commit, never approved in chat: pending
+        if f not in fam:
+            row = _rec_row(f, "[ ] pending (in use since 2026-10-25, no chat approval)")
+            if row: out.append(row)
     for f in PROPOSED_RECORDS:
         if f not in fam:
             row = _rec_row(f, "[ ] proposed")
@@ -200,7 +204,7 @@ def write_approval(recs, red=()):
             "- `x_is:<what>` values were renamed to readable words (e.g. `count_swamp_youctrl` -> `count_swamp_you_control`); `restrict` now also carries `restrict_kind:<kind>`.",
             "- `transform` was removed from Feign Death, Supernatural Stamina and Merfolk Trickster (they grant or remove abilities); `sacrifice_outlet` was removed from 14 cards that sacrifice only themselves (user rule).",
             "- Segregated, kept intact: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`, `land_tutor`, bare `recursion`, every `<kw>_grant` and the bare keyword tags on cards that only grant a keyword) sit on the `ai_tags:` line and are hidden from the blind reader and from the redundancy check.",
-            "", "## Waiting on the user", "- Families marked `[ ]` in the first table: `niche` and `mech` (in use: `niche` feeds the power score, `mech` gates cards by tier). The bare tags `equip`, `grant_double_strike` and `infect` were removed on 2026-10-26 (user): they repeated `grant_kw:*`, `token_make` and `kw:equip`. All earlier families, the two behaviour changes and the merged tags were approved on 2026-10-22.", "- Confirm in chat: the six families marked \"chat approval not found\" in `APPROVED_TAGS_ARCHIVE.md` (they sit on the approved list since the 2026-10-25 commit).", "- Still open (not an approval): confirm the AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token)."]
+            "", "## Waiting on the user (everything pending, one list)", "- Families marked `[ ]` in the first table: `niche` and `mech` (in use: `niche` feeds the power score, `mech` gates cards by tier), and the six in use since 2026-10-25 without a chat approval: " + ", ".join("`%s`" % f for f in APPROVED_LISTED) + ". Say approve, or change.", "- The AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token): confirm it is the right set to keep apart from the blind reader (not a tag approval).", "- Everything else is approved: the 2026-10-22 families, the two behaviour changes, the merged tags, `colorless_card` and `extra_turn` (2026-10-26)."]
     open(os.path.join(HERE, "tags", "NEW_TAGS_FOR_APPROVAL.md"), "w").write("\n".join(out) + "\n")
     open(os.path.join(HERE, "tags", "APPROVED_TAGS_ARCHIVE.md"), "w").write("\n".join(archive) + "\n")
 

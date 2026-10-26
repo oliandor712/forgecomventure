@@ -27,8 +27,8 @@ Every tier's requirements live in `tools/concordia/tier_rules.py` (the one sourc
 | Tribal creatures | 15 of the tribe (18 after a retry) |
 | Ramp / draw / removal | 0-3 each |
 | Fast mana, tutors, wipes, Game Changers, extra turns, combos | none |
-| Rarity | commons and uncommons only (up to 25 uncommons) |
-| Staples (popular, low impact) | commons or uncommons, no rares or mythics |
+| Rarity | no cap (user, 2026-10-26); the commander is still common or uncommon |
+| Staples (popular, low impact) | any rarity |
 | Enemy life | 10-12 |
 | Commander support (H17) | 5 or more deck cards that work with the commander |
 
@@ -49,7 +49,7 @@ Every tier's requirements live in `tools/concordia/tier_rules.py` (the one sourc
 | Average mana value (nonland) | 2.5-3.4 | 2.6-3.6 | 2.8-3.9 |
 | Creatures | at least 15 | at least 15 | at least 15 |
 | Average card power (§3a) | 17-23 | 22-30 | 29-37 |
-| Rarity | Commons, plus up to 25 uncommons. No rares or mythics | No cap (user, 2026-10-26) | No cap |
+| Rarity | No cap | No cap (user, 2026-10-26) | No cap |
 | Cards at power 50+ | 2 or fewer | 5 or fewer | 10 or fewer |
 | Cards at power 70+ | 0 | 2 or fewer | 2 or fewer |
 | Card types (Moxfield grouping) | at least 6 noncreature cards, 4 of them instants or sorceries; creatures at most 85% | at least 4 instants, 3 sorceries, 4 artifacts, 2 enchantments; no type above 60% | as Tier 2 |
@@ -58,7 +58,7 @@ Every tier's requirements live in `tools/concordia/tier_rules.py` (the one sourc
 | Mass land denial | none | none | none |
 | Two-card combos | none | none | late-game only |
 
-Tiers 4-5 (user, 2026-10-26; same checks, no rarity caps):
+Tiers 4-5 (user, 2026-10-26; same checks):
 
 | | Tier 4 | Tier 5 |
 |---|---|---|

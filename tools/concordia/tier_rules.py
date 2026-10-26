@@ -21,7 +21,7 @@ DECK = {
     "avg_mv": (2.5, 3.4),
     "creatures": (15, None),  # H11: at least 15 (pass/fail); the soft cap of 35 is a build limit only
     "power": (17, 23),  # H08 (user 2026-10-26: 17-23, was 16-21)
-    "max_rare": 0, "max_mythic": 0, "max_uncommon": 25,
+    # no rarity cap in any tier (user, 2026-10-26; was commons plus up to 25 uncommons)
     "game_changers": 0, "mld": 0, "extra_turns": 0, "premium50": (0, 2), "premium70": (0, 0), "combos": "none",
     "bracket": 1,
     "curve": {1: (5, 8), 2: (15, 21), 3: (11, 16), 4: (5, 8), 5: (3, 10), 6: (0, 2)},
@@ -60,7 +60,7 @@ BUILD_SPEC = {
     "cmax": CREATURE_SOFT_CAP,  # H11 soft cap
     "types": {"Instant|Sorcery": 10, "Artifact|Enchantment": 6},
     "curve": {1: 7, 2: 20, 3: 16, 4: 8, 5: 6, 6: 2},
-    "rar": {"C": 99, "U": 25}, "p50": 2, "p70": 0,
+    "rar": {"C": 99, "U": 99, "R": 99, "M": 99}, "p50": 2, "p70": 0,
     "gc": 0,
 }
 
@@ -74,7 +74,7 @@ BUDGET_ROCKS = 2
 
 
 # Tiers 1-5 deck check (deck_tier.py). Ranges are inclusive [min, max]; None means no bound. "hard" rules FAIL, the rest WARN.
-# Rarity: tier 1 allows commons and up to max_uncommon uncommons; tiers 2-5 have no rarity cap.
+# Rarity: no tier has a card rarity cap (the tier 1 commander is still common or uncommon).
 # premium50 / premium70: cards whose power score is 50+ / 70+ (WARN).
 TIER_TABLE = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "tier_table.json"), encoding="utf-8"))["tiers"]
 
