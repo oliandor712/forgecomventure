@@ -434,7 +434,6 @@ def build(d):
             k = name.lower(); p = pool.get(k)
             if not p or k in banned or name in nb: continue
             if not set(b['colors']) <= ident or (mono and b['any_color']): continue
-            if not ('C' in p['best'] or 'U' in p['best']): continue
             nb.append(name)
         nb = nb[: BUDGET_LANDS[tier] + (1 if tier == 2 else 0)]
     lands = [(pool[n.lower()], pick_rarity(pool[n.lower()], tier, rcount, spec) or pool[n.lower()]['minr']) for n in nb]

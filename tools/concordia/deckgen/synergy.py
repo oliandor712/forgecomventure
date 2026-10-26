@@ -10,6 +10,9 @@ sys.path.insert(0, os.path.join(HERE, '..', 'strategies'))
 import strategy_fit as sf  # noqa: E402
 
 SUPPORT_MIN, PAYOFF_MIN, PAYOFF_MAX, MAKER_CAP = 5, 5, 10, 4   # payoffs are a range, not a fixed count, so decks can differ (user 2026-10-26)
+# Setup (generators, fodder, static body-makers) balances payoffs for creature-token commanders. Real token-commander decks (external/decks.json, 153 creature-token
+# decks): makers median 10 (p25 7, p75 13), payoffs median 9 (p25 5, p75 15), payoff/maker ratio median 0.9. So setup is a range and payoffs may not outrun it by more than SETUP_GAP.
+SETUP_MIN, SETUP_MAX, SETUP_GAP = 7, 14, 3
 NONCREATURE_TOK = {'treasure', 'food', 'clue', 'blood', 'gold', 'junk', 'map', 'powerstone', 'shard'}
 PAYOFF_ROLES = (('tokens', 'anthem'), ('tokens', 'finisher'), ('tokens', 'doubler'), ('sacrifice', 'outlet'), ('sacrifice', 'payoff'), ('aristocrats', 'outlet'), ('aristocrats', 'payoff'))
 BROAD = {'sacrifice', 'life_loss', 'damage', 'trigger:etb', 'token_count', 'replace', 'cost_sacrifice_target', 'drain'}   # match too many cards to count as a payoff alone
@@ -53,6 +56,24 @@ def payoff_kind(p, pl, body, extra_ok=True):
         for s in pl['subtypes']:
             if re.search(r'(?i)\b%ss?\b' % re.escape(s.replace('_', ' ')), body) and _TRIBAL.search(body): return 'pay'
     return ''
+
+
+def setup_kind(p, pl):
+    """'setup' for a creature-token commander when the card makes the creature bodies the payoffs need: token makers (ETB, triggered or static) and the strategy 'generator'/'fodder' roles. Not for non-creature kinds (MAKER_CAP covers those)."""
+    if not pl or not pl.get('creature') or pl.get('kinds'): return ''
+    ft = p['ftags']
+    mk = {t.split(':', 1)[1] for t in ft if t.startswith('token_type:')}
+    if 'token_make' in ft and (not mk or mk - NONCREATURE_TOK) and 'Land' not in p['types']: return 'setup'
+    S = sf.load()
+    for aid, role in (('tokens', 'generator'), ('sacrifice', 'fodder'), ('aristocrats', 'fodder')):
+        r = S.get(aid, {}).get('roles', {}).get(role)
+        if r and 'Land' not in p['types'] and any(sf._match(s, ft) for s in r['sig'] if s not in BROAD and not s.startswith(('cmc_ge', 'cardtype:'))):
+            return 'setup'
+    return ''
+
+
+def count_setup(pl, cards):
+    return sum(1 for p in cards if setup_kind(p, pl))
 
 
 def count_payoffs(pl, cards, body_of):

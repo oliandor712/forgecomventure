@@ -24,7 +24,7 @@
   },
   "Misty Rainforest": {
    "decks": 63,
-   "colors": "",
+   "colors": "GU",
    "any_color": false
   },
   "Boseiju, Who Endures": {
@@ -64,12 +64,12 @@
   },
   "Polluted Delta": {
    "decks": 51,
-   "colors": "",
+   "colors": "BU",
    "any_color": false
   },
   "Verdant Catacombs": {
    "decks": 50,
-   "colors": "",
+   "colors": "BG",
    "any_color": false
   },
   "Breeding Pool": {
@@ -99,7 +99,7 @@
   },
   "Windswept Heath": {
    "decks": 46,
-   "colors": "",
+   "colors": "GW",
    "any_color": false
   },
   "Overgrown Tomb": {
@@ -114,7 +114,7 @@
   },
   "Wooded Foothills": {
    "decks": 45,
-   "colors": "",
+   "colors": "GR",
    "any_color": false
   },
   "City of Brass": {
@@ -124,22 +124,22 @@
   },
   "Bloodstained Mire": {
    "decks": 44,
-   "colors": "",
+   "colors": "BR",
    "any_color": false
   },
   "Flooded Strand": {
    "decks": 44,
-   "colors": "",
+   "colors": "UW",
    "any_color": false
   },
   "Arid Mesa": {
    "decks": 44,
-   "colors": "",
+   "colors": "RW",
    "any_color": false
   },
   "Marsh Flats": {
    "decks": 44,
-   "colors": "",
+   "colors": "BW",
    "any_color": false
   },
   "Hallowed Fountain": {
@@ -154,7 +154,7 @@
   },
   "Scalding Tarn": {
    "decks": 42,
-   "colors": "",
+   "colors": "RU",
    "any_color": false
   },
   "Mana Confluence": {

@@ -23,6 +23,8 @@ def produces(p):
         cols |= set(re.findall(r'\{([WUBRG])\}', sym))
     for t, c in BASIC_TYPE.items():
         if t in p['types'].split(): cols.add(c)
+    m = re.search(r'Search your library for an? (Plains|Island|Swamp|Mountain|Forest) or (Plains|Island|Swamp|Mountain|Forest) card', text)
+    if m: cols |= {BASIC_TYPE[m.group(1)], BASIC_TYPE[m.group(2)]}   # a fetch land counts as the two colours it fetches, so a deck needs both (mono-colour decks never take one)
     anyc = bool(re.search(r'any colou?r|chosen colou?r|commander\'s colou?r identity|any type', text, re.I))
     return cols, anyc
 

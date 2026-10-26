@@ -300,7 +300,6 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         if len(nb) >= B.BUDGET_LANDS[TIER] + 1: break
         p = pool.get(lname.lower())
         if not p or lname.lower() in banned or not set(lb['colors']) <= ident or (mono and lb['any_color']): continue
-        if not ('C' in p['best'] or 'U' in p['best']): continue
         nb.append(lname)
     lands = [(pool[n.lower()], 'U' if 'U' in pool[n.lower()]['best'] else 'C') for n in nb]
     cols = [c for c in COLORS if c in ident]; pips = collections.Counter()

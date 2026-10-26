@@ -5,36 +5,36 @@ Description=Tier 1 (Bracket 1). Mono-green tokens deck led by Meriadoc Brandybuc
 1 Meriadoc Brandybuck|LTR
 [Main]
 38 Forest|FDN
-1 Demolition Field|FDN
-1 Reliquary Tower|M19
-1 Rogue's Passage|FDN
+1 Boseiju, Who Endures|NEO
+1 Mosswort Bridge|LRW
+1 Shifting Woodland|MH3
 1 Confront the Unknown|SOI
-1 Inquisitive Puppet|ELD
+1 Incubation Sac|ONE
 1 Llanowar Mentor|FUT
 1 Luxurious Libation|SNC
 1 Many Partings|TLE
-1 Oviya Pashiri, Sage Lifecrafter|CMM
+1 Prying Blade|XLN
 1 The Underworld Cookbook|MH2
 1 Arcane Signet|TMC
 1 Ark of Blight|SCG
-1 Awaken the Woods|BRO
-1 Bucknard's Everfull Purse|AFC
 1 Bumbleflower's Sharepot|BLB
-1 Bumi's Feast Lecture|TLE
 1 Civic Gardener|SNC
 1 Daily Bugle Newspaper|MSC
 1 Druid's Deliverance|RTR
+1 Elephant Resurgence|PCY
 1 Feasting Hobbit|LTC
 1 Fellwar Stone|9ED
 1 Gold Rush|OTJ
-1 Intrepid Tenderfoot|EOE
+1 Ooze Garden|ALA
 1 Prized Statue|CLB
 1 Revive the Shire|LTR
+1 Rhonas's Last Stand|HOU
+1 Stabilizer|SCG
 1 Streetwise Negotiator|MOM
 1 Surly Farrier|ECL
 1 Town Greeter|FIN
+1 Trail of Crumbs|ELD
 1 True Ancestry|TLA
-1 Wolfwillow Haven|THB
 1 Arachnogenesis|CMM
 1 Bilbo, Fellow Conspirator|HOC
 1 Bloodroot Apothecary|BLC
@@ -47,7 +47,7 @@ Description=Tier 1 (Bracket 1). Mono-green tokens deck led by Meriadoc Brandybuc
 1 Meatsqueak, Hoard Lord|MBC
 1 Monument to Endurance|DFT
 1 Peregrin Took|LTR
-1 Sandstorm Salvager|BIG
+1 Pompous Gadabout|MKM
 1 Scute Swarm|ZNR
 1 Turntimber Sower|OTC
 1 Watchful Radstag|PIP
@@ -59,10 +59,10 @@ Description=Tier 1 (Bracket 1). Mono-green tokens deck led by Meriadoc Brandybuc
 1 Hedge Shredder|DSK
 1 Second Harvest|SOI
 1 Tempting Contract|C21
+1 Baru, Fist of Krosa|FUT
 1 Doubling Season|RAV
-1 Kalonian Hydra|M14
 1 Mycoloth|ALA
 1 Overwhelming Stampede|M11
 1 The Notary Hobbits|HOB
+1 Old Gnawbone|AFR
 1 Ezuri's Predation|CMM
-1 Sandwurm Convergence|AKH
