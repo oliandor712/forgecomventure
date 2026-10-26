@@ -36,7 +36,7 @@ Tagging project (the live work): `tools/concordia/deckgen/tag_run.py` + `tag_ext
 Waiting on the user: tick the families in `NEW_TAGS_FOR_APPROVAL.md`; the earlier decision list (19 items) is mostly answered; H55 is killed (user, 2026-10-22).
 
 ## 5. Background agents
-None are used. The earlier three (forge-ai-lab, deck-balance-lab, deck-builder) are idle; do not message or resume them. Their finished work is in the repo (see `tools/agents/HANDOVER.md`). `.claude/agents/*.md` are now the subagent role briefs (see `CONTEXT.md` "Subagents": `tag-blind-reader` Sonnet 5.5 / medium, all other agents Haiku 5.5 / low; max 5, only when the user asks).
+None are used. The earlier three (forge-ai-lab, deck-balance-lab, deck-builder) are idle; do not message or resume them. Their finished work is in the repo (see `tools/agents/HANDOVER.md`). `.claude/agents/*.md` are now the subagent role briefs (see `CONTEXT.md` "Subagents": `tag-blind-reader`, `glance-tag-reader`, `glance-oracle-reader` Sonnet 5.5 / medium, all other agents Haiku 5.5 / low; max 5, only when the user asks).
 
 ## 6. Tools, environment, connectors
 - `python3 tools/agents/toolbox.py --check` (STALE after tool commits: regenerate with `python3 tools/agents/toolbox.py`, commit). `tools/agents/TOOLBOX.md` lists every tool. `tools/concordia/balance_lab/push_records.sh` is the agents' safe push.

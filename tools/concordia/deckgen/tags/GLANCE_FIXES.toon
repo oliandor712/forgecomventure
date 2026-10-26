@@ -1,0 +1,25 @@
+# Glance round G1 (2026-10-26): hand read of the 15 misses (role F1 < .5 or no archetype hit). Ground truth = Oracle reader. Nothing applied yet.
+# cause: tag_missing = the tag view lacks the fact the reader needed; role_vocab = tags fine, reader and Oracle reader pick different role names; legend = tag present but readers could not use it.
+misses[15|]{id|card|cause|what_is_missing|fix}:
+  c001|lightmine field|tag_missing|damage target is the attackers; scale is attackers, tags only say trigger:attacks + damage x|damage_target:attacking_creatures (or target_scope:attackers)
+  c013|daring sleuth|tag_missing|trigger is sacrificing a Clue, transform effect has no trigger link|trigger:sacrifice trigger_filter:clue, link transform to c1
+  c015|sash and waistcoat unmen|tag_missing|face-down/manifest and unblockable lost; only trigger:attacks and cost_mana:3|kw:manifest, evasion:unblockable, trigger_filter:face_down, activate_by:any_player
+  c024|raking canopy|tag_missing|only creatures with flying that attack you; trigger:attacks hides filter and who is attacked|trigger_filter:flying, trigger_scope:attacks_you, damage target = triggering creature
+  c025|master pakku|tag_missing|trigger is becomes tapped; mill target and scale (Lesson cards) lost (scales:graveyard unclear x3)|trigger:becomes_tapped, scales:graveyard_lesson, mill_count:x
+  c031|panharmonicon|tag_missing|no tags at all besides cardtype; trigger doubler is the whole card|doubler:etb_trigger (family), trigger_filter:artifact_or_creature
+  c033|gravity well|tag_missing|effect lose flying until end of turn is missing; trigger:attacks flying is a merged string|trigger:attacks trigger_filter:flying, lose_ability:flying duration:eot
+  c034|deathreap ritual|tag_missing|morbid condition and end-step trigger lost; only optional + draw_count (optional unclear)|trigger:end_step each_player, condition:creature_died_this_turn
+  c038|unwilling ingredient|role_vocab|tags right; readers say draw/evasion, Oracle says cantrip/card_adv. cost_exile_target:cardname unclear x3|legend: cardname = this card; map draw -> card_adv in role list or accept
+  c044|endless atlas|tag_missing|activation condition (three lands with the same name) missing; roles draw vs card_adv/draw_engine|condition:control_n_same_name_lands, role hint draw -> draw_engine
+  c045|titan forge|role_vocab|near hit (F1 .40-.67, arch ok); Oracle adds engine, readers add artifact|none; noise
+  c046|drag under|role_vocab|bounce and draw tagged correctly; readers say removal, Oracle says answer/interaction|legend: remove:bounce is not removal; add role note in reminders
+  c048|frostwielder|role_vocab|Oracle reader gave damage/pinger/removal without creature; readers gave creature/pinger. die_replace:exile has no 'damaged by this' link|none for roles; die_replace link optional
+  c056|phalanx leader|tag_missing|heroic = trigger on being targeted by your spell; trigger:spell_cast reads as any spell, so readers saw anthem|trigger_filter:targets_self, kw:heroic
+  c061|spellskite|tag_missing|retarget effect has no tag; target_type:emblem/card are junk (unclear x3), cost:mana unclear|effect:change_target, drop target_type:emblem, cost_mana:phyrexian_u
+summary:
+  tag_missing: 11 of 15 (c001 c013 c015 c024 c025 c031 c033 c034 c044 c056 c061)
+  role_vocab: 4 of 15 (c038 c045 c046 c048); Oracle reader wrong: 0 clear
+  pattern_1: trigger filters and conditions are lost (flying filter, attacks you, morbid, becomes tapped, sacrifice Clue, targeted by your spell, face-down, activate only if)
+  pattern_2: redirect, retarget, lose-ability and trigger-doubling effects have no tag family
+  pattern_3: role names: draw vs card_adv/draw_engine and removal vs answer/interaction differ between readers; add a one-line mapping to the form reminders
+  unclear_top: trigger 13, condition 8, target_type 6, cost_mana 4

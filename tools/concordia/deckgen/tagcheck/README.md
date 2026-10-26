@@ -12,3 +12,6 @@ Scoring: 0.4 tf-idf cosine + 0.4 concept F1 + 0.2 number F1; bands good >= 0.7, 
 
 ## scry_count (2026-10-23)
 Scry is one tag, `scry_count:N` (or `x` with `x_is`), read from the script `ScryNum$`; the Oracle gap filler fills it only when the script has no count. The bare `scry` tag no longer exists. Runs r1-r18 were made with bare `scry`; `mtg2llm.py` maps `scry_count` to that phrasing.
+
+## Glance test (2026-10-26)
+python3 reverse_check.py glance-export --run G --cardlist names.txt [--batch 24] writes tag-view batches (in/) and Oracle-view batches (oin/) with the form spec; tag readers write out/batch_NN[_rK].json, the Oracle reader oout/batch_NN.json; glance-compare --run G scores role F1, archetype hit, power within 1, function match, unclear tags, calibration, reader agreement and lists misses in glance_results.json. Plan: GLANCE_TEST_PLAN.md. Code: glance.py.

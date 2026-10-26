@@ -1,0 +1,108 @@
+{
+ "deck": "W_Starter_Normal",
+ "strategy": [
+  "superfriends",
+  "tokens"
+ ],
+ "on_plan": 59,
+ "rejects": [
+  "Sphere of Safety",
+  "Ghostly Prison",
+  "Colossus Hammer"
+ ],
+ "reject_detail": [
+  {
+   "name": "Sphere of Safety",
+   "function": "Taxes attackers by X per creature, X being your enchantment count.",
+   "oracle_arch": [
+    "enchantress",
+    "stax",
+    "control"
+   ],
+   "tag_arch": [
+    "control",
+    "enchantress",
+    "stax"
+   ],
+   "roles": [
+    "cheap_ench",
+    "defense",
+    "pillowfort"
+   ],
+   "power": 3
+  },
+  {
+   "name": "Ghostly Prison",
+   "function": "Attackers must pay {2} per creature attacking you.",
+   "oracle_arch": [
+    "stax",
+    "control",
+    "enchantress"
+   ],
+   "tag_arch": [
+    "control",
+    "enchantress",
+    "stax"
+   ],
+   "roles": [
+    "defense",
+    "lock",
+    "pillowfort"
+   ],
+   "power": 3
+  },
+  {
+   "name": "Colossus Hammer",
+   "function": "Equipment giving +10/+10 but removing flying; equip costs eight.",
+   "oracle_arch": [
+    "equipment",
+    "voltron",
+    "big_mana"
+   ],
+   "tag_arch": [
+    "aggro",
+    "equipment",
+    "voltron"
+   ],
+   "roles": [
+    "equipment",
+    "pump"
+   ],
+   "power": 1
+  }
+ ],
+ "tag_gaps": [],
+ "summary": {
+  "cards": 62,
+  "tag_readers": 1,
+  "rows": 62,
+  "role_f1": 0.705,
+  "arch_hit": 1.0,
+  "power_within1": 0.968,
+  "function_sim": 0.664,
+  "role_f1_vs_listed": 0.567,
+  "arch_hit_vs_listed": 0.8,
+  "unclear_per_card": 0.37,
+  "reader_role_agreement": null,
+  "calibration_by_confidence": {
+   "2": [
+    0.753,
+    10
+   ],
+   "3": [
+    0.87,
+    21
+   ],
+   "4": [
+    0.873,
+    31
+   ]
+  },
+  "tag_tokens_per_card_est": 215,
+  "invalid_values": {
+   "roles": 0,
+   "archetypes": 0
+  },
+  "unreadable_files": []
+ }
+}

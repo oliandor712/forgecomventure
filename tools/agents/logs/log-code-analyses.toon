@@ -1,6 +1,7 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Append one row per analysis, under 400 chars.
 # Code and tooling analyses.
-log[3|]{date|topic|finding|caveat}:
+log[4|]{date|topic|finding|caveat}:
   2026-10-23|derived_tags.py|anthem needs duration:static + you_control/pump_team (auras, one-shots false hits); wipe excludes target_filter/you_control groups|commit 603c11540e3 local, unpushed
   2026-10-25|seed_bonus 6 overrides (Mirri, Moritte, Orah, Bess) dry-built with and without|power diff <=0.3 (24.5/24.6, 29.9/29.8, 25.5/25.8, 29.6/29.7), all in band; Bess default adds Instant 1 WARN|dry builds only in scratchpad; pool uses Scryfall -in:paper list (27699 cards)
   2026-10-25|power scorer review (deck_tier, tag_run, pool)|10 findings: deckpop split-card key, silent missing inputs, overlapping bands, landfall regex, niche:lands, role ignored niche; 9 fixed|per-card record() uncached (75 s pool build); decks not rebuilt; see power-scorer-tests.toon
+  2026-10-26|starter_build.py (new starter builder)|commanders/draft/review-export/review-compare built; W test deck Adeline power 27.0 -> 26.7 after 3 glance rejects (Sphere of Safety, Ghostly Prison, Colossus Hammer); tag vs Oracle reader archetypes agreed on 62/62|only W Normal built; rejected cards not re-reviewed; Alt/pair/sideboard step missing; U B R G not started

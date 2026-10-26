@@ -1,0 +1,228 @@
+[
+ {
+  "name": "Adeline, Resplendent Cathar",
+  "cmc": 3,
+  "pop": 32,
+  "profile": [
+   "attack",
+   "scales:Creature",
+   "token",
+   "tribe:Human"
+  ],
+  "archetypes": [
+   "tokens",
+   "superfriends",
+   "stax",
+   "enchantress"
+  ],
+  "fit": 6,
+  "support_n": 576
+ },
+ {
+  "name": "Losheel, Clockwork Scholar",
+  "cmc": 3,
+  "pop": 14,
+  "profile": [
+   "etb_other",
+   "scales:Artifact"
+  ],
+  "archetypes": [
+   "tokens",
+   "ramp",
+   "group_hug",
+   "counters"
+  ],
+  "fit": 15,
+  "support_n": 561
+ },
+ {
+  "name": "Odric, Lunarch Marshal",
+  "cmc": 4,
+  "pop": 25,
+  "profile": [
+   "attack",
+   "control",
+   "double_strike",
+   "evasion",
+   "flying_hate",
+   "lifegain",
+   "protection"
+  ],
+  "archetypes": [
+   "tokens",
+   "aggro",
+   "voltron",
+   "lifegain"
+  ],
+  "fit": 5,
+  "support_n": 559
+ },
+ {
+  "name": "Haliya, Guided by Light",
+  "cmc": 3,
+  "pop": 19,
+  "profile": [
+   "etb_self",
+   "lifegain",
+   "scales:Artifact"
+  ],
+  "archetypes": [
+   "tokens",
+   "lifegain",
+   "group_hug",
+   "blink"
+  ],
+  "fit": 14,
+  "support_n": 538
+ },
+ {
+  "name": "Falcon and Redwing",
+  "cmc": 3,
+  "pop": 6,
+  "profile": [
+   "counters",
+   "evasion",
+   "token",
+   "tribe:Bird"
+  ],
+  "archetypes": [
+   "counters",
+   "tokens",
+   "superfriends",
+   "voltron"
+  ],
+  "fit": 9,
+  "support_n": 492
+ },
+ {
+  "name": "General Leo Cristophe",
+  "cmc": 5,
+  "pop": 6,
+  "profile": [
+   "counters",
+   "etb_self",
+   "sacrifice",
+   "scales:Creature"
+  ],
+  "archetypes": [
+   "counters",
+   "blink",
+   "aristocrats",
+   "voltron"
+  ],
+  "fit": 11,
+  "support_n": 490
+ },
+ {
+  "name": "Mavren Fein, Dusk Apostle",
+  "cmc": 3,
+  "pop": 12,
+  "profile": [
+   "attack",
+   "lifegain",
+   "token",
+   "tribe:Vampire"
+  ],
+  "archetypes": [
+   "tokens",
+   "superfriends",
+   "stax",
+   "enchantress"
+  ],
+  "fit": 6,
+  "support_n": 451
+ },
+ {
+  "name": "Rosie Cotton of South Lane",
+  "cmc": 3,
+  "pop": 7,
+  "profile": [
+   "counters",
+   "etb_self",
+   "lifegain",
+   "sacrifice",
+   "token"
+  ],
+  "archetypes": [
+   "tokens",
+   "counters",
+   "superfriends",
+   "blink"
+  ],
+  "fit": 10,
+  "support_n": 442
+ },
+ {
+  "name": "Zeriam, Golden Wind",
+  "cmc": 4,
+  "pop": 5,
+  "profile": [
+   "evasion",
+   "token",
+   "tribe:Griffin"
+  ],
+  "archetypes": [
+   "tokens",
+   "voltron",
+   "superfriends",
+   "stax"
+  ],
+  "fit": 8,
+  "support_n": 442
+ },
+ {
+  "name": "Mangara, the Diplomat",
+  "cmc": 4,
+  "pop": 44,
+  "profile": [
+   "attack",
+   "control",
+   "lifegain"
+  ],
+  "archetypes": [
+   "spellslinger",
+   "lifegain",
+   "group_hug",
+   "tokens"
+  ],
+  "fit": 13,
+  "support_n": 437
+ },
+ {
+  "name": "Toby, Beastie Befriender",
+  "cmc": 3,
+  "pop": 7,
+  "profile": [
+   "attack",
+   "etb_self",
+   "token",
+   "tribe:Beast"
+  ],
+  "archetypes": [
+   "tokens",
+   "blink",
+   "superfriends",
+   "stax"
+  ],
+  "fit": 6,
+  "support_n": 412
+ },
+ {
+  "name": "Myrel, Shield of Argive",
+  "cmc": 4,
+  "pop": 13,
+  "profile": [
+   "attack",
+   "token",
+   "tribe:Soldier"
+  ],
+  "archetypes": [
+   "tokens",
+   "stax",
+   "superfriends",
+   "group_hug"
+  ],
+  "fit": 7,
+  "support_n": 403
+ }
+]

@@ -1,0 +1,290 @@
+[
+ {
+  "id": "c001",
+  "text": "When this creature enters, target creature you control gets +X/+0 until end of turn and up to one target creature an opponent controls gets -0/-X until end of turn, where X is the number of Elf cards in your graveyard."
+ },
+ {
+  "id": "c002",
+  "text": "{modal:1_of_3 target_count:one target_type:creature target_type:planeswalker damage damage_amount:x x_is:count_creature_you_control target_count:all target_type:creature target_scope:you_control pump_amount:+1/+1 duration:eot grant_kw:trample token_count:2 token_color:green token_color:white token_pt:1/1 token_type:citizen}"
+ },
+ {
+  "id": "c003",
+  "text": "{trigger:etb trigger_scope:self life_loss_amount:2 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source} / {trigger_filter:one_or_more trigger_filter:pirate look_top:1 take:all to_zone:exile impulse_draw impulse_draw_count:1 duration:permanent} / Transform."
+ },
+ {
+  "id": "c004",
+  "text": "Choose one: Target player creates X 1/1 red Warrior creature tokens, where X is the number of creatures that player controls; or target creature is dealt damage equal to X, where X is the number of creatures you control."
+ },
+ {
+  "id": "c005",
+  "text": "I, II, III. / {saga_chapter:1 token_count:x token_color:white token_pt:1/1 token_type:human_soldier x_is:players_amount} / II - {effect}. / II - {effect}. / {remove:destroy}"
+ },
+ {
+  "id": "c006",
+  "text": "{duration:static pump_amount:+2/+2 affected_type:creature affected_scope:you_control affected_filter:hasmanaability} / Whenever a creature you control attacks, {effect}. / {trigger:spell_cast duration:eot trample target_count:one target_type:creature pump_amount:+7/+7 grant_kw:trample duration:eot} / {untap}"
+ },
+ {
+  "id": "c007",
+  "text": "Legendary creatures you control get +X/+X, where X is the number of other legendary creatures you control. / {X}, {T}: Look at the top X cards of your library. You may reveal a legendary creature card from among them and put it into your hand. Put the rest on the bottom of your library in a random order."
+ },
+ {
+  "id": "c008",
+  "text": "{modal:2_of_3 target_count:one target_type:artifact remove:destroy target_count:one target_type:creature target_filter:attacking target_scope:you_control target_filter:blocking counter_count:2 counter:p1p1 target_count:one target_type:creature target_scope:you_control target_count:one target_type:any target_type:player damage damage_amount:x x_is:target_power sacrifice}"
+ },
+ {
+  "id": "c009",
+  "text": "{target_count:one target_type:creature target_filter:oppown target_zone:graveyard put_onto_battlefield from_zone:graveyard controller:you haste grant_ability:other exile}"
+ },
+ {
+  "id": "c010",
+  "text": "{trigger:end_step look_top:3 take:all to_zone:exile impulse_draw impulse_draw_count:3 duration:eot activation_restriction token_count:x token_color:colorless token_pt:0/1 token_type:eldrazi_spawn x_is:remembered_amount}"
+ },
+ {
+  "id": "c011",
+  "text": "{trigger:beginning_of_combat target_count:up_to_1 target_type:land target_scope:you_control token_count:1} / {trigger:attacks target_count:all target_type:permanent target_scope:you_control} / {untap}"
+ },
+ {
+  "id": "c012",
+  "text": "{trigger:upkeep token_count:1 token_type:mine damage}"
+ },
+ {
+  "id": "c013",
+  "text": "At the beginning of combat on your turn, exile up to one target cards from a single graveyard. / {cost_mana:1b} / {duration:eot haste trigger_filter:one_or_more put_onto_battlefield from_zone:exile controller:you grant_kw:haste duration:eot} / {sacrifice}"
+ },
+ {
+  "id": "c014",
+  "text": "{kw:class num:2 num:1 color:black} / {kw:class num:3 color:black} / {trigger:leaves target_scope:each_opponent trigger_scope:any trigger_filter:you_control trigger_filter:creature life_loss_amount:1 cost:mana life_loss}"
+ },
+ {
+  "id": "c015",
+  "text": "Flying / First strike / Haste / {modal:3_of_3 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source effect:sacrifice sacrifice_outlet remove:sacrifice sacrifice_type:creature} / Whenever this creature deals combat damage, {effect}."
+ },
+ {
+  "id": "c016",
+  "text": "{trigger_filter:one_or_more steal} / {cost:tap cost_mana:2 draw_count:1 counter_count:1 counter:point} / {sacrifice}"
+ },
+ {
+  "id": "c017",
+  "text": "When this creature enters, exile up to one target creature card from your graveyard. You lose X life and create X Clue tokens, where X is the mana value of the exiled card. / {condition:no_clue_you_control target_count:one target_type:card target_filter:exiledwithsource target_zone:exile return from_zone:exile to_zone:hand} / At the beginning of the end step, {effect}."
+ },
+ {
+  "id": "c018",
+  "text": "{trigger:attacks token_make token_type:copy} / Target player loses life equal to half their life total, rounded up. / {sacrifice trigger:combat_damage}"
+ },
+ {
+  "id": "c019",
+  "text": "{trigger:etb trigger_scope:self target_count:one target_type:opponent monarch} / {target_count:one target_type:creature target_filter:controlledby_triggeredplayer} / {duration:static pump_amount:+2/+2 affected_type:creature affected_scope:you_control affected_filter:youdontown} / {steal}"
+ },
+ {
+  "id": "c020",
+  "text": "Flying / {trigger:spell_cast haste target_count:one target_type:permanent target_scope:you_control target_filter:nonland target_zone:graveyard put_onto_battlefield from_zone:graveyard controller:you grant_kw:haste duration:permanent exile}"
+ },
+ {
+  "id": "c021",
+  "text": "{cost:tap target_count:one target_type:land target_zone:graveyard exile_from:graveyard mana_source mana:any mana_amount:1} / {cost:tap cost_mana:b target_count:one target_type:instant target_type:sorcery target_zone:graveyard exile_from:graveyard life_loss_amount:2} / {cost:tap cost_mana:g target_count:one target_type:creature target_zone:graveyard exile_from:graveyard lifegain_amount:2} / Transform."
+ },
+ {
+  "id": "c022",
+  "text": "Casualty 2 / {target_count:one target_type:creature target_type:planeswalker damage}"
+ },
+ {
+  "id": "c023",
+  "text": "At the beginning of your upkeep, you may look at the top card of your library, reveal it, and put a quest counter on this enchantment. / {trigger:end_step optional condition:exactly_1_card_self_counters_ge3_quest put_onto_battlefield from_zone:hand controller:you}"
+ },
+ {
+  "id": "c024",
+  "text": "{trigger:beginning_of_combat duration:eot pump_single target_count:one target_type:creature target_scope:you_control pump_amount:+x/+0 x_is:count_soldier_you_control} / {trigger:end_step token_count:x token_color:white token_pt:1/1 token_type:soldier x_is:players_haspropertywithmorecreaturesthanyou}"
+ },
+ {
+  "id": "c025",
+  "text": "{trigger:end_step counter_count:1 counter:influence scry_count:2 target_count:one target_type:opponent draw_count:1 life_loss_amount:x x_is:remembered_mana_value}"
+ },
+ {
+  "id": "c026",
+  "text": "{forge_line:a_deck_can_have_any_number_of_cards_named_cardname} / {token_count:1 token_color:green token_pt:0/0 token_kw:trample token_type:ooze counter_count:x x_is:count_exile_ooze_you_own_card_you_own_namedslime_against_humanity_in_graveyard_plus_2 counter:p1p1}"
+ },
+ {
+  "id": "c027",
+  "text": "Flying / Whenever this creature attacks, target attacking creature gains flying until end of turn. / {trigger:end_step token_count:1 token_color:white token_pt:3/3 token_kw:flying token_type:bird_attacks}"
+ },
+ {
+  "id": "c028",
+  "text": "Indestructible / {optional target_count:all target_type:card target_filter:isremembered exile_from:graveyard cast_free life_loss_amount:x x_is:total_mana_value_among_card_isimprinted_ownedby_remembered} / At the beginning of your end step, {effect}."
+ },
+ {
+  "id": "c029",
+  "text": "Lifelink / {unless_cost target_scope:each_opponent damage damage_amount:x x_is:own_power discard sacrifice}"
+ },
+ {
+  "id": "c030",
+  "text": "{1}, {T}: You may put a charge counter on this artifact. / {cost:tap cost_mana:3 scry_count:x x_is:x_paid} / {cost:remove_counters}"
+ },
+ {
+  "id": "c031",
+  "text": "{trigger:etb trigger_scope:self target_count:up_to_1 target_type:creature target_filter:other target_scope:you_control remove:exile put_onto_battlefield from_zone:exile controller:owner} / {counter_count:1 counter:p1p1} / At the beginning of your end step, {effect}."
+ },
+ {
+  "id": "c032",
+  "text": "Whenever an artifact you control enters, {effect}. / Return target creature card from your graveyard to your hand. You lose X life, where X is its power. / {surveil trigger:end_step}"
+ },
+ {
+  "id": "c033",
+  "text": "First strike / Reach / {trigger:attacks counter_count:x x_is:count_equipment_attached counter:p1p1} / {cost_mana:1 target_count:one target_type:creature target_filter:attacking target_scope:opp_control target_filter:blocking damage} / {cost:remove_counters}"
+ },
+ {
+  "id": "c034",
+  "text": "Creatures you control {effect}. / {trigger:spell_cast trigger_filter:artifact life_loss_amount:1 token_count:1 token_color:black token_pt:2/2 token_cardtype:artifact token_type:necron_warrior} / Transform."
+ },
+ {
+  "id": "c035",
+  "text": "Whenever a creature you control blocks, target opponent loses 2 life and you gain 2 life. / {cost:tap cost:sacrifice cost_sacrifice_target:creature draw_count:1 put_onto_battlefield from_zone:hand put_tapped controller:you} / Transform."
+ },
+ {
+  "id": "c036",
+  "text": "{draw_count:2 duration:eot lifelink lifegain life_loss_amount:2 token_count:1 token_color:black token_pt:0/1 token_type:wizard_snipe target_count:all target_type:wizard target_scope:you_control pump_amount:+1/+0 duration:eot grant_kw:lifelink life_loss}"
+ },
+ {
+  "id": "c037",
+  "text": "{trigger:etb trigger_scope:self draw_count:x x_is:remembered_amount life_loss_amount:x x_is:remembered_amount_times_3} / Whenever a creature you control blocks, target opponent loses 1 life and you gain 1 life. / {life_loss surveil}"
+ },
+ {
+  "id": "c038",
+  "text": "{replace:counter_to_changezone optional} / {trigger_scope:self return from_zone:graveyard to_zone:library shuffle} / {exile}"
+ },
+ {
+  "id": "c039",
+  "text": "{kw:level_up num:1 color:blue} / {affected_scope:self condition:card_self_counters_ge2_level_counters_lt4_level} / {affected_scope:self condition:card_self_counters_ge4_level} / {cost:mana cost:tap}"
+ },
+ {
+  "id": "c040",
+  "text": "At the beginning of your upkeep, add X {C}, where X is the number of artifacts you control. Spend this mana only to cast artifact spells."
+ },
+ {
+  "id": "c041",
+  "text": "{target_count:one target_type:artifact target_type:creature steal steal_grants_haste duration:eot counter_count:10 counter:charge untap}"
+ },
+ {
+  "id": "c042",
+  "text": "{trigger:beginning_of_combat duration:eot flying double_strike haste grant_kw:flying grant_kw:double_strike grant_kw:haste duration:eot} / {trigger:attacks duration:eot cost_mana:rgwu} / {damage}"
+ },
+ {
+  "id": "c043",
+  "text": "{look_top:x take:1_card to_zone:hand rest_to_zone:graveyard} / {trigger:combat_damage cost:exile from_zone:graveyard cost_exile_target:cardname cost_mana:2 target_count:one target_type:creature target_scope:you_control counter_count:1 counter:p1p1 grant_ability:damagedone_trigger}"
+ },
+ {
+  "id": "c044",
+  "text": "{cant_be_blocked:by_card_nonvehicle} / {optional target_count:one target_type:instant target_type:sorcery cast_free} / {exile trigger:combat_damage} / Crew 2"
+ },
+ {
+  "id": "c045",
+  "text": "{trigger_filter:one_or_more counter_count:2 counter:energy} / {unless_cost token_count:1 token_color:red token_type:aetherjet} / At the beginning of your end step, {effect}."
+ },
+ {
+  "id": "c046",
+  "text": "{forge_line:etbcounter} / {trigger:etb trigger_scope:self modal:x_of_4 discard_count:1 draw_count:1 target_count:one target_type:opponent life_loss_amount:2 target_count:one target_type:card remove:destroy effect:sacrifice sacrifice_outlet remove:sacrifice sacrifice_type:creature life_loss}"
+ },
+ {
+  "id": "c047",
+  "text": "{trigger:spell_cast trigger_filter:instant trigger_filter:sorcery token_count:1 token_color:colorless token_cardtype:artifact token_type:x_x_construct} / {cost_mana:3uu target_count:all target_type:instant target_scope:you_control target_type:sorcery activation_restriction return from_zone:graveyard to_zone:hand} / {cost:exile}"
+ },
+ {
+  "id": "c048",
+  "text": "{trigger:upkeep life_loss_amount:1 token_count:1 token_color:colorless token_pt:1/1 token_cardtype:artifact token_type:phyrexian_mite_toxic_noblock} / {grant_kw:lifelink duration:static affected_type:creature affected_scope:you_control affected_filter:withtoxic lifelink lifegain} / Transform."
+ },
+ {
+  "id": "c049",
+  "text": "{trigger:combat_damage optional look_top:x take:may_1_card_nonland to_zone:exile rest_to_zone:library rest_order:bottom_random cast_free} / {kw:equip num:2 color:blue}"
+ },
+ {
+  "id": "c050",
+  "text": "Flying / Other Demons you control get +1/+1 and have lifelink. / {token_count:1 token_color:red token_pt:1/1 token_type:devil_burn} / At the beginning of your end step, {effect}."
+ },
+ {
+  "id": "c051",
+  "text": "{trigger:etb optional trigger_scope:any trigger_filter:you_control trigger_filter:land} / {5}{G}, Sacrifice this enchantment: Create X tokens, where X is the number of permanent cards in your graveyard."
+ },
+ {
+  "id": "c052",
+  "text": "Haste / {T}: Target opponent creates X Treasure tokens, where X is the number of tokens created this turn. / {target_count:one target_type:creature counter:p1p1 draw_count:1} / Whenever you cast a spell, {effect}."
+ },
+ {
+  "id": "c053",
+  "text": "{optional counter_count:1 counter:quest} / {optional trigger_scope:any trigger_filter:nontoken condition:card_self_counters_ge3_quest life_loss_amount:2 lifegain_amount:2} / At the beginning of the end step, {effect}."
+ },
+ {
+  "id": "c054",
+  "text": "{affected_type:creature affected_scope:you_control affected_filter:other} / {grant_kw:menace duration:static affected_type:creature affected_filter:facedown affected_scope:you_control menace} / {flip-up trigger_filter:you_control draw_count:1 life_loss_amount:1} / Transform."
+ },
+ {
+  "id": "c055",
+  "text": "Flying / Lifelink / {trigger:end_step target_count:up_to_1 target_type:creature target_filter:other target_scope:you_control counter_count:x x_is:life_gained_this_turn counter:p1p1 target_count:up_to_1 target_type:creature target_filter:cmcley target_scope:you_control target_zone:graveyard put_onto_battlefield from_zone:graveyard controller:you}"
+ },
+ {
+  "id": "c056",
+  "text": "{trigger:etb trigger_scope:self modal:1_of_2 target_count:one target_type:opponent life_loss_amount:2 lifegain_amount:2 target_count:one target_type:battle counters_plus life_loss}"
+ },
+ {
+  "id": "c057",
+  "text": "Lifelink / {counter_count:1 counter:p1p1} / {trigger:end_step cost_mana:4w}"
+ },
+ {
+  "id": "c058",
+  "text": "{trigger:upkeep flying trample haste optional put_onto_battlefield from_zone:graveyard controller:you cost_mana:2b grant_ability:other exile}"
+ },
+ {
+  "id": "c059",
+  "text": "{modal:2_of_4 target_count:one target_type:kithkin target_scope:you_control token_make token_type:copy target_count:one target_type:player token_count:1 token_color:green token_color:white token_pt:1/1 token_type:kithkin target_count:one target_type:creature target_scope:you_control pump_amount:+3/+3 target_count:one target_type:creature target_scope:you_control target_count:one target_type:creature target_scope:opp_control fight}"
+ },
+ {
+  "id": "c060",
+  "text": "I, II, III. / {saga_chapter:1 target_count:up_to_2 target_type:creature steal} / {saga_chapter:2 target_count:all target_type:creature target_scope:you_control pump_amount:+1/+1 duration:eot grant_kw:vigilance} / {saga_chapter:3 target_count:one target_type:creature target_scope:you_control target_count:up_to_1 target_type:creature} / It fights target creature an opponent controls."
+ },
+ {
+  "id": "c061",
+  "text": "Haste / {replace:damagedone_to_token_damageamount} / {trigger_scope:self return from_zone:graveyard to_zone:library shuffle} / {damage}"
+ },
+ {
+  "id": "c062",
+  "text": "{trigger:spell_cast trigger_filter:instant trigger_filter:sorcery trigger_filter:you_control} / {trigger:attacks optional cast_free} / {exile}"
+ },
+ {
+  "id": "c063",
+  "text": "Enchant creature or artifact / Enchanted permanent gets +X/+X, where X is the number of Vehicles you control. / {2}{W}, Discard this card: Create two 1/1 colorless Pilot creature tokens."
+ },
+ {
+  "id": "c064",
+  "text": "Haunt / When this spell dies, {effect}."
+ },
+ {
+  "id": "c065",
+  "text": "At the beginning of combat on your turn, create a 0/3 colorless Wall creature token with defender and reach. / Whenever this creature attacks, {R}{G}{W}{U}: target creature gets +X/+0 until end of turn, where X is the number of creatures you control."
+ },
+ {
+  "id": "c066",
+  "text": "Deathtouch / {trigger:spell_cast duration:eot indestructible trigger_filter:nontoken grant_kw:indestructible duration:eot} / {duration:eot indestructible trigger_filter:you_control} / {look_top:1 take:all to_zone:exile impulse_draw impulse_draw_count:1 duration:permanent} / {trigger:combat_damage}"
+ },
+ {
+  "id": "c067",
+  "text": "{kw:class num:2 color:black} / {kw:class num:3 color:black} / When this Class enters, each opponent discards two cards. / {cost:mana life_loss trigger:upkeep}"
+ },
+ {
+  "id": "c068",
+  "text": "When this Class enters, draw two cards, then discard a card. / {kw:class num:3 color:blue} / Whenever a creature you control enters, {effect}. / {cost:mana exile surveil trigger:combat_damage}"
+ },
+ {
+  "id": "c069",
+  "text": "{cost:tap counter_count:1 counter:coin optional exile}"
+ },
+ {
+  "id": "c070",
+  "text": "Flying / {trigger:combat_damage look_top:3 take:1_card to_zone:exile rest_to_zone:graveyard impulse_draw impulse_draw_count:3 duration:permanent}"
+ },
+ {
+  "id": "c071",
+  "text": "{trigger:etb trigger_scope:self target_count:one target_type:creature target_filter:legendary target_scope:you_control} / {trigger:attacks target_count:one target_type:creature target_filter:controlledby_triggereddefendingplayer counter_count:1 counter:stun damage damage_amount:x x_is:count_creature_rememberedplayerctrl_tapped} / Equip {4}"
+ },
+ {
+  "id": "c072",
+  "text": "{trigger:etb trigger_scope:self token_count:x token_color:white token_pt:2/2 token_kw:vigilance token_type:astartes_warrior x_is:x_paid} / {cost_mana:x2w activation_restriction token_count:x token_color:white token_pt:2/2 token_kw:vigilance token_type:astartes_warrior x_is:x_paid} / {cost:exile}"
+ }
+]
