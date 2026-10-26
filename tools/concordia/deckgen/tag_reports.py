@@ -7,7 +7,7 @@ sys.path.insert(0, HERE)
 import tag_extra as TX
 import tag_verify as TV
 from tag_run import ROOT, SUPERTYPES, CARDTYPES, record, render, find_text, deck_cards, snake, q
-from common import card_files
+from common import card_files, is_eligible
 
 
 
@@ -42,7 +42,7 @@ def pool_pick(tag, n):
         except OSError: continue
         if re.search(r"^Types:.*\b%s\b" % word, x.split("\nALTERNATE")[0], re.M):
             nm = re.search(r"^Name:(.*)$", x, re.M).group(1).strip()
-            if nm not in PREV_SAMPLE: cands.append(nm)
+            if nm not in PREV_SAMPLE and is_eligible(nm): cands.append(nm)
     recs = [record(nm, find_text(nm)) for nm in cands[:60]]
     return pick(recs, tag, n)
 

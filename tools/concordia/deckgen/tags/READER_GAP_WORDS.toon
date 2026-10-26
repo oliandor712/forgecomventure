@@ -1,403 +1,403 @@
 # Claude-only file in TOON. Written by reverse_check.py post_run; regenerated from every run's results.json, never hand-merged.
 # word (stemmed) = Oracle content word the readers' text lacked; cards = distinct cards missing it. Top 400.
 words[400|]{word|cards|examples}:
-self|690|A Killer Among Us/Aang, Destined Savior/Aang, at the Crossroads
-card|314|Advanced Floral Invocations/Advanced Reconstruction/Aether Searcher
-control|304|Abzan Monument/Advanced Floral Invocations/Aether Revolt
-s|278|Agyrem/Airbender Ascension/Alaundo the Seer
-creature|275|A Killer Among Us/Advanced Floral Invocations/Ajani Fells the Godsire
-put|214|Aang, Destined Savior/Aang, at the Crossroads/Abstract Performance
-turn|204|Adaptive Training Post/Aether Revolt/Amplifire
-cast|178|Abstract Performance/Adaptive Training Post/Advanced Floral Invocations
-mana|173|Abstract Performance/Aether Searcher/Alaundo the Seer
-player|161|Agyrem/All Hallow's Eve/Anthem of Rakdos
-one|152|Abstract Performance/Advanced Reconstruction/Aether Revolt
-more|144|Advanced Reconstruction/Aether Revolt/Akawalli, the Seething Tower
-counter|142|Advanced Floral Invocations/Alaundo the Seer/All Hallow's Eve
-t|142|Akawalli, the Seething Tower/Aplan Mortarium/Ashling, Flame Dancer
-end|140|Agyrem/Airbender Ascension/Angelic Sell-Sword
-way|130|Advanced Floral Invocations/Aether Searcher/Alaundo the Seer
-equal|119|Alaundo the Seer/Alchemist's Talent/Aplan Mortarium
-spell|118|Abstract Performance/Adaptive Training Post/Advanced Floral Invocations
-number|118|Alaundo the Seer/Anzrag's Rampage/Ao, the Dawn Sky
-library|117|Abstract Performance/Aether Searcher/Amplifire
-opponent|116|Abstract Performance/Advanced Reconstruction/Aether Revolt
-choose|114|A Killer Among Us/Adaptive Training Post/Battle for Bretagard
-creatur|114|Abzan Monument/Aggressive Mammoth/Agyrem
-hand|113|Abstract Performance/Advanced Reconstruction/Aether Searcher
-reveal|110|A Killer Among Us/Abzan Monument/Aether Searcher
-battlefield|109|Aether Revolt/Airbender Ascension/Animate Dead
-damage|107|Anthem of Rakdos/Artist's Talent/Ascendant Spirit
-1|102|Anthem of Rakdos/Awestruck Cygnet/Baral and Kari Zev
-exil|102|Advanced Reconstruction/Alaundo the Seer/All Hallow's Eve
-+1|100|Advanced Floral Invocations/Ancestral Blade/Angelic Sell-Sword
-graveyard|97|Abstract Performance/Advanced Floral Invocations/Advanced Reconstruction
-deal|94|Advanced Reconstruction/Aether Revolt/Alchemist's Talent
-exile|92|Alaundo the Seer/Apple of Eden, Isu Relic/Athreos, Shroud-Veiled
-2|91|Advanced Reconstruction/Aether Revolt/Artificer Class
-land|91|Advanced Floral Invocations/Apple of Eden, Isu Relic/Archdruid's Charm
-cost|90|Abstract Performance/Advanced Reconstruction/Aether Searcher
-power|88|Amplifire/Ascendant Spirit/Awestruck Cygnet
-beginn|87|Aang, Destined Savior/Aang, at the Crossroads/Advanced Reconstruction
-gain|86|Alaundo the Seer/Animate Dead/Ascendant Spirit
-random|84|Advanced Reconstruction/Amplifire/Ao, the Dawn Sky
-bottom|82|Amplifire/Artificer Class/Avengers Tower
-all|81|Black Panther, Wakandan King/Bomb Squad/Caldera Breaker
-order|81|Amplifire/Ao, the Dawn Sky/Artificer Class
-value|81|Alaundo the Seer/Alchemist's Talent/Ao, the Dawn Sky
-among|80|Abstract Performance/Abzan Monument/Beastie Beatdown
-x|80|Abzan Monument/Anzrag's Rampage/Belisarius Cawl
-less|75|Advanced Reconstruction/Ao, the Dawn Sky/Artist's Talent
-instead|74|Aether Revolt/Anthem of Rakdos/Artist's Talent
-rest|73|Abstract Performance/Artificer Class/Avengers Tower
-two|72|Advanced Floral Invocations/Alchemist's Talent/Awaken the Maelstrom
-combat|71|Ascendant Spirit/Berserker's Frenzy/By Elspeth's Command
-permanent|71|Aether Revolt/Anthem of Rakdos/Ao, the Dawn Sky
-sorcery|71|Abzan Monument/Adaptive Training Post/Angelic Sell-Sword
-pay|69|Abstract Performance/Aether Searcher/Alaundo the Seer
-step|69|Agyrem/Airbender Ascension/Anzrag's Rampage
-top|68|Amplifire/Artificer Class/Awaken the Maelstrom
-next|66|Aang, Destined Savior/Aang, at the Crossroads/Adaptive Training Post
-owner|66|Agyrem/Airbender Ascension/Apple of Eden, Isu Relic
-activate|64|Abzan Monument/Angelic Sell-Sword/Apple of Eden, Isu Relic
-tap|63|Alchemist's Talent/Angelic Sell-Sword/Barracks of the Thousand
-token|62|A Killer Among Us/Baral and Kari Zev/Battle for Bretagard
-3|62|Advanced Reconstruction/Ambition's Cost/Artist's Talent
-artifact|61|Anzrag's Rampage/Artificer Class/Ayesha Tanaka, Armorer
-life|60|Beza, the Bounding Spring/Bolas's Citadel/Bre of Clan Stoutarm
-three|58|Adaptive Training Post/Aftermath Analyst/Ayesha Tanaka, Armorer
-target|58|Adaptive Training Post/Angelic Sell-Sword/Artificer Class
-long|57|Aether Revolt/Anthem of Rakdos/Athreos, Shroud-Veiled
-was|50|Alchemist's Talent/Barrin, Tolarian Archmage/Behind the Mask
-toughnes|50|Abzan Monument/Amplifire/Ascendant Spirit
-typ|50|Beastie Beatdown/Brenard, Ginger Sculptor/Brotherhood Regalia
-enter|50|Advanced Floral Invocations/Bard Class/Boss's Chauffeur
-gets|47|Ancestral Blade/Angelic Sell-Sword/Animate Dead
-attack|47|Caesar, Legion's Emperor/Camouflage/Chorale of the Void
-4|46|Akawalli, the Seething Tower/Ao, the Dawn Sky/Apple of Eden, Isu Relic
-would|44|Anthem of Rakdos/Artist's Talent/Case of the Pilfered Proof
-another|44|Angelic Sell-Sword/Arahbo, Roar of the World/Awestruck Cygnet
-chosen|43|A Killer Among Us/Breeches, Eager Pillager/By Elspeth's Command
-nonland|43|Awaken the Maelstrom/Bolas's Citadel/Bre of Clan Stoutarm
-copy|42|Adaptive Training Post/Artificer Class/Ashling, Flame Dancer
-without|40|Abstract Performance/Aether Searcher/Alaundo the Seer
-under|39|Airbender Ascension/Animate Dead/Asmoranomardicadaistinaculdacar's Kitchen
-create|39|Chancellor of the Forge/Curse of Opulence/Dalek Intensive Care
-tapp|39|Alchemist's Talent/Ayesha Tanaka, Armorer/Caesar, Legion's Emperor
-many|38|Asmoranomardicadaistinaculdacar's Kitchen/Barbarian Class/Benevolent Hydra
-four|38|Airbender Ascension/Beastie Beatdown/Bomb Squad
-instant|38|Adaptive Training Post/Cloud Key/Codie, Vociferous Codex
-remove|38|Alaundo the Seer/All Hallow's Eve/Animus of Predation
-color|38|Alchemist's Talent/Bard Class/Bind to Secrecy
-controller|37|Animate Dead/Bomb Squad/Cauldron Dance
-sacrifice|37|Alchemist's Talent/Brenard, Ginger Sculptor/Captain Rex Nebula
-ability|37|Ajani's Last Stand/Ashling, Flame Dancer/Buzzing Whack-a-Doodle
-addition|37|Brenard, Ginger Sculptor/Brotherhood Regalia/Demilich
-fly|36|Animus of Predation/Awestruck Cygnet/Bow of Nylea
-type|36|A Killer Among Us/Apple of Eden, Isu Relic/Baral and Kari Zev
-becom|34|Amplifire/Artificer Class/Bespoke Battlewagon
-dur|34|Berserker's Frenzy/By Elspeth's Command/Camouflage
-don|34|Ashling, Flame Dancer/Baral and Kari Zev/Breaching Dragonstorm
-legendary|33|Baral and Kari Zev/Bard Class/Bosco, Just a Bear
-greater|33|Betor, Kin to All/Blighted Nightmare/Brazen Boarding
-first|32|Advanced Reconstruction/Artificer Class/Baral and Kari Zev
-haste|32|Alaundo the Seer/Baral and Kari Zev/Barbarian Class
-draw|32|Apple of Eden, Isu Relic/Ascendant Spirit/Buzzing Whack-a-Doodle
-down|32|Apple of Eden, Isu Relic/Beseech the Mirror/Black Cat, Cunning Thief
-were|32|Anzrag's Rampage/Bind to Secrecy/Brainstealer Dragon
-face|31|Animus of Predation/Apple of Eden, Isu Relic/Beseech the Mirror
-base|31|Amplifire/Ascendant Spirit/Awestruck Cygnet
-except|31|Brenard, Ginger Sculptor/Curie, Emergent Intelligence/Delina, Wild Mage
-lose|30|Aplan Mortarium/Ashling, Flame Dancer/Asmoranomardicadaistinaculdacar's Kitchen
-block|29|Akawalli, the Seething Tower/Baboon Spirit/Berserker's Frenzy
-los|29|Animate Dead/Betor, Kin to All/Buzzing Whack-a-Doodle
-0|29|Awestruck Cygnet/Contraband Livestock/Cosmium Confluence
-spend|29|Bind to Secrecy/Brainstealer Dragon/Case File Auditor
-additional|28|Bard Class/Behind the Mask/Bite Down on Crime
-chao|28|Agyrem/Aplan Mortarium/Aretopolis
-ensu|28|Agyrem/Aplan Mortarium/Aretopolis
-time|28|Alaundo the Seer/Ashling, Flame Dancer/Bolas's Citadel
-mill|28|Advanced Floral Invocations/Advanced Reconstruction/Captain N'ghathrod
-get|27|Advanced Floral Invocations/Aether Revolt/Benalish Marshal
-nam|27|Aether Searcher/Animus of Predation/Awestruck Cygnet
-look|27|Abstract Performance/Apple of Eden, Isu Relic/Bolas's Citadel
-dealt|26|Brazen Boarding/Case of the Burning Masks/Comeuppance
-remain|26|Black Cat, Cunning Thief/Brainstealer Dragon/Court of Locthwain
-though|26|Bind to Secrecy/Brainstealer Dragon/Case File Auditor
-return|25|Agyrem/Anzrag's Rampage/Athreos, Shroud-Veiled
-same|25|Animus of Predation/Cabaretti Confluence/Canoptek Wraith
-+0|25|Angelic Sell-Sword/Barbarian Class/Bonesplitter
-spent|25|Alchemist's Talent/Apple of Eden, Isu Relic/Black Cat, Cunning Thief
-roll|25|Barbarian Class/Berserker's Frenzy/Captain Rex Nebula
-untap|24|Betor, Kin to All/Cone of Cold/Dance of the Dead
-own|24|Alaundo the Seer/Awestruck Cygnet/Celestial Dawn
-sacrific|22|Animate Dead/Birthing Ritual/Cauldron Dance
-total|21|Ao, the Dawn Sky/Betor, Kin to All/Case of the Trampled Garden
-creat|21|Case of the Pilfered Proof/Contraband Livestock/Gonti, Night Minister
-game|21|Cyclopean Tomb/Dack Fayden, Helping Hand/Etrata, the Silencer
-planeswalker|21|Carth the Lion/Comeuppance/Deification
-upkeep|21|Aang, Destined Savior/Aang, at the Crossroads/Chancellor of the Forge
-r|21|The Aether Flues/The Apprentice's Folly/The Argent Etchings
-nontoken|20|Balor/Call to Arms/Churning Reservoir
-five|20|Barracks of the Thousand/Bind to Secrecy/Deluge Virtuoso
-black|20|Athreos, Shroud-Veiled/Consume Spirit/Dalek Intensive Care
-play|20|Advanced Floral Invocations/Apple of Eden, Isu Relic/Bard Class
-otherwise|20|Archdruid's Charm/Bre of Clan Stoutarm/Brilliance Unleashed
-add|20|Alchemist's Talent/Carrier Thrall/Danse Macabre
-n|19|The Aether Flues/The Argent Etchings/The Darkhold
-isn|19|Aplan Mortarium/Athreos, Shroud-Veiled/Blink
-once|18|Cabaretti Confluence/Cosmium Confluence/Edgar, Master Machinist
-planeswalk|18|Agyrem/Aretopolis/Asmoranomardicadaistinaculdacar's Kitchen
-amount|18|Bard Class/Bre of Clan Stoutarm/Defiler of Faith
-plus|18|Aether Revolt/Artist's Talent/Barbarian Class
-5|18|Bringer of Green Zenith's Twilight/Celebr-8000/Figure of Fable
-10|18|Betor, Kin to All/Cone of Cold/Finale of Promise
-red|18|Ashling, Flame Dancer/Chancellor of the Forge/Domri, Chaos Bringer
-attach|18|Ancestral Blade/Animate Dead/Celestial Armor
-discard|18|Chira, All In/Collective Brutality/Contract Hero
-been|17|Botanical Brawler/Breeches, Eager Pillager/Cyclopean Tomb
-choos|17|Abstract Performance/Camouflage/Elrond of the White Council
-shuffl|17|Blink/Chaotic Transformation/Deadly Cover-Up
-much|17|Aether Revolt/Artist's Talent/Asmoranomardicadaistinaculdacar's Kitchen
-20|16|Berserker's Frenzy/Betor, Kin to All/Cone of Cold
-d20|16|Berserker's Frenzy/Cone of Cold/Contraband Livestock
-green|16|Bounty of the Hunt/Contraband Livestock/Domri, Chaos Bringer
-enchant|16|Animate Dead/Chorale of the Void/Control Magic
-remov|16|Alaundo the Seer/Animus of Predation/Case of the Market Melee
-colorles|16|Black Market Connections/Celestial Dawn/Desecrate Reality
-+2|16|Barbarian Class/Bonesplitter/Deluge Virtuoso
-abiliti|15|Carth the Lion/Fighter Class/Gwenna, Eyes of Gaea
-second|15|Ashling, Flame Dancer/Estinien Varlineau/Human-Time Lord Meta-Crisis
-doesn|14|Garruk the Slayer/Hiveheart Shaman/Myra the Magnificent
+self|1392|A Killer Among Us/Aang, Destined Savior/Aang, at the Crossroads
+card|591|Aang's Journey/Admiral Brass, Unsinkable/Advanced Floral Invocations
+control|572|Aang, Airbending Master/Abby, Merciless Soldier/Abzan Monument
+creature|535|A Killer Among Us/Abby, Merciless Soldier/Absorbing Man
+s|494|Absorbing Man/Abyssal Harvester/Adipose Offspring
+turn|440|Absorbing Man/Abyssal Harvester/Adaptive Training Post
+put|396|Aang, Destined Savior/Aang, at the Crossroads/Abstract Performance
+player|320|Adéwalé, Breaker of Chains/Agyrem/Alexios, Deimos of Kosmos
+cast|311|Abby, Merciless Soldier/Abstract Performance/Adaptive Training Post
+mana|299|Abstract Performance/Aether Searcher/Agatha of the Vile Cauldron
+one|298|Abstract Performance/Advanced Reconstruction/Aether Refinery
+more|293|Advanced Reconstruction/Aether Refinery/Aether Revolt
+counter|291|Admiral Brass, Unsinkable/Advanced Floral Invocations/Alaundo the Seer
+end|279|Aetherling/Agyrem/Aid from the Cowl
+t|247|Adventure Awaits/Aetherling/Agatha of the Vile Cauldron
+number|239|Abby, Merciless Soldier/Aetherflux Conduit/Alaundo the Seer
+way|237|Advanced Floral Invocations/Adventure Awaits/Aether Refinery
+equal|227|Abby, Merciless Soldier/Aetherflux Conduit/Alaundo the Seer
+damage|224|Adéwalé, Breaker of Chains/Anthem of Rakdos/Aphelia, Viper Whisperer
+library|220|Aang's Journey/Abstract Performance/Acclaimed Contender
+opponent|216|Abby, Merciless Soldier/Abstract Performance/Advanced Reconstruction
+spell|215|Abstract Performance/Adaptive Training Post/Advanced Floral Invocations
+reveal|215|A Killer Among Us/Aang's Journey/Abzan Monument
+deal|208|Advanced Reconstruction/Adéwalé, Breaker of Chains/Aether Revolt
+graveyard|202|Abstract Performance/Advanced Floral Invocations/Advanced Reconstruction
+battlefield|199|Aether Revolt/Against All Odds/Aid from the Cowl
++1|199|Adaptive Omnitool/Advanced Floral Invocations/Ancestral Blade
+choose|196|A Killer Among Us/Adaptive Training Post/Alacrian Armory
+creatur|194|Abzan Monument/Agatha of the Vile Cauldron/Aggressive Mammoth
+hand|192|Abstract Performance/Advanced Reconstruction/Adventure Awaits
+1|179|Abby, Merciless Soldier/Anthem of Rakdos/Astor, Bearer of Blades
+beginn|173|Aang, Destined Savior/Aang, at the Crossroads/Absorbing Man
+exile|172|Alaundo the Seer/Altaïr Ibn-La'Ahad/Apple of Eden, Isu Relic
+power|170|Admiral Brass, Unsinkable/Agatha of the Vile Cauldron/Amplifire
+combat|167|Adéwalé, Breaker of Chains/Alexios, Deimos of Kosmos/All-Out Assault
+land|164|Aang's Journey/Advanced Floral Invocations/Animist's Awakening
+x|160|Abzan Monument/Aether Refinery/Agatha of the Vile Cauldron
+2|157|Advanced Reconstruction/Aether Revolt/Anchor to Reality
+sorcery|157|Abzan Monument/Adaptive Training Post/Angelic Sell-Sword
+activate|156|Abzan Monument/Agatha of the Vile Cauldron/Angelic Sell-Sword
+exil|156|Advanced Reconstruction/Alaundo the Seer/All Hallow's Eve
+instead|148|Aang's Journey/Adipose Offspring/Aether Refinery
+gain|148|Alaundo the Seer/Animate Dead/Artistic Process
+cost|146|Abstract Performance/Adipose Offspring/Advanced Reconstruction
+bottom|146|Acclaimed Contender/Adaptive Omnitool/Adventure Awaits
+step|144|Aetherling/Agyrem/Aid from the Cowl
+two|143|Advanced Floral Invocations/Alchemist's Talent/Animist's Awakening
+value|143|Alaundo the Seer/Alchemist's Talent/Anchor to Reality
+random|142|Acclaimed Contender/Adaptive Omnitool/Advanced Reconstruction
+permanent|139|Aether Revolt/Aetherworks Marvel/Aid from the Cowl
+among|138|Abstract Performance/Abzan Monument/Aetherworks Marvel
+order|137|Acclaimed Contender/Adaptive Omnitool/Adventure Awaits
+token|136|A Killer Among Us/Abyssal Harvester/Adipose Offspring
+all|132|Abyssal Harvester/Arcane Artisan/Ascent of the Worthy
+rest|131|Abstract Performance/Acclaimed Contender/Adaptive Omnitool
+target|128|Adaptive Training Post/Angelic Sell-Sword/Artificer Class
+less|121|Advanced Reconstruction/Agatha of the Vile Cauldron/Anchor to Reality
+pay|120|Abstract Performance/Aether Refinery/Aether Searcher
+next|119|Aang, Destined Savior/Aang, at the Crossroads/Absorbing Man
+three|118|Adaptive Training Post/Aftermath Analyst/Ayesha Tanaka, Armorer
+top|115|Amplifire/Artificer Class/Aspiring Champion
+was|112|Aang's Journey/Abyssal Harvester/Adipose Offspring
+3|108|Advanced Reconstruction/Ambition's Cost/Anikthea, Hand of Erebos
+tap|107|Alchemist's Talent/Angelic Sell-Sword/At Knifepoint
+artifact|106|Anzrag's Rampage/Arcade Gannon/Armor Wars
+long|104|Aether Revolt/Anthem of Rakdos/Archmage Ascension
+life|103|Aphelia, Viper Whisperer/Atarka's Command/Bandit's Talent
+attack|103|Alexios, Deimos of Kosmos/All-Out Assault/Altaïr Ibn-La'Ahad
+owner|99|Agyrem/Airbender Ascension/Alexios, Deimos of Kosmos
+typ|99|Absorbing Man/Abyssal Harvester/Anikthea, Hand of Erebos
+another|95|Aang, Airbending Master/Angelic Sell-Sword/Arahbo, Roar of the World
+enter|88|Abby, Merciless Soldier/Advanced Floral Invocations/Apocalypse Hydra
+toughnes|86|Abzan Monument/Adipose Offspring/Admiral Brass, Unsinkable
+tapp|86|Alchemist's Talent/Altaïr Ibn-La'Ahad/Anim Pakal, Thousandth Moon
+gets|84|Ancestral Blade/Angelic Sell-Sword/Animate Dead
+would|82|Aether Refinery/Anthem of Rakdos/Archmage Ascension
+sacrifice|77|Alchemist's Talent/Ashling, the Limitless/Balduvian Atrocity
+4|77|Absorbing Man/Admiral Brass, Unsinkable/Akawalli, the Seething Tower
+draw|77|Alandra, Sky Dreamer/Apple of Eden, Isu Relic/Archmage Ascension
+addition|75|Absorbing Man/Abyssal Harvester/Anikthea, Hand of Erebos
+ability|73|Ajani's Last Stand/Ashling, Flame Dancer/At Knifepoint
+four|72|Admiral Brass, Unsinkable/Airbender Ascension/Ayara's Oathsworn
+copy|71|Absorbing Man/Adaptive Training Post/Artificer Class
+create|71|Adipose Offspring/Bonehoard Dracosaur/Chancellor of the Forge
+many|70|Aether Refinery/Asmoranomardicadaistinaculdacar's Kitchen/Barbarian Class
+nonland|70|Awaken the Maelstrom/Azula, Cunning Usurper/Bandit's Talent
+additional|69|All-Out Assault/Apocalypse Hydra/Balthier and Fran
+under|68|Abby, Merciless Soldier/Airbender Ascension/Animate Dead
+nam|68|Abby, Merciless Soldier/Aether Searcher/Animus of Predation
+dur|67|Arcade Gannon/At Knifepoint/Azula, Cunning Usurper
+greater|66|Back on Track/Betor, Kin to All/Blighted Nightmare
+color|66|Alchemist's Talent/Bard Class/Bind to Secrecy
+fly|65|Animus of Predation/Ascent of the Worthy/Attempted Murder
+chosen|65|A Killer Among Us/Banner of Kinship/Bitter Feud
+becom|63|Absorbing Man/Alacrian Armory/Amplifire
+instant|61|Adaptive Training Post/Animist's Awakening/Bilbo, Thief in the Night
+legendary|60|Absorbing Man/Baral and Kari Zev/Bard Class
+without|59|Aang, Airbending Master/Abstract Performance/Aether Searcher
+remove|59|Alaundo the Seer/All Hallow's Eve/Animus of Predation
+mill|59|Admiral Brass, Unsinkable/Advanced Floral Invocations/Advanced Reconstruction
+lose|57|Aplan Mortarium/Ashling, Flame Dancer/Asmoranomardicadaistinaculdacar's Kitchen
+type|56|A Killer Among Us/Apple of Eden, Isu Relic/Azula, Cunning Usurper
+except|56|Absorbing Man/Abyssal Harvester/Anikthea, Hand of Erebos
+block|55|Aetherling/Akawalli, the Seething Tower/Baboon Spirit
+first|55|Absorbing Man/Advanced Reconstruction/Artificer Class
+time|54|Agent of Acquisitions/Alaundo the Seer/Ashling, Flame Dancer
+were|54|Anzrag's Rampage/Back on Track/Bind to Secrecy
+controller|52|Animate Dead/Argent Dais/Bomb Squad
+haste|52|Alaundo the Seer/Artistic Process/Ashling, the Limitless
+base|52|Admiral Brass, Unsinkable/Amplifire/Ascendant Spirit
+spent|51|Alchemist's Talent/Ancient Cellarspawn/Apple of Eden, Isu Relic
+untap|49|Alexios, Deimos of Kosmos/All-Out Assault/Animist's Awakening
+once|47|Amzu, Swarm's Hunger/Arcade Gannon/Cabaretti Confluence
+own|47|Alaundo the Seer/Altaïr Ibn-La'Ahad/Awestruck Cygnet
+sacrific|46|Adipose Offspring/Alexios, Deimos of Kosmos/Anchor to Reality
+don|46|Archghoul of Thraben/Ashling, Flame Dancer/Baral and Kari Zev
+get|45|Aang, Airbending Master/Advanced Floral Invocations/Aether Refinery
+dealt|44|Archaic's Agony/Ascent of the Worthy/Bolg of the North
+same|44|Animus of Predation/Biotransference/Bleeding Effect
+though|44|Assault Formation/Azula, Cunning Usurper/Back on Track
+look|44|Abstract Performance/Apple of Eden, Isu Relic/Bolas's Citadel
+total|42|Ao, the Dawn Sky/Betor, Kin to All/Captive Audience
+return|41|Agyrem/Anzrag's Rampage/Athreos, Shroud-Veiled
+los|41|Animate Dead/Aphelia, Viper Whisperer/Betor, Kin to All
+remain|41|Black Cat, Cunning Thief/Braided Net/Brainstealer Dragon
+down|41|Agent of Acquisitions/Apple of Eden, Isu Relic/Beseech the Mirror
+add|41|Alchemist's Talent/Cactus Preserve/Caged Sun
+face|39|Agent of Acquisitions/Animus of Predation/Apple of Eden, Isu Relic
+attach|39|Ancestral Blade/Animate Dead/Auratouched Mage
+plus|38|Aether Revolt/Artist's Talent/Barbarian Class
+black|38|Abby, Merciless Soldier/Anikthea, Hand of Erebos/Ardbert, Warrior of Darkness
+roll|38|Attempted Murder/Barbarian Class/Berserker's Frenzy
+0|37|Awestruck Cygnet/Case of the Filched Falcon/Contraband Livestock
+planeswalker|36|Bouncer's Beatdown/Brutal Expulsion/Carth the Lion
++0|36|Angelic Sell-Sword/At Knifepoint/Barbarian Class
+5|36|Apocalypse Hydra/Ardyn, the Usurper/Bringer of Green Zenith's Twilight
+abiliti|35|Agatha of the Vile Cauldron/Braided Net/Carth the Lion
+five|35|Barracks of the Thousand/Bind to Secrecy/Cavalier of Thorns
+spend|35|Bind to Secrecy/Brainstealer Dragon/Case File Auditor
+creat|34|Arcane Artisan/Bard, King of Dale/Captive Audience
+amount|34|Aether Refinery/Aetherflux Conduit/Ancient Cellarspawn
+nontoken|34|Ashling, the Limitless/Azula, Cunning Usurper/Balor
+colorles|34|Azlask, the Swelling Scourge/Black Market Connections/Castle Doom
+green|34|Bounty of the Hunt/Cactus Preserve/Contraband Livestock
+discard|34|Argentum Masticore/Bandit's Talent/Borborygmos and Fblthp
+phase|33|Absorbing Man/Advanced Reconstruction/All-Out Assault
+play|32|Advanced Floral Invocations/Apple of Eden, Isu Relic/Bard Class
+chao|31|Agyrem/Aplan Mortarium/Aretopolis
+both|31|Against All Odds/Atlantis Attacks/Auditore Ambush
+isn|31|Aplan Mortarium/Athreos, Shroud-Veiled/Blink
+much|31|Aether Revolt/Artist's Talent/Asmoranomardicadaistinaculdacar's Kitchen
+otherwise|31|Aid from the Cowl/Archdruid's Charm/Audacious Swap
+ensu|30|Agyrem/Aplan Mortarium/Aretopolis
+game|30|Courageous Resolve/Cyclopean Tomb/Dack Fayden, Helping Hand
+red|30|Ashling, Flame Dancer/Aurelia, Exemplar of Justice/Chancellor of the Forge
+double|30|Anthem of Rakdos/Big Mother Mouser/Bitter Feud
+r|30|The Aether Flues/The Apprentice's Folly/The Argent Etchings
+anywhere|30|Advanced Reconstruction/Bilbo, Thief in the Night/Bloodchief Ascension
+choice|29|Abby, Merciless Soldier/Aragorn, Company Leader/Balduvian Warlord
+upkeep|29|Aang, Destined Savior/Aang, at the Crossroads/Bandit's Talent
+trigger|29|At Knifepoint/Cloud, Midgar Mercenary/Dina, Essence Brewer
+dies|28|Athreos, Shroud-Veiled/Battle of Hoover Dam/Diabolical Salvation
+second|27|Alandra, Sky Dreamer/Ashling, Flame Dancer/Belladonna Took
+enchant|27|Animate Dead/Cass, Hand of Vengeance/Chorale of the Void
+untapp|27|Barracks of the Thousand/Baylen, the Haymaker/Belisarius Cawl
+n|26|The Aether Flues/The Argent Etchings/The Darkhold
+ve|26|Blanka, Ferocious Friend/Demilich/Genesis Storm
+white|25|Agyrem/Ardbert, Warrior of Darkness/Athreos, Shroud-Veiled
+main|25|Absorbing Man/Advanced Reconstruction/All-Out Assault
+10|25|Betor, Kin to All/Component Pouch/Cone of Cold
+source|25|Aether Revolt/Anthem of Rakdos/Artist's Talent
+unles|25|Bandit's Talent/Chocobo Camp/Chorale of the Void
+noncreature|25|Artist's Talent/Builder's Talent/Charitable Levy
+still|25|Auratouched Mage/Brave the Wilds/Cacophony Unleashed
+6|24|Beastbreaker of Bala Ged/Behind the Mask/Bite Down on Crime
+new|24|Adaptive Training Post/Breeches, the Blastmaker/Cursed Recording
+rather|24|Assault Formation/Blue Mage's Cane/Bolas's Citadel
+shuffl|24|Audacious Swap/Blink/Chaotic Transformation
+landfall|24|Advanced Floral Invocations/Beorn's Hospitality/Claim the Kingdom
+doesn|23|Cadric, Soul Kindler/Conundrum Sphinx/Delay
+seven|23|Athreos, Shroud-Veiled/Clockwork Beast/Cursed Recording
+start|23|Coercive Portal/Elenda, Saint of Dusk/Emissary Green
+d20|23|Berserker's Frenzy/Component Pouch/Cone of Cold
+search|23|Aether Searcher/Archmage Ascension/Auditore Ambush
+mode|23|Balor/Cabaretti Confluence/Casey & Raph, Hotheads
+leav|22|Banisher Priest/Banishing Light/Battle at the Helvault
+choos|22|Abstract Performance/Camouflage/Coin of Fate
+enchantment|22|Bello, Bard of the Brambles/Cacophony Unleashed/Cloud Key
+commander|22|Cactus Preserve/Convergence of Dominion/Genesis Storm
+remov|22|Alaundo the Seer/Animus of Predation/Case of the Market Melee
+shuffle|22|Archmage Ascension/Aspiring Champion/Auditore Ambush
++2|22|Barbarian Class/Bonesplitter/Captain Howler, Sea Scourge
+been|21|Botanical Brawler/Breeches, Eager Pillager/Captive Audience
+20|21|Berserker's Frenzy/Betor, Kin to All/Component Pouch
+twice|21|Aether Refinery/Amplifire/Bard, King of Dale
+puts|21|Alexios, Deimos of Kosmos/Conundrum Sphinx/Enigma Ridges
+different|21|Balor/Battle for Bretagard/Camouflage
+planeswalk|20|Agyrem/Aretopolis/Asmoranomardicadaistinaculdacar's Kitchen
+didn|20|Adventure Awaits/Assault Formation/Blossom Prancer
+greatest|20|Abzan Monument/Baru, Wurmspeaker/Blighted Nightmare
+name|20|Absorbing Man/Aether Searcher/Canoptek Wraith
+blue|20|Attempted Murder/Chronatog Totem/Elemental Expressionist
+defend|19|Ayesha Tanaka, Armorer/Blue Mage's Cane/Camouflage
+re|19|Contested Game Ball/Court of Locthwain/Dack Fayden, Helping Hand
+o|19|The Aether Flues/The Apprentice's Folly/The Argent Etchings
+indestructible|19|Arwen, Mortal Queen/Battle at the Helvault/Celebr-8000
+destroy|18|Cobra Trap/Convert to Slime/Dire-Strain Rampage
+equipment|18|Captain America, First Avenger/Cass, Hand of Vengeance/Cloud, Midgar Mercenary
+equipp|18|Brotherhood Regalia/Cass, Hand of Vengeance/Cloud, Midgar Mercenary
+trample|18|Aggressive Mammoth/Domri, Chaos Bringer/Drizzt Do'Urden
+9|18|Component Pouch/Cone of Cold/Goblin Morningstar
+dragon|18|Breaching Dragonstorm/Citadel Siege/Dragon's Fire
+activat|18|Agatha of the Vile Cauldron/Braided Net/Convergence of Dominion
+become|18|Balduvian Warlord/Ebony Fly/Gogo, Mysterious Mime
+able|18|Alexios, Deimos of Kosmos/Berserker's Frenzy/Carnage, Crimson Chaos
+prevent|17|Cautery Sliver/Clinging Mists/Comeuppance
+leave|17|Advanced Reconstruction/Amzu, Swarm's Hunger/Elemental Expressionist
+putt|17|Celestial Reunion/Delay/Elemental Expressionist
+copi|17|Bloodthirsty Adversary/Chun-Li, Countless Kicks/Echo Mage
+level|17|Advanced Reconstruction/Artificer Class/Artist's Talent
+conjure|16|Bind to Secrecy/Brazen Boarding/Caldera Breaker
+basic|16|Aang's Journey/Abzan Monument/Demolition Field
+paid|16|Adipose Offspring/Aether Refinery/Avacyn's Judgment
+y|15|Bioplasm/The Argent Etchings/The Bean
+hasn|15|Breeches, Eager Pillager/Captive Audience/Gandalf the Grey
+controll|15|Aether Revolt/Aid from the Cowl/Bitter Feud
+loyalty|15|Carth the Lion/Chandra, Fire Artisan/Dark Intimations
+8|15|Akawalli, the Seething Tower/Battle at the Helvault/Breaching Dragonstorm
+saddl|15|Alacrian Armory/Back on Track/Calamity, Galloping Inferno
+spirit|15|Baboon Spirit/Blue Mage's Cane/Crackling Emergence
+zombie|15|Abby, Merciless Soldier/Anikthea, Hand of Erebos/Archghoul of Thraben
+goad|15|Dack Fayden, Helping Hand/Farid, Enterprising Salvager/Hot Pursuit
 perpetually|14|Advanced Floral Invocations/Bind to Secrecy/Blighted Nightmare
-source|14|Aether Revolt/Anthem of Rakdos/Artist's Talent
-double|14|Anthem of Rakdos/Game of Chaos/Goblin Charbelcher
-untapp|14|Barracks of the Thousand/Belisarius Cawl/Galecaster Colossus
-6|13|Beastbreaker of Bala Ged/Behind the Mask/Bite Down on Crime
-leav|13|Banisher Priest/Banishing Light/Genku, Future Shaper
-phase|13|Advanced Reconstruction/Barracks of the Thousand/Black Market Connections
-seven|13|Athreos, Shroud-Veiled/Clockwork Beast/Cursed Recording
-rather|13|Bolas's Citadel/Bounty of the Hunt/Bringer of Green Zenith's Twilight
-but|13|Call to Arms/Cyclopean Tomb/Deification
-dies|13|Athreos, Shroud-Veiled/Battle of Hoover Dam/Diabolical Salvation
-mode|13|Balor/Cabaretti Confluence/Casey & Raph, Hotheads
-greatest|13|Abzan Monument/Blighted Nightmare/Daretti, Rocketeer Engineer
-twice|13|Amplifire/Bringer of Green Zenith's Twilight/Finale of Promise
-commander|13|Genesis Storm/Grizzlegom, Hurloon Hero/Jyoti, Moag Ancient
-noncreature|13|Artist's Talent/Builder's Talent/Comeuppance
-choice|12|Ensnared by the Mara/Feat of Resistance/Genesis of the Daleks
-defend|12|Ayesha Tanaka, Armorer/Camouflage/Elite Scaleguard
-hasn|12|Breeches, Eager Pillager/Gandalf the Grey/Genku, Future Shaper
-conjure|12|Bind to Secrecy/Brazen Boarding/Caldera Breaker
-re|12|Court of Locthwain/Dack Fayden, Helping Hand/Kamahl's Will
-o|12|The Aether Flues/The Apprentice's Folly/The Argent Etchings
-9|12|Cone of Cold/Iron Mastiff/Journey to the Lost City
-indestructible|12|Celebr-8000/Indominus Rex, Alpha/Item Crate
-trigger|12|Firebender Ascension/Ingenious Smith/Morbid Opportunist
-name|12|Aether Searcher/Canoptek Wraith/Gallery of Legends
-y|11|The Argent Etchings/The Bean/The Brothers' War
-white|11|Agyrem/Athreos, Shroud-Veiled/Celestial Dawn
-start|11|Fateful Tempest/Galadriel, Elven-Queen/Happily Ever After
-both|11|Brilliance Unleashed/Casey & Raph, Hotheads/Kamahl's Will
-anywhere|11|Advanced Reconstruction/Cipherbound Spirit/Elemental Expressionist
-enchantment|11|Cloud Key/Fear of Ridicule/High Marshal Arguel
-basic|11|Abzan Monument/Dire-Strain Rampage/Kotose, the Silent Spider
-ve|11|Demilich/Genesis Storm/Haliya, Guided by Light
-controll|10|Aether Revolt/Case of the Burning Masks/Churning Reservoir
-loyalty|10|Carth the Lion/Chandra, Fire Artisan/Deification
-main|10|Advanced Reconstruction/Barracks of the Thousand/Black Market Connections
-8|10|Akawalli, the Seething Tower/Breaching Dragonstorm/Case of the Trampled Garden
-level|10|Advanced Reconstruction/Artificer Class/Artist's Talent
-able|10|Berserker's Frenzy/City of the Daleks/Fighter Class
-different|10|Balor/Battle for Bretagard/Camouflage
-unles|10|Chocobo Camp/Chorale of the Void/Disciple of the Ring
-puts|10|Enigma Ridges/Grub's Command/Guff Rewrites History
-destroy|9|Dire-Strain Rampage/Firja's Retribution/Item Crate
-resolv|9|Ashling, Flame Dancer/Forger's Foundry/Illusionary Mask
-19|9|Cone of Cold/Iron Mastiff/Journey to the Lost City
-blue|9|Elemental Expressionist/Emergent Sequence/Fisher's Talent
-shuffle|9|Dack Fayden, Helping Hand/Dire-Strain Rampage/Garruk, Caller of Beasts
-search|9|Aether Searcher/Dire-Strain Rampage/Garruk, Caller of Beasts
-trample|9|Aggressive Mammoth/Domri, Chaos Bringer/Hunter's Talent
-landfall|9|Advanced Floral Invocations/Down in the Valley/Earthbender Ascension
-dragon|9|Breaching Dragonstorm/Dragon's Fire/Dragonlord's Servant
-+3|9|Brute Force/Earthshaker Giant/Giant Growth
-new|8|Adaptive Training Post/Cursed Recording/Finale of Promise
-win|8|Fiery Gambit/Game of Chaos/Happily Ever After
-ir|8|The Countdown Is at One/The Cruelty of Gix/The End
-prevent|8|Comeuppance/Nine Lives/Refraction Trap
-die|8|Captain Rex Nebula/Draconic Intervention/Faunsbane Troll
-tied|8|Call to Arms/Galadriel, Elven-Queen/Goblin Game
-goblin|8|A Killer Among Us/Chancellor of the Forge/Down, Down to Goblin-town
-still|8|Cosmium Confluence/Emergent Sequence/Great Hall of the Biblioplex
-menace|8|Barbarian Class/Celebr-8000/Dalek Intensive Care
-least|8|Desecrate Reality/Frontline Medic/Goblin Game
-food|7|Brenard, Ginger Sculptor/Gourmand's Talent/Nuka-Cola Vending Machine
-equipp|7|Brotherhood Regalia/Heirloom Blade/Mask of Memory
-lifelink|7|Celebr-8000/Indominus Rex, Alpha/Kathril, Aspect Warper
-third|7|Ashling, Flame Dancer/Captain Ripley Vance/God-Eternal Kefnet
-didn|7|Break Out/Nettling Imp/Rosecot Knight
-leave|7|Advanced Reconstruction/Elemental Expressionist/Imotekh the Stormlord
-last|7|Alaundo the Seer/By Elspeth's Command/Ice Cauldron
-chose|7|Dragon's Fire/Human-Time Lord Meta-Crisis/Master of Ceremonies
-effect|7|Bard Class/Defiler of Faith/Defiler of Flesh
-result|7|Captain Rex Nebula/Celebr-8000/Deification
-copi|7|Bloodthirsty Adversary/Chun-Li, Countless Kicks/Finale of Promise
+but|14|Call to Arms/Coveted Falcon/Cyclopean Tomb
+ir|14|The Beamtown Bullies/The Countdown Is at One/The Cruelty of Gix
+resolv|14|Ashling, Flame Dancer/Belladonna Took/Forger's Foundry
+treasure|14|Alchemist's Talent/Contested Game Ball/Evereth, Viceroy of Plunder
+crew|14|Back on Track/Balthier and Fran/Born to Drive
+tied|14|Call to Arms/Coercive Portal/Galadriel, Elven-Queen
+after|13|All-Out Assault/Balthier and Fran/Godo, Bandit Warlord
+kick|13|Aang's Journey/Balduvian Atrocity/Chun-Li, Countless Kicks
+least|13|Arthur, Marigold Knight/Blazing Bomb/Desecrate Reality
+vehicl|13|Back on Track/Cloudspire Coordinator/Country Roads
+equip|12|Dáin Ironfoot/Fighter Class/Firion, Wild Rose Warrior
+true|12|Animus of Predation/Biotransference/Bleeding Effect
+six|12|Aetherworks Marvel/For the Ancestors/Gate to the Afterlife
+7|12|Cloud, Ex-SOLDIER/Emergency Powers/Figure of Fable
+surveil|12|Coin of Fate/Cryptex/Dawnhand Dissident
+aura|12|Cass, Hand of Vengeance/Herald of Amity/Liberated Livestock
+eight|12|Golbez, Crystal Collector/Nine-Lives Familiar/Omnath, Locus of the Roil
+repeat|12|Calamity, Galloping Inferno/Claim Jumper/Countryside Crusher
+proces|12|Calamity, Galloping Inferno/Claim Jumper/Countryside Crusher
+vigilance|12|Absorbing Man/Battle at the Helvault/Celebr-8000
+menace|12|Barbarian Class/Celebr-8000/Dalek Intensive Care
+vehicle|12|Alacrian Armory/Born to Drive/Caradora, Heart of Alacria
+command|12|Arahbo, Roar of the World/Company Commander/Convergence of Dominion
+mount|12|Alacrian Armory/Back on Track/Bucolic Ranch
+goblin|12|A Killer Among Us/Bolg of the North/Champion of the Weird
+zone|12|Arahbo, Roar of the World/Genesis Storm/Jyoti, Moag Ancient
+vot|12|Coercive Portal/Elrond of the White Council/Emissary Green
+tim|12|Bloodthirsty Adversary/Chun-Li, Countless Kicks/Dance with Calamity
+win|11|Breeches, the Blastmaker/Courageous Resolve/Everybody Lives!
+lifelink|11|Arwen, Mortal Queen/Celebr-8000/Dragonbroods' Relic
+finality|11|Admiral Brass, Unsinkable/Advanced Floral Invocations/Battle of Hoover Dam
+third|11|Ashling, Flame Dancer/Belladonna Took/Borborygmos and Fblthp
+-1|11|Decimator Beetle/Enigma Sphinx Avatar/Giant Oyster
+charge|11|Adaptive Training Post/Brain in a Jar/Geometric Nexus
+lost|11|Betor, Ancestor's Voice/Bloodchief Ascension/Exsanguinate
++3|11|Brute Force/Earthshaker Giant/Giant Growth
+-0|11|Animate Dead/Code of Constraint/Gloom Ripper
+vote|11|Coercive Portal/Elrond of the White Council/Fateful Tempest
+result|11|Attempted Murder/Captain Rex Nebula/Celebr-8000
+die|11|Captain Rex Nebula/Draconic Intervention/Faunsbane Troll
+transform|11|Aang, Destined Savior/Aang, at the Crossroads/Brass's Tunnel-Grinder
+kind|10|Aragorn, Company Leader/Blitzball Stadium/Gollum, Scheming Guide
+phas|10|Ashling, Flame Dancer/Brazen Cannonade/Florian, Voldaren Scion
+food|10|Brenard, Ginger Sculptor/Gourmand's Talent/Nuka-Cola Vending Machine
+caus|10|Ajani's Last Stand/Caged Sun/Firebender Ascension
+bird|10|Attempted Murder/Bartz and Boko/Chocobo Camp
+soldier|10|By Elspeth's Command/Command the Stage/Elspeth's Talent
+else|10|Elemental Expressionist/Geth, Thane of Contracts/Gruesome Encore
+left|10|Aether Revolt/Aid from the Cowl/Chorale of the Void
+phyrexian|10|Chancellor of the Forge/Evolved Sleeper/Koma and Toski, Compleated
+19|10|Cone of Cold/Iron Mastiff/Journey to the Lost City
+wizard|10|Blue Mage's Cane/Command the Stage/Frostpyre Arcanist
+effect|10|Agatha of the Vile Cauldron/Bard Class/Convergence of Dominion
+difference|10|Ancient Cellarspawn/Boreas Charger/Doran, Besieged by Time
+hexproof|10|Indominus Rex, Alpha/Kathril, Aspect Warper/Kiora of Salt and Sand
+collect|9|Behind the Mask/Bite Down on Crime/Cryptex
+evidence|9|Behind the Mask/Bite Down on Crime/Cryptex
+could|9|Cactus Preserve/Exterminator Magmarch/Forge Anew
+delirium|9|Crop Sigil/Dragon's Rage Channeler/Fear of Burning Alive
+half|9|Aphelia, Viper Whisperer/Curse of the Cabal/Gisela, Blade of Goldnight
+round|9|Agent of Acquisitions/Aphelia, Viper Whisperer/Curse of the Cabal
+elemental|9|Ashling, the Limitless/Bello, Bard of the Brambles/Champion of the Path
+quest|9|Arcade Gannon/Craig Boone, Novac Guard/ED-E, Lonesome Eyebot
+ten|9|Aretopolis/Bolas's Citadel/Dark Depths
+combination|9|Gwenna, Eyes of Gaea/Hazel of the Rootbloom/Klauth, Unrivaled Ancient
+wasn|9|Beseech the Mirror/By Elspeth's Command/Fang, Roku's Companion
+shar|9|Baral and Kari Zev/Chaotic Transformation/Descendants' Fury
+last|9|Alaundo the Seer/By Elspeth's Command/Command the Stage
+party|9|Linvala, Shield of Sea Gate/Malakir Blood-Priest/Multiclass Baldric
+aren|9|Biotransference/Celestial Dawn/Dune Chanter
+elf|9|Doors of Durin/Down in the Valley/Eclipsed Realms
+warrior|9|Akki Ronin/Ascendant Spirit/Ascent of the Worthy
+chose|9|Aragorn, Company Leader/Conundrum Sphinx/Dragon's Fire
+fac|8|Ensnared by the Mara/Genesis of the Daleks/Hunted by The Family
+villainou|8|Ensnared by the Mara/Genesis of the Daleks/Hunted by The Family
+ano|8|The Curse of Fenric/The Destined Thief/The Flood of Mars
+coin|8|Breeches, the Blastmaker/Chira, All In/Fiery Gambit
+noncombat|8|Aether Revolt/Artist's Talent/Chandra's Incinerator
+suspend|8|Curse of the Cabal/Delay/Shivan Sand-Mage
+demon|8|Ardyn, the Usurper/Aspiring Champion/Be'lakor, the Dark Master
+poison|8|Geth's Summons/Glissa's Retriever/Goliath Hatchery
+died|8|Bone Devourer/Genesis of the Daleks/Grim Reaper's Sprint
+fewer|8|Bandit's Talent/Djeru and Hazoret/Enigma Ridges
+plan|8|Claim the Kingdom/Construct a Cosmic Cube/Death to Our Enemies
+him|8|Captain America, Liberator/Guile, Sonic Soldier/Hotel of Fears
+secretly|8|A Killer Among Us/Buzzing Whack-a-Doodle/Elrond of the White Council
+must|8|Balor/Casey & Raph, Hotheads/Chaos Balor
+strike|8|Indominus Rex, Alpha/Kathril, Aspect Warper/Lightfoot Rogue
+weren|8|Genesis Storm/Genesis Wave/Knickknack Ouphe
+m|7|The End/The Five Doctors/The Grand Evolution
+flip|7|Breeches, the Blastmaker/Chira, All In/Fiery Gambit
+unlock|7|Cryptex/Fear of Sleep Paralysis/Ghostly Dancers
+devotion|7|Athreos, Shroud-Veiled/Gray Merchant of Asphodel/Hotel of Fears
+descend|7|Akawalli, the Seething Tower/Brass's Tunnel-Grinder/Corpses of the Lost
+assign|7|Assault Formation/Camouflage/E. Honda, Sumo Champion
+hero|7|Avengers Tower/Daredevil, Man Without Fear/Ember Island Production
+corrupt|7|Geth's Summons/Glissa's Retriever/Goliath Hatchery
+us|7|Atlantis Attacks/Earth's Mightiest Heroes/HULK SMASH!
+full|7|Linvala, Shield of Sea Gate/Multiclass Baldric/Nalia de'Arnise
+highest|7|Gix's Command/Iron Mastiff/Itazura, Lingering Wick
+forest|7|Baru, Fist of Krosa/Gargantuan Gorilla/Hunting Wilds
+oil|7|Argent Dais/Churning Reservoir/Evolved Spinoderm
+ring|7|Aragorn, Company Leader/Frodo, Sauron's Bane/Galadriel, Elven-Queen
+divid|7|Avacyn's Judgment/Camouflage/Case of the Market Melee
+blight|7|Blighted Nightmare/Burning Curiosity/Champion of the Weird
+reach|7|Dhalsim, Pliable Pacifist/Indominus Rex, Alpha/Kathril, Aspect Warper
+six-sid|7|Attempted Murder/Captain Rex Nebula/Celebr-8000
+dice|7|Attempted Murder/Barbarian Class/Celebr-8000
+human|7|A Killer Among Us/Absorbing Man/Arcade Gannon
+merfolk|7|A Killer Among Us/Eclipsed Realms/Kumena, Tyrant of Orazca
+council|7|Coercive Portal/Elrond of the White Council/Fateful Tempest
+clas|7|Advanced Reconstruction/Alchemist's Talent/Artificer Class
+domain|7|Exploding Borders/Fblthp, Knows the Way/Nael, Avizoa Aeronaut
 pile|7|Abstract Performance/Camouflage/Fact or Fiction
-secretly|7|A Killer Among Us/Buzzing Whack-a-Doodle/Elrond of the White Council
-aura|7|Herald of Amity/Liberated Livestock/Old-Growth Troll
-command|7|Arahbo, Roar of the World/Genesis Storm/Jyoti, Moag Ancient
-zone|7|Arahbo, Roar of the World/Genesis Storm/Jyoti, Moag Ancient
-spirit|7|Baboon Spirit/E. Honda, Sumo Champion/Essence Flux
-hexproof|7|Indominus Rex, Alpha/Kathril, Aspect Warper/Linvala, Shield of Sea Gate
-vigilance|7|Celebr-8000/Indominus Rex, Alpha/Kamahl's Will
-goad|7|Dack Fayden, Helping Hand/Farid, Enterprising Salvager/Hot Pursuit
-kick|7|Chun-Li, Countless Kicks/Inscription of Insight/Jace, Mirror Mage
-m|6|The End/The Grand Evolution/The Master, Gallifrey's End
+most|6|Call to Arms/Enigma Ridges/Preacher of the Schism
 seek|6|Chaos Balor/Kardum, Patron of Flames/Naktamun Shines Again
-true|6|Animus of Predation/Celestial Dawn/Indominus Rex, Alpha
-half|6|Curse of the Cabal/Goblin Game/Ochre Jelly
-round|6|Curse of the Cabal/Goblin Game/Ochre Jelly
-putt|6|Celestial Reunion/Elemental Expressionist/Forger's Foundry
--1|6|Enigma Sphinx Avatar/Giant Oyster/Six-Sided Die
-surveil|6|Dragon's Rage Channeler/Kaito, Bane of Nightmares/MACH-1, Swooping Scoundrel
-clas|6|Advanced Reconstruction/Alchemist's Talent/Artificer Class
-paid|6|Celestial Reunion/Defiler of Faith/Defiler of Flesh
-become|6|Illusionary Mask/Kamahl's Will/Palace Jailer
-lost|6|Exsanguinate/Gray Merchant of Asphodel/Hot Pursuit
-zombie|6|Daryl, Hunter of Walkers/Lazotep Quarry/Olag and Miau, New Friends
-transform|6|Aang, Destined Savior/Aang, at the Crossroads/High Marshal Arguel
-phyrexian|6|Chancellor of the Forge/Evolved Sleeper/Koma and Toski, Compleated
--0|6|Animate Dead/Marjhan/Sabotage Strategist
-shar|6|Baral and Kari Zev/Chaotic Transformation/Heirloom Blade
-weren|6|Genesis Storm/Knickknack Ouphe/Morphic Tide
-highest|6|Gix's Command/Iron Mastiff/Itazura, Lingering Wick
-wasn|6|Beseech the Mirror/By Elspeth's Command/Itazura, Lingering Wick
+vampire|6|Clavileño, First of the Blessed/Evelyn, the Covetous/High Marshal Arguel
+island|6|Eluge, the Shoreless Sea/Flow of Knowledge/Marjhan
+gift|6|Dewdrop Cure/Gate to the Afterlife/Into the Flood Maw
+promis|6|Dewdrop Cure/Into the Flood Maw/Perch Protection
+defender|6|Assault Formation/Felothar the Steadfast/Jurassic Park
+exces|6|Bolg of the North/Brazen Boarding/Nahiri's Warcrafting
+maximum|6|Marina Vendrell's Grimoire/Midnight Oil/Proft's Eidetic Memory
+size|6|Marina Vendrell's Grimoire/Midnight Oil/Proft's Eidetic Memory
+exactly|6|Ayara's Oathsworn/Jerren, Corrupted Bishop/Matoc, Lavamancer
+move|6|Black Panther, Wakandan King/Costume Closet/Explorer's Cache
+face-down|6|Abstract Performance/Hostile Negotiations/Roshan, Hidden Magister
+tempt|6|Aragorn, Company Leader/Frodo, Sauron's Bane/Galadriel, Elven-Queen
+cat|6|Arahbo, Roar of the World/Drizzt Do'Urden/Ka-Zar of the Savage Land
+villain|6|Absorbing Man/Castle Doom/Doctor Doom
+i|6|Ascent of the Worthy/Ignis Scientia/The Eleventh Doctor
+deathtouch|6|Indominus Rex, Alpha/Item Crate/Kathril, Aspect Warper
+worth|6|Hela's Arcanum/Season of Gathering/Season of Loss
+distribute|6|Bounty of the Hunt/Case of the Trampled Garden/Omnivorous Flytrap
+lesser|6|Baral and Kari Zev/Clement, the Worrywort/Codie, Vociferous Codex
+deck|6|Dragon's Approach/Grizzlegom, Hurloon Hero/Maular, the Next Evolution
+escape|6|Chainweb Aracnir/Desdemona, Freedom's Edge/Elspeth, Sun's Nemesis
 magecraft|6|Ashling, Flame Dancer/Elemental Expressionist/Jadzi, Oracle of Arcavios
-strike|6|Indominus Rex, Alpha/Kathril, Aspect Warper/Lightfoot Rogue
-kind|5|Gollum, Scheming Guide/Innkeeper's Talent/Tawnos's Coffin
-ano|5|The Curse of Fenric/The Destined Thief/The Flood of Mars
+rat|5|Lord Skitter, Sewer King/Swarmyard Massacre/Thought Rattle
 duplicate|5|Bind to Secrecy/Legion Reconsecrator/Roalesk, Prime Specimen
-caus|5|Ajani's Last Stand/Firebender Ascension/Sahir, Visitor in Darkness
-six|5|Gate to the Afterlife/Happily Ever After/Omnivorous Flytrap
-finality|5|Advanced Floral Invocations/Battle of Hoover Dam/Meathook Massacre II
-flip|5|Chira, All In/Fiery Gambit/Game of Chaos
-coin|5|Chira, All In/Fiery Gambit/Game of Chaos
-charge|5|Adaptive Training Post/Geometric Nexus/Ice Cauldron
-ten|5|Aretopolis/Bolas's Citadel/Hero of Bretagard
+angel|5|Ascendant Spirit/Ascent of the Worthy/Battle at the Helvault
+extra|5|Lost Isle Calling/Notorious Throng/Perch Protection
+drawn|5|Communal Brewing/Lyra, Tolarian Archangel/Messenger Jays
+mutant|5|Jason Bright, Glowing Prophet/Jenova, Ancient Calamity/Mikey & Don, Party Planners
+pays|5|Disciple of the Ring/Frontline Medic/Sage's Dousing
+lore|5|Chong and Lily, Nomads/Myth Realized/Strago and Relm
+owns|5|Brainstealer Dragon/Kefka, Dancing Mad/Mari, the Killing Quill
+multicolor|5|Argentum Masticore/Basri's Lieutenant/Lurking Spinecrawler
+night|5|Celestus Sanctifier/Gavony Dawnguard/Heroes' Hangout
+teamwork|5|Atlantis Attacks/Earth's Mightiest Heroes/HULK SMASH!
+single|5|Exterminator Magmarch/Frontline Heroism/Pestilent Cauldron
+converge|5|Archaic's Agony/Crystalline Crawler/Magmablood Archaic
+elv|5|Gloom Ripper/Jagged-Scar Archers/Maralen, Fae Ascendant
+proliferate|5|Contagious Vorrac/Expand the Sphere/Planewide Celebration
+14|5|Berserker's Frenzy/Danse Macabre/Delina, Wild Mage
+15+|5|Danse Macabre/Gale's Redirection/Revivify
+snow|5|Gargantuan Gorilla/Isu the Abominable/Replicating Ring
+void|5|Chorale of the Void/Decode Transmissions/Elegy Acolyte
+take|5|Lost Isle Calling/Notorious Throng/Ravenloft Adventurer
+eminence|5|Arahbo, Roar of the World/M'Odo, the Gnarled Oracle/Sahir, Visitor in Darkness
 cause|5|Clockwork Avian/Clockwork Beast/Clockwork Steed
 note|5|Aether Searcher/Ice Cauldron/Magar of the Magic Strings
 not|5|Aether Searcher/Ice Cauldron/Magar of the Magic Strings
-domain|5|Nael, Avizoa Aeronaut/Radha's Firebrand/Scion of Draco
 before|5|Berserker's Frenzy/Drain Life/Nettling Imp
-six-sid|5|Captain Rex Nebula/Celebr-8000/Jumbo Imp
-lesser|5|Baral and Kari Zev/Codie, Vociferous Codex/Gyrus, Waker of Corpses
+attacker|5|Camouflage/Capricopian/Nettling Imp
 share|5|Demonic Covenant/Hiveheart Shaman/Myriad Landscape
-activat|5|Koma and Toski, Compleated/Linvala, Shield of Sea Gate/Rimewind Cryomancer
-divid|5|Camouflage/Case of the Market Melee/Master of the Wild Hunt
-deathtouch|5|Indominus Rex, Alpha/Item Crate/Kathril, Aspect Warper
 ward|5|Brotherhood Regalia/Innkeeper's Talent/Saruman of Many Colors
-left|5|Aether Revolt/Chorale of the Void/Elegy Acolyte
-party|5|Linvala, Shield of Sea Gate/Malakir Blood-Priest/Multiclass Baldric
-mod|5|Chira, All In/Hela's Arcanum/Season of Gathering
-tim|5|Bloodthirsty Adversary/Chun-Li, Countless Kicks/Frodo, Sauron's Bane
-repeat|5|Helm of Obedience/Kathril, Aspect Warper/Rally the Horde
-proces|5|Helm of Obedience/Kathril, Aspect Warper/Rally the Horde
-scout|5|Canoptek Wraith/Figure of Fable/Frodo, Sauron's Bane
-vot|5|Elrond of the White Council/Fateful Tempest/Galadriel, Elven-Queen
-vote|5|Elrond of the White Council/Fateful Tempest/Galadriel, Elven-Queen
-most|4|Call to Arms/Enigma Ridges/Raiders' Allegiance
-fac|4|Ensnared by the Mara/Genesis of the Daleks/Missy
-villainou|4|Ensnared by the Mara/Genesis of the Daleks/Missy
-collect|4|Behind the Mask/Bite Down on Crime/Deadly Cover-Up
-evidence|4|Behind the Mask/Bite Down on Crime/Deadly Cover-Up
-equip|4|Fighter Class/Origin of Captain America/Ronin, Shadow Stalker
-soldier|4|By Elspeth's Command/Figure of Fable/Rhox Pikemaster
-vampire|4|Evelyn, the Covetous/High Marshal Arguel/Sorin, Vampire Lord
-could|4|Illusionary Mask/Sorrow's Path/Takklemaggot
-devotion|4|Athreos, Shroud-Veiled/Gray Merchant of Asphodel/Hotel of Fears
-delirium|4|Dragon's Rage Channeler/Omnivorous Flytrap/Pick the Brain
-else|4|Elemental Expressionist/Magar of the Magic Strings/Realmbreaker, the Invasion Tree
-suspend|4|Curse of the Cabal/Sibylline Soothsayer/Talon Gates
-island|4|Eluge, the Shoreless Sea/Flow of Knowledge/Marjhan
-assign|4|Camouflage/E. Honda, Sumo Champion/Goblin Vandal
-died|4|Genesis of the Daleks/Intermediate Chirography/Lagomos, Hand of Hatred
-convert|4|M'Odo, the Gnarled Oracle/Soundwave, Sonic Spy/Soundwave, Superior Captain
-attacker|4|Camouflage/Nettling Imp/Noctis, Heir Apparent
-declar|4|Berserker's Frenzy/Camouflage/Nettling Imp
-ignore|4|Barbarian Class/Berserker's Frenzy/Iron Mastiff
-must|4|Balor/Casey & Raph, Hotheads/Chaos Balor
-warrior|4|Akki Ronin/Ascendant Spirit/Figure of Destiny
-combination|4|Gwenna, Eyes of Gaea/Omnath, Locus of All/Orb of Dragonkind
-face-down|4|Abstract Performance/Hostile Negotiations/The Celestial Toymaker
-merfolk|4|A Killer Among Us/Silvergill Adept/Stonybrook Banneret
-eminence|4|Arahbo, Roar of the World/M'Odo, the Gnarled Oracle/Sahir, Visitor in Darkness
-reach|4|Indominus Rex, Alpha/Kathril, Aspect Warper/Selective Adaptation
-worth|4|Hela's Arcanum/Season of Gathering/Season of the Bold
-hero|4|Avengers Tower/Ember Island Production/Origin of the Avengers
-construct|4|Dollhouse of Horrors/Mechtitan Core/Mishra, Eminent One
-doctor|4|Ryan Sinclair/The Day of the Doctor/The Fourteenth Doctor
-dice|4|Barbarian Class/Celebr-8000/Chira, All In
-ring|4|Frodo, Sauron's Bane/Galadriel, Elven-Queen/The Ring Goes South
-tempt|4|Frodo, Sauron's Bane/Galadriel, Elven-Queen/The Ring Goes South
-treasure|4|Alchemist's Talent/Great Train Heist/Jolene, the Plunder Queen
-deck|4|Grizzlegom, Hurloon Hero/The Countdown Is at One/The Fertile Lands of Saulvinia
-difference|4|Enigma Ridges/Lady Loki, Agent of Chaos/Transmute Artifact
-alone|4|Akki Ronin/Nefarox, Overlord of Grixis/Seifer Almasy
-i|4|Ignis Scientia/The Eleventh Doctor/The World Spell
-distribute|4|Bounty of the Hunt/Case of the Trampled Garden/Omnivorous Flytrap
-protection|4|Feat of Resistance/Figure of Fable/Questing Phelddagrif
-aren|4|Celestial Dawn/Rukarumel, Biologist/Tazri, Stalwart Survivor
-elf|4|Down in the Valley/Galadriel, Elven-Queen/Maralen, Fae Ascendant
-fewer|4|Djeru and Hazoret/Enigma Ridges/Last Voyage of the _____
-wizard|4|Galecaster Colossus/Sage's Dousing/Stonybrook Banneret
-pays|4|Disciple of the Ring/Frontline Medic/Sage's Dousing
-emblem|4|Domri, Chaos Bringer/Garruk, Caller of Beasts/Kaito, Bane of Nightmares
-make|3|Kharis & The Beholder/MagicConsecrated Sphinx/The Master, Gallifrey's End
-ing|3|Tempt with Bunnies/Tempt with Discovery/Tempt with Vengeance
-offer|3|Tempt with Bunnies/Tempt with Discovery/Tempt with Vengeance
-lowest|3|Barbarian Class/The Darkhold/Wheel of Misfortune
-librari|3|Guff Rewrites History/The Countdown Is at One/Vault 13: Dweller's Journey
-phas|3|Ashling, Flame Dancer/Slip Out the Back/The Phasing of Zhalfir
-out|3|Ripples of Potential/Slip Out the Back/The Phasing of Zhalfir
-equipment|3|Origin of Captain America/Tetsuo, Imperial Champion/The Keeper of the Yellow Hat
-+4|3|The Keeper of the Yellow Hat/Titanic Growth/Vines of Vastwood
-detective|3|Case of the Pilfered Proof/Kellan, Planar Trailblazer/Tenth District Hero
-angel|3|Ascendant Spirit/Hero of Bretagard/Shilgengar, Sire of Famine
-7|3|Figure of Fable/Scars of the Veteran/Vincent's Limit Break
-after|3|Great Train Heist/Time Vault/Valor's Reach
-bird|3|Bartz and Boko/Chocobo Camp/The Eagles Are Coming!
-between|3|Lady Loki, Agent of Chaos/The Toymaker's Trap/Yusri, Fortune's Flame
-travel|3|The Girl in the Fireplace/The Parting of the Ways/The Wedding of River Song
-noncombat|3|Aether Revolt/Artist's Talent/The Rollercrusher Ride
-god|3|Hero of Bretagard/Kratos, Stoic Father/The Book of Vile Darkness
-crew|3|Captain Rex Nebula/Reckoner Bankbuster/Roadside Assistance
--4|3|Grasp of Darkness/Six-Sided Die/Stream of Unconsciousness
-set|3|I Call for Slaughter/You Exist Only to Amuse/Your Own Face Mocks You
-scheme|3|I Call for Slaughter/You Exist Only to Amuse/Your Own Face Mocks You
-motion|3|I Call for Slaughter/You Exist Only to Amuse/Your Own Face Mocks You
-thopter|3|Intrude on the Mind/Leonardo da Vinci/Yotia Declares War
-defender|3|Jurassic Park/The Pride of Hull Clade/Welcome to . . .
-cleanup|3|Bounty of the Hunt/Case of the Market Melee/Necromancy
-pil|3|Camouflage/Fact or Fiction/Intrude on the Mind
-pirate|3|Baral and Kari Zev/Breeches, Eager Pillager/Raiders' Allegiance
-human|3|A Killer Among Us/Evolved Sleeper/Fugitive of the Judoon
-guess|3|Gollum, Scheming Guide/The Seventh Doctor/The Toymaker's Trap
-right|3|Gollum, Scheming Guide/Raging River/The Toymaker's Trap
-exactly|3|Matoc, Lavamancer/Sahir, Visitor in Darkness/Timber Paladin
-15+|3|Danse Macabre/Gale's Redirection/Wyll's Reversal
-forest|3|Gargantuan Gorilla/Old-Growth Troll/Yedora, Grave Gardener
-snow|3|Gargantuan Gorilla/Rimewind Cryomancer/Svella, Ice Shaper
-swamp|3|Corrupt/Cyclopean Tomb/Tendrils of Corruption
-draft|3|Aether Searcher/Animus of Predation/Bind to Secrecy
-again|3|Delina, Wild Mage/Game of Chaos/Lae'zel's Acrobatics
-villain|3|Doom Reigns Supreme/Lady Loki, Agent of Chaos/Loki, the Deceiver
-plan|3|Doom Reigns Supreme/Glorious Purpose/Robot Domination
-vehicl|3|Mechtitan Core/Reckoner Bankbuster/Roadside Assistance
-quest|3|Earthbender Ascension/Firebender Ascension/Overseer of Vault 76
-cyberman|3|Missy/The Cyber-Controller/The Moonbase
-lightn|3|Chun-Li, Countless Kicks/Summon: Kujata/The Duke of Midrange
-demon|3|Demonic Covenant/High Marshal Arguel/Pink Horror
-vehicle|3|Caradora, Heart of Alacria/Depala, Pilot Exemplar/Katsumasa, the Animator
-eight|3|Tellah, Great Sage/Ultros, Obnoxious Octopus/Wail of the Forgotten
-reduc|3|Bard Class/Defiler of Faith/Defiler of Flesh

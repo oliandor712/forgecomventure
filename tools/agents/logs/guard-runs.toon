@@ -1,3 +1,4 @@
 # Claude-only file in TOON. One row per guard run (tag_guard.py; rule_guard.py when it logs). new = new tags beat stored, merged = per-section mix, old = stored kept because the run scored lower.
-guard[1|]{date|guard|cards|same|new|merged|old|note}:
+guard[2|]{date|guard|cards|same|new|merged|old|note}:
 2026-10-24|tag_guard|353|353|0|0|0|
+2026-10-25|tag_guard|353|351|0|0|2|

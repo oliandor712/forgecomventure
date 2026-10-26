@@ -49,6 +49,9 @@ Small (fine to read): handoffs under 2k, `TAG_LEGEND.md` 2k, `tagcheck/README.md
 - Rules for tags: `human_logic.toon` rows H31..H70 (area tags).
 - Keyword/CR sources: section 12.
 
+- Logs by subject: `tools/agents/logs/LOG_INDEX.toon` (check first; one row per log, writer, size warning). Glance test plan: `tools/concordia/deckgen/tagcheck/GLANCE_TEST_PLAN.md`.
+- Power scorer and strategies: `tools/concordia/deck_tier.py` (scorer), `tier_table.json` (bands), `deckgen/pool_meta.json` (input status), `tools/concordia/strategies/strategies.json` + `strategy_fit.py` (builder strategy fit, niche penalty), log `tools/agents/logs/power-scorer-tests.toon`.
+
 ## 4. Reader run (reverse tag check)
 - Folder: `tools/concordia/deckgen/tagcheck/`. Start with `README.md`, then `READER_GRAMMAR_PLAN.md` and `TAG_RUN_AUDIT_AND_PLAN.md` (current plan).
 - Scripts: `reverse_check.py` (`export/compare/selftest`), `consistency.py`, `run_log.py`, `analysis.py`, `reference_files.py`, `guards.py` (learning_merge and learning_coverage are archived in `tagcheck/archive_20261024/`).

@@ -1,6 +1,6 @@
 # Claude-only file in TOON. Written by tagcheck/guards.py; regenerated, never hand-merged. open_slot = tag gap (tagger), no_rule = rule gap (mtg2llm mine / HAND tables).
-# starters: 556 units, 446 rendered, 26 open_slot, 84 no_rule
-gaps[110|]{card|group|tags|reason}:
+# starters: 556 units, 445 rendered, 29 open_slot, 82 no_rule
+gaps[111|]{card|group|tags|reason}:
 Aftermath Analyst|c2|cost:sacrifice cost_sacrifice_target:self cost_mana:3g target_count:all target_type:land target_scope:you_control put_onto_battlefield from_zone:graveyard put_tapped controller:you|no_rule
 Ambition's Cost|c1|draw_count:3 life_loss_amount:3|no_rule
 Apprentice Wizard|c1|cost:tap cost_mana:u mana_source mana:colorless mana_amount:3|no_rule
@@ -37,6 +37,7 @@ Glimmer of Genius|c1|scry_count:2 draw_count:2 counter_count:2 counter:energy|no
 Goblin Rabblemaster|c1|must_attack affects:goblin|no_rule
 Goblin Rabblemaster|c2|trigger:beginning_of_combat token_count:1 token_color:red token_pt:1/1 token_kw:haste token_type:goblin|no_rule
 Goblin Rabblemaster|c3|trigger:attacks duration:eot pump_amount:+x/+0 x_is:count_goblin_attacking_other scales:goblin_attacking_other|no_rule
+Goblin Vandal|c1|trigger:attackerunblocked target_count:one target_type:artifact remove:destroy cost_mana:r|no_rule
 Goldnight Commander|c1|trigger:etb duration:eot trigger_scope:other trigger_filter:you_control trigger_filter:creature target_count:all target_type:creature target_scope:you_control pump_amount:+1/+1 duration:eot|no_rule
 Gray Merchant of Asphodel|c1|trigger:etb target_scope:each_opponent trigger_scope:self life_loss_amount:x x_is:devotion_black lifegain_amount:equal_to_life_lost|no_rule
 Hakim, Loreweaver|c1|cost_mana:uu target_count:one target_type:aura target_scope:you_control target_zone:graveyard activation_restriction put_onto_battlefield from_zone:graveyard controller:you|no_rule
@@ -54,7 +55,6 @@ Legion Warboss|c1|trigger:beginning_of_combat token_count:1 token_color:red toke
 Liliana's Reaver|c1|discard_count:1 token_count:1 token_color:black token_pt:2/2 token_type:zombie|no_rule
 Malakir Blood-Priest|c1|trigger:etb target_scope:each_opponent trigger_scope:self life_loss_amount:x x_is:party_size lifegain_amount:x x_is:party_size|no_rule
 Mask of Memory|c1|discard_count:1|no_rule
-Mindcrank|c1|trigger:life_loss|no_rule
 Myriad Landscape|c3|cost:tap cost:sacrifice cost_sacrifice_target:self cost_mana:2 tutor tutor_count:up_to_2 tutor_target:basic_land tutor_dest:battlefield_tapped shuffle put_onto_battlefield from_zone:library put_tapped controller:you|no_rule
 Nazar, the Velvet Fang|c1|trigger:gain_life counter_count:1 counter:feeding|no_rule
 Nazar, the Velvet Fang|c2|trigger:attacks cost:remove_counters draw_count:3 life_loss_amount:3|no_rule
@@ -80,8 +80,6 @@ Soratami Mirror-Mage|c1|cost:return cost_return_target:land cost_mana:3 target_c
 Soratami Savant|c1|cost:return cost_return_target:land cost_mana:3 target_count:one target_type:card unless_cost unless_cost_amount:3|no_rule
 Spikeshot Goblin|c1|cost:tap cost_mana:r target_count:one target_type:any damage damage_amount:x x_is:own_power|no_rule
 Syr Konrad, the Grim|c3|target_scope:each_opponent trigger_scope:other trigger_filter:creature|no_rule
-Territorial Allosaurus|c1|trigger:etb trigger_scope:self target_count:one target_type:creature target_filter:other|no_rule
-Territorial Allosaurus|k1|kw:kicker num:2 color:green|no_rule
 Unexpected Windfall|c1|cost:discard cost_mana:2rr draw_count:2 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source|no_rule
 Vindictive Vampire|c1|trigger:dies trigger_zone:graveyard trigger_scope:other trigger_filter:you_control trigger_filter:creature damage damage_amount:1 lifegain_amount:1|no_rule
 Watcher for Tomorrow|c2|trigger:leaves trigger_scope:self return from_zone:exile to_zone:hand return_exiled|no_rule
@@ -98,8 +96,11 @@ Kami of Whispered Hopes|c1|duration:static replace:add_counters_plus_1 counter:p
 Keldon Raider|c1|trigger:etb trigger_scope:self cost:discard draw_count:1|open_slot
 Laboratory Maniac|c1|replace:draw_to_winsgame condition:no_card_you_own_in_library|open_slot
 Light Up the Stage|k1|kw:spectacle color:red|open_slot
+Liliana's Reaver|x|trigger:combat_damage|open_slot
+Mask of Memory|x|trigger:combat_damage|open_slot
 Morbid Opportunist|c1|trigger_scope:other trigger:dies trigger_zone:graveyard trigger_filter:one_or_more limit:once_per_turn draw_count:1|open_slot
 Nuka-Cola Vending Machine|c2|trigger_filter:you_control token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source|open_slot
+Precinct Captain|x|trigger:combat_damage|open_slot
 Scorch Spitter|c1|trigger:attacks damage damage_amount:1|open_slot
 Scrapshooter|k1|kw:gift|open_slot
 Search for Tomorrow|k1|kw:suspend num:2 color:green|open_slot

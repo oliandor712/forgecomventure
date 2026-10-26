@@ -68,7 +68,7 @@ def mine():
             except Exception: continue
             for c in I:
                 if c["id"] not in O: continue
-                if c["id"] in KEY and CD.is_pre6(KEY[c["id"]]): continue      # pre-6th-only cards are not mined
+                if c["id"] in KEY and not CD.is_eligible(KEY[c["id"]]): continue      # pre-6th-only cards are not mined
                 seen += 1
                 u = units(c["groups"])
                 lines = [x.strip() for x in O[c["id"]]["text"].split(" / ") if x.strip()]
@@ -129,9 +129,16 @@ def lint_rules(d):
     return bad
 
 
+def _fold_scales_key(pat):
+    """mined rule keys still carry the scales:<thing> twin of x_is:count_<thing>; the blind view drops it (cards.tag_blind), so drop it from the key too"""
+    toks = pat.split()
+    gone = {"scales:" + m.group(1) for t in toks for m in [re.match(r"^x_is:count_(.+?)(?:_you_control)?$", t)] if m}
+    return " ".join(t for t in toks if t not in gone) if gone & set(toks) else pat
+
+
 def rules():
     if not _rules:
-        with open(os.path.join(HERE, "render_rules.json"), encoding="utf-8") as fh: _rules.update(json.load(fh))
+        with open(os.path.join(HERE, "render_rules.json"), encoding="utf-8") as fh: _rules.update({_fold_scales_key(k): v for k, v in json.load(fh).items()})
         for k, _c, _t in lint_rules(_rules): _rules.pop(k, None)
         _sets.update({p: frozenset(p.split()) for p in _rules})
     return _rules
@@ -164,6 +171,16 @@ def fill(canon, ns):
     out = re.sub(r"\b(a|one) (card|token|counter)s\b", r"\1 \2", out)      # the noun follows the filled amount
     out = re.sub(r"\b(two|three|four|five|six|seven|eight|nine|ten|X) (card|token|counter)\b", r"\1 \2s", out)
     return out.replace("~", "this creature")
+
+
+def x_phrase(line, toks):
+    """x_is names what X counts: write the phrase instead of the letter ('deals X damage' + x_is:count_creature_you_control => 'deals damage equal to the number of creatures you control'); x_paid keeps X"""
+    v = next((t.partition(":")[2] for t in toks if t.startswith("x_is:")), "")
+    m = re.fullmatch(r"count_(.+?)_you_control", v)
+    ph = ("the number of %ss you control" % m.group(1).replace("_", " ")) if m else {"own_power": "this creature's power", "target_power": "that creature's power"}.get(v)
+    if not ph or not re.search(r"X", line): return line
+    out = re.sub(r"X (damage|life|cards?|tokens?|counters?)", lambda k: "%s equal to %s" % (k.group(1), ph), line, count=1)
+    return out if out != line else line.rstrip() + (" " if line.rstrip().endswith(".") is False else " ") + "(X is %s.)" % ph
 
 
 APPROX_OK = {"color", "named"}      # a near match may differ only in these families; any other dropped or extra tag changes the meaning (wrong sibling body), so it is {missing}
@@ -231,7 +248,7 @@ def mine_parts():
             except Exception: continue
             for c in I:
                 if c["id"] not in O: continue
-                if c["id"] in KEY and CD.is_pre6(KEY[c["id"]]): continue
+                if c["id"] in KEY and not CD.is_eligible(KEY[c["id"]]): continue
                 u = units(c["groups"]); lines = [x.strip() for x in O[c["id"]]["text"].split(" / ") if x.strip()]
                 if len(u) != len(lines): continue
                 for (g, ts), line in zip(u.items(), lines):
@@ -511,11 +528,12 @@ def render(groups, typing=None):
                 lines.append(body + " Then transform this creature."); continue
         if v is None or approx:
             cp = compose(ts[0].split(), g == "x") if not names else None
+            if cp: cp = x_phrase(cp, ts[0].split())
             if cp:
                 st["partial" if "{effect}" in cp else "composed"] = st.get("partial" if "{effect}" in cp else "composed", 0) + 1; lines.append(cp); continue
         if v is None:
             st["missing"] += 1; lines.append(put_names("{%s}" % " ".join(ts), names, ts[0].split(), st) if names else "{%s}" % " ".join(ts)); continue
-        line = fill(v["canon"], nums(ts))
+        line = x_phrase(fill(v["canon"], nums(ts)), ts[0].split())
         if unresolved(line):      # a line with a slot left open (mined rule whose slot the tags cannot fill, e.g. "mill N cards") is not a rendering
             st["missing"] += 1; lines.append("{%s}" % " ".join(ts)); continue
         st["approx" if approx else "exact"] += 1
@@ -791,7 +809,7 @@ def cmd_unseen(a):
     for k in glob.glob(os.path.join(RUNS, "*", "key", "*.json")):
         try: seen_names |= set(json.load(open(k, encoding="utf-8")).values())
         except Exception: pass
-    pool = sorted({n for v in cardnames().values() for n in v if not n.startswith("A-") and n not in seen_names and not CD.is_pre6(n) and script_text(n) and not is_walker(n)})
+    pool = sorted({n for v in cardnames().values() for n in v if n not in seen_names and CD.is_eligible(n) and script_text(n) and not is_walker(n)})
     random.Random(a.seed).shuffle(pool); pool = pool[:a.pool]
     R = rules(); cover, chosen = set(), []
     try: cover = {pattern([" ".join(t["tags"])]) for t in json.load(open(os.path.join(HERE, "..", "tags", "ABILITY_TWINS.json"), encoding="utf-8"))}      # ability twins: tag groups already indexed
@@ -858,7 +876,7 @@ def is_walker(name):
     return bool(re.search(r"^Types:.*\bPlaneswalker\b", script_text(name), re.M))
 
 
-def gap_targets(n, run=""):
+def gap_targets(n, run="", modern=False, new_lines=False, rule_gaps=0):
     """the n pool cards with the biggest gap (tags/POOL_GAPS.toon, gap_words first) that no earlier reader run has read; planeswalkers and pre-6th cards are left out. Runs of the same round (g3a, g3b, g3c: name + one letter) do not hide each other's cards, so the 3 readers get the same list. Run `scan` first"""
     path = os.path.join(HERE, "..", "tags", "POOL_GAPS.toon")
     if not os.path.exists(path): sys.exit("no tags/POOL_GAPS.toon: run `mtg2llm.py scan` first")
@@ -868,14 +886,35 @@ def gap_targets(n, run=""):
         if rnd and re.match(r"^%s[a-z]$" % re.escape(rnd.group(1)), os.path.basename(os.path.dirname(os.path.dirname(k)))): continue
         try: seen |= set(json.load(open(k, encoding="utf-8")).values())
         except Exception: pass
-    out = []
+    out, lines, rgp = [], None, set()
+    if rule_gaps:      # only cards holding one of the top-N unit patterns the renderer has no rule for (tags/RENDER_GAPS.toon, written by scan): the readers' lines become rule material
+        rp = os.path.join(HERE, "..", "tags", "RENDER_GAPS.toon")
+        if not os.path.exists(rp): sys.exit("no tags/RENDER_GAPS.toon: run `mtg2llm.py scan` first")
+        rgp = {l.split("|")[1] for l in [x for x in open(rp, encoding="utf-8") if not x.startswith(("#", "gaps["))][:rule_gaps]}
     for l in open(path, encoding="utf-8"):
         if l.startswith(("#", "cards[")): continue
         name = l.split("|")[0]
-        if name in seen or name.startswith("A-") or CD.is_pre6(name) or is_walker(name) or not script_text(name): continue
+        if name in seen or not CD.is_eligible(name) or (modern and not CD.is_modern(name)) or is_walker(name) or not script_text(name): continue
+        if rgp and not any(pattern([" ".join(split_named(t.split())[0])]) in rgp for t in CD.tag_blind(T.record(name, script_text(name)))["groups"].values()): continue
+        if new_lines:      # line hashing (tag_hash.py): skip a card whose every ability line another run already put in front of a reader
+            import tag_hash as H
+            if lines is None: lines = H.seen_lines(exclude_round=rnd.group(1) if rnd else run)
+            gs = CD.tag_blind(T.record(name, script_text(name)))["groups"]
+            if gs and all(H.line_hash(t) in lines for t in gs.values()): continue
         out.append(name)
         if len(out) >= n: break
     return out
+
+
+def write_render_gaps(rg, ex, units_n, path):
+    """tags/RENDER_GAPS.toon: the unit patterns the renderer has no rule for, most frequent first (written by every scan). Step 4 of a reader round: write hand rules for the top rows
+    (HAND_UNIT / HAND_BODY / HAND_TRIG / HAND_TARGET), or have readers read cards holding them (`reverse_check.py export --rule-gaps`)"""
+    tot = sum(rg.values()); top = rg.most_common(300)
+    lines = ["# Claude-only file in TOON. Written by `mtg2llm.py scan`; regenerated, never hand-merged. Unit patterns (tags of one ability group, numbers abstracted) the renderer cannot write yet.",
+             "# units with no rule: %d of %d (%.0f%%); distinct patterns %d, seen once %d. Top 300 below; example = one card holding it." % (tot, units_n, 100.0 * tot / max(units_n, 1), len(rg), sum(1 for v in rg.values() if v == 1)),
+             "gaps[%d|]{units|pattern|example}:" % len(top)] + ["%d|%s|%s" % (v, k, ex[k]) for k, v in top]
+    with open(path, "w", encoding="utf-8") as f: f.write("\n".join(lines) + "\n")
+    print("render gaps: %d units without a rule (%.0f%%) -> %s" % (tot, 100.0 * tot / max(units_n, 1), path))
 
 
 def cmd_scan(a):
@@ -883,9 +922,10 @@ def cmd_scan(a):
     gap_words = Oracle content words (stemmed, no stop words or reminder text, repeats counted) missing from the render, gap_pct. Oracle only scores, the renderer never sees it.
     Writes tags/POOL_GAPS.toon sorted by gap_words so a reader run can take the biggest gaps first (regenerated, never hand-merged)"""
     import time
-    names = sorted({n for v in cardnames().values() for n in v if not n.startswith("A-") and not CD.is_pre6(n) and script_text(n) and not is_walker(n)})
+    names = sorted({n for v in cardnames().values() for n in v if CD.is_eligible(n) and script_text(n) and not is_walker(n)})
     if a.limit: names = names[:a.limit]
     rows, t0 = [], time.time()
+    rg, rgx = C.Counter(), {}      # units with no rule: pattern -> count, first example card
     for i in range(0, len(names), a.batch):
         for r, b, _x, _y in tag_cards(names[i:i + a.batch]):
             try:
@@ -897,7 +937,8 @@ def cmd_scan(a):
                     if not render({g: " ".join(ts)}, b["typing"])[1]["missing"]: continue
                     v, approx = lookup(pattern([" ".join(ts)]))
                     if v is not None and not approx and unresolved(fill(v["canon"], nums(ts))): osl += 1
-                    else: nor += 1
+                    else:
+                        nor += 1; pk = pattern([" ".join(ts)]); rg[pk] += 1; rgx.setdefault(pk, n)
                 rows.append((n, len(us), osl, nor, sum(ot.values()), sum((ot - rt).values())))
             except Exception as ex: print("skip %s: %s" % (r["name"], ex))
         print("%d/%d cards, %.0fs" % (min(i + a.batch, len(names)), len(names), time.time() - t0), flush=True)
@@ -909,6 +950,7 @@ def cmd_scan(a):
     lines += ["%s|%d|%d|%d|%d|%d|%d" % (n, u, o, r_, ow, g, round(100.0 * g / ow) if ow else 0) for n, u, o, r_, ow, g in rows]
     os.makedirs(os.path.dirname(a.out), exist_ok=True)
     with open(a.out, "w", encoding="utf-8") as f: f.write("\n".join(lines) + "\n")
+    write_render_gaps(rg, rgx, sum(x[1] for x in rows), os.path.join(os.path.dirname(a.out), "RENDER_GAPS.toon"))
     print("scan: %d cards, gap words %d of %d (%.0f%%) -> %s" % (len(rows), tg, to, 100.0 * tg / max(to, 1), a.out))
     import run_memory; run_memory.save("mtg2llm scan", "pool, planeswalkers set aside", "%d cards, gap words %d of %d (%.0f%%), %d gap-free" % (len(rows), tg, to, 100.0 * tg / max(to, 1), sum(1 for x in rows if x[5] == 0)))
 

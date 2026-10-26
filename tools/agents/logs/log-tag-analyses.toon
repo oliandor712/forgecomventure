@@ -1,6 +1,6 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Append one row per analysis, under 400 chars.
 # Tag analyses: reverse check, tag suggestions, derived tags.
-log[35|]{date|topic|finding|caveat}:
+log[39|]{date|topic|finding|caveat}:
   2026-10-23|TAG_SUGGESTIONS C+D|face:/derived: lines built; on 353 starters spot_removal 69, etb_self 78, evasion_pkg 31, mana_out 28, anthem 3, wipe 0|shrink weight 0.5 unverified; E,F unbuilt
   2026-10-23|reader r18single|24 cards 1 reader: mean_sim 0.942, 23 good, 1 partial, top1 24/24|V1-V4,S1,A not computed
   2026-10-23|grammar performance|3 readers: none V1 .615 V3 .879; v1 full+records V1 .776 V3 .968; v1 short ~ none; v2 slim V1 .81 V3 .933 S1 .994 A .937; single reader r18 A .938-.946 matches 3-reader A|v2 only on 105 cards; V3 .98 target unmet; doc GRAMMAR_PERFORMANCE.md pushed a7336e066d7
@@ -37,3 +37,8 @@ log[35|]{date|topic|finding|caveat}:
 2026-10-24|mtg2llm scan, whole pool (planeswalkers set aside)|32836 cards tagged and rendered reader-free in ~160 s; renderer lacks 391188 of 456051 Oracle words (86%); 3004 cards gap-free; per-card gap_words in tags/POOL_GAPS.toon|use gap_words/gap_pct to pick reader-run targets; open_slot = tagger, no_rule = rule table
 2026-10-24|ten 72-card 3-reader gap runs g1-g10 (refs from g4)|mean sim .66 (R1) -> .72 (R6) -> .70 (R8-9) -> .74 (R10: 48 good/20 partial/4 gap each, top1 69 in all three); gap words 391188 -> 376869 of 456051 (83%); READER_GAP_WORDS 991 words (top self, card, control, s, creature); mined rules 1828 patterns|R10 three readers give near-identical stats: check that the g10 cards are not covered by earlier-mined rules before reading it as real gain; refs vs no refs: see REFS_AB_NOTE.md
   2026-10-25|mtg2llm tag + gap score, all T1 cards (live 80 decks + staged 80, 2126 non-basic)|0 closed-vocab violations; 43 verify flags; 1531 cards with a unit lacking a rule; gap words 18244 of 23239 (78.5%; live 77.6%, staged 78.4%); 320 gap-free; name unused: Graf Rats, Princess Yue, Rite of the Raging Storm|reader-free, Oracle only scores; pool now 27699 cards; 0 planeswalkers in T1 set
+
+  2026-10-25|reader round g26 (72 x_is cards, x_is legend rewritten + x_phrase renderer)|mean sim 0.787 -> 0.783, good 54/57 of 72; no effect|similarity measures Oracle wording not understanding
+  2026-10-25|reader round g27 (72 cards with x group / x_is count, groups folded in blind view)|mean sim 0.730 -> 0.728; 51 of 93 x groups stay ambiguous, not guessed|null result; structure folds do not move the score
+  2026-10-25|mtg2llm RENDER_GAPS scan|42% of units have no render rule; 78% gap words; top gaps untap 237, surveil 147, forge_line:typecycling 103|render coverage is not the goal; loop paused
+  2026-10-25|recalibration to glance test|reader score flat 0.73-0.79 over g11-g27; plan tagcheck/GLANCE_TEST_PLAN.md (role F1, archetype hit, power band, unclear rate vs Oracle reader)|plan only, no round run yet

@@ -22,7 +22,7 @@ import collections, difflib, glob, json, os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 sys.path.insert(0, HERE)
-from common import card_files  # noqa: E402
+from common import card_files, is_eligible  # noqa: E402
 TOON = os.path.join(HERE, "tags", "STARTER_TAGS.toon")
 OUT = os.path.join(HERE, "tags", "ABILITY_TWINS.json")
 
@@ -36,7 +36,7 @@ def oracle_of_all():
             t = part.splitlines()
             name = next((l[5:].strip() for l in t if l.startswith("Name:")), None)
             o = next((l[7:] for l in t if l.startswith("Oracle:")), None)
-            if name and o and not name.startswith("A-"):
+            if name and o and is_eligible(name):
                 out[name] = o
     return out
 

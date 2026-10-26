@@ -23,7 +23,7 @@ import tag_run as T
 import tag_verify as TV
 import tag_extra as TX
 from common import workdir  # noqa: E402
-from cards import tag_blind, starter_records, pre6_only, is_pre6  # noqa: E402,F401
+from cards import tag_blind, starter_records, pre6_only, is_pre6, is_eligible  # noqa: E402,F401
 
 READER_RULES = """You are the BLIND READER. You see only tags. Rules (strict):
 1. Read ONLY the two files you are given: one batch file (cards) and its reminders file (reminder texts of the keywords and tokens that occur in the batch, plus `tag_legend`: one line of meaning for each structured tag family in the batch; use it to read the tags). Do not open, list, search or fetch anything else (no repo, no card databases, no web, no other run folders). Do not run shell commands.
@@ -99,14 +99,14 @@ def baseline_text(rec):
 # ---------- commands -----------------------------------------------------------------------------------------------------------------------------
 def cmd_export(a):
     if getattr(a, "gaps", 0):
-        import mtg2llm as M; names = M.gap_targets(a.gaps, a.run); print("gap targets: %d cards, biggest first (%s ...)" % (len(names), ", ".join(names[:3])))
+        import mtg2llm as M; names = M.gap_targets(a.gaps, a.run, modern=getattr(a, "modern", False), new_lines=getattr(a, "new_lines", False), rule_gaps=getattr(a, "rule_gaps", 0)); print("gap targets: %d cards, biggest first (%s ...)" % (len(names), ", ".join(names[:3])))
         recs = [T.record(n, T.find_text(n)) for n in names]
     elif getattr(a, "cardlist", ""):      # any cards with a script (not only starters): one name per line
         recs = [T.record(n, T.find_text(n)) for n in (l.strip() for l in open(a.cardlist, encoding="utf-8")) if n]
     else: recs = starter_records()
     if getattr(a, "cards", None): want = {c.strip().lower() for c in a.cards.split(";")}; recs = [r for r in recs if r["name"].lower() in want]      # a hand-picked subset
-    n0 = len(recs); recs = [r for r in recs if not is_pre6(r["name"])]
-    if n0 != len(recs): print("pre-6th: dropped %d card(s) whose every printing is older than Sixth Edition" % (n0 - len(recs)))
+    n0 = len(recs); recs = [r for r in recs if is_eligible(r["name"])]
+    if n0 != len(recs): print("not eligible (cards.is_eligible: not in deckgen/pool.pkl): dropped %d card(s)" % (n0 - len(recs)))
     if a.limit: random.Random(1).shuffle(recs); recs = recs[: a.limit]
     if getattr(a, "new_only", False):       # keep whole cards that have a unit with no exact rule and no composable parts (mtg2llm)
         import mtg2llm as M
@@ -333,7 +333,7 @@ def cmd_selftest(a):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sp = ap.add_subparsers(dest="cmd", required=True)
-    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=72); e.add_argument("--legend", action="store_true"); e.set_defaults(slim=True); e.add_argument("--reminders-extra", dest="reminders_extra", default=""); e.add_argument("--cards", default=""); e.add_argument("--cardlist", default=""); e.add_argument("--gaps", type=int, default=0, help="read the N unread pool cards with the biggest gap (tags/POOL_GAPS.toon, see mtg2llm.py scan)"); e.add_argument("--new-only", dest="new_only", action="store_true")
+    e = sp.add_parser("export"); e.add_argument("--run", required=True); e.add_argument("--limit", type=int, default=0); e.add_argument("--batch", type=int, default=72); e.add_argument("--legend", action="store_true"); e.set_defaults(slim=True); e.add_argument("--reminders-extra", dest="reminders_extra", default=""); e.add_argument("--cards", default=""); e.add_argument("--cardlist", default=""); e.add_argument("--gaps", type=int, default=0, help="read the N unread pool cards with the biggest gap (tags/POOL_GAPS.toon, see mtg2llm.py scan)"); e.add_argument("--new-only", dest="new_only", action="store_true"); e.add_argument("--rule-gaps", dest="rule_gaps", type=int, default=0, help="with --gaps: only cards holding one of the top N unit patterns the renderer has no rule for (tags/RENDER_GAPS.toon, from mtg2llm.py scan)"); e.add_argument("--new-lines", dest="new_lines", action="store_true", help="with --gaps: skip cards whose every ability line was already given to a reader (tag_hash.py)"); e.add_argument("--modern", action="store_true", help="with --gaps: only cards first printed in Eighth Edition (2003-07-28) or later")
     c = sp.add_parser("compare"); c.add_argument("--run", required=True); c.add_argument("--no-mine", dest="no_mine", action="store_true", help="skip the standard post-run mining"); [c.add_argument("--" + k, default="") for k in ("arm", "grammar", "reader", "note")]  # run metadata for run_log
     s = sp.add_parser("selftest"); s.add_argument("--limit", type=int, default=0)
     a = ap.parse_args()

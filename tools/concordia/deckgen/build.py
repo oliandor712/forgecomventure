@@ -22,6 +22,8 @@ import themes as th  # tag-based deck themes (umbrella tags, heavy tribes)
 import tag_status as ts  # cards whose tags the check holds back
 import tag_version  # stamp of the tagger files, written into build output
 import commander_support as cp# what supports a commander's own ability (human logic H31-H36)
+sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'strategies'))
+import strategy_fit as sf  # strategies.json play-line roles + niche:* weighing (tiers 2-5; tier 1 keeps its approved model)
 data = dt.build_cache(); cfg = json.load(open(dt.CONFIG))
 pool = pickle.load(open(os.path.join(HERE, 'pool.pkl'), 'rb'))
 RES = dt.RES
@@ -171,12 +173,18 @@ def spread(items, key):
     return sorted(items, key=lambda kv: -kv[1]['decks'] * (0.5 + h(kv[0])) - (1000 if kv[1]['colors'] else 0))
 WATCH_CAP = {1: t1.WATCH_CAP, 2: 1, 3: 2, 4: 4, 5: 8}
 PRECON_BONUS = {2: 2, 3: 2}
+STRAT_ROLE, STRAT_ROLE_CAP = 2.0, 3   # per play-line role of a declared strategy (decks.json "strategy": [ids of strategies.json]) the card fills, capped
+NICHE_PEN = {2: 4, 3: 3, 4: 2, 5: 2}   # per niche:* tag no declared strategy uses (tag_run.py); capped at 2 tags
 SEED_BASE, SEED_SYN = 10, 15   # seed card bonus: base 10 (was a flat 25) plus up to 15 by tag synergy (commander_support.seed_synergy); a deck's "seed_bonus" replaces the base
 # Per deck in decks.json, for balancing after simulations: "target" overrides TARGET_POWER (tiers 2-5), and
 # "seed_bonus" (default 25) how strongly the seed deck's cards are preferred (lower lets "target" steer more), and
 # "weakness" (default 1.0) scales how hard a tier 1 deck avoids strong cards (lower = stronger deck).
 ROLE = {'removal': {'removal', 'counter'}, 'draw': {'draw'}, 'ramp': {'ramp'}, 'wipe': {'wipe'}, 'tutor': {'tutor'}, 'fast': {'fast'}}
-SKIP_TEXT = re.compile(r'sticker|attraction|contraption|\bvote\b|ante\b|initiative|day and night|ring tempts|the monarch|venture into|speed|your speed|start your engines|planechase|scheme|you may cast .* from your graveyard', re.I)
+# mech:* ftags (tag_run.MECH_RX) gate cards by tier (user 2026-10-25: the builder sees every pool card; restrictions follow the deck's tier). Value = lowest tier that may use the card; 99 = never (needs a component the game does not have).
+MECH_MIN_TIER = {'sticker': 99, 'attraction': 99, 'contraption': 99, 'planechase': 99, 'scheme': 99, 'ante': 99, 'speed': 4, 'initiative': 4, 'venture': 4,
+                 'vote': 3, 'monarch': 3, 'day_night': 3, 'ring': 3, 'graveyard_cast': 2}
+def mech_ok(p, tier):
+    return all(tier >= MECH_MIN_TIER.get(t[5:], 1) for t in p.get('ftags', ()) if t.startswith('mech:'))
 
 def parse(path):
     return [name.lower() for _i, sec, _n, name, _ed in D.entries(D.lines(path)) if sec and sec.lower() in ('[main]', '[commander]')]
@@ -226,6 +234,7 @@ def build(d):
     cmd_tags, seed_tags = cp.seed_profile(cmd['name'], seed) if seed and tier > 1 else (set(), set())
     banned = set(x.lower() for x in d.get('ban', []))
     theme = d.get('theme', [])
+    strat = d.get('strategy', [])  # strategies.json ids this deck plays (optional)
     def score(p, r):
         pw = p['power'][r]   # popularity is already inside power (deck_tier.card_power), so it is not scored again here
         s = 0
@@ -243,6 +252,8 @@ def build(d):
         if theme_match(p, theme): s += 12
         if p['name'].lower() in seed and tier > 1:   # a seed card gets a small base plus more for ability tags shared with the commander and the seed's own profile
             s += d.get('seed_bonus', SEED_BASE) + SEED_SYN * cp.seed_synergy(p['name'], cmd_tags, seed_tags)
+        if tier > 1:
+            s += STRAT_ROLE * min(STRAT_ROLE_CAP, sf.fit(p['ftags'], strat)) - NICHE_PEN[tier] * min(2, sf.niche_penalty(p['ftags'], strat))
         if arch: s += p1['bonus'] * at.bonus(ability_tags(p), arch, sub, traits, mono, colours)  # ability-led tags (ability_tags.py)
         return s
     cands = []
@@ -251,9 +262,8 @@ def build(d):
         if not p['id'] <= ident: continue
         if 'Land' in p['types'].split(): continue
         if p['mld'] or (p['gc'] and spec['gc'] == 0) or (p.get('cat') == 'watch' and WATCH_CAP[tier] == 0): continue
-        if SKIP_TEXT.search(p['oracle']): continue
+        if not mech_ok(p, tier): continue
         if 'Legendary' in p['types'] and 'Creature' not in p['types'] and tier == 1: continue
-        if p['pop'] == 0 and tier > 1 and k not in seed: continue
         if tier == 1 and p['minr'] not in 'CU': continue
         cands.append(p)
     # archetype leans (declared aggro/tribal: at most TOK_CAP token cards; declared tokens: at least 13; tribal: 15+ of the tribe; low-* subs: their lean)
@@ -479,6 +489,8 @@ if __name__ == '__main__':
                 decks.append(dict(v, name=v['file'][:-4], desc='variant of ' + v['variant_of'], theme=th.variant_theme(base.get('theme', []), th.theme_for(pool[v['commander'].lower()], pool))))
     for d in decks:
         if only and d['file'] not in only: continue
+        if d['commander'].lower() not in pool:   # e.g. only pre-Sixth printings (pool.py cutoff): keep the live deck, tell the user
+            print('SKIP %s: commander %r not in pool (only pre-Sixth or excluded printings); existing deck kept' % (d['file'], d['commander']), file=sys.stderr); continue
         if CLASSIFY and not d.get('archetype'):
             c = ar.classify(os.path.join(REAL_OUT, 'tier%d' % d['tier'], d['file']), d['tier'])
             d['archetype'], d['sub'], d['reach'] = c['archetype'], c['sub'], c['reach']

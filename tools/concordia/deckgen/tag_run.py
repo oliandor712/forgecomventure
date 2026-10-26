@@ -248,13 +248,16 @@ def record(name, text):
         if nt in tags: tags.append("niche:" + arch)
     tset, ttypes = set(tags), types.split()
     if any(t.startswith("lord:") and t[5:] not in NOT_TRIBE for t in tset): tags.append("niche:tribal")   # lord of one creature type (user 2026-10-25: all suggested)
-    if "condition:landfall" in tset or any(t.startswith(("x_is:landfall", "token_type:bird_landfall")) for t in tset) or re.search(r"^Landfall|\bLandfall\b", face, re.M): tags.append("niche:landfall")
+    if "condition:landfall" in tset or any(t.startswith(("x_is:landfall", "token_type:bird_landfall")) for t in tset) or re.search(r"TriggerDescription\$[^|\n]*\bLandfall\b|^Oracle:.*\bLandfall\b\s*[\u2014-]", face, re.M): tags.append("niche:landfall")
     tt = {t.split(":", 1)[1] for t in tset if t.startswith(("target_type:", "affected_type:"))}   # niche by target type (user 2026-10-25): every targeted/affected type is a non-creature, non-spell card type; mixed cards (Austere Command) and noncreature/nonland filters stay general
     tt_niche = {x for t in tt for x in t.split("_") if x in NICHE_TYPES}
     if tt_niche and all(set(t.split("_")) <= NICHE_TYPES for t in tt) and not any(t.startswith(("target_filter:non", "affected_filter:non")) for t in tset):
         tags += ["niche:" + x for x in sorted(tt_niche)]
     if any(t in tset for t in ("kw:storm", "kw:gravestorm", "grant_kw:storm", "storm")): tags.append("niche:storm")
-    ex_tags = ex_tags + [t for t in tags if t.startswith("niche:")]   # niche tags count as new in "new", like the other cross-check additions
+    ora = " ".join(re.findall(r"^Oracle:(.*)$", face, re.M))
+    for mt, rx in MECH_RX:   # mech:<mechanic> = the card needs a rule or component many decks and the AI handle poorly; build.py MECH_MIN_TIER gates it by tier (user 2026-10-25, replaces build.SKIP_TEXT)
+        if re.search(rx, ora, re.I): tags.append("mech:" + mt)
+    ex_tags = ex_tags + [t for t in tags if t.startswith(("niche:", "mech:"))]   # niche tags count as new in "new", like the other cross-check additions
     ai = sorted(set(re.findall(r"AILogic\$ ?([A-Za-z0-9_]+)", face)) | set(re.findall(r"^SVar:AttachAILogic:(\w+)", face, re.M)))
     aipref = "AIPreference" in face or "SVar:AIPreference" in face
     rd = "AI:RemoveDeck" in face
@@ -307,6 +310,12 @@ def find_text(name):
     p = _IDX.get(name.lower())
     if not p: return ""
     with open(p, errors="replace") as fh: return fh.read()
+
+
+MECH_RX = (("sticker", r"\bsticker"), ("attraction", r"\battractions?\b|\bvisit\b"), ("contraption", r"contraption"), ("vote", r"\bvote\b|council's dilemma"),
+           ("ante", r"\bante\b"), ("initiative", r"initiative"), ("day_night", r"day and night|becomes (?:day|night)"), ("ring", r"ring tempts"),
+           ("monarch", r"the monarch"), ("venture", r"venture into"), ("speed", r"\bspeed\b|start your engines"), ("planechase", r"planechase|planeswalk(?:s|ed)? to"),
+           ("scheme", r"\bscheme\b"), ("graveyard_cast", r"you may cast .* from your graveyard"))
 
 
 def tags(name):

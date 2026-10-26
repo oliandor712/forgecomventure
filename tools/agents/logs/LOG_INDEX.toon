@@ -1,0 +1,13 @@
+# Claude-only file in TOON (pipe-delimited table; # lines are comments). Index of every log by subject. CHECK THIS FIRST before reading or writing a log; add a row for every new log.
+# Append analyses as one row (date|topic|finding|caveat, under 400 chars) and bump N in that log's header. Memory index: ~/.claude/projects/<project>/memory/MEMORY.md (same subjects).
+logs[10|]{subject|file|purpose|writer|size_note}:
+  taggers_readers|log-tag-analyses.toon|tag, reader, reverse-check and renderer analyses, one row each|Claude by hand|17 KB, read by tail
+  readers|results-reader-runs.toon|one row per reader run (mean sim, good/partial/gap, top1)|auto: tagcheck/run_memory.py via reverse_check compare|copy from memory folder on commit
+  renderers_taggers|tag-script-runs.toon|one row per run of any tag script (tag_run, guards, mtg2llm mine/scan, sync)|auto: tagcheck/run_memory.py|copy from memory folder on commit
+  taggers|guard-runs.toon|tag/rule guard results|auto: tagcheck/guards.py|small
+  code|log-code-analyses.toon|tooling and code analyses|Claude by hand|small
+  efficiency|log-efficiency-analyses.toon|token, cost and batch-size analyses|Claude by hand|small
+  decks_scorer|power-scorer-tests.toon|power scorer test runs and tier band checks|Claude by hand|small
+  strategies|strategy-sources.toon|index of crawled strategy sources|Claude by hand|9 KB
+  strategies|strategy-source-texts.toon|verbatim strategy source texts|crawl script|790 KB: NEVER read whole, Grep then Read with offset/limit
+  glance_test|log-tag-analyses.toon|glance test rounds G1.. (plan: tools/concordia/deckgen/tagcheck/GLANCE_TEST_PLAN.md)|Claude by hand|topic column starts with glance

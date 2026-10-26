@@ -75,7 +75,7 @@ def candidates(d, cards, used):
     out = []
     for k, p in pool.items():
         if k in used or not G.commander_ok(p, tier) or p['id'] != ident: continue
-        if set(data['cards'][k]['flags']) & {'random', 'all'} or B.SKIP_TEXT.search(p['oracle']): continue
+        if set(data['cards'][k]['flags']) & {'random', 'all'} or not B.mech_ok(p, 1): continue
         if (SC.get(k) or {}).get('game_changer'): continue  # Scryfall's list (the pool misses some double-faced names)
         fit = sum(deck_types[t] for t in subtypes(p))
         rank = (SC.get(k) or {}).get('edhrec_rank') or 40000
@@ -105,7 +105,7 @@ def variant(d, newcmd, folder=None, n=None, syn=None):
         pw, _ = power_of(p, ed); rl = role(p); best = None
         for k, q in pool.items():
             if k in have or not q['id'] <= ident or 'Land' in q['types'].split(): continue
-            if q['gc'] or q['mld'] or q.get('cat') == 'watch' or B.SKIP_TEXT.search(q['oracle']): continue
+            if q['gc'] or q['mld'] or q.get('cat') == 'watch' or not B.mech_ok(q, 1): continue
             if role(q) != rl or abs(q['cmc'] - p['cmc']) > 1 or q['pop'] == 0: continue
             if 'Legendary' in q['types'] and 'Creature' not in q['types'] and tier == 1: continue
             r = next((x for x in 'CURM' if x in q['best'] and rare_left[x] < spec['rar'].get(x, 0) + (1 if x == power_of(p, ed)[1] else 0)), None)

@@ -246,7 +246,7 @@ def families(b):
 
 def audit_main():
     ap = argparse.ArgumentParser(); ap.add_argument("--n", type=int, default=0); ap.add_argument("--out", default="audit.json"); a = ap.parse_args()
-    pool = sorted({n for v in M.cardnames().values() for n in v if not n.startswith("A-") and not CD.is_pre6(n) and M.script_text(n)})
+    pool = sorted({n for v in M.cardnames().values() for n in v if CD.is_eligible(n) and M.script_text(n)})
     if a.n: pool = pool[:a.n]
     miss = C.defaultdict(list); seen = C.Counter(); both = C.Counter(); lint = C.defaultdict(list)
     for r, b, added, flags in M.tag_cards(pool):
