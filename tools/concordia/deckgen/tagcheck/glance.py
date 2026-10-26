@@ -65,10 +65,11 @@ def deck_rules():
 DELTA_MIN = 10   # fewer fresh (uncached) cards than this: one tag reader, one batch
 
 
-def _keys(r):
-    """cache keys of one card: hash of its blind tag view (tag side) and of its Oracle text (Oracle side)"""
+def _keys(r, deck_context=""):
+    """cache keys of one card: hash of its blind tag view (tag side) and of its Oracle text (Oracle side); both include the deck context
+    (declared archetypes), so a card is read again when the deck's archetypes change"""
     h = lambda x: hashlib.md5(x.encode("utf-8")).hexdigest()[:12]
-    return h(json.dumps(tag_blind(r), sort_keys=True)), h(original_text(r["name"]) or "")
+    return h(json.dumps(tag_blind(r), sort_keys=True) + deck_context), h((original_text(r["name"]) or "") + deck_context)
 
 
 def _cache_load(path):
@@ -86,11 +87,12 @@ def cmd_export(a):
     if n0 != len(recs): print("not eligible (not in deckgen/pool.pkl): dropped %d card(s)" % (n0 - len(recs)))
     if a.limit: random.Random(1).shuffle(recs); recs = recs[: a.limit]
     random.Random(7).shuffle(recs)
+    dctx = open(a.context, encoding="utf-8").read().strip() if getattr(a, "context", "") else ""
     cpath = getattr(a, "cache", "") or ""; cache = _cache_load(cpath); meta, hits = {}, {}
     if cpath:   # verdict cache: a card whose tag view and Oracle text are unchanged keeps its earlier reader verdicts
         fresh = []
         for r in recs:
-            tk, ok = _keys(r); h = cache.get(r["name"].lower())
+            tk, ok = _keys(r, dctx); h = cache.get(r["name"].lower())
             if h and h.get("tkey") == tk and h.get("okey") == ok and h.get("tag") and h.get("ora"): hits[r["name"]] = h
             else: fresh.append(r)
         print("verdict cache %s: %d cards cached, %d fresh" % (cpath, len(hits), len(fresh))); recs = fresh
@@ -104,7 +106,7 @@ def cmd_export(a):
     for k in range(0, len(recs), a.batch):
         nb += 1; part = recs[k: k + a.batch]; items, ora = [], []
         for j, r in enumerate(part):
-            cid = "c%03d" % (k + j + 1); key[cid] = r["name"]; tk, ok = _keys(r); meta[cid] = dict(name=r["name"], tkey=tk, okey=ok)
+            cid = "c%03d" % (k + j + 1); key[cid] = r["name"]; tk, ok = _keys(r, dctx); meta[cid] = dict(name=r["name"], tkey=tk, okey=ok)
             items.append(dict(id=cid, **tag_blind(r)))
             ora.append({"id": cid, "name": r["name"], "oracle": original_text(r["name"])})
         slim = []
