@@ -1209,7 +1209,7 @@
    "top": 1.0,
    "canon": "target creature you control"
   },
-  "target_count:up_to_N target_scope:you_control target_type:instant target_type:sorcery": {
+  "target_count:up_to_N target_scope:you_control target_type:instant_or_sorcery": {
    "n": 7,
    "top": 1.0,
    "canon": "up to N target instant"
@@ -1454,7 +1454,7 @@
    "top": 1.0,
    "canon": "target creature you control"
   },
-  "target_count:one target_scope:you_control target_type:instant target_type:sorcery": {
+  "target_count:one target_scope:you_control target_type:instant_or_sorcery": {
    "n": 3,
    "top": 1.0,
    "canon": "target instant"
@@ -1469,7 +1469,7 @@
    "top": 1.0,
    "canon": "target Insect"
   },
-  "target_count:up_to_N target_filter:nonland target_scope:you_control target_type:artifact target_type:battle target_type:creature target_type:enchantment target_type:instant target_type:kindred target_type:planeswalker target_type:sorcery": {
+  "target_count:up_to_N target_filter:nonland target_scope:you_control target_type:artifact target_type:battle target_type:creature target_type:enchantment target_type:instant_or_sorcery target_type:kindred target_type:planeswalker": {
    "n": 3,
    "top": 1.0,
    "canon": "up to N target artifact"
@@ -1644,7 +1644,7 @@
    "top": 1.0,
    "canon": "target enchantment"
   },
-  "target_count:one target_scope:you_control target_type:equipment target_type:instant target_type:sorcery": {
+  "target_count:one target_scope:you_control target_type:equipment target_type:instant_or_sorcery": {
    "n": 2,
    "top": 0.5,
    "canon": "target Equipment you control"
@@ -1749,7 +1749,7 @@
    "top": 1.0,
    "canon": "target cards"
   },
-  "target_count:one target_scope:you_control target_type:artifact target_type:instant target_type:sorcery": {
+  "target_count:one target_scope:you_control target_type:artifact target_type:instant_or_sorcery": {
    "n": 1,
    "top": 1.0,
    "canon": "target instant"
@@ -1829,7 +1829,7 @@
    "top": 0.5,
    "canon": "target creature"
   },
-  "target_count:one target_type:instant target_type:sorcery": {
+  "target_count:one target_type:instant_or_sorcery": {
    "n": 31,
    "top": 1.0,
    "canon": "target instant"
@@ -1924,7 +1924,7 @@
    "top": 0.667,
    "canon": "target other"
   },
-  "target_count:all target_count:one target_scope:you_control target_type:creature target_type:instant target_type:sorcery": {
+  "target_count:all target_count:one target_scope:you_control target_type:creature target_type:instant_or_sorcery": {
    "n": 3,
    "top": 1.0,
    "canon": "target instant"
@@ -2101,17 +2101,17 @@
    "top": 0.207,
    "canon": "chapter III"
   },
-  "remove:exile saga_chapter:N": {
+  "remove:exile saga_chapter": {
    "n": 6,
    "top": 0.333,
    "canon": "i - Exile {T} with power 3 or greater."
   },
-  "counter:vigilance counter_count:N saga_chapter:N token_color:white token_count:N token_pt:N/N token_type:cat_warrior": {
+  "counter:vigilance counter_count:N saga_chapter token_color:white token_count:N token_pt:N/N token_type:cat_warrior": {
    "n": 2,
    "top": 0.5,
    "canon": "II - Create a 2/1 white Cat Warrior creature token, then put a vigilance counter on it."
   },
-  "grant_kw:double_strike saga_chapter:N": {
+  "grant_kw:double_strike saga_chapter": {
    "n": 2,
    "top": 1.0,
    "canon": "III - {T} gains double strike{D}."
@@ -2251,17 +2251,17 @@
    "top": 0.211,
    "canon": "exile this creature, then return it to the battlefield transformed under its owner's control."
   },
-  "counter:stun counter_count:N saga_chapter:N": {
+  "counter:stun counter_count:N saga_chapter": {
    "n": 1,
    "top": 1.0,
    "canon": "i - Put N stun counters on each of {T} creatures."
   },
-  "counter:existingcounter counter_count:N saga_chapter:N": {
+  "counter:existingcounter counter_count:N saga_chapter": {
    "n": 1,
    "top": 1.0,
    "canon": "II - Put a counter of a kind already on {object} on {object}."
   },
-  "saga_chapter:N shuffle tutor tutor_count:N tutor_dest:hand tutor_target:doctor": {
+  "saga_chapter shuffle tutor tutor_count:N tutor_dest:hand tutor_target:doctor": {
    "n": 1,
    "top": 1.0,
    "canon": "IV - Search your library for a Doctor card, reveal it, put it into your hand, then shuffle."
@@ -2276,7 +2276,7 @@
    "top": 1.0,
    "canon": "put a sin counter on this artifact. Draw N card for each sin counter on it."
   },
-  "lifegain_amount:N saga_chapter:N scry": {
+  "lifegain_amount:N saga_chapter scry": {
    "n": 1,
    "top": 1.0,
    "canon": "II - You gain N life and scry N."
@@ -2286,17 +2286,17 @@
    "top": 0.5,
    "canon": "destroy {T} land. {Target creature} can't block."
   },
-  "saga_chapter:N steal": {
+  "saga_chapter steal": {
    "n": 2,
    "top": 0.5,
    "canon": "i - Gain control of {T} creature an opponent controls {duration}."
   },
-  "draw_count:x saga_chapter:N scales:creature_youdontown x_is:count_creature_youdontown_you_control": {
+  "draw_count:x saga_chapter scales:creature_youdontown x_is:count_creature_youdontown_you_control": {
    "n": 1,
    "top": 1.0,
    "canon": "II - Draw N card for each creature you control that you don't own."
   },
-  "remove:destroy saga_chapter:N": {
+  "remove:destroy saga_chapter": {
    "n": 3,
    "top": 0.333,
    "canon": "III - Destroy {object}."
@@ -2316,17 +2316,17 @@
    "top": 1.0,
    "canon": "if you control a Plains, create a 4/4 white Avatar creature token with flying."
   },
-  "saga_chapter:N token_cardtype:artifact token_color:colorless token_count:x token_pt:N/N token_type:robot_villain x_is:players_amount": {
+  "saga_chapter token_cardtype:artifact token_color:colorless token_count:x token_pt:N/N token_type:robot_villain x_is:players_amount": {
    "n": 1,
    "top": 1.0,
    "canon": "II - Create X 2/2 colorless Robot Villain artifact creature tokens, where X is the number of players."
   },
-  "exile_from:library lifegain_amount:N saga_chapter:N shuffle tutor tutor_count:up_to_N tutor_dest:exile tutor_target:plains_basic": {
+  "exile_from:library lifegain_amount:N saga_chapter shuffle tutor tutor_count:up_to_N tutor_dest:exile tutor_target:plains_basic": {
    "n": 1,
    "top": 1.0,
    "canon": "i - Search your library for up to two basic Plains cards, exile them, then shuffle. You gain N life."
   },
-  "from_zone:exile return saga_chapter:N to_zone:hand": {
+  "from_zone:exile return saga_chapter to_zone:hand": {
    "n": 2,
    "top": 0.5,
    "canon": "II - Return N card exiled with this Saga to your hand."
@@ -2341,7 +2341,7 @@
    "top": 0.5,
    "canon": "put a flood counter on {T} or land. {Transform it into an Island}."
   },
-  "saga_chapter:N token_color:black token_count:x token_pt:N/N token_type:zombie_mutant x_is:players_counters_rad": {
+  "saga_chapter token_color:black token_count:x token_pt:N/N token_type:zombie_mutant x_is:players_counters_rad": {
    "n": 1,
    "top": 1.0,
    "canon": "II - Create X 2/2 black Zombie Mutant creature tokens, where X is the number of rad counters you have."
@@ -3536,27 +3536,27 @@
    "top": 1.0,
    "canon": "look at the top N cards of your library. You may put a creature card with mana value X or less from among them onto the battlefield."
   },
-  "controller:you from_zone:hand put_onto_battlefield saga_chapter:N": {
+  "controller:you from_zone:hand put_onto_battlefield saga_chapter": {
    "n": 2,
    "top": 0.5,
    "canon": "i - Put N card from your hand onto the battlefield."
   },
-  "becomes:mutant counter:pNpN counter_count:N saga_chapter:N transform": {
+  "becomes:mutant counter:pNpN counter_count:N saga_chapter transform": {
    "n": 1,
    "top": 1.0,
    "canon": "II - Put a +N/+N counter on {T}. It becomes a Mutant."
   },
-  "draw_count:x saga_chapter:N x_is:greatest_power_among_creature_you_control_mutant": {
+  "draw_count:x saga_chapter x_is:greatest_power_among_creature_you_control_mutant": {
    "n": 1,
    "top": 1.0,
    "canon": "III - Draw X cards, where X is the greatest power among Mutant creatures you control."
   },
-  "saga_chapter:N token_color:black token_count:N token_kw:menace token_pt:N/N token_type:wraith": {
+  "saga_chapter token_color:black token_count:N token_kw:menace token_pt:N/N token_type:wraith": {
    "n": 3,
    "top": 0.333,
    "canon": "i - Create a 3/3 black Wraith creature token with menace."
   },
-  "saga_chapter:N steal steal_grants_haste": {
+  "saga_chapter steal steal_grants_haste": {
    "n": 1,
    "top": 1.0,
    "canon": "IV - Gain control of {T}{D}. Untap it. It gains haste until end of turn."
@@ -3566,17 +3566,17 @@
    "top": 0.5,
    "canon": "{effect replacing mill}."
   },
-  "controller:you from_zone:graveyard put_onto_battlefield saga_chapter:N target_zone:graveyard": {
+  "controller:you from_zone:graveyard put_onto_battlefield saga_chapter target_zone:graveyard": {
    "n": 1,
    "top": 1.0,
    "canon": "II - Put {T} card from your graveyard onto the battlefield under your control."
   },
-  "restrict_kind:doesnt_untap saga_chapter:N": {
+  "restrict_kind:doesnt_untap saga_chapter": {
    "n": 2,
    "top": 0.5,
    "canon": "i - Tap {T}. It doesn't untap during its controller's untap step."
   },
-  "draw_count:N saga_chapter:N": {
+  "draw_count:N saga_chapter": {
    "n": 1,
    "top": 1.0,
    "canon": "II - Draw N cards."
@@ -3591,17 +3591,17 @@
    "top": 0.6,
    "canon": "create a 1/1 white Bird creature token with flying."
   },
-  "damage damage_amount:x saga_chapter:N x_is:greatest_power_among_creature_you_own_in_graveyard": {
+  "damage damage_amount:x saga_chapter x_is:greatest_power_among_creature_you_own_in_graveyard": {
    "n": 1,
    "top": 1.0,
    "canon": "i - This deals damage to {T} equal to the greatest power among creature cards in your graveyard."
   },
-  "pump_amount:+N/+N saga_chapter:N": {
+  "pump_amount:+N/+N saga_chapter": {
    "n": 1,
    "top": 1.0,
    "canon": "II - {T} gets +N/+N {duration}."
   },
-  "from_zone:graveyard return saga_chapter:N target_zone:graveyard to_zone:hand": {
+  "from_zone:graveyard return saga_chapter target_zone:graveyard to_zone:hand": {
    "n": 1,
    "top": 1.0,
    "canon": "III - Return {T} card from your graveyard to your hand."
@@ -4676,12 +4676,12 @@
    "top": 0.5,
    "canon": "search your library for up to N Forest cards, put them onto the battlefield tapped, then shuffle. If this spell was kicked, they gain haste and become creatures."
   },
-  "saga_chapter:N": {
+  "saga_chapter": {
    "n": 1,
    "top": 1.0,
    "canon": "IV - Draw X cards."
   },
-  "draw_count:x saga_chapter:N": {
+  "draw_count:x saga_chapter": {
    "n": 1,
    "top": 1.0,
    "canon": "(Mill appears somewhere in the chapters.)"
@@ -4966,7 +4966,7 @@
    "top": 1.0,
    "canon": "create a colorless token."
   },
-  "controller:you from_zone:exile put_onto_battlefield return return_exiled saga_chapter:N to_zone:hand": {
+  "controller:you from_zone:exile put_onto_battlefield return return_exiled saga_chapter to_zone:hand": {
    "n": 2,
    "top": 0.5,
    "canon": "return it to your hand."
@@ -4986,7 +4986,7 @@
    "top": 0.5,
    "canon": "exile {T}, nonland card from your graveyard; create a 3/2 red and white Spirit creature token."
   },
-  "saga_chapter:N token_cardtype:artifact token_color:colorless token_count:N token_type:food_sac,w_N_N_human_doctor_reduce": {
+  "saga_chapter token_cardtype:artifact token_color:colorless token_count:N token_type:food_sac,w_N_N_human_doctor_reduce": {
    "n": 1,
    "top": 1.0,
    "canon": "a 1/1 white Human Doctor creature token."
@@ -5031,12 +5031,12 @@
    "top": 1.0,
    "canon": "create a 2/1 white and black Inkling creature token with flying."
   },
-  "exile_from:library saga_chapter:N shuffle tutor tutor_count:N tutor_dest:exile tutor_target:card": {
+  "exile_from:library saga_chapter shuffle tutor tutor_count:N tutor_dest:exile tutor_target:card": {
    "n": 1,
    "top": 1.0,
    "canon": "II - Each opponent loses X life, where X is the mana value of the exiled card."
   },
-  "life_loss_amount:x saga_chapter:N x_is:exiledwith_cardmanacost": {
+  "life_loss_amount:x saga_chapter x_is:exiledwith_cardmanacost": {
    "n": 1,
    "top": 1.0,
    "canon": "III - Put the exiled card onto the battlefield under your control."
@@ -5531,22 +5531,22 @@
    "top": 1.0,
    "canon": "search your library for an artifact card, put it onto the battlefield, then shuffle."
   },
-  "draw_count:x saga_chapter:N x_is:greatest_power_among_creature_you_control": {
+  "draw_count:x saga_chapter x_is:greatest_power_among_creature_you_control": {
    "n": 1,
    "top": 1.0,
    "canon": "i - Draw X cards, where X is the greatest power among creatures you control."
   },
-  "becomes:island saga_chapter:N transform": {
+  "becomes:island saga_chapter transform": {
    "n": 1,
    "top": 1.0,
    "canon": "II - Transform this Saga; it becomes an Island."
   },
-  "controller:you from_zone:exile put_onto_battlefield remove:exile saga_chapter:N": {
+  "controller:you from_zone:exile put_onto_battlefield remove:exile saga_chapter": {
    "n": 1,
    "top": 1.0,
    "canon": "III - Exile this Saga, then return it to the battlefield under your control."
   },
-  "saga_chapter:N token_color:colorless token_count:N": {
+  "saga_chapter token_color:colorless token_count:N": {
    "n": 1,
    "top": 1.0,
    "canon": "III - Create a colorless {token}."
@@ -5556,17 +5556,17 @@
    "top": 0.5,
    "canon": "gain that much life."
   },
-  "saga_chapter:N token_color:green token_color:white token_count:N token_pt:N/N token_type:citizen": {
+  "saga_chapter token_color:green token_color:white token_count:N token_pt:N/N token_type:citizen": {
    "n": 1,
    "top": 1.0,
    "canon": "i - Create a 1/1 green and white Citizen creature token."
   },
-  "counter:pNpN counter_count:N saga_chapter:N": {
+  "counter:pNpN counter_count:N saga_chapter": {
    "n": 1,
    "top": 1.0,
    "canon": "II - Put two +N/+N counters on {T}."
   },
-  "grant_kw:trample pump_amount:+N/+N saga_chapter:N": {
+  "grant_kw:trample pump_amount:+N/+N saga_chapter": {
    "n": 1,
    "top": 1.0,
    "canon": "III - {T} gets +N/+N and gains trample{D}."
@@ -6626,12 +6626,12 @@
    "top": 1.0,
    "canon": "put {N card} from a graveyard onto the battlefield under your control."
   },
-  "exile_from:graveyard saga_chapter:N target_zone:graveyard token_make token_type:copy": {
+  "exile_from:graveyard saga_chapter target_zone:graveyard token_make token_type:copy": {
    "n": 1,
    "top": 1.0,
    "canon": "i - Exile {T} card from your graveyard; create a token that's a copy of it."
   },
-  "saga_chapter:N token_make token_type:copy": {
+  "saga_chapter token_make token_type:copy": {
    "n": 2,
    "top": 0.5,
    "canon": "II - Create a token that's a copy of {it}."
@@ -7246,7 +7246,7 @@
    "top": 1.0,
    "canon": "exile {T} or sorcery card from your graveyard. {It} gains a damage-dealt triggered ability."
   },
-  "controller:you counter:pNpN_loyalty counter_count:N from_zone:graveyard put_onto_battlefield saga_chapter:N target_zone:graveyard": {
+  "controller:you counter:pNpN_loyalty counter_count:N from_zone:graveyard put_onto_battlefield saga_chapter target_zone:graveyard": {
    "n": 1,
    "top": 1.0,
    "canon": "III - Return {T} or planeswalker card from your graveyard to the battlefield under your control. Put a +N/+N or loyalty counter on it."
@@ -7461,7 +7461,7 @@
    "top": 1.0,
    "canon": "{T} looks at the top N cards of their library; exile one, put the other back. You may play the exiled cards."
   },
-  "controller:you from_zone:library put_onto_battlefield saga_chapter:N shuffle tutor tutor_count:N tutor_dest:battlefield tutor_target:artifact_manacostN_artifact_manacostN": {
+  "controller:you from_zone:library put_onto_battlefield saga_chapter shuffle tutor tutor_count:N tutor_dest:battlefield tutor_target:artifact_manacostN_artifact_manacostN": {
    "n": 3,
    "top": 1.0,
    "canon": "III - Search your library for an artifact card with mana value 0 or 1, put it onto the battlefield, then shuffle."
@@ -7511,7 +7511,7 @@
    "top": 1.0,
    "canon": "{T} gets +N/+N{D}."
   },
-  "grant_ability:other saga_chapter:N": {
+  "grant_ability:other saga_chapter": {
    "n": 4,
    "top": 0.25,
    "canon": "i - {Grant ability}."
@@ -9251,7 +9251,7 @@
    "top": 1.0,
    "canon": "evoke {U}{U}"
   },
-  "becomes:artifact counter:pNpN counter_count:N saga_chapter:N transform": {
+  "becomes:artifact counter:pNpN counter_count:N saga_chapter transform": {
    "n": 1,
    "top": 1.0,
    "canon": "i - Put a +N/+N counter on {T}. This Saga becomes an artifact."

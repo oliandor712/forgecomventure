@@ -3276,7 +3276,7 @@ forge_ai: AILogic=-
 
 card: The Binding of the Titans
 typing: cardtype:enchantment type:saga
-tags: kw:chapter num:3 lifegain mill saga_chapter:1 saga_chapter:2 target_count:up_to_2 target_type:card target_zone:graveyard exile_from:graveyard lifegain_amount:x x_is:remembered_count_creature saga_chapter:3 target_count:one target_type:creature target_scope:you_control target_type:land return from_zone:graveyard to_zone:hand
+tags: kw:chapter num:3 lifegain mill saga_chapter target_count:up_to_2 target_type:card target_zone:graveyard exile_from:graveyard lifegain_amount:x x_is:remembered_count_creature target_count:one target_type:creature target_scope:you_control target_type:land return from_zone:graveyard to_zone:hand
 ai_tags: recursion tempo:+1
 face: mv:2 colors:g
 clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
@@ -3284,10 +3284,10 @@ links[1]{from,rel,to}:
   s2.2:lifegain_amount:x,scales_with,s2.2:x_is:remembered_count_creature
 groups[5]{id,source,tags}:
   k1,K line,kw:chapter num:3
-  s1,saga chapter 1,saga_chapter:1
-  s2,saga chapter 2,saga_chapter:2 target_count:up_to_2 target_type:card target_zone:graveyard exile_from:graveyard
+  s1,saga chapter 1,saga_chapter
+  s2,saga chapter 2,saga_chapter target_count:up_to_2 target_type:card target_zone:graveyard exile_from:graveyard
   s2.2,sub-ability of s2,lifegain_amount:x x_is:remembered_count_creature
-  s3,saga chapter 3,saga_chapter:3 target_count:one target_type:creature target_scope:you_control target_type:land target_zone:graveyard return from_zone:graveyard to_zone:hand
+  s3,saga chapter 3,saga_chapter target_count:one target_type:creature target_scope:you_control target_type:land target_zone:graveyard return from_zone:graveyard to_zone:hand
 verify_flags: extra? mill: no Oracle phrase supports it
 forge_ai: AILogic=-
 
@@ -3906,7 +3906,7 @@ forge_ai: AILogic=-
 
 card: Dire Fleet Daredevil
 typing: cardtype:creature type:human type:pirate
-tags: kw:first_strike trigger:etb target_count:one target_type:instant target_type:sorcery target_zone:graveyard exile_from:graveyard impulse_draw impulse_draw_count:1 duration:eot trigger_scope:self
+tags: kw:first_strike trigger:etb target_count:one target_type:instant_or_sorcery target_zone:graveyard exile_from:graveyard impulse_draw impulse_draw_count:1 duration:eot trigger_scope:self
 ai_tags: tempo:+1
 face: mv:2 power:2 toughness:1 colors:r
 derived: etb_self
@@ -3917,7 +3917,7 @@ links[1]{from,rel,to}:
 groups[4]{id,source,tags}:
   k1,K line,kw:first_strike
   c1,T line,trigger:etb trigger_scope:self
-  c1.2,sub-ability of c1,target_count:one target_type:instant target_type:sorcery target_zone:graveyard exile_from:graveyard
+  c1.2,sub-ability of c1,target_count:one target_type:instant_or_sorcery target_zone:graveyard exile_from:graveyard
   c1.3,sub-ability of c1,impulse_draw impulse_draw_count:1 duration:eot
 forge_ai: AILogic=-
 
@@ -5047,15 +5047,15 @@ forge_ai: AILogic=-
 
 card: Founding of Omashu
 typing: cardtype:enchantment type:saga
-tags: kw:chapter num:3 discard draw token_make saga_chapter:1 token_count:2 token_color:white token_pt:1/1 token_type:ally saga_chapter:2 draw_count:1 saga_chapter:3 target_count:all target_type:creature target_scope:you_control pump_amount:+1/+0 duration:eot
+tags: kw:chapter num:3 discard draw token_make saga_chapter token_count:2 token_color:white token_pt:1/1 token_type:ally draw_count:1 target_count:all target_type:creature target_scope:you_control pump_amount:+1/+0 duration:eot
 ai_tags: pump_team tempo:+1
 face: mv:3 colors:r
 clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
 groups[4]{id,source,tags}:
   k1,K line,kw:chapter num:3
-  s1,saga chapter 1,saga_chapter:1 token_count:2 token_color:white token_pt:1/1 token_type:ally
-  s2,saga chapter 2,saga_chapter:2 draw_count:1
-  s3,saga chapter 3,saga_chapter:3 target_count:all target_type:creature target_scope:you_control pump_amount:+1/+0 duration:eot
+  s1,saga chapter 1,saga_chapter token_count:2 token_color:white token_pt:1/1 token_type:ally
+  s2,saga chapter 2,saga_chapter draw_count:1
+  s3,saga chapter 3,saga_chapter target_count:all target_type:creature target_scope:you_control pump_amount:+1/+0 duration:eot
 forge_ai: AILogic=-
 
 card: "General Kreat, the Boltbringer"
@@ -5362,7 +5362,7 @@ forge_ai: AILogic=-
 
 card: Pinnacle Monk
 typing: cardtype:creature type:djinn type:monk
-tags: kw:prowess transform trigger:etb target_count:one target_type:instant target_scope:you_control target_type:sorcery target_zone:graveyard return from_zone:graveyard to_zone:hand trigger_scope:self
+tags: kw:prowess transform trigger:etb target_count:one target_type:instant_or_sorcery target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand trigger_scope:self
 ai_tags: recursion tempo:+1
 face: mv:5 power:2 toughness:2 colors:r
 derived: etb_self
@@ -5372,7 +5372,7 @@ groups[4]{id,source,tags}:
   c0,card,transform
   k1,K line,kw:prowess
   c1,T line,trigger:etb trigger_scope:self
-  c1.2,sub-ability of c1,target_count:one target_type:instant target_scope:you_control target_type:sorcery target_zone:graveyard return from_zone:graveyard to_zone:hand
+  c1.2,sub-ability of c1,target_count:one target_type:instant_or_sorcery target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand
 forge_ai: AILogic=-
 
 card: Rapacious Dragon
@@ -6285,16 +6285,16 @@ forge_ai: AILogic=-
 
 card: Time of Ice
 typing: cardtype:enchantment type:saga
-tags: kw:chapter num:3 bounce saga_chapter:1 target_count:one target_type:creature target_scope:opp_control restrict_kind:doesnt_untap duration:while_control saga_chapter:2 saga_chapter:3 target_count:all target_filter:tapped remove:bounce
+tags: kw:chapter num:3 bounce saga_chapter target_count:one target_type:creature target_scope:opp_control restrict_kind:doesnt_untap duration:while_control target_count:all target_filter:tapped remove:bounce
 ai_tags: restrict
 face: mv:4 colors:u
 clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
 groups[5]{id,source,tags}:
   k1,K line,kw:chapter num:3
-  s1,saga chapter 1,saga_chapter:1 target_count:one target_type:creature target_scope:opp_control
+  s1,saga chapter 1,saga_chapter target_count:one target_type:creature target_scope:opp_control
   s1.2,sub-ability of s1,restrict_kind:doesnt_untap duration:while_control
-  s2,saga chapter 2,saga_chapter:2 target_count:one target_type:creature target_scope:opp_control
-  s3,saga chapter 3,saga_chapter:3 target_count:all target_type:creature target_filter:tapped remove:bounce
+  s2,saga chapter 2,saga_chapter target_count:one target_type:creature target_scope:opp_control
+  s3,saga chapter 3,saga_chapter target_count:all target_type:creature target_filter:tapped remove:bounce
 verify_flags: extra? bounce: no Oracle phrase supports it
 forge_ai: AILogic=-
 
@@ -6806,7 +6806,7 @@ forge_ai: AILogic=MakeUnblockable
 
 card: Mnemonic Wall
 typing: cardtype:creature type:wall
-tags: kw:defender trigger:etb target_count:one target_type:instant target_scope:you_control target_type:sorcery target_zone:graveyard return from_zone:graveyard to_zone:hand optional trigger_scope:self
+tags: kw:defender trigger:etb target_count:one target_type:instant_or_sorcery target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand optional trigger_scope:self
 ai_tags: recursion tempo:+1
 face: mv:5 power:0 toughness:4 colors:u
 derived: etb_self
@@ -6815,7 +6815,7 @@ clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
 groups[3]{id,source,tags}:
   k1,K line,kw:defender
   c1,T line,trigger:etb optional trigger_scope:self
-  c1.2,sub-ability of c1,target_count:one target_type:instant target_scope:you_control target_type:sorcery target_zone:graveyard return from_zone:graveyard to_zone:hand
+  c1.2,sub-ability of c1,target_count:one target_type:instant_or_sorcery target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand
 forge_ai: AILogic=-
 
 card: Prosperous Pirates
@@ -6850,7 +6850,7 @@ forge_ai: AILogic=- RemoveDeck
 
 card: Shipwreck Dowser
 typing: cardtype:creature type:merfolk type:wizard
-tags: kw:prowess trigger:etb target_count:one target_type:instant target_scope:you_control target_type:sorcery target_zone:graveyard return from_zone:graveyard to_zone:hand trigger_scope:self
+tags: kw:prowess trigger:etb target_count:one target_type:instant_or_sorcery target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand trigger_scope:self
 ai_tags: recursion tempo:+1
 face: mv:5 power:3 toughness:3 colors:u
 derived: etb_self
@@ -6859,12 +6859,12 @@ clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
 groups[3]{id,source,tags}:
   k1,K line,kw:prowess
   c1,T line,trigger:etb trigger_scope:self
-  c1.2,sub-ability of c1,target_count:one target_type:instant target_scope:you_control target_type:sorcery target_zone:graveyard return from_zone:graveyard to_zone:hand
+  c1.2,sub-ability of c1,target_count:one target_type:instant_or_sorcery target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand
 forge_ai: AILogic=-
 
 card: Daring Waverider
 typing: cardtype:creature type:otter type:wizard
-tags: trigger:etb target_count:one target_type:instant target_scope:you_control target_type:sorcery cast_free optional trigger_scope:self mech:graveyard_cast
+tags: trigger:etb target_count:one target_type:instant_or_sorcery target_scope:you_control cast_free optional trigger_scope:self mech:graveyard_cast
 ai_tags: ai_logic:replayspell
 face: mv:6 power:4 toughness:4 colors:u
 derived: etb_self
@@ -6872,7 +6872,7 @@ clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",play,"","ValidTgts=Instant.YouCtrl+cmcLE4,Sorcery.YouCtrl+cmcLE4",""
 groups[2]{id,source,tags}:
   c1,T line,trigger:etb optional trigger_scope:self
-  c1.2,sub-ability of c1,target_count:one target_type:instant target_scope:you_control target_type:sorcery cast_free
+  c1.2,sub-ability of c1,target_count:one target_type:instant_or_sorcery target_scope:you_control cast_free
 verify_flags: exile_effect: Oracle line says it, script tags lack exile
 forge_ai: AILogic=ReplaySpell
 
@@ -8076,7 +8076,7 @@ forge_ai: AILogic=-
 
 card: Love Song of Night and Day
 typing: cardtype:enchantment type:saga
-tags: kw:read_ahead kw:chapter num:3 draw counters_plus token_make saga_chapter:1 target_count:one target_type:opponent draw_count:2 saga_chapter:2 token_count:1 token_color:white token_pt:1/1 token_kw:flying token_type:bird saga_chapter:3 target_count:up_to_2 target_type:creature counter_count:1 counter:p1p1
+tags: kw:read_ahead kw:chapter num:3 draw counters_plus token_make saga_chapter target_count:one target_type:opponent draw_count:2 token_count:1 token_color:white token_pt:1/1 token_kw:flying token_type:bird target_count:up_to_2 target_type:creature counter_count:1 counter:p1p1
 ai_tags: tempo:+0.5
 face: mv:3 colors:w
 clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
@@ -8085,9 +8085,9 @@ links[1]{from,rel,to}:
 groups[5]{id,source,tags}:
   k1,K line,kw:read_ahead
   k2,K line,kw:chapter num:3
-  s1,saga chapter 1,saga_chapter:1 target_count:one target_type:opponent draw_count:2
-  s2,saga chapter 2,saga_chapter:2 token_count:1 token_color:white token_pt:1/1 token_kw:flying token_type:bird
-  s3,saga chapter 3,saga_chapter:3 target_count:up_to_2 target_type:creature counter_count:1 counter:p1p1
+  s1,saga chapter 1,saga_chapter target_count:one target_type:opponent draw_count:2
+  s2,saga chapter 2,saga_chapter token_count:1 token_color:white token_pt:1/1 token_kw:flying token_type:bird
+  s3,saga chapter 3,saga_chapter target_count:up_to_2 target_type:creature counter_count:1 counter:p1p1
 forge_ai: AILogic=-
 
 card: Rootborn Defenses

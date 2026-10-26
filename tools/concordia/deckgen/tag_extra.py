@@ -203,7 +203,7 @@ DOC = {
  "duration:next_untap / duration:while_control": ("an effect lasts until the next untap step / for as long as you control the source", "restrict detail: Icy Blast, Exhaustion, Time of Ice"),
  "grant_kw:<kw>": ("an effect gives a keyword for a time (duration tag says how long; eot when none is written, as Forge does)", "reverse check r1: Valorous Stance (modes were not read)"),
  "grant_ability:<what>": ("an effect gives a permanent an ability or trigger for a time, not a transformation (grant_ability:dies_trigger); replaces grant_ability + granted_trigger", "reverse check r1: Feign Death, Supernatural Stamina were mis-tagged transform"),
- "saga_chapter:<i>": ("saga chapter number of an ability (how many chapters the saga has is already kw:chapter + num)", "reverse check r1: Time of Ice"),
+ "saga_chapter": ("marks an ability as a saga chapter (the chapter number is not kept; how many chapters the saga has is kw:chapter + num)", "reverse check r1: Time of Ice"),
  "lifegain_amount:<n|x|equal_to_life_lost> / life_loss_amount:<n|x> / counter_count:<n|x>": ("amounts the first run dropped: life gained or lost, counters placed", "reverse check r1: 86 of 348 cards lost a number"),
  "cost:return / cost_return_target:<t> / cost:exile + from_zone:graveyard": ("non-mana costs: return a permanent you control to hand; exile a card from your graveyard", "reverse check r1: Soratami Savant, Disciple of the Ring"),
  "recursion:return_self": ("the card returns itself (to hand, from the graveyard)", "Rancor"),
@@ -237,7 +237,9 @@ def target_tags(p, out, api=""):
     for part in f.split(","):
         bits = part.split("+")
         main = bits[0].split(".")
-        if main[0] and main[0] not in ("Any",): out.append("target_type:" + tok(main[0]))
+        if main[0] and main[0] not in ("Any",):
+            tt = "target_type:" + ("instant_or_sorcery" if tok(main[0]) in ("instant", "sorcery") else tok(main[0]))     # the two always came together
+            if tt not in out: out.append(tt)
         else: out.append("target_type:any")
         rest = main[1:] + bits[1:]
         for r in rest:
@@ -522,7 +524,7 @@ def extra(lines, sv, types, text):
         cur[0] = gids.get(n_, "c%d" % n_)
         groups.setdefault(cur[0], [])
         p = params(body)
-        if kind == "C": add("saga_chapter:" + cur[0][1:])
+        if kind == "C": add("saga_chapter")
         if kind == "A": cost_tags(p.get("Cost", ""), groups[cur[0]])
         if "Sac<" in line and "cost:sacrifice" not in groups[cur[0]]: add("cost:sacrifice")
         if "Discard<" in line and "cost:discard" not in groups[cur[0]]: add("cost:discard")
@@ -760,7 +762,7 @@ def extra(lines, sv, types, text):
             if ci > 0 and b.startswith("AB$") and bp.get("Cost"): cost_tags(bp["Cost"], groups[cur[0]])      # a cost paid inside a trigger's sub-ability (Nazar: you may remove three counters)
             if bp.get("DefinedPlayer") == "Player.Other":
                 add("target_scope:each_other_player")
-                if bp.get("ChangeType"): add("target_type:" + tok(bp["ChangeType"].split(".")[0]))
+                if bp.get("ChangeType"): add("target_type:" + ("instant_or_sorcery" if tok(bp["ChangeType"].split(".")[0]) in ("instant", "sorcery") else tok(bp["ChangeType"].split(".")[0])))
                 if " may " in " " + desc_main.lower() + " ": add("optional")
             if bp.get("TargetsForEachPlayer") == "True": add("target_scope:each_opponent")
             if api == "TwoPiles": add("piles_split:" + (tok(bp.get("Separator", "")) or "you"))       # one tag: who splits the cards into two piles (opponent / you)
