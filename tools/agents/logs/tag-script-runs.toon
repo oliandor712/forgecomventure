@@ -1,111 +1,47 @@
 # Claude-only file in TOON (pipe-delimited; # lines are comments). One row per run of a tag-related script (tag_run, guards, mtg2llm mine/scan, reverse_check). Appended by tagcheck/run_memory.py.
-runs[109|]{date|script|what|result}:
-  2026-10-24|sync|starter gap file|556 units, 419 rendered, 26 open_slot, 111 no_rule
-  2026-10-24|mtg2llm scan|pool, planeswalkers set aside|32836 cards, gap words 391188 of 456051 (86%), 3004 gap-free (backfilled)
-  2026-10-24|tag_guard|starter tag run|353 cards: 353 same, 0 new, 0 merged, 0 stored kept (backfilled)
-  2026-10-24|tagger vs check|same 353 starters, fresh tagger set vs best set|0 of 353 renders differ, mean sim .736 both (backfilled)
-  2026-10-24|rule_guard|mtg2llm mine|85 patterns added, 1 canons replaced, 7 kept, compose replaced, sim sum new 256.53 vs stored 256.15
-  2026-10-24|sync|starter gap file|556 units, 421 rendered, 26 open_slot, 109 no_rule
-  2026-10-24|mtg2llm mine|render rules|card readings 7835, aligned 5882, patterns 1087, units 8912, 92% in patterns seen 3+ times
-  2026-10-24|mtg2llm scan|pool, planeswalkers set aside|32836 cards, gap words 388068 of 456051 (85%), 3019 gap-free
-  2026-10-24|rule_guard|mtg2llm mine|74 patterns added, 0 canons replaced, 12 kept, compose kept, sim sum new 256.50 vs stored 256.53
-  2026-10-24|sync|starter gap file|556 units, 421 rendered, 26 open_slot, 109 no_rule
-  2026-10-24|mtg2llm mine|render rules|card readings 8051, aligned 5983, patterns 1161, units 9106, 92% in patterns seen 3+ times
-  2026-10-24|mtg2llm scan|pool, planeswalkers set aside|32836 cards, gap words 387693 of 456051 (85%), 3001 gap-free
-  2026-10-24|rule_guard|mtg2llm mine|80 patterns added, 0 canons replaced, 16 kept, compose kept, sim sum new 256.50 vs stored 256.53
-  2026-10-24|sync|starter gap file|556 units, 421 rendered, 26 open_slot, 109 no_rule
-  2026-10-24|mtg2llm mine|render rules|card readings 8267, aligned 6095, patterns 1241, units 9282, 91% in patterns seen 3+ times
-  2026-10-24|mtg2llm scan|pool, planeswalkers set aside|32836 cards, gap words 387066 of 456051 (85%), 3006 gap-free
-  2026-10-24|rule_guard|mtg2llm mine|86 patterns added, 0 canons replaced, 18 kept, compose kept, sim sum new 256.50 vs stored 256.53
-  2026-10-24|sync|starter gap file|556 units, 421 rendered, 26 open_slot, 109 no_rule
-  2026-10-24|mtg2llm mine|render rules|card readings 8483, aligned 6223, patterns 1327, units 9502, 91% in patterns seen 3+ times
-  2026-10-24|mtg2llm scan|pool, planeswalkers set aside|32836 cards, gap words 386328 of 456051 (85%), 3007 gap-free
-  2026-10-24|reader A/B|round 4 refs vs none (REFS_AB_NOTE.md)|g4a none .682 39good 126unclear; g4b refs .684 39good 118unclear; g4c refs .683 39good 110unclear; small deviation, within reader noise
-  2026-10-24|rule_guard|mtg2llm mine|70 patterns added, 0 canons replaced, 20 kept, compose kept, sim sum new 256.50 vs stored 256.53
-  2026-10-24|sync|starter gap file|556 units, 421 rendered, 26 open_slot, 109 no_rule
-  2026-10-24|mtg2llm mine|render rules|card readings 8699, aligned 6329, patterns 1397, units 9678, 91% in patterns seen 3+ times
-  2026-10-24|mtg2llm scan|pool, planeswalkers set aside|32836 cards, gap words 385744 of 456051 (85%), 3014 gap-free
-  2026-10-24|rule_guard|mtg2llm mine|96 patterns added, 0 canons replaced, 23 kept, compose replaced, sim sum new 257.31 vs stored 256.53
-  2026-10-24|sync|starter gap file|556 units, 443 rendered, 26 open_slot, 87 no_rule
-  2026-10-24|mtg2llm mine|render rules|card readings 8915, aligned 6470, patterns 1493, units 9928, 91% in patterns seen 3+ times
-  2026-10-24|mtg2llm scan|pool, planeswalkers set aside|32836 cards, gap words 381539 of 456051 (84%), 3054 gap-free
-  2026-10-24|rule_guard|mtg2llm mine|77 patterns added, 1 canons replaced, 25 kept, compose replaced, sim sum new 258.97 vs stored 257.31
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|mtg2llm mine|render rules|card readings 9131, aligned 6578, patterns 1570, units 10105, 90% in patterns seen 3+ times
-  2026-10-24|mtg2llm scan|pool, planeswalkers set aside|32836 cards, gap words 380031 of 456051 (83%), 3077 gap-free
-  2026-10-24|rule_guard|mtg2llm mine|75 patterns added, 0 canons replaced, 27 kept, compose kept, sim sum new 258.95 vs stored 258.97
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|mtg2llm mine|render rules|card readings 9347, aligned 6695, patterns 1645, units 10307, 90% in patterns seen 3+ times
-  2026-10-24|mtg2llm scan|pool, planeswalkers set aside|32836 cards, gap words 379134 of 456051 (83%), 3078 gap-free
-  2026-10-24|rule_guard|mtg2llm mine|83 patterns added, 0 canons replaced, 29 kept, compose kept, sim sum new 258.95 vs stored 258.97
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|mtg2llm mine|render rules|card readings 9563, aligned 6844, patterns 1728, units 10523, 90% in patterns seen 3+ times
-  2026-10-24|mtg2llm scan|pool, planeswalkers set aside|32836 cards, gap words 378114 of 456051 (83%), 3090 gap-free
-  2026-10-24|rule_guard|mtg2llm mine|100 patterns added, 1 canons replaced, 34 kept, compose kept, sim sum new 258.83 vs stored 258.97
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|mtg2llm mine|render rules|card readings 9779, aligned 6964, patterns 1828, units 10751, 90% in patterns seen 3+ times
-  2026-10-24|mtg2llm scan|pool, planeswalkers set aside|32836 cards, gap words 376869 of 456051 (83%), 3095 gap-free
-  2026-10-24|tag_guard|starter tag run|353 cards: 353 same, 0 new, 0 merged, 0 stored kept
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_run|starter|10 decks, 353 cards, 353 tagged, 0 no script, 17 untagged beyond basics, 0 redundancy findings
-  2026-10-24|tag_guard|starter tag run|353 cards: 353 same, 0 new, 0 merged, 0 stored kept
-  2026-10-24|tag_guard|starter tag run|353 cards: 353 same, 0 new, 0 merged, 0 stored kept
-  2026-10-24|tag_guard|starter tag run|353 cards: 353 same, 0 new, 0 merged, 0 stored kept
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_run|starter|10 decks, 353 cards, 353 tagged, 0 no script, 17 untagged beyond basics, 0 redundancy findings
-  2026-10-24|tag_guard|starter tag run|353 cards: 353 same, 0 new, 0 merged, 0 stored kept
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_run|starter|10 decks, 353 cards, 353 tagged, 0 no script, 17 untagged beyond basics, 0 redundancy findings
-  2026-10-24|tag_guard|starter tag run|353 cards: 353 same, 0 new, 0 merged, 0 stored kept
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_run|starter|10 decks, 353 cards, 353 tagged, 0 no script, 17 untagged beyond basics, 0 redundancy findings
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_guard|starter tag run|353 cards: 353 same, 0 new, 0 merged, 0 stored kept
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_run|starter|10 decks, 353 cards, 353 tagged, 0 no script, 17 untagged beyond basics, 0 redundancy findings
-  2026-10-24|tag_guard|starter tag run|353 cards: 353 same, 0 new, 0 merged, 0 stored kept
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_run|starter|10 decks, 353 cards, 353 tagged, 0 no script, 17 untagged beyond basics, 0 redundancy findings
-  2026-10-24|tag_guard|starter tag run|353 cards: 353 same, 0 new, 0 merged, 0 stored kept
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_run|starter|10 decks, 353 cards, 353 tagged, 0 no script, 17 untagged beyond basics, 0 redundancy findings
-  2026-10-24|tag_audit|reader-free tag audit|400 cards; no matching tag: condition 85, optional 63, up_to 1, for_each 19, opponent 16, instead 21, duration 39, x_cost 3, modal 2, sacrifice 8, discard 6, token 2, counters 43, tutor 2
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_audit|reader-free tag audit|400 cards; no matching tag: condition 85, optional 63, up_to 1, for_each 19, opponent 16, instead 21, duration 39, x_cost 3, modal 2, sacrifice 8, discard 6, token 2, counters 43, tutor 2
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_audit|reader-free tag audit|400 cards; no matching tag: condition 85, optional 63, up_to 1, for_each 19, opponent 16, instead 21, duration 39, x_cost 3, modal 2, sacrifice 8, discard 6, token 2, counters 43, tutor 2
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_guard|starter tag run|353 cards: 353 same, 0 new, 0 merged, 0 stored kept
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_run|starter|10 decks, 353 cards, 353 tagged, 0 no script, 17 untagged beyond basics, 0 redundancy findings
-  2026-10-24|rule_guard|mtg2llm mine|0 patterns added, 0 canons replaced, 34 kept, compose kept, sim sum new 258.83 vs stored 258.98
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|mtg2llm mine|render rules|card readings 9779, aligned 6964, patterns 1828, units 10751, 90% in patterns seen 3+ times
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_guard|starter tag run|353 cards: 353 same, 0 new, 0 merged, 0 stored kept
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_run|starter|10 decks, 353 cards, 353 tagged, 0 no script, 17 untagged beyond basics, 0 redundancy findings
-  2026-10-24|rule_guard|mtg2llm mine|0 patterns added, 0 canons replaced, 34 kept, compose kept, sim sum new 258.83 vs stored 258.98
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|mtg2llm mine|render rules|card readings 9779, aligned 6964, patterns 1828, units 10751, 90% in patterns seen 3+ times
-  2026-10-24|tag_guard|starter tag run|353 cards: 353 same, 0 new, 0 merged, 0 stored kept
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_run|starter|10 decks, 353 cards, 353 tagged, 0 no script, 17 untagged beyond basics, 0 redundancy findings
-  2026-10-24|tag_audit|reader-free tag audit|3 cards; no matching tag: condition 2, optional 1, instead 0, duration 1, tutor 0
-  2026-10-24|tag_audit|reader-free tag audit|3 cards; no matching tag: condition 2, optional 1, instead 0, duration 1, tutor 0
-  2026-10-24|tag_audit|reader-free tag audit|3 cards; no matching tag: condition 2, optional 1, instead 0, duration 1, tutor 0
-  2026-10-24|tag_audit|reader-free tag audit|3 cards; no matching tag: condition 2, optional 1, instead 0, duration 1, tutor 0
-  2026-10-24|tag_guard|starter tag run|353 cards: 353 same, 0 new, 0 merged, 0 stored kept
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_run|starter|10 decks, 353 cards, 353 tagged, 0 no script, 17 untagged beyond basics, 0 redundancy findings
-  2026-10-24|tag_guard|starter tag run|353 cards: 351 same, 0 new, 0 merged, 2 stored kept
-  2026-10-24|sync|starter gap file|556 units, 446 rendered, 26 open_slot, 84 no_rule
-  2026-10-24|tag_run|starter|10 decks, 353 cards, 353 tagged, 0 no script, 17 untagged beyond basics, 0 redundancy findings
-  2026-10-25|mtg2llm scan|pool, planeswalkers set aside|300 cards, gap words 3287 of 4171 (79%), 21 gap-free
-  2026-10-25|mtg2llm scan|pool, planeswalkers set aside|28049 cards, gap words 312963 of 383452 (82%), 2858 gap-free
-  2026-10-25|rule_guard|mtg2llm mine|1276 patterns added, 1 canons replaced, 71 kept, compose replaced, sim sum new 259.20 vs stored 258.43
-  2026-10-25|sync|starter gap file|556 units, 445 rendered, 29 open_slot, 82 no_rule
-  2026-10-25|mtg2llm mine|render rules|card readings 12497, aligned 8642, patterns 3104, units 14232, 88% in patterns seen 3+ times
-  2026-10-25|mtg2llm scan|pool, planeswalkers set aside|28049 cards, gap words 298471 of 383452 (78%), 3077 gap-free
-  2026-10-25|mtg2llm scan|pool, planeswalkers set aside|28049 cards, gap words 298471 of 383452 (78%), 3077 gap-free
-  2026-10-25|tag_guard|starter tag run|353 cards: 351 same, 0 new, 0 merged, 2 stored kept
+runs[45|]{date|script|what|result}:
+  2026-10-26|tag_guard|starter tag run|571 cards: 566 same, 0 new, 0 merged, 5 stored kept
+  2026-10-26|sync|starter gap file|930 units, 595 rendered, 45 open_slot, 290 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 7 redundancy findings
+  2026-10-26|sync|starter gap file|930 units, 594 rendered, 44 open_slot, 292 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 7 redundancy findings
+  2026-10-26|tag_guard|starter tag run|571 cards: 571 same, 0 new, 0 merged, 0 stored kept
+  2026-10-26|sync|starter gap file|930 units, 594 rendered, 44 open_slot, 292 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 7 redundancy findings
+  2026-10-26|tag_guard|starter tag run|571 cards: 571 same, 0 new, 0 merged, 0 stored kept
+  2026-10-26|sync|starter gap file|930 units, 594 rendered, 44 open_slot, 292 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 7 redundancy findings
+  2026-10-26|sync|starter gap file|930 units, 594 rendered, 44 open_slot, 292 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 7 redundancy findings
+  2026-10-26|tag_guard|starter tag run|571 cards: 571 same, 0 new, 0 merged, 0 stored kept
+  2026-10-26|sync|starter gap file|930 units, 594 rendered, 44 open_slot, 292 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 7 redundancy findings
+  2026-10-26|tag_guard|starter tag run|571 cards: 571 same, 0 new, 0 merged, 0 stored kept
+  2026-10-26|sync|starter gap file|930 units, 594 rendered, 44 open_slot, 292 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 7 redundancy findings
+  2026-10-26|tag_guard|starter tag run|571 cards: 571 same, 0 new, 0 merged, 0 stored kept
+  2026-10-26|sync|starter gap file|930 units, 594 rendered, 44 open_slot, 292 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 7 redundancy findings
+  2026-10-26|tag_guard|starter tag run|571 cards: 571 same, 0 new, 0 merged, 0 stored kept
+  2026-10-26|sync|starter gap file|930 units, 594 rendered, 44 open_slot, 292 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 7 redundancy findings
+  2026-10-26|tag_guard|starter tag run|571 cards: 571 same, 0 new, 0 merged, 0 stored kept
+  2026-10-26|sync|starter gap file|930 units, 594 rendered, 44 open_slot, 292 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 7 redundancy findings
+  2026-10-26|tag_guard|starter tag run|571 cards: 562 same, 0 new, 7 merged, 2 stored kept
+  2026-10-26|sync|starter gap file|930 units, 595 rendered, 44 open_slot, 291 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 4 redundancy findings
+  2026-10-26|sync|starter gap file|930 units, 595 rendered, 44 open_slot, 291 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 3 redundancy findings
+  2026-10-26|sync|starter gap file|930 units, 595 rendered, 44 open_slot, 291 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 4 redundancy findings
+  2026-10-26|sync|starter gap file|930 units, 595 rendered, 44 open_slot, 291 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 4 redundancy findings
+  2026-10-26|sync|starter gap file|930 units, 595 rendered, 44 open_slot, 291 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 4 redundancy findings
+  2026-10-26|tag_guard|starter tag run|571 cards: 569 same, 0 new, 0 merged, 2 stored kept
+  2026-10-26|sync|starter gap file|930 units, 595 rendered, 44 open_slot, 291 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 4 redundancy findings
+  2026-10-26|tag_guard|starter tag run|571 cards: 569 same, 0 new, 0 merged, 2 stored kept
+  2026-10-26|sync|starter gap file|930 units, 595 rendered, 44 open_slot, 291 no_rule
+  2026-10-26|tag_run|starter|10 decks, 571 cards, 571 tagged, 0 no script, 17 untagged beyond basics, 4 redundancy findings
