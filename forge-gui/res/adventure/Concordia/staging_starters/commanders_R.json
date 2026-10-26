@@ -1,0 +1,192 @@
+[
+ {
+  "name": "Anax, Hardened in the Forge",
+  "cmc": 3,
+  "pop": 10,
+  "profile": [
+   "control",
+   "devotion:R",
+   "high_power",
+   "sacrifice",
+   "token",
+   "tribe:Satyr"
+  ],
+  "archetypes": [
+   "tokens",
+   "sacrifice",
+   "aristocrats"
+  ],
+  "fit": 3,
+  "support_n": 590
+ },
+ {
+  "name": "Farid, Enterprising Salvager",
+  "cmc": 3,
+  "pop": 7,
+  "profile": [
+   "counters",
+   "discard",
+   "sacrifice",
+   "scales:Artifact",
+   "token"
+  ],
+  "archetypes": [
+   "sacrifice",
+   "tokens",
+   "card_draw",
+   "aristocrats"
+  ],
+  "fit": 14,
+  "support_n": 561
+ },
+ {
+  "name": "Breeches, Eager Pillager",
+  "cmc": 3,
+  "pop": 8,
+  "profile": [
+   "attack",
+   "control",
+   "play_exile",
+   "token",
+   "tribe:Pirate"
+  ],
+  "archetypes": [
+   "tokens",
+   "spellslinger",
+   "group_hug",
+   "combo"
+  ],
+  "fit": 13,
+  "support_n": 524
+ },
+ {
+  "name": "Kazuul, Tyrant of the Cliffs",
+  "cmc": 5,
+  "pop": 28,
+  "profile": [
+   "attack",
+   "control",
+   "token",
+   "tribe:Ogre"
+  ],
+  "archetypes": [
+   "tokens",
+   "sacrifice",
+   "aristocrats"
+  ],
+  "fit": 3,
+  "support_n": 421
+ },
+ {
+  "name": "Ran and Shaw",
+  "cmc": 5,
+  "pop": 6,
+  "profile": [
+   "evasion",
+   "scales:Legendary",
+   "token",
+   "tribe:Dragon"
+  ],
+  "archetypes": [
+   "tokens",
+   "voltron",
+   "spellslinger",
+   "sacrifice"
+  ],
+  "fit": 7,
+  "support_n": 393
+ },
+ {
+  "name": "Gimli of the Glittering Caves",
+  "cmc": 3,
+  "pop": 6,
+  "profile": [
+   "counters",
+   "double_strike",
+   "etb_other",
+   "scales:Legendary",
+   "token"
+  ],
+  "archetypes": [
+   "tokens",
+   "voltron",
+   "big_mana",
+   "spellslinger"
+  ],
+  "fit": 12,
+  "support_n": 373
+ },
+ {
+  "name": "Delina, Wild Mage",
+  "cmc": 4,
+  "pop": 9,
+  "profile": [
+   "attack",
+   "scales:Legendary",
+   "token"
+  ],
+  "archetypes": [
+   "tokens",
+   "spellslinger",
+   "sacrifice",
+   "combo"
+  ],
+  "fit": 5,
+  "support_n": 356
+ },
+ {
+  "name": "Gadrak, the Crown-Scourge",
+  "cmc": 3,
+  "pop": 14,
+  "profile": [
+   "evasion",
+   "sacrifice",
+   "token"
+  ],
+  "archetypes": [
+   "tokens",
+   "voltron",
+   "group_hug",
+   "big_mana"
+  ],
+  "fit": 12,
+  "support_n": 351
+ },
+ {
+  "name": "Krenko, Tin Street Kingpin",
+  "cmc": 3,
+  "pop": 29,
+  "profile": [
+   "attack",
+   "counters",
+   "token",
+   "tribe:Goblin"
+  ],
+  "archetypes": [
+   "tokens",
+   "sacrifice",
+   "aristocrats"
+  ],
+  "fit": 3,
+  "support_n": 345
+ },
+ {
+  "name": "Tesak, Judith's Hellhound",
+  "cmc": 4,
+  "pop": 7,
+  "profile": [
+   "attack",
+   "control",
+   "counters",
+   "tribe:Dog"
+  ],
+  "archetypes": [
+   "big_mana",
+   "ramp",
+   "voltron",
+   "tokens"
+  ],
+  "fit": 10,
+  "support_n": 338
+ }
+]

@@ -1,0 +1,153 @@
+{
+ "deck": "R_Starter_Normal",
+ "strategy": [
+  "sacrifice",
+  "tokens"
+ ],
+ "on_plan": 60,
+ "rejects": [
+  "Mask of Memory",
+  "Skyscanner"
+ ],
+ "reject_detail": [
+  {
+   "name": "Mask of Memory",
+   "function": "Cheap equipment that draws two and discards one on combat damage.",
+   "oracle_arch": [
+    "equipment",
+    "card_draw",
+    "voltron"
+   ],
+   "tag_arch": [
+    "card_draw",
+    "equipment",
+    "voltron"
+   ],
+   "roles": [
+    "card_adv",
+    "draw_engine",
+    "equipment"
+   ],
+   "power": 3
+  },
+  {
+   "name": "Skyscanner",
+   "function": "Flying creature that draws a card on entering.",
+   "oracle_arch": [
+    "blink",
+    "card_draw",
+    "artifacts"
+   ],
+   "tag_arch": [
+    "burn",
+    "control",
+    "tribal"
+   ],
+   "roles": [
+    "cantrip",
+    "etb_creature",
+    "evasion"
+   ],
+   "power": 2
+  }
+ ],
+ "tag_gaps": [
+  {
+   "name": "Skyscanner",
+   "oracle_arch": [
+    "blink",
+    "card_draw",
+    "artifacts"
+   ],
+   "tag_arch": [
+    "burn",
+    "control",
+    "tribal"
+   ],
+   "unclear": [
+    "token_type:blood_draw"
+   ]
+  },
+  {
+   "name": "Pinnacle Monk",
+   "oracle_arch": [
+    "spellslinger",
+    "blink",
+    "graveyard"
+   ],
+   "tag_arch": [
+    "aggro",
+    "legends_matter",
+    "tokens"
+   ],
+   "unclear": []
+  },
+  {
+   "name": "Bumbleflower's Sharepot",
+   "oracle_arch": [
+    "artifacts",
+    "control",
+    "lifegain"
+   ],
+   "tag_arch": [
+    "aggro",
+    "equipment",
+    "voltron"
+   ],
+   "unclear": [
+    "kw:equip num:3"
+   ]
+  },
+  {
+   "name": "Sazacap's Brew",
+   "oracle_arch": [
+    "card_draw",
+    "group_hug",
+    "wheels"
+   ],
+   "tag_arch": [
+    "aggro",
+    "equipment",
+    "voltron"
+   ],
+   "unclear": []
+  }
+ ],
+ "summary": {
+  "cards": 62,
+  "tag_readers": 1,
+  "rows": 62,
+  "role_f1": 0.603,
+  "arch_hit": 0.935,
+  "power_within1": 0.968,
+  "function_sim": 0.616,
+  "role_f1_vs_listed": 0.5,
+  "arch_hit_vs_listed": 1.0,
+  "unclear_per_card": 0.45,
+  "reader_role_agreement": null,
+  "calibration_by_confidence": {
+   "2": [
+    0.797,
+    6
+   ],
+   "3": [
+    0.65,
+    24
+   ],
+   "4": [
+    0.852,
+    31
+   ],
+   "5": [
+    0.9,
+    1
+   ]
+  },
+  "tag_tokens_per_card_est": 223,
+  "invalid_values": {
+   "roles": 0,
+   "archetypes": 0
+  },
+  "unreadable_files": []
+ }
+}

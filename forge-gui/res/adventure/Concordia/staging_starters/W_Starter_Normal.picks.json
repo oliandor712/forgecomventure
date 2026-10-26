@@ -14,6 +14,8 @@
  "banned": [
   "colossus hammer",
   "ghostly prison",
+  "golden egg",
+  "herald's horn",
   "sphere of safety"
  ],
  "lands": {
@@ -31,13 +33,22 @@
  },
  "picks": [
   {
-   "name": "Fishing Pole",
-   "rarity": "U",
+   "name": "Cartouche of Solidarity",
+   "rarity": "C",
    "cmc": 1,
-   "types": "Artifact Equipment",
-   "power": 20.8,
+   "types": "Enchantment Aura Cartouche",
+   "power": 18.5,
    "supports": true,
-   "fit": 3
+   "fit": 4
+  },
+  {
+   "name": "Crumb and Get It",
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Instant",
+   "power": 19.6,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Momo, Playful Pet",
@@ -46,7 +57,7 @@
    "types": "Legendary Creature Lemur Bat Ally",
    "power": 21.4,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
    "name": "Restoration Magic",
@@ -70,16 +81,7 @@
    "types": "Artifact",
    "power": 23.1,
    "supports": true,
-   "fit": 3
-  },
-  {
-   "name": "Witch's Oven",
-   "rarity": "U",
-   "cmc": 1,
-   "types": "Artifact",
-   "power": 32.0,
-   "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
    "name": "Arcane Signet",
@@ -88,13 +90,13 @@
    "types": "Artifact"
   },
   {
-   "name": "Batterbone",
+   "name": "Bucknard's Everfull Purse",
    "rarity": "U",
    "cmc": 2,
-   "types": "Artifact Equipment",
-   "power": 24.3,
+   "types": "Artifact",
+   "power": 20.3,
    "supports": true,
-   "fit": 2
+   "fit": 4
   },
   {
    "name": "Bumbleflower's Sharepot",
@@ -103,7 +105,7 @@
    "types": "Artifact",
    "power": 30.8,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
    "name": "Carrot Cake",
@@ -112,16 +114,16 @@
    "types": "Artifact Food",
    "power": 29.1,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
-   "name": "Duty Beyond Death",
+   "name": "Citizen's Crowbar",
    "rarity": "U",
    "cmc": 2,
-   "types": "Instant",
-   "power": 21.6,
+   "types": "Artifact Equipment",
+   "power": 32.9,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
    "name": "Genesis Chamber",
@@ -130,43 +132,43 @@
    "types": "Artifact",
    "power": 21.0,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
-   "name": "Helpful Hunter",
+   "name": "Goldvein Pick",
    "rarity": "C",
    "cmc": 2,
-   "types": "Creature Cat",
-   "power": 28.0,
-   "supports": true,
-   "fit": 2
-  },
-  {
-   "name": "Ingenious Smith",
-   "rarity": "U",
-   "cmc": 2,
-   "types": "Creature Human Artificer",
-   "power": 24.5,
-   "supports": true,
-   "fit": 2
-  },
-  {
-   "name": "Intangible Virtue",
-   "rarity": "U",
-   "cmc": 2,
-   "types": "Enchantment",
-   "power": 24.3,
-   "supports": false,
-   "fit": 0
-  },
-  {
-   "name": "Mask of Memory",
-   "rarity": "U",
-   "cmc": 2,
    "types": "Artifact Equipment",
-   "power": 23.5,
-   "supports": false,
-   "fit": 1
+   "power": 19.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Idol of False Gods",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Kindred Artifact Eldrazi",
+   "power": 19.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Invasion Reinforcements",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Human Warrior Ally",
+   "power": 18.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Lita, Little Orphan Amphibian",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Legendary Creature Mutant Ninja Turtle",
+   "power": 20.1,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Noble's Purse",
@@ -175,7 +177,7 @@
    "types": "Artifact",
    "power": 21.1,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
    "name": "Path to Redemption",
@@ -187,31 +189,31 @@
    "fit": 3
   },
   {
+   "name": "Prized Statue",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact",
+   "power": 18.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Resolute Reinforcements",
    "rarity": "U",
    "cmc": 2,
    "types": "Creature Human Soldier",
    "power": 23.1,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
-   "name": "Trailblazer's Boots",
+   "name": "Sunset Revelry",
    "rarity": "U",
    "cmc": 2,
-   "types": "Artifact Equipment",
-   "power": 24.4,
+   "types": "Sorcery",
+   "power": 18.4,
    "supports": true,
-   "fit": 0
-  },
-  {
-   "name": "Wall of Omens",
-   "rarity": "U",
-   "cmc": 2,
-   "types": "Creature Wall",
-   "power": 23.2,
-   "supports": true,
-   "fit": 2
+   "fit": 4
   },
   {
    "name": "Afterlife",
@@ -229,7 +231,7 @@
    "types": "Creature Human Citizen",
    "power": 25.4,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
    "name": "Charge of the Mites",
@@ -238,7 +240,7 @@
    "types": "Instant",
    "power": 27.6,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
    "name": "Commander's Sphere",
@@ -256,20 +258,20 @@
    "fit": 3
   },
   {
-   "name": "Danitha Capashen, Paragon",
+   "name": "Glaring Fleshraker",
    "rarity": "U",
    "cmc": 3,
-   "types": "Legendary Creature Human Knight",
-   "power": 29.4,
+   "types": "Creature Eldrazi Drone",
+   "power": 20.0,
    "supports": true,
-   "fit": 0
+   "fit": 4
   },
   {
-   "name": "Herald's Horn",
+   "name": "Leonin Bladetrap",
    "rarity": "U",
    "cmc": 3,
    "types": "Artifact",
-   "power": 24.8,
+   "power": 27.6,
    "supports": false,
    "fit": 1
   },
@@ -280,7 +282,7 @@
    "types": "Legendary Creature Elephant Artificer",
    "power": 25.5,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
    "name": "Love Song of Night and Day",
@@ -289,7 +291,7 @@
    "types": "Enchantment Saga",
    "power": 30.6,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
    "name": "Magnifying Glass",
@@ -298,7 +300,16 @@
    "types": "Artifact",
    "power": 27.7,
    "supports": true,
-   "fit": 3
+   "fit": 4
+  },
+  {
+   "name": "Night Scythe",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact Vehicle",
+   "power": 34.4,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Nuka-Cola Vending Machine",
@@ -307,34 +318,25 @@
    "types": "Artifact",
    "power": 19.8,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
-   "name": "Opaline Unicorn",
+   "name": "Rootborn Defenses",
    "rarity": "C",
    "cmc": 3,
-   "types": "Artifact Creature Unicorn",
-   "power": 27.4,
+   "types": "Instant",
+   "power": 17.2,
    "supports": true,
-   "fit": 2
+   "fit": 4
   },
   {
-   "name": "Palladium Myr",
+   "name": "Rosie Cotton of South Lane",
    "rarity": "U",
    "cmc": 3,
-   "types": "Artifact Creature Myr",
-   "power": 36.2,
+   "types": "Legendary Creature Halfling Peasant",
+   "power": 19.8,
    "supports": true,
-   "fit": 2
-  },
-  {
-   "name": "Secret Rendezvous",
-   "rarity": "U",
-   "cmc": 3,
-   "types": "Sorcery",
-   "power": 35.2,
-   "supports": false,
-   "fit": 1
+   "fit": 4
   },
   {
    "name": "Spectral Procession",
@@ -370,7 +372,16 @@
    "types": "Legendary Creature Human Pilot",
    "power": 26.8,
    "supports": true,
-   "fit": 3
+   "fit": 4
+  },
+  {
+   "name": "Decree of Justice",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Sorcery",
+   "power": 15.0,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Etched Oracle",
@@ -388,7 +399,7 @@
    "types": "Enchantment",
    "power": 26.8,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
    "name": "Hedron Archive",
@@ -406,16 +417,7 @@
    "types": "Creature Shapeshifter",
    "power": 30.6,
    "supports": true,
-   "fit": 3
-  },
-  {
-   "name": "Jhoira's Familiar",
-   "rarity": "U",
-   "cmc": 4,
-   "types": "Artifact Creature Bird",
-   "power": 17.3,
-   "supports": true,
-   "fit": 0
+   "fit": 4
   },
   {
    "name": "Mindless Automaton",
@@ -427,12 +429,12 @@
    "fit": 2
   },
   {
-   "name": "Release the Dogs",
+   "name": "Paradise Plume",
    "rarity": "U",
    "cmc": 4,
-   "types": "Sorcery",
-   "power": 36.7,
-   "supports": true,
+   "types": "Artifact",
+   "power": 26.8,
+   "supports": false,
    "fit": 3
   },
   {
@@ -460,7 +462,7 @@
    "types": "Legendary Creature Human Warrior",
    "power": 11.8,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
    "name": "Alharu, Solemn Ritualist",
@@ -469,16 +471,16 @@
    "types": "Legendary Creature Human Monk",
    "power": 8.1,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
-   "name": "Gather the White Lotus",
+   "name": "Enchanted Carriage",
    "rarity": "U",
    "cmc": 5,
-   "types": "Sorcery",
-   "power": 8.3,
+   "types": "Artifact Vehicle",
+   "power": 7.6,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
    "name": "Luxurious Locomotive",
@@ -487,7 +489,16 @@
    "types": "Artifact Vehicle",
    "power": 9.5,
    "supports": true,
-   "fit": 3
+   "fit": 4
+  },
+  {
+   "name": "Ornitharch",
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Creature Archon",
+   "power": 6.6,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Resplendent Mentor",
@@ -505,15 +516,15 @@
    "types": "Creature Human Soldier",
    "power": 10.3,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
-   "name": "Zuko's Exile",
-   "rarity": "C",
-   "cmc": 5,
-   "types": "Instant Lesson",
-   "power": 23.5,
-   "supports": true,
+   "name": "Dreamstone Hedron",
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Artifact",
+   "power": 24.9,
+   "supports": false,
    "fit": 3
   },
   {
@@ -551,15 +562,6 @@
    "power": 23.1,
    "supports": true,
    "fit": 2
-  },
-  {
-   "name": "Skittering Invasion",
-   "rarity": "U",
-   "cmc": 7,
-   "types": "Kindred Sorcery Eldrazi",
-   "power": 8.1,
-   "supports": true,
-   "fit": 3
   },
   {
    "name": "Pathrazer of Ulamog",

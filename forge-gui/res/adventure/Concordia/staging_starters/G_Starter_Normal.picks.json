@@ -1,0 +1,578 @@
+{
+ "name": "G_Starter_Normal",
+ "commander": "Ruxa, Patient Professor",
+ "profile": [
+  "attack",
+  "etb_self",
+  "sacrifice",
+  "scales:Creature"
+ ],
+ "strategy": [
+  "blink",
+  "graveyard"
+ ],
+ "banned": [
+  "cloud key",
+  "grafted wargear",
+  "herald's horn",
+  "leonin bladetrap",
+  "mask of memory",
+  "mindcrank",
+  "symmetry matrix"
+ ],
+ "lands": {
+  "basics": {
+   "G": 32
+  },
+  "nonbasic": [
+   "Tranquil Thicket",
+   "Myriad Landscape",
+   "Temple of the False God",
+   "Reliquary Tower",
+   "Rogue's Passage",
+   "Blighted Woodland"
+  ]
+ },
+ "picks": [
+  {
+   "name": "Arboreal Grazer",
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Sloth Beast",
+   "power": 28.4,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Codex Shredder",
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Artifact",
+   "power": 24.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Crop Sigil",
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Enchantment",
+   "power": 20.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Rancor",
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Enchantment Aura",
+   "power": 24.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Sol Ring",
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Artifact"
+  },
+  {
+   "name": "Tyvar's Stand",
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Instant",
+   "power": 27.2,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Aftermath Analyst",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Elf Detective",
+   "power": 24.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Arcane Signet",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Bumbleflower's Sharepot",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact",
+   "power": 30.8,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Cache Grab",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "power": 17.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Grapple with the Past",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "power": 19.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Myr Retriever",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Creature Myr",
+   "power": 21.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Peerless Recycling",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Instant",
+   "power": 21.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Regrowth",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Sorcery",
+   "power": 26.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Restore",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Sorcery",
+   "power": 26.6,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Revive",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "power": 16.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Revive the Shire",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "power": 18.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "The Binding of the Titans",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Enchantment Saga",
+   "power": 17.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Town Greeter",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Human Citizen",
+   "power": 16.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Trailblazer's Boots",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact Equipment",
+   "power": 24.4,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Unnatural Restoration",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Sorcery",
+   "power": 27.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Bala Ged Recovery",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Sorcery",
+   "power": 26.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Cartouche of Strength",
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Enchantment Aura Cartouche",
+   "power": 27.4,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Commander's Sphere",
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact"
+  },
+  {
+   "name": "Evolution Sage",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Elf Druid",
+   "power": 29.4,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Evolution Witness",
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Elf Shaman Mutant",
+   "power": 18.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Fungal Rebirth",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Instant",
+   "power": 16.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Gate to the Afterlife",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact",
+   "power": 34.8,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Jalum Tome",
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact Book",
+   "power": 26.6,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Junk Diver",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact Creature Bird",
+   "power": 29.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Omen of the Hunt",
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Enchantment",
+   "power": 27.4,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Roiling Regrowth",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Instant",
+   "power": 35.3,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Skullwinder",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Snake",
+   "power": 17.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Spelunking",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment",
+   "power": 21.1,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Spider Food",
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Sorcery",
+   "power": 28.1,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Vessel of Endless Rest",
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact",
+   "power": 26.8,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Armorcraft Judge",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Elf Artificer",
+   "power": 29.4,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Explosive Vegetation",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Sorcery",
+   "power": 31.9,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Halana, Kessig Ranger",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Legendary Creature Human Archer Ranger",
+   "power": 27.4,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Harmonize",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Sorcery",
+   "power": 35.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Lion Heart",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Artifact Equipment",
+   "power": 26.3,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Masked Admirers",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Elf Shaman",
+   "power": 11.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Mindless Automaton",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Artifact Creature Construct",
+   "power": 28.8,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Mold Shambler",
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Fungus Beast",
+   "power": 23.3,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Timeless Witness",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Human Shaman",
+   "power": 32.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Towashi Guide-Bot",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Artifact Creature Construct",
+   "power": 27.7,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Triumph of the Hordes",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Sorcery",
+   "power": 32.5,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Voice of Many",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Elf Druid",
+   "power": 26.9,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Auspicious Starrix",
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Creature Elk Beast",
+   "power": 21.2,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Hivespine Wolverine",
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Creature Elemental Wolverine",
+   "power": 23.4,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Ich-Tekik, Salvage Splicer",
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Legendary Creature Phyrexian Human Artificer",
+   "power": 8.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Monstrous Onslaught",
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Sorcery",
+   "power": 24.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Reach of Branches",
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Kindred Instant Treefolk",
+   "power": 8.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Yedora, Grave Gardener",
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Legendary Creature Treefolk Druid",
+   "power": 12.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Zuko's Exile",
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Instant Lesson",
+   "power": 23.5,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Disciple of Freyalise",
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Creature Elf Druid",
+   "power": 29.5,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Earthshaker Dreadmaw",
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Creature Dinosaur",
+   "power": 24.4,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Generous Ent",
+   "rarity": "C",
+   "cmc": 6,
+   "types": "Creature Treefolk",
+   "power": 29.8,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Altanak, the Thrice-Called",
+   "rarity": "U",
+   "cmc": 7,
+   "types": "Legendary Creature Insect Beast",
+   "power": 22.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Meteor Golem",
+   "rarity": "U",
+   "cmc": 7,
+   "types": "Artifact Creature Golem",
+   "power": 26.9,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Pathrazer of Ulamog",
+   "rarity": "U",
+   "cmc": 11,
+   "types": "Creature Eldrazi",
+   "power": 26.7,
+   "supports": true,
+   "fit": 0
+  }
+ ]
+}

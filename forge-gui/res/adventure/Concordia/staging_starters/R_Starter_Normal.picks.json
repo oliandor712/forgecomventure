@@ -1,0 +1,577 @@
+{
+ "name": "R_Starter_Normal",
+ "commander": "Anax, Hardened in the Forge",
+ "profile": [
+  "control",
+  "devotion:R",
+  "high_power",
+  "sacrifice",
+  "token",
+  "tribe:Satyr"
+ ],
+ "strategy": [
+  "tokens",
+  "sacrifice"
+ ],
+ "banned": [
+  "jhoira's familiar",
+  "mask of memory",
+  "skyscanner",
+  "trailblazer's boots"
+ ],
+ "lands": {
+  "basics": {
+   "R": 32
+  },
+  "nonbasic": [
+   "Forgotten Cave",
+   "Temple of the False God",
+   "Myriad Landscape",
+   "Reliquary Tower",
+   "Rogue's Passage",
+   "Ghost Quarter"
+  ]
+ },
+ "picks": [
+  {
+   "name": "Blacksmith's Talent",
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Enchantment Class",
+   "power": 23.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Curse of Opulence",
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Enchantment Aura Curse",
+   "power": 27.3,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Impulsive Pilferer",
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Goblin Pirate",
+   "power": 22.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Sol Ring",
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Artifact"
+  },
+  {
+   "name": "Sticky Fingers",
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Enchantment Aura",
+   "power": 22.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Voldaren Epicure",
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Vampire",
+   "power": 23.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Arcane Signet",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Battle Cry Goblin",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Goblin",
+   "power": 19.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Bucknard's Everfull Purse",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact",
+   "power": 20.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Bumbleflower's Sharepot",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact",
+   "power": 30.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Coruscation Mage",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Otter Wizard",
+   "power": 23.9,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Dragon Fodder",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "power": 26.2,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Enterprising Scallywag",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Goblin Pirate",
+   "power": 19.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Genesis Chamber",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact",
+   "power": 21.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Golden Egg",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Food",
+   "power": 31.2,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Ichor Wellspring",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact",
+   "power": 31.9,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Krenko's Command",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "power": 24.5,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Melded Moxite",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact",
+   "power": 31.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Noble's Purse",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact",
+   "power": 21.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Sazacap's Brew",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "power": 33.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Young Pyromancer",
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Human Shaman",
+   "power": 23.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Commander's Sphere",
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact"
+  },
+  {
+   "name": "Flick a Coin",
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Instant",
+   "power": 29.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Founding of Omashu",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment Saga",
+   "power": 28.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "General Kreat, the Boltbringer",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Legendary Creature Goblin Soldier",
+   "power": 18.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Glaring Fleshraker",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Eldrazi Drone",
+   "power": 20.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Herald's Horn",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact",
+   "power": 24.8,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Improvised Weaponry",
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Sorcery",
+   "power": 26.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Letter of Acceptance",
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact",
+   "power": 27.6,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Magnifying Glass",
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact",
+   "power": 27.7,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Night Scythe",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact Vehicle",
+   "power": 34.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Nuka-Cola Vending Machine",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact",
+   "power": 19.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Plundering Barbarian",
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Dwarf Barbarian",
+   "power": 25.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Shiny Impetus",
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Enchantment Aura",
+   "power": 17.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Vampires' Vengeance",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Instant",
+   "power": 30.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Wheel of Misfortune",
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Sorcery",
+   "power": 34.9,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Anger",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Incarnation",
+   "power": 36.9,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Beetleback Chief",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Goblin Warrior",
+   "power": 14.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Big Score",
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Instant",
+   "power": 34.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Foray of Orcs",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Sorcery",
+   "power": 28.2,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Goblin Wizardry",
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Instant",
+   "power": 22.6,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Heart-Piercer Manticore",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Manticore",
+   "power": 25.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Hedron Archive",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Artifact",
+   "power": 33.8,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Kinetic Augur",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Human Shaman",
+   "power": 25.5,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Pirate's Pillage",
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Sorcery",
+   "power": 28.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Starforged Sword",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Artifact Equipment",
+   "power": 11.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Storm-Kiln Artist",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Dwarf Shaman",
+   "power": 24.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Tooth and Claw",
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Enchantment",
+   "power": 10.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Bottle-Cap Blast",
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Instant",
+   "power": 29.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Inspired Tinkering",
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Sorcery",
+   "power": 24.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Luxurious Locomotive",
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Artifact Vehicle",
+   "power": 9.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Pinnacle Monk",
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Creature Djinn Monk",
+   "power": 35.1,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Rapacious Dragon",
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Creature Dragon",
+   "power": 9.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Spawn-Gang Commander",
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Creature Eldrazi Goblin",
+   "power": 24.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Zuko's Exile",
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Instant Lesson",
+   "power": 23.5,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Deathless Behemoth",
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Creature Eldrazi",
+   "power": 4.4,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Oliphaunt",
+   "rarity": "C",
+   "cmc": 6,
+   "types": "Creature Elephant",
+   "power": 34.8,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Slice and Dice",
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Sorcery",
+   "power": 20.2,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Meteor Golem",
+   "rarity": "U",
+   "cmc": 7,
+   "types": "Artifact Creature Golem",
+   "power": 26.9,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Skittering Invasion",
+   "rarity": "U",
+   "cmc": 7,
+   "types": "Kindred Sorcery Eldrazi",
+   "power": 8.1,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Pathrazer of Ulamog",
+   "rarity": "U",
+   "cmc": 11,
+   "types": "Creature Eldrazi",
+   "power": 26.7,
+   "supports": true,
+   "fit": 0
+  }
+ ]
+}

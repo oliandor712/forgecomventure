@@ -114,6 +114,9 @@ VARIANTS = os.path.join(os.path.dirname(HERE), 'deckgen', 'variants.json')
 STARTERS = os.path.join(os.path.dirname(HERE), '..', '..', 'forge-gui', 'res', 'adventure', 'Concordia', 'decks', 'starter')
 
 
+ALT_ENABLED = False  # user 2026-10-25: Alt starter commanders off until the Alt decks are rebuilt
+
+
 def commander_choice(c):
     """After the colour pick: lead with the starter's commander or its variant's (decks/starter/<C>_Starter_Alt.dck).
     Both commanders are unlocked at the Commander Hall either way (flags hall.<card>)."""
@@ -122,8 +125,8 @@ def commander_choice(c):
         if base == '': base = re.match(r'^\d+\s+([^|]+)', l).group(1).strip(); break
         if l.strip() == '[Commander]': base = ''
     alt = next((v for v in (json.load(open(VARIANTS)) if os.path.exists(VARIANTS) else []) if v.get('starter') and v['colors'] == c), None)
-    if not alt:
-        return [{'name': '(Get up)', 'action': [{'setStarterColor': c}]}]
+    if not alt or not ALT_ENABLED:
+        return [{'name': '(Get up)', 'action': [{'setStarterColor': c}, {'setCharacterFlag': {'key': 'hall.' + base, 'val': 1}}]}]
     unlock = [{'setCharacterFlag': {'key': 'hall.' + base, 'val': 1}}, {'setCharacterFlag': {'key': 'hall.' + alt['commander'], 'val': 1}}]
     short = lambda n: n.split(',')[0]
     return [

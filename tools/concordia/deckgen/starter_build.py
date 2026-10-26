@@ -31,7 +31,7 @@ dt, data, pool = B.dt, B.data, B.pool
 STAGE = os.path.join(B.RES, 'adventure', 'Concordia', 'staging_starters')
 TIER = 2
 TARGET = 27.0           # H19: deck power (EDHREC card-power scale, tier_table.json tier 2 target)
-SUPPORT_W, FIT_W, FIT_CAP = 3.0, 2.0, 3
+SUPPORT_W, FIT_W, FIT_CAP = 1.0, 3.0, 4   # user 2026-10-26: commander support counts less, overall archetype fit just as much
 RARITY = {'C': 99, 'U': 99, 'R': 0, 'M': 0}   # starters: commons and uncommons only (as starter_tune.py did)
 UTILITY_ROLES = {'removal', 'draw', 'ramp', 'wipe', 'fixing', 'counter', 'protection'}
 COLORS = 'WUBRG'
@@ -244,7 +244,7 @@ def cmd_review_compare(a):
     for c in res['cards'].values():
         n = c['name']; o = c['oracle']; ta = {x for r in c['readers'] for x in r['arch']}; oa = set(o['arch'])
         utility = bool(UTILITY_ROLES & set(o['roles']))
-        on_plan = bool((oa | ta) & strat) or sup.get(n) or utility
+        on_plan = bool((oa | ta) & strat) or sup.get(n) or utility or n == pk['commander']
         if not on_plan: rejects.append(dict(name=n, function=o['function'], oracle_arch=o['arch'], tag_arch=sorted(ta), roles=o['roles'], power=o['power']))
         else: ok += 1
         if strat and not (oa & ta) and not any(r['arch_hit'] for r in c['readers']): tag_gaps.append(dict(name=n, oracle_arch=o['arch'], tag_arch=sorted(ta), unclear=sorted({u for r in c['readers'] for u in r['unclear']})))

@@ -1,76 +1,73 @@
 [metadata]
 Name=Starter_White
 [Commander]
-1 Syr Alin, the Lion's Claw|FDN
+1 Adeline, Resplendent Cathar|MID
 [Main]
-18 Plains|FDN|[272]
-18 Plains|FDN|[273]
-1 Evolving Wilds|FDN
-1 Terramorphic Expanse|CMM
-1 Wayfarer's Bauble|CMM
-1 Mind Stone|CMM
-1 Savannah Lions|A25
-1 Thraben Inspector|CMM
-1 White Knight|M10
-1 Knight of Meadowgrain|LRW
-1 Precinct Captain|RTR
-1 Fencing Ace|A25
-1 Knight of Grace|FDN
-1 Ajani's Pridemate|FDN
-1 Aven Squire|M13
-1 Skyhunter Skirmisher|10E
-1 Sungrace Pegasus|M15
-1 Attended Knight|M13
-1 Inspiring Overseer|FDN
-1 Mentor of the Meek|2X2
-1 Benalish Marshal|DOM
-1 Banisher Priest|M14
-1 Leonin Skyhunter|MBS
-1 Welcoming Vampire|DBL
-1 Militia Bugler|2X2
+32 Plains|FDN
+1 Secluded Steppe|J25
+1 Myriad Landscape|CMM
+1 Temple of the False God|SCG
+1 Rogue's Passage|FDN
+1 Reliquary Tower|M19
+1 Blighted Woodland|BFZ
+1 Cartouche of Solidarity|AKH
+1 Crumb and Get It|BLB
+1 Momo, Playful Pet|TLA
+1 Restoration Magic|FIN
+1 Sol Ring|TMC
+1 Survivor's Med Kit|PIP
+1 Arcane Signet|ELD
+1 Bucknard's Everfull Purse|AFC
+1 Bumbleflower's Sharepot|BLB
+1 Carrot Cake|BLB
+1 Citizen's Crowbar|SNC
+1 Genesis Chamber|DST
+1 Goldvein Pick|FDN
+1 Idol of False Gods|MH3
+1 Invasion Reinforcements|TLA
+1 Lita, Little Orphan Amphibian|TMT
+1 Noble's Purse|CLB
+1 Path to Redemption|TLE
+1 Prized Statue|CLB
 1 Resolute Reinforcements|FDN
-1 Solemn Simulacrum|FDN
-1 Seraph of Dawn|CMR
-1 Restoration Angel|AVR
-1 Rhox Pikemaster|M10
-1 Palace Jailer|CMM
-1 Mesa Enchantress|DMR
-1 Goldnight Commander|AVR
-1 Herald of the Host|CMM
-1 Angel of Finality|FDN
+1 Sunset Revelry|MID
+1 Afterlife|MMQ
+1 Cat Collector|FDN
+1 Charge of the Mites|ONE
+1 Commander's Sphere|CMM
+1 Crib Swap|CLB
+1 Glaring Fleshraker|MH3
+1 Leonin Bladetrap|MRD
+1 Losheel, Clockwork Scholar|CMM
+1 Love Song of Night and Day|DMU
+1 Magnifying Glass|MKM
+1 Night Scythe|40K
+1 Nuka-Cola Vending Machine|PIP
+1 Rootborn Defenses|RTR
+1 Rosie Cotton of South Lane|LTR
+1 Spectral Procession|SHM
+1 Absolver Thrull|GPT
+1 Battle Screech|CMM
+1 Commander Sofia Daguerre|PIP
+1 Decree of Justice|MH3
+1 Etched Oracle|5DN
+1 Food Coma|WOE
+1 Hedron Archive|FDN
 1 Irregular Cohort|CLB
-1 Captain of the Watch|M10
-1 Elite Scaleguard|FRF
-1 Swords to Plowshares|CMR
-1 Journey to Nowhere|CMD
-1 Pacifism|FDN
-1 Banishing Light|FDN
-1 Oblivion Ring|CMD
-1 Valorous Stance|FDN
-1 Fateful Absence|MID
-1 Divine Verdict|M10
-1 Stroke of Midnight|FDN
-1 Disenchant|FDN
-1 Feat of Resistance|M21
-1 Moment of Heroism|M20
-1 Make a Stand|FDN
-1 Sheltering Light|XLN
-1 Ghostly Prison|CHK
-1 Jayemdae Tome|M13
-1 Revitalize|M19
-1 Glorious Anthem|M21
-1 Raise the Alarm|M15
-1 Spectral Procession|C14
-1 Bonesplitter|CMR
-1 Swiftfoot Boots|FDN
-1 Ancestral Blade|CMR
-1 Captain's Call|M13
-1 Gideon's Reproach|DOM
-1 Felidar Guardian|AER
-1 Mask of Memory|C14
-[Sideboard]
-1 Frontline Medic|GTC
-1 Loran of the Third Path|BRO
-1 Mycosynth Wellspring|NPH
-1 Heirloom Blade|J22
-1 Cathar Commando|FDN
+1 Mindless Automaton|CMR
+1 Paradise Plume|TSP
+1 Symmetry Matrix|BRO
+1 Towashi Guide-Bot|NEO
+1 Abdel Adrian, Gorion's Ward|CLB
+1 Alharu, Solemn Ritualist|CMM
+1 Enchanted Carriage|ELD
+1 Luxurious Locomotive|OTJ
+1 Ornitharch|BNG
+1 Resplendent Mentor|SHM
+1 Reverent Hoplite|THB
+1 Dreamstone Hedron|ROE
+1 Eagles of the North|LTR
+1 Kirtar's Wrath|CMM
+1 Meteor Golem|FDN
+1 Sandstone Oracle|CMM
+1 Pathrazer of Ulamog|ROE

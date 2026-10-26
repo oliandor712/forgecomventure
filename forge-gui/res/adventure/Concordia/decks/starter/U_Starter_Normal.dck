@@ -1,82 +1,73 @@
 [metadata]
 Name=Starter_Blue
-Description=Starter. Mono-blue wizards and spells led by Gadwick, the Wizened: draw on arrival, tap down blockers with every blue spell.
 [Commander]
-1 Gadwick, the Wizened|ELD
+1 Hermes, Overseer of Elpis|FIC
 [Main]
 32 Island|FDN
-1 Lonely Sandbar|ONS
+1 Lonely Sandbar|J25
 1 Myriad Landscape|CMM
 1 Temple of the False God|SCG
-1 Rogue's Passage|FDN
 1 Reliquary Tower|M19
+1 Rogue's Passage|FDN
 1 Blighted Woodland|BFZ
-1 Essence Flux|INR
-1 Icy Blast|KTK
-1 Serum Visions|5DN
+1 Combat Research|DMU
+1 Curiosity|ISD
+1 Gran-Gran|TLA
 1 Slip Out the Back|SNC
 1 Sol Ring|TMC
-1 Stream of Unconsciousness|MOR
-1 Arcane Signet|TMC
-1 Brotherhood Regalia|ACR
-1 Contentious Plan|WAR
-1 Deranged Assistant|ISD
-1 Hero's Blade|FRF
-1 Karfell Harbinger|KHM
+1 Survivor's Med Kit|PIP
+1 Arcane Signet|ELD
+1 Bill Ferny, Bree Swindler|LTR
+1 Bucknard's Everfull Purse|AFC
+1 Bumbleflower's Sharepot|BLB
+1 Cloud of Faeries|WOC
+1 Gleaming Barrier|FDN
+1 Goldvein Pick|FDN
+1 Ichor Wellspring|MBS
 1 Mask of Memory|MRD
-1 Merfolk Trickster|DOM
-1 Mindcrank|NPH
-1 Ripples of Potential|EOC
-1 Silvergill Adept|RIX
-1 Stonybrook Banneret|MOR
-1 Trailblazer's Boots|ZEN
-1 Vodalian Arcanist|M21
-1 Watcher for Tomorrow|MH1
-1 Apprentice Wizard|2XM
-1 Bontu's Monument|AKH
-1 Cloud Key|SLZ
+1 Noble's Purse|CLB
+1 Plumecreed Escort|BLB
+1 Pollywog Symbiote|IKO
+1 Prized Statue|CLB
+1 Riddlesmith|SOM
+1 Think Twice|FDN
 1 Commander's Sphere|CMM
-1 Exhaustion|9ED
-1 Expanded Anatomy|STX
-1 Fireshrieker|FDN
-1 Flux Channeler|WAR
-1 Herald's Horn|CMM
-1 Laboratory Maniac|INR
-1 Nuka-Cola Vending Machine|PIP
-1 Prodigal Sorcerer|7ED
-1 Sage's Dousing|MOR
-1 Serum Visionary|MH3
-1 Zuran Spellcaster|ICE
-1 Control Magic|CMA
-1 Etched Oracle|5DN
-1 Fact or Fiction|INV
-1 Glimmer of Genius|KLD
-1 Hieroglyphic Illumination|AKH
+1 Depths of Desire|XLN
+1 Glaring Fleshraker|MH3
+1 Gomazoa|ZEN
+1 Hornswoggle|RIX
+1 Hydroelectric Specimen|MH3
+1 Letter of Acceptance|STX
+1 Of One Mind|IKO
+1 Opaline Unicorn|THS
+1 Pearl of Wisdom|BLB
+1 Prosperous Thief|NEO
+1 Rousing Read|M21
+1 Skyscanner|M21
+1 Stern Lesson|BRO
+1 Urza, Powerstone Prodigy|BRO
+1 Dismiss|J22
+1 Eject|FIN
+1 Gust of Wind|IKO
+1 Hedron Archive|FDN
 1 Irenicus's Vile Duplication|CLB
-1 Rimewind Cryomancer|CSP
-1 Rite of Replication|MAR
-1 Riverwise Augur|RIX
-1 Soratami Mirror-Mage|CHK
-1 Soratami Savant|CHK
-1 Time of Ice|DOM
-1 Disciple of the Ring|2X2
-1 Disruptor of Currents|ECL
-1 Flow of Knowledge|BRO
-1 Hakim, Loreweaver|MIR
+1 Jhoira's Familiar|DOM
+1 Pirate's Prize|XLN
+1 Plan for All Outcomes|FRA
+1 Scattering Stroke|LRW
+1 Starforged Sword|BLB
+1 Turn into a Pumpkin|ELD
+1 Whirler Rogue|ORI
+1 Enchanted Carriage|ELD
+1 Luxurious Locomotive|OTJ
+1 Mnemonic Wall|THS
+1 Prosperous Pirates|XLN
 1 Psychic Spiral|RTR
-1 Saruman the White|LTR
-1 Sea Gate Loremaster|ZEN
-1 Arcanis the Omnipotent|FDN
-1 Desecrate Reality|CMM
-1 Galecaster Colossus|C17
-1 Skittering Invasion|ROE
+1 Seascape Aerialist|ZEN
+1 Shipwreck Dowser|J25
+1 Daring Waverider|BLB
+1 Dreamstone Hedron|ROE
+1 Sire of the Storm|CHK
+1 Meteor Golem|FDN
 1 Dig Through Time|SLZ
-1 Memnarch, the Warden|FRC
-[Sideboard]
-1 Dramatic Reversal|PIO
-1 Rescue|DOM
-1 Expel from Orazca|RIX
-1 Decoction Module|KLD
-1 Propaganda|TMP
-1 Sweep Away|OGW
-1 Filter Out|MAT
+1 Star Whale|WHO

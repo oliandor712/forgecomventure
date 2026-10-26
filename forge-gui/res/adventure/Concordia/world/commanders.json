@@ -219,5 +219,7 @@
   {"card": "Gwenna, Eyes of Gaea", "set": "BRO", "color": "G", "band": 2, "start": false},
   {"card": "Barrin, Tolarian Archmage", "set": "M21", "color": "U", "band": 2, "start": false},
   {"card": "Squee, Dubious Monarch", "set": "DMU", "color": "R", "band": 2, "start": false},
-  {"card": "Breeches, Eager Pillager", "set": "LCI", "color": "R", "band": 2, "start": false}
+  {"card": "Breeches, Eager Pillager", "set": "LCI", "color": "R", "band": 2, "start": false},
+  {"card": "Hermes, Overseer of Elpis", "set": "FIC", "color": "U", "band": 2, "start": false},
+  {"card": "Rev, Tithe Extractor", "set": "J25", "color": "B", "band": 2, "start": false}
 ]

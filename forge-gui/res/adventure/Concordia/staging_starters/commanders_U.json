@@ -1,0 +1,188 @@
+[
+ {
+  "name": "Hermes, Overseer of Elpis",
+  "cmc": 4,
+  "pop": 11,
+  "profile": [
+   "attack",
+   "scry",
+   "spells",
+   "token",
+   "tribe:Bird"
+  ],
+  "archetypes": [
+   "tokens",
+   "spellslinger",
+   "enchantress",
+   "superfriends"
+  ],
+  "fit": 9,
+  "support_n": 568
+ },
+ {
+  "name": "Deekah, Fractal Theorist",
+  "cmc": 5,
+  "pop": 8,
+  "profile": [
+   "counters",
+   "evasion",
+   "spells",
+   "token",
+   "tribe:Fractal"
+  ],
+  "archetypes": [
+   "counters",
+   "tokens",
+   "superfriends",
+   "enchantress"
+  ],
+  "fit": 8,
+  "support_n": 534
+ },
+ {
+  "name": "Emry, Lurker of the Loch",
+  "cmc": 3,
+  "pop": 26,
+  "profile": [
+   "etb_self",
+   "mill",
+   "scales:Artifact"
+  ],
+  "archetypes": [
+   "tokens",
+   "reanimator",
+   "mill",
+   "graveyard"
+  ],
+  "fit": 7,
+  "support_n": 480
+ },
+ {
+  "name": "Kiora, the Rising Tide",
+  "cmc": 3,
+  "pop": 8,
+  "profile": [
+   "attack",
+   "discard",
+   "etb_self",
+   "scales:Legendary",
+   "token",
+   "tribe:Octopus"
+  ],
+  "archetypes": [
+   "tokens",
+   "card_draw",
+   "storm",
+   "group_hug"
+  ],
+  "fit": 18,
+  "support_n": 451
+ },
+ {
+  "name": "Unctus, Grand Metatect",
+  "cmc": 3,
+  "pop": 7,
+  "profile": [
+   "discard",
+   "scales:Artifact"
+  ],
+  "archetypes": [
+   "card_draw",
+   "tokens",
+   "storm",
+   "group_hug"
+  ],
+  "fit": 15,
+  "support_n": 436
+ },
+ {
+  "name": "Hraesvelgr of the First Brood",
+  "cmc": 5,
+  "pop": 6,
+  "profile": [
+   "attack",
+   "evasion",
+   "spells"
+  ],
+  "archetypes": [
+   "voltron",
+   "tokens",
+   "spellslinger",
+   "enchantress"
+  ],
+  "fit": 5,
+  "support_n": 423
+ },
+ {
+  "name": "Ray Fillet, Wave Warrior",
+  "cmc": 3,
+  "pop": 6,
+  "profile": [
+   "counters",
+   "etb_other",
+   "evasion"
+  ],
+  "archetypes": [
+   "counters",
+   "card_draw",
+   "storm",
+   "group_hug"
+  ],
+  "fit": 15,
+  "support_n": 417
+ },
+ {
+  "name": "Padeem, Consul of Innovation",
+  "cmc": 4,
+  "pop": 19,
+  "profile": [
+   "protection",
+   "scales:Artifact"
+  ],
+  "archetypes": [
+   "card_draw",
+   "storm",
+   "group_hug",
+   "tokens"
+  ],
+  "fit": 13,
+  "support_n": 413
+ },
+ {
+  "name": "The Mechanist, Aerial Artisan",
+  "cmc": 3,
+  "pop": 7,
+  "profile": [
+   "sacrifice",
+   "spells",
+   "token"
+  ],
+  "archetypes": [
+   "tokens",
+   "stax",
+   "enchantress",
+   "superfriends"
+  ],
+  "fit": 8,
+  "support_n": 311
+ },
+ {
+  "name": "Iron Man, Armored Avenger",
+  "cmc": 4,
+  "pop": 5,
+  "profile": [
+   "attack",
+   "counters",
+   "evasion",
+   "modified"
+  ],
+  "archetypes": [
+   "counters",
+   "tokens",
+   "voltron",
+   "superfriends"
+  ],
+  "fit": 5,
+  "support_n": 311
+ }
+]

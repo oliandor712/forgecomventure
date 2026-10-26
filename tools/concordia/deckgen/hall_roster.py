@@ -28,7 +28,7 @@ for e in roster:
         e['start'] = False; changed += 1
 added = []
 for c in 'WUBRG':
-    for kind in ('Normal', 'Alt'):
+    for kind in ('Normal',):  # Alt off until the Alt decks are rebuilt (user 2026-10-25); zone_flags.ALT_ENABLED
         p = os.path.join(STARTER, '%s_Starter_%s.dck' % (c, kind))
         if not os.path.exists(p): continue
         card, ed = commander(p)
