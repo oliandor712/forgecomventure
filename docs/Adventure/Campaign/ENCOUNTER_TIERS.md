@@ -10,7 +10,7 @@ Tools:
 
 ## 1. The three tiers
 
-Tier 1 requirements live in `tools/concordia/tier1_rules.py` (the one source; deck_tier, the builder and archetype_rules import it):
+Every tier's requirements live in `tools/concordia/tier_rules.py` (the one source, `TIERS[1..5]` plus the build specs; deck_tier, the builder and archetype_rules import it). Tiers 1-3 are compared below, tiers 4-5 in the table after it:
 
 | Setting | Tier 1 value |
 |---|---|
@@ -41,7 +41,7 @@ Tier 1 requirements live in `tools/concordia/tier1_rules.py` (the one source; de
 | Lands | 41-42, all basic | 36-39, mostly basic | 33-38, with good nonbasics |
 | Land count check (Karsten, §2 step 3) | not checked: Tier 1 is over-landed on purpose | within ±3 | within ±3 |
 | Ramp | 0-3 | 2-8 | 8-16 |
-| Fast mana (Sol Ring, moxen, rituals) | 0 | 0-1 | 0-3 |
+| Fast mana (Sol Ring, moxen, rituals) | 0 | 0-1 | 0-2 |
 | Card draw | 0-3 | 2-10 | 6-14 |
 | Removal and counters | 0-3 | 4-14 | 7-16 |
 | Board wipes | 0 | 0-2 | 1-4 |
@@ -49,11 +49,30 @@ Tier 1 requirements live in `tools/concordia/tier1_rules.py` (the one source; de
 | Average mana value (nonland) | 2.5-3.4 | 2.6-3.6 | 2.8-3.9 |
 | Creatures | at least 15 | at least 15 | at least 15 |
 | Average card power (§3a) | 17-23 | 22-30 | 29-37 |
-| Rarity | Commons, plus up to 15 uncommons. No rares or mythics | 10 rares or fewer, 1 mythic or fewer | No real limit |
+| Rarity | Commons, plus up to 25 uncommons. No rares or mythics | No cap (user, 2026-10-26) | No cap |
+| Cards at power 50+ | 2 or fewer | 5 or fewer | 10 or fewer |
+| Cards at power 70+ | 0 | 2 or fewer | 2 or fewer |
 | Card types (Moxfield grouping) | at least 6 noncreature cards, 4 of them instants or sorceries; creatures at most 85% | at least 4 instants, 3 sorceries, 4 artifacts, 2 enchantments; no type above 60% | as Tier 2 |
-| Game Changers | 0 | 0 | 3 or fewer |
-| Mass land denial, chained extra turns | none | none | none |
+| Game Changers | 0 | 0 | 0 |
+| Extra turns | none | none | none |
+| Mass land denial | none | none | none |
 | Two-card combos | none | none | late-game only |
+
+Tiers 4-5 (user, 2026-10-26; same checks, no rarity caps):
+
+| | Tier 4 | Tier 5 |
+|---|---|---|
+| Average card power | 35.5-41.5 | 40 or more |
+| Game Changers | 4 or fewer | 6 or fewer |
+| Extra turns | 1 or fewer, never chained | 2 or fewer, never chained |
+| Cards at power 50+ | 4-14 | 8 or more |
+| Cards at power 70+ | 5 or fewer | 1 or more |
+| Fast mana | 0-3 | 0-5 |
+| Tutors | 0-4 | 0-6 |
+| Mass land denial | none | none |
+| Two-card combos | late-game only | late-game only |
+
+Extra turns are the `extra_turn` tag (any card whose script has AddTurn); Game Changers come from Forge's list. Power-50+ and 70+ counts are WARN; Game Changers and extra turns FAIL.
 | Target result (§6) | Player wins about 95%+ | Player wins about 60-75% | Player wins about 35-55% on the first try |
 
 These numbers come from measurements, not guesses (§7):
@@ -113,7 +132,7 @@ Work in this order. Each step narrows the next.
   3. Add cheap interaction.
   4. Add a draw engine.
   5. Cut clunky 5+ drops.
-  6. Only then add up to 3 Game Changers.
+  6. Only then add the power-50+ cards (up to 10). Game Changers wait for Tier 4.
 - **Tier 2 → 1:** the reverse. Strip ramp, draw and removal, then swap efficient bodies for below-rate ones.
 
 ## 3. Brackets
@@ -122,10 +141,10 @@ Each tier is one official Commander Bracket. The bracket's rules are hard checks
 
 | | Bracket 1 (Tier 1) | Bracket 2 (Tier 2) | Bracket 3 (Tier 3) |
 |---|---|---|---|
-| Game Changers | none | none | up to 3 |
+| Game Changers | none | none | none (Tiers 4-5 only) |
 | Tutors | none | 1 or fewer | 3 or fewer |
 | Mass land denial | none | none | none |
-| Extra turns | none | none | 1, never chained |
+| Extra turns | none | none | none (Tiers 4-5 only) |
 | Two-card combos | none | none | late-game only |
 | Feel | a theme first, power second | a stock precon | an upgraded deck with a plan |
 
