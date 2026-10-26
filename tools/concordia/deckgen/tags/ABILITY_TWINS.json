@@ -1280,58 +1280,2213 @@
 "reads": 3
 },
 {
-"card": "Syr Konrad, the Grim",
+"card": "Rev, Tithe Extractor",
 "line": 1,
-"text": "Whenever another creature dies, or a creature card is put into a graveyard from anywhere other than the battlefield, or a creature card leaves your graveyard, ~ deals 1 damage to each opponent.",
-"norm": "whenever another creature dies, or a creature card is put into a graveyard from anywhere other than the battlefield, or a creature card leaves your graveyard, ~ deals N damage to each opponent.",
-"group": null,
-"aligned": false,
+"text": "Whenever you attack, target creature gains deathtouch until end of turn.",
+"norm": "whenever you attack, target creature gains deathtouch until end of turn.",
+"group": "c1",
+"aligned": true,
 "tags": [
-"target_scope:each_opponent",
-"trigger_scope:other",
-"trigger_filter:creature",
-"damage",
-"damage_amount:1",
-"trigger:dies",
-"trigger_zone:graveyard",
-"target_scope:each_opponent",
-"trigger_scope:other",
-"trigger_filter:creature",
-"target_scope:each_opponent",
-"trigger_scope:other",
-"trigger_filter:creature",
-"cost_mana:1b",
-"target_scope:each_player"
+"trigger:attacks",
+"duration:eot",
+"deathtouch",
+"pump_single",
+"target_count:one",
+"target_type:creature",
+"grant_kw:deathtouch",
+"duration:eot"
 ],
-"acc": 0.792,
-"reads": 5
+"acc": null,
+"reads": 0
 },
 {
-"card": "Syr Konrad, the Grim",
+"card": "Rev, Tithe Extractor",
 "line": 2,
-"text": "{1}{B}: Each player mills a card.",
-"norm": "{c}{c}: each player mills a card.",
+"text": "Whenever one or more creatures you control deal combat damage to a player, create a Treasure token, then look at the top card of that player's library and exile it face down. You may cast that card for as long as it remains exiled.",
+"norm": "whenever one or more creatures you control deal combat damage to a player, create a treasure token, then look at the top card of that player's library and exile it face down. you may cast that card for as long as it remains exiled.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger_filter:one_or_more",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source",
+"look_top:1",
+"take:all",
+"to_zone:exile",
+"impulse_draw",
+"impulse_draw_count:1",
+"duration:permanent"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Bojuka Bog",
+"line": 1,
+"text": "When ~ enters, exile all cards from target player's graveyard.",
+"norm": "when ~ enters, exile all cards from target player's graveyard.",
 "group": null,
 "aligned": false,
 "tags": [
-"target_scope:each_opponent",
+"enters_tapped",
+"cost:tap",
+"mana_source",
+"mana:black",
+"mana_amount:1",
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:player",
+"target_zone:graveyard",
+"exile_from:graveyard"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Bojuka Bog",
+"line": 2,
+"text": "{T}: Add {B}.",
+"norm": "{c}: add {c}.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_tapped",
+"cost:tap",
+"mana_source",
+"mana:black",
+"mana_amount:1",
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:player",
+"target_zone:graveyard",
+"exile_from:graveyard"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Barren Moor",
+"line": 1,
+"text": "{T}: Add {B}.",
+"norm": "{c}: add {c}.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_tapped",
+"cost:tap",
+"mana_source",
+"mana:black",
+"mana_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Temple of the False God",
+"line": 1,
+"text": "{T}: Add {C}{C}. Activate only if you control five or more lands.",
+"norm": "{c}: add {c}{c}. activate only if you control five or more lands.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_untapped",
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:2",
+"activation_restriction",
+"mana_conditional",
+"condition:at_least_5_land_you_control"
+],
+"acc": 1.0,
+"reads": 3
+},
+{
+"card": "Myriad Landscape",
+"line": 1,
+"text": "{T}: Add {C}.",
+"norm": "{c}: add {c}.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_tapped",
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:1",
+"cost:tap",
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:2",
+"tutor",
+"tutor_count:up_to_2",
+"tutor_target:basic_land",
+"tutor_dest:battlefield_tapped",
+"shuffle",
+"put_onto_battlefield",
+"from_zone:library",
+"put_tapped",
+"controller:you"
+],
+"acc": 0.941,
+"reads": 3
+},
+{
+"card": "Myriad Landscape",
+"line": 2,
+"text": "{2}, {T}, Sacrifice ~: Search your library for up to two basic land cards that share a land type, put them onto the battlefield tapped, then shuffle.",
+"norm": "{c}, {c}, sacrifice ~: search your library for up to two basic land cards that share a land type, put them onto the battlefield tapped, then shuffle.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_tapped",
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:1",
+"cost:tap",
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:2",
+"tutor",
+"tutor_count:up_to_2",
+"tutor_target:basic_land",
+"tutor_dest:battlefield_tapped",
+"shuffle",
+"put_onto_battlefield",
+"from_zone:library",
+"put_tapped",
+"controller:you"
+],
+"acc": 0.941,
+"reads": 3
+},
+{
+"card": "Reliquary Tower",
+"line": 1,
+"text": "You have no maximum hand size.",
+"norm": "you have no maximum hand size.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_untapped",
+"affected_type:you",
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:1"
+],
+"acc": 0.648,
+"reads": 6
+},
+{
+"card": "Reliquary Tower",
+"line": 2,
+"text": "{T}: Add {C}.",
+"norm": "{c}: add {c}.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_untapped",
+"affected_type:you",
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:1"
+],
+"acc": 0.648,
+"reads": 6
+},
+{
+"card": "Rogue's Passage",
+"line": 1,
+"text": "{T}: Add {C}.",
+"norm": "{c}: add {c}.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_untapped",
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:1",
+"cost:tap",
+"cost_mana:4",
+"target_count:one",
+"target_type:creature"
+],
+"acc": 0.664,
+"reads": 3
+},
+{
+"card": "Rogue's Passage",
+"line": 2,
+"text": "{4}, {T}: Target creature can't be blocked this turn.",
+"norm": "{c}, {c}: target creature can't be blocked this turn.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_untapped",
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:1",
+"cost:tap",
+"cost_mana:4",
+"target_count:one",
+"target_type:creature"
+],
+"acc": 0.664,
+"reads": 3
+},
+{
+"card": "Graf Harvest",
+"line": 1,
+"text": "Zombies you control have menace.",
+"norm": "zombies you control have menace.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"grant_kw:menace",
+"duration:static",
+"affected_type:card",
+"affected_filter:zombie",
+"affected_scope:you_control",
+"menace"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Graf Harvest",
+"line": 2,
+"text": "{3}{B}, Exile a creature card from your graveyard: Create a 2/2 black Zombie creature token.",
+"norm": "{c}{c}, exile a creature card from your graveyard: create a N/N black zombie creature token.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:exile",
+"from_zone:graveyard",
+"cost_exile_target:creature",
+"cost_mana:3b",
+"token_count:1",
+"token_color:black",
+"token_pt:2/2",
+"token_type:zombie"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Greedy Freebooter",
+"line": 1,
+"text": "When ~ dies, scry 1 and create a Treasure token.",
+"norm": "when ~ dies, scry N and create a treasure token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:self",
+"scry_count:1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Nested Shambler",
+"line": 1,
+"text": "When ~ dies, create X tapped 1/1 green Squirrel creature tokens, where X is ~'s power.",
+"norm": "when ~ dies, create x tapped N/N green squirrel creature tokens, where x is ~'s power.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:self",
+"token_count:x",
+"token_color:green",
+"token_pt:1/1",
+"token_type:squirrel",
+"x_is:triggering_power"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Nurgle's Rot",
+"line": 1,
+"text": "Enchant creature an opponent controls",
+"norm": "enchant creature an opponent controls",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
 "trigger_scope:other",
+"return",
+"from_zone:graveyard",
+"to_zone:hand",
+"token_count:1",
+"token_color:green",
+"token_color:blue",
+"token_color:black",
+"token_color:red",
+"token_type:of_nurgle"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Nurgle's Rot",
+"line": 2,
+"text": "When enchanted creature dies, return ~ to its owner's hand and you create a 1/3 black Demon creature token named Plaguebearer of Nurgle.",
+"norm": "when enchanted creature dies, return ~ to its owner's hand and you create a N/N black demon creature token named plaguebearer of nurgle.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:other",
+"return",
+"from_zone:graveyard",
+"to_zone:hand",
+"token_count:1",
+"token_color:green",
+"token_color:blue",
+"token_color:black",
+"token_color:red",
+"token_type:of_nurgle"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Shambling Ghast",
+"line": 1,
+"text": "When ~ dies, choose one \u2014",
+"norm": "when ~ dies, choose one \u2014",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:self",
+"modal:1_of_2",
+"target_count:one",
+"target_type:creature",
+"target_scope:opp_control",
+"pump_amount:-1/-1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Shambling Ghast",
+"line": 2,
+"text": "\u2022 Brave the Stench \u2014 Target creature an opponent controls gets -1/-1 until end of turn.",
+"norm": "\u2022 brave the stench \u2014 target creature an opponent controls gets -N/-N until end of turn.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:self",
+"modal:1_of_2",
+"target_count:one",
+"target_type:creature",
+"target_scope:opp_control",
+"pump_amount:-1/-1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Shambling Ghast",
+"line": 3,
+"text": "\u2022 Search the Body \u2014 Create a Treasure token.",
+"norm": "\u2022 search the body \u2014 create a treasure token.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:self",
+"modal:1_of_2",
+"target_count:one",
+"target_type:creature",
+"target_scope:opp_control",
+"pump_amount:-1/-1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Sol Ring",
+"line": 1,
+"text": "{T}: Add {C}{C}.",
+"norm": "{c}: add {c}{c}.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:2"
+],
+"acc": 1.0,
+"reads": 6
+},
+{
+"card": "Arcane Signet",
+"line": 1,
+"text": "{T}: Add one mana of any color in your commander's color identity.",
+"norm": "{c}: add one mana of any color in your commander's color identity.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"mana_source",
+"mana:commander_identity",
+"mana_choice",
+"mana_amount:1"
+],
+"acc": 1.0,
+"reads": 7
+},
+{
+"card": "Bucknard's Everfull Purse",
+"line": 1,
+"text": "{1}, {T}: Roll a d4 and create a number of Treasure tokens equal to the result. The player to your right gains control of ~.",
+"norm": "{c}, {c}: roll a dN and create a number of treasure tokens equal to the result. the player to your right gains control of ~.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost_mana:1",
+"token_count:x",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source",
+"steal"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Bumbleflower's Sharepot",
+"line": 1,
+"text": "When ~ enters, create a Food token.",
+"norm": "when ~ enters, create a food token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Bumbleflower's Sharepot",
+"line": 2,
+"text": "{5}, {T}, Sacrifice ~: Destroy target nonland permanent. Activate only as a sorcery.",
+"norm": "{c}, {c}, sacrifice ~: destroy target nonland permanent. activate only as a sorcery.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:5",
+"target_count:one",
+"target_type:permanent",
+"target_filter:nonland",
+"remove:destroy"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Deathspore Thallid",
+"line": 1,
+"text": "At the beginning of your upkeep, put a spore counter on ~.",
+"norm": "at the beginning of your upkeep, put a spore counter on ~.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"trigger:upkeep",
+"counter_count:1",
+"counter:spore",
+"cost:remove_counters",
+"token_count:1",
+"token_color:green",
+"token_pt:1/1",
+"token_type:saproling",
+"cost:sacrifice",
+"cost_sacrifice_target:saproling",
+"target_count:one",
+"target_type:creature",
+"pump_amount:-1/-1",
+"duration:eot",
+"pump_single"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Deathspore Thallid",
+"line": 2,
+"text": "Remove three spore counters from ~: Create a 1/1 green Saproling creature token.",
+"norm": "remove three spore counters from ~: create a N/N green saproling creature token.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"trigger:upkeep",
+"counter_count:1",
+"counter:spore",
+"cost:remove_counters",
+"token_count:1",
+"token_color:green",
+"token_pt:1/1",
+"token_type:saproling",
+"cost:sacrifice",
+"cost_sacrifice_target:saproling",
+"target_count:one",
+"target_type:creature",
+"pump_amount:-1/-1",
+"duration:eot",
+"pump_single"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Deathspore Thallid",
+"line": 3,
+"text": "Sacrifice a Saproling: Target creature gets -1/-1 until end of turn.",
+"norm": "sacrifice a saproling: target creature gets -N/-N until end of turn.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"trigger:upkeep",
+"counter_count:1",
+"counter:spore",
+"cost:remove_counters",
+"token_count:1",
+"token_color:green",
+"token_pt:1/1",
+"token_type:saproling",
+"cost:sacrifice",
+"cost_sacrifice_target:saproling",
+"target_count:one",
+"target_type:creature",
+"pump_amount:-1/-1",
+"duration:eot",
+"pump_single"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Fanatical Offering",
+"line": 1,
+"text": "As an additional cost to cast this spell, sacrifice an artifact or creature.",
+"norm": "as an additional cost to cast this spell, sacrifice an artifact or creature.",
+"group": "c0",
+"aligned": true,
+"tags": [
+"sacrifice_outlet",
+"additional_cost"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Fanatical Offering",
+"line": 2,
+"text": "Draw two cards and create a Map token.",
+"norm": "draw two cards and create a map token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:sacrifice",
+"cost_sacrifice_target:artifact_creature",
+"cost_mana:1b",
+"draw_count:2",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:map_explore"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Genesis Chamber",
+"line": 1,
+"text": "Whenever a nontoken creature enters, if ~ is untapped, that creature's controller creates a 1/1 colorless Myr artifact creature token.",
+"norm": "whenever a nontoken creature enters, if ~ is untapped, that creature's controller creates a N/N colorless myr artifact creature token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:any",
+"trigger_filter:nontoken",
 "trigger_filter:creature",
-"damage",
-"damage_amount:1",
+"condition:card_untapped",
+"token_count:1",
+"token_color:colorless",
+"token_pt:1/1",
+"token_cardtype:artifact",
+"token_type:myr"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Goldvein Pick",
+"line": 1,
+"text": "Equipped creature gets +1/+1.",
+"norm": "equipped creature gets +N/+N.",
+"group": null,
+"aligned": false,
+"tags": [
+"duration:static",
+"pump_amount:+1/+1",
+"affected_type:creature",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Goldvein Pick",
+"line": 2,
+"text": "Whenever equipped creature deals combat damage to a player, create a Treasure token.",
+"norm": "whenever equipped creature deals combat damage to a player, create a treasure token.",
+"group": null,
+"aligned": false,
+"tags": [
+"duration:static",
+"pump_amount:+1/+1",
+"affected_type:creature",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Gorbag of Minas Morgul",
+"line": 1,
+"text": "Whenever a Goblin or Orc you control deals combat damage to a player, you may sacrifice it. When you do, choose one\u2014",
+"norm": "whenever a goblin or orc you control deals combat damage to a player, you may sacrifice it. when you do, choose one\u2014",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"trigger_filter:goblin",
+"trigger_filter:orc",
+"cost:sacrifice",
+"cost_sacrifice_target:card",
+"modal:1_of_2",
+"draw_count:1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Gorbag of Minas Morgul",
+"line": 2,
+"text": "\u2022 Draw a card.",
+"norm": "\u2022 draw a card.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"trigger_filter:goblin",
+"trigger_filter:orc",
+"cost:sacrifice",
+"cost_sacrifice_target:card",
+"modal:1_of_2",
+"draw_count:1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Gorbag of Minas Morgul",
+"line": 3,
+"text": "\u2022 Create a Treasure token.",
+"norm": "\u2022 create a treasure token.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"trigger_filter:goblin",
+"trigger_filter:orc",
+"cost:sacrifice",
+"cost_sacrifice_target:card",
+"modal:1_of_2",
+"draw_count:1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Idol of False Gods",
+"line": 1,
+"text": "{1}{C}, {T}: Create a 0/1 colorless Eldrazi Spawn creature token with \"Sacrifice this creature: Add {C}.\"",
+"norm": "{c}{c}, {c}: create a N/N colorless eldrazi spawn creature token with \"sacrifice this creature: add {c}.\"",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost_mana:1c",
+"token_count:1",
+"token_color:colorless",
+"token_pt:0/1",
+"token_type:eldrazi_spawn"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Idol of False Gods",
+"line": 2,
+"text": "Whenever another Eldrazi you control dies, put a +1/+1 counter on ~.",
+"norm": "whenever another eldrazi you control dies, put a +N/+N counter on ~.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:other",
+"trigger_filter:you_control",
+"counter_count:1",
+"counter:p1p1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Idol of False Gods",
+"line": 3,
+"text": "As long as ~ has eight or more +1/+1 counters on it, it's a 0/0 creature in addition to its other types and it has annihilator 2.",
+"norm": "as long as ~ has eight or more +N/+N counters on it, it's a N/N creature in addition to its other types and it has annihilator N.",
+"group": "c3",
+"aligned": true,
+"tags": [
+"grant_kw:annihilator",
+"duration:static",
+"affected_type:card",
+"affected_filter:counters_ge8_p1p1",
+"scales:counters"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Mask of Memory",
+"line": 1,
+"text": "Whenever equipped creature deals combat damage to a player, you may draw two cards. If you do, discard a card.",
+"norm": "whenever equipped creature deals combat damage to a player, you may draw two cards. if you do, discard a card.",
+"group": null,
+"aligned": false,
+"tags": [
+"discard_count:1"
+],
+"acc": 0.885,
+"reads": 3
+},
+{
+"card": "Noble's Purse",
+"line": 1,
+"text": "~ enters tapped and with three coin counters on it.",
+"norm": "~ enters tapped and with three coin counters on it.",
+"group": "c0",
+"aligned": true,
+"tags": [
+"enters_tapped"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Noble's Purse",
+"line": 2,
+"text": "{T}, Remove a coin counter from ~: Create a Treasure token.",
+"norm": "{c}, remove a coin counter from ~: create a treasure token.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost:remove_counters",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Plumb the Forbidden",
+"line": 1,
+"text": "As an additional cost to cast this spell, you may sacrifice one or more creatures. When you do, copy this spell for each creature sacrificed this way.",
+"norm": "as an additional cost to cast this spell, you may sacrifice one or more creatures. when you do, copy this spell for each creature sacrificed this way.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"additional_cost",
+"trigger:spell_cast",
+"cost:sacrifice",
+"cost_sacrifice_target:creature",
+"cost_mana:1b",
+"draw_count:1",
+"life_loss_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Plumb the Forbidden",
+"line": 2,
+"text": "You draw a card and you lose 1 life.",
+"norm": "you draw a card and you lose N life.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"additional_cost",
+"trigger:spell_cast",
+"cost:sacrifice",
+"cost_sacrifice_target:creature",
+"cost_mana:1b",
+"draw_count:1",
+"life_loss_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Prized Statue",
+"line": 1,
+"text": "When ~ enters or is put into a graveyard from the battlefield, create a Treasure token.",
+"norm": "when ~ enters or is put into a graveyard from the battlefield, create a treasure token.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source",
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:self"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Servo Schematic",
+"line": 1,
+"text": "When ~ enters or is put into a graveyard from the battlefield, create a 1/1 colorless Servo artifact creature token.",
+"norm": "when ~ enters or is put into a graveyard from the battlefield, create a N/N colorless servo artifact creature token.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:colorless",
+"token_pt:1/1",
+"token_cardtype:artifact",
+"token_type:servo",
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:self"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Thieves' Tools",
+"line": 1,
+"text": "When ~ enters, create a Treasure token.",
+"norm": "when ~ enters, create a treasure token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Thieves' Tools",
+"line": 2,
+"text": "Equipped creature can't be blocked as long as its power is 3 or less.",
+"norm": "equipped creature can't be blocked as long as its power is N or less.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cant_be_blocked"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Bastion of Remembrance",
+"line": 1,
+"text": "When ~ enters, create a 1/1 white Human Soldier creature token.",
+"norm": "when ~ enters, create a N/N white human soldier creature token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:white",
+"token_pt:1/1",
+"token_type:human_soldier"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Bastion of Remembrance",
+"line": 2,
+"text": "Whenever a creature you control dies, each opponent loses 1 life and you gain 1 life.",
+"norm": "whenever a creature you control dies, each opponent loses N life and you gain N life.",
+"group": "c2",
+"aligned": true,
+"tags": [
 "trigger:dies",
 "trigger_zone:graveyard",
 "target_scope:each_opponent",
-"trigger_scope:other",
+"trigger_scope:any",
+"trigger_filter:you_control",
 "trigger_filter:creature",
+"life_loss_amount:1",
+"lifegain_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Boggart Mischief",
+"line": 1,
+"text": "When this enchantment enters, you may blight 1. If you do, create two 1/1 black and red Goblin creature tokens.",
+"norm": "when this enchantment enters, you may blight N. if you do, create two N/N black and red goblin creature tokens.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:2",
+"token_color:black",
+"token_color:red",
+"token_pt:1/1",
+"token_type:goblin"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Boggart Mischief",
+"line": 2,
+"text": "Whenever a Goblin creature you control dies, each opponent loses 1 life and you gain 1 life.",
+"norm": "whenever a goblin creature you control dies, each opponent loses N life and you gain N life.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"target_scope:each_opponent",
+"trigger_scope:any",
+"trigger_filter:you_control",
+"trigger_filter:creature",
+"life_loss_amount:1",
+"lifegain_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Commander's Sphere",
+"line": 1,
+"text": "{T}: Add one mana of any color in your commander's color identity.",
+"norm": "{c}: add one mana of any color in your commander's color identity.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"mana_source",
+"mana:commander_identity",
+"mana_choice",
+"mana_amount:1"
+],
+"acc": 1.0,
+"reads": 3
+},
+{
+"card": "Commander's Sphere",
+"line": 2,
+"text": "Sacrifice ~: Draw a card.",
+"norm": "sacrifice ~: draw a card.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"draw_count:1"
+],
+"acc": 1.0,
+"reads": 3
+},
+{
+"card": "Cornered by Black Mages",
+"line": 1,
+"text": "Target opponent sacrifices a creature of their choice.",
+"norm": "target opponent sacrifices a creature of their choice.",
+"group": "c0",
+"aligned": true,
+"tags": [
+"sacrifice_outlet"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Cornered by Black Mages",
+"line": 2,
+"text": "Create a 0/1 black Wizard creature token with \"Whenever you cast a noncreature spell, this token deals 1 damage to each opponent.\"",
+"norm": "create a N/N black wizard creature token with \"whenever you cast a noncreature spell, this token deals N damage to each opponent.\"",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:opponent",
+"effect:sacrifice",
+"sacrifice_outlet",
+"sacrifice_type:creature",
+"token_count:1",
+"token_color:black",
+"token_pt:0/1",
+"token_type:wizard_snipe"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Cower in Fear",
+"line": 1,
+"text": "Creatures your opponents control get -1/-1 until end of turn.",
+"norm": "creatures your opponents control get -N/-N until end of turn.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:all",
+"target_type:creature",
+"target_scope:opp_control",
+"pump_amount:-1/-1",
+"duration:eot"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Foreboding Fruit",
+"line": 1,
+"text": "Target player draws two cards and loses 2 life.",
+"norm": "target player draws two cards and loses N life.",
+"group": "c0",
+"aligned": true,
+"tags": [
+"condition:adamant"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Foreboding Fruit",
+"line": 2,
+"text": "Adamant \u2014 If at least three black mana was spent to cast this spell, create a Food token.",
+"norm": "adamant \u2014 if at least three black mana was spent to cast this spell, create a food token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:player",
+"draw_count:2",
+"life_loss_amount:2",
+"token_count:x",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"x_is:adamant_black_1_0"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Glaring Fleshraker",
+"line": 1,
+"text": "Whenever you cast a colorless spell, create a 0/1 colorless Eldrazi Spawn creature token with \"Sacrifice this creature: Add {C}.\"",
+"norm": "whenever you cast a colorless spell, create a N/N colorless eldrazi spawn creature token with \"sacrifice this creature: add {c}.\"",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:spell_cast",
+"token_count:1",
+"token_color:colorless",
+"token_pt:0/1",
+"token_type:eldrazi_spawn"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Glaring Fleshraker",
+"line": 2,
+"text": "Whenever another colorless creature you control enters, ~ deals 1 damage to each opponent.",
+"norm": "whenever another colorless creature you control enters, ~ deals N damage to each opponent.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:etb",
 "target_scope:each_opponent",
 "trigger_scope:other",
+"trigger_filter:you_control",
 "trigger_filter:creature",
-"cost_mana:1b",
-"target_scope:each_player"
+"damage",
+"damage_amount:1"
 ],
-"acc": 0.792,
-"reads": 5
+"acc": null,
+"reads": 0
+},
+{
+"card": "Lord Skitter, Sewer King",
+"line": 1,
+"text": "Whenever another Rat you control enters, exile up to one target card from an opponent's graveyard.",
+"norm": "whenever another rat you control enters, exile up to one target card from an opponent's graveyard.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:other",
+"trigger_filter:you_control",
+"target_count:up_to_1",
+"target_type:card",
+"target_filter:oppown",
+"target_zone:graveyard",
+"exile_from:graveyard"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Lord Skitter, Sewer King",
+"line": 2,
+"text": "At the beginning of combat on your turn, create a 1/1 black Rat creature token with \"This creature can't block.\"",
+"norm": "at the beginning of combat on your turn, create a N/N black rat creature token with \"this creature can't block.\"",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:beginning_of_combat",
+"token_count:1",
+"token_color:black",
+"token_pt:1/1",
+"token_type:rat_noblock"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Magnifying Glass",
+"line": 1,
+"text": "{T}: Add {C}.",
+"norm": "{c}: add {c}.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Magnifying Glass",
+"line": 2,
+"text": "{4}, {T}: Investigate.",
+"norm": "{c}, {c}: investigate.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost_mana:4",
+"investigate"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Nuka-Cola Vending Machine",
+"line": 1,
+"text": "{1}, {T}: Create a Food token.",
+"norm": "{c}, {c}: create a food token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost_mana:1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain"
+],
+"acc": 0.825,
+"reads": 3
+},
+{
+"card": "Nuka-Cola Vending Machine",
+"line": 2,
+"text": "Whenever you sacrifice a Food, create a tapped Treasure token.",
+"norm": "whenever you sacrifice a food, create a tapped treasure token.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger_filter:you_control",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": 0.825,
+"reads": 3
+},
+{
+"card": "Orzhov Euthanist",
+"line": 1,
+"text": "When ~ enters or the creature it haunts dies, destroy target creature that was dealt damage this turn.",
+"norm": "when ~ enters or the creature it haunts dies, destroy target creature that was dealt damage this turn.",
+"group": null,
+"aligned": false,
+"tags": [],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Plaguecrafter",
+"line": 1,
+"text": "When ~ enters, each player sacrifices a creature or planeswalker. Each player who can't discards a card.",
+"norm": "when ~ enters, each player sacrifices a creature or planeswalker. each player who can't discards a card.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"trigger:etb",
+"target_scope:each_player",
+"trigger_scope:self",
+"effect:sacrifice",
+"sacrifice_outlet",
+"remove:sacrifice",
+"sacrifice_type:creature_planeswalker",
+"discard_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Pointed Discussion",
+"line": 1,
+"text": "You draw two cards, lose 2 life, then create a Blood token.",
+"norm": "you draw two cards, lose N life, then create a blood token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"draw_count:2",
+"life_loss_amount:2",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:blood_draw"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Ruthless Knave",
+"line": 1,
+"text": "{2}{B}, Sacrifice a creature: Create two Treasure tokens.",
+"norm": "{c}{c}, sacrifice a creature: create two treasure tokens.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"cost:sacrifice",
+"cost_sacrifice_target:creature",
+"cost_mana:2b",
+"token_count:2",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source",
+"cost:sacrifice",
+"cost_sacrifice_target:treasure",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Ruthless Knave",
+"line": 2,
+"text": "Sacrifice three Treasures: Draw a card.",
+"norm": "sacrifice three treasures: draw a card.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"cost:sacrifice",
+"cost_sacrifice_target:creature",
+"cost_mana:2b",
+"token_count:2",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source",
+"cost:sacrifice",
+"cost_sacrifice_target:treasure",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Yahenni, Undying Partisan",
+"line": 1,
+"text": "Whenever a creature an opponent controls dies, put a +1/+1 counter on ~.",
+"norm": "whenever a creature an opponent controls dies, put a +N/+N counter on ~.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:any",
+"trigger_filter:opp_control",
+"trigger_filter:creature",
+"counter_count:1",
+"counter:p1p1",
+"cost:sacrifice",
+"cost_sacrifice_target:creature",
+"grant_kw:indestructible",
+"duration:eot",
+"indestructible"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Yahenni, Undying Partisan",
+"line": 2,
+"text": "Sacrifice another creature: ~ gains indestructible until end of turn.",
+"norm": "sacrifice another creature: ~ gains indestructible until end of turn.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:any",
+"trigger_filter:opp_control",
+"trigger_filter:creature",
+"counter_count:1",
+"counter:p1p1",
+"cost:sacrifice",
+"cost_sacrifice_target:creature",
+"grant_kw:indestructible",
+"duration:eot",
+"indestructible"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Circle of Power",
+"line": 1,
+"text": "You draw two cards and you lose 2 life. Create a 0/1 black Wizard creature token with \"Whenever you cast a noncreature spell, this token deals 1 damage to each opponent.\"",
+"norm": "you draw two cards and you lose N life. create a N/N black wizard creature token with \"whenever you cast a noncreature spell, this token deals N damage to each opponent.\"",
+"group": null,
+"aligned": false,
+"tags": [
+"draw_count:2",
+"duration:eot",
+"lifelink",
+"lifegain",
+"life_loss_amount:2",
+"token_count:1",
+"token_color:black",
+"token_pt:0/1",
+"token_type:wizard_snipe",
+"target_count:all",
+"target_type:wizard",
+"target_scope:you_control",
+"pump_amount:+1/+0",
+"duration:eot",
+"grant_kw:lifelink"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Circle of Power",
+"line": 2,
+"text": "Wizards you control get +1/+0 and gain lifelink until end of turn.",
+"norm": "wizards you control get +N/+N and gain lifelink until end of turn.",
+"group": null,
+"aligned": false,
+"tags": [
+"draw_count:2",
+"duration:eot",
+"lifelink",
+"lifegain",
+"life_loss_amount:2",
+"token_count:1",
+"token_color:black",
+"token_pt:0/1",
+"token_type:wizard_snipe",
+"target_count:all",
+"target_type:wizard",
+"target_scope:you_control",
+"pump_amount:+1/+0",
+"duration:eot",
+"grant_kw:lifelink"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Etched Oracle",
+"line": 1,
+"text": "{1}, Remove four +1/+1 counters from ~: Target player draws three cards.",
+"norm": "{c}, remove four +N/+N counters from ~: target player draws three cards.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:remove_counters",
+"cost_mana:1",
+"target_count:one",
+"target_type:player",
+"draw_count:3"
+],
+"acc": 0.738,
+"reads": 3
+},
+{
+"card": "Feast or Famine",
+"line": 1,
+"text": "\u2022 Create a 2/2 black Zombie creature token.",
+"norm": "\u2022 create a N/N black zombie creature token.",
+"group": null,
+"aligned": false,
+"tags": [
+"modal:1_of_2",
+"token_count:1",
+"token_color:black",
+"token_pt:2/2",
+"token_type:zombie",
+"target_count:one",
+"target_type:creature",
+"target_filter:nonblack",
+"target_filter:nonartifact",
+"remove:destroy"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Feast or Famine",
+"line": 2,
+"text": "\u2022 Destroy target nonartifact, nonblack creature. It can't be regenerated.",
+"norm": "\u2022 destroy target nonartifact, nonblack creature. it can't be regenerated.",
+"group": null,
+"aligned": false,
+"tags": [
+"modal:1_of_2",
+"token_count:1",
+"token_color:black",
+"token_pt:2/2",
+"token_type:zombie",
+"target_count:one",
+"target_type:creature",
+"target_filter:nonblack",
+"target_filter:nonartifact",
+"remove:destroy"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Gonti, Lord of Luxury",
+"line": 1,
+"text": "When ~ enters, look at the top four cards of target opponent's library, exile one of them face down, then put the rest on the bottom of that library in a random order. You may cast that card for as long as it remains exiled, and mana of any type can be spent to cast that spell.",
+"norm": "when ~ enters, look at the top four cards of target opponent's library, exile one of them face down, then put the rest on the bottom of that library in a random order. you may cast that card for as long as it remains exiled, and mana of any type can be spent to cast that spell.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:opponent",
+"look_top:4",
+"take:1_card",
+"to_zone:exile",
+"rest_to_zone:library",
+"rest_order:bottom_random",
+"impulse_draw",
+"impulse_draw_count:4",
+"duration:permanent"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Grim Bounty",
+"line": 1,
+"text": "Destroy target creature or planeswalker. Create a Treasure token.",
+"norm": "destroy target creature or planeswalker. create a treasure token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:creature",
+"target_type:planeswalker",
+"remove:destroy",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Hedron Archive",
+"line": 1,
+"text": "{T}: Add {C}{C}.",
+"norm": "{c}: add {c}{c}.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:2"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Hedron Archive",
+"line": 2,
+"text": "{2}, {T}, Sacrifice ~: Draw two cards.",
+"norm": "{c}, {c}, sacrifice ~: draw two cards.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:2",
+"draw_count:2"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Paradise Plume",
+"line": 1,
+"text": "As ~ enters, choose a color.",
+"norm": "as ~ enters, choose a color.",
+"group": "c0",
+"aligned": true,
+"tags": [
+"choose_on_enter:color",
+"trigger:etb"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Paradise Plume",
+"line": 2,
+"text": "Whenever a player casts a spell of the chosen color, you may gain 1 life.",
+"norm": "whenever a player casts a spell of the chosen color, you may gain N life.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:spell_cast",
+"optional",
+"lifegain_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Paradise Plume",
+"line": 3,
+"text": "{T}: Add one mana of the chosen color.",
+"norm": "{c}: add one mana of the chosen color.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:tap",
+"mana_source",
+"mana_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Pitiless Plunderer",
+"line": 1,
+"text": "Whenever another creature you control dies, create a Treasure token.",
+"norm": "whenever another creature you control dies, create a treasure token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:other",
+"trigger_filter:you_control",
+"trigger_filter:creature",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Ravenous Chupacabra",
+"line": 1,
+"text": "When ~ enters, destroy target creature an opponent controls.",
+"norm": "when ~ enters, destroy target creature an opponent controls.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:creature",
+"target_scope:opp_control",
+"remove:destroy"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Tormod, the Desecrator",
+"line": 1,
+"text": "Whenever one or more cards leave your graveyard, create a tapped 2/2 black Zombie creature token.",
+"norm": "whenever one or more cards leave your graveyard, create a tapped N/N black zombie creature token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger_scope:other",
+"trigger_filter:one_or_more",
+"token_count:1",
+"token_color:black",
+"token_pt:2/2",
+"token_type:zombie"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Venerated Stormsinger",
+"line": 1,
+"text": "Whenever this creature or another creature you control dies, each opponent loses 1 life and you gain 1 life.",
+"norm": "whenever this creature or another creature you control dies, each opponent loses N life and you gain N life.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"target_scope:each_opponent",
+"trigger_scope:any",
+"trigger_filter:you_control",
+"trigger_filter:creature",
+"life_loss_amount:1",
+"lifegain_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Dread Drone",
+"line": 1,
+"text": "When ~ enters, create two 0/1 colorless Eldrazi Spawn creature tokens. They have \"Sacrifice this creature: Add {C}.\"",
+"norm": "when ~ enters, create two N/N colorless eldrazi spawn creature tokens. they have \"sacrifice this creature: add {c}.\"",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:2",
+"token_color:colorless",
+"token_pt:0/1",
+"token_type:eldrazi_spawn"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Enchanted Carriage",
+"line": 1,
+"text": "When ~ enters, create two 1/1 white Mouse creature tokens.",
+"norm": "when ~ enters, create two N/N white mouse creature tokens.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:2",
+"token_color:white",
+"token_pt:1/1",
+"token_type:mouse"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Luxurious Locomotive",
+"line": 1,
+"text": "Whenever ~ attacks, create a Treasure token for each creature that crewed it this turn.",
+"norm": "whenever ~ attacks, create a treasure token for each creature that crewed it this turn.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:attacks",
+"token_count:x",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source",
+"x_is:crewsize"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Luxurious Locomotive",
+"line": 2,
+"text": "Crew 1. Activate only once each turn.",
+"norm": "crew N. activate only once each turn.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:attacks",
+"token_count:x",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source",
+"x_is:crewsize"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Noxious Ghoul",
+"line": 1,
+"text": "Whenever ~ or another Zombie enters, all non-Zombie creatures get -1/-1 until end of turn.",
+"norm": "whenever ~ or another zombie enters, all non-zombie creatures get -N/-N until end of turn.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"duration:eot",
+"trigger_scope:any",
+"target_count:all",
+"target_type:creature",
+"target_filter:nonzombie",
+"pump_amount:-1/-1",
+"duration:eot"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Syphon Flesh",
+"line": 1,
+"text": "Each other player sacrifices a creature. You create a 2/2 black Zombie creature token for each creature sacrificed this way.",
+"norm": "each other player sacrifices a creature. you create a N/N black zombie creature token for each creature sacrificed this way.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"effect:sacrifice",
+"sacrifice_outlet",
+"sacrifice_type:creature",
+"token_count:x",
+"token_color:black",
+"token_pt:2/2",
+"token_type:zombie",
+"x_is:remembered_amount"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Twisted Sewer-Witch",
+"line": 1,
+"text": "When ~ enters, create a 1/1 black Rat creature token with \"This creature can't block.\" Then for each Rat you control, create a Wicked Role token attached to that Rat.",
+"norm": "when ~ enters, create a N/N black rat creature token with \"this creature can't block.\" then for each rat you control, create a wicked role token attached to that rat.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:black",
+"token_pt:1/1",
+"token_type:rat_noblock",
+"token_count:1",
+"token_color:red",
+"token_type:wicked"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Zuko's Exile",
+"line": 1,
+"text": "Exile target artifact, creature, or enchantment. Its controller creates a Clue token.",
+"norm": "exile target artifact, creature, or enchantment. its controller creates a clue token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:artifact",
+"target_type:creature",
+"target_type:enchantment",
+"remove:exile",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:clue_draw"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Dreamstone Hedron",
+"line": 1,
+"text": "{T}: Add {C}{C}{C}.",
+"norm": "{c}: add {c}{c}{c}.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:3"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Dreamstone Hedron",
+"line": 2,
+"text": "{3}, {T}, Sacrifice ~: Draw three cards.",
+"norm": "{c}, {c}, sacrifice ~: draw three cards.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:3",
+"draw_count:3"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Voracious Fell Beast",
+"line": 1,
+"text": "When ~ enters, each opponent sacrifices a creature. Create a Food token for each creature sacrificed this way.",
+"norm": "when ~ enters, each opponent sacrifices a creature. create a food token for each creature sacrificed this way.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"trigger:etb",
+"target_scope:each_opponent",
+"trigger_scope:self",
+"effect:sacrifice",
+"sacrifice_outlet",
+"remove:sacrifice",
+"sacrifice_type:creature",
+"token_count:x",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"x_is:remembered_amount"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Abhorrent Overlord",
+"line": 1,
+"text": "When ~ enters, create a number of 1/1 black Harpy creature tokens with flying equal to your devotion to black.",
+"norm": "when ~ enters, create a number of N/N black harpy creature tokens with flying equal to your devotion to black.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"trigger:etb",
+"trigger_scope:self",
+"token_count:x",
+"token_color:black",
+"token_pt:1/1",
+"token_kw:flying",
+"token_type:harpy",
+"x_is:devotion_black",
+"trigger:upkeep",
+"effect:sacrifice",
+"sacrifice_outlet",
+"sacrifice_type:creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Abhorrent Overlord",
+"line": 2,
+"text": "At the beginning of your upkeep, sacrifice a creature.",
+"norm": "at the beginning of your upkeep, sacrifice a creature.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"trigger:etb",
+"trigger_scope:self",
+"token_count:x",
+"token_color:black",
+"token_pt:1/1",
+"token_kw:flying",
+"token_type:harpy",
+"x_is:devotion_black",
+"trigger:upkeep",
+"effect:sacrifice",
+"sacrifice_outlet",
+"sacrifice_type:creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Meteor Golem",
+"line": 1,
+"text": "When ~ enters, destroy target nonland permanent an opponent controls.",
+"norm": "when ~ enters, destroy target nonland permanent an opponent controls.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:permanent",
+"target_scope:opp_control",
+"target_filter:nonland",
+"remove:destroy"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Vile Mutilator",
+"line": 1,
+"text": "As an additional cost to cast this spell, sacrifice a creature or enchantment.",
+"norm": "as an additional cost to cast this spell, sacrifice a creature or enchantment.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"additional_cost",
+"cost:sacrifice",
+"cost_sacrifice_target:creature_enchantment",
+"cost_mana:5bb",
+"trigger:etb",
+"target_scope:each_opponent",
+"trigger_scope:self",
+"effect:sacrifice",
+"sacrifice_outlet",
+"remove:sacrifice",
+"sacrifice_type:enchantment",
+"effect:sacrifice",
+"sacrifice_outlet",
+"remove:sacrifice",
+"sacrifice_type:creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Vile Mutilator",
+"line": 2,
+"text": "When ~ enters, each opponent sacrifices a nontoken enchantment, then sacrifices a nontoken creature.",
+"norm": "when ~ enters, each opponent sacrifices a nontoken enchantment, then sacrifices a nontoken creature.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"additional_cost",
+"cost:sacrifice",
+"cost_sacrifice_target:creature_enchantment",
+"cost_mana:5bb",
+"trigger:etb",
+"target_scope:each_opponent",
+"trigger_scope:self",
+"effect:sacrifice",
+"sacrifice_outlet",
+"remove:sacrifice",
+"sacrifice_type:enchantment",
+"effect:sacrifice",
+"sacrifice_outlet",
+"remove:sacrifice",
+"sacrifice_type:creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Scion of Darkness",
+"line": 1,
+"text": "Whenever ~ deals combat damage to a player, you may put target creature card from that player's graveyard onto the battlefield under your control.",
+"norm": "whenever ~ deals combat damage to a player, you may put target creature card from that player's graveyard onto the battlefield under your control.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"optional",
+"target_count:one",
+"target_type:creature",
+"target_zone:graveyard",
+"put_onto_battlefield",
+"from_zone:graveyard",
+"controller:you"
+],
+"acc": null,
+"reads": 0
 },
 {
 "card": "Gwenna, Eyes of Gaea",
@@ -2799,43 +4954,1487 @@
 "reads": 3
 },
 {
-"card": "Goreclaw, Terror of Qal Sisma",
+"card": "Ruxa, Patient Professor",
 "line": 1,
-"text": "Creature spells you cast with power 4 or greater cost {2} less to cast.",
-"norm": "creature spells you cast with power N or greater cost {c} less to cast.",
+"text": "Whenever ~ enters or attacks, return target creature card with no abilities from your graveyard to your hand.",
+"norm": "whenever ~ enters or attacks, return target creature card with no abilities from your graveyard to your hand.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:creature",
+"target_filter:noabilities",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand",
+"trigger:attacks",
+"duration:static",
+"pump_amount:+1/+1",
+"affected_type:creature",
+"affected_filter:noabilities",
+"affected_scope:you_control",
+"optional"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Ruxa, Patient Professor",
+"line": 2,
+"text": "Creatures you control with no abilities get +1/+1.",
+"norm": "creatures you control with no abilities get +N/+N.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:creature",
+"target_filter:noabilities",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand",
+"trigger:attacks",
+"duration:static",
+"pump_amount:+1/+1",
+"affected_type:creature",
+"affected_filter:noabilities",
+"affected_scope:you_control",
+"optional"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Ruxa, Patient Professor",
+"line": 3,
+"text": "For each creature you control with no abilities, you may have that creature assign its combat damage as though it weren't blocked.",
+"norm": "for each creature you control with no abilities, you may have that creature assign its combat damage as though it weren't blocked.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:creature",
+"target_filter:noabilities",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand",
+"trigger:attacks",
+"duration:static",
+"pump_amount:+1/+1",
+"affected_type:creature",
+"affected_filter:noabilities",
+"affected_scope:you_control",
+"optional"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Tranquil Thicket",
+"line": 1,
+"text": "{T}: Add {G}.",
+"norm": "{c}: add {c}.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_tapped",
+"cost:tap",
+"mana_source",
+"mana:green",
+"mana_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Blighted Woodland",
+"line": 1,
+"text": "{T}: Add {C}.",
+"norm": "{c}: add {c}.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_untapped",
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:1",
+"cost:tap",
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:3g",
+"tutor",
+"tutor_count:up_to_2",
+"tutor_target:basic_land",
+"tutor_dest:battlefield_tapped",
+"shuffle",
+"put_onto_battlefield",
+"from_zone:library",
+"put_tapped",
+"controller:you"
+],
+"acc": 1.0,
+"reads": 4
+},
+{
+"card": "Blighted Woodland",
+"line": 2,
+"text": "{3}{G}, {T}, Sacrifice ~: Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+"norm": "{c}{c}, {c}, sacrifice ~: search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_untapped",
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:1",
+"cost:tap",
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:3g",
+"tutor",
+"tutor_count:up_to_2",
+"tutor_target:basic_land",
+"tutor_dest:battlefield_tapped",
+"shuffle",
+"put_onto_battlefield",
+"from_zone:library",
+"put_tapped",
+"controller:you"
+],
+"acc": 1.0,
+"reads": 4
+},
+{
+"card": "Arboreal Grazer",
+"line": 1,
+"text": "When ~ enters, you may put a land card from your hand onto the battlefield tapped.",
+"norm": "when ~ enters, you may put a land card from your hand onto the battlefield tapped.",
 "group": "c1",
 "aligned": true,
 "tags": [
-"cost_reduce",
-"duration:static",
-"cost_reduce_amount:2",
-"cost_reduce_mana:generic",
-"cost_reduce_for:creature"
+"trigger:etb",
+"optional",
+"trigger_scope:self",
+"put_onto_battlefield",
+"from_zone:hand",
+"put_tapped",
+"controller:you"
 ],
-"acc": 0.905,
-"reads": 3
+"acc": null,
+"reads": 0
 },
 {
-"card": "Goreclaw, Terror of Qal Sisma",
+"card": "Codex Shredder",
+"line": 1,
+"text": "{T}: Target player mills a card.",
+"norm": "{c}: target player mills a card.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"target_count:one",
+"target_type:player"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Codex Shredder",
 "line": 2,
-"text": "Whenever ~ attacks, each creature you control with power 4 or greater gets +1/+1 and gains trample until end of turn.",
-"norm": "whenever ~ attacks, each creature you control with power N or greater gets +N/+N and gains trample until end of turn.",
+"text": "{5}, {T}, Sacrifice ~: Return target card from your graveyard to your hand.",
+"norm": "{c}, {c}, sacrifice ~: return target card from your graveyard to your hand.",
 "group": "c2",
 "aligned": true,
 "tags": [
-"trigger:attacks",
+"cost:tap",
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:5",
+"target_count:one",
+"target_type:card",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Crop Sigil",
+"line": 1,
+"text": "At the beginning of your upkeep, you may mill a card.",
+"norm": "at the beginning of your upkeep, you may mill a card.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:upkeep",
+"optional"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Crop Sigil",
+"line": 2,
+"text": "Delirium \u2014 {2}{G}, Sacrifice ~: Return up to one target creature card and up to one target land card from your graveyard to your hand. Activate only if there are four or more card types among cards in your graveyard.",
+"norm": "delirium \u2014 {c}{c}, sacrifice ~: return up to one target creature card and up to one target land card from your graveyard to your hand. activate only if there are four or more card types among cards in your graveyard.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:2g",
+"target_count:up_to_1",
+"target_type:creature",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand",
+"target_count:up_to_1",
+"target_type:land",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Tyvar's Stand",
+"line": 1,
+"text": "Target creature you control gets +X/+X and gains hexproof and indestructible until end of turn.",
+"norm": "target creature you control gets +x/+x and gains hexproof and indestructible until end of turn.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:creature",
+"target_scope:you_control",
+"pump_amount:+x/+x",
+"x_is:x_paid",
+"grant_kw:hexproof",
+"grant_kw:indestructible",
 "duration:eot",
-"trample",
+"hexproof",
+"indestructible",
+"pump_single"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Cache Grab",
+"line": 1,
+"text": "Mill four cards. You may put a permanent card from among the cards milled this way into your hand. If you control a Squirrel or returned a Squirrel card to your hand this way, create a Food token.",
+"norm": "mill four cards. you may put a permanent card from among the cards milled this way into your hand. if you control a squirrel or returned a squirrel card to your hand this way, create a food token.",
+"group": null,
+"aligned": false,
+"tags": [
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Grapple with the Past",
+"line": 1,
+"text": "Mill three cards, then you may return a creature or land card from your graveyard to your hand.",
+"norm": "mill three cards, then you may return a creature or land card from your graveyard to your hand.",
+"group": null,
+"aligned": false,
+"tags": [
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Myr Retriever",
+"line": 1,
+"text": "When ~ dies, return another target artifact card from your graveyard to your hand.",
+"norm": "when ~ dies, return another target artifact card from your graveyard to your hand.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:self",
+"target_count:one",
+"target_type:artifact",
+"target_filter:other",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Peerless Recycling",
+"line": 1,
+"text": "Return target permanent card from your graveyard to your hand. If the gift was promised, instead return two target permanent cards from your graveyard to your hand.",
+"norm": "return target permanent card from your graveyard to your hand. if the gift was promised, instead return two target permanent cards from your graveyard to your hand.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:x",
+"target_type:permanent",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Regrowth",
+"line": 1,
+"text": "Return target card from your graveyard to your hand.",
+"norm": "return target card from your graveyard to your hand.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:card",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Restore",
+"line": 1,
+"text": "Put target land card from a graveyard onto the battlefield under your control.",
+"norm": "put target land card from a graveyard onto the battlefield under your control.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:land",
+"target_zone:graveyard",
+"put_onto_battlefield",
+"from_zone:graveyard",
+"controller:you"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Revive",
+"line": 1,
+"text": "Return target green card from your graveyard to your hand.",
+"norm": "return target green card from your graveyard to your hand.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:card",
+"target_filter:green",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Revive the Shire",
+"line": 1,
+"text": "Return target permanent card from your graveyard to your hand. Create a Food token.",
+"norm": "return target permanent card from your graveyard to your hand. create a food token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:permanent",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "The Binding of the Titans",
+"line": 1,
+"text": "I \u2014 Each player mills three cards.",
+"norm": "i \u2014 each player mills three cards.",
+"group": "s1",
+"aligned": true,
+"tags": [
+"saga_chapter:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "The Binding of the Titans",
+"line": 2,
+"text": "II \u2014 Exile up to two target cards from graveyards. For each creature card exiled this way, you gain 1 life.",
+"norm": "ii \u2014 exile up to two target cards from graveyards. for each creature card exiled this way, you gain N life.",
+"group": "s2",
+"aligned": true,
+"tags": [
+"saga_chapter:2",
+"target_count:up_to_2",
+"target_type:card",
+"target_zone:graveyard",
+"exile_from:graveyard",
+"lifegain_amount:x",
+"x_is:remembered_count_creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "The Binding of the Titans",
+"line": 3,
+"text": "III \u2014 Return target creature or land card from your graveyard to your hand.",
+"norm": "iii \u2014 return target creature or land card from your graveyard to your hand.",
+"group": "s3",
+"aligned": true,
+"tags": [
+"saga_chapter:3",
+"target_count:one",
+"target_type:creature",
+"target_scope:you_control",
+"target_type:land",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Town Greeter",
+"line": 1,
+"text": "When this creature enters, mill four cards. You may put a land card from among them into your hand. If you put a Town card into your hand this way, you gain 2 life.",
+"norm": "when this creature enters, mill four cards. you may put a land card from among them into your hand. if you put a town card into your hand this way, you gain N life.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"lifegain_amount:2"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Trailblazer's Boots",
+"line": 1,
+"text": "Equipped creature has nonbasic landwalk.",
+"norm": "equipped creature has nonbasic landwalk.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"grant_kw:landwalk",
+"duration:static",
+"affected_type:creature"
+],
+"acc": 0.781,
+"reads": 3
+},
+{
+"card": "Unnatural Restoration",
+"line": 1,
+"text": "Return target permanent card from your graveyard to your hand. Proliferate.",
+"norm": "return target permanent card from your graveyard to your hand. proliferate.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:permanent",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Bala Ged Recovery",
+"line": 1,
+"text": "Return target card from your graveyard to your hand.",
+"norm": "return target card from your graveyard to your hand.",
+"group": null,
+"aligned": false,
+"tags": [
+"transform",
+"target_count:one",
+"target_type:card",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Cartouche of Strength",
+"line": 1,
+"text": "Enchant creature you control",
+"norm": "enchant creature you control",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"optional",
+"trigger_scope:self",
+"target_count:one",
+"target_type:creature",
+"target_scope:opp_control",
+"duration:static",
+"pump_amount:+1/+1",
+"grant_kw:trample",
+"affected_type:creature",
+"trample"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Cartouche of Strength",
+"line": 2,
+"text": "When ~ enters, you may have enchanted creature fight target creature an opponent controls.",
+"norm": "when ~ enters, you may have enchanted creature fight target creature an opponent controls.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"optional",
+"trigger_scope:self",
+"target_count:one",
+"target_type:creature",
+"target_scope:opp_control",
+"duration:static",
+"pump_amount:+1/+1",
+"grant_kw:trample",
+"affected_type:creature",
+"trample"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Cartouche of Strength",
+"line": 3,
+"text": "Enchanted creature gets +1/+1 and has trample.",
+"norm": "enchanted creature gets +N/+N and has trample.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"optional",
+"trigger_scope:self",
+"target_count:one",
+"target_type:creature",
+"target_scope:opp_control",
+"duration:static",
+"pump_amount:+1/+1",
+"grant_kw:trample",
+"affected_type:creature",
+"trample"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Evolution Sage",
+"line": 1,
+"text": "Landfall \u2014 Whenever a land you control enters, proliferate.",
+"norm": "landfall \u2014 whenever a land you control enters, proliferate.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:any",
+"trigger_filter:you_control",
+"trigger_filter:land"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Evolution Witness",
+"line": 1,
+"text": "{1}{G}: Adapt 2.",
+"norm": "{c}{c}: adapt N.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost_mana:1g"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Evolution Witness",
+"line": 2,
+"text": "Whenever one or more +1/+1 counters are put on ~, return target permanent card from your graveyard to your hand.",
+"norm": "whenever one or more +N/+N counters are put on ~, return target permanent card from your graveyard to your hand.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger_filter:one_or_more",
+"target_count:one",
+"target_type:permanent",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Fungal Rebirth",
+"line": 1,
+"text": "Return target permanent card from your graveyard to your hand. If a creature died this turn, create two 1/1 green Saproling creature tokens.",
+"norm": "return target permanent card from your graveyard to your hand. if a creature died this turn, create two N/N green saproling creature tokens.",
+"group": null,
+"aligned": false,
+"tags": [
+"condition:morbid",
+"target_count:one",
+"target_type:permanent",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand",
+"token_count:2",
+"token_color:green",
+"token_pt:1/1",
+"token_type:saproling"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Gate to the Afterlife",
+"line": 1,
+"text": "Whenever a nontoken creature you control dies, you gain 1 life. Then you may draw a card. If you do, discard a card.",
+"norm": "whenever a nontoken creature you control dies, you gain N life. then you may draw a card. if you do, discard a card.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"unless_cost",
+"trigger_scope:any",
+"trigger_filter:you_control",
+"trigger_filter:nontoken",
+"trigger_filter:creature",
+"lifegain_amount:1",
+"discard_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Gate to the Afterlife",
+"line": 2,
+"text": "{2}, {T}, Sacrifice ~: Search your graveyard, hand, and/or library for a card named God-Pharaoh's Gift and put it onto the battlefield. If you search your library this way, shuffle. Activate only if there are six or more creature cards in your graveyard.",
+"norm": "{c}, {c}, sacrifice ~: search your graveyard, hand, and/or library for a card named god-pharaoh's gift and put it onto the battlefield. if you search your library this way, shuffle. activate only if there are six or more creature cards in your graveyard.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:2",
+"tutor",
+"tutor_count:1",
+"tutor_target:card_youown",
+"tutor_dest:battlefield",
+"shuffle",
+"put_onto_battlefield",
+"from_zone:library",
+"controller:you"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Jalum Tome",
+"line": 1,
+"text": "{2}, {T}: Draw a card, then discard a card.",
+"norm": "{c}, {c}: draw a card, then discard a card.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost_mana:2",
+"draw_count:1",
+"discard_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Junk Diver",
+"line": 1,
+"text": "When ~ dies, return another target artifact card from your graveyard to your hand.",
+"norm": "when ~ dies, return another target artifact card from your graveyard to your hand.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:self",
+"target_count:one",
+"target_type:artifact",
+"target_filter:other",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Omen of the Hunt",
+"line": 1,
+"text": "When ~ enters, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+"norm": "when ~ enters, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"optional",
+"trigger_scope:self",
+"tutor",
+"tutor_count:1",
+"tutor_target:basic_land",
+"tutor_dest:battlefield_tapped",
+"shuffle",
+"put_onto_battlefield",
+"from_zone:library",
+"put_tapped",
+"controller:you"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Omen of the Hunt",
+"line": 2,
+"text": "{2}{G}, Sacrifice ~: Scry 2.",
+"norm": "{c}{c}, sacrifice ~: scry N.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:2g",
+"scry_count:2"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Roiling Regrowth",
+"line": 1,
+"text": "Sacrifice a land. Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+"norm": "sacrifice a land. search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"effect:sacrifice",
+"sacrifice_type:land",
+"tutor",
+"tutor_count:up_to_2",
+"tutor_target:basic_land",
+"tutor_dest:battlefield_tapped",
+"shuffle",
+"put_onto_battlefield",
+"from_zone:library",
+"put_tapped",
+"controller:you"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Skullwinder",
+"line": 1,
+"text": "When ~ enters, return target card from your graveyard to your hand, then choose an opponent. That player returns a card from their graveyard to their hand.",
+"norm": "when ~ enters, return target card from your graveyard to your hand, then choose an opponent. that player returns a card from their graveyard to their hand.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:card",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Spelunking",
+"line": 1,
+"text": "When ~ enters, draw a card, then you may put a land card from your hand onto the battlefield. If you put a Cave onto the battlefield this way, you gain 4 life.",
+"norm": "when ~ enters, draw a card, then you may put a land card from your hand onto the battlefield. if you put a cave onto the battlefield this way, you gain N life.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"draw_count:1",
+"put_onto_battlefield",
+"from_zone:hand",
+"controller:you",
+"lifegain_amount:4"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Spelunking",
+"line": 2,
+"text": "Lands you control enter untapped.",
+"norm": "lands you control enter untapped.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"replace:moved_to_untap"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Spider Food",
+"line": 1,
+"text": "Destroy up to one target artifact, enchantment, or creature with flying. Create a Food token.",
+"norm": "destroy up to one target artifact, enchantment, or creature with flying. create a food token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:up_to_1",
+"target_type:artifact",
+"target_type:enchantment",
+"target_type:creature",
+"remove:destroy",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Vessel of Endless Rest",
+"line": 1,
+"text": "When ~ enters, put target card from a graveyard on the bottom of its owner's library.",
+"norm": "when ~ enters, put target card from a graveyard on the bottom of its owner's library.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:card",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:library"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Vessel of Endless Rest",
+"line": 2,
+"text": "{T}: Add one mana of any color.",
+"norm": "{c}: add one mana of any color.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:tap",
+"mana_source",
+"mana:any",
+"mana_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Armorcraft Judge",
+"line": 1,
+"text": "When ~ enters, draw a card for each creature you control with a +1/+1 counter on it.",
+"norm": "when ~ enters, draw a card for each creature you control with a +N/+N counter on it.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"draw_count:x",
+"x_is:count_creature_you_control_counters_ge1_p1p1",
+"scales:creature_you_control_counters_ge1_p1p1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Explosive Vegetation",
+"line": 1,
+"text": "Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+"norm": "search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"tutor",
+"tutor_count:up_to_2",
+"tutor_target:basic_land",
+"tutor_dest:battlefield_tapped",
+"shuffle",
+"put_onto_battlefield",
+"from_zone:library",
+"put_tapped",
+"controller:you"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Halana, Kessig Ranger",
+"line": 1,
+"text": "Whenever another creature you control enters, you may pay {2}. When you do, that creature deals damage equal to its power to target creature.",
+"norm": "whenever another creature you control enters, you may pay {c}. when you do, that creature deals damage equal to its power to target creature.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:other",
+"trigger_filter:you_control",
+"trigger_filter:creature",
+"cost_mana:2",
+"target_count:one",
+"target_type:creature",
+"damage"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Lion Heart",
+"line": 1,
+"text": "When this Equipment enters, it deals 2 damage to any target.",
+"norm": "when this equipment enters, it deals N damage to any target.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:any",
+"damage",
+"damage_amount:2"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Lion Heart",
+"line": 2,
+"text": "Equipped creature gets +2/+1.",
+"norm": "equipped creature gets +N/+N.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"duration:static",
+"pump_amount:+2/+1",
+"affected_type:creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Masked Admirers",
+"line": 1,
+"text": "When ~ enters, draw a card.",
+"norm": "when ~ enters, draw a card.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Masked Admirers",
+"line": 2,
+"text": "Whenever you cast a creature spell, you may pay {G}{G}. If you do, return ~ from your graveyard to your hand.",
+"norm": "whenever you cast a creature spell, you may pay {c}{c}. if you do, return ~ from your graveyard to your hand.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:spell_cast",
+"trigger_filter:creature",
+"optional",
+"return",
+"from_zone:graveyard",
+"to_zone:hand",
+"cost_mana:gg"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Mindless Automaton",
+"line": 1,
+"text": "~ enters with two +1/+1 counters on it.",
+"norm": "~ enters with two +N/+N counters on it.",
+"group": null,
+"aligned": false,
+"tags": [
+"cost:discard",
+"cost_mana:1",
+"counter_count:1",
+"counter:p1p1",
+"cost:remove_counters",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Mindless Automaton",
+"line": 2,
+"text": "{1}, Discard a card: Put a +1/+1 counter on ~.",
+"norm": "{c}, discard a card: put a +N/+N counter on ~.",
+"group": null,
+"aligned": false,
+"tags": [
+"cost:discard",
+"cost_mana:1",
+"counter_count:1",
+"counter:p1p1",
+"cost:remove_counters",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Mindless Automaton",
+"line": 3,
+"text": "Remove two +1/+1 counters from ~: Draw a card.",
+"norm": "remove two +N/+N counters from ~: draw a card.",
+"group": null,
+"aligned": false,
+"tags": [
+"cost:discard",
+"cost_mana:1",
+"counter_count:1",
+"counter:p1p1",
+"cost:remove_counters",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Mold Shambler",
+"line": 1,
+"text": "When ~ enters, if it was kicked, destroy target noncreature permanent.",
+"norm": "when ~ enters, if it was kicked, destroy target noncreature permanent.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:permanent",
+"target_filter:noncreature",
+"remove:destroy"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Timeless Witness",
+"line": 1,
+"text": "When ~ enters, return target card from your graveyard to your hand.",
+"norm": "when ~ enters, return target card from your graveyard to your hand.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"optional",
+"trigger_scope:self",
+"target_count:one",
+"target_type:card",
+"target_scope:you_control",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Towashi Guide-Bot",
+"line": 1,
+"text": "When ~ enters, put a +1/+1 counter on target creature you control.",
+"norm": "when ~ enters, put a +N/+N counter on target creature you control.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:creature",
+"target_scope:you_control",
+"counter_count:1",
+"counter:p1p1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Towashi Guide-Bot",
+"line": 2,
+"text": "{4}, {T}: Draw a card. This ability costs {1} less to activate for each modified creature you control.",
+"norm": "{c}, {c}: draw a card. this ability costs {c} less to activate for each modified creature you control.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost_mana:4",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Triumph of the Hordes",
+"line": 1,
+"text": "Until end of turn, creatures you control get +1/+1 and gain trample and infect.",
+"norm": "until end of turn, creatures you control get +N/+N and gain trample and infect.",
+"group": "c1",
+"aligned": true,
+"tags": [
 "target_count:all",
 "target_type:creature",
 "target_scope:you_control",
-"target_filter:power_ge_4",
 "pump_amount:+1/+1",
 "duration:eot",
-"grant_kw:trample"
+"grant_kw:trample",
+"grant_kw:infect",
+"trample",
+"infect"
 ],
-"acc": 0.905,
-"reads": 3
+"acc": null,
+"reads": 0
+},
+{
+"card": "Voice of Many",
+"line": 1,
+"text": "When ~ enters, draw a card for each opponent who controls fewer creatures than you.",
+"norm": "when ~ enters, draw a card for each opponent who controls fewer creatures than you.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"draw_count:x",
+"x_is:players_haspropertyhasfewercreaturesinplaythanyou"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Auspicious Starrix",
+"line": 1,
+"text": "Whenever this creature mutates, exile cards from the top of your library until you exile X permanent cards, where X is the number of times this creature has mutated. Put those permanent cards onto the battlefield.",
+"norm": "whenever this creature mutates, exile cards from the top of your library until you exile x permanent cards, where x is the number of times this creature has mutated. put those permanent cards onto the battlefield.",
+"group": null,
+"aligned": false,
+"tags": [
+"put_onto_battlefield",
+"from_zone:exile",
+"controller:you"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Ich-Tekik, Salvage Splicer",
+"line": 1,
+"text": "When ~ enters, create a 3/3 colorless Phyrexian Golem artifact creature token.",
+"norm": "when ~ enters, create a N/N colorless phyrexian golem artifact creature token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:colorless",
+"token_pt:3/3",
+"token_cardtype:artifact",
+"token_type:phyrexian_golem"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Ich-Tekik, Salvage Splicer",
+"line": 2,
+"text": "Whenever an artifact is put into a graveyard from the battlefield, put a +1/+1 counter on ~ and a +1/+1 counter on each Golem you control.",
+"norm": "whenever an artifact is put into a graveyard from the battlefield, put a +N/+N counter on ~ and a +N/+N counter on each golem you control.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:any",
+"trigger_filter:artifact",
+"target_count:all",
+"target_type:card",
+"target_filter:self",
+"target_type:golem",
+"target_scope:you_control",
+"counter_count:1",
+"counter:p1p1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Monstrous Onslaught",
+"line": 1,
+"text": "~ deals X damage divided as you choose among any number of target creatures, where X is the greatest power among creatures you control as you cast this spell.",
+"norm": "~ deals x damage divided as you choose among any number of target creatures, where x is the greatest power among creatures you control as you cast this spell.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:creature",
+"damage",
+"damage_amount:x",
+"x_is:greatest_power_among_creature_you_control"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Reach of Branches",
+"line": 1,
+"text": "Create a 2/5 green Treefolk Shaman creature token.",
+"norm": "create a N/N green treefolk shaman creature token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"token_count:1",
+"token_color:green",
+"token_pt:2/5",
+"token_type:treefolk_shaman"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Reach of Branches",
+"line": 2,
+"text": "Whenever a Forest you control enters, you may return ~ from your graveyard to your hand.",
+"norm": "whenever a forest you control enters, you may return ~ from your graveyard to your hand.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"optional",
+"trigger_scope:any",
+"trigger_filter:you_control",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Disciple of Freyalise",
+"line": 1,
+"text": "When ~ enters, you may sacrifice another creature. If you do, you gain X life and draw X cards, where X is that creature's power.",
+"norm": "when ~ enters, you may sacrifice another creature. if you do, you gain x life and draw x cards, where x is that creature's power.",
+"group": null,
+"aligned": false,
+"tags": [
+"transform",
+"sacrifice_outlet",
+"trigger:etb",
+"trigger_scope:self",
+"lifegain_amount:x",
+"x_is:sacrificed_power",
+"cost:sacrifice",
+"cost_sacrifice_target:creature",
+"draw_count:x",
+"x_is:sacrificed_power"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Earthshaker Dreadmaw",
+"line": 1,
+"text": "When ~ enters, draw a card for each other Dinosaur you control.",
+"norm": "when ~ enters, draw a card for each other dinosaur you control.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"draw_count:x",
+"x_is:count_dinosaur_strictlyother_you_control",
+"scales:dinosaur_strictlyother"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Generous Ent",
+"line": 1,
+"text": "When ~ enters, create a Food token.",
+"norm": "when ~ enters, create a food token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Altanak, the Thrice-Called",
+"line": 1,
+"text": "Whenever ~ becomes the target of a spell or ability an opponent controls, draw a card.",
+"norm": "whenever ~ becomes the target of a spell or ability an opponent controls, draw a card.",
+"group": null,
+"aligned": false,
+"tags": [
+"draw_count:1",
+"cost:discard",
+"cost_mana:1g",
+"target_count:one",
+"target_type:land",
+"target_scope:you_control",
+"target_zone:graveyard",
+"put_onto_battlefield",
+"from_zone:graveyard",
+"put_tapped",
+"controller:you"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Altanak, the Thrice-Called",
+"line": 2,
+"text": "{1}{G}, Discard ~: Return target land card from your graveyard to the battlefield tapped.",
+"norm": "{c}{c}, discard ~: return target land card from your graveyard to the battlefield tapped.",
+"group": null,
+"aligned": false,
+"tags": [
+"draw_count:1",
+"cost:discard",
+"cost_mana:1g",
+"target_count:one",
+"target_type:land",
+"target_scope:you_control",
+"target_zone:graveyard",
+"put_onto_battlefield",
+"from_zone:graveyard",
+"put_tapped",
+"controller:you"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Pathrazer of Ulamog",
+"line": 1,
+"text": "~ can't be blocked except by three or more creatures.",
+"norm": "~ can't be blocked except by three or more creatures.",
+"group": null,
+"aligned": false,
+"tags": [],
+"acc": null,
+"reads": 0
 },
 {
 "card": "Breeches, Eager Pillager",
@@ -3147,23 +6746,6 @@
 ],
 "acc": 0.764,
 "reads": 4
-},
-{
-"card": "Goblin Vandal",
-"line": 1,
-"text": "Whenever ~ attacks and isn't blocked, you may pay {R}. If you do, destroy target artifact defending player controls and ~ assigns no combat damage this turn.",
-"norm": "whenever ~ attacks and isn't blocked, you may pay {c}. if you do, destroy target artifact defending player controls and ~ assigns no combat damage this turn.",
-"group": "c1",
-"aligned": true,
-"tags": [
-"trigger:attackerunblocked",
-"target_count:one",
-"target_type:artifact",
-"remove:destroy",
-"cost_mana:r"
-],
-"acc": 0.726,
-"reads": 3
 },
 {
 "card": "Torch Fiend",
@@ -4348,29 +7930,296 @@
 "reads": 7
 },
 {
-"card": "Squee, Dubious Monarch",
+"card": "Anax, Hardened in the Forge",
 "line": 1,
-"text": "Whenever ~ attacks, create a 1/1 red Goblin creature token that's tapped and attacking.",
-"norm": "whenever ~ attacks, create a N/N red goblin creature token that's tapped and attacking.",
+"text": "~'s power is equal to your devotion to red.",
+"norm": "~'s power is equal to your devotion to red.",
 "group": null,
 "aligned": false,
 "tags": [
-"trigger:attacks",
-"token_count:1",
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:any",
+"trigger_filter:you_control",
+"trigger_filter:nontoken",
+"trigger_filter:creature",
+"token_count:x",
 "token_color:red",
 "token_pt:1/1",
-"token_type:goblin"
+"token_type:satyr_noblock"
 ],
-"acc": 0.712,
-"reads": 3
+"acc": null,
+"reads": 0
 },
 {
-"card": "Squee, Dubious Monarch",
+"card": "Anax, Hardened in the Forge",
 "line": 2,
-"text": "You may cast ~ from your graveyard by paying {3}{R} and exiling four other cards from your graveyard rather than paying its mana cost.",
-"norm": "you may cast ~ from your graveyard by paying {c}{c} and exiling four other cards from your graveyard rather than paying its mana cost.",
+"text": "Whenever ~ or another nontoken creature you control dies, create a 1/1 red Satyr creature token with \"This creature can't block.\" If the creature had power 4 or greater, create two of those tokens instead.",
+"norm": "whenever ~ or another nontoken creature you control dies, create a N/N red satyr creature token with \"this creature can't block.\" if the creature had power N or greater, create two of those tokens instead.",
 "group": null,
 "aligned": false,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:any",
+"trigger_filter:you_control",
+"trigger_filter:nontoken",
+"trigger_filter:creature",
+"token_count:x",
+"token_color:red",
+"token_pt:1/1",
+"token_type:satyr_noblock"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Forgotten Cave",
+"line": 1,
+"text": "{T}: Add {R}.",
+"norm": "{c}: add {c}.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_tapped",
+"cost:tap",
+"mana_source",
+"mana:red",
+"mana_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Ghost Quarter",
+"line": 1,
+"text": "{T}: Add {C}.",
+"norm": "{c}: add {c}.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_untapped",
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:1",
+"cost:tap",
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"target_count:one",
+"target_type:land",
+"remove:destroy",
+"optional",
+"tutor",
+"tutor_count:1",
+"tutor_target:basic_land",
+"tutor_dest:battlefield",
+"shuffle",
+"put_onto_battlefield",
+"from_zone:library",
+"controller:you"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Ghost Quarter",
+"line": 2,
+"text": "{T}, Sacrifice ~: Destroy target land. Its controller may search their library for a basic land card, put it onto the battlefield, then shuffle.",
+"norm": "{c}, sacrifice ~: destroy target land. its controller may search their library for a basic land card, put it onto the battlefield, then shuffle.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_untapped",
+"cost:tap",
+"mana_source",
+"mana:colorless",
+"mana_amount:1",
+"cost:tap",
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"target_count:one",
+"target_type:land",
+"remove:destroy",
+"optional",
+"tutor",
+"tutor_count:1",
+"tutor_target:basic_land",
+"tutor_dest:battlefield",
+"shuffle",
+"put_onto_battlefield",
+"from_zone:library",
+"controller:you"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Blacksmith's Talent",
+"line": 1,
+"text": "When ~ enters, create a colorless Equipment artifact token named Sword with \"Equipped creature gets +1/+1\" and equip {2}.",
+"norm": "when ~ enters, create a colorless equipment artifact token named sword with \"equipped creature gets +N/+N\" and equip {c}.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:white",
+"token_color:red"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Blacksmith's Talent",
+"line": 2,
+"text": "{2}{R}: Level 2",
+"norm": "{c}{c}: level N",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:white",
+"token_color:red"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Blacksmith's Talent",
+"line": 3,
+"text": "At the beginning of combat on your turn, attach target Equipment you control to up to one target creature you control.",
+"norm": "at the beginning of combat on your turn, attach target equipment you control to up to one target creature you control.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:white",
+"token_color:red"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Blacksmith's Talent",
+"line": 4,
+"text": "{3}{R}: Level 3",
+"norm": "{c}{c}: level N",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:white",
+"token_color:red"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Blacksmith's Talent",
+"line": 5,
+"text": "During your turn, equipped creatures you control have double strike and haste.",
+"norm": "during your turn, equipped creatures you control have double strike and haste.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:white",
+"token_color:red"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Sticky Fingers",
+"line": 1,
+"text": "Enchanted creature has menace and \"Whenever this creature deals combat damage to a player, create a Treasure token.\"",
+"norm": "enchanted creature has menace and \"whenever this creature deals combat damage to a player, create a treasure token.\"",
+"group": "c1",
+"aligned": true,
+"tags": [
+"grant_kw:menace",
+"duration:static",
+"affected_type:creature",
+"menace"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Sticky Fingers",
+"line": 2,
+"text": "When enchanted creature dies, draw a card.",
+"norm": "when enchanted creature dies, draw a card.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:other",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Voldaren Epicure",
+"line": 1,
+"text": "When ~ enters, it deals 1 damage to each opponent. Create a Blood token.",
+"norm": "when ~ enters, it deals N damage to each opponent. create a blood token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"target_scope:each_opponent",
+"trigger_scope:self",
+"damage",
+"damage_amount:1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:blood_draw"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Battle Cry Goblin",
+"line": 1,
+"text": "{1}{R}: Goblins you control get +1/+0 and gain haste until end of turn.",
+"norm": "{c}{c}: goblins you control get +N/+N and gain haste until end of turn.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost_mana:1r",
+"target_count:all",
+"target_type:creature",
+"target_filter:goblin",
+"target_scope:you_control",
+"pump_amount:+1/+0",
+"duration:eot",
+"grant_kw:haste",
+"haste"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Battle Cry Goblin",
+"line": 2,
+"text": "Pack tactics \u2014 Whenever ~ attacks, if you attacked with creatures with total power 6 or greater this combat, create a 1/1 red Goblin creature token that's tapped and attacking.",
+"norm": "pack tactics \u2014 whenever ~ attacks, if you attacked with creatures with total power N or greater this combat, create a N/N red goblin creature token that's tapped and attacking.",
+"group": "c2",
+"aligned": true,
 "tags": [
 "trigger:attacks",
 "token_count:1",
@@ -4378,7 +8227,1077 @@
 "token_pt:1/1",
 "token_type:goblin"
 ],
-"acc": 0.712,
+"acc": null,
+"reads": 0
+},
+{
+"card": "Dragon Fodder",
+"line": 1,
+"text": "Create two 1/1 red Goblin creature tokens.",
+"norm": "create two N/N red goblin creature tokens.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"token_count:2",
+"token_color:red",
+"token_pt:1/1",
+"token_type:goblin"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Enterprising Scallywag",
+"line": 1,
+"text": "At the beginning of your end step, if you descended this turn, create a Treasure token.",
+"norm": "at the beginning of your end step, if you descended this turn, create a treasure token.",
+"group": null,
+"aligned": false,
+"tags": [
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Golden Egg",
+"line": 1,
+"text": "When ~ enters, draw a card.",
+"norm": "when ~ enters, draw a card.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Golden Egg",
+"line": 2,
+"text": "{1}, {T}, Sacrifice ~: Add one mana of any color.",
+"norm": "{c}, {c}, sacrifice ~: add one mana of any color.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:1",
+"mana_source",
+"mana:any",
+"mana_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Golden Egg",
+"line": 3,
+"text": "{2}, {T}, Sacrifice ~: You gain 3 life.",
+"norm": "{c}, {c}, sacrifice ~: you gain N life.",
+"group": "c3",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:2",
+"lifegain_amount:3"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Ichor Wellspring",
+"line": 1,
+"text": "When ~ enters or is put into a graveyard from the battlefield, draw a card.",
+"norm": "when ~ enters or is put into a graveyard from the battlefield, draw a card.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"draw_count:1",
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:self"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Krenko's Command",
+"line": 1,
+"text": "Create two 1/1 red Goblin creature tokens.",
+"norm": "create two N/N red goblin creature tokens.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"token_count:2",
+"token_color:red",
+"token_pt:1/1",
+"token_type:goblin"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Melded Moxite",
+"line": 1,
+"text": "When this artifact enters, you may discard a card. If you do, draw two cards.",
+"norm": "when this artifact enters, you may discard a card. if you do, draw two cards.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"cost:discard",
+"draw_count:2"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Melded Moxite",
+"line": 2,
+"text": "{3}, Sacrifice this artifact: Create a tapped 2/2 colorless Robot artifact creature token.",
+"norm": "{c}, sacrifice this artifact: create a tapped N/N colorless robot artifact creature token.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:3",
+"token_count:1",
+"token_color:colorless",
+"token_pt:2/2",
+"token_cardtype:artifact",
+"token_type:robot"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Sazacap's Brew",
+"line": 1,
+"text": "Gift a tapped Fish",
+"norm": "gift a tapped fish",
+"group": null,
+"aligned": false,
+"tags": [
+"additional_cost",
+"cost:discard",
+"cost_mana:1r",
+"target_count:one",
+"target_type:player",
+"draw_count:2",
+"duration:eot",
+"target_count:x",
+"target_type:creature",
+"target_scope:you_control",
+"pump_amount:+2/+0"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Sazacap's Brew",
+"line": 2,
+"text": "As an additional cost to cast this spell, discard a card.",
+"norm": "as an additional cost to cast this spell, discard a card.",
+"group": null,
+"aligned": false,
+"tags": [
+"additional_cost",
+"cost:discard",
+"cost_mana:1r",
+"target_count:one",
+"target_type:player",
+"draw_count:2",
+"duration:eot",
+"target_count:x",
+"target_type:creature",
+"target_scope:you_control",
+"pump_amount:+2/+0"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Sazacap's Brew",
+"line": 3,
+"text": "Target player draws two cards. If the gift was promised, target creature you control gets +2/+0 until end of turn.",
+"norm": "target player draws two cards. if the gift was promised, target creature you control gets +N/+N until end of turn.",
+"group": null,
+"aligned": false,
+"tags": [
+"additional_cost",
+"cost:discard",
+"cost_mana:1r",
+"target_count:one",
+"target_type:player",
+"draw_count:2",
+"duration:eot",
+"target_count:x",
+"target_type:creature",
+"target_scope:you_control",
+"pump_amount:+2/+0"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Flick a Coin",
+"line": 1,
+"text": "~ deals 1 damage to any target. You create a Treasure token.",
+"norm": "~ deals N damage to any target. you create a treasure token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:any",
+"damage",
+"damage_amount:1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Founding of Omashu",
+"line": 1,
+"text": "I \u2014 Create two 1/1 white Ally creature tokens.",
+"norm": "i \u2014 create two N/N white ally creature tokens.",
+"group": "s1",
+"aligned": true,
+"tags": [
+"saga_chapter:1",
+"token_count:2",
+"token_color:white",
+"token_pt:1/1",
+"token_type:ally"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Founding of Omashu",
+"line": 2,
+"text": "II \u2014 You may discard a card. If you do, draw a card.",
+"norm": "ii \u2014 you may discard a card. if you do, draw a card.",
+"group": "s2",
+"aligned": true,
+"tags": [
+"saga_chapter:2",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Founding of Omashu",
+"line": 3,
+"text": "III \u2014 Creatures you control get +1/+0 until end of turn.",
+"norm": "iii \u2014 creatures you control get +N/+N until end of turn.",
+"group": "s3",
+"aligned": true,
+"tags": [
+"saga_chapter:3",
+"target_count:all",
+"target_type:creature",
+"target_scope:you_control",
+"pump_amount:+1/+0",
+"duration:eot"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "General Kreat, the Boltbringer",
+"line": 1,
+"text": "Whenever one or more Goblins you control attack, create a 1/1 red Goblin creature token that's tapped and attacking.",
+"norm": "whenever one or more goblins you control attack, create a N/N red goblin creature token that's tapped and attacking.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:attacks",
+"trigger_filter:goblin",
+"token_count:1",
+"token_color:red",
+"token_pt:1/1",
+"token_type:goblin"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "General Kreat, the Boltbringer",
+"line": 2,
+"text": "Whenever another creature you control enters, ~ deals 1 damage to each opponent.",
+"norm": "whenever another creature you control enters, ~ deals N damage to each opponent.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"target_scope:each_opponent",
+"trigger_scope:other",
+"trigger_filter:you_control",
+"trigger_filter:creature",
+"damage",
+"damage_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Herald's Horn",
+"line": 1,
+"text": "As ~ enters, choose a creature type.",
+"norm": "as ~ enters, choose a creature type.",
+"group": "c0",
+"aligned": true,
+"tags": [
+"choose_on_enter:creature_type",
+"trigger:etb"
+],
+"acc": 0.982,
+"reads": 6
+},
+{
+"card": "Herald's Horn",
+"line": 2,
+"text": "Creature spells you cast of the chosen type cost {1} less to cast.",
+"norm": "creature spells you cast of the chosen type cost {c} less to cast.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost_reduce",
+"duration:static",
+"cost_reduce_amount:1",
+"cost_reduce_for:chosen_type",
+"cost_reduce_mana:generic",
+"cost_reduce_for:creature"
+],
+"acc": 0.982,
+"reads": 6
+},
+{
+"card": "Herald's Horn",
+"line": 3,
+"text": "At the beginning of your upkeep, look at the top card of your library. If it's a creature card of the chosen type, you may reveal it and put it into your hand.",
+"norm": "at the beginning of your upkeep, look at the top card of your library. if it's a creature card of the chosen type, you may reveal it and put it into your hand.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:upkeep",
+"look_top:1",
+"reveal",
+"take:may_1_chosen_type",
+"to_zone:hand"
+],
+"acc": 0.982,
+"reads": 6
+},
+{
+"card": "Improvised Weaponry",
+"line": 1,
+"text": "~ deals 2 damage to any target. Create a Treasure token.",
+"norm": "~ deals N damage to any target. create a treasure token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:any",
+"damage",
+"damage_amount:2",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Letter of Acceptance",
+"line": 1,
+"text": "{T}: Add one mana of any color.",
+"norm": "{c}: add one mana of any color.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"mana_source",
+"mana:any",
+"mana_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Letter of Acceptance",
+"line": 2,
+"text": "{2}, {T}, Sacrifice ~: Draw a card.",
+"norm": "{c}, {c}, sacrifice ~: draw a card.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:2",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Night Scythe",
+"line": 1,
+"text": "Invasion Beams \u2014 When ~ enters, create a 2/2 black Necron Warrior artifact creature token.",
+"norm": "invasion beams \u2014 when ~ enters, create a N/N black necron warrior artifact creature token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:black",
+"token_pt:2/2",
+"token_cardtype:artifact",
+"token_type:necron_warrior"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Plundering Barbarian",
+"line": 1,
+"text": "When ~ enters, choose one \u2014",
+"norm": "when ~ enters, choose one \u2014",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"modal:1_of_2",
+"target_count:one",
+"target_type:artifact",
+"remove:destroy",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Plundering Barbarian",
+"line": 2,
+"text": "\u2022 Smash the Chest \u2014 Destroy target artifact.",
+"norm": "\u2022 smash the chest \u2014 destroy target artifact.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"modal:1_of_2",
+"target_count:one",
+"target_type:artifact",
+"remove:destroy",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Plundering Barbarian",
+"line": 3,
+"text": "\u2022 Pry It Open \u2014 Create a Treasure token.",
+"norm": "\u2022 pry it open \u2014 create a treasure token.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"modal:1_of_2",
+"target_count:one",
+"target_type:artifact",
+"remove:destroy",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Shiny Impetus",
+"line": 1,
+"text": "Enchanted creature gets +2/+2 and is goaded.",
+"norm": "enchanted creature gets +N/+N and is goaded.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"duration:static",
+"pump_amount:+2/+2",
+"affected_type:creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Shiny Impetus",
+"line": 2,
+"text": "Whenever enchanted creature attacks, you create a Treasure token.",
+"norm": "whenever enchanted creature attacks, you create a treasure token.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:attacks",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Vampires' Vengeance",
+"line": 1,
+"text": "~ deals 2 damage to each non-Vampire creature. Create a Blood token.",
+"norm": "~ deals N damage to each non-vampire creature. create a blood token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:all",
+"target_type:creature",
+"target_filter:nonvampire",
+"damage",
+"damage_amount:2",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:blood_draw"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Wheel of Misfortune",
+"line": 1,
+"text": "Each player secretly chooses a number 0 or greater, then all players reveal those numbers simultaneously and determine the highest and lowest numbers revealed this way. ~ deals damage equal to the highest number to each player who chose that number. Each player who didn't choose the lowest number discards their hand, then draws seven cards.",
+"norm": "each player secretly chooses a number N or greater, then all players reveal those numbers simultaneously and determine the highest and lowest numbers revealed this way. ~ deals damage equal to the highest number to each player who chose that number. each player who didn't choose the lowest number discards their hand, then draws seven cards.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_scope:each_player"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Anger",
+"line": 1,
+"text": "As long as ~ is in your graveyard and you control a Mountain, creatures you control have haste.",
+"norm": "as long as ~ is in your graveyard and you control a mountain, creatures you control have haste.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"grant_kw:haste",
+"duration:static",
+"affected_type:creature",
+"affected_scope:you_control",
+"condition:mountain_you_control",
+"haste"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Foray of Orcs",
+"line": 1,
+"text": "Amass Orcs 2. When you do, ~ deals X damage to target creature an opponent controls, where X is the amassed Army's power.",
+"norm": "amass orcs N. when you do, ~ deals x damage to target creature an opponent controls, where x is the amassed army's power.",
+"group": null,
+"aligned": false,
+"tags": [
+"target_count:one",
+"target_type:creature",
+"target_scope:opp_control",
+"damage",
+"damage_amount:x",
+"x_is:triggerremembered_cardpower"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Goblin Wizardry",
+"line": 1,
+"text": "Create two 1/1 red Goblin Wizard creature tokens with prowess.",
+"norm": "create two N/N red goblin wizard creature tokens with prowess.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"token_count:2",
+"token_color:red",
+"token_pt:1/1",
+"token_type:goblin_wizard_prowess"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Heart-Piercer Manticore",
+"line": 1,
+"text": "When ~ enters, you may sacrifice another creature. When you do, ~ deals damage equal to that creature's power to any target.",
+"norm": "when ~ enters, you may sacrifice another creature. when you do, ~ deals damage equal to that creature's power to any target.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"trigger:etb",
+"trigger_scope:self",
+"cost:sacrifice",
+"cost_sacrifice_target:creature",
+"target_count:one",
+"target_type:any",
+"damage"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Kinetic Augur",
+"line": 1,
+"text": "~'s power is equal to the number of instant and sorcery cards in your graveyard.",
+"norm": "~'s power is equal to the number of instant and sorcery cards in your graveyard.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"optional",
+"trigger_scope:self",
+"discard_count:2",
+"draw_count:x",
+"x_is:remembered_amount"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Kinetic Augur",
+"line": 2,
+"text": "When ~ enters, discard up to two cards, then draw that many cards.",
+"norm": "when ~ enters, discard up to two cards, then draw that many cards.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"optional",
+"trigger_scope:self",
+"discard_count:2",
+"draw_count:x",
+"x_is:remembered_amount"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Pirate's Pillage",
+"line": 1,
+"text": "As an additional cost to cast this spell, discard a card.",
+"norm": "as an additional cost to cast this spell, discard a card.",
+"group": "c0",
+"aligned": true,
+"tags": [
+"additional_cost"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Pirate's Pillage",
+"line": 2,
+"text": "Draw two cards and create two Treasure tokens.",
+"norm": "draw two cards and create two treasure tokens.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:discard",
+"cost_mana:3r",
+"draw_count:2",
+"token_count:2",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Starforged Sword",
+"line": 1,
+"text": "Gift a tapped Fish",
+"norm": "gift a tapped fish",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:creature",
+"target_scope:you_control",
+"duration:static",
+"pump_amount:+3/+3",
+"affected_type:creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Starforged Sword",
+"line": 2,
+"text": "When ~ enters, if the gift was promised, attach ~ to target creature you control.",
+"norm": "when ~ enters, if the gift was promised, attach ~ to target creature you control.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:creature",
+"target_scope:you_control",
+"duration:static",
+"pump_amount:+3/+3",
+"affected_type:creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Starforged Sword",
+"line": 3,
+"text": "Equipped creature gets +3/+3 and loses flying.",
+"norm": "equipped creature gets +N/+N and loses flying.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:creature",
+"target_scope:you_control",
+"duration:static",
+"pump_amount:+3/+3",
+"affected_type:creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Tooth and Claw",
+"line": 1,
+"text": "Sacrifice two creatures: Create a 3/1 red Beast creature token named Carnivore.",
+"norm": "sacrifice two creatures: create a N/N red beast creature token named carnivore.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"cost:sacrifice",
+"cost_sacrifice_target:creature",
+"token_count:1",
+"token_color:colorless",
+"token_color:red"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Bottle-Cap Blast",
+"line": 1,
+"text": "~ deals 5 damage to any target. If excess damage was dealt to a permanent this way, create that many tapped Treasure tokens.",
+"norm": "~ deals N damage to any target. if excess damage was dealt to a permanent this way, create that many tapped treasure tokens.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:any",
+"damage",
+"damage_amount:5",
+"token_count:x",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Inspired Tinkering",
+"line": 1,
+"text": "Exile the top three cards of your library. Until the end of your next turn, you may play those cards.",
+"norm": "exile the top three cards of your library. until the end of your next turn, you may play those cards.",
+"group": null,
+"aligned": false,
+"tags": [
+"look_top:3",
+"take:all",
+"to_zone:exile",
+"impulse_draw",
+"impulse_draw",
+"impulse_draw_count:3",
+"duration:next_turn_end",
+"token_count:3",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Inspired Tinkering",
+"line": 2,
+"text": "Create three Treasure tokens.",
+"norm": "create three treasure tokens.",
+"group": null,
+"aligned": false,
+"tags": [
+"look_top:3",
+"take:all",
+"to_zone:exile",
+"impulse_draw",
+"impulse_draw",
+"impulse_draw_count:3",
+"duration:next_turn_end",
+"token_count:3",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Pinnacle Monk",
+"line": 1,
+"text": "When ~ enters, return target instant or sorcery card from your graveyard to your hand.",
+"norm": "when ~ enters, return target instant or sorcery card from your graveyard to your hand.",
+"group": null,
+"aligned": false,
+"tags": [
+"transform",
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:instant",
+"target_scope:you_control",
+"target_type:sorcery",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Rapacious Dragon",
+"line": 1,
+"text": "When ~ enters, create two Treasure tokens.",
+"norm": "when ~ enters, create two treasure tokens.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:2",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Spawn-Gang Commander",
+"line": 1,
+"text": "When you cast this spell, create three 0/1 colorless Eldrazi Spawn creature tokens with \"Sacrifice this creature: Add {C}.\"",
+"norm": "when you cast this spell, create three N/N colorless eldrazi spawn creature tokens with \"sacrifice this creature: add {c}.\"",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"cost:sacrifice",
+"cost_sacrifice_target:eldrazi",
+"cost_mana:1c",
+"target_count:one",
+"target_type:any",
+"damage",
+"damage_amount:2",
+"trigger:spell_cast",
+"token_count:3",
+"token_color:colorless",
+"token_pt:0/1",
+"token_type:eldrazi_spawn"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Spawn-Gang Commander",
+"line": 2,
+"text": "{1}{C}, Sacrifice an Eldrazi: ~ deals 2 damage to any target.",
+"norm": "{c}{c}, sacrifice an eldrazi: ~ deals N damage to any target.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"cost:sacrifice",
+"cost_sacrifice_target:eldrazi",
+"cost_mana:1c",
+"target_count:one",
+"target_type:any",
+"damage",
+"damage_amount:2",
+"trigger:spell_cast",
+"token_count:3",
+"token_color:colorless",
+"token_pt:0/1",
+"token_type:eldrazi_spawn"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Deathless Behemoth",
+"line": 1,
+"text": "Sacrifice two Eldrazi Scions: Return ~ from your graveyard to your hand. Activate only as a sorcery.",
+"norm": "sacrifice two eldrazi scions: return ~ from your graveyard to your hand. activate only as a sorcery.",
+"group": null,
+"aligned": false,
+"tags": [
+"sacrifice_outlet",
+"cost:sacrifice",
+"cost_sacrifice_target:eldrazi",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Oliphaunt",
+"line": 1,
+"text": "Whenever ~ attacks, another target creature you control gets +2/+0 and gains trample until end of turn.",
+"norm": "whenever ~ attacks, another target creature you control gets +N/+N and gains trample until end of turn.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:attacks",
+"duration:eot",
+"trample",
+"pump_single",
+"target_count:one",
+"target_type:creature",
+"target_scope:you_control",
+"target_filter:other",
+"pump_amount:+2/+0",
+"grant_kw:trample",
+"duration:eot"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Slice and Dice",
+"line": 1,
+"text": "~ deals 4 damage to each creature.",
+"norm": "~ deals N damage to each creature.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:all",
+"target_type:creature",
+"damage",
+"damage_amount:4"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Slice and Dice",
+"line": 2,
+"text": "When you cycle ~, you may have it deal 1 damage to each creature.",
+"norm": "when you cycle ~, you may have it deal N damage to each creature.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"optional",
+"target_count:all",
+"target_type:creature",
+"damage",
+"damage_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Skittering Invasion",
+"line": 1,
+"text": "Create five 0/1 colorless Eldrazi Spawn creature tokens. They have \"Sacrifice this creature: Add {C}.\"",
+"norm": "create five N/N colorless eldrazi spawn creature tokens. they have \"sacrifice this creature: add {c}.\"",
+"group": "c1",
+"aligned": true,
+"tags": [
+"token_count:5",
+"token_color:colorless",
+"token_pt:0/1",
+"token_type:eldrazi_spawn"
+],
+"acc": 0.845,
 "reads": 3
 },
 {
@@ -4437,224 +9356,6 @@
 ],
 "acc": 1.0,
 "reads": 3
-},
-{
-"card": "Myriad Landscape",
-"line": 1,
-"text": "{T}: Add {C}.",
-"norm": "{c}: add {c}.",
-"group": null,
-"aligned": false,
-"tags": [
-"enters_tapped",
-"cost:tap",
-"mana_source",
-"mana:colorless",
-"mana_amount:1",
-"cost:tap",
-"cost:sacrifice",
-"cost_sacrifice_target:self",
-"cost_mana:2",
-"tutor",
-"tutor_count:up_to_2",
-"tutor_target:basic_land",
-"tutor_dest:battlefield_tapped",
-"shuffle",
-"put_onto_battlefield",
-"from_zone:library",
-"put_tapped",
-"controller:you"
-],
-"acc": 0.941,
-"reads": 3
-},
-{
-"card": "Myriad Landscape",
-"line": 2,
-"text": "{2}, {T}, Sacrifice ~: Search your library for up to two basic land cards that share a land type, put them onto the battlefield tapped, then shuffle.",
-"norm": "{c}, {c}, sacrifice ~: search your library for up to two basic land cards that share a land type, put them onto the battlefield tapped, then shuffle.",
-"group": null,
-"aligned": false,
-"tags": [
-"enters_tapped",
-"cost:tap",
-"mana_source",
-"mana:colorless",
-"mana_amount:1",
-"cost:tap",
-"cost:sacrifice",
-"cost_sacrifice_target:self",
-"cost_mana:2",
-"tutor",
-"tutor_count:up_to_2",
-"tutor_target:basic_land",
-"tutor_dest:battlefield_tapped",
-"shuffle",
-"put_onto_battlefield",
-"from_zone:library",
-"put_tapped",
-"controller:you"
-],
-"acc": 0.941,
-"reads": 3
-},
-{
-"card": "Temple of the False God",
-"line": 1,
-"text": "{T}: Add {C}{C}. Activate only if you control five or more lands.",
-"norm": "{c}: add {c}{c}. activate only if you control five or more lands.",
-"group": null,
-"aligned": false,
-"tags": [
-"enters_untapped",
-"cost:tap",
-"mana_source",
-"mana:colorless",
-"mana_amount:2",
-"activation_restriction",
-"mana_conditional",
-"condition:at_least_5_land_you_control"
-],
-"acc": 1.0,
-"reads": 3
-},
-{
-"card": "Rogue's Passage",
-"line": 1,
-"text": "{T}: Add {C}.",
-"norm": "{c}: add {c}.",
-"group": null,
-"aligned": false,
-"tags": [
-"enters_untapped",
-"cost:tap",
-"mana_source",
-"mana:colorless",
-"mana_amount:1",
-"cost:tap",
-"cost_mana:4",
-"target_count:one",
-"target_type:creature"
-],
-"acc": 0.664,
-"reads": 3
-},
-{
-"card": "Rogue's Passage",
-"line": 2,
-"text": "{4}, {T}: Target creature can't be blocked this turn.",
-"norm": "{c}, {c}: target creature can't be blocked this turn.",
-"group": null,
-"aligned": false,
-"tags": [
-"enters_untapped",
-"cost:tap",
-"mana_source",
-"mana:colorless",
-"mana_amount:1",
-"cost:tap",
-"cost_mana:4",
-"target_count:one",
-"target_type:creature"
-],
-"acc": 0.664,
-"reads": 3
-},
-{
-"card": "Reliquary Tower",
-"line": 1,
-"text": "You have no maximum hand size.",
-"norm": "you have no maximum hand size.",
-"group": null,
-"aligned": false,
-"tags": [
-"enters_untapped",
-"affected_type:you",
-"cost:tap",
-"mana_source",
-"mana:colorless",
-"mana_amount:1"
-],
-"acc": 0.648,
-"reads": 6
-},
-{
-"card": "Reliquary Tower",
-"line": 2,
-"text": "{T}: Add {C}.",
-"norm": "{c}: add {c}.",
-"group": null,
-"aligned": false,
-"tags": [
-"enters_untapped",
-"affected_type:you",
-"cost:tap",
-"mana_source",
-"mana:colorless",
-"mana_amount:1"
-],
-"acc": 0.648,
-"reads": 6
-},
-{
-"card": "Blighted Woodland",
-"line": 1,
-"text": "{T}: Add {C}.",
-"norm": "{c}: add {c}.",
-"group": null,
-"aligned": false,
-"tags": [
-"enters_untapped",
-"cost:tap",
-"mana_source",
-"mana:colorless",
-"mana_amount:1",
-"cost:tap",
-"cost:sacrifice",
-"cost_sacrifice_target:self",
-"cost_mana:3g",
-"tutor",
-"tutor_count:up_to_2",
-"tutor_target:basic_land",
-"tutor_dest:battlefield_tapped",
-"shuffle",
-"put_onto_battlefield",
-"from_zone:library",
-"put_tapped",
-"controller:you"
-],
-"acc": 1.0,
-"reads": 4
-},
-{
-"card": "Blighted Woodland",
-"line": 2,
-"text": "{3}{G}, {T}, Sacrifice ~: Search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
-"norm": "{c}{c}, {c}, sacrifice ~: search your library for up to two basic land cards, put them onto the battlefield tapped, then shuffle.",
-"group": null,
-"aligned": false,
-"tags": [
-"enters_untapped",
-"cost:tap",
-"mana_source",
-"mana:colorless",
-"mana_amount:1",
-"cost:tap",
-"cost:sacrifice",
-"cost_sacrifice_target:self",
-"cost_mana:3g",
-"tutor",
-"tutor_count:up_to_2",
-"tutor_target:basic_land",
-"tutor_dest:battlefield_tapped",
-"shuffle",
-"put_onto_battlefield",
-"from_zone:library",
-"put_tapped",
-"controller:you"
-],
-"acc": 1.0,
-"reads": 4
 },
 {
 "card": "Essence Flux",
@@ -4739,22 +9440,6 @@
 "reads": 3
 },
 {
-"card": "Sol Ring",
-"line": 1,
-"text": "{T}: Add {C}{C}.",
-"norm": "{c}: add {c}{c}.",
-"group": "c1",
-"aligned": true,
-"tags": [
-"cost:tap",
-"mana_source",
-"mana:colorless",
-"mana_amount:2"
-],
-"acc": 1.0,
-"reads": 6
-},
-{
 "card": "Dramatic Reversal",
 "line": 1,
 "text": "Untap all nonland permanents you control.",
@@ -4769,23 +9454,6 @@
 ],
 "acc": 0.815,
 "reads": 3
-},
-{
-"card": "Arcane Signet",
-"line": 1,
-"text": "{T}: Add one mana of any color in your commander's color identity.",
-"norm": "{c}: add one mana of any color in your commander's color identity.",
-"group": "c1",
-"aligned": true,
-"tags": [
-"cost:tap",
-"mana_source",
-"mana:commander_identity",
-"mana_choice",
-"mana_amount:1"
-],
-"acc": 1.0,
-"reads": 7
 },
 {
 "card": "Brotherhood Regalia",
@@ -4897,19 +9565,6 @@
 "reads": 3
 },
 {
-"card": "Mask of Memory",
-"line": 1,
-"text": "Whenever equipped creature deals combat damage to a player, you may draw two cards. If you do, discard a card.",
-"norm": "whenever equipped creature deals combat damage to a player, you may draw two cards. if you do, discard a card.",
-"group": null,
-"aligned": false,
-"tags": [
-"discard_count:1"
-],
-"acc": 0.885,
-"reads": 3
-},
-{
 "card": "Merfolk Trickster",
 "line": 1,
 "text": "When ~ enters, tap target creature an opponent controls. It loses all abilities until end of turn.",
@@ -5000,21 +9655,6 @@
 ],
 "acc": 0.997,
 "reads": 7
-},
-{
-"card": "Trailblazer's Boots",
-"line": 1,
-"text": "Equipped creature has nonbasic landwalk.",
-"norm": "equipped creature has nonbasic landwalk.",
-"group": "c1",
-"aligned": true,
-"tags": [
-"grant_kw:landwalk",
-"duration:static",
-"affected_type:creature"
-],
-"acc": 0.781,
-"reads": 3
 },
 {
 "card": "Vodalian Arcanist",
@@ -5140,38 +9780,6 @@
 "reads": 3
 },
 {
-"card": "Commander's Sphere",
-"line": 1,
-"text": "{T}: Add one mana of any color in your commander's color identity.",
-"norm": "{c}: add one mana of any color in your commander's color identity.",
-"group": "c1",
-"aligned": true,
-"tags": [
-"cost:tap",
-"mana_source",
-"mana:commander_identity",
-"mana_choice",
-"mana_amount:1"
-],
-"acc": 1.0,
-"reads": 3
-},
-{
-"card": "Commander's Sphere",
-"line": 2,
-"text": "Sacrifice ~: Draw a card.",
-"norm": "sacrifice ~: draw a card.",
-"group": "c2",
-"aligned": true,
-"tags": [
-"cost:sacrifice",
-"cost_sacrifice_target:self",
-"draw_count:1"
-],
-"acc": 1.0,
-"reads": 3
-},
-{
 "card": "Expel from Orazca",
 "line": 1,
 "text": "Return target nonland permanent to its owner's hand. If you have the city's blessing, you may put that permanent on top of its owner's library instead.",
@@ -5256,55 +9864,6 @@
 "reads": 6
 },
 {
-"card": "Herald's Horn",
-"line": 1,
-"text": "As ~ enters, choose a creature type.",
-"norm": "as ~ enters, choose a creature type.",
-"group": "c0",
-"aligned": true,
-"tags": [
-"choose_on_enter:creature_type",
-"trigger:etb"
-],
-"acc": 0.982,
-"reads": 6
-},
-{
-"card": "Herald's Horn",
-"line": 2,
-"text": "Creature spells you cast of the chosen type cost {1} less to cast.",
-"norm": "creature spells you cast of the chosen type cost {c} less to cast.",
-"group": "c1",
-"aligned": true,
-"tags": [
-"cost_reduce",
-"duration:static",
-"cost_reduce_amount:1",
-"cost_reduce_for:chosen_type",
-"cost_reduce_mana:generic",
-"cost_reduce_for:creature"
-],
-"acc": 0.982,
-"reads": 6
-},
-{
-"card": "Herald's Horn",
-"line": 3,
-"text": "At the beginning of your upkeep, look at the top card of your library. If it's a creature card of the chosen type, you may reveal it and put it into your hand.",
-"norm": "at the beginning of your upkeep, look at the top card of your library. if it's a creature card of the chosen type, you may reveal it and put it into your hand.",
-"group": "c2",
-"aligned": true,
-"tags": [
-"trigger:upkeep",
-"look_top:1",
-"reveal",
-"take:may_1_chosen_type",
-"to_zone:hand"
-],
-"acc": 0.982,
-"reads": 6
-},
-{
 "card": "Laboratory Maniac",
 "line": 1,
 "text": "If you would draw a card while your library has no cards in it, you win the game instead.",
@@ -5316,45 +9875,6 @@
 "condition:no_card_you_own_in_library"
 ],
 "acc": 0.98,
-"reads": 3
-},
-{
-"card": "Nuka-Cola Vending Machine",
-"line": 1,
-"text": "{1}, {T}: Create a Food token.",
-"norm": "{c}, {c}: create a food token.",
-"group": "c1",
-"aligned": true,
-"tags": [
-"cost:tap",
-"cost_mana:1",
-"token_count:1",
-"token_color:colorless",
-"token_cardtype:artifact",
-"token_type:food",
-"token_ability:pay_2_tap_sacrifice_gain_3_life",
-"lifegain"
-],
-"acc": 0.825,
-"reads": 3
-},
-{
-"card": "Nuka-Cola Vending Machine",
-"line": 2,
-"text": "Whenever you sacrifice a Food, create a tapped Treasure token.",
-"norm": "whenever you sacrifice a food, create a tapped treasure token.",
-"group": "c2",
-"aligned": true,
-"tags": [
-"trigger_filter:you_control",
-"token_count:1",
-"token_color:colorless",
-"token_cardtype:artifact",
-"token_type:treasure",
-"token_ability:tap_sacrifice_add_mana_any_color",
-"mana_source"
-],
-"acc": 0.825,
 "reads": 3
 },
 {
@@ -5408,23 +9928,6 @@
 "reads": 3
 },
 {
-"card": "Zuran Spellcaster",
-"line": 1,
-"text": "{T}: ~ deals 1 damage to any target.",
-"norm": "{c}: ~ deals N damage to any target.",
-"group": "c1",
-"aligned": true,
-"tags": [
-"cost:tap",
-"target_count:one",
-"target_type:any",
-"damage",
-"damage_amount:1"
-],
-"acc": 1.0,
-"reads": 3
-},
-{
 "card": "Control Magic",
 "line": 1,
 "text": "You control enchanted creature.",
@@ -5436,23 +9939,6 @@
 "steal"
 ],
 "acc": 1.0,
-"reads": 3
-},
-{
-"card": "Etched Oracle",
-"line": 1,
-"text": "{1}, Remove four +1/+1 counters from ~: Target player draws three cards.",
-"norm": "{c}, remove four +N/+N counters from ~: target player draws three cards.",
-"group": "c1",
-"aligned": true,
-"tags": [
-"cost:remove_counters",
-"cost_mana:1",
-"target_count:one",
-"target_type:player",
-"draw_count:3"
-],
-"acc": 0.738,
 "reads": 3
 },
 {
@@ -5774,46 +10260,6 @@
 "reads": 3
 },
 {
-"card": "Hakim, Loreweaver",
-"line": 1,
-"text": "{U}{U}: Return target Aura card from your graveyard to the battlefield attached to ~. Activate only during your upkeep and only if ~ isn't enchanted.",
-"norm": "{c}{c}: return target aura card from your graveyard to the battlefield attached to ~. activate only during your upkeep and only if ~ isn't enchanted.",
-"group": "c1",
-"aligned": true,
-"tags": [
-"cost_mana:uu",
-"target_count:one",
-"target_type:aura",
-"target_scope:you_control",
-"target_zone:graveyard",
-"activation_restriction",
-"put_onto_battlefield",
-"from_zone:graveyard",
-"controller:you"
-],
-"acc": 0.877,
-"reads": 3
-},
-{
-"card": "Hakim, Loreweaver",
-"line": 2,
-"text": "{U}{U}, {T}: Destroy all Auras attached to ~.",
-"norm": "{c}{c}, {c}: destroy all auras attached to ~.",
-"group": "c2",
-"aligned": true,
-"tags": [
-"cost:tap",
-"cost_mana:uu",
-"target_count:all",
-"target_type:card",
-"target_filter:aura",
-"target_filter:attachedto_card_self",
-"remove:destroy"
-],
-"acc": 0.877,
-"reads": 3
-},
-{
 "card": "Filter Out",
 "line": 1,
 "text": "Return all noncreature, nonland permanents to their owners' hands.",
@@ -5938,22 +10384,6 @@
 "remove:bounce"
 ],
 "acc": 0.816,
-"reads": 3
-},
-{
-"card": "Skittering Invasion",
-"line": 1,
-"text": "Create five 0/1 colorless Eldrazi Spawn creature tokens. They have \"Sacrifice this creature: Add {C}.\"",
-"norm": "create five N/N colorless eldrazi spawn creature tokens. they have \"sacrifice this creature: add {c}.\"",
-"group": "c1",
-"aligned": true,
-"tags": [
-"token_count:5",
-"token_color:colorless",
-"token_pt:0/1",
-"token_type:eldrazi_spawn"
-],
-"acc": 0.845,
 "reads": 3
 },
 {
@@ -6151,37 +10581,1028 @@
 "reads": 3
 },
 {
-"card": "Gadwick, the Wizened",
+"card": "Hermes, Overseer of Elpis",
 "line": 1,
-"text": "When ~ enters, draw X cards.",
-"norm": "when ~ enters, draw x cards.",
+"text": "Whenever you cast a noncreature spell, create a 1/1 blue Bird creature token with flying and vigilance.",
+"norm": "whenever you cast a noncreature spell, create a N/N blue bird creature token with flying and vigilance.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:spell_cast",
+"trigger_filter:noncreature",
+"token_count:1",
+"token_color:blue",
+"token_pt:1/1",
+"token_kw:flying",
+"token_kw:vigilance",
+"token_type:bird"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Hermes, Overseer of Elpis",
+"line": 2,
+"text": "Whenever you attack with one or more Birds, scry 2.",
+"norm": "whenever you attack with one or more birds, scry N.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:attacks",
+"scry_count:2"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Combat Research",
+"line": 1,
+"text": "Enchanted creature has \"Whenever this creature deals combat damage to a player, draw a card.\"",
+"norm": "enchanted creature has \"whenever this creature deals combat damage to a player, draw a card.\"",
+"group": "c1",
+"aligned": true,
+"tags": [
+"affected_type:creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Combat Research",
+"line": 2,
+"text": "As long as enchanted creature is legendary, it gets +1/+1 and has ward {1}.",
+"norm": "as long as enchanted creature is legendary, it gets +N/+N and has ward {c}.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"duration:static",
+"pump_amount:+1/+1",
+"grant_kw:ward",
+"affected_type:creature",
+"affected_filter:legendary"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Curiosity",
+"line": 1,
+"text": "Whenever enchanted creature deals damage to an opponent, you may draw a card.",
+"norm": "whenever enchanted creature deals damage to an opponent, you may draw a card.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"optional",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Gran-Gran",
+"line": 1,
+"text": "Whenever ~ becomes tapped, draw a card, then discard a card.",
+"norm": "whenever ~ becomes tapped, draw a card, then discard a card.",
+"group": null,
+"aligned": false,
+"tags": [
+"draw_count:1",
+"discard_count:1",
+"cost_reduce",
+"duration:static",
+"cost_reduce_amount:1",
+"cost_reduce_mana:generic",
+"cost_reduce_for:creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Gran-Gran",
+"line": 2,
+"text": "Noncreature spells you cast cost {1} less to cast as long as there are three or more Lesson cards in your graveyard.",
+"norm": "noncreature spells you cast cost {c} less to cast as long as there are three or more lesson cards in your graveyard.",
+"group": null,
+"aligned": false,
+"tags": [
+"draw_count:1",
+"discard_count:1",
+"cost_reduce",
+"duration:static",
+"cost_reduce_amount:1",
+"cost_reduce_mana:generic",
+"cost_reduce_for:creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Survivor's Med Kit",
+"line": 1,
+"text": "{1}, {T}: Choose one that hasn't been chosen \u2014",
+"norm": "{c}, {c}: choose one that hasn't been chosen \u2014",
+"group": null,
+"aligned": false,
+"tags": [
+"cost:tap",
+"cost_mana:1",
+"modal:1_of_3",
+"draw_count:1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"target_count:one",
+"target_type:player",
+"effect:sacrifice"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Survivor's Med Kit",
+"line": 2,
+"text": "\u2022 Stimpak \u2014 Draw a card.",
+"norm": "\u2022 stimpak \u2014 draw a card.",
+"group": null,
+"aligned": false,
+"tags": [
+"cost:tap",
+"cost_mana:1",
+"modal:1_of_3",
+"draw_count:1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"target_count:one",
+"target_type:player",
+"effect:sacrifice"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Survivor's Med Kit",
+"line": 3,
+"text": "\u2022 Fancy Lads Snack Cakes \u2014 Create a Food token.",
+"norm": "\u2022 fancy lads snack cakes \u2014 create a food token.",
+"group": null,
+"aligned": false,
+"tags": [
+"cost:tap",
+"cost_mana:1",
+"modal:1_of_3",
+"draw_count:1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"target_count:one",
+"target_type:player",
+"effect:sacrifice"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Survivor's Med Kit",
+"line": 4,
+"text": "\u2022 RadAway \u2014 Target player loses all rad counters. Sacrifice ~.",
+"norm": "\u2022 radaway \u2014 target player loses all rad counters. sacrifice ~.",
+"group": null,
+"aligned": false,
+"tags": [
+"cost:tap",
+"cost_mana:1",
+"modal:1_of_3",
+"draw_count:1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"target_count:one",
+"target_type:player",
+"effect:sacrifice"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Bill Ferny, Bree Swindler",
+"line": 1,
+"text": "Whenever ~ becomes blocked, choose one \u2014",
+"norm": "whenever ~ becomes blocked, choose one \u2014",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:attackerblocked",
+"modal:1_of_2",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source",
+"target_count:one",
+"target_type:opponent",
+"target_count:one",
+"target_type:horse",
+"target_scope:you_control",
+"steal",
+"token_count:3",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Bill Ferny, Bree Swindler",
+"line": 2,
+"text": "\u2022 Create a Treasure token.",
+"norm": "\u2022 create a treasure token.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:attackerblocked",
+"modal:1_of_2",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source",
+"target_count:one",
+"target_type:opponent",
+"target_count:one",
+"target_type:horse",
+"target_scope:you_control",
+"steal",
+"token_count:3",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Bill Ferny, Bree Swindler",
+"line": 3,
+"text": "\u2022 Target opponent gains control of target Horse you control. If they do, remove ~ from combat and create three Treasure tokens.",
+"norm": "\u2022 target opponent gains control of target horse you control. if they do, remove ~ from combat and create three treasure tokens.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:attackerblocked",
+"modal:1_of_2",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source",
+"target_count:one",
+"target_type:opponent",
+"target_count:one",
+"target_type:horse",
+"target_scope:you_control",
+"steal",
+"token_count:3",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Cloud of Faeries",
+"line": 1,
+"text": "When ~ enters, untap up to two lands.",
+"norm": "when ~ enters, untap up to two lands.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Gleaming Barrier",
+"line": 1,
+"text": "When ~ dies, create a Treasure token.",
+"norm": "when ~ dies, create a treasure token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:self",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Plumecreed Escort",
+"line": 1,
+"text": "When ~ enters, target creature you control gains hexproof until end of turn.",
+"norm": "when ~ enters, target creature you control gains hexproof until end of turn.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"duration:eot",
+"hexproof",
+"pump_single",
+"trigger_scope:self",
+"target_count:one",
+"target_type:creature",
+"target_scope:you_control",
+"grant_kw:hexproof",
+"duration:eot"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Pollywog Symbiote",
+"line": 1,
+"text": "Each creature spell you cast costs {1} less to cast if it has mutate.",
+"norm": "each creature spell you cast costs {c} less to cast if it has mutate.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost_reduce",
+"duration:static",
+"cost_reduce_amount:1",
+"cost_reduce_mana:generic",
+"cost_reduce_for:creature",
+"cost_reduce_for:mutate"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Pollywog Symbiote",
+"line": 2,
+"text": "Whenever you cast a creature spell, if it has mutate, draw a card, then discard a card.",
+"norm": "whenever you cast a creature spell, if it has mutate, draw a card, then discard a card.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:spell_cast",
+"trigger_filter:creature",
+"draw_count:1",
+"discard_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Riddlesmith",
+"line": 1,
+"text": "Whenever you cast an artifact spell, you may draw a card. If you do, discard a card.",
+"norm": "whenever you cast an artifact spell, you may draw a card. if you do, discard a card.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:spell_cast",
+"trigger_filter:artifact",
+"discard_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Depths of Desire",
+"line": 1,
+"text": "Return target creature to its owner's hand. Create a Treasure token.",
+"norm": "return target creature to its owner's hand. create a treasure token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:creature",
+"remove:bounce",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Gomazoa",
+"line": 1,
+"text": "{T}: Put ~ and each creature it's blocking on top of their owners' libraries, then those players shuffle.",
+"norm": "{c}: put ~ and each creature it's blocking on top of their owners' libraries, then those players shuffle.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"target_count:all",
+"target_type:card",
+"target_filter:self",
+"target_type:creature",
+"remove:tuck",
+"shuffle"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Hornswoggle",
+"line": 1,
+"text": "Counter target creature spell. You create a Treasure token.",
+"norm": "counter target creature spell. you create a treasure token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:creature",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Hydroelectric Specimen",
+"line": 1,
+"text": "When ~ enters, you may change a target of target instant or sorcery spell with a single target to ~.",
+"norm": "when ~ enters, you may change a target of target instant or sorcery spell with a single target to ~.",
+"group": null,
+"aligned": false,
+"tags": [
+"transform",
+"trigger:etb",
+"optional",
+"trigger_scope:self",
+"target_count:one",
+"target_type:card"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Of One Mind",
+"line": 1,
+"text": "This spell costs {2} less to cast if you control a Human creature and a non-Human creature.",
+"norm": "this spell costs {c} less to cast if you control a human creature and a non-human creature.",
+"group": null,
+"aligned": false,
+"tags": [
+"cost_reduce",
+"duration:static",
+"cost_reduce_amount:2",
+"cost_reduce_mana:generic",
+"draw_count:2"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Opaline Unicorn",
+"line": 1,
+"text": "{T}: Add one mana of any color.",
+"norm": "{c}: add one mana of any color.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"mana_source",
+"mana:any",
+"mana_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Pearl of Wisdom",
+"line": 1,
+"text": "This spell costs {1} less to cast if you control an Otter.",
+"norm": "this spell costs {c} less to cast if you control an otter.",
+"group": null,
+"aligned": false,
+"tags": [
+"cost_reduce",
+"duration:static",
+"cost_reduce_amount:1",
+"cost_reduce_mana:generic",
+"draw_count:2"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Prosperous Thief",
+"line": 1,
+"text": "Whenever one or more Ninja or Rogue creatures you control deal combat damage to a player, create a Treasure token.",
+"norm": "whenever one or more ninja or rogue creatures you control deal combat damage to a player, create a treasure token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger_filter:one_or_more",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Rousing Read",
+"line": 1,
+"text": "When ~ enters, draw two cards, then discard a card.",
+"norm": "when ~ enters, draw two cards, then discard a card.",
 "group": "c1",
 "aligned": true,
 "tags": [
 "trigger:etb",
 "trigger_scope:self",
-"draw_count:x",
-"x_is:x_paid"
+"draw_count:2",
+"discard_count:1"
 ],
-"acc": 0.941,
-"reads": 6
+"acc": null,
+"reads": 0
 },
 {
-"card": "Gadwick, the Wizened",
+"card": "Rousing Read",
 "line": 2,
-"text": "Whenever you cast a blue spell, tap target nonland permanent an opponent controls.",
-"norm": "whenever you cast a blue spell, tap target nonland permanent an opponent controls.",
+"text": "Enchanted creature gets +1/+1 and has flying.",
+"norm": "enchanted creature gets +N/+N and has flying.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"duration:static",
+"pump_amount:+1/+1",
+"grant_kw:flying",
+"affected_type:creature",
+"flying"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Skyscanner",
+"line": 1,
+"text": "When ~ enters, draw a card.",
+"norm": "when ~ enters, draw a card.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Stern Lesson",
+"line": 1,
+"text": "Draw two cards, then discard a card. Create a tapped Powerstone token.",
+"norm": "draw two cards, then discard a card. create a tapped powerstone token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"draw_count:2",
+"discard_count:1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:powerstone"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Urza, Powerstone Prodigy",
+"line": 1,
+"text": "{1}, {T}: Draw a card, then discard a card.",
+"norm": "{c}, {c}: draw a card, then discard a card.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost_mana:1",
+"draw_count:1",
+"discard_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Urza, Powerstone Prodigy",
+"line": 2,
+"text": "Whenever you discard one or more artifact cards, create a tapped Powerstone token. This ability triggers only once each turn.",
+"norm": "whenever you discard one or more artifact cards, create a tapped powerstone token. this ability triggers only once each turn.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"limit:once_per_turn",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:powerstone"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Eject",
+"line": 1,
+"text": "This spell can't be countered.",
+"norm": "this spell can't be countered.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cant_be_countered"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Eject",
+"line": 2,
+"text": "Return target nonland permanent to its owner's hand.",
+"norm": "return target nonland permanent to its owner's hand.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:permanent",
+"target_filter:nonland",
+"remove:bounce",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Gust of Wind",
+"line": 1,
+"text": "This spell costs {2} less to cast if you control a creature with flying.",
+"norm": "this spell costs {c} less to cast if you control a creature with flying.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost_reduce",
+"duration:static",
+"cost_reduce_amount:2",
+"cost_reduce_mana:generic"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Gust of Wind",
+"line": 2,
+"text": "Return target nonland permanent you don't control to its owner's hand.",
+"norm": "return target nonland permanent you don't control to its owner's hand.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:permanent",
+"target_filter:nonland",
+"target_scope:opp_control",
+"remove:bounce",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Jhoira's Familiar",
+"line": 1,
+"text": "Historic spells you cast cost {1} less to cast.",
+"norm": "historic spells you cast cost {c} less to cast.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost_reduce",
+"duration:static",
+"cost_reduce_amount:1",
+"cost_reduce_mana:generic",
+"cost_reduce_for:historic"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Pirate's Prize",
+"line": 1,
+"text": "Draw two cards. Create a Treasure token.",
+"norm": "draw two cards. create a treasure token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"draw_count:2",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Plan for All Outcomes",
+"line": 1,
+"text": "When this enchantment enters, the owner of up to one other target nonland permanent puts it on their choice of the top or bottom of their library.",
+"norm": "when this enchantment enters, the owner of up to one other target nonland permanent puts it on their choice of the top or bottom of their library.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:permanent",
+"target_filter:other",
+"target_filter:nonland",
+"remove:tuck"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Plan for All Outcomes",
+"line": 2,
+"text": "Whenever you cast your first noncreature spell each turn, empower Jace 1.",
+"norm": "whenever you cast your first noncreature spell each turn, empower jace N.",
 "group": "c2",
 "aligned": true,
 "tags": [
 "trigger:spell_cast",
+"trigger_filter:noncreature",
+"trigger_filter:nth_spell_1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Scattering Stroke",
+"line": 1,
+"text": "Counter target spell. Clash with an opponent. If you win, at the beginning of your next main phase, you may add an amount of {C} equal to that spell's mana value.",
+"norm": "counter target spell. clash with an opponent. if you win, at the beginning of your next main phase, you may add an amount of {c} equal to that spell's mana value.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:card",
+"optional"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Turn into a Pumpkin",
+"line": 1,
+"text": "Return target nonland permanent to its owner's hand. Draw a card.",
+"norm": "return target nonland permanent to its owner's hand. draw a card.",
+"group": "c0",
+"aligned": true,
+"tags": [
+"condition:adamant"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Turn into a Pumpkin",
+"line": 2,
+"text": "Adamant \u2014 If at least three blue mana was spent to cast this spell, create a Food token.",
+"norm": "adamant \u2014 if at least three blue mana was spent to cast this spell, create a food token.",
+"group": "c1",
+"aligned": true,
+"tags": [
 "target_count:one",
 "target_type:permanent",
-"target_scope:opp_control",
-"target_filter:nonland"
+"target_filter:nonland",
+"remove:bounce",
+"draw_count:1",
+"token_count:x",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"x_is:adamant_blue_1_0"
 ],
-"acc": 0.941,
-"reads": 6
+"acc": null,
+"reads": 0
+},
+{
+"card": "Whirler Rogue",
+"line": 1,
+"text": "When ~ enters, create two 1/1 colorless Thopter artifact creature tokens with flying.",
+"norm": "when ~ enters, create two N/N colorless thopter artifact creature tokens with flying.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:2",
+"token_color:colorless",
+"token_pt:1/1",
+"token_cardtype:artifact",
+"token_kw:flying",
+"token_type:thopter"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Whirler Rogue",
+"line": 2,
+"text": "Tap two untapped artifacts you control: Target creature can't be blocked this turn.",
+"norm": "tap two untapped artifacts you control: target creature can't be blocked this turn.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Mnemonic Wall",
+"line": 1,
+"text": "When ~ enters, you may return target instant or sorcery card from your graveyard to your hand.",
+"norm": "when ~ enters, you may return target instant or sorcery card from your graveyard to your hand.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"optional",
+"trigger_scope:self",
+"target_count:one",
+"target_type:instant",
+"target_scope:you_control",
+"target_type:sorcery",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Prosperous Pirates",
+"line": 1,
+"text": "When ~ enters, create two Treasure tokens.",
+"norm": "when ~ enters, create two treasure tokens.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:2",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:treasure",
+"token_ability:tap_sacrifice_add_mana_any_color",
+"mana_source"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Seascape Aerialist",
+"line": 1,
+"text": "Whenever ~ or another Ally you control enters, you may have Ally creatures you control gain flying until end of turn.",
+"norm": "whenever ~ or another ally you control enters, you may have ally creatures you control gain flying until end of turn.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"duration:eot",
+"flying",
+"optional",
+"trigger_scope:any",
+"trigger_filter:you_control",
+"target_count:all",
+"target_type:ally",
+"target_scope:you_control",
+"duration:eot",
+"grant_kw:flying"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Shipwreck Dowser",
+"line": 1,
+"text": "When ~ enters, return target instant or sorcery card from your graveyard to your hand.",
+"norm": "when ~ enters, return target instant or sorcery card from your graveyard to your hand.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:instant",
+"target_scope:you_control",
+"target_type:sorcery",
+"target_zone:graveyard",
+"return",
+"from_zone:graveyard",
+"to_zone:hand"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Daring Waverider",
+"line": 1,
+"text": "When ~ enters, you may cast target instant or sorcery card with mana value 4 or less from your graveyard without paying its mana cost. If that spell would be put into your graveyard this turn, exile it instead.",
+"norm": "when ~ enters, you may cast target instant or sorcery card with mana value N or less from your graveyard without paying its mana cost. if that spell would be put into your graveyard this turn, exile it instead.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"optional",
+"trigger_scope:self",
+"target_count:one",
+"target_type:instant",
+"target_scope:you_control",
+"target_type:sorcery",
+"cast_free"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Sire of the Storm",
+"line": 1,
+"text": "Whenever you cast a Spirit or Arcane spell, you may draw a card.",
+"norm": "whenever you cast a spirit or arcane spell, you may draw a card.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:spell_cast",
+"optional",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Star Whale",
+"line": 1,
+"text": "Other creatures you control have ward {2}.",
+"norm": "other creatures you control have ward {c}.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"grant_kw:ward",
+"duration:static",
+"affected_type:creature",
+"affected_filter:other",
+"affected_scope:you_control"
+],
+"acc": null,
+"reads": 0
 },
 {
 "card": "Haliya, Guided by Light",
@@ -7354,23 +12775,1191 @@
 "reads": 3
 },
 {
-"card": "Syr Alin, the Lion's Claw",
+"card": "Adeline, Resplendent Cathar",
 "line": 1,
-"text": "Whenever ~ attacks, other creatures you control get +1/+1 until end of turn.",
-"norm": "whenever ~ attacks, other creatures you control get +N/+N until end of turn.",
+"text": "~'s power is equal to the number of creatures you control.",
+"norm": "~'s power is equal to the number of creatures you control.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:attacks",
+"token_count:1",
+"token_color:white",
+"token_pt:1/1",
+"token_type:human"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Adeline, Resplendent Cathar",
+"line": 2,
+"text": "Whenever you attack, for each opponent, create a 1/1 white Human creature token that's tapped and attacking that player or a planeswalker they control.",
+"norm": "whenever you attack, for each opponent, create a N/N white human creature token that's tapped and attacking that player or a planeswalker they control.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:attacks",
+"token_count:1",
+"token_color:white",
+"token_pt:1/1",
+"token_type:human"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Secluded Steppe",
+"line": 1,
+"text": "{T}: Add {W}.",
+"norm": "{c}: add {c}.",
+"group": null,
+"aligned": false,
+"tags": [
+"enters_tapped",
+"cost:tap",
+"mana_source",
+"mana:white",
+"mana_amount:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Cartouche of Solidarity",
+"line": 1,
+"text": "Enchant creature you control",
+"norm": "enchant creature you control",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:white",
+"token_pt:1/1",
+"token_kw:vigilance",
+"token_type:warrior",
+"duration:static",
+"pump_amount:+1/+1",
+"grant_kw:first_strike",
+"affected_type:creature",
+"first_strike"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Cartouche of Solidarity",
+"line": 2,
+"text": "When ~ enters, create a 1/1 white Warrior creature token with vigilance.",
+"norm": "when ~ enters, create a N/N white warrior creature token with vigilance.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:white",
+"token_pt:1/1",
+"token_kw:vigilance",
+"token_type:warrior",
+"duration:static",
+"pump_amount:+1/+1",
+"grant_kw:first_strike",
+"affected_type:creature",
+"first_strike"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Cartouche of Solidarity",
+"line": 3,
+"text": "Enchanted creature gets +1/+1 and has first strike.",
+"norm": "enchanted creature gets +N/+N and has first strike.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:white",
+"token_pt:1/1",
+"token_kw:vigilance",
+"token_type:warrior",
+"duration:static",
+"pump_amount:+1/+1",
+"grant_kw:first_strike",
+"affected_type:creature",
+"first_strike"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Crumb and Get It",
+"line": 1,
+"text": "Target creature you control gets +2/+2 until end of turn. If the gift was promised, that creature also gains indestructible until end of turn.",
+"norm": "target creature you control gets +N/+N until end of turn. if the gift was promised, that creature also gains indestructible until end of turn.",
 "group": "c1",
 "aligned": true,
 "tags": [
-"trigger:attacks",
-"duration:eot",
-"target_count:all",
+"target_count:one",
 "target_type:creature",
-"target_filter:strictlyother",
 "target_scope:you_control",
-"pump_amount:+1/+1",
+"pump_amount:+2/+2",
+"duration:eot",
+"indestructible",
+"grant_kw:indestructible",
 "duration:eot"
 ],
-"acc": 1.0,
-"reads": 3
+"acc": null,
+"reads": 0
+},
+{
+"card": "Momo, Playful Pet",
+"line": 1,
+"text": "When ~ leaves the battlefield, choose one \u2014",
+"norm": "when ~ leaves the battlefield, choose one \u2014",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:leaves",
+"trigger_scope:self",
+"modal:1_of_3",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"target_count:one",
+"target_type:creature",
+"target_scope:you_control",
+"counter:p1p1",
+"scry_count:2"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Momo, Playful Pet",
+"line": 2,
+"text": "\u2022 Create a Food token.",
+"norm": "\u2022 create a food token.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:leaves",
+"trigger_scope:self",
+"modal:1_of_3",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"target_count:one",
+"target_type:creature",
+"target_scope:you_control",
+"counter:p1p1",
+"scry_count:2"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Momo, Playful Pet",
+"line": 3,
+"text": "\u2022 Put a +1/+1 counter on target creature you control.",
+"norm": "\u2022 put a +N/+N counter on target creature you control.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:leaves",
+"trigger_scope:self",
+"modal:1_of_3",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"target_count:one",
+"target_type:creature",
+"target_scope:you_control",
+"counter:p1p1",
+"scry_count:2"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Restoration Magic",
+"line": 1,
+"text": "\u2022 Cure \u2014 {0} \u2014 Target permanent gains hexproof and indestructible until end of turn.",
+"norm": "\u2022 cure \u2014 {c} \u2014 target permanent gains hexproof and indestructible until end of turn.",
+"group": null,
+"aligned": false,
+"tags": [
+"modal:1_of_3",
+"target_count:one",
+"target_type:permanent",
+"grant_kw:hexproof",
+"grant_kw:indestructible",
+"duration:eot",
+"target_count:one",
+"target_type:permanent",
+"grant_kw:hexproof",
+"grant_kw:indestructible",
+"duration:eot",
+"lifegain_amount:3",
+"target_count:all",
+"target_type:permanent",
+"target_scope:you_control",
+"duration:eot",
+"grant_kw:hexproof",
+"grant_kw:indestructible",
+"lifegain_amount:6"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Restoration Magic",
+"line": 2,
+"text": "\u2022 Cura \u2014 {1} \u2014 Target permanent gains hexproof and indestructible until end of turn. You gain 3 life.",
+"norm": "\u2022 cura \u2014 {c} \u2014 target permanent gains hexproof and indestructible until end of turn. you gain N life.",
+"group": null,
+"aligned": false,
+"tags": [
+"modal:1_of_3",
+"target_count:one",
+"target_type:permanent",
+"grant_kw:hexproof",
+"grant_kw:indestructible",
+"duration:eot",
+"target_count:one",
+"target_type:permanent",
+"grant_kw:hexproof",
+"grant_kw:indestructible",
+"duration:eot",
+"lifegain_amount:3",
+"target_count:all",
+"target_type:permanent",
+"target_scope:you_control",
+"duration:eot",
+"grant_kw:hexproof",
+"grant_kw:indestructible",
+"lifegain_amount:6"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Restoration Magic",
+"line": 3,
+"text": "\u2022 Curaga \u2014 {3}{W} \u2014 Permanents you control gain hexproof and indestructible until end of turn. You gain 6 life.",
+"norm": "\u2022 curaga \u2014 {c}{c} \u2014 permanents you control gain hexproof and indestructible until end of turn. you gain N life.",
+"group": null,
+"aligned": false,
+"tags": [
+"modal:1_of_3",
+"target_count:one",
+"target_type:permanent",
+"grant_kw:hexproof",
+"grant_kw:indestructible",
+"duration:eot",
+"target_count:one",
+"target_type:permanent",
+"grant_kw:hexproof",
+"grant_kw:indestructible",
+"duration:eot",
+"lifegain_amount:3",
+"target_count:all",
+"target_type:permanent",
+"target_scope:you_control",
+"duration:eot",
+"grant_kw:hexproof",
+"grant_kw:indestructible",
+"lifegain_amount:6"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Carrot Cake",
+"line": 1,
+"text": "When ~ enters and when you sacrifice it, create a 1/1 white Rabbit creature token and scry 1.",
+"norm": "when ~ enters and when you sacrifice it, create a N/N white rabbit creature token and scry N.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:white",
+"token_pt:1/1",
+"token_type:rabbit",
+"scry_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Carrot Cake",
+"line": 2,
+"text": "{2}, {T}, Sacrifice ~: You gain 3 life.",
+"norm": "{c}, {c}, sacrifice ~: you gain N life.",
+"group": "c3",
+"aligned": true,
+"tags": [
+"cost:tap",
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:2",
+"lifegain_amount:3"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Citizen's Crowbar",
+"line": 1,
+"text": "When ~ enters, create a 1/1 green and white Citizen creature token, then attach ~ to it.",
+"norm": "when ~ enters, create a N/N green and white citizen creature token, then attach ~ to it.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:green",
+"token_color:white",
+"token_pt:1/1",
+"token_type:citizen"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Citizen's Crowbar",
+"line": 2,
+"text": "Equipped creature gets +1/+1 and has \"{W}, {T}, Sacrifice ~: Destroy target artifact or enchantment.\"",
+"norm": "equipped creature gets +N/+N and has \"{c}, {c}, sacrifice ~: destroy target artifact or enchantment.\"",
+"group": "c2",
+"aligned": true,
+"tags": [
+"duration:static",
+"pump_amount:+1/+1",
+"affected_type:creature"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Invasion Reinforcements",
+"line": 1,
+"text": "When this creature enters, create a 1/1 white Ally creature token.",
+"norm": "when this creature enters, create a N/N white ally creature token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:white",
+"token_pt:1/1",
+"token_type:ally"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Lita, Little Orphan Amphibian",
+"line": 1,
+"text": "Alliance \u2014 Whenever another creature you control enters, choose one that hasn't been chosen this turn \u2014",
+"norm": "alliance \u2014 whenever another creature you control enters, choose one that hasn't been chosen this turn \u2014",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:other",
+"trigger_filter:you_control",
+"trigger_filter:creature",
+"modal:1_of_3",
+"counter_count:1",
+"counter:p1p1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"scry_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Lita, Little Orphan Amphibian",
+"line": 2,
+"text": "\u2022 Put a +1/+1 counter on ~.",
+"norm": "\u2022 put a +N/+N counter on ~.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:other",
+"trigger_filter:you_control",
+"trigger_filter:creature",
+"modal:1_of_3",
+"counter_count:1",
+"counter:p1p1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"scry_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Lita, Little Orphan Amphibian",
+"line": 3,
+"text": "\u2022 Create a Food token.",
+"norm": "\u2022 create a food token.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:other",
+"trigger_filter:you_control",
+"trigger_filter:creature",
+"modal:1_of_3",
+"counter_count:1",
+"counter:p1p1",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"scry_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Path to Redemption",
+"line": 1,
+"text": "Enchanted creature can't attack or block.",
+"norm": "enchanted creature can't attack or block.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"restrict_kind:cant_attack_or_block",
+"affected_type:creature",
+"affected_filter:enchantedby"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Path to Redemption",
+"line": 2,
+"text": "{5}, Sacrifice this Aura: Exile enchanted creature. Create a 1/1 white Ally creature token. Activate only during your turn.",
+"norm": "{c}, sacrifice this aura: exile enchanted creature. create a N/N white ally creature token. activate only during your turn.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:5",
+"remove:exile",
+"token_count:1",
+"token_color:white",
+"token_pt:1/1",
+"token_type:ally"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Sunset Revelry",
+"line": 1,
+"text": "If an opponent has more life than you, you gain 4 life.",
+"norm": "if an opponent has more life than you, you gain N life.",
+"group": null,
+"aligned": false,
+"tags": [
+"lifegain_amount:4",
+"token_count:2",
+"token_color:white",
+"token_pt:1/1",
+"token_type:human",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Sunset Revelry",
+"line": 2,
+"text": "If an opponent controls more creatures than you, create two 1/1 white Human creature tokens.",
+"norm": "if an opponent controls more creatures than you, create two N/N white human creature tokens.",
+"group": null,
+"aligned": false,
+"tags": [
+"lifegain_amount:4",
+"token_count:2",
+"token_color:white",
+"token_pt:1/1",
+"token_type:human",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Sunset Revelry",
+"line": 3,
+"text": "If an opponent has more cards in hand than you, draw a card.",
+"norm": "if an opponent has more cards in hand than you, draw a card.",
+"group": null,
+"aligned": false,
+"tags": [
+"lifegain_amount:4",
+"token_count:2",
+"token_color:white",
+"token_pt:1/1",
+"token_type:human",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Afterlife",
+"line": 1,
+"text": "Destroy target creature. It can't be regenerated. Its controller creates a 1/1 white Spirit creature token with flying.",
+"norm": "destroy target creature. it can't be regenerated. its controller creates a N/N white spirit creature token with flying.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:creature",
+"remove:destroy",
+"cant_regenerate",
+"token_count:1",
+"token_color:white",
+"token_pt:1/1",
+"token_kw:flying",
+"token_type:spirit"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Cat Collector",
+"line": 1,
+"text": "When this creature enters, create a Food token.",
+"norm": "when this creature enters, create a food token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Cat Collector",
+"line": 2,
+"text": "Whenever you gain life for the first time during each of your turns, create a 1/1 white Cat creature token.",
+"norm": "whenever you gain life for the first time during each of your turns, create a N/N white cat creature token.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:gain_life",
+"token_count:1",
+"token_color:white",
+"token_pt:1/1",
+"token_type:cat"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Charge of the Mites",
+"line": 1,
+"text": "\u2022 ~ deals damage equal to the number of creatures you control to target creature or planeswalker.",
+"norm": "\u2022 ~ deals damage equal to the number of creatures you control to target creature or planeswalker.",
+"group": null,
+"aligned": false,
+"tags": [
+"modal:1_of_2",
+"target_count:one",
+"target_type:creature",
+"target_type:planeswalker",
+"damage",
+"damage_amount:x",
+"x_is:count_creature_you_control",
+"scales:creature",
+"token_count:2",
+"token_color:colorless",
+"token_pt:1/1",
+"token_cardtype:artifact",
+"token_type:phyrexian_mite_toxic_noblock"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Charge of the Mites",
+"line": 2,
+"text": "\u2022 Create two 1/1 colorless Phyrexian Mite artifact creature tokens with toxic 1 and \"This creature can't block.\"",
+"norm": "\u2022 create two N/N colorless phyrexian mite artifact creature tokens with toxic N and \"this creature can't block.\"",
+"group": null,
+"aligned": false,
+"tags": [
+"modal:1_of_2",
+"target_count:one",
+"target_type:creature",
+"target_type:planeswalker",
+"damage",
+"damage_amount:x",
+"x_is:count_creature_you_control",
+"scales:creature",
+"token_count:2",
+"token_color:colorless",
+"token_pt:1/1",
+"token_cardtype:artifact",
+"token_type:phyrexian_mite_toxic_noblock"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Crib Swap",
+"line": 1,
+"text": "Exile target creature. Its controller creates a 1/1 colorless Shapeshifter creature token with changeling.",
+"norm": "exile target creature. its controller creates a N/N colorless shapeshifter creature token with changeling.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"target_count:one",
+"target_type:creature",
+"remove:exile",
+"token_count:1",
+"token_color:colorless",
+"token_pt:1/1",
+"token_type:shapeshifter_changeling"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Leonin Bladetrap",
+"line": 1,
+"text": "{2}, Sacrifice ~: It deals 2 damage to each attacking creature without flying.",
+"norm": "{c}, sacrifice ~: it deals N damage to each attacking creature without flying.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"cost:sacrifice",
+"cost_sacrifice_target:self",
+"cost_mana:2",
+"target_count:all",
+"target_type:creature",
+"target_filter:attacking",
+"damage",
+"damage_amount:2"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Losheel, Clockwork Scholar",
+"line": 1,
+"text": "Prevent all combat damage that would be dealt to attacking artifact creatures you control.",
+"norm": "prevent all combat damage that would be dealt to attacking artifact creatures you control.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"replace:damagedone_to_other",
+"prevent_damage"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Losheel, Clockwork Scholar",
+"line": 2,
+"text": "Whenever one or more artifact creatures you control enter, draw a card. This ability triggers only once each turn.",
+"norm": "whenever one or more artifact creatures you control enter, draw a card. this ability triggers only once each turn.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger_scope:other",
+"trigger:etb",
+"trigger_filter:one_or_more",
+"limit:once_per_turn",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Love Song of Night and Day",
+"line": 1,
+"text": "I \u2014 You and target opponent each draw two cards.",
+"norm": "i \u2014 you and target opponent each draw two cards.",
+"group": "s1",
+"aligned": true,
+"tags": [
+"saga_chapter:1",
+"target_count:one",
+"target_type:opponent",
+"draw_count:2"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Love Song of Night and Day",
+"line": 2,
+"text": "II \u2014 Create a 1/1 white Bird creature token with flying.",
+"norm": "ii \u2014 create a N/N white bird creature token with flying.",
+"group": "s2",
+"aligned": true,
+"tags": [
+"saga_chapter:2",
+"token_count:1",
+"token_color:white",
+"token_pt:1/1",
+"token_kw:flying",
+"token_type:bird"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Love Song of Night and Day",
+"line": 3,
+"text": "III \u2014 Put a +1/+1 counter on each of up to two target creatures.",
+"norm": "iii \u2014 put a +N/+N counter on each of up to two target creatures.",
+"group": "s3",
+"aligned": true,
+"tags": [
+"saga_chapter:3",
+"target_count:up_to_2",
+"target_type:creature",
+"counter_count:1",
+"counter:p1p1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Rootborn Defenses",
+"line": 1,
+"text": "Populate. Creatures you control gain indestructible until end of turn.",
+"norm": "populate. creatures you control gain indestructible until end of turn.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"token_make",
+"token_type:copy",
+"duration:eot",
+"indestructible",
+"target_count:all",
+"target_type:creature",
+"target_scope:you_control",
+"duration:eot",
+"grant_kw:indestructible"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Rosie Cotton of South Lane",
+"line": 1,
+"text": "When ~ enters, create a Food token.",
+"norm": "when ~ enters, create a food token.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"target_count:one",
+"target_type:creature",
+"target_scope:you_control",
+"target_filter:other",
+"counter:p1p1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Rosie Cotton of South Lane",
+"line": 2,
+"text": "Whenever you create a token, put a +1/+1 counter on target creature you control other than Rosie.",
+"norm": "whenever you create a token, put a +N/+N counter on target creature you control other than rosie.",
+"group": null,
+"aligned": false,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain",
+"target_count:one",
+"target_type:creature",
+"target_scope:you_control",
+"target_filter:other",
+"counter:p1p1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Absolver Thrull",
+"line": 1,
+"text": "When ~ enters or the creature it haunts dies, destroy target enchantment.",
+"norm": "when ~ enters or the creature it haunts dies, destroy target enchantment.",
+"group": null,
+"aligned": false,
+"tags": [],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Battle Screech",
+"line": 1,
+"text": "Create two 1/1 white Bird creature tokens with flying.",
+"norm": "create two N/N white bird creature tokens with flying.",
+"group": null,
+"aligned": false,
+"tags": [
+"token_count:2",
+"token_color:white",
+"token_pt:1/1",
+"token_kw:flying",
+"token_type:bird"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Battle Screech",
+"line": 2,
+"text": "Flashback\u2014Tap three untapped white creatures you control.",
+"norm": "flashback\u2014tap three untapped white creatures you control.",
+"group": null,
+"aligned": false,
+"tags": [
+"token_count:2",
+"token_color:white",
+"token_pt:1/1",
+"token_kw:flying",
+"token_type:bird"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Commander Sofia Daguerre",
+"line": 1,
+"text": "Crash Landing \u2014 When ~ enters, destroy up to one target legendary permanent. That permanent's controller creates a Junk token.",
+"norm": "crash landing \u2014 when ~ enters, destroy up to one target legendary permanent. that permanent's controller creates a junk token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:up_to_1",
+"target_type:permanent",
+"target_filter:legendary",
+"remove:destroy",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:junk_exileplay"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Decree of Justice",
+"line": 1,
+"text": "Create X 4/4 white Angel creature tokens with flying.",
+"norm": "create x N/N white angel creature tokens with flying.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"token_count:x",
+"token_color:white",
+"token_pt:4/4",
+"token_kw:flying",
+"token_type:angel",
+"x_is:x_paid"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Decree of Justice",
+"line": 2,
+"text": "When you cycle ~, you may pay {X}. If you do, create X 1/1 white Soldier creature tokens.",
+"norm": "when you cycle ~, you may pay {c}. if you do, create x N/N white soldier creature tokens.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"optional",
+"cost_mana:x",
+"token_count:x",
+"token_color:white",
+"token_pt:1/1",
+"token_type:soldier",
+"x_is:x_paid"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Food Coma",
+"line": 1,
+"text": "When ~ enters, exile target creature an opponent controls until ~ leaves the battlefield. Create a Food token.",
+"norm": "when ~ enters, exile target creature an opponent controls until ~ leaves the battlefield. create a food token.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:one",
+"target_type:creature",
+"target_scope:opp_control",
+"remove:exile",
+"token_count:1",
+"token_color:colorless",
+"token_cardtype:artifact",
+"token_type:food",
+"token_ability:pay_2_tap_sacrifice_gain_3_life",
+"lifegain"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Symmetry Matrix",
+"line": 1,
+"text": "Whenever a creature you control with power equal to its toughness enters, you may pay {1}. If you do, draw a card.",
+"norm": "whenever a creature you control with power equal to its toughness enters, you may pay {c}. if you do, draw a card.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:any",
+"trigger_filter:you_control",
+"trigger_filter:creature",
+"cost_mana:1",
+"draw_count:1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Abdel Adrian, Gorion's Ward",
+"line": 1,
+"text": "When ~ enters, exile any number of other nonland permanents you control until ~ leaves the battlefield. Create a 1/1 white Soldier creature token for each permanent exiled this way.",
+"norm": "when ~ enters, exile any number of other nonland permanents you control until ~ leaves the battlefield. create a N/N white soldier creature token for each permanent exiled this way.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"remove:exile",
+"token_count:x",
+"token_color:white",
+"token_pt:1/1",
+"token_type:soldier",
+"x_is:remembered_amount"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Alharu, Solemn Ritualist",
+"line": 1,
+"text": "When ~ enters, put a +1/+1 counter on each of up to two other target creatures.",
+"norm": "when ~ enters, put a +N/+N counter on each of up to two other target creatures.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"target_count:up_to_2",
+"target_type:creature",
+"target_filter:other",
+"counter_count:1",
+"counter:p1p1"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Alharu, Solemn Ritualist",
+"line": 2,
+"text": "Whenever a nontoken creature you control with a +1/+1 counter on it dies, create a 1/1 white Spirit creature token with flying.",
+"norm": "whenever a nontoken creature you control with a +N/+N counter on it dies, create a N/N white spirit creature token with flying.",
+"group": "c2",
+"aligned": true,
+"tags": [
+"trigger:dies",
+"trigger_zone:graveyard",
+"trigger_scope:any",
+"trigger_filter:you_control",
+"trigger_filter:nontoken",
+"trigger_filter:has_counter:p1p1",
+"trigger_filter:creature",
+"token_count:1",
+"token_color:white",
+"token_pt:1/1",
+"token_kw:flying",
+"token_type:spirit"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Ornitharch",
+"line": 1,
+"text": "When ~ enters, if tribute wasn't paid, create two 1/1 white Bird creature tokens with flying.",
+"norm": "when ~ enters, if tribute wasn't paid, create two N/N white bird creature tokens with flying.",
+"group": null,
+"aligned": false,
+"tags": [],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Resplendent Mentor",
+"line": 1,
+"text": "White creatures you control have \"{T}: You gain 1 life.\"",
+"norm": "white creatures you control have \"{c}: you gain N life.\"",
+"group": "c1",
+"aligned": true,
+"tags": [
+"affected_type:creature",
+"affected_filter:white",
+"affected_scope:you_control"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Reverent Hoplite",
+"line": 1,
+"text": "When ~ enters, create a number of 1/1 white Human Soldier creature tokens equal to your devotion to white.",
+"norm": "when ~ enters, create a number of N/N white human soldier creature tokens equal to your devotion to white.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"token_count:x",
+"token_color:white",
+"token_pt:1/1",
+"token_type:human_soldier",
+"x_is:devotion_white"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Eagles of the North",
+"line": 1,
+"text": "When ~ enters, creatures you control get +1/+0 and gain first strike until end of turn.",
+"norm": "when ~ enters, creatures you control get +N/+N and gain first strike until end of turn.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"duration:eot",
+"first_strike",
+"trigger_scope:self",
+"target_count:all",
+"target_type:creature",
+"target_scope:you_control",
+"pump_amount:+1/+0",
+"duration:eot",
+"grant_kw:first_strike"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Kirtar's Wrath",
+"line": 1,
+"text": "Destroy all creatures. They can't be regenerated.",
+"norm": "destroy all creatures. they can't be regenerated.",
+"group": null,
+"aligned": false,
+"tags": [
+"cant_regenerate"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Kirtar's Wrath",
+"line": 2,
+"text": "Threshold \u2014 If there are seven or more cards in your graveyard, instead destroy all creatures, then create two 1/1 white Spirit creature tokens with flying. Creatures destroyed this way can't be regenerated.",
+"norm": "threshold \u2014 if there are seven or more cards in your graveyard, instead destroy all creatures, then create two N/N white spirit creature tokens with flying. creatures destroyed this way can't be regenerated.",
+"group": null,
+"aligned": false,
+"tags": [
+"cant_regenerate"
+],
+"acc": null,
+"reads": 0
+},
+{
+"card": "Sandstone Oracle",
+"line": 1,
+"text": "When ~ enters, choose an opponent. If that player has more cards in hand than you, draw cards equal to the difference.",
+"norm": "when ~ enters, choose an opponent. if that player has more cards in hand than you, draw cards equal to the difference.",
+"group": "c1",
+"aligned": true,
+"tags": [
+"trigger:etb",
+"trigger_scope:self",
+"draw_count:x",
+"x_is:count_card_chosenctrl_in_hand",
+"scales:card_chosenctrl_in_hand"
+],
+"acc": null,
+"reads": 0
 }
 ]

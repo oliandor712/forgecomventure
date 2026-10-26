@@ -2,8 +2,8 @@
  "built": "2026-10-25",
  "cards": 27699,
  "inputs": {
-  "scryfall/cards.json": 9361335,
-  "external/decks.json": 830202,
-  "spellbinder/signals.json": 174383
+  "scryfall/cards.json": 1345329,
+  "external/decks.json": null,
+  "spellbinder/signals.json": 162806
  }
 }

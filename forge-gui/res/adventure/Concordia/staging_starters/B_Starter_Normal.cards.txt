@@ -1,62 +1,62 @@
 Rev, Tithe Extractor
-Graf Harvest
-Greedy Freebooter
-Nested Shambler
-Nurgle's Rot
-Shambling Ghast
+Blood Pet
+Reanimate
+Sensei's Divining Top
 Sol Ring
+Spiked Pit Trap
+Vendetta
+Abyssal Gatekeeper
+Animate Dead
 Arcane Signet
-Bucknard's Everfull Purse
-Bumbleflower's Sharepot
-Deathspore Thallid
-Fanatical Offering
-Genesis Chamber
-Golden Egg
-Goldvein Pick
-Gorbag of Minas Morgul
-Idol of False Gods
+Dai Li Censor
+Dire Fleet Hoarder
+Durable Coilbug
+Epic Downfall
+Feed the Swarm
+Idol of Oblivion
+Infernal Scarring
+Joo Dee, One of Many
 Mask of Memory
-Noble's Purse
 Plumb the Forbidden
-Prized Statue
-Servo Schematic
-Bastion of Remembrance
-Boggart Mischief
+Sheoldred's Edict
+Umbral Collar Zealot
+Cathodion
 Commander's Sphere
-Cornered by Black Mages
-Cower in Fear
-Foreboding Fruit
-Glaring Fleshraker
-Lord Skitter, Sewer King
-Magnifying Glass
-Nuka-Cola Vending Machine
-Orzhov Euthanist
-Plaguecrafter
-Pointed Discussion
+Dismember
+Fallen Ideal
+Filigree Familiar
+Grave Birthing
+Gravelighter
+Lord Skitter's Butcher
+Magic Pot
+Priest of Gix
+Ruinous Path
 Ruthless Knave
+Spark Reaper
+Unstable Obelisk
 Yahenni, Undying Partisan
-Circle of Power
-Etched Oracle
-Feast or Famine
-Gonti, Lord of Luxury
-Grim Bounty
-Hedron Archive
-Paradise Plume
-Pitiless Plunderer
-Ravenous Chupacabra
-Symmetry Matrix
-Tormod, the Desecrator
-Venerated Stormsinger
-Dread Drone
-Enchanted Carriage
-Luxurious Locomotive
-Noxious Ghoul
+Ashiok's Reaper
+Breeding Pit
+Geth's Grimoire
+Jhoira's Familiar
+Oath of the Grey Host
+Revenge of the Rats
+Sever the Bloodline
+Snuff Out
+Thornplate Intimidator
+Torment of Scarabs
+Torment of Venom
+Whisper, Blood Liturgist
+Exile into Darkness
+Indulgent Tormentor
+Meteorite
+Old Flitterfang
+Sanguine Bond
 Syphon Flesh
-Twisted Sewer-Witch
-Zuko's Exile
-Nadier, Agent of the Duskenel
+Syr Konrad, the Grim
+Arbiter of Woe
+Dreamstone Hedron
+Loreseeker's Stone
+Summon: Anima
 Voracious Fell Beast
 Abhorrent Overlord
-Meteor Golem
-Vile Mutilator
-Scion of Darkness

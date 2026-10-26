@@ -5009,6 +5009,85 @@
     "cf": "subs: coin flip, cascade, theft, possibility storm; Zndrsplt, Yidris, Gonti, Kalamax"
    }
   },
+  "colorless": {
+   "id": "colorless",
+   "plan": "colorless is the sixth colour (user 2026-10-26): colorless spells and artifacts that any deck can cast, backed by enough colorless mana sources",
+   "stages": [
+    "count colorless sources first: rocks, Sol Ring-style cards, colorless-producing lands",
+    "add colorless spells only as far as the sources support them",
+    "use them as the flexible filler of the deck: removal, ramp, draw, bodies",
+    "keep coloured pips for the commander's colours"
+   ],
+   "roles": {
+    "source": {
+     "sig": [
+      "mana:colorless",
+      "mana_source"
+     ],
+     "cards": [
+      "Sol Ring",
+      "Mind Stone",
+      "Wayfarer's Bauble"
+     ],
+     "n": [
+      4,
+      10
+     ]
+    },
+    "spell": {
+     "sig": [
+      "cardtype:artifact",
+      "token_color:colorless"
+     ],
+     "cards": [
+      "Swiftfoot Boots",
+      "Skullclamp"
+     ],
+     "n": [
+      4,
+      12
+     ]
+    },
+    "fixing": {
+     "sig": [
+      "fixing",
+      "mana_choice"
+     ],
+     "cards": [
+      "Arcane Signet",
+      "Commander's Sphere"
+     ],
+     "n": null
+    }
+   },
+   "wins": [
+    "a flexible deck that casts everything regardless of colour"
+   ],
+   "weak": "artifact hate (Vandalblast, Collector Ouphe); colorless spells without colorless mana are dead cards; too many colorless cards dilute the plan",
+   "weak_tags": [
+    "removal_artifact",
+    "restrict"
+   ],
+   "overlaps": [
+    "artifacts",
+    "ramp",
+    "equipment"
+   ],
+   "subs": [],
+   "colors": [
+    "C",
+    "W",
+    "U",
+    "B",
+    "R",
+    "G"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "cf": "user decision 2026-10-26: colorless is a pool like W/U/B/R/G; builder CL_BASE/CL_PER in starter_build.py; reader rule D6"
+   }
+  },
   "treasure": {
    "id": "treasure",
    "plan": "make Treasure and convert it to mana, drain or sacrifice value",

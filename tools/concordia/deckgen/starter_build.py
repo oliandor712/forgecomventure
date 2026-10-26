@@ -17,7 +17,7 @@ Nothing here touches decks/starter (live). Output: forge-gui/res/adventure/Conco
   python3 starter_build.py review-export --name W_Starter_Normal
   python3 starter_build.py review-compare --name W_Starter_Normal
 """
-import argparse, collections, json, os, subprocess, sys
+import argparse, collections, json, os, re, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import build as B  # noqa: E402  (pool, SPEC, ROLE, card_traits, budget lands)
@@ -31,7 +31,17 @@ dt, data, pool = B.dt, B.data, B.pool
 STAGE = os.path.join(B.RES, 'adventure', 'Concordia', 'staging_starters')
 TIER = 2
 TARGET = 27.0           # H19: deck power (EDHREC card-power scale, tier_table.json tier 2 target)
-SUPPORT_W, FIT_W, FIT_CAP = 1.0, 3.0, 4   # user 2026-10-26: commander support counts less, overall archetype fit just as much
+SUPPORT_W, FIT_W, FIT_CAP = 0.5, 3.0, 4   # user 2026-10-26: commander support counts less, overall archetype fit just as much; 2026-10-26 again: less still
+SUPPORT_CAP = 14       # user 2026-10-26: do not copy the commander's tags across the whole deck: only the first 14 supporters get the bonus
+MAKER_CAP = 4          # cards (besides the commander) that make the commander's non-creature token (Treasure ...)
+PAYOFF_W, PAYOFF_MIN = 2.5, 8   # user 2026-10-26: a commander that makes Treasure needs payoffs and mana sinks; at least PAYOFF_MIN of them
+THEME_MIN = 5         # user 2026-10-26: a tribal/theme card is fine when >= THEME_MIN other cards (members or makers) of that theme are already in the deck
+CORE_N = 12            # user 2026-10-26: highest-power on-plan cards are picked first, themes are then judged against them
+THEME_PEN = 3.0       # user 2026-10-26: prefer generic cards: every theme/tribe word a card names that the deck does not run costs this much, even a single mention
+CL_BASE, CL_PER = 4, 2    # colourless is the sixth colour: non-ramp colourless spells allowed = CL_BASE + CL_PER * colourless sources (rocks + colourless-producing lands in the deck)
+CL_LANDS = 4              # colourless-producing nonbasic lands assumed when sizing (user 2026-10-26)
+NONCREATURE_TOK = {'treasure', 'food', 'clue', 'blood', 'gold', 'junk', 'map', 'powerstone', 'shard'}
+THEME_WORDS = ['Food', 'Clue', 'Blood', 'Gold', 'Junk', 'Powerstone', 'energy', 'poison', 'proliferate', 'Dungeon', 'initiative', 'monarch', 'Saproling', 'Servo', 'Thopter']
 RARITY = {'C': 99, 'U': 99, 'R': 0, 'M': 0}   # starters: commons and uncommons only (as starter_tune.py did)
 UTILITY_ROLES = {'removal', 'draw', 'ramp', 'wipe', 'fixing', 'counter', 'protection'}
 COLORS = 'WUBRG'
@@ -45,6 +55,66 @@ def supports_cmd(prof, p):
     if not prof: return False
     t = at.card_text(p['name']); tags = B.ability_tags(p); ty = at.parse(t)[5]
     return any(cp.supports(it, p['name'], t, tags, ty) for it in prof)
+
+
+_NOT_SUBTYPE = {'Creature', 'Artifact', 'Enchantment', 'Land', 'Instant', 'Sorcery', 'Planeswalker', 'Legendary', 'Basic', 'Snow', 'World', 'Kindred', 'Battle', 'Tribal'}
+_SUBTYPES = None
+_THEME_RE = None
+_PLURAL = {'Elf': 'Elves', 'Wolf': 'Wolves', 'Dwarf': 'Dwarves', 'Thief': 'Thieves', 'Knife': 'Knives'}
+
+
+def subtypes():
+    global _SUBTYPES
+    if _SUBTYPES is None:
+        _SUBTYPES = {w for p in pool.values() if 'Creature' in p['types'].split() for w in p['types'].split() if w not in _NOT_SUBTYPE and w.isalpha()}
+        _SUBTYPES -= {'Human', 'Wall'} | {'Aura', 'Equipment', 'Vehicle', 'Saga', 'Food', 'Clue', 'Treasure', 'Blood'}
+    return _SUBTYPES
+
+
+def _text(p): return p['oracle'].replace('\\n', '\n')
+
+
+def _body(p):
+    """Rules text without reminder text, the card's own name and token-creation phrases (a card making its own tokens is not a tribal payoff)."""
+    t = re.sub(r'\([^)]*\)', '', _text(p)); t = t.replace(p['name'], '~')
+    return re.sub(r'(?i)creates? [^.\n]*? tokens?', 'create TOKEN', t)
+
+
+def theme_mentions(p):
+    """{word: mentions} for creature types and token/mechanic themes in the card's rules text; plus the count of ability lines."""
+    global _THEME_RE
+    if _THEME_RE is None:
+        forms = {}
+        for w in subtypes() | set(THEME_WORDS):
+            for f in (w, w + 's', _PLURAL.get(w, w)): forms[f] = w
+        _THEME_RE = (re.compile(r'\b(%s)\b' % '|'.join(sorted(map(re.escape, forms), key=len, reverse=True))), forms)
+    body = _body(p); out = collections.Counter()
+    for m in _THEME_RE[0].findall(body): out[_THEME_RE[1][m]] += 1
+    lines = [l for l in body.split('\n') if l.strip()]
+    return out, len(lines)
+
+
+def heavy_theme(p, allowed):
+    """Words that make the card a tribal/theme card the deck does not run: mentioned twice or more, or the only ability names it."""
+    m, nlines = theme_mentions(p)
+    return sorted(w for w, n in m.items() if w not in allowed and (n >= 2 or nlines <= 1))
+
+
+def maker_types(p): return {t.split(':', 1)[1] for t in p['ftags'] if t.startswith('token_type:')}
+
+
+_ACT_SKIP = ('Equip', 'Cycling', 'Crew', 'Ninjutsu', 'Channel', 'Reconfigure', 'Unearth', 'Flashback', 'Escape', 'Embalm', 'Eternalize', 'Kicker', 'Landcycling')
+
+
+def payoff_kind(p, kind):
+    """'sink' (mana dump: X spell or a 3+ mana activation), 'pay' (uses the tokens), or '' - for a commander that makes `kind` tokens (data: strategies.json treasure/big_mana/artifacts roles)."""
+    if kind != 'treasure': return ''
+    t = _body(p)
+    if re.search(r'(?i)sacrifice[^.\n]*treasure|treasures? you control|mana from a treasure|whenever you sacrifice an? (?:artifact|treasure)|sacrifice (?:an?|another|two|three) artifacts?|treasure.{0,40}spent', t): return 'pay'
+    if 'x_is:x_paid' in p['ftags'] or re.search(r'\{X\}', t) and 'Land' not in p['types']: return 'sink'
+    for l in t.split('\n'):
+        if not l.startswith(_ACT_SKIP) and re.match(r'[^:"]*\{[3-9]\}[^:"]*:', l) and 'Land' not in p['types']: return 'sink'
+    return ''
 
 
 def archetypes_for(p, colour):
@@ -93,21 +163,51 @@ def draft(name, commander, strategy, ban, reject):
     for c in ident: traits['landtype:' + B.BASIC_TYPE[c]] = (spec['lands'] - 6) // max(1, len(ident))
     traits['lands'] = traits['Land'] = spec['lands']
     why = {}
+    kinds = maker_types(cmd) & NONCREATURE_TOK          # non-creature tokens the commander makes: the deck needs uses for them, not a pile of makers
+    cmd_themes, _ = theme_mentions(cmd)
+    allowed = set(cmd_themes) | {w for w in cmd['types'].split() if w in subtypes()}
+    tgt = [TARGET]      # per-card power aim; lowered after the core so the deck average still lands on TARGET
+    nmaker = [0]; nsup = [0]; ncl = [0]; npay = [0]
+
+    def is_colorless(p): return not p['id'] and 'ramp' not in p['tags']
+    def cl_sources(): return CL_LANDS + sum(1 for p, _ in chosen if not p['id'] and 'ramp' in p['tags'])
 
     def score(p, r):
         pw = p['power'][r]
-        s = -0.7 * abs(pw - TARGET)
+        s = -0.7 * abs(pw - tgt[0])
         sup = supports_cmd(prof, p)
-        if sup: s += SUPPORT_W
+        if sup and nsup[0] < SUPPORT_CAP: s += SUPPORT_W
+        s -= THEME_PEN * len(off_themes(p))
+        pk = payoff_kind(p, 'treasure') if 'treasure' in kinds else ''
+        if pk: s += PAYOFF_W
+        why.setdefault(p['name'], {})['payoff'] = pk
         fit = min(FIT_CAP, sf.fit(p['ftags'], strategy)) if strategy else 0
         s += FIT_W * fit - B.NICHE_PEN[TIER] * min(2, sf.niche_penalty(p['ftags'], strategy) if strategy else 0)
         if p.get('cat') == 'staple': s += B.UNCOMMON_STAPLE_BONUS[TIER] if r == 'U' else B.STAPLE_BONUS[TIER]
         s += B.PRECON_BONUS.get(TIER, 0) * min(1.0, p.get('precon', 0.0) / 0.25)
-        why[p['name']] = dict(power=pw, supports=bool(sup), fit=fit)
+        why[p['name']].update(power=pw, supports=bool(sup), fit=fit)
         return s
     cands = [p for k, p in pool.items() if k != cmd['name'].lower() and k not in banned and p['id'] <= ident and 'Land' not in p['types'].split()
              and not p['mld'] and not p['gc'] and B.mech_ok(p, TIER) and p['minr'] in 'CU' and p['pop'] >= 3
-             and not ('Legendary' in p['types'] and 'Creature' not in p['types'])]
+             and not ('Legendary' in p['types'] and 'Creature' not in p['types'])
+             ]
+    members = collections.Counter()      # theme word -> cards in the deck (commander included) that belong to it or make it
+    _hv = {}
+
+    def members_of(p):
+        ty = set(p['types'].split()); mk = maker_types(p)
+        return {w for w in subtypes() | set(THEME_WORDS) if w in ty or w.lower() in mk}
+    members.update(members_of(cmd))
+    _om = {}
+
+    def off_themes(p):
+        if p['name'] not in _om: _om[p['name']] = [w for w in theme_mentions(p)[0] if w not in allowed]
+        return [w for w in _om[p['name']] if members[w] < THEME_MIN]
+
+    def theme_ok(p):    # user 2026-10-26: no tribal/theme cards the deck does not run; allowed once enough other members are in
+        hv = _hv.get(p['name'])
+        if hv is None: hv = _hv[p['name']] = heavy_theme(p, allowed)
+        return all(members[w] >= THEME_MIN for w in hv)
     chosen = []; rcount = collections.Counter(); roles = collections.Counter(); curve = collections.Counter(); nc = [0]; nwatch = [0]
     nonland = 99 - spec['lands']
 
@@ -116,6 +216,9 @@ def draft(name, commander, strategy, ban, reject):
             if p['tags'] & tg and roles[role] + 1 > spec['cap'][role]: return None
         if curve[B.bucket(p['cmc'])] >= spec['curve'][B.bucket(p['cmc'])]: return None
         if p.get('cat') == 'watch' and nwatch[0] >= B.WATCH_CAP[TIER]: return None
+        if not theme_ok(p): return None
+        if kinds & maker_types(p) and nmaker[0] >= MAKER_CAP: return None
+        if is_colorless(p) and ncl[0] >= CL_BASE + CL_PER * cl_sources(): return None
         return B.pick_rarity(p, TIER, rcount, spec)
 
     def add(p, r):
@@ -124,6 +227,11 @@ def draft(name, commander, strategy, ban, reject):
             if p['tags'] & tg: roles[role] += 1
         if 'Creature' in p['types']: nc[0] += 1
         if p.get('cat') == 'watch': nwatch[0] += 1
+        if kinds & maker_types(p): nmaker[0] += 1
+        members.update(members_of(p))
+        if is_colorless(p): ncl[0] += 1
+        if supports_cmd(prof, p): nsup[0] += 1
+        if why.get(p['name'], {}).get('payoff'): npay[0] += 1
         traits.update(B.card_traits(p, traits)); cands.remove(p)
 
     def best(filt):
@@ -136,18 +244,29 @@ def draft(name, commander, strategy, ban, reject):
             if bp is None or s > bp[0]: bp = (s, p, r)
         return bp
     # budget mana rocks first (as build.py does at tier 2), then role quotas, type quotas, creatures, fill
-    nrock = 0
+    nrock = 0; rocks = []
     for rn, rb in sorted(B.ROCKS.items(), key=lambda kv: -kv[1]['decks']):
         if nrock >= B.BUDGET_ROCKS[TIER]: break
         p = pool.get(rn.lower())
         if not p or p not in cands or not set(rb['colors']) <= ident: continue
         r = can_add(p)
-        if r: add(p, r); nrock += 1
+        if r: add(p, r); nrock += 1; rocks.append(p)
+    core_names = []
+    core = sorted((p for p in cands if p['id'] and (sf.fit(p['ftags'], strategy) if strategy else 0) >= 1 or supports_cmd(prof, p)), key=lambda p: -(max(p['power'].values()) + min(FIT_CAP, sf.fit(p['ftags'], strategy) if strategy else 0)))
+    for p in core:       # highest-power on-plan cards first; the rest of the deck is then built around them and the commander
+        if len(core_names) >= CORE_N: break
+        if p in cands and (r := can_add(p)): score(p, r); add(p, r); core_names.append(p['name'])
+    done = [p for p, _ in chosen]
+    if done: tgt[0] = max(8.0, min(TARGET, (TARGET * nonland - sum(max(p['power'].values()) for p in done)) / max(1, nonland - len(done))))
     for role in spec['quota']:
         while roles[role] < spec['quota'][role] and len(chosen) < nonland:
             b = best(lambda p: p['tags'] & B.ROLE[role])
             if not b: break
             add(b[1], b[2])
+    while 'treasure' in kinds and npay[0] < PAYOFF_MIN and len(chosen) < nonland:
+        b = best(lambda p: bool(payoff_kind(p, 'treasure')))
+        if not b: break
+        add(b[1], b[2])
     for alts, n in spec['types'].items():
         while sum(1 for p, _ in chosen if any(x in p['types'].split() for x in alts.split('|'))) < n and len(chosen) < nonland:
             b = best(lambda p, alts=alts: any(x in p['types'].split() for x in alts.split('|')) and 'Creature' not in p['types'])
@@ -201,12 +320,13 @@ def draft(name, commander, strategy, ban, reject):
     for p, r in sorted(chosen, key=lambda x: (x[0]['cmc'], x[0]['name'])): L.append('1 %s|%s' % (p['name'], p['best'][r]))
     os.makedirs(STAGE, exist_ok=True)
     path = os.path.join(STAGE, name + '.dck'); open(path, 'w', encoding='utf-8').write('\n'.join(L) + '\n')
-    picks = [dict(name=p['name'], rarity=r, cmc=p['cmc'], types=p['types'], **why.get(p['name'], {})) for p, r in sorted(chosen, key=lambda x: (x[0]['cmc'], x[0]['name']))]
+    picks = [dict(name=p['name'], core=p['name'] in core_names, rarity=r, cmc=p['cmc'], types=p['types'], **why.get(p['name'], {})) for p, r in sorted(chosen, key=lambda x: (x[0]['cmc'], x[0]['name']))]
     json.dump(dict(name=name, commander=cmd['name'], profile=prof, strategy=strategy, banned=sorted(banned), lands=dict(basics=basics, nonbasic=[p['name'] for p, _ in lands]), picks=picks),
               open(os.path.join(STAGE, name + '.picks.json'), 'w', encoding='utf-8'), indent=1)
     r = dt.rate(path, data, B.cfg)
     nsup = sum(1 for x in picks if x.get('supports'))
     print('%s: commander %s | tests %s | power %.1f (target %.1f) | creatures %d | cards supporting the commander %d/%d' % (name, cmd['name'], ','.join(prof), r['power'], TARGET, r['creatures'], nsup, len(picks)))
+    print('  makers %d (cap %d) | payoffs/sinks %d | colourless spells %d | tribal/theme words allowed: %s | themes unlocked: %s' % (nmaker[0], MAKER_CAP, sum(1 for x in picks if x.get('payoff')), ncl[0], ','.join(sorted(allowed)) or '-', ','.join(sorted(w for w, n in members.items() if n >= THEME_MIN)) or '-'))
     for lvl, msg in dt.check_tier(r, TIER):
         if lvl != 'PASS': print(' ', lvl, msg)
     print('->', path)
@@ -230,7 +350,11 @@ def cmd_review_export(a):
     pk = _picks(a.name); lst = os.path.join(STAGE, a.name + '.cards.txt')
     open(lst, 'w', encoding='utf-8').write('\n'.join([pk['commander']] + [x['name'] for x in pk['picks']]) + '\n')
     rc = os.path.join(HERE, 'tagcheck', 'reverse_check.py')
-    subprocess.run([sys.executable, rc, 'glance-export', '--run', run_id(a.name), '--cardlist', lst, '--batch', '24'], check=False)
+    ctx = os.path.join(STAGE, a.name + '.context.txt')
+    open(ctx, 'w', encoding='utf-8').write(
+        'Candidate 99-card Commander starter deck. Declared archetypes: %s. Commander profile: %s. The commander is one of the cards in the list. '
+        'Judge every card against the archetypes and the deck_rules, with the whole deck in mind.' % (' and '.join(pk['strategy']), ', '.join(pk['profile'])))
+    subprocess.run([sys.executable, rc, 'glance-export', '--run', run_id(a.name), '--cardlist', lst, '--batch', '24', '--context', ctx], check=False)
 
 
 def cmd_review_compare(a):

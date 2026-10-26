@@ -123,7 +123,8 @@ REF_EXTRA = {
 
 # family -> (meaning, why / user note)
 DOC = {
- "mana:<color>": ("colour of mana an ability produces (white, blue, black, red, green, colorless, any, commander_identity)", "feedback: link color type to mana source (Arcane Signet, Plains, Temple, Frost Marsh)"),
+ "colorless_card": ("the card is a colorless spell (no colored mana symbol, no color indicator, or Devoid; lands excluded); the deck needs colorless-capable mana for it (colorless is the sixth colour, H78)", "user 2026-10-26: color and mana tags include colorless"),
+ "mana:<color>": ("colour of mana an ability produces (white, blue, black, red, green, colorless, any, commander_identity; colorless is the sixth colour, H78)", "feedback: link color type to mana source (Arcane Signet, Plains, Temple, Frost Marsh)"),
  "mana_amount:<n>": ("how much mana is produced per activation; always tagged on a mana source ability, also when it is 1", "Temple of the False God; user note: always tag mana_amount"),
  "mana_restriction": ("the mana can only be spent on certain things; the value says on what (instant_or_sorcery, creature_spell, artifact_spell_or_activated_ability ...)", "Vodalian Arcanist; script RestrictValid$"),
  "mana_choice": ("the ability lets you choose between colours", "Frost Marsh, Arcane Signet"),
@@ -166,7 +167,7 @@ DOC = {
  "must_attack": ("creatures must attack each combat (a can't-block effect on other creatures is tagged restrict, not a separate tag)", "Rabblemaster; user: cant_block tag removed"),
  "exchange_control": ("swap control of two permanents (linked to steal)", "Oko"),
  "steal": ("gain control of something (linked to haste when the effect grants it)", "Rowan"),
- "cost_reduce_for:<type> + color:<c>": ("which spells a cost reduction applies to", "Bontu's Monument"),
+ "cost_reduce_for:<type> + color:<c>": ("which spells a cost reduction applies to (colorless is the sixth colour: color:colorless, H78)", "Bontu's Monument"),
  "counter:<type>": ("which counters are placed (the count and scope of the targets are target_count and target_scope)", "Invasion of Moag"),
  "cost_sacrifice_target:<t>": ("what a sacrifice cost sacrifices (self, land, creature ...)", "Harrow, Blighted Woodland"),
  "sacrifice_type:<t>": ("what an edict makes players sacrifice", "Garruk"),
@@ -553,7 +554,7 @@ def extra(lines, sv, types, text):
                 for ty in re.findall(r"[A-Z][a-z]+", vc):
                     if ty in ("Creature", "Artifact", "Enchantment", "Instant", "Sorcery", "Planeswalker", "Land"): add("cost_reduce_for:" + tok(ty)); lk("cost_reduce", "filters", "cardtype:" + tok(ty))
                     elif ty not in ("Card", "Spell", "Other", "You", "Ctrl", "Chosen", "Type", "White", "Blue", "Black", "Red", "Green", "Colorless", "Non", "Self", "Opp") and "," in vc + ",": add("cost_reduce_for:" + tok(ty))
-                    elif ty in ("White", "Blue", "Black", "Red", "Green"): add("color:" + tok(ty)); lk("cost_reduce", "filters", "color:" + tok(ty))
+                    elif ty in ("White", "Blue", "Black", "Red", "Green", "Colorless"): add("color:" + tok(ty)); lk("cost_reduce", "filters", "color:" + tok(ty))
         if kind == "S" and p.get("Mode") == "Continuous":
             xt = []
             if "AddPower" in p or "AddToughness" in p:

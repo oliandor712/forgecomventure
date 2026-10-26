@@ -1,8 +1,9 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Append one row per analysis, under 400 chars.
 # Efficiency analyses: tokens, cost, batch size.
-log[5|]{date|topic|finding|caveat}:
+log[6|]{date|topic|finding|caveat}:
   2026-10-23|reader cost|r18single 24 cards = 15.1k subagent tokens (~630/card) vs R16 doc 23-32k/batch (~1.4k/card); batch file 13.5KB: fixed reminders 4.9KB (36%), cards 6.6KB|mismatch unexplained (cache?)
   2026-10-23|batch size 48/72/96|runs r18b48, r18b72, r18b96 queued (first N starters, 1 batch each) for cost floor|accuracy above 24 untested
   2026-10-23|batch size curve|1 reader per size, subagent tokens/card: 24=630 (15.1k), 48=531 (25.5k), 72=472 (34.0k), 96=440 (42.2k); marginal ~340-430/card, fixed ~5k/batch; mean_sim 0.942/0.944/0.946/0.938, top1 24/24, 47/48, 69/72, 92/96|one reader per size, not repeated; 96 left 1 card without text; V1-V4 not computed
   2026-10-23|reader count vs measures|A,S1 need 1 reader (~165k tok/348 cards at b72, ~470/card); V1-V4 need 2+ readers (3 readers ~490k); scoring scripts cost 0 tokens; V2,V4 saturated (V2 .98-.99 all arms, V4<.01), V3 and S1b discriminate, V1 noisy (.54-.83 on repeats)|routine run 1 reader (A,S1); 2 readers as screen; earlier '165k for 3 readers' was wrong, corrected
   2026-10-23|2-reader risk|V1/V3 fall as readers added (C3 V1 .733 with 2, .655 with 3), so 2-reader numbers look better and are not comparable to 3-reader baselines; no majority to find outlier|label reader count on every number
+  2026-10-25|starter glance wave cost|per deck 3 tag readers 16-26k + 1 oracle reader 37-43k = ~125k subagent tokens; 5 decks first pass ~650k, plus W/U redo; rebuilds change 1-3 cards but a re-review reads 62; stale out/oout files cost extra reads|plan: verdict cache + delta waves + fresh run dirs in tools/agents/STARTER_BUILDER_PLAN.md; saving est. 85-95% unmeasured

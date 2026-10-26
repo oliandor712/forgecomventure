@@ -1,0 +1,12 @@
+# Deck-building section for the glance readers (tag and Oracle). Claude-only TOON. Source: user rules H75-H77 in human_logic.toon.
+# glance.py copies `rules` into every batch file as `deck_rules`; starter_build.py review-export adds `deck_context` (this deck's commander, archetypes, token it makes).
+# Readers only ever read their one batch file, so this text reaches them through the batch, never by path.
+rules[8|]{id|topic|rule}:
+  D1|plan|The 99 are judged against the deck's declared archetypes (deck_context), not only against the commander. Commander support and archetype fit count equally
+  D2|payoff|If the commander makes a token (Treasure, Food, Clue, Blood...), the deck wants payoffs and sinks for it: spend or sacrifice it, X spells, expensive activations, faster ramp. Mark them with role payoff or outlet
+  D3|theme|A card that only works with a tribe or theme (creature type, Food, Clue, Blood, a counter type) the deck does not build around is dead. Flag it as an `unclear` entry starting OFFPLAN: and the reason
+  D4|synergy|Theme cards are fine when enough other members or makers are in the deck (about 5). Judge synergy across the whole list, not card by card
+  D5|generic|When unsure, prefer a generic card (removal, ramp, draw, a solid body) over a themed card with no support
+  D6|colorless|Colorless is the sixth colour (archetype id colorless): colorless spells need colorless sources (mana:colorless rocks and lands). Count both; colorless spells beyond what the sources support are a flag
+  D7|power|Power is judged for the deck's tier, not the pool: a bomb in a starter deck is a flag, filler that does nothing for the plan is a flag
+  D8|verdict|Oracle reader only: after the batches write oout/verdict.json {synergy_gaps:[], dead_cards:[], missing_roles:[], notes:""} judged on the whole list (all batches). Tag readers do not write a verdict

@@ -30,8 +30,8 @@ def pick(recs, tag, n):
     pool = sorted((r for r in recs if tag in r["tags"] and r["name"] not in PREV_SAMPLE), key=richness, reverse=True)
     if len(pool) <= n: return pool
     out = [pool[0], pool[len(pool) // 2]]
-    third = next((r for r in pool if (r["verify"]["add"] or r["verify"]["flags"]) and r not in out), None) or next(r for r in pool if r not in out)
-    return (out + [third])[:n]
+    third = next((r for r in pool if (r["verify"]["add"] or r["verify"]["flags"]) and r not in out), None) or next((r for r in pool if r not in out), None)
+    return (out + [third] * (third is not None))[:n]
 
 
 def pool_pick(tag, n):

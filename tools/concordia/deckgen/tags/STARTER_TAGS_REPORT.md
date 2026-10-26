@@ -1,18 +1,18 @@
 # Starter deck tagging run: report
 
-10 decks, 353 distinct cards, 353 tagged, 0 with no script (none).
+10 decks, 571 distinct cards, 571 tagged, 0 with no script (none).
 
 ## Most common tags
 
-cardtype:creature 200, target_count:one 128, target_type:creature 92, trigger:etb 92, trigger_scope:self 89, cardtype:instant 64, draw 60, tempo:+1 55, type:human 52, token_make 47, cost:tap 41, target_scope:you_control 37, lifegain 37, damage 37, duration:eot 37, mana_source 35, draw_count:1 35, cardtype:sorcery 34, type:wizard 33, put_onto_battlefield 29, cardtype:artifact 28, duration:static 28, tempo:+0.5 27, burn 26, token_count:1 26, remove:destroy 25, cost:sacrifice 24, controller:you 24, kw:flying 24, type:goblin 24, supertype:legendary 23, trigger_filter:you_control 23, trigger:dies 22, token_pt:1/1 22, mana_amount:1 21, from_zone:graveyard 21, life_loss 20, trigger_zone:graveyard 20, optional 19, target_scope:opp_control 19
+cardtype:creature 296, target_count:one 202, trigger:etb 179, trigger_scope:self 167, token_make 162, target_type:creature 143, draw 124, token_count:1 98, tempo:+1 97, cardtype:instant 95, mana_source 79, token_color:colorless 79, type:human 74, target_scope:you_control 73, tempo:+0.5 73, colorless_card 71, token_cardtype:artifact 71, cardtype:artifact 69, cost:tap 67, cardtype:sorcery 66, lifegain 66, draw_count:1 65, artifact_token 59, token_pt:1/1 58, damage 53, duration:eot 53, cost:sacrifice 50, from_zone:graveyard 50, duration:static 48, trigger:dies 44, supertype:legendary 42, kw:flying 41, put_onto_battlefield 40, target_zone:graveyard 40, trigger_zone:graveyard 40, trigger_filter:you_control 40, optional 40, cardtype:enchantment 40, return 37, to_zone:hand 37
 
 ## Trigger types seen in clauses
 
-spell 98, etb_self 81, activated 73, static 39, attacks 15, dies_self 14, spell_cast 13, phase 10, etb_other 10, replacement 8, dies_other 5, leaves_self 5, combat_damage 3, gain_life 2, changeszoneall 2, discarded 1, zone_hand_graveyard 1, zone_graveyard_any 1, attackerunblocked 1, spellcastorcopy 1, attackersdeclared 1, lifelost 1, sacrificed 1
+spell 162, etb_self 154, activated 125, static 67, dies_self 25, spell_cast 22, etb_other 19, attacks 17, replacement 17, phase 15, dies_other 14, combat_damage 6, leaves_self 6, attackersdeclared 5, changeszoneall 4, gain_life 3, damagedoneonce 2, sacrificed 2, cycled 2, discarded 1, counteraddedonce 1, mutates 1, becomestarget 1, attackerunblocked 1, spellcastorcopy 1, lifelost 1, damage 1, taps 1, blocked 1, discardedall 1
 
 ## Most common verbs (script API)
 
-changezone 44, draw 32, token 31, dealdamage 28, static_continuous 25, mana 22, destroy 18, loselife+gainlife 11, pump 9, pumpall 9, draw+loselife 8, putcounter 7, static_reducecost 6, replace_moved 5, mill 5, charm 5, changezoneall 4, discard 3, dealdamage+gainlife 3, gainlife 3, pump+fight 3, putcounter+pump 3, dig 3, copypermanent 3, draw+token 3, counter 3, changezone+changezone 3, pump+draw 2, pump+dealdamage 2, fight 2
+token 87, changezone 71, draw 55, static_continuous 45, mana 36, dealdamage 30, destroy 22, putcounter 15, pump 15, loselife+gainlife 14, charm 14, pumpall 13, replace_moved 12, static_reducecost 11, draw+loselife 9, changezone+token 8, mill 6, changezoneall 6, draw+token 6, gainlife 6, draw+discard 6, destroy+token 5, discard 4, changezone+changezone 4, damageall 4, dealdamage+gainlife 3, effect 3, immediatetrigger 3, static_cantblockby 3, pump+fight 3
 
 ## Cards with no ability tag beyond type, keyword and cost tags (17)
 
@@ -21,18 +21,27 @@ Typhoid Rats, Thornweald Archer, Deadly Recluse, Ambush Viper, Leatherback Balot
 
 ## Cross-check layer (Oracle gap filler, keyword reference/CR, Forge AI)
 
-Cards where the cross-check added tags: 40; tags added in total: 42 (life_loss 20, fight 7, trigger:combat_damage 3, untap 3, trigger:end_step 2, cost:discard 1, cost:life 1, discard 1, trigger:attacks 1, surveil 1, cost:mana 1, token_make 1).
+Cards where the cross-check added tags: 61; tags added in total: 66 (life_loss 27, fight 8, trigger:combat_damage 6, trigger:etb 3, untap 3, trigger:end_step 3, token_make 2, trigger:dies 2, cost:mana 2, cost:discard 1, cost:life 1, discard 1, trigger:attacks 1, surveil 1, trigger:beginning_of_combat 1, damage 1, trigger:discard 1, exile 1, remove:destroy 1).
 
-Cards with an ai_logic tag: 21.
+Cards with an ai_logic tag: 38.
 
-Flags (Oracle line and script tags disagree, nothing added): 14 on 14 cards.
+Flags (Oracle line and script tags disagree, nothing added): 27 on 27 cards.
 
+- Bucknard's Everfull Purse: extra? steal: no Oracle phrase supports it
 - Return of the Wildspeaker: extra? draw: no Oracle phrase supports it
 - Rishkar's Expertise: extra? draw: no Oracle phrase supports it
 - Pulse of Murasa: bounce: Oracle line says it, script tags lack bounce
+- Cache Grab: extra? mill: no Oracle phrase supports it
+- The Binding of the Titans: extra? mill: no Oracle phrase supports it
+- Town Greeter: extra? mill: no Oracle phrase supports it
+- Gate to the Afterlife: draw: Oracle line says it, script tags lack draw
+- Spider Food: extra? remove:destroy: no Oracle phrase supports it
+- Ghost Quarter: extra? tutor: no Oracle phrase supports it
+- Herald's Horn: extra? tutor: no Oracle phrase supports it
+- Kinetic Augur: extra? draw: no Oracle phrase supports it
+- Starforged Sword: extra? draw: no Oracle phrase supports it
 - Barrin, Tolarian Archmage: extra? bounce: no Oracle phrase supports it
 - Mindcrank: extra? mill: no Oracle phrase supports it
-- Herald's Horn: extra? tutor: no Oracle phrase supports it
 - Laboratory Maniac: draw: Oracle line says it, script tags lack draw
 - Fact or Fiction: extra? tutor: no Oracle phrase supports it
 - Disruptor of Currents: extra? bounce: no Oracle phrase supports it
@@ -40,11 +49,15 @@ Flags (Oracle line and script tags disagree, nothing added): 14 on 14 cards.
 - Arcanis the Omnipotent: extra? bounce: no Oracle phrase supports it
 - Time of Ice: extra? bounce: no Oracle phrase supports it
 - Psychic Spiral: extra? mill: no Oracle phrase supports it
+- Bill Ferny, Bree Swindler: extra? steal: no Oracle phrase supports it
 - Loran of the Third Path: extra? remove:destroy: no Oracle phrase supports it
+- Crumb and Get It: extra? draw: no Oracle phrase supports it
+- Commander Sofia Daguerre: extra? remove:destroy: no Oracle phrase supports it
+- Sandstone Oracle: extra? draw: no Oracle phrase supports it
 
 ## Double check of this run
 
-- Structure checks on 353 records (no duplicate or upper-case tags; every supertype and card type in the Types line has its tag; every K: line has a kw: or forge_line: tag): K: line without kw tag: Cloud Key (etbreplacement), Herald's Horn (etbreplacement)
+- Structure checks on 571 records (no duplicate or upper-case tags; every supertype and card type in the Types line has its tag; every K: line has a kw: or forge_line: tag): K: line without kw tag: Paradise Plume (etbreplacement), Herald's Horn (etbreplacement), Cloud Key (etbreplacement)
 - Comparison with the original run (before the cross-check layer, checked 2026-10-22 after the self-sacrifice fix): 80 tags added on 80 cards changed (22 ai_logic, 58 other tags on 51 cards); 14 `sacrifice_outlet` tags removed (self-sacrifice is not an outlet, user 2026-10-22); nothing else removed or changed.
 - By hand: every cross-check addition on the sample cards and about 40 others was read against the Oracle text (see `STARTER_TAGS_SAMPLE.md`); the findings are listed under 'Known problems' below.
 

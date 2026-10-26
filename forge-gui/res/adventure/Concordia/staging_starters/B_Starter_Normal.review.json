@@ -1,294 +1,105 @@
 {
  "deck": "B_Starter_Normal",
  "strategy": [
-  "superfriends",
-  "tokens"
+  "big_mana",
+  "sacrifice"
  ],
- "on_plan": 61,
+ "on_plan": 59,
  "rejects": [
-  "Golden Egg"
+  "Sanguine Bond",
+  "Mask of Memory",
+  "Geth's Grimoire"
  ],
  "reject_detail": [
   {
-   "name": "Golden Egg",
-   "function": "Artifact that draws on entry and sacrifices for mana or life.",
+   "name": "Sanguine Bond",
+   "function": "Opponent loses life equal to your life gained.",
    "oracle_arch": [
-    "artifacts",
-    "sacrifice",
-    "lifegain"
+    "lifegain",
+    "combo",
+    "aristocrats"
    ],
    "tag_arch": [
-    "artifacts",
-    "lifegain",
-    "sacrifice"
+    "aristocrats",
+    "control",
+    "lifegain"
    ],
    "roles": [
-    "artifact",
-    "cantrip",
-    "mana"
+    "drain",
+    "payoff"
+   ],
+   "power": 2
+  },
+  {
+   "name": "Mask of Memory",
+   "function": "Equipment that loots two on combat damage.",
+   "oracle_arch": [
+    "equipment",
+    "card_draw",
+    "aggro"
+   ],
+   "tag_arch": [
+    "aggro",
+    "card_draw",
+    "equipment"
+   ],
+   "roles": [
+    "draw_engine",
+    "equipment"
+   ],
+   "power": 3
+  },
+  {
+   "name": "Geth's Grimoire",
+   "function": "Draw when an opponent discards.",
+   "oracle_arch": [
+    "wheels",
+    "control",
+    "card_draw"
+   ],
+   "tag_arch": [
+    "card_draw",
+    "colorless",
+    "wheels"
+   ],
+   "roles": [
+    "draw_engine"
    ],
    "power": 1
   }
  ],
- "tag_gaps": [
-  {
-   "name": "Deathspore Thallid",
-   "oracle_arch": [
-    "tokens",
-    "sacrifice",
-    "tribal"
-   ],
-   "tag_arch": [
-    "artifacts",
-    "control",
-    "lifegain"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Luxurious Locomotive",
-   "oracle_arch": [
-    "treasure",
-    "artifacts",
-    "aggro"
-   ],
-   "tag_arch": [
-    "aristocrats",
-    "control",
-    "lifegain"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Magnifying Glass",
-   "oracle_arch": [
-    "artifacts",
-    "ramp",
-    "card_draw"
-   ],
-   "tag_arch": [
-    "aristocrats",
-    "blink",
-    "sacrifice"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Idol of False Gods",
-   "oracle_arch": [
-    "tribal",
-    "sacrifice",
-    "big_mana"
-   ],
-   "tag_arch": [
-    "artifacts",
-    "ramp",
-    "treasure"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Plumb the Forbidden",
-   "oracle_arch": [
-    "sacrifice",
-    "card_draw",
-    "aristocrats"
-   ],
-   "tag_arch": [
-    "aggro",
-    "equipment",
-    "voltron"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Commander's Sphere",
-   "oracle_arch": [
-    "ramp",
-    "artifacts",
-    "big_mana"
-   ],
-   "tag_arch": [
-    "aristocrats",
-    "control",
-    "tokens"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Bucknard's Everfull Purse",
-   "oracle_arch": [
-    "treasure",
-    "group_hug",
-    "chaos"
-   ],
-   "tag_arch": [
-    "equipment",
-    "lifegain",
-    "voltron"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Lord Skitter, Sewer King",
-   "oracle_arch": [
-    "tribal",
-    "tokens",
-    "sacrifice"
-   ],
-   "tag_arch": [
-    "artifacts",
-    "lifegain",
-    "treasure"
-   ],
-   "unclear": [
-    "trigger_filter:you_control"
-   ]
-  },
-  {
-   "name": "Scion of Darkness",
-   "oracle_arch": [
-    "reanimator",
-    "graveyard",
-    "aggro"
-   ],
-   "tag_arch": [
-    "big_mana",
-    "control",
-    "ramp"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Twisted Sewer-Witch",
-   "oracle_arch": [
-    "tribal",
-    "tokens",
-    "aristocrats"
-   ],
-   "tag_arch": [
-    "control",
-    "graveyard",
-    "reanimator"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Gonti, Lord of Luxury",
-   "oracle_arch": [
-    "impulse_draw",
-    "chaos",
-    "control"
-   ],
-   "tag_arch": [
-    "artifacts",
-    "card_draw",
-    "ramp"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Bastion of Remembrance",
-   "oracle_arch": [
-    "aristocrats",
-    "tokens",
-    "lifegain"
-   ],
-   "tag_arch": [
-    "artifacts",
-    "card_draw",
-    "ramp"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Noble's Purse",
-   "oracle_arch": [
-    "treasure",
-    "ramp",
-    "artifacts"
-   ],
-   "tag_arch": [
-    "control",
-    "sacrifice",
-    "stax"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Nuka-Cola Vending Machine",
-   "oracle_arch": [
-    "treasure",
-    "lifegain",
-    "artifacts"
-   ],
-   "tag_arch": [
-    "control",
-    "sacrifice",
-    "stax"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Glaring Fleshraker",
-   "oracle_arch": [
-    "big_mana",
-    "tokens",
-    "tribal"
-   ],
-   "tag_arch": [
-    "artifacts",
-    "card_draw",
-    "ramp"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Paradise Plume",
-   "oracle_arch": [
-    "ramp",
-    "lifegain",
-    "big_mana"
-   ],
-   "tag_arch": [
-    "aggro",
-    "blink",
-    "control"
-   ],
-   "unclear": []
-  }
- ],
+ "tag_gaps": [],
  "summary": {
   "cards": 62,
   "tag_readers": 1,
   "rows": 62,
-  "role_f1": 0.429,
-  "arch_hit": 0.742,
-  "power_within1": 0.984,
-  "function_sim": 0.564,
-  "role_f1_vs_listed": 0.389,
-  "arch_hit_vs_listed": 0.667,
-  "unclear_per_card": 0.34,
+  "role_f1": 0.634,
+  "arch_hit": 1.0,
+  "power_within1": 0.968,
+  "function_sim": 0.727,
+  "role_f1_vs_listed": 0.638,
+  "arch_hit_vs_listed": 0.857,
+  "unclear_per_card": 0.35,
   "reader_role_agreement": null,
   "calibration_by_confidence": {
    "2": [
-    0.633,
-    8
+    0.783,
+    7
    ],
    "3": [
-    0.61,
-    19
+    0.806,
+    24
    ],
    "4": [
-    0.578,
-    34
+    0.828,
+    28
    ],
    "5": [
-    0.0,
-    1
+    0.883,
+    3
    ]
   },
-  "tag_tokens_per_card_est": 238,
+  "tag_tokens_per_card_est": 253,
   "invalid_values": {
    "roles": 0,
    "archetypes": 0

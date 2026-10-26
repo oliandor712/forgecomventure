@@ -19,7 +19,7 @@ ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 SUPERTYPES = {"Legendary", "Basic", "Snow", "World", "Ongoing"}
 CARDTYPES = ["Creature", "Instant", "Sorcery", "Enchantment", "Artifact", "Planeswalker", "Land", "Battle", "Kindred", "Conspiracy", "Dungeon", "Phenomenon", "Plane", "Scheme", "Vanguard"]   # CR 205.2a
 BASIC_LAND = {"Plains", "Island", "Swamp", "Mountain", "Forest"}
-COLOR = {"W": "white", "U": "blue", "B": "black", "R": "red", "G": "green"}
+COLOR = {"W": "white", "U": "blue", "B": "black", "R": "red", "G": "green", "C": "colorless"}   # C = the sixth colour (H78)
 COLORWORD = {"white": "white", "blue": "blue", "black": "black", "red": "red", "green": "green"}
 KW_ACTIVE = re.compile(r"^(A|S|T|R):")
 KWSET, REMIND = set(), {}
@@ -169,6 +169,9 @@ def record(name, text):
         if m: sv[m.group(1)] = m.group(2)
     types = next((l[6:] for l in lines if l.startswith("Types:")), "")
     tags = type_tags(types)
+    mc = next((l[9:] for l in lines if l.startswith("ManaCost:")), "")
+    if mc and "Land" not in types.split() and not re.search(r"[WUBRG]", mc) and not any(l.startswith("Colors:") for l in lines) or any(l.strip() == "K:Devoid" for l in lines):
+        tags.append("colorless_card")      # a colorless spell: needs colorless-capable mana in the deck (H78; user 2026-10-26)
     kgroups = {}
     for l in lines:
         if l.startswith("K:"):

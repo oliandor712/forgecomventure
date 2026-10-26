@@ -56,6 +56,12 @@ ORACLE_RULES = """You are the ORACLE READER. Read ONLY the one batch file you ar
 For every card fill the form in `form` exactly (function, roles from roles_allowed, archetypes from archetypes_allowed, power, confidence, unclear = Oracle phrases you found hard to classify), judging only from the card text. Write JSON to the output file: {"cards":[{"id":"c001","function":"...","roles":[...],"archetypes":[...],"power":3,"confidence":4,"unclear":[]}, ...]}, one entry per id, in order. Reply with one line: the number of cards written."""
 
 
+def deck_rules():
+    f = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "..", "agents", "reference", "deck_building_for_readers.toon")
+    try: return [l.strip() for l in open(f, encoding="utf-8") if l.strip().startswith("D") and "|" in l]
+    except OSError: return []
+
+
 def cmd_export(a):
     if getattr(a, "variant", "A") != "A": sys.exit("only variant A (current tags) is built; B and C wait for round G2")
     if getattr(a, "cardlist", ""): recs = [T.record(n, T.find_text(n)) for n in (l.strip() for l in open(a.cardlist, encoding="utf-8")) if n]
@@ -69,6 +75,8 @@ def cmd_export(a):
     wd = workdir(a.run)
     for d in ("in", "oin", "out", "oout", "key"): os.makedirs(os.path.join(wd, d), exist_ok=True)
     spec = form_spec(); key, nb = {}, 0
+    ctx = dict(deck_rules=deck_rules())
+    if getattr(a, "context", ""): ctx["deck_context"] = open(a.context, encoding="utf-8").read().strip()
     db = RC.reminder_db()
     for k in range(0, len(recs), a.batch):
         nb += 1; part = recs[k: k + a.batch]; items, ora = [], []
@@ -80,8 +88,8 @@ def cmd_export(a):
         for c in items:
             shown = {t for g in c["groups"].values() for t in g.split()}
             slim.append(dict(c, tags=[t for t in c["tags"] if t not in shown]))
-        json.dump(dict(form=spec, reminders=RC.batch_reminders(items, db), cards=slim), open(os.path.join(wd, "in", "batch_%02d.json" % nb), "w"), indent=1)
-        json.dump(dict(form=spec, cards=ora), open(os.path.join(wd, "oin", "batch_%02d.json" % nb), "w"), indent=1)
+        json.dump(dict(form=spec, **dict(ctx, deck_rules=[r for r in ctx["deck_rules"] if not r.startswith("D8")]), reminders=RC.batch_reminders(items, db), cards=slim), open(os.path.join(wd, "in", "batch_%02d.json" % nb), "w"), indent=1)
+        json.dump(dict(form=spec, **ctx, cards=ora), open(os.path.join(wd, "oin", "batch_%02d.json" % nb), "w"), indent=1)
     json.dump(key, open(os.path.join(wd, "key", "key.json"), "w"), indent=1)
     leaks = RC.leak_check(wd, key)
     print("glance run %s: %d cards, %d batches in %s ; key in %s/key (never tell the readers)" % (a.run, len(key), nb, wd, wd))

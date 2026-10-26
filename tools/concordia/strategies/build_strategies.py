@@ -403,6 +403,16 @@ add("chaos", "randomness, cascade and theft: warp the game with symmetrical effe
     ["free-spell chains", "stolen permanents"], "symmetrical chaos helps everyone", [], ["group_hug"], ["R", "UR", "RG"],
     dict(cf="subs: coin flip, cascade, theft, possibility storm; Zndrsplt, Yidris, Gonti, Kalamax"), subs=["coin_flip", "cascade", "theft", "possibility_storm"])
 
+add("colorless", "colorless is the sixth colour (user 2026-10-26): colorless spells and artifacts that any deck can cast, backed by enough colorless mana sources",
+    ["count colorless sources first: rocks, Sol Ring-style cards, colorless-producing lands", "add colorless spells only as far as the sources support them", "use them as the flexible filler of the deck: removal, ramp, draw, bodies", "keep coloured pips for the commander's colours"],
+    {"source": R(["mana:colorless", "mana_source"], ["Sol Ring", "Mind Stone", "Wayfarer's Bauble"], [4, 10]),
+     "spell": R(["cardtype:artifact", "token_color:colorless"], ["Swiftfoot Boots", "Skullclamp"], [4, 12]),
+     "fixing": R(["fixing", "mana_choice"], ["Arcane Signet", "Commander's Sphere"], None)},
+    ["a flexible deck that casts everything regardless of colour"],
+    "artifact hate (Vandalblast, Collector Ouphe); colorless spells without colorless mana are dead cards; too many colorless cards dilute the plan",
+    ["removal_artifact", "restrict"], ["artifacts", "ramp", "equipment"], ["C", "W", "U", "B", "R", "G"],
+    dict(cf="user decision 2026-10-26: colorless is a pool like W/U/B/R/G; builder CL_BASE/CL_PER in starter_build.py; reader rule D6"))
+
 # archetypes seen only as one-liners on Spellweave (no detail on the page)
 for i, (plan, ex) in {"treasure": ("make Treasure and convert it to mana, drain or sacrifice value", ["Prosper, Tome-Bound", "Korvold, Fae-Cursed King", "Magda, Brazen Outlaw"]),
                       "wheels": ("symmetrical discard-and-draw with punishers", ["Nekusar, the Mindrazer", "Xyris, the Writhing Storm", "The Locust God"]),
