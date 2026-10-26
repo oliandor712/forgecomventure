@@ -35,6 +35,15 @@
             "command": "cat tools/agents/HANDOVER.md"
           }
         ]
+      },
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 tools/agents/ensure_refs.py"
+          }
+        ]
       }
     ]
   }

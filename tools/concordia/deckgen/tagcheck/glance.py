@@ -78,6 +78,7 @@ def _cache_load(path):
 
 
 def cmd_export(a):
+    sys.path.insert(0, os.path.abspath(os.path.join(HERE, "..", "..", "..", "agents"))); import ensure_refs; ensure_refs.main()   # readers may open ~/tagcheck_runs/_refs/
     if getattr(a, "variant", "A") != "A": sys.exit("only variant A (current tags) is built; B and C wait for round G2")
     if getattr(a, "cardlist", ""): recs = [T.record(n, T.find_text(n)) for n in (l.strip() for l in open(a.cardlist, encoding="utf-8")) if n]
     else: recs = starter_records()

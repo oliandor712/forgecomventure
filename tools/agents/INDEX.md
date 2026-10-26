@@ -71,7 +71,7 @@ Small (fine to read): handoffs under 2k, `TAG_LEGEND.md` 2k, `tagcheck/README.md
 
 ## 6. Deck building
 - Folder: `tools/concordia/deckgen/`. Start with `HANDOFF_DECKBUILDER.md`, `TAG_UTILITY_DECKBUILDER.md`.
-- Core: `build.py`, `pool.py`, `categorize.py` (`CATEGORIES.toon`), `variants.py`/`variants.json`, `starter_tune.py`, `hall_roster.py`, `gen_mono.py`, `starter_build.py` (commander-first starters, tier-2 rules), `synergy.py` (general synergy rule H17: support + token payoffs, used by both builders).
+- Core: `build.py`, `pool.py`, `categorize.py` (`CATEGORIES.toon`), `variants.py`/`variants.json`, `starter_tune.py`, `hall_roster.py`, `gen_mono.py`, `starter_build.py` (commander-first starters, tier-2 rules), `tools/agents/ensure_refs.py` (rebuilds ~/tagcheck_runs/_refs at session start), `synergy.py` (general synergy rule H17: support + token payoffs, used by both builders).
 - Tier rules: `tools/concordia/tier_rules.py`, `archetype_rules.py`, `deck_tier.py`; tier 1 data `T1_*.toon`, `t1_plan.py`, `t1_fresh.json`.
 - Card pools/lists: `staples.py`/`staples.json` (`docs/.../STAPLES.md`), `budget_lands.py`, `UNFLAGGED_CARDS.md`, `COMMANDER_PAIRS.toon`, `scryfall*`, `spellbinder*`.
 - Live decks: `forge-gui/res/adventure/Concordia/decks/{starter,tier1..5,tutorial}`; staged tier 1 (not live): `Concordia/staging_t1_fresh/`. Do not edit live decks without the user's word.
