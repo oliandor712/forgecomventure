@@ -175,13 +175,13 @@
    "fit": 4
   },
   {
-   "name": "Inquisitorial Rosette",
+   "name": "Goldvein Pick",
    "core": false,
-   "rarity": "R",
+   "rarity": "C",
    "cmc": 2,
    "types": "Artifact Equipment",
-   "payoff": "pay",
-   "power": 22.4,
+   "payoff": "",
+   "power": 19.3,
    "supports": true,
    "fit": 4
   },
@@ -274,6 +274,17 @@
    "fit": 4
   },
   {
+   "name": "Case of the Ransacked Lab",
+   "core": false,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Enchantment Case",
+   "payoff": "",
+   "power": 21.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Chakra Meditation",
    "core": false,
    "rarity": "R",
@@ -316,6 +327,17 @@
    "power": 13.6,
    "supports": true,
    "fit": 3
+  },
+  {
+   "name": "Glaring Fleshraker",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Eldrazi Drone",
+   "payoff": "",
+   "power": 20.0,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Leitmotif Composer",
@@ -362,15 +384,15 @@
    "fit": 4
   },
   {
-   "name": "Public Enemy",
+   "name": "Secrets of the Dead",
    "core": false,
    "rarity": "U",
    "cmc": 3,
-   "types": "Enchantment Aura",
-   "payoff": "pay",
-   "power": 15.7,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 17.3,
    "supports": true,
-   "fit": 2
+   "fit": 3
   },
   {
    "name": "Teferi's Tutelage",
@@ -393,28 +415,6 @@
    "power": 18.4,
    "supports": true,
    "fit": 4
-  },
-  {
-   "name": "Thunderstaff",
-   "core": false,
-   "rarity": "U",
-   "cmc": 3,
-   "types": "Artifact",
-   "payoff": "pay",
-   "power": 13.2,
-   "supports": true,
-   "fit": 3
-  },
-  {
-   "name": "Unctus, Grand Metatect",
-   "core": false,
-   "rarity": "R",
-   "cmc": 3,
-   "types": "Legendary Artifact Creature Phyrexian Vedalken",
-   "payoff": "pay",
-   "power": 20.7,
-   "supports": true,
-   "fit": 3
   },
   {
    "name": "Alandra, Sky Dreamer",
@@ -582,17 +582,6 @@
    "fit": 3
   },
   {
-   "name": "Mirelurk Queen",
-   "core": false,
-   "rarity": "R",
-   "cmc": 5,
-   "types": "Creature Crab Mutant",
-   "payoff": "",
-   "power": 14.6,
-   "supports": true,
-   "fit": 3
-  },
-  {
    "name": "Reflections of Littjara",
    "core": false,
    "rarity": "R",
@@ -624,6 +613,17 @@
    "power": 43.2,
    "supports": true,
    "fit": 2
+  },
+  {
+   "name": "Vanquisher's Banner",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 20.1,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Caged Sun",
@@ -670,17 +670,6 @@
    "fit": 4
   },
   {
-   "name": "Thunderhawk Gunship",
-   "core": false,
-   "rarity": "R",
-   "cmc": 6,
-   "types": "Artifact Vehicle",
-   "payoff": "pay",
-   "power": 11.9,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Ultimecia, Temporal Threat",
    "core": false,
    "rarity": "R",
@@ -690,6 +679,17 @@
    "power": 16.1,
    "supports": true,
    "fit": 3
+  },
+  {
+   "name": "Treasure Cruise",
+   "core": false,
+   "rarity": "C",
+   "cmc": 8,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 24.9,
+   "supports": true,
+   "fit": 2
   }
  ]
 }

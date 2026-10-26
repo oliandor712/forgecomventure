@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """General synergy rule (H17, merged with H75 on 2026-10-26): the deck must use the commander's own ability.
   1. at least SUPPORT_MIN cards work with the commander's ability (commander_support.py, build.py commander_works);
-  2. a commander that makes tokens of any kind needs at least PAYOFF_MIN payoff cards for them (sacrifice outlets and death triggers, go wide: anthems, lords, overrun, doublers,
+  2. a commander that makes tokens of any kind needs PAYOFF_MIN to PAYOFF_MAX (5-10) payoff cards for them (sacrifice outlets and death triggers, go wide: anthems, lords, overrun, doublers,
      tribal cards naming the token type; for Treasure, Food, Clue, Blood and the like: cards that spend, sacrifice or count them, and mana sinks) and, for those non-creature tokens, at most MAKER_CAP other makers.
 Roles come from strategies/strategies.json (tokens, sacrifice, aristocrats); too-broad signals are left out (BROAD)."""
 import os, re, sys
@@ -9,7 +9,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, '..', 'strategies'))
 import strategy_fit as sf  # noqa: E402
 
-SUPPORT_MIN, PAYOFF_MIN, MAKER_CAP = 5, 8, 4
+SUPPORT_MIN, PAYOFF_MIN, PAYOFF_MAX, MAKER_CAP = 5, 5, 10, 4   # payoffs are a range, not a fixed count, so decks can differ (user 2026-10-26)
 NONCREATURE_TOK = {'treasure', 'food', 'clue', 'blood', 'gold', 'junk', 'map', 'powerstone', 'shard'}
 PAYOFF_ROLES = (('tokens', 'anthem'), ('tokens', 'finisher'), ('tokens', 'doubler'), ('sacrifice', 'outlet'), ('sacrifice', 'payoff'), ('aristocrats', 'outlet'), ('aristocrats', 'payoff'))
 BROAD = {'sacrifice', 'life_loss', 'damage', 'trigger:etb', 'token_count', 'replace', 'cost_sacrifice_target', 'drain'}   # match too many cards to count as a payoff alone

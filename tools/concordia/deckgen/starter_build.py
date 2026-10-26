@@ -171,7 +171,7 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         if sup and nsup[0] < SUPPORT_CAP: s += SUPPORT_W
         s -= THEME_PEN * len(off_themes(p))
         pk = payoff_kind(p, tplan) if tplan else ''
-        if pk: s += PAYOFF_W
+        if pk and npay[0] < SY.PAYOFF_MAX: s += PAYOFF_W   # no bonus past the range so payoffs do not crowd the deck
         why.setdefault(p['name'], {})['payoff'] = pk
         fit = min(FIT_CAP, sf.fit(p['ftags'], strategy)) if strategy else 0
         s += FIT_W * fit - B.NICHE_PEN[TIER] * min(2, sf.niche_penalty(p['ftags'], strategy) if strategy else 0)
@@ -213,6 +213,7 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         if pwr >= 70 and npow[1] >= spec.get('p70', 99): return None
         if not theme_ok(p): return None
         if kinds & maker_types(p) and nmaker[0] >= MAKER_CAP: return None
+        if tplan and npay[0] >= SY.PAYOFF_MAX and payoff_kind(p, tplan): return None   # payoffs are a 5-10 range (H17)
         if is_colorless(p) and ncl[0] >= CL_BASE + CL_PER * cl_sources(): return None
         return B.pick_rarity(p, TIER, rcount, spec)
 

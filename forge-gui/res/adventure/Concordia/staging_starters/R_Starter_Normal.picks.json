@@ -143,13 +143,24 @@
    "fit": 4
   },
   {
-   "name": "Goblin Morningstar",
+   "name": "Goblin Instigator",
    "core": false,
-   "rarity": "U",
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Goblin Rogue",
+   "payoff": "",
+   "power": 18.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Goldvein Pick",
+   "core": false,
+   "rarity": "C",
    "cmc": 2,
    "types": "Artifact Equipment",
-   "payoff": "pay",
-   "power": 17.9,
+   "payoff": "",
+   "power": 19.3,
    "supports": true,
    "fit": 4
   },
@@ -165,13 +176,13 @@
    "fit": 1
   },
   {
-   "name": "Mogg War Marshal",
+   "name": "Kyoshi Battle Fan",
    "core": false,
    "rarity": "C",
    "cmc": 2,
-   "types": "Creature Goblin Warrior",
-   "payoff": "pay",
-   "power": 18.3,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 15.0,
    "supports": true,
    "fit": 4
   },
@@ -183,17 +194,6 @@
    "types": "Artifact Creature Phyrexian Myr",
    "payoff": "pay",
    "power": 16.4,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Prized Statue",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact",
-   "payoff": "pay",
-   "power": 18.9,
    "supports": true,
    "fit": 4
   },
@@ -231,17 +231,6 @@
    "fit": 4
   },
   {
-   "name": "Tavern Scoundrel",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Creature Human Rogue",
-   "payoff": "pay",
-   "power": 17.6,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Treasure Map",
    "core": true,
    "rarity": "R",
@@ -251,6 +240,17 @@
    "power": 49.9,
    "supports": true,
    "fit": 2
+  },
+  {
+   "name": "Wily Goblin",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Goblin Pirate",
+   "payoff": "",
+   "power": 18.4,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Captain Lannery Storm",
@@ -264,35 +264,13 @@
    "fit": 4
   },
   {
-   "name": "Farid, Enterprising Salvager",
-   "core": false,
-   "rarity": "R",
-   "cmc": 3,
-   "types": "Legendary Creature Human Soldier",
-   "payoff": "pay",
-   "power": 18.3,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Filigree Familiar",
-   "core": false,
-   "rarity": "C",
-   "cmc": 3,
-   "types": "Artifact Creature Fox",
-   "payoff": "pay",
-   "power": 13.6,
-   "supports": false,
-   "fit": 4
-  },
-  {
-   "name": "Fire Nation Warship",
+   "name": "Careening Mine Cart",
    "core": false,
    "rarity": "U",
    "cmc": 3,
    "types": "Artifact Vehicle",
-   "payoff": "pay",
-   "power": 13.7,
+   "payoff": "",
+   "power": 15.5,
    "supports": true,
    "fit": 4
   },
@@ -308,24 +286,35 @@
    "fit": 4
   },
   {
-   "name": "Killmonger, Ruthless Usurper",
+   "name": "Gadrak, the Crown-Scourge",
    "core": false,
    "rarity": "R",
    "cmc": 3,
-   "types": "Legendary Creature Human Villain",
-   "payoff": "pay",
-   "power": 19.2,
+   "types": "Legendary Creature Dragon",
+   "payoff": "",
+   "power": 20.8,
    "supports": true,
    "fit": 4
   },
   {
-   "name": "Mogg Alarm",
+   "name": "Ghirapur Gearcrafter",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Human Artificer",
+   "payoff": "",
+   "power": 12.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Glaring Fleshraker",
    "core": false,
    "rarity": "U",
    "cmc": 3,
-   "types": "Sorcery",
-   "payoff": "pay",
-   "power": 13.5,
+   "types": "Creature Eldrazi Drone",
+   "payoff": "",
+   "power": 20.0,
    "supports": true,
    "fit": 4
   },
@@ -352,13 +341,24 @@
    "fit": 4
   },
   {
-   "name": "Pia Nalaar",
+   "name": "Prosperous Bandit",
    "core": false,
    "rarity": "R",
    "cmc": 3,
-   "types": "Legendary Creature Human Artificer",
-   "payoff": "pay",
-   "power": 18.3,
+   "types": "Creature Raccoon Rogue",
+   "payoff": "",
+   "power": 20.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Puppet Master, String Puller",
+   "core": false,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Legendary Creature Human Artificer Villain",
+   "payoff": "",
+   "power": 19.2,
    "supports": true,
    "fit": 4
   },
@@ -385,35 +385,57 @@
    "fit": 4
   },
   {
-   "name": "Thrill-Kill Disciple",
+   "name": "Thran Spider",
    "core": false,
    "rarity": "R",
    "cmc": 3,
-   "types": "Creature Human Mercenary",
-   "payoff": "pay",
+   "types": "Artifact Creature Spider",
+   "payoff": "",
+   "power": 18.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Tokka & Rahzar, Unsupervised",
+   "core": false,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Legendary Creature Turtle Wolf Mutant",
+   "payoff": "",
    "power": 18.3,
    "supports": true,
    "fit": 4
   },
   {
-   "name": "Tuktuk the Explorer",
+   "name": "Twisted Fealty",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 16.4,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Akroan Horse",
    "core": false,
    "rarity": "R",
-   "cmc": 3,
-   "types": "Legendary Creature Goblin",
-   "payoff": "pay",
-   "power": 17.6,
+   "cmc": 4,
+   "types": "Artifact Creature Horse",
+   "payoff": "",
+   "power": 17.4,
    "supports": true,
    "fit": 4
   },
   {
-   "name": "You See a Pair of Goblins",
+   "name": "Beetleback Chief",
    "core": false,
    "rarity": "U",
-   "cmc": 3,
-   "types": "Instant",
-   "payoff": "pay",
-   "power": 15.9,
+   "cmc": 4,
+   "types": "Creature Goblin Warrior",
+   "payoff": "",
+   "power": 14.4,
    "supports": true,
    "fit": 4
   },
@@ -425,6 +447,17 @@
    "types": "Artifact Creature Robot",
    "payoff": "pay",
    "power": 17.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Coin of Mastery",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 17.4,
    "supports": true,
    "fit": 4
   },
@@ -451,13 +484,13 @@
    "fit": 3
   },
   {
-   "name": "Jaxis, the Troublemaker",
+   "name": "Hoard Hauler",
    "core": false,
    "rarity": "R",
    "cmc": 4,
-   "types": "Legendary Creature Human Warrior",
-   "payoff": "pay",
-   "power": 19.6,
+   "types": "Artifact Vehicle",
+   "payoff": "",
+   "power": 17.1,
    "supports": true,
    "fit": 4
   },
@@ -469,28 +502,6 @@
    "types": "Artifact",
    "payoff": "",
    "power": 16.2,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Rekindling Phoenix",
-   "core": false,
-   "rarity": "M",
-   "cmc": 4,
-   "types": "Creature Phoenix",
-   "payoff": "pay",
-   "power": 18.1,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Rukh Egg",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Creature Bird Egg",
-   "payoff": "pay",
-   "power": 13.8,
    "supports": true,
    "fit": 4
   },
@@ -525,17 +536,6 @@
    "payoff": "",
    "power": 16.2,
    "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Vibranium Strike Gauntlets",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Artifact Equipment",
-   "payoff": "pay",
-   "power": 16.2,
-   "supports": false,
    "fit": 4
   },
   {
@@ -671,13 +671,13 @@
    "fit": 4
   },
   {
-   "name": "Phyrexian Triniform",
+   "name": "Brass's Bounty",
    "core": false,
-   "rarity": "M",
-   "cmc": 9,
-   "types": "Artifact Creature Phyrexian Golem",
-   "payoff": "pay",
-   "power": 16.1,
+   "rarity": "R",
+   "cmc": 7,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 14.2,
    "supports": true,
    "fit": 4
   },

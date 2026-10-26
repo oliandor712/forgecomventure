@@ -66,6 +66,17 @@
    "fit": 4
   },
   {
+   "name": "Momo, Playful Pet",
+   "core": false,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Legendary Creature Lemur Bat Ally",
+   "payoff": "",
+   "power": 21.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Prying Blade",
    "core": false,
    "rarity": "C",
@@ -77,17 +88,6 @@
    "fit": 4
   },
   {
-   "name": "Restoration Magic",
-   "core": false,
-   "rarity": "U",
-   "cmc": 1,
-   "types": "Instant",
-   "payoff": "pay",
-   "power": 26.3,
-   "supports": true,
-   "fit": 3
-  },
-  {
    "name": "Sol Ring",
    "core": false,
    "rarity": "U",
@@ -95,22 +95,22 @@
    "types": "Artifact"
   },
   {
+   "name": "Ancestral Blade",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 15.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Arcane Signet",
    "core": false,
    "rarity": "C",
    "cmc": 2,
    "types": "Artifact"
-  },
-  {
-   "name": "Crashing Drawbridge",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact Creature Wall",
-   "payoff": "pay",
-   "power": 21.0,
-   "supports": true,
-   "fit": 2
   },
   {
    "name": "Fellwar Stone",
@@ -164,6 +164,28 @@
    "fit": 4
   },
   {
+   "name": "Goldvein Pick",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 19.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Invasion Reinforcements",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Human Warrior Ally",
+   "payoff": "",
+   "power": 18.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Kozilek's Command",
    "core": true,
    "rarity": "R",
@@ -171,6 +193,17 @@
    "types": "Kindred Instant Eldrazi",
    "payoff": "",
    "power": 68.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Kyoshi Battle Fan",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 15.0,
    "supports": true,
    "fit": 4
   },
@@ -184,39 +217,6 @@
    "power": 49.7,
    "supports": true,
    "fit": 0
-  },
-  {
-   "name": "Mister Gutsy",
-   "core": false,
-   "rarity": "R",
-   "cmc": 2,
-   "types": "Artifact Creature Robot Soldier",
-   "payoff": "pay",
-   "power": 21.6,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Myr Sire",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact Creature Phyrexian Myr",
-   "payoff": "pay",
-   "power": 16.4,
-   "supports": true,
-   "fit": 3
-  },
-  {
-   "name": "Prized Statue",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact",
-   "payoff": "pay",
-   "power": 18.9,
-   "supports": true,
-   "fit": 4
   },
   {
    "name": "Stalactite Dagger",
@@ -252,6 +252,17 @@
    "fit": 2
   },
   {
+   "name": "Allied Teamwork",
+   "core": false,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 18.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Burnished Hart",
    "core": true,
    "rarity": "U",
@@ -261,6 +272,17 @@
    "power": 48.5,
    "supports": true,
    "fit": 0
+  },
+  {
+   "name": "Careening Mine Cart",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact Vehicle",
+   "payoff": "",
+   "power": 15.5,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Generous Gift",
@@ -373,17 +395,6 @@
    "fit": 4
   },
   {
-   "name": "Siege Veteran",
-   "core": false,
-   "rarity": "R",
-   "cmc": 3,
-   "types": "Creature Human Soldier",
-   "payoff": "pay",
-   "power": 18.9,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Skyclave Apparition",
    "core": true,
    "rarity": "R",
@@ -395,24 +406,13 @@
    "fit": 4
   },
   {
-   "name": "Thopter Shop",
+   "name": "Thran Spider",
    "core": false,
    "rarity": "R",
    "cmc": 3,
-   "types": "Artifact",
-   "payoff": "pay",
-   "power": 19.1,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Thunderstaff",
-   "core": false,
-   "rarity": "U",
-   "cmc": 3,
-   "types": "Artifact",
-   "payoff": "pay",
-   "power": 13.2,
+   "types": "Artifact Creature Spider",
+   "payoff": "",
+   "power": 18.4,
    "supports": true,
    "fit": 4
   },
@@ -435,6 +435,17 @@
    "types": "Creature Cat Soldier",
    "payoff": "",
    "power": 17.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Akroan Horse",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact Creature Horse",
+   "payoff": "",
+   "power": 17.4,
    "supports": true,
    "fit": 4
   },
@@ -538,17 +549,6 @@
    "fit": 4
   },
   {
-   "name": "Warren Warleader",
-   "core": false,
-   "rarity": "M",
-   "cmc": 4,
-   "types": "Creature Rabbit Knight",
-   "payoff": "pay",
-   "power": 20.2,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Aang, Airbending Master",
    "core": false,
    "rarity": "M",
@@ -560,15 +560,26 @@
    "fit": 4
   },
   {
-   "name": "Boss's Chauffeur",
+   "name": "Angelic Sell-Sword",
    "core": false,
    "rarity": "R",
    "cmc": 5,
-   "types": "Creature Elf Citizen",
-   "payoff": "pay",
+   "types": "Creature Angel Mercenary",
+   "payoff": "",
    "power": 14.0,
    "supports": true,
    "fit": 4
+  },
+  {
+   "name": "Cathars' Crusade",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 19.3,
+   "supports": false,
+   "fit": 2
   },
   {
    "name": "God-Eternal Oketra",
@@ -580,17 +591,6 @@
    "power": 48.6,
    "supports": true,
    "fit": 3
-  },
-  {
-   "name": "Knight-Captain of Eos",
-   "core": false,
-   "rarity": "R",
-   "cmc": 5,
-   "types": "Creature Human Knight",
-   "payoff": "pay",
-   "power": 12.6,
-   "supports": true,
-   "fit": 4
   },
   {
    "name": "Meteorite",

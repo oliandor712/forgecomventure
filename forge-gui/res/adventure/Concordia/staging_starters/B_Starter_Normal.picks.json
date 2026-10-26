@@ -38,17 +38,6 @@
    "fit": 1
   },
   {
-   "name": "Carrion Feeder",
-   "core": false,
-   "rarity": "C",
-   "cmc": 1,
-   "types": "Creature Zombie",
-   "payoff": "pay",
-   "power": 25.1,
-   "supports": true,
-   "fit": 2
-  },
-  {
    "name": "Myr Moonvessel",
    "core": false,
    "rarity": "C",
@@ -78,6 +67,17 @@
    "fit": 0
   },
   {
+   "name": "Unearth",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 24.0,
+   "supports": true,
+   "fit": 2
+  },
+  {
    "name": "Village Rites",
    "core": true,
    "rarity": "C",
@@ -87,28 +87,6 @@
    "power": 42.6,
    "supports": true,
    "fit": 3
-  },
-  {
-   "name": "Abyssal Gatekeeper",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Creature Horror",
-   "payoff": "pay",
-   "power": 15.3,
-   "supports": true,
-   "fit": 3
-  },
-  {
-   "name": "Accursed Marauder",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Creature Zombie Warrior",
-   "payoff": "pay",
-   "power": 22.6,
-   "supports": true,
-   "fit": 2
   },
   {
    "name": "Animate Dead",
@@ -136,6 +114,17 @@
    "types": "Instant",
    "payoff": "pay",
    "power": 40.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Dire Fleet Hoarder",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Human Pirate",
+   "payoff": "",
+   "power": 15.1,
    "supports": true,
    "fit": 4
   },
@@ -169,14 +158,14 @@
    "fit": 4
   },
   {
-   "name": "Joo Dee, One of Many",
+   "name": "Golgari Thug",
    "core": false,
    "rarity": "U",
    "cmc": 2,
-   "types": "Creature Human Advisor",
-   "payoff": "pay",
-   "power": 17.7,
-   "supports": true,
+   "types": "Creature Human Warrior",
+   "payoff": "",
+   "power": 20.5,
+   "supports": false,
    "fit": 3
   },
   {
@@ -191,26 +180,48 @@
    "fit": 0
   },
   {
-   "name": "Plumb the Forbidden",
+   "name": "Mask of Memory",
    "core": false,
    "rarity": "U",
    "cmc": 2,
-   "types": "Instant",
-   "payoff": "pay",
-   "power": 26.3,
-   "supports": true,
-   "fit": 3
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 23.5,
+   "supports": false,
+   "fit": 2
   },
   {
-   "name": "Sheoldred's Edict",
+   "name": "Myr Sire",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Creature Phyrexian Myr",
+   "payoff": "",
+   "power": 16.4,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Negative Zone Portal",
+   "core": false,
+   "rarity": "R",
+   "cmc": 2,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 22.2,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Rabid Attack",
    "core": false,
    "rarity": "U",
    "cmc": 2,
    "types": "Instant",
-   "payoff": "pay",
-   "power": 23.1,
+   "payoff": "",
+   "power": 19.5,
    "supports": true,
-   "fit": 2
+   "fit": 3
   },
   {
    "name": "Syr Ginger, the Meal Ender",
@@ -224,17 +235,6 @@
    "fit": 3
   },
   {
-   "name": "Umbral Collar Zealot",
-   "core": false,
-   "rarity": "U",
-   "cmc": 2,
-   "types": "Creature Human Cleric",
-   "payoff": "pay",
-   "power": 23.8,
-   "supports": true,
-   "fit": 2
-  },
-  {
    "name": "Waste Not",
    "core": false,
    "rarity": "R",
@@ -246,15 +246,26 @@
    "fit": 4
   },
   {
-   "name": "Braids, Arisen Nightmare",
+   "name": "Cathodion",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact Creature Construct",
+   "payoff": "",
+   "power": 12.7,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Dark Prophecy",
    "core": false,
    "rarity": "R",
    "cmc": 3,
-   "types": "Legendary Creature Nightmare",
-   "payoff": "pay",
-   "power": 26.7,
-   "supports": true,
-   "fit": 4
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 20.5,
+   "supports": false,
+   "fit": 3
   },
   {
    "name": "Dismember",
@@ -268,48 +279,26 @@
    "fit": 0
   },
   {
-   "name": "Fain, the Broker",
+   "name": "Egon, God of Death",
    "core": false,
    "rarity": "R",
    "cmc": 3,
-   "types": "Legendary Creature Human Warlock",
-   "payoff": "pay",
-   "power": 21.1,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Fallen Ideal",
-   "core": false,
-   "rarity": "U",
-   "cmc": 3,
-   "types": "Enchantment Aura",
-   "payoff": "pay",
-   "power": 15.7,
+   "types": "Legendary Creature God",
+   "payoff": "",
+   "power": 18.3,
    "supports": true,
    "fit": 3
   },
   {
-   "name": "Flesh Carver",
-   "core": false,
-   "rarity": "R",
-   "cmc": 3,
-   "types": "Creature Human Wizard",
-   "payoff": "pay",
-   "power": 16.9,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Fleshbag Marauder",
+   "name": "Filigree Familiar",
    "core": false,
    "rarity": "C",
    "cmc": 3,
-   "types": "Creature Zombie Warrior",
-   "payoff": "pay",
-   "power": 18.5,
-   "supports": true,
-   "fit": 2
+   "types": "Artifact Creature Fox",
+   "payoff": "",
+   "power": 13.6,
+   "supports": false,
+   "fit": 3
   },
   {
    "name": "Gravelighter",
@@ -345,15 +334,15 @@
    "fit": 4
   },
   {
-   "name": "Monument to Endurance",
+   "name": "Midnight Reaper",
    "core": false,
    "rarity": "R",
    "cmc": 3,
-   "types": "Artifact",
+   "types": "Creature Zombie Knight",
    "payoff": "",
-   "power": 24.1,
-   "supports": true,
-   "fit": 4
+   "power": 23.8,
+   "supports": false,
+   "fit": 3
   },
   {
    "name": "Morbid Opportunist",
@@ -367,17 +356,6 @@
    "fit": 3
   },
   {
-   "name": "Plaguecrafter",
-   "core": false,
-   "rarity": "U",
-   "cmc": 3,
-   "types": "Creature Human Shaman",
-   "payoff": "pay",
-   "power": 21.5,
-   "supports": true,
-   "fit": 2
-  },
-  {
    "name": "Preacher of the Schism",
    "core": true,
    "rarity": "R",
@@ -389,26 +367,70 @@
    "fit": 3
   },
   {
-   "name": "Virtus's Maneuver",
+   "name": "Priest of Gix",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Phyrexian Human Cleric Minion",
+   "payoff": "",
+   "power": 17.1,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Teval's Judgment",
    "core": false,
    "rarity": "R",
    "cmc": 3,
-   "types": "Sorcery",
-   "payoff": "pay",
-   "power": 18.0,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 22.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Transpose",
+   "core": false,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 21.7,
    "supports": true,
    "fit": 3
   },
   {
-   "name": "Yahenni, Undying Partisan",
+   "name": "Victory Chimes",
+   "core": false,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 21.1,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Ashiok's Reaper",
    "core": false,
    "rarity": "U",
-   "cmc": 3,
-   "types": "Legendary Creature Aetherborn Vampire",
-   "payoff": "pay",
-   "power": 20.3,
-   "supports": true,
+   "cmc": 4,
+   "types": "Creature Nightmare",
+   "payoff": "",
+   "power": 12.7,
+   "supports": false,
    "fit": 3
+  },
+  {
+   "name": "Big Mother Mouser",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact Creature Robot",
+   "payoff": "",
+   "power": 17.3,
+   "supports": true,
+   "fit": 2
   },
   {
    "name": "Crypt Ghast",
@@ -422,15 +444,37 @@
    "fit": 3
   },
   {
-   "name": "Grave Pact",
+   "name": "Elegy Acolyte",
    "core": false,
    "rarity": "R",
    "cmc": 4,
-   "types": "Enchantment",
-   "payoff": "pay",
-   "power": 22.2,
+   "types": "Creature Human Cleric",
+   "payoff": "",
+   "power": 18.1,
    "supports": true,
    "fit": 3
+  },
+  {
+   "name": "Empowered Autogenerator",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 18.7,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Enduring Tenacity",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Enchantment Creature Snake Glimmer",
+   "payoff": "",
+   "power": 21.5,
+   "supports": true,
+   "fit": 1
   },
   {
    "name": "Hedron Archive",
@@ -441,28 +485,6 @@
    "payoff": "",
    "power": 33.8,
    "supports": false,
-   "fit": 4
-  },
-  {
-   "name": "Henrika Domnathi",
-   "core": false,
-   "rarity": "M",
-   "cmc": 4,
-   "types": "Legendary Creature Vampire",
-   "payoff": "pay",
-   "power": 19.2,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Insatiable Frugivore",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Creature Rat Berserker",
-   "payoff": "pay",
-   "power": 15.3,
-   "supports": true,
    "fit": 4
   },
   {
@@ -477,70 +499,48 @@
    "fit": 3
   },
   {
-   "name": "Rankle, Master of Pranks",
+   "name": "Species Specialist",
    "core": false,
    "rarity": "R",
    "cmc": 4,
-   "types": "Legendary Creature Faerie Rogue",
-   "payoff": "pay",
-   "power": 20.1,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Shelob, Dread Weaver",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Legendary Creature Spider Demon",
-   "payoff": "sink",
-   "power": 16.8,
+   "types": "Creature Human Warrior",
+   "payoff": "",
+   "power": 18.0,
    "supports": false,
    "fit": 3
   },
   {
-   "name": "Skyclave Shadowcat",
+   "name": "The Vision",
    "core": false,
-   "rarity": "U",
+   "rarity": "R",
    "cmc": 4,
-   "types": "Creature Cat Horror",
-   "payoff": "pay",
-   "power": 11.8,
+   "types": "Legendary Artifact Creature Robot Hero",
+   "payoff": "",
+   "power": 17.0,
    "supports": true,
-   "fit": 4
+   "fit": 2
   },
   {
-   "name": "Smothering Abomination",
+   "name": "Thought-Knot Seer",
    "core": false,
    "rarity": "R",
    "cmc": 4,
    "types": "Creature Eldrazi",
-   "payoff": "pay",
-   "power": 17.8,
-   "supports": true,
-   "fit": 4
+   "payoff": "",
+   "power": 15.8,
+   "supports": false,
+   "fit": 2
   },
   {
-   "name": "Snake Basket",
+   "name": "Vibranium Strike Gauntlets",
    "core": false,
    "rarity": "R",
    "cmc": 4,
-   "types": "Artifact",
-   "payoff": "sink",
-   "power": 14.2,
-   "supports": true,
-   "fit": 3
-  },
-  {
-   "name": "Yawgmoth, Thran Physician",
-   "core": false,
-   "rarity": "M",
-   "cmc": 4,
-   "types": "Legendary Creature Human Cleric",
-   "payoff": "pay",
-   "power": 24.3,
-   "supports": true,
-   "fit": 3
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 16.2,
+   "supports": false,
+   "fit": 2
   },
   {
    "name": "Archfiend of Ifnir",
@@ -552,6 +552,17 @@
    "power": 17.3,
    "supports": true,
    "fit": 2
+  },
+  {
+   "name": "Black Market",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 22.1,
+   "supports": false,
+   "fit": 4
   },
   {
    "name": "Clackbridge Troll",
@@ -576,15 +587,15 @@
    "fit": 3
   },
   {
-   "name": "High-Society Hunter",
+   "name": "Gauntlet of Power",
    "core": false,
    "rarity": "R",
    "cmc": 5,
-   "types": "Creature Vampire Noble",
-   "payoff": "pay",
-   "power": 14.5,
-   "supports": true,
-   "fit": 4
+   "types": "Artifact",
+   "payoff": "",
+   "power": 15.7,
+   "supports": false,
+   "fit": 3
   },
   {
    "name": "Invoke Despair",
@@ -598,26 +609,15 @@
    "fit": 4
   },
   {
-   "name": "Krav, the Unredeemed",
+   "name": "Syr Konrad, the Grim",
    "core": false,
-   "rarity": "R",
+   "rarity": "U",
    "cmc": 5,
-   "types": "Legendary Creature Demon",
-   "payoff": "pay",
-   "power": 27.5,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Witch of the Moors",
-   "core": false,
-   "rarity": "R",
-   "cmc": 5,
-   "types": "Creature Human Warlock",
-   "payoff": "pay",
-   "power": 15.7,
-   "supports": true,
-   "fit": 3
+   "types": "Legendary Creature Human Knight",
+   "payoff": "",
+   "power": 17.5,
+   "supports": false,
+   "fit": 1
   },
   {
    "name": "Caged Sun",
@@ -642,6 +642,17 @@
    "fit": 4
   },
   {
+   "name": "Phyrexian Gargantua",
+   "core": false,
+   "rarity": "C",
+   "cmc": 6,
+   "types": "Creature Phyrexian Horror",
+   "payoff": "",
+   "power": 17.5,
+   "supports": false,
+   "fit": 2
+  },
+  {
    "name": "Visara the Dreadful",
    "core": true,
    "rarity": "R",
@@ -660,17 +671,6 @@
    "types": "Artifact",
    "payoff": "sink",
    "power": 22.7,
-   "supports": true,
-   "fit": 3
-  },
-  {
-   "name": "Butcher of Malakir",
-   "core": false,
-   "rarity": "R",
-   "cmc": 7,
-   "types": "Creature Vampire Warrior",
-   "payoff": "pay",
-   "power": 14.1,
    "supports": true,
    "fit": 3
   },
