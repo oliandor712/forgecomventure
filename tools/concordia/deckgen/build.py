@@ -136,6 +136,8 @@ def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     check('H17', works >= 5, 'cards that support the commander ability %d (5 needed)' % works, bool(cp.profile(cmd['oracle'], cmd['types'])))
     tp = sy.plan(cmd.get('ftags') or [])      # H17 (merged with H75): a commander that makes tokens of any kind also needs payoffs for them
     npay = sy.count_payoffs(tp, [p for p, _ in chosen], lambda p: re.sub(r'\([^)]*\)', '', at.card_text(p['name']))) if tp else 0
+    nset = sy.count_setup(tp, [p for p, _ in chosen]) if tp else 0
+    if tp and tp.get('creature') and not tp.get('kinds'): check('H17', nset >= sy.SETUP_MIN and npay <= nset + sy.SETUP_GAP, 'token setup cards %d (%d-%d), payoffs %d (at most setup + %d)' % (nset, sy.SETUP_MIN, sy.SETUP_MAX, npay, sy.SETUP_GAP), True)
     check('H17', sy.PAYOFF_MIN <= npay <= sy.PAYOFF_MAX, 'token payoffs for the commander tokens %d (%d-%d allowed)' % (npay, sy.PAYOFF_MIN, sy.PAYOFF_MAX), bool(tp))
     return out
 BASIC = {'W': 'Plains', 'U': 'Island', 'B': 'Swamp', 'R': 'Mountain', 'G': 'Forest'}

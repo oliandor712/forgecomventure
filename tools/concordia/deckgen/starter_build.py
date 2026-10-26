@@ -35,6 +35,7 @@ TARGET = 27.0           # H19: deck power (EDHREC card-power scale, tier_table.j
 SUPPORT_W, FIT_W, FIT_CAP = 0.5, 3.0, 4   # user 2026-10-26: commander support counts less, overall archetype fit just as much; 2026-10-26 again: less still
 SUPPORT_CAP = 14       # user 2026-10-26: do not copy the commander's tags across the whole deck: only the first 14 supporters get the bonus
 MAKER_CAP = SY.MAKER_CAP          # cards (besides the commander) that make the commander's non-creature token (Treasure ...)
+SETUP_W = 1.5     # token makers/fodder for creature-token commanders, until SETUP_MIN
 PAYOFF_W, PAYOFF_MIN = 2.5, SY.PAYOFF_MIN   # user 2026-10-26: a commander that makes Treasure needs payoffs and mana sinks; at least PAYOFF_MIN of them
 THEME_MIN = 5         # user 2026-10-26: a tribal/theme card is fine when >= THEME_MIN other cards (members or makers) of that theme are already in the deck
 CORE_N = 12            # user 2026-10-26: highest-power on-plan cards are picked first, themes are then judged against them
@@ -159,7 +160,9 @@ def draft(name, commander, strategy, ban, reject, _try=0):
     cmd_themes, _ = theme_mentions(cmd)
     allowed = set(cmd_themes) | {w for w in cmd['types'].split() if w in subtypes()}
     tgt = [TARGET]      # per-card power aim; lowered after the core so the deck average still lands on TARGET
-    nmaker = [0]; nsup = [0]; ncl = [0]; npay = [0]
+    nmaker = [0]; nsup = [0]; ncl = [0]; npay = [0]; nset = [0]
+
+    def pay_cap(): return min(SY.PAYOFF_MAX, max(SY.PAYOFF_MIN, nset[0] + SY.SETUP_GAP))   # payoffs may not outrun setup by more than SETUP_GAP (H17)
 
     def is_colorless(p): return not p['id'] and 'ramp' not in p['tags']
     def cl_sources(): return CL_LANDS + sum(1 for p, _ in chosen if not p['id'] and 'ramp' in p['tags'])
@@ -171,7 +174,8 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         if sup and nsup[0] < SUPPORT_CAP: s += SUPPORT_W
         s -= THEME_PEN * len(off_themes(p))
         pk = payoff_kind(p, tplan) if tplan else ''
-        if pk and npay[0] < SY.PAYOFF_MAX: s += PAYOFF_W   # no bonus past the range so payoffs do not crowd the deck
+        if pk and npay[0] < pay_cap(): s += PAYOFF_W   # no bonus past the cap so payoffs do not crowd the deck
+        if tplan and SY.setup_kind(p, tplan) and nset[0] < SY.SETUP_MAX: s += SETUP_W * (1.5 if nset[0] < SY.SETUP_MIN else 0.5)
         why.setdefault(p['name'], {})['payoff'] = pk
         fit = min(FIT_CAP, sf.fit(p['ftags'], strategy)) if strategy else 0
         s += FIT_W * fit - B.NICHE_PEN[TIER] * min(2, sf.niche_penalty(p['ftags'], strategy) if strategy else 0)
@@ -213,7 +217,8 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         if pwr >= 70 and npow[1] >= spec.get('p70', 99): return None
         if not theme_ok(p): return None
         if kinds & maker_types(p) and nmaker[0] >= MAKER_CAP: return None
-        if tplan and npay[0] >= SY.PAYOFF_MAX and payoff_kind(p, tplan): return None   # payoffs are a 5-10 range (H17)
+        if tplan and npay[0] >= pay_cap() and payoff_kind(p, tplan): return None   # payoffs are a 5-10 range tied to setup (H17), even for cards that also support the commander (the support rule only needs 5)
+        if tplan and nset[0] >= SY.SETUP_MAX and SY.setup_kind(p, tplan): return None
         if is_colorless(p) and ncl[0] >= CL_BASE + CL_PER * cl_sources(): return None
         return B.pick_rarity(p, TIER, rcount, spec)
 
@@ -230,6 +235,7 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         if is_colorless(p): ncl[0] += 1
         if supports_cmd(prof, p): nsup[0] += 1
         if why.get(p['name'], {}).get('payoff'): npay[0] += 1
+        if tplan and SY.setup_kind(p, tplan): nset[0] += 1
         traits.update(B.card_traits(p, traits)); cands.remove(p)
 
     def best(filt):
@@ -241,16 +247,21 @@ def draft(name, commander, strategy, ban, reject, _try=0):
             s = score(p, r)
             if bp is None or s > bp[0]: bp = (s, p, r)
         return bp
-    # nonbasic lands first: deck_tier counts them in the power average, so the per-card aim has to leave room for them
-    nb = []
-    for lname, lb in B.spread(B.BUDGET.items(), name):
-        if len(nb) >= B.BUDGET_LANDS[TIER] + 1: break
-        p = pool.get(lname.lower())
-        if not p or lname.lower() in banned or not set(lb['colors']) <= ident or (mono and lb['any_color']): continue
-        nb.append(lname)
-    lands = [(pool[n.lower()], 'U' if 'U' in pool[n.lower()]['best'] else 'C') for n in nb]
-    landpow = sum(max(p['power'].values()) for p, _ in lands)
-    npow[0] += sum(max(p['power'].values()) >= 50 for p, _ in lands); npow[1] += sum(max(p['power'].values()) >= 70 for p, _ in lands)   # premium lands use the same caps
+    # nonbasic lands are picked last (before the basics); deck_tier counts them in the power average, so reserve their expected power for the per-card aim now
+    def pick_nonbasics(limit=None):
+        out = []
+        for lname, lb in B.spread(B.BUDGET.items(), name):
+            if len(out) >= B.BUDGET_LANDS[TIER] + 1: break
+            p = pool.get(lname.lower())
+            if not p or lname.lower() in banned or not set(lb['colors']) <= ident or (mono and lb['any_color']): continue
+            pw = max(p['power'].values())
+            if limit and ((pw >= 50 and npow[0] >= spec.get('p50', 99)) or (pw >= 70 and npow[1] >= spec.get('p70', 99))): continue
+            out.append(lname)
+            if limit:
+                npow[0] += pw >= 50; npow[1] += pw >= 70
+        return [(pool[n.lower()], 'U' if 'U' in pool[n.lower()]['best'] else 'C') for n in out]
+    _n0 = list(npow); lands = pick_nonbasics(); npow[:] = _n0
+    landpow = sum(max(p['power'].values()) for p, _ in lands); nlandest = len(lands)
     # budget mana rocks first (as build.py does at tier 2), then role quotas, type quotas, creatures, fill
     nrock = 0; rocks = []
     for rn, rb in sorted(B.ROCKS.items(), key=lambda kv: -kv[1]['decks']):
@@ -265,12 +276,16 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         if len(core_names) >= CORE_N: break
         if p in cands and (r := can_add(p)): score(p, r); add(p, r); core_names.append(p['name'])
     done = [p for p, _ in chosen]
-    if done: tgt[0] = max(8.0, min(TARGET, (TARGET * (nonland + len(lands)) - landpow - sum(max(p['power'].values()) for p in done)) / max(1, nonland - len(done))))
+    if done: tgt[0] = max(8.0, min(TARGET, (TARGET * (nonland + nlandest) - landpow - sum(max(p['power'].values()) for p in done)) / max(1, nonland - len(done))))
     for role in spec['quota']:
         while roles[role] < spec['quota'][role] and len(chosen) < nonland:
             b = best(lambda p: p['tags'] & B.ROLE[role])
             if not b: break
             add(b[1], b[2])
+    while tplan and nset[0] < SY.SETUP_MIN and len(chosen) < nonland:      # setup before payoffs, so the payoffs have bodies to work with
+        b = best(lambda p: bool(SY.setup_kind(p, tplan)))
+        if not b: break
+        add(b[1], b[2])
     while tplan and npay[0] < PAYOFF_MIN and len(chosen) < nonland:
         b = best(lambda p: bool(payoff_kind(p, tplan)))
         if not b: break
@@ -305,6 +320,7 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         b = best(lambda p: nc[0] < spec['cmax'] or 'Creature' not in p['types'])
         if not b: total = 99 - len(chosen); break
         add(b[1], b[2])
+    lands = pick_nonbasics(limit=True)      # last, before the basics; premium lands only while the 50+/70+ caps have room
     cols = [c for c in COLORS if c in ident]; pips = collections.Counter()
     for p, _ in chosen + [(cmd, 'C')]:
         for c in cols: pips[c] += data['cards'][p['name'].lower()]['mc'].count(c)

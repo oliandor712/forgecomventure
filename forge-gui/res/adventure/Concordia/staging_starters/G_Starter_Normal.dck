@@ -4,22 +4,23 @@ Name=G_Starter_Normal
 1 Ruxa, Patient Professor|SLZ
 [Main]
 32 Forest|FDN
-1 Boseiju, Who Endures|NEO
 1 Mosswort Bridge|LRW
-1 Shifting Woodland|MH3
 1 War Room|CMM
 1 Scavenger Grounds|HOU
 1 Reliquary Tower|M19
-1 Crop Sigil|EMN
+1 Demolition Field|FDN
+1 Urza's Cave|MH3
+1 Elvish Mystic|M15
 1 Green Sun's Zenith|MBS
 1 Noxious Revival|NPH
 1 Rancor|GVL
 1 Sol Ring|TMC
 1 Veteran Explorer|BBD
+1 Aftermath Analyst|MKM
 1 Arcane Signet|ELD
 1 Blanchwood Prowler|BRO
+1 Farseek|M13
 1 Fellwar Stone|9ED
-1 Glimpse the Core|LCI
 1 Grapple with the Past|EMN
 1 Leyline Dowser|OTC
 1 Lightning Greaves|MRD
@@ -30,10 +31,8 @@ Name=G_Starter_Normal
 1 Revive the Shire|LTR
 1 The Binding of the Titans|THB
 1 Town Greeter|FIN
-1 Trailtracker Scout|BLC
 1 Bala Ged Recovery|ZNR
 1 Burnished Hart|FDN
-1 Druidic Satchel|M12
 1 Eccentric Farmer|MID
 1 Evolution Witness|MH3
 1 Farhaven Elf|SHM
@@ -46,6 +45,7 @@ Name=G_Starter_Normal
 1 Scrap Trawler|AER
 1 Skullwinder|CLB
 1 Sword of Light and Shadow|DST
+1 Tilling Treefolk|EVE
 1 Centaur Vinecrasher|EOC
 1 Crown of Skemfar|KHC
 1 Desert Warfare|M3C

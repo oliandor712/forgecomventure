@@ -33,15 +33,15 @@
  },
  "picks": [
   {
-   "name": "Cartouche of Solidarity",
+   "name": "Fountainport Bell",
    "core": false,
    "rarity": "C",
    "cmc": 1,
-   "types": "Enchantment Aura Cartouche",
+   "types": "Artifact",
    "payoff": "",
-   "power": 18.5,
-   "supports": true,
-   "fit": 4
+   "power": 20.0,
+   "supports": false,
+   "fit": 2
   },
   {
    "name": "Guide of Souls",
@@ -66,26 +66,15 @@
    "fit": 4
   },
   {
-   "name": "Momo, Playful Pet",
-   "core": false,
-   "rarity": "U",
-   "cmc": 1,
-   "types": "Legendary Creature Lemur Bat Ally",
-   "payoff": "",
-   "power": 21.4,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Prying Blade",
+   "name": "Mosquito Guard",
    "core": false,
    "rarity": "C",
    "cmc": 1,
-   "types": "Artifact Equipment",
+   "types": "Creature Kithkin Soldier",
    "payoff": "",
-   "power": 19.5,
+   "power": 16.2,
    "supports": true,
-   "fit": 4
+   "fit": 1
   },
   {
    "name": "Sol Ring",
@@ -95,15 +84,26 @@
    "types": "Artifact"
   },
   {
-   "name": "Ancestral Blade",
+   "name": "Soul's Attendant",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Human Cleric",
+   "payoff": "",
+   "power": 24.5,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Angelic Gift",
    "core": false,
    "rarity": "C",
    "cmc": 2,
-   "types": "Artifact Equipment",
+   "types": "Enchantment Aura",
    "payoff": "",
-   "power": 15.0,
+   "power": 17.9,
    "supports": true,
-   "fit": 4
+   "fit": 2
   },
   {
    "name": "Arcane Signet",
@@ -113,44 +113,22 @@
    "types": "Artifact"
   },
   {
+   "name": "Chosen by Heliod",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 15.3,
+   "supports": false,
+   "fit": 2
+  },
+  {
    "name": "Fellwar Stone",
    "core": false,
    "rarity": "U",
    "cmc": 2,
    "types": "Artifact"
-  },
-  {
-   "name": "Gather the Townsfolk",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Sorcery",
-   "payoff": "",
-   "power": 15.2,
-   "supports": true,
-   "fit": 3
-  },
-  {
-   "name": "Gilded Pinions",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact Equipment",
-   "payoff": "",
-   "power": 15.8,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Gleaming Barrier",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact Creature Wall",
-   "payoff": "pay",
-   "power": 16.5,
-   "supports": true,
-   "fit": 4
   },
   {
    "name": "Gleaming Splendor",
@@ -164,26 +142,26 @@
    "fit": 4
   },
   {
-   "name": "Goldvein Pick",
+   "name": "Instant Ramen",
    "core": false,
    "rarity": "C",
    "cmc": 2,
-   "types": "Artifact Equipment",
+   "types": "Artifact Food",
    "payoff": "",
-   "power": 19.3,
-   "supports": true,
-   "fit": 4
+   "power": 17.0,
+   "supports": false,
+   "fit": 2
   },
   {
-   "name": "Invasion Reinforcements",
+   "name": "Kindly Customer",
    "core": false,
-   "rarity": "U",
+   "rarity": "C",
    "cmc": 2,
-   "types": "Creature Human Warrior Ally",
+   "types": "Creature Human Citizen",
    "payoff": "",
-   "power": 18.5,
+   "power": 15.3,
    "supports": true,
-   "fit": 4
+   "fit": 2
   },
   {
    "name": "Kozilek's Command",
@@ -193,17 +171,6 @@
    "types": "Kindred Instant Eldrazi",
    "payoff": "",
    "power": 68.8,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Kyoshi Battle Fan",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact Equipment",
-   "payoff": "",
-   "power": 15.0,
    "supports": true,
    "fit": 4
   },
@@ -219,26 +186,59 @@
    "fit": 0
   },
   {
-   "name": "Stalactite Dagger",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact Equipment",
-   "payoff": "",
-   "power": 16.1,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Sunset Revelry",
+   "name": "Ondu Rising",
    "core": false,
    "rarity": "U",
    "cmc": 2,
    "types": "Sorcery",
    "payoff": "",
-   "power": 18.4,
+   "power": 16.0,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Sejiri Shelter",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 21.0,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Shelter",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 18.1,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Suture Priest",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Phyrexian Cleric",
+   "payoff": "",
+   "power": 20.6,
    "supports": true,
-   "fit": 4
+   "fit": 1
+  },
+  {
+   "name": "Teyo, Lightshield Expert",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Legendary Creature Human Cleric",
+   "payoff": "",
+   "power": 17.8,
+   "supports": true,
+   "fit": 3
   },
   {
    "name": "Treasure Map",
@@ -252,17 +252,6 @@
    "fit": 2
   },
   {
-   "name": "Allied Teamwork",
-   "core": false,
-   "rarity": "R",
-   "cmc": 3,
-   "types": "Enchantment",
-   "payoff": "",
-   "power": 18.4,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Burnished Hart",
    "core": true,
    "rarity": "U",
@@ -274,26 +263,15 @@
    "fit": 0
   },
   {
-   "name": "Careening Mine Cart",
+   "name": "Cloud Key",
    "core": false,
    "rarity": "U",
    "cmc": 3,
-   "types": "Artifact Vehicle",
+   "types": "Artifact",
    "payoff": "",
-   "power": 15.5,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Fortifying Provisions",
-   "core": false,
-   "rarity": "C",
-   "cmc": 3,
-   "types": "Enchantment",
-   "payoff": "",
-   "power": 12.3,
-   "supports": true,
-   "fit": 4
+   "power": 21.6,
+   "supports": false,
+   "fit": 1
   },
   {
    "name": "Generous Gift",
@@ -318,24 +296,35 @@
    "fit": 4
   },
   {
-   "name": "Kangee's Lieutenant",
+   "name": "Happily Ever After",
    "core": false,
-   "rarity": "U",
+   "rarity": "R",
    "cmc": 3,
-   "types": "Creature Bird Soldier",
-   "payoff": "pay",
-   "power": 15.3,
-   "supports": true,
-   "fit": 4
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 18.3,
+   "supports": false,
+   "fit": 2
   },
   {
-   "name": "Mage's Attendant",
+   "name": "Inspiring Overseer",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Angel Cleric",
+   "payoff": "",
+   "power": 16.8,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Losheel, Clockwork Scholar",
    "core": false,
    "rarity": "U",
    "cmc": 3,
-   "types": "Creature Cat Rogue",
+   "types": "Legendary Creature Elephant Artificer",
    "payoff": "",
-   "power": 14.9,
+   "power": 25.5,
    "supports": true,
    "fit": 4
   },
@@ -351,48 +340,26 @@
    "fit": 4
   },
   {
-   "name": "Monument to Endurance",
+   "name": "Nine Lives",
    "core": false,
    "rarity": "R",
    "cmc": 3,
-   "types": "Artifact",
-   "payoff": "",
-   "power": 24.1,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Muster the Departed",
-   "core": false,
-   "rarity": "U",
-   "cmc": 3,
    "types": "Enchantment",
    "payoff": "",
-   "power": 16.2,
-   "supports": true,
-   "fit": 4
+   "power": 19.6,
+   "supports": false,
+   "fit": 3
   },
   {
-   "name": "Nuka-Cola Vending Machine",
-   "core": false,
-   "rarity": "U",
-   "cmc": 3,
-   "types": "Artifact",
-   "payoff": "",
-   "power": 19.8,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Rootborn Defenses",
+   "name": "Pentarch Ward",
    "core": false,
    "rarity": "C",
    "cmc": 3,
-   "types": "Instant",
-   "payoff": "pay",
-   "power": 17.2,
-   "supports": true,
-   "fit": 4
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 13.2,
+   "supports": false,
+   "fit": 2
   },
   {
    "name": "Skyclave Apparition",
@@ -406,15 +373,48 @@
    "fit": 4
   },
   {
-   "name": "Thran Spider",
+   "name": "Solitary Sanctuary",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 15.4,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Thunderstaff",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "pay",
+   "power": 13.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Unbreakable Formation",
    "core": false,
    "rarity": "R",
    "cmc": 3,
-   "types": "Artifact Creature Spider",
-   "payoff": "",
-   "power": 18.4,
+   "types": "Instant",
+   "payoff": "pay",
+   "power": 25.2,
    "supports": true,
-   "fit": 4
+   "fit": 3
+  },
+  {
+   "name": "Unquestioned Authority",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 18.2,
+   "supports": false,
+   "fit": 2
   },
   {
    "name": "Absolver Thrull",
@@ -428,48 +428,26 @@
    "fit": 3
   },
   {
-   "name": "Ajani's Chosen",
+   "name": "Aetherstorm Roc",
    "core": false,
    "rarity": "R",
    "cmc": 4,
-   "types": "Creature Cat Soldier",
+   "types": "Creature Bird",
+   "payoff": "",
+   "power": 16.2,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Alms Collector",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Cat Cleric",
    "payoff": "",
    "power": 17.6,
    "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Anointed Procession",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Enchantment",
-   "payoff": "",
-   "power": 23.3,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Big Mother Mouser",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Artifact Creature Robot",
-   "payoff": "pay",
-   "power": 17.3,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Coin of Mastery",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Artifact",
-   "payoff": "",
-   "power": 17.4,
-   "supports": true,
-   "fit": 4
+   "fit": 3
   },
   {
    "name": "Commander Sofia Daguerre",
@@ -483,37 +461,37 @@
    "fit": 4
   },
   {
-   "name": "Decree of Justice",
+   "name": "Exemplar of Light",
    "core": false,
-   "rarity": "U",
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Angel",
+   "payoff": "",
+   "power": 20.6,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Flare of Fortitude",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Instant",
+   "payoff": "pay",
+   "power": 21.6,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "For the Emperor!",
+   "core": false,
+   "rarity": "R",
    "cmc": 4,
    "types": "Sorcery",
-   "payoff": "",
-   "power": 15.0,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Elspeth's Talent",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Enchantment Aura",
    "payoff": "pay",
-   "power": 15.3,
+   "power": 15.5,
    "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Kimoyo Beads",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Artifact",
-   "payoff": "",
-   "power": 16.2,
-   "supports": true,
-   "fit": 4
+   "fit": 2
   },
   {
    "name": "Lossarnach Captain",
@@ -527,48 +505,92 @@
    "fit": 4
   },
   {
-   "name": "Ox Drover",
+   "name": "Panther Habit",
    "core": false,
    "rarity": "R",
    "cmc": 4,
-   "types": "Creature Human Peasant",
-   "payoff": "",
-   "power": 15.1,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Vibranium Mining Mech",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Artifact Vehicle",
+   "types": "Artifact Equipment",
    "payoff": "",
    "power": 16.2,
-   "supports": true,
-   "fit": 4
+   "supports": false,
+   "fit": 2
   },
   {
-   "name": "Angelic Sell-Sword",
+   "name": "Thought-Knot Seer",
    "core": false,
    "rarity": "R",
-   "cmc": 5,
-   "types": "Creature Angel Mercenary",
+   "cmc": 4,
+   "types": "Creature Eldrazi",
    "payoff": "",
-   "power": 14.0,
+   "power": 15.8,
    "supports": true,
-   "fit": 4
+   "fit": 2
   },
   {
-   "name": "Boss's Chauffeur",
+   "name": "Vibranium Strike Gauntlets",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact Equipment",
+   "payoff": "pay",
+   "power": 16.2,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Worship",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 15.1,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Bond of Discipline",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "pay",
+   "power": 10.1,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Cathars' Crusade",
    "core": false,
    "rarity": "R",
    "cmc": 5,
-   "types": "Creature Elf Citizen",
-   "payoff": "pay",
-   "power": 14.0,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 19.3,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Exalted Sunborn",
+   "core": false,
+   "rarity": "M",
+   "cmc": 5,
+   "types": "Creature Angel Wizard",
+   "payoff": "",
+   "power": 20.3,
    "supports": true,
-   "fit": 4
+   "fit": 2
+  },
+  {
+   "name": "Gauntlet of Power",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 15.7,
+   "supports": false,
+   "fit": 3
   },
   {
    "name": "God-Eternal Oketra",
@@ -582,15 +604,15 @@
    "fit": 3
   },
   {
-   "name": "Increasing Devotion",
+   "name": "Makindi Stampede",
    "core": false,
-   "rarity": "R",
+   "rarity": "U",
    "cmc": 5,
    "types": "Sorcery",
-   "payoff": "",
-   "power": 15.1,
+   "payoff": "pay",
+   "power": 9.4,
    "supports": true,
-   "fit": 3
+   "fit": 2
   },
   {
    "name": "Meteorite",
@@ -602,28 +624,6 @@
    "power": 20.5,
    "supports": false,
    "fit": 3
-  },
-  {
-   "name": "Moogles' Valor",
-   "core": false,
-   "rarity": "R",
-   "cmc": 5,
-   "types": "Instant",
-   "payoff": "pay",
-   "power": 14.5,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Wingmate Roc",
-   "core": false,
-   "rarity": "M",
-   "cmc": 5,
-   "types": "Creature Bird",
-   "payoff": "",
-   "power": 15.8,
-   "supports": true,
-   "fit": 4
   },
   {
    "name": "Coveted Jewel",
@@ -648,17 +648,6 @@
    "fit": 3
   },
   {
-   "name": "Sanctuary Warden",
-   "core": false,
-   "rarity": "M",
-   "cmc": 6,
-   "types": "Creature Angel Soldier",
-   "payoff": "",
-   "power": 28.2,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Trostani's Judgment",
    "core": false,
    "rarity": "C",
@@ -679,6 +668,17 @@
    "power": 24.8,
    "supports": true,
    "fit": 4
+  },
+  {
+   "name": "Sandstone Oracle",
+   "core": false,
+   "rarity": "U",
+   "cmc": 7,
+   "types": "Artifact Creature Sphinx",
+   "payoff": "",
+   "power": 23.1,
+   "supports": true,
+   "fit": 2
   },
   {
    "name": "Memnarch, the Warden",

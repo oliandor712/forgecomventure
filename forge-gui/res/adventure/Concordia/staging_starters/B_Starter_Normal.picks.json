@@ -56,6 +56,17 @@
    "types": "Artifact"
   },
   {
+   "name": "Survivor's Med Kit",
+   "core": false,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 23.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Tragic Slip",
    "core": true,
    "rarity": "C",
@@ -65,17 +76,6 @@
    "power": 44.0,
    "supports": true,
    "fit": 0
-  },
-  {
-   "name": "Unearth",
-   "core": false,
-   "rarity": "C",
-   "cmc": 1,
-   "types": "Sorcery",
-   "payoff": "",
-   "power": 24.0,
-   "supports": true,
-   "fit": 2
   },
   {
    "name": "Village Rites",
@@ -105,6 +105,17 @@
    "rarity": "C",
    "cmc": 2,
    "types": "Artifact"
+  },
+  {
+   "name": "Carrier Thrall",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Vampire",
+   "payoff": "",
+   "power": 15.8,
+   "supports": true,
+   "fit": 2
   },
   {
    "name": "Deadly Dispute",
@@ -145,17 +156,6 @@
    "rarity": "U",
    "cmc": 2,
    "types": "Artifact"
-  },
-  {
-   "name": "Gleaming Barrier",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact Creature Wall",
-   "payoff": "",
-   "power": 16.5,
-   "supports": true,
-   "fit": 4
   },
   {
    "name": "Infernal Scarring",
@@ -290,6 +290,17 @@
    "fit": 3
   },
   {
+   "name": "Fire Nation Warship",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact Vehicle",
+   "payoff": "",
+   "power": 13.7,
+   "supports": true,
+   "fit": 2
+  },
+  {
    "name": "Grave Birthing",
    "core": false,
    "rarity": "C",
@@ -319,17 +330,6 @@
    "types": "Creature Rat Peasant",
    "payoff": "",
    "power": 16.4,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Magnifying Glass",
-   "core": false,
-   "rarity": "C",
-   "cmc": 3,
-   "types": "Artifact",
-   "payoff": "sink",
-   "power": 27.7,
    "supports": true,
    "fit": 4
   },
@@ -466,6 +466,17 @@
    "fit": 2
   },
   {
+   "name": "Grim Bounty",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 23.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
    "name": "Hedron Archive",
    "core": false,
    "rarity": "U",
@@ -521,25 +532,14 @@
    "fit": 3
   },
   {
-   "name": "Thornplate Intimidator",
+   "name": "Syphon Mind",
    "core": false,
    "rarity": "C",
    "cmc": 4,
-   "types": "Creature Rat Rogue",
+   "types": "Sorcery",
    "payoff": "",
-   "power": 9.2,
-   "supports": true,
-   "fit": 3
-  },
-  {
-   "name": "Torment of Venom",
-   "core": false,
-   "rarity": "C",
-   "cmc": 4,
-   "types": "Instant",
-   "payoff": "",
-   "power": 15.5,
-   "supports": true,
+   "power": 29.8,
+   "supports": false,
    "fit": 2
   },
   {
@@ -565,17 +565,6 @@
    "fit": 4
   },
   {
-   "name": "Blinkmoth Urn",
-   "core": false,
-   "rarity": "R",
-   "cmc": 5,
-   "types": "Artifact",
-   "payoff": "",
-   "power": 13.8,
-   "supports": false,
-   "fit": 3
-  },
-  {
    "name": "Clackbridge Troll",
    "core": false,
    "rarity": "R",
@@ -598,26 +587,37 @@
    "fit": 3
   },
   {
-   "name": "Indulgent Tormentor",
+   "name": "Introduction to Annihilation",
    "core": false,
-   "rarity": "U",
+   "rarity": "C",
    "cmc": 5,
-   "types": "Creature Demon",
+   "types": "Sorcery Lesson",
    "payoff": "",
-   "power": 11.2,
+   "power": 22.8,
    "supports": true,
-   "fit": 4
+   "fit": 2
   },
   {
-   "name": "Invoke Despair",
+   "name": "Kozilek's Channeler",
    "core": false,
-   "rarity": "R",
+   "rarity": "C",
    "cmc": 5,
-   "types": "Sorcery",
-   "payoff": "pay",
-   "power": 27.8,
+   "types": "Creature Eldrazi",
+   "payoff": "",
+   "power": 22.3,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Meteorite",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 20.5,
    "supports": true,
-   "fit": 4
+   "fit": 3
   },
   {
    "name": "Caged Sun",
@@ -631,15 +631,37 @@
    "fit": 3
   },
   {
-   "name": "Dreamstone Hedron",
+   "name": "Demonic Covenant",
    "core": false,
-   "rarity": "U",
+   "rarity": "R",
    "cmc": 6,
-   "types": "Artifact",
-   "payoff": "sink",
-   "power": 24.9,
-   "supports": false,
+   "types": "Kindred Enchantment Demon",
+   "payoff": "",
+   "power": 11.0,
+   "supports": true,
    "fit": 4
+  },
+  {
+   "name": "Infernal Sovereign",
+   "core": false,
+   "rarity": "M",
+   "cmc": 6,
+   "types": "Creature Demon",
+   "payoff": "",
+   "power": 12.1,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Nirkana Revenant",
+   "core": false,
+   "rarity": "M",
+   "cmc": 6,
+   "types": "Creature Vampire Shade",
+   "payoff": "",
+   "power": 15.4,
+   "supports": false,
+   "fit": 3
   },
   {
    "name": "Phyrexian Gargantua",
@@ -662,28 +684,6 @@
    "power": 48.6,
    "supports": true,
    "fit": 0
-  },
-  {
-   "name": "Altar of Shadows",
-   "core": false,
-   "rarity": "R",
-   "cmc": 7,
-   "types": "Artifact",
-   "payoff": "sink",
-   "power": 22.7,
-   "supports": true,
-   "fit": 3
-  },
-  {
-   "name": "Fell Shepherd",
-   "core": false,
-   "rarity": "R",
-   "cmc": 7,
-   "types": "Creature Avatar",
-   "payoff": "pay",
-   "power": 22.4,
-   "supports": true,
-   "fit": 3
   }
  ]
 }

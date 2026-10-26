@@ -25,25 +25,25 @@
    "G": 32
   },
   "nonbasic": [
-   "Boseiju, Who Endures",
    "Mosswort Bridge",
-   "Shifting Woodland",
    "War Room",
    "Scavenger Grounds",
-   "Reliquary Tower"
+   "Reliquary Tower",
+   "Demolition Field",
+   "Urza's Cave"
   ]
  },
  "picks": [
   {
-   "name": "Crop Sigil",
-   "core": false,
-   "rarity": "U",
+   "name": "Elvish Mystic",
+   "core": true,
+   "rarity": "C",
    "cmc": 1,
-   "types": "Enchantment",
+   "types": "Creature Elf Druid",
    "payoff": "",
-   "power": 20.8,
+   "power": 65.3,
    "supports": true,
-   "fit": 4
+   "fit": 0
   },
   {
    "name": "Green Sun's Zenith",
@@ -97,6 +97,17 @@
    "fit": 3
   },
   {
+   "name": "Aftermath Analyst",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Elf Detective",
+   "payoff": "",
+   "power": 24.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Arcane Signet",
    "core": false,
    "rarity": "C",
@@ -115,22 +126,22 @@
    "fit": 4
   },
   {
+   "name": "Farseek",
+   "core": true,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 65.2,
+   "supports": false,
+   "fit": 2
+  },
+  {
    "name": "Fellwar Stone",
    "core": false,
    "rarity": "U",
    "cmc": 2,
    "types": "Artifact"
-  },
-  {
-   "name": "Glimpse the Core",
-   "core": true,
-   "rarity": "U",
-   "cmc": 2,
-   "types": "Sorcery",
-   "payoff": "",
-   "power": 48.5,
-   "supports": true,
-   "fit": 3
   },
   {
    "name": "Grapple with the Past",
@@ -243,17 +254,6 @@
    "fit": 4
   },
   {
-   "name": "Trailtracker Scout",
-   "core": true,
-   "rarity": "R",
-   "cmc": 2,
-   "types": "Creature Raccoon Scout",
-   "payoff": "",
-   "power": 48.7,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Bala Ged Recovery",
    "core": false,
    "rarity": "U",
@@ -274,17 +274,6 @@
    "power": 48.5,
    "supports": true,
    "fit": 2
-  },
-  {
-   "name": "Druidic Satchel",
-   "core": false,
-   "rarity": "R",
-   "cmc": 3,
-   "types": "Artifact",
-   "payoff": "",
-   "power": 18.4,
-   "supports": false,
-   "fit": 3
   },
   {
    "name": "Eccentric Farmer",
@@ -415,6 +404,17 @@
    "types": "Artifact Equipment",
    "payoff": "",
    "power": 22.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Tilling Treefolk",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Treefolk Druid",
+   "payoff": "",
+   "power": 12.3,
    "supports": true,
    "fit": 4
   },

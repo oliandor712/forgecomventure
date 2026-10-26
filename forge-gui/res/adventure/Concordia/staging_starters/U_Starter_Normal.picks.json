@@ -23,12 +23,12 @@
    "U": 32
   },
   "nonbasic": [
-   "Otawara, Soaring City",
    "Reliquary Tower",
    "Scavenger Grounds",
-   "Urborg, Tomb of Yawgmoth",
    "Yavimaya, Cradle of Growth",
-   "War Room"
+   "War Room",
+   "Demolition Field",
+   "Rogue's Passage"
   ]
  },
  "picks": [
@@ -135,6 +135,17 @@
    "fit": 2
   },
   {
+   "name": "Counterspell",
+   "core": true,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 66.9,
+   "supports": true,
+   "fit": 0
+  },
+  {
    "name": "Crashing Drawbridge",
    "core": false,
    "rarity": "C",
@@ -162,17 +173,6 @@
    "rarity": "U",
    "cmc": 2,
    "types": "Artifact"
-  },
-  {
-   "name": "Gilded Pinions",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact Equipment",
-   "payoff": "",
-   "power": 15.8,
-   "supports": true,
-   "fit": 4
   },
   {
    "name": "Gleaming Barrier",
@@ -241,48 +241,37 @@
    "fit": 4
   },
   {
-   "name": "Prized Statue",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact",
-   "payoff": "pay",
-   "power": 18.9,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Burdened Aerialist",
-   "core": false,
-   "rarity": "C",
-   "cmc": 3,
-   "types": "Creature Human Pirate",
-   "payoff": "",
-   "power": 11.3,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Careening Mine Cart",
-   "core": false,
+   "name": "Remand",
+   "core": true,
    "rarity": "U",
-   "cmc": 3,
-   "types": "Artifact Vehicle",
+   "cmc": 2,
+   "types": "Instant",
    "payoff": "",
-   "power": 15.5,
+   "power": 69.6,
    "supports": true,
-   "fit": 4
+   "fit": 2
   },
   {
-   "name": "Chakra Meditation",
+   "name": "Case of the Ransacked Lab",
    "core": false,
    "rarity": "R",
    "cmc": 3,
-   "types": "Enchantment",
+   "types": "Enchantment Case",
    "payoff": "",
-   "power": 18.8,
+   "power": 21.5,
    "supports": true,
    "fit": 4
+  },
+  {
+   "name": "Cloud Key",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 21.6,
+   "supports": false,
+   "fit": 2
   },
   {
    "name": "Cloudkin Seer",
@@ -329,17 +318,6 @@
    "fit": 3
   },
   {
-   "name": "Golem Foundry",
-   "core": false,
-   "rarity": "C",
-   "cmc": 3,
-   "types": "Artifact",
-   "payoff": "",
-   "power": 13.9,
-   "supports": true,
-   "fit": 3
-  },
-  {
    "name": "Hornswoggle",
    "core": false,
    "rarity": "U",
@@ -351,15 +329,15 @@
    "fit": 4
   },
   {
-   "name": "Leitmotif Composer",
+   "name": "Howling Golem",
    "core": false,
-   "rarity": "R",
+   "rarity": "C",
    "cmc": 3,
-   "types": "Creature Human Bard",
+   "types": "Artifact Creature Golem",
    "payoff": "",
-   "power": 18.3,
+   "power": 13.5,
    "supports": true,
-   "fit": 4
+   "fit": 2
   },
   {
    "name": "Magic Pot",
@@ -373,26 +351,26 @@
    "fit": 4
   },
   {
-   "name": "Monument to Endurance",
+   "name": "Merchant of Secrets",
    "core": false,
-   "rarity": "R",
+   "rarity": "C",
    "cmc": 3,
-   "types": "Artifact",
+   "types": "Creature Human Wizard",
    "payoff": "",
-   "power": 24.1,
+   "power": 11.3,
    "supports": true,
-   "fit": 4
+   "fit": 3
   },
   {
-   "name": "Nuka-Cola Vending Machine",
+   "name": "Secrets of the Dead",
    "core": false,
    "rarity": "U",
    "cmc": 3,
-   "types": "Artifact",
+   "types": "Enchantment",
    "payoff": "",
-   "power": 19.8,
+   "power": 17.3,
    "supports": true,
-   "fit": 4
+   "fit": 3
   },
   {
    "name": "Teferi's Tutelage",
@@ -406,15 +384,37 @@
    "fit": 3
   },
   {
-   "name": "Thran Spider",
+   "name": "Tome Raider",
    "core": false,
-   "rarity": "R",
+   "rarity": "C",
    "cmc": 3,
-   "types": "Artifact Creature Spider",
+   "types": "Creature Faerie",
    "payoff": "",
-   "power": 18.4,
+   "power": 11.4,
    "supports": true,
-   "fit": 4
+   "fit": 3
+  },
+  {
+   "name": "Traveler's Cloak",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 11.6,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Windrider Wizard",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Human Wizard",
+   "payoff": "",
+   "power": 12.3,
+   "supports": true,
+   "fit": 3
   },
   {
    "name": "Archaeomancer",
@@ -439,28 +439,6 @@
    "fit": 3
   },
   {
-   "name": "Coin of Mastery",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Artifact",
-   "payoff": "",
-   "power": 17.4,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Gust of Wind",
-   "core": false,
-   "rarity": "C",
-   "cmc": 4,
-   "types": "Sorcery",
-   "payoff": "",
-   "power": 23.7,
-   "supports": true,
-   "fit": 3
-  },
-  {
    "name": "Hedron Archive",
    "core": false,
    "rarity": "U",
@@ -472,15 +450,26 @@
    "fit": 4
   },
   {
-   "name": "Kimoyo Beads",
+   "name": "Irenicus's Vile Duplication",
    "core": false,
-   "rarity": "R",
+   "rarity": "U",
    "cmc": 4,
-   "types": "Artifact",
+   "types": "Sorcery",
    "payoff": "",
-   "power": 16.2,
+   "power": 17.5,
    "supports": true,
-   "fit": 4
+   "fit": 2
+  },
+  {
+   "name": "Mister Fantastic, Reed Richards",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Legendary Creature Human Scientist Hero",
+   "payoff": "",
+   "power": 14.1,
+   "supports": true,
+   "fit": 3
   },
   {
    "name": "Sphinx of False Conclusions",
@@ -492,6 +481,17 @@
    "power": 15.3,
    "supports": true,
    "fit": 4
+  },
+  {
+   "name": "Tanufel Rimespeaker",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Elemental Wizard",
+   "payoff": "",
+   "power": 11.8,
+   "supports": true,
+   "fit": 3
   },
   {
    "name": "The Phasing of Zhalfir",
@@ -516,6 +516,17 @@
    "fit": 4
   },
   {
+   "name": "Thought-Knot Seer",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Eldrazi",
+   "payoff": "",
+   "power": 15.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
    "name": "Turn into a Pumpkin",
    "core": false,
    "rarity": "U",
@@ -534,17 +545,6 @@
    "types": "Legendary Creature Human Scientist Hero",
    "payoff": "",
    "power": 17.0,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Vibranium Strike Gauntlets",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Artifact Equipment",
-   "payoff": "pay",
-   "power": 16.2,
    "supports": true,
    "fit": 4
   },
@@ -582,17 +582,6 @@
    "fit": 3
   },
   {
-   "name": "Mirelurk Queen",
-   "core": false,
-   "rarity": "R",
-   "cmc": 5,
-   "types": "Creature Crab Mutant",
-   "payoff": "",
-   "power": 14.6,
-   "supports": true,
-   "fit": 3
-  },
-  {
    "name": "Reflections of Littjara",
    "core": false,
    "rarity": "R",
@@ -613,6 +602,17 @@
    "power": 15.0,
    "supports": true,
    "fit": 4
+  },
+  {
+   "name": "Soulblade Djinn",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Creature Djinn",
+   "payoff": "pay",
+   "power": 10.9,
+   "supports": true,
+   "fit": 3
   },
   {
    "name": "Thoughtcast",
@@ -637,17 +637,6 @@
    "fit": 3
   },
   {
-   "name": "Calamitous Tide",
-   "core": false,
-   "rarity": "U",
-   "cmc": 6,
-   "types": "Sorcery",
-   "payoff": "",
-   "power": 20.8,
-   "supports": true,
-   "fit": 2
-  },
-  {
    "name": "Dreamstone Hedron",
    "core": false,
    "rarity": "U",
@@ -655,6 +644,17 @@
    "types": "Artifact",
    "payoff": "",
    "power": 24.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Season of Weaving",
+   "core": false,
+   "rarity": "M",
+   "cmc": 6,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 16.1,
    "supports": true,
    "fit": 4
   },
@@ -670,24 +670,24 @@
    "fit": 4
   },
   {
-   "name": "Agent of Treachery",
-   "core": true,
+   "name": "Titan of Littjara",
+   "core": false,
    "rarity": "R",
-   "cmc": 7,
-   "types": "Creature Human Rogue",
+   "cmc": 6,
+   "types": "Creature Illusion",
    "payoff": "",
-   "power": 46.6,
+   "power": 11.6,
    "supports": true,
    "fit": 3
   },
   {
-   "name": "Kozilek, Butcher of Truth",
-   "core": true,
-   "rarity": "M",
-   "cmc": 10,
-   "types": "Legendary Creature Eldrazi",
-   "payoff": "",
-   "power": 49.7,
+   "name": "Breaching Leviathan",
+   "core": false,
+   "rarity": "R",
+   "cmc": 9,
+   "types": "Creature Leviathan",
+   "payoff": "pay",
+   "power": 10.2,
    "supports": true,
    "fit": 3
   }
