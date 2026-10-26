@@ -6,97 +6,87 @@
  ],
  "on_plan": 60,
  "rejects": [
-  "Herald's Horn",
-  "Golden Egg"
+  "Worship",
+  "Fountainport Bell"
  ],
  "reject_detail": [
   {
-   "name": "Herald's Horn",
-   "function": "Cost reducer for one creature type that sometimes draws creatures of that type.",
+   "name": "Worship",
+   "function": "Keeps you at 1 life instead of dying while you control a creature.",
    "oracle_arch": [
-    "tribal",
-    "artifacts",
-    "aggro"
+    "control",
+    "lifegain",
+    "stax"
    ],
    "tag_arch": [
-    "artifacts",
-    "card_draw",
-    "tribal"
+    "control",
+    "lifegain",
+    "stax"
    ],
    "roles": [
-    "cost_reducer",
-    "draw_select"
+    "defense",
+    "pillowfort"
    ],
-   "power": 3
+   "power": 2
   },
   {
-   "name": "Golden Egg",
-   "function": "Artifact that draws on enter, then sacrifices for mana or life.",
+   "name": "Fountainport Bell",
+   "function": "Puts a basic land on top of library; sacrifice to draw.",
    "oracle_arch": [
     "artifacts",
-    "sacrifice",
-    "lifegain"
+    "colorless",
+    "ramp"
    ],
    "tag_arch": [
-    "lifegain",
-    "sacrifice",
-    "treasure"
+    "artifacts",
+    "colorless",
+    "ramp"
    ],
    "roles": [
-    "cantrip",
-    "fodder",
-    "mana"
+    "artifact",
+    "cantrip"
    ],
    "power": 2
   }
  ],
- "tag_gaps": [
-  {
-   "name": "Idol of False Gods",
-   "oracle_arch": [
-    "tribal",
-    "big_mana",
-    "tokens"
-   ],
-   "tag_arch": [
-    "aristocrats",
-    "counters",
-    "sacrifice"
-   ],
-   "unclear": [
-    "affected_filter:counters_ge8_p1p1"
-   ]
-  }
- ],
+ "tag_gaps": [],
  "summary": {
   "cards": 62,
-  "tag_readers": 1,
-  "rows": 62,
-  "role_f1": 0.58,
-  "arch_hit": 0.984,
-  "power_within1": 0.984,
-  "function_sim": 0.596,
-  "role_f1_vs_listed": 0.417,
+  "tag_readers": 3,
+  "rows": 186,
+  "role_f1": 0.633,
+  "arch_hit": 0.995,
+  "power_within1": 0.957,
+  "function_sim": 0.674,
+  "role_f1_vs_listed": 0.484,
   "arch_hit_vs_listed": 1.0,
-  "unclear_per_card": 0.39,
-  "reader_role_agreement": null,
+  "unclear_per_card": 0.61,
+  "reader_role_agreement": 0.749,
   "calibration_by_confidence": {
-   "2": [
-    0.708,
+   "1": [
+    0.7,
     10
    ],
+   "2": [
+    0.759,
+    39
+   ],
    "3": [
-    0.764,
-    29
+    0.821,
+    63
    ],
    "4": [
-    0.836,
-    23
+    0.852,
+    69
+   ],
+   "5": [
+    0.85,
+    5
    ]
   },
-  "tag_tokens_per_card_est": 233,
+  "tag_tokens_per_card_est": 261,
   "invalid_values": {
-   "roles": 0,
+   "roles": 1,
    "archetypes": 0
   },
   "unreadable_files": []

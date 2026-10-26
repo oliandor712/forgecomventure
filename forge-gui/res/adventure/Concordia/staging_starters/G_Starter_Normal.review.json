@@ -4,106 +4,70 @@
   "blink",
   "graveyard"
  ],
- "on_plan": 59,
+ "on_plan": 61,
  "rejects": [
-  "Mask of Memory",
-  "Grafted Wargear",
-  "Symmetry Matrix"
+  "Parallel Lives"
  ],
  "reject_detail": [
   {
-   "name": "Mask of Memory",
-   "function": "Equipment that loots two-for-one when equipped creature connects with a player.",
+   "name": "Parallel Lives",
+   "function": "Doubles tokens you create.",
    "oracle_arch": [
-    "equipment",
-    "card_draw",
-    "voltron"
-   ],
-   "tag_arch": [
-    "aggro",
-    "card_draw",
-    "equipment"
-   ],
-   "roles": [
-    "draw_engine",
-    "equipment"
-   ],
-   "power": 2
-  },
-  {
-   "name": "Grafted Wargear",
-   "function": "Free-equip +3/+2 equipment that kills the creature when moved.",
-   "oracle_arch": [
-    "equipment",
-    "voltron",
-    "aggro"
-   ],
-   "tag_arch": [
-    "aggro",
-    "equipment",
-    "voltron"
-   ],
-   "roles": [
-    "equipment",
-    "pump"
-   ],
-   "power": 3
-  },
-  {
-   "name": "Symmetry Matrix",
-   "function": "Pay 1 to draw when a creature with power equal toughness enters.",
-   "oracle_arch": [
-    "card_draw",
     "tokens",
-    "artifacts"
+    "aristocrats",
+    "sacrifice"
    ],
    "tag_arch": [
-    "artifacts",
-    "card_draw",
+    "chaos",
+    "combo",
+    "enchantress",
     "tokens"
    ],
    "roles": [
-    "artifact",
-    "draw_engine",
-    "trigger"
+    "doubler",
+    "multiplier"
    ],
-   "power": 2
+   "power": 3
   }
  ],
  "tag_gaps": [],
  "summary": {
   "cards": 62,
-  "tag_readers": 1,
-  "rows": 62,
-  "role_f1": 0.756,
+  "tag_readers": 3,
+  "rows": 186,
+  "role_f1": 0.633,
   "arch_hit": 1.0,
-  "power_within1": 1.0,
-  "function_sim": 0.741,
-  "role_f1_vs_listed": 0.667,
-  "arch_hit_vs_listed": 1.0,
-  "unclear_per_card": 0.44,
-  "reader_role_agreement": null,
+  "power_within1": 0.952,
+  "function_sim": 0.719,
+  "role_f1_vs_listed": 0.436,
+  "arch_hit_vs_listed": 0.933,
+  "unclear_per_card": 0.53,
+  "reader_role_agreement": 0.763,
   "calibration_by_confidence": {
+   "1": [
+    0.5,
+    1
+   ],
    "2": [
-    0.812,
-    13
+    0.709,
+    33
    ],
    "3": [
-    0.866,
-    21
+    0.793,
+    88
    ],
    "4": [
-    0.913,
-    24
+    0.899,
+    54
    ],
    "5": [
-    0.95,
-    4
+    0.97,
+    10
    ]
   },
-  "tag_tokens_per_card_est": 222,
+  "tag_tokens_per_card_est": 265,
   "invalid_values": {
-   "roles": 0,
+   "roles": 2,
    "archetypes": 0
   },
   "unreadable_files": []

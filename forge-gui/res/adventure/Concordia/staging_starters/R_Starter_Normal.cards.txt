@@ -1,62 +1,62 @@
 Anax, Hardened in the Forge
-Blacksmith's Talent
-Curse of Opulence
-Impulsive Pilferer
+Great Train Heist
+Lightning Bolt
+Shock
 Sol Ring
-Sticky Fingers
-Voldaren Epicure
+Strike It Rich
+Unholy Heat
+Akki Rockspeaker
 Arcane Signet
-Battle Cry Goblin
-Bumbleflower's Sharepot
-Coruscation Mage
-Dragon Fodder
-Enterprising Scallywag
-Genesis Chamber
-Golden Egg
-Ichor Wellspring
-Krenko's Command
-Mask of Memory
-Melded Moxite
-Noble's Purse
-Sazacap's Brew
-Young Pyromancer
-Commander's Sphere
-Flick a Coin
-Founding of Omashu
-General Kreat, the Boltbringer
-Glaring Fleshraker
-Herald's Horn
-Improvised Weaponry
-Letter of Acceptance
-Magnifying Glass
-Night Scythe
+Expert-Level Safe
+Fellwar Stone
+Guidelight Matrix
+Impact Tremors
+Instant Ramen
+Negative Zone Portal
+Psychotic Fury
+Raking Claws
+Reckless Fireweaver
+Starstorm
+Syr Ginger, the Meal Ender
+Treasure Map
+Wedding Invitation
+Adventurer's Airship
+Captain Lannery Storm
+Circuit Mender
+Cloud Key
+Filigree Familiar
+Ghirapur Gearcrafter
+Guttersnipe
+Hazoret's Favor
+Howling Golem
+Magmakin Artillerist
+Mogg Alarm
+Molten Gatekeeper
 Nuka-Cola Vending Machine
-Plundering Barbarian
-Skyscanner
-Vampires' Vengeance
-Wheel of Misfortune
-Anger
-Beetleback Chief
-Big Score
-Foray of Orcs
-Goblin Wizardry
+Planar Chaos
+Weftstalker Ardent
+Dragon Whelp
+Geth's Grimoire
 Heart-Piercer Manticore
 Hedron Archive
-Kinetic Augur
-Pirate's Pillage
-Starforged Sword
-Storm-Kiln Artist
+Sawhorn Nemesis
+The Vision
+Thor, Asgard's Avenger
+Thought-Knot Seer
 Tooth and Claw
-Bottle-Cap Blast
-Inspired Tinkering
-Luxurious Locomotive
-Pinnacle Monk
-Rapacious Dragon
-Spawn-Gang Commander
-Zuko's Exile
-Deathless Behemoth
-Oliphaunt
-Slice and Dice
-Meteor Golem
-Skittering Invasion
-Pathrazer of Ulamog
+Unexpected Windfall
+Visions of Ruin
+Wreck Remover
+Canoptek Spyder
+Curse of Bloodletting
+Demanding Dragon
+Maximum Carnage
+Meteorite
+Survey the Wreckage
+War Machine, Avenging Arsenal
+Dreamstone Hedron
+Megaton's Fate
+Umaro, Raging Yeti
+Brass's Bounty
+Depthshaker Titan
+Kozilek, Butcher of Truth

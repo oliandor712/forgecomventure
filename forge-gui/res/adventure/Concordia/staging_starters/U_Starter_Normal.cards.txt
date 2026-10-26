@@ -1,62 +1,62 @@
 Hermes, Overseer of Elpis
-Combat Research
-Curiosity
-Gran-Gran
+Enter the Enigma
+Repeal
+Serum Visions
+Skullclamp
 Sol Ring
-Spyglass Siren
-Survivor's Med Kit
+Soul-Guide Lantern
 Arcane Signet
-Bill Ferny, Bree Swindler
-Bucknard's Everfull Purse
-Bumbleflower's Sharepot
-Cloud of Faeries
-Gleaming Barrier
-Goldvein Pick
-Ichor Wellspring
-Mask of Memory
-Noble's Purse
-Plumecreed Escort
+Bellowing Crier
+Cartouche of Knowledge
+Counterbalance
+Counterspell
+Crashing Drawbridge
+Deduce
+Fellwar Stone
+Jeskai Elder
+Lightning Greaves
+Negate
+Ominous Seas
 Pollywog Symbiote
 Prized Statue
-Riddlesmith
-Think Twice
-Commander's Sphere
+Remand
+Case of the Ransacked Lab
+Cloud Key
+Cloudkin Seer
+Compulsive Research
 Depths of Desire
-Glaring Fleshraker
+Filigree Familiar
 Hornswoggle
-Hydroelectric Specimen
-Leonin Bladetrap
-Letter of Acceptance
-Of One Mind
-Opaline Unicorn
-Pearl of Wisdom
-Prosperous Thief
-Rousing Read
-Skyscanner
-Stern Lesson
-Urza, Powerstone Prodigy
-Dismiss
-Eject
-Gust of Wind
+Merchant of Secrets
+Nuka-Cola Vending Machine
+Secrets of the Dead
+Teferi's Tutelage
+Thunderstaff
+Tome Raider
+Traveler's Cloak
+Windrider Wizard
+Archaeomancer
+Baxter, Fly in the Ointment
 Hedron Archive
-Irenicus's Vile Duplication
-Jhoira's Familiar
-Pirate's Prize
-Plan for All Outcomes
-Scattering Stroke
-Starforged Sword
+Kimoyo Beads
+Mister Fantastic, Reed Richards
+Sphinx of False Conclusions
+Tanufel Rimespeaker
+The Phasing of Zhalfir
+The Vision
 Turn into a Pumpkin
-Whirler Rogue
-Enchanted Carriage
+Valeria Richards, Precocious
+Vibranium Strike Gauntlets
+Archmage of Runes
 Luxurious Locomotive
-Mnemonic Wall
-Prosperous Pirates
-Psychic Spiral
-Seascape Aerialist
-Shipwreck Dowser
-Daring Waverider
+Meteorite
+Mirelurk Queen
+Reflections of Littjara
+River Kelpie
+Thoughtcast
+Caged Sun
 Dreamstone Hedron
-Sire of the Storm
-Meteor Golem
-Dig Through Time
-Star Whale
+Season of Weaving
+Thunderhawk Gunship
+Titan of Littjara
+Scion of Draco

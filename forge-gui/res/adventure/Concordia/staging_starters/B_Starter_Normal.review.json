@@ -4,58 +4,18 @@
   "big_mana",
   "sacrifice"
  ],
- "on_plan": 59,
+ "on_plan": 61,
  "rejects": [
-  "Sanguine Bond",
-  "Mask of Memory",
   "Geth's Grimoire"
  ],
  "reject_detail": [
   {
-   "name": "Sanguine Bond",
-   "function": "Opponent loses life equal to your life gained.",
-   "oracle_arch": [
-    "lifegain",
-    "combo",
-    "aristocrats"
-   ],
-   "tag_arch": [
-    "aristocrats",
-    "control",
-    "lifegain"
-   ],
-   "roles": [
-    "drain",
-    "payoff"
-   ],
-   "power": 2
-  },
-  {
-   "name": "Mask of Memory",
-   "function": "Equipment that loots two on combat damage.",
-   "oracle_arch": [
-    "equipment",
-    "card_draw",
-    "aggro"
-   ],
-   "tag_arch": [
-    "aggro",
-    "card_draw",
-    "equipment"
-   ],
-   "roles": [
-    "draw_engine",
-    "equipment"
-   ],
-   "power": 3
-  },
-  {
    "name": "Geth's Grimoire",
-   "function": "Draw when an opponent discards.",
+   "function": "Draw a card whenever an opponent discards.",
    "oracle_arch": [
     "wheels",
-    "control",
-    "card_draw"
+    "card_draw",
+    "control"
    ],
    "tag_arch": [
     "card_draw",
@@ -63,43 +23,48 @@
     "wheels"
    ],
    "roles": [
-    "draw_engine"
+    "draw_engine",
+    "payoff"
    ],
-   "power": 1
+   "power": 2
   }
  ],
  "tag_gaps": [],
  "summary": {
   "cards": 62,
-  "tag_readers": 1,
-  "rows": 62,
-  "role_f1": 0.634,
+  "tag_readers": 3,
+  "rows": 186,
+  "role_f1": 0.675,
   "arch_hit": 1.0,
-  "power_within1": 0.968,
-  "function_sim": 0.727,
-  "role_f1_vs_listed": 0.638,
-  "arch_hit_vs_listed": 0.857,
-  "unclear_per_card": 0.35,
-  "reader_role_agreement": null,
+  "power_within1": 0.984,
+  "function_sim": 0.7,
+  "role_f1_vs_listed": 0.385,
+  "arch_hit_vs_listed": 0.944,
+  "unclear_per_card": 0.51,
+  "reader_role_agreement": 0.819,
   "calibration_by_confidence": {
+   "1": [
+    0.5,
+    3
+   ],
    "2": [
-    0.783,
-    7
+    0.818,
+    30
    ],
    "3": [
-    0.806,
-    24
+    0.824,
+    79
    ],
    "4": [
-    0.828,
-    28
+    0.866,
+    65
    ],
    "5": [
-    0.883,
-    3
+    0.922,
+    9
    ]
   },
-  "tag_tokens_per_card_est": 253,
+  "tag_tokens_per_card_est": 269,
   "invalid_values": {
    "roles": 0,
    "archetypes": 0

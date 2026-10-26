@@ -415,6 +415,18 @@ def run_id(name, new=False):
 VERDICTS = os.path.join(STAGE, 'verdicts.json')   # reader verdict cache, keyed by card name + tag-view hash + Oracle-text hash
 
 
+DECK_RULES = (
+    'deck_rules (how this deck was built; judge cards by these, do not reject a card for following them): '
+    '(1) Power aim is about 27 on the card-power scale, a mid-power deck; do not call solid playables weak. '
+    '(2) Budget staples are intentional: cheap mana rocks (about 2-3) and nonbasic lands (about 5, picked last) that many precons and Archidekt decks run, any rarity. '
+    '(3) Commander support: at least 5 cards must work the commander ability itself; those are on plan even if they are off the declared archetypes. '
+    '(4) A commander that makes tokens needs setup (token makers, fodder, generators; 7 to 14) and payoffs (sacrifice outlets, death triggers, anthems, doublers, go-wide finishers; 5 to 10, at most setup + 3); both are on plan. '
+    '(5) Utility roles (ramp, card draw, removal, board wipes, recursion, protection) are quota cards and are on plan; only a card with no role, no archetype link and no commander link is a reject. '
+    '(6) Tribal or theme cards are allowed only when the deck has enough other members of that type; flag any that lack them. '
+    '(7) Colourless spells are capped by colourless sources; no mass land denial; few off-plan artifacts. '
+    '(8) Rarity is not restricted.')
+
+
 def cmd_review_export(a):
     pk = _picks(a.name); lst = os.path.join(STAGE, a.name + '.cards.txt')
     open(lst, 'w', encoding='utf-8').write('\n'.join([pk['commander']] + [x['name'] for x in pk['picks']]) + '\n')
@@ -422,7 +434,7 @@ def cmd_review_export(a):
     ctx = os.path.join(STAGE, a.name + '.context.txt')
     open(ctx, 'w', encoding='utf-8').write(
         'Candidate 99-card Commander starter deck. Declared archetypes: %s. Commander profile: %s. The commander is one of the cards in the list. '
-        'Judge every card against the archetypes and the deck_rules, with the whole deck in mind.' % (' and '.join(pk['strategy']), ', '.join(pk['profile'])))
+        'Judge every card against the archetypes and the deck_rules, with the whole deck in mind. ' % (' and '.join(pk['strategy']), ', '.join(pk['profile'])) + DECK_RULES)
     rid = run_id(a.name, new=True)
     out = subprocess.run([sys.executable, rc, 'glance-export', '--run', rid, '--cardlist', lst, '--batch', '24', '--context', ctx, '--cache', VERDICTS],
                          check=False, capture_output=True, text=True, encoding='utf-8').stdout

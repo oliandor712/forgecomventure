@@ -4,68 +4,45 @@
   "spellslinger",
   "tokens"
  ],
- "on_plan": 61,
- "rejects": [
-  "Leonin Bladetrap"
- ],
- "reject_detail": [
-  {
-   "name": "Leonin Bladetrap",
-   "function": "Flash artifact that sacrifices to deal 2 damage to non-flying attackers.",
-   "oracle_arch": [
-    "control",
-    "stax",
-    "aggro"
-   ],
-   "tag_arch": [
-    "artifacts",
-    "control",
-    "stax"
-   ],
-   "roles": [
-    "defense",
-    "interaction",
-    "sweeper"
-   ],
-   "power": 2
-  }
- ],
+ "on_plan": 62,
+ "rejects": [],
+ "reject_detail": [],
  "tag_gaps": [],
  "summary": {
   "cards": 62,
-  "tag_readers": 1,
-  "rows": 62,
-  "role_f1": 0.663,
+  "tag_readers": 3,
+  "rows": 186,
+  "role_f1": 0.648,
   "arch_hit": 1.0,
-  "power_within1": 0.919,
-  "function_sim": 0.649,
-  "role_f1_vs_listed": 0.5,
-  "arch_hit_vs_listed": 0.667,
-  "unclear_per_card": 0.35,
-  "reader_role_agreement": null,
+  "power_within1": 0.952,
+  "function_sim": 0.606,
+  "role_f1_vs_listed": 0.494,
+  "arch_hit_vs_listed": 0.722,
+  "unclear_per_card": 0.54,
+  "reader_role_agreement": 0.824,
   "calibration_by_confidence": {
    "1": [
-    0.7,
-    1
+    0.58,
+    5
    ],
    "2": [
-    0.817,
-    9
+    0.759,
+    27
    ],
    "3": [
-    0.852,
-    20
+    0.796,
+    65
    ],
    "4": [
-    0.825,
-    31
+    0.871,
+    79
    ],
    "5": [
-    0.9,
-    1
+    0.933,
+    10
    ]
   },
-  "tag_tokens_per_card_est": 215,
+  "tag_tokens_per_card_est": 265,
   "invalid_values": {
    "roles": 0,
    "archetypes": 0

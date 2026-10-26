@@ -4,146 +4,146 @@
   "sacrifice",
   "tokens"
  ],
- "on_plan": 60,
+ "on_plan": 58,
  "rejects": [
-  "Mask of Memory",
-  "Skyscanner"
+  "Guidelight Matrix",
+  "Adventurer's Airship",
+  "Wreck Remover",
+  "Expert-Level Safe"
  ],
  "reject_detail": [
   {
-   "name": "Mask of Memory",
-   "function": "Cheap equipment that draws two and discards one on combat damage.",
+   "name": "Guidelight Matrix",
+   "function": "Artifact that draws a card and crews or saddles later.",
    "oracle_arch": [
-    "equipment",
+    "artifacts",
     "card_draw",
-    "voltron"
+    "colorless"
    ],
    "tag_arch": [
+    "artifacts",
     "card_draw",
-    "equipment",
-    "voltron"
+    "colorless"
    ],
    "roles": [
-    "card_adv",
-    "draw_engine",
-    "equipment"
+    "artifact",
+    "cantrip"
    ],
-   "power": 3
+   "power": 1
   },
   {
-   "name": "Skyscanner",
-   "function": "Flying creature that draws a card on entering.",
+   "name": "Adventurer's Airship",
+   "function": "Flying vehicle that loots when attacking; crew 2.",
    "oracle_arch": [
-    "blink",
-    "card_draw",
-    "artifacts"
+    "artifacts",
+    "aggro",
+    "colorless"
    ],
    "tag_arch": [
-    "burn",
-    "control",
-    "tribal"
+    "aggro",
+    "artifacts",
+    "card_draw",
+    "colorless"
    ],
    "roles": [
-    "cantrip",
-    "etb_creature",
+    "creature",
+    "draw_select",
     "evasion"
    ],
    "power": 2
+  },
+  {
+   "name": "Wreck Remover",
+   "function": "Creature exiling a graveyard card and gaining 1 life on entry or attack; cycles.",
+   "oracle_arch": [
+    "control",
+    "lifegain",
+    "colorless"
+   ],
+   "tag_arch": [
+    "artifacts",
+    "colorless",
+    "lifegain"
+   ],
+   "roles": [
+    "cantrip",
+    "creature",
+    "graveyard_exile"
+   ],
+   "power": 2
+  },
+  {
+   "name": "Expert-Level Safe",
+   "function": "Exiles cards face down and plays a guessing minigame to retrieve them.",
+   "oracle_arch": [
+    "chaos",
+    "impulse_draw",
+    "colorless"
+   ],
+   "tag_arch": [
+    "artifacts",
+    "colorless",
+    "impulse_draw"
+   ],
+   "roles": [
+    "artifact",
+    "card_adv"
+   ],
+   "power": 1
   }
  ],
  "tag_gaps": [
   {
-   "name": "Skyscanner",
+   "name": "War Machine, Avenging Arsenal",
    "oracle_arch": [
-    "blink",
-    "card_draw",
-    "artifacts"
-   ],
-   "tag_arch": [
-    "burn",
-    "control",
-    "tribal"
-   ],
-   "unclear": [
-    "token_type:blood_draw"
-   ]
-  },
-  {
-   "name": "Pinnacle Monk",
-   "oracle_arch": [
-    "spellslinger",
-    "blink",
-    "graveyard"
+    "equipment",
+    "counters",
+    "voltron"
    ],
    "tag_arch": [
     "aggro",
+    "artifacts",
     "legends_matter",
     "tokens"
-   ],
-   "unclear": []
-  },
-  {
-   "name": "Bumbleflower's Sharepot",
-   "oracle_arch": [
-    "artifacts",
-    "control",
-    "lifegain"
-   ],
-   "tag_arch": [
-    "aggro",
-    "equipment",
-    "voltron"
-   ],
-   "unclear": [
-    "kw:equip num:3"
-   ]
-  },
-  {
-   "name": "Sazacap's Brew",
-   "oracle_arch": [
-    "card_draw",
-    "group_hug",
-    "wheels"
-   ],
-   "tag_arch": [
-    "aggro",
-    "equipment",
-    "voltron"
    ],
    "unclear": []
   }
  ],
  "summary": {
   "cards": 62,
-  "tag_readers": 1,
-  "rows": 62,
-  "role_f1": 0.603,
-  "arch_hit": 0.935,
-  "power_within1": 0.968,
-  "function_sim": 0.616,
-  "role_f1_vs_listed": 0.5,
+  "tag_readers": 3,
+  "rows": 186,
+  "role_f1": 0.653,
+  "arch_hit": 0.962,
+  "power_within1": 0.962,
+  "function_sim": 0.699,
+  "role_f1_vs_listed": 0.602,
   "arch_hit_vs_listed": 1.0,
-  "unclear_per_card": 0.45,
-  "reader_role_agreement": null,
+  "unclear_per_card": 0.63,
+  "reader_role_agreement": 0.786,
   "calibration_by_confidence": {
+   "1": [
+    0.55,
+    4
+   ],
    "2": [
-    0.797,
-    6
+    0.741,
+    36
    ],
    "3": [
-    0.65,
-    24
+    0.82,
+    71
    ],
    "4": [
-    0.852,
-    31
+    0.835,
+    66
    ],
    "5": [
-    0.9,
-    1
+    0.893,
+    9
    ]
   },
-  "tag_tokens_per_card_est": 223,
+  "tag_tokens_per_card_est": 266,
   "invalid_values": {
    "roles": 0,
    "archetypes": 0
