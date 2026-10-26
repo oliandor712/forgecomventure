@@ -167,6 +167,9 @@ def record(name, text):
     for l in lines:
         m = re.match(r"^SVar:(\w+):(.*)$", l)
         if m: sv[m.group(1)] = m.group(2)
+    for l in list(lines):   # K:Haunt:<SVar> keeps its effect in the SVar (enters / haunted creature dies): read it as an ability line of its own
+        m = re.match(r"^K:Haunt:(\w+)", l)
+        if m and m.group(1) in sv and re.match(r"^(DB|AB|SP)\$", sv[m.group(1)]): lines.append("A:" + sv[m.group(1)])
     types = next((l[6:] for l in lines if l.startswith("Types:")), "")
     tags = type_tags(types)
     mc = next((l[9:] for l in lines if l.startswith("ManaCost:")), "")
