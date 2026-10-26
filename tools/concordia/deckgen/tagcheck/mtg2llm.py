@@ -356,6 +356,7 @@ def _carries(canon, tags):
     return not re.search(r"(?<![\w{])[+\-]?\d+(?:/[+\-]?\d+)?(?![\w}])", bare)
 
 
+_SIBLING_TAIL = re.compile(r"(?i)\b(?:or|and) (?:an? )?(?:artifacts?|enchantments?|creatures?|lands?|planeswalkers?|permanents?|spells?|cards?)\b")
 _SYM = re.compile(r"\{(?:[TQ]|[WUBRGCXSEP]|\d+|[WUBRG2]/[WUBRGP]|effect)\}")
 
 
@@ -398,7 +399,13 @@ def _compose(ts, stray):
         return fill(t["canon"], nums(R["trig"])) + ", {effect}." if t and _carries(t["canon"], R["trig"]) else None
     b = P["body"].get(_pat(R["eff"])) or HAND_BODY.get(_pat(R["eff"]))
     if not b: return None
+    if any(t.startswith("remove:") for t in R["eff"]) and {"target_type:opponent", "target_type:player"} & set(R["target"]): return None      # "Exile target opponent": the tags miss that the player does the exiling (Blot Out), so no guess
+    if "cost:remove_counters" in R["cost"]: return None      # no tag says how many or which counters (Feral Thallid: three spore), so "Remove a counter" would be a guess
     body = b["canon"]
+    if "{T}" in body and _SIBLING_TAIL.search(body.split("{T}", 1)[1]):      # the majority body keeps a sibling's literal type ("destroy {T} or enchantment"); take a bare variant or none
+        alt = next((v for v, _ in b.get("variants", []) if "{T}" in v and not _SIBLING_TAIL.search(v.split("{T}", 1)[1])), None)
+        if not alt: return None
+        body = alt
     if not _carries(body, R["eff"]): return None
     if R["target"]:
         tp = _pat(R["target"]); t = P["target"].get(tp) or ({"canon": HAND_TARGET[tp]} if tp in HAND_TARGET else None)
