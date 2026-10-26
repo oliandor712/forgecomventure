@@ -313,7 +313,7 @@ def draft(name, commander, strategy, ban, reject, _try=0):
     L = ['[metadata]', 'Name=' + name, '[Commander]', '1 %s|%s' % (cmd['name'], cmd['best'][cr]), '[Main]']
     for c, n in basics.items():
         if n: L.append('%d %s|FDN' % (n, B.BASIC[c]))
-    for p, r in lands: L.append('1 %s|%s' % (p['name'], p['best'][r]))
+    for p, r in lands: L.append('1 %s|%s' % (p['name'], p['best'].get(r) or next(iter(p['best'].values()))))
     for p, r in sorted(chosen, key=lambda x: (x[0]['cmc'], x[0]['name'])): L.append('1 %s|%s' % (p['name'], p['best'][r]))
     os.makedirs(STAGE, exist_ok=True)
     path = os.path.join(STAGE, name + '.dck'); open(path, 'w', encoding='utf-8').write('\n'.join(L) + '\n')
