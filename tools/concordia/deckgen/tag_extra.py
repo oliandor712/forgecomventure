@@ -482,15 +482,19 @@ def extra(lines, sv, types, text):
     for l in lines:                                      # K:ETBReplacement:Other:<svar> with a Choose* effect: "as this enters, choose a colour / type / player ..." (replaces the opaque forge_line:etbreplacement)
         m = re.match(r"^K:ETBReplacement:\w+:(\w+)", l)
         sx = sv.get(m.group(1), "") if m else ""
-        mm = re.search(r"DB\$ (Choose\w+|NamedCard)", sx)
+        pc_ = re.search(r"DB\$ PutCounter\b.*\bCounterType\$ (\w+(?:,\w+)+)", sx)   # 'enters with your choice of a deathtouch or a lifelink counter': a choice among counter types
+        if pc_: add("choose_on_enter:option", "trigger:etb", *["choice_option:" + tok(o_) for o_ in pc_.group(1).split(",")])
+        mm = re.search(r"DB\$ (Choose\w+|NamedCard|NameCard|GenericChoice)", sx)
         if mm:
             api_ = mm.group(1); ty_ = re.search(r"\bType\$ ([\w ]+?) ?(?:\||$)", sx)
-            what = {"ChooseColor": "color", "ChoosePlayer": "player", "ChooseCard": "card", "ChooseNumber": "number", "NamedCard": "card_name", "ChooseDirection": "direction"}.get(api_)
+            what = {"ChooseColor": "color", "ChoosePlayer": "player", "ChooseCard": "card", "ChooseNumber": "number", "NamedCard": "card_name", "NameCard": "card_name", "GenericChoice": "option", "ChooseDirection": "direction"}.get(api_)
             if api_ == "ChooseType": what = {"Creature": "creature_type", "Card": "card_type", "Basic Land": "basic_land_type", "Land": "land_type"}.get(ty_.group(1).strip() if ty_ else "", "type")
             if what:
                 add("choose_on_enter:" + what, "trigger:etb")        # user (Cloud Key): ETB -> choice -> the choice drives the later effect
                 vt_ = re.search(r"\bValidTypes\$ ([\w,]+)", sx)
                 if vt_: add(*["choice_option:" + tok(o_) for o_ in vt_.group(1).split(",")])
+                ch_ = re.search(r"\bChoices\$ ([\w,]+)", sx) if api_ == "GenericChoice" else None   # GenericChoice (Siege cards, Archangel of Strife): the options are SVar names
+                if ch_: add(*["choice_option:" + tok(o_) for o_ in ch_.group(1).split(",")])
     if "AlternateMode:DoubleFaced" in text or "AlternateMode:Modal" in text: add("transform")
     if "Basic" in types.split() and "Land" in types.split():
         for t, c in (("Plains", "white"), ("Island", "blue"), ("Swamp", "black"), ("Mountain", "red"), ("Forest", "green")):

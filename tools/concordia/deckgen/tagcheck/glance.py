@@ -53,7 +53,7 @@ TAG_RULES = """You are a GLANCE READER. You see only tags. Rules (strict):
 2. Each card is an id plus `typing`, `tags`, `groups` (tags of one line of the card) and `links`. You are NOT told the name or the Oracle text. Never write a card name.
 3. For every card fill the form in `form` exactly: function, roles (from roles_allowed), archetypes (from archetypes_allowed), power, confidence, unclear. Use only what the tags support; a tag you cannot use goes to `unclear`. No essays.
 4. Write JSON to the output file you are given: {"cards":[{"id":"c001","function":"...","roles":["..."],"archetypes":["..."],"power":3,"confidence":4,"unclear":["tag"]}, ...],"mana":{"curve":"ok","sources":"ok","notes":"..."}}, one entry per id, in order; `mana` is one deck-level entry (see form.deck_fields) judged from `deck_context` and each card's `mv` (mana value). Then reply with one line: the number of cards written."""
-ORACLE_RULES = """You are the ORACLE READER. Read ONLY the one batch file you are given (card name, Oracle text, form spec). Do not open, list, search or fetch anything else. No shell commands.
+ORACLE_RULES = """You are the ORACLE READER. Read ONLY the one batch file you are given (card name, Oracle text, form spec, reminder texts) and, if needed, KEYWORD_REMINDER_TEXT.toon and TOKEN_REMINDER_TEXT.toon in ~/tagcheck_runs/_refs/. Do not open, list, search or fetch anything else. No shell commands.
 For every card fill the form in `form` exactly (function, roles from roles_allowed, archetypes from archetypes_allowed, power, confidence, unclear = Oracle phrases you found hard to classify), judging only from the card text. Write JSON to the output file: {"cards":[{"id":"c001","function":"...","roles":[...],"archetypes":[...],"power":3,"confidence":4,"unclear":[]}, ...],"mana":{"curve":"ok","sources":"ok","notes":"..."}}, one entry per id, in order; `mana` is one deck-level entry (see form.deck_fields) judged from `deck_context` and each card's `mv` (mana value). Reply with one line: the number of cards written."""
 
 
@@ -117,7 +117,8 @@ def cmd_export(a):
             shown = {t for g in c["groups"].values() for t in g.split()}
             slim.append(dict(c, tags=[t for t in c["tags"] if t not in shown]))
         json.dump(dict(form=spec, **dict(ctx, deck_rules=[r for r in ctx["deck_rules"] if not r.startswith("D8")]), reminders=RC.batch_reminders(items, db), cards=slim), open(os.path.join(wd, "in", "batch_%02d.json" % nb), "w"), indent=1)
-        json.dump(dict(form=spec, **ctx, cards=ora), open(os.path.join(wd, "oin", "batch_%02d.json" % nb), "w"), indent=1)
+        rem = RC.batch_reminders(items, db); rem.pop("tag_legend", None)   # the Oracle reader gets the same keyword and token reminder texts as the tag reader, not the tag legend (it never sees tags)
+        json.dump(dict(form=spec, **ctx, reminders=rem, cards=ora), open(os.path.join(wd, "oin", "batch_%02d.json" % nb), "w"), indent=1)
     json.dump(key, open(os.path.join(wd, "key", "key.json"), "w"), indent=1)
     json.dump(dict(path=cpath, hits=hits, meta=meta), open(os.path.join(wd, "key", "cache.json"), "w"), indent=1)
     delta = bool(cpath) and len(key) < DELTA_MIN; ntag = 1 if delta else 2

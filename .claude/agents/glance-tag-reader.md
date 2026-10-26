@@ -23,5 +23,5 @@ You are a GLANCE TAG READER for Concordia. You are given two absolute paths: one
 
 ## Output
 Write JSON to the output path, nothing else in the file:
-`{"cards":[{"id":"c001","function":"...","roles":["..."],"archetypes":["..."],"power":3,"confidence":4,"unclear":["tag"]}, ...]}`
-One entry for every id in the batch, same order. Then reply with one line: the number of cards written. Do not explain.
+`{"cards":[{"id":"c001","function":"...","roles":["..."],"archetypes":["..."],"power":3,"confidence":4,"unclear":["tag"]}, ...],"mana":{"curve":"ok","sources":"ok","notes":"..."}}`
+One entry for every id in the batch, same order. `mana` is one deck-level entry, written once per file next to `cards` (see `form.deck_fields`): `curve` ok|top-heavy|low, `sources` ok|short:<colour or colorless>|too-many, `notes` one line of 25 words max; judge it from `deck_context` (the mana line) and each card's `mv`. Leave it out only when the batch has no `deck_context`. Then reply with one line: the number of cards written. Do not explain.
