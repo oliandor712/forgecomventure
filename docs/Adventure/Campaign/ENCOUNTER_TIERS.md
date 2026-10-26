@@ -15,7 +15,7 @@ Every tier's requirements live in `tools/concordia/tier_rules.py` (the one sourc
 | Setting | Tier 1 value |
 |---|---|
 | Deck | 100 cards: commander + 99 |
-| Commander | one legendary creature, exactly one colour of identity, no mana value limit, common or uncommon, one commander (a Partner-ability commander is fine). Not shared with another tier: not checked by deck_tier (a categorize.py / audit concern) |
+| Commander | one legendary creature, exactly one colour of identity, no mana value limit, any rarity, one commander (a Partner-ability commander is fine). Not shared with another tier: not checked by deck_tier (a categorize.py / audit concern) |
 | Lands | 41-42, decided last from the curve |
 | Power (average card power) | 17-23 |
 | Creatures | at least 15; soft cap 35, the builder stops adding creatures there (user, 2026-10-25) |
@@ -27,7 +27,9 @@ Every tier's requirements live in `tools/concordia/tier_rules.py` (the one sourc
 | Tribal creatures | 15 of the tribe (18 after a retry) |
 | Ramp / draw / removal | 0-3 each |
 | Fast mana, tutors, wipes, Game Changers, extra turns, combos | none |
-| Rarity | no cap (user, 2026-10-26); the commander is still common or uncommon |
+| Watch-list cards | none (cap 0) |
+| Card mechanics outside the tier (`mech:*` tags: stickers, attractions, contraptions, planechase, schemes, ante never; speed, initiative, venture from tier 4; vote, monarch, day/night, ring from tier 3; casting from the graveyard from tier 2) | none (FAIL) |
+| Rarity | no restriction on cards or commanders (user, 2026-10-26) |
 | Staples (popular, low impact) | any rarity |
 | Enemy life | 10-12 |
 | Commander support (H17) | 5 or more deck cards that work with the commander |
@@ -37,7 +39,7 @@ Every tier's requirements live in `tools/concordia/tier_rules.py` (the one sourc
 | Used for | Wild encounters, raiders, route trainers early on, tutorials | Route trainers, gym trainers, the rival's early fights | Wardens, the Champion's Paragons, secret legends, late rival fights |
 | Enemy life | 10-12 | 15-20 | 25-35 |
 | Commander Bracket | **Bracket 1 (Exhibition)**: themed, deliberately under-built | **Bracket 2 (Core)**: Concordia's own starters, about a stock precon | **Bracket 3 (Upgraded)**: Forge's Realm of Legends enemy decks, minus anything the AI can't play |
-| Commander | Common or uncommon, no mana value limit, simple text | Common, uncommon or rare, mana value 3-5, useful every game | Uncommon, rare or mythic, mana value 3-7, the deck's engine |
+| Commander | Any rarity, no mana value limit, simple text | Any rarity, mana value 3-5, useful every game | Any rarity, mana value 3-7, the deck's engine |
 | Lands | 41-42, all basic | 36-39, mostly basic | 33-38, with good nonbasics |
 | Land count check (Karsten, §2 step 3) | not checked: Tier 1 is over-landed on purpose | within ±3 | within ±3 |
 | Ramp | 0-3 | 2-8 | 8-16 |
@@ -54,6 +56,7 @@ Every tier's requirements live in `tools/concordia/tier_rules.py` (the one sourc
 | Cards at power 70+ | 0 | 2 or fewer | 2 or fewer |
 | Card types (Moxfield grouping) | at least 6 noncreature cards, 4 of them instants or sorceries; creatures at most 85% | at least 4 instants, 3 sorceries, 4 artifacts, 2 enchantments; no type above 60% | as Tier 2 |
 | Game Changers | 0 | 0 | 0 |
+| Watch-list cards | 0 | 1 or fewer | 2 or fewer |
 | Extra turns | none | none | none |
 | Mass land denial | none | none | none |
 | Two-card combos | none | none | late-game only |
@@ -64,6 +67,7 @@ Tiers 4-5 (user, 2026-10-26; same checks):
 |---|---|---|
 | Average card power | 35.5-41.5 | 40 or more |
 | Game Changers | 4 or fewer | 6 or fewer |
+| Watch-list cards | 4 or fewer | 8 or fewer |
 | Extra turns | 1 or fewer, never chained | 2 or fewer, never chained |
 | Cards at power 50+ | 4-14 | 8 or more |
 | Cards at power 70+ | 5 or fewer | 1 or more |
@@ -71,6 +75,8 @@ Tiers 4-5 (user, 2026-10-26; same checks):
 | Tutors | 0-4 | 0-6 |
 | Mass land denial | none | none |
 | Two-card combos | late-game only | late-game only |
+
+Watch-list cap per tier 0 / 1 / 2 / 4 / 8 (`build.py` WATCH_CAP, `deck_tier.py` WARN). The mechanics rule is `tier_rules.MECH_MIN_TIER`: the builder skips cards above the deck's tier and `deck_tier.py` FAILs a deck that holds one (it needs `deckgen/pool.pkl` for the tags, otherwise it warns). Extra-turn and mass-land-denial cards are separate pool flags (`extra`, `chained`, `mld`); the builder takes 0 extra turns at tiers 1-3, 1 at tier 4, 2 at tier 5, and never a chained one.
 
 Extra turns are the `extra_turn` tag (any card whose script has AddTurn); Game Changers come from Forge's list. Power-50+ and 70+ counts are WARN; Game Changers and extra turns FAIL.
 | Target result (§6) | Player wins about 95%+ | Player wins about 60-75% | Player wins about 35-55% on the first try |
@@ -235,7 +241,7 @@ python3 mine.py && python3 pool.py && python3 build.py decks.json
 
 `decks.json` lists each deck's commander, colours, theme and seed. Tier 2 and 3 decks start from an existing Forge
 list (a Tempest old-border precon, a Realm of Legends starter or a Realm of Legends enemy deck) and keep as much of it
-as the tier allows. Tier 1 decks are built from commons around a creature type. The builder only picks cards with no
+as the tier allows. Tier 1 decks are built around a creature type, at any rarity. The builder only picks cards with no
 `AI:RemoveDeck:All` flag, legal in Commander and outside Concordia's restrictions. Its output is deterministic.
 
 | Tier | Colours | Decks |
