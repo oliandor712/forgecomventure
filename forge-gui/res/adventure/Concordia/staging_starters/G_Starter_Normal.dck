@@ -10,17 +10,16 @@ Name=G_Starter_Normal
 1 War Room|CMM
 1 Scavenger Grounds|HOU
 1 Reliquary Tower|M19
-1 Elvish Mystic|M15
+1 Crop Sigil|EMN
 1 Green Sun's Zenith|MBS
 1 Noxious Revival|NPH
 1 Rancor|GVL
 1 Sol Ring|TMC
 1 Veteran Explorer|BBD
-1 Aftermath Analyst|MKM
 1 Arcane Signet|ELD
 1 Blanchwood Prowler|BRO
-1 Farseek|M13
 1 Fellwar Stone|9ED
+1 Glimpse the Core|LCI
 1 Grapple with the Past|EMN
 1 Leyline Dowser|OTC
 1 Lightning Greaves|MRD
@@ -31,6 +30,7 @@ Name=G_Starter_Normal
 1 Revive the Shire|LTR
 1 The Binding of the Titans|THB
 1 Town Greeter|FIN
+1 Trailtracker Scout|BLC
 1 Bala Ged Recovery|ZNR
 1 Burnished Hart|FDN
 1 Druidic Satchel|M12
@@ -39,10 +39,10 @@ Name=G_Starter_Normal
 1 Farhaven Elf|SHM
 1 Fungal Rebirth|M21
 1 Jalum Tome|CMR
-1 Jocasta, Automaton Avenger|MSC
 1 Loaming Shaman|M20
 1 Next of Kin|NCC
 1 Puca's Covenant|ECC
+1 Reincarnation|C13
 1 Scrap Trawler|AER
 1 Skullwinder|CLB
 1 Sword of Light and Shadow|DST
@@ -52,18 +52,18 @@ Name=G_Starter_Normal
 1 Healing Technique|C21
 1 Hedge Shredder|DSK
 1 Lasyd Prowler|TDM
+1 Masked Admirers|PLST
 1 Mold Shambler|ZEN
 1 Parallel Lives|ISD
-1 Prototype Portal|SOM
 1 Towashi Guide-Bot|NEO
 1 Voice of Many|SCD
 1 Yuna's Decision|FIC
 1 Arashi, the Sky Asunder|SOK
-1 Cavalier of Thorns|M20
 1 Hivespine Wolverine|BLB
-1 Summon: Titan|FIN
+1 The Mending of Dominaria|DOM
 1 Thickest in the Thicket|FDC
 1 Vorinclex|MOM
+1 Will of the Sultai|TDC
 1 Zuko's Exile|TLA
 1 Destructor Dragon|FRF
 1 Desecrate Reality|CMM

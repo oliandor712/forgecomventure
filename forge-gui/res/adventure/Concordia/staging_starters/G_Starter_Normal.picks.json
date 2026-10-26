@@ -35,15 +35,15 @@
  },
  "picks": [
   {
-   "name": "Elvish Mystic",
-   "core": true,
-   "rarity": "C",
+   "name": "Crop Sigil",
+   "core": false,
+   "rarity": "U",
    "cmc": 1,
-   "types": "Creature Elf Druid",
+   "types": "Enchantment",
    "payoff": "",
-   "power": 65.3,
+   "power": 20.8,
    "supports": true,
-   "fit": 0
+   "fit": 4
   },
   {
    "name": "Green Sun's Zenith",
@@ -97,17 +97,6 @@
    "fit": 3
   },
   {
-   "name": "Aftermath Analyst",
-   "core": false,
-   "rarity": "U",
-   "cmc": 2,
-   "types": "Creature Elf Detective",
-   "payoff": "",
-   "power": 24.5,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Arcane Signet",
    "core": false,
    "rarity": "C",
@@ -126,22 +115,22 @@
    "fit": 4
   },
   {
-   "name": "Farseek",
-   "core": true,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Sorcery",
-   "payoff": "",
-   "power": 65.2,
-   "supports": false,
-   "fit": 2
-  },
-  {
    "name": "Fellwar Stone",
    "core": false,
    "rarity": "U",
    "cmc": 2,
    "types": "Artifact"
+  },
+  {
+   "name": "Glimpse the Core",
+   "core": true,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 48.5,
+   "supports": true,
+   "fit": 3
   },
   {
    "name": "Grapple with the Past",
@@ -254,6 +243,17 @@
    "fit": 4
   },
   {
+   "name": "Trailtracker Scout",
+   "core": true,
+   "rarity": "R",
+   "cmc": 2,
+   "types": "Creature Raccoon Scout",
+   "payoff": "",
+   "power": 48.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Bala Ged Recovery",
    "core": false,
    "rarity": "U",
@@ -342,17 +342,6 @@
    "fit": 1
   },
   {
-   "name": "Jocasta, Automaton Avenger",
-   "core": false,
-   "rarity": "R",
-   "cmc": 3,
-   "types": "Legendary Artifact Creature Robot Hero",
-   "payoff": "",
-   "power": 19.2,
-   "supports": true,
-   "fit": 3
-  },
-  {
    "name": "Loaming Shaman",
    "core": false,
    "rarity": "U",
@@ -384,6 +373,17 @@
    "power": 19.0,
    "supports": true,
    "fit": 4
+  },
+  {
+   "name": "Reincarnation",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 13.6,
+   "supports": true,
+   "fit": 3
   },
   {
    "name": "Scrap Trawler",
@@ -485,6 +485,17 @@
    "fit": 3
   },
   {
+   "name": "Masked Admirers",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Elf Shaman",
+   "payoff": "",
+   "power": 11.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Mold Shambler",
    "core": false,
    "rarity": "C",
@@ -505,17 +516,6 @@
    "power": 47.9,
    "supports": false,
    "fit": 1
-  },
-  {
-   "name": "Prototype Portal",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Artifact",
-   "payoff": "",
-   "power": 17.0,
-   "supports": true,
-   "fit": 3
   },
   {
    "name": "Towashi Guide-Bot",
@@ -562,17 +562,6 @@
    "fit": 1
   },
   {
-   "name": "Cavalier of Thorns",
-   "core": false,
-   "rarity": "M",
-   "cmc": 5,
-   "types": "Creature Elemental Knight",
-   "payoff": "",
-   "power": 17.1,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Hivespine Wolverine",
    "core": false,
    "rarity": "U",
@@ -584,13 +573,13 @@
    "fit": 1
   },
   {
-   "name": "Summon: Titan",
+   "name": "The Mending of Dominaria",
    "core": false,
    "rarity": "R",
    "cmc": 5,
-   "types": "Enchantment Creature Saga Giant",
+   "types": "Enchantment Saga",
    "payoff": "",
-   "power": 16.4,
+   "power": 15.0,
    "supports": true,
    "fit": 4
   },
@@ -615,6 +604,17 @@
    "power": 49.3,
    "supports": false,
    "fit": 3
+  },
+  {
+   "name": "Will of the Sultai",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 15.6,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Zuko's Exile",

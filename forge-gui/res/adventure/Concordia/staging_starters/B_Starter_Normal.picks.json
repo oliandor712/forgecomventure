@@ -158,15 +158,15 @@
    "fit": 4
   },
   {
-   "name": "Golgari Thug",
+   "name": "Infernal Scarring",
    "core": false,
-   "rarity": "U",
+   "rarity": "C",
    "cmc": 2,
-   "types": "Creature Human Warrior",
+   "types": "Enchantment Aura",
    "payoff": "",
-   "power": 20.5,
+   "power": 13.8,
    "supports": false,
-   "fit": 3
+   "fit": 2
   },
   {
    "name": "Lightning Greaves",
@@ -191,17 +191,6 @@
    "fit": 2
   },
   {
-   "name": "Myr Sire",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact Creature Phyrexian Myr",
-   "payoff": "",
-   "power": 16.4,
-   "supports": true,
-   "fit": 2
-  },
-  {
    "name": "Negative Zone Portal",
    "core": false,
    "rarity": "R",
@@ -211,6 +200,17 @@
    "power": 22.2,
    "supports": false,
    "fit": 4
+  },
+  {
+   "name": "Oblivion's Hunger",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 15.5,
+   "supports": false,
+   "fit": 2
   },
   {
    "name": "Rabid Attack",
@@ -257,17 +257,6 @@
    "fit": 4
   },
   {
-   "name": "Dark Prophecy",
-   "core": false,
-   "rarity": "R",
-   "cmc": 3,
-   "types": "Enchantment",
-   "payoff": "",
-   "power": 20.5,
-   "supports": false,
-   "fit": 3
-  },
-  {
    "name": "Dismember",
    "core": true,
    "rarity": "U",
@@ -298,6 +287,17 @@
    "payoff": "",
    "power": 13.6,
    "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Grave Birthing",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 11.1,
+   "supports": true,
    "fit": 3
   },
   {
@@ -378,37 +378,37 @@
    "fit": 3
   },
   {
-   "name": "Teval's Judgment",
+   "name": "Silversmote Ghoul",
    "core": false,
-   "rarity": "R",
+   "rarity": "U",
    "cmc": 3,
-   "types": "Enchantment",
+   "types": "Creature Zombie Vampire",
    "payoff": "",
-   "power": 22.7,
+   "power": 14.8,
    "supports": true,
-   "fit": 4
+   "fit": 2
   },
   {
-   "name": "Transpose",
+   "name": "Stinging Cave Crawler",
    "core": false,
-   "rarity": "R",
+   "rarity": "U",
    "cmc": 3,
-   "types": "Instant",
+   "types": "Creature Insect Horror",
    "payoff": "",
-   "power": 21.7,
+   "power": 14.6,
    "supports": true,
-   "fit": 3
+   "fit": 2
   },
   {
-   "name": "Victory Chimes",
+   "name": "Yathan Tombguard",
    "core": false,
-   "rarity": "R",
+   "rarity": "U",
    "cmc": 3,
-   "types": "Artifact",
+   "types": "Creature Human Warrior",
    "payoff": "",
-   "power": 21.1,
-   "supports": false,
-   "fit": 3
+   "power": 15.0,
+   "supports": true,
+   "fit": 2
   },
   {
    "name": "Ashiok's Reaper",
@@ -420,17 +420,6 @@
    "power": 12.7,
    "supports": false,
    "fit": 3
-  },
-  {
-   "name": "Big Mother Mouser",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Artifact Creature Robot",
-   "payoff": "",
-   "power": 17.3,
-   "supports": true,
-   "fit": 2
   },
   {
    "name": "Crypt Ghast",
@@ -466,15 +455,15 @@
    "fit": 3
   },
   {
-   "name": "Enduring Tenacity",
+   "name": "Geth's Grimoire",
    "core": false,
-   "rarity": "R",
+   "rarity": "U",
    "cmc": 4,
-   "types": "Enchantment Creature Snake Glimmer",
+   "types": "Artifact Book",
    "payoff": "",
-   "power": 21.5,
-   "supports": true,
-   "fit": 1
+   "power": 15.5,
+   "supports": false,
+   "fit": 2
   },
   {
    "name": "Hedron Archive",
@@ -499,6 +488,28 @@
    "fit": 3
   },
   {
+   "name": "Lion Vulture",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Cat Bird",
+   "payoff": "",
+   "power": 14.1,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Oath of the Grey Host",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Enchantment Saga",
+   "payoff": "",
+   "power": 11.5,
+   "supports": true,
+   "fit": 3
+  },
+  {
    "name": "Species Specialist",
    "core": false,
    "rarity": "R",
@@ -510,36 +521,25 @@
    "fit": 3
   },
   {
-   "name": "The Vision",
+   "name": "Thornplate Intimidator",
    "core": false,
-   "rarity": "R",
+   "rarity": "C",
    "cmc": 4,
-   "types": "Legendary Artifact Creature Robot Hero",
+   "types": "Creature Rat Rogue",
    "payoff": "",
-   "power": 17.0,
+   "power": 9.2,
    "supports": true,
-   "fit": 2
+   "fit": 3
   },
   {
-   "name": "Thought-Knot Seer",
+   "name": "Torment of Venom",
    "core": false,
-   "rarity": "R",
+   "rarity": "C",
    "cmc": 4,
-   "types": "Creature Eldrazi",
+   "types": "Instant",
    "payoff": "",
-   "power": 15.8,
-   "supports": false,
-   "fit": 2
-  },
-  {
-   "name": "Vibranium Strike Gauntlets",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Artifact Equipment",
-   "payoff": "",
-   "power": 16.2,
-   "supports": false,
+   "power": 15.5,
+   "supports": true,
    "fit": 2
   },
   {
@@ -565,6 +565,17 @@
    "fit": 4
   },
   {
+   "name": "Blinkmoth Urn",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 13.8,
+   "supports": false,
+   "fit": 3
+  },
+  {
    "name": "Clackbridge Troll",
    "core": false,
    "rarity": "R",
@@ -587,15 +598,15 @@
    "fit": 3
   },
   {
-   "name": "Gauntlet of Power",
+   "name": "Indulgent Tormentor",
    "core": false,
-   "rarity": "R",
+   "rarity": "U",
    "cmc": 5,
-   "types": "Artifact",
+   "types": "Creature Demon",
    "payoff": "",
-   "power": 15.7,
-   "supports": false,
-   "fit": 3
+   "power": 11.2,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Invoke Despair",
@@ -607,17 +618,6 @@
    "power": 27.8,
    "supports": true,
    "fit": 4
-  },
-  {
-   "name": "Syr Konrad, the Grim",
-   "core": false,
-   "rarity": "U",
-   "cmc": 5,
-   "types": "Legendary Creature Human Knight",
-   "payoff": "",
-   "power": 17.5,
-   "supports": false,
-   "fit": 1
   },
   {
    "name": "Caged Sun",

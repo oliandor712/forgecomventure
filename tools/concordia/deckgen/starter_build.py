@@ -241,6 +241,16 @@ def draft(name, commander, strategy, ban, reject, _try=0):
             s = score(p, r)
             if bp is None or s > bp[0]: bp = (s, p, r)
         return bp
+    # nonbasic lands first: deck_tier counts them in the power average, so the per-card aim has to leave room for them
+    nb = []
+    for lname, lb in B.spread(B.BUDGET.items(), name):
+        if len(nb) >= B.BUDGET_LANDS[TIER] + 1: break
+        p = pool.get(lname.lower())
+        if not p or lname.lower() in banned or not set(lb['colors']) <= ident or (mono and lb['any_color']): continue
+        nb.append(lname)
+    lands = [(pool[n.lower()], 'U' if 'U' in pool[n.lower()]['best'] else 'C') for n in nb]
+    landpow = sum(max(p['power'].values()) for p, _ in lands)
+    npow[0] += sum(max(p['power'].values()) >= 50 for p, _ in lands); npow[1] += sum(max(p['power'].values()) >= 70 for p, _ in lands)   # premium lands use the same caps
     # budget mana rocks first (as build.py does at tier 2), then role quotas, type quotas, creatures, fill
     nrock = 0; rocks = []
     for rn, rb in sorted(B.ROCKS.items(), key=lambda kv: -kv[1]['decks']):
@@ -255,7 +265,7 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         if len(core_names) >= CORE_N: break
         if p in cands and (r := can_add(p)): score(p, r); add(p, r); core_names.append(p['name'])
     done = [p for p, _ in chosen]
-    if done: tgt[0] = max(8.0, min(TARGET, (TARGET * nonland - sum(max(p['power'].values()) for p in done)) / max(1, nonland - len(done))))
+    if done: tgt[0] = max(8.0, min(TARGET, (TARGET * (nonland + len(lands)) - landpow - sum(max(p['power'].values()) for p in done)) / max(1, nonland - len(done))))
     for role in spec['quota']:
         while roles[role] < spec['quota'][role] and len(chosen) < nonland:
             b = best(lambda p: p['tags'] & B.ROLE[role])
@@ -295,19 +305,13 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         b = best(lambda p: nc[0] < spec['cmax'] or 'Creature' not in p['types'])
         if not b: total = 99 - len(chosen); break
         add(b[1], b[2])
-    nb = []
-    for lname, lb in B.spread(B.BUDGET.items(), name):
-        if len(nb) >= B.BUDGET_LANDS[TIER] + 1: break
-        p = pool.get(lname.lower())
-        if not p or lname.lower() in banned or not set(lb['colors']) <= ident or (mono and lb['any_color']): continue
-        nb.append(lname)
-    lands = [(pool[n.lower()], 'U' if 'U' in pool[n.lower()]['best'] else 'C') for n in nb]
     cols = [c for c in COLORS if c in ident]; pips = collections.Counter()
     for p, _ in chosen + [(cmd, 'C')]:
         for c in cols: pips[c] += data['cards'][p['name'].lower()]['mc'].count(c)
-    tot = sum(pips.values()) or 1; left = total - len(lands); basics = {}
-    for i, c in enumerate(cols):
-        n = left if i == len(cols) - 1 else round((total - len(lands)) * pips[c] / tot); basics[c] = n; left -= n
+    # as Forge's LimitedDeckBuilder.addLands: 2 basics of each deck colour, the rest split by pips in WUBRG order, rounding the running remainder
+    left = total - len(lands); basics = {c: min(2, left // max(1, len(cols))) for c in cols}; left -= sum(basics.values()); tot = sum(pips.values()) or 1
+    for c in cols:
+        n = left if c == cols[-1] else round(left * pips[c] / tot); basics[c] += n; left -= n; tot -= pips[c]
     # write deck
     cr = 'U' if 'U' in cmd['best'] else list(cmd['best'])[0]
     L = ['[metadata]', 'Name=' + name, '[Commander]', '1 %s|%s' % (cmd['name'], cmd['best'][cr]), '[Main]']

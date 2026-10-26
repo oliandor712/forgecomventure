@@ -45,26 +45,26 @@
    "fit": 4
   },
   {
-   "name": "Lightning Bolt",
+   "name": "Monastery Swiftspear",
    "core": true,
    "rarity": "C",
    "cmc": 1,
-   "types": "Instant",
+   "types": "Creature Human Monk",
    "payoff": "",
-   "power": 70.1,
+   "power": 45.7,
    "supports": true,
-   "fit": 1
+   "fit": 0
   },
   {
-   "name": "Shock",
-   "core": true,
+   "name": "Prying Blade",
+   "core": false,
    "rarity": "C",
    "cmc": 1,
-   "types": "Instant",
+   "types": "Artifact Equipment",
    "payoff": "",
-   "power": 68.4,
+   "power": 19.5,
    "supports": true,
-   "fit": 1
+   "fit": 4
   },
   {
    "name": "Sol Ring",
@@ -72,6 +72,17 @@
    "rarity": "U",
    "cmc": 1,
    "types": "Artifact"
+  },
+  {
+   "name": "Spiked Pit Trap",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 17.7,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Strike It Rich",
@@ -83,17 +94,6 @@
    "power": 49.9,
    "supports": true,
    "fit": 4
-  },
-  {
-   "name": "Unholy Heat",
-   "core": true,
-   "rarity": "C",
-   "cmc": 1,
-   "types": "Instant",
-   "payoff": "",
-   "power": 67.4,
-   "supports": true,
-   "fit": 1
   },
   {
    "name": "Ancestors' Aid",
@@ -114,11 +114,33 @@
    "types": "Artifact"
   },
   {
+   "name": "Enterprising Scallywag",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Goblin Pirate",
+   "payoff": "",
+   "power": 19.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Fellwar Stone",
    "core": false,
    "rarity": "U",
    "cmc": 2,
    "types": "Artifact"
+  },
+  {
+   "name": "Forbidden Friendship",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 15.2,
+   "supports": true,
+   "fit": 3
   },
   {
    "name": "Gilded Pinions",
@@ -128,17 +150,6 @@
    "types": "Artifact Equipment",
    "payoff": "",
    "power": 15.8,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Gleaming Barrier",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact Creature Wall",
-   "payoff": "pay",
-   "power": 16.5,
    "supports": true,
    "fit": 4
   },
@@ -183,17 +194,6 @@
    "types": "Artifact Equipment",
    "payoff": "",
    "power": 15.0,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Myr Sire",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact Creature Phyrexian Myr",
-   "payoff": "pay",
-   "power": 16.4,
    "supports": true,
    "fit": 4
   },
@@ -286,13 +286,13 @@
    "fit": 4
   },
   {
-   "name": "Gadrak, the Crown-Scourge",
+   "name": "General Kreat, the Boltbringer",
    "core": false,
-   "rarity": "R",
+   "rarity": "U",
    "cmc": 3,
-   "types": "Legendary Creature Dragon",
+   "types": "Legendary Creature Goblin Soldier",
    "payoff": "",
-   "power": 20.8,
+   "power": 18.6,
    "supports": true,
    "fit": 4
   },
@@ -308,13 +308,13 @@
    "fit": 4
   },
   {
-   "name": "Glaring Fleshraker",
+   "name": "Improvised Weaponry",
    "core": false,
-   "rarity": "U",
+   "rarity": "C",
    "cmc": 3,
-   "types": "Creature Eldrazi Drone",
+   "types": "Sorcery",
    "payoff": "",
-   "power": 20.0,
+   "power": 26.4,
    "supports": true,
    "fit": 4
   },
@@ -341,26 +341,26 @@
    "fit": 4
   },
   {
-   "name": "Prosperous Bandit",
-   "core": false,
+   "name": "Risk Factor",
+   "core": true,
    "rarity": "R",
    "cmc": 3,
-   "types": "Creature Raccoon Rogue",
+   "types": "Instant",
    "payoff": "",
-   "power": 20.0,
+   "power": 48.4,
    "supports": true,
-   "fit": 4
+   "fit": 3
   },
   {
-   "name": "Puppet Master, String Puller",
-   "core": false,
-   "rarity": "R",
+   "name": "Samurai's Katana",
+   "core": true,
+   "rarity": "U",
    "cmc": 3,
-   "types": "Legendary Creature Human Artificer Villain",
-   "payoff": "",
-   "power": 19.2,
+   "types": "Artifact Equipment",
+   "payoff": "pay",
+   "power": 47.9,
    "supports": true,
-   "fit": 4
+   "fit": 3
   },
   {
    "name": "Shiny Impetus",
@@ -407,15 +407,15 @@
    "fit": 4
   },
   {
-   "name": "Twisted Fealty",
+   "name": "You See a Pair of Goblins",
    "core": false,
    "rarity": "U",
    "cmc": 3,
-   "types": "Sorcery",
-   "payoff": "",
-   "power": 16.4,
+   "types": "Instant",
+   "payoff": "pay",
+   "power": 15.9,
    "supports": true,
-   "fit": 3
+   "fit": 4
   },
   {
    "name": "Akroan Horse",
@@ -440,17 +440,6 @@
    "fit": 4
   },
   {
-   "name": "Big Mother Mouser",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Artifact Creature Robot",
-   "payoff": "pay",
-   "power": 17.3,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Coin of Mastery",
    "core": false,
    "rarity": "R",
@@ -458,6 +447,17 @@
    "types": "Artifact",
    "payoff": "",
    "power": 17.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Fire Nation Archers",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Human Archer",
+   "payoff": "",
+   "power": 14.4,
    "supports": true,
    "fit": 4
   },
@@ -506,13 +506,13 @@
    "fit": 4
   },
   {
-   "name": "Tooth and Claw",
+   "name": "Snake Basket",
    "core": false,
-   "rarity": "U",
+   "rarity": "R",
    "cmc": 4,
-   "types": "Enchantment",
-   "payoff": "pay",
-   "power": 10.6,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 14.2,
    "supports": true,
    "fit": 4
   },
@@ -546,17 +546,6 @@
    "types": "Sorcery",
    "payoff": "pay",
    "power": 15.9,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Bonehoard Dracosaur",
-   "core": false,
-   "rarity": "M",
-   "cmc": 5,
-   "types": "Creature Dinosaur Dragon",
-   "payoff": "",
-   "power": 20.1,
    "supports": true,
    "fit": 4
   },
@@ -616,6 +605,17 @@
    "fit": 4
   },
   {
+   "name": "Spawn-Gang Commander",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Creature Eldrazi Goblin",
+   "payoff": "pay",
+   "power": 24.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Tiger-Tribe Hunter",
    "core": false,
    "rarity": "U",
@@ -636,6 +636,17 @@
    "power": 24.9,
    "supports": false,
    "fit": 3
+  },
+  {
+   "name": "Markov Enforcer",
+   "core": false,
+   "rarity": "R",
+   "cmc": 6,
+   "types": "Creature Vampire Soldier",
+   "payoff": "pay",
+   "power": 24.8,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Megaton's Fate",
@@ -667,17 +678,6 @@
    "types": "Legendary Creature Yeti Berserker",
    "payoff": "pay",
    "power": 25.2,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Brass's Bounty",
-   "core": false,
-   "rarity": "R",
-   "cmc": 7,
-   "types": "Sorcery",
-   "payoff": "",
-   "power": 14.2,
    "supports": true,
    "fit": 4
   },

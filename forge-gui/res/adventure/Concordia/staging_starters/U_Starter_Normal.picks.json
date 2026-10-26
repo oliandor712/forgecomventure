@@ -44,17 +44,6 @@
    "fit": 2
   },
   {
-   "name": "Prying Blade",
-   "core": false,
-   "rarity": "C",
-   "cmc": 1,
-   "types": "Artifact Equipment",
-   "payoff": "",
-   "power": 19.5,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Repeal",
    "core": true,
    "rarity": "C",
@@ -62,6 +51,17 @@
    "types": "Instant",
    "payoff": "",
    "power": 46.5,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Serum Visions",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 24.2,
    "supports": true,
    "fit": 2
   },
@@ -102,6 +102,28 @@
    "types": "Artifact"
   },
   {
+   "name": "Bellowing Crier",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Frog Advisor",
+   "payoff": "",
+   "power": 15.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Cartouche of Knowledge",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Enchantment Aura Cartouche",
+   "payoff": "",
+   "power": 15.6,
+   "supports": true,
+   "fit": 3
+  },
+  {
    "name": "Counterbalance",
    "core": true,
    "rarity": "U",
@@ -111,17 +133,6 @@
    "power": 49.4,
    "supports": true,
    "fit": 2
-  },
-  {
-   "name": "Counterspell",
-   "core": true,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Instant",
-   "payoff": "",
-   "power": 66.9,
-   "supports": true,
-   "fit": 0
   },
   {
    "name": "Crashing Drawbridge",
@@ -175,15 +186,15 @@
    "fit": 4
   },
   {
-   "name": "Goldvein Pick",
+   "name": "Jeskai Elder",
    "core": false,
    "rarity": "C",
    "cmc": 2,
-   "types": "Artifact Equipment",
+   "types": "Creature Human Monk",
    "payoff": "",
-   "power": 19.3,
+   "power": 14.1,
    "supports": true,
-   "fit": 4
+   "fit": 3
   },
   {
    "name": "Lightning Greaves",
@@ -241,17 +252,6 @@
    "fit": 4
   },
   {
-   "name": "Remand",
-   "core": true,
-   "rarity": "U",
-   "cmc": 2,
-   "types": "Instant",
-   "payoff": "",
-   "power": 69.6,
-   "supports": true,
-   "fit": 2
-  },
-  {
    "name": "Burdened Aerialist",
    "core": false,
    "rarity": "C",
@@ -274,17 +274,6 @@
    "fit": 4
   },
   {
-   "name": "Case of the Ransacked Lab",
-   "core": false,
-   "rarity": "R",
-   "cmc": 3,
-   "types": "Enchantment Case",
-   "payoff": "",
-   "power": 21.5,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Chakra Meditation",
    "core": false,
    "rarity": "R",
@@ -294,6 +283,17 @@
    "power": 18.8,
    "supports": true,
    "fit": 4
+  },
+  {
+   "name": "Cloudkin Seer",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Elemental Wizard",
+   "payoff": "",
+   "power": 12.9,
+   "supports": true,
+   "fit": 3
   },
   {
    "name": "Compulsive Research",
@@ -329,13 +329,24 @@
    "fit": 3
   },
   {
-   "name": "Glaring Fleshraker",
+   "name": "Golem Foundry",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 13.9,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Hornswoggle",
    "core": false,
    "rarity": "U",
    "cmc": 3,
-   "types": "Creature Eldrazi Drone",
+   "types": "Instant",
    "payoff": "",
-   "power": 20.0,
+   "power": 29.3,
    "supports": true,
    "fit": 4
   },
@@ -384,17 +395,6 @@
    "fit": 4
   },
   {
-   "name": "Secrets of the Dead",
-   "core": false,
-   "rarity": "U",
-   "cmc": 3,
-   "types": "Enchantment",
-   "payoff": "",
-   "power": 17.3,
-   "supports": true,
-   "fit": 3
-  },
-  {
    "name": "Teferi's Tutelage",
    "core": false,
    "rarity": "U",
@@ -413,17 +413,6 @@
    "types": "Artifact Creature Spider",
    "payoff": "",
    "power": 18.4,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Alandra, Sky Dreamer",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Legendary Creature Merfolk Wizard",
-   "payoff": "pay",
-   "power": 18.8,
    "supports": true,
    "fit": 4
   },
@@ -448,6 +437,17 @@
    "power": 17.0,
    "supports": true,
    "fit": 3
+  },
+  {
+   "name": "Coin of Mastery",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 17.4,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Gust of Wind",
@@ -582,6 +582,17 @@
    "fit": 3
   },
   {
+   "name": "Mirelurk Queen",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Creature Crab Mutant",
+   "payoff": "",
+   "power": 14.6,
+   "supports": true,
+   "fit": 3
+  },
+  {
    "name": "Reflections of Littjara",
    "core": false,
    "rarity": "R",
@@ -615,17 +626,6 @@
    "fit": 2
   },
   {
-   "name": "Vanquisher's Banner",
-   "core": false,
-   "rarity": "R",
-   "cmc": 5,
-   "types": "Artifact",
-   "payoff": "",
-   "power": 20.1,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Caged Sun",
    "core": false,
    "rarity": "R",
@@ -637,15 +637,15 @@
    "fit": 3
   },
   {
-   "name": "Cyberdrive Awakener",
+   "name": "Calamitous Tide",
    "core": false,
-   "rarity": "R",
+   "rarity": "U",
    "cmc": 6,
-   "types": "Artifact Creature Construct",
+   "types": "Sorcery",
    "payoff": "",
-   "power": 17.7,
+   "power": 20.8,
    "supports": true,
-   "fit": 1
+   "fit": 2
   },
   {
    "name": "Dreamstone Hedron",
@@ -659,37 +659,37 @@
    "fit": 4
   },
   {
-   "name": "Season of Weaving",
+   "name": "Thunderhawk Gunship",
    "core": false,
-   "rarity": "M",
+   "rarity": "R",
    "cmc": 6,
-   "types": "Sorcery",
-   "payoff": "",
-   "power": 16.1,
+   "types": "Artifact Vehicle",
+   "payoff": "pay",
+   "power": 11.9,
    "supports": true,
    "fit": 4
   },
   {
-   "name": "Ultimecia, Temporal Threat",
-   "core": false,
+   "name": "Agent of Treachery",
+   "core": true,
    "rarity": "R",
-   "cmc": 6,
-   "types": "Legendary Creature Human Warlock",
+   "cmc": 7,
+   "types": "Creature Human Rogue",
    "payoff": "",
-   "power": 16.1,
+   "power": 46.6,
    "supports": true,
    "fit": 3
   },
   {
-   "name": "Treasure Cruise",
-   "core": false,
-   "rarity": "C",
-   "cmc": 8,
-   "types": "Sorcery",
+   "name": "Kozilek, Butcher of Truth",
+   "core": true,
+   "rarity": "M",
+   "cmc": 10,
+   "types": "Legendary Creature Eldrazi",
    "payoff": "",
-   "power": 24.9,
+   "power": 49.7,
    "supports": true,
-   "fit": 2
+   "fit": 3
   }
  ]
 }

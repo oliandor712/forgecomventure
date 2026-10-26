@@ -285,6 +285,17 @@
    "fit": 4
   },
   {
+   "name": "Fortifying Provisions",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 12.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Generous Gift",
    "core": true,
    "rarity": "C",
@@ -307,17 +318,6 @@
    "fit": 4
   },
   {
-   "name": "Hop to It",
-   "core": false,
-   "rarity": "U",
-   "cmc": 3,
-   "types": "Sorcery",
-   "payoff": "",
-   "power": 17.3,
-   "supports": true,
-   "fit": 3
-  },
-  {
    "name": "Kangee's Lieutenant",
    "core": false,
    "rarity": "U",
@@ -325,6 +325,17 @@
    "types": "Creature Bird Soldier",
    "payoff": "pay",
    "power": 15.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Mage's Attendant",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Cat Rogue",
+   "payoff": "",
+   "power": 14.9,
    "supports": true,
    "fit": 4
   },
@@ -384,17 +395,6 @@
    "fit": 4
   },
   {
-   "name": "Sanguine Evangelist",
-   "core": false,
-   "rarity": "R",
-   "cmc": 3,
-   "types": "Creature Vampire Cleric",
-   "payoff": "pay",
-   "power": 18.4,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Skyclave Apparition",
    "core": true,
    "rarity": "R",
@@ -435,17 +435,6 @@
    "types": "Creature Cat Soldier",
    "payoff": "",
    "power": 17.6,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Akroan Horse",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Artifact Creature Horse",
-   "payoff": "",
-   "power": 17.4,
    "supports": true,
    "fit": 4
   },
@@ -538,6 +527,17 @@
    "fit": 4
   },
   {
+   "name": "Ox Drover",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Human Peasant",
+   "payoff": "",
+   "power": 15.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Vibranium Mining Mech",
    "core": false,
    "rarity": "R",
@@ -545,17 +545,6 @@
    "types": "Artifact Vehicle",
    "payoff": "",
    "power": 16.2,
-   "supports": true,
-   "fit": 4
-  },
-  {
-   "name": "Aang, Airbending Master",
-   "core": false,
-   "rarity": "M",
-   "cmc": 5,
-   "types": "Legendary Creature Human Avatar Ally",
-   "payoff": "",
-   "power": 17.3,
    "supports": true,
    "fit": 4
   },
@@ -571,15 +560,15 @@
    "fit": 4
   },
   {
-   "name": "Cathars' Crusade",
+   "name": "Boss's Chauffeur",
    "core": false,
    "rarity": "R",
    "cmc": 5,
-   "types": "Enchantment",
-   "payoff": "",
-   "power": 19.3,
-   "supports": false,
-   "fit": 2
+   "types": "Creature Elf Citizen",
+   "payoff": "pay",
+   "power": 14.0,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "God-Eternal Oketra",
@@ -589,6 +578,17 @@
    "types": "Legendary Creature Zombie God",
    "payoff": "pay",
    "power": 48.6,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Increasing Devotion",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 15.1,
    "supports": true,
    "fit": 3
   },
