@@ -26,6 +26,7 @@ Pinned reference text, one line per tag family with a structured or non-obvious 
 | `lifegain_amount` | life gained (number, x, or equal_to_life_lost) |
 | `choose_on_enter` | as this card enters the battlefield its controller chooses something (color, card_type, creature_type, player ...); other tags of the card refer to the choice (cost_reduce_for:chosen_type = spells of the chosen type) |
 | `cost_reduce_for` | which spells a cost reduction applies to (a card type, a creature type, or chosen_type); cost_reduce_amount is how much cheaper |
+| `enters_prepared` | the creature enters prepared: while prepared its controller may cast a copy of the spell on its other half (the spell half's tags are in the card's groups); casting it unprepares the creature |
 | `choice_option` | one of the options the choice offers (choose_on_enter lists them: artifact, creature, enchantment ...) |
 | `cost_reduce_mana` | the kind of mana the cost is reduced by (generic = any mana) |
 | `cost_reduce_amount` | how much each affected spell costs less (generic mana) |
