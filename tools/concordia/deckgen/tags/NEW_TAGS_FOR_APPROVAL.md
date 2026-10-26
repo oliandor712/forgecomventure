@@ -26,10 +26,10 @@ Say if any should be changed; unmarked means accepted with the family.
 | `take` | take:all (4); take:2 (2); take:1_card (1); take:all_goblin (1); take:may_1_chosen_type (1); take:may_1_creature_power_le_2 (1) |
 | `cost_reduce_for` | cost_reduce_for:chosen_type (2); cost_reduce_for:dragon (1); cost_reduce_for:merfolk (1); cost_reduce_for:wizard (1); cost_reduce_for:mutate (1); cost_reduce_for:historic (1) |
 | `affected_filter` | affected_filter:zombie (1); affected_filter:counters_ge8_p1p1 (1); affected_filter:noabilities (1); affected_filter:legendary (1); affected_filter:white (1) |
-| `target_type` | target_type:instant_or_sorcery (5); target_type:wizard (1); target_type:golem (1); target_type:horse (1); target_type:ally (1) |
 | `choice_option` | choice_option:artifact (1); choice_option:creature (1); choice_option:enchantment (1); choice_option:instant (1); choice_option:sorcery (1) |
 | `from_zone` | from_zone:graveyard (50); from_zone:library (16); from_zone:exile (7); from_zone:hand (3) |
 | `to_zone` | to_zone:hand (37); to_zone:exile (5); to_zone:battlefield (3); to_zone:library (2) |
+| `target_type` | target_type:wizard (1); target_type:golem (1); target_type:horse (1); target_type:ally (1) |
 | `target_scope` | target_scope:each_opponent (23); target_scope:each_player (2); target_scope:each_other_player (1) |
 | `grant_kw` | grant_kw:menace (2); grant_kw:annihilator (1); grant_kw:infect (1) |
 | `sacrifice_type` | sacrifice_type:creature_planeswalker (1); sacrifice_type:enchantment (1); sacrifice_type:land (1) |
@@ -70,7 +70,7 @@ Say if any should be changed; unmarked means accepted with the family.
 - `mode_count` + `mode_choose` -> `modal:<chosen>_of_<modes>`; `take_count` / `take_filter` / `take_dest` / `take_optional` / `rest_random_order` -> `take:...` + `to_zone:...` and `rest_to_zone:...` + `rest_order:...`; `return:<zone>_to_<zone>`, `put_onto_battlefield:from_<zone>`, `cost:exile_from_graveyard` -> bare tag + `from_zone:` / `to_zone:` zone tags; `piles_split` + `pile_separator` -> `piles_split:<who>`.
 - `x_is:<what>` values were renamed to readable words (e.g. `count_swamp_youctrl` -> `count_swamp_you_control`); `restrict` now also carries `restrict_kind:<kind>`.
 - `transform` was removed from Feign Death, Supernatural Stamina and Merfolk Trickster (they grant or remove abilities); `sacrifice_outlet` was removed from 14 cards that sacrifice only themselves (user rule).
-- Segregated, kept intact: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`, `land_tutor`, bare `recursion`, every `<kw>_grant` and the bare keyword tags on cards that only grant a keyword) sit on the `ai_tags:` line and are hidden from the blind reader and from the redundancy check.
+- Segregated, kept intact: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token` (a token_make sub-kind: see token_kind), `land_tutor`, bare `recursion`, `reanimate`, every `<kw>_grant` and the bare keyword tags on cards that only grant a keyword) sit on the `ai_tags:` line and are hidden from the blind reader and from the redundancy check.
 
 ## Waiting on the user (everything pending, one list)
 - No tag family waits for approval (niche, mech and the six listed families approved 2026-10-26).
