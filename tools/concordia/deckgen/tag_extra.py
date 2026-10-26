@@ -238,8 +238,7 @@ def target_tags(p, out, api=""):
         bits = part.split("+")
         main = bits[0].split(".")
         if main[0] and main[0] not in ("Any",):
-            tt = "target_type:" + ("instant_or_sorcery" if tok(main[0]) in ("instant", "sorcery") else tok(main[0]))     # the two always came together
-            if tt not in out: out.append(tt)
+            out.append("target_type:" + tok(main[0]))
         else: out.append("target_type:any")
         rest = main[1:] + bits[1:]
         for r in rest:
@@ -762,7 +761,7 @@ def extra(lines, sv, types, text):
             if ci > 0 and b.startswith("AB$") and bp.get("Cost"): cost_tags(bp["Cost"], groups[cur[0]])      # a cost paid inside a trigger's sub-ability (Nazar: you may remove three counters)
             if bp.get("DefinedPlayer") == "Player.Other":
                 add("target_scope:each_other_player")
-                if bp.get("ChangeType"): add("target_type:" + ("instant_or_sorcery" if tok(bp["ChangeType"].split(".")[0]) in ("instant", "sorcery") else tok(bp["ChangeType"].split(".")[0])))
+                if bp.get("ChangeType"): add("target_type:" + tok(bp["ChangeType"].split(".")[0]))
                 if " may " in " " + desc_main.lower() + " ": add("optional")
             if bp.get("TargetsForEachPlayer") == "True": add("target_scope:each_opponent")
             if api == "TwoPiles": add("piles_split:" + (tok(bp.get("Separator", "")) or "you"))       # one tag: who splits the cards into two piles (opponent / you)

@@ -1209,7 +1209,7 @@
    "top": 1.0,
    "canon": "target creature you control"
   },
-  "target_count:up_to_N target_scope:you_control target_type:instant_or_sorcery": {
+  "target_count:up_to_N target_scope:you_control target_type:instant target_type:sorcery": {
    "n": 7,
    "top": 1.0,
    "canon": "up to N target instant"
@@ -1454,7 +1454,7 @@
    "top": 1.0,
    "canon": "target creature you control"
   },
-  "target_count:one target_scope:you_control target_type:instant_or_sorcery": {
+  "target_count:one target_scope:you_control target_type:instant target_type:sorcery": {
    "n": 3,
    "top": 1.0,
    "canon": "target instant"
@@ -1469,7 +1469,7 @@
    "top": 1.0,
    "canon": "target Insect"
   },
-  "target_count:up_to_N target_filter:nonland target_scope:you_control target_type:artifact target_type:battle target_type:creature target_type:enchantment target_type:instant_or_sorcery target_type:kindred target_type:planeswalker": {
+  "target_count:up_to_N target_filter:nonland target_scope:you_control target_type:artifact target_type:battle target_type:creature target_type:enchantment target_type:instant target_type:kindred target_type:planeswalker target_type:sorcery": {
    "n": 3,
    "top": 1.0,
    "canon": "up to N target artifact"
@@ -1644,7 +1644,7 @@
    "top": 1.0,
    "canon": "target enchantment"
   },
-  "target_count:one target_scope:you_control target_type:equipment target_type:instant_or_sorcery": {
+  "target_count:one target_scope:you_control target_type:equipment target_type:instant target_type:sorcery": {
    "n": 2,
    "top": 0.5,
    "canon": "target Equipment you control"
@@ -1749,7 +1749,7 @@
    "top": 1.0,
    "canon": "target cards"
   },
-  "target_count:one target_scope:you_control target_type:artifact target_type:instant_or_sorcery": {
+  "target_count:one target_scope:you_control target_type:artifact target_type:instant target_type:sorcery": {
    "n": 1,
    "top": 1.0,
    "canon": "target instant"
@@ -1829,7 +1829,7 @@
    "top": 0.5,
    "canon": "target creature"
   },
-  "target_count:one target_type:instant_or_sorcery": {
+  "target_count:one target_type:instant target_type:sorcery": {
    "n": 31,
    "top": 1.0,
    "canon": "target instant"
@@ -1924,7 +1924,7 @@
    "top": 0.667,
    "canon": "target other"
   },
-  "target_count:all target_count:one target_scope:you_control target_type:creature target_type:instant_or_sorcery": {
+  "target_count:all target_count:one target_scope:you_control target_type:creature target_type:instant target_type:sorcery": {
    "n": 3,
    "top": 1.0,
    "canon": "target instant"

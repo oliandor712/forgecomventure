@@ -215,6 +215,7 @@ typing: cardtype:creature type:elf type:warlock
 tags: token_make trigger:dies trigger_zone:graveyard token_count:1 token_color:black token_color:green token_pt:1/1 token_kw:flying token_type:insect trigger_scope:self
 ai_tags: tempo:+0.5
 face: mv:1 power:1 toughness:1 colors:b
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",token,tokenscript=bg_1_1_insect_flying,"",""
 groups[2]{id,source,tags}:
@@ -253,6 +254,7 @@ typing: cardtype:creature type:vampire
 tags: token_make trigger:dies trigger_zone:graveyard token_count:1 token_color:colorless token_pt:1/1 token_type:eldrazi_scion trigger_scope:self
 ai_tags: tempo:+0.5
 face: mv:2 power:2 toughness:1 colors:b
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",token,tokenscript=c_1_1_eldrazi_scion_sac,"",""
 groups[2]{id,source,tags}:
@@ -495,6 +497,7 @@ typing: cardtype:creature type:zombie
 tags: kw:deathtouch discard token_make discard_count:1 token_count:1 token_color:black token_pt:2/2 token_type:zombie trigger:combat_damage
 ai_tags: tempo:+0.5
 face: mv:4 power:4 toughness:3 colors:b
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,combat_damage,"",discard+token,numcards=1 tokenscript=b_2_2_zombie,Defined=TriggeredTarget,""
 links[1]{from,rel,to}:
@@ -992,7 +995,7 @@ typing: supertype:legendary cardtype:creature type:zombie type:knight
 tags: kw:kicker num:5 color:black kw:menace evasion token_make trigger:etb token_count:8 token_color:black token_pt:2/2 token_kw:menace token_type:zombie_knight trigger_scope:self
 ai_tags: tempo:+4
 face: mv:4 power:4 toughness:5 colors:b
-derived: evasion_pkg etb_self
+derived: evasion_pkg etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=b_2_2_zombie_knight_menace,"",""
 groups[4]{id,source,tags}:
@@ -1007,7 +1010,7 @@ typing: cardtype:creature type:human
 tags: token_make trigger:etb token_count:3 token_color:black token_pt:0/1 token_type:serf trigger:leaves target_count:all target_type:serf remove:exile trigger_scope:self
 ai_tags: tempo:+1.5
 face: mv:4 power:2 toughness:2 colors:b
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=b_0_1_serf,"",""
   c2,leaves_self,"",changezoneall,"","",""
@@ -1023,6 +1026,7 @@ typing: supertype:legendary cardtype:creature type:human type:rogue
 tags: duration:eot pump_single token_make trigger:attacks target_count:one target_type:creature grant_kw:deathtouch token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source look_top:1 take:all to_zone:exile impulse_draw impulse_draw_count:1 duration:permanent trigger_filter:one_or_more
 ai_tags: artifact_token selection tempo:+1.5
 face: mv:4 power:3 toughness:3 colors:b
+derived: token_kind:artifact
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attackersdeclared,"",pump,deathtouch,ValidTgts=Creature,duration:eot(forge_default)
   c2,damagedoneonce,"",token+dig+effect+cleanup,tokenscript=c_a_treasure_sac,Defined=TriggeredTarget,duration:permanent
@@ -1147,7 +1151,7 @@ typing: cardtype:enchantment
 tags: token_make grant_kw:menace duration:static affected_type:card affected_filter:zombie affected_scope:you_control cost:exile from_zone:graveyard cost_exile_target:creature cost_mana:3b token_count:1 token_color:black token_pt:2/2 token_type:zombie
 ai_tags: evasion_grant tempo:+0.5
 face: mv:1 colors:b
-derived: evasion_pkg
+derived: evasion_pkg token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,menace,Affected=Card.Zombie+YouCtrl,duration:static
   c2,activated,3 B ExileFromGrave<1/Creature>,token,tokenscript=b_2_2_zombie,"",""
@@ -1164,6 +1168,7 @@ typing: cardtype:creature type:human type:pirate
 tags: token_make trigger:dies trigger_zone:graveyard scry_count:1 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger_scope:self
 ai_tags: artifact_token selection tempo:+0.5
 face: mv:1 power:1 toughness:1 colors:b
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",scry+token,tokenscript=c_a_treasure_sac,"",""
 links[1]{from,rel,to}:
@@ -1179,6 +1184,7 @@ typing: cardtype:creature type:zombie
 tags: token_make trigger:dies trigger_zone:graveyard token_count:x token_color:green token_pt:1/1 token_type:squirrel x_is:triggering_power trigger_scope:self
 ai_tags: tempo:x
 face: mv:1 power:1 toughness:1 colors:b
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",token,tokenscript=g_1_1_squirrel,"",""
 links[1]{from,rel,to}:
@@ -1193,6 +1199,7 @@ typing: cardtype:enchantment type:aura
 tags: kw:enchant target_type:creature token_make trigger:dies trigger_zone:graveyard return from_zone:graveyard to_zone:hand token_count:1 token_color:green token_color:blue token_color:black token_color:red token_type:of_nurgle trigger_scope:other
 ai_tags: recursion tempo:+1.5
 face: mv:1 colors:b
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_other,"",changezone+token,tokenscript=plaguebearer_of_nurgle,Defined=Self,""
 links[1]{from,rel,to}:
@@ -1209,6 +1216,7 @@ typing: cardtype:creature type:zombie
 tags: shrink token_make trigger:dies trigger_zone:graveyard modal:1_of_2 target_count:one target_type:creature target_scope:opp_control pump_amount:-1/-1 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger_scope:self
 ai_tags: artifact_token tempo:+0.5
 face: mv:1 power:1 toughness:1 colors:b
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",charm,"","",""
 links[1]{from,rel,to}:
@@ -1252,6 +1260,7 @@ typing: cardtype:artifact
 tags: colorless_card token_make cost:tap cost_mana:1 token_count:x token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source steal
 ai_tags: artifact_token tempo:x
 face: mv:2 colors:c
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 T,rolldice+token+gaincontrol,tokenscript=c_a_treasure_sac,Defined=You Defined=Self,""
 links[2]{from,rel,to}:
@@ -1269,7 +1278,7 @@ typing: cardtype:artifact
 tags: colorless_card token_make trigger:etb token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain cost:tap cost:sacrifice cost_sacrifice_target:self cost_mana:5 target_count:one target_type:permanent target_filter:nonland remove:destroy trigger_scope:self
 ai_tags: artifact_token tempo:+0.5
 face: mv:2 colors:c
-derived: spot_removal removal_weight:1 etb_self
+derived: spot_removal removal_weight:1 etb_self token_kind:artifact
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_a_food_sac,"",""
   c2,activated,5 T Sac<1/CARDNAME>,destroy,"",ValidTgts=Permanent.nonLand,""
@@ -1286,6 +1295,7 @@ typing: cardtype:creature type:zombie type:fungus
 tags: duration:eot pump_single sacrifice_outlet shrink token_make trigger:upkeep counter_count:1 counter:spore cost:remove_counters token_count:1 token_color:green token_pt:1/1 token_type:saproling cost:sacrifice cost_sacrifice_target:saproling target_count:one target_type:creature pump_amount:-1/-1
 ai_tags: tempo:+0.5
 face: mv:2 power:1 toughness:1 colors:b
+derived: token_kind:creature
 clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c1,phase,"",putcounter,countertype=SPORE,Defined=Self,""
   c2,activated,SubCounter<3/SPORE>,token,tokenscript=g_1_1_saproling,"",""
@@ -1307,6 +1317,7 @@ typing: cardtype:instant
 tags: draw sacrifice_outlet token_make cost:sacrifice cost_sacrifice_target:artifact_creature cost_mana:1b draw_count:2 token_count:1 token_color:colorless token_cardtype:artifact token_type:map_explore additional_cost
 ai_tags: tempo:+0.5
 face: mv:2 colors:b
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,1 B Sac<1/Artifact;Creature/artifact or creature>,draw+token,numcards=2 tokenscript=c_a_map_sac_explore,"",""
 groups[3]{id,source,tags}:
@@ -1319,7 +1330,7 @@ card: Genesis Chamber
 typing: cardtype:artifact
 tags: colorless_card token_make trigger:etb token_count:1 token_color:colorless token_pt:1/1 token_cardtype:artifact token_type:myr trigger_scope:any trigger_filter:nontoken trigger_filter:creature condition:card_untapped
 face: mv:2 colors:c
-derived: etb_other
+derived: etb_other token_kind:artifact token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_other,"",token,tokenscript=c_1_1_a_myr,"",""
 groups[2]{id,source,tags}:
@@ -1332,6 +1343,7 @@ typing: cardtype:artifact type:equipment
 tags: colorless_card kw:equip num:1 token_make duration:static pump_amount:+1/+1 affected_type:creature token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger:combat_damage
 ai_tags: artifact_token tempo:+0.5
 face: mv:2 colors:c
+derived: token_kind:artifact
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,addpower=1 addtoughness=1,Affected=Creature AffectedDefined=Equipped,duration:static
   c2,combat_damage,"",token,tokenscript=c_a_treasure_sac,"",""
@@ -1351,6 +1363,7 @@ typing: supertype:legendary cardtype:creature type:orc type:soldier
 tags: draw sacrifice_outlet token_make cost:sacrifice cost_sacrifice_target:card modal:1_of_2 draw_count:1 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger:combat_damage trigger_filter:goblin trigger_filter:orc
 ai_tags: artifact_token tempo:+1.5
 face: mv:2 power:2 toughness:2 colors:b
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,combat_damage,"",immediatetrigger,"","",""
 links[1]{from,rel,to}:
@@ -1370,6 +1383,7 @@ typing: cardtype:kindred cardtype:artifact type:eldrazi
 tags: colorless_card scales:counters counters_plus token_make cost:tap cost_mana:1c token_count:1 token_color:colorless token_pt:0/1 token_type:eldrazi_spawn trigger:dies trigger_zone:graveyard counter_count:1 counter:p1p1 grant_kw:annihilator duration:static affected_type:card affected_filter:counters_ge8_p1p1 trigger_scope:other trigger_filter:you_control
 ai_tags: tempo:+0.5
 face: mv:2 colors:c
+derived: token_kind:creature
 clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 C T,token,tokenscript=c_0_1_eldrazi_spawn_sac,"",""
   c2,dies_other,"",putcounter,countertype=P1P1,Defined=Self,""
@@ -1404,6 +1418,7 @@ typing: cardtype:artifact
 tags: colorless_card token_make enters_tapped cost:tap cost:remove_counters token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
 ai_tags: artifact_token tempo:+0.5
 face: mv:2 colors:c
+derived: token_kind:artifact
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,replacement,"",replace_moved,"",ValidCard=Card.Self,""
   c2,activated,T SubCounter<1/COIN>,token,tokenscript=c_a_treasure_sac,"",""
@@ -1434,7 +1449,7 @@ typing: cardtype:artifact
 tags: colorless_card token_make trigger:etb token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger:dies trigger_zone:graveyard trigger_scope:self
 ai_tags: artifact_token tempo:+0.5
 face: mv:2 colors:c
-derived: etb_self
+derived: etb_self token_kind:artifact
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_a_treasure_sac,"",""
   c2,dies_self,"",token,tokenscript=c_a_treasure_sac,"",""
@@ -1451,7 +1466,7 @@ typing: cardtype:artifact
 tags: colorless_card token_make trigger:etb token_count:1 token_color:colorless token_pt:1/1 token_cardtype:artifact token_type:servo trigger:dies trigger_zone:graveyard trigger_scope:self
 ai_tags: tempo:+0.5
 face: mv:2 colors:c
-derived: etb_self
+derived: etb_self token_kind:artifact token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_1_1_a_servo,"",""
   c2,dies_self,"",token,tokenscript=c_1_1_a_servo,"",""
@@ -1466,7 +1481,7 @@ typing: cardtype:artifact type:equipment
 tags: kw:equip num:2 token_make trigger:etb token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source cant_be_blocked trigger_scope:self
 ai_tags: artifact_token tempo:+0.5
 face: mv:2 colors:b
-derived: evasion_pkg etb_self
+derived: evasion_pkg etb_self token_kind:artifact
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_a_treasure_sac,"",""
   c2,static,"",static_cantblockby,"","",""
@@ -1484,7 +1499,7 @@ typing: cardtype:enchantment
 tags: lifegain token_make trigger:etb token_count:1 token_color:white token_pt:1/1 token_type:human_soldier trigger:dies trigger_zone:graveyard life_loss_amount:1 lifegain_amount:1 life_loss target_scope:each_opponent trigger_scope:self trigger_scope:any trigger_filter:you_control trigger_filter:creature
 ai_tags: burn tempo:+0.5
 face: mv:3 colors:b
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=w_1_1_human_soldier,"",""
   c2,dies_other,"",loselife+gainlife,lifeamount=1 lifeamount=1,Defined=Player.Opponent Defined=You,""
@@ -1504,7 +1519,7 @@ typing: cardtype:kindred cardtype:enchantment type:goblin
 tags: lifegain token_make trigger:etb token_count:2 token_color:black token_color:red token_pt:1/1 token_type:goblin trigger:dies trigger_zone:graveyard life_loss_amount:1 lifegain_amount:1 life_loss target_scope:each_opponent trigger_scope:self trigger_scope:any trigger_filter:you_control trigger_filter:creature
 ai_tags: burn tempo:+1
 face: mv:3 colors:b
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=br_1_1_goblin,"",""
   c2,dies_other,"",loselife+gainlife,lifeamount=1 lifeamount=1,Defined=Player.Opponent Defined=You,""
@@ -1539,6 +1554,7 @@ card: Cornered by Black Mages
 typing: cardtype:sorcery
 tags: token_make target_count:one target_type:opponent effect:sacrifice sacrifice_outlet sacrifice_type:creature token_count:1 token_color:black token_pt:0/1 token_type:wizard_snipe
 face: mv:3 colors:b
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",sacrifice+token,tokenscript=b_0_1_wizard_snipe,ValidTgts=Opponent,""
 links[1]{from,rel,to}:
@@ -1567,6 +1583,7 @@ typing: cardtype:sorcery
 tags: draw token_make target_count:one target_type:player draw_count:2 life_loss_amount:2 token_count:x token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain x_is:adamant_black_1_0 life_loss condition:adamant
 ai_tags: artifact_token tempo:x
 face: mv:3 colors:b
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",draw+loselife+token,numcards=2 lifeamount=2 tokenscript=c_a_food_sac,ValidTgts=Player Defined=Targeted,""
 links[3]{from,rel,to}:
@@ -1586,7 +1603,7 @@ typing: cardtype:creature type:eldrazi type:drone
 tags: colorless_card token_make trigger:spell_cast token_count:1 token_color:colorless token_pt:0/1 token_type:eldrazi_spawn trigger:etb damage damage_amount:1 target_scope:each_opponent trigger_scope:other trigger_filter:you_control trigger_filter:creature
 ai_tags: tempo:+0.5
 face: mv:3 power:2 toughness:2 colors:c
-derived: etb_other
+derived: etb_other token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell_cast,"",token,tokenscript=c_0_1_eldrazi_spawn_sac,"",""
   c2,etb_other,"",dealdamage,numdmg=1,Defined=Player.Opponent,""
@@ -1604,7 +1621,7 @@ typing: supertype:legendary cardtype:creature type:rat type:noble
 tags: token_make trigger:etb target_count:up_to_1 target_type:card target_filter:oppown target_zone:graveyard exile_from:graveyard trigger:beginning_of_combat token_count:1 token_color:black token_pt:1/1 token_type:rat_noblock trigger_scope:other trigger_filter:you_control
 ai_tags: tempo:+0.5
 face: mv:3 power:3 toughness:3 colors:b
-derived: etb_other
+derived: etb_other token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_other,"",changezone,"",ValidTgts=Card.OppOwn,""
   c2,phase,"",token,tokenscript=b_1_1_rat_noblock,"",""
@@ -1619,7 +1636,7 @@ card: Magnifying Glass
 typing: cardtype:artifact
 tags: colorless_card mana_source cost:tap mana:colorless mana_amount:1 cost_mana:4 investigate token_make
 face: mv:3 colors:c
-derived: mana_out:colorless:1
+derived: token_kind:artifact mana_out:colorless:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,mana,"","",""
   c2,activated,4 T,investigate,"","",""
@@ -1636,6 +1653,7 @@ typing: cardtype:artifact
 tags: colorless_card token_make cost:tap cost_mana:1 token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger_filter:you_control
 ai_tags: artifact_token tempo:+0.5
 face: mv:3 colors:c
+derived: token_kind:artifact
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 T,token,tokenscript=c_a_food_sac,"",""
   c2,sacrificed,"",token,tokenscript=c_a_treasure_sac,"",""
@@ -1680,6 +1698,7 @@ typing: cardtype:sorcery
 tags: draw token_make draw_count:2 life_loss_amount:2 token_count:1 token_color:colorless token_cardtype:artifact token_type:blood_draw life_loss
 ai_tags: artifact_token tempo:+1.5
 face: mv:3 colors:b
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",draw+loselife+token,numcards=2 lifeamount=2 tokenscript=c_a_blood_draw,"",""
 groups[4]{id,source,tags}:
@@ -1694,6 +1713,7 @@ typing: cardtype:creature type:orc type:pirate
 tags: draw sacrifice_outlet token_make cost:sacrifice cost_sacrifice_target:creature cost_mana:2b token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source cost_sacrifice_target:treasure draw_count:1
 ai_tags: artifact_token
 face: mv:3 power:3 toughness:2 colors:b
+derived: token_kind:artifact
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,2 B Sac<1/Creature>,token,tokenscript=c_a_treasure_sac,"",""
   c2,activated,Sac<3/Treasure>,draw,numcards=1,"",""
@@ -1729,6 +1749,7 @@ typing: cardtype:sorcery
 tags: duration:eot lifegain draw token_make draw_count:2 life_loss_amount:2 token_count:1 token_color:black token_pt:0/1 token_type:wizard_snipe target_count:all target_type:wizard target_scope:you_control pump_amount:+1/+0 grant_kw:lifelink life_loss
 ai_tags: pump_team tempo:+1.5
 face: mv:4 colors:b
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",draw+loselife+token+pumpall,numcards=2 lifeamount=2 tokenscript=b_0_1_wizard_snipe lifelink numatt=+1,"",duration:eot(forge_default)
 links[1]{from,rel,to}:
@@ -1760,7 +1781,7 @@ card: Feast or Famine
 typing: cardtype:instant
 tags: token_make modal:1_of_2 token_count:1 token_color:black token_pt:2/2 token_type:zombie target_count:one target_type:creature target_filter:nonblack target_filter:nonartifact remove:destroy
 face: mv:4 colors:b
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",charm,"","",""
 groups[3]{id,source,tags}:
@@ -1791,7 +1812,7 @@ typing: cardtype:sorcery
 tags: token_make target_count:one target_type:creature target_type:planeswalker remove:destroy token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
 ai_tags: artifact_token
 face: mv:4 colors:b
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy+token,tokenscript=c_a_treasure_sac,"ValidTgts=Creature,Planeswalker",""
 links[2]{from,rel,to}:
@@ -1838,6 +1859,7 @@ typing: cardtype:creature type:human type:pirate
 tags: token_make trigger:dies trigger_zone:graveyard token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger_scope:other trigger_filter:you_control trigger_filter:creature
 ai_tags: artifact_token tempo:+0.5
 face: mv:4 power:1 toughness:4 colors:b
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_other,"",token,tokenscript=c_a_treasure_sac,"",""
 links[1]{from,rel,to}:
@@ -1864,6 +1886,7 @@ typing: supertype:legendary cardtype:creature type:zombie type:wizard
 tags: kw:partner token_make trigger_scope:other token_count:1 token_color:black token_pt:2/2 token_type:zombie trigger_filter:one_or_more
 ai_tags: tempo:+0.5
 face: mv:4 power:4 toughness:2 colors:b
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,changeszoneall,"",token,tokenscript=b_2_2_zombie,"",""
 groups[3]{id,source,tags}:
@@ -1877,6 +1900,7 @@ typing: cardtype:creature type:orc type:cleric
 tags: kw:mobilize num:1 token_make lifegain trigger:dies trigger_zone:graveyard life_loss_amount:1 lifegain_amount:1 life_loss target_scope:each_opponent trigger_scope:any trigger_filter:you_control trigger_filter:creature
 ai_tags: burn
 face: mv:4 power:3 toughness:3 colors:b
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",loselife+gainlife,lifeamount=1 lifeamount=1,Defined=Player.Opponent Defined=You,""
 links[2]{from,rel,to}:
@@ -1895,7 +1919,7 @@ typing: cardtype:creature type:eldrazi type:drone
 tags: token_make trigger:etb token_count:2 token_color:colorless token_pt:0/1 token_type:eldrazi_spawn trigger_scope:self
 ai_tags: tempo:+1
 face: mv:5 power:4 toughness:1 colors:b
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_0_1_eldrazi_spawn_sac,"",""
 groups[2]{id,source,tags}:
@@ -1908,7 +1932,7 @@ typing: cardtype:artifact type:vehicle
 tags: colorless_card kw:crew num:2 token_make trigger:etb token_count:2 token_color:white token_pt:1/1 token_type:mouse trigger_scope:self
 ai_tags: tempo:+1
 face: mv:5 power:4 toughness:4 colors:c
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=w_1_1_mouse,"",""
 groups[3]{id,source,tags}:
@@ -1922,6 +1946,7 @@ typing: cardtype:artifact type:vehicle
 tags: colorless_card kw:crew num:1 token_make trigger:attacks token_count:x token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source x_is:crewsize
 ai_tags: artifact_token tempo:x
 face: mv:5 power:6 toughness:5 colors:c
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attacks,"",token,tokenscript=c_a_treasure_sac,"",""
 links[2]{from,rel,to}:
@@ -1953,6 +1978,7 @@ typing: cardtype:sorcery
 tags: token_make effect:sacrifice sacrifice_outlet sacrifice_type:creature token_count:x token_color:black token_pt:2/2 token_type:zombie x_is:remembered_amount
 ai_tags: tempo:x
 face: mv:5 colors:b
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",sacrifice+token+cleanup,tokenscript=b_2_2_zombie,Defined=Player.Other,""
 links[2]{from,rel,to}:
@@ -1969,7 +1995,7 @@ typing: cardtype:creature type:human type:warlock
 tags: token_make trigger:etb token_count:1 token_color:black token_pt:1/1 token_type:rat_noblock token_color:red token_type:wicked trigger_scope:self
 ai_tags: tempo:+1
 face: mv:5 power:3 toughness:4 colors:b
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token+repeateach,tokenscript=b_1_1_rat_noblock,"",""
 groups[3]{id,source,tags}:
@@ -1983,7 +2009,7 @@ typing: cardtype:instant type:lesson
 tags: colorless_card token_make target_count:one target_type:artifact target_type:creature target_type:enchantment remove:exile token_count:1 token_color:colorless token_cardtype:artifact token_type:clue_draw
 ai_tags: artifact_token
 face: mv:5 colors:c
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone+token,tokenscript=c_a_clue_draw,"ValidTgts=Artifact,Creature,Enchantment",""
 links[1]{from,rel,to}:
@@ -2014,7 +2040,7 @@ typing: cardtype:creature type:drake type:beast
 tags: kw:flying token_make trigger:etb effect:sacrifice sacrifice_outlet remove:sacrifice sacrifice_type:creature token_count:x token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain x_is:remembered_amount target_scope:each_opponent trigger_scope:self
 ai_tags: artifact_token tempo:x
 face: mv:6 power:4 toughness:4 colors:b
-derived: removal_weight:1 evasion_pkg etb_self
+derived: removal_weight:1 evasion_pkg etb_self token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",sacrifice+token+cleanup,tokenscript=c_a_food_sac,Defined=Opponent,""
 links[3]{from,rel,to}:
@@ -2034,7 +2060,7 @@ typing: cardtype:creature type:demon
 tags: kw:flying token_make trigger:etb token_count:x token_color:black token_pt:1/1 token_kw:flying token_type:harpy x_is:devotion_black trigger:upkeep effect:sacrifice sacrifice_outlet sacrifice_type:creature trigger_scope:self
 ai_tags: tempo:x
 face: mv:7 power:6 toughness:6 colors:b
-derived: evasion_pkg etb_self
+derived: evasion_pkg etb_self token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=b_1_1_harpy_flying,"",""
   c2,phase,"",sacrifice,"",Defined=You,""
@@ -2283,7 +2309,7 @@ typing: cardtype:creature type:elf type:scout
 tags: token_make trigger:etb token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger_scope:any trigger_filter:you_control trigger_filter:land niche:landfall
 ai_tags: artifact_token tempo:+1 ai_logic:foodortreasure
 face: mv:3 power:3 toughness:2 colors:g
-derived: etb_other
+derived: etb_other token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_other,"",genericchoice,"",Defined=You,""
 links[2]{from,rel,to}:
@@ -2380,7 +2406,7 @@ typing: cardtype:creature type:bear type:druid
 tags: token_make trigger:etb token_count:1 token_color:black token_color:green token_pt:1/1 token_type:pest_lifegain trigger_scope:self
 ai_tags: tempo:+0.5
 face: mv:4 power:4 toughness:3 colors:g
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=bg_1_1_pest_lifegain,"",""
 groups[2]{id,source,tags}:
@@ -2393,7 +2419,7 @@ typing: cardtype:creature type:wolf
 tags: kw:trample token_make trigger:etb token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain trigger_scope:self
 ai_tags: artifact_token tempo:+0.5
 face: mv:4 power:4 toughness:4 colors:g
-derived: etb_self
+derived: etb_self token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_a_food_sac,"",""
 links[1]{from,rel,to}:
@@ -2471,7 +2497,7 @@ typing: cardtype:creature type:beast
 tags: lifegain token_make trigger:etb lifegain_amount:5 trigger:leaves token_count:1 token_color:green token_pt:3/3 token_type:beast trigger_scope:self
 ai_tags: tempo:+0.5
 face: mv:5 power:5 toughness:3 colors:g
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",gainlife,lifeamount=5,Defined=You,""
   c2,leaves_self,"",token,tokenscript=g_3_3_beast,"",""
@@ -2540,7 +2566,7 @@ typing: cardtype:creature type:beast
 tags: kw:trample token_make trigger:etb token_count:1 token_color:green token_pt:4/4 token_type:beast trigger_scope:any trigger_filter:you_control trigger_filter:land niche:landfall
 ai_tags: tempo:+0.5
 face: mv:6 power:6 toughness:6 colors:g
-derived: etb_other
+derived: etb_other token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_other,"",token,tokenscript=g_4_4_beast,"",""
 groups[3]{id,source,tags}:
@@ -2974,7 +3000,7 @@ typing: supertype:legendary cardtype:creature type:bear
 tags: duration:eot counters_plus sacrifice_outlet token_make trigger:etb token_count:x token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain x_is:count_creature_legendary_you_control cost:sacrifice cost_sacrifice_target:food cost_mana:2g counter_count:2 counter:p1p1 grant_kw:trample trigger_scope:self scales:creature_legendary
 ai_tags: artifact_token tempo:x
 face: mv:5 power:4 toughness:4 colors:g
-derived: etb_self
+derived: etb_self token_kind:artifact
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_a_food_sac,"",""
   c2,activated,2 G Sac<1/Food>,putcounter+pump,countertype=P1P1 trample,Defined=Self Defined=Self,duration:eot(forge_default)
@@ -3178,6 +3204,7 @@ typing: cardtype:instant
 tags: mill scales:squirrel token_make token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain
 ai_tags: artifact_token recursion
 face: mv:2 colors:g
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",mill+changezone+token+cleanup,numcards=4 tokenscript=c_a_food_sac,"",""
 links[1]{from,rel,to}:
@@ -3264,6 +3291,7 @@ typing: cardtype:sorcery
 tags: token_make target_count:one target_type:permanent target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain
 ai_tags: artifact_token recursion tempo:+0.5
 face: mv:2 colors:g
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone+token,tokenscript=c_a_food_sac,ValidTgts=Permanent.YouCtrl,""
 links[2]{from,rel,to}:
@@ -3394,6 +3422,7 @@ typing: cardtype:instant
 tags: token_make target_count:one target_type:permanent target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand token_count:2 token_color:green token_pt:1/1 token_type:saproling condition:morbid
 ai_tags: recursion tempo:+1
 face: mv:3 colors:g
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone+token,tokenscript=g_1_1_saproling,ValidTgts=Permanent.YouOwn,""
 links[1]{from,rel,to}:
@@ -3513,7 +3542,7 @@ typing: cardtype:sorcery
 tags: token_make target_count:up_to_1 target_type:artifact target_type:enchantment target_type:creature remove:destroy token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain
 ai_tags: artifact_token
 face: mv:3 colors:g
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy+token,tokenscript=c_a_food_sac,"ValidTgts=Artifact,Enchantment,Creature.withFlying",""
 links[2]{from,rel,to}:
@@ -3652,7 +3681,7 @@ typing: cardtype:creature type:human type:shaman
 tags: kw:eternalize num:5 color:green token_make trigger:etb target_count:one target_type:card target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand optional trigger_scope:self
 ai_tags: recursion tempo:+1
 face: mv:4 power:2 toughness:1 colors:g
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone,"",ValidTgts=Card.YouCtrl,""
 links[1]{from,rel,to}:
@@ -3726,7 +3755,7 @@ typing: supertype:legendary cardtype:creature type:phyrexian type:human type:art
 tags: kw:partner counters_plus token_make trigger:etb token_count:1 token_color:colorless token_pt:3/3 token_cardtype:artifact token_type:phyrexian_golem trigger:dies trigger_zone:graveyard target_count:all target_type:card target_filter:self target_type:golem target_scope:you_control counter_count:1 counter:p1p1 trigger_scope:self trigger_scope:any trigger_filter:artifact
 ai_tags: tempo:+0.5
 face: mv:5 power:1 toughness:1 colors:g
-derived: etb_self
+derived: etb_self token_kind:artifact token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_3_3_a_phyrexian_golem,"",""
   c2,dies_other,"",putcounterall,countertype=P1P1,"",""
@@ -3757,7 +3786,7 @@ typing: cardtype:kindred cardtype:instant type:treefolk landtype:forest
 tags: token_make token_count:1 token_color:green token_pt:2/5 token_type:treefolk_shaman trigger:etb return from_zone:graveyard to_zone:hand optional trigger_scope:any trigger_filter:you_control
 ai_tags: recursion tempo:+1
 face: mv:5 colors:g
-derived: etb_other
+derived: etb_other token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=g_2_5_treefolk_shaman,"",""
   c2,etb_other,"",changezone,"",Defined=Self,""
@@ -3808,7 +3837,7 @@ typing: cardtype:creature type:treefolk
 tags: kw:reach forge_line:typecycling token_make trigger:etb token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain trigger_scope:self
 ai_tags: artifact_token tempo:+0.5
 face: mv:6 power:5 toughness:7 colors:g
-derived: etb_self
+derived: etb_self token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_a_food_sac,"",""
 links[1]{from,rel,to}:
@@ -3849,6 +3878,7 @@ typing: supertype:legendary cardtype:creature type:goblin type:pirate
 tags: kw:first_strike token_make trigger:attacks modal:1_of_3 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source target_count:one target_type:creature restrict_kind:cant_block duration:eot look_top:1 take:all to_zone:exile impulse_draw impulse_draw_count:1 trigger_filter:you_control trigger_filter:pirate
 ai_tags: artifact_token selection tempo:+1.5 restrict
 face: mv:3 power:3 toughness:3 colors:r
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attacks,"",charm,"","",""
 links[2]{from,rel,to}:
@@ -3906,10 +3936,10 @@ forge_ai: AILogic=-
 
 card: Dire Fleet Daredevil
 typing: cardtype:creature type:human type:pirate
-tags: kw:first_strike trigger:etb target_count:one target_type:instant_or_sorcery target_zone:graveyard exile_from:graveyard impulse_draw impulse_draw_count:1 duration:eot trigger_scope:self
+tags: kw:first_strike trigger:etb target_count:one target_type:instant target_type:sorcery target_zone:graveyard exile_from:graveyard impulse_draw impulse_draw_count:1 duration:eot trigger_scope:self
 ai_tags: tempo:+1
 face: mv:2 power:2 toughness:1 colors:r
-derived: etb_self
+derived: etb_self target_type:instant_or_sorcery
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone+effect+effect+cleanup,"","ValidTgts=Instant.OppOwn,Sorcery.OppOwn",""
 links[1]{from,rel,to}:
@@ -3917,7 +3947,7 @@ links[1]{from,rel,to}:
 groups[4]{id,source,tags}:
   k1,K line,kw:first_strike
   c1,T line,trigger:etb trigger_scope:self
-  c1.2,sub-ability of c1,target_count:one target_type:instant_or_sorcery target_zone:graveyard exile_from:graveyard
+  c1.2,sub-ability of c1,target_count:one target_type:instant target_type:sorcery target_zone:graveyard exile_from:graveyard
   c1.3,sub-ability of c1,impulse_draw impulse_draw_count:1 duration:eot
 forge_ai: AILogic=-
 
@@ -3926,6 +3956,7 @@ typing: cardtype:creature type:human type:shaman
 tags: token_make trigger:spell_cast trigger_filter:instant trigger_filter:sorcery token_count:1 token_color:red token_pt:1/1 token_type:elemental
 ai_tags: tempo:+0.5
 face: mv:2 power:2 toughness:1 colors:r
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell_cast,"",token,tokenscript=r_1_1_elemental,"",""
 groups[2]{id,source,tags}:
@@ -3967,7 +3998,7 @@ typing: cardtype:creature type:goblin type:rogue
 tags: token_make trigger:etb token_count:1 token_color:red token_pt:1/1 token_type:goblin trigger_scope:self
 ai_tags: tempo:+0.5
 face: mv:2 power:1 toughness:1 colors:r
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=r_1_1_goblin,"",""
 groups[2]{id,source,tags}:
@@ -3993,6 +4024,7 @@ typing: cardtype:creature type:goblin type:pirate
 tags: kw:encore num:3 color:red token_make trigger:dies trigger_zone:graveyard token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger_scope:self
 ai_tags: artifact_token tempo:+0.5
 face: mv:1 power:1 toughness:1 colors:r
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",token,tokenscript=c_a_treasure_sac,"",""
 links[2]{from,rel,to}:
@@ -4091,6 +4123,7 @@ typing: cardtype:creature type:goblin type:soldier
 tags: kw:mentor counters_plus token_make trigger:beginning_of_combat token_count:1 token_color:red token_pt:1/1 token_type:goblin
 ai_tags: tempo:+0.5
 face: mv:3 power:2 toughness:2 colors:r
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,phase,"",token+effect+cleanup,tokenscript=r_1_1_goblin,"",duration:UntilEndOfCombat
 links[2]{from,rel,to}:
@@ -4121,6 +4154,7 @@ typing: cardtype:creature type:goblin type:warrior
 tags: duration:eot scales:goblin token_make must_attack affects:goblin trigger:beginning_of_combat token_count:1 token_color:red token_pt:1/1 token_kw:haste token_type:goblin trigger:attacks pump_amount:+x/+0 x_is:count_goblin_attacking_other scales:goblin_attacking_other
 ai_tags: tempo:+0.5
 face: mv:3 power:2 toughness:2 colors:r
+derived: token_kind:creature
 clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_mustattack,"","",""
   c2,phase,"",token,tokenscript=r_1_1_goblin_haste,"",""
@@ -4216,7 +4250,7 @@ typing: cardtype:creature type:goblin type:warrior
 tags: token_make trigger:etb token_count:2 token_color:red token_pt:1/1 token_type:goblin trigger_scope:self
 ai_tags: tempo:+1
 face: mv:4 power:2 toughness:2 colors:r
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=r_1_1_goblin,"",""
 groups[2]{id,source,tags}:
@@ -4285,7 +4319,7 @@ typing: cardtype:creature type:goblin
 tags: sacrifice_outlet token_make cost:sacrifice cost_sacrifice_target:goblin cost_mana:1r target_count:one target_type:any damage damage_amount:2 trigger:etb token_count:3 token_color:red token_pt:1/1 token_type:goblin trigger_scope:self
 ai_tags: burn tempo:+1.5
 face: mv:5 power:2 toughness:2 colors:r
-derived: spot_removal removal_weight:1 etb_self
+derived: spot_removal removal_weight:1 etb_self token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 R Sac<1/Goblin>,dealdamage,numdmg=2,ValidTgts=Any,""
   c2,etb_self,"",token,tokenscript=r_1_1_goblin,"",""
@@ -4318,6 +4352,7 @@ typing: supertype:legendary cardtype:creature type:goblin type:shaman
 tags: kw:haste clone cost:tap target_count:one target_type:creature target_filter:nonlegendary target_scope:you_control token_make token_type:copy delayed:end_step effect:sacrifice duration:end_step
 ai_tags: tempo:+0.5
 face: mv:5 power:2 toughness:2 colors:r
+derived: token_kind:copy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,T,copypermanent,"",ValidTgts=Creature.nonLegendary+YouCtrl,""
 groups[2]{id,source,tags}:
@@ -4381,6 +4416,7 @@ typing: cardtype:creature type:human type:artificer
 tags: kw:haste token_make trigger:beginning_of_combat token_count:1 token_color:colorless token_pt:1/1 token_cardtype:artifact token_kw:flying token_type:thopter condition:card_iscommander_you_own_you_control
 ai_tags: tempo:+0.5
 face: mv:2 power:2 toughness:1 colors:r
+derived: token_kind:artifact token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,phase,"",token,tokenscript=c_1_1_a_thopter_flying,"",""
 groups[3]{id,source,tags}:
@@ -4502,6 +4538,7 @@ typing: cardtype:creature type:dwarf type:shaman
 tags: scales:artifact token_make duration:static pump_amount:+x/+0 affected_scope:self x_is:count_artifact_you_control trigger:spell_cast trigger_filter:instant trigger_filter:sorcery token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
 ai_tags: artifact_token tempo:+0.5
 face: mv:4 power:2 toughness:2 colors:r
+derived: token_kind:artifact
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,addpower=X,AffectedDefined=Self,duration:static
   c2,spellcastorcopy,"",token,tokenscript=c_a_treasure_sac,"",""
@@ -4547,6 +4584,7 @@ card: Coruscation Mage
 typing: cardtype:creature type:otter type:wizard
 tags: kw:offspring num:2 token_make trigger:spell_cast trigger_filter:noncreature damage damage_amount:1 target_scope:each_opponent
 face: mv:2 power:2 toughness:2 colors:r
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell_cast,"",dealdamage,numdmg=1,Defined=Player.Opponent,""
 links[2]{from,rel,to}:
@@ -4603,6 +4641,7 @@ typing: cardtype:instant
 tags: discard draw token_make cost:discard cost_mana:3r draw_count:2 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source additional_cost
 ai_tags: artifact_token tempo:+1
 face: mv:4 colors:r
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,3 R Discard<1/Card/card>,draw+token,numcards=2 tokenscript=c_a_treasure_sac,Defined=You,""
 links[2]{from,rel,to}:
@@ -4619,6 +4658,7 @@ typing: cardtype:instant
 tags: discard draw token_make cost:discard cost_mana:2rr draw_count:2 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source additional_cost
 ai_tags: artifact_token tempo:+1
 face: mv:4 colors:r
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,2 R R Discard<1/Card/card>,draw+token,numcards=2 tokenscript=c_a_treasure_sac,Defined=You,""
 links[2]{from,rel,to}:
@@ -4650,6 +4690,7 @@ typing: cardtype:sorcery
 tags: discard draw token_make cost:discard cost_mana:2r draw_count:2 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source additional_cost
 ai_tags: artifact_token tempo:+0.5
 face: mv:3 colors:r
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,2 R Discard<1/Card/card>,draw+token,numcards=2 tokenscript=c_a_treasure_sac,Defined=You,""
 links[2]{from,rel,to}:
@@ -4707,6 +4748,7 @@ typing: cardtype:enchantment type:aura type:curse
 tags: kw:enchant target_type:player token_make trigger:attacks token_count:1 token_color:colorless token_cardtype:artifact token_type:gold token_ability:sacrifice_add_mana_any_color
 ai_tags: tempo:+0.5 ai_logic:curse
 face: mv:1 colors:r
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attackersdeclared,"",token+token,tokenscript=c_a_gold_sac tokenscript=c_a_gold_sac,"",""
 groups[4]{id,source,tags}:
@@ -4735,6 +4777,7 @@ typing: cardtype:sorcery
 tags: token_make token_count:3 token_color:red token_pt:1/1 token_type:goblin
 ai_tags: tempo:+0.5
 face: mv:3 colors:r
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=r_1_1_goblin,"",""
 groups[1]{id,source,tags}:
@@ -4817,6 +4860,7 @@ typing: supertype:legendary cardtype:enchantment cardtype:creature type:demigod
 tags: token_make trigger:dies trigger_zone:graveyard token_count:x token_color:red token_pt:1/1 token_type:satyr_noblock trigger_scope:any trigger_filter:you_control trigger_filter:nontoken trigger_filter:creature
 ai_tags: tempo:x
 face: mv:3 power:* toughness:3 colors:r
+derived: token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,"","",duration:static
   c2,dies_self,"",token,tokenscript=r_1_1_satyr_noblock,"",""
@@ -4866,7 +4910,7 @@ typing: cardtype:enchantment type:class
 tags: kw:class num:2 color:red num:3 token_make trigger:etb token_count:1 token_color:white token_color:red cost:mana trigger:beginning_of_combat trigger_scope:self
 ai_tags: tempo:+0.5
 face: mv:1 colors:r
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=sword,"",""
 groups[5]{id,source,tags}:
@@ -4882,7 +4926,7 @@ typing: cardtype:enchantment type:aura
 tags: kw:enchant target_type:creature draw token_make grant_kw:menace duration:static affected_type:creature trigger:dies trigger_zone:graveyard draw_count:1 trigger_scope:other
 ai_tags: artifact_token evasion_grant tempo:+1 ai_logic:pump
 face: mv:1 colors:r
-derived: evasion_pkg
+derived: evasion_pkg token_kind:artifact
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,menace,Affected=Creature AffectedDefined=Enchanted,duration:static
   c2,dies_other,"",draw,"","",""
@@ -4901,7 +4945,7 @@ typing: cardtype:creature type:vampire
 tags: token_make trigger:etb damage damage_amount:1 token_count:1 token_color:colorless token_cardtype:artifact token_type:blood_draw target_scope:each_opponent trigger_scope:self
 ai_tags: artifact_token tempo:+0.5
 face: mv:1 power:1 toughness:1 colors:r
-derived: etb_self
+derived: etb_self token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",dealdamage+token,numdmg=1 tokenscript=c_a_blood_draw,Defined=Player.Opponent,""
 links[1]{from,rel,to}:
@@ -4917,6 +4961,7 @@ typing: cardtype:creature type:goblin
 tags: duration:eot token_make cost_mana:1r target_count:all target_type:creature target_filter:goblin target_scope:you_control pump_amount:+1/+0 grant_kw:haste trigger:attacks token_count:1 token_color:red token_pt:1/1 token_type:goblin
 ai_tags: haste_grant pump_team tempo:+0.5
 face: mv:2 power:2 toughness:2 colors:r
+derived: token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 R,pumpall,haste numatt=+1,"",duration:eot(forge_default)
   c2,attacks,"",token,tokenscript=r_1_1_goblin,"",""
@@ -4932,6 +4977,7 @@ card: Dragon Fodder
 typing: cardtype:sorcery
 tags: token_make token_count:2 token_color:red token_pt:1/1 token_type:goblin
 face: mv:2 colors:r
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=r_1_1_goblin,"",""
 groups[1]{id,source,tags}:
@@ -4943,6 +4989,7 @@ typing: cardtype:creature type:goblin type:pirate
 tags: token_make token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger:end_step
 ai_tags: artifact_token tempo:+0.5
 face: mv:2 power:2 toughness:2 colors:r
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,phase,"",token,tokenscript=c_a_treasure_sac,"",""
 links[1]{from,rel,to}:
@@ -4990,6 +5037,7 @@ card: Krenko's Command
 typing: cardtype:sorcery
 tags: token_make token_count:2 token_color:red token_pt:1/1 token_type:goblin
 face: mv:2 colors:r
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=r_1_1_goblin,"",""
 groups[1]{id,source,tags}:
@@ -5001,7 +5049,7 @@ typing: cardtype:artifact
 tags: discard draw token_make trigger:etb cost:discard draw_count:2 cost:sacrifice cost_sacrifice_target:self cost_mana:3 token_count:1 token_color:colorless token_pt:2/2 token_cardtype:artifact token_type:robot trigger_scope:self
 ai_tags: tempo:+2
 face: mv:2 colors:r
-derived: etb_self
+derived: etb_self token_kind:artifact token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",draw,numcards=2,"",""
   c2,activated,3 Sac<1/CARDNAME>,token,tokenscript=c_2_2_a_robot,"",""
@@ -5015,6 +5063,7 @@ card: Sazacap's Brew
 typing: cardtype:instant
 tags: kw:gift duration:eot draw discard token_make cost:discard cost_mana:1r target_count:one target_type:player draw_count:2 target_count:x target_type:creature target_scope:you_control pump_amount:+2/+0 additional_cost
 face: mv:2 colors:r
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,1 R Discard<1/Card>,draw+pump,numcards=2 numatt=+2,ValidTgts=Player ValidTgts=Creature.YouCtrl,duration:eot(forge_default)
 links[3]{from,rel,to}:
@@ -5033,7 +5082,7 @@ typing: cardtype:instant
 tags: draw token_make target_count:one target_type:any damage damage_amount:1 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source draw_count:1
 ai_tags: artifact_token burn tempo:+0.5
 face: mv:3 colors:r
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dealdamage+token+draw,numdmg=1 tokenscript=c_a_treasure_sac,ValidTgts=Any,""
 links[2]{from,rel,to}:
@@ -5050,6 +5099,7 @@ typing: cardtype:enchantment type:saga
 tags: kw:chapter num:3 discard draw token_make saga_chapter token_count:2 token_color:white token_pt:1/1 token_type:ally draw_count:1 target_count:all target_type:creature target_scope:you_control pump_amount:+1/+0 duration:eot
 ai_tags: pump_team tempo:+1
 face: mv:3 colors:r
+derived: token_kind:creature
 clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
 groups[4]{id,source,tags}:
   k1,K line,kw:chapter num:3
@@ -5063,7 +5113,7 @@ typing: supertype:legendary cardtype:creature type:goblin type:soldier
 tags: token_make trigger:attacks token_count:1 token_color:red token_pt:1/1 token_type:goblin trigger:etb damage damage_amount:1 target_scope:each_opponent trigger_scope:other trigger_filter:goblin trigger_filter:you_control trigger_filter:creature
 ai_tags: tempo:+0.5
 face: mv:3 power:2 toughness:2 colors:r
-derived: etb_other
+derived: etb_other token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attackersdeclared,"",token,tokenscript=r_1_1_goblin,"",""
   c2,etb_other,"",dealdamage,numdmg=1,Defined=Player.Opponent,""
@@ -5101,7 +5151,7 @@ typing: cardtype:sorcery
 tags: token_make target_count:one target_type:any damage damage_amount:2 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
 ai_tags: artifact_token burn
 face: mv:3 colors:r
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dealdamage+token,numdmg=2 tokenscript=c_a_treasure_sac,ValidTgts=Any,""
 links[2]{from,rel,to}:
@@ -5131,7 +5181,7 @@ typing: cardtype:artifact type:vehicle
 tags: colorless_card kw:flying kw:crew num:2 token_make trigger:etb token_count:1 token_color:black token_pt:2/2 token_cardtype:artifact token_type:necron_warrior trigger_scope:self
 ai_tags: tempo:+0.5
 face: mv:3 power:3 toughness:1 colors:c
-derived: evasion_pkg etb_self
+derived: evasion_pkg etb_self token_kind:artifact token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=b_2_2_a_necron_warrior,"",""
 groups[4]{id,source,tags}:
@@ -5146,7 +5196,7 @@ typing: cardtype:creature type:dwarf type:barbarian
 tags: token_make trigger:etb modal:1_of_2 target_count:one target_type:artifact remove:destroy token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger_scope:self niche:artifact
 ai_tags: artifact_token tempo:+0.5
 face: mv:3 power:2 toughness:2 colors:r
-derived: spot_removal removal_weight:1 etb_self
+derived: spot_removal removal_weight:1 etb_self token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",charm,"","",""
 links[1]{from,rel,to}:
@@ -5163,6 +5213,7 @@ typing: cardtype:enchantment type:aura
 tags: kw:enchant target_type:creature token_make duration:static pump_amount:+2/+2 affected_type:creature trigger:attacks token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
 ai_tags: artifact_token tempo:+0.5 ai_logic:pump
 face: mv:3 colors:r
+derived: token_kind:artifact
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,addpower=2 addtoughness=2,Affected=Creature AffectedDefined=Enchanted,duration:static
   c2,attacks,"",token,tokenscript=c_a_treasure_sac,"",""
@@ -5182,6 +5233,7 @@ typing: cardtype:instant
 tags: token_make target_count:all target_type:creature target_filter:nonvampire damage damage_amount:2 token_count:1 token_color:colorless token_cardtype:artifact token_type:blood_draw
 ai_tags: artifact_token
 face: mv:3 colors:r
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",damageall+token,numdmg=2 tokenscript=c_a_blood_draw,"",""
 groups[2]{id,source,tags}:
@@ -5220,7 +5272,7 @@ card: Foray of Orcs
 typing: cardtype:sorcery
 tags: token_make target_count:one target_type:creature target_scope:opp_control damage damage_amount:x x_is:triggerremembered_cardpower
 face: mv:4 colors:r
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",amass+immediatetrigger+cleanup,"","",""
 links[1]{from,rel,to}:
@@ -5233,6 +5285,7 @@ card: Goblin Wizardry
 typing: cardtype:instant
 tags: token_make token_count:2 token_color:red token_pt:1/1 token_type:goblin_wizard_prowess
 face: mv:4 colors:r
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=r_1_1_goblin_wizard_prowess,"",""
 groups[1]{id,source,tags}:
@@ -5244,7 +5297,7 @@ typing: cardtype:creature type:manticore
 tags: kw:embalm num:5 color:red token_make sacrifice_outlet trigger:etb cost:sacrifice cost_sacrifice_target:creature target_count:one target_type:any damage trigger_scope:self
 ai_tags: burn ai_logic:sacfordamage
 face: mv:4 power:4 toughness:3 colors:r
-derived: spot_removal removal_weight:1 etb_self
+derived: spot_removal removal_weight:1 etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",immediatetrigger,"","",""
 links[1]{from,rel,to}:
@@ -5282,6 +5335,7 @@ typing: cardtype:sorcery
 tags: discard draw token_make cost:discard cost_mana:3r draw_count:2 token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source additional_cost
 ai_tags: artifact_token tempo:+1
 face: mv:4 colors:r
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,3 R Discard<1/Card/card>,draw+token,numcards=2 tokenscript=c_a_treasure_sac,Defined=You,""
 links[2]{from,rel,to}:
@@ -5297,7 +5351,7 @@ card: Starforged Sword
 typing: cardtype:artifact type:equipment
 tags: colorless_card kw:gift kw:equip num:3 draw token_make trigger:etb target_count:one target_type:creature target_scope:you_control duration:static pump_amount:+3/+3 affected_type:creature trigger_scope:self
 face: mv:4 colors:c
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",attach,"",ValidTgts=Creature.YouCtrl,""
   c2,static,"",static_continuous,addpower=3 addtoughness=3,Affected=Creature AffectedDefined=Equipped,duration:static
@@ -5318,6 +5372,7 @@ card: Tooth and Claw
 typing: cardtype:enchantment
 tags: sacrifice_outlet token_make cost:sacrifice cost_sacrifice_target:creature token_count:1 token_color:colorless token_color:red
 face: mv:4 colors:r
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,Sac<2/Creature>,token,tokenscript=carnivore,"",""
 groups[2]{id,source,tags}:
@@ -5330,7 +5385,7 @@ typing: cardtype:instant
 tags: kw:improvise token_make target_count:one target_type:any damage damage_amount:5 token_count:x token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
 ai_tags: artifact_token burn tempo:x
 face: mv:5 colors:r
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dealdamage+token,numdmg=5 tokenscript=c_a_treasure_sac,ValidTgts=Any,""
 links[2]{from,rel,to}:
@@ -5347,6 +5402,7 @@ typing: cardtype:sorcery
 tags: token_make look_top:3 take:all to_zone:exile impulse_draw impulse_draw_count:3 duration:next_turn_end token_count:3 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
 ai_tags: artifact_token selection tempo:+3.5
 face: mv:5 colors:r
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",dig+effect+cleanup+token,tokenscript=c_a_treasure_sac,Defined=You,duration:UntilTheEndOfYourNextTurn
 links[4]{from,rel,to}:
@@ -5362,17 +5418,17 @@ forge_ai: AILogic=-
 
 card: Pinnacle Monk
 typing: cardtype:creature type:djinn type:monk
-tags: kw:prowess transform trigger:etb target_count:one target_type:instant_or_sorcery target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand trigger_scope:self
+tags: kw:prowess transform trigger:etb target_count:one target_type:instant target_scope:you_control target_type:sorcery target_zone:graveyard return from_zone:graveyard to_zone:hand trigger_scope:self
 ai_tags: recursion tempo:+1
 face: mv:5 power:2 toughness:2 colors:r
-derived: etb_self
+derived: etb_self target_type:instant_or_sorcery
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone,"","ValidTgts=Instant.YouCtrl,Sorcery.YouCtrl",""
 groups[4]{id,source,tags}:
   c0,card,transform
   k1,K line,kw:prowess
   c1,T line,trigger:etb trigger_scope:self
-  c1.2,sub-ability of c1,target_count:one target_type:instant_or_sorcery target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand
+  c1.2,sub-ability of c1,target_count:one target_type:instant target_scope:you_control target_type:sorcery target_zone:graveyard return from_zone:graveyard to_zone:hand
 forge_ai: AILogic=-
 
 card: Rapacious Dragon
@@ -5380,7 +5436,7 @@ typing: cardtype:creature type:dragon
 tags: kw:flying token_make trigger:etb token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger_scope:self
 ai_tags: artifact_token tempo:+1
 face: mv:5 power:3 toughness:3 colors:r
-derived: evasion_pkg etb_self
+derived: evasion_pkg etb_self token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_a_treasure_sac,"",""
 links[1]{from,rel,to}:
@@ -5396,7 +5452,7 @@ typing: cardtype:creature type:eldrazi type:goblin
 tags: colorless_card kw:devoid sacrifice_outlet token_make cost:sacrifice cost_sacrifice_target:eldrazi cost_mana:1c target_count:one target_type:any damage damage_amount:2 trigger:spell_cast token_count:3 token_color:colorless token_pt:0/1 token_type:eldrazi_spawn
 ai_tags: burn tempo:+1.5
 face: mv:5 power:2 toughness:2 colors:r
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 C Sac<1/Eldrazi>,dealdamage,numdmg=2,ValidTgts=Any,""
   c2,spell_cast,"",token,tokenscript=c_0_1_eldrazi_spawn_sac,"",""
@@ -5461,6 +5517,7 @@ typing: cardtype:kindred cardtype:sorcery type:eldrazi
 tags: colorless_card token_make token_count:5 token_color:colorless token_pt:0/1 token_type:eldrazi_spawn
 ai_tags: tempo:+1.5
 face: mv:7 colors:c
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=c_0_1_eldrazi_spawn_sac,"",""
 groups[1]{id,source,tags}:
@@ -5996,6 +6053,7 @@ card: Rite of Replication
 typing: cardtype:sorcery
 tags: kw:kicker num:5 clone target_count:one target_type:creature token_make token_type:copy condition:kicked
 face: mv:4 colors:u
+derived: token_kind:copy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",copypermanent,"",ValidTgts=Creature,""
 groups[3]{id,source,tags}:
@@ -6132,6 +6190,7 @@ card: Saruman the White
 typing: supertype:legendary cardtype:creature type:avatar type:wizard
 tags: kw:ward num:2 token_make trigger:spell_cast trigger_filter:you_control trigger_filter:nth_spell_2
 face: mv:5 power:4 toughness:4 colors:u
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell_cast,"",amass,"","",""
 groups[2]{id,source,tags}:
@@ -6209,7 +6268,7 @@ typing: supertype:legendary cardtype:artifact cardtype:creature type:wizard
 tags: colorless_card kw:indestructible draw scales:artifact token_make trigger:etb token_count:2 token_color:colorless token_pt:1/1 token_cardtype:artifact token_type:myr trigger:attacks draw_count:x x_is:count_artifact_you_control trigger_scope:self
 ai_tags: tempo:+1 tempo:x
 face: mv:10 power:8 toughness:9 colors:c
-derived: etb_self
+derived: etb_self token_kind:artifact token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_1_1_a_myr,"",""
   c2,attacks,"",draw,numcards=X,Defined=You,""
@@ -6277,6 +6336,7 @@ card: Irenicus's Vile Duplication
 typing: cardtype:sorcery
 tags: clone target_count:one target_type:creature target_scope:you_control token_make token_type:copy
 face: mv:4 colors:u
+derived: token_kind:copy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",copypermanent,"",ValidTgts=Creature.YouCtrl,""
 groups[1]{id,source,tags}:
@@ -6317,6 +6377,7 @@ typing: supertype:legendary cardtype:creature type:elder type:wizard
 tags: token_make trigger:spell_cast trigger_filter:noncreature token_count:1 token_color:blue token_pt:1/1 token_kw:flying token_kw:vigilance token_type:bird trigger:attacks scry_count:2
 ai_tags: selection tempo:+0.5
 face: mv:4 power:2 toughness:4 colors:u
+derived: token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell_cast,"",token,tokenscript=u_1_1_bird_flying_vigilance,"",""
   c2,attackersdeclared,"",scry,"","",""
@@ -6380,6 +6441,7 @@ typing: cardtype:artifact
 tags: colorless_card draw token_make cost:tap cost_mana:1 modal:1_of_3 draw_count:1 token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain target_count:one target_type:player effect:sacrifice
 ai_tags: artifact_token tempo:+0.5
 face: mv:1 colors:c
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 T,charm,"","",""
 links[1]{from,rel,to}:
@@ -6397,6 +6459,7 @@ typing: supertype:legendary cardtype:creature type:human type:rogue
 tags: token_make trigger:attackerblocked modal:1_of_2 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source target_count:one target_type:opponent target_type:horse target_scope:you_control steal token_count:3
 ai_tags: artifact_token tempo:+2 ai_logic:curse
 face: mv:2 power:2 toughness:1 colors:u
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,blocked,"",charm,"","",""
 links[1]{from,rel,to}:
@@ -6431,6 +6494,7 @@ typing: cardtype:artifact cardtype:creature type:wall
 tags: colorless_card kw:defender token_make trigger:dies trigger_zone:graveyard token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger_scope:self
 ai_tags: artifact_token tempo:+0.5
 face: mv:2 power:0 toughness:4 colors:c
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,dies_self,"",token,tokenscript=c_a_treasure_sac,"",""
 links[1]{from,rel,to}:
@@ -6504,7 +6568,7 @@ typing: cardtype:instant
 tags: bounce token_make target_count:one target_type:creature remove:bounce token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
 ai_tags: artifact_token
 face: mv:3 colors:u
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone+token,tokenscript=c_a_treasure_sac,ValidTgts=Creature,""
 links[2]{from,rel,to}:
@@ -6533,6 +6597,7 @@ typing: cardtype:instant
 tags: counterspell token_make target_count:one target_type:creature token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
 ai_tags: artifact_token
 face: mv:3 colors:u
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",counter+token,tokenscript=c_a_treasure_sac,ValidTgts=Creature,""
 links[2]{from,rel,to}:
@@ -6600,6 +6665,7 @@ typing: cardtype:creature type:human type:ninja
 tags: kw:ninjutsu num:1 color:blue token_make token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger_filter:one_or_more
 ai_tags: artifact_token tempo:+0.5
 face: mv:3 power:3 toughness:2 colors:u
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,damagedoneonce,"",token,tokenscript=c_a_treasure_sac,"",""
 links[1]{from,rel,to}:
@@ -6652,6 +6718,7 @@ typing: cardtype:instant
 tags: discard draw token_make draw_count:2 discard_count:1 token_count:1 token_color:colorless token_cardtype:artifact token_type:powerstone
 ai_tags: tempo:+0.5
 face: mv:3 colors:u
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",draw+discard+token,numcards=2 numcards=1 tokenscript=c_a_powerstone,Defined=You Defined=You,""
 links[1]{from,rel,to}:
@@ -6667,6 +6734,7 @@ typing: supertype:legendary cardtype:creature type:human type:artificer
 tags: kw:vigilance discard draw token_make cost:tap cost_mana:1 draw_count:1 discard_count:1 token_count:1 token_color:colorless token_cardtype:artifact token_type:powerstone trigger:discard limit:once_per_turn
 ai_tags: tempo:+0.5
 face: mv:3 power:1 toughness:3 colors:u
+derived: token_kind:artifact
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,1 T,draw+discard,"","",""
   c2,discardedall,"",token,tokenscript=c_a_powerstone,"",""
@@ -6737,6 +6805,7 @@ typing: cardtype:sorcery
 tags: draw token_make draw_count:2 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
 ai_tags: artifact_token tempo:+1.5
 face: mv:4 colors:u
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",draw+token,numcards=2 tokenscript=c_a_treasure_sac,"",""
 links[1]{from,rel,to}:
@@ -6775,7 +6844,7 @@ typing: cardtype:instant
 tags: bounce draw token_make target_count:one target_type:permanent target_filter:nonland remove:bounce draw_count:1 token_count:x token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain x_is:adamant_blue_1_0 condition:adamant
 ai_tags: artifact_token tempo:x
 face: mv:4 colors:u
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone+draw+token,tokenscript=c_a_food_sac,ValidTgts=Permanent.nonLand,""
 links[3]{from,rel,to}:
@@ -6794,7 +6863,7 @@ typing: cardtype:creature type:human type:rogue type:artificer
 tags: token_make trigger:etb token_count:2 token_color:colorless token_pt:1/1 token_cardtype:artifact token_kw:flying token_type:thopter target_count:one target_type:creature trigger_scope:self
 ai_tags: tempo:+1 ai_logic:makeunblockable
 face: mv:4 power:2 toughness:2 colors:u
-derived: etb_self
+derived: etb_self token_kind:artifact token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_1_1_a_thopter_flying,"",""
   c2,activated,tapXType<2/Artifact>,effect,"",ValidTgts=Creature,""
@@ -6806,16 +6875,16 @@ forge_ai: AILogic=MakeUnblockable
 
 card: Mnemonic Wall
 typing: cardtype:creature type:wall
-tags: kw:defender trigger:etb target_count:one target_type:instant_or_sorcery target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand optional trigger_scope:self
+tags: kw:defender trigger:etb target_count:one target_type:instant target_scope:you_control target_type:sorcery target_zone:graveyard return from_zone:graveyard to_zone:hand optional trigger_scope:self
 ai_tags: recursion tempo:+1
 face: mv:5 power:0 toughness:4 colors:u
-derived: etb_self
+derived: etb_self target_type:instant_or_sorcery
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone,"","ValidTgts=Instant.YouCtrl,Sorcery.YouCtrl",""
 groups[3]{id,source,tags}:
   k1,K line,kw:defender
   c1,T line,trigger:etb optional trigger_scope:self
-  c1.2,sub-ability of c1,target_count:one target_type:instant_or_sorcery target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand
+  c1.2,sub-ability of c1,target_count:one target_type:instant target_scope:you_control target_type:sorcery target_zone:graveyard return from_zone:graveyard to_zone:hand
 forge_ai: AILogic=-
 
 card: Prosperous Pirates
@@ -6823,7 +6892,7 @@ typing: cardtype:creature type:human type:pirate
 tags: token_make trigger:etb token_count:2 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger_scope:self
 ai_tags: artifact_token tempo:+1
 face: mv:5 power:3 toughness:4 colors:u
-derived: etb_self
+derived: etb_self token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_a_treasure_sac,"",""
 links[1]{from,rel,to}:
@@ -6850,29 +6919,29 @@ forge_ai: AILogic=- RemoveDeck
 
 card: Shipwreck Dowser
 typing: cardtype:creature type:merfolk type:wizard
-tags: kw:prowess trigger:etb target_count:one target_type:instant_or_sorcery target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand trigger_scope:self
+tags: kw:prowess trigger:etb target_count:one target_type:instant target_scope:you_control target_type:sorcery target_zone:graveyard return from_zone:graveyard to_zone:hand trigger_scope:self
 ai_tags: recursion tempo:+1
 face: mv:5 power:3 toughness:3 colors:u
-derived: etb_self
+derived: etb_self target_type:instant_or_sorcery
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone,"","ValidTgts=Instant.YouOwn,Sorcery.YouOwn",""
 groups[3]{id,source,tags}:
   k1,K line,kw:prowess
   c1,T line,trigger:etb trigger_scope:self
-  c1.2,sub-ability of c1,target_count:one target_type:instant_or_sorcery target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand
+  c1.2,sub-ability of c1,target_count:one target_type:instant target_scope:you_control target_type:sorcery target_zone:graveyard return from_zone:graveyard to_zone:hand
 forge_ai: AILogic=-
 
 card: Daring Waverider
 typing: cardtype:creature type:otter type:wizard
-tags: trigger:etb target_count:one target_type:instant_or_sorcery target_scope:you_control cast_free optional trigger_scope:self mech:graveyard_cast
+tags: trigger:etb target_count:one target_type:instant target_scope:you_control target_type:sorcery cast_free optional trigger_scope:self mech:graveyard_cast
 ai_tags: ai_logic:replayspell
 face: mv:6 power:4 toughness:4 colors:u
-derived: etb_self
+derived: etb_self target_type:instant_or_sorcery
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",play,"","ValidTgts=Instant.YouCtrl+cmcLE4,Sorcery.YouCtrl+cmcLE4",""
 groups[2]{id,source,tags}:
   c1,T line,trigger:etb optional trigger_scope:self
-  c1.2,sub-ability of c1,target_count:one target_type:instant_or_sorcery target_scope:you_control cast_free
+  c1.2,sub-ability of c1,target_count:one target_type:instant target_scope:you_control target_type:sorcery cast_free
 verify_flags: exile_effect: Oracle line says it, script tags lack exile
 forge_ai: AILogic=ReplaySpell
 
@@ -6961,7 +7030,7 @@ card: Thraben Inspector
 typing: cardtype:creature type:human type:soldier
 tags: trigger:etb investigate token_make trigger_scope:self
 face: mv:1 power:1 toughness:2 colors:w
-derived: etb_self
+derived: etb_self token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",investigate,"","",""
 groups[3]{id,source,tags}:
@@ -6997,6 +7066,7 @@ typing: cardtype:creature type:human type:soldier
 tags: kw:first_strike token_make token_count:1 token_color:white token_pt:1/1 token_type:soldier trigger:combat_damage
 ai_tags: tempo:+0.5
 face: mv:2 power:2 toughness:2 colors:w
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,combat_damage,"",token,tokenscript=w_1_1_soldier,"",""
 groups[3]{id,source,tags}:
@@ -7082,7 +7152,7 @@ typing: cardtype:creature type:human type:knight
 tags: kw:first_strike token_make trigger:etb token_count:1 token_color:white token_pt:1/1 token_type:soldier trigger_scope:self
 ai_tags: tempo:+0.5
 face: mv:3 power:2 toughness:2 colors:w
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=w_1_1_soldier,"",""
 groups[3]{id,source,tags}:
@@ -7190,7 +7260,7 @@ typing: cardtype:creature type:human type:soldier
 tags: kw:flash token_make trigger:etb token_count:1 token_color:white token_pt:1/1 token_type:soldier trigger_scope:self
 ai_tags: tempo:+0.5
 face: mv:2 power:1 toughness:1 colors:w
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=w_1_1_soldier,"",""
 groups[3]{id,source,tags}:
@@ -7310,7 +7380,7 @@ card: Herald of the Host
 typing: cardtype:creature type:angel
 tags: kw:flying kw:vigilance kw:myriad token_make
 face: mv:5 power:4 toughness:4 colors:w
-derived: evasion_pkg
+derived: evasion_pkg token_kind:creature
 clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   k3,provides,token_make
@@ -7338,7 +7408,7 @@ typing: cardtype:creature type:shapeshifter
 tags: kw:changeling token_make trigger:etb token_count:1 token_color:colorless token_pt:2/2 token_type:shapeshifter_changeling trigger_scope:self
 ai_tags: tempo:+0.5
 face: mv:4 power:2 toughness:2 colors:w
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_2_2_shapeshifter_changeling,"",""
 groups[3]{id,source,tags}:
@@ -7352,7 +7422,7 @@ typing: cardtype:creature type:human type:soldier
 tags: kw:vigilance lord:soldier token_make duration:static pump_amount:+1/+1 grant_kw:vigilance affected_type:creature affected_filter:soldier affected_filter:other affected_scope:you_control trigger:etb token_count:3 token_color:white token_pt:1/1 token_type:soldier trigger_scope:self niche:tribal
 ai_tags: tempo:+1.5
 face: mv:6 power:3 toughness:3 colors:w
-derived: anthem etb_self
+derived: anthem etb_self token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,vigilance addpower=1 addtoughness=1,Affected=Creature.Soldier+Other+YouCtrl,duration:static
   c2,etb_self,"",token,tokenscript=w_1_1_soldier,"",""
@@ -7500,7 +7570,7 @@ card: Stroke of Midnight
 typing: cardtype:instant
 tags: token_make target_count:one target_type:permanent target_filter:nonland remove:destroy token_count:1 token_color:white token_pt:1/1 token_type:human
 face: mv:3 colors:w
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy+token,tokenscript=w_1_1_human,ValidTgts=Permanent.nonLand,""
 links[1]{from,rel,to}:
@@ -7628,6 +7698,7 @@ card: Raise the Alarm
 typing: cardtype:instant
 tags: token_make token_count:2 token_color:white token_pt:1/1 token_type:soldier
 face: mv:2 colors:w
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=w_1_1_soldier,"",""
 groups[1]{id,source,tags}:
@@ -7639,6 +7710,7 @@ typing: cardtype:sorcery
 tags: token_make token_count:3 token_color:white token_pt:1/1 token_kw:flying token_type:spirit
 ai_tags: tempo:+0.5
 face: mv:3 colors:w
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=w_1_1_spirit_flying,"",""
 groups[1]{id,source,tags}:
@@ -7650,7 +7722,7 @@ typing: cardtype:artifact type:equipment
 tags: kw:equip num:1 token_make trigger:etb token_count:1 token_color:white token_pt:1/1 token_type:soldier duration:static pump_amount:+1/+1 affected_type:creature trigger_scope:self
 ai_tags: tempo:+0.5
 face: mv:2 colors:w
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token+attach+cleanup,tokenscript=w_1_1_soldier,Defined=Remembered,""
   c2,static,"",static_continuous,addpower=1 addtoughness=1,Affected=Creature AffectedDefined=Equipped,duration:static
@@ -7755,6 +7827,7 @@ typing: cardtype:sorcery
 tags: token_make token_count:3 token_color:white token_pt:1/1 token_type:soldier
 ai_tags: tempo:+0.5
 face: mv:4 colors:w
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=w_1_1_soldier,"",""
 groups[1]{id,source,tags}:
@@ -7779,6 +7852,7 @@ typing: supertype:legendary cardtype:creature type:human type:knight
 tags: kw:vigilance token_make trigger:attacks token_count:1 token_color:white token_pt:1/1 token_type:human
 ai_tags: tempo:+0.5
 face: mv:3 power:* toughness:4 colors:w
+derived: token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,"","",duration:static
   c2,attackersdeclared,"",repeateach,"","",""
@@ -7810,7 +7884,7 @@ typing: cardtype:enchantment type:aura type:cartouche
 tags: kw:enchant target_type:creature token_make trigger:etb token_count:1 token_color:white token_pt:1/1 token_kw:vigilance token_type:warrior duration:static pump_amount:+1/+1 grant_kw:first_strike affected_type:creature trigger_scope:self
 ai_tags: tempo:+0.5 ai_logic:pump
 face: mv:1 colors:w
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=w_1_1_warrior_vigilance,"",""
   c2,static,"",static_continuous,first_strike addpower=1 addtoughness=1,Affected=Creature AffectedDefined=Enchanted,duration:static
@@ -7829,6 +7903,7 @@ typing: cardtype:instant
 tags: kw:gift duration:eot draw protection_trick pump_single token_make target_count:one target_type:creature target_scope:you_control pump_amount:+2/+2 grant_kw:indestructible
 ai_tags: artifact_token
 face: mv:1 colors:w
+derived: token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",pump+pump,numatt=+2 numdef=+2 indestructible,ValidTgts=Creature.YouCtrl Defined=Targeted,duration:eot(forge_default)
 links[3]{from,rel,to}:
@@ -7847,7 +7922,7 @@ typing: supertype:legendary cardtype:creature type:lemur type:bat type:ally
 tags: kw:flying kw:vigilance counters_plus token_make trigger:leaves modal:1_of_3 token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain target_count:one target_type:creature target_scope:you_control counter:p1p1 scry_count:2 trigger_scope:self
 ai_tags: artifact_token selection tempo:+0.5
 face: mv:1 power:1 toughness:1 colors:w
-derived: evasion_pkg
+derived: evasion_pkg token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,leaves_self,"",charm,"","",""
 links[1]{from,rel,to}:
@@ -7884,7 +7959,7 @@ typing: cardtype:artifact type:food
 tags: lifegain token_make trigger:etb token_count:1 token_color:white token_pt:1/1 token_type:rabbit scry_count:1 cost:tap cost:sacrifice cost_sacrifice_target:self cost_mana:2 lifegain_amount:3 trigger_scope:self
 ai_tags: selection tempo:+0.5
 face: mv:2 colors:w
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[3]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token+scry,tokenscript=w_1_1_rabbit,"",""
   c2,sacrificed,"",token+scry,tokenscript=w_1_1_rabbit,"",""
@@ -7903,7 +7978,7 @@ typing: cardtype:artifact type:equipment
 tags: kw:equip num:2 sacrifice_outlet token_make trigger:etb token_count:1 token_color:green token_color:white token_pt:1/1 token_type:citizen duration:static pump_amount:+1/+1 affected_type:creature trigger_scope:self
 ai_tags: removal tempo:+0.5
 face: mv:2 colors:w
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token+attach+cleanup,tokenscript=gw_1_1_citizen,Defined=Remembered,""
   c2,static,"",static_continuous,abdestroy addpower=1 addtoughness=1,Affected=Creature AffectedDefined=Equipped,duration:static
@@ -7923,7 +7998,7 @@ typing: cardtype:creature type:human type:warrior type:ally
 tags: kw:flash token_make trigger:etb token_count:1 token_color:white token_pt:1/1 token_type:ally trigger_scope:self
 ai_tags: tempo:+0.5
 face: mv:2 power:1 toughness:1 colors:w
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=w_1_1_ally,"",""
 groups[3]{id,source,tags}:
@@ -7937,7 +8012,7 @@ typing: supertype:legendary cardtype:creature type:mutant type:ninja type:turtle
 tags: counters_plus token_make trigger:etb modal:1_of_3 counter_count:1 counter:p1p1 token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain scry_count:1 trigger_scope:other trigger_filter:you_control trigger_filter:creature
 ai_tags: artifact_token selection tempo:+0.5
 face: mv:2 power:2 toughness:1 colors:w
-derived: etb_other
+derived: etb_other token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_other,"",charm,"","",""
 links[1]{from,rel,to}:
@@ -7955,7 +8030,7 @@ typing: cardtype:enchantment type:aura
 tags: kw:enchant target_type:creature token_make restrict_kind:cant_attack_or_block affected_type:creature affected_filter:enchantedby cost:sacrifice cost_sacrifice_target:self cost_mana:5 remove:exile token_count:1 token_color:white token_pt:1/1 token_type:ally
 ai_tags: restrict ai_logic:curse
 face: mv:2 colors:w
-derived: removal_weight:1
+derived: removal_weight:1 token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_cantattack_cantblock,"",ValidCard=Creature.EnchantedBy,""
   c2,activated,5 Sac<1/CARDNAME/this Aura>,changezone+token,tokenscript=w_1_1_ally,Defined=Enchanted,""
@@ -7973,6 +8048,7 @@ typing: cardtype:sorcery
 tags: draw lifegain token_make lifegain_amount:4 token_count:2 token_color:white token_pt:1/1 token_type:human draw_count:1
 ai_tags: tempo:+1
 face: mv:2 colors:w
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",gainlife+token+draw,lifeamount=4 tokenscript=w_1_1_human,Defined=You,""
 links[1]{from,rel,to}:
@@ -7987,7 +8063,7 @@ card: Afterlife
 typing: cardtype:instant
 tags: token_make target_count:one target_type:creature remove:destroy token_count:1 token_color:white token_pt:1/1 token_kw:flying token_type:spirit cant_regenerate
 face: mv:3 colors:w
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy+token,tokenscript=w_1_1_spirit_flying,ValidTgts=Creature,""
 links[1]{from,rel,to}:
@@ -8002,7 +8078,7 @@ typing: cardtype:creature type:human type:citizen
 tags: token_make trigger:etb token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain trigger:gain_life token_color:white token_pt:1/1 token_type:cat trigger_scope:self
 ai_tags: artifact_token tempo:+0.5
 face: mv:3 power:3 toughness:2 colors:w
-derived: etb_self
+derived: etb_self token_kind:artifact token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_a_food_sac,"",""
   c2,gain_life,"",token,tokenscript=w_1_1_cat,"",""
@@ -8019,7 +8095,7 @@ card: Charge of the Mites
 typing: cardtype:instant
 tags: token_make modal:1_of_2 target_count:one target_type:creature target_type:planeswalker damage damage_amount:x x_is:count_creature_you_control token_count:2 token_color:colorless token_pt:1/1 token_cardtype:artifact token_type:phyrexian_mite_toxic_noblock scales:creature
 face: mv:3 colors:w
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:artifact token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",charm,"","",""
 links[1]{from,rel,to}:
@@ -8035,7 +8111,7 @@ typing: cardtype:kindred cardtype:instant type:shapeshifter
 tags: kw:changeling token_make target_count:one target_type:creature remove:exile token_count:1 token_color:colorless token_pt:1/1 token_type:shapeshifter_changeling
 ai_tags: ai_logic:pongify
 face: mv:3 colors:w
-derived: spot_removal removal_weight:1
+derived: spot_removal removal_weight:1 token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone+token,tokenscript=c_1_1_shapeshifter_changeling,ValidTgts=Creature,""
 links[1]{from,rel,to}:
@@ -8079,6 +8155,7 @@ typing: cardtype:enchantment type:saga
 tags: kw:read_ahead kw:chapter num:3 draw counters_plus token_make saga_chapter target_count:one target_type:opponent draw_count:2 token_count:1 token_color:white token_pt:1/1 token_kw:flying token_type:bird target_count:up_to_2 target_type:creature counter_count:1 counter:p1p1
 ai_tags: tempo:+0.5
 face: mv:3 colors:w
+derived: token_kind:creature
 clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   k1,provides,draw
@@ -8095,6 +8172,7 @@ typing: cardtype:instant
 tags: duration:eot clone token_make token_type:copy target_count:all target_type:creature target_scope:you_control grant_kw:indestructible
 ai_tags: pump_team
 face: mv:3 colors:w
+derived: token_kind:copy
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",copypermanent+pumpall,indestructible,"",duration:eot(forge_default)
 links[1]{from,rel,to}:
@@ -8109,7 +8187,7 @@ typing: supertype:legendary cardtype:creature type:halfling type:peasant
 tags: counters_plus token_make trigger:etb token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain target_count:one target_type:creature target_scope:you_control target_filter:other counter:p1p1 trigger_scope:self
 ai_tags: artifact_token tempo:+0.5
 face: mv:3 power:1 toughness:1 colors:w
-derived: etb_self
+derived: etb_self token_kind:artifact
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=c_a_food_sac,"",""
   c2,tokencreated,"",putcounter,countertype=P1P1,ValidTgts=Creature.YouCtrl+Other,""
@@ -8137,6 +8215,7 @@ card: Battle Screech
 typing: cardtype:sorcery
 tags: kw:flashback num:3 token_make token_count:2 token_color:white token_pt:1/1 token_kw:flying token_type:bird mech:graveyard_cast
 face: mv:4 colors:w
+derived: token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=w_1_1_bird_flying,"",""
 groups[2]{id,source,tags}:
@@ -8148,7 +8227,7 @@ card: Commander Sofia Daguerre
 typing: supertype:legendary cardtype:creature type:human type:pilot
 tags: kw:flash token_make trigger:etb target_count:up_to_1 target_type:permanent target_filter:legendary remove:destroy token_count:1 token_color:colorless token_cardtype:artifact token_type:junk_exileplay trigger_scope:self
 face: mv:4 power:1 toughness:3 colors:w
-derived: spot_removal removal_weight:1 etb_self
+derived: spot_removal removal_weight:1 etb_self token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",destroy+token,tokenscript=c_a_junk_sac_exileplay,ValidTgts=Permanent.Legendary,""
 links[1]{from,rel,to}:
@@ -8166,6 +8245,7 @@ typing: cardtype:sorcery
 tags: kw:cycling num:2 color:white draw token_make token_count:x token_color:white token_pt:4/4 token_kw:flying token_type:angel x_is:x_paid cost_mana:x token_pt:1/1 token_type:soldier optional
 ai_tags: tempo:x
 face: mv:4 colors:w
+derived: token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",token,tokenscript=w_4_4_angel_flying,"",""
   c2,cycled,"",token,tokenscript=w_1_1_soldier,"",""
@@ -8185,7 +8265,7 @@ typing: cardtype:enchantment
 tags: token_make trigger:etb target_count:one target_type:creature target_scope:opp_control remove:exile token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain trigger_scope:self
 ai_tags: artifact_token tempo:+0.5
 face: mv:4 colors:w
-derived: spot_removal removal_weight:1 etb_self
+derived: spot_removal removal_weight:1 etb_self token_kind:artifact
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone+token,tokenscript=c_a_food_sac,ValidTgts=Creature.OppCtrl,duration:until_leaves
 links[3]{from,rel,to}:
@@ -8216,7 +8296,7 @@ typing: supertype:legendary cardtype:creature type:human type:warrior
 tags: kw:choose_a_background token_make trigger:etb remove:exile token_count:x token_color:white token_pt:1/1 token_type:soldier x_is:remembered_amount trigger_scope:self
 ai_tags: tempo:x
 face: mv:5 power:4 toughness:4 colors:w
-derived: removal_weight:1 etb_self
+derived: removal_weight:1 etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone+token+cleanup,tokenscript=w_1_1_soldier,"",duration:until_leaves
 links[2]{from,rel,to}:
@@ -8234,7 +8314,7 @@ typing: supertype:legendary cardtype:creature type:human type:monk
 tags: kw:partner counters_plus token_make trigger:etb target_count:up_to_2 target_type:creature target_filter:other counter_count:1 counter:p1p1 trigger:dies trigger_zone:graveyard token_count:1 token_color:white token_pt:1/1 token_kw:flying token_type:spirit trigger_scope:self trigger_scope:any trigger_filter:you_control trigger_filter:nontoken trigger_filter:has_counter:p1p1 trigger_filter:creature
 ai_tags: tempo:+0.5
 face: mv:5 power:3 toughness:3 colors:w
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",putcounter,countertype=P1P1,ValidTgts=Creature.Other,""
   c2,dies_other,"",token,tokenscript=w_1_1_spirit_flying,"",""
@@ -8252,7 +8332,7 @@ card: Ornitharch
 typing: cardtype:creature type:archon
 tags: kw:flying kw:tribute num:2 counters_plus token_make trigger:etb
 face: mv:5 power:3 toughness:3 colors:w
-derived: evasion_pkg
+derived: evasion_pkg token_kind:creature
 clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   k2,provides,counters_plus
@@ -8280,7 +8360,7 @@ typing: cardtype:creature type:human type:soldier
 tags: token_make trigger:etb token_count:x token_color:white token_pt:1/1 token_type:human_soldier x_is:devotion_white trigger_scope:self
 ai_tags: tempo:x
 face: mv:5 power:1 toughness:2 colors:w
-derived: etb_self
+derived: etb_self token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",token,tokenscript=w_1_1_human_soldier,"",""
 links[1]{from,rel,to}:
@@ -8311,7 +8391,7 @@ card: Kirtar's Wrath
 typing: cardtype:sorcery
 tags: scales:graveyard token_make remove:destroy cant_regenerate
 face: mv:6 colors:w
-derived: removal_weight:1
+derived: removal_weight:1 token_kind:creature
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",branch,"","",""
 groups[2]{id,source,tags}:

@@ -1,6 +1,6 @@
 # Claude-only file in TOON. Written by tagcheck/guards.py; regenerated, never hand-merged. open_slot = tag gap (tagger), no_rule = rule gap (mtg2llm mine / HAND tables).
-# starters: 930 units, 594 rendered, 44 open_slot, 292 no_rule
-gaps[336|]{card|group|tags|reason}:
+# starters: 930 units, 595 rendered, 44 open_slot, 291 no_rule
+gaps[335|]{card|group|tags|reason}:
 Abdel Adrian, Gorion's Ward|c1|trigger:etb trigger_scope:self remove:exile token_count:x token_color:white token_pt:1/1 token_type:soldier x_is:remembered_amount|no_rule
 Abhorrent Overlord|c1|trigger:etb trigger_scope:self token_count:x token_color:black token_pt:1/1 token_kw:flying token_type:harpy x_is:devotion_black|no_rule
 Absolver Thrull|x|trigger:dies trigger:etb|no_rule
@@ -96,9 +96,8 @@ Food Coma|c1|trigger:etb trigger_scope:self target_count:one target_type:creatur
 Foray of Orcs|c1|target_count:one target_type:creature target_scope:opp_control damage damage_amount:x x_is:triggerremembered_cardpower|no_rule
 Foreboding Fruit|c1|target_count:one target_type:player draw_count:2 life_loss_amount:2 token_count:x token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain x_is:adamant_black_1_0 life_loss|no_rule
 Forgotten Cave|k1|kw:cycling color:red|no_rule
-Founding of Omashu|s1|saga_chapter:1 token_count:2 token_color:white token_pt:1/1 token_type:ally|no_rule
-Founding of Omashu|s2|saga_chapter:2 draw_count:1|no_rule
-Founding of Omashu|s3|saga_chapter:3 target_count:all target_type:creature target_scope:you_control pump_amount:+1/+0 duration:eot|no_rule
+Founding of Omashu|s1|saga_chapter token_count:2 token_color:white token_pt:1/1 token_type:ally|no_rule
+Founding of Omashu|s3|saga_chapter target_count:all target_type:creature target_scope:you_control pump_amount:+1/+0 duration:eot|no_rule
 Frontline Medic|c2|cost:sacrifice cost_sacrifice_target:self target_count:one target_type:card unless_cost unless_cost_amount:3|no_rule
 Fungal Rebirth|c1|target_count:one target_type:permanent target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand token_count:2 token_color:green token_pt:1/1 token_type:saproling|no_rule
 Garruk's Uprising|c3|trigger:etb trigger_filter:power_ge_4 trigger_scope:any trigger_filter:you_control trigger_filter:creature|no_rule
@@ -152,9 +151,9 @@ Leonin Bladetrap|c1|cost:sacrifice cost_sacrifice_target:self cost_mana:2 target
 Liliana's Reaver|c1|trigger:combat_damage discard_count:1 token_count:1 token_color:black token_pt:2/2 token_type:zombie|no_rule
 Lita, Little Orphan Amphibian|c1|trigger:etb trigger_scope:other trigger_filter:you_control trigger_filter:creature modal:1_of_3 counter_count:1 counter:p1p1 token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain scry_count:1|no_rule
 Love Song of Night and Day|k1|kw:read_ahead|no_rule
-Love Song of Night and Day|s1|saga_chapter:1 target_count:one target_type:opponent draw_count:2|no_rule
-Love Song of Night and Day|s2|saga_chapter:2 token_count:1 token_color:white token_pt:1/1 token_kw:flying token_type:bird|no_rule
-Love Song of Night and Day|s3|saga_chapter:3 target_count:up_to_2 target_type:creature counter_count:1 counter:p1p1|no_rule
+Love Song of Night and Day|s1|saga_chapter target_count:one target_type:opponent draw_count:2|no_rule
+Love Song of Night and Day|s2|saga_chapter token_count:1 token_color:white token_pt:1/1 token_kw:flying token_type:bird|no_rule
+Love Song of Night and Day|s3|saga_chapter target_count:up_to_2 target_type:creature counter_count:1 counter:p1p1|no_rule
 Luxurious Locomotive|c1|trigger:attacks token_count:x token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source x_is:crewsize|no_rule
 Malakir Blood-Priest|c1|trigger:etb target_scope:each_opponent trigger_scope:self life_loss_amount:x x_is:party_size lifegain_amount:x x_is:party_size life_loss|no_rule
 Mask of Memory|c1|discard_count:1|no_rule
@@ -259,8 +258,8 @@ Sticky Fingers|c1|grant_kw:menace duration:static affected_type:creature menace|
 Sunset Revelry|c1|lifegain_amount:4 token_count:2 token_color:white token_pt:1/1 token_type:human draw_count:1|no_rule
 Syphon Flesh|c1|effect:sacrifice sacrifice_outlet sacrifice_type:creature token_count:x token_color:black token_pt:2/2 token_type:zombie x_is:remembered_amount|no_rule
 Territorial Allosaurus|c1|trigger:etb trigger_scope:self target_count:one target_type:creature target_filter:other fight|no_rule
-The Binding of the Titans|s2|saga_chapter:2 target_count:up_to_2 target_type:card target_zone:graveyard exile_from:graveyard lifegain_amount:x x_is:remembered_count_creature|no_rule
-The Binding of the Titans|s3|saga_chapter:3 target_count:one target_type:creature target_scope:you_control target_type:land target_zone:graveyard return from_zone:graveyard to_zone:hand|no_rule
+The Binding of the Titans|s2|saga_chapter target_count:up_to_2 target_type:card target_zone:graveyard exile_from:graveyard lifegain_amount:x x_is:remembered_count_creature|no_rule
+The Binding of the Titans|s3|saga_chapter target_count:one target_type:creature target_scope:you_control target_type:land target_zone:graveyard return from_zone:graveyard to_zone:hand|no_rule
 Thraben Inspector|c1|trigger:etb trigger_scope:self investigate token_make|no_rule
 Timeless Witness|c1|trigger:etb optional trigger_scope:self target_count:one target_type:card target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand|no_rule
 Timeless Witness|k1|kw:eternalize num:5 color:green|no_rule

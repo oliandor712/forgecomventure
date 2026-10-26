@@ -78,6 +78,14 @@ def derived(tags, groups, base=()):
     if tagset & EVASION_KW or tagset & EVASION_GRANT: d.append("evasion_pkg")
     if any("trigger:etb" in g and "trigger_scope:self" in g for g in gl): d.append("etb_self")
     if any("trigger:etb" in g and (g & {"trigger_scope:other", "trigger_scope:any"}) for g in gl): d.append("etb_other")
+    # token_make is the umbrella for every token; token_kind says which sort (user 2026-10-26: creature, artifact or copy)
+    if "token_make" in tagset:
+        if "token_type:copy" in tagset: d.append("token_kind:copy")
+        if tagset & {"token_cardtype:artifact", "artifact_token"} or any(t.startswith("token_ability:") for t in tagset): d.append("token_kind:artifact")
+        if any(t.startswith("token_pt:") for t in tagset): d.append("token_kind:creature")     # a creature token has power/toughness
+        if not any(x.startswith("token_kind:") for x in d): d.append("token_kind:artifact" if "investigate" in tagset else "token_kind:creature")     # no power/toughness written (X-sized or varying tokens)
+    if any({"target_type:instant", "target_type:sorcery"} <= g for g in gl): d.append("target_type:instant_or_sorcery")     # both stay as tags (a card may name one); this marks the pair
+    d = list(dict.fromkeys(d))
     tok = _tokenonly(tags, base)
     out = []
     for g in groups.values():

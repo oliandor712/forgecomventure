@@ -14,6 +14,7 @@ Sources: deck-builder DB, balance lab BL, AI lab AL, reverse check RC, main sess
 - `evasion` (flying, menace, shadow, fear, intimidate, `cant_be_blocked`, `grant_kw` of those); `evasion_pkg` and `spot_removal` roll-ups.
 - `removal_method`: fight 0.5, shrink by counter_count vs toughness; `removal` stays as an alias, never summed with it.
 - `etb_self`, `etb_other` (not a merge: 90 ETB cards vs 92 self-scope, overlap 80); `mana_out` (color:amount).
+- `token_kind:creature|artifact|copy` (user 2026-10-26): `token_make` is the umbrella for every token, `token_kind` says which sort sits under it (creature = has power/toughness, artifact = Treasure/Food/Clue/Blood and other artifact tokens, copy = copies); `artifact_token` (AI tag) is the same as `token_kind:artifact`. `target_type:instant_or_sorcery` marks a group that names both types; the two single tags stay.
 
 **E. AI tags** (hidden from the reader): `ai_logic` in original case with `@ability` id; `attach_ai_logic:<name>` from `SVar:AttachAILogic`; `ai_timing:` (opp_eot, eot_conditional, main1, main2, before_combat, any_phase) and `ai_target:` (curse, pump, fight, powerdmg, gaincontrol), derived from forge-ai's own logic names; `ai_flag:`, `ai_svar:`, `ai_class:`, `ai_logic_kind`. Check `ai_logic` against the script by regex (deterministic); blind pass only for the derived tags, with per-tag precision; not a blocker.
 

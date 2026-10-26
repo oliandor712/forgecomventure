@@ -469,7 +469,7 @@
    ]
   ]
  },
- "duration:eot exile_from:graveyard impulse_draw impulse_draw_count:N target_count:one target_type:instant_or_sorcery target_zone:graveyard trigger:etb trigger_scope:self": {
+ "duration:eot exile_from:graveyard impulse_draw impulse_draw_count:N target_count:one target_type:instant target_type:sorcery target_zone:graveyard trigger:etb trigger_scope:self": {
   "n": 25,
   "top": 0.32,
   "canon": "When this creature enters, exile target instant or sorcery card from a graveyard. Until end of turn, you may cast that card.",
@@ -10177,7 +10177,7 @@
    ]
   ]
  },
- "target_count:all target_filter:nonelemental target_scope:you_control target_type:instant_or_sorcery trigger:etb trigger_scope:self": {
+ "target_count:all target_filter:nonelemental target_scope:you_control target_type:instant target_type:sorcery trigger:etb trigger_scope:self": {
   "n": 3,
   "top": 0.333,
   "canon": "When this enchantment enters, {effect} for each nonelemental instant and sorcery you control.",
@@ -10440,7 +10440,7 @@
   "canon": "This creature can't be blocked by artifact creatures.",
   "variants": []
  },
- "controller:you cost_mana:Nbr from_zone:graveyard grant_ability:other put_onto_battlefield target_count:one target_scope:you_control target_type:instant_or_sorcery target_zone:graveyard": {
+ "controller:you cost_mana:Nbr from_zone:graveyard grant_ability:other put_onto_battlefield target_count:one target_scope:you_control target_type:instant target_type:sorcery target_zone:graveyard": {
   "n": 2,
   "top": 0.5,
   "canon": "{N}{B}{R}: Put target instant or sorcery card from your graveyard onto the battlefield under your control, {grant ability}.",
@@ -10870,7 +10870,7 @@
   "canon": "Whenever you cast an instant or sorcery spell, {effect}.",
   "variants": []
  },
- "cost:tap cost_mana:x counter:midway counter_count:N exile_from:graveyard target_count:one target_scope:you_control target_type:instant_or_sorcery target_zone:graveyard": {
+ "cost:tap cost_mana:x counter:midway counter_count:N exile_from:graveyard target_count:one target_scope:you_control target_type:instant target_type:sorcery target_zone:graveyard": {
   "n": 3,
   "top": 0.333,
   "canon": "{X}, {Tap}: Exile target instant or sorcery card from your graveyard. Put a midway counter on it.",
@@ -10891,7 +10891,7 @@
   "canon": "Whenever you cast a spell, put a +N/+N counter on each creature you control.",
   "variants": []
  },
- "cost:sacrifice cost_mana:N cost_sacrifice_target:creature duration:eot exile_from:graveyard impulse_draw impulse_draw_count:N target_count:one target_type:instant_or_sorcery target_zone:graveyard": {
+ "cost:sacrifice cost_mana:N cost_sacrifice_target:creature duration:eot exile_from:graveyard impulse_draw impulse_draw_count:N target_count:one target_type:instant target_type:sorcery target_zone:graveyard": {
   "n": 3,
   "top": 0.667,
   "canon": "{N}, Sacrifice a creature: Exile target instant or sorcery card from your graveyard. You may play it this turn.",
@@ -11322,7 +11322,7 @@
   "canon": "Level 3 {cost}: {effect}.",
   "variants": []
  },
- "cast_free optional target_count:up_to_N target_scope:you_control target_type:instant_or_sorcery": {
+ "cast_free optional target_count:up_to_N target_scope:you_control target_type:instant target_type:sorcery": {
   "n": 1,
   "top": 1.0,
   "canon": "You may cast up to one target instant you control and up to one target sorcery you control without paying their mana costs.",
@@ -11789,7 +11789,7 @@
    ]
   ]
  },
- "activation_restriction cost_mana:Nu duration:permanent exile_from:hand from_zone:exile impulse_draw impulse_draw_count:x return target_count:all target_count:one target_type:instant_or_sorcery target_type:opponent to_zone:hand": {
+ "activation_restriction cost_mana:Nu duration:permanent exile_from:hand from_zone:exile impulse_draw impulse_draw_count:x return target_count:all target_count:one target_type:instant target_type:opponent target_type:sorcery to_zone:hand": {
   "n": 1,
   "top": 1.0,
   "canon": "{N}{U}: Target opponent exiles all instant and sorcery cards from their hand {effect}. Exile X cards; you may play them. Activate only {restriction}. Return {cards} from exile to your hand.",
@@ -12478,7 +12478,7 @@
    ]
   ]
  },
- "cast_free counter:pNpN counter_count:x exile_from:graveyard optional target_count:x target_scope:you_control target_type:instant_or_sorcery target_zone:graveyard trigger:etb trigger_scope:self x_is:triggerrememberamount": {
+ "cast_free counter:pNpN counter_count:x exile_from:graveyard optional target_count:x target_scope:you_control target_type:instant target_type:sorcery target_zone:graveyard trigger:etb trigger_scope:self x_is:triggerrememberamount": {
   "n": 3,
   "top": 0.333,
   "canon": "When this creature enters, you may put X +N/+N counters on it, where X is the number of instant and sorcery cards exiled from your graveyard this way; you may cast them without paying their mana costs.",
@@ -13189,7 +13189,7 @@
   "canon": "At the beginning of your upkeep, {target} gains {ability}.",
   "variants": []
  },
- "cost:tap exile_from:graveyard target_count:one target_type:instant_or_sorcery target_zone:graveyard": {
+ "cost:tap exile_from:graveyard target_count:one target_type:instant target_type:sorcery target_zone:graveyard": {
   "n": 3,
   "top": 1.0,
   "canon": "{T}: Exile target instant or sorcery card from a graveyard.",
@@ -13367,7 +13367,7 @@
    ]
   ]
  },
- "exile_from:graveyard optional target_count:up_to_N target_scope:you_control target_type:instant_or_sorcery target_zone:graveyard trigger:attacks": {
+ "exile_from:graveyard optional target_count:up_to_N target_scope:you_control target_type:instant target_type:sorcery target_zone:graveyard trigger:attacks": {
   "n": 3,
   "top": 1.0,
   "canon": "Whenever this creature attacks, you may exile up to one target instant or sorcery card from your graveyard.",
@@ -14007,7 +14007,7 @@
    ]
   ]
  },
- "duration:eot exile_from:graveyard pump_amount:+x/+N target_count:all target_count:one target_scope:you_control target_type:creature target_type:instant_or_sorcery target_zone:graveyard x_is:remembered_mana_value": {
+ "duration:eot exile_from:graveyard pump_amount:+x/+N target_count:all target_count:one target_scope:you_control target_type:creature target_type:instant target_type:sorcery target_zone:graveyard x_is:remembered_mana_value": {
   "n": 3,
   "top": 1.0,
   "canon": "Exile target instant or sorcery card from your graveyard. Creatures you control get +X/+0 until end of turn, where X is its mana value.",
@@ -14548,7 +14548,7 @@
    ]
   ]
  },
- "exile_from:graveyard grant_ability:damagedone_trigger target_count:up_to_N target_scope:you_control target_type:instant_or_sorcery target_zone:graveyard trigger:etb trigger_filter:creature trigger_filter:you_control trigger_scope:self": {
+ "exile_from:graveyard grant_ability:damagedone_trigger target_count:up_to_N target_scope:you_control target_type:instant target_type:sorcery target_zone:graveyard trigger:etb trigger_filter:creature trigger_filter:you_control trigger_scope:self": {
   "n": 2,
   "top": 0.5,
   "canon": "When this creature enters, exile up to one target instant or sorcery card from your graveyard. {effect}: grant_ability damagedone_trigger.",
@@ -15332,7 +15332,7 @@
   "canon": "II - {effect}",
   "variants": []
  },
- "exile_from:graveyard saga_chapter target_count:one target_scope:you_control target_type:instant_or_sorcery target_type:planeswalker target_zone:graveyard": {
+ "exile_from:graveyard saga_chapter target_count:one target_scope:you_control target_type:instant target_type:planeswalker target_type:sorcery target_zone:graveyard": {
   "n": 1,
   "top": 1.0,
   "canon": "Draw N card. Mill {N}.",
@@ -15475,7 +15475,7 @@
   "canon": "More Than Meets the Eye {N}{W}{U}{B}",
   "variants": []
  },
- "cast_free exile_from:graveyard optional target_count:one target_type:instant_or_sorcery target_zone:graveyard transform trigger_filter:one_or_more": {
+ "cast_free exile_from:graveyard optional target_count:one target_type:instant target_type:sorcery target_zone:graveyard transform trigger_filter:one_or_more": {
   "n": 6,
   "top": 0.333,
   "canon": "Whenever {trigger} one or more, you may exile target instant or sorcery card from your graveyard. You may cast it without paying its mana cost. Transform this creature.",
@@ -15855,7 +15855,7 @@
    ]
   ]
  },
- "cast_free from_zone:exile look_top:x optional return take:all target_count:all target_filter:isremembered target_scope:you_control target_type:card target_type:instant_or_sorcery to_zone:exile to_zone:hand to_zone:library": {
+ "cast_free from_zone:exile look_top:x optional return take:all target_count:all target_filter:isremembered target_scope:you_control target_type:card target_type:instant target_type:sorcery to_zone:exile to_zone:hand to_zone:library": {
   "n": 2,
   "top": 0.5,
   "canon": "Look at the top X cards of your library and exile them. You may cast N card without paying its mana cost. Return the instant and sorcery cards to your hand. Put the rest into your library.",
@@ -16978,7 +16978,7 @@
   "canon": "Whenever you cast an instant or sorcery spell, this creature gets +X/+0 until end of turn, where X is that spell's mana value.",
   "variants": []
  },
- "cast_free exile_from:graveyard optional target_count:up_to_N target_scope:you_control target_type:instant_or_sorcery target_zone:graveyard trigger:attacks": {
+ "cast_free exile_from:graveyard optional target_count:up_to_N target_scope:you_control target_type:instant target_type:sorcery target_zone:graveyard trigger:attacks": {
   "n": 3,
   "top": 1.0,
   "canon": "Whenever this creature attacks, you may exile up to one target instant or sorcery card from your graveyard. If you do, you may cast it without paying its mana cost.",
@@ -17785,7 +17785,7 @@
   "canon": "{N}{B}{B}, {T}: Return target creature card from your graveyard to the battlefield under your control. It gains haste.",
   "variants": []
  },
- "target_count:one target_type:instant_or_sorcery": {
+ "target_count:one target_type:instant target_type:sorcery": {
   "n": 3,
   "top": 0.667,
   "canon": "Target instant or sorcery {effect}.",
@@ -18317,7 +18317,7 @@
    ]
   ]
  },
- "cost:tap target_count:one target_scope:you_control target_type:instant_or_sorcery": {
+ "cost:tap target_count:one target_scope:you_control target_type:instant target_type:sorcery": {
   "n": 3,
   "top": 0.333,
   "canon": "{T}: {effect} target instant or sorcery you control.",
@@ -18380,7 +18380,7 @@
    ]
   ]
  },
- "delayed:end_step duration:end_step effect:sacrifice modal:N_of_N target_count:one target_scope:opp_control target_type:instant_or_sorcery target_type:permanent token_make token_type:copy trigger:etb trigger_scope:self": {
+ "delayed:end_step duration:end_step effect:sacrifice modal:N_of_N target_count:one target_scope:opp_control target_type:instant target_type:permanent target_type:sorcery token_make token_type:copy trigger:etb trigger_scope:self": {
   "n": 2,
   "top": 0.5,
   "canon": "When this creature enters, choose one: {effect} target instant or sorcery an opponent controls; or create a token that's a copy of target permanent an opponent controls, sacrifice it at the beginning of the next end step.",
@@ -20145,7 +20145,7 @@
    ]
   ]
  },
- "cost:tap cost_mana:N target_count:one target_scope:you_control target_type:instant_or_sorcery": {
+ "cost:tap cost_mana:N target_count:one target_scope:you_control target_type:instant target_type:sorcery": {
   "n": 3,
   "top": 0.667,
   "canon": "{N}, {T}: Copy target instant or sorcery spell you control.",
@@ -21157,7 +21157,7 @@
   "canon": "{Trigger}: Draw N card, then discard N card. Put a plan counter on this enchantment.",
   "variants": []
  },
- "effect:sacrifice from_zone:graveyard return target_count:up_to_N target_scope:you_control target_type:instant_or_sorcery target_zone:graveyard to_zone:hand": {
+ "effect:sacrifice from_zone:graveyard return target_count:up_to_N target_scope:you_control target_type:instant target_type:sorcery target_zone:graveyard to_zone:hand": {
   "n": 1,
   "top": 1.0,
   "canon": "{Trigger}: Sacrifice this enchantment. Return up to two instant and/or sorcery cards from your graveyard to your hand.",
@@ -22255,7 +22255,7 @@
   "canon": "Whenever you cast your second noncreature spell each turn, {effect}.",
   "variants": []
  },
- "cost_mana:Nu duration:eot flashback grant_kw:flashback pump_single target_count:one target_scope:you_control target_type:instant_or_sorcery": {
+ "cost_mana:Nu duration:eot flashback grant_kw:flashback pump_single target_count:one target_scope:you_control target_type:instant target_type:sorcery": {
   "n": 3,
   "top": 0.667,
   "canon": "{N}{U}: Target instant or sorcery card you control gains flashback until end of turn.",
@@ -22368,7 +22368,7 @@
   "canon": "{N}: Target Insect gets +N/+N and gains deathtouch until end of turn.",
   "variants": []
  },
- "cast_free exile_from:graveyard optional target_count:up_to_N target_filter:nonland target_scope:you_control target_type:artifact target_type:battle target_type:creature target_type:enchantment target_type:instant_or_sorcery target_type:kindred target_type:planeswalker trigger:etb trigger_scope:self": {
+ "cast_free exile_from:graveyard optional target_count:up_to_N target_filter:nonland target_scope:you_control target_type:artifact target_type:battle target_type:creature target_type:enchantment target_type:instant target_type:kindred target_type:planeswalker target_type:sorcery trigger:etb trigger_scope:self": {
   "n": 3,
   "top": 0.333,
   "canon": "When this creature enters, you may exile up to one target artifact, battle, creature, enchantment, instant, kindred, planeswalker or sorcery from your graveyard; you may cast it without paying its mana cost.",
@@ -25284,7 +25284,7 @@
    ]
   ]
  },
- "cost_mana:Nr target_count:one target_scope:you_control target_type:instant_or_sorcery": {
+ "cost_mana:Nr target_count:one target_scope:you_control target_type:sorcery": {
   "n": 3,
   "top": 0.667,
   "canon": "{N}{R}: {effect} target sorcery you control.",
@@ -26120,7 +26120,7 @@
   "canon": "Instant and sorcery spells you cast from your graveyard cost {N} less to cast.",
   "variants": []
  },
- "optional target_count:one target_scope:you_control target_type:instant_or_sorcery": {
+ "optional target_count:one target_scope:you_control target_type:instant target_type:sorcery": {
   "n": 1,
   "top": 1.0,
   "canon": "You may {effect} target instant or sorcery card you control.",
@@ -26307,7 +26307,7 @@
    ]
   ]
  },
- "duration:next_turn_end exile_from:graveyard impulse_draw impulse_draw_count:N target_count:one target_scope:you_control target_type:equipment target_type:instant_or_sorcery target_zone:graveyard trigger:etb trigger_scope:self": {
+ "duration:next_turn_end exile_from:graveyard impulse_draw impulse_draw_count:N target_count:one target_scope:you_control target_type:equipment target_type:instant target_type:sorcery target_zone:graveyard trigger:etb trigger_scope:self": {
   "n": 3,
   "top": 0.333,
   "canon": "When this creature enters, exile target Equipment you control or instant or sorcery card from a graveyard. You may play it until the end of your next turn.",
@@ -27028,7 +27028,7 @@
   "canon": "Sacrifice a Swamp: Return {card} from your graveyard to your hand.",
   "variants": []
  },
- "counter:pNpN counter_count:N effect:sacrifice modal:N_of_N sacrifice_outlet sacrifice_type:enchantment target_count:one target_scope:opp_control target_scope:you_control target_type:creature target_type:instant_or_sorcery target_type:player": {
+ "counter:pNpN counter_count:N effect:sacrifice modal:N_of_N sacrifice_outlet sacrifice_type:enchantment target_count:one target_scope:opp_control target_scope:you_control target_type:creature target_type:instant target_type:player target_type:sorcery": {
   "n": 1,
   "top": 1.0,
   "canon": "Choose two - Counter target instant or sorcery spell; Target player sacrifices an enchantment; Put a +N/+N counter on target creature; {effect} target creature you control; {effect} target creature an opponent controls.",
@@ -27703,7 +27703,7 @@
   "canon": "Whenever a creature dies, draw X cards, where X is the number of counters on it.",
   "variants": []
  },
- "cast_free optional target_count:one target_scope:you_control target_type:artifact target_type:instant_or_sorcery trigger:etb trigger_scope:self": {
+ "cast_free optional target_count:one target_scope:you_control target_type:artifact target_type:instant target_type:sorcery trigger:etb trigger_scope:self": {
   "n": 1,
   "top": 1.0,
   "canon": "When this creature enters, you may cast target instant, sorcery or artifact card you own without paying its mana cost.",
