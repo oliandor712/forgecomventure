@@ -1,4 +1,4 @@
-# Deck-building section for the glance readers (tag and Oracle). Claude-only TOON. Source: user rules H75-H77 in human_logic.toon.
+# Deck-building section for the glance readers (tag and Oracle). Claude-only TOON. Source: user rules H17 (incl. merged H75), H76-H77 in human_logic.toon.
 # glance.py copies `rules` into every batch file as `deck_rules`; starter_build.py review-export adds `deck_context` (this deck's commander, archetypes, token it makes).
 # Readers only ever read their one batch file, so this text reaches them through the batch, never by path.
 rules[8|]{id|topic|rule}:

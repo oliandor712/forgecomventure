@@ -27,20 +27,21 @@ import ability_tags as at  # noqa: E402
 import archetype_rules as ar  # noqa: E402
 sys.path.insert(0, os.path.join(os.path.dirname(HERE), "strategies"))
 import strategy_fit as sf  # noqa: E402
+import synergy as SY  # noqa: E402     # general synergy rule (H17): support cards + token payoffs
 dt, data, pool = B.dt, B.data, B.pool
 STAGE = os.path.join(B.RES, 'adventure', 'Concordia', 'staging_starters')
 TIER = 2
 TARGET = 27.0           # H19: deck power (EDHREC card-power scale, tier_table.json tier 2 target)
 SUPPORT_W, FIT_W, FIT_CAP = 0.5, 3.0, 4   # user 2026-10-26: commander support counts less, overall archetype fit just as much; 2026-10-26 again: less still
 SUPPORT_CAP = 14       # user 2026-10-26: do not copy the commander's tags across the whole deck: only the first 14 supporters get the bonus
-MAKER_CAP = 4          # cards (besides the commander) that make the commander's non-creature token (Treasure ...)
-PAYOFF_W, PAYOFF_MIN = 2.5, 8   # user 2026-10-26: a commander that makes Treasure needs payoffs and mana sinks; at least PAYOFF_MIN of them
+MAKER_CAP = SY.MAKER_CAP          # cards (besides the commander) that make the commander's non-creature token (Treasure ...)
+PAYOFF_W, PAYOFF_MIN = 2.5, SY.PAYOFF_MIN   # user 2026-10-26: a commander that makes Treasure needs payoffs and mana sinks; at least PAYOFF_MIN of them
 THEME_MIN = 5         # user 2026-10-26: a tribal/theme card is fine when >= THEME_MIN other cards (members or makers) of that theme are already in the deck
 CORE_N = 12            # user 2026-10-26: highest-power on-plan cards are picked first, themes are then judged against them
 THEME_PEN = 3.0       # user 2026-10-26: prefer generic cards: every theme/tribe word a card names that the deck does not run costs this much, even a single mention
 CL_BASE, CL_PER = 4, 2    # colourless is the sixth colour: non-ramp colourless spells allowed = CL_BASE + CL_PER * colourless sources (rocks + colourless-producing lands in the deck)
 CL_LANDS = 4              # colourless-producing nonbasic lands assumed when sizing (user 2026-10-26)
-NONCREATURE_TOK = {'treasure', 'food', 'clue', 'blood', 'gold', 'junk', 'map', 'powerstone', 'shard'}
+NONCREATURE_TOK = SY.NONCREATURE_TOK
 THEME_WORDS = ['Food', 'Clue', 'Blood', 'Gold', 'Junk', 'Powerstone', 'energy', 'poison', 'proliferate', 'Dungeon', 'initiative', 'monarch', 'Saproling', 'Servo', 'Thopter']
 RARITY = {'C': 99, 'U': 99, 'R': 99, 'M': 99}   # no rarity cap (user 2026-10-26; was commons and uncommons only)
 UTILITY_ROLES = {'removal', 'draw', 'ramp', 'wipe', 'fixing', 'counter', 'protection'}
@@ -103,18 +104,9 @@ def heavy_theme(p, allowed):
 def maker_types(p): return {t.split(':', 1)[1] for t in p['ftags'] if t.startswith('token_type:')}
 
 
-_ACT_SKIP = ('Equip', 'Cycling', 'Crew', 'Ninjutsu', 'Channel', 'Reconfigure', 'Unearth', 'Flashback', 'Escape', 'Embalm', 'Eternalize', 'Kicker', 'Landcycling')
-
-
-def payoff_kind(p, kind):
-    """'sink' (mana dump: X spell or a 3+ mana activation), 'pay' (uses the tokens), or '' - for a commander that makes `kind` tokens (data: strategies.json treasure/big_mana/artifacts roles)."""
-    if kind != 'treasure': return ''
-    t = _body(p)
-    if re.search(r'(?i)sacrifice[^.\n]*treasure|treasures? you control|mana from a treasure|whenever you sacrifice an? (?:artifact|treasure)|sacrifice (?:an?|another|two|three) artifacts?|treasure.{0,40}spent', t): return 'pay'
-    if 'x_is:x_paid' in p['ftags'] or re.search(r'\{X\}', t) and 'Land' not in p['types']: return 'sink'
-    for l in t.split('\n'):
-        if not l.startswith(_ACT_SKIP) and re.match(r'[^:"]*\{[3-9]\}[^:"]*:', l) and 'Land' not in p['types']: return 'sink'
-    return ''
+def payoff_kind(p, pl):
+    """'pay' / 'sink' / '': does the card use the commander's tokens (synergy.py: any token kind; data from strategies.json tokens, sacrifice, aristocrats roles)."""
+    return SY.payoff_kind(p, pl, _body(p))
 
 
 def archetypes_for(p, colour):
@@ -163,7 +155,7 @@ def draft(name, commander, strategy, ban, reject):
     for c in ident: traits['landtype:' + B.BASIC_TYPE[c]] = (spec['lands'] - 6) // max(1, len(ident))
     traits['lands'] = traits['Land'] = spec['lands']
     why = {}
-    kinds = maker_types(cmd) & NONCREATURE_TOK          # non-creature tokens the commander makes: the deck needs uses for them, not a pile of makers
+    tplan = SY.plan(cmd['ftags']); kinds = tplan.get('kinds', set())          # non-creature tokens the commander makes: the deck needs uses for them, not a pile of makers
     cmd_themes, _ = theme_mentions(cmd)
     allowed = set(cmd_themes) | {w for w in cmd['types'].split() if w in subtypes()}
     tgt = [TARGET]      # per-card power aim; lowered after the core so the deck average still lands on TARGET
@@ -178,7 +170,7 @@ def draft(name, commander, strategy, ban, reject):
         sup = supports_cmd(prof, p)
         if sup and nsup[0] < SUPPORT_CAP: s += SUPPORT_W
         s -= THEME_PEN * len(off_themes(p))
-        pk = payoff_kind(p, 'treasure') if 'treasure' in kinds else ''
+        pk = payoff_kind(p, tplan) if tplan else ''
         if pk: s += PAYOFF_W
         why.setdefault(p['name'], {})['payoff'] = pk
         fit = min(FIT_CAP, sf.fit(p['ftags'], strategy)) if strategy else 0
@@ -188,7 +180,7 @@ def draft(name, commander, strategy, ban, reject):
         why[p['name']].update(power=pw, supports=bool(sup), fit=fit)
         return s
     cands = [p for k, p in pool.items() if k != cmd['name'].lower() and k not in banned and p['id'] <= ident and 'Land' not in p['types'].split()
-             and not p['mld'] and not p['gc'] and B.mech_ok(p, TIER) and p['minr'] in 'CU' and p['pop'] >= 3
+             and not p['mld'] and not p['gc'] and B.mech_ok(p, TIER) and p['pop'] >= 3
              and not ('Legendary' in p['types'] and 'Creature' not in p['types'])
              ]
     members = collections.Counter()      # theme word -> cards in the deck (commander included) that belong to it or make it
@@ -208,7 +200,7 @@ def draft(name, commander, strategy, ban, reject):
         hv = _hv.get(p['name'])
         if hv is None: hv = _hv[p['name']] = heavy_theme(p, allowed)
         return all(members[w] >= THEME_MIN for w in hv)
-    chosen = []; rcount = collections.Counter(); roles = collections.Counter(); curve = collections.Counter(); nc = [0]; nwatch = [0]
+    chosen = []; rcount = collections.Counter(); roles = collections.Counter(); curve = collections.Counter(); nc = [0]; nwatch = [0]; npow = [0, 0]
     nonland = 99 - spec['lands']
 
     def can_add(p):
@@ -216,6 +208,9 @@ def draft(name, commander, strategy, ban, reject):
             if p['tags'] & tg and roles[role] + 1 > spec['cap'][role]: return None
         if curve[B.bucket(p['cmc'])] >= spec['curve'][B.bucket(p['cmc'])]: return None
         if p.get('cat') == 'watch' and nwatch[0] >= B.WATCH_CAP[TIER]: return None
+        pwr = p['power'].get(p['minr'], 0)   # same premium caps as the general tier build
+        if pwr >= 50 and npow[0] >= spec.get('p50', 99): return None
+        if pwr >= 70 and npow[1] >= spec.get('p70', 99): return None
         if not theme_ok(p): return None
         if kinds & maker_types(p) and nmaker[0] >= MAKER_CAP: return None
         if is_colorless(p) and ncl[0] >= CL_BASE + CL_PER * cl_sources(): return None
@@ -227,6 +222,8 @@ def draft(name, commander, strategy, ban, reject):
             if p['tags'] & tg: roles[role] += 1
         if 'Creature' in p['types']: nc[0] += 1
         if p.get('cat') == 'watch': nwatch[0] += 1
+        pwr = p['power'].get(p['minr'], 0)
+        npow[0] += pwr >= 50; npow[1] += pwr >= 70
         if kinds & maker_types(p): nmaker[0] += 1
         members.update(members_of(p))
         if is_colorless(p): ncl[0] += 1
@@ -263,8 +260,8 @@ def draft(name, commander, strategy, ban, reject):
             b = best(lambda p: p['tags'] & B.ROLE[role])
             if not b: break
             add(b[1], b[2])
-    while 'treasure' in kinds and npay[0] < PAYOFF_MIN and len(chosen) < nonland:
-        b = best(lambda p: bool(payoff_kind(p, 'treasure')))
+    while tplan and npay[0] < PAYOFF_MIN and len(chosen) < nonland:
+        b = best(lambda p: bool(payoff_kind(p, tplan)))
         if not b: break
         add(b[1], b[2])
     for alts, n in spec['types'].items():

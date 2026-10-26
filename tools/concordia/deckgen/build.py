@@ -21,6 +21,7 @@ import policy_tags as pt  # the record's tags under POLICY's names
 import themes as th  # tag-based deck themes (umbrella tags, heavy tribes)
 import tag_status as ts  # cards whose tags the check holds back
 import tag_version  # stamp of the tagger files, written into build output
+import synergy as sy
 import commander_support as cp# what supports a commander's own ability (human logic H31-H36)
 sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'strategies'))
 import strategy_fit as sf  # strategies.json play-line roles + niche:* weighing (tiers 2-5; tier 1 keeps its approved model)
@@ -136,6 +137,9 @@ def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     check('H16', drain >= 2, 'drain or burn cards %d (2 needed)' % drain, dmg)
     works = commander_works(cmd, chosen)  # H17: cards that support the commander's own ability (threshold 5)
     check('H17', works >= 5, 'cards that support the commander ability %d (5 needed)' % works, bool(cp.profile(cmd['oracle'], cmd['types'])))
+    tp = sy.plan(cmd.get('ftags') or [])      # H17 (merged with H75): a commander that makes tokens of any kind also needs payoffs for them
+    npay = sy.count_payoffs(tp, [p for p, _ in chosen], lambda p: re.sub(r'\([^)]*\)', '', at.card_text(p['name']))) if tp else 0
+    check('H17', npay >= sy.PAYOFF_MIN, 'token payoffs for the commander tokens %d (%d needed)' % (npay, sy.PAYOFF_MIN), bool(tp))
     return out
 BASIC = {'W': 'Plains', 'U': 'Island', 'B': 'Swamp', 'R': 'Mountain', 'G': 'Forest'}
 SPEC = {

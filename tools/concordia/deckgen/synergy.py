@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+"""General synergy rule (H17, merged with H75 on 2026-10-26): the deck must use the commander's own ability.
+  1. at least SUPPORT_MIN cards work with the commander's ability (commander_support.py, build.py commander_works);
+  2. a commander that makes tokens of any kind needs at least PAYOFF_MIN payoff cards for them (sacrifice outlets and death triggers, go wide: anthems, lords, overrun, doublers,
+     tribal cards naming the token type; for Treasure, Food, Clue, Blood and the like: cards that spend, sacrifice or count them, and mana sinks) and, for those non-creature tokens, at most MAKER_CAP other makers.
+Roles come from strategies/strategies.json (tokens, sacrifice, aristocrats); too-broad signals are left out (BROAD)."""
+import os, re, sys
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(HERE, '..', 'strategies'))
+import strategy_fit as sf  # noqa: E402
+
+SUPPORT_MIN, PAYOFF_MIN, MAKER_CAP = 5, 8, 4
+NONCREATURE_TOK = {'treasure', 'food', 'clue', 'blood', 'gold', 'junk', 'map', 'powerstone', 'shard'}
+PAYOFF_ROLES = (('tokens', 'anthem'), ('tokens', 'finisher'), ('tokens', 'doubler'), ('sacrifice', 'outlet'), ('sacrifice', 'payoff'), ('aristocrats', 'outlet'), ('aristocrats', 'payoff'))
+BROAD = {'sacrifice', 'life_loss', 'damage', 'trigger:etb', 'token_count', 'replace', 'cost_sacrifice_target', 'drain'}   # match too many cards to count as a payoff alone
+_TRIBAL = re.compile(r'(?i)\b(other|each|all|every|creatures? you control|get|gets|have|has|whenever|for each)\b')
+
+
+def plan(ftags):
+    """What the commander's tokens are: {'kinds': non-creature token types, 'creature': makes creature tokens, 'subtypes': creature token types} - empty dict when it makes no tokens."""
+    if 'token_make' not in ftags: return {}
+    types = {t.split(':', 1)[1] for t in ftags if t.startswith('token_type:')}
+    kinds = types & NONCREATURE_TOK
+    subs = {t for t in types if t not in NONCREATURE_TOK and t not in ('copy',) and '_' not in t}
+    creature = 'token_kind:creature' in ftags or any(t.startswith('token_pt:') for t in ftags) or bool(subs)
+    if 'token_kind:copy' in ftags: creature = True
+    return {'kinds': kinds, 'creature': creature or not kinds, 'subtypes': subs}
+
+
+def _creature_payoff(p):
+    ft = p['ftags']
+    if 'token_count' in ft and any(t == 'replace' or t.startswith('replace:') for t in ft): return True
+    S = sf.load()
+    for aid, role in PAYOFF_ROLES:
+        r = S.get(aid, {}).get('roles', {}).get(role)
+        if r and any(sf._match(s, ft) for s in r['sig'] if s not in BROAD and not s.startswith(('cmc_ge', 'cardtype:'))): return True
+    return False
+
+
+def payoff_kind(p, pl, body, extra_ok=True):
+    """'pay' (uses, sacrifices or multiplies the commander's tokens), 'sink' (Treasure only: X spell or 3+ mana activation) or ''. `body` = the card's rules text without reminder text."""
+    if not pl: return ''
+    ft = p['ftags']
+    for k in pl['kinds']:
+        w = re.escape(k)
+        if re.search(r'(?i)sacrifice[^.\n]*%s|%ss? you control|mana from an? %s|%s.{0,40}spent|whenever you sacrifice an? (?:artifact|%s)|sacrifice (?:an?|another|two|three) artifacts?' % (w, w, w, w, w), body) or 'sacrifice_outlet' in ft: return 'pay'
+    if 'treasure' in pl['kinds']:
+        if 'x_is:x_paid' in ft or re.search(r'\{X\}', body) and 'Land' not in p['types']: return 'sink'
+        for l in body.split('\n'):
+            if re.match(r'[^:"]*\{[3-9]\}[^:"]*:', l) and not l.startswith(('Equip', 'Cycling', 'Crew', 'Ninjutsu', 'Channel', 'Reconfigure', 'Unearth', 'Flashback', 'Escape', 'Embalm', 'Eternalize', 'Kicker', 'Landcycling')) and 'Land' not in p['types']: return 'sink'
+    if pl['creature']:
+        if _creature_payoff(p): return 'pay'
+        for s in pl['subtypes']:
+            if re.search(r'(?i)\b%ss?\b' % re.escape(s.replace('_', ' ')), body) and _TRIBAL.search(body): return 'pay'
+    return ''
+
+
+def count_payoffs(pl, cards, body_of):
+    return sum(1 for p in cards if payoff_kind(p, pl, body_of(p)))
