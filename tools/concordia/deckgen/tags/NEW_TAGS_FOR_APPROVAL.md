@@ -26,10 +26,10 @@ Say if any should be changed; unmarked means accepted with the family.
 | `take` | take:all (4); take:2 (2); take:1_card (1); take:all_goblin (1); take:may_1_chosen_type (1); take:may_1_creature_power_le_2 (1) |
 | `cost_reduce_for` | cost_reduce_for:chosen_type (2); cost_reduce_for:dragon (1); cost_reduce_for:merfolk (1); cost_reduce_for:wizard (1); cost_reduce_for:mutate (1); cost_reduce_for:historic (1) |
 | `affected_filter` | affected_filter:zombie (1); affected_filter:counters_ge8_p1p1 (1); affected_filter:noabilities (1); affected_filter:legendary (1); affected_filter:white (1) |
+| `target_type` | target_type:instant_or_sorcery (5); target_type:wizard (1); target_type:golem (1); target_type:horse (1); target_type:ally (1) |
 | `choice_option` | choice_option:artifact (1); choice_option:creature (1); choice_option:enchantment (1); choice_option:instant (1); choice_option:sorcery (1) |
 | `from_zone` | from_zone:graveyard (50); from_zone:library (16); from_zone:exile (7); from_zone:hand (3) |
 | `to_zone` | to_zone:hand (37); to_zone:exile (5); to_zone:battlefield (3); to_zone:library (2) |
-| `target_type` | target_type:wizard (1); target_type:golem (1); target_type:horse (1); target_type:ally (1) |
 | `target_scope` | target_scope:each_opponent (23); target_scope:each_player (2); target_scope:each_other_player (1) |
 | `grant_kw` | grant_kw:menace (2); grant_kw:annihilator (1); grant_kw:infect (1) |
 | `sacrifice_type` | sacrifice_type:creature_planeswalker (1); sacrifice_type:enchantment (1); sacrifice_type:land (1) |
