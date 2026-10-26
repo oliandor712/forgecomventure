@@ -1,6 +1,31 @@
 # Handover to the new main session
 
 Written 2026-10-23 by the previous main session (branch `cd/claude2`, now merged into `campaign-design`). That session is deleted. You are the only main session. The incoming session reads this first, then `CLAUDE.md`, `tools/agents/MAIN_SESSION_BRIEF.md` (all sections), `CONTEXT.md`, `human_logic.toon`, `TOOLBOX.md`, `registry.json`.
+## LATEST (2026-10-26 end of session): tagger folds, enters_prepared approved, W review state (read first)
+Branch `campaign-design`, everything pushed (last push 103a6d98dcf after a rebase onto the remote; no force-push). Working tree clean.
+
+### Done this session
+1. **Haunt**: no new tag needed (`kw:haunt` exists). The real gap was that `K:Haunt:<SVar>` pointed to an SVar the tagger never read. `tag_run.record()` now appends that SVar as an ability line when it starts with DB/AB/SP. 10 cards gained effect tags: Absolver Thrull, Belfry Spirit, Benediction of Moons, Blind Hunter, Cry of Contrition, Exhumer Thrull, Graven Dominator, Orzhov Euthanist, Orzhov Pontiff, Seize the Soul. Other SVar-pointing keywords (Cipher, Suspend ...) were checked; see commit 5b764fe96bd.
+2. **ETB choices** (`tag_extra.py`): the ETBReplacement regex now covers `Choose*`, `NamedCard`, `NameCard`, `GenericChoice`. GenericChoice `Choices$` become `choice_option:*`; PutCounter with a comma-separated `CounterType$` gives `choose_on_enter:option` + `trigger:etb` + `choice_option:*`. 38 pool cards changed (Alpine Moon, the Sieges, Pithing Needle, Phyrexian Revoker, Meddling Mage, Nevermore, Ferocious Tigorilla ...). `choose_on_enter:option` is a new value of an already approved family; no separate approval.
+3. **Prepare cards**: new tag `enters_prepared` (user: "add all and approve", 2026-10-26). `tag_run.record()` appends the spell half (after `ALTERNATE`; follows `CopyFaceFrom:<card>`) to the creature record, so the spell half's tags appear in the card's groups. 69 `AlternateMode:Prepare` cards exist; how many are in the eligible pool is NOT counted. Example: Adventurous Eater -> enters_prepared + counter:p1p1 + lifegain_amount:1; Blazing Firesinger -> mana_source mana:red mana_amount:5. Row is in APPROVED_TAGS_ARCHIVE.md (tag_reports now lists approved families even with 0 starter cards) and TAG_LEGEND.md.
+4. **Redundancy check** on `enters_prepared` and `choose_on_enter:option`: none found. Starter run: 571 units, guards 569 same, redundancy check 4 pre-existing findings.
+5. **Reader context harmonized**: both glance readers get the same form, deck_rules, deck_context and per-card mv. The tag reader additionally gets the tag legend and TAG_* refs; the Oracle reader now also gets the reminder texts and the two reminder ref files (`glance.py` `ORACLE_RULES`, `reverse_check.batch_reminders`). Both agent files (`.claude/agents/glance-*-reader.md`, tracked but gitignored: use `git add -u`) now have the `mana:{curve,sources,notes}` entry in their Output block (it was missing; mana verdicts had come from the main session).
+6. Answered (no code): an Oracle reader could read several decks at once but accuracy drops with context size and cross-deck bleed; unique-card pooling is the safer trial (offered, not requested).
+
+### Open items (nothing here was started)
+- **W Normal starter (Adeline)**: 5 reject candidates awaiting the user: Fountainport Bell, Nine Lives, Panther Habit, Worship, Chosen by Heliod. Earlier reject candidates on the other decks: B Geth's Grimoire; R Guidelight Matrix, Adventurer's Airship, Wreck Remover, Expert-Level Safe; G Parallel Lives (tags wrong: fix the tags, do not ban).
+- Verdict cache for the W deck is stale for cards whose tags changed (Absolver Thrull and the ETB/prepare cards). Re-run those only with the user's go.
+- Memnarch, the Warden shows mv 10 in the pool data: check the source.
+- Run U, B, R, G the same way (2 tag readers + 1 Oracle reader, full deck) only with the user's go-ahead and approval for subagents.
+- Tag fixes: War Machine, Wreck Remover, Expert-Level Safe.
+- T1 decks were not rebuilt with the 5-10 payoff range / setup balance.
+- Read Anax's Tier 2 warning and the T1 power-70+ warning (Arcane Signet 70.5).
+- Possible: tag-only compare mode, pooled-unique-card Oracle reader trial.
+- Count prepare cards in the eligible pool and eyeball their spell-half tags.
+
+### Standing rules that bit this session
+Push only on the user's "push" (code, decks, data); documents via `python3 tools/agents/docpush.py <paths> -m msg`. H79: tag approvals update NEW_TAGS_FOR_APPROVAL.md / APPROVED_TAGS_ARCHIVE.md in the same turn (lists APPROVED / APPROVED_LATER / APPROVED_DECISION in `tag_reports.py`), then regenerate with `PYTHONUTF8=1 python3 tag_run.py starter` (run from `tools/concordia/deckgen`) and docpush. H80: T3-T5 issues go to T3_PLUS_OBSERVATIONS.md. Subagents only after a yes; glance readers are sonnet-5-5 / medium. No popup questions: recap-only wrap_up, ask in plain text. Edits to files here may be CRLF: match line endings. Logs: check tools/agents/logs/LOG_INDEX.toon first; this session's row is in log-tag-analyses.toon (N=46). Memory note: project_tag-folds-2026-10-26.md.
+
 ## LATEST (2026-10-25 end): five Normal starters LIVE, Alt off, plan written (read first)
 Pushed 610d758086c: live `decks/starter/{W,U,B,R,G}_Starter_Normal.dck` = Adeline (W, power 25.3), Hermes (U, 25.2), Rev (B, 25.4), Anax (R, 26.6), Ruxa (G, 26.6); each reader-reviewed once, rejects banned and rebuilt, NOT re-reviewed; not tested in game. Weights SUPPORT_W 1.0, FIT_W 3.0 (user: archetype fit as important as commander support). Alt commanders OFF: `zone_flags.ALT_ENABLED = False` (Seal Angel offers the Normal commander only, hall.<card> flag set), `hall_roster.py` skips Alt; old `*_Starter_Alt.dck` and variants.json left stale. Roster gained Hermes and Rev. Plan for the builder, token cost and tag/rule gaps: `tools/agents/STARTER_BUILDER_PLAN.md` (start with A3 fresh run dirs, A1 verdict cache). Wave cost measured ~125k subagent tokens per deck. Details of the earlier W-only state are below.
 ## EARLIER (2026-10-26 label): starter overhaul commands and design
