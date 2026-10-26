@@ -5,9 +5,11 @@ Changes to existing behaviour (approved with "approve all tags", 2026-10-22; tre
 
 | Approve | Tag family | Meaning | Source of the rule | Cards | Values seen (cards) |
 |---|---|---|---|---|---|
-| [ ] proposed | `niche` | (see feedback notes) | created from the user feedback pattern | 29 (e.g. Crow of Dark Tidings, Aftermath Analyst, Crop Sigil) | niche:artifact (14); niche:enchantment (7); niche:self_mill (5); niche:land (4); niche:landfall (4); niche:graveyard_hate (2); niche:tribal (1) |
-| [ ] proposed | `mech` | (see feedback notes) | created from the user feedback pattern | 4 (e.g. Think Twice, Daring Waverider, Battle Screech) | mech:graveyard_cast (3); mech:monarch (1) |
-| [ ] proposed | `exile` | (see feedback notes) | created from the user feedback pattern | 1 (e.g. Daring Waverider) | exile (1) |
+| [ ] proposed | `niche` | the card is only good in a deck built around the named theme; value = the theme (artifact, enchantment, landfall, tribal, self_mill, graveyard_hate, land, storm ...); the power score gives these cards 0.5 role credit | user 2026-10-25 (niche cards), deck_tier.py NICHE_ROLE | 29 (e.g. Crow of Dark Tidings, Aftermath Analyst, Crop Sigil) | niche:artifact (14); niche:enchantment (7); niche:self_mill (5); niche:land (4); niche:landfall (4); niche:graveyard_hate (2); niche:tribal (1) |
+| [ ] proposed | `mech` | the card needs a mechanic or component many decks and the Forge AI handle poorly (value = mechanic: monarch, graveyard_cast, vote, day_night, ring ...); build.py MECH_MIN_TIER gates it by tier. It repeats the effect tag where one exists (monarch / mech:monarch): the effect tag says what the card does, mech says where the builder may use it | user 2026-10-25 (replaces build.SKIP_TEXT) | 4 (e.g. Think Twice, Daring Waverider, Battle Screech) | mech:graveyard_cast (3); mech:monarch (1) |
+| [ ] proposed | `equip` | PROPOSED FOR REMOVAL: bare tag on one Class (Blacksmith's Talent) whose level creates an Equipment; kw:equip is the keyword tag | script Class level text | 1 (e.g. Blacksmith's Talent) | equip (1) |
+| [ ] proposed | `grant_double_strike` | PROPOSED FOR REMOVAL: bare duplicate of grant_kw:double_strike (Fireshrieker); the grant_kw tag already says it | script Pump KW$ Double Strike | 1 (e.g. Fireshrieker) | grant_double_strike (1) |
+| [ ] proposed | `infect` | PROPOSED FOR REMOVAL: bare duplicate of grant_kw:infect (Triumph of the Hordes) | script Pump KW$ Infect | 1 (e.g. Triumph of the Hordes) | infect (1) |
 
 ## New values inside already-approved families (the family is approved; these values appeared after the approval)
 
@@ -16,11 +18,14 @@ Say if any should be changed; unmarked means accepted with the family.
 | Family | New values (cards) |
 |---|---|
 | `token_type` | token_type:blood_draw (3); token_type:ally (3); token_type:bird (3); token_type:saproling (2); token_type:human_soldier (2); token_type:wizard_snipe (2); token_type:rat_noblock (2); token_type:powerstone (2); token_type:squirrel (1); token_type:of_nurgle (1); token_type:map_explore (1); token_type:servo (1); token_type:mouse (1); token_type:wicked (1) |
+| `cost_mana` | cost_mana:1 (15); cost_mana:2 (11); cost_mana:1r (6); cost_mana:4 (5); cost_mana:3 (4); cost_mana:2g (4); cost_mana:1b (3); cost_mana:5 (3); cost_mana:r (3); cost_mana:3r (3); cost_mana:5bb (2); cost_mana:1c (2); cost_mana:3g (2); cost_mana:1g (2) |
 | `ai_logic` | ai_logic:pump (7); ai_logic:curse (4); ai_logic:always (3); ai_logic:makeunblockable (2); ai_logic:powerdmg (2); ai_logic:fight (2); ai_logic:bestopportunity (2); ai_logic:curiosity (2); ai_logic:mostprominentincomputerdeck (1); ai_logic:foodortreasure (1); ai_logic:ateotifnotattacking (1); ai_logic:cantregenerate (1); ai_logic:ghostquarter (1); ai_logic:mostprominentincomputerdecknontoken (1) |
-| `trigger_filter` | trigger_filter:you_control (40); trigger_filter:one_or_more (7); trigger_filter:noncreature (7); trigger_filter:nontoken (5); trigger_filter:land (4); trigger_filter:artifact (4); trigger_filter:goblin (2); trigger_filter:has_counter:p1p1 (2); trigger_filter:orc (1); trigger_filter:opp_control (1); trigger_filter:power_ge_5 (1); trigger_filter:power_ge_3 (1); trigger_filter:power_ge_4 (1); trigger_filter:nth_spell_3 (1) |
+| `trigger_filter` | trigger_filter:you_control (40); trigger_filter:one_or_more (7); trigger_filter:noncreature (7); trigger_filter:nontoken (5); trigger_filter:land (4); trigger_filter:artifact (4); trigger_filter:goblin (2); trigger_filter:has_counter:p1p1 (2); trigger_filter:orc (1); trigger_filter:opp_control (1); trigger_filter:power_ge_5 (1); trigger_filter:power_ge_3 (1); trigger_filter:power_ge_4 (1); trigger_filter:pirate (1) |
+| `kw` | kw:partner (4); kw:crew (3); kw:haunt (2); kw:prowess (2); kw:flashback (2); kw:mobilize (1); kw:eternalize (1); kw:mutate (1); kw:annihilator (1); kw:class (1); kw:embalm (1); kw:improvise (1); kw:devoid (1); kw:ninjutsu (1) |
 | `x_is` | x_is:remembered_amount (4); x_is:greatest_power_among_creature_you_control (2); x_is:previous_result (1); x_is:triggering_power (1); x_is:adamant_black_1_0 (1); x_is:crewsize (1); x_is:greatest_power_among_creature_you_control_nonhuman (1); x_is:kicked_bonus_4 (1); x_is:remembered_count_creature (1); x_is:count_creature_you_control_counters_ge1_p1p1 (1); x_is:players_haspropertyhasfewercreaturesinplaythanyou (1); x_is:sacrificed_power (1); x_is:count_dinosaur_strictlyother_you_control (1); x_is:triggerremembered_cardpower (1) |
 | `condition` | condition:adamant (3); condition:creature_you_control_power_ge_4 (2); condition:kicked (2); condition:at_least_5_land_you_control (1); condition:card_untapped (1); condition:count_creature_you_control_ge4 (1); condition:morbid (1); condition:card_iscommander_you_own_you_control (1); condition:delirium (1); condition:mountain_you_control (1); condition:at_least_2_creature_attacking_other (1) |
 | `target_filter` | target_filter:self (2); target_filter:oppown (1); target_filter:nonzombie (1); target_filter:noabilities (1); target_filter:green (1); target_filter:goblin (1); target_filter:nonvampire (1); target_filter:even_mana_value (1); target_filter:odd_mana_value (1); target_filter:legendary (1) |
+| `scales` | scales:swamp (2); scales:creature_legendary (1); scales:squirrel (1); scales:creature_you_control_counters_ge1_p1p1 (1); scales:dinosaur_strictlyother (1); scales:goblin_attacking_other (1); scales:island (1); scales:creature (1); scales:card_chosenctrl_in_hand (1) |
 | `cost_sacrifice_target` | cost_sacrifice_target:creature (6); cost_sacrifice_target:eldrazi (2); cost_sacrifice_target:saproling (1); cost_sacrifice_target:artifact_creature (1); cost_sacrifice_target:card (1); cost_sacrifice_target:treasure (1); cost_sacrifice_target:creature_enchantment (1); cost_sacrifice_target:artifact (1) |
 | `take` | take:all (4); take:2 (2); take:1_card (1); take:all_goblin (1); take:may_1_chosen_type (1); take:may_1_creature_power_le_2 (1) |
 | `cost_reduce_for` | cost_reduce_for:chosen_type (2); cost_reduce_for:dragon (1); cost_reduce_for:merfolk (1); cost_reduce_for:wizard (1); cost_reduce_for:mutate (1); cost_reduce_for:historic (1) |
@@ -42,8 +47,10 @@ Say if any should be changed; unmarked means accepted with the family.
 | `duration` | duration:permanent (2); duration:until_monarch_changes (1) |
 | `affected_type` | affected_type:card (2); affected_type:permanent (1) |
 | `impulse_draw_count` | impulse_draw_count:4 (1); impulse_draw_count:3 (1) |
+| `forge_line` | forge_line:typecycling (3); forge_line:etbcounter (1) |
 | `cost_reduce_amount` | cost_reduce_amount:1 (9); cost_reduce_amount:2 (2) |
 | `trigger` | trigger:life_loss (1); trigger:attackerblocked (1) |
+| `unless_cost_amount` | unless_cost_amount:3 (3); unless_cost_amount:2 (3) |
 | `limit` | limit:once_per_turn (5) |
 | `cost_exile_target` | cost_exile_target:creature (1) |
 | `token_color` | token_color:blue (2) |
@@ -59,6 +66,8 @@ Say if any should be changed; unmarked means accepted with the family.
 | `cost_reduce_mana` | cost_reduce_mana:generic (10) |
 | `damage_amount` | damage_amount:5 (1) |
 | `token_kw` | token_kw:vigilance (2) |
+| `num` | num:6 (1) |
+| `bolster` | bolster:2 (1) |
 
 ## Tag names that were merged or renamed (the old names no longer exist)
 
@@ -68,5 +77,6 @@ Say if any should be changed; unmarked means accepted with the family.
 - Segregated, kept intact: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`, `land_tutor`, bare `recursion`, every `<kw>_grant` and the bare keyword tags on cards that only grant a keyword) sit on the `ai_tags:` line and are hidden from the blind reader and from the redundancy check.
 
 ## Waiting on the user
-- Nothing is waiting for approval: all families, the two behaviour changes and the merged tags were approved on 2026-10-22. New families created by later runs are listed in the table above as proposed.
+- Families marked `[ ]` in the first table: `niche` and `mech` (in use: `niche` feeds the power score, `mech` gates cards by tier) and the three one-card tags `equip`, `grant_double_strike`, `infect`, which duplicate `grant_kw:*` / `kw:equip` and are proposed for removal. All earlier families, the two behaviour changes and the merged tags were approved on 2026-10-22.
+- Confirm in chat: the six families marked "chat approval not found" in `APPROVED_TAGS_ARCHIVE.md` (they sit on the approved list since the 2026-10-25 commit).
 - Still open (not an approval): confirm the AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token).
