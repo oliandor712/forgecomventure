@@ -424,19 +424,54 @@ DECK_RULES = (
     '(5) Utility roles (ramp, card draw, removal, board wipes, recursion, protection) are quota cards and are on plan; only a card with no role, no archetype link and no commander link is a reject. '
     '(6) Tribal or theme cards are allowed only when the deck has enough other members of that type; flag any that lack them. '
     '(7) Colourless spells are capped by colourless sources; no mass land denial; few off-plan artifacts. '
-    '(8) Rarity is not restricted.')
+    '(8) Rarity is not restricted. '
+    '(9) Mana: judge the curve and the mana available for the nonland cards from the mana line and each card mv (mana value); also review the nonbasic lands in the list.')
+
+
+def mana_line(pk):
+    """one line for the readers: land count (basics only counted), curve vs the tier's reference curve, average mana value, coloured/colourless sources"""
+    cards = [pool.get(x['name'].lower()) for x in pk['picks']]
+    nlp = [(x, p) for x, p in zip(pk['picks'], cards) if 'Land' not in x['types'].split()]
+    cnt = collections.Counter(B.bucket(x['cmc']) for x, _ in nlp); ref = B.SPEC[TIER]['curve']
+    avg = sum(x['cmc'] for x, _ in nlp) / max(1, len(nlp))
+    bs = pk['lands']['basics']; nb = pk['lands']['nonbasic']; ident = set(''.join(sorted(pool[pk['commander'].lower()]['id'])))
+    rocks = [x['name'] for x, p in nlp if p and p['tags'] & {'ramp', 'fast'} and 'Artifact' in x['types'].split()]
+    ramp = [x['name'] for x, p in nlp if p and p['tags'] & {'ramp', 'fast'}]
+    src = collections.Counter(); anyc = 0; clr = 0
+    for c, n in bs.items(): src[c] += n
+    for n in nb:
+        b = B.BUDGET.get(n) or {}; p = pool.get(n.lower())
+        if b.get('any_color'): anyc += 1
+        elif p and p['id']: src.update(p['id'])
+        else: clr += 1
+    for n in rocks:
+        b = B.ROCKS.get(n) or {}
+        if b.get('any_color'): anyc += 1
+        elif b.get('colors'): src.update(b['colors'])
+        else: clr += 1
+    nbas = sum(bs.values())
+    return ('Mana: %d lands = %d basic lands (%s; the basics are not in the list) + %d nonbasic lands (in the list). %d nonland cards listed plus the commander (mv %s). '
+            'Nonland curve by mana value (deck / tier reference, 6 = 6+): %s; average mv %.2f (reference %.2f). '
+            'Mana rocks: %d; ramp cards in total (rocks, ramp spells, mana creatures): %d. '
+            'Coloured mana sources from lands and rocks: %s; colourless-only sources %d, any-colour sources %d.' % (
+                nbas + len(nb), nbas, ', '.join('%d %s' % (n, c) for c, n in bs.items() if n), len(nb), len(nlp), pool[pk['commander'].lower()]['cmc'],
+                ', '.join('%d: %d/%d' % (k, cnt.get(k, 0), ref[k]) for k in sorted(ref)), avg, sum(k * v for k, v in ref.items()) / sum(ref.values()),
+                len(rocks), len(ramp), ', '.join('%s %d' % (c, src[c]) for c in 'WUBRG' if c in ident), clr, anyc))
 
 
 def cmd_review_export(a):
     pk = _picks(a.name); lst = os.path.join(STAGE, a.name + '.cards.txt')
-    open(lst, 'w', encoding='utf-8').write('\n'.join([pk['commander']] + [x['name'] for x in pk['picks']]) + '\n')
+    names = [pk['commander']] + [x['name'] for x in pk['picks']] + list(pk['lands']['nonbasic'])     # nonbasic lands are reviewed too; only the basics are left out
+    open(lst, 'w', encoding='utf-8').write('\n'.join(names) + '\n')
+    mv = os.path.join(STAGE, a.name + '.mana.json')
+    json.dump({n.lower(): (pool[n.lower()]['cmc'] if n.lower() in pool else 0) for n in names}, open(mv, 'w', encoding='utf-8'), indent=0)
     rc = os.path.join(HERE, 'tagcheck', 'reverse_check.py')
     ctx = os.path.join(STAGE, a.name + '.context.txt')
     open(ctx, 'w', encoding='utf-8').write(
         'Candidate 99-card Commander starter deck. Declared archetypes: %s. Commander profile: %s. The commander is one of the cards in the list. '
-        'Judge every card against the archetypes and the deck_rules, with the whole deck in mind. ' % (' and '.join(pk['strategy']), ', '.join(pk['profile'])) + DECK_RULES)
+        'Judge every card against the archetypes and the deck_rules, with the whole deck in mind. ' % (' and '.join(pk['strategy']), ', '.join(pk['profile'])) + DECK_RULES + ' ' + mana_line(pk))
     rid = run_id(a.name, new=True)
-    out = subprocess.run([sys.executable, rc, 'glance-export', '--run', rid, '--cardlist', lst, '--batch', '24', '--context', ctx, '--cache', VERDICTS],
+    out = subprocess.run([sys.executable, rc, 'glance-export', '--run', rid, '--cardlist', lst, '--batch', '200', '--context', ctx, '--cache', VERDICTS, '--mana', mv],
                          check=False, capture_output=True, text=True, encoding='utf-8').stdout
     sys.path.insert(0, os.path.join(HERE, 'tagcheck'))
     from common import workdir
@@ -459,7 +494,7 @@ def cmd_review_compare(a):
         if not on_plan: rejects.append(dict(name=n, function=o['function'], oracle_arch=o['arch'], tag_arch=sorted(ta), roles=o['roles'], power=o['power']))
         else: ok += 1
         if strat and not (oa & ta) and not any(r['arch_hit'] for r in c['readers']): tag_gaps.append(dict(name=n, oracle_arch=o['arch'], tag_arch=sorted(ta), unclear=sorted({u for r in c['readers'] for u in r['unclear']})))
-    out = dict(deck=a.name, strategy=sorted(strat), on_plan=ok, rejects=[r['name'] for r in rejects], reject_detail=rejects, tag_gaps=tag_gaps, summary=res['summary'])
+    out = dict(deck=a.name, mana=res.get('mana', {}), strategy=sorted(strat), on_plan=ok, rejects=[r['name'] for r in rejects], reject_detail=rejects, tag_gaps=tag_gaps, summary=res['summary'])
     path = os.path.join(STAGE, a.name + '.review.json'); json.dump(out, open(path, 'w', encoding='utf-8'), indent=1)
     print('%s: %d cards on plan, %d reject candidates, %d archetype disagreements (tags vs Oracle reader)' % (a.name, ok, len(rejects), len(tag_gaps)))
     for r in rejects: print('  REJECT?', r['name'], '|', r['function'], '| oracle', r['oracle_arch'], '| tags', r['tag_arch'])

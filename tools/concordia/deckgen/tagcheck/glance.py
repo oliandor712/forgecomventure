@@ -43,6 +43,7 @@ def form_spec():
         "power": "integer 1-5 (1 filler, 3 solid playable, 5 bomb) for a 100-card singleton Commander deck",
         "confidence": "integer 1-5: how sure you are of the whole answer",
         "unclear": "list of tags (tag reader) or Oracle phrases (Oracle reader) you could not use; [] if none"},
+        "deck_fields": {"mana": "once per file, next to `cards`: {\"curve\": \"ok|top-heavy|low\", \"sources\": \"ok|short:<colour or colorless>|too-many\", \"notes\": \"one line, 25 words max\"}; judge the deck's mana curve and the mana (lands + rocks) available for its nonland cards from `deck_context` (mana line) and each card's `mv`"},
         "roles_allowed": roles, "archetypes_allowed": ids,
         "archetype_plans": {k: v.get("plan", "") for k, v in d.items()}}
 
@@ -51,9 +52,9 @@ TAG_RULES = """You are a GLANCE READER. You see only tags. Rules (strict):
 1. Read ONLY the one batch file you are given (cards, reminders, form spec). Do not open, list, search or fetch anything else. No shell commands.
 2. Each card is an id plus `typing`, `tags`, `groups` (tags of one line of the card) and `links`. You are NOT told the name or the Oracle text. Never write a card name.
 3. For every card fill the form in `form` exactly: function, roles (from roles_allowed), archetypes (from archetypes_allowed), power, confidence, unclear. Use only what the tags support; a tag you cannot use goes to `unclear`. No essays.
-4. Write JSON to the output file you are given: {"cards":[{"id":"c001","function":"...","roles":["..."],"archetypes":["..."],"power":3,"confidence":4,"unclear":["tag"]}, ...]}, one entry per id, in order. Then reply with one line: the number of cards written."""
+4. Write JSON to the output file you are given: {"cards":[{"id":"c001","function":"...","roles":["..."],"archetypes":["..."],"power":3,"confidence":4,"unclear":["tag"]}, ...],"mana":{"curve":"ok","sources":"ok","notes":"..."}}, one entry per id, in order; `mana` is one deck-level entry (see form.deck_fields) judged from `deck_context` and each card's `mv` (mana value). Then reply with one line: the number of cards written."""
 ORACLE_RULES = """You are the ORACLE READER. Read ONLY the one batch file you are given (card name, Oracle text, form spec). Do not open, list, search or fetch anything else. No shell commands.
-For every card fill the form in `form` exactly (function, roles from roles_allowed, archetypes from archetypes_allowed, power, confidence, unclear = Oracle phrases you found hard to classify), judging only from the card text. Write JSON to the output file: {"cards":[{"id":"c001","function":"...","roles":[...],"archetypes":[...],"power":3,"confidence":4,"unclear":[]}, ...]}, one entry per id, in order. Reply with one line: the number of cards written."""
+For every card fill the form in `form` exactly (function, roles from roles_allowed, archetypes from archetypes_allowed, power, confidence, unclear = Oracle phrases you found hard to classify), judging only from the card text. Write JSON to the output file: {"cards":[{"id":"c001","function":"...","roles":[...],"archetypes":[...],"power":3,"confidence":4,"unclear":[]}, ...],"mana":{"curve":"ok","sources":"ok","notes":"..."}}, one entry per id, in order; `mana` is one deck-level entry (see form.deck_fields) judged from `deck_context` and each card's `mv` (mana value). Reply with one line: the number of cards written."""
 
 
 def deck_rules():
@@ -104,12 +105,13 @@ def cmd_export(a):
     ctx = dict(deck_rules=deck_rules())
     if getattr(a, "context", ""): ctx["deck_context"] = open(a.context, encoding="utf-8").read().strip()
     db = RC.reminder_db()
+    mana = json.load(open(a.mana, encoding="utf-8")) if getattr(a, "mana", "") else {}   # card name -> mana value (starter_build review-export)
     for k in range(0, len(recs), a.batch):
         nb += 1; part = recs[k: k + a.batch]; items, ora = [], []
         for j, r in enumerate(part):
             cid = "c%03d" % (k + j + 1); key[cid] = r["name"]; tk, ok = _keys(r, dctx); meta[cid] = dict(name=r["name"], tkey=tk, okey=ok)
-            items.append(dict(id=cid, **tag_blind(r)))
-            ora.append({"id": cid, "name": r["name"], "oracle": original_text(r["name"])})
+            mv = mana.get(r["name"].lower()); items.append(dict(id=cid, **tag_blind(r), **({"mv": mv} if mv is not None else {})))
+            ora.append(dict({"id": cid, "name": r["name"], "oracle": original_text(r["name"])}, **({"mv": mv} if mv is not None else {})))
         slim = []
         for c in items:
             shown = {t for g in c["groups"].values() for t in g.split()}
@@ -118,19 +120,30 @@ def cmd_export(a):
         json.dump(dict(form=spec, **ctx, cards=ora), open(os.path.join(wd, "oin", "batch_%02d.json" % nb), "w"), indent=1)
     json.dump(key, open(os.path.join(wd, "key", "key.json"), "w"), indent=1)
     json.dump(dict(path=cpath, hits=hits, meta=meta), open(os.path.join(wd, "key", "cache.json"), "w"), indent=1)
-    delta = bool(cpath) and len(key) < DELTA_MIN; ntag = 1 if delta else 3
+    delta = bool(cpath) and len(key) < DELTA_MIN; ntag = 1 if delta else 2
     est = ntag * nb * 5 + ntag * 0.8 * len(key) + (5 * nb + 0.55 * len(key) if nb else 0)   # thousand tokens, from the 2026-10-25 wave (16-26k tag, 37-43k Oracle)
     print("cost gate: %d fresh cards, %d tag reader(s) x %d batch(es) + 1 Oracle reader = about %dk subagent tokens (estimate; check usage before the wave)" % (len(key), ntag, nb, est))
     if not key: print("nothing to read: every card is cached; run glance-compare directly")
     leaks = RC.leak_check(wd, key)
     print("glance run %s: %d cards, %d batches in %s ; key in %s/key (never tell the readers)" % (a.run, len(key), nb, wd, wd))
     print("leak check (tag view):", "clean" if not leaks else "; ".join(leaks[:10]))
-    print("\n--- TAG READERS (K = 1..3 per batch; reader K>1 writes batch_NN_rK.json) ---")
+    print("\n--- TAG READERS (K = 1..2 per batch; reader K>1 writes batch_NN_rK.json) ---")
     for n in range(1, nb + 1): print("BATCH %d: Read %s/in/batch_%02d.json; Write %s/out/batch_%02d.json" % (n, wd, n, wd, n))
     print("\n" + TAG_RULES + "\n\n--- ORACLE READER (one, sees names and Oracle text; a different instance from every tag reader) ---")
     for n in range(1, nb + 1): print("BATCH %d: Read %s/oin/batch_%02d.json; Write %s/oout/batch_%02d.json" % (n, wd, n, wd, n))
     print("\n" + ORACLE_RULES)
     if leaks: sys.exit(2)
+
+
+def _mana(dirpath):
+    out = {}
+    if os.path.isdir(dirpath):
+        for fn in sorted(os.listdir(dirpath)):
+            m = re.fullmatch(r"batch_\d+(?:_r(\d+))?\.json", fn)
+            try: d = json.load(open(os.path.join(dirpath, fn), encoding="utf-8")).get("mana") if m else None
+            except (ValueError, OSError): d = None
+            if d: out["reader%s_%s" % (m.group(1) or 1, fn[:-5])] = d
+    return out
 
 
 def _load(dirpath):
@@ -214,6 +227,7 @@ def cmd_compare(a):
                 calibration_by_confidence=calib, tag_tokens_per_card_est=round(tok), invalid_values=dict(invalid), unreadable_files=bad1 + bad2)
     misses = [dict(id=i, name=c["name"], oracle=c["oracle"], readers=[{k: r[k] for k in ("reader", "roles", "arch", "power", "role_f1", "arch_hit", "unclear")} for r in c["readers"]])
               for i, c in cards.items() if mean([r["role_f1"] for r in c["readers"]]) < 0.5 or not any(r["arch_hit"] for r in c["readers"])]
-    json.dump(dict(summary=summ, cards=cards, misses=misses, unclear=um.most_common(60), unclear_families=fam.most_common(30)), open(os.path.join(wd, "glance_results.json"), "w"), indent=1)
+    mana_v = dict(tag=_mana(os.path.join(wd, "out")), oracle=_mana(os.path.join(wd, "oout")))
+    json.dump(dict(summary=summ, mana=mana_v, cards=cards, misses=misses, unclear=um.most_common(60), unclear_families=fam.most_common(30)), open(os.path.join(wd, "glance_results.json"), "w"), indent=1)
     print(json.dumps(summ, indent=1)); print("top unclear families:", fam.most_common(10)); print("misses (role F1 < .5 or no archetype hit): %d of %d cards -> %s/glance_results.json" % (len(misses), len(cards), wd))
     print("Ground truth here is the Oracle reader only (power too; deck_tier band not wired). A miss is read by hand: tag missing / tag unclear / Oracle reader wrong -> tags/GLANCE_FIXES.toon.")
