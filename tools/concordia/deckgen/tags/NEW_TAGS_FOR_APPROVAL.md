@@ -1,11 +1,13 @@
 # New tags created for approval
 
-Created 2026-10-22 under the standing instruction (human_logic.toon H56): tags may be created to fill gaps seen across the references (script, Forge AI, rules, keyword reference, user feedback); each is logged here and counts as PROPOSED until approved. Only families that wait for approval are listed; the 57 families approved on 2026-10-22 are in `APPROVED_TAGS_ARCHIVE.md`. Tick a box to approve a family; strike or note a change under it. Counts are from the starter-deck run (353 cards).
+Created 2026-10-22 under the standing instruction (human_logic.toon H56): tags may be created to fill gaps seen across the references (script, Forge AI, rules, keyword reference, user feedback); each is logged here and counts as PROPOSED until approved. Only families that wait for approval are listed; the 57 families approved on 2026-10-22 are in `APPROVED_TAGS_ARCHIVE.md`. Tick a box to approve a family; strike or note a change under it. Counts are from the starter-deck run (571 cards).
 Changes to existing behaviour (approved with "approve all tags", 2026-10-22; treated as covered by that order, say if not): (a) the umbrella tag `removal` is dropped when a method tag (`remove:*`, `damage`) is present; (b) a keyword is listed once as `kw:<name>`, the plain duplicate (e.g. `trample`) is dropped.
 
 | Approve | Tag family | Meaning | Source of the rule | Cards | Values seen (cards) |
 |---|---|---|---|---|---|
-| | *No family waits for approval.* | | | | |
+| [ ] proposed | `niche` | (see feedback notes) | created from the user feedback pattern | 29 (e.g. Crow of Dark Tidings, Aftermath Analyst, Crop Sigil) | niche:artifact (14); niche:enchantment (7); niche:self_mill (5); niche:land (4); niche:landfall (4); niche:graveyard_hate (2); niche:tribal (1) |
+| [ ] proposed | `mech` | (see feedback notes) | created from the user feedback pattern | 4 (e.g. Think Twice, Daring Waverider, Battle Screech) | mech:graveyard_cast (3); mech:monarch (1) |
+| [ ] proposed | `exile` | (see feedback notes) | created from the user feedback pattern | 1 (e.g. Daring Waverider) | exile (1) |
 
 ## New values inside already-approved families (the family is approved; these values appeared after the approval)
 
@@ -13,34 +15,50 @@ Say if any should be changed; unmarked means accepted with the family.
 
 | Family | New values (cards) |
 |---|---|
-| `ai_logic` | ai_logic:always (3); ai_logic:pump (2); ai_logic:powerdmg (2); ai_logic:fight (2); ai_logic:curse (2); ai_logic:atoppeot (1); ai_logic:foodortreasure (1); ai_logic:ateotifnotattacking (1); ai_logic:cantregenerate (1); ai_logic:makeunblockable (1); ai_logic:manaritual (1); ai_logic:mostprominentincomputerdecknontoken (1); ai_logic:gaincontrol (1); ai_logic:bestopportunity (1) |
-| `trigger_filter` | trigger_filter:you_control (23); trigger_filter:noncreature (5); trigger_filter:land (3); trigger_filter:one_or_more (2); trigger_filter:artifact (2); trigger_filter:power_ge_5 (1); trigger_filter:nontoken (1); trigger_filter:power_ge_3 (1); trigger_filter:power_ge_4 (1); trigger_filter:nth_spell_3 (1); trigger_filter:nth_spell_2 (1); trigger_filter:power_le_2 (1); trigger_filter:has_counter:p1p1 (1) |
-| `condition` | condition:creature_you_control_power_ge_4 (2); condition:kicked (2); condition:count_creature_you_control_ge4 (1); condition:card_iscommander_you_own_you_control (1); condition:delirium (1); condition:at_least_5_land_you_control (1); condition:adamant (1); condition:at_least_2_creature_attacking_other (1) |
-| `take` | take:2 (2); take:all (2); take:all_goblin (1); take:may_1_chosen_type (1); take:may_1_creature_power_le_2 (1) |
+| `token_type` | token_type:blood_draw (3); token_type:ally (3); token_type:bird (3); token_type:saproling (2); token_type:human_soldier (2); token_type:wizard_snipe (2); token_type:rat_noblock (2); token_type:powerstone (2); token_type:squirrel (1); token_type:of_nurgle (1); token_type:map_explore (1); token_type:servo (1); token_type:mouse (1); token_type:wicked (1) |
+| `ai_logic` | ai_logic:pump (7); ai_logic:curse (4); ai_logic:always (3); ai_logic:makeunblockable (2); ai_logic:powerdmg (2); ai_logic:fight (2); ai_logic:bestopportunity (2); ai_logic:curiosity (2); ai_logic:mostprominentincomputerdeck (1); ai_logic:foodortreasure (1); ai_logic:ateotifnotattacking (1); ai_logic:cantregenerate (1); ai_logic:ghostquarter (1); ai_logic:mostprominentincomputerdecknontoken (1) |
+| `trigger_filter` | trigger_filter:you_control (40); trigger_filter:one_or_more (7); trigger_filter:noncreature (7); trigger_filter:nontoken (5); trigger_filter:land (4); trigger_filter:artifact (4); trigger_filter:goblin (2); trigger_filter:has_counter:p1p1 (2); trigger_filter:orc (1); trigger_filter:opp_control (1); trigger_filter:power_ge_5 (1); trigger_filter:power_ge_3 (1); trigger_filter:power_ge_4 (1); trigger_filter:nth_spell_3 (1) |
+| `x_is` | x_is:remembered_amount (4); x_is:greatest_power_among_creature_you_control (2); x_is:previous_result (1); x_is:triggering_power (1); x_is:adamant_black_1_0 (1); x_is:crewsize (1); x_is:greatest_power_among_creature_you_control_nonhuman (1); x_is:kicked_bonus_4 (1); x_is:remembered_count_creature (1); x_is:count_creature_you_control_counters_ge1_p1p1 (1); x_is:players_haspropertyhasfewercreaturesinplaythanyou (1); x_is:sacrificed_power (1); x_is:count_dinosaur_strictlyother_you_control (1); x_is:triggerremembered_cardpower (1) |
+| `condition` | condition:adamant (3); condition:creature_you_control_power_ge_4 (2); condition:kicked (2); condition:at_least_5_land_you_control (1); condition:card_untapped (1); condition:count_creature_you_control_ge4 (1); condition:morbid (1); condition:card_iscommander_you_own_you_control (1); condition:delirium (1); condition:mountain_you_control (1); condition:at_least_2_creature_attacking_other (1) |
+| `target_filter` | target_filter:self (2); target_filter:oppown (1); target_filter:nonzombie (1); target_filter:noabilities (1); target_filter:green (1); target_filter:goblin (1); target_filter:nonvampire (1); target_filter:even_mana_value (1); target_filter:odd_mana_value (1); target_filter:legendary (1) |
+| `cost_sacrifice_target` | cost_sacrifice_target:creature (6); cost_sacrifice_target:eldrazi (2); cost_sacrifice_target:saproling (1); cost_sacrifice_target:artifact_creature (1); cost_sacrifice_target:card (1); cost_sacrifice_target:treasure (1); cost_sacrifice_target:creature_enchantment (1); cost_sacrifice_target:artifact (1) |
+| `take` | take:all (4); take:2 (2); take:1_card (1); take:all_goblin (1); take:may_1_chosen_type (1); take:may_1_creature_power_le_2 (1) |
+| `cost_reduce_for` | cost_reduce_for:chosen_type (2); cost_reduce_for:dragon (1); cost_reduce_for:merfolk (1); cost_reduce_for:wizard (1); cost_reduce_for:mutate (1); cost_reduce_for:historic (1) |
+| `affected_filter` | affected_filter:zombie (1); affected_filter:counters_ge8_p1p1 (1); affected_filter:noabilities (1); affected_filter:legendary (1); affected_filter:white (1) |
 | `choice_option` | choice_option:artifact (1); choice_option:creature (1); choice_option:enchantment (1); choice_option:instant (1); choice_option:sorcery (1) |
-| `from_zone` | from_zone:graveyard (21); from_zone:library (11); from_zone:exile (6); from_zone:hand (1) |
-| `to_zone` | to_zone:hand (13); to_zone:battlefield (3); to_zone:exile (2); to_zone:library (1) |
-| `x_is` | x_is:previous_result (1); x_is:greatest_power_among_creature_you_control_nonhuman (1); x_is:greatest_power_among_creature_you_control (1); x_is:kicked_bonus_4 (1) |
-| `cost_reduce_for` | cost_reduce_for:chosen_type (2); cost_reduce_for:dragon (1); cost_reduce_for:merfolk (1); cost_reduce_for:wizard (1) |
-| `target_scope` | target_scope:each_opponent (16); target_scope:each_player (1); target_scope:each_other_player (1) |
+| `from_zone` | from_zone:graveyard (50); from_zone:library (16); from_zone:exile (7); from_zone:hand (3) |
+| `to_zone` | to_zone:hand (37); to_zone:exile (5); to_zone:battlefield (3); to_zone:library (2) |
+| `target_type` | target_type:wizard (1); target_type:golem (1); target_type:horse (1); target_type:ally (1) |
+| `target_scope` | target_scope:each_opponent (23); target_scope:each_player (2); target_scope:each_other_player (1) |
+| `grant_kw` | grant_kw:menace (2); grant_kw:annihilator (1); grant_kw:infect (1) |
+| `sacrifice_type` | sacrifice_type:creature_planeswalker (1); sacrifice_type:enchantment (1); sacrifice_type:land (1) |
+| `choose_on_enter` | choose_on_enter:color (1); choose_on_enter:creature_type (1); choose_on_enter:card_type (1) |
 | `mana_restriction` | mana_restriction:creature_spell_or_activated_ability (1); mana_restriction:static_foretelling_or_instant_or_sorcery (1); mana_restriction:instant_or_sorcery (1) |
-| `controller` | controller:you (24); controller:owner (5) |
-| `trigger_scope` | trigger_scope:any (12); trigger_scope:damaged_by_self (1) |
-| `scry_count` | scry_count:2 (4); scry_count:1 (2) |
-| `rest_to_zone` | rest_to_zone:graveyard (1); rest_to_zone:library (1) |
-| `cost_reduce_amount` | cost_reduce_amount:1 (5); cost_reduce_amount:2 (1) |
-| `choose_on_enter` | choose_on_enter:card_type (1); choose_on_enter:creature_type (1) |
-| `target_filter` | target_filter:even_mana_value (1); target_filter:odd_mana_value (1) |
-| `limit` | limit:once_per_turn (3) |
+| `replace` | replace:add_counters_plus_1 (1); replace:moved_to_untap (1); replace:damagedone_to_other (1) |
+| `controller` | controller:you (35); controller:owner (5) |
+| `trigger_scope` | trigger_scope:any (26); trigger_scope:damaged_by_self (1) |
+| `scry_count` | scry_count:2 (7); scry_count:1 (5) |
+| `rest_to_zone` | rest_to_zone:library (2); rest_to_zone:graveyard (1) |
+| `duration` | duration:permanent (2); duration:until_monarch_changes (1) |
+| `affected_type` | affected_type:card (2); affected_type:permanent (1) |
+| `impulse_draw_count` | impulse_draw_count:4 (1); impulse_draw_count:3 (1) |
+| `cost_reduce_amount` | cost_reduce_amount:1 (9); cost_reduce_amount:2 (2) |
+| `trigger` | trigger:life_loss (1); trigger:attackerblocked (1) |
+| `limit` | limit:once_per_turn (5) |
+| `cost_exile_target` | cost_exile_target:creature (1) |
+| `token_color` | token_color:blue (2) |
+| `pump_amount` | pump_amount:-1/-1 (4) |
+| `counter` | counter:spore (1) |
+| `remove` | remove:sacrifice (3) |
+| `rest_order` | rest_order:bottom_random (2) |
 | `mana_amount_if` | mana_amount_if:2 (1) |
-| `replace` | replace:add_counters_plus_1 (1) |
-| `affected_type` | affected_type:permanent (1) |
 | `extra_land_drop` | extra_land_drop:1 (1) |
-| `cost_reduce_mana` | cost_reduce_mana:generic (5) |
-| `cost_sacrifice_target` | cost_sacrifice_target:artifact (1) |
-| `trigger` | trigger:life_loss (1) |
-| `rest_order` | rest_order:bottom_random (1) |
-| `duration` | duration:until_monarch_changes (1) |
+| `target_count` | target_count:up_to_2 (3) |
+| `tutor_target` | tutor_target:card_youown (1) |
+| `token_pt` | token_pt:2/5 (1) |
+| `cost_reduce_mana` | cost_reduce_mana:generic (10) |
+| `damage_amount` | damage_amount:5 (1) |
+| `token_kw` | token_kw:vigilance (2) |
 
 ## Tag names that were merged or renamed (the old names no longer exist)
 
