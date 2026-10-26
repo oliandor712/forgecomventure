@@ -297,17 +297,6 @@
    "fit": 1
   },
   {
-   "name": "Dragon Egg",
-   "core": false,
-   "rarity": "C",
-   "cmc": 3,
-   "types": "Creature Dragon Egg",
-   "payoff": "pay",
-   "power": 12.2,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Filigree Familiar",
    "core": false,
    "rarity": "C",
@@ -319,13 +308,13 @@
    "fit": 4
   },
   {
-   "name": "Frontline Heroism",
+   "name": "Ghirapur Gearcrafter",
    "core": false,
-   "rarity": "R",
+   "rarity": "C",
    "cmc": 3,
-   "types": "Enchantment",
+   "types": "Creature Human Artificer",
    "payoff": "",
-   "power": 18.8,
+   "power": 12.3,
    "supports": true,
    "fit": 4
   },
@@ -374,6 +363,17 @@
    "fit": 3
   },
   {
+   "name": "Mogg Alarm",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "pay",
+   "power": 13.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Molten Gatekeeper",
    "core": false,
    "rarity": "C",
@@ -385,6 +385,17 @@
    "fit": 1
   },
   {
+   "name": "Nuka-Cola Vending Machine",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 19.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Planar Chaos",
    "core": false,
    "rarity": "U",
@@ -394,17 +405,6 @@
    "power": 15.8,
    "supports": true,
    "fit": 2
-  },
-  {
-   "name": "Shiny Impetus",
-   "core": false,
-   "rarity": "C",
-   "cmc": 3,
-   "types": "Enchantment Aura",
-   "payoff": "",
-   "power": 17.1,
-   "supports": true,
-   "fit": 4
   },
   {
    "name": "Weftstalker Ardent",
@@ -460,17 +460,6 @@
    "power": 33.8,
    "supports": false,
    "fit": 3
-  },
-  {
-   "name": "Rukh Egg",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Creature Bird Egg",
-   "payoff": "pay",
-   "power": 13.8,
-   "supports": true,
-   "fit": 4
   },
   {
    "name": "Sawhorn Nemesis",
@@ -535,6 +524,17 @@
    "types": "Instant",
    "payoff": "",
    "power": 46.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Visions of Ruin",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "pay",
+   "power": 15.9,
    "supports": true,
    "fit": 4
   },
@@ -616,15 +616,15 @@
    "fit": 3
   },
   {
-   "name": "Tiger-Tribe Hunter",
+   "name": "War Machine, Avenging Arsenal",
    "core": false,
-   "rarity": "U",
+   "rarity": "R",
    "cmc": 5,
-   "types": "Creature Human Barbarian",
+   "types": "Legendary Artifact Creature Human Hero",
    "payoff": "pay",
-   "power": 21.9,
+   "power": 13.2,
    "supports": true,
-   "fit": 3
+   "fit": 2
   },
   {
    "name": "Dreamstone Hedron",

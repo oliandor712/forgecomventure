@@ -329,17 +329,6 @@
    "fit": 4
   },
   {
-   "name": "Magnifying Glass",
-   "core": false,
-   "rarity": "C",
-   "cmc": 3,
-   "types": "Artifact",
-   "payoff": "",
-   "power": 27.7,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Nine Lives",
    "core": false,
    "rarity": "R",
@@ -349,6 +338,17 @@
    "power": 19.6,
    "supports": false,
    "fit": 3
+  },
+  {
+   "name": "Nuka-Cola Vending Machine",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 19.8,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Pentarch Ward",
@@ -395,13 +395,13 @@
    "fit": 4
   },
   {
-   "name": "Unbreakable Formation",
+   "name": "Trial of Solidarity",
    "core": false,
-   "rarity": "R",
+   "rarity": "U",
    "cmc": 3,
-   "types": "Instant",
+   "types": "Enchantment",
    "payoff": "pay",
-   "power": 25.2,
+   "power": 12.6,
    "supports": true,
    "fit": 3
   },
@@ -450,6 +450,17 @@
    "fit": 3
   },
   {
+   "name": "Beregond of the Guard",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Legendary Creature Human Soldier",
+   "payoff": "pay",
+   "power": 17.0,
+   "supports": true,
+   "fit": 3
+  },
+  {
    "name": "Commander Sofia Daguerre",
    "core": false,
    "rarity": "U",
@@ -472,17 +483,6 @@
    "fit": 2
   },
   {
-   "name": "Flare of Fortitude",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Instant",
-   "payoff": "pay",
-   "power": 21.6,
-   "supports": true,
-   "fit": 2
-  },
-  {
    "name": "For the Emperor!",
    "core": false,
    "rarity": "R",
@@ -492,6 +492,17 @@
    "power": 15.5,
    "supports": true,
    "fit": 2
+  },
+  {
+   "name": "Goldnight Commander",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Human Cleric Soldier",
+   "payoff": "pay",
+   "power": 14.3,
+   "supports": true,
+   "fit": 3
   },
   {
    "name": "Lossarnach Captain",
@@ -525,17 +536,6 @@
    "power": 15.8,
    "supports": true,
    "fit": 2
-  },
-  {
-   "name": "Vibranium Strike Gauntlets",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Artifact Equipment",
-   "payoff": "pay",
-   "power": 16.2,
-   "supports": false,
-   "fit": 3
   },
   {
    "name": "Worship",

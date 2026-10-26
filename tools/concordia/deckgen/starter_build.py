@@ -35,6 +35,7 @@ TARGET = 27.0           # H19: deck power (EDHREC card-power scale, tier_table.j
 SUPPORT_W, FIT_W, FIT_CAP = 0.5, 3.0, 4   # user 2026-10-26: commander support counts less, overall archetype fit just as much; 2026-10-26 again: less still
 SUPPORT_CAP = 14       # user 2026-10-26: do not copy the commander's tags across the whole deck: only the first 14 supporters get the bonus
 MAKER_CAP = SY.MAKER_CAP          # cards (besides the commander) that make the commander's non-creature token (Treasure ...)
+REFINE, REFINE_SWEEPS, REFINE_MARGIN = True, 3, 0.3     # second run over the non-core picks (user 2026-10-26)
 SETUP_W = 1.5     # token makers/fodder for creature-token commanders, until SETUP_MIN
 PAYOFF_W, PAYOFF_MIN = 2.5, SY.PAYOFF_MIN   # user 2026-10-26: a commander that makes Treasure needs payoffs and mana sinks; at least PAYOFF_MIN of them
 THEME_MIN = 5         # user 2026-10-26: a tribal/theme card is fine when >= THEME_MIN other cards (members or makers) of that theme are already in the deck
@@ -204,7 +205,7 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         hv = _hv.get(p['name'])
         if hv is None: hv = _hv[p['name']] = heavy_theme(p, allowed)
         return all(members[w] >= THEME_MIN for w in hv)
-    chosen = []; rcount = collections.Counter(); roles = collections.Counter(); curve = collections.Counter(); nc = [0]; nwatch = [0]; npow = [0, 0]
+    added = {}; chosen = []; rcount = collections.Counter(); roles = collections.Counter(); curve = collections.Counter(); nc = [0]; nwatch = [0]; npow = [0, 0]
     nonland = 99 - spec['lands']
 
     def can_add(p):
@@ -236,7 +237,23 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         if supports_cmd(prof, p): nsup[0] += 1
         if why.get(p['name'], {}).get('payoff'): npay[0] += 1
         if tplan and SY.setup_kind(p, tplan): nset[0] += 1
-        traits.update(B.card_traits(p, traits)); cands.remove(p)
+        tr = B.card_traits(p, traits); added[p['name']] = tr; traits.update(tr); cands.remove(p)
+
+    def remove(p, r):      # exact inverse of add(): every counter the caps and quotas read goes back, so refine() checks the same rules as the first pass
+        chosen.remove((p, r)); rcount[r] -= 1; curve[B.bucket(p['cmc'])] -= 1
+        for role, tg in B.ROLE.items():
+            if p['tags'] & tg: roles[role] -= 1
+        if 'Creature' in p['types']: nc[0] -= 1
+        if p.get('cat') == 'watch': nwatch[0] -= 1
+        pwr = p['power'].get(p['minr'], 0)
+        npow[0] -= pwr >= 50; npow[1] -= pwr >= 70
+        if kinds & maker_types(p): nmaker[0] -= 1
+        members.subtract(members_of(p))
+        if is_colorless(p): ncl[0] -= 1
+        if supports_cmd(prof, p): nsup[0] -= 1
+        if why.get(p['name'], {}).get('payoff'): npay[0] -= 1
+        if tplan and SY.setup_kind(p, tplan): nset[0] -= 1
+        traits.subtract(added.pop(p['name'])); cands.append(p)
 
     def best(filt):
         bp = None
@@ -308,6 +325,28 @@ def draft(name, commander, strategy, ban, reject, _try=0):
             for k in spec['curve']: spec['curve'][k] += 1
             continue
         add(b[1], b[2])
+    def gaps():      # unmet quotas; a swap may not leave any of them worse than the deck it started from
+        g = [max(0, spec['quota'][role] - roles[role]) for role in spec['quota']]
+        g += [max(0, n - sum(1 for p, _ in chosen if any(x in p['types'].split() for x in alts.split('|')))) for alts, n in spec['types'].items()]
+        g += [max(0, spec['creatures'] - nc[0])]
+        if tplan: g += [max(0, PAYOFF_MIN - npay[0]), max(0, SY.SETUP_MIN - nset[0])]
+        return g
+    locked = set(core_names) | {p['name'] for p in rocks}
+    nswap = 0
+    for sweep in range(REFINE_SWEEPS if REFINE else 0):     # second run: re-pick the filler now that later picks have filled the gaps
+        changed = False
+        for p, r in sorted((pr for pr in chosen if pr[0]['name'] not in locked), key=lambda pr: score(*pr)):
+            if (p, r) not in chosen: continue
+            g0 = gaps(); old = score(p, r)
+            remove(p, r)
+            b = best(lambda q: q is not p and (nc[0] < spec['cmax'] or 'Creature' not in q['types']))      # same can_add() rules as the first pass
+            if b and b[0] > old + REFINE_MARGIN:
+                add(b[1], b[2])
+                if all(x <= y for x, y in zip(gaps(), g0)): nswap += 1; changed = True; continue
+                remove(b[1], b[2])
+            add(p, can_add(p) or r)
+        if not changed: break
+    print('  refine: %d swaps' % nswap)
     # lands: Karsten-style sizing as build.py, budget nonbasics, basics by pips
     avg = sum(p['cmc'] for p, _ in chosen) / max(1, len(chosen))
     ref = sum(k * v for k, v in B.SPEC[TIER]['curve'].items()) / sum(B.SPEC[TIER]['curve'].values())
@@ -315,7 +354,7 @@ def draft(name, commander, strategy, ban, reject, _try=0):
     lo, hi = ar.LAND_RANGE[TIER]
     total = min(max(round(spec['lands'] + 4 * (avg - ref) - mana / 2), lo), hi)
     while len(chosen) > 99 - total:
-        worst = min(chosen, key=lambda pr: score(*pr)); chosen.remove(worst)
+        worst = min(chosen, key=lambda pr: score(*pr)); remove(*worst)
     while len(chosen) < 99 - total:
         b = best(lambda p: nc[0] < spec['cmax'] or 'Creature' not in p['types'])
         if not b: total = 99 - len(chosen); break

@@ -562,6 +562,17 @@
    "fit": 1
   },
   {
+   "name": "Genesis",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Creature Incarnation",
+   "payoff": "",
+   "power": 13.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Hivespine Wolverine",
    "core": false,
    "rarity": "U",
@@ -604,17 +615,6 @@
    "power": 49.3,
    "supports": false,
    "fit": 3
-  },
-  {
-   "name": "Will of the Sultai",
-   "core": false,
-   "rarity": "R",
-   "cmc": 5,
-   "types": "Sorcery",
-   "payoff": "",
-   "power": 15.6,
-   "supports": true,
-   "fit": 4
   },
   {
    "name": "Zuko's Exile",
@@ -672,17 +672,6 @@
    "fit": 4
   },
   {
-   "name": "Tornado Elemental",
-   "core": false,
-   "rarity": "R",
-   "cmc": 7,
-   "types": "Creature Elemental",
-   "payoff": "",
-   "power": 23.1,
-   "supports": true,
-   "fit": 1
-  },
-  {
    "name": "Kozilek, Butcher of Truth",
    "core": true,
    "rarity": "M",
@@ -692,6 +681,17 @@
    "power": 49.7,
    "supports": true,
    "fit": 2
+  },
+  {
+   "name": "Metalwork Colossus",
+   "core": false,
+   "rarity": "R",
+   "cmc": 11,
+   "types": "Artifact Creature Construct",
+   "payoff": "",
+   "power": 13.7,
+   "supports": true,
+   "fit": 4
   }
  ]
 }

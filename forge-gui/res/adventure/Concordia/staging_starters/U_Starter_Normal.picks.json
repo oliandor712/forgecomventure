@@ -175,17 +175,6 @@
    "types": "Artifact"
   },
   {
-   "name": "Gleaming Barrier",
-   "core": false,
-   "rarity": "C",
-   "cmc": 2,
-   "types": "Artifact Creature Wall",
-   "payoff": "pay",
-   "power": 16.5,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Jeskai Elder",
    "core": false,
    "rarity": "C",
@@ -237,6 +226,17 @@
    "types": "Creature Frog",
    "payoff": "",
    "power": 18.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Prized Statue",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact",
+   "payoff": "pay",
+   "power": 18.9,
    "supports": true,
    "fit": 4
   },
@@ -329,28 +329,6 @@
    "fit": 4
   },
   {
-   "name": "Howling Golem",
-   "core": false,
-   "rarity": "C",
-   "cmc": 3,
-   "types": "Artifact Creature Golem",
-   "payoff": "",
-   "power": 13.5,
-   "supports": true,
-   "fit": 2
-  },
-  {
-   "name": "Magic Pot",
-   "core": false,
-   "rarity": "C",
-   "cmc": 3,
-   "types": "Artifact Creature Goblin Construct",
-   "payoff": "pay",
-   "power": 11.8,
-   "supports": true,
-   "fit": 4
-  },
-  {
    "name": "Merchant of Secrets",
    "core": false,
    "rarity": "C",
@@ -360,6 +338,17 @@
    "power": 11.3,
    "supports": true,
    "fit": 3
+  },
+  {
+   "name": "Nuka-Cola Vending Machine",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 19.8,
+   "supports": true,
+   "fit": 4
   },
   {
    "name": "Secrets of the Dead",
@@ -380,6 +369,17 @@
    "types": "Enchantment",
    "payoff": "",
    "power": 16.6,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Thunderstaff",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "pay",
+   "power": 13.2,
    "supports": true,
    "fit": 3
   },
@@ -450,15 +450,15 @@
    "fit": 4
   },
   {
-   "name": "Irenicus's Vile Duplication",
+   "name": "Kimoyo Beads",
    "core": false,
-   "rarity": "U",
+   "rarity": "R",
    "cmc": 4,
-   "types": "Sorcery",
+   "types": "Artifact",
    "payoff": "",
-   "power": 17.5,
+   "power": 16.2,
    "supports": true,
-   "fit": 2
+   "fit": 4
   },
   {
    "name": "Mister Fantastic, Reed Richards",
@@ -516,17 +516,6 @@
    "fit": 4
   },
   {
-   "name": "Thought-Knot Seer",
-   "core": false,
-   "rarity": "R",
-   "cmc": 4,
-   "types": "Creature Eldrazi",
-   "payoff": "",
-   "power": 15.8,
-   "supports": true,
-   "fit": 3
-  },
-  {
    "name": "Turn into a Pumpkin",
    "core": false,
    "rarity": "U",
@@ -549,6 +538,17 @@
    "fit": 4
   },
   {
+   "name": "Vibranium Strike Gauntlets",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact Equipment",
+   "payoff": "pay",
+   "power": 16.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
    "name": "Archmage of Runes",
    "core": false,
    "rarity": "R",
@@ -560,13 +560,13 @@
    "fit": 4
   },
   {
-   "name": "Metallurgic Summonings",
+   "name": "Luxurious Locomotive",
    "core": false,
-   "rarity": "M",
+   "rarity": "U",
    "cmc": 5,
-   "types": "Enchantment",
+   "types": "Artifact Vehicle",
    "payoff": "",
-   "power": 17.6,
+   "power": 9.5,
    "supports": true,
    "fit": 4
   },
@@ -579,6 +579,17 @@
    "payoff": "",
    "power": 20.5,
    "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Mirelurk Queen",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Creature Crab Mutant",
+   "payoff": "",
+   "power": 14.6,
+   "supports": true,
    "fit": 3
   },
   {
@@ -602,17 +613,6 @@
    "power": 15.0,
    "supports": true,
    "fit": 4
-  },
-  {
-   "name": "Soulblade Djinn",
-   "core": false,
-   "rarity": "R",
-   "cmc": 5,
-   "types": "Creature Djinn",
-   "payoff": "pay",
-   "power": 10.9,
-   "supports": true,
-   "fit": 3
   },
   {
    "name": "Thoughtcast",
@@ -681,15 +681,15 @@
    "fit": 3
   },
   {
-   "name": "Breaching Leviathan",
+   "name": "Scion of Draco",
    "core": false,
-   "rarity": "R",
-   "cmc": 9,
-   "types": "Creature Leviathan",
+   "rarity": "M",
+   "cmc": 12,
+   "types": "Artifact Creature Dragon",
    "payoff": "pay",
-   "power": 10.2,
+   "power": 14.7,
    "supports": true,
-   "fit": 3
+   "fit": 2
   }
  ]
 }
