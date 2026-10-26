@@ -82,9 +82,9 @@ APPROVED = ['activation_restriction', 'affects', 'cast_free', 'color', 'cost', '
 
 PROPOSED_OFFLINE = []
 APPROVED_LATER = ['cost_mana', 'return', 'unless_cost_amount', 'investigate', 'monarch', 'bolster', 'named', 'additional_cost']   # approved by the user in chat on 2026-10-23 (additional_cost: pre-approved the same day, HANDOVER)
-APPROVED_DECISION = {'extra_turn': 'approved 2026-10-26 (user: own tag, per-tier cap)', 'colorless_card': 'approved 2026-10-26 (user decision H78: colorless is the sixth colour)'}   # families approved by a recorded user decision
+APPROVED_DECISION = {**{k: 'approved 2026-10-26 (user: approve the rest after redundancy check)' for k in ['niche', 'mech', 'unless_cost', 'phase_out', 'cant_regenerate', 'prevent_damage', 'mana_conditional', 'alt_additional_cost']}, 'extra_turn': 'approved 2026-10-26 (user: own tag, per-tier cap)', 'colorless_card': 'approved 2026-10-26 (user decision H78: colorless is the sixth colour)'}   # families approved by a recorded user decision
 # Families the script pass emits (never 'new' in a cross-check run), so the table above never listed them. APPROVED_LISTED = on the APPROVED list since the 2026-10-25 commit, no chat approval found; PROPOSED_RECORDS = in use, never put to the user.
-APPROVED_LISTED = ['unless_cost', 'phase_out', 'cant_regenerate', 'prevent_damage', 'mana_conditional', 'alt_additional_cost']
+APPROVED_LISTED = []
 PROPOSED_RECORDS = []
 VALUE_FAMILIES_EXTRA = ('kw', 'scales', 'forge_line', 'num')   # mechanical families: their new values are listed with the approved ones (type/supertype/landtype/cardtype are card data, not tags)
 
@@ -159,8 +159,8 @@ def write_approval(recs, red=()):
         n = len(set(c for v in vals.values() for c in v))
         seen = "; ".join("%s (%d)" % (t, len(v)) for t, v in sorted(vals.items(), key=lambda kv: -len(kv[1]))[:8])
         ex = ", ".join(list(dict.fromkeys(c for v in vals.values() for c in v))[:3])
-        row = "| %s | `%s` | %s | %s | %d (e.g. %s) | %s |" % ("[x] approved 2026-10-23" if f in APPROVED_LATER else "[x] approved 2026-10-22" if f in APPROVED else "[ ] proposed", f, m, w, n, ex, seen)
-        (archive if f in APPROVED or f in APPROVED_LATER else out).append(row)
+        row = "| %s | `%s` | %s | %s | %d (e.g. %s) | %s |" % ("[x] " + APPROVED_DECISION[f] if f in APPROVED_DECISION else "[x] approved 2026-10-23" if f in APPROVED_LATER else "[x] approved 2026-10-22" if f in APPROVED else "[ ] proposed", f, m, w, n, ex, seen)
+        (archive if f in APPROVED or f in APPROVED_LATER or f in APPROVED_DECISION else out).append(row)
     def _rec_row(f, status):
         vals = collections.OrderedDict()
         for r in recs:
@@ -204,7 +204,7 @@ def write_approval(recs, red=()):
             "- `x_is:<what>` values were renamed to readable words (e.g. `count_swamp_youctrl` -> `count_swamp_you_control`); `restrict` now also carries `restrict_kind:<kind>`.",
             "- `transform` was removed from Feign Death, Supernatural Stamina and Merfolk Trickster (they grant or remove abilities); `sacrifice_outlet` was removed from 14 cards that sacrifice only themselves (user rule).",
             "- Segregated, kept intact: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`, `land_tutor`, bare `recursion`, every `<kw>_grant` and the bare keyword tags on cards that only grant a keyword) sit on the `ai_tags:` line and are hidden from the blind reader and from the redundancy check.",
-            "", "## Waiting on the user (everything pending, one list)", "- Families marked `[ ]` in the first table: `niche` and `mech` (in use: `niche` feeds the power score, `mech` gates cards by tier), and the six in use since 2026-10-25 without a chat approval: " + ", ".join("`%s`" % f for f in APPROVED_LISTED) + ". Say approve, or change.", "- The AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token): confirm it is the right set to keep apart from the blind reader (not a tag approval).", "- Everything else is approved: the 2026-10-22 families, the two behaviour changes, the merged tags, `colorless_card` and `extra_turn` (2026-10-26)."]
+            "", "## Waiting on the user (everything pending, one list)", "- No tag family waits for approval (niche, mech and the six listed families approved 2026-10-26).", "- The AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token): confirm it is the right set to keep apart from the blind reader (not a tag approval).", "- Everything else is approved: the 2026-10-22 families, the two behaviour changes, the merged tags, `colorless_card` and `extra_turn` (2026-10-26)."]
     open(os.path.join(HERE, "tags", "NEW_TAGS_FOR_APPROVAL.md"), "w").write("\n".join(out) + "\n")
     open(os.path.join(HERE, "tags", "APPROVED_TAGS_ARCHIVE.md"), "w").write("\n".join(archive) + "\n")
 
