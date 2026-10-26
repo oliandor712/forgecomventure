@@ -145,7 +145,7 @@ def cmd_commanders(a):
     print('->', path)
 
 
-def draft(name, commander, strategy, ban, reject):
+def draft(name, commander, strategy, ban, reject, _try=0):
     cmd = pool[commander.lower()]; ident = cmd['id']; colours = ''.join(sorted(ident)); mono = len(ident) == 1
     if not G.commander_ok(cmd, TIER): sys.exit('commander fails tier 2 commander rules: ' + commander)
     spec = json.loads(json.dumps(B.SPEC[TIER])); spec['curve'] = {int(k): v for k, v in spec['curve'].items()}; spec['rar'] = dict(RARITY)
@@ -321,6 +321,11 @@ def draft(name, commander, strategy, ban, reject):
     json.dump(dict(name=name, commander=cmd['name'], profile=prof, strategy=strategy, banned=sorted(banned), lands=dict(basics=basics, nonbasic=[p['name'] for p, _ in lands]), picks=picks),
               open(os.path.join(STAGE, name + '.picks.json'), 'w', encoding='utf-8'), indent=1)
     r = dt.rate(path, data, B.cfg)
+    combos = r['combos']['early_game'] + r['combos']['late_game']   # same rule as build.py: ban a piece and redraft
+    if combos and _try < 8:
+        piece = sorted(combos[0].split(' + '))[0]
+        print('  combo %s: banning %s and redrafting' % (combos[0], piece))
+        return draft(name, commander, strategy, list(ban) + [piece], reject, _try + 1)
     nsup = sum(1 for x in picks if x.get('supports'))
     print('%s: commander %s | tests %s | power %.1f (target %.1f) | creatures %d | cards supporting the commander %d/%d' % (name, cmd['name'], ','.join(prof), r['power'], TARGET, r['creatures'], nsup, len(picks)))
     print('  makers %d (cap %d) | payoffs/sinks %d | colourless spells %d | tribal/theme words allowed: %s | themes unlocked: %s' % (nmaker[0], MAKER_CAP, sum(1 for x in picks if x.get('payoff')), ncl[0], ','.join(sorted(allowed)) or '-', ','.join(sorted(w for w, n in members.items() if n >= THEME_MIN)) or '-'))
