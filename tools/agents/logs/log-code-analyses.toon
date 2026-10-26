@@ -1,6 +1,6 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Append one row per analysis, under 400 chars.
 # Code and tooling analyses.
-log[9|]{date|topic|finding|caveat}:
+log[14|]{date|topic|finding|caveat}:
   2026-10-23|derived_tags.py|anthem needs duration:static + you_control/pump_team (auras, one-shots false hits); wipe excludes target_filter/you_control groups|commit 603c11540e3 local, unpushed
   2026-10-25|seed_bonus 6 overrides (Mirri, Moritte, Orah, Bess) dry-built with and without|power diff <=0.3 (24.5/24.6, 29.9/29.8, 25.5/25.8, 29.6/29.7), all in band; Bess default adds Instant 1 WARN|dry builds only in scratchpad; pool uses Scryfall -in:paper list (27699 cards)
   2026-10-25|power scorer review (deck_tier, tag_run, pool)|10 findings: deckpop split-card key, silent missing inputs, overlapping bands, landfall regex, niche:lands, role ignored niche; 9 fixed|per-card record() uncached (75 s pool build); decks not rebuilt; see power-scorer-tests.toon
@@ -10,3 +10,8 @@ log[9|]{date|topic|finding|caveat}:
   2026-10-26|reader deck-building section|glance.py puts deck_rules (D1-D8 from reference/deck_building_for_readers.toon) and deck_context into every batch; Oracle reader also writes a whole-list verdict; tag readers stay in batches of 24|verdict step not yet run on a real deck; leak check flags c047 Reanimate (common word, ignore)
 2026-10-26|colorless sixth colour in tags|tag_run COLOR gained C (color:colorless on {C} costs), new colorless_card tag (no colored symbol/indicator or Devoid, lands excluded), legend + archetype colorless; tag_run starter: 71 cards colorless_card, 162 lines color:colorless|tag_reports.pick StopIteration fixed (None-safe third pick); readers not run, tag churn not diffed card by card
 2026-10-26|B_Starter_Normal glance review after colorless tags|59/62 on plan, 3 rejects (Sanguine Bond, Mask of Memory, Geth's Grimoire), 0 tag/Oracle disagreements; verdict: thin big_mana payoffs, no sweeper/land ramp|Oracle reader saw stale verdict.json (reused run dir); not rebuilt with bans
+2026-10-26|synergy.py smoke: Krenko, Mob Boss (starter, tier 2)|first run power 26.5, 21 payoffs, 25 supporters, makers 0, WARN 6 power-50+ cards; after p50/p70 caps ported: 27.4, 32 payoffs, 27 supporters, WARN gone; combo FAIL cloudpiercer+kiki-jiki; after combo ban+redraft: 27.7, 31 payoffs, no FAIL|external/decks.json missing warning (pre-existing, popularity terms 0)
+2026-10-26|synergy.py smoke: Adeline, Resplendent Cathar (starter, tier 2)|first run power 26.8, 25 payoffs, 43 supporters, WARN 12 power-50+ cards; after caps: 27.5, 29 payoffs, 44 supporters, no WARN|same missing-input warning
+2026-10-26|synergy.py smoke: Prosper, Tome-Bound|rejected: commander fails tier 2 commander rules (commander_ok)|Treasure/Food path not yet drafted through the new payoff_kind; needs a commander that passes commander_ok
+2026-10-26|import and syntax checks after H17/H75 merge|ast.parse OK on build.py, starter_build.py, synergy.py; build.py H17 payoff check added but not run on a real tier build|live tier decks not rebuilt (T3 16 decks fail Game Changers)
+2026-10-26|git push campaign-design|first push rejected (remote ahead from docpush); rebase conflicted on generated docs so aborted; merge origin/campaign-design clean; pushed 3c51f60e24c then d258d312d59|never force-pushed
