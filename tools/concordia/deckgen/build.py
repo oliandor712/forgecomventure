@@ -126,8 +126,8 @@ def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     cost_cut = re.search(r'costs? (\{\d+\} |\{\d\} )?less', text) is not None
     etb = sum(1 for p, _ in chosen if 'Creature' in p['types'].split() and 'etb_trigger' in ability_tags(p))
     check('H14', etb >= 3, 'creatures with an enter-the-battlefield ability %d (3 needed)' % etb, cost_cut)
-    tr = dict(info['traits']); tr.update(land_traits(basics, lands))
-    big = sum(1 for p, _ in chosen if (pot_power(p, tr) or 0) >= 5)   # H46: potential power from the finished deck's board
+    trt = dict(info['traits']); trt.update(land_traits(basics, lands))
+    big = sum(1 for p, _ in chosen if (pot_power(p, trt) or 0) >= 5)   # H46: potential power from the finished deck's board
     check('H15', big >= 3, 'creatures with power 5+ %d (3 needed)' % big, bool(re.search(r'power \d+ or greater', text)))
     drain = sum(1 for p, _ in chosen if ability_tags(p) & {'drain', 'burn'})
     dmg = re.search(r'noncombat damage|damage to any target|deals? \d+ damage to (target|any|each)', text) is not None  # H36
