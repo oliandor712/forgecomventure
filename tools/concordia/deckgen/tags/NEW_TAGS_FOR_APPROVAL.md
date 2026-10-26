@@ -7,9 +7,6 @@ Changes to existing behaviour (approved with "approve all tags", 2026-10-22; tre
 |---|---|---|---|---|---|
 | [ ] proposed | `niche` | the card is only good in a deck built around the named theme; value = the theme (artifact, enchantment, landfall, tribal, self_mill, graveyard_hate, land, storm ...); the power score gives these cards 0.5 role credit | user 2026-10-25 (niche cards), deck_tier.py NICHE_ROLE | 29 (e.g. Crow of Dark Tidings, Aftermath Analyst, Crop Sigil) | niche:artifact (14); niche:enchantment (7); niche:self_mill (5); niche:land (4); niche:landfall (4); niche:graveyard_hate (2); niche:tribal (1) |
 | [ ] proposed | `mech` | the card needs a mechanic or component many decks and the Forge AI handle poorly (value = mechanic: monarch, graveyard_cast, vote, day_night, ring ...); build.py MECH_MIN_TIER gates it by tier. It repeats the effect tag where one exists (monarch / mech:monarch): the effect tag says what the card does, mech says where the builder may use it | user 2026-10-25 (replaces build.SKIP_TEXT) | 4 (e.g. Think Twice, Daring Waverider, Battle Screech) | mech:graveyard_cast (3); mech:monarch (1) |
-| [ ] proposed | `equip` | PROPOSED FOR REMOVAL: bare tag on one Class (Blacksmith's Talent) whose level creates an Equipment; kw:equip is the keyword tag | script Class level text | 1 (e.g. Blacksmith's Talent) | equip (1) |
-| [ ] proposed | `grant_double_strike` | PROPOSED FOR REMOVAL: bare duplicate of grant_kw:double_strike (Fireshrieker); the grant_kw tag already says it | script Pump KW$ Double Strike | 1 (e.g. Fireshrieker) | grant_double_strike (1) |
-| [ ] proposed | `infect` | PROPOSED FOR REMOVAL: bare duplicate of grant_kw:infect (Triumph of the Hordes) | script Pump KW$ Infect | 1 (e.g. Triumph of the Hordes) | infect (1) |
 
 ## New values inside already-approved families (the family is approved; these values appeared after the approval)
 
@@ -77,6 +74,6 @@ Say if any should be changed; unmarked means accepted with the family.
 - Segregated, kept intact: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`, `land_tutor`, bare `recursion`, every `<kw>_grant` and the bare keyword tags on cards that only grant a keyword) sit on the `ai_tags:` line and are hidden from the blind reader and from the redundancy check.
 
 ## Waiting on the user
-- Families marked `[ ]` in the first table: `niche` and `mech` (in use: `niche` feeds the power score, `mech` gates cards by tier) and the three one-card tags `equip`, `grant_double_strike`, `infect`, which duplicate `grant_kw:*` / `kw:equip` and are proposed for removal. All earlier families, the two behaviour changes and the merged tags were approved on 2026-10-22.
+- Families marked `[ ]` in the first table: `niche` and `mech` (in use: `niche` feeds the power score, `mech` gates cards by tier). The bare tags `equip`, `grant_double_strike` and `infect` were removed on 2026-10-26 (user): they repeated `grant_kw:*`, `token_make` and `kw:equip`. All earlier families, the two behaviour changes and the merged tags were approved on 2026-10-22.
 - Confirm in chat: the six families marked "chat approval not found" in `APPROVED_TAGS_ARCHIVE.md` (they sit on the approved list since the 2026-10-25 commit).
 - Still open (not an approval): confirm the AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token).

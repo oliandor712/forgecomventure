@@ -229,6 +229,8 @@ def record(name, text):
     if "removal" in tags and any(t.startswith("remove:") or t == "damage" for t in tags): tags.remove("removal")
     # bare keyword tags on granting cards (trample on Rancor ...) are dropped (user 2026-10-22): grant_kw:<kw> already says it
     tags = [t for t in tags if t not in TV.BARE_KEYWORDS]
+    # three one-card bare tags dropped (user 2026-10-26): infect and grant_double_strike repeat grant_kw:*, equip repeats token_make / kw:equip
+    tags = [t for t in tags if t not in ("infect", "grant_double_strike", "equip")]
     # umbrella tags (haste_grant, land_tutor, recursion ...) stay intact: they belong to the AI Tags category (tag_verify.is_ai_tag), not to the rules tags
     if "restrict" in tags and not any(x.startswith("restrict_kind:") for x in tags) and any(x.startswith("cant_be_blocked") for x in tags):
         tags = [x for x in tags if x != "restrict"]   # 'can't be blocked (by X)' is evasion, not a restriction on someone else

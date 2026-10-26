@@ -126,9 +126,6 @@ REF_EXTRA = {
 
 # family -> (meaning, why / user note)
 DOC = {
- "grant_double_strike": ("PROPOSED FOR REMOVAL: bare duplicate of grant_kw:double_strike (Fireshrieker); the grant_kw tag already says it", "script Pump KW$ Double Strike"),
- "infect": ("PROPOSED FOR REMOVAL: bare duplicate of grant_kw:infect (Triumph of the Hordes)", "script Pump KW$ Infect"),
- "equip": ("PROPOSED FOR REMOVAL: bare tag on one Class (Blacksmith's Talent) whose level creates an Equipment; kw:equip is the keyword tag", "script Class level text"),
  "niche": ("the card is only good in a deck built around the named theme; value = the theme (artifact, enchantment, landfall, tribal, self_mill, graveyard_hate, land, storm ...); the power score gives these cards 0.5 role credit", "user 2026-10-25 (niche cards), deck_tier.py NICHE_ROLE"),
  "mech": ("the card needs a mechanic or component many decks and the Forge AI handle poorly (value = mechanic: monarch, graveyard_cast, vote, day_night, ring ...); build.py MECH_MIN_TIER gates it by tier. It repeats the effect tag where one exists (monarch / mech:monarch): the effect tag says what the card does, mech says where the builder may use it", "user 2026-10-25 (replaces build.SKIP_TEXT)"),
  "colorless_card": ("the card is a colorless spell (no colored mana symbol, no color indicator, or Devoid; lands excluded); the deck needs colorless-capable mana for it (colorless is the sixth colour, H78)", "user 2026-10-26: color and mana tags include colorless"),

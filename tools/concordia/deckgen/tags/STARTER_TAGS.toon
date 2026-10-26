@@ -3682,7 +3682,7 @@ forge_ai: AILogic=-
 
 card: Triumph of the Hordes
 typing: cardtype:sorcery
-tags: duration:eot infect target_count:all target_type:creature target_scope:you_control pump_amount:+1/+1 grant_kw:trample grant_kw:infect
+tags: duration:eot target_count:all target_type:creature target_scope:you_control pump_amount:+1/+1 grant_kw:trample grant_kw:infect
 ai_tags: pump_team
 face: mv:4 colors:g
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
@@ -4863,7 +4863,7 @@ forge_ai: AILogic=GhostQuarter RemoveDeck
 
 card: Blacksmith's Talent
 typing: cardtype:enchantment type:class
-tags: kw:class num:2 color:red num:3 equip token_make trigger:etb token_count:1 token_color:white token_color:red cost:mana trigger:beginning_of_combat trigger_scope:self
+tags: kw:class num:2 color:red num:3 token_make trigger:etb token_count:1 token_color:white token_color:red cost:mana trigger:beginning_of_combat trigger_scope:self
 ai_tags: tempo:+0.5
 face: mv:1 colors:r
 derived: etb_self
@@ -5830,7 +5830,7 @@ forge_ai: AILogic=-
 
 card: Fireshrieker
 typing: cardtype:artifact type:equipment
-tags: colorless_card kw:equip num:2 grant_double_strike grant_kw:double_strike duration:static affected_type:creature
+tags: colorless_card kw:equip num:2 grant_kw:double_strike duration:static affected_type:creature
 face: mv:3 colors:c
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_continuous,double_strike,Affected=Creature AffectedDefined=Equipped,duration:static

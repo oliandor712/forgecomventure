@@ -85,7 +85,7 @@ APPROVED_LATER = ['cost_mana', 'return', 'unless_cost_amount', 'investigate', 'm
 APPROVED_DECISION = {'colorless_card': 'approved 2026-10-26 (user decision H78: colorless is the sixth colour)'}   # families approved by a recorded user decision
 # Families the script pass emits (never 'new' in a cross-check run), so the table above never listed them. APPROVED_LISTED = on the APPROVED list since the 2026-10-25 commit, no chat approval found; PROPOSED_RECORDS = in use, never put to the user.
 APPROVED_LISTED = ['unless_cost', 'phase_out', 'cant_regenerate', 'prevent_damage', 'mana_conditional', 'alt_additional_cost']
-PROPOSED_RECORDS = ['equip', 'grant_double_strike', 'infect']
+PROPOSED_RECORDS = []
 VALUE_FAMILIES_EXTRA = ('kw', 'scales', 'forge_line', 'num')   # mechanical families: their new values are listed with the approved ones (type/supertype/landtype/cardtype are card data, not tags)
 
 
@@ -200,7 +200,7 @@ def write_approval(recs, red=()):
             "- `x_is:<what>` values were renamed to readable words (e.g. `count_swamp_youctrl` -> `count_swamp_you_control`); `restrict` now also carries `restrict_kind:<kind>`.",
             "- `transform` was removed from Feign Death, Supernatural Stamina and Merfolk Trickster (they grant or remove abilities); `sacrifice_outlet` was removed from 14 cards that sacrifice only themselves (user rule).",
             "- Segregated, kept intact: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`, `land_tutor`, bare `recursion`, every `<kw>_grant` and the bare keyword tags on cards that only grant a keyword) sit on the `ai_tags:` line and are hidden from the blind reader and from the redundancy check.",
-            "", "## Waiting on the user", "- Families marked `[ ]` in the first table: `niche` and `mech` (in use: `niche` feeds the power score, `mech` gates cards by tier) and the three one-card tags `equip`, `grant_double_strike`, `infect`, which duplicate `grant_kw:*` / `kw:equip` and are proposed for removal. All earlier families, the two behaviour changes and the merged tags were approved on 2026-10-22.", "- Confirm in chat: the six families marked \"chat approval not found\" in `APPROVED_TAGS_ARCHIVE.md` (they sit on the approved list since the 2026-10-25 commit).", "- Still open (not an approval): confirm the AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token)."]
+            "", "## Waiting on the user", "- Families marked `[ ]` in the first table: `niche` and `mech` (in use: `niche` feeds the power score, `mech` gates cards by tier). The bare tags `equip`, `grant_double_strike` and `infect` were removed on 2026-10-26 (user): they repeated `grant_kw:*`, `token_make` and `kw:equip`. All earlier families, the two behaviour changes and the merged tags were approved on 2026-10-22.", "- Confirm in chat: the six families marked \"chat approval not found\" in `APPROVED_TAGS_ARCHIVE.md` (they sit on the approved list since the 2026-10-25 commit).", "- Still open (not an approval): confirm the AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token)."]
     open(os.path.join(HERE, "tags", "NEW_TAGS_FOR_APPROVAL.md"), "w").write("\n".join(out) + "\n")
     open(os.path.join(HERE, "tags", "APPROVED_TAGS_ARCHIVE.md"), "w").write("\n".join(archive) + "\n")
 
