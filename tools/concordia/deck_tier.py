@@ -447,6 +447,8 @@ def rate(path, data, config):
                 mvs += [c["cmc"]] * n
                 curve[min(c["cmc"], 7)] += n
                 powers += [card_power(data, c, tags, r, niche_of(c["name"]))] * n
+            elif c["name"].lower() not in BASICS and not c["name"].lower().startswith("snow-covered "):
+                powers += [card_power(data, c, tags, r, niche_of(c["name"]))] * n   # nonbasic lands count toward deck power (user 2026-10-26)
     commanders = []
     for n, name, ed in entries["commander"]:
         c = cards.get(name.lower())
