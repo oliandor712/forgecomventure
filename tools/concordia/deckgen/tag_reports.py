@@ -82,7 +82,7 @@ APPROVED = ['activation_restriction', 'affects', 'cast_free', 'color', 'cost', '
 
 PROPOSED_OFFLINE = []
 APPROVED_LATER = ['cost_mana', 'return', 'unless_cost_amount', 'investigate', 'monarch', 'bolster', 'named', 'additional_cost']   # approved by the user in chat on 2026-10-23 (additional_cost: pre-approved the same day, HANDOVER)
-APPROVED_DECISION = {**{k: 'approved 2026-10-26 (user: approve the rest after redundancy check)' for k in ['niche', 'mech', 'unless_cost', 'phase_out', 'cant_regenerate', 'prevent_damage', 'mana_conditional', 'alt_additional_cost']}, 'extra_turn': 'approved 2026-10-26 (user: own tag, per-tier cap)', 'colorless_card': 'approved 2026-10-26 (user decision H78: colorless is the sixth colour)'}   # families approved by a recorded user decision
+APPROVED_DECISION = {'enters_prepared': 'approved 2026-10-26 (user: "add all and approve"; the spell half of prepare cards is read with the creature)', **{k: 'approved 2026-10-26 (user: approve the rest after redundancy check)' for k in ['niche', 'mech', 'unless_cost', 'phase_out', 'cant_regenerate', 'prevent_damage', 'mana_conditional', 'alt_additional_cost']}, 'extra_turn': 'approved 2026-10-26 (user: own tag, per-tier cap)', 'colorless_card': 'approved 2026-10-26 (user decision H78: colorless is the sixth colour)'}   # families approved by a recorded user decision
 # Families the script pass emits (never 'new' in a cross-check run), so the table above never listed them. APPROVED_LISTED = on the APPROVED list since the 2026-10-25 commit, no chat approval found; PROPOSED_RECORDS = in use, never put to the user.
 APPROVED_LISTED = []
 PROPOSED_RECORDS = []
@@ -166,7 +166,9 @@ def write_approval(recs, red=()):
         for r in recs:
             for tg in r["tags"]:
                 if tg.split(":")[0] == f: vals.setdefault(tg, []).append(r["name"])
-        if not vals: return None
+        if not vals:
+            if not status.startswith("[x]"): return None
+            return "| %s | `%s` | %s | | 0 (none in the starter run; pool cards only) | |" % (status, f, doc.get(f, (TX.LEGEND.get(f) or "(see tag_extra.LEGEND)",))[0])
         m, w = doc.get(f) or (TX.LEGEND.get(f) or "(see tag_extra.LEGEND)", "")
         if isinstance(m, tuple): m, w = m
         n = len(set(c for v in vals.values() for c in v))

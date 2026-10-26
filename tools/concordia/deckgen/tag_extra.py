@@ -31,6 +31,7 @@ LEGEND = {
  "lifegain_amount": "life gained (number, x, or equal_to_life_lost)",
  "choose_on_enter": "as this card enters the battlefield its controller chooses something (color, card_type, creature_type, player ...); other tags of the card refer to the choice (cost_reduce_for:chosen_type = spells of the chosen type)",
  "cost_reduce_for": "which spells a cost reduction applies to (a card type, a creature type, or chosen_type); cost_reduce_amount is how much cheaper",
+ "enters_prepared": "the creature enters prepared: while prepared its controller may cast a copy of the spell on its other half (the spell half's tags are in the card's groups); casting it unprepares the creature",
  "choice_option": "one of the options the choice offers (choose_on_enter lists them: artifact, creature, enchantment ...)",
  "cost_reduce_mana": "the kind of mana the cost is reduced by (generic = any mana)",
  "cost_reduce_amount": "how much each affected spell costs less (generic mana)",
@@ -86,6 +87,7 @@ REF_EXTRA = {
  "additional_cost": ("the spell has a mandatory additional cost (discard a card, sacrifice a creature ...); the cost tags say which", "script A:SP$ with CostDesc$ As an additional cost to cast; CR 118.8"),
  "cost_exile_target": ("what is exiled from the graveyard as a cost", "script Cost$ ExileFromGrave"),
  "choose_on_enter": ("as the card enters, its controller chooses something (color, card_type, creature_type, player ...); later tags refer to the choice", "script K:ETBReplacement with a Choose* effect; CR 614.12"),
+ "enters_prepared": ("the creature enters prepared (may cast a copy of its spell half; casting it unprepares)", "script K:ETBReplacement with AlterAttribute Attributes$ Prepared; AlternateMode:Prepare"),
  "choice_option": ("one of the options the choice offers", "script ValidTypes$ / Choices$ of the Choose effect"),
  "draw": ("draws cards (amount in draw_count)", "script Draw; CR 121"),
  "token_make": ("creates tokens: 'Create a 1/1 white Soldier creature token' (qualifiers: token_count, token_type, token_pt, token_color, token_kw)", "script Token; CR 111"),
@@ -482,6 +484,7 @@ def extra(lines, sv, types, text):
     for l in lines:                                      # K:ETBReplacement:Other:<svar> with a Choose* effect: "as this enters, choose a colour / type / player ..." (replaces the opaque forge_line:etbreplacement)
         m = re.match(r"^K:ETBReplacement:\w+:(\w+)", l)
         sx = sv.get(m.group(1), "") if m else ""
+        if "AlterAttribute" in sx and "Attributes$ Prepared" in sx: add("enters_prepared")
         pc_ = re.search(r"DB\$ PutCounter\b.*\bCounterType\$ (\w+(?:,\w+)+)", sx)   # 'enters with your choice of a deathtouch or a lifelink counter': a choice among counter types
         if pc_: add("choose_on_enter:option", "trigger:etb", *["choice_option:" + tok(o_) for o_ in pc_.group(1).split(",")])
         mm = re.search(r"DB\$ (Choose\w+|NamedCard|NameCard|GenericChoice)", sx)

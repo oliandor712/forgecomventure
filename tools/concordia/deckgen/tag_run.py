@@ -162,6 +162,11 @@ NOT_TRIBE = {"green", "white", "blue", "black", "red", "colorless", "multicolor"
 
 def record(name, text):
     face = text.split("\nALTERNATE")[0]
+    if "AlternateMode:Prepare" in face and "\nALTERNATE" in text:   # spell half of a prepare card: its ability lines and SVars are read with the creature half (types, Oracle and the rest of the second face are not)
+        alt = text.split("\nALTERNATE", 1)[1]
+        cf = re.search(r"^CopyFaceFrom:(.+)$", alt, re.M)   # the spell half is another card's face (Blazing Firesinger = Seething Song)
+        if cf and find_text(cf.group(1).strip()): alt = find_text(cf.group(1).strip()).split("\nALTERNATE")[0]
+        face += "\n" + "\n".join(l for l in alt.split("\n") if re.match(r"^(A|S|T|R|SVar):", l))
     lines = face.split("\n")
     sv = {}
     for l in lines:
@@ -183,7 +188,7 @@ def record(name, text):
             tags += kt
     base = sorted(t for t in AT.tags_of(text) if not t.startswith(("has:", "needs:", "hint:")))
     ex_tags, ex_links, ex_groups = TX.extra(lines, sv, types, text)
-    if any(t.startswith("choose_on_enter:") for t in ex_tags):   # the opaque forge_line:etbreplacement is replaced by the readable choose_on_enter tag
+    if any(t.startswith("choose_on_enter:") or t == "enters_prepared" for t in ex_tags):   # the opaque forge_line:etbreplacement is replaced by the readable choose_on_enter tag
         tags = [t for t in tags if t != "forge_line:etbreplacement"]
         kgroups = {g: [t for t in ts if t != "forge_line:etbreplacement"] for g, ts in kgroups.items()}
     clauses, links = [], list(ex_links)
