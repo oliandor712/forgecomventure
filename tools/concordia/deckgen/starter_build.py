@@ -5,7 +5,7 @@ Step 0  commanders  pick the commander: mono-colour legend that passes tier 2 co
                     ability (commander_support profile) and strategies.json archetypes fit, and by how many pool cards support it.
 Step 1  draft       build the 99 around the commander: power target 27 (H19, card power scale), commander support (H13/H17),
                     strategy play-line roles (strategies.json via strategy_fit), niche penalty, tier 2 quotas/curve/caps, commons and
-                    uncommons only, creatures >= 15 (H11). Writes the deck to the staging folder plus <name>.picks.json (why each card).
+                    any rarity, creatures >= 15 (H11). Writes the deck to the staging folder plus <name>.picks.json (why each card).
 Step 2  review      glance review of every pick: `review-export` builds the glance batches (tag view + Oracle view) for the picks,
                     the glance readers fill the form, `review-compare` flags picks that fit neither the declared archetypes nor the
                     commander's ability nor a utility role (reject candidates) and cards where tags and Oracle reader disagree
@@ -42,7 +42,7 @@ CL_BASE, CL_PER = 4, 2    # colourless is the sixth colour: non-ramp colourless 
 CL_LANDS = 4              # colourless-producing nonbasic lands assumed when sizing (user 2026-10-26)
 NONCREATURE_TOK = {'treasure', 'food', 'clue', 'blood', 'gold', 'junk', 'map', 'powerstone', 'shard'}
 THEME_WORDS = ['Food', 'Clue', 'Blood', 'Gold', 'Junk', 'Powerstone', 'energy', 'poison', 'proliferate', 'Dungeon', 'initiative', 'monarch', 'Saproling', 'Servo', 'Thopter']
-RARITY = {'C': 99, 'U': 99, 'R': 0, 'M': 0}   # starters: commons and uncommons only (as starter_tune.py did)
+RARITY = {'C': 99, 'U': 99, 'R': 99, 'M': 99}   # no rarity cap (user 2026-10-26; was commons and uncommons only)
 UTILITY_ROLES = {'removal', 'draw', 'ramp', 'wipe', 'fixing', 'counter', 'protection'}
 COLORS = 'WUBRG'
 
