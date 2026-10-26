@@ -606,13 +606,13 @@ forge_ai: AILogic=-
 
 card: Bitter Triumph
 typing: cardtype:instant
-tags: forge_line:alternateadditionalcost target_count:one target_type:creature target_type:planeswalker remove:destroy cost:discard cost:life discard cost_additional
+tags: forge_line:alternateadditionalcost target_count:one target_type:creature target_type:planeswalker remove:destroy cost:discard cost:life discard alt_additional_cost
 face: mv:2 colors:b
 derived: spot_removal removal_weight:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",destroy,"","ValidTgts=Creature,Planeswalker",""
 groups[4]{id,source,tags}:
-  c0,card,cost_additional
+  c0,card,alt_additional_cost
   k1,K line,forge_line:alternateadditionalcost
   c1,A line,target_count:one target_type:creature target_type:planeswalker remove:destroy
   v,cross-check (oracle gap filler/keyword/ai),cost:discard cost:life discard
@@ -3846,9 +3846,9 @@ forge_ai: AILogic=-
 
 card: "Breeches, Eager Pillager"
 typing: supertype:legendary cardtype:creature type:goblin type:pirate
-tags: kw:first_strike token_make trigger:attacks modal:1_of_3 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source target_count:one target_type:creature restrict_kind:cant_block duration:eot look_top:1 take:all to_zone:exile impulse_draw impulse_draw_count:1 trigger_filter:you_control
+tags: kw:first_strike token_make trigger:attacks modal:1_of_3 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source target_count:one target_type:creature restrict_kind:cant_block duration:eot look_top:1 take:all to_zone:exile impulse_draw impulse_draw_count:1 trigger_filter:you_control trigger_filter:pirate
 ai_tags: artifact_token selection tempo:+1.5 restrict
-face: mv:3 power:3 toughness:3 colors:r identity:r rarity:rare
+face: mv:3 power:3 toughness:3 colors:r
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attacks,"",charm,"","",""
 links[2]{from,rel,to}:
@@ -3856,7 +3856,7 @@ links[2]{from,rel,to}:
   mana_source,provided_by,token_type:treasure
 groups[7]{id,source,tags}:
   k1,K line,kw:first_strike
-  c1,T line,trigger:attacks trigger_filter:you_control
+  c1,T line,trigger:attacks trigger_filter:you_control trigger_filter:pirate
   c1.2,sub-ability of c1,modal:1_of_3
   c1.3,sub-ability of c1,token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
   c1.4,sub-ability of c1,target_count:one target_type:creature restrict_kind:cant_block duration:eot
@@ -4016,13 +4016,13 @@ forge_ai: AILogic=-
 
 card: Akki Ronin
 typing: cardtype:creature type:goblin type:samurai
-tags: discard draw trigger:attacks cost:discard draw_count:1 trigger_filter:you_control
+tags: discard draw trigger:attacks cost:discard draw_count:1 trigger_filter:you_control trigger_filter:samurai trigger_filter:warrior
 ai_tags: tempo:+1
-face: mv:2 power:1 toughness:3 colors:r identity:r rarity:common
+face: mv:2 power:1 toughness:3 colors:r
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,attacks,"",draw,numcards=1,"",""
 groups[2]{id,source,tags}:
-  c1,T line,trigger:attacks trigger_filter:you_control
+  c1,T line,trigger:attacks trigger_filter:you_control trigger_filter:samurai trigger_filter:warrior
   c1.2,sub-ability of c1,cost:discard draw_count:1
 forge_ai: AILogic=-
 
@@ -5693,7 +5693,7 @@ forge_ai: AILogic=-
 
 card: Silvergill Adept
 typing: cardtype:creature type:merfolk type:wizard
-tags: forge_line:alternateadditionalcost draw trigger:etb draw_count:1 cost:mana trigger_scope:self cost_additional
+tags: forge_line:alternateadditionalcost draw trigger:etb draw_count:1 cost:mana trigger_scope:self alt_additional_cost
 ai_tags: tempo:+1
 face: mv:2 power:2 toughness:1 colors:u
 derived: etb_self
@@ -5702,7 +5702,7 @@ clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[5]{id,source,tags}:
-  c0,card,cost_additional
+  c0,card,alt_additional_cost
   k1,K line,forge_line:alternateadditionalcost
   c1,T line,trigger:etb trigger_scope:self
   c1.2,sub-ability of c1,draw_count:1
@@ -6864,16 +6864,16 @@ forge_ai: AILogic=-
 
 card: Daring Waverider
 typing: cardtype:creature type:otter type:wizard
-tags: trigger:etb target_count:one target_type:instant target_scope:you_control target_type:sorcery cast_free exile optional trigger_scope:self mech:graveyard_cast
+tags: trigger:etb target_count:one target_type:instant target_scope:you_control target_type:sorcery cast_free optional trigger_scope:self mech:graveyard_cast
 ai_tags: ai_logic:replayspell
 face: mv:6 power:4 toughness:4 colors:u
 derived: etb_self
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",play,"","ValidTgts=Instant.YouCtrl+cmcLE4,Sorcery.YouCtrl+cmcLE4",""
-groups[3]{id,source,tags}:
+groups[2]{id,source,tags}:
   c1,T line,trigger:etb optional trigger_scope:self
   c1.2,sub-ability of c1,target_count:one target_type:instant target_scope:you_control target_type:sorcery cast_free
-  v,cross-check (oracle gap filler/keyword/ai),exile
+verify_flags: exile_effect: Oracle line says it, script tags lack exile
 forge_ai: AILogic=ReplaySpell
 
 card: Sire of the Storm

@@ -34,7 +34,7 @@ CONCEPTS = [
     ("exile_effect", ("remove:exile", "exile", "die_replace", "impulse_draw", "return_exiled", "exile_from", "from_zone:exile", "cost:exile", "kw:suspend"), "exile", r"\bexile (?:target|all|each|another|that|it)\b"),
     ("sacrifice", ("sacrifice_outlet", "cost:sacrifice", "effect:sacrifice", "cost_sacrifice_target"), "sacrifice", r"\bsacrifices? (?:a|an|\w+|x|this|target|each)\b"),
 ]
-LOOSE = {"bounce", "draw"}     # Oracle patterns too loose to add a tag alone; they only flag
+LOOSE = {"bounce", "draw", "exile_effect"}     # Oracle patterns too loose to add a tag alone; they only flag (exile_effect: the bare `exile` tag was dropped, user 2026-10-26)
 # oracle phrase -> trigger tag (line-start only: "When/Whenever/At the beginning of")
 O_TRIG = [(r"^(?:when|whenever) [^,]*\benters\b", "trigger:etb"), (r"^(?:when|whenever) [^,]*\bdies\b", "trigger:dies"),
           (r"^(?:when|whenever) [^,]*\battacks\b", "trigger:attacks"), (r"^(?:when|whenever) you cast\b|^(?:when|whenever) an? \w+ casts\b", "trigger:spell_cast"),

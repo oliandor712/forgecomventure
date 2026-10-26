@@ -45,7 +45,7 @@ def record_tags(name, text):
 
 PLAIN = ("cardtype:", "supertype:", "type:", "duration:", "num:", "target_count:", "has:", "needs:", "hint:", "color:", "ai_logic:", "affected_type:", "tempo:", "trigger_scope:", "target_scope:", "target_type:", "token_color:")
 GENERIC = {"optional", "shuffle", "enters_untapped", "enters_tapped", "put_tapped", "mana_choice", "unless_cost", "return", "reveal", "exile",
-           "transform", "enters_tapped_conditional", "activation_restriction", "additional_cost", "cost_additional", "mana_conditional"}
+           "transform", "enters_tapped_conditional", "activation_restriction", "additional_cost", "alt_additional_cost", "mana_conditional"}
 _FUNC = {}
 
 

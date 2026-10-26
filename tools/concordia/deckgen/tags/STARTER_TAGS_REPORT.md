@@ -21,11 +21,11 @@ Typhoid Rats, Thornweald Archer, Deadly Recluse, Ambush Viper, Leatherback Balot
 
 ## Cross-check layer (Oracle gap filler, keyword reference/CR, Forge AI)
 
-Cards where the cross-check added tags: 61; tags added in total: 66 (life_loss 27, fight 8, trigger:combat_damage 6, trigger:etb 3, untap 3, trigger:end_step 3, token_make 2, trigger:dies 2, cost:mana 2, cost:discard 1, cost:life 1, discard 1, trigger:attacks 1, surveil 1, trigger:beginning_of_combat 1, damage 1, trigger:discard 1, exile 1, remove:destroy 1).
+Cards where the cross-check added tags: 60; tags added in total: 65 (life_loss 27, fight 8, trigger:combat_damage 6, trigger:etb 3, untap 3, trigger:end_step 3, token_make 2, trigger:dies 2, cost:mana 2, cost:discard 1, cost:life 1, discard 1, trigger:attacks 1, surveil 1, trigger:beginning_of_combat 1, damage 1, trigger:discard 1, remove:destroy 1).
 
 Cards with an ai_logic tag: 38.
 
-Flags (Oracle line and script tags disagree, nothing added): 27 on 27 cards.
+Flags (Oracle line and script tags disagree, nothing added): 28 on 28 cards.
 
 - Bucknard's Everfull Purse: extra? steal: no Oracle phrase supports it
 - Return of the Wildspeaker: extra? draw: no Oracle phrase supports it
@@ -50,6 +50,7 @@ Flags (Oracle line and script tags disagree, nothing added): 27 on 27 cards.
 - Time of Ice: extra? bounce: no Oracle phrase supports it
 - Psychic Spiral: extra? mill: no Oracle phrase supports it
 - Bill Ferny, Bree Swindler: extra? steal: no Oracle phrase supports it
+- Daring Waverider: exile_effect: Oracle line says it, script tags lack exile
 - Loran of the Third Path: extra? remove:destroy: no Oracle phrase supports it
 - Crumb and Get It: extra? draw: no Oracle phrase supports it
 - Commander Sofia Daguerre: extra? remove:destroy: no Oracle phrase supports it

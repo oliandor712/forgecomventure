@@ -33,7 +33,11 @@ Pinned reference text, one line per tag family with a structured or non-obvious 
 | `mana_amount_if` | mana added when the condition holds; mana_amount is the base amount otherwise |
 | `extra_land_drop` | its controller may play this many additional lands each turn |
 | `phase_out` | permanents phase out |
-| `cost_additional` | an alternative additional cost as the card is cast (reveal a card or pay mana, for example); the cost tags follow |
+| `colorless_card` | the card is a colorless spell (no colored mana symbol, no color indicator, or Devoid; lands excluded); colorless is the sixth colour, so the deck needs colorless-capable mana for it |
+| `unless_cost` | the effect happens unless a player pays a cost (a tax, not a choice); unless_cost_amount says how much |
+| `niche` | the card is only good in a deck built around the named theme (niche:artifact, niche:landfall, niche:tribal ...); the power score gives it half role credit; a card with this tag fits few decks |
+| `mech` | the card needs a rule or component many decks and the Forge AI handle poorly (mech:monarch, mech:vote, mech:day_night ...); the deck builder allows it only from a set tier |
+| `alt_additional_cost` | an alternative additional cost as the card is cast (reveal a card or pay mana, for example); the cost tags follow |
 | `additional_cost` | the spell has a mandatory additional cost to cast it (discard a card, sacrifice a creature ...); the cost tags (not the mana cost) say which; it is not the spell's own mana cost |
 | `scales` | the amount (X) of this ability is the number of that kind of thing you control: write it as 'for each <thing> you control' (scales:island on a draw_count:x = draw a card for each Island you control) |
 | `mana_restriction` | the mana can be spent only on what the value says (mana_restriction:instant_or_sorcery = spend this mana only to cast an instant or sorcery spell) |

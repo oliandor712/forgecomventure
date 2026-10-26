@@ -17,7 +17,7 @@ Tier 1 requirements live in `tools/concordia/tier1_rules.py` (the one source; de
 | Deck | 100 cards: commander + 99 |
 | Commander | one legendary creature, exactly one colour of identity, no mana value limit, common or uncommon, one commander (a Partner-ability commander is fine). Not shared with another tier: not checked by deck_tier (a categorize.py / audit concern) |
 | Lands | 41-42, decided last from the curve |
-| Power (average card power) | 16-21 |
+| Power (average card power) | 17-23 |
 | Creatures | at least 15; soft cap 35, the builder stops adding creatures there (user, 2026-10-25) |
 | Archetype build targets (creatures) | none; the score decides between 15 and 35 |
 | Instants + sorceries (minimum) | tokens 12, aggro 10, tribal 8 |
@@ -48,7 +48,7 @@ Tier 1 requirements live in `tools/concordia/tier1_rules.py` (the one source; de
 | Tutors | 0 | 0-1 | 0-3 |
 | Average mana value (nonland) | 2.5-3.4 | 2.6-3.6 | 2.8-3.9 |
 | Creatures | at least 15 | at least 15 | at least 15 |
-| Average card power (§3a) | 16-21 | 22-31 | 28.5-39 |
+| Average card power (§3a) | 17-23 | 22-30 | 29-37 |
 | Rarity | Commons, plus up to 15 uncommons. No rares or mythics | 10 rares or fewer, 1 mythic or fewer | No real limit |
 | Card types (Moxfield grouping) | at least 6 noncreature cards, 4 of them instants or sorceries; creatures at most 85% | at least 4 instants, 3 sorceries, 4 artifacts, 2 enchantments; no type above 60% | as Tier 2 |
 | Game Changers | 0 | 0 | 3 or fewer |
@@ -143,13 +143,13 @@ power = 40 × raw power       (the highest of: cube rank 1 − (rank − 1)/4000
       +  5 × fast mana        +  5 × tutor
 ```
 
-Tier power bands (`tools/concordia/tier_table.json`, baseline 2026-10-25; live-deck medians in brackets): Tier 1 16-21 [17.3], Tier 2 22-31
-[27.5], Tier 3 28.5-39 [33.5], Tier 4 33-43 [38.2], Tier 5 38.5 and up [43.0]. Neighbouring bands overlap by 2.5 to 5 points, so power gates
-a tier but the other tier rules (rarity, Game Changers, ramp, removal) tell neighbours apart.
+Tier power bands (`tools/concordia/tier_table.json`, baseline 2026-10-25; bands retuned 2026-10-26; medians of the decks live at that date in brackets): Tier 1 17-23 [17.3], Tier 2 22-30
+[27.5], Tier 3 29-37 [33.5], Tier 4 35.5-41.5 [38.2], Tier 5 40 and up [43.0]. Neighbouring bands overlap by 1 to 1.5 points, so power gates
+a tier and the other tier rules (rarity, Game Changers, ramp, removal) only break ties at the edges. Decks built before the retune are not re-scored into the new bands until they are rebuilt.
 
 - **The deck's power is the average over its nonland cards.** It was calibrated on Concordia's lesson decks (about
   11), starters (24-29) and Realm of Legends enemies (26-35).
-- **Tier 2 and Tier 3 overlap on average power on purpose.** In Forge's own Legends decks, what separates the tiers
+- **Neighbouring tiers overlap by about a point of average power on purpose (user, 2026-10-26).** In Forge's own Legends decks, what separates the tiers
   is mostly rarity, mana base quality and top-end cards, not the count of ramp, draw and removal. The tier rules on
   ramp, fast mana, rarity and Game Changers carry that difference.
 - **Arcmind (arcmind.cards) is a deck analyzer, not an opponent.** It scores decks 0-10 on Speed, Consistency,

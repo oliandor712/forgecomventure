@@ -17,7 +17,7 @@ DECK = {
     "ramp": (0, 3), "fast": (0, 0), "draw": (0, 3), "removal": (0, 3), "wipe": (0, 0), "tutor": (0, 0),
     "avg_mv": (2.5, 3.4),
     "creatures": (15, None),  # H11: at least 15 (pass/fail); the soft cap of 35 is a build limit only
-    "power": (16, 21),  # H08 (user 2026-10-25: 16-21, was 16-18)
+    "power": (17, 23),  # H08 (user 2026-10-26: 17-23, was 16-21)
     "max_rare": 0, "max_mythic": 0, "max_uncommon": 25,
     "game_changers": 0, "mld": 0, "extra_turns": 0, "combos": "none",
     "bracket": 1,
@@ -35,9 +35,9 @@ CREATURE_SOFT_CAP = 35  # user 2026-10-25: the builder stops adding creatures at
 INSTANT_SORCERY = {"tokens": 12, "aggro": 10, "tribal": 8}
 ENCHANTMENT = {"tokens": 3, "tribal": 2, "aggro": 1}  # tokens was 4
 
-# Land count range (decided last from the curve) and the build's power targets (H08: 16-21).
+# Land count range (decided last from the curve) and the build's power targets (H08: 17-23).
 LANDS = (41, 42)
-POWER = {"target": 18.5, "floor": 16.0, "ceiling": 21.0}  # target is the middle of the band (was 17.0 for 16-18)
+POWER = {"target": 20.0, "floor": 17.0, "ceiling": 23.0}  # target is the middle of the band (was 18.5 for 16-21)
 
 # Archetype classification thresholds.
 TOKENS_MIN = 12  # token makers needed for the tokens archetype (user: 12+)

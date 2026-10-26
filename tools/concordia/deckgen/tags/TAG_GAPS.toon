@@ -1,12 +1,13 @@
 # Claude-only file in TOON. Written by tagcheck/guards.py; regenerated, never hand-merged. open_slot = tag gap (tagger), no_rule = rule gap (mtg2llm mine / HAND tables).
-# starters: 930 units, 600 rendered, 45 open_slot, 285 no_rule
-gaps[330|]{card|group|tags|reason}:
+# starters: 930 units, 594 rendered, 44 open_slot, 292 no_rule
+gaps[336|]{card|group|tags|reason}:
 Abdel Adrian, Gorion's Ward|c1|trigger:etb trigger_scope:self remove:exile token_count:x token_color:white token_pt:1/1 token_type:soldier x_is:remembered_amount|no_rule
 Abhorrent Overlord|c1|trigger:etb trigger_scope:self token_count:x token_color:black token_pt:1/1 token_kw:flying token_type:harpy x_is:devotion_black|no_rule
 Absolver Thrull|x|trigger:dies trigger:etb|no_rule
 Adeline, Resplendent Cathar|c2|trigger:attacks token_count:1 token_color:white token_pt:1/1 token_type:human|no_rule
 Afterlife|c1|target_count:one target_type:creature remove:destroy cant_regenerate token_count:1 token_color:white token_pt:1/1 token_kw:flying token_type:spirit|no_rule
 Aftermath Analyst|c2|cost:sacrifice cost_sacrifice_target:self cost_mana:3g target_count:all target_type:land target_scope:you_control put_onto_battlefield from_zone:graveyard put_tapped controller:you|no_rule
+Akki Ronin|c1|trigger:attacks trigger_filter:you_control trigger_filter:samurai trigger_filter:warrior cost:discard draw_count:1|no_rule
 Alharu, Solemn Ritualist|c1|trigger:etb trigger_scope:self target_count:up_to_2 target_type:creature target_filter:other counter_count:1 counter:p1p1|no_rule
 Alharu, Solemn Ritualist|c2|trigger:dies trigger_zone:graveyard trigger_scope:any trigger_filter:you_control trigger_filter:nontoken trigger_filter:has_counter:p1p1 trigger_filter:creature token_count:1 token_color:white token_pt:1/1 token_kw:flying token_type:spirit|no_rule
 Ambition's Cost|c1|draw_count:3 life_loss_amount:3 life_loss|no_rule
@@ -35,7 +36,9 @@ Boggart Mischief|c1|trigger:etb trigger_scope:self token_count:2 token_color:bla
 Bontu's Monument|c1|cost_reduce duration:static cost_reduce_amount:1 cost_reduce_for:creature color:black|no_rule
 Bosco, Just a Bear|c2|cost:sacrifice cost_sacrifice_target:food cost_mana:2g counter_count:2 counter:p1p1 duration:eot trample grant_kw:trample duration:eot|no_rule
 Bottle-Cap Blast|c1|target_count:one target_type:any damage damage_amount:5 token_count:x token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source|no_rule
+Breeches, Eager Pillager|c1|trigger:attacks trigger_filter:you_control trigger_filter:pirate modal:1_of_3 token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source target_count:one target_type:creature restrict_kind:cant_block duration:eot look_top:1 take:all to_zone:exile impulse_draw impulse_draw_count:1 duration:eot|no_rule
 Bucknard's Everfull Purse|c1|cost:tap cost_mana:1 token_count:x token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source steal|no_rule
+Bumbleflower's Sharepot|c2|cost:tap cost:sacrifice cost_sacrifice_target:self cost_mana:5 target_count:one target_type:permanent target_filter:nonland remove:destroy|no_rule
 Captain Ripley Vance|c1|trigger:spell_cast trigger_filter:you_control trigger_filter:nth_spell_3 counter_count:1 counter:p1p1 target_count:one target_type:any damage damage_amount:x x_is:own_power|no_rule
 Captivating Crew|c1|cost_mana:3r target_count:one target_type:creature target_scope:opp_control steal steal_grants_haste duration:eot untap|no_rule
 Carrot Cake|c1|trigger:etb trigger_scope:self token_count:1 token_color:white token_pt:1/1 token_type:rabbit scry_count:1|no_rule
@@ -55,7 +58,7 @@ Cower in Fear|c1|target_count:all target_type:creature target_scope:opp_control 
 Creeping Bloodsucker|c1|trigger:upkeep target_scope:each_opponent damage damage_amount:1 lifegain_amount:x x_is:previous_result|no_rule
 Crib Swap|c1|target_count:one target_type:creature remove:exile token_count:1 token_color:colorless token_pt:1/1 token_type:shapeshifter_changeling|no_rule
 Crumb and Get It|c1|target_count:one target_type:creature target_scope:you_control pump_amount:+2/+2 duration:eot indestructible grant_kw:indestructible duration:eot|no_rule
-Daring Waverider|c1|trigger:etb optional trigger_scope:self target_count:one target_type:instant target_scope:you_control target_type:sorcery cast_free exile|no_rule
+Daring Waverider|c1|trigger:etb optional trigger_scope:self target_count:one target_type:instant target_scope:you_control target_type:sorcery cast_free|no_rule
 Deathless Behemoth|c1|cost:sacrifice cost_sacrifice_target:eldrazi return from_zone:graveyard to_zone:hand|no_rule
 Decoction Module|c1|trigger:etb trigger_scope:any trigger_filter:you_control trigger_filter:creature counter_count:1 counter:energy|no_rule
 Decree of Justice|c1|token_count:x token_color:white token_pt:4/4 token_kw:flying token_type:angel x_is:x_paid|no_rule
@@ -156,7 +159,9 @@ Luxurious Locomotive|c1|trigger:attacks token_count:x token_color:colorless toke
 Malakir Blood-Priest|c1|trigger:etb target_scope:each_opponent trigger_scope:self life_loss_amount:x x_is:party_size lifegain_amount:x x_is:party_size life_loss|no_rule
 Mask of Memory|c1|discard_count:1|no_rule
 Melded Moxite|c2|cost:sacrifice cost_sacrifice_target:self cost_mana:3 token_count:1 token_color:colorless token_pt:2/2 token_cardtype:artifact token_type:robot|no_rule
+Meteor Golem|c1|trigger:etb trigger_scope:self target_count:one target_type:permanent target_scope:opp_control target_filter:nonland remove:destroy|no_rule
 Mindless Automaton|c1|cost:discard cost_mana:1 counter_count:1 counter:p1p1|no_rule
+Mindless Automaton|c2|cost:remove_counters draw_count:1|no_rule
 Mold Shambler|c1|trigger:etb trigger_scope:self target_count:one target_type:permanent target_filter:noncreature remove:destroy|no_rule
 Momo, Playful Pet|c1|trigger:leaves trigger_scope:self modal:1_of_3 token_count:1 token_color:colorless token_cardtype:artifact token_type:food token_ability:pay_2_tap_sacrifice_gain_3_life lifegain target_count:one target_type:creature target_scope:you_control counter:p1p1 scry_count:2|no_rule
 Monstrous Onslaught|c1|target_count:one target_type:creature damage damage_amount:x x_is:greatest_power_among_creature_you_control|no_rule
@@ -201,6 +206,7 @@ Prosperous Thief|c1|trigger_filter:one_or_more token_count:1 token_color:colorle
 Prosperous Thief|k1|kw:ninjutsu num:1 color:blue|no_rule
 Psychic Spiral|c1|target_count:all target_type:card target_scope:you_control return from_zone:graveyard to_zone:library shuffle target_count:one target_type:player|no_rule
 Rampaging Baloths|c1|trigger:etb trigger_scope:any trigger_filter:you_control trigger_filter:land token_count:1 token_color:green token_pt:4/4 token_type:beast|no_rule
+Ravenous Chupacabra|c1|trigger:etb trigger_scope:self target_count:one target_type:creature target_scope:opp_control remove:destroy|no_rule
 Reach of Branches|c1|token_count:1 token_color:green token_pt:2/5 token_type:treefolk_shaman|no_rule
 Read the Bones|c1|scry_count:2 draw_count:2 life_loss_amount:2 life_loss|no_rule
 Reckless Fireweaver|c1|trigger:etb target_scope:each_opponent trigger_scope:any trigger_filter:you_control trigger_filter:artifact damage damage_amount:1|no_rule
@@ -259,6 +265,7 @@ Thraben Inspector|c1|trigger:etb trigger_scope:self investigate token_make|no_ru
 Timeless Witness|c1|trigger:etb optional trigger_scope:self target_count:one target_type:card target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand|no_rule
 Timeless Witness|k1|kw:eternalize num:5 color:green|no_rule
 Tooth and Claw|c1|cost:sacrifice cost_sacrifice_target:creature token_count:1 token_color:colorless token_color:red|no_rule
+Torch Fiend|c1|cost:sacrifice cost_sacrifice_target:self cost_mana:r target_count:one target_type:artifact remove:destroy|no_rule
 Tormod, the Desecrator|c1|trigger_scope:other trigger_filter:one_or_more token_count:1 token_color:black token_pt:2/2 token_type:zombie|no_rule
 Tranquil Thicket|k1|kw:cycling color:green|no_rule
 Triumph of the Hordes|c1|target_count:all target_type:creature target_scope:you_control pump_amount:+1/+1 duration:eot grant_kw:trample grant_kw:infect trample infect|no_rule
@@ -286,7 +293,6 @@ Whirler Rogue|c2|target_count:one target_type:creature|no_rule
 Yahenni, Undying Partisan|c1|trigger:dies trigger_zone:graveyard trigger_scope:any trigger_filter:opp_control trigger_filter:creature counter_count:1 counter:p1p1|no_rule
 Zuko's Exile|c1|target_count:one target_type:artifact target_type:creature target_type:enchantment remove:exile token_count:1 token_color:colorless token_cardtype:artifact token_type:clue_draw|no_rule
 Zulaport Cutthroat|c1|trigger:dies trigger_zone:graveyard target_scope:each_opponent trigger_scope:any trigger_filter:you_control trigger_filter:creature life_loss_amount:1 lifegain_amount:1 life_loss|no_rule
-Akki Ronin|c1|trigger:attacks trigger_filter:you_control cost:discard draw_count:1|open_slot
 Bitter Triumph|k1|forge_line:alternateadditionalcost|open_slot
 Brotherhood Regalia|c1|grant_kw:ward duration:static affected_type:creature|open_slot
 Chasm Guide|c1|trigger:etb duration:eot haste trigger_scope:any trigger_filter:you_control target_count:all target_type:creature target_scope:you_control duration:eot grant_kw:haste|open_slot

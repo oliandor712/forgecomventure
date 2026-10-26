@@ -10,7 +10,7 @@ rules[76|]{id|area|rule|since|status|where}:
   H05|curve|Deck power rises in order wild then trainer then keeper then guardian then Warden at every stage|2026-10-20|applied|build_color_zone.py windows
   H06|data|Use existing assets only. Ignore prices everywhere|2026-10-20|applied|all tools
   H07|power|Card power counts EDHREC popularity. Staples are a category (popular, low standalone impact) and are tracked apart from Game Changers|2026-10-20|applied|deck_tier.py and staples.py
-  H08|builder|Raise the tier 1-2 floor. T1 decks 16-21 power (user 2026-10-25, was 16-18) and T2 25-30 rather than as weak as the builder can make them|2026-10-21|applied|build.py FLOOR CEILING T1_TARGET
+  H08|builder|Raise the tier 1-2 floor. T1 decks 17-23 power (user 2026-10-26, was 16-21; 2026-10-25 was 16-18) and T2 25-30 rather than as weak as the builder can make them|2026-10-21|applied|build.py FLOOR CEILING T1_TARGET
   H09|builder|Push staples at tiers 1-2; at tier 1 they may be commons or uncommons (user, 2026-10-21); tier 2 stays uncommon printings only until the user says otherwise|2026-10-21|applied|build.py UNCOMMON_STAPLE_BONUS; tier1_rules.py STAPLE_PRINTINGS
   H10|builder|Add near-staple nonbasic lands and cheap mana rocks from budget decks (precons and low-rarity lists) inside the tier's ramp caps|2026-10-21|applied|budget_lands.py
   H11|builder|Creature requirement for every tier, archetype and sub: at least 15 creatures, no archetype creature windows, soft cap 35 (the builder stops adding creatures at 35; a deck over it is not a fail) (user, 2026-10-25; replaced the 30-36 band of 2026-10-21). Between 15 and 35 the score decides|2026-10-25|applied|archetype_rules.creature_check; build.py creature_band and H11 check

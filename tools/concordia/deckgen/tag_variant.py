@@ -199,7 +199,7 @@ def gap_pass(face, lines, sv, tags, ex_groups):
     if mk and mk.group(2) == "0": add("c0", "x_is:kicked_bonus_" + mk.group(1))
     if re.search(r"AdjustLandPlays\$ (\d+)", face) and not any(t.startswith("extra_land_drop") for t in tags):
         add("c0", "extra_land_drop:" + re.search(r"AdjustLandPlays\$ (\d+)", face).group(1))
-    if re.search(r"^K:AlternateAdditionalCost", face, re.M): add("c0", "cost_additional")
+    if re.search(r"^K:AlternateAdditionalCost", face, re.M): add("c0", "alt_additional_cost")
     if any(re.search(r"\w+<", m.group(1)) for m in re.finditer(r"^A:SP\$[^\n]*?Cost\$ ([^|\n]*?)\s*(?:\||$)", face, re.M)): add("c0", "additional_cost")      # a spell whose Cost$ holds a non-mana part (Discard<..>, Sac<..>, PayLife<..>) has a mandatory additional cost (Big Score); the cost tags of the group say which
     # reanimate is an umbrella (user 2026-10-22): every effect that moves a card from a graveyard onto the battlefield (put_onto_battlefield + from_zone:graveyard)
     if "put_onto_battlefield" in tags and "from_zone:graveyard" in tags and "reanimate" not in tags: add("c0", "reanimate")

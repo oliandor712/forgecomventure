@@ -1,11 +1,11 @@
 {
-  "baseline": "2026-10-25 (new scorer: split-card popularity fixed, niche role halved; live-deck medians T1 17.3 / T2 27.5 / T3 33.5 / T4 38.2 / T5 43.0)",
-  "note": "One table for tier power numbers (ACTION_PLAN_TAG_DECK step 6). band = deck_tier.py's power window (inclusive, null = open); target = what build.py aims for; floor/ceiling = build.py's retry limits (tiers 2 only; tier 1 comes from tier1_rules.POWER). Tier 1 stays in tier1_rules.py. Numbers on the EDHREC card-power scale; recalibrate after card_power changes and bump the baseline date. Bands overlap by at most about 5 points: a deck's power gates a tier but does not pick it alone (rarity, Game Changers and the other tier rules separate neighbours).",
+  "baseline": "2026-10-25 (new scorer: split-card popularity fixed, niche role halved; live-deck medians T1 17.3 / T2 27.5 / T3 33.5 / T4 38.2 / T5 43.0); bands retuned 2026-10-26 (user: T1 17-23, neighbours overlap 1-1.5 points)",
+  "note": "One table for tier power numbers (ACTION_PLAN_TAG_DECK step 6). band = deck_tier.py's power window (inclusive, null = open); target = what build.py aims for; floor/ceiling = build.py's retry limits (tiers 2 only; tier 1 comes from tier1_rules.POWER). Tier 1 stays in tier1_rules.py. Numbers on the EDHREC card-power scale; recalibrate after card_power changes and bump the baseline date. Bands overlap by 1 to 1.5 points (user 2026-10-26): a deck's power gates a tier but does not pick it alone (rarity, Game Changers and the other tier rules separate neighbours).",
   "tiers": {
     "2": {
       "band": [
         22,
-        31
+        30
       ],
       "target": 27.0,
       "floor": 24.5,
@@ -13,21 +13,21 @@
     },
     "3": {
       "band": [
-        28.5,
-        39
+        29,
+        37
       ],
       "target": 33.5
     },
     "4": {
       "band": [
-        33,
-        43
+        35.5,
+        41.5
       ],
       "target": 38.5
     },
     "5": {
       "band": [
-        38.5,
+        40,
         null
       ],
       "target": 43.0

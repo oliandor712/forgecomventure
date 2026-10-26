@@ -101,7 +101,7 @@ def creature_band(d):
 
 def human_pass1(d, ident, rules):
     """Pass 1, before the fill: the rules as build parameters. Human-logic rows win over the metrics (file header)."""
-    return {'target': t1.POWER['target'] if 'H08' in rules else T1_TARGET,  # H08: tier 1 power 16-21
+    return {'target': t1.POWER['target'] if 'H08' in rules else T1_TARGET,  # H08: tier 1 power 17-23
             'bonus': d.get('_boost', {}).get('bonus', 1.0),  # ability_tags weight; raised once on a retry
             'cwin': creature_band(d) if 'H11' in rules else None}  # H11: at least 15 creatures
 

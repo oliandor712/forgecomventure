@@ -77,11 +77,16 @@ def write_sample(recs):
 
 
 # tag families the user approved in chat on 2026-10-22: the first 58 ("Approve all new tags") and the rest later the same day ("approve all tags", after the redundancy prune); a family created later stays proposed until approved
-APPROVED = ['activation_restriction', 'affects', 'cast_free', 'color', 'cost', 'cost_if_you_do', 'cost_reduce_for', 'cost_sacrifice_target', 'counter', 'damage', 'damage_amount', 'delayed', 'die_replace', 'discard_count', 'draw_count', 'duration', 'effect', 'enters_tapped', 'enters_untapped', 'exile_from', 'impulse_draw', 'impulse_draw_count', 'loses_all_abilities', 'mana', 'mana_amount', 'mana_choice', 'mana_restriction', 'must_attack', 'put_from', 'put_onto_battlefield', 'put_tapped', 'recursion', 'remove', 'return_exiled', 'sacrifice_type', 'shuffle', 'steal', 'steal_grants_haste', 'target_count', 'target_filter', 'target_scope', 'target_type', 'target_zone', 'tempo', 'token_cardtype', 'token_color', 'token_count', 'token_kw', 'token_pt', 'token_type', 'transform', 'trigger', 'trigger_filter', 'trigger_scope', 'trigger_zone', 'tutor_count', 'tutor_dest', 'tutor_target', 'affected_filter', 'affected_scope', 'affected_type', 'ai_logic', 'cant_be_blocked', 'cant_be_countered', 'condition', 'cost_exile_target', 'cost_return_target', 'counter_count', 'fight', 'grant_ability', 'grant_kw', 'life_loss', 'life_loss_amount', 'lifegain_amount', 'look_top', 'modal', 'piles_split', 'pump_amount', 'replace', 'rest_to_zone', 'rest_order', 'from_zone', 'to_zone', 'restrict_kind', 'reveal', 'saga_chapter', 'scry_count', 'surveil', 'take', 'token_ability', 'untap', 'x_is', 'optional', 'unless_cost', 'limit', 'regenerate', 'cant_regenerate', 'prevent_damage', 'choose_on_enter', 'choice_option', 'cost_reduce_amount', 'cost_reduce_mana', 'cost_reduce_for', 'mana_conditional', 'mana_amount_if', 'extra_land_drop', 'phase_out', 'cost_additional', 'controller']   
+APPROVED = ['activation_restriction', 'affects', 'cast_free', 'color', 'cost', 'cost_if_you_do', 'cost_reduce_for', 'cost_sacrifice_target', 'counter', 'damage', 'damage_amount', 'delayed', 'die_replace', 'discard_count', 'draw_count', 'duration', 'effect', 'enters_tapped', 'enters_untapped', 'exile_from', 'impulse_draw', 'impulse_draw_count', 'loses_all_abilities', 'mana', 'mana_amount', 'mana_choice', 'mana_restriction', 'must_attack', 'put_from', 'put_onto_battlefield', 'put_tapped', 'recursion', 'remove', 'return_exiled', 'sacrifice_type', 'shuffle', 'steal', 'steal_grants_haste', 'target_count', 'target_filter', 'target_scope', 'target_type', 'target_zone', 'tempo', 'token_cardtype', 'token_color', 'token_count', 'token_kw', 'token_pt', 'token_type', 'transform', 'trigger', 'trigger_filter', 'trigger_scope', 'trigger_zone', 'tutor_count', 'tutor_dest', 'tutor_target', 'affected_filter', 'affected_scope', 'affected_type', 'ai_logic', 'cant_be_blocked', 'cant_be_countered', 'condition', 'cost_exile_target', 'cost_return_target', 'counter_count', 'fight', 'grant_ability', 'grant_kw', 'life_loss', 'life_loss_amount', 'lifegain_amount', 'look_top', 'modal', 'piles_split', 'pump_amount', 'replace', 'rest_to_zone', 'rest_order', 'from_zone', 'to_zone', 'restrict_kind', 'reveal', 'saga_chapter', 'scry_count', 'surveil', 'take', 'token_ability', 'untap', 'x_is', 'optional', 'unless_cost', 'limit', 'regenerate', 'cant_regenerate', 'prevent_damage', 'choose_on_enter', 'choice_option', 'cost_reduce_amount', 'cost_reduce_mana', 'cost_reduce_for', 'mana_conditional', 'mana_amount_if', 'extra_land_drop', 'phase_out', 'alt_additional_cost', 'controller']   
 
 
 PROPOSED_OFFLINE = []
-APPROVED_LATER = ['cost_mana', 'return', 'unless_cost_amount', 'investigate', 'monarch', 'bolster', 'named']   # approved by the user in chat on 2026-10-23
+APPROVED_LATER = ['cost_mana', 'return', 'unless_cost_amount', 'investigate', 'monarch', 'bolster', 'named', 'additional_cost']   # approved by the user in chat on 2026-10-23 (additional_cost: pre-approved the same day, HANDOVER)
+APPROVED_DECISION = {'colorless_card': 'approved 2026-10-26 (user decision H78: colorless is the sixth colour)'}   # families approved by a recorded user decision
+# Families the script pass emits (never 'new' in a cross-check run), so the table above never listed them. APPROVED_LISTED = on the APPROVED list since the 2026-10-25 commit, no chat approval found; PROPOSED_RECORDS = in use, never put to the user.
+APPROVED_LISTED = ['unless_cost', 'phase_out', 'cant_regenerate', 'prevent_damage', 'mana_conditional', 'alt_additional_cost']
+PROPOSED_RECORDS = ['equip', 'grant_double_strike', 'infect']
+VALUE_FAMILIES_EXTRA = ('kw', 'scales', 'forge_line', 'num')   # mechanical families: their new values are listed with the approved ones (type/supertype/landtype/cardtype are card data, not tags)
 
 
 def write_reference(recs):
@@ -156,6 +161,25 @@ def write_approval(recs, red=()):
         ex = ", ".join(list(dict.fromkeys(c for v in vals.values() for c in v))[:3])
         row = "| %s | `%s` | %s | %s | %d (e.g. %s) | %s |" % ("[x] approved 2026-10-23" if f in APPROVED_LATER else "[x] approved 2026-10-22" if f in APPROVED else "[ ] proposed", f, m, w, n, ex, seen)
         (archive if f in APPROVED or f in APPROVED_LATER else out).append(row)
+    def _rec_row(f, status):
+        vals = collections.OrderedDict()
+        for r in recs:
+            for tg in r["tags"]:
+                if tg.split(":")[0] == f: vals.setdefault(tg, []).append(r["name"])
+        if not vals: return None
+        m, w = doc.get(f) or (TX.LEGEND.get(f) or "(see tag_extra.LEGEND)", "")
+        if isinstance(m, tuple): m, w = m
+        n = len(set(c for v in vals.values() for c in v))
+        ex = ", ".join(list(dict.fromkeys(c for v in vals.values() for c in v))[:3])
+        seen = "; ".join("%s (%d)" % (t, len(v)) for t, v in sorted(vals.items(), key=lambda kv: -len(kv[1]))[:8])
+        return "| %s | `%s` | %s | %s | %d (e.g. %s) | %s |" % (status, f, m, w, n, ex, seen)
+    for f, status in [(f, "[x] " + APPROVED_DECISION[f]) for f in APPROVED_DECISION if f not in fam] + [(f, "[x] approved 2026-10-23") for f in ["additional_cost"] if f not in fam]             + [(f, "[x] on the approved list since 2026-10-25 (chat approval not found: confirm)") for f in APPROVED_LISTED if f not in fam]:
+        row = _rec_row(f, status)
+        if row: archive.append(row)
+    for f in PROPOSED_RECORDS:
+        if f not in fam:
+            row = _rec_row(f, "[ ] proposed")
+            if row: out.append(row)
     for f in PROPOSED_OFFLINE:      # families emitted outside tag_run (tagcheck/mtg2llm.py tag): listed here until approved, with no starter count
         if f not in APPROVED and f not in APPROVED_LATER and f not in fam:
             m, w = doc.get(f, ("(see tag_extra.DOC)", "")); out.append("| [ ] proposed | `%s` | %s | %s | 0 starter cards (mtg2llm tag: e.g. Pir, Imaginative Rascal; Toothy, Imaginary Friend; Agency Outfitter) | named:Toothy,_Imaginary_Friend |" % (f, m, w))
@@ -167,7 +191,7 @@ def write_approval(recs, red=()):
         for tg in r["tags"]:
             if TV.is_ai_tag(tg) and not tg.startswith("ai_logic"): continue
             f = tg.split(":")[0]
-            if f in APPROVED and tg not in snap and (":" in tg): allt.setdefault(f, collections.OrderedDict()).setdefault(tg, []).append(r["name"])
+            if (f in APPROVED or f in APPROVED_LATER or f in VALUE_FAMILIES_EXTRA) and tg not in snap and (":" in tg): allt.setdefault(f, collections.OrderedDict()).setdefault(tg, []).append(r["name"])
     out += ["", "## New values inside already-approved families (the family is approved; these values appeared after the approval)\n", "Say if any should be changed; unmarked means accepted with the family.\n", "| Family | New values (cards) |", "|---|---|"]
     for f, vals in sorted(allt.items(), key=lambda kv: -len(kv[1])):
         out.append("| `%s` | %s |" % (f, "; ".join("%s (%d)" % (v, len(c)) for v, c in sorted(vals.items(), key=lambda kv: -len(kv[1]))[:14])))
@@ -176,7 +200,7 @@ def write_approval(recs, red=()):
             "- `x_is:<what>` values were renamed to readable words (e.g. `count_swamp_youctrl` -> `count_swamp_you_control`); `restrict` now also carries `restrict_kind:<kind>`.",
             "- `transform` was removed from Feign Death, Supernatural Stamina and Merfolk Trickster (they grant or remove abilities); `sacrifice_outlet` was removed from 14 cards that sacrifice only themselves (user rule).",
             "- Segregated, kept intact: AI Tags (`tempo:*`, `ai_logic:*`, `burn`, `removal`, `selection`, `fixing`, `restrict`, `pump_team`, `artifact_token`, `land_tutor`, bare `recursion`, every `<kw>_grant` and the bare keyword tags on cards that only grant a keyword) sit on the `ai_tags:` line and are hidden from the blind reader and from the redundancy check.",
-            "", "## Waiting on the user", "- Nothing is waiting for approval: all families, the two behaviour changes and the merged tags were approved on 2026-10-22. New families created by later runs are listed in the table above as proposed.", "- Still open (not an approval): confirm the AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token)."]
+            "", "## Waiting on the user", "- Families marked `[ ]` in the first table: `niche` and `mech` (in use: `niche` feeds the power score, `mech` gates cards by tier) and the three one-card tags `equip`, `grant_double_strike`, `infect`, which duplicate `grant_kw:*` / `kw:equip` and are proposed for removal. All earlier families, the two behaviour changes and the merged tags were approved on 2026-10-22.", "- Confirm in chat: the six families marked \"chat approval not found\" in `APPROVED_TAGS_ARCHIVE.md` (they sit on the approved list since the 2026-10-25 commit).", "- Still open (not an approval): confirm the AI Tags list (tempo, ai_logic, burn, removal, selection, fixing, restrict, pump_team, artifact_token)."]
     open(os.path.join(HERE, "tags", "NEW_TAGS_FOR_APPROVAL.md"), "w").write("\n".join(out) + "\n")
     open(os.path.join(HERE, "tags", "APPROVED_TAGS_ARCHIVE.md"), "w").write("\n".join(archive) + "\n")
 
