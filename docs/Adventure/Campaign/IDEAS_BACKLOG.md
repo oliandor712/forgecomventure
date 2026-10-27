@@ -100,6 +100,7 @@ Source: user's `Ideas.md` upload, saved here as part of the design docs. **No it
 - Gate town: normal town logic, put passthru inside small temple building instead of cave
 
 **Balance and pool ideas**
+- Pools (future): game-level Universes Beyond filter, a setting that removes UB/crossover cards (Marvel, Spider-Man, Final Fantasy, etc.) from the whole pool, commanders, shops and rewards, instead of per-deck exclusion; commander picking tests surface many UB legends
 - Pools: recalculate tiers based on new tag logic; eliminate most white border cards from pool, retain modern reprints; consider excluding commanders from tier restrictions, compensate with adjusted rarities; consider reducing number of card pool tiers to 3
 - Balance: wait for tag logic and deck builder results to address deck strength; rewards and treasures relative to anchor prices; consider applying bonuses to warden enemies, offer quest or rep rewards to neutralize them; use item slots for unlocked fixed bonus system (no swapping items, power reduced from original), potential optionals for limited skill tree?; drawbacks or ai bonus for difficulty mod?; leveling system? Builds? would require respec option; shards=exp to avoid new currency? skill tree buy?; more robust ai profiles
 
