@@ -12,10 +12,11 @@ Nothing here is live or committed; code changes push on "push". Rules: H88-H92 i
 ## Nonbasic land picker (H90, H91, H93, H94)
 `land_score` in `starter_build.py` ranks all pool nonbasic lands (pop >= 8): 1 coverage, 2 utility (commander support), 3 enters-tapped, 4 life cost, 5 sacrifice-other (ok if tempo+/fetch); power breaks ties.
 - **Why typed duals and painlands were not chosen:** every any-colour land counted as full coverage with no penalty, including ones that need a mana cost, a condition or a restriction (Talon Gates, Hall of Oracles, Aether Hub, Reflecting Pool, Glimmervoid, Verges, filter lands). They tied the duals at the same coverage score, and the duals' small life/tapped penalties plus lower power pushed them below the 6 slots.
-- **Fix (H94):** coverage needs colours from a plain tap; cost, condition and restriction lands count as utility only.
+- **Fix (H94, H95):** coverage needs colours from a plain tap or a plain mana cost. Condition and restriction lands (Glimmervoid, Verges, Tainted Wood, Reflecting Pool, Cavern-style) count as utility only. Lands and artifacts that pay mana to change colour (Viridescent Bog, Talon Gates, Signets; 57 cards) are tagged `mana_filter`: neutral mana that tilts colour coverage, ranked 20 below plain fixing. Life is not mana: painlands and shocklands keep `cost:life` and full coverage.
 - **Negative tempo (H93):** Dark Depths and Forbidden Orchard are tagged `tempo:negative` (`setup_card`, `gives_opponent_token`); no utility, -50. Forbidden Orchard still carries a `token_make` tag; not cleaned up.
-- **B/G (Meren) now:** Command Tower, Mana Confluence, City of Brass, Undergrowth Stadium, Llanowar Wastes, Woodland Cemetery.
+- **B/G (Meren) now:** Command Tower, Cascading Cataracts, Mana Confluence, City of Brass, Undergrowth Stadium, Llanowar Wastes.
 - **Mono W (Captain America) still:** Urza's Saga, Plaza of Heroes, Treasure Vault, Abstergo Entertainment, Vesuva, The Mycosynth Gardens. The commander-support test is too loose for lands, so these utility picks are not trustworthy. Open.
+- Tag fix: an earlier edit of mine attached the `enters_untapped` branch to the wrong `if` (Woodland Cemetery had both tapped tags); corrected.
 - Debug: `LAND_DEBUG=1` prints the top 25 land scores.
 
 ## Unverified
