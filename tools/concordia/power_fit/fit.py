@@ -1,10 +1,10 @@
-"""Power scorer: additive weights fitted to the EDHREC percentile (non-land cards in deckgen/pool.pkl).
-Writes power_scorer/weights.json. Research only: deck_tier.py does not read it yet.
-Run from tools/concordia: python power_scorer/fit.py"""
+"""Power scorer fit: additive weights fitted to the EDHREC percentile (non-land cards in deckgen/pool.pkl).
+Writes power_fit/weights.json. Research only: power_scorer.py does not read it yet.
+Run from tools/concordia: python power_fit/fit.py"""
 import sys, os, pickle, json, random, statistics as st, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
-import deck_tier as dt
+import power_scorer as dt
 
 data = dt.build_cache()
 pool = pickle.load(open(dt.POOL, "rb"))

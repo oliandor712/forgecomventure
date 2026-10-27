@@ -136,7 +136,7 @@ A card is counted when its `A:` line hits the path shown.
 
 ### 0. Adventure: stop stripping `Random` cards (2,132 cards, trivial, fork-only code) — done
 
-- **Status.** Done. `DuelScene.isAiUnplayable`, the deck generator's pool (`tools/concordia/deckgen/pool.py`) and `deck_tier.py` now drop only `RemoveDeck:All` cards. The pool grew from 26,974 to 28,945 cards, and the rebuilt tier decks use 160 cards that were excluded before.
+- **Status.** Done. `DuelScene.isAiUnplayable`, the deck generator's pool (`tools/concordia/deckgen/pool.py`) and `power_scorer.py` now drop only `RemoveDeck:All` cards. The pool grew from 26,974 to 28,945 cards, and the rebuilt tier decks use 160 cards that were excluded before.
 - **What was wrong.** `DuelScene.isAiUnplayable` (`forge-gui-mobile/src/forge/adventure/scene/DuelScene.java`) treated `Random` like `All`.
 - **Why that's wrong.** `Random` has no in-game effect: no `forge-ai` code path blocks those cards except one tutor filter (`ChangeZoneAi.java:1586`).
 - **Fix.** Use only `getRemAIDecks()`. Optionally make it a `ConfigData` option such as `stripAiRandomCards` for tuned decks.

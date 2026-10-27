@@ -264,7 +264,7 @@ def draft(name, commander, strategy, ban, reject, _try=0):
             s = score(p, r)
             if bp is None or s > bp[0]: bp = (s, p, r)
         return bp
-    # nonbasic lands are picked last (before the basics); deck_tier counts them in the power average, so reserve their expected power for the per-card aim now
+    # nonbasic lands are picked last (before the basics); power_scorer counts them in the power average, so reserve their expected power for the per-card aim now
     def pick_nonbasics(limit=None):
         out = []
         for lname, lb in B.spread(B.BUDGET.items(), name):

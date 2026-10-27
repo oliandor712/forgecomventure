@@ -132,7 +132,7 @@ td:nth-child(2), td:nth-child(3) { font-variant-numeric: tabular-nums; }
 <h2 id="top-gaps-and-proposed-improvements-ranked-by-flagg">Top gaps and proposed improvements (ranked by flagged cards affected)</h2>
 <h3 id="0-adventure-stop-stripping-random-cards-2-132-card">0. Adventure: stop stripping <code>Random</code> cards (2,132 cards, trivial, fork-only code) — done</h3>
 <ul>
-<li><b>Status.</b> Done. <code>DuelScene.isAiUnplayable</code>, the deck generator's pool (<code>tools/concordia/deckgen/pool.py</code>) and <code>deck_tier.py</code> now drop only <code>RemoveDeck:All</code> cards. The pool grew from 26,974 to 28,945 cards, and the rebuilt tier decks use 160 cards that were excluded before.
+<li><b>Status.</b> Done. <code>DuelScene.isAiUnplayable</code>, the deck generator's pool (<code>tools/concordia/deckgen/pool.py</code>) and <code>power_scorer.py</code> now drop only <code>RemoveDeck:All</code> cards. The pool grew from 26,974 to 28,945 cards, and the rebuilt tier decks use 160 cards that were excluded before.
 </li>
 <li><b>What was wrong.</b> <code>DuelScene.isAiUnplayable</code> (<code>forge-gui-mobile/src/forge/adventure/scene/DuelScene.java</code>) treated <code>Random</code> like <code>All</code>.
 </li>

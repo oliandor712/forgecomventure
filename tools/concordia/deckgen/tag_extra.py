@@ -128,13 +128,13 @@ REF_EXTRA = {
  "removal": ("AI tag: umbrella for removal when no method tag applies", "AI Tags category"),
  "fixing": ("AI tag: fixes mana colours", "AI Tags category"),
  "evasion_grant": ("AI tag: grants an evasion keyword", "AI Tags category"),
- "extra_turn": ("the card takes an extra turn (script AddTurn); capped per tier in tier_rules (none below T4, 1 at T4, 2 at T5)", "user 2026-10-26: own tag, replaces the name list in deck_tier"),
+ "extra_turn": ("the card takes an extra turn (script AddTurn); capped per tier in tier_rules (none below T4, 1 at T4, 2 at T5)", "user 2026-10-26: own tag, replaces the name list in power_scorer"),
  "haste_grant": ("AI tag: grants haste", "AI Tags category"),
 }
 
 # family -> (meaning, why / user note)
 DOC = {
- "niche": ("the card is only good in a deck built around the named theme; value = the theme (artifact, enchantment, landfall, tribal, self_mill, graveyard_hate, land, storm ...); the power score gives these cards 0.5 role credit", "user 2026-10-25 (niche cards), deck_tier.py NICHE_ROLE"),
+ "niche": ("the card is only good in a deck built around the named theme; value = the theme (artifact, enchantment, landfall, tribal, self_mill, graveyard_hate, land, storm ...); the power score gives these cards 0.5 role credit", "user 2026-10-25 (niche cards), power_scorer.py NICHE_ROLE"),
  "mech": ("the card needs a mechanic or component many decks and the Forge AI handle poorly (value = mechanic: monarch, graveyard_cast, vote, day_night, ring ...); build.py MECH_MIN_TIER gates it by tier. It repeats the effect tag where one exists (monarch / mech:monarch): the effect tag says what the card does, mech says where the builder may use it", "user 2026-10-25 (replaces build.SKIP_TEXT)"),
  "colorless_card": ("the card is a colorless spell (no colored mana symbol, no color indicator, or Devoid; lands excluded); the deck needs colorless-capable mana for it (colorless is the sixth colour, H78)", "user 2026-10-26: color and mana tags include colorless"),
  "mana:<color>": ("colour of mana an ability produces (white, blue, black, red, green, colorless, any, commander_identity; colorless is the sixth colour, H78)", "feedback: link color type to mana source (Arcane Signet, Plains, Temple, Frost Marsh)"),

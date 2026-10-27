@@ -75,7 +75,7 @@ Briefs still carry the old session/messaging instructions (ETA lines, `send_mess
   plays and Forge AI does the rest (protocol in its header; `pilot_wait.sh` waits for a side's next prompt). Logs of
   each run go to `tools/concordia/ai_lab/pilot/<date>_<name>/`. `-Dpilot.A=rules` plays built-in pilot rules with no
   tokens spent; `ask` uses the file protocol; `ai` is plain Forge AI.
-- **Deck stats:** `python3 tools/concordia/deck_tier.py <deck.dck> [--tier N] --json` gives counts, deck power (the
+- **Deck stats:** `python3 tools/concordia/power_scorer.py <deck.dck> [--tier N] --json` gives counts, deck power (the
   average card power) and tier checks.
 - **Card data roster:** Forge card scripts and editions (offline); the cube ranking; Spellbinder cEDH and precon
   inclusion rates (`deckgen/spellbinder/signals.json`, collected by the main session through its connector); public
@@ -91,7 +91,7 @@ Briefs still carry the old session/messaging instructions (ETA lines, `send_mess
   mono-color; tiers 2-5 mix one to three colors) plus 20 new mono-color decks, 4 per color, built by
   `tools/concordia/deckgen/gen_mono.py` and seeded from public GitHub decklists that are kept local only. Five starter
   decks for the player, each with an _Alt version (alternate commander, 5-8 cards changed; power 27).
-- **Card power** (`deck_tier.card_power`) = 35·raw + 15·efficiency + 15·role + 10·rarity + 5·EDHREC popularity +
+- **Card power** (`power_scorer.card_power`) = 35·raw + 15·efficiency + 15·role + 10·rarity + 5·EDHREC popularity +
   10·Game Changer + 5·fast mana + 5·tutor. Raw power is the highest of the cube rank, the Spellbinder cEDH inclusion
   rate and 0.6 × EDHREC popularity (Scryfall's EDHREC rank, log-scaled).
 - **Deck power by tier** (deck average card power, rebuilt 2026-10-20): T1 12-13, T2 21-28, T3 30-38, T4 34-42,

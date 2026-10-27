@@ -2,13 +2,13 @@
 # Scan: regex 'family:' or quoted 'family' in .py/.java/.sh under tools/concordia (deckgen, strategies, ai_lab, balance_lab, suite, sim, root tools); producers (tag_run/extra/variant/verify/reports/twins, derived_tags, cards, ability_tags) and tagcheck/backups/results excluded.
 # CAVEAT: string match, not semantics. noisy=1 means the name is generic (map scripts, 'color', 'type', 'trigger', 'effect' ...) so the count may be unrelated. Deck tools may read the old flat ability_tags; a hit does not prove the tagger record is what is read. Base tag names without ':' only match when quoted.
 consumers[105|]{family|files|hits|top_files|noisy}:
-  draw|13|71|build_strategies.py=29;build.py=13;deck_tier.py=12;commander_support.py=4|0
-  removal|12|65|build_strategies.py=24;deck_tier.py=14;build.py=12;starter_tune.py=4|0
+  draw|13|71|build_strategies.py=29;build.py=13;power_scorer.py=12;commander_support.py=4|0
+  removal|12|65|build_strategies.py=24;power_scorer.py=14;build.py=12;starter_tune.py=4|0
   replace|9|19|build_strategies.py=7;pool.py=4;archetype_rules.py=2;minideck.py=1|0
-  kw|6|42|build_strategies.py=23;policy_tags.py=9;tag_map.py=5;deck_tier.py=3|0
+  kw|6|42|build_strategies.py=23;policy_tags.py=9;tag_map.py=5;power_scorer.py=3|0
   type|6|28|build_color_zone.py=14;check_doors.py=9;policy_tags.py=2;commander_support.py=1|1
   restrict|6|18|build_strategies.py=11;archetype_rules.py=3;build.py=1;commander_support.py=1|0
-  tutor|5|27|deck_tier.py=11;build.py=7;build_strategies.py=6;tier1_rules.py=2|0
+  tutor|5|27|power_scorer.py=11;build.py=7;build_strategies.py=6;tier1_rules.py=2|0
   scales|5|18|commander_support.py=7;themes.py=7;policy_tags.py=2;build.py=1|0
   mill|5|17|build_strategies.py=10;commander_support.py=4;build.py=1;themes.py=1|0
   evasion|5|13|commander_support.py=6;build_strategies.py=3;themes.py=2;build.py=1|0
@@ -25,7 +25,7 @@ consumers[105|]{family|files|hits|top_files|noisy}:
   reanimate|4|10|build_strategies.py=5;commander_support.py=3;build.py=1;themes.py=1|0
   counters_plus|4|9|build_strategies.py=4;commander_support.py=3;build.py=1;themes.py=1|0
   clone|4|8|commander_support.py=3;build_strategies.py=3;themes.py=1;sim_suite.py=1|0
-  counter|4|7|deck_tier.py=3;build_strategies.py=2;build.py=1;staples.py=1|1
+  counter|4|7|power_scorer.py=3;build_strategies.py=2;build.py=1;staples.py=1|1
   mana_source|3|16|build_strategies.py=13;commander_support.py=2;themes.py=1|0
   lifegain|3|14|build_strategies.py=9;commander_support.py=3;themes.py=2|0
   counterspell|3|14|build_strategies.py=12;commander_support.py=1;themes.py=1|0

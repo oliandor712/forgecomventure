@@ -4,11 +4,11 @@ Agents: tag-blind-reader, deck-balance-lab, forge-ai-lab, deck builder/commander
 
 ## Agreed list (all four signed; two wording fixes applied)
 
-1. One shared tag source: the tagger record feeds builder, commander script, deck_tier, AI lab, balance. Record carries per-ability rows and structured values (amounts, costs, zones, targets), keywords, P/T, commander cost and command-zone flag.
+1. One shared tag source: the tagger record feeds builder, commander script, power_scorer, AI lab, balance. Record carries per-ability rows and structured values (amounts, costs, zones, targets), keywords, P/T, commander cost and command-zone flag.
 2. Generated old-to-new name map is the first deliverable, accepted by running the renderer on both vocabularies, with a fail-on-silent-drop check.
 3. Tag-record version stamped on every suite run, game batch, deck build and commander row; results across versions never pooled.
 4. A tag change marks affected decks, digests and sims stale; regeneration in one pass with a per-deck diff (tier, power, commander support) before any live change. Nothing live (enemies.json, live decks) changes without the user's word.
-5. One difficulty axis and one tier-to-power table with a dated baseline, read by build.py, deck_tier.py, balance lab and docs; reconcile the three current number sets first.
+5. One difficulty axis and one tier-to-power table with a dated baseline, read by build.py, power_scorer.py, balance lab and docs; reconcile the three current number sets first.
 6. Tier step = measured per-stage win-rate change against H29 targets. Sample floor: 25 games per AI deck and 40 per starter (H28 targets); no claim about a 70-30 gap below about 40 games per arm. Balance feeds the builder only through bounded, logged adjustments.
 7. Commander harmony: score term plus separate reported score, tested by supported-vs-unsupported win-rate gap.
 8. Per-row fields on every game and suite record: deck id, archetype, colour, timing, command-zone moves and commander cast count. These are record fields, not tags.
@@ -24,7 +24,7 @@ Agents: tag-blind-reader, deck-balance-lab, forge-ai-lab, deck builder/commander
   1. Three agents asked in round 2 that the vision name who owns the Oracle truth check (the reader tests rendering, not truth). The draft dropped it. Needs an owner.
   2. Item 7 (supported vs unsupported commander test) has no sample floor. H28 gives about 25 matched sets per bonus for a 25-point effect; nobody applied it.
   3. The builder withdrew its round 1 claim that the builder does not read TAG_GAPS.toon as unverified, and it was never checked.
-  4. The balance lab's tier power bands (for example T2 19-31) and the builder's three-set mismatch claim were quoted by the agents, not checked by the moderator against deck_tier.py and build.py.
+  4. The balance lab's tier power bands (for example T2 19-31) and the builder's three-set mismatch claim were quoted by the agents, not checked by the moderator against power_scorer.py and build.py.
   5. Item 2 (generated name map with no-silent-drop) is the builder's hard requirement; no agent estimated its size or the order of work.
 
 ## Full conversation

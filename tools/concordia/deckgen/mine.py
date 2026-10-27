@@ -3,7 +3,7 @@ precons, conquest) against the tiers and saves mined.json, used for card popular
 import sys, os, glob, json, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
-import deck_tier as dt
+import power_scorer as dt
 def main():
     data = dt.build_cache()
     config = json.load(open(dt.CONFIG))

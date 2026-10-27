@@ -115,7 +115,7 @@ tests on Windows at C:\Users\Teddy\Documents\Forge, deploying either with a full
 - `DeckSim`: AI vs AI games.
 - `PilotSim`: piloted games, with a no-token "rules" mode.
 - `ai_lab/minideck.py`: 30-40-card test decks, so flagged cards get drawn.
-- `deck_tier.py`: deck stats and tier checks.
+- `power_scorer.py`: deck stats and tier checks.
 
 **Things you can tell the main session to do** (the user pastes your text):
 - **Pause and resume:** "pause all agents until 5 pm" (it disables triggers and schedules the resume).

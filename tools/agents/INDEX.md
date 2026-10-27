@@ -54,7 +54,7 @@ Small (fine to read): handoffs under 2k, `TAG_LEGEND.md` 2k, `tagcheck/README.md
 - Keyword/CR sources: section 12.
 
 - Logs by subject: `tools/agents/logs/LOG_INDEX.toon` (check first; one row per log, writer, size warning). Glance test plan: `tools/concordia/deckgen/tagcheck/GLANCE_TEST_PLAN.md`.
-- Power scorer and strategies: `tools/concordia/deck_tier.py` (scorer) (roles ramp/fast/draw/removal/wipe/counter/tutor come from the tag_run tags in pool.pkl via `tag_roles()`, script rules only as fallback; pool.py stores the same roles for the builder; goal: own opinion within 15% of the EDHREC rank percentile for 85% of cards, baseline 35%, see the docstring), `tier_table.json` (bands), `deckgen/pool_meta.json` (input status), `tools/concordia/strategies/strategies.json` + `strategy_fit.py` (builder strategy fit, niche penalty), log `tools/agents/logs/power-scorer-tests.toon`.
+- Power scorer and strategies: `tools/concordia/power_scorer.py` (scorer) (roles ramp/fast/draw/removal/wipe/counter/tutor come from the tag_run tags in pool.pkl via `tag_roles()`, script rules only as fallback; pool.py stores the same roles for the builder; goal: own opinion within 15% of the EDHREC rank percentile for 85% of cards, baseline 35%, see the docstring), `tier_table.json` (bands), `deckgen/pool_meta.json` (input status), `tools/concordia/strategies/strategies.json` + `strategy_fit.py` (builder strategy fit, niche penalty), log `tools/agents/logs/power-scorer-tests.toon`.
 
 ## 4. Reader run (reverse tag check)
 - Folder: `tools/concordia/deckgen/tagcheck/`. Start with `README.md`, then `READER_GRAMMAR_PLAN.md` and `TAG_RUN_AUDIT_AND_PLAN.md` (current plan).
@@ -75,7 +75,7 @@ Small (fine to read): handoffs under 2k, `TAG_LEGEND.md` 2k, `tagcheck/README.md
 ## 6. Deck building
 - Folder: `tools/concordia/deckgen/`. Start with `HANDOFF_DECKBUILDER.md`, `TAG_UTILITY_DECKBUILDER.md`.
 - Core: `build.py`, `pool.py`, `categorize.py` (`CATEGORIES.toon`), `variants.py`/`variants.json`, `starter_tune.py`, `hall_roster.py`, `gen_mono.py`, `starter_build.py` (commander-first starters, tier-2 rules), `tools/agents/ensure_refs.py` (rebuilds ~/tagcheck_runs/_refs at session start), `synergy.py` (general synergy rule H17: support + token payoffs, used by both builders).
-- Tier rules: `tools/concordia/tier_rules.py`, `archetype_rules.py`, `deck_tier.py`; tier 1 data `T1_*.toon`, `t1_plan.py`, `t1_fresh.json`.
+- Tier rules: `tools/concordia/tier_rules.py`, `archetype_rules.py`, `power_scorer.py`; tier 1 data `T1_*.toon`, `t1_plan.py`, `t1_fresh.json`.
 - Card pools/lists: `staples.py`/`staples.json` (`docs/.../STAPLES.md`), `budget_lands.py`, `UNFLAGGED_CARDS.md`, `COMMANDER_PAIRS.toon`, `scryfall*`, `spellbinder*`.
 - Live decks: `forge-gui/res/adventure/Concordia/decks/{starter,tier1..5,tutorial}`; staged tier 1 (not live): `Concordia/staging_t1_fresh/`. Do not edit live decks without the user's word.
 - Tier design: `docs/Adventure/Campaign/ENCOUNTER_TIERS.md`, `DECK_REVIEW_SPELLBINDER.md`.

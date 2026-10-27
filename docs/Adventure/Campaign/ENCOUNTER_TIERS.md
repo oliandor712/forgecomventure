@@ -5,17 +5,17 @@ building a deck in each tier, how card power is measured, and how a finished dec
 decklists.
 
 Tools:
-- `tools/concordia/deck_tier.py` rates any `.dck` against the tiers.
+- `tools/concordia/power_scorer.py` rates any `.dck` against the tiers.
 - `tools/concordia/sim/DeckSim.java` plays AI-vs-AI games headlessly, to measure win rates (§6).
 
 ## 1. The three tiers
 
-Every tier's requirements live in `tools/concordia/tier_rules.py` (the one source, `TIERS[1..5]` plus the build specs; deck_tier, the builder and archetype_rules import it). Tiers 1-3 are compared below, tiers 4-5 in the table after it:
+Every tier's requirements live in `tools/concordia/tier_rules.py` (the one source, `TIERS[1..5]` plus the build specs; power_scorer, the builder and archetype_rules import it). Tiers 1-3 are compared below, tiers 4-5 in the table after it:
 
 | Setting | Tier 1 value |
 |---|---|
 | Deck | 100 cards: commander + 99 |
-| Commander | one legendary creature, exactly one colour of identity, no mana value limit, any rarity, one commander (a Partner-ability commander is fine). Not shared with another tier: not checked by deck_tier (a categorize.py / audit concern) |
+| Commander | one legendary creature, exactly one colour of identity, no mana value limit, any rarity, one commander (a Partner-ability commander is fine). Not shared with another tier: not checked by power_scorer (a categorize.py / audit concern) |
 | Lands | 41-42, decided last from the curve |
 | Power (average card power) | 17-23 |
 | Creatures | at least 15; soft cap 35, the builder stops adding creatures there (user, 2026-10-25) |
@@ -76,7 +76,7 @@ Tiers 4-5 (user, 2026-10-26; same checks):
 | Mass land denial | none | none |
 | Two-card combos | late-game only | late-game only |
 
-Watch-list cap per tier 0 / 1 / 2 / 4 / 8 (`build.py` WATCH_CAP, `deck_tier.py` WARN). The mechanics rule is `tier_rules.MECH_MIN_TIER`: the builder skips cards above the deck's tier and `deck_tier.py` FAILs a deck that holds one (it needs `deckgen/pool.pkl` for the tags, otherwise it warns). Extra-turn and mass-land-denial cards are separate pool flags (`extra`, `chained`, `mld`); the builder takes 0 extra turns at tiers 1-3, 1 at tier 4, 2 at tier 5, and never a chained one.
+Watch-list cap per tier 0 / 1 / 2 / 4 / 8 (`build.py` WATCH_CAP, `power_scorer.py` WARN). The mechanics rule is `tier_rules.MECH_MIN_TIER`: the builder skips cards above the deck's tier and `power_scorer.py` FAILs a deck that holds one (it needs `deckgen/pool.pkl` for the tags, otherwise it warns). Extra-turn and mass-land-denial cards are separate pool flags (`extra`, `chained`, `mld`); the builder takes 0 extra turns at tiers 1-3, 1 at tier 4, 2 at tier 5, and never a chained one.
 
 Extra turns are the `extra_turn` tag (any card whose script has AddTurn); Game Changers come from Forge's list. Power-50+ and 70+ counts are WARN; Game Changers and extra turns FAIL.
 | Target result (§6) | Player wins about 95%+ | Player wins about 60-75% | Player wins about 35-55% on the first try |
@@ -110,7 +110,7 @@ Work in this order. Each step narrows the next.
    - Tier 2 uses mostly single-target, sorcery-speed answers.
    - Tier 3 adds instant-speed answers and 1-4 wipes.
 5. **Fill the creatures to the tier's count**, along the curve below. These are counts of nonland cards by mana
-   value, rocks included, and `deck_tier.py` warns outside them. The Tier 2 and 3 ranges are the 10th-90th
+   value, rocks included, and `power_scorer.py` warns outside them. The Tier 2 and 3 ranges are the 10th-90th
    percentiles of the 180 Commander precons and the 901 complete Realm of Legends decks (§7).
 
    | Mana value | 0-1 | 2 | 3 | 4 | 5 | 6+ |
@@ -127,7 +127,7 @@ Work in this order. Each step narrows the next.
    - To go up, swap filler for higher-power cards in the same role, for example a stronger 3-drop for a weaker one.
    - To go down, do the reverse.
    - Never raise power by adding a card outside the tier's lists in §4.
-7. **Check it** with `deck_tier.py --tier N --life L`. Every line must be PASS; a WARN needs a reason written in the
+7. **Check it** with `power_scorer.py --tier N --life L`. Every line must be PASS; a WARN needs a reason written in the
    deck's `[metadata]` `Description=`.
 8. **Measure it** with the simulator against its own tier at equal life (§6), and adjust its power within the tier.
 
@@ -143,7 +143,7 @@ Work in this order. Each step narrows the next.
 
 ## 3. Brackets
 
-Each tier is one official Commander Bracket. The bracket's rules are hard checks in `deck_tier.py`:
+Each tier is one official Commander Bracket. The bracket's rules are hard checks in `power_scorer.py`:
 
 | | Bracket 1 (Tier 1) | Bracket 2 (Tier 2) | Bracket 3 (Tier 3) |
 |---|---|---|---|
@@ -156,7 +156,7 @@ Each tier is one official Commander Bracket. The bracket's rules are hard checks
 
 ## 3a. Card power score
 
-`deck_tier.py` gives every nonland card a power score from 0 to 100, using only data in this repository:
+`power_scorer.py` gives every nonland card a power score from 0 to 100, using only data in this repository:
 
 ```
 power = 40 × raw power       (the highest of: cube rank 1 − (rank − 1)/4000, cEDH inclusion rate, 0.6 × popularity;
@@ -196,7 +196,7 @@ a tier and the other tier rules (rarity, Game Changers, ramp, removal) only brea
 - **Cards the AI can't play.** Any card whose script has `AI:RemoveDeck:All` (the AI won't cast or activate it). `AI:RemoveDeck:Random` is allowed: it only keeps a card out of Forge's random deck generators, and the AI plays those cards normally.
   - Forge's AI never casts `All` cards. `Random` cards are ones Forge's own deck generators leave out.
   - `DuelScene` strips both from AI decks at runtime (`stripAiUnplayableCards`), but a deck that relies on that is a
-    weaker deck than it looks. `deck_tier.py` fails it.
+    weaker deck than it looks. `power_scorer.py` fails it.
 - **Cards Concordia restricts** (`restrictedCards` / `restrictedEditions` in `config.json`).
 - **Mass land denial and chained extra turns.** These come from Forge's lists in `forge-gui/res/lists/`.
 - **Strategies Forge's AI cannot pilot,** even when the cards aren't flagged:
@@ -287,7 +287,7 @@ and later fights.
 
 ## 6. Verifying a deck
 
-1. **Rate it:** `python3 tools/concordia/deck_tier.py DECK.dck --tier N --life L`. Every line must be PASS.
+1. **Rate it:** `python3 tools/concordia/power_scorer.py DECK.dck --tier N --life L`. Every line must be PASS.
 2. **Simulate it** against other decks of the same tier, **with both sides at the same life** (the tier's standard
    life: 11, 18, 28, 35 and 40 for tiers 1-5). Simulations never use different life totals for the two sides: a life
    gap swamps the difference between decks, so the results say nothing about the decks themselves. Use 10 games per

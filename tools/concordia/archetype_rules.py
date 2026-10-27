@@ -35,7 +35,7 @@ ENCHANTMENT = {1: tr.ENCHANTMENT, 2: {"tokens": 6, "control": 5, "tribal": 4, "a
                5: {"tokens": 5, "control": 4, "tribal": 3, "aggro": 2}}
 # low-* shift: (primary down, secondary up) in 2..4; reach 2 uses 2, reach 3 uses 3, reach 4+ uses 4
 SECONDARY = {"low-control": "instant_sorcery", "low-aggro": "artifact", "low-tribal": "enchantment", "low-tokens": "enchantment"}
-LAND_RANGE = {1: tr.LANDS, 2: (36, 39), 3: (33, 38), 4: (33, 37), 5: (31, 37)}  # deck_tier.py land range per tier
+LAND_RANGE = {1: tr.LANDS, 2: (36, 39), 3: (33, 38), 4: (33, 37), 5: (31, 37)}  # power_scorer.py land range per tier
 
 
 def shift_for(reach):

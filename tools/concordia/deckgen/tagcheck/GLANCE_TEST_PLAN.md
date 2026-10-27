@@ -10,7 +10,7 @@ Each reader sees only the blind tag view of one card (`cards.tag_blind`: typing,
 | `function` | one line, 15 words max: what the card does | Oracle-reader's line (concept match, judged by `concept_f1` words) |
 | `roles` | 1-3 from the role names in `tools/concordia/strategies/strategies.json` (fodder, payoff, outlet, ramp, removal, draw, finisher ...) | Oracle-reader's roles, set F1 |
 | `archetypes` | top 3 of the ids in `strategies.json` (45 since v3; read live by `glance.form_spec`) the card fits | Oracle-reader's top 3, hit if any overlap; plus the card's listed `cards` entries in `strategies.json` as a free key where present |
-| `power` | band 1-5 (1 filler, 3 solid playable, 5 bomb) | `deck_tier.py` card power band, hit if within 1 |
+| `power` | band 1-5 (1 filler, 3 solid playable, 5 bomb) | `power_scorer.py` card power band, hit if within 1 |
 | `confidence` | 1-5 | calibration: confidence vs. agreement |
 | `unclear` | tags the reader could not use | counted; each repeat is a tag to fix |
 
@@ -36,7 +36,7 @@ Pass: a variant wins if role F1 and archetype hit both rise and unclear-tag rate
 Each card where tag reader and Oracle reader disagree on role or archetype is read by Claude: (1) tag missing, (2) tag present but unclear, (3) Oracle reader wrong. Types 1 and 2 go to a fix list `tags/GLANCE_FIXES.toon` (tag, card, reason) and drive tagger and legend changes. The old reader/render-rule loop pauses except for rule mining that costs nothing.
 
 ## Consumers check (before tagger work)
-Grep which tag families `deckgen/*.py`, `commander_support.py`, `deck_tier.py`, `strategy_fit.py` and `tools/concordia/ai_lab/` read. A family nobody reads is lower priority; a family many read is first. Output: `tags/TAG_CONSUMERS.toon` (family, readers, count).
+Grep which tag families `deckgen/*.py`, `commander_support.py`, `power_scorer.py`, `strategy_fit.py` and `tools/concordia/ai_lab/` read. A family nobody reads is lower priority; a family many read is first. Output: `tags/TAG_CONSUMERS.toon` (family, readers, count).
 
 ## Steps
 1. Consumers check (cheap, no readers).

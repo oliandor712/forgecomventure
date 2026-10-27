@@ -1,12 +1,12 @@
 """Rules per tier: the one source of truth (user, 2026-10-21 / 2026-10-26; human_logic.toon H01-H48).
 TIERS[1..5] (deck check) and the build specs (BUILD_SPEC for tier 1, deckgen/build.py SPEC for tiers 2-5) read from here.
-deck_tier.py, deckgen/build.py and archetype_rules.py import it. Change a tier number here and nowhere else.
+power_scorer.py, deckgen/build.py and archetype_rules.py import it. Change a tier number here and nowhere else.
 Tier 1 also carries its archetype, token and creature constants below. Limits 2026-10-26: Game Changers 0/0/0/4/6, extra turns
 0/0/0/1/2, power-50+ and power-70+ cards, fast mana 0/1/2/3/5; no rarity restriction anywhere, on cards or commanders (user, 2026-10-26)."""
 import json, os
 
 
-# Deck check (deck_tier.py). Power is the deck's average card power score. Commander: one legendary creature, mana value 2-4,
+# Deck check (power_scorer.py). Power is the deck's average card power score. Commander: one legendary creature, mana value 2-4,
 # any rarity (user, 2026-10-26). The deck is 100 cards (commander + 99).
 DECK = {
     "name": "Tier 1 - Weak / wild",
@@ -67,7 +67,7 @@ BUILD_SPEC = {
 STAPLE_BONUS = -4
 
 # mech:* ftags (tag_run.MECH_RX) gate cards by tier (user 2026-10-25). Value = lowest tier that may use the card; 99 = never (needs a component the game does not have).
-# Enforced by deckgen/build.py mech_ok (builder) and deck_tier.py (deck check, FAIL).
+# Enforced by deckgen/build.py mech_ok (builder) and power_scorer.py (deck check, FAIL).
 MECH_MIN_TIER = {'sticker': 99, 'attraction': 99, 'contraption': 99, 'planechase': 99, 'scheme': 99, 'ante': 99, 'speed': 4, 'initiative': 4, 'venture': 4,
                  'vote': 3, 'monarch': 3, 'day_night': 3, 'ring': 3, 'graveyard_cast': 2}
 STAPLE_PUSH_BONUS = 6   # tiers 1-2 push staples at any rarity (H09; user 2026-10-26: no rarity restrictions)
@@ -76,7 +76,7 @@ BUDGET_LANDS = 3
 BUDGET_ROCKS = 2
 
 
-# Tiers 1-5 deck check (deck_tier.py). Ranges are inclusive [min, max]; None means no bound. "hard" rules FAIL, the rest WARN.
+# Tiers 1-5 deck check (power_scorer.py). Ranges are inclusive [min, max]; None means no bound. "hard" rules FAIL, the rest WARN.
 # Rarity: no tier restricts card or commander rarity (user, 2026-10-26).
 # premium50 / premium70: cards whose power score is 50+ / 70+ (WARN).
 TIER_TABLE = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "tier_table.json"), encoding="utf-8"))["tiers"]

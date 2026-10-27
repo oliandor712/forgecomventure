@@ -408,7 +408,7 @@ Timeouts: 11. T2_G_Toski.dck vs W_Starter_Normal.dck, bonus, turn 51 (bonus life
 
 ## Outliers (interval clear of 50%)
 
-Deck power is read fresh from deck_tier.py. The card-power scale changed on 2026-10-20 at 16:45 UTC (EDHREC popularity added); power values from before then are not comparable.
+Deck power is read fresh from power_scorer.py. The card-power scale changed on 2026-10-20 at 16:45 UTC (EDHREC popularity added); power values from before then are not comparable.
 
 | tier | deck | games | win rate | power |
 |---|---|---|---|---|

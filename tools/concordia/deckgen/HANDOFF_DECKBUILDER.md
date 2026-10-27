@@ -5,7 +5,7 @@ Read this once, then work from `tools/agents/CONTEXT.md` (Obedience protocol 1-1
 ## 1. Where tier 1 stands
 - Live game decks are unchanged: `forge-gui/res/adventure/Concordia/decks/tier1/` (80 decks; 36 of them were rebuilt in place earlier today, backups in `tools/concordia/backups/2026-10-21_t1_rebuild/`). `enemies.json` references tier 1 decks by name (sprite assignment step) and is deliberately untouched.
 - The fresh set is STAGED, not live: `forge-gui/res/adventure/Concordia/staging_t1_fresh/decks/tier1/` (80 decks from 80 new commanders, plan in `deckgen/t1_fresh.json`, pool of 100 commanders in `T1_COMMANDER_POOL.toon`). The previous 80 are archived in `tools/concordia/backups/2026-10-21_t1_full_archive/`. Swapping staged into live needs the user and the sprite assignment step first.
-- Staged results (verified independently by the main session): 80/80 classify as their declared archetype and sub; 80 x 100 cards; 0 `deck_tier` FAIL; power 16.3-18.0 (mean 17.3); commander support 80/80 at 5+; 48/80 inside the archetype windows (misses: creatures over the window max 19, under the min 8, enchantments 3, instants/sorceries 4). 5 human-logic WARN decks: April H15, Geist H14, LaAn H15, The H14, Goliath H15.
+- Staged results (verified independently by the main session): 80/80 classify as their declared archetype and sub; 80 x 100 cards; 0 `power_scorer` FAIL; power 16.3-18.0 (mean 17.3); commander support 80/80 at 5+; 48/80 inside the archetype windows (misses: creatures over the window max 19, under the min 8, enchantments 3, instants/sorceries 4). 5 human-logic WARN decks: April H15, Geist H14, LaAn H15, The H14, Goliath H15.
 
 ## 2. The model (user decisions)
 - Archetypes (tier 1): tokens (12+ token makers), tribal (top creature type 12+ creatures AND the commander names it; Human excluded), aggro. Interaction is a tag, not an archetype. Control archetype only exists at tiers 2-5.
@@ -25,7 +25,7 @@ Read this once, then work from `tools/agents/CONTEXT.md` (Obedience protocol 1-1
 | `deckgen/t1_plan.py` | picks the 100-commander pool and 80 chosen, assigns archetype/sub, writes `t1_fresh.json` |
 | `deckgen/build.py` | builds decks; flags `--dry` (writes under BUILD_DRY_DIR, not decks/), `--classify` (archetype/sub from the committed deck), `--variants`; two human-logic passes + archetype-target retry (3 tries) + 100-card assertion |
 | `deckgen/categorize.py` | regenerates `CATEGORIES.toon` (tier, archetype, sub, reach, creatures, power) |
-| `deck_tier.py --tier 1` | power band, counts, FAIL/WARN, archetype window warnings |
+| `power_scorer.py --tier 1` | power band, counts, FAIL/WARN, archetype window warnings |
 Staged build command: `BUILD_DRY_DIR=$PWD/forge-gui/res/adventure/Concordia/staging_t1_fresh python3 tools/concordia/deckgen/build.py --dry tools/concordia/deckgen/t1_fresh.json` (about 3 minutes for 80).
 
 ## 4. What we learned (do not repeat)

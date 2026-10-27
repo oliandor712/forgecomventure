@@ -1,7 +1,7 @@
 # Card categories: Staples, Game Changers and the watch list
 
 `tools/concordia/deckgen/staples.py` sorts the popular Commander cards by two numbers. It writes
-`deckgen/staples.json`, and `deck_tier.py` reports each deck's counts.
+`deckgen/staples.json`, and `power_scorer.py` reports each deck's counts.
 
 ## The two numbers
 
@@ -69,9 +69,9 @@ All 200 tier decks were rebuilt with these rules. The old decks, `decks.json` an
 | Tier 1-2 floor and ceiling (builder rebuilds outside them) | `FLOOR`, `CEILING`, `T1_TARGET` | T1 16-21 (target 18.5), T2 24.5-30 |
 | Budget lands and mana rocks (in at least 18 of the 365 precon and Archidekt decks, any rarity, no printing filter; `deckgen/budget_lands.py`) | `BUDGET_LANDS`, `BUDGET_ROCKS` | T1 3 lands and 2 rocks, T2 up to 6 nonbasics and 3 rocks; mono decks skip lands and rocks for other colors and "any colour" lands |
 | Precon playability bonus | `PRECON_BONUS` | +2 at T2-T3, scaled by precon inclusion |
-| Watch-list cap (builder hard cap; tier check WARN) | `WATCH_CAP`, `deck_tier.TIERS` | T1 0, T2 1, T3 2, T4 4, T5 8 |
-| Staples per deck (soft check, WARN) | `deck_tier.TIERS` | T1 2-15, T2 12-41, T3 22-39, T4 22-46, T5 28-48 |
-| Power bands (EDHREC scale) | `deck_tier.TIERS` | T1 19 or less, T2 19-31, T3 27-38, T4 34-42, T5 39 or more |
+| Watch-list cap (builder hard cap; tier check WARN) | `WATCH_CAP`, `power_scorer.TIERS` | T1 0, T2 1, T3 2, T4 4, T5 8 |
+| Staples per deck (soft check, WARN) | `power_scorer.TIERS` | T1 2-15, T2 12-41, T3 22-39, T4 22-46, T5 28-48 |
+| Power bands (EDHREC scale) | `power_scorer.TIERS` | T1 19 or less, T2 19-31, T3 27-38, T4 34-42, T5 39 or more |
 | Build targets | `TARGET_POWER`, per-deck targets in `decks.json` | +1.5 at T2-T3, +1 at T4, +0.5 at T5 |
 
 The staples ranges cover the 10th to 90th percentile of the rebuilt decks, plus or minus 2.

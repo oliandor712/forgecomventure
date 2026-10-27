@@ -6,7 +6,7 @@ Read this before opening a script. Each entry is at most 4 sentences, taken from
 
 - **mine.py** - Step 1. Rates every Commander deck shipped with Forge against the tiers and saves `mined.json`. That file feeds card popularity in `pool.py`.
 - **pool.py** - Step 2. Builds `pool.pkl`, the list of every Commander-legal, AI-playable card with colour identity, tags, rarity options, power and popularity. Alchemy cards, old (pre-Sixth) printings only, banned and restricted cards are removed here.
-- **build.py** - Step 3. Builds the tier decks listed in `decks.json` into `decks/tier1..3` and rates each with `deck_tier.py`. Commander themes, role counts and the human-logic rules (H17 etc.) are applied here.
+- **build.py** - Step 3. Builds the tier decks listed in `decks.json` into `decks/tier1..3` and rates each with `power_scorer.py`. Commander themes, role counts and the human-logic rules (H17 etc.) are applied here.
 - **gen_mono.py** - Adds mono-colour tier decks to `decks.json` and builds them, to fill the difficulty curve's mono-colour roles (wild creatures, pass keepers, Wardens). `--per N` sets new commanders per tier and colour; `--dry` only plans.
 - **variants.py** - Gives each tier deck a sibling led by an alternate, budget-leaning commander of the same colour identity, with 5-8 cards changed. Candidates are scored on fit with the deck's creatures and the tier's commander rules.
 - **t1_plan.py** - Plans the fresh tier 1 rebuild: a pool of 100 commanders (20 per colour), 80 chosen, each with an archetype and subarchetype, written to `t1_fresh.json` for `build.py`. Commander rules for tier 1 are encoded here.

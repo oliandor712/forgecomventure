@@ -38,7 +38,7 @@ All paths are relative to `/home/user/forgecomventure`. I read the code for this
 ### AI:RemoveDeck hints
 - These are parsed in `forge-core/src/main/java/forge/card/CardRules.java:731-735` into `CardAiHints` (`All` → `getRemAIDecks`, `Random` → `getRemRandomDecks`, plus `NonCommander`). 2,479 card files have `RemoveDeck:All` and 2,382 have `RemoveDeck:Random`.
 - **Deck building and generation:** `CardRulesPredicates.IS_KEPT_IN_AI_DECKS` (`forge-core/.../CardRulesPredicates.java:24`), `CardThemedDeckBuilder.java:591,805`, `CardThemedDeckGenerator.java:19`, the warning in `Deck.java:733`, and AI sideboarding (`PlayerControllerAi.java:156`).
-- **Adventure:** `DuelScene.isAiUnplayable`/`withoutAiUnplayableCards` (`DuelScene.java:625-650`) strips both `All` and `Random` cards and refills with basics when `ConfigData.stripAiUnplayableCards` is set (`ConfigData.java:44`). `RewardData.java:151` also reads the hint. The project's own tool reads the flags as well (`tools/concordia/deck_tier.py:97,359`; `tools/concordia/deckgen/build.py:9`).
+- **Adventure:** `DuelScene.isAiUnplayable`/`withoutAiUnplayableCards` (`DuelScene.java:625-650`) strips both `All` and `Random` cards and refills with basics when `ConfigData.stripAiUnplayableCards` is set (`ConfigData.java:44`). `RewardData.java:151` also reads the hint. The project's own tool reads the flags as well (`tools/concordia/power_scorer.py:97,359`; `tools/concordia/deckgen/build.py:9`).
 - **In play:** the AI refuses to play any spell ability of a `RemoveDeck:All` card (`AiController.java:1650`), gives it -10 priority (`ComputerUtilAbility.java:363`), and avoids stealing, copying or fetching such cards (`ControlGainAi.java:158`, `CopyPermanentAi.java:141`, `ChangeZoneAi.java:1586`, and others).
 
 ## Case study: Odric
@@ -83,7 +83,7 @@ Melee and Master Warcraft (both `RemoveDeck:All`) and Invasion Plans (`RemoveDec
 ### D. General AI improvements for the project (no code in core, game or ai)
 1. **Per-enemy profiles:** set `"ai": "Reckless" | "Cautious" | "Experimental"` per enemy in `Concordia/world/enemies.json`. Effort: about 1 hour of data work. Aggro decks benefit most from Reckless.
 2. **Custom profiles, for example `ConcordiaAggro.ai`:** these load automatically from `res/ai` (`AiProfileUtil.java:82`), but `DuelScene.selectAI` (`forge-gui-mobile`, `:906-918`) whitelists the four names. Extend it to accept any name in `AiProfileUtil.getAvailableProfiles()`: about 10 lines in forge-gui-mobile, which the fork already edits, plus about 1-2 hours tuning `AiProps`.
-3. **Card hints in decks:** prefer cards with `AILogic$` (1,814 card files have one) and `AIPreference` (250). Avoid `RemoveDeck:Random` cards in hand-built decks; the deckgen tool already flags them (`deck_tier.py:359`).
+3. **Card hints in decks:** prefer cards with `AILogic$` (1,814 card files have one) and `AIPreference` (250). Avoid `RemoveDeck:Random` cards in hand-built decks; the deckgen tool already flags them (`power_scorer.py:359`).
 4. **Simulation AI** (`AIOption.USE_SIMULATION`/hybrid, `forge/ai/simulation/*`): it is stronger in some spots but slow and less well tested. It is not advisable for mobile Adventure.
 5. **forge-ai fixes like option B** for other recurring problem cards. Effort is roughly 0.5-2 days each, and each one means maintaining a fork patch against upstream merges.
 

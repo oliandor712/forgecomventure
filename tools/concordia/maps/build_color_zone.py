@@ -49,7 +49,7 @@ ZONES = {
 # The difficulty curve (OVERWORLD.md §5.1). Stage = zoneTier.<C>: 1 for seals 0-1, 2 for seals 2-3, 3 for seals 4-5,
 # locked at the first fight in the zone. Per role and stage: (deck tier, deck power window, life, colors).
 # Colors: 'mono' = the zone's color only; '1-2' / '2-3' = that many colors, one of them the zone's.
-# Power is deck_tier.py's average card power (with EDHREC popularity since 2026-10-20); the decks span T1 13-15,
+# Power is power_scorer.py's average card power (with EDHREC popularity since 2026-10-20); the decks span T1 13-15,
 # T2 21-28, T3 30-38, T4 34-41, T5 40-46.
 # Wild creatures take the lowest band of the stage and also fill the random dungeons, pass sentries and hall acolytes.
 WILD = {1: (1, (0, 99), 12, 'mono'), 2: (2, (25, 28), 18, 'mono'), 3: (4, (34, 37), 22, 'mono')}
@@ -72,7 +72,7 @@ _power = {}
 def deck_power(rel):
     if rel not in _power:
         sys.path.insert(0, os.path.dirname(HERE))
-        import deck_tier as dt
+        import power_scorer as dt
         if 'data' not in _power:
             _power['data'] = (dt.build_cache(), json.load(open(dt.CONFIG)))
         _power[rel] = dt.rate(os.path.join(CONC, rel), *_power['data'])['power']

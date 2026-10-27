@@ -7,7 +7,7 @@ Study, Demonic Tutor).
     python3 tools/concordia/deckgen/staples.py          # writes deckgen/staples.json and prints the comparison
 
 Each card gets two numbers:
-- popularity: the highest of its EDHREC rank (Scryfall, log-scaled like deck_tier.edhrec), its precon inclusion rate
+- popularity: the highest of its EDHREC rank (Scryfall, log-scaled like power_scorer.edhrec), its precon inclusion rate
   and its cEDH inclusion rate (Spellbinder signals);
 - impact (0-1): what the card can do by itself, from its Forge script (IMPACT below): winning the game, extra turns,
   one-sided or mass removal (including Overload), mass land denial, stax, repeatable engines (triggered draw, tokens or
@@ -26,7 +26,7 @@ import json, math, os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 sys.path.insert(0, HERE)
-import deck_tier as dt  # noqa: E402
+import power_scorer as dt  # noqa: E402
 import scryfall_bulk as sb  # noqa: E402
 
 STAPLE_POP = 0.3        # about EDHREC rank 1,300 or better, or in 30% of the precons / cEDH decks that could play it
@@ -35,7 +35,7 @@ WATCH_IMPACT = 0.6
 
 
 def triggers():
-    """T: lines per card name (deck_tier's cache doesn't keep them)."""
+    """T: lines per card name (power_scorer's cache doesn't keep them)."""
     out = {}
     for root, _, files in os.walk(os.path.join(dt.RES, 'cardsfolder')):
         for f in files:

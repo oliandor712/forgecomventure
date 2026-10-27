@@ -12,11 +12,11 @@ with build.py's builder and rebuilt with a corrected target until its power land
 import collections, json, os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-import build as B  # noqa: E402  (loads the pool and deck_tier)
+import build as B  # noqa: E402  (loads the pool and power_scorer)
 dt, data, cfg, pool = B.dt, B.data, B.cfg, B.pool
 TH = B.th
 
-# deck power goals per tier for the new decks (deck_tier average card power), low to high
+# deck power goals per tier for the new decks (power_scorer average card power), low to high
 TARGETS = {1: [None] * 4, 2: [24.5, 26.5, 28, 29], 3: [30, 32, 35, 37], 4: [35, 37.5, 39.5, 42], 5: [40, 42, 44, 46]}  # EDHREC scale; each tier averages its tier_table.json target (27.0 / 33.5 / 38.5 / 43.0), inside its band
 LIFE = {1: 11, 2: 18, 3: 28, 4: 35, 5: 40}
 WORD = {1: 'Tier 1 (Bracket 1)', 2: 'Tier 2 (Bracket 2)', 3: 'Tier 3 (Bracket 3)', 4: 'Tier 4 (Bracket 4)', 5: 'Tier 5 (Bracket 4, elite)'}

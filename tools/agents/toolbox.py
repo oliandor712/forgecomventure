@@ -57,7 +57,7 @@ TOOLS = [
     ("tools/concordia/deckgen/starter_tune.py", "deck builder", "tunes the player starters toward deck power 27"),
     ("tools/concordia/deckgen/gen_mono.py", "deck builder", "mono-colour deck generation"),
     ("tools/concordia/deckgen/hall_roster.py", "deck builder", "Commander Hall roster and starter commanders"),
-    ("tools/concordia/deck_tier.py", "deck builder, balance lab", "deck power and tier bands"),
+    ("tools/concordia/power_scorer.py", "deck builder, balance lab", "deck power and tier bands"),
     ("tools/concordia/maps/check_doors.py", "main", "door and map checks"),
     ("docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md", "ai lab, main", "AI change checkboxes; only the user ticks"),
     ("docs/Adventure/Campaign/RESEARCH_MASTER_REPORT.md", "all", "the compiled research so far"),

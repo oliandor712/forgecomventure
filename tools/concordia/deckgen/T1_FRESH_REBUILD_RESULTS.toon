@@ -1,5 +1,5 @@
 # Tier 1 fresh rebuild results, final staged run (2026-10-21), verified independently by the main session
-summary[1]{decks|classified_as_declared|cards_each|deck_tier_fail|power_min|power_mean|power_max|creatures_min|creatures_mean|creatures_max|commander_support_5plus|inside_windows}:
+summary[1]{decks|classified_as_declared|cards_each|power_scorer_fail|power_min|power_mean|power_max|creatures_min|creatures_mean|creatures_max|commander_support_5plus|inside_windows}:
   80|80|100|0|16.3|17.3|18.0|26|31.4|36|80|48
 window_misses[4]{kind|decks}:
   creatures|27

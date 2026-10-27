@@ -8,7 +8,7 @@ Method: AST scan of 37 scripts for same-name functions, identical bodies (string
 |---|---|---|
 | `tag_guard._sims` and `rule_guard._sims`, plus the render loop in `sync.gaps` and `tag_audit` | Each re-implements "tag records -> M.render -> RC.score vs Oracle". `tag_guard` and `rule_guard` are near copies (same index, same sim call). | One helper `tagcheck/score.py` (`card_sims(records)`) used by all four. Saves ~40 lines and removes the risk of the scores drifting apart. |
 | `tag_guard.apply` and `rule_guard.apply` | Same shape: load stored, score both, merge, print tally, save. | Keep two merge rules, share the load/score/tally/log wrapper (this also gives `rule_guard` the `guard-runs.toon` log it lacks). |
-| `pool.identity` and `spellbinder_signals.identity` | Identical bodies. | Move to `deck_tier` (both already import it). |
+| `pool.identity` and `spellbinder_signals.identity` | Identical bodies. | Move to `power_scorer` (both already import it). |
 | `starter_tune.role` and `variants.role` | Identical bodies. | Move to `build.py` (both already import `build`/`gen_mono`). |
 | `tag_extra.params` and `tag_run.params` | Identical bodies. | Keep in `tag_extra`; `tag_run` imports it. |
 | `scryfall_bulk.get` and `build_reminder_fill.get` | Both are a rate-limited, retrying Scryfall GET (5 vs 4 retries, different headers). | `build_reminder_fill` calls `scryfall_bulk.get`. |

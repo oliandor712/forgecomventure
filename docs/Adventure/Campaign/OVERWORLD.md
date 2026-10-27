@@ -400,7 +400,7 @@ take to get in. Walking into a zone without fighting locks nothing.
 | 2 | 2-3 | 2-4 | the second ally zone; the first enemy zone |
 | 3 | 4-5 | 4-5 | the second enemy zone |
 
-Per role and stage: deck tier, deck power window (`deck_tier.py` average card power), life and colors. Colors always
+Per role and stage: deck tier, deck power window (`power_scorer.py` average card power), life and colors. Colors always
 include the zone's color.
 
 | Role | Stage 1 | Stage 2 | Stage 3 | Colors |
@@ -411,7 +411,7 @@ include the zone's color.
 | Grove guardians | T3 · 29-32 · 24 | T4 · 37-39 · 30 | T5 · 41-44 · 35 | mono |
 | Warden | T3 · 32-35 · 30 | T4 · 38-41 · 35 | T5 · 43-46 · 40 | mono |
 
-Windows are in `deck_tier.py` deck power, which counts EDHREC popularity since 2026-10-20 (the windows moved up by
+Windows are in `power_scorer.py` deck power, which counts EDHREC popularity since 2026-10-20 (the windows moved up by
 each tier's average shift: +1.5 at T2-T3, +1 at T4, +0.5 at T5). The same day the tier 1-2 floor was raised (T1 decks
 now 16-18 instead of 12-14, T2 25-30 instead of 21-31), so the stage-1 trainer and pass-keeper windows moved up to
 24-27 and 26-29.

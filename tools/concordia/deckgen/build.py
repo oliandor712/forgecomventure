@@ -1,5 +1,5 @@
 """Step 3 of the Concordia deck generator: builds the tier decks listed in decks.json into
-forge-gui/res/adventure/Concordia/decks/tier1..3 and rates each one with deck_tier.py.
+forge-gui/res/adventure/Concordia/decks/tier1..3 and rates each one with power_scorer.py.
 
 Run: python3 mine.py && python3 pool.py && python3 build.py decks.json [FILE.dck ...]
 
@@ -7,13 +7,13 @@ Each entry names a commander, colours, a theme (creature types, or /regex/ on ru
 creatures) and optionally a seed deck from Forge whose cards are preferred. The builder fills, in order: the tier's
 role quotas (removal, draw, ramp, wipes), the card-type quotas, the creature count, then the rest, inside the tier's
 mana curve, rarity and role caps. Only Commander-legal cards without an AI:RemoveDeck:All flag, outside Concordia's
-restrictions, are used. Tier 1 aims low on power, Tier 2 at about 25, Tier 3 at about 34 (deck_tier.py power score).
+restrictions, are used. Tier 1 aims low on power, Tier 2 at about 25, Tier 3 at about 34 (power_scorer.py power score).
 """
 import sys, os, re, json, pickle, collections
 import deckfile as D
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
-import deck_tier as dt
+import power_scorer as dt
 import tier_rules as tr  # tier 1 requirements (one source of truth, tools/concordia/tier_rules.py)
 import archetype_rules as ar  # archetype windows and sub-archetype classification (tools/concordia)
 import ability_tags as at  # ability-led tags and the deck-building bonus (deckgen)
@@ -244,7 +244,7 @@ def build(d):
     theme = d.get('theme', [])
     strat = d.get('strategy', [])  # strategies.json ids this deck plays (optional)
     def score(p, r):
-        pw = p['power'][r]   # popularity is already inside power (deck_tier.card_power), so it is not scored again here
+        pw = p['power'][r]   # popularity is already inside power (power_scorer.card_power), so it is not scored again here
         s = 0
         if tier == 1:
             s = -0.7 * abs(pw - d.get('target', p1['target'])) - 0.8 * max(0, p['nabil'] - 2)

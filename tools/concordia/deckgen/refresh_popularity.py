@@ -62,7 +62,7 @@ def main():
         if new: f.write("# refresh_popularity.py. runs[]{date,scryfall_updated,spellbinder_built,cards_popularity_moved_0.05,category_changes}:\n")
         f.write("  " + row + "\n")
     print("popularity moved >=0.05 on %d cards; category changes: %s" % (moved, dict(cat) or "none"))
-    print("Card power changed: older power numbers are not comparable. Re-run the builder and deck_tier checks on purpose; live decks are untouched.")
+    print("Card power changed: older power numbers are not comparable. Re-run the builder and power_scorer checks on purpose; live decks are untouched.")
 
 
 if __name__ == "__main__":

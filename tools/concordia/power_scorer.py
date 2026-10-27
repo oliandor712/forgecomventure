@@ -2,7 +2,7 @@
 """Rate a Commander deck against the Concordia encounter tiers (docs/Adventure/Campaign/ENCOUNTER_TIERS.md).
 
 Usage:
-  python3 tools/concordia/deck_tier.py DECK.dck [DECK2.dck ...] [--tier 1|2|3] [--life N] [--json]
+  python3 tools/concordia/power_scorer.py DECK.dck [DECK2.dck ...] [--tier 1|2|3] [--life N] [--json]
 
 For each deck it prints the composition (lands, ramp, draw, removal, wipes, tutors, fast mana, curve, rarity),
 the average card power score, the bracket signals (Game Changers, mass land denial, extra turns, 2-card combos),
@@ -11,7 +11,7 @@ and, with --tier, every rule of that tier with PASS/WARN/FAIL. Exit status is 1 
 
 Everything is computed offline from this repository: card scripts in forge-gui/res/cardsfolder, rarities from
 forge-gui/res/editions, Forge's bracket lists in forge-gui/res/lists and the cube ranking in
-forge-gui/res/draft/rankings_cubecobra.txt. The first run builds a cache next to this script (.deck_tier_cache).
+forge-gui/res/draft/rankings_cubecobra.txt. The first run builds a cache next to this script (.power_scorer_cache).
 GOAL OF THE POWER SCORER: the EDHREC rank and the cube ranking are a crutch, not the target. The scorer's own opinion (what the
 card does: roles, mana efficiency, rarity, tags) should approximate the EDHREC rank when the rank is controlled for, i.e. computed
 without the cube/EDHREC/cEDH terms and compared with them. An exact match is not the goal; the goal is a 15% difference, the
@@ -27,7 +27,7 @@ import tier_rules as tr
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 RES = os.path.join(REPO, "forge-gui", "res")
-CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".deck_tier_cache")
+CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".power_scorer_cache")
 CONFIG = os.path.join(RES, "adventure", "Concordia", "config.json")
 
 BASICS = {"plains", "island", "swamp", "mountain", "forest", "wastes"}
@@ -405,7 +405,7 @@ def _warn_inputs():
         _warned = True
         miss = [k for k, v in inputs_status().items() if v is None]
         if miss:
-            print("WARNING deck_tier.card_power: missing input(s) %s; popularity/cEDH terms count as 0, power numbers are not comparable "
+            print("WARNING power_scorer.card_power: missing input(s) %s; popularity/cEDH terms count as 0, power numbers are not comparable "
                   "with tier_table.json" % ", ".join(miss), file=sys.stderr)
 
 
@@ -420,7 +420,7 @@ def _warn_pool_stale():
         import tag_version
         fp = json.load(open(os.path.join(os.path.dirname(POOL), "pool_meta.json"))).get("fingerprint", {})
         import pool as _p      # same staples hash pool.py stores, so a staples.json edit is caught too
-        if fp.get("tags") != tag_version.stamp() or fp.get("staples") != _p._h(STAPLES): print("WARNING deck_tier: pool.pkl is older than the tagger files (run deckgen/pool.py --if-stale); roles and categories may be stale", file=sys.stderr)
+        if fp.get("tags") != tag_version.stamp() or fp.get("staples") != _p._h(STAPLES): print("WARNING power_scorer: pool.pkl is older than the tagger files (run deckgen/pool.py --if-stale); roles and categories may be stale", file=sys.stderr)
     except (OSError, ValueError, ImportError): pass
 
 
@@ -429,7 +429,7 @@ def ftags_of(name):
     global _poolf
     if _poolf is None:
         _poolf = {}
-        if not os.path.exists(POOL): print("WARNING deck_tier: no deckgen/pool.pkl, tags fall back to script rules (run deckgen/pool.py)", file=sys.stderr)
+        if not os.path.exists(POOL): print("WARNING power_scorer: no deckgen/pool.pkl, tags fall back to script rules (run deckgen/pool.py)", file=sys.stderr)
         else:
             _warn_pool_stale()
             _poolf = {k: tuple(v.get("ftags", ())) for k, v in pickle.load(open(POOL, "rb")).items()}

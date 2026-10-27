@@ -288,4 +288,4 @@ def cmd_compare(a):
     mana_v = dict(tag=_mana(os.path.join(wd, "out")), oracle=_mana(os.path.join(wd, "oout")))
     json.dump(dict(summary=summ, mana=mana_v, cards=cards, misses=misses, unclear=um.most_common(60), unclear_families=fam.most_common(30)), open(os.path.join(wd, "glance_results.json"), "w"), indent=1)
     print(json.dumps(summ, indent=1)); print("top unclear families:", fam.most_common(10)); print("misses (role F1 < .5 or no archetype hit): %d of %d cards -> %s/glance_results.json" % (len(misses), len(cards), wd))
-    print("Ground truth here is the Oracle reader only (power too; deck_tier band not wired). A miss is read by hand: tag missing / tag unclear / Oracle reader wrong -> tags/GLANCE_FIXES.toon.")
+    print("Ground truth here is the Oracle reader only (power too; power_scorer band not wired). A miss is read by hand: tag missing / tag unclear / Oracle reader wrong -> tags/GLANCE_FIXES.toon.")

@@ -21,7 +21,7 @@ Method: do **not** regress deck win rate on features. With ~20 games per deck th
 |---|---|---|---|---|
 | P1 | Removal count by kind: destroy / exile / bounce / tuck, and by target (creature / artifact / enchantment) | `remove:*`, `target_type`, `target_scope`, `target_count` | Existing `archetype_rules` counts removal classes by hand; tags give the kind and scope | counts per kind, weighted by `target_count:all` (sweepers) |
 | P2 | Card flow: draw_count sum, `tempo` sum, tutor count | `draw_count`, `tempo`, `tutor` | `tempo` = net cards added; closest tag to a card-advantage stat | sums over non-land cards; per-turn estimate from curve |
-| P3 | Ramp / fixing: `mana_source`, `mana_amount`, `land_tutor`, `fixing`, `cost_reduce` | same | Mana development drives speed; compare with land count already in deck_tier | sum of mana produced by cheap permanents |
+| P3 | Ramp / fixing: `mana_source`, `mana_amount`, `land_tutor`, `fixing`, `cost_reduce` | same | Mana development drives speed; compare with land count already in power_scorer | sum of mana produced by cheap permanents |
 | P4 | Token package: `token_count` x `token_type`, `pump_all`/`pump_team` present | `token_*`, `pump_*` | Tokens + anthem is the classic over-performer | token cards, anthem cards, product |
 | P5 | Evasion and pump package: `kw:flying/menace/trample`, `evasion`, `pump_single` | keyword and ability tags | Predicts clock speed vs a blocker-heavy NPC | counts, power of evasive creatures |
 | P6 | Trigger load: `trigger:etb/dies/attacks/spell_cast`, `trigger_scope:other` | trigger family | Value engines; scope tells self-only from board-wide | counts by trigger and scope |
@@ -32,7 +32,7 @@ Method: do **not** regress deck win rate on features. With ~20 games per deck th
 
 Tests (no new runs):
 1. **Coverage first:** run the tagger over all cards that appear in any of the 400 AI decks plus the 10 starters (about the full-cardlist run in section 5). Target >=95% tagged deck share before fitting.
-2. **Baseline:** game-level logistic on deck power difference only (current `deck_tier.card_power` average). Record log-loss and calibration.
+2. **Baseline:** game-level logistic on deck power difference only (current `power_scorer.card_power` average). Record log-loss and calibration.
 3. **Add feature groups one at a time** (P1..P10), report change in log-loss and the effect size per 1 card, with clustered intervals. Keep a feature only if it improves held-out (leave-one-deck-out) log-loss.
 4. **Tier split:** fit tiers 1-2 and 3-5 separately; the H29 targets differ (70% vs 50%).
 5. **Starter side:** the 3,500 bonus games have each starter facing many NPC decks. Fit a per-starter model of win rate vs NPC feature mix (opponent removal count, token count, tempo). This is the H29-relevant fit: what in the NPC deck takes the player below its target.

@@ -15,7 +15,7 @@ import collections, datetime, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
-import deck_tier as dt  # noqa: E402
+import power_scorer as dt  # noqa: E402
 from common import identity  # noqa: E402
 
 DIR = os.path.join(HERE, 'spellbinder')

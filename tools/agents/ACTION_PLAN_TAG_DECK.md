@@ -6,7 +6,7 @@ Source: the agreed list and open points in `MEETING_FEEDBACK.md`; vision in `VIS
 
 - `TAG_GAPS.toon` is read only by `tagcheck/guards.py` and `tag_reports.py`; `build.py` and `commander_support.py` do not read it. The builder's round-1 claim was right.
 - Tier numbers live in three places, as three kinds of number (all inside each other's range today, but nothing ties them):
-  - bands: `deck_tier.py` (T2 power 19-31, T4 34-42) and `CONTEXT.md` (T1 <=19, T2 19-31, T3 27-38, T4 34-42, T5 >=39)
+  - bands: `power_scorer.py` (T2 power 19-31, T4 34-42) and `CONTEXT.md` (T1 <=19, T2 19-31, T3 27-38, T4 34-42, T5 >=39)
   - builder targets: `build.py` `TARGET_POWER` T2 26.5, T3 35.5, T4 40, T5 46.5
   - builder floor and ceiling: T1 from `t1.POWER` (H08 16-18), T2 24.5-30.0
   So the mismatch is real but it is three tables, not a conflict. Item 5 of the list stands.
@@ -27,8 +27,8 @@ Source: the agreed list and open points in `MEETING_FEEDBACK.md`; vision in `VIS
 | 2 | **Tag version stamp.** One id (hash of the tagger record and rule files). Add it to build output, `games_meta.tsv`, suite rows, commander rows. | Every output row carries it; old rows read as "unstamped" | step 1 |
 | 3 | **commander_support on the tagger record.** `profile`/`supports` read mapped tags; keep old output for a diff. | Same or better support lists on all current commanders; every change explained | step 1, D3 |
 | 4 | **Gap and check-status handling.** Add a check-status field to the record (reader readable, Oracle verified, unverified, who set it). Builder and commander_support read `TAG_GAPS.toon`; gap or unverified tags give no ability bonus and flag the deck. | Flag list printed per deck; flagged decks marked in the diff | steps 1-3, D1 |
-| 5 | **build.py, deck_tier.py on the tagger record.** Replace `ability_tags(p)` and `at.tags_of` use via the map. | `build.py --dry` on T1 and tier 2-5 samples: same cards or each change explained | steps 1-4 |
-| 6 | **One tier table.** `deck_tier.py` bands, `build.py` target/floor/ceiling and `CONTEXT.md` read one data file with a dated baseline. | No tier number defined twice | step 5; you confirm the numbers |
+| 5 | **build.py, power_scorer.py on the tagger record.** Replace `ability_tags(p)` and `at.tags_of` use via the map. | `build.py --dry` on T1 and tier 2-5 samples: same cards or each change explained | steps 1-4 |
+| 6 | **One tier table.** `power_scorer.py` bands, `build.py` target/floor/ceiling and `CONTEXT.md` read one data file with a dated baseline. | No tier number defined twice | step 5; you confirm the numbers |
 | 7 | **Regeneration diff report.** After any tag change, regenerate decks and commander rows in one pass; write a per-deck diff (tier, power, commander support), mark old sims stale. | Report on current decks, nothing written to live decks | steps 2, 5, 6 |
 | 8 | **Row fields.** Check the suite and game logs for deck id, archetype, colour, timing, command-zone moves, commander cast count; add the missing ones. | Fields present in `games_meta.tsv` or noted as a balance-lab task | step 2 |
 | 9 | **Commander harmony.** Score term plus a separate reported score; test with the D2 sample floor. | Result table of supported vs unsupported builds | steps 3, 8, D2 |

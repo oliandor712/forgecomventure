@@ -38,7 +38,7 @@ def card_files(root):
 
 
 def identity(c):
-    """colour identity (frozenset of WUBRG) of a deck_tier card record: mana cost plus mana symbols in the text outside reminder text"""
+    """colour identity (frozenset of WUBRG) of a power_scorer card record: mana cost plus mana symbols in the text outside reminder text"""
     s = set(re.findall(r'[WUBRG]', c['mc']))
     for sym in re.findall(r'\{([^}]*)\}', re.sub(r'\([^)]*\)', '', c['oracle'])):
         s |= set(re.findall(r'[WUBRG]', sym))

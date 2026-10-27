@@ -17,7 +17,7 @@ import collections, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, '..'))
-import deck_tier as dt  # noqa: E402
+import power_scorer as dt  # noqa: E402
 
 BASIC = {'W': 'Plains', 'U': 'Island', 'B': 'Swamp', 'R': 'Mountain', 'G': 'Forest'}
 

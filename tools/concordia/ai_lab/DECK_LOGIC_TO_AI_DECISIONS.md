@@ -16,7 +16,7 @@ Research only. Nothing applied to forge-ai/src, nothing on the sim overlay, no b
 
 Key finding: the deck-builder's tags (ability_tags.py POLICY) and archetypes (archetype_rules.py) never reach the game. The AI's only deck-level input is the name/CMC test above.
 
-Correction (2026-10-21, after the main session's check): `Deck.getAverageCMC` (forge-core `Deck.java` 804-816) counts only non-land Main and Commander cards that are artifacts, creatures, enchantments or planeswalkers. Instants and sorceries are NOT counted, and the commander is. So "average CMC > 3" is not the nonland average the builder reports (`deck_tier` avg_mv); the two can differ. Tier-level split to be re-checked against this exact function before DL-1 is judged.
+Correction (2026-10-21, after the main session's check): `Deck.getAverageCMC` (forge-core `Deck.java` 804-816) counts only non-land Main and Commander cards that are artifacts, creatures, enchantments or planeswalkers. Instants and sorceries are NOT counted, and the commander is. So "average CMC > 3" is not the nonland average the builder reports (`power_scorer` avg_mv); the two can differ. Tier-level split to be re-checked against this exact function before DL-1 is judged.
 
 ## 2. Mapping table (deck-building signal -> nearest existing AI mechanism)
 | # | Deck-building rule (H-row / tag) | What the AI does today | Gap | Smallest syntax-conforming change |

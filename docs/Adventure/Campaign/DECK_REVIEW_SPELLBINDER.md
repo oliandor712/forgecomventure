@@ -7,7 +7,7 @@ Scope: all 109 Concordia decks (tutorial 4, starters 5, tiers 1-5 with 20 each).
 
 ## What changed in the scoring (applied)
 
-`deck_tier.card_power` raw power is now `max(cube rank, cEDH strength)`, where cEDH strength = inclusion rate / 0.4
+`power_scorer.card_power` raw power is now `max(cube rank, cEDH strength)`, where cEDH strength = inclusion rate / 0.4
 (capped at 1). Everything else is unchanged:
 35·raw + 15·efficiency + 15·role + 15·rarity + 10·GC + 5·fast + 5·tutor.
 

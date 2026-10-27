@@ -73,7 +73,7 @@ Seat advantage is small: 51-56% for the first player, which is inside the noise 
 
 Win rates by colour are not informative in this report. Each game has one winner and one loser, so pooling all decks of one colour always gives 50%. Judge decks individually, as below.
 
-### Strong and weak decks (interval clear of 50%, deck power from `deck_tier.py`)
+### Strong and weak decks (interval clear of 50%, deck power from `power_scorer.py`)
 
 Power values are from the current scale (EDHREC popularity added 2026-10-20). Strong results need the 25-game target before they count.
 

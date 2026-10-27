@@ -7,7 +7,7 @@ cards = pool.values() if isinstance(pool, dict) else pool
 S = json.load(open(os.path.join(H, "strategies.json")))["archetypes"]
 names = {c["name"] for c in cards}
 sys.path.insert(0, os.path.join(H, ".."))
-import deck_tier as dt
+import power_scorer as dt
 _cfg = json.load(open(dt.CONFIG)); _rest = {x.lower() for x in _cfg["restrictedCards"]}; _data = dt.build_cache()
 def why(n):
     k = n.lower()

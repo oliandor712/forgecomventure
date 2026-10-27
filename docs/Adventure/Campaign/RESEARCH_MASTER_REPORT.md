@@ -50,7 +50,7 @@ Sources:
 
 First-player win rate on the current decks (90% intervals): tier 1 56% (53-59%) over 678 games, tier 2 56% (53-59%) over 842, tier 3 51% (48-54%) over 824, tier 4 51% (48-54%) over 838, tier 5 52% (49-55%) over 812. The seat edge is small and only clear at tiers 1-2. Win rates pooled by colour are always 50% (every game has one winner and one loser), so decks are judged one by one.
 
-Decks clear of 50% (90% interval, power from `deck_tier.py`):
+Decks clear of 50% (90% interval, power from `power_scorer.py`):
 
 | tier | deck | games | win rate | power |
 |---|---|---|---|---|

@@ -2,7 +2,7 @@
 import sys, os, re, json, collections, pickle, time
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
-import deck_tier as dt
+import power_scorer as dt
 import tag_run  # the one tag source: ftags below
 from text_tags import text_tags
 from common import identity  # noqa: E402
@@ -12,7 +12,7 @@ POOL_PKL = os.path.join(HERE, 'pool.pkl')
 META = os.path.join(HERE, 'pool_meta.json')
 TAGCACHE = os.path.join(HERE, 'pool_tags.pkl')  # per-card tag cache (not committed): {'stamp': tag_version.stamp() + scryfall size, 'cards': {key: (sha1 of the script text, tag list)}}
 # Why a build is slow and what is cached: 75% of the ~60 s is tag_run.record() per card. Its result depends only on the card's script and the tagger files
-# (tag_version.stamp()), so it is cached per card in pool_tags.pkl: a change to popularity, staples.json, deck_tier.py scoring or one script re-tags only
+# (tag_version.stamp()), so it is cached per card in pool_tags.pkl: a change to popularity, staples.json, power_scorer.py scoring or one script re-tags only
 # what changed; only a change to the tagger files re-tags everything. `pool.py --check` says whether pool.pkl is stale, `--if-stale` builds only then,
 # `--cat` re-reads staples.json into the existing pool.pkl in seconds (staples.py reads the pool's tags, so after it runs only the category can have moved).
 
