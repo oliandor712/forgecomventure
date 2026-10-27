@@ -10,7 +10,7 @@ Engine goals (every deck): ramp 10-12, card draw 8-12, recursion 2-5, protection
 General engine pieces (removal, wipes, tutors, fast mana, lands) are in section 4. The hard gates (Game Changers, extra turns, mass land denial, mechanics by tier, watch-list) are not role counts and are NOT removed here; confirm whether they stay. Archetype slots marked `-` have no count and are omitted. Niche archetypes (user, 2026-10-27) rely on the base archetype they are attached to.
 
 ## 1. Engine roles by archetype
-Niche archetypes (marked *) take their base archetype's numbers (first listed parent that is not circular; own listed numbers win). Parent shown in the last column.
+Niche archetypes (marked *) take their base archetype's numbers: the first listed parent that is a full archetype (else the first parent, resolved the same way); own listed numbers win. Base shown in the last column.
 
 | Archetype | Ramp | Draw | Recursion | Protection | Base |
 |---|---|---|---|---|---|
@@ -34,7 +34,7 @@ Niche archetypes (marked *) take their base archetype's numbers (first listed pa
 | stax | 10-12 | 8-12 | 2-5 | 3-6 |  |
 | control | 10-12 | 8-12 | 2-5 | 3-6 |  |
 | group_hug* | 10-12 | 6-8 | 2-5 | 3-5 | pillow_fort |
-| enchantress* | 10-12 | 6-10 | 3-6 | 3-6 | sagas |
+| enchantress* | 10-12 | 6-10 | 2-5 | 3-6 | control |
 | artifacts | 10-12 | 8-12 | 2-5 | 3-6 |  |
 | superfriends | 10-12 | 8-12 | 2-5 | 3-6 |  |
 | burn | 10-12 | 8-12 | 2-5 | 3-6 |  |
@@ -48,14 +48,14 @@ Niche archetypes (marked *) take their base archetype's numbers (first listed pa
 | self_mill | 10-12 | 6-8 | 8-12 | 3-6 |  |
 | energy | 10-12 | 6-8 | 2-5 | 3-6 |  |
 | vehicles* | 10-12 | 8-12 | 2-5 | 3-6 | artifacts |
-| sagas* | 10-12 | 6-10 | 2-5 | 3-6 | enchantress |
+| sagas* | 10-12 | 8-12 | 3-6 | 3-6 | blink |
 | discard | 10-12 | 6-8 | 2-5 | 3-6 |  |
 | group_slug | 10-12 | 8-12 | 2-5 | 3-6 |  |
-| forced_combat* | 10-12 | 6-8 | 2-5 | 4-6 | group_hug |
+| forced_combat* | 10-12 | 8-12 | 2-5 | 4-6 | stompy |
 | pillow_fort* | 10-12 | 6-8 | 2-5 | 3-5 | control |
 | upkeep_triggers | 10-12 | 6-8 | 2-5 | 3-5 |  |
 | treasure* | 10-12 | 8-12 | 2-5 | 3-6 | artifacts |
-| wheels* | 10-12 | 6-8 | 2-5 | 3-5 | group_hug |
+| wheels* | 10-12 | 8-12 | 2-5 | 3-6 | control |
 | impulse_draw* | 10-12 | 8-12 | 2-5 | 3-6 | outlaws |
 | legends_matter* | 8-10 | 8-12 | 2-5 | 6-10 | voltron |
 | theft* | 10-12 | 8-12 | 2-5 | 3-6 | control |
@@ -84,7 +84,7 @@ Slots already in section 1 are not repeated. Niche archetypes show their base's 
 - **stax**: lock 8-12; parity_breaker 4-6; win 1-2
 - **control**: answer 8-12; sweeper 6-10; finisher 2-3
 - **group_hug** (base pillow_fort): answer 8-12; sweeper 6-10; finisher 2-4; fort 8-12; shared 8-12; breaker 4-6
-- **enchantress** (base sagas): flicker 8-12; etb_creature 20-25; saga 12-20; reuse 4-8; enabler 8-10
+- **enchantress** (base control): answer 8-12; sweeper 6-10; finisher 2-3
 - **artifacts**: artifact 25-35; cost_reducer 3-5
 - **stompy**: creature 25-35; big_body 8-12; anthem 2-4; extra_combat 2-3
 - **lands_matter**: ramp_land 8-12; payoff 6-10; interaction 5-7
@@ -96,14 +96,14 @@ Slots already in section 1 are not repeated. Niche archetypes show their base's 
 - **self_mill**: filler 8-12; payoff 3-5
 - **energy**: producer 12-18; payoff 6-10
 - **vehicles** (base artifacts): artifact 25-35; cost_reducer 3-5; vehicle 8-12; crew 12-18; payoff 3-6; remove 5-7
-- **sagas** (base enchantress): answer 8-12; sweeper 6-10; finisher 2-3; saga 12-20; reuse 4-8; enabler 8-10
+- **sagas** (base blink): flicker 8-12; etb_creature 20-25; saga 12-20; reuse 4-8; enabler 8-10
 - **discard**: discard 8-12; punisher 3-6; remove 6-8
 - **group_slug**: slug 8-12; lifegain 4-6; blocker 10-14; remove 5-7
-- **forced_combat** (base group_hug): answer 8-12; sweeper 6-10; finisher 2-4; fort 8-12; shared 8-12; breaker 4-6; force 6-10; blocker 10-14; remove 5-7
+- **forced_combat** (base stompy): creature 25-35; big_body 8-12; anthem 2-4; extra_combat 2-3; force 6-10; blocker 10-14; remove 5-7
 - **pillow_fort** (base control): answer 8-12; sweeper 6-10; finisher 2-4; fort 8-12
 - **upkeep_triggers**: engine 10-16; doubler 2-4
 - **treasure** (base artifacts): artifact 25-35; cost_reducer 3-5
-- **wheels** (base group_hug): answer 8-12; sweeper 6-10; finisher 2-4; fort 8-12; shared 8-12; breaker 4-6
+- **wheels** (base control): answer 8-12; sweeper 6-10; finisher 2-3
 - **impulse_draw** (base outlaws): outlaw 18-28; lord 3-6
 - **legends_matter** (base voltron): attach 12-18; attach_helper 4-6
 - **theft** (base control): answer 8-12; sweeper 6-10; finisher 2-3; steal 8-12; remove 5-7
