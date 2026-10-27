@@ -20,6 +20,12 @@ Nothing here is live or committed; code changes push on "push". Rules: H88-H92 i
 - Debug: `LAND_DEBUG=1` prints the top 25 land scores.
 - **`mana_sink` tag (H96):** a repeatable activated ability with a mana-only cost and no tap (reminder text ignored). Excluded: sacrifice, exile, discard and life costs; keyword grants; becomes/transform; one-shot (adapt, monstrosity, renown, regenerate); once per turn. 1,185 cards, 6 of them lands. Lands with it count as mana-dump payoffs in `synergy.big_impact`. Sampled by hand on about 50 cards, not pool-wide.
 
+- **No staples target (H97):** the starter builder no longer prints or enforces the tier staples range.
+- **`setup_card:<need>` (H98):** general tag for cards that need a setup. `setup_card:mana` (Dark Depths) counts as land utility only with 10 ramp pieces in the deck.
+- **`restricted_to:<type>` (H99):** 63 cards, 16 lands (mana or recursion limited to a creature type). A land counts as utility only when the type is the commander's or an allowed tribe (Haven of the Spirit Dragon needs dragons).
+- **Colourless sources (H100, H101):** colourless-only lands are penalised (-150) without {C} pips or own synergy (Drownyard Temple), and are capped by the {C} pip share like a colour (Kozilek's Command needs {C}{C}).
+- W_Starter_Regen_r4 (staged) rebuilt with these: lands Urza's Saga, Plaza of Heroes, Vesuva, Drownyard Temple, Buried Ruin, Abundant Countryside; power 28.5; 37/63 supporting.
+
 ## Unverified
 - Tags checked on about 15 lands, not the whole pool. Abstergo and Cavern of Souls tags look right (restricted any-colour); their value as picks is not judged.
 - W_Starter_Regen and the other four colour starters were not rebuilt with these changes.
