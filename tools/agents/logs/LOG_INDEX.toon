@@ -11,3 +11,4 @@ logs[10|]{subject|file|purpose|writer|size_note}:
   strategies|strategy-sources.toon|index of crawled strategy sources|Claude by hand|9 KB
   strategies|strategy-source-texts.toon|verbatim strategy source texts|crawl script|790 KB: NEVER read whole, Grep then Read with offset/limit
   glance_test|log-tag-analyses.toon|glance test rounds G1.. (plan: tools/concordia/deckgen/tagcheck/GLANCE_TEST_PLAN.md)|Claude by hand|topic column starts with glance
+  mtg2llm_gaps|../../concordia/deckgen/tags/MTG2LLM_GAPS.toon|cards whose tags did not read like their Oracle text at a glance (target vs tag_read function, unclear tags)|auto: tagcheck/glance.py compare|one row per card, small

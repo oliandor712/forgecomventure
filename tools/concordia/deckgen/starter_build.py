@@ -459,6 +459,15 @@ def mana_line(pk):
                 len(rocks), len(ramp), ', '.join('%s %d' % (c, src[c]) for c in 'WUBRG' if c in ident), clr, anyc))
 
 
+def arcmind_line(pk, names):
+    """free ArcMind data (arcmind.cards, cached) as extra deck context for the glance readers; '' when unreachable"""
+    sys.path.insert(0, os.path.join(HERE, '..', 'arcmind'))
+    try: import arcmind_score as AM
+    except ImportError: return ''
+    cards = [(1, pk['commander'])] + [(1, x['name']) for x in pk['picks']] + [(1, n) for n in pk['lands']['nonbasic']] + [(c, n) for n, c in pk['lands']['basics'].items() if c]
+    return AM.context_line(AM.fetch(cards, pk['commander']), names)
+
+
 def cmd_review_export(a):
     pk = _picks(a.name); lst = os.path.join(STAGE, a.name + '.cards.txt')
     names = [pk['commander']] + [x['name'] for x in pk['picks']] + list(pk['lands']['nonbasic'])     # nonbasic lands are reviewed too; only the basics are left out
@@ -469,7 +478,7 @@ def cmd_review_export(a):
     ctx = os.path.join(STAGE, a.name + '.context.txt')
     open(ctx, 'w', encoding='utf-8').write(
         'Candidate 99-card Commander starter deck. Declared archetypes: %s. Commander profile: %s. The commander is one of the cards in the list. '
-        'Judge every card against the archetypes and the deck_rules, with the whole deck in mind. ' % (' and '.join(pk['strategy']), ', '.join(pk['profile'])) + DECK_RULES + ' ' + mana_line(pk))
+        'Judge every card against the archetypes and the deck_rules, with the whole deck in mind. ' % (' and '.join(pk['strategy']), ', '.join(pk['profile'])) + DECK_RULES + ' ' + mana_line(pk) + ' ' + arcmind_line(pk, names))
     rid = run_id(a.name, new=True)
     out = subprocess.run([sys.executable, rc, 'glance-export', '--run', rid, '--cardlist', lst, '--batch', '200', '--context', ctx, '--cache', VERDICTS, '--mana', mv],
                          check=False, capture_output=True, text=True, encoding='utf-8').stdout

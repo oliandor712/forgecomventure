@@ -1,6 +1,6 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Append one row per analysis, under 400 chars.
 # Code and tooling analyses.
-log[20|]{date|topic|finding|caveat}:
+log[21|]{date|topic|finding|caveat}:
   2026-10-23|derived_tags.py|anthem needs duration:static + you_control/pump_team (auras, one-shots false hits); wipe excludes target_filter/you_control groups|commit 603c11540e3 local, unpushed
   2026-10-25|seed_bonus 6 overrides (Mirri, Moritte, Orah, Bess) dry-built with and without|power diff <=0.3 (24.5/24.6, 29.9/29.8, 25.5/25.8, 29.6/29.7), all in band; Bess default adds Instant 1 WARN|dry builds only in scratchpad; pool uses Scryfall -in:paper list (27699 cards)
   2026-10-25|power scorer review (deck_tier, tag_run, pool)|10 findings: deckpop split-card key, silent missing inputs, overlapping bands, landfall regex, niche:lands, role ignored niche; 9 fixed|per-card record() uncached (75 s pool build); decks not rebuilt; see power-scorer-tests.toon
@@ -21,3 +21,4 @@ log[20|]{date|topic|finding|caveat}:
   2026-10-27|strategies.json v3 (45 archetypes)|added theft; support_<tag> homes (12); protection baseline 3-6 + protection_by_archetype; ramp sig + fixing; niche/crossover on 14 archetypes; dead signals fixed (validate problem roles 25->23, rest = pool-excluded cards)|crossover overlaps judged, not measured
   2026-10-27|text_tags.py|regex oracle tags goad, wheels, gift_all, ench_payoff, legend_payoff merged into ftags by pool.py; noisy gift_all clause (target player draws) removed|unreviewed, spot-check pending
   2026-10-27|build.py baselines test|build.py --dry decks.json exit 0 after wiring recursion+protection baselines (tiers 2-5) via strategy_fit.baseline_hit/baseline_min; build_strategies.py: 45 archetypes, 99 source rows; glance.engine_goals() returns baselines; 2 decks skipped (Ertai, Sengir not in pool)|dry decks not diffed against live decks
+  2026-10-26|arcmind_score.py|free ArcMind data (analysis JSON, EDHREC per commander; no login, cached) feeds glance deck_context via starter_build.arcmind_line (aggregates, no names, leak check clean) and results/<deck>.builder.txt for the deck builder; glance compare now writes tags/MTG2LLM_GAPS.toon|AI Insights/Swaps/Tensions cost credits, not used; W starter power 5.93 b2, win plan 0

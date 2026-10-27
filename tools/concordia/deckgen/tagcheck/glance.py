@@ -184,6 +184,34 @@ def fn_sim(a, b):
     return f1(set(toks(norm(a or ""))), set(toks(norm(b or ""))))[2]
 
 
+GAPS = os.path.abspath(os.path.join(HERE, "..", "tags", "MTG2LLM_GAPS.toon"))
+
+
+def log_mtg2llm_gaps(run, cards):
+    """mtg2llm training gaps from a glance run: cards where a tag reader missed (role F1 < .5, no archetype hit, function line far from the Oracle reader's) or listed unclear tags.
+    One row per card (a later run replaces the earlier row). target = the Oracle reader's one-line function (what the renderer's text should say); tag_read = what the tag reader got from the tags."""
+    clean = lambda x: re.sub(r"[|\n]+", "/", str(x or "")).strip()
+    mean = lambda xs: (sum(xs) / len(xs)) if xs else 0
+    rows = {}
+    try:
+        for l in open(GAPS, encoding="utf-8"):
+            if l.startswith("  ") and l.count("|") >= 6: rows[l.split("|")[0].strip().lower()] = l.rstrip("\n")
+    except OSError: pass
+    today = datetime.date.today().isoformat(); n = 0
+    for c in cards.values():
+        rs = c["readers"]; unclear = sorted({u for r in rs for u in r["unclear"]})
+        why = [w for w, bad in (("role", mean([r["role_f1"] for r in rs]) < .5), ("archetype", not any(r["arch_hit"] for r in rs)), ("function", mean([r["fn"] for r in rs]) < .3), ("unclear", bool(unclear))) if bad]
+        if not why: continue
+        rows[c["name"].lower()] = "  %s|%s|%s|%s|%s|%s|%s|%s" % (clean(c["name"]), run, today, "+".join(why), clean(c["oracle"]["function"]), clean(rs[0]["fn_text"]), " ".join(unclear[:12]), " ".join(sorted(set(c["oracle"]["roles"]) ^ set(rs[0]["roles"]))))
+        n += 1
+    body = "\n".join(rows[k] for k in sorted(rows))
+    open(GAPS, "w", encoding="utf-8").write(
+        "# Claude-only file in TOON. Written by glance.py compare (any glance run, incl. starter_build review-compare); a card's row is replaced by its latest run, never hand-merged.\n"
+        "# mtg2llm training gaps: cards whose tags did not read like their Oracle text at a glance. target = Oracle reader's function line; tag_read = tag reader's; role_diff = roles only one side named.\n"
+        "gaps[%d|]{card|run|date|why|target|tag_read|unclear_tags|role_diff}:\n%s\n" % (len(rows), body))
+    print("mtg2llm gaps: %d card(s) from this run, %d rows in %s" % (n, len(rows), GAPS))
+
+
 def cmd_compare(a):
     wd = workdir(a.run); key = json.load(open(os.path.join(wd, "key", "key.json")))
     tag, bad1 = _load(os.path.join(wd, "out")); ora, bad2 = _load(os.path.join(wd, "oout"))
@@ -213,7 +241,7 @@ def cmd_compare(a):
             tp = _int(t.get("power"), 1, 5)
             per.append(dict(reader=rd, role_f1=rf, role_free=(f1(free_ro, tr)[2] if free_ro else None), arch_hit=ahit, arch_free=ahit_free,
                             power_ok=(abs(tp - orow["power"]) <= 1 if tp and orow["power"] else None), fn=fn_sim(t.get("function"), o.get("function")),
-                            conf=_int(t.get("confidence"), 1, 5), unclear=sorted(_set(t.get("unclear"))), roles=sorted(tr), arch=ta, power=tp))
+                            conf=_int(t.get("confidence"), 1, 5), unclear=sorted(_set(t.get("unclear"))), roles=sorted(tr), arch=ta, power=tp, fn_text=str(t.get("function") or "")))
         if per: cards[cid] = dict(name=name, oracle=dict(roles=sorted(orow["roles"]), arch=orow["arch"], power=orow["power"], function=o.get("function")), readers=per)
     if cinfo.get("path"):   # store the fresh verdicts for the next wave
         cache = _cache_load(cinfo["path"]); now = datetime.date.today().isoformat(); n = 0
@@ -238,6 +266,7 @@ def cmd_compare(a):
                 calibration_by_confidence=calib, tag_tokens_per_card_est=round(tok), invalid_values=dict(invalid), unreadable_files=bad1 + bad2)
     misses = [dict(id=i, name=c["name"], oracle=c["oracle"], readers=[{k: r[k] for k in ("reader", "roles", "arch", "power", "role_f1", "arch_hit", "unclear")} for r in c["readers"]])
               for i, c in cards.items() if mean([r["role_f1"] for r in c["readers"]]) < 0.5 or not any(r["arch_hit"] for r in c["readers"])]
+    log_mtg2llm_gaps(a.run, cards)
     mana_v = dict(tag=_mana(os.path.join(wd, "out")), oracle=_mana(os.path.join(wd, "oout")))
     json.dump(dict(summary=summ, mana=mana_v, cards=cards, misses=misses, unclear=um.most_common(60), unclear_families=fam.most_common(30)), open(os.path.join(wd, "glance_results.json"), "w"), indent=1)
     print(json.dumps(summ, indent=1)); print("top unclear families:", fam.most_common(10)); print("misses (role F1 < .5 or no archetype hit): %d of %d cards -> %s/glance_results.json" % (len(misses), len(cards), wd))

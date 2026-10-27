@@ -22,6 +22,8 @@ Paths are repo-relative. This file only points; it holds no rules. If a file her
 | `lookup.py card "Name"` | tagged record | `STARTER_TAGS.toon`, ~56k (starter cards only; else `tag_run.py card`) |
 | `lookup.py twin "ability text"` | 5 closest tagged ability lines | `ABILITY_TWINS.json`, ~42k |
 | Archetypes and engine goals, condensed (one row per archetype; generated) | `reference/ARCHETYPES.toon`, 9k |
+| ArcMind scoring for a deck (power, bracket, role gaps, cut candidates, missing EDHREC staples; free, no credits) | `python tools/concordia/arcmind/arcmind_score.py deck.dck` -> `arcmind/results/<deck>.builder.txt` (deck builder reads it); the glance export adds its aggregates to `deck_context` |
+| mtg2llm training gaps from glance runs | `deckgen/tags/MTG2LLM_GAPS.toon` (auto, one row per card) |
 | Deck-building section the readers see (D1-D8) | `reference/deck_building_for_readers.toon`, 1k |
 | `lookup.py size [paths]` | token estimate | guessing |
 
