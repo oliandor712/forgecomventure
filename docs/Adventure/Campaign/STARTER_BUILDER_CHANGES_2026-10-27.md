@@ -18,6 +18,7 @@ Nothing here is live or committed; code changes push on "push". Rules: H88-H92 i
 - **Mono W (Captain America) still:** Urza's Saga, Plaza of Heroes, Treasure Vault, Abstergo Entertainment, Vesuva, The Mycosynth Gardens. The commander-support test is too loose for lands, so these utility picks are not trustworthy. Open.
 - Tag fix: an earlier edit of mine attached the `enters_untapped` branch to the wrong `if` (Woodland Cemetery had both tapped tags); corrected.
 - Debug: `LAND_DEBUG=1` prints the top 25 land scores.
+- **`mana_sink` tag (H96):** a repeatable activated ability with a mana-only cost and no tap (reminder text ignored). Excluded: sacrifice, exile, discard and life costs; keyword grants; becomes/transform; one-shot (adapt, monstrosity, renown, regenerate); once per turn. 1,185 cards, 6 of them lands. Lands with it count as mana-dump payoffs in `synergy.big_impact`. Sampled by hand on about 50 cards, not pool-wide.
 
 ## Unverified
 - Tags checked on about 15 lands, not the whole pool. Abstergo and Cavern of Souls tags look right (restricted any-colour); their value as picks is not judged.
