@@ -2,7 +2,7 @@
 
 Written 2026-10-23 by the previous main session (branch `cd/claude2`, now merged into `campaign-design`). That session is deleted. You are the only main session. The incoming session reads this first, then `CLAUDE.md`, `tools/agents/MAIN_SESSION_BRIEF.md` (all sections), `CONTEXT.md`, `human_logic.toon`, `TOOLBOX.md`, `registry.json`.
 ## LATEST (2026-10-27): strategies master list, engine baselines, tag docs (read first)
-**Repo state: this folder has NO .git (it is the downloaded copy). Nothing from this session is committed or pushed.** Clone or re-attach the repo, copy the changed files in, then commit on `campaign-design` and push on the user's word ("push"). Documents go through `python3 tools/agents/docpush.py <paths>`. `sync_check.py verify` crashes with WinError 123 in this folder.
+**Repo state: pushed.** The folder had no .git; it was re-attached (git init, origin = oliandor712/forgecomventure, fetched campaign-design, `reset --mixed`) and this session's work is commit 8ab92da946d on `campaign-design` (pushed, no force). `sync_check.py verify` crashed with WinError 123 earlier; untested since.
 
 ### Goal
 Replace the 35 deck archetypes with a master list based on Spellweave (now 45, `theft` added). Archetype is chosen first at deck creation; cards then fill its roles. Engine roles (recursion, ramp, card draw, protection) are baseline roles. The user reviews the Claude Docs doc "core tags by archetype" (https://claude.ai/artifact/AUBPzwVViYMGernER4xRE8, doc id 4cadbca0-54db-44a4-8d09-dfb051fcb3e1) and comments; answer each comment by `create` of an utterance under the thread root (never ArtifactComments). Chat reply afterwards: one short line.
