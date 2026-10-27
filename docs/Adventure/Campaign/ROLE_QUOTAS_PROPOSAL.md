@@ -100,3 +100,14 @@ Slots already in section 1 are not repeated.
 - **pillow_fort**: fort 8-12; finisher 2-4
 - **upkeep_triggers**: engine 10-16; doubler 2-4
 - **theft**: steal 8-12; remove 5-7
+
+## 3. Creature cap (user, 2026-10-27: no creature-flooded decks)
+Proposal, numbers are my assumption (the user gave none): at most 35 creature cards in the 99 (about 35%) for every archetype, at least 15 as today. For reference, the 180 Commander precons average 29 creatures (`ENCOUNTER_TIERS.md` §7). The old per-tier type shares (Tier 1 creatures at most 85%, Tier 2/3 no type above 60%) are replaced by this cap; the noncreature minimums stay (at least 4 instants, 3 sorceries, 4 artifacts, 2 enchantments).
+
+Archetype slots that push creature counts up, and how to treat them:
+- **stompy** creature 25-35: top of the range is already at the cap; hold it at 25-30.
+- **outlaws** outlaw 18-28 and **blink** etb_creature 20-25: outlaw and etb_creature are creature-heavy by definition; cap at 28 and 25 and fill the remainder with noncreature cards, so total creatures stay at 35 or fewer.
+- **infect** creature 15-20, **equipment** carrier 12-18, **mutate** target 12-18, **vehicles** crew 12-18, **tribal** (type density): count against the same cap, together with every other creature in the deck.
+- Slots such as generator, fodder, enabler and payoff overlap with creatures; the cap counts the card once.
+
+Check: `power_scorer.py` and `build.py` would report creature count as a WARN above 35 (FAIL above 40). Not implemented.
