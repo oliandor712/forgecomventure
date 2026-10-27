@@ -135,10 +135,6 @@ LANDTYPES = ["Plains", "Island", "Swamp", "Mountain", "Forest"]
 LANDTYPE_NEED = 6
 for _x in LANDTYPES:
     POLICY["landtype:" + _x] = dict(group="landtype", need={"landtype:" + _x: LANDTYPE_NEED}, flat=1.0, note="H45: cares about or provides the basic land type " + _x + "; counts when the deck holds %d+ of it" % LANDTYPE_NEED)
-# colour leans (slight): tag -> colours that get a small bonus
-COLOUR_LEAN = {"removal_land": "R", "tap_down": "UW", "equip": "UW", "draw": "U", "selection": "U", "clone": "U", "recursion": "B", "reanimate": "B",
-               "self_mill": "UB", "mill": "UB", "sacrifice_outlet": "B", "haste_grant": "R"}
-
 
 def parse(text):
     """-> (abilities as normalised signatures, keywords, deckhas, deckneeds, deckhints, types)"""

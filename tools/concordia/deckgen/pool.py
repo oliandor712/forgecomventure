@@ -6,8 +6,72 @@ import deck_tier as dt
 import tag_run  # the one tag source: ftags below
 from text_tags import text_tags
 from common import identity  # noqa: E402
+import hashlib, tag_version  # noqa: E402
+
+POOL_PKL = os.path.join(HERE, 'pool.pkl')
+META = os.path.join(HERE, 'pool_meta.json')
+TAGCACHE = os.path.join(HERE, 'pool_tags.pkl')  # per-card tag cache (not committed): {'stamp': tag_version.stamp() + scryfall size, 'cards': {key: (sha1 of the script text, tag list)}}
+# Why a build is slow and what is cached: 75% of the ~60 s is tag_run.record() per card. Its result depends only on the card's script and the tagger files
+# (tag_version.stamp()), so it is cached per card in pool_tags.pkl: a change to popularity, staples.json, deck_tier.py scoring or one script re-tags only
+# what changed; only a change to the tagger files re-tags everything. `pool.py --check` says whether pool.pkl is stale, `--if-stale` builds only then,
+# `--cat` re-reads staples.json into the existing pool.pkl in seconds (staples.py reads the pool's tags, so after it runs only the category can have moved).
+
+
+def _h(*paths):
+    h = hashlib.sha1()
+    for p in paths:
+        try: h.update(open(p, 'rb').read().replace(b'\r\n', b'\n'))
+        except OSError: h.update(b'missing')
+    return h.hexdigest()[:10]
+
+
+def fingerprint():
+    """What pool.pkl was built from. Compared with pool_meta.json['fingerprint'] by --check."""
+    scripts = [0, 0.0]
+    for root, _, files in os.walk(os.path.join(dt.RES, 'cardsfolder')):
+        for f in files:
+            scripts[0] += 1
+            scripts[1] = max(scripts[1], os.path.getmtime(os.path.join(root, f)))
+    return {'tags': tag_version.stamp(), 'scripts': [scripts[0], round(scripts[1])],
+            'code': _h(*(os.path.join(HERE, f) for f in ('pool.py', 'text_tags.py', 'common.py')), dt.__file__),
+            'staples': _h(dt.STAPLES), 'inputs': dt.inputs_status(),
+            'mined': os.path.getsize(os.path.join(HERE, 'mined.json')) if os.path.exists(os.path.join(HERE, 'mined.json')) else None}
+
+
+def stale_reasons():
+    """[] when pool.pkl matches the current inputs, else the fingerprint keys that differ (or 'missing')."""
+    if not os.path.exists(POOL_PKL) or not os.path.exists(META): return ['missing']
+    old = json.load(open(META)).get('fingerprint') or {}
+    new = fingerprint()
+    return [k for k in new if old.get(k) != new[k]] or []
+
+
+def write_meta(n, fp):
+    json.dump({'built': time.strftime('%Y-%m-%d'), 'cards': n, 'inputs': fp['inputs'], 'fingerprint': fp}, open(META, 'w'), indent=1)  # inputs: which external inputs this pool's power numbers saw
+
+
+def refresh_cat():
+    """Fast path: only deckgen/staples.json changed. Re-read every card's category into the existing pool.pkl."""
+    if not os.path.exists(POOL_PKL): sys.exit('no pool.pkl to refresh, run pool.py')
+    pool = pickle.load(open(POOL_PKL, 'rb'))
+    dt._cat = None
+    for k, v in pool.items(): v['cat'] = dt.category(k)
+    pickle.dump(pool, open(POOL_PKL, 'wb'))
+    try: fp = json.load(open(META)).get('fingerprint') or fingerprint()
+    except OSError: fp = fingerprint()
+    fp['staples'] = _h(dt.STAPLES)
+    write_meta(len(pool), fp)
+    print('categories refreshed for %d cards' % len(pool))
+
+
 def main():
     data = dt.build_cache()
+    fp = fingerprint()
+    try: old = pickle.load(open(TAGCACHE, 'rb'))
+    except (OSError, pickle.PickleError, EOFError): old = {}
+    tagkey = '%s:%s' % (fp['tags'], fp['inputs'].get('scryfall/cards.json'))  # derived_tags reads scryfall/cards.json, which the stamp does not cover
+    old = old['cards'] if old.get('stamp') == tagkey else {}
+    cache = {}
     cfg = json.load(open(dt.CONFIG))
     RES = dt.RES
     banned = set()
@@ -40,15 +104,6 @@ def main():
     PRE6_CUTOFF = '1999-04-21'  # Sixth Edition release date
     PRIO = {'Expansion': 0, 'Core': 0, 'Starter': 1, 'Draft': 1, 'Duel_Deck': 2, 'Commander': 2, 'Reprint': 3, 'Collector_Edition': 4}
     GOOD_TYPES = set(PRIO)
-    # PT / subtypes from scripts
-    pt = {}
-    for root, _, files in os.walk(os.path.join(RES, 'cardsfolder')):
-        for f in files:
-            if not f.endswith('.txt'): continue
-            face = open(os.path.join(root, f), errors='replace').read().split('\nALTERNATE')[0]
-            n = re.search(r'^Name:(.*)$', face, re.M); p = re.search(r'^PT:(\S+)/(\S+)', face, re.M)
-            if n and p:
-                pt[n.group(1).strip().lower()] = (p.group(1), p.group(2))
     mined = json.load(open(os.path.join(HERE, 'mined.json')))
     pop = collections.Counter()
     for x in mined:
@@ -82,7 +137,6 @@ def main():
                 if typ in GOOD_TYPES and date >= PRE6_CUTOFF:  # printings before Sixth Edition are excluded (stale formatting); a card with only older printings leaves the pool
                     prints.append((cards[key], (-PRIO[typ], date), ed))
         if not prints: continue
-        tags = dt.classify(c)
         order = 'CURMS'
         best = {}
         for r, date, ed in prints:
@@ -90,21 +144,40 @@ def main():
                 best[r] = (date, ed)
         if not best: continue
         minr = min(best, key=order.index)
-        pool[key] = {'name': c['name'], 'types': c['types'], 'cmc': c['cmc'], 'id': identity(c), 'tags': tags,
-                     'best': {r: v[1] for r, v in best.items()}, 'minr': minr, 'pop': pop[key], 'pt': pt.get(key),
+        pool[key] = {'name': c['name'], 'types': c['types'], 'cmc': c['cmc'], 'id': identity(c), 'tags': set(),
+                     'best': {r: v[1] for r, v in best.items()}, 'minr': minr, 'pop': pop[key], 'pt': None,
                      'gc': key in data['lists']['gc'], 'mld': key in data['lists']['mld'], 'extra': key in data['lists']['extra'], 'chained': key in data['lists']['chained'],
                      'nabil': len(c['abil']) + len(c['static']) + len(c['kw']), 'oracle': c['oracle'],
                      'cube': data['cube'].get(key)}
-        ftags = sorted(tag_run.tags(c['name']))  # full tag set from tag_run.record (the single tag source); 'tags' above stays the coarse deck-gen set
+        text = tag_run.find_text(c['name'])
+        pm = re.search(r'^PT:(\S+)/(\S+)', text.split(chr(10) + 'ALTERNATE')[0], re.M)  # PT from the same script read the tagger uses (no second scan of cardsfolder)
+        pool[key]['pt'] = (pm.group(1), pm.group(2)) if pm else None
+        # the hash also covers the scripts a face is copied from (CopyFaceFrom), which record() reads
+        src = ''.join(tag_run.find_text(m.strip()) for m in re.findall(r'^CopyFaceFrom:(.+)$', text, re.M))
+        th = hashlib.sha1((text + src).encode('utf-8', 'replace')).hexdigest()[:12]
+        hit = old.get(key)
+        # full tag set from tag_run.record (the single tag source, as tag_run.tags() reads it), cached per script text; 'tags' above stays the coarse deck-gen set
+        ftags = hit[1] if hit and hit[0] == th else (sorted(tag_run.record(c['name'], text)['tags']) if text else [])
+        cache[key] = (th, ftags)
         ftags = sorted(set(ftags) | set(text_tags(c['oracle'])))  # oracle-text tags (goad, wheels, gift_all, ench_payoff, legend_payoff)
+        tags = dt.classify(c, ftags)  # coarse deck-gen roles (ramp, draw, removal, ...) come from the tags too, so the builder and the power scorer agree
+        pool[key]['tags'] = tags
         pool[key]['ftags'] = ftags
         pool[key]['power'] = dt.card_powers(data, c, tags, list(best), ftags)
         pool[key]['cat'] = dt.category(key)  # staple / game_changer / watch (deckgen/staples.py)
         pool[key]['precon'] = PRECON.get(key, 0.0)
-    pickle.dump(pool, open(os.path.join(HERE, 'pool.pkl'), 'wb'))
-    json.dump({'built': time.strftime('%Y-%m-%d'), 'cards': len(pool), 'inputs': dt.inputs_status()}, open(os.path.join(HERE, 'pool_meta.json'), 'w'), indent=1)  # which external inputs this pool's power numbers saw
+    pickle.dump({'stamp': tagkey, 'cards': cache}, open(TAGCACHE, 'wb'))
+    pickle.dump(pool, open(POOL_PKL, 'wb'))
+    write_meta(len(pool), fp)
     print(len(pool))
 
 
 if __name__ == "__main__":
-    main()
+    a = sys.argv[1:]
+    if '--check' in a:
+        r = stale_reasons()
+        print('pool.pkl is stale: ' + ', '.join(r) if r else 'pool.pkl is fresh')
+        sys.exit(1 if r else 0)
+    elif '--cat' in a: refresh_cat()
+    elif '--if-stale' in a and not stale_reasons(): print('pool.pkl is fresh, nothing to do')
+    else: main()

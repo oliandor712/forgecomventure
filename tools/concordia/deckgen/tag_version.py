@@ -5,7 +5,8 @@ A tool that writes a result stamps it with this value; a result whose stamp diff
 import os, hashlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-FILES = ["ability_tags.py", "tag_extra.py", "tag_verify.py", "tag_variant.py", "derived_tags.py", "tag_run.py", os.path.join("tags", "TAG_MAP.toon")]
+FILES = ["ability_tags.py", "tag_extra.py", "tag_verify.py", "tag_variant.py", "derived_tags.py", "tag_run.py", "common.py", os.path.join("tags", "TAG_MAP.toon"),
+         os.path.join("..", "ai_lab", "KEYWORD_REFERENCE.toon"), os.path.join("..", "ai_lab", "KEYWORD_REMINDER_TEXT.toon")]  # tag_run and tag_verify read the two keyword tables; common.py holds snake/params used by every tag file
 
 
 def stamp():

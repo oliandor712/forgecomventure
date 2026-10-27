@@ -19,16 +19,16 @@ Paths are repo-relative. This file only points; it holds no rules. If a file her
 | `lookup.py kw trample` | keyword summary and reminder text | `KEYWORD_REFERENCE.toon`, ~19k |
 | `lookup.py tag kw:flying` | tag family row | `TAG_REFERENCE.md`, ~9k |
 | `lookup.py rule H67` / `rule --area tags` | rule rows | `human_logic.toon`, ~5k |
-| `lookup.py card "Name"` | tagged record | `STARTER_TAGS.toon`, ~56k (starter cards only; else `tag_run.py card`) |
-| `lookup.py twin "ability text"` | 5 closest tagged ability lines | `ABILITY_TWINS.json`, ~42k |
+| `lookup.py card "Name"` | tagged record | `STARTER_TAGS.toon`, ~104k (starter cards only; else `tag_run.py card`) |
+| `lookup.py twin "ability text"` | 5 closest tagged ability lines | `ABILITY_TWINS.json`, ~84k |
 | Archetypes and engine goals, condensed (one row per archetype; generated) | `reference/ARCHETYPES.toon`, 9k |
 | ArcMind scoring for a deck (power, bracket, role gaps, cut candidates, missing EDHREC staples; free, no credits) | `python tools/concordia/arcmind/arcmind_score.py deck.dck` -> `arcmind/results/<deck>.builder.txt` (deck builder reads it); the glance export adds its aggregates to `deck_context` |
-| mtg2llm training gaps from glance runs | `deckgen/tags/MTG2LLM_GAPS.toon` (auto, one row per card) |
+| mtg2llm training gaps from glance runs | `deckgen/tags/MTG2LLM_GAPS.toon` (auto, one row per card) ; step on opening mtg2llm: apply the open rows first (see mtg2llm.py header) |
 | Deck-building section the readers see (D1-D8) | `reference/deck_building_for_readers.toon`, 1k |
 | `lookup.py size [paths]` | token estimate | guessing |
 
 ### Size guide (tokens ~ bytes/4; BIG = use a slice command or grep)
-BIG (tokens, never read whole, text only): `deckgen/mined.json` 804k; `deckgen/tagcheck/learning/tier1_blind_test_cards.jsonl` 235k; `deckgen/staples.json` 145k; `balance_lab/records_multitemp.csv` 87k; `tagcheck/runs/r1..r4/results.json` ~75k each; `balance_lab/records_assist.csv` 55k; `deckgen/spellbinder/{precons,cedh,signals}.json` 41-46k; `sprites/sprite_matrix.csv` 39k; `tagcheck/PLACEHOLDER_TRIAGE.md` 30k. Also: CR text 259k (original `MTG_COMP_RULES_20260807.txt`, read only if the user requests it; `CR_COMPACT.txt` 212k); `KEYWORD_CR_FULLTEXT.toon` 49k (do not read); `reference/CR_GAME_RULES.txt` 125k (analysis only, do not read); `reference/CR_TAG_RELEVANT.txt` 29k (analysis only); `STARTER_TAGS.toon` 56k; `ABILITY_TWINS.json` 42k; `balance_lab/records.csv` 30k; `KEYWORD_REFERENCE.toon` 19k; `DESIGN.md` 16k; `OVERWORLD.md` 12k; `DECISION_LOGIC.md` 9k; `TAG_REFERENCE.md` 9k; `balance_lab/REPORT.md` 9k; `RUN_LOG.jsonl` 9k; training-data handoff 7k (reference only, do not read for normal work).
+BIG (tokens, never read whole, text only): `deckgen/mined.json` 804k; `deckgen/tagcheck/learning/tier1_blind_test_cards.jsonl` 235k; `deckgen/staples.json` 145k; `balance_lab/records_multitemp.csv` 87k; `tagcheck/runs/r1..r4/results.json` ~75k each; `balance_lab/records_assist.csv` 55k; `deckgen/spellbinder/{precons,cedh,signals}.json` 41-46k; `sprites/sprite_matrix.csv` 39k; `tagcheck/PLACEHOLDER_TRIAGE.md` 30k. Also: CR text 259k (original `MTG_COMP_RULES_20260807.txt`, read only if the user requests it; `CR_COMPACT.txt` 212k); `KEYWORD_CR_FULLTEXT.toon` 49k (do not read); `reference/CR_GAME_RULES.txt` 125k (analysis only, do not read); `reference/CR_TAG_RELEVANT.txt` 29k (analysis only); `STARTER_TAGS.toon` 104k; `ABILITY_TWINS.json` 84k; `balance_lab/records.csv` 30k; `KEYWORD_REFERENCE.toon` 19k; `DESIGN.md` 16k; `OVERWORLD.md` 12k; `DECISION_LOGIC.md` 9k; `TAG_REFERENCE.md` 9k; `balance_lab/REPORT.md` 9k; `RUN_LOG.jsonl` 9k; training-data handoff 7k (reference only, do not read for normal work).
 Medium (read only for the task): `READER_GRAMMAR.md` 6k; `human_logic.toon` 5k; `ENCOUNTER_TIERS.md` 5k; `READER_GRAMMAR_PLAN.md` 4k; `IDEAS_BACKLOG.md` 4k; `TOOLBOX.md` 3k; `AI_CHANGES_APPROVAL.md` 3k; `MAIN_SESSION_BRIEF.md` 3k; `CONTEXT.md` 3k; `TAG_LINKS.md` 3k.
 Small (fine to read): handoffs under 2k, `TAG_LEGEND.md` 2k, `tagcheck/README.md` 0.4k.
 
@@ -54,7 +54,7 @@ Small (fine to read): handoffs under 2k, `TAG_LEGEND.md` 2k, `tagcheck/README.md
 - Keyword/CR sources: section 12.
 
 - Logs by subject: `tools/agents/logs/LOG_INDEX.toon` (check first; one row per log, writer, size warning). Glance test plan: `tools/concordia/deckgen/tagcheck/GLANCE_TEST_PLAN.md`.
-- Power scorer and strategies: `tools/concordia/deck_tier.py` (scorer), `tier_table.json` (bands), `deckgen/pool_meta.json` (input status), `tools/concordia/strategies/strategies.json` + `strategy_fit.py` (builder strategy fit, niche penalty), log `tools/agents/logs/power-scorer-tests.toon`.
+- Power scorer and strategies: `tools/concordia/deck_tier.py` (scorer) (roles ramp/fast/draw/removal/wipe/counter/tutor come from the tag_run tags in pool.pkl via `tag_roles()`, script rules only as fallback; pool.py stores the same roles for the builder; goal: own opinion within 15% of the EDHREC rank percentile for 85% of cards, baseline 35%, see the docstring), `tier_table.json` (bands), `deckgen/pool_meta.json` (input status), `tools/concordia/strategies/strategies.json` + `strategy_fit.py` (builder strategy fit, niche penalty), log `tools/agents/logs/power-scorer-tests.toon`.
 
 ## 4. Reader run (reverse tag check)
 - Folder: `tools/concordia/deckgen/tagcheck/`. Start with `README.md`, then `READER_GRAMMAR_PLAN.md` and `TAG_RUN_AUDIT_AND_PLAN.md` (current plan).

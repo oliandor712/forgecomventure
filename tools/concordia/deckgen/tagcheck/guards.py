@@ -97,7 +97,7 @@ LOG = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(HERE))), "age
 def _log(t, n, force):
     """one row per guard run in tools/agents/logs/guard-runs.toon, so the count of overrides survives between sessions"""
     row = "%s|tag_guard|%d|%d|%d|%d|%d|%s" % (datetime.date.today(), n, t["same"], t["new"], t["merged"], t["old"], "force" if force else "")
-    head = ["# Claude-only file in TOON. One row per guard run (tag_guard.py). new = new tags beat stored, merged = per-section mix, old = stored kept because the run scored lower.", "guard[0|]{date|guard|cards|same|new|merged|old|note}:"]
+    head = ["# Claude-only file in TOON. One row per guard run (tagcheck/guards.py). new = new tags beat stored, merged = per-section mix, old = stored kept because the run scored lower.", "guard[0|]{date|guard|cards|same|new|merged|old|note}:"]
     L = open(LOG, encoding="utf-8").read().splitlines() if os.path.exists(LOG) else head
     i = next(k for k, l in enumerate(L) if l.startswith("guard["))
     L.append(row); L[i] = "guard[%d|]{date|guard|cards|same|new|merged|old|note}:" % (len(L) - i - 1)

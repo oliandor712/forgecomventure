@@ -8,7 +8,7 @@ Fork `oliandor712/forgecomventure`. Concordia is a Pokemon-like Commander campai
 - Game data: `forge-gui/res/adventure/Concordia/` (decks `decks/tier1..5`, `starter`; `world/enemies.json`; `maps/`; `config.json`). Staged tier 1 set (not live): `staging_t1_fresh/`.
 - Design docs: `docs/Adventure/Campaign/` (OVERWORLD.md, ENCOUNTER_TIERS.md, AI_CHANGES_APPROVAL.md, ...).
 - Tools: `tools/concordia/` (decks `deckgen/`, sims `sim/`, `suite/`, `balance_lab/`, `ai_lab/`), `tools/agents/` (agent system, `human_logic.toon`, `reference/`).
-- Background agents: `.claude/agents/*.md` (deck-builder, forge-ai-lab, deck-balance-lab); shared context `tools/agents/CONTEXT.md`.
+- Background agents: `.claude/agents/*.md` (6 role briefs: deck-builder, forge-ai-lab, deck-balance-lab, tag-blind-reader, glance-tag-reader, glance-oracle-reader); shared context `tools/agents/CONTEXT.md`.
 
 ## Roles
 - **Background agents** read `tools/agents/CONTEXT.md` and their brief in `.claude/agents/`. Ignore the rest of this file's main-session guidance.

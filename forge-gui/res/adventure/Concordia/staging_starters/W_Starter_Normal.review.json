@@ -5,14 +5,19 @@
    "reader1_batch_01": {
     "curve": "ok",
     "sources": "ok",
-    "notes": "Avg mv 3.38, slightly high; 38 lands, 33 white sources plus 10 colorless-only supports colorless spells."
+    "notes": "Avg mv 3.38 slightly above reference; 33 white sources plus 6 rocks and cheap colorless; colorless count is covered."
+   },
+   "reader2_batch_01_r2": {
+    "curve": "ok",
+    "sources": "ok",
+    "notes": "Curve average 3.38 near reference; 33 white sources plus rocks suffice, though several expensive 6-10 mv artifacts are clunky."
    }
   },
   "oracle": {
    "reader1_batch_01": {
     "curve": "ok",
     "sources": "ok",
-    "notes": "Curve matches the tier reference (avg mv 3.38 vs 3.28). 38 lands plus 6 rocks give 33 white sources; plenty. Three cards at mv 7+ (Memnarch shows mv 10) are the only top-end concern."
+    "notes": "Average mv 3.38 near reference; 33 white sources plus 10 colorless-only supports few colorless spells and rocks."
    }
   }
  },
@@ -20,166 +25,65 @@
   "superfriends",
   "tokens"
  ],
- "on_plan": 63,
+ "on_plan": 67,
  "rejects": [
-  "Fountainport Bell",
-  "Nine Lives",
-  "Panther Habit",
-  "Worship",
-  "Chosen by Heliod"
+  "Nine Lives"
  ],
  "reject_detail": [
   {
-   "name": "Fountainport Bell",
-   "function": "Fetches a basic to the top of the library; sacrifice to draw",
-   "oracle_arch": [
-    "artifacts",
-    "card_draw",
-    "colorless"
-   ],
-   "tag_arch": [
-    "artifacts",
-    "colorless",
-    "ramp"
-   ],
-   "roles": [
-    "cantrip",
-    "filler"
-   ],
-   "power": 1
-  },
-  {
    "name": "Nine Lives",
-   "function": "Prevents all damage to you but you lose when it leaves",
+   "function": "Hexproof enchantment preventing damage to you until nine counters, then exiles.",
    "oracle_arch": [
-    "stax",
+    "pillow_fort",
     "control",
-    "lifegain"
+    "stax"
    ],
    "tag_arch": [
     "control",
     "counters",
-    "stax"
+    "pillow_fort"
    ],
    "roles": [
     "defense",
     "pillowfort"
    ],
    "power": 2
-  },
-  {
-   "name": "Panther Habit",
-   "function": "Equipment that turns damage into +1/+1 counters",
-   "oracle_arch": [
-    "equipment",
-    "counters",
-    "voltron"
-   ],
-   "tag_arch": [
-    "counters",
-    "equipment",
-    "voltron"
-   ],
-   "roles": [
-    "defense",
-    "equipment"
-   ],
-   "power": 2
-  },
-  {
-   "name": "Worship",
-   "function": "Keeps you at 1 life while you control a creature",
-   "oracle_arch": [
-    "stax",
-    "lifegain",
-    "control"
-   ],
-   "tag_arch": [
-    "control",
-    "lifegain",
-    "stax"
-   ],
-   "roles": [
-    "defense",
-    "pillowfort"
-   ],
-   "power": 2
-  },
-  {
-   "name": "Chosen by Heliod",
-   "function": "Aura giving +0/+2; draws a card",
-   "oracle_arch": [
-    "voltron",
-    "enchantress",
-    "card_draw"
-   ],
-   "tag_arch": [
-    "aggro",
-    "card_draw",
-    "enchantress",
-    "voltron"
-   ],
-   "roles": [
-    "attach",
-    "cantrip"
-   ],
-   "power": 1
   }
  ],
- "tag_gaps": [
-  {
-   "name": "Absolver Thrull",
-   "oracle_arch": [
-    "control",
-    "aggro",
-    "tokens"
-   ],
-   "tag_arch": [
-    "aristocrats",
-    "graveyard",
-    "sacrifice"
-   ],
-   "unclear": [
-    "haunt effect",
-    "offplan: effect unknown",
-    "x effect",
-    "x trigger:dies trigger:etb effect unknown"
-   ]
-  }
- ],
+ "tag_gaps": [],
  "summary": {
   "cards": 68,
   "tag_readers": 2,
   "rows": 136,
-  "role_f1": 0.727,
-  "arch_hit": 0.985,
-  "power_within1": 0.949,
-  "function_sim": 0.554,
-  "role_f1_vs_listed": 0.45,
-  "arch_hit_vs_listed": 0.889,
-  "unclear_per_card": 0.63,
-  "reader_role_agreement": 0.77,
+  "role_f1": 0.68,
+  "arch_hit": 1.0,
+  "power_within1": 0.971,
+  "function_sim": 0.681,
+  "role_f1_vs_listed": 0.354,
+  "arch_hit_vs_listed": 0.75,
+  "unclear_per_card": 0.58,
+  "reader_role_agreement": 0.815,
   "calibration_by_confidence": {
    "2": [
-    0.725,
-    25
+    0.764,
+    23
    ],
    "3": [
-    0.851,
-    53
+    0.838,
+    42
    ],
    "4": [
-    0.917,
-    55
+    0.868,
+    66
    ],
    "5": [
-    0.933,
-    3
+    0.84,
+    5
    ]
   },
-  "tag_tokens_per_card_est": 169,
+  "tag_tokens_per_card_est": 185,
   "invalid_values": {
-   "roles": 1,
+   "roles": 6,
    "archetypes": 0
   },
   "unreadable_files": []

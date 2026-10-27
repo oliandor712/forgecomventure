@@ -1,0 +1,10 @@
+# Claude-only file in TOON (pipe-delimited table; # lines are comments). Patch notes: one row per code change batch, newest last, under 400 chars. Add the row in the same session as the change.
+patches[8|]{date|files|change|effect}:
+  2026-10-26|tools/concordia/deckgen/pool.py, pool_tags.pkl|per-card tag cache (pool_tags.pkl, keyed by script text hash + tag_version stamp); flags --check, --if-stale, --cat|rebuild re-tags only changed cards; --cat refreshes categories in seconds
+  2026-10-26|deckgen/budget_lands.py, tagcheck/mtg2llm.py, ability_tags.py, tag_run.py, maps/build_color_zone.py, balance_lab/run_batch.py|deleted dead code: rares, hand_parts, COLOUR_LEAN, KW_ACTIVE, CONC_OBJ, ALL_BONUSES|none (imports and py_compile checked)
+  2026-10-26|tagcheck/guards.py, tagcheck/analysis.py|stale script names in log header and output string|log text only
+  2026-10-26|tagcheck/mtg2llm.py|gaps_status runs only for render/scan/mine; placeholder regex accepts {X},{S},{E},{P}, hybrid|faster other commands; no false open rows
+  2026-10-26|tagcheck/mtg2llm.py|CANON_FIX override table in rules() for affected_type:creature and the Treasure etb rule|two weak mined canons now generic; render_rules.json unchanged
+  2026-10-26|tools/concordia/deck_tier.py|_warn_pool_stale also compares the staples.json hash; fused-space cleanup in tag_roles|stale pool warns after a staples edit
+  2026-10-26|deckgen/pool.py|refresh_cat exits cleanly without pool.pkl and tolerates missing pool_meta.json|no traceback on fresh checkout
+  2026-10-26|tools/agents/HANDOVER.md, MEETING_FEEDBACK.md, archive/*, START.md, INDEX.md|older blocks moved verbatim to dated archive files with pointers; one read-first list in START.md step 5|HANDOVER 131->89 lines, MEETING_FEEDBACK 371->31

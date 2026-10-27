@@ -12,7 +12,14 @@ and, with --tier, every rule of that tier with PASS/WARN/FAIL. Exit status is 1 
 Everything is computed offline from this repository: card scripts in forge-gui/res/cardsfolder, rarities from
 forge-gui/res/editions, Forge's bracket lists in forge-gui/res/lists and the cube ranking in
 forge-gui/res/draft/rankings_cubecobra.txt. The first run builds a cache next to this script (.deck_tier_cache).
-Card classification is heuristic (see classify()); treat counts as close, not exact.
+GOAL OF THE POWER SCORER: the EDHREC rank and the cube ranking are a crutch, not the target. The scorer's own opinion (what the
+card does: roles, mana efficiency, rarity, tags) should approximate the EDHREC rank when the rank is controlled for, i.e. computed
+without the cube/EDHREC/cEDH terms and compared with them. An exact match is not the goal; the goal is a 15% difference, the
+same as the reader goals: a card's percentile in the independent opinion is within 15 points of its percentile in the EDHREC
+rank, for 85% of non-land cards. Baseline 2026-10-26 (roles, efficiency, rarity alone): 35% of cards within 15 points, mean
+difference 27 points. No check script yet; the independent terms need to grow.
+
+Card roles come from the tag_run tags stored in deckgen/pool.pkl (tag_roles()); a card without tags falls back to the script rules in classify(). Treat counts as close, not exact.
 """
 import collections, glob, json, math, os, pickle, re, statistics, sys
 from tier_rules import TIERS, TIER_TABLE  # per-tier rules (one source of truth)
@@ -127,8 +134,9 @@ def mana_value(cost):
     return mv
 
 
-def classify(c):
-    """Category tags for one card, from its Forge script."""
+def classify(c, ftags=None):
+    """Category tags for one card. With ftags (tag_run.tags, the single tag source) the roles come from the tags (tag_roles);
+    without them from the Forge script (fallback for a card with no tags)."""
     tags = set()
     types = c["types"].split()
     name = c["name"].lower()
@@ -138,6 +146,8 @@ def classify(c):
         return tags
     if "Creature" in types:
         tags.add("creature")
+    if ftags:
+        return tags | tag_roles(c, ftags)
     perm = any(t in types for t in ("Artifact", "Creature", "Enchantment", "Planeswalker", "Battle"))
     for kind, eff, rest in c["abil"]:
         tgt = "ValidTgts$" in rest
@@ -188,6 +198,72 @@ def classify(c):
     if name in FAST_MANA:
         tags.add("fast")
     return tags
+
+
+REPEAT_TRIG = {"spell_cast", "upkeep", "attacks", "combat_damage", "end_step", "beginning_of_combat", "gain_life", "discard", "life_loss", "tap"}
+_LANDISH = re.compile(r"^(basic_)?(land|forest|plains|island|swamp|mountain)|basic")
+_NEG_PUMP = re.compile(r"^pump_amount:-[^/]+/-")
+
+
+def tag_roles(c, ftags):
+    """ramp / fast / draw / removal / wipe / counter / tutor / extra_turn from the card's tag_run tags (non-land cards).
+    Same intent as the script rules in classify(): ramp = a permanent that makes mana (or a Treasure), or a spell that puts a land onto
+    the battlefield; draw = 2+ cards, X, or repeatable (activated or a recurring trigger), not a one-off cantrip; removal = a targeted
+    remove/burn/fight/-X/-X/edict/pacifism effect not aimed only at your own permanents; wipe = the same effect on all."""
+    F = set(ftags)
+    types = c["types"].split()
+    perm = any(t in types for t in ("Artifact", "Creature", "Enchantment", "Planeswalker", "Battle"))
+    has = lambda p: any(t.startswith(p) for t in F)
+    val = lambda p: {t[len(p):] for t in F if t.startswith(p)}
+    out = set()
+    scopes = val("target_scope:")
+    aimed = scopes != {"you_control"}              # not only at your own permanents
+    ttype = val("target_type:")
+    dmg = "damage" in F or bool(val("damage_amount:"))
+    removes = bool(val("remove:")) or dmg or any(_NEG_PUMP.match(t) for t in F)
+    targeted = any(t.startswith("target_count:") and t != "target_count:all" for t in F)
+    # mana
+    treasure = "token_make" in F and "token_type:treasure" in F and not scopes & {"opp_control", "each_opponent"}
+    if perm and ("mana_source" in F or treasure):
+        out.add("ramp")
+        amt = [int(a) for a in val("mana_amount:") if a.isdigit()]
+        if c["cmc"] == 0 or (c["cmc"] <= 1 and amt and max(amt) >= 2):
+            out.add("fast")
+    if "land_tutor" in F and val("tutor_dest:") & {"battlefield", "battlefield_tapped"}:
+        out.add("ramp")
+    if has("extra_land_drop"):
+        out.add("ramp")
+    if c["name"].lower() in FAST_MANA:
+        out.add("fast")
+    # draw
+    if "draw" in F:
+        n = val("draw_count:")
+        big = "x" in n or any(a.isdigit() and int(a) >= 2 for a in n)
+        trig = val("trigger:")
+        repeat = bool(trig & REPEAT_TRIG) or bool(trig & {"etb", "dies", "leaves"} and "trigger_scope:self" not in F) or ("mana_source" not in F and bool(val("cost:") & {"tap", "mana", "discard", "life", "remove_counters", "return", "exile"}))
+        if big or repeat:
+            out.add("draw")
+    # interaction
+    if "counterspell" in F:
+        out.add("counter")
+    if "extra_turn" in F:
+        out.add("extra_turn")
+    if "tutor" in F and "land_tutor" not in F and val("tutor_dest:") & {"hand", "battlefield", "battlefield_tapped", "library"} and any(t and "remembered" not in t and "samename" not in t and not _LANDISH.search(t) for t in val("tutor_target:")):
+        out.add("tutor")
+    if removes and "target_count:all" in F and not targeted and (aimed or dmg):
+        if ttype & {"creature", "permanent", "any", "land", "artifact", "enchantment"}:
+            out.add("wipe")
+    elif removes and targeted and not (ttype == {"card"} and "from_zone:graveyard" in F):
+        # remove:/-X/-X must not be aimed only at your own permanents; damage names its source in target_scope, so it only needs a creature/any/planeswalker/permanent target
+        if ((val("remove:") or any(_NEG_PUMP.match(t) for t in F)) and aimed) or (dmg and ttype & {"creature", "any", "planeswalker", "battle", "permanent"}):
+            out.add("removal")
+    if "fight" in F and targeted:
+        out.add("removal")
+    if "effect:sacrifice" in F and ttype & {"player", "opponent"} and val("sacrifice_type:"):
+        out.add("removal")
+    if val("restrict_kind:") & {"cant_attack", "cant_attack_or_block"} and "affected_filter:enchantedby" in F and "creature" in val("affected_type:"):
+        out.add("removal")
+    return out
 
 
 PRIMARY = ("Creature", "Planeswalker", "Battle", "Instant", "Sorcery", "Artifact", "Enchantment")
@@ -334,29 +410,68 @@ def _warn_inputs():
 
 
 POOL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "deckgen", "pool.pkl")
-_niche = None
-_mech = None
+_poolf = None
+
+
+def _warn_pool_stale():
+    """One warning when pool.pkl was built from other tagger files than the current ones (pool_meta.json fingerprint vs tag_version.stamp())."""
+    try:
+        sys.path.insert(0, os.path.dirname(POOL))
+        import tag_version
+        fp = json.load(open(os.path.join(os.path.dirname(POOL), "pool_meta.json"))).get("fingerprint", {})
+        import pool as _p      # same staples hash pool.py stores, so a staples.json edit is caught too
+        if fp.get("tags") != tag_version.stamp() or fp.get("staples") != _p._h(STAPLES): print("WARNING deck_tier: pool.pkl is older than the tagger files (run deckgen/pool.py --if-stale); roles and categories may be stale", file=sys.stderr)
+    except (OSError, ValueError, ImportError): pass
+
+
+def ftags_of(name):
+    """The card's tag_run tags (ftags) as stored in deckgen/pool.pkl; () when there is no pool or the card is not in it."""
+    global _poolf
+    if _poolf is None:
+        _poolf = {}
+        if not os.path.exists(POOL): print("WARNING deck_tier: no deckgen/pool.pkl, tags fall back to script rules (run deckgen/pool.py)", file=sys.stderr)
+        else:
+            _warn_pool_stale()
+            _poolf = {k: tuple(v.get("ftags", ())) for k, v in pickle.load(open(POOL, "rb")).items()}
+    return _poolf.get(name.lower(), ())
 
 
 def mech_of(name):
     """Tuple of the card's mech:* tags from deckgen/pool.pkl; () when there is no pool."""
-    global _mech
-    if _mech is None:
-        _mech = {}
-        if os.path.exists(POOL):
-            _mech = {k: tuple(t for t in v.get("ftags", ()) if t.startswith("mech:")) for k, v in pickle.load(open(POOL, "rb")).items()}
-    return _mech.get(name.lower(), ())
+    return tuple(t for t in ftags_of(name) if t.startswith("mech:"))
 
 
 def niche_of(name):
     """Tuple of the card's niche:* tags from deckgen/pool.pkl (the tag_run tags pool.py stored); () when there is no pool.
     rate() uses it so a deck's power matches the pool's card power."""
-    global _niche
-    if _niche is None:
-        _niche = {}
-        if os.path.exists(POOL):
-            _niche = {k: tuple(t for t in v.get("ftags", ()) if t.startswith("niche:")) for k, v in pickle.load(open(POOL, "rb")).items()}
-    return _niche.get(name.lower(), ())
+    return tuple(t for t in ftags_of(name) if t.startswith("niche:"))
+
+
+def tags_of(c):
+    """classify() with the card's stored tags (roles from tags); script roles only for a card the pool has no tags for."""
+    return classify(c, ftags_of(c["name"]) or None)
+
+
+def effective_cmc(c):
+    """Mana value as the card is really paid for, used by the efficiency term only (curve and fast-mana checks keep the printed value).
+    Alternative cost on the spell itself (Force of Will, Snuff Out): only its mana, so a free-to-cast spell counts as 0 (user 2026-10-26).
+    Self cost reducers (Delve, Convoke, Improvise, Affinity, ReduceCost on Card.Self): minus 2. X in the cost: plus 1 (user 2026-10-26)."""
+    mv = c["cmc"]
+    best = mv
+    for st in c["static"]:
+        if "Mode$ AlternativeCost" in st and "ValidSA$ Spell.Self" in st:
+            m = re.search(r"\bCost\$ ([^|]*)", st)
+            if not m:
+                continue
+            mana = sum(mana_value(p) for p in m.group(1).split() if re.fullmatch(r"[0-9WUBRGXC]+", p) and not p.startswith("X"))
+            best = min(best, mana)
+        elif "Mode$ ReduceCost" in st and "ValidCard$ Card.Self" in st:
+            best = min(best, max(0, mv - 2))
+    if any(k.split(":")[0] in ("Delve", "Convoke", "Improvise", "Affinity") for k in c["kw"]):
+        best = min(best, max(0, mv - 2))
+    if "X" in c["mc"].split():
+        best += 1
+    return best
 
 
 def card_power(data, c, tags, rarity, ftags=()):
@@ -368,7 +483,7 @@ def card_powers(data, c, tags, rarities, ftags=()):
     """{rarity: power}; the rarity-independent terms are computed once. ftags (tag_run.tags, optional) halves the role term
     of a niche card (Disenchant, Stone Rain: the effect only pays in a matching deck)."""
     """0-100 power estimate: raw power, mana efficiency, role, rarity, Game Changer, fast mana, tutor.
-    40 raw + 15 efficiency + 15 role + 10 rarity + 10 Game Changer + 5 fast + 5 tutor.
+    40 raw + 15 efficiency (effective_cmc: alternative costs, self cost reducers, X spells) + 15 role + 10 rarity + 10 Game Changer + 5 fast + 5 tutor.
     Popularity counts once, inside raw power (the EDHREC lift below); it is not added again here or in the builder's score.
     Raw power is the cube rank, lifted by the cEDH inclusion rate or by EDHREC popularity (up to EDH_LIFT) when those
     are higher: the cube list misses most casual cards (Birds of Paradise isn't in it). A missing signal never lowers a
@@ -379,7 +494,7 @@ def card_powers(data, c, tags, rarities, ftags=()):
     cube = 1 - (rank - 1) / 4000 if rank else 0.0
     pop = max(edhrec(c), deckpop(c))
     cube = max(cube, cedh_strength(c) or 0.0, EDH_LIFT * pop)
-    eff = max(0.0, min(1.0, (6 - c["cmc"]) / 5))
+    eff = max(0.0, min(1.0, (6 - effective_cmc(c)) / 5))
     role = 1.0 if tags & {"ramp", "draw", "removal", "wipe", "counter", "tutor"} else 0.0
     if any(t.startswith("niche:") for t in ftags): role *= NICHE_ROLE
     base = 40 * cube + 15 * eff + 15 * role + 10 * (name in data["lists"]["gc"]) + 5 * ("fast" in tags) + 5 * ("tutor" in tags)
@@ -428,7 +543,7 @@ def rate(path, data, config):
                 problems.append("restricted in Concordia: " + c["name"])
             if section == "commander":
                 continue
-            tags = classify(c)
+            tags = tags_of(c)
             if "extra_turn" in tags:
                 extra_turn_names.add(c["name"].lower())
             r = rarity_of(data, c["name"], ed)
@@ -456,7 +571,7 @@ def rate(path, data, config):
             commanders.append({"name": c["name"], "mv": c["cmc"], "rarity": rarity_of(data, c["name"], ed),
                                "legendary_creature": "Legendary" in c["types"] and "Creature" in c["types"],
                                "colours": len(color_identity(c)),
-                               "power": card_power(data, c, classify(c), rarity_of(data, c["name"], ed), niche_of(c["name"]))})
+                               "power": card_power(data, c, tags_of(c), rarity_of(data, c["name"], ed), niche_of(c["name"]))})
     total = sum(n for n, _, _ in entries["main"]) + sum(n for n, _, _ in entries["commander"])
     deck_names = set(names)
     gc = sorted(x for x in deck_names if x in data["lists"]["gc"])

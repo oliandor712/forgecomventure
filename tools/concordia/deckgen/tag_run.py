@@ -21,7 +21,6 @@ CARDTYPES = ["Creature", "Instant", "Sorcery", "Enchantment", "Artifact", "Plane
 BASIC_LAND = {"Plains", "Island", "Swamp", "Mountain", "Forest"}
 COLOR = {"W": "white", "U": "blue", "B": "black", "R": "red", "G": "green", "C": "colorless"}   # C = the sixth colour (H78)
 COLORWORD = {"white": "white", "blue": "blue", "black": "black", "red": "red", "green": "green"}
-KW_ACTIVE = re.compile(r"^(A|S|T|R):")
 KWSET, REMIND = set(), {}
 try:
     for _l in open(os.path.join(HERE, "..", "ai_lab", "KEYWORD_REFERENCE.toon"), encoding="utf-8"):

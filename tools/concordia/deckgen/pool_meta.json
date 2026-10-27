@@ -5,5 +5,20 @@
   "scryfall/cards.json": 1345329,
   "external/decks.json": 1645843,
   "spellbinder/signals.json": 162806
+ },
+ "fingerprint": {
+  "tags": "e36b6875f2",
+  "scripts": [
+   34091,
+   1793058317
+  ],
+  "code": "421e037652",
+  "staples": "c450e51d0e",
+  "inputs": {
+   "scryfall/cards.json": 1345329,
+   "external/decks.json": 1645843,
+   "spellbinder/signals.json": 162806
+  },
+  "mined": 3215782
  }
 }

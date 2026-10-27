@@ -51,7 +51,7 @@ def triggers():
 def impact(c, trig, face, data):
     """(score, reason): the strongest thing this card can do by itself."""
     name = c['name'].lower()
-    tags = dt.classify(c)
+    tags = dt.tags_of(c)  # roles from the tag_run tags in pool.pkl (script rules only as fallback)
     found = []
 
     def add(v, why):

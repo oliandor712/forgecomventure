@@ -23,3 +23,29 @@ summary:
   pattern_2: redirect, retarget, lose-ability and trigger-doubling effects have no tag family
   pattern_3: role names: draw vs card_adv/draw_engine and removal vs answer/interaction differ between readers; add a one-line mapping to the form reminders
   unclear_top: trigger 13, condition 8, target_type 6, cost_mana 4
+
+# Glance run W starter (2026-10-26, run S_W_Starter_Normal_20261026_213059): hand read of the 14 misses. Ground truth = Oracle reader. Nothing applied yet.
+# cause as above. Tally: tag_missing 5, legend 2, role_vocab 7 (tags fine, reader and Oracle reader pick different allowed role names).
+w_misses[14|]{card|cause|what_is_missing|fix}:
+  Fellwar Stone|tag_missing|only cost:tap; no mana_source or colors-opponent-lands-produce|add mana_source + produce_colors:opp_lands_can
+  Ondu Rising|tag_missing|no grant_kw:lifelink to attackers; counters_plus is awaken only|add grant_kw:lifelink target_scope:attackers; keep awaken on its own group
+  Treasure Map|tag_missing|transformed side makes 3 Treasures but no token_type:treasure on the flip; transform and counter:landmark unclear|link transform to the treasure token group; legend for counter:landmark
+  Happily Ever After|tag_missing|alternate win condition (win_game) absent; trigger:upkeep effect unreadable|add win:alt_condition and the upkeep effect tags
+  Adeline, Resplendent Cathar|tag_missing|power = creatures you control not tagged (only token_pt:1/1 and vigilance)|add power_scales:creatures_you_control
+  Losheel, Clockwork Scholar|legend|replace:damagedone_to_other unreadable to both readers (means protects others from damage)|legend text for replace:damagedone_to_other
+  Commander Sofia Daguerre|legend|token_type:junk_exileplay unreadable to both readers|legend text for junk token
+  Nuka-Cola Vending Machine|role_vocab|generator/treasure vs engine/producer; tags fine|none (scorer alias candidates)
+  Bond of Discipline|role_vocab|payoff vs support_tap_down; tags fine|none
+  Burnished Hart|role_vocab|blocker/ramp vs ramp_land; tags fine|none
+  Memnarch, the Warden|role_vocab|big_body vs bomb; tags fine|none
+  Trostani's Judgment|role_vocab|generator vs copy; tags fine|none
+  Beregond of the Guard|role_vocab|pump vs anthem/payoff; tags fine|none
+  Inspiring Overseer|role_vocab|creature/draw vs cantrip; tags fine|none
+w_applied[7|]{card|status|note}:
+  Fellwar Stone|applied 2026-10-26|tag_extra ManaReflected -> mana_source mana_choice mana_amount:1 produce_colors:opp_lands_can
+  Ondu Rising|applied 2026-10-26|Effect Triggers pump -> grant_kw:lifelink target_scope:attackers; awaken stays in k1
+  Treasure Map|applied 2026-10-26|chain follows TrueSubAbility/FalseSubAbility: transform + Treasure token groups now tagged; counter:landmark legend
+  Happily Ever After|applied 2026-10-26|WinsGame -> win:alt_condition (c2.2, with trigger:upkeep)
+  Adeline, Resplendent Cathar|applied 2026-10-26|CharacteristicDefining SetPower Count Valid X.YouCtrl -> power_scales:creatures_you_control; starter best-set (tag_guard) still holds the old record
+  Losheel, Clockwork Scholar|already in legend|replace legend text already names damagedone_to_other; it was missing only from the W run's older legend
+  Commander Sofia Daguerre|already in legend|token_type legend already names junk_exileplay; same cause

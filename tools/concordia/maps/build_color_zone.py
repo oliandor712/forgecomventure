@@ -30,7 +30,6 @@ import check_doors  # noqa: E402
 
 TEMPLATE_ROOM = os.path.join(MAPS, 'mossgate_temple.tmx')
 OBJ = '../../../../common/maps/obj/'
-CONC_OBJ = '../../obj/'
 
 ZONES = {
     'green': {

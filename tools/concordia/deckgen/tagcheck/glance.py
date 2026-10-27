@@ -47,7 +47,7 @@ def form_spec():
     d, roles, ids, _ = strategies()
     return {"fields": {
         "function": "one line, 15 words max: what the card does",
-        "roles": "1-3 names from `roles_allowed`",
+        "roles": "1-3 names copied exactly from `roles_allowed` (an archetype id is not a role; no other words such as utility; if no allowed role fits, write fewer)",
         "archetypes": "top 3 ids from `archetypes_allowed`, best first",
         "power": "integer 1-5 (1 filler, 3 solid playable, 5 bomb) for a 100-card singleton Commander deck",
         "confidence": "integer 1-5: how sure you are of the whole answer",
@@ -212,6 +212,24 @@ def log_mtg2llm_gaps(run, cards):
     print("mtg2llm gaps: %d card(s) from this run, %d rows in %s" % (n, len(rows), GAPS))
 
 
+def dump_cache(cache, path):
+    """verdict cache: one compact line per card (small file, readable diffs)"""
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write("{\n" + ",\n".join(json.dumps(k) + ":" + json.dumps(v, separators=(",", ":")) for k, v in cache.items()) + "\n}\n")
+
+
+ROLE_ALIAS = {"removal": "remove", "tap_down": "support_tap_down"}   # near-miss role names readers write (G-W run 2026-10-26); archetype ids and other unknown words are dropped, not scored
+
+
+def norm_roles(x, roles_ok, ids_ok, seen):
+    out = set()
+    for r in _set(x):
+        r = ROLE_ALIAS.get(r, r)
+        if r in roles_ok: out.add(r)
+        else: seen[r in ids_ok and "archetype_id_as_role" or "unknown_role"] += 1
+    return out
+
+
 def cmd_compare(a):
     wd = workdir(a.run); key = json.load(open(os.path.join(wd, "key", "key.json")))
     tag, bad1 = _load(os.path.join(wd, "out")); ora, bad2 = _load(os.path.join(wd, "oout"))
@@ -225,16 +243,16 @@ def cmd_compare(a):
         ora[1][cid] = dict(h["ora"], id=cid)
     if not tag or 1 not in ora: sys.exit("need tag reader output in out/ and Oracle reader output in oout/batch_NN.json")
     O = ora[1]; _, roles_ok, ids_ok, named = strategies(); roles_ok, ids_ok = set(roles_ok), set(ids_ok)
-    cards, invalid = {}, collections.Counter()
+    cards, invalid, dropped = {}, collections.Counter(), collections.Counter()
     for cid, name in key.items():
         if cid not in O: continue
         o = O[cid]; free_ar, free_ro = named.get(name.lower(), ([], set()))
-        orow = dict(roles=_set(o.get("roles")), arch=[x.lower() for x in (o.get("archetypes") or [])][:3], power=_int(o.get("power"), 1, 5))
+        orow = dict(roles=norm_roles(o.get("roles"), roles_ok, ids_ok, dropped), arch=[x.lower() for x in (o.get("archetypes") or [])][:3], power=_int(o.get("power"), 1, 5))
         per = []
         for rd, R in sorted(tag.items()):
             if cid not in R: continue
-            t = R[cid]; tr, ta = _set(t.get("roles")), [x.lower() for x in (t.get("archetypes") or [])][:3]
-            invalid["roles"] += len(tr - roles_ok); invalid["archetypes"] += len(set(ta) - ids_ok)
+            t = R[cid]; tr, ta = norm_roles(t.get("roles"), roles_ok, ids_ok, dropped), [x.lower() for x in (t.get("archetypes") or [])][:3]
+            invalid["archetypes"] += len(set(ta) - ids_ok)
             rf = f1(orow["roles"], tr)[2]
             ahit = bool(set(ta) & set(orow["arch"]))
             ahit_free = bool(set(ta) & set(free_ar)) if free_ar else None
@@ -248,7 +266,7 @@ def cmd_compare(a):
         for cid, m in cinfo.get("meta", {}).items():
             if cid in fresh_ids and cid in O and any(cid in R for R in tag.values()):
                 cache[m["name"].lower()] = dict(tkey=m["tkey"], okey=m["okey"], date=now, ora=O[cid], tag={str(rd): R[cid] for rd, R in tag.items() if cid in R}); n += 1
-        json.dump(cache, open(cinfo["path"], "w", encoding="utf-8"), indent=0); print("verdict cache: stored %d, %d total" % (n, len(cache)))
+        dump_cache(cache, cinfo["path"]); print("verdict cache: stored %d, %d total" % (n, len(cache)))
     rows = [r for c in cards.values() for r in c["readers"]]
     if not rows: sys.exit("no card has both a tag reader and an Oracle reader answer")
     mean = lambda xs: (sum(xs) / len(xs)) if xs else float("nan")
@@ -263,7 +281,7 @@ def cmd_compare(a):
                 power_within1=round(mean([r["power_ok"] for r in rows if r["power_ok"] is not None]), 3), function_sim=round(mean([r["fn"] for r in rows]), 3),
                 role_f1_vs_listed=round(mean([r["role_free"] for r in rows if r["role_free"] is not None]), 3), arch_hit_vs_listed=round(mean([r["arch_free"] for r in rows if r["arch_free"] is not None]), 3),
                 unclear_per_card=round(sum(len(r["unclear"]) for r in rows) / len(rows), 2), reader_role_agreement=round(mean(spread), 3) if spread else None,
-                calibration_by_confidence=calib, tag_tokens_per_card_est=round(tok), invalid_values=dict(invalid), unreadable_files=bad1 + bad2)
+                calibration_by_confidence=calib, tag_tokens_per_card_est=round(tok), invalid_values=dict(invalid), roles_dropped=dict(dropped), unreadable_files=bad1 + bad2)
     misses = [dict(id=i, name=c["name"], oracle=c["oracle"], readers=[{k: r[k] for k in ("reader", "roles", "arch", "power", "role_f1", "arch_hit", "unclear")} for r in c["readers"]])
               for i, c in cards.items() if mean([r["role_f1"] for r in c["readers"]]) < 0.5 or not any(r["arch_hit"] for r in c["readers"])]
     log_mtg2llm_gaps(a.run, cards)

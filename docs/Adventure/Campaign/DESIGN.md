@@ -1,6 +1,6 @@
 # Concordia: a Commander campaign plane (design document)
 
-Status: **Draft v3 for review.** No code or data has been built yet.
+Status: **Draft v3.** Phase 1 data and the J-Ante/J-Raid Java are written, not yet tested in game (see §9).
 Branch: `campaign-design`. Scope: design only.
 
 v3 folds in the story decisions made since v2: the Champion premise, native-born leads, the Seal Angels' color choice,
@@ -28,7 +28,6 @@ color and earn the rest from the Wardens, one at a time. Only **existing art and
 | Losing a duel | A standard Adventure retry, except ante duels, where losing costs a card (§2.1) |
 | Ending | Open. Keep, reforge or break the Seals. The story does not mark one as correct (§2.3) |
 | Card gain | Steady story rewards (a choice of 3 per Warden, plus the Warden's planeswalker card as a bonus). Grind pays currency that buys cards in the shop. Only ante hands out cards directly (§6.6) |
-| Gameplay focus |
 | Presentation | Moderate drama. Wardens, the rival, the raider leaders and the Champion get intros and taunts. Ordinary trainers stay brief |
 | Assets | Existing tilesets, sprites, portraits and music only. Decks and JSON are new data |
 
@@ -680,7 +679,6 @@ this document, listed in §10.
 | **J-Gender** | Rival of the opposite gender, chosen automatically | A dialog condition `isFemale` (in `MapDialog` and `MenuScene`, next to `colorIdentity`). Optionally a `$(rivalname)` token next to `$(playername)` in `AdventureQuestData` | Small | 2 |
 | **J-CI** | Commander limited to unlocked colors | Read the `colX` flags. Enforce in `AdventureDeckEditor` (commander section) and in `DuelScene.applyAdventureDeckRules` | Small–medium | 2 |
 | **J-Hall** | Commander change only at Halls | **Built** (§6.2a): a `commanderhall` map object opens the Commander Hall list screen; the deck editor's commander slot is locked | Medium | 2 |
-
 | J7 | Portraits in dialog | A `portrait` field in `DialogData`, shown by `MapDialog` (existing avatar art) | Small | 3 |
 | J5 | Chapter / Seal UI | A Seal case screen (the badge case analog) and chapter title cards | Medium | 3 |
 | J6 | Cutscenes | Scripted sequences: move actors along waypoints, dialog, fades, camera. The Seal Angels' arrival and the Champion's entrance use it | Medium–large | 4 |

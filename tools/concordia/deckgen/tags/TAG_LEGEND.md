@@ -4,6 +4,10 @@ Pinned reference text, one line per tag family with a structured or non-obvious 
 
 | Family | Meaning |
 |---|---|
+| `counter` | a counter on a permanent; counter:landmark = a landmark counter (Treasure Map: counts up to three, then the card flips); counter:p1p1 = +1/+1 counter |
+| `win` | the card wins the game outright; win:alt_condition = a win condition other than reducing life to zero (its trigger or cost tags say when) |
+| `produce_colors` | which colours the mana ability can make when they depend on lands: opp_lands_can = any colour a land an opponent controls could produce |
+| `power_scales` | the creature's power is the number of that kind of thing you control (power_scales:creatures_you_control) |
 | `from_zone` | zone the card comes from (graveyard, hand, library, exile). Pairs with the other tags of the same group: return, put_onto_battlefield, cost:exile |
 | `to_zone` | zone the card goes to (hand, library, exile, battlefield). Pairs with return or take in the same group |
 | `return` | a card is returned from one zone to another; read with from_zone and to_zone (return from_zone:graveyard to_zone:hand = return a card from graveyard to hand) |
@@ -13,10 +17,11 @@ Pinned reference text, one line per tag family with a structured or non-obvious 
 | `rest_to_zone` | where the looked-at cards that were not taken go; rest_order says the position |
 | `rest_order` | position of the rest in the library: bottom, or bottom_random (bottom in a random order) |
 | `modal` | choose N of M modes (modal:1_of_3 = choose one of three) |
-| `replace` | a replacement effect: replace:<event>_to_<what> (draw_to_winsgame = instead of drawing, win the game) |
+| `replace` | a replacement effect: replace:<event>_to_<what> (draw_to_winsgame = instead of drawing, win the game; damagedone_to_other = changes damage that would be dealt to another permanent, e.g. with prevent_damage a shield for your other creatures) |
 | `condition` | the ability works only while this is true (a permanent or card you control, or an empty library) |
 | `restrict_kind` | kind of restriction placed on a creature (cant_attack, cant_block, cant_attack_or_block, cant_attack_unless_cost) |
 | `token_ability` | ability the created token has, in words (tap_sacrifice_add_mana_any_color = {T}, Sacrifice: Add one mana of any color) |
+| `token_type` | token type; junk_exileplay = the Junk token (artifact: {T}, Sacrifice: exile the top card of your library, you may play it this turn, sorcery speed only) |
 | `exile_from` | exiles cards from a zone other than the battlefield |
 | `cost` | non-mana cost of the ability (tap, sacrifice, remove_counters, exile with from_zone, life, discard, return) |
 | `duration` | how long an effect lasts (eot = until end of turn, static = while the source is on the battlefield, next_untap, while_control, end_step, until_monarch_changes = until an opponent becomes the monarch...) |

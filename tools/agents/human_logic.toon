@@ -2,7 +2,7 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Read before building, judging or testing decks, or proposing AI changes. When a rule conflicts with a metric, the rule wins.
 # status: applied = in code or decks now, partly = some of it done, open = not done or not decided. since = date the user said it.
 # Add a row only for user input on deck building, deck balance or AI improvement (town, map, quest and UI rules live in the design docs). Pruned 2026-10-21 at the user's request.
-rules[78|]{id|area|rule|since|status|where}:
+rules[79|]{id|area|rule|since|status|where}:
   H01|curve|A zone's stage locks at the player's first fight there from Seals held (0-1 stage 1, 2-3 stage 2, 4-5 stage 3)|2026-10-20|applied|TierLock.java and config tierLock
   H02|curve|Wild creatures, random-dungeon enemies, pass keepers, grove guardians and Wardens are mono-color. Trainers are 1-2 colors at stage 1 then 2-3|2026-10-20|applied|build_color_zone.py
   H03|curve|Random dungeons draw from the wild encounter pool, never from keepers or guardians|2026-10-20|applied|build_color_zone.py
@@ -82,3 +82,4 @@ rules[78|]{id|area|rule|since|status|where}:
   H78|decks|Colorless is the sixth colour, a pool like W/U/B/R/G, flexible but needing its own mana: colorless non-ramp spells allowed = 4 + 2 * colorless sources (rocks + colorless lands). It is also an archetype in strategies.json (id colorless) and reader rule D6|2026-10-26|applied|starter_build.py CL_BASE/CL_PER/CL_LANDS; build_strategies.py colorless; deck_building_for_readers.toon D6
   H79|tags|When the user approves new tags (or a decision about tags) in chat, the approval doc is updated in the same turn: the family moves from NEW_TAGS_FOR_APPROVAL.md to APPROVED_TAGS_ARCHIVE.md with the date, via tag_reports.py (APPROVED / APPROVED_LATER / APPROVED_DECISION), then regenerate and send both docs with docpush|2026-10-26|applied|tag_reports.py
   H80|process|Development is focused on tiers 1 and 2 for the start of the game: every observation, problem or idea about tiers 3-5 is added to tools/agents/T3_PLUS_OBSERVATIONS.md (dated, with where it was found) and not worked on until the user says it is time (user, 2026-10-26)|2026-10-26|applied|tools/agents/T3_PLUS_OBSERVATIONS.md
+  H81|power|Efficiency cost: an alternative-cost spell (Force of Will) counts only its alternative mana, so a free cast is 0 with the extra cost ignored; X in the cost counts as 1 (user, 2026-10-26)|2026-10-26|applied|deck_tier.py effective_cmc; pool.pkl power values change at next pool.py build

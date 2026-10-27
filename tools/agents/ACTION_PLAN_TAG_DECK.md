@@ -46,4 +46,4 @@ Source: the agreed list and open points in `MEETING_FEEDBACK.md`; vision in `VIS
 
 - Any change to live decks or `enemies.json`.
 - AI lab use of the tags (separate track; it only needs steps 1, 2 and 4).
-- Moving `tag_reports.py` tables to data files (step 3 part 3 awaits your decision).
+- Moving `tag_reports.py` tables to data files (open decision, not a plan step).

@@ -29,7 +29,6 @@ def produces(p):
     return cols, anyc
 
 ext = json.load(open(os.path.join(HERE, 'external', 'decks.json')))['decks']
-def rares(x): return sum(1 for n in x['cards'] if pool.get(n.lower(), {}).get('minr') in ('R', 'M'))
 budget = [x for x in ext if x.get('source') != 'edhrec']   # all precons and Archidekt decks; no rarity or budget filter (user, 2026-10-26)
 cnt = collections.Counter()
 for x in budget:

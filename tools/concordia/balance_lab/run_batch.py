@@ -17,7 +17,6 @@ STAFF = {"W": "Staff of the Sun Magus", "U": "Staff of the Mind Magus", "B": "St
 GENERIC_1DROP = {"W": "Adanto Vanguard", "U": "Faerie Miscreant", "B": "Dark Confidant", "R": "Goblin Guide", "G": "Llanowar Elves"}
 PREMADE = {"arena": "Phyrexian Arena", "legion": "Legion's Landing", "market": "Black Market",
            "bedlam": "Bedlam", "hornet": "Hornet Nest"}
-ALL_BONUSES = ["land", "onedrop", "land+onedrop", "arena", "staff", "legion", "market", "bedlam", "hornet"]
 # main session, 2026-10-20: land, onedrop, land+onedrop, life5 against arena, staff, life10 first; the rest later
 # user, 2026-10-20: life bonuses eliminated as an option; T1-2 order from the bonus review: land and onedrop alone,
 # then land+onedrop, 3+ pairings each against all five starters

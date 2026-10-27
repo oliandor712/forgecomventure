@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """MTG2LLM (tool): tags -> text -> score, no agents. Part 1: the grammar miner.
 
+STEP ON OPENING MTG2LLM (standing): first apply the open rows of ../tags/MTG2LLM_GAPS.toon (written by every glance run) to this renderer: renderer rule, legend text or tag fix, re-render those cards, then mark them applied in the run summary.
+
   python3 mtg2llm.py mine [--out render_rules.json]
 
 Mines (tag group, reader line) pairs from the archived reader runs (~/tagcheck_runs/*/in + out). A card is used only when the reader wrote one
@@ -67,7 +69,7 @@ def mine():
                 with open(o, encoding="utf-8") as fh: O = {c["id"]: c for c in json.load(fh)["cards"]}
             except Exception: continue
             for c in I:
-                if c["id"] not in O: continue
+                if c["id"] not in O or "text" not in O[c["id"]]: continue      # glance runs (S_*) hold form answers, not ability text
                 if c["id"] in KEY and not CD.is_eligible(KEY[c["id"]]): continue      # pre-6th-only cards are not mined
                 seen += 1
                 u = units(c["groups"])
@@ -136,9 +138,16 @@ def _fold_scales_key(pat):
     return " ".join(t for t in toks if t not in gone) if gone & set(toks) else pat
 
 
+# mined canons that came from a tie between a few card-specific lines (review 2026-10-26); a sentence naming one card type or token replaces the mined line, the mined variants stay
+CANON_FIX = {"affected_type:creature": "Enchanted creature {effect}.",
+             "mana_source token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_type:treasure trigger:etb trigger_scope:self": "When this permanent enters, create N Treasure tokens."}
+
+
 def rules():
     if not _rules:
         with open(os.path.join(HERE, "render_rules.json"), encoding="utf-8") as fh: _rules.update({_fold_scales_key(k): v for k, v in json.load(fh).items()})
+        for k, v in CANON_FIX.items():
+            if k in _rules: _rules[k]["canon"] = v
         for k, _c, _t in lint_rules(_rules): _rules.pop(k, None)
         _sets.update({p: frozenset(p.split()) for p in _rules})
     return _rules
@@ -247,7 +256,7 @@ def mine_parts():
                 with open(o, encoding="utf-8") as fh: O = {c["id"]: c for c in json.load(fh)["cards"]}
             except Exception: continue
             for c in I:
-                if c["id"] not in O: continue
+                if c["id"] not in O or "text" not in O[c["id"]]: continue      # glance runs (S_*) hold form answers, not ability text
                 if c["id"] in KEY and not CD.is_eligible(KEY[c["id"]]): continue
                 u = units(c["groups"]); lines = [x.strip() for x in O[c["id"]]["text"].split(" / ") if x.strip()]
                 if len(u) != len(lines): continue
@@ -294,10 +303,6 @@ def parts():
     return _comp["R"]
 
 
-def hand_parts():
-    return HAND_BODY
-
-
 # small hand-written phrases for tags the readings do not cover (see HAND_NOTE); keyed like the mined bodies (pattern of the effect tags)
 HAND_BODY = {      # {T} = the target phrase; "alt" is used when the unit has no target tag
     "life_loss_amount:N": {"canon": "{T} loses N life.", "alt": "you lose N life."},
@@ -321,6 +326,22 @@ HAND_UNIT = {
     "kw:cycling num:N": "Cycling {N}", "kw:prowess": "Prowess", "kw:devoid": "Devoid", "kw:shadow": "Shadow", "kw:crew num:N": "Crew #",
     "kw:morph num:N": "Morph {N}", "kw:disguise num:N": "Disguise {N}", "kw:megamorph num:N": "Megamorph {N}",
     "kw:multikicker num:N": "Multikicker {N}", "kw:multikicker": "Multikicker",
+    "cost:tap mana_amount:N mana_choice mana_source produce_colors:opp_lands_can": "{T}: Add one mana of any color that a land an opponent controls could produce.",
+    "power_scales:creatures_you_control": "This creature's power is equal to the number of creatures you control.",
+    "cant_be_blocked cost:tap cost_mana:N duration:eot target_count:one target_type:creature": "{N}, {T}: Target creature can't be blocked this turn.",
+    "duration:eot grant_kw:protection protection_from:choice target_count:one target_scope:you_control target_type:creature": "Target creature you control gains protection from the color of your choice until end of turn.",
+    "draw_count:N duration:eot grant_kw:protection protection_from:choice target_count:one target_scope:you_control target_type:creature": "Target creature you control gains protection from the color of your choice until end of turn. Draw a card.",
+    "counter:pNpN counter_count:N target_count:one target_scope:you_control target_type:creature trigger_filter:opp_control": "Whenever you tap an untapped creature an opponent controls, put a +1/+1 counter on target creature you control.",
+    'counter:energy counter_count:N trigger:etb trigger_filter:creature trigger_filter:you_control trigger_scope:self': 'Whenever this creature or another creature you control enters, you get an energy counter.',
+    'duration:eot pump_amount:+N/+N target_count:all target_scope:you_control target_type:creature': 'Creatures you control get +2/+2 until end of turn.',
+    'duration:eot grant_kw:lifelink lifegain lifelink target_count:all target_scope:opp_control target_scope:you_control target_type:creature': 'Creatures you control gain lifelink until end of turn.',
+    'exile_from:hand target_count:one target_type:opponent trigger:etb trigger_scope:self': 'When this creature enters, target opponent reveals their hand. You choose a nonland card from it and exile that card.',
+    'draw_count:N target_count:one target_type:opponent trigger:leaves trigger_scope:self': 'When this creature leaves the battlefield, target opponent draws a card.',
+    'color:white kw:warp num:N': 'Warp {1}{W}',
+    'color:white kw:outlast num:N': 'Outlast {2}{W}',
+    'color:white kw:awaken num:N': 'Awaken 4—{5}{W}',
+    'duration:eot grant_kw:lifelink target_scope:attackers trigger:attacks': 'Whenever a creature attacks this turn, it gains lifelink until end of turn.',
+    'cost:tap cost_mana:N duration:eot pump_amount:+N/+N target_count:all target_filter:attacking target_type:creature': '{2}, {T}: Attacking creatures get +1/+0 until end of turn.',
     "kw:enchant target_type:land": "Enchant land", "kw:enchant target_type:permanent": "Enchant permanent",
 }
 
@@ -380,6 +401,14 @@ def basic_mana(ts):
     return "{T}: Add " + " or ".join("{%s}" % COLORS[c].upper() for c in col) + "."
 
 
+def token_body(eff):
+    """'create a 1/1 white Human creature token.' from token_count:1 token_color token_pt token_type, nothing else on the unit (one token only; more are not guessed)"""
+    d = {t.partition(":")[0]: t.partition(":")[2] for t in eff}
+    if set(d) != {"token_count", "token_color", "token_pt", "token_type"} or d["token_count"] != "1" or not re.fullmatch(r"\d+/\d+", d["token_pt"]): return None
+    col = d["token_color"]; ty = " ".join(w.capitalize() for w in d["token_type"].split("_"))
+    return "create a %s %s%s creature token." % (d["token_pt"], col + " " if col in COLORS or col in ("colorless",) else "", ty)
+
+
 def _compose(ts, stray):
     bm = basic_mana(ts)
     if bm: return bm
@@ -393,6 +422,11 @@ def _compose(ts, stray):
     h = HAND_UNIT.get(_pat(ts))
     if h: return _digits(fill(h, nums(ts)), nums(ts))
     R = split_roles(ts)
+    tk = token_body(R["eff"]) if R["eff"] and not (R["target"] or R["cost"] or R["dur"]) else None      # a plain token unit: its four token tags say the whole sentence
+    if tk:
+        if not R["trig"]: return tk[:1].upper() + tk[1:]
+        t = P["trig"].get(_pat(R["trig"])) or ({"canon": HAND_TRIG[_pat(R["trig"])]} if _pat(R["trig"]) in HAND_TRIG else None)
+        return fill(t["canon"], nums(R["trig"])) + ", " + tk if t and _carries(t["canon"], R["trig"]) else None
     if not R["eff"]:
         if not (R["trig"] and not R["cost"] and not R["target"] and not R["dur"]): return None
         t = P["trig"].get(_pat(R["trig"])) or ({"canon": HAND_TRIG[_pat(R["trig"])]} if _pat(R["trig"]) in HAND_TRIG else None)
@@ -953,13 +987,31 @@ def cmd_scan(a):
     lines = ["# Claude-only file in TOON. Written by `mtg2llm.py scan`; regenerated, never hand-merged. Sorted by gap_words (largest first).",
              "# gap_words = Oracle content words the render lacks (stemmed, reminder text and stop words removed). gap_pct = gap_words / oracle_words. Oracle only scores; the renderer never sees it.",
              "# pool: %d cards scanned, %d with no gap words; oracle words %d, gap words %d (%.0f%%)" % (len(rows), sum(1 for x in rows if x[5] == 0), to, tg, 100.0 * tg / max(to, 1)),
-             "cards[%d|]{card|units|open_slot|no_rule|oracle_words|gap_words|gap_pct}:" % len(rows)]
-    lines += ["%s|%d|%d|%d|%d|%d|%d" % (n, u, o, r_, ow, g, round(100.0 * g / ow) if ow else 0) for n, u, o, r_, ow, g in rows]
+             "# only the %d cards with the biggest gap are listed (scan --top N); the pool totals above cover every card scanned." % min(a.top, len(rows)),
+             "cards[%d|]{card|units|open_slot|no_rule|oracle_words|gap_words|gap_pct}:" % min(a.top, len(rows))]
+    lines += ["%s|%d|%d|%d|%d|%d|%d" % (n, u, o, r_, ow, g, round(100.0 * g / ow) if ow else 0) for n, u, o, r_, ow, g in rows[:a.top]]
     os.makedirs(os.path.dirname(a.out), exist_ok=True)
     with open(a.out, "w", encoding="utf-8") as f: f.write("\n".join(lines) + "\n")
     write_render_gaps(rg, rgx, sum(x[1] for x in rows), os.path.join(os.path.dirname(a.out), "RENDER_GAPS.toon"))
     print("scan: %d cards, gap words %d of %d (%.0f%%) -> %s" % (len(rows), tg, to, 100.0 * tg / max(to, 1), a.out))
     import run_memory; run_memory.save("mtg2llm scan", "pool, planeswalkers set aside", "%d cards, gap words %d of %d (%.0f%%), %d gap-free" % (len(rows), tg, to, 100.0 * tg / max(to, 1), sum(1 for x in rows if x[5] == 0)))
+
+
+def gaps_status(when):
+    """standing step (start and end of every run): the open rows of ../tags/MTG2LLM_GAPS.toon. A row counts as applied when its card now renders
+    with no unit left as a {tag} placeholder; the rest wait for a renderer rule, legend text or a tag fix"""
+    p = os.path.join(HERE, "..", "tags", "MTG2LLM_GAPS.toon")
+    try: rows = [l.split("|")[0].strip() for l in open(p, encoding="utf-8").read().splitlines() if l.startswith("  ") and "|" in l]
+    except OSError: return
+    open_rows = []
+    for name in rows:
+        try: recs = tag_cards([name])
+        except Exception: recs = []
+        for r, b, added, fl in recs:
+            text, st = render(b["groups"], b.get("typing"))
+            if st["missing"] or "{effect}" in text or re.search(r"\{(?![TCWUBRGXSEP0-9]+(?:/[WUBRGP])?\})", text): open_rows.append(name)
+    print("mtg2llm gaps (%s): %d rows, %d applied (render complete), %d still open%s" % (when, len(rows), len(rows) - len(open_rows), len(open_rows),
+          ": " + ", ".join(open_rows[:8]) + (" ..." if len(open_rows) > 8 else "") if open_rows else ""))
 
 
 def main():
@@ -969,10 +1021,12 @@ def main():
     t = sp.add_parser("tag"); t.add_argument("--cards", default=""); t.add_argument("--out", default="tagged.json")
     u = sp.add_parser("unseen"); u.add_argument("--n", type=int, default=100); u.add_argument("--pool", type=int, default=3000); u.add_argument("--seed", type=int, default=1)
     u.add_argument("--out", default="unseen_cards.txt")
-    sc = sp.add_parser("scan"); sc.add_argument("--limit", type=int, default=0); sc.add_argument("--batch", type=int, default=500); sc.add_argument("--out", default=os.path.join(HERE, "..", "tags", "POOL_GAPS.toon"))
+    sc = sp.add_parser("scan"); sc.add_argument("--limit", type=int, default=0); sc.add_argument("--batch", type=int, default=500); sc.add_argument("--top", type=int, default=6000, help="rows written to POOL_GAPS.toon (biggest gap first)"); sc.add_argument("--out", default=os.path.join(HERE, "..", "tags", "POOL_GAPS.toon"))
     sp.add_parser("selftest")
     a = ap.parse_args()
     if a.cmd == "selftest": sys.exit(cmd_selftest(a))
+    if a.cmd in ("render", "scan", "mine"):      # the gap check renders every open row, so only the commands that change renders run it
+        import atexit; gaps_status("start"); atexit.register(gaps_status, "end")
     if a.cmd == "tag": return cmd_tag(a)
     if a.cmd == "scan": return cmd_scan(a)
     if a.cmd == "unseen": return cmd_unseen(a)

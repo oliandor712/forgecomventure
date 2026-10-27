@@ -9,6 +9,10 @@ KWNAMES = {"flying", "trample", "haste", "vigilance", "lifelink", "deathtouch", 
 
 # pinned reference text: family -> one line meaning (and how its values read). Shown to blind readers (batch tag_legend, only families present) and written to tags/TAG_LEGEND.md
 LEGEND = {
+ "counter": "a counter on a permanent; counter:landmark = a landmark counter (Treasure Map: counts up to three, then the card flips); counter:p1p1 = +1/+1 counter",
+ "win": "the card wins the game outright; win:alt_condition = a win condition other than reducing life to zero (its trigger or cost tags say when)",
+ "produce_colors": "which colours the mana ability can make when they depend on lands: opp_lands_can = any colour a land an opponent controls could produce",
+ "power_scales": "the creature's power is the number of that kind of thing you control (power_scales:creatures_you_control)",
  "from_zone": "zone the card comes from (graveyard, hand, library, exile). Pairs with the other tags of the same group: return, put_onto_battlefield, cost:exile",
  "to_zone": "zone the card goes to (hand, library, exile, battlefield). Pairs with return or take in the same group",
  "return": "a card is returned from one zone to another; read with from_zone and to_zone (return from_zone:graveyard to_zone:hand = return a card from graveyard to hand)",
@@ -18,10 +22,11 @@ LEGEND = {
  "rest_to_zone": "where the looked-at cards that were not taken go; rest_order says the position",
  "rest_order": "position of the rest in the library: bottom, or bottom_random (bottom in a random order)",
  "modal": "choose N of M modes (modal:1_of_3 = choose one of three)",
- "replace": "a replacement effect: replace:<event>_to_<what> (draw_to_winsgame = instead of drawing, win the game)",
+ "replace": "a replacement effect: replace:<event>_to_<what> (draw_to_winsgame = instead of drawing, win the game; damagedone_to_other = changes damage that would be dealt to another permanent, e.g. with prevent_damage a shield for your other creatures)",
  "condition": "the ability works only while this is true (a permanent or card you control, or an empty library)",
  "restrict_kind": "kind of restriction placed on a creature (cant_attack, cant_block, cant_attack_or_block, cant_attack_unless_cost)",
  "token_ability": "ability the created token has, in words (tap_sacrifice_add_mana_any_color = {T}, Sacrifice: Add one mana of any color)",
+ "token_type": "token type; junk_exileplay = the Junk token (artifact: {T}, Sacrifice: exile the top card of your library, you may play it this turn, sorcery speed only)",
  "exile_from": "exiles cards from a zone other than the battlefield",
  "cost": "non-mana cost of the ability (tap, sacrifice, remove_counters, exile with from_zone, life, discard, return)",
  "duration": "how long an effect lasts (eot = until end of turn, static = while the source is on the battlefield, next_untap, while_control, end_step, until_monarch_changes = until an opponent becomes the monarch...)",
@@ -521,7 +526,7 @@ def extra(lines, sv, types, text):
     def chain(b):
         out = [b]
         p = params(b)
-        for k in ("Execute", "SubAbility", "Choices", "RepeatSubAbility", "FallbackAbility"):
+        for k in ("Execute", "SubAbility", "Choices", "RepeatSubAbility", "FallbackAbility", "TrueSubAbility", "FalseSubAbility"):
             for nx in re.split(r"[ ,]+", p.get(k, "")):
                 if nx in sv and nx not in seen_sv:
                     seen_sv.add(nx); out += chain(sv[nx])
@@ -569,6 +574,9 @@ def extra(lines, sv, types, text):
                     if ty in ("Creature", "Artifact", "Enchantment", "Instant", "Sorcery", "Planeswalker", "Land"): add("cost_reduce_for:" + tok(ty)); lk("cost_reduce", "filters", "cardtype:" + tok(ty))
                     elif ty not in ("Card", "Spell", "Other", "You", "Ctrl", "Chosen", "Type", "White", "Blue", "Black", "Red", "Green", "Colorless", "Non", "Self", "Opp") and "," in vc + ",": add("cost_reduce_for:" + tok(ty))
                     elif ty in ("White", "Blue", "Black", "Red", "Green", "Colorless"): add("color:" + tok(ty)); lk("cost_reduce", "filters", "color:" + tok(ty))
+        if kind == "S" and p.get("Mode") == "Continuous" and p.get("CharacteristicDefining") == "True" and p.get("SetPower"):   # Adeline: power = creatures you control
+            m_ = re.match(r"Count\$Valid ([A-Za-z]+)\.YouCtrl$", sv.get(p["SetPower"], ""))
+            if m_: add("power_scales:%ss_you_control" % tok(m_.group(1)))
         if kind == "S" and p.get("Mode") == "Continuous":
             xt = []
             if "AddPower" in p or "AddToughness" in p:
@@ -633,6 +641,16 @@ def extra(lines, sv, types, text):
             api = (re.match(r"^(?:AB|SP|DB)\$ (\w+)", b) or [0, ""])[1]
             if not (kind == "T" and b is body): target_tags(bp, groups[cur[0]], api)   # a trigger line's ValidCard(s) filter describes the event, not a target
             if bp.get("ValidTgts") and bp.get("Origin") in ("Graveyard", "Exile", "Hand", "Library"): add("target_zone:" + bp["Origin"].lower())
+            if api == "ManaReflected":                         # Fellwar Stone, Exotic Orchard: the colours come from lands (their controller says whose)
+                add("mana_source", "mana_choice", "mana_amount:1", "produce_colors:" + ("opp_lands_can" if "OppCtrl" in bp.get("Valid", "") else "your_lands_can" if "YouCtrl" in bp.get("Valid", "") else "lands_can"))
+            if api == "WinsGame": add("win:alt_condition")      # Happily Ever After, Thassa's Oracle: a card that wins the game outright (the condition is its trigger or cost)
+            if api == "Effect" and bp.get("Triggers"):          # a one-shot spell that sets up a delayed trigger (Ondu Rising: whenever a creature attacks this turn, it gains lifelink)
+                for nm_ in re.split(r"[ ,]+", bp["Triggers"]):
+                    tp_ = params(sv.get(nm_, ""))
+                    for ex_ in [params(sv.get(tp_.get("Execute", ""), ""))]:
+                        if ex_.get("KW") and "Attacker" in ex_.get("Defined", ""):
+                            for kw_ in re.split(r"\s*&\s*", ex_["KW"]): add("grant_kw:" + tok(kw_.split(":")[0]))
+                            add("target_scope:attackers")
             if api == "Mana":
                 pr = bp.get("Produced", "")
                 add("mana_source")
@@ -747,6 +765,16 @@ def extra(lines, sv, types, text):
                 for nm in re.split(r"[ ,]+", bp.get("StaticAbilities", "") + " " + bp.get("ReplacementEffects", "")):
                     ks = restrict_kinds(sv.get(nm, ""))
                     if ks: restrict_add(ks, add, sv.get(nm, "") + " " + bp.get("Duration", "").replace("AsLongAsControl", "as long as you control") + " " + bp.get("SpellDescription", ""))
+            for nm in re.split(r"[ ,]+", bp.get("StaticAbilities", "")):
+                cb = params(sv.get(nm, ""))
+                if cb.get("Mode") != "CantBlockBy": continue
+                # Rogue's Passage: the remembered creature can't be blocked this turn; with a ValidBlocker it is only unblockable by those blockers (the static-ability branch above does the same)
+                add(*(["cant_be_blocked:by_" + tok(cb["ValidBlocker"].replace(".", "_"))] if cb.get("ValidBlocker") else ["cant_be_blocked"]), "duration:eot")
+            if api == "Protection":
+                add("grant_kw:protection", "duration:" + ({"Permanent": "permanent"}.get(bp.get("Duration", ""), "eot")))
+                g_ = bp.get("Gains", "")
+                if g_.startswith("Choice"): add("protection_from:choice")      # Shelter: protection from the color of your choice
+                elif g_: add("protection_from:" + tok(g_))
             if api == "Animate" and bp.get("RemoveAllAbilities") == "True":
                 add("restrict", "restrict_kind:loses_abilities", "duration:permanent" if bp.get("Permanent") == "True" else "duration:eot")
             if api in ("Pump", "PumpAll") and bp.get("KW"):

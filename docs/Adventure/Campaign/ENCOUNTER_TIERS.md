@@ -1,6 +1,6 @@
 # Concordia encounter tiers
 
-How every AI opponent in Concordia is built and checked. There are three tiers. This document gives the rules for
+How every AI opponent in Concordia is built and checked. There are five tiers (1-5). This document gives the rules for
 building a deck in each tier, how card power is measured, and how a finished deck is verified. It contains no
 decklists.
 
