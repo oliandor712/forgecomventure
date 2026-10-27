@@ -7,7 +7,7 @@ No tier-based role-count restrictions. One quota per archetype, taken straight f
 
 Engine goals (every deck): ramp 10-12, card draw 8-12, recursion 2-5, protection 3-6. The archetype's own range replaces them where it lists one (recursion: graveyard/reanimator/self_mill 8-12 ...; protection: voltron/equipment/tokens/counters/combo/infect 6-10).
 
-Not covered (decide separately): removal, board wipes, tutors, fast mana and lands have no research counts, so the per-tier bounds in `tier_rules.py` would simply go with the rest. The hard gates (Game Changers, extra turns, mass land denial, mechanics by tier, watch-list) are not role counts and are NOT removed here; confirm whether they stay. Archetype slots marked `-` have no count and are omitted. Niche archetypes with no counts fall back to the engine goals.
+General engine pieces (removal, wipes, tutors, fast mana, lands) are in section 4. The hard gates (Game Changers, extra turns, mass land denial, mechanics by tier, watch-list) are not role counts and are NOT removed here; confirm whether they stay. Archetype slots marked `-` have no count and are omitted. Niche archetypes with no counts fall back to the engine goals.
 
 ## 1. Engine roles by archetype
 | Archetype | Ramp | Draw | Recursion | Protection |
@@ -111,3 +111,14 @@ Archetype slots that push creature counts up, and how to treat them:
 - Slots such as generator, fodder, enabler and payoff overlap with creatures; the cap counts the card once.
 
 Check: `power_scorer.py` and `build.py` would report creature count as a WARN above 35 (FAIL above 40). Not implemented.
+
+## 4. General engine pieces (user, 2026-10-27)
+These belong to any deck, are not tied to an archetype and are not tier-limited. They are added by synergy and gaps (what the commander and archetype slots leave missing), then the power score decides the tier.
+
+- **Tutors:** payoffs are the tutor targets. Pick the tutors that find the deck's payoffs, finishers and engine pieces (archetype slots such as payoff, finisher, haymaker, bomb, win), and include them whenever the deck has such targets. No fixed count; the old 0-1 cap for Tier 2 is gone.
+- **Fast mana:** always good, always welcome (Sol Ring, signets, talismans, rituals where they fit). No cap; it goes in on top of the ramp slot count and the power score prices it. Budget rocks stay allowed for starters (rule 2 of the reader deck rules).
+- **Board wipes:** every deck runs 1-2 (a sweeper slot in control keeps its 6-10 as an archetype slot). Choose the wipe that fits the deck (a creature-light or token deck prefers a one-sided or selective one). The rule is a floor of 1, usual 2.
+- **Removal:** filled by gaps. Count `remove:*` cards (one family; a card counts once), top up to the number the table needs; the research gives no general count, so the number is open (the current per-tier bounds were 4-14).
+- **Lands:** from the mana curve, not from the tier. Frank Karsten formula already used in `ENCOUNTER_TIERS.md` §2: lands = 31.4 + 3.13 x average mana value - 0.28 x (ramp or draw spells costing 3 or less), kept within a few of the result.
+  Example: average mana value 3.3 with 12 cheap ramp or draw spells gives 31.4 + 10.3 - 3.4 = 38.3, so about 38 lands.
+  Nonbasic land quality (duals, utility) stays with the power score.
