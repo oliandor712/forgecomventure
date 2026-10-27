@@ -9,12 +9,14 @@ Nothing here is live or committed; code changes push on "push". Rules: H88-H92 i
 - **Pool.** Rebuilt with the new power scores: zero drift.
 - **Land tags (H92).** `tag_extra.py`: `cost:life` now also marks painlands and City of Brass (damage to you) and shocklands (pay 2 life, now also `enters_tapped_conditional`). Pool rebuilt: 71 lands carry it; Llanowar Wastes, Overgrown Tomb, City of Brass checked.
 
-## Built but not working well: nonbasic land picker (H90, H91)
+## Nonbasic land picker (H90, H91, H93, H94)
 `land_score` in `starter_build.py` ranks all pool nonbasic lands (pop >= 8): 1 coverage, 2 utility (commander support), 3 enters-tapped, 4 life cost, 5 sacrifice-other (ok if tempo+/fetch); power breaks ties.
-Test results (Test decks in `staging_starters/`):
-- Mono W (Captain America): Urza's Saga, Dark Depths, Plaza of Heroes, Treasure Vault, Abstergo Entertainment, Forbidden Orchard. Most are not clearly linked to the commander.
-- B/G (Meren): Talon Gates of Madara, Exotic Orchard, Command Tower, Hall of Oracles, Opal Palace, Cascading Cataracts. Typed duals and painlands (Llanowar Wastes, Woodland Cemetery, Overgrown Tomb) are not chosen.
-Cause (unconfirmed): `supports_cmd` is too loose for lands, and any-colour utility lands count as full coverage. Not fixed.
+- **Why typed duals and painlands were not chosen:** every any-colour land counted as full coverage with no penalty, including ones that need a mana cost, a condition or a restriction (Talon Gates, Hall of Oracles, Aether Hub, Reflecting Pool, Glimmervoid, Verges, filter lands). They tied the duals at the same coverage score, and the duals' small life/tapped penalties plus lower power pushed them below the 6 slots.
+- **Fix (H94):** coverage needs colours from a plain tap; cost, condition and restriction lands count as utility only.
+- **Negative tempo (H93):** Dark Depths and Forbidden Orchard are tagged `tempo:negative` (`setup_card`, `gives_opponent_token`); no utility, -50. Forbidden Orchard still carries a `token_make` tag; not cleaned up.
+- **B/G (Meren) now:** Command Tower, Mana Confluence, City of Brass, Undergrowth Stadium, Llanowar Wastes, Woodland Cemetery.
+- **Mono W (Captain America) still:** Urza's Saga, Plaza of Heroes, Treasure Vault, Abstergo Entertainment, Vesuva, The Mycosynth Gardens. The commander-support test is too loose for lands, so these utility picks are not trustworthy. Open.
+- Debug: `LAND_DEBUG=1` prints the top 25 land scores.
 
 ## Unverified
 - Tags checked on about 15 lands, not the whole pool. Abstergo and Cavern of Souls tags look right (restricted any-colour); their value as picks is not judged.
