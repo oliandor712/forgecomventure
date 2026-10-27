@@ -452,10 +452,62 @@ def tags_of(c):
     return classify(c, ftags_of(c["name"]) or None)
 
 
-def effective_cmc(c):
+# Convoke / Improvise / Affinity need a matching permanent to pay with. SYNERGY_BASE is how many such cards a normal 99-card deck
+# already runs (25 creatures is normal, so it earns nothing); only the excess over that lifts the discount (user 2026-10-27).
+SYNERGY_BASE = {"creature": 25, "artifact": 8, "graveyard": 9}   # graveyard: 75th percentile of 330 live decks (median 5)
+GRAVE_FILL = {"self_mill", "surveil", "sacrifice_outlet", "wheels", "cost:discard"}   # tags of cards that fill your own graveyard (discard tag also covers opponent discard, so not used)
+SYNERGY_WEIGHT = {"graveyard": 2}   # graveyard cards one drawn filler adds on average (unverified guess)
+SYNERGY_DEFAULT = 6
+SYNERGY_SEEN = 12     # cards seen by about turn 5-6
+NO_ENABLER = {"forest", "swamp", "plains", "island", "mountain", "town"}   # land-type affinity: lands are always plentiful, flat discount only
+
+
+def synergy_type(c):
+    """What pays for the card's Convoke (creature), Improvise (artifact), Affinity:<type> or Delve (graveyard); None if it has none."""
+    for k in c["kw"]:
+        w = k.split(":")
+        if w[0] == "Delve":
+            return "graveyard"
+        if w[0] == "Convoke":
+            return "creature"
+        if w[0] == "Improvise":
+            return "artifact"
+        if w[0] == "Affinity" and len(w) > 1 and w[1].lower() not in NO_ENABLER:
+            return w[1].lower()
+    return None
+
+
+def _drawn(total, enablers, generic, weight=1, always=0):
+    """E[min(generic, weight * (enablers drawn in SYNERGY_SEEN cards + always))] for a deck of `total` cards (hypergeometric).
+    always = enablers that need no draw (the commander, from the command zone)."""
+    seen = min(SYNERGY_SEEN, total)
+    den = math.comb(total, seen)
+    return sum(min(generic, weight * (x + always)) * math.comb(enablers, x) * math.comb(total - enablers, seen - x)
+               for x in range(0, min(seen, enablers) + 1)) / den
+
+
+def synergy_extra(c, deck):
+    """Extra mana value off a Convoke/Improvise/Affinity card beyond the flat 2: the expected generic mana paid by enablers drawn
+    in the first SYNERGY_SEEN cards of this deck, minus the same for a normal deck (SYNERGY_BASE, with a creature commander).
+    deck = {"total": cards, <type>: count in the 99, "always": {<type>: count in the commander}}."""
+    t = synergy_type(c)
+    if not deck or not t or t not in deck:
+        return 0.0
+    generic = sum(int(x) for x in c["mc"].split() if x.isdigit())
+    if generic <= 2:
+        return 0.0
+    total = max(deck.get("total", 99), SYNERGY_SEEN)
+    mine = min(deck[t], total)
+    base = min(SYNERGY_BASE.get(t, SYNERGY_DEFAULT), total)
+    w = SYNERGY_WEIGHT.get(t, 1)
+    always = deck.get("always", {}).get(t, 0)
+    return min(generic - 2, max(0.0, _drawn(total, mine, generic, w, always) - _drawn(total, base, generic, w, 1 if t == "creature" else 0)))
+
+
+def effective_cmc(c, deck=None):
     """Mana value as the card is really paid for, used by the efficiency term only (curve and fast-mana checks keep the printed value).
     Alternative cost on the spell itself (Force of Will, Snuff Out): only its mana, so a free-to-cast spell counts as 0 (user 2026-10-26).
-    Self cost reducers (Delve, Convoke, Improvise, Affinity, ReduceCost on Card.Self): minus 2. X in the cost: plus 1 (user 2026-10-26)."""
+    Delve, Convoke, Improvise, Affinity (alternate costs that need support; user 2026-10-27): minus 2, plus synergy_extra() when rate() passes the deck's enabler counts (only enablers above a normal deck count). Other ReduceCost on Card.Self: minus 2. X in the cost: plus 1 (user 2026-10-26)."""
     mv = c["cmc"]
     best = mv
     for st in c["static"]:
@@ -468,18 +520,18 @@ def effective_cmc(c):
         elif "Mode$ ReduceCost" in st and "ValidCard$ Card.Self" in st:
             best = min(best, max(0, mv - 2))
     if any(k.split(":")[0] in ("Delve", "Convoke", "Improvise", "Affinity") for k in c["kw"]):
-        best = min(best, max(0, mv - 2))
+        best = min(best, max(0, mv - 2 - synergy_extra(c, deck)))   # flat 2 always; more only when the deck runs enablers above a normal deck (rate() passes deck)
     if "X" in c["mc"].split():
         best += 1
     return best
 
 
-def card_power(data, c, tags, rarity, ftags=()):
+def card_power(data, c, tags, rarity, ftags=(), deck=None):
     """Power for one rarity; see card_powers."""
-    return card_powers(data, c, tags, (rarity,), ftags)[rarity]
+    return card_powers(data, c, tags, (rarity,), ftags, deck)[rarity]
 
 
-def card_powers(data, c, tags, rarities, ftags=()):
+def card_powers(data, c, tags, rarities, ftags=(), deck=None):
     """{rarity: power}; the rarity-independent terms are computed once. ftags (tag_run.tags, optional) halves the role term
     of a niche card (Disenchant, Stone Rain: the effect only pays in a matching deck)."""
     """0-100 power estimate: raw power, mana efficiency, role, rarity, Game Changer, fast mana, tutor.
@@ -494,11 +546,22 @@ def card_powers(data, c, tags, rarities, ftags=()):
     cube = 1 - (rank - 1) / 4000 if rank else 0.0
     pop = max(edhrec(c), deckpop(c))
     cube = max(cube, cedh_strength(c) or 0.0, EDH_LIFT * pop)
-    eff = max(0.0, min(1.0, (6 - effective_cmc(c)) / 5))
+    eff = max(0.0, min(1.0, (6 - effective_cmc(c, deck)) / 5))
     role = 1.0 if tags & {"ramp", "draw", "removal", "wipe", "counter", "tutor"} else 0.0
     if any(t.startswith("niche:") for t in ftags): role *= NICHE_ROLE
     base = 40 * cube + 15 * eff + 15 * role + 10 * (name in data["lists"]["gc"]) + 5 * ("fast" in tags) + 5 * ("tutor" in tags)
     return {r: round(min(100.0, base + 10 * RARITY_WEIGHT.get(r, 0.3)), 1) for r in rarities}
+
+
+def _enabler_types(c):
+    """The synergy types (see synergy_type) this card helps pay for: its card types, creature tokens, artifact tokens, graveyard filling."""
+    ty = c["types"].lower().split()
+    ft = ftags_of(c["name"])
+    out = [t for t in ("creature", "artifact", "enchantment", "equipment", "planeswalker", "sliver", "spirit")
+           if t in ty or (t == "creature" and any(x.startswith("token_pt:") for x in ft)) or (t == "artifact" and "token_cardtype:artifact" in ft)]
+    if GRAVE_FILL & set(ft):
+        out.append("graveyard")
+    return out
 
 
 def rate(path, data, config):
@@ -527,6 +590,8 @@ def rate(path, data, config):
     pips = collections.Counter()
     sources = collections.Counter()
     cheap_ramp_draw = 0
+    pending = []           # (count, card, tags, rarity, ftags): powers are computed after the deck's enabler counts are known
+    enablers, always = collections.Counter(), collections.Counter()   # enabler cards in the 99; in the commander (always available)
     extra_turn_names = set()
     restricted = {x.lower() for x in config.get("restrictedCards", [])}
     banned_sets = set(config.get("restrictedEditions", []))
@@ -542,6 +607,8 @@ def rate(path, data, config):
             if c["name"].lower() in restricted or ed in banned_sets:
                 problems.append("restricted in Concordia: " + c["name"])
             if section == "commander":
+                for t in _enabler_types(c):
+                    always[t] += 1
                 continue
             tags = tags_of(c)
             if "extra_turn" in tags:
@@ -561,9 +628,14 @@ def rate(path, data, config):
                 rarity[r] += n
                 mvs += [c["cmc"]] * n
                 curve[min(c["cmc"], 7)] += n
-                powers += [card_power(data, c, tags, r, niche_of(c["name"]))] * n
+                pending.append((n, c, tags, r))
+                for t in _enabler_types(c):
+                    enablers[t] += n
             elif c["name"].lower() not in BASICS and not c["name"].lower().startswith("snow-covered "):
-                powers += [card_power(data, c, tags, r, niche_of(c["name"]))] * n   # nonbasic lands count toward deck power (user 2026-10-26)
+                pending.append((n, c, tags, r))   # nonbasic lands count toward deck power (user 2026-10-26)
+    deck_syn = dict(enablers, total=sum(n for n, _, _ in entries["main"]), always=dict(always))
+    for n, c, tags, r in pending:
+        powers += [card_power(data, c, tags, r, niche_of(c["name"]), deck_syn)] * n
     commanders = []
     for n, name, ed in entries["commander"]:
         c = cards.get(name.lower())
