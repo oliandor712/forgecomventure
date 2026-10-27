@@ -24,7 +24,11 @@ Nothing here is live or committed; code changes push on "push". Rules: H88-H92 i
 - **`setup_card:<need>` (H98):** general tag for cards that need a setup. `setup_card:mana` (Dark Depths) counts as land utility only with 10 ramp pieces in the deck.
 - **`restricted_to:<type>` (H99):** 63 cards, 16 lands (mana or recursion limited to a creature type). A land counts as utility only when the type is the commander's or an allowed tribe (Haven of the Spirit Dragon needs dragons).
 - **Colourless sources (H100, H101):** colourless-only lands are penalised (-150) without {C} pips or own synergy (Drownyard Temple), and are capped by the {C} pip share like a colour (Kozilek's Command needs {C}{C}).
-- W_Starter_Regen_r4 (staged) rebuilt with these: lands Urza's Saga, Plaza of Heroes, Vesuva, Drownyard Temple, Buried Ruin, Abundant Countryside; power 28.5; 37/63 supporting.
+- **`{C}` cost gate (H102):** a spell with `{C}` pips needs 4 colourless sources per pip (rocks plus 4 assumed lands). Kozilek's Command (`{X}{C}{C}`) needs 8 and is out of the W deck.
+- **`token_scales:<Y>` (H103):** when a commander's token count is tied to Y, the support test is the pair token_make + Y. Captain America: `token_scales:Equipment`. Plain token makers stop counting as support (W: 37/63 -> 23/63 supporting).
+- Earlier W_Starter_Regen_r4 (staged) rebuilt with the colourless rules: lands Urza's Saga, Plaza of Heroes, Vesuva, Drownyard Temple, Buried Ruin, Abundant Countryside; power 28.5; 37/63 supporting.
+
+- W_Starter_Regen_r5 (staged) with H102/H103: lands Plaza of Heroes, Vesuva, Drownyard Temple, Buried Ruin, Haunted Fengraf, Lazotep Quarry; power 27.7; 31 creatures.
 
 ## Unverified
 - Tags checked on about 15 lands, not the whole pool. Abstergo and Cavern of Souls tags look right (restricted any-colour); their value as picks is not judged.
