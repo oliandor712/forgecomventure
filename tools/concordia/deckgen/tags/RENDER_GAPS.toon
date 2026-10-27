@@ -1,5 +1,5 @@
 # Claude-only file in TOON. Written by `mtg2llm.py scan`; regenerated, never hand-merged. Unit patterns (tags of one ability group, numbers abstracted) the renderer cannot write yet.
-# units with no rule: 23203 of 51371 (45%); distinct patterns 15245, seen once 12690. Top 300 below; example = one card holding it.
+# units with no rule: 22874 of 51377 (45%); distinct patterns 15098, seen once 12584. Top 300 below; example = one card holding it.
 gaps[300|]{units|pattern|example}:
 103|forge_line:typecycling|A.I.M. Scientists
 70|surveil|Aminatou, Veil Piercer
@@ -10,9 +10,8 @@ gaps[300|]{units|pattern|example}:
 41|remove:bounce trigger:etb trigger_scope:self|Acererak the Archlich
 41|kw:cascade|Annoyed Altisaur
 37|affected_scope:self restrict_kind:cant_block|Ascending Aven
-37|duration:eot pump_amount:+N/+N target_count:all target_scope:you_control target_type:creature|Banners Raised
-37|target_count:one target_scope:you_control target_type:creature trigger:etb trigger_scope:self|Baseball Bat
 36|optional|Aboleth Spawn
+35|target_count:one target_scope:you_control target_type:creature trigger:etb trigger_scope:self|Baseball Bat
 35|remove:destroy|Blight
 34|affected_type:creature duration:static grant_kw:vigilance pump_amount:+N/+N vigilance|Accorder's Shield
 34|kw:fear|Arcbound Fiend
@@ -33,7 +32,6 @@ gaps[300|]{units|pattern|example}:
 26|kw:landwalk landwalk:forest|Boggart Loggers
 26|kw:wither|Boggart Ram-Gang
 26|target_count:one target_type:card unless_cost unless_cost_amount:N|Censor
-25|target_count:one target_type:creature|Artful Dodge
 25|kw:soulbond|Breathkeeper Seraph
 23|kw:persist|Aerie Ouphes
 23|kw:soulshift num:N|Body of Jukai
@@ -42,7 +40,6 @@ gaps[300|]{units|pattern|example}:
 22|kw:modular num:N|Arcbound Bruiser
 22|color:black kw:flashback num:N|Army of the Damned
 21|kw:evolve|Adaptive Snapjaw
-21|power_scales:creatures_you_control|Adeline, Resplendent Cathar
 21|affected_scope:self duration:static first_strike grant_kw:first_strike|Ahn-Crop Invader
 21|target_count:one target_type:player trigger:etb trigger_scope:self|Architects of Will
 21|lifegain_amount:x trigger_filter:one_or_more x_is:triggering_damage|Armadillo Cloak
@@ -54,6 +51,7 @@ gaps[300|]{units|pattern|example}:
 20|affected_type:creature duration:static pump_amount:-N/-N|Ancestral Vengeance
 20|effect:sacrifice|Arc Runner
 20|color:blue kw:disturb num:N|Archive Haunt
+20|draw_count:N saga_chapter|Armor Wars
 20|kw:bloodthirst num:N|Battering Wurm
 20|cost:tap mana_amount:N mana_source|Big Apple, 3 a.m.
 20|affected_type:creature duration:static grant_kw:haste haste pump_amount:+N/+N|Boots of Speed
@@ -66,11 +64,10 @@ gaps[300|]{units|pattern|example}:
 19|kw:living_weapon|Batterbone
 19|damage target_count:all target_type:creature|Breath of Darigaaz
 19|affected_type:creature duration:static first_strike grant_kw:first_strike pump_amount:+N/+N|Cartouche of Solidarity
-19|cost:tap cost_mana:N target_count:one target_type:creature|Chainbreaker
+19|target_count:one target_type:creature|Chaotic Strike
 18|remove:bounce|Aethertide Whale
 18|color:white kw:flashback num:N|Ancestral Tribute
 18|draw_count:N target_count:one target_type:player|Ancestral Vision
-18|cost_mana:Ng|Anurid Swarmsnapper
 18|power_scales:lands_you_control|Ashaya, Soul of the Wild
 17|affected_type:creature duration:static grant_kw:menace menace pump_amount:+N/+N|Alien Symbiosis
 17|replace:counter_to_other|Allosaurus Shepherd
@@ -79,6 +76,7 @@ gaps[300|]{units|pattern|example}:
 17|affected_type:equipped duration:static pump_amount:+N/+N|Diamond Pick-Axe
 16|cost:tap prevent_damage target_count:one target_type:any|Abuna Acolyte
 16|kw:fabricate num:N|Accomplished Automaton
+16|cost_mana:Ng|Anurid Swarmsnapper
 16|color:black kw:madness num:N|Archfiend of Spite
 16|counter:ki counter_count:N optional trigger:spell_cast|Azamuki, Treachery Incarnate
 16|kw:assist|Bloodborn Scoundrels
@@ -92,13 +90,13 @@ gaps[300|]{units|pattern|example}:
 14|color:red kw:madness num:N|Abandon Reason
 14|kw:reconfigure num:N|Acquisition Octopus
 14|affected_type:you duration:static grant_kw:hexproof hexproof|Aegis of the Gods
-14|cost_mana:Nu target_count:one target_type:creature|Air Servant
 14|counter:pNpN counter_count:N target_count:all target_scope:you_control target_type:creature|Ardenvale Fealty
 14|counter:pNpN counter_count:N trigger:etb trigger_filter:you_control trigger_scope:other|Avatar Enthusiasts
 14|damage damage_amount:x target_count:one target_type:any x_is:x_paid|Banefire
 14|kw:umbra_armor|Bear Umbra
 14|kw:unleash|Bloodfray Giant
 14|kw:buyback num:N|Capsize
+14|cost:tap cost_mana:N target_count:one target_type:creature|Chainbreaker
 14|kw:enchant target_type:artifact|Disruption Aura
 14|affected_scope:self duration:static grant_kw:protection|Haktos the Unscarred
 13|cost:sacrifice cost:tap cost_sacrifice_target:self mana:any mana_amount:N mana_source|Abandoned Outpost
@@ -109,13 +107,11 @@ gaps[300|]{units|pattern|example}:
 13|kw:riot|Arcbound Slasher
 13|optional trigger:spell_cast|Arixmethes, Slumbering Isle
 13|color:red kw:echo num:N|Avalanche Riders
-13|target_count:up_to_N target_type:creature|Avatar's Wrath
 13|color:blue kw:cycling num:N|Avian Oddity
 13|kw:for_mirrodin|Barbed Batterfist
 13|cost_mana:Nw duration:eot pump_amount:+N/+N target_count:all target_scope:you_control target_type:creature|Bearer of Glory
 13|affected_type:permanent|Bigger on the Inside
 13|duration:eot pump_amount:-N/-N target_count:all target_type:creature|Biting Rain
-13|target_count:one target_scope:you_control target_type:creature|Blessed Breath
 13|affected_scope:self condition:card_self_counters_geN_level_counters_leN_level|Brimstone Mage
 13|forge_line:cardname_must_be_blocked_if_able|Canopy Stalker
 13|kw:landwalk landwalk:mountain|Canyon Wildcat
@@ -149,6 +145,7 @@ gaps[300|]{units|pattern|example}:
 11|kw:graft num:N|Aquastrand Spider
 11|restrict_kind:cant_attack_unless_cost unless_cost_amount:N|Archangel of Tithes
 11|color:white kw:suspend num:N|Atraxi Warden
+11|target_count:up_to_N target_type:creature|Avatar's Wrath
 11|mana_source token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_type:treasure trigger_filter:one_or_more|Axgard Artisan
 11|kw:cumulative_upkeep num:N|Balduvian Fallen
 11|trigger:discard|Bartered Cow
@@ -174,7 +171,6 @@ gaps[300|]{units|pattern|example}:
 10|life_loss life_loss_amount:N trigger:etb trigger_scope:self|Bellowing Saddlebrute
 10|affects:by affects:enchanted must_attack|Bloodshed Fever
 10|cost:sacrifice kw:kicker num:N|Bog Down
-10|draw_count:N target_count:one target_type:creature|Boiling Blood
 10|kw:read_ahead|Braids's Frightful Return
 10|forge_line:all_creatures_able_to_block_cardname_do_so|Breaker of Armies
 10|target_count:one target_type:card unless_cost unless_cost_amount:x|Broken Ambitions
@@ -198,12 +194,10 @@ gaps[300|]{units|pattern|example}:
 9|draw_count:N remove:bounce target_count:one target_type:creature|Arrester's Admonition
 9|draw_count:N life_loss life_loss_amount:N target_count:one target_type:player|Atrocious Experiment
 9|from_zone:graveyard return target_count:one target_scope:you_control target_type:card target_zone:graveyard to_zone:hand|Auroral Procession
-9|token_color:green token_count:N token_pt:N/N token_type:beast|Baloth Cage Trap
 9|cost_mana:b deathtouch duration:eot grant_kw:deathtouch|Battlefly Swarm
 9|duration:eot impulse_draw impulse_draw_count:N look_top:N take:all to_zone:exile trigger:upkeep|Bell Borca, Spectral Sergeant
 9|controller:you from_zone:library put_onto_battlefield put_tapped shuffle tutor tutor_count:N tutor_dest:battlefield_tapped tutor_target:basic_land|Beneath the Sands
 9|kw:ingest|Benthic Infiltrator
-9|token_color:colorless token_count:N token_pt:N/N token_type:eldrazi_scion trigger:etb trigger_scope:self|Birthing Hulk
 9|target_count:one target_scope:opp_control target_type:creature|Bloodcrazed Hoplite
 9|affected_filter:enchantedby affected_type:card restrict_kind:doesnt_untap|Blossombind
 9|counter:pNpN counter_count:N optional trigger:etb trigger_filter:you_control trigger_scope:any|Bojuka Brigand
@@ -222,6 +216,7 @@ gaps[300|]{units|pattern|example}:
 9|counter:pNpN counter_count:N trigger_filter:one_or_more|Fungusaur
 8|color:black kw:madness|Abolisher of Bloodlines
 8|duration:eot flying grant_kw:flying pump_amount:+N/+N pump_single target_count:one target_type:creature|Aerial Boost
+8|cost_mana:Nu target_count:one target_type:creature|Air Servant
 8|affected_type:creature duration:static grant_kw:shroud shroud|Alexi's Cloak
 8|color:green kw:plot num:N|Aloe Alchemist
 8|lifegain_amount:N saga_chapter|Amok Time
@@ -256,13 +251,10 @@ gaps[300|]{units|pattern|example}:
 8|color:white kw:kicker|Desolation Angel
 8|color:blue kw:plot num:N|Djinn of Fool's Fall
 8|target_count:one target_type:permanent trigger:etb trigger_scope:self|Dramatist's Puppet
-8|token_color:colorless token_count:N token_pt:N/N token_type:eldrazi_spawn trigger:spell_cast|Drowned Jungle
 8|investigate token_make trigger:etb trigger_scope:self|Drownyard Explorers
 8|counter:pNpN counter_count:N trigger:dies trigger_filter:creature trigger_scope:other trigger_zone:graveyard|Elenda, the Dusk Rose
-8|token_color:green token_count:N token_pt:N/N token_type:wolf trigger:etb trigger_scope:self|Elturgard Ranger
 8|affected_filter:attacking affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N|Goblin Oriflamme
 8|damage damage_amount:N target_count:one target_type:planeswalker target_type:player|Kyren Negotiations
-7|cost:discard|Abolish
 7|duration:eot steal steal_grants_haste target_count:one target_type:creature untap|Act of Treason
 7|damage damage_amount:N trigger:spell_cast|Adrenaline Jockey
 7|kw:melee|Adriana, Captain of the Guard
@@ -273,8 +265,6 @@ gaps[300|]{units|pattern|example}:
 7|effect:sacrifice sacrifice_outlet sacrifice_type:permanent|Akki Underminer
 7|duration:next_turn_end impulse_draw impulse_draw_count:N look_top:N take:all to_zone:exile trigger:etb trigger_scope:self|Alania's Pathmaker
 7|color:black kw:dash num:N|Alesha's Vanguard
-7|color:white kw:warp num:N|All-Fates Stalker
-7|token_color:white token_count:N token_pt:N/N token_type:ally trigger:etb trigger_scope:self|Allied Teamwork
 7|damage damage_amount:N die_replace:exile target_count:one target_type:any|Annihilating Fire
 7|lifegain_amount:N remove:destroy target_count:one target_type:artifact target_type:enchantment|Appetite for the Unnatural
 7|duration:eot grant_kw:reach pump_amount:+N/+N reach target_count:one target_type:creature|Arachnoid Adaptation
@@ -294,10 +284,20 @@ gaps[300|]{units|pattern|example}:
 7|damage damage_amount:x target_count:one target_type:any trigger_filter:one_or_more x_is:triggering_damage|Blazing Sunsteel
 7|draw_count:N life_loss_amount:N trigger:etb trigger_scope:self|Blighted Blackthorn
 7|discard_count:N trigger:etb trigger_scope:self|Bloodrage Brawler
-7|token_color:green token_count:N token_pt:N/N token_type:saproling|Bramble Elemental
 7|cost:tap damage damage_amount:N target_scope:each_opponent|Brimstone Trebuchet
 7|mana:red mana_amount:N mana_source saga_chapter|Burn, Burn, Tree and Fern
 7|affected_filter:other affected_scope:you_control affected_type:elf duration:static pump_amount:+N/+N|Canopy Tactician
 7|color:blue kw:bestow num:N|Crystalline Nautilus
 7|counter:pNpN counter_count:N target_count:all target_filter:strictlyother target_scope:you_control target_type:creature trigger:etb trigger_scope:self|Cytoplast Root-Kin
 7|duration:eot pump_amount:+N/+N target_count:all target_scope:you_control target_type:creature trigger:attacks|Dauntless Veteran
+7|color:black kw:cycling num:N|Death Pulse
+7|color:red kw:foretell num:N|Delayed Blast Fireball
+7|remove:destroy target_count:one target_type:artifact target_type:land|Demolish
+7|color:blue kw:morph|Disruptive Pitmage
+7|counter:eachfromsource target_count:one target_scope:you_control target_type:creature trigger:dies trigger_scope:self trigger_zone:graveyard|Dockworker Drone
+7|target_count:one target_scope:you_control target_type:creature|Double Major
+7|damage damage_amount:N lifegain_amount:N target_count:one target_type:creature|Douse in Gloom
+7|counter:pNpN counter_count:N trigger:spell_cast trigger_filter:instant trigger_filter:sorcery|Dragonsguard Elite
+7|affected_filter:token affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N|Dramatic Finale
+7|from_zone:graveyard return shuffle to_zone:library trigger_scope:self|Dread
+7|cant_regenerate remove:destroy|Dripping Dead
