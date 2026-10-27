@@ -21,6 +21,7 @@ Paths are repo-relative. This file only points; it holds no rules. If a file her
 | `lookup.py rule H67` / `rule --area tags` | rule rows | `human_logic.toon`, ~5k |
 | `lookup.py card "Name"` | tagged record | `STARTER_TAGS.toon`, ~56k (starter cards only; else `tag_run.py card`) |
 | `lookup.py twin "ability text"` | 5 closest tagged ability lines | `ABILITY_TWINS.json`, ~42k |
+| Archetypes and engine goals, condensed (one row per archetype; generated) | `reference/ARCHETYPES.toon`, 9k |
 | Deck-building section the readers see (D1-D8) | `reference/deck_building_for_readers.toon`, 1k |
 | `lookup.py size [paths]` | token estimate | guessing |
 

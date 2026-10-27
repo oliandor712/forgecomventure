@@ -34,3 +34,5 @@ Read `tools/agents/TOOLBOX.md`, `tools/agents/CONTEXT.md`, `tools/agents/AGENT_K
 
 ## Rules that never change
 Equal life on both sides; no life bonuses; existing assets only; no edits to forge source; branch campaign-design only; no PRs; no force-push; do not write raw phase logs into the repo tree.
+
+Archetypes and engine goals (condensed): `tools/agents/reference/ARCHETYPES.toon`.

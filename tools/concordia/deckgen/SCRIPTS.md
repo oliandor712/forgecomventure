@@ -43,3 +43,8 @@ Read this before opening a script. Each entry is at most 4 sentences, taken from
 
 ## Shared card set (user 2026-10-25)
 `common.eligible_names()` / `common.is_eligible(name)` (re-exported by `tagcheck/cards.py`) is the one card set for every tagger, reader and MTG2LLM run: the cards of `deckgen/pool.pkl` plus their back faces. pool.py drops banned, restricted, AI:RemoveDeck:All, Alchemy/digital-only (Scryfall `-in:paper`), pre-Sixth-only and plane/scheme/etc. cards. Per-tier deck-builder gates (`build.MECH_MIN_TIER`, tier 1 rarity) are deck choices and do not shrink this set. Used by `mtg2llm.py` (scan, unseen, gap_targets, mine), `guards.py`, `reverse_check.py export`, `tag_twins.py`, `tag_reports.py`. Rebuild `pool.pkl` first when the pool rules change.
+
+## Strategy data and tag updates (2026-10-27)
+- **text_tags.py** adds oracle-text feature tags the Forge-script tagger lacks (goad, wheels, gift_all, ench_payoff, legend_payoff); regex based, unreviewed. `pool.py` merges them into `ftags`.
+- **strategies/build_strategies.py** writes `strategies.json` and `tools/agents/reference/ARCHETYPES.toon` (45 archetypes, engine baselines, niche crossover). Removal is one family, `remove:*` (a card counts 1 whether it hits one creature or any number).
+- **build.py** (tiers 2-5) now fills the `recursion` and `protection` baselines (with `recursion_by_archetype` / `protection_by_archetype` uplifts) through `strategy_fit.baseline_hit` / `baseline_min`. Role-tag quotas (`removal`, `ramp`, `draw`, `wipe`) are unchanged; the switch from role tag `removal` to `remove:*` is open.

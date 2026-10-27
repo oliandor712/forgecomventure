@@ -90,3 +90,9 @@ What replaces regexes: `ability_tags.RULES` becomes a thin map `tag-family -> le
 
 ## Open question (USER QUESTION candidate)
 Should AI Tags (`tempo`, `burn`, `ai_logic`, `removal`, ...) feed card power, or stay quota/playability only? I recommend the latter (section 4).
+
+## Update 2026-10-27 (strategies and tags)
+- Removal harmonized: strategies use `remove` (family `remove:*`); one card = 1 whether it hits one creature or any number. The old ftag `removal` (196 body cards) is to be retired; builder quotas still read the role tag `removal`.
+- New oracle-text tags (`text_tags.py`): goad, wheels, gift_all, ench_payoff, legend_payoff. Existing tags reused: treasure, impulse_draw, steal.
+- New baseline role protection (3-6; uplift for voltron, equipment, tokens, counters, combo, infect); ramp signals now include `fixing`.
+- Niche archetypes carry `crossover` parents (fit adds half of the parents' role matches). Condensed reference: `tools/agents/reference/ARCHETYPES.toon`.

@@ -108,6 +108,8 @@ Briefs still carry the old session/messaging instructions (ETA lines, `send_mess
   thinks Forge's own bonuses are too heavy-handed and wants smaller ones, such as a land or a 1-drop, measured against
   no bonus.
 
+- Archetype and engine-goal reference (condensed, generated): `tools/agents/reference/ARCHETYPES.toon`.
+
 ## Feedback paths (tag, deck and balance loop)
 - **Misleading tag found** by the builder, the AI lab or balance (a card whose tags do not match its Oracle text): add the card to `tools/concordia/deckgen/tagcheck/holdout_cards.txt` or the next reader batch as a test case, note it in `tags/TAG_GAPS.toon` through `tagcheck/guards.py` (never hand-edit), and run `reverse_check.py` plus `reader_metric.py update <run>`. Until the check clears it, `tag_status.py` holds its tags back, so decks get no ability bonus from them.
 - **Balance adjusts decks** only in bounded, logged steps: `target` or `weakness` in `decks.json`, one deck per step, each logged in `HANDOVER.md` with the old and new value and the sim record it rests on. No other deck field changes for balance.

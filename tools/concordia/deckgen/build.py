@@ -363,6 +363,13 @@ def build(d):
             b = b or best(lambda p: p['tags'] & ROLE[role])  # cheap artifacts are tried first as alternates (archetype decks)
             if not b: break
             add(b[1], b[2])
+    if tier > 1:   # engine baselines of strategies.json (recursion, protection; archetype uplifts), tiers 2-5; ramp and draw keep the tier quotas above
+        for role in ('recursion', 'protection'):
+            need = sf.baseline_min(role, strat)
+            while sum(1 for c in chosen if sf.baseline_hit(c[0].get('ftags', ()), role)) < need and len(chosen) < nonland:
+                b = best(lambda p, role=role: sf.baseline_hit(p.get('ftags', ()), role))
+                if not b: break
+                add(b[1], b[2])
     if arch and tier == 1:   # archetype quota pass: the finished deck must classify as declared (archetype_rules.classify)
         def quota(n, test, filt):
             while len(chosen) < nonland and sum(1 for p, _ in chosen if test(p)) < n:

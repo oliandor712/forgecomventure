@@ -1,11 +1,158 @@
 {
- "version": 1,
- "generated": "2026-10-25",
+ "version": 2,
+ "generated": "2026-10-26",
+ "baseline_roles": {
+  "recursion": {
+   "sig": [
+    "recursion",
+    "reanimate",
+    "from_zone:graveyard"
+   ],
+   "cards": [
+    "Eternal Witness",
+    "Regrowth",
+    "Sun Titan",
+    "Mnemonic Wall"
+   ],
+   "n": [
+    2,
+    5
+   ],
+   "src": "sw",
+   "note": "baseline for every deck, no per-colour split; black decks and the graveyard archetypes run more (see recursion_by_archetype)"
+  },
+  "ramp": {
+   "sig": [
+    "mana_source",
+    "land_tutor",
+    "fixing"
+   ],
+   "cards": [
+    "Sol Ring",
+    "Arcane Signet",
+    "Cultivate",
+    "Rampant Growth"
+   ],
+   "n": [
+    10,
+    12
+   ],
+   "src": "em, draftsim",
+   "note": "sources at 2 mana or less first; big_mana and lands_matter archetypes go higher"
+  },
+  "card_draw": {
+   "sig": [
+    "draw",
+    "draw_count"
+   ],
+   "cards": [
+    "Rhystic Study",
+    "Mystic Remora",
+    "Phyrexian Arena"
+   ],
+   "n": [
+    8,
+    12
+   ],
+   "src": "draftsim, tappedout",
+   "note": "counted with selection; control and draw-heavy archetypes go higher"
+  },
+  "protection": {
+   "sig": [
+    "protection_trick",
+    "regenerate",
+    "protection_from",
+    "grant_kw:protection",
+    "phase_out",
+    "kw:hexproof",
+    "kw:indestructible",
+    "kw:protection"
+   ],
+   "cards": [],
+   "n": [
+    3,
+    6
+   ],
+   "src": "doc thread 2026-10-27",
+   "note": "protect the commander and the engine; voltron, equipment, tokens, counters, combo, infect run more (see protection_by_archetype)"
+  }
+ },
+ "recursion_by_archetype": {
+  "graveyard": [
+   8,
+   12
+  ],
+  "reanimator": [
+   8,
+   12
+  ],
+  "self_mill": [
+   8,
+   12
+  ],
+  "aristocrats": [
+   4,
+   8
+  ],
+  "blink": [
+   3,
+   6
+  ],
+  "landfall": [
+   2,
+   3
+  ],
+  "lands_matter": [
+   2,
+   3
+  ],
+  "mill": [
+   4,
+   8
+  ]
+ },
+ "protection_by_archetype": {
+  "voltron": [
+   6,
+   10
+  ],
+  "equipment": [
+   6,
+   10
+  ],
+  "tokens": [
+   6,
+   10
+  ],
+  "counters": [
+   6,
+   10
+  ],
+  "combo": [
+   6,
+   10
+  ],
+  "infect": [
+   6,
+   10
+  ]
+ },
+ "aliases": {
+  "sacrifice": "aristocrats",
+  "proliferate": "counters",
+  "aggro": "stompy",
+  "counters_plus": "counters",
+  "chaos": null,
+  "colorless": null,
+  "ramp": null,
+  "card_draw": null
+ },
  "sources": {
   "sw": "https://spellweave.app/guides/edh-archetypes",
   "em": "https://www.edhmatch.com/strategies",
   "cf": "https://commander-forge.com/archetypes",
-  "tz": "https://turnzerohq.com/guides/archetypes"
+  "tz": "https://turnzerohq.com/guides/archetypes",
+  "edhrec": "https://edhrec.com/themes"
  },
  "note": "removal_mass/edict/extra_combat are not ftags; mapped to removal/sacrifice/trigger:beginning_of_combat (coarse). Named cards absent from pool are reference only. ftags signals: 'x' matches tag x and x:*, 'x:y' exact. cmc_ge_N is a computed condition. weak_tags are opposing-deck tags that hurt the archetype (use in balancer).",
  "archetypes": {
@@ -71,6 +218,31 @@
       10
      ]
     },
+    "card_adv": {
+     "sig": [
+      "draw",
+      "cost_sacrifice_target"
+     ],
+     "cards": [
+      "Village Rites",
+      "Deadly Dispute"
+     ],
+     "n": [
+      8,
+      10
+     ]
+    },
+    "edict": {
+     "sig": [
+      "sacrifice",
+      "effect:sacrifice"
+     ],
+     "cards": [],
+     "n": [
+      6,
+      8
+     ]
+    },
     "recursion": {
      "sig": [
       "recursion",
@@ -93,7 +265,6 @@
     "restrict_kind:cant_activate"
    ],
    "overlaps": [
-    "sacrifice",
     "tokens",
     "lifegain",
     "graveyard"
@@ -102,7 +273,8 @@
     "aristocrats",
     "blood_artist",
     "food_chain",
-    "treasure_sac"
+    "treasure_sac",
+    "sacrifice"
    ],
    "colors": [
     "B",
@@ -118,8 +290,8 @@
    "notes": "",
    "src": {
     "sw": "stack 2-3 drain triggers with a free outlet; bracket 2-4",
-    "em": "payoffs 8-10, outlets 5-8, fodder 10-12, engine pieces cost 1-3",
-    "cf": "sub: aristocrats, blood artist, food chain, treasure sac; need fodder+outlet+payoff, outlet redundancy",
+    "em": "payoffs 8-10, outlets 5-8, fodder 10-12, engine pieces cost 1-3; sacrifice page: outlets 3-5, sac-tied card advantage 8-10, edict interaction 6-8",
+    "cf": "sub: aristocrats, blood artist, food chain, treasure sac; Sacrifice group of 17; need fodder+outlet+payoff, outlet redundancy",
     "tz": "usually also go-wide"
    },
    "tz_key_cards": [
@@ -207,110 +379,6 @@
     }
    ],
    "tz_watch_out": "Aristocrats decks can drain the table from a board that looks harmless, which is why experienced pods kill a Blood Artist on sight. Run enough redundancy that losing one payoff is not losing the game, and be honest at Rule 0. A deck that wins from an empty-looking board without attacking surprises people, and the surprise is the part that causes friction."
-  },
-  "sacrifice": {
-   "id": "sacrifice",
-   "plan": "permanents are expendable fuel for outlets; value comes from the sacrifice itself, not only deaths",
-   "stages": [
-    "early: fodder plus at least one free outlet",
-    "mid: sacrifice for mana, cards or triggers; sacrifice in response to removal",
-    "rebuild with recursion and tokens",
-    "win: drain, edicts or attack with rebuilt board"
-   ],
-   "roles": {
-    "outlet": {
-     "sig": [
-      "sacrifice_outlet"
-     ],
-     "cards": [
-      "Viscera Seer",
-      "Carrion Feeder",
-      "Ashnod's Altar",
-      "Phyrexian Altar"
-     ],
-     "n": [
-      3,
-      5
-     ]
-    },
-    "fodder": {
-     "sig": [
-      "token_make",
-      "recursion"
-     ],
-     "cards": [
-      "Reassembling Skeleton"
-     ],
-     "n": [
-      8,
-      10
-     ]
-    },
-    "payoff": {
-     "sig": [
-      "trigger:dies",
-      "sacrifice"
-     ],
-     "cards": [
-      "Grave Pact",
-      "Pitiless Plunderer"
-     ],
-     "n": null
-    },
-    "card_adv": {
-     "sig": [
-      "draw",
-      "cost_sacrifice_target"
-     ],
-     "cards": [
-      "Village Rites",
-      "Deadly Dispute"
-     ],
-     "n": [
-      8,
-      10
-     ]
-    },
-    "interaction": {
-     "sig": [
-      "sacrifice",
-      "effect:sacrifice"
-     ],
-     "cards": [],
-     "n": [
-      6,
-      8
-     ]
-    }
-   },
-   "wins": [
-    "drain via stacked death payoffs",
-    "outlet plus recursion loops",
-    "edict grind then attack"
-   ],
-   "weak": "graveyard hate; loses outlets or payoff enchantments; token-light draws; slow vs fast combo",
-   "weak_tags": [
-    "grave_hate"
-   ],
-   "overlaps": [
-    "aristocrats",
-    "tokens",
-    "graveyard",
-    "reanimator"
-   ],
-   "subs": [],
-   "colors": [
-    "B",
-    "BG",
-    "BR",
-    "BRG"
-   ],
-   "bracket": null,
-   "notes": "",
-   "src": {
-    "em": "outlets 3-5, fodder 8-10, sac-tied card advantage 8-10, edict interaction 6-8, low curve",
-    "cf": "Sacrifice group of 17; needs fodder, outlet, payoff"
-   }
   },
   "tokens": {
    "id": "tokens",
@@ -447,10 +515,9 @@
    "overlaps": [
     "aristocrats",
     "counters",
-    "aggro",
+    "stompy",
     "tribal",
-    "blink",
-    "proliferate"
+    "blink"
    ],
    "subs": [
     "go_wide",
@@ -646,7 +713,7 @@
    "overlaps": [
     "aristocrats",
     "tokens",
-    "aggro"
+    "stompy"
    ],
    "subs": [],
    "colors": [
@@ -759,7 +826,6 @@
    "roles": {
     "attach": {
      "sig": [
-      "equip",
       "kw:equip",
       "kw:enchant",
       "kw:bestow"
@@ -850,6 +916,13 @@
      "sig": [
       "kw:double_strike",
       "trigger:beginning_of_combat"
+     ],
+     "cards": [],
+     "n": null
+    },
+    "support_evasion_grant": {
+     "sig": [
+      "evasion_grant"
      ],
      "cards": [],
      "n": null
@@ -996,7 +1069,6 @@
    "roles": {
     "equipment": {
      "sig": [
-      "equip",
       "kw:equip",
       "target_type:equipment"
      ],
@@ -1042,8 +1114,7 @@
     },
     "carrier": {
      "sig": [
-      "evasion",
-      "grant_double_strike"
+      "evasion"
      ],
      "cards": [],
      "n": [
@@ -1073,7 +1144,7 @@
    ],
    "overlaps": [
     "voltron",
-    "aggro",
+    "stompy",
     "artifacts"
    ],
    "subs": [
@@ -1172,7 +1243,7 @@
    ],
    "overlaps": [
     "graveyard",
-    "sacrifice",
+    "aristocrats",
     "mill"
    ],
    "subs": [
@@ -1258,6 +1329,13 @@
       1,
       2
      ]
+    },
+    "support_mech_graveyard_cast": {
+     "sig": [
+      "mech:graveyard_cast"
+     ],
+     "cards": [],
+     "n": null
     }
    },
    "wins": [
@@ -1271,14 +1349,14 @@
    ],
    "overlaps": [
     "aristocrats",
-    "sacrifice",
     "reanimator",
     "mill"
    ],
    "subs": [
-    "self_mill",
     "dredge",
-    "flashback"
+    "flashback",
+    "escape",
+    "retrace"
    ],
    "colors": [
     "BG",
@@ -1290,6 +1368,7 @@
    "notes": "",
    "src": {
     "sw": "dredge, flashback, escape; overlaps reanimator and self-mill",
+    "edhrec": "Reanimator, Graveyard, Self-Mill, Dredge, Birthing Pod, Flashback, Retrace pages; no recursion tag",
     "em": "fillers 8-10, recursion 8-12, 1-2 backup engines, favor ETB/death-trigger creatures",
     "cf": "same Graveyard group as reanimator"
    },
@@ -1442,7 +1521,7 @@
     },
     "interaction": {
      "sig": [
-      "removal",
+      "remove",
       "counterspell"
      ],
      "cards": [],
@@ -1472,10 +1551,10 @@
    "overlaps": [
     "reanimator",
     "graveyard",
+    "self_mill",
     "control"
    ],
    "subs": [
-    "self_mill",
     "opponent_mill",
     "mill_combo"
    ],
@@ -1665,6 +1744,20 @@
       25,
       35
      ]
+    },
+    "support_look_top": {
+     "sig": [
+      "look_top"
+     ],
+     "cards": [],
+     "n": null
+    },
+    "support_surveil": {
+     "sig": [
+      "surveil"
+     ],
+     "cards": [],
+     "n": null
     }
    },
    "wins": [
@@ -1682,8 +1775,7 @@
    "overlaps": [
     "storm",
     "combo",
-    "control",
-    "card_draw"
+    "control"
    ],
    "subs": [
     "cantrips",
@@ -1873,6 +1965,13 @@
       25,
       35
      ]
+    },
+    "support_cast_free": {
+     "sig": [
+      "cast_free"
+     ],
+     "cards": [],
+     "n": null
     }
    },
    "wins": [
@@ -1986,9 +2085,23 @@
       10
      ]
     },
-    "removal": {
+    "remove": {
      "sig": [
-      "removal"
+      "remove"
+     ],
+     "cards": [],
+     "n": null
+    },
+    "support_cast_free": {
+     "sig": [
+      "cast_free"
+     ],
+     "cards": [],
+     "n": null
+    },
+    "support_extra_turn": {
+     "sig": [
+      "extra_turn"
      ],
      "cards": [],
      "n": null
@@ -2164,12 +2277,22 @@
      "cards": [
       "Evolution Sage",
       "Inexorable Tide",
-      "Karn's Bastion"
+      "Karn's Bastion",
+      "Flux Channeler",
+      "Contagion Engine"
      ],
      "n": [
       4,
-      6
+      8
      ]
+    },
+    "seed": {
+     "sig": [
+      "counter",
+      "loyalty_change"
+     ],
+     "cards": [],
+     "n": null
     },
     "draw_payoff": {
      "sig": [
@@ -2224,7 +2347,8 @@
     "counter_prevent"
    ],
    "overlaps": [
-    "proliferate",
+    "infect",
+    "superfriends",
     "tokens",
     "voltron",
     "lifegain"
@@ -2232,7 +2356,8 @@
    "subs": [
     "p1p1",
     "modular",
-    "hydras"
+    "hydras",
+    "proliferate"
    ],
    "colors": [
     "GW",
@@ -2244,7 +2369,8 @@
    "src": {
     "sw": "doublers, distributors, payoffs, proliferate",
     "em": "multipliers 3-5, creatures 15-20, proliferate 4-6, draw 6-8, ramp 8-10, protection 3-5",
-    "cf": "subs: +1/+1, proliferate, modular, hydras"
+    "cf": "subs: +1/+1, proliferate, modular, hydras",
+    "tz": "Atraxa archetype (proliferate)"
    },
    "tz_key_cards": [
     {
@@ -2332,94 +2458,6 @@
    ],
    "tz_watch_out": "The doublers are the deck and they are all noncreature permanents, so a Vandalblast or a Back to Nature hurts more than a board wipe does. Spread the effect across creatures and enchantments rather than relying on one, and remember that counters do not survive a creature dying unless you have The Ozolith or similar. The archetype looks resilient but is only as durable as the bodies carrying it."
   },
-  "proliferate": {
-   "id": "proliferate",
-   "plan": "seed any counter type, then one trigger adds to all of them",
-   "stages": [
-    "place first counters (+1/+1, poison, loyalty, charge)",
-    "trigger proliferate from spells, lands, abilities",
-    "spread across creatures, walkers, artifacts",
-    "protect board",
-    "pick route (combat, ultimates, poison)"
-   ],
-   "roles": {
-    "engine": {
-     "sig": [
-      "proliferate"
-     ],
-     "cards": [
-      "Evolution Sage",
-      "Flux Channeler",
-      "Inexorable Tide",
-      "Contagion Engine",
-      "Karn's Bastion"
-     ],
-     "n": [
-      8,
-      12
-     ]
-    },
-    "seed": {
-     "sig": [
-      "counter",
-      "loyalty_change"
-     ],
-     "cards": [],
-     "n": [
-      10,
-      15
-     ]
-    },
-    "protection": {
-     "sig": [
-      "protection_trick"
-     ],
-     "cards": [
-      "The Ozolith"
-     ],
-     "n": null
-    },
-    "draw": {
-     "sig": [
-      "draw"
-     ],
-     "cards": [],
-     "n": [
-      8,
-      10
-     ]
-    }
-   },
-   "wins": [
-    "grown counter board",
-    "planeswalker ultimates",
-    "ten poison via proliferate",
-    "Simic Ascendancy"
-   ],
-   "weak": "proliferate multiplies but does not create; board wipes; slow; poison draws attention",
-   "weak_tags": [
-    "removal"
-   ],
-   "overlaps": [
-    "counters",
-    "infect",
-    "superfriends"
-   ],
-   "subs": [],
-   "colors": [
-    "GU",
-    "WUBG",
-    "WU",
-    "UB"
-   ],
-   "bracket": null,
-   "notes": "",
-   "src": {
-    "em": "engines 8-12, seeds 10-15, draw 8-10, poison 1-2 optional; careful with sagas/vanishing/fading",
-    "cf": "sub of Counters",
-    "tz": "Atraxa archetype"
-   }
-  },
   "infect": {
    "id": "infect",
    "plan": "poison (infect/toxic) instead of life loss; 10 counters via a pumped evasive attacker plus proliferate",
@@ -2498,8 +2536,8 @@
    ],
    "overlaps": [
     "voltron",
-    "proliferate",
-    "aggro"
+    "counters",
+    "stompy"
    ],
    "subs": [],
    "colors": [
@@ -2512,7 +2550,13 @@
    "src": {
     "em": "creatures 15-20, pump 6-10, proliferate 5-8, protection 6-8",
     "cf": "sub of Voltron: Infect"
-   }
+   },
+   "niche": true,
+   "crossover": [
+    "counters",
+    "voltron",
+    "stompy"
+   ]
   },
   "lifegain": {
    "id": "lifegain",
@@ -2589,8 +2633,7 @@
     },
     "interaction": {
      "sig": [
-      "removal",
-      "removal"
+      "remove"
      ],
      "cards": [],
      "n": [
@@ -2737,7 +2780,7 @@
     "flicker": {
      "sig": [
       "clone",
-      "exile",
+      "remove:exile",
       "return",
       "put_onto_battlefield"
      ],
@@ -2806,6 +2849,13 @@
       "Palinchron"
      ],
      "n": null
+    },
+    "support_bounce": {
+     "sig": [
+      "bounce"
+     ],
+     "cards": [],
+     "n": null
     }
    },
    "wins": [
@@ -2820,7 +2870,6 @@
    ],
    "overlaps": [
     "control",
-    "card_draw",
     "tokens"
    ],
    "subs": [
@@ -3012,7 +3061,7 @@
     },
     "interaction": {
      "sig": [
-      "removal"
+      "remove"
      ],
      "cards": [],
      "n": [
@@ -3032,15 +3081,14 @@
     "restrict"
    ],
    "overlaps": [
-    "ramp",
+    "lands_matter",
     "big_mana",
     "tokens"
    ],
    "subs": [
     "landfall",
-    "land_destruction",
     "land_recursion",
-    "mazes_end"
+    "extra_drops"
    ],
    "colors": [
     "G",
@@ -3056,279 +3104,11 @@
     "cf": "Lands group: landfall, land destruction, land recursion, Maze's End",
     "tz": "lands matter is usually also ramp"
    },
-   "tz_key_cards": [
-    {
-     "name": "Lotus Cobra",
-     "why": "A Treasure-like mana boost on every landfall trigger. Turns a fetchland into acceleration and snowballs from turn two."
-    },
-    {
-     "name": "Crucible of Worlds",
-     "why": "Play lands from your graveyard. The card that turns every fetchland and sacrifice land into a repeatable engine."
-    },
-    {
-     "name": "Ramunap Excavator",
-     "why": "The same effect on a creature, which means green can tutor for it. Redundancy is what makes the engine reliable."
-    },
-    {
-     "name": "Life from the Loam",
-     "why": "Dredge back three lands a turn. The most efficient land-recursion engine ever printed, and it never runs out."
-    },
-    {
-     "name": "Splendid Reclamation",
-     "why": "Returns every land from your graveyard to the battlefield at once, triggering landfall for each of them."
-    },
-    {
-     "name": "Avenger of Zendikar",
-     "why": "A Plant per land, then pumps them all on every landfall. The archetype's most reliable one-card win condition."
-    },
-    {
-     "name": "Field of the Dead",
-     "why": "A 2/2 Zombie for every land drop once you have seven differently named lands. Free bodies from a land slot."
-    },
-    {
-     "name": "Exploration",
-     "why": "An extra land drop every turn for one mana. Doubles the trigger count for the whole game."
-    },
-    {
-     "name": "Tireless Tracker",
-     "why": "A Clue on every landfall and counters on itself when you crack them. Card advantage that also becomes a threat."
-    },
-    {
-     "name": "Aftermath Analyst",
-     "why": "Self-mills, then returns every land from your graveyard when sacrificed. A modern Splendid Reclamation on a body."
-    }
-   ],
-   "tz_key_commanders": [
-    {
-     "name": "Lord Windgrace",
-     "why": "A planeswalker commander that recurs lands, draws, and makes 2/2 Cats. Purpose-built for the archetype."
-    },
-    {
-     "name": "The Gitrog Monster",
-     "why": "Draws on every land put into the graveyard and eats a land each upkeep. Value engine and infamous combo piece."
-    },
-    {
-     "name": "Titania, Protector of Argoth",
-     "why": "A 5/3 Elemental for every land that hits your graveyard. Converts a fetchland into an army."
-    },
-    {
-     "name": "Tatyova, Benthic Druid",
-     "why": "A card and a life on every landfall. The friendliest entry point to the archetype and still one of the best."
-    },
-    {
-     "name": "Omnath, Locus of Creation",
-     "why": "Escalating payouts on the first, second, and third landfall each turn. Rewards extra land drops directly."
-    },
-    {
-     "name": "Aesi, Tyrant of Gyre Strait",
-     "why": "An extra land drop and a card on your first land each turn, Tatyova plus Exploration in the command zone."
-    },
-    {
-     "name": "Multani, Yavimaya's Avatar",
-     "why": "Grows with lands on the battlefield and in the graveyard, and returns to hand from either. A recurring Voltron threat."
-    },
-    {
-     "name": "Sasaya, Orochi Ascendant",
-     "why": "Flips once you hold seven lands and then makes each land tap for its whole type. Absurd mana from a mono-green shell."
-    },
-    {
-     "name": "Ob Nixilis, the Fallen",
-     "why": "Landfall that drains three from an opponent and grows him by three. A mono-black clock built on land drops."
-    },
-    {
-     "name": "Kodama of the East Tree",
-     "why": "Every permanent entering lets you put another from hand onto the battlefield, chaining off every land drop."
-    }
-   ],
-   "tz_watch_out": "This is a slow archetype whose best turns come late, and it can spend the first six turns doing nothing that looks like a threat. That is usually fine (nobody attacks the lands player) but it means the deck needs a real payoff and enough draw to find it. Watch out too for combo lines the archetype falls into by accident: several lands commanders assemble loops that end games abruptly, which may be more than your pod signed up for."
-  },
-  "ramp": {
-   "id": "ramp",
-   "plan": "accelerate early so later turns come sooner; mana lead converts to threats ahead of curve",
-   "stages": [
-    "turns 1-3: rocks, dorks, land ramp",
-    "have more mana than the table",
-    "deploy threats ahead of curve",
-    "close with scaling top-end"
-   ],
-   "roles": {
-    "ramp": {
-     "sig": [
-      "mana_source",
-      "land_tutor",
-      "tutor_target:basic_land"
-     ],
-     "cards": [
-      "Sol Ring",
-      "Cultivate",
-      "Sakura-Tribe Elder",
-      "Llanowar Elves",
-      "Arcane Signet",
-      "Kodama's Reach",
-      "Rampant Growth"
-     ],
-     "n": [
-      10,
-      12
-     ]
-    },
-    "multiplier": {
-     "sig": [
-      "mana_amount",
-      "replace"
-     ],
-     "cards": [
-      "Zendikar Resurgent",
-      "Mana Reflection",
-      "Nyxbloom Ancient"
-     ],
-     "n": null
-    },
-    "draw": {
-     "sig": [
-      "draw"
-     ],
-     "cards": [],
-     "n": [
-      8,
-      10
-     ]
-    },
-    "interaction": {
-     "sig": [
-      "removal",
-      "counterspell"
-     ],
-     "cards": [],
-     "n": [
-      8,
-      10
-     ]
-    },
-    "finisher": {
-     "sig": [
-      "x_is:x_paid"
-     ],
-     "cards": [
-      "Craterhoof Behemoth"
-     ],
-     "n": null
-    }
-   },
-   "wins": [
-    "scaling top-end threats",
-    "big X spells",
-    "mana-lead tempo"
-   ],
-   "weak": "exposes you to aggro and combo; one big threat dies to removal; wipes hit dorks and rocks",
-   "weak_tags": [
-    "removal",
-    "counterspell"
-   ],
-   "overlaps": [
-    "big_mana",
-    "landfall",
-    "artifacts",
-    "group_hug"
-   ],
-   "subs": [],
-   "colors": [
-    "G",
-    "GU",
-    "RG",
-    "GW"
-   ],
-   "bracket": null,
-   "notes": "",
-   "src": {
-    "em": "ramp 10-12 (prioritise 2-mana), lands 37-40, draw 8-10, interaction 8-10",
-    "tz": "ramp pairs with lands matter"
-   },
-   "tz_key_cards": [
-    {
-     "name": "Sol Ring",
-     "why": "One mana for a rock that taps for two. The most-played card in the format, and the single best ramp card in it."
-    },
-    {
-     "name": "Arcane Signet",
-     "why": "Two mana, taps for any color in your identity. The most efficient fixing-plus-ramp rock in a multicolor deck."
-    },
-    {
-     "name": "Nature's Lore",
-     "why": "Two mana for an untapped dual land from the library. Faster than Rampant Growth and fixes better."
-    },
-    {
-     "name": "Three Visits",
-     "why": "The functional reprint of the above, which is why green ramp decks can run both effects."
-    },
-    {
-     "name": "Cultivate",
-     "why": "Slower, but it puts one land on the battlefield and one in hand, so it fixes and guarantees the next land drop."
-    },
-    {
-     "name": "Kodama's Reach",
-     "why": "The same card again under a different name. Redundancy is the point in a deck that wants this effect every game."
-    },
-    {
-     "name": "Burgeoning",
-     "why": "An extra land drop for every opponent's first land. On turn one this is the most explosive ramp card in the format."
-    },
-    {
-     "name": "Smothering Tithe",
-     "why": "A Treasure whenever an opponent draws, unless they pay. In a four-player game this generates absurd quantities of mana."
-    },
-    {
-     "name": "Cabal Coffers",
-     "why": "Mana per Swamp, which in mono-black turns a normal land count into double-digit mana by turn six."
-    },
-    {
-     "name": "Nyxbloom Ancient",
-     "why": "Triples mana from every source you control. The largest single multiplier available, and a win condition attached to a 5/5 trample."
-    }
-   ],
-   "tz_key_commanders": [
-    {
-     "name": "Azusa, Lost but Seeking",
-     "why": "Two extra land drops every turn. Mono-green, cheap, and the purest expression of the archetype."
-    },
-    {
-     "name": "Omnath, Locus of Mana",
-     "why": "Green mana does not empty from your pool and he grows with it. Turns a big turn into a big creature."
-    },
-    {
-     "name": "Marwyn, the Nurturer",
-     "why": "An Elf that grows with every Elf and taps for her power. Ramp and tribal in one command zone."
-    },
-    {
-     "name": "Karametra, God of Harvests",
-     "why": "A land from the library for every creature you cast, so the deck ramps just by playing normally."
-    },
-    {
-     "name": "Zaxara, the Exemplary",
-     "why": "A Hydra token for every X spell, plus infinite-mana-friendly abilities. The classic big-X payoff commander."
-    },
-    {
-     "name": "Nikya of the Old Ways",
-     "why": "Double mana from lands at the cost of casting no noncreature spells. A genuine deckbuilding constraint with a huge payoff."
-    },
-    {
-     "name": "Goreclaw, Terror of Qal Sisma",
-     "why": "Cost reduction and a pump-and-trample anthem for big creatures. Ramp that also finishes."
-    },
-    {
-     "name": "Grand Warlord Radha",
-     "why": "Mana for every attacking creature that carries into your second main phase. Aggro and ramp on the same trigger."
-    },
-    {
-     "name": "Jodah, Archmage Eternal",
-     "why": "Casts anything for five mana of any colors, which turns ramp into an excuse to play the biggest cards in Magic."
-    },
-    {
-     "name": "Kruphix, God of Horizons",
-     "why": "Unused mana carries over as colorless and your hand size is unlimited. Stores a ramp advantage across turns."
-    }
-   ],
-   "tz_watch_out": "Ramp's danger window is turns four through six: you have spent cards on mana, you have nothing on board, and everyone else has creatures. Decks that lose with ramp usually lose there, not to a lack of mana. Keep the curve honest, run some interaction, and make sure the payoffs arrive before the window closes. A deck that ramps to twelve mana and then casts a seven-drop that dies to removal has not accomplished anything."
+   "niche": true,
+   "crossover": [
+    "lands_matter",
+    "big_mana"
+   ]
   },
   "big_mana": {
    "id": "big_mana",
@@ -3403,7 +3183,7 @@
     },
     "interaction": {
      "sig": [
-      "removal",
+      "remove",
       "counterspell"
      ],
      "cards": [],
@@ -3424,9 +3204,9 @@
     "counterspell"
    ],
    "overlaps": [
-    "ramp",
     "storm",
-    "landfall"
+    "landfall",
+    "lands_matter"
    ],
    "subs": [],
    "colors": [
@@ -3505,6 +3285,13 @@
       1,
       2
      ]
+    },
+    "support_tap_down": {
+     "sig": [
+      "tap_down"
+     ],
+     "cards": [],
+     "n": null
     }
    },
    "wins": [
@@ -3643,7 +3430,7 @@
     "answer": {
      "sig": [
       "counterspell",
-      "removal"
+      "remove"
      ],
      "cards": [
       "Swords to Plowshares",
@@ -3656,7 +3443,7 @@
     },
     "sweeper": {
      "sig": [
-      "removal"
+      "remove"
      ],
      "cards": [
       "Supreme Verdict"
@@ -3687,6 +3474,20 @@
       2,
       3
      ]
+    },
+    "support_bounce": {
+     "sig": [
+      "bounce"
+     ],
+     "cards": [],
+     "n": null
+    },
+    "support_tap_down": {
+     "sig": [
+      "tap_down"
+     ],
+     "cards": [],
+     "n": null
     }
    },
    "wins": [
@@ -3700,7 +3501,6 @@
     "cant_be_countered"
    ],
    "overlaps": [
-    "card_draw",
     "blink",
     "mill",
     "stax",
@@ -3823,6 +3623,7 @@
    "roles": {
     "shared": {
      "sig": [
+      "gift_all",
       "draw",
       "put_onto_battlefield"
      ],
@@ -3870,6 +3671,13 @@
       "Approach of the Second Sun"
      ],
      "n": null
+    },
+    "support_monarch": {
+     "sig": [
+      "monarch"
+     ],
+     "cards": [],
+     "n": null
     }
    },
    "wins": [
@@ -3882,9 +3690,7 @@
     "removal"
    ],
    "overlaps": [
-    "lifegain",
-    "card_draw",
-    "ramp"
+    "lifegain"
    ],
    "subs": [],
    "colors": [
@@ -3982,7 +3788,12 @@
      "why": "The group-slug inversion: everyone draws extra and takes damage for it. The same cards, aimed the other way."
     }
    ],
-   "tz_watch_out": "Group hug earns a reputation quickly, and it is usually deserved. A table that has been handed forty cards over eight turns and then loses to a Psychosis Crawler will remember. Decide what your deck is, say so at the start, and if it is a hug-into-kill deck, tell people. The strategy is fine; the ambush is what causes friction. The other failure mode is the sincere one: a genuine hug deck can accelerate a stronger deck into winning far sooner than it would have."
+   "tz_watch_out": "Group hug earns a reputation quickly, and it is usually deserved. A table that has been handed forty cards over eight turns and then loses to a Psychosis Crawler will remember. Decide what your deck is, say so at the start, and if it is a hug-into-kill deck, tell people. The strategy is fine; the ambush is what causes friction. The other failure mode is the sincere one: a genuine hug deck can accelerate a stronger deck into winning far sooner than it would have.",
+   "niche": true,
+   "crossover": [
+    "pillow_fort",
+    "forced_combat"
+   ]
   },
   "enchantress": {
    "id": "enchantress",
@@ -4039,6 +3850,7 @@
     },
     "payoff": {
      "sig": [
+      "ench_payoff",
       "token_make"
      ],
      "cards": [
@@ -4069,7 +3881,6 @@
     "removal"
    ],
    "overlaps": [
-    "card_draw",
     "voltron",
     "lifegain"
    ],
@@ -4175,7 +3986,13 @@
      "why": "Makes a free Role token on every creature you cast, so the enchantment count climbs without spending cards."
     }
    ],
-   "tz_watch_out": "Enchantress can draw twenty cards and still not win. The archetype's classic failure is assembling a beautiful, unattackable board with no way to close, while the table plays around it. Decide early how the deck wins (Angels, an aura-based commander kill, or a combo) and run enough copies of that plan that drawing half your library actually finds one."
+   "tz_watch_out": "Enchantress can draw twenty cards and still not win. The archetype's classic failure is assembling a beautiful, unattackable board with no way to close, while the table plays around it. Decide early how the deck wins (Angels, an aura-based commander kill, or a combo) and run enough copies of that plan that drawing half your library actually finds one.",
+   "niche": true,
+   "crossover": [
+    "sagas",
+    "control",
+    "pillow_fort"
+   ]
   },
   "artifacts": {
    "id": "artifacts",
@@ -4274,6 +4091,13 @@
       "Aetherflux Reservoir"
      ],
      "n": null
+    },
+    "support_investigate": {
+     "sig": [
+      "investigate"
+     ],
+     "cards": [],
+     "n": null
     }
    },
    "wins": [
@@ -4289,7 +4113,6 @@
    "overlaps": [
     "equipment",
     "stax",
-    "ramp",
     "treasure"
    ],
    "subs": [
@@ -4443,7 +4266,7 @@
     "defense": {
      "sig": [
       "token_make",
-      "removal"
+      "remove"
      ],
      "cards": [
       "Elspeth, Sun's Champion",
@@ -4461,9 +4284,9 @@
      ],
      "n": null
     },
-    "removal": {
+    "remove": {
      "sig": [
-      "removal"
+      "remove"
      ],
      "cards": [
       "Karn Liberated"
@@ -4481,7 +4304,6 @@
    ],
    "overlaps": [
     "counters",
-    "proliferate",
     "control"
    ],
    "subs": [],
@@ -4581,16 +4403,87 @@
    ],
    "tz_watch_out": "A planeswalker with four loyalty in a four-player game is a planeswalker with one loyalty. The archetype fails when it plays walkers without defence: every one becomes a free attack target that dies before it does anything. Build the fort first: deterrent enchantments, blockers, and sweepers, then the walkers. Superfriends is also mana-hungry and slow, so expect to be the archdeck target once two ultimates have resolved."
   },
-  "aggro": {
-   "id": "aggro",
-   "plan": "commit cheap threats early and attack often; 120 total damage across the table",
+  "burn": {
+   "id": "burn",
+   "plan": "direct damage to faces scaled to 120 life across three opponents: each-opponent effects and multipliers",
    "stages": [
-    "deploy 1-3 mana creatures early",
-    "attack before engines stabilise",
-    "spread pressure at the opponent who absorbs least",
-    "anthems, haste, attack triggers scale bodies",
-    "chain extra combats",
-    "refuel with combat draw"
+    "prioritise each-opponent damage and doublers",
+    "repeatable pingers",
+    "earthquake effects"
+   ],
+   "roles": {
+    "damage": {
+     "sig": [
+      "burn",
+      "damage",
+      "damage_amount"
+     ],
+     "cards": [
+      "Torbran, Thane of Red Fell",
+      "Purphoros, God of the Forge",
+      "Kaervek the Merciless"
+     ],
+     "n": null
+    },
+    "multiplier": {
+     "sig": [
+      "replace"
+     ],
+     "cards": [
+      "Torbran, Thane of Red Fell"
+     ],
+     "n": null
+    },
+    "pinger": {
+     "sig": [
+      "damage",
+      "cost:tap"
+     ],
+     "cards": [],
+     "n": null
+    }
+   },
+   "wins": [
+    "face damage with multipliers",
+    "Earthquake",
+    "group slug"
+   ],
+   "weak": "single-target burn is inefficient in multiplayer; lifegain",
+   "weak_tags": [
+    "lifegain"
+   ],
+   "overlaps": [
+    "stompy",
+    "spellslinger",
+    "group_slug"
+   ],
+   "subs": [
+    "direct_damage",
+    "ping",
+    "group_slug",
+    "earthquake"
+   ],
+   "colors": [
+    "R",
+    "BR",
+    "UR"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "burn must scale to 120 life",
+    "cf": "subs: direct damage, ping, group slug, earthquake"
+   }
+  },
+  "stompy": {
+   "id": "stompy",
+   "plan": "cheap-to-mid big creatures outsize the table; haste, trample and pump close fast (our former aggro folded in)",
+   "stages": [
+    "turn 1-3: mana creatures and efficient bodies",
+    "turn 3-5: oversized threats that outclass blockers",
+    "anthems, haste and attack triggers scale the bodies",
+    "extra combats and combat draw refuel",
+    "close with trample or mass pump"
    ],
    "roles": {
     "creature": {
@@ -4601,6 +4494,22 @@
      "n": [
       25,
       35
+     ]
+    },
+    "big_body": {
+     "sig": [
+      "condition:creature_you_control_power_ge_4",
+      "scales:creature_power_ge_4",
+      "kw:trample"
+     ],
+     "cards": [
+      "Ghalta, Primal Hunger",
+      "Rampaging Baloths",
+      "Overwhelming Stampede"
+     ],
+     "n": [
+      8,
+      12
      ]
     },
     "anthem": {
@@ -4654,28 +4563,37 @@
     },
     "finisher": {
      "sig": [
-      "damage"
+      "damage",
+      "grant_kw:trample"
      ],
      "cards": [
       "Impact Tremors",
+      "Craterhoof Behemoth",
       "Isshin, Two Heavens as One"
      ],
      "n": null
     },
-    "removal": {
+    "remove": {
      "sig": [
-      "removal"
+      "remove"
+     ],
+     "cards": [],
+     "n": null
+    },
+    "support_fight": {
+     "sig": [
+      "fight"
      ],
      "cards": [],
      "n": null
     }
    },
    "wins": [
-    "wide anthem attacks over consecutive turns",
+    "wide or tall anthem attacks over consecutive turns",
     "extra combats for 40+ in a turn",
-    "burn/drain at low life"
+    "trample pump alpha"
    ],
-   "weak": "board wipes; running out of gas; pillowfort and lifegain; late topdecks",
+   "weak": "board wipes; running out of gas; pillowfort and lifegain; fog; late topdecks",
    "weak_tags": [
     "removal",
     "attack_tax",
@@ -4685,7 +4603,8 @@
     "tokens",
     "equipment",
     "infect",
-    "tribal"
+    "tribal",
+    "extra_combats"
    ],
    "subs": [
     "aggro",
@@ -4693,15 +4612,16 @@
     "power_matters"
    ],
    "colors": [
-    "RW",
+    "G",
     "RG",
-    "BRW",
+    "RW",
     "R"
    ],
    "bracket": null,
    "notes": "",
    "src": {
-    "em": "creatures 25-35, anthems 2-4, extra combats 2-3, lands 33-35",
+    "sw": "Stompy (niche list); big efficient creatures",
+    "em": "creatures 25-35, anthems 2-4, extra combats 2-3, lands 33-35 (aggro page)",
     "cf": "Creatures group: aggro; Beginner friendly"
    },
    "tz_key_cards": [
@@ -4790,302 +4710,1470 @@
    ],
    "tz_watch_out": "The politics are the hard part. Attacking early makes you the visible threat, and three opponents can agree to deal with you long before your deck is finished. Spread damage rather than focusing one player down unless you can finish them, and be realistic about the deck's clock. An aggro deck that has not won by turn eight is usually the worst deck at the table."
   },
-  "card_draw": {
-   "id": "card_draw",
-   "plan": "draw beyond the normal turn draw and convert a full hand to damage, drain or stocked interaction",
+  "lands_matter": {
+   "id": "lands_matter",
+   "plan": "lands are the resource: extra drops, land recursion and land payoffs; land destruction and Maze's End are variants",
    "stages": [
-    "deploy cheap draw engines early",
-    "draw extra",
-    "convert to damage/drain/tokens/answers",
-    "hold interaction",
-    "win late with card advantage"
+    "turn 1-3: land ramp and extra land drops",
+    "mid: land-count payoffs and recursion from the graveyard",
+    "deny opposing lands in the land-destruction variant",
+    "close with a land-count X spell, creature lands or Maze's End"
    ],
    "roles": {
-    "engine": {
+    "ramp_land": {
      "sig": [
-      "draw",
-      "draw_count"
+      "land_tutor",
+      "extra_land_drop"
      ],
      "cards": [
-      "Rhystic Study",
-      "Mystic Remora",
-      "Guardian Project",
-      "Windfall"
+      "Cultivate",
+      "Exploration",
+      "Oracle of Mul Daya",
+      "Azusa, Lost but Seeking"
      ],
      "n": [
-      10,
-      15
+      8,
+      12
      ]
-    },
-    "cantrip": {
-     "sig": [
-      "draw",
-      "selection"
-     ],
-     "cards": [
-      "Brainstorm",
-      "Ponder"
-     ],
-     "n": null
     },
     "payoff": {
      "sig": [
-      "draw"
+      "x_is:count_land_you_control",
+      "niche:lands",
+      "niche:land"
      ],
      "cards": [
-      "Niv-Mizzet, Parun",
-      "Sheoldred, the Apocalypse",
-      "Psychosis Crawler",
-      "Consecrated Sphinx"
+      "Field of the Dead",
+      "Crucible of Worlds",
+      "Titania, Protector of Argoth"
      ],
+     "n": [
+      6,
+      10
+     ]
+    },
+    "recursion": {
+     "sig": [
+      "recursion",
+      "from_zone:graveyard"
+     ],
+     "cards": [
+      "Life from the Loam",
+      "Ramunap Excavator"
+     ],
+     "n": [
+      2,
+      3
+     ]
+    },
+    "denial": {
+     "sig": [],
+     "cards": [
+      "Armageddon",
+      "Wasteland",
+      "Strip Mine"
+     ],
+     "n": null
+    },
+    "interaction": {
+     "sig": [
+      "remove"
+     ],
+     "cards": [],
+     "n": [
+      5,
+      7
+     ]
+    }
+   },
+   "wins": [
+    "land-count X spell",
+    "Field of the Dead / creature lands",
+    "Maze's End",
+    "land destruction lock"
+   ],
+   "weak": "Strip Mine, Wasteland, Blood Moon, Back to Basics; wipes; slow start without ramp",
+   "weak_tags": [
+    "removal_land",
+    "restrict"
+   ],
+   "overlaps": [
+    "landfall",
+    "big_mana",
+    "stax"
+   ],
+   "subs": [
+    "land_destruction",
+    "mazes_end",
+    "land_recursion"
+   ],
+   "colors": [
+    "G",
+    "RG",
+    "GU",
+    "GW"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "Lands Matter (featured); separate from Landfall",
+    "em": "lands 40+ (landfall page)",
+    "cf": "Lands group: landfall, land destruction, land recursion, Maze's End",
+    "tz": "lands matter is usually also ramp"
+   },
+   "tz_key_cards": [
+    {
+     "name": "Lotus Cobra",
+     "why": "A Treasure-like mana boost on every landfall trigger. Turns a fetchland into acceleration and snowballs from turn two."
+    },
+    {
+     "name": "Crucible of Worlds",
+     "why": "Play lands from your graveyard. The card that turns every fetchland and sacrifice land into a repeatable engine."
+    },
+    {
+     "name": "Ramunap Excavator",
+     "why": "The same effect on a creature, which means green can tutor for it. Redundancy is what makes the engine reliable."
+    },
+    {
+     "name": "Life from the Loam",
+     "why": "Dredge back three lands a turn. The most efficient land-recursion engine ever printed, and it never runs out."
+    },
+    {
+     "name": "Splendid Reclamation",
+     "why": "Returns every land from your graveyard to the battlefield at once, triggering landfall for each of them."
+    },
+    {
+     "name": "Avenger of Zendikar",
+     "why": "A Plant per land, then pumps them all on every landfall. The archetype's most reliable one-card win condition."
+    },
+    {
+     "name": "Field of the Dead",
+     "why": "A 2/2 Zombie for every land drop once you have seven differently named lands. Free bodies from a land slot."
+    },
+    {
+     "name": "Exploration",
+     "why": "An extra land drop every turn for one mana. Doubles the trigger count for the whole game."
+    },
+    {
+     "name": "Tireless Tracker",
+     "why": "A Clue on every landfall and counters on itself when you crack them. Card advantage that also becomes a threat."
+    },
+    {
+     "name": "Aftermath Analyst",
+     "why": "Self-mills, then returns every land from your graveyard when sacrificed. A modern Splendid Reclamation on a body."
+    }
+   ],
+   "tz_key_commanders": [
+    {
+     "name": "Lord Windgrace",
+     "why": "A planeswalker commander that recurs lands, draws, and makes 2/2 Cats. Purpose-built for the archetype."
+    },
+    {
+     "name": "The Gitrog Monster",
+     "why": "Draws on every land put into the graveyard and eats a land each upkeep. Value engine and infamous combo piece."
+    },
+    {
+     "name": "Titania, Protector of Argoth",
+     "why": "A 5/3 Elemental for every land that hits your graveyard. Converts a fetchland into an army."
+    },
+    {
+     "name": "Tatyova, Benthic Druid",
+     "why": "A card and a life on every landfall. The friendliest entry point to the archetype and still one of the best."
+    },
+    {
+     "name": "Omnath, Locus of Creation",
+     "why": "Escalating payouts on the first, second, and third landfall each turn. Rewards extra land drops directly."
+    },
+    {
+     "name": "Aesi, Tyrant of Gyre Strait",
+     "why": "An extra land drop and a card on your first land each turn, Tatyova plus Exploration in the command zone."
+    },
+    {
+     "name": "Multani, Yavimaya's Avatar",
+     "why": "Grows with lands on the battlefield and in the graveyard, and returns to hand from either. A recurring Voltron threat."
+    },
+    {
+     "name": "Sasaya, Orochi Ascendant",
+     "why": "Flips once you hold seven lands and then makes each land tap for its whole type. Absurd mana from a mono-green shell."
+    },
+    {
+     "name": "Ob Nixilis, the Fallen",
+     "why": "Landfall that drains three from an opponent and grows him by three. A mono-black clock built on land drops."
+    },
+    {
+     "name": "Kodama of the East Tree",
+     "why": "Every permanent entering lets you put another from hand onto the battlefield, chaining off every land drop."
+    }
+   ],
+   "tz_watch_out": "This is a slow archetype whose best turns come late, and it can spend the first six turns doing nothing that looks like a threat. That is usually fine (nobody attacks the lands player) but it means the deck needs a real payoff and enough draw to find it. Watch out too for combo lines the archetype falls into by accident: several lands commanders assemble loops that end games abruptly, which may be more than your pod signed up for."
+  },
+  "outlaws": {
+   "id": "outlaws",
+   "plan": "typal ninja-pirate-rogue-assassin-mercenary-warlock deck that triggers on committing crimes (targeting opponents)",
+   "stages": [
+    "early: cheap outlaw bodies",
+    "mid: crime triggers (target an opponent, their spell or permanent) pay off",
+    "lords and tutors for the outlaw types",
+    "close with evasive outlaw swarm or a crime payoff"
+   ],
+   "roles": {
+    "outlaw": {
+     "sig": [
+      "type:assassin",
+      "type:pirate",
+      "type:rogue",
+      "type:mercenary",
+      "type:warlock"
+     ],
+     "cards": [
+      "Slickshot Show-Off",
+      "Magda, Brazen Outlaw"
+     ],
+     "n": [
+      18,
+      28
+     ]
+    },
+    "lord": {
+     "sig": [
+      "lord:assassin",
+      "lord:pirate",
+      "lord:rogue",
+      "scales:outlaw"
+     ],
+     "cards": [],
+     "n": [
+      3,
+      6
+     ]
+    },
+    "crime_trigger": {
+     "sig": [
+      "trigger_filter:pirate",
+      "trigger_filter:rogue",
+      "trigger_filter:assassin"
+     ],
+     "cards": [],
+     "n": null
+    },
+    "cost_reducer": {
+     "sig": [
+      "cost_reduce_for:rogue"
+     ],
+     "cards": [],
+     "n": null
+    },
+    "tutor": {
+     "sig": [
+      "tutor_target:permanent_mercenary"
+     ],
+     "cards": [
+      "Mercenary Informer"
+     ],
+     "n": null
+    }
+   },
+   "wins": [
+    "evasive outlaw alpha",
+    "crime payoff value",
+    "treasure engine"
+   ],
+   "weak": "wipes; few payoffs outside outlaw types; targeted removal on lords; tribal filler dilutes the deck",
+   "weak_tags": [
+    "removal"
+   ],
+   "overlaps": [
+    "tribal",
+    "treasure",
+    "stompy"
+   ],
+   "subs": [],
+   "colors": [
+    "B",
+    "BR",
+    "UB",
+    "R"
+   ],
+   "bracket": null,
+   "notes": "Outlaws is a mechanic family (Thunder Junction), not a creature type; tag coverage is partial (types plus lords)",
+   "src": {
+    "sw": "Outlaws (niche list)"
+   }
+  },
+  "clones": {
+   "id": "clones",
+   "plan": "copy the best permanent on the table, yours or theirs, and recur copy effects",
+   "stages": [
+    "play a flexible clone on turn 3-5",
+    "copy the strongest creature or ETB value piece",
+    "add copy triggers (Sakashima, Helm of the Host)",
+    "close with copied bombs"
+   ],
+   "roles": {
+    "clone": {
+     "sig": [
+      "clone",
+      "token_type:copy"
+     ],
+     "cards": [
+      "Clone",
+      "Phyrexian Metamorph",
+      "Sakashima of a Thousand Faces",
+      "Vesuvan Shapeshifter"
+     ],
+     "n": [
+      10,
+      16
+     ]
+    },
+    "etb_target": {
+     "sig": [
+      "trigger:etb"
+     ],
+     "cards": [
+      "Mulldrifter",
+      "Thragtusk"
+     ],
+     "n": [
+      10,
+      14
+     ]
+    },
+    "recursion": {
+     "sig": [
+      "recursion"
+     ],
+     "cards": [],
+     "n": null
+    },
+    "remove": {
+     "sig": [
+      "remove"
+     ],
+     "cards": [],
+     "n": [
+      6,
+      8
+     ]
+    }
+   },
+   "wins": [
+    "copy the biggest threat",
+    "legend-rule tricks with Sakashima",
+    "ETB copies"
+   ],
+   "weak": "no good targets on an empty board; wipes; counterspells on key clones",
+   "weak_tags": [
+    "removal"
+   ],
+   "overlaps": [
+    "blink",
+    "combo"
+   ],
+   "subs": [],
+   "colors": [
+    "U",
+    "UR",
+    "UG"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "Clones (niche list)"
+   }
+  },
+  "extra_combats": {
+   "id": "extra_combats",
+   "plan": "extra combat steps multiply attack triggers and damage per turn",
+   "stages": [
+    "deploy attack-trigger creatures",
+    "extra combat enablers",
+    "untap and pump per combat",
+    "close with a multi-combat alpha"
+   ],
+   "roles": {
+    "extra_combat": {
+     "sig": [
+      "trigger:beginning_of_combat"
+     ],
+     "cards": [
+      "Aggravated Assault",
+      "Relentless Assault",
+      "Combat Celebrant",
+      "Moraug, Fury of Akoum",
+      "Najeela, the Blade-Blossom"
+     ],
+     "n": [
+      6,
+      10
+     ]
+    },
+    "attack_trigger": {
+     "sig": [
+      "trigger:combat_damage",
+      "kw:melee",
+      "kw:myriad"
+     ],
+     "cards": [
+      "Hellkite Charger"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "haste": {
+     "sig": [
+      "haste_grant",
+      "kw:haste"
+     ],
+     "cards": [
+      "Fervor"
+     ],
+     "n": null
+    },
+    "pump": {
+     "sig": [
+      "pump_team",
+      "grant_kw:trample"
+     ],
+     "cards": [
+      "Overwhelming Stampede"
+     ],
+     "n": [
+      2,
+      4
+     ]
+    },
+    "support_evasion_grant": {
+     "sig": [
+      "evasion_grant"
+     ],
+     "cards": [],
+     "n": null
+    }
+   },
+   "wins": [
+    "multiple combats with attack triggers",
+    "pumped trample alpha"
+   ],
+   "weak": "fog; blockers; wipes; one creature carries the combat",
+   "weak_tags": [
+    "removal",
+    "fog"
+   ],
+   "overlaps": [
+    "stompy",
+    "voltron"
+   ],
+   "subs": [],
+   "colors": [
+    "R",
+    "RW",
+    "RG"
+   ],
+   "bracket": null,
+   "notes": "no ftag marks extra-combat effects; trigger:beginning_of_combat is coarse (see note)",
+   "src": {
+    "sw": "Extra Combats (niche list)",
+    "cf": "Creatures sub: Extra Combat"
+   }
+  },
+  "mutate": {
+   "id": "mutate",
+   "plan": "stack mutate creatures onto the best body so every mutate trigger and attack trigger repeats",
+   "stages": [
+    "early: cheap non-Human bodies as targets",
+    "mutate for value on attack",
+    "protect the stack",
+    "recover with recursion"
+   ],
+   "roles": {
+    "mutate": {
+     "sig": [
+      "kw:mutate",
+      "x_is:timesmutated"
+     ],
+     "cards": [
+      "Gemrazer",
+      "Brokkos, Apex of Forever",
+      "Illuna, Apex of Wishes"
+     ],
+     "n": [
+      12,
+      20
+     ]
+    },
+    "target": {
+     "sig": [
+      "cardtype:creature"
+     ],
+     "cards": [],
+     "n": [
+      12,
+      18
+     ]
+    },
+    "protection": {
+     "sig": [
+      "protection_trick",
+      "kw:hexproof"
+     ],
+     "cards": [],
+     "n": [
+      4,
+      6
+     ]
+    },
+    "recursion": {
+     "sig": [
+      "recursion"
+     ],
+     "cards": [],
+     "n": null
+    }
+   },
+   "wins": [
+    "mutated attacker with stacked triggers"
+   ],
+   "weak": "removal on a mutate stack loses cards; Human targets are illegal; wipes",
+   "weak_tags": [
+    "removal"
+   ],
+   "overlaps": [
+    "voltron",
+    "counters"
+   ],
+   "subs": [],
+   "colors": [
+    "G",
+    "GU",
+    "GRU"
+   ],
+   "bracket": null,
+   "notes": "only 34 mutate cards in the pool",
+   "src": {
+    "sw": "Mutate (niche list)"
+   },
+   "niche": true,
+   "crossover": [
+    "voltron",
+    "counters",
+    "stompy"
+   ]
+  },
+  "polymorph": {
+   "id": "polymorph",
+   "plan": "sacrifice a cheap creature to put a bigger one onto the battlefield from the library",
+   "stages": [
+    "play cheap creatures",
+    "Polymorph effects find the bomb",
+    "bomb has ETB or an immediate win",
+    "protect the sacrificed fodder line"
+   ],
+   "roles": {
+    "polymorph": {
+     "sig": [
+      "put_onto_battlefield",
+      "effect:sacrifice"
+     ],
+     "cards": [
+      "Transmogrify",
+      "Artificial Evolution"
+     ],
+     "n": [
+      6,
+      10
+     ]
+    },
+    "fodder": {
+     "sig": [
+      "token_make"
+     ],
+     "cards": [],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "bomb": {
+     "sig": [
+      "cmc_ge_7"
+     ],
+     "cards": [],
+     "n": [
+      6,
+      10
+     ]
+    },
+    "protection": {
+     "sig": [
+      "counterspell",
+      "protection_trick"
+     ],
+     "cards": [],
+     "n": [
+      4,
+      6
+     ]
+    },
+    "support_cast_free": {
+     "sig": [
+      "cast_free"
+     ],
+     "cards": [],
+     "n": null
+    }
+   },
+   "wins": [
+    "polymorph into a game-winning creature"
+   ],
+   "weak": "counterspells on the spell; no bomb in the library; edict removal",
+   "weak_tags": [
+    "counterspell"
+   ],
+   "overlaps": [
+    "reanimator",
+    "combo"
+   ],
+   "subs": [],
+   "colors": [
+    "U",
+    "UG",
+    "UR"
+   ],
+   "bracket": null,
+   "notes": "no polymorph ftag; signals are coarse",
+   "src": {
+    "sw": "Polymorph (niche list)"
+   }
+  },
+  "self_mill": {
+   "id": "self_mill",
+   "plan": "put cards from your own library into the graveyard, then use them with recursion and graveyard payoffs",
+   "stages": [
+    "fill the graveyard",
+    "play mill-synergy creatures and dredge",
+    "cash the graveyard in recursion",
+    "close with a graveyard-size payoff"
+   ],
+   "roles": {
+    "filler": {
+     "sig": [
+      "self_mill",
+      "kw:dredge",
+      "tutor_dest:graveyard"
+     ],
+     "cards": [
+      "Stitcher's Supplier",
+      "Hermit Druid",
+      "Fauna Shaman"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "recursion": {
+     "sig": [
+      "recursion",
+      "from_zone:graveyard",
+      "kw:escape",
+      "kw:flashback"
+     ],
+     "cards": [
+      "Muldrotha, the Gravetide",
+      "Eternal Witness"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "payoff": {
+     "sig": [
+      "scales:graveyard",
+      "scales:card_you_own_in_graveyard",
+      "scales:creature_you_own_in_graveyard"
+     ],
+     "cards": [],
      "n": [
       3,
       5
      ]
     },
-    "no_max_hand": {
+    "draw": {
      "sig": [
-      "restrict"
+      "draw"
      ],
-     "cards": [
-      "Reliquary Tower",
-      "Thought Vessel"
+     "cards": [],
+     "n": [
+      6,
+      8
+     ]
+    },
+    "support_surveil": {
+     "sig": [
+      "surveil"
      ],
+     "cards": [],
+     "n": null
+    },
+    "support_mech_graveyard_cast": {
+     "sig": [
+      "mech:graveyard_cast"
+     ],
+     "cards": [],
      "n": null
     }
    },
    "wins": [
-    "draw-damage triggers",
-    "Sheoldred plus wheels",
-    "out-resource late game",
-    "Laboratory Maniac"
+    "graveyard-size payoff",
+    "recursion value",
+    "reanimated bomb"
    ],
-   "weak": "engines draw removal; little board presence; Notion Thief, Narset; decking risk",
+   "weak": "graveyard hate; exile removal; self-mill risk in a tight library",
    "weak_tags": [
-    "discard",
-    "restrict"
+    "grave_hate"
    ],
    "overlaps": [
-    "control",
-    "spellslinger",
-    "group_hug",
-    "enchantress",
-    "blink"
+    "graveyard",
+    "reanimator",
+    "mill"
    ],
    "subs": [],
    "colors": [
-    "U",
-    "UR",
+    "BG",
     "UB",
-    "GU"
-   ],
-   "bracket": null,
-   "notes": "",
-   "src": {
-    "em": "engines 10-15, payoffs 3-5, dense interaction, more lands or ramp"
-   }
-  },
-  "burn": {
-   "id": "burn",
-   "plan": "direct damage to faces scaled to 120 life across three opponents: each-opponent effects and multipliers",
-   "stages": [
-    "prioritise each-opponent damage and doublers",
-    "repeatable pingers",
-    "earthquake effects"
-   ],
-   "roles": {
-    "damage": {
-     "sig": [
-      "burn",
-      "damage",
-      "damage_amount"
-     ],
-     "cards": [
-      "Torbran, Thane of Red Fell",
-      "Purphoros, God of the Forge",
-      "Kaervek the Merciless"
-     ],
-     "n": null
-    },
-    "multiplier": {
-     "sig": [
-      "replace"
-     ],
-     "cards": [
-      "Torbran, Thane of Red Fell"
-     ],
-     "n": null
-    },
-    "pinger": {
-     "sig": [
-      "damage",
-      "cost:tap"
-     ],
-     "cards": [],
-     "n": null
-    }
-   },
-   "wins": [
-    "face damage with multipliers",
-    "Earthquake",
-    "group slug"
-   ],
-   "weak": "single-target burn is inefficient in multiplayer; lifegain",
-   "weak_tags": [
-    "lifegain"
-   ],
-   "overlaps": [
-    "aggro",
-    "spellslinger"
-   ],
-   "subs": [
-    "direct_damage",
-    "ping",
-    "group_slug",
-    "earthquake"
-   ],
-   "colors": [
-    "R",
-    "BR",
-    "UR"
-   ],
-   "bracket": null,
-   "notes": "",
-   "src": {
-    "sw": "burn must scale to 120 life",
-    "cf": "subs: direct damage, ping, group slug, earthquake"
-   }
-  },
-  "chaos": {
-   "id": "chaos",
-   "plan": "randomness, cascade and theft: warp the game with symmetrical effects your deck is built to exploit",
-   "stages": [
-    "pick effects your deck exploits",
-    "cascade chains, coin flips, theft"
-   ],
-   "roles": {
-    "cascade": {
-     "sig": [
-      "kw:cascade",
-      "cast_free"
-     ],
-     "cards": [],
-     "n": null
-    },
-    "theft": {
-     "sig": [
-      "steal",
-      "steal_temp"
-     ],
-     "cards": [
-      "Gonti, Lord of Luxury"
-     ],
-     "n": null
-    }
-   },
-   "wins": [
-    "free-spell chains",
-    "stolen permanents"
-   ],
-   "weak": "symmetrical chaos helps everyone",
-   "weak_tags": [],
-   "overlaps": [
-    "group_hug"
-   ],
-   "subs": [
-    "coin_flip",
-    "cascade",
-    "theft",
-    "possibility_storm"
-   ],
-   "colors": [
-    "R",
-    "UR",
-    "RG"
-   ],
-   "bracket": null,
-   "notes": "",
-   "src": {
-    "cf": "subs: coin flip, cascade, theft, possibility storm; Zndrsplt, Yidris, Gonti, Kalamax"
-   }
-  },
-  "colorless": {
-   "id": "colorless",
-   "plan": "colorless is the sixth colour (user 2026-10-26): colorless spells and artifacts that any deck can cast, backed by enough colorless mana sources",
-   "stages": [
-    "count colorless sources first: rocks, Sol Ring-style cards, colorless-producing lands",
-    "add colorless spells only as far as the sources support them",
-    "use them as the flexible filler of the deck: removal, ramp, draw, bodies",
-    "keep coloured pips for the commander's colours"
-   ],
-   "roles": {
-    "source": {
-     "sig": [
-      "mana:colorless",
-      "mana_source"
-     ],
-     "cards": [
-      "Sol Ring",
-      "Mind Stone",
-      "Wayfarer's Bauble"
-     ],
-     "n": [
-      4,
-      10
-     ]
-    },
-    "spell": {
-     "sig": [
-      "cardtype:artifact",
-      "token_color:colorless"
-     ],
-     "cards": [
-      "Swiftfoot Boots",
-      "Skullclamp"
-     ],
-     "n": [
-      4,
-      12
-     ]
-    },
-    "fixing": {
-     "sig": [
-      "fixing",
-      "mana_choice"
-     ],
-     "cards": [
-      "Arcane Signet",
-      "Commander's Sphere"
-     ],
-     "n": null
-    }
-   },
-   "wins": [
-    "a flexible deck that casts everything regardless of colour"
-   ],
-   "weak": "artifact hate (Vandalblast, Collector Ouphe); colorless spells without colorless mana are dead cards; too many colorless cards dilute the plan",
-   "weak_tags": [
-    "removal_artifact",
-    "restrict"
-   ],
-   "overlaps": [
-    "artifacts",
-    "ramp",
-    "equipment"
-   ],
-   "subs": [],
-   "colors": [
-    "C",
-    "W",
-    "U",
-    "B",
-    "R",
+    "BGU",
     "G"
    ],
    "bracket": null,
    "notes": "",
    "src": {
-    "cf": "user decision 2026-10-26: colorless is a pool like W/U/B/R/G; builder CL_BASE/CL_PER in starter_build.py; reader rule D6"
+    "sw": "Self-Mill (niche list)",
+    "edhrec": "Self-Mill, Dredge pages"
+   }
+  },
+  "energy": {
+   "id": "energy",
+   "plan": "generate energy counters and spend them on repeatable effects",
+   "stages": [
+    "early: energy producers",
+    "mid: spend energy on engines and attacks",
+    "keep a producer surplus",
+    "close with energy-pumped attackers"
+   ],
+   "roles": {
+    "producer": {
+     "sig": [
+      "counter:energy"
+     ],
+     "cards": [
+      "Aetherworks Marvel",
+      "Guide of Souls",
+      "Longtusk Cub"
+     ],
+     "n": [
+      12,
+      18
+     ]
+    },
+    "payoff": {
+     "sig": [
+      "counter:energy"
+     ],
+     "cards": [
+      "Aether Hub"
+     ],
+     "n": [
+      6,
+      10
+     ]
+    },
+    "multiplier": {
+     "sig": [
+      "counters_plus",
+      "replace"
+     ],
+     "cards": [
+      "Ammit Eternal"
+     ],
+     "n": null
+    },
+    "draw": {
+     "sig": [
+      "draw"
+     ],
+     "cards": [],
+     "n": [
+      6,
+      8
+     ]
+    }
+   },
+   "wins": [
+    "energy-pumped attackers",
+    "Aetherworks Marvel loops"
+   ],
+   "weak": "wipes; the colours with energy cards are few; energy is not a payoff on its own",
+   "weak_tags": [
+    "removal"
+   ],
+   "overlaps": [
+    "artifacts",
+    "counters"
+   ],
+   "subs": [],
+   "colors": [
+    "RU",
+    "G",
+    "UG",
+    "UR"
+   ],
+   "bracket": null,
+   "notes": "counter:energy matches 131 cards; producer and payoff share the tag (no split in the pool)",
+   "src": {
+    "sw": "Energy (niche list)"
+   }
+  },
+  "vehicles": {
+   "id": "vehicles",
+   "plan": "vehicles are the threats; crew creatures supply the pilot; vehicle payoffs reward the count",
+   "stages": [
+    "early: cheap crew creatures",
+    "deploy vehicles that outclass the crew cost",
+    "protect the crew line",
+    "close with a big vehicle or crewed alpha"
+   ],
+   "roles": {
+    "vehicle": {
+     "sig": [
+      "type:vehicle",
+      "niche:vehicle"
+     ],
+     "cards": [
+      "Smuggler's Copter",
+      "Skysovereign, Consul Flagship",
+      "Heart of Kiran"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "crew": {
+     "sig": [
+      "kw:crew",
+      "grant_kw:crew",
+      "token_type:pilot_crewbuff",
+      "token_type:pilot_crewsaddlebuff"
+     ],
+     "cards": [],
+     "n": [
+      12,
+      18
+     ]
+    },
+    "payoff": {
+     "sig": [
+      "scales:vehicle",
+      "trigger_filter:vehicle",
+      "affected_type:vehicle",
+      "x_is:count_vehicle_you_control_times_2"
+     ],
+     "cards": [],
+     "n": [
+      3,
+      6
+     ]
+    },
+    "remove": {
+     "sig": [
+      "remove"
+     ],
+     "cards": [],
+     "n": [
+      5,
+      7
+     ]
+    }
+   },
+   "wins": [
+    "crewed vehicle alpha",
+    "vehicle count payoff"
+   ],
+   "weak": "artifact removal; wipes leave vehicles but kill the crew; Torpor Orb",
+   "weak_tags": [
+    "removal_artifact"
+   ],
+   "overlaps": [
+    "artifacts",
+    "stompy"
+   ],
+   "subs": [],
+   "colors": [
+    "R",
+    "RW",
+    "WU",
+    "U"
+   ],
+   "bracket": null,
+   "notes": "niche:vehicle only 13 cards; kw:crew is on the vehicles themselves (174 cards)",
+   "src": {
+    "sw": "Vehicles (niche list)"
+   },
+   "niche": true,
+   "crossover": [
+    "artifacts",
+    "stompy",
+    "outlaws"
+   ]
+  },
+  "sagas": {
+   "id": "sagas",
+   "plan": "sagas deliver chapter value over turns; recursion, proliferation and lore-counter tricks reuse them",
+   "stages": [
+    "play sagas early",
+    "reuse chapters with lore-counter effects and blink",
+    "recur sagas with sacrifice or flicker",
+    "close with the last chapter payoffs"
+   ],
+   "roles": {
+    "saga": {
+     "sig": [
+      "kw:chapter",
+      "saga_chapter"
+     ],
+     "cards": [
+      "Urza's Saga",
+      "The Eldest Reborn",
+      "Ashiok's Reaper"
+     ],
+     "n": [
+      12,
+      20
+     ]
+    },
+    "reuse": {
+     "sig": [
+      "niche:saga",
+      "affected_type:saga",
+      "proliferate",
+      "recursion"
+     ],
+     "cards": [
+      "Narset, Enlightened Exile",
+      "Doubling Season"
+     ],
+     "n": [
+      4,
+      8
+     ]
+    },
+    "enabler": {
+     "sig": [
+      "mana_source",
+      "draw"
+     ],
+     "cards": [],
+     "n": [
+      8,
+      10
+     ]
+    }
+   },
+   "wins": [
+    "chapter-chain value",
+    "reused finishing chapter"
+   ],
+   "weak": "enchantment removal; sagas are slow; low stand-alone power",
+   "weak_tags": [
+    "removal_enchantment"
+   ],
+   "overlaps": [
+    "enchantress",
+    "blink",
+    "counters"
+   ],
+   "subs": [],
+   "colors": [
+    "WB",
+    "GW",
+    "BG",
+    "WU"
+   ],
+   "bracket": null,
+   "notes": "saga_chapter and kw:chapter mark 209 cards",
+   "src": {
+    "sw": "Sagas (niche list)"
+   },
+   "niche": true,
+   "crossover": [
+    "enchantress",
+    "blink"
+   ]
+  },
+  "discard": {
+   "id": "discard",
+   "plan": "make opponents discard, then punish an empty hand or a cluttered graveyard",
+   "stages": [
+    "early: cheap discard to strip hands",
+    "keep opponents hellbent",
+    "punisher payoffs",
+    "close with a drain payoff or a locked table"
+   ],
+   "roles": {
+    "discard": {
+     "sig": [
+      "discard"
+     ],
+     "cards": [
+      "Hymn to Tourach",
+      "Mind Twist",
+      "Duress",
+      "Thoughtseize"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "punisher": {
+     "sig": [
+      "trigger:discard",
+      "condition:hellbent"
+     ],
+     "cards": [
+      "Waste Not",
+      "Megrim",
+      "Liliana of the Veil"
+     ],
+     "n": [
+      3,
+      6
+     ]
+    },
+    "symmetrical": {
+     "sig": [
+      "kw:madness",
+      "cost:discard"
+     ],
+     "cards": [],
+     "n": null
+    },
+    "remove": {
+     "sig": [
+      "remove"
+     ],
+     "cards": [],
+     "n": [
+      6,
+      8
+     ]
+    },
+    "draw": {
+     "sig": [
+      "draw"
+     ],
+     "cards": [],
+     "n": [
+      6,
+      8
+     ]
+    }
+   },
+   "wins": [
+    "opponent discard lock with punishers",
+    "empty hands then drain"
+   ],
+   "weak": "three opponents refill; discard is weak against topdecks; speed",
+   "weak_tags": [
+    "restrict"
+   ],
+   "overlaps": [
+    "wheels",
+    "control",
+    "stax"
+   ],
+   "subs": [],
+   "colors": [
+    "B",
+    "UB",
+    "BR",
+    "BG"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "Discard (niche list)"
+   }
+  },
+  "group_slug": {
+   "id": "group_slug",
+   "plan": "symmetrical or each-player damage and life loss that favour a deck prepared for it",
+   "stages": [
+    "early: cheap blockers and lifegain",
+    "deploy damage engines",
+    "protect your own life total",
+    "close with the last life total"
+   ],
+   "roles": {
+    "slug": {
+     "sig": [
+      "damage",
+      "life_loss",
+      "burn"
+     ],
+     "cards": [
+      "Sulfuric Vortex",
+      "Zo-Zu the Punisher",
+      "Manabarbs",
+      "Pestilence"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "lifegain": {
+     "sig": [
+      "lifegain",
+      "kw:lifelink"
+     ],
+     "cards": [],
+     "n": [
+      4,
+      6
+     ]
+    },
+    "blocker": {
+     "sig": [
+      "cardtype:creature"
+     ],
+     "cards": [],
+     "n": [
+      10,
+      14
+     ]
+    },
+    "remove": {
+     "sig": [
+      "remove"
+     ],
+     "cards": [],
+     "n": [
+      5,
+      7
+     ]
+    }
+   },
+   "wins": [
+    "drain the table slowly",
+    "Pestilence / Sulfuric Vortex"
+   ],
+   "weak": "lifegain; fog; faster decks; politics (you are the obvious threat)",
+   "weak_tags": [
+    "lifegain"
+   ],
+   "overlaps": [
+    "burn",
+    "stax",
+    "pillow_fort"
+   ],
+   "subs": [],
+   "colors": [
+    "R",
+    "BR",
+    "B"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "Group Slug (niche list)",
+    "cf": "Burn sub: group slug"
+   }
+  },
+  "forced_combat": {
+   "id": "forced_combat",
+   "plan": "force opposing creatures to attack each other or you, and win by choosing the fights",
+   "stages": [
+    "early: blockers",
+    "goad/must-attack effects aim the table at each other",
+    "manage your own defenses",
+    "close when others are depleted"
+   ],
+   "roles": {
+    "force": {
+     "sig": [
+      "goad",
+      "must_attack"
+     ],
+     "cards": [
+      "Disrupt Decorum",
+      "Agitator Ant",
+      "Kardur, Doomscourge"
+     ],
+     "n": [
+      6,
+      10
+     ]
+    },
+    "protection": {
+     "sig": [
+      "attack_tax",
+      "restrict_kind:cant_attack"
+     ],
+     "cards": [
+      "Propaganda"
+     ],
+     "n": [
+      4,
+      6
+     ]
+    },
+    "blocker": {
+     "sig": [
+      "cardtype:creature"
+     ],
+     "cards": [],
+     "n": [
+      10,
+      14
+     ]
+    },
+    "remove": {
+     "sig": [
+      "remove"
+     ],
+     "cards": [],
+     "n": [
+      5,
+      7
+     ]
+    }
+   },
+   "wins": [
+    "opponents fight each other, you finish"
+   ],
+   "weak": "fog; opponents with no creatures; aggro decks you cannot block",
+   "weak_tags": [
+    "fog"
+   ],
+   "overlaps": [
+    "pillow_fort",
+    "group_hug",
+    "stompy"
+   ],
+   "subs": [],
+   "colors": [
+    "R",
+    "RB",
+    "RW"
+   ],
+   "bracket": null,
+   "notes": "goad is an oracle-text tag (deckgen/text_tags.py, 81 cards); must_attack covers 88 cards",
+   "src": {
+    "sw": "Forced Combat (niche list)"
+   },
+   "niche": true,
+   "crossover": [
+    "group_hug",
+    "stompy",
+    "outlaws"
+   ]
+  },
+  "pillow_fort": {
+   "id": "pillow_fort",
+   "plan": "attack taxes and deterrents keep attackers away while a late engine wins",
+   "stages": [
+    "early: tax effects and deterrents",
+    "mid: card advantage and a defended engine",
+    "late: finisher behind the wall"
+   ],
+   "roles": {
+    "fort": {
+     "sig": [
+      "attack_tax",
+      "restrict_kind:cant_attack",
+      "restrict_kind:cant_attack_unless_cost"
+     ],
+     "cards": [
+      "Propaganda",
+      "Ghostly Prison",
+      "Sphere of Safety",
+      "Norn's Annex",
+      "Crawlspace"
+     ],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "draw": {
+     "sig": [
+      "draw"
+     ],
+     "cards": [
+      "Mystic Remora",
+      "Phyrexian Arena"
+     ],
+     "n": [
+      6,
+      8
+     ]
+    },
+    "protection": {
+     "sig": [
+      "protection_trick",
+      "kw:hexproof"
+     ],
+     "cards": [],
+     "n": [
+      3,
+      5
+     ]
+    },
+    "finisher": {
+     "sig": [
+      "cmc_ge_5"
+     ],
+     "cards": [],
+     "n": [
+      2,
+      4
+     ]
+    },
+    "support_fog": {
+     "sig": [
+      "fog"
+     ],
+     "cards": [],
+     "n": null
+    },
+    "support_monarch": {
+     "sig": [
+      "monarch"
+     ],
+     "cards": [],
+     "n": null
+    }
+   },
+   "wins": [
+    "win from behind the wall"
+   ],
+   "weak": "commander damage from decks that ignore the tax; enchantment removal; no pressure on others",
+   "weak_tags": [
+    "removal_enchantment"
+   ],
+   "overlaps": [
+    "stax",
+    "control",
+    "group_hug"
+   ],
+   "subs": [],
+   "colors": [
+    "W",
+    "WU",
+    "WB"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "Pillow Fort (niche list)",
+    "cf": "Control sub: pillowfort",
+    "em": "pillowfort: tax effects first"
+   },
+   "niche": true,
+   "crossover": [
+    "control",
+    "group_hug",
+    "enchantress"
+   ]
+  },
+  "upkeep_triggers": {
+   "id": "upkeep_triggers",
+   "plan": "turn-start payoffs: upkeep triggers that grow or cost, doubled by trigger copiers",
+   "stages": [
+    "early: upkeep engines",
+    "stack triggers",
+    "trigger doublers",
+    "close with a growing payoff"
+   ],
+   "roles": {
+    "engine": {
+     "sig": [
+      "trigger:upkeep",
+      "kw:cumulative_upkeep"
+     ],
+     "cards": [
+      "Phyrexian Arena",
+      "Mystic Remora",
+      "Paradox Haze",
+      "Eldrazi Monument"
+     ],
+     "n": [
+      10,
+      16
+     ]
+    },
+    "doubler": {
+     "sig": [
+      "replace",
+      "trigger:upkeep"
+     ],
+     "cards": [
+      "Paradox Haze"
+     ],
+     "n": [
+      2,
+      4
+     ]
+    },
+    "draw": {
+     "sig": [
+      "draw"
+     ],
+     "cards": [],
+     "n": [
+      6,
+      8
+     ]
+    },
+    "protection": {
+     "sig": [
+      "protection_trick"
+     ],
+     "cards": [],
+     "n": [
+      3,
+      5
+     ]
+    }
+   },
+   "wins": [
+    "engine pile that outgrows the table"
+   ],
+   "weak": "enchantment/artifact removal; slow; upkeep triggers also appear on cards unrelated to the plan",
+   "weak_tags": [
+    "removal_enchantment",
+    "removal_artifact"
+   ],
+   "overlaps": [
+    "enchantress",
+    "control"
+   ],
+   "subs": [],
+   "colors": [
+    "U",
+    "UB",
+    "B",
+    "W"
+   ],
+   "bracket": null,
+   "notes": "trigger:upkeep matches 711 cards; filter in the builder needs the commander",
+   "src": {
+    "sw": "Upkeep Triggers (niche list)"
    }
   },
   "treasure": {
@@ -5094,12 +6182,22 @@
    "stages": [],
    "roles": {
     "core": {
-     "sig": [],
+     "sig": [
+      "token_type:treasure",
+      "cost_sacrifice_target:treasure"
+     ],
      "cards": [
       "Prosper, Tome-Bound",
       "Korvold, Fae-Cursed King",
       "Magda, Brazen Outlaw"
      ],
+     "n": null
+    },
+    "support_investigate": {
+     "sig": [
+      "investigate"
+     ],
+     "cards": [],
      "n": null
     }
    },
@@ -5113,7 +6211,13 @@
    "notes": "",
    "src": {
     "sw": "one-line entry, no engine/weakness detail"
-   }
+   },
+   "niche": true,
+   "crossover": [
+    "artifacts",
+    "aristocrats",
+    "outlaws"
+   ]
   },
   "wheels": {
    "id": "wheels",
@@ -5121,7 +6225,9 @@
    "stages": [],
    "roles": {
     "core": {
-     "sig": [],
+     "sig": [
+      "wheels"
+     ],
      "cards": [
       "Nekusar, the Mindrazer",
       "Xyris, the Writhing Storm",
@@ -5140,7 +6246,12 @@
    "notes": "",
    "src": {
     "sw": "one-line entry, no engine/weakness detail"
-   }
+   },
+   "niche": true,
+   "crossover": [
+    "group_hug",
+    "control"
+   ]
   },
   "impulse_draw": {
    "id": "impulse_draw",
@@ -5148,7 +6259,9 @@
    "stages": [],
    "roles": {
     "core": {
-     "sig": [],
+     "sig": [
+      "impulse_draw"
+     ],
      "cards": [
       "Prosper, Tome-Bound",
       "Birgi, God of Storytelling",
@@ -5156,6 +6269,13 @@
       "Narset, Enlightened Exile",
       "Notion Thief"
      ],
+     "n": null
+    },
+    "support_look_top": {
+     "sig": [
+      "look_top"
+     ],
+     "cards": [],
      "n": null
     }
    },
@@ -5169,7 +6289,12 @@
    "notes": "",
    "src": {
     "sw": "one-line entry, no engine/weakness detail"
-   }
+   },
+   "niche": true,
+   "crossover": [
+    "outlaws",
+    "stompy"
+   ]
   },
   "legends_matter": {
    "id": "legends_matter",
@@ -5177,7 +6302,9 @@
    "stages": [],
    "roles": {
     "core": {
-     "sig": [],
+     "sig": [
+      "legend_payoff"
+     ],
      "cards": [
       "Sisay, Weatherlight Captain",
       "Jodah, Archmage Eternal",
@@ -5197,7 +6324,70 @@
    "notes": "",
    "src": {
     "sw": "one-line entry, no engine/weakness detail"
-   }
+   },
+   "niche": true,
+   "crossover": [
+    "voltron",
+    "stompy"
+   ]
+  },
+  "theft": {
+   "id": "theft",
+   "plan": "take opponents' permanents or cast their cards, then profit from the borrowed pieces",
+   "stages": [
+    "control early threats",
+    "steal the best permanent or spell",
+    "sacrifice or flicker stolen permanents for value",
+    "win with the table's own cards"
+   ],
+   "roles": {
+    "steal": {
+     "sig": [
+      "steal",
+      "steal_temp"
+     ],
+     "cards": [],
+     "n": [
+      8,
+      12
+     ]
+    },
+    "remove": {
+     "sig": [
+      "remove"
+     ],
+     "cards": [],
+     "n": [
+      5,
+      7
+     ]
+    }
+   },
+   "wins": [
+    "borrowed bombs"
+   ],
+   "weak": "removal on the stolen card; slow without a steal target",
+   "weak_tags": [],
+   "overlaps": [
+    "control",
+    "outlaws"
+   ],
+   "subs": [],
+   "colors": [
+    "U",
+    "R",
+    "UR"
+   ],
+   "bracket": null,
+   "notes": "",
+   "src": {
+    "sw": "added from the doc thread; no source page"
+   },
+   "niche": true,
+   "crossover": [
+    "control",
+    "outlaws"
+   ]
   }
  }
 }

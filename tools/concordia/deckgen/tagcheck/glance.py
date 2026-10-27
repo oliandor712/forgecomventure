@@ -34,6 +34,15 @@ def strategies():
     return d, roles, ids, named
 
 
+def engine_goals():
+    """baseline roles every deck needs (recursion, ramp, card_draw, protection) as role -> 'min-max: note', plus per-archetype uplifts"""
+    j = json.load(open(STRAT, encoding="utf-8"))
+    g = {k: "%s-%s: %s" % (b["n"][0], b["n"][1], b.get("note", "")) for k, b in j.get("baseline_roles", {}).items()}
+    g["removal"] = "one family remove:*; a card counts 1 whether it hits one creature or any number"
+    g["uplift"] = {"recursion": j.get("recursion_by_archetype", {}), "protection": j.get("protection_by_archetype", {})}
+    return g
+
+
 def form_spec():
     d, roles, ids, _ = strategies()
     return {"fields": {
@@ -45,7 +54,8 @@ def form_spec():
         "unclear": "list of tags (tag reader) or Oracle phrases (Oracle reader) you could not use; [] if none"},
         "deck_fields": {"mana": "once per file, next to `cards`: {\"curve\": \"ok|top-heavy|low\", \"sources\": \"ok|short:<colour or colorless>|too-many\", \"notes\": \"one line, 25 words max\"}; judge the deck's mana curve and the mana (lands + rocks) available for its nonland cards from `deck_context` (mana line) and each card's `mv`"},
         "roles_allowed": roles, "archetypes_allowed": ids,
-        "archetype_plans": {k: v.get("plan", "") for k, v in d.items()}}
+        "archetype_plans": {k: v.get("plan", "") for k, v in d.items()},
+        "engine_goals": engine_goals()}
 
 
 TAG_RULES = """You are a GLANCE READER. You see only tags. Rules (strict):

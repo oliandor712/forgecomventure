@@ -4,6 +4,6 @@
  "inputs": {
   "scryfall/cards.json": 1345329,
   "external/decks.json": 1645843,
-  "spellbinder/signals.json": 174383
+  "spellbinder/signals.json": 162806
  }
 }

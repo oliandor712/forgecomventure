@@ -292,3 +292,6 @@ Lab method note: flags removed in a scratch assets copy, equal life, 40-card dec
 ## Status update (completion pass, 2026-10-21)
 - Commander, mulligan, and logic by deck type: not completed. The digests lack command-zone moves, mulligan lines and deck identity; see DECISION_LOGIC.md "Completion pass".
 - Combat tricks and ETB/tokens: done from the digests (38% of games have combat-step casts; 11.9% of attack declarations name a token). ETB triggers are not visible in the digests.
+
+## Strategy tags (2026-10-27)
+Archetype and engine data (45 archetypes, baselines recursion/ramp/card_draw/protection, `remove:*` family, niche crossover) is condensed in `tools/agents/reference/ARCHETYPES.toon`, generated from `tools/concordia/strategies/build_strategies.py`. Oracle-text tags (goad, wheels, gift_all, ench_payoff, legend_payoff) come from `tools/concordia/deckgen/text_tags.py`.

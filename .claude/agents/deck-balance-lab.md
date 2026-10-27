@@ -34,3 +34,5 @@ Equal life on both sides; no life bonuses; existing assets only; ignore prices; 
 
 ## Scorer and bands context (2026-10-25)
 Deck power comes from the new scorer (`deck_tier.py`); bands are in `tools/concordia/tier_table.json` (T2 22-30, T3 29-37, T4 35.5-41.5, T5 40+; T1 17-23 in `tier_rules.py`); per-tier limits (Game Changers, extra turns, power-50+/70+, fast mana) are in `tier_rules.py` TIERS. Live medians: starter 27.0, T1 17.3, T2 27.5, T3 33.5, T4 38.2, T5 43.0. In reports, give power next to win rate per tier and flag decks outside their band. Decks may declare `strategy` ids (`tools/concordia/strategies/strategies.json`); when a cell underperforms, say which strategy the deck plays. Report only; deck changes go to the deck builder via the main session.
+
+Archetypes and engine goals (condensed): `tools/agents/reference/ARCHETYPES.toon`.

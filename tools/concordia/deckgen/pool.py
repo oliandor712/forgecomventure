@@ -4,6 +4,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 import deck_tier as dt
 import tag_run  # the one tag source: ftags below
+from text_tags import text_tags
 from common import identity  # noqa: E402
 def main():
     data = dt.build_cache()
@@ -95,6 +96,7 @@ def main():
                      'nabil': len(c['abil']) + len(c['static']) + len(c['kw']), 'oracle': c['oracle'],
                      'cube': data['cube'].get(key)}
         ftags = sorted(tag_run.tags(c['name']))  # full tag set from tag_run.record (the single tag source); 'tags' above stays the coarse deck-gen set
+        ftags = sorted(set(ftags) | set(text_tags(c['oracle'])))  # oracle-text tags (goad, wheels, gift_all, ench_payoff, legend_payoff)
         pool[key]['ftags'] = ftags
         pool[key]['power'] = dt.card_powers(data, c, tags, list(best), ftags)
         pool[key]['cat'] = dt.category(key)  # staple / game_changer / watch (deckgen/staples.py)

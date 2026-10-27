@@ -14,7 +14,7 @@ SUPPORT_MIN, PAYOFF_MIN, PAYOFF_MAX, MAKER_CAP = 5, 5, 10, 4   # payoffs are a r
 # decks): makers median 10 (p25 7, p75 13), payoffs median 9 (p25 5, p75 15), payoff/maker ratio median 0.9. So setup is a range and payoffs may not outrun it by more than SETUP_GAP.
 SETUP_MIN, SETUP_MAX, SETUP_GAP = 7, 14, 3
 NONCREATURE_TOK = {'treasure', 'food', 'clue', 'blood', 'gold', 'junk', 'map', 'powerstone', 'shard'}
-PAYOFF_ROLES = (('tokens', 'anthem'), ('tokens', 'finisher'), ('tokens', 'doubler'), ('sacrifice', 'outlet'), ('sacrifice', 'payoff'), ('aristocrats', 'outlet'), ('aristocrats', 'payoff'))
+PAYOFF_ROLES = (('tokens', 'anthem'), ('tokens', 'finisher'), ('tokens', 'doubler'), ('aristocrats', 'outlet'), ('aristocrats', 'payoff'))
 BROAD = {'sacrifice', 'life_loss', 'damage', 'trigger:etb', 'token_count', 'replace', 'cost_sacrifice_target', 'drain'}   # match too many cards to count as a payoff alone
 _TRIBAL = re.compile(r'(?i)\b(other|each|all|every|creatures? you control|get|gets|have|has|whenever|for each)\b')
 
@@ -65,7 +65,7 @@ def setup_kind(p, pl):
     mk = {t.split(':', 1)[1] for t in ft if t.startswith('token_type:')}
     if 'token_make' in ft and (not mk or mk - NONCREATURE_TOK) and 'Land' not in p['types']: return 'setup'
     S = sf.load()
-    for aid, role in (('tokens', 'generator'), ('sacrifice', 'fodder'), ('aristocrats', 'fodder')):
+    for aid, role in (('tokens', 'generator'), ('aristocrats', 'fodder')):
         r = S.get(aid, {}).get('roles', {}).get(role)
         if r and 'Land' not in p['types'] and any(sf._match(s, ft) for s in r['sig'] if s not in BROAD and not s.startswith(('cmc_ge', 'cardtype:'))):
             return 'setup'

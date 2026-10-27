@@ -10,3 +10,5 @@ rules[8|]{id|topic|rule}:
   D6|colorless|Colorless is the sixth colour (archetype id colorless): colorless spells need colorless sources (mana:colorless rocks and lands). Count both; colorless spells beyond what the sources support are a flag
   D7|power|Power is judged for the deck's tier, not the pool: a bomb in a starter deck is a flag, filler that does nothing for the plan is a flag
   D8|verdict|Oracle reader only: after the batches write oout/verdict.json {synergy_gaps:[], dead_cards:[], missing_roles:[], notes:""} judged on the whole list (all batches). Tag readers do not write a verdict
+
+# Archetypes and engine goals (condensed): tools/agents/reference/ARCHETYPES.toon; batches carry them as engine_goals and archetype_plans.
