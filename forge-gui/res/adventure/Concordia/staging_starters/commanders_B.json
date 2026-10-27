@@ -1,174 +1,5 @@
 [
  {
-  "name": "Rev, Tithe Extractor",
-  "cmc": 4,
-  "pop": 5,
-  "profile": [
-   "attack",
-   "control",
-   "sacrifice",
-   "token"
-  ],
-  "archetypes": [
-   "tokens",
-   "superfriends",
-   "stax",
-   "spellslinger"
-  ],
-  "fit": 16,
-  "support_n": 541
- },
- {
-  "name": "Siegfried, Famed Swordsman",
-  "cmc": 4,
-  "pop": 9,
-  "profile": [
-   "counters",
-   "etb_self",
-   "mill",
-   "scales:Creature"
-  ],
-  "archetypes": [
-   "counters",
-   "tokens",
-   "superfriends",
-   "reanimator"
-  ],
-  "fit": 8,
-  "support_n": 498
- },
- {
-  "name": "Mari, the Killing Quill",
-  "cmc": 3,
-  "pop": 10,
-  "profile": [
-   "control",
-   "sacrifice",
-   "token",
-   "tribe:Assassin"
-  ],
-  "archetypes": [
-   "sacrifice",
-   "card_draw",
-   "tokens",
-   "storm"
-  ],
-  "fit": 20,
-  "support_n": 472
- },
- {
-  "name": "Gothmog, Morgul Lieutenant",
-  "cmc": 4,
-  "pop": 6,
-  "profile": [
-   "control",
-   "counters",
-   "etb_self",
-   "token",
-   "tribe:Orc"
-  ],
-  "archetypes": [
-   "tokens",
-   "blink",
-   "superfriends",
-   "stax"
-  ],
-  "fit": 7,
-  "support_n": 468
- },
- {
-  "name": "Kinzu of the Bleak Coven",
-  "cmc": 5,
-  "pop": 6,
-  "profile": [
-   "evasion",
-   "sacrifice",
-   "token"
-  ],
-  "archetypes": [
-   "sacrifice",
-   "blink",
-   "aristocrats",
-   "tokens"
-  ],
-  "fit": 10,
-  "support_n": 468
- },
- {
-  "name": "Josu Vess, Lich Knight",
-  "cmc": 4,
-  "pop": 15,
-  "profile": [
-   "etb_self",
-   "evasion",
-   "token",
-   "tribe:Knight",
-   "tribe:Zombie"
-  ],
-  "archetypes": [
-   "tokens",
-   "blink",
-   "superfriends",
-   "stax"
-  ],
-  "fit": 7,
-  "support_n": 461
- },
- {
-  "name": "Interceptor, Shadow's Hound",
-  "cmc": 4,
-  "pop": 6,
-  "profile": [
-   "attack",
-   "evasion",
-   "sacrifice",
-   "scales:Legendary"
-  ],
-  "archetypes": [
-   "blink",
-   "aristocrats",
-   "reanimator",
-   "graveyard"
-  ],
-  "fit": 4,
-  "support_n": 449
- },
- {
-  "name": "Gisa, Glorious Resurrector",
-  "cmc": 4,
-  "pop": 9,
-  "profile": [
-   "attack",
-   "control",
-   "sacrifice"
-  ],
-  "archetypes": [
-   "tokens",
-   "blink",
-   "aggro"
-  ],
-  "fit": 3,
-  "support_n": 448
- },
- {
-  "name": "Isareth the Awakener",
-  "cmc": 3,
-  "pop": 5,
-  "profile": [
-   "attack",
-   "control",
-   "sacrifice"
-  ],
-  "archetypes": [
-   "blink",
-   "aristocrats",
-   "reanimator",
-   "graveyard"
-  ],
-  "fit": 4,
-  "support_n": 448
- },
- {
   "name": "Rankle, Master of Pranks",
   "cmc": 4,
   "pop": 27,
@@ -179,12 +10,48 @@
    "sacrifice"
   ],
   "archetypes": [
-   "sacrifice",
-   "card_draw",
-   "storm",
-   "lifegain"
+   "pillow_fort",
+   "forced_combat",
+   "aristocrats",
+   "treasure"
   ],
-  "fit": 20,
-  "support_n": 414
+  "fit": 30,
+  "support_n": 413
+ },
+ {
+  "name": "Junji, the Midnight Sky",
+  "cmc": 5,
+  "pop": 32,
+  "profile": [
+   "discard",
+   "evasion",
+   "sacrifice"
+  ],
+  "archetypes": [
+   "graveyard",
+   "blink",
+   "aristocrats",
+   "reanimator"
+  ],
+  "fit": 14,
+  "support_n": 383
+ },
+ {
+  "name": "Massacre Girl",
+  "cmc": 5,
+  "pop": 23,
+  "profile": [
+   "etb_self",
+   "evasion",
+   "sacrifice"
+  ],
+  "archetypes": [
+   "tokens",
+   "outlaws",
+   "legends_matter",
+   "infect"
+  ],
+  "fit": 7,
+  "support_n": 368
  }
 ]

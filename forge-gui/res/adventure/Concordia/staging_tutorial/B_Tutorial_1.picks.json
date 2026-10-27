@@ -1,0 +1,683 @@
+{
+ "name": "B_Tutorial_1",
+ "commander": "Whisper, Blood Liturgist",
+ "profile": [
+  "sacrifice"
+ ],
+ "strategy": [],
+ "banned": [],
+ "lands": {
+  "basics": {
+   "B": 32
+  },
+  "nonbasic": [
+   "Bojuka Bog",
+   "Takenuma, Abandoned Mire",
+   "Scavenger Grounds",
+   "Reliquary Tower",
+   "War Room",
+   "Nykthos, Shrine to Nyx"
+  ]
+ },
+ "picks": [
+  {
+   "name": "Black Sun's Twilight",
+   "core": true,
+   "rarity": "R",
+   "cmc": 1,
+   "types": "Instant",
+   "payoff": "",
+   "power": 69.8,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Cauldron Familiar",
+   "core": true,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Cat",
+   "payoff": "",
+   "power": 48.6,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Drainpipe Vermin",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Rat",
+   "payoff": "",
+   "power": 7.9,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Kaya's Ghostform",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 16.9,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Sol Ring",
+   "core": false,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Artifact"
+  },
+  {
+   "name": "Village Rites",
+   "core": true,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Instant",
+   "payoff": "",
+   "power": 41.6,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Accursed Marauder",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Zombie Warrior",
+   "payoff": "",
+   "power": 17.8,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Arcane Signet",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Baleful Eidolon",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Enchantment Creature Spirit",
+   "payoff": "",
+   "power": 8.4,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Blister Beetle",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Insect",
+   "payoff": "",
+   "power": 19.6,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Claim of Erebos",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 8.4,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Deadly Dispute",
+   "core": true,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 43.9,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Distress",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 8.0,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Exhume",
+   "core": true,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 38.9,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Fellwar Stone",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Field Creeper",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Creature Scarecrow",
+   "payoff": "",
+   "power": 7.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Infernal Scarring",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 8.6,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Jousting Lance",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 8.2,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Marauder's Axe",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 8.5,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Nightscape Familiar",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Zombie",
+   "payoff": "",
+   "power": 15.9,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Returned Reveler",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Zombie Satyr",
+   "payoff": "",
+   "power": 7.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Aetherjacket",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact Creature Thopter",
+   "payoff": "",
+   "power": 17.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Ashnod's Altar",
+   "core": true,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 45.7,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Attrition",
+   "core": true,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 48.9,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Black Oak of Odunos",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Zombie Treefolk",
+   "payoff": "",
+   "power": 7.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Bontu the Glorified",
+   "core": true,
+   "rarity": "M",
+   "cmc": 3,
+   "types": "Legendary Creature God",
+   "payoff": "",
+   "power": 49.4,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Crow of Dark Tidings",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Zombie Bird",
+   "payoff": "",
+   "power": 8.1,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Fleshbag Marauder",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Zombie Warrior",
+   "payoff": "",
+   "power": 15.9,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Ghoulish Impetus",
+   "core": true,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 47.7,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Gorging Vulture",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Bird",
+   "payoff": "",
+   "power": 8.3,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Insatiable Skittermaw",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Insect Horror",
+   "payoff": "",
+   "power": 7.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Marauding Blight-Priest",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Vampire Cleric",
+   "payoff": "",
+   "power": 16.9,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Necrobite",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 7.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Servant of Nefarox",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Human Cleric",
+   "payoff": "",
+   "power": 7.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Soul Salvage",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 8.2,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Splendid Agony",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 7.9,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Bloodhunter Bat",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Bat",
+   "payoff": "",
+   "power": 7.0,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Cabal Paladin",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Human Knight",
+   "payoff": "",
+   "power": 7.6,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Carrion Grub",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Insect",
+   "payoff": "",
+   "power": 8.0,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Dancing Scimitar",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Artifact Creature Spirit",
+   "payoff": "",
+   "power": 9.0,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Dimir House Guard",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Skeleton",
+   "payoff": "",
+   "power": 9.0,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Evincar's Justice",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 21.5,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Gravedigger",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Zombie",
+   "payoff": "",
+   "power": 8.8,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Heartstabber Mosquito",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Insect",
+   "payoff": "",
+   "power": 19.4,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Moan of the Unhallowed",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 8.9,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Null Caller",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Vampire Shaman",
+   "payoff": "",
+   "power": 7.1,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Swarm Culler",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Insect Warrior",
+   "payoff": "",
+   "power": 8.4,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Syphon Mind",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 30.2,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Aclazotz, Deepest Betrayal",
+   "core": true,
+   "rarity": "M",
+   "cmc": 5,
+   "types": "Legendary Creature Bat God",
+   "payoff": "",
+   "power": 77.5,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Cruel Revival",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Instant",
+   "payoff": "",
+   "power": 7.1,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Demon's Grasp",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 19.2,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Destroy the Evidence",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 13.8,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Dreadbringer Lampads",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Enchantment Creature Nymph",
+   "payoff": "",
+   "power": 7.1,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Gorgon Recluse",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Creature Gorgon",
+   "payoff": "",
+   "power": 8.2,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Meteorite",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 25.3,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Chitin Gravestalker",
+   "core": false,
+   "rarity": "C",
+   "cmc": 6,
+   "types": "Creature Insect Warrior",
+   "payoff": "",
+   "power": 8.4,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Exhumer Thrull",
+   "core": false,
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Creature Thrull",
+   "payoff": "",
+   "power": 8.3,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Ihsan's Shade",
+   "core": false,
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Legendary Creature Shade Knight",
+   "payoff": "",
+   "power": 7.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Lotleth Giant",
+   "core": false,
+   "rarity": "C",
+   "cmc": 7,
+   "types": "Creature Zombie Giant",
+   "payoff": "",
+   "power": 7.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Afterlife from the Loam",
+   "core": true,
+   "rarity": "R",
+   "cmc": 8,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 49.0,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Scion of Darkness",
+   "core": true,
+   "rarity": "U",
+   "cmc": 8,
+   "types": "Creature Avatar",
+   "payoff": "",
+   "power": 47.7,
+   "supports": true,
+   "fit": 0
+  }
+ ]
+}

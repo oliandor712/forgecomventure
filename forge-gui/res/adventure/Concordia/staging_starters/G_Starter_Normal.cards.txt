@@ -1,62 +1,68 @@
-Ruxa, Patient Professor
-Elvish Mystic
-Green Sun's Zenith
-Noxious Revival
+Peregrin Took
+Elvish Skysweeper
+Fountainport Bell
+Fyndhorn Elves
+Greenbelt Rampager
 Rancor
 Sol Ring
-Veteran Explorer
-Aftermath Analyst
+Aloe Alchemist
 Arcane Signet
-Blanchwood Prowler
-Farseek
+Case of the Shattered Pact
+Crashing Drawbridge
+Decoction Module
 Fellwar Stone
-Grapple with the Past
-Leyline Dowser
-Lightning Greaves
-Myr Retriever
-Painter's Servant
-Peerless Recycling
-Revive
-Revive the Shire
-The Binding of the Titans
-Town Greeter
-Bala Ged Recovery
-Burnished Hart
-Eccentric Farmer
+Finale of Devastation
+Gold Rush
+Ground Seal
+Lull
+Scorned Villager
+Sphere Grid
+Synchronized Charge
+Tribute to the Wild
+Well Rested
+Ashnod's Altar
+Barrier Breach
+Carven Caryatid
+Caustic Wasps
+Elf Replica
 Evolution Witness
 Farhaven Elf
-Fungal Rebirth
+Inspiring Call
 Jalum Tome
-Loaming Shaman
-Next of Kin
-Puca's Covenant
-Reincarnation
-Scrap Trawler
-Skullwinder
-Sword of Light and Shadow
-Tilling Treefolk
-Centaur Vinecrasher
-Crown of Skemfar
-Desert Warfare
-Healing Technique
-Hedge Shredder
-Lasyd Prowler
-Masked Admirers
+Jugan Defends the Temple
+Leonin Bladetrap
+Phantom Nantuko
+Rending Vines
+Snake Umbra
+Yavimaya Elder
+Bristlebud Farmer
+First Responder
+Fleetwheel Cruiser
+Goreclaw, Terror of Qal Sisma
 Mold Shambler
-Parallel Lives
-Towashi Guide-Bot
-Voice of Many
-Yuna's Decision
-Arashi, the Sky Asunder
-Genesis
-Hivespine Wolverine
-The Mending of Dominaria
-Thickest in the Thicket
-Vorinclex
-Zuko's Exile
-Destructor Dragon
-Desecrate Reality
-Meteor Golem
-Spine of Ish Sah
-Kozilek, Butcher of Truth
-Metalwork Colossus
+Provisions Merchant
+Sandsteppe War Riders
+Smuggler's Buggy
+Surrak, the Hunt Caller
+Toski, Bearer of Secrets
+Volatile Rig
+Wreck Remover
+Creepy Doll
+Hunter's Prowess
+Introduction to Annihilation
+Keeper of Fables
+Motivated Pony
+Return of the Wildspeaker
+Summon: Fat Chocobo
+Rampaging Baloths
+Scavenged Brawler
+Pelakka Wurm
+End-Raze Forerunners
+Titanoth Rex
+Decimator of the Provinces
+Mosswort Bridge
+War Room
+Scavenger Grounds
+Reliquary Tower
+Demolition Field
+Urza's Cave

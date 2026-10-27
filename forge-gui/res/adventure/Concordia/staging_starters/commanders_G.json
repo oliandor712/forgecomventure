@@ -1,44 +1,5 @@
 [
  {
-  "name": "Ruxa, Patient Professor",
-  "cmc": 4,
-  "pop": 7,
-  "profile": [
-   "attack",
-   "etb_self",
-   "sacrifice",
-   "scales:Creature"
-  ],
-  "archetypes": [
-   "blink",
-   "graveyard",
-   "aristocrats",
-   "tokens"
-  ],
-  "fit": 8,
-  "support_n": 594
- },
- {
-  "name": "Legolas Greenleaf",
-  "cmc": 3,
-  "pop": 6,
-  "profile": [
-   "counters",
-   "etb_other",
-   "evasion",
-   "flying_hate",
-   "scales:Legendary"
-  ],
-  "archetypes": [
-   "counters",
-   "card_draw",
-   "tokens",
-   "proliferate"
-  ],
-  "fit": 15,
-  "support_n": 491
- },
- {
   "name": "Arasta of the Endless Web",
   "cmc": 4,
   "pop": 41,
@@ -53,117 +14,28 @@
    "tokens",
    "enchantress",
    "superfriends",
-   "sacrifice"
+   "sagas"
   ],
-  "fit": 6,
+  "fit": 7,
   "support_n": 448
  },
  {
-  "name": "Medusa, Inhuman Queen",
-  "cmc": 3,
-  "pop": 4,
-  "profile": [
-   "attack",
-   "counters",
-   "flying_hate",
-   "spells"
-  ],
-  "archetypes": [
-   "counters",
-   "superfriends",
-   "proliferate",
-   "enchantress"
-  ],
-  "fit": 4,
-  "support_n": 366
- },
- {
-  "name": "Gwenna, Eyes of Gaea",
-  "cmc": 3,
-  "pop": 16,
-  "profile": [
-   "counters",
-   "high_power"
-  ],
-  "archetypes": [
-   "counters",
-   "big_mana",
-   "superfriends",
-   "ramp"
-  ],
-  "fit": 12,
-  "support_n": 319
- },
- {
-  "name": "Bumi, Eclectic Earthbender",
+  "name": "Titania, Protector of Argoth",
   "cmc": 5,
-  "pop": 8,
+  "pop": 30,
   "profile": [
-   "attack",
-   "counters",
    "etb_self",
-   "sacrifice"
+   "sacrifice",
+   "token",
+   "tribe:Elemental"
   ],
   "archetypes": [
-   "counters",
+   "blink",
    "tokens",
-   "superfriends",
-   "proliferate"
+   "aristocrats",
+   "sagas"
   ],
-  "fit": 5,
-  "support_n": 318
- },
- {
-  "name": "Sazh Katzroy",
-  "cmc": 4,
-  "pop": 7,
-  "profile": [
-   "attack",
-   "counters",
-   "etb_self"
-  ],
-  "archetypes": [
-   "counters",
-   "voltron",
-   "tokens",
-   "superfriends"
-  ],
-  "fit": 7,
-  "support_n": 306
- },
- {
-  "name": "Yorvo, Lord of Garenbrig",
-  "cmc": 3,
-  "pop": 6,
-  "profile": [
-   "counters",
-   "etb_other"
-  ],
-  "archetypes": [
-   "counters",
-   "tokens",
-   "superfriends",
-   "proliferate"
-  ],
-  "fit": 5,
-  "support_n": 303
- },
- {
-  "name": "Dwynen, Gilt-Leaf Daen",
-  "cmc": 4,
-  "pop": 11,
-  "profile": [
-   "attack",
-   "flying_hate",
-   "lifegain",
-   "tribe:Elf"
-  ],
-  "archetypes": [
-   "tokens",
-   "lifegain",
-   "aggro"
-  ],
-  "fit": 3,
+  "fit": 16,
   "support_n": 286
  },
  {
@@ -176,10 +48,11 @@
   ],
   "archetypes": [
    "tokens",
+   "stompy",
    "voltron",
-   "aggro"
+   "mutate"
   ],
-  "fit": 3,
-  "support_n": 279
+  "fit": 8,
+  "support_n": 278
  }
 ]

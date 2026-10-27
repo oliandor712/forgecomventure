@@ -1,5 +1,5 @@
 {
- "built": "2026-10-26",
+ "built": "2026-10-27",
  "cards": 27699,
  "inputs": {
   "scryfall/cards.json": 9375624,
@@ -7,12 +7,12 @@
   "spellbinder/signals.json": 162806
  },
  "fingerprint": {
-  "tags": "0b10db92c2",
+  "tags": "38e10fc8ce",
   "scripts": [
    34091,
    1793058317
   ],
-  "code": "a307268cc0",
+  "code": "bd5df64519",
   "staples": "c450e51d0e",
   "inputs": {
    "scryfall/cards.json": 9375624,

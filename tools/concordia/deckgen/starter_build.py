@@ -36,6 +36,8 @@ SUPPORT_W, FIT_W, FIT_CAP = 0.5, 3.0, 4   # user 2026-10-26: commander support c
 SUPPORT_CAP = 14       # user 2026-10-26: do not copy the commander's tags across the whole deck: only the first 14 supporters get the bonus
 MAKER_CAP = SY.MAKER_CAP          # cards (besides the commander) that make the commander's non-creature token (Treasure ...)
 REFINE, REFINE_SWEEPS, REFINE_MARGIN = True, 3, 0.3     # second run over the non-core picks (user 2026-10-26)
+SIZE_W = 1.0       # creature size preference (draft --size cheap|big): bonus per creature by mana value, 0 to 1
+SIZE_CURVE = {'cheap': lambda mv: 1.0 if mv <= 2 else 0.5 if mv == 3 else 0.0, 'big': lambda mv: 1.0 if mv >= 5 else 0.5 if mv == 4 else 0.0}
 SETUP_W = 1.5     # token makers/fodder for creature-token commanders, until SETUP_MIN
 PAYOFF_W, PAYOFF_MIN = 2.5, SY.PAYOFF_MIN   # user 2026-10-26: a commander that makes Treasure needs payoffs and mana sinks; at least PAYOFF_MIN of them
 THEME_MIN = 5         # user 2026-10-26: a tribal/theme card is fine when >= THEME_MIN other cards (members or makers) of that theme are already in the deck
@@ -147,7 +149,7 @@ def cmd_commanders(a):
     print('->', path)
 
 
-def draft(name, commander, strategy, ban, reject, _try=0):
+def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
     cmd = pool[commander.lower()]; ident = cmd['id']; colours = ''.join(sorted(ident)); mono = len(ident) == 1
     if not G.commander_ok(cmd, TIER): sys.exit('commander fails tier 2 commander rules: ' + commander)
     spec = json.loads(json.dumps(B.SPEC[TIER])); spec['curve'] = {int(k): v for k, v in spec['curve'].items()}; spec['rar'] = dict(RARITY)
@@ -180,6 +182,8 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         why.setdefault(p['name'], {})['payoff'] = pk
         fit = min(FIT_CAP, sf.fit(p['ftags'], strategy)) if strategy else 0
         s += FIT_W * fit - B.NICHE_PEN[TIER] * min(2, sf.niche_penalty(p['ftags'], strategy) if strategy else 0)
+        if size and 'Creature' in p['types'].split():     # creature size preference (user 2026-10-27): red cheap, green big
+            s += SIZE_W * (SIZE_CURVE[size](p['cmc']))
         if p.get('cat') == 'staple': s += B.STAPLE_PUSH_BONUS[TIER]
         s += B.PRECON_BONUS.get(TIER, 0) * min(1.0, p.get('precon', 0.0) / 0.25)
         why[p['name']].update(power=pw, supports=bool(sup), fit=fit)
@@ -280,6 +284,10 @@ def draft(name, commander, strategy, ban, reject, _try=0):
     _n0 = list(npow); lands = pick_nonbasics(); npow[:] = _n0
     landpow = sum(max(p['power'].values()) for p, _ in lands); nlandest = len(lands)
     # budget mana rocks first (as build.py does at tier 2), then role quotas, type quotas, creatures, fill
+    kept = []      # draft --keep: picks of an earlier draft that stay (user 2026-10-27: new commander, same 99 as far as it is legal)
+    for kn in keep:
+        p = pool.get(kn.lower())
+        if p and p in cands and (r := can_add(p)): score(p, r); add(p, r); kept.append(p['name'])
     nrock = 0; rocks = []
     for rn, rb in sorted(B.ROCKS.items(), key=lambda kv: -kv[1]['decks']):
         if nrock >= B.BUDGET_ROCKS[TIER]: break
@@ -290,7 +298,7 @@ def draft(name, commander, strategy, ban, reject, _try=0):
     core_names = []
     core = sorted((p for p in cands if p['id'] and (sf.fit(p['ftags'], strategy) if strategy else 0) >= 1 or supports_cmd(prof, p)), key=lambda p: -(max(p['power'].values()) + min(FIT_CAP, sf.fit(p['ftags'], strategy) if strategy else 0)))
     for p in core:       # highest-power on-plan cards first; the rest of the deck is then built around them and the commander
-        if len(core_names) >= CORE_N: break
+        if len(core_names) >= CORE_N or keep: break
         if p in cands and (r := can_add(p)): score(p, r); add(p, r); core_names.append(p['name'])
     done = [p for p, _ in chosen]
     if done: tgt[0] = max(8.0, min(TARGET, (TARGET * (nonland + nlandest) - landpow - sum(max(p['power'].values()) for p in done)) / max(1, nonland - len(done))))
@@ -331,7 +339,7 @@ def draft(name, commander, strategy, ban, reject, _try=0):
         g += [max(0, spec['creatures'] - nc[0])]
         if tplan: g += [max(0, PAYOFF_MIN - npay[0]), max(0, SY.SETUP_MIN - nset[0])]
         return g
-    locked = set(core_names) | {p['name'] for p in rocks}
+    locked = set(core_names) | {p['name'] for p in rocks} | set(kept)
     nswap = 0
     for sweep in range(REFINE_SWEEPS if REFINE else 0):     # second run: re-pick the filler now that later picks have filled the gaps
         changed = False
@@ -384,8 +392,9 @@ def draft(name, commander, strategy, ban, reject, _try=0):
     if combos and _try < 8:
         piece = sorted(combos[0].split(' + '))[0]
         print('  combo %s: banning %s and redrafting' % (combos[0], piece))
-        return draft(name, commander, strategy, list(ban) + [piece], reject, _try + 1)
+        return draft(name, commander, strategy, list(ban) + [piece], reject, _try + 1, size, keep)
     nsup = sum(1 for x in picks if x.get('supports'))
+    if keep: print('  kept %d of %d earlier picks' % (sum(1 for x in picks if x['name'] in set(keep)), len(keep)))
     print('%s: commander %s | tests %s | power %.1f (target %.1f) | creatures %d | cards supporting the commander %d/%d' % (name, cmd['name'], ','.join(prof), r['power'], TARGET, r['creatures'], nsup, len(picks)))
     print('  makers %d (cap %d) | payoffs/sinks %d | colourless spells %d | tribal/theme words allowed: %s | themes unlocked: %s' % (nmaker[0], MAKER_CAP, sum(1 for x in picks if x.get('payoff')), ncl[0], ','.join(sorted(allowed)) or '-', ','.join(sorted(w for w, n in members.items() if n >= THEME_MIN)) or '-'))
     for lvl, msg in dt.check_tier(r, TIER):
@@ -394,11 +403,15 @@ def draft(name, commander, strategy, ban, reject, _try=0):
 
 
 def cmd_draft(a):
-    name = a.name or ('%s_Starter_Normal' % ''.join(sorted(pool[a.commander.lower()]['id']))[:1])
+    global TARGET, STAGE
+    if a.target: TARGET = a.target       # tutorial decks (user 2026-10-27): other power aim, other output folder
+    if a.out: STAGE = os.path.abspath(a.out)
+    name =a.name or ('%s_Starter_Normal' % ''.join(sorted(pool[a.commander.lower()]['id']))[:1])
     reject = []
     if a.reject:
         rv = json.load(open(a.reject, encoding='utf-8')); reject = rv.get('rejects', [])
-    draft(name, a.commander, [s for s in a.strategy.split(',') if s], [x for x in a.ban.split(';') if x], reject)
+    keep = [x['name'] for x in _picks(a.keep)['picks']] if a.keep else []
+    draft(name, a.commander, [s for s in a.strategy.split(',') if s], [x for x in a.ban.split(';') if x], reject, size=a.size, keep=keep)
 
 
 def _picks(name): return json.load(open(os.path.join(STAGE, name + '.picks.json'), encoding='utf-8'))
@@ -514,7 +527,8 @@ if __name__ == '__main__':
     ap = argparse.ArgumentParser(); sp = ap.add_subparsers(dest='cmd', required=True)
     c = sp.add_parser('commanders'); c.add_argument('--color', required=True, choices=list(COLORS)); c.add_argument('--top', type=int, default=20)
     d = sp.add_parser('draft'); d.add_argument('--commander', required=True); d.add_argument('--strategy', default=''); d.add_argument('--name', default='')
-    d.add_argument('--ban', default=''); d.add_argument('--reject', default='')
+    d.add_argument('--ban', default=''); d.add_argument('--reject', default=''); d.add_argument('--size', default='', choices=['', 'cheap', 'big'])
+    d.add_argument('--target', type=float, default=0.0); d.add_argument('--out', default=''); d.add_argument('--keep', default='')
     for n in ('review-export', 'review-compare'):
         r = sp.add_parser(n); r.add_argument('--name', required=True)
     a = ap.parse_args()

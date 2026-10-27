@@ -89,20 +89,20 @@ def _band(tier):
 # Tier rules. Ranges are inclusive [min, max]; None means no bound. "hard" rules FAIL, the rest WARN.
 TIERS = {
     1: DECK,  # tier 1 values are defined above
-    2: {"name": "Tier 2 - Moderate", "life": (15, 20), "watch": 1, "staples": (12, 41), "commander_mv": (3, 5),
+    2: {"name": "Tier 2 - Moderate", "life": (15, 20), "watch": 1, "staples": (12, 41), "commander_mv": (None, None),  # was (3, 5): no mana value requirement for tier 2 commanders (user, 2026-10-27)
         "lands": (36, 39), "ramp": (2, 8), "fast": (0, 1), "draw": (2, 10), "removal": (4, 14), "wipe": (0, 2),
         "tutor": (0, 1), "avg_mv": (2.6, 3.6), "creatures": (15, None), "power": _band(2),
         "game_changers": 0, "mld": 0, "extra_turns": 0, "premium50": (0, 5), "premium70": (0, 2), "combos": "none",
         "bracket": 2, "curve": {1: (2, 7), 2: (8, 18), 3: (10, 21), 4: (7, 15), 5: (4, 11), 6: (3, 12)},
         "types": {"Instant": 4, "Sorcery": 3, "Artifact": 4, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
-    3: {"name": "Tier 3 - Challenging", "life": (25, 35), "watch": 2, "staples": (22, 39), "commander_mv": (3, 7),
+    3: {"name": "Tier 3 - Challenging", "life": (25, 35), "watch": 2, "staples": (22, 39), "commander_mv": (None, None),  # was (3, 7): no mana value requirement (user, 2026-10-27)
         "lands": (33, 38), "ramp": (8, 16), "fast": (0, 2), "draw": (6, 14), "removal": (7, 16), "wipe": (1, 4),
         "tutor": (0, 3), "avg_mv": (2.8, 3.9), "creatures": (15, None), "power": _band(3),
         "game_changers": 0, "mld": 0, "extra_turns": 0, "premium50": (0, 10), "premium70": (0, 2), "combos": "late",
         "bracket": 3, "curve": {1: (3, 12), 2: (9, 22), 3: (10, 21), 4: (5, 15), 5: (3, 11), 6: (2, 10)},
         "types": {"Instant": 4, "Sorcery": 3, "Artifact": 4, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
     # Bracket 4 (optimized), kept to what the Forge AI can pilot: no mass land denial, no early two-card combos.
-    4: {"name": "Tier 4 - Hard", "life": (30, 40), "watch": 4, "staples": (22, 46), "commander_mv": (2, 7),
+    4: {"name": "Tier 4 - Hard", "life": (30, 40), "watch": 4, "staples": (22, 46), "commander_mv": (None, None),  # was (2, 7): no mana value requirement (user, 2026-10-27)
         "lands": (33, 37), "ramp": (9, 18), "fast": (0, 3), "draw": (8, 16), "removal": (8, 18), "wipe": (1, 5),
         "tutor": (0, 4), "avg_mv": (2.7, 3.8), "creatures": (15, None), "power": _band(4),
         "game_changers": 4, "mld": 0, "extra_turns": 1, "premium50": (4, 14), "premium70": (0, 5), "combos": "late",
@@ -110,7 +110,7 @@ TIERS = {
         "types": {"Instant": 5, "Sorcery": 3, "Artifact": 5, "Enchantment": 2}, "max_type_share": 0.6, "karsten": 3},
     # The AI's ceiling: bracket 4 at full card quality (fast mana, tutors, Game Changers), still no mass land denial
     # and no early two-card combos, which the AI can't assemble and players don't enjoy facing.
-    5: {"name": "Tier 5 - Elite", "life": (35, 45), "watch": 8, "staples": (28, 48), "commander_mv": (2, 7),
+    5: {"name": "Tier 5 - Elite", "life": (35, 45), "watch": 8, "staples": (28, 48), "commander_mv": (None, None),  # was (2, 7): no mana value requirement (user, 2026-10-27)
         "lands": (31, 37), "ramp": (10, 20), "fast": (0, 5), "draw": (9, 18), "removal": (9, 20), "wipe": (1, 5),
         "tutor": (0, 6), "avg_mv": (2.5, 3.8), "creatures": (15, None), "power": _band(5),
         "game_changers": 6, "mld": 0, "extra_turns": 2, "premium50": (8, None), "premium70": (1, None), "combos": "late",

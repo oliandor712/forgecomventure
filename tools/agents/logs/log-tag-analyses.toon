@@ -1,6 +1,6 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Append one row per analysis, under 400 chars.
 # Tag analyses: reverse check, tag suggestions, derived tags.
-log[46|]{date|topic|finding|caveat}:
+log[47|]{date|topic|finding|caveat}:
   2026-10-23|TAG_SUGGESTIONS C+D|face:/derived: lines built; on 353 starters spot_removal 69, etb_self 78, evasion_pkg 31, mana_out 28, anthem 3, wipe 0|shrink weight 0.5 unverified; E,F unbuilt
   2026-10-23|reader r18single|24 cards 1 reader: mean_sim 0.942, 23 good, 1 partial, top1 24/24|V1-V4,S1,A not computed
   2026-10-23|grammar performance|3 readers: none V1 .615 V3 .879; v1 full+records V1 .776 V3 .968; v1 short ~ none; v2 slim V1 .81 V3 .933 S1 .994 A .937; single reader r18 A .938-.946 matches 3-reader A|v2 only on 105 cards; V3 .98 target unmet; doc GRAMMAR_PERFORMANCE.md pushed a7336e066d7
@@ -50,3 +50,4 @@ log[46|]{date|topic|finding|caveat}:
   2026-10-25|starter deck glance reviews (W,U,B,R,G redraft)|on plan 60,61,60,60,59 of 62; rejects: W Herald's Horn+Golden Egg, U Leonin Bladetrap, B Golden Egg (+Rev flagged = tool bug), R Mask of Memory+Skyscanner, G Mask of Memory+Grafted Wargear+Symmetry Matrix; archetype disagreements W1 U0 B16 R4 G0|B's 16 not read by hand; Skyscanner tags (burn,control,tribal) vs Oracle (blink,card_draw) = tag bug; rebuilt lists not re-reviewed
   2026-10-26|tagger folds: haunt SVar, ETB choices, prepare|Haunt SVar read as ability (10 cards gained tags); ETB NameCard/GenericChoice/PutCounter choices tagged (38 pool cards); enters_prepared approved + prepare spell half read with creature (69 prepare cards, CopyFaceFrom followed); starter run 571 units, guards 569 same, redundancy 4 findings, none for new tags|prepare cards in eligible pool not counted; W verdicts for changed cards (e.g. Absolver Thrull) not refreshed; readers share form/deck_rules/mv, tag reader also gets legend+TAG refs, oracle reader gets reminders
   2026-10-26|glance re-run on the 40 renderer-gap cards after tag fixes|Protection API (grant_kw:protection, protection_from:choice) and Effect+CantBlockBy (cant_be_blocked) now tagged; 14 hand phrasings added; gaps 17 of 40 render complete (was 7); glance G_gaps 9 cards role F1 0.48, G_gaps2 34 cards role F1 0.64, arch hit 1.0 both|23 rows still need tag info (tribal filter, paid triggers, haunt, conditions, replace:* subject/amount); MTG2LLM_GAPS rows replaced by the new runs
+  2026-10-27|glance starters|see log-code-analyses 2026-10-27 glance row|duplicate pointer

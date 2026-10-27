@@ -1,0 +1,75 @@
+{
+ "deck": "G_Starter_Normal",
+ "strategy": [
+  "blink",
+  "graveyard"
+ ],
+ "on_plan": 61,
+ "rejects": [
+  "Parallel Lives"
+ ],
+ "reject_detail": [
+  {
+   "name": "Parallel Lives",
+   "function": "Doubles tokens you create.",
+   "oracle_arch": [
+    "tokens",
+    "aristocrats",
+    "sacrifice"
+   ],
+   "tag_arch": [
+    "chaos",
+    "combo",
+    "enchantress",
+    "tokens"
+   ],
+   "roles": [
+    "doubler",
+    "multiplier"
+   ],
+   "power": 3
+  }
+ ],
+ "tag_gaps": [],
+ "summary": {
+  "cards": 62,
+  "tag_readers": 3,
+  "rows": 186,
+  "role_f1": 0.633,
+  "arch_hit": 1.0,
+  "power_within1": 0.952,
+  "function_sim": 0.719,
+  "role_f1_vs_listed": 0.436,
+  "arch_hit_vs_listed": 0.933,
+  "unclear_per_card": 0.53,
+  "reader_role_agreement": 0.763,
+  "calibration_by_confidence": {
+   "1": [
+    0.5,
+    1
+   ],
+   "2": [
+    0.709,
+    33
+   ],
+   "3": [
+    0.793,
+    88
+   ],
+   "4": [
+    0.899,
+    54
+   ],
+   "5": [
+    0.97,
+    10
+   ]
+  },
+  "tag_tokens_per_card_est": 265,
+  "invalid_values": {
+   "roles": 2,
+   "archetypes": 0
+  },
+  "unreadable_files": []
+ }
+}

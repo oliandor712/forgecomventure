@@ -1,0 +1,691 @@
+{
+ "name": "B_Starter_Normal",
+ "commander": "Ashcoat of the Shadow Swarm",
+ "profile": [
+  "attack",
+  "mill",
+  "sacrifice",
+  "tribe:Rat"
+ ],
+ "strategy": [
+  "reanimator",
+  "self_mill"
+ ],
+ "banned": [
+  "revenge of the rats"
+ ],
+ "lands": {
+  "basics": {
+   "B": 32
+  },
+  "nonbasic": [
+   "Bojuka Bog",
+   "Takenuma, Abandoned Mire",
+   "Reliquary Tower",
+   "Demolition Field",
+   "Scavenger Grounds",
+   "Yavimaya, Cradle of Growth"
+  ]
+ },
+ "picks": [
+  {
+   "name": "Black Sun's Twilight",
+   "core": true,
+   "rarity": "R",
+   "cmc": 1,
+   "types": "Instant",
+   "payoff": "",
+   "power": 69.8,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Cauldron Familiar",
+   "core": true,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Cat",
+   "payoff": "",
+   "power": 48.6,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Insatiable Avarice",
+   "core": true,
+   "rarity": "R",
+   "cmc": 1,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 49.7,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Sol Ring",
+   "core": false,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Artifact"
+  },
+  {
+   "name": "Undying Malice",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Instant",
+   "payoff": "",
+   "power": 19.0,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Unearth",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 16.7,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Arcane Signet",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Blister Beetle",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Insect",
+   "payoff": "",
+   "power": 19.6,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Chainer's Edict",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 26.0,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Clattering Augur",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Skeleton Shaman",
+   "payoff": "",
+   "power": 19.6,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Corpse Churn",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 11.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Deadly Dispute",
+   "core": true,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 43.9,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Death Denied",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant Arcane",
+   "payoff": "",
+   "power": 15.4,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Exhume",
+   "core": true,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 38.9,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Fellwar Stone",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Golgari Thug",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Human Warrior",
+   "payoff": "",
+   "power": 14.1,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Night's Whisper",
+   "core": true,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 49.5,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Persist",
+   "core": false,
+   "rarity": "R",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 24.1,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Return to Action",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 15.2,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Umbral Collar Zealot",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Human Cleric",
+   "payoff": "",
+   "power": 18.3,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Undead Butler",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Zombie",
+   "payoff": "",
+   "power": 12.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Barrowgoyf",
+   "core": true,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Creature Lhurgoyf",
+   "payoff": "",
+   "power": 46.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Braids's Frightful Return",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment Saga",
+   "payoff": "",
+   "power": 28.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Charred Graverobber",
+   "core": false,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Creature Skeleton Mercenary",
+   "payoff": "",
+   "power": 16.3,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Drown in Sorrow",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 21.8,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Expunge",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 22.8,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Fallen Ideal",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 13.8,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Fleshbag Marauder",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Zombie Warrior",
+   "payoff": "",
+   "power": 15.9,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Grim Haruspex",
+   "core": true,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Creature Human Wizard",
+   "payoff": "",
+   "power": 49.2,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Letter of Acceptance",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 28.7,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Minion's Return",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 16.0,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Plaguecrafter",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Human Shaman",
+   "payoff": "",
+   "power": 19.2,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Screams from Within",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 13.3,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Vessel of Endless Rest",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 27.7,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Virtus's Maneuver",
+   "core": false,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 18.1,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Visions of Dread",
+   "core": false,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 17.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Ashen Powder",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 16.7,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Carrion Grub",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Insect",
+   "payoff": "",
+   "power": 8.0,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Daring Fiendbonder",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Human Warlock",
+   "payoff": "",
+   "power": 13.6,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Dread Return",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 24.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Dredge the Mire",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 19.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Erebos's Titan",
+   "core": false,
+   "rarity": "M",
+   "cmc": 4,
+   "types": "Creature Giant",
+   "payoff": "",
+   "power": 18.2,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Graveshifter",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Shapeshifter",
+   "payoff": "",
+   "power": 18.7,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Hazel's Nocturne",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Instant",
+   "payoff": "",
+   "power": 13.7,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Heartstabber Mosquito",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Insect",
+   "payoff": "",
+   "power": 19.4,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Makeshift Mannequin",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Instant",
+   "payoff": "",
+   "power": 14.1,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Siegfried, Famed Swordsman",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Legendary Creature Human Warrior Rogue",
+   "payoff": "",
+   "power": 18.9,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Whisper, Blood Liturgist",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Legendary Creature Human Cleric",
+   "payoff": "",
+   "power": 15.4,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Aclazotz, Deepest Betrayal",
+   "core": true,
+   "rarity": "M",
+   "cmc": 5,
+   "types": "Legendary Creature Bat God",
+   "payoff": "",
+   "power": 77.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Demon's Grasp",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 19.2,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Evil Reawakened",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 13.8,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Exile into Darkness",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 24.1,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Thrilling Encore",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Instant",
+   "payoff": "",
+   "power": 18.9,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Unbreakable Bond",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 12.2,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Vat Emergence",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 18.4,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Arbiter of Woe",
+   "core": false,
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Creature Demon",
+   "payoff": "",
+   "power": 15.3,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Blight Titan",
+   "core": false,
+   "rarity": "R",
+   "cmc": 6,
+   "types": "Creature Phyrexian Giant",
+   "payoff": "",
+   "power": 17.7,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Scavenged Brawler",
+   "core": true,
+   "rarity": "R",
+   "cmc": 6,
+   "types": "Artifact Creature Construct",
+   "payoff": "",
+   "power": 49.6,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Technomancer",
+   "core": false,
+   "rarity": "R",
+   "cmc": 7,
+   "types": "Artifact Creature Necron Wizard",
+   "payoff": "",
+   "power": 20.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Afterlife from the Loam",
+   "core": true,
+   "rarity": "R",
+   "cmc": 8,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 49.0,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Scion of Darkness",
+   "core": true,
+   "rarity": "U",
+   "cmc": 8,
+   "types": "Creature Avatar",
+   "payoff": "",
+   "power": 47.7,
+   "supports": true,
+   "fit": 3
+  }
+ ]
+}

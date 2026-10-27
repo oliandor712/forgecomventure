@@ -1,73 +1,84 @@
 {
  "deck": "B_Starter_Normal",
+ "mana": {
+  "tag": {
+   "reader1_batch_01": {
+    "curve": "ok",
+    "sources": "ok",
+    "notes": "Curve matches reference, avg mv 3.36; 34 black sources plus rocks, few colorless spells but 7 colorless sources."
+   }
+  },
+  "oracle": {
+   "reader1_batch_01": {
+    "curve": "ok",
+    "sources": "ok",
+    "notes": "Average mv 3.36 matches reference; 38 lands plus 5 rocks in mono-black is ample, though a few colorless utility lands are low value."
+   }
+  }
+ },
  "strategy": [
-  "big_mana",
-  "sacrifice"
+  "reanimator",
+  "self_mill"
  ],
- "on_plan": 61,
+ "on_plan": 67,
  "rejects": [
-  "Geth's Grimoire"
+  "Revenge of the Rats"
  ],
  "reject_detail": [
   {
-   "name": "Geth's Grimoire",
-   "function": "Draw a card whenever an opponent discards.",
+   "name": "Revenge of the Rats",
+   "function": "Makes tapped Rat tokens equal to creature cards in graveyard, with flashback.",
    "oracle_arch": [
-    "wheels",
-    "card_draw",
-    "control"
+    "tokens",
+    "tribal",
+    "graveyard"
    ],
    "tag_arch": [
-    "card_draw",
-    "colorless",
-    "wheels"
+    "graveyard",
+    "tokens",
+    "tribal"
    ],
    "roles": [
-    "draw_engine",
-    "payoff"
+    "etb_creature",
+    "producer",
+    "rebuy"
    ],
-   "power": 2
+   "power": 3
   }
  ],
  "tag_gaps": [],
  "summary": {
-  "cards": 62,
-  "tag_readers": 3,
-  "rows": 186,
-  "role_f1": 0.675,
+  "cards": 68,
+  "tag_readers": 1,
+  "rows": 68,
+  "role_f1": 0.707,
   "arch_hit": 1.0,
-  "power_within1": 0.984,
-  "function_sim": 0.7,
-  "role_f1_vs_listed": 0.385,
-  "arch_hit_vs_listed": 0.944,
-  "unclear_per_card": 0.51,
-  "reader_role_agreement": 0.819,
+  "power_within1": 0.985,
+  "function_sim": 0.714,
+  "role_f1_vs_listed": 0.0,
+  "arch_hit_vs_listed": 1.0,
+  "unclear_per_card": 0.46,
+  "reader_role_agreement": null,
   "calibration_by_confidence": {
-   "1": [
-    0.5,
-    3
-   ],
    "2": [
-    0.818,
-    30
+    0.833,
+    7
    ],
    "3": [
-    0.824,
-    79
+    0.844,
+    36
    ],
    "4": [
-    0.866,
-    65
-   ],
-   "5": [
-    0.922,
-    9
+    0.873,
+    25
    ]
   },
-  "tag_tokens_per_card_est": 269,
+  "tag_tokens_per_card_est": 184,
   "invalid_values": {
-   "roles": 0,
    "archetypes": 0
+  },
+  "roles_dropped": {
+   "archetype_id_as_role": 1
   },
   "unreadable_files": []
  }

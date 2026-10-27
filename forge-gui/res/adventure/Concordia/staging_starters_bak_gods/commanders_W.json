@@ -1,0 +1,156 @@
+[
+ {
+  "name": "Heliod, God of the Sun",
+  "cmc": 4,
+  "pop": 10,
+  "profile": [
+   "attack",
+   "devotion:W",
+   "protection",
+   "token"
+  ],
+  "archetypes": [
+   "tokens",
+   "voltron",
+   "superfriends",
+   "stax"
+  ],
+  "fit": 8,
+  "support_n": 651
+ },
+ {
+  "name": "Heliod, Sun-Crowned",
+  "cmc": 3,
+  "pop": 18,
+  "profile": [
+   "counters",
+   "devotion:W",
+   "lifegain",
+   "protection"
+  ],
+  "archetypes": [
+   "counters",
+   "infect",
+   "lifegain",
+   "voltron"
+  ],
+  "fit": 6,
+  "support_n": 615
+ },
+ {
+  "name": "Adeline, Resplendent Cathar",
+  "cmc": 3,
+  "pop": 32,
+  "profile": [
+   "attack",
+   "scales:Creature",
+   "token",
+   "tribe:Human"
+  ],
+  "archetypes": [
+   "tokens",
+   "superfriends",
+   "stax",
+   "sagas"
+  ],
+  "fit": 7,
+  "support_n": 576
+ },
+ {
+  "name": "Losheel, Clockwork Scholar",
+  "cmc": 3,
+  "pop": 14,
+  "profile": [
+   "etb_other",
+   "scales:Artifact"
+  ],
+  "archetypes": [
+   "tokens",
+   "pillow_fort",
+   "upkeep_triggers",
+   "sagas"
+  ],
+  "fit": 23,
+  "support_n": 561
+ },
+ {
+  "name": "Odric, Lunarch Marshal",
+  "cmc": 4,
+  "pop": 25,
+  "profile": [
+   "attack",
+   "control",
+   "double_strike",
+   "evasion",
+   "flying_hate",
+   "lifegain",
+   "protection"
+  ],
+  "archetypes": [
+   "stompy",
+   "tokens",
+   "legends_matter",
+   "infect"
+  ],
+  "fit": 10,
+  "support_n": 552
+ },
+ {
+  "name": "Haliya, Guided by Light",
+  "cmc": 3,
+  "pop": 19,
+  "profile": [
+   "etb_self",
+   "lifegain",
+   "scales:Artifact"
+  ],
+  "archetypes": [
+   "pillow_fort",
+   "tokens",
+   "sagas",
+   "lifegain"
+  ],
+  "fit": 21,
+  "support_n": 538
+ },
+ {
+  "name": "God-Eternal Oketra",
+  "cmc": 5,
+  "pop": 15,
+  "profile": [
+   "attack",
+   "double_strike",
+   "sacrifice",
+   "token",
+   "tribe:God",
+   "tribe:Zombie"
+  ],
+  "archetypes": [
+   "tokens",
+   "enchantress",
+   "aristocrats",
+   "voltron"
+  ],
+  "fit": 12,
+  "support_n": 474
+ },
+ {
+  "name": "Mavren Fein, Dusk Apostle",
+  "cmc": 3,
+  "pop": 12,
+  "profile": [
+   "attack",
+   "lifegain",
+   "token",
+   "tribe:Vampire"
+  ],
+  "archetypes": [
+   "tokens",
+   "superfriends",
+   "stax",
+   "sagas"
+  ],
+  "fit": 7,
+  "support_n": 451
+ }
+]

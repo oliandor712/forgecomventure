@@ -1,0 +1,91 @@
+{
+ "deck": "W_Starter_Normal",
+ "mana": {
+  "tag": {
+   "reader1_batch_01": {
+    "curve": "ok",
+    "sources": "ok",
+    "notes": "Avg mv 3.38 slightly above reference; 33 white sources plus 6 rocks and cheap colorless; colorless count is covered."
+   },
+   "reader2_batch_01_r2": {
+    "curve": "ok",
+    "sources": "ok",
+    "notes": "Curve average 3.38 near reference; 33 white sources plus rocks suffice, though several expensive 6-10 mv artifacts are clunky."
+   }
+  },
+  "oracle": {
+   "reader1_batch_01": {
+    "curve": "ok",
+    "sources": "ok",
+    "notes": "Average mv 3.38 near reference; 33 white sources plus 10 colorless-only supports few colorless spells and rocks."
+   }
+  }
+ },
+ "strategy": [
+  "superfriends",
+  "tokens"
+ ],
+ "on_plan": 67,
+ "rejects": [
+  "Nine Lives"
+ ],
+ "reject_detail": [
+  {
+   "name": "Nine Lives",
+   "function": "Hexproof enchantment preventing damage to you until nine counters, then exiles.",
+   "oracle_arch": [
+    "pillow_fort",
+    "control",
+    "stax"
+   ],
+   "tag_arch": [
+    "control",
+    "counters",
+    "pillow_fort"
+   ],
+   "roles": [
+    "defense",
+    "pillowfort"
+   ],
+   "power": 2
+  }
+ ],
+ "tag_gaps": [],
+ "summary": {
+  "cards": 68,
+  "tag_readers": 2,
+  "rows": 136,
+  "role_f1": 0.68,
+  "arch_hit": 1.0,
+  "power_within1": 0.971,
+  "function_sim": 0.681,
+  "role_f1_vs_listed": 0.354,
+  "arch_hit_vs_listed": 0.75,
+  "unclear_per_card": 0.58,
+  "reader_role_agreement": 0.815,
+  "calibration_by_confidence": {
+   "2": [
+    0.764,
+    23
+   ],
+   "3": [
+    0.838,
+    42
+   ],
+   "4": [
+    0.868,
+    66
+   ],
+   "5": [
+    0.84,
+    5
+   ]
+  },
+  "tag_tokens_per_card_est": 185,
+  "invalid_values": {
+   "roles": 6,
+   "archetypes": 0
+  },
+  "unreadable_files": []
+ }
+}

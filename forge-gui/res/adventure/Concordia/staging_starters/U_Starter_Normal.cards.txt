@@ -1,62 +1,68 @@
-Hermes, Overseer of Elpis
+Gandalf, Wandering Wizard
+An Offer You Can't Refuse
+Condescend
+Consider
 Enter the Enigma
-Repeal
 Serum Visions
-Skullclamp
 Sol Ring
-Soul-Guide Lantern
 Arcane Signet
-Bellowing Crier
-Cartouche of Knowledge
-Counterbalance
-Counterspell
-Crashing Drawbridge
-Deduce
+Confounding Conundrum
+Curate
+Decoction Module
+Deliberate
+Experimental Augury
+Expert-Level Safe
 Fellwar Stone
+Hithlain Knots
+Impulse
 Jeskai Elder
-Lightning Greaves
-Negate
-Ominous Seas
-Pollywog Symbiote
-Prized Statue
-Remand
-Case of the Ransacked Lab
-Cloud Key
-Cloudkin Seer
-Compulsive Research
-Depths of Desire
+Omen of the Sea
+Refocus
+Rescue, Pepper Potts
+Resculpt
+Ephara's Dispersal
+Esperzoa
+Fantastic Elasticity
 Filigree Familiar
-Hornswoggle
-Merchant of Secrets
-Nuka-Cola Vending Machine
-Secrets of the Dead
+Grazilaxx, Illithid Scholar
+Grip of the Roil
+Jeskai Infiltrator
+Man-o'-War
+Ophidian Eye
+Silundi Vision
+Sphinx's Tutelage
+Steady Progress
+Tandem Lookout
 Teferi's Tutelage
-Thunderstaff
-Tome Raider
-Traveler's Cloak
 Windrider Wizard
 Archaeomancer
-Baxter, Fly in the Ointment
-Hedron Archive
-Kimoyo Beads
-Mister Fantastic, Reed Richards
-Sphinx of False Conclusions
-Tanufel Rimespeaker
-The Phasing of Zhalfir
-The Vision
-Turn into a Pumpkin
-Valeria Richards, Precocious
-Vibranium Strike Gauntlets
-Archmage of Runes
-Luxurious Locomotive
-Meteorite
-Mirelurk Queen
-Reflections of Littjara
-River Kelpie
+Argent Sphinx
+Displacer Kitten
+Dissipation Field
+Fallowsage
+Irenicus's Vile Duplication
+Learn from the Past
+Lux Cannon
+Memories Returning
+Smuggler's Buggy
+Stonespeaker Crystal
+Urza, Lord High Artificer
+Batterskull
+Chakram Retriever
+Dreamtail Heron
+Mulldrifter
+Stormsurge Kraken
 Thoughtcast
-Caged Sun
-Dreamstone Hedron
-Season of Weaving
-Thunderhawk Gunship
-Titan of Littjara
-Scion of Draco
+Zndrsplt's Judgment
+Aetherling
+Aethertide Whale
+Calamitous Tide
+Magus of the Mind
+Thousand Winds
+Enigma Thief
+Reliquary Tower
+Scavenger Grounds
+Yavimaya, Cradle of Growth
+War Room
+Demolition Field
+Rogue's Passage

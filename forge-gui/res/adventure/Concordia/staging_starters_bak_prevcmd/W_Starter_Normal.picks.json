@@ -1,0 +1,692 @@
+{
+ "name": "W_Starter_Normal",
+ "commander": "Rosie Cotton of South Lane",
+ "profile": [
+  "counters",
+  "etb_self",
+  "lifegain",
+  "sacrifice",
+  "token"
+ ],
+ "strategy": [
+  "lifegain",
+  "tokens"
+ ],
+ "banned": [
+  "fountainport bell"
+ ],
+ "lands": {
+  "basics": {
+   "W": 32
+  },
+  "nonbasic": [
+   "Eiganjo, Seat of the Empire",
+   "Scavenger Grounds",
+   "Nykthos, Shrine to Nyx",
+   "War Room",
+   "Rogue's Passage",
+   "Demolition Field"
+  ]
+ },
+ "picks": [
+  {
+   "name": "Cloudshift",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Instant",
+   "payoff": "",
+   "power": 17.3,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Crumb and Get It",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Instant",
+   "payoff": "",
+   "power": 15.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Restoration Magic",
+   "core": false,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Instant",
+   "payoff": "",
+   "power": 23.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Sol Ring",
+   "core": false,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Artifact"
+  },
+  {
+   "name": "Soul Warden",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Human Cleric",
+   "payoff": "",
+   "power": 21.1,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Soul's Attendant",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Human Cleric",
+   "payoff": "",
+   "power": 16.4,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Arcane Signet",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Bumbleflower's Sharepot",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 27.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Crashing Drawbridge",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Creature Wall",
+   "payoff": "",
+   "power": 17.8,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Dora Milaje Elite",
+   "core": false,
+   "rarity": "R",
+   "cmc": 2,
+   "types": "Creature Human Warrior",
+   "payoff": "",
+   "power": 21.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Fellwar Stone",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Gleaming Splendor",
+   "core": true,
+   "rarity": "M",
+   "cmc": 2,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 77.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Instant Ramen",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Food",
+   "payoff": "",
+   "power": 30.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Invasion Reinforcements",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Human Warrior Ally",
+   "payoff": "",
+   "power": 14.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Path to Redemption",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 25.2,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Personify",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 16.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Rune of Sustenance",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Enchantment Aura Rune",
+   "payoff": "",
+   "power": 18.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Sejiri Shelter",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 17.0,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Shelter",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 14.9,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Sunset Revelry",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 15.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Suture Priest",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Phyrexian Cleric",
+   "payoff": "",
+   "power": 22.0,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Ashnod's Altar",
+   "core": true,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "pay",
+   "power": 45.7,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Circuit Mender",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact Creature Insect",
+   "payoff": "",
+   "power": 17.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Eastfarthing Farmer",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Halfling Peasant",
+   "payoff": "pay",
+   "power": 12.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Fiend Hunter",
+   "core": true,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Human Cleric",
+   "payoff": "",
+   "power": 48.7,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Filigree Familiar",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact Creature Fox",
+   "payoff": "",
+   "power": 11.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Generous Gift",
+   "core": true,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 42.4,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Inspiring Overseer",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Angel Cleric",
+   "payoff": "",
+   "power": 15.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Lita, Mechanical Engineer",
+   "core": true,
+   "rarity": "M",
+   "cmc": 3,
+   "types": "Legendary Artifact Creature Artificer",
+   "payoff": "",
+   "power": 49.3,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Love Song of Night and Day",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment Saga",
+   "payoff": "",
+   "power": 30.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Muster the Departed",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 15.4,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Paladin Danse, Steel Maverick",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Legendary Artifact Creature Synth Knight",
+   "payoff": "",
+   "power": 15.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Sigrid, God-Favored",
+   "core": true,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Legendary Creature Human Warrior",
+   "payoff": "",
+   "power": 49.8,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Splendor Mare",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Elk Unicorn",
+   "payoff": "",
+   "power": 14.6,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Thalia's Geistcaller",
+   "core": false,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Creature Human Cleric",
+   "payoff": "pay",
+   "power": 17.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Toby, Beastie Befriender",
+   "core": true,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Legendary Creature Human Wizard",
+   "payoff": "",
+   "power": 49.5,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Attended Healer",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Kor Cleric",
+   "payoff": "",
+   "power": 12.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Bill the Pony",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Legendary Creature Horse",
+   "payoff": "pay",
+   "power": 16.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Commander Sofia Daguerre",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Legendary Creature Human Pilot",
+   "payoff": "",
+   "power": 29.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Decree of Justice",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 16.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Felidar Retreat",
+   "core": true,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 47.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Food Coma",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 29.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Hedron Archive",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 39.8,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Qala, Ajani's Pridemate",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Legendary Creature Cat Warrior",
+   "payoff": "",
+   "power": 14.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Summon: Yojimbo",
+   "core": true,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Enchantment Creature Saga Samurai",
+   "payoff": "",
+   "power": 69.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Weapons Vendor",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Human Artificer",
+   "payoff": "",
+   "power": 25.0,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Wingmantle Chaplain",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Human Cleric",
+   "payoff": "",
+   "power": 15.9,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Wreck Remover",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Artifact Creature Construct",
+   "payoff": "",
+   "power": 26.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Abdel Adrian, Gorion's Ward",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Legendary Creature Human Warrior",
+   "payoff": "",
+   "power": 17.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Alharu, Solemn Ritualist",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Legendary Creature Human Monk",
+   "payoff": "",
+   "power": 14.3,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Bond of Discipline",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 14.1,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Geist-Honored Monk",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Creature Human Monk",
+   "payoff": "",
+   "power": 18.1,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Localized Destruction",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 19.3,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Reverent Hoplite",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Creature Human Soldier",
+   "payoff": "",
+   "power": 13.3,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Wingmate Roc",
+   "core": false,
+   "rarity": "M",
+   "cmc": 5,
+   "types": "Creature Bird",
+   "payoff": "",
+   "power": 21.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Angelic Aberration",
+   "core": false,
+   "rarity": "R",
+   "cmc": 6,
+   "types": "Creature Eldrazi Angel",
+   "payoff": "pay",
+   "power": 20.6,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Linvala, the Preserver",
+   "core": false,
+   "rarity": "R",
+   "cmc": 6,
+   "types": "Legendary Creature Angel",
+   "payoff": "",
+   "power": 19.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Righteous Fury",
+   "core": true,
+   "rarity": "R",
+   "cmc": 6,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 49.8,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Wurmcoil Engine",
+   "core": true,
+   "rarity": "M",
+   "cmc": 6,
+   "types": "Artifact Creature Phyrexian Wurm",
+   "payoff": "",
+   "power": 48.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Gideon's Phalanx",
+   "core": false,
+   "rarity": "R",
+   "cmc": 7,
+   "types": "Instant",
+   "payoff": "",
+   "power": 20.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Moonshaker Cavalry",
+   "core": true,
+   "rarity": "M",
+   "cmc": 8,
+   "types": "Creature Spirit Knight",
+   "payoff": "",
+   "power": 49.6,
+   "supports": true,
+   "fit": 3
+  }
+ ]
+}

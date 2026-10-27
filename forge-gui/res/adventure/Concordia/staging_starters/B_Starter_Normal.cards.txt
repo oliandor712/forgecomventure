@@ -1,62 +1,68 @@
-Rev, Tithe Extractor
+Ashcoat of the Shadow Swarm
 Black Sun's Twilight
-Myr Moonvessel
+Cauldron Familiar
+Insatiable Avarice
 Sol Ring
-Survivor's Med Kit
-Tragic Slip
-Village Rites
-Animate Dead
+Undying Malice
+Unearth
 Arcane Signet
-Carrier Thrall
+Blister Beetle
+Chainer's Edict
+Clattering Augur
+Corpse Churn
 Deadly Dispute
-Dire Fleet Hoarder
+Death Denied
 Exhume
 Fellwar Stone
-Infernal Scarring
-Lightning Greaves
-Mask of Memory
-Negative Zone Portal
-Oblivion's Hunger
-Rabid Attack
-Syr Ginger, the Meal Ender
-Waste Not
-Cathodion
-Dismember
-Egon, God of Death
-Filigree Familiar
-Fire Nation Warship
-Grave Birthing
-Gravelighter
-Lord Skitter's Butcher
-Midnight Reaper
-Morbid Opportunist
-Preacher of the Schism
-Priest of Gix
-Silversmote Ghoul
-Stinging Cave Crawler
-Yathan Tombguard
-Ashiok's Reaper
-Crypt Ghast
-Elegy Acolyte
-Empowered Autogenerator
-Geth's Grimoire
-Grim Bounty
-Hedron Archive
-Kimoyo Beads
-Lion Vulture
-Oath of the Grey Host
-Species Specialist
-Syphon Mind
-Archfiend of Ifnir
-Clackbridge Troll
+Golgari Thug
+Night's Whisper
+Persist
+Return to Action
+Umbral Collar Zealot
+Undead Butler
+Barrowgoyf
+Braids's Frightful Return
+Charred Graverobber
+Drown in Sorrow
+Expunge
+Fallen Ideal
+Fleshbag Marauder
+Grim Haruspex
+Letter of Acceptance
+Minion's Return
+Plaguecrafter
+Screams from Within
+Vessel of Endless Rest
+Virtus's Maneuver
+Visions of Dread
+Ashen Powder
+Daring Fiendbonder
+Dread Return
+Dredge the Mire
+Erebos's Titan
+Graveshifter
+Hazel's Nocturne
+Heartstabber Mosquito
+Makeshift Mannequin
+Revenge of the Rats
+Siegfried, Famed Swordsman
+Whisper, Blood Liturgist
+Aclazotz, Deepest Betrayal
+Demon's Grasp
+Evil Reawakened
 Exile into Darkness
-Indulgent Tormentor
-Introduction to Annihilation
-Kozilek's Channeler
-Meteorite
-Caged Sun
-Demonic Covenant
-Infernal Sovereign
-Nirkana Revenant
-Phyrexian Gargantua
-Visara the Dreadful
+Thrilling Encore
+Unbreakable Bond
+Vat Emergence
+Arbiter of Woe
+Blight Titan
+Scavenged Brawler
+Technomancer
+Afterlife from the Loam
+Scion of Darkness
+Bojuka Bog
+Takenuma, Abandoned Mire
+Reliquary Tower
+Demolition Field
+Scavenger Grounds
+Yavimaya, Cradle of Growth

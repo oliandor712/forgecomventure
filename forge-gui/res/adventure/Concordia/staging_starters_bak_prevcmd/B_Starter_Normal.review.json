@@ -1,0 +1,85 @@
+{
+ "deck": "B_Starter_Normal",
+ "mana": {
+  "tag": {
+   "reader1_batch_01": {
+    "curve": "ok",
+    "sources": "ok",
+    "notes": "Curve matches reference, avg mv 3.36; 34 black sources plus rocks, few colorless spells but 7 colorless sources."
+   }
+  },
+  "oracle": {
+   "reader1_batch_01": {
+    "curve": "ok",
+    "sources": "ok",
+    "notes": "Average mv 3.36 matches reference; 38 lands plus 5 rocks in mono-black is ample, though a few colorless utility lands are low value."
+   }
+  }
+ },
+ "strategy": [
+  "reanimator",
+  "self_mill"
+ ],
+ "on_plan": 67,
+ "rejects": [
+  "Revenge of the Rats"
+ ],
+ "reject_detail": [
+  {
+   "name": "Revenge of the Rats",
+   "function": "Makes tapped Rat tokens equal to creature cards in graveyard, with flashback.",
+   "oracle_arch": [
+    "tokens",
+    "tribal",
+    "graveyard"
+   ],
+   "tag_arch": [
+    "graveyard",
+    "tokens",
+    "tribal"
+   ],
+   "roles": [
+    "etb_creature",
+    "producer",
+    "rebuy"
+   ],
+   "power": 3
+  }
+ ],
+ "tag_gaps": [],
+ "summary": {
+  "cards": 68,
+  "tag_readers": 1,
+  "rows": 68,
+  "role_f1": 0.707,
+  "arch_hit": 1.0,
+  "power_within1": 0.985,
+  "function_sim": 0.714,
+  "role_f1_vs_listed": 0.0,
+  "arch_hit_vs_listed": 1.0,
+  "unclear_per_card": 0.46,
+  "reader_role_agreement": null,
+  "calibration_by_confidence": {
+   "2": [
+    0.833,
+    7
+   ],
+   "3": [
+    0.844,
+    36
+   ],
+   "4": [
+    0.873,
+    25
+   ]
+  },
+  "tag_tokens_per_card_est": 184,
+  "invalid_values": {
+   "archetypes": 0
+  },
+  "roles_dropped": {
+   "archetype_id_as_role": 1
+  },
+  "unreadable_files": []
+ }
+}

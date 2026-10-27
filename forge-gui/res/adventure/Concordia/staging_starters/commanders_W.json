@@ -1,5 +1,43 @@
 [
  {
+  "name": "Heliod, God of the Sun",
+  "cmc": 4,
+  "pop": 10,
+  "profile": [
+   "attack",
+   "devotion:W",
+   "protection",
+   "token"
+  ],
+  "archetypes": [
+   "tokens",
+   "voltron",
+   "superfriends",
+   "stax"
+  ],
+  "fit": 8,
+  "support_n": 651
+ },
+ {
+  "name": "Heliod, Sun-Crowned",
+  "cmc": 3,
+  "pop": 18,
+  "profile": [
+   "counters",
+   "devotion:W",
+   "lifegain",
+   "protection"
+  ],
+  "archetypes": [
+   "counters",
+   "infect",
+   "lifegain",
+   "voltron"
+  ],
+  "fit": 6,
+  "support_n": 615
+ },
+ {
   "name": "Adeline, Resplendent Cathar",
   "cmc": 3,
   "pop": 32,
@@ -13,9 +51,9 @@
    "tokens",
    "superfriends",
    "stax",
-   "enchantress"
+   "sagas"
   ],
-  "fit": 6,
+  "fit": 7,
   "support_n": 576
  },
  {
@@ -28,11 +66,11 @@
   ],
   "archetypes": [
    "tokens",
-   "ramp",
-   "group_hug",
-   "counters"
+   "pillow_fort",
+   "upkeep_triggers",
+   "sagas"
   ],
-  "fit": 15,
+  "fit": 23,
   "support_n": 561
  },
  {
@@ -49,13 +87,13 @@
    "protection"
   ],
   "archetypes": [
+   "stompy",
    "tokens",
-   "aggro",
-   "voltron",
-   "lifegain"
+   "legends_matter",
+   "infect"
   ],
-  "fit": 5,
-  "support_n": 559
+  "fit": 10,
+  "support_n": 552
  },
  {
   "name": "Haliya, Guided by Light",
@@ -67,51 +105,34 @@
    "scales:Artifact"
   ],
   "archetypes": [
+   "pillow_fort",
    "tokens",
-   "lifegain",
-   "group_hug",
-   "blink"
+   "sagas",
+   "lifegain"
   ],
-  "fit": 14,
+  "fit": 21,
   "support_n": 538
  },
  {
-  "name": "Falcon and Redwing",
-  "cmc": 3,
-  "pop": 6,
-  "profile": [
-   "counters",
-   "evasion",
-   "token",
-   "tribe:Bird"
-  ],
-  "archetypes": [
-   "counters",
-   "tokens",
-   "superfriends",
-   "voltron"
-  ],
-  "fit": 9,
-  "support_n": 492
- },
- {
-  "name": "General Leo Cristophe",
+  "name": "God-Eternal Oketra",
   "cmc": 5,
-  "pop": 6,
+  "pop": 15,
   "profile": [
-   "counters",
-   "etb_self",
+   "attack",
+   "double_strike",
    "sacrifice",
-   "scales:Creature"
+   "token",
+   "tribe:God",
+   "tribe:Zombie"
   ],
   "archetypes": [
-   "counters",
-   "blink",
+   "tokens",
+   "enchantress",
    "aristocrats",
    "voltron"
   ],
-  "fit": 11,
-  "support_n": 490
+  "fit": 12,
+  "support_n": 474
  },
  {
   "name": "Mavren Fein, Dusk Apostle",
@@ -127,102 +148,9 @@
    "tokens",
    "superfriends",
    "stax",
-   "enchantress"
-  ],
-  "fit": 6,
-  "support_n": 451
- },
- {
-  "name": "Rosie Cotton of South Lane",
-  "cmc": 3,
-  "pop": 7,
-  "profile": [
-   "counters",
-   "etb_self",
-   "lifegain",
-   "sacrifice",
-   "token"
-  ],
-  "archetypes": [
-   "tokens",
-   "counters",
-   "superfriends",
-   "blink"
-  ],
-  "fit": 10,
-  "support_n": 442
- },
- {
-  "name": "Zeriam, Golden Wind",
-  "cmc": 4,
-  "pop": 5,
-  "profile": [
-   "evasion",
-   "token",
-   "tribe:Griffin"
-  ],
-  "archetypes": [
-   "tokens",
-   "voltron",
-   "superfriends",
-   "stax"
-  ],
-  "fit": 8,
-  "support_n": 442
- },
- {
-  "name": "Mangara, the Diplomat",
-  "cmc": 4,
-  "pop": 44,
-  "profile": [
-   "attack",
-   "control",
-   "lifegain"
-  ],
-  "archetypes": [
-   "spellslinger",
-   "lifegain",
-   "group_hug",
-   "tokens"
-  ],
-  "fit": 13,
-  "support_n": 437
- },
- {
-  "name": "Toby, Beastie Befriender",
-  "cmc": 3,
-  "pop": 7,
-  "profile": [
-   "attack",
-   "etb_self",
-   "token",
-   "tribe:Beast"
-  ],
-  "archetypes": [
-   "tokens",
-   "blink",
-   "superfriends",
-   "stax"
-  ],
-  "fit": 6,
-  "support_n": 412
- },
- {
-  "name": "Myrel, Shield of Argive",
-  "cmc": 4,
-  "pop": 13,
-  "profile": [
-   "attack",
-   "token",
-   "tribe:Soldier"
-  ],
-  "archetypes": [
-   "tokens",
-   "stax",
-   "superfriends",
-   "group_hug"
+   "sagas"
   ],
   "fit": 7,
-  "support_n": 403
+  "support_n": 451
  }
 ]

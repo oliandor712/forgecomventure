@@ -1,5 +1,5 @@
 """Power scorer fit: additive weights fitted to the EDHREC percentile (non-land cards in deckgen/pool.pkl).
-Writes power_fit/weights.json. Research only: power_scorer.py does not read it yet.
+Writes power_fit/weights.json. power_scorer.py reads it (edh_model) and uses the features from power_scorer.edh_features.
 Run from tools/concordia: python power_fit/fit.py"""
 import sys, os, pickle, json, random, statistics as st, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -8,26 +8,6 @@ import power_scorer as dt
 
 data = dt.build_cache()
 pool = pickle.load(open(dt.POOL, "rb"))
-strat = json.load(open(os.path.join(os.path.dirname(HERE), "strategies", "strategies.json"), encoding="utf-8"))
-in_strat = collections.defaultdict(set)
-for aid, a in strat["archetypes"].items():
-    for r in a.get("roles", {}).values():
-        for n in r.get("cards", []):
-            in_strat[n.lower()].add(aid)
-
-
-def feats(key, p):
-    f = []
-    for t in p.get("ftags", ()):
-        f += ["t:" + t, "f:" + t.split(":")[0]]
-    f += ["cmc:%d" % min(int(float(p.get("cmc") or 0)), 9), "n_colors:%d" % len(p.get("id") or ()),
-          "minr:" + str(p.get("minr")), "nabil:%d" % min(int(p.get("nabil") or 0), 6)]
-    f += ["type:" + ty.lower() for ty in str(p.get("types", "")).replace("—", " ").split()]
-    f.append("strat:%d" % min(len(in_strat.get(key, ())), 4))
-    f += ["arch:" + a for a in in_strat.get(key, ())]
-    return f
-
-
 def midrank_pct(vals):
     s = sorted(vals); n = len(s); lo = {}; hi = {}
     for i, v in enumerate(s):
@@ -42,7 +22,7 @@ for key, p in pool.items():
         continue
     e = dt.edhrec(c)
     if e:
-        rows.append((e, feats(key, p)))
+        rows.append((e, dt.edh_features(c, p.get("ftags", ()), data)))
 
 y = midrank_pct([r[0] for r in rows])
 cnt = collections.Counter(f for r in rows for f in set(r[1]))

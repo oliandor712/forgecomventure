@@ -5,87 +5,79 @@
    "reader1_batch_01": {
     "curve": "ok",
     "sources": "ok",
-    "notes": "Avg mv 3.38 slightly above reference; 33 white sources plus 6 rocks and cheap colorless; colorless count is covered."
-   },
-   "reader2_batch_01_r2": {
-    "curve": "ok",
-    "sources": "ok",
-    "notes": "Curve average 3.38 near reference; 33 white sources plus rocks suffice, though several expensive 6-10 mv artifacts are clunky."
+    "notes": "Avg mv 3.33 matches tier; 38 lands with W 33 plus 5 rocks fine; about 14 colorless cards sit on 8 colorless sources."
    }
   },
   "oracle": {
    "reader1_batch_01": {
     "curve": "ok",
     "sources": "ok",
-    "notes": "Average mv 3.38 near reference; 33 white sources plus 10 colorless-only supports few colorless spells and rocks."
+    "notes": "Average mv 3.3 matches tier; 33 white sources plus rocks; colorless spells few and supported by 8 colorless sources."
    }
   }
  },
  "strategy": [
-  "superfriends",
+  "lifegain",
   "tokens"
  ],
  "on_plan": 67,
  "rejects": [
-  "Nine Lives"
+  "Fountainport Bell"
  ],
  "reject_detail": [
   {
-   "name": "Nine Lives",
-   "function": "Hexproof enchantment preventing damage to you until nine counters, then exiles.",
+   "name": "Fountainport Bell",
+   "function": "Cheap artifact that sets up a land draw, then cashes in for a card.",
    "oracle_arch": [
-    "pillow_fort",
-    "control",
-    "stax"
+    "artifacts",
+    "lands_matter",
+    "control"
    ],
    "tag_arch": [
+    "artifacts",
     "control",
-    "counters",
-    "pillow_fort"
+    "lands_matter"
    ],
    "roles": [
-    "defense",
-    "pillowfort"
+    "artifact",
+    "cantrip",
+    "draw_select"
    ],
-   "power": 2
+   "power": 1
   }
  ],
  "tag_gaps": [],
  "summary": {
   "cards": 68,
-  "tag_readers": 2,
-  "rows": 136,
-  "role_f1": 0.68,
+  "tag_readers": 1,
+  "rows": 68,
+  "role_f1": 0.645,
   "arch_hit": 1.0,
-  "power_within1": 0.971,
-  "function_sim": 0.681,
-  "role_f1_vs_listed": 0.354,
-  "arch_hit_vs_listed": 0.75,
-  "unclear_per_card": 0.58,
-  "reader_role_agreement": 0.815,
+  "power_within1": 0.985,
+  "function_sim": 0.65,
+  "role_f1_vs_listed": 0.417,
+  "arch_hit_vs_listed": 1.0,
+  "unclear_per_card": 0.4,
+  "reader_role_agreement": null,
   "calibration_by_confidence": {
    "2": [
-    0.764,
-    23
+    0.758,
+    4
    ],
    "3": [
-    0.838,
-    42
+    0.83,
+    34
    ],
    "4": [
-    0.868,
-    66
-   ],
-   "5": [
-    0.84,
-    5
+    0.822,
+    30
    ]
   },
-  "tag_tokens_per_card_est": 185,
+  "tag_tokens_per_card_est": 202,
   "invalid_values": {
-   "roles": 6,
    "archetypes": 0
   },
+  "roles_dropped": {},
   "unreadable_files": []
  }
 }

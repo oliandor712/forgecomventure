@@ -1,0 +1,109 @@
+{
+ "deck": "U_Starter_Normal",
+ "mana": {
+  "tag": {
+   "reader1_batch_01": {
+    "curve": "ok",
+    "sources": "ok",
+    "notes": "Average mv 3.30 matches reference; 38 lands plus 4 rocks ample for mono-blue, colorless rocks and lands cover colorless spells."
+   }
+  },
+  "oracle": {
+   "reader1_batch_01": {
+    "curve": "ok",
+    "sources": "ok",
+    "notes": "Curve average 3.30 matches reference; 38 lands plus 4 rocks, but mono-blue colorless lands and rocks are plenty."
+   }
+  }
+ },
+ "strategy": [
+  "control",
+  "spellslinger"
+ ],
+ "on_plan": 66,
+ "rejects": [
+  "Urza, Lord High Artificer",
+  "Filigree Familiar"
+ ],
+ "reject_detail": [
+  {
+   "name": "Urza, Lord High Artificer",
+   "function": "Makes a growing construct, taps artifacts for blue mana, free-casts cards.",
+   "oracle_arch": [
+    "artifacts",
+    "combo",
+    "legends_matter"
+   ],
+   "tag_arch": [
+    "artifacts",
+    "impulse_draw",
+    "legends_matter"
+   ],
+   "roles": [
+    "engine",
+    "mana"
+   ],
+   "power": 4
+  },
+  {
+   "name": "Filigree Familiar",
+   "function": "Artifact creature that gains 2 life on entry and draws on death.",
+   "oracle_arch": [
+    "artifacts",
+    "blink",
+    "aristocrats"
+   ],
+   "tag_arch": [
+    "aristocrats",
+    "artifacts",
+    "lifegain"
+   ],
+   "roles": [
+    "card_adv",
+    "etb_creature",
+    "lifegain"
+   ],
+   "power": 2
+  }
+ ],
+ "tag_gaps": [],
+ "summary": {
+  "cards": 68,
+  "tag_readers": 1,
+  "rows": 68,
+  "role_f1": 0.62,
+  "arch_hit": 1.0,
+  "power_within1": 0.956,
+  "function_sim": 0.661,
+  "role_f1_vs_listed": 0.18,
+  "arch_hit_vs_listed": 0.8,
+  "unclear_per_card": 0.71,
+  "reader_role_agreement": null,
+  "calibration_by_confidence": {
+   "1": [
+    0.5,
+    1
+   ],
+   "2": [
+    0.764,
+    14
+   ],
+   "3": [
+    0.784,
+    27
+   ],
+   "4": [
+    0.873,
+    26
+   ]
+  },
+  "tag_tokens_per_card_est": 171,
+  "invalid_values": {
+   "archetypes": 0
+  },
+  "roles_dropped": {
+   "unknown_role": 2
+  },
+  "unreadable_files": []
+ }
+}

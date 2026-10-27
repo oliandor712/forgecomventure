@@ -1,0 +1,74 @@
+{
+ "deck": "B_Starter_Normal",
+ "strategy": [
+  "big_mana",
+  "sacrifice"
+ ],
+ "on_plan": 61,
+ "rejects": [
+  "Geth's Grimoire"
+ ],
+ "reject_detail": [
+  {
+   "name": "Geth's Grimoire",
+   "function": "Draw a card whenever an opponent discards.",
+   "oracle_arch": [
+    "wheels",
+    "card_draw",
+    "control"
+   ],
+   "tag_arch": [
+    "card_draw",
+    "colorless",
+    "wheels"
+   ],
+   "roles": [
+    "draw_engine",
+    "payoff"
+   ],
+   "power": 2
+  }
+ ],
+ "tag_gaps": [],
+ "summary": {
+  "cards": 62,
+  "tag_readers": 3,
+  "rows": 186,
+  "role_f1": 0.675,
+  "arch_hit": 1.0,
+  "power_within1": 0.984,
+  "function_sim": 0.7,
+  "role_f1_vs_listed": 0.385,
+  "arch_hit_vs_listed": 0.944,
+  "unclear_per_card": 0.51,
+  "reader_role_agreement": 0.819,
+  "calibration_by_confidence": {
+   "1": [
+    0.5,
+    3
+   ],
+   "2": [
+    0.818,
+    30
+   ],
+   "3": [
+    0.824,
+    79
+   ],
+   "4": [
+    0.866,
+    65
+   ],
+   "5": [
+    0.922,
+    9
+   ]
+  },
+  "tag_tokens_per_card_est": 269,
+  "invalid_values": {
+   "roles": 0,
+   "archetypes": 0
+  },
+  "unreadable_files": []
+ }
+}

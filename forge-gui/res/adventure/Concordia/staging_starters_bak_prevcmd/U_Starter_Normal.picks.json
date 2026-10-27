@@ -1,0 +1,689 @@
+{
+ "name": "U_Starter_Normal",
+ "commander": "Gandalf, Wandering Wizard",
+ "profile": [
+  "control"
+ ],
+ "strategy": [
+  "control",
+  "spellslinger"
+ ],
+ "banned": [
+  "filigree familiar",
+  "urza, lord high artificer"
+ ],
+ "lands": {
+  "basics": {
+   "U": 32
+  },
+  "nonbasic": [
+   "Reliquary Tower",
+   "Scavenger Grounds",
+   "Yavimaya, Cradle of Growth",
+   "War Room",
+   "Demolition Field",
+   "Rogue's Passage"
+  ]
+ },
+ "picks": [
+  {
+   "name": "An Offer You Can't Refuse",
+   "core": true,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Instant",
+   "payoff": "",
+   "power": 67.9,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Condescend",
+   "core": true,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Instant",
+   "payoff": "",
+   "power": 48.3,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Consider",
+   "core": true,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Instant",
+   "payoff": "",
+   "power": 46.3,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Enter the Enigma",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 16.9,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Serum Visions",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 17.1,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Sol Ring",
+   "core": false,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Artifact"
+  },
+  {
+   "name": "Arcane Signet",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Confounding Conundrum",
+   "core": false,
+   "rarity": "R",
+   "cmc": 2,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 22.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Curate",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 14.2,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Decoction Module",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 16.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Deliberate",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 13.3,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Experimental Augury",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 19.8,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Expert-Level Safe",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 13.4,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Fellwar Stone",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Hithlain Knots",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 11.4,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Impulse",
+   "core": true,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 45.9,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Jeskai Elder",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Human Monk",
+   "payoff": "",
+   "power": 22.5,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Omen of the Sea",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 13.0,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Refocus",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 13.1,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Rescue, Pepper Potts",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Legendary Artifact Creature Human Hero",
+   "payoff": "",
+   "power": 13.7,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Resculpt",
+   "core": true,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 46.3,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Ephara's Dispersal",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 24.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Esperzoa",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact Creature Jellyfish",
+   "payoff": "",
+   "power": 10.2,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Fantastic Elasticity",
+   "core": false,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 19.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Grazilaxx, Illithid Scholar",
+   "core": false,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Legendary Creature Horror",
+   "payoff": "",
+   "power": 24.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Grip of the Roil",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 10.2,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Jeskai Infiltrator",
+   "core": false,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Creature Human Monk",
+   "payoff": "",
+   "power": 16.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Letter of Acceptance",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 28.7,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Man-o'-War",
+   "core": true,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Jellyfish",
+   "payoff": "",
+   "power": 49.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Ophidian Eye",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 15.3,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Silundi Vision",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 14.5,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Sphinx's Tutelage",
+   "core": true,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 48.0,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Steady Progress",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 16.0,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Tandem Lookout",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Human Scout",
+   "payoff": "",
+   "power": 12.6,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Teferi's Tutelage",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 15.1,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Windrider Wizard",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Human Wizard",
+   "payoff": "",
+   "power": 24.4,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Archaeomancer",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Human Wizard",
+   "payoff": "",
+   "power": 19.2,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Argent Sphinx",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Sphinx",
+   "payoff": "",
+   "power": 14.9,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Displacer Kitten",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Cat Beast",
+   "payoff": "",
+   "power": 26.7,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Dissipation Field",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 18.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Fallowsage",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Merfolk Wizard",
+   "payoff": "",
+   "power": 12.0,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Irenicus's Vile Duplication",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 19.1,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Learn from the Past",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Instant",
+   "payoff": "",
+   "power": 13.3,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Lightshell Duo",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Rat Otter",
+   "payoff": "",
+   "power": 11.5,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Lux Cannon",
+   "core": true,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 49.3,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Memories Returning",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 19.1,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Smuggler's Buggy",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact Vehicle",
+   "payoff": "",
+   "power": 18.6,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Stonespeaker Crystal",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 26.9,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Batterskull",
+   "core": false,
+   "rarity": "M",
+   "cmc": 5,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 23.2,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Dreamtail Heron",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Creature Elemental Bird",
+   "payoff": "",
+   "power": 11.6,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Mulldrifter",
+   "core": true,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Creature Elemental",
+   "payoff": "",
+   "power": 45.5,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Soulblade Djinn",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Creature Djinn",
+   "payoff": "",
+   "power": 15.0,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Stormsurge Kraken",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Creature Kraken",
+   "payoff": "",
+   "power": 18.5,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Thoughtcast",
+   "core": true,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 48.1,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Zndrsplt's Judgment",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 19.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Aethertide Whale",
+   "core": false,
+   "rarity": "R",
+   "cmc": 6,
+   "types": "Creature Whale",
+   "payoff": "",
+   "power": 17.1,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Calamitous Tide",
+   "core": false,
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 27.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Magus of the Mind",
+   "core": false,
+   "rarity": "R",
+   "cmc": 6,
+   "types": "Creature Human Wizard",
+   "payoff": "",
+   "power": 13.6,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Sublime Epiphany",
+   "core": true,
+   "rarity": "R",
+   "cmc": 6,
+   "types": "Instant",
+   "payoff": "",
+   "power": 73.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Thousand Winds",
+   "core": false,
+   "rarity": "R",
+   "cmc": 6,
+   "types": "Creature Elemental",
+   "payoff": "",
+   "power": 28.2,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Enigma Thief",
+   "core": true,
+   "rarity": "R",
+   "cmc": 7,
+   "types": "Creature Sphinx Rogue",
+   "payoff": "",
+   "power": 49.6,
+   "supports": true,
+   "fit": 3
+  }
+ ]
+}

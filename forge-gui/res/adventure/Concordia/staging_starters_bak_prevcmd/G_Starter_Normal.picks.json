@@ -1,0 +1,690 @@
+{
+ "name": "G_Starter_Normal",
+ "commander": "Peregrin Took",
+ "profile": [
+  "lifegain",
+  "sacrifice"
+ ],
+ "strategy": [
+  "big_mana",
+  "stompy"
+ ],
+ "banned": [
+  "decoction module",
+  "leonin bladetrap"
+ ],
+ "lands": {
+  "basics": {
+   "G": 32
+  },
+  "nonbasic": [
+   "Mosswort Bridge",
+   "War Room",
+   "Scavenger Grounds",
+   "Reliquary Tower",
+   "Demolition Field",
+   "Urza's Cave"
+  ]
+ },
+ "picks": [
+  {
+   "name": "Elvish Skysweeper",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Elf Warrior",
+   "payoff": "",
+   "power": 21.4,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Fountainport Bell",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 15.5,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Fyndhorn Elves",
+   "core": true,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Elf Druid",
+   "payoff": "",
+   "power": 65.5,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Greenbelt Rampager",
+   "core": false,
+   "rarity": "R",
+   "cmc": 1,
+   "types": "Creature Elephant",
+   "payoff": "",
+   "power": 14.6,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Rancor",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 16.0,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Sol Ring",
+   "core": false,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Artifact"
+  },
+  {
+   "name": "Aloe Alchemist",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Plant Warlock",
+   "payoff": "",
+   "power": 13.1,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Arcane Signet",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Case of the Shattered Pact",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Enchantment Case",
+   "payoff": "",
+   "power": 17.5,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Crashing Drawbridge",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Creature Wall",
+   "payoff": "",
+   "power": 17.8,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Fellwar Stone",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Finale of Devastation",
+   "core": true,
+   "rarity": "M",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 82.3,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Gold Rush",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 17.0,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Ground Seal",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 15.2,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Lull",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 12.7,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Scorned Villager",
+   "core": true,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Human Werewolf",
+   "payoff": "",
+   "power": 48.6,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Sphere Grid",
+   "core": false,
+   "rarity": "R",
+   "cmc": 2,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 27.7,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Synchronized Charge",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 13.7,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Tervigon",
+   "core": false,
+   "rarity": "R",
+   "cmc": 2,
+   "types": "Creature Tyranid",
+   "payoff": "",
+   "power": 23.0,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Tribute to the Wild",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 13.8,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Well Rested",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 17.0,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Ashnod's Altar",
+   "core": true,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 45.7,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Barrier Breach",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 20.4,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Carven Caryatid",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Spirit",
+   "payoff": "",
+   "power": 13.5,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Caustic Wasps",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Insect",
+   "payoff": "",
+   "power": 19.3,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Elf Replica",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact Creature Elf",
+   "payoff": "",
+   "power": 15.7,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Evolution Witness",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Elf Shaman Mutant",
+   "payoff": "",
+   "power": 17.0,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Farhaven Elf",
+   "core": true,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Elf Druid",
+   "payoff": "",
+   "power": 45.8,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Inspiring Call",
+   "core": true,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 44.4,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Jalum Tome",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact Book",
+   "payoff": "",
+   "power": 23.8,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Jugan Defends the Temple",
+   "core": true,
+   "rarity": "M",
+   "cmc": 3,
+   "types": "Enchantment Saga",
+   "payoff": "",
+   "power": 48.9,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Numa, Joraga Chieftain",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Legendary Creature Elf Warrior",
+   "payoff": "",
+   "power": 13.6,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Phantom Nantuko",
+   "core": false,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Creature Insect Spirit",
+   "payoff": "",
+   "power": 15.4,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Rending Vines",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Instant Arcane",
+   "payoff": "",
+   "power": 16.5,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Snake Umbra",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 14.2,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Yavimaya Elder",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Human Druid",
+   "payoff": "",
+   "power": 14.8,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Bristlebud Farmer",
+   "core": true,
+   "rarity": "M",
+   "cmc": 4,
+   "types": "Creature Plant Druid",
+   "payoff": "",
+   "power": 49.8,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "False Floor",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 30.4,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "First Responder",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Ogre Citizen",
+   "payoff": "",
+   "power": 14.2,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Fleetwheel Cruiser",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact Vehicle",
+   "payoff": "",
+   "power": 14.5,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Mold Shambler",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Fungus Beast",
+   "payoff": "",
+   "power": 22.3,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Provisions Merchant",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Beast Peasant",
+   "payoff": "",
+   "power": 13.3,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Sandsteppe War Riders",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Human Warrior",
+   "payoff": "",
+   "power": 15.6,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Smuggler's Buggy",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact Vehicle",
+   "payoff": "",
+   "power": 18.6,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Surrak, the Hunt Caller",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Legendary Creature Human Warrior",
+   "payoff": "",
+   "power": 14.4,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Toski, Bearer of Secrets",
+   "core": true,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Legendary Creature Squirrel",
+   "payoff": "",
+   "power": 47.1,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Volatile Rig",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact Creature Construct",
+   "payoff": "",
+   "power": 15.6,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Wreck Remover",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Artifact Creature Construct",
+   "payoff": "",
+   "power": 26.1,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Creepy Doll",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Artifact Creature Construct",
+   "payoff": "",
+   "power": 19.6,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Hunter's Prowess",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 19.6,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Introduction to Annihilation",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Sorcery Lesson",
+   "payoff": "",
+   "power": 29.7,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Keeper of Fables",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Creature Cat",
+   "payoff": "",
+   "power": 16.3,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Motivated Pony",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Creature Horse",
+   "payoff": "",
+   "power": 15.4,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Return of the Wildspeaker",
+   "core": true,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Instant",
+   "payoff": "",
+   "power": 43.6,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Summon: Fat Chocobo",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Enchantment Creature Saga Bird",
+   "payoff": "",
+   "power": 13.2,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Rampaging Baloths",
+   "core": true,
+   "rarity": "R",
+   "cmc": 6,
+   "types": "Creature Beast",
+   "payoff": "",
+   "power": 46.0,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Scavenged Brawler",
+   "core": true,
+   "rarity": "R",
+   "cmc": 6,
+   "types": "Artifact Creature Construct",
+   "payoff": "",
+   "power": 49.6,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Pelakka Wurm",
+   "core": false,
+   "rarity": "U",
+   "cmc": 7,
+   "types": "Creature Wurm",
+   "payoff": "",
+   "power": 12.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "End-Raze Forerunners",
+   "core": false,
+   "rarity": "R",
+   "cmc": 8,
+   "types": "Creature Boar",
+   "payoff": "",
+   "power": 21.4,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Titanoth Rex",
+   "core": false,
+   "rarity": "U",
+   "cmc": 9,
+   "types": "Creature Dinosaur Beast",
+   "payoff": "",
+   "power": 16.5,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Decimator of the Provinces",
+   "core": false,
+   "rarity": "R",
+   "cmc": 10,
+   "types": "Creature Eldrazi Boar",
+   "payoff": "",
+   "power": 19.5,
+   "supports": false,
+   "fit": 4
+  }
+ ]
+}

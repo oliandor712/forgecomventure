@@ -1,0 +1,688 @@
+{
+ "name": "R_Starter_Normal",
+ "commander": "Purphoros, God of the Forge",
+ "profile": [
+  "devotion:R",
+  "etb_other",
+  "protection"
+ ],
+ "strategy": [
+  "tokens",
+  "stompy"
+ ],
+ "banned": [],
+ "lands": {
+  "basics": {
+   "R": 32
+  },
+  "nonbasic": [
+   "Scavenger Grounds",
+   "Reliquary Tower",
+   "Rogue's Passage",
+   "War Room",
+   "Yavimaya, Cradle of Growth",
+   "Demolition Field"
+  ]
+ },
+ "picks": [
+  {
+   "name": "Blacksmith's Talent",
+   "core": false,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Enchantment Class",
+   "payoff": "",
+   "power": 19.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Curse of Opulence",
+   "core": false,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Enchantment Aura Curse",
+   "payoff": "",
+   "power": 23.1,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Dragon Mantle",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 13.7,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Expedite",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Instant",
+   "payoff": "",
+   "power": 16.6,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Ragavan, Nimble Pilferer",
+   "core": true,
+   "rarity": "M",
+   "cmc": 1,
+   "types": "Legendary Creature Monkey Pirate",
+   "payoff": "",
+   "power": 79.2,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Sol Ring",
+   "core": false,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Artifact"
+  },
+  {
+   "name": "Arcane Signet",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Battle Cry Goblin",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Goblin",
+   "payoff": "",
+   "power": 17.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Charming Scoundrel",
+   "core": true,
+   "rarity": "R",
+   "cmc": 2,
+   "types": "Creature Human Rogue",
+   "payoff": "",
+   "power": 48.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Crashing Drawbridge",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Creature Wall",
+   "payoff": "",
+   "power": 17.8,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Fellwar Stone",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Fists of Flame",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 15.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Goblin Instigator",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Goblin Rogue",
+   "payoff": "",
+   "power": 14.0,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Goblin Morningstar",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 15.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Kediss, Emberclaw Familiar",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Legendary Creature Elemental Lizard",
+   "payoff": "",
+   "power": 19.4,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Magma Jet",
+   "core": true,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 47.4,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Melded Moxite",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 27.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Mogg War Marshal",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Goblin Warrior",
+   "payoff": "",
+   "power": 12.9,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Reckless Fireweaver",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Human Artificer",
+   "payoff": "",
+   "power": 18.8,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Shredded Sails",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 24.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Volcanic Spite",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 25.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Crimson Caravaneer",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Human Scout",
+   "payoff": "",
+   "power": 13.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Fight with Fire",
+   "core": true,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 49.1,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Founding of Omashu",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment Saga",
+   "payoff": "",
+   "power": 13.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Improvised Weaponry",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 24.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Molten Gatekeeper",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact Creature Golem",
+   "payoff": "",
+   "power": 17.1,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Open the Omenpaths",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 12.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Pyreheart Wolf",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Wolf",
+   "payoff": "",
+   "power": 12.7,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Reckless Bushwhacker",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Goblin Warrior Ally",
+   "payoff": "",
+   "power": 11.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Samurai's Katana",
+   "core": true,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 49.0,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Seize the Spoils",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 34.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Thopter Engineer",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Human Artificer",
+   "payoff": "",
+   "power": 16.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Thunderstaff",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 10.2,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Valduk, Keeper of the Flame",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Legendary Creature Human Shaman",
+   "payoff": "",
+   "power": 14.7,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Wheel of Misfortune",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 20.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "You See a Pair of Goblins",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 15.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Beetleback Chief",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Goblin Warrior",
+   "payoff": "",
+   "power": 15.3,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Charging Cinderhorn",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Elemental Ox",
+   "payoff": "",
+   "power": 15.0,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Embereth Skyblazer",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Human Knight",
+   "payoff": "",
+   "power": 13.1,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Ensnared by the Mara",
+   "core": true,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 49.5,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Erkenbrand, Lord of Westfold",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Legendary Creature Human Soldier",
+   "payoff": "",
+   "power": 13.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Fire Nation Archers",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Human Archer",
+   "payoff": "",
+   "power": 14.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Fleetwheel Cruiser",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact Vehicle",
+   "payoff": "",
+   "power": 14.5,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Kinetic Augur",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Human Shaman",
+   "payoff": "",
+   "power": 26.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Storm-Kiln Artist",
+   "core": true,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Dwarf Shaman",
+   "payoff": "",
+   "power": 48.1,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Vibranium Mining Mech",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact Vehicle",
+   "payoff": "",
+   "power": 18.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Volatile Rig",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact Creature Construct",
+   "payoff": "",
+   "power": 15.6,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Will of the Jeskai",
+   "core": true,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 48.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Crimson Honor Guard",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Creature Vampire Knight",
+   "payoff": "",
+   "power": 15.6,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Deem Worthy",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Instant",
+   "payoff": "",
+   "power": 24.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Enchanted Carriage",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Artifact Vehicle",
+   "payoff": "",
+   "power": 12.4,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Fire Servant",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Creature Elemental",
+   "payoff": "",
+   "power": 12.7,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Hunted Dragon",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Creature Dragon",
+   "payoff": "",
+   "power": 17.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Survey the Wreckage",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 15.4,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "War Machine, Avenging Arsenal",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Legendary Artifact Creature Human Hero",
+   "payoff": "",
+   "power": 17.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Combustible Gearhulk",
+   "core": true,
+   "rarity": "M",
+   "cmc": 6,
+   "types": "Artifact Creature Construct",
+   "payoff": "",
+   "power": 49.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Rapacious One",
+   "core": false,
+   "rarity": "C",
+   "cmc": 6,
+   "types": "Creature Eldrazi Drone",
+   "payoff": "",
+   "power": 13.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Faultgrinder",
+   "core": false,
+   "rarity": "C",
+   "cmc": 7,
+   "types": "Creature Elemental",
+   "payoff": "",
+   "power": 14.4,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Hideous Taskmaster",
+   "core": true,
+   "rarity": "R",
+   "cmc": 7,
+   "types": "Creature Eldrazi",
+   "payoff": "",
+   "power": 49.7,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Reckless Endeavor",
+   "core": true,
+   "rarity": "R",
+   "cmc": 7,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 69.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Blasphemous Act",
+   "core": true,
+   "rarity": "R",
+   "cmc": 9,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 48.5,
+   "supports": true,
+   "fit": 2
+  }
+ ]
+}

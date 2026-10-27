@@ -1,0 +1,153 @@
+{
+ "deck": "R_Starter_Normal",
+ "strategy": [
+  "sacrifice",
+  "tokens"
+ ],
+ "on_plan": 58,
+ "rejects": [
+  "Guidelight Matrix",
+  "Adventurer's Airship",
+  "Wreck Remover",
+  "Expert-Level Safe"
+ ],
+ "reject_detail": [
+  {
+   "name": "Guidelight Matrix",
+   "function": "Artifact that draws a card and crews or saddles later.",
+   "oracle_arch": [
+    "artifacts",
+    "card_draw",
+    "colorless"
+   ],
+   "tag_arch": [
+    "artifacts",
+    "card_draw",
+    "colorless"
+   ],
+   "roles": [
+    "artifact",
+    "cantrip"
+   ],
+   "power": 1
+  },
+  {
+   "name": "Adventurer's Airship",
+   "function": "Flying vehicle that loots when attacking; crew 2.",
+   "oracle_arch": [
+    "artifacts",
+    "aggro",
+    "colorless"
+   ],
+   "tag_arch": [
+    "aggro",
+    "artifacts",
+    "card_draw",
+    "colorless"
+   ],
+   "roles": [
+    "creature",
+    "draw_select",
+    "evasion"
+   ],
+   "power": 2
+  },
+  {
+   "name": "Wreck Remover",
+   "function": "Creature exiling a graveyard card and gaining 1 life on entry or attack; cycles.",
+   "oracle_arch": [
+    "control",
+    "lifegain",
+    "colorless"
+   ],
+   "tag_arch": [
+    "artifacts",
+    "colorless",
+    "lifegain"
+   ],
+   "roles": [
+    "cantrip",
+    "creature",
+    "graveyard_exile"
+   ],
+   "power": 2
+  },
+  {
+   "name": "Expert-Level Safe",
+   "function": "Exiles cards face down and plays a guessing minigame to retrieve them.",
+   "oracle_arch": [
+    "chaos",
+    "impulse_draw",
+    "colorless"
+   ],
+   "tag_arch": [
+    "artifacts",
+    "colorless",
+    "impulse_draw"
+   ],
+   "roles": [
+    "artifact",
+    "card_adv"
+   ],
+   "power": 1
+  }
+ ],
+ "tag_gaps": [
+  {
+   "name": "War Machine, Avenging Arsenal",
+   "oracle_arch": [
+    "equipment",
+    "counters",
+    "voltron"
+   ],
+   "tag_arch": [
+    "aggro",
+    "artifacts",
+    "legends_matter",
+    "tokens"
+   ],
+   "unclear": []
+  }
+ ],
+ "summary": {
+  "cards": 62,
+  "tag_readers": 3,
+  "rows": 186,
+  "role_f1": 0.653,
+  "arch_hit": 0.962,
+  "power_within1": 0.962,
+  "function_sim": 0.699,
+  "role_f1_vs_listed": 0.602,
+  "arch_hit_vs_listed": 1.0,
+  "unclear_per_card": 0.63,
+  "reader_role_agreement": 0.786,
+  "calibration_by_confidence": {
+   "1": [
+    0.55,
+    4
+   ],
+   "2": [
+    0.741,
+    36
+   ],
+   "3": [
+    0.82,
+    71
+   ],
+   "4": [
+    0.835,
+    66
+   ],
+   "5": [
+    0.893,
+    9
+   ]
+  },
+  "tag_tokens_per_card_est": 266,
+  "invalid_values": {
+   "roles": 0,
+   "archetypes": 0
+  },
+  "unreadable_files": []
+ }
+}

@@ -1,0 +1,57 @@
+[
+ {
+  "name": "Rankle, Master of Pranks",
+  "cmc": 4,
+  "pop": 27,
+  "profile": [
+   "attack",
+   "discard",
+   "evasion",
+   "sacrifice"
+  ],
+  "archetypes": [
+   "pillow_fort",
+   "forced_combat",
+   "aristocrats",
+   "treasure"
+  ],
+  "fit": 30,
+  "support_n": 413
+ },
+ {
+  "name": "Junji, the Midnight Sky",
+  "cmc": 5,
+  "pop": 32,
+  "profile": [
+   "discard",
+   "evasion",
+   "sacrifice"
+  ],
+  "archetypes": [
+   "graveyard",
+   "blink",
+   "aristocrats",
+   "reanimator"
+  ],
+  "fit": 14,
+  "support_n": 383
+ },
+ {
+  "name": "Massacre Girl",
+  "cmc": 5,
+  "pop": 23,
+  "profile": [
+   "etb_self",
+   "evasion",
+   "sacrifice"
+  ],
+  "archetypes": [
+   "tokens",
+   "outlaws",
+   "legends_matter",
+   "infect"
+  ],
+  "fit": 7,
+  "support_n": 368
+ }
+]

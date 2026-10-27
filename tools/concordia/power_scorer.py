@@ -526,6 +526,49 @@ def effective_cmc(c, deck=None):
     return best
 
 
+EDH_WEIGHTS = os.path.join(os.path.dirname(os.path.abspath(__file__)), "power_fit", "weights.json")
+_RARITY_ORDER = ["C", "U", "R", "M", "S"]
+_edh_model = None
+_edh_arch = None
+
+
+def edh_features(c, ftags, data):
+    """Features of the EDHREC-fitted model (power_fit/fit.py fits the weights on exactly these)."""
+    global _edh_arch
+    if _edh_arch is None:
+        _edh_arch = collections.defaultdict(list)
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "strategies", "strategies.json")
+        if os.path.exists(p):
+            for aid, a in json.load(open(p, encoding="utf-8"))["archetypes"].items():
+                for r in a.get("roles", {}).values():
+                    for n in r.get("cards", []):
+                        _edh_arch[n.lower()].append(aid)
+    f = []
+    for t in ftags:
+        f += ["t:" + t, "f:" + t.split(":")[0]]
+    seen = {v[c["name"].lower()] for v in data["eds"].values() if c["name"].lower() in v and v[c["name"].lower()] in _RARITY_ORDER}
+    minr = min(seen, key=_RARITY_ORDER.index) if seen else None     # lowest rarity of any printing, whatever the deck's printing
+    arch = _edh_arch.get(c["name"].lower(), ())
+    f += ["cmc:%d" % min(int(float(c.get("cmc") or 0)), 9), "n_colors:%d" % len(set(re.findall("[WUBRG]", c.get("mc", "")))),
+          "minr:" + str(minr), "nabil:%d" % min(len(c["abil"]) + len(c["static"]) + len(c["kw"]), 6)]
+    f += ["type:" + ty.lower() for ty in str(c.get("types", "")).replace("—", " ").split()]
+    f.append("strat:%d" % min(len(arch), 4))
+    f += ["arch:" + a for a in arch]
+    return f
+
+
+def edh_model(data, c, ftags):
+    """0-1 EDHREC popularity predicted from the card's tags and attributes alone (no EDHREC data; power_fit/weights.json).
+    Lifts a card the real EDHREC rank does not cover (new or untracked) and gives the independent score its signal."""
+    global _edh_model
+    if _edh_model is None:
+        _edh_model = json.load(open(EDH_WEIGHTS, encoding="utf-8")) if os.path.exists(EDH_WEIGHTS) else {}
+    if not _edh_model:
+        return 0.0
+    w = _edh_model["weights"]
+    return max(0.0, min(1.0, (_edh_model["bias"] + sum(w.get(f, 0.0) for f in edh_features(c, ftags, data))) / 100))
+
+
 def card_power(data, c, tags, rarity, ftags=(), deck=None):
     """Power for one rarity; see card_powers."""
     return card_powers(data, c, tags, (rarity,), ftags, deck)[rarity]
@@ -535,21 +578,22 @@ def card_powers(data, c, tags, rarities, ftags=(), deck=None):
     """{rarity: power}; the rarity-independent terms are computed once. ftags (tag_run.tags, optional) halves the role term
     of a niche card (Disenchant, Stone Rain: the effect only pays in a matching deck)."""
     """0-100 power estimate: raw power, mana efficiency, role, rarity, Game Changer, fast mana, tutor.
-    40 raw + 15 efficiency (effective_cmc: alternative costs, self cost reducers, X spells) + 15 role + 10 rarity + 10 Game Changer + 5 fast + 5 tutor.
+    40 raw + 15 EDHREC-fitted tag model (power_fit/; replaced the efficiency term 2026-10-27, user) + 15 role + 10 rarity + 10 Game Changer + 5 fast + 5 tutor.
     Popularity counts once, inside raw power (the EDHREC lift below); it is not added again here or in the builder's score.
-    Raw power is the cube rank, lifted by the cEDH inclusion rate or by EDHREC popularity (up to EDH_LIFT) when those
+    Raw power is the cube rank, lifted by the cEDH inclusion rate or by EDHREC popularity (up to EDH_LIFT; the popularity the
+    EDHREC-fitted tag model predicts counts too, power_fit/) when those
     are higher: the cube list misses most casual cards (Birds of Paradise isn't in it). A missing signal never lowers a
     card. Prices are not used (docs/Adventure/Campaign/DECK_REVIEW_SPELLBINDER.md)."""
     _warn_inputs()
     name = c["name"].lower()
     rank = data["cube"].get(name)
     cube = 1 - (rank - 1) / 4000 if rank else 0.0
-    pop = max(edhrec(c), deckpop(c))
+    model = edh_model(data, c, ftags)
+    pop = max(edhrec(c), deckpop(c)) or model     # the tag model only fills in a card with no EDHREC or deck-popularity data
     cube = max(cube, cedh_strength(c) or 0.0, EDH_LIFT * pop)
-    eff = max(0.0, min(1.0, (6 - effective_cmc(c, deck)) / 5))
     role = 1.0 if tags & {"ramp", "draw", "removal", "wipe", "counter", "tutor"} else 0.0
     if any(t.startswith("niche:") for t in ftags): role *= NICHE_ROLE
-    base = 40 * cube + 15 * eff + 15 * role + 10 * (name in data["lists"]["gc"]) + 5 * ("fast" in tags) + 5 * ("tutor" in tags)
+    base = 40 * cube + 15 * model + 15 * role + 10 * (name in data["lists"]["gc"]) + 5 * ("fast" in tags) + 5 * ("tutor" in tags)
     return {r: round(min(100.0, base + 10 * RARITY_WEIGHT.get(r, 0.3)), 1) for r in rarities}
 
 
@@ -635,7 +679,7 @@ def rate(path, data, config):
                 pending.append((n, c, tags, r))   # nonbasic lands count toward deck power (user 2026-10-26)
     deck_syn = dict(enablers, total=sum(n for n, _, _ in entries["main"]), always=dict(always))
     for n, c, tags, r in pending:
-        powers += [card_power(data, c, tags, r, niche_of(c["name"]), deck_syn)] * n
+        powers += [card_power(data, c, tags, r, ftags_of(c["name"]), deck_syn)] * n
     commanders = []
     for n, name, ed in entries["commander"]:
         c = cards.get(name.lower())
@@ -643,7 +687,7 @@ def rate(path, data, config):
             commanders.append({"name": c["name"], "mv": c["cmc"], "rarity": rarity_of(data, c["name"], ed),
                                "legendary_creature": "Legendary" in c["types"] and "Creature" in c["types"],
                                "colours": len(color_identity(c)),
-                               "power": card_power(data, c, tags_of(c), rarity_of(data, c["name"], ed), niche_of(c["name"]))})
+                               "power": card_power(data, c, tags_of(c), rarity_of(data, c["name"], ed), ftags_of(c["name"]))})
     total = sum(n for n, _, _ in entries["main"]) + sum(n for n, _, _ in entries["commander"])
     deck_names = set(names)
     gc = sorted(x for x in deck_names if x in data["lists"]["gc"])

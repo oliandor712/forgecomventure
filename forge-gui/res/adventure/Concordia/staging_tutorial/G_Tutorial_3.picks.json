@@ -1,0 +1,683 @@
+{
+ "name": "G_Tutorial_3",
+ "commander": "Syr Faren, the Hengehammer",
+ "profile": [
+  "attack"
+ ],
+ "strategy": [],
+ "banned": [],
+ "lands": {
+  "basics": {
+   "G": 32
+  },
+  "nonbasic": [
+   "Mosswort Bridge",
+   "Scavenger Grounds",
+   "Rogue's Passage",
+   "War Room",
+   "Demolition Field",
+   "Yavimaya, Cradle of Growth"
+  ]
+ },
+ "picks": [
+  {
+   "name": "Centaur's Herald",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Elf Scout",
+   "payoff": "",
+   "power": 7.4,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Gilded Goose",
+   "core": true,
+   "rarity": "R",
+   "cmc": 1,
+   "types": "Creature Bird",
+   "payoff": "",
+   "power": 45.1,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Goldvein Hydra",
+   "core": true,
+   "rarity": "M",
+   "cmc": 1,
+   "types": "Creature Hydra",
+   "payoff": "",
+   "power": 46.8,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Rancor",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 16.0,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Sol Ring",
+   "core": false,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Artifact"
+  },
+  {
+   "name": "Spire Tracer",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Elf Scout",
+   "payoff": "",
+   "power": 8.4,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Aquastrand Spider",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Spider Mutant",
+   "payoff": "",
+   "power": 7.3,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Arcane Signet",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Bull's Strength",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 8.0,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Chainbreaker",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Creature Scarecrow",
+   "payoff": "",
+   "power": 8.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Elvish Vanguard",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Elf Warrior",
+   "payoff": "",
+   "power": 8.1,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Fellwar Stone",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Field Creeper",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Creature Scarecrow",
+   "payoff": "",
+   "power": 7.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Finale of Devastation",
+   "core": true,
+   "rarity": "M",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 82.3,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Gift of Growth",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 7.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Gnoll Hunter",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Gnoll",
+   "payoff": "",
+   "power": 7.1,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Heroic Intervention",
+   "core": true,
+   "rarity": "R",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 44.4,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Jousting Lance",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 8.2,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Marauder's Axe",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 8.5,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Regeneration",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 7.4,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Titanic Growth",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 9.0,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Aura Gnarlid",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Beast",
+   "payoff": "",
+   "power": 8.4,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Bounding Wolf",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Wolf",
+   "payoff": "",
+   "power": 7.6,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Druid of the Spade",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Rabbit Druid",
+   "payoff": "",
+   "power": 8.2,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Eccentric Farmer",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Human Peasant",
+   "payoff": "",
+   "power": 8.6,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Elf Replica",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact Creature Elf",
+   "payoff": "",
+   "power": 15.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Endurance Bobblehead",
+   "core": true,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact Bobblehead",
+   "payoff": "",
+   "power": 46.3,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Evolution Witness",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Elf Shaman Mutant",
+   "payoff": "",
+   "power": 17.0,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Fade into Antiquity",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 16.8,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Inspiring Call",
+   "core": true,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 44.4,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Jalum Tome",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact Book",
+   "payoff": "",
+   "power": 23.8,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Kruphix's Insight",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 8.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Leonin Bladetrap",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 24.8,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Rending Vines",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Instant Arcane",
+   "payoff": "",
+   "power": 16.5,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Sylvan Shepherd",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Human Druid",
+   "payoff": "",
+   "power": 7.9,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Tilling Treefolk",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Treefolk Druid",
+   "payoff": "",
+   "power": 8.2,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Dancing Scimitar",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Artifact Creature Spirit",
+   "payoff": "",
+   "power": 9.0,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Dragonscale Boon",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Instant",
+   "payoff": "",
+   "power": 6.6,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Fierce Witchstalker",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Wolf",
+   "payoff": "",
+   "power": 8.5,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Galadhrim Guide",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Elf Scout",
+   "payoff": "",
+   "power": 6.9,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Golden Bear",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Bear",
+   "payoff": "",
+   "power": 7.8,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Greater Mossdog",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Plant Dog",
+   "payoff": "",
+   "power": 7.6,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Innocuous Researcher",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Centaur Detective",
+   "payoff": "",
+   "power": 23.8,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Iron League Steed",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Artifact Creature Construct",
+   "payoff": "",
+   "power": 6.7,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Lifecrafter's Gift",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Instant",
+   "payoff": "",
+   "power": 9.4,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Nantuko Vigilante",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Insect Druid Mutant",
+   "payoff": "",
+   "power": 15.8,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Rhox Charger",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Rhino Soldier",
+   "payoff": "",
+   "power": 8.7,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Wildheart Invoker",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Elf Shaman",
+   "payoff": "",
+   "power": 6.7,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Conclave Naturalists",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Creature Dryad",
+   "payoff": "",
+   "power": 13.6,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Dromoka's Gift",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Instant",
+   "payoff": "",
+   "power": 8.1,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Loathsome Troll",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Creature Troll",
+   "payoff": "",
+   "power": 8.3,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Relic Crush",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Instant",
+   "payoff": "",
+   "power": 15.9,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Return of the Wildspeaker",
+   "core": true,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Instant",
+   "payoff": "",
+   "power": 43.6,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Summon: Magus Sisters",
+   "core": true,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Enchantment Creature Saga Faerie",
+   "payoff": "",
+   "power": 45.2,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Wolfkin Bond",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 8.1,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Scavenged Brawler",
+   "core": true,
+   "rarity": "R",
+   "cmc": 6,
+   "types": "Artifact Creature Construct",
+   "payoff": "",
+   "power": 49.6,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Wolf's Quarry",
+   "core": false,
+   "rarity": "C",
+   "cmc": 6,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 9.0,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Battering Wurm",
+   "core": false,
+   "rarity": "U",
+   "cmc": 7,
+   "types": "Creature Wurm",
+   "payoff": "",
+   "power": 8.0,
+   "supports": false,
+   "fit": 0
+  },
+  {
+   "name": "Old Gnawbone",
+   "core": true,
+   "rarity": "M",
+   "cmc": 7,
+   "types": "Legendary Creature Dragon",
+   "payoff": "",
+   "power": 48.0,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Kozilek, the Great Distortion",
+   "core": true,
+   "rarity": "M",
+   "cmc": 10,
+   "types": "Legendary Creature Eldrazi",
+   "payoff": "",
+   "power": 46.9,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Emrakul, the World Anew",
+   "core": true,
+   "rarity": "M",
+   "cmc": 12,
+   "types": "Legendary Creature Eldrazi",
+   "payoff": "",
+   "power": 61.2,
+   "supports": true,
+   "fit": 0
+  }
+ ]
+}

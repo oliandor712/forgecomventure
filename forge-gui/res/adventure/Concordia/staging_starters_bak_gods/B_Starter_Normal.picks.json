@@ -1,0 +1,689 @@
+{
+ "name": "B_Starter_Normal",
+ "commander": "Rankle, Master of Pranks",
+ "profile": [
+  "attack",
+  "discard",
+  "evasion",
+  "sacrifice"
+ ],
+ "strategy": [
+  "pillow_fort",
+  "forced_combat"
+ ],
+ "banned": [],
+ "lands": {
+  "basics": {
+   "B": 32
+  },
+  "nonbasic": [
+   "Bojuka Bog",
+   "Takenuma, Abandoned Mire",
+   "Reliquary Tower",
+   "Demolition Field",
+   "Scavenger Grounds",
+   "Yavimaya, Cradle of Growth"
+  ]
+ },
+ "picks": [
+  {
+   "name": "Cauldron Familiar",
+   "core": true,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Cat",
+   "payoff": "",
+   "power": 48.6,
+   "supports": true,
+   "fit": 0
+  },
+  {
+   "name": "Fountainport Bell",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 15.5,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Pip-Boy 3000",
+   "core": true,
+   "rarity": "R",
+   "cmc": 1,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 48.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Skullclamp",
+   "core": true,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 72.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Sol Ring",
+   "core": false,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Artifact"
+  },
+  {
+   "name": "Unearth",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 16.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Accursed Marauder",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Zombie Warrior",
+   "payoff": "",
+   "power": 17.8,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Arcane Signet",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Clattering Augur",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Skeleton Shaman",
+   "payoff": "",
+   "power": 19.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Crashing Drawbridge",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact Creature Wall",
+   "payoff": "",
+   "power": 17.8,
+   "supports": true,
+   "fit": 1
+  },
+  {
+   "name": "Deadly Dispute",
+   "core": true,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 43.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Dusk Legion Zealot",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Vampire Soldier",
+   "payoff": "",
+   "power": 22.9,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Easy Prey",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 25.6,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Fellwar Stone",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Golgari Thug",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Human Warrior",
+   "payoff": "",
+   "power": 14.1,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Infernal Scarring",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 8.6,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Mordor Muster",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 12.5,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Night's Whisper",
+   "core": true,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 49.5,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Oblivion's Hunger",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 12.8,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Rabid Attack",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 16.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Rune of Mortality",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Enchantment Aura Rune",
+   "payoff": "",
+   "power": 17.0,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Attrition",
+   "core": true,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 48.9,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Braids's Frightful Return",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment Saga",
+   "payoff": "",
+   "power": 28.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Circuit Mender",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Artifact Creature Insect",
+   "payoff": "",
+   "power": 17.7,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Expunge",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Instant",
+   "payoff": "",
+   "power": 22.8,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Filigree Familiar",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact Creature Fox",
+   "payoff": "",
+   "power": 11.5,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Fleshbag Marauder",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Zombie Warrior",
+   "payoff": "",
+   "power": 15.9,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Gravelighter",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Spirit",
+   "payoff": "",
+   "power": 15.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Grim Haruspex",
+   "core": true,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Creature Human Wizard",
+   "payoff": "",
+   "power": 49.2,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Hooded Assassin",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Human Assassin",
+   "payoff": "",
+   "power": 22.0,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Letter of Acceptance",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 28.7,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Orzhov Euthanist",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Human Assassin",
+   "payoff": "",
+   "power": 22.0,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Phyrexian Arena",
+   "core": true,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Enchantment",
+   "payoff": "",
+   "power": 48.7,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Preacher of the Schism",
+   "core": true,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Creature Vampire Cleric",
+   "payoff": "",
+   "power": 68.5,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Ruthless Knave",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Creature Orc Pirate",
+   "payoff": "",
+   "power": 31.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Sword of Hearth and Home",
+   "core": true,
+   "rarity": "M",
+   "cmc": 3,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 48.7,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Damnation",
+   "core": true,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 49.0,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Elegy Acolyte",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Human Cleric",
+   "payoff": "",
+   "power": 23.6,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Grim Bounty",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 25.9,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Heartstabber Mosquito",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Insect",
+   "payoff": "",
+   "power": 19.4,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Merchant of Venom",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Cat Warlock",
+   "payoff": "",
+   "power": 20.1,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Sengir Autocrat",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Human",
+   "payoff": "",
+   "power": 14.5,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Smuggler's Buggy",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact Vehicle",
+   "payoff": "",
+   "power": 18.6,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Starforged Sword",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 15.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Swarm Culler",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Insect Warrior",
+   "payoff": "",
+   "power": 8.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Thought-Knot Seer",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Creature Eldrazi",
+   "payoff": "",
+   "power": 18.9,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Vibranium Strike Gauntlets",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 21.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Volatile Rig",
+   "core": false,
+   "rarity": "R",
+   "cmc": 4,
+   "types": "Artifact Creature Construct",
+   "payoff": "",
+   "power": 15.6,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Batterskull",
+   "core": false,
+   "rarity": "M",
+   "cmc": 5,
+   "types": "Artifact Equipment",
+   "payoff": "",
+   "power": 23.2,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Creepy Doll",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Artifact Creature Construct",
+   "payoff": "",
+   "power": 19.6,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Fetid Gargantua",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Creature Horror",
+   "payoff": "",
+   "power": 9.4,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Foreboding Steamboat",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Artifact Vehicle",
+   "payoff": "",
+   "power": 17.2,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Mind's Eye",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 22.0,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Perilous Predicament",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Instant",
+   "payoff": "",
+   "power": 11.7,
+   "supports": true,
+   "fit": 2
+  },
+  {
+   "name": "Witch of the Moors",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Creature Human Warlock",
+   "payoff": "",
+   "power": 22.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Arbiter of Woe",
+   "core": false,
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Creature Demon",
+   "payoff": "",
+   "power": 15.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Stir the Sands",
+   "core": false,
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 10.8,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Summon: Anima",
+   "core": false,
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Enchantment Creature Saga Horror",
+   "payoff": "",
+   "power": 16.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Urgoros, the Empty One",
+   "core": false,
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Legendary Creature Specter",
+   "payoff": "",
+   "power": 12.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Scion of Darkness",
+   "core": true,
+   "rarity": "U",
+   "cmc": 8,
+   "types": "Creature Avatar",
+   "payoff": "",
+   "power": 47.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Void Beckoner",
+   "core": false,
+   "rarity": "U",
+   "cmc": 8,
+   "types": "Creature Nightmare Horror",
+   "payoff": "",
+   "power": 14.4,
+   "supports": false,
+   "fit": 4
+  }
+ ]
+}
