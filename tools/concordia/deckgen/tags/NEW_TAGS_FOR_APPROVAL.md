@@ -5,7 +5,7 @@ Changes to existing behaviour (approved with "approve all tags", 2026-10-22; tre
 
 | Approve | Tag family | Meaning | Source of the rule | Cards | Values seen (cards) |
 |---|---|---|---|---|---|
-| | *No family waits for approval.* | | | | |
+| [ ] proposed | `power_scales` | (see feedback notes) | created from the user feedback pattern | 1 (e.g. Adeline, Resplendent Cathar) | power_scales:creatures_you_control (1) |
 
 ## New values inside already-approved families (the family is approved; these values appeared after the approval)
 

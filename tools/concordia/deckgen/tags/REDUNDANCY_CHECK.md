@@ -14,4 +14,4 @@ Run by `deckgen/tag_run.py starter` on every tag generation (user order 2026-10-
 
 ## single value (1)
 
-- family `cant_be_blocked` has only one value (cant_be_blocked:by_creature_blue) on 3 cards: could be a plain tag
+- family `cant_be_blocked` has only one value (cant_be_blocked:by_creature_blue) on 4 cards: could be a plain tag

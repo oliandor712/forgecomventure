@@ -1,0 +1,2228 @@
+{
+"Esper Sentinel": {
+"arcmind": {
+"roles": [
+"stax",
+"draw_engine"
+],
+"tags": [
+"card-advantage",
+"cast-tax",
+"cast-trigger",
+"cast-trigger-other",
+"draw",
+"draw-engine",
+"hate",
+"hate-noncreature",
+"hatebear",
+"power-matters",
+"power-matters-self",
+"pure-draw",
+"repeatable-card-advantage",
+"repeatable-draw",
+"repeatable-pure-draw",
+"rhystic",
+"scales-with-power",
+"tax",
+"triggered-ability"
+],
+"power": 4.22,
+"synergy": 0.13738170281833503,
+"inclusion": 0.4642415923129719
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "95%",
+"impact": 18.05
+}
+},
+"Restoration Magic": {
+"arcmind": {
+"roles": [
+"protection"
+],
+"tags": [
+"additional-cost",
+"charm",
+"combat-trick",
+"gives-hexproof",
+"gives-indestructible",
+"lifegain",
+"modal",
+"more-expensive-than-mv",
+"protection",
+"protects-all",
+"protects-artifact",
+"protects-creature",
+"protects-enchantment",
+"protects-land",
+"protects-permanent",
+"single-target-instant-sorcery"
+],
+"power": 1.59,
+"synergy": 0.2950138300556967,
+"inclusion": 0.41334219858156024
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "95%",
+"impact": 8.62
+}
+},
+"Skullclamp": {
+"arcmind": {
+"roles": [
+"draw_engine"
+],
+"tags": [
+"activated-ability",
+"card-advantage",
+"death-trigger",
+"draw",
+"draw-engine",
+"flowstone",
+"pure-draw",
+"repeatable-card-advantage",
+"repeatable-draw",
+"repeatable-pure-draw",
+"triggered-ability"
+],
+"power": 2.27,
+"synergy": 0.21364368339950845,
+"inclusion": 0.38321894303363074
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "98%",
+"impact": 11.9
+}
+},
+"Sol Ring": {
+"arcmind": {
+"roles": [
+"fast_mana",
+"ramp",
+"multiple_mana"
+],
+"tags": [
+"activated-ability",
+"adds-multiple-mana",
+"full-refund",
+"mana-producer",
+"mana-rock",
+"ramp",
+"refund"
+],
+"power": 4.23,
+"synergy": 0.09685555422256177,
+"inclusion": 0.9295632698768198
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "98%",
+"impact": 13.71
+}
+},
+"Soul's Attendant": {
+"arcmind": {
+"roles": [],
+"tags": [
+"creaturefall",
+"lifegain",
+"repeatable-lifegain",
+"soul-warden-ability",
+"tax",
+"thingfall",
+"toll",
+"triggered-ability"
+],
+"power": 0.86,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "95%",
+"impact": 11.43
+}
+},
+"Swords to Plowshares": {
+"arcmind": {
+"roles": [
+"removal"
+],
+"tags": [
+"drawback",
+"lifegain",
+"opponent-lifegain",
+"removal",
+"removal-creature",
+"removal-exile",
+"single-target-instant-sorcery",
+"spot-removal"
+],
+"power": 2.35,
+"synergy": 0.11071913679142284,
+"inclusion": 0.8646190803019904
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "95%",
+"impact": 9.8
+}
+},
+"Ancestral Blade": {
+"arcmind": {
+"roles": [
+"token_generator",
+"creature_token"
+],
+"tags": [
+"activated-ability",
+"cycle",
+"living-weapon",
+"quick-attach",
+"quick-equip",
+"triggered-ability"
+],
+"power": 0.89,
+"synergy": 0.19512319041618342,
+"inclusion": 0.19999999999999998
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "90%",
+"impact": 1.84
+}
+},
+"Arcane Signet": {
+"arcmind": {
+"roles": [
+"ramp",
+"color_fixing"
+],
+"tags": [
+"activated-ability",
+"mana-producer",
+"mana-rock",
+"mini-refund",
+"ramp",
+"refund"
+],
+"power": 3.31,
+"synergy": 0.17554471510248684,
+"inclusion": 0.758622620380739
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "92%",
+"impact": 8.5
+}
+},
+"Bumbleflower's Sharepot": {
+"arcmind": {
+"roles": [
+"tap_ability",
+"removal",
+"token_generator",
+"food_token"
+],
+"tags": [
+"activated-ability",
+"card-names",
+"egg",
+"lifegain",
+"removal",
+"removal-artifact",
+"removal-aura",
+"removal-battle",
+"removal-creature",
+"removal-destroy",
+"removal-enchantment",
+"removal-equipment",
+"removal-nonland",
+"removal-planeswalker",
+"removal-spacecraft",
+"removal-vehicle",
+"sacrifice-self",
+"spot-removal",
+"triggered-ability"
+],
+"power": 1.2,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "92%",
+"impact": 2.98
+}
+},
+"Chosen by Heliod": {
+"arcmind": {
+"roles": [
+"pump",
+"card_advantage"
+],
+"tags": [
+"cantrip",
+"card-advantage",
+"card-names",
+"cycle",
+"draw",
+"pure-draw",
+"triggered-ability"
+],
+"power": 0.79,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "90%",
+"impact": 1.95
+}
+},
+"Crashing Drawbridge": {
+"arcmind": {
+"roles": [
+"tap_ability",
+"haste_enabler"
+],
+"tags": [
+"activated-ability",
+"drawback",
+"gives-haste",
+"keyword-anthem"
+],
+"power": 1.43,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "92%",
+"impact": 7.67
+}
+},
+"Deep Gnome Terramancer": {
+"arcmind": {
+"roles": [
+"ramp"
+],
+"tags": [
+"hate",
+"hate-ramp",
+"land-ramp",
+"landfall",
+"landfall-other",
+"lands-matter",
+"ramp",
+"tax",
+"thingfall",
+"toll",
+"triggered-ability",
+"tutor",
+"tutor-land",
+"tutor-land-plains",
+"tutor-land-to-battlefield",
+"tutor-to",
+"tutor-to-battlefield"
+],
+"power": 1.15,
+"synergy": 0.18056813661751978,
+"inclusion": 0.25
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "90%",
+"impact": 10.8
+}
+},
+"Drannith Healer": {
+"arcmind": {
+"roles": [
+"life_gain",
+"loot"
+],
+"tags": [
+"activate-from-hand",
+"activated-ability",
+"card-advantage",
+"cheaper-than-mv",
+"draw",
+"lifegain",
+"pure-draw",
+"repeatable-lifegain",
+"synergy-cycling",
+"triggered-ability"
+],
+"power": 0.5,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "90%",
+"impact": 2.19
+}
+},
+"Fellwar Stone": {
+"arcmind": {
+"roles": [
+"ramp",
+"color_fixing"
+],
+"tags": [
+"activated-ability",
+"mana-producer",
+"mana-rock",
+"ramp",
+"refund"
+],
+"power": 2.95,
+"synergy": 0.21711787440162347,
+"inclusion": 0.31480782429649967
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "92%",
+"impact": 9.2
+}
+},
+"Gleaming Splendor": {
+"arcmind": {
+"roles": [
+"ramp",
+"card_advantage",
+"token_generator",
+"treasure_token",
+"payoff"
+],
+"tags": [
+"activated-ability",
+"bottomless-mana-sink",
+"card-advantage",
+"draw",
+"draw-engine",
+"draw-hate",
+"force-draw",
+"group-hug",
+"hate",
+"mana-sink",
+"multiple-targets",
+"pure-draw",
+"ramp",
+"repeatable-artifact-tokens",
+"repeatable-card-advantage",
+"repeatable-draw",
+"repeatable-noncreature-tokens",
+"repeatable-pure-draw",
+"repeatable-token-generator",
+"repeatable-treasures",
+"selective-group-hug",
+"tax",
+"toll",
+"triggered-ability"
+],
+"power": 3.74,
+"synergy": 0.8704646047017042,
+"inclusion": 1
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "90%",
+"impact": 14.67
+}
+},
+"Kindly Customer": {
+"arcmind": {
+"roles": [
+"card_advantage"
+],
+"tags": [
+"cantrip",
+"card-advantage",
+"draw",
+"pure-draw",
+"triggered-ability"
+],
+"power": 0.47,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "90%",
+"impact": 2.74
+}
+},
+"Kozilek's Command": {
+"arcmind": {
+"roles": [
+"removal",
+"ramp",
+"token_generator",
+"creature_token",
+"ritual"
+],
+"tags": [
+"bottom-deck-manipulation",
+"cantrip",
+"card-advantage",
+"card-names",
+"command",
+"donate-token",
+"draw",
+"force-draw",
+"group-hug",
+"hate",
+"hate-graveyard",
+"library-manipulation",
+"modal",
+"multiple-bodies",
+"multiple-targets",
+"peek",
+"peek-library",
+"pure-draw",
+"ramp",
+"refund",
+"removal",
+"removal-creature",
+"removal-exile",
+"scry",
+"selective-group-hug",
+"single-target-instant-sorcery",
+"spot-removal",
+"top-deck-manipulation"
+],
+"power": 2.64,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "92%",
+"impact": 10.78
+}
+},
+"Revitalize": {
+"arcmind": {
+"roles": [
+"life_gain",
+"card_advantage"
+],
+"tags": [
+"cantrip",
+"card-advantage",
+"card-names",
+"draw",
+"lifegain",
+"pure-draw"
+],
+"power": 0.97,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "90%",
+"impact": 4.54
+}
+},
+"Rune of Sustenance": {
+"arcmind": {
+"roles": [
+"card_advantage"
+],
+"tags": [
+"cantrip",
+"card-advantage",
+"cycle",
+"draw",
+"gives-lifelink",
+"lifegain",
+"pure-draw",
+"repeatable-lifegain",
+"synergy-equipment",
+"triggered-ability"
+],
+"power": 0.54,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "90%",
+"impact": 3.9
+}
+},
+"Suture Priest": {
+"arcmind": {
+"roles": [],
+"tags": [
+"color-break",
+"creaturefall",
+"group-slug",
+"inverted-effects",
+"lifegain",
+"opponent-loses-life",
+"repeatable-lifegain",
+"soul-warden-ability",
+"thingfall",
+"triggered-ability",
+"type-addition-phyrexian"
+],
+"power": 0.74,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "90%",
+"impact": 8.41
+}
+},
+"Tataru Taru": {
+"arcmind": {
+"roles": [
+"ramp",
+"card_advantage",
+"token_generator",
+"treasure_token",
+"payoff"
+],
+"tags": [
+"bribery",
+"cantrip",
+"card-advantage",
+"card-names",
+"draw",
+"draw-hate",
+"group-hug",
+"hate",
+"intervening-if-clause",
+"pure-draw",
+"ramp",
+"repeatable-artifact-tokens",
+"repeatable-noncreature-tokens",
+"repeatable-token-generator",
+"repeatable-treasures",
+"rhyming-name",
+"selective-group-hug",
+"tax",
+"toll",
+"triggered-ability"
+],
+"power": 2.89,
+"synergy": 0.19497852899393,
+"inclusion": 0.25
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "90%",
+"impact": 10.51
+}
+},
+"Warren Elder": {
+"arcmind": {
+"roles": [
+"pump",
+"anthem"
+],
+"tags": [
+"activated-ability",
+"bottomless-mana-sink",
+"mana-sink",
+"power-boost-to-all",
+"shade-pump",
+"toughness-boost-to-all"
+],
+"power": 0.68,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "90%",
+"impact": 1.93
+}
+},
+"Celestial Unicorn": {
+"arcmind": {
+"roles": [
+"payoff",
+"enabler",
+"counters"
+],
+"tags": [
+"gains-pp-counters",
+"lifegain-matters",
+"pridemate",
+"repeatable-pp-counters",
+"triggered-ability"
+],
+"power": 1.05,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "79%",
+"impact": 2.88
+}
+},
+"Circuit Mender": {
+"arcmind": {
+"roles": [
+"life_gain",
+"card_advantage"
+],
+"tags": [
+"card-advantage",
+"draw",
+"leaves-battlefield-trigger",
+"leaves-trigger-self",
+"lifegain",
+"pure-draw",
+"triggered-ability"
+],
+"power": 1.04,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "80%",
+"impact": 5.5
+}
+},
+"Filigree Familiar": {
+"arcmind": {
+"roles": [
+"life_gain",
+"card_advantage"
+],
+"tags": [
+"card-advantage",
+"card-names",
+"death-trigger",
+"death-trigger-self",
+"draw",
+"lifegain",
+"pure-draw",
+"triggered-ability"
+],
+"power": 0.79,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "80%",
+"impact": 3.63
+}
+},
+"Holy Cow": {
+"arcmind": {
+"roles": [
+"life_gain",
+"top_deck_manipulation"
+],
+"tags": [
+"bottom-deck-manipulation",
+"card-names",
+"evasion",
+"library-manipulation",
+"lifegain",
+"peek",
+"peek-library",
+"scry",
+"top-deck-manipulation",
+"triggered-ability"
+],
+"power": 0.69,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "79%",
+"impact": 3.03
+}
+},
+"Inspiring Overseer": {
+"arcmind": {
+"roles": [
+"card_advantage"
+],
+"tags": [
+"cantrip",
+"card-advantage",
+"draw",
+"evasion",
+"lifegain",
+"pure-draw",
+"triggered-ability"
+],
+"power": 0.98,
+"synergy": 0.08868423075766033,
+"inclusion": 0.25
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "79%",
+"impact": 5.58
+}
+},
+"Kemba's Skyguard": {
+"arcmind": {
+"roles": [],
+"tags": [
+"card-names",
+"evasion",
+"lifegain",
+"triggered-ability"
+],
+"power": 0.06,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "74%",
+"impact": 0.72
+}
+},
+"Lightform": {
+"arcmind": {
+"roles": [
+"evasion"
+],
+"tags": [
+"animate-dead-like",
+"auraify",
+"cycle",
+"gives-evasion",
+"gives-flying",
+"gives-lifelink",
+"lifegain",
+"repeatable-lifegain",
+"triggered-ability",
+"type-change"
+],
+"power": 0.14,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "74%",
+"impact": 0.85
+}
+},
+"Love Song of Night and Day": {
+"arcmind": {
+"roles": [
+"counters",
+"card_advantage",
+"token_generator",
+"creature_token"
+],
+"tags": [
+"card-advantage",
+"cycle",
+"draw",
+"evasion",
+"force-draw",
+"gives-pp-counters",
+"group-hug",
+"intervening-if-clause",
+"multiple-targets",
+"pure-draw",
+"repeatable-crime",
+"selective-group-hug",
+"support",
+"triggered-ability"
+],
+"power": 1.41,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "79%",
+"impact": 3.3
+}
+},
+"Omen of the Sun": {
+"arcmind": {
+"roles": [
+"token_generator",
+"creature_token",
+"top_deck_manipulation"
+],
+"tags": [
+"activated-ability",
+"bottom-deck-manipulation",
+"cycle",
+"library-manipulation",
+"lifegain",
+"multiple-bodies",
+"peek",
+"peek-library",
+"sacrifice-self",
+"scry",
+"top-deck-manipulation",
+"triggered-ability"
+],
+"power": 0.94,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "79%",
+"impact": 1.67
+}
+},
+"Paladin Danse, Steel Maverick": {
+"arcmind": {
+"roles": [
+"protection",
+"life_gain"
+],
+"tags": [
+"activated-ability",
+"exile-self",
+"gives-indestructible",
+"lifegain",
+"martyr",
+"protection",
+"protects-all",
+"protects-creature",
+"repeatable-lifegain",
+"sacrifice-self",
+"synergy-artifact-creature",
+"typal",
+"typal-creature",
+"typal-human"
+],
+"power": 0.93,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "79%",
+"impact": 3.9
+}
+},
+"Pentarch Ward": {
+"arcmind": {
+"roles": [
+"card_advantage",
+"protection"
+],
+"tags": [
+"cantrip",
+"card-advantage",
+"color-ward",
+"draw",
+"gives-evasion",
+"gives-protection",
+"hate",
+"hate-color",
+"hate-color-choose",
+"protection",
+"protects-creature",
+"pure-draw",
+"triggered-ability"
+],
+"power": 0.88,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "79%",
+"impact": 2.19
+}
+},
+"Pianna, Nomad Captain": {
+"arcmind": {
+"roles": [
+"pump"
+],
+"tags": [
+"attack-trigger",
+"attacking-matters",
+"attacking-matters-self",
+"power-boost-to-all",
+"toughness-boost-to-all",
+"triggered-ability"
+],
+"power": 0.11,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "74%",
+"impact": 0.98
+}
+},
+"Splendor Mare": {
+"arcmind": {
+"roles": [
+"life_gain",
+"counters",
+"loot"
+],
+"tags": [
+"activate-from-hand",
+"activated-ability",
+"card-advantage",
+"cheaper-than-mv",
+"cycle",
+"draw",
+"gives-lifelink",
+"keyword-counter",
+"lifegain",
+"lifelink-counter",
+"pure-draw",
+"repeatable-lifegain",
+"triggered-ability"
+],
+"power": 0.83,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "79%",
+"impact": 2.65
+}
+},
+"Survival Cache": {
+"arcmind": {
+"roles": [
+"card_advantage"
+],
+"tags": [
+"alternative-cost",
+"cantrip",
+"card-advantage",
+"cast-on-resolution",
+"castable-from-exile",
+"castable-from-nonhand",
+"delayed-trigger",
+"draw",
+"exile-self",
+"lifegain",
+"lifegain-matters",
+"pure-draw",
+"triggered-ability",
+"unexile"
+],
+"power": 0.58,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "79%",
+"impact": 1.42
+}
+},
+"Thunderstaff": {
+"arcmind": {
+"roles": [
+"tap_ability"
+],
+"tags": [
+"absorb",
+"activated-ability",
+"attacking-matters",
+"damage-prevention",
+"damage-prevention-you",
+"hate",
+"hate-attacker",
+"pillowfort",
+"power-boost-to-all",
+"untapped-matters-self"
+],
+"power": 0.09,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "80%",
+"impact": 1.13
+}
+},
+"Trial of Solidarity": {
+"arcmind": {
+"roles": [
+"pump",
+"anthem"
+],
+"tags": [
+"bounce",
+"bounce-self",
+"cycle",
+"gives-vigilance",
+"power-boost-to-all",
+"toughness-boost-to-all",
+"triggered-ability"
+],
+"power": 0.46,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "79%",
+"impact": 0.16
+}
+},
+"Absolver Thrull": {
+"arcmind": {
+"roles": [
+"removal"
+],
+"tags": [
+"death-trigger",
+"death-trigger-self",
+"exile-self",
+"removal",
+"removal-destroy",
+"removal-enchantment",
+"repeatable-crime",
+"repeatable-removal",
+"spot-removal",
+"triggered-ability"
+],
+"power": 0.18,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "64%",
+"impact": 0.41
+}
+},
+"Attended Healer": {
+"arcmind": {
+"roles": [
+"life_gain",
+"token_generator",
+"creature_token"
+],
+"tags": [
+"activated-ability",
+"gives-lifelink",
+"lifegain",
+"lifegain-matters",
+"mana-sink",
+"noncreature-typal",
+"repeatable-creature-tokens",
+"repeatable-crime",
+"repeatable-lifegain",
+"repeatable-token-generator",
+"triggered-ability",
+"typal",
+"typal-cleric",
+"typal-creature"
+],
+"power": 0.85,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "64%",
+"impact": 1.97
+}
+},
+"Faith's Fetters": {
+"arcmind": {
+"roles": [
+"disable"
+],
+"tags": [
+"card-names",
+"cycle",
+"lifegain",
+"pacifism",
+"prevent-activation",
+"prevent-attack",
+"prevent-blocker",
+"removal",
+"removal-creature",
+"removal-planeswalker",
+"spot-removal",
+"triggered-ability"
+],
+"power": 0.27,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "64%",
+"impact": 1.82
+}
+},
+"Gallant Cavalry": {
+"arcmind": {
+"roles": [
+"token_generator",
+"creature_token"
+],
+"tags": [
+"enters-in-company",
+"multiple-bodies",
+"triggered-ability"
+],
+"power": 0.48,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "64%",
+"impact": 1.2
+}
+},
+"Lightkeeper of Emeria": {
+"arcmind": {
+"roles": [
+"life_gain"
+],
+"tags": [
+"additional-cost",
+"evasion",
+"lifegain",
+"more-expensive-than-mv",
+"triggered-ability"
+],
+"power": 0.14,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "64%",
+"impact": 1.04
+}
+},
+"Now for Wrath, Now for Ruin!": {
+"arcmind": {
+"roles": [
+"anthem",
+"counters"
+],
+"tags": [
+"card-names",
+"gives-evasion",
+"gives-pp-counters",
+"gives-pp-counters-to-all",
+"gives-skulk",
+"gives-vigilance",
+"legendify",
+"power-boost-to-all",
+"the-ring-tempts-you",
+"toughness-boost-to-all",
+"type-change"
+],
+"power": 0.64,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "64%",
+"impact": 2.04
+}
+},
+"Qala, Ajani's Pridemate": {
+"arcmind": {
+"roles": [
+"counters"
+],
+"tags": [
+"activated-ability",
+"attack-trigger",
+"attacking-matters",
+"attacking-matters-self",
+"bottomless-mana-sink",
+"card-names",
+"counters-matter",
+"gains-pp-counters",
+"lifegain",
+"lifegain-matters",
+"mana-sink",
+"power-boost-to-all",
+"pridemate",
+"repeatable-lifegain",
+"repeatable-pp-counters",
+"triggered-ability"
+],
+"power": 0.37,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "64%",
+"impact": 3.85
+}
+},
+"Smothering Tithe": {
+"arcmind": {
+"roles": [
+"ramp",
+"stax",
+"game_changer",
+"token_generator",
+"treasure_token"
+],
+"tags": [
+"draw-hate",
+"hate",
+"ramp",
+"repeatable-artifact-tokens",
+"repeatable-noncreature-tokens",
+"repeatable-token-generator",
+"repeatable-treasures",
+"rhystic",
+"tax",
+"triggered-ability"
+],
+"power": 5.85,
+"synergy": 0.14386742473486602,
+"inclusion": 0.42564273049645385
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "64%",
+"impact": 18.11
+}
+},
+"Summon: Yojimbo": {
+"arcmind": {
+"roles": [
+"removal",
+"ramp",
+"token_generator",
+"treasure_token",
+"beater"
+],
+"tags": [
+"catch-up",
+"class-type-only",
+"disenchant-naturalize",
+"hate",
+"hate-high-pt",
+"hate-tapped",
+"intervening-if-clause",
+"multiplayer",
+"per-player",
+"pillowfort",
+"ramp",
+"removal",
+"removal-artifact",
+"removal-creature",
+"removal-enchantment",
+"removal-exile",
+"rhystic",
+"spot-removal",
+"tax",
+"tax-attack",
+"triggered-ability"
+],
+"power": 2.04,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "64%",
+"impact": 6.55
+}
+},
+"Tenacity": {
+"arcmind": {
+"roles": [
+"pump",
+"anthem"
+],
+"tags": [
+"card-names",
+"combat-trick",
+"extra-untap",
+"gives-lifelink",
+"lifegain",
+"power-boost-to-all",
+"toughness-boost-to-all",
+"untapper",
+"untapper-creature"
+],
+"power": 0.52,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "64%",
+"impact": 1.07
+}
+},
+"Vanguard Seraph": {
+"arcmind": {
+"roles": [
+"mill",
+"top_deck_manipulation"
+],
+"tags": [
+"evasion",
+"library-manipulation",
+"lifegain-matters",
+"mill",
+"mill-self",
+"peek",
+"peek-library",
+"repeatable-surveil",
+"surveil",
+"top-deck-manipulation",
+"triggered-ability"
+],
+"power": 0.71,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "64%",
+"impact": 2.64
+}
+},
+"Wreck Remover": {
+"arcmind": {
+"roles": [
+"graveyard_hate",
+"loot"
+],
+"tags": [
+"activate-from-hand",
+"activated-ability",
+"attack-trigger",
+"attacking-matters",
+"attacking-matters-self",
+"card-advantage",
+"cheaper-than-mv",
+"draw",
+"hate",
+"hate-graveyard",
+"lifegain",
+"pure-draw",
+"repeatable-crime",
+"repeatable-lifegain",
+"titan-trigger",
+"triggered-ability"
+],
+"power": 0.5,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "65%",
+"impact": 1.46
+}
+},
+"Aven Gagglemaster": {
+"arcmind": {
+"roles": [
+"life_gain",
+"beater"
+],
+"tags": [
+"creature-count-matters",
+"evasion",
+"lifegain",
+"synergy-flying",
+"triggered-ability"
+],
+"power": 0.53,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "47%",
+"impact": 1.92
+}
+},
+"Katara, Heroic Healer": {
+"arcmind": {
+"roles": [
+"anthem",
+"counters",
+"life_gain"
+],
+"tags": [
+"card-names",
+"gives-pp-counters",
+"gives-pp-counters-to-all",
+"lifegain",
+"power-boost-to-all",
+"repeatable-lifegain",
+"toughness-boost-to-all",
+"triggered-ability"
+],
+"power": 0.85,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "49%",
+"impact": 2.96
+}
+},
+"Knightly Valor": {
+"arcmind": {
+"roles": [
+"pump",
+"token_generator",
+"creature_token"
+],
+"tags": [
+"gives-vigilance",
+"triggered-ability"
+],
+"power": 0.89,
+"synergy": 0.12118947023608571,
+"inclusion": 0.125
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "49%",
+"impact": 1.54
+}
+},
+"Landbind Ritual": {
+"arcmind": {
+"roles": [
+"life_gain"
+],
+"tags": [
+"land-count-matters",
+"lands-matter",
+"lifegain",
+"synergy-plains"
+],
+"power": 0.06,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "47%",
+"impact": 0.39
+}
+},
+"Makindi Stampede // Makindi Mesas": {
+"arcmind": {
+"roles": [
+"pump",
+"anthem",
+"land",
+"tapped_land"
+],
+"tags": [
+"activated-ability",
+"card-names",
+"cheaper-than-mv",
+"power-boost-to-all",
+"tapland",
+"toughness-boost-to-all",
+"utility-land"
+],
+"power": 1.09,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+]
+},
+"Rooftop Percher": {
+"arcmind": {
+"roles": [
+"graveyard_hate"
+],
+"tags": [
+"cda-subtype",
+"changeling",
+"characteristic-defining-ability",
+"evasion",
+"hate",
+"hate-graveyard",
+"lifegain",
+"multiple-targets",
+"triggered-ability"
+],
+"power": 0.29,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "49%",
+"impact": 2.03
+}
+},
+"Solitude": {
+"arcmind": {
+"roles": [
+"life_gain",
+"free_spell",
+"removal"
+],
+"tags": [
+"alternative-cost",
+"card-names",
+"cheaper-than-mv",
+"cycle",
+"intervening-if-clause",
+"lifegain",
+"manaless-value",
+"opponent-lifegain",
+"pitch-spell",
+"removal",
+"removal-creature",
+"removal-exile",
+"repeatable-lifegain",
+"spot-removal",
+"synergy-white",
+"triggered-ability"
+],
+"power": 3.44,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "100%",
+"impact": 14.68
+}
+},
+"Angel of Renewal": {
+"arcmind": {
+"roles": [
+"life_gain",
+"beater"
+],
+"tags": [
+"creature-count-matters",
+"evasion",
+"lifegain",
+"triggered-ability"
+],
+"power": 0.46,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "34%",
+"impact": 1.76
+}
+},
+"Imposing Vantasaur": {
+"arcmind": {
+"roles": [
+"loot"
+],
+"tags": [
+"activate-from-hand",
+"activated-ability",
+"card-advantage",
+"cheaper-than-mv",
+"draw",
+"pure-draw"
+],
+"power": 0.16,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "34%",
+"impact": 1.61
+}
+},
+"Kirtar's Wrath": {
+"arcmind": {
+"roles": [
+"board_wipe",
+"token_generator",
+"creature_token"
+],
+"tags": [
+"card-names",
+"cards-in-graveyard-matter",
+"evasion",
+"hate",
+"hate-regenerate",
+"multiple-bodies",
+"removal",
+"removal-creature",
+"removal-destroy",
+"self-replacement-effect",
+"sweeper",
+"threshold"
+],
+"power": 0.88,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "33%",
+"impact": 2.04
+}
+},
+"Victory's Herald": {
+"arcmind": {
+"roles": [
+"evasion",
+"beater"
+],
+"tags": [
+"attack-trigger",
+"attacking-matters",
+"attacking-matters-self",
+"cycle",
+"evasion",
+"gains-lifelink",
+"gives-evasion",
+"gives-flying",
+"gives-lifelink",
+"jump",
+"lifegain",
+"repeatable-lifegain",
+"triggered-ability",
+"wingman"
+],
+"power": 0.54,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "31%",
+"impact": 2.47
+}
+},
+"Portal to Phyrexia": {
+"arcmind": {
+"roles": [
+"reanimator"
+],
+"tags": [
+"card-names",
+"control-changing-effects",
+"multi-removal",
+"reanimate",
+"reanimate-creature",
+"reanimate-from-any",
+"reanimate-from-opponent",
+"recursion",
+"recursion-creature",
+"removal",
+"removal-creature",
+"removal-sacrifice",
+"repeatable-crime",
+"spot-removal",
+"theft",
+"triggered-ability",
+"type-change"
+],
+"power": 1.49,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "8%",
+"impact": 16.34
+}
+},
+"Summon: Bahamut": {
+"arcmind": {
+"roles": [
+"removal",
+"card_advantage",
+"burn",
+"beater"
+],
+"tags": [
+"burn",
+"burn-player",
+"card-advantage",
+"draw",
+"evasion",
+"group-slug",
+"intervening-if-clause",
+"mana-value-matters",
+"pure-draw",
+"removal",
+"removal-artifact",
+"removal-aura",
+"removal-battle",
+"removal-creature",
+"removal-destroy",
+"removal-enchantment",
+"removal-equipment",
+"removal-nonland",
+"removal-planeswalker",
+"removal-spacecraft",
+"removal-vehicle",
+"repeatable-removal",
+"scales-with-mana-value",
+"spot-removal",
+"triggered-ability"
+],
+"power": 1.98,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "8%",
+"impact": 14.59
+}
+},
+"Eiganjo, Seat of the Empire": {
+"arcmind": {
+"roles": [
+"land",
+"removal",
+"untapped_land"
+],
+"tags": [
+"activate-from-hand",
+"activated-ability",
+"burn",
+"burn-creature",
+"card-names",
+"cycle",
+"hate",
+"hate-attacker",
+"hate-blocker",
+"removal",
+"removal-burn",
+"removal-creature",
+"spot-removal",
+"synergy-legendary",
+"utility-land"
+],
+"power": 1.48,
+"synergy": 0.05491768201900965,
+"inclusion": 0.27471839799749687
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "",
+"impact": 7.17
+}
+},
+"Rogue's Passage": {
+"arcmind": {
+"roles": [
+"evasion",
+"land",
+"tap_ability",
+"untapped_land"
+],
+"tags": [
+"activated-ability",
+"gives-evasion",
+"gives-unblockable",
+"mana-sink",
+"repeatable-crime",
+"utility-land"
+],
+"power": 2.58,
+"synergy": 0.3493852688059554,
+"inclusion": 0.6207618393960193
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "",
+"impact": 5.03
+}
+},
+"Urborg, Tomb of Yawgmoth": {
+"arcmind": {
+"roles": [
+"land",
+"untapped_land"
+],
+"tags": [
+"card-names",
+"chromatic-lantern",
+"land-conversion",
+"symmetrical",
+"type-change",
+"universal-type-change"
+],
+"power": 1.99,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "",
+"impact": 10.77
+}
+},
+"Scavenger Grounds": {
+"arcmind": {
+"roles": [
+"land",
+"tap_ability",
+"untapped_land"
+],
+"tags": [
+"activated-ability",
+"hate",
+"hate-graveyard",
+"repeatable-sacrifice-outlet",
+"sacrifice-outlet",
+"sacrifice-outlet-land",
+"sacrifice-self",
+"sweeper-graveyard",
+"symmetrical",
+"synergy-desert",
+"utility-land"
+],
+"power": 1.26,
+"synergy": -0.0005237737067748452,
+"inclusion": 0.08275969962453066
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "",
+"impact": 4.27
+}
+},
+"Reliquary Tower": {
+"arcmind": {
+"roles": [
+"land",
+"untapped_land"
+],
+"tags": [
+"activated-ability",
+"hand-size-increase",
+"utility-land"
+],
+"power": 1.97,
+"synergy": 0.09822379393542964,
+"inclusion": 0.3319663692518875
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "",
+"impact": 7.05
+}
+},
+"War Room": {
+"arcmind": {
+"roles": [
+"land",
+"tap_ability",
+"draw_engine",
+"untapped_land"
+],
+"tags": [
+"activated-ability",
+"black-effect",
+"card-advantage",
+"draw",
+"draw-engine",
+"life-for-cards",
+"life-payment",
+"mana-sink",
+"pure-draw",
+"repeatable-card-advantage",
+"repeatable-draw",
+"repeatable-pure-draw",
+"utility-land"
+],
+"power": 2.09,
+"synergy": 0.12396377060465591,
+"inclusion": 0.4798572228443449
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "",
+"impact": 5.39
+}
+},
+"Command Tower": {
+"arcmind": {
+"roles": [
+"land",
+"color_fixing",
+"untapped_land"
+],
+"tags": [],
+"power": 8.35,
+"synergy": 0.09488316640811532,
+"inclusion": 0.16699911347517732
+},
+"commanders": [
+"Captain America, Liberator"
+]
+},
+"Captain America, Liberator": {
+"arcmind": {
+"roles": [
+"cheat_battlefield",
+"tutor",
+"token_generator",
+"creature_token",
+"beater"
+],
+"tags": [
+"attack-trigger",
+"attacking-matters-self",
+"low-mana-value-matters",
+"mana-value-matters",
+"repeatable-creature-tokens",
+"repeatable-token-generator",
+"synergy-equipment",
+"triggered-ability",
+"tutor",
+"tutor-artifact",
+"tutor-artifact-equipment",
+"tutor-mv",
+"tutor-to",
+"tutor-to-battlefield"
+],
+"power": 2.96,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "47%",
+"impact": 2.25
+}
+},
+"Plains": {
+"edhpl": {
+"playability": "",
+"impact": 60
+}
+},
+"Makindi Stampede": {
+"edhpl": {
+"playability": "",
+"impact": 1.86
+}
+},
+"Divine Favor": {
+"arcmind": {
+"roles": [
+"pump",
+"life_gain"
+],
+"tags": [
+"lifegain",
+"triggered-ability"
+],
+"power": 0.45,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "90%",
+"impact": 1.06
+}
+},
+"Yavimaya, Cradle of Growth": {
+"arcmind": {
+"roles": [
+"land",
+"untapped_land"
+],
+"tags": [
+"chromatic-lantern",
+"land-conversion",
+"symmetrical",
+"type-change",
+"universal-type-change"
+],
+"power": 1.47,
+"synergy": null,
+"inclusion": null
+},
+"commanders": [
+"Captain America, Liberator"
+],
+"edhpl": {
+"playability": "",
+"impact": 8.54
+}
+}
+}

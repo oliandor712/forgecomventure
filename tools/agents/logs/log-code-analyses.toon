@@ -1,6 +1,6 @@
 # Claude-only file in TOON (pipe-delimited table; # lines are comments). Append one row per analysis, under 400 chars.
 # Code and tooling analyses.
-log[27|]{date|topic|finding|caveat}:
+log[23|]{date|topic|finding|caveat}:
   2026-10-23|derived_tags.py|anthem needs duration:static + you_control/pump_team (auras, one-shots false hits); wipe excludes target_filter/you_control groups|commit 603c11540e3 local, unpushed
   2026-10-25|seed_bonus 6 overrides (Mirri, Moritte, Orah, Bess) dry-built with and without|power diff <=0.3 (24.5/24.6, 29.9/29.8, 25.5/25.8, 29.6/29.7), all in band; Bess default adds Instant 1 WARN|dry builds only in scratchpad; pool uses Scryfall -in:paper list (27699 cards)
   2026-10-25|power scorer review (deck_tier, tag_run, pool)|10 findings: deckpop split-card key, silent missing inputs, overlapping bands, landfall regex, niche:lands, role ignored niche; 9 fixed|per-card record() uncached (75 s pool build); decks not rebuilt; see power-scorer-tests.toon
@@ -28,3 +28,8 @@ log[27|]{date|topic|finding|caveat}:
   2026-10-27|power scorer vs EDHREC|independent score within 15 pct pts of EDHREC: orig 30.1%, model in max 36.7%, model fallback-only + replaces efficiency 42.8%; ceiling of the tag model ~53% held-out|85% goal not reachable; deck medians barely moved (T1 19.1->16.9, T2 28.2->28.9, T3 34.7->36.3, T4 39.2->40.5, T5 43.7->44.9, starters 28.4->27.9)
   2026-10-27|glance review of 5 starters (old commanders)|10 readers: 0 tag/Oracle archetype disagreements on B/U/W, 1 each on R/G; 6 reject candidates (Revenge of the Rats, Urza, Filigree Familiar, Fountainport Bell, Decoction Module, Leonin Bladetrap) banned and redrafted|results in staging_starters/*.review.json + ~/tagcheck_runs/S_*_Starter_Normal_20261027_*; not rerun on the new commanders
   2026-10-27|tutorial decks at aim 19|B Whisper 23.1, R Squee 22.3, G Syr Faren 22.3, U Esior 23.0 (aim 19, user: lower part of T1 band 17-23)|builder floor keeps them ~3-4 above aim; staged in staging_tutorial, live decks untouched
+  2026-10-27|mana_sink tag first pass|first rule matched 2,965 cards: reminder text, sacrifice-cost abilities and keyword grants were false hits; after the user exclusions 1,185 cards, 6 lands|sample reviewed by the user; adapt/monstrosity/renown excluded as non-repeatable
+  2026-10-27|why Dark Depths counted as support|not mana_sink: the commander token test (token_make) passed it; fixed with setup_card:mana gate (10 ramp pieces, user choice)|per-archetype ramp max does not exist (strategies.json baseline ramp n 10-12 only)
+  2026-10-27|restricted_to gate|Haven of the Spirit Dragon tagged restricted_to:dragon; utility only when type is the commander's or an allowed tribe|47 non-land tagged cards not reviewed
+  2026-10-27|colourless land picks|C pips in any one card switched the penalty off for every colourless land (H100 flaw); Kozilek Command (X C C) was picked as token_make support with 5 colourless sources|replaced by pip-share sizing (H101/H102) and token_scales (H103)
+  2026-10-27|colourless source sizing|no per-card Karsten function exists; only power_scorer.check_tier (sources/lands >= 0.8*pip share, floor 14); 14 cannot apply to colourless; placeholder 4 per pip discarded|rule is lenient: about 1 source covers a CC card in 60 coloured pips

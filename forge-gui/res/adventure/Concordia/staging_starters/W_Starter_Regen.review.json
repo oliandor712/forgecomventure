@@ -1,0 +1,43 @@
+{
+ "deck": "W_Starter_Regen",
+ "mana": {
+  "tag": {},
+  "oracle": {
+   "reader1_batch_01": {
+    "curve": "ok",
+    "sources": "ok",
+    "notes": "Mono-white with 31 W sources, 3 rocks and colorless utility lands; curve slightly high but fine, few colorless spells."
+   }
+  }
+ },
+ "strategy": [
+  "lifegain",
+  "tokens"
+ ],
+ "on_plan": 69,
+ "rejects": [
+  "Deep Gnome Terramancer"
+ ],
+ "reject_detail": [
+  {
+   "name": "Deep Gnome Terramancer",
+   "function": "Flash body that fetches a Plains when opponents' lands enter unplayed.",
+   "oracle_arch": [
+    "lands_matter",
+    "landfall",
+    "control"
+   ],
+   "tag_arch": [],
+   "roles": [
+    "creature",
+    "ramp_land"
+   ],
+   "power": 1
+  }
+ ],
+ "tag_gaps": [],
+ "summary": {
+  "cards": 70,
+  "tag_readers": 0
+ }
+}

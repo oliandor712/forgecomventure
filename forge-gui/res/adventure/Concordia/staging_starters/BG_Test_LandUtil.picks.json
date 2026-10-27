@@ -1,0 +1,709 @@
+{
+ "name": "BG_Test_LandUtil",
+ "commander": "Meren of Clan Nel Toth",
+ "profile": [
+  "sacrifice"
+ ],
+ "strategy": [
+  "aristocrats",
+  "graveyard"
+ ],
+ "banned": [],
+ "lands": {
+  "basics": {
+   "B": 20,
+   "G": 10
+  },
+  "nonbasic": [
+   "Command Tower",
+   "Cascading Cataracts",
+   "Mana Confluence",
+   "City of Brass",
+   "Undergrowth Stadium",
+   "Llanowar Wastes"
+  ]
+ },
+ "picks": [
+  {
+   "name": "Black Sun's Twilight",
+   "core": true,
+   "rarity": "R",
+   "cmc": 1,
+   "types": "Instant",
+   "payoff": "",
+   "power": 69.8,
+   "supports": true,
+   "fit": 3
+  },
+  {
+   "name": "Blood Beckoning",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 9.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Crop Rotation",
+   "core": true,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Instant",
+   "payoff": "",
+   "power": 77.0,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Deathrite Shaman",
+   "core": true,
+   "rarity": "R",
+   "cmc": 1,
+   "types": "Creature Elf Shaman",
+   "payoff": "",
+   "power": 72.7,
+   "supports": false,
+   "fit": 2
+  },
+  {
+   "name": "Sanitarium Skeleton",
+   "core": false,
+   "rarity": "C",
+   "cmc": 1,
+   "types": "Creature Skeleton",
+   "payoff": "",
+   "power": 8.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Sol Ring",
+   "core": false,
+   "rarity": "U",
+   "cmc": 1,
+   "types": "Artifact"
+  },
+  {
+   "name": "Abyssal Gatekeeper",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Horror",
+   "payoff": "",
+   "power": 10.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Aid the Fallen",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 9.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Arcane Signet",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Blanchwood Prowler",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Elemental",
+   "payoff": "",
+   "power": 9.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Cemetery Recruitment",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 11.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Chainer's Edict",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 26.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Corpse Churn",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 11.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Durable Coilbug",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Insect",
+   "payoff": "",
+   "power": 6.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Fellwar Stone",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Artifact"
+  },
+  {
+   "name": "Golgari Guildmage",
+   "core": false,
+   "rarity": "U",
+   "cmc": 2,
+   "types": "Creature Elf Shaman",
+   "payoff": "",
+   "power": 9.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Lampad of Death's Vigil",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Enchantment Creature Nymph",
+   "payoff": "",
+   "power": 11.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Orcish Bowmasters",
+   "core": true,
+   "rarity": "R",
+   "cmc": 2,
+   "types": "Creature Orc Archer",
+   "payoff": "",
+   "power": 80.3,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Raise the Draugr",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Instant",
+   "payoff": "",
+   "power": 11.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Revive",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 9.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Town Greeter",
+   "core": false,
+   "rarity": "C",
+   "cmc": 2,
+   "types": "Creature Human Citizen",
+   "payoff": "",
+   "power": 9.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Twitching Doll",
+   "core": true,
+   "rarity": "R",
+   "cmc": 2,
+   "types": "Artifact Creature Spider Toy",
+   "payoff": "",
+   "power": 71.8,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Back for Seconds",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 14.0,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Crow of Dark Tidings",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Zombie Bird",
+   "payoff": "",
+   "power": 8.1,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Eccentric Farmer",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Human Peasant",
+   "payoff": "",
+   "power": 8.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Enduring Vitality",
+   "core": true,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Enchantment Creature Elk Glimmer",
+   "payoff": "",
+   "power": 75.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Fallen Ideal",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 13.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Formidable Speaker",
+   "core": true,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Creature Elf Druid",
+   "payoff": "",
+   "power": 79.1,
+   "supports": false,
+   "fit": 1
+  },
+  {
+   "name": "Funeral Rites",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 19.5,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Ghoulraiser",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Zombie",
+   "payoff": "",
+   "power": 6.9,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Preacher of the Schism",
+   "core": true,
+   "rarity": "R",
+   "cmc": 3,
+   "types": "Creature Vampire Cleric",
+   "payoff": "",
+   "power": 68.5,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Screams from Within",
+   "core": false,
+   "rarity": "U",
+   "cmc": 3,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 13.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Shade's Form",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 11.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Shambling Shell",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Plant Zombie",
+   "payoff": "",
+   "power": 8.8,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Soul Salvage",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 8.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Tempting Witch",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Human Warlock",
+   "payoff": "",
+   "power": 9.2,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Unholy Indenture",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Enchantment Aura",
+   "payoff": "",
+   "power": 10.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Yavimaya Elder",
+   "core": false,
+   "rarity": "C",
+   "cmc": 3,
+   "types": "Creature Human Druid",
+   "payoff": "",
+   "power": 14.8,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Acolyte of Affliction",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Human Cleric",
+   "payoff": "",
+   "power": 11.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Boneyard Lurker",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Nightmare Beast",
+   "payoff": "",
+   "power": 14.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Golgari Findbroker",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Creature Elf Shaman",
+   "payoff": "",
+   "power": 13.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Grave Scrabbler",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Zombie",
+   "payoff": "",
+   "power": 10.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Gravedigger",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Zombie",
+   "payoff": "",
+   "power": 8.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Hazel's Nocturne",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Instant",
+   "payoff": "",
+   "power": 13.7,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Moan of the Unhallowed",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 8.9,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Penumbra Spider",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Spider",
+   "payoff": "",
+   "power": 10.6,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Scarring Memories",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Sorcery Lesson",
+   "payoff": "",
+   "power": 27.4,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Thornplate Intimidator",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Creature Rat Rogue",
+   "payoff": "",
+   "power": 11.0,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Torment of Scarabs",
+   "core": false,
+   "rarity": "U",
+   "cmc": 4,
+   "types": "Enchantment Aura Curse",
+   "payoff": "",
+   "power": 14.5,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Torment of Venom",
+   "core": false,
+   "rarity": "C",
+   "cmc": 4,
+   "types": "Instant",
+   "payoff": "",
+   "power": 15.4,
+   "supports": false,
+   "fit": 4
+  },
+  {
+   "name": "Aclazotz, Deepest Betrayal",
+   "core": true,
+   "rarity": "M",
+   "cmc": 5,
+   "types": "Legendary Creature Bat God",
+   "payoff": "",
+   "power": 77.5,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Cruel Revival",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Instant",
+   "payoff": "",
+   "power": 7.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Exile into Darkness",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 24.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Fetid Gargantua",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Creature Horror",
+   "payoff": "",
+   "power": 9.4,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Gix's Command",
+   "core": false,
+   "rarity": "R",
+   "cmc": 5,
+   "types": "Sorcery",
+   "payoff": "",
+   "power": 32.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Golgari Rotwurm",
+   "core": false,
+   "rarity": "C",
+   "cmc": 5,
+   "types": "Creature Zombie Wurm",
+   "payoff": "",
+   "power": 4.8,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Loathsome Troll",
+   "core": false,
+   "rarity": "U",
+   "cmc": 5,
+   "types": "Creature Troll",
+   "payoff": "",
+   "power": 8.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Deadwood Treefolk",
+   "core": false,
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Creature Treefolk",
+   "payoff": "",
+   "power": 10.1,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Exhumer Thrull",
+   "core": false,
+   "rarity": "U",
+   "cmc": 6,
+   "types": "Creature Thrull",
+   "payoff": "",
+   "power": 8.3,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "First-Sphere Gargantua",
+   "core": false,
+   "rarity": "C",
+   "cmc": 6,
+   "types": "Creature Phyrexian Horror",
+   "payoff": "",
+   "power": 7.5,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Summon: Primal Odin",
+   "core": true,
+   "rarity": "R",
+   "cmc": 6,
+   "types": "Enchantment Creature Saga Knight",
+   "payoff": "",
+   "power": 70.0,
+   "supports": false,
+   "fit": 3
+  },
+  {
+   "name": "Archon of Cruelty",
+   "core": true,
+   "rarity": "M",
+   "cmc": 8,
+   "types": "Creature Archon",
+   "payoff": "",
+   "power": 74.6,
+   "supports": true,
+   "fit": 4
+  },
+  {
+   "name": "Portal to Phyrexia",
+   "core": true,
+   "rarity": "M",
+   "cmc": 9,
+   "types": "Artifact",
+   "payoff": "",
+   "power": 75.0,
+   "supports": true,
+   "fit": 4
+  }
+ ]
+}

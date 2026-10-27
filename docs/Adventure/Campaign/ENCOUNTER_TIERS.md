@@ -1,5 +1,7 @@
 # Concordia encounter tiers
 
+> Tier gates removed (user, 2026-10-27): Game Changers, extra turns, mass land denial, watch-list, power-50+/70+ counts, two-card combos and mech:* tier minimums no longer limit any tier; the rows below that quote those limits are historical.
+
 How every AI opponent in Concordia is built and checked. There are five tiers (1-5). This document gives the rules for
 building a deck in each tier, how card power is measured, and how a finished deck is verified. It contains no
 decklists.
@@ -18,7 +20,7 @@ Every tier's requirements live in `tools/concordia/tier_rules.py` (the one sourc
 | Commander | one legendary creature, exactly one colour of identity, no mana value limit, any rarity, one commander (a Partner-ability commander is fine). Not shared with another tier: not checked by power_scorer (a categorize.py / audit concern) |
 | Lands | 41-42, decided last from the curve |
 | Power (average card power) | 17-23 |
-| Creatures | at least 15; soft cap 35, the builder stops adding creatures there (user, 2026-10-25) |
+| Creatures | at least 15; soft cap per archetype (20-35, default 35; `tier_rules.CREATURE_CAP_BY_ARCH`), counted in the 99, commander not counted (user, 2026-10-27) |
 | Archetype build targets (creatures) | none; the score decides between 15 and 35 |
 | Instants + sorceries (minimum) | tokens 12, aggro 10, tribal 8 |
 | Enchantments (minimum) | tokens 3, tribal 2, aggro 1 |

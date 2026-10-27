@@ -167,6 +167,8 @@ DOC = {
  "cost_mana:<symbols>": ("the mana part of an activation cost (cost_mana:2b = {2}{B})", "P4c E, user 2026-10-23 (placeholder triage: {cost} was 117 of 317 placeholders)"),
  "investigate": ("investigate (CR 701.16): create a Clue token", "user 2026-10-23, P4c D (Thraben Inspector)"),
  "bolster:<n>": ("bolster N (CR 701.39): put N +1/+1 counters on the creature you control with the least toughness", "user 2026-10-23, P4c D (Elite Scaleguard)"),
+ "setup_card:<need>": ("general tag, any archetype: the card does nothing until the deck supplies <need>; need = mana (big mana to pay an activation cost), counters (+1/+1 or other counters), graveyard, tokens. The builder counts the card's utility only when the deck meets the need (mana: 10 ramp pieces)", "user 2026-10-27, Dark Depths (setup_card:mana)"),
+ "restricted_to:<type>": ("general tag, any archetype: the card's mana (spend only to cast <type> spells) or return ability (target <type> card from your graveyard) names a creature type, so it works only in a deck with that type. The builder gives it commander support only when the type is the commander's or an allowed tribe", "user 2026-10-27, Haven of the Spirit Dragon (restricted_to:dragon)"),
  "monarch": ("you become the monarch (CR 724)", "user 2026-10-23, P4c D (Palace Jailer)"),
  "unless_cost_amount:<symbols>": ("the mana an 'unless pays' tax or attack tax asks for", "P4c E, user 2026-10-23 (Sage's Dousing, Ghostly Prison)"),
  "cost_if_you_do": ("the 'If you do' part marks the preceding sacrifice/discard as a cost", "user note on Victimize"),
@@ -509,8 +511,17 @@ def extra(lines, sv, types, text):
             if t in types.split(): add("mana_source", "mana:" + c, "mana_amount:1", "trigger:tap"); lk("mana_source", "produces", "mana:" + c)
     oracle = next((l[7:] for l in lines if l.startswith("Oracle:")), "")
     if re.search(r"enters(?: the battlefield)? tapped", oracle) and "Basic" not in types.split():
-        add("enters_tapped_conditional" if re.search(r"enters(?: the battlefield)? tapped unless", oracle) else "enters_tapped")
+        add("enters_tapped_conditional" if re.search(r"enters(?: the battlefield)? tapped unless|you may pay \d+ life\. If you don't", oracle) else "enters_tapped")
     elif "Land" in types.split(): add("enters_untapped")
+    if "Land" in types.split() and re.search(r"deals? \d+ damage to you|you may pay \d+ life\. If you don't", oracle): add("cost:life")   # painlands, shocklands, City of Brass: a life cost with no Pay cost in the script (user 2026-10-27, land priority H91)
+    if {"Land", "Artifact"} & set(types.split()) and "Creature" not in types.split() and any(re.match(r"^[^:]*\{[0-9WUBRGCX]\}[^:]*: Add .*(\{[WUBRG]\}|any (color|colour|one color))", seg) for seg in re.split(r"\\n|\n", oracle)): add("mana_filter")   # pays mana to change mana colour: neutral mana, tilts colour coverage (user 2026-10-27)
+    _nr = re.sub(r"\([^)]*\)", "", oracle)   # reminder text out
+    for seg in re.split(r"\\n|\n", _nr):
+        cost, _, eff = seg.partition(":")
+        if (re.match(r"^[^:{]*\{[0-9WUBRGCX/]+\}", cost) and eff and "{T}" not in cost and not seg.startswith(("Equip", "Cycling", "Crew", "Channel", "Reconfigure", "Ninjutsu", "Level", "Unearth", "Flashback", "Escape", "Landcycling"))
+                and not eff.startswith(" Add ") and not re.search(r"(?i)sacrifice|exile|discard|\{Q\}|tap an untapped|pay \d+ life", cost)
+                and not re.search(r"(?i)only once|once (?:each|per) turn|only (?:one|a single) time|\bgains?\b|\bhas\b|\bhave\b|\bbecomes?\b|transform|\badapt\b|monstrosity|renown|\bregenerate", eff)):
+            add("mana_sink"); break   # an activated ability with a mana-only cost and no tap, repeatable (no sacrifice cost, keyword grant or transform): a mana dump (user 2026-10-27)
     bodies = []
     for l in lines:
         m = re.match(r"^(A|S|T|R):(.*)$", l)
@@ -849,6 +860,25 @@ def extra(lines, sv, types, text):
         cur[0] = main_gid
         if global_unk[0]: groups[main_gid].append("tempo:x")                     # unknown amount is tracked too (user)
         elif pos - neg > 0: groups[main_gid].append("tempo:+%g" % (pos - neg))   # known amounts only when positive; tempo 0 and negative are not tagged (user)
+    if "Land" in types.split():   # user 2026-10-27: Forbidden Orchard gives the opponent the token (not a token maker); Dark Depths is a mana dump (mana_sink, counter_remove), not negative tempo
+        gives_opp = re.search(r"(target|each) opponent creates", oracle)
+        setup = re.search(r"enters with \w+ [\w ]*counters", oracle) and re.search(r"\{\d+\}: Remove a[n]? [\w ]*counter", oracle)
+        g0 = next(iter(groups), "m1")
+        if gives_opp:
+            for ts in groups.values(): ts[:] = [t for t in ts if not (t == "token_make" or t.startswith("token_") or t.startswith("tempo:"))]
+            groups[g0] = groups.get(g0, []) + ["tempo:negative", "gives_opponent_token"]
+        if setup:   # user 2026-10-27: not a negative-tempo or setup tag; a mana dump with counter move/remove synergy
+            groups[g0] = groups.get(g0, []) + ["setup_card:mana", "counter_remove"]
+    _nt = {"Creature", "Noncreature", "Artifact", "Enchantment", "Land", "Instant", "Sorcery", "Planeswalker", "Legendary", "Nonland", "Historic", "Permanent", "Spell", "Colorless", "White", "Blue", "Black", "Red", "Green", "Multicolored", "Basic", "Snow", "Equipment", "Aura", "Vehicle", "Saga", "Food", "Clue", "Treasure", "Battle", "Kindred", "Tribal", "Token", "Other", "Another", "Each", "Target", "Any", "That", "This", "Face"}
+    _rt = []   # user 2026-10-27: mana or a return ability that names a creature type works only for that type (Haven of the Spirit Dragon); the builder gives it support only when the deck has the type
+    for _m in re.finditer(r"[Ss]pend this mana only to cast (?:an? )?([A-Z][a-z]+)(?: or ([A-Z][a-z]+))?(?: creature)? spells?", oracle):
+        _rt += [g for g in _m.groups() if g]
+    for _m in re.finditer(r"[Rr]eturn (?:up to \w+ )?target ([A-Z][a-z]+)(?: or ([A-Z][a-z]+))?(?: creature)? cards? from your graveyard", oracle):
+        _rt += [g for g in _m.groups() if g]
+    _rt = [x for x in dict.fromkeys(_rt) if x not in _nt]
+    if _rt:
+        g0 = next(iter(groups), "m1")
+        groups[g0] = groups.get(g0, []) + ["restricted_to:" + x.lower() for x in _rt]
     out_groups = {}
     for gid, ts in groups.items():
         ts = [t for t in dict.fromkeys(ts) if not t.startswith("impulse_draw_part")]

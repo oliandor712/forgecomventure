@@ -100,12 +100,13 @@ def cmd_export(a):
     if a.limit: random.Random(1).shuffle(recs); recs = recs[: a.limit]
     random.Random(7).shuffle(recs)
     dctx = open(a.context, encoding="utf-8").read().strip() if getattr(a, "context", "") else ""
+    ooly = bool(getattr(a, "oracle_only", False))
     cpath = getattr(a, "cache", "") or ""; cache = _cache_load(cpath); meta, hits = {}, {}
     if cpath:   # verdict cache: a card whose tag view and Oracle text are unchanged keeps its earlier reader verdicts
         fresh = []
         for r in recs:
             tk, ok = _keys(r, dctx); h = cache.get(r["name"].lower())
-            if h and h.get("tkey") == tk and h.get("okey") == ok and h.get("tag") and h.get("ora"): hits[r["name"]] = h
+            if h and h.get("tkey") == tk and h.get("okey") == ok and (h.get("tag") or ooly) and h.get("ora"): hits[r["name"]] = h
             else: fresh.append(r)
         print("verdict cache %s: %d cards cached, %d fresh" % (cpath, len(hits), len(fresh))); recs = fresh
         if len(recs) < DELTA_MIN: a.batch = max(1, len(recs)); print("delta wave: one tag reader and one Oracle reader, one batch")
@@ -128,19 +129,23 @@ def cmd_export(a):
             slim.append(dict(c, tags=[t for t in c["tags"] if t not in shown]))
         json.dump(dict(form=spec, **dict(ctx, deck_rules=[r for r in ctx["deck_rules"] if not r.startswith("D8")]), reminders=RC.batch_reminders(items, db), cards=slim), open(os.path.join(wd, "in", "batch_%02d.json" % nb), "w"), indent=1)
         rem = RC.batch_reminders(items, db); rem.pop("tag_legend", None)   # the Oracle reader gets the same keyword and token reminder texts as the tag reader, not the tag legend (it never sees tags)
-        json.dump(dict(form=spec, **ctx, reminders=rem, cards=ora), open(os.path.join(wd, "oin", "batch_%02d.json" % nb), "w"), indent=1)
+        octx = dict(ctx); octx["deck_signals"] = open(a.oracle_context, encoding="utf-8").read().strip() if getattr(a, "oracle_context", "") else None
+        if octx["deck_signals"] is None: octx.pop("deck_signals")
+        json.dump(dict(form=spec, **octx, reminders=rem, cards=ora), open(os.path.join(wd, "oin", "batch_%02d.json" % nb), "w"), indent=1)
     json.dump(key, open(os.path.join(wd, "key", "key.json"), "w"), indent=1)
     json.dump(dict(path=cpath, hits=hits, meta=meta), open(os.path.join(wd, "key", "cache.json"), "w"), indent=1)
-    delta = bool(cpath) and len(key) < DELTA_MIN; ntag = 1 if delta else 2
+    delta = bool(cpath) and len(key) < DELTA_MIN; ntag = 0 if ooly else (1 if delta else 2)
     est = ntag * nb * 5 + ntag * 0.8 * len(key) + (5 * nb + 0.55 * len(key) if nb else 0)   # thousand tokens, from the 2026-10-25 wave (16-26k tag, 37-43k Oracle)
     print("cost gate: %d fresh cards, %d tag reader(s) x %d batch(es) + 1 Oracle reader = about %dk subagent tokens (estimate; check usage before the wave)" % (len(key), ntag, nb, est))
     if not key: print("nothing to read: every card is cached; run glance-compare directly")
     leaks = RC.leak_check(wd, key)
     print("glance run %s: %d cards, %d batches in %s ; key in %s/key (never tell the readers)" % (a.run, len(key), nb, wd, wd))
     print("leak check (tag view):", "clean" if not leaks else "; ".join(leaks[:10]))
-    print("\n--- TAG READERS (K = 1..2 per batch; reader K>1 writes batch_NN_rK.json) ---")
-    for n in range(1, nb + 1): print("BATCH %d: Read %s/in/batch_%02d.json; Write %s/out/batch_%02d.json" % (n, wd, n, wd, n))
-    print("\n" + TAG_RULES + "\n\n--- ORACLE READER (one, sees names and Oracle text; a different instance from every tag reader) ---")
+    if ooly: print("\n--- ORACLE ONLY (default for deck reviews): no tag readers; add --tags to review-export for a tag-harvest run ---")
+    else:
+        print("\n--- TAG READERS (K = 1..2 per batch; reader K>1 writes batch_NN_rK.json) ---")
+        for n in range(1, nb + 1): print("BATCH %d: Read %s/in/batch_%02d.json; Write %s/out/batch_%02d.json" % (n, wd, n, wd, n))
+        print("\n" + TAG_RULES + "\n\n--- ORACLE READER (one, sees names and Oracle text; a different instance from every tag reader) ---")
     for n in range(1, nb + 1): print("BATCH %d: Read %s/oin/batch_%02d.json; Write %s/oout/batch_%02d.json" % (n, wd, n, wd, n))
     print("\n" + ORACLE_RULES)
     if leaks: sys.exit(2)
@@ -239,9 +244,10 @@ def cmd_compare(a):
     fresh_ids = set(key)
     for i, (name, h) in enumerate(sorted(cinfo.get("hits", {}).items())):
         cid = "k%03d" % (i + 1); key[cid] = name
-        for rd, form in h["tag"].items(): tag[int(rd)][cid] = dict(form, id=cid)
+        for rd, form in (h.get("tag") or {}).items(): tag[int(rd)][cid] = dict(form, id=cid)
         ora[1][cid] = dict(h["ora"], id=cid)
-    if not tag or 1 not in ora: sys.exit("need tag reader output in out/ and Oracle reader output in oout/batch_NN.json")
+    if 1 not in ora: sys.exit("need Oracle reader output in oout/batch_NN.json")
+    ooly = not tag   # oracle-only run: reject candidates only, no tag statistics
     O = ora[1]; _, roles_ok, ids_ok, named = strategies(); roles_ok, ids_ok = set(roles_ok), set(ids_ok)
     cards, invalid, dropped = {}, collections.Counter(), collections.Counter()
     for cid, name in key.items():
@@ -260,14 +266,17 @@ def cmd_compare(a):
             per.append(dict(reader=rd, role_f1=rf, role_free=(f1(free_ro, tr)[2] if free_ro else None), arch_hit=ahit, arch_free=ahit_free,
                             power_ok=(abs(tp - orow["power"]) <= 1 if tp and orow["power"] else None), fn=fn_sim(t.get("function"), o.get("function")),
                             conf=_int(t.get("confidence"), 1, 5), unclear=sorted(_set(t.get("unclear"))), roles=sorted(tr), arch=ta, power=tp, fn_text=str(t.get("function") or "")))
-        if per: cards[cid] = dict(name=name, oracle=dict(roles=sorted(orow["roles"]), arch=orow["arch"], power=orow["power"], function=o.get("function")), readers=per)
+        if per or ooly: cards[cid] = dict(name=name, oracle=dict(roles=sorted(orow["roles"]), arch=orow["arch"], power=orow["power"], function=o.get("function")), readers=per)
     if cinfo.get("path"):   # store the fresh verdicts for the next wave
         cache = _cache_load(cinfo["path"]); now = datetime.date.today().isoformat(); n = 0
         for cid, m in cinfo.get("meta", {}).items():
-            if cid in fresh_ids and cid in O and any(cid in R for R in tag.values()):
+            if cid in fresh_ids and cid in O and (ooly or any(cid in R for R in tag.values())):
                 cache[m["name"].lower()] = dict(tkey=m["tkey"], okey=m["okey"], date=now, ora=O[cid], tag={str(rd): R[cid] for rd, R in tag.items() if cid in R}); n += 1
         dump_cache(cache, cinfo["path"]); print("verdict cache: stored %d, %d total" % (n, len(cache)))
     rows = [r for c in cards.values() for r in c["readers"]]
+    if ooly:
+        json.dump(dict(summary=dict(cards=len(cards), tag_readers=0), mana=dict(tag={}, oracle=_mana(os.path.join(wd, "oout"))), cards=cards, misses=[], unclear=[], unclear_families=[]), open(os.path.join(wd, "glance_results.json"), "w"), indent=1)
+        print("oracle-only compare: %d cards -> %s/glance_results.json" % (len(cards), wd)); return
     if not rows: sys.exit("no card has both a tag reader and an Oracle reader answer")
     mean = lambda xs: (sum(xs) / len(xs)) if xs else float("nan")
     um = collections.Counter(t for r in rows for t in r["unclear"]); fam = collections.Counter(t.split(":")[0] for r in rows for t in r["unclear"])

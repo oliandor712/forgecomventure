@@ -18,7 +18,8 @@ You are the ORACLE READER for the Concordia glance test. You are given two absol
    - `power`: integer 1-5 (1 filler, 3 solid playable, 5 bomb) for a 100-card singleton Commander deck.
    - `confidence`: integer 1-5.
    - `unclear`: Oracle phrases you found hard to classify; [] if none.
-4. When `deck_context` is present, it names the deck the card is judged for; use it to break ties between archetypes, not to inflate a card's power.
+4. An optional `deck_signals` paragraph (third-party scorer hints: potential bans and switch-ins by name) may be present. It is a signal, not a rule: never let it change a card's function, roles, archetypes or power except where the Oracle text agrees; a card named there as a potential ban is judged as normally, and `unclear` may note why you agree or not.
+5. When `deck_context` is present, it names the deck the card is judged for; use it to break ties between archetypes, not to inflate a card's power.
 
 ## Output
 Write JSON to each output path, nothing else in the file:

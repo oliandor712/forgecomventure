@@ -15,3 +15,10 @@ checks[8|]{date|check|result}:
   2026-10-25|Gitrog T3 deck power|35.3 before niche role in rate(), 34.7 after
   2026-10-25|strategies validate.py|26 roles with problems, all missing cards are AI:RemoveDeck:All or filtered on purpose
   2026-10-25|code review high|10 findings, 9 fixed, 1 skipped (full record() per card, no cache)
+
+# 2026-10-27 starter land picker builds: W starter, Captain America Liberator, strategy lifegain+tokens, staged in forge-gui/res/adventure/Concordia/staging_starters (live decks untouched)
+land_builds[4|]{date|deck|power|supporting|creatures|nonbasics|note}:
+  2026-10-27|W_Starter_Regen_r3|28.5|37/63|34|Urza's Saga, Plaza of Heroes, Treasure Vault, Vesuva, Drownyard Temple, Witch's Clinic|after mana_sink, setup_card, restricted_to; Kozilek Command in
+  2026-10-27|W_Starter_Regen_r4|28.5|37/63|34|Urza's Saga, Plaza of Heroes, Vesuva, Drownyard Temple, Buried Ruin, Abundant Countryside|colourless pip-share cap H101; Kozilek Command still in
+  2026-10-27|W_Starter_Regen_r5|27.7|23/63|31|Plaza of Heroes, Vesuva, Drownyard Temple, Buried Ruin, Haunted Fengraf, Lazotep Quarry|token_scales H103 and 4-per-pip gate; Kozilek Command out; Soldier theme not unlocked (cause unchecked)
+  2026-10-27|W_Starter_Regen_r6|27.7|23/63|31|same as r5|colourless sized as a colour H102; gate rarely blocks; Kozilek out through H103 not the gate

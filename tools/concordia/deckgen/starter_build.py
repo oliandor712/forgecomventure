@@ -10,6 +10,7 @@ Step 2  review      glance review of every pick: `review-export` builds the glan
                     the glance readers fill the form, `review-compare` flags picks that fit neither the declared archetypes nor the
                     commander's ability nor a utility role (reject candidates) and cards where tags and Oracle reader disagree
                     (tag gaps). `draft --reject review.json` rebuilds without the rejects.
+                    review-apply  second deck build run: swaps the flagged cards (Oracle rejects, plus scorer-flagged cards the Oracle reader rates power <= 2) for ArcMind/EDHREC switch-ins, writes <deck>_r2 and exports its glance run.
 Nothing here touches decks/starter (live). Output: forge-gui/res/adventure/Concordia/staging_starters/.
 
   python3 starter_build.py commanders --color W [--top 20]
@@ -27,10 +28,15 @@ import ability_tags as at  # noqa: E402
 import archetype_rules as ar  # noqa: E402
 sys.path.insert(0, os.path.join(os.path.dirname(HERE), "strategies"))
 import strategy_fit as sf  # noqa: E402
+import consistency as CONS  # noqa: E402
 import synergy as SY  # noqa: E402     # general synergy rule (H17): support cards + token payoffs
 dt, data, pool = B.dt, B.data, B.pool
 STAGE = os.path.join(B.RES, 'adventure', 'Concordia', 'staging_starters')
 TIER = 2
+SETUP_MANA_RAMP = 10   # ramp pieces a setup_card:mana land needs in the deck before it has utility (user 2026-10-27)
+# User 2026-10-27: no staple weight in the starter builder (too many staples); staples must be picked on their own merit. STARTER_STAPLE_BONUS=1 restores the +6 push (H89).
+LAND_FIT_MIN = 4     # H90: strategy fit a nonbasic land needs to count as synergistic utility
+STAPLE_BONUS_ON = os.environ.get('STARTER_STAPLE_BONUS') == '1'
 TARGET = 27.0           # H19: deck power (EDHREC card-power scale, tier_table.json tier 2 target)
 SUPPORT_W, FIT_W, FIT_CAP = 0.5, 3.0, 4   # user 2026-10-26: commander support counts less, overall archetype fit just as much; 2026-10-26 again: less still
 SUPPORT_CAP = 14       # user 2026-10-26: do not copy the commander's tags across the whole deck: only the first 14 supporters get the bonus
@@ -136,7 +142,7 @@ def cmd_commanders(a):
         rows.append(dict(name=p['name'], cmc=p['cmc'], pop=p['pop'], profile=prof, archetypes=arch[:4], fit=len(arch)))
     rows.sort(key=lambda r: (-min(len(r['archetypes']), 3), -r['pop']))
     rows = rows[: a.top * 3]
-    colour_pool = [p for p in pool.values() if p['id'] <= ident and 'Land' not in p['types'].split() and p['pop'] >= 8 and not p['gc'] and not p['mld'] and B.extra_ok(p, TIER)]
+    colour_pool = [p for p in pool.values() if p['id'] <= ident and 'Land' not in p['types'].split() and p['pop'] >= 8 and B.extra_ok(p, TIER)]
     for r in rows:   # support density: pool cards (colour, played in 8+ decks) passing any support test
         prof = r['profile']
         r['support_n'] = sum(1 for p in colour_pool if supports_cmd(prof, p))
@@ -146,6 +152,11 @@ def cmd_commanders(a):
     path = os.path.join(STAGE, 'commanders_%s.json' % a.color)
     json.dump(rows, open(path, 'w', encoding='utf-8'), indent=1)
     for r in rows: print('%-34s mv%s pop%-3s support %-4d arch %s  tests %s' % (r['name'], r['cmc'], r['pop'], r['support_n'], ','.join(r['archetypes'][:3]), ','.join(r['profile'])))
+    sgp = os.path.join(STAGE, a.name + '.signals.json')
+    if SCORERS and os.path.exists(sgp):
+        sg = json.load(open(sgp, encoding='utf-8')); low = {c['name'] for c in res['cards'].values() if c['oracle']['power'] <= 2}; out['low_power'] = sorted(low)
+        print('  BAN? (scorer-flagged; * = Oracle reader power <= 2 too):', '; '.join(('*' if n in low else '') + n for n in sg['bans']) or 'none')
+        print('  SWITCH-IN? (ArcMind/EDHREC staples missing):', '; '.join(sg['switch_ins']) or sg.get('switch_ins_note', 'none')); out['signals'] = sg; json.dump(out, open(path, 'w', encoding='utf-8'), indent=1)
     print('->', path)
 
 
@@ -184,12 +195,12 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
         s += FIT_W * fit - B.NICHE_PEN[TIER] * min(2, sf.niche_penalty(p['ftags'], strategy) if strategy else 0)
         if size and 'Creature' in p['types'].split():     # creature size preference (user 2026-10-27): red cheap, green big
             s += SIZE_W * (SIZE_CURVE[size](p['cmc']))
-        if p.get('cat') == 'staple': s += B.STAPLE_PUSH_BONUS[TIER]
+        if STAPLE_BONUS_ON and p.get('cat') == 'staple': s += B.STAPLE_PUSH_BONUS[TIER]
         s += B.PRECON_BONUS.get(TIER, 0) * min(1.0, p.get('precon', 0.0) / 0.25)
         why[p['name']].update(power=pw, supports=bool(sup), fit=fit)
         return s
     cands = [p for k, p in pool.items() if k != cmd['name'].lower() and k not in banned and p['id'] <= ident and 'Land' not in p['types'].split()
-             and not p['mld'] and B.extra_ok(p, TIER) and not p['gc'] and B.mech_ok(p, TIER) and p['pop'] >= 3
+             and B.extra_ok(p, TIER) and B.mech_ok(p, TIER) and p['pop'] >= 3
              and not ('Legendary' in p['types'] and 'Creature' not in p['types'])
              ]
     members = collections.Counter()      # theme word -> cards in the deck (commander included) that belong to it or make it
@@ -225,6 +236,9 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
         if tplan and npay[0] >= pay_cap() and payoff_kind(p, tplan): return None   # payoffs are a 5-10 range tied to setup (H17), even for cards that also support the commander (the support rule only needs 5)
         if tplan and nset[0] >= SY.SETUP_MAX and SY.setup_kind(p, tplan): return None
         if is_colorless(p) and ncl[0] >= CL_BASE + CL_PER * cl_sources(): return None
+        if (mc := data['cards'].get(p['name'].lower(), {}).get('mc', '')).count('C'):   # H102: colourless sized as a colour, as power_scorer.check_tier sizes coloured sources: sources / lands >= 0.8 * pip share
+            cp = cl_pip_n() + mc.count('C'); allp = cp + sum(data['cards'][q['name'].lower()]['mc'].count(c) + 0 for q, _ in chosen + [(cmd, 'C')] if q['name'].lower() in data['cards'] for c in 'WUBRG') + sum(mc.count(c) for c in 'WUBRG')
+            if cl_sources() < 0.8 * (cp / allp) * 37: return None
         return B.pick_rarity(p, TIER, rcount, spec)
 
     def add(p, r):
@@ -269,13 +283,62 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
             if bp is None or s > bp[0]: bp = (s, p, r)
         return bp
     # nonbasic lands are picked last (before the basics); power_scorer counts them in the power average, so reserve their expected power for the per-card aim now
+    def land_cover(p):
+        """colours of the deck this land makes: any-colour lands count all of the deck's colours; a restricted mana (creature spells only, ...) or a conditional one counts as one"""
+        ft = set(p['ftags'])
+        if ft & {'mana:any', 'mana:commander_identity'} or ('mana_choice' in ft and not {'mana:white', 'mana:blue', 'mana:black', 'mana:red', 'mana:green'} & ft and 'mana:colorless' not in ft):
+            if any(x.startswith('mana_restriction') for x in ft) or re.search(r'\bif\b|unless|only|\bamong\b|energy|that a land|that a creature|chosen|untapped|tap another', p.get('oracle', '').lower()): return 0   # any colour only under a condition or restriction: utility, not fixing
+            return 1 if any(t.startswith('mana_restriction') for t in ft) or ft & {'mana_conditional', 'cost:exile'} or ('cost:sacrifice' in ft and 'cost_sacrifice_target:self' not in ft) else len(ident)
+        body = re.sub(r'[^.\n]*enters(?: the battlefield)? tapped[^.\n]*\.?', '', p.get('oracle', '').lower())   # the tapped clause is priced separately
+        if re.search(r'only if|if you control|unless|untapped (creature|artifact|land)|control an? (artifact|creature)|tap another', body): return 0   # conditional colours: utility, not fixing
+        got = {c for c, w in zip('WUBRG', ('white', 'blue', 'black', 'red', 'green')) if 'mana:' + w in ft} | {k for k, v in B.BASIC_TYPE.items() if v in p['types'].split()}
+        return len(got & ident)
+    def cl_only_land(p):
+        ft = set(p['ftags'])
+        return 'mana:colorless' in ft and not any(t.startswith('mana:') and t != 'mana:colorless' for t in ft)
+    def cl_pip_n():
+        """{C} pips of the deck's spells and commander: colourless is the sixth colour (H101)"""
+        return sum(data['cards'][q['name'].lower()]['mc'].count('C') for q, _ in chosen + [(cmd, 'C')] if q['name'].lower() in data['cards'])
+    def cl_land_cap():
+        """colourless-only lands wanted: the {C} pip share of all pips times the land count, at least the largest {C} cost of one card (as sources for a colour follow its pips)"""
+        cp = cl_pip_n(); col = sum(data['cards'][q['name'].lower()]['mc'].count(c) for q, _ in chosen + [(cmd, 'C')] if q['name'].lower() in data['cards'] for c in 'WUBRG')
+        big = max([data['cards'][q['name'].lower()]['mc'].count('C') for q, _ in chosen + [(cmd, 'C')] if q['name'].lower() in data['cards']] or [0])
+        rocks = sum(1 for q, _ in chosen if not q['id'] and 'ramp' in q['tags'])
+        return max(round(37 * cp / max(1, cp + col)), big) - rocks if cp else 0
+    def land_score(p):
+        """User 2026-10-27 (H90/H91), nonbasic land priority: 1 mana coverage (makes the deck's colours; 2+ colour decks only), 2 utility (works with the commander or the declared strategy),
+        3 no 'enters tapped', 4 no life payment, 5 no sacrifice of another permanent (fine for a land that is tempo+ or fetches). 1-2 decide whether a land is picked at all and rank it
+        (weights 1000/100); 3-5 are penalties that order lands within the same coverage and utility (10/5/1; conditional tapped counts half); the power scorer's power breaks the
+        remaining ties (0.02 a point). Every nonbasic land in the pool is a candidate (not only the budget list); popularity in other decks counts only through power."""
+        ft = set(p['ftags'])
+        cov = land_cover(p) if len(ident) >= 2 else 0
+        cov = cov - 1 if cov >= 2 else 0
+        sup = 1 if supports_cmd(prof, p) else 0
+        fit = min(FIT_CAP, sf.fit(p['ftags'], strategy)) if strategy else 0
+        neg = 1 if 'tempo:negative' in ft else 0   # setup cards and lands that hand the opponent a token (tagged in tag_extra.py)
+        ramp_n = sum(1 for q, _ in chosen if q['tags'] & {'ramp', 'fast'})
+        paid = 'setup_card:mana' not in ft or ramp_n >= SETUP_MANA_RAMP   # H98: a setup card that needs big mana counts as utility only once the deck has 10 ramp pieces (user 2026-10-27)
+        need = {t.split(':', 1)[1] for t in ft if t.startswith('restricted_to:')}
+        typed = not need or bool(need & ({w.lower() for w in allowed} | {t.split(':', 1)[1].lower() for t in prof if t.startswith('tribe:')}))   # H99: a land restricted to a creature type has utility only in a deck of that type
+        util = 0 if neg or not paid or not typed else 3 * sup
+        tapped = 1 if 'enters_tapped' in ft else 0.5 if 'enters_tapped_conditional' in ft else 0
+        life = 1 if 'cost:life' in ft or re.search(r'deals? \d+ damage to you|pay \d+ life', p.get('oracle', '')) else 0
+        sac_other = 1 if 'cost:sacrifice' in ft and 'cost_sacrifice_target:self' not in ft and not ({'tempo:+1', 'tutor_dest:battlefield', 'tutor_dest:battlefield_tapped'} & ft) else 0
+        cl_only = cl_only_land(p)
+        cl_syn = 'from_zone:graveyard' in ft and bool({'reanimate', 'put_onto_battlefield', 'recursion'} & ft)   # the land returns itself or lands (Drownyard Temple): synergy with land sacrifice
+        cl_pen = 1 if cl_only and not cl_pip_n() and not cl_syn else 0   # H100: a colourless-only land is picked only with {C} pips in the deck or its own synergy
+        return (1000 * cov + 100 * util - 150 * cl_pen - 50 * neg - 20 * ('mana_filter' in ft) - 10 * tapped - 5 * life - sac_other + 0.02 * max(p['power'].values())) if (cov or util) else 0
     def pick_nonbasics(limit=None):
-        out = []
-        for lname, lb in B.spread(B.BUDGET.items(), name):
-            if len(out) >= B.BUDGET_LANDS[TIER] + 1: break
-            p = pool.get(lname.lower())
-            if not p or lname.lower() in banned or not set(lb['colors']) <= ident or (mono and lb['any_color']): continue
-            pw = max(p['power'].values())
+        out, cand = [], []
+        for p in pool.values():
+            ty = p['types'].split()
+            if 'Land' not in ty or 'Basic' in ty or p['name'].lower() in banned or not p['id'] <= ident or p['pop'] < 8 or not (B.extra_ok(p, TIER) and B.mech_ok(p, TIER)): continue
+            cand.append((-land_score(p), p['name']))
+        if os.environ.get('LAND_DEBUG'): print('LANDS', [(round(-sc, 1), n) for sc, n in sorted(cand)[:25]])
+        for sc, lname in sorted(cand):
+            if len(out) >= B.BUDGET_LANDS[TIER] + 1 or sc >= 0: break
+            p = pool[lname.lower()]; pw = max(p['power'].values())
+            if cl_only_land(p) and not ('from_zone:graveyard' in p['ftags'] and {'reanimate', 'put_onto_battlefield', 'recursion'} & set(p['ftags'])) and sum(1 for n in out if cl_only_land(pool[n.lower()])) >= cl_land_cap(): continue   # H101: colourless sources sized by {C} pips like a colour
             if limit and ((pw >= 50 and npow[0] >= spec.get('p50', 99)) or (pw >= 70 and npow[1] >= spec.get('p70', 99))): continue
             out.append(lname)
             if limit:
@@ -315,6 +378,23 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
         b = best(lambda p: bool(payoff_kind(p, tplan)))
         if not b: break
         add(b[1], b[2])
+    keyset = []
+    if strategy and CONS.target(TIER):   # H85: key engine pieces castable by turn 5, then tutors that reach them, until the chance to hold one by turn 5 meets the tier target
+        arch = tuple(strategy)
+        def _cons():
+            cs = [p for p, _ in chosen]
+            return CONS.report(cs, arch, roles['ramp'], roles['draw'])
+        while len(chosen) < nonland and _cons()[1] < CONS.MAX_PIECES and _cons()[2] < CONS.target(TIER):
+            b = best(lambda p: CONS.is_engine(p, arch) and CONS.castable(p, roles['ramp']))
+            if not b: break
+            add(b[1], b[2])
+        keyset = [p for p, _ in chosen if CONS.is_engine(p, arch) and CONS.castable(p, roles['ramp'])]
+        while len(chosen) < nonland and _cons()[2] < CONS.target(TIER) and keyset:
+            b = best(lambda p: 'tutor' in p['tags'] and any(CONS.tutor_reaches(p, k) for k in keyset))
+            if not b: break
+            add(b[1], b[2])
+        print('  H85 keys: ' + '; '.join('%s (mv%d)' % (p['name'], p.get('mv', 0)) for p in keyset))
+        print('  H85 key cards %d, chance to hold one by turn %d %.0f%% (%.0f%% wanted), tutors reaching one %d' % (len(keyset), CONS.TURN, 100 * _cons()[2], 100 * CONS.target(TIER), _cons()[4]))
     for alts, n in spec['types'].items():
         while sum(1 for p, _ in chosen if any(x in p['types'].split() for x in alts.split('|'))) < n and len(chosen) < nonland:
             b = best(lambda p, alts=alts: any(x in p['types'].split() for x in alts.split('|')) and 'Creature' not in p['types'])
@@ -339,7 +419,7 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
         g += [max(0, spec['creatures'] - nc[0])]
         if tplan: g += [max(0, PAYOFF_MIN - npay[0]), max(0, SY.SETUP_MIN - nset[0])]
         return g
-    locked = set(core_names) | {p['name'] for p in rocks} | set(kept)
+    locked = set(core_names) | {p['name'] for p in rocks} | set(kept) | {p['name'] for p in keyset}
     nswap = 0
     for sweep in range(REFINE_SWEEPS if REFINE else 0):     # second run: re-pick the filler now that later picks have filled the gaps
         changed = False
@@ -361,11 +441,19 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
     mana = sum(1 for p, _ in chosen if p['tags'] & {'ramp', 'fast'})
     lo, hi = ar.LAND_RANGE[TIER]
     total = min(max(round(spec['lands'] + 4 * (avg - ref) - mana / 2), lo), hi)
+    print('  lands: base %d + 4*(avg %.2f - ref %.2f) - ramp %d/2 -> %d (range %d-%d)' % (spec['lands'], avg, ref, mana, total, lo, hi))
+    extra = (99 - total) - sum(spec['curve'].values())     # curve caps sum to 99 - base lands; fewer lands (rocks, low curve) need more room, or the fill stalls and pads with lands
+    if extra > 0:
+        spec['curve'] = dict(spec['curve']); tot_c = sum(spec['curve'].values())
+        for k in sorted(spec['curve'], key=lambda k: -spec['curve'][k]):
+            n = min(extra, round((99 - total - tot_c) * spec['curve'][k] / tot_c) or 1); spec['curve'][k] += n; extra -= n
+            if extra <= 0: break
     while len(chosen) > 99 - total:
         worst = min(chosen, key=lambda pr: score(*pr)); remove(*worst)
     while len(chosen) < 99 - total:
         b = best(lambda p: nc[0] < spec['cmax'] or 'Creature' not in p['types'])
-        if not b: total = 99 - len(chosen); break
+        if not b:
+            print('  lands: no card can be added (%d nonland cards, creatures %d of cap %d); land target raised %d -> %d' % (len(chosen), nc[0], spec['cmax'], total, 99 - len(chosen))); total = 99 - len(chosen); break
         add(b[1], b[2])
     lands = pick_nonbasics(limit=True)      # last, before the basics; premium lands only while the 50+/70+ caps have room
     cols = [c for c in COLORS if c in ident]; pips = collections.Counter()
@@ -398,7 +486,7 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
     print('%s: commander %s | tests %s | power %.1f (target %.1f) | creatures %d | cards supporting the commander %d/%d' % (name, cmd['name'], ','.join(prof), r['power'], TARGET, r['creatures'], nsup, len(picks)))
     print('  makers %d (cap %d) | payoffs/sinks %d | colourless spells %d | tribal/theme words allowed: %s | themes unlocked: %s' % (nmaker[0], MAKER_CAP, sum(1 for x in picks if x.get('payoff')), ncl[0], ','.join(sorted(allowed)) or '-', ','.join(sorted(w for w, n in members.items() if n >= THEME_MIN)) or '-'))
     for lvl, msg in dt.check_tier(r, TIER):
-        if lvl != 'PASS': print(' ', lvl, msg)
+        if lvl != 'PASS' and not msg.startswith('staples'): print(' ', lvl, msg)   # user 2026-10-27: no staples target in the starter builder (H89); tier_rules still holds it for the tier builds
     print('->', path)
 
 
@@ -412,6 +500,40 @@ def cmd_draft(a):
         rv = json.load(open(a.reject, encoding='utf-8')); reject = rv.get('rejects', [])
     keep = [x['name'] for x in _picks(a.keep)['picks']] if a.keep else []
     draft(name, a.commander, [s for s in a.strategy.split(',') if s], [x for x in a.ban.split(';') if x], reject, size=a.size, keep=keep)
+
+
+STARTER_ARCH = {'W': ['lifegain', 'tokens'], 'U': ['control', 'spellslinger'], 'B': ['reanimator', 'self_mill'], 'R': ['stompy', 'burn'], 'G': ['big_mana', 'stompy']}
+SUPPORT_FLOOR = 400   # regen: a commander needs this many supporting pool cards to enter the draw (assumed; Rosie has 444)
+
+
+def cmd_regen(a):
+    """colour -> archetype -> commander -> the 99. Commander: fit-weighted seeded draw from the eligible pool (user 2026-10-27), never the top-ranked by default."""
+    import random
+    ident = frozenset(a.color); name = a.name or '%s_Starter_Normal' % a.color
+    colour_pool = [p for p in pool.values() if p['id'] <= ident and 'Land' not in p['types'].split() and p['pop'] >= 8 and B.extra_ok(p, TIER)]
+    strat = [x for x in (a.archetype.split(',') if a.archetype else STARTER_ARCH[a.color]) if x]   # archetypes the user set for the starters (HANDOVER, earlier session)
+    print('colour %s -> archetypes %s' % (a.color, '+'.join(strat)))
+    seed = a.seed if a.seed is not None else random.SystemRandom().randrange(1, 10 ** 6); rng = random.Random(seed)
+    rows = []
+    for k, p in pool.items():
+        if p['id'] != ident or not G.commander_ok(p, TIER) or not B.mech_ok(p, TIER): continue
+        if set(data['cards'][k]['flags']) & {'random', 'all'} or cp.is_partner(p['oracle']): continue
+        prof = cp.profile(p['oracle'], p['types'], p['name'])
+        f = sf.fit(p['ftags'], strat) if prof else 0
+        if not f: continue
+        sup = sum(1 for q in colour_pool if supports_cmd(prof, q))
+        if sup >= SUPPORT_FLOOR: rows.append(dict(name=p['name'], fit=f, support=sup, archetypes=strat))
+    if a.commander: pick = next((r for r in rows if r['name'].lower() == a.commander.lower()), dict(name=a.commander, fit=0, support=0, archetypes=strat))
+    else:
+        if not rows: sys.exit('no eligible commander for %s / %s' % (a.color, '+'.join(strat)))
+        pick = rng.choices(rows, weights=[r['fit'] for r in rows])[0]
+    tot = sum(r['fit'] for r in rows) or 1
+    print('eligible %d (support >= %d, fit > 0; commanders used elsewhere are allowed); draw weight = fit; seed %d' % (len(rows), SUPPORT_FLOOR, seed))
+    for r in sorted(rows, key=lambda r: -r['fit'])[:10]: print('  %-34s fit %-2d (%.0f%%) support %d' % (r['name'], r['fit'], 100 * r['fit'] / tot, r['support']))
+    print('commander: %s | strategies %s' % (pick['name'], ','.join(strat)))
+    os.makedirs(STAGE, exist_ok=True)
+    json.dump(dict(color=a.color, archetype=strat, commander=pick['name'], strategy=strat, seed=seed, eligible=len(rows)), open(os.path.join(STAGE, name + '.regen.json'), 'w', encoding='utf-8'), indent=1)
+    draft(name, pick['name'], strat, [], [])
 
 
 def _picks(name): return json.load(open(os.path.join(STAGE, name + '.picks.json'), encoding='utf-8'))
@@ -472,13 +594,56 @@ def mana_line(pk):
                 len(rocks), len(ramp), ', '.join('%s %d' % (c, src[c]) for c in 'WUBRG' if c in ident), clr, anyc))
 
 
+# User 2026-10-27: ArcMind and edhpowerlevel are set aside for the glance until further notice (H88). Code kept; GLANCE_SCORERS=1 in the environment turns them back on.
+SCORERS = os.environ.get('GLANCE_SCORERS') == '1'
+
+
 def arcmind_line(pk, names):
     """free ArcMind data (arcmind.cards, cached) as extra deck context for the glance readers; '' when unreachable"""
+    if not SCORERS: return ''
     sys.path.insert(0, os.path.join(HERE, '..', 'arcmind'))
     try: import arcmind_score as AM
     except ImportError: return ''
     cards = [(1, pk['commander'])] + [(1, x['name']) for x in pk['picks']] + [(1, n) for n in pk['lands']['nonbasic']] + [(c, n) for n, c in pk['lands']['basics'].items() if c]
     return AM.context_line(AM.fetch(cards, pk['commander']), names)
+
+
+def signals(a, pk, names):
+    """Start of the glance run: both third-party scorers, synthesised. ArcMind's missing EDHREC staples = potential switch-ins; ArcMind cut candidates and the lowest-impact
+    edhpowerlevel cards = potential bans. Names appear only in <name>.signals.json and the Oracle reader's batch (never the blind tag reader's). Every part is optional (offline, rate limit)."""
+    out = dict(bans={}, switch_ins=[], role_gaps='', edhpl='')
+    if not SCORERS: return out
+    cards = [(1, pk['commander'])] + [(1, x['name']) for x in pk['picks']] + [(1, n) for n in pk['lands']['nonbasic']] + [(c, n) for n, c in pk['lands']['basics'].items() if c]
+    sys.path.insert(0, os.path.join(HERE, '..', 'arcmind'))
+    extra = {}
+    try:
+        import arcmind_score as AM
+        d = AM.fetch(cards, pk['commander']); an, e = d.get('analysis'), d.get('edhrec')
+        if an:
+            for c in an['cutCandidates'][:12]: out['bans'].setdefault(c['name'], []).append('ArcMind cut: ' + c['reason'])
+            out['role_gaps'] = ', '.join('%s %s (ref %s-%s)' % (r['key'], r['actual'], r['min'], r['max']) for r in an['editorStats']['rows'] if r['status'] != 'ok')
+        if e:
+            have = {n.lower() for n in names}
+            if sum(c['inclusionRate'] >= 0.95 for c in e['cards']) >= 5:   # EDHREC gives no deck count; many 95%+ cards means a handful of decks, so inclusion and synergy mean nothing
+                out['switch_ins_note'] = 'EDHREC sample too thin for this commander (%d cards at 95%%+ inclusion): no switch-ins listed' % sum(c['inclusionRate'] >= 0.95 for c in e['cards'])
+                e = dict(e, cards=[])
+            miss = sorted((c for c in e['cards'] if c['inclusionRate'] >= 0.25 and c['name'].lower() not in have and c['name'].lower() in pool), key=lambda c: -(c['synergy'] + c['inclusionRate']))
+            out['switch_ins'] = ['%s (synergy %.2f, %.0f%% of decks)' % (c['name'], c['synergy'], 100 * c['inclusionRate']) for c in miss[:15]]
+    except Exception as ex: print('arcmind skipped:', ex, file=sys.stderr)
+    dck = os.path.join(STAGE, a.name + '.dck'); jf = os.path.join(STAGE, a.name + '.edhpl.json')
+    try:
+        if os.path.exists(dck):
+            subprocess.run([sys.executable, os.path.join(HERE, '..', 'edhpl_check.py'), dck, '--out', jf], check=True, capture_output=True, text=True, timeout=240)
+            r = json.load(open(jf, encoding='utf-8'))[a.name + '.dck']
+            out['edhpl'] = 'power %s/10, bracket %s, efficiency %s, playability %s%%' % (r['power'], r['bracket'], r['efficiency'], r['playability'])
+            nonl = [c for c in r['cards'] if c['name'].lower() in pool and 'Land' not in pool[c['name'].lower()]['types'].split() and c['name'] != pk['commander']]
+            for c in sorted(nonl, key=lambda c: c['impact'])[:8]: out['bans'].setdefault(c['name'], []).append('edhpowerlevel impact %s, playability %s' % (c['impact'], c['playability']))
+            extra = {c['name']: dict(playability=c['playability'], impact=c['impact']) for c in r['cards']}
+    except Exception as ex: print('edhpowerlevel skipped:', ex, file=sys.stderr)
+    try: print('harvest: %d cards in results/harvest.json' % AM.harvest(d, pk['commander'], extra))
+    except Exception: pass
+    json.dump(out, open(os.path.join(STAGE, a.name + '.signals.json'), 'w', encoding='utf-8'), indent=1)
+    return out
 
 
 def cmd_review_export(a):
@@ -492,8 +657,12 @@ def cmd_review_export(a):
     open(ctx, 'w', encoding='utf-8').write(
         'Candidate 99-card Commander starter deck. Declared archetypes: %s. Commander profile: %s. The commander is one of the cards in the list. '
         'Judge every card against the archetypes and the deck_rules, with the whole deck in mind. ' % (' and '.join(pk['strategy']), ', '.join(pk['profile'])) + DECK_RULES + ' ' + mana_line(pk) + ' ' + arcmind_line(pk, names))
+    sg = signals(a, pk, names); sgf = os.path.join(STAGE, a.name + '.signals.txt')
+    if SCORERS: open(sgf, 'w', encoding='utf-8').write('Third-party hints (ArcMind, edhpowerlevel), signals not rules. Weak by their scores (potential bans, judge each on its Oracle text and the deck plan): %s. '
+        'Cards the deck lacks that ArcMind/EDHREC expect (potential switch-ins; not in this batch): %s. Role gaps vs ArcMind reference: %s.' % (
+        '; '.join('%s [%s]' % (n, ' / '.join(v)) for n, v in sg['bans'].items()) or 'none', '; '.join(sg['switch_ins']) or sg.get('switch_ins_note', 'none'), sg['role_gaps'] or 'none'))
     rid = run_id(a.name, new=True)
-    out = subprocess.run([sys.executable, rc, 'glance-export', '--run', rid, '--cardlist', lst, '--batch', '200', '--context', ctx, '--cache', VERDICTS, '--mana', mv],
+    out = subprocess.run([sys.executable, rc, 'glance-export', '--run', rid, '--cardlist', lst, '--batch', '200', '--context', ctx, '--cache', VERDICTS, '--mana', mv] + (['--oracle-context', sgf] if SCORERS else []) + ([] if a.tags else ['--oracle-only']),
                          check=False, capture_output=True, text=True, encoding='utf-8').stdout
     sys.path.insert(0, os.path.join(HERE, 'tagcheck'))
     from common import workdir
@@ -515,7 +684,7 @@ def cmd_review_compare(a):
         on_plan = bool((oa | ta) & strat) or sup.get(n) or utility or n == pk['commander'] or n in pk['lands']['nonbasic']
         if not on_plan: rejects.append(dict(name=n, function=o['function'], oracle_arch=o['arch'], tag_arch=sorted(ta), roles=o['roles'], power=o['power']))
         else: ok += 1
-        if strat and not (oa & ta) and not any(r['arch_hit'] for r in c['readers']): tag_gaps.append(dict(name=n, oracle_arch=o['arch'], tag_arch=sorted(ta), unclear=sorted({u for r in c['readers'] for u in r['unclear']})))
+        if strat and c['readers'] and not (oa & ta) and not any(r['arch_hit'] for r in c['readers']): tag_gaps.append(dict(name=n, oracle_arch=o['arch'], tag_arch=sorted(ta), unclear=sorted({u for r in c['readers'] for u in r['unclear']})))
     out = dict(deck=a.name, mana=res.get('mana', {}), strategy=sorted(strat), on_plan=ok, rejects=[r['name'] for r in rejects], reject_detail=rejects, tag_gaps=tag_gaps, summary=res['summary'])
     path = os.path.join(STAGE, a.name + '.review.json'); json.dump(out, open(path, 'w', encoding='utf-8'), indent=1)
     print('%s: %d cards on plan, %d reject candidates, %d archetype disagreements (tags vs Oracle reader)' % (a.name, ok, len(rejects), len(tag_gaps)))
@@ -523,13 +692,38 @@ def cmd_review_compare(a):
     print('->', path)
 
 
+MAX_SWAPS = 10   # review-apply: most cards swapped out in one second run
+
+
+def cmd_review_apply(a):
+    """Second run (user 2026-10-27): swap the flagged cards of a reviewed deck. Swap out = every Oracle-reader reject, plus every scorer-flagged card (ArcMind cut, edhpowerlevel low impact) that the Oracle reader
+    also rates power <= 2; at most MAX_SWAPS, rejects first. Switch-ins = the ArcMind/EDHREC missing staples (signals.json, pool and legality checked by the builder), at most one per swap; the builder
+    fills the rest. Writes <deck>_r2 (staged, not live), then exports its glance run so the readers can check it. Needs review-compare to have run."""
+    rv = json.load(open(os.path.join(STAGE, a.name + '.review.json'), encoding='utf-8')); pk = _picks(a.name)
+    sg = rv.get('signals') or {}; low = set(rv.get('low_power', []))
+    out = list(rv['rejects']) + [n for n in sg.get('bans', {}) if n in low and n not in rv['rejects']]
+    out = [n for n in out if n != pk['commander'] and n not in pk['lands']['nonbasic']][:MAX_SWAPS]
+    if not out: print('nothing flagged by both the data and the Oracle reader: no second run'); return
+    have = {x['name'] for x in pk['picks']}
+    ins = [re.sub(r' \(synergy.*$', '', x) for x in sg.get('switch_ins', [])][:len(out)]
+    keep = [x['name'] for x in pk['picks'] if x['name'] not in out] + [n for n in ins if n not in have]
+    print('swap out %d: %s' % (len(out), '; '.join(out)))
+    print('switch in (tried first, if legal): %s' % ('; '.join(ins) or 'none (builder fills the slots)'))
+    name = re.sub(r'(_r\d+)?$', '', a.name) + '_r%d' % (int((re.search(r'_r(\d+)$', a.name) or [0, 1])[1]) + 1)
+    draft(name, pk['commander'], pk['strategy'], out, [], keep=keep)
+    a.name = name; cmd_review_export(argparse.Namespace(name=name, tags=False))
+
+
 if __name__ == '__main__':
     ap = argparse.ArgumentParser(); sp = ap.add_subparsers(dest='cmd', required=True)
     c = sp.add_parser('commanders'); c.add_argument('--color', required=True, choices=list(COLORS)); c.add_argument('--top', type=int, default=20)
+    g = sp.add_parser('regen'); g.add_argument('--color', required=True, choices=list(COLORS)); g.add_argument('--archetype', default=''); g.add_argument('--commander', default='')
+    g.add_argument('--seed', type=int, default=None); g.add_argument('--name', default='')
     d = sp.add_parser('draft'); d.add_argument('--commander', required=True); d.add_argument('--strategy', default=''); d.add_argument('--name', default='')
     d.add_argument('--ban', default=''); d.add_argument('--reject', default=''); d.add_argument('--size', default='', choices=['', 'cheap', 'big'])
     d.add_argument('--target', type=float, default=0.0); d.add_argument('--out', default=''); d.add_argument('--keep', default='')
-    for n in ('review-export', 'review-compare'):
+    for n in ('review-export', 'review-compare', 'review-apply'):
         r = sp.add_parser(n); r.add_argument('--name', required=True)
+        if n == 'review-export': r.add_argument('--tags', action='store_true', help='also run the blind tag readers (tag-harvest run); default is the Oracle reader only')
     a = ap.parse_args()
-    {'commanders': cmd_commanders, 'draft': cmd_draft, 'review-export': cmd_review_export, 'review-compare': cmd_review_compare}[a.cmd](a)
+    {'regen': cmd_regen, 'commanders': cmd_commanders, 'draft': cmd_draft, 'review-export': cmd_review_export, 'review-compare': cmd_review_compare, 'review-apply': cmd_review_apply}[a.cmd](a)

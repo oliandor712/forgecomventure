@@ -1,0 +1,14 @@
+{
+ "color": "W",
+ "archetype": [
+  "lifegain",
+  "tokens"
+ ],
+ "commander": "Captain America, Liberator",
+ "strategy": [
+  "lifegain",
+  "tokens"
+ ],
+ "seed": 1,
+ "eligible": 52
+}

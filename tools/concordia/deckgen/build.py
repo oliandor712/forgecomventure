@@ -22,6 +22,7 @@ import themes as th  # tag-based deck themes (umbrella tags, heavy tribes)
 import tag_status as ts  # cards whose tags the check holds back
 import tag_version  # stamp of the tagger files, written into build output
 import synergy as sy
+import consistency as cons
 import commander_support as cp# what supports a commander's own ability (human logic H31-H36)
 sys.path.insert(0, os.path.join(os.path.dirname(HERE), 'strategies'))
 import strategy_fit as sf  # strategies.json play-line roles + niche:* weighing (tiers 2-5; tier 1 keeps its approved model)
@@ -139,18 +140,24 @@ def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     nset = sy.count_setup(tp, [p for p, _ in chosen]) if tp else 0
     if tp and tp.get('creature') and not tp.get('kinds'): check('H17', nset >= sy.SETUP_MIN and npay <= nset + sy.SETUP_GAP, 'token setup cards %d (%d-%d), payoffs %d (at most setup + %d)' % (nset, sy.SETUP_MIN, sy.SETUP_MAX, npay, sy.SETUP_GAP), True)
     check('H17', sy.PAYOFF_MIN <= npay <= sy.PAYOFF_MAX, 'token payoffs for the commander tokens %d (%d-%d allowed)' % (npay, sy.PAYOFF_MIN, sy.PAYOFF_MAX), bool(tp))
+    if d.get('archetype') and cons.target(d['tier']):   # H85: engine pieces drawn and castable by turn 5 (consistency.py)
+        cs = [p for p, _ in chosen]
+        nok, ntot, pr, seen, ntut = cons.report(cs, d['archetype'], sum(1 for p in cs if p['tags'] & ROLE['ramp']), sum(1 for p in cs if p['tags'] & ROLE['draw']), sum(1 for p in cs if p['tags'] & ROLE['tutor']))
+        check('H85', pr >= cons.target(d['tier']), 'engine pieces castable by turn %d: %d of %d, chance to hold one %.0f%% over %.1f cards (%.0f%% wanted), tutors reaching a key card %d' % (cons.TURN, nok, ntot, 100 * pr, seen, 100 * cons.target(d['tier']), ntut), ntot > 0)
+        for pcs, pb in cons.combo_report(cs, data['combos'], sum(1 for p in cs if p['tags'] & ROLE['draw']), ntut):   # H85: a two-card combo in the deck needs both pieces by turn 5 (assumed bar)
+            check('H85', pb >= cons.COMBO_BAR, 'combo %s: chance to hold both by turn %d %.0f%% (%.0f%% wanted)' % (' + '.join(pcs), cons.TURN, 100 * pb, 100 * cons.COMBO_BAR))
     return out
 BASIC = {'W': 'Plains', 'U': 'Island', 'B': 'Swamp', 'R': 'Mountain', 'G': 'Forest'}
 SPEC = {
  1: tr.BUILD_SPEC,
  2: dict(lands=38, quota={'wipe': 1, 'removal': 8, 'ramp': 5, 'draw': 5}, cap={'ramp': 7, 'draw': 8, 'removal': 10, 'wipe': 2, 'tutor': 1, 'fast': 1},
-         creatures=15, cmax=tr.CREATURE_SOFT_CAP, types={'Instant': 5, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 4}, curve={1: 6, 2: 15, 3: 15, 4: 12, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 99}, gc=0, p50=5, p70=2),
+         creatures=15, cmax=tr.CREATURE_SOFT_CAP, types={'Instant': 5, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 4}, curve={1: 6, 2: 15, 3: 15, 4: 12, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 99}, gc=99, p50=99, p70=99),
  3: dict(lands=37, quota={'wipe': 2, 'removal': 10, 'ramp': 10, 'draw': 9}, cap={'ramp': 12, 'draw': 11, 'removal': 13, 'wipe': 3, 'tutor': 2, 'fast': 2},
-         creatures=15, cmax=tr.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 3}, curve={1: 7, 2: 15, 3: 15, 4: 11, 5: 7, 6: 7}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 99}, gc=0, p50=10, p70=2),
+         creatures=15, cmax=tr.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 5, 'Enchantment': 3}, curve={1: 7, 2: 15, 3: 15, 4: 11, 5: 7, 6: 7}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 99}, gc=99, p50=99, p70=99),
  4: dict(lands=35, quota={'wipe': 2, 'removal': 11, 'ramp': 11, 'draw': 10}, cap={'ramp': 15, 'draw': 14, 'removal': 16, 'wipe': 4, 'tutor': 3, 'fast': 3},
-         creatures=15, cmax=tr.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 8, 2: 16, 3: 16, 4: 11, 5: 8, 6: 7}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 99}, gc=4, p50=14, p70=5),
+         creatures=15, cmax=tr.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 8, 2: 16, 3: 16, 4: 11, 5: 8, 6: 7}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 99}, gc=99, p50=99, p70=99),
  5: dict(lands=34, quota={'wipe': 2, 'removal': 12, 'ramp': 12, 'draw': 11, 'tutor': 2}, cap={'ramp': 17, 'draw': 16, 'removal': 18, 'wipe': 4, 'tutor': 5, 'fast': 5},
-         creatures=15, cmax=tr.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 10, 2: 17, 3: 16, 4: 11, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 99}, gc=6, p50=99, p70=99),
+         creatures=15, cmax=tr.CREATURE_SOFT_CAP, types={'Instant': 6, 'Sorcery': 4, 'Artifact': 6, 'Enchantment': 3}, curve={1: 10, 2: 17, 3: 16, 4: 11, 5: 7, 6: 6}, rar={'C': 99, 'U': 99, 'R': 99, 'M': 99}, gc=99, p50=99, p70=99),
 }
 TARGET_POWER = {int(k): v['target'] for k, v in dt.TIER_TABLE.items()}  # card power the builder aims for at each tier (tier_table.json, EDHREC scale)
 # Staples (deckgen/staples.py: popular, low standalone impact) make decks consistent without swinging games: tiers 2-3
@@ -174,7 +181,7 @@ def spread(items, key):
     """Order budget picks by popularity times a stable per-deck jitter, so decks don't all get the same few cards."""
     h = lambda n: int(hashlib.md5((key + n).encode()).hexdigest()[:8], 16) / 0xffffffff
     return sorted(items, key=lambda kv: -kv[1]['decks'] * (0.5 + h(kv[0])) - (1000 if kv[1]['colors'] else 0))
-WATCH_CAP = {1: tr.WATCH_CAP, 2: 1, 3: 2, 4: 4, 5: 8}
+WATCH_CAP = {t: tr.WATCH_CAP for t in range(1, 6)}
 EXTRA_CAP = {t: tr.TIERS[t]['extra_turns'] for t in tr.TIERS}   # extra-turn cards per deck (0/0/0/1/2); chained extra turns are never built (tier_rules, user)
 
 
@@ -227,7 +234,7 @@ def build(d):
     p1 = human_pass1(d, ident, human_rules())  # pass 1 of human_logic.toon: the rules as build parameters (first read)
     if arch:  # archetype quotas (archetype_rules.py): creature band, instant+sorcery and enchantment minimums
         lo, hi, isx, ench, _ = ar.windows(tier, arch, sub, reach)
-        spec['creatures'], spec['cmax'] = min(lo, hi), min(hi, tr.CREATURE_SOFT_CAP)
+        spec['creatures'], spec['cmax'] = min(lo, hi), min(hi, tr.creature_cap(arch))
         spec['types'] = {k: v for k, v in spec['types'].items() if k not in ('Instant', 'Sorcery', 'Enchantment')}
         spec['types']['Instant|Sorcery'] = isx
         spec['types']['Enchantment'] = ench
@@ -269,7 +276,7 @@ def build(d):
         if k == cmd['name'].lower() or k in banned: continue
         if not p['id'] <= ident: continue
         if 'Land' in p['types'].split(): continue
-        if p['mld'] or (p['gc'] and spec['gc'] == 0) or (p.get('cat') == 'watch' and WATCH_CAP[tier] == 0): continue
+        if (p['gc'] and spec['gc'] == 0) or (p.get('cat') == 'watch' and WATCH_CAP[tier] == 0): continue
         if not mech_ok(p, tier) or not extra_ok(p, tier): continue
         if 'Legendary' in p['types'] and 'Creature' not in p['types'] and tier == 1: continue
         cands.append(p)
@@ -398,6 +405,21 @@ def build(d):
         b = best(lambda p: 'Creature' in p['types'])
         if not b: break
         add(b[1], b[2])
+    if arch and cons.target(tier):   # H85: key cards (engine pieces castable by turn 5) until the chance to hold one by turn 5 reaches the target; tutors that reach a key card
+        def _cons():
+            cs = [p for p, _ in chosen]
+            return cons.report(cs, arch, sum(1 for p in cs if p['tags'] & ROLE['ramp']), sum(1 for p in cs if p['tags'] & ROLE['draw']))
+        nr = lambda: sum(1 for p, _ in chosen if p['tags'] & ROLE['ramp'])
+        while len(chosen) < nonland and _cons()[1] < cons.MAX_PIECES and _cons()[2] < cons.target(tier):
+            b = best(lambda p: cons.is_engine(p, arch) and cons.castable(p, nr()))
+            if not b: break
+            add(b[1], b[2])
+        keys = [p for p, _ in chosen if cons.is_engine(p, arch) and cons.castable(p, nr())]
+        while len(chosen) < nonland and _cons()[2] < cons.target(tier) and keys:
+            b = best(lambda p: 'tutor' in p['tags'] and any(cons.tutor_reaches(p, k) for k in keys))
+            if not b: break
+            add(b[1], b[2])
+        d['_key'] = [p['name'] for p in keys]
     while len(chosen) < nonland:
         b = best(lambda p: ncreat < spec['cmax'] or 'Creature' not in p['types'])
         if not b:
@@ -430,7 +452,7 @@ def build(d):
     if tier >= 2 and seed:
         for k in sorted(seed):
             p = pool.get(k)
-            if p and 'Land' in p['types'].split() and 'Basic' not in p['types'] and p['id'] <= ident and not p['mld'] and k not in banned \
+            if p and 'Land' in p['types'].split() and 'Basic' not in p['types'] and p['id'] <= ident and k not in banned \
                     and not (p['gc'] and spec['gc'] == 0):
                 r = pick_rarity(p, tier, rcount, spec)
                 if r:

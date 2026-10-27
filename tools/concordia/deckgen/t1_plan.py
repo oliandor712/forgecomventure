@@ -54,7 +54,7 @@ def main():
         for n, c, prof in sorted([x for x in cands[col] if x[0] >= MIN_SUPPORT], key=lambda x: (-x[0], x[1]["name"])):
             tb = [it[6:] for it in prof if it.startswith("tribe:")]
             ncre = sum(1 for e, t, tg, ety in elig if e["id"] <= c["id"] and "Creature" in ety and any(x in ety for x in tb)) if tb else 0
-            arch = "tribal" if tb and ncre >= 14 else "tokens" if "token" in prof else "aggro"
+            arch = "tribal" if tb and ncre >= 14 else "tokens" if any(x == "token" or x.startswith("token_scales:") for x in prof) else "aggro"
             byarch[arch].append((n, c, prof, tb, arch))
         picked = []
         for arch, (npool, nch) in QUOTA.items():

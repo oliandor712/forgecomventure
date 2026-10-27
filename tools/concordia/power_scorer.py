@@ -792,7 +792,7 @@ def check_tier(r, tier, life=None):
     else:
         out.append(("WARN", "mechanics tier check skipped: deckgen/pool.pkl missing"))
     early, late = r["combos"]["early_game"], r["combos"]["late_game"]
-    combo_ok = not early and (spec["combos"] == "late" or not late)
+    combo_ok = spec["combos"] == "any" or (not early and (spec["combos"] == "late" or not late))
     out.append(("PASS" if combo_ok else "FAIL", "two-card combos: early %s, late %s" % (early or "none", late or "none")))
     return out
 

@@ -131,6 +131,10 @@ def profile(oracle, types, name=""):
     for m in re.finditer(r"(?i:create[s]?) [^.]*?\b([A-Z][a-z]+)(?: [A-Z][a-z]+)? creature tokens?", oracle.replace("\\n", "\n")):
         if m.group(1) not in ("Creature", "White", "Blue", "Black", "Red", "Green", "Colorless"): out.add("tribe:" + m.group(1))   # token type is the tribe (H40)
     if re.search(r"(creature )?tokens? you control|create[s]? [^.]*\btokens?\b|populate|amass", t): out.add("token")   # Prava, Jiang: token makers and token pump
+    if "token" in out:   # H102: tokens whose number is tied to Y compose the two tests: a token maker that also counts Y supports it; a plain token maker no longer does
+        for m in re.finditer(r"(?:for each|per|number of) (?:other )?(equipment|artifact|aura|enchantment|vehicle|saga|creature|land|counter)s?\b[^.\n]{0,80}create|create[^.\n]{0,120}(?:for each|per|number of) (?:other )?(equipment|artifact|aura|enchantment|vehicle|saga|creature|land|counter)s?\b", t):
+            out.add("token_scales:" + (m.group(1) or m.group(2)).capitalize())
+        if any(x.startswith("token_scales:") for x in out): out.discard("token")
     if re.search(r"deals damage equal to its power to target creature", t): out.add("dmg_power")   # Halana's own trigger is the low creature removal
     for lt in at.LANDTYPES:   # H45: the commander cares about or fetches a basic land type (Molten Man: +1/+1 for each Mountain, fetch a basic Mountain)
         if re.search(r"\b" + lt.lower() + r"s?\b", re.sub(r"\b" + lt.lower() + r"walk\b", "", t)): out.add("landtype:" + lt)
@@ -160,6 +164,9 @@ def supports(item, name, text, tags, types, traits=None):
     if item == "etb_other": return bool(tags & {"token_make", "clone", "bounce"}) or (crea and "etb_trigger" in tags) or bool(re.search(r"exile target creature you control, then return|flicker", text.lower()))
     if item == "etb_self": return bool(tags & {"bounce", "clone", "recursion", "reanimate"}) or bool(re.search(r"exile target creature you control, then return|flicker", text.lower()))
     if item == "graveyard_leave": return bool(tags & {"recursion", "reanimate", "grave_hate", "self_mill", "discard", "token_make", "temp_reanimate"})
+    if item.startswith("token_scales:"):
+        Y = item[13:]
+        return "token_make" in tags and (Y in ty or bool(re.search(r"(?:for each|per|number of|equal to the number of) (?:other )?(?:\w+ )?" + Y.lower() + r"s?\b|\b" + Y.lower() + r"s? (?:you control|attached)", text.lower())))
     if item == "token": return bool(tags & {"token_make", "pump_team", "artifact_token"})
     if item == "flying_hate": return bool(re.search(r"with flying|have flying|\breach\b|Creature\.withFlying", text))   # H39: cards that answer flyers, not generic removal
     if item == "dmg_power": return (crea and bool(re.search(r"^PT:([4-9]|\d{2,})/", text, re.M))) or "etb_trigger" in tags

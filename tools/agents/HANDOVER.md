@@ -1,7 +1,40 @@
 # Handover to the new main session
 
 Written 2026-10-23 by the previous main session (branch `cd/claude2`, now merged into `campaign-design`). That session is deleted. You are the only main session. The read-first list lives in `START.md` (step 5); this file is one item on it.
-## LATEST (2026-10-27, end of session): power scorer + starter/tutorial rebuild (read first)
+## LATEST (2026-10-27, later session): starter land picker + commander support rework (read first)
+**Repo state: NOT committed or pushed for code.** Only two documents were pushed (`docs/Adventure/Campaign/STARTER_BUILDER_CHANGES_2026-10-27.md`; `STARTER_LAND_PICKER_CHANGELOG_2026-10-27.md` is written, push it with `python3 tools/agents/docpush.py <path>` if docpush did not already). Code, `human_logic.toon` (H96-H103), logs and this file are local until the user says "push". Nothing live changed (no live decks, no `enemies.json`, no forge-core/game/ai). The working tree also holds earlier uncommitted changes (build.py, synergy.py, starter_tune.py, pool/tag files); review `git status` before committing.
+
+### What was done (details: `docs/Adventure/Campaign/STARTER_LAND_PICKER_CHANGELOG_2026-10-27.md`; logs: `log-patchnotes.toon`, `log-code-analyses.toon`, `power-scorer-tests.toon` rows dated 2026-10-27; memory `concordia-land-picker.md`)
+- Tags: `mana_sink` (H96), `setup_card:<need>` (H98, Dark Depths = mana, needs 10 ramp), `restricted_to:<type>` (H99). Pool rebuilt with `python3 pool.py` (about 25 s, not `-I`).
+- `starter_build.py` land picker: coverage > utility > no tapped > no life > no sacrifice-other, power only breaks ties; staples target removed (H97); colourless-only lands penalised without `{C}` pips or own synergy (H100); colourless is a sixth colour, lands capped by pip share (H101); `{C}` spell gated by the coloured-source rule, 14 floor skipped (H102).
+- `commander_support.py`: `token_scales:<Y>` composes token_make with Y (H103); `t1_plan.py` reads it.
+- Test builds `W_Starter_Regen_r3..r6` in `forge-gui/res/adventure/Concordia/staging_starters/` (Captain America, Liberator; lifegain+tokens). r6 is the current: power 27.7, 31 creatures, 23/63 supporting, nonbasics Plaza of Heroes, Vesuva, Drownyard Temple, Buried Ruin, Haunted Fengraf, Lazotep Quarry. Kozilek's Command is out (no longer support under H103).
+
+### Command that rebuilds W (run it yourself, not through an agent; user rule)
+```
+cd tools/concordia/deckgen
+python3 starter_build.py draft --commander "Captain America, Liberator" --strategy lifegain,tokens --name W_Starter_Regen_r7
+```
+`--strategy lifegain_tokens` is wrong (gives a different strategy); use the comma form.
+
+### Open, in the order I would take them
+1. Ask the user: is 23/63 supporting cards acceptable, or should plain `token_make` count as weaker support (I offered to soften)? Check why the Soldier theme is no longer unlocked in r5/r6 (tribe:Soldier is still in the profile).
+2. The colourless gate (H102) is lenient and untested alone; the formulas hard-code 37 lands. Ask the user whether colourless should be held harder than coloured.
+3. Extend the `restricted_to` gate to the 47 non-land tagged cards; review them first.
+4. Rebuild the other four colour starters (B, U, R, G) with these rules, run `review-export` for the glance when the user says (readers only on their word).
+5. Add `setup_card` and `restricted_to` to `TAG_REFERENCE.md` (a tagged card must be in a starter run; or add the DOC entries by hand).
+6. Earlier open items still standing: mono-colour weak utility picks, Forbidden Orchard `token_make` leftover, `review-apply` guard (it swapped Terramancer for Divine Favor), ArcMind token flow, the TARGET about 25 with 5/2 caps, H85 key-card narrowing, `TOOLBOX.md` and this file's older blocks.
+7. Only on the user's "push": commit the code (branch `campaign-design`, no force, no PRs).
+
+### Gotchas
+- Heredocs mangle backslashes in this shell (regexes with ``, `
+` break): write them with the Write tool or Edit, never a heredoc.
+- Never read BIG files whole (Comprehensive Rules, STARTER_TAGS, ABILITY_TWINS, records.csv); check `logs/LOG_INDEX.toon` before any log.
+- `pool.py` must run without `-I` (needs `tag_run` on the path).
+- A system notice said `starter_build.py` changed on disk after a read: always trust the disk.
+- Decisions the user made this session are in the memory note and the changelog; do not re-ask them (priority order H90/H91, 10 ramp for Dark Depths, general tags, compose tags, run the builder myself).
+
+## PREVIOUS (2026-10-27, earlier session): power scorer + starter/tutorial rebuild
 **Repo state: committed and pushed to `campaign-design` at session end** (no force). Nothing live changed (no live decks, no enemies.json, no forge-core/game/ai).
 
 ### What was done (logs: `log-patchnotes.toon`, `log-code-analyses.toon` rows dated 2026-10-27; memory `session_2026-10-27_starters.md`)
