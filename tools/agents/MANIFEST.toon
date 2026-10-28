@@ -1,6 +1,6 @@
-records_commit: 34818279d817d0b70320d65be268a0c86bbc421b
+records_commit: f3cc42ce4ed9d851ca72febba62c966726544b02
 branch: campaign-design
-created: 2026-10-27T23:52:48-04:00
+created: 2026-10-28T17:08:05-04:00
 entries[83|]{path|hash}:
   .claude/agents/deck-balance-lab.md|523a1fbeb0c860fbe536db924ac390aa303cfe63
   .claude/agents/deck-builder.md|3fb611e1771fd9fd5ce28b6d93b9c9648081b2c6
@@ -11,7 +11,7 @@ entries[83|]{path|hash}:
   .claude/settings.json|0f92c20a8566599991ede60a7c821f2c4df3ff4b
   .claude/skills/concordia-map-creator/SKILL.md|f8d590efec75e0492baf7e7a8177419c311a22a6
   .claude/skills/session-commit/SKILL.md|0f6592e57f3043a2d8d1690eac53b081ff6d3a46
-  CLAUDE.md|b3c91d63423f6af33c6fe023158dd092c87d76f2
+  CLAUDE.md|3b59f77503b4dfdc9f20fa7266e3a23c59dd2626
   docs/Adventure/Campaign/AI_CHANGES_APPROVAL.md|1d4bfc71388472ad312be412d5f797fd1c8772e9
   docs/Adventure/Campaign/AI_FLAGGED_CARDS.md|fbbeb16fd34c08a5170f29a8806a241069c65c93
   docs/Adventure/Campaign/AI_RESEARCH.md|32d0ab1624e9516d6c291e5dfa57a021e307d187
@@ -35,20 +35,20 @@ entries[83|]{path|hash}:
   docs/Adventure/Campaign/archive/T1_eligible_nonbasic_card_categories.md|28ca5f2ad368f4c87cf80569d067ab323c07fc10
   docs/Adventure/Campaign/archive/T1_most_used_ability_cards.md|4b0ddba9249bf1604580282fa089bc71397f0cea
   docs/Adventure/Campaign/deck_balance_report.html|2cc2bb49aabac9fd6a1ac81d804b4606aa962088
-  forge-gui/res/adventure/Concordia/|85977c47e8db671d7a3368d55e9845659b92d3b5
+  forge-gui/res/adventure/Concordia/|f634974be6441b44aec357387b98d0171d88c8c7
   tools/agents/ACTION_PLAN_TAG_DECK.md|ba594968fb37295ceb9ea40d0f3fcb58bd2a1102
   tools/agents/AGENT_KNOWLEDGE.md|bcde353c1ff1218ecf914bfbf3a590dae67f30a2
   tools/agents/CONTEXT.md|3c17d0ba0dc4cd1566cf13a2c7a4f9fd93dd265b
   tools/agents/EFFICIENCY_UPGRADES_2026-10-23.md|1026dfb4e0f3ebd0811417d26e3226005ce2557b
-  tools/agents/HANDOVER.md|199f0b20b757538ba6ff69048275f14ef5661897
-  tools/agents/INDEX.md|8c83081d060d38f346f3447292caeae77f5b22e2
-  tools/agents/MAIN_SESSION_BRIEF.md|98200a71b3556e47aa7e1963548c71b8ec3b615e
-  tools/agents/MAIN_SESSION_MANUAL.toon|ad37cc6819e823f7b2f8cd146f226299c0e37f75
+  tools/agents/HANDOVER.md|7453cab445312bf324126cdb8442e79b6a0081d6
+  tools/agents/INDEX.md|f75e174a073ca32a5264249aca8ffbdf9c72944f
+  tools/agents/MAIN_SESSION_BRIEF.md|42191821ef0a0bf3003f97218bb27050f25039e2
+  tools/agents/MAIN_SESSION_MANUAL.toon|afca5a1c9a5069401c9776454b13fe38ba1c0b17
   tools/agents/MEETING_FEEDBACK.md|8f84b908040c33e56410184a6187e6483959fb00
   tools/agents/REGEN_REPORT.md|c55a175df7a0f6f74eaa00a8171ec33d0342220a
   tools/agents/STARTER_BUILDER_PLAN.md|2b4847f7aaa5093efc8ea78b9814a66e48ec7271
   tools/agents/T3_PLUS_OBSERVATIONS.md|dc955a1010d6a49390e62dc358939e4bc30e4f3d
-  tools/agents/TOOLBOX.md|f29329cbf3d0b351ae047da7cd696bb46ba28570
+  tools/agents/TOOLBOX.md|cc0e7d268870db5e4a9bd4e9a1f80561992ef6a3
   tools/agents/VISION.md|d414750317131aac76358f356cc8682f040431b6
   tools/agents/archive/HANDOVER_2026-10-24_to_26.md|366e7a32e6752567f01a6052459114e960afd821
   tools/agents/archive/HANDOVER_2026-10-26_end_of_session.md|cdcd6094a9b5864b746f1fc15281b8643a4e4925
@@ -57,19 +57,19 @@ entries[83|]{path|hash}:
   tools/agents/clone_verify.py|c6933785be7b8268ac12933e1637e52c129f4288
   tools/agents/docpush.py|804c413da7b0db539b4d496cd3d7c42bbff06838
   tools/agents/ensure_refs.py|c5da8c08dd36370e31d4e341fd9a7898cb45edb0
-  tools/agents/human_logic.toon|ddf29db7c1f61cca643c8a65f7ce2d74c7e8eef0
+  tools/agents/human_logic.toon|a1d9ef499acc3396561471aec95178e6a8b57dc1
   tools/agents/logs/LOG_INDEX.toon|72a1e49cd4a28f9d7ff1be15a3d2d449efeebbde
-  tools/agents/logs/guard-runs.toon|5fac6a0cda9a7934c5b466eceebfd284903f560a
-  tools/agents/logs/log-code-analyses.toon|21bf4922fe43b5ffe03be323f6253d13025954a6
+  tools/agents/logs/guard-runs.toon|f2961b54843dfb18a5245866dcd9f9cb336c3232
+  tools/agents/logs/log-code-analyses.toon|74495da992360114df52ec569aed1e9742753b47
   tools/agents/logs/log-efficiency-analyses.toon|f99a40fc19f8aa8001cf1022b0fb542a311a972f
-  tools/agents/logs/log-patchnotes.toon|ee905fdcba23352ca687b36d3941c2a95f106da0
+  tools/agents/logs/log-patchnotes.toon|347326277fda742a1f8a4ec57fe44ea82985c702
   tools/agents/logs/log-tag-analyses.toon|d3a5fd4bc04ef1f34ed3959edd351eaa613a81f9
   tools/agents/logs/power-scorer-tests.toon|e105f025b6680c73238650226ba357f27aa6f04d
   tools/agents/logs/results-reader-runs.toon|573f3bc6dedaa50150e141763ff9eb983a324c45
   tools/agents/logs/strategy-source-texts.toon|e09668bf36131518e01b942fcf890f626533f2f3
   tools/agents/logs/strategy-sources.toon|85d49d121bc364f6df57487ba411a516dd981c36
   tools/agents/logs/tag-script-runs.toon|99aed9ba80598fa16cb31a0b83ed6ca8c894e710
-  tools/agents/lookup.py|be8046b22768a971d901be02f71efaa1df13ea8c
+  tools/agents/lookup.py|a8edaa9abe192f4ff6dd0375cd6b3178d07d9ad3
   tools/agents/projects/agent_tool_test.toon|efde373ac3e3d421f8a3fe8cc4c4409c4574151e
   tools/agents/projects/claude2_agents.md|3a5d00568c1257584b09f5e69a428b1f0db4128e
   tools/agents/reference/ARCHETYPES.toon|6c09282b291b3d01cc552f89218cc5610e2d1a17
@@ -83,5 +83,5 @@ entries[83|]{path|hash}:
   tools/agents/reference/build_cr_compact.py|8748f89e0c1e85b84084d79f1b9ed2c09b844cdd
   tools/agents/reference/deck_building_for_readers.toon|4d8280d3f915ab4fbdef0b43c92c2faee16e26cc
   tools/agents/sync_check.py|a0ce7a0085defd7aefc910ca554942074f56ca05
-  tools/agents/toolbox.py|94d15352766cec09ddf99cecba6f6e598ca91372
-  tools/concordia/|cd377de424435ff5014c0c319b66a5c5eb69497b
+  tools/agents/toolbox.py|a7785da97a7d9066f239f81fd451e5e8144d6d56
+  tools/concordia/|5a8f5d24cd902e109f4029dd76c93d09e673fc9a
