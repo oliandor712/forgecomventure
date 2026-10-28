@@ -106,6 +106,6 @@ A checker script (`tagsyntax.py check`) runs on every card of the pool and fails
 ## 9. Build order (nothing built beyond the prototype `tagcheck/tagsyntax.py`)
 1. Generate `EFFECT_PARAMS` from the "pairs with" notes; list the gaps.
 2. Tagger: record verb phrase position; move cost and verb tags into the group they belong to.
-3. `tagsyntax.py check` over the pool (round trip, role fit, link ends, determinism).
+3. `tagsyntax.py check` over the pool (round trip, role fit, link ends, determinism). **Done 2026-10-27** on the starter set (tagged.json): rules 1, 2, 3, 7 pass; rule 4 lists 502 verbless segments and rule 5 two unbound families (lenient, decision 3); rule 6 fails on 11 link ends (link generator), with 127 implicit role-word ends and 33 card-level ends listed apart.
 4. Renderer: one sentence per `effect[...]` segment; readers: replace rule 1.5 of `READER_GRAMMAR.md`.
 5. Glance test of flat against view (readers only on the user's ask).
