@@ -96,9 +96,16 @@ A checker script (`tagsyntax.py check`) runs on every card of the pool and fails
 - **Readers:** `READER_GRAMMAR.md` rule 1.5 ("effect sentences are in the order their verb tags first appear") is replaced by "one sentence per `effect[...]` segment, in segment order". The legend gets a short paragraph on the five segments.
 - **Test:** glance comparison of flat against view on the same cards (readers only on the user's ask) before the view becomes the default export.
 
-## 8. Open decisions for the user
-1. **Binding table source.** Generate it from the existing "pairs with" notes and fix the gaps by hand, or write it by hand once for the roughly 60 verb families?
-2. **Position data.** Use the default order only, or have the tagger record the Oracle phrase position of each verb (more accurate, more work in `tag_extra.py`)?
-3. **Unbound tags.** Fail the checker (strict), or list them and allow (lenient) while the binding table is filled?
-4. **Where cost tags sit.** `cost:remove_counters` in a step group (Nazar): fix in the tagger, or let the view move cost segments to the group's head?
-5. **Format in the reader export.** Brackets as above, or one line per segment? The bracket form is shorter; line per segment is easier to read for long groups.
+## 8. Decisions (user, 2026-10-27)
+1. **Binding table:** generated from the "pairs with" notes in `TAG_REFERENCE.md` / `TAG_LEGEND.md`, gaps fixed by hand.
+2. **Position data:** the tagger records the Oracle phrase position of each verb (change in `tag_extra.py`); the default order is only the fallback for cards without it.
+3. **Unbound tags:** lenient. The checker lists them and does not fail while the binding table is filled.
+4. **Misplaced cost and verb tags (Nazar):** fixed in the tagger, not moved by the view.
+5. **Reader export format:** brackets (shorter, one line per group), chosen by the main session because the user left it open.
+
+## 9. Build order (nothing built beyond the prototype `tagcheck/tagsyntax.py`)
+1. Generate `EFFECT_PARAMS` from the "pairs with" notes; list the gaps.
+2. Tagger: record verb phrase position; move cost and verb tags into the group they belong to.
+3. `tagsyntax.py check` over the pool (round trip, role fit, link ends, determinism).
+4. Renderer: one sentence per `effect[...]` segment; readers: replace rule 1.5 of `READER_GRAMMAR.md`.
+5. Glance test of flat against view (readers only on the user's ask).
