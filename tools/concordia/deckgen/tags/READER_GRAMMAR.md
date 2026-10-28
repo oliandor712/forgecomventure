@@ -235,3 +235,13 @@ Planeswalker abilities, equipment reconfigure, double-faced and adventure cards,
 
 ## 9. Decisions for the user (change any; the grammar follows)
 G1 `~` for the card itself. Already decided. · G2 Keywords first, but `Equip` / `Reconfigure` / `Fortify` last (user, 2026-10-23). · G3 One effect per sentence, no `and` joining, only 4.10 exceptions. · G4 `an opponent controls` rather than `you don't control`. · G5 `enters` / `dies` / `leaves` only, never the zone wording. · G6 keyword cost from `num` and `color` tags (guess risk, see 4.3). · G7 em dash `—` and `•` in modes. · G8 plain keywords of consecutive `k` groups on one line. · G9 `{filter}` instead of guessing `creature` when a trigger has only `you_control`. · G10 `and whenever` for a group with two trigger events. · [v2] G11 costs from `cost_mana` / `unless_cost_amount`, `{cost}` only without them · G12 `previous_result` = `equal to the <thing> this way` · G13 `under your control` only for a graveyard or exile that is not yours · G14 `Mill N cards.` always when no amount tag · G15 placeholders keep the sentence shape (`{trigger}, ...`) · G16 `Whenever enchanted player is attacked,` for an Aura on a player
+
+## 10. Addendum B: bracket-form records (written 2026-10-27, user decision: build `tagsyntax.py export`)
+Applies only to records produced by `python tools/concordia/deckgen/tagcheck/tagsyntax.py export OUT [CARDS.txt]`. Flat records (`tag_run.py`, `glance`) keep sections 1 to 9 unchanged, including rule 1.5.
+1. A group line reads `cN: part[tags] part[tags] ...`. Part names: `trigger`, `cost`, `effect`, `target`, `duration`. A part holds only tags of its own role; the tags inside it keep the flat spelling.
+2. Rule 1.5 becomes: effect sentences follow the order of the `effect[...]` parts on the line, one sentence per `effect[...]` part. The first tag in an `effect[...]` part is its verb; the other tags in the part are that verb's parameters (count, amount, zone, who).
+3. A `target[...]` part belongs to the nearest `effect[...]` part before it; it names what that sentence acts on. A `target[...]` with no effect before it describes the whole ability.
+4. `trigger[...]` is the When/Whenever/At clause (4.1), `cost[...]` is the cost before the colon (4.2), `duration[...]` ends the last sentence (`until end of turn`, ...).
+5. A part is never read as a separate ability: sub-groups `cN.M` are still the next sentences of ability `cN` (rule 1.3).
+6. Everything else (placeholders, phrase book, fallbacks, never-write list) is unchanged. Links are printed as `link: A rel B` lines below the groups and mean what they meant before.
+7. The brackets are a view over the flat tags: removing them gives back the same tag multiset (checked by `tagsyntax.py check`, rule 1 round trip).
