@@ -8,24 +8,27 @@ Sources: full pool scan (`mtg2llm.py scan`, 28,049 cards; `tags/POOL_GAPS.toon`,
 - Only 4 of the 300 biggest-gap cards have no units at all: Cone of Cold, Selective Adaptation, The Ring Goes South, Berserker's Frenzy. Most gaps are partly tagged cards.
 - Not triaged: only the top ~100 of 300 patterns were read. The counts are units per pattern, from `RENDER_GAPS.toon`.
 
-## A. Tagger gaps: the tags cannot say it (need a new tag or value)
-| Missing detail | Evidence | PROPOSED tag |
+## A. Tagger gaps: redundancy check against TAG_REFERENCE.md, then APPROVED (user 2026-10-27: "approve A")
+Most rows were redundant: the family exists and is approved, only a value or the tagger's coverage is missing. Values inside an approved family are accepted with the family.
+
+| Item | Verdict | Decision |
 |---|---|---|
-| kicked / not-kicked condition | Mold Shambler vs Woodfall Primus | `condition:kicked` |
-| random opponent | Archfiend of Despair vs Witch Hunt | `target_scope:random_opponent` |
-| intervening-if (opponent has more creatures / lands) | Urbis Protector, Shuri's Fabricator, T'Challa | `condition:opp_more_creatures`, `condition:opp_more_lands` |
-| roll a die | Iron Mastiff | `roll_die` (+ `die_sides:N`) |
-| spell-type filter on cast triggers | Teller of Tales, Oyobi (Spirit or Arcane) | `trigger_filter:spell_type:X` |
-| cast-this-spell vs cast-targeting-this | Anax and Cymede vs Decimator | `trigger:cast_self`, `trigger:cast_targeting_self` |
-| optional (may) on mill / sacrifice | Eivor, Frogantua, Barrowgoyf, Torgaar; 29 units carry a bare `optional` | `optional` attached to the effect it applies to |
-| attacker / source filters | Circle of Flame (without flying, attacks you), Falkenrath Perforator | `attacker_filter:X` |
-| trigger subject (commander, enchanted, one or more) | Kediss, Amarant Coral, Ancestor Dragon | `trigger_scope:commander`, `trigger_filter:one_or_more` |
-| type filter on upkeep / enter effects | Mana Bloom, Oni of Wild Places, Elvish Archivist, Tocasia's Welcome | `target_filter:X`, `trigger_filter:mv_le_N` |
-| chapter text of Sagas | 12 of 15 hits under one key; `saga_chapter draw_count:N` has 19 units | chapter number on each effect tag |
-| channel effect | Eiganjo vs Gideon's Memorial | channel plus its effect tags kept separate |
-| keyword costs hidden by N | Flashback, Kicker, Cycling, Escape, Mutate, Blitz, Emerge, Level up | cost value on the keyword (`flashback_cost`, `escape_exile:N`) |
-| numbers hidden by N | energy, look_top, damage, mill (Peer Through Depths, Uncovered Clues, Black Waltz No. 3, Archive Trap) | keep the number as a value |
-| 0-unit cards | Cone of Cold, Selective Adaptation, The Ring Goes South, Berserker's Frenzy | read each; tagger parse failure |
+| `condition:kicked` | REDUNDANT: exists (2 cards). The gap is pattern N-abstraction in the renderer | no tag; moves to B (key numbers) |
+| `target_scope:random_opponent` | new value of approved `target_scope` | APPROVED value |
+| `condition:opp_more_creatures`, `condition:opp_more_lands` | new values of approved `condition` | APPROVED values |
+| `roll_die` + `die_sides:N` | new family (sibling of approved `flip_coin`) | APPROVED family (APPROVED_DECISION in tag_reports.py) |
+| spell-type filter on cast triggers | REDUNDANT: `trigger_filter` already holds card types and subtypes (instant, sorcery, goblin) | no tag; tagger must emit Spirit/Arcane values it misses |
+| `trigger_scope:cast_self`, `cast_targeting_self` | new values; `trigger_scope` is documented for zone-change triggers only | APPROVED values; extend the DOC row |
+| `optional` | REDUNDANT: exists (40 groups). Gap is attaching it to the right effect | tagger fix, no tag |
+| attacker / source filters | REDUNDANT family (`trigger_filter`, `target_filter`); missing values like `without_flying` | APPROVED values `trigger_filter:without_<kw>` |
+| `trigger_scope:commander`, `one_or_more` | `one_or_more` REDUNDANT (7 cards); `commander` is a new value | APPROVED value commander |
+| `trigger_filter:mv_le_N` (type filter) | type filter REDUNDANT; `mv_le_N` new, mirrors `power_le_N` | APPROVED value |
+| saga chapter text | `saga_chapter` exists but drops the number (TAG_REFERENCE says so) | APPROVED value `saga_chapter:N` |
+| channel | no `channel` row in TAG_REFERENCE | check `kw` coverage in tag_extra before adding; not approved yet |
+| keyword costs hidden by N; numbers hidden by N | REDUNDANT: `kw` says costs/numbers follow as separate tags; `damage_amount`, `look_top` etc. carry numbers. Lost in `pattern()` | no tag; renderer work, now B0 |
+| 0-unit cards (Cone of Cold, Selective Adaptation, The Ring Goes South, Berserker's Frenzy) | parse failures | per-card tagger fix |
+
+Approved new tag work: 1 family (`roll_die`, with `die_sides`), 10 values. Not implemented yet: the tagger change comes with the retag.
 
 ## B. Renderer rule gaps: the tags exist, `mtg2llm` has no sentence yet (not retag work)
 Units without a rule, biggest first:
@@ -38,7 +41,13 @@ Units without a rule, biggest first:
 ## C. Already listed
 - `tags/MTG2LLM_GAPS.toon`: 73 rows open (209 total, 136 applied), e.g. Aethertide Whale, Alms Collector, Angrath's Marauders, Arbiter of Woe, Ashcoat of the Shadow Swarm, Barrowgoyf, Blight Titan, Braids's Frightful Return.
 
-## Suggested order
-1. Approve or reject section A tags (add each to `NEW_TAGS_FOR_APPROVAL.md` after your word).
-2. Retag, then `pool.py`, then re-run `scan` to see which section B rows stay open.
-3. Write section B rules (keyword sentences first: one rule clears 20-100 units each).
+## Plan for B (mtg2llm rules; goal: starter pool no-rule units 297 down, then pool-wide 46% down)
+Order matters: a tag change re-keys mined rules and hand lines, so the retag (A) comes first, then B.
+1. **B0 pattern keys:** let `pattern()` keep cost/amount values for keyword families (flashback, kicker, cycling, escape, mutate, blitz, emerge, level up). Re-key the affected hand lines (selftest + guards after).
+2. **B1 keyword sentences (about 700 units):** generate from `ai_lab/KEYWORD_REMINDER_TEXT.toon`, one rule per keyword, Oracle-accurate wording: typecycling, cascade, fear, storm, landwalk, bushido, horsemanship, wither, persist, soulshift, modular, flashback, evolve, devour, intimidate, renown, disturb, bloodthirst, exploit, unearth, madness, fabricate, assist, extort, flanking, multikicker, reconfigure, buyback, riot, suspend, exhaust, unleash, umbra armor.
+3. **B2 grant-keyword effects (about 250):** flying, vigilance, first strike, haste, menace, hexproof, protection, trample on auras and pump.
+4. **B3 ETB and zone effects (about 400):** surveil, untap, energy counters, mill, bounce, damage to all creatures, damage replacement, counter-unless-pay, discard on combat damage.
+5. **B4 triggers and costs (about 250):** blocks trigger, pNpN counters on combat damage or spell cast, `cost:remove_counters`, `cost:sacrifice`, effect:sacrifice, remove:destroy, prevent_damage.
+6. After each batch: `mtg2llm.py selftest`, guards, `mtg2llm.py scan`; record the no-rule count in the log. A batch is done when its units fall to the long tail of one-offs.
+7. Leftover one-offs (12,973 patterns seen once) are not worth rules; hand lines only for starter-pool cards.
+Needs your word before B starts: B0 changes `pattern()` and re-keys hand_units.json.
