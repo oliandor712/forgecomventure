@@ -1,11 +1,11 @@
-records_commit: dd9e72dd98c8f82fa0f169d33c9f68ff07db8e73
+records_commit: 34818279d817d0b70320d65be268a0c86bbc421b
 branch: campaign-design
-created: 2026-10-27T01:56:16-04:00
-entries[78|]{path|hash}:
+created: 2026-10-27T23:52:48-04:00
+entries[83|]{path|hash}:
   .claude/agents/deck-balance-lab.md|523a1fbeb0c860fbe536db924ac390aa303cfe63
   .claude/agents/deck-builder.md|3fb611e1771fd9fd5ce28b6d93b9c9648081b2c6
   .claude/agents/forge-ai-lab.md|09a77fd128db98138c869c62afd2e251a2d4ce60
-  .claude/agents/glance-oracle-reader.md|874cf517e962444946dfc3b6ec962f1b0b095369
+  .claude/agents/glance-oracle-reader.md|e5c7fc420b1bb37d32c216636e2bca8f2a3ebd5b
   .claude/agents/glance-tag-reader.md|fddbb47c551d3e13e3e2d75fddf730de06999fef
   .claude/agents/tag-blind-reader.md|ddea2a7e3ae0f2b57ef42867d23f70c1e9acd850
   .claude/settings.json|0f92c20a8566599991ede60a7c821f2c4df3ff4b
@@ -19,27 +19,31 @@ entries[78|]{path|hash}:
   docs/Adventure/Campaign/CLAUDE_CHAT_CONTEXT.md|55e8a082451f0be312569860ae3b2ef5d8fe2780
   docs/Adventure/Campaign/DECK_REVIEW_SPELLBINDER.md|0f494bc194bbdd5efbcf544ff3f9c77fc35fa853
   docs/Adventure/Campaign/DESIGN.md|fea2deadf50b1f2794bcca534e8c0a709f5bdc18
-  docs/Adventure/Campaign/ENCOUNTER_TIERS.md|8910bdc4d6f9a59e303be9399b88c4208768a64b
+  docs/Adventure/Campaign/ENCOUNTER_TIERS.md|20195f547fbe01c4898fa7f56e3de4041b93e545
   docs/Adventure/Campaign/IDEAS_BACKLOG.md|1e7ba2ed20ae69b9e8e6ff03757c842c86b5ceee
   docs/Adventure/Campaign/OVERWORLD.md|3dbb01ef5430638618163f3533979b35cceae0fe
   docs/Adventure/Campaign/RANDOM_QUESTS_ANALYSIS.md|f95775ab28347b07a5ca4fc2b386773b8808f01a
   docs/Adventure/Campaign/REPO_COMPACTING_PLAN.md|09d4ff7f7b393a97c55a3fb82abd374c46aac34a
   docs/Adventure/Campaign/RESEARCH_MASTER_REPORT.md|c5d82288f9917fc460fd16b36e17dc094395ae38
+  docs/Adventure/Campaign/ROLE_QUOTAS_PROPOSAL.md|778686275e7d67d19d3904981bc0bae9519fae5f
   docs/Adventure/Campaign/SHOP_GENERATION_ANALYSIS.md|7a410b1d1ae112dfb631eef875fc5c772798f4a8
   docs/Adventure/Campaign/STAPLES.md|548097a77e76e11ec2a9884d1c960262551450cc
+  docs/Adventure/Campaign/STARTER_BUILDER_CHANGES_2026-10-27.md|f2d729df0937234387258dce044a96e4812d9a0e
+  docs/Adventure/Campaign/STARTER_LAND_PICKER_CHANGELOG_2026-10-27.md|becfd65b0c44c5d22bc7020801b204159714d9d9
   docs/Adventure/Campaign/ai_flagged_cards.html|6e061986e821a5eeb6278e7d95153773b869beff
   docs/Adventure/Campaign/archive/T1_commanders_under_5_support.md|0faab2a4e8d53d7e451d090948791045f2086d13
   docs/Adventure/Campaign/archive/T1_eligible_nonbasic_card_categories.md|28ca5f2ad368f4c87cf80569d067ab323c07fc10
   docs/Adventure/Campaign/archive/T1_most_used_ability_cards.md|4b0ddba9249bf1604580282fa089bc71397f0cea
   docs/Adventure/Campaign/deck_balance_report.html|2cc2bb49aabac9fd6a1ac81d804b4606aa962088
-  forge-gui/res/adventure/Concordia/|db38bc66c3b744b08514bfb2c5f8e920e9e23a46
+  forge-gui/res/adventure/Concordia/|85977c47e8db671d7a3368d55e9845659b92d3b5
   tools/agents/ACTION_PLAN_TAG_DECK.md|ba594968fb37295ceb9ea40d0f3fcb58bd2a1102
   tools/agents/AGENT_KNOWLEDGE.md|bcde353c1ff1218ecf914bfbf3a590dae67f30a2
   tools/agents/CONTEXT.md|3c17d0ba0dc4cd1566cf13a2c7a4f9fd93dd265b
   tools/agents/EFFICIENCY_UPGRADES_2026-10-23.md|1026dfb4e0f3ebd0811417d26e3226005ce2557b
-  tools/agents/HANDOVER.md|50241dfac03e62544cc8314f2998021f717d0c8c
-  tools/agents/INDEX.md|50485a593c5fb7eca59827910ccff8f819d4f1e4
+  tools/agents/HANDOVER.md|199f0b20b757538ba6ff69048275f14ef5661897
+  tools/agents/INDEX.md|8c83081d060d38f346f3447292caeae77f5b22e2
   tools/agents/MAIN_SESSION_BRIEF.md|98200a71b3556e47aa7e1963548c71b8ec3b615e
+  tools/agents/MAIN_SESSION_MANUAL.toon|ad37cc6819e823f7b2f8cd146f226299c0e37f75
   tools/agents/MEETING_FEEDBACK.md|8f84b908040c33e56410184a6187e6483959fb00
   tools/agents/REGEN_REPORT.md|c55a175df7a0f6f74eaa00a8171ec33d0342220a
   tools/agents/STARTER_BUILDER_PLAN.md|2b4847f7aaa5093efc8ea78b9814a66e48ec7271
@@ -47,19 +51,20 @@ entries[78|]{path|hash}:
   tools/agents/TOOLBOX.md|f29329cbf3d0b351ae047da7cd696bb46ba28570
   tools/agents/VISION.md|d414750317131aac76358f356cc8682f040431b6
   tools/agents/archive/HANDOVER_2026-10-24_to_26.md|366e7a32e6752567f01a6052459114e960afd821
+  tools/agents/archive/HANDOVER_2026-10-26_end_of_session.md|cdcd6094a9b5864b746f1fc15281b8643a4e4925
   tools/agents/archive/HANDOVER_2026-10-26_previous.md|cd602ac091dd449801777d1b2124e80e6c4036f4
   tools/agents/archive/MEETING_FEEDBACK_full_conversation_2026-10-24.md|0a59584ad474ff6ee190262fa1be091b158fb750
   tools/agents/clone_verify.py|c6933785be7b8268ac12933e1637e52c129f4288
   tools/agents/docpush.py|804c413da7b0db539b4d496cd3d7c42bbff06838
   tools/agents/ensure_refs.py|c5da8c08dd36370e31d4e341fd9a7898cb45edb0
-  tools/agents/human_logic.toon|0d465fb5b89543d0657fa35e6620ad820486a367
+  tools/agents/human_logic.toon|ddf29db7c1f61cca643c8a65f7ce2d74c7e8eef0
   tools/agents/logs/LOG_INDEX.toon|72a1e49cd4a28f9d7ff1be15a3d2d449efeebbde
-  tools/agents/logs/guard-runs.toon|c44d166947ca7ee59abe002cd4a82abaf0648acd
-  tools/agents/logs/log-code-analyses.toon|ae03c4c7f68e820f393ae83226cf907b50f4e5cd
+  tools/agents/logs/guard-runs.toon|5fac6a0cda9a7934c5b466eceebfd284903f560a
+  tools/agents/logs/log-code-analyses.toon|21bf4922fe43b5ffe03be323f6253d13025954a6
   tools/agents/logs/log-efficiency-analyses.toon|f99a40fc19f8aa8001cf1022b0fb542a311a972f
-  tools/agents/logs/log-patchnotes.toon|8e198bc198be541847e7627c9b7fdcc327474af1
+  tools/agents/logs/log-patchnotes.toon|ee905fdcba23352ca687b36d3941c2a95f106da0
   tools/agents/logs/log-tag-analyses.toon|d3a5fd4bc04ef1f34ed3959edd351eaa613a81f9
-  tools/agents/logs/power-scorer-tests.toon|4f0c6ee2c6a95bde949e6280bfa757bb780a9ead
+  tools/agents/logs/power-scorer-tests.toon|e105f025b6680c73238650226ba357f27aa6f04d
   tools/agents/logs/results-reader-runs.toon|573f3bc6dedaa50150e141763ff9eb983a324c45
   tools/agents/logs/strategy-source-texts.toon|e09668bf36131518e01b942fcf890f626533f2f3
   tools/agents/logs/strategy-sources.toon|85d49d121bc364f6df57487ba411a516dd981c36
@@ -67,7 +72,7 @@ entries[78|]{path|hash}:
   tools/agents/lookup.py|be8046b22768a971d901be02f71efaa1df13ea8c
   tools/agents/projects/agent_tool_test.toon|efde373ac3e3d421f8a3fe8cc4c4409c4574151e
   tools/agents/projects/claude2_agents.md|3a5d00568c1257584b09f5e69a428b1f0db4128e
-  tools/agents/reference/ARCHETYPES.toon|7329475c2ae46a2946eb37da728c596a6c2d68ea
+  tools/agents/reference/ARCHETYPES.toon|6c09282b291b3d01cc552f89218cc5610e2d1a17
   tools/agents/reference/CR_COMPACT.txt|fb0c388a9c4341bfd0be9a5991f05a20207a8a92
   tools/agents/reference/CR_GAME_RULES.txt|dadc612a2b5d1b81d9bd2a564a4a60088c496d91
   tools/agents/reference/CR_INDEX.txt|4efc0c70eecf7e26a70b1c2ab1484ff9999077e4
@@ -79,4 +84,4 @@ entries[78|]{path|hash}:
   tools/agents/reference/deck_building_for_readers.toon|4d8280d3f915ab4fbdef0b43c92c2faee16e26cc
   tools/agents/sync_check.py|a0ce7a0085defd7aefc910ca554942074f56ca05
   tools/agents/toolbox.py|94d15352766cec09ddf99cecba6f6e598ca91372
-  tools/concordia/|68742914951268b754256b38f110c70667e1d3cc
+  tools/concordia/|cd377de424435ff5014c0c319b66a5c5eb69497b
