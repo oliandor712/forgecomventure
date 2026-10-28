@@ -30,6 +30,7 @@ Say if any should be changed; unmarked means accepted with the family.
 | `from_zone` | from_zone:graveyard (50); from_zone:library (16); from_zone:exile (7); from_zone:hand (3) |
 | `to_zone` | to_zone:hand (37); to_zone:exile (5); to_zone:battlefield (3); to_zone:library (2) |
 | `target_type` | target_type:wizard (1); target_type:golem (1); target_type:horse (1); target_type:ally (1) |
+| `trigger` | trigger:counter_added (1); trigger:life_loss (1); trigger:damage_dealt (1); trigger:attackerblocked (1) |
 | `target_scope` | target_scope:each_opponent (23); target_scope:each_player (2); target_scope:each_other_player (1) |
 | `grant_kw` | grant_kw:menace (2); grant_kw:annihilator (1); grant_kw:infect (1) |
 | `sacrifice_type` | sacrifice_type:creature_planeswalker (1); sacrifice_type:enchantment (1); sacrifice_type:land (1) |
@@ -45,7 +46,6 @@ Say if any should be changed; unmarked means accepted with the family.
 | `impulse_draw_count` | impulse_draw_count:4 (1); impulse_draw_count:3 (1) |
 | `forge_line` | forge_line:typecycling (3); forge_line:etbcounter (1) |
 | `cost_reduce_amount` | cost_reduce_amount:1 (9); cost_reduce_amount:2 (2) |
-| `trigger` | trigger:life_loss (1); trigger:attackerblocked (1) |
 | `unless_cost_amount` | unless_cost_amount:3 (3); unless_cost_amount:2 (3) |
 | `limit` | limit:once_per_turn (5) |
 | `cost_exile_target` | cost_exile_target:creature (1) |
