@@ -4,12 +4,12 @@
 
 pipeline[8|]{stage|what happens|entry script|reads|writes}:
 1 card data|Scryfall bulk + Forge card scripts are the only sources|scryfall_bulk.py|Scryfall API, forge-gui/res/cardsfolder|deckgen/scryfall/cards.json
-2 tag run|card script -> ability parse -> card-level role tags (ability_tags.py) + ability-level group tags (tag_extra.py) -> variant post-pass (tag_variant.py) -> verify (tag_verify.py) -> twins (tag_twins.py); tag_run.py drives, tag_reports.py writes reports|tag_run.py starter / card "Name"|card scripts, tag_extra DOC|tags/STARTER_TAGS.toon, TAG_REFERENCE.md, TAG_LEGEND.md, ABILITY_TWINS.json, NEW_TAGS_FOR_APPROVAL.md, REDUNDANCY_CHECK.md
+2 tag run|card script -> ability parse -> card-level role tags (ability_tags.py) + ability-level group tags (tag_extra.py) -> variant post-pass (tag_variant.py) -> verify (tag_verify.py) -> twins (tag_twins.py); tag_run.py drives, tag_reports.py writes reports|tag_run.py run / card "Name"|card scripts, tag_extra DOC|tags/CARD_TAGS.toon (whole pool), TAG_REFERENCE.md, TAG_LEGEND.md, ABILITY_TWINS.json, NEW_TAGS_FOR_APPROVAL.md, REDUNDANCY_CHECK.md
 3 pool|every Commander-legal AI-playable card with identity, tags, roles, power, popularity|pool.py (about 25 s)|tag_run, text_tags, power_scorer, EDHREC/staples inputs|deckgen/pool.pkl (not in git), pool_meta.json
 4 power|deck and card power from fitted weights|power_scorer.py (weights from power_fit/fit.py)|pool.pkl, tier_rules.py, archetype_rules.py, power_fit/weights.json|score/PASS/FAIL per deck
 5 build|tier decks 1..5|build.py (decks.json -> decks/tier1..3), gen_mono.py (mono decks), t1_plan.py (tier 1 fresh plan), variants.py|pool.pkl, policy_tags, themes, synergy, strategy_fit, consistency|forge-gui/res/adventure/Concordia/decks/*, staging_t1_fresh/
 6 starters|commander-first player starters (5 colours, Normal + variants)|starter_build.py (steps: commander pick, build, glance review-export/review-apply, regen), starter_tune.py|pool.pkl, commander_support.py, COMMANDER_SUPPORT.toon|Concordia/staging_starters/*.dck + .picks.json (not live)
-7 glance|can a reader that sees only tags match one that sees Oracle text|tagcheck/glance.py|STARTER_TAGS, mtg2llm render, two reader subagents (only on the user's ask)|tagcheck/runs, tags/MTG2LLM_GAPS.toon
+7 glance|can a reader that sees only tags match one that sees Oracle text|tagcheck/glance.py|fresh records of starter-deck cards, mtg2llm render, two reader subagents (only on the user's ask)|tagcheck/runs, tags/MTG2LLM_GAPS.toon
 8 balance|PC vs NPC win rates at equal life|suite/sim_suite.py (standard), balance_lab/run_batch.py|sim/*.java via sim/run.sh, decks|balance_lab/records*.csv (BIG), REPORT.md
 
 module_groups[14|]{path|function|connects to|notes}:
@@ -18,7 +18,7 @@ tools/concordia/deckgen/tag_extra.py|ability-level tags (human_logic H56); DOC d
 tools/concordia/deckgen/tag_reports.py|reports + approval doc generator (NEW_TAGS_FOR_APPROVAL.md, TAG_REFERENCE.md)|tag_run, tag_extra, tag_twins, tag_verify|generated outputs: regenerate, never hand-merge
 tools/concordia/deckgen/tagcheck/mtg2llm.py|tags -> text renderer (mined rules, compose(), HAND_UNIT from hand_units.json)|tag_run, tag_hash, run_memory, common|pattern() keys are sorted tag families with numbers as N; a new tag re-keys mined rules and hand lines; hand_units.json keys are global, never key a line on a generic fragment; gaps in tags/MTG2LLM_GAPS.toon (apply open rows first)
 tools/concordia/deckgen/tagcheck/reverse_check.py + glance.py + score.py|blind reader export/compare and the glance test|cards, mtg2llm, tag_extra, run_log, reader_metric|readers are subagents: only on the user's ask, check the rate limit first
-tools/concordia/deckgen/tagcheck/guards.py|tag guards and links (apply_tags runs inside the starter run)|cards|
+tools/concordia/deckgen/tagcheck/guards.py|rule guard, gap file, tag audit (the tag guard was removed 2026-10-28: pool tags are the one record)|cards|
 tools/concordia/deckgen/pool.py|builds pool.pkl|tag_run, text_tags, power_scorer (circular use with power_scorer reads pool.pkl)|pool.py --check / --if-stale / --cat
 tools/concordia/power_scorer.py|deck rating vs encounter tiers; edh model from power_fit/weights.json|archetype_rules, tier_rules, pool, tag_version; used by 10 modules|rule H-numbers in human_logic override its metric
 tools/concordia/tier_rules.py + archetype_rules.py|the one source of truth for tier and archetype rules|used by build, power_scorer, build_queue, starter_build|do not duplicate numbers elsewhere
@@ -52,7 +52,7 @@ forge-gui/res/adventure/Concordia/world/*.json, maps/, ui/, config.json|world, e
 docs/Adventure/Campaign/*|design docs (DESIGN, OVERWORLD, ENCOUNTER_TIERS, IDEAS_BACKLOG nothing approved, AI_CHANGES_APPROVAL ticked only by the user)|documents: revise in place, docpush
 
 recipes[9|]{task|steps}:
-After any tag change|python tools/concordia/deckgen/tag_run.py starter; python tools/concordia/deckgen/pool.py; python tools/concordia/deckgen/tagcheck/mtg2llm.py (gap check); update log-code-analyses.toon row
+After any tag change|python tools/concordia/deckgen/pool.py; python tools/concordia/deckgen/tag_run.py run; python tools/concordia/deckgen/tagcheck/mtg2llm.py (gap check); update log-code-analyses.toon row
 Add a tag family|code in tag_extra.py + DOC row; constants in tag_reports.py; list as PROPOSED in NEW_TAGS_FOR_APPROVAL.md; implement only after the user marks it; move to APPROVED_DECISION; re-run gap check
 Clear mtg2llm gaps|apply open rows of tags/MTG2LLM_GAPS.toon; hand lines go in tagcheck/hand_units.json (pattern -> Oracle-accurate line); check new tags re-keyed patterns
 Rebuild starters|starter_build.py steps (commander, build, review-export, review-apply); output staging_starters; no live copy

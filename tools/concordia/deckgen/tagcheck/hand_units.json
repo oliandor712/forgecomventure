@@ -267,5 +267,6 @@
  "Mask of Memory|discard_count:N trigger:combat_damage": "Whenever equipped creature deals combat damage to a player, you may draw two cards. If you do, discard a card.",
  "Scorch Spitter|damage damage_amount:N trigger:attacks": "Whenever this creature attacks, it deals 1 damage to the player or planeswalker it's attacking.",
  "Founding of Omashu|draw_count:N saga_chapter": "II — You may discard a card. If you do, draw a card.",
- "affected_player:target_controller lifegain_amount:x remove:exile target_count:one target_type:creature x_is:target_power": "Exile target creature. Its controller gains life equal to its power."
+ "affected_player:target_controller lifegain_amount:x remove:exile target_count:one target_type:creature x_is:target_power": "Exile target creature. Its controller gains life equal to its power.",
+ "affected_player:target_controller investigate remove:destroy target_count:one target_type:creature target_type:planeswalker": "Destroy target creature or planeswalker. Its controller investigates."
 }

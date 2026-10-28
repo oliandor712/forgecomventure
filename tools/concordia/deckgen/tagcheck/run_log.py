@@ -35,12 +35,8 @@ def stamp():
     root = os.path.abspath(os.path.join(HERE, "..", "..", "..", ".."))
     try: rev = subprocess.check_output(["git", "-C", root, "rev-parse", "--short", "HEAD"], text=True).strip()
     except Exception: rev = "?"
-    tf = os.path.join(root, "tools/concordia/deckgen/tags/STARTER_TAGS.toon")
-    h = "?"
-    if os.path.exists(tf):
-        with open(tf, "rb") as fh:
-            h = hashlib.sha1(fh.read().replace(b"\r", b"")).hexdigest()[:10]
-    return "git %s, STARTER_TAGS.toon sha1 %s, TAG_VARIANT=%s" % (rev, h, os.environ.get("TAG_VARIANT", "on"))
+    import tag_version
+    return "git %s, tagger %s, TAG_VARIANT=%s" % (rev, tag_version.stamp(), os.environ.get("TAG_VARIANT", "on"))
 
 
 def _summary(wd):

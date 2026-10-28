@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """tag_twins: find already-tagged ability lines that match an untagged line (proposal 1, 2026-10-23).
 
-Index: every non-keyword Oracle line of every card in tags/STARTER_TAGS.toon, paired with its tag group (c1 plus c1.2, c1.3 ...).
+Index: every non-keyword Oracle line of every card in tags/CARD_TAGS.toon, paired with its tag group (c1 plus c1.2, c1.3 ...).
 Lookup: for a card or a text, the closest indexed lines with a % similarity and their tags. A twin is a starting point for the
 tagger, never copied silently: check the differences, and `human_logic.toon` still beats a twin.
 
@@ -23,7 +23,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", "..", ".."))
 sys.path.insert(0, HERE)
 from common import card_files, is_eligible  # noqa: E402
-TOON = os.path.join(HERE, "tags", "STARTER_TAGS.toon")
+TOON = os.path.join(HERE, "tags", "CARD_TAGS.toon")
 OUT = os.path.join(HERE, "tags", "ABILITY_TWINS.json")
 
 

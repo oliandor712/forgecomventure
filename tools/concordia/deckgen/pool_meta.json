@@ -1,21 +1,21 @@
 {
- "built": "2026-10-27",
+ "built": "2026-10-28",
  "cards": 27699,
  "inputs": {
-  "scryfall/cards.json": 9389398,
+  "scryfall/cards.json": 9390617,
   "external/decks.json": 1645843,
   "spellbinder/signals.json": 162806
  },
  "fingerprint": {
-  "tags": "5b3bc0e7af",
+  "tags": "0c4900bc6e",
   "scripts": [
    34091,
-   1793140476
+   1793197153
   ],
   "code": "18ba9cf2cc",
   "staples": "c450e51d0e",
   "inputs": {
-   "scryfall/cards.json": 9389398,
+   "scryfall/cards.json": 9390617,
    "external/decks.json": 1645843,
    "spellbinder/signals.json": 162806
   },

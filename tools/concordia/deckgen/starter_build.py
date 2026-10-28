@@ -3,7 +3,7 @@
 
 Step 0  commanders  pick the commander: mono-colour legend that passes tier 2 commander rules, ranked by how well its own
                     ability (commander_support profile) and strategies.json archetypes fit, and by how many pool cards support it.
-Step 1  draft       build the 99 around the commander: power target 27 (H19, card power scale), commander support (H13/H17),
+Step 1  draft       build the 99 around the commander: power target 27 (H19, card power scale), commander support (H13),
                     strategy play-line roles (strategies.json via strategy_fit), niche penalty, tier 2 quotas/curve/caps, commons and
                     any rarity, creatures >= 15 (H11). Writes the deck to the staging folder plus <name>.picks.json (why each card).
 Step 2  review      glance review of every pick: `review-export` builds the glance batches (tag view + Oracle view) for the picks,
@@ -29,7 +29,8 @@ import archetype_rules as ar  # noqa: E402
 sys.path.insert(0, os.path.join(os.path.dirname(HERE), "strategies"))
 import strategy_fit as sf  # noqa: E402
 import consistency as CONS  # noqa: E402
-import synergy as SY  # noqa: E402     # general synergy rule (H17): support cards + token payoffs
+import synergy as SY  # noqa: E402     # synergy helpers (H17 token plan no longer used here)
+import themes as TH  # noqa: E402     # H109: theme families (members, payoffs, guard)
 dt, data, pool = B.dt, B.data, B.pool
 STAGE = os.path.join(B.RES, 'adventure', 'Concordia', 'staging_starters')
 TIER = 2
@@ -40,21 +41,23 @@ STAPLE_BONUS_ON = os.environ.get('STARTER_STAPLE_BONUS') == '1'
 TARGET = 27.0           # H19: deck power (EDHREC card-power scale, tier_table.json tier 2 target)
 SUPPORT_W, FIT_W, FIT_CAP = 0.5, 3.0, 4   # user 2026-10-26: commander support counts less, overall archetype fit just as much; 2026-10-26 again: less still
 SUPPORT_CAP = 14       # user 2026-10-26: do not copy the commander's tags across the whole deck: only the first 14 supporters get the bonus
-MAKER_CAP = SY.MAKER_CAP          # cards (besides the commander) that make the commander's non-creature token (Treasure ...)
 REFINE, REFINE_SWEEPS, REFINE_MARGIN = True, 3, 0.3     # second run over the non-core picks (user 2026-10-26)
 SIZE_W = 1.0       # creature size preference (draft --size cheap|big): bonus per creature by mana value, 0 to 1
 SIZE_CURVE = {'cheap': lambda mv: 1.0 if mv <= 2 else 0.5 if mv == 3 else 0.0, 'big': lambda mv: 1.0 if mv >= 5 else 0.5 if mv == 4 else 0.0}
 SETUP_W = 1.5     # token makers/fodder for creature-token commanders, until SETUP_MIN
-PAYOFF_W, PAYOFF_MIN = 2.5, SY.PAYOFF_MIN   # user 2026-10-26: a commander that makes Treasure needs payoffs and mana sinks; at least PAYOFF_MIN of them
 THEME_MIN = 5         # user 2026-10-26: a tribal/theme card is fine when >= THEME_MIN other cards (members or makers) of that theme are already in the deck
 CORE_N = 12            # user 2026-10-26: highest-power on-plan cards are picked first, themes are then judged against them
 THEME_PEN = 3.0       # user 2026-10-26: prefer generic cards: every theme/tribe word a card names that the deck does not run costs this much, even a single mention
 CL_BASE, CL_PER = 4, 2    # colourless is the sixth colour: non-ramp colourless spells allowed = CL_BASE + CL_PER * colourless sources (rocks + colourless-producing lands in the deck)
 CL_LANDS = 4              # colourless-producing nonbasic lands assumed when sizing (user 2026-10-26)
-NONCREATURE_TOK = SY.NONCREATURE_TOK
 THEME_WORDS = ['Food', 'Clue', 'Blood', 'Gold', 'Junk', 'Powerstone', 'energy', 'poison', 'proliferate', 'Dungeon', 'initiative', 'monarch', 'Saproling', 'Servo', 'Thopter']
 RARITY = {'C': 99, 'U': 99, 'R': 99, 'M': 99}   # no rarity cap (user 2026-10-26; was commons and uncommons only)
-UTILITY_ROLES = {'removal', 'draw', 'ramp', 'wipe', 'fixing', 'counter', 'protection'}
+# canonical names are the strategy role names the readers write; the synonyms fold near-miss spellings onto them
+ROLE_SYN = {'removal': 'remove', 'wipe': 'sweeper', 'counter': 'denial', 'fixing': 'mana'}
+UTILITY_ROLES = {'remove', 'sweeper', 'interaction', 'denial', 'edict', 'draw', 'cantrip', 'card_adv', 'ramp', 'mana', 'mana_land', 'ramp_land', 'fetch', 'tutor', 'protection'}
+def is_utility(roles): return bool(UTILITY_ROLES & {ROLE_SYN.get(r, r) for r in roles})
+# card tags (pool 'tags') are a separate 12-word vocabulary: creature removal draw ramp land nonbasic wipe tutor counter extra_turn fast basic
+UTILITY_TAGS = {'removal', 'draw', 'ramp', 'wipe', 'counter'}
 COLORS = 'WUBRG'
 
 
@@ -114,11 +117,6 @@ def heavy_theme(p, allowed):
 def maker_types(p): return {t.split(':', 1)[1] for t in p['ftags'] if t.startswith('token_type:')}
 
 
-def payoff_kind(p, pl):
-    """'pay' / 'sink' / '': does the card use the commander's tokens (synergy.py: any token kind; data from strategies.json tokens, sacrifice, aristocrats roles)."""
-    return SY.payoff_kind(p, pl, _body(p))
-
-
 def archetypes_for(p, colour):
     """strategies.json ids ranked by roles the commander's ftags fill; only archetypes that allow the colour (mono entry or a pair/trio holding it)."""
     S = sf.load(); out = []
@@ -137,7 +135,7 @@ def cmd_commanders(a):
         if set(data['cards'][k]['flags']) & {'random', 'all'}: continue
         if cp.is_partner(p['oracle']): continue     # H37: partner pairs are not starters
         prof = cp.profile(p['oracle'], p['types'], p['name'])
-        if not prof: continue                       # H17: a commander must have an ability the deck can use
+        if not re.sub(r'\([^)]*\)', '', p['oracle']).strip(): continue      # user 2026-10-28: only a commander with no ability text (reminder text stripped) is excluded
         arch = archetypes_for(p, a.color)
         rows.append(dict(name=p['name'], cmc=p['cmc'], pop=p['pop'], profile=prof, archetypes=arch[:4], fit=len(arch)))
     rows.sort(key=lambda r: (-min(len(r['archetypes']), 3), -r['pop']))
@@ -152,11 +150,6 @@ def cmd_commanders(a):
     path = os.path.join(STAGE, 'commanders_%s.json' % a.color)
     json.dump(rows, open(path, 'w', encoding='utf-8'), indent=1)
     for r in rows: print('%-34s mv%s pop%-3s support %-4d arch %s  tests %s' % (r['name'], r['cmc'], r['pop'], r['support_n'], ','.join(r['archetypes'][:3]), ','.join(r['profile'])))
-    sgp = os.path.join(STAGE, a.name + '.signals.json')
-    if SCORERS and os.path.exists(sgp):
-        sg = json.load(open(sgp, encoding='utf-8')); low = {c['name'] for c in res['cards'].values() if c['oracle']['power'] <= 2}; out['low_power'] = sorted(low)
-        print('  BAN? (scorer-flagged; * = Oracle reader power <= 2 too):', '; '.join(('*' if n in low else '') + n for n in sg['bans']) or 'none')
-        print('  SWITCH-IN? (ArcMind/EDHREC staples missing):', '; '.join(sg['switch_ins']) or sg.get('switch_ins_note', 'none')); out['signals'] = sg; json.dump(out, open(path, 'w', encoding='utf-8'), indent=1)
     print('->', path)
 
 
@@ -170,13 +163,11 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
     for c in ident: traits['landtype:' + B.BASIC_TYPE[c]] = (spec['lands'] - 6) // max(1, len(ident))
     traits['lands'] = traits['Land'] = spec['lands']
     why = {}
-    tplan = SY.plan(cmd['ftags']); kinds = tplan.get('kinds', set())          # non-creature tokens the commander makes: the deck needs uses for them, not a pile of makers
     cmd_themes, _ = theme_mentions(cmd)
     allowed = set(cmd_themes) | {w for w in cmd['types'].split() if w in subtypes()}
     tgt = [TARGET]      # per-card power aim; lowered after the core so the deck average still lands on TARGET
-    nmaker = [0]; nsup = [0]; ncl = [0]; npay = [0]; nset = [0]
+    nsup = [0]; ncl = [0]
 
-    def pay_cap(): return min(SY.PAYOFF_MAX, max(SY.PAYOFF_MIN, nset[0] + SY.SETUP_GAP))   # payoffs may not outrun setup by more than SETUP_GAP (H17)
 
     def is_colorless(p): return not p['id'] and 'ramp' not in p['tags'] and 'C' in data['cards'].get(p['name'].lower(), {}).get('mc', '').split()   # H78: the colourless category is cards with a {C} pip, not generic-cost artifacts
     def cl_sources(): return CL_LANDS + sum(1 for p, _ in chosen if not p['id'] and 'ramp' in p['tags'])
@@ -187,17 +178,13 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
         sup = supports_cmd(prof, p)
         if sup and nsup[0] < SUPPORT_CAP: s += SUPPORT_W
         s -= THEME_PEN * len(off_themes(p))
-        pk = payoff_kind(p, tplan) if tplan else ''
-        if pk and npay[0] < pay_cap(): s += PAYOFF_W   # no bonus past the cap so payoffs do not crowd the deck
-        if tplan and SY.setup_kind(p, tplan) and nset[0] < SY.SETUP_MAX: s += SETUP_W * (1.5 if nset[0] < SY.SETUP_MIN else 0.5)
-        why.setdefault(p['name'], {})['payoff'] = pk
         fit = min(FIT_CAP, sf.fit(p['ftags'], strategy)) if strategy else 0
         s += FIT_W * fit - B.NICHE_PEN[TIER] * min(2, sf.niche_penalty(p['ftags'], strategy) if strategy else 0)
         if size and 'Creature' in p['types'].split():     # creature size preference (user 2026-10-27): red cheap, green big
             s += SIZE_W * (SIZE_CURVE[size](p['cmc']))
         if STAPLE_BONUS_ON and p.get('cat') == 'staple': s += B.STAPLE_PUSH_BONUS[TIER]
         s += B.PRECON_BONUS.get(TIER, 0) * min(1.0, p.get('precon', 0.0) / 0.25)
-        why[p['name']].update(power=pw, supports=bool(sup), fit=fit)
+        why.setdefault(p['name'], {}).update(power=pw, supports=bool(sup), fit=fit)
         return s
     cands = [p for k, p in pool.items() if k != cmd['name'].lower() and k not in banned and p['id'] <= ident and 'Land' not in p['types'].split()
              and B.extra_ok(p, TIER) and B.mech_ok(p, TIER) and p['pop'] >= 3
@@ -210,6 +197,8 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
         ty = set(p['types'].split()); mk = maker_types(p)
         return {w for w in subtypes() | set(THEME_WORDS) if w in ty or w.lower() in mk}
     members.update(members_of(cmd))
+    fam_open = TH.open_families(cands, cmd)       # H109: families with enough payoffs in the colour-legal pool (3, or 2 plus a commander that makes it)
+    fam_mem = collections.Counter(TH.members_of(cmd))
     _om = {}
 
     def off_themes(p):
@@ -219,11 +208,20 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
     def theme_ok(p):    # user 2026-10-26: no tribal/theme cards the deck does not run; allowed once enough other members are in
         hv = _hv.get(p['name'])
         if hv is None: hv = _hv[p['name']] = heavy_theme(p, allowed)
-        return all(members[w] >= THEME_MIN for w in hv)
+        if not all(members[w] >= THEME_MIN for w in hv): return False
+        if supports_cmd(prof, p): return True
+        own = TH.members_of(p)
+        return all(f in own or (f in fam_open and fam_mem[f] >= TH.PAYOFF_MEMBERS) for f in TH.payoffs_of(p))   # H109: a payoff waits for its members
     added = {}; chosen = []; rcount = collections.Counter(); roles = collections.Counter(); curve = collections.Counter(); nc = [0]; nwatch = [0]; npow = [0, 0]
     nonland = 99 - spec['lands']
 
+    def typed_ok(p):
+        """H99, extended to every tagged card: a card restricted_to a creature type is picked only in a deck of that type (the commander's, an allowed tribe or a profile tribe)"""
+        need = {t.split(':', 1)[1] for t in p['ftags'] if t.startswith('restricted_to:')}
+        return not need or bool(need & ({w.lower() for w in allowed} | {t.split(':', 1)[1].lower() for t in prof if t.startswith('tribe:')}))
+
     def can_add(p):
+        if not typed_ok(p): return None
         for role, tg in B.ROLE.items():
             if p['tags'] & tg and roles[role] + 1 > spec['cap'][role]: return None
         if curve[B.bucket(p['cmc'])] >= spec['curve'][B.bucket(p['cmc'])]: return None
@@ -232,13 +230,7 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
         if pwr >= 50 and npow[0] >= spec.get('p50', 99): return None
         if pwr >= 70 and npow[1] >= spec.get('p70', 99): return None
         if not theme_ok(p): return None
-        if kinds & maker_types(p) and nmaker[0] >= MAKER_CAP: return None
-        if tplan and npay[0] >= pay_cap() and payoff_kind(p, tplan): return None   # payoffs are a 5-10 range tied to setup (H17), even for cards that also support the commander (the support rule only needs 5)
-        if tplan and nset[0] >= SY.SETUP_MAX and SY.setup_kind(p, tplan): return None
         if is_colorless(p) and ncl[0] >= CL_BASE + CL_PER * cl_sources(): return None
-        if (mc := data['cards'].get(p['name'].lower(), {}).get('mc', '')).count('C'):   # H102: colourless sized as a colour, as power_scorer.check_tier sizes coloured sources: sources / lands >= 0.8 * pip share
-            cp = cl_pip_n() + mc.count('C'); allp = cp + sum(data['cards'][q['name'].lower()]['mc'].count(c) + 0 for q, _ in chosen + [(cmd, 'C')] if q['name'].lower() in data['cards'] for c in 'WUBRG') + sum(mc.count(c) for c in 'WUBRG')
-            if cl_sources() < 0.8 * (cp / allp) * 37: return None
         return B.pick_rarity(p, TIER, rcount, spec)
 
     def add(p, r):
@@ -249,12 +241,9 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
         if p.get('cat') == 'watch': nwatch[0] += 1
         pwr = p['power'].get(p['minr'], 0)
         npow[0] += pwr >= 50; npow[1] += pwr >= 70
-        if kinds & maker_types(p): nmaker[0] += 1
-        members.update(members_of(p))
+        members.update(members_of(p)); fam_mem.update(TH.members_of(p))
         if is_colorless(p): ncl[0] += 1
         if supports_cmd(prof, p): nsup[0] += 1
-        if why.get(p['name'], {}).get('payoff'): npay[0] += 1
-        if tplan and SY.setup_kind(p, tplan): nset[0] += 1
         tr = B.card_traits(p, traits); added[p['name']] = tr; traits.update(tr); cands.remove(p)
 
     def remove(p, r):      # exact inverse of add(): every counter the caps and quotas read goes back, so refine() checks the same rules as the first pass
@@ -265,12 +254,9 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
         if p.get('cat') == 'watch': nwatch[0] -= 1
         pwr = p['power'].get(p['minr'], 0)
         npow[0] -= pwr >= 50; npow[1] -= pwr >= 70
-        if kinds & maker_types(p): nmaker[0] -= 1
-        members.subtract(members_of(p))
+        members.subtract(members_of(p)); fam_mem.subtract(TH.members_of(p))
         if is_colorless(p): ncl[0] -= 1
         if supports_cmd(prof, p): nsup[0] -= 1
-        if why.get(p['name'], {}).get('payoff'): npay[0] -= 1
-        if tplan and SY.setup_kind(p, tplan): nset[0] -= 1
         traits.subtract(added.pop(p['name'])); cands.append(p)
 
     def best(filt):
@@ -304,7 +290,7 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
         cp = cl_pip_n(); col = sum(data['cards'][q['name'].lower()]['mc'].count(c) for q, _ in chosen + [(cmd, 'C')] if q['name'].lower() in data['cards'] for c in 'WUBRG')
         big = max([data['cards'][q['name'].lower()]['mc'].count('C') for q, _ in chosen + [(cmd, 'C')] if q['name'].lower() in data['cards']] or [0])
         rocks = sum(1 for q, _ in chosen if not q['id'] and 'ramp' in q['tags'])
-        return max(round(37 * cp / max(1, cp + col)), big) - rocks if cp else 0
+        return max(round(spec['lands'] * cp / max(1, cp + col)), big) - rocks if cp else 0
     def land_score(p):
         """User 2026-10-27 (H90/H91), nonbasic land priority: 1 mana coverage (makes the deck's colours; 2+ colour decks only), 2 utility (works with the commander or the declared strategy),
         3 no 'enters tapped', 4 no life payment, 5 no sacrifice of another permanent (fine for a land that is tempo+ or fetches). 1-2 decide whether a land is picked at all and rank it
@@ -318,9 +304,8 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
         neg = 1 if 'tempo:negative' in ft else 0   # setup cards and lands that hand the opponent a token (tagged in tag_extra.py)
         ramp_n = sum(1 for q, _ in chosen if q['tags'] & {'ramp', 'fast'})
         paid = 'setup_card:mana' not in ft or ramp_n >= SETUP_MANA_RAMP   # H98: a setup card that needs big mana counts as utility only once the deck has 10 ramp pieces (user 2026-10-27)
-        need = {t.split(':', 1)[1] for t in ft if t.startswith('restricted_to:')}
-        typed = not need or bool(need & ({w.lower() for w in allowed} | {t.split(':', 1)[1].lower() for t in prof if t.startswith('tribe:')}))   # H99: a land restricted to a creature type has utility only in a deck of that type
-        util = 0 if neg or not paid or not typed else 3 * sup
+        weak = len(ident) < 2 and bool(strategy) and fit < 1   # mono-colour deck (user 2026-10-27, "remedy"): coverage cannot justify the pick, so a utility land also needs fit >= 1, the bar the core cards use (line 363)
+        util = 0 if neg or not paid or weak or not typed_ok(p) else 3 * sup
         tapped = 1 if 'enters_tapped' in ft else 0.5 if 'enters_tapped_conditional' in ft else 0
         life = 1 if 'cost:life' in ft or re.search(r'deals? \d+ damage to you|pay \d+ life', p.get('oracle', '')) else 0
         sac_other = 1 if 'cost:sacrifice' in ft and 'cost_sacrifice_target:self' not in ft and not ({'tempo:+1', 'tutor_dest:battlefield', 'tutor_dest:battlefield_tapped'} & ft) else 0
@@ -346,18 +331,11 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
         return [(pool[n.lower()], 'U' if 'U' in pool[n.lower()]['best'] else 'C') for n in out]
     _n0 = list(npow); lands = pick_nonbasics(); npow[:] = _n0
     landpow = sum(max(p['power'].values()) for p, _ in lands); nlandest = len(lands)
-    # budget mana rocks first (as build.py does at tier 2), then role quotas, type quotas, creatures, fill
+    # core, then role quotas, type quotas, creatures, fill
     kept = []      # draft --keep: picks of an earlier draft that stay (user 2026-10-27: new commander, same 99 as far as it is legal)
     for kn in keep:
         p = pool.get(kn.lower())
         if p and p in cands and (r := can_add(p)): score(p, r); add(p, r); kept.append(p['name'])
-    nrock = 0; rocks = []
-    for rn, rb in sorted(B.ROCKS.items(), key=lambda kv: -kv[1]['decks']):
-        if nrock >= B.BUDGET_ROCKS[TIER]: break
-        p = pool.get(rn.lower())
-        if not p or p not in cands or not set(rb['colors']) <= ident: continue
-        r = can_add(p)
-        if r: add(p, r); nrock += 1; rocks.append(p)
     core_names = []
     core = sorted((p for p in cands if p['id'] and (sf.fit(p['ftags'], strategy) if strategy else 0) >= 1 or supports_cmd(prof, p)), key=lambda p: -(max(p['power'].values()) + min(FIT_CAP, sf.fit(p['ftags'], strategy) if strategy else 0)))
     for p in core:       # highest-power on-plan cards first; the rest of the deck is then built around them and the commander
@@ -370,14 +348,6 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
             b = best(lambda p: p['tags'] & B.ROLE[role])
             if not b: break
             add(b[1], b[2])
-    while tplan and nset[0] < SY.SETUP_MIN and len(chosen) < nonland:      # setup before payoffs, so the payoffs have bodies to work with
-        b = best(lambda p: bool(SY.setup_kind(p, tplan)))
-        if not b: break
-        add(b[1], b[2])
-    while tplan and npay[0] < PAYOFF_MIN and len(chosen) < nonland:
-        b = best(lambda p: bool(payoff_kind(p, tplan)))
-        if not b: break
-        add(b[1], b[2])
     keyset = []
     if strategy and CONS.target(TIER):   # H85: key engine pieces castable by turn 5, then tutors that reach them, until the chance to hold one by turn 5 meets the tier target
         arch = tuple(strategy)
@@ -393,7 +363,7 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
             b = best(lambda p: 'tutor' in p['tags'] and any(CONS.tutor_reaches(p, k) for k in keyset))
             if not b: break
             add(b[1], b[2])
-        print('  H85 keys: ' + '; '.join('%s (mv%d)' % (p['name'], p.get('mv', 0)) for p in keyset))
+        print('  H85 keys: ' + '; '.join('%s (mv%d)' % (p['name'], p['cmc']) for p in keyset))
         print('  H85 key cards %d, chance to hold one by turn %d %.0f%% (%.0f%% wanted), tutors reaching one %d' % (len(keyset), CONS.TURN, 100 * _cons()[2], 100 * CONS.target(TIER), _cons()[4]))
     for alts, n in spec['types'].items():
         while sum(1 for p, _ in chosen if any(x in p['types'].split() for x in alts.split('|'))) < n and len(chosen) < nonland:
@@ -417,9 +387,8 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
         g = [max(0, spec['quota'][role] - roles[role]) for role in spec['quota']]
         g += [max(0, n - sum(1 for p, _ in chosen if any(x in p['types'].split() for x in alts.split('|')))) for alts, n in spec['types'].items()]
         g += [max(0, spec['creatures'] - nc[0])]
-        if tplan: g += [max(0, PAYOFF_MIN - npay[0]), max(0, SY.SETUP_MIN - nset[0])]
         return g
-    locked = set(core_names) | {p['name'] for p in rocks} | set(kept) | {p['name'] for p in keyset}
+    locked = set(core_names) | set(kept) | {p['name'] for p in keyset}
     nswap = 0
     for sweep in range(REFINE_SWEEPS if REFINE else 0):     # second run: re-pick the filler now that later picks have filled the gaps
         changed = False
@@ -484,7 +453,7 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
     nsup = sum(1 for x in picks if x.get('supports'))
     if keep: print('  kept %d of %d earlier picks' % (sum(1 for x in picks if x['name'] in set(keep)), len(keep)))
     print('%s: commander %s | tests %s | power %.1f (target %.1f) | creatures %d | cards supporting the commander %d/%d' % (name, cmd['name'], ','.join(prof), r['power'], TARGET, r['creatures'], nsup, len(picks)))
-    print('  makers %d (cap %d) | payoffs/sinks %d | colourless spells %d | tribal/theme words allowed: %s | themes unlocked: %s' % (nmaker[0], MAKER_CAP, sum(1 for x in picks if x.get('payoff')), ncl[0], ','.join(sorted(allowed)) or '-', ','.join(sorted(w for w, n in members.items() if n >= THEME_MIN)) or '-'))
+    print('  colourless spells %d | tribal/theme words allowed: %s | themes unlocked: %s | families open: %s, with %d members: %s' % (ncl[0], ','.join(sorted(allowed)) or '-', ','.join(sorted(w for w, n in members.items() if n >= THEME_MIN)) or '-', ','.join(sorted(fam_open)) or '-', TH.PAYOFF_MEMBERS, ','.join(sorted(f for f in fam_open if fam_mem[f] >= TH.PAYOFF_MEMBERS)) or '-'))
     for lvl, msg in dt.check_tier(r, TIER):
         if lvl != 'PASS' and not msg.startswith('staples'): print(' ', lvl, msg)   # user 2026-10-27: no staples target in the starter builder (H89); tier_rules still holds it for the tier builds
     print('->', path)
@@ -568,7 +537,7 @@ VERDICTS = os.path.join(STAGE, 'verdicts.json')   # reader verdict cache, keyed 
 DECK_RULES = (
     'deck_rules (how this deck was built; judge cards by these, do not reject a card for following them): '
     '(1) Power aim is about 27 on the card-power scale, a mid-power deck; do not call solid playables weak. '
-    '(2) Budget staples are intentional: cheap mana rocks (about 2-3) and nonbasic lands (about 5, picked last) that many precons and Archidekt decks run, any rarity. '
+    '(2) Budget staples are intentional: nonbasic lands (about 5, picked last) that many precons and Archidekt decks run, any rarity; mana rocks compete on score like any card. '
     '(3) Commander support: at least 5 cards must work the commander ability itself; those are on plan even if they are off the declared archetypes. '
     '(4) A commander that makes tokens needs setup (token makers, fodder, generators; 7 to 14) and payoffs (sacrifice outlets, death triggers, anthems, doublers, go-wide finishers; 5 to 10, at most setup + 3); both are on plan. '
     '(5) Utility roles (ramp, card draw, removal, board wipes, recursion, protection) are quota cards and are on plan; only a card with no role, no archetype link and no commander link is a reject. '
@@ -685,6 +654,9 @@ def cmd_review_export(a):
     print(out); print('prompts saved to', pf, '(readers can be told: follow BATCH n in that file)')
 
 
+TAGFIT_ROLES = 2   # review-compare: a card is on plan when its pool tags hit this many roles of ONE declared archetype
+
+
 def cmd_review_compare(a):
     rc = os.path.join(HERE, 'tagcheck', 'reverse_check.py')
     subprocess.run([sys.executable, rc, 'glance-compare', '--run', run_id(a.name)], check=True, stdout=subprocess.DEVNULL)
@@ -692,18 +664,22 @@ def cmd_review_compare(a):
     from common import workdir
     res = json.load(open(os.path.join(workdir(run_id(a.name)), 'glance_results.json'), encoding='utf-8'))
     pk = _picks(a.name); strat = set(pk['strategy']); sup = {x['name']: x.get('supports') for x in pk['picks']}
-    rejects, tag_gaps, ok = [], [], 0
+    rejects, tag_gaps, tag_only, ok = [], [], [], 0
     for c in res['cards'].values():
         n = c['name']; o = c['oracle']; ta = {x for r in c['readers'] for x in r['arch']}; oa = set(o['arch'])
-        utility = bool(UTILITY_ROLES & set(o['roles']))
-        on_plan = bool((oa | ta) & strat) or sup.get(n) or utility or n == pk['commander'] or n in pk['lands']['nonbasic']
-        if not on_plan: rejects.append(dict(name=n, function=o['function'], oracle_arch=o['arch'], tag_arch=sorted(ta), roles=o['roles'], power=o['power']))
-        else: ok += 1
+        utility = is_utility(o['roles'])
+        tagfit = n.lower() in pool and max([sf._role_hits(pool[n.lower()]['ftags'], i) for i in strat] or [0]) >= TAGFIT_ROLES     # pool tags match the declared archetypes' roles (not only the readers' guess)
+        on_plan = bool((oa | ta) & strat) or sup.get(n) or utility or tagfit or n == pk['commander'] or n in pk['lands']['nonbasic']
+        if not on_plan: rejects.append(dict(name=n, function=o['function'], oracle_arch=o['arch'], tag_arch=sorted(ta), tag_fit=tagfit, roles=o['roles'], power=o['power']))
+        else:
+            ok += 1
+            if tagfit and not ((oa | ta) & strat or sup.get(n) or utility or n == pk['commander'] or n in pk['lands']['nonbasic']): tag_only.append(n)    # on plan through the pool tags alone
         if strat and c['readers'] and not (oa & ta) and not any(r['arch_hit'] for r in c['readers']): tag_gaps.append(dict(name=n, oracle_arch=o['arch'], tag_arch=sorted(ta), unclear=sorted({u for r in c['readers'] for u in r['unclear']})))
-    out = dict(deck=a.name, mana=res.get('mana', {}), strategy=sorted(strat), on_plan=ok, rejects=[r['name'] for r in rejects], reject_detail=rejects, tag_gaps=tag_gaps, summary=res['summary'])
+    out = dict(deck=a.name, mana=res.get('mana', {}), strategy=sorted(strat), on_plan=ok, rejects=[r['name'] for r in rejects], reject_detail=rejects, tag_fit_only=tag_only, tag_gaps=tag_gaps, summary=res['summary'])
     path = os.path.join(STAGE, a.name + '.review.json'); json.dump(out, open(path, 'w', encoding='utf-8'), indent=1)
     print('%s: %d cards on plan, %d reject candidates, %d archetype disagreements (tags vs Oracle reader)' % (a.name, ok, len(rejects), len(tag_gaps)))
     for r in rejects: print('  REJECT?', r['name'], '|', r['function'], '| oracle', r['oracle_arch'], '| tags', r['tag_arch'])
+    if tag_only: print('  on plan by pool tags alone:', ', '.join(tag_only))
     print('->', path)
 
 
@@ -721,6 +697,12 @@ def cmd_review_apply(a):
     if not out: print('nothing flagged by both the data and the Oracle reader: no second run'); return
     have = {x['name'] for x in pk['picks']}
     ins = [re.sub(r' \(synergy.*$', '', x) for x in sg.get('switch_ins', [])][:len(out)]
+    def _pw(n): return max(pool[n.lower()]['power'].values()) if n.lower() in pool else 0
+    def _fits(n, i):   # guard: a switch-in must serve the deck's strategy or fill a utility role, and not be weaker than the card it replaces (Divine Favor for Terramancer)
+        p = pool.get(n.lower())
+        return bool(p) and (sf.fit(p['ftags'], pk['strategy']) > 0 or bool(UTILITY_TAGS & set(p['tags']))) and _pw(n) >= _pw(out[i])
+    dropped = [n for i, n in enumerate(ins) if not _fits(n, i)]; ins = [n for i, n in enumerate(ins) if _fits(n, i)]
+    if dropped: print('switch-ins dropped (off plan or weaker than the card replaced): %s' % '; '.join(dropped))
     keep = [x['name'] for x in pk['picks'] if x['name'] not in out] + [n for n in ins if n not in have]
     print('swap out %d: %s' % (len(out), '; '.join(out)))
     print('switch in (tried first, if legal): %s' % ('; '.join(ins) or 'none (builder fills the slots)'))

@@ -1,0 +1,26 @@
+{
+ "deck": "W_Starter_Regen_r6",
+ "mana": {
+  "tag": {},
+  "oracle": {
+   "reader1_batch_01": {
+    "curve": "ok",
+    "sources": "ok",
+    "notes": "Curve avg 3.35 near tier reference; 36 lands plus 3 rocks and Sol Ring for 6 colorless-only sources, mono-white fine."
+   }
+  }
+ },
+ "strategy": [
+  "lifegain",
+  "tokens"
+ ],
+ "on_plan": 70,
+ "rejects": [],
+ "reject_detail": [],
+ "tag_fit_only": [],
+ "tag_gaps": [],
+ "summary": {
+  "cards": 70,
+  "tag_readers": 0
+ }
+}

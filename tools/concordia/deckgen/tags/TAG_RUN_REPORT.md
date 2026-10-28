@@ -1,0 +1,1470 @@
+# Tag run report
+
+27699 distinct cards, 27699 tagged, 0 with no script (none).
+
+## Most common tags
+
+cardtype:creature 16065, target_count:one 8690, target_type:creature 7740, trigger:etb 5342, trigger_scope:self 4990, duration:eot 4192, type:human 4076, supertype:legendary 3940, token_make 3595, draw 3338, duration:static 3200, cost:tap 3060, cardtype:artifact 3039, target_scope:you_control 2977, cardtype:instant 2967, tempo:+1 2964, cardtype:enchantment 2897, kw:flying 2871, cardtype:sorcery 2846, damage 2419, counters_plus 2407, colorless_card 2288, lifegain 2197, token_count:1 2073, affected_type:creature 2024, mana_source 1988, target_count:all 1984, draw_count:1 1932, optional 1926, counter:p1p1 1923, counter_count:1 1803, tempo:+0.5 1773, trigger:attacks 1622, from_zone:graveyard 1573, cost:sacrifice 1563, put_onto_battlefield 1491, trigger_filter:you_control 1476, remove:destroy 1414, burn 1389, mana_amount:1 1346
+
+## Trigger types seen in clauses
+
+activated 8035, static 6026, spell 5923, etb_self 4497, phase 1692, attacks 1411, replacement 1280, spell_cast 1211, etb_other 749, dies_self 690, combat_damage 660, dies_other 476, attackersdeclared 202, damagedoneonce 175, leaves_self 163, draws 134, changeszoneall 113, sacrificed 105, flip-up 104, damage 102, becomestarget 98, blocked 97, blocks 92, taps 92, gain_life 91, discarded 69, cycled 68, attackerblockedbycreature 54, counteraddedonce 43, damagedealtonce 42
+
+## Most common verbs (script API)
+
+static_continuous 4122, changezone 2425, pump 2271, token 2062, mana 1604, putcounter 1560, draw 1313, dealdamage 1254, replace_moved 711, charm 681, destroy 629, gainlife 581, pumpall 481, static_reducecost 475, effect 434, dig 350, animate 304, sacrifice 302, static_cantblockby 299, discard 278, loselife 268, tap 242, mill 237, counter 217, loselife+gainlife 190, draw+discard 181, damageall 175, putcounterall 174, untap 171, copypermanent 170
+
+## Cards with no ability tag beyond type, keyword and cost tags (1111)
+
+Abbey Griffin, Accorder Paladin, Adamaro, First to Desire, Aegis Turtle, Affa Protector, Ageless Guardian, Agent of Atlas, Ahn-Crop Crasher, Air Elemental, Air Response Unit, Akrasan Squire, Alabaster Kirin, Alabaster Leech, Alert Shu Infantry, Allosaurus Rider, Alpha Tyrranax, Alpine Grizzly, Alpine Watchdog, Amazing Spider-Girl, Ambush Viper, Amethyst Dragon, Amphin Cutthroat, Anaba Bodyguard, Ancient Brontodon, Ancient Carp, Ancient Crab, Ancient Lumberknot, Ancient Ooze, Ancient Spider, Angelic Observer, Angelic Wall, Angel of Light, Angel of Retribution, Animating Faerie, Ankle Biter, Annoyed Altisaur, Apex Devastator, Araba Mothrider, Arboretum Elemental, Archangel, Archers of Qarsi, Archweaver, Ardent Militia, Ardent Plea, Ardenvale Tactician, Argivian Phalanx, Armored Cancrix, Armored Pegasus, Armored Warhorse, Armored Whirl Turtle, Armored Wolf-Rider, Arrogant Vampire, Ascended Lawmage, Ashaya's Enduring Bond, Ashcoat Bear, Assault Griffin, Assault Zeppelid, Autochthon Wurm, Aven Envoy, Aven Fleetwing, Aven Reedstalker, Aven Sentry, Aven Skirmisher, Aven Squire, Aven Trailblazer, Avian Changeling, Axebane Beast, Axebane Ferox, Axebane Stag, Axegrinder Giant, Azure Drake, A.I.M. Bot, Backstreet Bruiser, Balduvian Barbarians, Bane Alley Blackguard, Barbarian General, Barbarian Horde, Barbtooth Wurm, Barktooth Warbeard, Barkweave Crusher...
+
+
+## Cross-check layer (Oracle gap filler, keyword reference/CR, Forge AI)
+
+Cards where the cross-check added tags: 2868; tags added in total: 3182 (life_loss 820, trigger:end_step 479, untap 272, cost:mana 195, sacrifice 194, surveil 192, damage 143, fight 134, token_make 131, cost:exile 89, discard 51, cost:remove_counters 47, lifegain 40, counters_plus 31, kw:powerup 30, kw:flying 30, cost:sacrifice 26, kw:exhaust 24, trigger:attacks 24, trigger:etb 21, kw:surveil 19, trigger:dies 17, trigger:combat_damage 17, trigger:spell_cast 16, kw:boast 13, remove:destroy 13, cost:tap 12, kw:cleave 11, cost:discard 9, steal 7, kw:maxspeed 5, cost:life 5, trigger:beginning_of_combat 5, counterspell 5, kw:vigilance 5, kw:support 5, kw:trample 4, kw:firststrike 4, scry_count:1 4, kw:coven 3, trigger:upkeep 3, kw:populate 3, kw:lifelink 3, kw:bolster 2, trigger:gain_life 2, scry_count:2 2, trigger:discard 2, scry_count:x 2, kw:deathtouch 2, kw:haste 2, kw:shroud 1, kw:protection 1, trigger:leaves 1, kw:imprint 1, kw:doublestrike 1, proliferate 1, kw:indestructible 1).
+
+Cards with an ai_logic tag: 2262.
+
+Flags (Oracle line and script tags disagree, nothing added): 1427 on 1399 cards.
+
+- Academy Loremaster: extra? draw: no Oracle phrase supports it
+- Acererak the Archlich: extra? bounce: no Oracle phrase supports it
+- Acolyte Hybrid: extra? remove:destroy: no Oracle phrase supports it
+- Acquire: extra? tutor: no Oracle phrase supports it
+- Aegis Automaton: extra? bounce: no Oracle phrase supports it
+- Aethersquall Ancient: extra? bounce: no Oracle phrase supports it
+- Aethertide Whale: extra? bounce: no Oracle phrase supports it
+- Aetherworks Marvel: extra? tutor: no Oracle phrase supports it
+- Aether Burst: extra? bounce: no Oracle phrase supports it
+- Aether Channeler: extra? bounce: no Oracle phrase supports it
+- Aether Gale: extra? bounce: no Oracle phrase supports it
+- Aether Spike: extra? counterspell: no Oracle phrase supports it
+- Aether Syphon: extra? mill: no Oracle phrase supports it
+- Age of Ultron: extra? remove:destroy: no Oracle phrase supports it
+- Agonizing Remorse: exile_effect: Oracle line says it, script tags lack exile
+- Agoraphobia: extra? bounce: no Oracle phrase supports it
+- Ainok Wayfarer: extra? mill: no Oracle phrase supports it
+- Air-Cult Elemental: extra? bounce: no Oracle phrase supports it
+- Akoum Stonewaker: exile_effect: Oracle line says it, script tags lack exile
+- Akroan Horse: extra? steal: no Oracle phrase supports it
+- Alexios, Deimos of Kosmos: extra? steal: no Oracle phrase supports it
+- All Suns' Dawn: exile_effect: Oracle line says it, script tags lack exile
+- Along the Crooked Way: extra? token_make: no Oracle phrase supports it
+- Ambassador Laquatus: extra? mill: no Oracle phrase supports it
+- Ambrosia Whiteheart: extra? bounce: no Oracle phrase supports it
+- Ambush Krotiq: extra? bounce: no Oracle phrase supports it
+- Amugaba: extra? bounce: no Oracle phrase supports it
+- Ancestral Statue: extra? bounce: no Oracle phrase supports it
+- Ancient Excavation: extra? draw: no Oracle phrase supports it
+- Ancient Silver Dragon: extra? draw: no Oracle phrase supports it
+- Angel of Suffering: extra? mill: no Oracle phrase supports it
+- Annul: extra? counterspell: no Oracle phrase supports it
+- April, Reporter of the Weird: extra? draw: no Oracle phrase supports it
+- Arachnus Web: extra? remove:destroy: no Oracle phrase supports it
+- Arcane Endeavor: extra? draw: no Oracle phrase supports it
+- Arcane Heist: exile_effect: Oracle line says it, script tags lack exile
+- Arcanis the Omnipotent: extra? bounce: no Oracle phrase supports it
+- Archghoul of Thraben: extra? tutor: no Oracle phrase supports it
+- Archive Trap: extra? mill: no Oracle phrase supports it
+- Archmage Ascension: draw: Oracle line says it, script tags lack draw
+- Archwing Dragon: extra? bounce: no Oracle phrase supports it
+- Arcum Dagsson: extra? tutor: no Oracle phrase supports it
+- Arena Rector: exile_effect: Oracle line says it, script tags lack exile
+- Ares, God of War: bounce: Oracle line says it, script tags lack bounce
+- Arid Archway: extra? bounce: no Oracle phrase supports it
+- Arjun, the Shifting Flame: extra? draw: no Oracle phrase supports it
+- Armaggon, Future Shark: extra? remove:destroy: no Oracle phrase supports it
+- Arrogant Bloodlord: extra? remove:destroy: no Oracle phrase supports it
+- Ashiok, Dream Render: extra? mill: no Oracle phrase supports it
+- Ashiok, Sculptor of Fears: extra? mill: no Oracle phrase supports it
+- Ashiok, Wicked Manipulator: exile_effect: Oracle line says it, script tags lack exile
+- Asmodeus the Archfiend: bounce: Oracle line says it, script tags lack bounce
+- Assassin's Trophy: extra? tutor: no Oracle phrase supports it
+- Assault on Osgiliath: extra? token_make: no Oracle phrase supports it
+- Assert Authority: exile_effect: Oracle line says it, script tags lack exile
+- Assimilate Essence: extra? counterspell: no Oracle phrase supports it
+- Atlantis Attacks: extra? bounce: no Oracle phrase supports it
+- Atraxa, Grand Unifier: extra? tutor: no Oracle phrase supports it
+- Atris, Oracle of Half-Truths: extra? tutor: no Oracle phrase supports it
+- Audience with Trostani: extra? draw: no Oracle phrase supports it
+- Auditore Ambush: extra? tutor: no Oracle phrase supports it
+- Avarice Amulet: extra? steal: no Oracle phrase supports it
+- Avaricious Dragon: extra? draw: no Oracle phrase supports it
+- Avatar Destiny: extra? mill: no Oracle phrase supports it
+- Avatar of Growth: extra? tutor: no Oracle phrase supports it
+- Avengers Disassembled: extra? tutor: no Oracle phrase supports it
+- Aven Augur: extra? bounce: no Oracle phrase supports it
+- Aven Interrupter: exile_effect: Oracle line says it, script tags lack exile
+- Aviary Mechanic: extra? bounce: no Oracle phrase supports it
+- Avoid Fate: extra? counterspell: no Oracle phrase supports it
+- Azog, Moria's Ruin: extra? remove:destroy: no Oracle phrase supports it
+- Azorius Chancery: extra? bounce: no Oracle phrase supports it
+- Balshan Griffin: extra? bounce: no Oracle phrase supports it
+- Bandit's Talent: extra? draw: no Oracle phrase supports it
+- Banishing Slash: extra? remove:destroy: no Oracle phrase supports it
+- Banishing Stroke: extra? draw: no Oracle phrase supports it
+- Bant Charm: extra? counterspell: no Oracle phrase supports it
+- Barad-dûr: extra? token_make: no Oracle phrase supports it
+- Baral's Expertise: extra? bounce: no Oracle phrase supports it
+- Barbed Shocker: extra? draw: no Oracle phrase supports it
+- Barrin's Spite: extra? bounce: no Oracle phrase supports it
+- Barrin, Tolarian Archmage: extra? bounce: no Oracle phrase supports it
+- Bar the Gate: extra? counterspell: no Oracle phrase supports it
+- Batterskull: extra? bounce: no Oracle phrase supports it
+- Become Anonymous: exile_effect: Oracle line says it, script tags lack exile
+- Belltower Sphinx: extra? mill: no Oracle phrase supports it
+- Bespoke Bō: extra? bounce: no Oracle phrase supports it
+- Bilbo's Gambit: bounce: Oracle line says it, script tags lack bounce
+- Bilbo's Gambit: extra? draw: no Oracle phrase supports it
+- Bilbo, Thief in the Night: exile_effect: Oracle line says it, script tags lack exile
+- Bill Ferny, Bree Swindler: extra? steal: no Oracle phrase supports it
+- Bitter Ordeal: extra? tutor: no Oracle phrase supports it
+- Bleed Dry: exile_effect: Oracle line says it, script tags lack exile
+- Blessings of Nature: extra? draw: no Oracle phrase supports it
+- Blight: extra? remove:destroy: no Oracle phrase supports it
+- Blim, Comedic Genius: extra? steal: no Oracle phrase supports it
+- Blinking Spirit: extra? bounce: no Oracle phrase supports it
+- Blizzard Specter: extra? bounce: no Oracle phrase supports it
+- Blood Clock: extra? bounce: no Oracle phrase supports it
+- Blooming Blast: extra? draw: no Oracle phrase supports it
+- Blow Your House Down: extra? remove:destroy: no Oracle phrase supports it
+- Blue Elemental Blast: extra? counterspell: no Oracle phrase supports it
+- Blue Mage's Cane: extra? token_make: no Oracle phrase supports it
+- Bob, Reluctant HYDRA Agent: extra? bounce: no Oracle phrase supports it
+- Body of Knowledge: extra? draw: no Oracle phrase supports it
+- Boldwyr Heavyweights: extra? tutor: no Oracle phrase supports it
+- Bomb Squad: extra? remove:destroy: no Oracle phrase supports it
+- Bond of Insight: extra? mill: no Oracle phrase supports it
+- Bonfire of the Damned: extra? draw: no Oracle phrase supports it
+- Book Burning: extra? mill: no Oracle phrase supports it
+- Book Devourer: extra? draw: no Oracle phrase supports it
+- Boom Box: extra? remove:destroy: no Oracle phrase supports it
+- Borderland Explorer: extra? tutor: no Oracle phrase supports it
+- Boros Garrison: extra? bounce: no Oracle phrase supports it
+- Borrowed Knowledge: extra? draw: no Oracle phrase supports it
+- Boseiju, Who Endures: extra? tutor: no Oracle phrase supports it
+- Brain Freeze: extra? mill: no Oracle phrase supports it
+- Bramble Familiar: extra? bounce: no Oracle phrase supports it
+- Brass's Tunnel-Grinder: extra? draw: no Oracle phrase supports it
+- Breaching Dragonstorm: extra? bounce: no Oracle phrase supports it
+- Breach the Multiverse: extra? mill: no Oracle phrase supports it
+- Break Out: extra? tutor: no Oracle phrase supports it
+- Bribery: extra? tutor: no Oracle phrase supports it
+- Brightling: extra? bounce: no Oracle phrase supports it
+- Brink of Disaster: extra? remove:destroy: no Oracle phrase supports it
+- Broken Ambitions: extra? mill: no Oracle phrase supports it
+- Bucknard's Everfull Purse: extra? steal: no Oracle phrase supports it
+- Bucolic Ranch: extra? tutor: no Oracle phrase supports it
+- Burrowing Razormaw: extra? mill: no Oracle phrase supports it
+- By Force: extra? remove:destroy: no Oracle phrase supports it
+- Cabaretti Ascendancy: extra? tutor: no Oracle phrase supports it
+- Cache Grab: extra? mill: no Oracle phrase supports it
+- Cactuar: extra? bounce: no Oracle phrase supports it
+- Cage of Hands: extra? bounce: no Oracle phrase supports it
+- Calamitous Tide: extra? bounce: no Oracle phrase supports it
+- Candles of Leng: extra? tutor: no Oracle phrase supports it
+- Cantankerous Keepers: extra? mill: no Oracle phrase supports it
+- Capricious Efreet: extra? remove:destroy: no Oracle phrase supports it
+- Captain N'ghathrod: extra? mill: no Oracle phrase supports it
+- Captivating Gyre: extra? bounce: no Oracle phrase supports it
+- Carnivorous Cultivator: extra? tutor: no Oracle phrase supports it
+- Cartographer's Hawk: extra? bounce: no Oracle phrase supports it
+- Case of the Gorgon's Kiss: extra? remove:destroy: no Oracle phrase supports it
+- Cathartic Pyre: extra? draw: no Oracle phrase supports it
+- Cauldron's Gift: extra? mill: no Oracle phrase supports it
+- Cavalier of Dawn: extra? remove:destroy: no Oracle phrase supports it
+- Cavalier of Flame: extra? draw: no Oracle phrase supports it
+- Cavalier of Thorns: exile_effect: Oracle line says it, script tags lack exile
+- Cavern Harpy: extra? bounce: no Oracle phrase supports it
+- Celes, Rune Knight: extra? draw: no Oracle phrase supports it
+- Cemetery Tampering: extra? mill: no Oracle phrase supports it
+- Cephalid Constable: extra? bounce: no Oracle phrase supports it
+- Ceremonial Guard: extra? remove:destroy: no Oracle phrase supports it
+- Ceremonious Rejection: extra? counterspell: no Oracle phrase supports it
+- Champion of Wits: extra? draw: no Oracle phrase supports it
+- Chancellor of the Spires: extra? mill: no Oracle phrase supports it
+- Chandra, Acolyte of Flame: exile_effect: Oracle line says it, script tags lack exile
+- Chandra, Flamecaller: extra? draw: no Oracle phrase supports it
+- Chaos Defiler: extra? remove:destroy: no Oracle phrase supports it
+- Chill of Foreboding: extra? mill: no Oracle phrase supports it
+- Chomping Changeling: extra? remove:destroy: no Oracle phrase supports it
+- Chronic Flooding: extra? mill: no Oracle phrase supports it
+- Churning Eddy: extra? bounce: no Oracle phrase supports it
+- Cinder Wall: extra? remove:destroy: no Oracle phrase supports it
+- Cityscape Leveler: extra? remove:destroy: no Oracle phrase supports it
+- Cleansing Wildfire: extra? tutor: no Oracle phrase supports it
+- Clement, the Worrywort: extra? bounce: no Oracle phrase supports it
+- Clive, Ifrit's Dominant: extra? draw: no Oracle phrase supports it
+- Cloudstone Curio: extra? bounce: no Oracle phrase supports it
+- Coalstoke Gearhulk: exile_effect: Oracle line says it, script tags lack exile
+- Coastal Breach: extra? bounce: no Oracle phrase supports it
+- Coerced Confession: extra? mill: no Oracle phrase supports it
+- Cogwork Assembler: exile_effect: Oracle line says it, script tags lack exile
+- Cold-Eyed Selkie: extra? draw: no Oracle phrase supports it
+- Collective Defiance: extra? draw: no Oracle phrase supports it
+- Colossus of the Blood Age: extra? draw: no Oracle phrase supports it
+- Commander Sofia Daguerre: extra? remove:destroy: no Oracle phrase supports it
+- Command of Unsummoning: extra? bounce: no Oracle phrase supports it
+- Compelling Argument: extra? mill: no Oracle phrase supports it
+- Confounding Conundrum: extra? bounce: no Oracle phrase supports it
+- Confusion in the Ranks: extra? steal: no Oracle phrase supports it
+- Consign to Dust: extra? remove:destroy: no Oracle phrase supports it
+- Consuming Tide: extra? bounce: no Oracle phrase supports it
+- Containment Priest: exile_effect: Oracle line says it, script tags lack exile
+- Contested Game Ball: extra? steal: no Oracle phrase supports it
+- Contested War Zone: extra? steal: no Oracle phrase supports it
+- Convert to Slime: extra? remove:destroy: no Oracle phrase supports it
+- Conviction: extra? bounce: no Oracle phrase supports it
+- Corpses of the Lost: extra? bounce: no Oracle phrase supports it
+- Corroding Dragonstorm: extra? bounce: no Oracle phrase supports it
+- Corrupted Zendikon: bounce: Oracle line says it, script tags lack bounce
+- Cosmic Cube: extra? tutor: no Oracle phrase supports it
+- Cosmic Epiphany: extra? draw: no Oracle phrase supports it
+- Cosmic Intervention: exile_effect: Oracle line says it, script tags lack exile
+- Council's Judgment: exile_effect: Oracle line says it, script tags lack exile
+- Council of Echoes: extra? bounce: no Oracle phrase supports it
+- Counterbore: extra? tutor: no Oracle phrase supports it
+- Counterintelligence: extra? bounce: no Oracle phrase supports it
+- Countermand: extra? mill: no Oracle phrase supports it
+- Covenant of Minds: extra? tutor: no Oracle phrase supports it
+- Covenant of Minds: extra? mill: no Oracle phrase supports it
+- Coveted Jewel: extra? steal: no Oracle phrase supports it
+- Cracked Skull: extra? remove:destroy: no Oracle phrase supports it
+- Crag Saurian: extra? steal: no Oracle phrase supports it
+- Cranial Extraction: extra? tutor: no Oracle phrase supports it
+- Creative Technique: exile_effect: Oracle line says it, script tags lack exile
+- Creeping Chill: exile_effect: Oracle line says it, script tags lack exile
+- Crosstown Courier: extra? mill: no Oracle phrase supports it
+- Crovax, Ascendant Hero: extra? bounce: no Oracle phrase supports it
+- Crown of Flames: extra? bounce: no Oracle phrase supports it
+- Crumble to Dust: extra? tutor: no Oracle phrase supports it
+- Crumb and Get It: extra? draw: no Oracle phrase supports it
+- Crusher Zendikon: bounce: Oracle line says it, script tags lack bounce
+- Cryoshatter: extra? remove:destroy: no Oracle phrase supports it
+- Cryptic Coat: extra? bounce: no Oracle phrase supports it
+- Crystal Seer: extra? bounce: no Oracle phrase supports it
+- Cunning Evasion: extra? bounce: no Oracle phrase supports it
+- Cunning Geysermage: extra? bounce: no Oracle phrase supports it
+- Curator of Destinies: extra? tutor: no Oracle phrase supports it
+- Curie, Emergent Intelligence: exile_effect: Oracle line says it, script tags lack exile
+- Curie, Emergent Intelligence: extra? draw: no Oracle phrase supports it
+- Curious Farm Animals: extra? remove:destroy: no Oracle phrase supports it
+- Cursecatcher: extra? counterspell: no Oracle phrase supports it
+- Curse of Obsession: extra? draw: no Oracle phrase supports it
+- Curse of Surveillance: extra? draw: no Oracle phrase supports it
+- Curse of the Bloody Tome: extra? mill: no Oracle phrase supports it
+- Curtains' Call: extra? remove:destroy: no Oracle phrase supports it
+- Cut the Tethers: extra? bounce: no Oracle phrase supports it
+- Cut Your Losses: extra? mill: no Oracle phrase supports it
+- Cyclone Summoner: extra? bounce: no Oracle phrase supports it
+- Cyclopean Snare: extra? bounce: no Oracle phrase supports it
+- Dack Fayden, Helping Hand: extra? steal: no Oracle phrase supports it
+- Damia, Sage of Stone: extra? draw: no Oracle phrase supports it
+- Dampen Thought: extra? mill: no Oracle phrase supports it
+- Daring Piracy: exile_effect: Oracle line says it, script tags lack exile
+- Daring Waverider: exile_effect: Oracle line says it, script tags lack exile
+- Dark Temper: extra? remove:destroy: no Oracle phrase supports it
+- Darting Merfolk: extra? bounce: no Oracle phrase supports it
+- Dawn of the Dead: exile_effect: Oracle line says it, script tags lack exile
+- Day of Black Sun: extra? remove:destroy: no Oracle phrase supports it
+- Deadly Cover-Up: extra? tutor: no Oracle phrase supports it
+- Deadly Designs: extra? remove:destroy: no Oracle phrase supports it
+- Deal Gone Bad: extra? mill: no Oracle phrase supports it
+- Death in Heaven: extra? mill: no Oracle phrase supports it
+- Death or Glory: extra? tutor: no Oracle phrase supports it
+- Death Pits of Rath: extra? remove:destroy: no Oracle phrase supports it
+- Decaying Time Loop: extra? draw: no Oracle phrase supports it
+- Deceit: extra? bounce: no Oracle phrase supports it
+- Decimator Web: extra? mill: no Oracle phrase supports it
+- Deepmuck Desperado: extra? mill: no Oracle phrase supports it
+- Defabricate: exile_effect: Oracle line says it, script tags lack exile
+- Defiant Vanguard: extra? remove:destroy: no Oracle phrase supports it
+- Deicide: extra? tutor: no Oracle phrase supports it
+- Delay: exile_effect: Oracle line says it, script tags lack exile
+- Deluxe Dragster: exile_effect: Oracle line says it, script tags lack exile
+- Demonic Covenant: extra? mill: no Oracle phrase supports it
+- Demonic Junker: extra? remove:destroy: no Oracle phrase supports it
+- Demonic Vigor: bounce: Oracle line says it, script tags lack bounce
+- Denying Wind: extra? tutor: no Oracle phrase supports it
+- Deny Existence: exile_effect: Oracle line says it, script tags lack exile
+- Deny the Divine: exile_effect: Oracle line says it, script tags lack exile
+- Deny the Divine: extra? counterspell: no Oracle phrase supports it
+- Depressurize: extra? remove:destroy: no Oracle phrase supports it
+- Deputy of Acquittals: extra? bounce: no Oracle phrase supports it
+- Dermoplasm: extra? bounce: no Oracle phrase supports it
+- Descendants' Path: extra? tutor: no Oracle phrase supports it
+- Desperate Bloodseeker: extra? mill: no Oracle phrase supports it
+- Detention Vortex: extra? remove:destroy: no Oracle phrase supports it
+- Devastating Mastery: extra? bounce: no Oracle phrase supports it
+- Devastation Tide: extra? draw: no Oracle phrase supports it
+- Devastation Tide: extra? bounce: no Oracle phrase supports it
+- Devious Cover-Up: exile_effect: Oracle line says it, script tags lack exile
+- Diabolic Servitude: extra? bounce: no Oracle phrase supports it
+- Dichotomancy: extra? tutor: no Oracle phrase supports it
+- Dictate of Kruphix: extra? draw: no Oracle phrase supports it
+- Didn't Say Please: extra? mill: no Oracle phrase supports it
+- Diligent Excavator: extra? mill: no Oracle phrase supports it
+- Diluvian Primordial: exile_effect: Oracle line says it, script tags lack exile
+- Dimensional Infiltrator: extra? bounce: no Oracle phrase supports it
+- Dimension X Pizzasaur: extra? remove:destroy: no Oracle phrase supports it
+- Diminishing Returns: extra? draw: no Oracle phrase supports it
+- Dimir Aqueduct: extra? bounce: no Oracle phrase supports it
+- Dire-Strain Rampage: extra? tutor: no Oracle phrase supports it
+- Discerning Financier: extra? steal: no Oracle phrase supports it
+- Disinformation Campaign: extra? bounce: no Oracle phrase supports it
+- Dispel: extra? counterspell: no Oracle phrase supports it
+- Displacement Wave: extra? bounce: no Oracle phrase supports it
+- Displacer Beast: extra? bounce: no Oracle phrase supports it
+- Disrupt: extra? counterspell: no Oracle phrase supports it
+- Disruptive Stormbrood: extra? remove:destroy: no Oracle phrase supports it
+- Disruptor of Currents: extra? bounce: no Oracle phrase supports it
+- Dissipate: exile_effect: Oracle line says it, script tags lack exile
+- Dissipation Field: extra? bounce: no Oracle phrase supports it
+- Distorting Wake: extra? bounce: no Oracle phrase supports it
+- Disturbing Conversion: extra? mill: no Oracle phrase supports it
+- Disturbing Plot: bounce: Oracle line says it, script tags lack bounce
+- Diversion Unit: extra? counterspell: no Oracle phrase supports it
+- Diviner of Mist: exile_effect: Oracle line says it, script tags lack exile
+- Diviner of Mist: extra? mill: no Oracle phrase supports it
+- Diviner Spirit: extra? draw: no Oracle phrase supports it
+- Doctor Octopus, Master Planner: extra? draw: no Oracle phrase supports it
+- Domri Rade: extra? tutor: no Oracle phrase supports it
+- Doomsday Specter: extra? bounce: no Oracle phrase supports it
+- Doom Weaver: extra? draw: no Oracle phrase supports it
+- Double Negative: extra? counterspell: no Oracle phrase supports it
+- Dour Port-Mage: extra? bounce: no Oracle phrase supports it
+- Dovin's Acuity: extra? bounce: no Oracle phrase supports it
+- Drake Familiar: extra? bounce: no Oracle phrase supports it
+- Dread: extra? remove:destroy: no Oracle phrase supports it
+- Dreadhorde Arcanist: exile_effect: Oracle line says it, script tags lack exile
+- Dream Twist: extra? mill: no Oracle phrase supports it
+- Drooling Ogre: extra? steal: no Oracle phrase supports it
+- Drowned Secrets: extra? mill: no Oracle phrase supports it
+- Drowner Initiate: extra? mill: no Oracle phrase supports it
+- Drownyard Amalgam: extra? mill: no Oracle phrase supports it
+- Drown in Dreams: extra? mill: no Oracle phrase supports it
+- Druidic Satchel: extra? tutor: no Oracle phrase supports it
+- Dryad Greenseeker: extra? tutor: no Oracle phrase supports it
+- Duneblast: extra? remove:destroy: no Oracle phrase supports it
+- Duskmantle Guildmage: extra? mill: no Oracle phrase supports it
+- Dust Elemental: extra? bounce: no Oracle phrase supports it
+- Dust Stalker: extra? bounce: no Oracle phrase supports it
+- Dwindle: extra? remove:destroy: no Oracle phrase supports it
+- Earwig Squad: extra? tutor: no Oracle phrase supports it
+- Echoing Truth: extra? bounce: no Oracle phrase supports it
+- Eerie Gravestone: extra? mill: no Oracle phrase supports it
+- Efreet Flamepainter: exile_effect: Oracle line says it, script tags lack exile
+- Eiganjo Free-Riders: extra? bounce: no Oracle phrase supports it
+- Eladamri, Korvecdal: extra? tutor: no Oracle phrase supports it
+- Elder Brain: extra? draw: no Oracle phrase supports it
+- Elemental Appeal: exile_effect: Oracle line says it, script tags lack exile
+- Eligeth, Crossroads Augur: extra? draw: no Oracle phrase supports it
+- Eliminate the Competition: extra? remove:destroy: no Oracle phrase supports it
+- Elturel Survivors: extra? token_make: no Oracle phrase supports it
+- Emancipation Angel: extra? bounce: no Oracle phrase supports it
+- Emeritus of Woe: extra? tutor: no Oracle phrase supports it
+- Emet-Selch of the Third Seat: exile_effect: Oracle line says it, script tags lack exile
+- Encroaching Dragonstorm: extra? bounce: no Oracle phrase supports it
+- Endbringer's Revel: bounce: Oracle line says it, script tags lack bounce
+- Engulf the Shore: extra? bounce: no Oracle phrase supports it
+- Enigma Thief: extra? bounce: no Oracle phrase supports it
+- Enter the God-Eternals: extra? mill: no Oracle phrase supports it
+- Enter the Infinite: extra? draw: no Oracle phrase supports it
+- Entreat the Angels: extra? draw: no Oracle phrase supports it
+- Entreat the Dead: extra? draw: no Oracle phrase supports it
+- Envelop: extra? counterspell: no Oracle phrase supports it
+- Ephara's Enlightenment: extra? bounce: no Oracle phrase supports it
+- Epiphany at the Drownyard: extra? tutor: no Oracle phrase supports it
+- Eradicate: extra? tutor: no Oracle phrase supports it
+- Erode: extra? tutor: no Oracle phrase supports it
+- Eruth, Tormented Prophet: draw: Oracle line says it, script tags lack draw
+- Escape Artist: extra? bounce: no Oracle phrase supports it
+- Esperzoa: extra? bounce: no Oracle phrase supports it
+- Essence Fracture: extra? bounce: no Oracle phrase supports it
+- Essence Reliquary: extra? bounce: no Oracle phrase supports it
+- Eternal Dominion: extra? tutor: no Oracle phrase supports it
+- Etherium-Horn Sorcerer: extra? bounce: no Oracle phrase supports it
+- Evacuation: extra? bounce: no Oracle phrase supports it
+- Evanescent Intellect: extra? mill: no Oracle phrase supports it
+- Eventide's Shadow: extra? draw: no Oracle phrase supports it
+- Exhibition Tidecaller: extra? mill: no Oracle phrase supports it
+- Exit Specialist: extra? bounce: no Oracle phrase supports it
+- Exosuit Savior: extra? bounce: no Oracle phrase supports it
+- Experimental Frenzy: extra? remove:destroy: no Oracle phrase supports it
+- Explosive Entry: extra? remove:destroy: no Oracle phrase supports it
+- Extinguish: extra? counterspell: no Oracle phrase supports it
+- Extirpate: extra? tutor: no Oracle phrase supports it
+- Extractor Demon: extra? mill: no Oracle phrase supports it
+- Extract from Darkness: extra? mill: no Oracle phrase supports it
+- Eyes Everywhere: extra? steal: no Oracle phrase supports it
+- Eye Gouge: extra? remove:destroy: no Oracle phrase supports it
+- Fable of the Mirror-Breaker: extra? draw: no Oracle phrase supports it
+- Fact or Fiction: extra? tutor: no Oracle phrase supports it
+- Faerie Slumber Party: extra? bounce: no Oracle phrase supports it
+- Faerie Trickery: exile_effect: Oracle line says it, script tags lack exile
+- Faerie Trickery: extra? counterspell: no Oracle phrase supports it
+- Faller's Faithful: extra? remove:destroy: no Oracle phrase supports it
+- False Memories: extra? mill: no Oracle phrase supports it
+- Fated Clash: extra? remove:destroy: no Oracle phrase supports it
+- Fateful Handoff: extra? draw: no Oracle phrase supports it
+- Fateful Handoff: extra? steal: no Oracle phrase supports it
+- Fateful Showdown: extra? draw: no Oracle phrase supports it
+- Faunsbane Troll: exile_effect: Oracle line says it, script tags lack exile
+- Fear of Failed Tests: extra? draw: no Oracle phrase supports it
+- Feather, the Redeemed: exile_effect: Oracle line says it, script tags lack exile
+- Felhide Spiritbinder: exile_effect: Oracle line says it, script tags lack exile
+- Feline Sovereign: extra? remove:destroy: no Oracle phrase supports it
+- Felothar the Steadfast: extra? draw: no Oracle phrase supports it
+- Fertilid: extra? tutor: no Oracle phrase supports it
+- Fertilid's Favor: extra? tutor: no Oracle phrase supports it
+- Fervent Mastery: extra? draw: no Oracle phrase supports it
+- Field of Reality: extra? bounce: no Oracle phrase supports it
+- Field of Ruin: extra? tutor: no Oracle phrase supports it
+- Filter Out: extra? bounce: no Oracle phrase supports it
+- Finale of Eternity: extra? remove:destroy: no Oracle phrase supports it
+- Finale of Promise: exile_effect: Oracle line says it, script tags lack exile
+- Fire Giant's Fury: exile_effect: Oracle line says it, script tags lack exile
+- First Responder: extra? bounce: no Oracle phrase supports it
+- Flameshadow Conjuring: exile_effect: Oracle line says it, script tags lack exile
+- Flashfreeze: extra? counterspell: no Oracle phrase supports it
+- Flash Counter: extra? counterspell: no Oracle phrase supports it
+- Flaying Tendrils: exile_effect: Oracle line says it, script tags lack exile
+- Fleetfoot Panther: extra? bounce: no Oracle phrase supports it
+- Fleeting Aven: extra? bounce: no Oracle phrase supports it
+- Fleeting Effigy: extra? bounce: no Oracle phrase supports it
+- Fleeting Image: extra? bounce: no Oracle phrase supports it
+- Fleeting Memories: extra? mill: no Oracle phrase supports it
+- Fleet Swallower: extra? mill: no Oracle phrase supports it
+- Flint Golem: extra? mill: no Oracle phrase supports it
+- Flitting Guerrilla: extra? mill: no Oracle phrase supports it
+- Flock Impostor: extra? bounce: no Oracle phrase supports it
+- Floodwaters: extra? bounce: no Oracle phrase supports it
+- Flood of Tears: extra? bounce: no Oracle phrase supports it
+- Flusterstorm: extra? counterspell: no Oracle phrase supports it
+- Font of Mythos: extra? draw: no Oracle phrase supports it
+- Foot Chopper: extra? draw: no Oracle phrase supports it
+- Forced Worship: extra? bounce: no Oracle phrase supports it
+- Force Away: draw: Oracle line says it, script tags lack draw
+- Force of Negation: exile_effect: Oracle line says it, script tags lack exile
+- Force of Vigor: extra? remove:destroy: no Oracle phrase supports it
+- Forger's Foundry: exile_effect: Oracle line says it, script tags lack exile
+- Forget: extra? draw: no Oracle phrase supports it
+- Forgotten Creation: extra? draw: no Oracle phrase supports it
+- Fortune's Favor: extra? tutor: no Oracle phrase supports it
+- Forum Familiar: extra? bounce: no Oracle phrase supports it
+- Founding the Third Path: extra? draw: no Oracle phrase supports it
+- Founding the Third Path: extra? mill: no Oracle phrase supports it
+- Fractured Loyalty: extra? steal: no Oracle phrase supports it
+- Fractured Sanity: extra? mill: no Oracle phrase supports it
+- Frazzle: extra? counterspell: no Oracle phrase supports it
+- From the Ashes: extra? tutor: no Oracle phrase supports it
+- From the Catacombs: exile_effect: Oracle line says it, script tags lack exile
+- Frost Augur: extra? tutor: no Oracle phrase supports it
+- Frozen Solid: extra? remove:destroy: no Oracle phrase supports it
+- Gainsay: extra? counterspell: no Oracle phrase supports it
+- Gale, Waterdeep Prodigy: exile_effect: Oracle line says it, script tags lack exile
+- Galvanic Alchemist: extra? untap: no Oracle phrase supports it
+- Gamekeeper: exile_effect: Oracle line says it, script tags lack exile
+- Game Preserve: extra? tutor: no Oracle phrase supports it
+- Gandalf of the Secret Fire: exile_effect: Oracle line says it, script tags lack exile
+- Garruk, Primal Hunter: extra? draw: no Oracle phrase supports it
+- Gate to the Afterlife: draw: Oracle line says it, script tags lack draw
+- Gathering Stone: extra? tutor: no Oracle phrase supports it
+- Gearbane Orangutan: extra? remove:destroy: no Oracle phrase supports it
+- Geist of Saint Traft: exile_effect: Oracle line says it, script tags lack exile
+- Geomancer's Gambit: extra? tutor: no Oracle phrase supports it
+- Geothermal Kami: extra? bounce: no Oracle phrase supports it
+- Geralf's Mindcrusher: extra? mill: no Oracle phrase supports it
+- Getaway Barrel: extra? tutor: no Oracle phrase supports it
+- Getaway Car: extra? bounce: no Oracle phrase supports it
+- Get Out: extra? bounce: no Oracle phrase supports it
+- Get Out: extra? counterspell: no Oracle phrase supports it
+- Ghitu Firebreathing: extra? bounce: no Oracle phrase supports it
+- Ghostly Wings: extra? bounce: no Oracle phrase supports it
+- Ghost Quarter: extra? tutor: no Oracle phrase supports it
+- Ghost Town: extra? bounce: no Oracle phrase supports it
+- Giantbaiting: exile_effect: Oracle line says it, script tags lack exile
+- Glacial Grasp: extra? mill: no Oracle phrase supports it
+- Glacierwood Siege: extra? mill: no Oracle phrase supports it
+- Gleeful Demolition: extra? token_make: no Oracle phrase supports it
+- Glenn, the Voice of Calm: extra? draw: no Oracle phrase supports it
+- Glen Elendra's Answer: extra? counterspell: no Oracle phrase supports it
+- Glimpse of Tomorrow: extra? tutor: no Oracle phrase supports it
+- Glimpse the Unthinkable: extra? mill: no Oracle phrase supports it
+- Glint-Eye Nephilim: extra? draw: no Oracle phrase supports it
+- Glitch Interpreter: extra? bounce: no Oracle phrase supports it
+- Glitterfang: extra? bounce: no Oracle phrase supports it
+- Gloom Surgeon: exile_effect: Oracle line says it, script tags lack exile
+- Gnashing of Teeth: exile_effect: Oracle line says it, script tags lack exile
+- Gnawing Vermin: extra? mill: no Oracle phrase supports it
+- Gnoll War Band: extra? token_make: no Oracle phrase supports it
+- Goblin Dark-Dwellers: exile_effect: Oracle line says it, script tags lack exile
+- Golgari Rot Farm: extra? bounce: no Oracle phrase supports it
+- Goliath Daydreamer: exile_effect: Oracle line says it, script tags lack exile
+- Goliath Hatchery: extra? draw: no Oracle phrase supports it
+- Goryo's Vengeance: exile_effect: Oracle line says it, script tags lack exile
+- Gossip's Talent: exile_effect: Oracle line says it, script tags lack exile
+- Grafted Skullcap: extra? draw: no Oracle phrase supports it
+- Grasping Current: extra? bounce: no Oracle phrase supports it
+- Grasping Tentacles: extra? mill: no Oracle phrase supports it
+- Grave Scrabbler: bounce: Oracle line says it, script tags lack bounce
+- Grazilaxx, Illithid Scholar: extra? bounce: no Oracle phrase supports it
+- Greasewrench Goblin: extra? draw: no Oracle phrase supports it
+- Great Goblin, Foul-Hearted: extra? token_make: no Oracle phrase supports it
+- Greenbelt Rampager: extra? bounce: no Oracle phrase supports it
+- Greensleeves: extra? mill: no Oracle phrase supports it
+- Greenwarden of Murasa: exile_effect: Oracle line says it, script tags lack exile
+- Green Sun's Twilight: extra? tutor: no Oracle phrase supports it
+- Greven, Predator Captain: extra? draw: no Oracle phrase supports it
+- Gríma Wormtongue: extra? token_make: no Oracle phrase supports it
+- Grinding Station: extra? mill: no Oracle phrase supports it
+- Grishnákh, Brash Instigator: extra? token_make: no Oracle phrase supports it
+- Grisly Spectacle: extra? mill: no Oracle phrase supports it
+- Grothama, All-Devouring: extra? draw: no Oracle phrase supports it
+- Grub's Command: extra? mill: no Oracle phrase supports it
+- Gruesome Encore: exile_effect: Oracle line says it, script tags lack exile
+- Gruul Turf: extra? bounce: no Oracle phrase supports it
+- Guardians of Koilos: extra? bounce: no Oracle phrase supports it
+- Guardian Zendikon: bounce: Oracle line says it, script tags lack bounce
+- Guided Passage: extra? tutor: no Oracle phrase supports it
+- Guildless Commons: extra? bounce: no Oracle phrase supports it
+- Guile: exile_effect: Oracle line says it, script tags lack exile
+- Guttural Response: extra? counterspell: no Oracle phrase supports it
+- Gyruda, Doom of Depths: extra? mill: no Oracle phrase supports it
+- Hallowed Moonlight: exile_effect: Oracle line says it, script tags lack exile
+- Halo-Charged Skaab: extra? mill: no Oracle phrase supports it
+- Halo Forager: exile_effect: Oracle line says it, script tags lack exile
+- Halt Order: extra? counterspell: no Oracle phrase supports it
+- Hama, the Bloodbender: extra? mill: no Oracle phrase supports it
+- Hammerhead Tyrant: extra? bounce: no Oracle phrase supports it
+- Hammers of Moradin: extra? token_make: no Oracle phrase supports it
+- Haphazard Bombardment: extra? remove:destroy: no Oracle phrase supports it
+- Harmless Offering: extra? steal: no Oracle phrase supports it
+- Haru-Onna: extra? bounce: no Oracle phrase supports it
+- Hatut Zeraze Strike Force: extra? remove:destroy: no Oracle phrase supports it
+- Haunting Echoes: extra? tutor: no Oracle phrase supports it
+- Havengul Skaab: extra? bounce: no Oracle phrase supports it
+- Hedron Crab: extra? mill: no Oracle phrase supports it
+- Heed the Mists: extra? draw: no Oracle phrase supports it
+- Heightened Awareness: extra? draw: no Oracle phrase supports it
+- Heliod's Intervention: extra? remove:destroy: no Oracle phrase supports it
+- Helmut Zemo, Mastermind: exile_effect: Oracle line says it, script tags lack exile
+- Herald's Horn: extra? tutor: no Oracle phrase supports it
+- Hex: extra? remove:destroy: no Oracle phrase supports it
+- Hex Magic: extra? draw: no Oracle phrase supports it
+- Hibernation: extra? bounce: no Oracle phrase supports it
+- Hibernation Sliver: extra? bounce: no Oracle phrase supports it
+- Highcliff Felidar: extra? remove:destroy: no Oracle phrase supports it
+- Hired Giant: extra? tutor: no Oracle phrase supports it
+- Hisoka's Defiance: extra? counterspell: no Oracle phrase supports it
+- Hithlain Rope: extra? steal: no Oracle phrase supports it
+- Hoarder's Overflow: extra? draw: no Oracle phrase supports it
+- Hobbling Zombie: extra? token_make: no Oracle phrase supports it
+- Homarid Explorer: extra? mill: no Oracle phrase supports it
+- Hordewing Skaab: extra? draw: no Oracle phrase supports it
+- Horned Kavu: extra? bounce: no Oracle phrase supports it
+- Horribly Awry: exile_effect: Oracle line says it, script tags lack exile
+- Horrid Shadowspinner: extra? draw: no Oracle phrase supports it
+- Horses of the Bruinen: extra? bounce: no Oracle phrase supports it
+- Hotshot Investigators: extra? bounce: no Oracle phrase supports it
+- Hot Soup: extra? remove:destroy: no Oracle phrase supports it
+- Hourglass of the Lost: exile_effect: Oracle line says it, script tags lack exile
+- Hoverguard Sweepers: extra? bounce: no Oracle phrase supports it
+- Howling Galefang: exile_effect: Oracle line says it, script tags lack exile
+- Howling Mine: extra? draw: no Oracle phrase supports it
+- Humble Defector: extra? steal: no Oracle phrase supports it
+- Hunter's Prowess: extra? draw: no Oracle phrase supports it
+- Hurkyl's Final Meditation: extra? bounce: no Oracle phrase supports it
+- Hurkyl's Recall: extra? bounce: no Oracle phrase supports it
+- Hurkyl, Master Wizard: extra? tutor: no Oracle phrase supports it
+- Hurl into History: extra? counterspell: no Oracle phrase supports it
+- Hydroid Krasis: extra? draw: no Oracle phrase supports it
+- Hypervolt Grasp: extra? bounce: no Oracle phrase supports it
+- Iceberg Cancrix: extra? mill: no Oracle phrase supports it
+- Icebreaker Kraken: extra? bounce: no Oracle phrase supports it
+- Icefeather Aven: extra? bounce: no Oracle phrase supports it
+- Ice Cage: extra? remove:destroy: no Oracle phrase supports it
+- Icy Reception: extra? counterspell: no Oracle phrase supports it
+- Identity Crisis: exile_effect: Oracle line says it, script tags lack exile
+- Illuminate History: extra? draw: no Oracle phrase supports it
+- Illusory Ambusher: extra? draw: no Oracle phrase supports it
+- Imaginary Pet: extra? bounce: no Oracle phrase supports it
+- Immobilizing Ink: extra? untap: no Oracle phrase supports it
+- Imperious Mindbreaker: extra? mill: no Oracle phrase supports it
+- Imposing Grandeur: extra? draw: no Oracle phrase supports it
+- Impulsivity: exile_effect: Oracle line says it, script tags lack exile
+- Inalla, Archmage Ritualist: exile_effect: Oracle line says it, script tags lack exile
+- Iname as One: exile_effect: Oracle line says it, script tags lack exile
+- Incendiary Command: extra? draw: no Oracle phrase supports it
+- Indentured Djinn: extra? draw: no Oracle phrase supports it
+- Indomitable Creativity: extra? remove:destroy: no Oracle phrase supports it
+- Induced Amnesia: extra? draw: no Oracle phrase supports it
+- Inevitable Betrayal: extra? tutor: no Oracle phrase supports it
+- Ink Dissolver: extra? mill: no Oracle phrase supports it
+- Inscription of Insight: extra? bounce: no Oracle phrase supports it
+- Inspired Skypainter: extra? token_make: no Oracle phrase supports it
+- Inspired Sphinx: extra? draw: no Oracle phrase supports it
+- Interpret the Signs: extra? draw: no Oracle phrase supports it
+- Intimidation Campaign: extra? bounce: no Oracle phrase supports it
+- Into the Fire: extra? draw: no Oracle phrase supports it
+- Into the Flood Maw: extra? draw: no Oracle phrase supports it
+- Into the Night: extra? draw: no Oracle phrase supports it
+- Into the Void: extra? bounce: no Oracle phrase supports it
+- Into the Wilds: extra? tutor: no Oracle phrase supports it
+- Intrude on the Mind: extra? tutor: no Oracle phrase supports it
+- Inundate: extra? bounce: no Oracle phrase supports it
+- Invasion of Amonkhet: extra? mill: no Oracle phrase supports it
+- Invasion of Kaldheim: extra? draw: no Oracle phrase supports it
+- Invasion of Xerex: extra? bounce: no Oracle phrase supports it
+- Invasion Submersible: extra? bounce: no Oracle phrase supports it
+- Invasive Species: extra? bounce: no Oracle phrase supports it
+- Invasive Surgery: extra? tutor: no Oracle phrase supports it
+- Invasive Surgery: extra? counterspell: no Oracle phrase supports it
+- Inventive Iteration: extra? bounce: no Oracle phrase supports it
+- Inverter of Truth: extra? tutor: no Oracle phrase supports it
+- Ipnu Rivulet: extra? mill: no Oracle phrase supports it
+- Isareth the Awakener: exile_effect: Oracle line says it, script tags lack exile
+- Izzet Boilerworks: extra? bounce: no Oracle phrase supports it
+- Jace's Defeat: extra? counterspell: no Oracle phrase supports it
+- Jace's Mindseeker: extra? mill: no Oracle phrase supports it
+- Jace's Ruse: extra? bounce: no Oracle phrase supports it
+- Jace, Architect of Thought: extra? tutor: no Oracle phrase supports it
+- Jace Beleren: extra? mill: no Oracle phrase supports it
+- Jace, Reality Sculptor: extra? tutor: no Oracle phrase supports it
+- Jace, the Mind Sculptor: extra? tutor: no Oracle phrase supports it
+- Jace, the Perfected Mind: extra? mill: no Oracle phrase supports it
+- Jace, Wielder of Mysteries: extra? mill: no Oracle phrase supports it
+- Jadzi, Oracle of Arcavios: extra? bounce: no Oracle phrase supports it
+- Jadzi, Oracle of Arcavios: extra? tutor: no Oracle phrase supports it
+- Jaya Ballard: extra? draw: no Oracle phrase supports it
+- Jenova, Ancient Calamity: extra? draw: no Oracle phrase supports it
+- Jeskai Barricade: extra? bounce: no Oracle phrase supports it
+- Jill, Shiva's Dominant: extra? bounce: no Oracle phrase supports it
+- Jon Irenicus, Shattered One: extra? steal: no Oracle phrase supports it
+- Joshua, Phoenix's Dominant: extra? draw: no Oracle phrase supports it
+- Judge's Familiar: extra? counterspell: no Oracle phrase supports it
+- Jungle Wayfinder: extra? tutor: no Oracle phrase supports it
+- Justice, Vance Astrovik: extra? bounce: no Oracle phrase supports it
+- Kagha, Shadow Archdruid: extra? mill: no Oracle phrase supports it
+- Kain, Traitorous Dragoon: extra? draw: no Oracle phrase supports it
+- Kain, Traitorous Dragoon: extra? steal: no Oracle phrase supports it
+- Kairi, the Swirling Sky: extra? bounce: no Oracle phrase supports it
+- Kairi, the Swirling Sky: extra? mill: no Oracle phrase supports it
+- Kaldra Compleat: extra? token_make: no Oracle phrase supports it
+- Kami of the Crescent Moon: extra? draw: no Oracle phrase supports it
+- Kari Zev, Skyship Raider: exile_effect: Oracle line says it, script tags lack exile
+- Karn's Temporal Sundering: extra? bounce: no Oracle phrase supports it
+- Karona, False God: extra? steal: no Oracle phrase supports it
+- Kassandra, Eagle Bearer: extra? tutor: no Oracle phrase supports it
+- Katara's Reversal: extra? counterspell: no Oracle phrase supports it
+- Kazandu Stomper: extra? bounce: no Oracle phrase supports it
+- Kederekt Leviathan: extra? bounce: no Oracle phrase supports it
+- Keen Duelist: extra? tutor: no Oracle phrase supports it
+- Kefnet the Mindful: extra? bounce: no Oracle phrase supports it
+- Kellan, Inquisitive Prodigy: extra? remove:destroy: no Oracle phrase supports it
+- Kemuri-Onna: extra? bounce: no Oracle phrase supports it
+- Kenessos, Priest of Thassa: extra? tutor: no Oracle phrase supports it
+- Keymaster Rogue: extra? bounce: no Oracle phrase supports it
+- Khalni Gem: extra? bounce: no Oracle phrase supports it
+- Kheru Lich Lord: exile_effect: Oracle line says it, script tags lack exile
+- Khorvath's Fury: extra? draw: no Oracle phrase supports it
+- Kinetic Augur: extra? draw: no Oracle phrase supports it
+- Kinetic Ooze: extra? remove:destroy: no Oracle phrase supports it
+- King Narfi's Betrayal: extra? mill: no Oracle phrase supports it
+- Kinzu of the Bleak Coven: exile_effect: Oracle line says it, script tags lack exile
+- Kiora's Dismissal: extra? bounce: no Oracle phrase supports it
+- Kiora, Sovereign of the Deep: extra? tutor: no Oracle phrase supports it
+- Kitsune's Technique: extra? mill: no Oracle phrase supports it
+- Kitsune, Dragon's Daughter: extra? steal: no Oracle phrase supports it
+- Klauth's Will: extra? remove:destroy: no Oracle phrase supports it
+- Kogla and Yidaro: extra? remove:destroy: no Oracle phrase supports it
+- Kor Skyfisher: extra? bounce: no Oracle phrase supports it
+- Kosei, Penitent Warlord: extra? draw: no Oracle phrase supports it
+- Kotose, the Silent Spider: extra? tutor: no Oracle phrase supports it
+- Kozilek, the Great Distortion: extra? draw: no Oracle phrase supports it
+- Krang, Master Mind: extra? draw: no Oracle phrase supports it
+- Krark, the Thumbless: bounce: Oracle line says it, script tags lack bounce
+- Krenko's Buzzcrusher: extra? remove:destroy: no Oracle phrase supports it
+- Krenko's Buzzcrusher: extra? tutor: no Oracle phrase supports it
+- Kuroki, Thief of Talents: draw: Oracle line says it, script tags lack draw
+- Laboratory Maniac: draw: Oracle line says it, script tags lack draw
+- Lady Loki, Agent of Chaos: exile_effect: Oracle line says it, script tags lack exile
+- Lake-town Lookout: draw: Oracle line says it, script tags lack draw
+- Lantern Spirit: extra? bounce: no Oracle phrase supports it
+- Last March of the Ents: extra? draw: no Oracle phrase supports it
+- Last One Standing: extra? remove:destroy: no Oracle phrase supports it
+- Launch Mishap: extra? counterspell: no Oracle phrase supports it
+- Lavaball Trap: extra? remove:destroy: no Oracle phrase supports it
+- Lava Zombie: extra? bounce: no Oracle phrase supports it
+- Leashling: extra? bounce: no Oracle phrase supports it
+- Leshrac's Sigil: extra? bounce: no Oracle phrase supports it
+- Lethal Vapors: extra? remove:destroy: no Oracle phrase supports it
+- Leveler: extra? tutor: no Oracle phrase supports it
+- Leyline Phantom: extra? bounce: no Oracle phrase supports it
+- Lich's Mastery: extra? draw: no Oracle phrase supports it
+- Lich's Relic: extra? remove:destroy: no Oracle phrase supports it
+- Liesa, Forgotten Archangel: bounce: Oracle line says it, script tags lack bounce
+- Lifeblood Hydra: extra? draw: no Oracle phrase supports it
+- Life's Finale: extra? tutor: no Oracle phrase supports it
+- Light of Judgment: extra? remove:destroy: no Oracle phrase supports it
+- Lilah, Undefeated Slickshot: exile_effect: Oracle line says it, script tags lack exile
+- Liliana, the Necromancer: extra? remove:destroy: no Oracle phrase supports it
+- Liquify: exile_effect: Oracle line says it, script tags lack exile
+- Living Conundrum: draw: Oracle line says it, script tags lack draw
+- Living Twister: extra? bounce: no Oracle phrase supports it
+- Llawan, Cephalid Empress: extra? bounce: no Oracle phrase supports it
+- Lluwen, Imperfect Naturalist: extra? mill: no Oracle phrase supports it
+- Lobotomy: extra? tutor: no Oracle phrase supports it
+- Longstalk Brawl: extra? draw: no Oracle phrase supports it
+- Long River Lurker: exile_effect: Oracle line says it, script tags lack exile
+- Lonis, Cryptozoologist: extra? tutor: no Oracle phrase supports it
+- Loran of the Third Path: extra? remove:destroy: no Oracle phrase supports it
+- Lord of the Forsaken: extra? mill: no Oracle phrase supports it
+- Lord Skitter's Blessing: extra? draw: no Oracle phrase supports it
+- Lord Windgrace: extra? remove:destroy: no Oracle phrase supports it
+- Lord Xander, the Collector: extra? mill: no Oracle phrase supports it
+- Lorehold Archivist: extra? token_make: no Oracle phrase supports it
+- Lost in the Spirit World: extra? bounce: no Oracle phrase supports it
+- Loyal Gryff: extra? bounce: no Oracle phrase supports it
+- Lo and Li, Royal Advisors: extra? mill: no Oracle phrase supports it
+- Maddening Cacophony: extra? mill: no Oracle phrase supports it
+- Maelstrom Artisan: extra? remove:destroy: no Oracle phrase supports it
+- Magmatic Hellkite: extra? tutor: no Oracle phrase supports it
+- Magmatic Sprinter: extra? bounce: no Oracle phrase supports it
+- Malevolent Witchkite: extra? draw: no Oracle phrase supports it
+- Malicious Eclipse: exile_effect: Oracle line says it, script tags lack exile
+- Malicious Malfunction: exile_effect: Oracle line says it, script tags lack exile
+- Manaform Hellkite: exile_effect: Oracle line says it, script tags lack exile
+- Mana Bloom: extra? bounce: no Oracle phrase supports it
+- Mana Breach: extra? bounce: no Oracle phrase supports it
+- Manic Scribe: extra? mill: no Oracle phrase supports it
+- Manifold Insights: extra? tutor: no Oracle phrase supports it
+- Maralen of the Mornsong: extra? draw: no Oracle phrase supports it
+- Maralen of the Mornsong: extra? tutor: no Oracle phrase supports it
+- Marang River Regent: extra? bounce: no Oracle phrase supports it
+- Mark of Eviction: extra? bounce: no Oracle phrase supports it
+- Marsh Crocodile: extra? bounce: no Oracle phrase supports it
+- Master's Councillors: extra? mill: no Oracle phrase supports it
+- Mathemagics: extra? draw: no Oracle phrase supports it
+- Matterbending Mage: extra? bounce: no Oracle phrase supports it
+- Mausoleum Wanderer: extra? counterspell: no Oracle phrase supports it
+- Mawloc: exile_effect: Oracle line says it, script tags lack exile
+- Memory Erosion: extra? mill: no Oracle phrase supports it
+- Memory Leak: exile_effect: Oracle line says it, script tags lack exile
+- Memory Sluice: extra? mill: no Oracle phrase supports it
+- Memory Vampire: extra? mill: no Oracle phrase supports it
+- Mercurial Pretender: extra? bounce: no Oracle phrase supports it
+- Merfolk Mesmerist: extra? mill: no Oracle phrase supports it
+- Metalhead: extra? bounce: no Oracle phrase supports it
+- Metamorphosis Fanatic: extra? draw: no Oracle phrase supports it
+- Metathran Aerostat: extra? bounce: no Oracle phrase supports it
+- Midnight Arsonist: extra? remove:destroy: no Oracle phrase supports it
+- Midnight Oil: extra? draw: no Oracle phrase supports it
+- Mikaeus, the Unhallowed: extra? remove:destroy: no Oracle phrase supports it
+- Millstone: extra? mill: no Oracle phrase supports it
+- Mimeofacture: extra? tutor: no Oracle phrase supports it
+- Mindcrank: extra? mill: no Oracle phrase supports it
+- Mindeye Drake: extra? mill: no Oracle phrase supports it
+- Mindmoil: extra? draw: no Oracle phrase supports it
+- Mindscour Dragon: extra? mill: no Oracle phrase supports it
+- Mindwrack Harpy: extra? mill: no Oracle phrase supports it
+- Mind Flayer, the Shadow: extra? tutor: no Oracle phrase supports it
+- Mind Sculpt: extra? mill: no Oracle phrase supports it
+- Mine Excavation: bounce: Oracle line says it, script tags lack bounce
+- Mine Layer: extra? remove:destroy: no Oracle phrase supports it
+- Minister of Inquiries: extra? mill: no Oracle phrase supports it
+- Mire Blight: extra? remove:destroy: no Oracle phrase supports it
+- Mirkwood Nurturer: extra? bounce: no Oracle phrase supports it
+- Mirror Mockery: exile_effect: Oracle line says it, script tags lack exile
+- Miscast: extra? counterspell: no Oracle phrase supports it
+- Mischievous Catgeist: extra? draw: no Oracle phrase supports it
+- Mischievous Pup: extra? bounce: no Oracle phrase supports it
+- Mistcaller: exile_effect: Oracle line says it, script tags lack exile
+- Mister Negative: extra? draw: no Oracle phrase supports it
+- Mists of Lórien: extra? bounce: no Oracle phrase supports it
+- Modify Memory: extra? steal: no Oracle phrase supports it
+- Moira and Teshar: exile_effect: Oracle line says it, script tags lack exile
+- Mole Module: extra? mill: no Oracle phrase supports it
+- Molten Echoes: exile_effect: Oracle line says it, script tags lack exile
+- Molten Influence: extra? counterspell: no Oracle phrase supports it
+- Molten Psyche: extra? draw: no Oracle phrase supports it
+- Monastery Siege: extra? draw: no Oracle phrase supports it
+- Monk Class: extra? bounce: no Oracle phrase supports it
+- Moonshae Pixie: extra? draw: no Oracle phrase supports it
+- Moonsnare Specialist: extra? bounce: no Oracle phrase supports it
+- Morbid Curiosity: extra? draw: no Oracle phrase supports it
+- Mordenkainen: extra? tutor: no Oracle phrase supports it
+- Mornsong Aria: extra? draw: no Oracle phrase supports it
+- Mornsong Aria: extra? tutor: no Oracle phrase supports it
+- Mount Doom: extra? remove:destroy: no Oracle phrase supports it
+- Mr. Foxglove: extra? draw: no Oracle phrase supports it
+- Muddle the Mixture: extra? counterspell: no Oracle phrase supports it
+- Multiple Choice: extra? bounce: no Oracle phrase supports it
+- Mutant Chain Reaction: extra? remove:destroy: no Oracle phrase supports it
+- Mu Yanling, Celestial Wind: extra? bounce: no Oracle phrase supports it
+- Myconid Spore Tender: extra? remove:destroy: no Oracle phrase supports it
+- Mystic Denial: extra? counterspell: no Oracle phrase supports it
+- Mystic Redaction: extra? mill: no Oracle phrase supports it
+- Narset, Jeskai Waymaster: extra? draw: no Oracle phrase supports it
+- Narset Transcendent: extra? tutor: no Oracle phrase supports it
+- Natural Emergence: extra? bounce: no Oracle phrase supports it
+- Navigator's Ruin: extra? mill: no Oracle phrase supports it
+- Naya Charm: bounce: Oracle line says it, script tags lack bounce
+- Necromancer's Magemark: extra? bounce: no Oracle phrase supports it
+- Necromaster Dragon: extra? mill: no Oracle phrase supports it
+- Necromentia: extra? tutor: no Oracle phrase supports it
+- Necron Deathmark: extra? remove:destroy: no Oracle phrase supports it
+- Necron Deathmark: extra? mill: no Oracle phrase supports it
+- Necron Monolith: extra? mill: no Oracle phrase supports it
+- Necrotic Wound: exile_effect: Oracle line says it, script tags lack exile
+- Neera, Wild Mage: extra? tutor: no Oracle phrase supports it
+- Neerdiv, Devious Diver: extra? mill: no Oracle phrase supports it
+- Neheb, Dreadhorde Champion: extra? draw: no Oracle phrase supports it
+- Nemesis of Reason: extra? mill: no Oracle phrase supports it
+- Nephalia Drownyard: extra? mill: no Oracle phrase supports it
+- Neurok Prodigy: extra? bounce: no Oracle phrase supports it
+- Neutralizing Blast: extra? counterspell: no Oracle phrase supports it
+- Never Happened: exile_effect: Oracle line says it, script tags lack exile
+- New Way Forward: extra? draw: no Oracle phrase supports it
+- Niambi, Esteemed Speaker: extra? bounce: no Oracle phrase supports it
+- Nick Fury, Agent of S.H.I.E.L.D.: extra? tutor: no Oracle phrase supports it
+- Nightmares and Daydreams: extra? mill: no Oracle phrase supports it
+- Nightmare Incursion: extra? tutor: no Oracle phrase supports it
+- Nightscape Battlemage: extra? bounce: no Oracle phrase supports it
+- Nikko-Onna: extra? bounce: no Oracle phrase supports it
+- Niko Aris: extra? bounce: no Oracle phrase supports it
+- Nimana Skydancer: extra? mill: no Oracle phrase supports it
+- Nine-Fingers Keene: extra? tutor: no Oracle phrase supports it
+- Ninja's Blades: extra? token_make: no Oracle phrase supports it
+- Nissa's Revelation: extra? draw: no Oracle phrase supports it
+- Nissa's Zendikon: bounce: Oracle line says it, script tags lack bounce
+- Niv-Mizzet, Ghost Counsel: extra? draw: no Oracle phrase supports it
+- Niv-Mizzet, Visionary: extra? draw: no Oracle phrase supports it
+- Noble Benefactor: extra? tutor: no Oracle phrase supports it
+- Nobody: extra? bounce: no Oracle phrase supports it
+- Nocturnal Hunger: extra? draw: no Oracle phrase supports it
+- Noggle Bridgebreaker: extra? bounce: no Oracle phrase supports it
+- Norn's Inquisitor: extra? token_make: no Oracle phrase supports it
+- Northampton Farm: bounce: Oracle line says it, script tags lack bounce
+- No Escape: exile_effect: Oracle line says it, script tags lack exile
+- No Escape: extra? counterspell: no Oracle phrase supports it
+- No Mercy: extra? remove:destroy: no Oracle phrase supports it
+- No More Lies: exile_effect: Oracle line says it, script tags lack exile
+- Nullify: extra? counterspell: no Oracle phrase supports it
+- Null Elemental Blast: extra? counterspell: no Oracle phrase supports it
+- Numot, the Devastator: extra? remove:destroy: no Oracle phrase supports it
+- Nurturing Pixie: extra? bounce: no Oracle phrase supports it
+- Nyla, Shirshu Sleuth: bounce: Oracle line says it, script tags lack bounce
+- Nyssa of Traken: extra? draw: no Oracle phrase supports it
+- Oath of Lieges: extra? tutor: no Oracle phrase supports it
+- Oboro, Palace in the Clouds: extra? bounce: no Oracle phrase supports it
+- Obscura Charm: extra? counterspell: no Oracle phrase supports it
+- Obsessive Astronomer: extra? draw: no Oracle phrase supports it
+- Obstinate Familiar: draw: Oracle line says it, script tags lack draw
+- Ob Nixilis's Cruelty: exile_effect: Oracle line says it, script tags lack exile
+- Octomancer: extra? draw: no Oracle phrase supports it
+- Oko, Thief of Crowns: extra? steal: no Oracle phrase supports it
+- Old-Growth Dryads: extra? tutor: no Oracle phrase supports it
+- Omen Machine: extra? draw: no Oracle phrase supports it
+- Omnath, Locus of All: extra? tutor: no Oracle phrase supports it
+- One Ring to Rule Them All: extra? mill: no Oracle phrase supports it
+- One with the Machine: extra? draw: no Oracle phrase supports it
+- Oni of Wild Places: extra? bounce: no Oracle phrase supports it
+- Opposition Agent: exile_effect: Oracle line says it, script tags lack exile
+- Orcish Bowmasters: extra? token_make: no Oracle phrase supports it
+- Order of the Sacred Torch: extra? counterspell: no Oracle phrase supports it
+- Orzhov Basilica: extra? bounce: no Oracle phrase supports it
+- Ostrich-Horse: extra? mill: no Oracle phrase supports it
+- Out of the Tombs: draw: Oracle line says it, script tags lack draw
+- Out of the Tombs: extra? mill: no Oracle phrase supports it
+- Overbeing of Myth: extra? draw: no Oracle phrase supports it
+- Overburden: extra? bounce: no Oracle phrase supports it
+- Overlord of the Balemurk: extra? mill: no Oracle phrase supports it
+- Overwhelmed Apprentice: extra? mill: no Oracle phrase supports it
+- Overwhelming Intellect: extra? draw: no Oracle phrase supports it
+- Over the Top: extra? tutor: no Oracle phrase supports it
+- Paradoxical Outcome: extra? bounce: no Oracle phrase supports it
+- Paramecia Coloniex: exile_effect: Oracle line says it, script tags lack exile
+- Paranoid Delusions: extra? mill: no Oracle phrase supports it
+- Parting Gust: extra? draw: no Oracle phrase supports it
+- Part in Friendship: extra? tutor: no Oracle phrase supports it
+- Path of the Pyromancer: extra? draw: no Oracle phrase supports it
+- Path of the Schemer: extra? mill: no Oracle phrase supports it
+- Path to Exile: extra? tutor: no Oracle phrase supports it
+- Patient Rebuilding: extra? mill: no Oracle phrase supports it
+- Pattern of Rebirth: extra? tutor: no Oracle phrase supports it
+- Pearl Lake Ancient: extra? bounce: no Oracle phrase supports it
+- Peema Trailblazer: extra? draw: no Oracle phrase supports it
+- Peerless Ropemaster: extra? bounce: no Oracle phrase supports it
+- Peer into the Abyss: extra? draw: no Oracle phrase supports it
+- Pelargir Survivor: extra? mill: no Oracle phrase supports it
+- Perception Bobblehead: extra? tutor: no Oracle phrase supports it
+- Perch Protection: extra? draw: no Oracle phrase supports it
+- Perplexing Test: extra? bounce: no Oracle phrase supports it
+- Pestilent Cauldron: extra? mill: no Oracle phrase supports it
+- Pest Infestation: extra? remove:destroy: no Oracle phrase supports it
+- Phantom Blade: extra? remove:destroy: no Oracle phrase supports it
+- Phantom Whelp: extra? bounce: no Oracle phrase supports it
+- Phantom Wings: extra? bounce: no Oracle phrase supports it
+- Phenomenon Investigators: extra? bounce: no Oracle phrase supports it
+- Phyrexian Infiltrator: extra? steal: no Oracle phrase supports it
+- Pick the Brain: extra? tutor: no Oracle phrase supports it
+- Pilfered Plans: extra? mill: no Oracle phrase supports it
+- Pir's Whim: extra? tutor: no Oracle phrase supports it
+- Pitiless Carnage: extra? draw: no Oracle phrase supports it
+- Planar Genesis: extra? tutor: no Oracle phrase supports it
+- Plargg, Dean of Chaos: extra? tutor: no Oracle phrase supports it
+- Polygoyf: extra? token_make: no Oracle phrase supports it
+- Pooling Venom: extra? remove:destroy: no Oracle phrase supports it
+- Porphyry Nodes: extra? remove:destroy: no Oracle phrase supports it
+- Portent of Calamity: extra? tutor: no Oracle phrase supports it
+- Possessed Portal: draw: Oracle line says it, script tags lack draw
+- Powder Ganger: extra? remove:destroy: no Oracle phrase supports it
+- Power of Persuasion: extra? bounce: no Oracle phrase supports it
+- Precise Redaction: extra? counterspell: no Oracle phrase supports it
+- Prehistoric Pet: extra? bounce: no Oracle phrase supports it
+- Price of Freedom: extra? tutor: no Oracle phrase supports it
+- Primeval Spawn: exile_effect: Oracle line says it, script tags lack exile
+- Prime Speaker Zegana: extra? draw: no Oracle phrase supports it
+- Proctor's Gaze: extra? bounce: no Oracle phrase supports it
+- Professor Hulk: extra? draw: no Oracle phrase supports it
+- Prophet of the Scarab: extra? draw: no Oracle phrase supports it
+- Protection Racket: extra? tutor: no Oracle phrase supports it
+- Psychic Corrosion: extra? mill: no Oracle phrase supports it
+- Psychic Overload: extra? untap: no Oracle phrase supports it
+- Psychic Pickpocket: extra? bounce: no Oracle phrase supports it
+- Psychic Rebuttal: extra? counterspell: no Oracle phrase supports it
+- Psychic Spiral: extra? mill: no Oracle phrase supports it
+- Psychic Strike: extra? mill: no Oracle phrase supports it
+- Pulse of Murasa: bounce: Oracle line says it, script tags lack bounce
+- Puppeteer Clique: exile_effect: Oracle line says it, script tags lack exile
+- Pyroclastic Hellion: extra? bounce: no Oracle phrase supports it
+- Quag Feast: extra? remove:destroy: no Oracle phrase supports it
+- Quag Feast: extra? mill: no Oracle phrase supports it
+- Quandrix Command: extra? counterspell: no Oracle phrase supports it
+- Quash: extra? tutor: no Oracle phrase supports it
+- Quash: extra? counterspell: no Oracle phrase supports it
+- Queen Kayla bin-Kroog: extra? draw: no Oracle phrase supports it
+- Quicksilver Behemoth: extra? bounce: no Oracle phrase supports it
+- Quicksilver Geyser: extra? bounce: no Oracle phrase supports it
+- Quicksilver Wall: extra? bounce: no Oracle phrase supports it
+- Quiet Disrepair: extra? remove:destroy: no Oracle phrase supports it
+- Quistis Trepe: exile_effect: Oracle line says it, script tags lack exile
+- Radioactive Spider: extra? tutor: no Oracle phrase supports it
+- Raise the Palisade: extra? bounce: no Oracle phrase supports it
+- Rakdos Carnarium: extra? bounce: no Oracle phrase supports it
+- Rakdos Guildmage: exile_effect: Oracle line says it, script tags lack exile
+- Rambling Possum: extra? bounce: no Oracle phrase supports it
+- Rampaging War Mammoth: extra? remove:destroy: no Oracle phrase supports it
+- Rampaging Yao Guai: extra? remove:destroy: no Oracle phrase supports it
+- Random Encounter: extra? bounce: no Oracle phrase supports it
+- Rapid Rescue: extra? mill: no Oracle phrase supports it
+- Rashmi, Eternities Crafter: extra? tutor: no Oracle phrase supports it
+- Razing Snidd: extra? bounce: no Oracle phrase supports it
+- Razor Boomerang: extra? bounce: no Oracle phrase supports it
+- Read the Tides: extra? bounce: no Oracle phrase supports it
+- Realmbreaker, the Invasion Tree: extra? mill: no Oracle phrase supports it
+- Reaper's Scythe: extra? token_make: no Oracle phrase supports it
+- Reap Intellect: extra? tutor: no Oracle phrase supports it
+- Rebuild: extra? bounce: no Oracle phrase supports it
+- Reckless Spite: extra? remove:destroy: no Oracle phrase supports it
+- Redress Fate: extra? draw: no Oracle phrase supports it
+- Reduce to Dreams: extra? bounce: no Oracle phrase supports it
+- Red Elemental Blast: extra? counterspell: no Oracle phrase supports it
+- Red Sun's Twilight: extra? remove:destroy: no Oracle phrase supports it
+- Reinforced Ronin: extra? bounce: no Oracle phrase supports it
+- Reito Sentinel: extra? mill: no Oracle phrase supports it
+- Reject: exile_effect: Oracle line says it, script tags lack exile
+- Reject: extra? counterspell: no Oracle phrase supports it
+- Rejoin the Fight: extra? mill: no Oracle phrase supports it
+- Release the Gremlins: extra? remove:destroy: no Oracle phrase supports it
+- Relic Golem: extra? mill: no Oracle phrase supports it
+- Reprieve: bounce: Oracle line says it, script tags lack bounce
+- Repulsive Mutation: extra? counterspell: no Oracle phrase supports it
+- Repulsor Bots: extra? bounce: no Oracle phrase supports it
+- Requiem Monolith: extra? draw: no Oracle phrase supports it
+- Rescuer Chwinga: extra? bounce: no Oracle phrase supports it
+- Rescue Girl, First Responder: extra? bounce: no Oracle phrase supports it
+- Rescue, Pepper Potts: extra? bounce: no Oracle phrase supports it
+- Restorative Technique: extra? tutor: no Oracle phrase supports it
+- Returned Centaur: extra? mill: no Oracle phrase supports it
+- Returned Reveler: extra? mill: no Oracle phrase supports it
+- Return of the Wildspeaker: extra? draw: no Oracle phrase supports it
+- Revenge of the Hunted: extra? draw: no Oracle phrase supports it
+- Revive the Fallen: bounce: Oracle line says it, script tags lack bounce
+- Reviving Vapors: extra? tutor: no Oracle phrase supports it
+- Revolutionary Rebuff: extra? counterspell: no Oracle phrase supports it
+- Rex, Cyber-Hound: extra? mill: no Oracle phrase supports it
+- Rhino's Rampage: extra? remove:destroy: no Oracle phrase supports it
+- Rhythmic Water Vortex: extra? bounce: no Oracle phrase supports it
+- Rick Jones, Destined Sidekick: extra? mill: no Oracle phrase supports it
+- Riddlekeeper: extra? mill: no Oracle phrase supports it
+- Riddles in the Dark: extra? tutor: no Oracle phrase supports it
+- Riders of the Mark: extra? bounce: no Oracle phrase supports it
+- Rielle, the Everwise: extra? draw: no Oracle phrase supports it
+- Righteous Authority: extra? draw: no Oracle phrase supports it
+- Rimekin Recluse: extra? bounce: no Oracle phrase supports it
+- Ringing Strike Mastery: extra? untap: no Oracle phrase supports it
+- Ripples of Undeath: extra? mill: no Oracle phrase supports it
+- Riptide Chimera: extra? bounce: no Oracle phrase supports it
+- Risen Reef: extra? tutor: no Oracle phrase supports it
+- Rise of the Deathbringer: extra? draw: no Oracle phrase supports it
+- Rishkar's Expertise: extra? draw: no Oracle phrase supports it
+- Rites of Flourishing: extra? draw: no Oracle phrase supports it
+- Riverchurn Monument: extra? mill: no Oracle phrase supports it
+- River Song's Diary: exile_effect: Oracle line says it, script tags lack exile
+- Roaming Ghostlight: extra? bounce: no Oracle phrase supports it
+- Roaring Primadox: extra? bounce: no Oracle phrase supports it
+- Robber Fly: extra? draw: no Oracle phrase supports it
+- Robe of the Archmagi: extra? draw: no Oracle phrase supports it
+- Rock Soldiers: extra? remove:destroy: no Oracle phrase supports it
+- Rod of Absorption: exile_effect: Oracle line says it, script tags lack exile
+- Roiling Dragonstorm: extra? bounce: no Oracle phrase supports it
+- Roiling Waters: extra? bounce: no Oracle phrase supports it
+- Rooting Kavu: exile_effect: Oracle line says it, script tags lack exile
+- Rootwater Thief: extra? tutor: no Oracle phrase supports it
+- Rootweaver Druid: extra? tutor: no Oracle phrase supports it
+- Rory Williams: exile_effect: Oracle line says it, script tags lack exile
+- Rotcrown Ghoul: extra? mill: no Oracle phrase supports it
+- Rot Farm Skeleton: extra? mill: no Oracle phrase supports it
+- Rush of Knowledge: extra? draw: no Oracle phrase supports it
+- 70,000 Light-Years from Home: extra? tutor: no Oracle phrase supports it
+- Sadistic Sacrament: extra? tutor: no Oracle phrase supports it
+- Sadistic Shell Game: extra? remove:destroy: no Oracle phrase supports it
+- Sages of the Anima: draw: Oracle line says it, script tags lack draw
+- Sage's Row Denizen: extra? mill: no Oracle phrase supports it
+- Sage of Mysteries: extra? mill: no Oracle phrase supports it
+- Saheeli Rai: exile_effect: Oracle line says it, script tags lack exile
+- Sakashima the Impostor: extra? bounce: no Oracle phrase supports it
+- Salvage Scuttler: extra? bounce: no Oracle phrase supports it
+- Sanar, Innovative First-Year: extra? tutor: no Oracle phrase supports it
+- Sanar, Unfinished Genius: extra? tutor: no Oracle phrase supports it
+- Sandbender Scavengers: exile_effect: Oracle line says it, script tags lack exile
+- Sandstone Oracle: extra? draw: no Oracle phrase supports it
+- Sandworm: extra? tutor: no Oracle phrase supports it
+- Saprazzan Raider: extra? bounce: no Oracle phrase supports it
+- Sarinth Steelseeker: extra? tutor: no Oracle phrase supports it
+- Sarkhan, the Dragonspeaker: extra? draw: no Oracle phrase supports it
+- Saruman of Many Colors: extra? mill: no Oracle phrase supports it
+- Satsuki, the Living Lore: extra? bounce: no Oracle phrase supports it
+- Sauron's Ransom: extra? tutor: no Oracle phrase supports it
+- Sauron, Lord of the Rings: extra? token_make: no Oracle phrase supports it
+- Sauron, the Dark Lord: extra? token_make: no Oracle phrase supports it
+- Savage Knuckleblade: extra? bounce: no Oracle phrase supports it
+- Saving Grasp: extra? bounce: no Oracle phrase supports it
+- Scatter Ray: extra? counterspell: no Oracle phrase supports it
+- Scavenger's Talent: extra? mill: no Oracle phrase supports it
+- Scholarship Sponsor: extra? tutor: no Oracle phrase supports it
+- Scholar of the Lost Trove: exile_effect: Oracle line says it, script tags lack exile
+- Scorched Earth: extra? remove:destroy: no Oracle phrase supports it
+- Scoria Wurm: extra? bounce: no Oracle phrase supports it
+- Scour: extra? tutor: no Oracle phrase supports it
+- Scout the City: extra? mill: no Oracle phrase supports it
+- Scrabbling Skullcrab: extra? mill: no Oracle phrase supports it
+- Screaming Shield: extra? mill: no Oracle phrase supports it
+- Screeching Silcaw: extra? mill: no Oracle phrase supports it
+- Season of Gathering: extra? draw: no Oracle phrase supports it
+- Sea Drake: extra? bounce: no Oracle phrase supports it
+- Sea Gate Restoration: extra? draw: no Oracle phrase supports it
+- Sea God's Revenge: extra? bounce: no Oracle phrase supports it
+- Sea God's Scorn: extra? bounce: no Oracle phrase supports it
+- Seed of Hope: extra? mill: no Oracle phrase supports it
+- Seer of the Last Tomorrow: extra? mill: no Oracle phrase supports it
+- Seifer Almasy: exile_effect: Oracle line says it, script tags lack exile
+- Selective Snare: extra? bounce: no Oracle phrase supports it
+- Selesnya Sanctuary: extra? bounce: no Oracle phrase supports it
+- Sensational Spider-Man: extra? draw: no Oracle phrase supports it
+- Sergeant John Benton: extra? draw: no Oracle phrase supports it
+- Serpentine Spike: exile_effect: Oracle line says it, script tags lack exile
+- Settle the Wreckage: extra? tutor: no Oracle phrase supports it
+- Shackles: extra? bounce: no Oracle phrase supports it
+- Shadow Kin: extra? mill: no Oracle phrase supports it
+- Shadow Stinger: extra? mill: no Oracle phrase supports it
+- Shah of Naar Isle: extra? draw: no Oracle phrase supports it
+- Shakedown Heavy: draw: Oracle line says it, script tags lack draw
+- Shatterskull Charger: extra? bounce: no Oracle phrase supports it
+- Shaun & Rebecca, Agents: extra? tutor: no Oracle phrase supports it
+- Shaun & Rebecca, Agents: extra? mill: no Oracle phrase supports it
+- She-Hulk, Jade Defender: extra? remove:destroy: no Oracle phrase supports it
+- Shi'ar Soldier: extra? bounce: no Oracle phrase supports it
+- Shifting Grift: extra? steal: no Oracle phrase supports it
+- Shimian Specter: extra? tutor: no Oracle phrase supports it
+- Shimmering Wings: extra? bounce: no Oracle phrase supports it
+- Shimmerwing Chimera: extra? bounce: no Oracle phrase supports it
+- Shinestriker: extra? draw: no Oracle phrase supports it
+- Shivan Wurm: extra? bounce: no Oracle phrase supports it
+- Shocker: extra? draw: no Oracle phrase supports it
+- Shriekgeist: extra? mill: no Oracle phrase supports it
+- Shriekhorn: extra? mill: no Oracle phrase supports it
+- Shrieking Drake: extra? bounce: no Oracle phrase supports it
+- Sibsig Host: extra? mill: no Oracle phrase supports it
+- Sibylline Soothsayer: exile_effect: Oracle line says it, script tags lack exile
+- Sidequest: Catch a Fish: extra? tutor: no Oracle phrase supports it
+- Sidequest: Hunt the Mark: extra? remove:destroy: no Oracle phrase supports it
+- Silver Bolt: extra? remove:destroy: no Oracle phrase supports it
+- Silver Drake: extra? bounce: no Oracle phrase supports it
+- Simic Growth Chamber: extra? bounce: no Oracle phrase supports it
+- Singing Bell Strike: extra? untap: no Oracle phrase supports it
+- Singularity Rupture: extra? mill: no Oracle phrase supports it
+- Sinking Feeling: extra? untap: no Oracle phrase supports it
+- Sin Prodder: extra? tutor: no Oracle phrase supports it
+- Sister of Silence: extra? counterspell: no Oracle phrase supports it
+- Skull Collector: extra? bounce: no Oracle phrase supports it
+- Skull Raid: extra? draw: no Oracle phrase supports it
+- Skyblade's Boon: extra? bounce: no Oracle phrase supports it
+- Skywing Aven: extra? bounce: no Oracle phrase supports it
+- Sky Swallower: extra? steal: no Oracle phrase supports it
+- Sleeper Agent: extra? steal: no Oracle phrase supports it
+- Slinn Voda, the Rising Deep: extra? bounce: no Oracle phrase supports it
+- Sliptide Serpent: extra? bounce: no Oracle phrase supports it
+- Slithermuse: extra? draw: no Oracle phrase supports it
+- Slogurk, the Overslime: extra? bounce: no Oracle phrase supports it
+- Smellerbee, Rebel Fighter: extra? draw: no Oracle phrase supports it
+- Smirking Spelljacker: exile_effect: Oracle line says it, script tags lack exile
+- Smuggler's Buggy: extra? bounce: no Oracle phrase supports it
+- Smuggler's Surprise: extra? mill: no Oracle phrase supports it
+- Soaring Thought-Thief: extra? mill: no Oracle phrase supports it
+- Sokka, Bold Boomeranger: extra? draw: no Oracle phrase supports it
+- Something Worth Saving: extra? mill: no Oracle phrase supports it
+- Soratami Mindsweeper: extra? mill: no Oracle phrase supports it
+- Sorcerous Squall: exile_effect: Oracle line says it, script tags lack exile
+- Sorcerous Squall: extra? mill: no Oracle phrase supports it
+- Sorin, Lord of Innistrad: extra? remove:destroy: no Oracle phrase supports it
+- Sorin the Mirthless: extra? tutor: no Oracle phrase supports it
+- Soulquake: extra? bounce: no Oracle phrase supports it
+- Soul's Majesty: extra? draw: no Oracle phrase supports it
+- Soul of Emancipation: extra? remove:destroy: no Oracle phrase supports it
+- Sowing Salt: extra? tutor: no Oracle phrase supports it
+- Space Marine Devastator: extra? remove:destroy: no Oracle phrase supports it
+- Space-Time Anomaly: extra? mill: no Oracle phrase supports it
+- Sparkcaster: extra? bounce: no Oracle phrase supports it
+- Species Gorger: extra? bounce: no Oracle phrase supports it
+- Specimen Freighter: extra? bounce: no Oracle phrase supports it
+- Specimen Freighter: extra? mill: no Oracle phrase supports it
+- Spectral Arcanist: exile_effect: Oracle line says it, script tags lack exile
+- Spectral Interference: extra? counterspell: no Oracle phrase supports it
+- Spell Queller: exile_effect: Oracle line says it, script tags lack exile
+- Spell Shrivel: exile_effect: Oracle line says it, script tags lack exile
+- Sphinx's Tutelage: extra? mill: no Oracle phrase supports it
+- Sphinx Ambassador: extra? tutor: no Oracle phrase supports it
+- Sphinx Mindbreaker: extra? mill: no Oracle phrase supports it
+- Sphinx of Clear Skies: extra? tutor: no Oracle phrase supports it
+- Sphinx of Uthuun: extra? tutor: no Oracle phrase supports it
+- Spider-Byte, Web Warden: extra? bounce: no Oracle phrase supports it
+- Spider Food: extra? remove:destroy: no Oracle phrase supports it
+- Spider-Man 2099, Miguel O'Hara: extra? bounce: no Oracle phrase supports it
+- Spider-Sense: extra? counterspell: no Oracle phrase supports it
+- Splinter: extra? tutor: no Oracle phrase supports it
+- Splinter, Aging Champion: extra? remove:destroy: no Oracle phrase supports it
+- Split the Party: extra? bounce: no Oracle phrase supports it
+- Sporogenic Infection: extra? remove:destroy: no Oracle phrase supports it
+- Spreading Algae: extra? remove:destroy: no Oracle phrase supports it
+- Squee's Embrace: bounce: Oracle line says it, script tags lack bounce
+- Squirrel Sanctuary: extra? bounce: no Oracle phrase supports it
+- Stampeding Serow: extra? bounce: no Oracle phrase supports it
+- Stampeding Wildebeests: extra? bounce: no Oracle phrase supports it
+- Stangg: exile_effect: Oracle line says it, script tags lack exile
+- Starforged Sword: extra? draw: no Oracle phrase supports it
+- Startled Awake: extra? mill: no Oracle phrase supports it
+- Starwinder: extra? draw: no Oracle phrase supports it
+- Steal the Show: extra? draw: no Oracle phrase supports it
+- Steam Augury: extra? tutor: no Oracle phrase supports it
+- Steam Vines: extra? remove:destroy: no Oracle phrase supports it
+- Steel Leaf Paladin: extra? bounce: no Oracle phrase supports it
+- Steel Sabotage: extra? counterspell: no Oracle phrase supports it
+- Step Through: extra? bounce: no Oracle phrase supports it
+- Stern Mentor: extra? mill: no Oracle phrase supports it
+- Stickytongue Sentinel: extra? bounce: no Oracle phrase supports it
+- Stiltzkin, Moogle Merchant: extra? steal: no Oracle phrase supports it
+- Stitcher Geralf: extra? mill: no Oracle phrase supports it
+- Stonecloaker: extra? bounce: no Oracle phrase supports it
+- Stone Idol Trap: exile_effect: Oracle line says it, script tags lack exile
+- Stormfront Riders: extra? bounce: no Oracle phrase supports it
+- Stormsplitter: exile_effect: Oracle line says it, script tags lack exile
+- Storm Cauldron: extra? bounce: no Oracle phrase supports it
+- Storm Sculptor: extra? bounce: no Oracle phrase supports it
+- Storm, Shaker of Skies: extra? remove:destroy: no Oracle phrase supports it
+- Stratus Dancer: extra? counterspell: no Oracle phrase supports it
+- Stream of Thought: extra? mill: no Oracle phrase supports it
+- Strix Serenade: extra? counterspell: no Oracle phrase supports it
+- Stromgald Cabal: extra? counterspell: no Oracle phrase supports it
+- Stubborn Burrowfiend: extra? mill: no Oracle phrase supports it
+- Studious First-Year: extra? tutor: no Oracle phrase supports it
+- Subterfuge: extra? draw: no Oracle phrase supports it
+- Summoner's Grimoire: extra? token_make: no Oracle phrase supports it
+- Summon: Bahamut: extra? remove:destroy: no Oracle phrase supports it
+- Summon: Valefor: extra? bounce: no Oracle phrase supports it
+- Sunbird's Invocation: extra? tutor: no Oracle phrase supports it
+- Suncrusher: extra? bounce: no Oracle phrase supports it
+- Sunder: extra? bounce: no Oracle phrase supports it
+- Sunderflock: extra? bounce: no Oracle phrase supports it
+- Sundering Eruption: extra? tutor: no Oracle phrase supports it
+- Sunken Hope: extra? bounce: no Oracle phrase supports it
+- Sunpearl Kirin: extra? bounce: no Oracle phrase supports it
+- Sun Clasp: extra? bounce: no Oracle phrase supports it
+- Superior Spider-Man: exile_effect: Oracle line says it, script tags lack exile
+- Supreme Inquisitor: extra? tutor: no Oracle phrase supports it
+- Surgical Extraction: extra? tutor: no Oracle phrase supports it
+- Susur Secundi, Void Altar: extra? draw: no Oracle phrase supports it
+- Svella, Ice Shaper: extra? tutor: no Oracle phrase supports it
+- Swallowed by Leviathan: extra? counterspell: no Oracle phrase supports it
+- Swans of Bryn Argoll: extra? draw: no Oracle phrase supports it
+- Sweet Oblivion: extra? mill: no Oracle phrase supports it
+- Switcheroo: extra? steal: no Oracle phrase supports it
+- Sword of Body and Mind: extra? mill: no Oracle phrase supports it
+- Sword of Once and Future: exile_effect: Oracle line says it, script tags lack exile
+- Sword of Sinew and Steel: extra? remove:destroy: no Oracle phrase supports it
+- Sword-Point Diplomacy: extra? tutor: no Oracle phrase supports it
+- Sycorax Commander: extra? draw: no Oracle phrase supports it
+- Syncopate: exile_effect: Oracle line says it, script tags lack exile
+- Syphon Essence: extra? counterspell: no Oracle phrase supports it
+- Syr Vondam, Sunstar Exemplar: extra? remove:destroy: no Oracle phrase supports it
+- Szadek, Lord of Secrets: extra? mill: no Oracle phrase supports it
+- Taborax, Hope's Demise: draw: Oracle line says it, script tags lack draw
+- Talent of the Telepath: extra? tutor: no Oracle phrase supports it
+- Tales of the Ancestors: extra? draw: no Oracle phrase supports it
+- Tawnos, Solemn Survivor: extra? mill: no Oracle phrase supports it
+- Tazeem Raptor: extra? bounce: no Oracle phrase supports it
+- Tazri, Stalwart Survivor: extra? mill: no Oracle phrase supports it
+- Teeming Dragonstorm: extra? bounce: no Oracle phrase supports it
+- Teferi's Puzzle Box: extra? draw: no Oracle phrase supports it
+- Teferi's Tutelage: extra? mill: no Oracle phrase supports it
+- Teferi, Temporal Pilgrim: extra? bounce: no Oracle phrase supports it
+- Teferi, Time Raveler: extra? bounce: no Oracle phrase supports it
+- Temporal Mastery: extra? draw: no Oracle phrase supports it
+- Temur Sabertooth: extra? bounce: no Oracle phrase supports it
+- Terastodon: extra? remove:destroy: no Oracle phrase supports it
+- Terisian Mindbreaker: extra? mill: no Oracle phrase supports it
+- Termination Facilitator: extra? remove:destroy: no Oracle phrase supports it
+- Terminus: extra? draw: no Oracle phrase supports it
+- Terrasymbiosis: extra? draw: no Oracle phrase supports it
+- Territory Culler: extra? tutor: no Oracle phrase supports it
+- Tersa Lightshatter: extra? draw: no Oracle phrase supports it
+- Test of Talents: extra? tutor: no Oracle phrase supports it
+- Test of Talents: extra? counterspell: no Oracle phrase supports it
+- Tetzin, Gnome Champion: extra? mill: no Oracle phrase supports it
+- Tezzeret's Touch: bounce: Oracle line says it, script tags lack bounce
+- Thada Adel, Acquisitor: extra? tutor: no Oracle phrase supports it
+- Thassa's Bounty: extra? mill: no Oracle phrase supports it
+- Thassa's Devourer: extra? mill: no Oracle phrase supports it
+- The Aesir Escape Valhalla: extra? bounce: no Oracle phrase supports it
+- The Ancient One: extra? mill: no Oracle phrase supports it
+- The Biblioplex: extra? tutor: no Oracle phrase supports it
+- The Binding of the Titans: extra? mill: no Oracle phrase supports it
+- The Black Arrow: extra? remove:destroy: no Oracle phrase supports it
+- The Celestial Toymaker: extra? tutor: no Oracle phrase supports it
+- The Celestus: draw: Oracle line says it, script tags lack draw
+- The Cruelty of Gix: extra? draw: no Oracle phrase supports it
+- The Curse of Fenric: extra? remove:destroy: no Oracle phrase supports it
+- The Dawning Archaic: exile_effect: Oracle line says it, script tags lack exile
+- The Eagles Are Coming!: extra? bounce: no Oracle phrase supports it
+- The Elderspell: extra? remove:destroy: no Oracle phrase supports it
+- The Elder Dragon War: extra? draw: no Oracle phrase supports it
+- The End: extra? tutor: no Oracle phrase supports it
+- The Fifteenth Doctor: extra? mill: no Oracle phrase supports it
+- The Great Aurora: extra? draw: no Oracle phrase supports it
+- The Immortal Sun: extra? draw: no Oracle phrase supports it
+- The Kami War: extra? bounce: no Oracle phrase supports it
+- The Legend of Kyoshi: extra? draw: no Oracle phrase supports it
+- The Master, Multiplied: extra? token_make: no Oracle phrase supports it
+- The Master of Keys: extra? mill: no Oracle phrase supports it
+- The Master of Lake-town: extra? mill: no Oracle phrase supports it
+- The Mindskinner: extra? mill: no Oracle phrase supports it
+- The Mouth of Sauron: extra? mill: no Oracle phrase supports it
+- The Parting of the Ways: extra? remove:destroy: no Oracle phrase supports it
+- The Phasing of Zhalfir: extra? draw: no Oracle phrase supports it
+- The Pride of Hull Clade: extra? draw: no Oracle phrase supports it
+- The Stone Brain: extra? tutor: no Oracle phrase supports it
+- The Tale of Tamiyo: extra? mill: no Oracle phrase supports it
+- The Ten Rings: extra? draw: no Oracle phrase supports it
+- The Theorist, Jace Beleren: extra? bounce: no Oracle phrase supports it
+- The Trickster-God's Heist: extra? steal: no Oracle phrase supports it
+- The Unluckiest Planeswalker: extra? draw: no Oracle phrase supports it
+- The Ur-Dragon: extra? draw: no Oracle phrase supports it
+- The Ur-Sphinx: extra? mill: no Oracle phrase supports it
+- The War in Heaven: extra? mill: no Oracle phrase supports it
+- The Water Crystal: extra? mill: no Oracle phrase supports it
+- The Weatherseed Treaty: extra? draw: no Oracle phrase supports it
+- The Weaver King: extra? mill: no Oracle phrase supports it
+- The World Spell: extra? draw: no Oracle phrase supports it
+- Thieves' Guild Enforcer: extra? mill: no Oracle phrase supports it
+- This Town Ain't Big Enough: extra? bounce: no Oracle phrase supports it
+- Thopter Assembly: extra? bounce: no Oracle phrase supports it
+- Thoughtbound Primoc: extra? steal: no Oracle phrase supports it
+- Thought Collapse: extra? mill: no Oracle phrase supports it
+- Thought Distortion: exile_effect: Oracle line says it, script tags lack exile
+- Thought Scour: extra? mill: no Oracle phrase supports it
+- Thought Sponge: extra? draw: no Oracle phrase supports it
+- Thousand Winds: extra? bounce: no Oracle phrase supports it
+- Throne of the Grim Captain: extra? mill: no Oracle phrase supports it
+- Thunderous Debut: extra? tutor: no Oracle phrase supports it
+- Thunderous Wrath: extra? draw: no Oracle phrase supports it
+- Tiana, Ship's Caretaker: bounce: Oracle line says it, script tags lack bounce
+- Tibalt's Trickery: extra? mill: no Oracle phrase supports it
+- Tidecaller Mentor: extra? bounce: no Oracle phrase supports it
+- Time of Ice: extra? bounce: no Oracle phrase supports it
+- Time Wipe: extra? bounce: no Oracle phrase supports it
+- Timothar, Baron of Bats: exile_effect: Oracle line says it, script tags lack exile
+- Together Forever: bounce: Oracle line says it, script tags lack bounce
+- Tome Scour: extra? mill: no Oracle phrase supports it
+- Tom, Bert, and William: extra? draw: no Oracle phrase supports it
+- Topple the Statue: extra? remove:destroy: no Oracle phrase supports it
+- Torrential Gearhulk: exile_effect: Oracle line says it, script tags lack exile
+- Toshiro Umezawa: exile_effect: Oracle line says it, script tags lack exile
+- Towering-Wave Mystic: extra? mill: no Oracle phrase supports it
+- Tower of Murmurs: extra? mill: no Oracle phrase supports it
+- Town Greeter: extra? mill: no Oracle phrase supports it
+- Trade the Helm: extra? steal: no Oracle phrase supports it
+- Transcendent Dragon: exile_effect: Oracle line says it, script tags lack exile
+- Traumatize: extra? mill: no Oracle phrase supports it
+- Traveling Botanist: extra? tutor: no Oracle phrase supports it
+- Traverse Eternity: extra? draw: no Oracle phrase supports it
+- Treacherous Pit-Dweller: extra? steal: no Oracle phrase supports it
+- Treasure Keeper: extra? tutor: no Oracle phrase supports it
+- Trenzalore Clocktower: exile_effect: Oracle line says it, script tags lack exile
+- Trial of Ambition: extra? bounce: no Oracle phrase supports it
+- Trial of Knowledge: extra? bounce: no Oracle phrase supports it
+- Trial of Solidarity: extra? bounce: no Oracle phrase supports it
+- Trial of Strength: extra? bounce: no Oracle phrase supports it
+- Trial of Zeal: extra? bounce: no Oracle phrase supports it
+- Triumph of Saint Katherine: extra? draw: no Oracle phrase supports it
+- Trusty Boomerang: extra? bounce: no Oracle phrase supports it
+- Truth or Consequences: extra? draw: no Oracle phrase supports it
+- Truth or Tale: extra? tutor: no Oracle phrase supports it
+- Turf War: extra? steal: no Oracle phrase supports it
+- Turtles in Time: extra? bounce: no Oracle phrase supports it
+- Turtle Tracks: extra? tutor: no Oracle phrase supports it
+- Twinstrike: extra? remove:destroy: no Oracle phrase supports it
+- Twisted Justice: extra? draw: no Oracle phrase supports it
+- Ultimate Magic: Meteor: extra? remove:destroy: no Oracle phrase supports it
+- Umbilicus: extra? bounce: no Oracle phrase supports it
+- Uncontrolled Infestation: extra? remove:destroy: no Oracle phrase supports it
+- Undead Alchemist: extra? mill: no Oracle phrase supports it
+- Undead Butler: exile_effect: Oracle line says it, script tags lack exile
+- Underrealm Lich: draw: Oracle line says it, script tags lack draw
+- Undo: extra? bounce: no Oracle phrase supports it
+- Unesh, Criosphinx Sovereign: extra? tutor: no Oracle phrase supports it
+- Unexpected Results: extra? tutor: no Oracle phrase supports it
+- Unmoored Ego: extra? tutor: no Oracle phrase supports it
+- Unnatural Aggression: exile_effect: Oracle line says it, script tags lack exile
+- Unnerving Grasp: extra? bounce: no Oracle phrase supports it
+- Unseal the Necropolis: extra? mill: no Oracle phrase supports it
+- Unyaro Griffin: extra? counterspell: no Oracle phrase supports it
+- Urgent Necropsy: extra? remove:destroy: no Oracle phrase supports it
+- Urza Assembles the Titans: extra? draw: no Oracle phrase supports it
+- Valakut Awakening: extra? draw: no Oracle phrase supports it
+- Valley Rally: extra? draw: no Oracle phrase supports it
+- Vampire Charmseeker: bounce: Oracle line says it, script tags lack bounce
+- Vanishment: extra? draw: no Oracle phrase supports it
+- Varina, Lich Queen: extra? draw: no Oracle phrase supports it
+- Varragoth, Bloodsky Sire: extra? tutor: no Oracle phrase supports it
+- Vastwood Zendikon: bounce: Oracle line says it, script tags lack bounce
+- V.A.T.S.: extra? remove:destroy: no Oracle phrase supports it
+- Vault 112: Sadistic Simulation: exile_effect: Oracle line says it, script tags lack exile
+- Vault 87: Forced Evolution: extra? draw: no Oracle phrase supports it
+- Vedalken Entrancer: extra? mill: no Oracle phrase supports it
+- Velomachus Lorehold: extra? tutor: no Oracle phrase supports it
+- Venser's Diffusion: bounce: Oracle line says it, script tags lack bounce
+- Venser, Visionary Traveler: extra? bounce: no Oracle phrase supports it
+- Verdant Succession: extra? tutor: no Oracle phrase supports it
+- Vessel of Paramnesia: extra? mill: no Oracle phrase supports it
+- Veteran Explorer: extra? tutor: no Oracle phrase supports it
+- Veteran Ice Climber: extra? mill: no Oracle phrase supports it
+- Viashino Sandscout: extra? bounce: no Oracle phrase supports it
+- Viashino Sandsprinter: extra? bounce: no Oracle phrase supports it
+- Viashino Sandstalker: extra? bounce: no Oracle phrase supports it
+- Victor Timely, Wily Tycoon: exile_effect: Oracle line says it, script tags lack exile
+- Vile Requiem: extra? remove:destroy: no Oracle phrase supports it
+- Vilis, Broker of Blood: extra? draw: no Oracle phrase supports it
+- Violent Ultimatum: extra? remove:destroy: no Oracle phrase supports it
+- Vivien's Grizzly: extra? tutor: no Oracle phrase supports it
+- Vizier of Many Faces: extra? token_make: no Oracle phrase supports it
+- Voidmage Husher: extra? bounce: no Oracle phrase supports it
+- Void Shatter: exile_effect: Oracle line says it, script tags lack exile
+- Volatile Fault: extra? tutor: no Oracle phrase supports it
+- Volatile Stormdrake: extra? steal: no Oracle phrase supports it
+- Volrath's Dungeon: extra? remove:destroy: no Oracle phrase supports it
+- Voracious Bibliophile: extra? draw: no Oracle phrase supports it
+- Voracious Greatshark: extra? counterspell: no Oracle phrase supports it
+- Vronos, Masked Inquisitor: extra? bounce: no Oracle phrase supports it
+- Wakanda Forever!: extra? tutor: no Oracle phrase supports it
+- Wakka, Devoted Guardian: extra? remove:destroy: no Oracle phrase supports it
+- Wall of Junk: extra? bounce: no Oracle phrase supports it
+- Wall of Lost Thoughts: extra? mill: no Oracle phrase supports it
+- Wanderwine Farewell: extra? bounce: no Oracle phrase supports it
+- Warping Wail: extra? counterspell: no Oracle phrase supports it
+- Warp World: extra? tutor: no Oracle phrase supports it
+- Wash Out: extra? bounce: no Oracle phrase supports it
+- Watcher of the Wayside: extra? mill: no Oracle phrase supports it
+- Watchful Blisterzoa: extra? draw: no Oracle phrase supports it
+- Waterwhirl: extra? bounce: no Oracle phrase supports it
+- Water Whip: extra? bounce: no Oracle phrase supports it
+- Wave of Vitriol: extra? tutor: no Oracle phrase supports it
+- Wayward Guide-Beast: extra? bounce: no Oracle phrase supports it
+- Webstrike Elite: extra? remove:destroy: no Oracle phrase supports it
+- Weight of Memory: extra? mill: no Oracle phrase supports it
+- Whelming Wave: extra? bounce: no Oracle phrase supports it
+- Whiplash Trap: extra? bounce: no Oracle phrase supports it
+- Whip of Erebos: exile_effect: Oracle line says it, script tags lack exile
+- Whip Silk: extra? bounce: no Oracle phrase supports it
+- Whirlpool Drake: extra? draw: no Oracle phrase supports it
+- Whirlpool Rider: extra? draw: no Oracle phrase supports it
+- Whiskervale Forerunner: extra? tutor: no Oracle phrase supports it
+- Whitemane Lion: extra? bounce: no Oracle phrase supports it
+- White Orchid Phantom: extra? remove:destroy: no Oracle phrase supports it
+- White Orchid Phantom: extra? tutor: no Oracle phrase supports it
+- Wicked Pact: extra? remove:destroy: no Oracle phrase supports it
+- Wick, the Whorled Mind: extra? draw: no Oracle phrase supports it
+- Wild-Magic Sorcerer: exile_effect: Oracle line says it, script tags lack exile
+- Wild Mammoth: extra? steal: no Oracle phrase supports it
+- Wild Swing: extra? remove:destroy: no Oracle phrase supports it
+- Will of the Sultai: extra? mill: no Oracle phrase supports it
+- Will of the Temur: extra? draw: no Oracle phrase supports it
+- Windreaver: extra? bounce: no Oracle phrase supports it
+- Windscouter: extra? bounce: no Oracle phrase supports it
+- Winds of Abandon: extra? tutor: no Oracle phrase supports it
+- Winds of Rebuke: extra? mill: no Oracle phrase supports it
+- Wind Zendikon: bounce: Oracle line says it, script tags lack bounce
+- Wingspan Stride: extra? bounce: no Oracle phrase supports it
+- Winter Eladrin: extra? bounce: no Oracle phrase supports it
+- Wishing Well: exile_effect: Oracle line says it, script tags lack exile
+- Witch Hunt: extra? steal: no Oracle phrase supports it
+- Witherbloom Command: extra? mill: no Oracle phrase supports it
+- Wrenn and Realmbreaker: extra? mill: no Oracle phrase supports it
+- Wrexial, the Risen Deep: exile_effect: Oracle line says it, script tags lack exile
+- Wrong Turn: extra? steal: no Oracle phrase supports it
+- Wydwen, the Biting Gale: extra? bounce: no Oracle phrase supports it
+- Yarok's Wavecrasher: extra? bounce: no Oracle phrase supports it
+- Yawgmoth's Vile Offering: extra? remove:destroy: no Oracle phrase supports it
+- Yes Man, Personal Securitron: extra? steal: no Oracle phrase supports it
+- Yidaro, Wandering Monster: extra? draw: no Oracle phrase supports it
+- Yoke of the Damned: extra? remove:destroy: no Oracle phrase supports it
+- Yomiji, Who Bars the Way: bounce: Oracle line says it, script tags lack bounce
+- Yotia Declares War: extra? draw: no Oracle phrase supports it
+- Yuki-Onna: extra? bounce: no Oracle phrase supports it
+- Zask, Skittering Swarmlord: extra? mill: no Oracle phrase supports it
+- Zektar Shrine Expedition: exile_effect: Oracle line says it, script tags lack exile
+- Zellix, Sanity Flayer: extra? mill: no Oracle phrase supports it
+- Zell Dincht: extra? bounce: no Oracle phrase supports it
+- Zephyrim: extra? draw: no Oracle phrase supports it
+- Zephyr Sentinel: extra? bounce: no Oracle phrase supports it
+- Zephyr Spirit: extra? bounce: no Oracle phrase supports it
+- Ziatora's Envoy: extra? tutor: no Oracle phrase supports it
+- Zimone's Experiment: extra? tutor: no Oracle phrase supports it
+- Zndrsplt's Judgment: extra? bounce: no Oracle phrase supports it
+- Zulaport Duelist: extra? mill: no Oracle phrase supports it
+- Zurgo and Ojutai: extra? bounce: no Oracle phrase supports it
+
+## Double check of this run
+
+- Structure checks on 27699 records (no duplicate or upper-case tags; every supertype and card type in the Types line has its tag; every K: line has a kw: or forge_line: tag): K: line without kw tag: Aang, Swift Savior (reach), Aang, Swift Savior (trample), Accursed Witch (enchant), Adaptive Automaton (etbreplacement), Adventurous Eater (etbreplacement), Akki Lavarunner (protection_from_red); not lower case: Akroma's Will, Disciple of Perdition, Flame of Anor, Gallifrey Council Chamber, Jeska's Will, Kamahl's Will
+- Comparison with the original run (before the cross-check layer, checked 2026-10-22 after the self-sacrifice fix): 80 tags added on 80 cards changed (22 ai_logic, 58 other tags on 51 cards); 14 `sacrifice_outlet` tags removed (self-sacrifice is not an outlet, user 2026-10-22); nothing else removed or changed.
+- By hand: every cross-check addition on the sample cards and about 40 others was read against the Oracle text (see `TAG_SAMPLE.md`); the findings are listed under 'Known problems' below.
+
+## Known problems (found by the double check; tags NOT changed, your call)
+
+- `tutor` is wrongly tagged on cards that look at the top card or split piles (Herald's Horn, Fact or Fiction): the older tagger treats 'put into your hand' as a tutor; the cross-check flags them as `extra?`.
+- Planeswalker tags (Davriel, Chandra) pick up unrelated tags from the whole card text (draw, lifegain, reanimate on Davriel): the older `ability_tags` reads all text, not per ability; per-ability groups are right, the card-level list is noisy.
+- `landtype:swamp` on Corrupt and `landtype:island` on Flow of Knowledge sit after the ability tags: by H45 they mark 'cares about a land type', not the card's own type.
+- Fixed (user 2026-10-22): a card sacrificing itself as a cost is not a sacrifice outlet (14 cards, e.g. Mind Stone, Sakura-Tribe Elder; 6 real outlets remain). The cross-check no longer reads quoted text, so a token's own 'Sacrifice this creature' ability is not added as the card's cost (Carrier Thrall, Skittering Invasion).
+- Fixed earlier in this run: a basic-land sacrifice (Alpine Guide 'sacrifice a Mountain') was tagged sacrifice_outlet; now treated as a land sacrifice (user rule).

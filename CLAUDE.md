@@ -4,7 +4,7 @@ Fork `oliandor712/forgecomventure`. Concordia is a Pokemon-like Commander campai
 
 ## Where things live
 - **New session:** the start script is `START.md` (repo root).
-- **Lookup first:** read `tools/agents/INDEX.md` (task to file map, size guide). Never read BIG files whole (Comprehensive Rules, STARTER_TAGS, ABILITY_TWINS, records.csv); use `python3 tools/agents/lookup.py` slices, or Grep then Read with offset/limit. Logs: check `tools/agents/logs/LOG_INDEX.toon` before reading or writing any log.
+- **Lookup first:** read `tools/agents/INDEX.md` (task to file map, size guide). Never read BIG files whole (Comprehensive Rules, CARD_TAGS, ABILITY_TWINS, records.csv); use `python3 tools/agents/lookup.py` slices, or Grep then Read with offset/limit. Logs: check `tools/agents/logs/LOG_INDEX.toon` before reading or writing any log.
 - Game data: `forge-gui/res/adventure/Concordia/` (decks `decks/tier1..5`, `starter`; `world/enemies.json`; `maps/`; `config.json`). Staged tier 1 set (not live): `staging_t1_fresh/`.
 - Design docs: `docs/Adventure/Campaign/` (OVERWORLD.md, ENCOUNTER_TIERS.md, AI_CHANGES_APPROVAL.md, ...).
 - Tools: `tools/concordia/` (decks `deckgen/`, sims `sim/`, `suite/`, `balance_lab/`, `ai_lab/`), `tools/agents/` (agent system, `human_logic.toon`, `reference/`).

@@ -1,7 +1,25 @@
 # Handover to the new main session
 
 Written 2026-10-23 by the previous main session (branch `cd/claude2`, now merged into `campaign-design`). That session is deleted. You are the only main session. The read-first list lives in `START.md` (step 5); this file is one item on it.
-## LATEST (2026-10-27, tag-syntax session): TAG_SYNTAX steps 1-4 (view generator + checker), `affected_player` tag (read first)
+## LATEST (2026-10-28, starter tags merged into the pool): committed and pushed (read first)
+User: the pool is the one tag record; starter tags are gone. Memory: `pool-is-the-one-tag-record`. Logs: `log-code-analyses.toon` and `log-patchnotes.toon`, 2026-10-28 rows.
+- `python tools/concordia/deckgen/tag_run.py run` (alias `starter`, ~2 min, run in the background) tags all 27,699 pool cards -> `tags/CARD_TAGS.toon` (gitignored, regenerate), plus TAG_RUN_REPORT.md, TAG_SAMPLE.md, TAG_GAPS.toon, ABILITY_TWINS.json, TAG_REFERENCE, REDUNDANCY_CHECK, NEW_TAGS_FOR_APPROVAL, TAG_LEGEND, VERB_ORDER.
+- Tag guard removed (`tagcheck/guards.py` keeps rule guard, `gaps`, `write_gaps`, `audit`). `STARTER_TAGS.toon/.best.json/_REPORT.md` are archived in `tags/archive_starter_20261028/` (not read by any code).
+- `lookup.py card` reads CARD_TAGS.toon, falls back to a fresh tag for cards missing from it.
+- Reader tests (`tagcheck/cards.starter_records`, glance, reverse_check) still use fresh records of starter-deck cards, deliberately.
+- Open: 23 cards whose CARD_TAGS tokens differ from pool ftags (modal/group tokens such as `ge1.2.1_of_2`, cause unknown); 1,111 cards untagged beyond basics; 25 REDUNDANCY_CHECK findings unreviewed; `pool.py` not re-run after the last tag change this session.
+- Still on hold for the user: W_Starter_Regen_r7 and B/U/R/G rebuilds, full-pool checker, ~350 TargetedController lines, AI patch ticks (only the user ticks).
+- Gotcha: names with quotes (Henzie "Toolbox" Torre) break naive parsers of CARD_TAGS.toon; names are quoted only if they hold a comma or colon.
+
+## PREVIOUS (2026-10-28, cleanup session after START.md): code changes NOT committed, nothing pushed (read first)
+Rules H104-H108 in `human_logic.toon`. Only py_compile and `tag_run.py card/starter` were run; no deck was built, so the starter_build.py edits are untested.
+- `starter_build.py`: H102 colourless gate removed; `cl_land_cap` uses `spec['lands']` (was 37); `typed_ok` applies `restricted_to` to every tagged card; `review-apply` drops switch-ins that are off plan, not utility, or weaker than the card replaced; mono-colour utility lands need fit >= 1 (`weak` in `land_score`, revert if a build loses good lands).
+- `tag_run.py`: Forbidden Orchard keeps no `token_make`/`token_kind`. `affected_player` approved (DOC row, APPROVED_DECISION, bound in gen_effect_params); Fateful Absence got a hand unit line. The ~350 TargetedController cards are not in the tagged pool: their lines wait for the pool refresh (user: wait until the new syntax is finished).
+- `tagcheck/tagsyntax.py export OUT [CARDS.txt]` writes bracket-view records; `tags/READER_GRAMMAR.md` section 10 is the addendum (flat records keep rule 1.5).
+- Staging: `staging_starters_bak_*` and `W_Starter_Regen` r1-r4 deleted (r5, r6 kept; git has the rest).
+- Waiting on the user: rebuild B/U/R/G starters (after tags and scores update), `pool.py` refresh, full-pool checker, AI patches in `AI_CHANGES_APPROVAL.md` (all unticked; only the user ticks).
+
+## EARLIER (2026-10-27, tag-syntax session): TAG_SYNTAX steps 1-4 (view generator + checker), `affected_player` tag (read first)
 **Repo state: committed and pushed to `campaign-design` at session end** (no force; one commit holds this session's work AND the earlier uncommitted work of the starter/land-picker session, listed in the block below). Nothing live changed (no live decks, no `enemies.json`, no forge-core/game/ai). Documents (`TAG_SYNTAX.md`) were already pushed earlier through docpush.
 
 ### What the project is

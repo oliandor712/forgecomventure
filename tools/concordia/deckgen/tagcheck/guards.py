@@ -1,13 +1,9 @@
 """All the tag guards and links in one file (SCRIPT_MERGE_ANALYSIS.md, step 5). Sections:
-  tag guard   apply_tags(recs): tag_run.py starter calls it before it writes anything. Never let a worse tag run override a better one. Each card's new record is scored against the
-              best stored one (tags/STARTER_TAGS.best.json) with the reader-free score (tags -> mtg2llm render -> similarity to the Oracle, the same 0.4 cosine + 0.4 concept F1 + 0.2 number F1
-              as reverse_check). A card with no more tagged ability sections than Oracle lines is compared section by section (all keyword groups are one section, order ignored) and the
-              better tags of each section are kept; any other card is compared as a whole. A tie keeps the stored record. `tag_run.py starter --force` skips the guard and reseeds the best set.
   rule guard  apply_rules(rules, comp, path): `mtg2llm.py mine` calls it before it writes render_rules.json / compose_rules.json. Every stored pattern stays; a pattern only the new run has is
               added; a pattern with a different canon takes the new canon only when the starter cards that use it score higher with it. compose_rules: the new table replaces the stored one only
               when the mean starter score is higher. `mtg2llm.py mine --force` skips the guard. M.lint_rules(d): every mined rule must carry the words its own tags say; a rule whose canon omits the
               cue for one of its tags was mined from a merged or shifted reader line and is not trusted (mtg2llm.rules() drops it).
-  sync        write_gaps() / previous_gaps(): two-way link between the tagger and the tag check, run after `tag_run.py starter` and `mtg2llm.py mine`. Renders every tagged starter unit and writes
+  sync        write_gaps() / previous_gaps(): two-way link between the tagger and the tag check, run after `tag_run.py run` and `mtg2llm.py mine`. Renders every tagged unit and writes
               tags/TAG_GAPS.toon, one row per unit the renderer cannot write: open_slot (a rule exists but the tags leave a slot open: a TAG gap) or no_rule (no rule fits: a RULE gap).
               Rows are regenerated each time, never hand-merged.
   audit       Tag audit without a reader: for every card with a script, check that features the script (and the Oracle text) carry have a matching tag family. A miss is a tag gap.
@@ -18,95 +14,7 @@ sys.path.insert(0, HERE); sys.path.insert(0, os.path.dirname(HERE))
 import cards as CD, score as S, mtg2llm as M, run_memory
 
 
-# ---- tag guard ----
-BEST = os.path.join(os.path.dirname(HERE), "tags", "STARTER_TAGS.best.json")
 TYPING = ("supertype:", "cardtype:", "type:", "landtype:")
-
-
-def _tag_sims(recs):
-    """card name -> (whole-card sim, {unit group: sim or None}) for each record"""
-    names = [r["name"] for r in recs]
-    orig = {n: S.original_text(n) for n in names}
-    idx = S.Index({n: S.toks(S.norm(orig[n], n)) for n in names})
-    def sim(o, t, n):
-        rt = S.toks(S.norm(S.clean_reco(t), n))
-        if not rt: return 0.0
-        return S.score(o, t, n, idx, idx.v(S.toks(S.norm(o, n))), idx.v(rt))["sim"]
-    out = {}
-    for r in recs:
-        n = r["name"]; b = CD.tag_blind(r); text, _ = M.render(b["groups"], b["typing"], n)
-        total = sim(orig[n], text, n)
-        lines = [l for l in re.split(r"\s*/\s*", orig[n]) if l.strip()]
-        u = M.units(b["groups"]); per = {}
-        secs = {}                               # sections: all keyword groups (k1, k2 ...) are one section "K"; every other ability line is its own; order does not matter
-        for g, ts in u.items(): secs.setdefault("K" if g.startswith("k") else g, {})[g] = " ".join(ts)
-        kw = " ".join(l for l in lines if len(l.split()) <= 8 and ":" not in l and "." not in l) or orig[n]
-        if secs and len([k for k in secs if k != "K"]) <= len(lines):
-            for sec, gs in secs.items():
-                t = M.render(gs, b["typing"], n)[0]
-                per[sec] = sim(kw, t, n) if sec == "K" else max(sim(l, t, n) for l in lines)
-        out[n] = (total, per)
-    return out
-
-
-def _merge(old, new, so, sn):
-    """record for one card and what happened: 'old', 'new' or 'merged'"""
-    if old["groups"] == new["groups"]: return new, "same"
-    po, pn = so[1], sn[1]
-    if po and pn and set(po) == set(pn):
-        pick = {g: (new if pn[g] > po[g] else old) for g in po}
-        if all(v is old for v in pick.values()): return old, "old"
-        if all(v is new for v in pick.values()): return new, "new"
-        base = new if sn[0] > so[0] else old
-        groups = dict(base["groups"])
-        for sec, src in pick.items():
-            drop = [g for g in groups if (g.startswith("k") if sec == "K" else g.split(".")[0] == sec)]
-            for g in drop: del groups[g]
-            groups.update({g: ts for g, ts in src["groups"].items() if (g.startswith("k") if sec == "K" else g.split(".")[0] == sec)})
-        groups = dict(sorted(groups.items(), key=lambda kv: (0 if kv[0] == "c0" else 1 if kv[0].startswith("k") else 3 if kv[0] == "v" else 2, [int(x) for x in re.findall(r"\d+", kv[0])])))
-        flat = [t for ts in groups.values() for t in ts]
-        keep = [t for t in base["tags"] if t.startswith(TYPING) or t in flat]
-        keep += [t for t in dict.fromkeys(flat) if t not in keep]
-        return dict(base, groups=groups, tags=keep), "merged"
-    return (new, "new") if sn[0] > so[0] else (old, "old")
-
-
-def apply_tags(recs, force=False):
-    best = {} if force or not os.path.exists(BEST) else json.load(open(BEST, encoding="utf-8"))
-    for v in best.values(): v["links"] = [tuple(l) for l in v["links"]]      # JSON turns the link triples into lists
-    if not best:
-        _save(recs); print("tag_guard: seeded best set with %d cards" % len(recs)); return recs
-    old = {n: v for n, v in best.items()}
-    both = [r for r in recs if r["name"] in old]
-    sn = _tag_sims(both); so = _tag_sims([old[r["name"]] for r in both])
-    out, tally = [], {"same": 0, "old": 0, "new": 0, "merged": 0}
-    for r in recs:
-        n = r["name"]
-        if n not in old: out.append(r); tally["new"] += 1; continue
-        m, how = _merge(old[n], r, so[n], sn[n]); out.append(m); tally[how] += 1
-    kept = tally["old"]
-    print("tag_guard: %d same, %d new better, %d merged per group, %d kept stored (new run scored lower)" % (tally["same"], tally["new"], tally["merged"], kept))
-    _log(tally, len(recs), force)
-    if tally["same"] != len(out) or len(out) != len(old): _save(out)      # rewrite the best file only when it changed
-    return out
-
-
-LOG = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(HERE))), "agents", "logs", "guard-runs.toon")
-
-
-def _log(t, n, force):
-    """one row per guard run in tools/agents/logs/guard-runs.toon, so the count of overrides survives between sessions"""
-    row = "%s|tag_guard|%d|%d|%d|%d|%d|%s" % (datetime.date.today(), n, t["same"], t["new"], t["merged"], t["old"], "force" if force else "")
-    head = ["# Claude-only file in TOON. One row per guard run (tagcheck/guards.py). new = new tags beat stored, merged = per-section mix, old = stored kept because the run scored lower.", "guard[0|]{date|guard|cards|same|new|merged|old|note}:"]
-    L = open(LOG, encoding="utf-8").read().splitlines() if os.path.exists(LOG) else head
-    i = next(k for k, l in enumerate(L) if l.startswith("guard["))
-    L.append(row); L[i] = "guard[%d|]{date|guard|cards|same|new|merged|old|note}:" % (len(L) - i - 1)
-    open(LOG, "w", encoding="utf-8").write("\n".join(L) + "\n")
-    run_memory.save("tag_guard", "starter tag run", "%d cards: %d same, %d new, %d merged, %d stored kept%s" % (n, t["same"], t["new"], t["merged"], t["old"], " (force)" if force else ""))
-
-
-def _save(recs):
-    with open(BEST, "w", encoding="utf-8") as f: json.dump({r["name"]: r for r in recs}, f, ensure_ascii=False)
 
 
 # ---- rule guard and rule-table lint ----
@@ -167,19 +75,11 @@ def lint_main():
 GAPS_OUT = os.path.join(os.path.dirname(HERE), "tags", "TAG_GAPS.toon")
 
 
-def best_records():
-    """the guarded best tag set (tag_guard.py), or None when it is not seeded yet"""
-    if not os.path.exists(BEST): return None
-    d = json.load(open(BEST, encoding="utf-8"))
-    for v in d.values(): v["links"] = [tuple(l) for l in v["links"]]
-    return list(d.values())
-
-
-def gaps():
-    """(rows, units, rendered) over every starter in the best tag set (fresh tags when no best set exists); row = (card, group, tags, reason)"""
+def gaps(recs):
+    """(rows, units, rendered) over the given tag records; row = (card, group, tags, reason)"""
     rows, n, ok = [], 0, 0
-    keep = CD.starter_records; best = best_records()
-    if best: CD.starter_records = lambda: best
+    keep = CD.starter_records
+    CD.starter_records = lambda: recs
     try: tc = M.tag_cards()
     finally: CD.starter_records = keep
     for r, b, _x, _y in tc:
@@ -193,15 +93,15 @@ def gaps():
     return rows, n, ok
 
 
-def write_gaps():
-    rows, n, ok = gaps(); c = C.Counter(x[3] for x in rows)
+def write_gaps(recs=None):
+    rows, n, ok = gaps(recs if recs is not None else CD.starter_records()); c = C.Counter(x[3] for x in rows)
     lines = ["# Claude-only file in TOON. Written by tagcheck/guards.py; regenerated, never hand-merged. open_slot = tag gap (tagger), no_rule = rule gap (mtg2llm mine / HAND tables).",
-             "# starters: %d units, %d rendered, %d open_slot, %d no_rule" % (n, ok, c["open_slot"], c["no_rule"]),
+             "# cards: %d units, %d rendered, %d open_slot, %d no_rule" % (n, ok, c["open_slot"], c["no_rule"]),
              "gaps[%d|]{card|group|tags|reason}:" % len(rows)]
     lines += ["%s|%s|%s|%s" % (a, g, t.replace("|", "/"), r) for a, g, t, r in sorted(rows, key=lambda x: (x[3], x[0], x[1]))]
     os.makedirs(os.path.dirname(GAPS_OUT), exist_ok=True)
     with open(GAPS_OUT, "w", encoding="utf-8") as f: f.write("\n".join(lines) + "\n")
-    run_memory.save("sync", "starter gap file", "%d units, %d rendered, %d open_slot, %d no_rule" % (n, ok, c["open_slot"], c["no_rule"]))
+    run_memory.save("sync", "tag gap file", "%d units, %d rendered, %d open_slot, %d no_rule" % (n, ok, c["open_slot"], c["no_rule"]))
     return n, ok, c
 
 
@@ -209,7 +109,7 @@ def previous_gaps():
     """summary line of the last gap file, for the tagger to print before it runs"""
     if not os.path.exists(GAPS_OUT): return ""
     for l in open(GAPS_OUT, encoding="utf-8"):
-        if l.startswith("# starters:"): return l[2:].strip()
+        if l.startswith("# cards:"): return l[2:].strip()
     return ""
 
 

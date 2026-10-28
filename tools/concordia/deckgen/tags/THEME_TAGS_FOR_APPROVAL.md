@@ -32,7 +32,7 @@ Columns: family, example tags, what makes a member, what makes a payoff.
 | [ ] | [ ] | [ ] | Landfall / lands | `extra_land_drop`, `trigger:landfall`, `niche:lands`, `put_onto_battlefield` land | land ramp | landfall payoffs | |
 | [ ] | [ ] | [ ] | Spells matter | `trigger:cast`, instants and sorceries, `cost_reduce_for:instant_or_sorcery`, `impulse_draw` | cheap instants and sorceries | cast triggers, copy effects | |
 | [ ] | [ ] | [ ] | Discard / hand attack | `discard`, `discard_count`, `hellbent` | discard sources | payoffs on discard | |
-| [ ] | [ ] | [ ] | Draw | `draw`, `draw_count`, `cantrip` | draw spells | draw payoffs ("whenever you draw") | |
+| [ ] | [ ] | [ ] | Draw | `draw`, `draw_count`, `cantrip`, `trigger:draw` | draw spells | draw payoffs ("whenever you draw") | |
 | [ ] | [ ] | [ ] | Pump / anthem / keywords | `pump_amount`, `grant_kw`, `affected_scope:you_control`, `lord`, `anthem` | creatures that benefit | n/a (payoff only) | |
 | [ ] | [ ] | [ ] | Evasion / combat | `evasion`, `cant_be_blocked`, `must_attack`, `trample`, `fight` | evasive creatures | extra-combat and damage-trigger payoffs | |
 | [ ] | [ ] | [ ] | Damage / pingers | `damage`, `damage_amount`, `kw:wither` | damage sources | "whenever damage is dealt" payoffs | |

@@ -3,6 +3,10 @@
   "verb": null,
   "how": "override"
  },
+ "affected_player": {
+  "verb": null,
+  "how": "override"
+ },
  "affected_scope": {
   "verb": null,
   "how": "override"

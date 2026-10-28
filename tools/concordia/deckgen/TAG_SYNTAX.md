@@ -102,10 +102,11 @@ A checker script (`tagsyntax.py check`) runs on every card of the pool and fails
 3. **Unbound tags:** lenient. The checker lists them and does not fail while the binding table is filled.
 4. **Misplaced cost and verb tags (Nazar):** fixed in the tagger, not moved by the view.
 5. **Reader export format:** brackets (shorter, one line per group), chosen by the main session because the user left it open.
+6. **Single tagger (user, 2026-10-28, supersedes the earlier `--set` plan):** the pool is the one tag record. `tag_run.py run` tags every pool card (27,699, ~2 min) and writes `tags/CARD_TAGS.toon` (generated, gitignored) plus the reports; `starter` is an alias. There are no starter-only tags, no tag guard and no `STARTER_TAGS.*` files; the current tagger output always wins. `HOME_VERBS` is off (tag_run.py) until per-verb rules are mined.
 
-## 9. Build order (nothing built beyond the prototype `tagcheck/tagsyntax.py`)
+## 9. Build order (steps 2 and 3 done, 4 renderer hook in place, 1 and 5 open)
 1. Generate `EFFECT_PARAMS` from the "pairs with" notes; list the gaps.
-2. Tagger: record verb phrase position; move cost and verb tags into the group they belong to.
+2. Tagger: record verb phrase position; move cost and verb tags into the group they belong to. **Done 2026-10-28**: position in VERB_ORDER.toon; `tag_run.home_verbs` moves a card-level verb tag (Nazar: draw) into the one group holding its parameters (none or several homes: stays card-level). Rule 4 verbless segments 502 -> 196 (the rest have no verb tag anywhere on the card: target_zone, mana_sink, optional ...).
 3. `tagsyntax.py check` over the pool (round trip, role fit, link ends, determinism). **Done 2026-10-27** on the starter set (tagged.json): rules 1, 2, 3, 7 pass; rule 4 lists 502 verbless segments and rule 5 two unbound families (lenient, decision 3); rule 6 fails on 11 link ends (link generator), with 127 implicit role-word ends and 33 card-level ends listed apart.
-4. Renderer: one sentence per `effect[...]` segment; readers: replace rule 1.5 of `READER_GRAMMAR.md`.
+4. Renderer: one sentence per `effect[...]` segment; readers: replace rule 1.5 of `READER_GRAMMAR.md`. **Renderer half in 2026-10-28** (`mtg2llm.effect_split`, used when a multi-verb unit has no exact rule and every segment has one): fires on 0 starter units so far, because rules are mined per whole unit and ~37 multi-verb units have no per-verb rule (1 of 37 segments' sets resolves). Needs per-segment rules mined before it changes any score. Reader half (rule 1.5) is already in READER_GRAMMAR section 10 for bracket exports.
 5. Glance test of flat against view (readers only on the user's ask).

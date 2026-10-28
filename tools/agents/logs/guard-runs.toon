@@ -1,5 +1,5 @@
 # Claude-only file in TOON. One row per guard run (tag_guard.py; rule_guard.py when it logs). new = new tags beat stored, merged = per-section mix, old = stored kept because the run scored lower.
-guard[30|]{date|guard|cards|same|new|merged|old|note}:
+guard[41|]{date|guard|cards|same|new|merged|old|note}:
 2026-10-24|tag_guard|353|353|0|0|0|
 2026-10-25|tag_guard|353|351|0|0|2|
 2026-10-25|tag_guard|571|346|223|0|2|
@@ -30,3 +30,14 @@ guard[30|]{date|guard|cards|same|new|merged|old|note}:
 2026-10-27|tag_guard|571|495|3|0|73|
 2026-10-27|tag_guard|571|498|0|0|73|
 2026-10-27|tag_guard|571|498|0|0|73|
+2026-10-28|tag_guard|571|498|0|0|73|
+2026-10-28|tag_guard|571|498|1|0|72|
+2026-10-28|tag_guard|571|496|0|0|75|
+2026-10-28|tag_guard|571|153|228|0|190|
+2026-10-28|tag_guard|571|380|0|0|191|
+2026-10-28|tag_guard|571|153|1|0|189|
+2026-10-28|tag_guard|571|313|0|0|190|
+2026-10-28|tag_guard|571|153|0|0|190|
+2026-10-28|tag_guard|571|313|0|0|190|
+2026-10-28|tag_guard|571|313|0|0|190|
+2026-10-28|tag_guard|571|313|0|0|190|

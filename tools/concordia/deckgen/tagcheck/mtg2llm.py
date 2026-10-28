@@ -592,6 +592,16 @@ def self_word(typing):
     return ct[0]
 
 
+def effect_split(toks):
+    """TAG_SYNTAX step 4: a unit with two or more effect[...] segments -> [tags of segment 1 + the context tags (trigger, cost, target, duration)], [tags of segment 2], ...; None when it has fewer than two"""
+    import tagsyntax as T
+    eff = [t for t in toks if role(t) == "eff"]
+    segs, _unb = T.effect_segments(eff)
+    if len(segs) < 2 or not all(T.is_verb(sg[0]) for sg in segs): return None
+    ctx = [t for t in toks if role(t) != "eff"]
+    return [ctx + segs[0]] + [list(sg) for sg in segs[1:]]
+
+
 def render(groups, typing=None, name=""):
     """groups: {id: 'tag tag ...'} as in a reader batch card. returns (text, stats). name only selects card-keyed hand lines (hand_units.json "Card|pattern"); blind callers leave it empty"""
     _CARD[0] = name or ""
@@ -619,6 +629,12 @@ def render(groups, typing=None, name=""):
             if body and not unresolved(body) and "{effect}" not in body:
                 st["exact" if v2 is not None and not ap2 else "composed"] = st.get("exact" if v2 is not None and not ap2 else "composed", 0) + 1
                 lines.append(body + " Then transform this creature."); continue
+        if (v is None or approx) and not names:      # one sentence per effect[...] segment (TAG_SYNTAX step 4), only when every segment has its own exact rule
+            parts = effect_split(ts[0].split()); lk = [lookup(pattern([" ".join(p)])) for p in parts] if parts else []
+            if parts and all(x is not None and not ap for x, ap in lk):
+                ls = [fill(x["canon"], nums(p)).rstrip() for (x, _ap), p in zip(lk, parts)]
+                if not any(unresolved(l) for l in ls):
+                    st["exact"] += 1; st["split"] = st.get("split", 0) + 1; lines.append(" ".join(ls)); continue
         if v is None or approx:
             cp = compose(ts[0].split(), g == "x") if not names else None
             if cp: cp = x_phrase(cp, ts[0].split())

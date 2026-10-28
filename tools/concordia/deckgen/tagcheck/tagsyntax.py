@@ -132,6 +132,21 @@ if __name__ == "__main__":
             m = tot.get(k, []); cnt = C.Counter(m)
             print("%-16s %5d  %s" % (k, len(m), ("FAIL" if k in ("1 round trip", "2 one place", "3 role fit", "6 link ends", "7 determinism") and m else "lenient" if m else "ok")), "" if not m else "e.g. " + "; ".join(x if k[0] != "5" else "%s x%d" % (x, cnt[x]) for x in list(cnt)[:8]))
         sys.exit(1 if any(tot.get(k) for k in ("1 round trip", "2 one place", "3 role fit", "6 link ends", "7 determinism")) else 0)
+    if sys.argv[1:2] == ["export"]:   # bracket-view records for blind readers: tagsyntax.py export OUT [CARDS.txt]  (no names, groups in Oracle order, links as written; READER_GRAMMAR.md addendum B)
+        out = sys.argv[2] if len(sys.argv) > 2 else os.path.join(os.path.dirname(__file__), "tagsyntax_export.txt")
+        names = [l.strip() for l in open(sys.argv[3], encoding="utf8") if l.strip()] if len(sys.argv) > 3 else list(d)
+        miss = [n for n in names if n not in d]
+        if miss: sys.exit("unknown cards: " + "; ".join(miss[:10]))
+        with open(out, "w", encoding="utf8") as f:
+            for i, n in enumerate(names, 1):
+                c = d[n]; lines, bad = view_card(c)
+                if bad: sys.exit("%s: %s (run 'check' first)" % (n, bad))
+                f.write("record %d\n" % i)
+                if c.get("card_tags"): f.write("card: %s\n" % " ".join(c["card_tags"]))
+                f.write("\n".join(lines) + "\n")
+                for l in c["links"]: f.write("link: %s\n" % l)
+                f.write("\n")
+        print("wrote %d records to %s" % (len(names), out)); sys.exit(0)
     for n in sys.argv[1:] or ["Wayfarer's Bauble", "Swords to Plowshares", "Nazar, the Velvet Fang", "Kodama's Reach"]:
         c = d[n]; lines, bad = view_card(c)
         print("== " + n); print("\n".join(lines))

@@ -2,7 +2,7 @@
 
 face(text, name)      -> numbers from the card script (mana value, power, toughness, loyalty, colors) plus color identity and rarity from scryfall/cards.json
 derived(tags, groups) -> tags computed from the base tags, never read from a script. Rules live here only.
-Both are written as their own lines (`face:`, `derived:`) in STARTER_TAGS.toon. They are not part of `tags:` and the blind reader never sees them."""
+Both are written as their own lines (`face:`, `derived:`) in CARD_TAGS.toon. They are not part of `tags:` and the blind reader never sees them."""
 import os, re, json
 
 HERE = os.path.dirname(os.path.abspath(__file__))

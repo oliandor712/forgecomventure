@@ -31,7 +31,7 @@ LEGEND = {
  "cost": "non-mana cost of the ability (tap, sacrifice, remove_counters, exile with from_zone, life, discard, return)",
  "duration": "how long an effect lasts (eot = until end of turn, static = while the source is on the battlefield, next_untap, while_control, end_step, until_monarch_changes = until an opponent becomes the monarch...)",
  "affected_scope": "whose permanents the effect or static ability affects (you_control, opponent_controls, all)",
- "trigger": "event that triggers the ability (attacks, dies, etb, gain_life, beginning_of_combat ...)",
+ "trigger": "event that triggers the ability (attacks, dies, etb, gain_life, draw = a player draws a card, beginning_of_combat ...)",
  "piles_split": "cards are split into two piles by this player",
  "lifegain_amount": "life gained (number, x, or equal_to_life_lost)",
  "choose_on_enter": "as this card enters the battlefield its controller chooses something (color, card_type, creature_type, player ...); other tags of the card refer to the choice (cost_reduce_for:chosen_type = spells of the chosen type)",
@@ -53,7 +53,7 @@ LEGEND = {
  "scales": "the amount (X) of this ability is the number of that kind of thing you control: write it as 'for each <thing> you control' (scales:island on a draw_count:x = draw a card for each Island you control)",
  "mana_restriction": "the mana can be spent only on what the value says (mana_restriction:instant_or_sorcery = spend this mana only to cast an instant or sorcery spell)",
  "x_is": "what the amount is when it is not a plain number. Do NOT write the letter X for these: count_<thing>_you_control = 'for each <thing> you control'; own_power / target_power = 'equal to that creature's power'; previous_result = 'equal to the amount the previous effect produced' (damage dealt, life lost ...). Only x_paid means the letter X (the X in the mana cost). Example: damage_amount:x x_is:count_creature_you_control = deals damage equal to the number of creatures you control",
- "affected_player": "PROPOSED: the player who receives the effect when it is not the ability's controller: affected_player:target_controller = the controller of the targeted permanent ('Its controller gains life equal to its power'), target_owner = its owner, target_player = the targeted player; set on the effect group (Forge Defined$/Player$ TargetedController / TargetedOwner / TargetedPlayer)",
+ "affected_player": "APPROVED 2026-10-27: the player who receives the effect when it is not the ability's controller: affected_player:target_controller = the controller of the targeted permanent ('Its controller gains life equal to its power'), target_owner = its owner, target_player = the targeted player; set on the effect group (Forge Defined$/Player$ TargetedController / TargetedOwner / TargetedPlayer)",
  "controller": "who controls the permanent after the effect: controller:you (default: it enters under the control of the player who controls the effect) or controller:owner (only when the Oracle text says 'under its owner's control')",
  "optional": "the effect of this group is optional (you may ...)",
  "target_scope": "whose things or which players the effect hits (you_control, opp_control; no tag = whoever controls it; each_opponent = every opponent, each_player = every player; no value means a single chosen target)",
@@ -108,6 +108,7 @@ REF_EXTRA = {
  "reanimate": ("AI umbrella: any effect that moves a card from a graveyard onto the battlefield; derived from put_onto_battlefield + from_zone:graveyard (the readable detail is those tags and controller)", "AI Tags category; derived in tag_variant.py"),
  "pump_single": ("pumps one target creature", "script Pump with a target"),
  "bounce": ("returns a permanent to its owner's hand", "script ChangeZone Battlefield -> Hand"),
+ "flicker": ("exiles a permanent, then returns that card to the battlefield (blink)", "approved 2026-10-28 (H109): Cloudshift, Ephemerate"),
  "sacrifice_outlet": ("can sacrifice other permanents (not just itself or lands)", "script Cost$ Sac<..>; human_logic rule on self/land sacrifice"),
  "evasion": ("hard to block: menace, shadow, fear, intimidate, landwalk, can't be blocked (flying keeps its own tag)", "ability_tags.KEYWORD_TAGS and cant_be_blocked; landwalk added on the user's order 2026-10-22"),
  "self_mill": ("mills the card's own controller: 'Mill three cards' (you put cards from your library into your graveyard)", "script Mill with a Defined player"),
@@ -180,6 +181,7 @@ DOC = {
  "bolster:<n>": ("bolster N (CR 701.39): put N +1/+1 counters on the creature you control with the least toughness", "user 2026-10-23, P4c D (Elite Scaleguard)"),
  "setup_card:<need>": ("general tag, any archetype: the card does nothing until the deck supplies <need>; need = mana (big mana to pay an activation cost), counters (+1/+1 or other counters), graveyard, tokens. The builder counts the card's utility only when the deck meets the need (mana: 10 ramp pieces)", "user 2026-10-27, Dark Depths (setup_card:mana)"),
  "restricted_to:<type>": ("general tag, any archetype: the card's mana (spend only to cast <type> spells) or return ability (target <type> card from your graveyard) names a creature type, so it works only in a deck with that type. The builder gives it commander support only when the type is the commander's or an allowed tribe", "user 2026-10-27, Haven of the Spirit Dragon (restricted_to:dragon)"),
+ "affected_player:<who>": ("modifier of the whole group: whose controller the effect lands on when a card names that player (target_controller = the controller of the targeted permanent, as in Swords to Plowshares)", "user 2026-10-27 (affected_player, 'proceed')"),
  "monarch": ("you become the monarch (CR 724)", "user 2026-10-23, P4c D (Palace Jailer)"),
  "unless_cost_amount:<symbols>": ("the mana an 'unless pays' tax or attack tax asks for", "P4c E, user 2026-10-23 (Sage's Dousing, Ghostly Prison)"),
  "cost_if_you_do": ("the 'If you do' part marks the preceding sacrifice/discard as a cost", "user note on Victimize"),
@@ -585,6 +587,7 @@ def extra(lines, sv, types, text):
             elif mode == "Always": add("trigger:state")
             elif mode == "Destroyed" and "Self" in p.get("ValidCard", ""): add("trigger:dies")
             elif mode == "LifeGained": add("trigger:gain_life")
+            elif mode == "Drawn": add("trigger:draw")      # H109 draw payoff ("whenever you draw")
             elif mode == "Phase" and p.get("Phase") == "BeginCombat": add("trigger:beginning_of_combat")
             elif mode == "Phase" and p.get("Phase") == "Upkeep": add("trigger:upkeep")
         if kind == "S":
@@ -727,7 +730,13 @@ def extra(lines, sv, types, text):
                     add("tutor_dest:" + dest)
                     desc = bp.get("SpellDescription", "") + line
                     if "shuffle" in desc.lower(): add("shuffle")
-                elif o == "Battlefield" and d == "Exile": add("remove:exile")
+                elif o == "Battlefield" and d == "Exile":
+                    add("remove:exile")
+                    nxt_, hop_ = bp.get("SubAbility"), 0      # H109 blink payoff: the exile is followed in its own chain by a return (Cloudshift, Restoration Angel) or a delayed return (Flickerwisp); an O-Ring style return from a leaves trigger is not flicker
+                    while nxt_ and hop_ < 4:
+                        s_ = str(sv.get(nxt_, ""))
+                        if re.search(r"ChangeZone.*Destination\$ Battlefield", s_) and re.search(r"Defined\$ (Remembered|Targeted)", s_) or "DelayedTrigger" in s_: add("flicker"); break
+                        m_ = re.search(r"SubAbility\$ (\w+)", s_); nxt_ = m_.group(1) if m_ else None; hop_ += 1
                 elif o == "Battlefield" and d == "Hand": add("remove:bounce")
                 elif o == "Battlefield" and d == "Library": add("remove:tuck")
                 elif o == "Graveyard" and d == "Hand" and bp.get("Defined", "").startswith("TriggeredNewCard"): add("recursion:return_self")

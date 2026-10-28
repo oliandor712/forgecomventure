@@ -3,8 +3,8 @@
 Sources (H54 rewritten 2026-10-23): the card script only; its Oracle section is a gap filler (tag_verify), not a separate source; mtgish is dropped. Forge AI (AILogic$ etc.) stays a reference input.
 Per card: tags (supertype, cardtype, subtype/landtype first, then kw + qualifiers, then ability tags), clauses, links, AI reference.
 
-  python3 tag_run.py starter            tag every card in decks/starter/*.dck -> tags/STARTER_TAGS.toon + STARTER_TAGS_REPORT.md
-  python3 tag_run.py card "Name" ...    print records\n  (the starter command also writes tags/NEW_TAGS_FOR_APPROVAL.md and tags/STARTER_TAGS_SAMPLE.md)
+  python3 tag_run.py run                tag every pool card (pool.pkl) -> tags/CARD_TAGS.toon (generated, not committed) + TAG_RUN_REPORT.md; `starter` is an alias
+  python3 tag_run.py card "Name" ...    print records\n  (the run command also writes tags/NEW_TAGS_FOR_APPROVAL.md and tags/TAG_SAMPLE.md)
 """
 import os, re, sys, json, glob, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -253,7 +253,8 @@ def record(name, text):
         tags = [x for x in tags if x != "restrict"]   # 'can't be blocked (by X)' is evasion, not a restriction on someone else
     if "duration:next_untap" in tags or "duration:while_control" in tags: tags = [t for t in tags if t != "duration:permanent"]   # Forge's Duration$ Permanent on a 'next untap step' / 'as long as you control' effect is a script detail
     tags = list(dict.fromkeys(t.lower() for t in tags))   # all tags lower case (scales:Goblin -> scales:goblin)
-    ver = TV.verify(tags, text, KWSET, REMIND)
+    ver =TV.verify(tags, text, KWSET, REMIND)
+    if "gives_opponent_token" in tags: ver["add"] = [t for t in ver["add"] if t != "token_make"]; tags = [t for t in tags if t != "token_make"]   # Forbidden Orchard (user 2026-10-27): the opponent gets the token, so the card is not a token maker; tag_extra only cleaned the group tags
     tags = list(dict.fromkeys(tags + ver["add"]))
     if ver["add"]: ex_groups["v"] = list(ver["add"])
     ex_tags = ex_tags + ver["add"]
@@ -285,6 +286,7 @@ def record(name, text):
     aipref = "AIPreference" in face or "SVar:AIPreference" in face
     rd = "AI:RemoveDeck" in face
     ex_groups = relocate_v(ex_groups)
+    if HOME_VERBS: ex_groups = home_verbs(tags, ex_groups, kgroups)
     groups = dict(kgroups)
     for gid, ts in ex_groups.items(): groups[gid] = [t.lower() for t in dict.fromkeys(ts)]
     def gkey(g): return (0 if g == "c0" else 1 if g.startswith("k") else 3 if g == "v" else 2, [int(x) for x in re.findall(r"\d+", g)])
@@ -316,6 +318,25 @@ def relocate_v(ex_groups):
         else: keep.append(t)
     if keep: ex_groups["v"] = keep
     else: del ex_groups["v"]
+    return ex_groups
+
+
+HOME_VERBS = False   # off by user decision 2026-10-28: with it on the guard keeps the stored record for 228 cards (68 off) because the verb changes the unit pattern; turn on once per-verb rules are mined
+
+
+def home_verbs(tags, ex_groups, kgroups):
+    """TAG_SYNTAX step 2 (decision 4): a verb tag that sits in the card-level tags but in no group (Nazar: draw, with draw_count:3 in c2.2) moves into the one step group that holds its parameters;
+    no home or several homes: it stays card-level, as before"""
+    ep = _effect_params()
+    if not ep: return ex_groups
+    verbs = {v for e in ep.values() for v in (e["verb"] if isinstance(e["verb"], list) else [e["verb"]])}
+    placed = {t.lower() for ts in list(ex_groups.values()) + list(kgroups.values()) for t in ts}
+    for t in tags:
+        t = t.lower()
+        f = t.split(":")[0]
+        if f not in verbs or t in placed: continue
+        homes = [g for g, ts in ex_groups.items() if g not in ("v", "c0") and any(f in (ep.get(u.split(":")[0], {}).get("verb") if isinstance(ep.get(u.split(":")[0], {}).get("verb"), list) else [ep.get(u.split(":")[0], {}).get("verb")]) for u in ts)]
+        if len(homes) == 1: ex_groups[homes[0]].append(t)
     return ex_groups
 
 
@@ -416,7 +437,7 @@ def main(a):
             except Exception as ex:
                 print("(no twins:", ex, ")")
         return
-    import importlib   # by name: the starter run lives in tag_reports, which imports the guards, which import this module (no import cycle)
+    import importlib   # by name: the pool run lives in tag_reports, which imports the guards, which import this module (no import cycle)
     importlib.import_module("tag_reports").starter_main(a)
 
 

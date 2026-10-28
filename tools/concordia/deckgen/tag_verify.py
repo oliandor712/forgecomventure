@@ -64,7 +64,7 @@ DOC = {
     "scry_count": ("scry N (CR 701.22); one tag with the number: looks at the top cards and may bottom them; counts as draw synergy (H43)", "cross-check: Oracle (Serum Visions)"),
     "surveil": ("surveil N (CR 701.25)", "cross-check: Oracle (Dragon's Rage Channeler)"),
     "untap": ("an effect untaps permanents", "cross-check: Oracle (Captivating Crew)"),
-    "trigger": ("trigger event: upkeep, end_step, beginning_of_combat, combat_damage, gain_life, taps_for_mana (added to the existing trigger family)", "cross-check: Oracle line starts (CR 603)"),
+    "trigger": ("trigger event: upkeep, end_step, beginning_of_combat, combat_damage, gain_life, draw, taps_for_mana (added to the existing trigger family)", "cross-check: Oracle line starts (CR 603)"),
     "cost": ("activation or additional cost kinds: remove_counters, exile, tuck, life (added to the existing cost family)", "cross-check: Oracle cost text (CR 602, 118)"),
     "ai_logic": ("the Forge AI's AILogic$ name from the card script; a reference tag for how the AI plays the card (3rd source, H54)", "cross-check: script AILogic$ / AttachAILogic"),
     "discard": ("a player discards cards as an effect", "cross-check: Oracle"),

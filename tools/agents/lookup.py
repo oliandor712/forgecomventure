@@ -7,7 +7,7 @@
   lookup.py kw trample [--full]      merged keyword row; --full adds the CR rule text (avoid unless needed)
   lookup.py tag kw | kw:flying       tag family row from TAG_REFERENCE.md
   lookup.py rule H67 | rule --area tags   user rule rows from human_logic.toon
-  lookup.py card "Name"              tagged record from STARTER_TAGS.toon
+  lookup.py card "Name"              tagged record from CARD_TAGS.toon
   lookup.py twin "ability text"      5 closest ability lines from ABILITY_TWINS.json
   lookup.py size [paths...]          token estimate (bytes/4); no paths = big-file list
 """
@@ -25,7 +25,7 @@ KWM = P("tools/concordia/ai_lab/KEYWORD_MERGED.toon")
 KWFULL = P("tools/concordia/ai_lab/KEYWORD_CR_FULLTEXT.toon")
 TAGREF = P("tools/concordia/deckgen/tags/TAG_REFERENCE.md")
 HL = P("tools/agents/human_logic.toon")
-ST = P("tools/concordia/deckgen/tags/STARTER_TAGS.toon")
+ST = P("tools/concordia/deckgen/tags/CARD_TAGS.toon")
 TW = P("tools/concordia/deckgen/tags/ABILITY_TWINS.json")
 BIG = [CR_FULL, CR_COMPACT, ST, TW, KW, P("tools/concordia/balance_lab/records.csv"), P("docs/Adventure/Campaign/DESIGN.md"),
        P("docs/Adventure/Campaign/OVERWORLD.md"), HL, TAGREF]
@@ -101,16 +101,24 @@ def rule(args):
 
 
 def card(q):
+    if not os.path.exists(ST):      # CARD_TAGS.toon is generated (tag_run.py run), not committed: tag the card fresh from its script
+        sys.path.insert(0, P("tools/concordia/deckgen"))
+        import tag_run
+        t = tag_run.find_text(q)
+        return tag_run.render(tag_run.record(q, t)) if t else "no script for card %s" % q
     L = lines(ST)
     for i, l in enumerate(L):
-        if l.strip().lower() == 'card: "%s"' % q.lower() or l.lower() == 'card: "%s"' % q.lower():
+        if l.lower().replace('"', "").strip() == "card: " + q.lower():     # names are quoted only when they hold a comma or colon
             out = [l]
             for m in L[i + 1:]:
                 if m.startswith("card:"):
                     break
                 out.append(m)
             return "\n".join(out)
-    return "no card %s in STARTER_TAGS (try: python3 tools/concordia/deckgen/tag_run.py card \"%s\")" % (q, q)
+    sys.path.insert(0, P("tools/concordia/deckgen"))      # not in the pool (not playable): tag it fresh from its script
+    import tag_run
+    t = tag_run.find_text(q)
+    return tag_run.render(tag_run.record(q, t)) if t else "no script for card %s" % q
 
 
 def twin(q):

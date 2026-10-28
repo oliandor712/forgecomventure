@@ -220,6 +220,7 @@
     },
     "card_adv": {
      "sig": [
+      "trigger:draw",
       "draw",
       "cost_sacrifice_target"
      ],
@@ -463,6 +464,7 @@
     },
     "draw": {
      "sig": [
+      "trigger:draw",
       "draw"
      ],
      "cards": [
@@ -661,6 +663,7 @@
     },
     "card_adv": {
      "sig": [
+      "trigger:draw",
       "draw",
       "trigger:spell_cast"
      ],
@@ -1112,6 +1115,7 @@
     },
     "draw": {
      "sig": [
+      "trigger:draw",
       "draw"
      ],
      "cards": [
@@ -1695,6 +1699,7 @@
     },
     "cantrip": {
      "sig": [
+      "trigger:draw",
       "draw",
       "selection",
       "scry_count"
@@ -1902,6 +1907,7 @@
    "roles": {
     "cantrip": {
      "sig": [
+      "trigger:draw",
       "draw",
       "selection"
      ],
@@ -1938,6 +1944,7 @@
     },
     "refuel": {
      "sig": [
+      "trigger:draw",
       "discard",
       "draw"
      ],
@@ -2040,6 +2047,7 @@
     },
     "draw_select": {
      "sig": [
+      "trigger:draw",
       "draw",
       "selection"
      ],
@@ -2312,6 +2320,7 @@
     },
     "draw_payoff": {
      "sig": [
+      "trigger:draw",
       "draw",
       "counters_plus"
      ],
@@ -2636,6 +2645,7 @@
     },
     "conversion": {
      "sig": [
+      "trigger:draw",
       "draw"
      ],
      "cards": [
@@ -2802,6 +2812,7 @@
    "roles": {
     "flicker": {
      "sig": [
+      "flicker",
       "clone",
       "remove:exile",
       "return",
@@ -3181,6 +3192,7 @@
     },
     "draw": {
      "sig": [
+      "trigger:draw",
       "draw"
      ],
      "cards": [],
@@ -3478,6 +3490,7 @@
     },
     "draw_engine": {
      "sig": [
+      "trigger:draw",
       "draw"
      ],
      "cards": [
@@ -3646,6 +3659,7 @@
    "roles": {
     "shared": {
      "sig": [
+      "trigger:draw",
       "gift_all",
       "draw",
       "put_onto_battlefield"
@@ -3664,6 +3678,7 @@
     },
     "breaker": {
      "sig": [
+      "trigger:draw",
       "draw",
       "mana_source"
      ],
@@ -3831,6 +3846,7 @@
    "roles": {
     "draw": {
      "sig": [
+      "trigger:draw",
       "draw",
       "trigger:spell_cast"
      ],
@@ -4085,6 +4101,7 @@
     },
     "draw": {
      "sig": [
+      "trigger:draw",
       "draw"
      ],
      "cards": [
@@ -4575,6 +4592,7 @@
     },
     "refuel": {
      "sig": [
+      "trigger:draw",
       "draw",
       "trigger:combat_damage"
      ],
@@ -5428,6 +5446,7 @@
     },
     "draw": {
      "sig": [
+      "trigger:draw",
       "draw"
      ],
      "cards": [],
@@ -5528,6 +5547,7 @@
     },
     "draw": {
      "sig": [
+      "trigger:draw",
       "draw"
      ],
      "cards": [],
@@ -5698,6 +5718,7 @@
     },
     "enabler": {
      "sig": [
+      "trigger:draw",
       "mana_source",
       "draw"
      ],
@@ -5799,6 +5820,7 @@
     },
     "draw": {
      "sig": [
+      "trigger:draw",
       "draw"
      ],
      "cards": [],
@@ -5846,6 +5868,7 @@
    "roles": {
     "slug": {
      "sig": [
+      "trigger:draw",
       "damage",
       "life_loss",
       "burn"
@@ -6037,6 +6060,7 @@
     },
     "draw": {
      "sig": [
+      "trigger:draw",
       "draw"
      ],
      "cards": [
@@ -6157,6 +6181,7 @@
     },
     "draw": {
      "sig": [
+      "trigger:draw",
       "draw"
      ],
      "cards": [],
@@ -6251,6 +6276,7 @@
    "roles": {
     "core": {
      "sig": [
+      "trigger:draw",
       "wheels"
      ],
      "cards": [

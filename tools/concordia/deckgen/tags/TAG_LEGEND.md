@@ -26,7 +26,7 @@ Pinned reference text, one line per tag family with a structured or non-obvious 
 | `cost` | non-mana cost of the ability (tap, sacrifice, remove_counters, exile with from_zone, life, discard, return) |
 | `duration` | how long an effect lasts (eot = until end of turn, static = while the source is on the battlefield, next_untap, while_control, end_step, until_monarch_changes = until an opponent becomes the monarch...) |
 | `affected_scope` | whose permanents the effect or static ability affects (you_control, opponent_controls, all) |
-| `trigger` | event that triggers the ability (attacks, dies, etb, gain_life, beginning_of_combat ...) |
+| `trigger` | event that triggers the ability (attacks, dies, etb, gain_life, draw = a player draws a card, beginning_of_combat ...) |
 | `piles_split` | cards are split into two piles by this player |
 | `lifegain_amount` | life gained (number, x, or equal_to_life_lost) |
 | `choose_on_enter` | as this card enters the battlefield its controller chooses something (color, card_type, creature_type, player ...); other tags of the card refer to the choice (cost_reduce_for:chosen_type = spells of the chosen type) |
@@ -48,7 +48,7 @@ Pinned reference text, one line per tag family with a structured or non-obvious 
 | `scales` | the amount (X) of this ability is the number of that kind of thing you control: write it as 'for each <thing> you control' (scales:island on a draw_count:x = draw a card for each Island you control) |
 | `mana_restriction` | the mana can be spent only on what the value says (mana_restriction:instant_or_sorcery = spend this mana only to cast an instant or sorcery spell) |
 | `x_is` | what the amount is when it is not a plain number. Do NOT write the letter X for these: count_<thing>_you_control = 'for each <thing> you control'; own_power / target_power = 'equal to that creature's power'; previous_result = 'equal to the amount the previous effect produced' (damage dealt, life lost ...). Only x_paid means the letter X (the X in the mana cost). Example: damage_amount:x x_is:count_creature_you_control = deals damage equal to the number of creatures you control |
-| `affected_player` | PROPOSED: the player who receives the effect when it is not the ability's controller: affected_player:target_controller = the controller of the targeted permanent ('Its controller gains life equal to its power'), target_owner = its owner, target_player = the targeted player; set on the effect group (Forge Defined$/Player$ TargetedController / TargetedOwner / TargetedPlayer) |
+| `affected_player` | APPROVED 2026-10-27: the player who receives the effect when it is not the ability's controller: affected_player:target_controller = the controller of the targeted permanent ('Its controller gains life equal to its power'), target_owner = its owner, target_player = the targeted player; set on the effect group (Forge Defined$/Player$ TargetedController / TargetedOwner / TargetedPlayer) |
 | `controller` | who controls the permanent after the effect: controller:you (default: it enters under the control of the player who controls the effect) or controller:owner (only when the Oracle text says 'under its owner's control') |
 | `optional` | the effect of this group is optional (you may ...) |
 | `target_scope` | whose things or which players the effect hits (you_control, opp_control; no tag = whoever controls it; each_opponent = every opponent, each_player = every player; no value means a single chosen target) |
