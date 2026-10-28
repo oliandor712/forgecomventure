@@ -4,7 +4,7 @@
 
 ## Most common tags
 
-cardtype:creature 296, target_count:one 203, trigger:etb 179, trigger_scope:self 167, token_make 162, target_type:creature 143, draw 123, token_count:1 98, tempo:+1 97, cardtype:instant 95, mana_source 79, token_color:colorless 79, type:human 74, target_scope:you_control 73, tempo:+0.5 73, colorless_card 71, token_cardtype:artifact 71, cardtype:artifact 69, cost:tap 67, cardtype:sorcery 66, lifegain 66, draw_count:1 65, artifact_token 59, token_pt:1/1 58, duration:eot 54, damage 53, cost:sacrifice 50, from_zone:graveyard 50, duration:static 48, trigger:dies 44, supertype:legendary 42, kw:flying 41, put_onto_battlefield 40, target_zone:graveyard 40, trigger_zone:graveyard 40, trigger_filter:you_control 40, optional 40, cardtype:enchantment 40, remove:destroy 38, return 37
+cardtype:creature 296, target_count:one 203, trigger:etb 179, trigger_scope:self 167, token_make 161, target_type:creature 143, draw 123, token_count:1 98, tempo:+1 97, cardtype:instant 95, mana_source 79, token_color:colorless 79, type:human 74, target_scope:you_control 73, tempo:+0.5 73, colorless_card 71, token_cardtype:artifact 71, cardtype:artifact 69, cost:tap 67, cardtype:sorcery 66, lifegain 66, draw_count:1 65, token_pt:1/1 58, artifact_token 58, duration:eot 54, damage 53, cost:sacrifice 50, from_zone:graveyard 50, duration:static 48, trigger:dies 44, supertype:legendary 42, kw:flying 41, put_onto_battlefield 40, target_zone:graveyard 40, trigger_zone:graveyard 40, trigger_filter:you_control 40, optional 40, cardtype:enchantment 40, remove:destroy 38, return 37
 
 ## Trigger types seen in clauses
 

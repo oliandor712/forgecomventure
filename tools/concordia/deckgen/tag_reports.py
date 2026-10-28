@@ -82,56 +82,64 @@ APPROVED = ['activation_restriction', 'affects', 'cast_free', 'color', 'cost', '
 
 PROPOSED_OFFLINE = []
 APPROVED_LATER = ['cost_mana', 'return', 'unless_cost_amount', 'investigate', 'monarch', 'bolster', 'named', 'additional_cost']   # approved by the user in chat on 2026-10-23 (additional_cost: pre-approved the same day, HANDOVER)
-APPROVED_DECISION = {**{k: 'approved 2026-10-27 (user marked the row; mtg2llm gap record)' for k in ('mill_count', 'flip_coin', 'secret_choice', 'lose_game', 'counter_remove', 'grant_type', 'cost_energy')}, 'enters_prepared': 'approved 2026-10-26 (user: "add all and approve"; the spell half of prepare cards is read with the creature)', **{k: 'approved 2026-10-26 (user: approve the rest after redundancy check)' for k in ['niche', 'mech', 'unless_cost', 'phase_out', 'cant_regenerate', 'prevent_damage', 'mana_conditional', 'alt_additional_cost']}, 'extra_turn': 'approved 2026-10-26 (user: own tag, per-tier cap)', 'colorless_card': 'approved 2026-10-26 (user decision H78: colorless is the sixth colour)'}   # families approved by a recorded user decision
+APPROVED_DECISION = {**{k: 'approved 2026-10-27 (user marked the row; mtg2llm gap record)' for k in ('mill_count', 'flip_coin', 'secret_choice', 'lose_game', 'counter_remove', 'grant_type', 'cost_energy')}, 'enters_prepared': 'approved 2026-10-26 (user: "add all and approve"; the spell half of prepare cards is read with the creature)', **{k: 'approved 2026-10-26 (user: approve the rest after redundancy check)' for k in ['niche', 'mech', 'unless_cost', 'phase_out', 'cant_regenerate', 'prevent_damage', 'mana_conditional', 'alt_additional_cost']}, 'extra_turn': 'approved 2026-10-26 (user: own tag, per-tier cap)', 'colorless_card': 'approved 2026-10-26 (user decision H78: colorless is the sixth colour)', 'roll_die': 'approved 2026-10-27 (user: approve A of TAG_GAP_CANDIDATES; die_sides rides with it)'}   # families approved by a recorded user decision
 # Families the script pass emits (never 'new' in a cross-check run), so the table above never listed them. APPROVED_LISTED = on the APPROVED list since the 2026-10-25 commit, no chat approval found; PROPOSED_RECORDS = in use, never put to the user.
 APPROVED_LISTED = []
 PROPOSED_RECORDS = []
 VALUE_FAMILIES_EXTRA = ('kw', 'scales', 'forge_line', 'num')   # mechanical families: their new values are listed with the approved ones (type/supertype/landtype/cardtype are card data, not tags)
 
 
-def write_reference(recs):
-    """tags/TAG_REFERENCE.md: every tag family in the run with meaning, source/reference, values and counts, for the user's review (generated, do not edit by hand)"""
+def write_reference(recs=None):
+    """tags/TAG_REFERENCE.md: the definition of every tag family (meaning, source/reference, approval), built from the definition tables only: tag_extra.LEGEND / DOC / REF_EXTRA and tag_verify.DOC. No card data and no counts, so it does not depend on any card set (generated, do not edit by hand)"""
     doc = {}
     for k, (m, w) in list(TX.DOC.items()) + list(TV.DOC.items()):
         for part in re.split(r" / | \+ ", k):
-            doc[part.split(":")[0].split(" ")[0]] = (m, w)
-    fam = collections.OrderedDict()
-    for r in recs:
-        for t in r["tags"]:
-            f = t.split(":")[0]
-            fam.setdefault(f, collections.OrderedDict()).setdefault(t, set()).add(r["name"])
+            doc[re.match(r"[A-Za-z_0-9]*", part.split(":")[0].split(" ")[0]).group(0).rstrip("_")] = (m, w)
+    families = set(doc) | set(TX.LEGEND) | set(TX.REF_EXTRA)
+    appr = set(APPROVED) | set(APPROVED_LATER) | set(APPROVED_DECISION) | set(APPROVED_LISTED)
     TYPING = {"supertype", "cardtype", "type", "landtype"}
-    def cat(f, vals):
+    def cat(f):
         if f in TYPING: return "1 Typing line (what the card is)"
-        if any(TV.is_ai_tag(t) for t in vals): return "9 AI Tags (hidden from the blind reader)"
+        if f in doc and TV.is_ai_tag(f): return "9 AI Tags (hidden from the blind reader)"
         if f in ("kw", "forge_line", "protection_from", "landwalk"): return "2 Keywords and engine lines"
         if f in ("trigger", "trigger_scope", "trigger_zone", "trigger_filter", "limit", "optional", "unless_cost", "condition", "activation_restriction", "delayed", "saga_chapter"): return "3 When it happens (triggers, conditions, limits)"
         if f.startswith(("cost", "mana")) or f in ("tap", "untap"): return "4 Costs and mana"
         if f.startswith(("target", "affect")) or f in ("choose_on_enter", "choice_option"): return "5 Targets, scope and choices"
         if f in ("duration", "grant_kw", "grant_ability", "pump_amount", "replace", "die_replace", "restrict", "restrict_kind", "cant_be_blocked", "cant_be_countered", "steal", "regenerate", "cant_regenerate", "prevent_damage", "fog", "x_is", "scales"): return "7 Effects over time, replacement and restriction"
-        if f.startswith(("token", "counter", "draw", "damage", "life", "lifegain", "discard", "tutor", "look_top", "take", "rest_", "return", "from_zone", "to_zone", "put_", "exile", "remove", "scry", "surveil", "mill", "reveal", "shuffle", "piles", "modal")): return "6 What it does (effects and amounts)"
+        if f.startswith(("token", "counter", "draw", "damage", "life", "lifegain", "discard", "tutor", "look_top", "take", "rest_", "return", "from_zone", "to_zone", "put_", "exile", "remove", "scry", "surveil", "mill", "reveal", "shuffle", "piles", "modal", "roll", "flip", "die_", "lose", "extra")): return "6 What it does (effects and amounts)"
         return "8 Other"
+    use = collections.defaultdict(list)   # family -> "archetype.role" (or "archetype.role[value]" when the signature names a value)
+    try:
+        arch = json.load(open(os.path.join(HERE, "..", "strategies", "strategies.json"), encoding="utf-8")).get("archetypes", {})
+        for aid, a_ in arch.items():
+            for rname, r_ in a_.get("roles", {}).items():
+                for sg in r_.get("sig", []):
+                    fam, _, val = sg.partition(":")
+                    use[fam].append("%s.%s%s" % (aid, rname, "[%s]" % val if val else ""))
+        sys.path.insert(0, os.path.join(HERE, "..", "strategies")); from strategy_fit import NICHE_USERS
+    except Exception:
+        NICHE_USERS = {}
+    for nt, ids in NICHE_USERS.items(): use["niche"].append("%s: %s" % (nt[6:], ", ".join(sorted(ids))))
+    for f in use: families.add(f) if f in doc or f in TX.LEGEND or f in TX.REF_EXTRA else None
     groups = collections.OrderedDict()
-    for f, vals in fam.items(): groups.setdefault(cat(f, vals), []).append((f, vals))
-    out = ["# Tag reference (for review)\n",
-           "Generated by `deckgen/tag_run.py starter` from the %d starter cards (%d families, %d distinct tags). Not edited by hand: change the meaning in `tag_extra.LEGEND` / `DOC` or `tag_verify.DOC` and rerun. A `-` in a column means no text exists yet: those are the gaps to review.\n" % (len(recs), len(fam), sum(len(v) for v in fam.values())),
+    for f in sorted(families): groups.setdefault(cat(f), []).append(f)
+    out = ["# Tag reference\n",
+           "The definition of every tag family: %d families. This file is the source of tag definitions. It is generated from `tag_extra.LEGEND` / `DOC` / `REF_EXTRA` and `tag_verify.DOC` (change a meaning there and rerun `deckgen/tag_run.py starter`); it does not read any card set. Status: `approved` = a family the user approved (lists in `tag_reports.py`); `established` = older family in use before the approval process; a family not yet approved is listed in NEW_TAGS_FOR_APPROVAL.md.\n" % len(families),
            "## How a record reads\n",
            "- `typing:` the card's own typing (supertype, cardtype, type, landtype). `tags:` what its abilities do. `ai_tags:` AI Tags (tempo, ai_logic, umbrella labels); hidden from the blind reader. All lower case.",
            "- `groups` tie tags to one line of the card: `k1` keyword line, `c1` first ability line, `c1.2` its sub-ability, `s1` saga chapter, `x` cross-check additions, `c0` card level. `links` relate tags: requires, provides, lasts, receives, produces, scales_with, measures, depends_on, filters, uses.",
            "- Zone moves share `from_zone:<zone>` / `to_zone:<zone>`; `rest_to_zone` and `rest_order` describe the cards not taken. Qualifier families (draw_count, damage_amount, token_count, cost_reduce_amount ...) travel with their bare tag on purpose (REDUNDANCY_OK).",
+           "- `niche:<archetype>` marks an effect that only pays in a deck built around that archetype (consumers weigh it down unless the archetype matches); `derived:` tags are computed from other tags.",
            "- Sources: card script (Forge `A:`/`S:`/`T:`/`R:`/`K:` lines and SVars) with its Oracle section as gap filler, keyword reference (CR 702/701), Forge AI (`AILogic`). The gap filler adds triggers, costs and keywords the script lacks; ability phrases it finds are flags only.\n"]
     for gname in sorted(groups):
-        out += ["## %s\n" % gname[2:], "| Family | Meaning | Source / reference | Cards | Values (cards) |", "|---|---|---|---|---|"]
-        for f, vals in sorted(groups[gname], key=lambda fv: -len(set().union(*fv[1].values()))):
+        out += ["## %s\n" % gname[2:], "| Family | Meaning | Source / reference | Approved | Used by archetypes (strategies.json) |", "|---|---|---|---|---|"]
+        for f in groups[gname]:
             m, w = doc.get(f, (None, None))
             rm, rw = TX.REF_EXTRA.get(f, (None, None))
             m = TX.LEGEND.get(f) or m or rm or "-"; w = w or rw
-            ncards = len(set().union(*vals.values()))
-            seen = "; ".join("%s (%d)" % (t, len(c)) for t, c in sorted(vals.items(), key=lambda kv: -len(kv[1]))[:10])
-            if len(vals) > 10: seen += "; +%d more" % (len(vals) - 10)
-            out.append("| `%s` | %s | %s | %d | %s |" % (f, m.replace("|", "/"), (w or "-").replace("|", "/"), ncards, seen.replace("|", "/")))
+            out.append("| `%s` | %s | %s | %s | %s |" % (f, m.replace("|", "/"), (w or "-").replace("|", "/"), "approved" if f in appr else "established", "; ".join(use.get(f, [])) or "-"))
         out.append("")
-    open(os.path.join(HERE, "tags", "TAG_REFERENCE.md"), "w").write("\n".join(out) + "\n")
+    open(os.path.join(HERE, "tags", "TAG_REFERENCE.md"), "w", encoding="utf-8").write("\n".join(out) + "\n")
 
 
 def write_approval(recs, red=()):
@@ -324,6 +332,9 @@ def starter_main(a):
     hdr += "# Each record has a typing: line (supertype, cardtype, type, landtype: what the card is) and a tags: line (what its abilities do). Tag meanings (pinned reference text, one line per family): tags/TAG_LEGEND.md. Zone moves use shared tags: from_zone:<zone> and to_zone:<zone> next to return, take, put_onto_battlefield, cost:exile.\n"
     open(os.path.join(HERE, "tags", "TAG_LEGEND.md"), "w").write("# Tag legend\n\nPinned reference text, one line per tag family with a structured or non-obvious value. Written by tag_run.py from `tag_extra.LEGEND`; blind readers get the same lines for the families present in their batch.\n\n| Family | Meaning |\n|---|---|\n" + "".join("| `%s` | %s |\n" % kv for kv in TX.LEGEND.items()))
     open(os.path.join(HERE, "tags", "STARTER_TAGS.toon"), "w").write(hdr + "\n\n".join(render(r) for r in recs) + "\n")
+    import tag_run as _TR      # Oracle phrase order of the verbs of each group (TAG_SYNTAX decision 2); read by tagcheck/tagsyntax.py
+    vo = [(r["name"], g, " ".join(vs)) for r in recs for g, vs in _TR.verb_order(_TR.find_text(r["name"]), r["groups"]).items()]
+    open(os.path.join(HERE, "tags", "VERB_ORDER.toon"), "w", encoding="utf8").write("# Claude-only file in TOON, generated by tag_run.py starter: verbs of a group in Oracle order (groups with two or more verbs only)\norder[%d|]{card|group|verbs}:\n" % len(vo) + "".join("  %s|%s|%s\n" % v for v in vo))
     try: guards.write_gaps(); print("tag check: gap file refreshed (tags/TAG_GAPS.toon)")      # the check reports back what this tag set still lacks
     except Exception as ex: print("sync not written:", ex)
     try:

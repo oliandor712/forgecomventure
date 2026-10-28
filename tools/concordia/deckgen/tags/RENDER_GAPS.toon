@@ -1,160 +1,303 @@
 # Claude-only file in TOON. Written by `mtg2llm.py scan`; regenerated, never hand-merged. Unit patterns (tags of one ability group, numbers abstracted) the renderer cannot write yet.
-# units with no rule: 162 of 389 (42%); distinct patterns 157, seen once 152. Top 300 below; example = one card holding it.
-gaps[157|]{units|pattern|example}:
-2|forge_line:typecycling|A.I.M. Scientists
-2|target_count:one target_filter:other target_type:card target_type:creature trigger:etb trigger_scope:self|Aang and La, Ocean's Fury
-2|color:white kw:outlast|Abzan Battle Priest
-2|duration:eot flying grant_kw:flying pump_amount:+N/+N target_count:one target_type:creature|Academic Ascent
-2|forge_line:intimidate|Academy Raider
-1|controller:you from_zone:library optional put_onto_battlefield put_tapped remove:exile shuffle target_count:one target_type:creature target_type:spacecraft tutor tutor_count:N tutor_dest:battlefield_tapped tutor_target:basic_land|70,000 Light-Years from Home
-1|draw_count:N duration:eot pump_amount:+N/+N target_count:one target_scope:you_control target_type:creature|A Good Day to Die
-1|affected_filter:other affected_scope:you_control affected_type:permanent|A Realm Reborn
-1|affected_filter:enchanted affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N|A Tale for the Ages
-1|surveil trigger:etb trigger_scope:self|A.I.M. Synthoids
-1|token_color:white token_count:x token_pt:N/N token_type:ally trigger:etb trigger_scope:self x_is:count_artifact_you_control_tapped_creature_you_control_tapped|Aang and Katara
-1|draw_count:N duration:eot pump_amount:+N/+N target_count:one target_filter:blocking target_scope:you_control target_type:creature|Aang's Defense
-1|cost:sacrifice cost_if_you_do effect:sacrifice sacrifice_type:self scry|Aang's Iceberg
-1|affected_scope:self condition:lesson_you_own_in_graveyard duration:static grant_kw:vigilance vigilance|Aang, A Lot to Learn
-1|counter:pNpN counter_count:N trigger:dies trigger_filter:creature trigger_filter:you_control trigger_scope:other trigger_zone:graveyard|Aang, A Lot to Learn
-1|affected_filter:other affected_scope:you_control affected_type:creature duration:static grant_kw:vigilance vigilance|Aang, Air Nomad
-1|target_count:up_to_N target_filter:nonland target_filter:other target_type:permanent trigger:etb trigger_scope:self|Aang, the Last Airbender
-1|duration:eot grant_kw:lifelink lifegain lifelink trigger:spell_cast|Aang, the Last Airbender
-1|token_color:green token_count:x token_pt:N/N token_type:insect trigger:etb trigger_scope:self x_is:count_artifact_you_own_creature_you_own_in_graveyard|Aatchik, Emerald Radian
-1|counter:pNpN counter_count:N life_loss_amount:N target_scope:each_opponent trigger:dies trigger_filter:you_control trigger_scope:other trigger_zone:graveyard|Aatchik, Emerald Radian
-1|affected_filter:cmc_le_x affected_filter:wascastfromhand affected_scope:you_control affected_type:card cascade duration:static grant_kw:cascade|Abaddon the Despoiler
-1|cost:discard draw_count:N unless_cost|Abandon Attachments
-1|color:red kw:madness num:N|Abandon Reason
-1|duration:eot first_strike grant_kw:first_strike pump_amount:+N/+N pump_single target_count:up_to_N target_type:creature|Abandon Reason
-1|cost:tap cost_mana:Nw counter:pNpN counter_count:N target_count:all target_scope:you_control target_type:creature|Abandoned Air Temple
-1|cost:sacrifice cost:tap cost_sacrifice_target:self mana:any mana_amount:N mana_source|Abandoned Outpost
-1|affected_filter:nonland affected_filter:withcycling affected_scope:you_control affected_type:card impulse_draw|Abandoned Sarcophagus
-1|lifegain_amount:x trigger:dies trigger_filter:creature trigger_scope:damaged_by_self trigger_zone:graveyard x_is:triggering_toughness|Abattoir Ghoul
-1|duration:eot impulse_draw impulse_draw_count:N look_top:N take:all to_zone:exile trigger:etb trigger_scope:self|Abbot of Keral Keep
-1|kw:ravenous|Aberrant
-1|remove:destroy target_count:one target_type:artifact target_type:enchantment trigger:combat_damage|Aberrant
-1|duration:eot pump_amount:+x/+N trigger:spell_cast trigger_filter:instant trigger_filter:sorcery x_is:triggering_mana_spent|Aberrant Manawurm
-1|target_count:one target_scope:you_control target_type:instant target_type:sorcery trigger:etb trigger_scope:self|Aberrant Mind Sorcerer
-1|mill_count:N transform trigger:upkeep|Aberrant Researcher
-1|controller:you from_zone:graveyard put_onto_battlefield target_count:N target_type:creature target_zone:graveyard|Aberrant Return
-1|cost:exile cost_exile_target:card cost_mana:Nu from_zone:graveyard|Abhorrent Oculus
-1|token_color:black token_count:x token_kw:flying token_pt:N/N token_type:harpy trigger:etb trigger_scope:self x_is:devotion_black|Abhorrent Overlord
-1|controller:you from_zone:graveyard lifegain_amount:N modal:N_of_N put_onto_battlefield target_count:one target_filter:cmc_eq_N target_scope:you_control target_type:creature target_zone:graveyard trigger:end_step|Abiding Grace
-1|counter:pNpN counter_count:N target_count:one target_type:creature|Abigale, Poet Laureate
-1|optional|Aboleth Spawn
-1|cost:discard|Abolish
-1|color:black kw:madness|Abolisher of Bloodlines
-1|color:black color:blue color:green kw:morph num:N|Abomination of Gudul
-1|discard_count:N trigger:combat_damage|Abomination of Gudul
-1|counter:pNpN counter_count:x trigger:combat_damage trigger_filter:gamma trigger_filter:villain x_is:triggering_damage|Abomination, Irradiated Brute
-1|cost_mana:N counter:pNpN counter_count:N fight kw:powerup target_count:up_to_N target_scope:opp_control target_type:creature|Abomination, Terrifying Titan
-1|color:red kw:mayhem num:N|Abomination, World Ravager
-1|affected_type:creature duration:static flying grant_kw:flying|Aboshan's Desire
-1|affected_type:creature condition:threshold duration:static grant_kw:shroud shroud|Aboshan's Desire
-1|target_count:one target_type:permanent|Aboshan, Cephalid Emperor
-1|cost_mana:uuu target_count:all target_type:creature|Aboshan, Cephalid Emperor
-1|damage damage_amount:N modal:N_of_N remove:destroy target_count:one target_type:artifact target_type:creature|Abrade
-1|damage damage_amount:N target_count:one target_type:opponent trigger:etb trigger_scope:self|Abraded Bluffs
-1|remove:destroy target_count:one target_filter:cmc_le_N target_filter:nonland target_type:permanent|Abrupt Decay
-1|affected_type:you duration:static grant_kw:protection|Absolute Virtue
-1|lifegain_amount:N target_count:up_to_N target_scope:opp_control target_type:creature trigger:dies trigger_scope:self trigger_zone:graveyard|Absolving Lammasu
-1|lifegain_amount:N target_count:one target_type:card|Absorb
-1|counter_remove:all target_count:up_to_N target_type:creature trigger:etb trigger_scope:self|Absorb Essence
-1|optional remove:bounce target_count:one target_type:creature|Absorb Identity
-1|life_loss life_loss_amount:N lifegain_amount:N target_count:one target_type:player|Absorb Vis
-1|cost:tap cost_mana:N exile_from:graveyard from_zone:graveyard return target_count:all target_count:up_to_N target_filter:historic target_scope:you_control target_type:card target_zone:graveyard to_zone:hand|Abstergo Entertainment
-1|mana:blue mana:red mana_amount:N mana_restriction:instant_or_sorcery mana_source|Abstract Paintmage
-1|look_top:N piles_split:you take:all to_zone:exile|Abstract Performance
-1|duration:permanent impulse_draw impulse_draw_count:N remove:exile target_count:one target_filter:nonland target_type:permanent|Abstruse Appropriation
-1|cost:tap cost_mana:N target_count:one target_filter:colorless target_type:card target_type:emblem|Abstruse Archaic
-1|target_count:one target_type:card token_color:colorless token_count:N token_pt:N/N token_type:eldrazi_scion unless_cost unless_cost_amount:N|Abstruse Interference
-1|controller:you from_zone:graveyard put_onto_battlefield target_count:one target_filter:nonaura target_scope:you_control target_type:artifact target_type:enchantment target_zone:graveyard|Abuelo's Awakening
-1|controller:owner cost_mana:Nwu from_zone:exile put_onto_battlefield remove:exile target_count:one target_filter:other target_scope:you_control target_type:artifact target_type:creature|Abuelo, Ancestral Echo
-1|cost:tap prevent_damage target_count:one target_type:any|Abuna Acolyte
-1|cost:tap prevent_damage target_count:one target_filter:artifact target_type:creature|Abuna Acolyte
-1|lifegain_amount:N modal:N_of_N target_count:one target_type:creature|Abuna's Chant
-1|cost:tap cost_mana:N token_color:colorless token_count:N token_pt:N/N token_type:shapeshifter_changeling|Abundant Countryside
-1|life_loss life_loss_amount:N lifegain_amount:N target_count:one target_type:opponent trigger:spell_cast|Abundant Maw
-1|effect:sacrifice remove:sacrifice sacrifice_outlet sacrifice_type:creature target_scope:each_player trigger:dies trigger_scope:self trigger_zone:graveyard|Abyssal Gatekeeper
-1|cost:tap exile_from:graveyard remove:exile target_count:all target_count:one target_filter:thisturnentered target_scope:you_control target_type:creature target_type:nightmare target_zone:graveyard token_make token_type:copy|Abyssal Harvester
-1|cost:tap cost_mana:b damage damage_amount:x target_count:one target_type:creature x_is:own_power|Abyssal Hunter
-1|duration:eot fear grant_kw:fear pump_amount:+N/+N trigger:discard|Abyssal Nocturnus
-1|discard_count:N trigger:damage_dealt|Abyssal Specter
-1|bolster:N effect:sacrifice sacrifice_outlet sacrifice_type:enchantment target_count:one target_type:player|Abzan Advantage
-1|token_color:white token_count:N token_kw:flying token_pt:N/N token_type:spirit trigger:dies trigger_filter:creature trigger_filter:nontoken trigger_filter:you_control trigger_scope:any trigger_zone:graveyard|Abzan Ascendancy
-1|cost:tap mana:black mana:green mana:white mana_amount:N mana_choice mana_source|Abzan Banner
-1|affected_filter:counters_geN_pNpN affected_scope:you_control affected_type:creature duration:static grant_kw:lifelink lifegain lifelink scales:counters|Abzan Battle Priest
-1|counter:pNpN counter_count:N draw_count:N life_loss life_loss_amount:N modal:N_of_N remove:exile target_count:N target_count:one target_filter:power_ge_N target_type:creature|Abzan Charm
-1|cost_mana:N limit:once_per_turn mana:black mana:green mana:white mana_amount:N mana_choice mana_source|Abzan Devotee
-1|cost_mana:Nb from_zone:graveyard return to_zone:hand|Abzan Devotee
-1|affected_filter:counters_geN_pNpN affected_scope:you_control affected_type:creature duration:static flying grant_kw:flying scales:counters|Abzan Falconer
-1|color:black color:green color:white kw:morph num:N|Abzan Guide
-1|affected_scope:self condition:permanent_white_you_control_permanent_black_you_control duration:static grant_kw:lifelink lifegain lifelink|Abzan Kin-Guard
-1|affected_type:enchanted condition:permanent_black_you_control_permanent_green_you_control duration:static grant_kw:vigilance vigilance|Abzan Runemark
-1|bolster:N trigger:dies trigger_scope:self trigger_zone:graveyard|Abzan Skycaptain
-1|duration:eot grant_kw:reach optional reach target_count:one target_type:creature|Academic Dispute
-1|modal:N_of_N restrict_kind:cant_attack_or_block target_count:all target_count:one target_filter:nonland target_type:card target_type:permanent|Academic Probation
-1|cost:remove_counters cost_mana:Nu discard_count:N draw_count:N|Academy Elite
-1|replace:createtoken_to_replacetoken token_make|Academy Manufactor
-1|discard_count:N limit:once_per_turn optional trigger:spell_cast trigger_filter:instant trigger_filter:sorcery|Academy Wall
-1|draw_count:N duration:eot grant_kw:haste haste target_count:one target_type:creature|Accelerate
-1|duration:eot grant_kw:hexproof hexproof trigger:etb trigger_scope:self|Accelerated Evolution
-1|duration:eot pump_amount:+x/+x pump_single target_count:one target_type:creature x_is:greatest_mana_value_among_permanent_you_control|Accelerated Mutation
-1|cost:discard cost_mana:Nr damage damage_amount:N target_count:one target_type:creature|Acceptable Losses
-1|target_count:one target_type:card token_cardtype:artifact token_color:colorless token_count:x token_kw:flying token_pt:N/N token_type:thopter x_is:previous_result|Access Denied
-1|cant_be_blocked cost:tap cost_mana:N duration:eot target_count:one target_filter:power_le_N target_type:creature|Access Tunnel
-1|cost:tap mana:any mana_amount:x mana_source x_is:life_gained_this_turn|Accomplished Alchemist
-1|kw:fabricate num:N|Accomplished Automaton
-1|affected_type:creature duration:static grant_kw:vigilance pump_amount:+N/+N vigilance|Accorder's Shield
-1|draw_count:N draw_count:x x_is:count_card_namedaccumulated_knowledge_in_graveyard|Accumulated Knowledge
-1|cost:tap cost_mana:N regenerate target_count:one target_type:shade target_type:skeleton target_type:specter target_type:spirit target_type:vampire target_type:wraith target_type:zombie|Accursed Duneyard
-1|cost_mana:Nb duration:eot grant_kw:indestructible indestructible pump_single target_count:one target_type:zombie|Accursed Horde
-1|controller:you from_zone:graveyard put_onto_battlefield target_count:one target_type:opponent trigger:dies trigger_scope:self trigger_zone:graveyard|Accursed Witch
-1|affected_filter:attacking affected_type:creature duration:static first_strike grant_kw:first_strike grant_kw:mustbeblockedby_creature_dalek|Ace's Baseball Bat
-1|cost:sacrifice cost_sacrifice_target:artifact counter:pNpN counter_count:N fight target_count:up_to_N target_filter:controlledby_spawner_triggereddefendingplayer target_type:creature trigger:attacks|Ace, Fearless Rebel
-1|remove:bounce trigger:etb trigger_scope:self|Acererak the Archlich
-1|token_color:black token_count:N token_pt:N/N token_type:zombie trigger:attacks unless_cost|Acererak the Archlich
-1|color:black color:blue kw:freerunning|Achilles Davenport
-1|affected_filter:other affected_scope:you_control affected_type:assassin duration:static pump_amount:+N/+N|Achilles Davenport
-1|optional remove:destroy target_count:one target_type:equipment trigger:etb trigger_scope:self|Acid Web Spider
-1|counter:pNpN counter_count:N flip-up target_count:all target_filter:dragon target_filter:strictlyother target_scope:you_control target_type:creature|Acid-Spewer Dragon
-1|remove:destroy target_count:one target_type:artifact target_type:enchantment target_type:land trigger:etb trigger_scope:self|Acidic Slime
-1|draw_count:N remove:destroy target_count:up_to_N target_type:artifact trigger:attacks|Acolyte Hybrid
-1|cost:sacrifice cost:tap cost_sacrifice_target:creature life_loss life_loss_amount:N lifegain_amount:N target_scope:each_opponent|Acolyte of Aclazotz
-1|from_zone:graveyard mill_count:N optional return to_zone:hand trigger:etb trigger_scope:self|Acolyte of Affliction
-1|affected_filter:iscommander affected_scope:you_control affected_type:creature|Acolyte of Bahamut
-1|cost:tap cost_mana:Nb life_loss life_loss_amount:N target_count:one target_type:player|Acolyte of Xathrid
-1|kw:renown num:N|Acolyte of the Inferno
-1|color:green cost:life kw:flashback num:N|Acorn Harvest
-1|token_color:green token_count:N token_pt:N/N token_type:squirrel|Acorn Harvest
-1|controller:you from_zone:library put_onto_battlefield shuffle target_count:one target_type:opponent target_zone:library tutor tutor_count:N tutor_dest:battlefield tutor_target:artifact|Acquire
-1|kw:reconfigure num:N|Acquisition Octopus
-1|condition:card_tapped counter:flying counter_count:N|Acrobatic Cheerleader
-1|duration:eot steal steal_grants_haste target_count:one target_scope:opp_control target_type:creature untap|Act of Aggression
-1|duration:eot pump_amount:+N/+N target_count:one target_type:creature untap|Act of Heroism
-1|duration:eot steal steal_grants_haste target_count:one target_type:creature untap|Act of Treason
-1|cost:discard cost_mana:N counter:pNpN counter_count:N draw_count:N target_count:all target_scope:you_control target_type:creature|Action News Crew
-1|duration:eot grant_kw:indestructible indestructible pump_amount:+N/+N pump_single target_count:one target_type:creature|Adamant Will
-1|token_color:white token_count:N token_kw:lifelink token_pt:N/N token_type:vampire trigger:etb trigger_scope:self|Adanto, the First Fort
-1|affected_scope:self grant_type:chosentype|Adaptive Automaton
-1|affected_filter:chosentype affected_filter:other affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N|Adaptive Automaton
-1|kw:evolve|Adaptive Snapjaw
-1|duration:eot grant_kw:vigilance modal:N_of_N pump_amount:+N/+N target_count:one target_type:creature trigger:etb trigger_scope:self|Adaptive Sporesinger
-1|cost:remove_counters|Adaptive Training Post
-1|controller:you cost:tap from_zone:graveyard put_onto_battlefield target_count:one target_filter:other target_type:creature|Adarkar Valkyrie
-1|cost:tap damage damage_amount:N mana:blue mana:white mana_amount:N mana_choice mana_source|Adarkar Wastes
-1|affected_scope:self duration:static pump_amount:+x/+x x_is:count_equipment_you_control|Adelbert Steiner
-1|duration:eot pump_amount:+N/+N target_count:all target_scope:you_control target_type:wizard trigger:spell_cast trigger_filter:instant trigger_filter:sorcery|Adeliz, the Cinder Wind
-1|affected_filter:other affected_filter:tapped affected_scope:you_control affected_type:creature duration:static grant_kw:indestructible indestructible|Adept Watershaper
-1|condition:planeswalker_basri_you_control counter:pNpN counter_count:N trigger:beginning_of_combat|Adherent of Hope
-1|affected_filter:other affected_filter:pirate affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N trigger:end_step|Admiral Beckett Brass
-1|steal target_count:one target_filter:controlledby_player_wasdealtcombatdamagethisturnby_creature_pirate_geN target_filter:nonland target_type:permanent|Admiral Beckett Brass
-1|mill_count:N trigger:etb trigger_scope:self|Admiral Brass, Unsinkable
-1|cost:exile cost_exile_target:cardname cost_mana:b counter:pNpN counter_count:N from_zone:graveyard target_count:one target_type:creature|Adorned Crocodile
-1|color:white kw:eternalize num:N|Adorned Pouncer
-1|damage damage_amount:N trigger:spell_cast|Adrenaline Jockey
-1|becomes:assassin draw_count:N transform trigger:attacks|Adrestia
-1|kw:melee|Adriana, Captain of the Guard
-1|affected_filter:other affected_scope:you_control affected_type:creature duration:static grant_kw:melee melee|Adriana, Captain of the Guard
-1|cost:tap cost_mana:Nu target_count:one target_type:card target_type:emblem|Adric, Mathematical Genius
-1|cost:sacrifice cost_mana:Nu cost_sacrifice_target:nickname target_count:one target_type:card target_type:emblem|Adric, Mathematical Genius
-1|cost_mana:u duration:eot grant_kw:shroud shroud|Advanced Hoverguard
+# units with no rule: 21703 of 51251 (42%); distinct patterns 15281, seen once 12900. Top 300 below; example = one card holding it.
+gaps[300|]{units|pattern|example}:
+103|forge_line:typecycling|A.I.M. Scientists
+72|surveil|Aminatou, Veil Piercer
+60|untap|Ahn-Crop Champion
+59|counter:energy counter_count:N trigger:etb trigger_scope:self|Aether Chaser
+43|mill_count:N trigger:etb trigger_scope:self|Admiral Brass, Unsinkable
+41|remove:bounce trigger:etb trigger_scope:self|Acererak the Archlich
+37|affected_type:creature duration:static flying grant_kw:flying pump_amount:+N/+N|Aerial Modification
+37|affected_scope:self restrict_kind:cant_block|Ascending Aven
+35|target_count:one target_scope:you_control target_type:creature trigger:etb trigger_scope:self|Baseball Bat
+33|affected_type:creature duration:static grant_kw:vigilance pump_amount:+N/+N vigilance|Accorder's Shield
+33|counter:pNpN counter_count:N trigger:spell_cast|Akroan Skyguard
+33|trigger:blocks|Atlas, Sizable Stooge
+32|damage damage_amount:N target_count:all target_type:creature|Blasphemous Act
+31|counter:pNpN counter_count:N trigger:combat_damage|Arcbound Slith
+30|affected_type:creature duration:static flying grant_kw:flying|Aboshan's Desire
+29|optional|Aboleth Spawn
+29|cost:remove_counters|Adaptive Training Post
+26|surveil trigger:etb trigger_scope:self|A.I.M. Synthoids
+26|affected_filter:iscommander affected_scope:you_control affected_type:creature|Acolyte of Bahamut
+26|damage replace:damagedone_to_replaceeffect|Angrath's Marauders
+26|target_count:one target_type:card unless_cost unless_cost_amount:N|Censor
+25|discard_count:N trigger:combat_damage|Abomination of Gudul
+23|cost:sacrifice|Brutal Suppression
+22|duration:eot grant_kw:trample pump_amount:+N/+N pump_single target_count:one target_type:creature trample|Aloe Alchemist
+20|affected_scope:self duration:static first_strike grant_kw:first_strike|Ahn-Crop Invader
+20|effect:sacrifice|Arc Runner
+20|cost:tap mana_amount:N mana_source|Big Apple, 3 a.m.
+20|remove:destroy|Blight
+20|affected_type:creature duration:static grant_kw:haste haste pump_amount:+N/+N|Boots of Speed
+19|cost:tap cost_mana:w target_count:one target_type:creature|Akroan Mastiff
+19|affected_type:creature duration:static pump_amount:-N/-N|Ancestral Vengeance
+19|draw_count:N saga_chapter|Armor Wars
+19|damage target_count:all target_type:creature|Breath of Darigaaz
+18|counter:pNpN counter_count:N target_count:one target_type:creature|Abigale, Poet Laureate
+18|power_scales:lands_you_control|Ashaya, Soul of the Wild
+18|affected_type:creature duration:static first_strike grant_kw:first_strike pump_amount:+N/+N|Cartouche of Solidarity
+18|prevent_damage|Chameleon Blur
+17|replace:counter_to_other|Allosaurus Shepherd
+17|affected_type:creature duration:static grant_kw:menace menace pump_amount:+N/+N|Arm-Mounted Anchor
+17|remove:tuck target_count:one target_type:creature|Bury in Books
+16|cost:tap prevent_damage target_count:one target_type:any|Abuna Acolyte
+16|lifegain_amount:x trigger_filter:one_or_more x_is:triggering_damage|Armadillo Cloak
+16|counter:ki counter_count:N optional trigger:spell_cast|Azamuki, Treachery Incarnate
+16|affected_type:equipped duration:static pump_amount:+N/+N|Diamond Pick-Axe
+15|cost_mana:Ng|Anurid Swarmsnapper
+15|cost_mana:Ng duration:eot limit:once_per_turn pump_amount:+N/+N|Basking Rootwalla
+15|affected_filter:enchantedby affected_type:creature restrict_kind:cant_attack|Captured by the Consulate
+15|target_count:one target_type:creature|Cyber Conversion
+15|affected_filter:counters_geN_charge affected_type:card duration:static flying grant_kw:flying grant_type:creature scales:counters|Dawnsire, Sunstar Dreadnought
+14|affected_type:you duration:static grant_kw:hexproof hexproof|Aegis of the Gods
+14|counter:pNpN counter_count:N trigger:etb trigger_filter:you_control trigger_scope:other|Avatar Enthusiasts
+14|damage damage_amount:x target_count:one target_type:any x_is:x_paid|Banefire
+14|kw:enchant target_type:artifact|Disruption Aura
+14|affected_scope:self duration:static grant_kw:protection|Haktos the Unscarred
+13|cost:sacrifice cost:tap cost_sacrifice_target:self mana:any mana_amount:N mana_source|Abandoned Outpost
+13|draw_count:N target_count:one target_type:player|Ancestral Vision
+13|affected_type:equipped|Arc Spitter
+13|draw_count:N target_count:one target_type:card|Arcane Denial
+13|counter:pNpN counter_count:N target_count:all target_scope:you_control target_type:creature|Ardenvale Fealty
+13|cost_mana:Nw duration:eot pump_amount:+N/+N target_count:all target_scope:you_control target_type:creature|Bearer of Glory
+13|duration:eot pump_amount:-N/-N target_count:all target_type:creature|Biting Rain
+13|damage damage_amount:N target_scope:each_opponent|Boltwave
+13|mill_count:N target_count:one target_type:player|Brain Freeze
+13|affected_scope:self condition:card_self_counters_geN_level_counters_leN_level|Brimstone Mage
+13|forge_line:cardname_must_be_blocked_if_able|Canopy Stalker
+13|cost:tap cost_mana:N target_count:one target_type:creature|Fan Bearer
+12|damage damage_amount:N lifegain_amount:N target_count:one target_type:any|Agonizing Syphon
+12|effect:sacrifice trigger:upkeep unless_cost|Anurid Scavenger
+12|remove:bounce|Archwing Dragon
+12|mana:green mana_amount:N mana_source|Autumn Willow, Harmony
+12|optional trigger:spell_cast|Ballynock Trapper
+12|affected_type:creature duration:static pump_amount:+N/-N|Barbed Batterfist
+12|kw:champion|Boggart Mob
+12|affected_filter:attachedby affected_type:creature restrict_kind:doesnt_untap|Bubble Snare
+12|mana_source token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_type:treasure trigger:attacks|Captain Lannery Storm
+12|duration:eot first_strike grant_kw:first_strike pump_amount:+N/+N pump_single target_count:one target_type:creature|Crowd's Favor
+12|remove:destroy target_count:all target_type:creature|Damning Verdict
+12|damage replace:damagedone_to_replacedamage|Daunting Defender
+11|affected_filter:enchantedby affected_type:creature restrict_kind:cant_block|Air Bladder
+11|cost:tap cost_mana:Nw target_count:one target_type:creature|Akroan Jailer
+11|affected_filter:chosentype affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N|An Unexpected Party
+11|remove:destroy target_count:one target_type:artifact|Ancient Grudge
+11|replace:damagedone_to_putcounter|Anti-Venom, Horrifying Healer
+11|restrict_kind:cant_attack_unless_cost unless_cost_amount:N|Archangel of Tithes
+11|target_count:one target_type:player trigger:etb trigger_scope:self|Architects of Will
+11|kw:cumulative_upkeep num:N|Balduvian Fallen
+11|mill_count:N|Bind to Life
+11|affected_filter:enchantedby affected_type:card restrict_kind:cant_activate restrict_kind:cant_attack_or_block|Bound in Gold
+11|affected_filter:sliver affected_scope:you_control affected_type:creature|Capricious Sliver
+11|mill_count:N optional trigger:etb trigger_scope:self|Circle of the Land Druid
+11|target_count:one target_type:card unless_cost|Circular Logic
+11|from_zone:graveyard return to_zone:hand|Critical Hit
+11|mana_amount:N mana_choice mana_source produce_colors:lands_can|Dictate of Karametra
+10|counter:pNpN counter_count:N trigger:dies trigger_filter:creature trigger_filter:you_control trigger_scope:other trigger_zone:graveyard|Aang, A Lot to Learn
+10|damage damage_amount:N target_count:one target_type:opponent trigger:etb trigger_scope:self|Abraded Bluffs
+10|controller:you cost:tap from_zone:hand put_onto_battlefield|Aether Vial
+10|cost_mana:Nu remove:bounce|Agoraphobia
+10|duration:eot pump_amount:+N/+N trigger:blocks|Amphibious Kavu
+10|duration:eot pump_amount:+N/+N target_count:all target_scope:you_control target_type:creature trigger:etb trigger_scope:self|Ampryn Tactician
+10|damage damage_amount:N target_count:N target_type:any|Arc Lightning
+10|target_count:up_to_N target_type:creature|Avatar's Wrath
+10|mill_count:N saga_chapter|Awaken the Honored Dead
+10|condition:card_self_counters_geN_ki optional trigger:end_step|Azamuki, Treachery Incarnate
+10|life_loss life_loss_amount:N trigger:etb trigger_scope:self|Bellowing Saddlebrute
+10|affects:by affects:enchanted must_attack|Bloodshed Fever
+10|cost:sacrifice kw:kicker num:N|Bog Down
+10|duration:eot|Bonus Round
+10|remove:destroy target_count:one target_type:land|Break the Ice
+10|forge_line:all_creatures_able_to_block_cardname_do_so|Breaker of Armies
+10|target_count:one target_type:card unless_cost unless_cost_amount:x|Broken Ambitions
+10|mill_count:N target_count:one target_type:player trigger:etb trigger_scope:self|Desperate Bloodseeker
+10|draw_count:N trigger:combat_damage trigger_filter:one_or_more|Dhalsim, Pliable Pacifist
+10|duration:eot fight pump_amount:+N/+N target_count:one target_scope:opp_control target_scope:you_control target_type:creature|Epic Confrontation
+10|counter:pNpN counter_count:N trigger:upkeep|Forced Adaptation
+10|duration:next_untap duration:permanent restrict_kind:doesnt_untap trigger:combat_damage|Frostwalk Bastion
+10|affected_type:creature duration:static first_strike grant_kw:first_strike|Galvanic Arc
+9|cost_mana:Nb from_zone:graveyard return to_zone:hand|Abzan Devotee
+9|draw_count:N duration:eot pump_amount:+N/+N target_count:one target_type:creature|Aggressive Urge
+9|look_top:N rest_to_zone:graveyard take:N to_zone:hand|Akal Pakal, First Among Equals
+9|draw_count:N life_loss life_loss_amount:N|Ambition's Cost
+9|controller:you cost:tap cost_mana:N from_zone:library put_onto_battlefield shuffle tutor tutor_count:N tutor_dest:battlefield tutor_target:permanent_rebel|Amrou Scout
+9|counter:pNpN counter_count:N fight target_count:one target_scope:opp_control target_scope:you_control target_type:creature|Ancient Animus
+9|target_count:up_to_N target_scope:opp_control target_type:creature trigger:etb trigger_scope:self|Apex Altisaur
+9|affected_filter:enchantedby affected_type:creature restrict_kind:cant_activate restrict_kind:cant_attack_or_block|Arachnus Web
+9|from_zone:graveyard return target_count:one target_scope:you_control target_type:card target_zone:graveyard to_zone:hand|Auroral Procession
+9|cost_mana:b deathtouch duration:eot grant_kw:deathtouch|Battlefly Swarm
+9|duration:eot impulse_draw impulse_draw_count:N look_top:N take:all to_zone:exile trigger:upkeep|Bell Borca, Spectral Sergeant
+9|affected_player:target_controller damage damage_amount:N target_count:one target_type:creature|Blooming Blast
+9|affected_filter:enchantedby affected_type:card restrict_kind:doesnt_untap|Blossombind
+9|counter:pNpN counter_count:N optional trigger:etb trigger_filter:you_control trigger_scope:any|Bojuka Brigand
+9|trigger:etb|Bullseye, Death Dealer
+9|cost:tap mana_amount:N mana_choice mana_source produce_colors:your_lands_can|Cactus Preserve
+9|controller:you cost:tap cost_mana:N from_zone:library put_onto_battlefield shuffle tutor tutor_count:N tutor_dest:battlefield tutor_target:permanent_mercenary|Cateran Brute
+9|effect:sacrifice sacrifice_outlet sacrifice_type:creature target_count:one target_type:player|Celestial Flare
+9|cost:remove_counters cost:tap mana:any mana_amount:N mana_source|Channeler Initiate
+9|effect:sacrifice remove:sacrifice sacrifice_outlet sacrifice_type:creature target_scope:each_opponent trigger:etb trigger_scope:self|Consuming Sepulcher
+9|counter:pNpN counter_count:N token_make token_type:incubator trigger:etb trigger_scope:self|Converter Beast
+9|remove:destroy target_count:one target_scope:opp_control target_type:creature trigger:etb trigger_scope:self|Covert Cutpurse
+9|remove:tuck target_count:one target_filter:nonland target_type:permanent|Deem Inferior
+9|draw_count:N life_loss life_loss_amount:N trigger:etb trigger_scope:self|Dusk Legion Zealot
+9|mana_source token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_type:treasure trigger:combat_damage trigger_filter:one_or_more|Grim Hireling
+8|discard_count:N trigger:damage_dealt|Abyssal Specter
+8|duration:eot flying grant_kw:flying pump_amount:+N/+N pump_single target_count:one target_type:creature|Aerial Boost
+8|cost_mana:Nu target_count:one target_type:creature|Air Servant
+8|affected_type:creature duration:static grant_kw:shroud shroud|Alexi's Cloak
+8|color:green kw:plot num:N|Aloe Alchemist
+8|lifegain_amount:N saga_chapter|Amok Time
+8|remove:destroy target_count:one target_type:creature trigger:etb trigger_scope:self|Anchovy & Banana Pizza
+8|lifegain_amount:N optional trigger:spell_cast|Angel's Feather
+8|affected_scope:self double_strike duration:static grant_kw:double_strike|Apostle of Invasion
+8|trigger:combat_damage trigger_filter:one_or_more|Arashin War Beast
+8|draw_count:N remove:bounce target_count:one target_type:creature|Arrester's Admonition
+8|life_loss life_loss_amount:N lifegain_amount:N target_scope:each_opponent trigger:etb trigger_scope:self|Arrogant Outlaw
+8|discard_count:N|Avaricious Dragon
+8|remove:destroy target_count:one target_type:enchantment trigger:etb trigger_scope:self|Aven Cloudchaser
+8|cost_mana:w duration:eot grant_kw:vigilance vigilance|Bastion Mastodon
+8|cant_be_blocked:by_creature_powerltx|Battering Wurm
+8|duration:eot grant_kw:hexproof hexproof pump_amount:+N/+N pump_single target_count:one target_scope:you_control target_type:creature|Beaming Defiance
+8|mana_source token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_type:treasure trigger:combat_damage|Beamtown Beatstick
+8|controller:you from_zone:library put_onto_battlefield put_tapped shuffle tutor tutor_count:N tutor_dest:battlefield_tapped tutor_target:basic_land|Beneath the Sands
+8|kw:powerup|Black Panther, Most Dangerous
+8|damage damage_amount:N target_scope:each_opponent trigger:spell_cast trigger_filter:noncreature|Black Waltz No. 3
+8|color:white kw:craft num:N|Bladewheel Chariot
+8|target_count:one target_type:player|Blessed Wind
+8|token_cardtype:artifact token_color:colorless token_count:N token_type:blood_draw trigger:etb trigger_scope:self|Blood Fountain
+8|draw_count:N life_loss life_loss_amount:N target_count:one target_type:player|Blood Pact
+8|damage damage_amount:N die_replace:exile target_count:one target_type:creature|Bot Bashing Time
+8|affected_filter:pairedwith affected_type:creature|Breathkeeper Seraph
+8|color:red kw:plot num:N|Brimstone Roundup
+8|power_scales:artifacts_you_control|Bronze Guardian
+8|prevent_damage target_count:one target_type:any|Candles' Glow
+8|target_count:one target_filter:controlledby_triggereddefendingplayer target_type:creature trigger:attacks|Captain America's Shield
+8|affected_scope:self condition:threshold|Centaur Chieftain
+8|mana_source saga_chapter token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_type:treasure|City of Death
+8|duration:eot pump_amount:-N/-N target_count:all target_scope:opp_control target_type:creature|Cower in Fear
+8|replace:beginphase_to_other|Damia, Sage of Stone
+8|remove:destroy trigger:damage_dealt|Dinosaur Hunter
+8|draw_count:x trigger:combat_damage x_is:triggering_damage|Diviner Spirit
+8|color:blue kw:plot num:N|Djinn of Fool's Fall
+8|lifegain_amount:N mill_count:N trigger:etb trigger_scope:self|Doom's Servo-Guards
+8|investigate token_make trigger:etb trigger_scope:self|Drownyard Explorers
+8|counter:pNpN counter_count:N trigger:dies trigger_filter:creature trigger_scope:other trigger_zone:graveyard|Elenda, the Dusk Rose
+8|cast_free optional trigger:combat_damage|Evercoat Ursine
+8|affected_filter:attacking affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N|Goblin Oriflamme
+8|damage damage_amount:N target_count:one target_type:planeswalker target_type:player|Kyren Negotiations
+7|duration:eot steal steal_grants_haste target_count:one target_type:creature untap|Act of Treason
+7|damage damage_amount:N trigger:spell_cast|Adrenaline Jockey
+7|cost_mana:N damage|Aegis of Honor
+7|target_count:up_to_N target_type:creature trigger:etb trigger_scope:self|Airbender Ascension
+7|duration:next_turn_end impulse_draw impulse_draw_count:N look_top:N take:all to_zone:exile trigger:etb trigger_scope:self|Alania's Pathmaker
+7|duration:eot impulse_draw impulse_draw_count:N look_top:N take:all to_zone:exile|Annie Flash, the Veteran
+7|damage damage_amount:N die_replace:exile target_count:one target_type:any|Annihilating Fire
+7|duration:eot grant_kw:reach pump_amount:+N/+N reach target_count:one target_type:creature|Arachnoid Adaptation
+7|counter:pNpN counter_count:N target_count:up_to_N target_type:creature trigger:etb trigger_scope:self|Arcade Cabinet
+7|affected_scope:opp_control affected_type:creature|Archetype of Aggression
+7|mill_count:N target_count:one target_type:opponent|Archive Trap
+7|affected_scope:self condition:metalcraft duration:static pump_amount:+N/+N|Ardent Recruit
+7|affected_filter:sliver affected_type:creature|Armor Sliver
+7|target_count:one target_type:card trigger:etb trigger_scope:self|Ashiok's Erasure
+7|affected_type:creature duration:static grant_kw:lifelink lifegain lifelink|Aspect of Lamprey
+7|remove:destroy target_count:one target_filter:tapped target_type:creature|Assassinate
+7|remove:destroy target_count:one target_filter:nonland target_type:permanent|Atomize
+7|affected_scope:self condition:at_least_N_land_you_control duration:static pump_amount:+N/+N|Augmenter Pugilist
+7|cost:tap mana_source token_ability:tap_sacrifice_add_mana_any_color token_cardtype:artifact token_color:colorless token_count:N token_type:treasure|Black Market Tycoon
+7|affected_filter:sliver affected_type:creature duration:static pump_amount:+N/+N|Blade Sliver
+7|damage damage_amount:x target_count:one target_type:any trigger:damage_dealt trigger_filter:one_or_more x_is:triggering_damage|Blazing Sunsteel
+7|draw_count:N life_loss_amount:N trigger:etb trigger_scope:self|Blighted Blackthorn
+7|token_make token_type:copy trigger:combat_damage|Bloodforged Battle-Axe
+7|discard_count:N trigger:etb trigger_scope:self|Bloodrage Brawler
+7|target_count:one target_scope:opp_control target_type:creature|Blustersquall
+7|cost:tap damage damage_amount:N target_scope:each_opponent|Brimstone Trebuchet
+7|mana:red mana_amount:N mana_source saga_chapter|Burn, Burn, Tree and Fern
+7|affected_filter:other affected_scope:you_control affected_type:elf duration:static pump_amount:+N/+N|Canopy Tactician
+7|color:black cost_mana:Nb kw:escape num:N|Charred Graverobber
+7|remove:destroy trigger:damage_dealt trigger_filter:one_or_more|Cracked Skull
+7|target_count:one target_type:opponent trigger:etb trigger_scope:self|Curious Colossus
+7|counter:pNpN counter_count:N target_count:all target_filter:strictlyother target_scope:you_control target_type:creature trigger:etb trigger_scope:self|Cytoplast Root-Kin
+7|duration:eot pump_amount:+N/+N target_count:all target_scope:you_control target_type:creature trigger:attacks|Dauntless Veteran
+7|remove:destroy target_count:one target_type:artifact target_type:land|Demolish
+7|counter:eachfromsource target_count:one target_scope:you_control target_type:creature trigger:dies trigger_scope:self trigger_zone:graveyard|Dockworker Drone
+7|target_count:one target_scope:you_control target_type:creature|Double Major
+7|damage damage_amount:N lifegain_amount:N target_count:one target_type:creature|Douse in Gloom
+7|counter:pNpN counter_count:N trigger:spell_cast trigger_filter:instant trigger_filter:sorcery|Dragonsguard Elite
+7|affected_filter:token affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N|Dramatic Finale
+7|target_count:one target_type:permanent trigger:etb trigger_scope:self|Dramatist's Puppet
+7|from_zone:graveyard return shuffle to_zone:library trigger_scope:self|Dread
+7|affected_filter:attachedby affected_type:permanent restrict_kind:doesnt_untap|Enchanted River's Grasp
+7|cost:sacrifice cost_sacrifice_target:self damage damage_amount:N target_count:one target_type:any|Fire Bowman
+7|cost_mana:Nr damage damage_amount:N target_count:one target_type:any|Flamekin Spitfire
+7|optional target_count:one target_type:creature trigger:etb trigger_scope:self|Giant Ambush Beetle
+7|life_loss life_loss_amount:N trigger:upkeep|Grinning Demon
+7|kw:companion|Gyruda, Doom of Depths
+7|cost:tap mill_count:N|Molt Tender
+7|cost:energy cost_energy:N counter:pNpN counter_count:N trigger:attacks|Scrapper Champion
+6|affected_filter:enchanted affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N|A Tale for the Ages
+6|cost:discard|Abolish
+6|damage damage_amount:N modal:N_of_N remove:destroy target_count:one target_type:artifact target_type:creature|Abrade
+6|life_loss life_loss_amount:N lifegain_amount:N target_count:one target_type:player|Absorb Vis
+6|duration:eot grant_kw:hexproof hexproof trigger:etb trigger_scope:self|Accelerated Evolution
+6|duration:eot pump_amount:+N/+N target_count:one target_type:creature untap|Act of Heroism
+6|duration:eot grant_kw:indestructible indestructible pump_amount:+N/+N pump_single target_count:one target_type:creature|Adamant Will
+6|counter:pNpN counter_count:N lifegain_amount:N target_count:one target_type:creature|Adventurous Eater
+6|duration:eot flying grant_kw:flying pump_single target_count:one target_filter:attacking target_filter:other target_type:creature trigger:attacks|Aerial Guide
+6|cost_mana:Ngu|Aeromunculus
+6|optional target_count:one target_type:creature trigger:attacks|Alaborn Cavalier
+6|cost:tap cost_mana:N damage damage_amount:N target_count:one target_type:any|Aladdin's Ring
+6|affected_filter:other affected_filter:withflying affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N|Alela, Artful Provocateur
+6|damage damage_amount:x duration:eot pump_amount:+N/+N target_count:one target_scope:opp_control target_scope:you_control target_type:creature x_is:target_power|Ambuscade
+6|cant_be_blocked cost_mana:Nu duration:eot target_count:one target_type:creature|Amphin Pathmage
+6|unless_cost unless_cost_amount:N|Amulet of Safekeeping
+6|from_zone:exile return to_zone:hand trigger:leaves trigger_scope:self|Angel of Serenity
+6|optional remove:bounce target_count:one target_type:creature trigger:etb trigger_scope:self|Angler Drake
+6|lifegain_amount:N remove:destroy target_count:one target_type:artifact target_type:enchantment|Appetite for the Unnatural
+6|duration:eot impulse_draw impulse_draw_count:N look_top:N take:all to_zone:exile trigger:combat_damage|Araña, Heart of the Spider
+6|duration:eot impulse_draw impulse_draw_count:N look_top:N take:all to_zone:exile trigger:attacks|Ardent Dustspeaker
+6|double_strike duration:eot grant_kw:double_strike pump_single target_count:one target_type:creature|Assault Strobe
+6|cost:tap mana:colorless mana_amount:N mana_restriction:artifact_spell_or_activated_ability mana_source|Automated Artificer
+6|must_attack|Avatar of Slaughter
+6|cost_mana:Nw target_count:one target_type:creature|Aven Soulgazer
+6|effect:sacrifice trigger:etb trigger_scope:self|Azorius Herald
+6|remove:destroy target_count:all target_type:enchantment|Back to Nature
+6|damage damage_amount:x target_count:one target_type:any trigger:dies trigger_scope:self trigger_zone:graveyard x_is:triggering_power|Balduvian Berserker
+6|affected_filter:other affected_filter:white affected_scope:you_control affected_type:creature duration:static pump_amount:+N/+N|Balefire Liege
+6|cost:tap cost_mana:Nr damage damage_amount:N target_count:one target_type:any|Ballista Watcher
+6|cost_mana:N from_zone:graveyard return target_count:one target_scope:you_control target_type:card target_zone:graveyard to_zone:library|Barkform Harvester
+6|cost_mana:N limit:once_per_turn mana:any mana_amount:N mana_source|Barrels of Blasting Jelly
+6|scales:counters|Battlefront Krushok
+6|affected_type:permanent|Bigger on the Inside
+6|token_cardtype:artifact token_color:colorless token_count:N token_type:lander_search trigger:etb trigger_scope:self|Bioengineered Future
+6|optional trigger:combat_damage|Bismuth Mindrender
+6|mana:red mana_amount:N mana_source|Blazing Firesinger
+6|counter:mNmN counter_count:N target_count:one target_type:creature|Blight Rot
+6|mill_count:N trigger:upkeep|Bloodcurdler
+6|counter:pNpN|Body Dropper
+6|draw_count:N target_count:one target_type:creature|Boiling Blood
+6|forge_line:cardname_can_t_attack_or_block_alone|Bonded Horncrest
+6|draw_count:N remove:bounce target_count:one target_filter:nonland target_type:permanent|Boomerang Basics
+6|color:green kw:prototype num:N|Boulderbranch Golem
+6|controller:you from_zone:library put_onto_battlefield put_tapped shuffle tutor tutor_count:x tutor_dest:battlefield_tapped tutor_target:basic_land|Boundless Realms
+6|color:black kw:encore num:N|Briarblade Adept
+6|damage damage_amount:N target_count:one target_type:any trigger:spell_cast|Burning Vengeance
+6|from_zone:exile return return_exiled to_zone:hand trigger:leaves trigger_scope:self|Champion of the Clachan
+6|affected_type:artifact restrict_kind:cant_activate|Clarion Conqueror
+6|optional trigger:etb trigger_filter:creature trigger_scope:any|Cloak and Dagger
+6|damage damage_amount:N target_count:all target_type:creature trigger:etb trigger_scope:self|Cloudthresher
+6|color:blue kw:warp num:N|Codecracker Hound
+6|affected_type:permanent steal|Confiscate
+6|draw_count:x x_is:x_paid|Contaminated Drink
+6|from_zone:graveyard mill_count:N return to_zone:hand|Corpse Churn
+6|look_top:N take:N to_zone:hand trigger:etb trigger_scope:self|Court Hussar
+6|cost:tap mana:black mana:blue mana:red mana_amount:N mana_choice mana_source|Crosis's Catacombs
+6|cost:tap damage damage_amount:N target_count:one target_filter:attacking target_filter:blocking target_type:creature|Crossbow Infantry
+6|token_cardtype:artifact token_color:colorless token_count:N token_type:mutagen trigger:etb trigger_scope:self|Crustacean Commando
+6|affected_filter:namedcard affected_type:card restrict_kind:cant_activate|Disruptor Flute
+6|draw_count:x|Doctor Octopus, Master Planner
+6|cost_mana:u duration:eot flying grant_kw:flying|Dukhara Peafowl
+6|impulse_draw trigger:spell_cast|Edgar, Master Machinist
+6|remove:destroy target_count:one target_filter:attacking target_type:creature|Eightfold Maze
+6|duration:eot pump_amount:-x/-x pump_single target_count:one target_type:creature|Eject the Warp Core
+6|damage damage_amount:N draw_count:N target_count:one target_type:any|Ember Shot

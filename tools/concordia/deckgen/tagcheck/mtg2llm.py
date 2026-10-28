@@ -420,7 +420,47 @@ def _hand(ts):
     return HAND_UNIT.get(_CARD[0] + "|" + _pat(ts)) if _CARD[0] else None
 
 
+# keywords whose whole line is "Name {cost}" (B0): the unit is the kw tag, its cost_mana and the loose num/color the K: parser also writes
+KW_COST_LINE = {"flashback", "kicker", "multikicker", "cycling", "mutate", "blitz", "emerge", "buyback", "madness", "unearth", "disturb", "embalm", "eternalize",
+                "evoke", "dash", "prowl", "morph", "megamorph", "reconfigure", "foretell", "overload", "spectacle", "surge", "bestow", "entwine", "replicate",
+                "transmute", "scavenge", "outlast", "ninjutsu", "echo", "miracle", "level_up", "squad"}
+
+
+def _kw_cost_line(ts):
+    kws = [t[3:] for t in ts if t.startswith("kw:")] or [t[11:] for t in ts if t == "forge_line:multikicker"]
+    cm = [t.partition(":")[2] for t in ts if t.startswith("cost_mana:")]
+    if kws == ["suspend"] and len(cm) == 1:      # B1: "Suspend 4—{R}"; the time is the num not spent in the cost
+        nums = [t[4:] for t in ts if re.fullmatch(r"num:\d+", t)]
+        for d in re.findall(r"\d+", cm[0]):
+            if d in nums: nums.remove(d)
+        if len(nums) == 1: return "Suspend %s—%s" % (nums[0], "".join("{%s}" % c.upper() for c in re.findall(r"\d+|[a-z]", cm[0])))
+    if len(kws) != 1 or kws[0] not in KW_COST_LINE or len(cm) != 1 or any(not t.startswith(("kw:", "cost_mana:", "num:", "color:", "forge_line:multikicker")) for t in ts): return None
+    return kws[0].replace("_", " ").capitalize() + " " + "".join("{%s}" % c.upper() for c in re.findall(r"\d+|[a-z]", cm[0]))
+
+
+# B1: keywords whose printed line is just the name (KW_PLAIN) or the name and one number (KW_NUM); reminder text is not part of the printed line
+KW_PLAIN = {"cascade", "fear", "storm", "horsemanship", "wither", "persist", "evolve", "exploit", "assist", "extort", "flanking", "unleash", "exhaust", "riot", "ravenous", "cipher", "conspire", "ingest", "melee", "provoke", "undaunted", "demonstrate", "intimidate", "umbra_armor", "infect", "undying", "shadow", "skulk", "banding", "rebound", "retrace", "myriad", "improvise", "convoke", "delve", "split_second", "hideaway", "decayed", "cipher", "daybound", "nightbound", "training", "battle_cry", "exalted", "provoke", "unearth_none", "totem_armor", "living_weapon", "changeling", "ascend", "enlist", "afterlife_none", "toxic_none", "jump_start", "for_mirrodin"}
+KW_NUM = {"bushido", "soulshift", "modular", "devour", "renown", "bloodthirst", "fabricate", "mobilize", "graft", "afterlife", "tribute", "afflict", "amplify", "dredge", "annihilator", "rampage", "fading", "vanishing", "toxic", "poisonous", "ward", "backup", "casualty", "crew", "saddle", "bargain_none", "frenzy", "absorb", "hideaway", "reinforce_none"}
+KW_NAME = {"jump_start": "Jump-start", "for_mirrodin": "For Mirrodin!", "battle_cry": "Battle cry", "split_second": "Split second"}
+LANDWALK = {"swamp", "forest", "island", "mountain", "plains"}
+
+
+def _kw_plain_line(ts):
+    """a unit that is one keyword (plus its number, a protection colour or a landwalk type) reads as the keyword's printed line"""
+    kws = [t[3:] for t in ts if t.startswith("kw:")] or [t[11:] for t in ts if t == "forge_line:intimidate"]
+    if len(kws) != 1: return None
+    k, rest = kws[0], [t for t in ts if not t.startswith(("kw:", "forge_line:intimidate"))]
+    name = KW_NAME.get(k) or k.replace("_", " ").capitalize()
+    if k in KW_PLAIN and not rest: return name
+    if k in KW_NUM and len(rest) == 1 and re.fullmatch(r"num:\d+", rest[0]): return "%s %s" % (name, rest[0][4:])
+    if k == "protection" and len(rest) == 1 and re.fullmatch(r"protection_from:(white|blue|black|red|green|artifact|creature|everything|monocolored|multicolored)", rest[0]): return "Protection from " + rest[0].partition(":")[2].replace("everything", "everything")
+    if k == "landwalk" and len(rest) == 1 and rest[0].partition(":")[2] in LANDWALK: return rest[0].partition(":")[2].capitalize() + "walk"
+    return None
+
+
 def _compose(ts, stray):
+    kc = _kw_cost_line(ts) or _kw_plain_line(ts)
+    if kc: return kc
     bm = basic_mana(ts)
     if bm: return bm
     P = parts()

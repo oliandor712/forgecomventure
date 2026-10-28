@@ -22,6 +22,8 @@ BASIC_LAND = {"Plains", "Island", "Swamp", "Mountain", "Forest"}
 COLOR = {"W": "white", "U": "blue", "B": "black", "R": "red", "G": "green", "C": "colorless"}   # C = the sixth colour (H78)
 COLORWORD = {"white": "white", "blue": "blue", "black": "black", "red": "red", "green": "green"}
 KWSET, REMIND = set(), {}
+from itertools import takewhile as C_takewhile
+KW_MANA_COST = {"squad", "flashback", "kicker", "multikicker", "cycling", "escape", "mutate", "blitz", "emerge", "buyback", "suspend", "madness", "unearth", "disturb", "embalm", "eternalize", "bestow", "evoke", "dash", "prowl", "morph", "megamorph", "reconfigure", "foretell", "overload", "spectacle", "surge", "miracle", "awaken", "entwine", "replicate", "splice", "transmute", "scavenge", "outlast", "monstrosity", "adapt", "prototype", "ninjutsu", "echo", "level_up", "bloodthirst_cost"}   # keywords whose K: line carries a mana cost to keep whole (B0)
 try:
     for _l in open(os.path.join(HERE, "..", "ai_lab", "KEYWORD_REFERENCE.toon"), encoding="utf-8"):
         _m = re.match(r'^  "?([^,"]+)"?,(?:keyword|action),', _l)
@@ -62,6 +64,8 @@ def kw_tags(line):
         return list(dict.fromkeys(tags))
     key = snake(base).replace("_", "")
     if KWSET and key not in KWSET:
+        if snake(base) == "multikicker" and re.fullmatch(r"(\d+|X)?( ?[WUBRGC])*", rest.strip()) and rest.strip():      # B1: Multikicker:2 / :1 W, one cost, kept whole like the B0 keywords
+            return ["forge_line:multikicker", "cost_mana:" + "".join(m.lower() for m in rest.split())]
         return ["forge_line:" + snake(base)]
     tags = ["kw:" + snake(base)]
     if not rest: return tags
@@ -82,6 +86,12 @@ def kw_tags(line):
         if t.isdigit(): tags.append("num:" + t)
         elif t == "X": tags.append("num:x")
         elif t in COLOR: tags.append("color:" + COLOR[t])
+    mana = list(C_takewhile(lambda t: t.isdigit() or t == "X" or t in COLOR, [t for t in re.split(r"[ :<>/]+", cost) if t]))      # B0 (user 2026-10-27): num:/color: lose the pip count ({5}{B}{B} = num:5 color:black), so the keyword's mana cost is also kept whole
+    one_cost = sum(1 for seg in cost.split(":") if seg.split() and (seg.split()[0].isdigit() or seg.split()[0] == "X" or seg.split()[0] in COLOR)) <= 1      # Kicker:1 G:2 G has two costs; one cost_mana would be a guess
+    if mana and one_cost and snake(base) in KW_MANA_COST: tags.append("cost_mana:" + "".join(m.lower() for m in mana))
+    if snake(base) == "suspend" and ":" in rest:      # Suspend:4:1 R = time counters, then the cost; the cost alone is cost_mana
+        sm = [t for t in re.split(r"[ ]+", rest.split(":", 1)[1].strip()) if t.isdigit() or t == "X" or t in COLOR]
+        if sm: tags.append("cost_mana:" + "".join(m.lower() for m in sm))
     if "PayLife" in rest: tags.append("cost:life")
     if "Sac<" in rest: tags.append("cost:sacrifice")
     if "Discard<" in rest: tags.append("cost:discard")
@@ -258,6 +268,7 @@ def record(name, text):
     if "Land" in types.split() and "land_tutor" in tags and "cost_sacrifice_target:self" in tags and not re.search(r"ChangeType\$ ?(?:Land|Card)\.Basic", face): tags.append("niche:lands")   # fetchland that names land types (Polluted Delta): sacrifice outlet / land-recursion decks; a basic-land fetch (Evolving Wilds, Fabled Passage) fixes mana in any deck
     for nt, arch in (("grave_hate", "graveyard_hate"), ("self_mill", "self_mill"), ("haunt", "haunt")):
         if nt in tags: tags.append("niche:" + arch)
+    if any(t in ("flip_coin", "roll_die") or t.startswith(("roll_die:", "secret_choice:")) for t in tags): tags.append("niche:chaos")   # coin, die and secret-choice cards pay only in chaos decks (user 2026-10-27)
     tset, ttypes = set(tags), types.split()
     if any(t.startswith("lord:") and t[5:] not in NOT_TRIBE for t in tset): tags.append("niche:tribal")   # lord of one creature type (user 2026-10-25: all suggested)
     if "condition:landfall" in tset or any(t.startswith(("x_is:landfall", "token_type:bird_landfall")) for t in tset) or re.search(r"TriggerDescription\$[^|\n]*\bLandfall\b|^Oracle:.*\bLandfall\b\s*[\u2014-]", face, re.M): tags.append("niche:landfall")
@@ -273,13 +284,64 @@ def record(name, text):
     ai = sorted(set(re.findall(r"AILogic\$ ?([A-Za-z0-9_]+)", face)) | set(re.findall(r"^SVar:AttachAILogic:(\w+)", face, re.M)))
     aipref = "AIPreference" in face or "SVar:AIPreference" in face
     rd = "AI:RemoveDeck" in face
+    ex_groups = relocate_v(ex_groups)
     groups = dict(kgroups)
     for gid, ts in ex_groups.items(): groups[gid] = [t.lower() for t in dict.fromkeys(ts)]
     def gkey(g): return (0 if g == "c0" else 1 if g.startswith("k") else 3 if g == "v" else 2, [int(x) for x in re.findall(r"\d+", g)])
     groups = dict(sorted(groups.items(), key=lambda kv: gkey(kv[0])))
     ai_tags = [x for x in tags if TV.is_ai_tag(x)]
+    links = [l for l in links if not any(e.partition(":")[0] in ("c%d" % i for i in range(1, 30)) and not any(g == e.partition(":")[0] or g.startswith(e.partition(":")[0] + ".") for g in groups) for e in (l[0], l[2]))]      # drop links to a clause that has no tags and so no group
     links = list(links) + DT.provided_by(set(tags), set(base))
     return dict(name=name, face=DT.face(text, name), derived=DT.derived(tags, groups, base), ai_tags=ai_tags, groups=groups, base=[t.lower() for t in base], new=[t.lower() for t in ex_tags if t.lower() in tags], tags=tags, clauses=clauses, links=links, verify=ver, ai=ai, aipref=aipref, removedeck=rd, nlines=n)
+
+
+_EP = {}
+def _effect_params():
+    if not _EP:
+        try: _EP.update(json.load(open(os.path.join(HERE, "tagcheck", "effect_params.json"), encoding="utf8")))
+        except OSError: pass
+    return _EP
+
+
+def relocate_v(ex_groups):
+    """TAG_SYNTAX decision 4 (user 2026-10-27): a verb tag the cross-check group v added (Nazar: life_loss) moves to the one step group that holds its parameters (life_loss_amount:3);
+    ambiguous or parameterless verbs stay in v"""
+    ep = _effect_params()
+    if "v" not in ex_groups or not ep: return ex_groups
+    keep = []
+    for t in ex_groups["v"]:
+        f = t.split(":")[0]
+        homes = [g for g, ts in ex_groups.items() if g not in ("v", "c0") and any(ep.get(u.split(":")[0], {}).get("verb") == f for u in ts)]
+        if len(homes) == 1: ex_groups[homes[0]].append(t)
+        else: keep.append(t)
+    if keep: ex_groups["v"] = keep
+    else: del ex_groups["v"]
+    return ex_groups
+
+
+VERB_WORDS = {"tutor": r"\bsearch", "shuffle": r"\bshuffle", "put_onto_battlefield": r"onto the battlefield", "return": r"\breturn", "draw": r"\bdraws?\b", "life_loss": r"\blo(?:se|ses)\b",
+              "lifegain": r"\bgains?\b", "damage": r"\bdeals?\b", "token_make": r"\bcreate", "remove": r"\b(?:exile|destroy|sacrifice)", "counter": r"\bcounters?\b", "discard": r"\bdiscard",
+              "scry": r"\bscry", "mill": r"\bmill", "mana_source": r"\badd\b", "pump_single": r"\bgets?\b", "fight": r"\bfights?\b", "untap": r"\buntap", "investigate": r"\binvestigate",
+              "surveil": r"\bsurveil", "impulse_draw": r"\bexile the top", "look_top": r"\blook at the top|\breveal the top"}
+
+
+def verb_order(text, groups):
+    """Oracle phrase position of each verb of each group (TAG_SYNTAX decision 2): {gid: [verb, ...]} in the order the verbs appear in the Oracle text; verbs with no match keep tag order at the end"""
+    ep = _effect_params()
+    ora = " ".join(re.findall(r"^Oracle:(.*)$", text, re.M)).lower()
+    out = {}
+    for g, ts in groups.items():
+        vs = []
+        for t in ts:
+            f = t.split(":")[0]
+            v = f if f in VERB_WORDS or f in ("kw", "remove") else ep.get(f, {}).get("verb")
+            if isinstance(v, str) and v not in vs and f not in ("kw",): vs.append(v)
+        if len(vs) > 1:
+            def pos(v):
+                m = re.search(VERB_WORDS.get(v, r"$^"), ora)
+                return m.start() if m else 10 ** 6
+            out[g] = sorted(vs, key=pos)      # stable: ties and misses keep tag order
+    return out
 
 
 def render(r):

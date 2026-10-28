@@ -1,8 +1,57 @@
 # Handover to the new main session
 
 Written 2026-10-23 by the previous main session (branch `cd/claude2`, now merged into `campaign-design`). That session is deleted. You are the only main session. The read-first list lives in `START.md` (step 5); this file is one item on it.
-## LATEST (2026-10-27, later session): starter land picker + commander support rework (read first)
-**Repo state: NOT committed or pushed for code.** Only two documents were pushed (`docs/Adventure/Campaign/STARTER_BUILDER_CHANGES_2026-10-27.md`; `STARTER_LAND_PICKER_CHANGELOG_2026-10-27.md` is written, push it with `python3 tools/agents/docpush.py <path>` if docpush did not already). Code, `human_logic.toon` (H96-H103), logs and this file are local until the user says "push". Nothing live changed (no live decks, no `enemies.json`, no forge-core/game/ai). The working tree also holds earlier uncommitted changes (build.py, synergy.py, starter_tune.py, pool/tag files); review `git status` before committing.
+## LATEST (2026-10-27, tag-syntax session): TAG_SYNTAX steps 1-4 (view generator + checker), `affected_player` tag (read first)
+**Repo state: committed and pushed to `campaign-design` at session end** (no force; one commit holds this session's work AND the earlier uncommitted work of the starter/land-picker session, listed in the block below). Nothing live changed (no live decks, no `enemies.json`, no forge-core/game/ai). Documents (`TAG_SYNTAX.md`) were already pushed earlier through docpush.
+
+### What the project is
+User wants the tags to follow the Oracle order and have their own syntax, as a better structure on the **existing** tag base (no new tag set). Design: `tools/concordia/deckgen/TAG_SYNTAX.md` (read it first: grammar, five roles, worked examples, checker rules, user decisions in section 8, build order in section 9). Bracket view `role[tags]` over the unchanged flat tags: roles `trigger`, `cost`, `target`, `duration`, `effect` (from `mtg2llm.role()`); one `effect[...]` segment per verb; removing the punctuation gives back the flat tag multiset (round-trip rule). Example: `c1: cost[cost:tap cost:sacrifice] effect[tutor tutor_count:1 tutor_target:basic_land] effect[put_onto_battlefield tutor_dest:battlefield_tapped] effect[shuffle]`.
+
+### User decisions this session (do not re-ask)
+1. Binding table: generated (not hand-written), gaps fixed by hand in `OVERRIDES`/`VERBS` of the generator.
+2. Position data: the tagger records verb order per group (`tags/VERB_ORDER.toon`).
+3. Unbound tags: lenient (listed, never fatal).
+4. Misplaced tags (Nazar): fixed in the tagger, not by the view.
+5. Export format: brackets, chosen by the main session (user said "better for you").
+6. `affected_player` (family, PROPOSED then approved: "Approve, rebuild"): who receives the effect when it is not the ability's controller. Values `target_controller`, `target_owner`, `target_player` from Forge `Defined$/Player$/Targeted TargetedController/TargetedOwner/TargetedPlayer`. Reason: Swords to Plowshares said "You gain life" where Oracle says "Its controller gains life". The old `controller` family means permanent control, not the recipient.
+
+### What was built (all in `tools/concordia/deckgen/`)
+- `tag_extra.py`: `AFFECTED_PLAYER` map + DOC row + hook inside the `chain(body)` loop (uses `bp = params(b)`, NOT the `kind == "C"` saga branch). Three link fixes: `cost_reduce filters` now ends in `cost_reduce_for:X` (was `cardtype:X`); `steal pairs_with steal_grants_X`; `return_exiled pairs_with <ability group>:trigger:leaves` (the trigger sits in the ability group, not the step).
+- `tag_run.py`: `_effect_params()`, `relocate_v(ex_groups)` (moves a cross-check `v` verb tag into the one step group whose params bind to that verb; Nazar `life_loss` -> c2.3; 6 `x` groups remain), `VERB_WORDS` (regexes for ~25 verbs) + `verb_order(text, groups)`; links to a clause that has no group are dropped.
+- `tag_reports.py`: `starter_main` writes `tags/VERB_ORDER.toon` (133 multi-verb groups, `order[N|]{card|group|verbs}`) right after `STARTER_TAGS.toon`.
+- `tagcheck/hand_units.json`: new whole-unit key for `affected_player:target_controller ... remove:exile ...` (Swords to Plowshares now renders "Exile target creature. Its controller gains life equal to its power."). The key must be the whole-unit pattern because `mtg2llm.units()` merges step groups (c1 + c1.2) into one unit; the file loads at import, so test in a fresh process.
+- `tagcheck/gen_effect_params.py` -> `tagcheck/effect_params.json` (70 params: 36 prefix, 19 co-occurrence, 15 override, 0 gaps). Regenerate, never hand-edit the JSON.
+- `tagcheck/tagsyntax.py`: view generator (`view_group`, `view_card`, `effect_segments`, order from `VERB_ORDER.toon`) and the checker. CLI: `python tagsyntax.py [card names]` prints view, links, checker result and flat render; `python tagsyntax.py check` runs the seven rules over `tagged.json` (exit 1 on a failure of rules 1, 2, 3, 6, 7).
+- `tagcheck/tagged.json` is regenerated with `python mtg2llm.py tag` (571 cards, run from `tagcheck/`).
+
+### Results (571 starter cards, 1,522 groups)
+- Checker: round trip, one place, role fit, link ends (after the link fixes), determinism = 0 failures. Lenient lists: 502 verbless effect segments (rule 4: parameter groups whose verb is in another group, e.g. `draw_count:1` alone), 2 uses of `affected_player` not yet in the binding table (rule 5), 128 implicit role-word ends (`c1:affected` where the group has no target tag), 33 card-level ends (`k2 provides lifegain`, bare tags not in any group).
+- Starter rebuild (`python tag_run.py starter`, ~4 min; run in the background) done after the link fixes. One stale link remains in `STARTER_TAGS.toon` (Bontu's Monument, `filters,c1:cardtype:creature`) because the tag guard kept its stored tags ("73 kept stored, new run scored lower"). Harmless to the check (it reads `tagged.json`).
+
+### Step 4 measured, NOT built (decision pending with the user)
+Planned: renderer emits one sentence per `effect[...]` segment and `READER_GRAMMAR.md` rule 1.5 ("effect sentences are in the order their verb tags first appear", also in `READER_GRAMMAR_SHORT.md` item 3) is replaced. Measurement: mined body rules hit 72% of 1,237 whole effect bags but only 61% of 1,484 per-segment patterns; of 209 multi-segment bags only 10 miss as a bag but hit on every segment, and some of those are one printed sentence split by the view (Overrun: `trample` + `+3/+3`). A segment-wise render fallback would gain ~10 units and risk wrong sentences, so the renderer and the grammar are UNCHANGED. My recommendation (offered, no answer yet): build `tagsyntax.py export` (bracket-view records for readers) and add a bracket-form addendum to `READER_GRAMMAR.md`, leaving rule 1.5 for flat records. Alternative the user may pick: the segment-wise fallback, then show the 10 renders.
+
+### Next session plan (in order)
+1. Ask the user which step 4 option (view export + grammar addendum, recommended; or the segment fallback).
+2. Step 5 (glance test of flat vs view) only on the user's ask; readers/subagents run only when asked (CLAUDE.md).
+3. Bind `affected_player` in `gen_effect_params.py` (`OVERRIDES`), regenerate `effect_params.json`, rerun `tagsyntax.py check`.
+4. Fix the `NEW_TAGS_FOR_APPROVAL.md` row for `affected_player` (placeholder text "see feedback notes") and the DOC wording if the user wants.
+5. Roughly 350 Forge cards use `TargetedController`; each needs a hand unit line or a mined rule (only 1 starter card carries `affected_player` now). Nazar's flat render still prints raw `{...}` because its unit (changed key after the move) has no rule.
+6. Run `pool.py` (no `-I`, ~25 s plus tagging) once to refresh the pool with the new tag; not rerun this session (flat set only gained `affected_player`).
+7. Run the checker on the whole 28,049-card pool (the scan renders all of them, 415 s; use the background).
+8. Older open items (still standing): B2-B4 of `TAG_GAP_CANDIDATES.md`; commander-to-archetype assignment fix (130 zero-fit commanders); unlogged items (archetype usage column, commander archetype test, commander render scan); H102 gate floor and the W rebuild; deleting `staging_starters_bak_*`, `_r2`, `_r3` only on the user's word; the unresolved `channel` tag; zero-unit cards; implementing the approved A tags (`roll_die`); review of the earlier session's `starter_build.py` changes (see the block below).
+
+### Gotchas
+- Shell heredocs convert `\b` to a backspace and mangle backslashes in Python: write patch scripts and regexes with the Write tool (or Edit), never a heredoc. (30 `\b` in `VERB_WORDS` were corrupted once and repaired.)
+- `hand_units.json` loads at import: always test render changes in a fresh process.
+- `mtg2llm.py selftest` + `scan` exceed the 300 s foreground limit: run them in the background.
+- Hand-unit keys for multi-step cards must be whole-unit patterns (sorted families, numbers as N).
+- Generated files (`effect_params.json`, `VERB_ORDER.toon`, `tagged.json`, `STARTER_TAGS.toon`) are regenerated, never hand-edited or hand-merged.
+- New tags are PROPOSED until approved; mtgish is dropped (H54); no edits to forge-core/game/ai, `enemies.json` or live decks.
+- Logs: `log-code-analyses.toon` has rows for each TAG_SYNTAX step (check `LOG_INDEX.toon` first); `log-patchnotes.toon` has the code batches. Memory note: `session_2026-10-27_tag_syntax.md`.
+
+## PREVIOUS (2026-10-27, later session): starter land picker + commander support rework
+**Repo state (at that session's end): NOT committed or pushed for code; since committed and pushed with the tag-syntax session's commit.** Only two documents were pushed (`docs/Adventure/Campaign/STARTER_BUILDER_CHANGES_2026-10-27.md`; `STARTER_LAND_PICKER_CHANGELOG_2026-10-27.md` is written, push it with `python3 tools/agents/docpush.py <path>` if docpush did not already). Code, `human_logic.toon` (H96-H103), logs and this file are local until the user says "push". Nothing live changed (no live decks, no `enemies.json`, no forge-core/game/ai). The working tree also holds earlier uncommitted changes (build.py, synergy.py, starter_tune.py, pool/tag files); review `git status` before committing.
 
 ### What was done (details: `docs/Adventure/Campaign/STARTER_LAND_PICKER_CHANGELOG_2026-10-27.md`; logs: `log-patchnotes.toon`, `log-code-analyses.toon`, `power-scorer-tests.toon` rows dated 2026-10-27; memory `concordia-land-picker.md`)
 - Tags: `mana_sink` (H96), `setup_card:<need>` (H98, Dark Depths = mana, needs 10 ramp), `restricted_to:<type>` (H99). Pool rebuilt with `python3 pool.py` (about 25 s, not `-I`).
@@ -53,34 +102,7 @@ python3 starter_build.py draft --commander "Captain America, Liberator" --strate
 - cwd resets between Bash calls; `power_scorer_old.py` must not be left in tools/concordia. Commander lists `commanders_X.json` in staging are regenerated by `starter_build.py commanders`.
 
 
-## PREVIOUS (2026-10-26, end of session): cleanup done, NEXT SESSION = DECK BUILDING (read first)
-**Repo state: committed and pushed to `campaign-design` at session end** (no force). Nothing live was changed: no edits to enemies.json, live decks, forge-core/game/ai.
-
-### What this session did (details: `tools/agents/logs/log-patchnotes.toon`, `log-code-analyses.toon`, memory `session_2026-10-26_cleanup.md`)
-- /code-review high: 8 findings. Fixed: gaps_status only for render/scan/mine and no false `{X}` open rows; `_warn_pool_stale` also hashes staples.json; `refresh_cat` survives missing pool.pkl/pool_meta.json; fused spaces in `tag_roles`. Closed: `norm_roles` (already reports `roles_dropped`). Skipped on purpose: `ftags_of` whole-pool load; `effective_cmc` X/alt-cost penalty (scoring choice, user decides).
-- /simplify of docs and scripts without stripping content; dead code removed (see patchnotes); `pool_tags.pkl` per-card tag cache (`pool.py --check | --if-stale | --cat`).
-- Docs: older HANDOVER and MEETING_FEEDBACK blocks moved verbatim to `tools/agents/archive/` with pointers; START.md step 5 is the single read-first list.
-- render_rules: `CANON_FIX` in `tagcheck/mtg2llm.py` `rules()` overrides two weak mined canons (`affected_type:creature`, Treasure etb). `render_rules.json` itself is untouched. Do NOT run `mtg2llm.py mine --force`: re-mine here gives 2942 patterns vs 3223 and worse canons.
-- Regenerated data reviewed and judged normal (staples.json, POOL_GAPS.toon, ABILITY_TWINS.json, verdicts.json, render_rules.json).
-
-### NEXT SESSION: deck building
-Start with the strategies work already in place, then build:
-1. Run `python tools/concordia/deckgen/pool.py --check`; if stale, `--if-stale` (fast with the tag cache). The pool is stale right now because code and tagger files changed: rebuild before building.
-2. Archetype first, then roles: use `tools/agents/reference/ARCHETYPES.toon` (45 archetypes, baselines, crossover) and `tools/concordia/strategies/strategy_fit.py` (`baseline_hit`, `baseline_min`).
-3. `tools/concordia/deckgen/build.py` (tiers 2-5) already fills recursion and protection baselines. Still open from the 2026-10-26 block below: switch quotas from role tag `removal` to `remove:*`; ramp/draw baselines and niche crossover are not yet read by build.py; diff dry-run decks against live decks before any rebuild (`build.py --dry decks.json`; 2 decks skipped because Ertai and Sengir are not in the pool).
-4. No dry/trial deck builds without the user's approval; do not edit live decks or enemies.json without the user's word. Start by asking which tier/archetype to build first.
-5. Waiting on the user from earlier: W starter rejects, tag fixes (War Machine, Wreck Remover, Expert-Level Safe, Parallel Lives), stale W verdict cache, U/B/R/G reader reviews, the Claude Docs "core tags by archetype" comments.
-
-### Open, not blocking
-- Data-size options not accepted: gitignore POOL_GAPS.toon, drop empty-category staples.json entries, compact verdicts.json.
-- 23 open rows in `tags/MTG2LLM_GAPS.toon`; SCRIPT_REDUNDANCY.md not updated; some startup docs and CONTEXT.md still carry stale content; reviewer's skipped refactors and unused imports.
-- `sync_check.py verify` crashed with WinError 123 earlier; run `sync_check.py manifest` and report.
-
-### Gotchas
-- cwd resets between Bash calls; use repo-root paths. Files edited with CRLF (mtg2llm.py): patch with CR-tolerant code.
-- PYTHONIOENCODING=utf-8 before tool calls.
-
-(The 2026-10-26 "strategies master list" block moved verbatim to `tools/agents/archive/HANDOVER_2026-10-26_previous.md`.)
+## Archived block: PREVIOUS (2026-10-26, end of session): moved verbatim to `tools/agents/archive/HANDOVER_2026-10-26_end_of_session.md`.
 
 ## Older blocks (2026-10-24 to 2026-10-26: tagger folds, five Normal starters, MTG2LLM renderer, gap-reader rounds): moved verbatim to `tools/agents/archive/HANDOVER_2026-10-24_to_26.md`.
 

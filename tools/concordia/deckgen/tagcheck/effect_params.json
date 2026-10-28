@@ -1,0 +1,305 @@
+{
+ "affected_filter": {
+  "verb": null,
+  "how": "override"
+ },
+ "affected_scope": {
+  "verb": null,
+  "how": "override"
+ },
+ "affected_type": {
+  "verb": null,
+  "how": "override"
+ },
+ "choice_option": {
+  "verb": null,
+  "how": "override"
+ },
+ "color": {
+  "verb": null,
+  "how": "override"
+ },
+ "condition": {
+  "verb": null,
+  "how": "override"
+ },
+ "controller": {
+  "verb": "put_onto_battlefield",
+  "how": "override"
+ },
+ "cost_reduce_amount": {
+  "verb": "cost_reduce",
+  "how": "prefix"
+ },
+ "cost_reduce_for": {
+  "verb": "cost_reduce",
+  "how": "prefix"
+ },
+ "cost_reduce_mana": {
+  "verb": "cost_reduce",
+  "how": "prefix"
+ },
+ "counter_count": {
+  "verb": "counter",
+  "how": "prefix"
+ },
+ "counter_remove": {
+  "verb": "counter",
+  "how": "prefix"
+ },
+ "damage_amount": {
+  "verb": "damage",
+  "how": "prefix"
+ },
+ "delayed": {
+  "verb": "token_make",
+  "how": "cooccur",
+  "share": 1.0
+ },
+ "die_replace": {
+  "verb": "damage",
+  "how": "cooccur",
+  "share": 1.0
+ },
+ "discard_count": {
+  "verb": "discard",
+  "how": "prefix"
+ },
+ "double_strike": {
+  "verb": "grant_kw",
+  "how": "cooccur",
+  "share": 1.0
+ },
+ "draw_count": {
+  "verb": "draw",
+  "how": "prefix"
+ },
+ "effect": {
+  "verb": "sacrifice_outlet",
+  "how": "cooccur",
+  "share": 0.64
+ },
+ "exile_from": {
+  "verb": "remove",
+  "how": "prefix"
+ },
+ "first_strike": {
+  "verb": "grant_kw",
+  "how": "cooccur",
+  "share": 1.0
+ },
+ "flying": {
+  "verb": "grant_kw",
+  "how": "cooccur",
+  "share": 1.0
+ },
+ "from_zone": {
+  "verb": [
+   "tutor",
+   "put_onto_battlefield",
+   "return"
+  ],
+  "how": "override"
+ },
+ "grant_type": {
+  "verb": "grant_kw",
+  "how": "cooccur",
+  "share": 1.0
+ },
+ "haste": {
+  "verb": "grant_kw",
+  "how": "cooccur",
+  "share": 0.8
+ },
+ "impulse_draw_count": {
+  "verb": "impulse_draw",
+  "how": "prefix"
+ },
+ "infect": {
+  "verb": "grant_kw",
+  "how": "cooccur",
+  "share": 1.0
+ },
+ "landwalk": {
+  "verb": "kw",
+  "how": "cooccur",
+  "share": 1.0
+ },
+ "life_loss_amount": {
+  "verb": "life_loss",
+  "how": "prefix"
+ },
+ "lifegain_amount": {
+  "verb": "lifegain",
+  "how": "prefix"
+ },
+ "limit": {
+  "verb": null,
+  "how": "override"
+ },
+ "mana_amount": {
+  "verb": "mana_source",
+  "how": "prefix"
+ },
+ "mana_amount_if": {
+  "verb": "mana_source",
+  "how": "prefix"
+ },
+ "mana_choice": {
+  "verb": "mana_source",
+  "how": "prefix"
+ },
+ "mana_conditional": {
+  "verb": "mana_source",
+  "how": "prefix"
+ },
+ "mana_filter": {
+  "verb": "mana_source",
+  "how": "prefix"
+ },
+ "mana_restriction": {
+  "verb": "mana_source",
+  "how": "prefix"
+ },
+ "mana_sink": {
+  "verb": "mana_source",
+  "how": "prefix"
+ },
+ "menace": {
+  "verb": "grant_kw",
+  "how": "cooccur",
+  "share": 1.0
+ },
+ "mill_count": {
+  "verb": "mill",
+  "how": "prefix"
+ },
+ "modal": {
+  "verb": null,
+  "how": "override"
+ },
+ "num": {
+  "verb": null,
+  "how": "override"
+ },
+ "optional": {
+  "verb": null,
+  "how": "override"
+ },
+ "protection_from": {
+  "verb": "kw",
+  "how": "cooccur",
+  "share": 0.67
+ },
+ "pump_amount": {
+  "verb": "pump_single",
+  "how": "prefix"
+ },
+ "put_tapped": {
+  "verb": "put_onto_battlefield",
+  "how": "override"
+ },
+ "recursion": {
+  "verb": "return",
+  "how": "cooccur",
+  "share": 1.0
+ },
+ "rest_order": {
+  "verb": "look_top",
+  "how": "prefix"
+ },
+ "rest_to_zone": {
+  "verb": "look_top",
+  "how": "prefix"
+ },
+ "sacrifice_type": {
+  "verb": "sacrifice_outlet",
+  "how": "cooccur",
+  "share": 0.69
+ },
+ "scales": {
+  "verb": "grant_kw",
+  "how": "cooccur",
+  "share": 1.0
+ },
+ "scry_count": {
+  "verb": "scry",
+  "how": "prefix"
+ },
+ "secret_choice": {
+  "verb": null,
+  "how": "override"
+ },
+ "steal_grants_haste": {
+  "verb": "steal",
+  "how": "prefix"
+ },
+ "take": {
+  "verb": "look_top",
+  "how": "cooccur",
+  "share": 0.9
+ },
+ "target_zone": {
+  "verb": "return",
+  "how": "cooccur",
+  "share": 0.69
+ },
+ "to_zone": {
+  "verb": "return",
+  "how": "cooccur",
+  "share": 0.68
+ },
+ "token_ability": {
+  "verb": "token_make",
+  "how": "prefix"
+ },
+ "token_cardtype": {
+  "verb": "token_make",
+  "how": "prefix"
+ },
+ "token_color": {
+  "verb": "token_make",
+  "how": "prefix"
+ },
+ "token_count": {
+  "verb": "token_make",
+  "how": "prefix"
+ },
+ "token_kw": {
+  "verb": "token_make",
+  "how": "prefix"
+ },
+ "token_pt": {
+  "verb": "token_make",
+  "how": "prefix"
+ },
+ "token_type": {
+  "verb": "token_make",
+  "how": "prefix"
+ },
+ "trample": {
+  "verb": "grant_kw",
+  "how": "cooccur",
+  "share": 0.75
+ },
+ "tutor_count": {
+  "verb": "tutor",
+  "how": "prefix"
+ },
+ "tutor_dest": {
+  "verb": "tutor",
+  "how": "prefix"
+ },
+ "tutor_target": {
+  "verb": "tutor",
+  "how": "prefix"
+ },
+ "unless_cost_amount": {
+  "verb": "unless_cost",
+  "how": "prefix"
+ },
+ "x_is": {
+  "verb": null,
+  "how": "override"
+ }
+}

@@ -25,7 +25,8 @@
 "trigger:attacks",
 "cost:remove_counters",
 "draw_count:3",
-"life_loss_amount:3"
+"life_loss_amount:3",
+"life_loss"
 ],
 "acc": 0.943,
 "reads": 3
@@ -556,7 +557,8 @@
 "aligned": true,
 "tags": [
 "trigger:discard",
-"life_loss_amount:2"
+"life_loss_amount:2",
+"life_loss"
 ],
 "acc": 0.987,
 "reads": 6
@@ -2221,7 +2223,8 @@
 "cost_sacrifice_target:creature",
 "cost_mana:1b",
 "draw_count:1",
-"life_loss_amount:1"
+"life_loss_amount:1",
+"life_loss"
 ],
 "acc": null,
 "reads": 0
@@ -2241,7 +2244,8 @@
 "cost_sacrifice_target:creature",
 "cost_mana:1b",
 "draw_count:1",
-"life_loss_amount:1"
+"life_loss_amount:1",
+"life_loss"
 ],
 "acc": null,
 "reads": 0
@@ -12162,6 +12166,7 @@
 "target_count:one",
 "target_type:creature",
 "remove:exile",
+"affected_player:target_controller",
 "lifegain_amount:x",
 "x_is:target_power"
 ],

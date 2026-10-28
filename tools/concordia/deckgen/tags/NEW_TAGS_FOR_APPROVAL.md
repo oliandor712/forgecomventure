@@ -5,6 +5,7 @@ Changes to existing behaviour (approved with "approve all tags", 2026-10-22; tre
 
 | Approve | Tag family | Meaning | Source of the rule | Cards | Values seen (cards) |
 |---|---|---|---|---|---|
+| [ ] proposed | `affected_player` | (see feedback notes) | created from the user feedback pattern | 1 (e.g. Swords to Plowshares) | affected_player:target_controller (1) |
 | [ ] proposed | `power_scales` | (see feedback notes) | created from the user feedback pattern | 1 (e.g. Adeline, Resplendent Cathar) | power_scales:creatures_you_control (1) |
 
 ## New values inside already-approved families (the family is approved; these values appeared after the approval)
@@ -13,8 +14,8 @@ Say if any should be changed; unmarked means accepted with the family.
 
 | Family | New values (cards) |
 |---|---|
+| `cost_mana` | cost_mana:1 (15); cost_mana:2 (11); cost_mana:1r (6); cost_mana:4 (5); cost_mana:r (5); cost_mana:3 (4); cost_mana:g (4); cost_mana:2g (4); cost_mana:1b (3); cost_mana:5 (3); cost_mana:3r (3); cost_mana:5bb (2); cost_mana:1c (2); cost_mana:3g (2) |
 | `token_type` | token_type:blood_draw (3); token_type:ally (3); token_type:bird (3); token_type:saproling (2); token_type:human_soldier (2); token_type:wizard_snipe (2); token_type:rat_noblock (2); token_type:powerstone (2); token_type:squirrel (1); token_type:of_nurgle (1); token_type:map_explore (1); token_type:servo (1); token_type:mouse (1); token_type:wicked (1) |
-| `cost_mana` | cost_mana:1 (15); cost_mana:2 (11); cost_mana:1r (6); cost_mana:4 (5); cost_mana:3 (4); cost_mana:2g (4); cost_mana:1b (3); cost_mana:5 (3); cost_mana:r (3); cost_mana:3r (3); cost_mana:5bb (2); cost_mana:1c (2); cost_mana:3g (2); cost_mana:1g (2) |
 | `ai_logic` | ai_logic:pump (7); ai_logic:curse (4); ai_logic:always (3); ai_logic:makeunblockable (2); ai_logic:powerdmg (2); ai_logic:fight (2); ai_logic:bestopportunity (2); ai_logic:curiosity (2); ai_logic:mostprominentincomputerdeck (1); ai_logic:foodortreasure (1); ai_logic:ateotifnotattacking (1); ai_logic:cantregenerate (1); ai_logic:ghostquarter (1); ai_logic:mostprominentincomputerdecknontoken (1) |
 | `trigger_filter` | trigger_filter:you_control (40); trigger_filter:one_or_more (7); trigger_filter:noncreature (7); trigger_filter:nontoken (5); trigger_filter:land (4); trigger_filter:artifact (4); trigger_filter:goblin (2); trigger_filter:has_counter:p1p1 (2); trigger_filter:orc (1); trigger_filter:opp_control (1); trigger_filter:power_ge_5 (1); trigger_filter:power_ge_3 (1); trigger_filter:power_ge_4 (1); trigger_filter:pirate (1) |
 | `kw` | kw:partner (4); kw:crew (3); kw:haunt (2); kw:prowess (2); kw:flashback (2); kw:mobilize (1); kw:eternalize (1); kw:mutate (1); kw:annihilator (1); kw:class (1); kw:embalm (1); kw:improvise (1); kw:devoid (1); kw:ninjutsu (1) |

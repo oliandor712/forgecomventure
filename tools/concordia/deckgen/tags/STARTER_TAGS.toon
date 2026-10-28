@@ -13,14 +13,13 @@ clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
 links[2]{from,rel,to}:
   c1:affected,receives,c1:payload
   c2:affected,receives,c2:payload
-groups[7]{id,source,tags}:
+groups[6]{id,source,tags}:
   k1,K line,kw:menace
   c1,T line,trigger:gain_life
   c1.2,sub-ability of c1,counter_count:1 counter:feeding
   c2,T line,trigger:attacks
   c2.2,sub-ability of c2,cost:remove_counters draw_count:3
-  c2.3,sub-ability of c2,life_loss_amount:3
-  v,cross-check (oracle gap filler/keyword/ai),life_loss
+  c2.3,sub-ability of c2,life_loss_amount:3 life_loss
 forge_ai: AILogic=-
 
 card: Swamp
@@ -469,13 +468,12 @@ clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
 links[2]{from,rel,to}:
   c1:affected,receives,c1:payload
   c2:affected,receives,c2:payload
-groups[6]{id,source,tags}:
+groups[5]{id,source,tags}:
   k1,K line,kw:flying
   c1,T line,trigger:etb trigger_scope:self
   c1.2,sub-ability of c1,target_count:one target_type:opponent discard_count:1
   c2,T line,trigger:discard
-  c2.2,sub-ability of c2,life_loss_amount:2
-  v,cross-check (oracle gap filler/keyword/ai),life_loss
+  c2.2,sub-ability of c2,life_loss_amount:2 life_loss
 forge_ai: AILogic=-
 
 card: Vindictive Vampire
@@ -1066,7 +1064,7 @@ forge_ai: AILogic=-
 
 card: Barren Moor
 typing: cardtype:land
-tags: kw:cycling color:black draw mana_source enters_tapped cost:tap mana:black mana_amount:1
+tags: kw:cycling color:black cost_mana:b draw mana_source enters_tapped cost:tap mana:black mana_amount:1
 face: mv:0 colors:c identity:b rarity:uncommon
 derived: mana_out:black:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
@@ -1077,7 +1075,7 @@ links[2]{from,rel,to}:
   k1,provides,draw
 groups[3]{id,source,tags}:
   c0,card,enters_tapped
-  k1,K line,kw:cycling color:black
+  k1,K line,kw:cycling color:black cost_mana:b
   c2,A line,cost:tap mana_source mana:black mana_amount:1
 forge_ai: AILogic=-
 
@@ -1436,12 +1434,11 @@ face: mv:2 colors:b identity:b rarity:uncommon
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell_cast,"",copyspellability,"",Defined=TriggeredSpellAbility,""
   c2,spell,1 B Sac<X/Creature>,draw+loselife,lifeamount=1,"",""
-groups[5]{id,source,tags}:
+groups[4]{id,source,tags}:
   c0,card,sacrifice_outlet additional_cost
   c1,T line,trigger:spell_cast
   c2,A line,cost:sacrifice cost_sacrifice_target:creature cost_mana:1b draw_count:1
-  c2.2,sub-ability of c2,life_loss_amount:1
-  v,cross-check (oracle gap filler/keyword/ai),life_loss
+  c2.2,sub-ability of c2,life_loss_amount:1 life_loss
 forge_ai: AILogic=-
 
 card: Prized Statue
@@ -2153,13 +2150,13 @@ forge_ai: AILogic=-
 
 card: Search for Tomorrow
 typing: cardtype:sorcery
-tags: kw:suspend num:2 color:green tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield from_zone:library controller:you
+tags: kw:suspend num:2 color:green cost_mana:g tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield from_zone:library controller:you
 ai_tags: land_tutor
 face: mv:3 colors:g identity:g rarity:common
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",changezone,"","",""
 groups[2]{id,source,tags}:
-  k1,K line,kw:suspend num:2 color:green
+  k1,K line,kw:suspend num:2 color:green cost_mana:g
   c1,A line,tutor tutor_count:1 tutor_target:basic_land tutor_dest:battlefield shuffle put_onto_battlefield from_zone:library controller:you
 forge_ai: AILogic=-
 
@@ -2850,7 +2847,7 @@ forge_ai: AILogic=-
 
 card: Vines of Vastwood
 typing: cardtype:instant
-tags: kw:kicker color:green duration:eot pump_single target_count:one target_type:creature pump_amount:+x/+x condition:kicked x_is:kicked_bonus_4
+tags: kw:kicker color:green cost_mana:g duration:eot pump_single target_count:one target_type:creature pump_amount:+x/+x condition:kicked x_is:kicked_bonus_4
 ai_tags: ai_logic:always
 face: mv:1 colors:g identity:g rarity:common
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
@@ -2860,7 +2857,7 @@ links[2]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[3]{id,source,tags}:
   c0,card,condition:kicked x_is:kicked_bonus_4
-  k1,K line,kw:kicker color:green
+  k1,K line,kw:kicker color:green cost_mana:g
   c1,A line,target_count:one target_type:creature pump_amount:+x/+x duration:eot
 forge_ai: AILogic=Always
 
@@ -3109,7 +3106,7 @@ forge_ai: AILogic=-
 
 card: Tranquil Thicket
 typing: cardtype:land
-tags: kw:cycling color:green draw mana_source enters_tapped cost:tap mana:green mana_amount:1
+tags: kw:cycling color:green cost_mana:g draw mana_source enters_tapped cost:tap mana:green mana_amount:1
 face: mv:0 colors:c identity:g rarity:common
 derived: mana_out:green:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
@@ -3120,7 +3117,7 @@ links[2]{from,rel,to}:
   k1,provides,draw
 groups[3]{id,source,tags}:
   c0,card,enters_tapped
-  k1,K line,kw:cycling color:green
+  k1,K line,kw:cycling color:green cost_mana:g
   c2,A line,cost:tap mana_source mana:green mana_amount:1
 forge_ai: AILogic=-
 
@@ -3678,7 +3675,7 @@ forge_ai: AILogic=-
 
 card: Timeless Witness
 typing: cardtype:creature type:human type:shaman
-tags: kw:eternalize num:5 color:green token_make trigger:etb target_count:one target_type:card target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand optional trigger_scope:self
+tags: kw:eternalize num:5 color:green cost_mana:5gg token_make trigger:etb target_count:one target_type:card target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand optional trigger_scope:self
 ai_tags: recursion tempo:+1
 face: mv:4 power:2 toughness:1 colors:g identity:g rarity:uncommon
 derived: etb_self token_kind:creature
@@ -3687,7 +3684,7 @@ clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   k1,provides,token_make
 groups[3]{id,source,tags}:
-  k1,K line,kw:eternalize num:5 color:green
+  k1,K line,kw:eternalize num:5 color:green cost_mana:5gg
   c1,T line,trigger:etb optional trigger_scope:self
   c1.2,sub-ability of c1,target_count:one target_type:card target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand
 forge_ai: AILogic=-
@@ -3740,13 +3737,13 @@ forge_ai: AILogic=-
 
 card: Auspicious Starrix
 typing: cardtype:creature type:elk type:beast
-tags: kw:mutate num:5 color:green put_onto_battlefield from_zone:exile controller:you
+tags: kw:mutate num:5 color:green cost_mana:5g put_onto_battlefield from_zone:exile controller:you
 ai_tags: selection tempo:+1
 face: mv:5 power:6 toughness:6 colors:g identity:g rarity:uncommon
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,mutates,"",diguntil+changezone+cleanup,"",Defined=You Defined=Remembered,""
 groups[2]{id,source,tags}:
-  k1,K line,kw:mutate num:5 color:green
+  k1,K line,kw:mutate num:5 color:green cost_mana:5g
   c1.3,sub-ability of c1,put_onto_battlefield from_zone:exile controller:you
 forge_ai: AILogic=-
 
@@ -4178,7 +4175,7 @@ face: mv:4 power:4 toughness:3 colors:r identity:r rarity:rare
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,activated,3 R,gaincontrol,"",ValidTgts=Creature.OppCtrl,""
 links[1]{from,rel,to}:
-  c1:steal,pairs_with,c1:haste
+  c1:steal,pairs_with,c1:steal_grants_haste
 groups[2]{id,source,tags}:
   c1,A line,cost_mana:3r target_count:one target_type:creature target_scope:opp_control steal steal_grants_haste duration:eot
   v,cross-check (oracle gap filler/keyword/ai),untap
@@ -4672,7 +4669,7 @@ forge_ai: AILogic=-
 
 card: Light Up the Stage
 typing: cardtype:sorcery
-tags: kw:spectacle color:red look_top:2 take:all to_zone:exile impulse_draw impulse_draw_count:2 duration:next_turn_end
+tags: kw:spectacle color:red cost_mana:r look_top:2 take:all to_zone:exile impulse_draw impulse_draw_count:2 duration:next_turn_end
 ai_tags: selection tempo:+1
 face: mv:3 colors:r identity:r rarity:uncommon
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
@@ -4680,7 +4677,7 @@ clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   c1.2:impulse_draw,pairs_with,c1.2:impulse_draw_count:2
 groups[3]{id,source,tags}:
-  k1,K line,kw:spectacle color:red
+  k1,K line,kw:spectacle color:red cost_mana:r
   c1,A line,look_top:2 take:all to_zone:exile
   c1.2,sub-ability of c1,impulse_draw impulse_draw_count:2 duration:next_turn_end
 forge_ai: AILogic=-
@@ -4871,7 +4868,7 @@ forge_ai: AILogic=-
 
 card: Forgotten Cave
 typing: cardtype:land
-tags: kw:cycling color:red draw mana_source enters_tapped cost:tap mana:red mana_amount:1
+tags: kw:cycling color:red cost_mana:r draw mana_source enters_tapped cost:tap mana:red mana_amount:1
 face: mv:0 colors:c identity:r rarity:common
 derived: mana_out:red:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
@@ -4882,7 +4879,7 @@ links[2]{from,rel,to}:
   k1,provides,draw
 groups[3]{id,source,tags}:
   c0,card,enters_tapped
-  k1,K line,kw:cycling color:red
+  k1,K line,kw:cycling color:red cost_mana:r
   c2,A line,cost:tap mana_source mana:red mana_amount:1
 forge_ai: AILogic=-
 
@@ -5136,7 +5133,7 @@ clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c2,phase,"",peekandreveal+changezone+cleanup,"",Defined=TopOfLibrary,""
 links[2]{from,rel,to}:
   c1:cost_reduce_for,uses,c0:choose_on_enter
-  c1:cost_reduce,filters,c1:cardtype:creature
+  c1:cost_reduce,filters,c1:cost_reduce_for:creature
 groups[5]{id,source,tags}:
   c0,card,choose_on_enter:creature_type trigger:etb
   c1,S line,cost_reduce duration:static cost_reduce_amount:1 cost_reduce_for:chosen_type cost_reduce_mana:generic cost_reduce_for:creature
@@ -5243,7 +5240,7 @@ forge_ai: AILogic=-
 
 card: Wheel of Misfortune
 typing: cardtype:sorcery
-tags: discard draw secret_choice:number damage target_scope:each_player
+tags: discard draw secret_choice:number damage target_scope:each_player niche:chaos
 ai_tags: ai_logic:highestloselife
 face: mv:3 colors:r identity:r rarity:rare
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
@@ -5294,7 +5291,7 @@ forge_ai: AILogic=-
 
 card: Heart-Piercer Manticore
 typing: cardtype:creature type:manticore
-tags: kw:embalm num:5 color:red token_make sacrifice_outlet trigger:etb cost:sacrifice cost_sacrifice_target:creature target_count:one target_type:any damage trigger_scope:self
+tags: kw:embalm num:5 color:red cost_mana:5r token_make sacrifice_outlet trigger:etb cost:sacrifice cost_sacrifice_target:creature target_count:one target_type:any damage trigger_scope:self
 ai_tags: burn ai_logic:sacfordamage
 face: mv:4 power:4 toughness:3 colors:r identity:r rarity:rare
 derived: spot_removal removal_weight:1 etb_self token_kind:creature
@@ -5304,7 +5301,7 @@ links[1]{from,rel,to}:
   k1,provides,token_make
 groups[5]{id,source,tags}:
   c0,card,sacrifice_outlet
-  k1,K line,kw:embalm num:5 color:red
+  k1,K line,kw:embalm num:5 color:red cost_mana:5r
   c1,T line,trigger:etb trigger_scope:self
   c1.2,sub-ability of c1,cost:sacrifice cost_sacrifice_target:creature
   c1.3,sub-ability of c1,target_count:one target_type:any damage
@@ -5497,7 +5494,7 @@ forge_ai: AILogic=-
 
 card: Slice and Dice
 typing: cardtype:sorcery
-tags: kw:cycling num:2 color:red draw target_count:all target_type:creature damage damage_amount:4 damage_amount:1 optional
+tags: kw:cycling num:2 color:red cost_mana:2r target_count:all target_type:creature damage damage_amount:4 damage_amount:1 optional
 face: mv:6 colors:r identity:r rarity:uncommon
 derived: wipe removal_weight:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
@@ -5506,7 +5503,7 @@ clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   k1,provides,draw
 groups[4]{id,source,tags}:
-  k1,K line,kw:cycling num:2 color:red
+  k1,K line,kw:cycling num:2 color:red cost_mana:2r
   c1,A line,target_count:all target_type:creature damage damage_amount:4
   c2,T line,optional
   c2.2,sub-ability of c2,target_count:all target_type:creature damage damage_amount:1
@@ -5799,7 +5796,7 @@ clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,replacement,"",replace_moved,"",ValidCard=Card.Self,""
   c2,leaves_self,"",changezone,"",Defined=ExiledWith,""
 links[1]{from,rel,to}:
-  c2.2:return_exiled,pairs_with,c2.2:trigger:leaves
+  c2.2:return_exiled,pairs_with,c2:trigger:leaves
 groups[4]{id,source,tags}:
   c0,card,enters_tapped
   k1,K line,kw:hideaway num:4
@@ -6407,7 +6404,7 @@ forge_ai: AILogic=Curiosity
 
 card: Curiosity
 typing: cardtype:enchantment type:aura
-tags: kw:enchant target_type:creature trigger:damage_dealt draw_count:1 optional
+tags: kw:enchant target_type:creature draw trigger:damage_dealt draw_count:1 optional
 ai_tags: tempo:+1 ai_logic:curiosity
 face: mv:1 colors:u identity:u rarity:uncommon
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
@@ -6428,7 +6425,7 @@ clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,taps,"",draw+discard,numcards=1,Defined=You,""
   c2,static,"",static_reducecost,"",ValidCard=Card.nonCreature,""
 links[2]{from,rel,to}:
-  c2:cost_reduce,filters,c2:cardtype:creature
+  c2:cost_reduce,filters,c2:cost_reduce_for:creature
   c1:affected,receives,c1:payload
 groups[3]{id,source,tags}:
   c1.2,sub-ability of c1,draw_count:1
@@ -6530,7 +6527,7 @@ clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,static,"",static_reducecost,"",ValidCard=Creature.withMutate,""
   c2,spell_cast,"",draw+discard,numcards=1 numcards=1,Defined=You Defined=You,""
 links[2]{from,rel,to}:
-  c1:cost_reduce,filters,c1:cardtype:creature
+  c1:cost_reduce,filters,c1:cost_reduce_for:creature
   c2:affected,receives,c2:payload
 groups[4]{id,source,tags}:
   c1,S line,cost_reduce duration:static cost_reduce_amount:1 cost_reduce_mana:generic cost_reduce_for:creature cost_reduce_for:mutate
@@ -6662,7 +6659,7 @@ forge_ai: AILogic=-
 
 card: Prosperous Thief
 typing: cardtype:creature type:human type:ninja
-tags: kw:ninjutsu num:1 color:blue token_make token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger_filter:one_or_more
+tags: kw:ninjutsu num:1 color:blue cost_mana:1u token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source trigger_filter:one_or_more
 ai_tags: artifact_token tempo:+0.5
 face: mv:3 power:3 toughness:2 colors:u identity:u rarity:uncommon
 derived: token_kind:artifact
@@ -6671,7 +6668,7 @@ clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
 links[1]{from,rel,to}:
   mana_source,provided_by,token_type:treasure
 groups[3]{id,source,tags}:
-  k1,K line,kw:ninjutsu num:1 color:blue
+  k1,K line,kw:ninjutsu num:1 color:blue cost_mana:1u
   c1,T line,trigger_filter:one_or_more
   c1.2,sub-ability of c1,token_count:1 token_color:colorless token_cardtype:artifact token_type:treasure token_ability:tap_sacrifice_add_mana_any_color mana_source
 forge_ai: AILogic=-
@@ -7453,7 +7450,7 @@ forge_ai: AILogic=-
 
 card: Swords to Plowshares
 typing: cardtype:instant
-tags: lifegain target_count:one target_type:creature remove:exile lifegain_amount:x x_is:target_power
+tags: lifegain target_count:one target_type:creature remove:exile affected_player:target_controller lifegain_amount:x x_is:target_power
 face: mv:1 colors:w identity:w rarity:uncommon
 derived: spot_removal removal_weight:1
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
@@ -7464,7 +7461,7 @@ links[3]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[2]{id,source,tags}:
   c1,A line,target_count:one target_type:creature remove:exile
-  c1.2,sub-ability of c1,lifegain_amount:x x_is:target_power
+  c1.2,sub-ability of c1,affected_player:target_controller lifegain_amount:x x_is:target_power
 forge_ai: AILogic=-
 
 card: Frontline Medic
@@ -7516,7 +7513,7 @@ clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c1,etb_self,"",changezone,"",ValidTgts=Permanent.nonLand+Other,""
   c2,leaves_self,"",changezone,"",Defined=ExiledWith,""
 links[1]{from,rel,to}:
-  c2.2:return_exiled,pairs_with,c2.2:trigger:leaves
+  c2.2:return_exiled,pairs_with,c2:trigger:leaves
 groups[4]{id,source,tags}:
   c1,T line,trigger:etb trigger_scope:self
   c1.2,sub-ability of c1,target_count:one target_type:permanent target_filter:nonland target_filter:other remove:exile
@@ -7865,7 +7862,7 @@ forge_ai: AILogic=-
 
 card: Secluded Steppe
 typing: cardtype:land
-tags: kw:cycling color:white draw mana_source enters_tapped cost:tap mana:white mana_amount:1
+tags: kw:cycling color:white cost_mana:w draw mana_source enters_tapped cost:tap mana:white mana_amount:1
 face: mv:0 colors:c identity:w rarity:common
 derived: mana_out:white:1
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
@@ -7876,7 +7873,7 @@ links[2]{from,rel,to}:
   k1,provides,draw
 groups[3]{id,source,tags}:
   c0,card,enters_tapped
-  k1,K line,kw:cycling color:white
+  k1,K line,kw:cycling color:white cost_mana:w
   c2,A line,cost:tap mana_source mana:white mana_amount:1
 forge_ai: AILogic=-
 

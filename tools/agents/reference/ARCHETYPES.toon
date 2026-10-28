@@ -19,7 +19,7 @@ archetypes[45|]{id|plan|roles|crossover|colors}:
   spellslinger|many cheap instants and sorceries each turn feed per-cast payoffs|payoff:6-10,cantrip:8-12,cost_reducer:-,copy:-,rebuy:-,spells:25-35||UR+UBR+URW
   storm|bank many cheap spells in one turn until the storm count is lethal|cantrip:-,ritual:-,cost_reducer:-,refuel:-,payoff:2-3,spells:25-35||UR+UBR+R
   combo|tutor; protect; win in one decisive moment; 2-3 compact combos with redundancy|tutor:5-10,draw_select:8-12,enabler:-,payoff_engine:2-3,protection:6-10,remove:-||UB+UR+WB+BG
-  counters|grow creatures with +1/+1 counters and multiply them until the weakest creature is huge|multiplier:3-5,enabler:15-20,proliferate:4-8,seed:-,draw_payoff:6-8,protection:3-5,ramp:8-10||GW+GU+WBG
+  counters|grow creatures with +1/+1 counters and multiply them until the weakest creature is huge|multiplier:3-5,enabler:15-20,proliferate:4-8,seed:-,draw_payoff:6-8,protection:3-5,ramp:8-10,spend:-||GW+GU+WBG
   infect|poison (infect/toxic) instead of life loss; 10 counters via a pumped evasive attacker plus proliferate|creature:15-20,pump:6-10,proliferate:5-8,protection:6-8|niche>counters+voltron+stompy|BG+GU+WBG
   lifegain|convert life gained into counters; cards; tokens; drain or a charged Aetherflux Reservoir|trigger:8-12,payoff:6-10,drain:-,conversion:-,ramp:10-12,interaction:6-8||W+WB+GW+WBG
   blink|flicker creatures to reuse enter-the-battlefield triggers; a blink on a draw creature is a repeating engine|flicker:8-12,engine:-,etb_creature:20-25,recursion:-,finisher:-||WU+GWU+WUB

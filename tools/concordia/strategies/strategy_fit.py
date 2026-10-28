@@ -14,6 +14,7 @@ NICHE_USERS = {
     "niche:tribal": {"tribal"}, "niche:storm": {"storm", "spellslinger", "combo"}, "niche:artifact": {"artifacts", "equipment", "treasure", "vehicles"},
     "niche:enchantment": {"enchantress", "control", "sagas", "pillow_fort"}, "niche:aura": {"enchantress", "voltron"}, "niche:equipment": {"equipment", "voltron"},
     "niche:vehicle": {"vehicles", "artifacts"}, "niche:saga": {"sagas", "enchantress", "blink"}, "niche:planeswalker": {"superfriends"}, "niche:battle": {"stompy", "outlaws"},
+    "niche:chaos": {"group_hug", "polymorph", "forced_combat"},
 }
 
 

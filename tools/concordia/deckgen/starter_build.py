@@ -502,7 +502,7 @@ def cmd_draft(a):
     draft(name, a.commander, [s for s in a.strategy.split(',') if s], [x for x in a.ban.split(';') if x], reject, size=a.size, keep=keep)
 
 
-STARTER_ARCH = {'W': ['lifegain', 'tokens'], 'U': ['control', 'spellslinger'], 'B': ['reanimator', 'self_mill'], 'R': ['stompy', 'burn'], 'G': ['big_mana', 'stompy']}
+ARCH_N = 2   # archetypes assigned per commander, best tag fit first
 POWER_BAND = (23.0, 31.0)   # regen: the commander card's own power (max over rarities, EDHREC card-power scale like TARGET 27) must sit in this band (user 2026-10-27)
 
 
@@ -511,26 +511,40 @@ def cmd_regen(a):
     import random
     ident = frozenset(a.color); name = a.name or '%s_Starter_Normal' % a.color
     colour_pool = [p for p in pool.values() if p['id'] <= ident and 'Land' not in p['types'].split() and p['pop'] >= 8 and B.extra_ok(p, TIER)]
-    strat = [x for x in (a.archetype.split(',') if a.archetype else STARTER_ARCH[a.color]) if x]   # archetypes the user set for the starters (HANDOVER, earlier session)
-    print('colour %s -> archetypes %s' % (a.color, '+'.join(strat)))
+    import pool as PL
+    stale = PL.stale_reasons()
+    if stale:       # fit reads pool.pkl's tags: rebuild it first, then re-run this command with the fresh pool (user 2026-10-27: commanders are seeded on the newest tags)
+        print('pool.pkl is stale (%s): rebuilding, then re-running' % ', '.join(stale)); sys.stdout.flush()
+        subprocess.check_call([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pool.py')])
+        os.execv(sys.executable, [sys.executable] + sys.argv)
+    forced = [x for x in a.archetype.split(',') if x]     # --archetype overrides; otherwise each commander gets its own from its tags
+    arch_ids = [i for i in sf.load() if sf.resolve(i) == i]
+    def arch_of(ftags):
+        ranked = sorted(((sf.fit(ftags, [i]), i) for i in arch_ids), key=lambda t: (-t[0], t[1]))
+        return [i for f, i in ranked[:ARCH_N] if f >= 1]
+    print('colour %s -> archetypes %s' % (a.color, '+'.join(forced) if forced else 'from the commander tags'))
     seed = a.seed if a.seed is not None else random.SystemRandom().randrange(1, 10 ** 6); rng = random.Random(seed)
     rows = []
     for k, p in pool.items():
         if p['id'] != ident or not G.commander_ok(p, TIER) or not B.mech_ok(p, TIER): continue
         if set(data['cards'][k]['flags']) & {'random', 'all'} or cp.is_partner(p['oracle']): continue
         prof = cp.profile(p['oracle'], p['types'], p['name'])
-        f = max(1, sf.fit(p['ftags'], strat)) if prof else 1      # fit only weights the draw; no gate on the commander profile (user 2026-10-27)
+        if not prof: continue
+        strat = forced or arch_of(p['ftags'])      # archetypes come from the commander's own current tags (user 2026-10-27); none matched = not eligible
+        if not strat: continue
+        f = max(1, sf.fit(p['ftags'], strat))
         cpw = max(p['power'].values()) if p['power'] else 0
         if not POWER_BAND[0] <= cpw <= POWER_BAND[1]: continue
         sup = sum(1 for q in colour_pool if supports_cmd(prof, q))
         rows.append(dict(name=p['name'], fit=f, support=sup, power=cpw, archetypes=strat))
-    if a.commander: pick = next((r for r in rows if r['name'].lower() == a.commander.lower()), dict(name=a.commander, fit=0, support=0, archetypes=strat))
+    if a.commander: pick = next((r for r in rows if r['name'].lower() == a.commander.lower()), dict(name=a.commander, fit=0, support=0, archetypes=forced or next((arch_of(q['ftags']) for q in pool.values() if q['name'].lower() == a.commander.lower()), [])))
     else:
-        if not rows: sys.exit('no eligible commander for %s / %s' % (a.color, '+'.join(strat)))
+        if not rows: sys.exit('no eligible commander for %s' % a.color)
         pick = rng.choices(rows, weights=[r['fit'] for r in rows])[0]
     tot = sum(r['fit'] for r in rows) or 1
     print('eligible %d (power %g-%g; commanders used elsewhere are allowed); draw weight = fit; seed %d' % (len(rows), POWER_BAND[0], POWER_BAND[1], seed))
     for r in sorted(rows, key=lambda r: -r['fit'])[:10]: print('  %-34s fit %-2d (%.0f%%) support %d power %.1f' % (r['name'], r['fit'], 100 * r['fit'] / tot, r['support'], r['power']))
+    strat = pick['archetypes']
     print('commander: %s | strategies %s' % (pick['name'], ','.join(strat)))
     os.makedirs(STAGE, exist_ok=True)
     json.dump(dict(color=a.color, archetype=strat, commander=pick['name'], strategy=strat, seed=seed, eligible=len(rows)), open(os.path.join(STAGE, name + '.regen.json'), 'w', encoding='utf-8'), indent=1)

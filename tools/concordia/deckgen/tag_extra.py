@@ -53,6 +53,7 @@ LEGEND = {
  "scales": "the amount (X) of this ability is the number of that kind of thing you control: write it as 'for each <thing> you control' (scales:island on a draw_count:x = draw a card for each Island you control)",
  "mana_restriction": "the mana can be spent only on what the value says (mana_restriction:instant_or_sorcery = spend this mana only to cast an instant or sorcery spell)",
  "x_is": "what the amount is when it is not a plain number. Do NOT write the letter X for these: count_<thing>_you_control = 'for each <thing> you control'; own_power / target_power = 'equal to that creature's power'; previous_result = 'equal to the amount the previous effect produced' (damage dealt, life lost ...). Only x_paid means the letter X (the X in the mana cost). Example: damage_amount:x x_is:count_creature_you_control = deals damage equal to the number of creatures you control",
+ "affected_player": "PROPOSED: the player who receives the effect when it is not the ability's controller: affected_player:target_controller = the controller of the targeted permanent ('Its controller gains life equal to its power'), target_owner = its owner, target_player = the targeted player; set on the effect group (Forge Defined$/Player$ TargetedController / TargetedOwner / TargetedPlayer)",
  "controller": "who controls the permanent after the effect: controller:you (default: it enters under the control of the player who controls the effect) or controller:owner (only when the Oracle text says 'under its owner's control')",
  "optional": "the effect of this group is optional (you may ...)",
  "target_scope": "whose things or which players the effect hits (you_control, opp_control; no tag = whoever controls it; each_opponent = every opponent, each_player = every player; no value means a single chosen target)",
@@ -133,10 +134,13 @@ REF_EXTRA = {
 }
 
 # family -> (meaning, why / user note)
+AFFECTED_PLAYER = {"TargetedController": "target_controller", "TargetedOwner": "target_owner", "TargetedPlayer": "target_player"}
+
 DOC = {
  "mill_count:<n|x>": ("how many cards are milled (who is milled: mill / self_mill)", "mtg2llm gap record, approved 2026-10-27: Blight Titan, Barrowgoyf"),
  "flip_coin + flip_win / flip_lose": ("the effect flips a coin; flip_win / flip_lose mark that an outcome has a sub-effect", "approved 2026-10-27: Creepy Doll, Volatile Rig"),
  "secret_choice:<number|card|player>": ("a player chooses secretly, then the choices are revealed and compared", "approved 2026-10-27: Wheel of Misfortune, Expert-Level Safe"),
+ "roll_die:<n> + die_sides:<n>": ("the effect rolls a die; die_sides is the number of sides (d20 = 20)", "approved 2026-10-27: TAG_GAP_CANDIDATES section A (user: approve A)"),
  "lose_game": ("the effect makes a player lose the game", "approved 2026-10-27: Nine Lives"),
  "counter_remove:<n|all|x>": ("removes counters as an effect (cost:remove_counters is the cost)", "approved 2026-10-27: Phantom Nantuko"),
  "grant_type:<type>": ("a static effect gives permanents an extra type (all lands are also Forests)", "approved 2026-10-27: Yavimaya, Cradle of Growth"),
@@ -600,7 +604,7 @@ def extra(lines, sv, types, text):
                 if "ChosenType" in vc: add("cost_reduce_for:chosen_type"); links.append(("%s:cost_reduce_for" % cur[0], "uses", "c0:choose_on_enter"))
                 if p.get("Amount", "").isdigit() and not re.search(r"Color|Black|White|Blue|Red|Green", vc): add("cost_reduce_mana:generic")
                 for ty in re.findall(r"[A-Z][a-z]+", vc):
-                    if ty in ("Creature", "Artifact", "Enchantment", "Instant", "Sorcery", "Planeswalker", "Land"): add("cost_reduce_for:" + tok(ty)); lk("cost_reduce", "filters", "cardtype:" + tok(ty))
+                    if ty in ("Creature", "Artifact", "Enchantment", "Instant", "Sorcery", "Planeswalker", "Land"): add("cost_reduce_for:" + tok(ty)); lk("cost_reduce", "filters", "cost_reduce_for:" + tok(ty))
                     elif ty not in ("Card", "Spell", "Other", "You", "Ctrl", "Chosen", "Type", "White", "Blue", "Black", "Red", "Green", "Colorless", "Non", "Self", "Opp") and "," in vc + ",": add("cost_reduce_for:" + tok(ty))
                     elif ty in ("White", "Blue", "Black", "Red", "Green", "Colorless"): add("color:" + tok(ty)); lk("cost_reduce", "filters", "color:" + tok(ty))
         if kind == "S" and p.get("Mode") == "Continuous" and p.get("CharacteristicDefining") == "True" and p.get("SetPower"):   # Adeline: power = creatures you control
@@ -668,6 +672,8 @@ def extra(lines, sv, types, text):
             groups.setdefault(cur[0], [])
             bp = params(b)
             api = (re.match(r"^(?:AB|SP|DB)\$ (\w+)", b) or [0, ""])[1]
+            for k_ in ("Defined", "Player", "Targeted"):      # PROPOSED: who receives the effect when it is the target's controller / owner ("Its controller gains life")
+                if AFFECTED_PLAYER.get(bp.get(k_, "")): add("affected_player:" + AFFECTED_PLAYER[bp[k_]])
             if not (kind == "T" and b is body): target_tags(bp, groups[cur[0]], api)   # a trigger line's ValidCard(s) filter describes the event, not a target
             if bp.get("ValidTgts") and bp.get("Origin") in ("Graveyard", "Exile", "Hand", "Library"): add("target_zone:" + bp["Origin"].lower())
             if api == "ManaReflected":                         # Fellwar Stone, Exotic Orchard: the colours come from lands (their controller says whose)
@@ -750,7 +756,7 @@ def extra(lines, sv, types, text):
                     add("remove:sacrifice")
                 if "SacValid" in bp: add("sacrifice_type:" + tok(bp["SacValid"].split(".")[0]))
             if bp.get("ConditionDefined") == "Remembered" and api == "Token" and sacgid: links.append(("%s:token_make" % cur[0], "conditional_on", "%s:effect:sacrifice" % sacgid))
-            if api == "ChangeZone" and bp.get("Defined") == "ExiledWith": add("return_exiled"); lk("return_exiled", "pairs_with", "trigger:leaves")
+            if api == "ChangeZone" and bp.get("Defined") == "ExiledWith": add("return_exiled"); links.append(("%s:return_exiled" % cur[0], "pairs_with", "%s:trigger:leaves" % cur[0].split(".")[0]))      # the trigger sits in the ability group, not the sub-ability step
             if api == "Dig": last_exile = bp.get("DigNum", "1")
             if api == "ChangeZoneAll" and bp.get("Destination") == "Exile": last_exile = "x"
             if api == "ChangeZone" and bp.get("Destination") == "Exile": last_exile = bp.get("ChangeNum", "1")
@@ -864,7 +870,7 @@ def extra(lines, sv, types, text):
             if api == "ExchangeControl": add("exchange_control", "steal"); lk("exchange_control", "pairs_with", "steal")
             if api == "GainControl":
                 add("steal")
-                if "AddKWs" in bp: add("steal_grants_" + tok(bp["AddKWs"])); lk("steal", "pairs_with", tok(bp["AddKWs"]))
+                if "AddKWs" in bp: add("steal_grants_" + tok(bp["AddKWs"])); lk("steal", "pairs_with", "steal_grants_" + tok(bp["AddKWs"]))
                 if bp.get("LoseControl") == "EOT": add("duration:eot")
             if api == "Animate":
                 if bp.get("RemoveAllAbilities") == "True": add("loses_all_abilities")

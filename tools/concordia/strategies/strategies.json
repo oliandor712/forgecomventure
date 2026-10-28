@@ -680,6 +680,13 @@
      ],
      "n": null
     },
+    "support_grant_type": {
+     "sig": [
+      "grant_type"
+     ],
+     "cards": [],
+     "n": null
+    },
     "protection": {
      "sig": [
       "cant_be_countered"
@@ -1472,7 +1479,8 @@
     "engine": {
      "sig": [
       "mill",
-      "self_mill"
+      "self_mill",
+      "mill_count"
      ],
      "cards": [
       "Mesmeric Orb",
@@ -1501,7 +1509,8 @@
     },
     "payoff": {
      "sig": [
-      "mill"
+      "mill",
+      "mill_count"
      ],
      "cards": [
       "Consuming Aberration",
@@ -2092,6 +2101,13 @@
      "cards": [],
      "n": null
     },
+    "support_alt_win": {
+     "sig": [
+      "lose_game"
+     ],
+     "cards": [],
+     "n": null
+    },
     "support_cast_free": {
      "sig": [
       "cast_free"
@@ -2333,6 +2349,13 @@
       8,
       10
      ]
+    },
+    "spend": {
+     "sig": [
+      "counter_remove"
+     ],
+     "cards": [],
+     "n": null
     }
    },
    "wins": [
@@ -5361,6 +5384,7 @@
     "filler": {
      "sig": [
       "self_mill",
+      "mill_count",
       "kw:dredge",
       "tutor_dest:graveyard"
      ],
@@ -5481,7 +5505,8 @@
     },
     "payoff": {
      "sig": [
-      "counter:energy"
+      "counter:energy",
+      "cost_energy"
      ],
      "cards": [
       "Aether Hub"
