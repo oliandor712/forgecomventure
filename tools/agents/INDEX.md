@@ -42,6 +42,7 @@ Small (fine to read): handoffs under 2k, `TAG_LEGEND.md` 2k, `tagcheck/README.md
 | The user's deck/balance/AI/tag rules (H01..) | `tools/agents/human_logic.toon` |
 | Shared background context | `tools/agents/CONTEXT.md` |
 | Latest session state / open items | `tools/agents/HANDOVER.md` |
+| File functions, connectivity, recipes, known issues (main session) | `tools/agents/MAIN_SESSION_MANUAL.toon` |
 | Tool list, manifest | `tools/agents/TOOLBOX.md`, `MANIFEST.toon`, `toolbox.py --check` |
 | Push a document | `tools/agents/docpush.py` |
 | Knowledge snapshot (training data) | `tools/concordia/training_data/CLAUDE1_DATA_HANDOFF_TRAINING_DATA_2026-10-23.md` |

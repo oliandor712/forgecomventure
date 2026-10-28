@@ -344,6 +344,10 @@ HAND_UNIT = {
     'cost:tap cost_mana:N duration:eot pump_amount:+N/+N target_count:all target_filter:attacking target_type:creature': '{2}, {T}: Attacking creatures get +1/+0 until end of turn.',
     "kw:enchant target_type:land": "Enchant land", "kw:enchant target_type:permanent": "Enchant permanent",
 }
+# card-specific whole units written by hand from Oracle text (hand pass 2026-10-27): pattern -> line
+try:
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "hand_units.json"), encoding="utf-8") as _f: HAND_UNIT.update(json.load(_f))
+except OSError as _e: print("mtg2llm: hand_units.json not loaded (%s); hand lines are missing" % _e, file=sys.stderr)
 
 
 def _digits(text, ns):
@@ -409,6 +413,13 @@ def token_body(eff):
     return "create a %s %s%s creature token." % (d["token_pt"], col + " " if col in COLORS or col in ("colorless",) else "", ty)
 
 
+_CARD = [""]      # name of the card render() is working on; a hand line keyed "Card Name|pattern" applies to that card only
+
+
+def _hand(ts):
+    return HAND_UNIT.get(_CARD[0] + "|" + _pat(ts)) if _CARD[0] else None
+
+
 def _compose(ts, stray):
     bm = basic_mana(ts)
     if bm: return bm
@@ -417,9 +428,9 @@ def _compose(ts, stray):
     hu = [t for t in ts if not t.startswith("color:")]
     if len(hu) < len(ts) and any(t.startswith("kw:") for t in hu):
         col = [t.partition(":")[2] for t in ts if t.startswith("color:")]      # a coloured cycling cost may be {R}{R} or hybrid; the colour tag cannot say, so Cycling takes no guess
-        h = HAND_UNIT.get(_pat(hu))
+        h = _hand(hu) or HAND_UNIT.get(_pat(hu))
         if h and len(col) == 1 and len(col[0]) <= 5 and h.endswith("{N}") and not h.startswith("Cycling"): return fill(h + "{%s}" % COLORS.get(col[0], col[0][:1]).upper(), nums(hu))
-    h = HAND_UNIT.get(_pat(ts))
+    h = _hand(ts) or HAND_UNIT.get(_pat(ts))
     if h: return _digits(fill(h, nums(ts)), nums(ts))
     R = split_roles(ts)
     tk = token_body(R["eff"]) if R["eff"] and not (R["target"] or R["cost"] or R["dur"]) else None      # a plain token unit: its four token tags say the whole sentence
@@ -541,8 +552,9 @@ def self_word(typing):
     return ct[0]
 
 
-def render(groups, typing=None):
-    """groups: {id: 'tag tag ...'} as in a reader batch card. returns (text, stats)"""
+def render(groups, typing=None, name=""):
+    """groups: {id: 'tag tag ...'} as in a reader batch card. returns (text, stats). name only selects card-keyed hand lines (hand_units.json "Card|pattern"); blind callers leave it empty"""
+    _CARD[0] = name or ""
     u = units({g: t for g, t in groups.items()})
     lines, st = [], {"exact": 0, "approx": 0, "missing": 0, "name_used": 0, "name_unused": 0, "diffs": []}
     for g, ts in u.items():
@@ -575,6 +587,9 @@ def render(groups, typing=None):
         if v is None:
             st["missing"] += 1; lines.append(put_names("{%s}" % " ".join(ts), names, ts[0].split(), st) if names else "{%s}" % " ".join(ts)); continue
         line = x_phrase(fill(v["canon"], nums(ts)), ts[0].split())
+        if unresolved(line) and not names:      # a mined rule with an open slot gives way to a hand line or a composition of the unit
+            cp = compose(ts[0].split(), g == "x")
+            if cp: st["composed"] = st.get("composed", 0) + 1; lines.append(x_phrase(cp, ts[0].split())); continue
         if unresolved(line):      # a line with a slot left open (mined rule whose slot the tags cannot fill, e.g. "mill N cards") is not a rendering
             st["missing"] += 1; lines.append("{%s}" % " ".join(ts)); continue
         st["approx" if approx else "exact"] += 1
@@ -829,7 +844,7 @@ def cmd_tag(a):
     pairs = tag_cards(a.cards.split(";") if a.cards else None)
     out, flags, placeholder, nt, nm, unused, bad = [], 0, 0, 0, 0, [], []
     for r, b, added, nflags in pairs:
-        text, st = render(b["groups"], b.get("typing"))
+        text, st = render(b["groups"], b.get("typing"), r["name"])
         placeholder += st["missing"]; flags += bool(r["verify"]["flags"]); nt += len(b["tags"]); nm += len(added)
         bad += [(r["name"],) + x for x in closed_vocab_check(r, b)]
         if st["name_unused"]: unused.append(r["name"])

@@ -34,7 +34,7 @@ def _tag_sims(recs):
         return S.score(o, t, n, idx, idx.v(S.toks(S.norm(o, n))), idx.v(rt))["sim"]
     out = {}
     for r in recs:
-        n = r["name"]; b = CD.tag_blind(r); text, _ = M.render(b["groups"], b["typing"])
+        n = r["name"]; b = CD.tag_blind(r); text, _ = M.render(b["groups"], b["typing"], n)
         total = sim(orig[n], text, n)
         lines = [l for l in re.split(r"\s*/\s*", orig[n]) if l.strip()]
         u = M.units(b["groups"]); per = {}
@@ -43,7 +43,7 @@ def _tag_sims(recs):
         kw = " ".join(l for l in lines if len(l.split()) <= 8 and ":" not in l and "." not in l) or orig[n]
         if secs and len([k for k in secs if k != "K"]) <= len(lines):
             for sec, gs in secs.items():
-                t = M.render(gs, b["typing"])[0]
+                t = M.render(gs, b["typing"], n)[0]
                 per[sec] = sim(kw, t, n) if sec == "K" else max(sim(l, t, n) for l in lines)
         out[n] = (total, per)
     return out
@@ -127,7 +127,7 @@ def _rule_sims(rules_d, comp_d):
         idx = S.Index({n: S.toks(S.norm(orig[n], n)) for n in names})
         out = {}
         for r, b, _x, _y in tc:
-            n = r["name"]; text, _ = M.render(b["groups"], b["typing"])
+            n = r["name"]; text, _ = M.render(b["groups"], b["typing"], n)
             rt = S.toks(S.norm(S.clean_reco(text), n))
             s = S.score(orig[n], text, n, idx, idx.v(S.toks(S.norm(orig[n], n))), idx.v(rt))["sim"] if rt else 0.0
             out[n] = (s, {M.pattern([" ".join(ts)]) for ts in M.units(b["groups"]).values()})
@@ -185,7 +185,7 @@ def gaps():
     for r, b, _x, _y in tc:
         for g, ts in M.units(b["groups"]).items():
             n += 1
-            text, st = M.render({g: " ".join(ts)}, b["typing"])
+            text, st = M.render({g: " ".join(ts)}, b["typing"], r["name"])
             if not st["missing"]: ok += 1; continue
             v, approx = M.lookup(M.pattern([" ".join(ts)]))
             slot = v is not None and not approx and M.unresolved(M.fill(v["canon"], M.nums(ts)))

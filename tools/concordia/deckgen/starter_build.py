@@ -178,7 +178,7 @@ def draft(name, commander, strategy, ban, reject, _try=0, size='', keep=()):
 
     def pay_cap(): return min(SY.PAYOFF_MAX, max(SY.PAYOFF_MIN, nset[0] + SY.SETUP_GAP))   # payoffs may not outrun setup by more than SETUP_GAP (H17)
 
-    def is_colorless(p): return not p['id'] and 'ramp' not in p['tags']
+    def is_colorless(p): return not p['id'] and 'ramp' not in p['tags'] and 'C' in data['cards'].get(p['name'].lower(), {}).get('mc', '').split()   # H78: the colourless category is cards with a {C} pip, not generic-cost artifacts
     def cl_sources(): return CL_LANDS + sum(1 for p, _ in chosen if not p['id'] and 'ramp' in p['tags'])
 
     def score(p, r):
@@ -503,7 +503,7 @@ def cmd_draft(a):
 
 
 STARTER_ARCH = {'W': ['lifegain', 'tokens'], 'U': ['control', 'spellslinger'], 'B': ['reanimator', 'self_mill'], 'R': ['stompy', 'burn'], 'G': ['big_mana', 'stompy']}
-SUPPORT_FLOOR = 400   # regen: a commander needs this many supporting pool cards to enter the draw (assumed; Rosie has 444)
+POWER_BAND = (23.0, 31.0)   # regen: the commander card's own power (max over rarities, EDHREC card-power scale like TARGET 27) must sit in this band (user 2026-10-27)
 
 
 def cmd_regen(a):
@@ -519,17 +519,18 @@ def cmd_regen(a):
         if p['id'] != ident or not G.commander_ok(p, TIER) or not B.mech_ok(p, TIER): continue
         if set(data['cards'][k]['flags']) & {'random', 'all'} or cp.is_partner(p['oracle']): continue
         prof = cp.profile(p['oracle'], p['types'], p['name'])
-        f = sf.fit(p['ftags'], strat) if prof else 0
-        if not f: continue
+        f = max(1, sf.fit(p['ftags'], strat)) if prof else 1      # fit only weights the draw; no gate on the commander profile (user 2026-10-27)
+        cpw = max(p['power'].values()) if p['power'] else 0
+        if not POWER_BAND[0] <= cpw <= POWER_BAND[1]: continue
         sup = sum(1 for q in colour_pool if supports_cmd(prof, q))
-        if sup >= SUPPORT_FLOOR: rows.append(dict(name=p['name'], fit=f, support=sup, archetypes=strat))
+        rows.append(dict(name=p['name'], fit=f, support=sup, power=cpw, archetypes=strat))
     if a.commander: pick = next((r for r in rows if r['name'].lower() == a.commander.lower()), dict(name=a.commander, fit=0, support=0, archetypes=strat))
     else:
         if not rows: sys.exit('no eligible commander for %s / %s' % (a.color, '+'.join(strat)))
         pick = rng.choices(rows, weights=[r['fit'] for r in rows])[0]
     tot = sum(r['fit'] for r in rows) or 1
-    print('eligible %d (support >= %d, fit > 0; commanders used elsewhere are allowed); draw weight = fit; seed %d' % (len(rows), SUPPORT_FLOOR, seed))
-    for r in sorted(rows, key=lambda r: -r['fit'])[:10]: print('  %-34s fit %-2d (%.0f%%) support %d' % (r['name'], r['fit'], 100 * r['fit'] / tot, r['support']))
+    print('eligible %d (power %g-%g; commanders used elsewhere are allowed); draw weight = fit; seed %d' % (len(rows), POWER_BAND[0], POWER_BAND[1], seed))
+    for r in sorted(rows, key=lambda r: -r['fit'])[:10]: print('  %-34s fit %-2d (%.0f%%) support %d power %.1f' % (r['name'], r['fit'], 100 * r['fit'] / tot, r['support'], r['power']))
     print('commander: %s | strategies %s' % (pick['name'], ','.join(strat)))
     os.makedirs(STAGE, exist_ok=True)
     json.dump(dict(color=a.color, archetype=strat, commander=pick['name'], strategy=strat, seed=seed, eligible=len(rows)), open(os.path.join(STAGE, name + '.regen.json'), 'w', encoding='utf-8'), indent=1)

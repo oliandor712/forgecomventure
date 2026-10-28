@@ -1,0 +1,73 @@
+# Main session manual: file functions, connectivity, run recipes. Claude-only file in TOON (pipe-delimited; # lines are comments).
+# Written 2026-10-27 from a scan of tools/concordia, tools/agents, docs/Adventure/Campaign and forge-gui/res/adventure/Concordia (import graph by script, docstrings, user answers). Read after MAIN_SESSION_BRIEF.md (START.md step 5). Update in place when files move; INDEX.md points here.
+# It does not repeat rules: rules live in CLAUDE.md, MAIN_SESSION_BRIEF.md and human_logic.toon (a rule beats a metric). Paths are repo-relative. Skip tools/concordia/backups, */archive*, ai_lab/results and digests.
+
+pipeline[8|]{stage|what happens|entry script|reads|writes}:
+1 card data|Scryfall bulk + Forge card scripts are the only sources|scryfall_bulk.py|Scryfall API, forge-gui/res/cardsfolder|deckgen/scryfall/cards.json
+2 tag run|card script -> ability parse -> card-level role tags (ability_tags.py) + ability-level group tags (tag_extra.py) -> variant post-pass (tag_variant.py) -> verify (tag_verify.py) -> twins (tag_twins.py); tag_run.py drives, tag_reports.py writes reports|tag_run.py starter / card "Name"|card scripts, tag_extra DOC|tags/STARTER_TAGS.toon, TAG_REFERENCE.md, TAG_LEGEND.md, ABILITY_TWINS.json, NEW_TAGS_FOR_APPROVAL.md, REDUNDANCY_CHECK.md
+3 pool|every Commander-legal AI-playable card with identity, tags, roles, power, popularity|pool.py (about 25 s)|tag_run, text_tags, power_scorer, EDHREC/staples inputs|deckgen/pool.pkl (not in git), pool_meta.json
+4 power|deck and card power from fitted weights|power_scorer.py (weights from power_fit/fit.py)|pool.pkl, tier_rules.py, archetype_rules.py, power_fit/weights.json|score/PASS/FAIL per deck
+5 build|tier decks 1..5|build.py (decks.json -> decks/tier1..3), gen_mono.py (mono decks), t1_plan.py (tier 1 fresh plan), variants.py|pool.pkl, policy_tags, themes, synergy, strategy_fit, consistency|forge-gui/res/adventure/Concordia/decks/*, staging_t1_fresh/
+6 starters|commander-first player starters (5 colours, Normal + variants)|starter_build.py (steps: commander pick, build, glance review-export/review-apply, regen), starter_tune.py|pool.pkl, commander_support.py, COMMANDER_SUPPORT.toon|Concordia/staging_starters/*.dck + .picks.json (not live)
+7 glance|can a reader that sees only tags match one that sees Oracle text|tagcheck/glance.py|STARTER_TAGS, mtg2llm render, two reader subagents (only on the user's ask)|tagcheck/runs, tags/MTG2LLM_GAPS.toon
+8 balance|PC vs NPC win rates at equal life|suite/sim_suite.py (standard), balance_lab/run_batch.py|sim/*.java via sim/run.sh, decks|balance_lab/records*.csv (BIG), REPORT.md
+
+module_groups[14|]{path|function|connects to|notes}:
+tools/concordia/deckgen/tag_run.py|tagging driver; imported by 14 modules (hub)|ability_tags, tag_extra, derived_tags, tag_twins, tag_variant, tag_verify|changes here re-key every downstream file; regenerate pool.pkl and tag outputs after any tag change
+tools/concordia/deckgen/tag_extra.py|ability-level tags (human_logic H56); DOC dict is the meaning table|tag_run, tag_reports, tag_variant, reverse_check|a new family is PROPOSED until approved; add a DOC row with the code; approval constants in tag_reports.py (APPROVED, APPROVED_LATER, APPROVED_DECISION)
+tools/concordia/deckgen/tag_reports.py|reports + approval doc generator (NEW_TAGS_FOR_APPROVAL.md, TAG_REFERENCE.md)|tag_run, tag_extra, tag_twins, tag_verify|generated outputs: regenerate, never hand-merge
+tools/concordia/deckgen/tagcheck/mtg2llm.py|tags -> text renderer (mined rules, compose(), HAND_UNIT from hand_units.json)|tag_run, tag_hash, run_memory, common|pattern() keys are sorted tag families with numbers as N; a new tag re-keys mined rules and hand lines; hand_units.json keys are global, never key a line on a generic fragment; gaps in tags/MTG2LLM_GAPS.toon (apply open rows first)
+tools/concordia/deckgen/tagcheck/reverse_check.py + glance.py + score.py|blind reader export/compare and the glance test|cards, mtg2llm, tag_extra, run_log, reader_metric|readers are subagents: only on the user's ask, check the rate limit first
+tools/concordia/deckgen/tagcheck/guards.py|tag guards and links (apply_tags runs inside the starter run)|cards|
+tools/concordia/deckgen/pool.py|builds pool.pkl|tag_run, text_tags, power_scorer (circular use with power_scorer reads pool.pkl)|pool.py --check / --if-stale / --cat
+tools/concordia/power_scorer.py|deck rating vs encounter tiers; edh model from power_fit/weights.json|archetype_rules, tier_rules, pool, tag_version; used by 10 modules|rule H-numbers in human_logic override its metric
+tools/concordia/tier_rules.py + archetype_rules.py|the one source of truth for tier and archetype rules|used by build, power_scorer, build_queue, starter_build|do not duplicate numbers elsewhere
+tools/concordia/deckgen/build.py|tier deck builder|13 modules (ability_tags, archetype_rules, commander_support, consistency, power_scorer, strategy_fit, synergy, themes, ...)|do not run dry builds without the user's approval
+tools/concordia/deckgen/starter_build.py|starter builder with land picker (coverage > utility > no tapped > no life > no sacrifice-other)|build, commander_support, consistency, gen_mono, synergy, arcmind_score|H96-H103; 729 lines, read by Grep/offset
+tools/concordia/deckgen/commander_support.py + COMMANDER_SUPPORT.toon|what supports a commander's ability|ability_tags, tag_run, tag_status, tag_map|consumed by build, starter_build, themes, t1_plan
+tools/concordia/strategies/*|45 archetypes, baseline roles, strategies.json|strategy_fit.py used by build, starter_build, synergy|raw/ holds fetched strategy texts (BIG)
+tools/concordia/{sim,suite,balance_lab,gamerunner,ai_lab}|sims (Java, headless Forge), batch runner, AI A/B research|sim_suite and run_logs import balance_lab/build_queue + run_batch|ai_lab patches are research only; never edit forge-ai
+
+standalone_tools[12|]{path|function|status}:
+tools/agents/lookup.py|slice lookups (cr, kw, tag, rule, card, twin, size)|use instead of reading BIG files
+tools/agents/docpush.py|push document-level files only|automatic for documents
+tools/agents/clone_verify.py|READY check for a fresh clone|session start
+tools/agents/sync_check.py|record manifest/verify|manifest at end of session
+tools/agents/ensure_refs.py|rebuilds ~/tagcheck_runs/_refs|SessionStart hook
+tools/agents/toolbox.py|regenerates TOOLBOX.md (--check says stale)|regenerate after tool commits
+tools/concordia/power_fit/fit.py|fits power_scorer weights to EDHREC percentile, writes weights.json|ACTIVE (user 2026-10-27): rerun when pool or scorer changes
+tools/concordia/deckgen/link_seeds.py|seed files from collected lists|LEGACY (user 2026-10-27): do not run
+tools/concordia/maps/*|zone builder, door checks, woods render, test kits|use skill concordia-map-creator
+tools/concordia/sprites/*|deck sprite matching|enemies.json untouched without the user's word
+tools/concordia/*.ps1|Windows build, install and update for the user's tests|the user runs these
+tools/concordia/edhpl_check.py + arcmind/arcmind_score.py|external power references (not build inputs)|off in the glance (H88)
+
+game_data[7|]{path|content|edit rule}:
+forge-gui/res/adventure/Concordia/decks/{starter,tier1..5,tutorial}|live decks|not without the user's word
+forge-gui/res/adventure/Concordia/staging_t1_fresh|staged tier 1 (not live)|written by the builders
+forge-gui/res/adventure/Concordia/staging_starters|new starters; _r2/_r3 are glance review rounds, latest round wins, older are disposable (user 2026-10-27)|builders write; user decides live
+forge-gui/res/adventure/Concordia/staging_starters_bak_gods + staging_starters_bak_prevcmd|obsolete starter backups|DELETE CANDIDATES (user 2026-10-27): do not read or use; propose deletion at cleanup
+forge-gui/res/adventure/Concordia/staging_tutorial|tutorial decks (B/G/R_Tutorial_n)|staged, not live
+forge-gui/res/adventure/Concordia/world/*.json, maps/, ui/, config.json|world, enemies, shops, quests, hall, maps|enemies.json: never without the user's word
+docs/Adventure/Campaign/*|design docs (DESIGN, OVERWORLD, ENCOUNTER_TIERS, IDEAS_BACKLOG nothing approved, AI_CHANGES_APPROVAL ticked only by the user)|documents: revise in place, docpush
+
+recipes[9|]{task|steps}:
+After any tag change|python tools/concordia/deckgen/tag_run.py starter; python tools/concordia/deckgen/pool.py; python tools/concordia/deckgen/tagcheck/mtg2llm.py (gap check); update log-code-analyses.toon row
+Add a tag family|code in tag_extra.py + DOC row; constants in tag_reports.py; list as PROPOSED in NEW_TAGS_FOR_APPROVAL.md; implement only after the user marks it; move to APPROVED_DECISION; re-run gap check
+Clear mtg2llm gaps|apply open rows of tags/MTG2LLM_GAPS.toon; hand lines go in tagcheck/hand_units.json (pattern -> Oracle-accurate line); check new tags re-keyed patterns
+Rebuild starters|starter_build.py steps (commander, build, review-export, review-apply); output staging_starters; no live copy
+Score a deck|python tools/concordia/power_scorer.py DECK.dck
+Run sims|tools/concordia/suite/README.md
+Look up a rule/keyword/card|tools/agents/lookup.py cr|kw|tag|rule|card
+Push|only on the user's "push": git pull --no-rebase origin campaign-design; git push origin HEAD:campaign-design; report real output. Documents: docpush.py
+End of session|HANDOVER.md update, sync_check.py manifest, commit, push on "push" (skill session-commit)
+
+known_issues[8|]{item|detail|action}:
+HANDOVER.md|tools/agents/HANDOVER.md; the land picker section is current as of 2026-10-27, older sections stale|update at session end
+tag_reports.py|MTG2LLM_DROPPED and MTG2LLM_NOTAG are dead data once MTG2LLM_FAMILIES is empty; stray empty-string element in the "Waiting on the user" list|clean up when next touched
+tag_extra.py|Destroyed -> trigger:dies and Always -> trigger:state apply to all cards, not individually verified against the pool|check false positives before relying
+hand_units.json|keys are global pattern strings; a line that is right for one card only is keyed "Card Name|pattern" (render(name) looks it up first; blind callers pass no name)|never add a global line for a pattern shared by cards with different Oracle text
+Working tree|large uncommitted set (tag files, starter_build.py, COMMANDER_SUPPORT.toon, staging_starters, human_logic H96-H103); NEW_TAGS_MTG2LLM_FOR_APPROVAL.md deleted locally and staged, remote still has it|commit and push only on the user's "push"
+Scratch scripts|hp.py, hp2.py, colorless.py live in the session scratchpad, not the repo|move into the repo only if reused
+Gate floor|H102 gate floor and rebuild of W (Kozilek's Command) are open|ask the user before rebuilding
+Remaining mtg2llm rows|20 open gap rows need tagger fixes (Blight Titan, Charging Cinderhorn, Sphere Grid, ...)|parser work, not hand lines

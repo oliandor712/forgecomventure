@@ -79,7 +79,7 @@ def card_traits(p, traits=None):
     return out
 
 HUMAN = os.path.normpath(os.path.join(HERE, '../../../tools/agents/human_logic.toon'))
-RETRY = {'H08', 'H13', 'H14', 'H15', 'H16', 'H17'}  # rules whose WARN gets one rebuild with a raised weight (dry runs)
+RETRY = {'H08', 'H13', 'H14', 'H15', 'H16'}  # rules whose WARN gets one rebuild with a raised weight (dry runs)
 def commander_works(cmd, chosen):
     """Deck cards that pass any support test for the commander's own ability (commander_support.profile and supports, H31-H36)."""
     prof = cp.profile(cmd['oracle'], cmd['types'])
@@ -133,13 +133,6 @@ def human_pass2(d, cmd, chosen, lands, basics, info, power, rules):
     drain = sum(1 for p, _ in chosen if ability_tags(p) & {'drain', 'burn'})
     dmg = re.search(r'noncombat damage|damage to any target|deals? \d+ damage to (target|any|each)', text) is not None  # H36
     check('H16', drain >= 2, 'drain or burn cards %d (2 needed)' % drain, dmg)
-    works = commander_works(cmd, chosen)  # H17: cards that support the commander's own ability (threshold 5)
-    check('H17', works >= 5, 'cards that support the commander ability %d (5 needed)' % works, bool(cp.profile(cmd['oracle'], cmd['types'])))
-    tp = sy.plan(cmd.get('ftags') or [])      # H17 (merged with H75): a commander that makes tokens of any kind also needs payoffs for them
-    npay = sy.count_payoffs(tp, [p for p, _ in chosen], lambda p: re.sub(r'\([^)]*\)', '', at.card_text(p['name']))) if tp else 0
-    nset = sy.count_setup(tp, [p for p, _ in chosen]) if tp else 0
-    if tp and tp.get('creature') and not tp.get('kinds'): check('H17', nset >= sy.SETUP_MIN and npay <= nset + sy.SETUP_GAP, 'token setup cards %d (%d-%d), payoffs %d (at most setup + %d)' % (nset, sy.SETUP_MIN, sy.SETUP_MAX, npay, sy.SETUP_GAP), True)
-    check('H17', sy.PAYOFF_MIN <= npay <= sy.PAYOFF_MAX, 'token payoffs for the commander tokens %d (%d-%d allowed)' % (npay, sy.PAYOFF_MIN, sy.PAYOFF_MAX), bool(tp))
     if d.get('archetype') and cons.target(d['tier']):   # H85: engine pieces drawn and castable by turn 5 (consistency.py)
         cs = [p for p, _ in chosen]
         nok, ntot, pr, seen, ntut = cons.report(cs, d['archetype'], sum(1 for p in cs if p['tags'] & ROLE['ramp']), sum(1 for p in cs if p['tags'] & ROLE['draw']), sum(1 for p in cs if p['tags'] & ROLE['tutor']))

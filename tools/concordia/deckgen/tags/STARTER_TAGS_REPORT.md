@@ -4,15 +4,15 @@
 
 ## Most common tags
 
-cardtype:creature 296, target_count:one 202, trigger:etb 179, trigger_scope:self 167, token_make 162, target_type:creature 143, draw 124, token_count:1 98, tempo:+1 97, cardtype:instant 95, mana_source 79, token_color:colorless 79, type:human 74, target_scope:you_control 73, tempo:+0.5 73, colorless_card 71, token_cardtype:artifact 71, cardtype:artifact 69, cost:tap 67, cardtype:sorcery 66, lifegain 66, draw_count:1 65, artifact_token 59, token_pt:1/1 58, duration:eot 54, damage 53, cost:sacrifice 50, from_zone:graveyard 50, duration:static 48, trigger:dies 44, supertype:legendary 42, kw:flying 41, put_onto_battlefield 40, target_zone:graveyard 40, trigger_zone:graveyard 40, trigger_filter:you_control 40, optional 40, cardtype:enchantment 40, return 37, to_zone:hand 37
+cardtype:creature 296, target_count:one 203, trigger:etb 179, trigger_scope:self 167, token_make 162, target_type:creature 143, draw 123, token_count:1 98, tempo:+1 97, cardtype:instant 95, mana_source 79, token_color:colorless 79, type:human 74, target_scope:you_control 73, tempo:+0.5 73, colorless_card 71, token_cardtype:artifact 71, cardtype:artifact 69, cost:tap 67, cardtype:sorcery 66, lifegain 66, draw_count:1 65, artifact_token 59, token_pt:1/1 58, duration:eot 54, damage 53, cost:sacrifice 50, from_zone:graveyard 50, duration:static 48, trigger:dies 44, supertype:legendary 42, kw:flying 41, put_onto_battlefield 40, target_zone:graveyard 40, trigger_zone:graveyard 40, trigger_filter:you_control 40, optional 40, cardtype:enchantment 40, remove:destroy 38, return 37
 
 ## Trigger types seen in clauses
 
-spell 162, etb_self 154, activated 125, static 67, dies_self 25, spell_cast 22, etb_other 19, attacks 17, replacement 17, phase 15, dies_other 14, combat_damage 6, leaves_self 6, attackersdeclared 5, changeszoneall 4, gain_life 3, damagedoneonce 2, sacrificed 2, cycled 2, discarded 1, counteraddedonce 1, mutates 1, becomestarget 1, attackerunblocked 1, spellcastorcopy 1, lifelost 1, damage 1, taps 1, blocked 1, discardedall 1
+spell 163, etb_self 154, activated 125, static 67, dies_self 25, spell_cast 22, etb_other 19, attacks 17, replacement 17, phase 15, dies_other 14, combat_damage 6, leaves_self 6, attackersdeclared 5, changeszoneall 4, gain_life 3, damagedoneonce 2, sacrificed 2, cycled 2, discarded 1, counteraddedonce 1, mutates 1, becomestarget 1, attackerunblocked 1, spellcastorcopy 1, lifelost 1, damage 1, taps 1, blocked 1, discardedall 1
 
 ## Most common verbs (script API)
 
-token 87, changezone 71, draw 55, static_continuous 45, mana 36, dealdamage 30, destroy 22, putcounter 15, pump 15, loselife+gainlife 14, charm 14, pumpall 13, replace_moved 12, static_reducecost 11, draw+loselife 9, changezone+token 8, mill 6, changezoneall 6, draw+token 6, gainlife 6, draw+discard 6, destroy+token 5, discard 4, changezone+changezone 4, damageall 4, dealdamage+gainlife 3, effect 3, immediatetrigger 3, static_cantblockby 3, pump+fight 3
+token 87, changezone 71, draw 55, static_continuous 45, mana 36, dealdamage 30, destroy 23, putcounter 15, pump 15, loselife+gainlife 14, charm 14, pumpall 13, replace_moved 12, static_reducecost 11, draw+loselife 9, changezone+token 8, mill 6, changezoneall 6, draw+token 6, gainlife 6, draw+discard 6, destroy+token 5, discard 4, changezone+changezone 4, damageall 4, dealdamage+gainlife 3, effect 3, immediatetrigger 3, static_cantblockby 3, pump+fight 3
 
 ## Cards with no ability tag beyond type, keyword and cost tags (17)
 
@@ -21,7 +21,7 @@ Typhoid Rats, Thornweald Archer, Deadly Recluse, Ambush Viper, Leatherback Balot
 
 ## Cross-check layer (Oracle gap filler, keyword reference/CR, Forge AI)
 
-Cards where the cross-check added tags: 60; tags added in total: 65 (life_loss 27, fight 8, trigger:combat_damage 6, trigger:etb 3, untap 3, trigger:end_step 3, token_make 2, trigger:dies 2, cost:mana 2, cost:discard 1, cost:life 1, discard 1, trigger:attacks 1, surveil 1, trigger:beginning_of_combat 1, damage 1, trigger:discard 1, remove:destroy 1).
+Cards where the cross-check added tags: 59; tags added in total: 64 (life_loss 27, fight 8, trigger:combat_damage 5, trigger:etb 3, untap 3, trigger:end_step 3, token_make 2, trigger:dies 2, cost:mana 2, cost:discard 1, cost:life 1, discard 1, trigger:attacks 1, surveil 1, trigger:beginning_of_combat 1, damage 1, trigger:discard 1, remove:destroy 1).
 
 Cards with an ai_logic tag: 38.
 

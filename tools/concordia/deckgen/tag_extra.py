@@ -134,6 +134,13 @@ REF_EXTRA = {
 
 # family -> (meaning, why / user note)
 DOC = {
+ "mill_count:<n|x>": ("how many cards are milled (who is milled: mill / self_mill)", "mtg2llm gap record, approved 2026-10-27: Blight Titan, Barrowgoyf"),
+ "flip_coin + flip_win / flip_lose": ("the effect flips a coin; flip_win / flip_lose mark that an outcome has a sub-effect", "approved 2026-10-27: Creepy Doll, Volatile Rig"),
+ "secret_choice:<number|card|player>": ("a player chooses secretly, then the choices are revealed and compared", "approved 2026-10-27: Wheel of Misfortune, Expert-Level Safe"),
+ "lose_game": ("the effect makes a player lose the game", "approved 2026-10-27: Nine Lives"),
+ "counter_remove:<n|all|x>": ("removes counters as an effect (cost:remove_counters is the cost)", "approved 2026-10-27: Phantom Nantuko"),
+ "grant_type:<type>": ("a static effect gives permanents an extra type (all lands are also Forests)", "approved 2026-10-27: Yavimaya, Cradle of Growth"),
+ "cost_energy:<n> (cost:energy)": ("the cost pays energy counters", "approved 2026-10-27: Aethertide Whale"),
  "niche": ("the card is only good in a deck built around the named theme; value = the theme (artifact, enchantment, landfall, tribal, self_mill, graveyard_hate, land, storm ...); the power score gives these cards 0.5 role credit", "user 2026-10-25 (niche cards), power_scorer.py NICHE_ROLE"),
  "mech": ("the card needs a mechanic or component many decks and the Forge AI handle poorly (value = mechanic: monarch, graveyard_cast, vote, day_night, ring ...); build.py MECH_MIN_TIER gates it by tier. It repeats the effect tag where one exists (monarch / mech:monarch): the effect tag says what the card does, mech says where the builder may use it", "user 2026-10-25 (replaces build.SKIP_TEXT)"),
  "colorless_card": ("the card is a colorless spell (no colored mana symbol, no color indicator, or Devoid; lands excluded); the deck needs colorless-capable mana for it (colorless is the sixth colour, H78)", "user 2026-10-26: color and mana tags include colorless"),
@@ -316,6 +323,8 @@ def cost_tags(cost, out):
     m = re.search(r"ExileFromGrave<\d+/([^/>]*)", cost)
     if m: out += ["cost:exile", "from_zone:graveyard", "cost_exile_target:" + tok(m.group(1).replace(";", "_or_").split(".")[0])]
     if "PayLife" in cost: out.append("cost:life")
+    m = re.search(r"PayEnergy<(\d+)", cost)
+    if m: out += ["cost:energy", "cost_energy:" + m.group(1)]
     if "Discard<" in cost: out.append("cost:discard")
     for m in re.finditer(r"AddCounter<(\d+)/LOYALTY>", cost): out += ["loyalty_change:+" + m.group(1), "counters:loyalty"]
     for m in re.finditer(r"SubCounter<(\d+)/LOYALTY>", cost): out += ["loyalty_change:-" + m.group(1), "counters:loyalty"]
@@ -563,6 +572,14 @@ def extra(lines, sv, types, text):
                 for tf in spell_filters(p.get("ValidCard", "")): add("trigger_filter:" + tf)      # Card.nonCreature -> noncreature (negation is part of the value, P4c B)
             elif mode in ("Attacks", "AttackersDeclared", "AttackerBlocked", "AttackerUnblocked"): add("trigger:attacks" if mode in ("Attacks", "AttackersDeclared") else "trigger:" + tok(mode))
             elif mode == "Discarded": add("trigger:discard")
+            elif mode == "DiscardedAll": add("trigger:discard", "trigger_filter:one_or_more")
+            elif mode in ("DamageDone", "DamageDoneOnce"): add("trigger:combat_damage" if p.get("CombatDamage") == "True" else "trigger:damage_dealt")
+            elif mode == "Blocks": add("trigger:blocks")
+            elif mode == "Cycled": add("trigger:cycled")
+            elif mode == "CounterAddedOnce": add("trigger:counter_added")
+            elif mode == "ManaExpend": add("trigger:mana_spent")
+            elif mode == "Always": add("trigger:state")
+            elif mode == "Destroyed" and "Self" in p.get("ValidCard", ""): add("trigger:dies")
             elif mode == "LifeGained": add("trigger:gain_life")
             elif mode == "Phase" and p.get("Phase") == "BeginCombat": add("trigger:beginning_of_combat")
             elif mode == "Phase" and p.get("Phase") == "Upkeep": add("trigger:upkeep")
@@ -572,6 +589,7 @@ def extra(lines, sv, types, text):
                 add("must_attack")
                 for ty in re.findall(r"[A-Z][a-z]+", p.get("ValidCreature", "")):
                     if ty not in ("Creature", "Other", "You", "Ctrl"): add("affects:" + tok(ty))
+            if p.get("AddType") and mode == "Continuous": [add("grant_type:" + tok(x)) for x in p["AddType"].split(" & ")]
             if mode == "CantBlock":
                 if p.get("ValidCreature", p.get("ValidAttacker", "Creature")) not in ("Card.Self", "Creature.Self"): add("restrict")
             if mode == "CantBlockBy" and not p.get("ValidBlocker") and "Self" not in p.get("ValidAttacker", ""): add("cant_be_blocked")      # equipped / enchanted creature can't be blocked: evasion, not a restriction
@@ -828,6 +846,18 @@ def extra(lines, sv, types, text):
                 if not nd.isdigit() and x_is(nd, sv): add("x_is:" + x_is(nd, sv))
                 if bp.get("Defined", "You") == "You": neg += cnt(nd)
                 if re.search(r"Discard[^.]*\.\s*If you do", desc_main): add("cost:discard", "cost_if_you_do")
+            if api == "Mill":                                     # mtg2llm gap record, approved 2026-10-27: amount only (who stays with mill / self_mill)
+                nm = bp.get("NumCards", "1"); add("mill_count:" + (nm if nm.isdigit() else "x"))
+                if not nm.isdigit() and x_is(nm, sv): add("x_is:" + x_is(nm, sv))
+            if api == "FlipCoin":
+                add("flip_coin")
+                if "WinSubAbility" in bp: add("flip_win")
+                if "LoseSubAbility" in bp: add("flip_lose")
+            if api in ("ChooseNumber", "ChooseCard", "ChoosePlayer") and bp.get("Secretly") == "True": add("secret_choice:" + {"ChooseNumber": "number", "ChooseCard": "card", "ChoosePlayer": "player"}[api])
+            if api == "LosesGame": add("lose_game")
+            if api == "RemoveCounter":
+                nr = bp.get("CounterNum", "1"); add("counter_remove:" + (nr if nr.isdigit() else "all" if nr == "All" else "x"))
+            if api == "Incubate": add("token_make", "token_type:incubator", "counter:p1p1", "counter_count:" + (bp.get("Amount", "1") if bp.get("Amount", "1").isdigit() else "x"))
             if api == "SetState" and bp.get("Mode") == "Transform": add("transform")       # "Transform CARDNAME" step of an ability (Mysterious Tome)
             if api == "CopyPermanent": add("token_make", "token_type:copy"); pos += 0.5
             if api == "Play" and bp.get("WithoutManaCost") == "True": add("cast_free")

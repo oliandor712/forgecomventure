@@ -1401,7 +1401,7 @@ forge_ai: AILogic=-
 
 card: Mask of Memory
 typing: cardtype:artifact type:equipment
-tags: colorless_card kw:equip num:1 discard draw discard_count:1 trigger:combat_damage
+tags: colorless_card kw:equip num:1 discard draw trigger:combat_damage discard_count:1
 face: mv:2 colors:c identity:c rarity:uncommon
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,combat_damage,"",discard,numcards=1,Defined=You,""
@@ -1409,8 +1409,8 @@ links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[3]{id,source,tags}:
   k1,K line,kw:equip num:1
+  c1,T line,trigger:combat_damage
   c1.2,sub-ability of c1,discard_count:1
-  v,cross-check (oracle gap filler/keyword/ai),trigger:combat_damage
 forge_ai: AILogic=-
 
 card: Noble's Purse
@@ -3405,7 +3405,7 @@ forge_ai: AILogic=-
 
 card: Evolution Witness
 typing: cardtype:creature type:elf type:shaman type:mutant
-tags: cost_mana:1g target_count:one target_type:permanent target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand trigger_filter:one_or_more
+tags: cost_mana:1g trigger:counter_added target_count:one target_type:permanent target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand trigger_filter:one_or_more
 ai_tags: recursion tempo:+1
 face: mv:3 power:2 toughness:1 colors:g identity:g rarity:common
 clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
@@ -3413,7 +3413,7 @@ clauses[2]{id,trigger,cost,verb,payload,affected,duration}:
   c2,counteraddedonce,"",changezone,"",ValidTgts=Permanent.YouCtrl,""
 groups[3]{id,source,tags}:
   c1,A line,cost_mana:1g
-  c2,T line,trigger_filter:one_or_more
+  c2,T line,trigger:counter_added trigger_filter:one_or_more
   c2.2,sub-ability of c2,target_count:one target_type:permanent target_scope:you_control target_zone:graveyard return from_zone:graveyard to_zone:hand
 forge_ai: AILogic=-
 
@@ -5243,13 +5243,13 @@ forge_ai: AILogic=-
 
 card: Wheel of Misfortune
 typing: cardtype:sorcery
-tags: discard draw damage target_scope:each_player
+tags: discard draw secret_choice:number damage target_scope:each_player
 ai_tags: ai_logic:highestloselife
 face: mv:3 colors:r identity:r rarity:rare
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
   c1,spell,"",choosenumber,"",Defined=Player,""
 groups[2]{id,source,tags}:
-  c1,A line,target_scope:each_player
+  c1,A line,secret_choice:number target_scope:each_player
   v,cross-check (oracle gap filler/keyword/ai),damage
 forge_ai: AILogic=HighestLoseLife
 
@@ -6407,7 +6407,7 @@ forge_ai: AILogic=Curiosity
 
 card: Curiosity
 typing: cardtype:enchantment type:aura
-tags: kw:enchant target_type:creature draw draw_count:1 optional
+tags: kw:enchant target_type:creature trigger:damage_dealt draw_count:1 optional
 ai_tags: tempo:+1 ai_logic:curiosity
 face: mv:1 colors:u identity:u rarity:uncommon
 clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
@@ -6416,7 +6416,7 @@ links[1]{from,rel,to}:
   c1:affected,receives,c1:payload
 groups[3]{id,source,tags}:
   k1,K line,kw:enchant target_type:creature
-  c1,T line,optional
+  c1,T line,trigger:damage_dealt optional
   c1.2,sub-ability of c1,draw_count:1
 forge_ai: AILogic=Curiosity
 
@@ -8203,12 +8203,14 @@ forge_ai: AILogic=-
 
 card: Absolver Thrull
 typing: cardtype:creature type:thrull type:cleric
-tags: kw:haunt trigger:dies trigger:etb
-ai_tags: removal
-face: mv:4 power:2 toughness:3 colors:w
-clauses[0]{id,trigger,cost,verb,payload,affected,duration}:
-groups[2]{id,source,tags}:
+tags: kw:haunt target_count:one target_type:enchantment remove:destroy trigger:dies trigger:etb niche:enchantment
+face: mv:4 power:2 toughness:3 colors:w identity:w rarity:common
+derived: spot_removal removal_weight:1
+clauses[1]{id,trigger,cost,verb,payload,affected,duration}:
+  c1,spell,"",destroy,"",ValidTgts=Enchantment,""
+groups[3]{id,source,tags}:
   k1,K line,kw:haunt
+  c1,A line,target_count:one target_type:enchantment remove:destroy
   v,cross-check (oracle gap filler/keyword/ai),trigger:dies trigger:etb
 forge_ai: AILogic=-
 
