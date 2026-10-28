@@ -1,6 +1,6 @@
-records_commit: f3cc42ce4ed9d851ca72febba62c966726544b02
+records_commit: d8e3a30b8472270a292d5eae79f7168af5c41bf7
 branch: campaign-design
-created: 2026-10-28T17:08:05-04:00
+created: 2026-10-28T17:08:23-04:00
 entries[83|]{path|hash}:
   .claude/agents/deck-balance-lab.md|523a1fbeb0c860fbe536db924ac390aa303cfe63
   .claude/agents/deck-builder.md|3fb611e1771fd9fd5ce28b6d93b9c9648081b2c6
@@ -84,4 +84,4 @@ entries[83|]{path|hash}:
   tools/agents/reference/deck_building_for_readers.toon|4d8280d3f915ab4fbdef0b43c92c2faee16e26cc
   tools/agents/sync_check.py|a0ce7a0085defd7aefc910ca554942074f56ca05
   tools/agents/toolbox.py|a7785da97a7d9066f239f81fd451e5e8144d6d56
-  tools/concordia/|5a8f5d24cd902e109f4029dd76c93d09e673fc9a
+  tools/concordia/|24f063febe386f119ef1b06cd121ed4f294a4b71
