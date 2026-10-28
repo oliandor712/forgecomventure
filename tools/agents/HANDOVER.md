@@ -35,7 +35,7 @@ Planned: renderer emits one sentence per `effect[...]` segment and `READER_GRAMM
 1. Ask the user which step 4 option (view export + grammar addendum, recommended; or the segment fallback).
 2. Step 5 (glance test of flat vs view) only on the user's ask; readers/subagents run only when asked (CLAUDE.md).
 3. Bind `affected_player` in `gen_effect_params.py` (`OVERRIDES`), regenerate `effect_params.json`, rerun `tagsyntax.py check`.
-4. Fix the `NEW_TAGS_FOR_APPROVAL.md` row for `affected_player` (placeholder text "see feedback notes") and the DOC wording if the user wants.
+4. `TAG_REFERENCE.md` was taken from the remote (definition-based version with the archetype usage column) in the merge conflict, so it has no `affected_player` row yet: add it (DOC entry in `tag_extra.py` is there). Fix the `NEW_TAGS_FOR_APPROVAL.md` row for `affected_player` (placeholder text "see feedback notes") and the DOC wording if the user wants.
 5. Roughly 350 Forge cards use `TargetedController`; each needs a hand unit line or a mined rule (only 1 starter card carries `affected_player` now). Nazar's flat render still prints raw `{...}` because its unit (changed key after the move) has no rule.
 6. Run `pool.py` (no `-I`, ~25 s plus tagging) once to refresh the pool with the new tag; not rerun this session (flat set only gained `affected_player`).
 7. Run the checker on the whole 28,049-card pool (the scan renders all of them, 415 s; use the background).
