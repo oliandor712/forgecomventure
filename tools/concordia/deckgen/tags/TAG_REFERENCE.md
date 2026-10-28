@@ -1,6 +1,6 @@
 # Tag reference
 
-The definition of every tag family: 190 families. This file is the source of tag definitions. It is generated from `tag_extra.LEGEND` / `DOC` / `REF_EXTRA` and `tag_verify.DOC` (change a meaning there and rerun `deckgen/tag_run.py starter`); it does not read any card set. Status: `approved` = a family the user approved (lists in `tag_reports.py`); `established` = older family in use before the approval process; a family not yet approved is listed in NEW_TAGS_FOR_APPROVAL.md.
+The definition of every tag family: 191 families. This file is the source of tag definitions. It is generated from `tag_extra.LEGEND` / `DOC` / `REF_EXTRA` and `tag_verify.DOC` (change a meaning there and rerun `deckgen/tag_run.py starter`); it does not read any card set. Status: `approved` = a family the user approved (lists in `tag_reports.py`); `established` = older family in use before the approval process; a family not yet approved is listed in NEW_TAGS_FOR_APPROVAL.md.
 
 ## How a record reads
 
@@ -73,6 +73,7 @@ The definition of every tag family: 190 families. This file is the source of tag
 | Family | Meaning | Source / reference | Approved | Used by archetypes (strategies.json) |
 |---|---|---|---|---|
 | `affected_filter` | what a static effect applies to (anthem: other creatures you control) | reverse check r1: Benalish Marshal | approved | - |
+| `affected_player` | APPROVED 2026-10-27: the player who receives the effect when it is not the ability's controller: affected_player:target_controller = the controller of the targeted permanent ('Its controller gains life equal to its power'), target_owner = its owner, target_player = the targeted player; set on the effect group (Forge Defined$/Player$ TargetedController / TargetedOwner / TargetedPlayer) | user 2026-10-27 (affected_player, 'proceed') | approved | - |
 | `affected_scope` | whose permanents the effect or static ability affects (you_control, opponent_controls, all) | reverse check r1: Benalish Marshal | approved | - |
 | `affected_type` | what a static effect applies to (anthem: other creatures you control) | reverse check r1: Benalish Marshal | approved | vehicles.payoff[vehicle]; sagas.reuse[saga] |
 | `affects` | which creature type a static effect applies to | Goblin Rabblemaster | approved | - |
