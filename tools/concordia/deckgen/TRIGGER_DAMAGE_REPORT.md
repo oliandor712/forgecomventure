@@ -12,23 +12,22 @@ Scope: the 33 cards with `damage_source:triggering` (a creature named by the tri
 | Warstorm Surge | Whenever a creature you control enters, it deals damage equal to its power to any target. |
 
 ## Does not render (28), by cause
-**A. Enters trigger, sentence declines on purpose (8)**
+**A. Enters triggers the sentence declines (8)**
 - Electropotence: pays {2}{R}; the sentence cannot say a cost.
 - Flayer of the Hatebound: no controller filter and no `optional_decider`, so the sentence cannot tell who chooses (a correction: the Undying line is not the cause).
-- Dragon Tempest, Scourge of Valkas, Hawkeye Trick Shot: amount is a count (`x_is:count_*`), no wording yet.
-- Be'lakor, Champion of the Path: other scope, no clean target text (each opponent / triggering power with a second effect).
-- Halana, Kessig Ranger: no damage amount tag.
-- Pyrotechnic Performer: turned-face-up trigger (`flip-up`).
+- Dragon Tempest, Scourge of Valkas, Hawkeye (Trick Shot): amount is a count (`x_is:count_*`), no wording yet.
+- Be'lakor, Champion of the Path: a target the sentence cannot say (Champion: each opponent).
+- Halana: no damage amount tag.
 
 **B. Attack triggers (8):** Extra Arms, Lothlórien Blade, Mage Slayer, The War Doctor, Vengeful Ancestor, Ingris Stingerquill, Rage Forger, Laccolith Rig (attacker blocked).
 
 **C. Damage-dealt triggers (9):** Blazing Sunsteel, Fiendlash, Greatbow Doyen, Spiteful Shadows, Pain for All, Kediss, Saskia the Unyielding, Super State, Trailblazer's Torch (attacker blocked).
 
-**D. Other (3):** Barbflare Gremlin (mana condition), Hawkeye's Bow (no trigger tag), plus the above.
+**D. Other (3):** Barbflare Gremlin (condition), Hawkeye's Bow, Pyrotechnic Performer (flip-up). Reasons for these three are from the tag listing, not rechecked card by card.
 
 ## Gaps in the tags
 - Who chooses the target (Pandemonium: "of their choice") is not tagged.
-- `optional_decider` values other than `triggered_card_controller` (12 uses) are not worded yet.
+- `optional_decider` values other than `triggered_card_controller` are not worded yet.
 - Counts as damage amounts (`x_is:count_*`, `triggering_damage`) are not said.
 
 ## Next
