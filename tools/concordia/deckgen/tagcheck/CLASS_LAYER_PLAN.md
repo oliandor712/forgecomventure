@@ -16,7 +16,7 @@ Goal: a card's tags say whether it is a setup, an engine, a payoff, a tool, a fi
 1. **Class (derived by script, never hand-tagged).** `tools/concordia/deckgen/tagcheck/card_class.py`, a pure function of the pool record. Classes: setup, engine, payoff, tool, finisher, filler.
    - Mapping table role name -> class, one row per archetype role in strategies.json (generated, with a hand OVERRIDES block like `gen_effect_params.py`). Examples: fodder, enabler, outlet -> setup; payoff, doubler -> payoff; engine, draw_engine -> engine.
    - Cards matching no archetype role: engine if a repeatable trigger or activation produces a resource; tool if a one-shot effect; finisher by win/drain/extra combat/extra turn tags or power above a cutoff; filler otherwise.
-   - A card may carry two classes (primary, secondary); the output lists both.
+   - A card carries a primary class and an optional secondary (decided 2026-10-30); the output lists both.
 2. **Specificity (derived, report only).** Count narrowing tags (`target_filter`, `trigger_filter`, `affected_filter`, `setup_card`, tribal `type:` references, `niche:*`, colour restriction). Bands: general, narrow (needs one archetype), dead-without-X (named `setup_card` need). Output is a report file; no ftags, so the power model and builder do not see it.
 3. **Glance form.** Add `class` (from the six) and `scope` (the three bands) to the form and to `glance.py` scoring: agreement of tag reader vs Oracle reader, derived vs Oracle reader, and each vs the user's labels.
 4. **Missing-tag fill.** Every disagreement between the Oracle reader and the tag reader or the derived class is listed with the tag families involved, in `GLANCE_FIXES.toon` style. New tags are proposed to the user in `NEW_TAGS_FOR_APPROVAL.md`; nothing is added without approval.
@@ -37,6 +37,6 @@ Goal: a card's tags say whether it is a setup, an engine, a payoff, a tool, a fi
 - Adding class or specificity to ftags would change the EDHREC-fitted power model; it stays out until the user decides.
 - A 72 to 122 card sample moves a score by about 1 point per card.
 
-## Open questions (none block steps 1-2)
-- Does a card count as setup for one archetype and payoff for another (two classes), or one class per card?
-- Finisher cutoff: tag-based only (win, drain, extra turn) or also power-based?
+## Decisions on the open questions (user 2026-10-30)
+- A card has a primary class and an optional secondary. Scoring uses the primary; a secondary match counts as a partial hit.
+- Finisher is tag-based only (win, alternate win, drain, extra combat, extra turn, mass pump, large X effect); power is not used, so the class stays independent of the power scorer.
